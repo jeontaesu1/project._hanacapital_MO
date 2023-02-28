@@ -1,0 +1,63 @@
+@import '@/assets/fonts/SpoqaHanSansNeo/style.css';
+
+html,
+body,
+pre,
+button,
+select,
+textarea,
+[type='button'],
+[type='submit'],
+[type='text'],
+[type='password'],
+[type='search'],
+[type='email'],
+[type='url'],
+[type='number'],
+[type='tel'],
+[type='file'],
+[type='date'],
+[type='time'] {
+  font-family: $font-spoqa-han-sans-neo, $font-default;
+  line-height: $line-height-default;
+  letter-spacing: $letter-spacing-default;
+  color: $color-black;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+button:focus:not(:focus-visible),
+[type='button']:focus:not(:focus-visible),
+[type='submit']:focus:not(:focus-visible) {
+  outline: none;
+}
+
+label {
+  cursor: pointer;
+}
+
+@-moz-document url-prefix() {
+  select {
+    text-indent: -2px;
+  }
+}
+
+html {
+  overflow-x: auto;
+  overflow-y: scroll;
+
+  &.is-scroll-blocking {
+    &,
+    & body,
+    & #app {
+      overflow: hidden;
+    }
+  }
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+}
