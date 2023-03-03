@@ -16,12 +16,9 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div>
-    <h1>Home Page</h1>
-    <h2 :class="[$style['home_class']]">Home Page</h2>
-  </div>
+  <h1>Home Page</h1>
 </template>
 
-<style lang="scss" scoped module>
-@import '@/assets/scss/home_page.scss';
+<style lang="scss" module>
+@import '@/assets/scss/views/HomePage.scss';
 </style>
