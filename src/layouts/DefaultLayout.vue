@@ -12,15 +12,5 @@ import DefaultFooter from '@/layouts/DefaultFooter.vue';
 </template>
 
 <style lang="scss" module>
-.layout {
-  position: relative;
-  z-index: 0;
-  height: 100%;
-  min-width: $page-min-width;
-  box-sizing: border-box;
-
-  &__body {
-    padding: 50px;
-  }
-}
+@import '@/assets/scss/layouts/DefaultLayout.scss';
 </style>

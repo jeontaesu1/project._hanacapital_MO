@@ -5,13 +5,5 @@
 </template>
 
 <style lang="scss" module>
-.footer {
-  padding: 30px;
-  background-color: #e1e1e1;
-}
-.logo {
-  margin: 0;
-  text-align: center;
-  @include font-size-set(20);
-}
+@import '@/assets/scss/layouts/DefaultFooter.scss';
 </style>

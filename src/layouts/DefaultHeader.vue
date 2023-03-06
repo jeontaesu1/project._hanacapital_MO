@@ -88,57 +88,5 @@ onUnmounted(() => {
 </template>
 
 <style lang="scss" module>
-.header-wrap {
-  display: block;
-}
-.header-fake {
-  display: block;
-}
-.header-fix {
-  position: fixed;
-  z-index: 1000;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-.header {
-  width: 100%;
-  min-width: $page-min-width;
-  box-sizing: border-box;
-  padding: 20px;
-  background-color: #00a69e;
-
-  &__logo {
-    margin: 0;
-    text-align: center;
-    color: #fff;
-    @include font-size-set(30);
-  }
-
-  &__logo-link {
-    display: block;
-    color: inherit;
-    text-decoration: none;
-  }
-}
-.gnb {
-  margin-top: 15px;
-
-  &__list {
-    @include reset-list;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  &__item {
-    & + & {
-      margin-left: 12px;
-    }
-  }
-}
-:global(.page-b) .header,
-:global(.page-c) .header {
-  background-color: #075f5b;
-}
+@import '@/assets/scss/layouts/DefaultHeader.scss';
 </style>

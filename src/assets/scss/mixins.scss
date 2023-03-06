@@ -169,7 +169,18 @@
 }
 
 // font-size
-@mixin font-size-set($size) {
+@mixin font-size-default($size) {
   font-size: rem($size);
+  line-height: $line-height-default;
+  letter-spacing: $letter-spacing-default;
+}
+@mixin font-size-head($size) {
+  font-size: rem($size);
+  line-height: $line-height-head;
+  letter-spacing: $letter-spacing-default;
+}
+@mixin font-size-button($size) {
+  font-size: rem($size);
+  line-height: $line-height-button;
   letter-spacing: $letter-spacing-default;
 }

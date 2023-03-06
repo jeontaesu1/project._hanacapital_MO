@@ -10,9 +10,6 @@ import { useHead } from '@vueuse/head';
 import favicon from '@/assets/images/common/favicon.ico';
 import DefaultLayout from '@/layouts/DefaultLayout.vue';
 
-// 공통 scss
-import '@/assets/scss/common.scss';
-
 // html head 셋팅
 useHead({
   title: '하나캐피탈 공식 웹사이트',
