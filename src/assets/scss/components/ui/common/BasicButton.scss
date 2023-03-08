@@ -66,6 +66,12 @@
     width: 52px;
   }
 
+  &--inline {
+    display: inline-flex;
+    vertical-align: top;
+    width: auto;
+  }
+
   &--small {
     min-height: 42px;
     padding: 11px;
@@ -107,22 +113,25 @@
     background-color: $color-green-60;
   }
 
-  &[disabled],
-  &--disabled,
-  &[disabled]:hover,
-  &--disabled:hover,
-  &[disabled]:active,
-  &--disabled:active,
-  &[disabled]:focus-visible,
-  &--disabled:focus-visible {
-    color: $color-gray-40;
-    border-color: $color-gray-20;
-    background-color: $color-gray-20;
+  &--line {
+    color: $color-green-50;
 
     .button__icon {
       svg {
         * {
-          fill: $color-gray-40;
+          fill: $color-green-50;
+        }
+      }
+    }
+
+    @include button-pressed-selector {
+      color: $color-green-60;
+
+      .button__icon {
+        svg {
+          * {
+            fill: $color-green-60;
+          }
         }
       }
     }
@@ -137,10 +146,28 @@
       background-color: $color-blue-60;
     }
 
-    @include button-disabled-selector {
-      color: $color-gray-40;
-      border-color: $color-gray-20;
-      background-color: $color-gray-20;
+    &.button--line {
+      color: $color-blue-50;
+
+      .button__icon {
+        svg {
+          * {
+            fill: $color-blue-50;
+          }
+        }
+      }
+
+      @include button-pressed-selector {
+        color: $color-blue-60;
+
+        .button__icon {
+          svg {
+            * {
+              fill: $color-blue-50;
+            }
+          }
+        }
+      }
     }
   }
 
@@ -153,10 +180,28 @@
       background-color: $color-navy-60;
     }
 
-    @include button-disabled-selector {
-      color: $color-gray-40;
-      border-color: $color-gray-20;
-      background-color: $color-gray-20;
+    &.button--line {
+      color: $color-navy-50;
+
+      .button__icon {
+        svg {
+          * {
+            fill: $color-navy-50;
+          }
+        }
+      }
+
+      @include button-pressed-selector {
+        color: $color-navy-60;
+
+        .button__icon {
+          svg {
+            * {
+              fill: $color-navy-50;
+            }
+          }
+        }
+      }
     }
   }
 
@@ -178,10 +223,54 @@
       background-color: $color-gray-40;
     }
 
+    &.button--line {
+      color: $color-gray-70;
+
+      .button__icon {
+        svg {
+          * {
+            fill: $color-gray-70;
+          }
+        }
+      }
+
+      @include button-pressed-selector {
+        border-color: $color-gray-50;
+      }
+    }
+  }
+
+  &[disabled],
+  &--disabled,
+  &[disabled]:hover,
+  &--disabled:hover,
+  &[disabled]:active,
+  &--disabled:active,
+  &[disabled]:focus-visible,
+  &--disabled:focus-visible {
+    color: $color-gray-40;
+    border-color: $color-gray-20;
+    background-color: $color-gray-20;
+
+    .button__icon {
+      svg {
+        * {
+          fill: $color-gray-40;
+        }
+      }
+    }
+  }
+
+  &--line {
+    background-color: transparent;
+
+    @include button-pressed-selector {
+      background-color: transparent;
+    }
+
     @include button-disabled-selector {
-      color: $color-gray-40;
-      border-color: $color-gray-20;
-      background-color: $color-gray-20;
+      border-color: $color-gray-30;
+      background-color: transparent;
     }
   }
 }

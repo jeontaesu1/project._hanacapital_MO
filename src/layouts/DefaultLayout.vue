@@ -1,13 +1,26 @@
-<script setup>
+<script>
 import DefaultHeader from '@/layouts/DefaultHeader.vue';
 import DefaultFooter from '@/layouts/DefaultFooter.vue';
+
+export default {
+  components: {
+    DefaultHeader,
+    DefaultFooter,
+  },
+};
 </script>
 
 <template>
   <div :class="$style['layout']">
-    <DefaultHeader />
-    <div :class="$style['layout__body']"><slot /></div>
-    <DefaultFooter />
+    <div :class="$style['layout__head']">
+      <DefaultHeader />
+    </div>
+    <div :class="$style['layout__body']">
+      <slot />
+    </div>
+    <div :class="$style['layout__foot']">
+      <DefaultFooter />
+    </div>
   </div>
 </template>
 

@@ -1,134 +1,68 @@
-<script setup>
-import { onMounted, onUnmounted } from 'vue';
-import { useUiStore } from '@/stores/ui/ui';
+<script>
+import { ref, onMounted, onUnmounted } from 'vue';
+import { useUiCommonStore } from '@/stores/ui/common';
 
-import BasicButton from '@/components/ui/BasicButton.vue';
+import PageContents from '@/components/ui/common/PageContents.vue';
+import BasicButton from '@/components/ui/common/BasicButton.vue';
+import UiLayer from '@/components/ui/layer/UiLayer.vue';
 
-import IconAdd from '@/assets/images/icon/add.svg?component';
+export default {
+  components: {
+    PageContents,
+    BasicButton,
+    UiLayer,
+  },
+  setup() {
+    const store = {
+      ui: {
+        common: useUiCommonStore(),
+      },
+    };
 
-const store = {
-  ui: useUiStore(),
+    const layerTest = ref(null);
+
+    onMounted(() => {
+      store.ui.common.setRootClassName('page-home');
+    });
+
+    onUnmounted(() => {
+      store.ui.common.setRootClassName(null);
+    });
+
+    const layerOpen = (opener, speed) => {
+      console.log(layerTest, opener, speed);
+      layerTest.value.open();
+    };
+
+    const layerClose = (speed) => {
+      console.log(layerTest, speed);
+      layerTest.value.close();
+    };
+
+    return {
+      layerTest,
+      layerOpen,
+      layerClose,
+    };
+  },
 };
-
-onMounted(() => {
-  store.ui.setRootClassName('page-home');
-});
-
-onUnmounted(() => {
-  store.ui.setRootClassName(null);
-});
 </script>
 
 <template>
-  <h1>Home Page</h1>
+  <PageContents>
+    <template v-slot:head>contents head</template>
 
-  <BasicButton>
-    <template v-slot:leftIcon>
-      <IconAdd />
-    </template>
-  </BasicButton>
-  <BasicButton>Button</BasicButton>
-  <BasicButton disabled>Button</BasicButton>
-  <BasicButton tag="a">
-    <template v-slot:leftIcon>
-      <IconAdd />
-    </template>
-    Button
-  </BasicButton>
-  <BasicButton tag="a" disabledStyle="true">
-    Button
-    <template v-slot:rightIcon>
-      <IconAdd />
-    </template>
-  </BasicButton>
-  <BasicButton theme="secondary">Button</BasicButton>
-  <BasicButton theme="secondary" disabled>Button</BasicButton>
-  <BasicButton theme="tertiary">Button</BasicButton>
-  <BasicButton theme="tertiary" disabled>Button</BasicButton>
-  <BasicButton theme="quaternary">
-    <template v-slot:leftIcon>
-      <IconAdd />
-    </template>
-    Button
-  </BasicButton>
-  <BasicButton theme="quaternary" disabled>
-    Button
-    <template v-slot:rightIcon>
-      <IconAdd />
-    </template>
-  </BasicButton>
+    <h1>Home Page</h1>
 
-  <BasicButton size="small">
-    <template v-slot:leftIcon>
-      <IconAdd />
-    </template>
-  </BasicButton>
-  <BasicButton size="small">Button</BasicButton>
-  <BasicButton size="small" disabled>Button</BasicButton>
-  <BasicButton tag="a" size="small">
-    <template v-slot:leftIcon>
-      <IconAdd />
-    </template>
-    Button
-  </BasicButton>
-  <BasicButton tag="a" size="small" disabledStyle="true">
-    Button
-    <template v-slot:rightIcon>
-      <IconAdd />
-    </template>
-  </BasicButton>
-  <BasicButton size="small" theme="secondary">Button</BasicButton>
-  <BasicButton size="small" theme="secondary" disabled>Button</BasicButton>
-  <BasicButton size="small" theme="tertiary">Button</BasicButton>
-  <BasicButton size="small" theme="tertiary" disabled>Button</BasicButton>
-  <BasicButton size="small" theme="quaternary">
-    <template v-slot:leftIcon>
-      <IconAdd />
-    </template>
-    Button
-  </BasicButton>
-  <BasicButton size="small" theme="quaternary" disabled>
-    Button
-    <template v-slot:rightIcon>
-      <IconAdd />
-    </template>
-  </BasicButton>
+    <UiLayer ref="layerTest">
+      // contents
+      <button type="button" @click="layerClose()">close</button>
+    </UiLayer>
 
-  <BasicButton size="mini">
-    <template v-slot:leftIcon>
-      <IconAdd />
-    </template>
-  </BasicButton>
-  <BasicButton size="mini">Button</BasicButton>
-  <BasicButton size="mini" disabled>Button</BasicButton>
-  <BasicButton tag="a" size="mini">
-    <template v-slot:leftIcon>
-      <IconAdd />
-    </template>
-    Button
-  </BasicButton>
-  <BasicButton tag="a" size="mini" disabledStyle="true">
-    Button
-    <template v-slot:rightIcon>
-      <IconAdd />
-    </template>
-  </BasicButton>
-  <BasicButton size="mini" theme="secondary">Button</BasicButton>
-  <BasicButton size="mini" theme="secondary" disabled>Button</BasicButton>
-  <BasicButton size="mini" theme="tertiary">Button</BasicButton>
-  <BasicButton size="mini" theme="tertiary" disabled>Button</BasicButton>
-  <BasicButton size="mini" theme="quaternary">
-    <template v-slot:leftIcon>
-      <IconAdd />
-    </template>
-    Button
-  </BasicButton>
-  <BasicButton size="mini" theme="quaternary" disabled>
-    Button
-    <template v-slot:rightIcon>
-      <IconAdd />
-    </template>
-  </BasicButton>
+    <BasicButton @click="layerOpen()"> 테스트 레이어 열기 </BasicButton>
+
+    <template v-slot:foot>contents foot</template>
+  </PageContents>
 </template>
 
 <style lang="scss" module>

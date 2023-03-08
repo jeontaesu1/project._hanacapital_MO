@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 
-export const useUiStore = defineStore('ui', {
+export const useUiCommonStore = defineStore('uiCommon', {
   state: () => ({
     rootClassName: null,
     scrollbarsWidth: 0,

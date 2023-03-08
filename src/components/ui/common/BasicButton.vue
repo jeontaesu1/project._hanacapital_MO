@@ -30,6 +30,14 @@ export default {
       Type: String,
       default: null,
     },
+    line: {
+      Type: Boolean,
+      default: false,
+    },
+    inline: {
+      Type: Boolean,
+      default: false,
+    },
     disabledStyle: {
       Type: Boolean,
       default: false,
@@ -58,12 +66,25 @@ export default {
       return Boolean(context.slots.rightIcon);
     });
 
+    const customClassNames = computed(() => {
+      const { classNames } = props;
+      return Object.assign(
+        {
+          wrap: '',
+          text: '',
+          icon: '',
+        },
+        classNames
+      );
+    });
+
     return {
       setComponent,
       setType,
       isText,
       isLeftIcon,
       isRightIcon,
+      customClassNames,
     };
   },
 };
@@ -80,23 +101,34 @@ export default {
         [$style['button--icon-only']]: (isLeftIcon || isRightIcon) && !isText,
         [$style[`button--${size}`]]: size,
         [$style[`button--${theme}`]]: theme,
+        [$style[`button--line`]]: line,
+        [$style[`button--inline`]]: inline,
         [$style['button--disabled']]: disabledStyle,
       },
-      classNames.wrap,
+      customClassNames.wrap,
     ]"
   >
-    <span v-if="isLeftIcon" :class="[$style['button__icon'], classNames.icon]">
+    <span
+      v-if="isLeftIcon"
+      :class="[$style['button__icon'], customClassNames.icon]"
+    >
       <slot name="leftIcon" />
     </span>
-    <span v-if="isText" :class="[$style['button__text'], classNames.text]">
+    <span
+      v-if="isText"
+      :class="[$style['button__text'], customClassNames.text]"
+    >
       <slot />
     </span>
-    <span v-if="isRightIcon" :class="[$style['button__icon'], classNames.icon]">
+    <span
+      v-if="isRightIcon"
+      :class="[$style['button__icon'], customClassNames.icon]"
+    >
       <slot name="rightIcon" />
     </span>
   </component>
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/components/ui/BasicButton.scss';
+@import '@/assets/scss/components/ui/common/BasicButton.scss';
 </style>
