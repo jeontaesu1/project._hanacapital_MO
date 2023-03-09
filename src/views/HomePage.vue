@@ -1,5 +1,6 @@
 <script>
 import { ref, onMounted, onUnmounted } from 'vue';
+import { RouterLink } from 'vue-router';
 import { useUiCommonStore } from '@/stores/ui/common';
 
 import PageContents from '@/components/ui/common/PageContents.vue';
@@ -8,6 +9,7 @@ import UiLayer from '@/components/ui/layer/UiLayer.vue';
 
 export default {
   components: {
+    RouterLink,
     PageContents,
     BasicButton,
     UiLayer,
@@ -26,7 +28,7 @@ export default {
     });
 
     onUnmounted(() => {
-      store.ui.common.setRootClassName(null);
+      store.ui.common.setRootClassName();
     });
 
     const layerOpen = (opener, speed) => {
@@ -53,6 +55,11 @@ export default {
     <template v-slot:head>contents head</template>
 
     <h1>Home Page</h1>
+
+    <RouterLink to="a">A 페이지</RouterLink>
+    <RouterLink to="b">B 페이지</RouterLink>
+    <RouterLink to="c">C 페이지</RouterLink>
+    <RouterLink to="test">Test 페이지</RouterLink>
 
     <UiLayer ref="layerTest">
       // contents

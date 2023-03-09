@@ -2,6 +2,7 @@
 import { onMounted, onUnmounted } from 'vue';
 import { useHead } from '@vueuse/head';
 import { useUiCommonStore } from '@/stores/ui/common';
+import { useUiHeaderStore } from '@/stores/ui/header';
 
 export default {
   setup() {
@@ -24,15 +25,27 @@ export default {
     const store = {
       ui: {
         common: useUiCommonStore(),
+        header: useUiHeaderStore(),
       },
     };
 
     onMounted(() => {
       store.ui.common.setRootClassName('page-b');
+      store.ui.header.setTitle(() => 'B 페이지');
+      store.ui.header.setLeftButtons(() => ['back']);
+      store.ui.header.setRightButtons(() => [
+        {
+          name: 'close',
+          onClick: () => alert('닫기 클릭'),
+        },
+      ]);
     });
 
     onUnmounted(() => {
-      store.ui.common.setRootClassName(null);
+      store.ui.common.setRootClassName();
+      store.ui.header.setTitle();
+      store.ui.header.setLeftButtons();
+      store.ui.header.setRightButtons();
     });
 
     return {

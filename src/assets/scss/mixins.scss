@@ -1,3 +1,15 @@
+// media
+@mixin media-mobile-small {
+  @media only screen and (max-width: 340px) {
+    @content;
+  }
+}
+@mixin media-mobile-mini {
+  @media only screen and (max-width: 280px) {
+    @content;
+  }
+}
+
 // reset
 @mixin reset-list {
   margin: 0;

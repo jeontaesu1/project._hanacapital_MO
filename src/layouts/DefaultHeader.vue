@@ -1,55 +1,28 @@
 <script>
 import { ref, computed, onMounted, onUpdated, onUnmounted } from 'vue';
-import { RouterLink, useRoute } from 'vue-router';
 
 import { useUiCommonStore } from '@/stores/ui/common';
 import { useUiScrollBlockStore } from '@/stores/ui/scrollBlock';
+import { useUiHeaderStore } from '@/stores/ui/header';
 
-import IconBack from '@/assets/images/common/header-back.svg?component';
-import IconPush from '@/assets/images/common/header-alarm.svg?component';
-import IconMenu from '@/assets/images/common/header-menu.svg?component';
-import IconSearch from '@/assets/images/common/header-search.svg?component';
-import IconShare from '@/assets/images/common/header-share.svg?component';
-import IconClose from '@/assets/images/common/header-close.svg?component';
+import HeaderButton from '@/components/ui/common/HeaderButton.vue';
 
 export default {
-  props: {
-    full: {
-      type: Boolean,
-      default: false,
-    },
-  },
   components: {
-    RouterLink,
-    IconBack,
-    IconPush,
-    IconMenu,
-    IconSearch,
-    IconShare,
-    IconClose,
+    HeaderButton,
   },
   setup() {
     const store = {
       ui: {
         common: useUiCommonStore(),
         scrollBlock: useUiScrollBlockStore(),
+        header: useUiHeaderStore(),
       },
-    };
-
-    const PATH = {
-      ROOT: '/',
-      HOME: '/home',
-      A_PAGE: '/a',
-      B_PAGE: '/b',
-      C_PAGE: '/c',
-      TEST_PAGE: '/test',
     };
 
     const header = ref(null);
     const fixbar = ref(null);
     const fake = ref(null);
-
-    const route = useRoute();
 
     const isBlocking = computed(() => {
       return store.ui.scrollBlock.isBlocking;
@@ -61,6 +34,16 @@ export default {
 
     const blockingScrollLeft = computed(() => {
       return store.ui.scrollBlock.scrollLeft;
+    });
+
+    const leftButtons = computed(() => {
+      const defaultButtons = [];
+      return store.ui.header.leftButtons || defaultButtons;
+    });
+
+    const rightButtons = computed(() => {
+      const defaultButtons = ['push', 'menu'];
+      return store.ui.header.rightButtons || defaultButtons;
     });
 
     const update = () => {
@@ -111,13 +94,13 @@ export default {
 
     return {
       store,
-      PATH,
       header,
       fixbar,
       fake,
-      route,
       isBlocking,
       scrollbarsWidth,
+      leftButtons,
+      rightButtons,
     };
   },
 };
@@ -131,55 +114,36 @@ export default {
       :style="`${isBlocking ? `margin-right: ${scrollbarsWidth}px` : ''}`"
     >
       <header ref="header" :class="$style['header']">
-        <div :class="$style['header__left']">
-          <RouterLink
-            to=""
-            :class="[$style['header__button'], $style['header__button--back']]"
-          >
-            <IconBack />
-            <span class="for-a11y">뒤로가기</span>
-          </RouterLink>
+        <div v-if="leftButtons.length" :class="$style['header__left']">
+          <HeaderButton
+            v-for="item in leftButtons"
+            :key="`left_${typeof item === 'string' ? item : item.name}`"
+            :type="typeof item === 'string' ? item : item.name"
+            :classNames="$style"
+            :onClick="item.onClick"
+          />
         </div>
-        <h1 :class="$style['header__title']">Title</h1>
-        <div :class="$style['header__right']">
-          <RouterLink
-            to=""
-            :class="[$style['header__button'], $style['header__button--push']]"
-          >
-            <IconPush />
-            <span class="for-a11y">알림</span>
-          </RouterLink>
-          <RouterLink
-            to=""
-            :class="[$style['header__button'], $style['header__button--menu']]"
-          >
-            <IconMenu />
-            <span class="for-a11y">메뉴</span>
-          </RouterLink>
-          <RouterLink
-            to=""
-            :class="[
-              $style['header__button'],
-              $style['header__button--search'],
-            ]"
-          >
-            <IconSearch />
-            <span class="for-a11y">검색</span>
-          </RouterLink>
-          <RouterLink
-            to=""
-            :class="[$style['header__button'], $style['header__button--share']]"
-          >
-            <IconShare />
-            <span class="for-a11y">공유하기</span>
-          </RouterLink>
-          <RouterLink
-            to=""
-            :class="[$style['header__button'], $style['header__button--close']]"
-          >
-            <IconClose />
-            <span class="for-a11y">닫기</span>
-          </RouterLink>
+        <div
+          :class="[
+            $style['header__center'],
+            {
+              [$style['header__center--full']]:
+                !leftButtons.length && !rightButtons.length,
+            },
+          ]"
+        >
+          <h1 :class="$style['header__title']">
+            {{ store.ui.header.title || '하나캐피탈' }}
+          </h1>
+        </div>
+        <div v-if="rightButtons.length" :class="$style['header__right']">
+          <HeaderButton
+            v-for="item in rightButtons"
+            :key="`right_${typeof item === 'string' ? item : item.name}`"
+            :type="typeof item === 'string' ? item : item.name"
+            :classNames="$style"
+            :onClick="item.onClick"
+          />
         </div>
       </header>
     </div>

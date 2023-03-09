@@ -7,7 +7,7 @@ export const useUiCommonStore = defineStore('uiCommon', {
   }),
 
   actions: {
-    setRootClassName(className) {
+    setRootClassName(className = null) {
       const html = document.getElementsByTagName('html')[0];
       const { rootClassName } = this;
 

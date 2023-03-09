@@ -93,8 +93,8 @@ export default {
 <template>
   <component
     :is="setComponent"
-    :type="setType"
     v-bind="$attrs"
+    :type="setType"
     :class="[
       $style['button'],
       {
