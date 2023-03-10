@@ -1,5 +1,8 @@
 <script>
+import { reactive, computed } from 'vue';
+
 import { useUiScrollBlockStore } from '@/stores/ui/scrollBlock';
+import { useUiLayerStore } from '@/stores/ui/layer';
 
 export default {
   props: {
@@ -7,30 +10,86 @@ export default {
       type: Boolean,
       default: false,
     },
+    onBeforeOpened: {
+      type: Function,
+      default: () => {},
+    },
+    onOpened: {
+      type: Function,
+      default: () => {},
+    },
+    onAfterOpened: {
+      type: Function,
+      default: () => {},
+    },
+    onBeforeClosed: {
+      type: Function,
+      default: () => {},
+    },
+    onClosed: {
+      type: Function,
+      default: () => {},
+    },
+    onAfterClosed: {
+      type: Function,
+      default: () => {},
+    },
   },
   components: {
     // BasicButton,
   },
   setup() {
+    const defaultSpeed = 350;
+    let timer = null;
+
     const store = {
       ui: {
         scrollBlock: useUiScrollBlockStore(),
+        layer: useUiLayerStore(),
       },
     };
 
-    const open = (opener, speed) => {
+    const state = reactive({
+      display: 'none',
+      opened: false,
+      zIndex: store.ui.layer.zIndex,
+      speed: defaultSpeed,
+    });
+
+    const open = (opener = null, speed = defaultSpeed) => {
       const html = document.getElementsByTagName('html')[0];
+
       console.log(html, opener, speed, store.scrollBlock);
+
+      clearTimeout(timer);
       store.ui.scrollBlock.block();
+      state.speed = speed;
+      state.display = 'block';
+      state.zIndex = store.ui.layer.zIndex;
+      store.ui.layer.updateZIndex();
+
+      timer = setTimeout(function () {
+        state.opened = true;
+      }, 0);
     };
 
-    const close = (speed) => {
+    const close = (speed = defaultSpeed) => {
       const html = document.getElementsByTagName('html')[0];
+
       console.log(html, speed);
-      store.ui.scrollBlock.clear();
+
+      clearTimeout(timer);
+      state.speed = speed;
+      state.opened = false;
+
+      timer = setTimeout(function () {
+        state.display = 'none';
+        store.ui.scrollBlock.clear();
+      }, speed);
     };
 
     return {
+      state,
       open,
       close,
     };
@@ -45,8 +104,10 @@ export default {
       $style['layer'],
       {
         [$style['layer--full']]: full,
+        [$style['layer--opened']]: state.opened,
       },
     ]"
+    :style="`display: ${state.display}; z-index: ${state.zIndex}; transition-duration: ${state.speed}ms;`"
   >
     <div :class="$style['layer__container']">
       <slot />

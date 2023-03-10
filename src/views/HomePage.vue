@@ -32,13 +32,13 @@ export default {
     });
 
     const layerOpen = (opener, speed) => {
-      console.log(layerTest, opener, speed);
-      layerTest.value.open();
+      // console.log(layerTest, opener, speed);
+      layerTest.value.open(opener, speed);
     };
 
     const layerClose = (speed) => {
-      console.log(layerTest, speed);
-      layerTest.value.close();
+      // console.log(layerTest, speed);
+      layerTest.value.close(speed);
     };
 
     return {
