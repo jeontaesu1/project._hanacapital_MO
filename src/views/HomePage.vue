@@ -21,7 +21,23 @@ export default {
       },
     };
 
-    const layerTest = ref(null);
+    const layerTest001 = ref(null);
+    const layerTest002 = ref(null);
+    const layerTest003 = ref(null);
+    const layerTest004 = ref(null);
+
+    const layerOpenTest001 = (e = {}) => {
+      layerTest001.value.open(e.target);
+    };
+    const layerOpenTest002 = (e = {}) => {
+      layerTest002.value.open(e.target);
+    };
+    const layerOpenTest003 = (e = {}) => {
+      layerTest003.value.open(e.target);
+    };
+    const layerOpenTest004 = (e = {}) => {
+      layerTest004.value.open(e.target);
+    };
 
     onMounted(() => {
       store.ui.common.setRootClassName('page-home');
@@ -31,20 +47,15 @@ export default {
       store.ui.common.setRootClassName();
     });
 
-    const layerOpen = (opener, speed) => {
-      // console.log(layerTest, opener, speed);
-      layerTest.value.open(opener, speed);
-    };
-
-    const layerClose = (speed) => {
-      // console.log(layerTest, speed);
-      layerTest.value.close(speed);
-    };
-
     return {
-      layerTest,
-      layerOpen,
-      layerClose,
+      layerTest001,
+      layerTest002,
+      layerTest003,
+      layerTest004,
+      layerOpenTest001,
+      layerOpenTest002,
+      layerOpenTest003,
+      layerOpenTest004,
     };
   },
 };
@@ -61,12 +72,51 @@ export default {
     <RouterLink to="c">C 페이지</RouterLink>
     <RouterLink to="test">Test 페이지</RouterLink>
 
-    <UiLayer ref="layerTest">
+    <UiLayer ref="layerTest001" v-slot="slotProps">
+      <h2>test001</h2>
       // contents
-      <button type="button" @click="layerClose()">close</button>
+      <button type="button" @click="slotProps.close()">close</button>
+      <BasicButton @click="layerOpenTest002">
+        테스트 002 레이어 열기
+      </BasicButton>
     </UiLayer>
 
-    <BasicButton @click="layerOpen()"> 테스트 레이어 열기 </BasicButton>
+    <UiLayer ref="layerTest002" v-slot="slotProps">
+      <h2>test002</h2>
+      // contents
+      <button type="button" @click="slotProps.close()">close</button>
+      <BasicButton @click="layerOpenTest003">
+        테스트 003 레이어 열기
+      </BasicButton>
+    </UiLayer>
+
+    <UiLayer ref="layerTest003" v-slot="slotProps">
+      <h2>test003</h2>
+      // contents
+      <button type="button" @click="slotProps.close()">close</button>
+      <BasicButton @click="layerOpenTest004">
+        테스트 004 레이어 열기
+      </BasicButton>
+    </UiLayer>
+
+    <UiLayer ref="layerTest004" v-slot="slotProps">
+      <h2>test004</h2>
+      // contents
+      <button type="button" @click="slotProps.close()">close</button>
+    </UiLayer>
+
+    <BasicButton @click="layerOpenTest001">
+      테스트 001 레이어 열기
+    </BasicButton>
+    <BasicButton @click="layerOpenTest002">
+      테스트 002 레이어 열기
+    </BasicButton>
+    <BasicButton @click="layerOpenTest003">
+      테스트 003 레이어 열기
+    </BasicButton>
+    <BasicButton @click="layerOpenTest004">
+      테스트 004 레이어 열기
+    </BasicButton>
 
     <template v-slot:foot>contents foot</template>
   </PageContents>
