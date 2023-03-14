@@ -3,8 +3,10 @@ import { ref, onMounted, onUnmounted } from 'vue';
 import { RouterLink } from 'vue-router';
 import { useUiCommonStore } from '@/stores/ui/common';
 
-import PageContents from '@/components/ui/common/PageContents.vue';
-import BasicButton from '@/components/ui/common/BasicButton.vue';
+import PageContents from '@/components/ui/layout/PageContents.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
+import ButtonList from '@/components/ui/button/ButtonList.vue';
+import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 
 export default {
@@ -13,6 +15,8 @@ export default {
     PageContents,
     BasicButton,
     UiLayer,
+    ButtonList,
+    ButtonListItem,
   },
   setup() {
     const store = {
@@ -118,7 +122,16 @@ export default {
       테스트 004 레이어 열기
     </BasicButton>
 
-    <template v-slot:foot>contents foot</template>
+    <template v-slot:foot>
+      <ButtonList>
+        <ButtonListItem>
+          <BasicButton>Button 1</BasicButton>
+        </ButtonListItem>
+        <ButtonListItem>
+          <BasicButton>Button 2</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
+    </template>
   </PageContents>
 </template>
 

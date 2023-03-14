@@ -316,7 +316,7 @@ export default {
     :style="`display: ${state.display}; z-index: ${
       state.zIndex
     }; transition-duration: ${state.speed}ms; visibility: ${
-      state.opened ? 'visible' : 'hidden'
+      state.display === 'none' ? 'hidden' : 'visible'
     };`"
     :aria-hidden="state.opened ? 'false' : 'true'"
     :aria-modal="state.opened ? 'true' : null"

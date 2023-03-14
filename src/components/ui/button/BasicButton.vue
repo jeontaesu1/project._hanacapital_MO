@@ -125,5 +125,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/components/ui/common/BasicButton.scss';
+@import '@/assets/scss/components/ui/button/BasicButton.scss';
 </style>

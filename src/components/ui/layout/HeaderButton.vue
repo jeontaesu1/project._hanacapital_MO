@@ -10,14 +10,11 @@ import IconShare from '@/assets/images/common/header-share.svg?component';
 import IconClose from '@/assets/images/common/header-close.svg?component';
 
 export default {
+  inject: ['$style'],
   props: {
     type: {
       type: String,
       default: 'menu',
-    },
-    classNames: {
-      type: Object,
-      default: () => ({}),
     },
     onClick: {
       type: Function,
@@ -52,64 +49,56 @@ export default {
   <button
     v-if="type === 'back'"
     type="button"
-    :class="classNames['header__button']"
+    :class="$style['header__button']"
     @click="router.go(-1)"
   >
-    <IconBack :class="classNames['header__button-icon']" />
-    <span :class="classNames['header__button-text']">뒤로가기</span>
+    <IconBack :class="$style['header__button-icon']" />
+    <span :class="$style['header__button-text']">뒤로가기</span>
   </button>
 
   <RouterLink
     v-if="type === 'push'"
     to=""
     :class="[
-      classNames['header__button'],
+      $style['header__button'],
       {
-        [classNames['header__button--notice']]: pushNotice,
+        [$style['header__button--notice']]: pushNotice,
       },
     ]"
   >
-    <IconPush :class="classNames['header__button-icon']" />
-    <span :class="classNames['header__button-text']">
+    <IconPush :class="$style['header__button-icon']" />
+    <span :class="$style['header__button-text']">
       알림{{ pushNotice ? ' (신규 알림 있음)' : '' }}
     </span>
   </RouterLink>
 
-  <RouterLink
-    v-if="type === 'menu'"
-    to=""
-    :class="classNames['header__button']"
-  >
-    <IconMenu :class="classNames['header__button-icon']" />
-    <span :class="classNames['header__button-text']">메뉴</span>
+  <RouterLink v-if="type === 'menu'" to="" :class="$style['header__button']">
+    <IconMenu :class="$style['header__button-icon']" />
+    <span :class="$style['header__button-text']">메뉴</span>
   </RouterLink>
 
-  <RouterLink
-    v-if="type === 'search'"
-    to=""
-    :class="classNames['header__button']"
-  >
-    <IconSearch :class="classNames['header__button-icon']" />
-    <span :class="classNames['header__button-text']">검색</span>
+  <RouterLink v-if="type === 'search'" to="" :class="$style['header__button']">
+    <IconSearch :class="$style['header__button-icon']" />
+    <span :class="$style['header__button-text']">검색</span>
   </RouterLink>
 
   <button
     v-if="type === 'share'"
     type="button"
-    :class="classNames['header__button']"
+    :class="$style['header__button']"
     @click="onClick"
   >
-    <IconShare :class="classNames['header__button-icon']" />
-    <span :class="classNames['header__button-text']">공유하기</span>
+    <IconShare :class="$style['header__button-icon']" />
+    <span :class="$style['header__button-text']">공유하기</span>
   </button>
 
   <button
     v-if="type === 'close'"
     type="button"
-    :class="classNames['header__button']"
+    :class="$style['header__button']"
     @click="onClick"
   >
-    <IconClose :class="classNames['header__button-icon']" />
-    <span :class="classNames['header__button-text']">닫기</span>
+    <IconClose :class="$style['header__button-icon']" />
+    <span :class="$style['header__button-text']">닫기</span>
   </button>
 </template>

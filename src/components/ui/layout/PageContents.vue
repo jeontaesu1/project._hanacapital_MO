@@ -69,5 +69,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/components/ui/common/PageContents.scss';
+@import '@/assets/scss/components/ui/layout/PageContents.scss';
 </style>

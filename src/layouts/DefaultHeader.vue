@@ -1,13 +1,27 @@
 <script>
-import { ref, computed, onMounted, onUpdated, onUnmounted } from 'vue';
+import {
+  ref,
+  computed,
+  onMounted,
+  onUpdated,
+  onUnmounted,
+  useCssModule,
+} from 'vue';
 
 import { useUiCommonStore } from '@/stores/ui/common';
 import { useUiScrollBlockStore } from '@/stores/ui/scrollBlock';
 import { useUiHeaderStore } from '@/stores/ui/header';
 
-import HeaderButton from '@/components/ui/common/HeaderButton.vue';
+import HeaderButton from '@/components/ui/layout/HeaderButton.vue';
 
 export default {
+  provide() {
+    const $style = useCssModule();
+
+    return {
+      $style,
+    };
+  },
   components: {
     HeaderButton,
   },
@@ -119,7 +133,6 @@ export default {
             v-for="item in leftButtons"
             :key="`left_${typeof item === 'string' ? item : item.name}`"
             :type="typeof item === 'string' ? item : item.name"
-            :classNames="$style"
             :onClick="item.onClick"
           />
         </div>
@@ -141,7 +154,6 @@ export default {
             v-for="item in rightButtons"
             :key="`right_${typeof item === 'string' ? item : item.name}`"
             :type="typeof item === 'string' ? item : item.name"
-            :classNames="$style"
             :onClick="item.onClick"
           />
         </div>

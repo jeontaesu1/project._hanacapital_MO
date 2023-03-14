@@ -2,8 +2,8 @@
 import { onMounted, onUnmounted } from 'vue';
 import { useUiHeaderStore } from '@/stores/ui/header';
 
-import PageContents from '@/components/ui/common/PageContents.vue';
-import BasicButton from '@/components/ui/common/BasicButton.vue';
+import PageContents from '@/components/ui/layout/PageContents.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
 import IconAdd from '@/assets/images/icon/add.svg?component';
 
 export default {

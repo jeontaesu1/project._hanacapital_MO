@@ -1,0 +1,46 @@
+.buttons {
+  margin-top: 32px;
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__item {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__item + &__item {
+    margin-left: 8px;
+  }
+
+  &--left &__list {
+    justify-content: flex-start;
+  }
+
+  &--right &__list {
+    justify-content: flex-end;
+  }
+
+  &--center &__list {
+    justify-content: center;
+  }
+
+  &__item--flex-none,
+  &--left &__item,
+  &--right &__item,
+  &--center &__item {
+    flex: none;
+  }
+
+  &--left &__item--flexible,
+  &--right &__item--flexible,
+  &--center &__item--flexible {
+    flex: 1;
+  }
+}
