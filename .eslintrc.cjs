@@ -13,6 +13,10 @@ module.exports = {
   },
   plugins: ['prettier'],
   rules: {
-    'prettier/prettier': 'error',
+    'prettier/prettier': [
+      'error',
+      // 코딩시 crlf 제거
+      { endOfLine: 'auto' },
+    ],
   },
 };
