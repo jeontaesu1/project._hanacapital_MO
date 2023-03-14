@@ -4,6 +4,11 @@ import { ref, reactive, computed, useCssModule } from 'vue';
 import { useUiScrollBlockStore } from '@/stores/ui/scrollBlock';
 import { useUiLayerStore } from '@/stores/ui/layer';
 
+const defaultClassNames = () => ({
+  wrap: '',
+  container: '',
+  loop: '',
+});
 const filter = Array.prototype.filter;
 const getParents = (el) => {
   const parents = [];
@@ -11,6 +16,30 @@ const getParents = (el) => {
     parents.push(el);
   }
   return parents;
+};
+const setAttr = (elArr, name, val) => {
+  for (let i = 0; i < elArr.length; i++) {
+    elArr[i].setAttribute(name, val);
+  }
+};
+const removeAttr = (elArr, name) => {
+  for (let i = 0; i < elArr.length; i++) {
+    elArr[i].removeAttribute(name);
+  }
+};
+const elFocus = (el) => {
+  let setTabindex = false;
+
+  if (!el.getAttribute('tabindex')) {
+    el.setAttribute('tabindex', '0');
+    setTabindex = true;
+  }
+
+  el.focus();
+
+  if (setTabindex) {
+    el.removeAttribute('tabindex');
+  }
 };
 
 export default {
@@ -22,10 +51,7 @@ export default {
     classNames: {
       Type: Object,
       default() {
-        return {
-          wrap: '',
-          container: '',
-        };
+        return defaultClassNames();
       },
     },
     onBeforeOpened: {
@@ -74,16 +100,11 @@ export default {
     });
 
     const layer = ref(null);
+    const layerContainer = ref(null);
 
     const customClassNames = computed(() => {
       const { classNames } = props;
-      return Object.assign(
-        {
-          wrap: '',
-          container: '',
-        },
-        classNames
-      );
+      return Object.assign(defaultClassNames(), classNames);
     });
 
     const open = (opener = null, speed = defaultSpeed) => {
@@ -93,7 +114,6 @@ export default {
 
       onBeforeOpened();
 
-      const html = document.getElementsByTagName('html')[0];
       const body = document.getElementsByTagName('body')[0];
       const layers = document.getElementsByClassName($style['layer']);
       const preOpenLayers = filter.call(layers, (item) => {
@@ -116,7 +136,7 @@ export default {
         return (
           !item.classList.contains($style['layer']) &&
           !item.closest(`.${$style['layer']}`) &&
-          !item.closest(notOhterElements) &&
+          !item.matches(notOhterElements) &&
           !layersParents.find((parent) => parent === item)
         );
       });
@@ -125,15 +145,13 @@ export default {
         for (let i = 0; i < preOpenLayers.length; i++) {
           re = re.concat(
             filter.call(preOpenLayers[i].querySelectorAll('*'), (item) => {
-              return !item.closest(notOhterElements);
+              return !item.matches(notOhterElements);
             })
           );
         }
         re = new Set(re);
         return Array.from(re);
       })();
-
-      console.log(opener, html, ohterElements, preLayersElements);
 
       clearTimeout(timer);
       store.ui.scrollBlock.block();
@@ -143,14 +161,25 @@ export default {
       store.ui.layer.updateZIndex();
 
       if (opener) {
-        store.opener = opener;
+        state.opener = opener;
       }
+
+      setAttr(ohterElements, 'aria-hidden', 'true');
+      setAttr(ohterElements, 'inert', '');
+      setAttr(ohterElements, 'data-ui-js', 'hidden');
+      setAttr(preLayersElements, 'aria-hidden', 'true');
+      setAttr(preLayersElements, 'inert', '');
+      setAttr(preLayersElements, 'data-ui-js', 'hidden');
+      setAttr(preOpenLayers, 'aria-hidden', 'true');
+      setAttr(preOpenLayers, 'inert', '');
+      removeAttr(preOpenLayers, 'aria-modal');
 
       timer = setTimeout(function () {
         state.opened = true;
         onOpened();
         clearTimeout(timer);
         timer = setTimeout(function () {
+          layerContainer.value.focus();
           onAfterOpened();
           clearTimeout(timer);
         }, speed);
@@ -165,6 +194,7 @@ export default {
       onBeforeClosed();
 
       const html = document.getElementsByTagName('html')[0];
+      const body = document.getElementsByTagName('body')[0];
       const preOpenLayers = filter.call(
         document.getElementsByClassName($style['layer--opened']),
         (item) => {
@@ -172,6 +202,8 @@ export default {
         }
       );
       const preOpenLayer = (() => {
+        if (!preOpenLayers.length) return null;
+
         const higherZIndex = (() => {
           const arr = [];
           for (let i = 0; i < preOpenLayers.length; i++) {
@@ -180,12 +212,14 @@ export default {
           arr.sort();
           return arr[arr.length - 1];
         })();
+
         return filter.call(preOpenLayers, (item) => {
           return item.style.zIndex === higherZIndex;
-        });
+        })[0];
       })();
-
-      console.log(html, preOpenLayer);
+      const preOpenLayerOhterElements = preOpenLayer
+        ? preOpenLayer.querySelectorAll('[data-ui-js="hidden"]')
+        : [];
 
       clearTimeout(timer);
       state.speed = speed;
@@ -193,10 +227,38 @@ export default {
       onClosed();
 
       timer = setTimeout(function () {
+        const { opener } = state;
         state.display = 'none';
+
+        if (preOpenLayer) {
+          removeAttr(preOpenLayerOhterElements, 'aria-hidden');
+          removeAttr(preOpenLayerOhterElements, 'inert');
+          removeAttr(preOpenLayerOhterElements, 'data-ui-js');
+          preOpenLayer.removeAttribute('inert');
+          preOpenLayer.setAttribute('aria-hidden', 'false');
+          preOpenLayer.setAttribute('aria-modal', 'true');
+        } else {
+          const ohterElements = body.querySelectorAll('[data-ui-js="hidden"]');
+          removeAttr(ohterElements, 'aria-hidden');
+          removeAttr(ohterElements, 'inert');
+          removeAttr(ohterElements, 'data-ui-js');
+        }
 
         if (!preOpenLayers.length) {
           store.ui.scrollBlock.clear();
+        }
+
+        if (opener) {
+          if (preOpenLayer) {
+            if (opener.closest(`.${$style['layer']}`) === preOpenLayer) {
+              elFocus(opener);
+            }
+          } else {
+            elFocus(opener);
+          }
+          state.opener = null;
+        } else {
+          elFocus(html);
         }
 
         onAfterClosed();
@@ -204,12 +266,37 @@ export default {
       }, speed);
     };
 
+    const loopFocusBefore = () => {
+      const lastChild = (() => {
+        const arr = layerContainer.value.querySelectorAll(':last-child');
+
+        if (arr.length) {
+          return arr[arr.length - 1];
+        } else {
+          return null;
+        }
+      })();
+
+      if (lastChild) {
+        elFocus(lastChild);
+      } else {
+        layerContainer.value.focus();
+      }
+    };
+
+    const loopFocusAfter = () => {
+      layerContainer.value.focus();
+    };
+
     return {
       state,
       customClassNames,
       layer,
+      layerContainer,
       open,
       close,
+      loopFocusBefore,
+      loopFocusAfter,
     };
   },
 };
@@ -226,12 +313,32 @@ export default {
       },
       customClassNames.wrap,
     ]"
-    :style="`display: ${state.display}; z-index: ${state.zIndex}; transition-duration: ${state.speed}ms;`"
+    :style="`display: ${state.display}; z-index: ${
+      state.zIndex
+    }; transition-duration: ${state.speed}ms; visibility: ${
+      state.opened ? 'visible' : 'hidden'
+    };`"
+    :aria-hidden="state.opened ? 'false' : 'true'"
+    :aria-modal="state.opened ? 'true' : null"
+    :hidden="state.opened ? null : ''"
   >
-    <div :class="[$style['layer__container'], customClassNames.container]">
+    <div
+      :class="[$style['layer__loop'], customClassNames.loop]"
+      tabindex="0"
+      @focus="loopFocusBefore"
+    ></div>
+    <div
+      ref="layerContainer"
+      :class="[$style['layer__container'], customClassNames.container]"
+      :tabindex="state.opened ? '0' : null"
+    >
       <slot :open="open" :close="close" />
     </div>
-    <div ref="loopFocus" tabindex="0"></div>
+    <div
+      :class="[$style['layer__loop'], customClassNames.loop]"
+      tabindex="0"
+      @focus="loopFocusAfter"
+    ></div>
   </div>
 </template>
 

@@ -1,32 +1,26 @@
 <script>
 import { computed } from 'vue';
 
+const defaultClassNames = () => ({
+  wrap: '',
+  head: '',
+  body: '',
+  foot: '',
+});
+
 export default {
   props: {
     classNames: {
       Type: Object,
       default() {
-        return {
-          wrap: '',
-          head: '',
-          body: '',
-          foot: '',
-        };
+        return defaultClassNames();
       },
     },
   },
   setup(props, context) {
     const customClassNames = computed(() => {
       const { classNames } = props;
-      return Object.assign(
-        {
-          wrap: '',
-          head: '',
-          body: '',
-          foot: '',
-        },
-        classNames
-      );
+      return Object.assign(defaultClassNames(), classNames);
     });
 
     const isSlot = computed(() => {

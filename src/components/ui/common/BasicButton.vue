@@ -2,6 +2,12 @@
 import { computed } from 'vue';
 import { RouterLink } from 'vue-router';
 
+const defaultClassNames = () => ({
+  wrap: '',
+  text: '',
+  icon: '',
+});
+
 export default {
   props: {
     tag: {
@@ -15,11 +21,7 @@ export default {
     classNames: {
       Type: Object,
       default() {
-        return {
-          wrap: '',
-          text: '',
-          icon: '',
-        };
+        return defaultClassNames();
       },
     },
     size: {
@@ -68,14 +70,7 @@ export default {
 
     const customClassNames = computed(() => {
       const { classNames } = props;
-      return Object.assign(
-        {
-          wrap: '',
-          text: '',
-          icon: '',
-        },
-        classNames
-      );
+      return Object.assign(defaultClassNames(), classNames);
     });
 
     return {

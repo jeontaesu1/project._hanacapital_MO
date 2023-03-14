@@ -43,4 +43,9 @@
     display: block;
     opacity: 1;
   }
+
+  &__loop {
+    position: absolute;
+    z-index: -1;
+  }
 }
