@@ -1,7 +1,4 @@
 <script>
-import { onMounted, onUnmounted } from 'vue';
-import { useUiHeaderStore } from '@/stores/ui/header';
-
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import IconAdd from '@/assets/images/icon/add.svg?component';
@@ -11,23 +8,6 @@ export default {
     PageContents,
     BasicButton,
     IconAdd,
-  },
-  setup() {
-    const store = {
-      ui: {
-        header: useUiHeaderStore(),
-      },
-    };
-
-    onMounted(() => {
-      store.ui.header.setTitle(() => 'Components');
-      store.ui.header.setRightButtons(() => []);
-    });
-
-    onUnmounted(() => {
-      store.ui.header.setTitle();
-      store.ui.header.setRightButtons();
-    });
   },
 };
 </script>
@@ -267,5 +247,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/GuideComponent.scss';
+@import '@/assets/scss/views/uiGuide/GuideComponent.scss';
 </style>

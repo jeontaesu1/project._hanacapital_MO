@@ -123,7 +123,11 @@ export default {
     </BasicButton>
 
     <template v-slot:foot>
-      <ButtonList>
+      <ButtonList
+        :classNames="{
+          wrap: 'row-margin-none',
+        }"
+      >
         <ButtonListItem>
           <BasicButton>Button 1</BasicButton>
         </ButtonListItem>
