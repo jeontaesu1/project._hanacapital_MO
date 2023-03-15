@@ -127,11 +127,12 @@ export default {
         :classNames="{
           wrap: 'row-margin-none',
         }"
+        align="full"
       >
         <ButtonListItem>
-          <BasicButton>Button 1</BasicButton>
+          <BasicButton line="true" theme="quaternary">Button 1</BasicButton>
         </ButtonListItem>
-        <ButtonListItem>
+        <ButtonListItem flex="none">
           <BasicButton>Button 2</BasicButton>
         </ButtonListItem>
       </ButtonList>

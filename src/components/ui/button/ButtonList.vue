@@ -40,7 +40,15 @@ export default {
 </script>
 
 <template>
-  <div :class="[$style['buttons'], customClassNames.wrap]">
+  <div
+    :class="[
+      $style['buttons'],
+      {
+        [$style[`buttons--${align}`]]: align,
+      },
+      customClassNames.wrap,
+    ]"
+  >
     <ul :class="[$style['buttons__list'], customClassNames.list]">
       <slot />
     </ul>

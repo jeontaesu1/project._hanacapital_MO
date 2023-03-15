@@ -31,6 +31,14 @@
     justify-content: center;
   }
 
+  &--full &__list {
+    display: block;
+  }
+  &--full &__list &__item + &__item {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+
   &__item--flex-none,
   &--left &__item,
   &--right &__item,
