@@ -23,10 +23,6 @@ export default {
       return Object.assign(defaultClassNames(), classNames);
     });
 
-    const isSlot = computed(() => {
-      return Boolean(context.slots.default);
-    });
-
     const isHead = computed(() => {
       return Boolean(context.slots.head);
     });
@@ -37,7 +33,6 @@ export default {
 
     return {
       customClassNames,
-      isSlot,
       isHead,
       isFoot,
     };
@@ -53,10 +48,7 @@ export default {
     >
       <slot name="head" />
     </div>
-    <div
-      v-if="isSlot"
-      :class="[$style['page-contents__body'], customClassNames.body]"
-    >
+    <div :class="[$style['page-contents__body'], customClassNames.body]">
       <slot />
     </div>
     <div

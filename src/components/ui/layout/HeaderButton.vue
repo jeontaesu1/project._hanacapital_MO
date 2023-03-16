@@ -2,12 +2,12 @@
 import { computed } from 'vue';
 import { RouterLink, useRouter } from 'vue-router';
 
-import IconBack from '@/assets/images/common/header-back.svg?component';
-import IconPush from '@/assets/images/common/header-alarm.svg?component';
-import IconMenu from '@/assets/images/common/header-menu.svg?component';
-import IconSearch from '@/assets/images/common/header-search.svg?component';
-import IconShare from '@/assets/images/common/header-share.svg?component';
-import IconClose from '@/assets/images/common/header-close.svg?component';
+import IconBack from '@/assets/images/common/back-left.svg?component';
+import IconPush from '@/assets/images/common/alarm.svg?component';
+import IconMenu from '@/assets/images/common/menu.svg?component';
+import IconSearch from '@/assets/images/common/search.svg?component';
+import IconShare from '@/assets/images/common/share.svg?component';
+import IconClose from '@/assets/images/common/close.svg?component';
 
 export default {
   inject: ['$style'],

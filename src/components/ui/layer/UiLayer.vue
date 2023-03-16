@@ -44,9 +44,9 @@ const elFocus = (el) => {
 
 export default {
   props: {
-    full: {
-      type: Boolean,
-      default: false,
+    type: {
+      type: String,
+      default: null,
     },
     classNames: {
       Type: Object,
@@ -110,7 +110,7 @@ export default {
     const open = (opener = null, speed = defaultSpeed) => {
       if (state.opened) return;
 
-      const { onBeforeOpened, onOpened, onAfterOpened } = props;
+      const { type, onBeforeOpened, onOpened, onAfterOpened } = props;
 
       onBeforeOpened();
 
@@ -156,7 +156,7 @@ export default {
       clearTimeout(timer);
       store.ui.scrollBlock.block();
       state.speed = speed;
-      state.display = 'block';
+      state.display = type && type.match(/toast|toast-fix/) ? 'flex' : 'block';
       state.zIndex = store.ui.layer.zIndex;
       store.ui.layer.updateZIndex();
 
@@ -308,7 +308,7 @@ export default {
     :class="[
       $style['layer'],
       {
-        [$style['layer--full']]: full,
+        [$style[`layer--${type}`]]: type,
         [$style['layer--opened']]: state.opened,
       },
       customClassNames.wrap,
@@ -330,6 +330,7 @@ export default {
     <div
       ref="layerContainer"
       :class="[$style['layer__container'], customClassNames.container]"
+      :style="`transition-duration: ${state.speed}ms;`"
       :tabindex="state.opened ? '0' : null"
     >
       <slot :open="open" :close="close" />
