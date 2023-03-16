@@ -11,7 +11,7 @@ import AlertPopup from '@/components/ui/layer/AlertPopup.vue';
 
 const defaultOptions = () => ({
   title: '',
-  message: '',
+  message: [''],
   buttons: [{}],
 });
 const defaultButtonsOptions = () => ({
@@ -35,9 +35,11 @@ export default {
     ButtonListItem,
   },
   setup() {
+    const initOptions = defaultOptions();
+
     const state = reactive({
-      title: '',
-      message: [''],
+      title: initOptions.title,
+      message: initOptions.message,
       buttons: [defaultButtonsOptions()],
       onAfterClosed: () => {},
     });
@@ -70,7 +72,15 @@ export default {
     const buttonClick = (i) => {
       const { buttons } = state;
 
-      state.onAfterClosed = buttons[i].closeAfterCallback;
+      state.onAfterClosed = () => {
+        const resetOptions = defaultOptions();
+
+        buttons[i].closeAfterCallback();
+
+        state.title = resetOptions.title;
+        state.message = resetOptions.message;
+        state.buttons = [defaultButtonsOptions()];
+      };
 
       nextTick(() => {
         buttons[i].callback(close);

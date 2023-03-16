@@ -270,6 +270,8 @@ export default {
         <PopupText>// contents</PopupText>
         <PopupText>// contents</PopupText>
 
+        <BasicButton @click="alertOpenTest001">얼럿 열기</BasicButton>
+
         <template v-slot:foot>
           <ButtonList
             :classNames="{
