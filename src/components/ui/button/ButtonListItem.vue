@@ -14,6 +14,11 @@ export default {
         return defaultClassNames();
       },
     },
+    flex: {
+      // none, flexible
+      Type: String,
+      default: null,
+    },
   },
   setup(props) {
     const customClassNames = computed(() => {
@@ -29,7 +34,16 @@ export default {
 </script>
 
 <template>
-  <li :class="[$style['buttons__item'], customClassNames.item]">
+  <li
+    :class="[
+      $style['buttons__item'],
+      {
+        [$style['buttons__item--flex-none']]: flex === 'none',
+        [$style['buttons__item--flexible']]: flex === 'flexible',
+      },
+      customClassNames.item,
+    ]"
+  >
     <slot />
   </li>
 </template>
