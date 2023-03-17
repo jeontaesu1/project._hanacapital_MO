@@ -1,12 +1,11 @@
 <script>
-import { computed } from 'vue';
+import { computed, inject } from 'vue';
 
 const defaultClassNames = () => ({
   item: '',
 });
 
 export default {
-  inject: ['$style'],
   props: {
     classNames: {
       Type: Object,
@@ -21,12 +20,15 @@ export default {
     },
   },
   setup(props) {
+    const styleModule = inject('styleModule');
+
     const customClassNames = computed(() => {
       const { classNames } = props;
       return Object.assign(defaultClassNames(), classNames);
     });
 
     return {
+      styleModule,
       customClassNames,
     };
   },
@@ -36,10 +38,10 @@ export default {
 <template>
   <li
     :class="[
-      $style['buttons__item'],
+      styleModule['buttons__item'],
       {
-        [$style['buttons__item--flex-none']]: flex === 'none',
-        [$style['buttons__item--flexible']]: flex === 'flexible',
+        [styleModule['buttons__item--flex-none']]: flex === 'none',
+        [styleModule['buttons__item--flexible']]: flex === 'flexible',
       },
       customClassNames.item,
     ]"

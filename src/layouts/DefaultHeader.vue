@@ -6,6 +6,7 @@ import {
   onUpdated,
   onUnmounted,
   useCssModule,
+  provide,
 } from 'vue';
 
 import { useUiCommonStore } from '@/stores/ui/common';
@@ -15,13 +16,6 @@ import { useUiHeaderStore } from '@/stores/ui/header';
 import HeaderButton from '@/components/ui/layout/HeaderButton.vue';
 
 export default {
-  provide() {
-    const $style = useCssModule();
-
-    return {
-      $style,
-    };
-  },
   components: {
     HeaderButton,
   },
@@ -105,6 +99,8 @@ export default {
       window.removeEventListener('scroll', scroll);
       window.removeEventListener('resize', resize);
     });
+
+    provide('styleModule', useCssModule());
 
     return {
       store,

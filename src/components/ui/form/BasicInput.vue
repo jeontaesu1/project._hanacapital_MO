@@ -1,13 +1,148 @@
 <script>
+import { ref, reactive, computed } from 'vue';
+
+import IconDelete from '@/assets/images/icon/text-delete.svg?component';
+
+const defaultClassNames = () => ({
+  wrap: '',
+  cell: '',
+  input: '',
+  delete: '',
+  deleteText: '',
+});
+
 export default {
-  setup() {
-    return {};
+  components: {
+    IconDelete,
+  },
+  inheritAttrs: false,
+  props: {
+    classNames: {
+      Type: Object,
+      default() {
+        return defaultClassNames();
+      },
+    },
+    type: {
+      Type: String,
+      default: 'text',
+    },
+    onDelete: {
+      type: Function,
+      default: () => {},
+    },
+    useDelete: {
+      Type: Boolean,
+      default: true,
+    },
+    align: {
+      Type: String,
+      default: null,
+    },
+  },
+  setup(props) {
+    let timer = null;
+
+    const state = reactive({
+      isFocus: false,
+      isInputed: false,
+    });
+
+    const input = ref(null);
+
+    const customClassNames = computed(() => {
+      const { classNames } = props;
+      return Object.assign(defaultClassNames(), classNames);
+    });
+
+    const getInputElement = () => {
+      return input.value;
+    };
+
+    const focus = () => {
+      input.value.focus();
+    };
+
+    const deleteAction = () => {
+      const { onDelete } = props;
+      input.value.value = '';
+      input.value.focus();
+      onDelete();
+    };
+
+    const onfocusin = () => {
+      clearTimeout(timer);
+      state.isFocus = true;
+      state.isInputed = input.value.value.length ? true : false;
+    };
+
+    const onfocusout = () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        state.isFocus = false;
+        clearTimeout(timer);
+      }, 50);
+    };
+
+    const onKeyup = () => {
+      state.isInputed = input.value.value.length ? true : false;
+    };
+
+    return {
+      state,
+      input,
+      customClassNames,
+      getInputElement,
+      focus,
+      deleteAction,
+      onfocusin,
+      onKeyup,
+      onfocusout,
+    };
   },
 };
 </script>
 
 <template>
-  <input type="text" />
+  <div
+    :class="[
+      $style['input'],
+      {
+        [$style['input--focus']]: state.isFocus,
+        [$style['input--inputed']]: state.isInputed,
+      },
+      customClassNames.wrap,
+    ]"
+    @focusin="onfocusin"
+    @focusout="onfocusout"
+  >
+    <div :class="[$style['input__cell'], customClassNames.cell]">
+      <input
+        ref="input"
+        v-bind="$attrs"
+        :type="type"
+        :class="[
+          $style['input__input'],
+          {
+            [$style[`input__input--${align}`]]: align,
+          },
+          customClassNames.input,
+        ]"
+        @keyup="onKeyup"
+      />
+    </div>
+    <button
+      type="button"
+      v-if="useDelete"
+      :class="[$style['input__delete'], customClassNames.delete]"
+      @click="deleteAction"
+    >
+      <IconDelete />
+      <span :class="[$style['input__delete-text'], customClassNames.deleteText]"
+        >입력 내용 지우기</span
+      >
+    </button>
+  </div>
 </template>
 
 <style lang="scss" module>

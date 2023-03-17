@@ -11,6 +11,7 @@ const defaultClassNames = () => ({
 });
 
 export default {
+  inheritAttrs: false,
   props: {
     type: {
       type: String,

@@ -1,12 +1,11 @@
 <script>
-import { computed } from 'vue';
+import { computed, inject } from 'vue';
 
 const defaultClassNames = () => ({
   title: '',
 });
 
 export default {
-  inject: ['$style'],
   props: {
     classNames: {
       Type: Object,
@@ -16,12 +15,15 @@ export default {
     },
   },
   setup(props) {
+    const styleModule = inject('styleModule');
+
     const customClassNames = computed(() => {
       const { classNames } = props;
       return Object.assign(defaultClassNames(), classNames);
     });
 
     return {
+      styleModule,
       customClassNames,
     };
   },
@@ -29,7 +31,7 @@ export default {
 </script>
 
 <template>
-  <h2 :class="[$style['popup__title'], customClassNames.title]">
+  <h2 :class="[styleModule['popup__title'], customClassNames.title]">
     <slot />
   </h2>
 </template>

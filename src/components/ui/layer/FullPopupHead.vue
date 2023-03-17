@@ -1,5 +1,5 @@
 <script>
-import { computed } from 'vue';
+import { computed, inject } from 'vue';
 
 const defaultClassNames = () => ({
   wrap: '',
@@ -9,7 +9,6 @@ const defaultClassNames = () => ({
 });
 
 export default {
-  inject: ['$style'],
   props: {
     classNames: {
       Type: Object,
@@ -19,12 +18,15 @@ export default {
     },
   },
   setup(props) {
+    const styleModule = inject('styleModule');
+
     const customClassNames = computed(() => {
       const { classNames } = props;
       return Object.assign(defaultClassNames(), classNames);
     });
 
     return {
+      styleModule,
       customClassNames,
     };
   },
@@ -32,14 +34,16 @@ export default {
 </script>
 
 <template>
-  <div :class="[$style['popup__header'], customClassNames.wrap]">
-    <div :class="[$style['popup__header-left'], customClassNames.left]">
+  <div :class="[styleModule['popup__header'], customClassNames.wrap]">
+    <div :class="[styleModule['popup__header-left'], customClassNames.left]">
       <slot name="left" />
     </div>
-    <div :class="[$style['popup__header-center'], customClassNames.center]">
+    <div
+      :class="[styleModule['popup__header-center'], customClassNames.center]"
+    >
       <slot />
     </div>
-    <div :class="[$style['popup__header-right'], customClassNames.right]">
+    <div :class="[styleModule['popup__header-right'], customClassNames.right]">
       <slot name="right" />
     </div>
   </div>

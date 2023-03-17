@@ -1,8 +1,8 @@
 <script>
-import { computed, inject } from 'vue';
+import { computed } from 'vue';
 
 const defaultClassNames = () => ({
-  text: '',
+  wrap: '',
 });
 
 export default {
@@ -15,15 +15,12 @@ export default {
     },
   },
   setup(props) {
-    const styleModule = inject('styleModule');
-
     const customClassNames = computed(() => {
       const { classNames } = props;
       return Object.assign(defaultClassNames(), classNames);
     });
 
     return {
-      styleModule,
       customClassNames,
     };
   },
@@ -31,7 +28,9 @@ export default {
 </script>
 
 <template>
-  <p :class="[styleModule['popup__text'], customClassNames.text]">
-    <slot />
-  </p>
+  <p :class="[$style['invalid-message'], customClassNames.wrap]"><slot /></p>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/components/ui/form/FormInvalidMessage.scss';
+</style>

@@ -9,6 +9,7 @@ const defaultClassNames = () => ({
 });
 
 export default {
+  inheritAttrs: false,
   props: {
     tag: {
       Type: String,

@@ -1,5 +1,5 @@
 <script>
-import { computed } from 'vue';
+import { computed, inject } from 'vue';
 
 const defaultClassNames = () => ({
   wrap: '',
@@ -8,7 +8,6 @@ const defaultClassNames = () => ({
 });
 
 export default {
-  inject: ['$style'],
   props: {
     classNames: {
       Type: Object,
@@ -18,6 +17,8 @@ export default {
     },
   },
   setup(props, context) {
+    const styleModule = inject('styleModule');
+
     const customClassNames = computed(() => {
       const { classNames } = props;
       return Object.assign(defaultClassNames(), classNames);
@@ -28,6 +29,7 @@ export default {
     });
 
     return {
+      styleModule,
       customClassNames,
       isRight,
     };
@@ -36,13 +38,15 @@ export default {
 </script>
 
 <template>
-  <div :class="[$style['popup__header'], customClassNames.wrap]">
-    <div :class="[$style['popup__header-center'], customClassNames.center]">
+  <div :class="[styleModule['popup__header'], customClassNames.wrap]">
+    <div
+      :class="[styleModule['popup__header-center'], customClassNames.center]"
+    >
       <slot />
     </div>
     <div
       v-if="isRight"
-      :class="[$style['popup__header-right'], customClassNames.right]"
+      :class="[styleModule['popup__header-right'], customClassNames.right]"
     >
       <slot name="right" />
     </div>

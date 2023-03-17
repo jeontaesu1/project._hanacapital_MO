@@ -1,9 +1,8 @@
 <script>
-import { computed, useCssModule, provide } from 'vue';
+import { computed, watch, inject } from 'vue';
 
 const defaultClassNames = () => ({
   wrap: '',
-  list: '',
 });
 
 export default {
@@ -14,18 +13,27 @@ export default {
         return defaultClassNames();
       },
     },
-    align: {
-      Type: String,
-      default: null,
+    error: {
+      Type: Boolean,
+      default: false,
     },
   },
   setup(props) {
+    const formListItem = inject('formListItem', {});
+
     const customClassNames = computed(() => {
       const { classNames } = props;
       return Object.assign(defaultClassNames(), classNames);
     });
 
-    provide('styleModule', useCssModule());
+    watch(
+      () => props.error,
+      (cur) => {
+        if (formListItem && formListItem.error) {
+          formListItem.error(cur);
+        }
+      }
+    );
 
     return {
       customClassNames,
@@ -37,19 +45,20 @@ export default {
 <template>
   <div
     :class="[
-      $style['buttons'],
+      $style['invalid'],
       {
-        [$style[`buttons--${align}`]]: align,
+        [$style['invalid--error']]: error,
       },
       customClassNames.wrap,
     ]"
   >
-    <ul :class="[$style['buttons__list'], customClassNames.list]">
-      <slot />
-    </ul>
+    <slot
+      :messageClass="$style['invalid__message']"
+      :helpClass="$style['invalid__help']"
+    />
   </div>
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/components/ui/button/ButtonList.scss';
+@import '@/assets/scss/components/ui/form/FormInvalid.scss';
 </style>

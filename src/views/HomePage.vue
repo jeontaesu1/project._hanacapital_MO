@@ -1,5 +1,5 @@
 <script>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, reactive, onMounted, onUnmounted } from 'vue';
 import { RouterLink } from 'vue-router';
 import { useUiCommonStore } from '@/stores/ui/common';
 
@@ -18,6 +18,14 @@ import ToastPopup from '@/components/ui/layer/ToastPopup.vue';
 import ToastPopupHead from '@/components/ui/layer/ToastPopupHead.vue';
 import AlertPopup from '@/components/ui/layer/AlertPopup.vue';
 import AlertSystem from '@/components/ui/layer/AlertSystem.vue';
+import InputBlock from '@/components/ui/form/InputBlock.vue';
+import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
+import BasicInput from '@/components/ui/form/BasicInput.vue';
+import FormList from '@/components/ui/form/FormList.vue';
+import FormListItem from '@/components/ui/form/FormListItem.vue';
+import FormInvalid from '@/components/ui/form/FormInvalid.vue';
+import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
+import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 
 export default {
   components: {
@@ -37,6 +45,14 @@ export default {
     AlertPopup,
     ButtonList,
     ButtonListItem,
+    InputBlock,
+    InputBlockCell,
+    BasicInput,
+    FormList,
+    FormListItem,
+    FormInvalid,
+    FormInvalidMessage,
+    FormHelpText,
   },
   setup() {
     const store = {
@@ -45,11 +61,16 @@ export default {
       },
     };
 
+    const state = reactive({
+      testError001: false,
+    });
+
     const alert = ref(null);
     const layerTest001 = ref(null);
     const layerTest002 = ref(null);
     const layerTest003 = ref(null);
     const layerTest004 = ref(null);
+    const testInput = ref(null);
 
     const alertOpen = (options) => {
       alert.value.open(options);
@@ -97,6 +118,14 @@ export default {
       });
     };
 
+    const testInputEvent = (e = {}) => {
+      console.log(e.type, e.target, testInput.value.getInputElement());
+    };
+
+    const testErrorUpdate001 = (val) => {
+      state.testError001 = val;
+    };
+
     onMounted(() => {
       store.ui.common.setRootClassName('page-home');
     });
@@ -106,17 +135,21 @@ export default {
     });
 
     return {
+      state,
       alert,
       layerTest001,
       layerTest002,
       layerTest003,
       layerTest004,
+      testInput,
       alertOpen,
       layerOpenTest001,
       layerOpenTest002,
       layerOpenTest003,
       layerOpenTest004,
       alertOpenTest001,
+      testInputEvent,
+      testErrorUpdate001,
     };
   },
 };
@@ -311,6 +344,107 @@ export default {
 
     <BasicButton @click="alertOpenTest001">얼럿 열기</BasicButton>
 
+    <FormList>
+      <FormListItem
+        titleText="Label"
+        titleOptionalText="Optional"
+        :require="true"
+        target="#testInput001"
+      >
+        <FormInvalid v-slot="invalidSlotProps" :error="state.testError001">
+          <InputBlock :error="state.testError001">
+            <template v-slot:innerLeft>il</template>
+            <InputBlockCell :flexible="true">
+              <BasicInput
+                ref="testInput"
+                id="testInput001"
+                @keyup="testInputEvent"
+                @focus="testInputEvent"
+                @blur="testInputEvent"
+              />
+            </InputBlockCell>
+            <InputBlockCell type="sub">-</InputBlockCell>
+            <InputBlockCell :flexible="true">
+              <BasicInput
+                type="number"
+                :useDelete="false"
+                align="right"
+                @keyup="testInputEvent"
+                @focus="testInputEvent"
+                @blur="testInputEvent"
+              />
+            </InputBlockCell>
+            <template v-slot:innerRight>ir</template>
+            <template v-slot:right>r</template>
+          </InputBlock>
+          <FormInvalidMessage
+            :classNames="{ wrap: invalidSlotProps.messageClass }"
+          >
+            Error Message
+          </FormInvalidMessage>
+          <FormHelpText :classNames="{ wrap: invalidSlotProps.helpClass }">
+            Helper Text
+          </FormHelpText>
+        </FormInvalid>
+      </FormListItem>
+
+      <FormListItem
+        titleText="Label"
+        titleOptionalText="Optional"
+        :require="true"
+        target="#testInput002"
+      >
+        <InputBlock>
+          <InputBlockCell :flexible="true">
+            <BasicInput
+              ref="testInput"
+              id="testInput002"
+              @keyup="testInputEvent"
+              @focus="testInputEvent"
+              @blur="testInputEvent"
+            />
+          </InputBlockCell>
+          <InputBlockCell type="sub">-</InputBlockCell>
+          <InputBlockCell :flexible="true">
+            <BasicInput
+              type="number"
+              :useDelete="false"
+              align="right"
+              @keyup="testInputEvent"
+              @focus="testInputEvent"
+              @blur="testInputEvent"
+            />
+          </InputBlockCell>
+        </InputBlock>
+      </FormListItem>
+    </FormList>
+
+    <InputBlock>
+      <template v-slot:left>l</template>
+      <template v-slot:innerLeft>il</template>
+      <InputBlockCell :flexible="true">
+        <BasicInput
+          ref="testInput"
+          @keyup="testInputEvent"
+          @focus="testInputEvent"
+          @blur="testInputEvent"
+        />
+      </InputBlockCell>
+      <InputBlockCell type="sub">-</InputBlockCell>
+      <InputBlockCell :flexible="true">
+        <BasicInput
+          type="number"
+          :useDelete="false"
+          align="right"
+          @keyup="testInputEvent"
+          @focus="testInputEvent"
+          @blur="testInputEvent"
+        />
+      </InputBlockCell>
+      <template v-slot:innerRight>ir</template>
+      <template v-slot:right>r</template>
+    </InputBlock>
+
     <template v-slot:foot>
       <ButtonList
         :classNames="{
@@ -319,10 +453,15 @@ export default {
         align="full"
       >
         <ButtonListItem>
-          <BasicButton :line="true" theme="quaternary">Button 1</BasicButton>
+          <BasicButton
+            :line="true"
+            theme="quaternary"
+            @click="testErrorUpdate001(true)"
+            >Button 1</BasicButton
+          >
         </ButtonListItem>
         <ButtonListItem flex="none">
-          <BasicButton>Button 2</BasicButton>
+          <BasicButton @click="testErrorUpdate001(false)">Button 2</BasicButton>
         </ButtonListItem>
       </ButtonList>
     </template>

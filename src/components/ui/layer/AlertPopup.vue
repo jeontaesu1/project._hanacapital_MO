@@ -1,5 +1,5 @@
 <script>
-import { computed, useCssModule } from 'vue';
+import { computed, useCssModule, provide } from 'vue';
 
 const defaultClassNames = () => ({
   wrap: '',
@@ -9,13 +9,6 @@ const defaultClassNames = () => ({
 });
 
 export default {
-  provide() {
-    const $style = useCssModule();
-
-    return {
-      $style,
-    };
-  },
   props: {
     classNames: {
       Type: Object,
@@ -46,6 +39,8 @@ export default {
     const isFoot = computed(() => {
       return Boolean(context.slots.foot);
     });
+
+    provide('styleModule', useCssModule());
 
     return {
       customClassNames,

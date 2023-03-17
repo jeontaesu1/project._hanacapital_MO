@@ -1,20 +1,19 @@
 <script>
-import { computed, useCssModule } from 'vue';
+import { computed, useCssModule, reactive, provide, inject } from 'vue';
+
+import IconError from '@/assets/images/icon/text-error.svg?component';
 
 const defaultClassNames = () => ({
   wrap: '',
   left: '',
   center: '',
   right: '',
+  errorIcon: '',
 });
 
 export default {
-  provide() {
-    const $style = useCssModule();
-
-    return {
-      $style,
-    };
+  components: {
+    IconError,
   },
   props: {
     classNames: {
@@ -23,8 +22,21 @@ export default {
         return defaultClassNames();
       },
     },
+    error: {
+      Type: Boolean,
+      default: false,
+    },
   },
   setup(props, context) {
+    let timer = null;
+
+    const state = reactive({
+      isFocus: false,
+    });
+
+    const formListItem = inject('formListItem', {});
+    const formInvalidError = inject('formInvalidError', false);
+
     const customClassNames = computed(() => {
       const { classNames } = props;
       return Object.assign(defaultClassNames(), classNames);
@@ -38,10 +50,48 @@ export default {
       return Boolean(context.slots.right);
     });
 
+    const isInnerLeft = computed(() => {
+      return Boolean(context.slots.innerLeft);
+    });
+
+    const isInnerRight = computed(() => {
+      return Boolean(context.slots.innerRight);
+    });
+
+    const onfocusin = () => {
+      clearTimeout(timer);
+      state.isFocus = true;
+
+      if (formListItem && formListItem.onfocusin) {
+        formListItem.onfocusin();
+      }
+    };
+
+    const onfocusout = () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        state.isFocus = false;
+        clearTimeout(timer);
+      }, 50);
+
+      if (formListItem && formListItem.onfocusout) {
+        formListItem.onfocusout();
+      }
+    };
+
+    provide('styleModule', useCssModule());
+
     return {
+      state,
+      formListItem,
+      formInvalidError,
       customClassNames,
       isLeft,
       isRight,
+      isInnerLeft,
+      isInnerRight,
+      onfocusin,
+      onfocusout,
     };
   },
 };
@@ -55,8 +105,41 @@ export default {
     >
       <slot name="left" />
     </div>
-    <div :class="[$style['input-block__center'], customClassNames.center]">
+    <div
+      :class="[
+        $style['input-block__center'],
+        {
+          [$style['input-block__center--focus']]: state.isFocus,
+          [$style['input-block__center--error']]: error,
+        },
+        customClassNames.center,
+        formListItem.areaClass,
+      ]"
+      @focusin="onfocusin"
+      @focusout="onfocusout"
+    >
+      <div
+        v-if="isInnerLeft"
+        :class="[$style['input-block__inner-left'], customClassNames.left]"
+      >
+        <slot name="innerLeft" />
+      </div>
       <slot />
+      <div
+        :class="[
+          $style['input-block__cell'],
+          $style['input-block__cell--error-icon'],
+          customClassNames.errorIcon,
+        ]"
+      >
+        <IconError />
+      </div>
+      <div
+        v-if="isInnerRight"
+        :class="[$style['input-block__inner-right'], customClassNames.left]"
+      >
+        <slot name="innerRight" />
+      </div>
     </div>
     <div
       v-if="isRight"

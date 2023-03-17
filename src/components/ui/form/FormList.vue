@@ -1,8 +1,9 @@
 <script>
-import { computed, inject } from 'vue';
+import { computed, useCssModule, provide } from 'vue';
 
 const defaultClassNames = () => ({
-  text: '',
+  wrap: '',
+  list: '',
 });
 
 export default {
@@ -15,15 +16,14 @@ export default {
     },
   },
   setup(props) {
-    const styleModule = inject('styleModule');
-
     const customClassNames = computed(() => {
       const { classNames } = props;
       return Object.assign(defaultClassNames(), classNames);
     });
 
+    provide('styleModule', useCssModule());
+
     return {
-      styleModule,
       customClassNames,
     };
   },
@@ -31,7 +31,13 @@ export default {
 </script>
 
 <template>
-  <p :class="[styleModule['popup__text'], customClassNames.text]">
-    <slot />
-  </p>
+  <div :class="[$style['form'], customClassNames.wrap]">
+    <dl :class="[$style['form__list'], customClassNames.list]">
+      <slot />
+    </dl>
+  </div>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/components/ui/form/FormList.scss';
+</style>
