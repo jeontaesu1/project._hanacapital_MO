@@ -259,6 +259,10 @@ export default {
           state.opener = null;
         } else {
           elFocus(html);
+          window.scrollTo(
+            store.ui.scrollBlock.scrollLeft,
+            store.ui.scrollBlock.scrollTop
+          );
         }
 
         onAfterClosed();

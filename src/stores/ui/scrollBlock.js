@@ -33,14 +33,15 @@ export const useUiScrollBlockStore = defineStore('uiScrollBlock', {
     clear() {
       const html = document.getElementsByTagName('html')[0];
       const wrap = document.getElementById('app');
+      const { scrollTop, scrollLeft } = this;
 
       if (this.isBlocking) {
         html.classList.remove(this.classNames.block);
 
         wrap.scrollTop = 0;
-        html.scrollTop = this.scrollTop;
         wrap.scrollLeft = 0;
-        html.scrollLeft = this.scrollLeft;
+
+        window.scrollTo(scrollLeft, scrollTop);
 
         this.isBlocking = false;
       }
