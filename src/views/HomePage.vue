@@ -26,6 +26,7 @@ import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import FormHelpText from '@/components/ui/form/FormHelpText.vue';
+import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 
 export default {
   components: {
@@ -53,6 +54,7 @@ export default {
     FormInvalid,
     FormInvalidMessage,
     FormHelpText,
+    BasicSelect,
   },
   setup() {
     const store = {
@@ -71,6 +73,7 @@ export default {
     const layerTest003 = ref(null);
     const layerTest004 = ref(null);
     const testInput = ref(null);
+    const testSelect001 = ref(null);
 
     const alertOpen = (options) => {
       alert.value.open(options);
@@ -124,6 +127,8 @@ export default {
 
     const testErrorUpdate001 = (val) => {
       state.testError001 = val;
+
+      testSelect001.value.setValue('4');
     };
 
     onMounted(() => {
@@ -142,6 +147,7 @@ export default {
       layerTest003,
       layerTest004,
       testInput,
+      testSelect001,
       alertOpen,
       layerOpenTest001,
       layerOpenTest002,
@@ -351,7 +357,7 @@ export default {
         :require="true"
         target="#testInput001"
       >
-        <FormInvalid v-slot="invalidSlotProps" :error="state.testError001">
+        <FormInvalid :error="state.testError001">
           <InputBlock :error="state.testError001">
             <template v-slot:innerLeft>il</template>
             <InputBlockCell :flexible="true">
@@ -377,14 +383,8 @@ export default {
             <template v-slot:innerRight>ir</template>
             <template v-slot:right>r</template>
           </InputBlock>
-          <FormInvalidMessage
-            :classNames="{ wrap: invalidSlotProps.messageClass }"
-          >
-            Error Message
-          </FormInvalidMessage>
-          <FormHelpText :classNames="{ wrap: invalidSlotProps.helpClass }">
-            Helper Text
-          </FormHelpText>
+          <FormInvalidMessage>Error Message</FormInvalidMessage>
+          <FormHelpText>Helper Text</FormHelpText>
         </FormInvalid>
       </FormListItem>
 
@@ -393,12 +393,51 @@ export default {
         titleOptionalText="Optional"
         :require="true"
         target="#testInput002"
+        :disabled="true"
+      >
+        <FormInvalid :error="state.testError001">
+          <InputBlock :error="state.testError001" :disabled="true">
+            <InputBlockCell :flexible="true">
+              <BasicInput
+                ref="testInput"
+                id="testInput002"
+                @keyup="testInputEvent"
+                @focus="testInputEvent"
+                @blur="testInputEvent"
+                value="value"
+                :disabled="true"
+              />
+            </InputBlockCell>
+            <InputBlockCell type="sub">-</InputBlockCell>
+            <InputBlockCell :flexible="true">
+              <BasicInput
+                type="number"
+                :useDelete="false"
+                align="right"
+                @keyup="testInputEvent"
+                @focus="testInputEvent"
+                @blur="testInputEvent"
+                value="1234"
+                :readonly="true"
+              />
+            </InputBlockCell>
+          </InputBlock>
+          <FormInvalidMessage>Error Message</FormInvalidMessage>
+          <FormHelpText>Helper Text</FormHelpText>
+        </FormInvalid>
+      </FormListItem>
+
+      <FormListItem
+        titleText="Label"
+        titleOptionalText="Optional"
+        :require="true"
+        target="#testInputButton003"
+        :force-focus="true"
       >
         <InputBlock>
           <InputBlockCell :flexible="true">
             <BasicInput
               ref="testInput"
-              id="testInput002"
               @keyup="testInputEvent"
               @focus="testInputEvent"
               @blur="testInputEvent"
@@ -406,13 +445,49 @@ export default {
           </InputBlockCell>
           <InputBlockCell type="sub">-</InputBlockCell>
           <InputBlockCell :flexible="true">
-            <BasicInput
-              type="number"
-              :useDelete="false"
-              align="right"
-              @keyup="testInputEvent"
-              @focus="testInputEvent"
-              @blur="testInputEvent"
+            <BasicSelect
+              ref="testSelect001"
+              :option="[
+                {
+                  value: '1',
+                  text: '옵션 1',
+                },
+                {
+                  value: '2',
+                  text: '옵션 2',
+                },
+                {
+                  value: '3',
+                  text: '옵션 3',
+                },
+                {
+                  value: '4',
+                  text: '옵션 4\n줄바꿈은 \\n 이용',
+                },
+                {
+                  value: '5',
+                  text: '옵션 5',
+                },
+                {
+                  value: '6',
+                  text: '옵션 6',
+                },
+                {
+                  value: '7',
+                  text: '옵션 7',
+                },
+                {
+                  value: '8',
+                  text: '옵션 8',
+                },
+              ]"
+              defaultValue="6"
+              buttonTitle="ㅇㅇ 선택하기"
+              layerTitle="ㅇㅇ를 선택해 주세요"
+              id="testInput003"
+              name="testInput003"
+              buttonId="testInputButton003"
+              :onChange="testInputEvent"
             />
           </InputBlockCell>
         </InputBlock>
@@ -444,6 +519,7 @@ export default {
       <template v-slot:innerRight>ir</template>
       <template v-slot:right>r</template>
     </InputBlock>
+    <FormHelpText>Helper Text</FormHelpText>
 
     <template v-slot:foot>
       <ButtonList

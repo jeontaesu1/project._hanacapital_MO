@@ -1,5 +1,12 @@
 <script>
-import { ref, reactive, computed, useCssModule } from 'vue';
+import {
+  ref,
+  reactive,
+  computed,
+  useCssModule,
+  onMounted,
+  onBeforeUnmount,
+} from 'vue';
 
 import { useUiScrollBlockStore } from '@/stores/ui/scrollBlock';
 import { useUiLayerStore } from '@/stores/ui/layer';
@@ -291,6 +298,18 @@ export default {
     const loopFocusAfter = () => {
       layerContainer.value.focus();
     };
+
+    onMounted(() => {
+      const body = document.getElementsByTagName('body')[0];
+
+      if (!layer.value.parentNode.matches('body')) {
+        body.append(layer.value);
+      }
+    });
+
+    onBeforeUnmount(() => {
+      layer.value.remove();
+    });
 
     return {
       state,

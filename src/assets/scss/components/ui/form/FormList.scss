@@ -74,7 +74,7 @@
   &__item--focus,
   &__item--inputed,
   &__item--force-focus,
-  &__item--error {
+  &__item--error.form__item--focus {
     .form__title {
       z-index: -1;
       @include font-size-default(12);
@@ -96,6 +96,17 @@
       & > * {
         opacity: 1;
       }
+    }
+  }
+
+  &__item--disabled {
+    .form__title {
+      color: $color-gray-40;
+      cursor: default;
+    }
+
+    .form__help {
+      color: $color-gray-40;
     }
   }
 

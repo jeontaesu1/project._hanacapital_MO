@@ -44,18 +44,25 @@
     }
 
     &--error {
-      padding-bottom: 5px;
-      border-bottom-width: 2px;
       border-bottom-color: $color-semantic-essential;
 
       .input-block__cell--error-icon {
         display: block;
+      }
+
+      &.input-block--focus {
+        padding-bottom: 5px;
+        border-bottom-width: 2px;
       }
     }
   }
 
   &__cell {
     flex: none;
+
+    & + & {
+      margin-left: 8px;
+    }
 
     &--flexible {
       flex: 1;
@@ -77,6 +84,17 @@
     & + &--sub,
     &--sub + & {
       margin-left: 12px;
+    }
+  }
+
+  &--disabled {
+    &,
+    .input-block__cell {
+      color: $color-gray-40;
+    }
+
+    .input-block__center:not(.input-block__center--error) {
+      border-bottom-color: $color-gray-20;
     }
   }
 }

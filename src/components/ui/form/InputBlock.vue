@@ -22,6 +22,10 @@ export default {
         return defaultClassNames();
       },
     },
+    disabled: {
+      Type: Boolean,
+      default: false,
+    },
     error: {
       Type: Boolean,
       default: false,
@@ -98,7 +102,15 @@ export default {
 </script>
 
 <template>
-  <div :class="[$style['input-block'], customClassNames.wrap]">
+  <div
+    :class="[
+      $style['input-block'],
+      {
+        [$style['input-block--disabled']]: disabled,
+      },
+      customClassNames.wrap,
+    ]"
+  >
     <div
       v-if="isLeft"
       :class="[$style['input-block__left'], customClassNames.left]"

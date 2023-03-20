@@ -1,5 +1,5 @@
 <script>
-import { computed, watch, inject } from 'vue';
+import { computed, watch, provide, inject, useCssModule } from 'vue';
 
 const defaultClassNames = () => ({
   wrap: '',
@@ -19,6 +19,7 @@ export default {
     },
   },
   setup(props) {
+    const $style = useCssModule();
     const formListItem = inject('formListItem', {});
 
     const customClassNames = computed(() => {
@@ -34,6 +35,11 @@ export default {
         }
       }
     );
+
+    provide('formInvalid', {
+      messageClass: $style['invalid__message'],
+      helpClass: $style['invalid__help'],
+    });
 
     return {
       customClassNames,
@@ -52,10 +58,7 @@ export default {
       customClassNames.wrap,
     ]"
   >
-    <slot
-      :messageClass="$style['invalid__message']"
-      :helpClass="$style['invalid__help']"
-    />
+    <slot />
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 <script>
-import { computed } from 'vue';
+import { computed, inject } from 'vue';
 
 const defaultClassNames = () => ({
   wrap: '',
@@ -15,6 +15,8 @@ export default {
     },
   },
   setup(props) {
+    const formInvalid = inject('formInvalid', {});
+
     const customClassNames = computed(() => {
       const { classNames } = props;
       return Object.assign(defaultClassNames(), classNames);
@@ -22,13 +24,22 @@ export default {
 
     return {
       customClassNames,
+      formInvalid,
     };
   },
 };
 </script>
 
 <template>
-  <p :class="[$style['invalid-message'], customClassNames.wrap]"><slot /></p>
+  <p
+    :class="[
+      $style['invalid-message'],
+      formInvalid.messageClass,
+      customClassNames.wrap,
+    ]"
+  >
+    <slot />
+  </p>
 </template>
 
 <style lang="scss" module>

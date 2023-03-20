@@ -1,5 +1,13 @@
 <script>
-import { ref, computed, reactive, provide, inject } from 'vue';
+import {
+  ref,
+  computed,
+  reactive,
+  provide,
+  inject,
+  onMounted,
+  onUpdated,
+} from 'vue';
 
 const defaultClassNames = () => ({
   item: '',
@@ -39,6 +47,10 @@ export default {
       Type: String,
       default: null,
     },
+    disabled: {
+      Type: Boolean,
+      default: false,
+    },
   },
   setup(props) {
     const styleModule = inject('styleModule');
@@ -77,6 +89,10 @@ export default {
     };
 
     const onfocusin = () => {
+      const { disabled } = props;
+
+      if (disabled) return;
+
       clearTimeout(timer);
       state.isFocus = true;
 
@@ -84,6 +100,10 @@ export default {
     };
 
     const onfocusout = () => {
+      const { disabled } = props;
+
+      if (disabled) return;
+
       clearTimeout(timer);
       timer = setTimeout(() => {
         state.isFocus = false;
@@ -92,14 +112,24 @@ export default {
     };
 
     const onKeyup = () => {
+      const { disabled } = props;
+
+      if (disabled) return;
+
       checkInputed();
     };
 
     const labelClick = () => {
-      const { target } = props;
+      const { target, disabled } = props;
 
-      if (target) {
-        contents.value.querySelector(target).focus();
+      if (disabled || !target) return;
+
+      const el = contents.value.querySelector(target);
+
+      el.focus();
+
+      if (el.matches('button, a')) {
+        el.click();
       }
     };
 
@@ -107,11 +137,20 @@ export default {
       state.isError = val;
     };
 
+    onMounted(() => {
+      checkInputed();
+    });
+
+    onUpdated(() => {
+      checkInputed();
+    });
+
     provide('formListItem', {
       areaClass,
       onfocusin,
       onfocusout,
       error,
+      helpClass: styleModule['form__help'],
     });
 
     return {
@@ -137,6 +176,7 @@ export default {
         [styleModule['form__item--inputed']]: state.isInputed,
         [styleModule['form__item--force-focus']]: forceFocus,
         [styleModule['form__item--error']]: state.isError,
+        [styleModule['form__item--disabled']]: disabled,
       },
       customClassNames.item,
     ]"
