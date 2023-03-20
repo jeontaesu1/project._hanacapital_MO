@@ -12,10 +12,12 @@ import favicon from '@/assets/images/common/favicon.ico';
 import DefaultLayout from '@/layouts/DefaultLayout.vue';
 import NoneLayout from '@/layouts/NoneLayout.vue';
 import TestLayout from '@/layouts/TestLayout.vue';
+import LoadingLayer from '@/components/ui/layout/LoadingLayer.vue';
 
 export default {
   components: {
     RouterView,
+    LoadingLayer,
   },
   setup() {
     // html head 셋팅
@@ -101,6 +103,7 @@ export default {
 </script>
 
 <template>
+  <LoadingLayer />
   <component :is="layout"><RouterView /></component>
 </template>
 

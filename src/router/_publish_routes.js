@@ -4,13 +4,15 @@ import GuideComponent from '@/views/uiGuide/GuideComponent.vue';
 import GuideLayout001 from '@/views/uiGuide/GuideLayout001.vue';
 import GuideLayout002 from '@/views/uiGuide/GuideLayout002.vue';
 import GuideLayout003 from '@/views/uiGuide/GuideLayout003.vue';
+import GuideIdentification001 from '@/views/uiGuide/GuideIdentification001.vue';
+import GuideIdentification002 from '@/views/uiGuide/GuideIdentification002.vue';
 
 // test
-import HomePage from '@/views/HomePage.vue';
-import APage from '@/views/APage.vue';
-import BPage from '@/views/BPage.vue';
-import CPage from '@/views/CPage.vue';
-import TestPage from '@/views/TestPage.vue';
+import HomePage from '@/views/testPages/HomePage.vue';
+import APage from '@/views/testPages/APage.vue';
+import BPage from '@/views/testPages/BPage.vue';
+import CPage from '@/views/testPages/CPage.vue';
+import TestPage from '@/views/testPages/TestPage.vue';
 
 const routes = [
   // uiGuide
@@ -40,6 +42,16 @@ const routes = [
     path: '/guide-layout-003',
     name: '/guide-layout-003',
     component: GuideLayout003,
+  },
+  {
+    path: '/guide-identification-001',
+    name: '/guide-identification-001',
+    component: GuideIdentification001,
+  },
+  {
+    path: '/guide-identification-002',
+    name: '/guide-identification-002',
+    component: GuideIdentification002,
   },
 
   // test

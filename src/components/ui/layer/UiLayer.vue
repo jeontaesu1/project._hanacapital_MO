@@ -4,6 +4,7 @@ import {
   reactive,
   computed,
   useCssModule,
+  nextTick,
   onMounted,
   onBeforeUnmount,
 } from 'vue';
@@ -181,16 +182,21 @@ export default {
       setAttr(preOpenLayers, 'inert', '');
       removeAttr(preOpenLayers, 'aria-modal');
 
-      timer = setTimeout(function () {
-        state.opened = true;
-        onOpened();
-        clearTimeout(timer);
+      nextTick(() => {
         timer = setTimeout(function () {
-          layerContainer.value.focus();
-          onAfterOpened();
+          state.opened = true;
+          onOpened();
           clearTimeout(timer);
-        }, speed);
-      }, 0);
+
+          nextTick(() => {
+            timer = setTimeout(function () {
+              layerContainer.value.focus();
+              onAfterOpened();
+              clearTimeout(timer);
+            }, speed);
+          });
+        }, 0);
+      });
     };
 
     const close = (speed = defaultSpeed) => {
@@ -233,48 +239,52 @@ export default {
       state.opened = false;
       onClosed();
 
-      timer = setTimeout(function () {
-        const { opener } = state;
-        state.display = 'none';
+      nextTick(() => {
+        timer = setTimeout(function () {
+          const { opener } = state;
+          state.display = 'none';
 
-        if (preOpenLayer) {
-          removeAttr(preOpenLayerOhterElements, 'aria-hidden');
-          removeAttr(preOpenLayerOhterElements, 'inert');
-          removeAttr(preOpenLayerOhterElements, 'data-ui-js');
-          preOpenLayer.removeAttribute('inert');
-          preOpenLayer.setAttribute('aria-hidden', 'false');
-          preOpenLayer.setAttribute('aria-modal', 'true');
-        } else {
-          const ohterElements = body.querySelectorAll('[data-ui-js="hidden"]');
-          removeAttr(ohterElements, 'aria-hidden');
-          removeAttr(ohterElements, 'inert');
-          removeAttr(ohterElements, 'data-ui-js');
-        }
-
-        if (!preOpenLayers.length) {
-          store.ui.scrollBlock.clear();
-        }
-
-        if (opener) {
           if (preOpenLayer) {
-            if (opener.closest(`.${$style['layer']}`) === preOpenLayer) {
+            removeAttr(preOpenLayerOhterElements, 'aria-hidden');
+            removeAttr(preOpenLayerOhterElements, 'inert');
+            removeAttr(preOpenLayerOhterElements, 'data-ui-js');
+            preOpenLayer.removeAttribute('inert');
+            preOpenLayer.setAttribute('aria-hidden', 'false');
+            preOpenLayer.setAttribute('aria-modal', 'true');
+          } else {
+            const ohterElements = body.querySelectorAll(
+              '[data-ui-js="hidden"]'
+            );
+            removeAttr(ohterElements, 'aria-hidden');
+            removeAttr(ohterElements, 'inert');
+            removeAttr(ohterElements, 'data-ui-js');
+          }
+
+          if (!preOpenLayers.length) {
+            store.ui.scrollBlock.clear();
+          }
+
+          if (opener) {
+            if (preOpenLayer) {
+              if (opener.closest(`.${$style['layer']}`) === preOpenLayer) {
+                elFocus(opener);
+              }
+            } else {
               elFocus(opener);
             }
+            state.opener = null;
           } else {
-            elFocus(opener);
+            elFocus(html);
+            window.scrollTo(
+              store.ui.scrollBlock.scrollLeft,
+              store.ui.scrollBlock.scrollTop
+            );
           }
-          state.opener = null;
-        } else {
-          elFocus(html);
-          window.scrollTo(
-            store.ui.scrollBlock.scrollLeft,
-            store.ui.scrollBlock.scrollTop
-          );
-        }
 
-        onAfterClosed();
-        clearTimeout(timer);
-      }, speed);
+          onAfterClosed();
+          clearTimeout(timer);
+        }, speed);
+      });
     };
 
     const loopFocusBefore = () => {
