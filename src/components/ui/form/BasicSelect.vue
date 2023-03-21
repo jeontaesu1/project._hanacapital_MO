@@ -1,5 +1,5 @@
 <script>
-import { ref, computed, reactive, nextTick } from 'vue';
+import { ref, computed, reactive, nextTick, inject } from 'vue';
 
 import SelectButton from '@/components/ui/form/SelectButton.vue';
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -101,6 +101,9 @@ export default {
       forcePlaceholder: !props.defaultValue,
     });
 
+    const formListItem = inject('formListItem', {});
+    const inputBlock = inject('inputBlock', {});
+
     const layer = ref(null);
     const button = ref(null);
     const input = ref(null);
@@ -117,6 +120,13 @@ export default {
 
     const layerOpen = () => {
       layer.value.open(button.value.button);
+
+      if (formListItem && formListItem.selectFocus) {
+        formListItem.selectFocus(true);
+      }
+      if (inputBlock && inputBlock.selectFocus) {
+        inputBlock.selectFocus(true);
+      }
     };
 
     const selectOption = (option) => {
@@ -143,6 +153,15 @@ export default {
       }
     };
 
+    const onAfterClosed = () => {
+      if (formListItem && formListItem.selectFocus) {
+        formListItem.selectFocus(false);
+      }
+      if (inputBlock && inputBlock.selectFocus) {
+        inputBlock.selectFocus(false);
+      }
+    };
+
     return {
       state,
       layer,
@@ -153,6 +172,7 @@ export default {
       layerOpen,
       selectOption,
       setValue,
+      onAfterClosed,
     };
   },
 };
@@ -182,7 +202,7 @@ export default {
       >{{ state.text }}</SelectButton
     >
 
-    <UiLayer ref="layer" type="toast">
+    <UiLayer ref="layer" type="toast" :onAfterClosed="onAfterClosed">
       <ToastPopup>
         <template v-slot:head>
           <ToastPopupHead>

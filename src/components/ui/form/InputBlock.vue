@@ -36,6 +36,7 @@ export default {
 
     const state = reactive({
       isFocus: false,
+      isSelectFocus: false,
     });
 
     const formListItem = inject('formListItem', {});
@@ -83,7 +84,14 @@ export default {
       }
     };
 
+    const selectFocus = (val) => {
+      state.isSelectFocus = val;
+    };
+
     provide('styleModule', useCssModule());
+    provide('inputBlock', {
+      selectFocus,
+    });
 
     return {
       state,
@@ -121,7 +129,8 @@ export default {
       :class="[
         $style['input-block__center'],
         {
-          [$style['input-block__center--focus']]: state.isFocus,
+          [$style['input-block__center--focus']]:
+            state.isFocus || state.isSelectFocus,
           [$style['input-block__center--error']]: error,
         },
         customClassNames.center,

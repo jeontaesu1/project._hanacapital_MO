@@ -1,89 +1,73 @@
-// uiGuide
-import GuideIndex from '@/views/uiGuide/GuideIndex.vue';
-import GuideComponent from '@/views/uiGuide/GuideComponent.vue';
-import GuideLayout001 from '@/views/uiGuide/GuideLayout001.vue';
-import GuideLayout002 from '@/views/uiGuide/GuideLayout002.vue';
-import GuideLayout003 from '@/views/uiGuide/GuideLayout003.vue';
-import GuideIdentification001 from '@/views/uiGuide/GuideIdentification001.vue';
-import GuideIdentification002 from '@/views/uiGuide/GuideIdentification002.vue';
-
-// test
-import HomePage from '@/views/testPages/HomePage.vue';
-import APage from '@/views/testPages/APage.vue';
-import BPage from '@/views/testPages/BPage.vue';
-import CPage from '@/views/testPages/CPage.vue';
-import TestPage from '@/views/testPages/TestPage.vue';
-
 const routes = [
   // uiGuide
   {
     path: '/guide-index',
     name: '/guide-index',
-    component: GuideIndex,
+    component: () => import('@/views/uiGuide/GuideIndex.vue'),
     meta: { layout: 'NoneLayout' },
   },
   {
     path: '/guide-component',
     name: '/guide-component',
-    component: GuideComponent,
+    component: () => import('@/views/uiGuide/GuideComponent.vue'),
     meta: { layout: 'NoneLayout' },
   },
   {
     path: '/guide-layout-001',
     name: '/guide-layout-001',
-    component: GuideLayout001,
+    component: () => import('@/views/uiGuide/GuideLayout001.vue'),
   },
   {
     path: '/guide-layout-002',
     name: '/guide-layout-002',
-    component: GuideLayout002,
+    component: () => import('@/views/uiGuide/GuideLayout002.vue'),
   },
   {
     path: '/guide-layout-003',
     name: '/guide-layout-003',
-    component: GuideLayout003,
+    component: () => import('@/views/uiGuide/GuideLayout003.vue'),
   },
   {
     path: '/guide-identification-001',
     name: '/guide-identification-001',
-    component: GuideIdentification001,
+    component: () => import('@/views/uiGuide/GuideIdentification001.vue'),
   },
   {
     path: '/guide-identification-002',
     name: '/guide-identification-002',
-    component: GuideIdentification002,
+    component: () => import('@/views/uiGuide/GuideIdentification002.vue'),
   },
 
   // test
   {
     path: '/',
     name: '/',
-    component: HomePage,
+    component: () => import('@/views/testPages/HomePage.vue'),
   },
   {
     path: '/home',
     name: '/home',
-    component: HomePage,
+    component: () => import('@/views/testPages/HomePage.vue'),
   },
   {
     path: '/a',
     name: '/a',
-    component: APage,
+    component: () => import('@/views/testPages/APage.vue'),
   },
   {
     path: '/b',
     name: '/b',
-    component: BPage,
+    component: () => import('@/views/testPages/BPage.vue'),
   },
   {
     path: '/c',
     name: '/c',
-    component: CPage,
+    component: () => import('@/views/testPages/CPage.vue'),
   },
   {
     path: '/test',
     name: '/test',
-    component: TestPage,
+    component: () => import('@/views/testPages/TestPage.vue'),
     meta: { layout: 'TestLayout' },
   },
 ];

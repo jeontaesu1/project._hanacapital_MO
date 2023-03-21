@@ -1,0 +1,22 @@
+.inline-alert {
+  padding: 16px 16px 16px 44px;
+  border-radius: 8px;
+  background: url('@/assets/images/icon/alert-complete.svg') no-repeat 16px 50% /
+    20px 20px rgba($color-green-50, 0.06);
+
+  &__text {
+    margin: 0;
+    @include font-size-default(14);
+    font-weight: 500;
+    color: $color-green-50;
+  }
+
+  &--error {
+    background-image: url('@/assets/images/icon/alert-error.svg');
+    background-color: rgba($color-semantic-essential, 0.06);
+
+    .inline-alert__text {
+      color: $color-semantic-essential;
+    }
+  }
+}

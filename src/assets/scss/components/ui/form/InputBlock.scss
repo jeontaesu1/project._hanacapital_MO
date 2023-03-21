@@ -85,6 +85,10 @@
     &--sub + & {
       margin-left: 12px;
     }
+
+    & + &--margin-regular {
+      margin-left: 12px;
+    }
   }
 
   &--disabled {

@@ -21,6 +21,10 @@ export default {
       Type: String,
       default: null,
     },
+    margin: {
+      Type: String,
+      default: null,
+    },
   },
   setup(props) {
     const styleModule = inject('styleModule');
@@ -45,6 +49,7 @@ export default {
       {
         [styleModule['input-block__cell--flexible']]: flexible,
         [styleModule[`input-block__cell--${type}`]]: type,
+        [styleModule[`input-block__cell--margin-${margin}`]]: margin,
       },
       customClassNames.cell,
     ]"

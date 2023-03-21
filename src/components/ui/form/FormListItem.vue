@@ -59,6 +59,7 @@ export default {
 
     const state = reactive({
       isFocus: false,
+      isSelectFocus: false,
       isInputed: false,
       isError: false,
     });
@@ -137,6 +138,10 @@ export default {
       state.isError = val;
     };
 
+    const selectFocus = (val) => {
+      state.isSelectFocus = val;
+    };
+
     onMounted(() => {
       checkInputed();
     });
@@ -150,6 +155,7 @@ export default {
       onfocusin,
       onfocusout,
       error,
+      selectFocus,
       helpClass: styleModule['form__help'],
     });
 
@@ -172,7 +178,8 @@ export default {
     :class="[
       styleModule['form__item'],
       {
-        [styleModule['form__item--focus']]: state.isFocus,
+        [styleModule['form__item--focus']]:
+          state.isFocus || state.isSelectFocus,
         [styleModule['form__item--inputed']]: state.isInputed,
         [styleModule['form__item--force-focus']]: forceFocus,
         [styleModule['form__item--error']]: state.isError,

@@ -177,6 +177,7 @@ export default {
 
     <h1>Home Page</h1>
 
+    <RouterLink to="/guide-identification-001">본인인증</RouterLink>
     <RouterLink to="a">A 페이지</RouterLink>
     <RouterLink to="b">B 페이지</RouterLink>
     <RouterLink to="c">C 페이지</RouterLink>
@@ -234,6 +235,7 @@ export default {
           </ToastPopupHead>
         </template>
 
+        <RouterLink to="a">A 페이지</RouterLink>
         <PopupText>// contents</PopupText>
         <PopupText>// contents</PopupText>
         <PopupText>// contents</PopupText>
@@ -407,7 +409,6 @@ export default {
           <InputBlock :error="state.testError001" :disabled="true">
             <InputBlockCell :flexible="true">
               <BasicInput
-                ref="testInput"
                 id="testInput002"
                 @keyup="testInputEvent"
                 @focus="testInputEvent"
@@ -445,7 +446,6 @@ export default {
         <InputBlock>
           <InputBlockCell :flexible="true">
             <BasicInput
-              ref="testInput"
               @keyup="testInputEvent"
               @focus="testInputEvent"
               @blur="testInputEvent"
@@ -507,7 +507,6 @@ export default {
       <template v-slot:innerLeft>il</template>
       <InputBlockCell :flexible="true">
         <BasicInput
-          ref="testInput"
           @keyup="testInputEvent"
           @focus="testInputEvent"
           @blur="testInputEvent"

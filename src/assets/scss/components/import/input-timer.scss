@@ -1,0 +1,8 @@
+.input-timer {
+  @include font-size-default(12);
+  color: $color-semantic-essential;
+
+  &.is-disabled {
+    color: $color-gray-40;
+  }
+}

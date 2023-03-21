@@ -160,8 +160,10 @@ export default {
         re = new Set(re);
         return Array.from(re);
       })();
+      const inElements = layer.value.querySelectorAll('[data-ui-js="hidden"]');
 
       clearTimeout(timer);
+
       store.ui.scrollBlock.block();
       state.speed = speed;
       state.display = type && type.match(/toast|toast-fix/) ? 'flex' : 'block';
@@ -172,6 +174,12 @@ export default {
         state.opener = opener;
       }
 
+      removeAttr(inElements, 'aria-hidden');
+      removeAttr(inElements, 'inert');
+      removeAttr(inElements, 'data-ui-js');
+      layer.value.removeAttribute('inert');
+      layer.value.setAttribute('aria-hidden', 'false');
+      layer.value.setAttribute('aria-modal', 'true');
       setAttr(ohterElements, 'aria-hidden', 'true');
       setAttr(ohterElements, 'inert', '');
       setAttr(ohterElements, 'data-ui-js', 'hidden');
@@ -318,6 +326,7 @@ export default {
     });
 
     onBeforeUnmount(() => {
+      close(0);
       layer.value.remove();
     });
 

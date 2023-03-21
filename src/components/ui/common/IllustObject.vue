@@ -2,7 +2,11 @@
 import { computed } from 'vue';
 
 import IllustOneQCapital from '@/assets/images/illustration/img-1qcapital.svg?component';
+import IllustComplete from '@/assets/images/illustration/img-complete.svg?component';
+import IllustError from '@/assets/images/illustration/img-error.svg?component';
 import IllustLicense from '@/assets/images/illustration/img-license.svg?component';
+import IllustCertification from '@/assets/images/illustration/img-certification.svg?component';
+import IllustAppfree from '@/assets/images/illustration/img-appfree.svg?component';
 
 const defaultClassNames = () => ({
   wrap: '',
@@ -24,7 +28,11 @@ export default {
   setup(props) {
     const illust = {
       oneQCapital: IllustOneQCapital,
+      complete: IllustComplete,
+      error: IllustError,
       license: IllustLicense,
+      certification: IllustCertification,
+      appfree: IllustAppfree,
     };
 
     const customClassNames = computed(() => {
