@@ -19,6 +19,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
+import SecurityInput from '@/components/ui/form/SecurityInput.vue';
 
 export default {
   components: {
@@ -40,6 +41,7 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicSelect,
+    SecurityInput,
   },
   setup() {
     const state = reactive({
@@ -196,6 +198,31 @@ export default {
                   type="password"
                   title="주민등록번호 뒤 7자리"
                   id="layerIdentificationPhoneIdNumber02"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+
+        <FormListItem
+          titleText="주민등록번호"
+          target="#layerIdentificationPhoneIdNumber03"
+        >
+          <FormInvalid :error="state.idNumberError">
+            <InputBlock :error="state.idNumberError">
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  title="주민등록번호 앞 6자리"
+                  id="layerIdentificationPhoneIdNumber03"
+                />
+              </InputBlockCell>
+              <InputBlockCell type="sub">-</InputBlockCell>
+              <InputBlockCell :flexible="true">
+                <SecurityInput
+                  title="주민등록번호 뒤 7자리"
+                  :dot="[true, true, true, false, false, false, false]"
+                  :isFocused="true"
                 />
               </InputBlockCell>
             </InputBlock>

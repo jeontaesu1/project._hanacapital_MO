@@ -1,0 +1,31 @@
+.security-input {
+  display: block;
+
+  &__button {
+    @include reset-button;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    @include font-size-head(18);
+    min-height: #{$line-height-head}em;
+  }
+
+  &__dot {
+    display: block;
+    width: 10px;
+    height: 10px;
+    box-sizing: border-box;
+    border: 1px solid $color-gray-60;
+    border-radius: 50%;
+
+    & + & {
+      margin-left: 6px;
+    }
+
+    &--active {
+      border-color: $color-black;
+      background-color: $color-black;
+    }
+  }
+}
