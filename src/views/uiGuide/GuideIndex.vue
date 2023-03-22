@@ -97,17 +97,21 @@ const LinkButtonActive = (e) => {
 // Bottom Link Buttons Height
 function paddingBottom() {
   const bottomNav = document.querySelector('.index-bottom');
-  const bottomNavHeight = bottomNav.offsetHeight;
-  const fakeBottomElement = document.querySelector('.index-fake-botttom');
 
-  fakeBottomElement.style.height = `${bottomNavHeight}px`;
+  if (bottomNav) {
+    const bottomNavHeight = bottomNav.offsetHeight;
+    const fakeBottomElement = document.querySelector('.index-fake-botttom');
+    fakeBottomElement.style.height = `${bottomNavHeight}px`;
+  }
 }
 
 const scroll = () => {
-  const scrollLeft = window.scrollX;
   const bottomNav = document.querySelector('.index-bottom');
 
-  bottomNav.style.marginLeft = `-${scrollLeft}px`;
+  if (bottomNav) {
+    const scrollLeft = window.scrollX;
+    bottomNav.style.marginLeft = `-${scrollLeft}px`;
+  }
 };
 
 onMounted(() => {
