@@ -1,246 +1,41 @@
 <script setup>
 import BasicButton from '@/components/ui/button/BasicButton.vue';
+import { onMounted } from 'vue';
 
 const datas = [
   {
-    subTitle: '공통01',
+    subTitle: '공통',
     subContents: [
       {
-        depth1: '레이아웃01',
-        depth2: '',
+        depth1: '레이아웃',
+        depth2: 'Type 01',
         depth3: '',
         depth4: '',
         depth5: '',
-        path: '/a',
+        path: '/guide-layout-001',
         status: 'end',
         create: '2023.03.23',
-        log: [
-          { date: '2023.03.24', text: '수정사항1' },
-          { date: '2023.03.25', text: '수정사항2' },
-          { date: '2023.03.26', text: '수정사항3' },
-          { date: '2023.03.27', text: '수정사항4' },
-        ],
+        log: '',
+        // log: [{ date: '2023.03.23', text: '수정내용' }],
       },
-    ],
-  },
-  {
-    subTitle: '공통02',
-    subContents: [
       {
-        depth1: '레이아웃02-02',
-        depth2: '',
+        depth1: '',
+        depth2: 'Type 02',
         depth3: '',
         depth4: '',
         depth5: '',
-        path: '/b',
-        status: 'ing',
-        create: '2023.03.23',
-        log: [
-          { date: '2023.03.24', text: '수정사항1' },
-          { date: '2023.03.24', text: '수정사항2' },
-        ],
-      },
-      {
-        depth1: '레이아웃02-02',
-        depth2: '',
-        depth3: '',
-        depth4: '',
-        depth5: '',
-        path: '/c',
-        status: 'moding',
-        create: '2023.03.23',
-        log: [
-          { date: '2023.03.24', text: '수정사항1' },
-          { date: '2023.05.01', text: '수정사항2' },
-        ],
-      },
-    ],
-  },
-  {
-    subTitle: '공통03',
-    subContents: [
-      {
-        depth1: '레이아웃03-01',
-        depth2: '',
-        depth3: '',
-        depth4: '',
-        depth5: '',
-        path: '/a',
+        path: '/guide-layout-002',
         status: 'end',
         create: '2023.03.23',
         log: '',
       },
       {
-        depth1: '레이아웃03-02',
-        depth2: '',
+        depth1: '',
+        depth2: 'Type 03',
         depth3: '',
         depth4: '',
         depth5: '',
-        path: '/b',
-        status: 'end',
-        create: '2023.03.23',
-        log: '',
-      },
-    ],
-  },
-  {
-    subTitle: '공통04',
-    subContents: [
-      {
-        depth1: '레이아웃04-01',
-        depth2: '',
-        depth3: '',
-        depth4: '',
-        depth5: '',
-        path: '/a',
-        status: 'moding',
-        create: '2023.03.23',
-        log: [{ date: '2023.05.01', text: '수정사항2' }],
-      },
-      {
-        depth1: '레이아웃04-02',
-        depth2: '',
-        depth3: '',
-        depth4: '',
-        depth5: '',
-        path: '/b',
-        status: 'end',
-        create: '2023.03.23',
-        log: '',
-      },
-      {
-        depth1: '레이아웃04-03',
-        depth2: '',
-        depth3: '',
-        depth4: '',
-        depth5: '',
-        path: '/b',
-        status: 'end',
-        create: '2023.03.23',
-        log: '',
-      },
-      {
-        depth1: '레이아웃04-04',
-        depth2: '',
-        depth3: '',
-        depth4: '',
-        depth5: '',
-        path: '/b',
-        status: 'end',
-        create: '2023.03.23',
-        log: '',
-      },
-      {
-        depth1: '레이아웃04-05',
-        depth2: '',
-        depth3: '',
-        depth4: '',
-        depth5: '',
-        path: '/b',
-        status: 'end',
-        create: '2023.03.23',
-        log: '',
-      },
-      {
-        depth1: '레이아웃04-06',
-        depth2: '',
-        depth3: '',
-        depth4: '',
-        depth5: '',
-        path: '/b',
-        status: 'end',
-        create: '2023.03.23',
-        log: '',
-      },
-      {
-        depth1: '레이아웃04-07',
-        depth2: '',
-        depth3: '',
-        depth4: '',
-        depth5: '',
-        path: '/b',
-        status: 'end',
-        create: '2023.03.23',
-        log: '',
-      },
-    ],
-  },
-  {
-    subTitle: '공통05',
-    subContents: [
-      {
-        depth1: '레이아웃05-01',
-        depth2: '',
-        depth3: '',
-        depth4: '',
-        depth5: '',
-        path: '/a',
-        status: 'end',
-        create: '2023.03.23',
-        log: '',
-      },
-      {
-        depth1: '레이아웃05-02',
-        depth2: '',
-        depth3: '',
-        depth4: '',
-        depth5: '',
-        path: '/b',
-        status: 'end',
-        create: '2023.03.23',
-        log: '',
-      },
-      {
-        depth1: '레이아웃05-03',
-        depth2: '',
-        depth3: '',
-        depth4: '',
-        depth5: '',
-        path: '/b',
-        status: 'end',
-        create: '2023.03.23',
-        log: '',
-      },
-      {
-        depth1: '레이아웃05-04',
-        depth2: '',
-        depth3: '',
-        depth4: '',
-        depth5: '',
-        path: '/b',
-        status: 'end',
-        create: '2023.03.23',
-        log: '',
-      },
-      {
-        depth1: '레이아웃05-05',
-        depth2: '',
-        depth3: '',
-        depth4: '',
-        depth5: '',
-        path: '/b',
-        status: 'end',
-        create: '2023.03.23',
-        log: '',
-      },
-      {
-        depth1: '레이아웃05-06',
-        depth2: '',
-        depth3: '',
-        depth4: '',
-        depth5: '',
-        path: '/b',
-        status: 'end',
-        create: '2023.03.23',
-        log: '',
-      },
-      {
-        depth1: '레이아웃05-07',
-        depth2: '',
-        depth3: '',
-        depth4: '',
-        depth5: '',
-        path: '/b',
+        path: '/guide-layout-003',
         status: 'end',
         create: '2023.03.23',
         log: '',
@@ -283,7 +78,7 @@ const logs = datas
 // Recent day of all modify date Array
 const maxMilliSecond = getMaxMilliSecondFromLogArray(logs);
 
-// Button link to section
+// Bottom Button link to section
 let clickedTimer = null;
 const LinkButtonActive = (e) => {
   const Link = e.target.parentElement.getAttribute('href');
@@ -298,6 +93,32 @@ const LinkButtonActive = (e) => {
     target.classList.add('clicked');
   }, 100);
 };
+
+// Bottom Link Buttons Height
+function paddingBottom() {
+  const bottomNav = document.querySelector('.index-bottom');
+
+  if (bottomNav) {
+    const bottomNavHeight = bottomNav.offsetHeight;
+    const fakeBottomElement = document.querySelector('.index-fake-botttom');
+    fakeBottomElement.style.height = `${bottomNavHeight}px`;
+  }
+}
+
+const scroll = () => {
+  const bottomNav = document.querySelector('.index-bottom');
+
+  if (bottomNav) {
+    const scrollLeft = window.scrollX;
+    bottomNav.style.marginLeft = `-${scrollLeft}px`;
+  }
+};
+
+onMounted(() => {
+  paddingBottom();
+  window.addEventListener('resize', paddingBottom());
+  window.addEventListener('scroll', scroll);
+});
 </script>
 
 <template>
@@ -371,8 +192,8 @@ const LinkButtonActive = (e) => {
                     <th>log</th>
                   </tr>
                 </thead>
-                <tbody v-for="(subContent, i) in data.subContents" :key="i">
-                  <tr>
+                <tbody>
+                  <tr v-for="(subContent, i) in data.subContents" :key="i">
                     <td>{{ subContent.depth1 }}</td>
                     <td>{{ subContent.depth2 }}</td>
                     <td>{{ subContent.depth3 }}</td>
@@ -444,6 +265,7 @@ const LinkButtonActive = (e) => {
         </div>
       </div>
     </div>
+    <div class="index-fake-botttom"></div>
   </div>
 </template>
 
