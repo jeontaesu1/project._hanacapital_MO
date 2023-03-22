@@ -1,0 +1,34 @@
+.part-input {
+  display: flex;
+  align-items: center;
+
+  &__dot {
+    flex: none;
+    width: 10px;
+    height: 10px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background-color: $color-gray-40;
+
+    & + & {
+      margin-left: 6px;
+    }
+  }
+
+  &__block {
+    flex: none;
+    width: rem(12);
+  }
+
+  &__dot + &__block,
+  &__block + &__dot {
+    margin-left: 6px;
+  }
+
+  &__input {
+    @include reset-input-text;
+    width: 100%;
+    @include font-size-head(18);
+    height: #{$line-height-head}em;
+  }
+}

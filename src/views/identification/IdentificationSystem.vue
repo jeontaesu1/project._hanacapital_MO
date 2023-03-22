@@ -8,6 +8,7 @@ import LayerIdentificationPhone from '@/views/identification/LayerIdentification
 import LayerIdentificationCertificate from '@/views/identification/LayerIdentificationCertificate.vue';
 import LayerIdentificationCard from '@/views/identification/LayerIdentificationCard.vue';
 import LayerIdentificationKakaopay from '@/views/identification/LayerIdentificationKakaopay.vue';
+import LayerIdentificationARS from '@/views/identification/LayerIdentificationARS.vue';
 
 export default {
   components: {
@@ -18,6 +19,7 @@ export default {
     LayerIdentificationCertificate,
     LayerIdentificationCard,
     LayerIdentificationKakaopay,
+    LayerIdentificationARS,
   },
   setup() {
     const layerIdentificationTypeSelect = ref(null);
@@ -27,6 +29,7 @@ export default {
     const layerIdentificationCertificate = ref(null);
     const layerIdentificationCard = ref(null);
     const layerIdentificationKakaopay = ref(null);
+    const layerIdentificationARS = ref(null);
 
     const layerIdentificationTypeSelectOpen = (e = {}) => {
       layerIdentificationTypeSelect.value.layer.open(e.target);
@@ -52,6 +55,9 @@ export default {
     const layerIdentificationKakaopayOpen = (e = {}) => {
       layerIdentificationKakaopay.value.layer.open(e.target);
     };
+    const layerIdentificationARSOpen = (e = {}) => {
+      layerIdentificationARS.value.layer.open(e.target);
+    };
 
     const start = () => {
       layerIdentificationTypeSelectOpen();
@@ -66,6 +72,7 @@ export default {
       layerIdentificationCertificateOpen,
       layerIdentificationCardOpen,
       layerIdentificationKakaopayOpen,
+      layerIdentificationARSOpen,
     });
 
     return {
@@ -76,6 +83,7 @@ export default {
       layerIdentificationCertificate,
       layerIdentificationCard,
       layerIdentificationKakaopay,
+      layerIdentificationARS,
       layerIdentificationTypeSelectOpen,
       layerIdentificationBusinessOpen,
       layerIdentificationMethodSelectOpen,
@@ -84,6 +92,7 @@ export default {
       layerIdentificationCertificateOpen,
       layerIdentificationCardOpen,
       layerIdentificationKakaopayOpen,
+      layerIdentificationARSOpen,
       start,
     };
   },
@@ -98,4 +107,5 @@ export default {
   <LayerIdentificationCertificate ref="layerIdentificationCertificate" />
   <LayerIdentificationCard ref="layerIdentificationCard" />
   <LayerIdentificationKakaopay ref="layerIdentificationKakaopay" />
+  <LayerIdentificationARS ref="layerIdentificationARS" />
 </template>

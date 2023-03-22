@@ -12,6 +12,7 @@
   }
 
   &__dot {
+    flex: none;
     display: block;
     width: 10px;
     height: 10px;
@@ -26,6 +27,16 @@
     &--active {
       border-color: $color-black;
       background-color: $color-black;
+    }
+  }
+
+  &__button[disabled] {
+    .security-input__dot {
+      border-color: $color-gray-40;
+
+      &--active {
+        background-color: $color-gray-40;
+      }
     }
   }
 }

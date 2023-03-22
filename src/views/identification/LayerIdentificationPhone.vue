@@ -20,6 +20,7 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import SecurityInput from '@/components/ui/form/SecurityInput.vue';
+import PartInput from '@/components/ui/form/PartInput.vue';
 
 export default {
   components: {
@@ -42,6 +43,7 @@ export default {
     ButtonListItem,
     BasicSelect,
     SecurityInput,
+    PartInput,
   },
   setup() {
     const state = reactive({
@@ -188,16 +190,20 @@ export default {
             <InputBlock :error="state.idNumberError">
               <InputBlockCell :flexible="true">
                 <BasicInput
+                  type="number"
+                  pattern="\d*"
                   title="주민등록번호 앞 6자리"
                   id="layerIdentificationPhoneIdNumber01"
                 />
               </InputBlockCell>
               <InputBlockCell type="sub">-</InputBlockCell>
               <InputBlockCell :flexible="true">
-                <BasicInput
-                  type="password"
-                  title="주민등록번호 뒤 7자리"
+                <PartInput
+                  type="number"
+                  pattern="\d*"
+                  title="주민등록번호 뒤 7자리 중 첫번째자리"
                   id="layerIdentificationPhoneIdNumber02"
+                  :afterDot="6"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -213,16 +219,18 @@ export default {
             <InputBlock :error="state.idNumberError">
               <InputBlockCell :flexible="true">
                 <BasicInput
+                  type="number"
+                  pattern="\d*"
                   title="주민등록번호 앞 6자리"
                   id="layerIdentificationPhoneIdNumber03"
                 />
               </InputBlockCell>
               <InputBlockCell type="sub">-</InputBlockCell>
               <InputBlockCell :flexible="true">
+                <!-- DD : 보안 키패드 열렸을 때 :isFocused="true" props 추가 해서 포커싱 스타일 적용 -->
                 <SecurityInput
                   title="주민등록번호 뒤 7자리"
                   :dot="[true, true, true, false, false, false, false]"
-                  :isFocused="true"
                 />
               </InputBlockCell>
             </InputBlock>
