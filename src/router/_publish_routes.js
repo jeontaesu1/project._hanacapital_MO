@@ -34,35 +34,40 @@ const routes = [
     component: () => import('@/views/uiGuide/GuideLayout003.vue'),
   },
   {
-    path: '/guide/identification',
-    name: '/guide/identification',
-    component: () => import('@/views/uiGuide/GuideIdentification.vue'),
+    path: '/guide/identification001',
+    name: '/guide/identification001',
+    component: () => import('@/views/uiGuide/GuideIdentification001.vue'),
+  },
+  {
+    path: '/guide/identification002',
+    name: '/guide/identification002',
+    component: () => import('@/views/uiGuide/GuideIdentification002.vue'),
   },
 
   // test
   {
-    path: '/home',
-    name: '/home',
+    path: '/test/home',
+    name: '/test/home',
     component: () => import('@/views/testPages/HomePage.vue'),
   },
   {
-    path: '/a',
-    name: '/a',
+    path: '/test/a',
+    name: '/test/a',
     component: () => import('@/views/testPages/APage.vue'),
   },
   {
-    path: '/b',
-    name: '/b',
+    path: '/test/b',
+    name: '/test/b',
     component: () => import('@/views/testPages/BPage.vue'),
   },
   {
-    path: '/c',
-    name: '/c',
+    path: '/test/c',
+    name: '/test/c',
     component: () => import('@/views/testPages/CPage.vue'),
   },
   {
-    path: '/test',
-    name: '/test',
+    path: '/test/test',
+    name: '/test/test',
     component: () => import('@/views/testPages/TestPage.vue'),
     meta: { layout: 'TestLayout' },
   },

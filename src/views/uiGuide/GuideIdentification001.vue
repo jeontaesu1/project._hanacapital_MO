@@ -1,5 +1,5 @@
 <script>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { onMounted, onUnmounted } from 'vue';
 
 import { useUiHeaderStore } from '@/stores/ui/header';
 
@@ -10,7 +10,6 @@ import IllustObject from '@/components/ui/common/IllustObject.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-import IdentificationSystem from '@/views/identification/IdentificationSystem.vue';
 
 export default {
   components: {
@@ -21,19 +20,12 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    IdentificationSystem,
   },
   setup() {
     const store = {
       ui: {
         header: useUiHeaderStore(),
       },
-    };
-
-    const identificationSystem = ref(null);
-
-    const identificationSystemStart = () => {
-      identificationSystem.value.start();
     };
 
     onMounted(() => {
@@ -47,11 +39,6 @@ export default {
       store.ui.header.setLeftButtons();
       store.ui.header.setRightButtons();
     });
-
-    return {
-      identificationSystem,
-      identificationSystemStart,
-    };
   },
 };
 </script>
@@ -74,11 +61,9 @@ export default {
         }"
       >
         <ButtonListItem>
-          <BasicButton @click="identificationSystemStart">본인인증</BasicButton>
+          <BasicButton>본인인증</BasicButton>
         </ButtonListItem>
       </ButtonList>
     </template>
-
-    <IdentificationSystem ref="identificationSystem" />
   </PageContents>
 </template>

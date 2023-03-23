@@ -1,5 +1,5 @@
 <script>
-import { ref, reactive, inject } from 'vue';
+import { ref, reactive } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
@@ -42,8 +42,6 @@ export default {
     PartInput,
   },
   setup() {
-    const identificationSystem = inject('identificationSystem', {});
-
     const state = reactive({
       nameError: false,
       idNumberError: false,
@@ -54,7 +52,6 @@ export default {
     const layer = ref(null);
 
     return {
-      identificationSystem,
       state,
       layer,
     };
@@ -222,10 +219,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton
-              @click="identificationSystem.layerIdentificationARSOpen"
-              >다음</BasicButton
-            >
+            <BasicButton>다음</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

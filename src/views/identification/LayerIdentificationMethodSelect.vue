@@ -1,5 +1,5 @@
 <script>
-import { ref, inject } from 'vue';
+import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import ToastPopup from '@/components/ui/layer/ToastPopup.vue';
@@ -25,12 +25,9 @@ export default {
     IconKakaopay,
   },
   setup() {
-    const identificationSystem = inject('identificationSystem', {});
-
     const layer = ref(null);
 
     return {
-      identificationSystem,
       layer,
     };
   },
@@ -53,16 +50,7 @@ export default {
       <div :class="$style['icon-buttons']">
         <ul :class="$style['icon-buttons__list']">
           <li :class="$style['icon-buttons__item']">
-            <button
-              type="button"
-              :class="$style['icon-buttons__block']"
-              @click="
-                () => {
-                  identificationSystem.layerIdentificationMethodSelectClose();
-                  identificationSystem.layerIdentificationPhoneOpen();
-                }
-              "
-            >
+            <button type="button" :class="$style['icon-buttons__block']">
               <div :class="$style['icon-buttons__icon']"><IconPhone /></div>
               <div :class="$style['icon-buttons__content']">
                 <div :class="$style['icon-buttons__title']">휴대폰</div>
@@ -70,16 +58,7 @@ export default {
             </button>
           </li>
           <li :class="$style['icon-buttons__item']">
-            <button
-              type="button"
-              :class="$style['icon-buttons__block']"
-              @click="
-                () => {
-                  identificationSystem.layerIdentificationMethodSelectClose();
-                  identificationSystem.layerIdentificationCertificateOpen();
-                }
-              "
-            >
+            <button type="button" :class="$style['icon-buttons__block']">
               <div :class="$style['icon-buttons__icon']">
                 <IconCertification />
               </div>
@@ -89,16 +68,7 @@ export default {
             </button>
           </li>
           <li :class="$style['icon-buttons__item']">
-            <button
-              type="button"
-              :class="$style['icon-buttons__block']"
-              @click="
-                () => {
-                  identificationSystem.layerIdentificationMethodSelectClose();
-                  identificationSystem.layerIdentificationCardOpen();
-                }
-              "
-            >
+            <button type="button" :class="$style['icon-buttons__block']">
               <div :class="$style['icon-buttons__icon']"><IconCard /></div>
               <div :class="$style['icon-buttons__content']">
                 <div :class="$style['icon-buttons__title']">신용카드</div>
@@ -106,16 +76,7 @@ export default {
             </button>
           </li>
           <li :class="$style['icon-buttons__item']">
-            <button
-              type="button"
-              :class="$style['icon-buttons__block']"
-              @click="
-                () => {
-                  identificationSystem.layerIdentificationMethodSelectClose();
-                  identificationSystem.layerIdentificationKakaopayOpen();
-                }
-              "
-            >
+            <button type="button" :class="$style['icon-buttons__block']">
               <div :class="$style['icon-buttons__icon']"><IconKakaopay /></div>
               <div :class="$style['icon-buttons__content']">
                 <div :class="$style['icon-buttons__title']">카카오페이</div>

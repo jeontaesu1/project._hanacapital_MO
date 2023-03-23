@@ -1,5 +1,5 @@
 <script>
-import { ref, inject } from 'vue';
+import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
@@ -23,12 +23,9 @@ export default {
     IconBuilding,
   },
   setup() {
-    const identificationSystem = inject('identificationSystem', {});
-
     const layer = ref(null);
 
     return {
-      identificationSystem,
       layer,
     };
   },
@@ -56,11 +53,7 @@ export default {
       <div :class="$style['icon-list']">
         <ul :class="$style['icon-list__list']">
           <li :class="$style['icon-list__item']">
-            <button
-              type="button"
-              :class="$style['icon-list__block']"
-              @click="identificationSystem.layerIdentificationMethodSelectOpen"
-            >
+            <button type="button" :class="$style['icon-list__block']">
               <div :class="$style['icon-list__icon']"><IconPerson /></div>
               <div :class="$style['icon-list__content']">
                 <div :class="$style['icon-list__title']">개인 (개인사업자)</div>
@@ -68,11 +61,7 @@ export default {
             </button>
           </li>
           <li :class="$style['icon-list__item']">
-            <button
-              type="button"
-              :class="$style['icon-list__block']"
-              @click="identificationSystem.layerIdentificationBusinessOpen"
-            >
+            <button type="button" :class="$style['icon-list__block']">
               <div :class="$style['icon-list__icon']"><IconBuilding /></div>
               <div :class="$style['icon-list__content']">
                 <div :class="$style['icon-list__title']">법인</div>
