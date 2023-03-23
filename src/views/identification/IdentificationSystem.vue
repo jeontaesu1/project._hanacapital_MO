@@ -57,6 +57,7 @@ export default {
     };
     const layerIdentificationARSOpen = (e = {}) => {
       layerIdentificationARS.value.layer.open(e.target);
+      layerIdentificationARS.value.reStartTimer();
     };
 
     const start = () => {

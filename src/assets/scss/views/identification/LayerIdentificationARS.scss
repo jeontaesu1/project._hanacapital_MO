@@ -1,0 +1,14 @@
+.ars-info {
+  &-icon {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto;
+  }
+  &-timer {
+    margin-top: 10px;
+    @include font-size-default(14);
+    font-weight: 500;
+    color: $color-navy-50;
+    text-align: center;
+  }
+}
