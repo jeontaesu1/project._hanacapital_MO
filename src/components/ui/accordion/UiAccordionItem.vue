@@ -25,6 +25,10 @@ export default {
         return defaultClassNames();
       },
     },
+    initialOpen: {
+      Type: Boolean,
+      default: false,
+    },
     onBeforeOpened: {
       type: Function,
       default: () => {},
@@ -90,7 +94,7 @@ export default {
           if (uiAccordion.items) {
             uiAccordion.items.forEach((item) => {
               if (item.key !== state.key) {
-                item.close();
+                item.close(speed);
               }
             });
           }
@@ -131,6 +135,10 @@ export default {
       state.callback.onBeforeClosed = props.onBeforeClosed;
       state.callback.onClosed = props.onClosed;
       state.callback.onAfterClosed = props.onAfterClosed;
+
+      if (props.initialOpen) {
+        open(0);
+      }
     });
 
     onBeforeUnmount(() => {

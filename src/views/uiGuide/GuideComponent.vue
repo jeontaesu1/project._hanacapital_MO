@@ -849,7 +849,7 @@ export default {
             </UiAccordionLayer>
           </UiAccordionItem>
 
-          <UiAccordionItem v-slot="accordionItemSlotProps">
+          <UiAccordionItem v-slot="accordionItemSlotProps" :initialOpen="true">
             <button type="button" @click="accordionItemSlotProps.toggle()">
               {{ accordionItemSlotProps.opened ? '닫기' : '열기' }}
             </button>

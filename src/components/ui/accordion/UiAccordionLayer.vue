@@ -54,12 +54,21 @@ export default {
     const open = (customSpeed) => {
       if (state.opened) return;
 
-      const speed =
-        customSpeed ||
-        (uiAccordion &&
-          uiAccordion.defaultSpeed &&
-          uiAccordion.defaultSpeed.value) ||
-        0;
+      const speed = (() => {
+        if (typeof customSpeed === 'number') {
+          return customSpeed;
+        } else {
+          if (
+            uiAccordion &&
+            uiAccordion.defaultSpeed &&
+            uiAccordion.defaultSpeed.value
+          ) {
+            return uiAccordion.defaultSpeed.value;
+          } else {
+            return 0;
+          }
+        }
+      })();
       const { openedClassName } = uiAccordion;
       const compStyles = getComputedStyle(layer.value);
 
@@ -127,12 +136,21 @@ export default {
     const close = (customSpeed) => {
       if (!state.opened) return;
 
-      const speed =
-        customSpeed ||
-        (uiAccordion &&
-          uiAccordion.defaultSpeed &&
-          uiAccordion.defaultSpeed.value) ||
-        0;
+      const speed = (() => {
+        if (typeof customSpeed === 'number') {
+          return customSpeed;
+        } else {
+          if (
+            uiAccordion &&
+            uiAccordion.defaultSpeed &&
+            uiAccordion.defaultSpeed.value
+          ) {
+            return uiAccordion.defaultSpeed.value;
+          } else {
+            return 0;
+          }
+        }
+      })();
       const { openedClassName } = uiAccordion;
       const compStyles = getComputedStyle(layer.value);
 
