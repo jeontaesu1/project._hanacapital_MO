@@ -1,6 +1,5 @@
 <script>
 import { ref, reactive } from 'vue';
-import { RouterLink } from 'vue-router';
 
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
@@ -17,12 +16,17 @@ import ToastPopup from '@/components/ui/layer/ToastPopup.vue';
 import ToastPopupHead from '@/components/ui/layer/ToastPopupHead.vue';
 import AlertPopup from '@/components/ui/layer/AlertPopup.vue';
 import AlertSystem from '@/components/ui/layer/AlertSystem.vue';
+import CheckBox from '@/components/ui/form/CheckBox.vue';
+import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
+import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
+import UiAccordion from '@/components/ui/accordion/UiAccordion.vue';
+import UiAccordionItem from '@/components/ui/accordion/UiAccordionItem.vue';
+import UiAccordionLayer from '@/components/ui/accordion/UiAccordionLayer.vue';
 
 export default {
   components: {
     BasicButton,
     IconAdd,
-    RouterLink,
     UiLayer,
     PopupTitle,
     PopupSubTitle,
@@ -36,6 +40,12 @@ export default {
     AlertSystem,
     ButtonList,
     ButtonListItem,
+    CheckBox,
+    CheckBoxLabelText,
+    CheckBoxObject,
+    UiAccordion,
+    UiAccordionItem,
+    UiAccordionLayer,
   },
   setup() {
     const state = reactive({
@@ -49,6 +59,7 @@ export default {
     const layerTest004 = ref(null);
     const testInput = ref(null);
     const testSelect001 = ref(null);
+    const testAccordion = ref(null);
 
     const alertOpen = (options) => {
       alert.value.open(options);
@@ -102,6 +113,17 @@ export default {
       testSelect001.value.setValue('4');
     };
 
+    const testInputEvent = (e = {}) => {
+      console.log(e.type, e.target);
+    };
+
+    const testAccordionAllOpen = () => {
+      testAccordion.value.allOpen();
+    };
+    const testAccordionAllClose = () => {
+      testAccordion.value.allClose();
+    };
+
     return {
       state,
       alert,
@@ -111,6 +133,7 @@ export default {
       layerTest004,
       testInput,
       testSelect001,
+      testAccordion,
       alertOpen,
       layerOpenTest001,
       layerOpenTest002,
@@ -118,6 +141,9 @@ export default {
       layerOpenTest004,
       alertOpenTest001,
       testErrorUpdate001,
+      testInputEvent,
+      testAccordionAllOpen,
+      testAccordionAllClose,
     };
   },
 };
@@ -192,25 +218,25 @@ export default {
 
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">a tag</h3>
-        <BasicButton tag="a">
+        <BasicButton tagName="a">
           <template v-slot:leftIcon>
             <IconAdd />
           </template>
           Button
         </BasicButton>
-        <BasicButton tag="a" disabledStyle="true">
+        <BasicButton tagName="a" disabledStyle="true">
           Button
           <template v-slot:rightIcon>
             <IconAdd />
           </template>
         </BasicButton>
-        <BasicButton tag="a" line="true">
+        <BasicButton tagName="a" line="true">
           <template v-slot:leftIcon>
             <IconAdd />
           </template>
           Button
         </BasicButton>
-        <BasicButton tag="a" line="true" disabledStyle="true">
+        <BasicButton tagName="a" line="true" disabledStyle="true">
           Button
           <template v-slot:rightIcon>
             <IconAdd />
@@ -220,25 +246,30 @@ export default {
 
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Router Link</h3>
-        <BasicButton tag="RouterLink" to="/">
+        <BasicButton tagName="RouterLink" to="/">
           <template v-slot:leftIcon>
             <IconAdd />
           </template>
           Button
         </BasicButton>
-        <BasicButton tag="RouterLink" to="/" disabledStyle="true">
+        <BasicButton tagName="RouterLink" to="/" disabledStyle="true">
           Button
           <template v-slot:rightIcon>
             <IconAdd />
           </template>
         </BasicButton>
-        <BasicButton tag="RouterLink" to="/" line="true">
+        <BasicButton tagName="RouterLink" to="/" line="true">
           <template v-slot:leftIcon>
             <IconAdd />
           </template>
           Button
         </BasicButton>
-        <BasicButton tag="RouterLink" to="/" line="true" disabledStyle="true">
+        <BasicButton
+          tagName="RouterLink"
+          to="/"
+          line="true"
+          disabledStyle="true"
+        >
           Button
           <template v-slot:rightIcon>
             <IconAdd />
@@ -250,13 +281,13 @@ export default {
         <h3 class="test-section-sub-title">small</h3>
         <BasicButton size="small">Button</BasicButton>
         <BasicButton size="small" disabled>Button</BasicButton>
-        <BasicButton tag="a" size="small">
+        <BasicButton tagName="a" size="small">
           <template v-slot:leftIcon>
             <IconAdd />
           </template>
           Button
         </BasicButton>
-        <BasicButton tag="a" size="small" disabledStyle="true">
+        <BasicButton tagName="a" size="small" disabledStyle="true">
           Button
           <template v-slot:rightIcon>
             <IconAdd />
@@ -286,13 +317,13 @@ export default {
         <h3 class="test-section-sub-title">mini</h3>
         <BasicButton size="mini">Button</BasicButton>
         <BasicButton size="mini" disabled>Button</BasicButton>
-        <BasicButton tag="a" size="mini">
+        <BasicButton tagName="a" size="mini">
           <template v-slot:leftIcon>
             <IconAdd />
           </template>
           Button
         </BasicButton>
-        <BasicButton tag="a" size="mini" disabledStyle="true">
+        <BasicButton tagName="a" size="mini" disabledStyle="true">
           Button
           <template v-slot:rightIcon>
             <IconAdd />
@@ -320,13 +351,13 @@ export default {
         <h3 class="test-section-sub-title">inline style</h3>
         <BasicButton inline="true">Button</BasicButton>
         <BasicButton inline="true" disabled>Button</BasicButton>
-        <BasicButton tag="a" inline="true">
+        <BasicButton tagName="a" inline="true">
           <template v-slot:leftIcon>
             <IconAdd />
           </template>
           Button
         </BasicButton>
-        <BasicButton tag="a" inline="true" disabledStyle="true">
+        <BasicButton tagName="a" inline="true" disabledStyle="true">
           Button
           <template v-slot:rightIcon>
             <IconAdd />
@@ -462,7 +493,6 @@ export default {
               </ToastPopupHead>
             </template>
 
-            <RouterLink to="a">A 페이지</RouterLink>
             <PopupText>// contents</PopupText>
             <PopupText>// contents</PopupText>
             <PopupText>// contents</PopupText>
@@ -580,6 +610,341 @@ export default {
         <BasicButton @click="layerOpenTest004"> 레이어 팝업 </BasicButton>
 
         <BasicButton @click="alertOpenTest001">얼럿</BasicButton>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">CheckBox</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <CheckBox id="testCheckBox001" @change="testInputEvent">
+          <CheckBoxObject />
+          <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
+        </CheckBox>
+        <CheckBox id="testCheckBox002" :checked="true" @change="testInputEvent">
+          <CheckBoxObject />
+          <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
+        </CheckBox>
+        <CheckBox id="testCheckBox003" :disabled="true">
+          <CheckBoxObject />
+          <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
+        </CheckBox>
+        <CheckBox id="testCheckBox004" :disabled="true" :checked="true">
+          <CheckBoxObject />
+          <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
+        </CheckBox>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Align Center</h3>
+        <CheckBox id="testCheckBox005" align="center">
+          <CheckBoxObject />
+          <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
+        </CheckBox>
+        <CheckBox id="testCheckBox006" align="center" :checked="true">
+          <CheckBoxObject />
+          <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
+        </CheckBox>
+        <CheckBox id="testCheckBox007" align="center" :disabled="true">
+          <CheckBoxObject />
+          <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
+        </CheckBox>
+        <CheckBox
+          id="testCheckBox008"
+          align="center"
+          :disabled="true"
+          :checked="true"
+        >
+          <CheckBoxObject />
+          <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
+        </CheckBox>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Full</h3>
+        <CheckBox id="testCheckBox009" :full="true">
+          <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
+          <CheckBoxObject />
+        </CheckBox>
+        <CheckBox id="testCheckBox010" :full="true" :checked="true">
+          <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
+          <CheckBoxObject />
+        </CheckBox>
+        <CheckBox id="testCheckBox011" :full="true" :disabled="true">
+          <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
+          <CheckBoxObject />
+        </CheckBox>
+        <CheckBox
+          id="testCheckBox012"
+          :full="true"
+          :disabled="true"
+          :checked="true"
+        >
+          <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
+          <CheckBoxObject />
+        </CheckBox>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Only Object</h3>
+        <CheckBox id="testCheckBox013" :onlyObject="true">
+          <CheckBoxObject />
+          <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
+        </CheckBox>
+        <CheckBox id="testCheckBox014" :onlyObject="true" :checked="true">
+          <CheckBoxObject />
+          <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
+        </CheckBox>
+        <CheckBox id="testCheckBox015" :onlyObject="true" :disabled="true">
+          <CheckBoxObject />
+          <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
+        </CheckBox>
+        <CheckBox
+          id="testCheckBox016"
+          :onlyObject="true"
+          :disabled="true"
+          :checked="true"
+        >
+          <CheckBoxObject />
+          <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
+        </CheckBox>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">secondary</h3>
+        <CheckBox id="testCheckBox017" theme="secondary">
+          <CheckBoxObject />
+          <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
+        </CheckBox>
+        <CheckBox id="testCheckBox018" theme="secondary" :checked="true">
+          <CheckBoxObject />
+          <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
+        </CheckBox>
+        <CheckBox id="testCheckBox019" theme="secondary" :disabled="true">
+          <CheckBoxObject />
+          <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
+        </CheckBox>
+        <CheckBox
+          id="testCheckBox020"
+          theme="secondary"
+          :disabled="true"
+          :checked="true"
+        >
+          <CheckBoxObject />
+          <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
+        </CheckBox>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">tertiary</h3>
+        <CheckBox id="testCheckBox021" theme="tertiary">
+          <CheckBoxObject />
+          <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
+        </CheckBox>
+        <CheckBox id="testCheckBox022" theme="tertiary" :checked="true">
+          <CheckBoxObject />
+          <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
+        </CheckBox>
+        <CheckBox id="testCheckBox023" theme="tertiary" :disabled="true">
+          <CheckBoxObject />
+          <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
+        </CheckBox>
+        <CheckBox
+          id="testCheckBox024"
+          theme="tertiary"
+          :disabled="true"
+          :checked="true"
+        >
+          <CheckBoxObject />
+          <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
+        </CheckBox>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">quaternary</h3>
+        <CheckBox id="testCheckBox025" theme="quaternary">
+          <CheckBoxObject />
+          <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
+        </CheckBox>
+        <CheckBox id="testCheckBox026" theme="quaternary" :checked="true">
+          <CheckBoxObject />
+          <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
+        </CheckBox>
+        <CheckBox id="testCheckBox027" theme="quaternary" :disabled="true">
+          <CheckBoxObject />
+          <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
+        </CheckBox>
+        <CheckBox
+          id="testCheckBox028"
+          theme="quaternary"
+          :disabled="true"
+          :checked="true"
+        >
+          <CheckBoxObject />
+          <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
+        </CheckBox>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Accordion Base</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <button type="button" @click="testAccordionAllOpen">모두 열기</button>
+        <button type="button" @click="testAccordionAllClose">모두 닫기</button>
+
+        <UiAccordion ref="testAccordion">
+          <UiAccordionItem v-slot="accordionItemSlotProps">
+            <button type="button" @click="accordionItemSlotProps.toggle()">
+              {{ accordionItemSlotProps.opened ? '닫기' : '열기' }}
+            </button>
+
+            <UiAccordionLayer>
+              지나가는 동경과 어머니, 그리워 아름다운 시와 것은 옥 거외다.
+              라이너 이름을 이네들은 어머니, 말 써 멀리 못 불러 계십니다.<br /><br />
+
+              봄이 어머님, 가득 버리었습니다. 소학교 청춘이 이름과 나는 이웃
+              책상을 봅니다. 패, 경, 내 하나에 하나에 봅니다. 가을로 사랑과
+              이름과, 패, 무성할 잠, 내 차 추억과 듯합니다.<br /><br />
+
+              마리아 하나에 이런 가득 까닭입니다. 걱정도 별 하나에 이런 아름다운
+              거외다.
+            </UiAccordionLayer>
+          </UiAccordionItem>
+
+          <UiAccordionItem v-slot="accordionItemSlotProps">
+            <button type="button" @click="accordionItemSlotProps.toggle()">
+              {{ accordionItemSlotProps.opened ? '닫기' : '열기' }}
+            </button>
+
+            <UiAccordionLayer>
+              지나가는 동경과 어머니, 그리워 아름다운 시와 것은 옥 거외다.
+              라이너 이름을 이네들은 어머니, 말 써 멀리 못 불러 계십니다.<br /><br />
+
+              봄이 어머님, 가득 버리었습니다. 소학교 청춘이 이름과 나는 이웃
+              책상을 봅니다. 패, 경, 내 하나에 하나에 봅니다. 가을로 사랑과
+              이름과, 패, 무성할 잠, 내 차 추억과 듯합니다.<br /><br />
+
+              마리아 하나에 이런 가득 까닭입니다. 걱정도 별 하나에 이런 아름다운
+              거외다.
+            </UiAccordionLayer>
+          </UiAccordionItem>
+
+          <UiAccordionItem v-slot="accordionItemSlotProps">
+            <button type="button" @click="accordionItemSlotProps.toggle()">
+              {{ accordionItemSlotProps.opened ? '닫기' : '열기' }}
+            </button>
+
+            <UiAccordionLayer>
+              지나가는 동경과 어머니, 그리워 아름다운 시와 것은 옥 거외다.
+              라이너 이름을 이네들은 어머니, 말 써 멀리 못 불러 계십니다.<br /><br />
+
+              봄이 어머님, 가득 버리었습니다. 소학교 청춘이 이름과 나는 이웃
+              책상을 봅니다. 패, 경, 내 하나에 하나에 봅니다. 가을로 사랑과
+              이름과, 패, 무성할 잠, 내 차 추억과 듯합니다.<br /><br />
+
+              마리아 하나에 이런 가득 까닭입니다. 걱정도 별 하나에 이런 아름다운
+              거외다.
+            </UiAccordionLayer>
+          </UiAccordionItem>
+
+          <UiAccordionItem v-slot="accordionItemSlotProps">
+            <button type="button" @click="accordionItemSlotProps.toggle()">
+              {{ accordionItemSlotProps.opened ? '닫기' : '열기' }}
+            </button>
+
+            <UiAccordionLayer>
+              지나가는 동경과 어머니, 그리워 아름다운 시와 것은 옥 거외다.
+              라이너 이름을 이네들은 어머니, 말 써 멀리 못 불러 계십니다.<br /><br />
+
+              봄이 어머님, 가득 버리었습니다. 소학교 청춘이 이름과 나는 이웃
+              책상을 봅니다. 패, 경, 내 하나에 하나에 봅니다. 가을로 사랑과
+              이름과, 패, 무성할 잠, 내 차 추억과 듯합니다.<br /><br />
+
+              마리아 하나에 이런 가득 까닭입니다. 걱정도 별 하나에 이런 아름다운
+              거외다.
+            </UiAccordionLayer>
+          </UiAccordionItem>
+        </UiAccordion>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Once</h3>
+
+        <UiAccordion :once="true">
+          <UiAccordionItem v-slot="accordionItemSlotProps">
+            <button type="button" @click="accordionItemSlotProps.toggle()">
+              {{ accordionItemSlotProps.opened ? '닫기' : '열기' }}
+            </button>
+
+            <UiAccordionLayer>
+              지나가는 동경과 어머니, 그리워 아름다운 시와 것은 옥 거외다.
+              라이너 이름을 이네들은 어머니, 말 써 멀리 못 불러 계십니다.<br /><br />
+
+              봄이 어머님, 가득 버리었습니다. 소학교 청춘이 이름과 나는 이웃
+              책상을 봅니다. 패, 경, 내 하나에 하나에 봅니다. 가을로 사랑과
+              이름과, 패, 무성할 잠, 내 차 추억과 듯합니다.<br /><br />
+
+              마리아 하나에 이런 가득 까닭입니다. 걱정도 별 하나에 이런 아름다운
+              거외다.
+            </UiAccordionLayer>
+          </UiAccordionItem>
+
+          <UiAccordionItem v-slot="accordionItemSlotProps">
+            <button type="button" @click="accordionItemSlotProps.toggle()">
+              {{ accordionItemSlotProps.opened ? '닫기' : '열기' }}
+            </button>
+
+            <UiAccordionLayer>
+              지나가는 동경과 어머니, 그리워 아름다운 시와 것은 옥 거외다.
+              라이너 이름을 이네들은 어머니, 말 써 멀리 못 불러 계십니다.<br /><br />
+
+              봄이 어머님, 가득 버리었습니다. 소학교 청춘이 이름과 나는 이웃
+              책상을 봅니다. 패, 경, 내 하나에 하나에 봅니다. 가을로 사랑과
+              이름과, 패, 무성할 잠, 내 차 추억과 듯합니다.<br /><br />
+
+              마리아 하나에 이런 가득 까닭입니다. 걱정도 별 하나에 이런 아름다운
+              거외다.
+            </UiAccordionLayer>
+          </UiAccordionItem>
+
+          <UiAccordionItem v-slot="accordionItemSlotProps">
+            <button type="button" @click="accordionItemSlotProps.toggle()">
+              {{ accordionItemSlotProps.opened ? '닫기' : '열기' }}
+            </button>
+
+            <UiAccordionLayer>
+              지나가는 동경과 어머니, 그리워 아름다운 시와 것은 옥 거외다.
+              라이너 이름을 이네들은 어머니, 말 써 멀리 못 불러 계십니다.<br /><br />
+
+              봄이 어머님, 가득 버리었습니다. 소학교 청춘이 이름과 나는 이웃
+              책상을 봅니다. 패, 경, 내 하나에 하나에 봅니다. 가을로 사랑과
+              이름과, 패, 무성할 잠, 내 차 추억과 듯합니다.<br /><br />
+
+              마리아 하나에 이런 가득 까닭입니다. 걱정도 별 하나에 이런 아름다운
+              거외다.
+            </UiAccordionLayer>
+          </UiAccordionItem>
+
+          <UiAccordionItem v-slot="accordionItemSlotProps">
+            <button type="button" @click="accordionItemSlotProps.toggle()">
+              {{ accordionItemSlotProps.opened ? '닫기' : '열기' }}
+            </button>
+
+            <UiAccordionLayer>
+              지나가는 동경과 어머니, 그리워 아름다운 시와 것은 옥 거외다.
+              라이너 이름을 이네들은 어머니, 말 써 멀리 못 불러 계십니다.<br /><br />
+
+              봄이 어머님, 가득 버리었습니다. 소학교 청춘이 이름과 나는 이웃
+              책상을 봅니다. 패, 경, 내 하나에 하나에 봅니다. 가을로 사랑과
+              이름과, 패, 무성할 잠, 내 차 추억과 듯합니다.<br /><br />
+
+              마리아 하나에 이런 가득 까닭입니다. 걱정도 별 하나에 이런 아름다운
+              거외다.
+            </UiAccordionLayer>
+          </UiAccordionItem>
+        </UiAccordion>
       </div>
     </section>
 

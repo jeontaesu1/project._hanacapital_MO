@@ -59,7 +59,7 @@ export default {
   </button>
 
   <RouterLink
-    v-if="type === 'push'"
+    v-else-if="type === 'push'"
     to=""
     :class="[
       styleModule['header__button'],
@@ -75,7 +75,7 @@ export default {
   </RouterLink>
 
   <RouterLink
-    v-if="type === 'menu'"
+    v-else-if="type === 'menu'"
     to=""
     :class="styleModule['header__button']"
   >
@@ -84,7 +84,7 @@ export default {
   </RouterLink>
 
   <RouterLink
-    v-if="type === 'search'"
+    v-else-if="type === 'search'"
     to=""
     :class="styleModule['header__button']"
   >
@@ -93,7 +93,7 @@ export default {
   </RouterLink>
 
   <button
-    v-if="type === 'share'"
+    v-else-if="type === 'share'"
     type="button"
     :class="styleModule['header__button']"
     @click="onClick"
@@ -103,7 +103,7 @@ export default {
   </button>
 
   <button
-    v-if="type === 'close'"
+    v-else-if="type === 'close'"
     type="button"
     :class="styleModule['header__button']"
     @click="onClick"

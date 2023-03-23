@@ -11,7 +11,7 @@ const defaultClassNames = () => ({
 export default {
   inheritAttrs: false,
   props: {
-    tag: {
+    tagName: {
       Type: String,
       default: 'button',
     },
@@ -48,13 +48,13 @@ export default {
   },
   setup(props, context) {
     const setComponent = computed(() => {
-      const { tag } = props;
-      return tag === 'RouterLink' ? RouterLink : tag;
+      const { tagName } = props;
+      return tagName === 'RouterLink' ? RouterLink : tagName;
     });
 
     const setType = computed(() => {
-      const { tag, type } = props;
-      return tag === 'button' ? type : null;
+      const { tagName, type } = props;
+      return tagName === 'button' ? type : null;
     });
 
     const isText = computed(() => {

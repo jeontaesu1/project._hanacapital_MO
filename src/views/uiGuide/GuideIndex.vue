@@ -12,9 +12,9 @@ const datas = [
         depth3: '',
         depth4: '',
         depth5: '',
-        path: '/guide-layout-001',
+        path: '/guide/layout-001',
         status: 'end',
-        create: '2023.03.23',
+        create: '2023.03.24',
         log: '',
         // log: [{ date: '2023.03.23', text: '수정내용' }],
       },
@@ -24,9 +24,9 @@ const datas = [
         depth3: '',
         depth4: '',
         depth5: '',
-        path: '/guide-layout-002',
+        path: '/guide/layout-002',
         status: 'end',
-        create: '2023.03.23',
+        create: '2023.03.24',
         log: '',
       },
       {
@@ -35,9 +35,20 @@ const datas = [
         depth3: '',
         depth4: '',
         depth5: '',
-        path: '/guide-layout-003',
+        path: '/guide/layout-003',
         status: 'end',
-        create: '2023.03.23',
+        create: '2023.03.24',
+        log: '',
+      },
+      {
+        depth1: '본인인증',
+        depth2: '',
+        depth3: '',
+        depth4: '',
+        depth5: '',
+        path: '/guide/identification',
+        status: 'end',
+        create: '2023.03.24',
         log: '',
       },
     ],
@@ -130,10 +141,10 @@ onMounted(() => {
           <div class="index-links">
             <div class="index-links__inner">
               <BasicButton
-                tag="RouterLink"
+                tagName="RouterLink"
                 size="mini"
                 inline="true"
-                to="/guide-component"
+                to="/guide/component"
                 >컴포넌트 가이드</BasicButton
               >
             </div>
@@ -146,7 +157,7 @@ onMounted(() => {
                 v-for="(data, i) in datas"
                 :key="i"
                 theme="secondary"
-                tag="a"
+                tagName="a"
                 size="mini"
                 inline="true"
                 :href="`#section${i}`"

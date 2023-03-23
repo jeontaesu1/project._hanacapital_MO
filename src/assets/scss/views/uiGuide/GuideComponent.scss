@@ -5,7 +5,10 @@
 
 .test-section {
   padding-top: 50px;
-  @include font-size-default(30);
+
+  & + & {
+    margin-top: 30px;
+  }
 
   &-title {
     margin: 0 0 20px;
@@ -31,8 +34,4 @@
     padding-top: 20px;
     border-top: 2px dashed #ccc;
   }
-}
-
-.test-section + .test-section {
-  margin-top: 30px;
 }

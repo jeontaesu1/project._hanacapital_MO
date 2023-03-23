@@ -1,0 +1,19 @@
+.accordion {
+  @include reset-list;
+
+  &__item {
+    display: block;
+  }
+
+  &__layer {
+    display: none;
+    height: 0;
+    overflow: hidden;
+
+    &:global(.is-accordion-opened) {
+      display: block;
+      height: auto;
+      overflow: visible;
+    }
+  }
+}
