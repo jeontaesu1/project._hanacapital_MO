@@ -1,0 +1,14 @@
+.select {
+  position: relative;
+  display: block;
+
+  &__input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &__option {
+    @include reset-button;
+  }
+}

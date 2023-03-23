@@ -1,5 +1,7 @@
 <script>
-import { ref, reactive } from 'vue';
+import { ref, reactive, onMounted } from 'vue';
+
+import { useUiLoadingStore } from '@/stores/ui/loading';
 
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
@@ -22,6 +24,19 @@ import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
 import UiAccordion from '@/components/ui/accordion/UiAccordion.vue';
 import UiAccordionItem from '@/components/ui/accordion/UiAccordionItem.vue';
 import UiAccordionLayer from '@/components/ui/accordion/UiAccordionLayer.vue';
+import InputBlock from '@/components/ui/form/InputBlock.vue';
+import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
+import BasicInput from '@/components/ui/form/BasicInput.vue';
+import FormList from '@/components/ui/form/FormList.vue';
+import FormListItem from '@/components/ui/form/FormListItem.vue';
+import FormInvalid from '@/components/ui/form/FormInvalid.vue';
+import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
+import FormHelpText from '@/components/ui/form/FormHelpText.vue';
+import BasicSelect from '@/components/ui/form/BasicSelect.vue';
+import SecurityInput from '@/components/ui/form/SecurityInput.vue';
+import PartInput from '@/components/ui/form/PartInput.vue';
+import ExtendSelect from '@/components/ui/form/ExtendSelect.vue';
+import ExtendSelectOption from '@/components/ui/form/ExtendSelectOption.vue';
 
 export default {
   components: {
@@ -46,8 +61,27 @@ export default {
     UiAccordion,
     UiAccordionItem,
     UiAccordionLayer,
+    InputBlock,
+    InputBlockCell,
+    BasicInput,
+    FormList,
+    FormListItem,
+    FormInvalid,
+    FormInvalidMessage,
+    FormHelpText,
+    BasicSelect,
+    SecurityInput,
+    PartInput,
+    ExtendSelect,
+    ExtendSelectOption,
   },
   setup() {
+    const store = {
+      ui: {
+        loading: useUiLoadingStore(),
+      },
+    };
+
     const state = reactive({
       testError001: false,
     });
@@ -57,8 +91,6 @@ export default {
     const layerTest002 = ref(null);
     const layerTest003 = ref(null);
     const layerTest004 = ref(null);
-    const testInput = ref(null);
-    const testSelect001 = ref(null);
     const testAccordion = ref(null);
 
     const alertOpen = (options) => {
@@ -109,8 +141,6 @@ export default {
 
     const testErrorUpdate001 = (val) => {
       state.testError001 = val;
-
-      testSelect001.value.setValue('4');
     };
 
     const testInputEvent = (e = {}) => {
@@ -124,6 +154,14 @@ export default {
       testAccordion.value.allClose();
     };
 
+    onMounted(() => {
+      store.ui.loading.show();
+
+      setTimeout(() => {
+        store.ui.loading.hide();
+      }, 1000);
+    });
+
     return {
       state,
       alert,
@@ -131,8 +169,6 @@ export default {
       layerTest002,
       layerTest003,
       layerTest004,
-      testInput,
-      testSelect001,
       testAccordion,
       alertOpen,
       layerOpenTest001,
@@ -949,6 +985,280 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Form</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <button type="button" @click="testErrorUpdate001(true)">에러 On</button>
+        <button type="button" @click="testErrorUpdate001(false)">
+          에러 Off
+        </button>
+
+        <FormList>
+          <FormListItem
+            titleText="Label"
+            titleOptionalText="Optional"
+            :require="true"
+            target="#testInput001"
+          >
+            <FormInvalid :error="state.testError001">
+              <InputBlock :error="state.testError001">
+                <template v-slot:innerLeft>text</template>
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    ref="testInput"
+                    id="testInput001"
+                    @keyup="testInputEvent"
+                    @focus="testInputEvent"
+                    @blur="testInputEvent"
+                  />
+                </InputBlockCell>
+                <InputBlockCell type="sub">-</InputBlockCell>
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    type="number"
+                    :useDelete="false"
+                    align="right"
+                    @keyup="testInputEvent"
+                    @focus="testInputEvent"
+                    @blur="testInputEvent"
+                  />
+                </InputBlockCell>
+                <template v-slot:innerRight>text</template>
+                <template v-slot:right>
+                  <BasicButton size="mini" theme="quaternary">
+                    button
+                  </BasicButton>
+                </template>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+              <FormHelpText>Helper Text</FormHelpText>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem
+            titleText="Label"
+            titleOptionalText="Optional"
+            :require="true"
+            target="#testInput002"
+            :disabled="true"
+          >
+            <FormInvalid :error="state.testError001">
+              <InputBlock :error="state.testError001" :disabled="true">
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    id="testInput002"
+                    @keyup="testInputEvent"
+                    @focus="testInputEvent"
+                    @blur="testInputEvent"
+                    value="value"
+                    :disabled="true"
+                  />
+                </InputBlockCell>
+                <InputBlockCell type="sub">-</InputBlockCell>
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    type="number"
+                    :useDelete="false"
+                    align="right"
+                    @keyup="testInputEvent"
+                    @focus="testInputEvent"
+                    @blur="testInputEvent"
+                    value="1234"
+                    :readonly="true"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+              <FormHelpText>Helper Text</FormHelpText>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem
+            titleText="인증번호"
+            titleOptionalText="(6자리)"
+            target="#testInput003"
+          >
+            <FormInvalid :error="state.testError001">
+              <InputBlock :error="state.testError001">
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    type="number"
+                    pattern="\d*"
+                    title="인증번호 (6자리)"
+                    id="testInput003"
+                  />
+                </InputBlockCell>
+                <template v-slot:innerRight>
+                  <div :class="$style['input-timer']">00:00</div>
+                </template>
+                <template v-slot:right>
+                  <BasicButton size="mini" theme="quaternary">
+                    재요청
+                  </BasicButton>
+                </template>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem titleText="휴대폰번호" target="#testInput004">
+            <FormInvalid :error="state.testError001">
+              <InputBlock :error="state.testError001">
+                <InputBlockCell>
+                  <BasicSelect
+                    :option="[
+                      {
+                        value: '1',
+                        text: 'SKT',
+                      },
+                      {
+                        value: '2',
+                        text: 'KT',
+                      },
+                      {
+                        value: '3',
+                        text: 'LG U+',
+                      },
+                      {
+                        value: '4',
+                        text: '알뜰폰 SKT',
+                      },
+                      {
+                        value: '5',
+                        text: '알뜰폰 KT',
+                      },
+                      {
+                        value: '6',
+                        text: '알뜰폰 LG +',
+                      },
+                    ]"
+                    buttonTitle="통신사 선택하기"
+                    layerTitle="통신사를 선택해 주세요"
+                    buttonId="testInput004"
+                    :classNames="{
+                      wrap: 'input-width-telecom',
+                    }"
+                  />
+                </InputBlockCell>
+                <InputBlockCell :flexible="true" margin="regular">
+                  <BasicInput type="number" pattern="\d*" title="휴대폰번호" />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+              <FormHelpText>본인명의의 휴대폰만 가능합니다.</FormHelpText>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem
+            titleText="생년월일"
+            titleOptionalText="(6자리)"
+            target="#testInput005"
+          >
+            <FormInvalid :error="state.testError001">
+              <InputBlock :error="state.testError001">
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    type="number"
+                    pattern="\d*"
+                    title="주민등록번호 앞 6자리"
+                    id="testInput005"
+                  />
+                </InputBlockCell>
+                <InputBlockCell type="sub">-</InputBlockCell>
+                <InputBlockCell :flexible="true">
+                  <PartInput
+                    type="number"
+                    pattern="\d*"
+                    title="주민등록번호 뒤 7자리 중 첫번째자리"
+                    :afterDot="6"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem titleText="주민등록번호" target="#testInput006">
+            <FormInvalid :error="state.testError001">
+              <InputBlock :error="state.testError001">
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    type="number"
+                    pattern="\d*"
+                    title="주민등록번호 앞 6자리"
+                    id="testInput006"
+                  />
+                </InputBlockCell>
+                <InputBlockCell type="sub">-</InputBlockCell>
+                <InputBlockCell :flexible="true">
+                  <!-- DD : 보안 키패드 열렸을 때 :isFocused="true" props 추가 해서 포커싱 스타일 적용 -->
+                  <SecurityInput
+                    title="주민등록번호 뒤 7자리"
+                    :dot="[true, true, true, false, false, false, false]"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem titleText="이름" target="#testInput007">
+            <FormInvalid :error="state.testError001">
+              <InputBlock :error="state.testError001">
+                <InputBlockCell :flexible="true">
+                  <BasicInput title="이름" id="testInput007" />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem titleText="확장 셀렉트" target="#testInput008">
+            <FormInvalid :error="state.testError001">
+              <InputBlock :error="state.testError001">
+                <InputBlockCell :flexible="true">
+                  <ExtendSelect
+                    buttonTitle="확장 셀렉트 선택하기"
+                    layerTitle="확장 셀렉트를 선택해 주세요"
+                    buttonId="testInput008"
+                    :onChange="testInputEvent"
+                  >
+                    <ExtendSelectOption value="1" text="옵션 1">
+                      옵션 1
+                    </ExtendSelectOption>
+                    <ExtendSelectOption value="2" text="옵션 2">
+                      옵션 2
+                    </ExtendSelectOption>
+                    <ExtendSelectOption value="3" text="옵션 3">
+                      옵션 3
+                    </ExtendSelectOption>
+                    <ExtendSelectOption value="4" text="옵션 4">
+                      옵션 4
+                    </ExtendSelectOption>
+                    <ExtendSelectOption value="5" text="옵션 5">
+                      옵션 5
+                    </ExtendSelectOption>
+                    <ExtendSelectOption value="6" text="옵션 6">
+                      옵션 6
+                    </ExtendSelectOption>
+                    <ExtendSelectOption value="7" text="옵션 7">
+                      옵션 7
+                    </ExtendSelectOption>
+                    <ExtendSelectOption value="8" text="옵션 8">
+                      옵션 8
+                    </ExtendSelectOption>
+                  </ExtendSelect>
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+        </FormList>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Component Title</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Sub Title</h3>
@@ -959,4 +1269,8 @@ export default {
 
 <style lang="scss">
 @import '@/assets/scss/views/uiGuide/GuideComponent.scss';
+</style>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/uiGuide/GuideComponentModule.scss';
 </style>

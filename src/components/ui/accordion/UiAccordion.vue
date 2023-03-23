@@ -95,8 +95,6 @@ export default {
       const i = state.items.findIndex((item) => item.key === key);
 
       state.items.splice(i, 1);
-
-      console.log(state.items);
     };
 
     const allOpen = (speed) => {

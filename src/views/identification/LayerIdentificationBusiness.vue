@@ -17,6 +17,7 @@ import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import SecurityInput from '@/components/ui/form/SecurityInput.vue';
 
 export default {
   components: {
@@ -36,6 +37,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
+    SecurityInput,
   },
   setup() {
     const state = reactive({
@@ -141,11 +143,10 @@ export default {
               </InputBlockCell>
               <InputBlockCell type="sub">-</InputBlockCell>
               <InputBlockCell :flexible="true">
-                <BasicInput
-                  ref="number02"
-                  type="password"
+                <!-- DD : 보안 키패드 열렸을 때 :isFocused="true" props 추가 해서 포커싱 스타일 적용 -->
+                <SecurityInput
                   title="법인번호 뒤 7자리"
-                  id="layerIdentificationBusinessNumber02"
+                  :dot="[true, true, true, false, false, false, false]"
                 />
               </InputBlockCell>
             </InputBlock>

@@ -111,9 +111,9 @@ export default {
                   id="layerIdentificationPhoneCode"
                 />
               </InputBlockCell>
-              <InputBlockCell>
+              <template v-slot:innerRight>
                 <div :class="$style['input-timer']">00:00</div>
-              </InputBlockCell>
+              </template>
               <template v-slot:right>
                 <BasicButton size="mini" theme="quaternary">
                   재요청

@@ -28,6 +28,8 @@ import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
+import ExtendSelect from '@/components/ui/form/ExtendSelect.vue';
+import ExtendSelectOption from '@/components/ui/form/ExtendSelectOption.vue';
 
 export default {
   components: {
@@ -56,6 +58,8 @@ export default {
     FormInvalidMessage,
     FormHelpText,
     BasicSelect,
+    ExtendSelect,
+    ExtendSelectOption,
   },
   setup() {
     const store = {
@@ -445,16 +449,42 @@ export default {
       >
         <InputBlock>
           <InputBlockCell :flexible="true">
-            <BasicInput
-              @keyup="testInputEvent"
-              @focus="testInputEvent"
-              @blur="testInputEvent"
-            />
+            <ExtendSelect
+              ref="testSelect001"
+              buttonTitle="확장 셀렉트 선택하기"
+              layerTitle="확장 셀렉트를 선택해 주세요"
+              buttonId="testInput008"
+              :onChange="testInputEvent"
+            >
+              <ExtendSelectOption value="1" text="옵션 1">
+                옵션 1
+              </ExtendSelectOption>
+              <ExtendSelectOption value="2" text="옵션 2">
+                옵션 2
+              </ExtendSelectOption>
+              <ExtendSelectOption value="3" text="옵션 3">
+                옵션 3
+              </ExtendSelectOption>
+              <ExtendSelectOption value="4" text="옵션 4">
+                옵션 4
+              </ExtendSelectOption>
+              <ExtendSelectOption value="5" text="옵션 5">
+                옵션 5
+              </ExtendSelectOption>
+              <ExtendSelectOption value="6" text="옵션 6">
+                옵션 6
+              </ExtendSelectOption>
+              <ExtendSelectOption value="7" text="옵션 7">
+                옵션 7
+              </ExtendSelectOption>
+              <ExtendSelectOption value="8" text="옵션 8">
+                옵션 8
+              </ExtendSelectOption>
+            </ExtendSelect>
           </InputBlockCell>
           <InputBlockCell type="sub">-</InputBlockCell>
           <InputBlockCell :flexible="true">
             <BasicSelect
-              ref="testSelect001"
               :option="[
                 {
                   value: '1',
