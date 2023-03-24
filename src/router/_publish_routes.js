@@ -44,32 +44,25 @@ const routes = [
     component: () => import('@/views/uiGuide/GuideIdentification002.vue'),
   },
 
-  // test
+  // home
   {
-    path: '/test/home',
-    name: '/test/home',
-    component: () => import('@/views/testPages/HomePage.vue'),
+    path: '/home',
+    name: '/home',
+    component: () => import('@/views/home/HomePage.vue'),
   },
+
+  // sign
   {
-    path: '/test/a',
-    name: '/test/a',
-    component: () => import('@/views/testPages/APage.vue'),
+    path: '/sign/signin',
+    name: '/sign/signin',
+    component: () => import('@/views/sign/SignIn.vue'),
   },
+
+  // menu
   {
-    path: '/test/b',
-    name: '/test/b',
-    component: () => import('@/views/testPages/BPage.vue'),
-  },
-  {
-    path: '/test/c',
-    name: '/test/c',
-    component: () => import('@/views/testPages/CPage.vue'),
-  },
-  {
-    path: '/test/test',
-    name: '/test/test',
-    component: () => import('@/views/testPages/TestPage.vue'),
-    meta: { layout: 'TestLayout' },
+    path: '/menu',
+    name: '/menu',
+    component: () => import('@/views/menu/GlobalNav.vue'),
   },
 ];
 

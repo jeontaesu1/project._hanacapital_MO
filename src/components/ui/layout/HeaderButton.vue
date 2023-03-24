@@ -1,6 +1,10 @@
 <script>
-import { computed, inject } from 'vue';
+import { ref, computed, inject } from 'vue';
 import { RouterLink, useRouter } from 'vue-router';
+
+import { useUiCommonStore } from '@/stores/ui/common';
+
+import LayerGlobalNav from '@/views/menu/LayerGlobalNav.vue';
 
 import IconBack from '@/assets/images/common/back-left.svg?component';
 import IconPush from '@/assets/images/common/alarm.svg?component';
@@ -10,6 +14,16 @@ import IconShare from '@/assets/images/common/share.svg?component';
 import IconClose from '@/assets/images/common/close.svg?component';
 
 export default {
+  components: {
+    RouterLink,
+    LayerGlobalNav,
+    IconBack,
+    IconPush,
+    IconMenu,
+    IconSearch,
+    IconShare,
+    IconClose,
+  },
   props: {
     type: {
       type: String,
@@ -20,28 +34,34 @@ export default {
       default: () => {},
     },
   },
-  components: {
-    RouterLink,
-    IconBack,
-    IconPush,
-    IconMenu,
-    IconSearch,
-    IconShare,
-    IconClose,
-  },
   setup() {
+    const store = {
+      ui: {
+        common: useUiCommonStore(),
+      },
+    };
+
     const styleModule = inject('styleModule');
 
     const router = useRouter();
+
+    const gnbLayer = ref(null);
 
     const pushNotice = computed(() => {
       return true;
     });
 
+    const gnbOpen = (e = {}) => {
+      gnbLayer.value.layer.open(e.target);
+    };
+
     return {
+      store,
       styleModule,
       router,
       pushNotice,
+      gnbLayer,
+      gnbOpen,
     };
   },
 };
@@ -75,13 +95,23 @@ export default {
   </RouterLink>
 
   <RouterLink
-    v-else-if="type === 'menu'"
-    to=""
+    v-else-if="type === 'menu' && store.ui.common.isAPP"
+    to="/menu"
     :class="styleModule['header__button']"
   >
     <IconMenu :class="styleModule['header__button-icon']" />
     <span :class="styleModule['header__button-text']">메뉴</span>
   </RouterLink>
+
+  <button
+    v-else-if="type === 'menu'"
+    type="button"
+    :class="styleModule['header__button']"
+    @click="gnbOpen"
+  >
+    <IconMenu :class="styleModule['header__button-icon']" />
+    <span :class="styleModule['header__button-text']">메뉴</span>
+  </button>
 
   <RouterLink
     v-else-if="type === 'search'"
@@ -111,4 +141,9 @@ export default {
     <IconClose :class="styleModule['header__button-icon']" />
     <span :class="styleModule['header__button-text']">닫기</span>
   </button>
+
+  <LayerGlobalNav
+    ref="gnbLayer"
+    v-if="type === 'menu' && !store.ui.common.isAPP"
+  />
 </template>
