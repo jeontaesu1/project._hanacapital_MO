@@ -19,6 +19,16 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import SecurityInput from '@/components/ui/form/SecurityInput.vue';
 import PartInput from '@/components/ui/form/PartInput.vue';
+import ExtendSelect from '@/components/ui/form/ExtendSelect.vue';
+import ExtendSelectOption from '@/components/ui/form/ExtendSelectOption.vue';
+
+import BrandLogo001 from '@/assets/images/bank-logo/hana.svg?component';
+import BrandLogo002 from '@/assets/images/bank-logo/lotte.svg?component';
+import BrandLogo003 from '@/assets/images/bank-logo/samsung.svg?component';
+import BrandLogo004 from '@/assets/images/bank-logo/shinhan.svg?component';
+import BrandLogo005 from '@/assets/images/bank-logo/kb.svg?component';
+import BrandLogo006 from '@/assets/images/bank-logo/hyundai.svg?component';
+import BrandLogo007 from '@/assets/images/bank-logo/bc.svg?component';
 
 export default {
   components: {
@@ -40,12 +50,22 @@ export default {
     ButtonListItem,
     SecurityInput,
     PartInput,
+    ExtendSelect,
+    ExtendSelectOption,
+    BrandLogo001,
+    BrandLogo002,
+    BrandLogo003,
+    BrandLogo004,
+    BrandLogo005,
+    BrandLogo006,
+    BrandLogo007,
   },
   setup() {
     const state = reactive({
       nameError: false,
       idNumberError: false,
       phoneError: false,
+      brandError: false,
       numberError: false,
     });
 
@@ -118,6 +138,137 @@ export default {
                   id="layerIdentificationCardNumber04"
                   :useDelete="false"
                 />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+
+        <FormListItem titleText="카드사" target="#layerIdentificationCardBrand">
+          <FormInvalid :error="state.brandError">
+            <InputBlock :error="state.brandError">
+              <InputBlockCell :flexible="true">
+                <ExtendSelect
+                  buttonTitle="카드사 선택하기"
+                  layerTitle="카드사를 선택해 주세요"
+                  buttonId="layerIdentificationCardBrand"
+                >
+                  <div :class="$style['bank-brand']">
+                    <ul :class="$style['bank-brand__list']">
+                      <li :class="$style['bank-brand__item']">
+                        <ExtendSelectOption
+                          value="1"
+                          text="하나"
+                          :classNames="{ option: $style['bank-brand__block'] }"
+                        >
+                          <span :class="$style['bank-brand__logo']">
+                            <BrandLogo001 />
+                          </span>
+                          <span :class="$style['bank-brand__text']">하나</span>
+                        </ExtendSelectOption>
+                      </li>
+                      <li :class="$style['bank-brand__item']">
+                        <ExtendSelectOption
+                          value="2"
+                          text="롯데"
+                          :classNames="{ option: $style['bank-brand__block'] }"
+                        >
+                          <span :class="$style['bank-brand__logo']">
+                            <BrandLogo002 />
+                          </span>
+                          <span :class="$style['bank-brand__text']">롯데</span>
+                        </ExtendSelectOption>
+                      </li>
+                      <li :class="$style['bank-brand__item']">
+                        <ExtendSelectOption
+                          value="3"
+                          text="삼성"
+                          :classNames="{ option: $style['bank-brand__block'] }"
+                        >
+                          <span :class="$style['bank-brand__logo']">
+                            <BrandLogo003 />
+                          </span>
+                          <span :class="$style['bank-brand__text']">삼성</span>
+                        </ExtendSelectOption>
+                      </li>
+                      <li :class="$style['bank-brand__item']">
+                        <ExtendSelectOption
+                          value="4"
+                          text="신한"
+                          :classNames="{ option: $style['bank-brand__block'] }"
+                        >
+                          <span :class="$style['bank-brand__logo']">
+                            <BrandLogo004 />
+                          </span>
+                          <span :class="$style['bank-brand__text']">신한</span>
+                        </ExtendSelectOption>
+                      </li>
+                      <li :class="$style['bank-brand__item']">
+                        <ExtendSelectOption
+                          value="5"
+                          text="국민"
+                          :classNames="{ option: $style['bank-brand__block'] }"
+                        >
+                          <span :class="$style['bank-brand__logo']">
+                            <BrandLogo005 />
+                          </span>
+                          <span :class="$style['bank-brand__text']">국민</span>
+                        </ExtendSelectOption>
+                      </li>
+                      <li :class="$style['bank-brand__item']">
+                        <ExtendSelectOption
+                          value="6"
+                          text="현대"
+                          :classNames="{ option: $style['bank-brand__block'] }"
+                        >
+                          <span :class="$style['bank-brand__logo']">
+                            <BrandLogo006 />
+                          </span>
+                          <span :class="$style['bank-brand__text']">현대</span>
+                        </ExtendSelectOption>
+                      </li>
+                      <li :class="$style['bank-brand__item']">
+                        <ExtendSelectOption
+                          value="7"
+                          text="BC"
+                          :classNames="{ option: $style['bank-brand__block'] }"
+                        >
+                          <span :class="$style['bank-brand__logo']">
+                            <BrandLogo007 />
+                          </span>
+                          <span :class="$style['bank-brand__text']">BC</span>
+                        </ExtendSelectOption>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <ul :class="[$style['basic-list'], 'row-margin-contents']">
+                    <li :class="$style['basic-list__item']">
+                      <div :class="$style['basic-list__symbol']"></div>
+                      <div :class="$style['basic-list__content']">
+                        본인명의의 개인 신용카드 또는 체크카드로 본인확인이
+                        가능합니다.
+                      </div>
+                    </li>
+                    <li :class="$style['basic-list__item']">
+                      <div :class="$style['basic-list__symbol']"></div>
+                      <div :class="$style['basic-list__content']">
+                        법인카드, 가족카드, 선불카드는 본인확인이 불가능합니다.
+                      </div>
+                    </li>
+                    <li :class="$style['basic-list__item']">
+                      <div :class="$style['basic-list__symbol']"></div>
+                      <div :class="$style['basic-list__content']">
+                        비씨카드는 비씨로고(
+                        <span :class="$style['inline-logo']"
+                          ><BrandLogo007
+                        /></span>
+                        )가 표시된 카드만 이용가능합니다.<br />
+                        (예 : 농협BC, 우리카드, IBK카드 등)
+                      </div>
+                    </li>
+                  </ul>
+                </ExtendSelect>
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -226,3 +377,7 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/identification/LayerIdentificationCard.scss';
+</style>

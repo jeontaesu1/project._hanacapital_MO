@@ -4,6 +4,7 @@ import {
   provide,
   inject,
   reactive,
+  onBeforeMount,
   onMounted,
   onBeforeUnmount,
   watch,
@@ -55,14 +56,19 @@ export default {
     },
   },
   setup(props) {
-    const styleModule = inject('styleModule');
+    const styleModule = inject('uiAccordionStyleModule');
     const uiAccordion = inject('uiAccordion', {});
 
     const state = reactive({
-      opened: false,
+      opened: {
+        value: false,
+      },
       key: null,
       layer: null,
       callback: {},
+      initialOpen: {
+        value: false,
+      },
     });
 
     const customClassNames = computed(() => {
@@ -83,11 +89,11 @@ export default {
     };
 
     const setOpened = (val) => {
-      state.opened = val;
+      state.opened.value = val;
     };
 
     const open = (speed) => {
-      if (state.opened) return;
+      if (state.opened.value) return;
 
       if (state.layer && state.layer.open) {
         if (uiAccordion && uiAccordion.once && uiAccordion.once.value) {
@@ -105,7 +111,7 @@ export default {
     };
 
     const close = (speed) => {
-      if (!state.opened) return;
+      if (!state.opened.value) return;
 
       if (state.layer && state.layer.close) {
         state.layer.close(speed);
@@ -113,12 +119,22 @@ export default {
     };
 
     const toggle = (speed) => {
-      if (state.opened) {
+      if (state.opened.value) {
         close(speed);
       } else {
         open(speed);
       }
     };
+
+    onBeforeMount(() => {
+      state.initialOpen.value = props.initialOpen;
+      state.callback.onBeforeOpened = props.onBeforeOpened;
+      state.callback.onOpened = props.onOpened;
+      state.callback.onAfterOpened = props.onAfterOpened;
+      state.callback.onBeforeClosed = props.onBeforeClosed;
+      state.callback.onClosed = props.onClosed;
+      state.callback.onAfterClosed = props.onAfterClosed;
+    });
 
     onMounted(() => {
       if (uiAccordion && uiAccordion.itemsAdd) {
@@ -128,17 +144,6 @@ export default {
           toggle,
         });
       }
-
-      state.callback.onBeforeOpened = props.onBeforeOpened;
-      state.callback.onOpened = props.onOpened;
-      state.callback.onAfterOpened = props.onAfterOpened;
-      state.callback.onBeforeClosed = props.onBeforeClosed;
-      state.callback.onClosed = props.onClosed;
-      state.callback.onAfterClosed = props.onAfterClosed;
-
-      if (props.initialOpen) {
-        open(0);
-      }
     });
 
     onBeforeUnmount(() => {
@@ -147,6 +152,12 @@ export default {
       }
     });
 
+    watch(
+      () => props.initialOpen,
+      (cur) => {
+        state.initialOpen.value = cur;
+      }
+    );
     watch(
       () => props.onBeforeOpened,
       (cur) => {
@@ -185,10 +196,15 @@ export default {
     );
 
     provide('uiAccordionItem', {
+      opened: state.opened,
+      initialOpen: state.initialOpen,
       getLayer,
       setLayer,
       clearLayer,
       setOpened,
+      open,
+      close,
+      toggle,
       callback: state.callback,
     });
 
@@ -211,11 +227,16 @@ export default {
     :class="[
       styleModule['accordion__item'],
       {
-        [uiAccordion.openedClassName]: state.opened,
+        [uiAccordion.openedClassName]: state.opened.value,
       },
       customClassNames.item,
     ]"
   >
-    <slot :open="open" :close="close" :toggle="toggle" :opened="state.opened" />
+    <slot
+      :open="open"
+      :close="close"
+      :toggle="toggle"
+      :opened="state.opened.value"
+    />
   </component>
 </template>

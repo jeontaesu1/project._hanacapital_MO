@@ -10,10 +10,13 @@ import LayerIdentificationTypeSelect from '@/views/identification/LayerIdentific
 import LayerIdentificationBusiness from '@/views/identification/LayerIdentificationBusiness.vue';
 import LayerIdentificationMethodSelect from '@/views/identification/LayerIdentificationMethodSelect.vue';
 import LayerIdentificationPhone from '@/views/identification/LayerIdentificationPhone.vue';
+import LayerIdentificationPhoneAgree from '@/views/identification/LayerIdentificationPhoneAgree.vue';
 import LayerIdentificationCertificate from '@/views/identification/LayerIdentificationCertificate.vue';
 import LayerIdentificationCard from '@/views/identification/LayerIdentificationCard.vue';
+import LayerIdentificationCardAgree from '@/views/identification/LayerIdentificationCardAgree.vue';
+import LayerIdentificationCardARS from '@/views/identification/LayerIdentificationCardARS.vue';
 import LayerIdentificationKakaopay from '@/views/identification/LayerIdentificationKakaopay.vue';
-import LayerIdentificationARS from '@/views/identification/LayerIdentificationARS.vue';
+import LayerIdentificationKakaopayIn from '@/views/identification/LayerIdentificationKakaopayIn.vue';
 
 export default {
   components: {
@@ -25,10 +28,13 @@ export default {
     LayerIdentificationBusiness,
     LayerIdentificationMethodSelect,
     LayerIdentificationPhone,
+    LayerIdentificationPhoneAgree,
     LayerIdentificationCertificate,
     LayerIdentificationCard,
+    LayerIdentificationCardAgree,
+    LayerIdentificationCardARS,
     LayerIdentificationKakaopay,
-    LayerIdentificationARS,
+    LayerIdentificationKakaopayIn,
   },
   setup() {
     const layer001 = ref(null);
@@ -160,11 +166,12 @@ export default {
     <LayerIdentificationBusiness ref="layer002" />
     <LayerIdentificationMethodSelect ref="layer003" />
     <LayerIdentificationPhone ref="layer004" />
-
+    <LayerIdentificationPhoneAgree ref="layer005" />
     <LayerIdentificationCertificate ref="layer006" />
     <LayerIdentificationCard ref="layer007" />
-
-    <LayerIdentificationARS ref="layer009" />
+    <LayerIdentificationCardAgree ref="layer008" />
+    <LayerIdentificationCardARS ref="layer009" />
     <LayerIdentificationKakaopay ref="layer010" />
+    <LayerIdentificationKakaopayIn ref="layer011" />
   </PageContents>
 </template>

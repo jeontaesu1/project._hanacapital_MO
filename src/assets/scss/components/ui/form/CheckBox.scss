@@ -138,7 +138,8 @@
   }
 
   &--secondary,
-  &--tertiary {
+  &--tertiary,
+  &--quinary {
     .checkbox__object {
       &-inner {
         border-color: transparent;
@@ -200,6 +201,7 @@
 
     .checkbox__text {
       padding-top: 2px;
+      font-weight: 400;
     }
 
     &.checkbox--align {
@@ -237,6 +239,26 @@
       svg {
         * {
           fill: $color-white;
+        }
+      }
+    }
+  }
+
+  &--quinary {
+    .checkbox__label {
+      @include font-size-default(13);
+    }
+
+    .checkbox__text {
+      padding-top: 2px;
+      font-weight: 400;
+      color: $color-gray-70;
+    }
+
+    &.checkbox--align {
+      &-center {
+        .checkbox__text {
+          padding-top: 0;
         }
       }
     }

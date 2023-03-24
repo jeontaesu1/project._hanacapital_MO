@@ -36,7 +36,7 @@ export default {
     let timer = null;
     let parentCheck = false;
 
-    const styleModule = inject('styleModule');
+    const styleModule = inject('uiAccordionStyleModule');
     const uiAccordion = inject('uiAccordion', {});
     const uiAccordionItem = inject('uiAccordionItem', {});
 
@@ -218,6 +218,17 @@ export default {
             close,
           });
           parentCheck = true;
+
+          if (
+            uiAccordionItem.initialOpen &&
+            uiAccordionItem.initialOpen.value
+          ) {
+            state.opened = true;
+
+            if (uiAccordionItem.setOpened) {
+              uiAccordionItem.setOpened(true);
+            }
+          }
         }
       }
     });

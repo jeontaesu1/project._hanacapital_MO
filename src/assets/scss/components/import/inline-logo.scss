@@ -1,0 +1,17 @@
+.inline-logo {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: 12px;
+  height: #{$line-height-default}em;
+
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -10px 0 0 -10px;
+    display: block;
+    width: 20px;
+    height: 20px;
+  }
+}

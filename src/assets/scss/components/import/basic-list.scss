@@ -1,0 +1,43 @@
+.basic-list {
+  @include reset-list;
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    @include font-size-default(12);
+    font-weight: 300;
+    color: $color-gray-70;
+    padding-right: 8px;
+
+    & + & {
+      margin-top: 8px;
+    }
+  }
+
+  &__symbol {
+    flex: none;
+    position: relative;
+    display: block;
+    width: 16px;
+    height: #{$line-height-default}em;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -1px 0 0 -1px;
+      width: 2px;
+      height: 2px;
+      border-radius: 50%;
+      background-color: $color-gray-70;
+    }
+  }
+
+  &__content {
+    display: block;
+    flex: 1;
+    min-width: 0;
+  }
+}

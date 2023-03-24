@@ -175,7 +175,7 @@ export default {
       }
     );
 
-    provide('styleModule', useCssModule());
+    provide('uiAccordionStyleModule', useCssModule());
     provide('uiAccordion', {
       items: state.items,
       itemsAdd,
