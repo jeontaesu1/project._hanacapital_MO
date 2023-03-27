@@ -1,0 +1,24 @@
+.hr {
+  margin: 0 -20px;
+  height: 10px;
+  background-color: $color-gray-15;
+
+  &--contents {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  &--secondary {
+    background-color: $color-gray-20;
+  }
+
+  &--tertiary {
+    height: 1px;
+    background-color: $color-gray-30;
+  }
+
+  &--quaternary {
+    height: 1px;
+    background-color: $color-gray-20;
+  }
+}

@@ -207,13 +207,17 @@ body,
 }
 
 // colors
-.color {
-  &-green {
-    color: $color-green-50;
-  }
-  &-gray {
-    color: $color-gray-70;
-  }
+.color-black.color-black {
+  color: $color-black;
+}
+.color-green.color-green {
+  color: $color-green-50;
+}
+.color-red.color-red {
+  color: $color-semantic-essential;
+}
+.color-gray.color-gray {
+  color: $color-gray-70;
 }
 
 // text
@@ -251,5 +255,3 @@ body,
     }
   }
 }
-
-// hr

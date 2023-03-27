@@ -38,6 +38,9 @@ import SecurityInput from '@/components/ui/form/SecurityInput.vue';
 import PartInput from '@/components/ui/form/PartInput.vue';
 import ExtendSelect from '@/components/ui/form/ExtendSelect.vue';
 import ExtendSelectOption from '@/components/ui/form/ExtendSelectOption.vue';
+import BasicHr from '@/components/ui/common/BasicHr.vue';
+import BasicBox from '@/components/ui/common/BasicBox.vue';
+import IllustObject from '@/components/ui/common/IllustObject.vue';
 
 import BrandLogo001 from '@/assets/images/bank-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/bank-logo/lotte.svg?component';
@@ -83,6 +86,9 @@ export default {
     PartInput,
     ExtendSelect,
     ExtendSelectOption,
+    BasicHr,
+    BasicBox,
+    IllustObject,
     IconAdd,
     BrandLogo001,
     BrandLogo002,
@@ -655,14 +661,82 @@ export default {
           </AlertPopup>
         </UiLayer>
 
-        <BasicButton @click="layerOpenTest001"> 풀 팝업 </BasicButton>
-        <BasicButton @click="layerOpenTest002"> 하단 레이어 팝업 </BasicButton>
-        <BasicButton @click="layerOpenTest003"
-          >하단 레이어 팝업 (고정 높이값)</BasicButton
-        >
-        <BasicButton @click="layerOpenTest004"> 레이어 팝업 </BasicButton>
+        <BasicButton @click="layerOpenTest001">풀 팝업</BasicButton>
+        <BasicButton @click="layerOpenTest002">하단 레이어 팝업</BasicButton>
+        <BasicButton @click="layerOpenTest003">
+          하단 레이어 팝업 (고정 높이값)
+        </BasicButton>
+        <BasicButton @click="layerOpenTest004">얼럿형 팝업</BasicButton>
 
         <BasicButton @click="alertOpenTest001">얼럿</BasicButton>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Button List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <ButtonList>
+          <ButtonListItem>
+            <BasicButton line="true" theme="quaternary">Button 1</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton>Button 2</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+
+        <ButtonList>
+          <ButtonListItem flex="none">
+            <BasicButton line="true" theme="quaternary">Button 1</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton>Button 2</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Align Left</h3>
+        <ButtonList align="left">
+          <ButtonListItem>
+            <BasicButton line="true" theme="quaternary">Button 1</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton>Button 2</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Align Center</h3>
+        <ButtonList align="center">
+          <ButtonListItem>
+            <BasicButton line="true" theme="quaternary">Button 1</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton>Button 2</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Align Right</h3>
+        <ButtonList align="right">
+          <ButtonListItem>
+            <BasicButton line="true" theme="quaternary">Button 1</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton>Button 2</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Align Full</h3>
+        <ButtonList align="full">
+          <ButtonListItem>
+            <BasicButton line="true" theme="quaternary">Button 1</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton>Button 2</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
       </div>
     </section>
 
@@ -2549,7 +2623,198 @@ export default {
               (예 : 농협BC, 우리카드, IBK카드 등)
             </div>
           </li>
+          <li :class="[$style['basic-list__item'], 'color-black']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+          <li :class="[$style['basic-list__item'], 'color-green']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+          <li :class="[$style['basic-list__item'], 'color-red']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
         </ul>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Text Symbol</h3>
+
+        <ol :class="$style['basic-list']">
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']">1.</div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']">2.</div>
+            <div :class="$style['basic-list__content']">
+              법인카드, 가족카드, 선불카드는 본인확인이 불가능합니다.
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']">3.</div>
+            <div :class="$style['basic-list__content']">
+              비씨카드는 비씨로고(
+              <span :class="$style['inline-logo']"><BrandLogo007 /></span>
+              )가 표시된 카드만 이용가능합니다.<br />
+              (예 : 농협BC, 우리카드, IBK카드 등)
+            </div>
+          </li>
+          <li :class="[$style['basic-list__item'], 'color-black']">
+            <div :class="$style['basic-list__symbol']">4.</div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+          <li :class="[$style['basic-list__item'], 'color-green']">
+            <div :class="$style['basic-list__symbol']">5.</div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+          <li :class="[$style['basic-list__item'], 'color-red']">
+            <div :class="$style['basic-list__symbol']">6.</div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Regular</h3>
+
+        <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              법인카드, 가족카드, 선불카드는 본인확인이 불가능합니다.
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              비씨카드는 비씨로고(
+              <span :class="$style['inline-logo']"><BrandLogo007 /></span>
+              )가 표시된 카드만 이용가능합니다.<br />
+              (예 : 농협BC, 우리카드, IBK카드 등)
+            </div>
+          </li>
+          <li :class="[$style['basic-list__item'], 'color-black']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+          <li :class="[$style['basic-list__item'], 'color-green']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+          <li :class="[$style['basic-list__item'], 'color-red']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">hr</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <BasicHr className="row-margin-contents" />
+        <BasicHr theme="secondary" className="row-margin-contents" />
+        <BasicHr theme="tertiary" className="row-margin-contents" />
+        <BasicHr theme="quaternary" className="row-margin-contents" />
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Contents</h3>
+        <BasicHr type="contents" className="row-margin-contents" />
+        <BasicHr
+          theme="secondary"
+          type="contents"
+          className="row-margin-contents"
+        />
+        <BasicHr
+          theme="tertiary"
+          type="contents"
+          className="row-margin-contents"
+        />
+        <BasicHr
+          theme="quaternary"
+          type="contents"
+          className="row-margin-contents"
+        />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Box</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <BasicBox>// contnets</BasicBox>
+        <BasicBox theme="secondary">// contnets</BasicBox>
+        <BasicBox theme="tertiary">// contnets</BasicBox>
+        <BasicBox theme="quaternary">// contnets</BasicBox>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Illust Object</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <IllustObject />
+        <IllustObject type="complete" />
+        <IllustObject type="error" />
+        <IllustObject type="fail" />
+        <IllustObject type="license" />
+        <IllustObject type="certification" />
+        <IllustObject type="star" />
+        <IllustObject type="appfree" />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">colors</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div class="color-black">.color-black</div>
+        <div class="color-gray">.color-gray</div>
+        <div class="color-green">.color-green</div>
+        <div class="color-red">.color-red</div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Text</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <p class="text-title-1">.text-title-1 (20)</p>
+        <p class="text-title-2">.text-title-1 (18)</p>
+        <p class="text-body-1">.text-body-1 (16)</p>
+        <p class="text-body-2">.text-body-2 (15)</p>
+        <p class="text-body-3">.text-body-3 (14)</p>
+        <p class="text-body-4">.text-body-4 (13)</p>
+        <p class="text-body-5">.text-body-5 (12)</p>
       </div>
     </section>
 

@@ -18,20 +18,35 @@
     flex: none;
     position: relative;
     display: block;
-    width: 16px;
     height: #{$line-height-default}em;
+    margin-right: 4px;
 
-    &::before {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      margin: -1px 0 0 -1px;
-      width: 2px;
-      height: 2px;
-      border-radius: 50%;
-      background-color: $color-gray-70;
+    &:empty {
+      min-width: 16px;
+      margin-right: 0;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -1px 0 0 -1px;
+        width: 2px;
+        height: 2px;
+        border-radius: 50%;
+        background-color: $color-gray-70;
+
+        .basic-list__item:global(.color-black) & {
+          background-color: $color-black;
+        }
+        .basic-list__item:global(.color-green) & {
+          background-color: $color-green-50;
+        }
+        .basic-list__item:global(.color-red) & {
+          background-color: $color-semantic-essential;
+        }
+      }
     }
   }
 
@@ -39,5 +54,29 @@
     display: block;
     flex: 1;
     min-width: 0;
+  }
+
+  &--regular {
+    .basic-list__item {
+      @include font-size-default(14);
+      padding-right: 0;
+
+      & + .basic-list__item {
+        margin-top: 12px;
+      }
+    }
+    .basic-list__symbol {
+      &:empty {
+        min-width: 3px;
+        margin-right: 6px;
+
+        &::before {
+          margin-left: 0;
+          left: 0;
+          width: 3px;
+          height: 3px;
+        }
+      }
+    }
   }
 }
