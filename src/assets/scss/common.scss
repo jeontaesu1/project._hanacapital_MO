@@ -90,6 +90,11 @@ body,
   margin-bottom: 24px;
   @include row-margin-first-last;
 }
+.row-margin-contents-group.row-margin-contents-group {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  @include row-margin-first-last;
+}
 .row-margin-container.row-margin-container {
   margin-top: 32px;
   margin-bottom: 32px;
@@ -246,3 +251,5 @@ body,
     }
   }
 }
+
+// hr
