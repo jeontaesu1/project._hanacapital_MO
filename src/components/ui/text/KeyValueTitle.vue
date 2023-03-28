@@ -2,7 +2,7 @@
 import { computed, inject } from 'vue';
 
 const defaultClassNames = () => ({
-  item: '',
+  wrap: '',
 });
 
 export default {
@@ -31,7 +31,7 @@ export default {
 </script>
 
 <template>
-  <div :class="styleModule['key-value-list__item']">
+  <dt :class="[styleModule['key-value__key'], customClassNames.wrap]">
     <slot />
-  </div>
+  </dt>
 </template>

@@ -1,8 +1,8 @@
 <script>
-import { computed, inject } from 'vue';
+import { computed, useCssModule, provide } from 'vue';
 
 const defaultClassNames = () => ({
-  item: '',
+  wrap: '',
 });
 
 export default {
@@ -13,17 +13,20 @@ export default {
         return defaultClassNames();
       },
     },
+    type: {
+      Type: String,
+      default: null,
+    },
   },
   setup(props) {
-    const styleModule = inject('styleModule');
-
     const customClassNames = computed(() => {
       const { classNames } = props;
       return Object.assign(defaultClassNames(), classNames);
     });
 
+    provide('styleModule', useCssModule());
+
     return {
-      styleModule,
       customClassNames,
     };
   },
@@ -31,7 +34,19 @@ export default {
 </script>
 
 <template>
-  <dt :class="styleModule['key-value-list__key']">
+  <div
+    :class="[
+      $style['ui-notice'],
+      {
+        [$style[`ui-notice--${type}`]]: type,
+      },
+      customClassNames.wrap,
+    ]"
+  >
     <slot />
-  </dt>
+  </div>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/components/ui/text/NoticeText.scss';
+</style>

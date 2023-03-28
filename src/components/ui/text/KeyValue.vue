@@ -2,7 +2,7 @@
 import { computed, useCssModule, provide } from 'vue';
 
 const defaultClassNames = () => ({
-  wrap: 'key-value',
+  wrap: '',
   list: '',
 });
 
@@ -44,12 +44,12 @@ export default {
       customClassNames.wrap,
     ]"
   >
-    <dl :class="[$style['key-value-list'], customClassNames.list]">
+    <dl :class="[$style['key-value__list'], customClassNames.list]">
       <slot />
     </dl>
   </div>
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/components/ui/keyValue/keyValueList.scss';
+@import '@/assets/scss/components/ui/text/keyValue.scss';
 </style>

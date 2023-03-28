@@ -41,12 +41,12 @@ import ExtendSelectOption from '@/components/ui/form/ExtendSelectOption.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
-import KeyValueList from '@/components/ui/keyValue/KeyValueList.vue';
-import KeyValueItem from '@/components/ui/keyValue/KeyValueItem.vue';
-import KeyValueTitle from '@/components/ui/keyValue/KeyValueTitle.vue';
-import KeyValueText from '@/components/ui/keyValue/KeyValueText.vue';
-import NoticeText from '@/components/ui/notice/NoticeText.vue';
-import NoticeTextContents from '@/components/ui/notice/NoticeTextContents.vue';
+import KeyValueList from '@/components/ui/text/keyValue.vue';
+import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
+import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
+import KeyValueText from '@/components/ui/text/KeyValueText.vue';
+import NoticeText from '@/components/ui/text/NoticeText.vue';
+import NoticeTextContents from '@/components/ui/text/NoticeTextContents.vue';
 
 import BrandLogo001 from '@/assets/images/bank-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/bank-logo/lotte.svg?component';
