@@ -4,7 +4,7 @@ import { RouterLink, useRouter } from 'vue-router';
 
 import { useUiCommonStore } from '@/stores/ui/common';
 
-import LayerGlobalNav from '@/views/menu/LayerGlobalNav.vue';
+import LayerGlobalNav from '@/components/ui/gnb/LayerGlobalNav.vue';
 
 import IconBack from '@/assets/images/common/back-left.svg?component';
 import IconPush from '@/assets/images/common/alarm.svg?component';
