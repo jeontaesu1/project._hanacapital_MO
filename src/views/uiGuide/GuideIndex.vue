@@ -1,22 +1,44 @@
-<script setup>
-import BasicButton from '@/components/ui/button/BasicButton.vue';
-import { onMounted } from 'vue';
+<script>
+import { ref, onMounted, onUpdated, onUnmounted } from 'vue';
 
-const datas = [
+const datas = () => [
+  /*
   {
-    subTitle: '공통',
-    subContents: [
+    title: '',
+    datas: [
       {
-        depth1: '레이아웃',
-        depth2: 'Type 01',
+        depth1: '',
+        depth2: '',
         depth3: '',
         depth4: '',
         depth5: '',
+        depth6: '',
+        path: '/',
+        status: 'ing', // ing, end, moding, confirm
+        create: '2023.03.24',
+        log: [
+          {
+            // { date: '2023.03.24', text: '' },
+          }
+        ],
+      },
+    ],
+  },
+  */
+  {
+    title: '공통',
+    datas: [
+      {
+        depth1: '레이아웃',
+        depth2: 'Type 001',
+        depth3: '',
+        depth4: '',
+        depth5: '',
+        depth6: '',
         path: '/guide/layout-001',
         status: 'end',
         create: '2023.03.24',
-        log: '',
-        // log: [{ date: '2023.03.23', text: '수정내용' }],
+        log: [],
       },
       {
         depth1: '레이아웃',
@@ -24,10 +46,11 @@ const datas = [
         depth3: '',
         depth4: '',
         depth5: '',
+        depth6: '',
         path: '/guide/layout-002',
         status: 'end',
         create: '2023.03.24',
-        log: '',
+        log: [],
       },
       {
         depth1: '레이아웃',
@@ -35,10 +58,11 @@ const datas = [
         depth3: '',
         depth4: '',
         depth5: '',
+        depth6: '',
         path: '/guide/layout-003',
         status: 'end',
         create: '2023.03.24',
-        log: '',
+        log: [],
       },
       {
         depth1: '본인인증',
@@ -46,10 +70,11 @@ const datas = [
         depth3: '',
         depth4: '',
         depth5: '',
+        depth6: '',
         path: '/guide/identification-001',
         status: 'end',
         create: '2023.03.24',
-        log: '',
+        log: [],
       },
       {
         depth1: '본인인증',
@@ -57,186 +82,225 @@ const datas = [
         depth3: '',
         depth4: '',
         depth5: '',
+        depth6: '',
         path: '/guide/identification-002',
         status: 'end',
         create: '2023.03.24',
-        log: '',
+        log: [],
       },
     ],
   },
   {
-    subTitle: '홈',
-    subContents: [
+    title: '홈',
+    datas: [
       {
         depth1: '홈',
         depth2: '',
         depth3: '',
         depth4: '',
         depth5: '',
+        depth6: '',
         path: '/home',
         status: '',
         create: '',
-        log: '',
+        log: [],
       },
     ],
   },
   {
-    subTitle: '전체메뉴',
-    subContents: [
+    title: '전체메뉴',
+    datas: [
       {
         depth1: '전체메뉴',
         depth2: '',
         depth3: '',
         depth4: '',
         depth5: '',
+        depth6: '',
         path: '/menu',
         status: '',
         create: '',
-        log: '',
+        log: [],
       },
     ],
   },
   {
-    subTitle: '로그인',
-    subContents: [
+    title: '회원관리',
+    datas: [
       {
         depth1: '로그인',
         depth2: '',
         depth3: '',
         depth4: '',
         depth5: '',
+        depth6: '',
         path: '/sign/signin',
         status: '',
         create: '',
-        log: '',
+        log: [],
       },
     ],
   },
 ];
 
-// Convert date to milliSecond
-function convertDateToMilliSecond(formattedDate) {
-  return new Date(formattedDate.replaceAll('.', '-')).getTime();
-}
+export default {
+  setup() {
+    const tableDatas = datas();
+    const statusText = {
+      ing: '작업중',
+      end: '작업완료',
+      moding: '수정중',
+      confirm: '검수완료',
+    };
+    const dates = (() => {
+      const array = [];
 
-// Convert milliSecond to date
-function convertMilliSecondToDate(milliSecond) {
-  const dateObj = new Date(milliSecond);
-  const year = dateObj.getFullYear();
-  const month = String(dateObj.getMonth() + 1).padStart(2, '0');
-  const date = String(dateObj.getDate()).padStart(2, '0');
-  return year + '.' + month + '.' + date;
-}
+      const add = (date) => {
+        if (
+          typeof date === 'string' &&
+          date.length &&
+          array.indexOf(date) === -1
+        ) {
+          array.push(date);
+        }
+      };
 
-// Get recent day of parameter Array
-function getMaxMilliSecondFromLogArray(logArray) {
-  const milliSeconds = logArray.map((log) =>
-    convertDateToMilliSecond(log.date)
-  );
-  const maxMilliSecond = Math.max(...milliSeconds);
-  return maxMilliSecond;
-}
+      tableDatas.forEach((item) => {
+        item.datas.forEach((data) => {
+          add(data.create);
 
-// All modify date Array
-const logs = datas
-  .map((data) => data.subContents)
-  .flat()
-  .map((subContent) => subContent.log)
-  .filter((log) => !!log)
-  .flat();
+          data.log.sort((a, b) => {
+            var dateA = a.date.toUpperCase();
+            var dateB = b.date.toUpperCase();
+            if (dateA < dateB) {
+              return -1;
+            }
+            if (dateA > dateB) {
+              return 1;
+            }
+            return 0;
+          });
 
-// Recent day of all modify date Array
-const maxMilliSecond = getMaxMilliSecondFromLogArray(logs);
+          data.log.forEach((log) => {
+            add(log.date);
+          });
+        });
+      });
 
-// Bottom Button link to section
-let clickedTimer = null;
-const LinkButtonActive = (e) => {
-  const Link = e.target.parentElement.getAttribute('href');
-  const target = document.querySelector(Link);
-  const allTarget = document.getElementsByClassName('index-section');
+      array.sort();
 
-  for (var i = 0; i < allTarget.length; i++) {
-    allTarget[i].classList.remove('clicked');
-  }
-  clearTimeout(clickedTimer);
-  clickedTimer = setTimeout(function () {
-    target.classList.add('clicked');
-  }, 100);
+      return array;
+    })();
+    const latestDate = dates[dates.length - 1];
+
+    const renderVal = (datas, i, key) => {
+      const val = datas[i][key];
+      const prevIndex = i - 1;
+
+      if (prevIndex >= 0 && datas[prevIndex] && datas[prevIndex][key] === val) {
+        return '';
+      } else {
+        return val.replace(/\n/g, '<br>');
+      }
+    };
+
+    const bottomBar = ref(null);
+    const fake = ref(null);
+
+    const update = () => {
+      if (bottomBar.value && fake.value) {
+        const height = bottomBar.value.offsetHeight;
+        fake.value.style.height = `${height}px`;
+      }
+    };
+
+    const scroll = () => {
+      const html = document.getElementsByTagName('html')[0];
+
+      if (html && bottomBar.value) {
+        bottomBar.value.style.marginLeft = `-${html.scrollLeft}px`;
+      }
+    };
+
+    const resize = () => {
+      scroll();
+      update();
+    };
+
+    const load = () => {
+      resize();
+    };
+
+    onMounted(() => {
+      update();
+
+      window.addEventListener('load', load);
+      window.addEventListener('scroll', scroll);
+      window.addEventListener('resize', resize);
+    });
+
+    onUpdated(() => {
+      update();
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener('load', load);
+      window.removeEventListener('scroll', scroll);
+      window.removeEventListener('resize', resize);
+    });
+
+    return {
+      bottomBar,
+      fake,
+      tableDatas,
+      statusText,
+      latestDate,
+      renderVal,
+    };
+  },
 };
-
-// Bottom Link Buttons Height
-function paddingBottom() {
-  const bottomNav = document.querySelector('.index-bottom');
-
-  if (bottomNav) {
-    const bottomNavHeight = bottomNav.offsetHeight;
-    const fakeBottomElement = document.querySelector('.index-fake-botttom');
-    fakeBottomElement.style.height = `${bottomNavHeight}px`;
-  }
-}
-
-const scroll = () => {
-  const bottomNav = document.querySelector('.index-bottom');
-
-  if (bottomNav) {
-    const scrollLeft = window.scrollX;
-    bottomNav.style.marginLeft = `-${scrollLeft}px`;
-  }
-};
-
-onMounted(() => {
-  paddingBottom();
-  window.addEventListener('resize', paddingBottom());
-  window.addEventListener('scroll', scroll);
-});
 </script>
 
 <template>
   <div class="contIndex">
     <div class="index-wrap">
       <div class="index">
-        <h1 class="index-title">하나캐피탈 모바일 리빌드</h1>
+        <h1 class="index-title">하나캐피탈 - 모바일</h1>
         <div class="index-gnb">
           <div class="index-links">
             <div class="index-links__inner">
-              <BasicButton
-                tagName="RouterLink"
-                size="mini"
-                inline="true"
-                to="/guide/component"
-                >컴포넌트 가이드</BasicButton
-              >
+              <a href="/guide/component" target="_blank" class="index-button">
+                컴포넌트 가이드
+              </a>
             </div>
           </div>
         </div>
-        <div class="index-bottom">
+        <div class="index-bottom" ref="bottomBar">
           <div class="index-links">
-            <div class="index-links__inner" id="nav">
-              <BasicButton
-                v-for="(data, i) in datas"
+            <div class="index-links__inner">
+              <a
+                v-for="(item, i) in tableDatas"
                 :key="i"
-                theme="secondary"
-                tagName="a"
-                size="mini"
-                inline="true"
                 :href="`#section${i}`"
-                @click="LinkButtonActive"
-                >{{ data.subTitle }}</BasicButton
+                class="index-button"
               >
+                {{ item.title }}
+              </a>
             </div>
           </div>
         </div>
         <div class="index-datas" id="indexTable">
           <div
             class="index-section"
-            v-for="(data, i) in datas"
+            v-for="(item, i) in tableDatas"
             :key="i"
             :id="`section${i}`"
           >
-            <h2 class="index-section__title">{{ data.subTitle }}</h2>
+            <h2 class="index-section__title">{{ item.title }}</h2>
             <div class="index-table">
               <table>
                 <colgroup>
+                  <col width="160px" />
                   <col width="160px" />
                   <col width="160px" />
                   <col width="160px" />
@@ -255,6 +319,7 @@ onMounted(() => {
                     <th>depth3</th>
                     <th>depth4</th>
                     <th>depth5</th>
+                    <th>depth6</th>
                     <th>path</th>
                     <th>status</th>
                     <th>create</th>
@@ -263,67 +328,50 @@ onMounted(() => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="(subContent, i) in data.subContents" :key="i">
-                    <td>{{ subContent.depth1 }}</td>
-                    <td>{{ subContent.depth2 }}</td>
-                    <td>{{ subContent.depth3 }}</td>
-                    <td>{{ subContent.depth4 }}</td>
-                    <td>{{ subContent.depth5 }}</td>
+                  <tr v-for="(data, i) in item.datas" :key="i">
+                    <td>{{ renderVal(item.datas, i, 'depth1') }}</td>
+                    <td>{{ renderVal(item.datas, i, 'depth2') }}</td>
+                    <td>{{ renderVal(item.datas, i, 'depth3') }}</td>
+                    <td>{{ renderVal(item.datas, i, 'depth4') }}</td>
+                    <td>{{ renderVal(item.datas, i, 'depth5') }}</td>
+                    <td>{{ renderVal(item.datas, i, 'depth6') }}</td>
                     <td>
-                      <RouterLink :to="subContent.path">
-                        {{ subContent.path }}
-                      </RouterLink>
+                      <a :href="data.path" target="_blank">
+                        {{ data.path }}
+                      </a>
                     </td>
                     <td>
                       <span
-                        class="index-status index-status--end"
-                        v-if="subContent.status === 'end'"
-                        >작업완료</span
+                        v-if="data.status.length"
+                        :class="`index-status index-status--${data.status}`"
                       >
-                      <span
-                        class="index-status index-status--ing"
-                        v-else-if="subContent.status === 'ing'"
-                        >작업중</span
-                      >
-                      <span
-                        class="index-status index-status--moding"
-                        v-else-if="subContent.status === 'moding'"
-                        >수정중</span
-                      >
+                        {{ statusText[data.status] }}
+                      </span>
                     </td>
-                    <td>{{ subContent.create }}</td>
                     <td
                       :class="{
-                        'is-emphasis':
-                          !!subContent.log &&
-                          getMaxMilliSecondFromLogArray(subContent.log) ===
-                            maxMilliSecond,
+                        'is-emphasis': latestDate === data.create,
                       }"
                     >
-                      {{
-                        subContent.log &&
-                        convertMilliSecondToDate(
-                          getMaxMilliSecondFromLogArray(subContent.log)
-                        )
-                      }}
+                      {{ data.create }}
                     </td>
+                    <td></td>
                     <td>
-                      <ul class="index-log">
+                      <ul v-if="data.log.length" class="index-log">
                         <li
-                          v-for="(logItem, i) in subContent.log"
+                          v-for="(log, i) in data.log"
                           :key="i"
-                          class="index-log__item"
-                          :class="{
-                            'is-emphasis':
-                              !!logItem &&
-                              convertDateToMilliSecond(logItem.date) ===
-                                maxMilliSecond,
-                          }"
+                          :class="[
+                            'index-log__item',
+                            {
+                              'is-emphasis': latestDate === log.date,
+                            },
+                          ]"
                         >
                           <div class="index-log__item__date">
-                            <span>{{ logItem.date }}</span>
+                            <span>[{{ log.date }}]</span>
                           </div>
-                          {{ logItem.text }}
+                          {{ log.text }}
                         </li>
                       </ul>
                     </td>
@@ -335,7 +383,7 @@ onMounted(() => {
         </div>
       </div>
     </div>
-    <div class="index-fake-botttom"></div>
+    <div class="index-fake-botttom" ref="fake"></div>
   </div>
 </template>
 
