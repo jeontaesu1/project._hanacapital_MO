@@ -16,7 +16,7 @@ export default {
     },
   },
   setup(props) {
-    const styleModule = inject('styleModule');
+    const styleModule = inject('checkBoxStyleModule');
 
     const customClassNames = computed(() => {
       const { classNames } = props;

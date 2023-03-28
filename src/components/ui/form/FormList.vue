@@ -21,7 +21,7 @@ export default {
       return Object.assign(defaultClassNames(), classNames);
     });
 
-    provide('styleModule', useCssModule());
+    provide('formListStyleModule', useCssModule());
 
     return {
       customClassNames,

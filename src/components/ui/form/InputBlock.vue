@@ -88,7 +88,7 @@ export default {
       state.isSelectFocus = val;
     };
 
-    provide('styleModule', useCssModule());
+    provide('inputBlockStyleModule', useCssModule());
     provide('inputBlock', {
       selectFocus,
     });

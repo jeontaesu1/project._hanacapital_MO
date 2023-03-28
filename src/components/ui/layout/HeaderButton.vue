@@ -41,7 +41,7 @@ export default {
       },
     };
 
-    const styleModule = inject('styleModule');
+    const styleModule = inject('headerStyleModule');
 
     const router = useRouter();
 

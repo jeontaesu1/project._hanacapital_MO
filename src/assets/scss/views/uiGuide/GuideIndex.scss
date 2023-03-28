@@ -4,12 +4,25 @@
   box-sizing: border-box;
 }
 
+.index-button {
+  display: block;
+  margin: 10px 0 0 10px;
+  float: left;
+  padding: 5px 15px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  background: #666;
+}
+
 .index-links {
   &__inner {
     @include floating-clear;
     margin: -10px 0 0 -10px;
 
-    a {
+    .index-button {
       float: left;
       margin: 10px 0 0 10px;
     }
@@ -37,6 +50,10 @@
     padding: 10px 20px;
     background: rgba(0, 0, 0, 0.4);
     box-sizing: border-box;
+
+    .index-button {
+      background-color: #066cb3;
+    }
   }
 
   &-section {
@@ -168,6 +185,10 @@
 
   &--moding {
     background-color: #ff4594;
+  }
+
+  &--confirm {
+    background-color: #9961c7;
   }
 }
 

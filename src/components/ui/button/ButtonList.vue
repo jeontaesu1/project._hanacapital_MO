@@ -25,7 +25,7 @@ export default {
       return Object.assign(defaultClassNames(), classNames);
     });
 
-    provide('styleModule', useCssModule());
+    provide('buttonListStyleModule', useCssModule());
 
     return {
       customClassNames,
