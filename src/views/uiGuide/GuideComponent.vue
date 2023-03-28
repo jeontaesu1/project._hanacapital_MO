@@ -45,8 +45,8 @@ import KeyValueList from '@/components/ui/keyValue/KeyValueList.vue';
 import KeyValueItem from '@/components/ui/keyValue/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/keyValue/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/keyValue/KeyValueText.vue';
-import NoticeText from '@/components/ui/NoticeText/NoticeText.vue';
-import NoticeTextContents from '@/components/ui/NoticeText/NoticeTextContents.vue';
+import NoticeText from '@/components/ui/notice/NoticeText.vue';
+import NoticeTextContents from '@/components/ui/notice/NoticeTextContents.vue';
 
 import BrandLogo001 from '@/assets/images/bank-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/bank-logo/lotte.svg?component';
@@ -2860,13 +2860,13 @@ export default {
     <section class="test-section">
       <h2 class="test-section-title">Notice Text</h2>
       <NoticeText type="important">
-        <NoticeTextContents>
-          TextTextTextTextTextTextTextText
+        <NoticeTextContents
+          >TextTextTextTextTextTextTextText
         </NoticeTextContents>
       </NoticeText>
       <NoticeText type="complete">
-        <NoticeTextContents>
-          TextTextTextTextTextTextTextText
+        <NoticeTextContents
+          >TextTextTextTextTextTextTextText
         </NoticeTextContents>
       </NoticeText>
     </section>

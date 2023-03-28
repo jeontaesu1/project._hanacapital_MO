@@ -48,5 +48,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/components/ui/NoticeText/NoticeText.scss';
+@import '@/assets/scss/components/ui/notice/NoticeText.scss';
 </style>
