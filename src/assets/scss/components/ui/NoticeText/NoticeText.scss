@@ -1,0 +1,39 @@
+.ui-notice {
+  position: relative;
+  padding-left: 18px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    z-index: 1;
+  }
+
+  &__text {
+    @include font-size-default(12);
+    min-height: #{$line-height-default}em;
+  }
+
+  &--important {
+    &:before {
+      background: url('@/assets/images/icon/important.svg') no-repeat 50% 50% /
+        100% 100%;
+    }
+    .ui-notice__text {
+      color: $color-gray-60;
+    }
+  }
+
+  &--complete {
+    &:before {
+      background: url('@/assets/images/icon/complete.svg') no-repeat 50% 50% /
+        100% 100%;
+    }
+    .ui-notice__text {
+      color: $color-navy-50;
+    }
+  }
+}

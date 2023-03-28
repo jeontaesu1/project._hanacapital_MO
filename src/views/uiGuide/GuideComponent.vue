@@ -41,6 +41,12 @@ import ExtendSelectOption from '@/components/ui/form/ExtendSelectOption.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
+import KeyValueList from '@/components/ui/keyValue/KeyValueList.vue';
+import KeyValueItem from '@/components/ui/keyValue/KeyValueItem.vue';
+import KeyValueTitle from '@/components/ui/keyValue/KeyValueTitle.vue';
+import KeyValueText from '@/components/ui/keyValue/KeyValueText.vue';
+import NoticeText from '@/components/ui/NoticeText/NoticeText.vue';
+import NoticeTextContents from '@/components/ui/NoticeText/NoticeTextContents.vue';
 
 import BrandLogo001 from '@/assets/images/bank-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/bank-logo/lotte.svg?component';
@@ -89,6 +95,12 @@ export default {
     BasicHr,
     BasicBox,
     IllustObject,
+    KeyValueList,
+    KeyValueItem,
+    KeyValueTitle,
+    KeyValueText,
+    NoticeText,
+    NoticeTextContents,
     IconAdd,
     BrandLogo001,
     BrandLogo002,
@@ -2779,6 +2791,58 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Key Value Text</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <KeyValueList>
+          <KeyValueItem>
+            <KeyValueTitle>차량명의</KeyValueTitle>
+            <KeyValueText>
+              본인명의(공동명의 제외)<br />
+              소유기간 3개월 이상
+            </KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>소유차종</KeyValueTitle>
+            <KeyValueText> 국산/수입 승용, RV, 승합 </KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>차량연식</KeyValueTitle>
+            <KeyValueText>
+              출고 이후 10년 이내<br />
+              차량가격 500만원 이상<br />
+              (당사 차량 시세 가격 기준)
+            </KeyValueText>
+          </KeyValueItem>
+        </KeyValueList>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">align: left</h3>
+        <KeyValueList align="left">
+          <KeyValueItem>
+            <KeyValueTitle>차량명의</KeyValueTitle>
+            <KeyValueText>
+              본인명의(공동명의 제외)<br />
+              소유기간 3개월 이상
+            </KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>소유차종</KeyValueTitle>
+            <KeyValueText> 국산/수입 승용, RV, 승합 </KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>차량연식</KeyValueTitle>
+            <KeyValueText>
+              출고 이후 10년 이내<br />
+              차량가격 500만원 이상<br />
+              (당사 차량 시세 가격 기준)
+            </KeyValueText>
+          </KeyValueItem>
+        </KeyValueList>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Illust Object</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -2791,6 +2855,20 @@ export default {
         <IllustObject type="star" />
         <IllustObject type="appfree" />
       </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Notice Text</h2>
+      <NoticeText type="important">
+        <NoticeTextContents>
+          TextTextTextTextTextTextTextText
+        </NoticeTextContents>
+      </NoticeText>
+      <NoticeText type="complete">
+        <NoticeTextContents>
+          TextTextTextTextTextTextTextText
+        </NoticeTextContents>
+      </NoticeText>
     </section>
 
     <section class="test-section">

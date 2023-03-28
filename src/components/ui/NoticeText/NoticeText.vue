@@ -1,0 +1,52 @@
+<script>
+import { computed, useCssModule, provide } from 'vue';
+
+const defaultClassNames = () => ({
+  wrap: '',
+});
+
+export default {
+  props: {
+    classNames: {
+      Type: Object,
+      default() {
+        return defaultClassNames();
+      },
+    },
+    type: {
+      Type: String,
+      default: null,
+    },
+  },
+  setup(props) {
+    const customClassNames = computed(() => {
+      const { classNames } = props;
+      return Object.assign(defaultClassNames(), classNames);
+    });
+
+    provide('styleModule', useCssModule());
+
+    return {
+      customClassNames,
+    };
+  },
+};
+</script>
+
+<template>
+  <div
+    :class="[
+      $style['ui-notice'],
+      {
+        [$style[`ui-notice--${type}`]]: type,
+      },
+      customClassNames.wrap,
+    ]"
+  >
+    <slot />
+  </div>
+</template>
+
+<style lang="scss" module>
+@import '@/assets/scss/components/ui/NoticeText/NoticeText.scss';
+</style>
