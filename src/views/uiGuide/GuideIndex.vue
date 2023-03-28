@@ -4,10 +4,9 @@ import { ref, onMounted, onUpdated, onUnmounted } from 'vue';
 const datas = () => [
   /*
   {
-    title: '',
+    depth1: '',
     datas: [
       {
-        depth1: '',
         depth2: '',
         depth3: '',
         depth4: '',
@@ -26,12 +25,11 @@ const datas = () => [
   },
   */
   {
-    title: '공통',
+    depth1: '공통',
     datas: [
       {
-        depth1: '레이아웃',
-        depth2: 'Type 001',
-        depth3: '',
+        depth2: '레이아웃',
+        depth3: 'Type 001',
         depth4: '',
         depth5: '',
         depth6: '',
@@ -41,9 +39,8 @@ const datas = () => [
         log: [],
       },
       {
-        depth1: '레이아웃',
-        depth2: 'Type 02',
-        depth3: '',
+        depth2: '레이아웃',
+        depth3: 'Type 02',
         depth4: '',
         depth5: '',
         depth6: '',
@@ -53,9 +50,8 @@ const datas = () => [
         log: [],
       },
       {
-        depth1: '레이아웃',
-        depth2: 'Type 03',
-        depth3: '',
+        depth2: '레이아웃',
+        depth3: 'Type 03',
         depth4: '',
         depth5: '',
         depth6: '',
@@ -65,8 +61,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth1: '본인인증',
-        depth2: '',
+        depth2: '본인인증',
         depth3: '',
         depth4: '',
         depth5: '',
@@ -77,9 +72,8 @@ const datas = () => [
         log: [],
       },
       {
-        depth1: '본인인증',
-        depth2: '팝업',
-        depth3: '',
+        depth2: '본인인증',
+        depth3: '팝업',
         depth4: '',
         depth5: '',
         depth6: '',
@@ -91,10 +85,9 @@ const datas = () => [
     ],
   },
   {
-    title: '홈',
+    depth1: '홈',
     datas: [
       {
-        depth1: '홈',
         depth2: '',
         depth3: '',
         depth4: '',
@@ -108,10 +101,9 @@ const datas = () => [
     ],
   },
   {
-    title: '전체메뉴',
+    depth1: '전체메뉴',
     datas: [
       {
-        depth1: '전체메뉴',
         depth2: '',
         depth3: '',
         depth4: '',
@@ -125,16 +117,465 @@ const datas = () => [
     ],
   },
   {
-    title: '회원관리',
+    depth1: '회원관리',
     datas: [
       {
-        depth1: '로그인',
-        depth2: '',
-        depth3: '',
+        depth2: '로그인(WEB)',
+        depth3: '아이디\n공동인증서',
         depth4: '',
         depth5: '',
         depth6: '',
         path: '/sign/signin',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '로그인(WEB)',
+        depth3: '아이디',
+        depth4: '팝업',
+        depth5: '',
+        depth6: '',
+        path: '/guide/sign-in-001',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '로그인(WEB)',
+        depth3: '공동인증서',
+        depth4: '팝업',
+        depth5: '',
+        depth6: '',
+        path: '/guide/sign-in-certificate-001',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '아이디 찾기(WEB)',
+        depth3: '팝업',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/guide/sign-find-id-001',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '비밀번호 찾기(WEB)',
+        depth3: '팝업',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/guide/sign-reset-password-001',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '회원가입(WEB)',
+        depth3: '팝업',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/guide/sign-up-001',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '회원가입(APP)',
+        depth3: '',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/sign/signup-app',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '회원가입(APP)',
+        depth3: '팝업',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/guide/sign-up-app-001',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '간편비밀번호 불러오기(APP)',
+        depth3: '',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/sign/load-pin',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '간편비밀번호 불러오기(APP)',
+        depth3: '팝업',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/guide/sign-load-pin-001',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '로그인(APP)',
+        depth3: '간편비밀번호',
+        depth4: '팝업',
+        depth5: '',
+        depth6: '',
+        path: '/guide/sign-in-pin-001',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '로그인(APP)',
+        depth3: '간편비밀번호 초기화',
+        depth4: '팝업',
+        depth5: '',
+        depth6: '',
+        path: '/guide/sign-reset-pin-001',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '로그인(APP)',
+        depth3: '생체 인식',
+        depth4: '팝업',
+        depth5: '',
+        depth6: '',
+        path: '/guide/sign-in-biometrics-001',
+        status: '',
+        create: '',
+        log: [],
+      },
+    ],
+  },
+  {
+    depth1: '개인금융',
+    datas: [
+      {
+        depth2: 'e하나신용대출',
+        depth3: '상품안내',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/personal-loan/e-hana',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: 'e하나신용대출',
+        depth3: '팝업',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/guide/personal-loan-e-hana-001',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '행복아파트론',
+        depth3: '상품안내',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/personal-loan/happiness-apartment',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '행복아파트론',
+        depth3: '팝업',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/guide/personal-loan-happiness-apartment-001',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '아파트론',
+        depth3: '상품안내',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/personal-loan/apartment',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '원큐자동차담보대출',
+        depth3: '상품안내',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/personal-loan/one-q-auto',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '원큐자동차담보대출',
+        depth3: '팝업',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/guide/personal-loan-one-q-auto-001',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '우수고객추가대출',
+        depth3: '상품안내',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/personal-loan/best-customer',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '우수고객추가대출',
+        depth3: '팝업',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/guide/personal-loan-best-customer-001',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: 'e임대주택론(임대보증금 담보대출)',
+        depth3: '상품안내',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/personal-loan/e-rental-house',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '스탁론',
+        depth3: '상품안내',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/personal-loan/stock',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '스탁론',
+        depth3: '팝업',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/guide/personal-loan-stock-001',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '의료기할부',
+        depth3: '상품안내',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/personal-loan/medical-appliances',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '사업자주택담보대출',
+        depth3: '상품안내',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/personal-loan/business-house',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '사업자주택담보대출',
+        depth3: '팝업',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/guide/personal-loan-business-house-001',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '내구소비재할부',
+        depth3: '상품안내',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/personal-loan/consumer-durables',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '통합 한도조회',
+        depth3: '팝업',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/guide/personal-loan-etc-001',
+        status: '',
+        create: '',
+        log: [],
+      },
+    ],
+  },
+  {
+    depth1: '고객센터',
+    datas: [
+      {
+        depth2: '고객상담',
+        depth3: '안내',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/customer/counseling-info',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '고객상담',
+        depth3: '상담내용 작성',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/customer/counseling-regist',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '고객상담',
+        depth3: '완료',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/customer/counseling-regist-complete',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '공지사항',
+        depth3: '리스트',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/customer/notice-list',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '공지사항',
+        depth3: '상세',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/customer/notice-detail',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '이벤트',
+        depth3: '리스트',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/customer/event-list',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '이벤트',
+        depth3: '상세',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/customer/event-detail',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '지점안내',
+        depth3: '',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/customer/branch-list',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '고객센터 ARS안내',
+        depth3: '',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/customer/ars',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '전화상담신청',
+        depth3: '',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/customer/reservation-counseling',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '전화상담신청',
+        depth3: '완료',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/customer/reservation-counseling-complete',
         status: '',
         create: '',
         log: [],
@@ -193,14 +634,28 @@ export default {
     })();
     const latestDate = dates[dates.length - 1];
 
-    const renderVal = (datas, i, key) => {
+    const renderVal = (datas, i, key, testKey) => {
       const val = datas[i][key];
+      const testVal = testKey && datas[i][testKey];
       const prevIndex = i - 1;
+      const result = val.replace(/\n/g, '<br>');
 
-      if (prevIndex >= 0 && datas[prevIndex] && datas[prevIndex][key] === val) {
-        return '';
+      if (!(prevIndex >= 0 && datas[prevIndex])) return result;
+
+      const noRender = datas[prevIndex][key] === val;
+
+      if (testVal) {
+        if (testVal === datas[prevIndex][testKey] && noRender) {
+          return '';
+        } else {
+          return result;
+        }
       } else {
-        return val.replace(/\n/g, '<br>');
+        if (noRender) {
+          return '';
+        } else {
+          return result;
+        }
       }
     };
 
@@ -284,7 +739,7 @@ export default {
                 :href="`#section${i}`"
                 class="index-button"
               >
-                {{ item.title }}
+                {{ item.depth1 }}
               </a>
             </div>
           </div>
@@ -296,11 +751,10 @@ export default {
             :key="i"
             :id="`section${i}`"
           >
-            <h2 class="index-section__title">{{ item.title }}</h2>
+            <h2 class="index-section__title">{{ item.depth1 }}</h2>
             <div class="index-table">
               <table>
                 <colgroup>
-                  <col width="160px" />
                   <col width="160px" />
                   <col width="160px" />
                   <col width="160px" />
@@ -314,7 +768,6 @@ export default {
                 </colgroup>
                 <thead>
                   <tr>
-                    <th>depth1</th>
                     <th>depth2</th>
                     <th>depth3</th>
                     <th>depth4</th>
@@ -329,12 +782,19 @@ export default {
                 </thead>
                 <tbody>
                   <tr v-for="(data, i) in item.datas" :key="i">
-                    <td>{{ renderVal(item.datas, i, 'depth1') }}</td>
-                    <td>{{ renderVal(item.datas, i, 'depth2') }}</td>
-                    <td>{{ renderVal(item.datas, i, 'depth3') }}</td>
-                    <td>{{ renderVal(item.datas, i, 'depth4') }}</td>
-                    <td>{{ renderVal(item.datas, i, 'depth5') }}</td>
-                    <td>{{ renderVal(item.datas, i, 'depth6') }}</td>
+                    <td v-html="renderVal(item.datas, i, 'depth2')"></td>
+                    <td
+                      v-html="renderVal(item.datas, i, 'depth3', 'depth2')"
+                    ></td>
+                    <td
+                      v-html="renderVal(item.datas, i, 'depth4', 'depth3')"
+                    ></td>
+                    <td
+                      v-html="renderVal(item.datas, i, 'depth5', 'depth4')"
+                    ></td>
+                    <td
+                      v-html="renderVal(item.datas, i, 'depth6', 'depth5')"
+                    ></td>
                     <td>
                       <a :href="data.path" target="_blank">
                         {{ data.path }}
