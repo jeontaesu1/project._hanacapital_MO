@@ -39,7 +39,7 @@ export default {
     },
   },
   setup(props) {
-    const styleModule = inject('selectStyleModule');
+    const styleModule = inject('extendSelectStyleModule');
     const extendSelect = inject('extendSelect', {});
 
     const state = reactive({

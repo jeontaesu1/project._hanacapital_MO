@@ -65,8 +65,8 @@ export default {
       return input.value;
     };
 
-    provide('styleModule', useCssModule());
-    provide('theme', state.theme);
+    provide('checkBoxStyleModule', useCssModule());
+    provide('checkBoxTheme', state.theme);
 
     onMounted(() => {
       state.theme.value = props.theme;

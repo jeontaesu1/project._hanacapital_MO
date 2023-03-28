@@ -141,6 +141,11 @@ const routes = [
 
   // sign
   {
+    path: '/sign/signin',
+    name: '/sign/signin',
+    component: () => import('@/views/sign/SignIn.vue'),
+  },
+  {
     path: '/sign/signup-app',
     name: '/sign/signup-app',
     component: () => import('@/views/sign/SignUpApp.vue'),
@@ -149,12 +154,6 @@ const routes = [
     path: '/sign/load-pin',
     name: '/sign/load-pin',
     component: () => import('@/views/sign/SignLoadPin.vue'),
-  },
-  {
-    // test
-    path: '/sign/signin',
-    name: '/sign/signin',
-    component: () => import('@/views/sign/SignIn.vue'),
   },
 
   // menu
@@ -224,10 +223,20 @@ const routes = [
 
   // customer
   {
-    path: '/customer/regist-counseling-complete',
-    name: '/customer/regist-counseling-complete',
+    path: '/customer/counseling-info',
+    name: '/customer/counseling-info',
+    component: () => import('@/views/customer/CustomerCounselingInfo.vue'),
+  },
+  {
+    path: '/customer/counseling-regist',
+    name: '/customer/counseling-regist',
+    component: () => import('@/views/customer/CustomerCounselingRegist.vue'),
+  },
+  {
+    path: '/customer/counseling-regist-complete',
+    name: '/customer/counseling-regist-complete',
     component: () =>
-      import('@/views/customer/CustomerRegistCounselingComplete.vue'),
+      import('@/views/customer/CustomerCounselingRegistComplete.vue'),
   },
   {
     path: '/customer/notice-list',
@@ -240,6 +249,16 @@ const routes = [
     component: () => import('@/views/customer/CustomerNoticeDetail.vue'),
   },
   {
+    path: '/customer/event-list',
+    name: '/customer/event-list',
+    component: () => import('@/views/customer/CustomerEventList.vue'),
+  },
+  {
+    path: '/customer/event-detail',
+    name: '/customer/event-detail',
+    component: () => import('@/views/customer/CustomerEventDetail.vue'),
+  },
+  {
     path: '/customer/branch-list',
     name: '/customer/branch-list',
     component: () => import('@/views/customer/CustomerBranchList.vue'),
@@ -248,6 +267,12 @@ const routes = [
     path: '/customer/ars',
     name: '/customer/ars',
     component: () => import('@/views/customer/CustomerARS.vue'),
+  },
+  {
+    path: '/customer/reservation-counseling',
+    name: '/customer/reservation-counseling',
+    component: () =>
+      import('@/views/customer/CustomerReservationCounseling.vue'),
   },
   {
     path: '/customer/reservation-counseling-complete',

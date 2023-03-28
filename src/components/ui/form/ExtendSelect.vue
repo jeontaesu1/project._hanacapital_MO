@@ -167,7 +167,7 @@ export default {
       }
     };
 
-    provide('selectStyleModule', useCssModule());
+    provide('extendSelectStyleModule', useCssModule());
     provide('extendSelect', {
       options: state.options,
       value: state.value,

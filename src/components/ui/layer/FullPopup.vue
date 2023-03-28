@@ -32,7 +32,7 @@ export default {
       return Boolean(context.slots.foot);
     });
 
-    provide('styleModule', useCssModule());
+    provide('popupStyleModule', useCssModule());
 
     return {
       customClassNames,

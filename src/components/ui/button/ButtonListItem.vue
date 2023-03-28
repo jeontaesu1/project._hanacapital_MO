@@ -20,7 +20,7 @@ export default {
     },
   },
   setup(props) {
-    const styleModule = inject('styleModule');
+    const styleModule = inject('buttonListStyleModule');
 
     const customClassNames = computed(() => {
       const { classNames } = props;
