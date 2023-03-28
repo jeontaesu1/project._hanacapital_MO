@@ -17,7 +17,7 @@ export default {
     },
   },
   setup(props, context) {
-    const styleModule = inject('styleModule');
+    const styleModule = inject('popupStyleModule');
 
     const customClassNames = computed(() => {
       const { classNames } = props;

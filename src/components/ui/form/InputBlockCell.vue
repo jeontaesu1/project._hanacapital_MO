@@ -27,7 +27,7 @@ export default {
     },
   },
   setup(props) {
-    const styleModule = inject('styleModule');
+    const styleModule = inject('inputBlockStyleModule');
 
     const customClassNames = computed(() => {
       const { classNames } = props;

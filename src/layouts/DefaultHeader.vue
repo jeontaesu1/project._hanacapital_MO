@@ -100,7 +100,7 @@ export default {
       window.removeEventListener('resize', resize);
     });
 
-    provide('styleModule', useCssModule());
+    provide('headerStyleModule', useCssModule());
 
     return {
       store,

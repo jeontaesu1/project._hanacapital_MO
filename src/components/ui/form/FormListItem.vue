@@ -53,7 +53,7 @@ export default {
     },
   },
   setup(props) {
-    const styleModule = inject('styleModule');
+    const styleModule = inject('formListStyleModule');
 
     let timer = null;
 

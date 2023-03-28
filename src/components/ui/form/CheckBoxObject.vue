@@ -23,8 +23,8 @@ export default {
     },
   },
   setup(props) {
-    const styleModule = inject('styleModule');
-    const theme = inject('theme');
+    const styleModule = inject('checkBoxStyleModule');
+    const theme = inject('checkBoxTheme');
 
     const customClassNames = computed(() => {
       const { classNames } = props;
