@@ -1,4 +1,11 @@
 <script>
+import { computed, useCssModule, provide } from 'vue';
+
+const defaultClassNames = () => ({
+  wrap: '',
+  list: '',
+});
+
 export default {
   props: {
     className: {
@@ -10,6 +17,18 @@ export default {
       default: null,
     },
   },
+  setup(props) {
+    const customClassNames = computed(() => {
+      const { classNames } = props;
+      return Object.assign(defaultClassNames(), classNames);
+    });
+
+    provide('illustInfoTextStyleModule', useCssModule());
+
+    return {
+      customClassNames,
+    };
+  },
 };
 </script>
 
@@ -20,13 +39,18 @@ export default {
       {
         [$style[`illust-info--${theme}`]]: theme,
       },
-      className,
+      customClassNames.wrap,
     ]"
   >
-    <slot />
+    <!-- <p :class="[$style['illust-info__title'], customClassNames.wrap]">
+      <slot />
+    </p> -->
+    <p :class="[$style['illust-info__text'], customClassNames.wrap]">
+      <slot />
+    </p>
   </div>
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/components/import/IllustInfo.scss';
+@import '@/assets/scss/components/ui/common/IllustInfo.scss';
 </style>

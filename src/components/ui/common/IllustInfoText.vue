@@ -1,8 +1,8 @@
 <script>
-import { computed } from 'vue';
+import { computed, inject } from 'vue';
 
 const defaultClassNames = () => ({
-  wrap: '',
+  text: '',
 });
 
 export default {
@@ -15,12 +15,15 @@ export default {
     },
   },
   setup(props) {
+    const styleModule = inject('illustInfoTextStyleModule');
+
     const customClassNames = computed(() => {
       const { classNames } = props;
       return Object.assign(defaultClassNames(), classNames);
     });
 
     return {
+      styleModule,
       customClassNames,
     };
   },
@@ -28,9 +31,7 @@ export default {
 </script>
 
 <template>
-  <p :class="[$style['illust-info__text'], customClassNames.wrap]"><slot /></p>
+  <p :class="[styleModule['illust-info__text'], customClassNames.text]">
+    <slot />
+  </p>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/components/ui/text/IllustInfoText.scss';
-</style>
