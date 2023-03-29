@@ -15,7 +15,7 @@ export default {
     },
   },
   setup(props) {
-    const styleModule = inject('illustInfoTextStyleModule');
+    const styleModule = inject('illustInfoStyleModule');
 
     const customClassNames = computed(() => {
       const { classNames } = props;

@@ -15,7 +15,7 @@
   }
 
   &__text {
-    margin: 8px 0 0;
+    margin: 0;
     @include font-size-default(14);
     font-weight: 300;
     color: $color-gray-80;
@@ -23,6 +23,10 @@
 
     strong {
       font-weight: 500;
+    }
+
+    .illust-info__title + & {
+      margin-top: 8px;
     }
   }
 }

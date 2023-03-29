@@ -50,6 +50,9 @@ import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
+import IllustInfo from '@/components/ui/common/IllustInfo.vue';
+import IllustInfoTitle from '@/components/ui/common/IllustInfoTitle.vue';
+import IllustInfoText from '@/components/ui/common/IllustInfoText.vue';
 
 import BrandLogo001 from '@/assets/images/bank-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/bank-logo/lotte.svg?component';
@@ -107,6 +110,9 @@ export default {
     KeyValueTitle,
     KeyValueText,
     NoticeText,
+    IllustInfo,
+    IllustInfoTitle,
+    IllustInfoText,
     IconAdd,
     BrandLogo001,
     BrandLogo002,
@@ -2890,6 +2896,25 @@ export default {
         <IllustObject type="certification" />
         <IllustObject type="star" />
         <IllustObject type="appfree" />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Illust Info</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <IllustInfo>
+          <IllustObject type="fail" />
+          <IllustInfoTitle>
+            만기연장 신청 대상이 아닙니다<br />
+            <strong>잔여 회차를 확인해 주세요</strong>
+          </IllustInfoTitle>
+          <IllustInfoText>
+            하나캐피탈 스탁론에<br />
+            관심을 가져주셔서 감사합니다.
+          </IllustInfoText>
+        </IllustInfo>
       </div>
     </section>
 

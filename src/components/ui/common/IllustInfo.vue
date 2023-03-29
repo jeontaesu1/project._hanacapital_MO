@@ -7,13 +7,11 @@ const defaultClassNames = () => ({
 
 export default {
   props: {
-    className: {
-      Type: String,
-      default: null,
-    },
-    theme: {
-      Type: String,
-      default: null,
+    classNames: {
+      Type: Object,
+      default() {
+        return defaultClassNames();
+      },
     },
   },
   setup(props) {
@@ -22,7 +20,7 @@ export default {
       return Object.assign(defaultClassNames(), classNames);
     });
 
-    provide('illustInfoTextStyleModule', useCssModule());
+    provide('illustInfoStyleModule', useCssModule());
 
     return {
       customClassNames,
@@ -32,15 +30,7 @@ export default {
 </script>
 
 <template>
-  <div
-    :class="[
-      $style['illust-info'],
-      {
-        [$style[`illust-info--${theme}`]]: theme,
-      },
-      customClassNames.wrap,
-    ]"
-  >
+  <div :class="[$style['illust-info'], customClassNames.wrap]">
     <slot />
   </div>
 </template>
