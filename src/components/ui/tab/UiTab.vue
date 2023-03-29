@@ -18,6 +18,12 @@ export default {
       Type: String,
       default: null,
     },
+    onChange: {
+      Type: Function,
+      default() {
+        return () => {};
+      },
+    },
   },
   setup(props) {
     const state = reactive({
@@ -70,11 +76,14 @@ export default {
     };
 
     const open = (key, isFocus = true) => {
+      const { onChange } = props;
+
       state.activeName.value = key;
 
       nextTick(() => {
         const button = getButton(key);
         button.open(isFocus);
+        onChange();
       });
     };
 
@@ -142,6 +151,7 @@ export default {
     });
 
     return {
+      state,
       customClassNames,
     };
   },
@@ -150,7 +160,7 @@ export default {
 
 <template>
   <div :class="[$style['tab'], customClassNames.wrap]">
-    <slot />
+    <slot :activeName="state.activeName.value" />
   </div>
 </template>
 

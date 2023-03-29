@@ -73,7 +73,9 @@ export default {
     },
     onChange: {
       Type: Function,
-      default: () => {},
+      default() {
+        return () => {};
+      },
     },
   },
   setup(props) {

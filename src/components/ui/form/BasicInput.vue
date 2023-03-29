@@ -28,8 +28,10 @@ export default {
       default: 'text',
     },
     onDelete: {
-      type: Function,
-      default: () => {},
+      Type: Function,
+      default() {
+        return () => {};
+      },
     },
     useDelete: {
       Type: Boolean,

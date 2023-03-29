@@ -26,12 +26,14 @@ export default {
   },
   props: {
     type: {
-      type: String,
+      Type: String,
       default: 'menu',
     },
     onClick: {
-      type: Function,
-      default: () => {},
+      Type: Function,
+      default() {
+        return () => {};
+      },
     },
   },
   setup() {

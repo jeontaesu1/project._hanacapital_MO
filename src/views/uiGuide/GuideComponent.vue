@@ -2619,13 +2619,15 @@ export default {
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
 
-        <UiTab>
+        <UiTab v-slot="tabSlotProps">
           <UiTabList>
             <UiTabButton link="testTab001_001">Tab 1</UiTabButton>
             <UiTabButton link="testTab001_002">Tab 2</UiTabButton>
             <UiTabButton link="testTab001_003">Tab 3</UiTabButton>
             <UiTabButton link="testTab001_004">Tab 4</UiTabButton>
           </UiTabList>
+
+          <p>Active : {{ tabSlotProps.activeName }}</p>
 
           <UiTabPanel name="testTab001_001">// Tab 1 Contents</UiTabPanel>
 

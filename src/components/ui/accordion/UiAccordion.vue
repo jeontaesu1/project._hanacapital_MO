@@ -35,28 +35,40 @@ export default {
       default: defaultSpeed,
     },
     onBeforeOpened: {
-      type: Function,
-      default: () => {},
+      Type: Function,
+      default() {
+        return () => {};
+      },
     },
     onOpened: {
-      type: Function,
-      default: () => {},
+      Type: Function,
+      default() {
+        return () => {};
+      },
     },
     onAfterOpened: {
-      type: Function,
-      default: () => {},
+      Type: Function,
+      default() {
+        return () => {};
+      },
     },
     onBeforeClosed: {
-      type: Function,
-      default: () => {},
+      Type: Function,
+      default() {
+        return () => {};
+      },
     },
     onClosed: {
-      type: Function,
-      default: () => {},
+      Type: Function,
+      default() {
+        return () => {};
+      },
     },
     onAfterClosed: {
-      type: Function,
-      default: () => {},
+      Type: Function,
+      default() {
+        return () => {};
+      },
     },
   },
   setup(props) {

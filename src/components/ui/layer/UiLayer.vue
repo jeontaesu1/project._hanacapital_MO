@@ -53,7 +53,7 @@ const elFocus = (el) => {
 export default {
   props: {
     type: {
-      type: String,
+      Type: String,
       default: null,
     },
     classNames: {
@@ -63,28 +63,40 @@ export default {
       },
     },
     onBeforeOpened: {
-      type: Function,
-      default: () => {},
+      Type: Function,
+      default() {
+        return () => {};
+      },
     },
     onOpened: {
-      type: Function,
-      default: () => {},
+      Type: Function,
+      default() {
+        return () => {};
+      },
     },
     onAfterOpened: {
-      type: Function,
-      default: () => {},
+      Type: Function,
+      default() {
+        return () => {};
+      },
     },
     onBeforeClosed: {
-      type: Function,
-      default: () => {},
+      Type: Function,
+      default() {
+        return () => {};
+      },
     },
     onClosed: {
-      type: Function,
-      default: () => {},
+      Type: Function,
+      default() {
+        return () => {};
+      },
     },
     onAfterClosed: {
-      type: Function,
-      default: () => {},
+      Type: Function,
+      default() {
+        return () => {};
+      },
     },
   },
   setup(props) {

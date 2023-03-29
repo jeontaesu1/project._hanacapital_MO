@@ -14,7 +14,7 @@ export default {
   inheritAttrs: false,
   props: {
     type: {
-      type: String,
+      Type: String,
       default: 'close',
     },
     classNames: {
