@@ -74,12 +74,14 @@ export default {
 
 <template>
   <div :class="[$style['filter-tab'], customClassNames.wrap]">
-    <component
-      :is="setComponent"
-      :class="[$style['filter-tab__list'], customClassNames.list]"
-    >
-      <slot />
-    </component>
+    <div :class="[$style['filter-tab__inner'], customClassNames.inner]">
+      <component
+        :is="setComponent"
+        :class="[$style['filter-tab__list'], customClassNames.list]"
+      >
+        <slot />
+      </component>
+    </div>
   </div>
 </template>
 

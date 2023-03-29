@@ -47,6 +47,10 @@ import UiTabButton from '@/components/ui/tab/UiTabButton.vue';
 import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
 import RoundTab from '@/components/ui/tab/RoundTab.vue';
 import RoundTabButton from '@/components/ui/tab/RoundTabButton.vue';
+import NavTab from '@/components/ui/tab/NavTab.vue';
+import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
+import FilterTab from '@/components/ui/tab/FilterTab.vue';
+import FilterTabButton from '@/components/ui/tab/FilterTabButton.vue';
 import KeyValueList from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
@@ -109,6 +113,10 @@ export default {
     UiTabPanel,
     RoundTab,
     RoundTabButton,
+    NavTab,
+    NavTabButton,
+    FilterTab,
+    FilterTabButton,
     KeyValueList,
     KeyValueItem,
     KeyValueTitle,
@@ -2698,6 +2706,127 @@ export default {
             Tab 6
           </RoundTabButton>
         </RoundTab>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Nav Tab</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title" style="margin-bottom: 40px">
+          Tab Base 이용시
+        </h3>
+
+        <UiTab v-slot="tabSlotProps">
+          <NavTab :useUiTab="true">
+            <NavTabButton link="testNavTab001_001">Tab 1</NavTabButton>
+            <NavTabButton link="testNavTab001_002">Tab 2</NavTabButton>
+            <NavTabButton link="testNavTab001_003">Tab 3</NavTabButton>
+            <NavTabButton link="testNavTab001_004">Tab 4</NavTabButton>
+          </NavTab>
+
+          <p>Active : {{ tabSlotProps.activeName }}</p>
+
+          <UiTabPanel name="testNavTab001_001">// Tab 1 Contents</UiTabPanel>
+
+          <UiTabPanel name="testNavTab001_002">// Tab 2 Contents</UiTabPanel>
+
+          <UiTabPanel name="testNavTab001_003">// Tab 3 Contents</UiTabPanel>
+
+          <UiTabPanel name="testNavTab001_004">// Tab 4 Contents</UiTabPanel>
+        </UiTab>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title" style="margin-bottom: 40px">
+          탭 기능 없이 단순 링크이거나 버튼 일 때
+        </h3>
+
+        <NavTab>
+          <NavTabButton tagName="RouterLink" to="" :active="true">
+            Tab 1
+          </NavTabButton>
+          <NavTabButton tagName="RouterLink" to="">Tab 2</NavTabButton>
+
+          <NavTabButton tagName="a" href="" :active="true">
+            Tab 3
+          </NavTabButton>
+          <NavTabButton tagName="a" href="">Tab 4</NavTabButton>
+
+          <NavTabButton tagName="button" type="button" :active="true">
+            Tab 5
+          </NavTabButton>
+          <NavTabButton tagName="button" type="button">Tab 6</NavTabButton>
+        </NavTab>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title" style="margin-bottom: 40px">
+          auto, scroll
+        </h3>
+
+        <NavTab :scroll="true" :auto="true">
+          <NavTabButton tagName="button" type="button"> Tab 5 </NavTabButton>
+          <NavTabButton tagName="button" type="button">Tab 6</NavTabButton>
+          <NavTabButton tagName="button" type="button">Tab 6</NavTabButton>
+          <NavTabButton tagName="button" type="button" :active="true">
+            Tab 6
+          </NavTabButton>
+          <NavTabButton tagName="button" type="button">Tab 6</NavTabButton>
+          <NavTabButton tagName="button" type="button">Tab 6</NavTabButton>
+          <NavTabButton tagName="button" type="button">Tab 6</NavTabButton>
+          <NavTabButton tagName="button" type="button">Tab 6</NavTabButton>
+        </NavTab>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Filter Tab</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Tab Base 이용시</h3>
+
+        <UiTab v-slot="tabSlotProps">
+          <FilterTab :useUiTab="true">
+            <FilterTabButton link="testFilterTab001_001">Tab 1</FilterTabButton>
+            <FilterTabButton link="testFilterTab001_002">Tab 2</FilterTabButton>
+            <FilterTabButton link="testFilterTab001_003">Tab 3</FilterTabButton>
+            <FilterTabButton link="testFilterTab001_004">Tab 4</FilterTabButton>
+          </FilterTab>
+
+          <p>Active : {{ tabSlotProps.activeName }}</p>
+
+          <UiTabPanel name="testFilterTab001_001">// Tab 1 Contents</UiTabPanel>
+
+          <UiTabPanel name="testFilterTab001_002">// Tab 2 Contents</UiTabPanel>
+
+          <UiTabPanel name="testFilterTab001_003">// Tab 3 Contents</UiTabPanel>
+
+          <UiTabPanel name="testFilterTab001_004">// Tab 4 Contents</UiTabPanel>
+        </UiTab>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">
+          탭 기능 없이 단순 링크이거나 버튼 일 때
+        </h3>
+
+        <FilterTab>
+          <FilterTabButton tagName="RouterLink" to="" :active="true">
+            Tab 1
+          </FilterTabButton>
+          <FilterTabButton tagName="RouterLink" to="">Tab 2</FilterTabButton>
+
+          <FilterTabButton tagName="a" href="" :active="true">
+            Tab 3
+          </FilterTabButton>
+          <FilterTabButton tagName="a" href="">Tab 4</FilterTabButton>
+
+          <FilterTabButton tagName="button" type="button" :active="true">
+            Tab 5
+          </FilterTabButton>
+          <FilterTabButton tagName="button" type="button">
+            Tab 6
+          </FilterTabButton>
+        </FilterTab>
       </div>
     </section>
 

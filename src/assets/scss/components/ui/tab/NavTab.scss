@@ -1,15 +1,62 @@
 .nav-tab {
-  display: block;
-  margin-bottom: 16px;
+  margin: 0 -20px 40px;
+
+  &::before,
+  &::after {
+    content: '';
+    display: table;
+  }
+
+  &__inner {
+    margin-top: -30px;
+    position: relative;
+    border-bottom: 1px solid $color-gray-20;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      width: 20px;
+      height: 100%;
+      opacity: 0;
+    }
+
+    &::before {
+      left: 0;
+      background: linear-gradient(
+        to right,
+        rgba($color-white, 1) 0%,
+        rgba($color-white, 1) 49.48%,
+        rgba($color-white, 0) 100%
+      );
+    }
+
+    &::after {
+      right: 0;
+      background: linear-gradient(
+        to right,
+        rgba($color-white, 0) 0%,
+        rgba($color-white, 1) 50.52%,
+        rgba($color-white, 1) 100%
+      );
+    }
+  }
 
   &__list {
     @include reset-list;
     display: flex;
     align-items: stretch;
     box-sizing: border-box;
-    padding: 5px;
-    border: 1px solid $color-gray-20;
-    border-radius: 100px;
+
+    &::before,
+    &::after {
+      content: '';
+      flex: none;
+      display: block;
+      width: 20px;
+    }
   }
 
   &__item {
@@ -17,10 +64,6 @@
     min-width: 0;
     display: flex;
     align-items: stretch;
-
-    & + & {
-      margin-left: 6px;
-    }
   }
 
   &__button {
@@ -34,8 +77,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 100px;
-    padding: 10px 0 9px;
+    padding: 9px 2px 10px;
   }
 
   &__text {
@@ -46,12 +88,36 @@
 
   &__item--active,
   &__item:global(.is-tab-opened) {
-    .round-tab__button {
-      background-color: $color-navy-50;
+    .nav-tab__button {
+      padding-bottom: 9px;
+      border-bottom: 1px solid $color-black;
     }
-    .round-tab__text {
-      color: $color-white;
-      font-weight: 500;
+    .nav-tab__text {
+      color: $color-black;
+      font-weight: 700;
+    }
+  }
+
+  &--scroll {
+    .nav-tab__inner {
+      &::before,
+      &::after {
+        opacity: 1;
+      }
+    }
+    .nav-tab__list {
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+
+  &--auto {
+    .nav-tab__item {
+      flex: none;
+
+      & + .nav-tab__item {
+        margin-left: 24px;
+      }
     }
   }
 }

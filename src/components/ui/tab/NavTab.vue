@@ -12,6 +12,7 @@ import UiTabList from '@/components/ui/tab/UiTabList.vue';
 
 const defaultClassNames = () => ({
   wrap: '',
+  inner: '',
   list: '',
 });
 
@@ -91,12 +92,14 @@ export default {
       customClassNames.wrap,
     ]"
   >
-    <component
-      :is="setComponent"
-      :class="[$style['nav-tab__list'], customClassNames.list]"
-    >
-      <slot />
-    </component>
+    <div :class="[$style['nav-tab__inner'], customClassNames.inner]">
+      <component
+        :is="setComponent"
+        :class="[$style['nav-tab__list'], customClassNames.list]"
+      >
+        <slot />
+      </component>
+    </div>
   </div>
 </template>
 
