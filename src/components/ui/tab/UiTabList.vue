@@ -2,13 +2,12 @@
 import { computed, inject } from 'vue';
 
 const defaultClassNames = () => ({
-  item: '',
+  list: '',
 });
 
 export default {
   setup(props) {
     const styleModule = inject('uiTabStyleModule');
-    const uiTab = inject('uiTab', {});
 
     const customClassNames = computed(() => {
       const { classNames } = props;
@@ -24,5 +23,10 @@ export default {
 </script>
 
 <template>
-  <div>//</div>
+  <div
+    :class="[styleModule['tab__list'], customClassNames.list]"
+    role="tablist"
+  >
+    <slot />
+  </div>
 </template>

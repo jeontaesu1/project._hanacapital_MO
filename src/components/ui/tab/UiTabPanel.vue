@@ -2,10 +2,16 @@
 import { computed, inject } from 'vue';
 
 const defaultClassNames = () => ({
-  item: '',
+  panel: '',
 });
 
 export default {
+  props: {
+    name: {
+      Type: String,
+      required: true,
+    },
+  },
   setup(props) {
     const styleModule = inject('uiTabStyleModule');
     const uiTab = inject('uiTab', {});
@@ -18,11 +24,26 @@ export default {
     return {
       styleModule,
       customClassNames,
+      uiTab,
     };
   },
 };
 </script>
 
 <template>
-  <div>//</div>
+  <div
+    :class="[
+      styleModule['tab__panel'],
+      {
+        'is-tab-opened': uiTab.activeName.value === name,
+      },
+      customClassNames.panel,
+    ]"
+    role="tabpanel"
+    :hidden="uiTab.activeName.value === name ? false : true"
+    :aria-labelledby="`${name}_tab`"
+    :id="`${name}_panel`"
+  >
+    <slot />
+  </div>
 </template>

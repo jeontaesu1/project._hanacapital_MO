@@ -41,6 +41,10 @@ import ExtendSelectOption from '@/components/ui/form/ExtendSelectOption.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
+import UiTab from '@/components/ui/tab/UiTab.vue';
+import UiTabList from '@/components/ui/tab/UiTabList.vue';
+import UiTabButton from '@/components/ui/tab/UiTabButton.vue';
+import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
 
 import BrandLogo001 from '@/assets/images/bank-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/bank-logo/lotte.svg?component';
@@ -89,6 +93,10 @@ export default {
     BasicHr,
     BasicBox,
     IllustObject,
+    UiTab,
+    UiTabList,
+    UiTabButton,
+    UiTabPanel,
     IconAdd,
     BrandLogo001,
     BrandLogo002,
@@ -2593,6 +2601,30 @@ export default {
             </li>
           </ul>
         </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Tab Base</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <UiTab>
+          <UiTabList>
+            <UiTabButton link="testTab001_001">Tab 1</UiTabButton>
+            <UiTabButton link="testTab001_002">Tab 2</UiTabButton>
+            <UiTabButton link="testTab001_003">Tab 3</UiTabButton>
+            <UiTabButton link="testTab001_004">Tab 4</UiTabButton>
+          </UiTabList>
+
+          <UiTabPanel name="testTab001_001">// Tab 1 Contents</UiTabPanel>
+
+          <UiTabPanel name="testTab001_002">// Tab 2 Contents</UiTabPanel>
+
+          <UiTabPanel name="testTab001_003">// Tab 3 Contents</UiTabPanel>
+
+          <UiTabPanel name="testTab001_004">// Tab 4 Contents</UiTabPanel>
+        </UiTab>
       </div>
     </section>
 

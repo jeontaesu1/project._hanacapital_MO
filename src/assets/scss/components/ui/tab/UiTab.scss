@@ -1,3 +1,27 @@
 .tab {
   display: block;
+
+  &__list {
+    display: flex;
+    align-items: stretch;
+  }
+
+  &__button {
+    display: block;
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+
+    &:global(.is-tab-opened) {
+      font-weight: 700;
+    }
+  }
+
+  &__panel {
+    display: none;
+
+    &:global(.is-tab-opened) {
+      display: block;
+    }
+  }
 }
