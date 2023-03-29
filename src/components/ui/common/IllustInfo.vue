@@ -3,7 +3,6 @@ import { computed, useCssModule, provide } from 'vue';
 
 const defaultClassNames = () => ({
   wrap: '',
-  list: '',
 });
 
 export default {
@@ -42,12 +41,7 @@ export default {
       customClassNames.wrap,
     ]"
   >
-    <!-- <p :class="[$style['illust-info__title'], customClassNames.wrap]">
-      <slot />
-    </p> -->
-    <p :class="[$style['illust-info__text'], customClassNames.wrap]">
-      <slot />
-    </p>
+    <slot />
   </div>
 </template>
 
