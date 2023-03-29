@@ -14,6 +14,12 @@ const defaultClassNames = () => ({
 
 export default {
   props: {
+    classNames: {
+      Type: Object,
+      default() {
+        return defaultClassNames();
+      },
+    },
     initialOpen: {
       Type: String,
       default: null,

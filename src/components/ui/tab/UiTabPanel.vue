@@ -7,6 +7,12 @@ const defaultClassNames = () => ({
 
 export default {
   props: {
+    classNames: {
+      Type: Object,
+      default() {
+        return defaultClassNames();
+      },
+    },
     name: {
       Type: String,
       required: true,

@@ -6,6 +6,14 @@ const defaultClassNames = () => ({
 });
 
 export default {
+  props: {
+    classNames: {
+      Type: Object,
+      default() {
+        return defaultClassNames();
+      },
+    },
+  },
   setup(props) {
     const styleModule = inject('uiTabStyleModule');
 

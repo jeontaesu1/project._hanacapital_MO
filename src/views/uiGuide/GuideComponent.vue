@@ -45,6 +45,8 @@ import UiTab from '@/components/ui/tab/UiTab.vue';
 import UiTabList from '@/components/ui/tab/UiTabList.vue';
 import UiTabButton from '@/components/ui/tab/UiTabButton.vue';
 import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
+import RoundTab from '@/components/ui/tab/RoundTab.vue';
+import RoundTabButton from '@/components/ui/tab/RoundTabButton.vue';
 import KeyValueList from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
@@ -105,6 +107,8 @@ export default {
     UiTabList,
     UiTabButton,
     UiTabPanel,
+    RoundTab,
+    RoundTabButton,
     KeyValueList,
     KeyValueItem,
     KeyValueTitle,
@@ -2643,6 +2647,57 @@ export default {
 
           <UiTabPanel name="testTab001_004">// Tab 4 Contents</UiTabPanel>
         </UiTab>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Round Tab</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Tab Base 이용시</h3>
+
+        <UiTab v-slot="tabSlotProps">
+          <RoundTab :useUiTab="true">
+            <RoundTabButton link="testRoundTab001_001">Tab 1</RoundTabButton>
+            <RoundTabButton link="testRoundTab001_002">Tab 2</RoundTabButton>
+            <RoundTabButton link="testRoundTab001_003">Tab 3</RoundTabButton>
+            <RoundTabButton link="testRoundTab001_004">Tab 4</RoundTabButton>
+          </RoundTab>
+
+          <p>Active : {{ tabSlotProps.activeName }}</p>
+
+          <UiTabPanel name="testRoundTab001_001">// Tab 1 Contents</UiTabPanel>
+
+          <UiTabPanel name="testRoundTab001_002">// Tab 2 Contents</UiTabPanel>
+
+          <UiTabPanel name="testRoundTab001_003">// Tab 3 Contents</UiTabPanel>
+
+          <UiTabPanel name="testRoundTab001_004">// Tab 4 Contents</UiTabPanel>
+        </UiTab>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">
+          탭 기능 없이 단순 링크이거나 버튼 일 때
+        </h3>
+
+        <RoundTab>
+          <RoundTabButton tagName="RouterLink" to="" :active="true">
+            Tab 1
+          </RoundTabButton>
+          <RoundTabButton tagName="RouterLink" to="">Tab 2</RoundTabButton>
+
+          <RoundTabButton tagName="a" href="" :active="true">
+            Tab 3
+          </RoundTabButton>
+          <RoundTabButton tagName="a" href="">Tab 4</RoundTabButton>
+
+          <RoundTabButton tagName="button" type="button" :active="true">
+            Tab 5
+          </RoundTabButton>
+          <RoundTabButton tagName="button" type="button">
+            Tab 6
+          </RoundTabButton>
+        </RoundTab>
       </div>
     </section>
 

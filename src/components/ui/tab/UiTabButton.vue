@@ -7,13 +7,19 @@ const defaultClassNames = () => ({
 
 export default {
   props: {
+    classNames: {
+      Type: Object,
+      default() {
+        return defaultClassNames();
+      },
+    },
     link: {
       Type: String,
       required: true,
     },
   },
   setup(props) {
-    const styleModule = inject('uiTabStyleModule');
+    const styleModule = inject('uiTabStyleModule', {});
     const uiTab = inject('uiTab', {});
 
     const button = ref(null);
@@ -23,9 +29,19 @@ export default {
       return Object.assign(defaultClassNames(), classNames);
     });
 
+    const isActive = computed(() => {
+      return uiTab.activeName && uiTab.activeName.value;
+    });
+
     const open = (isFocus) => {
       if (isFocus) {
         button.value.focus();
+      }
+    };
+
+    const click = () => {
+      if (uiTab.open) {
+        uiTab.open(props.link);
       }
     };
 
@@ -92,7 +108,8 @@ export default {
       styleModule,
       button,
       customClassNames,
-      uiTab,
+      isActive,
+      click,
       keydown,
       keyup,
     };
@@ -106,16 +123,16 @@ export default {
     :class="[
       styleModule['tab__button'],
       {
-        'is-tab-opened': uiTab.activeName.value === link,
+        'is-tab-opened': isActive === link,
       },
       customClassNames.button,
     ]"
     role="tab"
-    :tabindex="uiTab.activeName.value === link ? '0' : '-1'"
-    :aria-selected="uiTab.activeName.value === link ? 'true' : 'false'"
+    :tabindex="isActive === link ? '0' : '-1'"
+    :aria-selected="isActive === link ? 'true' : 'false'"
     :aria-controls="`${link}_panel`"
     :id="`${link}_tab`"
-    @click="uiTab.open(link)"
+    @click="click"
     @keydown="keydown"
     @keyup="keyup"
   >
