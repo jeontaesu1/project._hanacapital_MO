@@ -51,5 +51,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/components/ui/text/keyValue.scss';
+@import '@/assets/scss/components/ui/text/KeyValue.scss';
 </style>

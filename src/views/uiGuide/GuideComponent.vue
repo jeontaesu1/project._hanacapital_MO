@@ -41,12 +41,11 @@ import ExtendSelectOption from '@/components/ui/form/ExtendSelectOption.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
-import KeyValueList from '@/components/ui/text/keyValue.vue';
+import KeyValueList from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
-import NoticeTextContents from '@/components/ui/text/NoticeTextContents.vue';
 
 import BrandLogo001 from '@/assets/images/bank-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/bank-logo/lotte.svg?component';
@@ -100,7 +99,6 @@ export default {
     KeyValueTitle,
     KeyValueText,
     NoticeText,
-    NoticeTextContents,
     IconAdd,
     BrandLogo001,
     BrandLogo002,
@@ -2859,15 +2857,31 @@ export default {
 
     <section class="test-section">
       <h2 class="test-section-title">Notice Text</h2>
-      <NoticeText type="important">
-        <NoticeTextContents
-          >TextTextTextTextTextTextTextText
-        </NoticeTextContents>
+      <NoticeText> TextTextTextTextTextTextTextText </NoticeText>
+      <NoticeText class="color-black">
+        TextTextTextTextTextTextTextText
       </NoticeText>
-      <NoticeText type="complete">
-        <NoticeTextContents
-          >TextTextTextTextTextTextTextText
-        </NoticeTextContents>
+      <NoticeText class="color-green">
+        TextTextTextTextTextTextTextText
+      </NoticeText>
+      <NoticeText class="color-red">
+        TextTextTextTextTextTextTextText
+      </NoticeText>
+      <NoticeText class="color-navy">
+        TextTextTextTextTextTextTextText
+      </NoticeText>
+      <NoticeText type="check"> TextTextTextTextTextTextTextText </NoticeText>
+      <NoticeText type="check" class="color-black">
+        TextTextTextTextTextTextTextText
+      </NoticeText>
+      <NoticeText type="check" class="color-green">
+        TextTextTextTextTextTextTextText
+      </NoticeText>
+      <NoticeText type="check" class="color-red">
+        TextTextTextTextTextTextTextText
+      </NoticeText>
+      <NoticeText type="check" class="color-navy">
+        TextTextTextTextTextTextTextText
       </NoticeText>
     </section>
 
@@ -2879,6 +2893,7 @@ export default {
         <div class="color-gray">.color-gray</div>
         <div class="color-green">.color-green</div>
         <div class="color-red">.color-red</div>
+        <div class="color-navy">.color-navy</div>
       </div>
     </section>
 

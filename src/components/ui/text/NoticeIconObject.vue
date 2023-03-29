@@ -1,11 +1,18 @@
 <script>
 import { computed, inject } from 'vue';
 
+import iconNotice from '@/assets/images/icon/important.svg?component';
+import iconNoticeCheck from '@/assets/images/icon/complete.svg?component';
+
 const defaultClassNames = () => ({
-  item: '',
+  object: '',
 });
 
 export default {
+  components: {
+    iconNotice,
+    iconNoticeCheck,
+  },
   props: {
     classNames: {
       Type: Object,
@@ -16,6 +23,7 @@ export default {
   },
   setup(props) {
     const styleModule = inject('styleModule');
+    const state = inject('noticeType');
 
     const customClassNames = computed(() => {
       const { classNames } = props;
@@ -23,6 +31,7 @@ export default {
     });
 
     return {
+      state,
       styleModule,
       customClassNames,
     };
@@ -31,7 +40,8 @@ export default {
 </script>
 
 <template>
-  <div :class="styleModule['ui-notice__text']">
-    <slot />
-  </div>
+  <span :class="[styleModule['ui-notice__object'], customClassNames.object]">
+    <iconNoticeCheck v-if="state.value === 'check'" />
+    <iconNotice v-else />
+  </span>
 </template>

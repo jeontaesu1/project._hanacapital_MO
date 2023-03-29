@@ -1,39 +1,77 @@
 .ui-notice {
-  position: relative;
-  padding-left: 18px;
+  display: flex;
+  align-items: flex-start;
 
-  &:before {
-    content: '';
-    position: absolute;
-    top: 2px;
-    left: 0;
+  &__object {
     width: 14px;
     height: 14px;
-    z-index: 1;
+    margin-top: 2px;
+
+    svg {
+      vertical-align: top;
+    }
+  }
+
+  &__object + &__text {
+    margin-left: 4px;
   }
 
   &__text {
     @include font-size-default(12);
     min-height: #{$line-height-default}em;
+    margin: 0;
+    color: $color-gray-60;
   }
+}
 
-  &--important {
-    &:before {
-      background: url('@/assets/images/icon/important.svg') no-repeat 50% 50% /
-        100% 100%;
-    }
-    .ui-notice__text {
-      color: $color-gray-60;
+.ui-notice:global(.color-black) {
+  .ui-notice__object {
+    svg {
+      :first-child {
+        fill: $color-black;
+      }
     }
   }
+  .ui-notice__text {
+    color: $color-black;
+  }
+}
 
-  &--complete {
-    &:before {
-      background: url('@/assets/images/icon/complete.svg') no-repeat 50% 50% /
-        100% 100%;
+.ui-notice:global(.color-green) {
+  .ui-notice__object {
+    svg {
+      :first-child {
+        fill: $color-green-50;
+      }
     }
-    .ui-notice__text {
-      color: $color-navy-50;
+  }
+  .ui-notice__text {
+    color: $color-green-50;
+  }
+}
+
+.ui-notice:global(.color-navy) {
+  .ui-notice__object {
+    svg {
+      :first-child {
+        fill: $color-navy-50;
+      }
     }
+  }
+  .ui-notice__text {
+    color: $color-navy-50;
+  }
+}
+
+.ui-notice:global(.color-red) {
+  .ui-notice__object {
+    svg {
+      :first-child {
+        fill: $color-semantic-essential;
+      }
+    }
+  }
+  .ui-notice__text {
+    color: $color-semantic-essential;
   }
 }
