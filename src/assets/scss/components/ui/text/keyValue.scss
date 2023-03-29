@@ -1,0 +1,38 @@
+.key-value {
+  &__list {
+    @include reset-list;
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    @include font-size-default(15);
+    min-height: #{$line-height-default}em;
+  }
+
+  &__item + &__item {
+    margin-top: 10px;
+  }
+
+  &__key {
+    color: $color-gray-60;
+  }
+
+  &__value {
+    flex: 1;
+    margin-left: 16px;
+    text-align: right;
+    color: $color-black;
+  }
+
+  &--left {
+    .key-value {
+      &__key {
+        max-width: 80px;
+      }
+      &__value {
+        text-align: left;
+      }
+    }
+  }
+}

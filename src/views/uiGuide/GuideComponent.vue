@@ -45,6 +45,11 @@ import UiTab from '@/components/ui/tab/UiTab.vue';
 import UiTabList from '@/components/ui/tab/UiTabList.vue';
 import UiTabButton from '@/components/ui/tab/UiTabButton.vue';
 import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
+import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
+import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
+import KeyValueText from '@/components/ui/text/KeyValueText.vue';
+import NoticeText from '@/components/ui/text/NoticeText.vue';
 
 import BrandLogo001 from '@/assets/images/bank-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/bank-logo/lotte.svg?component';
@@ -97,6 +102,11 @@ export default {
     UiTabList,
     UiTabButton,
     UiTabPanel,
+    KeyValueList,
+    KeyValueItem,
+    KeyValueTitle,
+    KeyValueText,
+    NoticeText,
     IconAdd,
     BrandLogo001,
     BrandLogo002,
@@ -2811,6 +2821,58 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Key Value Text</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <KeyValueList>
+          <KeyValueItem>
+            <KeyValueTitle>차량명의</KeyValueTitle>
+            <KeyValueText>
+              본인명의(공동명의 제외)<br />
+              소유기간 3개월 이상
+            </KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>소유차종</KeyValueTitle>
+            <KeyValueText> 국산/수입 승용, RV, 승합 </KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>차량연식</KeyValueTitle>
+            <KeyValueText>
+              출고 이후 10년 이내<br />
+              차량가격 500만원 이상<br />
+              (당사 차량 시세 가격 기준)
+            </KeyValueText>
+          </KeyValueItem>
+        </KeyValueList>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">align: left</h3>
+        <KeyValueList align="left">
+          <KeyValueItem>
+            <KeyValueTitle>차량명의</KeyValueTitle>
+            <KeyValueText>
+              본인명의(공동명의 제외)<br />
+              소유기간 3개월 이상
+            </KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>소유차종</KeyValueTitle>
+            <KeyValueText> 국산/수입 승용, RV, 승합 </KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>차량연식</KeyValueTitle>
+            <KeyValueText>
+              출고 이후 10년 이내<br />
+              차량가격 500만원 이상<br />
+              (당사 차량 시세 가격 기준)
+            </KeyValueText>
+          </KeyValueItem>
+        </KeyValueList>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Illust Object</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -2826,6 +2888,36 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Notice Text</h2>
+      <NoticeText> TextTextTextTextTextTextTextText </NoticeText>
+      <NoticeText class="color-black">
+        TextTextTextTextTextTextTextText
+      </NoticeText>
+      <NoticeText class="color-green">
+        TextTextTextTextTextTextTextText
+      </NoticeText>
+      <NoticeText class="color-red">
+        TextTextTextTextTextTextTextText
+      </NoticeText>
+      <NoticeText class="color-navy">
+        TextTextTextTextTextTextTextText
+      </NoticeText>
+      <NoticeText type="check"> TextTextTextTextTextTextTextText </NoticeText>
+      <NoticeText type="check" class="color-black">
+        TextTextTextTextTextTextTextText
+      </NoticeText>
+      <NoticeText type="check" class="color-green">
+        TextTextTextTextTextTextTextText
+      </NoticeText>
+      <NoticeText type="check" class="color-red">
+        TextTextTextTextTextTextTextText
+      </NoticeText>
+      <NoticeText type="check" class="color-navy">
+        TextTextTextTextTextTextTextText
+      </NoticeText>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">colors</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -2833,6 +2925,7 @@ export default {
         <div class="color-gray">.color-gray</div>
         <div class="color-green">.color-green</div>
         <div class="color-red">.color-red</div>
+        <div class="color-navy">.color-navy</div>
       </div>
     </section>
 
