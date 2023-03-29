@@ -1,77 +1,71 @@
-.ui-notice {
+.notice {
   display: flex;
   align-items: flex-start;
+  @include font-size-default(12);
+  color: $color-gray-60;
 
-  &__object {
-    width: 14px;
-    height: 14px;
-    margin-top: 2px;
+  &__icon {
+    flex: none;
+    margin-right: 4px;
+    display: flex;
+    align-items: center;
+    min-height: #{$line-height-default}em;
 
     svg {
-      vertical-align: top;
-    }
-  }
+      flex: none;
+      display: block;
+      width: 14px;
+      height: 14px;
 
-  &__object + &__text {
-    margin-left: 4px;
+      path:first-child {
+        fill: $color-gray-60;
+      }
+    }
   }
 
   &__text {
-    @include font-size-default(12);
-    min-height: #{$line-height-default}em;
     margin: 0;
-    color: $color-gray-60;
+    flex: 1;
+    min-width: 0;
   }
-}
 
-.ui-notice:global(.color-black) {
-  .ui-notice__object {
-    svg {
-      :first-child {
-        fill: $color-black;
+  &:global(.color-black) {
+    .notice__icon {
+      svg {
+        path:first-child {
+          fill: $color-black;
+        }
       }
     }
   }
-  .ui-notice__text {
-    color: $color-black;
-  }
-}
 
-.ui-notice:global(.color-green) {
-  .ui-notice__object {
-    svg {
-      :first-child {
-        fill: $color-green-50;
+  &:global(.color-green) {
+    .notice__icon {
+      svg {
+        path:first-child {
+          fill: $color-green-50;
+        }
       }
     }
   }
-  .ui-notice__text {
-    color: $color-green-50;
-  }
-}
 
-.ui-notice:global(.color-navy) {
-  .ui-notice__object {
-    svg {
-      :first-child {
-        fill: $color-navy-50;
+  &:global(.color-navy) {
+    .notice__icon {
+      svg {
+        path:first-child {
+          fill: $color-navy-50;
+        }
       }
     }
   }
-  .ui-notice__text {
-    color: $color-navy-50;
-  }
-}
 
-.ui-notice:global(.color-red) {
-  .ui-notice__object {
-    svg {
-      :first-child {
-        fill: $color-semantic-essential;
+  &:global(.color-red) {
+    .notice__icon {
+      svg {
+        path:first-child {
+          fill: $color-semantic-essential;
+        }
       }
     }
-  }
-  .ui-notice__text {
-    color: $color-semantic-essential;
   }
 }

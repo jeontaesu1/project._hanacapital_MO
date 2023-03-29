@@ -2,7 +2,7 @@
 import { computed, inject } from 'vue';
 
 const defaultClassNames = () => ({
-  wrap: '',
+  title: '',
 });
 
 export default {
@@ -15,7 +15,7 @@ export default {
     },
   },
   setup(props) {
-    const styleModule = inject('styleModule');
+    const styleModule = inject('keyValueStyleModule');
 
     const customClassNames = computed(() => {
       const { classNames } = props;
@@ -31,7 +31,7 @@ export default {
 </script>
 
 <template>
-  <dt :class="[styleModule['key-value__key'], customClassNames.wrap]">
+  <dt :class="[styleModule['key-value__key'], customClassNames.title]">
     <slot />
   </dt>
 </template>

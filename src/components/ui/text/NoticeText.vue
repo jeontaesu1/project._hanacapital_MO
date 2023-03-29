@@ -1,22 +1,19 @@
 <script>
-import {
-  reactive,
-  computed,
-  useCssModule,
-  provide,
-  onMounted,
-  watch,
-} from 'vue';
+import { computed } from 'vue';
 
-import NoticeIconObject from '@/components/ui/text/NoticeIconObject.vue';
+import iconImportant from '@/assets/images/icon/important.svg?component';
+import iconComplete from '@/assets/images/icon/complete.svg?component';
 
 const defaultClassNames = () => ({
   wrap: '',
+  icon: '',
+  text: '',
 });
 
 export default {
   components: {
-    NoticeIconObject,
+    iconImportant,
+    iconComplete,
   },
   props: {
     classNames: {
@@ -27,35 +24,16 @@ export default {
     },
     type: {
       Type: String,
-      default: 'notice',
+      default: null,
     },
   },
   setup(props) {
-    const state = reactive({
-      type: { value: null },
-    });
-
     const customClassNames = computed(() => {
       const { classNames } = props;
       return Object.assign(defaultClassNames(), classNames);
     });
 
-    provide('styleModule', useCssModule());
-    provide('noticeType', state.type);
-
-    onMounted(() => {
-      state.type.value = props.type;
-    });
-
-    watch(
-      () => props.type,
-      (cur) => {
-        state.type.value = cur;
-      }
-    );
-
     return {
-      state,
       customClassNames,
     };
   },
@@ -63,9 +41,12 @@ export default {
 </script>
 
 <template>
-  <div :class="[$style['ui-notice'], customClassNames.wrap]">
-    <NoticeIconObject />
-    <p :class="[$style['ui-notice__text']]">
+  <div :class="[$style['notice'], customClassNames.wrap]">
+    <div :class="[$style['notice__icon'], customClassNames.icon]">
+      <iconComplete v-if="type === 'check'" />
+      <iconImportant v-else />
+    </div>
+    <p :class="[$style['notice__text'], customClassNames.text]">
       <slot />
     </p>
   </div>

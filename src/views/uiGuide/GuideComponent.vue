@@ -2832,10 +2832,12 @@ export default {
               소유기간 3개월 이상
             </KeyValueText>
           </KeyValueItem>
+
           <KeyValueItem>
             <KeyValueTitle>소유차종</KeyValueTitle>
-            <KeyValueText> 국산/수입 승용, RV, 승합 </KeyValueText>
+            <KeyValueText>국산/수입 승용, RV, 승합</KeyValueText>
           </KeyValueItem>
+
           <KeyValueItem>
             <KeyValueTitle>차량연식</KeyValueTitle>
             <KeyValueText>
@@ -2856,10 +2858,12 @@ export default {
               소유기간 3개월 이상
             </KeyValueText>
           </KeyValueItem>
+
           <KeyValueItem>
             <KeyValueTitle>소유차종</KeyValueTitle>
-            <KeyValueText> 국산/수입 승용, RV, 승합 </KeyValueText>
+            <KeyValueText>국산/수입 승용, RV, 승합</KeyValueText>
           </KeyValueItem>
+
           <KeyValueItem>
             <KeyValueTitle>차량연식</KeyValueTitle>
             <KeyValueText>
@@ -2889,32 +2893,39 @@ export default {
 
     <section class="test-section">
       <h2 class="test-section-title">Notice Text</h2>
-      <NoticeText> TextTextTextTextTextTextTextText </NoticeText>
-      <NoticeText class="color-black">
-        TextTextTextTextTextTextTextText
-      </NoticeText>
-      <NoticeText class="color-green">
-        TextTextTextTextTextTextTextText
-      </NoticeText>
-      <NoticeText class="color-red">
-        TextTextTextTextTextTextTextText
-      </NoticeText>
-      <NoticeText class="color-navy">
-        TextTextTextTextTextTextTextText
-      </NoticeText>
-      <NoticeText type="check"> TextTextTextTextTextTextTextText </NoticeText>
-      <NoticeText type="check" class="color-black">
-        TextTextTextTextTextTextTextText
-      </NoticeText>
-      <NoticeText type="check" class="color-green">
-        TextTextTextTextTextTextTextText
-      </NoticeText>
-      <NoticeText type="check" class="color-red">
-        TextTextTextTextTextTextTextText
-      </NoticeText>
-      <NoticeText type="check" class="color-navy">
-        TextTextTextTextTextTextTextText
-      </NoticeText>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <NoticeText>Text Text Text Text Text</NoticeText>
+        <NoticeText :classNames="{ wrap: 'color-black' }">
+          Text Text Text Text Text
+        </NoticeText>
+        <NoticeText :classNames="{ wrap: 'color-green' }">
+          Text Text Text Text Text
+        </NoticeText>
+        <NoticeText :classNames="{ wrap: 'color-red' }">
+          Text Text Text Text Text
+        </NoticeText>
+        <NoticeText :classNames="{ wrap: 'color-navy' }">
+          Text Text Text Text Text
+        </NoticeText>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">check</h3>
+        <NoticeText type="check">Text Text Text Text Text</NoticeText>
+        <NoticeText type="check" :classNames="{ wrap: 'color-black' }">
+          Text Text Text Text Text
+        </NoticeText>
+        <NoticeText type="check" :classNames="{ wrap: 'color-green' }">
+          Text Text Text Text Text
+        </NoticeText>
+        <NoticeText type="check" :classNames="{ wrap: 'color-red' }">
+          Text Text Text Text Text
+        </NoticeText>
+        <NoticeText type="check" :classNames="{ wrap: 'color-navy' }">
+          Text Text Text Text Text
+        </NoticeText>
+      </div>
     </section>
 
     <section class="test-section">
