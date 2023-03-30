@@ -6,12 +6,16 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
+import LayerPersonalLoanHappinessIdentification from '../personalLoan/LayerPersonalLoanHappinessIdentification.vue';
+
 export default {
   components: {
     PageContents,
     BasicButton,
     ButtonList,
     ButtonListItem,
+
+    LayerPersonalLoanHappinessIdentification,
   },
   setup() {
     const layer001 = ref(null);
@@ -37,8 +41,12 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">본인인증 방법 선택</BasicButton>
+        <BasicButton @click="layer001Open"
+          >행복아파트론 한도조회 동의</BasicButton
+        >
       </ButtonListItem>
     </ButtonList>
+
+    <LayerPersonalLoanHappinessIdentification ref="layer001" />
   </PageContents>
 </template>

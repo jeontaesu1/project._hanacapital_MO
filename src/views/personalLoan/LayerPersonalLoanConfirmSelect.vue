@@ -7,9 +7,7 @@ import ToastPopupHead from '@/components/ui/layer/ToastPopupHead.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 
 import IconPhone from '@/assets/images/icon/phone.svg?component';
-import IconCertification from '@/assets/images/icon/certification.svg?component';
 import IconCard from '@/assets/images/icon/card.svg?component';
-import IconKakaopay from '@/assets/images/icon/kakaopay.svg?component';
 
 export default {
   components: {
@@ -18,9 +16,7 @@ export default {
     ToastPopupHead,
     PopupTitle,
     IconPhone,
-    IconCertification,
     IconCard,
-    IconKakaopay,
   },
   setup() {
     const layer = ref(null);
@@ -37,7 +33,10 @@ export default {
     <ToastPopup>
       <template v-slot:head>
         <ToastPopupHead>
-          <PopupTitle>본인인증 방법을 선택해 주세요</PopupTitle>
+          <PopupTitle
+            >앱에서 가입한 손님은 <br />
+            최초 1회 본인인증이 필요합니다</PopupTitle
+          >
         </ToastPopupHead>
       </template>
 
@@ -51,29 +50,12 @@ export default {
               </div>
             </button>
           </li>
-          <li :class="$style['icon-buttons__item']">
-            <button type="button" :class="$style['icon-buttons__block']">
-              <div :class="$style['icon-buttons__icon']">
-                <IconCertification />
-              </div>
-              <div :class="$style['icon-buttons__content']">
-                <div :class="$style['icon-buttons__title']">공동인증서</div>
-              </div>
-            </button>
-          </li>
+
           <li :class="$style['icon-buttons__item']">
             <button type="button" :class="$style['icon-buttons__block']">
               <div :class="$style['icon-buttons__icon']"><IconCard /></div>
               <div :class="$style['icon-buttons__content']">
                 <div :class="$style['icon-buttons__title']">신용카드</div>
-              </div>
-            </button>
-          </li>
-          <li :class="$style['icon-buttons__item']">
-            <button type="button" :class="$style['icon-buttons__block']">
-              <div :class="$style['icon-buttons__icon']"><IconKakaopay /></div>
-              <div :class="$style['icon-buttons__content']">
-                <div :class="$style['icon-buttons__title']">카카오페이</div>
               </div>
             </button>
           </li>
@@ -84,5 +66,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/personalLoan/LayerPersonalLoanIdentification.scss';
+@import '@/assets/scss/views/personalLoan/LayerPersonalLoanConfirmSelect.scss';
 </style>
