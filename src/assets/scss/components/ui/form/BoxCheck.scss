@@ -1,0 +1,119 @@
+.box-check {
+  position: relative;
+
+  &__input {
+    @include reset-input-check;
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  &__block {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    border: 1px solid $color-gray-30;
+    border-radius: 8px;
+    padding: 11px 15px;
+  }
+
+  &__left {
+    flex: none;
+    margin-right: 8px;
+  }
+
+  &__right {
+    flex: none;
+    margin-left: 8px;
+  }
+
+  &__center {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__label {
+    display: block;
+    @include font-size-default(15);
+    text-align: center;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0);
+    }
+  }
+
+  &__input {
+    &:checked {
+      & + .box-check__block {
+        border-color: $color-navy-50;
+        border-width: 2px;
+        padding: 10px 14px;
+
+        .box-check__label {
+          color: $color-navy-50;
+          font-weight: 500;
+        }
+      }
+    }
+
+    &:focus {
+      & + .box-check__block {
+        background-color: rgba($color-navy-50, 0.08);
+      }
+    }
+
+    &:active {
+      & + .box-check__block {
+        background-color: rgba($color-navy-50, 0.2);
+      }
+    }
+
+    &[disabled] {
+      & + .box-check__block {
+        .box-check__label {
+          color: $color-gray-40;
+        }
+      }
+    }
+
+    &[disabled]:checked {
+      & + .box-check__block {
+        border-color: $color-gray-30;
+      }
+    }
+
+    &[disabled]:active {
+      & + .box-check__block {
+        background-color: transparent;
+      }
+    }
+  }
+
+  &--contents {
+    .box-check__block {
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+
+    .box-check__label {
+      text-align: left;
+    }
+
+    .box-check__input {
+      &:checked {
+        & + .box-check__block {
+          padding-top: 14px;
+          padding-bottom: 14px;
+        }
+      }
+    }
+  }
+}

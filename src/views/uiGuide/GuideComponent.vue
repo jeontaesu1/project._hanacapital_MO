@@ -21,6 +21,9 @@ import AlertSystem from '@/components/ui/layer/AlertSystem.vue';
 import CheckBox from '@/components/ui/form/CheckBox.vue';
 import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
 import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
+import BoxCheck from '@/components/ui/form/BoxCheck.vue';
+import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
+import BoxCheckObject from '@/components/ui/form/BoxCheckObject.vue';
 import UiAccordion from '@/components/ui/accordion/UiAccordion.vue';
 import UiAccordionItem from '@/components/ui/accordion/UiAccordionItem.vue';
 import UiAccordionLayer from '@/components/ui/accordion/UiAccordionLayer.vue';
@@ -88,6 +91,9 @@ export default {
     CheckBox,
     CheckBoxLabelText,
     CheckBoxObject,
+    BoxCheck,
+    BoxCheckLabel,
+    BoxCheckObject,
     UiAccordion,
     UiAccordionItem,
     UiAccordionLayer,
@@ -973,6 +979,188 @@ export default {
           <CheckBoxObject />
           <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
         </CheckBox>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">BoxCheck</h2>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">radio</h3>
+
+        <BoxCheck name="testBoxCheck001" id="testBoxCheck001_001">
+          <BoxCheckLabel>Label<br />2 line label</BoxCheckLabel>
+        </BoxCheck>
+        <BoxCheck
+          name="testBoxCheck001"
+          id="testBoxCheck001_002"
+          :checked="true"
+        >
+          <BoxCheckLabel>Label<br />2 line label</BoxCheckLabel>
+        </BoxCheck>
+        <BoxCheck
+          name="testBoxCheck002"
+          id="testBoxCheck002_003"
+          :disabled="true"
+        >
+          <BoxCheckLabel>Label<br />2 line label</BoxCheckLabel>
+        </BoxCheck>
+        <BoxCheck
+          name="testBoxCheck002"
+          id="testBoxCheck002_004"
+          :disabled="true"
+          :checked="true"
+        >
+          <BoxCheckLabel>Label<br />2 line label</BoxCheckLabel>
+        </BoxCheck>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">checkbox</h3>
+
+        <BoxCheck type="checkbox" id="testBoxCheck003_001">
+          <BoxCheckLabel>Label<br />2 line label</BoxCheckLabel>
+        </BoxCheck>
+        <BoxCheck type="checkbox" id="testBoxCheck003_002" :checked="true">
+          <BoxCheckLabel>Label<br />2 line label</BoxCheckLabel>
+        </BoxCheck>
+        <BoxCheck type="checkbox" id="testBoxCheck003_003" :disabled="true">
+          <BoxCheckLabel>Label<br />2 line label</BoxCheckLabel>
+        </BoxCheck>
+        <BoxCheck
+          type="checkbox"
+          id="testBoxCheck003_004"
+          :disabled="true"
+          :checked="true"
+        >
+          <BoxCheckLabel>Label<br />2 line label</BoxCheckLabel>
+        </BoxCheck>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">contents - radio</h3>
+
+        <BoxCheck
+          :contents="true"
+          name="testBoxCheck004"
+          id="testBoxCheck004_001"
+        >
+          <template v-slot:left>
+            <BoxCheckObject />
+          </template>
+          <BoxCheckLabel>원리금 균등상환</BoxCheckLabel>
+          <p class="text-body-5 color-gray-secondary">
+            가장 일반적인 방법으로 원금과 이자를 합한<br />
+            상환금액이 매달 동일합니다.
+          </p>
+        </BoxCheck>
+        <BoxCheck
+          :contents="true"
+          name="testBoxCheck004"
+          id="testBoxCheck004_002"
+          :checked="true"
+        >
+          <template v-slot:left>
+            <BoxCheckObject />
+          </template>
+          <BoxCheckLabel>원리금 균등상환</BoxCheckLabel>
+          <p class="text-body-5 color-gray-secondary">
+            가장 일반적인 방법으로 원금과 이자를 합한<br />
+            상환금액이 매달 동일합니다.
+          </p>
+        </BoxCheck>
+        <BoxCheck
+          :contents="true"
+          name="testBoxCheck005"
+          id="testBoxCheck005_003"
+          :disabled="true"
+        >
+          <template v-slot:left>
+            <BoxCheckObject />
+          </template>
+          <BoxCheckLabel>원리금 균등상환</BoxCheckLabel>
+          <p class="text-body-5 color-gray-secondary">
+            가장 일반적인 방법으로 원금과 이자를 합한<br />
+            상환금액이 매달 동일합니다.
+          </p>
+        </BoxCheck>
+        <BoxCheck
+          :contents="true"
+          name="testBoxCheck005"
+          id="testBoxCheck005_004"
+          :disabled="true"
+          :checked="true"
+        >
+          <BoxCheckLabel>원리금 균등상환</BoxCheckLabel>
+          <p class="text-body-5 color-gray-secondary">
+            가장 일반적인 방법으로 원금과 이자를 합한<br />
+            상환금액이 매달 동일합니다.
+          </p>
+          <template v-slot:right>
+            <BoxCheckObject />
+          </template>
+        </BoxCheck>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">contents - checkbox</h3>
+
+        <BoxCheck :contents="true" type="checkbox" id="testBoxCheck006_001">
+          <template v-slot:left>
+            <BoxCheckObject />
+          </template>
+          <BoxCheckLabel>원리금 균등상환</BoxCheckLabel>
+          <p class="text-body-5 color-gray-secondary">
+            가장 일반적인 방법으로 원금과 이자를 합한<br />
+            상환금액이 매달 동일합니다.
+          </p>
+        </BoxCheck>
+        <BoxCheck
+          :contents="true"
+          type="checkbox"
+          id="testBoxCheck006_002"
+          :checked="true"
+        >
+          <template v-slot:left>
+            <BoxCheckObject />
+          </template>
+          <BoxCheckLabel>원리금 균등상환</BoxCheckLabel>
+          <p class="text-body-5 color-gray-secondary">
+            가장 일반적인 방법으로 원금과 이자를 합한<br />
+            상환금액이 매달 동일합니다.
+          </p>
+        </BoxCheck>
+        <BoxCheck
+          :contents="true"
+          type="checkbox"
+          id="testBoxCheck006_003"
+          :disabled="true"
+        >
+          <template v-slot:left>
+            <BoxCheckObject />
+          </template>
+          <BoxCheckLabel>원리금 균등상환</BoxCheckLabel>
+          <p class="text-body-5 color-gray-secondary">
+            가장 일반적인 방법으로 원금과 이자를 합한<br />
+            상환금액이 매달 동일합니다.
+          </p>
+        </BoxCheck>
+        <BoxCheck
+          :contents="true"
+          type="checkbox"
+          id="testBoxCheck006_004"
+          :disabled="true"
+          :checked="true"
+        >
+          <BoxCheckLabel>원리금 균등상환</BoxCheckLabel>
+          <p class="text-body-5 color-gray-secondary">
+            가장 일반적인 방법으로 원금과 이자를 합한<br />
+            상환금액이 매달 동일합니다.
+          </p>
+          <template v-slot:right>
+            <BoxCheckObject />
+          </template>
+        </BoxCheck>
       </div>
     </section>
 

@@ -6,7 +6,7 @@ import {
   provide,
   reactive,
   watch,
-  onMounted,
+  onBeforeMount,
 } from 'vue';
 
 const defaultClassNames = () => ({
@@ -68,7 +68,7 @@ export default {
     provide('checkBoxStyleModule', useCssModule());
     provide('checkBoxTheme', state.theme);
 
-    onMounted(() => {
+    onBeforeMount(() => {
       state.theme.value = props.theme;
     });
 
