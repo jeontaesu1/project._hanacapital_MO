@@ -1,5 +1,9 @@
 .box-check {
+  flex: 1;
+  min-width: 0;
   position: relative;
+  display: flex;
+  align-items: stretch;
 
   &__input {
     @include reset-input-check;
@@ -9,12 +13,17 @@
   }
 
   &__block {
+    flex: 1;
+    min-width: 0;
     display: flex;
     align-items: center;
     box-sizing: border-box;
     border: 1px solid $color-gray-30;
     border-radius: 8px;
     padding: 11px 15px;
+    @include font-size-default(15);
+    background-color: rgba($color-navy-50, 0);
+    transition: border-color 0.2s, background-color 0.2s;
   }
 
   &__left {
@@ -34,7 +43,6 @@
 
   &__label {
     display: block;
-    @include font-size-default(15);
     text-align: center;
 
     &::before {
@@ -50,6 +58,63 @@
     }
   }
 
+  &__object {
+    display: flex;
+    align-items: center;
+    min-height: #{$line-height-default}em;
+
+    &-inner {
+      flex: none;
+      position: relative;
+      width: 24px;
+      height: 24px;
+      box-sizing: border-box;
+      border: 1px solid $color-gray-30;
+      border-radius: 50%;
+      transition: border-color 0.2s, background-color 0.2s;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 12px;
+        height: 12px;
+        margin: -6px 0 0 -6px;
+        border-radius: 50%;
+        background-color: #fff;
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+
+      svg {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 24px;
+        height: 24px;
+        margin: -12px 0 0 -12px;
+
+        * {
+          fill: $color-gray-40;
+          transition: fill 0.2s;
+        }
+      }
+    }
+  }
+
+  &--checkbox {
+    .box-check__object {
+      &-inner {
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+
   &__input {
     &:checked {
       & + .box-check__block {
@@ -60,6 +125,23 @@
         .box-check__label {
           color: $color-navy-50;
           font-weight: 500;
+        }
+
+        .box-check__object {
+          &-inner {
+            border-color: $color-navy-50;
+            background-color: $color-navy-50;
+
+            &::before {
+              opacity: 1;
+            }
+
+            svg {
+              * {
+                fill: $color-white;
+              }
+            }
+          }
         }
       }
     }
@@ -81,12 +163,39 @@
         .box-check__label {
           color: $color-gray-40;
         }
+
+        .box-check__object {
+          &-inner {
+            border-color: $color-gray-30;
+            background-color: $color-gray-20;
+
+            &::before {
+              background-color: $color-gray-40;
+            }
+
+            svg {
+              opacity: 0;
+
+              * {
+                fill: $color-gray-40;
+              }
+            }
+          }
+        }
       }
     }
 
     &[disabled]:checked {
       & + .box-check__block {
         border-color: $color-gray-30;
+
+        .box-check__object {
+          &-inner {
+            svg {
+              opacity: 1;
+            }
+          }
+        }
       }
     }
 
@@ -99,8 +208,7 @@
 
   &--contents {
     .box-check__block {
-      padding-top: 15px;
-      padding-bottom: 15px;
+      padding: 15px 19px;
     }
 
     .box-check__label {
@@ -110,8 +218,29 @@
     .box-check__input {
       &:checked {
         & + .box-check__block {
-          padding-top: 14px;
-          padding-bottom: 14px;
+          padding: 14px 18px;
+        }
+      }
+    }
+  }
+
+  &--align-top {
+    .box-check__block {
+      align-items: flex-start;
+    }
+  }
+
+  &--min-side {
+    .box-check__block {
+      padding-left: 3px;
+      padding-right: 3px;
+    }
+
+    .box-check__input {
+      &:checked {
+        & + .box-check__block {
+          padding-left: 2px;
+          padding-right: 2px;
         }
       }
     }

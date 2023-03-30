@@ -24,6 +24,8 @@ import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
 import BoxCheck from '@/components/ui/form/BoxCheck.vue';
 import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
 import BoxCheckObject from '@/components/ui/form/BoxCheckObject.vue';
+import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
+import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 import UiAccordion from '@/components/ui/accordion/UiAccordion.vue';
 import UiAccordionItem from '@/components/ui/accordion/UiAccordionItem.vue';
 import UiAccordionLayer from '@/components/ui/accordion/UiAccordionLayer.vue';
@@ -94,6 +96,8 @@ export default {
     BoxCheck,
     BoxCheckLabel,
     BoxCheckObject,
+    BoxCheckList,
+    BoxCheckListItem,
     UiAccordion,
     UiAccordionItem,
     UiAccordionLayer,
@@ -1161,6 +1165,94 @@ export default {
             <BoxCheckObject />
           </template>
         </BoxCheck>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">BoxCheckList</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <BoxCheckList>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList001"
+              id="testBoxCheckList001_001"
+            >
+              <BoxCheckLabel>Label 1</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList001"
+              id="testBoxCheckList001_002"
+            >
+              <BoxCheckLabel>Label 2</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList001"
+              id="testBoxCheckList001_003"
+            >
+              <BoxCheckLabel>Label 3</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList001"
+              id="testBoxCheckList001_004"
+            >
+              <BoxCheckLabel>Label 4</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+        </BoxCheckList>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Full</h3>
+
+        <BoxCheckList align="full">
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList002"
+              id="testBoxCheckList002_001"
+            >
+              <BoxCheckLabel>Label 1</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList002"
+              id="testBoxCheckList002_002"
+            >
+              <BoxCheckLabel>Label 2</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList002"
+              id="testBoxCheckList002_003"
+            >
+              <BoxCheckLabel>Label 3</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList002"
+              id="testBoxCheckList002_004"
+            >
+              <BoxCheckLabel>Label 4</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+        </BoxCheckList>
       </div>
     </section>
 

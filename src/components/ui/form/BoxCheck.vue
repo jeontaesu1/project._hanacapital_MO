@@ -43,6 +43,10 @@ export default {
       Type: Boolean,
       default: false,
     },
+    minSide: {
+      Type: Boolean,
+      default: false,
+    },
   },
   setup(props, context) {
     const state = reactive({
@@ -110,6 +114,7 @@ export default {
         [$style['box-check--checkbox']]: type === 'checkbox',
         [$style[`box-check--align-${align}`]]: align,
         [$style['box-check--contents']]: contents,
+        [$style['box-check--min-side']]: minSide,
       },
       customClassNames.wrap,
     ]"
