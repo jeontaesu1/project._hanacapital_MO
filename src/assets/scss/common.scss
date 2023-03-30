@@ -100,6 +100,11 @@ body,
   margin-bottom: 32px;
   @include row-margin-first-last;
 }
+.row-margin-container-medium.row-margin-container-medium {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  @include row-margin-first-last;
+}
 .row-margin-container-group.row-margin-container-group {
   margin-top: 48px;
   margin-bottom: 48px;
@@ -224,37 +229,32 @@ body,
 }
 
 // text
-.text {
-  &-body {
-    &-1 {
-      margin: 0;
-      @include font-size-default(16);
-    }
-    &-2 {
-      margin: 0;
-      @include font-size-default(15);
-    }
-    &-3 {
-      margin: 0;
-      @include font-size-default(14);
-    }
-    &-4 {
-      margin: 0;
-      @include font-size-default(13);
-    }
-    &-5 {
-      margin: 0;
-      @include font-size-default(12);
-    }
-  }
-  &-title {
-    &-1 {
-      margin: 0;
-      @include font-size-head(20);
-    }
-    &-2 {
-      margin: 0;
-      @include font-size-head(18);
-    }
-  }
+.text-body-1.text-body-1 {
+  margin: 0;
+  @include font-size-default(16);
+}
+.text-body-2.text-body-2 {
+  margin: 0;
+  @include font-size-default(15);
+}
+.text-body-3.text-body-3 {
+  margin: 0;
+  @include font-size-default(14);
+}
+.text-body-4.text-body-4 {
+  margin: 0;
+  @include font-size-default(13);
+}
+.text-body-5.text-body-5 {
+  margin: 0;
+  @include font-size-default(12);
+}
+
+.text-title-1.text-title-1 {
+  margin: 0;
+  @include font-size-head(20);
+}
+.text-title-2.text-title-2 {
+  margin: 0;
+  @include font-size-head(18);
 }
