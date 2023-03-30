@@ -3065,6 +3065,7 @@ export default {
         <h3 class="test-section-sub-title">Default</h3>
         <div class="color-black">.color-black</div>
         <div class="color-gray">.color-gray</div>
+        <div class="color-gray-secondary">.color-gray-secondary</div>
         <div class="color-green">.color-green</div>
         <div class="color-red">.color-red</div>
         <div class="color-navy">.color-navy</div>
