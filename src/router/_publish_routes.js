@@ -44,6 +44,11 @@ const routes = [
     component: () => import('@/views/uiGuide/GuideIdentification002.vue'),
   },
   {
+    path: '/guide/loan-calculator-001',
+    name: '/guide/loan-calculator-001',
+    component: () => import('@/views/uiGuide/GuideLoanCalculator001.vue'),
+  },
+  {
     path: '/guide/personal-loan-e-hana-001',
     name: '/guide/personal-loan-e-hana-001',
     component: () => import('@/views/uiGuide/GuidePersonalLoanEHana001.vue'),

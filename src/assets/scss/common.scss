@@ -75,6 +75,16 @@ body,
   margin-top: 0;
   margin-bottom: 0;
 }
+.row-margin-mini.row-margin-mini {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  @include row-margin-first-last;
+}
+.row-margin-small.row-margin-small {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  @include row-margin-first-last;
+}
 .row-margin-item.row-margin-item {
   margin-top: 8px;
   margin-bottom: 8px;

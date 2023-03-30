@@ -82,6 +82,17 @@ const datas = () => [
         create: '2023.03.24',
         log: [],
       },
+      {
+        depth2: '대출계산기',
+        depth3: '팝업',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/guide/loan-calculator-001',
+        status: 'end',
+        create: '2023.03.31',
+        log: [],
+      },
     ],
   },
   {

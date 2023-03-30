@@ -1,5 +1,12 @@
 <script>
-import { computed, useCssModule, provide } from 'vue';
+import {
+  reactive,
+  computed,
+  useCssModule,
+  provide,
+  onBeforeMount,
+  watch,
+} from 'vue';
 
 const defaultClassNames = () => ({
   wrap: '',
@@ -16,12 +23,32 @@ export default {
     },
   },
   setup(props) {
+    const state = reactive({
+      selectOnly: {
+        value: false,
+      },
+    });
+
     const customClassNames = computed(() => {
       const { classNames } = props;
       return Object.assign(defaultClassNames(), classNames);
     });
 
+    onBeforeMount(() => {
+      state.selectOnly.value = props.isSelect;
+    });
+
+    watch(
+      () => props.selectOnly,
+      (cur) => {
+        state.selectOnly.value = cur;
+      }
+    );
+
     provide('formListStyleModule', useCssModule());
+    provide('formListSelectOnly', {
+      selectOnly: state.selectOnly,
+    });
 
     return {
       customClassNames,

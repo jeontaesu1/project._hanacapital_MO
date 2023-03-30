@@ -73,10 +73,6 @@ export default {
       return input.value;
     };
 
-    provide('boxCheckstyleModule', useCssModule());
-    provide('boxCheckType', state.type);
-    provide('boxCheckId', state.id);
-
     onBeforeMount(() => {
       state.type.value = props.type;
       state.id.value = props.id;
@@ -94,6 +90,10 @@ export default {
         state.id.value = cur;
       }
     );
+
+    provide('boxCheckstyleModule', useCssModule());
+    provide('boxCheckType', state.type);
+    provide('boxCheckId', state.id);
 
     return {
       input,

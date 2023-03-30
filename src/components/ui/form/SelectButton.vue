@@ -1,5 +1,5 @@
 <script>
-import { ref, computed } from 'vue';
+import { ref, computed, inject } from 'vue';
 
 import IconDropdown from '@/assets/images/icon/dropdown.svg?component';
 
@@ -36,6 +36,9 @@ export default {
     },
   },
   setup(props, context) {
+    const formList = inject('formList', {});
+    const formListStyleModule = inject('formListStyleModule', {});
+
     const button = ref(null);
 
     const customClassNames = computed(() => {
@@ -51,11 +54,18 @@ export default {
       return typeof props.placeholder === 'string';
     });
 
+    const selectOnly = computed(() => {
+      return formList.selectOnly && formList.selectOnly.value;
+    });
+
     return {
+      formList,
+      formListStyleModule,
       button,
       customClassNames,
       isText,
       isPlaceholder,
+      selectOnly,
     };
   },
 };
@@ -72,6 +82,9 @@ export default {
       v-if="(!forcePlaceholder && !isText && isPlaceholder) || forcePlaceholder"
       :class="[
         $style['select-button__placeholder'],
+        {
+          [formListStyleModule['input-block__select-text']]: !selectOnly,
+        },
         customClassNames.placeholder,
       ]"
     >
@@ -79,7 +92,13 @@ export default {
     </span>
     <span
       v-if="!isPlaceholder || (!forcePlaceholder && isText && isPlaceholder)"
-      :class="[$style['select-button__text'], customClassNames.text]"
+      :class="[
+        $style['select-button__text'],
+        {
+          [formListStyleModule['input-block__select-text']]: !selectOnly,
+        },
+        customClassNames.text,
+      ]"
     >
       <slot />
     </span>

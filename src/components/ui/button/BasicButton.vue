@@ -45,6 +45,10 @@ export default {
       Type: Boolean,
       default: false,
     },
+    minSide: {
+      Type: Boolean,
+      default: false,
+    },
   },
   setup(props, context) {
     const setComponent = computed(() => {
@@ -100,6 +104,7 @@ export default {
         [$style[`button--line`]]: line,
         [$style[`button--inline`]]: inline,
         [$style['button--disabled']]: disabledStyle,
+        [$style['button--min-side']]: minSide,
       },
       customClassNames.wrap,
     ]"

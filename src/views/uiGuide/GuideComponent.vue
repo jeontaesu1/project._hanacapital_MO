@@ -1053,7 +1053,7 @@ export default {
             <BoxCheckObject />
           </template>
           <BoxCheckLabel>원리금 균등상환</BoxCheckLabel>
-          <p class="text-body-5 color-gray-secondary">
+          <p class="text-body-5 color-gray-secondary row-margin-small">
             가장 일반적인 방법으로 원금과 이자를 합한<br />
             상환금액이 매달 동일합니다.
           </p>
@@ -1068,7 +1068,7 @@ export default {
             <BoxCheckObject />
           </template>
           <BoxCheckLabel>원리금 균등상환</BoxCheckLabel>
-          <p class="text-body-5 color-gray-secondary">
+          <p class="text-body-5 color-gray-secondary row-margin-small">
             가장 일반적인 방법으로 원금과 이자를 합한<br />
             상환금액이 매달 동일합니다.
           </p>
@@ -1083,7 +1083,7 @@ export default {
             <BoxCheckObject />
           </template>
           <BoxCheckLabel>원리금 균등상환</BoxCheckLabel>
-          <p class="text-body-5 color-gray-secondary">
+          <p class="text-body-5 color-gray-secondary row-margin-small">
             가장 일반적인 방법으로 원금과 이자를 합한<br />
             상환금액이 매달 동일합니다.
           </p>
@@ -1096,7 +1096,7 @@ export default {
           :checked="true"
         >
           <BoxCheckLabel>원리금 균등상환</BoxCheckLabel>
-          <p class="text-body-5 color-gray-secondary">
+          <p class="text-body-5 color-gray-secondary row-margin-small">
             가장 일반적인 방법으로 원금과 이자를 합한<br />
             상환금액이 매달 동일합니다.
           </p>
@@ -1114,7 +1114,7 @@ export default {
             <BoxCheckObject />
           </template>
           <BoxCheckLabel>원리금 균등상환</BoxCheckLabel>
-          <p class="text-body-5 color-gray-secondary">
+          <p class="text-body-5 color-gray-secondary row-margin-small">
             가장 일반적인 방법으로 원금과 이자를 합한<br />
             상환금액이 매달 동일합니다.
           </p>
@@ -1129,7 +1129,7 @@ export default {
             <BoxCheckObject />
           </template>
           <BoxCheckLabel>원리금 균등상환</BoxCheckLabel>
-          <p class="text-body-5 color-gray-secondary">
+          <p class="text-body-5 color-gray-secondary row-margin-small">
             가장 일반적인 방법으로 원금과 이자를 합한<br />
             상환금액이 매달 동일합니다.
           </p>
@@ -1144,7 +1144,7 @@ export default {
             <BoxCheckObject />
           </template>
           <BoxCheckLabel>원리금 균등상환</BoxCheckLabel>
-          <p class="text-body-5 color-gray-secondary">
+          <p class="text-body-5 color-gray-secondary row-margin-small">
             가장 일반적인 방법으로 원금과 이자를 합한<br />
             상환금액이 매달 동일합니다.
           </p>
@@ -1157,7 +1157,7 @@ export default {
           :checked="true"
         >
           <BoxCheckLabel>원리금 균등상환</BoxCheckLabel>
-          <p class="text-body-5 color-gray-secondary">
+          <p class="text-body-5 color-gray-secondary row-margin-small">
             가장 일반적인 방법으로 원금과 이자를 합한<br />
             상환금액이 매달 동일합니다.
           </p>
@@ -1650,6 +1650,72 @@ export default {
               <InputBlock :error="state.testError001">
                 <InputBlockCell :flexible="true">
                   <BasicInput title="이름" id="testInput007" />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem titleText="대출기간" target="#testInput010Button">
+            <FormInvalid :error="state.testError001">
+              <InputBlock :select="true" :error="state.testError001">
+                <InputBlockCell :flexible="true">
+                  <BasicSelect
+                    :option="[
+                      {
+                        value: '1',
+                        text: '3개월',
+                      },
+                      {
+                        value: '2',
+                        text: '6개월',
+                      },
+                      {
+                        value: '3',
+                        text: '12개월',
+                      },
+                      {
+                        value: '4',
+                        text: '24개월',
+                      },
+                      {
+                        value: '5',
+                        text: '36개월',
+                      },
+                      {
+                        value: '6',
+                        text: '48개월',
+                      },
+                      {
+                        value: '7',
+                        text: '60개월',
+                      },
+                      {
+                        value: '8',
+                        text: '72개월',
+                      },
+                      {
+                        value: '9',
+                        text: '84개월',
+                      },
+                      {
+                        value: '10',
+                        text: '96개월',
+                      },
+                      {
+                        value: '11',
+                        text: '108개월',
+                      },
+                      {
+                        value: '12',
+                        text: '120개월',
+                      },
+                    ]"
+                    buttonTitle="대출기간 선택하기"
+                    layerTitle="대출기간을 선택해 주세요"
+                    id="testInput010"
+                    buttonId="testInput010Button"
+                  />
                 </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
