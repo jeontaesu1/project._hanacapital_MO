@@ -41,6 +41,10 @@ export default {
       Type: Boolean,
       default: false,
     },
+    head: {
+      Type: Boolean,
+      default: false,
+    },
   },
   setup(props) {
     const style = useCssModule();
@@ -127,6 +131,7 @@ export default {
       {
         [$style['nav-tab--scroll']]: scroll,
         [$style['nav-tab--auto']]: auto,
+        [$style['nav-tab--head']]: head,
       },
       customClassNames.wrap,
     ]"

@@ -4,6 +4,7 @@ import {
   computed,
   onMounted,
   onUpdated,
+  onBeforeUnmount,
   onUnmounted,
   useCssModule,
   provide,
@@ -58,6 +59,7 @@ export default {
       if (fixbar.value && fake.value) {
         const height = fixbar.value.offsetHeight;
         fake.value.style.height = `${height}px`;
+        store.ui.header.setHeight(height);
       }
     };
 
@@ -92,6 +94,10 @@ export default {
 
     onUpdated(() => {
       update();
+    });
+
+    onBeforeUnmount(() => {
+      store.ui.header.setHeight(0);
     });
 
     onUnmounted(() => {

@@ -1,5 +1,7 @@
 .nav-tab {
   margin: 0 -20px 40px;
+  transition: background-color 0.2s;
+  background-color: rgba($color-white, 0);
 
   &::before,
   &::after {
@@ -8,7 +10,6 @@
   }
 
   &__inner {
-    margin-top: -30px;
     position: relative;
     border-bottom: 1px solid $color-gray-20;
 
@@ -119,5 +120,17 @@
         margin-left: 24px;
       }
     }
+  }
+
+  &--head {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+
+  :global(.is-sticky) & {
+    margin-left: 0;
+    margin-right: 0;
+    background-color: $color-white;
   }
 }

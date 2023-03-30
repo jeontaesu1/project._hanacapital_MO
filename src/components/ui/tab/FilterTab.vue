@@ -75,7 +75,6 @@ export default {
 
       const scrollLeft = active[0].offsetLeft - listEl.offsetLeft - margin;
 
-      console.log(scrollLeft, scrollerEl);
       scrollerEl.scrollLeft = scrollLeft;
     };
 

@@ -51,6 +51,7 @@ import NavTab from '@/components/ui/tab/NavTab.vue';
 import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
 import FilterTab from '@/components/ui/tab/FilterTab.vue';
 import FilterTabButton from '@/components/ui/tab/FilterTabButton.vue';
+import StickyBar from '@/components/ui/common/StickyBar.vue';
 import KeyValueList from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
@@ -117,6 +118,7 @@ export default {
     NavTabButton,
     FilterTab,
     FilterTabButton,
+    StickyBar,
     KeyValueList,
     KeyValueItem,
     KeyValueTitle,
@@ -2712,9 +2714,7 @@ export default {
     <section class="test-section">
       <h2 class="test-section-title">Nav Tab</h2>
       <div class="test-section-sub">
-        <h3 class="test-section-sub-title" style="margin-bottom: 40px">
-          Tab Base 이용시
-        </h3>
+        <h3 class="test-section-sub-title">Tab Base 이용시</h3>
 
         <UiTab v-slot="tabSlotProps">
           <NavTab :useUiTab="true">
@@ -2737,7 +2737,7 @@ export default {
       </div>
 
       <div class="test-section-sub">
-        <h3 class="test-section-sub-title" style="margin-bottom: 40px">
+        <h3 class="test-section-sub-title">
           탭 기능 없이 단순 링크이거나 버튼 일 때
         </h3>
 
@@ -2760,9 +2760,7 @@ export default {
       </div>
 
       <div class="test-section-sub">
-        <h3 class="test-section-sub-title" style="margin-bottom: 40px">
-          auto, scroll
-        </h3>
+        <h3 class="test-section-sub-title">auto, scroll</h3>
 
         <NavTab :scroll="true" :auto="true">
           <NavTabButton tagName="button" type="button">Tab 1</NavTabButton>
@@ -2775,6 +2773,17 @@ export default {
           <NavTabButton tagName="button" type="button">Tab 6</NavTabButton>
           <NavTabButton tagName="button" type="button">Tab 7</NavTabButton>
           <NavTabButton tagName="button" type="button">Tab 8</NavTabButton>
+        </NavTab>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">page contents head 에 넣을 때</h3>
+
+        <NavTab :head="true">
+          <NavTabButton tagName="button" type="button">Tab 1</NavTabButton>
+          <NavTabButton tagName="button" type="button" :active="true">
+            Tab 2
+          </NavTabButton>
         </NavTab>
       </div>
     </section>
@@ -2827,6 +2836,28 @@ export default {
             Tab 6
           </FilterTabButton>
         </FilterTab>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Sticky</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <StickyBar>
+          <NavTab :scroll="true" :auto="true">
+            <NavTabButton tagName="button" type="button">Tab 1</NavTabButton>
+            <NavTabButton tagName="button" type="button">Tab 2</NavTabButton>
+            <NavTabButton tagName="button" type="button">Tab 3</NavTabButton>
+            <NavTabButton tagName="button" type="button">Tab 4</NavTabButton>
+            <NavTabButton tagName="button" type="button" :active="true">
+              Tab 5
+            </NavTabButton>
+            <NavTabButton tagName="button" type="button">Tab 6</NavTabButton>
+            <NavTabButton tagName="button" type="button">Tab 7</NavTabButton>
+            <NavTabButton tagName="button" type="button">Tab 8</NavTabButton>
+          </NavTab>
+        </StickyBar>
       </div>
     </section>
 

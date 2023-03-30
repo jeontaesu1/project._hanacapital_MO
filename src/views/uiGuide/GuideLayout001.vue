@@ -10,6 +10,9 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import PageSubText from '@/components/ui/text/PageSubText.vue';
+import StickyBar from '@/components/ui/common/StickyBar.vue';
+import NavTab from '@/components/ui/tab/NavTab.vue';
+import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
 
 export default {
   components: {
@@ -20,6 +23,9 @@ export default {
     PageTextGroup,
     PageMainText,
     PageSubText,
+    StickyBar,
+    NavTab,
+    NavTabButton,
   },
   setup() {
     const store = {
@@ -43,7 +49,22 @@ export default {
 
 <template>
   <PageContents>
-    <template v-slot:head>contents head</template>
+    <template v-slot:head>
+      <StickyBar>
+        <NavTab :head="true" :scroll="true" :auto="true">
+          <NavTabButton tagName="button" type="button">Tab 1</NavTabButton>
+          <NavTabButton tagName="button" type="button">Tab 2</NavTabButton>
+          <NavTabButton tagName="button" type="button">Tab 3</NavTabButton>
+          <NavTabButton tagName="button" type="button">Tab 4</NavTabButton>
+          <NavTabButton tagName="button" type="button" :active="true">
+            Tab 5
+          </NavTabButton>
+          <NavTabButton tagName="button" type="button">Tab 6</NavTabButton>
+          <NavTabButton tagName="button" type="button">Tab 7</NavTabButton>
+          <NavTabButton tagName="button" type="button">Tab 8</NavTabButton>
+        </NavTab>
+      </StickyBar>
+    </template>
 
     <PageTextGroup>
       <PageMainText>
@@ -57,6 +78,10 @@ export default {
     </PageTextGroup>
 
     // contents
+
+    <div style="height: 1500px; border: 10px dotted #666">
+      스크롤 생기게 하기 위한 더미
+    </div>
 
     <template v-slot:foot>
       <ButtonList

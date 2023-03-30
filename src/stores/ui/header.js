@@ -5,6 +5,7 @@ export const useUiHeaderStore = defineStore('uiHeader', {
     title: null,
     leftButtons: null,
     rightButtons: null,
+    height: 0,
   }),
   actions: {
     setTitle(title = () => null) {
@@ -15,6 +16,9 @@ export const useUiHeaderStore = defineStore('uiHeader', {
     },
     setRightButtons(buttons = () => null) {
       this.rightButtons = buttons();
+    },
+    setHeight(height = 0) {
+      this.height = height;
     },
   },
 });
