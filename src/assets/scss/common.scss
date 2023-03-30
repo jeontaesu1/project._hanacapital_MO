@@ -85,6 +85,11 @@ body,
   margin-bottom: 16px;
   @include row-margin-first-last;
 }
+.row-margin-contents-small.row-margin-contents-small {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  @include row-margin-first-last;
+}
 .row-margin-contents.row-margin-contents {
   margin-top: 24px;
   margin-bottom: 24px;
