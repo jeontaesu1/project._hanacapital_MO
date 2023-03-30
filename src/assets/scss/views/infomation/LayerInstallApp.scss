@@ -1,0 +1,12 @@
+.poppup__header-btn {
+  position: absolute;
+  z-index: 1;
+  top: -30px;
+  right: 20px;
+  background: none;
+  @include font-size-default(13);
+  color: $color-white;
+  text-decoration: underline;
+  border: none;
+  cursor: pointer;
+}

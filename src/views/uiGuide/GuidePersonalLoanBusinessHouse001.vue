@@ -5,6 +5,7 @@ import PageContents from '@/components/ui/layout/PageContents.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import LayerPersonalLoanBusinessHouseComplete from '@/views/personalLoan/LayerPersonalLoanBusinessHouseComplete.vue';
 
 export default {
   components: {
@@ -12,6 +13,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
+    LayerPersonalLoanBusinessHouseComplete,
   },
   setup() {
     const layer001 = ref(null);
@@ -37,8 +39,12 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">본인인증 방법 선택</BasicButton>
+        <BasicButton @click="layer001Open">상담신청 완료</BasicButton>
       </ButtonListItem>
     </ButtonList>
+
+    <LayerPersonalLoanBusinessHouseComplete
+      ref="layer001"
+    ></LayerPersonalLoanBusinessHouseComplete>
   </PageContents>
 </template>

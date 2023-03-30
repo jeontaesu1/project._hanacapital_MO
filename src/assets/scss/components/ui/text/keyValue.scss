@@ -33,4 +33,25 @@
       text-align: left;
     }
   }
+
+  &--vertical {
+    .key-value__item {
+      display: block;
+
+      .key-value__key {
+        margin-right: 0;
+        @include font-size-default(13);
+      }
+
+      .key-value__value {
+        margin-top: 2px;
+        flex: none;
+        text-align: left;
+      }
+    }
+
+    .key-value__item + .key-value__item {
+      margin-top: 24px;
+    }
+  }
 }

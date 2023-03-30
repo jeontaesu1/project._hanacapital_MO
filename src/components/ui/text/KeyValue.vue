@@ -17,6 +17,10 @@ export default {
       Type: String,
       default: null,
     },
+    direction: {
+      Type: String,
+      default: null,
+    },
   },
   setup(props) {
     const customClassNames = computed(() => {
@@ -39,6 +43,7 @@ export default {
       $style['key-value'],
       {
         [$style[`key-value--${align}`]]: align,
+        [$style[`key-value--${direction}`]]: direction,
       },
       customClassNames.wrap,
     ]"

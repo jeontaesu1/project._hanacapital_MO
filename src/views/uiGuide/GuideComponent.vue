@@ -61,6 +61,24 @@ import BrandLogo004 from '@/assets/images/bank-logo/shinhan.svg?component';
 import BrandLogo005 from '@/assets/images/bank-logo/kb.svg?component';
 import BrandLogo006 from '@/assets/images/bank-logo/hyundai.svg?component';
 import BrandLogo007 from '@/assets/images/bank-logo/bc.svg?component';
+import IconCall from '@/assets/images/icon/call.svg?component';
+import IconCamera from '@/assets/images/icon/camera.svg?component';
+import IconFolder from '@/assets/images/icon/folder.svg?component';
+import IconLocation from '@/assets/images/icon/location.svg?component';
+import IconDocument from '@/assets/images/icon/document.svg?component';
+import IconNotify from '@/assets/images/icon/notify.svg?component';
+import IconSearchMoney from '@/assets/images/icon/search-money.svg?component';
+import IconInterestRate from '@/assets/images/icon/interest-rate.svg?component';
+import IconCommisionRate from '@/assets/images/icon/commission-rate.svg?component';
+import IconMoney from '@/assets/images/icon/money.svg?component';
+import IconRate from '@/assets/images/icon/rate.svg?component';
+import IconDate from '@/assets/images/icon/date.svg?component';
+import IconCommision from '@/assets/images/icon/commission.svg?component';
+import IconPersonalTerms from '@/assets/images/icon/personal-terms.svg?component';
+import IconSend from '@/assets/images/icon/send.svg?component';
+import IconDeposit from '@/assets/images/icon/deposit.svg?component';
+import ImgZeroCommission from '@/assets/images/illustration/img-zero-commission.svg';
+import Img120Months from '@/assets/images/illustration/img-120months.svg?component';
 
 export default {
   components: {
@@ -121,6 +139,24 @@ export default {
     BrandLogo005,
     BrandLogo006,
     BrandLogo007,
+    IconCamera,
+    IconFolder,
+    IconLocation,
+    IconCall,
+    IconDocument,
+    IconNotify,
+    IconSearchMoney,
+    IconInterestRate,
+    IconCommisionRate,
+    IconMoney,
+    IconRate,
+    IconDate,
+    IconCommision,
+    IconPersonalTerms,
+    IconSend,
+    IconDeposit,
+    ImgZeroCommission,
+    Img120Months,
   },
   setup() {
     const store = {
@@ -2882,6 +2918,32 @@ export default {
           </KeyValueItem>
         </KeyValueList>
       </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">direction: vertical</h3>
+        <KeyValueList direction="vertical">
+          <KeyValueItem>
+            <KeyValueTitle>차량명의</KeyValueTitle>
+            <KeyValueText>
+              본인명의(공동명의 제외)<br />
+              소유기간 3개월 이상
+            </KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>소유차종</KeyValueTitle>
+            <KeyValueText>국산/수입 승용, RV, 승합</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>차량연식</KeyValueTitle>
+            <KeyValueText>
+              출고 이후 10년 이내<br />
+              차량가격 500만원 이상<br />
+              (당사 차량 시세 가격 기준)
+            </KeyValueText>
+          </KeyValueItem>
+        </KeyValueList>
+      </div>
     </section>
 
     <section class="test-section">
@@ -2952,6 +3014,341 @@ export default {
         <NoticeText type="check" :classNames="{ wrap: 'color-navy' }">
           Text Text Text Text Text
         </NoticeText>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Authority Icon List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="[$style['authority']]">
+          <ul :class="[$style['authority__list']]">
+            <li :class="[$style['authority__item']]">
+              <span :class="[$style['authority__icon']]">
+                <IconNotify />
+              </span>
+              <div :class="[$style['authority__desc']]">
+                <div :class="[$style['authority__desc-block']]">
+                  <strong :class="[$style['authority__desc-title']]"
+                    >알림</strong
+                  >
+                  <span class="color-gray">(선택)</span>
+                </div>
+                <div :class="[$style['authority__desc-text']]">
+                  알림 메시지를 수신할 수 있습니다.
+                </div>
+              </div>
+            </li>
+            <li :class="[$style['authority__item']]">
+              <span :class="[$style['authority__icon']]">
+                <IconCall />
+              </span>
+              <div :class="[$style['authority__desc']]">
+                <div :class="[$style['authority__desc-block']]">
+                  <strong :class="[$style['authority__desc-title']]"
+                    >전화</strong
+                  >
+                  <span class="color-green">(필수)</span>
+                </div>
+                <div :class="[$style['authority__desc-text']]">
+                  고객센터 및 기타 상담을 위하여<br />
+                  전화를 걸 때 사용합니다.
+                </div>
+              </div>
+            </li>
+            <li :class="[$style['authority__item']]">
+              <span :class="[$style['authority__icon']]">
+                <IconCamera />
+              </span>
+              <div :class="[$style['authority__desc']]">
+                <div :class="[$style['authority__desc-block']]">
+                  <strong :class="[$style['authority__desc-title']]"
+                    >카메라</strong
+                  >
+                  <span class="color-gray">(선택)</span>
+                </div>
+                <div :class="[$style['authority__desc-text']]">
+                  카메라를 통한 사진 파일을<br />
+                  전송할 때 사용합니다.
+                </div>
+              </div>
+            </li>
+            <li :class="[$style['authority__item']]">
+              <span :class="[$style['authority__icon']]">
+                <IconFolder />
+              </span>
+              <div :class="[$style['authority__desc']]">
+                <div :class="[$style['authority__desc-block']]">
+                  <strong :class="[$style['authority__desc-title']]"
+                    >저장공간</strong
+                  >
+                  <span class="color-gray">(선택)</span>
+                </div>
+                <div :class="[$style['authority__desc-text']]">
+                  외부 저장소 (메모리)에 저장되어 있는<br />
+                  데이터를 전송할 때 사용합니다.
+                </div>
+              </div>
+            </li>
+            <li :class="[$style['authority__item']]">
+              <span :class="[$style['authority__icon']]">
+                <IconLocation />
+              </span>
+              <div :class="[$style['authority__desc']]">
+                <div :class="[$style['authority__desc-block']]">
+                  <strong :class="[$style['authority__desc-title']]"
+                    >위치</strong
+                  >
+                  <span class="color-gray">(선택)</span>
+                </div>
+                <div :class="[$style['authority__desc-text']]">
+                  재고금융 실사 촬영을 등<br />
+                  현재 위치정보 수집을 할 때 사용합니다.
+                </div>
+              </div>
+            </li>
+            <li :class="[$style['authority__item']]">
+              <span :class="[$style['authority__icon']]">
+                <IconDocument />
+              </span>
+              <div :class="[$style['authority__desc']]">
+                <div :class="[$style['authority__desc-block']]">
+                  <strong :class="[$style['authority__desc-title']]"
+                    >기기 및 앱 기록</strong
+                  >
+                  <span class="color-gray">(선택)</span>
+                </div>
+                <div :class="[$style['authority__desc-text']]">
+                  전자금융거래 사고 방지를 위해 기기에<br />
+                  설치된 위협 정보를 수집할 수 있습니다.
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Product Detail Icon List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="[$style['product-detail']]">
+          <ul :class="[$style['product-detail__list']]">
+            <li :class="[$style['product-detail__item']]">
+              <div :class="[$style['product-detail__icon']]">
+                <IconSearchMoney></IconSearchMoney>
+              </div>
+              <div :class="[$style['product-detail__block']]">
+                <span :class="[$style['product-detail__title']]">최대한도</span>
+                <div :class="[$style['product-detail__desc']]">
+                  <span :class="[$style['product-detail__desc-text']]"
+                    >4,000</span
+                  >
+                  <span :class="[$style['product-detail__desc-unit']]"
+                    >만원</span
+                  >
+                </div>
+              </div>
+            </li>
+            <li :class="[$style['product-detail__item']]">
+              <div :class="[$style['product-detail__icon']]">
+                <IconInterestRate></IconInterestRate>
+              </div>
+              <div :class="[$style['product-detail__block']]">
+                <span :class="[$style['product-detail__title']]">예상금리</span>
+                <div :class="[$style['product-detail__desc']]">
+                  <span :class="[$style['product-detail__desc-text']]"
+                    >10.9</span
+                  >
+                  <span :class="[$style['product-detail__desc-unit']]">%</span>
+                  <span :class="[$style['product-detail__desc-sub']]"
+                    >(36개월 기준)</span
+                  >
+                </div>
+              </div>
+            </li>
+            <li :class="[$style['product-detail__item']]">
+              <div :class="[$style['product-detail__icon']]">
+                <IconCommisionRate></IconCommisionRate>
+              </div>
+              <div :class="[$style['product-detail__block']]">
+                <span :class="[$style['product-detail__title']]"
+                  >중도상환수수료율</span
+                >
+                <div :class="[$style['product-detail__desc']]">
+                  <span :class="[$style['product-detail__desc-text']]">0</span>
+                  <span :class="[$style['product-detail__desc-unit']]">%</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Small</h3>
+        <div
+          :class="[$style['product-detail'], $style['product-detail--small']]"
+        >
+          <ul :class="[$style['product-detail__list']]">
+            <li :class="[$style['product-detail__item']]">
+              <div :class="[$style['product-detail__icon']]">
+                <IconMoney></IconMoney>
+              </div>
+              <div :class="[$style['product-detail__block']]">
+                <span :class="[$style['product-detail__title']]">최대한도</span>
+                <div :class="[$style['product-detail__desc']]">
+                  <span :class="[$style['product-detail__desc-text']]">
+                    1억원
+                  </span>
+                </div>
+              </div>
+            </li>
+            <li :class="[$style['product-detail__item']]">
+              <div :class="[$style['product-detail__icon']]">
+                <IconRate></IconRate>
+              </div>
+              <div :class="[$style['product-detail__block']]">
+                <span :class="[$style['product-detail__title']]">금리</span>
+                <div :class="[$style['product-detail__desc']]">
+                  <span :class="[$style['product-detail__desc-text']]">
+                    연 5.9~18.9%
+                  </span>
+                </div>
+              </div>
+            </li>
+            <li :class="[$style['product-detail__item']]">
+              <div :class="[$style['product-detail__icon']]">
+                <IconDate></IconDate>
+              </div>
+              <div :class="[$style['product-detail__block']]">
+                <span :class="[$style['product-detail__title']]">기간</span>
+                <div :class="[$style['product-detail__desc']]">
+                  <span :class="[$style['product-detail__desc-text']]">
+                    12~120개월
+                  </span>
+                </div>
+              </div>
+            </li>
+            <li :class="[$style['product-detail__item']]">
+              <div :class="[$style['product-detail__icon']]">
+                <IconCommision></IconCommision>
+              </div>
+              <div :class="[$style['product-detail__block']]">
+                <span :class="[$style['product-detail__title']]">
+                  중도상환수수료
+                </span>
+                <div :class="[$style['product-detail__desc']]">
+                  <span :class="[$style['product-detail__desc-text']]">
+                    0원
+                  </span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Step Box</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="['row-margin-contents']">
+          <div :class="[$style['step']]">
+            <ul :class="[$style['step__list']]">
+              <li :class="[$style['step__item']]">
+                <div :class="[$style['step__inner']]">
+                  <div :class="[$style['step__contents']]">
+                    <span :class="[$style['step__badge']]">
+                      <span :class="[$style['step__badge-text']]">STEP 1</span>
+                    </span>
+                    <div :class="[$style['step__text']]">
+                      본인인증 및 손님의 정보로<br />
+                      <strong>대출한도를 조회</strong>합니다.
+                    </div>
+                  </div>
+                  <div :class="[$style['step__icon']]">
+                    <IconSearchMoney />
+                  </div>
+                </div>
+              </li>
+              <li :class="[$style['step__item']]">
+                <div :class="[$style['step__inner']]">
+                  <div :class="[$style['step__contents']]">
+                    <span :class="[$style['step__badge']]">
+                      <span :class="[$style['step__badge-text']]">STEP 2</span>
+                    </span>
+                    <div :class="[$style['step__text']]">
+                      한도 확인 후, 신청정보를 입력하여<br />
+                      <strong>약정을 진행</strong>합니다.
+                    </div>
+                  </div>
+                  <div :class="[$style['step__icon']]">
+                    <IconPersonalTerms />
+                  </div>
+                </div>
+              </li>
+              <li :class="[$style['step__item']]">
+                <div :class="[$style['step__inner']]">
+                  <div :class="[$style['step__contents']]">
+                    <span :class="[$style['step__badge']]">
+                      <span :class="[$style['step__badge-text']]">STEP 3</span>
+                    </span>
+                    <div :class="[$style['step__text']]">
+                      제출하신 정보로 최종심사 후<br />
+                      손님께 <strong>결과를 안내</strong>해드립니다.
+                    </div>
+                  </div>
+                  <div :class="[$style['step__icon']]">
+                    <IconSend />
+                  </div>
+                </div>
+              </li>
+              <li :class="[$style['step__item']]">
+                <div :class="[$style['step__inner']]">
+                  <div :class="[$style['step__contents']]">
+                    <span :class="[$style['step__badge']]">
+                      <span :class="[$style['step__badge-text']]">STEP 4</span>
+                    </span>
+                    <div :class="[$style['step__text']]">
+                      계좌로 <strong>대출금을 입금</strong>해드립니다.
+                    </div>
+                  </div>
+                  <div :class="[$style['step__icon']]">
+                    <IconDeposit />
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Illustration Img</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['illustrationImg']">
+          <ImgZeroCommission />
+        </div>
+        <div :class="$style['illustrationImg']">
+          <Img120Months />
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Time Out</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['timeout']">
+          <div :class="$style['timeout__title']">
+            본인인증 종료까지 남은 시간
+          </div>
+          <div :class="$style['timeout__time']">02:00</div>
+        </div>
       </div>
     </section>
 

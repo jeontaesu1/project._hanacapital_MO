@@ -1,0 +1,17 @@
+.timeout {
+  text-align: center;
+
+  &__title {
+    @include font-size-default(14);
+    letter-spacing: $letter-spacing-default;
+    color: $color-gray-60;
+  }
+
+  &__time {
+    margin-top: 2px;
+    @include font-size-head(28);
+    font-weight: 700;
+    letter-spacing: $letter-spacing-default;
+    color: $color-green-50;
+  }
+}

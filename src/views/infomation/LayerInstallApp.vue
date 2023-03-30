@@ -1,0 +1,79 @@
+<script>
+import { ref } from 'vue';
+
+import UiLayer from '@/components/ui/layer/UiLayer.vue';
+import ToastPopup from '@/components/ui/layer/ToastPopup.vue';
+import ToastPopupHead from '@/components/ui/layer/ToastPopupHead.vue';
+import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
+import PopupText from '@/components/ui/layer/PopupText.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
+import ButtonList from '@/components/ui/button/ButtonList.vue';
+import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import IllustObject from '@/components/ui/common/IllustObject.vue';
+
+export default {
+  components: {
+    UiLayer,
+    ToastPopup,
+    ToastPopupHead,
+    PopupTitle,
+    PopupText,
+    BasicButton,
+    ButtonList,
+    ButtonListItem,
+    IllustObject,
+  },
+  setup() {
+    const layer = ref(null);
+
+    return {
+      layer,
+    };
+  },
+};
+</script>
+
+<template>
+  <UiLayer ref="layer" type="toast">
+    <ToastPopup>
+      <template v-slot:head>
+        <button type="button" :class="[$style['poppup__header-btn']]">
+          오늘 하루 보지 않기
+        </button>
+        <ToastPopupHead>
+          <PopupTitle>하나캐피탈 앱을 설치해 보세요!</PopupTitle>
+        </ToastPopupHead>
+      </template>
+
+      <PopupText>
+        하나캐피탈 앱을 설치하면<br />
+        <span class="color-green">
+          대출 이어하기, 대출 관리 등 하나캐피탈의<br />
+          모든 서비스
+        </span>
+        를 이용하실 수 있어요!
+      </PopupText>
+
+      <IllustObject class="row-margin-item-group" />
+
+      <template v-slot:foot>
+        <ButtonList
+          :classNames="{
+            wrap: 'row-margin-none',
+          }"
+        >
+          <ButtonListItem>
+            <BasicButton line="true" theme="quaternary">다음에</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton>계속하기</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+      </template>
+    </ToastPopup>
+  </UiLayer>
+</template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/infomation/LayerInstallApp.scss';
+</style>
