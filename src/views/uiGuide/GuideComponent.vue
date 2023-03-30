@@ -2765,16 +2765,16 @@ export default {
         </h3>
 
         <NavTab :scroll="true" :auto="true">
-          <NavTabButton tagName="button" type="button"> Tab 5 </NavTabButton>
-          <NavTabButton tagName="button" type="button">Tab 6</NavTabButton>
-          <NavTabButton tagName="button" type="button">Tab 6</NavTabButton>
+          <NavTabButton tagName="button" type="button">Tab 1</NavTabButton>
+          <NavTabButton tagName="button" type="button">Tab 2</NavTabButton>
+          <NavTabButton tagName="button" type="button">Tab 3</NavTabButton>
+          <NavTabButton tagName="button" type="button">Tab 4</NavTabButton>
           <NavTabButton tagName="button" type="button" :active="true">
-            Tab 6
+            Tab 5
           </NavTabButton>
           <NavTabButton tagName="button" type="button">Tab 6</NavTabButton>
-          <NavTabButton tagName="button" type="button">Tab 6</NavTabButton>
-          <NavTabButton tagName="button" type="button">Tab 6</NavTabButton>
-          <NavTabButton tagName="button" type="button">Tab 6</NavTabButton>
+          <NavTabButton tagName="button" type="button">Tab 7</NavTabButton>
+          <NavTabButton tagName="button" type="button">Tab 8</NavTabButton>
         </NavTab>
       </div>
     </section>

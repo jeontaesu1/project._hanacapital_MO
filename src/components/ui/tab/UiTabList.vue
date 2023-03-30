@@ -1,5 +1,5 @@
 <script>
-import { computed, inject } from 'vue';
+import { ref, computed, inject } from 'vue';
 
 const defaultClassNames = () => ({
   list: '',
@@ -17,6 +17,8 @@ export default {
   setup(props) {
     const styleModule = inject('uiTabStyleModule');
 
+    const el = ref(null);
+
     const customClassNames = computed(() => {
       const { classNames } = props;
       return Object.assign(defaultClassNames(), classNames);
@@ -24,6 +26,7 @@ export default {
 
     return {
       styleModule,
+      el,
       customClassNames,
     };
   },
@@ -32,6 +35,7 @@ export default {
 
 <template>
   <div
+    ref="el"
     :class="[styleModule['tab__list'], customClassNames.list]"
     role="tablist"
   >

@@ -1,10 +1,12 @@
 <script>
 import {
+  ref,
   reactive,
   computed,
   useCssModule,
   provide,
   onBeforeMount,
+  onMounted,
   watch,
 } from 'vue';
 
@@ -32,11 +34,16 @@ export default {
     },
   },
   setup(props) {
+    const style = useCssModule();
+
     const state = reactive({
       useUiTab: {
         value: null,
       },
     });
+
+    const scroller = ref(null);
+    const list = ref(null);
 
     const customClassNames = computed(() => {
       const { classNames } = props;
@@ -48,8 +55,36 @@ export default {
       return useUiTab ? UiTabList : 'ul';
     });
 
+    const scrollToActive = () => {
+      const scrollerEl = scroller.value;
+      const listEl = list.value.el || list.value;
+      const active = (() => {
+        if (list.value.el) {
+          return listEl.getElementsByClassName('is-tab-opened');
+        } else {
+          return listEl.getElementsByClassName(
+            style['filter-tab__item--active']
+          );
+        }
+      })();
+      const margin =
+        listEl.getElementsByClassName(style['filter-tab__item'])[0].offsetLeft -
+        listEl.offsetLeft;
+
+      if (!active.length) return;
+
+      const scrollLeft = active[0].offsetLeft - listEl.offsetLeft - margin;
+
+      console.log(scrollLeft, scrollerEl);
+      scrollerEl.scrollLeft = scrollLeft;
+    };
+
     onBeforeMount(() => {
       state.useUiTab.value = props.useUiTab;
+    });
+
+    onMounted(() => {
+      scrollToActive();
     });
 
     watch(
@@ -59,14 +94,17 @@ export default {
       }
     );
 
-    provide('filterTabStyleModule', useCssModule());
+    provide('filterTabStyleModule', style);
     provide('filterTab', {
       useUiTab: state.useUiTab,
     });
 
     return {
+      scroller,
+      list,
       customClassNames,
       setComponent,
+      scrollToActive,
     };
   },
 };
@@ -75,12 +113,18 @@ export default {
 <template>
   <div :class="[$style['filter-tab'], customClassNames.wrap]">
     <div :class="[$style['filter-tab__inner'], customClassNames.inner]">
-      <component
-        :is="setComponent"
-        :class="[$style['filter-tab__list'], customClassNames.list]"
+      <div
+        ref="scroller"
+        :class="[$style['filter-tab__scroller'], customClassNames.inner]"
       >
-        <slot />
-      </component>
+        <component
+          :is="setComponent"
+          ref="list"
+          :class="[$style['filter-tab__list'], customClassNames.list]"
+        >
+          <slot />
+        </component>
+      </div>
     </div>
   </div>
 </template>
