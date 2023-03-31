@@ -87,6 +87,12 @@ const routes = [
     component: () => import('@/views/uiGuide/GuidePersonalLoanETC001.vue'),
   },
   {
+    path: '/guide/personal-loan-Rental-001',
+    name: '/guide/personal-loan-Rental-001',
+    component: () =>
+      import('@/views/uiGuide/GuidePersonalLoanRentalHouse001.vue'),
+  },
+  {
     path: '/guide/sign-in-001',
     name: '/guide/sign-in-001',
     component: () => import('@/views/uiGuide/GuideSignIn001.vue'),
@@ -217,7 +223,7 @@ const routes = [
     path: '/personal-loan/business-house',
     name: '/personal-loan/business-house',
     component: () =>
-      import('@/views/personalLoan/PersonalLoanBusinessHouse.vue'),
+      import('@/views/personalLoan/GuidePersonalLoanBusinessHouse001.vue'),
   },
   {
     path: '/personal-loan/consumer-durables',

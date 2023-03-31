@@ -74,3 +74,7 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/personalLoan/LayerPersonalLoanSignUpComplete.scss';
+</style>
