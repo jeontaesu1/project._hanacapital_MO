@@ -1,0 +1,87 @@
+<script>
+import { ref } from 'vue';
+
+import UiLayer from '@/components/ui/layer/UiLayer.vue';
+import ToastPopup from '@/components/ui/layer/ToastPopup.vue';
+import ToastPopupHead from '@/components/ui/layer/ToastPopupHead.vue';
+import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
+
+export default {
+  components: {
+    UiLayer,
+    ToastPopup,
+    ToastPopupHead,
+    PopupTitle,
+  },
+  setup() {
+    const layer = ref(null);
+
+    return {
+      layer,
+    };
+  },
+};
+</script>
+
+<template>
+  <UiLayer ref="layer" type="toast">
+    <ToastPopup>
+      <template v-slot:head>
+        <ToastPopupHead>
+          <PopupTitle>첫 화면을 선택해 주세요</PopupTitle>
+        </ToastPopupHead>
+      </template>
+
+      <div :class="$style['icon-buttons']">
+        <ul :class="$style['icon-buttons__list']">
+          <li :class="$style['icon-buttons__item']">
+            <button type="button" :class="$style['icon-buttons__block']">
+              <div :class="$style['icon-buttons__content']">
+                <div :class="$style['icon-buttons__title']">재고금융</div>
+              </div>
+            </button>
+          </li>
+          <li :class="$style['icon-buttons__item']">
+            <button type="button" :class="$style['icon-buttons__block']">
+              <div :class="$style['icon-buttons__content']">
+                <div :class="$style['icon-buttons__title']">재고금융실사</div>
+              </div>
+            </button>
+          </li>
+          <li :class="$style['icon-buttons__item']">
+            <button type="button" :class="$style['icon-buttons__block']">
+              <div :class="$style['icon-buttons__content']">
+                <div :class="$style['icon-buttons__title']">하나원큐오토</div>
+              </div>
+            </button>
+          </li>
+          <li :class="$style['icon-buttons__item']">
+            <button type="button" :class="$style['icon-buttons__block']">
+              <div :class="$style['icon-buttons__content']">
+                <div :class="$style['icon-buttons__title']">LM블로그</div>
+              </div>
+            </button>
+          </li>
+          <li :class="$style['icon-buttons__item']">
+            <button type="button" :class="$style['icon-buttons__block']">
+              <div :class="$style['icon-buttons__content']">
+                <div :class="$style['icon-buttons__title']">설비리스</div>
+              </div>
+            </button>
+          </li>
+          <li :class="$style['icon-buttons__item']">
+            <button type="button" :class="$style['icon-buttons__block']">
+              <div :class="$style['icon-buttons__content']">
+                <div :class="$style['icon-buttons__title']">손님용 메인</div>
+              </div>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </ToastPopup>
+  </UiLayer>
+</template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/sign/LayerSignIn.scss';
+</style>

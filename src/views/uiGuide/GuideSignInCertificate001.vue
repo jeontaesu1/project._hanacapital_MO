@@ -6,12 +6,15 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
+import LayerSignCertificate from '@/views/sign/LayerSignCertificate.vue';
+
 export default {
   components: {
     PageContents,
     BasicButton,
     ButtonList,
     ButtonListItem,
+    LayerSignCertificate,
   },
   setup() {
     const layer001 = ref(null);
@@ -37,8 +40,10 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">본인인증 방법 선택</BasicButton>
+        <BasicButton @click="layer001Open">공동인증서 등록 </BasicButton>
       </ButtonListItem>
     </ButtonList>
+
+    <LayerSignCertificate ref="layer001" />
   </PageContents>
 </template>
