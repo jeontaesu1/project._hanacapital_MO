@@ -56,15 +56,27 @@
     min-width: 0;
   }
 
+  &__title {
+    display: block;
+    margin: 0;
+    font-weight: 500;
+  }
+
+  &__text {
+    display: block;
+    margin: 4px 0 0 0;
+    font-weight: 300;
+  }
+
   &--regular {
     .basic-list__item {
-      @include font-size-default(14);
       padding-right: 0;
 
       & + .basic-list__item {
         margin-top: 12px;
       }
     }
+
     .basic-list__symbol {
       &:empty {
         min-width: 3px;
@@ -76,6 +88,22 @@
           width: 3px;
           height: 3px;
         }
+      }
+    }
+  }
+
+  &--small-margin {
+    .basic-list__item {
+      & + .basic-list__item {
+        margin-top: 4px;
+      }
+    }
+  }
+
+  &--mini-margin {
+    .basic-list__item {
+      & + .basic-list__item {
+        margin-top: 2px;
       }
     }
   }
