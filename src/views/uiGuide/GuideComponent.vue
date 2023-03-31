@@ -2649,7 +2649,7 @@ export default {
     <section class="test-section">
       <h2 class="test-section-title">Basic List</h2>
       <div class="test-section-sub">
-        <h3 class="test-section-sub-title">Default</h3>
+        <h3 class="test-section-sub-title">Default (font:12px, margin:8px)</h3>
 
         <ul :class="$style['basic-list']">
           <li :class="$style['basic-list__item']">
@@ -2699,15 +2699,25 @@ export default {
 
         <ol :class="$style['basic-list']">
           <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']">1.</div>
+            <div :class="[$style['basic-list__symbol'], 'font-weight-medium']">
+              1.
+            </div>
             <div :class="$style['basic-list__content']">
-              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+              <div :class="$style['basic-list__title']">본인확인 안내</div>
+              <div :class="$style['basic-list__text']">
+                본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+              </div>
             </div>
           </li>
           <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']">2.</div>
+            <div :class="[$style['basic-list__symbol'], 'font-weight-medium']">
+              2.
+            </div>
             <div :class="$style['basic-list__content']">
-              법인카드, 가족카드, 선불카드는 본인확인이 불가능합니다.
+              <div :class="$style['basic-list__title']">타이틀</div>
+              <div :class="$style['basic-list__text']">
+                본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+              </div>
             </div>
           </li>
           <li :class="$style['basic-list__item']">
@@ -2741,9 +2751,103 @@ export default {
       </div>
 
       <div class="test-section-sub">
-        <h3 class="test-section-sub-title">Regular</h3>
+        <h3 class="test-section-sub-title">Regular (font:14px; margin:12px)</h3>
 
         <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+          <li :class="[$style['basic-list__item'], 'text-body-3']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+          <li :class="[$style['basic-list__item'], 'text-body-3']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              법인카드, 가족카드, 선불카드는 본인확인이 불가능합니다.
+            </div>
+          </li>
+          <li :class="[$style['basic-list__item'], 'text-body-3']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              비씨카드는 비씨로고(
+              <span :class="$style['inline-logo']"><BrandLogo007 /></span>
+              )가 표시된 카드만 이용가능합니다.<br />
+              (예 : 농협BC, 우리카드, IBK카드 등)
+            </div>
+          </li>
+          <li
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
+          >
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+          <li
+            :class="[$style['basic-list__item'], 'color-green', 'text-body-3']"
+          >
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+          <li :class="[$style['basic-list__item'], 'color-red', 'text-body-3']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">small margin (4px)</h3>
+        <ul :class="[$style['basic-list'], $style['basic-list--small-margin']]">
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              법인카드, 가족카드, 선불카드는 본인확인이 불가능합니다.
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              비씨카드는 비씨로고(
+              <span :class="$style['inline-logo']"><BrandLogo007 /></span>
+              )가 표시된 카드만 이용가능합니다.<br />
+              (예 : 농협BC, 우리카드, IBK카드 등)
+            </div>
+          </li>
+          <li :class="[$style['basic-list__item'], 'color-black']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+          <li :class="[$style['basic-list__item'], 'color-green']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+          <li :class="[$style['basic-list__item'], 'color-red']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">mini margin (2px)</h3>
+        <ul :class="[$style['basic-list'], $style['basic-list--mini-margin']]">
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
@@ -2961,6 +3065,7 @@ export default {
         <h3 class="test-section-sub-title">Default</h3>
         <div class="color-black">.color-black</div>
         <div class="color-gray">.color-gray</div>
+        <div class="color-gray-secondary">.color-gray-secondary</div>
         <div class="color-green">.color-green</div>
         <div class="color-red">.color-red</div>
         <div class="color-navy">.color-navy</div>

@@ -85,6 +85,11 @@ body,
   margin-bottom: 16px;
   @include row-margin-first-last;
 }
+.row-margin-contents-small.row-margin-contents-small {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  @include row-margin-first-last;
+}
 .row-margin-contents.row-margin-contents {
   margin-top: 24px;
   margin-bottom: 24px;
@@ -98,6 +103,11 @@ body,
 .row-margin-container.row-margin-container {
   margin-top: 32px;
   margin-bottom: 32px;
+  @include row-margin-first-last;
+}
+.row-margin-container-medium.row-margin-container-medium {
+  margin-top: 40px;
+  margin-bottom: 40px;
   @include row-margin-first-last;
 }
 .row-margin-container-group.row-margin-container-group {
@@ -219,42 +229,43 @@ body,
 .color-gray.color-gray {
   color: $color-gray-70;
 }
+.color-gray-secondary.color-gray-secondary {
+  color: $color-gray-60;
+}
+.color-tertiary.color-tertiary {
+  color: $color-gray-80;
+}
 .color-navy.color-navy {
   color: $color-navy-50;
 }
 
 // text
-.text {
-  &-body {
-    &-1 {
-      margin: 0;
-      @include font-size-default(16);
-    }
-    &-2 {
-      margin: 0;
-      @include font-size-default(15);
-    }
-    &-3 {
-      margin: 0;
-      @include font-size-default(14);
-    }
-    &-4 {
-      margin: 0;
-      @include font-size-default(13);
-    }
-    &-5 {
-      margin: 0;
-      @include font-size-default(12);
-    }
-  }
-  &-title {
-    &-1 {
-      margin: 0;
-      @include font-size-head(20);
-    }
-    &-2 {
-      margin: 0;
-      @include font-size-head(18);
-    }
-  }
+.text-body-1.text-body-1 {
+  margin: 0;
+  @include font-size-default(16);
+}
+.text-body-2.text-body-2 {
+  margin: 0;
+  @include font-size-default(15);
+}
+.text-body-3.text-body-3 {
+  margin: 0;
+  @include font-size-default(14);
+}
+.text-body-4.text-body-4 {
+  margin: 0;
+  @include font-size-default(13);
+}
+.text-body-5.text-body-5 {
+  margin: 0;
+  @include font-size-default(12);
+}
+
+.text-title-1.text-title-1 {
+  margin: 0;
+  @include font-size-head(20);
+}
+.text-title-2.text-title-2 {
+  margin: 0;
+  @include font-size-head(18);
 }
