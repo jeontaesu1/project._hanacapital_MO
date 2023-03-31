@@ -79,23 +79,29 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">본인인증 방법 선택</BasicButton>
+        <BasicButton @click="layer001Open"
+          >e하나 본인인증 방법 선택</BasicButton
+        >
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer002Open">한도조회 동의</BasicButton>
+        <BasicButton @click="layer002Open">e하나 한도조회 동의</BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer003Open">공동인증서</BasicButton>
+        <BasicButton @click="layer003Open">e하나 소득정보 자동제출</BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer004Open">보이스피싱 주의사항 </BasicButton>
+        <BasicButton @click="layer004Open"
+          >e하나 보이스피싱 주의사항
+        </BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer005Open">사업자 대출 진행안내 </BasicButton>
+        <BasicButton @click="layer005Open"
+          >e하나 사업자 대출 진행안내
+        </BasicButton>
       </ButtonListItem>
     </ButtonList>
 

@@ -77,11 +77,11 @@ export default {
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer003Open">소득정보 자동제출</BasicButton>
+        <BasicButton @click="layer003Open">통합 소득정보 자동제출</BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer004Open">부동산 설정 금액</BasicButton>
+        <BasicButton @click="layer004Open">통합 부동산 설정 금액</BasicButton>
       </ButtonListItem>
     </ButtonList>
 
