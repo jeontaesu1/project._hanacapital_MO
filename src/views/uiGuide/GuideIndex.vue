@@ -192,8 +192,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/sign-up-001',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.03.31',
         log: [],
       },
       {
@@ -297,7 +297,7 @@ const datas = () => [
         depth6: '',
         path: '/guide/personal-loan-e-hana-001',
         status: '',
-        create: '',
+        create: '2023.03.31',
         log: [],
       },
       {
@@ -319,7 +319,7 @@ const datas = () => [
         depth6: '',
         path: '/guide/personal-loan-happiness-apartment-001',
         status: '',
-        create: '',
+        create: '2023.03.31',
         log: [],
       },
       {
@@ -440,7 +440,7 @@ const datas = () => [
         depth6: '',
         path: '/guide/personal-loan-business-house-001',
         status: '',
-        create: '',
+        create: '2023.03.31',
         log: [],
       },
       {
@@ -462,7 +462,7 @@ const datas = () => [
         depth6: '',
         path: '/guide/personal-loan-etc-001',
         status: '',
-        create: '',
+        create: '2023.03.31',
         log: [],
       },
     ],

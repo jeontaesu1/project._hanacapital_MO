@@ -5,12 +5,12 @@ import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
-import IllustObject from '@/components/ui/common/IllustObject.vue';
-import IllustInfo from '@/components/ui/common/IllustInfo.vue';
-import IllustInfoTitle from '@/components/ui/common/IllustInfoTitle.vue';
+import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
+import PageMainText from '@/components/ui/text/PageMainText.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
+import IllustObject from '@/components/ui/common/IllustObject.vue';
 
 export default {
   components: {
@@ -18,12 +18,12 @@ export default {
     PopupButton,
     FullPopup,
     FullPopupHead,
-    IllustObject,
-    IllustInfo,
-    IllustInfoTitle,
+    PageTextGroup,
+    PageMainText,
     ButtonList,
     ButtonListItem,
     BasicButton,
+    IllustObject,
   },
   setup() {
     const layer = ref(null);
@@ -46,13 +46,16 @@ export default {
         </FullPopupHead>
       </template>
 
-      <IllustInfo>
-        <IllustObject type="complete" />
-        <IllustInfoTitle>
-          김하나님은 이미 회원으로<br />
-          <strong>가입되어 있습니다</strong>
-        </IllustInfoTitle>
-      </IllustInfo>
+      <PageTextGroup>
+        <PageMainText>
+          지금부터 하나캐피탈의 서비스를<br />
+          <strong>이용하실 수 있어요</strong>
+        </PageMainText>
+      </PageTextGroup>
+
+      <IllustObject />
+
+      <div>// 배너 영역 (내용 확인 후 진행 예정)</div>
 
       <template v-slot:foot>
         <ButtonList
@@ -68,7 +71,3 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/personalLoan/LayerPersonalLoanSignUpAlready.scss';
-</style>

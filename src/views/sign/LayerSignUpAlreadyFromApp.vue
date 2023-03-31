@@ -49,14 +49,14 @@ export default {
       </template>
 
       <IllustInfo>
-        <IllustObject type="fail" />
+        <IllustObject type="complete" />
         <IllustInfoTitle>
-          만기연장 신청 대상이 아닙니다<br />
-          <strong>잔여 회차를 확인해 주세요</strong>
+          김하나님은 하나캐피탈 앱에서<br />
+          <strong>회원으로 가입하셨습니다</strong>
         </IllustInfoTitle>
         <IllustInfoText>
-          하나캐피탈 스탁론에<br />
-          관심을 가져주셔서 감사합니다.
+          홈페이지 가입을 위한<br />
+          아이디, 패스워드를 등록해 주세요.
         </IllustInfoText>
       </IllustInfo>
 
@@ -67,14 +67,10 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton>다음</BasicButton>
+            <BasicButton>홈페이지 회원가입</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
     </FullPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/personalLoan/LayerPersonalLoanSignUpComplete.scss';
-</style>

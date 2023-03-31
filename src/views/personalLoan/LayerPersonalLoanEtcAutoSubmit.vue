@@ -43,8 +43,8 @@ export default {
   },
   setup() {
     const state = reactive({
-      nameError: false,
-      idNumberError: false,
+      selectError: false,
+      passwordError: false,
     });
 
     const layer = ref(null);
@@ -67,7 +67,7 @@ export default {
           </template>
         </FullPopupHead>
       </template>
-      <!-- Case : 공인증서 있을 때 -->
+
       <PageTextGroup>
         <PageMainText>
           공동인증서로 소득정보를<br />
@@ -84,9 +84,14 @@ export default {
       </PageTextGroup>
 
       <FormList>
-        <FormListItem titleText="공동인증서" target="#etcAutosubmit">
-          <FormInvalid :error="state.phoneError">
-            <InputBlock :error="state.phoneError">
+        <!-- Case : 공동인증서 있을 때 -->
+        <FormListItem
+          titleText="공동인증서"
+          target="#layerPersonalLoanEtcAutoSubmitSelectButton"
+          :selectOnly="true"
+        >
+          <FormInvalid :error="state.selectError">
+            <InputBlock :error="state.selectError">
               <InputBlockCell :flexible="true">
                 <BasicSelect
                   :option="[
@@ -101,7 +106,8 @@ export default {
                   ]"
                   buttonTitle="공동인증서 선택하기"
                   layerTitle="공동인증서를 선택해 주세요"
-                  buttonId="etcAutosubmit"
+                  id="layerPersonalLoanEtcAutoSubmitSelect"
+                  buttonId="layerPersonalLoanEtcAutoSubmitSelectButton"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -111,68 +117,61 @@ export default {
 
         <FormListItem
           titleText="공동인증서 비밀번호"
-          target="#etcAutosubmitPassword"
+          target="#layerPersonalLoanEtcAutoSubmitPassword"
         >
-          <FormInvalid :error="state.nameError">
-            <InputBlock :error="state.nameError">
+          <FormInvalid :error="state.passwordError">
+            <InputBlock :error="state.passwordError">
               <InputBlockCell :flexible="true">
                 <BasicInput
+                  type="password"
                   title="공동인증서 비밀번호"
-                  id="etcAutosubmitPassword"
+                  id="layerPersonalLoanEtcAutoSubmitPassword"
                 />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
-        <!-- Case : 공인증서 없을 때 -->
+        <!-- // Case : 공동인증서 있을 때 -->
+
+        <!-- Case : 공동인증서 없을 때 -->
         <FormListItem
-          titleText="공동인증서가 없습니다."
-          target="#etcAutosubmitErr"
+          titleText="공동인증서"
+          :forceFocus="true"
+          :disabled="true"
         >
-          <FormInvalid :error="state.nameError">
-            <InputBlock :error="state.nameError">
-              <InputBlockCell :flexible="true">
-                <BasicInput
-                  title="공동인증서가 없습니다."
-                  id="etcAutosubmitErr"
-                />
-              </InputBlockCell>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
+          <InputBlock :disabled="true">
+            <InputBlockCell :flexible="true">
+              <BasicInput value="공동인증서가 없습니다." :disabled="true" />
+            </InputBlockCell>
+          </InputBlock>
         </FormListItem>
+        <!-- // Case : 공동인증서 없을 때 -->
       </FormList>
 
       <template v-slot:foot>
         <ButtonList
+          align="full"
           :classNames="{
             wrap: 'row-margin-none',
           }"
         >
+          <!-- Case : 공동인증서 있을 때 -->
           <ButtonListItem>
-            <!-- Case : 공인증서 없을 때 -->
-
-            <ButtonList align="full">
-              <ButtonListItem>
-                <BasicButton line="true">공동인증서 가져오기</BasicButton>
-              </ButtonListItem>
-              <ButtonListItem>
-                <BasicButton>소득정보 직접입력</BasicButton>
-              </ButtonListItem>
-
-              <!-- Case : 공인증서 있을 때 -->
-              <ButtonListItem>
-                <BasicButton disabled>제출하기</BasicButton>
-              </ButtonListItem>
-            </ButtonList>
+            <BasicButton>제출하기</BasicButton>
           </ButtonListItem>
+          <!-- //Case : 공동인증서 있을 때 -->
+
+          <!-- Case : 공동인증서 없을 때 -->
+          <ButtonListItem>
+            <BasicButton line="true">공동인증서 가져오기</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton>소득정보 직접입력</BasicButton>
+          </ButtonListItem>
+          <!-- // Case : 공동인증서 없을 때 -->
         </ButtonList>
       </template>
     </FullPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/personalLoan/LayerPersonalLoanEtcAutoSubmit.scss';
-</style>

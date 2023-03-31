@@ -6,10 +6,10 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import LayerPersonalLoanEtcCombineAgree from '@/views/personalLoan/LayerPersonalLoanEtcCombineAgree.vue';
-import LayerPersonalLoanEtcCombineIdentification from '@/views/personalLoan/LayerPersonalLoanEtcCombineIdentification.vue';
-import LayerPersonalLoanEtcAutoSubmit from '@/views/personalLoan/LayerPersonalLoanEtcAutoSubmit.vue';
-import LayerPersonlLoanETCCheck from '@/views/personalLoan/LayerPersonlLoanETCCheck.vue';
+import LayerPersonalLoanETCAgree from '@/views/personalLoan/LayerPersonalLoanETCAgree.vue';
+import LayerPersonalLoanIdentificationMethodSelect from '@/views/personalLoan/LayerPersonalLoanIdentificationMethodSelect.vue';
+import LayerPersonalLoanETCAutoSubmit from '@/views/personalLoan/LayerPersonalLoanETCAutoSubmit.vue';
+import LayerPersonalLoanETCValusation from '@/views/personalLoan/LayerPersonalLoanETCValusation.vue';
 
 export default {
   components: {
@@ -17,12 +17,10 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-
-    LayerPersonalLoanEtcCombineAgree,
-    LayerPersonalLoanEtcCombineIdentification,
-
-    LayerPersonalLoanEtcAutoSubmit,
-    LayerPersonlLoanETCCheck,
+    LayerPersonalLoanETCAgree,
+    LayerPersonalLoanIdentificationMethodSelect,
+    LayerPersonalLoanETCAutoSubmit,
+    LayerPersonalLoanETCValusation,
   },
   setup() {
     const layer001 = ref(null);
@@ -33,27 +31,24 @@ export default {
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
     };
-
     const layer002Open = (e = {}) => {
       layer002.value.layer.open(e.target);
     };
-
     const layer003Open = (e = {}) => {
       layer003.value.layer.open(e.target);
     };
-
     const layer004Open = (e = {}) => {
       layer004.value.layer.open(e.target);
     };
 
     return {
       layer001,
-      layer001Open,
       layer002,
-      layer002Open,
       layer003,
-      layer003Open,
       layer004,
+      layer001Open,
+      layer002Open,
+      layer003Open,
       layer004Open,
     };
   },
@@ -85,9 +80,9 @@ export default {
       </ButtonListItem>
     </ButtonList>
 
-    <LayerPersonalLoanEtcCombineAgree ref="layer001" />
-    <LayerPersonalLoanEtcCombineIdentification ref="layer002" />
-    <LayerPersonalLoanEtcAutoSubmit ref="layer003" />
-    <LayerPersonlLoanETCCheck ref="layer004" />
+    <LayerPersonalLoanETCAgree ref="layer001" />
+    <LayerPersonalLoanIdentificationMethodSelect ref="layer002" />
+    <LayerPersonalLoanETCAutoSubmit ref="layer003" />
+    <LayerPersonalLoanETCValusation ref="layer004" />
   </PageContents>
 </template>

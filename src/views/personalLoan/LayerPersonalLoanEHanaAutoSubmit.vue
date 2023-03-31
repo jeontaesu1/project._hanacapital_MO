@@ -20,11 +20,8 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import PageSubText from '@/components/ui/text/PageSubText.vue';
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import CheckBox from '@/components/ui/form/CheckBox.vue';
-import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
 import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
-// import UiAccordionOpener from '@/components/ui/accordion/UiAccordionOpener.vue';
-// import UiAccordionItem from '@/components/ui/accordion/UiAccordionItem.vue';
-// import UiAccordion from '@/components/ui/accordion/UiAccordion.vue';
+import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
 
 export default {
   components: {
@@ -46,35 +43,21 @@ export default {
     ButtonListItem,
     PageSubText,
     BasicSelect,
-
     CheckBox,
-    CheckBoxObject,
     CheckBoxLabelText,
-    // UiAccordionOpener,
-    // UiAccordionItem,
-    // UiAccordion,
+    CheckBoxObject,
   },
   setup() {
     const state = reactive({
-      nameError: false,
-      idNumberError: false,
+      selectError: false,
+      passwordError: false,
     });
-    const testAccordion = ref(null);
 
     const layer = ref(null);
-    const testAccordionAllOpen = () => {
-      testAccordion.value.allOpen();
-    };
-    const testAccordionAllClose = () => {
-      testAccordion.value.allClose();
-    };
 
     return {
       state,
       layer,
-      testAccordion,
-      testAccordionAllOpen,
-      testAccordionAllClose,
     };
   },
 };
@@ -90,7 +73,7 @@ export default {
           </template>
         </FullPopupHead>
       </template>
-      <!-- Case : 공인증서 있을 때 -->
+
       <PageTextGroup>
         <PageMainText>
           공동인증서로 소득정보를<br />
@@ -107,9 +90,14 @@ export default {
       </PageTextGroup>
 
       <FormList>
-        <FormListItem titleText="공동인증서" target="#layerRevenueCertificate">
-          <FormInvalid :error="state.phoneError">
-            <InputBlock :error="state.phoneError">
+        <!-- Case : 공동인증서 있을 때 -->
+        <FormListItem
+          titleText="공동인증서"
+          target="#layerPersonalLoanEHanaAutoSubmitSelectButton"
+          :selectOnly="true"
+        >
+          <FormInvalid :error="state.selectError">
+            <InputBlock :error="state.selectError">
               <InputBlockCell :flexible="true">
                 <BasicSelect
                   :option="[
@@ -124,7 +112,8 @@ export default {
                   ]"
                   buttonTitle="공동인증서 선택하기"
                   layerTitle="공동인증서를 선택해 주세요"
-                  buttonId="layerRevenueCertificate"
+                  id="layerPersonalLoanEHanaAutoSubmitSelect"
+                  buttonId="layerPersonalLoanEHanaAutoSubmitSelectButton"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -134,45 +123,45 @@ export default {
 
         <FormListItem
           titleText="공동인증서 비밀번호"
-          target="#layerRevenueCertificatePassword"
+          target="#layerPersonalLoanEHanaAutoSubmitPassword"
         >
-          <FormInvalid :error="state.nameError">
-            <InputBlock :error="state.nameError">
+          <FormInvalid :error="state.passwordError">
+            <InputBlock :error="state.passwordError">
               <InputBlockCell :flexible="true">
                 <BasicInput
+                  type="password"
                   title="공동인증서 비밀번호"
-                  id="layerRevenueCertificatePassword"
+                  id="layerPersonalLoanEHanaAutoSubmitPassword"
                 />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
-        <!-- Case : 공인증서 없을 때 -->
+        <!-- // Case : 공동인증서 있을 때 -->
+
+        <!-- Case : 공동인증서 없을 때 -->
         <FormListItem
-          titleText="공동인증서가 없습니다."
-          target="#layerRevenueCertificateErr"
+          titleText="공동인증서"
+          :forceFocus="true"
+          :disabled="true"
         >
-          <FormInvalid :error="state.nameError">
-            <InputBlock :error="state.nameError">
-              <InputBlockCell :flexible="true">
-                <BasicInput
-                  title="공동인증서가 없습니다."
-                  id="layerRevenueCertificateErr"
-                />
-              </InputBlockCell>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
+          <InputBlock :disabled="true">
+            <InputBlockCell :flexible="true">
+              <BasicInput value="공동인증서가 없습니다." :disabled="true" />
+            </InputBlockCell>
+          </InputBlock>
         </FormListItem>
+        <!-- // Case : 공동인증서 없을 때 -->
       </FormList>
 
-      <div class="row-margin-contents-group" :class="$style['agree-list']">
+      <!-- Case : 공동인증서 있을 때 -->
+      <div :class="[$style['agree-list'], 'row-margin-container']">
         <ul :class="$style['agree-list__list']">
           <li :class="$style['agree-list__item']">
             <div :class="$style['agree-list__head']">
               <CheckBox
-                id="Revenue_list_01"
+                id="layerPersonalLoanEHanaAutoSubmitAgree"
                 :classNames="{
                   wrap: $style['agree-list__checkbox'],
                 }"
@@ -192,30 +181,29 @@ export default {
           </li>
         </ul>
       </div>
+      <!-- //Case : 공동인증서 있을 때 -->
 
       <template v-slot:foot>
         <ButtonList
+          align="full"
           :classNames="{
             wrap: 'row-margin-none',
           }"
         >
+          <!-- Case : 공동인증서 있을 때 -->
           <ButtonListItem>
-            <!-- Case : 공인증서 없을 때 -->
-
-            <ButtonList align="full">
-              <ButtonListItem>
-                <BasicButton line="true">공동인증서 가져오기</BasicButton>
-              </ButtonListItem>
-              <ButtonListItem>
-                <BasicButton>소득정보 직접입력</BasicButton>
-              </ButtonListItem>
-
-              <!-- Case : 공인증서 있을 때 -->
-              <ButtonListItem>
-                <BasicButton disabled>약관동의 후 제출하기</BasicButton>
-              </ButtonListItem>
-            </ButtonList>
+            <BasicButton>약관동의 후 제출하기</BasicButton>
           </ButtonListItem>
+          <!-- //Case : 공동인증서 있을 때 -->
+
+          <!-- Case : 공동인증서 없을 때 -->
+          <ButtonListItem>
+            <BasicButton line="true">공동인증서 가져오기</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton>소득정보 직접입력</BasicButton>
+          </ButtonListItem>
+          <!-- // Case : 공동인증서 없을 때 -->
         </ButtonList>
       </template>
     </FullPopup>
@@ -223,5 +211,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/personalLoan/LayerPersonalLoanRevenue.scss';
+@import '@/assets/scss/views/personalLoan/LayerPersonalLoanEHanaAutoSubmit.scss';
 </style>

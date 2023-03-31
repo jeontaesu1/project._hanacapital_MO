@@ -84,5 +84,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/personalLoan/LayerPersonalLoanIdentification.scss';
+@import '@/assets/scss/views/personalLoan/LayerPersonalLoanIdentificationMethodSelect.scss';
 </style>

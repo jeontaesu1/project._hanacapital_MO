@@ -6,7 +6,8 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import LayerPersonalLoanHappinessIdentification from '../personalLoan/LayerPersonalLoanHappinessIdentification.vue';
+import LayerPersonalLoanIdentificationMethodSelect from '@/views/personalLoan/LayerPersonalLoanIdentificationMethodSelect.vue';
+import LayerPersonalLoanHappinessApartmentAgree from '@/views/personalLoan/LayerPersonalLoanHappinessApartmentAgree.vue';
 
 export default {
   components: {
@@ -14,19 +15,25 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-
-    LayerPersonalLoanHappinessIdentification,
+    LayerPersonalLoanIdentificationMethodSelect,
+    LayerPersonalLoanHappinessApartmentAgree,
   },
   setup() {
     const layer001 = ref(null);
+    const layer002 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
     };
+    const layer002Open = (e = {}) => {
+      layer002.value.layer.open(e.target);
+    };
 
     return {
       layer001,
+      layer002,
       layer001Open,
+      layer002Open,
     };
   },
 };
@@ -41,12 +48,15 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open"
-          >행복아파트론 한도조회 동의</BasicButton
-        >
+        <BasicButton @click="layer001Open">인증 수단 선택</BasicButton>
+      </ButtonListItem>
+
+      <ButtonListItem>
+        <BasicButton @click="layer002Open">한도조회 동의</BasicButton>
       </ButtonListItem>
     </ButtonList>
 
-    <LayerPersonalLoanHappinessIdentification ref="layer001" />
+    <LayerPersonalLoanIdentificationMethodSelect ref="layer001" />
+    <LayerPersonalLoanHappinessApartmentAgree ref="layer002" />
   </PageContents>
 </template>

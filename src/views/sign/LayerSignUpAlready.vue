@@ -8,7 +8,6 @@ import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
 import IllustInfo from '@/components/ui/common/IllustInfo.vue';
 import IllustInfoTitle from '@/components/ui/common/IllustInfoTitle.vue';
-import IllustInfoText from '@/components/ui/common/IllustInfoText.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
@@ -22,7 +21,6 @@ export default {
     IllustObject,
     IllustInfo,
     IllustInfoTitle,
-    IllustInfoText,
     ButtonList,
     ButtonListItem,
     BasicButton,
@@ -51,13 +49,9 @@ export default {
       <IllustInfo>
         <IllustObject type="complete" />
         <IllustInfoTitle>
-          김하나님은 하나캐피탈 앱에서<br />
-          <strong>회원으로 가입하셨습니다</strong>
+          김하나님은 이미 회원으로<br />
+          <strong>가입되어 있습니다</strong>
         </IllustInfoTitle>
-        <IllustInfoText>
-          홈페이지 가입을 위한 <br />
-          아이디, 패스워드를 등록해 주세요.
-        </IllustInfoText>
       </IllustInfo>
 
       <template v-slot:foot>
@@ -67,14 +61,10 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton>홈페이지 회원가입</BasicButton>
+            <BasicButton>로그인</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
     </FullPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/personalLoan/LayerPersonalLoanSignUpAlreadyApp.scss';
-</style>

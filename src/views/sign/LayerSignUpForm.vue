@@ -18,12 +18,6 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import PageSubText from '@/components/ui/text/PageSubText.vue';
-import CheckBox from '@/components/ui/form/CheckBox.vue';
-import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
-import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
-import UiAccordionLayer from '@/components/ui/accordion/UiAccordionLayer.vue';
-import UiAccordion from '@/components/ui/accordion/UiAccordion.vue';
-import UiAccordionItem from '@/components/ui/accordion/UiAccordionItem.vue';
 import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 
 export default {
@@ -45,18 +39,13 @@ export default {
     ButtonList,
     ButtonListItem,
     PageSubText,
-    CheckBox,
-    UiAccordionLayer,
-    CheckBoxObject,
-    CheckBoxLabelText,
-    UiAccordion,
-    UiAccordionItem,
     FormHelpText,
   },
   setup() {
     const state = reactive({
-      nameError: false,
-      idNumberError: false,
+      idError: false,
+      passwordError: false,
+      passwordConfirmError: false,
     });
 
     const layer = ref(null);
@@ -82,7 +71,7 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          사용하실 아이디와 비밀번호를 <br />
+          사용하실 아이디와 비밀번호를<br />
           <strong>입력해 주세요</strong>
         </PageMainText>
         <PageSubText>
@@ -92,26 +81,25 @@ export default {
       </PageTextGroup>
 
       <FormList>
-        <FormListItem titleText="아이디" target="#SignUpId">
-          <FormInvalid :error="state.phoneError">
-            <InputBlock :error="state.phoneError">
+        <FormListItem titleText="아이디" target="#layerSignUpAppFormId">
+          <FormInvalid :error="state.idError">
+            <InputBlock :error="state.idError">
               <InputBlockCell :flexible="true">
-                <BasicInput title="아이디" id="SignUpId" />
+                <BasicInput title="아이디" id="layerSignUpAppFormId" />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
 
-        <FormListItem titleText="비밀번호" target="#SignUpPassword">
-          <FormInvalid :error="state.nameError">
-            <InputBlock :error="state.nameError">
+        <FormListItem titleText="비밀번호" target="#layerSignUpAppFormPassword">
+          <FormInvalid :error="state.passwordError">
+            <InputBlock :error="state.passwordError">
               <InputBlockCell :flexible="true">
                 <BasicInput
-                  type="number"
-                  pattern="\d*"
+                  type="password"
                   title="비밀번호"
-                  id="SignUpPassword"
+                  id="layerSignUpAppFormPassword"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -122,51 +110,24 @@ export default {
           </FormInvalid>
         </FormListItem>
 
-        <FormListItem titleText="비밀번호 확인" target="#SignUpPasswordConfirm">
-          <FormInvalid :error="state.nameError">
-            <InputBlock :error="state.nameError">
+        <FormListItem
+          titleText="비밀번호 확인"
+          target="#layerSignUpAppFormPasswordConfirm"
+        >
+          <FormInvalid :error="state.passwordConfirmError">
+            <InputBlock :error="state.passwordConfirmError">
               <InputBlockCell :flexible="true">
-                <BasicInput title="비밀번호 확인" id="SignUpPasswordConfirm" />
+                <BasicInput
+                  type="password"
+                  title="비밀번호 확인"
+                  id="layerSignUpAppFormPasswordConfirm"
+                />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
       </FormList>
-
-      <UiAccordion>
-        <UiAccordionItem>
-          <UiAccordionLayer>
-            <div :class="$style['agree-list__all-contents']">
-              <ul :class="$style['agree-list__list']">
-                <li :class="$style['agree-list__item']">
-                  <div :class="$style['agree-list__head']">
-                    <CheckBox
-                      id="Sign_up_check_box_01"
-                      :classNames="{
-                        wrap: $style['agree-list__checkbox'],
-                      }"
-                      theme="tertiary"
-                    >
-                      <CheckBoxObject />
-                      <CheckBoxLabelText
-                        >개인정보 수집·이용, 취급위탁 동의</CheckBoxLabelText
-                      >
-                    </CheckBox>
-                    <div :class="$style['agree-list__right']">
-                      <button type="button" :class="$style['agree-list__link']">
-                        <span :class="$style['agree-list__link-text']">
-                          상세보기
-                        </span>
-                      </button>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </UiAccordionLayer>
-        </UiAccordionItem>
-      </UiAccordion>
 
       <template v-slot:foot>
         <ButtonList
@@ -182,7 +143,3 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/personalLoan/LayerPersonalLoanSignUpIdPassword.scss';
-</style>

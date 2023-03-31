@@ -5,12 +5,18 @@ import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import ToastPopup from '@/components/ui/layer/ToastPopup.vue';
 import ToastPopupHead from '@/components/ui/layer/ToastPopupHead.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
+
+import IconPhone from '@/assets/images/icon/phone.svg?component';
+import IconCard from '@/assets/images/icon/card.svg?component';
+
 export default {
   components: {
     UiLayer,
     ToastPopup,
     ToastPopupHead,
     PopupTitle,
+    IconPhone,
+    IconCard,
   },
   setup() {
     const layer = ref(null);
@@ -27,7 +33,10 @@ export default {
     <ToastPopup>
       <template v-slot:head>
         <ToastPopupHead>
-          <PopupTitle>본인인증 방법을 선택해 주세요</PopupTitle>
+          <PopupTitle>
+            앱에서 가입한 손님은<br />
+            최초 1회 본인인증이 필요합니다
+          </PopupTitle>
         </ToastPopupHead>
       </template>
 
@@ -35,21 +44,17 @@ export default {
         <ul :class="$style['icon-buttons__list']">
           <li :class="$style['icon-buttons__item']">
             <button type="button" :class="$style['icon-buttons__block']">
+              <div :class="$style['icon-buttons__icon']"><IconPhone /></div>
               <div :class="$style['icon-buttons__content']">
-                <div :class="$style['icon-buttons__title']">
-                  [2022-12-31]김하나 <br />
-                  ()0004048100574819
-                </div>
+                <div :class="$style['icon-buttons__title']">휴대폰</div>
               </div>
             </button>
           </li>
           <li :class="$style['icon-buttons__item']">
             <button type="button" :class="$style['icon-buttons__block']">
+              <div :class="$style['icon-buttons__icon']"><IconCard /></div>
               <div :class="$style['icon-buttons__content']">
-                <div :class="$style['icon-buttons__title']">
-                  [2022-12-31]김둘 <br />
-                  ()00004048100574819
-                </div>
+                <div :class="$style['icon-buttons__title']">신용카드</div>
               </div>
             </button>
           </li>
@@ -60,5 +65,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/personalLoan/LayerPersonalLoanEtcCombineSelect.scss';
+@import '@/assets/scss/views/sign/LayerSignUpIdentificationMethodSelect.scss';
 </style>

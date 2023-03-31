@@ -92,6 +92,14 @@
     }
   }
 
+  &--normal-margin {
+    .basic-list__item {
+      & + .basic-list__item {
+        margin-top: 10px;
+      }
+    }
+  }
+
   &--small-margin {
     .basic-list__item {
       & + .basic-list__item {

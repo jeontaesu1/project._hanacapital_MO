@@ -32,21 +32,26 @@ export default {
 </script>
 
 <template>
-  <UiLayer ref="layer" type="toast">
+  <UiLayer ref="layer" type="toast" v-slot="layerSlotProps">
     <ToastPopup>
       <template v-slot:head>
         <ToastPopupHead>
           <PopupTitle>보이스피싱 주의안내</PopupTitle>
         </ToastPopupHead>
       </template>
+
       <PopupText>
         금융감독원, 금융기관, 검찰청, 경찰청, 직원을 사칭한 의심스러운 전화 또는
         문자를 받고 대출을 신청하신다면, 대출진행을 중단하시기 바랍니다.
       </PopupText>
       <PopupText>
         대출 보이스 피싱이 우려되는 경우
-        <span class="color-black">금융감독원 콜센터(1332)</span> 또는
-        <span class="color-black">경찰청(112)</span>으로 문의바랍니다.
+        <strong class="color-black font-weight-medium"
+          >금융감독원 콜센터(1332)</strong
+        >
+        또는
+        <strong class="color-black font-weight-medium">경찰청(112)</strong>으로
+        문의바랍니다.
       </PopupText>
 
       <template v-slot:foot>
@@ -56,14 +61,10 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton>확인</BasicButton>
+            <BasicButton @click="layerSlotProps.close()">확인</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
     </ToastPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/personalLoan/LayerPersonalLoanWarningNotice.scss';
-</style>
