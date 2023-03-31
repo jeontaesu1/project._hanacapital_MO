@@ -72,6 +72,11 @@
     }
   }
 
+  &__select-text {
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
   &__item--focus,
   &__item--inputed,
   &__item--force-focus,
@@ -98,6 +103,10 @@
         opacity: 1;
       }
     }
+
+    .form__select-text {
+      opacity: 1;
+    }
   }
 
   &__item--disabled {
@@ -114,6 +123,14 @@
   &__item--error {
     .form__title {
       color: $color-semantic-essential;
+    }
+  }
+
+  &__item--select-only {
+    .form__area {
+      & > * {
+        opacity: 1;
+      }
     }
   }
 }

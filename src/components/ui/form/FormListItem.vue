@@ -5,8 +5,10 @@ import {
   reactive,
   provide,
   inject,
+  onBeforeMount,
   onMounted,
   onUpdated,
+  watch,
 } from 'vue';
 
 const defaultClassNames = () => ({
@@ -51,6 +53,10 @@ export default {
       Type: Boolean,
       default: false,
     },
+    selectOnly: {
+      Type: Boolean,
+      default: false,
+    },
   },
   setup(props) {
     const styleModule = inject('formListStyleModule');
@@ -62,6 +68,9 @@ export default {
       isSelectFocus: false,
       isInputed: false,
       isError: false,
+      selectOnly: {
+        value: false,
+      },
     });
 
     const areaClass = styleModule['form__area'];
@@ -142,6 +151,10 @@ export default {
       state.isSelectFocus = val;
     };
 
+    onBeforeMount(() => {
+      state.selectOnly.value = props.selectOnly;
+    });
+
     onMounted(() => {
       checkInputed();
     });
@@ -150,6 +163,13 @@ export default {
       checkInputed();
     });
 
+    watch(
+      () => props.selectOnly,
+      (cur) => {
+        state.selectOnly.value = cur;
+      }
+    );
+
     provide('formListItem', {
       areaClass,
       onfocusin,
@@ -157,6 +177,8 @@ export default {
       error,
       selectFocus,
       helpClass: styleModule['form__help'],
+      selectOnly: state.selectOnly,
+      selectTextClass: styleModule['form__select-text'],
     });
 
     return {
@@ -184,6 +206,7 @@ export default {
         [styleModule['form__item--force-focus']]: forceFocus,
         [styleModule['form__item--error']]: state.isError,
         [styleModule['form__item--disabled']]: disabled,
+        [styleModule['form__item--select-only']]: selectOnly,
       },
       customClassNames.item,
     ]"

@@ -1,0 +1,32 @@
+.data-list {
+  @include reset-list;
+
+  &__item {
+    @include font-size-default(16);
+
+    & + & {
+      margin-top: 24px;
+    }
+  }
+
+  &__row {
+    display: flex;
+
+    & + & {
+      margin-top: 4px;
+    }
+  }
+
+  &__cell {
+    flex: none;
+
+    & + & {
+      margin-left: 16px;
+    }
+
+    &--flexible {
+      flex: 1;
+      min-width: 0;
+    }
+  }
+}

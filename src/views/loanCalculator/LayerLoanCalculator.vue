@@ -6,8 +6,6 @@ import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
-import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
-import PageMainText from '@/components/ui/text/PageMainText.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
@@ -15,14 +13,12 @@ import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
+import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-import SecurityInput from '@/components/ui/form/SecurityInput.vue';
-import PartInput from '@/components/ui/form/PartInput.vue';
 import BoxCheck from '@/components/ui/form/BoxCheck.vue';
 import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
-import BoxCheckObject from '@/components/ui/form/BoxCheckObject.vue';
 import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
 import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
@@ -34,8 +30,6 @@ export default {
     PopupButton,
     FullPopup,
     FullPopupHead,
-    PageTextGroup,
-    PageMainText,
     InputBlock,
     InputBlockCell,
     BasicInput,
@@ -43,14 +37,12 @@ export default {
     FormListItem,
     FormInvalid,
     FormInvalidMessage,
+    FormHelpText,
     BasicButton,
     ButtonList,
     ButtonListItem,
-    SecurityInput,
-    PartInput,
     BoxCheck,
     BoxCheckLabel,
-    BoxCheckObject,
     BoxCheckList,
     BoxCheckListItem,
     BasicSelect,
@@ -60,6 +52,7 @@ export default {
       typeError: false,
       sumError: false,
       termError: false,
+      interestRateError: false,
     });
 
     const layer = ref(null);
@@ -93,6 +86,7 @@ export default {
                   :contents="true"
                   name="layerLoanCalculatorType"
                   id="layerLoanCalculatorType001"
+                  :checked="true"
                 >
                   <BoxCheckLabel>원리금 균등상환</BoxCheckLabel>
                   <p class="text-body-5 color-gray-secondary row-margin-small">
@@ -251,74 +245,67 @@ export default {
           </FormInvalid>
         </FormListItem>
 
-        <FormListItem
-          titleText="생년월일"
-          titleOptionalText="(6자리)"
-          target="#layerIdentificationKakaopayIdNumber01"
-        >
-          <FormInvalid :error="state.idNumberError">
-            <InputBlock :error="state.idNumberError">
+        <FormListItem titleText="대출금리" :forceFocus="true">
+          <FormInvalid :error="state.interestRateError">
+            <BoxCheckList :classNames="{ wrap: 'row-margin-item-group' }">
+              <BoxCheckListItem>
+                <BasicButton
+                  size="small"
+                  line="true"
+                  theme="quaternary"
+                  :minSide="true"
+                >
+                  + 0.1%
+                </BasicButton>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BasicButton
+                  size="small"
+                  line="true"
+                  theme="quaternary"
+                  :minSide="true"
+                >
+                  + 0.5%
+                </BasicButton>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BasicButton
+                  size="small"
+                  line="true"
+                  theme="quaternary"
+                  :minSide="true"
+                >
+                  + 5.0%
+                </BasicButton>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BasicButton
+                  size="small"
+                  line="true"
+                  theme="quaternary"
+                  :minSide="true"
+                >
+                  + 10.0%
+                </BasicButton>
+              </BoxCheckListItem>
+            </BoxCheckList>
+            <InputBlock :error="state.interestRateError">
               <InputBlockCell :flexible="true">
                 <BasicInput
+                  align="right"
+                  :useDelete="false"
                   type="number"
                   pattern="\d*"
-                  title="주민등록번호 앞 6자리"
-                  id="layerIdentificationKakaopayIdNumber01"
+                  title="대출금리"
+                  id="layerLoanCalculatorInterestRate"
                 />
               </InputBlockCell>
-              <InputBlockCell type="sub">-</InputBlockCell>
-              <InputBlockCell :flexible="true">
-                <PartInput
-                  type="number"
-                  pattern="\d*"
-                  title="주민등록번호 뒤 7자리 중 첫번째자리"
-                  id="layerIdentificationKakaopayIdNumber02"
-                  :afterDot="6"
-                />
-              </InputBlockCell>
+              <template v-slot:innerRight>
+                <div class="text-body-3">%</div>
+              </template>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
-        </FormListItem>
-
-        <FormListItem
-          titleText="주민등록번호"
-          target="#layerIdentificationKakaopayIdNumber03"
-        >
-          <FormInvalid :error="state.idNumberError">
-            <InputBlock :error="state.idNumberError">
-              <InputBlockCell :flexible="true">
-                <BasicInput
-                  type="number"
-                  pattern="\d*"
-                  title="주민등록번호 앞 6자리"
-                  id="layerIdentificationKakaopayIdNumber03"
-                />
-              </InputBlockCell>
-              <InputBlockCell type="sub">-</InputBlockCell>
-              <InputBlockCell :flexible="true">
-                <!-- DD : 보안 키패드 열렸을 때 :isFocused="true" props 추가 해서 포커싱 스타일 적용 -->
-                <SecurityInput
-                  title="주민등록번호 뒤 7자리"
-                  :dot="[true, true, true, false, false, false, false]"
-                />
-              </InputBlockCell>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
-        </FormListItem>
-
-        <FormListItem
-          titleText="이름"
-          target="#layerIdentificationKakaopayName"
-        >
-          <FormInvalid :error="state.nameError">
-            <InputBlock :error="state.nameError">
-              <InputBlockCell :flexible="true">
-                <BasicInput title="이름" id="layerIdentificationKakaopayName" />
-              </InputBlockCell>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
+            <FormHelpText>최대 20%까지 입력 가능합니다.</FormHelpText>
           </FormInvalid>
         </FormListItem>
       </FormList>
@@ -330,7 +317,10 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton>다음</BasicButton>
+            <BasicButton line="true" theme="quaternary">초기화</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton>계산하기</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

@@ -65,6 +65,7 @@ import NoticeText from '@/components/ui/text/NoticeText.vue';
 import IllustInfo from '@/components/ui/common/IllustInfo.vue';
 import IllustInfoTitle from '@/components/ui/common/IllustInfoTitle.vue';
 import IllustInfoText from '@/components/ui/common/IllustInfoText.vue';
+import UnitText from '@/components/ui/text/UnitText.vue';
 
 import BrandLogo001 from '@/assets/images/bank-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/bank-logo/lotte.svg?component';
@@ -137,6 +138,7 @@ export default {
     IllustInfo,
     IllustInfoTitle,
     IllustInfoText,
+    UnitText,
     IconAdd,
     BrandLogo001,
     BrandLogo002,
@@ -1656,9 +1658,13 @@ export default {
             </FormInvalid>
           </FormListItem>
 
-          <FormListItem titleText="대출기간" target="#testInput010Button">
+          <FormListItem
+            titleText="대출기간"
+            target="#testInput010Button"
+            :selectOnly="true"
+          >
             <FormInvalid :error="state.testError001">
-              <InputBlock :select="true" :error="state.testError001">
+              <InputBlock :error="state.testError001">
                 <InputBlockCell :flexible="true">
                   <BasicSelect
                     :option="[
@@ -3617,6 +3623,22 @@ export default {
         <NoticeText type="check" :classNames="{ wrap: 'color-navy' }">
           Text Text Text Text Text
         </NoticeText>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">UnitText</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <UnitText leftUnit="$">333,389</UnitText>
+        <UnitText rightUnit="원">333,389</UnitText>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">align right</h3>
+
+        <UnitText leftUnit="$" align="right">333,389</UnitText>
+        <UnitText rightUnit="원" align="right">333,389</UnitText>
       </div>
     </section>
 

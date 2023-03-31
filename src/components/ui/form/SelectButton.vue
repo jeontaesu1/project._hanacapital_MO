@@ -36,8 +36,7 @@ export default {
     },
   },
   setup(props, context) {
-    const formList = inject('formList', {});
-    const formListStyleModule = inject('formListStyleModule', {});
+    const formListItem = inject('formListItem', {});
 
     const button = ref(null);
 
@@ -54,18 +53,21 @@ export default {
       return typeof props.placeholder === 'string';
     });
 
-    const selectOnly = computed(() => {
-      return formList.selectOnly && formList.selectOnly.value;
+    const formSelectOnly = computed(() => {
+      return formListItem.selectOnly && formListItem.selectOnly.value;
+    });
+
+    const formSelectTextClass = computed(() => {
+      return formListItem.selectTextClass;
     });
 
     return {
-      formList,
-      formListStyleModule,
       button,
       customClassNames,
       isText,
       isPlaceholder,
-      selectOnly,
+      formSelectOnly,
+      formSelectTextClass,
     };
   },
 };
@@ -83,7 +85,7 @@ export default {
       :class="[
         $style['select-button__placeholder'],
         {
-          [formListStyleModule['input-block__select-text']]: !selectOnly,
+          [formSelectTextClass]: formSelectOnly,
         },
         customClassNames.placeholder,
       ]"
@@ -95,7 +97,7 @@ export default {
       :class="[
         $style['select-button__text'],
         {
-          [formListStyleModule['input-block__select-text']]: !selectOnly,
+          [formSelectTextClass]: formSelectOnly,
         },
         customClassNames.text,
       ]"

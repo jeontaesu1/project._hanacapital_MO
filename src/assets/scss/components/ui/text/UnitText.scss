@@ -1,0 +1,32 @@
+.unit-text {
+  display: flex;
+  align-items: flex-end;
+
+  &__left {
+    display: block;
+    flex: none;
+    margin-right: 2px;
+    @include font-size-default(14);
+    font-weight: 500;
+  }
+
+  &__right {
+    display: block;
+    flex: none;
+    margin-left: 2px;
+    @include font-size-default(14);
+    font-weight: 500;
+  }
+
+  &__val {
+    display: block;
+    flex: 0 1 auto;
+    min-width: 0;
+    @include font-size-head(18);
+    font-weight: 700;
+  }
+
+  &--right {
+    justify-content: flex-end;
+  }
+}
