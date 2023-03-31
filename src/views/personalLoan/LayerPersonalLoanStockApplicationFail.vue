@@ -51,12 +51,12 @@ export default {
       <IllustInfo>
         <IllustObject type="fail" />
         <IllustInfoTitle>
-          만기연장 신청 대상이 아닙니다<br />
-          <strong>잔여 회차를 확인해 주세요</strong>
+          연장 신청이<br />
+          <strong>실패되었습니다</strong>
         </IllustInfoTitle>
         <IllustInfoText>
-          하나캐피탈 스탁론에<br />
-          관심을 가져주셔서 감사합니다.
+          청구지연배상금이 있습니다.<br />
+          연장신청이 불가합니다.
         </IllustInfoText>
       </IllustInfo>
 

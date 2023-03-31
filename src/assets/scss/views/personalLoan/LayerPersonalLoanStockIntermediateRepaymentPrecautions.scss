@@ -1,0 +1,39 @@
+@import '@/assets/scss/components/import/basic-list.scss';
+
+.basic-section {
+  & + .basic-section {
+    margin-top: 30px;
+  }
+
+  &__title {
+    margin: 0;
+    @include font-size-default(15);
+    font-weight: 700;
+  }
+
+  &__title + &__contents {
+    margin-top: 16px;
+  }
+}
+
+.basic-list {
+  &--medium {
+    .basic-list__item {
+      @include font-size-default(13);
+      font-weight: 400;
+
+      & + .basic-list__item {
+        margin-top: 8px;
+      }
+    }
+  }
+  &__item {
+    .basic-list {
+      margin-left: -4px;
+
+      &--medium {
+        margin-top: 8px;
+      }
+    }
+  }
+}

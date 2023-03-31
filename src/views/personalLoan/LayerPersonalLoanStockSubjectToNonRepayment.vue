@@ -51,8 +51,8 @@ export default {
       <IllustInfo>
         <IllustObject type="fail" />
         <IllustInfoTitle>
-          만기연장 신청 대상이 아닙니다<br />
-          <strong>잔여 회차를 확인해 주세요</strong>
+          중도상환이 가능한<br />
+          <strong>계약이 없습니다</strong>
         </IllustInfoTitle>
         <IllustInfoText>
           하나캐피탈 스탁론에<br />

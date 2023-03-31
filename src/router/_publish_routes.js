@@ -44,6 +44,46 @@ const routes = [
     component: () => import('@/views/uiGuide/GuideIdentification002.vue'),
   },
   {
+    path: '/guide/AgreeTerms-001',
+    name: '/guide/AgreeTerms-001',
+    component: () => import('@/views/uiGuide/GuideAgreeTerms001.vue'),
+  },
+  {
+    path: '/guide/AgreeTerms-002',
+    name: '/guide/AgreeTerms-002',
+    component: () => import('@/views/uiGuide/GuideAgreeTerms002.vue'),
+  },
+  {
+    path: '/guide/AgreeTerms003',
+    name: '/guide/AgreeTerms003',
+    component: () => import('@/views/uiGuide/GuideAgreeTerms003.vue'),
+  },
+  {
+    path: '/guide/ErrorInfo-001',
+    name: '/guide/ErrorInfo-001',
+    component: () => import('@/views/uiGuide/GuideErrorInfo001.vue'),
+  },
+  {
+    path: '/guide/ConnectAppAos',
+    name: '/guide/ConnectAppAos',
+    component: () => import('@/views/connectApp/ConnectAppAos.vue'),
+  },
+  {
+    path: '/guide/ConnectAppIos',
+    name: '/guide/ConnectAppIos',
+    component: () => import('@/views/connectApp/ConnectAppIos.vue'),
+  },
+  {
+    path: '/guide/ConnectAppFreeAos',
+    name: '/guide/ConnectAppFreeAos',
+    component: () => import('@/views/connectApp/ConnectAppFreeAos.vue'),
+  },
+  {
+    path: '/guide/ConnectAppFreeIos',
+    name: '/guide/ConnectAppFreeIos',
+    component: () => import('@/views/connectApp/ConnectAppFreeIos.vue'),
+  },
+  {
     path: '/guide/personal-loan-e-hana-001',
     name: '/guide/personal-loan-e-hana-001',
     component: () => import('@/views/uiGuide/GuidePersonalLoanEHana001.vue'),

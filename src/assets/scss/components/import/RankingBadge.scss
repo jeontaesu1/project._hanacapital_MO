@@ -1,0 +1,23 @@
+.ranking-badge {
+  @include font-size-default(10);
+  font-weight: 500;
+  color: $color-white;
+  padding: 1px 6px;
+  border-radius: 50px;
+
+  &--accent {
+    background-color: $color-semantic-accent;
+  }
+  &--positive {
+    background-color: $color-semantic-positive;
+  }
+  &--warning {
+    background-color: $color-semantic-warning;
+  }
+  &--caution {
+    background-color: $color-semantic-caution;
+  }
+  &--essential {
+    background-color: $color-semantic-essential;
+  }
+}

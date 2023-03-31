@@ -51,12 +51,12 @@ export default {
       <IllustInfo>
         <IllustObject type="fail" />
         <IllustInfoTitle>
-          만기연장 신청 대상이 아닙니다<br />
-          <strong>잔여 회차를 확인해 주세요</strong>
+          중도상환금액<br />
+          <strong>조회가 불가합니다</strong>
         </IllustInfoTitle>
         <IllustInfoText>
-          하나캐피탈 스탁론에<br />
-          관심을 가져주셔서 감사합니다.
+          (출금가능금액조회) 대출번호 : LXXXXXXXXXXXX [RMS]<br />
+          위탁계좌가 존재하지 않습니다.
         </IllustInfoText>
       </IllustInfo>
 
@@ -67,7 +67,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton>확인</BasicButton>
+            <BasicButton>다음</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

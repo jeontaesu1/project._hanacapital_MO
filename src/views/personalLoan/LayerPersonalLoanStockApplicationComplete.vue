@@ -49,14 +49,14 @@ export default {
       </template>
 
       <IllustInfo>
-        <IllustObject type="fail" />
+        <IllustObject type="complete" />
         <IllustInfoTitle>
-          만기연장 신청 대상이 아닙니다<br />
-          <strong>잔여 회차를 확인해 주세요</strong>
+          연장 신청이<br />
+          <strong>완료되었습니다</strong>
         </IllustInfoTitle>
         <IllustInfoText>
-          하나캐피탈 스탁론에<br />
-          관심을 가져주셔서 감사합니다.
+          고객님의 연장 신청이 정상적으로 접수되었습니다.<br />
+          만기일 이자 출금 후 연장 완료됩니다.
         </IllustInfoText>
       </IllustInfo>
 
