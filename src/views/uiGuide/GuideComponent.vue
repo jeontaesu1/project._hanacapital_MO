@@ -79,6 +79,7 @@ import IconSend from '@/assets/images/icon/send.svg?component';
 import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 import ImgZeroCommission from '@/assets/images/illustration/img-zero-commission.svg';
 import Img120Months from '@/assets/images/illustration/img-120months.svg?component';
+import IconCarSecurity from '@/assets/images/icon/car-security.svg?component';
 
 export default {
   components: {
@@ -157,6 +158,7 @@ export default {
     IconDeposit,
     ImgZeroCommission,
     Img120Months,
+    IconCarSecurity,
   },
   setup() {
     const store = {
@@ -3133,9 +3135,7 @@ export default {
               </span>
               <div :class="[$style['authority__desc']]">
                 <div :class="[$style['authority__desc-block']]">
-                  <strong :class="[$style['authority__desc-title']]"
-                    >알림</strong
-                  >
+                  <div :class="[$style['authority__desc-title']]">알림</div>
                   <span class="color-gray">(선택)</span>
                 </div>
                 <div :class="[$style['authority__desc-text']]">
@@ -3149,9 +3149,7 @@ export default {
               </span>
               <div :class="[$style['authority__desc']]">
                 <div :class="[$style['authority__desc-block']]">
-                  <strong :class="[$style['authority__desc-title']]"
-                    >전화</strong
-                  >
+                  <div :class="[$style['authority__desc-title']]">전화</div>
                   <span class="color-green">(필수)</span>
                 </div>
                 <div :class="[$style['authority__desc-text']]">
@@ -3166,9 +3164,7 @@ export default {
               </span>
               <div :class="[$style['authority__desc']]">
                 <div :class="[$style['authority__desc-block']]">
-                  <strong :class="[$style['authority__desc-title']]"
-                    >카메라</strong
-                  >
+                  <div :class="[$style['authority__desc-title']]">카메라</div>
                   <span class="color-gray">(선택)</span>
                 </div>
                 <div :class="[$style['authority__desc-text']]">
@@ -3183,9 +3179,7 @@ export default {
               </span>
               <div :class="[$style['authority__desc']]">
                 <div :class="[$style['authority__desc-block']]">
-                  <strong :class="[$style['authority__desc-title']]"
-                    >저장공간</strong
-                  >
+                  <div :class="[$style['authority__desc-title']]">저장공간</div>
                   <span class="color-gray">(선택)</span>
                 </div>
                 <div :class="[$style['authority__desc-text']]">
@@ -3200,9 +3194,7 @@ export default {
               </span>
               <div :class="[$style['authority__desc']]">
                 <div :class="[$style['authority__desc-block']]">
-                  <strong :class="[$style['authority__desc-title']]"
-                    >위치</strong
-                  >
+                  <div :class="[$style['authority__desc-title']]">위치</div>
                   <span class="color-gray">(선택)</span>
                 </div>
                 <div :class="[$style['authority__desc-text']]">
@@ -3217,9 +3209,9 @@ export default {
               </span>
               <div :class="[$style['authority__desc']]">
                 <div :class="[$style['authority__desc-block']]">
-                  <strong :class="[$style['authority__desc-title']]"
-                    >기기 및 앱 기록</strong
-                  >
+                  <div :class="[$style['authority__desc-title']]">
+                    기기 및 앱 기록
+                  </div>
                   <span class="color-gray">(선택)</span>
                 </div>
                 <div :class="[$style['authority__desc-text']]">
@@ -3406,6 +3398,22 @@ export default {
                   </div>
                   <div :class="[$style['step__icon']]">
                     <IconSend />
+                  </div>
+                </div>
+              </li>
+              <li :class="[$style['step__item']]">
+                <div :class="[$style['step__inner']]">
+                  <div :class="[$style['step__contents']]">
+                    <span :class="[$style['step__badge']]">
+                      <span :class="[$style['step__badge-text']]">STEP 3</span>
+                    </span>
+                    <div :class="[$style['step__text']]">
+                      제출하신 정보를 바탕으로 최종심사 후 손님께 결과안내 및
+                      온라인으로 <strong>차량 저당설정을 진행</strong>합니다.
+                    </div>
+                  </div>
+                  <div :class="[$style['step__icon']]">
+                    <IconCarSecurity />
                   </div>
                 </div>
               </li>

@@ -54,7 +54,7 @@ export default {
         를 이용하실 수 있어요!
       </PopupText>
 
-      <IllustObject class="row-margin-item-group" />
+      <IllustObject :classNames="{ wrap: 'row-margin-item-group' }" />
 
       <template v-slot:foot>
         <ButtonList

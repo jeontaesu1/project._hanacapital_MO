@@ -47,7 +47,10 @@ export default {
         손님의 소중한 의견에 항상 귀 기울일게요.
       </PopupText>
 
-      <IllustObject type="star" class="row-margin-item-group" />
+      <IllustObject
+        type="star"
+        :classNames="{ wrap: 'row-margin-item-group' }"
+      />
 
       <template v-slot:foot>
         <ButtonList

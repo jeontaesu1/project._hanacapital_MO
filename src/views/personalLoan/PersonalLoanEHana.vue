@@ -244,7 +244,7 @@ export default {
           <KeyValueTitle>연체이자율</KeyValueTitle>
           <KeyValueText>
             약정이율 + 3%
-            <p class="sub">(법정최고금리 연 20% 이내)</p>
+            <p :class="$style['sub']">(법정최고금리 연 20% 이내)</p>
           </KeyValueText>
         </KeyValueItem>
 

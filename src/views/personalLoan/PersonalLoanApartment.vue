@@ -247,7 +247,7 @@ export default {
               <li
                 :class="[
                   $style['basic-list__item'],
-                  'color-black',
+                  'color-tertiary',
                   'font-weight-regular',
                   'text-body-5',
                 ]"
@@ -260,7 +260,7 @@ export default {
               <li
                 :class="[
                   $style['basic-list__item'],
-                  'color-black',
+                  'color-tertiary',
                   'font-weight-regular',
                   'text-body-5',
                 ]"

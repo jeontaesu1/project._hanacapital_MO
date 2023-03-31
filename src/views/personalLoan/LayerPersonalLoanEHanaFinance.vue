@@ -153,9 +153,9 @@ export default {
                         <div :class="$style['basic-list__title']">
                           보유 및 이용기간
                         </div>
-                      </div>
-                      <div :class="$style['basic-list__text']">
-                        이용 동의일로부터 3개월 이내
+                        <div :class="$style['basic-list__text']">
+                          이용 동의일로부터 3개월 이내
+                        </div>
                       </div>
                     </li>
                   </ul>

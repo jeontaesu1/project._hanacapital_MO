@@ -55,9 +55,7 @@ export default {
               </span>
               <div :class="[$style['authority__desc']]">
                 <div :class="[$style['authority__desc-block']]">
-                  <strong :class="[$style['authority__desc-title']]"
-                    >전화</strong
-                  >
+                  <div :class="[$style['authority__desc-title']]">전화</div>
                   <span class="color-green">(필수)</span>
                 </div>
                 <div :class="[$style['authority__desc-text']]">

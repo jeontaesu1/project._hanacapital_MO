@@ -136,7 +136,7 @@ export default {
         </div>
       </BasicBox>
 
-      <FormList class="row-margin-contents-group">
+      <FormList :classNames="{ wrap: 'row-margin-contents-group' }">
         <FormListItem
           titleText="대출신청금액"
           target="#LayerPersonalLoanEHanaInputAmount"

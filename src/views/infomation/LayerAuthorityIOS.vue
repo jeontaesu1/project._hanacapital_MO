@@ -68,7 +68,7 @@ export default {
             </span>
             <div :class="[$style['authority__desc']]">
               <div :class="[$style['authority__desc-block']]">
-                <strong :class="[$style['authority__desc-title']]">알림</strong>
+                <div :class="[$style['authority__desc-title']]">알림</div>
                 <span class="color-gray">(선택)</span>
               </div>
               <div :class="[$style['authority__desc-text']]">
@@ -82,9 +82,7 @@ export default {
             </span>
             <div :class="[$style['authority__desc']]">
               <div :class="[$style['authority__desc-block']]">
-                <strong :class="[$style['authority__desc-title']]"
-                  >카메라</strong
-                >
+                <div :class="[$style['authority__desc-title']]">카메라</div>
                 <span class="color-gray">(선택)</span>
               </div>
               <div :class="[$style['authority__desc-text']]">
@@ -99,7 +97,7 @@ export default {
             </span>
             <div :class="[$style['authority__desc']]">
               <div :class="[$style['authority__desc-block']]">
-                <strong :class="[$style['authority__desc-title']]">위치</strong>
+                <div :class="[$style['authority__desc-title']]">위치</div>
                 <span class="color-gray">(선택)</span>
               </div>
               <div :class="[$style['authority__desc-text']]">
@@ -114,9 +112,9 @@ export default {
             </span>
             <div :class="[$style['authority__desc']]">
               <div :class="[$style['authority__desc-block']]">
-                <strong :class="[$style['authority__desc-title']]"
-                  >기기 및 앱 기록</strong
-                >
+                <div :class="[$style['authority__desc-title']]">
+                  기기 및 앱 기록
+                </div>
                 <span class="color-gray">(선택)</span>
               </div>
               <div :class="[$style['authority__desc-text']]">
