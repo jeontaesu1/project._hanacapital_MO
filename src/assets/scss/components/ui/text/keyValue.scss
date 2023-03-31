@@ -33,4 +33,12 @@
       text-align: left;
     }
   }
+
+  &--margin-regular {
+    .key-value__item {
+      & + .key-value__item {
+        margin-top: 16px;
+      }
+    }
+  }
 }

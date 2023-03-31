@@ -3527,9 +3527,37 @@ export default {
           </KeyValueItem>
         </KeyValueList>
       </div>
+
       <div class="test-section-sub">
-        <h3 class="test-section-sub-title">align: left</h3>
+        <h3 class="test-section-sub-title">align left</h3>
         <KeyValueList align="left">
+          <KeyValueItem>
+            <KeyValueTitle>차량명의</KeyValueTitle>
+            <KeyValueText>
+              본인명의(공동명의 제외)<br />
+              소유기간 3개월 이상
+            </KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>소유차종</KeyValueTitle>
+            <KeyValueText>국산/수입 승용, RV, 승합</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>차량연식</KeyValueTitle>
+            <KeyValueText>
+              출고 이후 10년 이내<br />
+              차량가격 500만원 이상<br />
+              (당사 차량 시세 가격 기준)
+            </KeyValueText>
+          </KeyValueItem>
+        </KeyValueList>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">margin regular</h3>
+        <KeyValueList margin="regular">
           <KeyValueItem>
             <KeyValueTitle>차량명의</KeyValueTitle>
             <KeyValueText>
