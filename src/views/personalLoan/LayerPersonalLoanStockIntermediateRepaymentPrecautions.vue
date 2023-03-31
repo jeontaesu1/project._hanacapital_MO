@@ -46,14 +46,26 @@ export default {
       <div :class="[$style['basic-section']]">
         <p :class="[$style['basic-section__title']]">신청 가능 상품</p>
         <div :class="[$style['basic-section__contents']]">
-          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
-            <li :class="[$style['basic-list__item'], 'color-black']">
+          <ul :class="[$style['basic-list']]">
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'color-black',
+                'text-body-3',
+              ]"
+            >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
                 할부 및 대출상품(스탁론포함)
               </div>
             </li>
-            <li :class="[$style['basic-list__item'], 'color-black']">
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'color-black',
+                'text-body-3',
+              ]"
+            >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
                 <span :class="['font-weight-medium', 'color-red']"
@@ -68,15 +80,27 @@ export default {
       <div :class="[$style['basic-section']]">
         <p :class="[$style['basic-section__title']]">신청 가능 시간</p>
         <div :class="[$style['basic-section__contents']]">
-          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
-            <li :class="[$style['basic-list__item'], 'color-black']">
+          <ul :class="[$style['basic-list']]">
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'color-black',
+                'text-body-3',
+              ]"
+            >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
                 월~금 : 09:00 ~ 18:00 (스탁론은 08:30 ~ 15:30)까지 신청
                 가능합니다.
               </div>
             </li>
-            <li :class="[$style['basic-list__item'], 'color-black']">
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'color-black',
+                'text-body-3',
+              ]"
+            >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
                 토요일, 일요일, 공휴일 또는 계약일에는 신청이 불가합니다.
@@ -88,29 +112,45 @@ export default {
       <div :class="[$style['basic-section']]">
         <p :class="[$style['basic-section__title']]">유의사항</p>
         <div :class="[$style['basic-section__contents']]">
-          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
-            <li :class="[$style['basic-list__item'], 'color-black']">
+          <ul :class="[$style['basic-list']]">
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'color-black',
+                'text-body-3',
+              ]"
+            >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
                 중도상환시에는 상품에 따라 일정액의 '중도상환수수료'가
                 발생됩니다.
               </div>
             </li>
-            <li :class="[$style['basic-list__item'], 'color-black']">
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'color-black',
+                'text-body-3',
+              ]"
+            >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
                 즉시출금은 '전자금융거래법'에 따라 '고객님의 명의로 인증된
                 자동이체계좌'에서만 출금이 가능합니다.
               </div>
             </li>
-            <li :class="[$style['basic-list__item'], 'color-black']">
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'color-black',
+                'text-body-3',
+              ]"
+            >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
                 즉시출금은 '전자금융거래법'에 따라 '고객님의 명의로 인증된
                 자동이체계좌'에서만 출금이 가능합니다.
-                <ul
-                  :class="[$style['basic-list'], $style['basic-list--medium']]"
-                >
+                <ul :class="[$style['basic-list']]">
                   <li :class="[$style['basic-list__item'], 'color-black']">
                     <div :class="$style['basic-list__symbol']">-</div>
                     <div :class="$style['basic-list__content']">
@@ -134,7 +174,13 @@ export default {
                 </ul>
               </div>
             </li>
-            <li :class="[$style['basic-list__item'], 'color-black']">
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'color-black',
+                'text-body-3',
+              ]"
+            >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
                 가상계좌 입금 신청 시, 신청 일자에 따라 중복 출금이 발생할 수
@@ -142,14 +188,26 @@ export default {
                 바랍니다.
               </div>
             </li>
-            <li :class="[$style['basic-list__item'], 'color-black']">
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'color-black',
+                'text-body-3',
+              ]"
+            >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
                 대출원금잔액의 전액 상환 시 담보물건이 있는 경우 담보물건 해지에
                 관한 사항은 고객센터(1800-1110)로 연락 바랍니다.
               </div>
             </li>
-            <li :class="[$style['basic-list__item'], 'color-black']">
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'color-black',
+                'text-body-3',
+              ]"
+            >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
                 스탁론(하나금융투자) 전액상환 시,

@@ -213,7 +213,6 @@ export default {
     <LayerPersonalLoanStockApplicationConfirm ref="layer005" />
     <LayerPersonalLoanStockApplicationComplete ref="layer006" />
     <LayerPersonalLoanStockApplicationFail ref="layer007" />
-
     <LayerPersonalLoanStockIntermediateRepaymentSelect ref="layer008" />
     <LayerPersonalLoanStockSubjectToNonRepayment ref="layer009" />
     <LayerPersonalLoanStockIntermediateRepaymentPrecautions ref="layer010" />

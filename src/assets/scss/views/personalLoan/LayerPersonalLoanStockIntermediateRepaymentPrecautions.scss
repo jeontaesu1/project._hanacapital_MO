@@ -17,23 +17,10 @@
 }
 
 .basic-list {
-  &--medium {
-    .basic-list__item {
-      @include font-size-default(13);
-      font-weight: 400;
-
-      & + .basic-list__item {
-        margin-top: 8px;
-      }
-    }
-  }
   &__item {
     .basic-list {
       margin-left: -4px;
-
-      &--medium {
-        margin-top: 8px;
-      }
+      margin-top: 8px;
     }
   }
 }
