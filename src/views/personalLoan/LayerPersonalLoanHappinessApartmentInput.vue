@@ -145,8 +145,8 @@ export default {
             <InputBlock :error="state.amountError">
               <InputBlockCell :flexible="true">
                 <BasicInput
-                  :useDelete="false"
                   align="right"
+                  title="대출신청금액"
                   id="LayerPersonalLoanHappinessApartmentInputAmount"
                 />
               </InputBlockCell>

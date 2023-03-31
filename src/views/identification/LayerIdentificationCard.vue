@@ -110,7 +110,6 @@ export default {
                   pattern="\d*"
                   title="카드번호 첫번째 4자리"
                   id="layerIdentificationCardNumber01"
-                  :useDelete="false"
                 />
               </InputBlockCell>
               <InputBlockCell type="sub">-</InputBlockCell>
@@ -136,7 +135,6 @@ export default {
                   pattern="\d*"
                   title="카드번호 네번째 4자리"
                   id="layerIdentificationCardNumber04"
-                  :useDelete="false"
                 />
               </InputBlockCell>
             </InputBlock>
