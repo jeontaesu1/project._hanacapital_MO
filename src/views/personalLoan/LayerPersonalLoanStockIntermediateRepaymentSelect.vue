@@ -78,7 +78,7 @@ export default {
         <BasicBoxHead>
           <BasicBoxHeadLeft>스탁론 키움증권 (*****1234567)</BasicBoxHeadLeft>
         </BasicBoxHead>
-        <KeyValueList>
+        <KeyValueList margin="regular">
           <KeyValueItem
             :classNames="{
               item: 'text-body-3',
@@ -140,7 +140,7 @@ export default {
         <BasicBoxHead>
           <BasicBoxHeadLeft>스탁론 키움증권 (*****1234567)</BasicBoxHeadLeft>
         </BasicBoxHead>
-        <KeyValueList>
+        <KeyValueList margin="regular">
           <KeyValueItem
             :classNames="{
               item: 'text-body-3',

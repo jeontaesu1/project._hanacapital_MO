@@ -72,7 +72,7 @@ export default {
           <BasicBoxHeadLeft>스탁론</BasicBoxHeadLeft>
         </BasicBoxHead>
 
-        <KeyValueList>
+        <KeyValueList margin="regular">
           <KeyValueItem
             :classNames="{
               item: 'text-body-3',

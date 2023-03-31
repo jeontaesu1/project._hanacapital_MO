@@ -63,7 +63,7 @@ export default {
       </PageTextGroup>
 
       <BasicBox>
-        <KeyValueList>
+        <KeyValueList margin="regular">
           <KeyValueItem
             :classNames="{
               item: 'text-body-3',

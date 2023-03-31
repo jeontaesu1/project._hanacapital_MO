@@ -50,7 +50,7 @@ export default {
         </ToastPopupHead>
       </template>
 
-      <KeyValueList>
+      <KeyValueList margin="regular">
         <KeyValueItem>
           <KeyValueTitle>상품명</KeyValueTitle>
           <KeyValueText>

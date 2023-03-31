@@ -77,7 +77,7 @@ export default {
           </BasicBoxHeadRight>
         </BasicBoxHead>
 
-        <KeyValueList>
+        <KeyValueList margin="regular">
           <KeyValueItem
             :classNames="{
               item: 'text-body-3',
@@ -143,7 +143,7 @@ export default {
           </BasicBoxHeadRight>
         </BasicBoxHead>
 
-        <KeyValueList>
+        <KeyValueList margin="regular">
           <KeyValueItem
             :classNames="{
               item: 'text-body-3',
