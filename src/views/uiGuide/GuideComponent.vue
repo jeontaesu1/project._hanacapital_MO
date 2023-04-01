@@ -45,6 +45,9 @@ import ExtendSelect from '@/components/ui/form/ExtendSelect.vue';
 import ExtendSelectOption from '@/components/ui/form/ExtendSelectOption.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
+import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
+import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
+import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
 import UiTab from '@/components/ui/tab/UiTab.vue';
 import UiTabList from '@/components/ui/tab/UiTabList.vue';
@@ -66,6 +69,7 @@ import IllustInfo from '@/components/ui/common/IllustInfo.vue';
 import IllustInfoTitle from '@/components/ui/common/IllustInfoTitle.vue';
 import IllustInfoText from '@/components/ui/common/IllustInfoText.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
+import StatusSticker from '@/components/ui/common/StatusSticker.vue';
 
 import BrandLogo001 from '@/assets/images/bank-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/bank-logo/lotte.svg?component';
@@ -118,6 +122,9 @@ export default {
     ExtendSelectOption,
     BasicHr,
     BasicBox,
+    BasicBoxHead,
+    BasicBoxHeadLeft,
+    BasicBoxHeadRight,
     IllustObject,
     UiTab,
     UiTabList,
@@ -139,6 +146,7 @@ export default {
     IllustInfoTitle,
     IllustInfoText,
     UnitText,
+    StatusSticker,
     IconAdd,
     BrandLogo001,
     BrandLogo002,
@@ -3500,6 +3508,22 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Box Head</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <BasicBox>
+          <BasicBoxHead>
+            <BasicBoxHeadLeft>NH투자증권(유캔그린)</BasicBoxHeadLeft>
+            <BasicBoxHeadRight>
+              <StatusSticker>미신청</StatusSticker>
+            </BasicBoxHeadRight>
+          </BasicBoxHead>
+          // contnets
+        </BasicBox>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Key Value Text</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -3667,6 +3691,42 @@ export default {
 
         <UnitText leftUnit="$" align="right">333,389</UnitText>
         <UnitText rightUnit="원" align="right">333,389</UnitText>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Status Sticker</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <StatusSticker>미신청</StatusSticker>
+        <StatusSticker type="green">신청완료</StatusSticker>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Ranking Badge</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <span
+          :class="[$style['ranking-badge'], $style['ranking-badge--accent']]"
+          >안심
+        </span>
+        <span
+          :class="[$style['ranking-badge'], $style['ranking-badge--positive']]"
+          >다소안심
+        </span>
+        <span
+          :class="[$style['ranking-badge'], $style['ranking-badge--warning']]"
+          >보통
+        </span>
+        <span
+          :class="[$style['ranking-badge'], $style['ranking-badge--caution']]"
+          >신중
+        </span>
+        <span
+          :class="[$style['ranking-badge'], $style['ranking-badge--essential']]"
+          >주의
+        </span>
       </div>
     </section>
 
