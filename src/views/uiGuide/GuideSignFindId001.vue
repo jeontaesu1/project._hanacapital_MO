@@ -6,9 +6,9 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import LayerSignIdFindMethodSelect from '@/views/sign/LayerSignIdFindMethodSelect.vue';
-import LayerSignIdFindIdentify from '@/views/sign/LayerSignIdFindIdentify.vue';
-import LayerSignIdFindFail from '@/views/sign/LayerSignIdFindFail.vue';
+import LayerSignFindIdIdentificationMethodSelect from '@/views/sign/LayerSignFindIdIdentificationMethodSelect.vue';
+import LayerSignFindIdComplete from '@/views/sign/LayerSignFindIdComplete.vue';
+import LayerSignFindIdFail from '@/views/sign/LayerSignFindIdFail.vue';
 
 export default {
   components: {
@@ -16,9 +16,9 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    LayerSignIdFindMethodSelect,
-    LayerSignIdFindIdentify,
-    LayerSignIdFindFail,
+    LayerSignFindIdIdentificationMethodSelect,
+    LayerSignFindIdComplete,
+    LayerSignFindIdFail,
   },
   setup() {
     const layer001 = ref(null);
@@ -66,8 +66,8 @@ export default {
       </ButtonListItem>
     </ButtonList>
 
-    <LayerSignIdFindMethodSelect ref="layer001" />
-    <LayerSignIdFindIdentify ref="layer002" />
-    <LayerSignIdFindFail ref="layer003" />
+    <LayerSignFindIdIdentificationMethodSelect ref="layer001" />
+    <LayerSignFindIdComplete ref="layer002" />
+    <LayerSignFindIdFail ref="layer003" />
   </PageContents>
 </template>

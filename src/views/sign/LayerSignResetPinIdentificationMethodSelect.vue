@@ -34,8 +34,7 @@ export default {
       <template v-slot:head>
         <ToastPopupHead>
           <PopupTitle>
-            간편비밀번호 초기화를 위한
-            <br />
+            간편비밀번호 초기화를 위한<br />
             인증 방법을 선택해 주세요
           </PopupTitle>
         </ToastPopupHead>
@@ -66,5 +65,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/sign/LayerSignPinResetCrertificate.scss';
+@import '@/assets/scss/views/sign/LayerSignResetPinIdentificationMethodSelect.scss';
 </style>

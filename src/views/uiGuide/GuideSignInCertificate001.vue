@@ -6,7 +6,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import LayerSignCertificate from '@/views/sign/LayerSignCertificate.vue';
+import LayerSignInCertificateRegist from '@/views/sign/LayerSignInCertificateRegist.vue';
 
 export default {
   components: {
@@ -14,7 +14,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    LayerSignCertificate,
+    LayerSignInCertificateRegist,
   },
   setup() {
     const layer001 = ref(null);
@@ -44,6 +44,6 @@ export default {
       </ButtonListItem>
     </ButtonList>
 
-    <LayerSignCertificate ref="layer001" />
+    <LayerSignInCertificateRegist ref="layer001" />
   </PageContents>
 </template>

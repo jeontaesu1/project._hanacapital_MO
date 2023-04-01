@@ -74,11 +74,11 @@ export default {
       </PageTextGroup>
 
       <FormList>
-        <FormListItem titleText="이름" target="#LayerSignCertificateName">
+        <FormListItem titleText="이름" target="#layerSignCertificateName">
           <FormInvalid :error="state.nameError">
             <InputBlock :error="state.nameError">
               <InputBlockCell :flexible="true">
-                <BasicInput title="이름" id="LayerSignCertificateName" />
+                <BasicInput title="이름" id="layerSignCertificateName" />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -87,7 +87,7 @@ export default {
 
         <FormListItem
           titleText="주민등록번호"
-          target="#LayerSignCertificateIdNumber01"
+          target="#layerSignCertificateIdNumber01"
         >
           <FormInvalid :error="state.idNumberError">
             <InputBlock :error="state.idNumberError">
@@ -96,7 +96,7 @@ export default {
                   type="number"
                   pattern="\d*"
                   title="주민등록번호"
-                  id="LayerSignCertificateIdNumber01"
+                  id="layerSignCertificateIdNumber01"
                 />
               </InputBlockCell>
               <InputBlockCell type="sub">-</InputBlockCell>
@@ -105,7 +105,7 @@ export default {
                   type="number"
                   pattern="\d*"
                   title="주민등록번호 뒤 7자리 중 첫번째자리"
-                  id="LayerSignCertificateIdNumber02"
+                  id="layerSignCertificateIdNumber02"
                   :afterDot="6"
                 />
               </InputBlockCell>
@@ -115,7 +115,13 @@ export default {
         </FormListItem>
       </FormList>
 
-      <ul :class="[$style['basic-list'], 'row-margin-contents']">
+      <ul
+        :class="[
+          $style['basic-list'],
+          $style['basic-list--regular'],
+          'row-margin-contents',
+        ]"
+      >
         <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']"></div>
           <div :class="$style['basic-list__content']">
@@ -152,5 +158,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/sign/LayerSignCertificate.scss';
+@import '@/assets/scss/views/sign/LayerSignInCertificateRegist.scss';
 </style>

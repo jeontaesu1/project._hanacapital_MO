@@ -32,25 +32,23 @@ export default {
   <UiLayer ref="layer" type="full">
     <FullPopup>
       <template v-slot:head>
-        <FullPopupHead> </FullPopupHead>
+        <FullPopupHead></FullPopupHead>
       </template>
 
       <PageTextGroup>
         <PageMainText>
-          지문을<br />
+          얼굴을<br />
           <strong>인식시켜 주세요</strong>
         </PageMainText>
       </PageTextGroup>
 
       <IllustObject />
 
-      <a href="/" target="_blank" :class="$style['text-underline']"
-        >다른 로그인 방식</a
-      >
+      <div class="align-center">
+        <a href="/" target="_blank" class="basic-link color-gray">
+          다른 로그인 방식
+        </a>
+      </div>
     </FullPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/sign/LayerSignFingerprintCertificate.scss';
-</style>

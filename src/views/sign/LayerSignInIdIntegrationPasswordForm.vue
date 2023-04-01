@@ -45,6 +45,7 @@ export default {
   setup() {
     const state = reactive({
       passwordError: false,
+      passwordConfirmError: false,
     });
 
     const layer = ref(null);
@@ -82,16 +83,15 @@ export default {
       <FormList>
         <FormListItem
           titleText="신규 비밀번호"
-          target="#layerSignResetPassword"
+          target="#layerSignResetPasswordFormPassword"
         >
           <FormInvalid :error="state.passwordError">
             <InputBlock :error="state.passwordError">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   type="password"
-                  pattern="\d*"
                   title="신규 비밀번호"
-                  id="layerSignResetPassword"
+                  id="layerSignResetPasswordFormPassword"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -104,16 +104,15 @@ export default {
 
         <FormListItem
           titleText="신규 비밀번호 확인"
-          target="#layerSignResetPasswordCheck"
+          target="#layerSignResetPasswordFormPasswordConfirm"
         >
-          <FormInvalid :error="state.passwordError">
-            <InputBlock :error="state.passwordError">
+          <FormInvalid :error="state.passwordConfirmError">
+            <InputBlock :error="state.passwordConfirmError">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   type="password"
-                  pattern="\d*"
                   title="신규 비밀번호 확인"
-                  id="layerSignResetPasswordCheck"
+                  id="layerSignResetPasswordFormPasswordConfirm"
                 />
               </InputBlockCell>
             </InputBlock>

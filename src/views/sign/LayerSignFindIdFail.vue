@@ -52,8 +52,7 @@ export default {
       <IllustInfo>
         <IllustObject type="fail" />
         <IllustInfoTitle>
-          아이디를 찾을 수 없습니다
-          <br />
+          아이디를 찾을 수 없습니다<br />
           <strong>회원가입을 해주세요</strong>
         </IllustInfoTitle>
       </IllustInfo>

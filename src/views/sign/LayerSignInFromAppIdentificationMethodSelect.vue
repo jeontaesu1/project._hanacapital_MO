@@ -66,5 +66,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/sign/LayerSignUpAppMethodSelect.scss';
+@import '@/assets/scss/views/sign/LayerSignInFromAppIdentificationMethodSelect.scss';
 </style>

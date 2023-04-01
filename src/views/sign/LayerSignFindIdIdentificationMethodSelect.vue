@@ -64,5 +64,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/sign/LayerSignIdFindMethodSelect.scss';
+@import '@/assets/scss/views/sign/LayerSignFindIdIdentificationMethodSelect.scss';
 </style>

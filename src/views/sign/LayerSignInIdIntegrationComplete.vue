@@ -48,10 +48,9 @@ export default {
       </template>
 
       <IllustInfo>
-        <IllustObject type="fail" />
+        <IllustObject type="complete" />
         <IllustInfoTitle>
-          아이디 통합이
-          <br />
+          아이디 통합이<br />
           <strong>완료되었습니다</strong>
         </IllustInfoTitle>
       </IllustInfo>

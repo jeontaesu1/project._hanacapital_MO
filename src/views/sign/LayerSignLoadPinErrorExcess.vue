@@ -52,8 +52,7 @@ export default {
       <IllustInfo>
         <IllustObject type="fail" />
         <IllustInfoTitle>
-          오류횟수 초과로
-          <br />
+          오류횟수 초과로<br />
           <strong>간편가입을 시작합니다</strong>
         </IllustInfoTitle>
       </IllustInfo>

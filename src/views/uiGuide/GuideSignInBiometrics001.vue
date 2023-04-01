@@ -6,9 +6,9 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import LayerSignFaceCertificate from '@/views/sign/LayerSignFaceCertificate.vue';
-import LayerSignFingerprintCertificate from '@/views/sign/LayerSignFingerprintCertificate.vue';
-import LayerSignFaceIdCertificate from '@/views/sign/LayerSignFaceIdCertificate.vue';
+import LayerSignInBiometricsFace from '@/views/sign/LayerSignInBiometricsFace.vue';
+import LayerSignInBiometricsFingerprint from '@/views/sign/LayerSignInBiometricsFingerprint.vue';
+import LayerSignInBiometricsFaceId from '@/views/sign/LayerSignInBiometricsFaceId.vue';
 
 export default {
   components: {
@@ -16,9 +16,9 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    LayerSignFaceCertificate,
-    LayerSignFingerprintCertificate,
-    LayerSignFaceIdCertificate,
+    LayerSignInBiometricsFace,
+    LayerSignInBiometricsFingerprint,
+    LayerSignInBiometricsFaceId,
   },
   setup() {
     const layer001 = ref(null);
@@ -66,8 +66,8 @@ export default {
       </ButtonListItem>
     </ButtonList>
 
-    <LayerSignFaceCertificate ref="layer001" />
-    <LayerSignFingerprintCertificate ref="layer002" />
-    <LayerSignFaceIdCertificate ref="layer003" />
+    <LayerSignInBiometricsFace ref="layer001" />
+    <LayerSignInBiometricsFingerprint ref="layer002" />
+    <LayerSignInBiometricsFaceId ref="layer003" />
   </PageContents>
 </template>

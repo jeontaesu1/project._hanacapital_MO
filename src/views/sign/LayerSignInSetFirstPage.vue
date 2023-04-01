@@ -6,21 +6,12 @@ import ToastPopup from '@/components/ui/layer/ToastPopup.vue';
 import ToastPopupHead from '@/components/ui/layer/ToastPopupHead.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 
-import IconPhone from '@/assets/images/icon/phone.svg?component';
-import IconCertification from '@/assets/images/icon/certification.svg?component';
-import IconCard from '@/assets/images/icon/card.svg?component';
-import IconKakaopay from '@/assets/images/icon/kakaopay.svg?component';
-
 export default {
   components: {
     UiLayer,
     ToastPopup,
     ToastPopupHead,
     PopupTitle,
-    IconPhone,
-    IconCertification,
-    IconCard,
-    IconKakaopay,
   },
   setup() {
     const layer = ref(null);
@@ -37,7 +28,7 @@ export default {
     <ToastPopup>
       <template v-slot:head>
         <ToastPopupHead>
-          <PopupTitle>로그인 방식을 선택해 주세요</PopupTitle>
+          <PopupTitle>첫 화면을 선택해 주세요</PopupTitle>
         </ToastPopupHead>
       </template>
 
@@ -45,35 +36,43 @@ export default {
         <ul :class="$style['icon-buttons__list']">
           <li :class="$style['icon-buttons__item']">
             <button type="button" :class="$style['icon-buttons__block']">
-              <div :class="$style['icon-buttons__icon']"><IconPhone /></div>
               <div :class="$style['icon-buttons__content']">
-                <div :class="$style['icon-buttons__title']">간편비밀번호</div>
+                <div :class="$style['icon-buttons__title']">재고금융</div>
               </div>
             </button>
           </li>
           <li :class="$style['icon-buttons__item']">
             <button type="button" :class="$style['icon-buttons__block']">
-              <div :class="$style['icon-buttons__icon']">
-                <IconCertification />
-              </div>
               <div :class="$style['icon-buttons__content']">
-                <div :class="$style['icon-buttons__title']">얼굴인증</div>
+                <div :class="$style['icon-buttons__title']">재고금융실사</div>
               </div>
             </button>
           </li>
           <li :class="$style['icon-buttons__item']">
             <button type="button" :class="$style['icon-buttons__block']">
-              <div :class="$style['icon-buttons__icon']"><IconCard /></div>
               <div :class="$style['icon-buttons__content']">
-                <div :class="$style['icon-buttons__title']">지문인증</div>
+                <div :class="$style['icon-buttons__title']">하나원큐오토</div>
               </div>
             </button>
           </li>
           <li :class="$style['icon-buttons__item']">
             <button type="button" :class="$style['icon-buttons__block']">
-              <div :class="$style['icon-buttons__icon']"><IconKakaopay /></div>
               <div :class="$style['icon-buttons__content']">
-                <div :class="$style['icon-buttons__title']">Face ID 인증</div>
+                <div :class="$style['icon-buttons__title']">LM블로그</div>
+              </div>
+            </button>
+          </li>
+          <li :class="$style['icon-buttons__item']">
+            <button type="button" :class="$style['icon-buttons__block']">
+              <div :class="$style['icon-buttons__content']">
+                <div :class="$style['icon-buttons__title']">설비리스</div>
+              </div>
+            </button>
+          </li>
+          <li :class="$style['icon-buttons__item']">
+            <button type="button" :class="$style['icon-buttons__block']">
+              <div :class="$style['icon-buttons__content']">
+                <div :class="$style['icon-buttons__title']">손님용 메인</div>
               </div>
             </button>
           </li>
@@ -84,5 +83,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/sign/LayerSignPinMethodSelect.scss';
+@import '@/assets/scss/views/sign/LayerSignInSetFirstPage.scss';
 </style>

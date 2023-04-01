@@ -9,9 +9,8 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import IllustInfo from '@/components/ui/common/IllustInfo.vue';
-import IllustObject from '@/components/ui/common/IllustObject.vue';
 import IllustInfoTitle from '@/components/ui/common/IllustInfoTitle.vue';
-import IllustInfoText from '@/components/ui/common/IllustInfoText.vue';
+import IllustObject from '@/components/ui/common/IllustObject.vue';
 
 export default {
   components: {
@@ -23,9 +22,8 @@ export default {
     ButtonListItem,
     BasicButton,
     IllustInfo,
-    IllustObject,
     IllustInfoTitle,
-    IllustInfoText,
+    IllustObject,
   },
   setup() {
     const state = reactive({});
@@ -52,22 +50,12 @@ export default {
       </template>
 
       <IllustInfo>
-        <IllustObject type="fail" />
+        <IllustObject type="complete" />
         <IllustInfoTitle>
-          하나캐피탈 앱을
-          <br />
-          <strong>이용한 이력이 있습니다</strong>
+          <strong>비밀번호를 변경했어요</strong><br />
+          이제부터 서비스를 이용하실 수 있어요!
         </IllustInfoTitle>
-        <IllustInfoText>
-          계속 서비스를 이용하시려면
-          <br />
-          재인증 절차를 수행해주세요.
-        </IllustInfoText>
       </IllustInfo>
-
-      <a href="/" target="_blank" :class="$style['text-underline']"
-        >기존 인증을 사용할 수 없으세요?</a
-      >
 
       <template v-slot:foot>
         <ButtonList
@@ -76,14 +64,10 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton>간편비밀번호 인증하기</BasicButton>
+            <BasicButton>확인</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
     </FullPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/sign/SignLoadPinCall.scss';
-</style>

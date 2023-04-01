@@ -37,20 +37,18 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          얼굴을<br />
+          Face ID를 <br />
           <strong>인식시켜 주세요</strong>
         </PageMainText>
       </PageTextGroup>
 
       <IllustObject />
 
-      <a href="/" target="_blank" :class="$style['text-underline']"
-        >다른 로그인 방식</a
-      >
+      <div class="align-center">
+        <a href="/" target="_blank" class="basic-link color-gray">
+          다른 로그인 방식
+        </a>
+      </div>
     </FullPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/sign/LayerSignFaceCertificate.scss';
-</style>

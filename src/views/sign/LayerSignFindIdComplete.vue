@@ -51,19 +51,20 @@ export default {
       </template>
 
       <IllustInfo>
-        <IllustObject type="fail" />
+        <IllustObject type="complete" />
         <IllustInfoTitle>
-          김하나 님의 아이디는
-          <br />
+          김하나 님의 아이디는<br />
           <strong class="color-green">hana123</strong> 입니다
         </IllustInfoTitle>
       </IllustInfo>
 
-      <a href="/" target="_blank" :class="$style['text-underline']"
-        >비밀번호가 기억나지 않으세요?</a
-      >
-
       <template v-slot:foot>
+        <div class="row-margin-contents align-center">
+          <a href="/" target="_blank" class="basic-link color-gray">
+            비밀번호가 기억나지 않으세요?
+          </a>
+        </div>
+
         <ButtonList
           :classNames="{
             wrap: 'row-margin-none',
@@ -77,7 +78,3 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/sign/LayerSignIdFindIdentify.scss';
-</style>

@@ -6,12 +6,12 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import LayerSignIn from '@/views/sign/LayerSignIn.vue';
-import LayerSignCertificateSelect from '@/views/sign/LayerSignMethodSelect.vue';
-import LayerSignResetPassword from '@/views/sign/LayerSignResetPassword.vue';
-import LayerSignUpAppMethodSelect from '@/views/sign/LayerSignUpAppMethodSelect.vue';
-import LayerSignPasswordGuidePopup from '@/views/sign/LayerSignPasswordGuidePopup.vue';
-import LayerSignIntegratedIdSetupComplete from '../sign/LayerSignIntegratedIdSetupComplete.vue';
+import LayerSignInPasswordGuide from '@/views/sign/LayerSignInPasswordGuide.vue';
+import LayerSignInFromAppIdentificationMethodSelect from '@/views/sign/LayerSignInFromAppIdentificationMethodSelect.vue';
+import LayerSignInSetFirstPage from '@/views/sign/LayerSignInSetFirstPage.vue';
+import LayerSignInIntegrationIdentificationMethodSelect from '@/views/sign/LayerSignInIntegrationIdentificationMethodSelect.vue';
+import LayerSignInIdIntegrationPasswordForm from '@/views/sign/LayerSignInIdIntegrationPasswordForm.vue';
+import LayerSignInIdIntegrationComplete from '../sign/LayerSignInIdIntegrationComplete.vue';
 
 export default {
   components: {
@@ -19,12 +19,12 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    LayerSignIn,
-    LayerSignCertificateSelect,
-    LayerSignResetPassword,
-    LayerSignUpAppMethodSelect,
-    LayerSignPasswordGuidePopup,
-    LayerSignIntegratedIdSetupComplete,
+    LayerSignInPasswordGuide,
+    LayerSignInFromAppIdentificationMethodSelect,
+    LayerSignInSetFirstPage,
+    LayerSignInIntegrationIdentificationMethodSelect,
+    LayerSignInIdIntegrationPasswordForm,
+    LayerSignInIdIntegrationComplete,
   },
   setup() {
     const layer001 = ref(null);
@@ -80,34 +80,34 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">첫 화면 설정</BasicButton>
-      </ButtonListItem>
-      <ButtonListItem>
-        <BasicButton @click="layer002Open">인증 선택</BasicButton>
-      </ButtonListItem>
-      <ButtonListItem>
-        <BasicButton @click="layer003Open">통합 ID 비밀번호 설정</BasicButton>
-      </ButtonListItem>
-      <ButtonListItem>
-        <BasicButton @click="layer004Open">통합ID 설정완료</BasicButton>
-      </ButtonListItem>
-      <ButtonListItem>
-        <BasicButton @click="layer005Open"
-          >앱 회원가입 인증수단 선택 팝업</BasicButton
-        >
-      </ButtonListItem>
-      <ButtonListItem>
-        <BasicButton @click="layer006Open"
-          >비밀번호 3개월 경과 안내 팝업
+        <BasicButton @click="layer001Open">
+          비밀번호 3개월 경과 안내
         </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer002Open">
+          앱회원 인증수단 선택 팝업
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer003Open">첫 화면 설정</BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer004Open">통합 ID 인증수단 선택</BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer005Open">통합 ID 비밀번호 설정</BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer006Open">통합 ID 설정완료</BasicButton>
       </ButtonListItem>
     </ButtonList>
 
-    <LayerSignIn ref="layer001" />
-    <LayerSignCertificateSelect ref="layer002" />
-    <LayerSignResetPassword ref="layer003" />
-    <LayerSignIntegratedIdSetupComplete ref="layer004" />
-    <LayerSignUpAppMethodSelect ref="layer005" />
-    <LayerSignPasswordGuidePopup ref="layer006" />
+    <LayerSignInPasswordGuide ref="layer001" />
+    <LayerSignInFromAppIdentificationMethodSelect ref="layer002" />
+    <LayerSignInSetFirstPage ref="layer003" />
+    <LayerSignInIntegrationIdentificationMethodSelect ref="layer004" />
+    <LayerSignInIdIntegrationPasswordForm ref="layer005" />
+    <LayerSignInIdIntegrationComplete ref="layer006" />
   </PageContents>
 </template>

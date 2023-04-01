@@ -6,8 +6,8 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import LayerSignPinPasswordReset from '@/views/sign/LayerSignPinPasswordReset.vue';
-import LayerSignPinResetCrertificate from '@/views/sign/LayerSignPinResetCrertificate.vue';
+import LayerSignResetPin from '@/views/sign/LayerSignResetPin.vue';
+import LayerSignResetPinIdentificationMethodSelect from '@/views/sign/LayerSignResetPinIdentificationMethodSelect.vue';
 
 export default {
   components: {
@@ -15,8 +15,8 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    LayerSignPinPasswordReset,
-    LayerSignPinResetCrertificate,
+    LayerSignResetPin,
+    LayerSignResetPinIdentificationMethodSelect,
   },
   setup() {
     const layer001 = ref(null);
@@ -55,7 +55,7 @@ export default {
       </ButtonListItem>
     </ButtonList>
 
-    <LayerSignPinPasswordReset ref="layer001" />
-    <LayerSignPinResetCrertificate ref="layer002" />
+    <LayerSignResetPin ref="layer001" />
+    <LayerSignResetPinIdentificationMethodSelect ref="layer002" />
   </PageContents>
 </template>

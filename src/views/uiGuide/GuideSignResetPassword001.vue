@@ -7,9 +7,9 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 import LayerSignResetPasswordId from '@/views/sign/LayerSignResetPasswordId.vue';
-import LayerSignIdFindMethodSelect from '@/views/sign/LayerSignIdFindMethodSelect.vue';
-import LayerSignResetPassword from '@/views/sign/LayerSignResetPassword.vue';
-import LayerSignResetPasswordSuccess from '@/views/sign/LayerSignResetPasswordSuccess.vue';
+import LayerSignResetPasswordIdentificationMethodSelect from '@/views/sign/LayerSignResetPasswordIdentificationMethodSelect.vue';
+import LayerSignResetPasswordForm from '@/views/sign/LayerSignResetPasswordForm.vue';
+import LayerSignResetPasswordComplete from '@/views/sign/LayerSignResetPasswordComplete.vue';
 
 export default {
   components: {
@@ -17,10 +17,10 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    LayerSignIdFindMethodSelect,
+    LayerSignResetPasswordIdentificationMethodSelect,
     LayerSignResetPasswordId,
-    LayerSignResetPassword,
-    LayerSignResetPasswordSuccess,
+    LayerSignResetPasswordForm,
+    LayerSignResetPasswordComplete,
   },
   setup() {
     const layer001 = ref(null);
@@ -78,8 +78,8 @@ export default {
     </ButtonList>
 
     <LayerSignResetPasswordId ref="layer001" />
-    <LayerSignIdFindMethodSelect ref="layer002" />
-    <LayerSignResetPassword ref="layer003" />
-    <LayerSignResetPasswordSuccess ref="layer004" />
+    <LayerSignResetPasswordIdentificationMethodSelect ref="layer002" />
+    <LayerSignResetPasswordForm ref="layer003" />
+    <LayerSignResetPasswordComplete ref="layer004" />
   </PageContents>
 </template>

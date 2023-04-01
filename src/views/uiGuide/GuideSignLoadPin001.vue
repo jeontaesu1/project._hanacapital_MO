@@ -6,7 +6,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import SignLoadPinCall from '@/views/sign/SignLoadPinCall.vue';
+import LayerSignLoadPin from '@/views/sign/LayerSignLoadPin.vue';
 import LayerSignLoadPinErrorExcess from '@/views/sign/LayerSignLoadPinErrorExcess.vue';
 
 export default {
@@ -15,7 +15,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    SignLoadPinCall,
+    LayerSignLoadPin,
     LayerSignLoadPinErrorExcess,
   },
   setup() {
@@ -55,7 +55,7 @@ export default {
       </ButtonListItem>
     </ButtonList>
 
-    <SignLoadPinCall ref="layer001" />
+    <LayerSignLoadPin ref="layer001" />
     <LayerSignLoadPinErrorExcess ref="layer002" />
   </PageContents>
 </template>
