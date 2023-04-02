@@ -7,8 +7,8 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 import LayerPersonalLoanIdentificationMethodSelect from '@/views/personalLoan/LayerPersonalLoanIdentificationMethodSelect.vue';
-import LayerPersonalLoanBusinessAgree from '@/views/personalLoan/LayerPersonalLoanBusinessAgree.vue';
-import LayerPersonalLoanlLoanBusinessNotice from '@/views/personalLoan/LayerPersonalLoanlLoanBusinessNotice.vue';
+import LayerPersonalLoanBusinessHouseAgree from '@/views/personalLoan/LayerPersonalLoanBusinessHouseAgree.vue';
+import LayerPersonalLoanBusinessHouseNotice from '@/views/personalLoan/LayerPersonalLoanBusinessHouseNotice.vue';
 import LayerPersonalLoanBusinessHouseComplete from '@/views/personalLoan/LayerPersonalLoanBusinessHouseComplete.vue';
 
 export default {
@@ -18,8 +18,8 @@ export default {
     ButtonList,
     ButtonListItem,
     LayerPersonalLoanIdentificationMethodSelect,
-    LayerPersonalLoanBusinessAgree,
-    LayerPersonalLoanlLoanBusinessNotice,
+    LayerPersonalLoanBusinessHouseAgree,
+    LayerPersonalLoanBusinessHouseNotice,
     LayerPersonalLoanBusinessHouseComplete,
   },
   setup() {
@@ -81,8 +81,8 @@ export default {
     </ButtonList>
 
     <LayerPersonalLoanIdentificationMethodSelect ref="layer001" />
-    <LayerPersonalLoanBusinessAgree ref="layer002" />
-    <LayerPersonalLoanlLoanBusinessNotice ref="layer003" />
+    <LayerPersonalLoanBusinessHouseAgree ref="layer002" />
+    <LayerPersonalLoanBusinessHouseNotice ref="layer003" />
     <LayerPersonalLoanBusinessHouseComplete ref="layer004" />
   </PageContents>
 </template>
