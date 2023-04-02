@@ -73,65 +73,6 @@ body,
   vertical-align: top;
 }
 
-// font-weight
-.font-weight-thin.font-weight-thin {
-  font-weight: 100;
-}
-.font-weight-light.font-weight-light {
-  font-weight: 300;
-}
-.font-weight-regular.font-weight-regular {
-  font-weight: 400;
-}
-.font-weight-medium.font-weight-medium {
-  font-weight: 500;
-}
-.font-weight-bold.font-weight-bold {
-  font-weight: 700;
-}
-
-// underline
-.underline.underline {
-  text-decoration: underline;
-}
-
-// basic-link
-.basic-link.basic-link {
-  color: inherit;
-  text-decoration: underline;
-}
-
-// none-deco-link
-.none-deco-link.none-deco-link {
-  color: inherit;
-  text-decoration: none;
-}
-
-// link-block
-.link-block.link-block {
-  display: block;
-  color: inherit;
-  text-decoration: none;
-}
-
-// align
-.align-left.align-left {
-  text-align: left;
-}
-.align-right.align-right {
-  text-align: right;
-}
-.align-center.align-center {
-  text-align: center;
-}
-
-// ellipsis
-.ellipsis.ellipsis {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
 // align-items
 .align-items-start.align-items-start {
   align-items: flex-start;
@@ -224,6 +165,65 @@ body,
 .text-title-2.text-title-2 {
   margin: 0;
   @include font-size-head(18);
+}
+
+// font-weight
+.font-weight-thin.font-weight-thin {
+  font-weight: 100;
+}
+.font-weight-light.font-weight-light {
+  font-weight: 300;
+}
+.font-weight-regular.font-weight-regular {
+  font-weight: 400;
+}
+.font-weight-medium.font-weight-medium {
+  font-weight: 500;
+}
+.font-weight-bold.font-weight-bold {
+  font-weight: 700;
+}
+
+// align
+.align-left.align-left {
+  text-align: left;
+}
+.align-right.align-right {
+  text-align: right;
+}
+.align-center.align-center {
+  text-align: center;
+}
+
+// underline
+.underline.underline {
+  text-decoration: underline;
+}
+
+// basic-link
+.basic-link.basic-link {
+  color: inherit;
+  text-decoration: underline;
+}
+
+// none-deco-link
+.none-deco-link.none-deco-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+// link-block
+.link-block.link-block {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+// ellipsis
+.ellipsis.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 // row-margin
