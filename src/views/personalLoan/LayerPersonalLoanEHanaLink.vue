@@ -79,20 +79,23 @@ export default {
 
           <KeyValueItem>
             <KeyValueTitle>금리</KeyValueTitle>
-            <KeyValueText> 연 5.9% ~ 16.9% </KeyValueText>
+            <KeyValueText>연 5.9% ~ 16.9%</KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem>
             <KeyValueTitle>기간</KeyValueTitle>
-            <KeyValueText> 12개월 ~ 72개월 </KeyValueText>
+            <KeyValueText>12개월 ~ 72개월</KeyValueText>
           </KeyValueItem>
         </KeyValueList>
       </BasicBox>
 
-      <KeyValueList direction="vertical" :class="['row-margin-contents']">
+      <KeyValueList
+        direction="vertical"
+        :classNames="{ wrap: 'row-margin-contents' }"
+      >
         <KeyValueItem>
           <KeyValueTitle>상환방법</KeyValueTitle>
-          <KeyValueText> 원리금균등분할상환 </KeyValueText>
+          <KeyValueText>원리금균등분할상환</KeyValueText>
         </KeyValueItem>
 
         <KeyValueItem>
@@ -128,7 +131,7 @@ export default {
 
         <KeyValueItem>
           <KeyValueTitle>이자부과시기</KeyValueTitle>
-          <KeyValueText> 매월 후취 </KeyValueText>
+          <KeyValueText>매월 후취</KeyValueText>
         </KeyValueItem>
 
         <KeyValueItem>

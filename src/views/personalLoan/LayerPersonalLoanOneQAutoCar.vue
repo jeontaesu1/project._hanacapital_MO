@@ -46,7 +46,7 @@ export default {
         </ToastPopupHead>
       </template>
 
-      <KeyValueList :class="['row-margin-contents']">
+      <KeyValueList>
         <KeyValueItem>
           <KeyValueTitle>차량명의</KeyValueTitle>
           <KeyValueText>
@@ -78,7 +78,7 @@ export default {
         </KeyValueItem>
       </KeyValueList>
 
-      <ul :class="[$style['basic-list']]">
+      <ul :class="[$style['basic-list'], 'row-margin-contents']">
         <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']"></div>
           <div :class="$style['basic-list__content']">

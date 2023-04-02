@@ -13,6 +13,7 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
+import UnitText from '@/components/ui/text/UnitText.vue';
 
 import IconSearchMoney from '@/assets/images/icon/search-money.svg?component';
 import IconInterestRate from '@/assets/images/icon/interest-rate.svg?component';
@@ -32,6 +33,7 @@ export default {
     IllustObject,
     BasicBox,
     BasicHr,
+    UnitText,
     IconSearchMoney,
     IconInterestRate,
     IconCalculate,
@@ -64,41 +66,33 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <IllustObject type="complete" />
+      <IllustObject type="complete" :classNames="{ wrap: $style['illust'] }" />
 
       <BasicBox theme="tertiary" className="row-margin-contents">
-        <div :class="[$style['product-detail']]">
-          <ul :class="[$style['product-detail__list']]">
-            <li :class="[$style['product-detail__item']]">
-              <div :class="[$style['product-detail__icon']]">
-                <IconSearchMoney></IconSearchMoney>
+        <div :class="$style['product-detail']">
+          <ul :class="$style['product-detail__list']">
+            <li :class="$style['product-detail__item']">
+              <div :class="$style['product-detail__icon']">
+                <IconSearchMoney />
               </div>
-              <div :class="[$style['product-detail__block']]">
-                <span :class="[$style['product-detail__title']]">최대한도</span>
-                <div :class="[$style['product-detail__desc']]">
-                  <span :class="[$style['product-detail__desc-text']]"
-                    >4,000</span
-                  >
-                  <span :class="[$style['product-detail__desc-unit']]"
-                    >만원</span
-                  >
+              <div :class="$style['product-detail__block']">
+                <div :class="$style['product-detail__title']">최대한도</div>
+                <div :class="$style['product-detail__desc']">
+                  <UnitText size="regular" rightUnit="만원">4,000</UnitText>
                 </div>
               </div>
             </li>
-            <li :class="[$style['product-detail__item']]">
-              <div :class="[$style['product-detail__icon']]">
-                <IconInterestRate></IconInterestRate>
+            <li :class="$style['product-detail__item']">
+              <div :class="$style['product-detail__icon']">
+                <IconInterestRate />
               </div>
-              <div :class="[$style['product-detail__block']]">
-                <span :class="[$style['product-detail__title']]">예상금리</span>
-                <div :class="[$style['product-detail__desc']]">
-                  <span :class="[$style['product-detail__desc-text']]"
-                    >10.9</span
-                  >
-                  <span :class="[$style['product-detail__desc-unit']]">%</span>
-                  <span :class="[$style['product-detail__desc-sub']]"
-                    >(36개월 기준)</span
-                  >
+              <div :class="$style['product-detail__block']">
+                <div :class="$style['product-detail__title']">예상금리</div>
+                <div :class="$style['product-detail__desc']">
+                  <UnitText size="regular" rightUnit="%">10.9</UnitText>
+                  <div :class="$style['product-detail__desc-sub']">
+                    (36개월 기준)
+                  </div>
                 </div>
               </div>
             </li>

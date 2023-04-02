@@ -60,9 +60,9 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <IllustObject type="complete" />
+      <IllustObject type="complete" :classNames="{ wrap: $style['illust'] }" />
 
-      <div :class="['align-center']">// 배너 영역 (내용 확인 후 진행 예정)</div>
+      <div>// 배너 영역 (내용 확인 후 진행 예정)</div>
 
       <BasicHr
         type="contents"
@@ -81,15 +81,16 @@ export default {
               </div>
               <BasicButton
                 tagName="a"
-                inline="true"
                 size="mini"
                 line="true"
                 theme="quaternary"
+                :classNames="{ wrap: $style['icon-list__button'] }"
+                href="tel:1599-7942"
               >
                 <template v-slot:leftIcon>
                   <IconTell />
                 </template>
-                1800-1110
+                1599-7942
               </BasicButton>
             </div>
           </li>

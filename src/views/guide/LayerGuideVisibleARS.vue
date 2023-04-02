@@ -65,17 +65,17 @@ export default {
 
       <BasicBox>
         <KeyValueList>
-          <KeyValueItem>
+          <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>제공되는 정보</KeyValueTitle>
             <KeyValueText> 휴대전화번호, 앱푸시ID </KeyValueText>
           </KeyValueItem>
 
-          <KeyValueItem>
+          <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>제공받는 자</KeyValueTitle>
             <KeyValueText>(주)콜게이트</KeyValueText>
           </KeyValueItem>
 
-          <KeyValueItem>
+          <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>제공기간</KeyValueTitle>
             <KeyValueText> 동의 철회 시 또는 앱삭제시까지 </KeyValueText>
           </KeyValueItem>
@@ -112,7 +112,3 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/infomation/LayerVisibleARS.scss';
-</style>

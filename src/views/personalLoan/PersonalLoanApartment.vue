@@ -1,7 +1,6 @@
 <script>
 import { onMounted, onUnmounted } from 'vue';
 
-import { useUiCommonStore } from '@/stores/ui/common';
 import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
@@ -56,7 +55,6 @@ export default {
   setup() {
     const store = {
       ui: {
-        common: useUiCommonStore(),
         header: useUiHeaderStore(),
       },
     };
@@ -64,7 +62,14 @@ export default {
     onMounted(() => {
       store.ui.header.setTitle(() => '아파트론');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => ['share']);
+      store.ui.header.setRightButtons(() => [
+        {
+          name: 'share',
+          onClick: () => {
+            alert('공유하기 클릭');
+          },
+        },
+      ]);
     });
 
     onUnmounted(() => {
@@ -78,7 +83,7 @@ export default {
 
 <template>
   <PageContents>
-    <div :class="[$style['bg']]">
+    <div :class="$style['bg']">
       <PageTextGroup>
         <PageMainText>
           아파트 소유자를 위한<br />
@@ -87,7 +92,7 @@ export default {
         <PageSubText>행복아파트론 미진행 고객용</PageSubText>
       </PageTextGroup>
 
-      <div :class="[$style['illustrationImg'], 'row-margin-contents']">
+      <div :class="[$style['illustration-img'], 'row-margin-contents']">
         <ImgSample />
       </div>
 
@@ -95,43 +100,33 @@ export default {
         <div
           :class="[$style['product-detail'], $style['product-detail--small']]"
         >
-          <ul :class="[$style['product-detail__list']]">
-            <li :class="[$style['product-detail__item']]">
-              <div :class="[$style['product-detail__icon']]">
-                <IconMoney></IconMoney>
+          <ul :class="$style['product-detail__list']">
+            <li :class="$style['product-detail__item']">
+              <div :class="$style['product-detail__icon']">
+                <IconMoney />
               </div>
-              <div :class="[$style['product-detail__block']]">
-                <span :class="[$style['product-detail__title']]">최대한도</span>
-                <div :class="[$style['product-detail__desc']]">
-                  <span :class="[$style['product-detail__desc-text']]">
-                    5,000만원
-                  </span>
-                </div>
+              <div :class="$style['product-detail__block']">
+                <div :class="$style['product-detail__title']">최대한도</div>
+                <div :class="$style['product-detail__desc']">5,000만원</div>
               </div>
             </li>
-            <li :class="[$style['product-detail__item']]">
-              <div :class="[$style['product-detail__icon']]">
-                <IconRate></IconRate>
+            <li :class="$style['product-detail__item']">
+              <div :class="$style['product-detail__icon']">
+                <IconRate />
               </div>
-              <div :class="[$style['product-detail__block']]">
-                <span :class="[$style['product-detail__title']]">금리</span>
-                <div :class="[$style['product-detail__desc']]">
-                  <span :class="[$style['product-detail__desc-text']]">
-                    연 5.9~18.9%
-                  </span>
-                </div>
+              <div :class="$style['product-detail__block']">
+                <div :class="$style['product-detail__title']">금리</div>
+                <div :class="$style['product-detail__desc']">연 5.9~18.9%</div>
               </div>
             </li>
-            <li :class="[$style['product-detail__item']]">
-              <div :class="[$style['product-detail__icon']]">
-                <IconDate></IconDate>
+            <li :class="$style['product-detail__item']">
+              <div :class="$style['product-detail__icon']">
+                <IconDate />
               </div>
-              <div :class="[$style['product-detail__block']]">
-                <span :class="[$style['product-detail__title']]">기간</span>
-                <div :class="[$style['product-detail__desc']]">
-                  <span :class="[$style['product-detail__desc-text']]">
-                    12개월 ~ 120개월
-                  </span>
+              <div :class="$style['product-detail__block']">
+                <div :class="$style['product-detail__title']">기간</div>
+                <div :class="$style['product-detail__desc']">
+                  12개월 ~ 120개월
                 </div>
               </div>
             </li>
@@ -143,8 +138,8 @@ export default {
     <!-- [DD] 상품안내 탭 영역 -->
     <div :class="['row-margin-contents']">
       <BasicBox theme="tertiary">
-        <KeyValueList align="left">
-          <KeyValueItem>
+        <KeyValueList align="left" margin="regular">
+          <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>대상</KeyValueTitle>
             <KeyValueText>
               아파트를 소유한 손님
@@ -152,19 +147,19 @@ export default {
             </KeyValueText>
           </KeyValueItem>
 
-          <KeyValueItem>
+          <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>한도</KeyValueTitle>
             <KeyValueText>최소 300만원 ~ 최대 5천만원</KeyValueText>
           </KeyValueItem>
 
-          <KeyValueItem>
+          <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>금리</KeyValueTitle>
-            <KeyValueText> 연 5.9% ~ 18.9%</KeyValueText>
+            <KeyValueText>연 5.9% ~ 18.9%</KeyValueText>
           </KeyValueItem>
 
-          <KeyValueItem>
+          <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>기간</KeyValueTitle>
-            <KeyValueText> 12개월 ~ 120개월</KeyValueText>
+            <KeyValueText>12개월 ~ 120개월</KeyValueText>
           </KeyValueItem>
         </KeyValueList>
       </BasicBox>
@@ -177,29 +172,7 @@ export default {
       >
         <KeyValueItem>
           <KeyValueTitle>상환방법</KeyValueTitle>
-          <KeyValueText>
-            <ul
-              :class="[
-                $style['basic-list'],
-                $style['basic-list--regular'],
-                $style['basic-list--mini-margin'],
-              ]"
-            >
-              <li
-                :class="[
-                  $style['basic-list__item'],
-                  'color-black',
-                  'font-weight-regular',
-                  'text-body-2',
-                ]"
-              >
-                <div :class="$style['basic-list__symbol']"></div>
-                <div :class="$style['basic-list__content']">
-                  원리금균등분할상환
-                </div>
-              </li>
-            </ul>
-          </KeyValueText>
+          <KeyValueText>원리금균등분할상환</KeyValueText>
         </KeyValueItem>
 
         <KeyValueItem>
@@ -247,7 +220,7 @@ export default {
               <li
                 :class="[
                   $style['basic-list__item'],
-                  'color-tertiary',
+                  'color-gray-tertiary',
                   'font-weight-regular',
                   'text-body-5',
                 ]"
@@ -260,7 +233,7 @@ export default {
               <li
                 :class="[
                   $style['basic-list__item'],
-                  'color-tertiary',
+                  'color-gray-tertiary',
                   'font-weight-regular',
                   'text-body-5',
                 ]"
@@ -302,67 +275,67 @@ export default {
 
     <!-- [DD] 진행절차 탭 영역 -->
     <div :class="['row-margin-contents']">
-      <div :class="[$style['step']]">
-        <ul :class="[$style['step__list']]">
-          <li :class="[$style['step__item']]">
-            <div :class="[$style['step__inner']]">
-              <div :class="[$style['step__contents']]">
-                <span :class="[$style['step__badge']]">
-                  <span :class="[$style['step__badge-text']]">STEP 1</span>
-                </span>
-                <div :class="[$style['step__text']]">
+      <div :class="$style['step']">
+        <ul :class="$style['step__list']">
+          <li :class="$style['step__item']">
+            <div :class="$style['step__inner']">
+              <div :class="$style['step__contents']">
+                <div :class="$style['step__top']">
+                  <div :class="$style['step__badge']">STEP 1</div>
+                </div>
+                <div :class="$style['step__text']">
                   본인인증 및 손님의 정보로<br />
                   <strong>대출한도를 조회</strong>합니다.
                 </div>
               </div>
-              <div :class="[$style['step__icon']]">
+              <div :class="$style['step__icon']">
                 <IconSearchMoney />
               </div>
             </div>
           </li>
-          <li :class="[$style['step__item']]">
-            <div :class="[$style['step__inner']]">
-              <div :class="[$style['step__contents']]">
-                <span :class="[$style['step__badge']]">
-                  <span :class="[$style['step__badge-text']]">STEP 2</span>
-                </span>
-                <div :class="[$style['step__text']]">
+          <li :class="$style['step__item']">
+            <div :class="$style['step__inner']">
+              <div :class="$style['step__contents']">
+                <div :class="$style['step__top']">
+                  <div :class="$style['step__badge']">STEP 2</div>
+                </div>
+                <div :class="$style['step__text']">
                   한도 확인 후, 신청정보를 입력하여<br />
                   <strong>약정을 진행</strong>합니다.
                 </div>
               </div>
-              <div :class="[$style['step__icon']]">
+              <div :class="$style['step__icon']">
                 <IconPersonalTerms />
               </div>
             </div>
           </li>
-          <li :class="[$style['step__item']]">
-            <div :class="[$style['step__inner']]">
-              <div :class="[$style['step__contents']]">
-                <span :class="[$style['step__badge']]">
-                  <span :class="[$style['step__badge-text']]">STEP 3</span>
-                </span>
-                <div :class="[$style['step__text']]">
+          <li :class="$style['step__item']">
+            <div :class="$style['step__inner']">
+              <div :class="$style['step__contents']">
+                <div :class="$style['step__top']">
+                  <div :class="$style['step__badge']">STEP 3</div>
+                </div>
+                <div :class="$style['step__text']">
                   제출하신 정보로 최종심사 후<br />
                   손님께 <strong>결과를 안내</strong>해드립니다.
                 </div>
               </div>
-              <div :class="[$style['step__icon']]">
+              <div :class="$style['step__icon']">
                 <IconSend />
               </div>
             </div>
           </li>
-          <li :class="[$style['step__item']]">
-            <div :class="[$style['step__inner']]">
-              <div :class="[$style['step__contents']]">
-                <span :class="[$style['step__badge']]">
-                  <span :class="[$style['step__badge-text']]">STEP 4</span>
-                </span>
-                <div :class="[$style['step__text']]">
+          <li :class="$style['step__item']">
+            <div :class="$style['step__inner']">
+              <div :class="$style['step__contents']">
+                <div :class="$style['step__top']">
+                  <div :class="$style['step__badge']">STEP 4</div>
+                </div>
+                <div :class="$style['step__text']">
                   계좌로 <strong>대출금을 입금</strong>해드립니다.
                 </div>
               </div>
-              <div :class="[$style['step__icon']]">
+              <div :class="$style['step__icon']">
                 <IconDeposit />
               </div>
             </div>

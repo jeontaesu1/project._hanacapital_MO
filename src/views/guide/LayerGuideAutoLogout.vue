@@ -5,11 +5,9 @@ import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import ToastPopup from '@/components/ui/layer/ToastPopup.vue';
 import ToastPopupHead from '@/components/ui/layer/ToastPopupHead.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
-import PopupText from '@/components/ui/layer/PopupText.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-import IllustObject from '@/components/ui/common/IllustObject.vue';
 
 export default {
   components: {
@@ -17,11 +15,9 @@ export default {
     ToastPopup,
     ToastPopupHead,
     PopupTitle,
-    PopupText,
     BasicButton,
     ButtonList,
     ButtonListItem,
-    IllustObject,
   },
   setup() {
     const layer = ref(null);
@@ -37,24 +33,33 @@ export default {
   <UiLayer ref="layer" type="toast">
     <ToastPopup>
       <template v-slot:head>
-        <button type="button" :class="[$style['poppup__header-btn']]">
-          오늘 하루 보지 않기
-        </button>
         <ToastPopupHead>
-          <PopupTitle>하나캐피탈 앱을 설치해 보세요!</PopupTitle>
+          <PopupTitle>자동으로 로그아웃 예정입니다</PopupTitle>
         </ToastPopupHead>
       </template>
 
-      <PopupText>
-        하나캐피탈 앱을 설치하면<br />
-        <span class="color-green">
-          대출 이어하기, 대출 관리 등 하나캐피탈의<br />
-          모든 서비스
-        </span>
-        를 이용하실 수 있어요!
-      </PopupText>
+      <div :class="$style['timeout']">
+        <div :class="$style['timeout__title']">로그아웃까지 남은 시간</div>
+        <div :class="$style['timeout__time']">02:00</div>
+      </div>
 
-      <IllustObject :classNames="{ wrap: 'row-margin-item-group' }" />
+      <ul :class="[$style['basic-list'], 'row-margin-contents']">
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            안전한 이용을 위하여 10분 동안 거래가 없으실 경우 자동으로
+            로그아웃됩니다.
+          </div>
+        </li>
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            로그인 시간을 연장하시려면
+            <strong class="color-green font-weight-medium">시간 연장</strong>
+            버튼을 선택해 주세요.
+          </div>
+        </li>
+      </ul>
 
       <template v-slot:foot>
         <ButtonList
@@ -63,10 +68,10 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton line="true" theme="quaternary">다음에</BasicButton>
+            <BasicButton line="true" theme="quaternary">로그아웃</BasicButton>
           </ButtonListItem>
           <ButtonListItem>
-            <BasicButton>계속하기</BasicButton>
+            <BasicButton>시간연장</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
@@ -75,5 +80,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/infomation/LayerInstallApp.scss';
+@import '@/assets/scss/views/guide/LayerGuideAutoLogout.scss';
 </style>

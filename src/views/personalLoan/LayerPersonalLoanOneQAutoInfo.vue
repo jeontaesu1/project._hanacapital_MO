@@ -38,7 +38,13 @@ export default {
         </ToastPopupHead>
       </template>
 
-      <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+      <ul
+        :class="[
+          $style['basic-list'],
+          $style['basic-list--regular'],
+          $style['basic-list--normal-margin'],
+        ]"
+      >
         <li
           :class="[
             $style['basic-list__item'],
@@ -49,18 +55,41 @@ export default {
           <div :class="$style['basic-list__symbol']">1.</div>
           <div :class="$style['basic-list__content']">
             현재 차량의 설정건을 하나캐피탈로 대환하는 조건으로 진행 가능합니다.
-            <ul :class="[$style['basic-list'], $style['basic-list--small']]">
-              <li :class="[$style['basic-list__item'], 'color-black']">
+            <ul
+              :class="[$style['basic-list'], $style['basic-list--mini-margin']]"
+            >
+              <li
+                :class="[
+                  $style['basic-list__item'],
+                  'text-body-4',
+                  'font-weight-regular',
+                  'color-black',
+                ]"
+              >
                 <div :class="$style['basic-list__symbol']">-</div>
                 <div :class="$style['basic-list__content']">설정금액 : 0원</div>
               </li>
-              <li :class="[$style['basic-list__item'], 'color-black']">
+              <li
+                :class="[
+                  $style['basic-list__item'],
+                  'text-body-4',
+                  'font-weight-regular',
+                  'color-black',
+                ]"
+              >
                 <div :class="$style['basic-list__symbol']">-</div>
                 <div :class="$style['basic-list__content']">
                   설정일자 : YYYY-MM-DD
                 </div>
               </li>
-              <li :class="[$style['basic-list__item'], 'color-black']">
+              <li
+                :class="[
+                  $style['basic-list__item'],
+                  'text-body-4',
+                  'font-weight-regular',
+                  'color-black',
+                ]"
+              >
                 <div :class="$style['basic-list__symbol']">-</div>
                 <div :class="$style['basic-list__content']">
                   저당권자 : 오리

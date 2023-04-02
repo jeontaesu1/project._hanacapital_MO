@@ -28,6 +28,10 @@ export default {
       Type: String,
       default: null,
     },
+    size: {
+      Type: String,
+      default: null,
+    },
   },
   setup(props) {
     const customClassNames = computed(() => {
@@ -47,7 +51,8 @@ export default {
     :class="[
       $style['unit-text'],
       {
-        [$style[`unit-text--${align}`]]: align,
+        [$style[`unit-text--align-${align}`]]: align,
+        [$style[`unit-text--size-${size}`]]: size,
       },
       customClassNames.wrap,
     ]"

@@ -38,19 +38,20 @@ export default {
     <ToastPopup>
       <template v-slot:head>
         <ToastPopupHead>
-          <PopupTitle>앱을 평가해 주세요. </PopupTitle>
+          <PopupTitle>하나캐피탈 앱을 설치해 보세요!</PopupTitle>
         </ToastPopupHead>
       </template>
 
       <PopupText>
-        저희 앱 서비스는 어떠셨어요? <br />
-        손님의 소중한 의견에 항상 귀 기울일게요.
+        하나캐피탈 앱을 설치하면<br />
+        <strong class="color-green font-weight-medium">
+          대출 이어하기, 대출 관리 등 하나캐피탈의<br />
+          모든 서비스
+        </strong>
+        를 이용하실 수 있어요!
       </PopupText>
 
-      <IllustObject
-        type="star"
-        :classNames="{ wrap: 'row-margin-item-group' }"
-      />
+      <IllustObject :classNames="{ wrap: $style['illust'] }" />
 
       <template v-slot:foot>
         <ButtonList
@@ -62,7 +63,7 @@ export default {
             <BasicButton line="true" theme="quaternary">다음에</BasicButton>
           </ButtonListItem>
           <ButtonListItem>
-            <BasicButton>리뷰하러 가기</BasicButton>
+            <BasicButton>계속하기</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
@@ -71,5 +72,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/infomation/LayerAppEvaluation.scss';
+@import '@/assets/scss/views/guide/LayerGuideInstallApp.scss';
 </style>

@@ -12,6 +12,7 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 import IconCall from '@/assets/images/icon/call.svg?component';
+import IconNotify from '@/assets/images/icon/notify.svg?component';
 import IconCamera from '@/assets/images/icon/camera.svg?component';
 import IconFolder from '@/assets/images/icon/folder.svg?component';
 import IconLocation from '@/assets/images/icon/location.svg?component';
@@ -29,6 +30,7 @@ export default {
     ButtonList,
     ButtonListItem,
     IconCall,
+    IconNotify,
     IconCamera,
     IconFolder,
     IconLocation,
@@ -62,80 +64,94 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <div :class="[$style['authority']]">
-        <ul :class="[$style['authority__list']]">
-          <li :class="[$style['authority__item']]">
-            <span :class="[$style['authority__icon']]">
+      <div :class="$style['authority']">
+        <ul :class="$style['authority__list']">
+          <li :class="$style['authority__item']">
+            <div :class="$style['authority__icon']">
               <IconCall />
-            </span>
-            <div :class="[$style['authority__desc']]">
-              <div :class="[$style['authority__desc-block']]">
-                <div :class="[$style['authority__desc-title']]">전화</div>
-                <span class="color-green">(필수)</span>
+            </div>
+            <div :class="$style['authority__contents']">
+              <div :class="$style['authority__head']">
+                <div :class="$style['authority__title']">전화</div>
+                <div :class="[$style['authority__sub'], 'color-green']">
+                  (필수)
+                </div>
               </div>
-              <div :class="[$style['authority__desc-text']]">
+              <div :class="$style['authority__text']">
                 고객센터 및 기타 상담을 위하여<br />
                 전화를 걸 때 사용합니다.
               </div>
             </div>
           </li>
-          <li :class="[$style['authority__item']]">
-            <span :class="[$style['authority__icon']]">
-              <IconCamera />
-            </span>
-            <div :class="[$style['authority__desc']]">
-              <div :class="[$style['authority__desc-block']]">
-                <div :class="[$style['authority__desc-title']]">카메라</div>
-                <span class="color-gray">(선택)</span>
+          <li :class="$style['authority__item']">
+            <div :class="$style['authority__icon']">
+              <IconNotify />
+            </div>
+            <div :class="$style['authority__contents']">
+              <div :class="$style['authority__head']">
+                <div :class="$style['authority__title']">알림</div>
+                <div :class="$style['authority__sub']">(선택)</div>
               </div>
-              <div :class="[$style['authority__desc-text']]">
+              <div :class="$style['authority__text']">
+                알림 메시지를 수신할 수 있습니다.
+              </div>
+            </div>
+          </li>
+          <li :class="$style['authority__item']">
+            <div :class="$style['authority__icon']">
+              <IconCamera />
+            </div>
+            <div :class="$style['authority__contents']">
+              <div :class="$style['authority__head']">
+                <div :class="$style['authority__title']">카메라</div>
+                <div :class="$style['authority__sub']">(선택)</div>
+              </div>
+              <div :class="$style['authority__text']">
                 카메라를 통한 사진 파일을<br />
                 전송할 때 사용합니다.
               </div>
             </div>
           </li>
-          <li :class="[$style['authority__item']]">
-            <span :class="[$style['authority__icon']]">
+          <li :class="$style['authority__item']">
+            <div :class="$style['authority__icon']">
               <IconFolder />
-            </span>
-            <div :class="[$style['authority__desc']]">
-              <div :class="[$style['authority__desc-block']]">
-                <div :class="[$style['authority__desc-title']]">저장공간</div>
-                <span class="color-gray">(선택)</span>
+            </div>
+            <div :class="$style['authority__contents']">
+              <div :class="$style['authority__head']">
+                <div :class="$style['authority__title']">저장공간</div>
+                <div :class="$style['authority__sub']">(선택)</div>
               </div>
-              <div :class="[$style['authority__desc-text']]">
+              <div :class="$style['authority__text']">
                 외부 저장소 (메모리)에 저장되어 있는<br />
                 데이터를 전송할 때 사용합니다.
               </div>
             </div>
           </li>
-          <li :class="[$style['authority__item']]">
-            <span :class="[$style['authority__icon']]">
+          <li :class="$style['authority__item']">
+            <div :class="$style['authority__icon']">
               <IconLocation />
-            </span>
-            <div :class="[$style['authority__desc']]">
-              <div :class="[$style['authority__desc-block']]">
-                <div :class="[$style['authority__desc-title']]">위치</div>
-                <span class="color-gray">(선택)</span>
+            </div>
+            <div :class="$style['authority__contents']">
+              <div :class="$style['authority__head']">
+                <div :class="$style['authority__title']">위치</div>
+                <div :class="$style['authority__sub']">(선택)</div>
               </div>
-              <div :class="[$style['authority__desc-text']]">
+              <div :class="$style['authority__text']">
                 재고금융 실사 촬영을 등<br />
                 현재 위치정보 수집을 할 때 사용합니다.
               </div>
             </div>
           </li>
-          <li :class="[$style['authority__item']]">
-            <span :class="[$style['authority__icon']]">
+          <li :class="$style['authority__item']">
+            <div :class="$style['authority__icon']">
               <IconDocument />
-            </span>
-            <div :class="[$style['authority__desc']]">
-              <div :class="[$style['authority__desc-block']]">
-                <div :class="[$style['authority__desc-title']]">
-                  기기 및 앱 기록
-                </div>
-                <span class="color-gray">(선택)</span>
+            </div>
+            <div :class="$style['authority__contents']">
+              <div :class="$style['authority__head']">
+                <div :class="$style['authority__title']">기기 및 앱 기록</div>
+                <div :class="$style['authority__sub']">(선택)</div>
               </div>
-              <div :class="[$style['authority__desc-text']]">
+              <div :class="$style['authority__text']">
                 전자금융거래 사고 방지를 위해 기기에<br />
                 설치된 위협 정보를 수집할 수 있습니다.
               </div>
@@ -160,5 +176,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/infomation/LayerAuthorityAOS.scss';
+@import '@/assets/scss/views/guide/LayerGuideAuthority.scss';
 </style>

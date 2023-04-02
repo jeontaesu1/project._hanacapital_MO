@@ -2,20 +2,20 @@
   display: flex;
   align-items: flex-end;
 
-  &__left {
+  &__left,
+  &__right {
     display: block;
     flex: none;
-    margin-right: 2px;
     @include font-size-default(14);
     font-weight: 500;
   }
 
+  &__left {
+    margin-right: 2px;
+  }
+
   &__right {
-    display: block;
-    flex: none;
     margin-left: 2px;
-    @include font-size-default(14);
-    font-weight: 500;
   }
 
   &__val {
@@ -26,7 +26,19 @@
     font-weight: 700;
   }
 
-  &--right {
+  &--align-right {
     justify-content: flex-end;
+  }
+
+  &--size-regular {
+    .unit-text__left,
+    .unit-text__right {
+      @include font-size-default(13);
+    }
+
+    .unit-text__val {
+      @include font-size-default(16);
+      font-weight: 500;
+    }
   }
 }

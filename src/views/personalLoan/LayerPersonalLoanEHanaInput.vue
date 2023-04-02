@@ -19,6 +19,7 @@ import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
+import UnitText from '@/components/ui/text/UnitText.vue';
 
 import IconSearchMoney from '@/assets/images/icon/search-money.svg?component';
 import IconInterestRate from '@/assets/images/icon/interest-rate.svg?component';
@@ -44,21 +45,23 @@ export default {
     FormListItem,
     FormInvalid,
     FormInvalidMessage,
+    UnitText,
     IconSearchMoney,
     IconInterestRate,
     IconCommisionRate,
   },
   setup() {
-    const layer = ref(null);
     const state = reactive({
       amountError: false,
       periodError: false,
       methodError: false,
     });
 
+    const layer = ref(null);
+
     return {
-      layer,
       state,
+      layer,
     };
   },
 };
@@ -83,52 +86,43 @@ export default {
       </PageTextGroup>
 
       <BasicBox theme="tertiary">
-        <div :class="[$style['product-detail']]">
-          <ul :class="[$style['product-detail__list']]">
-            <li :class="[$style['product-detail__item']]">
-              <div :class="[$style['product-detail__icon']]">
-                <IconSearchMoney></IconSearchMoney>
+        <div :class="$style['product-detail']">
+          <ul :class="$style['product-detail__list']">
+            <li :class="$style['product-detail__item']">
+              <div :class="$style['product-detail__icon']">
+                <IconSearchMoney />
               </div>
-              <div :class="[$style['product-detail__block']]">
-                <span :class="[$style['product-detail__title']]">최대한도</span>
-                <div :class="[$style['product-detail__desc']]">
-                  <span :class="[$style['product-detail__desc-text']]"
-                    >4,000</span
-                  >
-                  <span :class="[$style['product-detail__desc-unit']]"
-                    >만원</span
-                  >
+              <div :class="$style['product-detail__block']">
+                <div :class="$style['product-detail__title']">최대한도</div>
+                <div :class="$style['product-detail__desc']">
+                  <UnitText size="regular" rightUnit="만원">4,000</UnitText>
                 </div>
               </div>
             </li>
-            <li :class="[$style['product-detail__item']]">
-              <div :class="[$style['product-detail__icon']]">
-                <IconInterestRate></IconInterestRate>
+            <li :class="$style['product-detail__item']">
+              <div :class="$style['product-detail__icon']">
+                <IconInterestRate />
               </div>
-              <div :class="[$style['product-detail__block']]">
-                <span :class="[$style['product-detail__title']]">예상금리</span>
-                <div :class="[$style['product-detail__desc']]">
-                  <span :class="[$style['product-detail__desc-text']]"
-                    >10.9</span
-                  >
-                  <span :class="[$style['product-detail__desc-unit']]">%</span>
-                  <span :class="[$style['product-detail__desc-sub']]"
-                    >(36개월 기준)</span
-                  >
+              <div :class="$style['product-detail__block']">
+                <div :class="$style['product-detail__title']">예상금리</div>
+                <div :class="$style['product-detail__desc']">
+                  <UnitText size="regular" rightUnit="%">10.9</UnitText>
+                  <div :class="$style['product-detail__desc-sub']">
+                    (36개월 기준)
+                  </div>
                 </div>
               </div>
             </li>
-            <li :class="[$style['product-detail__item']]">
-              <div :class="[$style['product-detail__icon']]">
-                <IconCommisionRate></IconCommisionRate>
+            <li :class="$style['product-detail__item']">
+              <div :class="$style['product-detail__icon']">
+                <IconCommisionRate />
               </div>
-              <div :class="[$style['product-detail__block']]">
-                <span :class="[$style['product-detail__title']]"
-                  >중도상환수수료율</span
-                >
-                <div :class="[$style['product-detail__desc']]">
-                  <span :class="[$style['product-detail__desc-text']]">0</span>
-                  <span :class="[$style['product-detail__desc-unit']]">%</span>
+              <div :class="$style['product-detail__block']">
+                <div :class="$style['product-detail__title']">
+                  중도상환수수료율
+                </div>
+                <div :class="$style['product-detail__desc']">
+                  <UnitText size="regular" rightUnit="%">0</UnitText>
                 </div>
               </div>
             </li>
@@ -139,25 +133,31 @@ export default {
       <FormList :classNames="{ wrap: 'row-margin-contents-group' }">
         <FormListItem
           titleText="대출신청금액"
-          target="#LayerPersonalLoanEHanaInputAmount"
+          target="#layerPersonalLoanEHanaInputAmount"
         >
           <FormInvalid :error="state.amountError">
             <InputBlock :error="state.amountError">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   align="right"
+                  :useDelete="false"
+                  pattern="\d*"
                   title="대출신청금액"
-                  id="LayerPersonalLoanEHanaInputAmount"
+                  id="layerPersonalLoanEHanaInputAmount"
                 />
               </InputBlockCell>
-              <template v-slot:innerRight>만원</template>
+              <template v-slot:innerRight>
+                <div class="text-body-3">만원</div>
+              </template>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
+
         <FormListItem
           titleText="대출기간"
-          target="#LayerPersonalLoanEHanaInputPeriod"
+          target="#layerPersonalLoanEHanaInputPeriodButton"
+          :selectOnly="true"
         >
           <FormInvalid :error="state.periodError">
             <InputBlock :error="state.periodError">
@@ -195,24 +195,29 @@ export default {
                   ]"
                   buttonTitle="대출기간 선택하기"
                   layerTitle="대출기간을 선택해 주세요."
-                  buttonId="LayerPersonalLoanEHanaInputPeriod"
+                  id="layerPersonalLoanEHanaInputPeriod"
+                  buttonId="layerPersonalLoanEHanaInputPeriodButton"
+                  defaultValue="3"
                 />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
+
         <FormListItem
           titleText="상환방법"
-          target="#LayerPersonalLoanEHanaInputMethod"
+          target="#layerPersonalLoanEHanaInputMethod"
+          :disabled="true"
         >
           <FormInvalid :error="state.methodError">
             <InputBlock :error="state.methodError">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="상환방법"
-                  id="LayerPersonalLoanEHanaInputMethod"
+                  id="layerPersonalLoanEHanaInputMethod"
                   value="원리금균등분할상환"
+                  :disabled="true"
                 />
               </InputBlockCell>
             </InputBlock>

@@ -1,14 +1,2 @@
 @import '@/assets/scss/components/import/agree-list.scss';
 @import '@/assets/scss/components/import/basic-list.scss';
-
-.basic-list--small {
-  margin-top: 4px;
-
-  .basic-list__item {
-    @include font-size-default(13);
-    font-weight: 400;
-  }
-  .basic-list__item + .basic-list__item {
-    margin-top: 2px;
-  }
-}

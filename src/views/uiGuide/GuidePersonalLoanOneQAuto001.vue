@@ -6,7 +6,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import LayerPersonalLoanOneQAutoIdentification from '@/views/personalLoan/LayerPersonalLoanOneQAutoIdentification.vue';
+import LayerPersonalLoanIdentificationMethodSelect from '@/views/personalLoan/LayerPersonalLoanIdentificationMethodSelect.vue';
 import LayerPersonalLoanOneQAutoAgree from '@/views/personalLoan/LayerPersonalLoanOneQAutoAgree.vue';
 import LayerPersonalLoanOneQAutoCar from '@/views/personalLoan/LayerPersonalLoanOneQAutoCar.vue';
 import LayerPersonalLoanOneQAutoResult from '@/views/personalLoan/LayerPersonalLoanOneQAutoResult.vue';
@@ -19,7 +19,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    LayerPersonalLoanOneQAutoIdentification,
+    LayerPersonalLoanIdentificationMethodSelect,
     LayerPersonalLoanOneQAutoAgree,
     LayerPersonalLoanOneQAutoCar,
     LayerPersonalLoanOneQAutoResult,
@@ -99,7 +99,7 @@ export default {
       </ButtonListItem>
     </ButtonList>
 
-    <LayerPersonalLoanOneQAutoIdentification ref="layer001" />
+    <LayerPersonalLoanIdentificationMethodSelect ref="layer001" />
     <LayerPersonalLoanOneQAutoAgree ref="layer002" />
     <LayerPersonalLoanOneQAutoCar ref="layer003" />
     <LayerPersonalLoanOneQAutoResult ref="layer004" />

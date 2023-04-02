@@ -54,9 +54,9 @@ const routes = [
     component: () => import('@/views/uiGuide/GuideClauseDetail001.vue'),
   },
   {
-    path: '/guide/infomation-001',
-    name: '/guide/infomation-001',
-    component: () => import('@/views/uiGuide/GuideInfomation.vue'),
+    path: '/guide/guide-001',
+    name: '/guide/guide-001',
+    component: () => import('@/views/uiGuide/GuideGuide001.vue'),
   },
   {
     path: '/guide/error-001',

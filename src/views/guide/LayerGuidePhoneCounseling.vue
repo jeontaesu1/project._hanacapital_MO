@@ -77,16 +77,15 @@ export default {
       <FormList>
         <FormListItem
           titleText="휴대폰번호"
-          target="#LayerPhoneConsultationPhone"
+          target="#layerGuidePhoneCounselingPhone"
         >
           <FormInvalid :error="state.phoneError">
             <InputBlock :error="state.phoneError">
               <InputBlockCell :flexible="true">
                 <BasicInput
-                  type="number"
                   pattern="\d*"
                   title="휴대폰번호"
-                  id="LayerPhoneConsultationPhone"
+                  id="layerGuidePhoneCounselingPhone"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -94,39 +93,38 @@ export default {
           </FormInvalid>
         </FormListItem>
       </FormList>
-      <div :class="[$style['agree-list'], 'row-margin-contents']">
-        <div :class="$style['agree-item']">
-          <UiAccordion :classNames="{ wrap: $style['agree-list__depth'] }">
-            <UiAccordionItem
-              :classNames="{ item: $style['agree-list__depth-item'] }"
-              :initialOpen="true"
-            >
-              <div :class="$style['agree-list__depth-head']">
-                <CheckBox
-                  id="LayerPhoneConsultation001"
-                  :classNames="{
-                    wrap: $style['agree-list__checkbox'],
-                  }"
-                  theme="tertiary"
-                >
-                  <CheckBoxObject />
-                  <CheckBoxLabelText>
-                    개인정보 수집·이용 동의
-                  </CheckBoxLabelText>
-                </CheckBox>
-                <div :class="$style['agree-list__right']">
-                  <UiAccordionOpener
-                    :classNames="{
-                      button: $style['agree-list__depth-opener'],
-                    }"
-                  />
-                </div>
-              </div>
 
-              <UiAccordionLayer> //Contents </UiAccordionLayer>
-            </UiAccordionItem>
-          </UiAccordion>
-        </div>
+      <div :class="[$style['agree-list'], 'row-margin-contents']">
+        <UiAccordion :classNames="{ wrap: $style['agree-list__depth'] }">
+          <UiAccordionItem
+            :classNames="{ item: $style['agree-list__depth-item'] }"
+            :initialOpen="true"
+          >
+            <div :class="$style['agree-list__depth-head']">
+              <CheckBox
+                id="layerGuidePhoneCounselingAgree001"
+                :classNames="{
+                  wrap: $style['agree-list__checkbox'],
+                }"
+                theme="tertiary"
+              >
+                <CheckBoxObject />
+                <CheckBoxLabelText> 개인정보 수집·이용 동의 </CheckBoxLabelText>
+              </CheckBox>
+              <div :class="$style['agree-list__right']">
+                <UiAccordionOpener
+                  :classNames="{
+                    button: $style['agree-list__depth-opener'],
+                  }"
+                />
+              </div>
+            </div>
+
+            <UiAccordionLayer>
+              <div :class="$style['agree-list__detail']">// Contents</div>
+            </UiAccordionLayer>
+          </UiAccordionItem>
+        </UiAccordion>
       </div>
 
       <template v-slot:foot>
@@ -145,5 +143,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/infomation/LayerPhoneConsultation.scss';
+@import '@/assets/scss/views/guide/LayerGuidePhoneCounseling.scss';
 </style>

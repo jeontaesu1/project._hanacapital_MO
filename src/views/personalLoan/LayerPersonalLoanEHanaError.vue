@@ -66,7 +66,7 @@ export default {
         </PageSubText>
       </PageTextGroup>
 
-      <IllustObject type="error" />
+      <IllustObject type="error" :classNames="{ wrap: $style['illust'] }" />
 
       <BasicHr
         type="contents"
@@ -85,10 +85,11 @@ export default {
               </div>
               <BasicButton
                 tagName="a"
-                inline="true"
                 size="mini"
                 line="true"
                 theme="quaternary"
+                :classNames="{ wrap: $style['icon-list__button'] }"
+                href="tel:1800-1110"
               >
                 <template v-slot:leftIcon>
                   <IconTell />

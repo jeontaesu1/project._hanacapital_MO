@@ -6,7 +6,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import LayerPersonalLoanBestCustomerIdentification from '@/views/personalLoan/LayerPersonalLoanBestCustomerIdentification.vue';
+import LayerPersonalLoanIdentificationMethodSelect from '@/views/personalLoan/LayerPersonalLoanIdentificationMethodSelect.vue';
 import LayerPersonalLoanBestCustomerAgree from '@/views/personalLoan/LayerPersonalLoanBestCustomerAgree.vue';
 import LayerPersonalLoanBestCustomerResult from '@/views/personalLoan/LayerPersonalLoanBestCustomerResult.vue';
 import LayerPersonalLoanBestCustomerInput from '@/views/personalLoan/LayerPersonalLoanBestCustomerInput.vue';
@@ -17,7 +17,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    LayerPersonalLoanBestCustomerIdentification,
+    LayerPersonalLoanIdentificationMethodSelect,
     LayerPersonalLoanBestCustomerAgree,
     LayerPersonalLoanBestCustomerResult,
     LayerPersonalLoanBestCustomerInput,
@@ -70,14 +70,14 @@ export default {
         <BasicButton @click="layer002Open">한도조회 동의</BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer003Open">한도조회 결과 </BasicButton>
+        <BasicButton @click="layer003Open">한도조회 결과</BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer004Open">신청 정보 입력 </BasicButton>
+        <BasicButton @click="layer004Open">신청 정보 입력</BasicButton>
       </ButtonListItem>
     </ButtonList>
 
-    <LayerPersonalLoanBestCustomerIdentification ref="layer001" />
+    <LayerPersonalLoanIdentificationMethodSelect ref="layer001" />
     <LayerPersonalLoanBestCustomerAgree ref="layer002" />
     <LayerPersonalLoanBestCustomerResult ref="layer003" />
     <LayerPersonalLoanBestCustomerInput ref="layer004" />

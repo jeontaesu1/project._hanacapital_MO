@@ -6,15 +6,14 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import LayerAuthorityAOS from '@/views/infomation/LayerAuthorityAOS.vue';
-import LayerAuthorityPermit from '@/views/infomation/LayerAuthorityPermit.vue';
-import LayerAuthorityIOS from '@/views/infomation/LayerAuthorityIOS.vue';
-import LayerVisibleARS from '@/views/infomation/LayerVisibleARS.vue';
-import LayerInstallApp from '@/views/infomation/LayerInstallApp.vue';
-import LayerPhoneConsultation from '@/views/infomation/LayerPhoneConsultation.vue';
-import LayerAutomaticLogout from '@/views/infomation/LayerAutomaticLogout.vue';
-import LayerEndSession from '@/views/infomation/LayerEndSession.vue';
-import LayerAppEvaluation from '@/views/infomation/LayerAppEvaluation.vue';
+import LayerGuideAuthority from '@/views/guide/LayerGuideAuthority.vue';
+import LayerGuideAuthorityPermit from '@/views/guide/LayerGuideAuthorityPermit.vue';
+import LayerGuideVisibleARS from '@/views/guide/LayerGuideVisibleARS.vue';
+import LayerGuideInstallApp from '@/views/guide/LayerGuideInstallApp.vue';
+import LayerGuidePhoneCounseling from '@/views/guide/LayerGuidePhoneCounseling.vue';
+import LayerGuideAutoLogout from '@/views/guide/LayerGuideAutoLogout.vue';
+import LayerGuideAutoEndIdentification from '@/views/guide/LayerGuideAutoEndIdentification.vue';
+import LayerGuideAppEvaluation from '@/views/guide/LayerGuideAppEvaluation.vue';
 
 export default {
   components: {
@@ -22,15 +21,14 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    LayerAuthorityAOS,
-    LayerAuthorityPermit,
-    LayerAuthorityIOS,
-    LayerVisibleARS,
-    LayerInstallApp,
-    LayerPhoneConsultation,
-    LayerAutomaticLogout,
-    LayerEndSession,
-    LayerAppEvaluation,
+    LayerGuideAuthority,
+    LayerGuideAuthorityPermit,
+    LayerGuideVisibleARS,
+    LayerGuideInstallApp,
+    LayerGuidePhoneCounseling,
+    LayerGuideAutoLogout,
+    LayerGuideAutoEndIdentification,
+    LayerGuideAppEvaluation,
   },
   setup() {
     const layer001 = ref(null);
@@ -41,7 +39,6 @@ export default {
     const layer006 = ref(null);
     const layer007 = ref(null);
     const layer008 = ref(null);
-    const layer009 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -67,9 +64,6 @@ export default {
     const layer008Open = (e = {}) => {
       layer008.value.layer.open(e.target);
     };
-    const layer009Open = (e = {}) => {
-      layer009.value.layer.open(e.target);
-    };
 
     return {
       layer001,
@@ -80,7 +74,6 @@ export default {
       layer006,
       layer007,
       layer008,
-      layer009,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -89,7 +82,6 @@ export default {
       layer006Open,
       layer007Open,
       layer008Open,
-      layer009Open,
     };
   },
 };
@@ -104,46 +96,42 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">앱 접근권한 안내 AOS</BasicButton>
+        <BasicButton @click="layer001Open">앱 접근권한 안내</BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer002Open">접근권한 허용 안내</BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer003Open">앱 접근권한 안내_iOS</BasicButton>
-      </ButtonListItem>
-      <ButtonListItem>
-        <BasicButton @click="layer004Open"
+        <BasicButton @click="layer003Open"
           >보이는 ARS 정보제공 안내</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer005Open">앱 설치 안내</BasicButton>
+        <BasicButton @click="layer004Open">앱 설치 안내</BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer006Open"
+        <BasicButton @click="layer005Open"
           >고객이탈방지 - 전화상담신청 팝업</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer007Open">로그아웃 안내</BasicButton>
+        <BasicButton @click="layer006Open">로그아웃 안내</BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer008Open">세션종료 안내</BasicButton>
+        <BasicButton @click="layer007Open">세션종료 안내</BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer009Open">앱 평가</BasicButton>
+        <BasicButton @click="layer008Open">앱 평가</BasicButton>
       </ButtonListItem>
     </ButtonList>
 
-    <LayerAuthorityAOS ref="layer001" />
-    <LayerAuthorityPermit ref="layer002" />
-    <LayerAuthorityIOS ref="layer003" />
-    <LayerVisibleARS ref="layer004" />
-    <LayerInstallApp ref="layer005" />
-    <LayerPhoneConsultation ref="layer006" />
-    <LayerAutomaticLogout ref="layer007" />
-    <LayerEndSession ref="layer008" />
-    <LayerAppEvaluation ref="layer009" />
+    <LayerGuideAuthority ref="layer001" />
+    <LayerGuideAuthorityPermit ref="layer002" />
+    <LayerGuideVisibleARS ref="layer003" />
+    <LayerGuideInstallApp ref="layer004" />
+    <LayerGuidePhoneCounseling ref="layer005" />
+    <LayerGuideAutoLogout ref="layer006" />
+    <LayerGuideAutoEndIdentification ref="layer007" />
+    <LayerGuideAppEvaluation ref="layer008" />
   </PageContents>
 </template>

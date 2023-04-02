@@ -48,11 +48,11 @@ export default {
     <ToastPopup>
       <template v-slot:head>
         <ToastPopupHead>
-          <PopupTitle> 금융상품 안내에 동의해 주세요 </PopupTitle>
+          <PopupTitle>금융상품 안내에 동의해 주세요</PopupTitle>
         </ToastPopupHead>
       </template>
 
-      <div :class="[$style['agree-list'], 'row-margin-contents']">
+      <div :class="[$style['agree-list']]">
         <div :class="$style['agree-item']">
           <UiAccordion :classNames="{ wrap: $style['agree-list__depth'] }">
             <UiAccordionItem
@@ -61,14 +61,14 @@ export default {
             >
               <div :class="$style['agree-list__depth-head']">
                 <CheckBox
-                  id="LayerPersonalLoanEHanaFinance001"
+                  id="layerPersonalLoanEHanaFinance001"
                   :classNames="{
                     wrap: $style['agree-list__checkbox'],
                   }"
                   theme="tertiary"
                 >
                   <CheckBoxObject />
-                  <CheckBoxLabelText> 소득정보자동산출약관 </CheckBoxLabelText>
+                  <CheckBoxLabelText>소득정보자동산출약관</CheckBoxLabelText>
                 </CheckBox>
                 <div :class="$style['agree-list__right']">
                   <UiAccordionOpener
@@ -80,85 +80,74 @@ export default {
               </div>
 
               <UiAccordionLayer>
-                <div :class="$style['layer__innner']">
-                  <ul
-                    :class="[
-                      $style['basic-list'],
-                      $style['basic-list--regular'],
-                    ]"
-                  >
-                    <li :class="[$style['basic-list__item'], 'text-body-3']">
-                      <div :class="$style['basic-list__content']">
-                        <div :class="$style['basic-list__title']">
-                          금융상품 안내
+                <div :class="$style['agree-list__detail']">
+                  <section>
+                    <h3
+                      class="text-body-4 row-margin-small color-gray-tertiary font-weight-medium"
+                    >
+                      금융상품 안내
+                    </h3>
+                    <p class="text-body-5 color-gray">
+                      한도조회 및 대출신청 절차가 완료되지 못한 경우, 귀사가
+                      본인에게 상담결과 및 금융상품 이용과 관련된 내용을 전화,
+                      휴대폰 문자메시지 등으로 안내하는 것을 동의합니다.
+                    </p>
+                    <ul :class="[$style['basic-list'], 'row-margin-item']">
+                      <li :class="$style['basic-list__item']">
+                        <div
+                          :class="[
+                            $style['basic-list__symbol'],
+                            'font-weight-medium',
+                          ]"
+                        >
+                          1.
                         </div>
-                        <div :class="$style['basic-list__text']">
-                          한도조회 및 대출신청 절차가 완료되지 못한 경우, 귀사가
-                          본인에게 상담결과 및 금융상품 이용과 관련된 내용을
-                          전화, 휴대폰 문자메시지 등으로 안내하는 것을
-                          동의합니다.
+                        <div :class="$style['basic-list__content']">
+                          <div class="font-weight-medium">
+                            개인정보 수집 및 이용목적
+                          </div>
+                          <div class="row-margin-small">
+                            한도조회, 대출신청, 심사, 신청중단 등의 경우, 전화,
+                            문자메시지 등을 통한 안내 및 상담
+                          </div>
                         </div>
-                      </div>
-                    </li>
-                  </ul>
-
-                  <ul :class="[$style['basic-list'], 'row-margin-item']">
-                    <li :class="$style['basic-list__item']">
-                      <div
-                        :class="[
-                          $style['basic-list__symbol'],
-                          'font-weight-medium',
-                        ]"
-                      >
-                        1.
-                      </div>
-                      <div :class="$style['basic-list__content']">
-                        <div :class="$style['basic-list__title']">
-                          개인정보 수집 및 이용목적
+                      </li>
+                      <li :class="$style['basic-list__item']">
+                        <div
+                          :class="[
+                            $style['basic-list__symbol'],
+                            'font-weight-medium',
+                          ]"
+                        >
+                          2.
                         </div>
-                        <div :class="$style['basic-list__text']">
-                          한도조회, 대출신청, 심사, 신청중단 등의 경우, 전화,
-                          문자메시지 등을 통한 안내 및 상담
+                        <div :class="$style['basic-list__content']">
+                          <div class="font-weight-medium">
+                            수집하는 개인정보 항목
+                          </div>
+                          <div class="row-margin-small">
+                            성명, 연락처, 전화번호
+                          </div>
                         </div>
-                      </div>
-                    </li>
-                    <li :class="$style['basic-list__item']">
-                      <div
-                        :class="[
-                          $style['basic-list__symbol'],
-                          'font-weight-medium',
-                        ]"
-                      >
-                        2.
-                      </div>
-                      <div :class="$style['basic-list__content']">
-                        <div :class="$style['basic-list__title']">
-                          수집하는 개인정보 항목
+                      </li>
+                      <li :class="$style['basic-list__item']">
+                        <div
+                          :class="[
+                            $style['basic-list__symbol'],
+                            'font-weight-medium',
+                          ]"
+                        >
+                          3.
                         </div>
-                        <div :class="$style['basic-list__text']">
-                          성명, 연락처, 전화번호
+                        <div :class="$style['basic-list__content']">
+                          <div class="font-weight-medium">보유 및 이용기간</div>
+                          <div class="row-margin-small">
+                            이용 동의일로부터 3개월 이내
+                          </div>
                         </div>
-                      </div>
-                    </li>
-                    <li :class="$style['basic-list__item']">
-                      <div
-                        :class="[
-                          $style['basic-list__symbol'],
-                          'font-weight-medium',
-                        ]"
-                      >
-                        3.
-                      </div>
-                      <div :class="$style['basic-list__content']">
-                        <div :class="$style['basic-list__title']">
-                          보유 및 이용기간
-                        </div>
-                        <div :class="$style['basic-list__text']">
-                          이용 동의일로부터 3개월 이내
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
+                      </li>
+                    </ul>
+                  </section>
                 </div>
               </UiAccordionLayer>
             </UiAccordionItem>

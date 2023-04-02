@@ -47,18 +47,20 @@ export default {
       </template>
 
       <BasicBox theme="quaternary">
-        <div :class="[$style['authority']]">
-          <ul :class="[$style['authority__list']]">
-            <li :class="[$style['authority__item']]">
-              <span :class="[$style['authority__icon']]">
+        <div :class="$style['authority']">
+          <ul :class="$style['authority__list']">
+            <li :class="$style['authority__item']">
+              <div :class="$style['authority__icon']">
                 <IconCall />
-              </span>
-              <div :class="[$style['authority__desc']]">
-                <div :class="[$style['authority__desc-block']]">
-                  <div :class="[$style['authority__desc-title']]">전화</div>
-                  <span class="color-green">(필수)</span>
+              </div>
+              <div :class="$style['authority__contents']">
+                <div :class="$style['authority__head']">
+                  <div :class="$style['authority__title']">전화</div>
+                  <div :class="[$style['authority__sub'], 'color-green']">
+                    (필수)
+                  </div>
                 </div>
-                <div :class="[$style['authority__desc-text']]">
+                <div :class="$style['authority__text']">
                   고객센터 및 기타 상담을 위하여<br />
                   전화를 걸 때 사용합니다.
                 </div>
@@ -72,10 +74,10 @@ export default {
         <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']"></div>
           <div :class="$style['basic-list__content']">
-            <span class="color-green font-weight-medium">설정</span>
+            <strong class="color-green font-weight-medium">설정</strong>
             버튼을 누르면 휴대폰의
-            <span class="color-green font-weight-medium">앱 권한</span> 화면으로
-            이동해요. 해당 화면에서 필수 접근권한을 허용해 주세요.
+            <strong class="color-green font-weight-medium">앱 권한</strong>
+            화면으로 이동해요. 해당 화면에서 필수 접근권한을 허용해 주세요.
           </div>
         </li>
       </ul>
@@ -99,5 +101,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/infomation/LayerAuthorityPermit.scss';
+@import '@/assets/scss/views/guide/LayerGuideAuthorityPermit.scss';
 </style>
