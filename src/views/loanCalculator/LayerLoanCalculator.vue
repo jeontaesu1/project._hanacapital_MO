@@ -119,7 +119,7 @@ export default {
               <BoxCheckListItem>
                 <BasicButton
                   size="small"
-                  line="true"
+                  :line="true"
                   theme="quaternary"
                   :minSide="true"
                 >
@@ -129,7 +129,7 @@ export default {
               <BoxCheckListItem>
                 <BasicButton
                   size="small"
-                  line="true"
+                  :line="true"
                   theme="quaternary"
                   :minSide="true"
                 >
@@ -139,7 +139,7 @@ export default {
               <BoxCheckListItem>
                 <BasicButton
                   size="small"
-                  line="true"
+                  :line="true"
                   theme="quaternary"
                   :minSide="true"
                 >
@@ -149,7 +149,7 @@ export default {
               <BoxCheckListItem>
                 <BasicButton
                   size="small"
-                  line="true"
+                  :line="true"
                   theme="quaternary"
                   :minSide="true"
                 >
@@ -251,7 +251,7 @@ export default {
               <BoxCheckListItem>
                 <BasicButton
                   size="small"
-                  line="true"
+                  :line="true"
                   theme="quaternary"
                   :minSide="true"
                 >
@@ -261,7 +261,7 @@ export default {
               <BoxCheckListItem>
                 <BasicButton
                   size="small"
-                  line="true"
+                  :line="true"
                   theme="quaternary"
                   :minSide="true"
                 >
@@ -271,7 +271,7 @@ export default {
               <BoxCheckListItem>
                 <BasicButton
                   size="small"
-                  line="true"
+                  :line="true"
                   theme="quaternary"
                   :minSide="true"
                 >
@@ -281,7 +281,7 @@ export default {
               <BoxCheckListItem>
                 <BasicButton
                   size="small"
-                  line="true"
+                  :line="true"
                   theme="quaternary"
                   :minSide="true"
                 >
@@ -317,7 +317,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton line="true" theme="quaternary">초기화</BasicButton>
+            <BasicButton :line="true" theme="quaternary">초기화</BasicButton>
           </ButtonListItem>
           <ButtonListItem>
             <BasicButton>계산하기</BasicButton>

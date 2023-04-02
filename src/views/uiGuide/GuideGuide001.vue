@@ -106,9 +106,11 @@ export default {
           >보이는 ARS 정보제공 안내</BasicButton
         >
       </ButtonListItem>
+      <!-- 작업중
       <ButtonListItem>
         <BasicButton @click="layer004Open">앱 설치 안내</BasicButton>
       </ButtonListItem>
+      -->
       <ButtonListItem>
         <BasicButton @click="layer005Open"
           >고객이탈방지 - 전화상담신청 팝업</BasicButton

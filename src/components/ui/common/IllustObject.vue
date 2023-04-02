@@ -36,7 +36,7 @@ export default {
     :class="[
       $style['illust-object'],
       {
-        [$style[`illust-object--${type}`]]: type,
+        [$style[`illust-object--type-${type}`]]: type,
       },
       customClassNames.wrap,
     ]"

@@ -39,7 +39,7 @@ export default {
     :class="[
       $style['buttons'],
       {
-        [$style[`buttons--${align}`]]: align,
+        [$style[`buttons--align-${align}`]]: align,
       },
       customClassNames.wrap,
     ]"

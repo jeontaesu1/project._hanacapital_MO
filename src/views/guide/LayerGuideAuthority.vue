@@ -66,6 +66,7 @@ export default {
 
       <div :class="$style['authority']">
         <ul :class="$style['authority__list']">
+          <!-- Case : Android -->
           <li :class="$style['authority__item']">
             <div :class="$style['authority__icon']">
               <IconCall />
@@ -83,6 +84,9 @@ export default {
               </div>
             </div>
           </li>
+          <!-- // Case : Android -->
+
+          <!-- Case : IOS -->
           <li :class="$style['authority__item']">
             <div :class="$style['authority__icon']">
               <IconNotify />
@@ -97,6 +101,8 @@ export default {
               </div>
             </div>
           </li>
+          <!-- // Case : IOS -->
+
           <li :class="$style['authority__item']">
             <div :class="$style['authority__icon']">
               <IconCamera />
@@ -112,6 +118,8 @@ export default {
               </div>
             </div>
           </li>
+
+          <!-- Case : Android -->
           <li :class="$style['authority__item']">
             <div :class="$style['authority__icon']">
               <IconFolder />
@@ -127,6 +135,8 @@ export default {
               </div>
             </div>
           </li>
+          <!-- // Case : Android -->
+
           <li :class="$style['authority__item']">
             <div :class="$style['authority__icon']">
               <IconLocation />

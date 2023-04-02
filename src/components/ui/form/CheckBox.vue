@@ -93,7 +93,7 @@ export default {
     :class="[
       $style['checkbox'],
       {
-        [$style[`checkbox--${theme}`]]: theme,
+        [$style[`checkbox--theme-${theme}`]]: theme,
         [$style[`checkbox--align-${align}`]]: align,
         [$style['checkbox--only-object']]: onlyObject,
         [$style['checkbox--full']]: full,

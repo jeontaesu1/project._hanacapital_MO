@@ -63,7 +63,7 @@ export default {
 </script>
 
 <template>
-  <UiLayer ref="layer" type="toast">
+  <UiLayer ref="layer" type="toast" :backgroundClose="true">
     <ToastPopup>
       <template v-slot:head>
         <ToastPopupHead>

@@ -35,7 +35,7 @@ export default {
 </script>
 
 <template>
-  <UiLayer ref="layer" type="toast">
+  <UiLayer ref="layer" type="toast" :backgroundClose="true">
     <ToastPopup>
       <template v-slot:head>
         <ToastPopupHead>
@@ -89,7 +89,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton line="true" theme="quaternary">종료</BasicButton>
+            <BasicButton :line="true" theme="quaternary">종료</BasicButton>
           </ButtonListItem>
           <ButtonListItem>
             <BasicButton>설정</BasicButton>

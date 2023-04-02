@@ -46,8 +46,8 @@ export default {
     :class="[
       $style['key-value'],
       {
-        [$style[`key-value--${align}`]]: align,
-        [$style[`key-value--${direction}`]]: direction,
+        [$style[`key-value--align-${align}`]]: align,
+        [$style[`key-value--direction-${direction}`]]: direction,
         [$style[`key-value--margin-${margin}`]]: margin,
       },
       customClassNames.wrap,

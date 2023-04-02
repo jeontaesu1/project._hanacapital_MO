@@ -126,7 +126,7 @@ export default {
         :class="[
           $style['input__input'],
           {
-            [$style[`input__input--${align}`]]: align,
+            [$style[`input__input--align-${align}`]]: align,
           },
           customClassNames.input,
         ]"

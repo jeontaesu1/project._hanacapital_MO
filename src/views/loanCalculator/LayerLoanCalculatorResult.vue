@@ -182,7 +182,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton line="true" theme="quaternary">다시하기</BasicButton>
+            <BasicButton :line="true" theme="quaternary">다시하기</BasicButton>
           </ButtonListItem>
           <ButtonListItem>
             <BasicButton>확인</BasicButton>

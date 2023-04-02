@@ -60,7 +60,7 @@ export default {
       <template v-slot:foot>
         <ButtonList align="full">
           <ButtonListItem>
-            <BasicButton line="true">신용카드로 시작하기</BasicButton>
+            <BasicButton :line="true">신용카드로 시작하기</BasicButton>
           </ButtonListItem>
           <ButtonListItem>
             <BasicButton>휴대폰 인증으로 시작하기</BasicButton>

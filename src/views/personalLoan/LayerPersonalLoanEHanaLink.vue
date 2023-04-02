@@ -169,6 +169,7 @@ export default {
         :class="[
           $style['basic-list'],
           $style['basic-list--regular'],
+          $style['basic-list--regular-margin'],
           'row-margin-contents',
         ]"
       >

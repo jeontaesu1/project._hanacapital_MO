@@ -47,9 +47,11 @@ export default {
       }"
       align="full"
     >
+      <!-- 작업중
       <ButtonListItem>
         <BasicButton @click="layer001Open">간편비밀번호 불러오기</BasicButton>
       </ButtonListItem>
+      -->
       <ButtonListItem>
         <BasicButton @click="layer002Open">오류횟수 초과</BasicButton>
       </ButtonListItem>

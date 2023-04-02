@@ -32,7 +32,12 @@ export default {
 </script>
 
 <template>
-  <UiLayer ref="layer" type="toast" v-slot="layerSlotProps">
+  <UiLayer
+    ref="layer"
+    type="toast"
+    :backgroundClose="true"
+    v-slot="layerSlotProps"
+  >
     <ToastPopup>
       <template v-slot:head>
         <ToastPopupHead>

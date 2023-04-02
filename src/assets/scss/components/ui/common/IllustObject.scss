@@ -8,25 +8,27 @@
   background: url('@/assets/images/illustration/img-1qcapital.png') no-repeat
     50% 0 / 100% auto;
 
-  &--complete {
-    background-image: url('@/assets/images/illustration/img-complete.png');
-  }
-  &--error {
-    background-image: url('@/assets/images/illustration/img-error.png');
-  }
-  &--fail {
-    background-image: url('@/assets/images/illustration/img-fail.png');
-  }
-  &--license {
-    background-image: url('@/assets/images/illustration/img-license.png');
-  }
-  &--certification {
-    background-image: url('@/assets/images/illustration/img-certification.png');
-  }
-  &--star {
-    background-image: url('@/assets/images/illustration/img-star.png');
-  }
-  &--appfree {
-    background-image: url('@/assets/images/illustration/img-appfree.png');
+  &--type {
+    &-complete {
+      background-image: url('@/assets/images/illustration/img-complete.png');
+    }
+    &-error {
+      background-image: url('@/assets/images/illustration/img-error.png');
+    }
+    &-fail {
+      background-image: url('@/assets/images/illustration/img-fail.png');
+    }
+    &-license {
+      background-image: url('@/assets/images/illustration/img-license.png');
+    }
+    &-certification {
+      background-image: url('@/assets/images/illustration/img-certification.png');
+    }
+    &-star {
+      background-image: url('@/assets/images/illustration/img-star.png');
+    }
+    &-appfree {
+      background-image: url('@/assets/images/illustration/img-appfree.png');
+    }
   }
 }

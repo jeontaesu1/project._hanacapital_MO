@@ -18,7 +18,7 @@ export default {
     :class="[
       $style['box'],
       {
-        [$style[`box--${theme}`]]: theme,
+        [$style[`box--theme-${theme}`]]: theme,
       },
       className,
     ]"

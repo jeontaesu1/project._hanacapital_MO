@@ -65,6 +65,7 @@ export default {
 
     <div :class="$style['icon-list']">
       <ul :class="$style['icon-list__list']">
+        <!-- Case : Android -->
         <li :class="$style['icon-list__item']">
           <button type="button" :class="$style['icon-list__block']">
             <div :class="$style['icon-list__icon']"><IconPlayStore /></div>
@@ -74,6 +75,9 @@ export default {
             </div>
           </button>
         </li>
+        <!-- // Case : Android -->
+
+        <!-- Case : IOS -->
         <li :class="$style['icon-list__item']">
           <button type="button" :class="$style['icon-list__block']">
             <div :class="$style['icon-list__icon']"><IconAppStore /></div>
@@ -83,6 +87,8 @@ export default {
             </div>
           </button>
         </li>
+        <!-- // Case : IOS -->
+
         <li :class="$style['icon-list__item']">
           <button type="button" :class="$style['icon-list__block']">
             <div :class="$style['icon-list__icon']"><IconHanaCapital /></div>

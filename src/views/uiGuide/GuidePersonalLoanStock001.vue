@@ -151,12 +151,14 @@ export default {
       }"
       align="full"
     >
+      <!-- 작업중
       <ButtonListItem>
         <BasicButton @click="layer001Open">약관동의</BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer002Open">연장신청 계약선택</BasicButton>
       </ButtonListItem>
+      -->
       <ButtonListItem>
         <BasicButton @click="layer003Open">
           만기연장 불가대상 - 잔여회차 확인
@@ -167,20 +169,24 @@ export default {
           만기연장 불가대상 - 연장가능 계약 없음
         </BasicButton>
       </ButtonListItem>
+      <!-- 작업중
       <ButtonListItem>
         <BasicButton @click="layer005Open"
           >연장신청 상품 만기현황 확인</BasicButton
         >
       </ButtonListItem>
+      -->
       <ButtonListItem>
         <BasicButton @click="layer006Open">연장 신청 완료</BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer007Open">연장 신청 실패</BasicButton>
       </ButtonListItem>
+      <!-- 작업중
       <ButtonListItem>
         <BasicButton @click="layer008Open">중도상환신청 계약선택</BasicButton>
       </ButtonListItem>
+      -->
       <ButtonListItem>
         <BasicButton @click="layer009Open">중도상환 불가대상</BasicButton>
       </ButtonListItem>
@@ -189,15 +195,19 @@ export default {
           >중도상환신청 안내 및 유의사항</BasicButton
         >
       </ButtonListItem>
+      <!-- 작업중
       <ButtonListItem>
         <BasicButton @click="layer011Open">중도상환금액 조회</BasicButton>
       </ButtonListItem>
+      -->
       <ButtonListItem>
         <BasicButton @click="layer012Open">중도상환 조회 불가</BasicButton>
       </ButtonListItem>
+      <!-- 작업중
       <ButtonListItem>
         <BasicButton @click="layer013Open">중도상환 신청확인</BasicButton>
       </ButtonListItem>
+      -->
       <ButtonListItem>
         <BasicButton @click="layer014Open">상환 신청 완료</BasicButton>
       </ButtonListItem>

@@ -72,39 +72,41 @@
     width: auto;
   }
 
-  &--small {
-    min-height: 42px;
-    padding: 11px;
-    @include font-size-button(13);
+  &--size {
+    &-small {
+      min-height: 42px;
+      padding: 11px;
+      @include font-size-button(13);
 
-    .button__icon {
-      width: 18px;
-      height: 18px;
+      .button__icon {
+        width: 18px;
+        height: 18px;
+      }
+
+      &.button--icon-only {
+        width: 42px;
+      }
     }
 
-    &.button--icon-only {
-      width: 42px;
-    }
-  }
+    &-mini {
+      min-height: 30px;
+      border-radius: 6px;
+      padding: 7px;
+      @include font-size-button(12);
 
-  &--mini {
-    min-height: 30px;
-    border-radius: 6px;
-    padding: 7px;
-    @include font-size-button(12);
+      .button__icon {
+        width: 14px;
+        height: 14px;
+      }
 
-    .button__icon {
-      width: 14px;
-      height: 14px;
-    }
+      .button__icon + .button__text,
+      .button__text + .button__icon {
+        margin-left: 0;
+      }
 
-    .button__icon + .button__text,
-    .button__text + .button__icon {
-      margin-left: 0;
-    }
-
-    &.button--icon-only {
-      width: 30px;
+      &.button--icon-only {
+        width: 30px;
+      }
     }
   }
 
@@ -137,28 +139,18 @@
     }
   }
 
-  &--secondary {
-    border-color: $color-blue-50;
-    background-color: $color-blue-50;
-
-    @include button-pressed-selector {
-      border-color: $color-blue-60;
-      background-color: $color-blue-60;
-    }
-
-    &.button--line {
-      color: $color-blue-50;
-
-      .button__icon {
-        svg {
-          * {
-            fill: $color-blue-50;
-          }
-        }
-      }
+  &--theme {
+    &-secondary {
+      border-color: $color-blue-50;
+      background-color: $color-blue-50;
 
       @include button-pressed-selector {
-        color: $color-blue-60;
+        border-color: $color-blue-60;
+        background-color: $color-blue-60;
+      }
+
+      &.button--line {
+        color: $color-blue-50;
 
         .button__icon {
           svg {
@@ -167,32 +159,32 @@
             }
           }
         }
-      }
-    }
-  }
 
-  &--tertiary {
-    border-color: $color-navy-50;
-    background-color: $color-navy-50;
+        @include button-pressed-selector {
+          color: $color-blue-60;
 
-    @include button-pressed-selector {
-      border-color: $color-navy-60;
-      background-color: $color-navy-60;
-    }
-
-    &.button--line {
-      color: $color-navy-50;
-
-      .button__icon {
-        svg {
-          * {
-            fill: $color-navy-50;
+          .button__icon {
+            svg {
+              * {
+                fill: $color-blue-50;
+              }
+            }
           }
         }
       }
+    }
+
+    &-tertiary {
+      border-color: $color-navy-50;
+      background-color: $color-navy-50;
 
       @include button-pressed-selector {
-        color: $color-navy-60;
+        border-color: $color-navy-60;
+        background-color: $color-navy-60;
+      }
+
+      &.button--line {
+        color: $color-navy-50;
 
         .button__icon {
           svg {
@@ -201,41 +193,53 @@
             }
           }
         }
-      }
-    }
-  }
 
-  &--quaternary {
-    color: $color-black;
-    border-color: $color-gray-30;
-    background-color: $color-gray-30;
+        @include button-pressed-selector {
+          color: $color-navy-60;
 
-    .button__icon {
-      svg {
-        * {
-          fill: $color-black;
+          .button__icon {
+            svg {
+              * {
+                fill: $color-navy-50;
+              }
+            }
+          }
         }
       }
     }
 
-    @include button-pressed-selector {
-      border-color: $color-gray-40;
-      background-color: $color-gray-40;
-    }
-
-    &.button--line {
-      color: $color-gray-70;
+    &-quaternary {
+      color: $color-black;
+      border-color: $color-gray-30;
+      background-color: $color-gray-30;
 
       .button__icon {
         svg {
           * {
-            fill: $color-gray-70;
+            fill: $color-black;
           }
         }
       }
 
       @include button-pressed-selector {
-        border-color: $color-gray-50;
+        border-color: $color-gray-40;
+        background-color: $color-gray-40;
+      }
+
+      &.button--line {
+        color: $color-gray-70;
+
+        .button__icon {
+          svg {
+            * {
+              fill: $color-gray-70;
+            }
+          }
+        }
+
+        @include button-pressed-selector {
+          border-color: $color-gray-50;
+        }
       }
     }
   }

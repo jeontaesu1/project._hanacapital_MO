@@ -146,7 +146,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton line="true" theme="quaternary">삭제</BasicButton>
+            <BasicButton :line="true" theme="quaternary">삭제</BasicButton>
           </ButtonListItem>
           <ButtonListItem>
             <BasicButton>등록</BasicButton>

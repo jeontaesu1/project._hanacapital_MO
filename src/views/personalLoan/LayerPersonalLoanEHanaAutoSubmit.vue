@@ -198,7 +198,7 @@ export default {
 
           <!-- Case : 공동인증서 없을 때 -->
           <ButtonListItem>
-            <BasicButton line="true">공동인증서 가져오기</BasicButton>
+            <BasicButton :line="true">공동인증서 가져오기</BasicButton>
           </ButtonListItem>
           <ButtonListItem>
             <BasicButton>소득정보 직접입력</BasicButton>

@@ -39,7 +39,7 @@ export default {
     :class="[
       $style['box-check-list'],
       {
-        [$style[`box-check-list--${align}`]]: align,
+        [$style[`box-check-list--align-${align}`]]: align,
       },
       customClassNames.wrap,
     ]"

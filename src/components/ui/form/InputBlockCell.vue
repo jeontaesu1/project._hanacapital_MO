@@ -48,7 +48,7 @@ export default {
       styleModule['input-block__cell'],
       {
         [styleModule['input-block__cell--flexible']]: flexible,
-        [styleModule[`input-block__cell--${type}`]]: type,
+        [styleModule[`input-block__cell--type-${type}`]]: type,
         [styleModule[`input-block__cell--margin-${margin}`]]: margin,
       },
       customClassNames.cell,

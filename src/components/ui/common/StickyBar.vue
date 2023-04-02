@@ -1,5 +1,5 @@
 <script>
-import { ref, reactive, computed, onMounted, onUnmounted } from 'vue';
+import { ref, reactive, computed, onMounted, onUnmounted, nextTick } from 'vue';
 
 import { useUiScrollBlockStore } from '@/stores/ui/scrollBlock';
 import { useUiHeaderStore } from '@/stores/ui/header';
@@ -47,6 +47,18 @@ export default {
       return store.ui.header.height;
     });
 
+    const setMargin = () => {
+      const contentsEl = contents.value;
+      const contentsInnerEl = contentsEl.children[0];
+      const contentsInnerStyles = getComputedStyle(contentsInnerEl);
+      const marginTop = contentsInnerStyles.getPropertyValue('margin-top');
+      const marginBottom =
+        contentsInnerStyles.getPropertyValue('margin-bottom');
+
+      state.marginTop = marginTop;
+      state.marginBottom = marginBottom;
+    };
+
     const update = () => {
       const wrapEl = wrap.value;
       const contentsEl = contents.value;
@@ -68,14 +80,8 @@ export default {
         return;
       }
 
-      const contentsInnerStyles = getComputedStyle(contentsInnerEl);
-      const marginTop = contentsInnerStyles.getPropertyValue('margin-top');
-      const marginBottom =
-        contentsInnerStyles.getPropertyValue('margin-bottom');
       const height = contentsInnerEl.offsetHeight;
 
-      state.marginTop = marginTop;
-      state.marginBottom = marginBottom;
       state.height = `${height}px`;
 
       if (!state.isSticky) {
@@ -96,7 +102,11 @@ export default {
     };
 
     onMounted(() => {
-      update();
+      setMargin();
+
+      nextTick(() => {
+        update();
+      });
 
       window.addEventListener('load', load);
       window.addEventListener('scroll', scroll);

@@ -313,57 +313,57 @@ export default {
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">button tag</h3>
         <BasicButton>Button</BasicButton>
-        <BasicButton disabled>Button</BasicButton>
+        <BasicButton :disabled="true">Button</BasicButton>
         <BasicButton theme="secondary">Button</BasicButton>
-        <BasicButton theme="secondary" disabled>Button</BasicButton>
+        <BasicButton theme="secondary" :disabled="true">Button</BasicButton>
         <BasicButton theme="tertiary">Button</BasicButton>
-        <BasicButton theme="tertiary" disabled>Button</BasicButton>
+        <BasicButton theme="tertiary" :disabled="true">Button</BasicButton>
         <BasicButton theme="quaternary">
           <template v-slot:leftIcon>
             <IconAdd />
           </template>
           Button
         </BasicButton>
-        <BasicButton theme="quaternary" disabled>
+        <BasicButton theme="quaternary" :disabled="true">
           Button
           <template v-slot:rightIcon>
             <IconAdd />
           </template>
         </BasicButton>
 
-        <BasicButton line="true">Button</BasicButton>
-        <BasicButton line="true" disabled>Button</BasicButton>
-        <BasicButton line="true" theme="secondary">
+        <BasicButton :line="true">Button</BasicButton>
+        <BasicButton :line="true" :disabled="true">Button</BasicButton>
+        <BasicButton :line="true" theme="secondary">
           Button
           <template v-slot:rightIcon>
             <IconAdd />
           </template>
         </BasicButton>
-        <BasicButton line="true" theme="secondary" disabled>
+        <BasicButton :line="true" theme="secondary" :disabled="true">
           Button
           <template v-slot:rightIcon>
             <IconAdd />
           </template>
         </BasicButton>
-        <BasicButton line="true" theme="tertiary">
+        <BasicButton :line="true" theme="tertiary">
           Button
           <template v-slot:rightIcon>
             <IconAdd />
           </template>
         </BasicButton>
-        <BasicButton line="true" theme="tertiary" disabled>
+        <BasicButton :line="true" theme="tertiary" :disabled="true">
           Button
           <template v-slot:rightIcon>
             <IconAdd />
           </template>
         </BasicButton>
-        <BasicButton line="true" theme="quaternary">
+        <BasicButton :line="true" theme="quaternary">
           <template v-slot:leftIcon>
             <IconAdd />
           </template>
           Button
         </BasicButton>
-        <BasicButton line="true" theme="quaternary" disabled>
+        <BasicButton :line="true" theme="quaternary" :disabled="true">
           Button
           <template v-slot:rightIcon>
             <IconAdd />
@@ -385,13 +385,13 @@ export default {
             <IconAdd />
           </template>
         </BasicButton>
-        <BasicButton tagName="a" line="true">
+        <BasicButton tagName="a" :line="true">
           <template v-slot:leftIcon>
             <IconAdd />
           </template>
           Button
         </BasicButton>
-        <BasicButton tagName="a" line="true" disabledStyle="true">
+        <BasicButton tagName="a" :line="true" disabledStyle="true">
           Button
           <template v-slot:rightIcon>
             <IconAdd />
@@ -413,7 +413,7 @@ export default {
             <IconAdd />
           </template>
         </BasicButton>
-        <BasicButton tagName="RouterLink" to="/" line="true">
+        <BasicButton tagName="RouterLink" to="/" :line="true">
           <template v-slot:leftIcon>
             <IconAdd />
           </template>
@@ -422,7 +422,7 @@ export default {
         <BasicButton
           tagName="RouterLink"
           to="/"
-          line="true"
+          :line="true"
           disabledStyle="true"
         >
           Button
@@ -435,7 +435,7 @@ export default {
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">small</h3>
         <BasicButton size="small">Button</BasicButton>
-        <BasicButton size="small" disabled>Button</BasicButton>
+        <BasicButton size="small" :disabled="true">Button</BasicButton>
         <BasicButton tagName="a" size="small">
           <template v-slot:leftIcon>
             <IconAdd />
@@ -449,18 +449,20 @@ export default {
           </template>
         </BasicButton>
         <BasicButton size="small" theme="secondary">Button</BasicButton>
-        <BasicButton size="small" theme="secondary" disabled
+        <BasicButton size="small" theme="secondary" :disabled="true"
           >Button</BasicButton
         >
         <BasicButton size="small" theme="tertiary">Button</BasicButton>
-        <BasicButton size="small" theme="tertiary" disabled>Button</BasicButton>
+        <BasicButton size="small" theme="tertiary" :disabled="true"
+          >Button</BasicButton
+        >
         <BasicButton size="small" theme="quaternary">
           <template v-slot:leftIcon>
             <IconAdd />
           </template>
           Button
         </BasicButton>
-        <BasicButton size="small" theme="quaternary" disabled>
+        <BasicButton size="small" theme="quaternary" :disabled="true">
           Button
           <template v-slot:rightIcon>
             <IconAdd />
@@ -471,7 +473,7 @@ export default {
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">mini</h3>
         <BasicButton size="mini">Button</BasicButton>
-        <BasicButton size="mini" disabled>Button</BasicButton>
+        <BasicButton size="mini" :disabled="true">Button</BasicButton>
         <BasicButton tagName="a" size="mini">
           <template v-slot:leftIcon>
             <IconAdd />
@@ -485,16 +487,20 @@ export default {
           </template>
         </BasicButton>
         <BasicButton size="mini" theme="secondary">Button</BasicButton>
-        <BasicButton size="mini" theme="secondary" disabled>Button</BasicButton>
+        <BasicButton size="mini" theme="secondary" :disabled="true"
+          >Button</BasicButton
+        >
         <BasicButton size="mini" theme="tertiary">Button</BasicButton>
-        <BasicButton size="mini" theme="tertiary" disabled>Button</BasicButton>
+        <BasicButton size="mini" theme="tertiary" :disabled="true"
+          >Button</BasicButton
+        >
         <BasicButton size="mini" theme="quaternary">
           <template v-slot:leftIcon>
             <IconAdd />
           </template>
           Button
         </BasicButton>
-        <BasicButton size="mini" theme="quaternary" disabled>
+        <BasicButton size="mini" theme="quaternary" :disabled="true">
           Button
           <template v-slot:rightIcon>
             <IconAdd />
@@ -505,7 +511,7 @@ export default {
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">inline style</h3>
         <BasicButton inline="true">Button</BasicButton>
-        <BasicButton inline="true" disabled>Button</BasicButton>
+        <BasicButton inline="true" :disabled="true">Button</BasicButton>
         <BasicButton tagName="a" inline="true">
           <template v-slot:leftIcon>
             <IconAdd />
@@ -524,7 +530,7 @@ export default {
             <IconAdd />
           </template>
         </BasicButton>
-        <BasicButton inline="true" theme="secondary" disabled>
+        <BasicButton inline="true" theme="secondary" :disabled="true">
           Button
           <template v-slot:rightIcon>
             <IconAdd />
@@ -536,7 +542,7 @@ export default {
             <IconAdd />
           </template>
         </BasicButton>
-        <BasicButton inline="true" theme="tertiary" disabled>
+        <BasicButton inline="true" theme="tertiary" :disabled="true">
           Button
           <template v-slot:rightIcon>
             <IconAdd />
@@ -548,7 +554,7 @@ export default {
           </template>
           Button
         </BasicButton>
-        <BasicButton inline="true" theme="quaternary" disabled>
+        <BasicButton inline="true" theme="quaternary" :disabled="true">
           Button
           <template v-slot:rightIcon>
             <IconAdd />
@@ -558,17 +564,17 @@ export default {
 
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">only icon</h3>
-        <BasicButton inline="true" line="true">
+        <BasicButton inline="true" :line="true">
           <template v-slot:leftIcon>
             <IconAdd />
           </template>
         </BasicButton>
-        <BasicButton inline="true" line="true" size="small">
+        <BasicButton inline="true" :line="true" size="small">
           <template v-slot:leftIcon>
             <IconAdd />
           </template>
         </BasicButton>
-        <BasicButton inline="true" line="true" size="mini">
+        <BasicButton inline="true" :line="true" size="mini">
           <template v-slot:leftIcon>
             <IconAdd />
           </template>
@@ -636,7 +642,12 @@ export default {
           </FullPopup>
         </UiLayer>
 
-        <UiLayer ref="layerTest002" type="toast" v-slot="layerSlotProps">
+        <UiLayer
+          ref="layerTest002"
+          type="toast"
+          :backgroundClose="true"
+          v-slot="layerSlotProps"
+        >
           <ToastPopup>
             <template v-slot:head>
               <ToastPopupHead>
@@ -774,7 +785,7 @@ export default {
         <h3 class="test-section-sub-title">Default</h3>
         <ButtonList>
           <ButtonListItem>
-            <BasicButton line="true" theme="quaternary">Button 1</BasicButton>
+            <BasicButton :line="true" theme="quaternary">Button 1</BasicButton>
           </ButtonListItem>
           <ButtonListItem>
             <BasicButton>Button 2</BasicButton>
@@ -783,7 +794,7 @@ export default {
 
         <ButtonList>
           <ButtonListItem flex="none">
-            <BasicButton line="true" theme="quaternary">Button 1</BasicButton>
+            <BasicButton :line="true" theme="quaternary">Button 1</BasicButton>
           </ButtonListItem>
           <ButtonListItem>
             <BasicButton>Button 2</BasicButton>
@@ -794,7 +805,7 @@ export default {
         <h3 class="test-section-sub-title">Align Left</h3>
         <ButtonList align="left">
           <ButtonListItem>
-            <BasicButton line="true" theme="quaternary">Button 1</BasicButton>
+            <BasicButton :line="true" theme="quaternary">Button 1</BasicButton>
           </ButtonListItem>
           <ButtonListItem>
             <BasicButton>Button 2</BasicButton>
@@ -805,7 +816,7 @@ export default {
         <h3 class="test-section-sub-title">Align Center</h3>
         <ButtonList align="center">
           <ButtonListItem>
-            <BasicButton line="true" theme="quaternary">Button 1</BasicButton>
+            <BasicButton :line="true" theme="quaternary">Button 1</BasicButton>
           </ButtonListItem>
           <ButtonListItem>
             <BasicButton>Button 2</BasicButton>
@@ -816,7 +827,7 @@ export default {
         <h3 class="test-section-sub-title">Align Right</h3>
         <ButtonList align="right">
           <ButtonListItem>
-            <BasicButton line="true" theme="quaternary">Button 1</BasicButton>
+            <BasicButton :line="true" theme="quaternary">Button 1</BasicButton>
           </ButtonListItem>
           <ButtonListItem>
             <BasicButton>Button 2</BasicButton>
@@ -827,7 +838,7 @@ export default {
         <h3 class="test-section-sub-title">Align Full</h3>
         <ButtonList align="full">
           <ButtonListItem>
-            <BasicButton line="true" theme="quaternary">Button 1</BasicButton>
+            <BasicButton :line="true" theme="quaternary">Button 1</BasicButton>
           </ButtonListItem>
           <ButtonListItem>
             <BasicButton>Button 2</BasicButton>
@@ -3299,7 +3310,7 @@ export default {
     <section class="test-section">
       <h2 class="test-section-title">Basic List</h2>
       <div class="test-section-sub">
-        <h3 class="test-section-sub-title">Default (font:12px, margin:8px)</h3>
+        <h3 class="test-section-sub-title">Default</h3>
 
         <ul :class="$style['basic-list']">
           <li :class="$style['basic-list__item']">
@@ -3391,7 +3402,7 @@ export default {
       </div>
 
       <div class="test-section-sub">
-        <h3 class="test-section-sub-title">Regular (font:14px; margin:12px)</h3>
+        <h3 class="test-section-sub-title">Regular</h3>
 
         <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
           <li :class="[$style['basic-list__item'], 'text-body-3']">
@@ -3432,6 +3443,100 @@ export default {
             </div>
           </li>
           <li :class="[$style['basic-list__item'], 'color-red', 'text-body-3']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">regular margin (12px)</h3>
+        <ul
+          :class="[$style['basic-list'], $style['basic-list--regular-margin']]"
+        >
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              법인카드, 가족카드, 선불카드는 본인확인이 불가능합니다.
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              비씨카드는 비씨로고(
+              <span :class="$style['inline-logo']"><BrandLogo007 /></span>
+              )가 표시된 카드만 이용가능합니다.<br />
+              (예 : 농협BC, 우리카드, IBK카드 등)
+            </div>
+          </li>
+          <li :class="[$style['basic-list__item'], 'color-black']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+          <li :class="[$style['basic-list__item'], 'color-green']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+          <li :class="[$style['basic-list__item'], 'color-red']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">normal margin (10px)</h3>
+        <ul
+          :class="[$style['basic-list'], $style['basic-list--normal-margin']]"
+        >
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              법인카드, 가족카드, 선불카드는 본인확인이 불가능합니다.
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              비씨카드는 비씨로고(
+              <span :class="$style['inline-logo']"><BrandLogo007 /></span>
+              )가 표시된 카드만 이용가능합니다.<br />
+              (예 : 농협BC, 우리카드, IBK카드 등)
+            </div>
+          </li>
+          <li :class="[$style['basic-list__item'], 'color-black']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+          <li :class="[$style['basic-list__item'], 'color-green']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+          <li :class="[$style['basic-list__item'], 'color-red']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
               본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.

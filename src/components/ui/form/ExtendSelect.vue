@@ -218,7 +218,12 @@ export default {
       >{{ state.text }}</SelectButton
     >
 
-    <UiLayer ref="layer" type="toast" :onAfterClosed="onAfterClosed">
+    <UiLayer
+      ref="layer"
+      type="toast"
+      :onAfterClosed="onAfterClosed"
+      :backgroundClose="true"
+    >
       <ToastPopup>
         <template v-slot:head>
           <ToastPopupHead>

@@ -22,8 +22,8 @@ export default {
     :class="[
       $style['hr'],
       {
-        [$style[`hr--${type}`]]: type,
-        [$style[`hr--${theme}`]]: theme,
+        [$style[`hr--type-${type}`]]: type,
+        [$style[`hr--theme-${theme}`]]: theme,
       },
       className,
     ]"

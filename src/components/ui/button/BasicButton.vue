@@ -99,8 +99,8 @@ export default {
       $style['button'],
       {
         [$style['button--icon-only']]: (isLeftIcon || isRightIcon) && !isText,
-        [$style[`button--${size}`]]: size,
-        [$style[`button--${theme}`]]: theme,
+        [$style[`button--size-${size}`]]: size,
+        [$style[`button--theme-${theme}`]]: theme,
         [$style[`button--line`]]: line,
         [$style[`button--inline`]]: inline,
         [$style['button--disabled']]: disabledStyle,

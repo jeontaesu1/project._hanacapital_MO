@@ -82,7 +82,7 @@ export default {
               <BasicButton
                 tagName="a"
                 size="mini"
-                line="true"
+                :line="true"
                 theme="quaternary"
                 :classNames="{ wrap: $style['icon-list__button'] }"
                 href="tel:1800-1110"

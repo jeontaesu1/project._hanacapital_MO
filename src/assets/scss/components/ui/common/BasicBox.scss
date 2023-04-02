@@ -3,22 +3,24 @@
   border-radius: 8px;
   border: 1px solid $color-gray-20;
 
-  &--secondary {
-    border-color: $color-white;
-    background-color: $color-white;
-  }
+  &--theme {
+    &-secondary {
+      border-color: $color-white;
+      background-color: $color-white;
+    }
 
-  &--tertiary {
-    border-radius: 12px;
-    border-color: $color-gray-05;
-    background-color: $color-gray-05;
-  }
+    &-tertiary {
+      border-radius: 12px;
+      border-color: $color-gray-05;
+      background-color: $color-gray-05;
+    }
 
-  &--quaternary {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border-radius: 12px;
-    border-color: $color-gray-05;
-    background-color: $color-gray-05;
+    &-quaternary {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border-radius: 12px;
+      border-color: $color-gray-05;
+      background-color: $color-gray-05;
+    }
   }
 }

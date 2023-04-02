@@ -58,9 +58,11 @@ export default {
       <ButtonListItem>
         <BasicButton @click="layer001Open">인증 수단 선택</BasicButton>
       </ButtonListItem>
+      <!-- 작업중
       <ButtonListItem>
         <BasicButton @click="layer002Open">아이디 확인</BasicButton>
       </ButtonListItem>
+      -->
       <ButtonListItem>
         <BasicButton @click="layer003Open">아이디 찾기 실패</BasicButton>
       </ButtonListItem>

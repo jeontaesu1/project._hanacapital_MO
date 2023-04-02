@@ -362,7 +362,7 @@ export default {
     :class="[
       $style['layer'],
       {
-        [$style[`layer--${type}`]]: type,
+        [$style[`layer--type-${type}`]]: type,
         [$style['layer--opened']]: state.opened,
       },
       customClassNames.wrap,

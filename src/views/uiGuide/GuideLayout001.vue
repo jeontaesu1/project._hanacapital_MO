@@ -90,7 +90,7 @@ export default {
         }"
       >
         <ButtonListItem>
-          <BasicButton line="true" theme="quaternary">Button 1</BasicButton>
+          <BasicButton :line="true" theme="quaternary">Button 1</BasicButton>
         </ButtonListItem>
         <ButtonListItem>
           <BasicButton>Button 2</BasicButton>

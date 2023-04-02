@@ -78,11 +78,11 @@
       }
     }
 
-    &--sub {
+    &--type-sub {
       color: $color-gray-60;
     }
-    & + &--sub,
-    &--sub + & {
+    & + &--type-sub,
+    &--type-sub + & {
       margin-left: 12px;
     }
 

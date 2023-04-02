@@ -47,7 +47,13 @@ export default {
         <section class="row-margin-contents-group">
           <h3 class="text-body-2 row-margin-item-group">신청 가능 상품</h3>
 
-          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+          <ul
+            :class="[
+              $style['basic-list'],
+              $style['basic-list--regular'],
+              $style['basic-list--regular-margin'],
+            ]"
+          >
             <li
               :class="[
                 $style['basic-list__item'],
@@ -81,7 +87,13 @@ export default {
         <section class="row-margin-contents-group">
           <h3 class="text-body-2 row-margin-item-group">신청 가능 시간</h3>
 
-          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+          <ul
+            :class="[
+              $style['basic-list'],
+              $style['basic-list--regular'],
+              $style['basic-list--regular-margin'],
+            ]"
+          >
             <li
               :class="[
                 $style['basic-list__item'],
@@ -113,7 +125,13 @@ export default {
         <section class="row-margin-contents-group">
           <h3 class="text-body-2 row-margin-item-group">유의사항</h3>
 
-          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+          <ul
+            :class="[
+              $style['basic-list'],
+              $style['basic-list--regular'],
+              $style['basic-list--regular-margin'],
+            ]"
+          >
             <li
               :class="[
                 $style['basic-list__item'],

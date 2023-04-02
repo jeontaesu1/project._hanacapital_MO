@@ -14,7 +14,8 @@ import PageMainText from '@/components/ui/text/PageMainText.vue';
 import PageSubText from '@/components/ui/text/PageSubText.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 
-import IconCustomerCenter from '@/assets/images/icon/customer-center.svg?component';
+import IconCustomer from '@/assets/images/icon/customer-center.svg?component';
+import IconTell from '@/assets/images/icon/tell.svg?component';
 
 export default {
   components: {
@@ -30,7 +31,8 @@ export default {
     PageMainText,
     PageSubText,
     BasicHr,
-    IconCustomerCenter,
+    IconCustomer,
+    IconTell,
   },
   setup() {
     const layer = ref(null);
@@ -75,14 +77,26 @@ export default {
       <div :class="$style['icon-list']">
         <ul :class="$style['icon-list__list']">
           <li :class="$style['icon-list__item']">
-            <button type="button" :class="$style['icon-list__block']">
-              <div :class="$style['icon-list__icon']">
-                <IconCustomerCenter />
-              </div>
+            <div :class="$style['icon-list__block']">
+              <div :class="$style['icon-list__icon']"><IconCustomer /></div>
               <div :class="$style['icon-list__content']">
                 <div :class="$style['icon-list__title']">고객센터</div>
+                <div :class="$style['icon-list__text']">평일 09:00 ~ 19:00</div>
               </div>
-            </button>
+              <BasicButton
+                tagName="a"
+                size="mini"
+                :line="true"
+                theme="quaternary"
+                :classNames="{ wrap: $style['icon-list__button'] }"
+                href="tel:1800-1110"
+              >
+                <template v-slot:leftIcon>
+                  <IconTell />
+                </template>
+                1800-1110
+              </BasicButton>
+            </div>
           </li>
         </ul>
       </div>
