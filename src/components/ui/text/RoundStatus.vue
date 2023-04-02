@@ -13,7 +13,11 @@ export default {
         return defaultClassNames();
       },
     },
-    type: {
+    size: {
+      Type: String,
+      default: null,
+    },
+    theme: {
       Type: String,
       default: null,
     },
@@ -32,19 +36,20 @@ export default {
 </script>
 
 <template>
-  <div
+  <span
     :class="[
-      $style['sticker'],
+      $style['status'],
       {
-        [$style[`sticker--${type}`]]: type,
+        [$style[`status--theme-${theme}`]]: theme,
+        [$style[`status--size-${size}`]]: size,
       },
       customClassNames.wrap,
     ]"
   >
     <slot />
-  </div>
+  </span>
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/components/import/StatusSticker.scss';
+@import '@/assets/scss/components/ui/text/RoundStatus.scss';
 </style>

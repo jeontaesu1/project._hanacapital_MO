@@ -226,6 +226,11 @@ body,
   text-overflow: ellipsis;
 }
 
+// basic-list
+.basic-list {
+  @include reset-list;
+}
+
 // row-margin
 @mixin row-margin-first-last {
   &:first-child {

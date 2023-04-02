@@ -130,7 +130,7 @@ export default {
       :style="`${isBlocking ? `margin-right: ${scrollbarsWidth}px` : ''}`"
     >
       <header ref="header" :class="$style['header']">
-        <div v-if="leftButtons.length" :class="$style['header__left']">
+        <div :class="$style['header__left']">
           <HeaderButton
             v-for="item in leftButtons"
             :key="`left_${typeof item === 'string' ? item : item.name}`"
@@ -151,7 +151,7 @@ export default {
             {{ store.ui.header.title || '하나캐피탈' }}
           </h1>
         </div>
-        <div v-if="rightButtons.length" :class="$style['header__right']">
+        <div :class="$style['header__right']">
           <HeaderButton
             v-for="item in rightButtons"
             :key="`right_${typeof item === 'string' ? item : item.name}`"

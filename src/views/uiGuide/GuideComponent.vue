@@ -69,7 +69,7 @@ import IllustInfo from '@/components/ui/common/IllustInfo.vue';
 import IllustInfoTitle from '@/components/ui/common/IllustInfoTitle.vue';
 import IllustInfoText from '@/components/ui/common/IllustInfoText.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
-import StatusSticker from '@/components/ui/common/StatusSticker.vue';
+import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 
 import BrandLogo001 from '@/assets/images/bank-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/bank-logo/lotte.svg?component';
@@ -146,7 +146,7 @@ export default {
     IllustInfoTitle,
     IllustInfoText,
     UnitText,
-    StatusSticker,
+    RoundStatus,
     IconAdd,
     BrandLogo001,
     BrandLogo002,
@@ -1986,6 +1986,13 @@ export default {
                           >
                         </CheckBox>
                         <div :class="$style['agree-list__right']">
+                          <RoundStatus
+                            :classNames="{ wrap: 'display-block' }"
+                            size="small"
+                            theme="tertiary"
+                          >
+                            안심
+                          </RoundStatus>
                           <UiAccordionOpener
                             :classNames="{
                               button: $style['agree-list__depth-opener'],
@@ -2012,6 +2019,15 @@ export default {
                                     동의</CheckBoxLabelText
                                   >
                                 </CheckBox>
+                                <div :class="$style['agree-list__right']">
+                                  <RoundStatus
+                                    :classNames="{ wrap: 'display-block' }"
+                                    size="small"
+                                    theme="quaternary"
+                                  >
+                                    다소안심
+                                  </RoundStatus>
+                                </div>
                               </div>
                               <ul
                                 :class="[
@@ -2035,6 +2051,13 @@ export default {
                                       >
                                     </CheckBox>
                                     <div :class="$style['agree-list__right']">
+                                      <RoundStatus
+                                        :classNames="{ wrap: 'display-block' }"
+                                        size="small"
+                                        theme="quinary"
+                                      >
+                                        보통
+                                      </RoundStatus>
                                       <button
                                         type="button"
                                         :class="$style['agree-list__link']"
@@ -2066,6 +2089,13 @@ export default {
                                       >
                                     </CheckBox>
                                     <div :class="$style['agree-list__right']">
+                                      <RoundStatus
+                                        :classNames="{ wrap: 'display-block' }"
+                                        size="small"
+                                        theme="senary"
+                                      >
+                                        신중
+                                      </RoundStatus>
                                       <button
                                         type="button"
                                         :class="$style['agree-list__link']"
@@ -2121,6 +2151,13 @@ export default {
                                       >
                                     </CheckBox>
                                     <div :class="$style['agree-list__right']">
+                                      <RoundStatus
+                                        :classNames="{ wrap: 'display-block' }"
+                                        size="small"
+                                        theme="septenary"
+                                      >
+                                        주의
+                                      </RoundStatus>
                                       <button
                                         type="button"
                                         :class="$style['agree-list__link']"
@@ -3513,9 +3550,15 @@ export default {
         <h3 class="test-section-sub-title">Default</h3>
         <BasicBox>
           <BasicBoxHead>
-            <BasicBoxHeadLeft>NH투자증권(유캔그린)</BasicBoxHeadLeft>
+            <BasicBoxHeadLeft>
+              <h3 class="text-body-1 font-weight-medium">
+                NH투자증권(유캔그린)
+              </h3>
+            </BasicBoxHeadLeft>
             <BasicBoxHeadRight>
-              <StatusSticker>미신청</StatusSticker>
+              <RoundStatus :classNames="{ wrap: 'display-block' }">
+                미신청
+              </RoundStatus>
             </BasicBoxHeadRight>
           </BasicBoxHead>
           // contnets
@@ -3695,38 +3738,26 @@ export default {
     </section>
 
     <section class="test-section">
-      <h2 class="test-section-title">Status Sticker</h2>
+      <h2 class="test-section-title">RoundStatus</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
-        <StatusSticker>미신청</StatusSticker>
-        <StatusSticker type="green">신청완료</StatusSticker>
+        <RoundStatus>텍스트</RoundStatus>
+        <RoundStatus theme="secondary">텍스트</RoundStatus>
+        <RoundStatus theme="tertiary">텍스트</RoundStatus>
+        <RoundStatus theme="quaternary">텍스트</RoundStatus>
+        <RoundStatus theme="quinary">텍스트</RoundStatus>
+        <RoundStatus theme="senary">텍스트</RoundStatus>
+        <RoundStatus theme="septenary">텍스트</RoundStatus>
       </div>
-    </section>
-
-    <section class="test-section">
-      <h2 class="test-section-title">Ranking Badge</h2>
       <div class="test-section-sub">
-        <h3 class="test-section-sub-title">Default</h3>
-        <span
-          :class="[$style['ranking-badge'], $style['ranking-badge--accent']]"
-          >안심
-        </span>
-        <span
-          :class="[$style['ranking-badge'], $style['ranking-badge--positive']]"
-          >다소안심
-        </span>
-        <span
-          :class="[$style['ranking-badge'], $style['ranking-badge--warning']]"
-          >보통
-        </span>
-        <span
-          :class="[$style['ranking-badge'], $style['ranking-badge--caution']]"
-          >신중
-        </span>
-        <span
-          :class="[$style['ranking-badge'], $style['ranking-badge--essential']]"
-          >주의
-        </span>
+        <h3 class="test-section-sub-title">Small</h3>
+        <RoundStatus size="small">텍스트</RoundStatus>
+        <RoundStatus size="small" theme="secondary">텍스트</RoundStatus>
+        <RoundStatus size="small" theme="tertiary">텍스트</RoundStatus>
+        <RoundStatus size="small" theme="quaternary">텍스트</RoundStatus>
+        <RoundStatus size="small" theme="quinary">텍스트</RoundStatus>
+        <RoundStatus size="small" theme="senary">텍스트</RoundStatus>
+        <RoundStatus size="small" theme="septenary">텍스트</RoundStatus>
       </div>
     </section>
 

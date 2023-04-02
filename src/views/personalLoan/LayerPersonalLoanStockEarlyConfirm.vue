@@ -151,6 +151,7 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
+
 <style lang="scss" module>
-@import '@/assets/scss/views/personalLoan/LayerPersonalLoanStockIntermediateRepaymentInquiry.scss';
+@import '@/assets/scss/views/personalLoan/LayerPersonalLoanStockEarlyConfirm.scss';
 </style>

@@ -5,7 +5,6 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
-import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import AlertPopup from '@/components/ui/layer/AlertPopup.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
@@ -16,13 +15,11 @@ export default {
   components: {
     BasicButton,
     UiLayer,
-    PopupTitle,
     AlertPopup,
     ButtonList,
     ButtonListItem,
     IllustObject,
     BasicHr,
-
     IconCustomerCenter,
   },
   setup() {
@@ -36,15 +33,18 @@ export default {
 </script>
 
 <template>
-  <UiLayer ref="layer" type="alert">
+  <UiLayer ref="layer" type="alert" v-slot="layerSlotProps">
     <AlertPopup>
-      <template v-slot:head>
-        <IllustObject type="error" />
-        <PopupTitle>
+      <div :class="$style['error-top']">
+        <IllustObject
+          type="error"
+          :classNames="{ wrap: $style['error-top__illust'] }"
+        />
+        <p :class="$style['error-top__text']">
           서비스를 일부<br />
           이용할 수 없습니다
-        </PopupTitle>
-      </template>
+        </p>
+      </div>
 
       <BasicHr
         theme="quaternary"
@@ -74,13 +74,14 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton>다음</BasicButton>
+            <BasicButton @click="layerSlotProps.close()">확인</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
     </AlertPopup>
   </UiLayer>
 </template>
+
 <style lang="scss" module>
-@import '@/assets/scss/views/Error/LayerErrorAlert.scss';
+@import '@/assets/scss/views/error/LayerErrorAlert.scss';
 </style>

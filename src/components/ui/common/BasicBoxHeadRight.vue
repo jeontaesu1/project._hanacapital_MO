@@ -2,7 +2,7 @@
 import { computed, inject } from 'vue';
 
 const defaultClassNames = () => ({
-  wrap: '',
+  right: '',
 });
 
 export default {
@@ -31,7 +31,7 @@ export default {
 </script>
 
 <template>
-  <p :class="[styleModule['box-head__right'], customClassNames.wrap]">
+  <div :class="[styleModule['box-head__right'], customClassNames.right]">
     <slot />
-  </p>
+  </div>
 </template>

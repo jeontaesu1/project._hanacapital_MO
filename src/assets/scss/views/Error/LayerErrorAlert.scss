@@ -1,1 +1,17 @@
 @import '@/assets/scss/components/import/icon-list.scss';
+
+.error-top {
+  padding: 2px 0 16px;
+
+  &__illust {
+    width: 115px;
+    height: 92px;
+    padding-bottom: 12px;
+  }
+
+  &__text {
+    margin: 0;
+    @include font-size-default(16);
+    font-weight: 700;
+  }
+}

@@ -54,6 +54,10 @@
     display: block;
     flex: 1;
     min-width: 0;
+
+    > .basic-list {
+      margin: 8px 4px 0 -5px;
+    }
   }
 
   &__title {

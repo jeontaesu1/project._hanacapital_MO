@@ -30,7 +30,6 @@ export default {
     PageMainText,
     PageSubText,
     BasicHr,
-
     IconCustomerCenter,
   },
   setup() {
@@ -66,6 +65,7 @@ export default {
       </PageTextGroup>
 
       <IllustObject type="error" />
+
       <BasicHr
         theme="quaternary"
         type="contents"
@@ -94,13 +94,14 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton>다음</BasicButton>
+            <BasicButton>확인</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
     </FullPopup>
   </UiLayer>
 </template>
+
 <style lang="scss" module>
-@import '@/assets/scss/views/Error/LayerErrorFull.scss';
+@import '@/assets/scss/views/error/LayerErrorFull.scss';
 </style>

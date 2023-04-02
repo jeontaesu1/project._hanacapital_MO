@@ -2,24 +2,24 @@
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
+import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
-import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-import BasicButton from '@/components/ui/button/BasicButton.vue';
 
 export default {
   components: {
     UiLayer,
+    PopupTitle,
     PopupButton,
     FullPopup,
     FullPopupHead,
-    PopupTitle,
+    BasicButton,
     ButtonList,
     ButtonListItem,
-    BasicButton,
   },
   setup() {
     const layer = ref(null);
@@ -36,7 +36,7 @@ export default {
     <FullPopup>
       <template v-slot:head>
         <FullPopupHead>
-          <PopupTitle>고객정보 취급방침</PopupTitle>
+          <PopupTitle>약관 타이틀</PopupTitle>
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>

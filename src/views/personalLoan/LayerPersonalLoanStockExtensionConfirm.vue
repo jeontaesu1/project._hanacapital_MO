@@ -14,6 +14,7 @@ import KeyValueList from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
+import BasicHr from '@/components/ui/common/BasicHr.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
@@ -33,6 +34,7 @@ export default {
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
+    BasicHr,
     ButtonList,
     ButtonListItem,
     BasicButton,
@@ -58,34 +60,28 @@ export default {
         </FullPopupHead>
       </template>
 
-      <span class="text-body-5 color-navy font-weight-light row-margin-item"
-        >계약선택</span
-      >
       <PageTextGroup>
         <PageMainText>
-          중도상환신청 계약을<br />
-          <strong>선택해 주세요</strong>
+          연장할 상품의<br />
+          <strong>만기현황을 확인해 주세요</strong>
         </PageMainText>
       </PageTextGroup>
 
-      <a
-        href="#"
-        class="none-deco-link text-body-5 color-navy row-margin-item-group align-right"
-        >대출가능차량 기준안내</a
-      >
-
       <BasicBox>
         <BasicBoxHead>
-          <BasicBoxHeadLeft>스탁론 키움증권 (*****1234567)</BasicBoxHeadLeft>
+          <BasicBoxHeadLeft>
+            <h3 class="text-body-1 font-weight-medium">스탁론</h3>
+          </BasicBoxHeadLeft>
         </BasicBoxHead>
+
         <KeyValueList margin="regular">
           <KeyValueItem
             :classNames="{
               item: 'text-body-3',
             }"
           >
-            <KeyValueTitle>대출기간</KeyValueTitle>
-            <KeyValueText>2023.01.04~2025.01.04</KeyValueText>
+            <KeyValueTitle>증권사</KeyValueTitle>
+            <KeyValueText>하나투자증권</KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem
@@ -93,8 +89,35 @@ export default {
               item: 'text-body-3',
             }"
           >
-            <KeyValueTitle>결제회차</KeyValueTitle>
-            <KeyValueText>1/12</KeyValueText>
+            <KeyValueTitle>증권계좌</KeyValueTitle>
+            <KeyValueText>123456789</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>현재금리</KeyValueTitle>
+            <KeyValueText>68%</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>최초실행일</KeyValueTitle>
+            <KeyValueText>2020.04.07</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>5년만기도래일</KeyValueTitle>
+            <KeyValueText>2025.05.01</KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem
@@ -103,7 +126,7 @@ export default {
             }"
           >
             <KeyValueTitle>대출금액</KeyValueTitle>
-            <KeyValueText>5,000,000 원</KeyValueText>
+            <KeyValueText>14,000,000 원</KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem
@@ -112,7 +135,7 @@ export default {
             }"
           >
             <KeyValueTitle>대출잔액</KeyValueTitle>
-            <KeyValueText>5,000,000 원</KeyValueText>
+            <KeyValueText>14,000,000 원</KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem
@@ -120,34 +143,52 @@ export default {
               item: 'text-body-3',
             }"
           >
-            <KeyValueTitle>결제예정금액</KeyValueTitle>
-            <KeyValueText>5,000,000 원</KeyValueText>
+            <KeyValueTitle>만기일자</KeyValueTitle>
+            <KeyValueText>2025.05.01</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>당월청구이자</KeyValueTitle>
+            <KeyValueText>78,250 원</KeyValueText>
           </KeyValueItem>
         </KeyValueList>
 
-        <ButtonList
-          :classNames="{
-            wrap: 'row-margin-contents-small',
-          }"
-        >
-          <ButtonListItem>
-            <BasicButton size="small">신청하기</BasicButton>
-          </ButtonListItem>
-        </ButtonList>
-      </BasicBox>
+        <BasicHr
+          theme="quaternary"
+          type="contents"
+          className="row-margin-contents-small"
+        />
 
-      <BasicBox class="row-margin-item-group">
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>스탁론 키움증권 (*****1234567)</BasicBoxHeadLeft>
-        </BasicBoxHead>
         <KeyValueList margin="regular">
           <KeyValueItem
             :classNames="{
               item: 'text-body-3',
             }"
           >
+            <KeyValueTitle>연장요청일</KeyValueTitle>
+            <KeyValueText>2025.05.01</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>연장금리</KeyValueTitle>
+            <KeyValueText>6.8%</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
             <KeyValueTitle>대출기간</KeyValueTitle>
-            <KeyValueText>2023.01.04~2025.01.04</KeyValueText>
+            <KeyValueText>6개월</KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem
@@ -155,48 +196,25 @@ export default {
               item: 'text-body-3',
             }"
           >
-            <KeyValueTitle>결제회차</KeyValueTitle>
-            <KeyValueText>1/12</KeyValueText>
-          </KeyValueItem>
-
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>대출금액</KeyValueTitle>
-            <KeyValueText>5,000,000 원</KeyValueText>
-          </KeyValueItem>
-
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>대출잔액</KeyValueTitle>
-            <KeyValueText>5,000,000 원</KeyValueText>
-          </KeyValueItem>
-
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>결제예정금액</KeyValueTitle>
-            <KeyValueText>5,000,000 원</KeyValueText>
+            <KeyValueTitle>연장결과</KeyValueTitle>
+            <KeyValueText>
+              <span class="color-green">정상</span>
+            </KeyValueText>
           </KeyValueItem>
         </KeyValueList>
+      </BasicBox>
 
+      <template v-slot:foot>
         <ButtonList
           :classNames="{
-            wrap: 'row-margin-contents-small',
+            wrap: 'row-margin-none',
           }"
         >
           <ButtonListItem>
-            <BasicButton size="small">신청하기</BasicButton>
+            <BasicButton>연장신청</BasicButton>
           </ButtonListItem>
         </ButtonList>
-      </BasicBox>
+      </template>
     </FullPopup>
   </UiLayer>
 </template>

@@ -6,7 +6,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import LayerAgreeTermsDetail from '@/views/AgreeTerms/LayerAgreeTermsDetail.vue';
+import LayerClauseDetail from '@/views/clause/LayerClauseDetail.vue';
 
 export default {
   components: {
@@ -14,7 +14,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    LayerAgreeTermsDetail,
+    LayerClauseDetail,
   },
   setup() {
     const layer001 = ref(null);
@@ -40,10 +40,10 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open"> 약과상세 </BasicButton>
+        <BasicButton @click="layer001Open">약관 상세</BasicButton>
       </ButtonListItem>
     </ButtonList>
 
-    <LayerAgreeTermsDetail ref="layer001" />
+    <LayerClauseDetail ref="layer001" />
   </PageContents>
 </template>

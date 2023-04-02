@@ -36,5 +36,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/components/import/BasicBoxHead.scss';
+@import '@/assets/scss/components/ui/common/BasicBoxHead.scss';
 </style>

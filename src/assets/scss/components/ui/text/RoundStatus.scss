@@ -1,0 +1,56 @@
+.status {
+  display: inline-block;
+  vertical-align: top;
+  padding: 3px 9px;
+  border-radius: 100px;
+  @include font-size-default(11);
+  font-weight: 500;
+  color: $color-gray-70;
+  border: 1px solid $color-gray-20;
+  background-color: $color-gray-20;
+
+  &--theme {
+    &-secondary {
+      color: $color-green-50;
+      border-color: transparent;
+      background-color: rgba($color-green-10, 0.2);
+    }
+
+    &-tertiary {
+      color: $color-white;
+      border-color: $color-semantic-accent;
+      background-color: $color-semantic-accent;
+    }
+
+    &-quaternary {
+      color: $color-white;
+      border-color: $color-semantic-positive;
+      background-color: $color-semantic-positive;
+    }
+
+    &-quinary {
+      color: $color-white;
+      border-color: $color-semantic-warning;
+      background-color: $color-semantic-warning;
+    }
+
+    &-senary {
+      color: $color-white;
+      border-color: $color-semantic-caution;
+      background-color: $color-semantic-caution;
+    }
+
+    &-septenary {
+      color: $color-white;
+      border-color: $color-semantic-essential;
+      background-color: $color-semantic-essential;
+    }
+  }
+
+  &--size {
+    &-small {
+      padding: 0 5px;
+      @include font-size-default(10);
+    }
+  }
+}

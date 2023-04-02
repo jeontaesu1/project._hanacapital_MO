@@ -6,21 +6,21 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import LayerPersonalLoanStockAgreeTerms from '@/views/personalLoan/LayerPersonalLoanStockAgreeTerms.vue';
-import LayerPersonalLoanStockContractSelect from '@/views/personalLoan/LayerPersonalLoanStockContractSelect.vue';
-import LayerPersonalLoanStockNonTargetMaturity from '@/views/personalLoan/LayerPersonalLoanStockNonTargetMaturity.vue';
-import LayerPersonalLoanStockNoContract from '@/views/personalLoan/LayerPersonalLoanStockNoContract.vue';
-import LayerPersonalLoanStockApplicationConfirm from '@/views/personalLoan/LayerPersonalLoanStockApplicationConfirm.vue';
-import LayerPersonalLoanStockApplicationComplete from '@/views/personalLoan/LayerPersonalLoanStockApplicationComplete.vue';
-import LayerPersonalLoanStockApplicationFail from '@/views/personalLoan/LayerPersonalLoanStockApplicationFail.vue';
-import LayerPersonalLoanStockIntermediateRepaymentSelect from '@/views/personalLoan/LayerPersonalLoanStockIntermediateRepaymentSelect.vue';
-import LayerPersonalLoanStockSubjectToNonRepayment from '@/views/personalLoan/LayerPersonalLoanStockSubjectToNonRepayment.vue';
-import LayerPersonalLoanStockIntermediateRepaymentPrecautions from '@/views/personalLoan/LayerPersonalLoanStockIntermediateRepaymentPrecautions.vue';
-import LayerPersonalLoanStockIntermediateRepaymentInquiry from '@/views/personalLoan/LayerPersonalLoanStockIntermediateRepaymentInquiry.vue';
-import LayerPersonalLoanStockIntermediateRepaymentNotFind from '@/views/personalLoan/LayerPersonalLoanStockIntermediateRepaymentNotFind.vue';
-import LayerPersonalLoanStockIntermediateRepaymentConfirm from '@/views/personalLoan/LayerPersonalLoanStockIntermediateRepaymentConfirm.vue';
-import LayerPersonalLoanStockIntermediateRepaymentComplete from '@/views/personalLoan/LayerPersonalLoanStockIntermediateRepaymentComplete.vue';
-import LayerPersonalLoanStockIntermediateRepaymentFail from '@/views/personalLoan/LayerPersonalLoanStockIntermediateRepaymentFail.vue';
+import LayerPersonalLoanStockExtensionAgree from '@/views/personalLoan/LayerPersonalLoanStockExtensionAgree.vue';
+import LayerPersonalLoanStockExtensionList from '@/views/personalLoan/LayerPersonalLoanStockExtensionList.vue';
+import LayerPersonalLoanStockExtensionNontarget from '@/views/personalLoan/LayerPersonalLoanStockExtensionNontarget.vue';
+import LayerPersonalLoanStockExtensionEmpty from '@/views/personalLoan/LayerPersonalLoanStockExtensionEmpty.vue';
+import LayerPersonalLoanStockExtensionConfirm from '@/views/personalLoan/LayerPersonalLoanStockExtensionConfirm.vue';
+import LayerPersonalLoanStockExtensionComplete from '@/views/personalLoan/LayerPersonalLoanStockExtensionComplete.vue';
+import LayerPersonalLoanStockExtensionFail from '@/views/personalLoan/LayerPersonalLoanStockExtensionFail.vue';
+import LayerPersonalLoanStockEarlyList from '@/views/personalLoan/LayerPersonalLoanStockEarlyList.vue';
+import LayerPersonalLoanStockEarlyEmpty from '@/views/personalLoan/LayerPersonalLoanStockEarlyEmpty.vue';
+import LayerPersonalLoanStockEarlyNotice from '@/views/personalLoan/LayerPersonalLoanStockEarlyNotice.vue';
+import LayerPersonalLoanStockEarlyConfirm from '@/views/personalLoan/LayerPersonalLoanStockEarlyConfirm.vue';
+import LayerPersonalLoanStockEarlyError from '@/views/personalLoan/LayerPersonalLoanStockEarlyError.vue';
+import LayerPersonalLoanStockEarlyAlert from '@/views/personalLoan/LayerPersonalLoanStockEarlyAlert.vue';
+import LayerPersonalLoanStockEarlyComplete from '@/views/personalLoan/LayerPersonalLoanStockEarlyComplete.vue';
+import LayerPersonalLoanStockEarlyFail from '@/views/personalLoan/LayerPersonalLoanStockEarlyFail.vue';
 
 export default {
   components: {
@@ -28,21 +28,21 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    LayerPersonalLoanStockAgreeTerms,
-    LayerPersonalLoanStockContractSelect,
-    LayerPersonalLoanStockNonTargetMaturity,
-    LayerPersonalLoanStockNoContract,
-    LayerPersonalLoanStockApplicationConfirm,
-    LayerPersonalLoanStockApplicationComplete,
-    LayerPersonalLoanStockApplicationFail,
-    LayerPersonalLoanStockIntermediateRepaymentSelect,
-    LayerPersonalLoanStockSubjectToNonRepayment,
-    LayerPersonalLoanStockIntermediateRepaymentPrecautions,
-    LayerPersonalLoanStockIntermediateRepaymentInquiry,
-    LayerPersonalLoanStockIntermediateRepaymentNotFind,
-    LayerPersonalLoanStockIntermediateRepaymentConfirm,
-    LayerPersonalLoanStockIntermediateRepaymentComplete,
-    LayerPersonalLoanStockIntermediateRepaymentFail,
+    LayerPersonalLoanStockExtensionAgree,
+    LayerPersonalLoanStockExtensionList,
+    LayerPersonalLoanStockExtensionNontarget,
+    LayerPersonalLoanStockExtensionEmpty,
+    LayerPersonalLoanStockExtensionConfirm,
+    LayerPersonalLoanStockExtensionComplete,
+    LayerPersonalLoanStockExtensionFail,
+    LayerPersonalLoanStockEarlyList,
+    LayerPersonalLoanStockEarlyEmpty,
+    LayerPersonalLoanStockEarlyNotice,
+    LayerPersonalLoanStockEarlyConfirm,
+    LayerPersonalLoanStockEarlyError,
+    LayerPersonalLoanStockEarlyAlert,
+    LayerPersonalLoanStockEarlyComplete,
+    LayerPersonalLoanStockEarlyFail,
   },
   setup() {
     const layer001 = ref(null);
@@ -206,20 +206,20 @@ export default {
       </ButtonListItem>
     </ButtonList>
 
-    <LayerPersonalLoanStockAgreeTerms ref="layer001" />
-    <LayerPersonalLoanStockContractSelect ref="layer002" />
-    <LayerPersonalLoanStockNonTargetMaturity ref="layer003" />
-    <LayerPersonalLoanStockNoContract ref="layer004" />
-    <LayerPersonalLoanStockApplicationConfirm ref="layer005" />
-    <LayerPersonalLoanStockApplicationComplete ref="layer006" />
-    <LayerPersonalLoanStockApplicationFail ref="layer007" />
-    <LayerPersonalLoanStockIntermediateRepaymentSelect ref="layer008" />
-    <LayerPersonalLoanStockSubjectToNonRepayment ref="layer009" />
-    <LayerPersonalLoanStockIntermediateRepaymentPrecautions ref="layer010" />
-    <LayerPersonalLoanStockIntermediateRepaymentInquiry ref="layer011" />
-    <LayerPersonalLoanStockIntermediateRepaymentNotFind ref="layer012" />
-    <LayerPersonalLoanStockIntermediateRepaymentConfirm ref="layer013" />
-    <LayerPersonalLoanStockIntermediateRepaymentComplete ref="layer014" />
-    <LayerPersonalLoanStockIntermediateRepaymentFail ref="layer015" />
+    <LayerPersonalLoanStockExtensionAgree ref="layer001" />
+    <LayerPersonalLoanStockExtensionList ref="layer002" />
+    <LayerPersonalLoanStockExtensionNontarget ref="layer003" />
+    <LayerPersonalLoanStockExtensionEmpty ref="layer004" />
+    <LayerPersonalLoanStockExtensionConfirm ref="layer005" />
+    <LayerPersonalLoanStockExtensionComplete ref="layer006" />
+    <LayerPersonalLoanStockExtensionFail ref="layer007" />
+    <LayerPersonalLoanStockEarlyList ref="layer008" />
+    <LayerPersonalLoanStockEarlyEmpty ref="layer009" />
+    <LayerPersonalLoanStockEarlyNotice ref="layer010" />
+    <LayerPersonalLoanStockEarlyConfirm ref="layer011" />
+    <LayerPersonalLoanStockEarlyError ref="layer012" />
+    <LayerPersonalLoanStockEarlyAlert ref="layer013" />
+    <LayerPersonalLoanStockEarlyComplete ref="layer014" />
+    <LayerPersonalLoanStockEarlyFail ref="layer015" />
   </PageContents>
 </template>

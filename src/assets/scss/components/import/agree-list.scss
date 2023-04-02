@@ -33,6 +33,11 @@
 
     &-opener {
       flex: none;
+      margin-left: 10px;
+
+      &:only-child {
+        margin-left: 0;
+      }
     }
 
     &-contents {
@@ -64,6 +69,11 @@
       flex: none;
       width: 16px;
       height: 16px;
+      margin-left: 10px;
+
+      &:only-child {
+        margin-left: 0;
+      }
     }
 
     &-contents {
@@ -104,6 +114,11 @@
     height: 16px;
     background: url('@/assets/images/icon/link.svg') no-repeat 50% 50% / 100%
       100%;
+    margin-left: 10px;
+
+    &:only-child {
+      margin-left: 0;
+    }
 
     &::before {
       content: '';

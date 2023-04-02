@@ -49,44 +49,14 @@ const routes = [
     component: () => import('@/views/uiGuide/GuideLoanCalculator001.vue'),
   },
   {
-    path: '/guide/AgreeTerms-001',
-    name: '/guide/AgreeTerms-001',
-    component: () => import('@/views/uiGuide/GuideAgreeTerms001.vue'),
+    path: '/guide/clause-detail-001',
+    name: '/guide/clause-detail-001',
+    component: () => import('@/views/uiGuide/GuideClauseDetail001.vue'),
   },
   {
-    path: '/guide/AgreeTerms-002',
-    name: '/guide/AgreeTerms-002',
-    component: () => import('@/views/uiGuide/GuideAgreeTerms002.vue'),
-  },
-  {
-    path: '/guide/AgreeTerms003',
-    name: '/guide/AgreeTerms003',
-    component: () => import('@/views/uiGuide/GuideAgreeTerms003.vue'),
-  },
-  {
-    path: '/guide/ErrorInfo-001',
-    name: '/guide/ErrorInfo-001',
-    component: () => import('@/views/uiGuide/GuideErrorInfo001.vue'),
-  },
-  {
-    path: '/guide/ConnectAppAos',
-    name: '/guide/ConnectAppAos',
-    component: () => import('@/views/connectApp/ConnectAppAos.vue'),
-  },
-  {
-    path: '/guide/ConnectAppIos',
-    name: '/guide/ConnectAppIos',
-    component: () => import('@/views/connectApp/ConnectAppIos.vue'),
-  },
-  {
-    path: '/guide/ConnectAppFreeAos',
-    name: '/guide/ConnectAppFreeAos',
-    component: () => import('@/views/connectApp/ConnectAppFreeAos.vue'),
-  },
-  {
-    path: '/guide/ConnectAppFreeIos',
-    name: '/guide/ConnectAppFreeIos',
-    component: () => import('@/views/connectApp/ConnectAppFreeIos.vue'),
+    path: '/guide/error-001',
+    name: '/guide/error-001',
+    component: () => import('@/views/uiGuide/GuideError001.vue'),
   },
   {
     path: '/guide/personal-loan-e-hana-001',
@@ -206,6 +176,18 @@ const routes = [
     path: '/menu',
     name: '/menu',
     component: () => import('@/views/menu/GlobalNav.vue'),
+  },
+
+  // redirect
+  {
+    path: '/redirect/app',
+    name: '/redirect/app',
+    component: () => import('@/views/redirect/RedirectApp.vue'),
+  },
+  {
+    path: '/redirect/app-free',
+    name: '/redirect/app-free',
+    component: () => import('@/views/redirect/RedirectAppFree.vue'),
   },
 
   // personal loan

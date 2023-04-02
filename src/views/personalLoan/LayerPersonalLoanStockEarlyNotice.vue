@@ -43,10 +43,11 @@ export default {
         </FullPopupHead>
       </template>
 
-      <div :class="[$style['basic-section']]">
-        <p :class="[$style['basic-section__title']]">신청 가능 상품</p>
-        <div :class="[$style['basic-section__contents']]">
-          <ul :class="[$style['basic-list']]">
+      <div>
+        <section class="row-margin-contents-group">
+          <h3 class="text-body-2 row-margin-item-group">신청 가능 상품</h3>
+
+          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
             <li
               :class="[
                 $style['basic-list__item'],
@@ -68,19 +69,19 @@ export default {
             >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                <span :class="['font-weight-medium', 'color-red']"
+                <strong class="font-weight-medium color-red"
                   >리스, 렌터카 등 일부 상품은 홈페이지를 통한 중도상환신청이
-                  불가능</span
+                  불가능</strong
                 >하며, 고객센터(180○-1110)로 연락 바랍니다.
               </div>
             </li>
           </ul>
-        </div>
-      </div>
-      <div :class="[$style['basic-section']]">
-        <p :class="[$style['basic-section__title']]">신청 가능 시간</p>
-        <div :class="[$style['basic-section__contents']]">
-          <ul :class="[$style['basic-list']]">
+        </section>
+
+        <section class="row-margin-contents-group">
+          <h3 class="text-body-2 row-margin-item-group">신청 가능 시간</h3>
+
+          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
             <li
               :class="[
                 $style['basic-list__item'],
@@ -107,12 +108,12 @@ export default {
               </div>
             </li>
           </ul>
-        </div>
-      </div>
-      <div :class="[$style['basic-section']]">
-        <p :class="[$style['basic-section__title']]">유의사항</p>
-        <div :class="[$style['basic-section__contents']]">
-          <ul :class="[$style['basic-list']]">
+        </section>
+
+        <section class="row-margin-contents-group">
+          <h3 class="text-body-2 row-margin-item-group">유의사항</h3>
+
+          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
             <li
               :class="[
                 $style['basic-list__item'],
@@ -137,34 +138,42 @@ export default {
               <div :class="$style['basic-list__content']">
                 즉시출금은 '전자금융거래법'에 따라 '고객님의 명의로 인증된
                 자동이체계좌'에서만 출금이 가능합니다.
-              </div>
-            </li>
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-3',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                즉시출금은 '전자금융거래법'에 따라 '고객님의 명의로 인증된
-                자동이체계좌'에서만 출금이 가능합니다.
                 <ul :class="[$style['basic-list']]">
-                  <li :class="[$style['basic-list__item'], 'color-black']">
+                  <li
+                    :class="[
+                      $style['basic-list__item'],
+                      'color-black',
+                      'text-body-4',
+                      'font-weight-regular',
+                    ]"
+                  >
                     <div :class="$style['basic-list__symbol']">-</div>
                     <div :class="$style['basic-list__content']">
                       타인 명의 자동이체 계좌에서는 즉시출금이 불가합니다.
                     </div>
                   </li>
-                  <li :class="[$style['basic-list__item'], 'color-black']">
+                  <li
+                    :class="[
+                      $style['basic-list__item'],
+                      'color-black',
+                      'text-body-4',
+                      'font-weight-regular',
+                    ]"
+                  >
                     <div :class="$style['basic-list__symbol']">-</div>
                     <div :class="$style['basic-list__content']">
                       자동이체 계좌의 잔고가 중도상환신청 금액보다 부족한 경우,
                       출금처리가 되지 않습니다.
                     </div>
                   </li>
-                  <li :class="[$style['basic-list__item'], 'color-black']">
+                  <li
+                    :class="[
+                      $style['basic-list__item'],
+                      'color-black',
+                      'text-body-4',
+                      'font-weight-regular',
+                    ]"
+                  >
                     <div :class="$style['basic-list__symbol']">-</div>
                     <div :class="$style['basic-list__content']">
                       현재, '하나은행'만 즉시출금이 가능하며 타 은행 계좌는 즉시
@@ -211,13 +220,13 @@ export default {
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
                 스탁론(하나금융투자) 전액상환 시,
-                <span :class="['font-weight-medium', 'color-red']"
-                  >대출계좌 내 미체결 내역이 있을 경우 약정해지가 불가능</span
+                <strong class="font-weight-medium color-red"
+                  >대출계좌 내 미체결 내역이 있을 경우 약정해지가 불가능</strong
                 >하니 반드시 주문 취소 후 중도상환을 하시기 바랍니다.
               </div>
             </li>
           </ul>
-        </div>
+        </section>
       </div>
 
       <template v-slot:foot>
@@ -234,6 +243,7 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
+
 <style lang="scss" module>
-@import '@/assets/scss/views/personalLoan/LayerPersonalLoanStockIntermediateRepaymentPrecautions.scss';
+@import '@/assets/scss/views/personalLoan/LayerPersonalLoanStockEarlyNotice.scss';
 </style>
