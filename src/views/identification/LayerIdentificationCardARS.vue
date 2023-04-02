@@ -9,7 +9,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import ImgArs from '@/assets/images/illustration/img-ars.svg?component';
+import ImgArs from '@/assets/images/icon/img-ars.svg?component';
 
 export default {
   components: {

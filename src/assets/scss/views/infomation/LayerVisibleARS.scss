@@ -1,0 +1,5 @@
+.key-value {
+  &__item {
+    @include font-size-default(14);
+  }
+}

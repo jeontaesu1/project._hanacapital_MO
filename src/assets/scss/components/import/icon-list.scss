@@ -51,4 +51,11 @@
     @include font-size-default(16);
     font-weight: 500;
   }
+
+  &__text {
+    margin: 0;
+    @include font-size-default(13);
+    font-weight: 400;
+    color: $color-gray-70;
+  }
 }

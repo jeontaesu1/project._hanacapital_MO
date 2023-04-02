@@ -8,6 +8,8 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 import LayerPersonalLoanIdentificationMethodSelect from '@/views/personalLoan/LayerPersonalLoanIdentificationMethodSelect.vue';
 import LayerPersonalLoanHappinessApartmentAgree from '@/views/personalLoan/LayerPersonalLoanHappinessApartmentAgree.vue';
+import LayerPersonalLoanHappinessApartmentResult from '@/views/personalLoan/LayerPersonalLoanHappinessApartmentResult.vue';
+import LayerPersonalLoanHappinessApartmentInput from '@/views/personalLoan/LayerPersonalLoanHappinessApartmentInput.vue';
 
 export default {
   components: {
@@ -17,10 +19,14 @@ export default {
     ButtonListItem,
     LayerPersonalLoanIdentificationMethodSelect,
     LayerPersonalLoanHappinessApartmentAgree,
+    LayerPersonalLoanHappinessApartmentResult,
+    LayerPersonalLoanHappinessApartmentInput,
   },
   setup() {
     const layer001 = ref(null);
     const layer002 = ref(null);
+    const layer003 = ref(null);
+    const layer004 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -28,12 +34,22 @@ export default {
     const layer002Open = (e = {}) => {
       layer002.value.layer.open(e.target);
     };
+    const layer003Open = (e = {}) => {
+      layer003.value.layer.open(e.target);
+    };
+    const layer004Open = (e = {}) => {
+      layer004.value.layer.open(e.target);
+    };
 
     return {
       layer001,
       layer002,
+      layer003,
+      layer004,
       layer001Open,
       layer002Open,
+      layer003Open,
+      layer004Open,
     };
   },
 };
@@ -54,9 +70,19 @@ export default {
       <ButtonListItem>
         <BasicButton @click="layer002Open">한도조회 동의</BasicButton>
       </ButtonListItem>
+
+      <ButtonListItem>
+        <BasicButton @click="layer003Open">한도조회 결과</BasicButton>
+      </ButtonListItem>
+
+      <ButtonListItem>
+        <BasicButton @click="layer004Open">신청 정보 입력</BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <LayerPersonalLoanIdentificationMethodSelect ref="layer001" />
     <LayerPersonalLoanHappinessApartmentAgree ref="layer002" />
+    <LayerPersonalLoanHappinessApartmentResult ref="layer003" />
+    <LayerPersonalLoanHappinessApartmentInput ref="layer004" />
   </PageContents>
 </template>

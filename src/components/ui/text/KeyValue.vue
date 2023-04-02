@@ -17,6 +17,10 @@ export default {
       Type: String,
       default: null,
     },
+    direction: {
+      Type: String,
+      default: null,
+    },
     margin: {
       Type: String,
       default: null,
@@ -43,6 +47,7 @@ export default {
       $style['key-value'],
       {
         [$style[`key-value--${align}`]]: align,
+        [$style[`key-value--${direction}`]]: direction,
         [$style[`key-value--margin-${margin}`]]: margin,
       },
       customClassNames.wrap,
