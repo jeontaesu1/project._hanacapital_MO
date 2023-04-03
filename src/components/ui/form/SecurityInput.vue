@@ -6,6 +6,7 @@ const defaultClassNames = () => ({
   button: '',
   dot: '',
   active: '',
+  type: '',
 });
 
 export default {
@@ -16,6 +17,10 @@ export default {
       default() {
         return defaultClassNames();
       },
+    },
+    type: {
+      Type: String,
+      default: null,
     },
     dot: {
       Type: Array,
@@ -70,7 +75,15 @@ export default {
 </script>
 
 <template>
-  <div :class="[$style['security-input'], customClassNames.wrap]">
+  <div
+    :class="[
+      $style['security-input'],
+      {
+        [$style[`security-input--${type}`]]: type,
+      },
+      customClassNames.wrap,
+    ]"
+  >
     <input type="hidden" :value="value" />
     <button
       v-bind="$attrs"
