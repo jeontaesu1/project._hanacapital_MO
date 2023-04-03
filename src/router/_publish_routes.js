@@ -177,6 +177,11 @@ const routes = [
     name: '/guide/setting-reset-face-id',
     component: () => import('@/views/uiGuide/GuideSettingResetFaceId.vue'),
   },
+  {
+    path: '/guide/lm-blog-loan-counseling',
+    name: '/guide/lm-blog-loan-counseling',
+    component: () => import('@/views/uiGuide/GuideLMBlogLoanCounseling.vue'),
+  },
 
   // home
   {
@@ -422,9 +427,9 @@ const routes = [
 
   // setting
   {
-    path: '/setting/main',
-    name: '/setting/main',
-    component: () => import('@/views/setting/SettingMain.vue'),
+    path: '/setting/home',
+    name: '/setting/home',
+    component: () => import('@/views/setting/SettingHome.vue'),
   },
   {
     path: '/setting/push',
@@ -449,59 +454,63 @@ const routes = [
     component: () => import('@/views/lm-blog/LMBlogLoanCounseling.vue'),
   },
   {
-    path: '/lm-blog/',
-    name: '/lm-blog/',
-    component: () => import('@/views/lm-blog/LMBlog.vue'),
+    path: '/lm-blog/loan-counseling-form',
+    name: '/lm-blog/loan-counseling-form',
+    component: () => import('@/views/lm-blog/LMBlogLoanCounselingForm.vue'),
   },
   {
-    path: '/lm-blog/',
-    name: '/lm-blog/',
-    component: () => import('@/views/lm-blog/LMBlog.vue'),
+    path: '/lm-blog/quick-counseling',
+    name: '/lm-blog/quick-counseling',
+    component: () => import('@/views/lm-blog/LMBlogQuickCounseling.vue'),
   },
   {
-    path: '/lm-blog/',
-    name: '/lm-blog/',
-    component: () => import('@/views/lm-blog/LMBlog.vue'),
+    path: '/lm-blog/sms-counseling',
+    name: '/lm-blog/sms-counseling',
+    component: () => import('@/views/lm-blog/LMBlogSMSCounseling.vue'),
   },
   {
-    path: '/lm-blog/',
-    name: '/lm-blog/',
-    component: () => import('@/views/lm-blog/LMBlog.vue'),
+    path: '/lm-blog/sms-counseling-detail',
+    name: '/lm-blog/sms-counseling-detail',
+    component: () => import('@/views/lm-blog/LMBlogSMSCounselingDetail.vue'),
   },
   {
-    path: '/lm-blog/',
-    name: '/lm-blog/',
-    component: () => import('@/views/lm-blog/LMBlog.vue'),
+    path: '/lm-blog/access-statistics',
+    name: '/lm-blog/access-statistics',
+    component: () => import('@/views/lm-blog/LMBlogAccessStatistics.vue'),
   },
   {
-    path: '/lm-blog/',
-    name: '/lm-blog/',
-    component: () => import('@/views/lm-blog/LMBlog.vue'),
+    path: '/lm-blog/status-inquiry',
+    name: '/lm-blog/status-inquiry',
+    component: () => import('@/views/lm-blog/LMBlogStatusInquiry.vue'),
+  },
+
+  // lm-blog-personal
+  {
+    path: '/lm-blog-personal/home',
+    name: '/lm-blog-personal/home',
+    component: () => import('@/views/lm-blog-personal/LMBlogPersonalHome.vue'),
   },
   {
-    path: '/lm-blog/',
-    name: '/lm-blog/',
-    component: () => import('@/views/lm-blog/LMBlog.vue'),
+    path: '/lm-blog-personal/menu',
+    name: '/lm-blog-personal/menu',
+    component: () => import('@/views/lm-blog-personal/LMBlogPersonalMenu.vue'),
   },
   {
-    path: '/lm-blog/',
-    name: '/lm-blog/',
-    component: () => import('@/views/lm-blog/LMBlog.vue'),
+    path: '/lm-blog-personal/quick-counseling',
+    name: '/lm-blog-personal/quick-counseling',
+    component: () =>
+      import('@/views/lm-blog-personal/LMBlogPersonalQuickCounseling.vue'),
   },
   {
-    path: '/lm-blog/',
-    name: '/lm-blog/',
-    component: () => import('@/views/lm-blog/LMBlog.vue'),
+    path: '/lm-blog-personal/sms-counseling',
+    name: '/lm-blog-personal/sms-counseling',
+    component: () =>
+      import('@/views/lm-blog-personal/LMBlogPersonalSMSCounseling.vue'),
   },
   {
-    path: '/lm-blog/',
-    name: '/lm-blog/',
-    component: () => import('@/views/lm-blog/LMBlog.vue'),
-  },
-  {
-    path: '/lm-blog/',
-    name: '/lm-blog/',
-    component: () => import('@/views/lm-blog/LMBlog.vue'),
+    path: '/lm-blog-personal/map',
+    name: '/lm-blog-personal/map',
+    component: () => import('@/views/lm-blog-personal/LMBlogPersonalMap.vue'),
   },
 ];
 
