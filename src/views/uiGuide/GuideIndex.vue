@@ -116,6 +116,17 @@ const datas = () => [
         log: [],
       },
       {
+        depth2: '테이블',
+        depth3: '',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/guide/table001',
+        status: 'ing',
+        create: '2023.04.03',
+        log: [],
+      },
+      {
         depth2: '오류안내',
         depth3: '팝업',
         depth4: '',
