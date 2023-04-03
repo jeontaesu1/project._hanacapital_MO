@@ -1,5 +1,6 @@
 <script>
-import { ref, onMounted, onUpdated, onUnmounted } from 'vue';
+import { ref, computed, onMounted, onUpdated, onUnmounted } from 'vue';
+import { useRoute } from 'vue-router';
 
 const datas = () => [
   /*
@@ -653,6 +654,9 @@ const datas = () => [
 export default {
   setup() {
     const tableDatas = datas();
+
+    const route = useRoute();
+
     const statusText = {
       ing: '작업중',
       partend: '부분작업완료',
@@ -729,6 +733,10 @@ export default {
     const bottomBar = ref(null);
     const fake = ref(null);
 
+    const path = computed(() => {
+      return route.path;
+    });
+
     const update = () => {
       if (bottomBar.value && fake.value) {
         const height = bottomBar.value.offsetHeight;
@@ -777,6 +785,7 @@ export default {
       tableDatas,
       statusText,
       latestDate,
+      path,
       renderVal,
     };
   },
@@ -863,7 +872,12 @@ export default {
                       v-html="renderVal(item.datas, i, 'depth6', 'depth5')"
                     ></td>
                     <td>
-                      <a :href="data.path" target="_blank">
+                      <a
+                        :href="`${path.match('guide-index') ? '..' : '.'}${
+                          data.path
+                        }`"
+                        target="_blank"
+                      >
                         {{ data.path }}
                       </a>
                     </td>
