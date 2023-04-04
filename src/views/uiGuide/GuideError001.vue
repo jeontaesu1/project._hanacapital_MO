@@ -6,8 +6,8 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import LayerErrorFull from '@/views/error/LayerErrorFull.vue';
-import LayerErrorAlert from '@/views/error/LayerErrorAlert.vue';
+import LayerErrorFull from '@/views/errorContents/LayerErrorFull.vue';
+import LayerErrorAlert from '@/views/errorContents/LayerErrorAlert.vue';
 
 export default {
   components: {
