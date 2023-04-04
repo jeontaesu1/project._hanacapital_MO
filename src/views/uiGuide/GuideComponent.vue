@@ -4229,6 +4229,17 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Empty</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <div :class="$style['empty']">
+          <p :class="$style['empty__text']">검색된 결과가 없습니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Time Out</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>

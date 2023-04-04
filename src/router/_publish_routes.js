@@ -156,6 +156,37 @@ const routes = [
     name: '/guide/sign-in-biometrics-001',
     component: () => import('@/views/uiGuide/GuideSignInBiometrics001.vue'),
   },
+  {
+    path: '/guide/inventory-finance-early',
+    name: '/guide/inventory-finance-early',
+    component: () =>
+      import('@/views/uiGuide/GuideInventoryFinanceEarly001.vue'),
+  },
+  {
+    path: '/guide/setting-reset-pin',
+    name: '/guide/setting-reset-pin',
+    component: () => import('@/views/uiGuide/GuideSettingResetPin.vue'),
+  },
+  {
+    path: '/guide/setting-reset-face',
+    name: '/guide/setting-reset-face',
+    component: () => import('@/views/uiGuide/GuideSettingResetFace.vue'),
+  },
+  {
+    path: '/guide/setting-reset-fingerprint',
+    name: '/guide/setting-reset-fingerprint',
+    component: () => import('@/views/uiGuide/GuideSettingResetFingerprint.vue'),
+  },
+  {
+    path: '/guide/setting-reset-face-id',
+    name: '/guide/setting-reset-face-id',
+    component: () => import('@/views/uiGuide/GuideSettingResetFaceId.vue'),
+  },
+  {
+    path: '/guide/lm-blog-loan-counseling',
+    name: '/guide/lm-blog-loan-counseling',
+    component: () => import('@/views/uiGuide/GuideLMBlogLoanCounseling.vue'),
+  },
 
   // home
   {
@@ -260,6 +291,11 @@ const routes = [
 
   // customer
   {
+    path: '/customer/faq',
+    name: '/customer/faq',
+    component: () => import('@/views/customer/CustomerFAQList.vue'),
+  },
+  {
     path: '/customer/counseling-info',
     name: '/customer/counseling-info',
     component: () => import('@/views/customer/CustomerCounselingInfo.vue'),
@@ -286,16 +322,6 @@ const routes = [
     component: () => import('@/views/customer/CustomerNoticeDetail.vue'),
   },
   {
-    path: '/customer/event-list',
-    name: '/customer/event-list',
-    component: () => import('@/views/customer/CustomerEventList.vue'),
-  },
-  {
-    path: '/customer/event-detail',
-    name: '/customer/event-detail',
-    component: () => import('@/views/customer/CustomerEventDetail.vue'),
-  },
-  {
     path: '/customer/branch-list',
     name: '/customer/branch-list',
     component: () => import('@/views/customer/CustomerBranchList.vue'),
@@ -316,6 +342,180 @@ const routes = [
     name: '/customer/reservation-counseling-complete',
     component: () =>
       import('@/views/customer/CustomerReservationCounselingComplete.vue'),
+  },
+
+  // inventory-financing
+  {
+    path: '/inventory-finance/early-list',
+    name: '/inventory-finance/early-list',
+    component: () =>
+      import('@/views/inventory-finance/InventoryFinanceEarlyList.vue'),
+  },
+  {
+    path: '/inventory-finance/early-form',
+    name: '/inventory-finance/early-form',
+    component: () =>
+      import('@/views/inventory-finance/InventoryFinanceEarlyForm.vue'),
+  },
+  {
+    path: '/inventory-finance/early-simulation',
+    name: '/inventory-finance/early-simulation',
+    component: () =>
+      import('@/views/inventory-finance/InventoryFinanceEarlySimulation.vue'),
+  },
+  {
+    path: '/inventory-finance/early-confirm',
+    name: '/inventory-finance/early-confirm',
+    component: () =>
+      import('@/views/inventory-finance/InventoryFinanceEarlyConfirm.vue'),
+  },
+  {
+    path: '/inventory-finance/early-complete',
+    name: '/inventory-finance/early-complete',
+    component: () =>
+      import('@/views/inventory-finance/InventoryFinanceEarlyComplete.vue'),
+  },
+  {
+    path: '/inventory-finance/early-fail',
+    name: '/inventory-finance/early-fail',
+    component: () =>
+      import('@/views/inventory-finance/InventoryFinanceEarlyFail.vue'),
+  },
+  {
+    path: '/inventory-finance/extension-list',
+    name: '/inventory-finance/extension-list',
+    component: () =>
+      import('@/views/inventory-finance/InventoryFinanceExtensionList.vue'),
+  },
+  {
+    path: '/inventory-finance/extension-view',
+    name: '/inventory-finance/extension-view',
+    component: () =>
+      import('@/views/inventory-finance/InventoryFinanceExtensionView.vue'),
+  },
+  {
+    path: '/inventory-finance/extension-form',
+    name: '/inventory-finance/extension-form',
+    component: () =>
+      import('@/views/inventory-finance/InventoryFinanceExtensionForm.vue'),
+  },
+  {
+    path: '/inventory-finance/extension-confirm',
+    name: '/inventory-finance/extension-confirm',
+    component: () =>
+      import('@/views/inventory-finance/InventoryFinanceExtensionConfirm.vue'),
+  },
+  {
+    path: '/inventory-finance/extension-complete',
+    name: '/inventory-finance/extension-complete',
+    component: () =>
+      import('@/views/inventory-finance/InventoryFinanceExtensionComplete.vue'),
+  },
+  {
+    path: '/inventory-finance/extension-fail',
+    name: '/inventory-finance/extension-fail',
+    component: () =>
+      import('@/views/inventory-finance/InventoryFinanceExtensionFail.vue'),
+  },
+  {
+    path: '/inventory-finance/add-documents',
+    name: '/inventory-finance/add-documents',
+    component: () =>
+      import('@/views/inventory-finance/InventoryFinanceAddDocuments.vue'),
+  },
+  {
+    path: '/inventory-finance/termination-bonds',
+    name: '/inventory-finance/termination-bonds',
+    component: () =>
+      import('@/views/inventory-finance/InventoryFinanceTerminationBonds.vue'),
+  },
+
+  // setting
+  {
+    path: '/setting/home',
+    name: '/setting/home',
+    component: () => import('@/views/setting/SettingHome.vue'),
+  },
+  {
+    path: '/setting/push',
+    name: '/setting/push',
+    component: () => import('@/views/setting/SettingPush.vue'),
+  },
+  {
+    path: '/setting/certificate-import',
+    name: '/setting/certificate-import',
+    component: () => import('@/views/setting/SettingCertificateImport.vue'),
+  },
+  {
+    path: '/setting/certificate-export',
+    name: '/setting/certificate-export',
+    component: () => import('@/views/setting/SettingCertificateExport.vue'),
+  },
+
+  // lm-blog
+  {
+    path: '/lm-blog/loan-counseling',
+    name: '/lm-blog/loan-counseling',
+    component: () => import('@/views/lm-blog/LMBlogLoanCounseling.vue'),
+  },
+  {
+    path: '/lm-blog/loan-counseling-form',
+    name: '/lm-blog/loan-counseling-form',
+    component: () => import('@/views/lm-blog/LMBlogLoanCounselingForm.vue'),
+  },
+  {
+    path: '/lm-blog/quick-counseling',
+    name: '/lm-blog/quick-counseling',
+    component: () => import('@/views/lm-blog/LMBlogQuickCounseling.vue'),
+  },
+  {
+    path: '/lm-blog/sms-counseling',
+    name: '/lm-blog/sms-counseling',
+    component: () => import('@/views/lm-blog/LMBlogSMSCounseling.vue'),
+  },
+  {
+    path: '/lm-blog/sms-counseling-detail',
+    name: '/lm-blog/sms-counseling-detail',
+    component: () => import('@/views/lm-blog/LMBlogSMSCounselingDetail.vue'),
+  },
+  {
+    path: '/lm-blog/access-statistics',
+    name: '/lm-blog/access-statistics',
+    component: () => import('@/views/lm-blog/LMBlogAccessStatistics.vue'),
+  },
+  {
+    path: '/lm-blog/status-inquiry',
+    name: '/lm-blog/status-inquiry',
+    component: () => import('@/views/lm-blog/LMBlogStatusInquiry.vue'),
+  },
+
+  // lm-blog-personal
+  {
+    path: '/lm-blog-personal/home',
+    name: '/lm-blog-personal/home',
+    component: () => import('@/views/lm-blog-personal/LMBlogPersonalHome.vue'),
+  },
+  {
+    path: '/lm-blog-personal/menu',
+    name: '/lm-blog-personal/menu',
+    component: () => import('@/views/lm-blog-personal/LMBlogPersonalMenu.vue'),
+  },
+  {
+    path: '/lm-blog-personal/quick-counseling',
+    name: '/lm-blog-personal/quick-counseling',
+    component: () =>
+      import('@/views/lm-blog-personal/LMBlogPersonalQuickCounseling.vue'),
+  },
+  {
+    path: '/lm-blog-personal/sms-counseling',
+    name: '/lm-blog-personal/sms-counseling',
+    component: () =>
+      import('@/views/lm-blog-personal/LMBlogPersonalSMSCounseling.vue'),
+  },
+  {
+    path: '/lm-blog-personal/map',
+    name: '/lm-blog-personal/map',
+    component: () => import('@/views/lm-blog-personal/LMBlogPersonalMap.vue'),
   },
 ];
 
