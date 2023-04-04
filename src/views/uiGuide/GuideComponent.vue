@@ -4285,6 +4285,40 @@ export default {
         <h3 class="test-section-sub-title">Default</h3>
       </div>
     </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Component table</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <!-- table -->
+        <div :class="$style['basic-table']">
+          <table>
+            <thead>
+              <tr>
+                <th>동거명의인</th>
+                <th>주민번호</th>
+                <th>최종지분</th>
+                <th>주소</th>
+                <th>순위번호</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>박지혜<br />(공유자)</td>
+                <td>920709-*******</td>
+                <td>2분의 1</td>
+                <td>
+                  채권최고금액 금330,000,000원<br />근저당권자 주식회사 국민은행
+                </td>
+                <td>박지혜</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- //table -->
+        <h3 class="test-section-sub-title">scroll bar</h3>
+      </div>
+    </section>
   </div>
 </template>
 

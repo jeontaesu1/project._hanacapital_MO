@@ -59,11 +59,6 @@ const routes = [
     component: () => import('@/views/uiGuide/GuideGuide001.vue'),
   },
   {
-    path: '/guide/table001',
-    name: '/guide/table001',
-    component: () => import('@/views/uiGuide/Table001.vue'),
-  },
-  {
     path: '/guide/error-001',
     name: '/guide/error-001',
     component: () => import('@/views/uiGuide/GuideError001.vue'),
