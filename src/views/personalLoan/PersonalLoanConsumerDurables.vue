@@ -344,8 +344,8 @@ export default {
                 >
                   <div :class="$style['basic-list__symbol']"></div>
                   <div :class="$style['basic-list__content']">
-                    유이자 : 약정이율+3%,<br />
-                    (법정최고금리 연 20% 이내)
+                    유이자 : 약정이율+3%,
+                    <div :class="$style['sub']">(법정최고금리 연 20% 이내)</div>
                   </div>
                 </li>
                 <li
@@ -358,8 +358,8 @@ export default {
                 >
                   <div :class="$style['basic-list__symbol']"></div>
                   <div :class="$style['basic-list__content']">
-                    무이자 : 상사약정금리+3%,<br />
-                    (법정최고금리 연 20% 이내)
+                    무이자 : 상사약정금리+3%,
+                    <div :class="$style['sub']">(법정최고금리 연 20% 이내)</div>
                   </div>
                 </li>
               </ul>
@@ -380,15 +380,11 @@ export default {
                 >
                   <div :class="$style['basic-list__symbol']">※</div>
                   <div :class="$style['basic-list__content']">
-                    단,연체 발생 시점에 약정금리가 없는 경우는 아래의 사항을
-                    적용함
-                    <ul
-                      :class="[
-                        $style['basic-list'],
-                        $style['basic-list--small-margin'],
-                        'row-margin-item',
-                      ]"
-                    >
+                    <div>
+                      단,연체 발생 시점에 약정금리가 없는 경우는 아래의 사항을
+                      적용함
+                    </div>
+                    <ul :class="[$style['basic-list'], 'row-margin-small']">
                       <li
                         :class="[
                           $style['basic-list__item'],
@@ -399,9 +395,13 @@ export default {
                       >
                         <div :class="$style['basic-list__symbol']">-</div>
                         <div :class="$style['basic-list__content']">
-                          약정금리는 상법상 상사법정이율과 상호금융
-                          가계자금대출금리 *중 높은 금리 적용
-                          <div class="text-body-5 color-gray row-margin-small">
+                          <div>
+                            약정금리는 상법상 상사법정이율과 상호금융
+                            가계자금대출금리 *중 높은 금리 적용
+                          </div>
+                          <div
+                            class="text-body-5 color-gray-tertiary row-margin-small"
+                          >
                             * 한국은행에서 매월 발표하는 가장 최근의
                             비은행금융기관 가중평균대출금리(신규대출 기준)
                           </div>
@@ -710,13 +710,7 @@ export default {
         </div>
       </UiTabPanel>
       <UiTabPanel name="PersonalLoanConsumerDurablesTab001_003">
-        <ul
-          :class="[
-            $style['basic-list'],
-            $style['basic-list--regular'],
-            'row-margin-contents',
-          ]"
-        >
+        <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
           <li
             :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
           >

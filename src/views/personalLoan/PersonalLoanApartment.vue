@@ -370,13 +370,7 @@ export default {
         </div>
       </UiTabPanel>
       <UiTabPanel name="PersonalLoanApartmentTab001_003">
-        <ul
-          :class="[
-            $style['basic-list'],
-            $style['basic-list--regular'],
-            'row-margin-contents',
-          ]"
-        >
+        <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
           <li
             :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
           >

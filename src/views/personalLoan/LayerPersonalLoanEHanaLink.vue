@@ -181,7 +181,6 @@ export default {
               $style['basic-list'],
               $style['basic-list--regular'],
               $style['basic-list--regular-margin'],
-              'row-margin-contents',
             ]"
           >
             <li

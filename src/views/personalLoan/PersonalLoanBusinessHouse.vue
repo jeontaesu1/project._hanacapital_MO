@@ -335,7 +335,10 @@ export default {
 
           <KeyValueItem>
             <KeyValueTitle>연체이자율</KeyValueTitle>
-            <KeyValueText>약정이율 + 3%(법정최고금리 연 20% 이내)</KeyValueText>
+            <KeyValueText>
+              약정이율 + 3%
+              <div :class="$style['sub']">(법정최고금리 연 20% 이내)</div>
+            </KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem>
@@ -532,13 +535,7 @@ export default {
         </div>
       </UiTabPanel>
       <UiTabPanel name="PersonalLoanBusinessHouseTab001_003">
-        <ul
-          :class="[
-            $style['basic-list'],
-            $style['basic-list--regular'],
-            'row-margin-contents',
-          ]"
-        >
+        <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
           <li
             :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
           >
