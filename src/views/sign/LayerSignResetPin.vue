@@ -56,26 +56,23 @@ export default {
 
       <IllustObject />
 
-      <ul
-        :class="[
-          $style['basic-list'],
-          $style['basic-list--regular'],
-          'row-margin-contents',
-        ]"
-      >
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            등록된 간편비밀번호와 얼굴인증을 삭제한 후 다시 등록합니다.
-          </div>
-        </li>
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            간편인증 오류 횟수는 모두 초기화됩니다.
-          </div>
-        </li>
-      </ul>
+      <section :class="[$style['notice-section'], 'row-margin-contents']">
+        <h3 :class="$style['notice-section__title']">유의사항</h3>
+        <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              등록된 간편비밀번호와 얼굴인증을 삭제한 후 다시 등록합니다.
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              간편인증 오류 횟수는 모두 초기화됩니다.
+            </div>
+          </li>
+        </ul>
+      </section>
 
       <template v-slot:foot>
         <ButtonList

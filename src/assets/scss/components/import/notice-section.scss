@@ -1,0 +1,14 @@
+.notice-section {
+  padding: 0 10px;
+
+  & + & {
+    margin-top: 16px;
+  }
+
+  &__title {
+    margin: 0 0 8px;
+    @include font-size-default(12);
+    font-weight: 500;
+    color: $color-gray-70;
+  }
+}
