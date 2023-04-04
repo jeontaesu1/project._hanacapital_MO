@@ -100,7 +100,7 @@ export default {
         </div>
       </BasicBox>
 
-      <ul :class="[$style['basic-list']]">
+      <ul :class="$style['basic-list']">
         <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']"></div>
           <div :class="$style['basic-list__content']">

@@ -3,19 +3,13 @@
 @import '@/assets/scss/components/import/icon-list.scss';
 @import '@/assets/scss/components/import/step.scss';
 @import '@/assets/scss/components/import/illustration-img.scss';
+@import '@/assets/scss/components/import/contents-list.scss';
 
 .bg {
   background-color: $color-navy-05;
   margin: -30px -20px 0 -20px;
   padding: 30px 20px 40px 20px;
   box-sizing: border-box;
-}
-
-.small-sub {
-  margin: 2px 0 0 0;
-  @include font-size-default(12);
-  color: $color-gray-80;
-  font-weight: 400;
 }
 
 .sub {
@@ -27,6 +21,10 @@
 
 .tab__inner {
   margin-top: 40px;
+}
+
+.margin-top-small {
+  margin-top: 8px;
 }
 
 .margin-top-regular {
