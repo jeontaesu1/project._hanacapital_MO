@@ -1,9 +1,9 @@
 .basic-table {
   width: 100%;
   border-top: 1px solid $color-gray-60;
+
   table {
     @include basic-table;
-    width: 100%;
   }
   thead {
     th {

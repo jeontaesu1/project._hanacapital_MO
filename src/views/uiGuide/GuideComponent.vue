@@ -70,6 +70,7 @@ import IllustInfoTitle from '@/components/ui/common/IllustInfoTitle.vue';
 import IllustInfoText from '@/components/ui/common/IllustInfoText.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
 import RoundStatus from '@/components/ui/text/RoundStatus.vue';
+import ScrollSection from '@/components/ui/section/ScrollSection.vue';
 
 import BrandLogo001 from '@/assets/images/bank-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/bank-logo/lotte.svg?component';
@@ -193,6 +194,7 @@ export default {
     ImgZeroCommission,
     Img120Months,
     IconCarSecurity,
+    ScrollSection,
   },
   setup() {
     const store = {
@@ -4316,7 +4318,120 @@ export default {
           </table>
         </div>
         <!-- //table -->
-        <h3 class="test-section-sub-title">scroll bar</h3>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">테이블이 없을경우</h3>
+        <p :class="$style['not-table']">기록사항 없음</p>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Component 타이틀 + 스크롤</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">스크롤 + 타이틀 + 아이콘</h3>
+        <ScrollSection>
+          <template v-slot:head>
+            <h2 class="text-body-2">
+              2. 소유지분을 제외한 소유권에 관한 사항(갑구)
+            </h2>
+          </template>
+
+          <!-- table -->
+          <div :class="$style['basic-table']">
+            <table>
+              <thead>
+                <tr>
+                  <th>동거명의인</th>
+                  <th>주민번호</th>
+                  <th>최종지분</th>
+                  <th>주소</th>
+                  <th>순위번호</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>박지혜<br />(공유자)</td>
+                  <td>920709-*******</td>
+                  <td>2분의 1</td>
+                  <td>
+                    채권최고금액 금330,000,000원<br />근저당권자 주식회사
+                    국민은행
+                  </td>
+                  <td>박지혜</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- //table -->
+        </ScrollSection>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">스크롤 + 아이콘</h3>
+        <ScrollSection>
+          <template v-slot:head> <h2 class="text-body-2">&nbsp;</h2></template>
+
+          <!-- table -->
+          <div :class="$style['basic-table']">
+            <table>
+              <thead>
+                <tr>
+                  <th>동거명의인</th>
+                  <th>주민번호</th>
+                  <th>최종지분</th>
+                  <th>주소</th>
+                  <th>순위번호</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>박지혜<br />(공유자)</td>
+                  <td>920709-*******</td>
+                  <td>2분의 1</td>
+                  <td>
+                    채권최고금액 금330,000,000원<br />근저당권자 주식회사
+                    국민은행
+                  </td>
+                  <td>박지혜</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- //table -->
+        </ScrollSection>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">스크롤만 있을경우</h3>
+        <ScrollSection>
+          <!-- table -->
+          <div :class="$style['basic-table']">
+            <table>
+              <thead>
+                <tr>
+                  <th>동거명의인</th>
+                  <th>주민번호</th>
+                  <th>최종지분</th>
+                  <th>주소</th>
+                  <th>순위번호</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>박지혜<br />(공유자)</td>
+                  <td>920709-*******</td>
+                  <td>2분의 1</td>
+                  <td>
+                    채권최고금액 금330,000,000원<br />근저당권자 주식회사
+                    국민은행
+                  </td>
+                  <td>박지혜</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- //table -->
+        </ScrollSection>
       </div>
     </section>
   </div>
