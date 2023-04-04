@@ -65,4 +65,11 @@
       }
     }
   }
+  &--margin-small {
+    .key-value__item {
+      & + .key-value__item {
+        margin-top: 4px;
+      }
+    }
+  }
 }

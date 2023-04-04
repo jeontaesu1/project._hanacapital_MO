@@ -7,6 +7,7 @@ const defaultClassNames = () => ({
   body: '',
   bodyInner: '',
   foot: '',
+  bg: '',
 });
 
 export default {
@@ -16,6 +17,10 @@ export default {
       default() {
         return defaultClassNames();
       },
+    },
+    bg: {
+      Type: String,
+      default: null,
     },
   },
   setup(props, context) {
@@ -44,7 +49,15 @@ export default {
 </script>
 
 <template>
-  <div :class="[$style['popup'], customClassNames.wrap]">
+  <div
+    :class="[
+      $style['popup'],
+      {
+        [$style[`popup--bg-${bg}`]]: bg,
+      },
+      customClassNames.wrap,
+    ]"
+  >
     <div v-if="isHead" :class="[$style['popup__head'], customClassNames.head]">
       <slot name="head" />
     </div>

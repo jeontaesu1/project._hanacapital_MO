@@ -7,6 +7,8 @@ import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import SecurityInput from '@/components/ui/form/SecurityInput.vue';
+import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
+import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 
 export default {
   components: {
@@ -16,6 +18,8 @@ export default {
     FullPopupHead,
     PageMainText,
     SecurityInput,
+    FormInvalidMessage,
+    FormHelpText,
   },
   setup() {
     const layer = ref(null);
@@ -41,8 +45,9 @@ export default {
         :classNames="{
           wrap: 'align-center',
         }"
-        >확인을 위해 비밀번호를<br />
-        <strong>한번 더 입력해 주세요</strong>
+      >
+        간편비밀번호 6자리를<br />
+        <strong>설정해 주세요</strong>
       </PageMainText>
 
       <!-- DD : 보안 키패드 열렸을 때 :isFocused="true" props 추가 해서 포커싱 스타일 적용 -->
@@ -54,6 +59,23 @@ export default {
         title="간편비밀번호 6자리"
         :dot="[true, true, true, false, false, false]"
       />
+      <!-- DD : 입력 오류시 문구 노출 -->
+      <FormInvalidMessage
+        :classNames="{
+          wrap: 'align-center text-body-4',
+        }"
+        >동일 숫자 3개, 연속된 3자리 숫자,<br />
+        생년월일 숫자를 사용할 수 없습니다.
+      </FormInvalidMessage>
+      <!-- //DD : 입력 오류시 문구 노출 -->
+      <FormHelpText
+        :classNames="{
+          wrap: 'align-center text-body-4',
+        }"
+      >
+        동일 숫자, 연속 숫자, 개인정보 관련 숫자는<br />
+        등록이 제한됩니다.
+      </FormHelpText>
     </FullPopup>
   </UiLayer>
 </template>

@@ -21,6 +21,7 @@ import LayerPersonalLoanStockEarlyError from '@/views/personalLoan/LayerPersonal
 import LayerPersonalLoanStockEarlyAlert from '@/views/personalLoan/LayerPersonalLoanStockEarlyAlert.vue';
 import LayerPersonalLoanStockEarlyComplete from '@/views/personalLoan/LayerPersonalLoanStockEarlyComplete.vue';
 import LayerPersonalLoanStockEarlyFail from '@/views/personalLoan/LayerPersonalLoanStockEarlyFail.vue';
+import LayerPersonalLoanStockEarlyEnter from '@/views/personalLoan/LayerPersonalLoanStockEarlyEnter.vue';
 
 export default {
   components: {
@@ -43,6 +44,7 @@ export default {
     LayerPersonalLoanStockEarlyAlert,
     LayerPersonalLoanStockEarlyComplete,
     LayerPersonalLoanStockEarlyFail,
+    LayerPersonalLoanStockEarlyEnter,
   },
   setup() {
     const layer001 = ref(null);
@@ -60,6 +62,7 @@ export default {
     const layer013 = ref(null);
     const layer014 = ref(null);
     const layer015 = ref(null);
+    const layer016 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -106,6 +109,9 @@ export default {
     const layer015Open = (e = {}) => {
       layer015.value.layer.open(e.target);
     };
+    const layer016Open = (e = {}) => {
+      layer016.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -123,6 +129,7 @@ export default {
       layer013,
       layer014,
       layer015,
+      layer016,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -138,6 +145,7 @@ export default {
       layer013Open,
       layer014Open,
       layer015Open,
+      layer016Open,
     };
   },
 };
@@ -214,6 +222,9 @@ export default {
       <ButtonListItem>
         <BasicButton @click="layer015Open">상환 신청 실패</BasicButton>
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer016Open">중도상환 조건 입력</BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <LayerPersonalLoanStockExtensionAgree ref="layer001" />
@@ -231,5 +242,6 @@ export default {
     <LayerPersonalLoanStockEarlyAlert ref="layer013" />
     <LayerPersonalLoanStockEarlyComplete ref="layer014" />
     <LayerPersonalLoanStockEarlyFail ref="layer015" />
+    <LayerPersonalLoanStockEarlyEnter ref="layer016" />
   </PageContents>
 </template>

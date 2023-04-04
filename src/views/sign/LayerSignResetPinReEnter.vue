@@ -41,8 +41,9 @@ export default {
         :classNames="{
           wrap: 'align-center',
         }"
-        >확인을 위해 비밀번호를<br />
-        <strong>한번 더 입력해 주세요</strong>
+      >
+        확인을 위해 비밀번호를<br />
+        <strong>한번 더 입력해 주세요.</strong>
       </PageMainText>
 
       <!-- DD : 보안 키패드 열렸을 때 :isFocused="true" props 추가 해서 포커싱 스타일 적용 -->

@@ -10,6 +10,7 @@ import LayerPersonalLoanETCAgree from '@/views/personalLoan/LayerPersonalLoanETC
 import LayerPersonalLoanIdentificationMethodSelect from '@/views/personalLoan/LayerPersonalLoanIdentificationMethodSelect.vue';
 import LayerPersonalLoanETCAutoSubmit from '@/views/personalLoan/LayerPersonalLoanETCAutoSubmit.vue';
 import LayerPersonalLoanETCValusation from '@/views/personalLoan/LayerPersonalLoanETCValusation.vue';
+import LayerPersonalLoanETCCheck from '@/views/personalLoan/LayerPersonalLoanETCCheck.vue';
 
 export default {
   components: {
@@ -21,12 +22,14 @@ export default {
     LayerPersonalLoanIdentificationMethodSelect,
     LayerPersonalLoanETCAutoSubmit,
     LayerPersonalLoanETCValusation,
+    LayerPersonalLoanETCCheck,
   },
   setup() {
     const layer001 = ref(null);
     const layer002 = ref(null);
     const layer003 = ref(null);
     const layer004 = ref(null);
+    const layer005 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -40,16 +43,21 @@ export default {
     const layer004Open = (e = {}) => {
       layer004.value.layer.open(e.target);
     };
+    const layer005Open = (e = {}) => {
+      layer005.value.layer.open(e.target);
+    };
 
     return {
       layer001,
       layer002,
       layer003,
       layer004,
+      layer005,
       layer001Open,
       layer002Open,
       layer003Open,
       layer004Open,
+      layer005Open,
     };
   },
 };
@@ -80,11 +88,16 @@ export default {
         <BasicButton @click="layer004Open">통합 부동산 설정 금액</BasicButton>
       </ButtonListItem>
       -->
+
+      <ButtonListItem>
+        <BasicButton @click="layer005Open">한도/금리 확인</BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <LayerPersonalLoanETCAgree ref="layer001" />
     <LayerPersonalLoanIdentificationMethodSelect ref="layer002" />
     <LayerPersonalLoanETCAutoSubmit ref="layer003" />
     <LayerPersonalLoanETCValusation ref="layer004" />
+    <LayerPersonalLoanETCCheck ref="layer005" />
   </PageContents>
 </template>
