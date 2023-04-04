@@ -46,5 +46,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/components/ui/section/Scroll.scss';
+@import '@/assets/scss/components/ui/section/ScrollSection.scss';
 </style>
