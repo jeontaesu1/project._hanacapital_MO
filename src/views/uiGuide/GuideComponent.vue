@@ -3652,6 +3652,250 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Contents List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Basic Symbol</h3>
+        <ul :class="[$style['contents-list'], 'font-weight-medium']">
+          <li :class="$style['contents-list__item']">
+            <div :class="$style['contents-list__symbol']">1</div>
+            <div :class="$style['contents-list__content']">Contents Item</div>
+          </li>
+          <li :class="$style['contents-list__item']">
+            <div :class="$style['contents-list__symbol']">2</div>
+            <div :class="$style['contents-list__content']">Contents Item</div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Circle Symbol</h3>
+        <ul
+          :class="[
+            $style['contents-list'],
+            $style['contents-list--small-margin'],
+            'font-weight-medium',
+          ]"
+        >
+          <li :class="$style['contents-list__item']">
+            <div
+              :class="[
+                $style['contents-list__symbol'],
+                $style['contents-list__symbol--circle'],
+              ]"
+            >
+              1
+            </div>
+            <div :class="[$style['contents-list__content'], 'text-body-2']">
+              Contents Item
+            </div>
+          </li>
+          <li :class="$style['contents-list__item']">
+            <div
+              :class="[
+                $style['contents-list__symbol'],
+                $style['contents-list__symbol--circle'],
+              ]"
+            >
+              2
+            </div>
+            <div :class="[$style['contents-list__content'], 'text-body-2']">
+              Contents Item
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Square Symbol</h3>
+        <ul
+          :class="[
+            $style['contents-list'],
+            $style['contents-list--medium-margin'],
+            'font-weight-medium',
+          ]"
+        >
+          <li :class="$style['contents-list__item']">
+            <div
+              :class="[
+                $style['contents-list__symbol'],
+                $style['contents-list__symbol--square'],
+              ]"
+            >
+              1
+            </div>
+            <div :class="[$style['contents-list__content'], 'text-body-2']">
+              Contents Item
+            </div>
+          </li>
+          <li :class="$style['contents-list__item']">
+            <div
+              :class="[
+                $style['contents-list__symbol'],
+                $style['contents-list__symbol--square'],
+              ]"
+            >
+              2
+            </div>
+            <div :class="[$style['contents-list__content'], 'text-body-2']">
+              Contents Item
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Square Symbol (small)</h3>
+        <ul
+          :class="[
+            $style['contents-list'],
+            $style['contents-list--normal-margin'],
+            'font-weight-medium',
+          ]"
+        >
+          <li :class="$style['contents-list__item']">
+            <div
+              :class="[
+                $style['contents-list__symbol'],
+                $style['contents-list__symbol--square-small'],
+              ]"
+            >
+              1
+            </div>
+            <div :class="[$style['contents-list__content'], 'text-body-3']">
+              Contents Item
+            </div>
+          </li>
+          <li :class="$style['contents-list__item']">
+            <div
+              :class="[
+                $style['contents-list__symbol'],
+                $style['contents-list__symbol--square-small'],
+              ]"
+            >
+              2
+            </div>
+            <div :class="[$style['contents-list__content'], 'text-body-3']">
+              Contents Item
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Small Size</h3>
+        <ul
+          :class="[
+            $style['contents-list'],
+            $style['contents-list--normal-margin'],
+          ]"
+        >
+          <li :class="$style['contents-list__item']">
+            <div
+              :class="[
+                $style['contents-list__symbol'],
+                $style['contents-list__symbol--small'],
+              ]"
+            >
+              1
+            </div>
+            <div :class="[$style['contents-list__content'], 'text-body-4']">
+              Contents Item
+            </div>
+          </li>
+          <li :class="$style['contents-list__item']">
+            <div
+              :class="[
+                $style['contents-list__symbol'],
+                $style['contents-list__symbol--small'],
+              ]"
+            >
+              2
+            </div>
+            <div :class="[$style['contents-list__content'], 'text-body-4']">
+              Contents Item
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Medium Margin (20px)</h3>
+        <ul
+          :class="[
+            $style['contents-list'],
+            $style['contents-list--medium-margin'],
+          ]"
+        >
+          <li :class="$style['contents-list__item']">
+            <div :class="$style['contents-list__symbol']">1</div>
+            <div :class="$style['contents-list__content']">Contents Item</div>
+          </li>
+          <li :class="$style['contents-list__item']">
+            <div :class="$style['contents-list__symbol']">2</div>
+            <div :class="$style['contents-list__content']">Contents Item</div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Regular Margin (16px)</h3>
+        <ul
+          :class="[
+            $style['contents-list'],
+            $style['contents-list--regular-margin'],
+          ]"
+        >
+          <li :class="$style['contents-list__item']">
+            <div :class="$style['contents-list__symbol']">1</div>
+            <div :class="$style['contents-list__content']">Contents Item</div>
+          </li>
+          <li :class="$style['contents-list__item']">
+            <div :class="$style['contents-list__symbol']">2</div>
+            <div :class="$style['contents-list__content']">Contents Item</div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Normal Margin (12px)</h3>
+        <ul
+          :class="[
+            $style['contents-list'],
+            $style['contents-list--normal-margin'],
+          ]"
+        >
+          <li :class="$style['contents-list__item']">
+            <div :class="$style['contents-list__symbol']">1</div>
+            <div :class="$style['contents-list__content']">Contents Item</div>
+          </li>
+          <li :class="$style['contents-list__item']">
+            <div :class="$style['contents-list__symbol']">2</div>
+            <div :class="$style['contents-list__content']">Contents Item</div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Small Margin (8px)</h3>
+        <ul
+          :class="[
+            $style['contents-list'],
+            $style['contents-list--small-margin'],
+          ]"
+        >
+          <li :class="$style['contents-list__item']">
+            <div :class="$style['contents-list__symbol']">1</div>
+            <div :class="$style['contents-list__content']">Contents Item</div>
+          </li>
+          <li :class="$style['contents-list__item']">
+            <div :class="$style['contents-list__symbol']">2</div>
+            <div :class="$style['contents-list__content']">Contents Item</div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">hr</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -3747,25 +3991,42 @@ export default {
         <h3 class="test-section-sub-title">align left</h3>
         <KeyValueList align="left">
           <KeyValueItem>
-            <KeyValueTitle>차량명의</KeyValueTitle>
-            <KeyValueText>
-              본인명의(공동명의 제외)<br />
-              소유기간 3개월 이상
-            </KeyValueText>
+            <KeyValueTitle>제목</KeyValueTitle>
+            <KeyValueText> 내용내용내용내용내용내용내용</KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem>
-            <KeyValueTitle>소유차종</KeyValueTitle>
-            <KeyValueText>국산/수입 승용, RV, 승합</KeyValueText>
+            <KeyValueTitle>제목</KeyValueTitle>
+            <KeyValueText> 내용내용내용내용내용내용내용</KeyValueText>
+          </KeyValueItem>
+        </KeyValueList>
+
+        <h3 class="test-section-sub-title row-margin-item-group">
+          align left (size: regular)
+        </h3>
+        <KeyValueList align="left" size="regular">
+          <KeyValueItem>
+            <KeyValueTitle>타이틀</KeyValueTitle>
+            <KeyValueText> 내용내용내용내용내용내용내용</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>타이틀</KeyValueTitle>
+            <KeyValueText> 내용내용내용내용내용내용내용</KeyValueText>
+          </KeyValueItem>
+        </KeyValueList>
+
+        <h3 class="test-section-sub-title row-margin-item-group">
+          align left (size: medium)
+        </h3>
+        <KeyValueList align="left" size="medium">
+          <KeyValueItem>
+            <KeyValueTitle>타이틀</KeyValueTitle>
+            <KeyValueText> 내용내용내용내용내용내용내용</KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem>
-            <KeyValueTitle>차량연식</KeyValueTitle>
-            <KeyValueText>
-              출고 이후 10년 이내<br />
-              차량가격 500만원 이상<br />
-              (당사 차량 시세 가격 기준)
-            </KeyValueText>
+            <KeyValueTitle>타이틀</KeyValueTitle>
+            <KeyValueText> 내용내용내용내용내용내용내용</KeyValueText>
           </KeyValueItem>
         </KeyValueList>
       </div>
