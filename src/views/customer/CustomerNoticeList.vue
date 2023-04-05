@@ -105,56 +105,96 @@ export default {
 
       <div :class="$style['board__list']">
         <div :class="$style['board__item']">
-          <div :class="$style['board__title']">
-            전화권유 상담원 현황전화권유 상담원 현황전화권유 상담원 현황
-          </div>
-          <div :class="$style['board__text']">2022.10.25</div>
+          <button type="button" :class="$style['board__link']">
+            <div :class="$style['board__title']">
+              <p :class="$style['board__title-text']">
+                전화권유 상담원 현황전화권유 상담원 현황전화권유 상담원 현황
+              </p>
+            </div>
+            <div :class="$style['board__text']">2022.10.25</div>
+          </button>
         </div>
         <div :class="$style['board__item']">
-          <div :class="$style['board__title']">전화권유 상담원 현황</div>
-          <div :class="$style['board__text']">2022.10.25</div>
+          <button type="button" :class="$style['board__link']">
+            <div :class="$style['board__title']">
+              <p :class="$style['board__title-text']">전화권유 상담원 현황</p>
+            </div>
+            <div :class="$style['board__text']">2022.10.25</div>
+          </button>
         </div>
         <div :class="$style['board__item']">
-          <div :class="$style['board__title']">전화권유 상담원 현황</div>
-          <div :class="$style['board__text']">2022.10.25</div>
+          <button type="button" :class="$style['board__link']">
+            <div :class="$style['board__title']">
+              <p :class="$style['board__title-text']">전화권유 상담원 현황</p>
+            </div>
+            <div :class="$style['board__text']">2022.10.25</div>
+          </button>
         </div>
         <div :class="$style['board__item']">
-          <div :class="$style['board__title']">전화권유 상담원 현황</div>
-          <div :class="$style['board__text']">2022.10.25</div>
+          <button type="button" :class="$style['board__link']">
+            <div :class="$style['board__title']">
+              <p :class="$style['board__title-text']">전화권유 상담원 현황</p>
+            </div>
+            <div :class="$style['board__text']">2022.10.25</div>
+          </button>
         </div>
         <div :class="$style['board__item']">
-          <div :class="$style['board__title']">전화권유 상담원 현황</div>
-          <div :class="$style['board__text']">2022.10.25</div>
+          <button type="button" :class="$style['board__link']">
+            <div :class="$style['board__title']">
+              <p :class="$style['board__title-text']">전화권유 상담원 현황</p>
+            </div>
+            <div :class="$style['board__text']">2022.10.25</div>
+          </button>
         </div>
         <div :class="$style['board__item']">
-          <div :class="$style['board__title']">전화권유 상담원 현황</div>
-          <div :class="$style['board__text']">2022.10.25</div>
+          <button type="button" :class="$style['board__link']">
+            <div :class="$style['board__title']">
+              <p :class="$style['board__title-text']">전화권유 상담원 현황</p>
+            </div>
+            <div :class="$style['board__text']">2022.10.25</div>
+          </button>
         </div>
         <div :class="$style['board__item']">
-          <div :class="$style['board__title']">전화권유 상담원 현황</div>
-          <div :class="$style['board__text']">2022.10.25</div>
+          <button type="button" :class="$style['board__link']">
+            <div :class="$style['board__title']">
+              <p :class="$style['board__title-text']">전화권유 상담원 현황</p>
+            </div>
+            <div :class="$style['board__text']">2022.10.25</div>
+          </button>
         </div>
         <div :class="$style['board__item']">
-          <div :class="$style['board__title']">전화권유 상담원 현황</div>
-          <div :class="$style['board__text']">2022.10.25</div>
+          <button type="button" :class="$style['board__link']">
+            <div :class="$style['board__title']">
+              <p :class="$style['board__title-text']">전화권유 상담원 현황</p>
+            </div>
+            <div :class="$style['board__text']">2022.10.25</div>
+          </button>
         </div>
         <div :class="$style['board__item']">
-          <div :class="$style['board__title']">전화권유 상담원 현황</div>
-          <div :class="$style['board__text']">2022.10.25</div>
+          <button type="button" :class="$style['board__link']">
+            <div :class="$style['board__title']">
+              <p :class="$style['board__title-text']">전화권유 상담원 현황</p>
+            </div>
+            <div :class="$style['board__text']">2022.10.25</div>
+          </button>
         </div>
         <div :class="$style['board__item']">
-          <div :class="$style['board__title']">전화권유 상담원 현황</div>
-          <div :class="$style['board__text']">2022.10.25</div>
+          <button type="button" :class="$style['board__link']">
+            <div :class="$style['board__title']">
+              <p :class="$style['board__title-text']">전화권유 상담원 현황</p>
+            </div>
+            <div :class="$style['board__text']">2022.10.25</div>
+          </button>
         </div>
       </div>
 
       <div :class="$style['board__bottom']">
-        <a href="/" :class="$style['more-button']" class="none-deco-link">
-          더보기
-          <span :class="$style['button-icon']">
+        <button type="button" :class="$style['more-button']">
+          <span :class="$style['more-button__text']">더보기</span>
+          <span :class="$style['more-button__icon']">
             <IconArrow />
           </span>
-        </a>
+        </button>
       </div>
     </div>
   </PageContents>

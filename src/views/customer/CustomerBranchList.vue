@@ -126,104 +126,124 @@ export default {
     <div :class="$style['board']">
       <div :class="$style['board__list']">
         <div :class="$style['board__item']">
-          <div :class="$style['board__title']">
-            본사
-            <span :class="$style['board__sub']">1800-1110</span>
-          </div>
-          <div :class="$style['board__text']">
-            서울 강남구 테헤란로 127 하나금융그룹 (역삼동,강남사옥)
-          </div>
+          <button type="button" :class="$style['board__link']">
+            <div :class="$style['board__title']">
+              <p :class="$style['board__title-text']">본사</p>
+              <span :class="$style['board__sub']">1800-1110</span>
+            </div>
+            <div :class="$style['board__text']">
+              서울 강남구 테헤란로 127 하나금융그룹 (역삼동,강남사옥)
+            </div>
+          </button>
         </div>
         <div :class="$style['board__item']">
-          <div :class="$style['board__title']">
-            강남소비자금융센터
-            <span :class="$style['board__sub']">1800-1110</span>
-          </div>
-          <div :class="$style['board__text']">
-            서울 강남구 선릉로 704 5층 (청담동, 청담벤처프라자)
-          </div>
+          <button type="button" :class="$style['board__link']">
+            <div :class="$style['board__title']">
+              <p :class="$style['board__title-text']">강남소비자금융센터</p>
+              <span :class="$style['board__sub']">1800-1110</span>
+            </div>
+            <div :class="$style['board__text']">
+              서울 강남구 선릉로 704 5층 (청담동, 청담벤처프라자)
+            </div>
+          </button>
         </div>
         <div :class="$style['board__item']">
-          <div :class="$style['board__title']">
-            본사
-            <span :class="$style['board__sub']">1800-1110</span>
-          </div>
-          <div :class="$style['board__text']">
-            서울 강남구 테헤란로 127 하나금융그룹 (역삼동,강남사옥)
-          </div>
+          <button type="button" :class="$style['board__link']">
+            <div :class="$style['board__title']">
+              <p :class="$style['board__title-text']">강남소비자금융센터</p>
+              <span :class="$style['board__sub']">1800-1110</span>
+            </div>
+            <div :class="$style['board__text']">
+              서울 강남구 선릉로 704 5층 (청담동, 청담벤처프라자)
+            </div>
+          </button>
         </div>
         <div :class="$style['board__item']">
-          <div :class="$style['board__title']">
-            본사
-            <span :class="$style['board__sub']">1800-1110</span>
-          </div>
-          <div :class="$style['board__text']">
-            서울 강남구 테헤란로 127 하나금융그룹 (역삼동,강남사옥)
-          </div>
+          <button type="button" :class="$style['board__link']">
+            <div :class="$style['board__title']">
+              <p :class="$style['board__title-text']">강남소비자금융센터</p>
+              <span :class="$style['board__sub']">1800-1110</span>
+            </div>
+            <div :class="$style['board__text']">
+              서울 강남구 선릉로 704 5층 (청담동, 청담벤처프라자)
+            </div>
+          </button>
         </div>
         <div :class="$style['board__item']">
-          <div :class="$style['board__title']">
-            본사
-            <span :class="$style['board__sub']">1800-1110</span>
-          </div>
-          <div :class="$style['board__text']">
-            서울 강남구 테헤란로 127 하나금융그룹 (역삼동,강남사옥)
-          </div>
+          <button type="button" :class="$style['board__link']">
+            <div :class="$style['board__title']">
+              <p :class="$style['board__title-text']">강남소비자금융센터</p>
+              <span :class="$style['board__sub']">1800-1110</span>
+            </div>
+            <div :class="$style['board__text']">
+              서울 강남구 선릉로 704 5층 (청담동, 청담벤처프라자)
+            </div>
+          </button>
         </div>
         <div :class="$style['board__item']">
-          <div :class="$style['board__title']">
-            본사
-            <span :class="$style['board__sub']">1800-1110</span>
-          </div>
-          <div :class="$style['board__text']">
-            서울 강남구 테헤란로 127 하나금융그룹 (역삼동,강남사옥)
-          </div>
+          <button type="button" :class="$style['board__link']">
+            <div :class="$style['board__title']">
+              <p :class="$style['board__title-text']">강남소비자금융센터</p>
+              <span :class="$style['board__sub']">1800-1110</span>
+            </div>
+            <div :class="$style['board__text']">
+              서울 강남구 선릉로 704 5층 (청담동, 청담벤처프라자)
+            </div>
+          </button>
         </div>
         <div :class="$style['board__item']">
-          <div :class="$style['board__title']">
-            본사
-            <span :class="$style['board__sub']">1800-1110</span>
-          </div>
-          <div :class="$style['board__text']">
-            서울 강남구 테헤란로 127 하나금융그룹 (역삼동,강남사옥)
-          </div>
+          <button type="button" :class="$style['board__link']">
+            <div :class="$style['board__title']">
+              <p :class="$style['board__title-text']">강남소비자금융센터</p>
+              <span :class="$style['board__sub']">1800-1110</span>
+            </div>
+            <div :class="$style['board__text']">
+              서울 강남구 선릉로 704 5층 (청담동, 청담벤처프라자)
+            </div>
+          </button>
         </div>
         <div :class="$style['board__item']">
-          <div :class="$style['board__title']">
-            본사
-            <span :class="$style['board__sub']">1800-1110</span>
-          </div>
-          <div :class="$style['board__text']">
-            서울 강남구 테헤란로 127 하나금융그룹 (역삼동,강남사옥)
-          </div>
+          <button type="button" :class="$style['board__link']">
+            <div :class="$style['board__title']">
+              <p :class="$style['board__title-text']">강남소비자금융센터</p>
+              <span :class="$style['board__sub']">1800-1110</span>
+            </div>
+            <div :class="$style['board__text']">
+              서울 강남구 선릉로 704 5층 (청담동, 청담벤처프라자)
+            </div>
+          </button>
         </div>
         <div :class="$style['board__item']">
-          <div :class="$style['board__title']">
-            본사
-            <span :class="$style['board__sub']">1800-1110</span>
-          </div>
-          <div :class="$style['board__text']">
-            서울 강남구 테헤란로 127 하나금융그룹 (역삼동,강남사옥)
-          </div>
+          <button type="button" :class="$style['board__link']">
+            <div :class="$style['board__title']">
+              <p :class="$style['board__title-text']">강남소비자금융센터</p>
+              <span :class="$style['board__sub']">1800-1110</span>
+            </div>
+            <div :class="$style['board__text']">
+              서울 강남구 선릉로 704 5층 (청담동, 청담벤처프라자)
+            </div>
+          </button>
         </div>
         <div :class="$style['board__item']">
-          <div :class="$style['board__title']">
-            본사
-            <span :class="$style['board__sub']">1800-1110</span>
-          </div>
-          <div :class="$style['board__text']">
-            서울 강남구 테헤란로 127 하나금융그룹 (역삼동,강남사옥)
-          </div>
+          <button type="button" :class="$style['board__link']">
+            <div :class="$style['board__title']">
+              <p :class="$style['board__title-text']">강남소비자금융센터</p>
+              <span :class="$style['board__sub']">1800-1110</span>
+            </div>
+            <div :class="$style['board__text']">
+              서울 강남구 선릉로 704 5층 (청담동, 청담벤처프라자)
+            </div>
+          </button>
         </div>
       </div>
 
       <div :class="$style['board__bottom']">
-        <a href="/" :class="$style['more-button']" class="none-deco-link">
-          더보기
-          <span :class="$style['button-icon']">
+        <button type="button" :class="$style['more-button']">
+          <span :class="$style['more-button__text']">더보기</span>
+          <span :class="$style['more-button__icon']">
             <IconArrow />
           </span>
-        </a>
+        </button>
       </div>
     </div>
   </PageContents>
