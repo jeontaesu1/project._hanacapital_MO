@@ -3,6 +3,7 @@ import { computed, useCssModule, provide } from 'vue';
 
 const defaultClassNames = () => ({
   wrap: '',
+  outerTop: '',
   head: '',
   body: '',
   bodyInner: '',
@@ -32,6 +33,10 @@ export default {
       return Boolean(context.slots.default);
     });
 
+    const isOuterTop = computed(() => {
+      return Boolean(context.slots.outerTop);
+    });
+
     const isHead = computed(() => {
       return Boolean(context.slots.head);
     });
@@ -45,6 +50,7 @@ export default {
     return {
       customClassNames,
       isSlot,
+      isOuterTop,
       isHead,
       isFoot,
     };
@@ -62,6 +68,12 @@ export default {
       customClassNames.wrap,
     ]"
   >
+    <div
+      v-if="isOuterTop"
+      :class="[$style['popup__outer-top'], customClassNames.outerTop]"
+    >
+      <slot name="outerTop" />
+    </div>
     <div v-if="isHead" :class="[$style['popup__head'], customClassNames.head]">
       <slot name="head" />
     </div>

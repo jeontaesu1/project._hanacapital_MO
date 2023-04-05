@@ -12,6 +12,7 @@ import IllustInfo from '@/components/ui/common/IllustInfo.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
 import IllustInfoTitle from '@/components/ui/common/IllustInfoTitle.vue';
 import IllustInfoText from '@/components/ui/common/IllustInfoText.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
 
 export default {
   components: {
@@ -26,6 +27,7 @@ export default {
     IllustObject,
     IllustInfoTitle,
     IllustInfoText,
+    TextButton,
   },
   setup() {
     const state = reactive({});
@@ -64,11 +66,15 @@ export default {
       </IllustInfo>
 
       <template v-slot:foot>
-        <div class="row-margin-contents align-center">
-          <a href="/" target="_blank" class="basic-link color-gray">
+        <div class="inline-wrap align-center row-margin-contents">
+          <TextButton
+            :classNames="{ wrap: 'text-body-4 color-gray' }"
+            :underline="true"
+          >
             기존 인증을 사용할 수 없으세요?
-          </a>
+          </TextButton>
         </div>
+
         <ButtonList
           :classNames="{
             wrap: 'row-margin-none',

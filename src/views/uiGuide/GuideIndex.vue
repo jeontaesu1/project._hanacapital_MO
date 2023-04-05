@@ -112,9 +112,9 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/guide-001',
-        status: 'partend',
+        status: 'end',
         create: '2023.03.31',
-        log: [],
+        log: [{ date: '2023.04.07', text: '앱 설치 안내 팝업 추가' }],
       },
       {
         depth2: '오류안내',
@@ -206,7 +206,9 @@ const datas = () => [
         path: '/guide/sign-in-001',
         status: 'partend',
         create: '2023.03.31',
-        log: [],
+        log: [
+          { date: '2023.04.07', text: '비밀번호 3개월 경과 안내 팝업 추가' },
+        ],
       },
       {
         depth2: '로그인(WEB)',
@@ -215,8 +217,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/sign-in-certificate-001',
-        status: 'ing',
-        create: '2023.03.31',
+        status: 'end',
+        create: '2023.04.07',
         log: [],
       },
       {
@@ -226,9 +228,9 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/sign-find-id-001',
-        status: 'partend',
+        status: 'end',
         create: '2023.03.31',
-        log: [],
+        log: [{ date: '2023.04.07', text: '아이디 확인 팝업 추가' }],
       },
       {
         depth2: '비밀번호 찾기(WEB)',
@@ -292,9 +294,9 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/sign-load-pin-001',
-        status: 'partend',
+        status: 'end',
         create: '2023.04.05',
-        log: [],
+        log: [{ date: '2023.04.07', text: '간편비밀번호 불러오기 팝업 추가' }],
       },
       {
         depth2: '로그인(APP)',
@@ -325,8 +327,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/sign-in-biometrics-001',
-        status: 'ing',
-        create: '2023.03.31',
+        status: 'end',
+        create: '2023.04.07',
         log: [],
       },
     ],
@@ -453,7 +455,12 @@ const datas = () => [
         path: '/personal-loan/stock',
         status: '',
         create: '',
-        log: [],
+        log: [
+          {
+            date: '2023.04.07',
+            text: '팝업 추가\n- 연장신청 약관동의\n- 연장신청 계약선택\n- 연장신청 상품 만기현황 확인\n- 중도상환신청 계약선택\n- 중도상환금액 조회\n- 중도상환 신청확인',
+          },
+        ],
       },
       {
         depth2: '스탁론',
@@ -1146,6 +1153,10 @@ export default {
       }
     };
 
+    const printVal = (val) => {
+      return val.replace(/\n/g, '<br>');
+    };
+
     const bottomBar = ref(null);
     const fake = ref(null);
 
@@ -1203,6 +1214,7 @@ export default {
       latestDate,
       path,
       renderVal,
+      printVal,
     };
   },
 };
@@ -1325,10 +1337,13 @@ export default {
                             },
                           ]"
                         >
-                          <div class="index-log__item__date">
+                          <div class="index-log__date">
                             <span>[{{ log.date }}]</span>
                           </div>
-                          {{ log.text }}
+                          <div
+                            class="index-log__text"
+                            v-html="printVal(log.text)"
+                          ></div>
                         </li>
                       </ul>
                     </td>

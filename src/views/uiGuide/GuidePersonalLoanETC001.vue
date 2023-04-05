@@ -83,11 +83,9 @@ export default {
         <BasicButton @click="layer003Open">통합 소득정보 자동제출</BasicButton>
       </ButtonListItem>
 
-      <!-- 작업중
       <ButtonListItem>
         <BasicButton @click="layer004Open">통합 부동산 설정 금액</BasicButton>
       </ButtonListItem>
-      -->
 
       <ButtonListItem>
         <BasicButton @click="layer005Open">한도/금리 확인</BasicButton>
