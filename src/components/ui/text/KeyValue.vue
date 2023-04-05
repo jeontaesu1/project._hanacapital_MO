@@ -25,6 +25,10 @@ export default {
       Type: String,
       default: null,
     },
+    size: {
+      Type: String,
+      default: null,
+    },
   },
   setup(props) {
     const customClassNames = computed(() => {
@@ -49,6 +53,7 @@ export default {
         [$style[`key-value--align-${align}`]]: align,
         [$style[`key-value--direction-${direction}`]]: direction,
         [$style[`key-value--margin-${margin}`]]: margin,
+        [$style[`key-value--size-${size}`]]: size,
       },
       customClassNames.wrap,
     ]"

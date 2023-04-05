@@ -1,0 +1,98 @@
+.contents-list {
+  @include reset-list;
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__symbol {
+    width: 26px;
+    height: 26px;
+    margin-right: 8px;
+    @include font-size-default(16);
+    text-align: center;
+  }
+
+  &__symbol--circle {
+    width: 16px;
+    height: 16px;
+    margin: 3px 8px 3px 0;
+    @include font-size-default(10);
+    background-color: $color-gray-15;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+
+  &__symbol--square {
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+    padding: 4px;
+    @include font-size-default(11);
+    background-color: $color-gray-15;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+
+  &__symbol--square-small {
+    width: 18px;
+    height: 18px;
+    padding: 1px 0;
+    margin: 1px 8px 1px 0;
+    @include font-size-default(10);
+    background-color: $color-gray-15;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  &__symbol--small {
+    width: 23px;
+    height: 24px;
+    margin-right: 2px;
+    padding: 4px 0 3px 0;
+    @include font-size-default(11);
+    box-sizing: border-box;
+  }
+
+  &__content {
+    flex: 1;
+    min-width: 0;
+    padding: 1px 0;
+    @include font-size-default(16);
+    box-sizing: border-box;
+  }
+
+  &__symbol--small + &__content {
+    padding: 2px 0;
+  }
+
+  &__symbol--circle + &__content,
+  &__symbol--square-small + &__content {
+    padding: 0;
+  }
+
+  &--medium-margin {
+    .contents-list__item + .contents-list__item {
+      margin-top: 20px;
+    }
+  }
+
+  &--regular-margin {
+    .contents-list__item + .contents-list__item {
+      margin-top: 16px;
+    }
+  }
+
+  &--normal-margin {
+    .contents-list__item + .contents-list__item {
+      margin-top: 12px;
+    }
+  }
+
+  &--small-margin {
+    .contents-list__item + .contents-list__item {
+      margin-top: 8px;
+    }
+  }
+}
