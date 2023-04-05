@@ -7,6 +7,8 @@ import {
   provide,
   inject,
   useCssModule,
+  onMounted,
+  watch,
 } from 'vue';
 
 import SelectButton from '@/components/ui/form/SelectButton.vue';
@@ -77,8 +79,11 @@ export default {
         return () => {};
       },
     },
+    modelValue: {
+      Type: String,
+    },
   },
-  setup(props) {
+  setup(props, { emit }) {
     const state = reactive({
       options: [],
       count: 0,
@@ -136,8 +141,10 @@ export default {
       layer.value.close();
 
       nextTick(() => {
-        const e = new Event('change');
-        input.value.dispatchEvent(e);
+        const eChange = new Event('change');
+        const eInput = new Event('input');
+        input.value.dispatchEvent(eChange);
+        input.value.dispatchEvent(eInput);
       });
     };
 
@@ -169,6 +176,21 @@ export default {
       }
     };
 
+    const onInput = (e) => {
+      emit('update:modelValue', e.target.value);
+    };
+
+    onMounted(() => {
+      setValue(props.modelValue);
+    });
+
+    watch(
+      () => props.modelValue,
+      (cur) => {
+        setValue(cur);
+      }
+    );
+
     provide('extendSelectStyleModule', useCssModule());
     provide('extendSelect', {
       options: state.options,
@@ -189,6 +211,7 @@ export default {
       selectOption,
       layerOpen,
       onAfterClosed,
+      onInput,
     };
   },
 };
@@ -205,6 +228,7 @@ export default {
       :disabled="disabled"
       :value="state.value.value"
       @change="onChange"
+      @input="onInput"
     />
     <SelectButton
       ref="button"

@@ -102,4 +102,10 @@
       margin-top: 8px;
     }
   }
+
+  &--bg {
+    &-navy {
+      background-color: $color-navy-05;
+    }
+  }
 }

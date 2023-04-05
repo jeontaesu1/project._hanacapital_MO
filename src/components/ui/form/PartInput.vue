@@ -33,8 +33,11 @@ export default {
       Type: Number,
       default: 0,
     },
+    modelValue: {
+      Type: String,
+    },
   },
-  setup(props) {
+  setup(props, { emit }) {
     const input = ref(null);
 
     const customClassNames = computed(() => {
@@ -51,6 +54,10 @@ export default {
       }
     };
 
+    const onInput = (e) => {
+      emit('update:modelValue', e.target.value);
+    };
+
     onMounted(() => {
       checkLength();
     });
@@ -63,6 +70,7 @@ export default {
       input,
       customClassNames,
       checkLength,
+      onInput,
     };
   },
 };
@@ -85,6 +93,8 @@ export default {
         :type="type"
         :class="[$style['part-input__input'], customClassNames.input]"
         :maxlength="length"
+        :value="modelValue"
+        @input="onInput"
         @focusin="checkLength"
         @focusout="checkLength"
         @keydown="checkLength"

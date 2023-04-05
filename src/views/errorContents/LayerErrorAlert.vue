@@ -1,17 +1,12 @@
 <script>
 import { ref } from 'vue';
 
-import UiLayer from '@/components/ui/layer/UiLayer.vue';
-import PopupButton from '@/components/ui/layer/PopupButton.vue';
-import FullPopup from '@/components/ui/layer/FullPopup.vue';
-import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
-import IllustObject from '@/components/ui/common/IllustObject.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-import BasicButton from '@/components/ui/button/BasicButton.vue';
-import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
-import PageMainText from '@/components/ui/text/PageMainText.vue';
-import PageSubText from '@/components/ui/text/PageSubText.vue';
+import UiLayer from '@/components/ui/layer/UiLayer.vue';
+import AlertPopup from '@/components/ui/layer/AlertPopup.vue';
+import IllustObject from '@/components/ui/common/IllustObject.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 
 import IconCustomer from '@/assets/images/icon/customer-center.svg?component';
@@ -19,17 +14,12 @@ import IconTell from '@/assets/images/icon/tell.svg?component';
 
 export default {
   components: {
+    BasicButton,
     UiLayer,
-    PopupButton,
-    FullPopup,
-    FullPopupHead,
-    IllustObject,
+    AlertPopup,
     ButtonList,
     ButtonListItem,
-    BasicButton,
-    PageTextGroup,
-    PageMainText,
-    PageSubText,
+    IllustObject,
     BasicHr,
     IconCustomer,
     IconTell,
@@ -45,33 +35,23 @@ export default {
 </script>
 
 <template>
-  <UiLayer ref="layer" type="full" v-slot="layerSlotProps">
-    <FullPopup>
-      <template v-slot:head>
-        <FullPopupHead>
-          <template v-slot:right>
-            <PopupButton @click="layerSlotProps.close()" />
-          </template>
-        </FullPopupHead>
-      </template>
-
-      <PageTextGroup>
-        <PageMainText>
+  <UiLayer ref="layer" type="alert" v-slot="layerSlotProps">
+    <AlertPopup>
+      <div :class="$style['error-top']">
+        <IllustObject
+          type="error"
+          :classNames="{ wrap: $style['error-top__illust'] }"
+        />
+        <p :class="$style['error-top__text']">
           서비스를 일부<br />
-          <strong>이용할 수 없습니다</strong>
-        </PageMainText>
-        <PageSubText>
-          자세한 사항은<br />
-          고객센터에 문의해 주세요.
-        </PageSubText>
-      </PageTextGroup>
-
-      <IllustObject type="error" />
+          이용할 수 없습니다
+        </p>
+      </div>
 
       <BasicHr
         theme="quaternary"
         type="contents"
-        className="row-margin-container"
+        className="row-margin-contents"
       />
 
       <div :class="$style['icon-list']">
@@ -108,14 +88,14 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton>확인</BasicButton>
+            <BasicButton @click="layerSlotProps.close()">확인</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
-    </FullPopup>
+    </AlertPopup>
   </UiLayer>
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/error/LayerErrorFull.scss';
+@import '@/assets/scss/views/errorContents/LayerErrorAlert.scss';
 </style>

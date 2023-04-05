@@ -79,13 +79,11 @@ export default {
       }"
       align="full"
     >
-      <!-- 작업중
       <ButtonListItem>
         <BasicButton @click="layer001Open">
           비밀번호 3개월 경과 안내
         </BasicButton>
       </ButtonListItem>
-      -->
       <ButtonListItem>
         <BasicButton @click="layer002Open">
           앱회원 인증수단 선택 팝업

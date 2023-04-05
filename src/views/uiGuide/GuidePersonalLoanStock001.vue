@@ -21,6 +21,7 @@ import LayerPersonalLoanStockEarlyError from '@/views/personalLoan/LayerPersonal
 import LayerPersonalLoanStockEarlyAlert from '@/views/personalLoan/LayerPersonalLoanStockEarlyAlert.vue';
 import LayerPersonalLoanStockEarlyComplete from '@/views/personalLoan/LayerPersonalLoanStockEarlyComplete.vue';
 import LayerPersonalLoanStockEarlyFail from '@/views/personalLoan/LayerPersonalLoanStockEarlyFail.vue';
+import LayerPersonalLoanStockEarlyEnter from '@/views/personalLoan/LayerPersonalLoanStockEarlyEnter.vue';
 
 export default {
   components: {
@@ -43,6 +44,7 @@ export default {
     LayerPersonalLoanStockEarlyAlert,
     LayerPersonalLoanStockEarlyComplete,
     LayerPersonalLoanStockEarlyFail,
+    LayerPersonalLoanStockEarlyEnter,
   },
   setup() {
     const layer001 = ref(null);
@@ -60,6 +62,7 @@ export default {
     const layer013 = ref(null);
     const layer014 = ref(null);
     const layer015 = ref(null);
+    const layer016 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -106,6 +109,9 @@ export default {
     const layer015Open = (e = {}) => {
       layer015.value.layer.open(e.target);
     };
+    const layer016Open = (e = {}) => {
+      layer016.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -123,6 +129,7 @@ export default {
       layer013,
       layer014,
       layer015,
+      layer016,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -138,6 +145,7 @@ export default {
       layer013Open,
       layer014Open,
       layer015Open,
+      layer016Open,
     };
   },
 };
@@ -151,14 +159,12 @@ export default {
       }"
       align="full"
     >
-      <!-- 작업중
       <ButtonListItem>
         <BasicButton @click="layer001Open">약관동의</BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer002Open">연장신청 계약선택</BasicButton>
       </ButtonListItem>
-      -->
       <ButtonListItem>
         <BasicButton @click="layer003Open">
           만기연장 불가대상 - 잔여회차 확인
@@ -169,24 +175,20 @@ export default {
           만기연장 불가대상 - 연장가능 계약 없음
         </BasicButton>
       </ButtonListItem>
-      <!-- 작업중
       <ButtonListItem>
         <BasicButton @click="layer005Open"
           >연장신청 상품 만기현황 확인</BasicButton
         >
       </ButtonListItem>
-      -->
       <ButtonListItem>
         <BasicButton @click="layer006Open">연장 신청 완료</BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer007Open">연장 신청 실패</BasicButton>
       </ButtonListItem>
-      <!-- 작업중
       <ButtonListItem>
         <BasicButton @click="layer008Open">중도상환신청 계약선택</BasicButton>
       </ButtonListItem>
-      -->
       <ButtonListItem>
         <BasicButton @click="layer009Open">중도상환 불가대상</BasicButton>
       </ButtonListItem>
@@ -195,24 +197,23 @@ export default {
           >중도상환신청 안내 및 유의사항</BasicButton
         >
       </ButtonListItem>
-      <!-- 작업중
       <ButtonListItem>
         <BasicButton @click="layer011Open">중도상환금액 조회</BasicButton>
       </ButtonListItem>
-      -->
       <ButtonListItem>
         <BasicButton @click="layer012Open">중도상환 조회 불가</BasicButton>
       </ButtonListItem>
-      <!-- 작업중
       <ButtonListItem>
         <BasicButton @click="layer013Open">중도상환 신청확인</BasicButton>
       </ButtonListItem>
-      -->
       <ButtonListItem>
         <BasicButton @click="layer014Open">상환 신청 완료</BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer015Open">상환 신청 실패</BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer016Open">중도상환 조건 입력</BasicButton>
       </ButtonListItem>
     </ButtonList>
 
@@ -231,5 +232,6 @@ export default {
     <LayerPersonalLoanStockEarlyAlert ref="layer013" />
     <LayerPersonalLoanStockEarlyComplete ref="layer014" />
     <LayerPersonalLoanStockEarlyFail ref="layer015" />
+    <LayerPersonalLoanStockEarlyEnter ref="layer016" />
   </PageContents>
 </template>

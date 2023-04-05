@@ -810,5 +810,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/personalLoan/layerPersonalLoanETCAgree.scss';
+@import '@/assets/scss/views/personalLoan/LayerPersonalLoanETCAgree.scss';
 </style>
