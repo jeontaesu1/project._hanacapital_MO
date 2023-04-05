@@ -97,6 +97,7 @@ import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 import ImgZeroCommission from '@/assets/images/illustration/img-zero-commission.svg';
 import Img120Months from '@/assets/images/illustration/img-120months.svg?component';
 import IconCarSecurity from '@/assets/images/icon/car-security.svg?component';
+import IconArrow from '@/assets/images/icon/dropdown.svg?component';
 
 export default {
   components: {
@@ -193,6 +194,7 @@ export default {
     ImgZeroCommission,
     Img120Months,
     IconCarSecurity,
+    IconArrow,
   },
   setup() {
     const store = {
@@ -844,6 +846,19 @@ export default {
             <BasicButton>Button 2</BasicButton>
           </ButtonListItem>
         </ButtonList>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Text button</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <button type="button" :class="$style['text-button']">
+          <span :class="$style['text-button__text']">더보기</span>
+          <span :class="$style['text-button__icon']">
+            <IconArrow />
+          </span>
+        </button>
       </div>
     </section>
 
@@ -4248,6 +4263,46 @@ export default {
             본인인증 종료까지 남은 시간
           </div>
           <div :class="$style['timeout__time']">02:00</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Board</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['board']">
+          <div :class="$style['board__list']">
+            <div :class="$style['board__item']">
+              <button type="button" :class="$style['board__link']">
+                <div :class="$style['board__title']">
+                  <p :class="$style['board__title-text']">
+                    전화권유 상담원 현황전화권유 상담원 현황전화권유 상담원 현황
+                  </p>
+                </div>
+                <div :class="$style['board__text']">2022.10.25</div>
+              </button>
+            </div>
+            <div :class="$style['board__item']">
+              <button type="button" :class="$style['board__link']">
+                <div :class="$style['board__title']">
+                  <p :class="$style['board__title-text']">
+                    전화권유 상담원 현황
+                  </p>
+                </div>
+                <div :class="$style['board__text']">2022.10.25</div>
+              </button>
+            </div>
+          </div>
+
+          <div :class="$style['board__bottom']">
+            <button type="button" :class="$style['text-button']">
+              <span :class="$style['text-button__text']">더보기</span>
+              <span :class="$style['text-button__icon']">
+                <IconArrow />
+              </span>
+            </button>
+          </div>
         </div>
       </div>
     </section>
