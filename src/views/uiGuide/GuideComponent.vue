@@ -3917,6 +3917,61 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">FAQ List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['faq']">
+          <UiAccordion :classNames="{ wrap: $style['faq__list'] }">
+            <UiAccordionItem
+              :classNames="{ item: $style['faq__item'] }"
+              :initialOpen="true"
+            >
+              <div :class="$style['faq__head']">
+                <div :class="$style['faq__block']">
+                  <div :class="$style['faq__name']">분류</div>
+                  <div :class="$style['faq__title']">타이틀</div>
+                </div>
+                <div :class="$style['faq__right']">
+                  <UiAccordionOpener :class="$style['faq__opener']" />
+                </div>
+              </div>
+
+              <UiAccordionLayer>
+                <div :class="$style['faq__contents']">
+                  <div class="text-body-3 color-gray">
+                    내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
+                  </div>
+                </div>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+            <UiAccordionItem
+              :classNames="{ item: $style['faq__item'] }"
+              :initialOpen="true"
+            >
+              <div :class="$style['faq__head']">
+                <div :class="$style['faq__block']">
+                  <div :class="$style['faq__name']">분류</div>
+                  <div :class="$style['faq__title']">타이틀</div>
+                </div>
+                <div :class="$style['faq__right']">
+                  <UiAccordionOpener :class="$style['faq__opener']" />
+                </div>
+              </div>
+
+              <UiAccordionLayer>
+                <div :class="$style['faq__contents']">
+                  <div class="text-body-3 color-gray">
+                    내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
+                  </div>
+                </div>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+          </UiAccordion>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Tab Base</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>

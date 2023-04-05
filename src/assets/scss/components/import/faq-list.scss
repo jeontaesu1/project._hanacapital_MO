@@ -1,0 +1,54 @@
+.faq {
+  display: block;
+
+  &__list {
+    @include reset-list;
+    margin: 0 -20px;
+  }
+
+  &__item {
+    display: block;
+  }
+
+  &__head {
+    display: flex;
+    padding: 16px 20px;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  &__block {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__name {
+    display: block;
+    @include font-size-default(13);
+    color: $color-black;
+    font-weight: 300;
+  }
+
+  &__title {
+    display: block;
+    margin-top: 4px;
+    @include font-size-default(16);
+    color: $color-black;
+    font-weight: 500;
+  }
+
+  &__opener {
+    flex: none;
+    margin-left: 10px;
+
+    &:only-child {
+      margin-left: 0;
+    }
+  }
+
+  &__contents {
+    padding: 20px;
+    background-color: $color-gray-10;
+    box-sizing: border-box;
+  }
+}
