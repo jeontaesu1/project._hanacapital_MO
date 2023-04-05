@@ -8,6 +8,7 @@ import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import SecurityInput from '@/components/ui/form/SecurityInput.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
 
 import IconArrow from '@/assets/images/icon/link.svg?component';
 
@@ -20,6 +21,7 @@ export default {
     PageMainText,
     SecurityInput,
     FormInvalidMessage,
+    TextButton,
 
     IconArrow,
   },
@@ -72,24 +74,19 @@ export default {
 
       <template v-slot:foot>
         <div :class="$style['flex-box']">
-          <div class="text-body-4 color-gray">
-            <a href="/" target="_blank" class="basic-link">
-              간편비밀번호를 잊으셨나요?
-            </a>
-          </div>
-          <div class="text-body-4 color-navy">
-            <a
-              href="/"
-              target="_blank"
-              :class="$style['link-arrow']"
-              class="none-deco-link"
-            >
-              다른 로그인 방식
-              <span :class="$style['link-icon']">
-                <IconArrow />
-              </span>
-            </a>
-          </div>
+          <TextButton
+            :classNames="{ wrap: 'text-body-4 color-gray' }"
+            :underline="true"
+          >
+            간편비밀번호를 잊으셨나요?
+          </TextButton>
+
+          <TextButton theme="quaternary" :iconFillAll="true">
+            다른 로그인 방식
+            <template v-slot:rightIcon>
+              <IconArrow />
+            </template>
+          </TextButton>
         </div>
       </template>
     </FullPopup>

@@ -11,6 +11,7 @@ import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
 
 import IconArrow from '@/assets/images/icon/dropdown.svg?component';
 
@@ -24,6 +25,7 @@ export default {
     InputBlockCell,
     BasicSelect,
     BasicHr,
+    TextButton,
 
     IconArrow,
   },
@@ -238,12 +240,14 @@ export default {
       </div>
 
       <div :class="$style['board__bottom']">
-        <button type="button" :class="$style['text-button']">
-          <span :class="$style['text-button__text']">더보기</span>
-          <span :class="$style['text-button__icon']">
-            <IconArrow />
-          </span>
-        </button>
+        <div class="inline-wrap align-center row-margin-contents">
+          <TextButton :classNames="{ wrap: 'text-body-4 color-gray' }">
+            더보기
+            <template v-slot:rightIcon>
+              <IconArrow />
+            </template>
+          </TextButton>
+        </div>
       </div>
     </div>
   </PageContents>
