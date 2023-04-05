@@ -322,6 +322,11 @@ const routes = [
     component: () => import('@/views/customer/CustomerBranchList.vue'),
   },
   {
+    path: '/guide/branch-list-001',
+    name: '/guide/branch-list-001',
+    component: () => import('@/views/uiGuide/GuideCustomerBranchList.vue'),
+  },
+  {
     path: '/customer/ars',
     name: '/customer/ars',
     component: () => import('@/views/customer/CustomerARS.vue'),

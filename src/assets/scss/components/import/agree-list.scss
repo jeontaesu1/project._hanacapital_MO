@@ -156,4 +156,27 @@
       height: 14px;
     }
   }
+
+  &__list--tertiary {
+    padding: 4px 0 0 24px;
+
+    .agree-list__item {
+      & + .agree-list__item {
+        margin-top: 2px;
+      }
+    }
+  }
+
+  &__list--flex-box {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 4px 0 0 24px;
+
+    .agree-list__item {
+      padding-right: 8px;
+      & + .agree-list__item {
+        margin: 0;
+      }
+    }
+  }
 }

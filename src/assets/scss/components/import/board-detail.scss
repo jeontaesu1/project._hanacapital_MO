@@ -1,0 +1,27 @@
+.board-detail {
+  &__head {
+    padding-bottom: 30px;
+    border-bottom: 1px solid $color-gray-30;
+  }
+  &__title {
+    @include font-size-head(20);
+    color: $color-black;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    & + .board-detail__sub {
+      margin-top: 8px;
+    }
+  }
+  &__sub {
+    @include font-size-default(13);
+    color: $color-gray-70;
+    font-weight: 300;
+  }
+  &__contents {
+    padding: 30px 0;
+    @include font-size-default(14);
+  }
+}

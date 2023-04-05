@@ -1,5 +1,13 @@
 <script>
-import { ref, computed, reactive, nextTick, inject } from 'vue';
+import {
+  ref,
+  computed,
+  reactive,
+  nextTick,
+  inject,
+  onMounted,
+  watch,
+} from 'vue';
 
 import SelectButton from '@/components/ui/form/SelectButton.vue';
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -88,8 +96,11 @@ export default {
         return () => {};
       },
     },
+    modelValue: {
+      Type: String,
+    },
   },
-  setup(props) {
+  setup(props, { emit }) {
     const option = props.option.map((item) =>
       Object.assign(defaultOption(), item)
     );
@@ -120,6 +131,13 @@ export default {
       return option.map((item) => Object.assign(defaultOption(), item));
     });
 
+    watch(
+      () => props.modelValue,
+      (cur) => {
+        setValue(cur);
+      }
+    );
+
     const layerOpen = () => {
       layer.value.open(button.value.button);
 
@@ -138,8 +156,10 @@ export default {
       layer.value.close();
 
       nextTick(() => {
-        const e = new Event('change');
-        input.value.dispatchEvent(e);
+        const eChange = new Event('change');
+        const eInput = new Event('input');
+        input.value.dispatchEvent(eChange);
+        input.value.dispatchEvent(eInput);
       });
     };
 
@@ -152,6 +172,8 @@ export default {
 
       if (filterOption.length) {
         selectOption(filterOption[0]);
+      } else {
+        selectOption('');
       }
     };
 
@@ -164,6 +186,14 @@ export default {
       }
     };
 
+    const onInput = (e) => {
+      emit('update:modelValue', e.target.value);
+    };
+
+    onMounted(() => {
+      setValue(props.modelValue);
+    });
+
     return {
       state,
       layer,
@@ -175,6 +205,7 @@ export default {
       selectOption,
       setValue,
       onAfterClosed,
+      onInput,
     };
   },
 };
@@ -191,6 +222,7 @@ export default {
       :disabled="disabled"
       :value="state.value"
       @change="onChange"
+      @input="onInput"
     />
     <SelectButton
       ref="button"

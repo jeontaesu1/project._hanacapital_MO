@@ -9,6 +9,7 @@ import PopupText from '@/components/ui/layer/PopupText.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
 
 export default {
   components: {
@@ -20,6 +21,7 @@ export default {
     ButtonListItem,
     BasicButton,
     PopupText,
+    TextButton,
   },
   setup() {
     const layer = ref(null);
@@ -34,6 +36,17 @@ export default {
 <template>
   <UiLayer ref="layer" type="toast" :backgroundClose="true">
     <ToastPopup>
+      <template v-slot:outerTop>
+        <div class="inline-wrap align-right">
+          <TextButton
+            :classNames="{ wrap: 'text-body-4 color-white' }"
+            :underline="true"
+          >
+            2주간 다시 보지 않기
+          </TextButton>
+        </div>
+      </template>
+
       <template v-slot:head>
         <ToastPopupHead>
           <PopupTitle>

@@ -17,6 +17,10 @@ import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
+import StepProgress from '@/components/ui/progress/StepProgress.vue';
+
+import IconQuestion from '@/assets/images/icon/question.svg?component';
 
 const dummyData = () => [
   {
@@ -55,6 +59,9 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicButton,
+    TextButton,
+    StepProgress,
+    IconQuestion,
   },
   setup() {
     const state = reactive({
@@ -80,6 +87,7 @@ export default {
             <PopupButton @click="layerSlotProps.close()" />
           </template>
         </FullPopupHead>
+        <StepProgress :total="4" :current="1" />
       </template>
 
       <h2 class="text-body-5 color-navy font-weight-light row-margin-item">
@@ -93,13 +101,19 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <a
-        href="#"
-        class="none-deco-link text-body-5 color-navy row-margin-item-group align-right"
-        >대출가능차량 기준안내</a
-      >
+      <div class="inline-wrap align-right">
+        <TextButton
+          theme="quaternary"
+          :classNames="{ wrap: 'font-weight-regular' }"
+        >
+          대출가능차량 기준안내
+          <template v-slot:rightIcon>
+            <IconQuestion />
+          </template>
+        </TextButton>
+      </div>
 
-      <ul class="basic-list">
+      <ul class="basic-list row-margin-item-group">
         <li
           v-for="(item, i) in state.data"
           :key="i"

@@ -10,6 +10,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
 
 export default {
   components: {
@@ -22,6 +23,7 @@ export default {
     ButtonList,
     ButtonListItem,
     IllustObject,
+    TextButton,
   },
   setup() {
     const layer = ref(null);
@@ -36,6 +38,17 @@ export default {
 <template>
   <UiLayer ref="layer" type="toast" :backgroundClose="true">
     <ToastPopup>
+      <template v-slot:outerTop>
+        <div class="inline-wrap align-right">
+          <TextButton
+            :classNames="{ wrap: 'text-body-4 color-white' }"
+            :underline="true"
+          >
+            오늘 하루 보지 않기
+          </TextButton>
+        </div>
+      </template>
+
       <template v-slot:head>
         <ToastPopupHead>
           <PopupTitle>하나캐피탈 앱을 설치해 보세요!</PopupTitle>

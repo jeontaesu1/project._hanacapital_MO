@@ -4,6 +4,7 @@ import { computed, useCssModule, provide } from 'vue';
 const defaultClassNames = () => ({
   wrap: '',
   list: '',
+  align: '',
 });
 
 export default {
