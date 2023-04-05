@@ -115,29 +115,33 @@ export default {
         </FormListItem>
       </FormList>
 
-      <ul
-        :class="[
-          $style['basic-list'],
-          $style['basic-list--regular'],
-          'row-margin-contents',
-        ]"
-      >
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            개인/개인사업자 회원은 공동인증서 로그인을 위해 아이디에
-            공동인증서를 등록해야 합니다. (법인 회원은 별도 등록이 필요하지
-            않습니다.)
-          </div>
-        </li>
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            아이디에 등록했던 공동인증서를 삭제합니다. 공동인증서를 삭제할 경우
-            로그인을 위해 공동인증서를 다시 등록해야 합니다.
-          </div>
-        </li>
-      </ul>
+      <div class="row-margin-contents">
+        <section :class="$style['notice-section']">
+          <h3 :class="$style['notice-section__title']">공동인증서 등록</h3>
+          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+            <li :class="$style['basic-list__item']">
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                개인/개인사업자 회원은 공동인증서 로그인을 위해 아이디에
+                공동인증서를 등록해야 합니다. (법인 회원은 별도 등록이 필요하지
+                않습니다.)
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section :class="$style['notice-section']">
+          <h3 :class="$style['notice-section__title']">공동인증서 삭제</h3>
+          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+            <li :class="$style['basic-list__item']">
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                아이디에 등록했던 공동인증서를 삭제합니다. 공동인증서를 삭제할
+                경우 로그인을 위해 공동인증서를 다시 등록해야 합니다.
+              </div>
+            </li>
+          </ul>
+        </section>
+      </div>
 
       <template v-slot:foot>
         <ButtonList

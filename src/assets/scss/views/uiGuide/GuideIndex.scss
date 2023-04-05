@@ -204,12 +204,12 @@
   &__item {
     position: relative;
     padding-left: 80px;
+  }
 
-    &__date {
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
+  &__date {
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 }
 

@@ -10,10 +10,10 @@ import PageMainText from '@/components/ui/text/PageMainText.vue';
 import CheckBox from '@/components/ui/form/CheckBox.vue';
 import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
 import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
-
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
+import StepProgress from '@/components/ui/progress/StepProgress.vue';
 
 export default {
   components: {
@@ -29,6 +29,7 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicButton,
+    StepProgress,
   },
   setup() {
     const layer = ref(null);
@@ -49,6 +50,7 @@ export default {
             <PopupButton @click="layerSlotProps.close()" />
           </template>
         </FullPopupHead>
+        <StepProgress :total="4" :current="1" />
       </template>
 
       <PageTextGroup>

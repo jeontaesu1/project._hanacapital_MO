@@ -1,0 +1,44 @@
+.progress {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px 4px;
+
+  &__text {
+    flex: none;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    @include font-size-default(12);
+    font-weight: 500;
+    color: $color-gray-60;
+
+    div {
+      flex: none;
+    }
+  }
+
+  &__total {
+    margin-left: 2px;
+  }
+
+  &__current {
+    margin-right: 2px;
+    color: $color-navy-50;
+  }
+
+  &__bar {
+    flex: 1;
+    min-width: 0;
+    border-radius: 100px;
+    height: 4px;
+    background-color: $color-gray-15;
+
+    &-active {
+      width: 0;
+      height: 100%;
+      border-radius: 100px;
+      background-color: $color-navy-50;
+      transition: width 0.2s;
+    }
+  }
+}

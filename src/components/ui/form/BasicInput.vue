@@ -41,8 +41,11 @@ export default {
       Type: String,
       default: null,
     },
+    modelValue: {
+      Type: String,
+    },
   },
-  setup(props) {
+  setup(props, { emit }) {
     let timer = null;
 
     const state = reactive({
@@ -86,8 +89,12 @@ export default {
       }, 50);
     };
 
-    const onKeyup = () => {
-      state.isInputed = input.value.value.length ? true : false;
+    const onInput = (e) => {
+      emit('update:modelValue', e.target.value);
+    };
+
+    const onKeyup = (e) => {
+      state.isInputed = e.target.value.length ? true : false;
     };
 
     return {
@@ -98,6 +105,7 @@ export default {
       focus,
       deleteAction,
       onfocusin,
+      onInput,
       onKeyup,
       onfocusout,
     };
@@ -130,6 +138,8 @@ export default {
           },
           customClassNames.input,
         ]"
+        :value="modelValue"
+        @input="onInput"
         @keyup="onKeyup"
       />
     </div>

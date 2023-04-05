@@ -12,10 +12,10 @@ import KeyValueList from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
-
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
+import StepProgress from '@/components/ui/progress/StepProgress.vue';
 
 export default {
   components: {
@@ -33,6 +33,7 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicButton,
+    StepProgress,
   },
   setup() {
     const layer = ref(null);
@@ -53,6 +54,7 @@ export default {
             <PopupButton @click="layerSlotProps.close()" />
           </template>
         </FullPopupHead>
+        <StepProgress :total="4" :current="3" />
       </template>
 
       <PageTextGroup>

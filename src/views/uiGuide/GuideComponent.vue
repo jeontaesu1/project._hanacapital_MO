@@ -6,6 +6,7 @@ import { useUiLoadingStore } from '@/stores/ui/loading';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
 import IconAdd from '@/assets/images/icon/add.svg?component';
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
@@ -70,6 +71,7 @@ import IllustInfoTitle from '@/components/ui/common/IllustInfoTitle.vue';
 import IllustInfoText from '@/components/ui/common/IllustInfoText.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
 import RoundStatus from '@/components/ui/text/RoundStatus.vue';
+import StepProgress from '@/components/ui/progress/StepProgress.vue';
 
 import BrandLogo001 from '@/assets/images/bank-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/bank-logo/lotte.svg?component';
@@ -102,6 +104,7 @@ import IconArrow from '@/assets/images/icon/dropdown.svg?component';
 export default {
   components: {
     BasicButton,
+    TextButton,
     UiLayer,
     PopupTitle,
     PopupSubTitle,
@@ -167,6 +170,7 @@ export default {
     IllustInfoText,
     UnitText,
     RoundStatus,
+    StepProgress,
     IconAdd,
     BrandLogo001,
     BrandLogo002,
@@ -600,6 +604,144 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Text Button</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <TextButton>Button</TextButton>
+        <TextButton theme="secondary" :iconFillAll="true">
+          <template v-slot:leftIcon>
+            <IconAdd />
+          </template>
+          Button
+        </TextButton>
+        <TextButton theme="tertiary" :iconFillAll="true">
+          Button
+          <template v-slot:rightIcon>
+            <IconAdd />
+          </template>
+        </TextButton>
+        <TextButton theme="quaternary" :iconFillAll="true">
+          Button
+          <template v-slot:rightIcon>
+            <IconAdd />
+          </template>
+        </TextButton>
+        <TextButton theme="quinary" :iconFillAll="true">
+          Button
+          <template v-slot:rightIcon>
+            <IconAdd />
+          </template>
+        </TextButton>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">a Tag</h3>
+        <TextButton tagName="a" href="">Button</TextButton>
+        <TextButton tagName="a" href="" theme="secondary" :iconFillAll="true">
+          <template v-slot:leftIcon>
+            <IconAdd />
+          </template>
+          Button
+        </TextButton>
+        <TextButton tagName="a" href="" theme="tertiary" :iconFillAll="true">
+          Button
+          <template v-slot:rightIcon>
+            <IconAdd />
+          </template>
+        </TextButton>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Router Link</h3>
+        <TextButton tagName="RouterLink" to="">Button</TextButton>
+        <TextButton
+          tagName="RouterLink"
+          to=""
+          theme="secondary"
+          :iconFillAll="true"
+        >
+          <template v-slot:leftIcon>
+            <IconAdd />
+          </template>
+          Button
+        </TextButton>
+        <TextButton
+          tagName="RouterLink"
+          to=""
+          theme="tertiary"
+          :iconFillAll="true"
+        >
+          Button
+          <template v-slot:rightIcon>
+            <IconAdd />
+          </template>
+        </TextButton>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">underline</h3>
+        <TextButton :underline="true">Button</TextButton>
+        <TextButton theme="secondary" :underline="true" :iconFillAll="true">
+          <template v-slot:leftIcon>
+            <IconAdd />
+          </template>
+          Button
+        </TextButton>
+        <TextButton theme="tertiary" :underline="true" :iconFillAll="true">
+          Button
+          <template v-slot:rightIcon>
+            <IconAdd />
+          </template>
+        </TextButton>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">icon size regular</h3>
+        <TextButton iconSize="regular" theme="secondary" :iconFillAll="true">
+          <template v-slot:leftIcon>
+            <IconAdd />
+          </template>
+          Button
+        </TextButton>
+        <TextButton iconSize="regular" theme="tertiary" :iconFillAll="true">
+          Button
+          <template v-slot:rightIcon>
+            <IconAdd />
+          </template>
+        </TextButton>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">block</h3>
+        <TextButton :block="true">Button</TextButton>
+        <TextButton theme="secondary" :block="true" :iconFillAll="true">
+          <template v-slot:leftIcon>
+            <IconAdd />
+          </template>
+          Button
+        </TextButton>
+        <TextButton theme="tertiary" :block="true" :iconFillAll="true">
+          Button
+          <template v-slot:rightIcon>
+            <IconAdd />
+          </template>
+        </TextButton>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">inline wrap</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <div class="inline-wrap">
+          <TextButton :underline="true">Button</TextButton>
+        </div>
+        <div class="inline-wrap align-right">
+          <TextButton :underline="true">Button</TextButton>
+        </div>
+        <div class="inline-wrap align-center">
+          <TextButton :underline="true">Button</TextButton>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Layer</h2>
       <div class="test-section-sub">
         <AlertSystem ref="alert" />
@@ -651,6 +793,17 @@ export default {
           v-slot="layerSlotProps"
         >
           <ToastPopup>
+            <template v-slot:outerTop>
+              <div class="inline-wrap align-right">
+                <TextButton
+                  :classNames="{ wrap: 'text-body-4 color-white' }"
+                  :underline="true"
+                >
+                  2주간 다시 보지 않기
+                </TextButton>
+              </div>
+            </template>
+
             <template v-slot:head>
               <ToastPopupHead>
                 <PopupTitle>타이틀</PopupTitle>
@@ -4505,6 +4658,15 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">StepProgress</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <StepProgress :total="4" :current="1" />
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Empty</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -4565,6 +4727,39 @@ export default {
             </button>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Notice section</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <section :class="$style['notice-section']">
+          <h3 :class="$style['notice-section__title']">공동인증서 등록</h3>
+          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+            <li :class="$style['basic-list__item']">
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                개인/개인사업자 회원은 공동인증서 로그인을 위해 아이디에
+                공동인증서를 등록해야 합니다. (법인 회원은 별도 등록이 필요하지
+                않습니다.)
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section :class="$style['notice-section']">
+          <h3 :class="$style['notice-section__title']">공동인증서 삭제</h3>
+          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+            <li :class="$style['basic-list__item']">
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                아이디에 등록했던 공동인증서를 삭제합니다. 공동인증서를 삭제할
+                경우 로그인을 위해 공동인증서를 다시 등록해야 합니다.
+              </div>
+            </li>
+          </ul>
+        </section>
       </div>
     </section>
 
