@@ -189,9 +189,9 @@ export default {
       </div>
 
       <div :class="$style['board__bottom']">
-        <button type="button" :class="$style['more-button']">
-          <span :class="$style['more-button__text']">더보기</span>
-          <span :class="$style['more-button__icon']">
+        <button type="button" :class="$style['text-button']">
+          <span :class="$style['text-button__text']">더보기</span>
+          <span :class="$style['text-button__icon']">
             <IconArrow />
           </span>
         </button>
