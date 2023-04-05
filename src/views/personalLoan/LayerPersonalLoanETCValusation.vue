@@ -19,6 +19,7 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import FormHelpText from '@/components/ui/form/FormHelpText.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
 
 export default {
   components: {
@@ -40,6 +41,7 @@ export default {
     ButtonListItem,
     ButtonList,
     FormHelpText,
+    TextButton,
   },
   setup() {
     const state = reactive({
@@ -107,9 +109,11 @@ export default {
               등기부등본 상의 채권최고액을 입력해주세요.<br />
               (근저당설정이 2건 이상일 경우 합산하여 입력)
             </FormHelpText>
-            <a class="color-green underline font-weight-medium"
-              >등기부등본 조회</a
-            >
+            <div class="inline-wrap row-margin-item">
+              <TextButton theme="secondary" :underline="true"
+                >등기부등본 조회</TextButton
+              >
+            </div>
           </FormInvalid>
         </FormListItem>
       </FormList>

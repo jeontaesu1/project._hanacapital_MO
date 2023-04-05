@@ -172,6 +172,8 @@ export default {
 
       if (filterOption.length) {
         selectOption(filterOption[0]);
+      } else {
+        selectOption('');
       }
     };
 

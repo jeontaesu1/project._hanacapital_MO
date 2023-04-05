@@ -8,10 +8,10 @@ import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
-
 import IllustInfo from '@/components/ui/common/IllustInfo.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
 import IllustInfoTitle from '@/components/ui/common/IllustInfoTitle.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
 
 export default {
   components: {
@@ -25,6 +25,7 @@ export default {
     IllustInfo,
     IllustObject,
     IllustInfoTitle,
+    TextButton,
   },
   setup() {
     const state = reactive({});
@@ -59,10 +60,13 @@ export default {
       </IllustInfo>
 
       <template v-slot:foot>
-        <div class="row-margin-contents align-center">
-          <a href="/" target="_blank" class="basic-link color-gray">
+        <div class="inline-wrap align-center row-margin-contents">
+          <TextButton
+            :classNames="{ wrap: 'text-body-4 color-gray' }"
+            :underline="true"
+          >
             비밀번호가 기억나지 않으세요?
-          </a>
+          </TextButton>
         </div>
 
         <ButtonList

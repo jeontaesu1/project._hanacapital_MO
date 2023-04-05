@@ -37,6 +37,14 @@ export default {
       Type: Boolean,
       default: false,
     },
+    block: {
+      Type: Boolean,
+      default: false,
+    },
+    iconFillAll: {
+      Type: Boolean,
+      default: false,
+    },
   },
   setup(props, context) {
     const setComponent = computed(() => {
@@ -47,10 +55,6 @@ export default {
     const setType = computed(() => {
       const { tagName, type } = props;
       return tagName === 'button' ? type : null;
-    });
-
-    const isText = computed(() => {
-      return Boolean(context.slots.default);
     });
 
     const isLeftIcon = computed(() => {
@@ -69,7 +73,6 @@ export default {
     return {
       setComponent,
       setType,
-      isText,
       isLeftIcon,
       isRightIcon,
       customClassNames,
@@ -86,38 +89,44 @@ export default {
     :class="[
       $style['button'],
       {
-        [$style['button--icon-only']]: (isLeftIcon || isRightIcon) && !isText,
-        [$style[`button--size-${size}`]]: size,
         [$style[`button--theme-${theme}`]]: theme,
-        [$style[`button--line`]]: line,
-        [$style[`button--inline`]]: inline,
-        [$style['button--disabled']]: disabledStyle,
-        [$style['button--min-side']]: minSide,
+        [$style[`button--underline`]]: underline,
+        [$style[`button--block`]]: block,
+        [$style[`button--icon-${iconSize}`]]: iconSize,
       },
       customClassNames.wrap,
     ]"
   >
     <span
       v-if="isLeftIcon"
-      :class="[$style['button__icon'], customClassNames.icon]"
+      :class="[
+        $style['button__icon'],
+        {
+          [$style['button__icon--fill-all']]: iconFillAll,
+        },
+        customClassNames.icon,
+      ]"
     >
       <slot name="leftIcon" />
     </span>
-    <span
-      v-if="isText"
-      :class="[$style['button__text'], customClassNames.text]"
-    >
+    <span :class="[$style['button__text'], customClassNames.text]">
       <slot />
     </span>
     <span
       v-if="isRightIcon"
-      :class="[$style['button__icon'], customClassNames.icon]"
+      :class="[
+        $style['button__icon'],
+        {
+          [$style['button__icon--fill-all']]: iconFillAll,
+        },
+        customClassNames.icon,
+      ]"
     >
-      <slot name="rightIcon" />
+      <slot name="rightIcon" :fillAllClass="$style['button__icon--fill-all']" />
     </span>
   </component>
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/components/ui/button/BasicButton.scss';
+@import '@/assets/scss/components/ui/button/TextButton.scss';
 </style>

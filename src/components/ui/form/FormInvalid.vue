@@ -1,5 +1,5 @@
 <script>
-import { computed, watch, provide, inject, useCssModule } from 'vue';
+import { computed, watch, provide, inject, useCssModule, onMounted } from 'vue';
 
 const defaultClassNames = () => ({
   wrap: '',
@@ -35,6 +35,12 @@ export default {
         }
       }
     );
+
+    onMounted(() => {
+      if (formListItem && formListItem.error && props.error) {
+        formListItem.error(true);
+      }
+    });
 
     provide('formInvalid', {
       messageClass: $style['invalid__message'],

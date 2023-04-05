@@ -75,11 +75,9 @@ export default {
         <BasicButton @click="layer003Open">통합 소득정보 자동제출</BasicButton>
       </ButtonListItem>
 
-      <!-- 작업중
       <ButtonListItem>
         <BasicButton @click="layer004Open">통합 부동산 설정 금액</BasicButton>
       </ButtonListItem>
-      -->
     </ButtonList>
 
     <LayerPersonalLoanETCAgree ref="layer001" />

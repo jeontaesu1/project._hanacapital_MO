@@ -1,10 +1,21 @@
 .popup {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   max-height: 100%;
   border-radius: 20px 20px 0 0;
   background-color: $color-white;
+
+  &__outer-top {
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+    margin-bottom: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20px;
+  }
 
   &__head {
     flex: none;

@@ -122,6 +122,9 @@ body,
 .color-black.color-black {
   color: $color-black;
 }
+.color-white.color-white {
+  color: $color-white;
+}
 .color-green.color-green {
   color: $color-green-50;
 }
@@ -234,6 +237,13 @@ body,
 // basic-list
 .basic-list {
   @include reset-list;
+}
+
+// inline-wrap
+.inline-wrap {
+  display: block;
+  font-size: 0;
+  line-height: 0;
 }
 
 // row-margin
