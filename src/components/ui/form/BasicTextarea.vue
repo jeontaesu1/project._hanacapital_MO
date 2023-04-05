@@ -1,13 +1,240 @@
 <script>
+import { ref, reactive, computed, inject } from 'vue';
+
+import FormInvalid from '@/components/ui/form/FormInvalid.vue';
+
+const defaultClassNames = () => ({
+  item: '',
+  title: '',
+  titleText: '',
+  titleOptionalText: '',
+  require: '',
+  requireText: '',
+  contents: '',
+  input: '',
+  bottom: '',
+  bottomLeft: '',
+  count: '',
+  countCurrent: '',
+});
+
 export default {
-  setup() {
-    return {};
+  components: {
+    FormInvalid,
+  },
+  inheritAttrs: false,
+  props: {
+    classNames: {
+      Type: Object,
+      default() {
+        return defaultClassNames();
+      },
+    },
+    require: {
+      Type: Boolean,
+      default: false,
+    },
+    titleText: {
+      Type: String,
+      default: '',
+    },
+    titleOptionalText: {
+      Type: String,
+      default: null,
+    },
+    disabled: {
+      Type: Boolean,
+      default: false,
+    },
+    count: {
+      Type: Boolean,
+      default: false,
+    },
+    error: {
+      Type: Boolean,
+      default: false,
+    },
+    maxlength: {
+      Type: Number,
+      default: null,
+    },
+    modelValue: {
+      Type: String,
+    },
+  },
+  setup(props, context) {
+    const { emit } = context;
+    let timer = null;
+
+    const formListStyleModule = inject('formListStyleModule');
+
+    const state = reactive({
+      isFocus: false,
+      isInputed: false,
+      count: props.modelValue ? props.modelValue.length : 0,
+    });
+
+    const input = ref(null);
+
+    const customClassNames = computed(() => {
+      const { classNames } = props;
+      return Object.assign(defaultClassNames(), classNames);
+    });
+
+    const isBottom = computed(() => {
+      return Boolean(context.slots.bottom);
+    });
+
+    const getInputElement = () => {
+      return input.value;
+    };
+
+    const focus = () => {
+      input.value.focus();
+    };
+
+    const labelClick = () => {
+      focus();
+    };
+
+    const onfocusin = () => {
+      clearTimeout(timer);
+      state.isFocus = true;
+      state.isInputed = input.value.value.length ? true : false;
+    };
+
+    const onfocusout = () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        state.isFocus = false;
+        clearTimeout(timer);
+      }, 50);
+    };
+
+    const onInput = (e) => {
+      emit('update:modelValue', e.target.value);
+    };
+
+    const onKeyup = (e) => {
+      state.isInputed = e.target.value.length ? true : false;
+    };
+
+    return {
+      formListStyleModule,
+      state,
+      input,
+      customClassNames,
+      isBottom,
+      getInputElement,
+      focus,
+      labelClick,
+      onfocusin,
+      onInput,
+      onKeyup,
+      onfocusout,
+    };
   },
 };
 </script>
 
 <template>
-  <div></div>
+  <div
+    :class="[
+      formListStyleModule['form__item'],
+      {
+        [formListStyleModule['form__item--focus']]: state.isFocus,
+        [formListStyleModule['form__item--inputed']]: state.isInputed,
+        [formListStyleModule['form__item--error']]: error,
+        [formListStyleModule['form__item--disabled']]: disabled,
+      },
+      $style['input'],
+      {
+        [formListStyleModule['input--error']]: error,
+      },
+      customClassNames.item,
+    ]"
+  >
+    <dt
+      :class="[
+        formListStyleModule['form__title'],
+        $style['input__title'],
+        customClassNames.title,
+      ]"
+      @click="labelClick"
+    >
+      <span
+        :class="[
+          formListStyleModule['form__title-text'],
+          customClassNames.titleText,
+        ]"
+      >
+        {{ titleText }}
+      </span>
+      <span
+        v-if="titleOptionalText"
+        :class="[
+          formListStyleModule['form__title-optional'],
+          customClassNames.titleOptionalText,
+        ]"
+      >
+        {{ titleOptionalText }}
+      </span>
+      <span
+        v-if="require"
+        :class="[
+          formListStyleModule['form__require'],
+          customClassNames.require,
+        ]"
+      >
+        <span
+          :class="[
+            formListStyleModule['form__require-text'],
+            customClassNames.requireText,
+          ]"
+        >
+          (필수)
+        </span>
+      </span>
+    </dt>
+    <dd>
+      <FormInvalid :error="error">
+        <textarea
+          ref="input"
+          v-bind="$attrs"
+          :class="[$style['input__input'], customClassNames.input]"
+          :value="modelValue"
+          :disabled="disabled"
+          @input="onInput"
+          @keyup="onKeyup"
+          @focusin="onfocusin"
+          @focusout="onfocusout"
+        ></textarea>
+        <div
+          v-if="isBottom || count"
+          :class="[$style['input__bottom'], customClassNames.bottom]"
+        >
+          <div
+            v-if="isBottom"
+            :class="[$style['input__bottom-left'], customClassNames.bottom]"
+          >
+            <slot name="bottom" />
+          </div>
+          <div
+            v-if="count"
+            :class="[$style['input__count'], customClassNames.bottom]"
+          >
+            <span
+              :class="[
+                $style['input__count-current'],
+                customClassNames.countCurrent,
+              ]"
+              >{{ state.count }}</span
+            >/{{ maxlength }}
+          </div>
+        </div>
+      </FormInvalid>
+    </dd>
+  </div>
 </template>
 
 <style lang="scss" module>
