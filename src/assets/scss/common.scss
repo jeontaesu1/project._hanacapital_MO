@@ -259,12 +259,22 @@ body,
   margin-bottom: 4px;
   @include row-margin-first-last;
 }
+.row-margin-item-small.row-margin-item-small {
+  margin-top: 6x;
+  margin-bottom: 6px;
+  @include row-margin-first-last;
+}
 .row-margin-item.row-margin-item {
   margin-top: 8px;
   margin-bottom: 8px;
   @include row-margin-first-last;
 }
 .row-margin-item-group.row-margin-item-group {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  @include row-margin-first-last;
+}
+.row-margin-item-small-group.row-margin-item-small-group {
   margin-top: 16px;
   margin-bottom: 16px;
   @include row-margin-first-last;
@@ -308,4 +318,8 @@ body,
   margin-top: 120px;
   margin-bottom: 120px;
   @include row-margin-first-last;
+}
+
+.row-margin-bottom-none.row-margin-bottom-none {
+  margin-bottom:0;
 }

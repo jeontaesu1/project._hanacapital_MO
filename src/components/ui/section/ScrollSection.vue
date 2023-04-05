@@ -4,6 +4,8 @@ import { computed } from 'vue';
 const defaultClassNames = () => ({
   wrap: '',
   head: '',
+  body: '',
+  foot: '',
 });
 
 export default {
@@ -25,9 +27,14 @@ export default {
       return Boolean(context.slots.head);
     });
 
+    const isFoot = computed(() => {
+      return Boolean(context.slots.foot);
+    });
+
     return {
       customClassNames,
       isHead,
+      isFoot,
     };
   },
 };
@@ -41,6 +48,9 @@ export default {
     </div>
     <div :class="[$style['scroll__body'], customClassNames.body]">
       <slot />
+    </div>
+    <div v-if="isFoot" :class="[$style['scroll__foot'], customClassNames.foot]">
+      <slot name="foot" />
     </div>
   </div>
 </template>

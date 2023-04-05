@@ -4321,7 +4321,16 @@ export default {
       </div>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">테이블이 없을경우</h3>
-        <p :class="$style['not-table']">기록사항 없음</p>
+        <ScrollSection>
+          <template v-slot:head>
+            <h2 class="text-body-2">
+              2. 소유지분을 제외한 소유권에 관한 사항(갑구)
+            </h2>
+          </template>
+          <template v-slot:foot>
+            <p :class="$style['not-table']">기록사항 없음</p>
+          </template>
+        </ScrollSection>
       </div>
     </section>
 

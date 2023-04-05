@@ -1,0 +1,26 @@
+.switch-list {
+  @include reset-list;
+
+  border-top: 1px solid $color-gray-30;
+  padding-top: 24px;
+
+  li {
+    display: flex;
+    width: 100%;
+    margin-top: 8px;
+    padding: 8px 0px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    @include font-size-default(16);
+    font-weight: 500;
+  }
+}

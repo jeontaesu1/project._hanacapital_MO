@@ -1,4 +1,6 @@
 .scroll {
+  margin-top: 30px;
+
   &__head {
     display: flex;
     justify-content: space-between;
@@ -31,5 +33,10 @@
     table {
       white-space: nowrap;
     }
+  }
+
+  &__foot {
+    margin-top: -1px;
+    border-top: 1px solid #fff;
   }
 }
