@@ -6,23 +6,45 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
+import LayerSettingResetFingerprintAgree from '@/views/setting/LayerSettingResetFingerprintAgree.vue';
+import LayerSettingResetFingerprintComplete from '@/views/setting/LayerSettingResetFingerprintComplete.vue';
+import LayerSettingResetFingerprintDelete from '@/views/setting/LayerSettingResetFingerprintDelete.vue';
+
 export default {
   components: {
     PageContents,
     BasicButton,
     ButtonList,
     ButtonListItem,
+
+    LayerSettingResetFingerprintAgree,
+    LayerSettingResetFingerprintComplete,
+    LayerSettingResetFingerprintDelete,
   },
   setup() {
     const layer001 = ref(null);
+    const layer002 = ref(null);
+    const layer003 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
     };
 
+    const layer002Open = (e = {}) => {
+      layer002.value.layer.open(e.target);
+    };
+
+    const layer003Open = (e = {}) => {
+      layer003.value.layer.open(e.target);
+    };
+
     return {
       layer001,
+      layer002,
+      layer003,
       layer001Open,
+      layer002Open,
+      layer003Open,
     };
   },
 };
@@ -37,8 +59,18 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">본인인증 방법 선택</BasicButton>
+        <BasicButton @click="layer001Open">지문인증 (재)등록</BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer002Open">지문 등록 완료</BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer003Open">지문 해지 안내</BasicButton>
       </ButtonListItem>
     </ButtonList>
+
+    <LayerSettingResetFingerprintAgree ref="layer001" />
+    <LayerSettingResetFingerprintComplete ref="layer002" />
+    <LayerSettingResetFingerprintDelete ref="layer003" />
   </PageContents>
 </template>
