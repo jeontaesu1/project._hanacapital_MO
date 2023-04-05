@@ -3081,7 +3081,7 @@ export default {
     </section>
 
     <section class="test-section">
-      <h2 class="test=section-title">ARS List</h2>
+      <h2 class="test-section-title">ARS List</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
         <div :class="$style['ars-list']">
