@@ -10,6 +10,7 @@ import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
+import SearchButton from '@/components/ui/button/SearchButton.vue';
 
 import IconArrow from '@/assets/images/icon/dropdown.svg?component';
 
@@ -22,6 +23,7 @@ export default {
     BasicInput,
     BasicHr,
     TextButton,
+    SearchButton,
 
     IconArrow,
   },
@@ -85,8 +87,15 @@ export default {
           defaultValue="1"
         />
       </InputBlockCell>
-      <InputBlockCell :flexible="true" margin="regular">
-        <BasicInput title="검색" id="CustomerNoticeList02" />
+      <InputBlockCell :flexible="true">
+        <BasicInput
+          type="search"
+          title="검색어 입력"
+          placeholder="검색어 입력"
+        />
+      </InputBlockCell>
+      <InputBlockCell type="search">
+        <SearchButton />
       </InputBlockCell>
     </InputBlock>
 
