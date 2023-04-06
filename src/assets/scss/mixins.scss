@@ -115,16 +115,49 @@
   &:-moz-placeholder {
     opacity: 1;
   }
+  &::placeholder {
+    opacity: 1;
+  }
   &[readonly],
   &[disabled] {
     opacity: 1;
   }
 }
-@mixin reset-input-text--textarea {
-  height: 100px;
+@mixin reset-textarea {
+  margin: 0;
+  box-shadow: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  box-sizing: border-box;
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  padding: 0;
   overflow: hidden;
   overflow-y: auto;
   resize: none;
+
+  &::-webkit-input-placeholder {
+    opacity: 1;
+  }
+  &::-moz-placeholder {
+    opacity: 1;
+  }
+  &:-ms-input-placeholder {
+    opacity: 1;
+  }
+  &:-moz-placeholder {
+    opacity: 1;
+  }
+  &::placeholder {
+    opacity: 1;
+  }
+  &[readonly],
+  &[disabled] {
+    opacity: 1;
+  }
 }
 @mixin reset-select {
   display: block;
