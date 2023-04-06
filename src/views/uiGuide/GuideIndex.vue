@@ -525,8 +525,13 @@ const datas = () => [
         depth6: '',
         path: '/guide/personal-loan-etc-001',
         status: 'partend',
-        create: '2023.04.07',
-        log: [],
+        create: '2023.04.05',
+        log: [
+          {
+            date: '2023.04.07',
+            text: '팝업 추가\n- 아파트 검색',
+          },
+        ],
       },
     ],
   },

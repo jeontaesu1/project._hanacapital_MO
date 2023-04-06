@@ -40,6 +40,7 @@ import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
+import BasicTextarea from '@/components/ui/form/BasicTextarea.vue';
 import SecurityInput from '@/components/ui/form/SecurityInput.vue';
 import PartInput from '@/components/ui/form/PartInput.vue';
 import ExtendSelect from '@/components/ui/form/ExtendSelect.vue';
@@ -72,6 +73,7 @@ import IllustInfoText from '@/components/ui/common/IllustInfoText.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
 import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import StepProgress from '@/components/ui/progress/StepProgress.vue';
+import SearchButton from '@/components/ui/button/SearchButton.vue';
 
 import BrandLogo001 from '@/assets/images/bank-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/bank-logo/lotte.svg?component';
@@ -145,6 +147,7 @@ export default {
     FormInvalidMessage,
     FormHelpText,
     BasicSelect,
+    BasicTextarea,
     SecurityInput,
     PartInput,
     ExtendSelect,
@@ -177,6 +180,7 @@ export default {
     UnitText,
     RoundStatus,
     StepProgress,
+    SearchButton,
     IconAdd,
     BrandLogo001,
     BrandLogo002,
@@ -2007,8 +2011,8 @@ export default {
           </FormListItem>
 
           <FormListItem titleText="카드사" target="#testInput009">
-            <FormInvalid :error="state.brandError">
-              <InputBlock :error="state.brandError">
+            <FormInvalid :error="state.testError001">
+              <InputBlock :error="state.testError001">
                 <InputBlockCell :flexible="true">
                   <ExtendSelect
                     buttonTitle="카드사 선택하기"
@@ -2163,7 +2167,75 @@ export default {
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
+
+          <BasicTextarea
+            :error="state.testError001"
+            titleText="Label"
+            titleOptionalText="Optional"
+            :require="true"
+            :maxlength="150"
+            :count="true"
+          >
+            <template v-slot:bottom>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+              <FormHelpText>Helper Text</FormHelpText>
+            </template>
+          </BasicTextarea>
+
+          <BasicTextarea
+            :error="state.testError001"
+            titleText="Label"
+            titleOptionalText="Optional"
+            :require="true"
+            :maxlength="150"
+            :count="true"
+            :disabled="true"
+          >
+            <template v-slot:bottom>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+              <FormHelpText>Helper Text</FormHelpText>
+            </template>
+          </BasicTextarea>
         </FormList>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Search</h3>
+
+        <InputBlock type="search">
+          <InputBlockCell :flexible="true">
+            <BasicInput
+              type="search"
+              placeholder="동(읍/면) 또는 아파트 이름 입력"
+            />
+          </InputBlockCell>
+          <InputBlockCell type="search">
+            <SearchButton />
+          </InputBlockCell>
+        </InputBlock>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Sort select</h3>
+
+        <div class="inline-wrap align-right">
+          <BasicSelect
+            theme="sort"
+            :option="[
+              {
+                value: '1',
+                text: '한도순',
+              },
+              {
+                value: '2',
+                text: '금리순',
+              },
+            ]"
+            buttonTitle="정렬 기준 선택하기"
+            layerTitle="정렬 기준을 선택해 주세요"
+            defaultValue="1"
+          />
+        </div>
       </div>
     </section>
 
@@ -5588,6 +5660,37 @@ export default {
             </li>
           </ul>
         </section>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Search List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <ul :class="$style['search-list']">
+          <li :class="$style['search-list__item']">
+            <button type="button" :class="$style['search-list__link']">
+              <span :class="$style['search-list__text']">
+                서울특별시 강남구 <mark>역삼동</mark> 자자<mark>자이</mark>
+              </span>
+            </button>
+          </li>
+          <li :class="$style['search-list__item']">
+            <button type="button" :class="$style['search-list__link']">
+              <span :class="$style['search-list__text']">
+                서울특별시 강남구 <mark>역삼동</mark> 자자<mark>자이</mark>
+              </span>
+            </button>
+          </li>
+          <li :class="$style['search-list__item']">
+            <button type="button" :class="$style['search-list__link']">
+              <span :class="$style['search-list__text']">
+                서울특별시 강남구 <mark>역삼동</mark> 자자<mark>자이</mark>
+              </span>
+            </button>
+          </li>
+        </ul>
       </div>
     </section>
 

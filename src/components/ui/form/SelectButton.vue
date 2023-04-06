@@ -34,6 +34,10 @@ export default {
       Type: Boolean,
       default: false,
     },
+    theme: {
+      Type: String,
+      default: null,
+    },
   },
   setup(props, context) {
     const formListItem = inject('formListItem', {});
@@ -78,7 +82,13 @@ export default {
     v-bind="$attrs"
     ref="button"
     :type="type"
-    :class="[$style['select-button'], customClassNames.wrap]"
+    :class="[
+      $style['select-button'],
+      {
+        [$style[`select-button--theme-${theme}`]]: theme,
+      },
+      customClassNames.wrap,
+    ]"
   >
     <span
       v-if="(!forcePlaceholder && !isText && isPlaceholder) || forcePlaceholder"
