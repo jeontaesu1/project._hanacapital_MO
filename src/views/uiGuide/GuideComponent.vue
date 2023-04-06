@@ -101,6 +101,7 @@ import ImgZeroCommission from '@/assets/images/illustration/img-zero-commission.
 import Img120Months from '@/assets/images/illustration/img-120months.svg?component';
 import IconCarSecurity from '@/assets/images/icon/car-security.svg?component';
 import IconArrow from '@/assets/images/icon/dropdown.svg?component';
+import SwitchCheckBox from '@/components/ui/form/SwitchCheckBox.vue';
 
 export default {
   components: {
@@ -201,6 +202,7 @@ export default {
     IconCarSecurity,
     ScrollSection,
     IconArrow,
+    SwitchCheckBox,
   },
   setup() {
     const store = {
@@ -219,6 +221,16 @@ export default {
     const layerTest003 = ref(null);
     const layerTest004 = ref(null);
     const testAccordion = ref(null);
+    const buttonRef = ref(null);
+    const copyTarget = ref(null);
+    const copyToClipboard = () => {
+      const range = document.createRange();
+      range.selectNode(copyTarget.value);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(range);
+      document.execCommand('copy');
+      window.getSelection().removeAllRanges();
+    };
 
     const alertOpen = (options) => {
       alert.value.open(options);
@@ -307,6 +319,9 @@ export default {
       testInputEvent,
       testAccordionAllOpen,
       testAccordionAllClose,
+      buttonRef,
+      copyTarget,
+      copyToClipboard,
     };
   },
 };
@@ -4884,6 +4899,12 @@ export default {
           </div>
           <!-- //table -->
         </ScrollSection>
+        <!-- 소스 카피 기능용 소스(미구현) -->
+        <div class="test-section-copy">
+          <div><button class="test-section-copy-button">copy</button></div>
+          <pre class="test-section-copy-code"></pre>
+        </div>
+        <!-- //소스 카피 기능용 소스 -->
       </div>
 
       <div class="test-section-sub">
@@ -4919,6 +4940,12 @@ export default {
           </div>
           <!-- //table -->
         </ScrollSection>
+        <!-- 소스 카피 기능용 소스(미구현) -->
+        <div class="test-section-copy">
+          <div><button class="test-section-copy-button">copy</button></div>
+          <pre class="test-section-copy-code"></pre>
+        </div>
+        <!-- //소스 카피 기능용 소스 -->
       </div>
 
       <div class="test-section-sub">
@@ -4952,6 +4979,80 @@ export default {
           </div>
           <!-- //table -->
         </ScrollSection>
+        <!-- 소스 카피 기능용 소스(미구현) -->
+        <div class="test-section-copy">
+          <div><button class="test-section-copy-button">copy</button></div>
+          <pre class="test-section-copy-code"></pre>
+        </div>
+        <!-- //소스 카피 기능용 소스 -->
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">SwitchCheckBox (스위치)</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <SwitchCheckBox id="SwitchCheckBox" />
+        <!-- 소스 카피 기능용 소스(미구현) -->
+        <div class="test-section-copy">
+          <div><button class="test-section-copy-button">copy</button></div>
+          <pre class="test-section-copy-code">
+            import SwitchCheckBox from '@/components/ui/form/SwitchCheckBox.vue';
+            components: {
+              SwitchCheckBox,
+            }
+            <SwitchCheckBox id="인풋과 매칭될 아이디 할당" />
+            <SwitchCheckBox id="test" /> // 예시
+          </pre>
+        </div>
+        <!-- //소스 카피 기능용 소스 -->
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">스위치 case</h3>
+        <ul :class="$style['switch-list']">
+          <li>
+            <p :class="$style['switch-list__title']">
+              앱 알림을 받아 보시겠어요?
+            </p>
+            <SwitchCheckBox id="alarm" />
+          </li>
+          <li>
+            <p :class="$style['switch-list__title']">
+              자동으로 로그인하시겠어요?
+            </p>
+            <SwitchCheckBox id="auto" />
+          </li>
+        </ul>
+
+        <!-- 소스 카피 기능용 소스(미구현) -->
+        <div class="test-section-copy">
+          <div><button class="test-section-copy-button">copy</button></div>
+          <pre class="test-section-copy-code">
+            <ul :class="$style['switch-list']">
+              <li>
+                <p :class="$style['switch-list__title']">
+                  앱 알림을 받아 보시겠어요?
+                </p>
+                <SwitchCheckBox id="alarm" />
+              </li>
+              <li>
+                <p :class="$style['switch-list__title']">
+                  자동으로 로그인하시겠어요?
+                </p>
+                <SwitchCheckBox id="auto" />
+              </li>
+            </ul>
+            import SwitchCheckBox from '@/components/ui/form/SwitchCheckBox.vue';
+            components: {
+              SwitchCheckBox,
+            }
+            <SwitchCheckBox id="인풋과 매칭될 아이디 할당" />
+            <SwitchCheckBox id="test" /> // 예시
+            @import '@/assets/scss/components/import/switch-list.scss';
+          </pre>
+        </div>
+        <!-- //소스 카피 기능용 소스 -->
       </div>
     </section>
   </div>

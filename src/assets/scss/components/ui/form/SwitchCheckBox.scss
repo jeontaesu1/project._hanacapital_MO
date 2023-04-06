@@ -1,4 +1,6 @@
 .switch-checkbox {
+  font-size: 0;
+
   &__label {
     cursor: pointer;
     display: inline-block;
@@ -9,6 +11,9 @@
     border-radius: 50px;
     font-size: 0;
     line-height: 0;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
 
     &::after {
       content: '';
