@@ -24,6 +24,7 @@ import FilterTab from '@/components/ui/tab/FilterTab.vue';
 import FilterTabButton from '@/components/ui/tab/FilterTabButton.vue';
 import StickyBar from '@/components/ui/common/StickyBar.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
+import SearchButton from '@/components/ui/button/SearchButton.vue';
 
 import IconArrow from '@/assets/images/icon/dropdown.svg?component';
 
@@ -49,6 +50,7 @@ export default {
     FilterTabButton,
     StickyBar,
     TextButton,
+    SearchButton,
     IconArrow,
   },
   setup() {
@@ -87,10 +89,10 @@ export default {
     <FormList>
       <FormListItem
         target="#CustomerFAQSearchInput"
-        :class="$style['padding-top-none']"
+        :class="$style['no-padding']"
       >
         <FormInvalid :error="state.searchCodeError">
-          <InputBlock :error="state.searchCodeError">
+          <InputBlock type="search" :error="state.searchCodeError">
             <InputBlockCell>
               <BasicSelect
                 :option="[
@@ -116,12 +118,11 @@ export default {
                 defaultValue="1"
               />
             </InputBlockCell>
-            <InputBlockCell :flexible="true" margin="regular">
-              <BasicInput
-                type="text"
-                title="검색어 입력"
-                placeholder="검색어 입력"
-              />
+            <InputBlockCell :flexible="true">
+              <BasicInput type="search" placeholder="검색어 입력" />
+            </InputBlockCell>
+            <InputBlockCell type="search">
+              <SearchButton />
             </InputBlockCell>
           </InputBlock>
           <FormInvalidMessage>Error Message</FormInvalidMessage>
