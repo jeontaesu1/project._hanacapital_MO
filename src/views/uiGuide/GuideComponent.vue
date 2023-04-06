@@ -221,17 +221,18 @@ export default {
     const layerTest003 = ref(null);
     const layerTest004 = ref(null);
     const testAccordion = ref(null);
-    const buttonRef = ref(null);
-    const copyTarget = ref(null);
-    const copyToClipboard = () => {
-      const range = document.createRange();
-      range.selectNode(copyTarget.value);
-      window.getSelection().removeAllRanges();
-      window.getSelection().addRange(range);
-      document.execCommand('copy');
-      window.getSelection().removeAllRanges();
-    };
 
+    const preRef = ref(null);
+
+    const copyToClipboard = async () => {
+      try {
+        await navigator.clipboard.writeText(preRef.value.innerHTML);
+        console.log('Text copied to clipboard');
+      } catch (err) {
+        console.error('Failed to copy text: ', err);
+      }
+    };
+    undefined;
     const alertOpen = (options) => {
       alert.value.open(options);
     };
@@ -319,8 +320,8 @@ export default {
       testInputEvent,
       testAccordionAllOpen,
       testAccordionAllClose,
-      buttonRef,
-      copyTarget,
+
+      preRef,
       copyToClipboard,
     };
   },
@@ -4899,12 +4900,6 @@ export default {
           </div>
           <!-- //table -->
         </ScrollSection>
-        <!-- 소스 카피 기능용 소스(미구현) -->
-        <div class="test-section-copy">
-          <div><button class="test-section-copy-button">copy</button></div>
-          <pre class="test-section-copy-code"></pre>
-        </div>
-        <!-- //소스 카피 기능용 소스 -->
       </div>
 
       <div class="test-section-sub">
@@ -5027,8 +5022,12 @@ export default {
 
         <!-- 소스 카피 기능용 소스(미구현) -->
         <div class="test-section-copy">
-          <div><button class="test-section-copy-button">copy</button></div>
-          <pre class="test-section-copy-code">
+          <div>
+            <button class="test-section-copy-button" @click="copyToClipboard">
+              copy
+            </button>
+          </div>
+          <pre class="test-section-copy-code" ref="preRef">
             <ul :class="$style['switch-list']">
               <li>
                 <p :class="$style['switch-list__title']">
