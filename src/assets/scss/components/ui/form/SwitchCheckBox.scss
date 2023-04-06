@@ -25,6 +25,10 @@
   &__input {
     display: none;
 
+    &:checked + label {
+      background-color: $color-gray-20;
+    }
+
     &:checked + label::after {
       left: 20px;
     }

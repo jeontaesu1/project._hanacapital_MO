@@ -21,7 +21,6 @@ import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
-import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 
 export default {
   components: {
@@ -38,7 +37,6 @@ export default {
     FormListItem,
     FormInvalid,
     FormInvalidMessage,
-    FormHelpText,
     BasicInput,
     InputBlock,
     InputBlockCell,
@@ -219,7 +217,6 @@ export default {
                 <template v-slot:innerRight>만원</template>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
-              <!-- <FormHelpText>Helper Text</FormHelpText> -->
             </FormInvalid>
           </FormListItem>
         </FormList>

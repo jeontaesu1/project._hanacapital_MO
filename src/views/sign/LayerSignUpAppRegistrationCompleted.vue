@@ -1,4 +1,5 @@
 <script>
+// Member_M06_l004
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -59,11 +60,15 @@ export default {
 
       <ul :class="$style['switch-list']">
         <li>
-          <p :class="$style['switch-list__title']">앱 알림을 받아 보시겠어요?</p>
+          <p :class="$style['switch-list__title']">
+            앱 알림을 받아 보시겠어요?
+          </p>
           <SwitchCheckBox id="alarm" />
         </li>
         <li>
-          <p :class="$style['switch-list__title']">자동으로 로그인하시겠어요?</p>
+          <p :class="$style['switch-list__title']">
+            자동으로 로그인하시겠어요?
+          </p>
           <SwitchCheckBox id="auto" />
         </li>
       </ul>
