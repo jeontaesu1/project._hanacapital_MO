@@ -23,6 +23,7 @@ import UiTab from '@/components/ui/tab/UiTab.vue';
 import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
 import NavTab from '@/components/ui/tab/NavTab.vue';
 import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
 
 import IconLogo from '@/assets/images/icon/hanacapital-small.svg?component';
 import IconLink from '@/assets/images/icon/link.svg?component';
@@ -48,6 +49,7 @@ export default {
     UiTabPanel,
     NavTab,
     NavTabButton,
+    TextButton,
     IconLogo,
     IconLink,
   },
@@ -138,13 +140,37 @@ export default {
         <div :class="$style['sidebar']">
           <div :class="$style['sidebar__list']">
             <div :class="$style['sidebar__item']">
-              <a href="" :class="$style['sidebar__link']">아이디찾기</a>
+              <TextButton
+                tagName="RouterLink"
+                to=""
+                :classNames="{
+                  wrap: 'text-body-4 color-gray-tertiary font-weight-regular',
+                }"
+              >
+                아이디찾기
+              </TextButton>
             </div>
             <div :class="$style['sidebar__item']">
-              <a href="" :class="$style['sidebar__link']">비밀번호 찾기</a>
+              <TextButton
+                tagName="RouterLink"
+                to=""
+                :classNames="{
+                  wrap: 'text-body-4 color-gray-tertiary font-weight-regular',
+                }"
+              >
+                비밀번호 찾기
+              </TextButton>
             </div>
             <div :class="$style['sidebar__item']">
-              <a href="" :class="$style['sidebar__link']">회원가입</a>
+              <TextButton
+                tagName="RouterLink"
+                to=""
+                :classNames="{
+                  wrap: 'text-body-4 color-gray-tertiary font-weight-regular',
+                }"
+              >
+                회원가입
+              </TextButton>
             </div>
           </div>
         </div>
@@ -170,7 +196,15 @@ export default {
         <div :class="$style['sidebar']">
           <div :class="$style['sidebar__list']">
             <div :class="$style['sidebar__item']">
-              <a href="" :class="$style['sidebar__link']">회원가입</a>
+              <TextButton
+                tagName="RouterLink"
+                to=""
+                :classNames="{
+                  wrap: 'text-body-4 color-gray-tertiary font-weight-regular',
+                }"
+              >
+                회원가입
+              </TextButton>
             </div>
           </div>
         </div>

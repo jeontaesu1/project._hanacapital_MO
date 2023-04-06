@@ -100,6 +100,12 @@ import ImgZeroCommission from '@/assets/images/illustration/img-zero-commission.
 import Img120Months from '@/assets/images/illustration/img-120months.svg?component';
 import IconCarSecurity from '@/assets/images/icon/car-security.svg?component';
 import IconArrow from '@/assets/images/icon/dropdown.svg?component';
+import IconConsulting from '@/assets/images/icon/consulting.svg?component';
+import IconService from '@/assets/images/icon/service.svg?component';
+import IconCustomerVisit from '@/assets/images/icon/customer-visit.svg?component';
+import IconInstallation from '@/assets/images/icon/installation.svg?component';
+import IconCompany from '@/assets/images/icon/company.svg?component';
+import IconDocumentComplete from '@/assets/images/icon/document-complete.svg?component';
 
 export default {
   components: {
@@ -199,6 +205,12 @@ export default {
     Img120Months,
     IconCarSecurity,
     IconArrow,
+    IconConsulting,
+    IconService,
+    IconCustomerVisit,
+    IconInstallation,
+    IconCompany,
+    IconDocumentComplete,
   },
   setup() {
     const store = {
@@ -5303,6 +5315,22 @@ export default {
               <div :class="$style['step__inner']">
                 <div :class="$style['step__contents']">
                   <div :class="$style['step__top']">
+                    <div :class="$style['step__badge']">STEP 1</div>
+                  </div>
+                  <div :class="$style['step__text']">
+                    판매점에서 물품을 구입하여
+                    <strong>할부상담을 신청</strong>합니다.
+                  </div>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconConsulting />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__top']">
                     <div :class="$style['step__badge']">STEP 2</div>
                   </div>
                   <div :class="$style['step__text']">
@@ -5312,6 +5340,51 @@ export default {
                 </div>
                 <div :class="$style['step__icon']">
                   <IconPersonalTerms />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__top']">
+                    <div :class="$style['step__badge']">STEP 2</div>
+                  </div>
+                  <div :class="$style['step__text']">
+                    신청내용 확인하여 <strong>결과를 통보</strong>합니다.
+                  </div>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconService />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__top']">
+                    <div :class="$style['step__badge']">STEP 2</div>
+                  </div>
+                  <div :class="$style['step__text']">
+                    <strong>거주지, 직장주소, 전화번호</strong>등을 입력합니다.
+                  </div>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconCompany />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__top']">
+                    <div :class="$style['step__badge']">STEP 3</div>
+                  </div>
+                  <div :class="$style['step__text']">
+                    신청내용 확인하여 <strong>결과를 통보</strong>합니다.
+                  </div>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconDocumentComplete />
                 </div>
               </div>
             </li>
@@ -5354,11 +5427,43 @@ export default {
                     <div :class="$style['step__badge']">STEP 4</div>
                   </div>
                   <div :class="$style['step__text']">
+                    할부 약정시 담당자 고객님께
+                    <strong>직접 방문</strong>합니다.
+                  </div>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconCustomerVisit />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__top']">
+                    <div :class="$style['step__badge']">STEP 4</div>
+                  </div>
+                  <div :class="$style['step__text']">
                     계좌로 <strong>대출금을 입금</strong>해드립니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
                   <IconDeposit />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__top']">
+                    <div :class="$style['step__badge']">STEP 5</div>
+                  </div>
+                  <div :class="$style['step__text']">
+                    고객님께서 <strong>원하시는 기기를 설치</strong>해 드리고,
+                    담당 직원이 실사를 합니다.
+                  </div>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconInstallation />
                 </div>
               </div>
             </li>

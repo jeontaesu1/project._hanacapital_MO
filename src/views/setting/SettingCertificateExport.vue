@@ -108,8 +108,61 @@ export default {
     </FormList>
 
     <div class="row-margin-contents-group">
-      <div class="text-body-2 color-black font-weight-bold">진행순서</div>
-      <div class="row-margin-item-group">// 리스트</div>
+      <div class="text-body-3 color-black font-weight-bold">진행순서</div>
+      <ul
+        :class="[
+          $style['contents-list'],
+          $style['contents-list--normal-margin'],
+          'row-margin-item-group',
+        ]"
+      >
+        <li :class="$style['contents-list__item']">
+          <div
+            :class="[
+              $style['contents-list__symbol'],
+              $style['contents-list__symbol--square-small'],
+            ]"
+          >
+            1
+          </div>
+          <div :class="[$style['contents-list__content'], 'text-body-3']">
+            PC에서 하나캐피탈 홈페이지<br />
+            <span class="color-green">‘인증센터 > 공동인증서 가져오기’ </span>에
+            접속해주세요.
+            <div :class="$style['sub']">
+              (http://hanacapital.co.kr/cs/cert-center.hnc)
+            </div>
+          </div>
+        </li>
+        <li :class="$style['contents-list__item']">
+          <div
+            :class="[
+              $style['contents-list__symbol'],
+              $style['contents-list__symbol--square-small'],
+            ]"
+          >
+            2
+          </div>
+          <div :class="[$style['contents-list__content'], 'text-body-3']">
+            ‘공동인증서 가져오기‘ 버튼을 선택하여 App에 표시된 인증번호 8자리를
+            입력해주세요.
+          </div>
+        </li>
+        <li :class="$style['contents-list__item']">
+          <div
+            :class="[
+              $style['contents-list__symbol'],
+              $style['contents-list__symbol--square-small'],
+            ]"
+          >
+            3
+          </div>
+          <div :class="[$style['contents-list__content'], 'text-body-3']">
+            ‘공동인증서 가져오기’ 버튼을 선택하시면 PC로 인증서 내보내기가
+            완료됩니다.
+          </div>
+        </li>
+      </ul>
     </div>
 
     <template v-slot:foot>

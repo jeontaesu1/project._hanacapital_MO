@@ -540,8 +540,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/customer/faq',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.07',
         log: [],
       },
       {

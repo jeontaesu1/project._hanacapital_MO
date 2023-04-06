@@ -1,1 +1,8 @@
 @import '@/assets/scss/components/import/input-timer.scss';
+@import '@/assets/scss/components/import/contents-list.scss';
+
+.sub {
+  margin-top: 2px;
+  @include font-size-default(14);
+  color: $color-gray-70;
+}
