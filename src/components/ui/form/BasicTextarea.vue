@@ -1,5 +1,13 @@
 <script>
-import { ref, reactive, computed, inject } from 'vue';
+import {
+  ref,
+  reactive,
+  computed,
+  inject,
+  provide,
+  onMounted,
+  onUpdated,
+} from 'vue';
 
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 
@@ -71,6 +79,7 @@ export default {
     const state = reactive({
       isFocus: false,
       isInputed: false,
+      val: '',
       count: props.modelValue ? props.modelValue.length : 0,
     });
 
@@ -97,14 +106,38 @@ export default {
       focus();
     };
 
+    const checkLength = () => {
+      const { maxlength } = props;
+
+      if (typeof maxlength !== 'number') return;
+
+      const val = input.value.value;
+
+      if (val.length > maxlength) {
+        input.value.value = val.substr(0, maxlength);
+
+        const eInput = new Event('input');
+        input.value.dispatchEvent(eInput);
+      }
+    };
+
+    const checkInputed = () => {
+      const length = input.value.value.length;
+      state.isInputed = length ? true : false;
+      state.count = length;
+    };
+
     const onfocusin = () => {
       clearTimeout(timer);
+      checkLength();
       state.isFocus = true;
       state.isInputed = input.value.value.length ? true : false;
     };
 
     const onfocusout = () => {
       clearTimeout(timer);
+      checkLength();
+
       timer = setTimeout(() => {
         state.isFocus = false;
         clearTimeout(timer);
@@ -112,12 +145,31 @@ export default {
     };
 
     const onInput = (e) => {
+      state.val = e.target.value;
       emit('update:modelValue', e.target.value);
     };
 
-    const onKeyup = (e) => {
-      state.isInputed = e.target.value.length ? true : false;
+    const onKeydown = () => {
+      checkLength();
     };
+
+    const onKeyup = () => {
+      checkLength();
+      checkInputed();
+    };
+
+    onMounted(() => {
+      checkLength();
+      checkInputed();
+    });
+
+    onUpdated(() => {
+      checkLength();
+    });
+
+    provide('formListItem', {
+      helpClass: formListStyleModule['form__help'],
+    });
 
     return {
       formListStyleModule,
@@ -130,6 +182,7 @@ export default {
       labelClick,
       onfocusin,
       onInput,
+      onKeydown,
       onKeyup,
       onfocusout,
     };
@@ -149,7 +202,10 @@ export default {
       },
       $style['input'],
       {
-        [formListStyleModule['input--error']]: error,
+        [$style['input--focus']]: state.isFocus,
+        [$style['input--inputed']]: state.isInputed,
+        [$style['input--error']]: error,
+        [$style['input--disabled']]: disabled,
       },
       customClassNames.item,
     ]"
@@ -196,19 +252,27 @@ export default {
         </span>
       </span>
     </dt>
-    <dd>
+    <dd
+      :class="[
+        formListStyleModule['form__contents'],
+        $style['input__contents'],
+        customClassNames.contents,
+      ]"
+    >
       <FormInvalid :error="error">
-        <textarea
-          ref="input"
-          v-bind="$attrs"
-          :class="[$style['input__input'], customClassNames.input]"
-          :value="modelValue"
-          :disabled="disabled"
-          @input="onInput"
-          @keyup="onKeyup"
-          @focusin="onfocusin"
-          @focusout="onfocusout"
-        ></textarea>
+        <div :class="[$style['input__input'], customClassNames.input]">
+          <textarea
+            ref="input"
+            v-bind="$attrs"
+            :value="modelValue || state.val"
+            :disabled="disabled"
+            @input="onInput"
+            @focusin="onfocusin"
+            @focusout="onfocusout"
+            @keydown="onKeydown"
+            @keyup="onKeyup"
+          ></textarea>
+        </div>
         <div
           v-if="isBottom || count"
           :class="[$style['input__bottom'], customClassNames.bottom]"
@@ -229,7 +293,7 @@ export default {
                 customClassNames.countCurrent,
               ]"
               >{{ state.count }}</span
-            >/{{ maxlength }}
+            ><span v-if="maxlength">/{{ maxlength }}</span>
           </div>
         </div>
       </FormInvalid>
