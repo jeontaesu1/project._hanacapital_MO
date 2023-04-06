@@ -119,7 +119,11 @@ export default {
               />
             </InputBlockCell>
             <InputBlockCell :flexible="true">
-              <BasicInput type="search" placeholder="검색어 입력" />
+              <BasicInput
+                type="search"
+                title="검색어"
+                placeholder="검색어 입력"
+              />
             </InputBlockCell>
             <InputBlockCell type="search">
               <SearchButton />
