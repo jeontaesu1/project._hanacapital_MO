@@ -261,8 +261,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/sign/signup-app',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.07',
         log: [],
       },
       {
@@ -273,7 +273,7 @@ const datas = () => [
         depth6: '',
         path: '/guide/sign-up-app-001',
         status: 'partend',
-        create: '2023.04.05',
+        create: '2023.04.07',
         log: [],
       },
       {
@@ -296,7 +296,12 @@ const datas = () => [
         path: '/guide/sign-load-pin-001',
         status: 'end',
         create: '2023.04.05',
-        log: [{ date: '2023.04.07', text: '간편비밀번호 불러오기 팝업 추가' }],
+        log: [
+          {
+            date: '2023.04.07',
+            text: '팝업 추가\n- 간편비밀번호 불러오기\n- 간편비밀번호 인증',
+          },
+        ],
       },
       {
         depth2: '로그인(APP)',
@@ -317,8 +322,13 @@ const datas = () => [
         depth6: '',
         path: '/guide/sign-reset-pin-001',
         status: 'partend',
-        create: '2023.04.05',
-        log: [],
+        create: '2023.03.31',
+        log: [
+          {
+            date: '2023.04.07',
+            text: '팝업 추가\n- 간편비밀번호 입력\n- 간편비밀번호 설정\n- 간편비밀번호 재입력',
+          },
+        ],
       },
       {
         depth2: '로그인(APP)',
@@ -455,12 +465,7 @@ const datas = () => [
         path: '/personal-loan/stock',
         status: '',
         create: '',
-        log: [
-          {
-            date: '2023.04.07',
-            text: '팝업 추가\n- 연장신청 약관동의\n- 연장신청 계약선택\n- 연장신청 상품 만기현황 확인\n- 중도상환신청 계약선택\n- 중도상환금액 조회\n- 중도상환 신청확인',
-          },
-        ],
+        log: [],
       },
       {
         depth2: '스탁론',
@@ -470,8 +475,13 @@ const datas = () => [
         depth6: '',
         path: '/guide/personal-loan-stock-001',
         status: 'partend',
-        create: '2023.04.05',
-        log: [],
+        create: '2023.03.31',
+        log: [
+          {
+            date: '2023.04.07',
+            text: '팝업 추가\n- 연장신청 약관동의\n- 연장신청 계약선택\n- 연장신청 상품 만기현황 확인\n- 중도상환신청 계약선택\n- 중도상환금액 조회\n- 중도상환 신청확인\n- 중도상환 조건 입력',
+          },
+        ],
       },
       {
         depth2: '의료기할부',
@@ -525,8 +535,13 @@ const datas = () => [
         depth6: '',
         path: '/guide/personal-loan-etc-001',
         status: 'partend',
-        create: '2023.04.05',
-        log: [],
+        create: '2023.03.31',
+        log: [
+          {
+            date: '2023.04.07',
+            text: '팝업 추가\n- 한도/금리 확인',
+          },
+        ],
       },
     ],
   },
@@ -574,7 +589,7 @@ const datas = () => [
         depth6: '',
         path: '/customer/counseling-regist-complete',
         status: 'end',
-        create: '2023.04.05',
+        create: '2023.04.07',
         log: [],
       },
       {
@@ -585,7 +600,7 @@ const datas = () => [
         depth6: '',
         path: '/customer/notice-list',
         status: 'end',
-        create: '2023.04.05',
+        create: '2023.04.07',
         log: [],
       },
       {
@@ -596,7 +611,7 @@ const datas = () => [
         depth6: '',
         path: '/customer/notice-detail',
         status: 'end',
-        create: '2023.04.05',
+        create: '2023.04.07',
         log: [],
       },
       {
@@ -607,7 +622,7 @@ const datas = () => [
         depth6: '',
         path: '/customer/branch-list',
         status: 'end',
-        create: '2023.04.05',
+        create: '2023.04.07',
         log: [],
       },
       {
@@ -618,7 +633,7 @@ const datas = () => [
         depth6: '',
         path: '/guide/branch-list-001',
         status: 'end',
-        create: '2023.04.05',
+        create: '2023.04.07',
         log: [],
       },
       {
@@ -940,8 +955,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/lm-blog-personal/menu',
-        status: 'ing',
-        create: '2023.04.05',
+        status: 'end',
+        create: '2023.04.07',
         log: [],
       },
       {
@@ -962,7 +977,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/lm-blog-quick-counseling',
-        status: 'ing',
+        status: 'end',
         create: '2023.04.07',
         log: [],
       },
@@ -1045,7 +1060,7 @@ const datas = () => [
         depth6: '',
         path: '/guide/setting-reset-pin',
         status: 'partend',
-        create: '2023.04.05',
+        create: '2023.04.07',
         log: [],
       },
       {

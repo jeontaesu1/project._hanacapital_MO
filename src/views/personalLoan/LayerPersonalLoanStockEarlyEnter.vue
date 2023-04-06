@@ -29,6 +29,7 @@ import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
+import StepProgress from '@/components/ui/progress/StepProgress.vue';
 
 export default {
   components: {
@@ -60,6 +61,7 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicButton,
+    StepProgress,
   },
   setup() {
     const state = reactive({
@@ -86,6 +88,7 @@ export default {
             <PopupButton @click="layerSlotProps.close()" />
           </template>
         </FullPopupHead>
+        <StepProgress :total="4" :current="2" />
       </template>
 
       <PageTextGroup>
