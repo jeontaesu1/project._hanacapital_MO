@@ -10,6 +10,7 @@ import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
+import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 
@@ -24,6 +25,7 @@ export default {
     InputBlock,
     InputBlockCell,
     BasicSelect,
+    FormInvalidMessage,
     BasicHr,
     TextButton,
 
@@ -31,11 +33,7 @@ export default {
   },
   setup() {
     const state = reactive({
-      nameError: false,
-      searchError: false,
-      idNumberError: false,
-      phoneError: false,
-      codeError: false,
+      branchError: false,
     });
 
     const store = {
@@ -66,9 +64,13 @@ export default {
 <template>
   <PageContents>
     <FormList>
-      <FormListItem titleText="지역" target="#customerBranchListRegionButton">
-        <FormInvalid>
-          <InputBlock>
+      <FormListItem
+        titleText="지역"
+        target="#customerBranchListRegionButton"
+        :selectOnly="true"
+      >
+        <FormInvalid :error="state.branchError">
+          <InputBlock :error="state.branchError">
             <InputBlockCell :flexible="true">
               <BasicSelect
                 :option="[
@@ -109,13 +111,11 @@ export default {
                 layerTitle="지역을 선택해 주세요"
                 id="customerBranchListRegion"
                 buttonId="customerBranchListRegionButton"
-                :classNames="{
-                  wrap: '',
-                }"
                 defaultValue="1"
               />
             </InputBlockCell>
           </InputBlock>
+          <FormInvalidMessage>Error Message</FormInvalidMessage>
         </FormInvalid>
       </FormListItem>
     </FormList>

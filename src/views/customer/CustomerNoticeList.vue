@@ -27,11 +27,8 @@ export default {
   },
   setup() {
     const state = reactive({
-      nameError: false,
+      noticeError: false,
       searchError: false,
-      idNumberError: false,
-      phoneError: false,
-      codeError: false,
     });
 
     const store = {
@@ -61,7 +58,7 @@ export default {
 
 <template>
   <PageContents>
-    <InputBlock>
+    <InputBlock :error="state.noticeError">
       <InputBlockCell>
         <BasicSelect
           :option="[

@@ -51,7 +51,7 @@ export default {
   setup() {
     const state = reactive({
       nameError: false,
-      idNumberError: false,
+      phoneError: false,
     });
 
     const store = {
@@ -134,7 +134,7 @@ export default {
         >
           <div :class="$style['agree-list__all-head']">
             <CheckBox
-              id="testagree002All"
+              id="lmBlogPersonalQuickCounselingAgreeAll"
               :classNames="{ wrap: $style['agree-list__all-checkbox'] }"
             >
               <CheckBoxObject />
@@ -153,7 +153,7 @@ export default {
                 <li :class="$style['agree-list__item']">
                   <div :class="$style['agree-list__head']">
                     <CheckBox
-                      id="testagree002_001"
+                      id="lmBlogPersonalQuickCounselingAgree_001"
                       :classNames="{
                         wrap: $style['agree-list__checkbox'],
                       }"
@@ -176,7 +176,7 @@ export default {
                 <li :class="$style['agree-list__item']">
                   <div :class="$style['agree-list__head']">
                     <CheckBox
-                      id="testagree002_002"
+                      id="lmBlogPersonalQuickCounselingAgree_002"
                       :classNames="{
                         wrap: $style['agree-list__checkbox'],
                       }"

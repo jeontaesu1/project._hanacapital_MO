@@ -988,7 +988,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/lm-blog-personal/sms-counseling',
-        status: 'partend',
+        status: 'end',
         create: '2023.04.07',
         log: [],
       },

@@ -15,6 +15,7 @@ import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
+import BasicTextarea from '@/components/ui/form/BasicTextarea.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import UiAccordion from '@/components/ui/accordion/UiAccordion.vue';
@@ -38,6 +39,7 @@ export default {
     FormInvalidMessage,
     FormList,
     FormListItem,
+    BasicTextarea,
     InputBlock,
     InputBlockCell,
     UiAccordion,
@@ -51,7 +53,7 @@ export default {
   setup() {
     const state = reactive({
       nameError: false,
-      idNumberError: false,
+      phoneError: false,
     });
 
     const store = {
@@ -92,7 +94,7 @@ export default {
     </PageTextGroup>
 
     <FormList>
-      //상담내용 textarea
+      <BasicTextarea titleText="상담내용"> </BasicTextarea>
 
       <FormListItem titleText="이름" target="#lmBlogPersonalSMSCounselingName">
         <FormInvalid :error="state.nameError">
@@ -133,7 +135,7 @@ export default {
         >
           <div :class="$style['agree-list__all-head']">
             <CheckBox
-              id="testagree002All"
+              id="lmBlogPersonalSMSCounselingAgreeAll"
               :classNames="{ wrap: $style['agree-list__all-checkbox'] }"
             >
               <CheckBoxObject />
@@ -152,7 +154,7 @@ export default {
                 <li :class="$style['agree-list__item']">
                   <div :class="$style['agree-list__head']">
                     <CheckBox
-                      id="testagree002_001"
+                      id="lmBlogPersonalSMSCounselingAgree_001"
                       :classNames="{
                         wrap: $style['agree-list__checkbox'],
                       }"
@@ -175,7 +177,7 @@ export default {
                 <li :class="$style['agree-list__item']">
                   <div :class="$style['agree-list__head']">
                     <CheckBox
-                      id="testagree002_002"
+                      id="lmBlogPersonalSMSCounselingAgree_002"
                       :classNames="{
                         wrap: $style['agree-list__checkbox'],
                       }"
