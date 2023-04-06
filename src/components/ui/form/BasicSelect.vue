@@ -52,6 +52,10 @@ export default {
       Type: Object,
       default: null,
     },
+    theme: {
+      Type: String,
+      default: null,
+    },
     option: {
       Type: Array,
       default() {
@@ -191,7 +195,7 @@ export default {
     };
 
     onMounted(() => {
-      setValue(props.modelValue);
+      setValue(props.modelValue || props.defaultValue);
     });
 
     return {
@@ -212,7 +216,15 @@ export default {
 </script>
 
 <template>
-  <div :class="[$style['select'], customClassNames.wrap]">
+  <div
+    :class="[
+      $style['select'],
+      {
+        [$style[`select--theme-${theme}`]]: theme,
+      },
+      customClassNames.wrap,
+    ]"
+  >
     <input
       type="hidden"
       ref="input"
@@ -232,6 +244,7 @@ export default {
       :placeholder="placeholder"
       :forcePlaceholder="state.forcePlaceholder"
       :id="buttonId"
+      :theme="theme"
       @click="layerOpen"
       >{{ state.text }}</SelectButton
     >

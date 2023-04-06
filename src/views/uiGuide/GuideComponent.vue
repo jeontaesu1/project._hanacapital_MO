@@ -2202,6 +2202,29 @@ export default {
           </InputBlockCell>
         </InputBlock>
       </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Sort select</h3>
+
+        <div class="inline-wrap align-right">
+          <BasicSelect
+            theme="sort"
+            :option="[
+              {
+                value: '1',
+                text: '한도순',
+              },
+              {
+                value: '2',
+                text: '금리순',
+              },
+            ]"
+            buttonTitle="정렬 기준 선택하기"
+            layerTitle="정렬 기준을 선택해 주세요"
+            defaultValue="1"
+          />
+        </div>
+      </div>
     </section>
 
     <section class="test-section">
