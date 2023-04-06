@@ -99,23 +99,22 @@ export default {
       <UiTab>
         <NavTab :useUiTab="true">
           <NavTabButton
-            link="LayerLMBlogLoanCounselingApartmentCertifiedNavTab001_001"
+            link="LayerPersonalLoanHappinessApartmentCertifiedNavTab001_001"
+            >지번</NavTabButton
           >
-            지번
-          </NavTabButton>
           <NavTabButton
-            link="LayerLMBlogLoanCounselingApartmentCertifiedNavTab001_002"
+            link="LayerPersonalLoanHappinessApartmentCertifiedNavTab001_002"
             >도로명주소</NavTabButton
           >
         </NavTab>
 
         <UiTabPanel
-          name="LayerLMBlogLoanCounselingApartmentCertifiedNavTab001_001"
+          name="LayerPersonalLoanHappinessApartmentCertifiedNavTab001_001"
         >
           <FormList>
             <FormListItem
               titleText="부동산 구분"
-              target="#layerLMBlogLoanCounselingApartmentCertifiedInputMethod01"
+              target="#layerPersonalLoanHappinessApartmentCertifiedInputMethod01"
               :forceFocus="true"
             >
               <FormInvalid :error="state.methodError">
@@ -123,7 +122,7 @@ export default {
                   <InputBlockCell :flexible="true">
                     <BasicInput
                       title="부동산 구분"
-                      id="layerLMBlogLoanCounselingApartmentCertifiedInputMethod01"
+                      id="layerPersonalLoanHappinessApartmentCertifiedInputMethod01"
                       value="집합건물"
                     />
                   </InputBlockCell>
@@ -134,7 +133,7 @@ export default {
 
             <FormListItem
               titleText="시/도"
-              target="#layerLMBlogLoanCounselingApartmentCertifiedAreaButton001"
+              target="#layerPersonalLoanHappinessApartmentCertifiedAreaButton001"
               :selectOnly="true"
             >
               <FormInvalid :error="state.areaError001">
@@ -213,8 +212,8 @@ export default {
                       ]"
                       buttonTitle="시/도 선택하기"
                       layerTitle="시/도를 선택해 주세요"
-                      id="layerLMBlogLoanCounselingApartmentCertifiedArea001"
-                      buttonId="layerLMBlogLoanCounselingApartmentCertifiedAreaButton001"
+                      id="layerPersonalLoanHappinessApartmentCertifiedArea001"
+                      buttonId="layerPersonalLoanHappinessApartmentCertifiedAreaButton001"
                     />
                   </InputBlockCell>
                 </InputBlock>
@@ -224,14 +223,14 @@ export default {
 
             <FormListItem
               titleText="리/동"
-              target="#layerLMBlogLoanCounselingApartmentCertifiedArea002"
+              target="#layerPersonalLoanHappinessApartmentCertifiedArea002"
             >
               <FormInvalid :error="state.areaError002">
                 <InputBlock :error="state.areaError002">
                   <InputBlockCell :flexible="true">
                     <BasicInput
                       title="리/동"
-                      id="layerLMBlogLoanCounselingApartmentCertifiedArea002"
+                      id="layerPersonalLoanHappinessApartmentCertifiedArea002"
                     />
                   </InputBlockCell>
                 </InputBlock>
@@ -245,8 +244,8 @@ export default {
                   <BoxCheckListItem>
                     <BoxCheck
                       :minSide="true"
-                      name="layerLMBlogLoanCounselingApartmentCertifiedList001"
-                      id="layerLMBlogLoanCounselingApartmentCertifiedList001_001"
+                      name="layerPersonalLoanHappinessApartmentCertifiedList001"
+                      id="layerPersonalLoanHappinessApartmentCertifiedList001_001"
                     >
                       <BoxCheckLabel>지번</BoxCheckLabel>
                     </BoxCheck>
@@ -254,8 +253,8 @@ export default {
                   <BoxCheckListItem>
                     <BoxCheck
                       :minSide="true"
-                      name="layerLMBlogLoanCounselingApartmentCertifiedList002"
-                      id="layerLMBlogLoanCounselingApartmentCertifiedList002_002"
+                      name="layerPersonalLoanHappinessApartmentCertifiedList002"
+                      id="layerPersonalLoanHappinessApartmentCertifiedList002_002"
                     >
                       <BoxCheckLabel>건물명칭</BoxCheckLabel>
                     </BoxCheck>
@@ -268,7 +267,7 @@ export default {
                 >
                   <InputBlockCell :flexible="true">
                     <BasicInput
-                      id="layerLMBlogLoanCounselingApartmentCertifiedAddress"
+                      id="layerPersonalLoanHappinessApartmentCertifiedAddress"
                     />
                   </InputBlockCell>
                 </InputBlock>
@@ -281,8 +280,8 @@ export default {
               <BoxCheckListItem>
                 <BoxCheck
                   :minSide="true"
-                  name="layerLMBlogLoanCounselingApartmentCertifiedList003"
-                  id="layerLMBlogLoanCounselingApartmentCertifiedList003_001"
+                  name="layerPersonalLoanHappinessApartmentCertifiedList003"
+                  id="layerPersonalLoanHappinessApartmentCertifiedList003_001"
                 >
                   <BoxCheckLabel>동+호</BoxCheckLabel>
                 </BoxCheck>
@@ -290,8 +289,8 @@ export default {
               <BoxCheckListItem>
                 <BoxCheck
                   :minSide="true"
-                  name="layerLMBlogLoanCounselingApartmentCertifiedList004"
-                  id="layerLMBlogLoanCounselingApartmentCertifiedList004_002"
+                  name="layerPersonalLoanHappinessApartmentCertifiedList004"
+                  id="layerPersonalLoanHappinessApartmentCertifiedList004_002"
                 >
                   <BoxCheckLabel>동</BoxCheckLabel>
                 </BoxCheck>
@@ -299,8 +298,8 @@ export default {
               <BoxCheckListItem>
                 <BoxCheck
                   :minSide="true"
-                  name="layerLMBlogLoanCounselingApartmentCertifiedList005"
-                  id="layerLMBlogLoanCounselingApartmentCertifiedList005_003"
+                  name="layerPersonalLoanHappinessApartmentCertifiedList005"
+                  id="layerPersonalLoanHappinessApartmentCertifiedList005_003"
                 >
                   <BoxCheckLabel>호</BoxCheckLabel>
                 </BoxCheck>
@@ -316,7 +315,7 @@ export default {
                     :useDelete="false"
                     pattern="\d*"
                     title="동 + 호"
-                    id="layerLMBlogLoanCounselingApartmentCertifiedSupply01"
+                    id="layerPersonalLoanHappinessApartmentCertifiedSupply01"
                   />
                 </InputBlockCell>
                 <template v-slot:innerRight>
@@ -332,7 +331,7 @@ export default {
                     :useDelete="false"
                     pattern="\d*"
                     title="동"
-                    id="layerLMBlogLoanCounselingApartmentCertifiedSupply02"
+                    id="layerPersonalLoanHappinessApartmentCertifiedSupply02"
                   />
                 </InputBlockCell>
                 <template v-slot:innerRight>
@@ -348,7 +347,7 @@ export default {
                     :useDelete="false"
                     pattern="\d*"
                     title="호"
-                    id="layerLMBlogLoanCounselingApartmentCertifiedSupply03"
+                    id="LayerPersonalLoanHappinessApartmentCertifiedSupply03"
                   />
                 </InputBlockCell>
                 <template v-slot:innerRight>
@@ -428,12 +427,12 @@ export default {
         </UiTabPanel>
 
         <UiTabPanel
-          name="LayerLMBlogLoanCounselingApartmentCertifiedNavTab001_002"
+          name="LayerPersonalLoanHappinessApartmentCertifiedNavTab001_002"
         >
           <FormList>
             <FormListItem
               titleText="부동산 구분"
-              target="#layerLMBlogLoanCounselingApartmentCertifiedInputMethod02"
+              target="#layerPersonalLoanHappinessApartmentCertifiedInputMethod02"
               :forceFocus="true"
             >
               <FormInvalid :error="state.methodError">
@@ -441,7 +440,7 @@ export default {
                   <InputBlockCell :flexible="true">
                     <BasicInput
                       title="부동산 구분"
-                      id="layerLMBlogLoanCounselingApartmentCertifiedInputMethod02"
+                      id="layerPersonalLoanHappinessApartmentCertifiedInputMethod02"
                       value="집합건물"
                     />
                   </InputBlockCell>
@@ -452,7 +451,7 @@ export default {
 
             <FormListItem
               titleText="시/도"
-              target="#layerLMBlogLoanCounselingApartmentCertifiedAreaButton002"
+              target="#layerPersonalLoanHappinessApartmentCertifiedAreaButton002"
               :selectOnly="true"
             >
               <FormInvalid :error="state.areaError001">
@@ -531,8 +530,8 @@ export default {
                       ]"
                       buttonTitle="시/도 선택하기"
                       layerTitle="시/도를 선택해 주세요"
-                      id="layerLMBlogLoanCounselingApartmentCertifiedArea002"
-                      buttonId="layerLMBlogLoanCounselingApartmentCertifiedAreaButton002"
+                      id="layerPersonalLoanHappinessApartmentCertifiedArea003"
+                      buttonId="layerPersonalLoanHappinessApartmentCertifiedAreaButton002"
                     />
                   </InputBlockCell>
                 </InputBlock>
@@ -542,14 +541,14 @@ export default {
 
             <FormListItem
               titleText="시/군/구"
-              target="#layerLMBlogLoanCounselingApartmentCertifiedArea003"
+              target="#layerPersonalLoanHappinessApartmentCertifiedArea004"
             >
               <FormInvalid :error="state.areaError002">
                 <InputBlock :error="state.areaError002">
                   <InputBlockCell :flexible="true">
                     <BasicInput
                       title="시/군/구"
-                      id="layerLMBlogLoanCounselingApartmentCertifiedArea003"
+                      id="layerPersonalLoanHappinessApartmentCertifiedArea004"
                     />
                   </InputBlockCell>
                 </InputBlock>
@@ -559,14 +558,14 @@ export default {
 
             <FormListItem
               titleText="도로명"
-              target="#layerLMBlogLoanCounselingApartmentCertifiedArea004"
+              target="#layerPersonalLoanHappinessApartmentCertifiedArea005"
             >
               <FormInvalid :error="state.areaError002">
                 <InputBlock :error="state.areaError002">
                   <InputBlockCell :flexible="true">
                     <BasicInput
                       title="도로명"
-                      id="layerLMBlogLoanCounselingApartmentCertifiedArea004"
+                      id="layerPersonalLoanHappinessApartmentCertifiedArea005"
                     />
                   </InputBlockCell>
                 </InputBlock>
@@ -576,14 +575,14 @@ export default {
 
             <FormListItem
               titleText="도로명/건물번호"
-              target="#layerLMBlogLoanCounselingApartmentCertifiedArea005"
+              target="#layerPersonalLoanHappinessApartmentCertifiedArea006"
             >
               <FormInvalid :error="state.areaError002">
                 <InputBlock :error="state.areaError002">
                   <InputBlockCell :flexible="true">
                     <BasicInput
                       title="도로명/건물번호"
-                      id="layerLMBlogLoanCounselingApartmentCertifiedArea005"
+                      id="layerPersonalLoanHappinessApartmentCertifiedArea006"
                     />
                   </InputBlockCell>
                 </InputBlock>
@@ -597,8 +596,8 @@ export default {
               <BoxCheckListItem>
                 <BoxCheck
                   :minSide="true"
-                  name="layerLMBlogLoanCounselingApartmentCertifiedList006"
-                  id="layerLMBlogLoanCounselingApartmentCertifiedList006_001"
+                  name="layerPersonalLoanHappinessApartmentCertifiedList006"
+                  id="layerPersonalLoanHappinessApartmentCertifiedList006_001"
                 >
                   <BoxCheckLabel>동+호</BoxCheckLabel>
                 </BoxCheck>
@@ -606,8 +605,8 @@ export default {
               <BoxCheckListItem>
                 <BoxCheck
                   :minSide="true"
-                  name="layerLMBlogLoanCounselingApartmentCertifiedList007"
-                  id="layerLMBlogLoanCounselingApartmentCertifiedList007_002"
+                  name="layerPersonalLoanHappinessApartmentCertifiedList07"
+                  id="layerPersonalLoanHappinessApartmentCertifiedList007_002"
                 >
                   <BoxCheckLabel>동</BoxCheckLabel>
                 </BoxCheck>
@@ -615,8 +614,8 @@ export default {
               <BoxCheckListItem>
                 <BoxCheck
                   :minSide="true"
-                  name="layerLMBlogLoanCounselingApartmentCertifiedList008"
-                  id="layerLMBlogLoanCounselingApartmentCertifiedList008_003"
+                  name="layerPersonalLoanHappinessApartmentCertifiedList008"
+                  id="layerPersonalLoanHappinessApartmentCertifiedList008_003"
                 >
                   <BoxCheckLabel>호</BoxCheckLabel>
                 </BoxCheck>
@@ -632,7 +631,7 @@ export default {
                     :useDelete="false"
                     pattern="\d*"
                     title="동 + 호"
-                    id="layerLMBlogLoanCounselingApartmentCertifiedSupply04"
+                    id="layerPersonalLoanHappinessApartmentCertifiedSupply04"
                   />
                 </InputBlockCell>
                 <template v-slot:innerRight>
@@ -648,7 +647,7 @@ export default {
                     :useDelete="false"
                     pattern="\d*"
                     title="동"
-                    id="layerLMBlogLoanCounselingApartmentCertifiedSupply05"
+                    id="layerPersonalLoanHappinessApartmentCertifiedSupply05"
                   />
                 </InputBlockCell>
                 <template v-slot:innerRight>
@@ -664,7 +663,7 @@ export default {
                     :useDelete="false"
                     pattern="\d*"
                     title="호"
-                    id="layerLMBlogLoanCounselingApartmentCertifiedSupply06"
+                    id="LayerPersonalLoanHappinessApartmentCertifiedSupply06"
                   />
                 </InputBlockCell>
                 <template v-slot:innerRight>
@@ -748,5 +747,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/lm-blog/LayerLMBlogLoanCounselingApartmentCertified.scss';
+@import '@/assets/scss/views/personalLoan/LayerPersonalLoanHappinessApartmentCertified.scss';
 </style>
