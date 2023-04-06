@@ -40,6 +40,7 @@ import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
+import BasicTextarea from '@/components/ui/form/BasicTextarea.vue';
 import SecurityInput from '@/components/ui/form/SecurityInput.vue';
 import PartInput from '@/components/ui/form/PartInput.vue';
 import ExtendSelect from '@/components/ui/form/ExtendSelect.vue';
@@ -139,6 +140,7 @@ export default {
     FormInvalidMessage,
     FormHelpText,
     BasicSelect,
+    BasicTextarea,
     SecurityInput,
     PartInput,
     ExtendSelect,
@@ -1982,8 +1984,8 @@ export default {
           </FormListItem>
 
           <FormListItem titleText="카드사" target="#testInput009">
-            <FormInvalid :error="state.brandError">
-              <InputBlock :error="state.brandError">
+            <FormInvalid :error="state.testError001">
+              <InputBlock :error="state.testError001">
                 <InputBlockCell :flexible="true">
                   <ExtendSelect
                     buttonTitle="카드사 선택하기"
@@ -2138,6 +2140,35 @@ export default {
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
+
+          <BasicTextarea
+            :error="state.testError001"
+            titleText="Label"
+            titleOptionalText="Optional"
+            :require="true"
+            :maxlength="150"
+            :count="true"
+          >
+            <template v-slot:bottom>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+              <FormHelpText>Helper Text</FormHelpText>
+            </template>
+          </BasicTextarea>
+
+          <BasicTextarea
+            :error="state.testError001"
+            titleText="Label"
+            titleOptionalText="Optional"
+            :require="true"
+            :maxlength="150"
+            :count="true"
+            :disabled="true"
+          >
+            <template v-slot:bottom>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+              <FormHelpText>Helper Text</FormHelpText>
+            </template>
+          </BasicTextarea>
         </FormList>
       </div>
     </section>

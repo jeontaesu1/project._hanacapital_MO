@@ -51,6 +51,9 @@ export default {
 
       if (val.length > length) {
         input.value.value = val.substr(0, length);
+
+        const eInput = new Event('input');
+        input.value.dispatchEvent(eInput);
       }
     };
 
