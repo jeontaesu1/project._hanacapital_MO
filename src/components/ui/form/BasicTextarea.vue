@@ -145,8 +145,9 @@ export default {
     };
 
     const onInput = (e) => {
-      state.val = e.target.value;
-      emit('update:modelValue', e.target.value);
+      const { value } = e.target;
+      state.val = value;
+      emit('update:modelValue', value);
     };
 
     const onKeydown = () => {
