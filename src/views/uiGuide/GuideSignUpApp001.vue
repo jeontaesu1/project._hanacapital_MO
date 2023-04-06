@@ -11,6 +11,7 @@ import LayerSignUpAppPinSet from '@/views/sign/LayerSignUpAppPinSet.vue';
 import LayerSignUpAppPinConfirm from '@/views/sign/LayerSignUpAppPinConfirm.vue';
 import LayerSignUpAppIdentificationMethodSelect from '@/views/sign/LayerSignUpAppIdentificationMethodSelect.vue';
 import LayerSignUpAppRegistrationCompleted from '@/views/sign/LayerSignUpAppRegistrationCompleted.vue';
+import LayerSignLoadPinSimplePassword from '@/views/sign/LayerSignLoadPinSimplePassword.vue';
 
 export default {
   components: {
@@ -23,6 +24,7 @@ export default {
     LayerSignUpAppPinConfirm,
     LayerSignUpAppIdentificationMethodSelect,
     LayerSignUpAppRegistrationCompleted,
+    LayerSignLoadPinSimplePassword,
   },
   setup() {
     const layer001 = ref(null);
@@ -30,6 +32,7 @@ export default {
     const layer003 = ref(null);
     const layer004 = ref(null);
     const layer005 = ref(null);
+    const layer006 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -47,6 +50,9 @@ export default {
     const layer005Open = (e = {}) => {
       layer005.value.layer.open(e.target);
     };
+    const layer006Open = (e = {}) => {
+      layer006.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -54,11 +60,13 @@ export default {
       layer003,
       layer004,
       layer005,
+      layer006,
       layer001Open,
       layer002Open,
       layer003Open,
       layer004Open,
       layer005Open,
+      layer006Open,
     };
   },
 };
@@ -97,5 +105,6 @@ export default {
     <LayerSignUpAppPinConfirm ref="layer003" />
     <LayerSignUpAppIdentificationMethodSelect ref="layer004" />
     <LayerSignUpAppRegistrationCompleted ref="layer005" />
+    <LayerSignLoadPinSimplePassword ref="layer006" />
   </PageContents>
 </template>

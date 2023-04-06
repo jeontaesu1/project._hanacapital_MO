@@ -7,7 +7,7 @@
     position: relative;
     width: 44px;
     height: 26px;
-    background-color: $color-navy-50;
+    background-color: $color-gray-20;
     border-radius: 50px;
     font-size: 0;
     line-height: 0;
@@ -31,7 +31,7 @@
     display: none;
 
     &:checked + label {
-      background-color: $color-gray-20;
+      background-color: $color-navy-50;
     }
 
     &:checked + label::after {
