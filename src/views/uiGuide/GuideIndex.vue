@@ -526,7 +526,12 @@ const datas = () => [
         path: '/guide/personal-loan-etc-001',
         status: 'partend',
         create: '2023.04.05',
-        log: [],
+        log: [
+          {
+            date: '2023.04.07',
+            text: '팝업 추가\n- 아파트 검색',
+          },
+        ],
       },
     ],
   },

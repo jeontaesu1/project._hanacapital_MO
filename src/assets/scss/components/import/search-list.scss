@@ -1,0 +1,28 @@
+.search-list {
+  @include reset-list;
+
+  &__item {
+    & + & {
+      margin-top: 32px;
+    }
+  }
+
+  &__link {
+    @include reset-button;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  &__text {
+    @include font-size-default(16);
+    font-weight: 500;
+
+    mark {
+      color: $color-green-50;
+      background-color: transparent;
+    }
+  }
+}
