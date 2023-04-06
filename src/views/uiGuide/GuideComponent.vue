@@ -2181,6 +2181,7 @@ export default {
           <InputBlockCell :flexible="true">
             <BasicInput
               type="search"
+              title="아파트 검색어"
               placeholder="동(읍/면) 또는 아파트 이름 입력"
             />
           </InputBlockCell>

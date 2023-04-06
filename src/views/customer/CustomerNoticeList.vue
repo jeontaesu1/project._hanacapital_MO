@@ -212,6 +212,7 @@ export default {
     </div>
   </PageContents>
 </template>
+
 <style lang="scss" module>
 @import '@/assets/scss/views/customer/CustomerNoticeList.scss';
 </style>

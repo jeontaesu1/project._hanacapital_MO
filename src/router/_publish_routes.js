@@ -182,6 +182,16 @@ const routes = [
     name: '/guide/lm-blog-loan-counseling',
     component: () => import('@/views/uiGuide/GuideLMBlogLoanCounseling.vue'),
   },
+  {
+    path: '/guide/id-shoot-001',
+    name: '/guide/id-shoot-001',
+    component: () => import('@/views/uiGuide/GuideIdShoot001.vue'),
+  },
+  {
+    path: '/guide/id-shoot-002',
+    name: '/guide/id-shoot-002',
+    component: () => import('@/views/uiGuide/GuideIdShoot002.vue'),
+  },
 
   // home
   {
