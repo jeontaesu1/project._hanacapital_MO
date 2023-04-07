@@ -92,14 +92,14 @@ export default {
           src="@/assets/images/_dummy/sample-idcard.png"
           alt="주민등록증 사진"
         />
-        <!-- //Case : 주민등록증 촬영시 노출 -->
+        <!-- // Case : 주민등록증 촬영시 노출 -->
 
         <!-- Case : 운전면허증 촬영시 노출 -->
         <img
           src="@/assets/images/_dummy/sample-license.png"
           alt="운전면허증 사진"
         />
-        <!-- Case : 운전면허증 촬영시 노출 -->
+        <!-- // Case : 운전면허증 촬영시 노출 -->
       </div>
 
       <ButtonList :classNames="{ wrap: 'row-margin-contents-group' }">
@@ -116,7 +116,7 @@ export default {
                 <BasicInput
                   title="이름"
                   id="layerIdShootConfirmName"
-                  modelValue="김하나"
+                  defaultValue="김하나"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -137,7 +137,7 @@ export default {
                   pattern="\d*"
                   title="주민등록번호 앞 6자리"
                   id="layerIdShootConfirmIdNumber01"
-                  modelValue="123456"
+                  defaultValue="123456"
                 />
               </InputBlockCell>
               <InputBlockCell type="sub">-</InputBlockCell>
@@ -225,7 +225,7 @@ export default {
                   layerTitle="면허발급번호를 선택해 주세요"
                   buttonId="layerIdShootConfirmLicense"
                   :classNames="{
-                    wrap: 'input-width-category',
+                    wrap: 'input-width-driving-license',
                   }"
                   defaultValue="1"
                 />
@@ -235,7 +235,8 @@ export default {
                   type="number"
                   pattern="\d*"
                   title="면허발급번호 앞 2자리"
-                  modelValue="12"
+                  :useDelete="false"
+                  defaultValue="12"
                 />
               </InputBlockCell>
               <InputBlockCell type="sub">-</InputBlockCell>
@@ -249,7 +250,8 @@ export default {
                   type="number"
                   pattern="\d*"
                   title="면허발급번호 두번째 6자리"
-                  modelValue="123456"
+                  :useDelete="false"
+                  defaultValue="123456"
                 />
               </InputBlockCell>
               <InputBlockCell type="sub">-</InputBlockCell>
@@ -258,7 +260,8 @@ export default {
                   type="number"
                   pattern="\d*"
                   title="면허발급번호 뒤 2자리"
-                  modelValue="12"
+                  :useDelete="false"
+                  defaultValue="12"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -274,7 +277,7 @@ export default {
                 <BasicInput
                   title="발급일자"
                   id="layerIdShootConfirmDate"
-                  modelValue="2023.01.01"
+                  defaultValue="2023.01.01"
                 />
               </InputBlockCell>
             </InputBlock>

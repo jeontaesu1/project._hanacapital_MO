@@ -5,7 +5,6 @@ import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import ToastPopup from '@/components/ui/layer/ToastPopup.vue';
 import ToastPopupHead from '@/components/ui/layer/ToastPopupHead.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
-import PopupText from '@/components/ui/layer/PopupText.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
@@ -17,7 +16,6 @@ export default {
     ToastPopup,
     ToastPopupHead,
     PopupTitle,
-    PopupText,
     BasicButton,
     ButtonList,
     ButtonListItem,
@@ -44,35 +42,20 @@ export default {
         </ToastPopupHead>
       </template>
 
-      <PopupText>
-        하나캐피탈은 손님의 생체정보를 서버로 전송하지 않으며, 스마트폰에 등록된
-        생체인식 정보만으로 본인인증을 진행합니다.
-      </PopupText>
-      <div class="row-margin-item-group">
-        <PopupText>
+      <div>
+        <p class="text-body-3 color-gray-tertiary row-margin-item-group">
+          하나캐피탈은 손님의 생체정보를 서버로 전송하지 않으며, 스마트폰에
+          등록된 생체인식 정보만으로 본인인증을 진행합니다.
+        </p>
+        <p class="text-body-3 color-gray-tertiary row-margin-item-group">
           스마트폰에 등록된 생체정보가 추가, 삭제 등 변경되면 인증을 재등록
           하셔야 합니다.
-        </PopupText>
+        </p>
       </div>
 
       <IllustObject :classNames="{ wrap: $style['illust'] }" />
 
       <template v-slot:foot>
-        <!-- case : 생체인증 지문 등록 시 -->
-        <ButtonList
-          :classNames="{
-            wrap: 'row-margin-none',
-          }"
-        >
-          <ButtonListItem>
-            <BasicButton :line="true" theme="quaternary">나중에</BasicButton>
-          </ButtonListItem>
-          <ButtonListItem>
-            <BasicButton>지문인증 등록</BasicButton>
-          </ButtonListItem>
-        </ButtonList>
-        <!-- //case : 생체인증 지문 등록 시 -->
-        <!-- case : 생체인증 Face ID 등록 시 -->
         <ButtonList
           :classNames="{
             wrap: 'row-margin-none',
@@ -85,12 +68,11 @@ export default {
             <BasicButton>Face ID 등록</BasicButton>
           </ButtonListItem>
         </ButtonList>
-        <!-- //case : 생체인증 Face ID 등록 시 -->
       </template>
     </ToastPopup>
   </UiLayer>
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/sign/LayerSignUpAppIdentificationMethodSelect.scss';
+@import '@/assets/scss/views/sign/LayerSignUpAppAddFaceId.scss';
 </style>

@@ -26,14 +26,12 @@ export default {
     };
 
     onMounted(() => {
-      // optional : 헤더 구성 변경
       store.ui.header.setTitle(() => '찾아오시는 길');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => ['menu']);
+      store.ui.header.setRightButtons(() => []);
     });
 
     onUnmounted(() => {
-      // optional : 헤더 구성 설정 값 리셋
       store.ui.header.setTitle();
       store.ui.header.setLeftButtons();
       store.ui.header.setRightButtons();
@@ -66,9 +64,12 @@ export default {
       </KeyValueItem>
     </KeyValueList>
 
-    <div :class="$style['map-area']">//지도 영역</div>
+    <div :class="$style['map-area']">
+      <div style="height: 100%; background-color: lightgray">// 지도 영역</div>
+    </div>
   </PageContents>
 </template>
+
 <style lang="scss" module>
 @import '@/assets/scss/views/lm-blog-personal/LMBlogPersonalMap.scss';
 </style>

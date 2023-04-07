@@ -1,5 +1,5 @@
 <script>
-import { ref, reactive } from 'vue';
+import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
@@ -25,15 +25,9 @@ export default {
   },
   setup() {
     const layer = ref(null);
-    const state = reactive({
-      amountError: false,
-      periodError: false,
-      methodError: false,
-    });
 
     return {
       layer,
-      state,
     };
   },
 };
@@ -124,6 +118,7 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
+
 <style lang="scss" module>
 @import '@/assets/scss/views/lm-blog-personal/LayerLMBlogQuickCounselingAgree001.scss';
 </style>

@@ -1,5 +1,5 @@
 <script>
-import { onMounted, onUnmounted, reactive } from 'vue';
+import { onMounted, onUnmounted } from 'vue';
 
 import { useUiHeaderStore } from '@/stores/ui/header';
 
@@ -30,14 +30,6 @@ export default {
     IconArrow,
   },
   setup() {
-    const state = reactive({
-      nameError: false,
-      searchError: false,
-      idNumberError: false,
-      phoneError: false,
-      codeError: false,
-    });
-
     const store = {
       ui: {
         header: useUiHeaderStore(),
@@ -45,7 +37,8 @@ export default {
     };
 
     onMounted(() => {
-      store.ui.header.setTitle(() => '');
+      store.ui.header.setTitle(() => ' ');
+      store.ui.header.setLeftButtons(() => []);
       store.ui.header.setRightButtons(() => []);
     });
 
@@ -54,29 +47,33 @@ export default {
       store.ui.header.setLeftButtons();
       store.ui.header.setRightButtons();
     });
-
-    return {
-      state,
-    };
   },
 };
 </script>
 
 <template>
   <PageContents>
-    <HanaLogo />
+    <HanaLogo class="display-block row-margin-item" />
 
-    <PageTextGroup :classNames="{ wrap: $style['margin-top-small'] }">
+    <PageTextGroup>
       <PageMainText>
         하나캐피탈과 함께<br />
         <strong>든든하고 행복한 금융</strong>
       </PageMainText>
     </PageTextGroup>
 
-    <IllustObject type="certification" />
+    <IllustObject
+      type="certification"
+      :classNames="{ wrap: $style['illust'] }"
+    />
 
     <template v-slot:foot>
-      <ButtonList align="full">
+      <ButtonList
+        align="full"
+        :classNames="{
+          wrap: 'row-margin-none',
+        }"
+      >
         <ButtonListItem>
           <BasicButton :line="true">신용카드로 시작하기</BasicButton>
         </ButtonListItem>
@@ -86,10 +83,7 @@ export default {
       </ButtonList>
 
       <div class="inline-wrap align-center row-margin-item-group">
-        <TextButton
-          :classNames="{ wrap: 'text-body-4 color-gray' }"
-          :iconFillAll="true"
-        >
+        <TextButton :classNames="{ wrap: 'text-body-4 color-gray' }">
           모바일 웹 가기
           <template v-slot:rightIcon>
             <IconArrow />
@@ -99,6 +93,7 @@ export default {
     </template>
   </PageContents>
 </template>
+
 <style lang="scss" module>
 @import '@/assets/scss/views/sign/SignUpApp.scss';
 </style>

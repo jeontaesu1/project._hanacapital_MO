@@ -1,7 +1,6 @@
 <script>
 import { onMounted, onUnmounted, reactive } from 'vue';
 
-import { useUiCommonStore } from '@/stores/ui/common';
 import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
@@ -52,26 +51,24 @@ export default {
   },
   setup() {
     const state = reactive({
+      commentError: false,
       nameError: false,
       phoneError: false,
     });
 
     const store = {
       ui: {
-        common: useUiCommonStore(),
         header: useUiHeaderStore(),
       },
     };
 
     onMounted(() => {
-      // optional : 헤더 구성 변경
       store.ui.header.setTitle(() => 'SMS 상담');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => ['menu']);
+      store.ui.header.setRightButtons(() => []);
     });
 
     onUnmounted(() => {
-      // optional : 헤더 구성 설정 값 리셋
       store.ui.header.setTitle();
       store.ui.header.setLeftButtons();
       store.ui.header.setRightButtons();
@@ -94,7 +91,11 @@ export default {
     </PageTextGroup>
 
     <FormList>
-      <BasicTextarea titleText="상담내용"> </BasicTextarea>
+      <BasicTextarea :error="state.commentError" titleText="상담내용">
+        <template v-slot:bottom>
+          <FormInvalidMessage>Error Message</FormInvalidMessage>
+        </template>
+      </BasicTextarea>
 
       <FormListItem titleText="이름" target="#lmBlogPersonalSMSCounselingName">
         <FormInvalid :error="state.nameError">
@@ -115,7 +116,6 @@ export default {
           <InputBlock :error="state.phoneError">
             <InputBlockCell :flexible="true">
               <BasicInput
-                type="number"
                 pattern="\d*"
                 title="연락처"
                 id="lmBlogPersonalSMSCounselingPhone"
@@ -215,6 +215,7 @@ export default {
     </template>
   </PageContents>
 </template>
+
 <style lang="scss" module>
 @import '@/assets/scss/views/lm-blog-personal/LMBlogPersonalSMSCounseling.scss';
 </style>

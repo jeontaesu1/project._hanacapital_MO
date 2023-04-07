@@ -332,11 +332,6 @@ const routes = [
     component: () => import('@/views/customer/CustomerBranchList.vue'),
   },
   {
-    path: '/guide/branch-list-001',
-    name: '/guide/branch-list-001',
-    component: () => import('@/views/uiGuide/GuideCustomerBranchList.vue'),
-  },
-  {
     path: '/customer/ars',
     name: '/customer/ars',
     component: () => import('@/views/customer/CustomerARS.vue'),
@@ -477,11 +472,6 @@ const routes = [
     path: '/lm-blog/quick-counseling',
     name: '/lm-blog/quick-counseling',
     component: () => import('@/views/lm-blog/LMBlogQuickCounseling.vue'),
-  },
-  {
-    path: '/guide/lm-blog-quick-counseling',
-    name: '/guide/lm-blog-quick-counseling',
-    component: () => import('@/views/uiGuide/GuideLMBlogQuickCounseling.vue'),
   },
   {
     path: '/lm-blog/sms-counseling',

@@ -92,23 +92,23 @@ export default {
       </ButtonListItem>
 
       <ButtonListItem>
+        <BasicButton @click="layer006Open">아파트 검색</BasicButton>
+      </ButtonListItem>
+
+      <ButtonListItem>
         <BasicButton @click="layer004Open">통합 부동산 설정 금액</BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
         <BasicButton @click="layer005Open">한도/금리 확인</BasicButton>
       </ButtonListItem>
-
-      <ButtonListItem>
-        <BasicButton @click="layer006Open">아파트 검색</BasicButton>
-      </ButtonListItem>
     </ButtonList>
 
     <LayerPersonalLoanETCAgree ref="layer001" />
     <LayerPersonalLoanIdentificationMethodSelect ref="layer002" />
     <LayerPersonalLoanETCAutoSubmit ref="layer003" />
+    <LayerPersonalLoanETCSearchApartment ref="layer006" />
     <LayerPersonalLoanETCValusation ref="layer004" />
     <LayerPersonalLoanETCCheck ref="layer005" />
-    <LayerPersonalLoanETCSearchApartment ref="layer006" />
   </PageContents>
 </template>

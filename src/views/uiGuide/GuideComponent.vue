@@ -2687,6 +2687,134 @@ export default {
                                     </div>
                                   </div>
                                 </li>
+                                <li :class="$style['agree-list__item']">
+                                  <div :class="$style['agree-list__head']">
+                                    <CheckBox
+                                      id="testagree001_002_002_003"
+                                      :classNames="{
+                                        wrap: $style['agree-list__checkbox'],
+                                      }"
+                                      theme="quinary"
+                                    >
+                                      <CheckBoxObject />
+                                      <CheckBoxLabelText
+                                        >전자적 매체를 통한 광고성 정보의
+                                        수신</CheckBoxLabelText
+                                      >
+                                    </CheckBox>
+                                    <div :class="$style['agree-list__right']">
+                                      <button
+                                        type="button"
+                                        :class="$style['agree-list__link']"
+                                      >
+                                        <span
+                                          :class="
+                                            $style['agree-list__link-text']
+                                          "
+                                        >
+                                          상세보기
+                                        </span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                  <ul
+                                    :class="[
+                                      $style['agree-list__list'],
+                                      $style['agree-list__list--tertiary'],
+                                    ]"
+                                  >
+                                    <li :class="$style['agree-list__item']">
+                                      <div :class="$style['agree-list__head']">
+                                        <CheckBox
+                                          id="testagree001_002_002_003_001"
+                                          :classNames="{
+                                            wrap: $style[
+                                              'agree-list__checkbox'
+                                            ],
+                                          }"
+                                          theme="quinary"
+                                        >
+                                          <CheckBoxObject />
+                                          <CheckBoxLabelText
+                                            >전체</CheckBoxLabelText
+                                          >
+                                        </CheckBox>
+                                      </div>
+                                    </li>
+                                    <li :class="$style['agree-list__item']">
+                                      <div :class="$style['agree-list__head']">
+                                        <CheckBox
+                                          id="testagree001_002_002_003_002"
+                                          :classNames="{
+                                            wrap: $style[
+                                              'agree-list__checkbox'
+                                            ],
+                                          }"
+                                          theme="quinary"
+                                        >
+                                          <CheckBoxObject />
+                                          <CheckBoxLabelText
+                                            >전화</CheckBoxLabelText
+                                          >
+                                        </CheckBox>
+                                      </div>
+                                    </li>
+                                    <li :class="$style['agree-list__item']">
+                                      <div :class="$style['agree-list__head']">
+                                        <CheckBox
+                                          id="testagree001_002_002_003_003"
+                                          :classNames="{
+                                            wrap: $style[
+                                              'agree-list__checkbox'
+                                            ],
+                                          }"
+                                          theme="quinary"
+                                        >
+                                          <CheckBoxObject />
+                                          <CheckBoxLabelText
+                                            >문자메시지</CheckBoxLabelText
+                                          >
+                                        </CheckBox>
+                                      </div>
+                                    </li>
+                                    <li :class="$style['agree-list__item']">
+                                      <div :class="$style['agree-list__head']">
+                                        <CheckBox
+                                          id="testagree001_002_002_003_004"
+                                          :classNames="{
+                                            wrap: $style[
+                                              'agree-list__checkbox'
+                                            ],
+                                          }"
+                                          theme="quinary"
+                                        >
+                                          <CheckBoxObject />
+                                          <CheckBoxLabelText
+                                            >우편</CheckBoxLabelText
+                                          >
+                                        </CheckBox>
+                                      </div>
+                                    </li>
+                                    <li :class="$style['agree-list__item']">
+                                      <div :class="$style['agree-list__head']">
+                                        <CheckBox
+                                          id="testagree001_002_002_003_005"
+                                          :classNames="{
+                                            wrap: $style[
+                                              'agree-list__checkbox'
+                                            ],
+                                          }"
+                                          theme="quinary"
+                                        >
+                                          <CheckBoxObject />
+                                          <CheckBoxLabelText
+                                            >이메일</CheckBoxLabelText
+                                          >
+                                        </CheckBox>
+                                      </div>
+                                    </li>
+                                  </ul>
+                                </li>
                               </ul>
                             </li>
                           </ul>
@@ -4755,37 +4883,48 @@ export default {
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
         <div :class="$style['board']">
-          <div :class="$style['board__list']">
-            <div :class="$style['board__item']">
+          <ul :class="$style['board__list']">
+            <li :class="$style['board__item']">
               <button type="button" :class="$style['board__link']">
-                <div :class="$style['board__title']">
-                  <p :class="$style['board__title-text']">
+                <span :class="$style['board__title']">
+                  <span :class="$style['board__title-text']">
                     전화권유 상담원 현황전화권유 상담원 현황전화권유 상담원 현황
-                  </p>
-                </div>
-                <div :class="$style['board__text']">2022.10.25</div>
+                  </span>
+                </span>
+                <span :class="$style['board__text']">2022.10.25</span>
               </button>
-            </div>
-            <div :class="$style['board__item']">
-              <button type="button" :class="$style['board__link']">
-                <div :class="$style['board__title']">
-                  <p :class="$style['board__title-text']">
+            </li>
+            <li :class="$style['board__item']">
+              <a href="" :class="$style['board__link']">
+                <span :class="$style['board__title']">
+                  <span :class="$style['board__title-text']">
                     전화권유 상담원 현황
-                  </p>
-                </div>
-                <div :class="$style['board__text']">2022.10.25</div>
+                  </span>
+                </span>
+                <span :class="$style['board__text']">2022.10.25</span>
+              </a>
+            </li>
+            <li :class="$style['board__item']">
+              <button type="button" :class="$style['board__link']">
+                <span :class="$style['board__title']">
+                  <span :class="$style['board__title-text']">본사</span>
+                  <span :class="$style['board__sub']">1800-1110</span>
+                </span>
+                <span :class="$style['board__text']">
+                  서울 강남구 테헤란로 127 하나금융그룹 (역삼동,강남사옥)
+                </span>
               </button>
-            </div>
-          </div>
+            </li>
+          </ul>
+        </div>
 
-          <div :class="$style['board__bottom']">
-            <button type="button" :class="$style['text-button']">
-              <span :class="$style['text-button__text']">더보기</span>
-              <span :class="$style['text-button__icon']">
-                <IconArrow />
-              </span>
-            </button>
-          </div>
+        <div class="inline-wrap align-center row-margin-contents">
+          <TextButton :classNames="{ wrap: 'color-gray' }">
+            더보기
+            <template v-slot:rightIcon>
+              <IconArrow />
+            </template>
+          </TextButton>
         </div>
       </div>
     </section>

@@ -61,10 +61,15 @@ export default {
         </KeyValueItem>
       </KeyValueList>
 
-      <div :class="$style['map-area']">//지도 영역</div>
+      <div :class="$style['map-area']">
+        <div style="height: 100%; background-color: lightgray">
+          // 지도 영역
+        </div>
+      </div>
     </FullPopup>
   </UiLayer>
 </template>
+
 <style lang="scss" module>
 @import '@/assets/scss/views/customer/LayerCustomerBranchDetail.scss';
 </style>

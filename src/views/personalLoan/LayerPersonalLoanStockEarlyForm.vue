@@ -98,78 +98,80 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <BasicBox>
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>
-            <h3 class="text-body-1 font-weight-medium">스탁론</h3>
-          </BasicBoxHeadLeft>
-        </BasicBoxHead>
+      <section>
+        <BasicBox>
+          <BasicBoxHead>
+            <BasicBoxHeadLeft>
+              <h3 class="text-body-1 font-weight-medium">스탁론</h3>
+            </BasicBoxHeadLeft>
+          </BasicBoxHead>
 
-        <KeyValueList margin="regular">
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>대출기간</KeyValueTitle>
-            <KeyValueText>2023.01.04~2025.01.04</KeyValueText>
-          </KeyValueItem>
+          <KeyValueList margin="regular">
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
+            >
+              <KeyValueTitle>대출기간</KeyValueTitle>
+              <KeyValueText>2023.01.04~2025.01.04</KeyValueText>
+            </KeyValueItem>
 
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>결제회차</KeyValueTitle>
-            <KeyValueText>1/12</KeyValueText>
-          </KeyValueItem>
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
+            >
+              <KeyValueTitle>결제회차</KeyValueTitle>
+              <KeyValueText>1/12</KeyValueText>
+            </KeyValueItem>
 
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>결제일자</KeyValueTitle>
-            <KeyValueText>15일</KeyValueText>
-          </KeyValueItem>
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
+            >
+              <KeyValueTitle>결제일자</KeyValueTitle>
+              <KeyValueText>15일</KeyValueText>
+            </KeyValueItem>
 
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>상환방법</KeyValueTitle>
-            <KeyValueText>만기일시상환</KeyValueText>
-          </KeyValueItem>
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
+            >
+              <KeyValueTitle>상환방법</KeyValueTitle>
+              <KeyValueText>만기일시상환</KeyValueText>
+            </KeyValueItem>
 
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>대출금액</KeyValueTitle>
-            <KeyValueText>14,000,000 원</KeyValueText>
-          </KeyValueItem>
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
+            >
+              <KeyValueTitle>대출금액</KeyValueTitle>
+              <KeyValueText>14,000,000 원</KeyValueText>
+            </KeyValueItem>
 
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>대출잔액</KeyValueTitle>
-            <KeyValueText>14,000,000 원</KeyValueText>
-          </KeyValueItem>
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
+            >
+              <KeyValueTitle>대출잔액</KeyValueTitle>
+              <KeyValueText>14,000,000 원</KeyValueText>
+            </KeyValueItem>
 
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>결제예정금액</KeyValueTitle>
-            <KeyValueText>14,000,000 원</KeyValueText>
-          </KeyValueItem>
-        </KeyValueList>
-      </BasicBox>
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
+            >
+              <KeyValueTitle>결제예정금액</KeyValueTitle>
+              <KeyValueText>14,000,000 원</KeyValueText>
+            </KeyValueItem>
+          </KeyValueList>
+        </BasicBox>
+      </section>
 
       <BasicHr className="row-margin-container-medium" />
 
@@ -201,8 +203,8 @@ export default {
             <BoxCheckList>
               <BoxCheckListItem>
                 <BoxCheck
-                  name="LayerPersonalLoanStockEarlyEnterType"
-                  id="LayerPersonalLoanStockEarlyEnterType_001"
+                  name="layerPersonalLoanStockEarlyFormType"
+                  id="layerPersonalLoanStockEarlyFormType_001"
                   :checked="true"
                 >
                   <BoxCheckLabel>일부상환</BoxCheckLabel>
@@ -210,8 +212,8 @@ export default {
               </BoxCheckListItem>
               <BoxCheckListItem>
                 <BoxCheck
-                  name="LayerPersonalLoanStockEarlyEnterType"
-                  id="LayerPersonalLoanStockEarlyEnterType_002"
+                  name="layerPersonalLoanStockEarlyFormType"
+                  id="layerPersonalLoanStockEarlyFormType_002"
                 >
                   <BoxCheckLabel>전체상환</BoxCheckLabel>
                 </BoxCheck>
@@ -223,7 +225,7 @@ export default {
 
         <FormListItem
           titleText="상환금액"
-          target="#layerPersonalLoanStockEarlyEnterAmount"
+          target="#layerPersonalLoanStockEarlyFormAmount"
         >
           <FormInvalid :error="state.amountError">
             <InputBlock :error="state.amountError">
@@ -233,7 +235,7 @@ export default {
                   :useDelete="false"
                   pattern="\d*"
                   title="상환금액"
-                  id="layerPersonalLoanStockEarlyEnterAmount"
+                  id="layerPersonalLoanStockEarlyFormAmount"
                 />
               </InputBlockCell>
               <template v-slot:innerRight>

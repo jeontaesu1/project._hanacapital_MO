@@ -1,5 +1,5 @@
 <script>
-import { ref, reactive } from 'vue';
+import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
@@ -30,18 +30,9 @@ export default {
     ImgIdShoot,
   },
   setup() {
-    const state = reactive({
-      nameError: false,
-      idNumberError: false,
-      phoneError: false,
-      brandError: false,
-      numberError: false,
-    });
-
     const layer = ref(null);
 
     return {
-      state,
       layer,
     };
   },
@@ -73,44 +64,50 @@ export default {
         </div>
       </div>
 
-      <ButtonList :class="$style['margin-top-regular']">
-        <ButtonListItem>
-          <BasicButton :line="true">신분증 촬영</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+      <div class="row-margin-contents-group">
+        <ButtonList
+          :classNames="{
+            wrap: 'row-margin-contents',
+          }"
+        >
+          <ButtonListItem>
+            <BasicButton :line="true">신분증 촬영</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
 
-      <ul :class="[$style['basic-list'], 'row-margin-contents']">
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            신분증에 빛이 반사되지 않도록 해주세요.
-          </div>
-        </li>
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            신분증보다 짙은 배경에서 촬영해주세요.
-          </div>
-        </li>
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            신분증의 모서리가 카메라 영역에 모두 들어오도록 촬영해 주세요.
-          </div>
-        </li>
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            신분증 안에 표시된 글자에 초점을 맞추어 촬영해주세요.
-          </div>
-        </li>
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            너무 밝거나 어두운 곳에서 촬영은 피해주세요.
-          </div>
-        </li>
-      </ul>
+        <ul :class="$style['basic-list']">
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              신분증에 빛이 반사되지 않도록 해주세요.
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              신분증보다 짙은 배경에서 촬영해주세요.
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              신분증의 모서리가 카메라 영역에 모두 들어오도록 촬영해 주세요.
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              신분증 안에 표시된 글자에 초점을 맞추어 촬영해주세요.
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              너무 밝거나 어두운 곳에서 촬영은 피해주세요.
+            </div>
+          </li>
+        </ul>
+      </div>
 
       <template v-slot:foot>
         <ButtonList
@@ -129,6 +126,7 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
+
 <style lang="scss" module>
 @import '@/assets/scss/views/idShoot/LayerIdShootGuide.scss';
 </style>

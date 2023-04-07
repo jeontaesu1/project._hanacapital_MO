@@ -1,5 +1,5 @@
 <script>
-import { onMounted, onUnmounted, reactive } from 'vue';
+import { onMounted, onUnmounted, reactive, ref } from 'vue';
 
 import { useUiHeaderStore } from '@/stores/ui/header';
 
@@ -13,6 +13,8 @@ import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
+
+import LayerCustomerBranchDetail from '@/views/customer/LayerCustomerBranchDetail.vue';
 
 import IconArrow from '@/assets/images/icon/dropdown.svg?component';
 
@@ -28,7 +30,7 @@ export default {
     FormInvalidMessage,
     BasicHr,
     TextButton,
-
+    LayerCustomerBranchDetail,
     IconArrow,
   },
   setup() {
@@ -40,6 +42,12 @@ export default {
       ui: {
         header: useUiHeaderStore(),
       },
+    };
+
+    const layer = ref(null);
+
+    const layerOpen = (e = {}) => {
+      layer.value.layer.open(e.target);
     };
 
     onMounted(() => {
@@ -56,6 +64,8 @@ export default {
 
     return {
       state,
+      layer,
+      layerOpen,
     };
   },
 };
@@ -120,138 +130,41 @@ export default {
       </FormListItem>
     </FormList>
 
-    <BasicHr
-      :class="$style['margin-top-medium']"
-      className="row-margin-contents"
-    />
+    <BasicHr className="row-margin-container-medium" />
 
     <div :class="$style['board']">
-      <div :class="$style['board__list']">
-        <div :class="$style['board__item']">
-          <button type="button" :class="$style['board__link']">
-            <div :class="$style['board__title']">
-              <p :class="$style['board__title-text']">본사</p>
+      <ul :class="$style['board__list']">
+        <li v-for="i in 10" :key="i" :class="$style['board__item']">
+          <button
+            type="button"
+            :class="$style['board__link']"
+            @click="layerOpen"
+          >
+            <span :class="$style['board__title']">
+              <span :class="$style['board__title-text']">본사</span>
               <span :class="$style['board__sub']">1800-1110</span>
-            </div>
-            <div :class="$style['board__text']">
+            </span>
+            <span :class="$style['board__text']">
               서울 강남구 테헤란로 127 하나금융그룹 (역삼동,강남사옥)
-            </div>
+            </span>
           </button>
-        </div>
-        <div :class="$style['board__item']">
-          <button type="button" :class="$style['board__link']">
-            <div :class="$style['board__title']">
-              <p :class="$style['board__title-text']">강남소비자금융센터</p>
-              <span :class="$style['board__sub']">1800-1110</span>
-            </div>
-            <div :class="$style['board__text']">
-              서울 강남구 선릉로 704 5층 (청담동, 청담벤처프라자)
-            </div>
-          </button>
-        </div>
-        <div :class="$style['board__item']">
-          <button type="button" :class="$style['board__link']">
-            <div :class="$style['board__title']">
-              <p :class="$style['board__title-text']">강남소비자금융센터</p>
-              <span :class="$style['board__sub']">1800-1110</span>
-            </div>
-            <div :class="$style['board__text']">
-              서울 강남구 선릉로 704 5층 (청담동, 청담벤처프라자)
-            </div>
-          </button>
-        </div>
-        <div :class="$style['board__item']">
-          <button type="button" :class="$style['board__link']">
-            <div :class="$style['board__title']">
-              <p :class="$style['board__title-text']">강남소비자금융센터</p>
-              <span :class="$style['board__sub']">1800-1110</span>
-            </div>
-            <div :class="$style['board__text']">
-              서울 강남구 선릉로 704 5층 (청담동, 청담벤처프라자)
-            </div>
-          </button>
-        </div>
-        <div :class="$style['board__item']">
-          <button type="button" :class="$style['board__link']">
-            <div :class="$style['board__title']">
-              <p :class="$style['board__title-text']">강남소비자금융센터</p>
-              <span :class="$style['board__sub']">1800-1110</span>
-            </div>
-            <div :class="$style['board__text']">
-              서울 강남구 선릉로 704 5층 (청담동, 청담벤처프라자)
-            </div>
-          </button>
-        </div>
-        <div :class="$style['board__item']">
-          <button type="button" :class="$style['board__link']">
-            <div :class="$style['board__title']">
-              <p :class="$style['board__title-text']">강남소비자금융센터</p>
-              <span :class="$style['board__sub']">1800-1110</span>
-            </div>
-            <div :class="$style['board__text']">
-              서울 강남구 선릉로 704 5층 (청담동, 청담벤처프라자)
-            </div>
-          </button>
-        </div>
-        <div :class="$style['board__item']">
-          <button type="button" :class="$style['board__link']">
-            <div :class="$style['board__title']">
-              <p :class="$style['board__title-text']">강남소비자금융센터</p>
-              <span :class="$style['board__sub']">1800-1110</span>
-            </div>
-            <div :class="$style['board__text']">
-              서울 강남구 선릉로 704 5층 (청담동, 청담벤처프라자)
-            </div>
-          </button>
-        </div>
-        <div :class="$style['board__item']">
-          <button type="button" :class="$style['board__link']">
-            <div :class="$style['board__title']">
-              <p :class="$style['board__title-text']">강남소비자금융센터</p>
-              <span :class="$style['board__sub']">1800-1110</span>
-            </div>
-            <div :class="$style['board__text']">
-              서울 강남구 선릉로 704 5층 (청담동, 청담벤처프라자)
-            </div>
-          </button>
-        </div>
-        <div :class="$style['board__item']">
-          <button type="button" :class="$style['board__link']">
-            <div :class="$style['board__title']">
-              <p :class="$style['board__title-text']">강남소비자금융센터</p>
-              <span :class="$style['board__sub']">1800-1110</span>
-            </div>
-            <div :class="$style['board__text']">
-              서울 강남구 선릉로 704 5층 (청담동, 청담벤처프라자)
-            </div>
-          </button>
-        </div>
-        <div :class="$style['board__item']">
-          <button type="button" :class="$style['board__link']">
-            <div :class="$style['board__title']">
-              <p :class="$style['board__title-text']">강남소비자금융센터</p>
-              <span :class="$style['board__sub']">1800-1110</span>
-            </div>
-            <div :class="$style['board__text']">
-              서울 강남구 선릉로 704 5층 (청담동, 청담벤처프라자)
-            </div>
-          </button>
-        </div>
-      </div>
-
-      <div :class="$style['board__bottom']">
-        <div class="inline-wrap align-center row-margin-contents">
-          <TextButton :classNames="{ wrap: 'text-body-4 color-gray' }">
-            더보기
-            <template v-slot:rightIcon>
-              <IconArrow />
-            </template>
-          </TextButton>
-        </div>
-      </div>
+        </li>
+      </ul>
     </div>
+
+    <div class="inline-wrap align-center row-margin-contents">
+      <TextButton :classNames="{ wrap: 'color-gray' }">
+        더보기
+        <template v-slot:rightIcon>
+          <IconArrow />
+        </template>
+      </TextButton>
+    </div>
+
+    <LayerCustomerBranchDetail ref="layer" />
   </PageContents>
 </template>
+
 <style lang="scss" module>
 @import '@/assets/scss/views/customer/CustomerBranchList.scss';
 </style>

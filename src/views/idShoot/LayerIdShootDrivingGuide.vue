@@ -1,5 +1,5 @@
 <script>
-import { ref, reactive } from 'vue';
+import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
@@ -30,18 +30,9 @@ export default {
     ImgIdShoot,
   },
   setup() {
-    const state = reactive({
-      nameError: false,
-      idNumberError: false,
-      phoneError: false,
-      brandError: false,
-      numberError: false,
-    });
-
     const layer = ref(null);
 
     return {
-      state,
       layer,
     };
   },
@@ -129,6 +120,7 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
+
 <style lang="scss" module>
 @import '@/assets/scss/views/idShoot/LayerIdShootDrivingGuide.scss';
 </style>

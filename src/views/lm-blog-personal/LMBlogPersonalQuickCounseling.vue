@@ -1,7 +1,6 @@
 <script>
-import { onMounted, onUnmounted, reactive } from 'vue';
+import { onMounted, onUnmounted, reactive, ref } from 'vue';
 
-import { useUiCommonStore } from '@/stores/ui/common';
 import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
@@ -25,6 +24,9 @@ import CheckBox from '@/components/ui/form/CheckBox.vue';
 import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
 import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
 
+import LayerLMBlogQuickCounselingAgree001 from '@/views/lm-blog-personal/LayerLMBlogQuickCounselingAgree001.vue';
+import LayerLMBlogQuickCounselingAgree002 from '@/views/lm-blog-personal/LayerLMBlogQuickCounselingAgree002.vue';
+
 export default {
   components: {
     PageContents,
@@ -47,29 +49,38 @@ export default {
     CheckBox,
     CheckBoxLabelText,
     CheckBoxObject,
+    LayerLMBlogQuickCounselingAgree001,
+    LayerLMBlogQuickCounselingAgree002,
   },
   setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
     const state = reactive({
       nameError: false,
       phoneError: false,
     });
 
-    const store = {
-      ui: {
-        common: useUiCommonStore(),
-        header: useUiHeaderStore(),
-      },
+    const layerAgree001 = ref(null);
+    const layerAgree002 = ref(null);
+
+    const layerAgree001Open = (e = {}) => {
+      layerAgree001.value.layer.open(e.target);
+    };
+    const layerAgree002Open = (e = {}) => {
+      layerAgree002.value.layer.open(e.target);
     };
 
     onMounted(() => {
-      // optional : 헤더 구성 변경
       store.ui.header.setTitle(() => '빠른 대출 상담');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => ['menu']);
+      store.ui.header.setRightButtons(() => []);
     });
 
     onUnmounted(() => {
-      // optional : 헤더 구성 설정 값 리셋
       store.ui.header.setTitle();
       store.ui.header.setLeftButtons();
       store.ui.header.setRightButtons();
@@ -77,6 +88,10 @@ export default {
 
     return {
       state,
+      layerAgree001,
+      layerAgree002,
+      layerAgree001Open,
+      layerAgree002Open,
     };
   },
 };
@@ -126,7 +141,7 @@ export default {
       </FormListItem>
     </FormList>
 
-    <div :class="($style['agree-list'], 'row-margin-contents-group')">
+    <div :class="[$style['agree-list'], 'row-margin-contents-group']">
       <UiAccordion :classNames="{ wrap: $style['agree-list__container'] }">
         <UiAccordionItem
           :classNames="{ item: $style['agree-list__all'] }"
@@ -165,7 +180,11 @@ export default {
                       >
                     </CheckBox>
                     <div :class="$style['agree-list__right']">
-                      <button type="button" :class="$style['agree-list__link']">
+                      <button
+                        type="button"
+                        :class="$style['agree-list__link']"
+                        @click="layerAgree001Open"
+                      >
                         <span :class="$style['agree-list__link-text']">
                           상세보기
                         </span>
@@ -186,7 +205,11 @@ export default {
                       <CheckBoxLabelText>개인정보 제공 동의</CheckBoxLabelText>
                     </CheckBox>
                     <div :class="$style['agree-list__right']">
-                      <button type="button" :class="$style['agree-list__link']">
+                      <button
+                        type="button"
+                        :class="$style['agree-list__link']"
+                        @click="layerAgree002Open"
+                      >
                         <span :class="$style['agree-list__link-text']">
                           상세보기
                         </span>
@@ -212,8 +235,12 @@ export default {
         </ButtonListItem>
       </ButtonList>
     </template>
+
+    <LayerLMBlogQuickCounselingAgree001 ref="layerAgree001" />
+    <LayerLMBlogQuickCounselingAgree002 ref="layerAgree002" />
   </PageContents>
 </template>
+
 <style lang="scss" module>
 @import '@/assets/scss/views/lm-blog-personal/LMBlogPersonalQuickCounseling.scss';
 </style>

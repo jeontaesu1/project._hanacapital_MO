@@ -4,15 +4,15 @@
   }
 
   &__item + &__item {
-    margin-top: 16px;
+    margin-top: 32px;
   }
 
   &__link {
     display: block;
-    padding: 8px 4px;
+    padding: 0 4px;
     text-decoration: none;
     @include font-size-default(16);
     font-weight: 500;
-    color: $color-black;
+    color: inherit;
   }
 }

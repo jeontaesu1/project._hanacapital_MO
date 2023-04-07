@@ -107,7 +107,7 @@ export default {
                 <BasicInput
                   title="이름"
                   id="layerIdShootDrivingConfirmName"
-                  modelValue="김하나"
+                  defaultValue="김하나"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -127,7 +127,7 @@ export default {
                   pattern="\d*"
                   title="주민등록번호 앞 6자리"
                   id="layerIdShootDrivingConfirmIdNumber01"
-                  modelValue="123456"
+                  defaultValue="123456"
                 />
               </InputBlockCell>
               <InputBlockCell type="sub">-</InputBlockCell>
@@ -213,7 +213,7 @@ export default {
                   layerTitle="면허발급번호를 선택해 주세요"
                   buttonId="layerIdShootDrivingConfirmLicense"
                   :classNames="{
-                    wrap: 'input-width-category',
+                    wrap: 'input-width-driving-license',
                   }"
                   defaultValue="1"
                 />
@@ -223,7 +223,8 @@ export default {
                   type="number"
                   pattern="\d*"
                   title="면허발급번호 앞 2자리"
-                  modelValue="12"
+                  :useDelete="false"
+                  defaultValue="12"
                 />
               </InputBlockCell>
               <InputBlockCell type="sub">-</InputBlockCell>
@@ -237,7 +238,8 @@ export default {
                   type="number"
                   pattern="\d*"
                   title="면허발급번호 두번째 6자리"
-                  modelValue="123456"
+                  :useDelete="false"
+                  defaultValue="123456"
                 />
               </InputBlockCell>
               <InputBlockCell type="sub">-</InputBlockCell>
@@ -246,7 +248,8 @@ export default {
                   type="number"
                   pattern="\d*"
                   title="면허발급번호 뒤 2자리"
-                  modelValue="12"
+                  :useDelete="false"
+                  defaultValue="12"
                 />
               </InputBlockCell>
             </InputBlock>

@@ -59,10 +59,12 @@ export default {
   },
   setup() {
     const state = reactive({
-      nameError: false,
+      idNumberNameError: false,
       idNumberError: false,
+      idNumberDateError: false,
+      licenseNameError: false,
+      licenseIdNumberError: false,
       licenseError: false,
-      dateError: false,
     });
 
     const layer = ref(null);
@@ -120,8 +122,8 @@ export default {
 
           <FormList>
             <FormListItem titleText="이름" target="#layerIdShootFormIdCardName">
-              <FormInvalid :error="state.nameError">
-                <InputBlock :error="state.nameError">
+              <FormInvalid :error="state.idNumberNameError">
+                <InputBlock :error="state.idNumberNameError">
                   <InputBlockCell :flexible="true">
                     <BasicInput title="이름" id="layerIdShootFormIdCardName" />
                   </InputBlockCell>
@@ -161,8 +163,8 @@ export default {
               titleText="발급일자"
               target="#layerIdShootFormIdCardDate"
             >
-              <FormInvalid :error="state.dateError">
-                <InputBlock :error="state.dateError">
+              <FormInvalid :error="state.idNumberDateError">
+                <InputBlock :error="state.idNumberDateError">
                   <InputBlockCell :flexible="true">
                     <BasicInput
                       title="발급일자"
@@ -196,8 +198,8 @@ export default {
               titleText="이름"
               target="#layerIdShootFormLicenseName"
             >
-              <FormInvalid :error="state.nameError">
-                <InputBlock :error="state.nameError">
+              <FormInvalid :error="state.licenseNameError">
+                <InputBlock :error="state.licenseNameError">
                   <InputBlockCell :flexible="true">
                     <BasicInput title="이름" id="layerIdShootFormLicenseName" />
                   </InputBlockCell>
@@ -210,8 +212,8 @@ export default {
               titleText="주민등록번호"
               target="#layerIdShootFormLicenseIdCardNumber"
             >
-              <FormInvalid :error="state.idNumberError">
-                <InputBlock :error="state.idNumberError">
+              <FormInvalid :error="state.licenseIdNumberError">
+                <InputBlock :error="state.licenseIdNumberError">
                   <InputBlockCell :flexible="true">
                     <BasicInput
                       type="number"
@@ -303,7 +305,7 @@ export default {
                       layerTitle="면허발급번호를 선택해 주세요"
                       buttonId="layerIdShootFormLicenseNumber"
                       :classNames="{
-                        wrap: 'input-width-category',
+                        wrap: 'input-width-driving-license',
                       }"
                     />
                   </InputBlockCell>
@@ -311,6 +313,7 @@ export default {
                     <BasicInput
                       type="number"
                       pattern="\d*"
+                      :useDelete="false"
                       title="면허발급번호 앞 2자리"
                     />
                   </InputBlockCell>
@@ -324,6 +327,7 @@ export default {
                     <BasicInput
                       type="number"
                       pattern="\d*"
+                      :useDelete="false"
                       title="면허발급번호 두번째 6자리"
                     />
                   </InputBlockCell>
@@ -332,6 +336,7 @@ export default {
                     <BasicInput
                       type="number"
                       pattern="\d*"
+                      :useDelete="false"
                       title="면허발급번호 뒤 2자리"
                     />
                   </InputBlockCell>
@@ -361,6 +366,7 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
+
 <style lang="scss" module>
 @import '@/assets/scss/views/idShoot/LayerIdShootForm.scss';
 </style>

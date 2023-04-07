@@ -54,7 +54,6 @@ export default {
       nameError: false,
       idNumberError: false,
       licenseError: false,
-      dateError: false,
     });
 
     const layer = ref(null);
@@ -266,6 +265,7 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
+
 <style lang="scss" module>
 @import '@/assets/scss/views/idShoot/LayerIdShootDrivingForm.scss';
 </style>

@@ -158,24 +158,16 @@
   }
 
   &__list--tertiary {
-    padding: 4px 0 0 24px;
-
-    .agree-list__item {
-      & + .agree-list__item {
-        margin-top: 2px;
-      }
-    }
-  }
-
-  &__list--flex-box {
+    padding: 2px 0 0 16px;
     display: flex;
     flex-wrap: wrap;
-    padding: 4px 0 0 24px;
 
     .agree-list__item {
-      padding-right: 8px;
+      flex: none;
+      padding: 2px 0 0 8px;
+
       & + .agree-list__item {
-        margin: 0;
+        margin-top: 0;
       }
     }
   }
