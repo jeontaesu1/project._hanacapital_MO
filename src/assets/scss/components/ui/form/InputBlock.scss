@@ -86,9 +86,18 @@
       margin-left: 12px;
     }
 
+    & + &--type-search,
+    &--type-search + & {
+      margin-left: 10px;
+    }
+
     & + &--margin-regular {
       margin-left: 12px;
     }
+  }
+
+  &--type-search {
+    padding-top: 6px;
   }
 
   &--disabled {

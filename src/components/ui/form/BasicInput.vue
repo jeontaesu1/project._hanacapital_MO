@@ -51,6 +51,7 @@ export default {
     const state = reactive({
       isFocus: false,
       isInputed: false,
+      val: '',
     });
 
     const input = ref(null);
@@ -73,6 +74,9 @@ export default {
       input.value.value = '';
       input.value.focus();
       onDelete();
+
+      const eInput = new Event('input');
+      input.value.dispatchEvent(eInput);
     };
 
     const onfocusin = () => {
@@ -90,7 +94,9 @@ export default {
     };
 
     const onInput = (e) => {
-      emit('update:modelValue', e.target.value);
+      const { value } = e.target;
+      state.val = value;
+      emit('update:modelValue', value);
     };
 
     const onKeyup = (e) => {
@@ -138,7 +144,7 @@ export default {
           },
           customClassNames.input,
         ]"
-        :value="modelValue"
+        :value="modelValue || state.val"
         @input="onInput"
         @keyup="onKeyup"
       />
