@@ -132,4 +132,8 @@
       }
     }
   }
+
+  &:global(.color-gray) {
+    @include button-theme($color-gray-70);
+  }
 }

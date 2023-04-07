@@ -479,6 +479,11 @@ const routes = [
     component: () => import('@/views/lm-blog/LMBlogQuickCounseling.vue'),
   },
   {
+    path: '/guide/lm-blog-quick-counseling',
+    name: '/guide/lm-blog-quick-counseling',
+    component: () => import('@/views/uiGuide/GuideLMBlogQuickCounseling.vue'),
+  },
+  {
     path: '/lm-blog/sms-counseling',
     name: '/lm-blog/sms-counseling',
     component: () => import('@/views/lm-blog/LMBlogSMSCounseling.vue'),

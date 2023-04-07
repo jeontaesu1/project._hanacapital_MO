@@ -58,18 +58,34 @@ export default {
       <IllustObject :classNames="{ wrap: $style['illust'] }" />
 
       <template v-slot:foot>
+        <!-- case : 생체인증 지문 등록 시 -->
         <ButtonList
           :classNames="{
             wrap: 'row-margin-none',
           }"
         >
           <ButtonListItem>
-            <BasicButton :line="true" theme="quaternary">다음에</BasicButton>
+            <BasicButton :line="true" theme="quaternary">나중에</BasicButton>
           </ButtonListItem>
           <ButtonListItem>
             <BasicButton>지문인증 등록</BasicButton>
           </ButtonListItem>
         </ButtonList>
+        <!-- //case : 생체인증 지문 등록 시 -->
+        <!-- case : 생체인증 Face ID 등록 시 -->
+        <ButtonList
+          :classNames="{
+            wrap: 'row-margin-none',
+          }"
+        >
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">나중에</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton>Face ID 등록</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+        <!-- //case : 생체인증 Face ID 등록 시 -->
       </template>
     </ToastPopup>
   </UiLayer>

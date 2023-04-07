@@ -9,6 +9,8 @@ import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
+import SearchButton from '@/components/ui/button/SearchButton.vue';
 
 import IconArrow from '@/assets/images/icon/dropdown.svg?component';
 
@@ -20,16 +22,15 @@ export default {
     BasicSelect,
     BasicInput,
     BasicHr,
+    TextButton,
+    SearchButton,
 
     IconArrow,
   },
   setup() {
     const state = reactive({
-      nameError: false,
+      noticeError: false,
       searchError: false,
-      idNumberError: false,
-      phoneError: false,
-      codeError: false,
     });
 
     const store = {
@@ -59,7 +60,7 @@ export default {
 
 <template>
   <PageContents>
-    <InputBlock>
+    <InputBlock :error="state.noticeError">
       <InputBlockCell>
         <BasicSelect
           :option="[
@@ -86,8 +87,15 @@ export default {
           defaultValue="1"
         />
       </InputBlockCell>
-      <InputBlockCell :flexible="true" margin="regular">
-        <BasicInput title="검색" id="CustomerNoticeList02" />
+      <InputBlockCell :flexible="true">
+        <BasicInput
+          type="search"
+          title="검색어 입력"
+          placeholder="검색어 입력"
+        />
+      </InputBlockCell>
+      <InputBlockCell type="search">
+        <SearchButton />
       </InputBlockCell>
     </InputBlock>
 
@@ -189,12 +197,17 @@ export default {
       </div>
 
       <div :class="$style['board__bottom']">
-        <button type="button" :class="$style['more-button']">
-          <span :class="$style['more-button__text']">더보기</span>
-          <span :class="$style['more-button__icon']">
-            <IconArrow />
-          </span>
-        </button>
+        <div class="inline-wrap align-center row-margin-contents">
+          <TextButton
+            :classNames="{ wrap: 'text-body-4 color-gray' }"
+            :iconFillAll="true"
+          >
+            더보기
+            <template v-slot:rightIcon>
+              <IconArrow />
+            </template>
+          </TextButton>
+        </div>
       </div>
     </div>
   </PageContents>

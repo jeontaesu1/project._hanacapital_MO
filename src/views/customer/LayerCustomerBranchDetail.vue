@@ -50,12 +50,12 @@ export default {
           wrap: 'row-margin-contents',
         }"
       >
-        <KeyValueItem :classNames="{ item: 'text-body-3' }">
+        <KeyValueItem>
           <KeyValueTitle>연락처</KeyValueTitle>
           <KeyValueText>1800-1110</KeyValueText>
         </KeyValueItem>
 
-        <KeyValueItem :classNames="{ item: 'text-body-3' }">
+        <KeyValueItem>
           <KeyValueTitle>증권계좌</KeyValueTitle>
           <KeyValueText>123456789</KeyValueText>
         </KeyValueItem>

@@ -10,6 +10,7 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
 
 import HanaLogo from '@/assets/images/bank-logo/hana.svg?component';
 import IconArrow from '@/assets/images/icon/link.svg?component';
@@ -23,6 +24,7 @@ export default {
     ButtonListItem,
     BasicButton,
     IllustObject,
+    TextButton,
 
     HanaLogo,
     IconArrow,
@@ -83,18 +85,16 @@ export default {
         </ButtonListItem>
       </ButtonList>
 
-      <div class="row-margin-item-group text-body-4 color-gray">
-        <a
-          href="/"
-          target="_blank"
-          :class="$style['link-arrow']"
-          class="none-deco-link"
+      <div class="inline-wrap align-center row-margin-item-group">
+        <TextButton
+          :classNames="{ wrap: 'text-body-4 color-gray' }"
+          :iconFillAll="true"
         >
           모바일 웹 가기
-          <span :class="$style['link-icon']">
+          <template v-slot:rightIcon>
             <IconArrow />
-          </span>
-        </a>
+          </template>
+        </TextButton>
       </div>
     </template>
   </PageContents>

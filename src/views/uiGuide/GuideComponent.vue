@@ -1007,19 +1007,6 @@ export default {
     </section>
 
     <section class="test-section">
-      <h2 class="test-section-title">Text button</h2>
-      <div class="test-section-sub">
-        <h3 class="test-section-sub-title">Default</h3>
-        <button type="button" :class="$style['text-button']">
-          <span :class="$style['text-button__text']">더보기</span>
-          <span :class="$style['text-button__icon']">
-            <IconArrow />
-          </span>
-        </button>
-      </div>
-    </section>
-
-    <section class="test-section">
       <h2 class="test-section-title">CheckBox</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
