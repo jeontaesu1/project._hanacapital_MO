@@ -46,7 +46,7 @@ export default {
 
       <IllustObject />
 
-      <div class="inline-wrap align-center row-margin-item-group">
+      <div class="inline-wrap align-center row-margin-contents">
         <TextButton
           :classNames="{ wrap: 'text-body-4 color-gray' }"
           :underline="true"
