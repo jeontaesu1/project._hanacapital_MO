@@ -11,7 +11,8 @@ import LayerSignInFromAppIdentificationMethodSelect from '@/views/sign/LayerSign
 import LayerSignInSetFirstPage from '@/views/sign/LayerSignInSetFirstPage.vue';
 import LayerSignInIntegrationIdentificationMethodSelect from '@/views/sign/LayerSignInIntegrationIdentificationMethodSelect.vue';
 import LayerSignInIdIntegrationPasswordForm from '@/views/sign/LayerSignInIdIntegrationPasswordForm.vue';
-import LayerSignInIdIntegrationComplete from '../sign/LayerSignInIdIntegrationComplete.vue';
+import LayerSignInIdIntegrationComplete from '@/views/sign/LayerSignInIdIntegrationComplete.vue';
+import LayerSigninIdSelect from '@/views/sign/LayerSigninIdSelect.vue';
 
 export default {
   components: {
@@ -25,6 +26,7 @@ export default {
     LayerSignInIntegrationIdentificationMethodSelect,
     LayerSignInIdIntegrationPasswordForm,
     LayerSignInIdIntegrationComplete,
+    LayerSigninIdSelect,
   },
   setup() {
     const layer001 = ref(null);
@@ -33,6 +35,7 @@ export default {
     const layer004 = ref(null);
     const layer005 = ref(null);
     const layer006 = ref(null);
+    const layer007 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -52,6 +55,9 @@ export default {
     const layer006Open = (e = {}) => {
       layer006.value.layer.open(e.target);
     };
+    const layer007Open = (e = {}) => {
+      layer007.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -60,12 +66,14 @@ export default {
       layer004,
       layer005,
       layer006,
+      layer007,
       layer001Open,
       layer002Open,
       layer003Open,
       layer004Open,
       layer005Open,
       layer006Open,
+      layer007Open,
     };
   },
 };
@@ -101,6 +109,9 @@ export default {
       <ButtonListItem>
         <BasicButton @click="layer006Open">통합 ID 설정완료</BasicButton>
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer007Open">통합 ID 선택</BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <LayerSignInPasswordGuide ref="layer001" />
@@ -109,5 +120,6 @@ export default {
     <LayerSignInIntegrationIdentificationMethodSelect ref="layer004" />
     <LayerSignInIdIntegrationPasswordForm ref="layer005" />
     <LayerSignInIdIntegrationComplete ref="layer006" />
+    <LayerSigninIdSelect ref="layer007" />
   </PageContents>
 </template>
