@@ -46,6 +46,9 @@
         .basic-list__item:global(.color-red) & {
           background-color: $color-semantic-essential;
         }
+        .basic-list__item:global(.color-white) & {
+          background-color: $color-white;
+        }
       }
     }
   }
