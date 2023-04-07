@@ -531,7 +531,7 @@ export default {
                       ]"
                       buttonTitle="시/도 선택하기"
                       layerTitle="시/도를 선택해 주세요"
-                      id="layerLMBlogLoanCounselingApartmentCertifiedArea002"
+                      id="layerLMBlogLoanCounselingApartmentCertifiedArea004"
                       buttonId="layerLMBlogLoanCounselingApartmentCertifiedAreaButton002"
                     />
                   </InputBlockCell>
@@ -542,14 +542,14 @@ export default {
 
             <FormListItem
               titleText="시/군/구"
-              target="#layerLMBlogLoanCounselingApartmentCertifiedArea003"
+              target="#layerLMBlogLoanCounselingApartmentCertifiedArea005"
             >
               <FormInvalid :error="state.areaError002">
                 <InputBlock :error="state.areaError002">
                   <InputBlockCell :flexible="true">
                     <BasicInput
                       title="시/군/구"
-                      id="layerLMBlogLoanCounselingApartmentCertifiedArea003"
+                      id="layerLMBlogLoanCounselingApartmentCertifiedArea005"
                     />
                   </InputBlockCell>
                 </InputBlock>
@@ -559,14 +559,14 @@ export default {
 
             <FormListItem
               titleText="도로명"
-              target="#layerLMBlogLoanCounselingApartmentCertifiedArea004"
+              target="#layerLMBlogLoanCounselingApartmentCertifiedArea006"
             >
               <FormInvalid :error="state.areaError002">
                 <InputBlock :error="state.areaError002">
                   <InputBlockCell :flexible="true">
                     <BasicInput
                       title="도로명"
-                      id="layerLMBlogLoanCounselingApartmentCertifiedArea004"
+                      id="layerLMBlogLoanCounselingApartmentCertifiedArea006"
                     />
                   </InputBlockCell>
                 </InputBlock>
@@ -576,14 +576,14 @@ export default {
 
             <FormListItem
               titleText="도로명/건물번호"
-              target="#layerLMBlogLoanCounselingApartmentCertifiedArea005"
+              target="#layerLMBlogLoanCounselingApartmentCertifiedArea007"
             >
               <FormInvalid :error="state.areaError002">
                 <InputBlock :error="state.areaError002">
                   <InputBlockCell :flexible="true">
                     <BasicInput
                       title="도로명/건물번호"
-                      id="layerLMBlogLoanCounselingApartmentCertifiedArea005"
+                      id="layerLMBlogLoanCounselingApartmentCertifiedArea007"
                     />
                   </InputBlockCell>
                 </InputBlock>
