@@ -104,13 +104,13 @@ export default {
         <BasicButton @click="layer004Open">통합 ID 인증수단 선택</BasicButton>
       </ButtonListItem>
       <ButtonListItem>
+        <BasicButton @click="layer007Open">통합 ID 선택</BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
         <BasicButton @click="layer005Open">통합 ID 비밀번호 설정</BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer006Open">통합 ID 설정완료</BasicButton>
-      </ButtonListItem>
-      <ButtonListItem>
-        <BasicButton @click="layer007Open">통합 ID 선택</BasicButton>
       </ButtonListItem>
     </ButtonList>
 

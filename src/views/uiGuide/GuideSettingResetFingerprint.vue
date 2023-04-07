@@ -16,7 +16,6 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-
     LayerSettingResetFingerprintAgree,
     LayerSettingResetFingerprintComplete,
     LayerSettingResetFingerprintDelete,

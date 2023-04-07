@@ -1,19 +1,16 @@
-//LM_M01_l009
 <script>
-import { ref, reactive } from 'vue';
+// LM_M01_l009
+import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
-
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
-
 import KeyValueList from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
-
 import NoticeText from '@/components/ui/text/NoticeText.vue';
 
 export default {
@@ -23,24 +20,16 @@ export default {
     FullPopup,
     FullPopupHead,
     PopupTitle,
-
     KeyValueList,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
-
     NoticeText,
   },
   setup() {
-    const state = reactive({
-      selectError: false,
-      passwordError: false,
-    });
-
     const layer = ref(null);
 
     return {
-      state,
       layer,
     };
   },
@@ -110,7 +99,3 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/lm-blog/LayerLMBlogLoanCounselingVehicleAvailable.scss';
-</style>

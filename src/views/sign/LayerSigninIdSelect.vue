@@ -1,24 +1,20 @@
-//Member_M01_l001
 <script>
+// Member_M01_l001
 import { ref, reactive } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
-
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
-
 import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
 import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 import BoxCheck from '@/components/ui/form/BoxCheck.vue';
 import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
-
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
-
 import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
@@ -33,19 +29,15 @@ export default {
     PopupButton,
     FullPopup,
     FullPopupHead,
-
     PageTextGroup,
     PageMainText,
-
     BoxCheckList,
     BoxCheckListItem,
     BoxCheck,
     BoxCheckLabel,
-
     ButtonList,
     ButtonListItem,
     BasicButton,
-
     FormList,
     FormListItem,
     FormInvalid,
@@ -89,57 +81,41 @@ export default {
 
       <BoxCheckList align="full">
         <BoxCheckListItem>
-          <BoxCheck
-            :minSide="true"
-            name="LayerSigninIdSelect001"
-            id="LayerSigninIdSelect001_001"
-          >
+          <BoxCheck name="layerSigninIdSelect" id="layerSigninIdSelect001">
             <BoxCheckLabel>$mj123$</BoxCheckLabel>
           </BoxCheck>
         </BoxCheckListItem>
         <BoxCheckListItem>
-          <BoxCheck
-            :minSide="true"
-            name="LayerSigninIdSelect001"
-            id="LayerSigninIdSelect001_002"
-          >
+          <BoxCheck name="layerSigninIdSelect" id="layerSigninIdSelect002">
             <BoxCheckLabel>$ej456$</BoxCheckLabel>
           </BoxCheck>
         </BoxCheckListItem>
         <BoxCheckListItem>
-          <BoxCheck
-            :minSide="true"
-            name="LayerSigninIdSelect001"
-            id="LayerSigninIdSelect001_003"
-          >
+          <BoxCheck name="layerSigninIdSelect" id="layerSigninIdSelect003">
             <BoxCheckLabel>$아이디 노출$</BoxCheckLabel>
           </BoxCheck>
         </BoxCheckListItem>
         <BoxCheckListItem>
-          <BoxCheck
-            :minSide="true"
-            name="LayerSigninIdSelect001"
-            id="LayerSigninIdSelect001_004"
-          >
+          <BoxCheck name="layerSigninIdSelect" id="layerSigninIdSelect004">
             <BoxCheckLabel>새 아이디 직접 입력</BoxCheckLabel>
           </BoxCheck>
         </BoxCheckListItem>
       </BoxCheckList>
 
-      <!-- Case: 새 아이디 직접 입력 선택 시 발생 -->
+      <!-- Case: 새 아이디 직접 입력 선택 시 노출 -->
       <FormList class="row-margin-item-group">
-        <FormListItem titleText="새 아이디" target="#LayerSigninIdSelectNewId">
+        <FormListItem titleText="새 아이디" target="#layerSigninIdSelectNewId">
           <FormInvalid :error="state.idError">
             <InputBlock :error="state.idError">
               <InputBlockCell :flexible="true">
-                <BasicInput title="새 아이디" id="LayerSigninIdSelectNewId" />
+                <BasicInput title="새 아이디" id="layerSigninIdSelectNewId" />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
       </FormList>
-      <!-- //Case: 새 아이디 직접 입력 선택 시 발생 -->
+      <!-- // Case: 새 아이디 직접 입력 선택 시 노출 -->
 
       <template v-slot:foot>
         <ButtonList
@@ -155,7 +131,3 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/sign/LayerSigninIdSelect.scss';
-</style>

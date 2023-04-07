@@ -1,17 +1,14 @@
-//IF_M04_p005
 <script>
+// IF_M04_p005
 import { onMounted, onUnmounted } from 'vue';
 
-import { useUiCommonStore } from '@/stores/ui/common';
 import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
-
 import IllustInfo from '@/components/ui/common/IllustInfo.vue';
 import IllustInfoTitle from '@/components/ui/common/IllustInfoTitle.vue';
 import IllustInfoText from '@/components/ui/common/IllustInfoText.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
-
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
@@ -19,12 +16,10 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 export default {
   components: {
     PageContents,
-
     IllustInfo,
     IllustInfoTitle,
     IllustInfoText,
     IllustObject,
-
     ButtonList,
     ButtonListItem,
     BasicButton,
@@ -32,7 +27,6 @@ export default {
   setup() {
     const store = {
       ui: {
-        common: useUiCommonStore(),
         header: useUiHeaderStore(),
       },
     };
@@ -40,7 +34,7 @@ export default {
     onMounted(() => {
       store.ui.header.setTitle(() => '재고금융 만기연장');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => ['menu']);
+      store.ui.header.setRightButtons(() => []);
     });
 
     onUnmounted(() => {
@@ -74,13 +68,9 @@ export default {
         }"
       >
         <ButtonListItem>
-          <BasicButton @click="layerSlotProps.close()">확인</BasicButton>
+          <BasicButton>확인</BasicButton>
         </ButtonListItem>
       </ButtonList>
     </template>
   </PageContents>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/inventory-finance/InventoryFinanceEarlyComplete.scss';
-</style>

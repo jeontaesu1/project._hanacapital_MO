@@ -1,17 +1,14 @@
-//IF_M03_p004
 <script>
+// IF_M03_p004
 import { onMounted, onUnmounted } from 'vue';
 
-import { useUiCommonStore } from '@/stores/ui/common';
 import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import PageSubText from '@/components/ui/text/PageSubText.vue';
-
 import IllustObject from '@/components/ui/common/IllustObject.vue';
-
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
@@ -26,21 +23,17 @@ export default {
     PageTextGroup,
     PageMainText,
     PageSubText,
-
     IllustObject,
-
     BasicHr,
     ButtonList,
     ButtonListItem,
     BasicButton,
-
     IconCustomer,
     IconTell,
   },
   setup() {
     const store = {
       ui: {
-        common: useUiCommonStore(),
         header: useUiHeaderStore(),
       },
     };
@@ -48,7 +41,7 @@ export default {
     onMounted(() => {
       store.ui.header.setTitle(() => '재고금융 중도상환');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => ['menu']);
+      store.ui.header.setRightButtons(() => []);
     });
 
     onUnmounted(() => {
@@ -64,11 +57,11 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        중도상환 신청 접수가 <br />
+        중도상환 신청 접수가<br />
         <strong>완료되었습니다</strong>
       </PageMainText>
       <PageSubText>
-        고객님 감사합니다. <br />
+        고객님 감사합니다.<br />
         문의사항이 있으시면 고객센터로 연락바랍니다.
       </PageSubText>
     </PageTextGroup>
@@ -115,7 +108,7 @@ export default {
         }"
       >
         <ButtonListItem>
-          <BasicButton @click="layerSlotProps.close()">확인</BasicButton>
+          <BasicButton>확인</BasicButton>
         </ButtonListItem>
       </ButtonList>
     </template>
