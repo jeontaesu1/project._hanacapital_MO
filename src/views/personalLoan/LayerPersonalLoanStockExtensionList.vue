@@ -98,7 +98,7 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <ul class="basic-list">
+      <ul class="reset-list">
         <li
           v-for="(item, i) in state.data"
           :key="i"
