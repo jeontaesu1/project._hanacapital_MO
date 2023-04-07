@@ -423,21 +423,25 @@ export default {
             </FormListItem>
           </FormList>
         </section>
+
+        <ul :class="[$style['basic-list'], 'row-margin-container-medium']">
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              아파트 검색이 되지 않는 경우에는 전화 상담을 통해 대출 신청을
+              도와드립니다.
+            </div>
+          </li>
+        </ul>
       </div>
 
-      <ul :class="[$style['basic-list'], 'row-margin-container-medium']">
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            아파트 검색이 되지 않는 경우에는 전화 상담을 통해 대출 신청을
-            도와드립니다.
-          </div>
-        </li>
-      </ul>
+      <BasicHr
+        type="contents"
+        theme="quaternary"
+        className="row-margin-container"
+      />
 
-      <BasicHr type="contents" theme="quaternary" />
-
-      <div :class="[$style['icon-list'], 'row-margin-container']">
+      <div :class="$style['icon-list']">
         <ul :class="$style['icon-list__list']">
           <li :class="$style['icon-list__item']">
             <div :class="$style['icon-list__block']">

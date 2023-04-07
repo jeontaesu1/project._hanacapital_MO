@@ -6,10 +6,10 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import LayerSettingResetFaceComplete from '../setting/LayerSettingResetFaceComplete.vue';
-import LayerSettingResetFaceMaskComplete from '../setting/LayerSettingResetFaceMaskComplete.vue';
-import LayerSettingResetFaceAgree from '../setting/LayerSettingResetFaceAgree.vue';
-import LayerSettingResetFace from '../setting/LayerSettingResetFace.vue';
+import LayerSettingResetFaceComplete from '@/views/setting/LayerSettingResetFaceComplete.vue';
+import LayerSettingResetFaceMaskComplete from '@/views/setting/LayerSettingResetFaceMaskComplete.vue';
+import LayerSettingResetFaceAgree from '@/views/setting/LayerSettingResetFaceAgree.vue';
+import LayerSettingResetFace from '@/views/setting/LayerSettingResetFace.vue';
 
 export default {
   components: {

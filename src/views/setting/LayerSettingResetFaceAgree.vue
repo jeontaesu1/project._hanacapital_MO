@@ -77,16 +77,16 @@ export default {
                 <li :class="$style['agree-list__item']">
                   <div :class="$style['agree-list__head']">
                     <CheckBox
-                      id="layerSettingResetFaceAgree001_001"
+                      id="layerSettingResetFaceAgree001"
                       :classNames="{
                         wrap: $style['agree-list__checkbox'],
                       }"
                       theme="tertiary"
                     >
                       <CheckBoxObject />
-                      <CheckBoxLabelText>
-                        바이오정보 수집이용 동의서 (인증용)
-                      </CheckBoxLabelText>
+                      <CheckBoxLabelText
+                        >바이오정보 수집이용 동의서 (인증용)</CheckBoxLabelText
+                      >
                     </CheckBox>
                     <div :class="$style['agree-list__right']">
                       <button type="button" :class="$style['agree-list__link']">
@@ -100,16 +100,17 @@ export default {
                 <li :class="$style['agree-list__item']">
                   <div :class="$style['agree-list__head']">
                     <CheckBox
-                      id="layerSettingResetFaceAgree001_002"
+                      id="layerSettingResetFaceAgree002"
                       :classNames="{
                         wrap: $style['agree-list__checkbox'],
                       }"
                       theme="tertiary"
                     >
                       <CheckBoxObject />
-                      <CheckBoxLabelText>
-                        개인정보(바이오정보) 제3자 제공 동의 (SSO서비스)
-                      </CheckBoxLabelText>
+                      <CheckBoxLabelText
+                        >개인정보(바이오정보) 제3자 제공 동의
+                        (SSO서비스)</CheckBoxLabelText
+                      >
                     </CheckBox>
                     <div :class="$style['agree-list__right']">
                       <button type="button" :class="$style['agree-list__link']">
@@ -126,7 +127,7 @@ export default {
         </ul>
       </div>
 
-      <section :class="[$style['notice-section'], 'row-margin-container']">
+      <section :class="[$style['notice-section'], 'row-margin-contents-group']">
         <h3 :class="$style['notice-section__title']">유의사항</h3>
         <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
           <li :class="$style['basic-list__item']">

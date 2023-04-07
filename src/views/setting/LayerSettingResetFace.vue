@@ -14,7 +14,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 
-import IllustObject from '@/components/ui/common/IllustObject.vue';
+import ImgSample from '@/assets/images/_dummy/illustration-sample.svg?component';
 
 export default {
   components: {
@@ -30,7 +30,7 @@ export default {
     BasicButton,
     BasicHr,
     PopupTitle,
-    IllustObject,
+    ImgSample,
   },
   setup() {
     const layer = ref(null);
@@ -74,56 +74,45 @@ export default {
         className="row-margin-container-medium"
       />
 
-      <div :class="['row-margin-none']">
-        <PageTextGroup
-          :classNames="{
-            wrap: 'row-margin-item-group',
-          }"
-        >
-          <PageMainText><strong>안전한 정보 저장 시스템!</strong></PageMainText>
-          <PageSubText class="font-weight-regular">
+      <div>
+        <section class="row-margin-container-medium">
+          <h3 class="text-title-1 font-weight-medium row-margin-item">
+            안전한 정보 저장 시스템!
+          </h3>
+          <p class="text-body-3 color-gray-tertiary">
             얼굴인증은 사용자의 얼굴을 인식하고 수치로 변환하여 암호화 한 후
             분산 저장하며, 사용자의 사진을 저장하지 않아 더욱 안전합니다.<br />
             또한 마스크 쓴 얼굴을 등록하면 마스크를 쓰고도 인증이 가능합니다.
-          </PageSubText>
-        </PageTextGroup>
-
-        <!-- 이미지 없어서 임시로 넣어둠 -->
-        <IllustObject type="license" />
-      </div>
-
-      <div :class="['row-margin-container-medium']">
-        <PageTextGroup
-          :classNames="{
-            wrap: 'row-margin-item-group',
-          }"
-        >
-          <PageMainText><strong>로그인을 쉽고 간편하게</strong></PageMainText>
-          <PageSubText class="font-weight-regular">
+          </p>
+          <div :class="[$style['illustration-img'], 'row-margin-container']">
+            <ImgSample />
+          </div>
+        </section>
+        <section class="row-margin-container-medium">
+          <h3 class="text-title-1 font-weight-medium row-margin-item">
+            로그인을 쉽고 간편하게
+          </h3>
+          <p class="text-body-3 color-gray-tertiary">
             스마트폰 카메라를 보고 눈을 한번 깜빡이기만 하면 끝!<br />
             비밀번호를 기억할 필요없이 얼굴만으로 쉽고 편리하게 로그인 및 인증을
             해보세요.
-          </PageSubText>
-          <div
-            :class="[
-              $style['basic-list__item'],
-              'color-gray-tertiary',
-              'row-margin-item',
-            ]"
-          >
-            <div :class="$style['basic-list__symbol']">※</div>
-            <div :class="$style['basic-list__content']">
-              선글라스 등으로 얼굴을 가릴 경우, 조명이 너무 강하거나 역광인
-              곳에서는 인식을 못할 수 있습니다.
-            </div>
+          </p>
+          <ul :class="[$style['basic-list'], 'row-margin-item']">
+            <li :class="[$style['basic-list__item'], 'color-gray-tertiary']">
+              <div :class="$style['basic-list__symbol']">※</div>
+              <div :class="$style['basic-list__content']">
+                선글라스 등으로 얼굴을 가릴 경우, 조명이 너무 강하거나 역광인
+                곳에서는 인식을 못할 수 있습니다.
+              </div>
+            </li>
+          </ul>
+          <div :class="[$style['illustration-img'], 'row-margin-container']">
+            <ImgSample />
           </div>
-        </PageTextGroup>
-
-        <!-- 이미지 없어서 임시로 넣어둠 -->
-        <IllustObject type="license" />
+        </section>
       </div>
 
-      <section :class="$style['notice-section']">
+      <section :class="[$style['notice-section'], 'row-margin-contents']">
         <h3 :class="$style['notice-section__title']">유의사항</h3>
         <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
           <li :class="$style['basic-list__item']">
@@ -139,14 +128,21 @@ export default {
         </ul>
       </section>
 
-      <ButtonList align="full">
-        <ButtonListItem>
-          <BasicButton :line="true">마스크인증 (재)등록</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton>얼굴인증 (재)등록</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+      <template v-slot:foot>
+        <ButtonList
+          :classNames="{
+            wrap: 'row-margin-none',
+          }"
+          align="full"
+        >
+          <ButtonListItem>
+            <BasicButton :line="true">마스크인증 (재)등록</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton>얼굴인증 (재)등록</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+      </template>
     </FullPopup>
   </UiLayer>
 </template>

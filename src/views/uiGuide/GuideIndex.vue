@@ -839,8 +839,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/inventory-finance/add-documents',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.07',
         log: [],
       },
       {
@@ -1069,13 +1069,13 @@ const datas = () => [
       },
       {
         depth2: '얼굴인증 (재)등록',
-        depth3: '',
+        depth3: '팝업',
         depth4: '',
         depth5: '',
         depth6: '',
         path: '/guide/setting-reset-face',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.07',
         log: [],
       },
       {

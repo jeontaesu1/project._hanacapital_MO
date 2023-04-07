@@ -6,8 +6,8 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import LayerLMBlogLoanCounselingApartmentPriceSearch from '../lm-blog/LayerLMBlogLoanCounselingApartmentPriceSearch.vue';
-import LayerLMBlogLoanCounselingApartmentCertified from '../lm-blog/LayerLMBlogLoanCounselingApartmentCertified.vue';
+import LayerLMBlogLoanCounselingApartmentPriceSearch from '@/views/lm-blog/LayerLMBlogLoanCounselingApartmentPriceSearch.vue';
+import LayerLMBlogLoanCounselingApartmentCertified from '@/views/lm-blog/LayerLMBlogLoanCounselingApartmentCertified.vue';
 import LayerLMBlogLoanCounselingVehicleAvailable from '@/views/lm-blog/LayerLMBlogLoanCounselingVehicleAvailable.vue';
 
 export default {
@@ -56,9 +56,7 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">
-          아파트 수기 팝업 누락_입력전 & 후
-        </BasicButton>
+        <BasicButton @click="layer001Open">아파트 시세검색</BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer002Open">아파트 등기부등본</BasicButton>

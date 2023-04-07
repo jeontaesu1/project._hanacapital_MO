@@ -13,14 +13,16 @@ import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import FormList from '@/components/ui/form/FormList.vue';
+import ButtonList from '@/components/ui/button/ButtonList.vue';
+import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
-import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import KeyValueList from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
 
 import IconArrow from '@/assets/images/icon/dropdown.svg?component';
 
@@ -36,14 +38,16 @@ export default {
     BasicInput,
     FormInvalidMessage,
     FormList,
+    ButtonList,
+    ButtonListItem,
     BasicButton,
     BasicBox,
-    BasicBoxHead,
     KeyValueList,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
     BasicHr,
+    TextButton,
     IconArrow,
   },
   setup() {
@@ -54,13 +58,13 @@ export default {
     };
 
     const state = reactive({
-      testError001: false,
+      numberError: false,
     });
 
     onMounted(() => {
       store.ui.header.setTitle(() => '재고금융 추가서류등록');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => ['menu']);
+      store.ui.header.setRightButtons(() => []);
     });
 
     onUnmounted(() => {
@@ -88,14 +92,14 @@ export default {
       <FormList>
         <FormListItem
           titleText="차량번호"
-          target="#InventoryFinanceAddDocumentsInput001"
+          target="#inventoryFinanceAddDocumentsNumber"
         >
-          <FormInvalid :error="state.testError001">
-            <InputBlock :error="state.testError001">
+          <FormInvalid :error="state.numberError">
+            <InputBlock :error="state.numberError">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="차량번호"
-                  id="InventoryFinanceAddDocumentsInput001"
+                  id="inventoryFinanceAddDocumentsNumber"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -111,93 +115,99 @@ export default {
 
     <BasicHr className="row-margin-container-medium" />
 
-    <div>
-      <h3 class="text-title-2 row-margin-contents">조회정보</h3>
+    <section>
+      <h3 class="text-title-2 row-margin-contents">신청현황</h3>
 
-      <!-- DD: 재고금융 추가서류등록_내역 없는 경우 -->
+      <!-- Case : 내역 없는 경우 -->
       <div :class="$style['empty']">
         <p :class="$style['empty__text']">신청현황이 없습니다.</p>
       </div>
+      <!-- // Case : 내역 없는 경우 -->
 
-      <!-- DD: 재고금융 추가서류등록 -->
-      <div>
-        <BasicBox class="row-margin-item-group">
-          <BasicBoxHead>
-            <KeyValueList direction="vertical">
-              <div :class="$style['board__title']">
-                <p :class="$style['board__title-text']">10나 8941</p>
-              </div>
-              <div
-                :class="[
-                  $style['board__text'],
-                  'font-weight-regular',
-                  'color-gray',
-                ]"
-              >
+      <!-- Case : 내역 있을 경우 -->
+      <ul class="reset-list">
+        <li class="row-margin-item-group">
+          <BasicBox>
+            <div>
+              <h3 class="text-body-1 font-weight-medium">10나 8941</h3>
+              <p class="text-body-4 color-gray row-margin-small">
                 쏘나타 하이브리드(DN8) 스파이더
-              </div>
+              </p>
+            </div>
+            <BasicHr
+              theme="quaternary"
+              type="contents"
+              className="row-margin-contents-small"
+            />
+            <KeyValueList margin="regular">
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle>대출실행금액</KeyValueTitle>
+                <KeyValueText>3,500,000 원</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle>상담일자</KeyValueTitle>
+                <KeyValueText>2022.12.21</KeyValueText>
+              </KeyValueItem>
             </KeyValueList>
-          </BasicBoxHead>
-          <KeyValueList margin="regular">
-            <KeyValueItem>
-              <KeyValueTitle>대출실행금액</KeyValueTitle>
-              <KeyValueText> 3,500,000 원 </KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem>
-              <KeyValueTitle>상담일자</KeyValueTitle>
-              <KeyValueText> 2022.12.21 </KeyValueText>
-            </KeyValueItem>
-          </KeyValueList>
 
-          <BasicButton size="small" class="row-margin-item-group">
-            구비서류 추가등록
-          </BasicButton>
-        </BasicBox>
-
-        <BasicBox class="row-margin-item-group">
-          <BasicBoxHead>
-            <KeyValueList direction="vertical">
-              <div :class="$style['board__title']">
-                <p :class="$style['board__title-text']">10나 8941</p>
-              </div>
-              <div
-                :class="[
-                  $style['board__text'],
-                  'font-weight-regular',
-                  'color-gray',
-                ]"
-              >
+            <ButtonList
+              :classNames="{
+                wrap: 'row-margin-contents-small',
+              }"
+            >
+              <ButtonListItem>
+                <BasicButton size="small">구비서류 추가등록</BasicButton>
+              </ButtonListItem>
+            </ButtonList>
+          </BasicBox>
+        </li>
+        <li class="row-margin-item-group">
+          <BasicBox>
+            <div>
+              <h3 class="text-body-1 font-weight-medium">10나 8941</h3>
+              <p class="text-body-4 color-gray row-margin-small">
                 쏘나타 하이브리드(DN8) 스파이더
-              </div>
+              </p>
+            </div>
+            <BasicHr
+              theme="quaternary"
+              type="contents"
+              className="row-margin-contents-small"
+            />
+            <KeyValueList margin="regular">
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle>대출실행금액</KeyValueTitle>
+                <KeyValueText>3,500,000 원</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle>상담일자</KeyValueTitle>
+                <KeyValueText>2022.12.21</KeyValueText>
+              </KeyValueItem>
             </KeyValueList>
-          </BasicBoxHead>
-          <KeyValueList margin="regular">
-            <KeyValueItem>
-              <KeyValueTitle>대출실행금액</KeyValueTitle>
-              <KeyValueText> 3,500,000 원 </KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem>
-              <KeyValueTitle>상담일자</KeyValueTitle>
-              <KeyValueText> 2022.12.21 </KeyValueText>
-            </KeyValueItem>
-          </KeyValueList>
 
-          <BasicButton size="small" class="row-margin-item-group">
-            구비서류 추가등록
-          </BasicButton>
-        </BasicBox>
-      </div>
+            <ButtonList
+              :classNames="{
+                wrap: 'row-margin-contents-small',
+              }"
+            >
+              <ButtonListItem>
+                <BasicButton size="small">구비서류 추가등록</BasicButton>
+              </ButtonListItem>
+            </ButtonList>
+          </BasicBox>
+        </li>
+      </ul>
+      <!-- // Case : 내역 있을 경우 -->
+    </section>
+
+    <div class="inline-wrap align-center row-margin-item-group">
+      <TextButton :classNames="{ wrap: 'color-gray' }">
+        더보기
+        <template v-slot:rightIcon>
+          <IconArrow />
+        </template>
+      </TextButton>
     </div>
-
-    <button
-      type="button"
-      :class="[$style['text-button'], 'row-margin-item-group']"
-    >
-      <span :class="$style['text-button__text']">더보기</span>
-      <span :class="$style['text-button__icon']">
-        <IconArrow />
-      </span>
-    </button>
   </PageContents>
 </template>
 

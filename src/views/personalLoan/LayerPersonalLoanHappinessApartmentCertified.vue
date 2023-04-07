@@ -22,6 +22,8 @@ import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
 import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 import BoxCheck from '@/components/ui/form/BoxCheck.vue';
 import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
+import ButtonList from '@/components/ui/button/ButtonList.vue';
+import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import KeyValueList from '@/components/ui/text/KeyValue.vue';
@@ -53,6 +55,8 @@ export default {
     BoxCheckListItem,
     BoxCheck,
     BoxCheckLabel,
+    ButtonList,
+    ButtonListItem,
     BasicButton,
     BasicBox,
     KeyValueList,
@@ -65,15 +69,17 @@ export default {
     const layer = ref(null);
 
     const state = reactive({
-      areaError001: false,
-      areaError002: false,
-      areaError003: false,
-      areaError004: false,
-      areaError005: false,
-      sumError: false,
-      addressError: false,
-      supplyError: false,
-      methodError: false,
+      addressError001_001: false,
+      addressError001_002: false,
+      addressError001_003: false,
+      addressError001_004: false,
+      addressDetailError001: false,
+      addressError002_001: false,
+      addressError002_002: false,
+      addressError002_003: false,
+      addressError002_004: false,
+      addressError002_005: false,
+      addressDetailError002: false,
     });
 
     return {
@@ -99,31 +105,33 @@ export default {
       <UiTab>
         <NavTab :useUiTab="true">
           <NavTabButton
-            link="LayerPersonalLoanHappinessApartmentCertifiedNavTab001_001"
-            >지번</NavTabButton
+            link="layerPersonalLoanHappinessApartmentCertifiedNavTab001"
           >
+            지번
+          </NavTabButton>
           <NavTabButton
-            link="LayerPersonalLoanHappinessApartmentCertifiedNavTab001_002"
+            link="layerPersonalLoanHappinessApartmentCertifiedNavTab002"
             >도로명주소</NavTabButton
           >
         </NavTab>
 
         <UiTabPanel
-          name="LayerPersonalLoanHappinessApartmentCertifiedNavTab001_001"
+          name="layerPersonalLoanHappinessApartmentCertifiedNavTab001"
         >
           <FormList>
             <FormListItem
               titleText="부동산 구분"
               target="#layerPersonalLoanHappinessApartmentCertifiedInputMethod01"
-              :forceFocus="true"
+              :disabled="true"
             >
-              <FormInvalid :error="state.methodError">
-                <InputBlock :error="state.methodError">
+              <FormInvalid :error="state.addressError001_001">
+                <InputBlock :error="state.addressError001_001" :disabled="true">
                   <InputBlockCell :flexible="true">
                     <BasicInput
                       title="부동산 구분"
                       id="layerPersonalLoanHappinessApartmentCertifiedInputMethod01"
-                      value="집합건물"
+                      defaultValue="집합건물"
+                      :disabled="true"
                     />
                   </InputBlockCell>
                 </InputBlock>
@@ -136,8 +144,8 @@ export default {
               target="#layerPersonalLoanHappinessApartmentCertifiedAreaButton001"
               :selectOnly="true"
             >
-              <FormInvalid :error="state.areaError001">
-                <InputBlock :error="state.areaError001">
+              <FormInvalid :error="state.addressError001_002">
+                <InputBlock :error="state.addressError001_002">
                   <InputBlockCell :flexible="true">
                     <BasicSelect
                       :option="[
@@ -206,7 +214,7 @@ export default {
                           text: '경상남도',
                         },
                         {
-                          value: '177',
+                          value: '17',
                           text: '제주특별자치도',
                         },
                       ]"
@@ -225,8 +233,8 @@ export default {
               titleText="리/동"
               target="#layerPersonalLoanHappinessApartmentCertifiedArea002"
             >
-              <FormInvalid :error="state.areaError002">
-                <InputBlock :error="state.areaError002">
+              <FormInvalid :error="state.addressError001_003">
+                <InputBlock :error="state.addressError001_003">
                   <InputBlockCell :flexible="true">
                     <BasicInput
                       title="리/동"
@@ -239,13 +247,14 @@ export default {
             </FormListItem>
 
             <FormListItem titleText="입력선택" :forceFocus="true">
-              <FormInvalid :error="state.sumError">
+              <FormInvalid :error="state.addressError001_004">
                 <BoxCheckList>
                   <BoxCheckListItem>
                     <BoxCheck
                       :minSide="true"
-                      name="layerPersonalLoanHappinessApartmentCertifiedList001"
-                      id="layerPersonalLoanHappinessApartmentCertifiedList001_001"
+                      name="layerPersonalLoanHappinessApartmentCertifiedAddress"
+                      id="layerPersonalLoanHappinessApartmentCertifiedAddress1"
+                      :checked="true"
                     >
                       <BoxCheckLabel>지번</BoxCheckLabel>
                     </BoxCheck>
@@ -253,8 +262,8 @@ export default {
                   <BoxCheckListItem>
                     <BoxCheck
                       :minSide="true"
-                      name="layerPersonalLoanHappinessApartmentCertifiedList002"
-                      id="layerPersonalLoanHappinessApartmentCertifiedList002_002"
+                      name="layerPersonalLoanHappinessApartmentCertifiedAddress"
+                      id="layerPersonalLoanHappinessApartmentCertifiedAddress2"
                     >
                       <BoxCheckLabel>건물명칭</BoxCheckLabel>
                     </BoxCheck>
@@ -262,186 +271,123 @@ export default {
                 </BoxCheckList>
 
                 <InputBlock
-                  :error="state.addressError"
-                  class="row-margin-item-group"
+                  :error="state.addressError001_004"
+                  :classNames="{ wrap: 'row-margin-item-group' }"
                 >
                   <InputBlockCell :flexible="true">
                     <BasicInput
+                      title="지번/건물명칭"
                       id="layerPersonalLoanHappinessApartmentCertifiedAddress"
                     />
                   </InputBlockCell>
                 </InputBlock>
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+              <FormInvalid
+                :error="state.addressDetailError001"
+                :classNames="{ wrap: 'row-margin-contents' }"
+              >
+                <BoxCheckList>
+                  <BoxCheckListItem>
+                    <BoxCheck
+                      :minSide="true"
+                      name="layerPersonalLoanHappinessApartmentCertifiedAddressDetail1"
+                      id="layerPersonalLoanHappinessApartmentCertifiedAddressDetail1_1"
+                      :checked="true"
+                    >
+                      <BoxCheckLabel>동+호</BoxCheckLabel>
+                    </BoxCheck>
+                  </BoxCheckListItem>
+                  <BoxCheckListItem>
+                    <BoxCheck
+                      :minSide="true"
+                      name="layerPersonalLoanHappinessApartmentCertifiedAddressDetail1"
+                      id="layerPersonalLoanHappinessApartmentCertifiedAddressDetail1_2"
+                    >
+                      <BoxCheckLabel>동</BoxCheckLabel>
+                    </BoxCheck>
+                  </BoxCheckListItem>
+                  <BoxCheckListItem>
+                    <BoxCheck
+                      :minSide="true"
+                      name="layerPersonalLoanHappinessApartmentCertifiedAddressDetail1"
+                      id="layerPersonalLoanHappinessApartmentCertifiedAddressDetail1_3"
+                    >
+                      <BoxCheckLabel>호</BoxCheckLabel>
+                    </BoxCheck>
+                  </BoxCheckListItem>
+                </BoxCheckList>
+
+                <!-- Case : '동 + 호' 선택 시  -->
+                <InputBlock
+                  :error="state.addressDetailError001"
+                  :classNames="{ wrap: 'row-margin-item-group' }"
+                >
+                  <InputBlockCell :flexible="true">
+                    <BasicInput align="right" :useDelete="false" title="동" />
+                  </InputBlockCell>
+                  <InputBlockCell>
+                    <div class="text-body-3">동</div>
+                  </InputBlockCell>
+                  <InputBlockCell :flexible="true">
+                    <BasicInput align="right" :useDelete="false" title="호" />
+                  </InputBlockCell>
+                  <InputBlockCell>
+                    <div class="text-body-3">호</div>
+                  </InputBlockCell>
+                </InputBlock>
+                <!-- // Case : '동 + 호' 선택 시  -->
+
+                <!-- Case : '동' 선택 시  -->
+                <InputBlock
+                  :error="state.addressDetailError001"
+                  :classNames="{ wrap: 'row-margin-item-group' }"
+                >
+                  <InputBlockCell :flexible="true">
+                    <BasicInput align="right" :useDelete="false" title="동" />
+                  </InputBlockCell>
+                  <template v-slot:innerRight>
+                    <div class="text-body-3">동</div>
+                  </template>
+                </InputBlock>
+                <!-- // Case : '동' 선택 시  -->
+
+                <!-- Case : '호' 선택 시  -->
+                <InputBlock
+                  :error="state.addressDetailError001"
+                  :classNames="{ wrap: 'row-margin-item-group' }"
+                >
+                  <InputBlockCell :flexible="true">
+                    <BasicInput align="right" :useDelete="false" title="호" />
+                  </InputBlockCell>
+                  <template v-slot:innerRight>
+                    <div class="text-body-3">호</div>
+                  </template>
+                </InputBlock>
+                <!-- // Case : '호' 선택 시  -->
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
               </FormInvalid>
             </FormListItem>
           </FormList>
-
-          <div class="row-margin-contents">
-            <BoxCheckList class="row-margin-item-group">
-              <BoxCheckListItem>
-                <BoxCheck
-                  :minSide="true"
-                  name="layerPersonalLoanHappinessApartmentCertifiedList003"
-                  id="layerPersonalLoanHappinessApartmentCertifiedList003_001"
-                >
-                  <BoxCheckLabel>동+호</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  :minSide="true"
-                  name="layerPersonalLoanHappinessApartmentCertifiedList004"
-                  id="layerPersonalLoanHappinessApartmentCertifiedList004_002"
-                >
-                  <BoxCheckLabel>동</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  :minSide="true"
-                  name="layerPersonalLoanHappinessApartmentCertifiedList005"
-                  id="layerPersonalLoanHappinessApartmentCertifiedList005_003"
-                >
-                  <BoxCheckLabel>호</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-            </BoxCheckList>
-
-            <FormList>
-              <!-- '동 + 호' 클릭시  -->
-              <InputBlock :error="state.supplyError">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    align="right"
-                    :useDelete="false"
-                    pattern="\d*"
-                    title="동 + 호"
-                    id="layerPersonalLoanHappinessApartmentCertifiedSupply01"
-                  />
-                </InputBlockCell>
-                <template v-slot:innerRight>
-                  <div class="text-body-3">동 + 호</div>
-                </template>
-              </InputBlock>
-
-              <!-- '동' 클릭시  -->
-              <InputBlock :error="state.supplyError">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    align="right"
-                    :useDelete="false"
-                    pattern="\d*"
-                    title="동"
-                    id="layerPersonalLoanHappinessApartmentCertifiedSupply02"
-                  />
-                </InputBlockCell>
-                <template v-slot:innerRight>
-                  <div class="text-body-3">동</div>
-                </template>
-              </InputBlock>
-
-              <!-- '호' 클릭시  -->
-              <InputBlock :error="state.supplyError">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    align="right"
-                    :useDelete="false"
-                    pattern="\d*"
-                    title="호"
-                    id="LayerPersonalLoanHappinessApartmentCertifiedSupply03"
-                  />
-                </InputBlockCell>
-                <template v-slot:innerRight>
-                  <div class="text-body-3">호</div>
-                </template>
-              </InputBlock>
-            </FormList>
-          </div>
-
-          <BasicButton :line="true">조회</BasicButton>
-
-          <BasicHr className="row-margin-container-medium" />
-
-          <div>
-            <h3 class="text-title-2 row-margin-contents">조회정보</h3>
-
-            <!-- DD: 아파트 등기부등본_지번_조회결과 내역 없는 경우 -->
-            <div :class="$style['empty']">
-              <p :class="$style['empty__text']">검색된 결과가 없습니다.</p>
-            </div>
-
-            <!-- DD: 아파트 등기부등본_지번_조회결과 내역 -->
-            <div>
-              <BasicBox class="row-margin-item-group">
-                <KeyValueList margin="regular">
-                  <KeyValueItem>
-                    <KeyValueTitle>고유번호</KeyValueTitle>
-                    <KeyValueText> 1234-****-**** </KeyValueText>
-                  </KeyValueItem>
-
-                  <KeyValueItem>
-                    <KeyValueTitle>부동산소재 지번</KeyValueTitle>
-                    <KeyValueText>
-                      서울시 강남구 반포동 반포자이 101동 1001호
-                    </KeyValueText>
-                  </KeyValueItem>
-
-                  <KeyValueItem>
-                    <KeyValueTitle>소유자</KeyValueTitle>
-                    <KeyValueText> 김*** </KeyValueText>
-                  </KeyValueItem>
-                </KeyValueList>
-
-                <div class="row-margin-item-group">
-                  <BasicButton size="small">신청</BasicButton>
-                </div>
-              </BasicBox>
-
-              <BasicBox class="row-margin-item-group">
-                <KeyValueList margin="regular">
-                  <KeyValueItem>
-                    <KeyValueTitle>고유번호</KeyValueTitle>
-                    <KeyValueText> 1234-****-**** </KeyValueText>
-                  </KeyValueItem>
-
-                  <KeyValueItem>
-                    <KeyValueTitle>부동산소재 지번</KeyValueTitle>
-                    <KeyValueText>
-                      서울시 강남구 반포동 반포자이 101동 1001호
-                    </KeyValueText>
-                  </KeyValueItem>
-
-                  <KeyValueItem>
-                    <KeyValueTitle>소유자</KeyValueTitle>
-                    <KeyValueText> 김*** </KeyValueText>
-                  </KeyValueItem>
-                </KeyValueList>
-
-                <div class="row-margin-item-group">
-                  <BasicButton size="small" theme="quaternary"
-                    >보기</BasicButton
-                  >
-                </div>
-              </BasicBox>
-            </div>
-          </div>
         </UiTabPanel>
 
         <UiTabPanel
-          name="LayerPersonalLoanHappinessApartmentCertifiedNavTab001_002"
+          name="layerPersonalLoanHappinessApartmentCertifiedNavTab002"
         >
           <FormList>
             <FormListItem
               titleText="부동산 구분"
               target="#layerPersonalLoanHappinessApartmentCertifiedInputMethod02"
-              :forceFocus="true"
+              :disabled="true"
             >
-              <FormInvalid :error="state.methodError">
-                <InputBlock :error="state.methodError">
+              <FormInvalid :error="state.addressError002_001">
+                <InputBlock :error="state.addressError002_001" :disabled="true">
                   <InputBlockCell :flexible="true">
                     <BasicInput
                       title="부동산 구분"
                       id="layerPersonalLoanHappinessApartmentCertifiedInputMethod02"
-                      value="집합건물"
+                      defaultValue="집합건물"
+                      :disabled="true"
                     />
                   </InputBlockCell>
                 </InputBlock>
@@ -454,8 +400,8 @@ export default {
               target="#layerPersonalLoanHappinessApartmentCertifiedAreaButton002"
               :selectOnly="true"
             >
-              <FormInvalid :error="state.areaError001">
-                <InputBlock :error="state.areaError001">
+              <FormInvalid :error="state.addressError002_002">
+                <InputBlock :error="state.addressError002_002">
                   <InputBlockCell :flexible="true">
                     <BasicSelect
                       :option="[
@@ -530,7 +476,7 @@ export default {
                       ]"
                       buttonTitle="시/도 선택하기"
                       layerTitle="시/도를 선택해 주세요"
-                      id="layerPersonalLoanHappinessApartmentCertifiedArea003"
+                      id="layerPersonalLoanHappinessApartmentCertifiedArea004"
                       buttonId="layerPersonalLoanHappinessApartmentCertifiedAreaButton002"
                     />
                   </InputBlockCell>
@@ -541,30 +487,13 @@ export default {
 
             <FormListItem
               titleText="시/군/구"
-              target="#layerPersonalLoanHappinessApartmentCertifiedArea004"
+              target="#layerPersonalLoanHappinessApartmentCertifiedArea005"
             >
-              <FormInvalid :error="state.areaError002">
-                <InputBlock :error="state.areaError002">
+              <FormInvalid :error="state.addressError002_003">
+                <InputBlock :error="state.addressError002_003">
                   <InputBlockCell :flexible="true">
                     <BasicInput
                       title="시/군/구"
-                      id="layerPersonalLoanHappinessApartmentCertifiedArea004"
-                    />
-                  </InputBlockCell>
-                </InputBlock>
-                <FormInvalidMessage>Error Message</FormInvalidMessage>
-              </FormInvalid>
-            </FormListItem>
-
-            <FormListItem
-              titleText="도로명"
-              target="#layerPersonalLoanHappinessApartmentCertifiedArea005"
-            >
-              <FormInvalid :error="state.areaError002">
-                <InputBlock :error="state.areaError002">
-                  <InputBlockCell :flexible="true">
-                    <BasicInput
-                      title="도로명"
                       id="layerPersonalLoanHappinessApartmentCertifiedArea005"
                     />
                   </InputBlockCell>
@@ -574,14 +503,14 @@ export default {
             </FormListItem>
 
             <FormListItem
-              titleText="도로명/건물번호"
+              titleText="도로명"
               target="#layerPersonalLoanHappinessApartmentCertifiedArea006"
             >
-              <FormInvalid :error="state.areaError002">
-                <InputBlock :error="state.areaError002">
+              <FormInvalid :error="state.addressError002_004">
+                <InputBlock :error="state.addressError002_004">
                   <InputBlockCell :flexible="true">
                     <BasicInput
-                      title="도로명/건물번호"
+                      title="도로명"
                       id="layerPersonalLoanHappinessApartmentCertifiedArea006"
                     />
                   </InputBlockCell>
@@ -589,159 +518,196 @@ export default {
                 <FormInvalidMessage>Error Message</FormInvalidMessage>
               </FormInvalid>
             </FormListItem>
+
+            <FormListItem
+              titleText="도로명/건물번호"
+              target="#layerPersonalLoanHappinessApartmentCertifiedArea007"
+            >
+              <FormInvalid :error="state.addressError002_005">
+                <InputBlock :error="state.addressError002_005">
+                  <InputBlockCell :flexible="true">
+                    <BasicInput
+                      title="도로명/건물번호"
+                      id="layerPersonalLoanHappinessApartmentCertifiedArea007"
+                    />
+                  </InputBlockCell>
+                </InputBlock>
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
+
+            <FormListItem titleText="입력선택" :forceFocus="true">
+              <FormInvalid :error="state.addressDetailError002">
+                <BoxCheckList>
+                  <BoxCheckListItem>
+                    <BoxCheck
+                      :minSide="true"
+                      name="layerPersonalLoanHappinessApartmentCertifiedAddressDetail2"
+                      id="layerPersonalLoanHappinessApartmentCertifiedAddressDetail2_1"
+                      :checked="true"
+                    >
+                      <BoxCheckLabel>동+호</BoxCheckLabel>
+                    </BoxCheck>
+                  </BoxCheckListItem>
+                  <BoxCheckListItem>
+                    <BoxCheck
+                      :minSide="true"
+                      name="layerPersonalLoanHappinessApartmentCertifiedAddressDetail2"
+                      id="layerPersonalLoanHappinessApartmentCertifiedAddressDetail2_2"
+                    >
+                      <BoxCheckLabel>동</BoxCheckLabel>
+                    </BoxCheck>
+                  </BoxCheckListItem>
+                  <BoxCheckListItem>
+                    <BoxCheck
+                      :minSide="true"
+                      name="layerPersonalLoanHappinessApartmentCertifiedAddressDetail2"
+                      id="layerPersonalLoanHappinessApartmentCertifiedAddressDetail2_3"
+                    >
+                      <BoxCheckLabel>호</BoxCheckLabel>
+                    </BoxCheck>
+                  </BoxCheckListItem>
+                </BoxCheckList>
+
+                <!-- Case : '동 + 호' 선택 시  -->
+                <InputBlock
+                  :error="state.addressDetailError002"
+                  :classNames="{ wrap: 'row-margin-item-group' }"
+                >
+                  <InputBlockCell :flexible="true">
+                    <BasicInput align="right" :useDelete="false" title="동" />
+                  </InputBlockCell>
+                  <InputBlockCell>
+                    <div class="text-body-3">동</div>
+                  </InputBlockCell>
+                  <InputBlockCell :flexible="true">
+                    <BasicInput align="right" :useDelete="false" title="호" />
+                  </InputBlockCell>
+                  <InputBlockCell>
+                    <div class="text-body-3">호</div>
+                  </InputBlockCell>
+                </InputBlock>
+                <!-- // Case : '동 + 호' 선택 시  -->
+
+                <!-- Case : '동' 선택 시  -->
+                <InputBlock
+                  :error="state.addressDetailError002"
+                  :classNames="{ wrap: 'row-margin-item-group' }"
+                >
+                  <InputBlockCell :flexible="true">
+                    <BasicInput align="right" :useDelete="false" title="동" />
+                  </InputBlockCell>
+                  <template v-slot:innerRight>
+                    <div class="text-body-3">동</div>
+                  </template>
+                </InputBlock>
+                <!-- // Case : '동' 선택 시  -->
+
+                <!-- Case : '호' 선택 시  -->
+                <InputBlock
+                  :error="state.addressDetailError002"
+                  :classNames="{ wrap: 'row-margin-item-group' }"
+                >
+                  <InputBlockCell :flexible="true">
+                    <BasicInput align="right" :useDelete="false" title="호" />
+                  </InputBlockCell>
+                  <template v-slot:innerRight>
+                    <div class="text-body-3">호</div>
+                  </template>
+                </InputBlock>
+                <!-- // Case : '호' 선택 시  -->
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
           </FormList>
+        </UiTabPanel>
 
-          <div class="row-margin-contents">
-            <BoxCheckList class="row-margin-item-group">
-              <BoxCheckListItem>
-                <BoxCheck
-                  :minSide="true"
-                  name="layerPersonalLoanHappinessApartmentCertifiedList006"
-                  id="layerPersonalLoanHappinessApartmentCertifiedList006_001"
-                >
-                  <BoxCheckLabel>동+호</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  :minSide="true"
-                  name="layerPersonalLoanHappinessApartmentCertifiedList07"
-                  id="layerPersonalLoanHappinessApartmentCertifiedList007_002"
-                >
-                  <BoxCheckLabel>동</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  :minSide="true"
-                  name="layerPersonalLoanHappinessApartmentCertifiedList008"
-                  id="layerPersonalLoanHappinessApartmentCertifiedList008_003"
-                >
-                  <BoxCheckLabel>호</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-            </BoxCheckList>
+        <BasicButton
+          :line="true"
+          :classNames="{ wrap: 'row-margin-contents-group' }"
+          >조회</BasicButton
+        >
+      </UiTab>
 
-            <FormList>
-              <!-- '동 + 호' 클릭시  -->
-              <InputBlock :error="state.supplyError">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    align="right"
-                    :useDelete="false"
-                    pattern="\d*"
-                    title="동 + 호"
-                    id="layerPersonalLoanHappinessApartmentCertifiedSupply04"
-                  />
-                </InputBlockCell>
-                <template v-slot:innerRight>
-                  <div class="text-body-3">동 + 호</div>
-                </template>
-              </InputBlock>
+      <BasicHr className="row-margin-container-medium" />
 
-              <!-- '동' 클릭시  -->
-              <InputBlock :error="state.supplyError">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    align="right"
-                    :useDelete="false"
-                    pattern="\d*"
-                    title="동"
-                    id="layerPersonalLoanHappinessApartmentCertifiedSupply05"
-                  />
-                </InputBlockCell>
-                <template v-slot:innerRight>
-                  <div class="text-body-3">동</div>
-                </template>
-              </InputBlock>
+      <section>
+        <h3 class="text-title-2 row-margin-contents">조회정보</h3>
 
-              <!-- '호' 클릭시  -->
-              <InputBlock :error="state.supplyError">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    align="right"
-                    :useDelete="false"
-                    pattern="\d*"
-                    title="호"
-                    id="LayerPersonalLoanHappinessApartmentCertifiedSupply06"
-                  />
-                </InputBlockCell>
-                <template v-slot:innerRight>
-                  <div class="text-body-3">호</div>
-                </template>
-              </InputBlock>
-            </FormList>
-          </div>
+        <!-- Case : 결과 없는 경우 -->
+        <div :class="$style['empty']">
+          <p :class="$style['empty__text']">검색된 결과가 없습니다.</p>
+        </div>
+        <!-- // Case : 결과 없는 경우 -->
 
-          <BasicButton :line="true">조회</BasicButton>
+        <!-- Case : 결과 있을 경우 -->
+        <ul class="reset-list">
+          <li class="row-margin-item-group">
+            <BasicBox>
+              <KeyValueList margin="regular">
+                <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                  <KeyValueTitle>고유번호</KeyValueTitle>
+                  <KeyValueText>1234-****-****</KeyValueText>
+                </KeyValueItem>
+                <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                  <KeyValueTitle>부동산소재 지번</KeyValueTitle>
+                  <KeyValueText>
+                    서울시 강남구 반포동 반포자이 101동 1001호
+                  </KeyValueText>
+                </KeyValueItem>
+                <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                  <KeyValueTitle>소유자</KeyValueTitle>
+                  <KeyValueText>김***</KeyValueText>
+                </KeyValueItem>
+              </KeyValueList>
 
-          <BasicHr className="row-margin-container-medium" />
-
-          <div>
-            <h3 class="text-title-2 row-margin-contents">조회정보</h3>
-
-            <!-- DD: 아파트 등기부등본_도로명주소_조회결과 내역 없는 경우 -->
-            <div :class="$style['empty']">
-              <p :class="$style['empty__text']">검색된 결과가 없습니다.</p>
-            </div>
-
-            <!-- DD: 아파트 등기부등본_도로명주소_조회결과 내역 -->
-            <div>
-              <BasicBox class="row-margin-item-group">
-                <KeyValueList margin="regular">
-                  <KeyValueItem>
-                    <KeyValueTitle>고유번호</KeyValueTitle>
-                    <KeyValueText> 1234-****-**** </KeyValueText>
-                  </KeyValueItem>
-
-                  <KeyValueItem>
-                    <KeyValueTitle>부동산소재 지번</KeyValueTitle>
-                    <KeyValueText>
-                      서울시 강남구 반포동 반포자이 101동 1001호
-                    </KeyValueText>
-                  </KeyValueItem>
-
-                  <KeyValueItem>
-                    <KeyValueTitle>소유자</KeyValueTitle>
-                    <KeyValueText> 김*** </KeyValueText>
-                  </KeyValueItem>
-                </KeyValueList>
-
-                <div class="row-margin-item-group">
+              <ButtonList
+                :classNames="{
+                  wrap: 'row-margin-contents-small',
+                }"
+              >
+                <ButtonListItem>
                   <BasicButton size="small">신청</BasicButton>
-                </div>
-              </BasicBox>
+                </ButtonListItem>
+              </ButtonList>
+            </BasicBox>
+          </li>
 
-              <BasicBox class="row-margin-item-group">
-                <KeyValueList margin="regular">
-                  <KeyValueItem>
-                    <KeyValueTitle>고유번호</KeyValueTitle>
-                    <KeyValueText> 1234-****-**** </KeyValueText>
-                  </KeyValueItem>
+          <li class="row-margin-item-group">
+            <BasicBox>
+              <KeyValueList margin="regular">
+                <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                  <KeyValueTitle>고유번호</KeyValueTitle>
+                  <KeyValueText>1234-****-****</KeyValueText>
+                </KeyValueItem>
+                <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                  <KeyValueTitle>부동산소재 지번</KeyValueTitle>
+                  <KeyValueText>
+                    서울시 강남구 반포동 반포자이 101동 1001호
+                  </KeyValueText>
+                </KeyValueItem>
+                <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                  <KeyValueTitle>소유자</KeyValueTitle>
+                  <KeyValueText>김***</KeyValueText>
+                </KeyValueItem>
+              </KeyValueList>
 
-                  <KeyValueItem>
-                    <KeyValueTitle>부동산소재 지번</KeyValueTitle>
-                    <KeyValueText>
-                      서울시 강남구 반포동 반포자이 101동 1001호
-                    </KeyValueText>
-                  </KeyValueItem>
-
-                  <KeyValueItem>
-                    <KeyValueTitle>소유자</KeyValueTitle>
-                    <KeyValueText> 김*** </KeyValueText>
-                  </KeyValueItem>
-                </KeyValueList>
-
-                <div class="row-margin-item-group">
+              <ButtonList
+                :classNames="{
+                  wrap: 'row-margin-contents-small',
+                }"
+              >
+                <ButtonListItem>
                   <BasicButton size="small" theme="quaternary"
                     >보기</BasicButton
                   >
-                </div>
-              </BasicBox>
-            </div>
-          </div>
-        </UiTabPanel>
-      </UiTab>
+                </ButtonListItem>
+              </ButtonList>
+            </BasicBox>
+          </li>
+        </ul>
+        <!-- // Case : 결과 있을 경우 -->
+      </section>
     </FullPopup>
   </UiLayer>
 </template>
