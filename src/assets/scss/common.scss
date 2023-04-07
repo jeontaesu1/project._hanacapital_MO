@@ -322,3 +322,8 @@ body,
   margin-bottom: 120px;
   @include row-margin-first-last;
 }
+
+.popper {
+  left: 20px !important;
+  right: 20px !important;
+}
