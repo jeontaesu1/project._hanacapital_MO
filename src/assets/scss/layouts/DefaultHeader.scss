@@ -46,16 +46,6 @@
     @include media-mobile-mini {
       max-width: 24%;
     }
-
-    &--full {
-      max-width: none;
-      flex: 1;
-      min-width: 0;
-
-      .header__title {
-        flex: 0 1 auto;
-      }
-    }
   }
 
   &__title {

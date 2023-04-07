@@ -11,6 +11,7 @@ import LayerPersonalLoanIdentificationMethodSelect from '@/views/personalLoan/La
 import LayerPersonalLoanETCAutoSubmit from '@/views/personalLoan/LayerPersonalLoanETCAutoSubmit.vue';
 import LayerPersonalLoanETCValusation from '@/views/personalLoan/LayerPersonalLoanETCValusation.vue';
 import LayerPersonalLoanETCCheck from '@/views/personalLoan/LayerPersonalLoanETCCheck.vue';
+import LayerPersonalLoanETCSearchApartment from '@/views/personalLoan/LayerPersonalLoanETCSearchApartment.vue';
 
 export default {
   components: {
@@ -23,6 +24,7 @@ export default {
     LayerPersonalLoanETCAutoSubmit,
     LayerPersonalLoanETCValusation,
     LayerPersonalLoanETCCheck,
+    LayerPersonalLoanETCSearchApartment,
   },
   setup() {
     const layer001 = ref(null);
@@ -30,6 +32,7 @@ export default {
     const layer003 = ref(null);
     const layer004 = ref(null);
     const layer005 = ref(null);
+    const layer006 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -46,6 +49,9 @@ export default {
     const layer005Open = (e = {}) => {
       layer005.value.layer.open(e.target);
     };
+    const layer006Open = (e = {}) => {
+      layer006.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -53,11 +59,13 @@ export default {
       layer003,
       layer004,
       layer005,
+      layer006,
       layer001Open,
       layer002Open,
       layer003Open,
       layer004Open,
       layer005Open,
+      layer006Open,
     };
   },
 };
@@ -90,6 +98,10 @@ export default {
       <ButtonListItem>
         <BasicButton @click="layer005Open">한도/금리 확인</BasicButton>
       </ButtonListItem>
+
+      <ButtonListItem>
+        <BasicButton @click="layer006Open">아파트 검색</BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <LayerPersonalLoanETCAgree ref="layer001" />
@@ -97,5 +109,6 @@ export default {
     <LayerPersonalLoanETCAutoSubmit ref="layer003" />
     <LayerPersonalLoanETCValusation ref="layer004" />
     <LayerPersonalLoanETCCheck ref="layer005" />
+    <LayerPersonalLoanETCSearchApartment ref="layer006" />
   </PageContents>
 </template>

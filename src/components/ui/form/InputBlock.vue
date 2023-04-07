@@ -30,6 +30,10 @@ export default {
       Type: Boolean,
       default: false,
     },
+    type: {
+      Type: String,
+      default: null,
+    },
   },
   setup(props, context) {
     let timer = null;
@@ -115,6 +119,7 @@ export default {
       $style['input-block'],
       {
         [$style['input-block--disabled']]: disabled,
+        [$style[`input-block--type-${type}`]]: type,
       },
       customClassNames.wrap,
     ]"
