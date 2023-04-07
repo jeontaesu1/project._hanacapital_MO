@@ -2,13 +2,14 @@
   display: block;
 
   &__list {
+    position: relative;
+    z-index: 0;
     margin: 0;
     padding: 0;
   }
 
   &__item {
     position: relative;
-    z-index: 0;
     padding-top: 26px;
 
     & + & {

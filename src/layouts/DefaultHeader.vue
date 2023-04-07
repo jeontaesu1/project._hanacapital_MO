@@ -138,15 +138,7 @@ export default {
             :onClick="item.onClick"
           />
         </div>
-        <div
-          :class="[
-            $style['header__center'],
-            {
-              [$style['header__center--full']]:
-                !leftButtons.length && !rightButtons.length,
-            },
-          ]"
-        >
+        <div :class="[$style['header__center']]">
           <h1 :class="$style['header__title']">
             {{ store.ui.header.title || '하나캐피탈' }}
           </h1>
