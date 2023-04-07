@@ -137,7 +137,11 @@ export default {
     <BasicHr className="row-margin-container-medium" />
 
     <StickyBar>
-      <NavTab :scroll="true" :auto="true">
+      <NavTab
+        :scroll="true"
+        :auto="true"
+        :classNames="{ wrap: $style['margin-bottom-regular'] }"
+      >
         <NavTabButton tagName="button" type="button" :active="true">
           전체
         </NavTabButton>
@@ -148,7 +152,7 @@ export default {
       </NavTab>
     </StickyBar>
 
-    <FilterTab>
+    <FilterTab :classNames="{ wrap: $style['margin-bottom-medium'] }">
       <FilterTabButton tagName="button" type="button" :active="true"
         >자동차금융</FilterTabButton
       >

@@ -186,10 +186,12 @@ export default {
         }"
       >
         <ButtonListItem>
-          <BasicButton line="true">QR코드로 가져오기</BasicButton>
+          <BasicButton line="true" :minSide="true"
+            >QR코드로 가져오기</BasicButton
+          >
         </ButtonListItem>
         <ButtonListItem>
-          <BasicButton>공동인증서 가져오기</BasicButton>
+          <BasicButton :minSide="true">공동인증서 가져오기 </BasicButton>
         </ButtonListItem>
       </ButtonList>
     </template>
