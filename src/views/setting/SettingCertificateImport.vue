@@ -1,7 +1,6 @@
 <script>
 import { reactive, onMounted, onUnmounted } from 'vue';
 
-import { useUiCommonStore } from '@/stores/ui/common';
 import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
@@ -43,7 +42,6 @@ export default {
 
     const store = {
       ui: {
-        common: useUiCommonStore(),
         header: useUiHeaderStore(),
       },
     };
@@ -76,12 +74,15 @@ export default {
       </PageMainText>
     </PageTextGroup>
 
-    <IllustObject type="certification" />
+    <IllustObject
+      type="certification"
+      :classNames="{ wrap: $style['illust'] }"
+    />
 
     <FormList>
       <FormListItem
         titleText="인증번호로 가져오기"
-        target="#SettingCertificateImportCode"
+        target="#settingCertificateImportCode"
       >
         <FormInvalid :error="state.codeError">
           <InputBlock :error="state.codeError">
@@ -90,7 +91,7 @@ export default {
                 type="number"
                 pattern="\d*"
                 title="인증번호 앞 4자리"
-                id="SettingCertificateImportCode"
+                id="settingCertificateImportCode"
               />
             </InputBlockCell>
             <InputBlockCell type="sub">-</InputBlockCell>
@@ -107,77 +108,61 @@ export default {
       </FormListItem>
     </FormList>
 
-    <div class="row-margin-contents-group">
-      <div class="text-body-3 color-black font-weight-bold">진행순서</div>
-      <ul
-        :class="[
-          $style['contents-list'],
-          $style['contents-list--normal-margin'],
-          'row-margin-item-group',
-        ]"
-      >
-        <li :class="$style['contents-list__item']">
-          <div
-            :class="[
-              $style['contents-list__symbol'],
-              $style['contents-list__symbol--square-small'],
-            ]"
-          >
-            1
-          </div>
-          <div :class="[$style['contents-list__content'], 'text-body-3']">
-            하나캐피탈 PC 홈페이지의
-            <span class="color-green"
-              >‘고객센터 > 인증센터 > 인증서 내보내기 [PC > 스마트폰]’</span
-            >에 접속해주세요.
-            <div :class="$style['sub']">
-              (http://hanacapital.co.kr/cs/cert-center.hnc)
+    <section class="row-margin-contents-group">
+      <h2 class="text-body-2 row-margin-item-group">진행순서</h2>
+      <div :class="$style['contents-list']">
+        <ol
+          :class="[
+            $style['contents-list__list'],
+            $style['contents-list__list--senary'],
+          ]"
+        >
+          <li :class="$style['contents-list__item']">
+            <div :class="$style['contents-list__head']">
+              <div :class="$style['contents-list__symbol']">1</div>
+              <div :class="$style['contents-list__title']">
+                하나캐피탈 PC 홈페이지의<br />
+                <strong class="color-green font-weight-medium"
+                  >‘고객센터 > 인증센터 > 인증서 내보내기 [PC >
+                  스마트폰]’</strong
+                >에 접속해주세요.
+              </div>
             </div>
-          </div>
-        </li>
-        <li :class="$style['contents-list__item']">
-          <div
-            :class="[
-              $style['contents-list__symbol'],
-              $style['contents-list__symbol--square-small'],
-            ]"
-          >
-            2
-          </div>
-          <div :class="[$style['contents-list__content'], 'text-body-3']">
-            ‘공동인증서 내보내기’ 버튼을 선택한 후, 인증서 비밀번호를
-            입력해주세요
-          </div>
-        </li>
-        <li :class="$style['contents-list__item']">
-          <div
-            :class="[
-              $style['contents-list__symbol'],
-              $style['contents-list__symbol--square-small'],
-            ]"
-          >
-            3
-          </div>
-          <div :class="[$style['contents-list__content'], 'text-body-3']">
-            PC 화면에 표시된 인증번호 8자리 입력하거나, ‘QR코드로 가져오기’
-            선택하여 QR코드를 촬영해주세요.
-          </div>
-        </li>
-        <li :class="$style['contents-list__item']">
-          <div
-            :class="[
-              $style['contents-list__symbol'],
-              $style['contents-list__symbol--square-small'],
-            ]"
-          >
-            4
-          </div>
-          <div :class="[$style['contents-list__content'], 'text-body-3']">
-            ‘공동인증서 가져오기’ 버튼 선택하시면 가져오기가 완료됩니다.
-          </div>
-        </li>
-      </ul>
-    </div>
+            <div :class="[$style['contents-list__depth-4'], 'row-margin-mini']">
+              <p class="text-body-4 font-weight-light color-gray-tertiary">
+                (http://hanacapital.co.kr/cs/cert-center.hnc)
+              </p>
+            </div>
+          </li>
+          <li :class="$style['contents-list__item']">
+            <div :class="$style['contents-list__head']">
+              <div :class="$style['contents-list__symbol']">2</div>
+              <div :class="$style['contents-list__title']">
+                ‘공동인증서 내보내기’ 버튼을 선택한 후, 인증서 비밀번호를
+                입력해주세요
+              </div>
+            </div>
+          </li>
+          <li :class="$style['contents-list__item']">
+            <div :class="$style['contents-list__head']">
+              <div :class="$style['contents-list__symbol']">3</div>
+              <div :class="$style['contents-list__title']">
+                PC 화면에 표시된 인증번호 8자리 입력하거나, ‘QR코드로 가져오기’
+                선택하여 QR코드를 촬영해주세요.
+              </div>
+            </div>
+          </li>
+          <li :class="$style['contents-list__item']">
+            <div :class="$style['contents-list__head']">
+              <div :class="$style['contents-list__symbol']">4</div>
+              <div :class="$style['contents-list__title']">
+                ‘공동인증서 가져오기’ 버튼 선택하시면 가져오기가 완료됩니다.
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
 
     <template v-slot:foot>
       <ButtonList

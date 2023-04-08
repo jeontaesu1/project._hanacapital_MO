@@ -145,15 +145,17 @@
   &__list--secondary {
     padding: 10px 0 0 24px;
 
-    .agree-list__item {
+    > .agree-list__item {
       & + .agree-list__item {
         margin-top: 8px;
       }
-    }
 
-    .agree-list__link {
-      width: 14px;
-      height: 14px;
+      > .agree-list__head {
+        .agree-list__link {
+          width: 14px;
+          height: 14px;
+        }
+      }
     }
   }
 
@@ -162,7 +164,7 @@
     display: flex;
     flex-wrap: wrap;
 
-    .agree-list__item {
+    > .agree-list__item {
       flex: none;
       padding: 2px 0 0 8px;
 

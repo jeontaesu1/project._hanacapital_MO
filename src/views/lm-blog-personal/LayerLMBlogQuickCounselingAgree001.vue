@@ -57,59 +57,54 @@ export default {
         </PageSubText>
       </PageTextGroup>
 
-      <ul
-        :class="[
-          $style['contents-list'],
-          $style['contents-list--small-margin'],
-        ]"
-      >
-        <li :class="$style['contents-list__item']">
-          <div
-            :class="[
-              $style['contents-list__symbol'],
-              $style['contents-list__symbol--circle'],
-            ]"
-          >
-            1
-          </div>
-          <div :class="[$style['contents-list__content'], 'text-body-2']">
-            개인정보의 수집.이용목적
-            <div :class="$style['sub']">
-              신용대출 등 귀사 대출 상품에 대한 상담
+      <div :class="$style['contents-list']">
+        <ol
+          :class="[
+            $style['contents-list__list'],
+            $style['contents-list__list--quinary'],
+          ]"
+        >
+          <li :class="$style['contents-list__item']">
+            <div :class="$style['contents-list__head']">
+              <div :class="$style['contents-list__symbol']">1</div>
+              <div :class="$style['contents-list__title']">
+                개인정보의 수집.이용목적
+              </div>
             </div>
-          </div>
-        </li>
-        <li :class="$style['contents-list__item']">
-          <div
-            :class="[
-              $style['contents-list__symbol'],
-              $style['contents-list__symbol--circle'],
-            ]"
-          >
-            2
-          </div>
-          <div :class="[$style['contents-list__content'], 'text-body-2']">
-            수집.이용할 개인정보의 내용
-            <div :class="$style['sub']">이름, 휴대폰번호</div>
-          </div>
-        </li>
-        <li :class="$style['contents-list__item']">
-          <div
-            :class="[
-              $style['contents-list__symbol'],
-              $style['contents-list__symbol--circle'],
-            ]"
-          >
-            3
-          </div>
-          <div :class="[$style['contents-list__content'], 'text-body-2']">
-            개인정보의 보유.이용 기간
-            <div :class="$style['sub']">
-              수집.이용 동의일로부터 개인정보의 수집.이용 목적을 달성할 때까지
+            <div :class="[$style['contents-list__depth-3'], 'row-margin-mini']">
+              <p class="text-body-4 font-weight-light color-gray-tertiary">
+                신용대출 등 귀사 대출 상품에 대한 상담
+              </p>
             </div>
-          </div>
-        </li>
-      </ul>
+          </li>
+          <li :class="$style['contents-list__item']">
+            <div :class="$style['contents-list__head']">
+              <div :class="$style['contents-list__symbol']">2</div>
+              <div :class="$style['contents-list__title']">
+                수집.이용할 개인정보의 내용
+              </div>
+            </div>
+            <div :class="[$style['contents-list__depth-3'], 'row-margin-mini']">
+              <p class="text-body-4 font-weight-light color-gray-tertiary">
+                이름, 휴대폰번호
+              </p>
+            </div>
+          </li>
+          <li :class="$style['contents-list__item']">
+            <div :class="$style['contents-list__head']">
+              <div :class="$style['contents-list__symbol']">3</div>
+              <div :class="$style['contents-list__title']">
+                개인정보의 보유.이용 기간
+              </div>
+            </div>
+            <div :class="[$style['contents-list__depth-3'], 'row-margin-mini']">
+              <p class="text-body-4 font-weight-light color-gray-tertiary">
+                수집.이용 동의일로부터 개인정보의 수집.이용 목적을 달성할 때까지
+              </p>
+            </div>
+          </li>
+        </ol>
+      </div>
 
       <NoticeText :classNames="{ wrap: 'row-margin-item' }">
         귀하는 동의를 거부할 권리가 있으나, 동의하지 않으실 경우 거래관계의 설정

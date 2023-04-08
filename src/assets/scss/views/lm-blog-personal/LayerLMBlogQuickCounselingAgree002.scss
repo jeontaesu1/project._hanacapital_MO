@@ -1,12 +1,1 @@
 @import '@/assets/scss/components/import/contents-list.scss';
-
-.contents-list {
-  &__content {
-    .sub {
-      @include font-size-default(13);
-      color: $color-gray-80;
-      font-weight: 300;
-      margin-top: 2px;
-    }
-  }
-}

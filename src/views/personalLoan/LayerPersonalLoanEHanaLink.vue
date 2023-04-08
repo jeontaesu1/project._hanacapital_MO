@@ -74,16 +74,16 @@ export default {
       <UiTab>
         <StickyBar>
           <NavTab :useUiTab="true">
-            <NavTabButton link="LayerPersonalLoanEHanaLinkTab001_001"
+            <NavTabButton link="layerPersonalLoanEHanaLinkTab001_001"
               >상품안내</NavTabButton
             >
-            <NavTabButton link="LayerPersonalLoanEHanaLinkTab001_002"
+            <NavTabButton link="layerPersonalLoanEHanaLinkTab001_002"
               >유의사항</NavTabButton
             >
           </NavTab>
         </StickyBar>
 
-        <UiTabPanel name="LayerPersonalLoanEHanaLinkTab001_001">
+        <UiTabPanel name="layerPersonalLoanEHanaLinkTab001_001">
           <BasicBox theme="tertiary">
             <KeyValueList align="left">
               <KeyValueItem>
@@ -175,7 +175,7 @@ export default {
             </KeyValueItem>
           </KeyValueList>
         </UiTabPanel>
-        <UiTabPanel name="LayerPersonalLoanEHanaLinkTab001_002">
+        <UiTabPanel name="layerPersonalLoanEHanaLinkTab001_002">
           <ul
             :class="[
               $style['basic-list'],

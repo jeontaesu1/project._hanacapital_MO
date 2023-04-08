@@ -415,225 +415,220 @@ export default {
           </KeyValueItem>
 
           <KeyValueItem>
-            <KeyValueTitle>구비서류</KeyValueTitle>
+            <KeyValueTitle :classNames="{ title: 'row-margin-item' }">
+              구비서류
+            </KeyValueTitle>
             <KeyValueText>
-              <ul
-                :class="[
-                  $style['contents-list'],
-                  $style['contents-list--small-margin'],
-                  $style['margin-top-small'],
-                ]"
-              >
-                <li :class="$style['contents-list__item']">
-                  <div
-                    :class="[
-                      $style['contents-list__symbol'],
-                      $style['contents-list__symbol--circle'],
-                    ]"
-                  >
-                    1
-                  </div>
-                  <div
-                    :class="[$style['contents-list__content'], 'text-body-2']"
-                  >
-                    <div>개인</div>
-                    <ul
+              <div :class="$style['contents-list']">
+                <ol
+                  :class="[
+                    $style['contents-list__list'],
+                    $style['contents-list__list--quinary'],
+                  ]"
+                >
+                  <li :class="$style['contents-list__item']">
+                    <div :class="$style['contents-list__head']">
+                      <div :class="$style['contents-list__symbol']">1</div>
+                      <div :class="$style['contents-list__title']">개인</div>
+                    </div>
+                    <div
                       :class="[
-                        $style['basic-list'],
-                        $style['basic-list--small-margin'],
+                        $style['contents-list__depth-3'],
                         'row-margin-item',
                       ]"
                     >
-                      <li
+                      <ul
                         :class="[
-                          $style['basic-list__item'],
-                          'text-body-4',
-                          'color-black',
-                          'font-weight-regular',
+                          $style['basic-list'],
+                          $style['basic-list--small-margin'],
                         ]"
                       >
-                        <div :class="$style['basic-list__symbol']">-</div>
-                        <div :class="$style['basic-list__content']">
-                          신분증사본
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li :class="$style['contents-list__item']">
-                  <div
-                    :class="[
-                      $style['contents-list__symbol'],
-                      $style['contents-list__symbol--circle'],
-                    ]"
-                  >
-                    2
-                  </div>
-                  <div
-                    :class="[$style['contents-list__content'], 'text-body-2']"
-                  >
-                    <div>개인사업자</div>
-                    <ul
+                        <li
+                          :class="[
+                            $style['basic-list__item'],
+                            'text-body-4',
+                            'color-black',
+                            'font-weight-regular',
+                          ]"
+                        >
+                          <div :class="$style['basic-list__symbol']">-</div>
+                          <div :class="$style['basic-list__content']">
+                            신분증사본
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li :class="$style['contents-list__item']">
+                    <div :class="$style['contents-list__head']">
+                      <div :class="$style['contents-list__symbol']">2</div>
+                      <div :class="$style['contents-list__title']">
+                        개인사업자
+                      </div>
+                    </div>
+                    <div
                       :class="[
-                        $style['basic-list'],
-                        $style['basic-list--small-margin'],
+                        $style['contents-list__depth-3'],
                         'row-margin-item',
                       ]"
                     >
-                      <li
+                      <ul
                         :class="[
-                          $style['basic-list__item'],
-                          'text-body-4',
-                          'color-black',
-                          'font-weight-regular',
+                          $style['basic-list'],
+                          $style['basic-list--small-margin'],
                         ]"
                       >
-                        <div :class="$style['basic-list__symbol']">-</div>
-                        <div :class="$style['basic-list__content']">
-                          신분증사본
-                        </div>
-                      </li>
-                      <li
-                        :class="[
-                          $style['basic-list__item'],
-                          'text-body-4',
-                          'color-black',
-                          'font-weight-regular',
-                        ]"
-                      >
-                        <div :class="$style['basic-list__symbol']">-</div>
-                        <div :class="$style['basic-list__content']">
-                          사업자등록증
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li :class="$style['contents-list__item']">
-                  <div
-                    :class="[
-                      $style['contents-list__symbol'],
-                      $style['contents-list__symbol--circle'],
-                    ]"
-                  >
-                    3
-                  </div>
-                  <div
-                    :class="[$style['contents-list__content'], 'text-body-2']"
-                  >
-                    <div>법인</div>
-                    <ul
+                        <li
+                          :class="[
+                            $style['basic-list__item'],
+                            'text-body-4',
+                            'color-black',
+                            'font-weight-regular',
+                          ]"
+                        >
+                          <div :class="$style['basic-list__symbol']">-</div>
+                          <div :class="$style['basic-list__content']">
+                            신분증사본
+                          </div>
+                        </li>
+                        <li
+                          :class="[
+                            $style['basic-list__item'],
+                            'text-body-4',
+                            'color-black',
+                            'font-weight-regular',
+                          ]"
+                        >
+                          <div :class="$style['basic-list__symbol']">-</div>
+                          <div :class="$style['basic-list__content']">
+                            사업자등록증
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li :class="$style['contents-list__item']">
+                    <div :class="$style['contents-list__head']">
+                      <div :class="$style['contents-list__symbol']">3</div>
+                      <div :class="$style['contents-list__title']">법인</div>
+                    </div>
+                    <div
                       :class="[
-                        $style['basic-list'],
-                        $style['basic-list--small-margin'],
+                        $style['contents-list__depth-3'],
                         'row-margin-item',
                       ]"
                     >
-                      <li
+                      <ul
                         :class="[
-                          $style['basic-list__item'],
-                          'text-body-4',
-                          'color-black',
-                          'font-weight-regular',
+                          $style['basic-list'],
+                          $style['basic-list--small-margin'],
                         ]"
                       >
-                        <div :class="$style['basic-list__symbol']">-</div>
-                        <div :class="$style['basic-list__content']">
-                          사업자등록증
-                        </div>
-                      </li>
-                      <li
-                        :class="[
-                          $style['basic-list__item'],
-                          'text-body-4',
-                          'color-black',
-                          'font-weight-regular',
-                        ]"
-                      >
-                        <div :class="$style['basic-list__symbol']">-</div>
-                        <div :class="$style['basic-list__content']">
-                          법인등기부등본
-                        </div>
-                      </li>
-                      <li
-                        :class="[
-                          $style['basic-list__item'],
-                          'text-body-4',
-                          'color-black',
-                          'font-weight-regular',
-                        ]"
-                      >
-                        <div :class="$style['basic-list__symbol']">-</div>
-                        <div :class="$style['basic-list__content']">
-                          법인인감증명서
-                        </div>
-                      </li>
-                      <li
-                        :class="[
-                          $style['basic-list__item'],
-                          'text-body-4',
-                          'color-black',
-                          'font-weight-regular',
-                        ]"
-                      >
-                        <div :class="$style['basic-list__symbol']">-</div>
-                        <div :class="$style['basic-list__content']">
-                          법인주주명부
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li :class="$style['contents-list__item']">
-                  <div
-                    :class="[
-                      $style['contents-list__symbol'],
-                      $style['contents-list__symbol--circle'],
-                    ]"
-                  >
-                    4
-                  </div>
-                  <div
-                    :class="[$style['contents-list__content'], 'text-body-2']"
-                  >
-                    <div>기타서류(필요 시)</div>
-                    <ul
+                        <li
+                          :class="[
+                            $style['basic-list__item'],
+                            'text-body-4',
+                            'color-black',
+                            'font-weight-regular',
+                          ]"
+                        >
+                          <div :class="$style['basic-list__symbol']">-</div>
+                          <div :class="$style['basic-list__content']">
+                            사업자등록증
+                          </div>
+                        </li>
+                        <li
+                          :class="[
+                            $style['basic-list__item'],
+                            'text-body-4',
+                            'color-black',
+                            'font-weight-regular',
+                          ]"
+                        >
+                          <div :class="$style['basic-list__symbol']">-</div>
+                          <div :class="$style['basic-list__content']">
+                            법인등기부등본
+                          </div>
+                        </li>
+                        <li
+                          :class="[
+                            $style['basic-list__item'],
+                            'text-body-4',
+                            'color-black',
+                            'font-weight-regular',
+                          ]"
+                        >
+                          <div :class="$style['basic-list__symbol']">-</div>
+                          <div :class="$style['basic-list__content']">
+                            법인인감증명서
+                          </div>
+                        </li>
+                        <li
+                          :class="[
+                            $style['basic-list__item'],
+                            'text-body-4',
+                            'color-black',
+                            'font-weight-regular',
+                          ]"
+                        >
+                          <div :class="$style['basic-list__symbol']">-</div>
+                          <div :class="$style['basic-list__content']">
+                            법인주주명부
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li :class="$style['contents-list__item']">
+                    <div :class="$style['contents-list__head']">
+                      <div :class="$style['contents-list__symbol']">4</div>
+                      <div :class="$style['contents-list__title']">
+                        기타서류(필요 시)
+                      </div>
+                    </div>
+                    <div
                       :class="[
-                        $style['basic-list'],
-                        $style['basic-list--small-margin'],
+                        $style['contents-list__depth-3'],
                         'row-margin-item',
                       ]"
                     >
-                      <li
+                      <ul
                         :class="[
-                          $style['basic-list__item'],
-                          'text-body-4',
-                          'color-black',
-                          'font-weight-regular',
+                          $style['basic-list'],
+                          $style['basic-list--small-margin'],
                         ]"
                       >
-                        <div :class="$style['basic-list__symbol']">-</div>
-                        <div :class="$style['basic-list__content']">
-                          개인인감증명서
-                        </div>
-                      </li>
-                      <li
-                        :class="[
-                          $style['basic-list__item'],
-                          'text-body-4',
-                          'color-black',
-                          'font-weight-regular',
-                        ]"
-                      >
-                        <div :class="$style['basic-list__symbol']">-</div>
-                        <div :class="$style['basic-list__content']">
-                          그 외 소득 및 재산 증빙서류
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
+                        <li
+                          :class="[
+                            $style['basic-list__item'],
+                            'text-body-4',
+                            'color-black',
+                            'font-weight-regular',
+                          ]"
+                        >
+                          <div :class="$style['basic-list__symbol']">-</div>
+                          <div :class="$style['basic-list__content']">
+                            개인인감증명서
+                          </div>
+                        </li>
+                        <li
+                          :class="[
+                            $style['basic-list__item'],
+                            'text-body-4',
+                            'color-black',
+                            'font-weight-regular',
+                          ]"
+                        >
+                          <div :class="$style['basic-list__symbol']">-</div>
+                          <div :class="$style['basic-list__content']">
+                            그 외 소득 및 재산 증빙서류
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ol>
+              </div>
             </KeyValueText>
           </KeyValueItem>
         </KeyValueList>

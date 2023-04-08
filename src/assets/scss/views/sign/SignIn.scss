@@ -1,13 +1,14 @@
-.margin-top-auto {
+.illust {
+  padding-bottom: 40px;
+}
+
+.form {
+  padding-bottom: 24px;
+}
+
+.buttons {
   margin-top: auto;
-}
-
-.margin-top-small {
-  margin-top: 12px;
-}
-
-.margin-top-medium {
-  margin-top: 70px;
+  padding-top: 16px;
 }
 
 .sidebar {
@@ -15,23 +16,40 @@
   text-align: center;
 
   &__list {
+    @include reset-list;
     font-size: 0;
     line-height: 0;
   }
 
   &__item {
+    position: relative;
     display: inline-block;
     vertical-align: top;
   }
 
-  &__item + &__item:before {
-    content: '';
-    display: inline-block;
-    vertical-align: middle;
-    width: 1px;
-    height: 12px;
-    margin: 0 8px;
-    background: $color-gray-30;
+  &__item {
+    & + & {
+      margin-left: 17px;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: -9px;
+        margin-top: -6px;
+        width: 1px;
+        height: 12px;
+        background-color: $color-gray-30;
+      }
+    }
+  }
+
+  &__link {
+    @include reset-button;
+    display: block;
+    @include font-size-default(13);
+    font-weight: 300;
   }
 }
 
@@ -44,40 +62,27 @@
   }
 
   &__icon {
+    flex: none;
     width: 36px;
     height: 36px;
-  }
-
-  &__title {
-    flex: 1;
-    min-width: 0;
-    margin-left: 8px;
-    @include font-size-default(13);
-    color: $color-black;
-    font-weight: 500;
-  }
-
-  &__link {
-    display: flex;
-    align-items: center;
-    margin-left: 8px;
-    text-decoration: none;
-  }
-
-  &__text {
-    @include font-size-default(13);
-    color: $color-gray-80;
-  }
-
-  &__arrow {
-    margin-left: 2px;
-    width: 14px;
-    height: 14px;
 
     svg {
       display: block;
       width: 100%;
       height: 100%;
     }
+  }
+
+  &__title {
+    flex: 1;
+    min-width: 0;
+    margin: 0 8px;
+    @include font-size-default(13);
+    font-weight: 500;
+  }
+
+  &__link {
+    flex: none;
+    width: auto;
   }
 }

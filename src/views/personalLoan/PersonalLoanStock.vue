@@ -309,204 +309,166 @@ export default {
           </KeyValueItem>
 
           <KeyValueItem>
-            <KeyValueTitle>스탁론 위험성 안내</KeyValueTitle>
+            <KeyValueTitle :classNames="{ title: 'row-margin-item' }">
+              스탁론 위험성 안내
+            </KeyValueTitle>
             <KeyValueText>
-              <ul
-                :class="[
-                  $style['contents-list'],
-                  $style['contents-list--small-margin'],
-                  $style['margin-top-small'],
-                ]"
-              >
-                <li :class="$style['contents-list__item']">
-                  <div
-                    :class="[
-                      $style['contents-list__symbol'],
-                      $style['contents-list__symbol--circle'],
-                    ]"
-                  >
-                    1
-                  </div>
-                  <div
-                    :class="[
-                      $style['contents-list__content'],
-                      'text-body-2',
-                      'color-green',
-                    ]"
-                  >
-                    리스크관리시스템(RMS) 자동제한을 통해 종목매수제한 및
-                    보유제한을 두고 있습니다.
-                  </div>
-                </li>
-                <li :class="$style['contents-list__item']">
-                  <div
-                    :class="[
-                      $style['contents-list__symbol'],
-                      $style['contents-list__symbol--circle'],
-                    ]"
-                  >
-                    2
-                  </div>
-                  <div
-                    :class="[
-                      $style['contents-list__content'],
-                      'text-body-2',
-                      'color-green',
-                    ]"
-                  >
-                    담보유지비율 하락으로 인한 반대매매, 보유불가종목 반대매매
-                    등 담보관리를 위한 여러가지 제한이 있으니 계좌운용규칙을
-                    충분히 숙지하시기 바랍니다.
-                  </div>
-                </li>
-                <li :class="$style['contents-list__item']">
-                  <div
-                    :class="[
-                      $style['contents-list__symbol'],
-                      $style['contents-list__symbol--circle'],
-                    ]"
-                  >
-                    3
-                  </div>
-                  <div
-                    :class="[$style['contents-list__content'], 'text-body-2']"
-                  >
-                    주식 입/출고 및 대체가 제한되며, 계좌 내 일부 현금출금이
-                    제한됩니다.
-                  </div>
-                </li>
-                <li :class="$style['contents-list__item']">
-                  <div
-                    :class="[
-                      $style['contents-list__symbol'],
-                      $style['contents-list__symbol--circle'],
-                    ]"
-                  >
-                    4
-                  </div>
-                  <div
-                    :class="[$style['contents-list__content'], 'text-body-2']"
-                  >
-                    주가 하락 시에는 대출금 및 투자원금의 일부 또는 전부를 잃을
-                    수 있으니 투자에 유의하시기 바랍니다.
-                  </div>
-                </li>
-                <li :class="$style['contents-list__item']">
-                  <div
-                    :class="[
-                      $style['contents-list__symbol'],
-                      $style['contents-list__symbol--circle'],
-                    ]"
-                  >
-                    5
-                  </div>
-                  <div
-                    :class="[$style['contents-list__content'], 'text-body-2']"
-                  >
-                    상품의 위험성을 인지하시어 안정적인 투자를 위해 증권계좌
-                    담보평가비율 관리를 철저히 해주시기 바랍니다.
-                  </div>
-                </li>
-              </ul>
+              <div :class="$style['contents-list']">
+                <ol
+                  :class="[
+                    $style['contents-list__list'],
+                    $style['contents-list__list--quinary'],
+                  ]"
+                >
+                  <li :class="$style['contents-list__item']">
+                    <div :class="$style['contents-list__head']">
+                      <div :class="$style['contents-list__symbol']">1</div>
+                      <div
+                        :class="[$style['contents-list__title'], 'color-green']"
+                      >
+                        리스크관리시스템(RMS) 자동제한을 통해 종목매수제한 및
+                        보유제한을 두고 있습니다.
+                      </div>
+                    </div>
+                  </li>
+                  <li :class="$style['contents-list__item']">
+                    <div :class="$style['contents-list__head']">
+                      <div :class="$style['contents-list__symbol']">2</div>
+                      <div
+                        :class="[$style['contents-list__title'], 'color-green']"
+                      >
+                        리스크관리시스템(RMS) 자동제한을 통해 종목매수제한 및
+                        보유제한을 두고 있습니다.
+                      </div>
+                    </div>
+                  </li>
+                  <li :class="$style['contents-list__item']">
+                    <div :class="$style['contents-list__head']">
+                      <div :class="$style['contents-list__symbol']">3</div>
+                      <div :class="$style['contents-list__title']">
+                        주식 입/출고 및 대체가 제한되며, 계좌 내 일부 현금출금이
+                        제한됩니다.
+                      </div>
+                    </div>
+                  </li>
+                  <li :class="$style['contents-list__item']">
+                    <div :class="$style['contents-list__head']">
+                      <div :class="$style['contents-list__symbol']">4</div>
+                      <div :class="$style['contents-list__title']">
+                        주가 하락 시에는 대출금 및 투자원금의 일부 또는 전부를
+                        잃을 수 있으니 투자에 유의하시기 바랍니다.
+                      </div>
+                    </div>
+                  </li>
+                  <li :class="$style['contents-list__item']">
+                    <div :class="$style['contents-list__head']">
+                      <div :class="$style['contents-list__symbol']">5</div>
+                      <div :class="$style['contents-list__title']">
+                        상품의 위험성을 인지하시어 안정적인 투자를 위해 증권계좌
+                        담보평가비율 관리를 철저히 해주시기 바랍니다.
+                      </div>
+                    </div>
+                  </li>
+                </ol>
+              </div>
             </KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem>
-            <KeyValueTitle>추가대출안내</KeyValueTitle>
+            <KeyValueTitle :classNames="{ title: 'row-margin-item' }">
+              추가대출안내
+            </KeyValueTitle>
             <KeyValueText>
-              <ul
-                :class="[
-                  $style['contents-list'],
-                  $style['contents-list--small-margin'],
-                  $style['margin-top-small'],
-                ]"
-              >
-                <li :class="$style['contents-list__item']">
-                  <div
-                    :class="[
-                      $style['contents-list__symbol'],
-                      $style['contents-list__symbol--circle'],
-                    ]"
-                  >
-                    1
-                  </div>
-                  <div
-                    :class="[$style['contents-list__content'], 'text-body-2']"
-                  >
-                    담보평가액에 따라 한도 내 추가 대출 신청가능
-                  </div>
-                </li>
-                <li :class="$style['contents-list__item']">
-                  <div
-                    :class="[
-                      $style['contents-list__symbol'],
-                      $style['contents-list__symbol--circle'],
-                    ]"
-                  >
-                    2
-                  </div>
-                  <div
-                    :class="[$style['contents-list__content'], 'text-body-2']"
-                  >
-                    기존 집중투자비율 60~80% 상품은 15년 6월 15일부터 추가대출
-                    불가
-                    <div :class="$style['sub']">
-                      단, 한도대출(마이너스식)은 변경된 대출비율에 한해
-                      한도내추가대출 가능
+              <div :class="$style['contents-list']">
+                <ol
+                  :class="[
+                    $style['contents-list__list'],
+                    $style['contents-list__list--quinary'],
+                  ]"
+                >
+                  <li :class="$style['contents-list__item']">
+                    <div :class="$style['contents-list__head']">
+                      <div :class="$style['contents-list__symbol']">1</div>
+                      <div :class="$style['contents-list__title']">
+                        담보평가액에 따라 한도 내 추가 대출 신청가능
+                      </div>
                     </div>
-                  </div>
-                </li>
-                <li :class="$style['contents-list__item']">
-                  <div
-                    :class="[
-                      $style['contents-list__symbol'],
-                      $style['contents-list__symbol--circle'],
-                    ]"
-                  >
-                    3
-                  </div>
-                  <div
-                    :class="[$style['contents-list__content'], 'text-body-2']"
-                  >
-                    추가대출가능금액 = (계좌평가금액 - 대출잔액) × 대출가능비율
-                    - 대출잔액
-                  </div>
-                </li>
-                <li :class="$style['contents-list__item']">
-                  <div
-                    :class="[
-                      $style['contents-list__symbol'],
-                      $style['contents-list__symbol--circle'],
-                    ]"
-                  >
-                    4
-                  </div>
-                  <div
-                    :class="[$style['contents-list__content'], 'text-body-2']"
-                  >
-                    최초 대출금액과 상관없이 추가대출금액에 대해 인지대
-                    7만원~15만원 발생
-                    <div :class="$style['sub']">(신규대출과 동일)</div>
-                  </div>
-                </li>
-                <li :class="$style['contents-list__item']">
-                  <div
-                    :class="[
-                      $style['contents-list__symbol'],
-                      $style['contents-list__symbol--circle'],
-                    ]"
-                  >
-                    5
-                  </div>
-                  <div
-                    :class="[$style['contents-list__content'], 'text-body-2']"
-                  >
-                    최초대출과 추가대출은 별개의 약정이므로 상품조건(금리,
-                    사용기간, 결제일자, 만기일자)이 상이할 수 있음
-                    <div :class="$style['sub']">(상품포트폴리오는 동일함)</div>
-                  </div>
-                </li>
-              </ul>
+                  </li>
+                  <li :class="$style['contents-list__item']">
+                    <div :class="$style['contents-list__head']">
+                      <div :class="$style['contents-list__symbol']">2</div>
+                      <div :class="$style['contents-list__title']">
+                        기존 집중투자비율 60~80% 상품은 15년 6월 15일부터
+                        추가대출 불가
+                      </div>
+                    </div>
+                    <div
+                      :class="[
+                        $style['contents-list__depth-3'],
+                        'row-margin-mini',
+                      ]"
+                    >
+                      <p
+                        class="text-body-4 font-weight-light color-gray-tertiary"
+                      >
+                        단, 한도대출(마이너스식)은 변경된 대출비율에 한해
+                        한도내추가대출 가능
+                      </p>
+                    </div>
+                  </li>
+                  <li :class="$style['contents-list__item']">
+                    <div :class="$style['contents-list__head']">
+                      <div :class="$style['contents-list__symbol']">3</div>
+                      <div :class="$style['contents-list__title']">
+                        추가대출가능금액 = (계좌평가금액 - 대출잔액) ×
+                        대출가능비율 - 대출잔액
+                      </div>
+                    </div>
+                  </li>
+                  <li :class="$style['contents-list__item']">
+                    <div :class="$style['contents-list__head']">
+                      <div :class="$style['contents-list__symbol']">4</div>
+                      <div :class="$style['contents-list__title']">
+                        최초 대출금액과 상관없이 추가대출금액에 대해 인지대
+                        7만원~15만원 발생
+                      </div>
+                    </div>
+                    <div
+                      :class="[
+                        $style['contents-list__depth-3'],
+                        'row-margin-mini',
+                      ]"
+                    >
+                      <p
+                        class="text-body-4 font-weight-light color-gray-tertiary"
+                      >
+                        (신규대출과 동일)
+                      </p>
+                    </div>
+                  </li>
+                  <li :class="$style['contents-list__item']">
+                    <div :class="$style['contents-list__head']">
+                      <div :class="$style['contents-list__symbol']">5</div>
+                      <div :class="$style['contents-list__title']">
+                        최초대출과 추가대출은 별개의 약정이므로 상품조건(금리,
+                        사용기간, 결제일자, 만기일자)이 상이할 수 있음
+                      </div>
+                    </div>
+                    <div
+                      :class="[
+                        $style['contents-list__depth-3'],
+                        'row-margin-mini',
+                      ]"
+                    >
+                      <p
+                        class="text-body-4 font-weight-light color-gray-tertiary"
+                      >
+                        (상품포트폴리오는 동일함)
+                      </p>
+                    </div>
+                  </li>
+                </ol>
+              </div>
             </KeyValueText>
           </KeyValueItem>
         </KeyValueList>

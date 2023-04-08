@@ -392,231 +392,232 @@ export default {
           </KeyValueItem>
 
           <KeyValueItem>
-            <KeyValueTitle>구비서류</KeyValueTitle>
+            <KeyValueTitle :classNames="{ title: 'row-margin-item' }">
+              구비서류
+            </KeyValueTitle>
             <KeyValueText>
-              <ul
-                :class="[
-                  $style['contents-list'],
-                  $style['contents-list--small-margin'],
-                  $style['margin-top-small'],
-                ]"
-              >
-                <li :class="$style['contents-list__item']">
-                  <div
-                    :class="[
-                      $style['contents-list__symbol'],
-                      $style['contents-list__symbol--circle'],
-                    ]"
-                  >
-                    1
-                  </div>
-                  <div
-                    :class="[$style['contents-list__content'], 'text-body-2']"
-                  >
-                    <div>공통서류</div>
-                    <ul
+              <div :class="$style['contents-list']">
+                <ol
+                  :class="[
+                    $style['contents-list__list'],
+                    $style['contents-list__list--quinary'],
+                  ]"
+                >
+                  <li :class="$style['contents-list__item']">
+                    <div :class="$style['contents-list__head']">
+                      <div :class="$style['contents-list__symbol']">1</div>
+                      <div :class="$style['contents-list__title']">
+                        공통서류
+                      </div>
+                    </div>
+                    <div
                       :class="[
-                        $style['basic-list'],
-                        $style['basic-list--small-margin'],
+                        $style['contents-list__depth-3'],
                         'row-margin-item',
                       ]"
                     >
-                      <li
+                      <ul
                         :class="[
-                          $style['basic-list__item'],
-                          'text-body-4',
-                          'color-black',
-                          'font-weight-regular',
+                          $style['basic-list'],
+                          $style['basic-list--small-margin'],
                         ]"
                       >
-                        <div :class="$style['basic-list__symbol']">-</div>
-                        <div :class="$style['basic-list__content']">
-                          할부 대상품목의 견적서
-                        </div>
-                      </li>
-                      <li
-                        :class="[
-                          $style['basic-list__item'],
-                          'text-body-4',
-                          'color-black',
-                          'font-weight-regular',
-                        ]"
-                      >
-                        <div :class="$style['basic-list__symbol']">-</div>
-                        <div :class="$style['basic-list__content']">
-                          할부신청서
-                        </div>
-                      </li>
-                      <li
-                        :class="[
-                          $style['basic-list__item'],
-                          'text-body-4',
-                          'color-black',
-                          'font-weight-regular',
-                        ]"
-                      >
-                        <div :class="$style['basic-list__symbol']">-</div>
-                        <div :class="$style['basic-list__content']">
-                          의사면허증 사본
-                        </div>
-                      </li>
-                      <li
-                        :class="[
-                          $style['basic-list__item'],
-                          'text-body-4',
-                          'color-black',
-                          'font-weight-regular',
-                        ]"
-                      >
-                        <div :class="$style['basic-list__symbol']">-</div>
-                        <div :class="$style['basic-list__content']">
-                          사업자등록증 사본
-                        </div>
-                      </li>
-                      <li
-                        :class="[
-                          $style['basic-list__item'],
-                          'text-body-4',
-                          'color-black',
-                          'font-weight-regular',
-                        ]"
-                      >
-                        <div :class="$style['basic-list__symbol']">-</div>
-                        <div :class="$style['basic-list__content']">
-                          대표이사 인감증명서
-                        </div>
-                      </li>
-                      <li
-                        :class="[
-                          $style['basic-list__item'],
-                          'text-body-4',
-                          'color-black',
-                          'font-weight-regular',
-                        ]"
-                      >
-                        <div :class="$style['basic-list__symbol']">-</div>
-                        <div :class="$style['basic-list__content']">
-                          대표이사 주민등록등본
-                        </div>
-                      </li>
-                      <li
-                        :class="[
-                          $style['basic-list__item'],
-                          'text-body-4',
-                          'color-black',
-                          'font-weight-regular',
-                        ]"
-                      >
-                        <div :class="$style['basic-list__symbol']">-</div>
-                        <div :class="$style['basic-list__content']">
-                          대표이사 신분증 사본
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li :class="$style['contents-list__item']">
-                  <div
-                    :class="[
-                      $style['contents-list__symbol'],
-                      $style['contents-list__symbol--circle'],
-                    ]"
-                  >
-                    2
-                  </div>
-                  <div
-                    :class="[$style['contents-list__content'], 'text-body-2']"
-                  >
-                    <div>법인추가서류</div>
-                    <ul
+                        <li
+                          :class="[
+                            $style['basic-list__item'],
+                            'text-body-4',
+                            'color-black',
+                            'font-weight-regular',
+                          ]"
+                        >
+                          <div :class="$style['basic-list__symbol']">-</div>
+                          <div :class="$style['basic-list__content']">
+                            할부 대상품목의 견적서
+                          </div>
+                        </li>
+                        <li
+                          :class="[
+                            $style['basic-list__item'],
+                            'text-body-4',
+                            'color-black',
+                            'font-weight-regular',
+                          ]"
+                        >
+                          <div :class="$style['basic-list__symbol']">-</div>
+                          <div :class="$style['basic-list__content']">
+                            할부신청서
+                          </div>
+                        </li>
+                        <li
+                          :class="[
+                            $style['basic-list__item'],
+                            'text-body-4',
+                            'color-black',
+                            'font-weight-regular',
+                          ]"
+                        >
+                          <div :class="$style['basic-list__symbol']">-</div>
+                          <div :class="$style['basic-list__content']">
+                            의사면허증 사본
+                          </div>
+                        </li>
+                        <li
+                          :class="[
+                            $style['basic-list__item'],
+                            'text-body-4',
+                            'color-black',
+                            'font-weight-regular',
+                          ]"
+                        >
+                          <div :class="$style['basic-list__symbol']">-</div>
+                          <div :class="$style['basic-list__content']">
+                            사업자등록증 사본
+                          </div>
+                        </li>
+                        <li
+                          :class="[
+                            $style['basic-list__item'],
+                            'text-body-4',
+                            'color-black',
+                            'font-weight-regular',
+                          ]"
+                        >
+                          <div :class="$style['basic-list__symbol']">-</div>
+                          <div :class="$style['basic-list__content']">
+                            대표이사 인감증명서
+                          </div>
+                        </li>
+                        <li
+                          :class="[
+                            $style['basic-list__item'],
+                            'text-body-4',
+                            'color-black',
+                            'font-weight-regular',
+                          ]"
+                        >
+                          <div :class="$style['basic-list__symbol']">-</div>
+                          <div :class="$style['basic-list__content']">
+                            대표이사 주민등록등본
+                          </div>
+                        </li>
+                        <li
+                          :class="[
+                            $style['basic-list__item'],
+                            'text-body-4',
+                            'color-black',
+                            'font-weight-regular',
+                          ]"
+                        >
+                          <div :class="$style['basic-list__symbol']">-</div>
+                          <div :class="$style['basic-list__content']">
+                            대표이사 신분증 사본
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li :class="$style['contents-list__item']">
+                    <div :class="$style['contents-list__head']">
+                      <div :class="$style['contents-list__symbol']">2</div>
+                      <div :class="$style['contents-list__title']">
+                        법인추가서류
+                      </div>
+                    </div>
+                    <div
                       :class="[
-                        $style['basic-list'],
-                        $style['basic-list--small-margin'],
+                        $style['contents-list__depth-3'],
                         'row-margin-item',
                       ]"
                     >
-                      <li
+                      <ul
                         :class="[
-                          $style['basic-list__item'],
-                          'text-body-4',
-                          'color-black',
-                          'font-weight-regular',
+                          $style['basic-list'],
+                          $style['basic-list--small-margin'],
                         ]"
                       >
-                        <div :class="$style['basic-list__symbol']">-</div>
-                        <div :class="$style['basic-list__content']">
-                          대표이사는 연대보증 필수
-                        </div>
-                      </li>
-                      <li
-                        :class="[
-                          $style['basic-list__item'],
-                          'text-body-4',
-                          'color-black',
-                          'font-weight-regular',
-                        ]"
-                      >
-                        <div :class="$style['basic-list__symbol']">-</div>
-                        <div :class="$style['basic-list__content']">
-                          법인등기부등본
-                        </div>
-                      </li>
-                      <li
-                        :class="[
-                          $style['basic-list__item'],
-                          'text-body-4',
-                          'color-black',
-                          'font-weight-regular',
-                        ]"
-                      >
-                        <div :class="$style['basic-list__symbol']">-</div>
-                        <div :class="$style['basic-list__content']">
-                          법인인감증명서
-                        </div>
-                      </li>
-                      <li
-                        :class="[
-                          $style['basic-list__item'],
-                          'text-body-4',
-                          'color-black',
-                          'font-weight-regular',
-                        ]"
-                      >
-                        <div :class="$style['basic-list__symbol']">-</div>
-                        <div :class="$style['basic-list__content']">
-                          정관사본
-                        </div>
-                      </li>
-                      <li
-                        :class="[
-                          $style['basic-list__item'],
-                          'text-body-4',
-                          'color-black',
-                          'font-weight-regular',
-                        ]"
-                      >
-                        <div :class="$style['basic-list__symbol']">-</div>
-                        <div :class="$style['basic-list__content']">
-                          이사회결의서
-                        </div>
-                      </li>
-                      <li
-                        :class="[
-                          $style['basic-list__item'],
-                          'text-body-4',
-                          'color-black',
-                          'font-weight-regular',
-                        ]"
-                      >
-                        <div :class="$style['basic-list__symbol']">-</div>
-                        <div :class="$style['basic-list__content']">
-                          회사안내서
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
+                        <li
+                          :class="[
+                            $style['basic-list__item'],
+                            'text-body-4',
+                            'color-black',
+                            'font-weight-regular',
+                          ]"
+                        >
+                          <div :class="$style['basic-list__symbol']">-</div>
+                          <div :class="$style['basic-list__content']">
+                            대표이사는 연대보증 필수
+                          </div>
+                        </li>
+                        <li
+                          :class="[
+                            $style['basic-list__item'],
+                            'text-body-4',
+                            'color-black',
+                            'font-weight-regular',
+                          ]"
+                        >
+                          <div :class="$style['basic-list__symbol']">-</div>
+                          <div :class="$style['basic-list__content']">
+                            법인등기부등본
+                          </div>
+                        </li>
+                        <li
+                          :class="[
+                            $style['basic-list__item'],
+                            'text-body-4',
+                            'color-black',
+                            'font-weight-regular',
+                          ]"
+                        >
+                          <div :class="$style['basic-list__symbol']">-</div>
+                          <div :class="$style['basic-list__content']">
+                            법인인감증명서
+                          </div>
+                        </li>
+                        <li
+                          :class="[
+                            $style['basic-list__item'],
+                            'text-body-4',
+                            'color-black',
+                            'font-weight-regular',
+                          ]"
+                        >
+                          <div :class="$style['basic-list__symbol']">-</div>
+                          <div :class="$style['basic-list__content']">
+                            정관사본
+                          </div>
+                        </li>
+                        <li
+                          :class="[
+                            $style['basic-list__item'],
+                            'text-body-4',
+                            'color-black',
+                            'font-weight-regular',
+                          ]"
+                        >
+                          <div :class="$style['basic-list__symbol']">-</div>
+                          <div :class="$style['basic-list__content']">
+                            이사회결의서
+                          </div>
+                        </li>
+                        <li
+                          :class="[
+                            $style['basic-list__item'],
+                            'text-body-4',
+                            'color-black',
+                            'font-weight-regular',
+                          ]"
+                        >
+                          <div :class="$style['basic-list__symbol']">-</div>
+                          <div :class="$style['basic-list__content']">
+                            회사안내서
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ol>
+              </div>
             </KeyValueText>
           </KeyValueItem>
         </KeyValueList>

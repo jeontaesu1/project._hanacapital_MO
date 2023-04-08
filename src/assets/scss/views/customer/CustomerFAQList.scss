@@ -1,14 +1,15 @@
 @import '@/assets/scss/components/import/faq-list.scss';
 @import '@/assets/scss/components/import/empty.scss';
 
-.no-padding {
-  padding-top: 0;
+.nav {
+  margin-bottom: 0;
 }
 
-.margin-bottom-regular {
-  margin-bottom: 20px;
+.category {
+  margin-top: 20px;
+  margin-bottom: 0;
 }
 
-.margin-bottom-medium {
-  margin-bottom: 24px;
+.faq {
+  margin-top: 24px;
 }

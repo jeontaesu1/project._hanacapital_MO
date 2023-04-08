@@ -347,91 +347,59 @@ export default {
           </KeyValueItem>
 
           <KeyValueItem>
-            <KeyValueTitle>구비서류</KeyValueTitle>
+            <KeyValueTitle :classNames="{ title: 'row-margin-item' }">
+              구비서류
+            </KeyValueTitle>
             <KeyValueText>
-              <ul
-                :class="[
-                  $style['contents-list'],
-                  $style['contents-list--small-margin'],
-                  $style['margin-top-small'],
-                ]"
-              >
-                <li :class="$style['contents-list__item']">
-                  <div
-                    :class="[
-                      $style['contents-list__symbol'],
-                      $style['contents-list__symbol--circle'],
-                    ]"
-                  >
-                    1
-                  </div>
-                  <div
-                    :class="[$style['contents-list__content'], 'text-body-2']"
-                  >
-                    대출약정서 Set
-                  </div>
-                </li>
-                <li :class="$style['contents-list__item']">
-                  <div
-                    :class="[
-                      $style['contents-list__symbol'],
-                      $style['contents-list__symbol--circle'],
-                    ]"
-                  >
-                    2
-                  </div>
-                  <div
-                    :class="[$style['contents-list__content'], 'text-body-2']"
-                  >
-                    인감증명서
-                  </div>
-                </li>
-                <li :class="$style['contents-list__item']">
-                  <div
-                    :class="[
-                      $style['contents-list__symbol'],
-                      $style['contents-list__symbol--circle'],
-                    ]"
-                  >
-                    3
-                  </div>
-                  <div
-                    :class="[$style['contents-list__content'], 'text-body-2']"
-                  >
-                    신분증 사본
-                  </div>
-                </li>
-                <li :class="$style['contents-list__item']">
-                  <div
-                    :class="[
-                      $style['contents-list__symbol'],
-                      $style['contents-list__symbol--circle'],
-                    ]"
-                  >
-                    4
-                  </div>
-                  <div
-                    :class="[$style['contents-list__content'], 'text-body-2']"
-                  >
-                    사업자등록증
-                  </div>
-                </li>
-                <li :class="$style['contents-list__item']">
-                  <div
-                    :class="[
-                      $style['contents-list__symbol'],
-                      $style['contents-list__symbol--circle'],
-                    ]"
-                  >
-                    5
-                  </div>
-                  <div
-                    :class="[$style['contents-list__content'], 'text-body-2']"
-                  >
-                    소득증빙서류 등
-                  </div>
-                </li>
-              </ul>
+              <div :class="$style['contents-list']">
+                <ol
+                  :class="[
+                    $style['contents-list__list'],
+                    $style['contents-list__list--quinary'],
+                  ]"
+                >
+                  <li :class="$style['contents-list__item']">
+                    <div :class="$style['contents-list__head']">
+                      <div :class="$style['contents-list__symbol']">1</div>
+                      <div :class="$style['contents-list__title']">
+                        대출약정서 Set
+                      </div>
+                    </div>
+                  </li>
+                  <li :class="$style['contents-list__item']">
+                    <div :class="$style['contents-list__head']">
+                      <div :class="$style['contents-list__symbol']">2</div>
+                      <div :class="$style['contents-list__title']">
+                        인감증명서
+                      </div>
+                    </div>
+                  </li>
+                  <li :class="$style['contents-list__item']">
+                    <div :class="$style['contents-list__head']">
+                      <div :class="$style['contents-list__symbol']">3</div>
+                      <div :class="$style['contents-list__title']">
+                        신분증 사본
+                      </div>
+                    </div>
+                  </li>
+                  <li :class="$style['contents-list__item']">
+                    <div :class="$style['contents-list__head']">
+                      <div :class="$style['contents-list__symbol']">4</div>
+                      <div :class="$style['contents-list__title']">
+                        사업자등록증
+                      </div>
+                    </div>
+                  </li>
+                  <li :class="$style['contents-list__item']">
+                    <div :class="$style['contents-list__head']">
+                      <div :class="$style['contents-list__symbol']">5</div>
+                      <div :class="$style['contents-list__title']">
+                        소득증빙서류 등
+                      </div>
+                    </div>
+                  </li>
+                </ol>
+              </div>
             </KeyValueText>
           </KeyValueItem>
 

@@ -201,7 +201,7 @@ export default {
     </section>
 
     <div class="inline-wrap align-center row-margin-item-group">
-      <TextButton :classNames="{ wrap: 'color-gray' }">
+      <TextButton :classNames="{ wrap: 'text-body-4 color-gray' }">
         더보기
         <template v-slot:rightIcon>
           <IconArrow />

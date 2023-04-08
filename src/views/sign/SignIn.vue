@@ -1,7 +1,6 @@
 <script>
 import { reactive, onMounted, onUnmounted } from 'vue';
 
-import { useUiCommonStore } from '@/stores/ui/common';
 import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
@@ -55,13 +54,12 @@ export default {
   },
   setup() {
     const state = reactive({
-      nameError: false,
+      idError: false,
       passwordError: false,
     });
 
     const store = {
       ui: {
-        common: useUiCommonStore(),
         header: useUiHeaderStore(),
       },
     };
@@ -86,16 +84,18 @@ export default {
 </script>
 
 <template>
-  <PageContents>
-    <UiTab>
-      <StickyBar>
-        <NavTab :useUiTab="true" :auto="true">
-          <NavTabButton link="SignInTab001_001">아이디</NavTabButton>
-          <NavTabButton link="SignInTab001_002">공동인증서</NavTabButton>
-        </NavTab>
-      </StickyBar>
+  <UiTab>
+    <PageContents>
+      <template v-slot:head>
+        <StickyBar>
+          <NavTab :head="true" :useUiTab="true">
+            <NavTabButton link="signInTab001">아이디</NavTabButton>
+            <NavTabButton link="signInTab002">공동인증서</NavTabButton>
+          </NavTab>
+        </StickyBar>
+      </template>
 
-      <UiTabPanel name="SignInTab001_001">
+      <UiTabPanel name="signInTab001">
         <PageTextGroup>
           <PageMainText>
             회원 서비스 이용을 위해<br />
@@ -103,26 +103,26 @@ export default {
           </PageMainText>
         </PageTextGroup>
 
-        <FormList>
-          <FormListItem titleText="이름" target="#SignInName">
-            <FormInvalid :error="state.nameError">
-              <InputBlock :error="state.nameError">
+        <FormList :classNames="{ wrap: $style['form'] }">
+          <FormListItem titleText="아이디" target="#signInId">
+            <FormInvalid :error="state.idError">
+              <InputBlock :error="state.idError">
                 <InputBlockCell :flexible="true">
-                  <BasicInput title="이름" id="SignInName" />
+                  <BasicInput title="아이디" id="signInId" />
                 </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
 
-          <FormListItem titleText="비밀번호" target="#SignInPassword">
+          <FormListItem titleText="비밀번호" target="#signInPassword">
             <FormInvalid :error="state.passwordError">
               <InputBlock :error="state.passwordError">
                 <InputBlockCell :flexible="true">
                   <BasicInput
                     type="password"
                     title="비밀번호"
-                    id="SignInPassword"
+                    id="signInPassword"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -131,52 +131,34 @@ export default {
           </FormListItem>
         </FormList>
 
-        <ButtonList :classNames="{ wrap: $style['margin-top-auto'] }">
+        <ButtonList :classNames="{ wrap: $style['buttons'] }">
           <ButtonListItem>
             <BasicButton>로그인</BasicButton>
           </ButtonListItem>
         </ButtonList>
 
         <div :class="$style['sidebar']">
-          <div :class="$style['sidebar__list']">
-            <div :class="$style['sidebar__item']">
-              <TextButton
-                tagName="RouterLink"
-                to=""
-                :classNames="{
-                  wrap: 'text-body-4 color-gray-tertiary font-weight-regular',
-                }"
-              >
+          <ul :class="$style['sidebar__list']">
+            <li :class="$style['sidebar__item']">
+              <button type="button" :class="$style['sidebar__link']">
                 아이디찾기
-              </TextButton>
-            </div>
-            <div :class="$style['sidebar__item']">
-              <TextButton
-                tagName="RouterLink"
-                to=""
-                :classNames="{
-                  wrap: 'text-body-4 color-gray-tertiary font-weight-regular',
-                }"
-              >
+              </button>
+            </li>
+            <li :class="$style['sidebar__item']">
+              <button type="button" :class="$style['sidebar__link']">
                 비밀번호 찾기
-              </TextButton>
-            </div>
-            <div :class="$style['sidebar__item']">
-              <TextButton
-                tagName="RouterLink"
-                to=""
-                :classNames="{
-                  wrap: 'text-body-4 color-gray-tertiary font-weight-regular',
-                }"
-              >
+              </button>
+            </li>
+            <li :class="$style['sidebar__item']">
+              <button type="button" :class="$style['sidebar__link']">
                 회원가입
-              </TextButton>
-            </div>
-          </div>
+              </button>
+            </li>
+          </ul>
         </div>
       </UiTabPanel>
 
-      <UiTabPanel name="SignInTab001_002">
+      <UiTabPanel name="signInTab002">
         <PageTextGroup>
           <PageMainText>
             개인회원은 공인인증서<br />
@@ -184,46 +166,52 @@ export default {
           </PageMainText>
         </PageTextGroup>
 
-        <IllustObject type="certification" />
+        <IllustObject
+          type="certification"
+          :classNames="{ wrap: $style['illust'] }"
+        />
 
-        <BasicButton line="true" theme="quaternary"
-          >공동인증서 등록</BasicButton
-        >
-        <BasicButton :class="$style['margin-top-small']">
-          공동인증서 로그인
-        </BasicButton>
+        <ButtonList align="full" :classNames="{ wrap: $style['buttons'] }">
+          <ButtonListItem>
+            <BasicButton line="true" theme="quaternary"
+              >공동인증서 등록</BasicButton
+            >
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton>공동인증서 로그인</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
 
         <div :class="$style['sidebar']">
-          <div :class="$style['sidebar__list']">
-            <div :class="$style['sidebar__item']">
-              <TextButton
-                tagName="RouterLink"
-                to=""
-                :classNames="{
-                  wrap: 'text-body-4 color-gray-tertiary font-weight-regular',
-                }"
-              >
+          <ul :class="$style['sidebar__list']">
+            <li :class="$style['sidebar__item']">
+              <button type="button" :class="$style['sidebar__link']">
                 회원가입
-              </TextButton>
-            </div>
-          </div>
+              </button>
+            </li>
+          </ul>
         </div>
       </UiTabPanel>
-    </UiTab>
 
-    <div :class="$style['join']">
-      <div :class="$style['join__inner']">
-        <div :class="$style['join__icon']"><IconLogo /></div>
-        <div :class="$style['join__title']">앱에서 가입하셨나요?</div>
-        <a href="" :class="$style['join__link']">
-          <span :class="$style['join__text']">앱회원 가입</span>
-          <span :class="$style['join__arrow']">
-            <IconLink />
-          </span>
-        </a>
+      <div :class="$style['join']">
+        <div :class="$style['join__inner']">
+          <div :class="$style['join__icon']"><IconLogo /></div>
+          <div :class="$style['join__title']">앱에서 가입하셨나요?</div>
+          <TextButton
+            :block="true"
+            :classNames="{
+              wrap: [$style['join__link'], 'text-body-4 color-gray'],
+            }"
+          >
+            앱회원 가입
+            <template v-slot:rightIcon>
+              <IconLink />
+            </template>
+          </TextButton>
+        </div>
       </div>
-    </div>
-  </PageContents>
+    </PageContents>
+  </UiTab>
 </template>
 
 <style lang="scss" module>

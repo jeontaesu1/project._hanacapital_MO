@@ -118,7 +118,7 @@ export default {
     <!-- // Case : 검색 결과 있을 때 -->
 
     <div class="inline-wrap align-center row-margin-contents">
-      <TextButton :classNames="{ wrap: 'color-gray' }">
+      <TextButton :classNames="{ wrap: 'text-body-4 color-gray' }">
         더보기
         <template v-slot:rightIcon>
           <IconArrow />
