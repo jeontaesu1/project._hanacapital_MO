@@ -11,6 +11,7 @@ import LayerSignUpAppPinSet from '@/views/sign/LayerSignUpAppPinSet.vue';
 import LayerSignUpAppPinConfirm from '@/views/sign/LayerSignUpAppPinConfirm.vue';
 import LayerSignUpAppAddFingerprint from '@/views/sign/LayerSignUpAppAddFingerprint.vue';
 import LayerSignUpAppAddFaceId from '@/views/sign/LayerSignUpAppAddFaceId.vue';
+import LayerSignUpAppRegistrationCompleted from '@/views/sign/LayerSignUpAppRegistrationCompleted.vue';
 
 export default {
   components: {
@@ -23,6 +24,7 @@ export default {
     LayerSignUpAppPinConfirm,
     LayerSignUpAppAddFingerprint,
     LayerSignUpAppAddFaceId,
+    LayerSignUpAppRegistrationCompleted,
   },
   setup() {
     const layer001 = ref(null);
@@ -30,6 +32,7 @@ export default {
     const layer003 = ref(null);
     const layer004 = ref(null);
     const layer005 = ref(null);
+    const layer006 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -46,6 +49,9 @@ export default {
     const layer005Open = (e = {}) => {
       layer005.value.layer.open(e.target);
     };
+    const layer006Open = (e = {}) => {
+      layer006.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -53,11 +59,13 @@ export default {
       layer003,
       layer004,
       layer005,
+      layer006,
       layer001Open,
       layer002Open,
       layer003Open,
       layer004Open,
       layer005Open,
+      layer006Open,
     };
   },
 };
@@ -88,6 +96,9 @@ export default {
       <ButtonListItem>
         <BasicButton @click="layer005Open">인증수단 추가 - Face ID</BasicButton>
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer006Open">가입완료</BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <LayerSignUpAppAgree ref="layer001" />
@@ -95,5 +106,6 @@ export default {
     <LayerSignUpAppPinConfirm ref="layer003" />
     <LayerSignUpAppAddFingerprint ref="layer004" />
     <LayerSignUpAppAddFaceId ref="layer005" />
+    <LayerSignUpAppRegistrationCompleted ref="layer006" />
   </PageContents>
 </template>

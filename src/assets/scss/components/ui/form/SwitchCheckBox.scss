@@ -1,0 +1,41 @@
+.switch-checkbox {
+  font-size: 0;
+
+  &__label {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    width: 44px;
+    height: 26px;
+    background-color: $color-gray-20;
+    border-radius: 50px;
+    font-size: 0;
+    line-height: 0;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 22px;
+      height: 22px;
+      background-color: $color-white;
+      border-radius: 50%;
+      transition: all 0.3s;
+    }
+  }
+  &__input {
+    display: none;
+
+    &:checked + label {
+      background-color: $color-navy-50;
+    }
+
+    &:checked + label::after {
+      left: 20px;
+    }
+  }
+}

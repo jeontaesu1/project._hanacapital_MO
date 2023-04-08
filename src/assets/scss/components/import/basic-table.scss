@@ -1,0 +1,61 @@
+.basic-table {
+  width: 100%;
+  border-top: 1px solid $color-gray-60;
+
+  table {
+    @include basic-table;
+  }
+  thead {
+    th {
+      padding: 8px 15px;
+      border-left: 1px solid $color-gray-30;
+      border-bottom: 1px solid $color-gray-30;
+      word-break: break-all;
+      color: $color-gray-70;
+      font-weight: 400;
+      @include font-size-default(12);
+
+      &:first-child {
+        border-left: none;
+      }
+    }
+  }
+  tbody {
+    td {
+      padding: 12px 15px;
+      border-left: 1px solid $color-gray-30;
+      border-bottom: 1px solid $color-gray-30;
+      word-break: break-all;
+      color: $color-black;
+      @include font-size-default(13);
+      vertical-align: middle;
+      text-align: center;
+
+      &:first-child {
+        border-left: none;
+      }
+
+      &.monthly {
+        width: 120px;
+      }
+    }
+  }
+  tfoot {
+    td {
+      padding: 12px 15px;
+      border-left: 1px solid $color-gray-30;
+      border-bottom: 1px solid $color-gray-30;
+      word-break: break-all;
+      background-color: $color-navy-05;
+      color: $color-black;
+      @include font-size-default(13);
+      font-weight: 500;
+      vertical-align: middle;
+      text-align: center;
+
+      &:first-child {
+        border-left: none;
+      }
+    }
+  }
+}

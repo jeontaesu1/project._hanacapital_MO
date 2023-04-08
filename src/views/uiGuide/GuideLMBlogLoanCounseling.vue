@@ -8,6 +8,7 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 import LayerLMBlogLoanCounselingApartmentPriceSearch from '@/views/lm-blog/LayerLMBlogLoanCounselingApartmentPriceSearch.vue';
 import LayerLMBlogLoanCounselingApartmentCertified from '@/views/lm-blog/LayerLMBlogLoanCounselingApartmentCertified.vue';
+import LayerLMBlogLoanCounselingApartmentCertifiedConfirm from '@/views/lm-blog/LayerLMBlogLoanCounselingApartmentCertifiedConfirm.vue';
 import LayerLMBlogLoanCounselingVehicleAvailable from '@/views/lm-blog/LayerLMBlogLoanCounselingVehicleAvailable.vue';
 
 export default {
@@ -18,12 +19,14 @@ export default {
     ButtonListItem,
     LayerLMBlogLoanCounselingApartmentPriceSearch,
     LayerLMBlogLoanCounselingApartmentCertified,
+    LayerLMBlogLoanCounselingApartmentCertifiedConfirm,
     LayerLMBlogLoanCounselingVehicleAvailable,
   },
   setup() {
     const layer001 = ref(null);
     const layer002 = ref(null);
     const layer003 = ref(null);
+    const layer004 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -34,14 +37,19 @@ export default {
     const layer003Open = (e = {}) => {
       layer003.value.layer.open(e.target);
     };
+    const layer004Open = (e = {}) => {
+      layer004.value.layer.open(e.target);
+    };
 
     return {
       layer001,
       layer002,
       layer003,
+      layer004,
       layer001Open,
       layer002Open,
       layer003Open,
+      layer004Open,
     };
   },
 };
@@ -62,12 +70,16 @@ export default {
         <BasicButton @click="layer002Open">아파트 등기부등본</BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer003Open">대출가능 차량 기준안내</BasicButton>
+        <BasicButton @click="layer003Open">등기부등록 확인 팝업</BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer004Open">대출가능 차량 기준안내</BasicButton>
       </ButtonListItem>
     </ButtonList>
 
     <LayerLMBlogLoanCounselingApartmentPriceSearch ref="layer001" />
     <LayerLMBlogLoanCounselingApartmentCertified ref="layer002" />
-    <LayerLMBlogLoanCounselingVehicleAvailable ref="layer003" />
+    <LayerLMBlogLoanCounselingApartmentCertifiedConfirm ref="layer003" />
+    <LayerLMBlogLoanCounselingVehicleAvailable ref="layer004" />
   </PageContents>
 </template>

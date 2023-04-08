@@ -1,5 +1,6 @@
 <script>
 import { ref, reactive, onMounted } from 'vue';
+import Tooltip from 'vue3-popper';
 
 import { useUiLoadingStore } from '@/stores/ui/loading';
 
@@ -72,8 +73,10 @@ import IllustInfoTitle from '@/components/ui/common/IllustInfoTitle.vue';
 import IllustInfoText from '@/components/ui/common/IllustInfoText.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
 import RoundStatus from '@/components/ui/text/RoundStatus.vue';
+import ScrollSection from '@/components/ui/section/ScrollSection.vue';
 import StepProgress from '@/components/ui/progress/StepProgress.vue';
 import SearchButton from '@/components/ui/button/SearchButton.vue';
+import SwitchCheckBox from '@/components/ui/form/SwitchCheckBox.vue';
 
 import BrandLogo001 from '@/assets/images/bank-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/bank-logo/lotte.svg?component';
@@ -108,6 +111,7 @@ import IconCustomerVisit from '@/assets/images/icon/customer-visit.svg?component
 import IconInstallation from '@/assets/images/icon/installation.svg?component';
 import IconCompany from '@/assets/images/icon/company.svg?component';
 import IconDocumentComplete from '@/assets/images/icon/document-complete.svg?component';
+import IconTooltip from '@/assets/images/icon/tooltip.svg?component';
 
 export default {
   components: {
@@ -181,6 +185,9 @@ export default {
     RoundStatus,
     StepProgress,
     SearchButton,
+    ScrollSection,
+    SwitchCheckBox,
+    Tooltip,
     IconAdd,
     BrandLogo001,
     BrandLogo002,
@@ -215,6 +222,7 @@ export default {
     IconInstallation,
     IconCompany,
     IconDocumentComplete,
+    IconTooltip,
   },
   setup() {
     const store = {
@@ -234,6 +242,17 @@ export default {
     const layerTest004 = ref(null);
     const testAccordion = ref(null);
 
+    const preRef = ref(null);
+
+    const copyToClipboard = async () => {
+      try {
+        await navigator.clipboard.writeText(preRef.value.innerHTML);
+        console.log('Text copied to clipboard');
+      } catch (err) {
+        console.error('Failed to copy text: ', err);
+      }
+    };
+    undefined;
     const alertOpen = (options) => {
       alert.value.open(options);
     };
@@ -321,6 +340,9 @@ export default {
       testInputEvent,
       testAccordionAllOpen,
       testAccordionAllClose,
+
+      preRef,
+      copyToClipboard,
     };
   },
 };
@@ -5460,6 +5482,275 @@ export default {
       <h2 class="test-section-title">Component Title</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Component table</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <!-- table -->
+        <div :class="$style['basic-table']">
+          <table>
+            <thead>
+              <tr>
+                <th>동거명의인</th>
+                <th>주민번호</th>
+                <th>최종지분</th>
+                <th>주소</th>
+                <th>순위번호</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>박지혜<br />(공유자)</td>
+                <td>920709-*******</td>
+                <td>2분의 1</td>
+                <td>
+                  채권최고금액 금330,000,000원<br />근저당권자 주식회사 국민은행
+                </td>
+                <td>박지혜</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- //table -->
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">테이블이 없을경우</h3>
+        <ScrollSection>
+          <template v-slot:head>
+            <h2 class="text-body-2">
+              2. 소유지분을 제외한 소유권에 관한 사항(갑구)
+            </h2>
+          </template>
+          <template v-slot:foot>
+            <p :class="$style['not-table']">기록사항 없음</p>
+          </template>
+        </ScrollSection>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Component 타이틀 + 스크롤</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">스크롤 + 타이틀 + 아이콘</h3>
+        <ScrollSection>
+          <template v-slot:head>
+            <h2 class="text-body-2">
+              2. 소유지분을 제외한 소유권에 관한 사항(갑구)
+            </h2>
+          </template>
+
+          <!-- table -->
+          <div :class="$style['basic-table']">
+            <table>
+              <thead>
+                <tr>
+                  <th>동거명의인</th>
+                  <th>주민번호</th>
+                  <th>최종지분</th>
+                  <th>주소</th>
+                  <th>순위번호</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>박지혜<br />(공유자)</td>
+                  <td>920709-*******</td>
+                  <td>2분의 1</td>
+                  <td>
+                    채권최고금액 금330,000,000원<br />근저당권자 주식회사
+                    국민은행
+                  </td>
+                  <td>박지혜</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- //table -->
+        </ScrollSection>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">스크롤 + 아이콘</h3>
+        <ScrollSection>
+          <template v-slot:head> <h2 class="text-body-2">&nbsp;</h2></template>
+
+          <!-- table -->
+          <div :class="$style['basic-table']">
+            <table>
+              <thead>
+                <tr>
+                  <th>동거명의인</th>
+                  <th>주민번호</th>
+                  <th>최종지분</th>
+                  <th>주소</th>
+                  <th>순위번호</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>박지혜<br />(공유자)</td>
+                  <td>920709-*******</td>
+                  <td>2분의 1</td>
+                  <td>
+                    채권최고금액 금330,000,000원<br />근저당권자 주식회사
+                    국민은행
+                  </td>
+                  <td>박지혜</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- //table -->
+        </ScrollSection>
+        <!-- 소스 카피 기능용 소스(미구현) -->
+        <div class="test-section-copy">
+          <div><button class="test-section-copy-button">copy</button></div>
+          <pre class="test-section-copy-code"></pre>
+        </div>
+        <!-- //소스 카피 기능용 소스 -->
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">스크롤만 있을경우</h3>
+        <ScrollSection>
+          <!-- table -->
+          <div :class="$style['basic-table']">
+            <table>
+              <thead>
+                <tr>
+                  <th>동거명의인</th>
+                  <th>주민번호</th>
+                  <th>최종지분</th>
+                  <th>주소</th>
+                  <th>순위번호</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>박지혜<br />(공유자)</td>
+                  <td>920709-*******</td>
+                  <td>2분의 1</td>
+                  <td>
+                    채권최고금액 금330,000,000원<br />근저당권자 주식회사
+                    국민은행
+                  </td>
+                  <td>박지혜</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- //table -->
+        </ScrollSection>
+        <!-- 소스 카피 기능용 소스(미구현) -->
+        <div class="test-section-copy">
+          <div><button class="test-section-copy-button">copy</button></div>
+          <pre class="test-section-copy-code"></pre>
+        </div>
+        <!-- //소스 카피 기능용 소스 -->
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">SwitchCheckBox (스위치)</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <SwitchCheckBox id="SwitchCheckBox" />
+        <!-- 소스 카피 기능용 소스(미구현) -->
+        <div class="test-section-copy">
+          <div><button class="test-section-copy-button">copy</button></div>
+          <pre class="test-section-copy-code">
+            import SwitchCheckBox from '@/components/ui/form/SwitchCheckBox.vue';
+            components: {
+              SwitchCheckBox,
+            }
+            <SwitchCheckBox id="인풋과 매칭될 아이디 할당" />
+            <SwitchCheckBox id="test" /> // 예시
+          </pre>
+        </div>
+        <!-- //소스 카피 기능용 소스 -->
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">스위치 case</h3>
+        <ul :class="$style['switch-list']">
+          <li>
+            <p :class="$style['switch-list__title']">
+              앱 알림을 받아 보시겠어요?
+            </p>
+            <SwitchCheckBox id="alarm" />
+          </li>
+          <li>
+            <p :class="$style['switch-list__title']">
+              자동으로 로그인하시겠어요?
+            </p>
+            <SwitchCheckBox id="auto" />
+          </li>
+        </ul>
+
+        <!-- 소스 카피 기능용 소스(미구현) -->
+        <div class="test-section-copy">
+          <div>
+            <button class="test-section-copy-button" @click="copyToClipboard">
+              copy
+            </button>
+          </div>
+          <pre class="test-section-copy-code" ref="preRef">
+            <ul :class="$style['switch-list']">
+              <li>
+                <p :class="$style['switch-list__title']">
+                  앱 알림을 받아 보시겠어요?
+                </p>
+                <SwitchCheckBox id="alarm" />
+              </li>
+              <li>
+                <p :class="$style['switch-list__title']">
+                  자동으로 로그인하시겠어요?
+                </p>
+                <SwitchCheckBox id="auto" />
+              </li>
+            </ul>
+            import SwitchCheckBox from '@/components/ui/form/SwitchCheckBox.vue';
+            components: {
+              SwitchCheckBox,
+            }
+            <SwitchCheckBox id="인풋과 매칭될 아이디 할당" />
+            <SwitchCheckBox id="test" /> // 예시
+            @import '@/assets/scss/components/import/switch-list.scss';
+          </pre>
+        </div>
+        <!-- //소스 카피 기능용 소스 -->
+      </div>
+    </section>
+    <section class="test-section">
+      <h2 class="test-section-title">툴팁(tooltip)</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <!-- 
+          placement 레이어팝업 생성 위치 top,bottom 등
+          arrowPadding = 화살표 위치
+         -->
+        <Tooltip arrow placement="top" arrowPadding="116">
+          <div :class="$style['tooltip__header']">
+            자동로그인 설정
+            <button :class="$style['tooltip__button']"><IconTooltip /></button>
+          </div>
+          <template #content>
+            <h3 :class="$style['tooltip__title']">공동인증서 등록</h3>
+            <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+              <li :class="[$style['basic-list__item'], 'color-white']">
+                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__content']">
+                  개인/개인사업자 회원은 공동인증서 로그인을 위해 아이디에
+                  공동인증서를 등록해야 합니다. (법인 회원은 별도 등록이
+                  필요하지 않습니다.)
+                </div>
+              </li>
+            </ul>
+          </template>
+        </Tooltip>
       </div>
     </section>
   </div>
