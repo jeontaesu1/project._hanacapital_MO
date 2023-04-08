@@ -140,11 +140,11 @@ export default {
         <ul :class="$style['icon-list__list']">
           <li :class="$style['icon-list__item']">
             <button type="button" :class="$style['icon-list__block']">
-              <div :class="$style['icon-list__icon']"><IconCalculate /></div>
-              <div :class="$style['icon-list__content']">
-                <div :class="$style['icon-list__text']">월 납입금 계산</div>
-                <div :class="$style['icon-list__title']">대출 계산기</div>
-              </div>
+              <span :class="$style['icon-list__icon']"><IconCalculate /></span>
+              <span :class="$style['icon-list__content']">
+                <span :class="$style['icon-list__text']">월 납입금 계산</span>
+                <span :class="$style['icon-list__title']">대출 계산기</span>
+              </span>
             </button>
           </li>
         </ul>

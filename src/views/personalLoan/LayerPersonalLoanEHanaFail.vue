@@ -76,35 +76,37 @@ export default {
         <ul :class="$style['icon-list__list']">
           <li :class="$style['icon-list__item']">
             <button type="button" :class="$style['icon-list__block']">
-              <div :class="$style['icon-list__icon']"><IconBuilding /></div>
-              <div :class="$style['icon-list__content']">
-                <div :class="$style['icon-list__text']">
+              <span :class="$style['icon-list__icon']"><IconBuilding /></span>
+              <span :class="$style['icon-list__content']">
+                <span :class="$style['icon-list__text']">
                   아파트를 소유중이신가요?
-                </div>
-                <div :class="$style['icon-list__title']">행복아파트론</div>
-              </div>
+                </span>
+                <span :class="$style['icon-list__title']">행복아파트론</span>
+              </span>
             </button>
           </li>
           <li :class="$style['icon-list__item']">
             <button type="button" :class="$style['icon-list__block']">
-              <div :class="$style['icon-list__icon']"><IconCar /></div>
-              <div :class="$style['icon-list__content']">
-                <div :class="$style['icon-list__text']">
+              <span :class="$style['icon-list__icon']"><IconCar /></span>
+              <span :class="$style['icon-list__content']">
+                <span :class="$style['icon-list__text']">
                   자동차를 소유중이신가요?
-                </div>
-                <div :class="$style['icon-list__title']">
+                </span>
+                <span :class="$style['icon-list__title']">
                   원큐자동차담보대출
-                </div>
-              </div>
+                </span>
+              </span>
             </button>
           </li>
           <li :class="$style['icon-list__item']">
             <button type="button" :class="$style['icon-list__block']">
-              <div :class="$style['icon-list__icon']"><IconPig /></div>
-              <div :class="$style['icon-list__content']">
-                <div :class="$style['icon-list__text']">소득이 있으신가요?</div>
-                <div :class="$style['icon-list__title']">e하나신용대출</div>
-              </div>
+              <span :class="$style['icon-list__icon']"><IconPig /></span>
+              <span :class="$style['icon-list__content']">
+                <span :class="$style['icon-list__text']"
+                  >소득이 있으신가요?</span
+                >
+                <span :class="$style['icon-list__title']">e하나신용대출</span>
+              </span>
             </button>
           </li>
         </ul>

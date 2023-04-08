@@ -1153,6 +1153,10 @@ export default {
           data.log.forEach((log) => {
             add(log.date);
           });
+
+          if (data.log.length) {
+            data.update = data.log[data.log.length - 1].date;
+          }
         });
       });
 
@@ -1358,7 +1362,15 @@ export default {
                     >
                       {{ data.create }}
                     </td>
-                    <td></td>
+                    <td
+                      :class="[
+                        {
+                          'is-emphasis': latestDate === data.update,
+                        },
+                      ]"
+                    >
+                      {{ data.update }}
+                    </td>
                     <td>
                       <ul v-if="data.log.length" class="index-log">
                         <li

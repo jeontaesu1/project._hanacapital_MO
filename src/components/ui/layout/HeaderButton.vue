@@ -115,6 +115,16 @@ export default {
     <span :class="styleModule['header__button-text']">메뉴</span>
   </button>
 
+  <button
+    v-else-if="type === 'menuButton'"
+    type="button"
+    :class="styleModule['header__button']"
+    @click="onClick"
+  >
+    <IconMenu :class="styleModule['header__button-icon']" />
+    <span :class="styleModule['header__button-text']">메뉴</span>
+  </button>
+
   <RouterLink
     v-else-if="type === 'search'"
     to=""
