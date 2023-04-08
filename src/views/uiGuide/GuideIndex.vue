@@ -30,7 +30,7 @@ const datas = () => [
     datas: [
       {
         depth2: '레이아웃',
-        depth3: 'Type 001',
+        depth3: 'Type 1',
         depth4: '',
         depth5: '',
         depth6: '',
@@ -41,7 +41,7 @@ const datas = () => [
       },
       {
         depth2: '레이아웃',
-        depth3: 'Type 02',
+        depth3: 'Type 2',
         depth4: '',
         depth5: '',
         depth6: '',
@@ -52,7 +52,7 @@ const datas = () => [
       },
       {
         depth2: '레이아웃',
-        depth3: 'Type 03',
+        depth3: 'Type 3',
         depth4: '',
         depth5: '',
         depth6: '',
@@ -383,8 +383,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/e-hana',
-        status: 'end',
-        create: '2023.04.07',
+        status: 'pending',
+        create: '',
         log: [],
       },
       {
@@ -396,7 +396,12 @@ const datas = () => [
         path: '/guide/personal-loan-e-hana-001',
         status: 'partend',
         create: '2023.03.31',
-        log: [],
+        log: [
+          {
+            date: '2023.04.07',
+            text: '팝업 추가\n- e하나신용대출(연계) 안내',
+          },
+        ],
       },
       {
         depth2: '행복아파트론',
@@ -405,8 +410,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/happiness-apartment',
-        status: 'end',
-        create: '2023.04.07',
+        status: 'pending',
+        create: '',
         log: [],
       },
       {
@@ -427,8 +432,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/apartment',
-        status: 'end',
-        create: '2023.04.07',
+        status: 'pending',
+        create: '',
         log: [],
       },
       {
@@ -438,8 +443,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/one-q-auto',
-        status: 'end',
-        create: '2023.04.07',
+        status: 'pending',
+        create: '',
         log: [],
       },
       {
@@ -460,8 +465,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/best-customer',
-        status: 'end',
-        create: '2023.04.07',
+        status: 'pending',
+        create: '',
         log: [],
       },
       {
@@ -482,8 +487,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/e-rental-house',
-        status: 'end',
-        create: '2023.04.07',
+        status: 'pending',
+        create: '',
         log: [],
       },
       {
@@ -493,8 +498,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/stock',
-        status: 'end',
-        create: '2023.04.07',
+        status: 'pending',
+        create: '',
         log: [],
       },
       {
@@ -504,7 +509,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/personal-loan-stock-001',
-        status: 'partend',
+        status: 'end',
         create: '2023.03.31',
         log: [
           {
@@ -520,8 +525,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/medical-appliances',
-        status: 'end',
-        create: '2023.04.07',
+        status: 'pending',
+        create: '',
         log: [],
       },
       {
@@ -531,8 +536,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/business-house',
-        status: 'end',
-        create: '2023.04.07',
+        status: 'pending',
+        create: '',
         log: [],
       },
       {
@@ -553,8 +558,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/consumer-durables',
-        status: 'end',
-        create: '2023.04.07',
+        status: 'pending',
+        create: '',
         log: [],
       },
       {
@@ -1115,6 +1120,7 @@ export default {
     const route = useRoute();
 
     const statusText = {
+      pending: '보류',
       ing: '작업중',
       partend: '부분작업완료',
       end: '작업완료',
