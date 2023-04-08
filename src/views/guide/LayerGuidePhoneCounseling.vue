@@ -95,12 +95,12 @@ export default {
       </FormList>
 
       <div :class="[$style['agree-list'], 'row-margin-contents']">
-        <UiAccordion :classNames="{ wrap: $style['agree-list__depth'] }">
+        <UiAccordion :classNames="{ wrap: $style['agree-list__list'] }">
           <UiAccordionItem
-            :classNames="{ item: $style['agree-list__depth-item'] }"
+            :classNames="{ item: $style['agree-list__item'] }"
             :initialOpen="true"
           >
-            <div :class="$style['agree-list__depth-head']">
+            <div :class="$style['agree-list__head']">
               <CheckBox
                 id="layerGuidePhoneCounselingAgree001"
                 :classNames="{
@@ -114,7 +114,7 @@ export default {
               <div :class="$style['agree-list__right']">
                 <UiAccordionOpener
                   :classNames="{
-                    button: $style['agree-list__depth-opener'],
+                    button: $style['agree-list__opener'],
                   }"
                 />
               </div>
