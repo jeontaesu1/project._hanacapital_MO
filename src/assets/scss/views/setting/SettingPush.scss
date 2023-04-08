@@ -1,43 +1,12 @@
-@import '@/assets/scss/components/import/tooltip.scss';
-@import '@/assets/scss/components/import/basic-list.scss';
+@import '@/assets/scss/components/import/switch-list.scss';
+@import '@/assets/scss/components/import/tooltip-section.scss';
 
-.setting-push {
-  @include reset-list;
+.setting-push-head {
+  padding: 7px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+}
 
-  &__header {
-    display: flex;
-    width: 100%;
-    padding: 16px;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    box-sizing: border-box;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  &__list {
-    width: 100%;
-    margin: 16px 0 0;
-    padding: 0;
-
-    & > li {
-      display: flex;
-      width: 100%;
-      margin-top: 8px;
-      padding: 8px 16px;
-      box-sizing: border-box;
-      justify-content: space-between;
-      align-items: center;
-
-      &:first-child {
-        margin-top: 0;
-      }
-    }
-  }
-
-  &__title {
-    margin: 0;
-    @include font-size-default(16);
-    font-weight: 500;
-  }
+.setting-push-depth {
+  padding: 16px 16px 0;
 }

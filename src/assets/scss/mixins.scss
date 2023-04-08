@@ -11,11 +11,14 @@
 }
 
 // reset
-@mixin basic-table {
+@mixin reset-table {
   width: 100%;
+  table-layout: fixed;
   margin: 0;
   padding: 0;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
+  box-sizing: border-box;
 }
 @mixin reset-list {
   margin: 0;

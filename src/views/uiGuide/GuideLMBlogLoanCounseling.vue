@@ -70,7 +70,7 @@ export default {
         <BasicButton @click="layer002Open">아파트 등기부등본</BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer003Open">등기부등록 확인 팝업</BasicButton>
+        <BasicButton @click="layer003Open">아파트 등기부등본 확인</BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer004Open">대출가능 차량 기준안내</BasicButton>

@@ -1,5 +1,5 @@
 <script>
-// Member_M06_l004
+// Member_M07_l003
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -13,8 +13,10 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
 import SwitchCheckBox from '@/components/ui/form/SwitchCheckBox.vue';
+import BasicHr from '@/components/ui/common/BasicHr.vue';
+import BasicTooltip from '@/components/ui/tooltip/BasicTooltip.vue';
+
 import IconTooltip from '@/assets/images/icon/tooltip.svg?component';
-import Tooltip from 'vue3-popper';
 
 export default {
   components: {
@@ -29,8 +31,9 @@ export default {
     BasicButton,
     IllustObject,
     SwitchCheckBox,
+    BasicHr,
+    BasicTooltip,
     IconTooltip,
-    Tooltip,
   },
   setup() {
     const layer = ref(null);
@@ -55,33 +58,46 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          하나캐피탈 회원이 되신 것을<br />
-          <strong>환영합니다</strong>
+          <strong>이용 재등록을</strong><br />완료했어요
         </PageMainText>
       </PageTextGroup>
 
-      <IllustObject type="complete" />
+      <IllustObject type="complete" :classNames="{ wrap: $style['illust'] }" />
+
+      <BasicHr
+        theme="tertiary"
+        type="contents"
+        className="row-margin-contents"
+      />
 
       <ul :class="$style['switch-list']">
-        <li>
-          <p :class="$style['switch-list__title']">
-            앱 알림을 받아 보시겠어요?
-          </p>
-          <SwitchCheckBox id="alarm" />
-        </li>
-        <li>
+        <li :class="$style['switch-list__item']">
           <div :class="$style['switch-list__title']">
-            <Tooltip arrow placement="top" arrowPadding="198">
-              <div :class="$style['tooltip__header']">
-                자동으로 로그인하시겠어요?
-                <button :class="$style['tooltip__button']">
-                  <IconTooltip />
-                </button>
-              </div>
-              <template #content>
-                <h3 :class="$style['tooltip__title']">자동로그인</h3>
+            앱 알림을 받아 보시겠어요?
+          </div>
+          <div :class="$style['switch-list__right']">
+            <SwitchCheckBox
+              id="layerSignLoadPinCompletePush"
+              :classNames="{ wrap: $style['switch-list__check'] }"
+            />
+          </div>
+        </li>
+        <li :class="$style['switch-list__item']">
+          <div :class="$style['switch-list__title']">
+            자동으로 로그인하시겠어요?
+          </div>
+          <BasicTooltip :classNames="{ wrap: $style['switch-list__tip'] }">
+            <IconTooltip class="display-block" />
+            <span class="for-a11y">(도움말)</span>
+
+            <template v-slot:contents>
+              <section :class="$style['tooltip-section']">
+                <h3 :class="$style['tooltip-section__title']">자동로그인</h3>
                 <ul
-                  :class="[$style['basic-list'], $style['basic-list--regular']]"
+                  :class="[
+                    $style['basic-list'],
+                    $style['basic-list--mini-margin'],
+                  ]"
                 >
                   <li :class="[$style['basic-list__item'], 'color-white']">
                     <div :class="$style['basic-list__symbol']"></div>
@@ -98,10 +114,15 @@ export default {
                     </div>
                   </li>
                 </ul>
-              </template>
-            </Tooltip>
+              </section>
+            </template>
+          </BasicTooltip>
+          <div :class="$style['switch-list__right']">
+            <SwitchCheckBox
+              id="layerSignLoadPinCompleteAuto"
+              :classNames="{ wrap: $style['switch-list__check'] }"
+            />
           </div>
-          <SwitchCheckBox id="auto" />
         </li>
       </ul>
 
@@ -112,7 +133,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton>로그인</BasicButton>
+            <BasicButton>확인</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
@@ -121,5 +142,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/sign/LayerSignUpRegistrationCompleted.scss';
+@import '@/assets/scss/views/sign/LayerSignLoadPinComplete.scss';
 </style>

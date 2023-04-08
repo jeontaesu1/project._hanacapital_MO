@@ -1,26 +1,38 @@
 .switch-list {
   @include reset-list;
 
-  border-top: 1px solid $color-gray-30;
-  padding-top: 24px;
-
-  & > li {
+  &__item {
     display: flex;
-    width: 100%;
-    margin-top: 8px;
-    padding: 8px 0px;
-    justify-content: space-between;
     align-items: center;
-    font-size: 0;
+    padding: 8px 0;
 
-    &:first-child {
-      margin-top: 0;
+    & + & {
+      margin-top: 8px;
     }
   }
 
   &__title {
+    flex: 0 1 auto;
+    min-width: 0;
     margin: 0;
     @include font-size-default(16);
     font-weight: 500;
+  }
+
+  &__right {
+    flex: none;
+    margin-left: auto;
+    padding-left: 16px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__check {
+    flex: none;
+    display: block;
+  }
+
+  &__tip {
+    margin-left: 4px;
   }
 }

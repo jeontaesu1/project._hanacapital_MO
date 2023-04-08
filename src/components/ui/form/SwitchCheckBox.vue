@@ -5,6 +5,8 @@ const defaultClassNames = () => ({
   wrap: '',
   input: '',
   label: '',
+  object: '',
+  text: '',
 });
 
 export default {
@@ -59,7 +61,12 @@ export default {
       :for="id"
       :class="[$style['switch-checkbox__label'], customClassNames.label]"
     >
-      스위치박스
+      <span
+        :class="[$style['switch-checkbox__object'], customClassNames.object]"
+      />
+      <span :class="[$style['switch-checkbox__text'], customClassNames.text]">
+        On/Off
+      </span>
     </label>
   </div>
 </template>

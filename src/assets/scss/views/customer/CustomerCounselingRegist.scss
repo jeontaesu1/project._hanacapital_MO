@@ -2,11 +2,11 @@
 
 .customer-counseling {
   display: flex;
-  justify-content: space-between;
   align-items: flex-start;
-  width: 100%;
 
   &__button {
-    width: 82px;
+    flex: none;
+    margin-left: auto;
+    padding-left: 16px;
   }
 }

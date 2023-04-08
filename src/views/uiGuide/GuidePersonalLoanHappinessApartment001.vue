@@ -13,7 +13,6 @@ import LayerPersonalLoanHappinessApartmentCertifiedConfirm from '@/views/persona
 import LayerPersonalLoanHappinessApartmentResult from '@/views/personalLoan/LayerPersonalLoanHappinessApartmentResult.vue';
 import LayerPersonalLoanHappinessApartmentInput from '@/views/personalLoan/LayerPersonalLoanHappinessApartmentInput.vue';
 
-
 export default {
   components: {
     PageContents,
@@ -91,7 +90,7 @@ export default {
       <ButtonListItem>
         <BasicButton @click="layer003Open">아파트 등기부등본</BasicButton>
       </ButtonListItem>
-      
+
       <ButtonListItem>
         <BasicButton @click="layer004Open">아파트 등기부등본 확인</BasicButton>
       </ButtonListItem>

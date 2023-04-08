@@ -1,42 +1,82 @@
 .scroll {
-  margin-top: 30px;
+  display: block;
 
   &__head {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding-bottom: 16px;
+    margin-bottom: 12px;
+
+    &-center {
+      flex: 1;
+      min-width: 0;
+    }
 
     &-right {
-      display: block;
-      width: 34px;
-      height: 24px;
-      background: url('@/assets/images/icon/scroll.svg') no-repeat 50% 50% /
-        24px;
-      font-size: 0;
-      line-height: 0;
+      flex: none;
+      margin-left: auto;
+      padding-left: 16px;
+    }
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    background: url('@/assets/images/icon/scroll.svg') no-repeat 50% 50% / 100%
+      100%;
+
+    &-text {
+      @include for-a11y;
     }
   }
 
   &__body {
-    overflow-x: scroll;
-    width: 100%;
-    border-top: 1px solid $color-gray-60;
-    scrollbar-width: none;
+    position: relative;
+    margin: 0 -20px;
 
-    &::-webkit-scrollbar {
-      display: none;
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      width: 20px;
+      height: 100%;
     }
-    & > div {
-      border-top: none;
-    }
-    table {
-      white-space: nowrap;
-    }
-  }
 
-  &__foot {
-    margin-top: -1px;
-    border-top: 1px solid #fff;
+    &::before {
+      left: 0;
+      background: linear-gradient(
+        to right,
+        rgba($color-white, 1) 0%,
+        rgba($color-white, 1) 49.48%,
+        rgba($color-white, 0) 100%
+      );
+    }
+
+    &::after {
+      right: 0;
+      background: linear-gradient(
+        to right,
+        rgba($color-white, 0) 0%,
+        rgba($color-white, 1) 50.52%,
+        rgba($color-white, 1) 100%
+      );
+    }
+
+    &-scroller {
+      font-size: 0;
+      line-height: 0;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    &-inner {
+      display: inline-block;
+      vertical-align: top;
+      padding: 0 20px;
+      min-width: 100%;
+      box-sizing: border-box;
+    }
   }
 }

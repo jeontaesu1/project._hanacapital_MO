@@ -1,9 +1,7 @@
 <script>
 // Customer_M02_p002
-
 import { reactive, onMounted, onUnmounted } from 'vue';
 
-import { useUiCommonStore } from '@/stores/ui/common';
 import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
@@ -12,7 +10,6 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
-
 import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
@@ -23,6 +20,9 @@ import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 import BasicTextarea from '@/components/ui/form/BasicTextarea.vue';
+import CheckBox from '@/components/ui/form/CheckBox.vue';
+import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
+import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
 
 export default {
   components: {
@@ -42,45 +42,40 @@ export default {
     BasicInput,
     FormHelpText,
     BasicTextarea,
+    CheckBox,
+    CheckBoxLabelText,
+    CheckBoxObject,
   },
   setup() {
     const store = {
       ui: {
-        common: useUiCommonStore(),
         header: useUiHeaderStore(),
       },
     };
 
     const state = reactive({
-      testError001: false,
+      categoryError: false,
+      nameError: false,
+      birthDateError: false,
+      phoneError: false,
+      mailError: false,
+      discriptionError: false,
     });
-    const testErrorUpdate001 = (val) => {
-      state.testError001 = val;
-    };
 
     onMounted(() => {
-      // optional : html 태그에 클래스 추가
-      store.ui.common.setRootClassName('page-optional-class');
-
-      // optional : 헤더 구성 변경
       store.ui.header.setTitle(() => '고객상담');
       store.ui.header.setLeftButtons(() => ['back']);
       store.ui.header.setRightButtons(() => []);
     });
 
     onUnmounted(() => {
-      // optional : html 태그에 클래스 리셋
-      store.ui.common.setRootClassName();
-
-      // optional : 헤더 구성 설정 값 리셋
       store.ui.header.setTitle();
       store.ui.header.setLeftButtons();
+      store.ui.header.setRightButtons();
     });
 
     return {
       state,
-      alert,
-      testErrorUpdate001,
     };
   },
 };
@@ -96,20 +91,26 @@ export default {
           >
         </PageMainText>
         <div :class="$style['customer-counseling__button']">
-          <BasicButton size="mini" :line="true">전화상담</BasicButton>
+          <BasicButton
+            size="small"
+            :line="true"
+            tagName="RouterLink"
+            to="/customer/reservation-counseling"
+            >전화상담</BasicButton
+          >
         </div>
       </div>
     </PageTextGroup>
 
     <FormList>
       <FormListItem
-        titleText="대출기간"
+        titleText="문의분야"
         titleOptionalText="(일반문의)"
-        target="#testInput010Button"
+        target="#customerCounselingRegistCategoryButton"
         :selectOnly="true"
       >
-        <FormInvalid :error="state.testError001">
-          <InputBlock :error="state.testError001">
+        <FormInvalid :error="state.categoryError">
+          <InputBlock :error="state.categoryError">
             <InputBlockCell :flexible="true">
               <BasicSelect
                 :option="[
@@ -144,8 +145,8 @@ export default {
                 ]"
                 buttonTitle="문의분야 선택하기"
                 layerTitle="문의분야를 선택해 주세요"
-                id="testInput010"
-                buttonId="testInput010Button"
+                id="customerCounselingRegistCategory"
+                buttonId="customerCounselingRegistCategoryButton"
               />
             </InputBlockCell>
           </InputBlock>
@@ -153,22 +154,30 @@ export default {
         </FormInvalid>
       </FormListItem>
 
-      <FormListItem titleText="고객명" target="#testInput002">
-        <FormInvalid :error="state.testError001">
-          <InputBlock :error="state.testError001">
+      <FormListItem titleText="고객명" target="#customerCounselingRegistName">
+        <FormInvalid :error="state.nameError">
+          <InputBlock :error="state.nameError">
             <InputBlockCell :flexible="true">
-              <BasicInput title="고객명" id="testInput002" />
+              <BasicInput title="고객명" id="customerCounselingRegistName" />
             </InputBlockCell>
           </InputBlock>
           <FormInvalidMessage>Error Message</FormInvalidMessage>
         </FormInvalid>
       </FormListItem>
 
-      <FormListItem titleText="생년월일" target="#testInput003">
-        <FormInvalid :error="state.testError001">
-          <InputBlock :error="state.testError001">
+      <FormListItem
+        titleText="생년월일"
+        target="#customerCounselingRegistBirthDate"
+      >
+        <FormInvalid :error="state.birthDateError">
+          <InputBlock :error="state.birthDateError">
             <InputBlockCell :flexible="true">
-              <BasicInput title="생년월일" id="testInput003" />
+              <BasicInput
+                type="number"
+                pattern="\d*"
+                title="생년월일"
+                id="customerCounselingRegistBirthDate"
+              />
             </InputBlockCell>
           </InputBlock>
           <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -176,11 +185,15 @@ export default {
         </FormInvalid>
       </FormListItem>
 
-      <FormListItem titleText="연락처" target="#testInput004">
-        <FormInvalid :error="state.testError001">
-          <InputBlock :error="state.testError001">
+      <FormListItem titleText="연락처" target="#customerCounselingRegistPhone">
+        <FormInvalid :error="state.phoneError">
+          <InputBlock :error="state.phoneError">
             <InputBlockCell :flexible="true">
-              <BasicInput title="연락처" id="testInput004" />
+              <BasicInput
+                pattern="\d*"
+                title="연락처"
+                id="customerCounselingRegistPhone"
+              />
             </InputBlockCell>
           </InputBlock>
           <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -191,20 +204,18 @@ export default {
       <FormListItem
         titleText="이메일"
         titleOptionalText="이메일"
-        target="#testInput005"
+        target="#customerCounselingRegistMailId"
       >
-        <FormInvalid :error="state.testError001">
-          <InputBlock :error="state.testError001">
+        <FormInvalid :error="state.mailError">
+          <InputBlock :error="state.mailError">
             <InputBlockCell :flexible="true">
               <BasicInput
-                type="number"
-                pattern="\d*"
-                title="주민등록번호 앞 6자리"
-                id="testInput005"
+                title="이메일 아이디"
+                id="customerCounselingRegistMailId"
               />
             </InputBlockCell>
-            <InputBlockCell type="sub">@</InputBlockCell>
-            <InputBlockCell :flexible="true">
+            <InputBlockCell margin="regular">@</InputBlockCell>
+            <InputBlockCell margin="regular" :flexible="true">
               <BasicSelect
                 :option="[
                   {
@@ -244,10 +255,21 @@ export default {
                     text: '직접입력',
                   },
                 ]"
-                buttonTitle="문의분야 선택하기"
-                layerTitle="문의분야를 선택해 주세요"
-                id="testInput010"
-                buttonId="testInput010Button"
+                buttonTitle="이메일 도메인 선택하기"
+                layerTitle="이메일 도메인을 선택해 주세요"
+              />
+            </InputBlockCell>
+          </InputBlock>
+          <InputBlock
+            :error="state.mailError"
+            :classNames="{
+              wrap: 'row-margin-item',
+            }"
+          >
+            <InputBlockCell :flexible="true">
+              <BasicInput
+                title="이메일 도메인 직접입력"
+                id="customerCounselingRegistMailDomainSelf"
               />
             </InputBlockCell>
           </InputBlock>
@@ -255,18 +277,15 @@ export default {
         </FormInvalid>
       </FormListItem>
 
-      <!-- Case : 직접입력 선택시 노출 -->
-
-      <BasicTextarea :error="state.testError001" titleText="상담신청내용">
-      </BasicTextarea>
+      <BasicTextarea :error="state.discriptionError" titleText="상담신청내용" />
     </FormList>
 
     <div :class="[$style['agree-list'], 'row-margin-container']">
-      <ul :class="$style['agree-list__depth']">
-        <li :class="$style['agree-list__depth-item']">
-          <div :class="$style['agree-list__depth-head']">
+      <ul :class="$style['agree-list__list']">
+        <li :class="$style['agree-list__item']">
+          <div :class="$style['agree-list__head']">
             <CheckBox
-              id="layerGuidePhoneCounselingAgree001"
+              id="customerCounselingRegistAgree"
               :classNames="{
                 wrap: $style['agree-list__checkbox'],
               }"

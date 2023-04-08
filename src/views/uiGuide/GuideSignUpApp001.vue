@@ -11,7 +11,7 @@ import LayerSignUpAppPinSet from '@/views/sign/LayerSignUpAppPinSet.vue';
 import LayerSignUpAppPinConfirm from '@/views/sign/LayerSignUpAppPinConfirm.vue';
 import LayerSignUpAppAddFingerprint from '@/views/sign/LayerSignUpAppAddFingerprint.vue';
 import LayerSignUpAppAddFaceId from '@/views/sign/LayerSignUpAppAddFaceId.vue';
-import LayerSignUpAppRegistrationCompleted from '@/views/sign/LayerSignUpAppRegistrationCompleted.vue';
+import LayerSignUpAppComplete from '@/views/sign/LayerSignUpAppComplete.vue';
 
 export default {
   components: {
@@ -24,7 +24,7 @@ export default {
     LayerSignUpAppPinConfirm,
     LayerSignUpAppAddFingerprint,
     LayerSignUpAppAddFaceId,
-    LayerSignUpAppRegistrationCompleted,
+    LayerSignUpAppComplete,
   },
   setup() {
     const layer001 = ref(null);
@@ -106,6 +106,6 @@ export default {
     <LayerSignUpAppPinConfirm ref="layer003" />
     <LayerSignUpAppAddFingerprint ref="layer004" />
     <LayerSignUpAppAddFaceId ref="layer005" />
-    <LayerSignUpAppRegistrationCompleted ref="layer006" />
+    <LayerSignUpAppComplete ref="layer006" />
   </PageContents>
 </template>

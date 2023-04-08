@@ -257,6 +257,11 @@ body,
   line-height: 0;
 }
 
+// for-a11y
+.for-a11y {
+  @include for-a11y;
+}
+
 // row-margin
 @mixin row-margin-first-last {
   &:first-child {
@@ -290,12 +295,12 @@ body,
   margin-bottom: 8px;
   @include row-margin-first-last;
 }
-.row-margin-item-group.row-margin-item-group {
-  margin-top: 16px;
-  margin-bottom: 16px;
+.row-margin-item-medium.row-margin-item-medium {
+  margin-top: 12px;
+  margin-bottom: 12px;
   @include row-margin-first-last;
 }
-.row-margin-item-small-group.row-margin-item-small-group {
+.row-margin-item-group.row-margin-item-group {
   margin-top: 16px;
   margin-bottom: 16px;
   @include row-margin-first-last;
@@ -340,11 +345,9 @@ body,
   margin-bottom: 120px;
   @include row-margin-first-last;
 }
-
+.row-margin-top-none.row-margin-top-none {
+  margin-top: 0;
+}
 .row-margin-bottom-none.row-margin-bottom-none {
   margin-bottom: 0;
-}
-.popper {
-  left: 20px !important;
-  right: 20px !important;
 }

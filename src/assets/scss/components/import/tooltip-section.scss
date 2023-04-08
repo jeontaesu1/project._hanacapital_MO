@@ -1,0 +1,19 @@
+.tooltip-section {
+  display: block;
+
+  &__title {
+    margin: 0 0 2px;
+    padding: 0 8px;
+    @include font-size-default(12);
+    font-weight: 500;
+    color: $color-white;
+  }
+
+  &__text {
+    margin: 0;
+    padding: 0 8px;
+    @include font-size-default(12);
+    font-weight: 300;
+    color: $color-white;
+  }
+}

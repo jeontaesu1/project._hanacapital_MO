@@ -1,6 +1,5 @@
 <script>
 import { ref, reactive, onMounted } from 'vue';
-import Tooltip from 'vue3-popper';
 
 import { useUiLoadingStore } from '@/stores/ui/loading';
 
@@ -77,6 +76,7 @@ import ScrollSection from '@/components/ui/section/ScrollSection.vue';
 import StepProgress from '@/components/ui/progress/StepProgress.vue';
 import SearchButton from '@/components/ui/button/SearchButton.vue';
 import SwitchCheckBox from '@/components/ui/form/SwitchCheckBox.vue';
+import BasicTooltip from '@/components/ui/tooltip/BasicTooltip.vue';
 
 import BrandLogo001 from '@/assets/images/bank-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/bank-logo/lotte.svg?component';
@@ -187,7 +187,7 @@ export default {
     SearchButton,
     ScrollSection,
     SwitchCheckBox,
-    Tooltip,
+    BasicTooltip,
     IconAdd,
     BrandLogo001,
     BrandLogo002,
@@ -5479,60 +5479,50 @@ export default {
     </section>
 
     <section class="test-section">
-      <h2 class="test-section-title">Component Title</h2>
-      <div class="test-section-sub">
-        <h3 class="test-section-sub-title">Default</h3>
-      </div>
-    </section>
-
-    <section class="test-section">
-      <h2 class="test-section-title">Component table</h2>
+      <h2 class="test-section-title">Table</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
         <!-- table -->
         <div :class="$style['basic-table']">
           <table>
+            <colgroup>
+              <col style="width: 120px" />
+              <col />
+            </colgroup>
             <thead>
               <tr>
-                <th>동거명의인</th>
-                <th>주민번호</th>
-                <th>최종지분</th>
-                <th>주소</th>
-                <th>순위번호</th>
+                <th>월</th>
+                <th>방문자</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>박지혜<br />(공유자)</td>
-                <td>920709-*******</td>
-                <td>2분의 1</td>
-                <td>
-                  채권최고금액 금330,000,000원<br />근저당권자 주식회사 국민은행
-                </td>
-                <td>박지혜</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>1</td>
               </tr>
             </tbody>
+            <tfoot>
+              <tr>
+                <td>합계</td>
+                <td>1</td>
+              </tr>
+            </tfoot>
           </table>
         </div>
-        <!-- //table -->
-      </div>
-      <div class="test-section-sub">
-        <h3 class="test-section-sub-title">테이블이 없을경우</h3>
-        <ScrollSection>
-          <template v-slot:head>
-            <h2 class="text-body-2">
-              2. 소유지분을 제외한 소유권에 관한 사항(갑구)
-            </h2>
-          </template>
-          <template v-slot:foot>
-            <p :class="$style['not-table']">기록사항 없음</p>
-          </template>
-        </ScrollSection>
+        <!-- // table -->
       </div>
     </section>
 
     <section class="test-section">
-      <h2 class="test-section-title">Component 타이틀 + 스크롤</h2>
+      <h2 class="test-section-title">Scroll Section</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">스크롤 + 타이틀 + 아이콘</h3>
         <ScrollSection>
@@ -5545,6 +5535,13 @@ export default {
           <!-- table -->
           <div :class="$style['basic-table']">
             <table>
+              <colgroup>
+                <col style="width: 76px" />
+                <col style="width: 83px" />
+                <col style="width: 74px" />
+                <col style="width: 226px" />
+                <col style="width: 60px" />
+              </colgroup>
               <thead>
                 <tr>
                   <th>동거명의인</th>
@@ -5560,26 +5557,30 @@ export default {
                   <td>920709-*******</td>
                   <td>2분의 1</td>
                   <td>
-                    채권최고금액 금330,000,000원<br />근저당권자 주식회사
-                    국민은행
+                    부산광역시 남구 진남로198번길 9-1, 101동 901호(현대아파트)
                   </td>
-                  <td>박지혜</td>
+                  <td>4</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <!-- //table -->
+          <!-- // table -->
         </ScrollSection>
       </div>
 
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">스크롤 + 아이콘</h3>
         <ScrollSection>
-          <template v-slot:head> <h2 class="text-body-2">&nbsp;</h2></template>
-
           <!-- table -->
           <div :class="$style['basic-table']">
             <table>
+              <colgroup>
+                <col style="width: 76px" />
+                <col style="width: 83px" />
+                <col style="width: 74px" />
+                <col style="width: 226px" />
+                <col style="width: 60px" />
+              </colgroup>
               <thead>
                 <tr>
                   <th>동거명의인</th>
@@ -5595,15 +5596,14 @@ export default {
                   <td>920709-*******</td>
                   <td>2분의 1</td>
                   <td>
-                    채권최고금액 금330,000,000원<br />근저당권자 주식회사
-                    국민은행
+                    부산광역시 남구 진남로198번길 9-1, 101동 901호(현대아파트)
                   </td>
-                  <td>박지혜</td>
+                  <td>4</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <!-- //table -->
+          <!-- // table -->
         </ScrollSection>
         <!-- 소스 카피 기능용 소스(미구현) -->
         <div class="test-section-copy">
@@ -5614,42 +5614,16 @@ export default {
       </div>
 
       <div class="test-section-sub">
-        <h3 class="test-section-sub-title">스크롤만 있을경우</h3>
+        <h3 class="test-section-sub-title">테이블이 없을경우</h3>
         <ScrollSection>
-          <!-- table -->
-          <div :class="$style['basic-table']">
-            <table>
-              <thead>
-                <tr>
-                  <th>동거명의인</th>
-                  <th>주민번호</th>
-                  <th>최종지분</th>
-                  <th>주소</th>
-                  <th>순위번호</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>박지혜<br />(공유자)</td>
-                  <td>920709-*******</td>
-                  <td>2분의 1</td>
-                  <td>
-                    채권최고금액 금330,000,000원<br />근저당권자 주식회사
-                    국민은행
-                  </td>
-                  <td>박지혜</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <!-- //table -->
+          <template v-slot:head>
+            <h2 class="text-body-2">
+              2. 소유지분을 제외한 소유권에 관한 사항(갑구)
+            </h2>
+          </template>
+
+          <p :class="$style['not-table']">기록사항 없음</p>
         </ScrollSection>
-        <!-- 소스 카피 기능용 소스(미구현) -->
-        <div class="test-section-copy">
-          <div><button class="test-section-copy-button">copy</button></div>
-          <pre class="test-section-copy-code"></pre>
-        </div>
-        <!-- //소스 카피 기능용 소스 -->
       </div>
     </section>
 
@@ -5657,7 +5631,9 @@ export default {
       <h2 class="test-section-title">SwitchCheckBox (스위치)</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
-        <SwitchCheckBox id="SwitchCheckBox" />
+
+        <SwitchCheckBox id="testSwitchCheckBox" />
+
         <!-- 소스 카피 기능용 소스(미구현) -->
         <div class="test-section-copy">
           <div><button class="test-section-copy-button">copy</button></div>
@@ -5672,21 +5648,120 @@ export default {
         </div>
         <!-- //소스 카피 기능용 소스 -->
       </div>
+    </section>
 
+    <section class="test-section">
+      <h2 class="test-section-title">툴팁(tooltip)</h2>
       <div class="test-section-sub">
-        <h3 class="test-section-sub-title">스위치 case</h3>
+        <h3 class="test-section-sub-title">Default</h3>
+        <BasicTooltip>
+          <IconTooltip class="display-block" />
+          <span class="for-a11y">(도움말)</span>
+
+          <template v-slot:contents>
+            <section :class="$style['tooltip-section']">
+              <h3 :class="$style['tooltip-section__title']">자동로그인</h3>
+              <ul
+                :class="[
+                  $style['basic-list'],
+                  $style['basic-list--mini-margin'],
+                ]"
+              >
+                <li :class="[$style['basic-list__item'], 'color-white']">
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    자동로그인 설정을 위해서는 간편비밀번호, 얼굴인증,
+                    지문인증(Face ID)가 필요합니다.
+                  </div>
+                </li>
+                <li :class="[$style['basic-list__item'], 'color-white']">
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    보안을 위해 기기의 화면잠금 설정이 되어 있는 경우에만 설정이
+                    가능합니다.
+                  </div>
+                </li>
+              </ul>
+            </section>
+          </template>
+        </BasicTooltip>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Bottom</h3>
+        <BasicTooltip placement="bottom">
+          <IconTooltip class="display-block" />
+          <span class="for-a11y">(도움말)</span>
+
+          <template v-slot:contents>
+            <section :class="$style['tooltip-section']">
+              <h3 :class="$style['tooltip-section__title']">정보성 알림</h3>
+              <p :class="$style['tooltip-section__text']">
+                상품 이용, 상환정보 등 하나캐피탈 서비스에 필요한 정보를
+                수신합니다.
+              </p>
+            </section>
+          </template>
+        </BasicTooltip>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Switch List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
         <ul :class="$style['switch-list']">
-          <li>
-            <p :class="$style['switch-list__title']">
+          <li :class="$style['switch-list__item']">
+            <div :class="$style['switch-list__title']">
               앱 알림을 받아 보시겠어요?
-            </p>
-            <SwitchCheckBox id="alarm" />
+            </div>
+            <div :class="$style['switch-list__right']">
+              <SwitchCheckBox
+                id="testSwitchList001"
+                :classNames="{ wrap: $style['switch-list__check'] }"
+              />
+            </div>
           </li>
-          <li>
-            <p :class="$style['switch-list__title']">
+          <li :class="$style['switch-list__item']">
+            <div :class="$style['switch-list__title']">
               자동으로 로그인하시겠어요?
-            </p>
-            <SwitchCheckBox id="auto" />
+            </div>
+            <BasicTooltip :classNames="{ wrap: $style['switch-list__tip'] }">
+              <IconTooltip class="display-block" />
+              <span class="for-a11y">(도움말)</span>
+
+              <template v-slot:contents>
+                <section :class="$style['tooltip-section']">
+                  <h3 :class="$style['tooltip-section__title']">자동로그인</h3>
+                  <ul
+                    :class="[
+                      $style['basic-list'],
+                      $style['basic-list--mini-margin'],
+                    ]"
+                  >
+                    <li :class="[$style['basic-list__item'], 'color-white']">
+                      <div :class="$style['basic-list__symbol']"></div>
+                      <div :class="$style['basic-list__content']">
+                        자동로그인 설정을 위해서는 간편비밀번호, 얼굴인증,
+                        지문인증(Face ID)가 필요합니다.
+                      </div>
+                    </li>
+                    <li :class="[$style['basic-list__item'], 'color-white']">
+                      <div :class="$style['basic-list__symbol']"></div>
+                      <div :class="$style['basic-list__content']">
+                        보안을 위해 기기의 화면잠금 설정이 되어 있는 경우에만
+                        설정이 가능합니다.
+                      </div>
+                    </li>
+                  </ul>
+                </section>
+              </template>
+            </BasicTooltip>
+            <div :class="$style['switch-list__right']">
+              <SwitchCheckBox
+                id="testSwitchList002"
+                :classNames="{ wrap: $style['switch-list__check'] }"
+              />
+            </div>
           </li>
         </ul>
 
@@ -5699,17 +5774,27 @@ export default {
           </div>
           <pre class="test-section-copy-code" ref="preRef">
             <ul :class="$style['switch-list']">
-              <li>
-                <p :class="$style['switch-list__title']">
+              <li :class="$style['switch-list__item']">
+                <div :class="$style['switch-list__title']">
                   앱 알림을 받아 보시겠어요?
-                </p>
-                <SwitchCheckBox id="alarm" />
+                </div>
+                <div :class="$style['switch-list__right']">
+                  <SwitchCheckBox
+                    id="testSwitchList001"
+                    :classNames="{ wrap: $style['switch-list__check'] }"
+                  />
+                </div>
               </li>
-              <li>
-                <p :class="$style['switch-list__title']">
+              <li :class="$style['switch-list__item']">
+                <div :class="$style['switch-list__title']">
                   자동으로 로그인하시겠어요?
-                </p>
-                <SwitchCheckBox id="auto" />
+                </div>
+                <div :class="$style['switch-list__right']">
+                  <SwitchCheckBox
+                    id="testSwitchList002"
+                    :classNames="{ wrap: $style['switch-list__check'] }"
+                  />
+                </div>
               </li>
             </ul>
             import SwitchCheckBox from '@/components/ui/form/SwitchCheckBox.vue';
@@ -5724,33 +5809,11 @@ export default {
         <!-- //소스 카피 기능용 소스 -->
       </div>
     </section>
+
     <section class="test-section">
-      <h2 class="test-section-title">툴팁(tooltip)</h2>
+      <h2 class="test-section-title">Component Title</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
-        <!-- 
-          placement 레이어팝업 생성 위치 top,bottom 등
-          arrowPadding = 화살표 위치
-         -->
-        <Tooltip arrow placement="top" arrowPadding="116">
-          <div :class="$style['tooltip__header']">
-            자동로그인 설정
-            <button :class="$style['tooltip__button']"><IconTooltip /></button>
-          </div>
-          <template #content>
-            <h3 :class="$style['tooltip__title']">공동인증서 등록</h3>
-            <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
-              <li :class="[$style['basic-list__item'], 'color-white']">
-                <div :class="$style['basic-list__symbol']"></div>
-                <div :class="$style['basic-list__content']">
-                  개인/개인사업자 회원은 공동인증서 로그인을 위해 아이디에
-                  공동인증서를 등록해야 합니다. (법인 회원은 별도 등록이
-                  필요하지 않습니다.)
-                </div>
-              </li>
-            </ul>
-          </template>
-        </Tooltip>
       </div>
     </section>
   </div>

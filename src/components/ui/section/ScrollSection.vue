@@ -4,8 +4,13 @@ import { computed } from 'vue';
 const defaultClassNames = () => ({
   wrap: '',
   head: '',
+  headCenter: '',
+  headRight: '',
+  headIcon: '',
+  headIconText: '',
   body: '',
-  foot: '',
+  bodyScroller: '',
+  bodyInner: '',
 });
 
 export default {
@@ -17,42 +22,55 @@ export default {
       },
     },
   },
-  setup(props, context) {
+  setup(props) {
     const customClassNames = computed(() => {
       const { classNames } = props;
       return Object.assign(defaultClassNames(), classNames);
     });
 
-    const isHead = computed(() => {
-      return Boolean(context.slots.head);
-    });
-
-    const isFoot = computed(() => {
-      return Boolean(context.slots.foot);
-    });
-
     return {
       customClassNames,
-      isHead,
-      isFoot,
     };
   },
 };
 </script>
 
 <template>
-  <div :class="[$style['scroll'], customClassNames.wrap]">
-    <div v-if="isHead" :class="[$style['scroll__head'], customClassNames.head]">
-      <div><slot name="head" /></div>
-      <div :class="$style['scroll__head-right']">스와이프 이미지</div>
+  <section :class="[$style['scroll'], customClassNames.wrap]">
+    <div :class="[$style['scroll__head'], customClassNames.head]">
+      <div
+        :class="[$style['scroll__head-center'], customClassNames.headCenter]"
+      >
+        <slot name="head" />
+      </div>
+      <div :class="[$style['scroll__head-right'], customClassNames.headRight]">
+        <div :class="[$style['scroll__icon'], customClassNames.headIcon]">
+          <div
+            :class="[
+              $style['scroll__icon-text'],
+              customClassNames.headIconText,
+            ]"
+          >
+            스와이프하여 스크롤
+          </div>
+        </div>
+      </div>
     </div>
     <div :class="[$style['scroll__body'], customClassNames.body]">
-      <slot />
+      <div
+        :class="[
+          $style['scroll__body-scroller'],
+          customClassNames.bodyScroller,
+        ]"
+      >
+        <div
+          :class="[$style['scroll__body-inner'], customClassNames.bodyInner]"
+        >
+          <slot />
+        </div>
+      </div>
     </div>
-    <div v-if="isFoot" :class="[$style['scroll__foot'], customClassNames.foot]">
-      <slot name="foot" />
-    </div>
-  </div>
+  </section>
 </template>
 
 <style lang="scss" module>
