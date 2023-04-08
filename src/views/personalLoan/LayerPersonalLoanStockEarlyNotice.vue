@@ -156,7 +156,7 @@ export default {
               <div :class="$style['basic-list__content']">
                 즉시출금은 '전자금융거래법'에 따라 '고객님의 명의로 인증된
                 자동이체계좌'에서만 출금이 가능합니다.
-                <ul :class="[$style['basic-list']]">
+                <ul :class="$style['basic-list']">
                   <li
                     :class="[
                       $style['basic-list__item'],

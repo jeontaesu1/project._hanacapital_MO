@@ -102,6 +102,12 @@ import ImgZeroCommission from '@/assets/images/illustration/img-zero-commission.
 import Img120Months from '@/assets/images/illustration/img-120months.svg?component';
 import IconCarSecurity from '@/assets/images/icon/car-security.svg?component';
 import IconArrow from '@/assets/images/icon/dropdown.svg?component';
+import IconConsulting from '@/assets/images/icon/consulting.svg?component';
+import IconService from '@/assets/images/icon/service.svg?component';
+import IconCustomerVisit from '@/assets/images/icon/customer-visit.svg?component';
+import IconInstallation from '@/assets/images/icon/installation.svg?component';
+import IconCompany from '@/assets/images/icon/company.svg?component';
+import IconDocumentComplete from '@/assets/images/icon/document-complete.svg?component';
 
 export default {
   components: {
@@ -203,6 +209,12 @@ export default {
     Img120Months,
     IconCarSecurity,
     IconArrow,
+    IconConsulting,
+    IconService,
+    IconCustomerVisit,
+    IconInstallation,
+    IconCompany,
+    IconDocumentComplete,
   },
   setup() {
     const store = {
@@ -3437,6 +3449,729 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">ARS List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['ars-list']">
+          <UiAccordion :classNames="{ wrap: $style['ars-list__container'] }">
+            <UiAccordionItem
+              :classNames="{ item: $style['ars-list__all'] }"
+              :initialOpen="true"
+            >
+              <div :class="$style['ars-list__all-head']">
+                <div :class="$style['ars-list__all-block']">
+                  <div :class="[$style['contents-list'], 'font-weight-medium']">
+                    <div :class="$style['contents-list__item']">
+                      <div :class="$style['contents-list__symbol']">1</div>
+                      <div :class="$style['contents-list__content']">
+                        신규/추가대출 문의
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div :class="$style['ars-list__right']">
+                  <UiAccordionOpener :class="$style['ars-list__opener']" />
+                </div>
+              </div>
+
+              <UiAccordionLayer>
+                <div :class="$style['ars-list__all-contents']">
+                  <ul
+                    :class="[
+                      $style['contents-list'],
+                      $style['contents-list--medium-margin'],
+                      'font-weight-medium',
+                    ]"
+                  >
+                    <li :class="$style['contents-list__item']">
+                      <div
+                        :class="[
+                          $style['contents-list__symbol'],
+                          $style['contents-list__symbol--square'],
+                        ]"
+                      >
+                        1
+                      </div>
+                      <div
+                        :class="[
+                          $style['contents-list__content'],
+                          'text-body-2',
+                        ]"
+                      >
+                        신용대출상담
+                      </div>
+                    </li>
+                    <li :class="$style['contents-list__item']">
+                      <div
+                        :class="[
+                          $style['contents-list__symbol'],
+                          $style['contents-list__symbol--square'],
+                        ]"
+                      >
+                        2
+                      </div>
+                      <div
+                        :class="[
+                          $style['contents-list__content'],
+                          'text-body-2',
+                        ]"
+                      >
+                        자동차금융 상담
+                      </div>
+                    </li>
+                    <li :class="$style['contents-list__item']">
+                      <div
+                        :class="[
+                          $style['contents-list__symbol'],
+                          $style['contents-list__symbol--square'],
+                        ]"
+                      >
+                        3
+                      </div>
+                      <div
+                        :class="[
+                          $style['contents-list__content'],
+                          'text-body-2',
+                        ]"
+                      >
+                        담보대출 상담
+                      </div>
+                    </li>
+                    <li :class="$style['contents-list__item']">
+                      <div
+                        :class="[
+                          $style['contents-list__symbol'],
+                          $style['contents-list__symbol--square'],
+                        ]"
+                      >
+                        4
+                      </div>
+                      <div
+                        :class="[
+                          $style['contents-list__content'],
+                          'text-body-2',
+                        ]"
+                      >
+                        건설상용 상담
+                      </div>
+                    </li>
+                    <li :class="$style['contents-list__item']">
+                      <div
+                        :class="[
+                          $style['contents-list__symbol'],
+                          $style['contents-list__symbol--square'],
+                        ]"
+                      >
+                        5
+                      </div>
+                      <div
+                        :class="[
+                          $style['contents-list__content'],
+                          'text-body-2',
+                        ]"
+                      >
+                        의료기 산업기계 상담
+                      </div>
+                    </li>
+                    <li :class="$style['contents-list__item']">
+                      <div
+                        :class="[
+                          $style['contents-list__symbol'],
+                          $style['contents-list__symbol--square'],
+                        ]"
+                      >
+                        6
+                      </div>
+                      <div
+                        :class="[
+                          $style['contents-list__content'],
+                          'text-body-2',
+                        ]"
+                      >
+                        주식자금대출 상담
+                      </div>
+                    </li>
+                    <li :class="$style['contents-list__item']">
+                      <div
+                        :class="[
+                          $style['contents-list__symbol'],
+                          $style['contents-list__symbol--square'],
+                        ]"
+                      >
+                        0
+                      </div>
+                      <div
+                        :class="[
+                          $style['contents-list__content'],
+                          'text-body-2',
+                        ]"
+                      >
+                        상담원 연결
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+            <UiAccordionItem
+              :classNames="{ item: $style['ars-list__all'] }"
+              :initialOpen="true"
+            >
+              <div :class="$style['ars-list__all-head']">
+                <div :class="$style['ars-list__all-block']">
+                  <div :class="[$style['contents-list'], 'font-weight-medium']">
+                    <div :class="$style['contents-list__item']">
+                      <div :class="$style['contents-list__symbol']">2</div>
+                      <div :class="$style['contents-list__content']">
+                        당사이용고객
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div :class="$style['ars-list__right']">
+                  <UiAccordionOpener :class="$style['ars-list__opener']" />
+                </div>
+              </div>
+
+              <UiAccordionLayer>
+                <div :class="$style['ars-list__all-contents']">
+                  <UiAccordion
+                    :classNames="{ wrap: $style['ars-list__depth'] }"
+                  >
+                    <UiAccordionItem
+                      :classNames="{ item: $style['ars-list__depth-item'] }"
+                      :initialOpen="true"
+                    >
+                      <div :class="$style['ars-list__depth-head']">
+                        <div :class="$style['ars-list__depth-block']">
+                          <div
+                            :class="[
+                              $style['contents-list'],
+                              $style['contents-list--medium-margin'],
+                              'font-weight-medium',
+                            ]"
+                          >
+                            <div :class="$style['contents-list__item']">
+                              <div
+                                :class="[
+                                  $style['contents-list__symbol'],
+                                  $style['contents-list__symbol--square'],
+                                ]"
+                              >
+                                1
+                              </div>
+                              <div
+                                :class="[
+                                  $style['contents-list__content'],
+                                  'text-body-2',
+                                ]"
+                              >
+                                기존 거래정보 확인
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div :class="$style['ars-list__right']">
+                          <UiAccordionOpener
+                            :class="$style['ars-list__opener']"
+                          />
+                        </div>
+                      </div>
+
+                      <UiAccordionLayer>
+                        <div :class="$style['ars-list__depth-contents']">
+                          <ul
+                            :class="[
+                              $style['contents-list'],
+                              $style['contents-list--normal-margin'],
+                            ]"
+                          >
+                            <li :class="$style['contents-list__item']">
+                              <div
+                                :class="[
+                                  $style['contents-list__symbol'],
+                                  $style['contents-list__symbol--small'],
+                                ]"
+                              >
+                                1
+                              </div>
+                              <div
+                                :class="[
+                                  $style['contents-list__content'],
+                                  'text-body-3',
+                                ]"
+                              >
+                                당월결제금액
+                              </div>
+                            </li>
+                            <li :class="$style['contents-list__item']">
+                              <div
+                                :class="[
+                                  $style['contents-list__symbol'],
+                                  $style['contents-list__symbol--small'],
+                                ]"
+                              >
+                                2
+                              </div>
+                              <div
+                                :class="[
+                                  $style['contents-list__content'],
+                                  'text-body-3',
+                                ]"
+                              >
+                                최근입금내역
+                              </div>
+                            </li>
+                            <li :class="$style['contents-list__item']">
+                              <div
+                                :class="[
+                                  $style['contents-list__symbol'],
+                                  $style['contents-list__symbol--small'],
+                                ]"
+                              >
+                                3
+                              </div>
+                              <div
+                                :class="[
+                                  $style['contents-list__content'],
+                                  'text-body-3',
+                                ]"
+                              >
+                                중도상환안내
+                              </div>
+                            </li>
+                            <li :class="$style['contents-list__item']">
+                              <div
+                                :class="[
+                                  $style['contents-list__symbol'],
+                                  $style['contents-list__symbol--small'],
+                                ]"
+                              >
+                                4
+                              </div>
+                              <div
+                                :class="[
+                                  $style['contents-list__content'],
+                                  'text-body-3',
+                                ]"
+                              >
+                                승계 및 연장문의
+                              </div>
+                            </li>
+                            <UiAccordion
+                              :classNames="{
+                                wrap: $style['ars-list__2depth'],
+                              }"
+                            >
+                              <UiAccordionItem
+                                :classNames="{
+                                  item: $style['ars-list__2depth-item'],
+                                }"
+                                :initialOpen="true"
+                              >
+                                <div :class="$style['ars-list__2depth-head']">
+                                  <div
+                                    :class="$style['ars-list__2depth-block']"
+                                  >
+                                    <div
+                                      :class="[
+                                        $style['contents-list'],
+                                        $style['contents-list--regular-margin'],
+                                      ]"
+                                    >
+                                      <div
+                                        :class="$style['contents-list__item']"
+                                      >
+                                        <div
+                                          :class="[
+                                            $style['contents-list__symbol'],
+                                            $style[
+                                              'contents-list__symbol--small'
+                                            ],
+                                          ]"
+                                        >
+                                          5
+                                        </div>
+                                        <div
+                                          :class="[
+                                            $style['contents-list__content'],
+                                            'text-body-3',
+                                          ]"
+                                        >
+                                          하나멤버스 상담
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div :class="$style['ars-list__right']">
+                                    <UiAccordionOpener
+                                      :class="$style['ars-list__opener']"
+                                    />
+                                  </div>
+                                </div>
+                                <UiAccordionLayer>
+                                  <div
+                                    :class="$style['ars-list__2depth-contents']"
+                                  >
+                                    <ul
+                                      :class="[
+                                        $style['contents-list'],
+                                        $style['contents-list--normal-margin'],
+                                        'color-gray',
+                                      ]"
+                                    >
+                                      <li
+                                        :class="$style['contents-list__item']"
+                                      >
+                                        <div
+                                          :class="[
+                                            $style['contents-list__symbol'],
+                                            $style[
+                                              'contents-list__symbol--small'
+                                            ],
+                                          ]"
+                                        >
+                                          1
+                                        </div>
+                                        <div
+                                          :class="[
+                                            $style['contents-list__content'],
+                                            'text-body-4',
+                                          ]"
+                                        >
+                                          당사 하나멤버스 회원조회
+                                        </div>
+                                      </li>
+                                      <li
+                                        :class="$style['contents-list__item']"
+                                      >
+                                        <div
+                                          :class="[
+                                            $style['contents-list__symbol'],
+                                            $style[
+                                              'contents-list__symbol--small'
+                                            ],
+                                          ]"
+                                        >
+                                          2
+                                        </div>
+                                        <div
+                                          :class="[
+                                            $style['contents-list__content'],
+                                            'text-body-4',
+                                          ]"
+                                        >
+                                          하나멤버스 회원가입
+                                        </div>
+                                      </li>
+                                      <li
+                                        :class="$style['contents-list__item']"
+                                      >
+                                        <div
+                                          :class="[
+                                            $style['contents-list__symbol'],
+                                            $style[
+                                              'contents-list__symbol--small'
+                                            ],
+                                          ]"
+                                        >
+                                          3
+                                        </div>
+                                        <div
+                                          :class="[
+                                            $style['contents-list__content'],
+                                            'text-body-4',
+                                          ]"
+                                        >
+                                          관계사 연결
+                                        </div>
+                                      </li>
+                                      <li
+                                        :class="$style['contents-list__item']"
+                                      >
+                                        <div
+                                          :class="[
+                                            $style['contents-list__symbol'],
+                                            $style[
+                                              'contents-list__symbol--small'
+                                            ],
+                                          ]"
+                                        >
+                                          0
+                                        </div>
+                                        <div
+                                          :class="[
+                                            $style['contents-list__content'],
+                                            'text-body-4',
+                                          ]"
+                                        >
+                                          상담원 연결
+                                        </div>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </UiAccordionLayer>
+                              </UiAccordionItem>
+                            </UiAccordion>
+                          </ul>
+                        </div>
+                      </UiAccordionLayer>
+                    </UiAccordionItem>
+                    <UiAccordionItem
+                      :classNames="{ item: $style['ars-list__depth-item'] }"
+                      :initialOpen="true"
+                    >
+                      <div :class="$style['ars-list__depth-head']">
+                        <div :class="$style['ars-list__depth-block']">
+                          <div
+                            :class="[
+                              $style['contents-list'],
+                              $style['contents-list--medium-margin'],
+                              'font-weight-medium',
+                            ]"
+                          >
+                            <div :class="$style['contents-list__item']">
+                              <div
+                                :class="[
+                                  $style['contents-list__symbol'],
+                                  $style['contents-list__symbol--square'],
+                                ]"
+                              >
+                                0
+                              </div>
+                              <div
+                                :class="[
+                                  $style['contents-list__content'],
+                                  'text-body-2',
+                                ]"
+                              >
+                                상담원연결
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div :class="$style['ars-list__right']">
+                          <UiAccordionOpener
+                            :class="$style['ars-list__opener']"
+                          />
+                        </div>
+                      </div>
+
+                      <UiAccordionLayer>
+                        <div :class="$style['ars-list__depth-contents']">
+                          <ul
+                            :class="[
+                              $style['contents-list'],
+                              $style['contents-list--normal-margin'],
+                            ]"
+                          >
+                            <li :class="$style['contents-list__item']">
+                              <div
+                                :class="[
+                                  $style['contents-list__symbol'],
+                                  $style['contents-list__symbol--small'],
+                                ]"
+                              >
+                                1
+                              </div>
+                              <div
+                                :class="[
+                                  $style['contents-list__content'],
+                                  'text-body-3',
+                                ]"
+                              >
+                                자동차금융 상담
+                              </div>
+                            </li>
+                            <li :class="$style['contents-list__item']">
+                              <div
+                                :class="[
+                                  $style['contents-list__symbol'],
+                                  $style['contents-list__symbol--small'],
+                                ]"
+                              >
+                                2
+                              </div>
+                              <div
+                                :class="[
+                                  $style['contents-list__content'],
+                                  'text-body-3',
+                                ]"
+                              >
+                                개인금융 상담
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </UiAccordionLayer>
+                    </UiAccordionItem>
+                  </UiAccordion>
+                </div>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+            <UiAccordionItem
+              :classNames="{ item: $style['ars-list__all'] }"
+              :initialOpen="true"
+            >
+              <div :class="$style['ars-list__all-head']">
+                <div :class="$style['ars-list__all-block']">
+                  <div :class="[$style['contents-list'], 'font-weight-medium']">
+                    <div :class="$style['contents-list__item']">
+                      <div :class="$style['contents-list__symbol']">3</div>
+                      <div :class="$style['contents-list__content']">
+                        기타상담
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div :class="$style['ars-list__right']">
+                  <UiAccordionOpener :class="$style['ars-list__opener']" />
+                </div>
+              </div>
+
+              <UiAccordionLayer>
+                <div :class="$style['ars-list__all-contents']">
+                  <ul
+                    :class="[
+                      $style['contents-list'],
+                      $style['contents-list--medium-margin'],
+                      'font-weight-medium',
+                    ]"
+                  >
+                    <li :class="$style['contents-list__item']">
+                      <div
+                        :class="[
+                          $style['contents-list__symbol'],
+                          $style['contents-list__symbol--square'],
+                        ]"
+                      >
+                        1
+                      </div>
+                      <div
+                        :class="[
+                          $style['contents-list__content'],
+                          'text-body-2',
+                        ]"
+                      >
+                        불법대출 및 보이스피싱
+                      </div>
+                    </li>
+                    <li :class="$style['contents-list__item']">
+                      <div
+                        :class="[
+                          $style['contents-list__symbol'],
+                          $style['contents-list__symbol--square'],
+                        ]"
+                      >
+                        2
+                      </div>
+                      <div
+                        :class="[
+                          $style['contents-list__content'],
+                          'text-body-2',
+                        ]"
+                      >
+                        당사이용 고객이 아닌경우
+                      </div>
+                    </li>
+                    <li :class="$style['contents-list__item']">
+                      <div
+                        :class="[
+                          $style['contents-list__symbol'],
+                          $style['contents-list__symbol--square'],
+                        ]"
+                      >
+                        3
+                      </div>
+                      <div
+                        :class="[
+                          $style['contents-list__content'],
+                          'text-body-2',
+                        ]"
+                      >
+                        상담원연결
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+            <UiAccordionItem :classNames="{ item: $style['ars-list__all'] }">
+              <div :class="$style['ars-list__all-head']">
+                <div :class="$style['ars-list__all-block']">
+                  <div :class="[$style['contents-list'], 'font-weight-medium']">
+                    <div :class="$style['contents-list__item']">
+                      <div :class="$style['contents-list__symbol']">0</div>
+                      <div :class="$style['contents-list__content']">
+                        상담원연결
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </UiAccordionItem>
+          </UiAccordion>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">FAQ List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['faq']">
+          <UiAccordion :classNames="{ wrap: $style['faq__list'] }">
+            <UiAccordionItem
+              :classNames="{ item: $style['faq__item'] }"
+              :initialOpen="true"
+            >
+              <div :class="$style['faq__head']">
+                <div :class="$style['faq__block']">
+                  <div :class="$style['faq__name']">분류</div>
+                  <div :class="$style['faq__title']">타이틀</div>
+                </div>
+                <div :class="$style['faq__right']">
+                  <UiAccordionOpener :class="$style['faq__opener']" />
+                </div>
+              </div>
+
+              <UiAccordionLayer>
+                <div :class="$style['faq__contents']">
+                  <div class="text-body-3 color-gray">
+                    내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
+                  </div>
+                </div>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+            <UiAccordionItem
+              :classNames="{ item: $style['faq__item'] }"
+              :initialOpen="true"
+            >
+              <div :class="$style['faq__head']">
+                <div :class="$style['faq__block']">
+                  <div :class="$style['faq__name']">분류</div>
+                  <div :class="$style['faq__title']">타이틀</div>
+                </div>
+                <div :class="$style['faq__right']">
+                  <UiAccordionOpener :class="$style['faq__opener']" />
+                </div>
+              </div>
+
+              <UiAccordionLayer>
+                <div :class="$style['faq__contents']">
+                  <div class="text-body-3 color-gray">
+                    내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
+                  </div>
+                </div>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+          </UiAccordion>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Tab Base</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -4621,7 +5356,7 @@ export default {
                   <div :class="$style['authority__sub']">(선택)</div>
                 </div>
                 <div :class="$style['authority__text']">
-                  재고금융 실사 촬영을 등<br />
+                  재고금융 실사 촬영 등<br />
                   현재 위치정보 수집을 할 때 사용합니다.
                 </div>
               </div>
@@ -4755,7 +5490,7 @@ export default {
                     <div :class="$style['step__badge']">STEP 1</div>
                   </div>
                   <div :class="$style['step__text']">
-                    본인인증 및 손님의 정보로<br />
+                    본인인증 및 손님의 정보로
                     <strong>대출한도를 조회</strong>합니다.
                   </div>
                 </div>
@@ -4768,10 +5503,26 @@ export default {
               <div :class="$style['step__inner']">
                 <div :class="$style['step__contents']">
                   <div :class="$style['step__top']">
+                    <div :class="$style['step__badge']">STEP 1</div>
+                  </div>
+                  <div :class="$style['step__text']">
+                    판매점에서 물품을 구입하여
+                    <strong>할부상담을 신청</strong>합니다.
+                  </div>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconConsulting />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__top']">
                     <div :class="$style['step__badge']">STEP 2</div>
                   </div>
                   <div :class="$style['step__text']">
-                    한도 확인 후, 신청정보를 입력하여<br />
+                    한도 확인 후, 신청정보를 입력하여
                     <strong>약정을 진행</strong>합니다.
                   </div>
                 </div>
@@ -4784,11 +5535,56 @@ export default {
               <div :class="$style['step__inner']">
                 <div :class="$style['step__contents']">
                   <div :class="$style['step__top']">
+                    <div :class="$style['step__badge']">STEP 2</div>
+                  </div>
+                  <div :class="$style['step__text']">
+                    신청내용 확인하여 <strong>결과를 통보</strong>합니다.
+                  </div>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconService />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__top']">
+                    <div :class="$style['step__badge']">STEP 2</div>
+                  </div>
+                  <div :class="$style['step__text']">
+                    <strong>거주지, 직장주소, 전화번호</strong>등을 입력합니다.
+                  </div>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconCompany />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__top']">
                     <div :class="$style['step__badge']">STEP 3</div>
                   </div>
                   <div :class="$style['step__text']">
-                    제출하신 정보로 최종심사 후<br />
-                    손님께 <strong>결과를 안내</strong>해드립니다.
+                    신청내용 확인하여 <strong>결과를 통보</strong>합니다.
+                  </div>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconDocumentComplete />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__top']">
+                    <div :class="$style['step__badge']">STEP 3</div>
+                  </div>
+                  <div :class="$style['step__text']">
+                    제출하신 정보로 최종심사 후 손님께
+                    <strong>결과를 안내</strong>해드립니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
@@ -4819,11 +5615,43 @@ export default {
                     <div :class="$style['step__badge']">STEP 4</div>
                   </div>
                   <div :class="$style['step__text']">
+                    할부 약정시 담당자 고객님께
+                    <strong>직접 방문</strong>합니다.
+                  </div>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconCustomerVisit />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__top']">
+                    <div :class="$style['step__badge']">STEP 4</div>
+                  </div>
+                  <div :class="$style['step__text']">
                     계좌로 <strong>대출금을 입금</strong>해드립니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
                   <IconDeposit />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__top']">
+                    <div :class="$style['step__badge']">STEP 5</div>
+                  </div>
+                  <div :class="$style['step__text']">
+                    고객님께서 <strong>원하시는 기기를 설치</strong>해 드리고,
+                    담당 직원이 실사를 합니다.
+                  </div>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconInstallation />
                 </div>
               </div>
             </li>

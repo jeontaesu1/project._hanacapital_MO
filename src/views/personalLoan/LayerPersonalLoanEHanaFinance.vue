@@ -52,7 +52,7 @@ export default {
         </ToastPopupHead>
       </template>
 
-      <div :class="[$style['agree-list']]">
+      <div :class="$style['agree-list']">
         <div :class="$style['agree-item']">
           <UiAccordion :classNames="{ wrap: $style['agree-list__depth'] }">
             <UiAccordionItem

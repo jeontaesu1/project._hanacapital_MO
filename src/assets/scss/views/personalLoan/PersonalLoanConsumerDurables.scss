@@ -3,6 +3,7 @@
 @import '@/assets/scss/components/import/icon-list.scss';
 @import '@/assets/scss/components/import/step.scss';
 @import '@/assets/scss/components/import/illustration-img.scss';
+@import '@/assets/scss/components/import/contents-list.scss';
 
 .bg {
   background-color: $color-navy-05;
@@ -27,6 +28,10 @@
 
 .tab__inner {
   margin-top: 40px;
+}
+
+.margin-top-small {
+  margin-top: 8px;
 }
 
 .margin-top-regular {
