@@ -1,5 +1,6 @@
 <script>
-import { onMounted, onUnmounted, reactive } from 'vue';
+import { onMounted, onUnmounted } from 'vue';
+import { RouterLink } from 'vue-router';
 
 import { useUiHeaderStore } from '@/stores/ui/header';
 
@@ -9,6 +10,8 @@ import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
+import SearchButton from '@/components/ui/button/SearchButton.vue';
 
 import IconArrow from '@/assets/images/icon/dropdown.svg?component';
 
@@ -20,18 +23,12 @@ export default {
     BasicSelect,
     BasicInput,
     BasicHr,
-
+    TextButton,
+    SearchButton,
+    RouterLink,
     IconArrow,
   },
   setup() {
-    const state = reactive({
-      nameError: false,
-      searchError: false,
-      idNumberError: false,
-      phoneError: false,
-      codeError: false,
-    });
-
     const store = {
       ui: {
         header: useUiHeaderStore(),
@@ -49,10 +46,6 @@ export default {
       store.ui.header.setLeftButtons();
       store.ui.header.setRightButtons();
     });
-
-    return {
-      state,
-    };
   },
 };
 </script>
@@ -78,124 +71,59 @@ export default {
           ]"
           buttonTitle="검색 조건 선택하기"
           layerTitle="검색 조건을 선택해 주세요"
-          id="CustomerNoticeList01"
-          buttonId="CustomerNoticeListButton01"
           :classNames="{
             wrap: 'input-width-category',
           }"
           defaultValue="1"
         />
       </InputBlockCell>
-      <InputBlockCell :flexible="true" margin="regular">
-        <BasicInput title="검색" id="CustomerNoticeList02" />
+      <InputBlockCell :flexible="true">
+        <BasicInput
+          type="search"
+          title="검색어 입력"
+          placeholder="검색어 입력"
+        />
+      </InputBlockCell>
+      <InputBlockCell type="search">
+        <SearchButton />
       </InputBlockCell>
     </InputBlock>
 
-    <BasicHr
-      :class="$style['margin-top-medium']"
-      className="row-margin-contents"
-    />
+    <BasicHr className="row-margin-container-medium" />
 
+    <!-- Case : 검색 결과 없을 때 -->
+    <div :class="$style['empty']">
+      <p :class="$style['empty__text']">검색된 결과가 없습니다.</p>
+    </div>
+    <!-- // Case : 검색 결과 없을 때 -->
+
+    <!-- Case : 검색 결과 있을 때 -->
     <div :class="$style['board']">
-      <!-- case : 검색 결과 없을 때 -->
-      <div :class="$style['empty']">
-        <p :class="$style['empty__text']">검색된 결과가 없습니다.</p>
-      </div>
-      <!-- //case : 검색 결과 없을 때 -->
+      <ul :class="$style['board__list']">
+        <li v-for="i in 10" :key="i" :class="$style['board__item']">
+          <RouterLink
+            to="/customer/notice-detail"
+            :class="$style['board__link']"
+          >
+            <span :class="$style['board__title']">
+              <span :class="$style['board__title-text']">
+                전화권유 상담원 현황
+              </span>
+            </span>
+            <span :class="$style['board__text']">2022.10.25</span>
+          </RouterLink>
+        </li>
+      </ul>
+    </div>
+    <!-- // Case : 검색 결과 있을 때 -->
 
-      <div :class="$style['board__list']">
-        <div :class="$style['board__item']">
-          <button type="button" :class="$style['board__link']">
-            <div :class="$style['board__title']">
-              <p :class="$style['board__title-text']">
-                전화권유 상담원 현황전화권유 상담원 현황전화권유 상담원 현황
-              </p>
-            </div>
-            <div :class="$style['board__text']">2022.10.25</div>
-          </button>
-        </div>
-        <div :class="$style['board__item']">
-          <button type="button" :class="$style['board__link']">
-            <div :class="$style['board__title']">
-              <p :class="$style['board__title-text']">전화권유 상담원 현황</p>
-            </div>
-            <div :class="$style['board__text']">2022.10.25</div>
-          </button>
-        </div>
-        <div :class="$style['board__item']">
-          <button type="button" :class="$style['board__link']">
-            <div :class="$style['board__title']">
-              <p :class="$style['board__title-text']">전화권유 상담원 현황</p>
-            </div>
-            <div :class="$style['board__text']">2022.10.25</div>
-          </button>
-        </div>
-        <div :class="$style['board__item']">
-          <button type="button" :class="$style['board__link']">
-            <div :class="$style['board__title']">
-              <p :class="$style['board__title-text']">전화권유 상담원 현황</p>
-            </div>
-            <div :class="$style['board__text']">2022.10.25</div>
-          </button>
-        </div>
-        <div :class="$style['board__item']">
-          <button type="button" :class="$style['board__link']">
-            <div :class="$style['board__title']">
-              <p :class="$style['board__title-text']">전화권유 상담원 현황</p>
-            </div>
-            <div :class="$style['board__text']">2022.10.25</div>
-          </button>
-        </div>
-        <div :class="$style['board__item']">
-          <button type="button" :class="$style['board__link']">
-            <div :class="$style['board__title']">
-              <p :class="$style['board__title-text']">전화권유 상담원 현황</p>
-            </div>
-            <div :class="$style['board__text']">2022.10.25</div>
-          </button>
-        </div>
-        <div :class="$style['board__item']">
-          <button type="button" :class="$style['board__link']">
-            <div :class="$style['board__title']">
-              <p :class="$style['board__title-text']">전화권유 상담원 현황</p>
-            </div>
-            <div :class="$style['board__text']">2022.10.25</div>
-          </button>
-        </div>
-        <div :class="$style['board__item']">
-          <button type="button" :class="$style['board__link']">
-            <div :class="$style['board__title']">
-              <p :class="$style['board__title-text']">전화권유 상담원 현황</p>
-            </div>
-            <div :class="$style['board__text']">2022.10.25</div>
-          </button>
-        </div>
-        <div :class="$style['board__item']">
-          <button type="button" :class="$style['board__link']">
-            <div :class="$style['board__title']">
-              <p :class="$style['board__title-text']">전화권유 상담원 현황</p>
-            </div>
-            <div :class="$style['board__text']">2022.10.25</div>
-          </button>
-        </div>
-        <div :class="$style['board__item']">
-          <button type="button" :class="$style['board__link']">
-            <div :class="$style['board__title']">
-              <p :class="$style['board__title-text']">전화권유 상담원 현황</p>
-            </div>
-            <div :class="$style['board__text']">2022.10.25</div>
-          </button>
-        </div>
-      </div>
-
-      <div :class="$style['board__bottom']">
-        <button type="button" :class="$style['more-button']">
-          <span :class="$style['more-button__text']">더보기</span>
-          <span :class="$style['more-button__icon']">
-            <IconArrow />
-          </span>
-        </button>
-      </div>
+    <div class="inline-wrap align-center row-margin-contents">
+      <TextButton :classNames="{ wrap: 'text-body-4 color-gray' }">
+        더보기
+        <template v-slot:rightIcon>
+          <IconArrow />
+        </template>
+      </TextButton>
     </div>
   </PageContents>
 </template>

@@ -18,7 +18,7 @@ export default {
         return defaultClassNames();
       },
     },
-    type: {
+    theme: {
       Type: String,
       default: null,
     },
@@ -79,7 +79,7 @@ export default {
     :class="[
       $style['security-input'],
       {
-        [$style[`security-input--${type}`]]: type,
+        [$style[`security-input--theme-${theme}`]]: theme,
       },
       customClassNames.wrap,
     ]"

@@ -50,21 +50,26 @@ export default {
           wrap: 'row-margin-contents',
         }"
       >
-        <KeyValueItem :classNames="{ item: 'text-body-3' }">
+        <KeyValueItem>
           <KeyValueTitle>연락처</KeyValueTitle>
           <KeyValueText>1800-1110</KeyValueText>
         </KeyValueItem>
 
-        <KeyValueItem :classNames="{ item: 'text-body-3' }">
+        <KeyValueItem>
           <KeyValueTitle>증권계좌</KeyValueTitle>
           <KeyValueText>123456789</KeyValueText>
         </KeyValueItem>
       </KeyValueList>
 
-      <div :class="$style['map-area']">//지도 영역</div>
+      <div :class="$style['map-area']">
+        <div style="height: 100%; background-color: lightgray">
+          // 지도 영역
+        </div>
+      </div>
     </FullPopup>
   </UiLayer>
 </template>
+
 <style lang="scss" module>
 @import '@/assets/scss/views/customer/LayerCustomerBranchDetail.scss';
 </style>

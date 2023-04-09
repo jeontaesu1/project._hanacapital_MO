@@ -51,7 +51,7 @@ export default {
       </template>
 
       <ol :class="[$style['basic-list'], $style['basic-list--normal-margin']]">
-        <li :class="[$style['basic-list__item']]">
+        <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']">1.</div>
           <div :class="$style['basic-list__content']">
             사업자대출은 고객님 명의로 개인사업자를 운영하시고, 대출금을 사업자
@@ -59,21 +59,21 @@ export default {
             별도 자금용도 증빙은 하지 않습니다.)
           </div>
         </li>
-        <li :class="[$style['basic-list__item']]">
+        <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']">2.</div>
           <div :class="$style['basic-list__content']">
             추후 사업자를 폐업하는 경우 개인대출로 전환되며, 이때 고객님
             개인신용평점에 변동이 발생할 수 있습니다.
           </div>
         </li>
-        <li :class="[$style['basic-list__item']]">
+        <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']">3.</div>
           <div :class="$style['basic-list__content']">
             사업자대출 진행 시 사업자등록증 사본 등 추가 서류를 요청할 수
             있습니다.
           </div>
         </li>
-        <li :class="[$style['basic-list__item']]">
+        <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']">4.</div>
           <div :class="$style['basic-list__content']">
             사업자대출 진행을 동의하지 않으시면 개인대출로 진행됩니다.

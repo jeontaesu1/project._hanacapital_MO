@@ -29,4 +29,16 @@
     padding-top: 20px;
     border-top: 2px dashed #ccc;
   }
+
+  &-copy {
+    margin-top: 10px;
+    display: none;
+
+    &-code {
+      display: none;
+    }
+    &-button {
+      display: block;
+    }
+  }
 }

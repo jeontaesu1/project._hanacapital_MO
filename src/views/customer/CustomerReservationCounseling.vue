@@ -100,7 +100,7 @@ export default {
                 :minSide="true"
                 name="customerReservationCounselingType"
                 id="customerReservationCounselingType1"
-                :checked="true"
+                :defaultChecked="true"
               >
                 <BoxCheckLabel>개인(개인사업자)</BoxCheckLabel>
               </BoxCheck>
@@ -495,9 +495,9 @@ export default {
     </FormList>
 
     <div :class="[$style['agree-list'], 'row-margin-container']">
-      <ul :class="$style['agree-list__depth']">
-        <li :class="$style['agree-list__depth-item']">
-          <div :class="$style['agree-list__depth-head']">
+      <ul :class="$style['agree-list__list']">
+        <li :class="$style['agree-list__item']">
+          <div :class="$style['agree-list__head']">
             <CheckBox
               id="layerGuidePhoneCounselingAgree001"
               :classNames="{

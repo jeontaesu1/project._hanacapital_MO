@@ -1,0 +1,50 @@
+.tooltip {
+  font-size: 0;
+  line-height: 0;
+
+  &__button {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  &__bubble {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    left: 20px;
+    right: 20px;
+    padding: 16px 12px;
+    border-radius: 12px;
+    background-color: rgba($color-black, 0.9);
+    transform: translateY(-100%);
+  }
+
+  &__tail {
+    position: absolute;
+    width: 19px;
+    height: 8px;
+    top: 100%;
+    left: 50%;
+    margin-left: -9px;
+    background: url('@/assets/images/etc/edge.svg') no-repeat 50% 50% / 100%
+      100%;
+  }
+
+  &--bottom {
+    .tooltip__bubble {
+      transform: translateY(12px);
+    }
+
+    .tooltip__tail {
+      top: auto;
+      bottom: 100%;
+      transform: rotate(180deg);
+    }
+  }
+
+  &:global(.is-show) {
+    .tooltip__bubble {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+.basic-table {
+  border-top: 1px solid $color-gray-60;
+
+  > table {
+    @include reset-table;
+
+    > thead {
+      > tr {
+        > th {
+          padding: 7px 0;
+          border-left: 1px solid $color-gray-30;
+          border-bottom: 1px solid $color-gray-30;
+          word-break: break-all;
+          color: $color-gray-70;
+          font-weight: 400;
+          @include font-size-default(12);
+          vertical-align: middle;
+          text-align: center;
+
+          &:first-child {
+            border-left: none;
+          }
+        }
+      }
+    }
+    > tbody {
+      > tr {
+        > td {
+          padding: 11px 15px;
+          border-left: 1px solid $color-gray-30;
+          border-bottom: 1px solid $color-gray-30;
+          word-break: break-all;
+          @include font-size-default(13);
+          vertical-align: middle;
+          text-align: center;
+
+          &:first-child {
+            border-left: none;
+          }
+        }
+      }
+    }
+    > tfoot {
+      > tr {
+        > td {
+          padding: 11px 15px;
+          border-left: 1px solid $color-gray-30;
+          border-bottom: 1px solid $color-gray-30;
+          word-break: break-all;
+          background-color: $color-navy-05;
+          @include font-size-default(13);
+          font-weight: 500;
+          vertical-align: middle;
+          text-align: center;
+
+          &:first-child {
+            border-left: none;
+          }
+        }
+      }
+    }
+  }
+}

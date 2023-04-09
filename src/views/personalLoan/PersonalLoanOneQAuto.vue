@@ -16,6 +16,11 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
+import StickyBar from '@/components/ui/common/StickyBar.vue';
+import UiTab from '@/components/ui/tab/UiTab.vue';
+import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
+import NavTab from '@/components/ui/tab/NavTab.vue';
+import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
 
 import IconMoney from '@/assets/images/icon/money.svg?component';
 import IconRate from '@/assets/images/icon/rate.svg?component';
@@ -41,6 +46,11 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicBox,
+    StickyBar,
+    UiTab,
+    UiTabPanel,
+    NavTab,
+    NavTabButton,
     IconMoney,
     IconRate,
     IconDate,
@@ -76,7 +86,7 @@ export default {
 
 <template>
   <PageContents>
-    <div :class="[$style['bg']]">
+    <div :class="$style['bg']">
       <PageTextGroup>
         <PageMainText>
           내 차만 있다면<br />
@@ -125,349 +135,403 @@ export default {
       </BasicBox>
     </div>
 
-    <!-- [DD] 상품안내 탭 영역 -->
-    <div :class="['row-margin-contents']">
-      <BasicBox theme="tertiary">
-        <KeyValueList align="left">
+    <UiTab>
+      <div :class="$style['tab__inner']">
+        <StickyBar>
+          <NavTab :useUiTab="true" :auto="true">
+            <NavTabButton link="PersonalLoanOneQAutoTab001_001"
+              >상품안내</NavTabButton
+            >
+            <NavTabButton link="PersonalLoanOneQAutoTab001_002"
+              >진행절차</NavTabButton
+            >
+            <NavTabButton link="PersonalLoanOneQAutoTab001_003"
+              >유의사항</NavTabButton
+            >
+          </NavTab>
+        </StickyBar>
+      </div>
+
+      <UiTabPanel name="PersonalLoanOneQAutoTab001_001">
+        <BasicBox theme="tertiary">
+          <KeyValueList align="left" margin="regular">
+            <KeyValueItem :classNames="{ item: 'text-body-3' }">
+              <KeyValueTitle>대상</KeyValueTitle>
+              <KeyValueText>
+                본인 명의 차량 3개월 이상 소유자
+                <div :class="$style['small-sub']">출고 10년 이내로 제한</div>
+              </KeyValueText>
+            </KeyValueItem>
+
+            <KeyValueItem :classNames="{ item: 'text-body-3' }">
+              <KeyValueTitle>한도</KeyValueTitle>
+              <KeyValueText>최소 100만원 ~ 최대 1억원</KeyValueText>
+            </KeyValueItem>
+
+            <KeyValueItem :classNames="{ item: 'text-body-3' }">
+              <KeyValueTitle>금리</KeyValueTitle>
+              <KeyValueText>연 4.9% ~ 16.9%</KeyValueText>
+            </KeyValueItem>
+
+            <KeyValueItem :classNames="{ item: 'text-body-3' }">
+              <KeyValueTitle>기간</KeyValueTitle>
+              <KeyValueText> 12개월 ~ 120개월</KeyValueText>
+            </KeyValueItem>
+          </KeyValueList>
+        </BasicBox>
+        <KeyValueList
+          direction="vertical"
+          :classNames="{
+            wrap: 'row-margin-contents',
+          }"
+        >
           <KeyValueItem>
-            <KeyValueTitle>대상</KeyValueTitle>
+            <KeyValueTitle>상환방법</KeyValueTitle>
             <KeyValueText>
-              본인 명의 차량 3개월 이상 소유자
-              <div :class="$style['small-sub']">출고 10년 이내로 제한</div>
+              <ul
+                :class="[
+                  $style['basic-list'],
+                  $style['basic-list--regular'],
+                  $style['basic-list--mini-margin'],
+                ]"
+              >
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-black',
+                    'font-weight-regular',
+                    'text-body-2',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    원리금균등분할상환
+                  </div>
+                </li>
+              </ul>
             </KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem>
-            <KeyValueTitle>한도</KeyValueTitle>
-            <KeyValueText>최소 100만원 ~ 최대 1억원</KeyValueText>
+            <KeyValueTitle>저당설정</KeyValueTitle>
+            <KeyValueText>
+              당사 1순위 설정
+              <div :class="$style['small-sub']">
+                (소유하고 있는 차량시세의 최대 80% 설정)
+              </div>
+              <ul :class="[$style['basic-list'], 'row-margin-item']">
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-black',
+                    'font-weight-regular',
+                    'text-body-4',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']">-</div>
+                  <div :class="$style['basic-list__content']">
+                    근저당설정비용 : 회사 부담
+                  </div>
+                </li>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-black',
+                    'font-weight-regular',
+                    'text-body-4',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']">-</div>
+                  <div :class="$style['basic-list__content']">
+                    근저당 설정 해지비용 : 손님 부담
+                  </div>
+                </li>
+              </ul>
+            </KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem>
-            <KeyValueTitle>금리</KeyValueTitle>
-            <KeyValueText>연 4.9% ~ 16.9%</KeyValueText>
+            <KeyValueTitle>중도상환수수료</KeyValueTitle>
+            <KeyValueText>
+              <div>
+                대출실행일 기준 경과기간에 따라 차등 적용되며, 3년 경과 시 면제
+              </div>
+              <ul :class="[$style['basic-list'], 'row-margin-item']">
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-black',
+                    'font-weight-regular',
+                    'text-body-4',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']">-</div>
+                  <div :class="$style['basic-list__content']">
+                    1년 이상 : 중도상환원금 X 1% + 중도상환원금 X
+                    (중도상환수수료율 - 1%) X 잔존기간/(대출기간 - 30일)
+                  </div>
+                </li>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-black',
+                    'font-weight-regular',
+                    'text-body-4',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']">-</div>
+                  <div :class="$style['basic-list__content']">
+                    1년 미만 : 중도상환원금 X (중도상환수수료율) X
+                    잔존기간/(대출기간 - 30일)
+                  </div>
+                </li>
+              </ul>
+              <ul
+                :class="[
+                  $style['basic-list'],
+                  $style['basic-list--small-margin'],
+                  'row-margin-item',
+                ]"
+              >
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-gray-tertiary',
+                    'font-weight-regular',
+                    'text-body-5',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']">※</div>
+                  <div :class="$style['basic-list__content']">
+                    잔존기간 : 30일 미만 상환 시 '대출 사용기간'을 30일로 간주
+                  </div>
+                </li>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-gray-tertiary',
+                    'font-weight-regular',
+                    'text-body-5',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']">※</div>
+                  <div :class="$style['basic-list__content']">
+                    중도상환수수료율 : 2%
+                  </div>
+                </li>
+              </ul>
+            </KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem>
-            <KeyValueTitle>기간</KeyValueTitle>
-            <KeyValueText> 12개월 ~ 120개월</KeyValueText>
+            <KeyValueTitle>대출부대비용</KeyValueTitle>
+            <KeyValueText>
+              5천만원 초과 실행 시 인지세 발생
+              <div :class="$style['sub']">
+                (인지세는 하나캐피탈과 금융소비자가 50%씩 부담합니다.)
+              </div>
+              <ul :class="[$style['basic-list'], 'row-margin-item']">
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-black',
+                    'font-weight-regular',
+                    'text-body-4',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']">-</div>
+                  <div :class="$style['basic-list__content']">
+                    대출금액 5천만원 초과 1억원 이하 : 7만원
+                  </div>
+                </li>
+              </ul>
+            </KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>연체이자율</KeyValueTitle>
+            <KeyValueText>
+              약정이율 + 3%
+              <div :class="$style['sub']">(법정최고금리 연 20% 이내)</div>
+            </KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>이자부과시기</KeyValueTitle>
+            <KeyValueText> 매월 후취 </KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>기타</KeyValueTitle>
+            <KeyValueText>
+              아파트 소유 시, 추가한도 부여
+              <div :class="$style['sub']">(최대한도 1억원 이내)</div>
+            </KeyValueText>
           </KeyValueItem>
         </KeyValueList>
-      </BasicBox>
-
-      <KeyValueList
-        direction="vertical"
-        :classNames="{
-          wrap: 'row-margin-contents',
-        }"
-      >
-        <KeyValueItem>
-          <KeyValueTitle>상환방법</KeyValueTitle>
-          <KeyValueText>
-            <ul
-              :class="[
-                $style['basic-list'],
-                $style['basic-list--regular'],
-                $style['basic-list--mini-margin'],
-              ]"
-            >
-              <li
-                :class="[
-                  $style['basic-list__item'],
-                  'color-black',
-                  'font-weight-regular',
-                  'text-body-2',
-                ]"
-              >
-                <div :class="$style['basic-list__symbol']"></div>
-                <div :class="$style['basic-list__content']">
-                  원리금균등분할상환
+      </UiTabPanel>
+      <UiTabPanel name="PersonalLoanOneQAutoTab001_002">
+        <div :class="$style['step']">
+          <ul :class="$style['step__list']">
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__top']">
+                    <div :class="$style['step__badge']">STEP 1</div>
+                  </div>
+                  <div :class="$style['step__text']">
+                    본인인증 및 손님의 정보로
+                    <strong>대출한도를 조회</strong>합니다.
+                  </div>
                 </div>
-              </li>
-            </ul>
-          </KeyValueText>
-        </KeyValueItem>
-
-        <KeyValueItem>
-          <KeyValueTitle>저당설정</KeyValueTitle>
-          <KeyValueText>
-            당사 1순위 설정
-            <div :class="$style['small-sub']">
-              (소유하고 있는 차량시세의 최대 80% 설정)
-            </div>
-            <ul :class="[$style['basic-list'], 'row-margin-item']">
-              <li
-                :class="[
-                  $style['basic-list__item'],
-                  'color-black',
-                  'font-weight-regular',
-                  'text-body-4',
-                ]"
-              >
-                <div :class="$style['basic-list__symbol']">-</div>
-                <div :class="$style['basic-list__content']">
-                  근저당설정비용 : 회사 부담
-                </div>
-              </li>
-              <li
-                :class="[
-                  $style['basic-list__item'],
-                  'color-black',
-                  'font-weight-regular',
-                  'text-body-4',
-                ]"
-              >
-                <div :class="$style['basic-list__symbol']">-</div>
-                <div :class="$style['basic-list__content']">
-                  근저당 설정 해지비용 : 손님 부담
-                </div>
-              </li>
-            </ul>
-            <ul
-              :class="[
-                $style['basic-list'],
-                $style['basic-list--small-margin'],
-                'row-margin-item',
-              ]"
-            >
-              <li
-                :class="[
-                  $style['basic-list__item'],
-                  'color-gray-tertiary',
-                  'font-weight-regular',
-                  'text-body-5',
-                ]"
-              >
-                <div :class="$style['basic-list__symbol']">※</div>
-                <div :class="$style['basic-list__content']">
-                  잔존기간 : 30일 미만 상환 시 '대출 사용기간'을 30일로 간주
-                </div>
-              </li>
-              <li
-                :class="[
-                  $style['basic-list__item'],
-                  'color-gray-tertiary',
-                  'font-weight-regular',
-                  'text-body-5',
-                ]"
-              >
-                <div :class="$style['basic-list__symbol']">※</div>
-                <div :class="$style['basic-list__content']">
-                  중도상환수수료율 : 2%
-                </div>
-              </li>
-            </ul>
-          </KeyValueText>
-        </KeyValueItem>
-
-        <KeyValueItem>
-          <KeyValueTitle>대출부대비용</KeyValueTitle>
-          <KeyValueText>
-            5천만원 초과 실행 시 인지세 발생
-            <div :class="$style['sub']">
-              (인지세는 하나캐피탈과 금융소비자가 50%씩 부담합니다.)
-            </div>
-            <ul :class="[$style['basic-list'], 'row-margin-item']">
-              <li
-                :class="[
-                  $style['basic-list__item'],
-                  'color-black',
-                  'font-weight-regular',
-                  'text-body-4',
-                ]"
-              >
-                <div :class="$style['basic-list__symbol']">-</div>
-                <div :class="$style['basic-list__content']">
-                  대출금액 5천만원 초과 1억원 이하 : 7만원
-                </div>
-              </li>
-            </ul>
-          </KeyValueText>
-        </KeyValueItem>
-
-        <KeyValueItem>
-          <KeyValueTitle>연체이자율</KeyValueTitle>
-          <KeyValueText>
-            약정이율 + 3%
-            <div :class="$style['sub']">(법정최고금리 연 20% 이내)</div>
-          </KeyValueText>
-        </KeyValueItem>
-
-        <KeyValueItem>
-          <KeyValueTitle>이자부과시기</KeyValueTitle>
-          <KeyValueText> 매월 후취 </KeyValueText>
-        </KeyValueItem>
-
-        <KeyValueItem>
-          <KeyValueTitle>기타</KeyValueTitle>
-          <KeyValueText>
-            아파트 소유 시, 추가한도 부여
-            <div :class="$style['sub']">(최대한도 1억원 이내)</div>
-          </KeyValueText>
-        </KeyValueItem>
-      </KeyValueList>
-    </div>
-    <!-- //[DD] 상품안내 탭 영역 -->
-
-    <!-- [DD] 진행절차 탭 영역 -->
-    <div :class="['row-margin-contents']">
-      <div :class="$style['step']">
-        <ul :class="$style['step__list']">
-          <li :class="$style['step__item']">
-            <div :class="$style['step__inner']">
-              <div :class="$style['step__contents']">
-                <div :class="$style['step__top']">
-                  <div :class="$style['step__badge']">STEP 1</div>
-                </div>
-                <div :class="$style['step__text']">
-                  본인인증 및 손님의 정보로<br />
-                  <strong>대출한도를 조회</strong>합니다.
+                <div :class="$style['step__icon']">
+                  <IconSearchMoney />
                 </div>
               </div>
-              <div :class="$style['step__icon']">
-                <IconSearchMoney />
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__top']">
+                    <div :class="$style['step__badge']">STEP 2</div>
+                  </div>
+                  <div :class="$style['step__text']">
+                    한도 확인 후, 신청정보를 입력하여
+                    <strong>약정을 진행</strong>합니다.
+                  </div>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconPersonalTerms />
+                </div>
               </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__top']">
+                    <div :class="$style['step__badge']">STEP 3</div>
+                  </div>
+                  <div :class="$style['step__text']">
+                    제출하신 정보를 바탕으로 최종심사 후 손님께 결과안내 및
+                    온라인으로 <strong>차량 저당설정을 진행</strong>합니다.
+                  </div>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconCarSecurity />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__top']">
+                    <div :class="$style['step__badge']">STEP 4</div>
+                  </div>
+                  <div :class="$style['step__text']">
+                    계좌로 <strong>대출금을 입금</strong>해드립니다.
+                  </div>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconDeposit />
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </UiTabPanel>
+      <UiTabPanel name="PersonalLoanOneQAutoTab001_003">
+        <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+          <li
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
+          >
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              계약을 체결하기 전에 상품 설명서와 약관을 확인하시기 바랍니다.
             </div>
           </li>
-          <li :class="$style['step__item']">
-            <div :class="$style['step__inner']">
-              <div :class="$style['step__contents']">
-                <div :class="$style['step__top']">
-                  <div :class="$style['step__badge']">STEP 2</div>
-                </div>
-                <div :class="$style['step__text']">
-                  한도 확인 후, 신청정보를 입력하여<br />
-                  <strong>약정을 진행</strong>합니다.
-                </div>
-              </div>
-              <div :class="$style['step__icon']">
-                <IconPersonalTerms />
-              </div>
+          <li
+            :class="[
+              $style['basic-list__item'],
+              'color-black',
+              'font-weight-medium',
+              'text-body-3',
+            ]"
+          >
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              상환능력에 비해 대출금이 과도할 경우 귀하의 신용등급 또는
+              개인신용평점이 하락할 수 있습니다.
             </div>
           </li>
-          <li :class="$style['step__item']">
-            <div :class="$style['step__inner']">
-              <div :class="$style['step__contents']">
-                <div :class="$style['step__top']">
-                  <div :class="$style['step__badge']">STEP 3</div>
-                </div>
-                <div :class="$style['step__text']">
-                  제출하신 정보를 바탕으로 최종심사 후 손님께 결과안내 및
-                  온라인으로 <strong>차량 저당설정을 진행</strong>합니다.
-                </div>
-              </div>
-              <div :class="$style['step__icon']">
-                <IconCarSecurity />
-              </div>
+          <li
+            :class="[
+              $style['basic-list__item'],
+              'color-black',
+              'font-weight-medium',
+              'text-body-3',
+            ]"
+          >
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              개인신용평점 하락 시 금융거래와 관련된 불이익이 발생할 수
+              있습니다.
             </div>
           </li>
-          <li :class="$style['step__item']">
-            <div :class="$style['step__inner']">
-              <div :class="$style['step__contents']">
-                <div :class="$style['step__top']">
-                  <div :class="$style['step__badge']">STEP 4</div>
-                </div>
-                <div :class="$style['step__text']">
-                  계좌로 <strong>대출금을 입금</strong>해드립니다.
-                </div>
-              </div>
-              <div :class="$style['step__icon']">
-                <IconDeposit />
-              </div>
+          <li
+            :class="[
+              $style['basic-list__item'],
+              'color-black',
+              'font-weight-medium',
+              'text-body-3',
+            ]"
+          >
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              일정기간 원리금을 연체할 경우, 모든 원리금을 변제할 의무가 발생할
+              수 있습니다.
+            </div>
+          </li>
+          <li
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
+          >
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              대출취급이 부적정한 경우(연체금 보유, 개인신용평점 낮음) 대출이
+              제한될 수 있습니다.
+            </div>
+          </li>
+          <li
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
+          >
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              금융소비자의 개인신용평점에 따라 대출한도 및 금리가 차등
+              적용됩니다.
+            </div>
+          </li>
+          <li
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
+          >
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              금융소비자는 해당상품에 대하여 설명을 받을 권리가 있으며, 그
+              설명을 듣고 내용을 충분히 이해한 후 거래하시기 바랍니다.
+            </div>
+          </li>
+          <li
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
+          >
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              금리인하요구권 및 대출계약 철회권에 대한 자세한 사항은 당사
+              홈페이지에서 확인하시기 바랍니다.
             </div>
           </li>
         </ul>
-      </div>
-    </div>
-    <!-- //[DD] 진행절차 탭 영역 -->
+      </UiTabPanel>
+    </UiTab>
 
-    <!-- [DD] 유의사항 탭 영역 -->
-    <div :class="['row-margin-contents']">
-      <ul
-        :class="[
-          $style['basic-list'],
-          $style['basic-list--regular'],
-          'row-margin-contents',
-        ]"
-      >
-        <li :class="[$style['basic-list__item'], 'color-black', 'text-body-3']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            계약을 체결하기 전에 상품 설명서와 약관을 확인하시기 바랍니다.
-          </div>
-        </li>
-        <li
-          :class="[
-            $style['basic-list__item'],
-            'color-black',
-            'font-weight-medium',
-            'text-body-3',
-          ]"
-        >
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            상환능력에 비해 대출금이 과도할 경우 귀하의 신용등급 또는
-            개인신용평점이 하락할 수 있습니다.
-          </div>
-        </li>
-        <li
-          :class="[
-            $style['basic-list__item'],
-            'color-black',
-            'font-weight-medium',
-            'text-body-3',
-          ]"
-        >
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            개인신용평점 하락 시 금융거래와 관련된 불이익이 발생할 수 있습니다.
-          </div>
-        </li>
-        <li
-          :class="[
-            $style['basic-list__item'],
-            'color-black',
-            'font-weight-medium',
-            'text-body-3',
-          ]"
-        >
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            일정기간 원리금을 연체할 경우, 모든 원리금을 변제할 의무가 발생할 수
-            있습니다.
-          </div>
-        </li>
-        <li :class="[$style['basic-list__item'], 'color-black', 'text-body-3']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            대출취급이 부적정한 경우(연체금 보유, 개인신용평점 낮음) 대출이
-            제한될 수 있습니다.
-          </div>
-        </li>
-        <li :class="[$style['basic-list__item'], 'color-black', 'text-body-3']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            금융소비자의 개인신용평점에 따라 대출한도 및 금리가 차등 적용됩니다.
-          </div>
-        </li>
-        <li :class="[$style['basic-list__item'], 'color-black', 'text-body-3']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            금융소비자는 해당상품에 대하여 설명을 받을 권리가 있으며, 그 설명을
-            듣고 내용을 충분히 이해한 후 거래하시기 바랍니다.
-          </div>
-        </li>
-        <li :class="[$style['basic-list__item'], 'color-black', 'text-body-3']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            금리인하요구권 및 대출계약 철회권에 대한 자세한 사항은 당사
-            홈페이지에서 확인하시기 바랍니다.
-          </div>
-        </li>
-      </ul>
-    </div>
-    <!-- //[DD] 유의사항 탭 영역 -->
-
-    <ul :class="[$style['basic-list']]">
+    <ul :class="[$style['basic-list'], $style['margin-top-regular']]">
       <li :class="$style['basic-list__item']">
         <div :class="$style['basic-list__symbol']"></div>
         <div :class="$style['basic-list__content']">
@@ -494,11 +558,11 @@ export default {
       <ul :class="$style['icon-list__list']">
         <li :class="$style['icon-list__item']">
           <button type="button" :class="$style['icon-list__block']">
-            <div :class="$style['icon-list__icon']"><IconCalculate /></div>
-            <div :class="$style['icon-list__content']">
-              <div :class="$style['icon-list__text']">월 납입금 계산</div>
-              <div :class="$style['icon-list__title']">대출 계산기</div>
-            </div>
+            <span :class="$style['icon-list__icon']"><IconCalculate /></span>
+            <span :class="$style['icon-list__content']">
+              <span :class="$style['icon-list__text']">월 납입금 계산</span>
+              <span :class="$style['icon-list__title']">대출 계산기</span>
+            </span>
           </button>
         </li>
       </ul>

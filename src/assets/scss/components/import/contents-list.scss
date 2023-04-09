@@ -1,98 +1,240 @@
 .contents-list {
-  @include reset-list;
+  display: block;
+
+  &__list {
+    @include reset-list;
+  }
 
   &__item {
-    display: flex;
-    align-items: flex-start;
-  }
-
-  &__symbol {
-    width: 26px;
-    height: 26px;
-    margin-right: 8px;
-    @include font-size-default(16);
-    text-align: center;
-  }
-
-  &__symbol--circle {
-    width: 16px;
-    height: 16px;
-    margin: 3px 8px 3px 0;
-    @include font-size-default(10);
-    background-color: $color-gray-15;
-    border-radius: 8px;
-    box-sizing: border-box;
-  }
-
-  &__symbol--square {
-    width: 24px;
-    height: 24px;
-    margin-right: 12px;
-    padding: 4px;
-    @include font-size-default(11);
-    background-color: $color-gray-15;
-    border-radius: 8px;
-    box-sizing: border-box;
-  }
-
-  &__symbol--square-small {
-    width: 18px;
-    height: 18px;
-    padding: 1px 0;
-    margin: 1px 8px 1px 0;
-    @include font-size-default(10);
-    background-color: $color-gray-15;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-
-  &__symbol--small {
-    width: 23px;
-    height: 24px;
-    margin-right: 2px;
-    padding: 4px 0 3px 0;
-    @include font-size-default(11);
-    box-sizing: border-box;
-  }
-
-  &__content {
-    flex: 1;
-    min-width: 0;
-    padding: 1px 0;
-    @include font-size-default(16);
-    box-sizing: border-box;
-  }
-
-  &__symbol--small + &__content {
-    padding: 2px 0;
-  }
-
-  &__symbol--circle + &__content,
-  &__symbol--square-small + &__content {
-    padding: 0;
-  }
-
-  &--medium-margin {
-    .contents-list__item + .contents-list__item {
-      margin-top: 20px;
-    }
-  }
-
-  &--regular-margin {
-    .contents-list__item + .contents-list__item {
+    & + & {
       margin-top: 16px;
     }
   }
 
-  &--normal-margin {
-    .contents-list__item + .contents-list__item {
-      margin-top: 12px;
+  &__head {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    padding: 15px;
+    border: 1px solid $color-gray-30;
+    border-radius: 8px;
+  }
+
+  &__symbol {
+    flex: none;
+    margin-right: 8px;
+    min-width: 26px;
+    text-align: center;
+    @include font-size-default(16);
+    font-weight: 500;
+    min-height: #{$line-height-default}em;
+    box-sizing: border-box;
+  }
+
+  &__title {
+    flex: 0 1 auto;
+    min-width: 0;
+    @include font-size-default(16);
+    font-weight: 500;
+  }
+
+  &__right {
+    flex: none;
+    margin-left: auto;
+    padding-left: 8px;
+    display: flex;
+    align-items: center;
+    @include font-size-default(16);
+    min-height: #{$line-height-default}em;
+  }
+
+  &__opener {
+    flex: none;
+    margin-left: 10px;
+    position: static;
+
+    &:only-child {
+      margin-left: 0;
+    }
+
+    &::before {
+      padding: 0;
+      top: 0;
+      left: 0;
+      z-index: 10;
     }
   }
 
-  &--small-margin {
-    .contents-list__item + .contents-list__item {
-      margin-top: 8px;
+  &__contents {
+    padding-top: 16px;
+  }
+
+  &__depth {
+    padding-left: 42px;
+    padding-right: 16px;
+  }
+
+  &__depth-2 {
+    padding-left: 22px;
+  }
+
+  &__depth-3 {
+    padding-left: 24px;
+  }
+
+  &__depth-4 {
+    padding-left: 26px;
+  }
+
+  &__list--secondary {
+    > .contents-list__item {
+      & + .contents-list__item {
+        margin-top: 0;
+      }
+
+      > .contents-list__head {
+        border: none;
+        border-radius: 0;
+        padding: 10px 16px;
+
+        .contents-list__symbol {
+          margin-right: 12px;
+          padding-top: 4px;
+          padding-bottom: 3px;
+          min-width: 24px;
+          min-height: 24px;
+          @include font-size-default(11);
+          border-radius: 8px;
+          background-color: $color-gray-15;
+        }
+
+        .contents-list__title,
+        .contents-list__right {
+          padding-top: 1px;
+          @include font-size-default(15);
+        }
+      }
+    }
+  }
+
+  &__list--tertiary {
+    > .contents-list__item {
+      & + .contents-list__item {
+        margin-top: 0;
+      }
+
+      > .contents-list__head {
+        border: none;
+        border-radius: 0;
+        padding: 8px 0;
+
+        .contents-list__symbol {
+          margin-right: 2px;
+          padding-top: 4px;
+          padding-bottom: 3px;
+          min-width: 23px;
+          min-height: 24px;
+          @include font-size-default(11);
+        }
+
+        .contents-list__title,
+        .contents-list__right {
+          padding-top: 2px;
+          @include font-size-default(14);
+        }
+      }
+    }
+  }
+
+  &__list--quaternary {
+    > .contents-list__item {
+      & + .contents-list__item {
+        margin-top: 0;
+      }
+
+      > .contents-list__head {
+        border: none;
+        border-radius: 0;
+        padding: 6px 0;
+        color: $color-gray-70;
+
+        .contents-list__symbol {
+          margin-right: 2px;
+          padding-top: 4px;
+          padding-bottom: 3px;
+          min-width: 23px;
+          min-height: 24px;
+          @include font-size-default(11);
+        }
+
+        .contents-list__title,
+        .contents-list__right {
+          padding-top: 2px;
+          @include font-size-default(13);
+        }
+      }
+    }
+  }
+
+  &__list--quinary {
+    > .contents-list__item {
+      & + .contents-list__item {
+        margin-top: 8px;
+      }
+
+      > .contents-list__head {
+        border: none;
+        border-radius: 0;
+        padding: 0;
+
+        .contents-list__symbol {
+          margin-top: 3px;
+          margin-right: 8px;
+          padding-top: 1px;
+          min-width: 16px;
+          min-height: 16px;
+          border-radius: 100px;
+          @include font-size-default(10);
+          background-color: $color-gray-20;
+        }
+
+        .contents-list__title,
+        .contents-list__right {
+          @include font-size-default(15);
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  &__list--senary {
+    > .contents-list__item {
+      & + .contents-list__item {
+        margin-top: 12px;
+      }
+
+      > .contents-list__head {
+        border: none;
+        border-radius: 0;
+        padding: 0;
+
+        .contents-list__symbol {
+          margin-top: 1px;
+          margin-right: 8px;
+          padding-top: 2px;
+          min-width: 18px;
+          min-height: 18px;
+          border-radius: 4px;
+          @include font-size-default(10);
+          background-color: $color-gray-15;
+        }
+
+        .contents-list__title,
+        .contents-list__right {
+          @include font-size-default(14);
+          font-weight: 400;
+        }
+      }
     }
   }
 }

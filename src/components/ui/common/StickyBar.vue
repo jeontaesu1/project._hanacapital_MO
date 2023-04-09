@@ -1,5 +1,14 @@
 <script>
-import { ref, reactive, computed, onMounted, onUnmounted, nextTick } from 'vue';
+import {
+  ref,
+  reactive,
+  computed,
+  onBeforeMount,
+  onMounted,
+  onBeforeUnmount,
+  nextTick,
+  inject,
+} from 'vue';
 
 import { useUiScrollBlockStore } from '@/stores/ui/scrollBlock';
 import { useUiHeaderStore } from '@/stores/ui/header';
@@ -20,6 +29,9 @@ export default {
     },
   },
   setup(props) {
+    const uiLayer = inject('uiLayer', {});
+    const popupLayout = inject('popupLayout', {});
+
     const store = {
       ui: {
         scrollBlock: useUiScrollBlockStore(),
@@ -61,11 +73,27 @@ export default {
 
     const update = () => {
       const wrapEl = wrap.value;
+
+      if (wrapEl.offsetHeight <= 0) return;
+
       const contentsEl = contents.value;
       const contentsInnerEl = contentsEl.children[0];
       const offsetTop = wrapEl.offsetTop;
+      const popupHead =
+        popupLayout && popupLayout.head && popupLayout.head.value;
+      const popupHeadH = (() => {
+        if (popupHead) {
+          return popupHead.offsetHeight;
+        } else {
+          return 0;
+        }
+      })();
+      const popupBody =
+        popupLayout && popupLayout.body && popupLayout.body.value;
       const scrollTop = (() => {
-        if (store.ui.scrollBlock.isBlocking) {
+        if (popupBody) {
+          return popupBody.scrollTop - popupHeadH;
+        } else if (store.ui.scrollBlock.isBlocking) {
           return store.ui.scrollBlock.scrollTop;
         } else {
           const html = document.getElementsByTagName('html')[0];
@@ -73,7 +101,10 @@ export default {
         }
       })();
 
-      if (scrollTop < offsetTop - headerH.value) {
+      if (
+        (popupHead && scrollTop < offsetTop - popupHeadH) ||
+        scrollTop < offsetTop - headerH.value
+      ) {
         if (state.isSticky) {
           state.isSticky = false;
         }
@@ -101,6 +132,26 @@ export default {
       update();
     };
 
+    const scrollBind = () => {
+      const popupBody =
+        popupLayout && popupLayout.body && popupLayout.body.value;
+
+      if (popupBody) {
+        popupBody.addEventListener('scroll', scroll);
+      }
+    };
+
+    onBeforeMount(() => {
+      if (uiLayer && uiLayer.stickyBar) {
+        uiLayer.stickyBar.value = {
+          update,
+        };
+        popupLayout.stickyBar.value = {
+          scrollBind,
+        };
+      }
+    });
+
     onMounted(() => {
       setMargin();
 
@@ -113,10 +164,17 @@ export default {
       window.addEventListener('resize', resize);
     });
 
-    onUnmounted(() => {
+    onBeforeUnmount(() => {
       window.removeEventListener('load', load);
       window.removeEventListener('scroll', scroll);
       window.removeEventListener('resize', resize);
+
+      const popupBody =
+        popupLayout && popupLayout.body && popupLayout.body.value;
+
+      if (popupBody) {
+        popupBody.removeEventListener('scroll', scroll);
+      }
     });
 
     return {

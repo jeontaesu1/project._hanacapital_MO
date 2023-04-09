@@ -104,10 +104,7 @@ export default {
         </ul>
       </div>
 
-      <section
-        class="row-margin-contents-group"
-        :class="$style['notice-section']"
-      >
+      <section :class="[$style['notice-section'], 'row-margin-contents-group']">
         <h3 :class="$style['notice-section__title']">유의사항</h3>
         <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
           <li :class="$style['basic-list__item']">

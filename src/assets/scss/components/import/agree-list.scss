@@ -145,37 +145,31 @@
   &__list--secondary {
     padding: 10px 0 0 24px;
 
-    .agree-list__item {
+    > .agree-list__item {
       & + .agree-list__item {
         margin-top: 8px;
       }
-    }
 
-    .agree-list__link {
-      width: 14px;
-      height: 14px;
+      > .agree-list__head {
+        .agree-list__link {
+          width: 14px;
+          height: 14px;
+        }
+      }
     }
   }
 
   &__list--tertiary {
-    padding: 4px 0 0 24px;
-
-    .agree-list__item {
-      & + .agree-list__item {
-        margin-top: 2px;
-      }
-    }
-  }
-
-  &__list--flex-box {
+    padding: 2px 0 0 16px;
     display: flex;
     flex-wrap: wrap;
-    padding: 4px 0 0 24px;
 
-    .agree-list__item {
-      padding-right: 8px;
+    > .agree-list__item {
+      flex: none;
+      padding: 2px 0 0 8px;
+
       & + .agree-list__item {
-        margin: 0;
+        margin-top: 0;
       }
     }
   }

@@ -21,7 +21,7 @@ import LayerPersonalLoanStockEarlyError from '@/views/personalLoan/LayerPersonal
 import LayerPersonalLoanStockEarlyAlert from '@/views/personalLoan/LayerPersonalLoanStockEarlyAlert.vue';
 import LayerPersonalLoanStockEarlyComplete from '@/views/personalLoan/LayerPersonalLoanStockEarlyComplete.vue';
 import LayerPersonalLoanStockEarlyFail from '@/views/personalLoan/LayerPersonalLoanStockEarlyFail.vue';
-import LayerPersonalLoanStockEarlyEnter from '@/views/personalLoan/LayerPersonalLoanStockEarlyEnter.vue';
+import LayerPersonalLoanStockEarlyForm from '@/views/personalLoan/LayerPersonalLoanStockEarlyForm.vue';
 
 export default {
   components: {
@@ -44,7 +44,7 @@ export default {
     LayerPersonalLoanStockEarlyAlert,
     LayerPersonalLoanStockEarlyComplete,
     LayerPersonalLoanStockEarlyFail,
-    LayerPersonalLoanStockEarlyEnter,
+    LayerPersonalLoanStockEarlyForm,
   },
   setup() {
     const layer001 = ref(null);
@@ -198,6 +198,9 @@ export default {
         >
       </ButtonListItem>
       <ButtonListItem>
+        <BasicButton @click="layer016Open">중도상환 조건 입력</BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
         <BasicButton @click="layer011Open">중도상환금액 조회</BasicButton>
       </ButtonListItem>
       <ButtonListItem>
@@ -212,9 +215,6 @@ export default {
       <ButtonListItem>
         <BasicButton @click="layer015Open">상환 신청 실패</BasicButton>
       </ButtonListItem>
-      <ButtonListItem>
-        <BasicButton @click="layer016Open">중도상환 조건 입력</BasicButton>
-      </ButtonListItem>
     </ButtonList>
 
     <LayerPersonalLoanStockExtensionAgree ref="layer001" />
@@ -227,11 +227,11 @@ export default {
     <LayerPersonalLoanStockEarlyList ref="layer008" />
     <LayerPersonalLoanStockEarlyEmpty ref="layer009" />
     <LayerPersonalLoanStockEarlyNotice ref="layer010" />
+    <LayerPersonalLoanStockEarlyForm ref="layer016" />
     <LayerPersonalLoanStockEarlyConfirm ref="layer011" />
     <LayerPersonalLoanStockEarlyError ref="layer012" />
     <LayerPersonalLoanStockEarlyAlert ref="layer013" />
     <LayerPersonalLoanStockEarlyComplete ref="layer014" />
     <LayerPersonalLoanStockEarlyFail ref="layer015" />
-    <LayerPersonalLoanStockEarlyEnter ref="layer016" />
   </PageContents>
 </template>

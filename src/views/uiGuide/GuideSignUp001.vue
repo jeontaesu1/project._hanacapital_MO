@@ -83,11 +83,9 @@ export default {
         <BasicButton @click="layer001Open">인증선택</BasicButton>
       </ButtonListItem>
 
-      <!-- 작업중
       <ButtonListItem>
         <BasicButton @click="layer002Open">약관동의</BasicButton>
       </ButtonListItem>
-      -->
 
       <ButtonListItem>
         <BasicButton @click="layer003Open">아이디 비밀번호 입력</BasicButton>

@@ -30,7 +30,7 @@ const datas = () => [
     datas: [
       {
         depth2: '레이아웃',
-        depth3: 'Type 001',
+        depth3: 'Type 1',
         depth4: '',
         depth5: '',
         depth6: '',
@@ -41,7 +41,7 @@ const datas = () => [
       },
       {
         depth2: '레이아웃',
-        depth3: 'Type 02',
+        depth3: 'Type 2',
         depth4: '',
         depth5: '',
         depth6: '',
@@ -52,7 +52,7 @@ const datas = () => [
       },
       {
         depth2: '레이아웃',
-        depth3: 'Type 03',
+        depth3: 'Type 3',
         depth4: '',
         depth5: '',
         depth6: '',
@@ -215,8 +215,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/sign/signin',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.07',
         log: [],
       },
       {
@@ -255,7 +255,7 @@ const datas = () => [
         path: '/guide/sign-find-id-001',
         status: 'end',
         create: '2023.03.31',
-        log: [{ date: '2023.04.07', text: '아이디 확인 팝업 추가' }],
+        log: [{ date: '2023.04.07', text: '팝업 추가\n- 아이디 확인' }],
       },
       {
         depth2: '비밀번호 찾기(WEB)',
@@ -275,9 +275,9 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/sign-up-001',
-        status: 'partend',
+        status: 'end',
         create: '2023.03.31',
-        log: [],
+        log: [{ date: '2023.04.07', text: '팝업 추가\n- 약관동의' }],
       },
       {
         depth2: '회원가입(APP)',
@@ -286,8 +286,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/sign/signup-app',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.07',
         log: [],
       },
       {
@@ -297,8 +297,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/sign-up-app-001',
-        status: 'partend',
-        create: '2023.04.05',
+        status: 'end',
+        create: '2023.04.07',
         log: [],
       },
       {
@@ -308,8 +308,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/sign/load-pin',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.07',
         log: [],
       },
       {
@@ -320,8 +320,13 @@ const datas = () => [
         depth6: '',
         path: '/guide/sign-load-pin-001',
         status: 'end',
-        create: '2023.04.05',
-        log: [{ date: '2023.04.07', text: '간편비밀번호 불러오기 팝업 추가' }],
+        create: '2023.03.31',
+        log: [
+          {
+            date: '2023.04.07',
+            text: '팝업 추가\n- 비밀번호 입력\n- 가입 완료',
+          },
+        ],
       },
       {
         depth2: '로그인(APP)',
@@ -330,9 +335,14 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/sign-in-pin-001',
-        status: 'partend',
+        status: 'end',
         create: '2023.03.31',
-        log: [],
+        log: [
+          {
+            date: '2023.04.07',
+            text: '팝업 추가\n- 간편비밀번호 로그인',
+          },
+        ],
       },
       {
         depth2: '로그인(APP)',
@@ -341,9 +351,14 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/sign-reset-pin-001',
-        status: 'partend',
-        create: '2023.04.05',
-        log: [],
+        status: 'end',
+        create: '2023.03.31',
+        log: [
+          {
+            date: '2023.04.07',
+            text: '팝업 추가\n- 간편비밀번호 초기화\n- 새 비밀번호 입력\n- 새 비밀번호 재입력',
+          },
+        ],
       },
       {
         depth2: '로그인(APP)',
@@ -368,7 +383,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/e-hana',
-        status: 'ing',
+        status: 'pending',
         create: '',
         log: [],
       },
@@ -381,7 +396,12 @@ const datas = () => [
         path: '/guide/personal-loan-e-hana-001',
         status: 'partend',
         create: '2023.03.31',
-        log: [],
+        log: [
+          {
+            date: '2023.04.07',
+            text: '팝업 추가\n- e하나신용대출(연계) 안내',
+          },
+        ],
       },
       {
         depth2: '행복아파트론',
@@ -390,7 +410,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/happiness-apartment',
-        status: 'ing',
+        status: 'pending',
         create: '',
         log: [],
       },
@@ -403,7 +423,12 @@ const datas = () => [
         path: '/guide/personal-loan-happiness-apartment-001',
         status: 'partend',
         create: '2023.03.31',
-        log: [],
+        log: [
+          {
+            date: '2023.04.07',
+            text: '팝업 추가\n- 아파트 등기부등본\n- 아파트 등기부등본 확인',
+          },
+        ],
       },
       {
         depth2: '아파트론',
@@ -412,7 +437,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/apartment',
-        status: 'ing',
+        status: 'pending',
         create: '',
         log: [],
       },
@@ -423,7 +448,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/one-q-auto',
-        status: 'ing',
+        status: 'pending',
         create: '',
         log: [],
       },
@@ -445,7 +470,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/best-customer',
-        status: 'ing',
+        status: 'pending',
         create: '',
         log: [],
       },
@@ -467,7 +492,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/e-rental-house',
-        status: '',
+        status: 'pending',
         create: '',
         log: [],
       },
@@ -478,14 +503,9 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/stock',
-        status: '',
+        status: 'pending',
         create: '',
-        log: [
-          {
-            date: '2023.04.07',
-            text: '팝업 추가\n- 연장신청 약관동의\n- 연장신청 계약선택\n- 연장신청 상품 만기현황 확인\n- 중도상환신청 계약선택\n- 중도상환금액 조회\n- 중도상환 신청확인',
-          },
-        ],
+        log: [],
       },
       {
         depth2: '스탁론',
@@ -494,9 +514,14 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/personal-loan-stock-001',
-        status: 'partend',
-        create: '2023.04.05',
-        log: [],
+        status: 'end',
+        create: '2023.03.31',
+        log: [
+          {
+            date: '2023.04.07',
+            text: '팝업 추가\n- 연장신청 약관동의\n- 연장신청 계약선택\n- 연장신청 상품 만기현황 확인\n- 중도상환신청 계약선택\n- 중도상환금액 조회\n- 중도상환 신청확인\n- 중도상환 조건 입력',
+          },
+        ],
       },
       {
         depth2: '의료기할부',
@@ -505,7 +530,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/medical-appliances',
-        status: '',
+        status: 'pending',
         create: '',
         log: [],
       },
@@ -516,7 +541,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/business-house',
-        status: '',
+        status: 'pending',
         create: '',
         log: [],
       },
@@ -538,7 +563,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/consumer-durables',
-        status: '',
+        status: 'pending',
         create: '',
         log: [],
       },
@@ -550,11 +575,11 @@ const datas = () => [
         depth6: '',
         path: '/guide/personal-loan-etc-001',
         status: 'partend',
-        create: '2023.04.05',
+        create: '2023.03.31',
         log: [
           {
             date: '2023.04.07',
-            text: '팝업 추가\n- 아파트 검색',
+            text: '팝업 추가\n- 한도/금리 확인\n- 아파트 검색',
           },
         ],
       },
@@ -570,8 +595,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/customer/faq',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.07',
         log: [],
       },
       {
@@ -581,8 +606,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/customer/counseling-info',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.07',
         log: [],
       },
       {
@@ -592,8 +617,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/customer/counseling-regist',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.07',
         log: [],
       },
       {
@@ -604,7 +629,7 @@ const datas = () => [
         depth6: '',
         path: '/customer/counseling-regist-complete',
         status: 'end',
-        create: '2023.04.05',
+        create: '2023.04.07',
         log: [],
       },
       {
@@ -615,7 +640,7 @@ const datas = () => [
         depth6: '',
         path: '/customer/notice-list',
         status: 'end',
-        create: '2023.04.05',
+        create: '2023.04.07',
         log: [],
       },
       {
@@ -626,29 +651,18 @@ const datas = () => [
         depth6: '',
         path: '/customer/notice-detail',
         status: 'end',
-        create: '2023.04.05',
+        create: '2023.04.07',
         log: [],
       },
       {
         depth2: '지점안내',
-        depth3: '리스트',
+        depth3: '',
         depth4: '',
         depth5: '',
         depth6: '',
         path: '/customer/branch-list',
         status: 'end',
-        create: '2023.04.05',
-        log: [],
-      },
-      {
-        depth2: '지점안내',
-        depth3: '팝업',
-        depth4: '',
-        depth5: '',
-        depth6: '',
-        path: '/guide/branch-list-001',
-        status: 'end',
-        create: '2023.04.05',
+        create: '2023.04.07',
         log: [],
       },
       {
@@ -658,8 +672,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/customer/ars',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.07',
         log: [],
       },
       {
@@ -839,8 +853,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/inventory-finance/add-documents',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.07',
         log: [],
       },
       {
@@ -932,8 +946,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/lm-blog/access-statistics',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.07',
         log: [],
       },
       {
@@ -970,8 +984,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/lm-blog-personal/menu',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.07',
         log: [],
       },
       {
@@ -981,8 +995,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/lm-blog-personal/quick-counseling',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.07',
         log: [],
       },
       {
@@ -992,8 +1006,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/lm-blog-personal/sms-counseling',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.07',
         log: [],
       },
       {
@@ -1003,8 +1017,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/lm-blog-personal/map',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.07',
         log: [],
       },
     ],
@@ -1030,8 +1044,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/setting/push',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.07',
         log: [],
       },
       {
@@ -1041,8 +1055,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/setting/certificate-import',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.07',
         log: [],
       },
       {
@@ -1052,30 +1066,30 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/setting/certificate-export',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.07',
         log: [],
       },
       {
         depth2: '간편비밀번호 (재)등록',
-        depth3: '',
+        depth3: '팝업',
         depth4: '',
         depth5: '',
         depth6: '',
         path: '/guide/setting-reset-pin',
-        status: 'partend',
-        create: '2023.04.05',
+        status: 'end',
+        create: '2023.04.07',
         log: [],
       },
       {
         depth2: '얼굴인증 (재)등록',
-        depth3: '',
+        depth3: '팝업',
         depth4: '',
         depth5: '',
         depth6: '',
         path: '/guide/setting-reset-face',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.07',
         log: [],
       },
       {
@@ -1111,6 +1125,7 @@ export default {
     const route = useRoute();
 
     const statusText = {
+      pending: '보류',
       ing: '작업중',
       partend: '부분작업완료',
       end: '작업완료',
@@ -1149,6 +1164,10 @@ export default {
           data.log.forEach((log) => {
             add(log.date);
           });
+
+          if (data.log.length) {
+            data.update = data.log[data.log.length - 1].date;
+          }
         });
       });
 
@@ -1354,7 +1373,15 @@ export default {
                     >
                       {{ data.create }}
                     </td>
-                    <td></td>
+                    <td
+                      :class="[
+                        {
+                          'is-emphasis': latestDate === data.update,
+                        },
+                      ]"
+                    >
+                      {{ data.update }}
+                    </td>
                     <td>
                       <ul v-if="data.log.length" class="index-log">
                         <li

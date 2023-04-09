@@ -3,9 +3,12 @@
 
   &__list {
     @include reset-list;
+    display: block;
   }
 
   &__item {
+    display: block;
+
     & + & {
       margin-top: 24px;
     }
@@ -33,6 +36,7 @@
   }
 
   &__icon {
+    display: block;
     flex: none;
     width: 48px;
     height: 48px;
@@ -50,6 +54,7 @@
   }
 
   &__content {
+    display: block;
     flex: 1;
     min-width: 0;
   }
@@ -59,6 +64,7 @@
   }
 
   &__title {
+    display: block;
     margin: 0;
     @include font-size-default(16);
   }

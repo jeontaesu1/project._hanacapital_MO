@@ -1,0 +1,12 @@
+@import '@/assets/scss/components/import/agree-list.scss';
+
+.customer-counseling {
+  display: flex;
+  align-items: flex-start;
+
+  &__button {
+    flex: none;
+    margin-left: auto;
+    padding-left: 16px;
+  }
+}

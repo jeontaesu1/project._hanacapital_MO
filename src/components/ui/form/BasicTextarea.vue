@@ -5,6 +5,7 @@ import {
   computed,
   inject,
   provide,
+  onBeforeMount,
   onMounted,
   onUpdated,
 } from 'vue';
@@ -64,6 +65,10 @@ export default {
     },
     maxlength: {
       Type: Number,
+      default: null,
+    },
+    defaultValue: {
+      Type: String,
       default: null,
     },
     modelValue: {
@@ -158,6 +163,10 @@ export default {
       checkLength();
       checkInputed();
     };
+
+    onBeforeMount(() => {
+      state.val = props.modelValue || props.defaultValue || '';
+    });
 
     onMounted(() => {
       checkLength();

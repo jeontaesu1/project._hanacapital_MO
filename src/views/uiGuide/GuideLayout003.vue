@@ -46,7 +46,6 @@ export default {
       // optional : 헤더 구성 설정 값 리셋
       store.ui.header.setTitle();
       store.ui.header.setLeftButtons();
-      store.ui.header.setRightButtons();
     });
   },
 };

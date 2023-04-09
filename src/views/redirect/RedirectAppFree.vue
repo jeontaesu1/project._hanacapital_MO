@@ -68,11 +68,13 @@ export default {
         <!-- Case : Android -->
         <li :class="$style['icon-list__item']">
           <button type="button" :class="$style['icon-list__block']">
-            <div :class="$style['icon-list__icon']"><IconPlayStore /></div>
-            <div :class="$style['icon-list__content']">
-              <div>아직 앱이 없으시다면</div>
-              <div :class="$style['icon-list__title']">Google Play로 이동</div>
-            </div>
+            <span :class="$style['icon-list__icon']"><IconPlayStore /></span>
+            <span :class="$style['icon-list__content']">
+              <span class="display-block">아직 앱이 없으시다면</span>
+              <span :class="$style['icon-list__title']"
+                >Google Play로 이동</span
+              >
+            </span>
           </button>
         </li>
         <!-- // Case : Android -->
@@ -80,22 +82,24 @@ export default {
         <!-- Case : IOS -->
         <li :class="$style['icon-list__item']">
           <button type="button" :class="$style['icon-list__block']">
-            <div :class="$style['icon-list__icon']"><IconAppStore /></div>
-            <div :class="$style['icon-list__content']">
-              <div>아직 앱이 없으시다면</div>
-              <div :class="$style['icon-list__title']">App Store로 이동</div>
-            </div>
+            <span :class="$style['icon-list__icon']"><IconAppStore /></span>
+            <span :class="$style['icon-list__content']">
+              <span class="display-block">아직 앱이 없으시다면</span>
+              <span :class="$style['icon-list__title']">App Store로 이동</span>
+            </span>
           </button>
         </li>
         <!-- // Case : IOS -->
 
         <li :class="$style['icon-list__item']">
           <button type="button" :class="$style['icon-list__block']">
-            <div :class="$style['icon-list__icon']"><IconAppFree /></div>
-            <div :class="$style['icon-list__content']">
-              <div>앱을 설치하셨다면</div>
-              <div :class="$style['icon-list__title']">앱프리 앱으로 이동</div>
-            </div>
+            <span :class="$style['icon-list__icon']"><IconAppFree /></span>
+            <span :class="$style['icon-list__content']">
+              <span class="display-block">앱을 설치하셨다면</span>
+              <span :class="$style['icon-list__title']"
+                >앱프리 앱으로 이동</span
+              >
+            </span>
           </button>
         </li>
       </ul>

@@ -11,7 +11,6 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
-import BasicBox from '@/components/ui/common/BasicBox.vue';
 
 export default {
   components: {
@@ -25,7 +24,6 @@ export default {
     BasicButton,
     PageTextGroup,
     PageMainText,
-    BasicBox,
   },
   setup() {
     const layer = ref(null);
@@ -57,10 +55,8 @@ export default {
 
       <IllustObject type="license" :classNames="{ wrap: $style['illust'] }" />
 
-      <BasicBox theme="secondary" :class="$style['padding-small']">
-        <h3 class="text-body-5 color-gray font-weight-medium row-margin-item">
-          유의사항
-        </h3>
+      <section :class="$style['notice-section']">
+        <h3 :class="$style['notice-section__title']">유의사항</h3>
         <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
@@ -76,7 +72,7 @@ export default {
             </div>
           </li>
         </ul>
-      </BasicBox>
+      </section>
 
       <template v-slot:foot>
         <ButtonList

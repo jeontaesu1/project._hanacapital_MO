@@ -18,7 +18,6 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-
     LayerSettingResetPin,
     LayerSettingResetPinInput,
     LayerSettingResetPinSet,
