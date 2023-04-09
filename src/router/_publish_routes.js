@@ -296,6 +296,11 @@ const routes = [
 
   // customer
   {
+    path: '/customer/faq',
+    name: '/customer/faq',
+    component: () => import('@/views/customer/CustomerFAQList.vue'),
+  },
+  {
     path: '/customer/counseling-info',
     name: '/customer/counseling-info',
     component: () => import('@/views/customer/CustomerCounselingInfo.vue'),
