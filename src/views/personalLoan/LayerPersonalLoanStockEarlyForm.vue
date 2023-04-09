@@ -205,7 +205,7 @@ export default {
                 <BoxCheck
                   name="layerPersonalLoanStockEarlyFormType"
                   id="layerPersonalLoanStockEarlyFormType_001"
-                  :checked="true"
+                  :defaultChecked="true"
                 >
                   <BoxCheckLabel>일부상환</BoxCheckLabel>
                 </BoxCheck>

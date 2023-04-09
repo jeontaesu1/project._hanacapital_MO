@@ -86,7 +86,7 @@ export default {
                   :contents="true"
                   name="layerLoanCalculatorType"
                   id="layerLoanCalculatorType001"
-                  :checked="true"
+                  :defaultChecked="true"
                 >
                   <BoxCheckLabel>원리금 균등상환</BoxCheckLabel>
                   <p class="text-body-5 color-gray-secondary row-margin-small">

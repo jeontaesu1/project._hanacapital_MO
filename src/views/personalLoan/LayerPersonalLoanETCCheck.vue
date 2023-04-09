@@ -109,7 +109,7 @@ export default {
               :contents="true"
               name="LayerPersonalLoanETCCheckType"
               id="LayerPersonalLoanETCCheckType_001"
-              :checked="true"
+              :defaultChecked="true"
             >
               <BoxCheckLabel>e하나신용대출</BoxCheckLabel>
               <KeyValueList

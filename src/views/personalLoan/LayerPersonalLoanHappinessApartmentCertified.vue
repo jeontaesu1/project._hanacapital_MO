@@ -258,7 +258,7 @@ export default {
                         :minSide="true"
                         name="layerPersonalLoanHappinessApartmentCertifiedAddress"
                         id="layerPersonalLoanHappinessApartmentCertifiedAddress1"
-                        :checked="true"
+                        :defaultChecked="true"
                       >
                         <BoxCheckLabel>지번</BoxCheckLabel>
                       </BoxCheck>
@@ -297,7 +297,7 @@ export default {
                         :minSide="true"
                         name="layerPersonalLoanHappinessApartmentCertifiedAddressDetail1"
                         id="layerPersonalLoanHappinessApartmentCertifiedAddressDetail1_1"
-                        :checked="true"
+                        :defaultChecked="true"
                       >
                         <BoxCheckLabel>동+호</BoxCheckLabel>
                       </BoxCheck>
@@ -551,7 +551,7 @@ export default {
                         :minSide="true"
                         name="layerPersonalLoanHappinessApartmentCertifiedAddressDetail2"
                         id="layerPersonalLoanHappinessApartmentCertifiedAddressDetail2_1"
-                        :checked="true"
+                        :defaultChecked="true"
                       >
                         <BoxCheckLabel>동+호</BoxCheckLabel>
                       </BoxCheck>

@@ -1048,7 +1048,11 @@ export default {
           <CheckBoxObject />
           <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
         </CheckBox>
-        <CheckBox id="testCheckBox002" :checked="true" @change="testInputEvent">
+        <CheckBox
+          id="testCheckBox002"
+          :defaultChecked="true"
+          @change="testInputEvent"
+        >
           <CheckBoxObject />
           <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
         </CheckBox>
@@ -1056,7 +1060,7 @@ export default {
           <CheckBoxObject />
           <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
         </CheckBox>
-        <CheckBox id="testCheckBox004" :disabled="true" :checked="true">
+        <CheckBox id="testCheckBox004" :disabled="true" :defaultChecked="true">
           <CheckBoxObject />
           <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
         </CheckBox>
@@ -1068,7 +1072,7 @@ export default {
           <CheckBoxObject />
           <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
         </CheckBox>
-        <CheckBox id="testCheckBox006" align="center" :checked="true">
+        <CheckBox id="testCheckBox006" align="center" :defaultChecked="true">
           <CheckBoxObject />
           <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
         </CheckBox>
@@ -1080,7 +1084,7 @@ export default {
           id="testCheckBox008"
           align="center"
           :disabled="true"
-          :checked="true"
+          :defaultChecked="true"
         >
           <CheckBoxObject />
           <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
@@ -1093,7 +1097,7 @@ export default {
           <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
           <CheckBoxObject />
         </CheckBox>
-        <CheckBox id="testCheckBox010" :full="true" :checked="true">
+        <CheckBox id="testCheckBox010" :full="true" :defaultChecked="true">
           <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
           <CheckBoxObject />
         </CheckBox>
@@ -1105,7 +1109,7 @@ export default {
           id="testCheckBox012"
           :full="true"
           :disabled="true"
-          :checked="true"
+          :defaultChecked="true"
         >
           <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
           <CheckBoxObject />
@@ -1118,7 +1122,11 @@ export default {
           <CheckBoxObject />
           <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
         </CheckBox>
-        <CheckBox id="testCheckBox014" :onlyObject="true" :checked="true">
+        <CheckBox
+          id="testCheckBox014"
+          :onlyObject="true"
+          :defaultChecked="true"
+        >
           <CheckBoxObject />
           <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
         </CheckBox>
@@ -1130,7 +1138,7 @@ export default {
           id="testCheckBox016"
           :onlyObject="true"
           :disabled="true"
-          :checked="true"
+          :defaultChecked="true"
         >
           <CheckBoxObject />
           <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
@@ -1143,7 +1151,7 @@ export default {
           <CheckBoxObject />
           <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
         </CheckBox>
-        <CheckBox id="testCheckBox018" theme="secondary" :checked="true">
+        <CheckBox id="testCheckBox018" theme="secondary" :defaultChecked="true">
           <CheckBoxObject />
           <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
         </CheckBox>
@@ -1155,7 +1163,7 @@ export default {
           id="testCheckBox020"
           theme="secondary"
           :disabled="true"
-          :checked="true"
+          :defaultChecked="true"
         >
           <CheckBoxObject />
           <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
@@ -1168,7 +1176,7 @@ export default {
           <CheckBoxObject />
           <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
         </CheckBox>
-        <CheckBox id="testCheckBox022" theme="tertiary" :checked="true">
+        <CheckBox id="testCheckBox022" theme="tertiary" :defaultChecked="true">
           <CheckBoxObject />
           <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
         </CheckBox>
@@ -1180,7 +1188,7 @@ export default {
           id="testCheckBox024"
           theme="tertiary"
           :disabled="true"
-          :checked="true"
+          :defaultChecked="true"
         >
           <CheckBoxObject />
           <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
@@ -1193,7 +1201,11 @@ export default {
           <CheckBoxObject />
           <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
         </CheckBox>
-        <CheckBox id="testCheckBox026" theme="quaternary" :checked="true">
+        <CheckBox
+          id="testCheckBox026"
+          theme="quaternary"
+          :defaultChecked="true"
+        >
           <CheckBoxObject />
           <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
         </CheckBox>
@@ -1205,7 +1217,7 @@ export default {
           id="testCheckBox028"
           theme="quaternary"
           :disabled="true"
-          :checked="true"
+          :defaultChecked="true"
         >
           <CheckBoxObject />
           <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
@@ -1218,7 +1230,7 @@ export default {
           <CheckBoxObject />
           <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
         </CheckBox>
-        <CheckBox id="testCheckBox030" theme="quinary" :checked="true">
+        <CheckBox id="testCheckBox030" theme="quinary" :defaultChecked="true">
           <CheckBoxObject />
           <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
         </CheckBox>
@@ -1230,7 +1242,7 @@ export default {
           id="testCheckBox032"
           theme="quinary"
           :disabled="true"
-          :checked="true"
+          :defaultChecked="true"
         >
           <CheckBoxObject />
           <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
@@ -1250,7 +1262,7 @@ export default {
         <BoxCheck
           name="testBoxCheck001"
           id="testBoxCheck001_002"
-          :checked="true"
+          :defaultChecked="true"
         >
           <BoxCheckLabel>Label<br />2 line label</BoxCheckLabel>
         </BoxCheck>
@@ -1265,7 +1277,7 @@ export default {
           name="testBoxCheck002"
           id="testBoxCheck002_004"
           :disabled="true"
-          :checked="true"
+          :defaultChecked="true"
         >
           <BoxCheckLabel>Label<br />2 line label</BoxCheckLabel>
         </BoxCheck>
@@ -1277,7 +1289,11 @@ export default {
         <BoxCheck type="checkbox" id="testBoxCheck003_001">
           <BoxCheckLabel>Label<br />2 line label</BoxCheckLabel>
         </BoxCheck>
-        <BoxCheck type="checkbox" id="testBoxCheck003_002" :checked="true">
+        <BoxCheck
+          type="checkbox"
+          id="testBoxCheck003_002"
+          :defaultChecked="true"
+        >
           <BoxCheckLabel>Label<br />2 line label</BoxCheckLabel>
         </BoxCheck>
         <BoxCheck type="checkbox" id="testBoxCheck003_003" :disabled="true">
@@ -1287,7 +1303,7 @@ export default {
           type="checkbox"
           id="testBoxCheck003_004"
           :disabled="true"
-          :checked="true"
+          :defaultChecked="true"
         >
           <BoxCheckLabel>Label<br />2 line label</BoxCheckLabel>
         </BoxCheck>
@@ -1314,7 +1330,7 @@ export default {
           :contents="true"
           name="testBoxCheck004"
           id="testBoxCheck004_002"
-          :checked="true"
+          :defaultChecked="true"
         >
           <template v-slot:left>
             <BoxCheckObject />
@@ -1345,7 +1361,7 @@ export default {
           name="testBoxCheck005"
           id="testBoxCheck005_004"
           :disabled="true"
-          :checked="true"
+          :defaultChecked="true"
         >
           <BoxCheckLabel>원리금 균등상환</BoxCheckLabel>
           <p class="text-body-5 color-gray-secondary row-margin-small">
@@ -1375,7 +1391,7 @@ export default {
           :contents="true"
           type="checkbox"
           id="testBoxCheck006_002"
-          :checked="true"
+          :defaultChecked="true"
         >
           <template v-slot:left>
             <BoxCheckObject />
@@ -1406,7 +1422,7 @@ export default {
           type="checkbox"
           id="testBoxCheck006_004"
           :disabled="true"
-          :checked="true"
+          :defaultChecked="true"
         >
           <BoxCheckLabel>원리금 균등상환</BoxCheckLabel>
           <p class="text-body-5 color-gray-secondary row-margin-small">
@@ -5632,7 +5648,14 @@ export default {
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
 
-        <SwitchCheckBox id="testSwitchCheckBox" />
+        <SwitchCheckBox id="testSwitchCheckBox001" />
+        <SwitchCheckBox id="testSwitchCheckBox002" :defaultChecked="true" />
+        <SwitchCheckBox id="testSwitchCheckBox003" :disabled="true" />
+        <SwitchCheckBox
+          id="testSwitchCheckBox004"
+          :defaultChecked="true"
+          :disabled="true"
+        />
 
         <!-- 소스 카피 기능용 소스(미구현) -->
         <div class="test-section-copy">

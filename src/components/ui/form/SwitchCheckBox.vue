@@ -1,5 +1,5 @@
 <script>
-import { ref, computed } from 'vue';
+import { ref, computed, reactive, onBeforeMount, watch } from 'vue';
 
 const defaultClassNames = () => ({
   wrap: '',
@@ -26,8 +26,19 @@ export default {
       Type: String,
       required: true,
     },
+    defaultChecked: {
+      Type: Boolean,
+      default: false,
+    },
+    modelValue: {
+      Type: Boolean,
+    },
   },
-  setup(props) {
+  setup(props, { emit }) {
+    const state = reactive({
+      checked: false,
+    });
+
     const input = ref(null);
 
     const customClassNames = computed(() => {
@@ -39,10 +50,32 @@ export default {
       return input.value;
     };
 
+    const onChange = (e) => {
+      const { checked } = e.target;
+
+      state.checked = checked;
+      emit('update:modelValue', checked);
+    };
+
+    watch(
+      () => props.modelValue,
+      (cur) => {
+        state.checked = cur;
+      }
+    );
+
+    onBeforeMount(() => {
+      const { modelValue, defaultChecked } = props;
+      state.checked =
+        typeof modelValue === 'boolean' ? modelValue : defaultChecked;
+    });
+
     return {
+      state,
       input,
       customClassNames,
       getInputElement,
+      onChange,
     };
   },
 };
@@ -56,6 +89,8 @@ export default {
       :type="type"
       :class="[$style['switch-checkbox__input'], customClassNames.input]"
       :id="id"
+      :checked="state.checked"
+      @change="onChange"
     />
     <label
       :for="id"

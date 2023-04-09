@@ -100,7 +100,7 @@ export default {
                 :minSide="true"
                 name="customerReservationCounselingType"
                 id="customerReservationCounselingType1"
-                :checked="true"
+                :defaultChecked="true"
               >
                 <BoxCheckLabel>개인(개인사업자)</BoxCheckLabel>
               </BoxCheck>

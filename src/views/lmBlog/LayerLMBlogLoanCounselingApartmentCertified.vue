@@ -258,7 +258,7 @@ export default {
                         :minSide="true"
                         name="layerLMBlogLoanCounselingApartmentCertifiedAddress"
                         id="layerLMBlogLoanCounselingApartmentCertifiedAddress1"
-                        :checked="true"
+                        :defaultChecked="true"
                       >
                         <BoxCheckLabel>지번</BoxCheckLabel>
                       </BoxCheck>
@@ -297,7 +297,7 @@ export default {
                         :minSide="true"
                         name="layerLMBlogLoanCounselingApartmentCertifiedAddressDetail1"
                         id="layerLMBlogLoanCounselingApartmentCertifiedAddressDetail1_1"
-                        :checked="true"
+                        :defaultChecked="true"
                       >
                         <BoxCheckLabel>동+호</BoxCheckLabel>
                       </BoxCheck>
@@ -551,7 +551,7 @@ export default {
                         :minSide="true"
                         name="layerLMBlogLoanCounselingApartmentCertifiedAddressDetail2"
                         id="layerLMBlogLoanCounselingApartmentCertifiedAddressDetail2_1"
-                        :checked="true"
+                        :defaultChecked="true"
                       >
                         <BoxCheckLabel>동+호</BoxCheckLabel>
                       </BoxCheck>
