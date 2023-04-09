@@ -6,10 +6,10 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import LayerLMBlogLoanCounselingApartmentPriceSearch from '@/views/lm-blog/LayerLMBlogLoanCounselingApartmentPriceSearch.vue';
-import LayerLMBlogLoanCounselingApartmentCertified from '@/views/lm-blog/LayerLMBlogLoanCounselingApartmentCertified.vue';
-import LayerLMBlogLoanCounselingApartmentCertifiedConfirm from '@/views/lm-blog/LayerLMBlogLoanCounselingApartmentCertifiedConfirm.vue';
-import LayerLMBlogLoanCounselingVehicleAvailable from '@/views/lm-blog/LayerLMBlogLoanCounselingVehicleAvailable.vue';
+import LayerLMBlogLoanCounselingApartmentPriceSearch from '@/views/lmBlog/LayerLMBlogLoanCounselingApartmentPriceSearch.vue';
+import LayerLMBlogLoanCounselingApartmentCertified from '@/views/lmBlog/LayerLMBlogLoanCounselingApartmentCertified.vue';
+import LayerLMBlogLoanCounselingApartmentCertifiedConfirm from '@/views/lmBlog/LayerLMBlogLoanCounselingApartmentCertifiedConfirm.vue';
+import LayerLMBlogLoanCounselingVehicleAvailable from '@/views/lmBlog/LayerLMBlogLoanCounselingVehicleAvailable.vue';
 
 export default {
   components: {

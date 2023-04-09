@@ -24,8 +24,8 @@ import CheckBox from '@/components/ui/form/CheckBox.vue';
 import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
 import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
 
-import LayerLMBlogQuickCounselingAgree001 from '@/views/lm-blog-personal/LayerLMBlogQuickCounselingAgree001.vue';
-import LayerLMBlogQuickCounselingAgree002 from '@/views/lm-blog-personal/LayerLMBlogQuickCounselingAgree002.vue';
+import LayerLMBlogQuickCounselingAgree001 from '@/views/lmBlogPersonal/LayerLMBlogQuickCounselingAgree001.vue';
+import LayerLMBlogQuickCounselingAgree002 from '@/views/lmBlogPersonal/LayerLMBlogQuickCounselingAgree002.vue';
 
 export default {
   components: {
