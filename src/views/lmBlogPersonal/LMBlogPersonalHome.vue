@@ -1,4 +1,5 @@
 <script>
+// LM_M06_p001
 import { onMounted, onUnmounted } from 'vue';
 import { useRouter } from 'vue-router';
 
