@@ -56,13 +56,19 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">인증 수단 선택</BasicButton>
+        <BasicButton @click="layer001Open">
+          인증 수단 선택<br />Member_M03_b001
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer002Open">아이디 확인</BasicButton>
+        <BasicButton @click="layer002Open">
+          아이디 확인<br />Member_M03_l001
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer003Open">아이디 찾기 실패</BasicButton>
+        <BasicButton @click="layer003Open">
+          아이디 찾기 실패<br />Member_M03_l002
+        </BasicButton>
       </ButtonListItem>
     </ButtonList>
 

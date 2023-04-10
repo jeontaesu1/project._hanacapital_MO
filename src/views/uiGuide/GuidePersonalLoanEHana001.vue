@@ -128,59 +128,75 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">인증 수단 선택</BasicButton>
+        <BasicButton @click="layer001Open">
+          인증 수단 선택<br />PF_M01_b001
+        </BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer002Open">한도조회 동의</BasicButton>
+        <BasicButton @click="layer002Open">
+          한도조회 동의<br />PF_M01_l001
+        </BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer003Open">소득정보 자동제출</BasicButton>
+        <BasicButton @click="layer003Open">
+          소득정보 자동제출<br />PF_M01_l002
+        </BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer004Open">보이스피싱 주의사항</BasicButton>
+        <BasicButton @click="layer004Open">
+          보이스피싱 주의사항<br />PF_M01_b002
+        </BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer005Open">사업자 대출 진행안내</BasicButton>
+        <BasicButton @click="layer005Open">
+          사업자 대출 진행안내<br />PF_M01_b003
+        </BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer006Open">한도조회 결과</BasicButton>
+        <BasicButton @click="layer006Open">
+          한도조회 결과<br />PF_M01_l004
+        </BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer007Open"
-          >한도조회 결과 - 대출신청 불가</BasicButton
-        >
+        <BasicButton @click="layer007Open">
+          한도조회 결과 - 대출신청 불가<br />PF_M01_l005
+        </BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer008Open"
-          >한도조회 결과- 한도조회 오류</BasicButton
-        >
+        <BasicButton @click="layer008Open">
+          한도조회 결과- 한도조회 오류<br />PF_M01_l006
+        </BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer009Open">신청 정보 입력</BasicButton>
+        <BasicButton @click="layer009Open">
+          신청 정보 입력<br />PF_M01_l007
+        </BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer010Open"
-          >신청 정보 입력- e하나신용대출(연계) 안내</BasicButton
-        >
+        <BasicButton @click="layer010Open">
+          신청 정보 입력- e하나신용대출(연계) 안내<br />PF_M01_l008
+        </BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer011Open"
-          >신청 정보 입력- 금융상품 안내 팝업</BasicButton
-        >
+        <BasicButton @click="layer011Open">
+          신청 정보 입력- 금융상품 안내 팝업<br />PF_M01_l009
+        </BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer012Open">대출신청 완료</BasicButton>
+        <BasicButton @click="layer012Open">
+          대출신청 완료<br />PF_M01_l009
+        </BasicButton>
       </ButtonListItem>
     </ButtonList>
 

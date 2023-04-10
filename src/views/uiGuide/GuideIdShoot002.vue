@@ -64,19 +64,23 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open"> 운전면허증 촬영안내 </BasicButton>
+        <BasicButton @click="layer001Open">
+          운전면허증 촬영안내<br />Common_M00_l009
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer002Open">운전면허증 인식 실패</BasicButton>
+        <BasicButton @click="layer002Open">
+          운전면허증 인식 실패<br />Common_M00_b009
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer003Open">
-          운전면허증 정보입력_자동입력
+          운전면허증 정보입력_자동입력<br />Common_M00_l010
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer004Open">
-          운전면허증 정보입력_직접입력
+          운전면허증 정보입력_직접입력<br />Common_M00_l011
         </BasicButton>
       </ButtonListItem>
     </ButtonList>

@@ -4013,47 +4013,29 @@ export default {
         <div :class="$style['faq']">
           <UiAccordion :classNames="{ wrap: $style['faq__list'] }">
             <UiAccordionItem
+              v-for="i in 3"
+              :key="i"
               :classNames="{ item: $style['faq__item'] }"
-              :initialOpen="true"
             >
               <div :class="$style['faq__head']">
                 <div :class="$style['faq__block']">
-                  <div :class="$style['faq__name']">분류</div>
-                  <div :class="$style['faq__title']">타이틀</div>
+                  <div :class="$style['faq__name']">신차할부 오토론</div>
+                  <div :class="$style['faq__title']">신차할부 오토론이란?</div>
                 </div>
                 <div :class="$style['faq__right']">
-                  <UiAccordionOpener :class="$style['faq__opener']" />
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['faq__opener'] }"
+                  />
                 </div>
               </div>
 
-              <UiAccordionLayer>
-                <div :class="$style['faq__contents']">
-                  <div class="text-body-3 color-gray">
-                    내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
-                  </div>
-                </div>
-              </UiAccordionLayer>
-            </UiAccordionItem>
-            <UiAccordionItem
-              :classNames="{ item: $style['faq__item'] }"
-              :initialOpen="true"
-            >
-              <div :class="$style['faq__head']">
-                <div :class="$style['faq__block']">
-                  <div :class="$style['faq__name']">분류</div>
-                  <div :class="$style['faq__title']">타이틀</div>
-                </div>
-                <div :class="$style['faq__right']">
-                  <UiAccordionOpener :class="$style['faq__opener']" />
-                </div>
-              </div>
-
-              <UiAccordionLayer>
-                <div :class="$style['faq__contents']">
-                  <div class="text-body-3 color-gray">
-                    내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
-                  </div>
-                </div>
+              <UiAccordionLayer :classNames="{ layer: $style['faq__layer'] }">
+                <section :class="$style['faq__contents']">
+                  // 내용 노출<br />
+                  차량을 구매할 목적으로 당사에서 대출 받고, 일정기간 동안
+                  원금과 이자가 포함된 원리금을 매월 일정하게 납부하는 대출
+                  상품입니다
+                </section>
               </UiAccordionLayer>
             </UiAccordionItem>
           </UiAccordion>
