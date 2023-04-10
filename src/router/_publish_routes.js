@@ -1,5 +1,5 @@
 const routes = [
-  // uiGuide
+  // ui-guide
   {
     path: '/',
     name: '/',
@@ -192,6 +192,52 @@ const routes = [
     name: '/guide/id-shoot-002',
     component: () => import('@/views/uiGuide/GuideIdShoot002.vue'),
   },
+  {
+    path: '/guide/auto-estimate-001',
+    name: '/guide/auto-estimate-001',
+    component: () => import('@/views/uiGuide/GuideAutoEstimate001.vue'),
+  },
+  {
+    path: '/guide/auto-long-rental-001',
+    name: '/guide/auto-long-rental-001',
+    component: () => import('@/views/uiGuide/GuideAutoLongRental001.vue'),
+  },
+  {
+    path: '/guide/auto-lease-001',
+    name: '/guide/auto-lease-001',
+    component: () => import('@/views/uiGuide/GuideAutoLease001.vue'),
+  },
+  {
+    path: '/guide/auto-one-q-loan-001',
+    name: '/guide/auto-one-q-loan-001',
+    component: () => import('@/views/uiGuide/GuideAutoOneQLoan001.vue'),
+  },
+  {
+    path: '/guide/auto-used-loan-001',
+    name: '/guide/auto-used-loan-001',
+    component: () => import('@/views/uiGuide/GuideAutoUsedLoan001.vue'),
+  },
+  {
+    path: '/guide/auto-succession-001',
+    name: '/guide/auto-succession-001',
+    component: () => import('@/views/uiGuide/GuideAutoSuccession001.vue'),
+  },
+  {
+    path: '/guide/my-loan-designation-driver-001',
+    name: '/guide/my-loan-designation-driver-001',
+    component: () =>
+      import('@/views/uiGuide/GuideMyLoanDesignationDriver001.vue'),
+  },
+  {
+    path: '/guide/my-loan-intermediate-001',
+    name: '/guide/my-loan-intermediate-001',
+    component: () => import('@/views/uiGuide/GuideMyLoanIntermediate001.vue'),
+  },
+  {
+    path: '/guide/search-workplace-001',
+    name: '/guide/search-workplace-001',
+    component: () => import('@/views/uiGuide/GuideSearchWorkplace001.vue'),
+  },
 
   // home
   {
@@ -236,7 +282,7 @@ const routes = [
     component: () => import('@/views/redirect/RedirectAppFree.vue'),
   },
 
-  // personal loan
+  // personal-loan
   {
     path: '/personal-loan/e-hana',
     name: '/personal-loan/e-hana',
@@ -521,6 +567,132 @@ const routes = [
     path: '/lm-blog-personal/map',
     name: '/lm-blog-personal/map',
     component: () => import('@/views/lmBlogPersonal/LMBlogPersonalMap.vue'),
+  },
+
+  // auto
+  {
+    path: '/auto/long-rental',
+    name: '/auto/long-rental',
+    component: () => import('@/views/auto/AutoLongRental.vue'),
+  },
+  {
+    path: '/auto/lease',
+    name: '/auto/lease',
+    component: () => import('@/views/auto/AutoLease.vue'),
+  },
+  {
+    path: '/auto/instalment',
+    name: '/auto/instalment',
+    component: () => import('@/views/auto/AutoInstalment.vue'),
+  },
+  {
+    path: '/auto/loan',
+    name: '/auto/loan',
+    component: () => import('@/views/auto/AutoLoan.vue'),
+  },
+  {
+    path: '/auto/one-q-loan',
+    name: '/auto/one-q-loan',
+    component: () => import('@/views/auto/AutoOneQLoan.vue'),
+  },
+  {
+    path: '/auto/used-loan',
+    name: '/auto/used-loan',
+    component: () => import('@/views/auto/AutoUsedLoan.vue'),
+  },
+  {
+    path: '/auto/succession',
+    name: '/auto/succession',
+    component: () => import('@/views/auto/AutoSuccession.vue'),
+  },
+
+  // business
+  {
+    path: '/business/medical-lease',
+    name: '/business/medical-lease',
+    component: () => import('@/views/business/BusinessMedicalLease.vue'),
+  },
+  {
+    path: '/business/industrial-lease',
+    name: '/business/industrial-lease',
+    component: () => import('@/views/business/BusinessIndustrialLease.vue'),
+  },
+
+  // my-loan
+  {
+    path: '/my-loan/home',
+    name: '/my-loan/home',
+    component: () => import('@/views/myLoan/MyLoanHome.vue'),
+  },
+  {
+    path: '/my-loan/empty',
+    name: '/my-loan/empty',
+    component: () => import('@/views/myLoan/MyLoanEmpty.vue'),
+  },
+  {
+    path: '/my-loan/detail-personal',
+    name: '/my-loan/detail-personal',
+    component: () => import('@/views/myLoan/MyLoanDetailPersonal.vue'),
+  },
+  {
+    path: '/my-loan/detail-stock',
+    name: '/my-loan/detail-stock',
+    component: () => import('@/views/myLoan/MyLoanDetailStock.vue'),
+  },
+  {
+    path: '/my-loan/detail-intermediate',
+    name: '/my-loan/detail-intermediate',
+    component: () => import('@/views/myLoan/MyLoanDetailIntermediate.vue'),
+  },
+  {
+    path: '/my-loan/detail-auto',
+    name: '/my-loan/detail-auto',
+    component: () => import('@/views/myLoan/MyLoanDetailAuto.vue'),
+  },
+  {
+    path: '/my-loan/detail-instalment',
+    name: '/my-loan/detail-instalment',
+    component: () => import('@/views/myLoan/MyLoanDetailInstalment.vue'),
+  },
+  {
+    path: '/my-loan/detail-medical-instalment',
+    name: '/my-loan/detail-medical-instalment',
+    component: () => import('@/views/myLoan/MyLoanDetailMedicalInstalment.vue'),
+  },
+  {
+    path: '/my-loan/detail-payment-virtual',
+    name: '/my-loan/detail-payment-virtual',
+    component: () => import('@/views/myLoan/MyLoanDetailPaymentVirtual.vue'),
+  },
+  {
+    path: '/my-loan/detail-payment-auto',
+    name: '/my-loan/detail-payment-auto',
+    component: () => import('@/views/myLoan/MyLoanDetailPaymentAuto.vue'),
+  },
+  {
+    path: '/my-loan/maintenance-history',
+    name: '/my-loan/maintenance-history',
+    component: () => import('@/views/myLoan/MyLoanMaintenanceHistory.vue'),
+  },
+  {
+    path: '/my-loan/penalty',
+    name: '/my-loan/penalty',
+    component: () => import('@/views/myLoan/MyLoanPenalty.vue'),
+  },
+  {
+    path: '/my-loan/car-tax',
+    name: '/my-loan/car-tax',
+    component: () => import('@/views/myLoan/MyLoanCarTax.vue'),
+  },
+  {
+    path: '/my-loan/designation-driver',
+    name: '/my-loan/designation-driver',
+    component: () => import('@/views/myLoan/MyLoanDesignationDriver.vue'),
+  },
+  {
+    path: '/my-loan/designation-driver-empty',
+    name: '/my-loan/designation-driver-empty',
+    component: () => import('@/views/myLoan/MyLoanDesignationDriverEmpty.vue'),
   },
 ];
 

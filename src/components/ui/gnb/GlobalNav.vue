@@ -1,4 +1,5 @@
 <script>
+// Common_M00_l017
 import { RouterLink } from 'vue-router';
 
 export default {
