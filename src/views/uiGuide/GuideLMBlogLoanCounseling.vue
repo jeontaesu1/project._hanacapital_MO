@@ -64,16 +64,24 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">아파트 시세검색</BasicButton>
+        <BasicButton @click="layer001Open"
+          >아파트 시세검색<br />LM_M01_l004</BasicButton
+        >
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer002Open">아파트 등기부등본</BasicButton>
+        <BasicButton @click="layer002Open"
+          >아파트 등기부등본<br />LM_M01_l005, LM_M01_l006</BasicButton
+        >
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer003Open">아파트 등기부등본 확인</BasicButton>
+        <BasicButton @click="layer003Open"
+          >아파트 등기부등본 확인<br />LM_M01_l007</BasicButton
+        >
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer004Open">대출가능 차량 기준안내</BasicButton>
+        <BasicButton @click="layer004Open"
+          >대출가능 차량 기준안내<br />LM_M01_l009</BasicButton
+        >
       </ButtonListItem>
     </ButtonList>
 

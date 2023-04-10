@@ -589,7 +589,7 @@ const datas = () => [
     depth1: '고객센터',
     datas: [
       {
-        depth2: 'FAQ',
+        depth2: 'FAQ\nCustomer_M01_p001',
         depth3: '',
         depth4: '',
         depth5: '',
@@ -600,7 +600,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '고객상담',
+        depth2: '고객상담\nCustomer_M02_p001',
         depth3: '안내',
         depth4: '',
         depth5: '',
@@ -611,7 +611,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '고객상담',
+        depth2: '고객상담\nCustomer_M02_p002',
         depth3: '상담내용 작성',
         depth4: '',
         depth5: '',
@@ -622,7 +622,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '고객상담',
+        depth2: '고객상담\nCustomer_M02_p003',
         depth3: '완료',
         depth4: '',
         depth5: '',
@@ -633,7 +633,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '공지사항',
+        depth2: '공지사항\nCustomer_M03_p001',
         depth3: '리스트',
         depth4: '',
         depth5: '',
@@ -644,7 +644,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '공지사항',
+        depth2: '공지사항\nCustomer_M03_p002',
         depth3: '상세',
         depth4: '',
         depth5: '',
@@ -655,7 +655,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '지점안내',
+        depth2: '지점안내\nCustomer_M05_p001',
         depth3: '',
         depth4: '',
         depth5: '',
@@ -666,7 +666,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '고객센터 ARS안내',
+        depth2: '고객센터 ARS안내\nCustomer_M07_p001',
         depth3: '',
         depth4: '',
         depth5: '',
@@ -677,7 +677,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '전화상담신청',
+        depth2: '전화상담신청\nETC_M01_p001',
         depth3: '',
         depth4: '',
         depth5: '',
@@ -688,7 +688,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '전화상담신청',
+        depth2: '전화상담신청\nETC_M01_p002',
         depth3: '완료',
         depth4: '',
         depth5: '',
@@ -704,7 +704,7 @@ const datas = () => [
     depth1: '재고금융 (영업용)',
     datas: [
       {
-        depth2: '중도상환',
+        depth2: '중도상환\nIF_M03_p001',
         depth3: '목록',
         depth4: '',
         depth5: '',
@@ -715,7 +715,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '중도상환',
+        depth2: '중도상환\nIF_M03_p002',
         depth3: '조건입력',
         depth4: '',
         depth5: '',
@@ -726,7 +726,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '중도상환',
+        depth2: '중도상환\nIF_M03_p003',
         depth3: '시뮬레이션',
         depth4: '',
         depth5: '',
@@ -737,7 +737,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '중도상환',
+        depth2: '중도상환\nIF_M03_p003',
         depth3: '즉시출금/가상계좌 입력 내용 확인',
         depth4: '',
         depth5: '',
@@ -748,7 +748,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '중도상환',
+        depth2: '중도상환\nIF_M03_p004',
         depth3: '신청완료',
         depth4: '',
         depth5: '',
@@ -759,7 +759,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '중도상환',
+        depth2: '중도상환\nIF_M03_p004',
         depth3: '신청실패',
         depth4: '',
         depth5: '',
@@ -781,7 +781,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '만기연장',
+        depth2: '만기연장\nIF_M04_p001',
         depth3: '목록',
         depth4: '',
         depth5: '',
@@ -792,7 +792,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '만기연장',
+        depth2: '만기연장\nIF_M04_p002',
         depth3: '내역확인',
         depth4: '',
         depth5: '',
@@ -803,7 +803,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '만기연장',
+        depth2: '만기연장\nIF_M04_p003',
         depth3: '조건입력',
         depth4: '',
         depth5: '',
@@ -814,7 +814,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '만기연장',
+        depth2: '만기연장\nIF_M04_p004',
         depth3: '입력 내용 확인',
         depth4: '',
         depth5: '',
@@ -825,7 +825,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '만기연장',
+        depth2: '만기연장\nIF_M04_p005',
         depth3: '약정완료',
         depth4: '',
         depth5: '',
@@ -836,7 +836,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '만기연장',
+        depth2: '만기연장\nIF_M04_p005',
         depth3: '약정실패',
         depth4: '',
         depth5: '',
@@ -847,7 +847,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '추가서류등록',
+        depth2: '추가서류등록\nIF_M05_p001',
         depth3: '',
         depth4: '',
         depth5: '',
@@ -858,7 +858,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '종료채권',
+        depth2: '종료채권\nIF_M06_p001',
         depth3: '',
         depth4: '',
         depth5: '',
@@ -874,7 +874,7 @@ const datas = () => [
     depth1: 'LM 블로그 (영업용)',
     datas: [
       {
-        depth2: '대출상담',
+        depth2: '대출상담\nLM_M01_p001',
         depth3: '',
         depth4: '',
         depth5: '',
@@ -885,7 +885,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '대출상담',
+        depth2: '대출상담\nLM_M01_p002',
         depth3: '계약정보',
         depth4: '',
         depth5: '',
@@ -907,7 +907,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '빠른상담신청 내역',
+        depth2: '빠른상담신청 내역\nLM_M02_p001',
         depth3: '',
         depth4: '',
         depth5: '',
@@ -918,7 +918,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: 'SMS 상담요청 내역',
+        depth2: 'SMS 상담요청 내역\nLM_M03_p001',
         depth3: '',
         depth4: '',
         depth5: '',
@@ -929,7 +929,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: 'SMS 상담요청 내역',
+        depth2: 'SMS 상담요청 내역\nLM_M03_p002',
         depth3: '상세',
         depth4: '',
         depth5: '',
@@ -940,7 +940,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '접속통계',
+        depth2: '접속통계\nLM_M04_p001',
         depth3: '',
         depth4: '',
         depth5: '',
@@ -951,7 +951,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '현황조회',
+        depth2: '현황조회\nLM_M05_p001',
         depth3: '',
         depth4: '',
         depth5: '',
@@ -967,7 +967,7 @@ const datas = () => [
     depth1: 'LM 블로그 - 개인 (영업용)',
     datas: [
       {
-        depth2: '홈',
+        depth2: '홈\nLM_M06_p001',
         depth3: '',
         depth4: '',
         depth5: '',
@@ -978,7 +978,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '전체메뉴',
+        depth2: '전체메뉴\nLM_M06_p002',
         depth3: '',
         depth4: '',
         depth5: '',
@@ -989,7 +989,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '빠른 대출 상담',
+        depth2: '빠른 대출 상담\nLM_M06_p004',
         depth3: '',
         depth4: '',
         depth5: '',
@@ -1000,7 +1000,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: 'SMS 상담',
+        depth2: 'SMS 상담\nLM_M06_p005',
         depth3: '',
         depth4: '',
         depth5: '',
@@ -1011,7 +1011,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '찾아오시는 길',
+        depth2: '찾아오시는 길\nLM_M06_p006',
         depth3: '',
         depth4: '',
         depth5: '',
@@ -1027,7 +1027,7 @@ const datas = () => [
     depth1: '설정',
     datas: [
       {
-        depth2: '홈',
+        depth2: '홈\nSetting_M00_p001',
         depth3: '',
         depth4: '',
         depth5: '',
@@ -1038,7 +1038,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: 'PUSH 알림 설정',
+        depth2: 'PUSH 알림 설정\nSetting_M01_p001',
         depth3: '',
         depth4: '',
         depth5: '',
@@ -1049,7 +1049,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '공동인증서 가져오기',
+        depth2: '공동인증서 가져오기\nSetting_M02_p001',
         depth3: '',
         depth4: '',
         depth5: '',
@@ -1060,7 +1060,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '공동인증서 내보내기',
+        depth2: '공동인증서 내보내기\nSetting_M02_p003',
         depth3: '',
         depth4: '',
         depth5: '',

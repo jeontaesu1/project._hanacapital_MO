@@ -15,14 +15,20 @@ export default {
   },
   setup() {
     const layer001 = ref(null);
+    const layer002 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
     };
+    const layer002Open = (e = {}) => {
+      layer002.value.layer.open(e.target);
+    };
 
     return {
       layer001,
+      layer002,
       layer001Open,
+      layer002Open,
     };
   },
 };
@@ -37,7 +43,14 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">본인인증 방법 선택</BasicButton>
+        <BasicButton @click="layer001Open"
+          >중도상환 입금 예약 신청_오늘 즉시 출금<br />IF_M03_l002</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer002Open"
+          >중도상환 입금 예약 신청_가상계좌 입금<br />IF_M03_l003</BasicButton
+        >
       </ButtonListItem>
     </ButtonList>
   </PageContents>

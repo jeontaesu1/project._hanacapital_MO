@@ -1,4 +1,5 @@
 <script>
+// LM_M06_p005
 import { onMounted, onUnmounted, reactive } from 'vue';
 
 import { useUiHeaderStore } from '@/stores/ui/header';

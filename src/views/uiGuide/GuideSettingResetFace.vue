@@ -64,22 +64,26 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">얼굴인증 (재)등록</BasicButton>
+        <BasicButton @click="layer001Open"
+          >얼굴인증 (재)등록<br />Setting_M04_l001</BasicButton
+        >
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer002Open">바이오정보 약관</BasicButton>
+        <BasicButton @click="layer002Open"
+          >바이오정보 약관<br />Setting_M04_l002</BasicButton
+        >
       </ButtonListItem>
 
       <ButtonListItem>
         <BasicButton @click="layer003Open">
-          등록완료_얼굴인증 (재)등록
+          등록완료_얼굴인증 (재)등록<br />Setting_M04_l004
         </BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
         <BasicButton @click="layer004Open">
-          등록완료_마스크 인증 (재)등록
+          등록완료_마스크 인증 (재)등록<br />Setting_M04_l006
         </BasicButton>
       </ButtonListItem>
     </ButtonList>
