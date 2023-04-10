@@ -57,6 +57,15 @@ export default {
       }
     );
 
+    watch(
+      () => props.dot,
+      () => {
+        if (formListItem && formListItem.checkInputed) {
+          formListItem.checkInputed();
+        }
+      }
+    );
+
     onMounted(() => {
       if (formListItem && formListItem.selectFocus) {
         formListItem.selectFocus(props.isFocused);
