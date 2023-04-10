@@ -89,28 +89,38 @@ export default {
     >
       <ButtonListItem>
         <BasicButton @click="layer001Open">
-          비밀번호 3개월 경과 안내
+          비밀번호 3개월 경과 안내<br />Member_M01_b001
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer002Open">
-          앱회원 인증수단 선택 팝업
+          앱회원 인증수단 선택 팝업<br />Member_M01_b002
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer003Open">첫 화면 설정</BasicButton>
+        <BasicButton @click="layer003Open">
+          첫 화면 설정<br />Member_M01_b003
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer004Open">통합 ID 인증수단 선택</BasicButton>
+        <BasicButton @click="layer004Open">
+          통합 ID 인증수단 선택<br />Member_M01_b004
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer007Open">통합 ID 선택</BasicButton>
+        <BasicButton @click="layer007Open">
+          통합 ID 선택<br />Member_M01_l001
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer005Open">통합 ID 비밀번호 설정</BasicButton>
+        <BasicButton @click="layer005Open">
+          통합 ID 비밀번호 설정<br />Member_M01_l002
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer006Open">통합 ID 설정완료</BasicButton>
+        <BasicButton @click="layer006Open">
+          통합 ID 설정완료<br />Member_M01_l003
+        </BasicButton>
       </ButtonListItem>
     </ButtonList>
 

@@ -1,5 +1,7 @@
 <script>
+// PF_M09_l001
 import { ref } from 'vue';
+
 import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
 import CheckBox from '@/components/ui/form/CheckBox.vue';
