@@ -62,7 +62,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '본인인증',
+        depth2: '본인인증\nCommon_M00_p003',
         depth3: '',
         depth4: '',
         depth5: '',
@@ -73,7 +73,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '본인인증',
+        depth2: '본인인증\nCommon_M00_p003',
         depth3: '팝업',
         depth4: '',
         depth5: '',
