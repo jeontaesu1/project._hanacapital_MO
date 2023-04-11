@@ -5816,6 +5816,21 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Inline Alert</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <div :class="$style['inline-alert']">
+          <p :class="$style['inline-alert__text']">인증이 완료되었습니다.</p>
+        </div>
+
+        <div :class="[$style['inline-alert'], $style['inline-alert--error']]">
+          <p :class="$style['inline-alert__text']">인증이 실패하였습니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Component Title</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
