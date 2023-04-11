@@ -77,6 +77,8 @@ import StepProgress from '@/components/ui/progress/StepProgress.vue';
 import SearchButton from '@/components/ui/button/SearchButton.vue';
 import SwitchCheckBox from '@/components/ui/form/SwitchCheckBox.vue';
 import BasicTooltip from '@/components/ui/tooltip/BasicTooltip.vue';
+import DatePicker from '@/components/ui/form/DatePicker.vue';
+import InputRange from '@/components/ui/form/InputRange.vue';
 
 import BrandLogo001 from '@/assets/images/bank-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/bank-logo/lotte.svg?component';
@@ -223,7 +225,10 @@ export default {
     IconCompany,
     IconDocumentComplete,
     IconTooltip,
+    DatePicker,
+    InputRange,
   },
+
   setup() {
     const store = {
       ui: {
@@ -1905,7 +1910,7 @@ export default {
                   <!-- DD : 보안 키패드 열렸을 때 :isFocused="true" props 추가 해서 포커싱 스타일 적용 -->
                   <SecurityInput
                     title="주민등록번호 뒤 7자리"
-                    :dot="[true, true, true, false, false, false, false]"
+                    :dot="[false, false, false, false, false, false, false]"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -2187,6 +2192,21 @@ export default {
                       </li>
                     </ul>
                   </ExtendSelect>
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem titleText="달력포시기" target="#testInput010">
+            <FormInvalid :error="state.testError001">
+              <InputBlock :error="state.testError001">
+                <InputBlockCell :flexible="true">
+                  <DatePicker id="testInput010" />
+                </InputBlockCell>
+                <InputBlockCell type="sub">~</InputBlockCell>
+                <InputBlockCell :flexible="true">
+                  <DatePicker />
                 </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -5834,9 +5854,21 @@ export default {
     </section>
 
     <section class="test-section">
-      <h2 class="test-section-title">Component Title</h2>
+      <h2 class="test-section-title">InputRange</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
+        <InputRange />
+
+        <!-- 소스 카피 기능용 소스(미구현) -->
+        <div class="test-section-copy">
+          <div>
+            <button class="test-section-copy-button" @click="copyToClipboard">
+              copy
+            </button>
+          </div>
+          <pre class="test-section-copy-code" ref="preRef"></pre>
+        </div>
+        <!-- //소스 카피 기능용 소스 -->
       </div>
     </section>
   </div>
