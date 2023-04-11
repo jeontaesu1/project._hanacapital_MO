@@ -1,5 +1,5 @@
 <script>
-import { ref, reactive, computed } from 'vue';
+import { ref, reactive, computed, onBeforeMount } from 'vue';
 
 import IconDelete from '@/assets/images/icon/text-delete.svg?component';
 
@@ -38,6 +38,10 @@ export default {
       default: true,
     },
     align: {
+      Type: String,
+      default: null,
+    },
+    defaultValue: {
       Type: String,
       default: null,
     },
@@ -102,6 +106,10 @@ export default {
     const onKeyup = (e) => {
       state.isInputed = e.target.value.length ? true : false;
     };
+
+    onBeforeMount(() => {
+      state.val = props.modelValue || props.defaultValue || '';
+    });
 
     return {
       state,

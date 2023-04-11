@@ -1,4 +1,5 @@
 <script>
+// PF_M07_l006
 import { ref, reactive } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -113,7 +114,7 @@ export default {
         </TextButton>
       </div>
 
-      <ul class="basic-list row-margin-item-group">
+      <ul class="reset-list row-margin-item-group">
         <li
           v-for="(item, i) in state.data"
           :key="i"

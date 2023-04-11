@@ -18,7 +18,7 @@ export default {
         return defaultClassNames();
       },
     },
-    type: {
+    theme: {
       Type: String,
       default: null,
     },
@@ -57,6 +57,15 @@ export default {
       }
     );
 
+    watch(
+      () => props.dot,
+      () => {
+        if (formListItem && formListItem.checkInputed) {
+          formListItem.checkInputed();
+        }
+      }
+    );
+
     onMounted(() => {
       if (formListItem && formListItem.selectFocus) {
         formListItem.selectFocus(props.isFocused);
@@ -79,7 +88,7 @@ export default {
     :class="[
       $style['security-input'],
       {
-        [$style[`security-input--${type}`]]: type,
+        [$style[`security-input--theme-${theme}`]]: theme,
       },
       customClassNames.wrap,
     ]"

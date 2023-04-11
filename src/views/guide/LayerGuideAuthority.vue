@@ -1,4 +1,6 @@
 <script>
+// Common_M00_l021
+// Common_M00_l032
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -147,7 +149,7 @@ export default {
                 <div :class="$style['authority__sub']">(선택)</div>
               </div>
               <div :class="$style['authority__text']">
-                재고금융 실사 촬영을 등<br />
+                재고금융 실사 촬영 등<br />
                 현재 위치정보 수집을 할 때 사용합니다.
               </div>
             </div>

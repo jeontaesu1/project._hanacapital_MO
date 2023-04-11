@@ -1,4 +1,5 @@
 <script>
+// PF_M11_l002
 import { ref, reactive } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -135,14 +136,13 @@ export default {
         <!-- // Case : 공동인증서 있을 때 -->
 
         <!-- Case : 공동인증서 없을 때 -->
-        <FormListItem
-          titleText="공동인증서"
-          :forceFocus="true"
-          :disabled="true"
-        >
+        <FormListItem titleText="공동인증서" :disabled="true">
           <InputBlock :disabled="true">
             <InputBlockCell :flexible="true">
-              <BasicInput value="공동인증서가 없습니다." :disabled="true" />
+              <BasicInput
+                defaultValue="공동인증서가 없습니다."
+                :disabled="true"
+              />
             </InputBlockCell>
           </InputBlock>
         </FormListItem>

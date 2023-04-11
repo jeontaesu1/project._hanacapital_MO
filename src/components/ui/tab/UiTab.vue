@@ -24,6 +24,10 @@ export default {
       Type: String,
       default: null,
     },
+    type: {
+      Type: String,
+      default: null,
+    },
     onChange: {
       Type: Function,
       default() {
@@ -165,7 +169,15 @@ export default {
 </script>
 
 <template>
-  <div :class="[$style['tab'], customClassNames.wrap]">
+  <div
+    :class="[
+      $style['tab'],
+      {
+        [$style[`tab--type-${type}`]]: type,
+      },
+      customClassNames.wrap,
+    ]"
+  >
     <slot :activeName="state.activeName.value" />
   </div>
 </template>

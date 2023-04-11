@@ -145,6 +145,10 @@ export default {
         const eInput = new Event('input');
         input.value.dispatchEvent(eChange);
         input.value.dispatchEvent(eInput);
+
+        if (formListItem && formListItem.checkInputed) {
+          formListItem.checkInputed();
+        }
       });
     };
 

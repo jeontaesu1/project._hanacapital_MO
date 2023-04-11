@@ -48,10 +48,14 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">대출계산기</BasicButton>
+        <BasicButton @click="layer001Open">
+          대출계산기<br />Common_M00_l016
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer002Open">대출계산기 결과</BasicButton>
+        <BasicButton @click="layer002Open">
+          대출계산기 결과<br />Common_M00_b014
+        </BasicButton>
       </ButtonListItem>
     </ButtonList>
 

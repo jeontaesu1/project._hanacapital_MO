@@ -1,0 +1,18 @@
+.nav-menu {
+  &__list {
+    @include reset-list;
+  }
+
+  &__item + &__item {
+    margin-top: 32px;
+  }
+
+  &__link {
+    display: block;
+    padding: 0 4px;
+    text-decoration: none;
+    @include font-size-default(16);
+    font-weight: 500;
+    color: inherit;
+  }
+}

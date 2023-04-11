@@ -64,19 +64,27 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">인증 수단 선택</BasicButton>
+        <BasicButton @click="layer001Open">
+          인증 수단 선택<br />PF_M09_b001
+        </BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer002Open">한도조회 동의</BasicButton>
+        <BasicButton @click="layer002Open">
+          한도조회 동의<br />PF_M09_l001
+        </BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer003Open">사업자 대출 안내</BasicButton>
+        <BasicButton @click="layer003Open">
+          사업자 대출 안내<br />PF_M09_b002
+        </BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer004Open">상담신청 완료</BasicButton>
+        <BasicButton @click="layer004Open">
+          상담신청 완료<br />PF_M09_l003
+        </BasicButton>
       </ButtonListItem>
     </ButtonList>
 

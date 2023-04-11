@@ -1,0 +1,82 @@
+.scroll {
+  display: block;
+
+  &__head {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+
+    &-center {
+      flex: 1;
+      min-width: 0;
+    }
+
+    &-right {
+      flex: none;
+      margin-left: auto;
+      padding-left: 16px;
+    }
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    background: url('@/assets/images/icon/scroll.svg') no-repeat 50% 50% / 100%
+      100%;
+
+    &-text {
+      @include for-a11y;
+    }
+  }
+
+  &__body {
+    position: relative;
+    margin: 0 -20px;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      width: 20px;
+      height: 100%;
+    }
+
+    &::before {
+      left: 0;
+      background: linear-gradient(
+        to right,
+        rgba($color-white, 1) 0%,
+        rgba($color-white, 1) 49.48%,
+        rgba($color-white, 0) 100%
+      );
+    }
+
+    &::after {
+      right: 0;
+      background: linear-gradient(
+        to right,
+        rgba($color-white, 0) 0%,
+        rgba($color-white, 1) 50.52%,
+        rgba($color-white, 1) 100%
+      );
+    }
+
+    &-scroller {
+      font-size: 0;
+      line-height: 0;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    &-inner {
+      display: inline-block;
+      vertical-align: top;
+      padding: 0 20px;
+      min-width: 100%;
+      box-sizing: border-box;
+    }
+  }
+}

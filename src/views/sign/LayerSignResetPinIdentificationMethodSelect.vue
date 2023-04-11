@@ -1,4 +1,5 @@
 <script>
+// Member_M09_b001
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -44,18 +45,18 @@ export default {
         <ul :class="$style['icon-buttons__list']">
           <li :class="$style['icon-buttons__item']">
             <button type="button" :class="$style['icon-buttons__block']">
-              <div :class="$style['icon-buttons__icon']"><IconPhone /></div>
-              <div :class="$style['icon-buttons__content']">
-                <div :class="$style['icon-buttons__title']">휴대폰</div>
-              </div>
+              <span :class="$style['icon-buttons__icon']"><IconPhone /></span>
+              <span :class="$style['icon-buttons__content']">
+                <span :class="$style['icon-buttons__title']">휴대폰</span>
+              </span>
             </button>
           </li>
           <li :class="$style['icon-buttons__item']">
             <button type="button" :class="$style['icon-buttons__block']">
-              <div :class="$style['icon-buttons__icon']"><IconCard /></div>
-              <div :class="$style['icon-buttons__content']">
-                <div :class="$style['icon-buttons__title']">신용카드</div>
-              </div>
+              <span :class="$style['icon-buttons__icon']"><IconCard /></span>
+              <span :class="$style['icon-buttons__content']">
+                <span :class="$style['icon-buttons__title']">신용카드</span>
+              </span>
             </button>
           </li>
         </ul>

@@ -47,11 +47,19 @@ export default {
       Type: Boolean,
       default: false,
     },
+    defaultChecked: {
+      Type: Boolean,
+      default: false,
+    },
+    modelValue: {
+      Type: Boolean,
+    },
   },
-  setup(props, context) {
+  setup(props, { emit, slots }) {
     const state = reactive({
       type: { value: null },
       id: { value: null },
+      checked: false,
     });
 
     const input = ref(null);
@@ -62,21 +70,23 @@ export default {
     });
 
     const isLeft = computed(() => {
-      return Boolean(context.slots.left);
+      return Boolean(slots.left);
     });
 
     const isRight = computed(() => {
-      return Boolean(context.slots.right);
+      return Boolean(slots.right);
     });
 
     const getInputElement = () => {
       return input.value;
     };
 
-    onBeforeMount(() => {
-      state.type.value = props.type;
-      state.id.value = props.id;
-    });
+    const onChange = (e) => {
+      const { checked } = e.target;
+
+      state.checked = checked;
+      emit('update:modelValue', checked);
+    };
 
     watch(
       () => props.type,
@@ -84,6 +94,7 @@ export default {
         state.type.value = cur;
       }
     );
+
     watch(
       () => props.id,
       (cur) => {
@@ -91,16 +102,34 @@ export default {
       }
     );
 
+    watch(
+      () => props.modelValue,
+      (cur) => {
+        state.checked = cur;
+      }
+    );
+
+    onBeforeMount(() => {
+      state.type.value = props.type;
+      state.id.value = props.id;
+
+      const { modelValue, defaultChecked } = props;
+      state.checked =
+        typeof modelValue === 'boolean' ? modelValue : defaultChecked;
+    });
+
     provide('boxCheckstyleModule', useCssModule());
     provide('boxCheckType', state.type);
     provide('boxCheckId', state.id);
 
     return {
+      state,
       input,
       customClassNames,
       getInputElement,
       isLeft,
       isRight,
+      onChange,
     };
   },
 };
@@ -125,6 +154,8 @@ export default {
       :type="type"
       :class="[$style['box-check__input'], customClassNames.input]"
       :id="id"
+      :checked="state.checked"
+      @change="onChange"
     />
     <div :class="[$style['box-check__block'], customClassNames.block]">
       <div

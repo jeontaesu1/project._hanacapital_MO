@@ -7,6 +7,7 @@ import {
   nextTick,
   onMounted,
   onBeforeUnmount,
+  provide,
 } from 'vue';
 
 import { useUiScrollBlockStore } from '@/stores/ui/scrollBlock';
@@ -61,6 +62,10 @@ export default {
       default() {
         return defaultClassNames();
       },
+    },
+    backgroundClose: {
+      Type: Boolean,
+      default: false,
     },
     onBeforeOpened: {
       Type: Function,
@@ -117,6 +122,9 @@ export default {
       zIndex: store.ui.layer.zIndex,
       speed: defaultSpeed,
       opener: null,
+      stickyBar: {
+        value: null,
+      },
     });
 
     const layer = ref(null);
@@ -205,10 +213,14 @@ export default {
       nextTick(() => {
         timer = setTimeout(function () {
           state.opened = true;
-          onOpened();
-          clearTimeout(timer);
 
           nextTick(() => {
+            if (state.stickyBar.value && state.stickyBar.value.update) {
+              state.stickyBar.value.update();
+            }
+            onOpened();
+            clearTimeout(timer);
+
             timer = setTimeout(function () {
               layerContainer.value.focus();
               onAfterOpened();
@@ -340,6 +352,10 @@ export default {
     onBeforeUnmount(() => {
       close(0);
       layer.value.remove();
+    });
+
+    provide('uiLayer', {
+      stickyBar: state.stickyBar,
     });
 
     return {

@@ -7,9 +7,12 @@ div.icon-list__block {
 
   &__list {
     @include reset-list;
+    display: block;
   }
 
   &__item {
+    display: block;
+
     & + & {
       margin-top: 24px;
     }
@@ -27,6 +30,7 @@ div.icon-list__block {
   }
 
   &__icon {
+    display: block;
     flex: none;
     width: 48px;
     height: 48px;
@@ -44,6 +48,7 @@ div.icon-list__block {
   }
 
   &__content {
+    display: block;
     flex: 1;
     min-width: 0;
   }
@@ -53,12 +58,14 @@ div.icon-list__block {
   }
 
   &__title {
+    display: block;
     margin: 0;
     @include font-size-default(16);
     font-weight: 500;
   }
 
   &__text {
+    display: block;
     margin: 0;
     @include font-size-default(13);
     font-weight: 400;

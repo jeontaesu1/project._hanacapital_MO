@@ -1,23 +1,16 @@
-//Setting_M05_l001
 <script>
+// Setting_M05_l001
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
-
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
-
-import BoxCheck from '@/components/ui/form/BoxCheck.vue';
-import BoxCheckObject from '@/components/ui/form/BoxCheckObject.vue';
-import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
-
 import CheckBox from '@/components/ui/form/CheckBox.vue';
 import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
 import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
@@ -28,18 +21,11 @@ export default {
     PopupButton,
     FullPopup,
     FullPopupHead,
-
     BasicButton,
     ButtonList,
     ButtonListItem,
-
     PageTextGroup,
     PageMainText,
-
-    BoxCheck,
-    BoxCheckObject,
-    BoxCheckLabel,
-
     CheckBox,
     CheckBoxObject,
     CheckBoxLabelText,
@@ -73,44 +59,52 @@ export default {
       </PageTextGroup>
 
       <div :class="$style['agree-list']">
-        <BoxCheck
-          :contents="true"
-          type="checkbox"
-          id="LayerSettingResetFingerprintAgree001"
-        >
-          <template v-slot:left>
-            <BoxCheckObject />
-          </template>
-          <BoxCheckLabel>바이오 인증 서비스 약관 동의</BoxCheckLabel>
-        </BoxCheck>
+        <ul :class="$style['agree-list__container']">
+          <li :class="$style['agree-list__all']">
+            <div :class="$style['agree-list__all-head']">
+              <CheckBox
+                id="layerSettingResetFingerprintAgreeAll"
+                :classNames="{ wrap: $style['agree-list__all-checkbox'] }"
+              >
+                <CheckBoxObject />
+                <CheckBoxLabelText
+                  >바이오 인증 서비스 약관 동의</CheckBoxLabelText
+                >
+              </CheckBox>
+            </div>
+
+            <div :class="$style['agree-list__all-contents']">
+              <ul :class="$style['agree-list__list']">
+                <li :class="$style['agree-list__item']">
+                  <div :class="$style['agree-list__head']">
+                    <CheckBox
+                      id="layerSettingResetFingerprintAgree001"
+                      :classNames="{
+                        wrap: $style['agree-list__checkbox'],
+                      }"
+                      theme="tertiary"
+                    >
+                      <CheckBoxObject />
+                      <CheckBoxLabelText
+                        >바이오정보 수집이용 동의서 (인증용)</CheckBoxLabelText
+                      >
+                    </CheckBox>
+                    <div :class="$style['agree-list__right']">
+                      <button type="button" :class="$style['agree-list__link']">
+                        <span :class="$style['agree-list__link-text']">
+                          상세보기
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
       </div>
 
-      <div :class="$style['agree-list__all-contents']">
-        <div :class="$style['agree-list__head']">
-          <CheckBox
-            id="LayerSettingResetFingerprintAgree002"
-            :classNames="{
-              wrap: $style['agree-list__checkbox'],
-            }"
-            theme="tertiary"
-          >
-            <CheckBoxObject />
-            <CheckBoxLabelText
-              >바이오정보 수집이용 동의서 (인증용)</CheckBoxLabelText
-            >
-          </CheckBox>
-          <div :class="$style['agree-list__right']">
-            <button type="button" :class="$style['agree-list__link']">
-              <span :class="$style['agree-list__link-text']"> 상세보기 </span>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <section
-        class="row-margin-contents-group"
-        :class="$style['notice-section']"
-      >
+      <section :class="[$style['notice-section'], 'row-margin-contents-group']">
         <h3 :class="$style['notice-section__title']">유의사항</h3>
         <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
           <li :class="$style['basic-list__item']">
@@ -150,17 +144,9 @@ export default {
             wrap: 'row-margin-none',
           }"
         >
-          <!-- Case : 재등록 동의 전 -->
-          <ButtonListItem>
-            <BasicButton disabled>지문인증 (재)등록</BasicButton>
-          </ButtonListItem>
-          <!-- //Case : 재등록 동의 전 -->
-
-          <!-- Case : 재등록 동의 후 -->
           <ButtonListItem>
             <BasicButton>지문인증 (재)등록</BasicButton>
           </ButtonListItem>
-          <!-- //Case : 재등록 동의 후 -->
         </ButtonList>
       </template>
     </FullPopup>

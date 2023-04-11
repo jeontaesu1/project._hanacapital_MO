@@ -1,5 +1,7 @@
 <script>
+// Member_M05_l001
 import { ref } from 'vue';
+
 import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
 import CheckBox from '@/components/ui/form/CheckBox.vue';
@@ -12,6 +14,7 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
+import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 
 export default {
   components: {
@@ -27,6 +30,7 @@ export default {
     PageTextGroup,
     PageMainText,
     PopupButton,
+    RoundStatus,
   },
   setup() {
     const layer = ref(null);
@@ -61,7 +65,7 @@ export default {
           <li :class="$style['agree-list__all']">
             <div :class="$style['agree-list__all-head']">
               <CheckBox
-                id="layerSignUpAppAgreeAll"
+                id="layerSignUpAgreeAll"
                 :classNames="{ wrap: $style['agree-list__all-checkbox'] }"
               >
                 <CheckBoxObject />
@@ -74,7 +78,7 @@ export default {
                 <li :class="$style['agree-list__depth-item']">
                   <div :class="$style['agree-list__depth-head']">
                     <CheckBox
-                      id="layerSignUpAppAgree001"
+                      id="layerSignUpAgree001"
                       :classNames="{
                         wrap: $style['agree-list__depth-checkbox'],
                       }"
@@ -91,7 +95,7 @@ export default {
                       <li :class="$style['agree-list__item']">
                         <div :class="$style['agree-list__head']">
                           <CheckBox
-                            id="layerSignUpAppAgree001_001"
+                            id="layerSignUpAgree001_001"
                             :classNames="{
                               wrap: $style['agree-list__checkbox'],
                             }"
@@ -117,7 +121,7 @@ export default {
                       <li :class="$style['agree-list__item']">
                         <div :class="$style['agree-list__head']">
                           <CheckBox
-                            id="layerSignUpAppAgree001_002"
+                            id="layerSignUpAgree001_002"
                             :classNames="{
                               wrap: $style['agree-list__checkbox'],
                             }"
@@ -143,7 +147,7 @@ export default {
                       <li :class="$style['agree-list__item']">
                         <div :class="$style['agree-list__head']">
                           <CheckBox
-                            id="layerSignUpAppAgree001_003"
+                            id="layerSignUpAgree001_003"
                             :classNames="{
                               wrap: $style['agree-list__checkbox'],
                             }"
@@ -174,7 +178,7 @@ export default {
                 <li :class="$style['agree-list__depth-item']">
                   <div :class="$style['agree-list__depth-head']">
                     <CheckBox
-                      id="layerSignUpAppAgree002"
+                      id="layerSignUpAgree002"
                       :classNames="{
                         wrap: $style['agree-list__depth-checkbox'],
                       }"
@@ -192,7 +196,7 @@ export default {
                       <li :class="$style['agree-list__item']">
                         <div :class="$style['agree-list__head']">
                           <CheckBox
-                            id="layerSignUpAppAgree002_001"
+                            id="layerSignUpAgree002_001"
                             :classNames="{
                               wrap: $style['agree-list__checkbox'],
                             }"
@@ -218,7 +222,7 @@ export default {
                       <li :class="$style['agree-list__item']">
                         <div :class="$style['agree-list__head']">
                           <CheckBox
-                            id="layerSignUpAppAgree002_002"
+                            id="layerSignUpAgree002_002"
                             :classNames="{
                               wrap: $style['agree-list__checkbox'],
                             }"
@@ -239,7 +243,7 @@ export default {
                           <li :class="$style['agree-list__item']">
                             <div :class="$style['agree-list__head']">
                               <CheckBox
-                                id="layerSignUpAppAgree002_002_001"
+                                id="layerSignUpAgree002_002_001"
                                 :classNames="{
                                   wrap: $style['agree-list__checkbox'],
                                 }"
@@ -268,7 +272,7 @@ export default {
                           <li :class="$style['agree-list__item']">
                             <div :class="$style['agree-list__head']">
                               <CheckBox
-                                id="layerSignUpAppAgree002_002_002"
+                                id="layerSignUpAgree002_002_002"
                                 :classNames="{
                                   wrap: $style['agree-list__checkbox'],
                                 }"
@@ -299,7 +303,7 @@ export default {
                       <li :class="$style['agree-list__item']">
                         <div :class="$style['agree-list__head']">
                           <CheckBox
-                            id="layerSignUpAppAgree002_003"
+                            id="layerSignUpAgree002_003"
                             :classNames="{
                               wrap: $style['agree-list__checkbox'],
                             }"
@@ -320,7 +324,7 @@ export default {
                           <li :class="$style['agree-list__item']">
                             <div :class="$style['agree-list__head']">
                               <CheckBox
-                                id="layerSignUpAppAgree002_003_001"
+                                id="layerSignUpAgree002_003_001"
                                 :classNames="{
                                   wrap: $style['agree-list__checkbox'],
                                 }"
@@ -351,7 +355,7 @@ export default {
                       <li :class="$style['agree-list__item']">
                         <div :class="$style['agree-list__head']">
                           <CheckBox
-                            id="layerSignUpAppAgree002_004"
+                            id="layerSignUpAgree002_004"
                             :classNames="{
                               wrap: $style['agree-list__checkbox'],
                             }"
@@ -372,7 +376,7 @@ export default {
                           <li :class="$style['agree-list__item']">
                             <div :class="$style['agree-list__head']">
                               <CheckBox
-                                id="layerSignUpAppAgree002_004_001"
+                                id="layerSignUpAgree002_004_001"
                                 :classNames="{
                                   wrap: $style['agree-list__checkbox'],
                                 }"
@@ -401,7 +405,7 @@ export default {
                           <li :class="$style['agree-list__item']">
                             <div :class="$style['agree-list__head']">
                               <CheckBox
-                                id="layerSignUpAppAgree002_004_002"
+                                id="layerSignUpAgree002_004_002"
                                 :classNames="{
                                   wrap: $style['agree-list__checkbox'],
                                 }"
@@ -430,7 +434,7 @@ export default {
                           <li :class="$style['agree-list__item']">
                             <div :class="$style['agree-list__head']">
                               <CheckBox
-                                id="layerSignUpAppAgree002_004_003"
+                                id="layerSignUpAgree002_004_003"
                                 :classNames="{
                                   wrap: $style['agree-list__checkbox'],
                                 }"
@@ -465,7 +469,7 @@ export default {
                 <li :class="$style['agree-list__depth-item']">
                   <div :class="$style['agree-list__depth-head']">
                     <CheckBox
-                      id="layerSignUpAppAgree003"
+                      id="layerSignUpAgree003"
                       :classNames="{
                         wrap: $style['agree-list__depth-checkbox'],
                       }"
@@ -483,7 +487,7 @@ export default {
                       <li :class="$style['agree-list__item']">
                         <div :class="$style['agree-list__head']">
                           <CheckBox
-                            id="layerSignUpAppAgree003_001"
+                            id="layerSignUpAgree003_001"
                             :classNames="{
                               wrap: $style['agree-list__checkbox'],
                             }"
@@ -495,6 +499,13 @@ export default {
                             </CheckBoxLabelText>
                           </CheckBox>
                           <div :class="$style['agree-list__right']">
+                            <RoundStatus
+                              :classNames="{ wrap: 'display-block' }"
+                              size="small"
+                              theme="quinary"
+                            >
+                              보통
+                            </RoundStatus>
                             <button
                               type="button"
                               :class="$style['agree-list__link']"
@@ -515,7 +526,7 @@ export default {
                           <li :class="$style['agree-list__item']">
                             <div :class="$style['agree-list__head']">
                               <CheckBox
-                                id="layerSignUpAppAgree003_001_001"
+                                id="layerSignUpAgree003_001_001"
                                 :classNames="{
                                   wrap: $style['agree-list__checkbox'],
                                 }"
@@ -544,7 +555,7 @@ export default {
                           <li :class="$style['agree-list__item']">
                             <div :class="$style['agree-list__head']">
                               <CheckBox
-                                id="layerSignUpAppAgree003_001_002"
+                                id="layerSignUpAgree003_001_002"
                                 :classNames="{
                                   wrap: $style['agree-list__checkbox'],
                                 }"
@@ -569,6 +580,87 @@ export default {
                                 </button>
                               </div>
                             </div>
+                            <ul
+                              :class="[
+                                $style['agree-list__list'],
+                                $style['agree-list__list--tertiary'],
+                              ]"
+                            >
+                              <li :class="$style['agree-list__item']">
+                                <div :class="$style['agree-list__head']">
+                                  <CheckBox
+                                    id="layerSignUpAgree003_001_002_001"
+                                    :classNames="{
+                                      wrap: $style['agree-list__checkbox'],
+                                    }"
+                                    theme="quinary"
+                                  >
+                                    <CheckBoxObject />
+                                    <CheckBoxLabelText>전체</CheckBoxLabelText>
+                                  </CheckBox>
+                                </div>
+                              </li>
+                              <li :class="$style['agree-list__item']">
+                                <div :class="$style['agree-list__head']">
+                                  <CheckBox
+                                    id="layerSignUpAgree003_001_002_002"
+                                    :classNames="{
+                                      wrap: $style['agree-list__checkbox'],
+                                    }"
+                                    theme="quinary"
+                                  >
+                                    <CheckBoxObject />
+                                    <CheckBoxLabelText>전화</CheckBoxLabelText>
+                                  </CheckBox>
+                                </div>
+                              </li>
+                              <li :class="$style['agree-list__item']">
+                                <div :class="$style['agree-list__head']">
+                                  <CheckBox
+                                    id="layerSignUpAgree003_001_002_003"
+                                    :classNames="{
+                                      wrap: $style['agree-list__checkbox'],
+                                    }"
+                                    theme="quinary"
+                                  >
+                                    <CheckBoxObject />
+                                    <CheckBoxLabelText
+                                      >문자메시지</CheckBoxLabelText
+                                    >
+                                  </CheckBox>
+                                </div>
+                              </li>
+                              <li :class="$style['agree-list__item']">
+                                <div :class="$style['agree-list__head']">
+                                  <CheckBox
+                                    id="layerSignUpAgree003_001_002_004"
+                                    :classNames="{
+                                      wrap: $style['agree-list__checkbox'],
+                                    }"
+                                    theme="quinary"
+                                  >
+                                    <CheckBoxObject />
+                                    <CheckBoxLabelText>우편</CheckBoxLabelText>
+                                  </CheckBox>
+                                </div>
+                              </li>
+                              <li :class="$style['agree-list__item']">
+                                <div :class="$style['agree-list__head']">
+                                  <CheckBox
+                                    id="layerSignUpAgree003_001_002_005"
+                                    :classNames="{
+                                      wrap: $style['agree-list__checkbox'],
+                                    }"
+                                    theme="quinary"
+                                  >
+                                    <CheckBoxObject />
+                                    <CheckBoxLabelText
+                                      >이메일</CheckBoxLabelText
+                                    >
+                                  </CheckBox>
+                                </div>
+                              </li>
+                            </ul>
                           </li>
                         </ul>
                       </li>

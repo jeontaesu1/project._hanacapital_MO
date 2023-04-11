@@ -1,4 +1,5 @@
 <script>
+// Common_M00_l029
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -54,18 +55,20 @@ export default {
         <ul :class="$style['icon-list__list']">
           <li :class="$style['icon-list__item']">
             <button type="button" :class="$style['icon-list__block']">
-              <div :class="$style['icon-list__icon']"><IconPerson /></div>
-              <div :class="$style['icon-list__content']">
-                <div :class="$style['icon-list__title']">개인 (개인사업자)</div>
-              </div>
+              <span :class="$style['icon-list__icon']"><IconPerson /></span>
+              <span :class="$style['icon-list__content']">
+                <span :class="$style['icon-list__title']"
+                  >개인 (개인사업자)</span
+                >
+              </span>
             </button>
           </li>
           <li :class="$style['icon-list__item']">
             <button type="button" :class="$style['icon-list__block']">
-              <div :class="$style['icon-list__icon']"><IconBuilding /></div>
-              <div :class="$style['icon-list__content']">
-                <div :class="$style['icon-list__title']">법인</div>
-              </div>
+              <span :class="$style['icon-list__icon']"><IconBuilding /></span>
+              <span :class="$style['icon-list__content']">
+                <span :class="$style['icon-list__title']">법인</span>
+              </span>
             </button>
           </li>
         </ul>

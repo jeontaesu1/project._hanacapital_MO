@@ -56,13 +56,19 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">얼굴인증</BasicButton>
+        <BasicButton @click="layer001Open">
+          얼굴인증<br />Member_M10_l001
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer002Open">지문인증</BasicButton>
+        <BasicButton @click="layer002Open">
+          지문인증<br />Member_M10_l002
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer003Open">Face ID</BasicButton>
+        <BasicButton @click="layer003Open">
+          Face ID<br />Member_M10_l004
+        </BasicButton>
       </ButtonListItem>
     </ButtonList>
 

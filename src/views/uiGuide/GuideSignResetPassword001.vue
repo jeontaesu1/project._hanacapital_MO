@@ -64,16 +64,24 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">아이디 입력</BasicButton>
+        <BasicButton @click="layer001Open">
+          아이디 입력<br />Member_M04_l001
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer002Open">인증 수단 선택</BasicButton>
+        <BasicButton @click="layer002Open">
+          인증 수단 선택<br />Member_M04_b001
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer003Open">비밀번호 재설정</BasicButton>
+        <BasicButton @click="layer003Open">
+          비밀번호 재설정<br />Member_M04_l003
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer004Open">재설정 완료</BasicButton>
+        <BasicButton @click="layer004Open">
+          재설정 완료<br />Member_M04_l004
+        </BasicButton>
       </ButtonListItem>
     </ButtonList>
 

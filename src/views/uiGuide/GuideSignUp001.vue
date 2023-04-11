@@ -80,29 +80,39 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">인증선택</BasicButton>
-      </ButtonListItem>
-
-      <!-- 작업중
-      <ButtonListItem>
-        <BasicButton @click="layer002Open">약관동의</BasicButton>
-      </ButtonListItem>
-      -->
-
-      <ButtonListItem>
-        <BasicButton @click="layer003Open">아이디 비밀번호 입력</BasicButton>
+        <BasicButton @click="layer001Open">
+          인증선택<br />Member_M05_b001
+        </BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer004Open">가입완료</BasicButton>
+        <BasicButton @click="layer002Open">
+          약관동의<br />Member_M05_l001
+        </BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer005Open">기가입</BasicButton>
+        <BasicButton @click="layer003Open">
+          아이디 비밀번호 입력<br />Member_M05_l004
+        </BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer006Open">앱 기가입</BasicButton>
+        <BasicButton @click="layer004Open">
+          가입완료<br />Member_M05_l005
+        </BasicButton>
+      </ButtonListItem>
+
+      <ButtonListItem>
+        <BasicButton @click="layer005Open">
+          기가입<br />Member_M05_l002
+        </BasicButton>
+      </ButtonListItem>
+
+      <ButtonListItem>
+        <BasicButton @click="layer006Open">
+          앱 기가입<br />Member_M05_l003
+        </BasicButton>
       </ButtonListItem>
     </ButtonList>
 

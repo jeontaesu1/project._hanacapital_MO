@@ -18,7 +18,6 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-
     LayerSettingResetPin,
     LayerSettingResetPinInput,
     LayerSettingResetPinSet,
@@ -73,19 +72,29 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">간편비밀번호 (재)등록</BasicButton>
+        <BasicButton @click="layer001Open"
+          >간편비밀번호 (재)등록<br />Setting_M03_l001</BasicButton
+        >
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer002Open">간편비밀번호 인증</BasicButton>
+        <BasicButton @click="layer002Open"
+          >간편비밀번호 인증<br />Setting_M03_l002</BasicButton
+        >
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer003Open">새 비밀번호 입력</BasicButton>
+        <BasicButton @click="layer003Open"
+          >새 비밀번호 입력<br />Setting_M03_l003</BasicButton
+        >
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer004Open">비밀번호 재입력</BasicButton>
+        <BasicButton @click="layer004Open"
+          >비밀번호 재입력<br />Setting_M03_l004</BasicButton
+        >
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer005Open">등록 완료</BasicButton>
+        <BasicButton @click="layer005Open"
+          >등록 완료<br />Setting_M03_l005</BasicButton
+        >
       </ButtonListItem>
     </ButtonList>
 

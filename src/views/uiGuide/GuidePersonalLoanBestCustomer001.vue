@@ -64,16 +64,24 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">인증수단선택</BasicButton>
+        <BasicButton @click="layer001Open">
+          인증수단선택<br />PF_M05_b001
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer002Open">한도조회 동의</BasicButton>
+        <BasicButton @click="layer002Open">
+          한도조회 동의<br />PF_M05_l001
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer003Open">한도조회 결과</BasicButton>
+        <BasicButton @click="layer003Open">
+          한도조회 결과<br />PF_M05_l003
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer004Open">신청 정보 입력</BasicButton>
+        <BasicButton @click="layer004Open">
+          신청 정보 입력<br />PF_M05_l004
+        </BasicButton>
       </ButtonListItem>
     </ButtonList>
 

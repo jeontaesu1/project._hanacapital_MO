@@ -1,0 +1,68 @@
+.faq {
+  display: block;
+
+  &__list {
+    @include reset-list;
+  }
+
+  &__item {
+    display: block;
+  }
+
+  &__head {
+    position: relative;
+    display: flex;
+    padding: 16px 0;
+  }
+
+  &__block {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__name {
+    @include font-size-default(13);
+    font-weight: 300;
+  }
+
+  &__title {
+    margin-top: 4px;
+    @include font-size-default(16);
+    font-weight: 500;
+  }
+
+  &__right {
+    flex: none;
+    margin-left: auto;
+    padding-left: 4px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__opener {
+    flex: none;
+    width: 24px;
+    height: 24px;
+    position: static;
+
+    &::before {
+      padding: 0;
+      top: 0;
+      left: 0;
+      z-index: 10;
+    }
+  }
+
+  &__layer {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  &__contents {
+    padding: 20px;
+    box-sizing: border-box;
+    @include font-size-default(14);
+    color: $color-gray-70;
+    background-color: $color-gray-10;
+  }
+}

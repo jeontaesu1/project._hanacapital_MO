@@ -6,9 +6,9 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import LayerSignLoadPin from '@/views/sign/LayerSignLoadPin.vue';
 import LayerSignLoadPinErrorExcess from '@/views/sign/LayerSignLoadPinErrorExcess.vue';
-import LayerSignLoadPinCertified from '@/views/sign/LayerSignLoadPinCertified.vue';
+import LayerSignLoadPinInput from '@/views/sign/LayerSignLoadPinInput.vue';
+import LayerSignLoadPinComplete from '@/views/sign/LayerSignLoadPinComplete.vue';
 
 export default {
   components: {
@@ -16,9 +16,9 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    LayerSignLoadPin,
     LayerSignLoadPinErrorExcess,
-    LayerSignLoadPinCertified,
+    LayerSignLoadPinInput,
+    LayerSignLoadPinComplete,
   },
   setup() {
     const layer001 = ref(null);
@@ -56,18 +56,24 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">간편비밀번호 불러오기</BasicButton>
+        <BasicButton @click="layer001Open">
+          비밀번호 입력<br />Member_M07_l001
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer002Open">오류횟수 초과</BasicButton>
+        <BasicButton @click="layer002Open">
+          오류횟수 초과<br />Member_M07_l002
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer003Open">간편비밀번호 인증</BasicButton>
+        <BasicButton @click="layer003Open">
+          가입 완료<br />Member_M07_l003
+        </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
-    <LayerSignLoadPin ref="layer001" />
+    <LayerSignLoadPinInput ref="layer001" />
     <LayerSignLoadPinErrorExcess ref="layer002" />
-    <LayerSignLoadPinCertified ref="layer003" />
+    <LayerSignLoadPinComplete ref="layer003" />
   </PageContents>
 </template>

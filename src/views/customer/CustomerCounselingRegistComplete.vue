@@ -1,4 +1,5 @@
 <script>
+// Customer_M02_p003
 import { onMounted, onUnmounted } from 'vue';
 
 import { useUiHeaderStore } from '@/stores/ui/header';
@@ -31,11 +32,13 @@ export default {
     };
 
     onMounted(() => {
+      store.ui.header.setTitle(() => '고객상담');
       store.ui.header.setLeftButtons(() => ['back']);
       store.ui.header.setRightButtons(() => []);
     });
 
     onUnmounted(() => {
+      store.ui.header.setTitle();
       store.ui.header.setLeftButtons();
       store.ui.header.setRightButtons();
     });

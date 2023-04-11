@@ -21,7 +21,7 @@ import LayerPersonalLoanStockEarlyError from '@/views/personalLoan/LayerPersonal
 import LayerPersonalLoanStockEarlyAlert from '@/views/personalLoan/LayerPersonalLoanStockEarlyAlert.vue';
 import LayerPersonalLoanStockEarlyComplete from '@/views/personalLoan/LayerPersonalLoanStockEarlyComplete.vue';
 import LayerPersonalLoanStockEarlyFail from '@/views/personalLoan/LayerPersonalLoanStockEarlyFail.vue';
-import LayerPersonalLoanStockEarlyEnter from '@/views/personalLoan/LayerPersonalLoanStockEarlyEnter.vue';
+import LayerPersonalLoanStockEarlyForm from '@/views/personalLoan/LayerPersonalLoanStockEarlyForm.vue';
 
 export default {
   components: {
@@ -44,7 +44,7 @@ export default {
     LayerPersonalLoanStockEarlyAlert,
     LayerPersonalLoanStockEarlyComplete,
     LayerPersonalLoanStockEarlyFail,
-    LayerPersonalLoanStockEarlyEnter,
+    LayerPersonalLoanStockEarlyForm,
   },
   setup() {
     const layer001 = ref(null);
@@ -160,60 +160,84 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">약관동의</BasicButton>
+        <BasicButton @click="layer001Open">
+          약관동의<br />PF_M07_l001
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer002Open">연장신청 계약선택</BasicButton>
+        <BasicButton @click="layer002Open">
+          연장신청 계약선택<br />PF_M07_l002
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer003Open">
-          만기연장 불가대상 - 잔여회차 확인
+          만기연장 불가대상 - 잔여회차 확인<br />PF_M07_l003
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer004Open">
-          만기연장 불가대상 - 연장가능 계약 없음
+          만기연장 불가대상 - 연장가능 계약 없음<br />PF_M07_l003
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer005Open"
-          >연장신청 상품 만기현황 확인</BasicButton
-        >
+        <BasicButton @click="layer005Open">
+          연장신청 상품 만기현황 확인<br />PF_M07_l004
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer006Open">연장 신청 완료</BasicButton>
+        <BasicButton @click="layer006Open">
+          연장 신청 완료<br />PF_M07_l005
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer007Open">연장 신청 실패</BasicButton>
+        <BasicButton @click="layer007Open">
+          연장 신청 실패<br />PF_M07_l005
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer008Open">중도상환신청 계약선택</BasicButton>
+        <BasicButton @click="layer008Open">
+          중도상환신청 계약선택<br />PF_M07_l006
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer009Open">중도상환 불가대상</BasicButton>
+        <BasicButton @click="layer009Open">
+          중도상환 불가대상<br />PF_M07_l008
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer010Open"
-          >중도상환신청 안내 및 유의사항</BasicButton
-        >
+        <BasicButton @click="layer010Open">
+          중도상환신청 안내 및 유의사항<br />PF_M07_l007
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer011Open">중도상환금액 조회</BasicButton>
+        <BasicButton @click="layer016Open">
+          중도상환 조건 입력<br />PF_M07_l009
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer012Open">중도상환 조회 불가</BasicButton>
+        <BasicButton @click="layer011Open">
+          중도상환금액 조회<br />PF_M07_l010
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer013Open">중도상환 신청확인</BasicButton>
+        <BasicButton @click="layer012Open">
+          중도상환 조회 불가<br />PF_M07_l011
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer014Open">상환 신청 완료</BasicButton>
+        <BasicButton @click="layer013Open">
+          중도상환 신청확인<br />PF_M07_b001
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer015Open">상환 신청 실패</BasicButton>
+        <BasicButton @click="layer014Open">
+          상환 신청 완료<br />PF_M07_l012
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer016Open">중도상환 조건 입력</BasicButton>
+        <BasicButton @click="layer015Open">
+          상환 신청 실패<br />PF_M07_l012
+        </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
@@ -227,11 +251,11 @@ export default {
     <LayerPersonalLoanStockEarlyList ref="layer008" />
     <LayerPersonalLoanStockEarlyEmpty ref="layer009" />
     <LayerPersonalLoanStockEarlyNotice ref="layer010" />
+    <LayerPersonalLoanStockEarlyForm ref="layer016" />
     <LayerPersonalLoanStockEarlyConfirm ref="layer011" />
     <LayerPersonalLoanStockEarlyError ref="layer012" />
     <LayerPersonalLoanStockEarlyAlert ref="layer013" />
     <LayerPersonalLoanStockEarlyComplete ref="layer014" />
     <LayerPersonalLoanStockEarlyFail ref="layer015" />
-    <LayerPersonalLoanStockEarlyEnter ref="layer016" />
   </PageContents>
 </template>

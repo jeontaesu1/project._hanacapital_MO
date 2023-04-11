@@ -82,6 +82,7 @@ export default {
       :is="setButtonComponent"
       v-bind="$attrs"
       :class="[styleModule['nav-tab__button'], customClassNames.button]"
+      :title="active ? '선택 됨' : null"
     >
       <span :class="[styleModule['nav-tab__text'], customClassNames.text]">
         <slot />

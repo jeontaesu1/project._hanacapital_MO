@@ -1,4 +1,5 @@
 <script>
+// PF_M04_l004
 import { ref, reactive } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -210,12 +211,12 @@ export default {
           :disabled="true"
         >
           <FormInvalid :error="state.methodError">
-            <InputBlock :error="state.methodError">
+            <InputBlock :error="state.methodError" :disabled="true">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="상환방법"
                   id="layerPersonalLoanOneQAutoInputMethod"
-                  value="원리금균등분할상환"
+                  defaultValue="원리금균등분할상환"
                   :disabled="true"
                 />
               </InputBlockCell>

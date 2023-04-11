@@ -1,4 +1,5 @@
 <script>
+// PF_M07_l002
 import { ref, reactive } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -98,7 +99,7 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <ul class="basic-list">
+      <ul class="reset-list">
         <li
           v-for="(item, i) in state.data"
           :key="i"

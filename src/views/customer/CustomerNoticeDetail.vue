@@ -1,5 +1,6 @@
 <script>
-import { onMounted, onUnmounted, reactive } from 'vue';
+// Customer_M03_p002
+import { onMounted, onUnmounted } from 'vue';
 
 import { useUiHeaderStore } from '@/stores/ui/header';
 
@@ -16,14 +17,6 @@ export default {
     ButtonListItem,
   },
   setup() {
-    const state = reactive({
-      nameError: false,
-      searchError: false,
-      idNumberError: false,
-      phoneError: false,
-      codeError: false,
-    });
-
     const store = {
       ui: {
         header: useUiHeaderStore(),
@@ -41,10 +34,6 @@ export default {
       store.ui.header.setLeftButtons();
       store.ui.header.setRightButtons();
     });
-
-    return {
-      state,
-    };
   },
 };
 </script>
@@ -53,12 +42,14 @@ export default {
   <PageContents>
     <div :class="$style['board-detail']">
       <div :class="$style['board-detail__head']">
-        <div :class="$style['board-detail__title']">
+        <h2 :class="$style['board-detail__title']">
           전화권유 상담원 현황전화권유 상담원 현황전화권유 상담원 현황
-        </div>
-        <div :class="$style['board-detail__sub']">2022.10.25</div>
+        </h2>
+        <p :class="$style['board-detail__sub']">2022.10.25</p>
       </div>
-      <div :class="$style['board-detail__contents']">//게시물 내용 노출</div>
+      <section :class="$style['board-detail__contents']">
+        //게시물 내용 노출
+      </section>
     </div>
 
     <template v-slot:foot>
@@ -68,12 +59,20 @@ export default {
         }"
       >
         <ButtonListItem>
-          <BasicButton :line="true" theme="quaternary"> 목록 </BasicButton>
+          <BasicButton
+            :line="true"
+            theme="quaternary"
+            tagName="RouterLink"
+            to="/customer/notice-list"
+          >
+            목록
+          </BasicButton>
         </ButtonListItem>
       </ButtonList>
     </template>
   </PageContents>
 </template>
+
 <style lang="scss" module>
 @import '@/assets/scss/views/customer/CustomerNoticeDetail.scss';
 </style>

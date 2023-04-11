@@ -1,4 +1,5 @@
 <script>
+// PF_M04_b003
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -54,9 +55,16 @@ export default {
         >
           <div :class="$style['basic-list__symbol']">1.</div>
           <div :class="$style['basic-list__content']">
-            현재 차량의 설정건을 하나캐피탈로 대환하는 조건으로 진행 가능합니다.
+            <div>
+              현재 차량의 설정건을 하나캐피탈로 대환하는 조건으로 진행
+              가능합니다.
+            </div>
             <ul
-              :class="[$style['basic-list'], $style['basic-list--mini-margin']]"
+              :class="[
+                $style['basic-list'],
+                $style['basic-list--mini-margin'],
+                'row-margin-item',
+              ]"
             >
               <li
                 :class="[

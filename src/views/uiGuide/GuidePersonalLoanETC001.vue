@@ -80,35 +80,47 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">통합 한도조회 동의</BasicButton>
+        <BasicButton @click="layer001Open">
+          통합 한도조회 동의<br />PF_M11_l001
+        </BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer002Open">통합 인증 수단 선택</BasicButton>
+        <BasicButton @click="layer002Open">
+          통합 인증 수단 선택<br />PF_M11_b001
+        </BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer003Open">통합 소득정보 자동제출</BasicButton>
+        <BasicButton @click="layer003Open">
+          통합 소득정보 자동제출<br />PF_M11_l002
+        </BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer004Open">통합 부동산 설정 금액</BasicButton>
+        <BasicButton @click="layer006Open">
+          아파트 검색<br />PF_M11_l004
+        </BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer005Open">한도/금리 확인</BasicButton>
+        <BasicButton @click="layer004Open">
+          통합 부동산 설정 금액<br />PF_M11_l005
+        </BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer006Open">아파트 검색</BasicButton>
+        <BasicButton @click="layer005Open">
+          한도/금리 확인<br />PF_M11_l007
+        </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
     <LayerPersonalLoanETCAgree ref="layer001" />
     <LayerPersonalLoanIdentificationMethodSelect ref="layer002" />
     <LayerPersonalLoanETCAutoSubmit ref="layer003" />
+    <LayerPersonalLoanETCSearchApartment ref="layer006" />
     <LayerPersonalLoanETCValusation ref="layer004" />
     <LayerPersonalLoanETCCheck ref="layer005" />
-    <LayerPersonalLoanETCSearchApartment ref="layer006" />
   </PageContents>
 </template>

@@ -48,10 +48,18 @@ export default {
       Type: Boolean,
       default: false,
     },
+    defaultChecked: {
+      Type: Boolean,
+      default: false,
+    },
+    modelValue: {
+      Type: Boolean,
+    },
   },
-  setup(props) {
+  setup(props, { emit }) {
     const state = reactive({
       theme: { value: null },
+      checked: false,
     });
 
     const input = ref(null);
@@ -65,12 +73,12 @@ export default {
       return input.value;
     };
 
-    provide('checkBoxStyleModule', useCssModule());
-    provide('checkBoxTheme', state.theme);
+    const onChange = (e) => {
+      const { checked } = e.target;
 
-    onBeforeMount(() => {
-      state.theme.value = props.theme;
-    });
+      state.checked = checked;
+      emit('update:modelValue', checked);
+    };
 
     watch(
       () => props.theme,
@@ -79,10 +87,31 @@ export default {
       }
     );
 
+    watch(
+      () => props.modelValue,
+      (cur) => {
+        state.checked = cur;
+      }
+    );
+
+    onBeforeMount(() => {
+      state.theme.value = props.theme;
+
+      const { modelValue, defaultChecked } = props;
+
+      state.checked =
+        typeof modelValue === 'boolean' ? modelValue : defaultChecked;
+    });
+
+    provide('checkBoxStyleModule', useCssModule());
+    provide('checkBoxTheme', state.theme);
+
     return {
+      state,
       input,
       customClassNames,
       getInputElement,
+      onChange,
     };
   },
 };
@@ -107,6 +136,8 @@ export default {
       :type="type"
       :class="[$style['checkbox__input'], customClassNames.input]"
       :id="id"
+      :checked="state.checked"
+      @change="onChange"
     />
     <label
       :for="id"

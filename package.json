@@ -21,9 +21,9 @@
     "pinia-plugin-persistedstate": "^3.1.0",
     "vee-validate": "^4.8.4",
     "vue": "^3.2.45",
-    "vue3-i18n": "^1.1.5",
     "vue-router": "^4.1.6",
     "vue-skeletor": "^1.0.6",
+    "vue3-i18n": "^1.1.5",
     "vuejs3-logger": "^1.0.0"
   },
   "devDependencies": {

@@ -120,45 +120,59 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">회원 유형 선택</BasicButton>
+        <BasicButton @click="layer001Open">
+          회원 유형 선택<br />Common_M00_l029
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer002Open">법인</BasicButton>
+        <BasicButton @click="layer002Open">
+          법인<br />Common_M00_l030
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer003Open">개인 - 인증 방법 선택</BasicButton>
+        <BasicButton @click="layer003Open">
+          개인 - 인증 방법 선택<br />Common_M00_b001
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer004Open">개인 - 휴대폰</BasicButton>
+        <BasicButton @click="layer004Open">
+          개인 - 휴대폰<br />Common_M00_l002
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer005Open"
-          >개인 - 휴대폰 인증 이용약관 동의</BasicButton
-        >
+        <BasicButton @click="layer005Open">
+          개인 - 휴대폰 인증 이용약관 동의<br />Common_M00_b003
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer006Open">개인 - 공동인증서</BasicButton>
+        <BasicButton @click="layer006Open">
+          개인 - 공동인증서<br />Common_M00_l003
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer007Open">개인 - 신용카드</BasicButton>
+        <BasicButton @click="layer007Open">
+          개인 - 신용카드<br />Common_M00_l004
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer008Open"
-          >개인 - 신용카드 인증 이용약관 동의</BasicButton
-        >
+        <BasicButton @click="layer008Open">
+          개인 - 신용카드 인증 이용약관 동의<br />Common_M00_b005
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer009Open"
-          >개인 - 신용카드 ARS 인증 진행중</BasicButton
-        >
+        <BasicButton @click="layer009Open">
+          개인 - 신용카드 ARS 인증 진행중<br />Common_M00_b006
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer010Open">개인 - 카카오페이</BasicButton>
+        <BasicButton @click="layer010Open">
+          개인 - 카카오페이<br />Common_M00_l005
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer011Open"
-          >개인 - 카카오페이 인증 진행중</BasicButton
-        >
+        <BasicButton @click="layer011Open">
+          개인 - 카카오페이 인증 진행중<br />Common_M00_b007
+        </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
