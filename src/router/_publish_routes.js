@@ -238,6 +238,11 @@ const routes = [
     name: '/guide/search-workplace-001',
     component: () => import('@/views/uiGuide/GuideSearchWorkplace001.vue'),
   },
+  {
+    path: '/guide/progress-001',
+    name: '/guide/progress-001',
+    component: () => import('@/views/uiGuide/GuideMyLoanProgress001.vue'),
+  },
 
   // home
   {
@@ -693,6 +698,16 @@ const routes = [
     path: '/my-loan/designation-driver-empty',
     name: '/my-loan/designation-driver-empty',
     component: () => import('@/views/myLoan/MyLoanDesignationDriverEmpty.vue'),
+  },
+  {
+    path: '/my-loan/progress',
+    name: '/my-loan/progress',
+    component: () => import('@/views/myLoan/MyLoanProgress.vue'),
+  },
+  {
+    path: '/my-loan/progress-identification',
+    name: '/my-loan/progress-identification',
+    component: () => import('@/views/myLoan/MyLoanProgressIdentification.vue'),
   },
 ];
 

@@ -112,6 +112,7 @@ import IconInstallation from '@/assets/images/icon/installation.svg?component';
 import IconCompany from '@/assets/images/icon/company.svg?component';
 import IconDocumentComplete from '@/assets/images/icon/document-complete.svg?component';
 import IconTooltip from '@/assets/images/icon/tooltip.svg?component';
+import IconStar from '@/assets/images/icon/star.svg?component';
 
 export default {
   components: {
@@ -223,6 +224,7 @@ export default {
     IconCompany,
     IconDocumentComplete,
     IconTooltip,
+    IconStar,
   },
   setup() {
     const store = {
@@ -4663,6 +4665,27 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">division info</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['division-info']">
+          <ul :class="$style['division-info__list']">
+            <li :class="$style['division-info__item']">
+              <div class="color-black text-body-4 font-weight-light">
+                2023.01.10
+              </div>
+            </li>
+            <li :class="$style['division-info__item']">
+              <div class="color-green text-body-4 font-weight-medium">
+                신용동의
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Key Value Text</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -5102,6 +5125,29 @@ export default {
             </li>
           </ul>
         </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Icon Box</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <BasicBox>
+          <div :class="$style['icon-box']">
+            <div :class="$style['icon-box__inner']">
+              <div :class="$style['icon-box__icon']">
+                <IconStar />
+              </div>
+              <div :class="$style['icon-box__content']">
+                <div class="text-body-2 color-black">
+                  <span class="color-green font-weight-medium">김하나</span>님은
+                  하나캐피탈에 등록된<br />
+                  정식 모집인입니다
+                </div>
+              </div>
+            </div>
+          </div>
+        </BasicBox>
       </div>
     </section>
 
