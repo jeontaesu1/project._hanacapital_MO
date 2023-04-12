@@ -10,6 +10,7 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import LayerMyLoanIntermediate from '@/views/myLoan/LayerMyLoanIntermediate.vue';
 import LayerMyLoanIntermediateNotice from '@/views/myLoan/LayerMyLoanIntermediateNotice.vue';
 import LayerMyLoanIntermediateConfirm from '@/views/myLoan/LayerMyLoanIntermediateConfirm.vue';
+import LayerMyLoanIntermediateComplete from '@/views/myLoan/LayerMyLoanIntermediateComplete.vue';
 
 export default {
   components: {
@@ -21,11 +22,13 @@ export default {
     LayerMyLoanIntermediate,
     LayerMyLoanIntermediateNotice,
     LayerMyLoanIntermediateConfirm,
+    LayerMyLoanIntermediateComplete,
   },
   setup() {
     const layer001 = ref(null);
     const layer002 = ref(null);
     const layer003 = ref(null);
+    const layer004 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -36,14 +39,19 @@ export default {
     const layer003Open = (e = {}) => {
       layer003.value.layer.open(e.target);
     };
+    const layer004Open = (e = {}) => {
+      layer004.value.layer.open(e.target);
+    };
 
     return {
       layer001,
       layer002,
       layer003,
+      layer004,
       layer001Open,
       layer002Open,
       layer003Open,
+      layer004Open,
     };
   },
 };
@@ -58,22 +66,23 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open"
-          >계약정보 선택<br />
-          My_M01_l014
+        <BasicButton @click="layer001Open">
+          계약정보 선택<br />My_M01_l014
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer002Open"
-          >유의사항 팝업
-          <br />
-          My_M01_l015
+        <BasicButton @click="layer002Open">
+          유의사항 팝업<br />My_M01_l015
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer003Open"
-          >금액조회<br />
-          My_M01_l016
+        <BasicButton @click="layer003Open">
+          금액조회<br />My_M01_l016
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer004Open">
+          신청 완료<br />My_M01_l017
         </BasicButton>
       </ButtonListItem>
     </ButtonList>
@@ -84,5 +93,6 @@ export default {
     <LayerMyLoanIntermediate ref="layer001" />
     <LayerMyLoanIntermediateNotice ref="layer002" />
     <LayerMyLoanIntermediateConfirm ref="layer003" />
+    <LayerMyLoanIntermediateComplete ref="layer004" />
   </PageContents>
 </template>

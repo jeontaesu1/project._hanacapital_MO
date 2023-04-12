@@ -91,52 +91,42 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open"
-          >등록안내 및 유의사항<br />
-          My_M01_l006</BasicButton
-        >
-      </ButtonListItem>
-      <ButtonListItem>
-        <BasicButton @click="layer002Open"
-          >등록정보 입력<br />
-          My_M01_l007</BasicButton
-        >
-      </ButtonListItem>
-      <ButtonListItem>
-        <BasicButton @click="layer003Open"
-          >등록 요청<br />
-          My_M01_l008
+        <BasicButton @click="layer001Open">
+          등록안내 및 유의사항<br />My_M01_l006
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer004Open"
-          >등록대상자 확인<br />
-          My_M01_l009
+        <BasicButton @click="layer002Open">
+          등록정보 입력<br />My_M01_l007
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer005Open"
-          >약관동의<br />
-          My_M01_l010
+        <BasicButton @click="layer003Open">
+          등록 요청<br />My_M01_l008
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer006Open"
-          >정보 입력<br />
-          My_M01_l011
+        <BasicButton @click="layer004Open">
+          등록대상자 확인<br />My_M01_l009
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer007Open"
-          >등록완료<br />
-          My_M01_l012
+        <BasicButton @click="layer005Open">
+          약관동의<br />My_M01_l010
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer006Open">
+          정보 입력<br />My_M01_l011
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer007Open">
+          등록완료<br />My_M01_l012
         </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
-    <!--
-    <Layer ref="layer001" />
-    -->
     <LayerMyLoanDesignationDriverNotice ref="layer001" />
     <LayerMyLoanDesignationDriverAdd ref="layer002" />
     <LayerMyLoanDesignationDriverAddComplete ref="layer003" />

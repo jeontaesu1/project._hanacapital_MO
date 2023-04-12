@@ -35,6 +35,7 @@ import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
+import iconInformation from '@/assets/images/icon/information.svg?component';
 
 export default {
   components: {
@@ -71,6 +72,7 @@ export default {
     BasicHr,
     TextButton,
     NoticeText,
+    iconInformation,
   },
   setup() {
     const layer = ref(null);
@@ -79,6 +81,8 @@ export default {
       typeError: false,
       periodError: false,
       amountError: false,
+      accountError: false,
+      dateError: false,
     });
 
     return {
@@ -112,8 +116,12 @@ export default {
         <BasicBoxHead>
           <BasicBoxHeadLeft>
             <h3 class="text-body-1 font-weight-medium">오토론 12가4567</h3>
-            <p class="text-body-4 color-gray">벤츠 더 뉴 C-class(W205/S205)</p>
-            <p class="text-body-5 color-gray font-weight-light">
+            <p
+              class="text-body-4 color-gray row-margin-small row-margin-bottom-none"
+            >
+              벤츠 더 뉴 C-class(W205/S205)
+            </p>
+            <p class="text-body-5 color-gray font-weight-light row-margin-mini">
               가솔린 2.0 Sedan (개소세 30% 인하)<br />
               C200 AMG Line
             </p>
@@ -160,7 +168,7 @@ export default {
         <BasicHr
           theme="quaternary"
           type="contents"
-          className="row-margin-contents"
+          className="row-margin-item-group"
         />
 
         <KeyValueList>
@@ -236,8 +244,8 @@ export default {
           target="#layerMyLoanIntermediateDate"
           :selectOnly="true"
         >
-          <FormInvalid :error="state.periodError">
-            <InputBlock :error="state.periodError">
+          <FormInvalid :error="state.dateError">
+            <InputBlock :error="state.datedError">
               <InputBlockCell :flexible="true">
                 <BasicSelect
                   :option="[
@@ -292,34 +300,38 @@ export default {
           </FormInvalid>
         </FormListItem>
 
-        <div>
-          <FormListItem titleText="결제방법" :forceFocus="true">
-            <FormInvalid :error="state.typeError">
-              <BoxCheckList>
-                <BoxCheckListItem>
-                  <BoxCheck
-                    name="layerMyLoanIntermediateCheck003"
-                    id="layerMyLoanIntermediateCheck003_001"
-                    :defaultChecked="true"
-                  >
-                    <BoxCheckLabel>즉시출금</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-                <BoxCheckListItem>
-                  <BoxCheck
-                    name="layerMyLoanIntermediateCheck003"
-                    id="layerMyLoanIntermediateCheck003_002"
-                  >
-                    <BoxCheckLabel>가상계좌</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-              </BoxCheckList>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-          <NoticeText :classNames="{ wrap: 'color-navy row-margin-item' }">
+        <FormListItem titleText="결제방법" :forceFocus="true">
+          <FormInvalid :error="state.typeError">
+            <BoxCheckList>
+              <BoxCheckListItem>
+                <BoxCheck
+                  name="layerMyLoanIntermediateCheck003"
+                  id="layerMyLoanIntermediateCheck003_001"
+                  :defaultChecked="true"
+                >
+                  <BoxCheckLabel>즉시출금</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  name="layerMyLoanIntermediateCheck003"
+                  id="layerMyLoanIntermediateCheck003_002"
+                >
+                  <BoxCheckLabel>가상계좌</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+            </BoxCheckList>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+
+        <div class="inline-wrap align-right row-margin-item">
+          <TextButton theme="quaternary">
             중도상환신청 유의사항
-          </NoticeText>
+            <template v-slot:rightIcon>
+              <iconInformation />
+            </template>
+          </TextButton>
         </div>
 
         <!-- Case : 가상계좌일 경우 노출 -->
@@ -328,8 +340,8 @@ export default {
           target="#layerMyLoanIntermediateVirtualAccount"
           :selectOnly="true"
         >
-          <FormInvalid :error="state.periodError">
-            <InputBlock :error="state.periodError">
+          <FormInvalid :error="state.accountError">
+            <InputBlock :error="state.accountError">
               <InputBlockCell :flexible="true">
                 <BasicSelect
                   :option="[
@@ -364,7 +376,7 @@ export default {
                   ]"
                   buttonTitle="가상계좌 선택하기"
                   layerTitle="가상계좌를 선택해 주세요"
-                  id="layerMyLoanIntermediate002"
+                  id="layerMyLoanIntermediate"
                   buttonId="layerMyLoanIntermediateVirtualAccount"
                 />
               </InputBlockCell>
@@ -380,8 +392,8 @@ export default {
           target="#layerMyLoanIntermediateImmediate"
           :selectOnly="true"
         >
-          <FormInvalid :error="state.periodError">
-            <InputBlock :error="state.periodError">
+          <FormInvalid :error="state.accountError">
+            <InputBlock :error="state.accountError">
               <InputBlockCell :flexible="true">
                 <BasicSelect
                   :option="[
@@ -414,12 +426,28 @@ export default {
               계좌만 가능합니다.</FormHelpText
             >
           </FormInvalid>
-          <div class="inline-wrap row-margin-item">
-            <TextButton theme="secondary" :underline="true"
-              >신규계좌등록</TextButton
-            >
-          </div>
         </FormListItem>
+
+        <div class="row-margin-item">
+          <KeyValueList>
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
+            >
+              <KeyValueTitle>
+                <NoticeText
+                  >새로운 계좌로 출금하시겠어요?</NoticeText
+                ></KeyValueTitle
+              >
+              <KeyValueText>
+                <TextButton theme="secondary" :underline="true"
+                  >신규계좌등록</TextButton
+                ></KeyValueText
+              >
+            </KeyValueItem>
+          </KeyValueList>
+        </div>
       </FormList>
       <!-- // Case : 즉시출금일 경우 노출 -->
 

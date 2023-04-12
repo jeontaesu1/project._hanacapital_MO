@@ -148,7 +148,54 @@ export default {
         </KeyValueList>
       </BasicBox>
 
-      <!-- <h3 class="text-body-2 row-margin-item-group">신청 가능 상품</h3> -->
+      <h3 class="text-title-2 row-margin-contents">중도상환조회 조건</h3>
+
+      <BasicBox>
+        <KeyValueList margin="regular">
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>중도상환방법</KeyValueTitle>
+            <KeyValueText>일부상환(원금기준)</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>입금예정일자</KeyValueTitle>
+            <KeyValueText>2021.11.04</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>결제방법</KeyValueTitle>
+            <KeyValueText>가상계좌</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>입금가상계좌</KeyValueTitle>
+            <KeyValueText>하나 123-456-7890123</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>예금주</KeyValueTitle>
+            <KeyValueText>김하나</KeyValueText>
+          </KeyValueItem>
+        </KeyValueList>
+      </BasicBox>
 
       <template v-slot:foot>
         <ButtonList
@@ -157,10 +204,10 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton :line="true" theme="quaternary">취소</BasicButton>
+            <BasicButton :line="true" theme="quaternary">이전</BasicButton>
           </ButtonListItem>
           <ButtonListItem>
-            <BasicButton :minSide="true">중도상환금액 조회</BasicButton>
+            <BasicButton :minSide="true">상환</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

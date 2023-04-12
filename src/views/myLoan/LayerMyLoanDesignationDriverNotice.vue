@@ -41,6 +41,7 @@ export default {
           </template>
         </FullPopupHead>
       </template>
+
       <section class="row-margin-contents-group">
         <h3 class="text-body-2 row-margin-item-group">등록안내 및 유의사항</h3>
 
@@ -102,7 +103,12 @@ export default {
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
               법인 고객이 임직원운전자 한정특약에 미가입한 경우
-              <ul :class="$style['basic-list']">
+              <ul
+                :class="[
+                  $style['basic-list'],
+                  $style['basic-list--regular-margin'],
+                ]"
+              >
                 <li
                   :class="[
                     $style['basic-list__item'],

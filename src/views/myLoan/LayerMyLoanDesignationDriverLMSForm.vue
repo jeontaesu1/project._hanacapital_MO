@@ -49,8 +49,6 @@ export default {
   setup() {
     const layer = ref(null);
     const state = reactive({
-      phoneError: false,
-      idNumberError: false,
       licenseError: false,
       dateError: false,
     });

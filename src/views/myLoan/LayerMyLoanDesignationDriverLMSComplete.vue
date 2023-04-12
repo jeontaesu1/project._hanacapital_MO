@@ -68,7 +68,7 @@ export default {
           지정운전자 정보를<br />
           <strong>입력해 주세요</strong>
         </PageMainText>
-        <PageSubText> 등록 완료 후 익일 0시부터 적용됩니다. </PageSubText>
+        <PageSubText>등록 완료 후 익일 0시부터 적용됩니다.</PageSubText>
       </PageTextGroup>
 
       <IllustObject type="complete" :classNames="{ wrap: $style['illust'] }" />
