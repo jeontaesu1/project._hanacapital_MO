@@ -17,19 +17,7 @@ export default {
     return {
       inputDisabled: false,
       form: {
-        start: null,
-        end: null,
         dateBasic: null,
-        dateTime: null,
-        time: null,
-        date: '2017-01-01',
-        dateLocale: null,
-        dateInline: +new Date(),
-        dateConfirm: null,
-        allowInput: null,
-        dateStart: null,
-        dateEnd: null,
-        monthSelect: null,
       },
       configs: {
         basic: {},
@@ -60,35 +48,6 @@ export default {
   components: {
     flatPickr,
   },
-  methods: {
-    setNewDate() {
-      console.log('Set new date');
-      this.form.dateBasic = new Date();
-    },
-    updateConfig() {
-      console.log('Update config');
-      this.configs.basic.mode = 'range';
-    },
-    // changeLocale() {
-    //   console.log('Changing locale to english');
-    //   this.configs.locale.locale = EnglishLocale;
-    // },
-    // onChange(selectedDates, dateStr, instance) {
-    //   console.log('Date change hook was called', dateStr);
-    // },
-    // listenToOnChangeEvent(selectedDates, dateStr, instance) {
-    //   console.log('listen To OnChange Event', dateStr);
-    // },
-    // submit() {
-    //   console.log('Form submit event', this.form);
-    // },
-    // onStartChange(selectedDates, dateStr, instance) {
-    //   this.configs.end.minDate = dateStr;
-    // },
-    // onEndChange(selectedDates, dateStr, instance) {
-    //   this.configs.start.maxDate = dateStr;
-    // },
-  },
   inheritAttrs: false,
   props: {
     id: {
@@ -117,7 +76,7 @@ export default {
       Type: String,
     },
   },
-  setup(props, { emit }) {
+  setup(props) {
     let timer = null;
 
     const state = reactive({
@@ -138,7 +97,6 @@ export default {
     };
 
     const focus = () => {
-      console.log('focus');
       // input.value.focus();
     };
 
@@ -159,7 +117,7 @@ export default {
     const onInput = (e) => {
       const { value } = e.target;
       state.val = value;
-      emit('update:modelValue', value);
+      // emit('update:modelValue', value);
     };
 
     const onKeyup = (e) => {
@@ -167,7 +125,7 @@ export default {
     };
 
     onBeforeMount(() => {
-      state.val = props.modelValue || props.defaultValue || '';
+      // state.val = props.modelValue || props.defaultValue || '';
     });
 
     return {
@@ -199,13 +157,15 @@ export default {
     @focusout="onfocusout"
   >
     <div :class="[$style['input__cell'], customClassNames.cell]">
-      <flat-pickr :id="`${id}`" v-model="form.start" class="form-control" />
-      <flat-pickr v-model="form.end" class="form-control" />
+      <flat-pickr
+        :id="`${id}`"
+        v-model="form.dateBasic"
+        :class="[$style['input-date']]"
+      />
     </div>
   </div>
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/components/ui/form/BasicInput.scss';
-// https://github.com/ankurk91/vue-flatpickr-component
+@import '@/assets/scss/components/ui/form/DateInput.scss';
 </style>

@@ -20,7 +20,7 @@ export default {
       color="#2E82F3"
       track-color="#EAEAEA"
       tooltip
-      tooltipColor="#333"
+      tooltipColor="#001E4D"
       tooltipTextColor="#fff"
       alwaysShowTooltip
       alwaysShowHandle
@@ -29,7 +29,10 @@ export default {
       :max="80"
       :step="1"
     />
-    <div>dc</div>
+    <div :class="[$style['input-range__text']]">
+      <div :class="[$style['input-range__text__min']]">20%</div>
+      <div :class="[$style['input-range__text__max']]">80%</div>
+    </div>
   </div>
   <!-- 
     사용한 플러그인 정보

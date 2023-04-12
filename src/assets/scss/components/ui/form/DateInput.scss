@@ -1,0 +1,9 @@
+.input-date {
+  width: 100%;
+  border: none;
+  box-sizing: border-box;
+  background: url('@/assets/images/icon/calendar.svg') no-repeat right 4px top
+    50% / 24px;
+  @include font-size-default(18);
+  font-weight: 400;
+}

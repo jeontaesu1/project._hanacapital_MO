@@ -1,4 +1,8 @@
 .input-range {
+  min-height: 62px;
+  padding-top: 40px;
+  box-sizing: border-box;
+
   :global {
     .vue3-slider .handle {
       width: 14px !important;
@@ -14,19 +18,7 @@
     .vue3-slider .handle.hover {
       transform: translate(-50%, -50%) scale(1) !important;
     }
-    /* .vue3-slider .handle::before {
-      content: '';
-      display: block;
-      background: rgba(50%, 50%, 50%, 0.4);
-      width: 0px;
-      height: 0px;
-      border-radius: 50%;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) !important;
-      transition: all 0.25s ease;
-    } */
+
     .vue3-slider .handle.hover::before {
       width: 38px;
       height: 38px;
@@ -42,10 +34,41 @@
       content: '%';
       display: block;
       position: absolute;
-      top: 6px;
+      top: 7px;
       right: 5px;
       color: #fff;
       font-size: 12px;
+    }
+    .vue3-slider .tooltip::before {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -9px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 0;
+      height: 0;
+      border-top: 6px solid #001e4d;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+    }
+  }
+
+  &__text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 4px;
+
+    &__min {
+      @include font-size-head(12);
+      font-weight: 500;
+      color: $color-gray-70;
+    }
+    &__max {
+      @include font-size-head(12);
+      font-weight: 500;
+      color: $color-gray-70;
     }
   }
 }

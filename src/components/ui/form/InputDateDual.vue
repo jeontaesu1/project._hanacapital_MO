@@ -4,6 +4,7 @@ import flatPickr from 'vue-flatpickr-component';
 import 'flatpickr/dist/flatpickr.css';
 import 'flatpickr/dist/plugins/confirmDate/confirmDate.css';
 import 'flatpickr/dist/plugins/monthSelect/style.css';
+import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 const defaultClassNames = () => ({
   wrap: '',
   cell: '',
@@ -17,36 +18,10 @@ export default {
     return {
       inputDisabled: false,
       form: {
-        start: null,
-        end: null,
-        dateBasic: null,
-        dateTime: null,
-        time: null,
-        date: '2017-01-01',
-        dateLocale: null,
-        dateInline: +new Date(),
-        dateConfirm: null,
-        allowInput: null,
-        dateStart: null,
-        dateEnd: null,
-        monthSelect: null,
+        dateStart: 2023 - 1 - 11,
+        dateEnd: 2023 - 4 - 12,
       },
       configs: {
-        basic: {},
-        wrap: {
-          wrap: true,
-          altFormat: 'M	j, Y',
-          altInput: true,
-          dateFormat: 'Y-m-d',
-          minDate: new Date(),
-        },
-        inline: {
-          inline: true,
-        },
-        allowInput: {
-          allowInput: true,
-          dateFormat: 'Y-m-d',
-        },
         start: {
           minDate: new Date(),
           maxDate: null,
@@ -59,35 +34,7 @@ export default {
   },
   components: {
     flatPickr,
-  },
-  methods: {
-    setNewDate() {
-      console.log('Set new date');
-      this.form.dateBasic = new Date();
-    },
-    updateConfig() {
-      console.log('Update config');
-      this.configs.basic.mode = 'range';
-    },
-    // changeLocale() {
-    //   console.log('Changing locale to english');
-    //   this.configs.locale.locale = EnglishLocale;
-    // },
-    // onChange(selectedDates, dateStr, instance) {
-    //   console.log('Date change hook was called', dateStr);
-    // },
-    // listenToOnChangeEvent(selectedDates, dateStr, instance) {
-    //   console.log('listen To OnChange Event', dateStr);
-    // },
-    // submit() {
-    //   console.log('Form submit event', this.form);
-    // },
-    // onStartChange(selectedDates, dateStr, instance) {
-    //   this.configs.end.minDate = dateStr;
-    // },
-    // onEndChange(selectedDates, dateStr, instance) {
-    //   this.configs.start.maxDate = dateStr;
-    // },
+    InputBlockCell,
   },
   inheritAttrs: false,
   props: {
@@ -186,26 +133,50 @@ export default {
 </script>
 
 <template>
-  <div
-    :class="[
-      $style['input'],
-      {
-        [$style['input--focus']]: state.isFocus,
-        [$style['input--inputed']]: state.isInputed,
-      },
-      customClassNames.wrap,
-    ]"
-    @focusin="onfocusin"
-    @focusout="onfocusout"
-  >
-    <div :class="[$style['input__cell'], customClassNames.cell]">
-      <flat-pickr :id="`${id}`" v-model="form.start" class="form-control" />
-      <flat-pickr v-model="form.end" class="form-control" />
+  <InputBlockCell :flexible="true">
+    <div
+      :class="[
+        $style['input'],
+        {
+          [$style['input--focus']]: state.isFocus,
+          [$style['input--inputed']]: state.isInputed,
+        },
+        customClassNames.wrap,
+      ]"
+      @focusin="onfocusin"
+      @focusout="onfocusout"
+    >
+      <div :class="[$style['input__cell'], customClassNames.cell]">
+        <flat-pickr
+          :id="`${id}`"
+          v-model="form.dateStart"
+          :class="[$style['input-date']]"
+        />
+      </div>
     </div>
-  </div>
+  </InputBlockCell>
+  <InputBlockCell type="sub">-</InputBlockCell>
+  <InputBlockCell :flexible="true">
+    <div
+      :class="[
+        $style['input'],
+        {
+          [$style['input--focus']]: state.isFocus,
+          [$style['input--inputed']]: state.isInputed,
+        },
+        customClassNames.wrap,
+      ]"
+      @focusin="onfocusin"
+      @focusout="onfocusout"
+    >
+      <div :class="[$style['input__cell'], customClassNames.cell]">
+        <flat-pickr v-model="form.dateEnd" :class="[$style['input-date']]" />
+      </div>
+    </div>
+  </InputBlockCell>
 </template>
 
 <style lang="scss" module>
 @import '@/assets/scss/components/ui/form/BasicInput.scss';
-// https://github.com/ankurk91/vue-flatpickr-component
+@import '@/assets/scss/components/ui/form/DateInput.scss';
 </style>

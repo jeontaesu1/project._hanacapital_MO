@@ -77,8 +77,8 @@ import StepProgress from '@/components/ui/progress/StepProgress.vue';
 import SearchButton from '@/components/ui/button/SearchButton.vue';
 import SwitchCheckBox from '@/components/ui/form/SwitchCheckBox.vue';
 import BasicTooltip from '@/components/ui/tooltip/BasicTooltip.vue';
-import DatePicker from '@/components/ui/form/DatePicker.vue';
-import DatePicker2 from '@/components/ui/form/DatePicker2.vue';
+import InputDateBasic from '@/components/ui/form/InputDateBasic.vue';
+import InputDateDual from '@/components/ui/form/InputDateDual.vue';
 import InputRange from '@/components/ui/form/InputRange.vue';
 
 import BrandLogo001 from '@/assets/images/bank-logo/hana.svg?component';
@@ -226,8 +226,8 @@ export default {
     IconCompany,
     IconDocumentComplete,
     IconTooltip,
-    DatePicker,
-    DatePicker2,
+    InputDateBasic,
+    InputDateDual,
     InputRange,
   },
 
@@ -2200,27 +2200,78 @@ export default {
             </FormInvalid>
           </FormListItem>
 
-          <FormListItem titleText="달력포시기" target="#testInput0100">
+          <FormListItem titleText="달력 1개 표기" target="#testInput0100">
             <FormInvalid :error="state.testError001">
               <InputBlock :error="state.testError001">
                 <InputBlockCell :flexible="true">
-                  <DatePicker id="testInput0100" />
+                  <InputDateBasic id="testInput0100" />
                 </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
 
-          <FormListItem titleText="달력포시기222" target="#testInput0110">
+          <FormListItem titleText="달력 2개 표기" target="#testInput0110">
             <FormInvalid :error="state.testError001">
               <InputBlock :error="state.testError001">
-                <InputBlockCell :flexible="true">
-                  <DatePicker2 id="testInput0110" />
-                </InputBlockCell>
+                <InputDateDual id="testInput0110" />
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
+
+          <!--  -->
+          <FormListItem
+            titleText="조회기간"
+            target="#testInput0120"
+            :forceFocus="true"
+          >
+            <FormInvalid :error="state.testError001">
+              <BoxCheckList>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="testBoxCheckList009"
+                    id="testBoxCheckList0091_001"
+                  >
+                    <BoxCheckLabel>1개월</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="testBoxCheckList009"
+                    id="testBoxCheckList0091_002"
+                  >
+                    <BoxCheckLabel>3개월</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="testBoxCheckList009"
+                    id="testBoxCheckList0091_003"
+                  >
+                    <BoxCheckLabel>6개월</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="testBoxCheckList009"
+                    id="testBoxCheckList0091_004"
+                  >
+                    <BoxCheckLabel>1년</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+              </BoxCheckList>
+              <InputBlock class="row-margin-item-group row-margin-bottom-none">
+                <InputDateDual id="testInput0120" />
+              </InputBlock>
+              <FormHelpText>조회기간은 최대 1년까지 가능해요.</FormHelpText>
+            </FormInvalid>
+          </FormListItem>
+          <!--  -->
 
           <BasicTextarea
             :error="state.testError001"
@@ -5845,7 +5896,6 @@ export default {
     </section>
 
     <section class="test-section">
-      <h2 class="test-section-title">InputRange</h2>
       <h2 class="test-section-title">Inline Alert</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
