@@ -4415,6 +4415,51 @@ export default {
       </div>
 
       <div class="test-section-sub">
+        <h3 class="test-section-sub-title">fixed width</h3>
+        <ul :class="[$style['basic-list'], $style['basic-list--fixed-width']]">
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']">1-1.</div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']">1-2.</div>
+            <div :class="$style['basic-list__content']">
+              법인카드, 가족카드, 선불카드는 본인확인이 불가능합니다.
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']">2.</div>
+            <div :class="$style['basic-list__content']">
+              비씨카드는 비씨로고(
+              <span :class="$style['inline-logo']"><BrandLogo007 /></span>
+              )가 표시된 카드만 이용가능합니다.<br />
+              (예 : 농협BC, 우리카드, IBK카드 등)
+            </div>
+          </li>
+          <li :class="[$style['basic-list__item'], 'color-black']">
+            <div :class="$style['basic-list__symbol']">3.</div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+          <li :class="[$style['basic-list__item'], 'color-green']">
+            <div :class="$style['basic-list__symbol']">4.</div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+          <li :class="[$style['basic-list__item'], 'color-red']">
+            <div :class="$style['basic-list__symbol']">5.</div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="test-section-sub">
         <h3 class="test-section-sub-title">regular margin (12px)</h3>
         <ul
           :class="[$style['basic-list'], $style['basic-list--regular-margin']]"
@@ -4894,6 +4939,10 @@ export default {
         <RoundStatus theme="quinary">텍스트</RoundStatus>
         <RoundStatus theme="senary">텍스트</RoundStatus>
         <RoundStatus theme="septenary">텍스트</RoundStatus>
+        <RoundStatus theme="octonary">텍스트</RoundStatus>
+        <RoundStatus theme="nonary">텍스트</RoundStatus>
+        <RoundStatus theme="denary">텍스트</RoundStatus>
+        <RoundStatus theme="undenary">텍스트</RoundStatus>
       </div>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Small</h3>
@@ -4904,6 +4953,10 @@ export default {
         <RoundStatus size="small" theme="quinary">텍스트</RoundStatus>
         <RoundStatus size="small" theme="senary">텍스트</RoundStatus>
         <RoundStatus size="small" theme="septenary">텍스트</RoundStatus>
+        <RoundStatus size="small" theme="octonary">텍스트</RoundStatus>
+        <RoundStatus size="small" theme="nonary">텍스트</RoundStatus>
+        <RoundStatus size="small" theme="denary">텍스트</RoundStatus>
+        <RoundStatus size="small" theme="undenary">텍스트</RoundStatus>
       </div>
     </section>
 
