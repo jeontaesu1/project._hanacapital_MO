@@ -5369,8 +5369,12 @@ export default {
       <h2 class="test-section-title">BasicProgress</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
-
         <BasicProgress :total="4" :current="1" />
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Blue</h3>
+        <BasicProgress :total="4" :current="1" color="blue" />
       </div>
     </section>
 
