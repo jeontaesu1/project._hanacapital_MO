@@ -1,19 +1,33 @@
 .inline-alert {
-  padding: 16px 16px 16px 44px;
+  position: relative;
+  padding: 12px 16px 12px 34px;
   border-radius: 8px;
-  background: url('@/assets/images/icon/alert-complete.svg') no-repeat 16px 50% /
-    20px 20px rgba($color-green-50, 0.06);
+  @include font-size-default(12);
+  background-color: rgba($color-green-50, 0.06);
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    width: 14px;
+    height: #{$line-height-default}em;
+    background: url('@/assets/images/icon/alert-complete.svg') no-repeat 50% 50% /
+      100% auto;
+  }
 
   &__text {
     margin: 0;
-    @include font-size-default(14);
-    font-weight: 500;
     color: $color-green-50;
   }
 
   &--error {
-    background-image: url('@/assets/images/icon/alert-error.svg');
     background-color: rgba($color-semantic-essential, 0.06);
+
+    &::before {
+      background-image: url('@/assets/images/icon/alert-error.svg');
+    }
 
     .inline-alert__text {
       color: $color-semantic-essential;
