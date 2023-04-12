@@ -2,9 +2,24 @@
   display: block;
 
   &__head {
+    position: relative;
+    display: flex;
     padding-bottom: 30px;
     border-bottom: 1px solid $color-gray-30;
     margin-bottom: 30px;
+  }
+
+  &__left {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__right {
+    flex: none;
+    margin-left: auto;
+    padding-left: 4px;
+    display: flex;
+    align-items: center;
   }
 
   &__title {

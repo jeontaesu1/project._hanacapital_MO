@@ -1,0 +1,20 @@
+@import '@/assets/scss/components/import/section-head.scss';
+
+.apartment-info {
+  margin-top: 30px;
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__left {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__right {
+    flex: none;
+  }
+}

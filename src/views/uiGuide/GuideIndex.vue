@@ -902,8 +902,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/lm-blog/loan-counseling-form',
-        status: '',
-        create: '',
+        status: 'ing',
+        create: '2023.04.14',
         log: [],
       },
       {
@@ -946,8 +946,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/lm-blog/sms-counseling-detail',
-        status: '',
-        create: '',
+        status: 'ing',
+        create: '2023.04.14',
         log: [],
       },
       {
@@ -1159,8 +1159,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/auto-long-rental-001',
-        status: '',
-        create: '',
+        status: 'ing',
+        create: '2023.04.14',
         log: [],
       },
       {
