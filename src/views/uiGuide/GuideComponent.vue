@@ -74,6 +74,7 @@ import UnitText from '@/components/ui/text/UnitText.vue';
 import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import ScrollSection from '@/components/ui/section/ScrollSection.vue';
 import StepProgress from '@/components/ui/progress/StepProgress.vue';
+import BasicProgress from '@/components/ui/progress/BasicProgress.vue';
 import SearchButton from '@/components/ui/button/SearchButton.vue';
 import SwitchCheckBox from '@/components/ui/form/SwitchCheckBox.vue';
 import BasicTooltip from '@/components/ui/tooltip/BasicTooltip.vue';
@@ -185,6 +186,7 @@ export default {
     UnitText,
     RoundStatus,
     StepProgress,
+    BasicProgress,
     SearchButton,
     ScrollSection,
     SwitchCheckBox,
@@ -5406,6 +5408,15 @@ export default {
         <h3 class="test-section-sub-title">Default</h3>
 
         <StepProgress :total="4" :current="1" />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">BasicProgress</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <BasicProgress :total="4" :current="1" />
       </div>
     </section>
 
