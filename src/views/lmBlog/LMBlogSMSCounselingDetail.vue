@@ -45,9 +45,18 @@ export default {
 <template>
   <PageContents>
     <div :class="$style['board-detail']">
-      <div :class="$style['board-detail__head']">
-        <div :class="$style['board-detail__left']">
-          <h2 :class="$style['board-detail__title']">홍길동</h2>
+      <div
+        :class="[$style['board-detail__head'], 'flex-box align-items-start']"
+      >
+        <div :class="[$style['board-detail__left'], 'flex-box__cell flex-1']">
+          <h2
+            :class="[
+              $style['board-detail__title'],
+              'text-body-1 font-weight-medium',
+            ]"
+          >
+            홍길동
+          </h2>
           <p :class="$style['board-detail__sub']">2022-07-05</p>
         </div>
         <div :class="$style['board-detail__right']">

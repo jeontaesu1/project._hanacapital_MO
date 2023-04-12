@@ -33,6 +33,7 @@ import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
+import ScrollSection from '@/components/ui/section/ScrollSection.vue';
 
 import IconQuestion from '@/assets/images/icon/question.svg?component';
 
@@ -67,6 +68,7 @@ export default {
     KeyValueTitle,
     KeyValueText,
     NoticeText,
+    ScrollSection,
 
     IconQuestion,
   },
@@ -360,27 +362,34 @@ export default {
         </FormListItem>
       </FormList>
 
-      <div :class="$style['apartment-info']">
-        <div :class="$style['apartment-info__head']">
-          <h3 class="text-body-2">아파트 정보</h3>
-          <!-- DD : 아파트 시세 입력 후 비노출 -->
-          <BasicButton size="mini" theme="tertiary" inline="true"
-            >아파트시세 입력</BasicButton
-          >
-          <!-- // DD : 아파트 시세 입력 후 비노출 -->
+      <div :class="$style['section-regular']">
+        <div class="flex-box">
+          <div class="flex-box__cell flex-1">
+            <h3 class="text-body-2">아파트 정보</h3>
+          </div>
+          <div class="flex-box__cell">
+            <!-- DD : 아파트 시세 입력 후 비노출 -->
+            <BasicButton size="mini" theme="tertiary" inline="true"
+              >아파트시세 입력</BasicButton
+            >
+            <!-- // DD : 아파트 시세 입력 후 비노출 -->
+          </div>
         </div>
         <!-- DD : 아파트 시세 입력 후 노출 -->
-        <BasicBox>
-          인천광역시 연수구 송도동 39-1<br />
-          더샵 랜드마크시티 [158.67/134.3㎡]
-
-          <div class="inline-wrap align-center row-margin-contents">
-            <TextButton
-              :classNames="{ wrap: 'text-body-4 color-gray' }"
-              :underline="true"
-            >
-              기존 인증을 사용할 수 없으세요?
-            </TextButton>
+        <BasicBox :className="$style['margin-top-small']">
+          <div class="flex-box">
+            <div class="flex-box__cell flex-1">
+              인천광역시 연수구 송도동 39-1<br />
+              더샵 랜드마크시티 [158.67/134.3㎡]
+            </div>
+            <div :class="[$style['margin-left-mini'], 'flex-box__cell']">
+              <TextButton
+                :classNames="{ wrap: 'text-body-5 color-gray display-block' }"
+                :underline="true"
+              >
+                변경
+              </TextButton>
+            </div>
           </div>
         </BasicBox>
         <!-- // DD : 아파트 시세 입력 후 노출 -->
@@ -450,6 +459,57 @@ export default {
               등기부등본 조회
             </TextButton>
           </FormInvalid>
+          <!-- DD : 등기부등본 조회 버튼 클릭시 노출 -->
+          <div :class="$style['section-regular']">
+            <ScrollSection>
+              <template v-slot:head>
+                <h2 class="text-body-2">부동산설정정보</h2>
+              </template>
+
+              <!-- table -->
+              <div :class="$style['basic-table']">
+                <table>
+                  <colgroup>
+                    <col style="width: 60px" />
+                    <col style="width: 80px" />
+                    <col style="width: 128px" />
+                    <col style="width: 193px" />
+                    <col style="width: 71px" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>순위번호</th>
+                      <th>등기목적</th>
+                      <th>접수정보</th>
+                      <th>주요등기사항</th>
+                      <th>대상소유자</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>2</td>
+                      <td>근저당권설정</td>
+                      <td>
+                        2020년10월29일<br />
+                        제15899호
+                      </td>
+                      <td>
+                        채권최고금액 금92,000,000원<br />
+                        근저당권자 주식회사 국민은행
+                      </td>
+                      <td>김하나</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- // table -->
+            </ScrollSection>
+            <NoticeText :classNames="{ wrap: 'row-margin-item' }">
+              ‘표제부(전유부분의 건물의 표시) 건물내역 : 철근콘크리트구조
+              59.84㎡
+            </NoticeText>
+          </div>
+          <!-- //DD : 등기부등본 조회 버튼 클릭시 노출 -->
         </FormListItem>
 
         <FormListItem titleText="비금융권설정여부" :forceFocus="true">
@@ -482,7 +542,7 @@ export default {
       </FormList>
     </section>
 
-    <section>
+    <section :class="$style['margin-top-medium']">
       <h3 class="text-title-2 row-margin-contents">차량정보 입력</h3>
       <FormList>
         <FormListItem
@@ -523,14 +583,10 @@ export default {
     <BasicHr className="row-margin-container-medium" />
 
     <section>
-      <div :class="[$style['section-head'], 'row-margin-contents']">
-        <div :class="$style['section-head__left']">
-          <h3 class="text-title-2">추가한도 입력정보</h3>
-          <p class="text-body-3 color-gray-tertiary row-margin-small">
-            직장정보를 입력하면 한도를 높일 수 있습니다.
-          </p>
-        </div>
-      </div>
+      <h3 class="text-title-2">추가한도 입력정보</h3>
+      <p class="text-body-3 color-gray-tertiary row-margin-small">
+        직장정보를 입력하면 한도를 높일 수 있습니다.
+      </p>
 
       <FormList :classNames="{ wrap: 'row-margin-contents' }">
         <FormListItem
@@ -744,7 +800,7 @@ export default {
       </FormList>
     </section>
 
-    <section>
+    <section :class="$style['margin-top-medium']">
       <h3 class="text-title-2 row-margin-contents">사업자정보</h3>
 
       <FormList :classNames="{ wrap: 'row-margin-contents' }">
