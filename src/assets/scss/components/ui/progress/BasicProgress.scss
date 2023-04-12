@@ -17,4 +17,12 @@
       transition: width 0.2s;
     }
   }
+
+  &--color-blue {
+    .progress__bar {
+      &-active {
+        background-color: $color-blue-50;
+      }
+    }
+  }
 }

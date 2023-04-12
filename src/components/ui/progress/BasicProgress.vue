@@ -26,6 +26,10 @@ export default {
       Type: Number,
       default: 1,
     },
+    color: {
+      Type: String,
+      default: null,
+    },
   },
   setup(props) {
     const customClassNames = computed(() => {
@@ -54,7 +58,13 @@ export default {
 
 <template>
   <div
-    :class="[$style['progress'], customClassNames.wrap]"
+    :class="[
+      $style['progress'],
+      {
+        [$style[`progress--color-${color}`]]: color,
+      },
+      customClassNames.wrap,
+    ]"
     role="img"
     :aria-label="`총 ${total}단계 중 ${current}단계`"
   >
