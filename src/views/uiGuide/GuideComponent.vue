@@ -5923,6 +5923,12 @@ export default {
           <p :class="$style['inline-alert__text']">인증이 완료되었습니다.</p>
         </div>
 
+        <div
+          :class="[$style['inline-alert'], $style['inline-alert--complete']]"
+        >
+          <p :class="$style['inline-alert__text']">인증이 완료되었습니다.</p>
+        </div>
+
         <div :class="[$style['inline-alert'], $style['inline-alert--error']]">
           <p :class="$style['inline-alert__text']">인증이 실패하였습니다.</p>
         </div>

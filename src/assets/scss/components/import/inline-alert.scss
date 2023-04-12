@@ -33,4 +33,16 @@
       color: $color-semantic-essential;
     }
   }
+
+  &--complete {
+    background-color: rgba($color-navy-50, 0.06);
+
+    &::before {
+      background-image: url('@/assets/images/icon/alert-complete-navy.svg');
+    }
+
+    .inline-alert__text {
+      color: $color-navy-50;
+    }
+  }
 }
