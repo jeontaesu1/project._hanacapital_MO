@@ -5845,9 +5845,7 @@ export default {
     </section>
 
     <section class="test-section">
-<<<<<<< HEAD
       <h2 class="test-section-title">InputRange</h2>
-=======
       <h2 class="test-section-title">Inline Alert</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -5864,7 +5862,6 @@ export default {
 
     <section class="test-section">
       <h2 class="test-section-title">Component Title</h2>
->>>>>>> dev
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
         <InputRange />
