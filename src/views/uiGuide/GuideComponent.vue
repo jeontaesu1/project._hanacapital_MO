@@ -78,6 +78,7 @@ import SearchButton from '@/components/ui/button/SearchButton.vue';
 import SwitchCheckBox from '@/components/ui/form/SwitchCheckBox.vue';
 import BasicTooltip from '@/components/ui/tooltip/BasicTooltip.vue';
 import DatePicker from '@/components/ui/form/DatePicker.vue';
+import DatePicker2 from '@/components/ui/form/DatePicker2.vue';
 import InputRange from '@/components/ui/form/InputRange.vue';
 
 import BrandLogo001 from '@/assets/images/bank-logo/hana.svg?component';
@@ -226,6 +227,7 @@ export default {
     IconDocumentComplete,
     IconTooltip,
     DatePicker,
+    DatePicker2,
     InputRange,
   },
 
@@ -2198,15 +2200,22 @@ export default {
             </FormInvalid>
           </FormListItem>
 
-          <FormListItem titleText="달력포시기" target="#testInput010">
+          <FormListItem titleText="달력포시기" target="#testInput0100">
             <FormInvalid :error="state.testError001">
               <InputBlock :error="state.testError001">
                 <InputBlockCell :flexible="true">
-                  <DatePicker id="testInput010" />
+                  <DatePicker id="testInput0100" />
                 </InputBlockCell>
-                <InputBlockCell type="sub">~</InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem titleText="달력포시기222" target="#testInput0110">
+            <FormInvalid :error="state.testError001">
+              <InputBlock :error="state.testError001">
                 <InputBlockCell :flexible="true">
-                  <DatePicker />
+                  <DatePicker2 id="testInput0110" />
                 </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
