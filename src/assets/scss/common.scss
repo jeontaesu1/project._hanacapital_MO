@@ -73,6 +73,22 @@ body,
   vertical-align: top;
 }
 
+// flex-box
+.flex-box {
+  display: flex;
+  align-items: center;
+
+  &__cell {
+    display: block;
+    flex: none;
+    min-width: 0;
+
+    & + & {
+      margin-left: 8px;
+    }
+  }
+}
+
 // align-items
 .align-items-start.align-items-start {
   align-items: flex-start;
@@ -112,6 +128,9 @@ body,
 }
 
 // flex-n
+.flex-1.flex-1 {
+  flex: 1;
+}
 .flex-2.flex-2 {
   flex: 2;
 }
