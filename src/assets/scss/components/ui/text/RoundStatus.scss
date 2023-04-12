@@ -45,6 +45,30 @@
       border-color: $color-semantic-essential;
       background-color: $color-semantic-essential;
     }
+
+    &-octonary {
+      color: $color-gray-70;
+      border-color: transparent;
+      background-color: rgba($color-gray-20, 0.2);
+    }
+
+    &-nonary {
+      color: $color-semantic-essential;
+      border-color: transparent;
+      background-color: rgba($color-semantic-essential, 0.1);
+    }
+
+    &-denary {
+      color: $color-blue-50;
+      border-color: transparent;
+      background-color: rgba($color-blue-50, 0.1);
+    }
+
+    &-undenary {
+      color: $color-navy-50;
+      border-color: transparent;
+      background-color: rgba($color-navy-50, 0.1);
+    }
   }
 
   &--size {

@@ -111,4 +111,12 @@
       }
     }
   }
+
+  &--fixed-width {
+    .basic-list {
+      &__symbol {
+        min-width: 23px;
+      }
+    }
+  }
 }
