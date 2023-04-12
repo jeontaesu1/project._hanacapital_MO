@@ -14,4 +14,14 @@
     flex: none;
     margin-left: 16px;
   }
+
+  &--align {
+    &-top {
+      align-items: flex-start;
+    }
+
+    &-bottom {
+      align-items: flex-end;
+    }
+  }
 }
