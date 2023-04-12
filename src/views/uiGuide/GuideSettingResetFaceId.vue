@@ -58,15 +58,21 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">Face ID (재)등록</BasicButton>
+        <BasicButton @click="layer001Open"
+          >Face ID (재)등록<br />Setting_M06_l001</BasicButton
+        >
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer002Open">Face ID 등록 완료</BasicButton>
+        <BasicButton @click="layer002Open"
+          >Face ID 등록 완료<br />Setting_M06_l002</BasicButton
+        >
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer003Open">Face ID 해지 안내</BasicButton>
+        <BasicButton @click="layer003Open"
+          >Face ID 해지 안내<br />Setting_M06_l003</BasicButton
+        >
       </ButtonListItem>
     </ButtonList>
 

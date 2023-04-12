@@ -63,6 +63,10 @@ export default {
         return defaultClassNames();
       },
     },
+    backgroundClose: {
+      Type: Boolean,
+      default: false,
+    },
     onBeforeOpened: {
       Type: Function,
       default() {

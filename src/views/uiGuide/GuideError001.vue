@@ -48,10 +48,14 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">오류안내 - Full</BasicButton>
+        <BasicButton @click="layer001Open">
+          오류안내 - Full<br />Common_M00_l027
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer002Open">오류안내 - Alert</BasicButton>
+        <BasicButton @click="layer002Open">
+          오류안내 - Alert<br />Common_M00_l028
+        </BasicButton>
       </ButtonListItem>
     </ButtonList>
 

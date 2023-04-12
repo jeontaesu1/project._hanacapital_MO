@@ -96,32 +96,44 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">앱 접근권한 안내</BasicButton>
+        <BasicButton @click="layer001Open">
+          앱 접근권한 안내<br />Common_M00_l021<br />Common_M00_l032
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer002Open">접근권한 허용 안내</BasicButton>
+        <BasicButton @click="layer002Open">
+          접근권한 허용 안내<br />Common_M00_b015
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer003Open"
-          >보이는 ARS 정보제공 안내</BasicButton
-        >
+        <BasicButton @click="layer003Open">
+          보이는 ARS 정보제공 안내<br />Common_M00_l022
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer004Open">앱 설치 안내</BasicButton>
+        <BasicButton @click="layer004Open">
+          앱 설치 안내<br />Common_M00_b016
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer005Open"
-          >고객이탈방지 - 전화상담신청 팝업</BasicButton
-        >
+        <BasicButton @click="layer005Open">
+          고객이탈방지 - 전화상담신청 팝업<br />Common_M00_b017
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer006Open">로그아웃 안내</BasicButton>
+        <BasicButton @click="layer006Open">
+          로그아웃 안내<br />Common_M00_b018
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer007Open">세션종료 안내</BasicButton>
+        <BasicButton @click="layer007Open">
+          세션종료 안내<br />Common_M00_b019
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer008Open">앱 평가</BasicButton>
+        <BasicButton @click="layer008Open">
+          앱 평가<br />Common_M00_b020
+        </BasicButton>
       </ButtonListItem>
     </ButtonList>
 

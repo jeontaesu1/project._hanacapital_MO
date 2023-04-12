@@ -80,24 +80,34 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">약관동의</BasicButton>
+        <BasicButton @click="layer001Open">
+          약관동의<br />Member_M06_l001
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer002Open">비밀번호 입력</BasicButton>
+        <BasicButton @click="layer002Open">
+          비밀번호 입력<br />Member_M06_l002
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer003Open">비밀번호 확인</BasicButton>
+        <BasicButton @click="layer003Open">
+          비밀번호 확인<br />Member_M06_l003
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer004Open"
-          >인증수단 추가 - 지문인증</BasicButton
-        >
+        <BasicButton @click="layer004Open">
+          인증수단 추가 - 지문인증<br />Member_M06_b001
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer005Open">인증수단 추가 - Face ID</BasicButton>
+        <BasicButton @click="layer005Open">
+          인증수단 추가 - Face ID<br />Member_M06_b001
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer006Open">가입완료</BasicButton>
+        <BasicButton @click="layer006Open">
+          가입완료<br />Member_M06_l004
+        </BasicButton>
       </ButtonListItem>
     </ButtonList>
 

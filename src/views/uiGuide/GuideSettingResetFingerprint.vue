@@ -58,13 +58,19 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">지문인증 (재)등록</BasicButton>
+        <BasicButton @click="layer001Open"
+          >지문인증 (재)등록<br />Setting_M05_l001</BasicButton
+        >
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer002Open">지문 등록 완료</BasicButton>
+        <BasicButton @click="layer002Open"
+          >지문 등록 완료<br />Setting_M05_l002</BasicButton
+        >
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer003Open">지문 해지 안내</BasicButton>
+        <BasicButton @click="layer003Open"
+          >지문 해지 안내<br />Setting_M05_l003</BasicButton
+        >
       </ButtonListItem>
     </ButtonList>
 

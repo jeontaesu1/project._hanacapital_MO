@@ -40,7 +40,9 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">약관 상세</BasicButton>
+        <BasicButton @click="layer001Open">
+          약관 상세<br />Common_M00_l001
+        </BasicButton>
       </ButtonListItem>
     </ButtonList>
 

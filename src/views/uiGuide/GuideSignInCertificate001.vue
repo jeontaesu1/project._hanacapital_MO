@@ -40,7 +40,9 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">공동인증서 등록 </BasicButton>
+        <BasicButton @click="layer001Open">
+          공동인증서 등록<br />Member_M02_l001
+        </BasicButton>
       </ButtonListItem>
     </ButtonList>
 

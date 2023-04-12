@@ -1,4 +1,5 @@
 <script>
+// ETC_M01_p002
 import { onMounted, onUnmounted } from 'vue';
 
 import { useUiHeaderStore } from '@/stores/ui/header';

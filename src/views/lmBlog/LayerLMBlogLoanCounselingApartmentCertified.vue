@@ -1,4 +1,5 @@
 <script>
+// LM_M01_l005, LM_M01_l006
 import { ref, reactive } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';

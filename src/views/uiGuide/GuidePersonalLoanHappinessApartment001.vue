@@ -80,27 +80,39 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">인증 수단 선택</BasicButton>
+        <BasicButton @click="layer001Open">
+          인증 수단 선택<br />PF_M02_b001
+        </BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer002Open">한도조회 동의</BasicButton>
+        <BasicButton @click="layer002Open">
+          한도조회 동의<br />PF_M02_l001
+        </BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer003Open">아파트 등기부등본</BasicButton>
+        <BasicButton @click="layer003Open">
+          아파트 등기부등본<br />PF_M02_l004
+        </BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer004Open">아파트 등기부등본 확인</BasicButton>
+        <BasicButton @click="layer004Open">
+          아파트 등기부등본 확인<br />PF_M02_l005
+        </BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer005Open">한도조회 결과</BasicButton>
+        <BasicButton @click="layer005Open">
+          한도조회 결과<br />PF_M02_l006
+        </BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
-        <BasicButton @click="layer006Open">신청 정보 입력</BasicButton>
+        <BasicButton @click="layer006Open">
+          신청 정보 입력<br />PF_M02_l007
+        </BasicButton>
       </ButtonListItem>
     </ButtonList>
 

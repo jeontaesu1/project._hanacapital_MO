@@ -179,6 +179,7 @@ export default {
       helpClass: styleModule['form__help'],
       selectOnly: state.selectOnly,
       selectTextClass: styleModule['form__select-text'],
+      checkInputed,
     });
 
     return {

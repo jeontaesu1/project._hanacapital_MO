@@ -56,13 +56,19 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">비밀번호 입력</BasicButton>
+        <BasicButton @click="layer001Open">
+          비밀번호 입력<br />Member_M07_l001
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer002Open">오류횟수 초과</BasicButton>
+        <BasicButton @click="layer002Open">
+          오류횟수 초과<br />Member_M07_l002
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer003Open">가입 완료</BasicButton>
+        <BasicButton @click="layer003Open">
+          가입 완료<br />Member_M07_l003
+        </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
