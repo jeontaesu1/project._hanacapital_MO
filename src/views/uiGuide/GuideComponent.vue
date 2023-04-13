@@ -2258,6 +2258,7 @@ export default {
             :require="true"
             :maxlength="150"
             :count="true"
+            title="Label"
           >
             <template v-slot:bottom>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -2273,6 +2274,7 @@ export default {
             :maxlength="150"
             :count="true"
             :disabled="true"
+            title="Label"
           >
             <template v-slot:bottom>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
