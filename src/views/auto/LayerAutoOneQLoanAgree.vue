@@ -15,8 +15,6 @@ import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 
-import LayerAutoOneQLoanAvailable from '@/views/auto/LayerAutoOneQLoanAvailable.vue';
-
 export default {
   components: {
     UiLayer,
@@ -31,20 +29,12 @@ export default {
     PageTextGroup,
     PageMainText,
     PopupButton,
-    LayerAutoOneQLoanAvailable,
   },
   setup() {
     const layer = ref(null);
-    const layer004 = ref(null);
-
-    const layer004Open = (e = {}) => {
-      layer004.value.layer.open(e.target);
-    };
 
     return {
       layer,
-      layer004,
-      layer004Open,
     };
   },
 };
@@ -321,15 +311,11 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton theme="secondary" @click="layer004Open"
-              >다음</BasicButton
-            >
+            <BasicButton theme="secondary">다음</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
     </FullPopup>
-
-    <LayerAutoOneQLoanAvailable ref="layer004" />
   </UiLayer>
 </template>
 

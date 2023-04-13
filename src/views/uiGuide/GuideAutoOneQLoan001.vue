@@ -9,6 +9,8 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import LayerAutoOneQLoanForm from '@/views/auto/LayerAutoOneQLoanForm.vue';
 import LayerAutoOneQLoanAgree from '@/views/auto/LayerAutoOneQLoanAgree.vue';
 import LayerAutoOneQLoanError from '@/views/auto/LayerAutoOneQLoanError.vue';
+import LayerAutoOneQLoanAvailable from '@/views/auto/LayerAutoOneQLoanAvailable.vue';
+import LayerAutoOneQLoanInquiry from '@/views/auto/LayerAutoOneQLoanInquiry.vue';
 
 export default {
   components: {
@@ -19,11 +21,15 @@ export default {
     LayerAutoOneQLoanForm,
     LayerAutoOneQLoanAgree,
     LayerAutoOneQLoanError,
+    LayerAutoOneQLoanAvailable,
+    LayerAutoOneQLoanInquiry,
   },
   setup() {
     const layer001 = ref(null);
     const layer002 = ref(null);
     const layer003 = ref(null);
+    const layer004 = ref(null);
+    const layer005 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -34,14 +40,24 @@ export default {
     const layer003Open = (e = {}) => {
       layer003.value.layer.open(e.target);
     };
+    const layer004Open = (e = {}) => {
+      layer004.value.layer.open(e.target);
+    };
+    const layer005Open = (e = {}) => {
+      layer005.value.layer.open(e.target);
+    };
 
     return {
       layer001,
       layer002,
       layer003,
+      layer004,
+      layer005,
       layer001Open,
       layer002Open,
       layer003Open,
+      layer004Open,
+      layer005Open,
     };
   },
 };
@@ -70,10 +86,22 @@ export default {
           >신용정보조회동의 오류<br />AF_M05_l003</BasicButton
         >
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer004Open"
+          >대출신청 가능<br />AF_M05_l004</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer005Open"
+          >지점문의 대상<br />AF_M05_l004</BasicButton
+        >
+      </ButtonListItem>
     </ButtonList>
 
     <LayerAutoOneQLoanForm ref="layer001" />
     <LayerAutoOneQLoanAgree ref="layer002" />
     <LayerAutoOneQLoanError ref="layer003" />
+    <LayerAutoOneQLoanAvailable ref="layer004" />
+    <LayerAutoOneQLoanInquiry ref="layer005" />
   </PageContents>
 </template>

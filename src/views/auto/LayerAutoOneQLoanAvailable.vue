@@ -22,6 +22,7 @@ import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
+import IllustObject from '@/components/ui/common/IllustObject.vue';
 
 import CarLogo from '@/assets/images/car-logo/auto-hyundai.svg?component';
 
@@ -47,6 +48,7 @@ export default {
     KeyValueText,
     BasicHr,
     UnitText,
+    IllustObject,
     CarLogo,
   },
   setup() {
@@ -81,22 +83,19 @@ export default {
         </PageSubText>
       </PageTextGroup>
 
-      <BasicBox>
-        <BasicBoxHead align="top">
+      <IllustObject type="fail" :classNames="{ wrap: $style['illust'] }" />
+
+      <BasicBox className="row-margin-contents-group">
+        <BasicBoxHead>
           <BasicBoxHeadLeft>
             <p :class="$style['brand-info']">
               <span :class="$style['brand-info__logo']"><CarLogo /></span>
               2020년식
             </p>
-            <h3 class="text-body-1 font-weight-medium">제네시스</h3>
-            <p class="text-body-4 color-gray row-margin-small">더 뉴 G70</p>
-            <UnitText
-              rightUnit="원"
-              :classNames="{
-                wrap: 'row-margin-item',
-              }"
-              >628,190</UnitText
-            >
+            <h3 class="text-body-1 font-weight-medium">캐스퍼</h3>
+            <p class="text-body-4 color-gray row-margin-small">
+              2022년형 가솔린 1.0 터보 밴
+            </p>
           </BasicBoxHeadLeft>
           <BasicBoxHeadRight>
             <div :class="$style['car-image']">
@@ -113,8 +112,8 @@ export default {
               item: 'text-body-3',
             }"
           >
-            <KeyValueTitle>고객명</KeyValueTitle>
-            <KeyValueText>홍길동</KeyValueText>
+            <KeyValueTitle>주민등록번호</KeyValueTitle>
+            <KeyValueText>710908-1******</KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem
@@ -122,8 +121,8 @@ export default {
               item: 'text-body-3',
             }"
           >
-            <KeyValueTitle>접수일자</KeyValueTitle>
-            <KeyValueText>2022.10.26</KeyValueText>
+            <KeyValueTitle>차량가격</KeyValueTitle>
+            <KeyValueText>48,100,000 원</KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem
@@ -131,8 +130,8 @@ export default {
               item: 'text-body-3',
             }"
           >
-            <KeyValueTitle>진행일정</KeyValueTitle>
-            <KeyValueText>2019.06.05</KeyValueText>
+            <KeyValueTitle>대출신청금액</KeyValueTitle>
+            <KeyValueText>48,100,000 원</KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem
@@ -140,8 +139,8 @@ export default {
               item: 'text-body-3',
             }"
           >
-            <KeyValueTitle>외장색상</KeyValueTitle>
-            <KeyValueText>아틸라스 화이트<span>//컬러칩</span></KeyValueText>
+            <KeyValueTitle>대출기간</KeyValueTitle>
+            <KeyValueText>72개월</KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem
@@ -149,202 +148,30 @@ export default {
               item: 'text-body-3',
             }"
           >
-            <KeyValueTitle>내장색상</KeyValueTitle>
-            <KeyValueText
-              >네츄럴 베이지 / 다크 베이지<span>//컬러칩</span></KeyValueText
-            >
+            <KeyValueTitle>금리</KeyValueTitle>
+            <KeyValueText>3.5%</KeyValueText>
           </KeyValueItem>
+
+          <BasicHr
+            theme="quaternary"
+            type="contents"
+            className="row-margin-contents-small"
+          />
 
           <KeyValueItem
             :classNames="{
               item: 'text-body-3',
             }"
           >
-            <KeyValueTitle>옵션</KeyValueTitle>
-            <KeyValueText>선루프</KeyValueText>
-          </KeyValueItem>
-
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>종료시 처리</KeyValueTitle>
-            <KeyValueText>처리 방법</KeyValueText>
-          </KeyValueItem>
-
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>차량 가격</KeyValueTitle>
-            <KeyValueText
+            <KeyValueTitle
               :classNames="{
-                text: 'color-blue',
+                title: 'color-black',
               }"
+              >월 납입금액</KeyValueTitle
             >
-              63,000,000 원
+            <KeyValueText>
+              <UnitText rightUnit="원" align="right">741,620</UnitText>
             </KeyValueText>
-          </KeyValueItem>
-
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>기간</KeyValueTitle>
-            <KeyValueText>5일</KeyValueText>
-          </KeyValueItem>
-
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>약정거리</KeyValueTitle>
-            <KeyValueText>100km</KeyValueText>
-          </KeyValueItem>
-
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>선납금</KeyValueTitle>
-            <KeyValueText>1,300,000 원</KeyValueText>
-          </KeyValueItem>
-
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>보증금</KeyValueTitle>
-            <KeyValueText>6,300,000 원</KeyValueText>
-          </KeyValueItem>
-
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>잔존가치</KeyValueTitle>
-            <KeyValueText>최고(56.5%) 23,221,500 원</KeyValueText>
-          </KeyValueItem>
-
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>정비</KeyValueTitle>
-            <KeyValueText>정비상품</KeyValueText>
-          </KeyValueItem>
-        </KeyValueList>
-
-        <BasicHr
-          theme="quaternary"
-          type="contents"
-          className="row-margin-contents-small"
-        />
-
-        <KeyValueList margin="regular">
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>탁송방법</KeyValueTitle>
-            <KeyValueText>탁송방법</KeyValueText>
-          </KeyValueItem>
-
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>탁송지</KeyValueTitle>
-            <KeyValueText>탁송지</KeyValueText>
-          </KeyValueItem>
-
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>탁송 도착지</KeyValueTitle>
-            <KeyValueText>탁송 도착지</KeyValueText>
-          </KeyValueItem>
-        </KeyValueList>
-
-        <BasicHr
-          theme="quaternary"
-          type="contents"
-          className="row-margin-contents-small"
-        />
-
-        <KeyValueList margin="regular">
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>출고</KeyValueTitle>
-            <KeyValueText>출고방식</KeyValueText>
-          </KeyValueItem>
-
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>유형</KeyValueTitle>
-            <KeyValueText>손님유형</KeyValueText>
-          </KeyValueItem>
-        </KeyValueList>
-
-        <BasicHr
-          theme="quaternary"
-          type="contents"
-          className="row-margin-contents-small"
-        />
-
-        <KeyValueList margin="regular">
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>운전연력</KeyValueTitle>
-            <KeyValueText>운전연력</KeyValueText>
-          </KeyValueItem>
-
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>대물배상액</KeyValueTitle>
-            <KeyValueText>대물배상액</KeyValueText>
-          </KeyValueItem>
-
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>자기차량손해액</KeyValueTitle>
-            <KeyValueText>자기차량손해액</KeyValueText>
-          </KeyValueItem>
-
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>자기부담금(면책금)</KeyValueTitle>
-            <KeyValueText>자기부담금(면책금)</KeyValueText>
           </KeyValueItem>
         </KeyValueList>
       </BasicBox>
@@ -356,10 +183,10 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton theme="tertiary">견적서 보기</BasicButton>
+            <BasicButton :line="true" theme="quaternary">이전</BasicButton>
           </ButtonListItem>
           <ButtonListItem>
-            <BasicButton theme="secondary">발주 신청</BasicButton>
+            <BasicButton theme="secondary">약정하기</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
