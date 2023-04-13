@@ -114,6 +114,7 @@ import IconCompany from '@/assets/images/icon/company.svg?component';
 import IconDocumentComplete from '@/assets/images/icon/document-complete.svg?component';
 import IconTooltip from '@/assets/images/icon/tooltip.svg?component';
 import IconStar from '@/assets/images/icon/star.svg?component';
+import IconCopy from '@/assets/images/icon/copy.svg?component';
 
 export default {
   components: {
@@ -227,6 +228,7 @@ export default {
     IconDocumentComplete,
     IconTooltip,
     IconStar,
+    IconCopy,
   },
   setup() {
     const store = {
@@ -4044,6 +4046,192 @@ export default {
             </UiAccordionItem>
           </UiAccordion>
         </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Detail Accordion</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <UiAccordion :classNames="{ wrap: $style['detail-accordion'] }">
+          <UiAccordionItem
+            :classNames="{
+              item: [$style['detail-accordion__item'], 'row-margin-item-group'],
+            }"
+          >
+            <KeyValueList>
+              <KeyValueItem>
+                <KeyValueTitle>타이틀</KeyValueTitle>
+                <KeyValueText>
+                  <div :class="$style['detail-accordion__text']">
+                    텍스트
+                    <UiAccordionOpener
+                      :classNames="{
+                        button: $style['detail-accordion__opener'],
+                      }"
+                    />
+                  </div>
+                </KeyValueText>
+              </KeyValueItem>
+            </KeyValueList>
+
+            <UiAccordionLayer>
+              <div :class="[$style['detail-accordion__contents']]">
+                //Contents
+              </div>
+            </UiAccordionLayer>
+          </UiAccordionItem>
+        </UiAccordion>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Account List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <KeyValueList
+          align="left"
+          margin="regular"
+          size="regular"
+          :classNames="{ wrap: $style['account'] }"
+        >
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle
+              :classNames="{
+                title: $style['account__title'],
+              }"
+            >
+              <div :class="$style['account__logo']">
+                <BrandLogo001 />
+              </div>
+              국민
+            </KeyValueTitle>
+            <KeyValueText
+              :classNames="{
+                text: $style['account__text'],
+              }"
+            >
+              <div :class="$style['account__num']">123-456-78901234</div>
+              <button type="button" :class="$style['account__copy']">
+                <span class="for-a11y">복사하기</span>
+                <IconCopy />
+              </button>
+            </KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle
+              :classNames="{
+                title: $style['account__title'],
+              }"
+            >
+              <div :class="$style['account__logo']">
+                <BrandLogo002 />
+              </div>
+              농협
+            </KeyValueTitle>
+            <KeyValueText
+              :classNames="{
+                text: $style['account__text'],
+              }"
+            >
+              <div :class="$style['account__num']">123-456-78901234</div>
+              <button type="button" :class="$style['account__copy']">
+                <span class="for-a11y">복사하기</span>
+                <IconCopy />
+              </button>
+            </KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle
+              :classNames="{
+                title: $style['account__title'],
+              }"
+            >
+              <div :class="$style['account__logo']">
+                <BrandLogo003 />
+              </div>
+              농협
+            </KeyValueTitle>
+            <KeyValueText
+              :classNames="{
+                text: $style['account__text'],
+              }"
+            >
+              <div :class="$style['account__num']">123-456-78901234</div>
+              <button type="button" :class="$style['account__copy']">
+                <span class="for-a11y">복사하기</span>
+                <IconCopy />
+              </button>
+            </KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle
+              :classNames="{
+                title: $style['account__title'],
+              }"
+            >
+              <div :class="$style['account__logo']">
+                <BrandLogo004 />
+              </div>
+              하나
+            </KeyValueTitle>
+            <KeyValueText
+              :classNames="{
+                text: $style['account__text'],
+              }"
+            >
+              <div :class="$style['account__num']">123-456-78901234</div>
+              <button type="button" :class="$style['account__copy']">
+                <span class="for-a11y">복사하기</span>
+                <IconCopy />
+              </button>
+            </KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle
+              :classNames="{
+                title: $style['account__title'],
+              }"
+            >
+              <div :class="$style['account__logo']">
+                <BrandLogo005 />
+              </div>
+              신한
+            </KeyValueTitle>
+            <KeyValueText
+              :classNames="{
+                text: $style['account__text'],
+              }"
+              ><div :class="$style['account__num']">
+                123-456-78901234-11111111111111111111111
+              </div>
+              <button type="button" :class="$style['account__copy']">
+                <span class="for-a11y">복사하기</span>
+                <IconCopy />
+              </button>
+            </KeyValueText>
+          </KeyValueItem>
+        </KeyValueList>
       </div>
     </section>
 
