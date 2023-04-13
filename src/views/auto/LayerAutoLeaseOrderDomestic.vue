@@ -13,7 +13,6 @@ import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
-import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
@@ -35,7 +34,6 @@ export default {
     FormInvalid,
     InputBlock,
     InputBlockCell,
-    BasicSelect,
     FormInvalidMessage,
     BasicInput,
     NoticeText,
@@ -48,11 +46,11 @@ export default {
     const layer = ref(null);
 
     const state = reactive({
-      nameError001: false,
-      numberError001: false,
-      accountError001: false,
-      domesticError001: false,
-      bankNameError001: false,
+      domesticAgencyError: false,
+      domesticNameError: false,
+      domesticNumberError: false,
+      domesticAccountError: false,
+      domesticBankNameError: false,
     });
 
     return {
@@ -84,42 +82,18 @@ export default {
       <section>
         <FormList>
           <FormListItem
-            titleText="판매대리점 (브랜드 : 현대)"
-            target="#layerAutoLeaseOrderDomesticAgencyButton001"
-            :selectOnly="true"
+            titleText="판매대리점"
+            titleOptionalText="(브랜드 : 현대)"
+            target="#layerAutoLeaseOrderDomesticAgency"
           >
-            <FormInvalid :error="state.domesticError001">
-              <InputBlock :error="state.domesticError001">
+            <FormInvalid :error="state.domesticAgencyError">
+              <InputBlock :error="state.domesticAgencyError">
                 <InputBlockCell :flexible="true">
-                  <BasicSelect
-                    :option="[
-                      {
-                        value: '1',
-                        text: '한성자동차㈜',
-                      },
-                      {
-                        value: '2',
-                        text: '주식회사진모터스',
-                      },
-                      {
-                        value: '3',
-                        text: '중앙모터스㈜',
-                      },
-                      {
-                        value: '4',
-                        text: '교학모터스㈜',
-                      },
-                      {
-                        value: '5',
-                        text: '경남자동차판매㈜',
-                      },
-                    ]"
-                    buttonTitle="판매대리점를 선택해 주세요"
-                    layerTitle="판매대리점를 선택해 주세요"
-                    id="layerAutoLeaseOrderDomesticAgency001"
-                    buttonId="layerAutoLeaseOrderDomesticAgencyButton001"
-                  />
+                  <BasicInput id="layerAutoLeaseOrderDomesticAgency" />
                 </InputBlockCell>
+                <template v-slot:right>
+                  <BasicButton size="mini" theme="tertiary">검색</BasicButton>
+                </template>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
@@ -133,14 +107,14 @@ export default {
         <FormList :classNames="{ wrap: 'row-margin-contents' }">
           <FormListItem
             titleText="이름"
-            target="#layerAutoLeaseOrderDomesticName001"
+            target="#layerAutoLeaseOrderDomesticName"
           >
-            <FormInvalid :error="state.nameError001">
-              <InputBlock :error="state.nameError001">
+            <FormInvalid :error="state.domesticNameError">
+              <InputBlock :error="state.domesticNameError">
                 <InputBlockCell :flexible="true">
                   <BasicInput
                     title="이름"
-                    id="layerAutoLeaseOrderDomesticName001"
+                    id="layerAutoLeaseOrderDomesticName"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -150,15 +124,15 @@ export default {
 
           <FormListItem
             titleText="연락처"
-            target="#layerAutoLeaseOrderDomesticNumber001"
+            target="#layerAutoLeaseOrderDomesticNumber"
           >
-            <FormInvalid :error="state.numberError001">
-              <InputBlock :error="state.numberError001">
+            <FormInvalid :error="state.domesticNumberError">
+              <InputBlock :error="state.domesticNumberError">
                 <InputBlockCell :flexible="true">
                   <BasicInput
                     type="number"
                     title="연락처"
-                    id="layerAutoLeaseOrderDomesticNumber001"
+                    id="layerAutoLeaseOrderDomesticNumber"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -184,13 +158,13 @@ export default {
 
           <FormListItem
             titleText="계좌번호"
-            target="#layerAutoLeaseOrderDomesticAccount001"
+            target="#layerAutoLeaseOrderDomesticAccount"
           >
-            <FormInvalid :error="state.accountError001">
-              <InputBlock :error="state.accountError001">
+            <FormInvalid :error="state.domesticAccountError">
+              <InputBlock :error="state.domesticAccountError">
                 <InputBlockCell :flexible="true">
                   <BasicInput
-                    id="layerAutoLeaseOrderDomesticAccount001"
+                    id="layerAutoLeaseOrderDomesticAccount"
                     type="number"
                   />
                 </InputBlockCell>
@@ -211,8 +185,8 @@ export default {
             titleText="예금주명"
             target="#layerAutoLeaseOrderDomesticBankName"
           >
-            <FormInvalid :error="state.bankNameError001">
-              <InputBlock :error="state.bankNameError001">
+            <FormInvalid :error="state.domesticBankNameError">
+              <InputBlock :error="state.domesticBankNameError">
                 <InputBlockCell :flexible="true">
                   <BasicInput
                     title="예금주명"

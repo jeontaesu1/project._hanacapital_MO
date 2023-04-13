@@ -48,13 +48,12 @@ export default {
     const layer = ref(null);
 
     const state = reactive({
-      nameError001: false,
-      numberError001: false,
-      bankError001: false,
-      accountError001: false,
-      bankNameError001: false,
-      importedError001: false,
-      importedError002: false,
+      importedDealerError: false,
+      importedAgencyError: false,
+      importedNameError: false,
+      importedNumberError: false,
+      importedAccountError: false,
+      importedBankNameError: false,
     });
 
     return {
@@ -87,11 +86,11 @@ export default {
         <FormList>
           <FormListItem
             titleText="딜러사 (브랜드 : 현대)"
-            target="#layerAutoLeaseOrderImportedDealerButton001"
+            target="#layerAutoLeaseOrderImportedDealerButton"
             :selectOnly="true"
           >
-            <FormInvalid :error="state.importedError001">
-              <InputBlock :error="state.importedError001">
+            <FormInvalid :error="state.importedDealerError">
+              <InputBlock :error="state.importedDealerError">
                 <InputBlockCell :flexible="true">
                   <BasicSelect
                     :option="[
@@ -118,8 +117,8 @@ export default {
                     ]"
                     buttonTitle="딜러사를 선택해 주세요"
                     layerTitle="딜러사를 선택해 주세요"
-                    id="layerAutoLeaseOrderImportedDealer001"
-                    buttonId="layerAutoLeaseOrderImportedDealerButton001"
+                    id="layerAutoLeaseOrderImportedDealer"
+                    buttonId="layerAutoLeaseOrderImportedDealerButton"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -129,11 +128,11 @@ export default {
 
           <FormListItem
             titleText="전시장 (판매대리점)"
-            target="#layerAutoLeaseOrderImportedAgencyButton001"
+            target="#layerAutoLeaseOrderImportedAgencyButton"
             :selectOnly="true"
           >
-            <FormInvalid :error="state.importedError002">
-              <InputBlock :error="state.importedError002">
+            <FormInvalid :error="state.importedAgencyError">
+              <InputBlock :error="state.importedAgencyError">
                 <InputBlockCell :flexible="true">
                   <BasicSelect
                     :option="[
@@ -152,8 +151,8 @@ export default {
                     ]"
                     buttonTitle="전시장(판매대리점)을 선택해 주세요"
                     layerTitle="전시장(판매대리점)을 선택해 주세요"
-                    id="layerAutoLeaseOrderImportedAgency001"
-                    buttonId="layerAutoLeaseOrderImportedAgencyButton001"
+                    id="layerAutoLeaseOrderImportedAgency"
+                    buttonId="layerAutoLeaseOrderImportedAgencyButton"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -169,14 +168,14 @@ export default {
         <FormList :classNames="{ wrap: 'row-margin-contents' }">
           <FormListItem
             titleText="이름"
-            target="#layerAutoLeaseOrderImportedName001"
+            target="#layerAutoLeaseOrderImportedName"
           >
-            <FormInvalid :error="state.nameError001">
-              <InputBlock :error="state.nameError001">
+            <FormInvalid :error="state.importedNameError">
+              <InputBlock :error="state.importedNameError">
                 <InputBlockCell :flexible="true">
                   <BasicInput
                     title="이름"
-                    id="layerAutoLeaseOrderImportedName001"
+                    id="layerAutoLeaseOrderImportedName"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -186,15 +185,15 @@ export default {
 
           <FormListItem
             titleText="연락처"
-            target="#layerAutoLeaseOrderImportedNumber001"
+            target="#layerAutoLeaseOrderImportedNumber"
           >
-            <FormInvalid :error="state.numberError001">
-              <InputBlock :error="state.numberError001">
+            <FormInvalid :error="state.importedNumberError">
+              <InputBlock :error="state.importedNumberError">
                 <InputBlockCell :flexible="true">
                   <BasicInput
                     type="number"
                     title="연락처"
-                    id="layerAutoLeaseOrderImportedNumber001"
+                    id="layerAutoLeaseOrderImportedNumber"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -220,13 +219,13 @@ export default {
 
           <FormListItem
             titleText="계좌번호"
-            target="#layerAutoLeaseOrderImportedAccount001"
+            target="#layerAutoLeaseOrderImportedAccount"
           >
-            <FormInvalid :error="state.accountError001">
-              <InputBlock :error="state.accountError001">
+            <FormInvalid :error="state.importedAccountError">
+              <InputBlock :error="state.importedAccountError">
                 <InputBlockCell :flexible="true">
                   <BasicInput
-                    id="layerAutoLeaseOrderImportedAccount001"
+                    id="layerAutoLeaseOrderImportedAccount"
                     type="number"
                   />
                 </InputBlockCell>
@@ -245,14 +244,14 @@ export default {
 
           <FormListItem
             titleText="예금주명"
-            target="#layerAutoLeaseOrderImportedBankName001"
+            target="#layerAutoLeaseOrderImportedBankName"
           >
-            <FormInvalid :error="state.bankNameError001">
-              <InputBlock :error="state.bankNameError001">
+            <FormInvalid :error="state.importedBankNameError">
+              <InputBlock :error="state.importedBankNameError">
                 <InputBlockCell :flexible="true">
                   <BasicInput
                     title="예금주명"
-                    id="layerAutoLeaseOrderImportedBankName001"
+                    id="layerAutoLeaseOrderImportedBankName"
                   />
                 </InputBlockCell>
               </InputBlock>
