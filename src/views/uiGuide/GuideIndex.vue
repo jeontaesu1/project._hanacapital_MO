@@ -117,6 +117,17 @@ const datas = () => [
         log: [],
       },
       {
+        depth2: '날짜입력',
+        depth3: '팝업',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/guide/enter-date-001',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
         depth2: '직장검색',
         depth3: '팝업',
         depth4: '',

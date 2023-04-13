@@ -5,8 +5,9 @@ import PageContents from '@/components/ui/layout/PageContents.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import LayerGuideEnterDate from '@/views/guide/LayerGuideEnterDate.vue';
 
-import LayerSearchWorkplace from '@/views/searchWorkplace/LayerSearchWorkplace.vue';
+// import Layer from '@/views/';
 
 export default {
   components: {
@@ -14,7 +15,8 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    LayerSearchWorkplace,
+    // Layer,
+    LayerGuideEnterDate,
   },
   setup() {
     const layer001 = ref(null);
@@ -41,11 +43,12 @@ export default {
     >
       <ButtonListItem>
         <BasicButton @click="layer001Open"
-          >직장 검색 Common_M00_l012</BasicButton
+          >날짜 입력<br />
+          Common_M00_p009</BasicButton
         >
       </ButtonListItem>
     </ButtonList>
 
-    <LayerSearchWorkplace ref="layer001" />
+    <LayerGuideEnterDate ref="layer001" />
   </PageContents>
 </template>

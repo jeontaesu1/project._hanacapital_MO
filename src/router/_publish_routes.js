@@ -238,6 +238,11 @@ const routes = [
     name: '/guide/search-workplace-001',
     component: () => import('@/views/uiGuide/GuideSearchWorkplace001.vue'),
   },
+  {
+    path: '/guide/enter-date-001',
+    name: '/guide/enter-date-001',
+    component: () => import('@/views/uiGuide/GuideEnterDate001.vue'),
+  },
 
   // home
   {

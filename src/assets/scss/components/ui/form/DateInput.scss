@@ -6,4 +6,9 @@
     50% / 24px;
   @include font-size-default(18);
   font-weight: 400;
+
+  &::-webkit-calendar-picker-indicator {
+    background: transparent;
+    z-index: 1;
+  }
 }
