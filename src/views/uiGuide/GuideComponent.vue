@@ -801,7 +801,7 @@ export default {
 
         <ContentsButton>
           <h3 class="text-body-1 row-margin-small">타이틀</h3>
-          <KeyValue align="left" margin="small" size="medium">
+          <KeyValue align="left" margin="mini" size="medium">
             <KeyValueItem :classNames="{ item: 'text-body-4 color-black' }">
               <KeyValueTitle>도로명</KeyValueTitle>
               <KeyValueText>인천 서구 에코로 181</KeyValueText>
@@ -5030,8 +5030,35 @@ export default {
       </div>
 
       <div class="test-section-sub">
-        <h3 class="test-section-sub-title">margin small</h3>
-        <KeyValue margin="small">
+        <h3 class="test-section-sub-title">margin regular-small</h3>
+        <KeyValue margin="regular-small">
+          <KeyValueItem>
+            <KeyValueTitle>차량명의</KeyValueTitle>
+            <KeyValueText>
+              본인명의(공동명의 제외)<br />
+              소유기간 3개월 이상
+            </KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>소유차종</KeyValueTitle>
+            <KeyValueText>국산/수입 승용, RV, 승합</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>차량연식</KeyValueTitle>
+            <KeyValueText>
+              출고 이후 10년 이내<br />
+              차량가격 500만원 이상<br />
+              (당사 차량 시세 가격 기준)
+            </KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">margin mini</h3>
+        <KeyValue margin="mini">
           <KeyValueItem>
             <KeyValueTitle>차량명의</KeyValueTitle>
             <KeyValueText>
@@ -6183,7 +6210,7 @@ export default {
           <li v-for="i in 3" :key="i" :class="$style['address-list__item']">
             <div :class="$style['address-list__block']">
               <div :class="$style['address-list__title']">16997</div>
-              <KeyValue align="left" margin="small" size="regular">
+              <KeyValue align="left" margin="mini" size="regular">
                 <KeyValueItem :classNames="{ item: 'text-body-4' }">
                   <KeyValueTitle>도로명</KeyValueTitle>
                   <KeyValueText
@@ -6210,7 +6237,7 @@ export default {
             <ContentsButton>
               <div :class="$style['address-list__block']">
                 <div :class="$style['address-list__title']">16997</div>
-                <KeyValue align="left" margin="small" size="medium">
+                <KeyValue align="left" margin="mini" size="medium">
                   <KeyValueItem
                     :classNames="{ item: 'text-body-4 color-black' }"
                   >
@@ -6232,7 +6259,7 @@ export default {
             <ContentsButton>
               <div :class="$style['address-list__block']">
                 <div :class="$style['address-list__title']">16997</div>
-                <KeyValue align="left" margin="small" size="medium">
+                <KeyValue align="left" margin="mini" size="medium">
                   <KeyValueItem
                     :classNames="{ item: 'text-body-4 color-black' }"
                   >

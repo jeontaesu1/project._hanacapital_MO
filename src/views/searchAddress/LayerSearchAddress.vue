@@ -148,7 +148,7 @@ export default {
             <li v-for="i in 3" :key="i" :class="$style['address-list__item']">
               <div :class="$style['address-list__block']">
                 <div :class="$style['address-list__title']">16997</div>
-                <KeyValue align="left" margin="small" size="regular">
+                <KeyValue align="left" margin="mini" size="regular">
                   <KeyValueItem :classNames="{ item: 'text-body-4' }">
                     <KeyValueTitle>도로명</KeyValueTitle>
                     <KeyValueText
@@ -250,7 +250,7 @@ export default {
               <ContentsButton>
                 <div :class="$style['address-list__block']">
                   <div :class="$style['address-list__title']">16997</div>
-                  <KeyValue align="left" margin="small" size="medium">
+                  <KeyValue align="left" margin="mini" size="medium">
                     <KeyValueItem
                       :classNames="{ item: 'text-body-4 color-black' }"
                     >
@@ -272,7 +272,7 @@ export default {
               <ContentsButton>
                 <div :class="$style['address-list__block']">
                   <div :class="$style['address-list__title']">16997</div>
-                  <KeyValue align="left" margin="small" size="medium">
+                  <KeyValue align="left" margin="mini" size="medium">
                     <KeyValueItem
                       :classNames="{ item: 'text-body-4 color-black' }"
                     >
