@@ -80,6 +80,9 @@ import SearchButton from '@/components/ui/button/SearchButton.vue';
 import SwitchCheckBox from '@/components/ui/form/SwitchCheckBox.vue';
 import BasicTooltip from '@/components/ui/tooltip/BasicTooltip.vue';
 import ContentsButton from '@/components/ui/button/ContentsButton.vue';
+import InputDateBasic from '@/components/ui/form/InputDateBasic.vue';
+import InputDateDual from '@/components/ui/form/InputDateDual.vue';
+import InputRange from '@/components/ui/form/InputRange.vue';
 
 import BrandLogo001 from '@/assets/images/card-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/card-logo/lotte.svg?component';
@@ -195,6 +198,9 @@ export default {
     SwitchCheckBox,
     BasicTooltip,
     ContentsButton,
+    InputDateBasic,
+    InputDateDual,
+    InputRange,
     IconAdd,
     BrandLogo001,
     BrandLogo002,
@@ -232,6 +238,7 @@ export default {
     IconTooltip,
     IconLink,
   },
+
   setup() {
     const store = {
       ui: {
@@ -1935,7 +1942,7 @@ export default {
                   <!-- DD : 보안 키패드 열렸을 때 :isFocused="true" props 추가 해서 포커싱 스타일 적용 -->
                   <SecurityInput
                     title="주민등록번호 뒤 7자리"
-                    :dot="[true, true, true, false, false, false, false]"
+                    :dot="[false, false, false, false, false, false, false]"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -2250,6 +2257,79 @@ export default {
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
+
+          <FormListItem titleText="달력 1개 표기" target="#testInput0100">
+            <FormInvalid :error="state.testError001">
+              <InputBlock :error="state.testError001">
+                <InputBlockCell :flexible="true">
+                  <InputDateBasic id="testInput0100" />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem titleText="달력 2개 표기" target="#testInput0110">
+            <FormInvalid :error="state.testError001">
+              <InputBlock :error="state.testError001">
+                <InputDateDual id="testInput0110" />
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <!--  -->
+          <FormListItem
+            titleText="조회기간"
+            target="#testInput0120"
+            :forceFocus="true"
+          >
+            <FormInvalid :error="state.testError001">
+              <BoxCheckList>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="testBoxCheckList009"
+                    id="testBoxCheckList0091_001"
+                  >
+                    <BoxCheckLabel>1개월</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="testBoxCheckList009"
+                    id="testBoxCheckList0091_002"
+                  >
+                    <BoxCheckLabel>3개월</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="testBoxCheckList009"
+                    id="testBoxCheckList0091_003"
+                  >
+                    <BoxCheckLabel>6개월</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="testBoxCheckList009"
+                    id="testBoxCheckList0091_004"
+                  >
+                    <BoxCheckLabel>1년</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+              </BoxCheckList>
+              <InputBlock class="row-margin-item-group row-margin-bottom-none">
+                <InputDateDual id="testInput0120" />
+              </InputBlock>
+              <FormHelpText>조회기간은 최대 1년까지 가능해요.</FormHelpText>
+            </FormInvalid>
+          </FormListItem>
+          <!--  -->
 
           <BasicTextarea
             :error="state.testError001"
@@ -6195,6 +6275,18 @@ export default {
       <h2 class="test-section-title">Component Title</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
+        <InputRange />
+
+        <!-- 소스 카피 기능용 소스(미구현) -->
+        <div class="test-section-copy">
+          <div>
+            <button class="test-section-copy-button" @click="copyToClipboard">
+              copy
+            </button>
+          </div>
+          <pre class="test-section-copy-code" ref="preRef"></pre>
+        </div>
+        <!-- //소스 카피 기능용 소스 -->
       </div>
     </section>
   </div>
