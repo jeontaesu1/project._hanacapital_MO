@@ -4716,6 +4716,61 @@ export default {
           // contnets
         </BasicBox>
       </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">align top</h3>
+        <BasicBox>
+          <BasicBoxHead align="top">
+            <BasicBoxHeadLeft>
+              <h3 class="text-body-1 font-weight-medium">제네시스</h3>
+              <p class="text-body-4 color-gray row-margin-small">더 뉴 G70</p>
+              <UnitText
+                rightUnit="원"
+                :classNames="{
+                  wrap: 'row-margin-item',
+                }"
+                >628,190</UnitText
+              >
+            </BasicBoxHeadLeft>
+            <BasicBoxHeadRight>
+              <div :class="$style['car-image']">
+                <img
+                  src="@/assets/images/_dummy/car-sample.png"
+                  alt="차량 정보 넣어주세요"
+                />
+              </div>
+            </BasicBoxHeadRight>
+          </BasicBoxHead>
+          // contnets
+        </BasicBox>
+
+        <h3 class="test-section-sub-title row-margin-item-group">
+          align bottom
+        </h3>
+        <BasicBox>
+          <BasicBoxHead align="bottom">
+            <BasicBoxHeadLeft>
+              <h3 class="text-body-1 font-weight-medium">제네시스</h3>
+              <p class="text-body-4 color-gray row-margin-small">더 뉴 G70</p>
+              <UnitText
+                rightUnit="원"
+                :classNames="{
+                  wrap: 'row-margin-item',
+                }"
+                >628,190</UnitText
+              >
+            </BasicBoxHeadLeft>
+            <BasicBoxHeadRight>
+              <div :class="$style['car-image']">
+                <img
+                  src="@/assets/images/_dummy/car-sample.png"
+                  alt="차량 정보 넣어주세요"
+                />
+              </div>
+            </BasicBoxHeadRight>
+          </BasicBoxHead>
+          // contnets
+        </BasicBox>
+      </div>
     </section>
 
     <section class="test-section">
