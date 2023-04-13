@@ -181,6 +181,9 @@ body,
 .color-navy.color-navy {
   color: $color-navy-50;
 }
+.color-blue.color-blue {
+  color: $color-blue-50;
+}
 
 // text
 .text-body-1.text-body-1 {
@@ -313,7 +316,7 @@ body,
   @include row-margin-first-last;
 }
 .row-margin-item-small.row-margin-item-small {
-  margin-top: 6x;
+  margin-top: 6px;
   margin-bottom: 6px;
   @include row-margin-first-last;
 }
