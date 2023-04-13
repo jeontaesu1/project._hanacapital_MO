@@ -238,6 +238,16 @@ const routes = [
     name: '/guide/search-workplace-001',
     component: () => import('@/views/uiGuide/GuideSearchWorkplace001.vue'),
   },
+  {
+    path: '/guide/search-address-001',
+    name: '/guide/search-address-001',
+    component: () => import('@/views/uiGuide/GuideSearchAddress001.vue'),
+  },
+  {
+    path: '/guide/search-001',
+    name: '/guide/search-001',
+    component: () => import('@/views/uiGuide/GuideSearch001.vue'),
+  },
 
   // home
   {

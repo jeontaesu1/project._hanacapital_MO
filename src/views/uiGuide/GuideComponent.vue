@@ -45,6 +45,7 @@ import SecurityInput from '@/components/ui/form/SecurityInput.vue';
 import PartInput from '@/components/ui/form/PartInput.vue';
 import ExtendSelect from '@/components/ui/form/ExtendSelect.vue';
 import ExtendSelectOption from '@/components/ui/form/ExtendSelectOption.vue';
+import BankSelect from '@/components/ui/form/BankSelect.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
@@ -62,7 +63,7 @@ import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
 import FilterTab from '@/components/ui/tab/FilterTab.vue';
 import FilterTabButton from '@/components/ui/tab/FilterTabButton.vue';
 import StickyBar from '@/components/ui/common/StickyBar.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -77,14 +78,15 @@ import StepProgress from '@/components/ui/progress/StepProgress.vue';
 import SearchButton from '@/components/ui/button/SearchButton.vue';
 import SwitchCheckBox from '@/components/ui/form/SwitchCheckBox.vue';
 import BasicTooltip from '@/components/ui/tooltip/BasicTooltip.vue';
+import ContentsButton from '@/components/ui/button/ContentsButton.vue';
 
-import BrandLogo001 from '@/assets/images/bank-logo/hana.svg?component';
-import BrandLogo002 from '@/assets/images/bank-logo/lotte.svg?component';
-import BrandLogo003 from '@/assets/images/bank-logo/samsung.svg?component';
-import BrandLogo004 from '@/assets/images/bank-logo/shinhan.svg?component';
-import BrandLogo005 from '@/assets/images/bank-logo/kb.svg?component';
-import BrandLogo006 from '@/assets/images/bank-logo/hyundai.svg?component';
-import BrandLogo007 from '@/assets/images/bank-logo/bc.svg?component';
+import BrandLogo001 from '@/assets/images/card-logo/hana.svg?component';
+import BrandLogo002 from '@/assets/images/card-logo/lotte.svg?component';
+import BrandLogo003 from '@/assets/images/card-logo/samsung.svg?component';
+import BrandLogo004 from '@/assets/images/card-logo/shinhan.svg?component';
+import BrandLogo005 from '@/assets/images/card-logo/kb.svg?component';
+import BrandLogo006 from '@/assets/images/card-logo/hyundai.svg?component';
+import BrandLogo007 from '@/assets/images/card-logo/bc.svg?component';
 import IconCall from '@/assets/images/icon/call.svg?component';
 import IconCamera from '@/assets/images/icon/camera.svg?component';
 import IconFolder from '@/assets/images/icon/folder.svg?component';
@@ -112,6 +114,7 @@ import IconInstallation from '@/assets/images/icon/installation.svg?component';
 import IconCompany from '@/assets/images/icon/company.svg?component';
 import IconDocumentComplete from '@/assets/images/icon/document-complete.svg?component';
 import IconTooltip from '@/assets/images/icon/tooltip.svg?component';
+import IconLink from '@/assets/images/icon/link.svg?component';
 
 export default {
   components: {
@@ -156,6 +159,7 @@ export default {
     PartInput,
     ExtendSelect,
     ExtendSelectOption,
+    BankSelect,
     BasicHr,
     BasicBox,
     BasicBoxHead,
@@ -173,7 +177,7 @@ export default {
     FilterTab,
     FilterTabButton,
     StickyBar,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -188,6 +192,7 @@ export default {
     ScrollSection,
     SwitchCheckBox,
     BasicTooltip,
+    ContentsButton,
     IconAdd,
     BrandLogo001,
     BrandLogo002,
@@ -223,6 +228,7 @@ export default {
     IconCompany,
     IconDocumentComplete,
     IconTooltip,
+    IconLink,
   },
   setup() {
     const store = {
@@ -776,6 +782,28 @@ export default {
         <div class="inline-wrap align-center">
           <TextButton :underline="true">Button</TextButton>
         </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Contents Button</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <ContentsButton>
+          <h3 class="text-body-1 row-margin-small">타이틀</h3>
+          <KeyValue align="left" margin="small" size="medium">
+            <KeyValueItem :classNames="{ item: 'text-body-4 color-black' }">
+              <KeyValueTitle>도로명</KeyValueTitle>
+              <KeyValueText>인천 서구 에코로 181</KeyValueText>
+            </KeyValueItem>
+
+            <KeyValueItem :classNames="{ item: 'text-body-4 color-black' }">
+              <KeyValueTitle>입력 주소</KeyValueTitle>
+              <KeyValueText>하나금융그룹 로비</KeyValueText>
+            </KeyValueItem>
+          </KeyValue>
+        </ContentsButton>
       </div>
     </section>
 
@@ -1994,7 +2022,11 @@ export default {
             </FormInvalid>
           </FormListItem>
 
-          <FormListItem titleText="확장 셀렉트" target="#testInput008">
+          <FormListItem
+            titleText="확장 셀렉트"
+            target="#testInput008"
+            :selectOnly="true"
+          >
             <FormInvalid :error="state.testError001">
               <InputBlock :error="state.testError001">
                 <InputBlockCell :flexible="true">
@@ -2035,7 +2067,11 @@ export default {
             </FormInvalid>
           </FormListItem>
 
-          <FormListItem titleText="카드사" target="#testInput009">
+          <FormListItem
+            titleText="카드사"
+            target="#testInput009"
+            :selectOnly="true"
+          >
             <FormInvalid :error="state.testError001">
               <InputBlock :error="state.testError001">
                 <InputBlockCell :flexible="true">
@@ -2043,6 +2079,7 @@ export default {
                     buttonTitle="카드사 선택하기"
                     layerTitle="카드사를 선택해 주세요"
                     buttonId="testInput009"
+                    :onChange="testInputEvent"
                   >
                     <div :class="$style['bank-brand']">
                       <ul :class="$style['bank-brand__list']">
@@ -2187,6 +2224,25 @@ export default {
                       </li>
                     </ul>
                   </ExtendSelect>
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem
+            titleText="입금은행"
+            target="#testInput011Button"
+            :selectOnly="true"
+          >
+            <FormInvalid :error="state.testError001">
+              <InputBlock :error="state.testError001">
+                <InputBlockCell :flexible="true">
+                  <BankSelect
+                    id="testInput011"
+                    buttonId="testInput011Button"
+                    :onChange="testInputEvent"
+                  />
                 </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -4666,7 +4722,7 @@ export default {
       <h2 class="test-section-title">Key Value Text</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
-        <KeyValueList>
+        <KeyValue>
           <KeyValueItem>
             <KeyValueTitle>차량명의</KeyValueTitle>
             <KeyValueText>
@@ -4688,12 +4744,12 @@ export default {
               (당사 차량 시세 가격 기준)
             </KeyValueText>
           </KeyValueItem>
-        </KeyValueList>
+        </KeyValue>
       </div>
 
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">align left</h3>
-        <KeyValueList align="left">
+        <KeyValue align="left">
           <KeyValueItem>
             <KeyValueTitle>제목</KeyValueTitle>
             <KeyValueText> 내용내용내용내용내용내용내용</KeyValueText>
@@ -4703,12 +4759,12 @@ export default {
             <KeyValueTitle>제목</KeyValueTitle>
             <KeyValueText> 내용내용내용내용내용내용내용</KeyValueText>
           </KeyValueItem>
-        </KeyValueList>
+        </KeyValue>
 
         <h3 class="test-section-sub-title row-margin-item-group">
           align left (size: regular)
         </h3>
-        <KeyValueList align="left" size="regular">
+        <KeyValue align="left" size="regular">
           <KeyValueItem>
             <KeyValueTitle>타이틀</KeyValueTitle>
             <KeyValueText> 내용내용내용내용내용내용내용</KeyValueText>
@@ -4717,12 +4773,12 @@ export default {
             <KeyValueTitle>타이틀</KeyValueTitle>
             <KeyValueText> 내용내용내용내용내용내용내용</KeyValueText>
           </KeyValueItem>
-        </KeyValueList>
+        </KeyValue>
 
         <h3 class="test-section-sub-title row-margin-item-group">
           align left (size: medium)
         </h3>
-        <KeyValueList align="left" size="medium">
+        <KeyValue align="left" size="medium">
           <KeyValueItem>
             <KeyValueTitle>타이틀</KeyValueTitle>
             <KeyValueText> 내용내용내용내용내용내용내용</KeyValueText>
@@ -4732,12 +4788,12 @@ export default {
             <KeyValueTitle>타이틀</KeyValueTitle>
             <KeyValueText> 내용내용내용내용내용내용내용</KeyValueText>
           </KeyValueItem>
-        </KeyValueList>
+        </KeyValue>
       </div>
 
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Vertical</h3>
-        <KeyValueList direction="vertical">
+        <KeyValue direction="vertical">
           <KeyValueItem>
             <KeyValueTitle>차량명의</KeyValueTitle>
             <KeyValueText>
@@ -4759,12 +4815,12 @@ export default {
               (당사 차량 시세 가격 기준)
             </KeyValueText>
           </KeyValueItem>
-        </KeyValueList>
+        </KeyValue>
       </div>
 
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">margin regular</h3>
-        <KeyValueList margin="regular">
+        <KeyValue margin="regular">
           <KeyValueItem>
             <KeyValueTitle>차량명의</KeyValueTitle>
             <KeyValueText>
@@ -4786,7 +4842,34 @@ export default {
               (당사 차량 시세 가격 기준)
             </KeyValueText>
           </KeyValueItem>
-        </KeyValueList>
+        </KeyValue>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">margin small</h3>
+        <KeyValue margin="small">
+          <KeyValueItem>
+            <KeyValueTitle>차량명의</KeyValueTitle>
+            <KeyValueText>
+              본인명의(공동명의 제외)<br />
+              소유기간 3개월 이상
+            </KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>소유차종</KeyValueTitle>
+            <KeyValueText>국산/수입 승용, RV, 승합</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>차량연식</KeyValueTitle>
+            <KeyValueText>
+              출고 이후 10년 이내<br />
+              차량가격 500만원 이상<br />
+              (당사 차량 시세 가격 기준)
+            </KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
       </div>
     </section>
 
@@ -5445,6 +5528,57 @@ export default {
               </span>
             </button>
           </li>
+          <li :class="$style['search-list__item']">
+            <RouterLink to="" :class="$style['search-list__link']">
+              <span :class="$style['search-list__text']">
+                개인금융<span :class="$style['search-list__icon']"
+                  ><IconLink /></span
+                >e하나<mark>신용</mark>대출
+              </span>
+            </RouterLink>
+          </li>
+          <li :class="$style['search-list__item']">
+            <RouterLink to="" :class="$style['search-list__link']">
+              <span :class="$style['search-list__text']">
+                2030을 위한 <mark>신용</mark>대출 혜택
+              </span>
+              <span :class="$style['search-list__date']">
+                2023.01.01 ~ 2023.01.24
+              </span>
+            </RouterLink>
+          </li>
+        </ul>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">margin regular</h3>
+
+        <ul
+          :class="[
+            $style['search-list'],
+            $style['search-list--margin-regular'],
+          ]"
+        >
+          <li :class="$style['search-list__item']">
+            <button type="button" :class="$style['search-list__link']">
+              <span :class="$style['search-list__text']">
+                서울특별시 강남구 <mark>역삼동</mark> 자자<mark>자이</mark>
+              </span>
+            </button>
+          </li>
+          <li :class="$style['search-list__item']">
+            <button type="button" :class="$style['search-list__link']">
+              <span :class="$style['search-list__text']">
+                서울특별시 강남구 <mark>역삼동</mark> 자자<mark>자이</mark>
+              </span>
+            </button>
+          </li>
+          <li :class="$style['search-list__item']">
+            <button type="button" :class="$style['search-list__link']">
+              <span :class="$style['search-list__text']">
+                서울특별시 강남구 <mark>역삼동</mark> 자자<mark>자이</mark>
+              </span>
+            </button>
+          </li>
         </ul>
       </div>
     </section>
@@ -5827,6 +5961,102 @@ export default {
         <div :class="[$style['inline-alert'], $style['inline-alert--error']]">
           <p :class="$style['inline-alert__text']">인증이 실패하였습니다.</p>
         </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Address List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <ul :class="$style['address-list']">
+          <li v-for="i in 3" :key="i" :class="$style['address-list__item']">
+            <div :class="$style['address-list__block']">
+              <div :class="$style['address-list__title']">16997</div>
+              <KeyValue align="left" margin="small" size="regular">
+                <KeyValueItem :classNames="{ item: 'text-body-4' }">
+                  <KeyValueTitle>도로명</KeyValueTitle>
+                  <KeyValueText
+                    >인천 서구 에코로 181 하나금융그룹데이터센터</KeyValueText
+                  >
+                </KeyValueItem>
+
+                <KeyValueItem :classNames="{ item: 'text-body-4' }">
+                  <KeyValueTitle>지번</KeyValueTitle>
+                  <KeyValueText>인천 서구 청라동 7-5</KeyValueText>
+                </KeyValueItem>
+              </KeyValue>
+              <button type="button" :class="$style['address-list__button']">
+                <span class="for-a11y">선택</span>
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Contents Button</h3>
+        <ul :class="[$style['address-list'], $style['address-list--select']]">
+          <li :class="$style['address-list__item']">
+            <ContentsButton>
+              <div :class="$style['address-list__block']">
+                <div :class="$style['address-list__title']">16997</div>
+                <KeyValue align="left" margin="small" size="medium">
+                  <KeyValueItem
+                    :classNames="{ item: 'text-body-4 color-black' }"
+                  >
+                    <KeyValueTitle>도로명</KeyValueTitle>
+                    <KeyValueText>인천 서구 에코로 181</KeyValueText>
+                  </KeyValueItem>
+
+                  <KeyValueItem
+                    :classNames="{ item: 'text-body-4 color-black' }"
+                  >
+                    <KeyValueTitle>입력 주소</KeyValueTitle>
+                    <KeyValueText>하나금융그룹 로비</KeyValueText>
+                  </KeyValueItem>
+                </KeyValue>
+              </div>
+            </ContentsButton>
+          </li>
+          <li :class="$style['address-list__item']">
+            <ContentsButton>
+              <div :class="$style['address-list__block']">
+                <div :class="$style['address-list__title']">16997</div>
+                <KeyValue align="left" margin="small" size="medium">
+                  <KeyValueItem
+                    :classNames="{ item: 'text-body-4 color-black' }"
+                  >
+                    <KeyValueTitle>지번</KeyValueTitle>
+                    <KeyValueText>인천 서구 청라동 7-5</KeyValueText>
+                  </KeyValueItem>
+
+                  <KeyValueItem
+                    :classNames="{ item: 'text-body-4 color-black' }"
+                  >
+                    <KeyValueTitle>입력 주소</KeyValueTitle>
+                    <KeyValueText>하나금융그룹 로비</KeyValueText>
+                  </KeyValueItem>
+                </KeyValue>
+              </div>
+            </ContentsButton>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Keyword Rank</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <ol :class="$style['keyword-rank']">
+          <li v-for="i in 5" :key="i" :class="$style['keyword-rank__item']">
+            <button type="button" :class="$style['keyword-rank__button']">
+              <span :class="$style['keyword-rank__num']">{{ i }}</span>
+              <span :class="$style['keyword-rank__text']">
+                내 대출 내 대출 내 대출 내 대출
+              </span>
+            </button>
+          </li>
+        </ol>
       </div>
     </section>
 

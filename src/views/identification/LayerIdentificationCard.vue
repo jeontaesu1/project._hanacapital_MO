@@ -23,13 +23,13 @@ import PartInput from '@/components/ui/form/PartInput.vue';
 import ExtendSelect from '@/components/ui/form/ExtendSelect.vue';
 import ExtendSelectOption from '@/components/ui/form/ExtendSelectOption.vue';
 
-import BrandLogo001 from '@/assets/images/bank-logo/hana.svg?component';
-import BrandLogo002 from '@/assets/images/bank-logo/lotte.svg?component';
-import BrandLogo003 from '@/assets/images/bank-logo/samsung.svg?component';
-import BrandLogo004 from '@/assets/images/bank-logo/shinhan.svg?component';
-import BrandLogo005 from '@/assets/images/bank-logo/kb.svg?component';
-import BrandLogo006 from '@/assets/images/bank-logo/hyundai.svg?component';
-import BrandLogo007 from '@/assets/images/bank-logo/bc.svg?component';
+import BrandLogo001 from '@/assets/images/card-logo/hana.svg?component';
+import BrandLogo002 from '@/assets/images/card-logo/lotte.svg?component';
+import BrandLogo003 from '@/assets/images/card-logo/samsung.svg?component';
+import BrandLogo004 from '@/assets/images/card-logo/shinhan.svg?component';
+import BrandLogo005 from '@/assets/images/card-logo/kb.svg?component';
+import BrandLogo006 from '@/assets/images/card-logo/hyundai.svg?component';
+import BrandLogo007 from '@/assets/images/card-logo/bc.svg?component';
 
 export default {
   components: {
@@ -145,7 +145,11 @@ export default {
           </FormInvalid>
         </FormListItem>
 
-        <FormListItem titleText="카드사" target="#layerIdentificationCardBrand">
+        <FormListItem
+          titleText="카드사"
+          target="#layerIdentificationCardBrand"
+          :selectOnly="true"
+        >
           <FormInvalid :error="state.brandError">
             <InputBlock :error="state.brandError">
               <InputBlockCell :flexible="true">
