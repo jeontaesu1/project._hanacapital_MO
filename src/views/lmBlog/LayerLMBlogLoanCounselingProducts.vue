@@ -1,6 +1,6 @@
 <script>
 // LM_M01_l010_한도/금리 확인 팝업
-import { ref, reactive } from 'vue';
+import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
@@ -47,17 +47,8 @@ export default {
   },
   setup() {
     const layer = ref(null);
-    const state = reactive({
-      phoneError: false,
-      typeError: false,
-      periodError: false,
-      amountError: false,
-      accountError: false,
-      dateError: false,
-    });
 
     return {
-      state,
       layer,
     };
   },

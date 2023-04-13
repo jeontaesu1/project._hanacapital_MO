@@ -80,7 +80,6 @@ export default {
 
     const state = reactive({
       accountError: false,
-      nameError: false,
     });
 
     const store = {
@@ -198,7 +197,7 @@ export default {
       <!-- case: 가상계좌 입금 선택 시 노출 -->
       <div class="inline-wrap align-right row-margin-item">
         <TextButton theme="quaternary" @click="layer001Open">
-          가상계좌 유의사항 유의사항
+          가상계좌 유의사항
           <template v-slot:rightIcon>
             <iconInformation />
           </template>

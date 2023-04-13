@@ -1,6 +1,6 @@
 <script>
 // My_M01_l016
-import { ref, reactive } from 'vue';
+import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
@@ -21,6 +21,7 @@ import KeyValueList from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
+import UnitText from '@/components/ui/text/UnitText.vue';
 
 export default {
   components: {
@@ -43,18 +44,12 @@ export default {
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
+    UnitText,
   },
   setup() {
     const layer = ref(null);
-    const state = reactive({
-      phoneError: false,
-      typeError: false,
-      periodError: false,
-      amountError: false,
-    });
 
     return {
-      state,
       layer,
     };
   },
@@ -84,14 +79,11 @@ export default {
       <BasicBox>
         <BasicBoxHead>
           <BasicBoxHeadLeft>
-            <h3 class="text-body-1 font-weight-medium">오토론 12가4567</h3>
+            <h3 class="text-body-1 font-weight-medium">중도상환 예상 금액</h3>
           </BasicBoxHeadLeft>
-          <BasicBoxHeadRight class="text-title-2 font-weight-bold"
-            >999,999,999
-            <span class="font-weight-medium text-body-3"
-              >원</span
-            ></BasicBoxHeadRight
-          >
+          <BasicBoxHeadRight>
+            <UnitText rightUnit="원" align="right">999,999,999</UnitText>
+          </BasicBoxHeadRight>
         </BasicBoxHead>
 
         <KeyValueList margin="regular">

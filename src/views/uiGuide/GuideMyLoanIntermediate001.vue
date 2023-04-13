@@ -6,9 +6,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-// import Layer from '@/views/';
 import LayerMyLoanIntermediate from '@/views/myLoan/LayerMyLoanIntermediate.vue';
-import LayerMyLoanIntermediateNotice from '@/views/myLoan/LayerMyLoanIntermediateNotice.vue';
 import LayerMyLoanIntermediateConfirm from '@/views/myLoan/LayerMyLoanIntermediateConfirm.vue';
 import LayerMyLoanIntermediateComplete from '@/views/myLoan/LayerMyLoanIntermediateComplete.vue';
 
@@ -18,9 +16,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    // Layer,
     LayerMyLoanIntermediate,
-    LayerMyLoanIntermediateNotice,
     LayerMyLoanIntermediateConfirm,
     LayerMyLoanIntermediateComplete,
   },
@@ -28,7 +24,6 @@ export default {
     const layer001 = ref(null);
     const layer002 = ref(null);
     const layer003 = ref(null);
-    const layer004 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -39,19 +34,14 @@ export default {
     const layer003Open = (e = {}) => {
       layer003.value.layer.open(e.target);
     };
-    const layer004Open = (e = {}) => {
-      layer004.value.layer.open(e.target);
-    };
 
     return {
       layer001,
       layer002,
       layer003,
-      layer004,
       layer001Open,
       layer002Open,
       layer003Open,
-      layer004Open,
     };
   },
 };
@@ -72,27 +62,18 @@ export default {
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer002Open">
-          유의사항 팝업<br />My_M01_l015
-        </BasicButton>
-      </ButtonListItem>
-      <ButtonListItem>
-        <BasicButton @click="layer003Open">
           금액조회<br />My_M01_l016
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer004Open">
+        <BasicButton @click="layer003Open">
           신청 완료<br />My_M01_l017
         </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
-    <!--
-    <Layer ref="layer001" />
-    -->
     <LayerMyLoanIntermediate ref="layer001" />
-    <LayerMyLoanIntermediateNotice ref="layer002" />
-    <LayerMyLoanIntermediateConfirm ref="layer003" />
-    <LayerMyLoanIntermediateComplete ref="layer004" />
+    <LayerMyLoanIntermediateConfirm ref="layer002" />
+    <LayerMyLoanIntermediateComplete ref="layer003" />
   </PageContents>
 </template>

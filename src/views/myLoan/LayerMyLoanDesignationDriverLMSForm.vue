@@ -49,7 +49,7 @@ export default {
   setup() {
     const layer = ref(null);
     const state = reactive({
-      licenseError: false,
+      numberError: false,
       dateError: false,
     });
 
@@ -110,8 +110,8 @@ export default {
           titleText="면허발급번호"
           target="#layerMyLoanDesignationDriverLMSFormNumber"
         >
-          <FormInvalid :error="state.licenseError">
-            <InputBlock :error="state.licenseError">
+          <FormInvalid :error="state.numberError">
+            <InputBlock :error="state.numberError">
               <InputBlockCell>
                 <BasicSelect
                   :option="[

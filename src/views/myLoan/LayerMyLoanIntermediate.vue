@@ -35,7 +35,9 @@ import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
+import UnitText from '@/components/ui/text/UnitText.vue';
 import iconInformation from '@/assets/images/icon/information.svg?component';
+import LayerMyLoanIntermediateNotice from './LayerMyLoanIntermediateNotice.vue';
 
 export default {
   components: {
@@ -72,20 +74,28 @@ export default {
     BasicHr,
     TextButton,
     NoticeText,
+    UnitText,
     iconInformation,
+    LayerMyLoanIntermediateNotice,
   },
   setup() {
     const layer = ref(null);
+    const layer001 = ref(null);
+
+    const layer001Open = (e = {}) => {
+      layer001.value.layer.open(e.target);
+    };
+
     const state = reactive({
-      phoneError: false,
       typeError: false,
-      periodError: false,
       amountError: false,
       accountError: false,
       dateError: false,
     });
 
     return {
+      layer001,
+      layer001Open,
       state,
       layer,
     };
@@ -176,13 +186,9 @@ export default {
             <KeyValueTitle class="text-body-1 color-black font-weight-medium">
               결제예정금액
             </KeyValueTitle>
-
-            <KeyValueText class="text-title-2 font-weight-bold"
-              >845,000
-              <spna class="font-weight-medium text-body-1"
-                >원</spna
-              ></KeyValueText
-            >
+            <KeyValueText>
+              <UnitText rightUnit="원" align="right">845,000</UnitText>
+            </KeyValueText>
           </KeyValueItem>
         </KeyValueList>
       </BasicBox>
@@ -245,7 +251,7 @@ export default {
           :selectOnly="true"
         >
           <FormInvalid :error="state.dateError">
-            <InputBlock :error="state.datedError">
+            <InputBlock :error="state.dateError">
               <InputBlockCell :flexible="true">
                 <BasicSelect
                   :option="[
@@ -326,7 +332,7 @@ export default {
         </FormListItem>
 
         <div class="inline-wrap align-right row-margin-item">
-          <TextButton theme="quaternary">
+          <TextButton theme="quaternary" @click="layer001Open">
             중도상환신청 유의사항
             <template v-slot:rightIcon>
               <iconInformation />
@@ -467,6 +473,8 @@ export default {
       </template>
     </FullPopup>
   </UiLayer>
+
+  <LayerMyLoanIntermediateNotice ref="layer001" />
 </template>
 
 <style lang="scss" module>
