@@ -20,6 +20,7 @@ import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
+import UnitText from '@/components/ui/text/UnitText.vue';
 
 export default {
   components: {
@@ -41,6 +42,7 @@ export default {
     KeyValueTitle,
     KeyValueText,
     BasicHr,
+    UnitText,
   },
   setup() {
     const layer = ref(null);
@@ -71,12 +73,25 @@ export default {
       </PageTextGroup>
 
       <BasicBox>
-        <BasicBoxHead>
+        <BasicBoxHead align="top">
           <BasicBoxHeadLeft>
-            <h3 class="text-body-1 font-weight-medium">NH투자증권(유캔그린)</h3>
+            <h3 class="text-body-1 font-weight-medium">제네시스</h3>
+            <p class="text-body-4 color-gray row-margin-small">더 뉴 G70</p>
+            <UnitText
+              rightUnit="원"
+              :classNames="{
+                wrap: 'row-margin-item',
+              }"
+              >628,190</UnitText
+            >
           </BasicBoxHeadLeft>
           <BasicBoxHeadRight>
-            <img src="" alt="" />
+            <div :class="$style['car-image']">
+              <img
+                src="@/assets/images/_dummy/car-sample.png"
+                alt="차량 정보 넣어주세요"
+              />
+            </div>
           </BasicBoxHeadRight>
         </BasicBoxHead>
         <KeyValueList margin="regular">
@@ -113,7 +128,7 @@ export default {
             }"
           >
             <KeyValueTitle>외장색상</KeyValueTitle>
-            <KeyValueText>아틸라스 화이트<span>색상박스</span></KeyValueText>
+            <KeyValueText>아틸라스 화이트<span>//컬러칩</span></KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem
@@ -123,7 +138,7 @@ export default {
           >
             <KeyValueTitle>내장색상</KeyValueTitle>
             <KeyValueText
-              >네츄럴 베이지 / 다크 베이지<span>색상박스</span></KeyValueText
+              >네츄럴 베이지 / 다크 베이지<span>//컬러칩</span></KeyValueText
             >
           </KeyValueItem>
 
@@ -151,8 +166,12 @@ export default {
             }"
           >
             <KeyValueTitle>차량 가격</KeyValueTitle>
-            <KeyValueText>
-              <span class="color-green">63,000,000 원</span>
+            <KeyValueText
+              :classNames="{
+                text: 'color-blue',
+              }"
+            >
+              63,000,000 원
             </KeyValueText>
           </KeyValueItem>
 
@@ -336,5 +355,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/errorContents/LayerErrorFull.scss';
+@import '@/assets/scss/views/auto/LayerAutoLongRentalOrderConfirm.scss';
 </style>
