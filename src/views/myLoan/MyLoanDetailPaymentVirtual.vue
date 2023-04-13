@@ -10,12 +10,12 @@ import KeyValueList from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
-import LayerMyLoanMaintenanceHistoryDetail from '@/views/myLoan/LayerMyLoanMaintenanceHistoryDetail.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 import UiAccordion from '@/components/ui/accordion/UiAccordion.vue';
 import UiAccordionItem from '@/components/ui/accordion/UiAccordionItem.vue';
 import UiAccordionLayer from '@/components/ui/accordion/UiAccordionLayer.vue';
 import UiAccordionOpener from '@/components/ui/accordion/UiAccordionOpener.vue';
+import LayerMyLoanDetailPaymentVirtual from '@/views/myLoan/LayerMyLoanDetailPaymentVirtual.vue';
 
 import IconCopy from '@/assets/images/icon/copy.svg?component';
 import iconImportant from '@/assets/images/icon/important.svg?component';
@@ -34,11 +34,11 @@ export default {
     KeyValueTitle,
     KeyValueText,
     TextButton,
-    LayerMyLoanMaintenanceHistoryDetail,
     UiAccordion,
     UiAccordionItem,
     UiAccordionLayer,
     UiAccordionOpener,
+    LayerMyLoanDetailPaymentVirtual,
     IconCopy,
     iconImportant,
     BrandLogo001,
@@ -61,7 +61,7 @@ export default {
     };
 
     onMounted(() => {
-      store.ui.header.setTitle(() => '정비이력');
+      store.ui.header.setTitle(() => '결제/청구정보');
       store.ui.header.setLeftButtons(() => []);
       store.ui.header.setRightButtons(() => ['close']);
     });
@@ -88,7 +88,7 @@ export default {
           <h3 class="text-title-2">결제정보</h3>
         </div>
         <div class="flex-box__cell">
-          <TextButton theme="quaternary">
+          <TextButton theme="quaternary" @click="layer001Open">
             가상계좌 유의사항
             <template v-slot:rightIcon>
               <iconImportant />
@@ -362,7 +362,7 @@ export default {
       </BasicBox>
     </div>
 
-    <LayerMyLoanMaintenanceHistoryDetail ref="layer001" />
+    <LayerMyLoanDetailPaymentVirtual ref="layer001" />
   </PageContents>
 </template>
 

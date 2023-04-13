@@ -1400,8 +1400,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/my-loan/detail-payment-virtual',
-        status: '',
-        create: '',
+        status: 'ing',
+        create: '2023.04.14',
         log: [],
       },
       {
@@ -1411,8 +1411,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/my-loan/detail-payment-auto',
-        status: '',
-        create: '',
+        status: 'ing',
+        create: '2023.04.14',
         log: [],
       },
       {

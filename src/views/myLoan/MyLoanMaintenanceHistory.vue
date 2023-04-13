@@ -5,7 +5,6 @@ import { ref, onMounted, onUnmounted } from 'vue';
 import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
-import BasicBox from '@/components/ui/common/BasicBox.vue';
 import KeyValueList from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
@@ -16,7 +15,6 @@ import LayerMyLoanMaintenanceHistoryDetail from '@/views/myLoan/LayerMyLoanMaint
 export default {
   components: {
     PageContents,
-    BasicBox,
     KeyValueList,
     KeyValueItem,
     KeyValueTitle,
@@ -59,9 +57,9 @@ export default {
 
 <template>
   <PageContents>
-    <BasicBox class="row-margin-item-small">
-      <div :class="$style['flex']">
-        <div :class="$style['flex__left']">
+    <div :class="$style['logs']">
+      <div :class="[$style['logs__block'], 'row-margin-item-medium']">
+        <div div :class="$style['logs__left']">
           <h3 class="text-body-1 font-weight-medium">정비</h3>
           <KeyValueList
             align="left"
@@ -80,17 +78,19 @@ export default {
             </KeyValueItem>
           </KeyValueList>
         </div>
-        <div :class="$style['flex__right']">
-          <button type="button" :class="$style['link']" @click="layer001Open">
-            <span :class="$style['link__text']">상세보기</span>
+        <div div :class="$style['logs__right']">
+          <button
+            type="button"
+            :class="$style['logs__link']"
+            @click="layer001Open"
+          >
+            <span :class="$style['logs__link__text']">상세보기</span>
           </button>
         </div>
       </div>
-    </BasicBox>
 
-    <BasicBox class="row-margin-item-small">
-      <div :class="$style['flex']">
-        <div :class="$style['flex__left']">
+      <div :class="[$style['logs__block'], 'row-margin-item-medium']">
+        <div div :class="$style['logs__left']">
           <h3 class="text-body-1 font-weight-medium">수리</h3>
           <KeyValueList
             align="left"
@@ -109,17 +109,19 @@ export default {
             </KeyValueItem>
           </KeyValueList>
         </div>
-        <div :class="$style['flex__right']">
-          <button type="button" :class="$style['link']" @click="layer001Open">
-            <span :class="$style['link__text']">상세보기</span>
+        <div div :class="$style['logs__right']">
+          <button
+            type="button"
+            :class="$style['logs__link']"
+            @click="layer001Open"
+          >
+            <span :class="$style['logs__link__text']">상세보기</span>
           </button>
         </div>
       </div>
-    </BasicBox>
 
-    <BasicBox class="row-margin-item-small">
-      <div :class="$style['flex']">
-        <div :class="$style['flex__left']">
+      <div :class="[$style['logs__block'], 'row-margin-item-medium']">
+        <div div :class="$style['logs__left']">
           <h3 class="text-body-1 font-weight-medium">정비</h3>
           <KeyValueList
             align="left"
@@ -138,17 +140,19 @@ export default {
             </KeyValueItem>
           </KeyValueList>
         </div>
-        <div :class="$style['flex__right']">
-          <button type="button" :class="$style['link']" @click="layer001Open">
-            <span :class="$style['link__text']">상세보기</span>
+        <div div :class="$style['logs__right']">
+          <button
+            type="button"
+            :class="$style['logs__link']"
+            @click="layer001Open"
+          >
+            <span :class="$style['logs__link__text']">상세보기</span>
           </button>
         </div>
       </div>
-    </BasicBox>
 
-    <BasicBox class="row-margin-item-small">
-      <div :class="$style['flex']">
-        <div :class="$style['flex__left']">
+      <div :class="[$style['logs__block'], 'row-margin-item-medium']">
+        <div div :class="$style['logs__left']">
           <h3 class="text-body-1 font-weight-medium">정비</h3>
           <KeyValueList
             align="left"
@@ -167,13 +171,17 @@ export default {
             </KeyValueItem>
           </KeyValueList>
         </div>
-        <div :class="$style['flex__right']">
-          <button type="button" :class="$style['link']" @click="layer001Open">
-            <span :class="$style['link__text']">상세보기</span>
+        <div div :class="$style['logs__right']">
+          <button
+            type="button"
+            :class="$style['logs__link']"
+            @click="layer001Open"
+          >
+            <span :class="$style['logs__link__text']">상세보기</span>
           </button>
         </div>
       </div>
-    </BasicBox>
+    </div>
 
     <NoticeText :class="$style['notice']">
       사고/고장 접수, 정비관련 문의사항은<br />

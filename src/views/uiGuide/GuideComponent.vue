@@ -86,6 +86,8 @@ import BrandLogo004 from '@/assets/images/bank-logo/shinhan.svg?component';
 import BrandLogo005 from '@/assets/images/bank-logo/kb.svg?component';
 import BrandLogo006 from '@/assets/images/bank-logo/hyundai.svg?component';
 import BrandLogo007 from '@/assets/images/bank-logo/bc.svg?component';
+import BrandLogo008 from '@/assets/images/bank-logo/woori.svg?component';
+import BrandLogo009 from '@/assets/images/bank-logo/nh.svg?component';
 import IconCall from '@/assets/images/icon/call.svg?component';
 import IconCamera from '@/assets/images/icon/camera.svg?component';
 import IconFolder from '@/assets/images/icon/folder.svg?component';
@@ -200,6 +202,8 @@ export default {
     BrandLogo005,
     BrandLogo006,
     BrandLogo007,
+    BrandLogo008,
+    BrandLogo009,
     IconCamera,
     IconFolder,
     IconLocation,
@@ -4106,7 +4110,7 @@ export default {
               }"
             >
               <div :class="$style['account__logo']">
-                <BrandLogo001 />
+                <BrandLogo005 />
               </div>
               국민
             </KeyValueTitle>
@@ -4133,7 +4137,7 @@ export default {
               }"
             >
               <div :class="$style['account__logo']">
-                <BrandLogo002 />
+                <BrandLogo008 />
               </div>
               농협
             </KeyValueTitle>
@@ -4160,9 +4164,9 @@ export default {
               }"
             >
               <div :class="$style['account__logo']">
-                <BrandLogo003 />
+                <BrandLogo009 />
               </div>
-              농협
+              우리
             </KeyValueTitle>
             <KeyValueText
               :classNames="{
@@ -4187,7 +4191,7 @@ export default {
               }"
             >
               <div :class="$style['account__logo']">
-                <BrandLogo004 />
+                <BrandLogo001 />
               </div>
               하나
             </KeyValueTitle>
@@ -4214,7 +4218,7 @@ export default {
               }"
             >
               <div :class="$style['account__logo']">
-                <BrandLogo005 />
+                <BrandLogo004 />
               </div>
               신한
             </KeyValueTitle>
@@ -4896,6 +4900,122 @@ export default {
           </BasicBoxHead>
           // contnets
         </BasicBox>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Box Link (logs)</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+      </div>
+      <div :class="$style['logs']">
+        <div :class="[$style['logs__block'], 'row-margin-item-medium']">
+          <div div :class="$style['logs__left']">
+            <h3 class="text-body-1 font-weight-medium">정비</h3>
+            <KeyValueList
+              align="left"
+              size="regular"
+              margin="small"
+              :classNames="{ wrap: 'row-margin-small' }"
+            >
+              <KeyValueItem :classNames="{ item: 'text-body-4' }">
+                <KeyValueTitle>수리점</KeyValueTitle>
+                <KeyValueText>서울 하나카수리센터</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem :classNames="{ item: 'text-body-4' }">
+                <KeyValueTitle>입고일</KeyValueTitle>
+                <KeyValueText>2021.08.24</KeyValueText>
+              </KeyValueItem>
+            </KeyValueList>
+          </div>
+          <div div :class="$style['logs__right']">
+            <button type="button" :class="$style['logs__link']">
+              <span :class="$style['logs__link__text']">상세보기</span>
+            </button>
+          </div>
+        </div>
+
+        <div :class="[$style['logs__block'], 'row-margin-item-medium']">
+          <div div :class="$style['logs__left']">
+            <h3 class="text-body-1 font-weight-medium">수리</h3>
+            <KeyValueList
+              align="left"
+              size="regular"
+              margin="small"
+              :classNames="{ wrap: 'row-margin-small' }"
+            >
+              <KeyValueItem :classNames="{ item: 'text-body-4' }">
+                <KeyValueTitle>수리점</KeyValueTitle>
+                <KeyValueText>서울 하나카수리센터</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem :classNames="{ item: 'text-body-4' }">
+                <KeyValueTitle>입고일</KeyValueTitle>
+                <KeyValueText>2021.08.24</KeyValueText>
+              </KeyValueItem>
+            </KeyValueList>
+          </div>
+          <div div :class="$style['logs__right']">
+            <button type="button" :class="$style['logs__link']">
+              <span :class="$style['logs__link__text']">상세보기</span>
+            </button>
+          </div>
+        </div>
+
+        <div :class="[$style['logs__block'], 'row-margin-item-medium']">
+          <div div :class="$style['logs__left']">
+            <h3 class="text-body-1 font-weight-medium">정비</h3>
+            <KeyValueList
+              align="left"
+              size="regular"
+              margin="small"
+              :classNames="{ wrap: 'row-margin-small' }"
+            >
+              <KeyValueItem :classNames="{ item: 'text-body-4' }">
+                <KeyValueTitle>수리점</KeyValueTitle>
+                <KeyValueText>서울 하나카수리센터</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem :classNames="{ item: 'text-body-4' }">
+                <KeyValueTitle>입고일</KeyValueTitle>
+                <KeyValueText>2021.08.24</KeyValueText>
+              </KeyValueItem>
+            </KeyValueList>
+          </div>
+          <div div :class="$style['logs__right']">
+            <button type="button" :class="$style['logs__link']">
+              <span :class="$style['logs__link__text']">상세보기</span>
+            </button>
+          </div>
+        </div>
+
+        <div :class="[$style['logs__block'], 'row-margin-item-medium']">
+          <div div :class="$style['logs__left']">
+            <h3 class="text-body-1 font-weight-medium">정비</h3>
+            <KeyValueList
+              align="left"
+              size="regular"
+              margin="small"
+              :classNames="{ wrap: 'row-margin-small' }"
+            >
+              <KeyValueItem :classNames="{ item: 'text-body-4' }">
+                <KeyValueTitle>수리점</KeyValueTitle>
+                <KeyValueText>서울 하나카수리센터</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem :classNames="{ item: 'text-body-4' }">
+                <KeyValueTitle>입고일</KeyValueTitle>
+                <KeyValueText>2021.08.24</KeyValueText>
+              </KeyValueItem>
+            </KeyValueList>
+          </div>
+          <div div :class="$style['logs__right']">
+            <button type="button" :class="$style['logs__link']">
+              <span :class="$style['logs__link__text']">상세보기</span>
+            </button>
+          </div>
+        </div>
       </div>
     </section>
 
