@@ -45,10 +45,10 @@ export default {
       },
     };
   },
+  inheritAttrs: false,
   components: {
     flatPickr,
   },
-  inheritAttrs: false,
   props: {
     id: {
       Type: String,

@@ -80,9 +80,9 @@ import SearchButton from '@/components/ui/button/SearchButton.vue';
 import SwitchCheckBox from '@/components/ui/form/SwitchCheckBox.vue';
 import BasicTooltip from '@/components/ui/tooltip/BasicTooltip.vue';
 import ContentsButton from '@/components/ui/button/ContentsButton.vue';
-import InputDateBasic from '@/components/ui/form/InputDateBasic.vue';
-import InputDateDual from '@/components/ui/form/InputDateDual.vue';
-import InputRange from '@/components/ui/form/InputRange.vue';
+// import InputDateBasic from '@/components/ui/form/InputDateBasic.vue';
+// import InputDateDual from '@/components/ui/form/InputDateDual.vue';
+// import InputRange from '@/components/ui/form/InputRange.vue';
 
 import BrandLogo001 from '@/assets/images/card-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/card-logo/lotte.svg?component';
@@ -198,9 +198,9 @@ export default {
     SwitchCheckBox,
     BasicTooltip,
     ContentsButton,
-    InputDateBasic,
-    InputDateDual,
-    InputRange,
+    // InputDateBasic,
+    // InputDateDual,
+    // InputRange,
     IconAdd,
     BrandLogo001,
     BrandLogo002,
@@ -1942,7 +1942,7 @@ export default {
                   <!-- DD : 보안 키패드 열렸을 때 :isFocused="true" props 추가 해서 포커싱 스타일 적용 -->
                   <SecurityInput
                     title="주민등록번호 뒤 7자리"
-                    :dot="[false, false, false, false, false, false, false]"
+                    :dot="[true, true, true, false, false, false, false]"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -2258,39 +2258,38 @@ export default {
             </FormInvalid>
           </FormListItem>
 
-          <FormListItem titleText="달력 1개 표기" target="#testInput0100">
+          <!-- 작업중
+          <FormListItem titleText="달력 1개 표기" target="#testInput012">
             <FormInvalid :error="state.testError001">
               <InputBlock :error="state.testError001">
                 <InputBlockCell :flexible="true">
-                  <InputDateBasic id="testInput0100" />
+                  <InputDateBasic id="testInput012" />
                 </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
 
-          <FormListItem titleText="달력 2개 표기" target="#testInput0110">
+          <FormListItem titleText="달력 2개 표기" target="#testInput013Start">
             <FormInvalid :error="state.testError001">
               <InputBlock :error="state.testError001">
-                <InputDateDual id="testInput0110" />
+                <InputDateDual
+                  startId="testInput013Start"
+                  endId="testInput013End"
+                />
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
 
-          <!--  -->
-          <FormListItem
-            titleText="조회기간"
-            target="#testInput0120"
-            :forceFocus="true"
-          >
+          <FormListItem titleText="조회기간" :forceFocus="true">
             <FormInvalid :error="state.testError001">
-              <BoxCheckList>
+              <BoxCheckList :classNames="{ wrap: 'row-margin-item-group' }">
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="testBoxCheckList009"
-                    id="testBoxCheckList0091_001"
+                    name="testInput014_001"
+                    id="testInput014_001_001"
                   >
                     <BoxCheckLabel>1개월</BoxCheckLabel>
                   </BoxCheck>
@@ -2298,8 +2297,8 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="testBoxCheckList009"
-                    id="testBoxCheckList0091_002"
+                    name="testInput014_001"
+                    id="testInput014_001_002"
                   >
                     <BoxCheckLabel>3개월</BoxCheckLabel>
                   </BoxCheck>
@@ -2307,8 +2306,8 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="testBoxCheckList009"
-                    id="testBoxCheckList0091_003"
+                    name="testInput014_001"
+                    id="testInput014_001_003"
                   >
                     <BoxCheckLabel>6개월</BoxCheckLabel>
                   </BoxCheck>
@@ -2316,20 +2315,24 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="testBoxCheckList009"
-                    id="testBoxCheckList0091_004"
+                    name="testInput014_001"
+                    id="testInput014_001_004"
                   >
                     <BoxCheckLabel>1년</BoxCheckLabel>
                   </BoxCheck>
                 </BoxCheckListItem>
               </BoxCheckList>
-              <InputBlock class="row-margin-item-group row-margin-bottom-none">
-                <InputDateDual id="testInput0120" />
+              <InputBlock :error="state.testError001">
+                <InputDateDual
+                  startId="testInput014Start"
+                  endId="testInput014End"
+                />
               </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
               <FormHelpText>조회기간은 최대 1년까지 가능해요.</FormHelpText>
             </FormInvalid>
           </FormListItem>
-          <!--  -->
+          -->
 
           <BasicTextarea
             :error="state.testError001"
@@ -6298,13 +6301,14 @@ export default {
       </div>
     </section>
 
+    <!-- 작업중
     <section class="test-section">
       <h2 class="test-section-title">Component Title</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
         <InputRange />
 
-        <!-- 소스 카피 기능용 소스(미구현) -->
+        < !-- 소스 카피 기능용 소스(미구현) -- >
         <div class="test-section-copy">
           <div>
             <button class="test-section-copy-button" @click="copyToClipboard">
@@ -6313,7 +6317,15 @@ export default {
           </div>
           <pre class="test-section-copy-code" ref="preRef"></pre>
         </div>
-        <!-- //소스 카피 기능용 소스 -->
+        < !-- //소스 카피 기능용 소스 -- >
+      </div>
+    </section>
+    -->
+
+    <section class="test-section">
+      <h2 class="test-section-title">Component Title</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
       </div>
     </section>
   </div>
