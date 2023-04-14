@@ -1,0 +1,101 @@
+@import '@/assets/scss/components/import/basic-list.scss';
+
+.consulting {
+  border: 1px solid $color-gray-30;
+  border-radius: 12px;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 20px;
+    box-sizing: border-box;
+  }
+
+  &__info {
+    margin-top: 4px;
+    font-size: 0;
+    line-height: 0;
+
+    * {
+      display: inline-block;
+      vertical-align: bottom;
+    }
+
+    &-name {
+      @include font-size-head(20);
+      font-weight: 500;
+    }
+
+    &-email {
+      margin-left: 6px;
+      @include font-size-default(13);
+    }
+  }
+
+  &__tell {
+    margin-top: 16px;
+  }
+
+  &__sub {
+    margin-top: 10px;
+    font-size: 0;
+    line-height: 0;
+
+    * {
+      display: inline-block;
+      vertical-align: top;
+      @include font-size-default(12);
+      color: $color-gray-80;
+      font-weight: 300;
+    }
+
+    &-title + &-text {
+      margin-left: 2px;
+    }
+  }
+
+  &__icon {
+    width: 67px;
+    height: 67px;
+    margin-left: 15px;
+    padding: 15.5px;
+    text-align: center;
+    background-color: $color-gray-10;
+    border-radius: 50%;
+    box-sizing: border-box;
+  }
+}
+
+.menu {
+  margin-top: 16px;
+
+  &__inner {
+    display: flex;
+  }
+
+  &__box {
+    flex: 1;
+    border: 1px solid $color-gray-30;
+    border-radius: 12px;
+
+    & + & {
+      margin-left: 16px;
+    }
+  }
+
+  &__link {
+    display: block;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+  }
+
+  &__title {
+    @include font-size-default(15);
+    color: $color-black;
+    font-weight: 500;
+  }
+}
