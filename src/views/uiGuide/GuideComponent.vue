@@ -4403,7 +4403,7 @@ export default {
             <NavTabButton tagName="button" type="button">Tab 3</NavTabButton>
             <NavTabButton tagName="button" type="button">Tab 4</NavTabButton>
             <NavTabButton tagName="button" type="button" :active="true">
-              Tab 5
+              Tab 5의
             </NavTabButton>
             <NavTabButton tagName="button" type="button">Tab 6</NavTabButton>
             <NavTabButton tagName="button" type="button">Tab 7</NavTabButton>

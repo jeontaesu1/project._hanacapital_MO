@@ -6,12 +6,15 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
+import LayerInventoryFinanceEarlyAlertInstant from '@/views/inventoryFinance/LayerInventoryFinanceEarlyAlertInstant.vue';
+
 export default {
   components: {
     PageContents,
     BasicButton,
     ButtonList,
     ButtonListItem,
+    LayerInventoryFinanceEarlyAlertInstant,
   },
   setup() {
     const layer001 = ref(null);
@@ -43,15 +46,17 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open"
-          >중도상환 입금 예약 신청_오늘 즉시 출금<br />IF_M03_l002</BasicButton
-        >
+        <BasicButton @click="layer001Open">
+          중도상환 입금 예약 신청_오늘 즉시 출금<br />IF_M03_l002
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer002Open"
-          >중도상환 입금 예약 신청_가상계좌 입금<br />IF_M03_l003</BasicButton
-        >
+        <BasicButton @click="layer002Open">
+          중도상환 입금 예약 신청_가상계좌 입금<br />IF_M03_l003
+        </BasicButton>
       </ButtonListItem>
     </ButtonList>
+
+    <LayerInventoryFinanceEarlyAlertInstant ref="layer001" />
   </PageContents>
 </template>
