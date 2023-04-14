@@ -42,7 +42,7 @@ export default {
     const layer = ref(null);
 
     const state = reactive({
-      timeError001: false,
+      timeError: false,
     });
 
     return {
@@ -74,10 +74,10 @@ export default {
       <FormList>
         <FormListItem
           titleText="연락가능시간"
-          target="#layerAutoLongRentalEvaluationCounselingButton"
+          target="#layerAutoLongRentalEvaluationCounselingTimeButton"
         >
-          <FormInvalid :error="state.timeError001">
-            <InputBlock :error="state.timeError001">
+          <FormInvalid :error="state.timeError">
+            <InputBlock :error="state.timeError">
               <InputBlockCell :flexible="true">
                 <BasicSelect
                   :option="[
@@ -120,8 +120,8 @@ export default {
                   ]"
                   buttonTitle="시작시간을 선택해 주세요"
                   layerTitle="시작시간을 선택해 주세요"
-                  id="layerAutoLongRentalEvaluationCounselingTime"
-                  buttonId="layerAutoLongRentalEvaluationCounselingButton"
+                  id="layerAutoLongRentalEvaluationCounselingTime1"
+                  buttonId="layerAutoLongRentalEvaluationCounselingTimeButton"
                 />
               </InputBlockCell>
               <InputBlockCell class="text-body-3">시</InputBlockCell>
@@ -164,8 +164,8 @@ export default {
                   ]"
                   buttonTitle="종료시간을 선택해 주세요"
                   layerTitle="종료시간을 선택해 주세요"
-                  id="layerAutoLongRentalEvaluationCounselingTime"
-                  buttonId="layerAutoLongRentalEvaluationCounselingButton"
+                  id="layerAutoLongRentalEvaluationCounselingTime2"
+                  buttonId="layerAutoLongRentalEvaluationCounselingTimeButton"
                 />
               </InputBlockCell>
               <InputBlockCell class="text-body-3">시 사이</InputBlockCell>

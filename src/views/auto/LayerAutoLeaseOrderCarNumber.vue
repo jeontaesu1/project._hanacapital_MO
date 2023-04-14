@@ -52,7 +52,7 @@ export default {
     const layer = ref(null);
 
     const state = reactive({
-      numberError001: false,
+      carNumberError: false,
     });
 
     return {
@@ -90,8 +90,8 @@ export default {
             titleText="차량번호"
             target="#layerAutoLeaseOrderCarNumberInput"
           >
-            <FormInvalid :error="state.numberError001">
-              <InputBlock :error="state.numberError001">
+            <FormInvalid :error="state.carNumberError">
+              <InputBlock :error="state.carNumberError">
                 <InputBlockCell :flexible="true">
                   <BasicInput
                     id="layerAutoLeaseOrderCarNumberInput"
@@ -124,7 +124,7 @@ export default {
       <div>
         <h3 class="text-body-2 row-margin-item-medium">체크리스트</h3>
         <CheckBox
-          id="LayerAutoLeaseOrderCarNumberCheckBox01"
+          id="LayerAutoLeaseOrderCarNumberCheckBox1"
           theme="tertiary"
           :defaultChecked="true"
         >
@@ -132,7 +132,7 @@ export default {
           <CheckBoxLabelText>차량번호가 맞습니까?</CheckBoxLabelText>
         </CheckBox>
         <CheckBox
-          id="LayerAutoLeaseOrderCarNumberCheckBox02"
+          id="LayerAutoLeaseOrderCarNumberCheckBox2"
           theme="tertiary"
           :defaultChecked="true"
           :classNames="{ wrap: 'row-margin-item-medium' }"
