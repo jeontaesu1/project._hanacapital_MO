@@ -14,6 +14,7 @@ import LayerAutoSuccessionURLSend from '@/views/auto/LayerAutoSuccessionURLSend.
 import LayerAutoSuccessionAssigneeSearch from '@/views/auto/LayerAutoSuccessionAssigneeSearch.vue';
 import LayerAutoSuccessionAssigneeLeaseConfirm from '@/views/auto/LayerAutoSuccessionAssigneeLeaseConfirm.vue';
 import LayerAutoSuccessionAssigneeRentalConfirm from '@/views/auto/LayerAutoSuccessionAssigneeRentalConfirm.vue';
+import LayerAutoSuccessionAssigneeForm from '@/views/auto/LayerAutoSuccessionAssigneeForm.vue';
 
 import LayerAutoSuccessionAttorneyIdentification from '@/views/auto/LayerAutoSuccessionAttorneyIdentification.vue';
 import LayerAutoSuccessionAttorneyComplete from '@/views/auto/LayerAutoSuccessionAttorneyComplete.vue';
@@ -33,6 +34,9 @@ export default {
     LayerAutoSuccessionURLSend,
     LayerAutoSuccessionAssigneeSearch,
     LayerAutoSuccessionAssigneeLeaseConfirm,
+    LayerAutoSuccessionAssigneeRentalConfirm,
+    LayerAutoSuccessionAssigneeForm,
+
     LayerAutoSuccessionAttorneyComplete,
     LayerAutoSuccessionAssigneeIdentification,
     LayerAutoSuccessionAttorneyIdentification,
@@ -48,6 +52,7 @@ export default {
     const layer007 = ref(null);
     const layer008 = ref(null);
     const layer009 = ref(null);
+
     const layer010 = ref(null);
     const layer011 = ref(null);
     const layer012 = ref(null);
@@ -202,8 +207,13 @@ export default {
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer008Open"
-          >리스 승계 정보확인<br />AF_M07_l007</BasicButton
+          >렌트 승계 상세정보<br />AF_M07_l007</BasicButton
         >
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer009Open"
+          >양수인 정보입력<br />AF_M07_l008 / AF_M07_l009 / AF_M07_l010
+        </BasicButton>
       </ButtonListItem>
 
       <!-- 
@@ -276,8 +286,8 @@ export default {
     <LayerAutoSuccessionURLSend ref="layer005" />
     <LayerAutoSuccessionAssigneeSearch ref="layer006" />
     <LayerAutoSuccessionAssigneeLeaseConfirm ref="layer007" />
-    <LayerAuto ref="layer008" />
-    <LayerAuto ref="layer009" />
+    <LayerAutoSuccessionAssigneeRentalConfirm ref="layer008" />
+    <LayerAutoSuccessionAssigneeForm ref="layer009" />
     <LayerAuto ref="layer010" />
     <LayerAuto ref="layer011" />
     <LayerAuto ref="layer012" />

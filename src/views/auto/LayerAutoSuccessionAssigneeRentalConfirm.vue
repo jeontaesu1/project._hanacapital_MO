@@ -132,8 +132,8 @@ export default {
             <BoxCheckListItem>
               <BoxCheck
                 :minSide="true"
-                name="layerAutoSuccessionAssigneeLeaseConfirmType"
-                id="layerAutoSuccessionAssigneeLeaseConfirmType1"
+                name="layerAutoSuccessionAssigneeRentalConfirmType"
+                id="layerAutoSuccessionAssigneeRentalConfirmType1"
                 :defaultChecked="true"
               >
                 <BoxCheckLabel>동일 조건 승계</BoxCheckLabel>
@@ -142,8 +142,8 @@ export default {
             <BoxCheckListItem>
               <BoxCheck
                 :minSide="true"
-                name="layerAutoSuccessionAssigneeLeaseConfirmType"
-                id="layerAutoSuccessionAssigneeLeaseConfirmType2"
+                name="layerAutoSuccessionAssigneeRentalConfirmType"
+                id="layerAutoSuccessionAssigneeRentalConfirmType2"
               >
                 <BoxCheckLabel>전액선납 승계</BoxCheckLabel>
               </BoxCheck>
@@ -205,5 +205,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/auto/LayerAutoSuccessionAssigneeLeaseConfirm.scss';
+@import '@/assets/scss/views/auto/LayerAutoSuccessionAssigneeRentalConfirm.scss';
 </style>
