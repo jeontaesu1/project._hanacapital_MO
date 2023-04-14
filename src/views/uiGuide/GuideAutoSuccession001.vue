@@ -13,6 +13,7 @@ import LayerAutoSuccessionURLSendComplete from '@/views/auto/LayerAutoSuccession
 import LayerAutoSuccessionURLSend from '@/views/auto/LayerAutoSuccessionURLSend.vue';
 import LayerAutoSuccessionAssigneeSearch from '@/views/auto/LayerAutoSuccessionAssigneeSearch.vue';
 import LayerAutoSuccessionAssigneeLeaseConfirm from '@/views/auto/LayerAutoSuccessionAssigneeLeaseConfirm.vue';
+import LayerAutoSuccessionAssigneeRentalConfirm from '@/views/auto/LayerAutoSuccessionAssigneeRentalConfirm.vue';
 
 export default {
   components: {
@@ -27,6 +28,7 @@ export default {
     LayerAutoSuccessionURLSend,
     LayerAutoSuccessionAssigneeSearch,
     LayerAutoSuccessionAssigneeLeaseConfirm,
+    LayerAutoSuccessionAssigneeRentalConfirm,
   },
   setup() {
     const layer001 = ref(null);
@@ -140,7 +142,7 @@ export default {
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer004Open"
-          >승계 신청 URL 발송 완료<br />AF_M07_l004</BasicButton
+          >승계 신청 완료<br />AF_M07_l004</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
@@ -234,7 +236,7 @@ export default {
     <LayerAutoSuccessionURLSend ref="layer005" />
     <LayerAutoSuccessionAssigneeSearch ref="layer006" />
     <LayerAutoSuccessionAssigneeLeaseConfirm ref="layer007" />
-    <LayerAuto ref="layer008" />
+    <LayerAutoSuccessionAssigneeRentalConfirm ref="layer008" />
     <LayerAuto ref="layer009" />
     <LayerAuto ref="layer010" />
     <LayerAuto ref="layer011" />

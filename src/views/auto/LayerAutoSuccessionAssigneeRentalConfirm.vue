@@ -1,8 +1,5 @@
 <script>
 // AF_M07_l007
-</script>
-<script>
-// AF_M07_l006
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -79,12 +76,12 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          리스 승계 상세정보를<br />
+          렌트 승계 상세정보를<br />
           <strong>확인해주세요</strong>
         </PageMainText>
         <PageSubText>
           실제 차량을 운행하는 목적으로의 승계만 가능하며 신규로 리스계약을
-          체결하는 절차와 동일하게 금융회사가 정한 심사기준에 따라 심사가
+          체결하는 절차와 동일하게 금융회사가 정한 심시기준에 따라 심사가
           이루어집니다.
         </PageSubText>
       </PageTextGroup>
@@ -95,7 +92,7 @@ export default {
         <BasicBox>
           <BasicBoxHead>
             <BasicBoxHeadLeft>
-              <h3 class="text-body-1 font-weight-medium">운용리스</h3>
+              <h3 class="text-body-1 font-weight-medium">렌터카</h3>
             </BasicBoxHeadLeft>
           </BasicBoxHead>
           <KeyValueList margin="regular">
@@ -155,31 +152,12 @@ export default {
 
           <!-- Case : '동일 조건 승계' 선택시 노출 -->
           <div class="row-margin-item-group">
-            <NoticeText
-              >현재 계약자의 이용 조건을 동일하게 승계합니다.
-            </NoticeText>
-
             <section
               :class="[$style['notice-section'], 'row-margin-item-group']"
             >
-              <h3 :class="$style['notice-section__title']">보험가입 안내</h3>
-              <ul
-                :class="[$style['basic-list'], $style['basic-list--regular']]"
+              <NoticeText
+                >현재 계약자의 이용 조건을 동일하게 승계합니다.</NoticeText
               >
-                <li :class="$style['basic-list__item']">
-                  <div :class="$style['basic-list__symbol']"></div>
-                  <div :class="$style['basic-list__content']">
-                    양수인명의로 자동차 보험을 가입합니다.
-                  </div>
-                </li>
-                <li :class="$style['basic-list__item']">
-                  <div :class="$style['basic-list__symbol']"></div>
-                  <div :class="$style['basic-list__content']">
-                    자차손해 가입은 필수이며, 질권설정금액 부족/불가 시
-                    보증금/선납금을 추가 납입할 수 있습니다.
-                  </div>
-                </li>
-              </ul>
             </section>
           </div>
           <!-- // Case : '동일 조건 승계' 선택시 노출 -->
@@ -191,33 +169,15 @@ export default {
             >
               <ul class="reset-list">
                 <li class="row-margin-item">
-                  <NoticeText>심사서류가 간소화됩니다. </NoticeText>
+                  <NoticeText
+                    >승계 후 전액선납하는 정산비용이 발생합니다.</NoticeText
+                  >
                 </li>
                 <li class="row-margin-item">
-                  <NoticeText>전액선납 정산비용이 발생합니다. </NoticeText>
-                </li>
-                <li class="row-margin-item">
-                  <NoticeText>정산서는 심사 승인 이후 발송됩니다. </NoticeText>
-                </li>
-              </ul>
-            </section>
-
-            <section :class="$style['notice-section']">
-              <h3 :class="$style['notice-section__title']">보험가입 안내</h3>
-              <ul
-                :class="[$style['basic-list'], $style['basic-list--regular']]"
-              >
-                <li :class="$style['basic-list__item']">
-                  <div :class="$style['basic-list__symbol']"></div>
-                  <div :class="$style['basic-list__content']">
-                    양수인 명의로 자동차 보험을 가입해주세요.
-                  </div>
-                </li>
-                <li :class="$style['basic-list__item']">
-                  <div :class="$style['basic-list__symbol']"></div>
-                  <div :class="$style['basic-list__content']">
-                    책임보험 가입 가능합니다.
-                  </div>
+                  <NoticeText
+                    >승계 후 만기일자 이후 손님 명의로 자동차 소유권이전 등록
+                    절차가 이루어집니다.</NoticeText
+                  >
                 </li>
               </ul>
             </section>
