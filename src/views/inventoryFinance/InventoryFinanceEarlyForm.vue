@@ -203,7 +203,7 @@ export default {
         </BoxCheckList>
       </FormListItem>
 
-      <!-- Cass : 오늘 즉시 출금 선택 시 노출 -->
+      <!-- Case : 오늘 즉시 출금 선택 시 노출 -->
       <FormListItem
         titleText="즉시 출금 계좌"
         target="#inventoryFinanceEarlyFormImmediateButton"
@@ -237,9 +237,9 @@ export default {
           <FormInvalidMessage>Error Message</FormInvalidMessage>
         </FormInvalid>
       </FormListItem>
-      <!-- // Cass : 오늘 즉시 출금 선택 시 노출 -->
+      <!-- // Case : 오늘 즉시 출금 선택 시 노출 -->
 
-      <!-- Cass : 출금 가능 계좌가 없을 시 노출 -->
+      <!-- Case : 출금 가능 계좌가 없을 시 노출 -->
       <FormListItem titleText="즉시 출금 계좌" :disabled="true">
         <InputBlock :disabled="true">
           <InputBlockCell :flexible="true">
@@ -250,9 +250,9 @@ export default {
           </InputBlockCell>
         </InputBlock>
       </FormListItem>
-      <!-- // Cass : 출금 가능 계좌가 없을 시 노출 -->
+      <!-- // Case : 출금 가능 계좌가 없을 시 노출 -->
 
-      <!-- Cass : 가상계좌 입금 선택 시 노출 -->
+      <!-- Case : 가상계좌 입금 선택 시 노출 -->
       <FormListItem titleText="입금가상계좌" :forceFocus="true">
         // 계좌번호 목록
 
@@ -265,7 +265,7 @@ export default {
           </TextButton>
         </div>
       </FormListItem>
-      <!-- // Cass : 가상계좌 입금 선택 시 노출 -->
+      <!-- // Case : 가상계좌 입금 선택 시 노출 -->
 
       <FormListItem titleText="중도상환방법" :disabled="true">
         <InputBlock :disabled="true">
@@ -275,9 +275,9 @@ export default {
         </InputBlock>
       </FormListItem>
 
-      <!-- Cass : 중도상환 시뮬레이션 선택 시 노출 -->
+      <!-- Case : 중도상환 시뮬레이션 선택 시 노출 -->
       <FormListItem titleText="입금일자">// 데이트 피커</FormListItem>
-      <!-- // Cass : 중도상환 시뮬레이션 선택 시 노출 -->
+      <!-- // Case : 중도상환 시뮬레이션 선택 시 노출 -->
 
       <FormListItem titleText="상환금액" :disabled="true">
         <InputBlock :disabled="true">
