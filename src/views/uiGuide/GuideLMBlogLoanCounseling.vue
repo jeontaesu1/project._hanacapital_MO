@@ -10,6 +10,7 @@ import LayerLMBlogLoanCounselingApartmentSearch from '@/views/lmBlog/LayerLMBlog
 import LayerLMBlogLoanCounselingApartmentPriceSearch from '@/views/lmBlog/LayerLMBlogLoanCounselingApartmentPriceSearch.vue';
 import LayerLMBlogLoanCounselingApartmentCertified from '@/views/lmBlog/LayerLMBlogLoanCounselingApartmentCertified.vue';
 import LayerLMBlogLoanCounselingApartmentCertifiedConfirm from '@/views/lmBlog/LayerLMBlogLoanCounselingApartmentCertifiedConfirm.vue';
+import LayerLMBlogLoanCounselingSelectBusiness from '@/views/lmBlog/LayerLMBlogLoanCounselingSelectBusiness.vue';
 import LayerLMBlogLoanCounselingVehicleAvailable from '@/views/lmBlog/LayerLMBlogLoanCounselingVehicleAvailable.vue';
 import LayerLMBlogLoanCounselingProducts from '@/views/lmBlog/LayerLMBlogLoanCounselingProducts.vue';
 
@@ -23,6 +24,7 @@ export default {
     LayerLMBlogLoanCounselingApartmentPriceSearch,
     LayerLMBlogLoanCounselingApartmentCertified,
     LayerLMBlogLoanCounselingApartmentCertifiedConfirm,
+    LayerLMBlogLoanCounselingSelectBusiness,
     LayerLMBlogLoanCounselingVehicleAvailable,
     LayerLMBlogLoanCounselingProducts,
   },
@@ -33,6 +35,7 @@ export default {
     const layer004 = ref(null);
     const layer005 = ref(null);
     const layer006 = ref(null);
+    const layer007 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -52,6 +55,9 @@ export default {
     const layer006Open = (e = {}) => {
       layer006.value.layer.open(e.target);
     };
+    const layer007Open = (e = {}) => {
+      layer007.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -60,12 +66,14 @@ export default {
       layer004,
       layer005,
       layer006,
+      layer007,
       layer001Open,
       layer002Open,
       layer003Open,
       layer004Open,
       layer005Open,
       layer006Open,
+      layer007Open,
     };
   },
 };
@@ -101,11 +109,16 @@ export default {
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer005Open">
-          대출가능 차량 기준안내<br />LM_M01_l009
+          사업자선택<br />LM_M01_l008
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer006Open">
+          대출가능 차량 기준안내<br />LM_M01_l009
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer007Open">
           한도 금리 확인<br />LM_M01_l010
         </BasicButton>
       </ButtonListItem>
@@ -115,7 +128,8 @@ export default {
     <LayerLMBlogLoanCounselingApartmentPriceSearch ref="layer002" />
     <LayerLMBlogLoanCounselingApartmentCertified ref="layer003" />
     <LayerLMBlogLoanCounselingApartmentCertifiedConfirm ref="layer004" />
-    <LayerLMBlogLoanCounselingVehicleAvailable ref="layer005" />
-    <LayerLMBlogLoanCounselingProducts ref="layer006" />
+    <LayerLMBlogLoanCounselingSelectBusiness ref="layer005" />
+    <LayerLMBlogLoanCounselingVehicleAvailable ref="layer006" />
+    <LayerLMBlogLoanCounselingProducts ref="layer007" />
   </PageContents>
 </template>
