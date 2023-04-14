@@ -1,4 +1,6 @@
 .division-info {
+  display: block;
+
   &__list {
     @include reset-list;
     display: flex;
@@ -6,9 +8,6 @@
   }
 
   &__item {
-    font-size: 0;
-    line-height: 0;
-
     & + & {
       position: relative;
       padding-left: 13px;

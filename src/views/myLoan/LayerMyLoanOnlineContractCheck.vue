@@ -130,16 +130,16 @@ export default {
       <BasicHr className="row-margin-container-medium" />
 
       <section>
-        <h2 class="text-title-2">체크리스트</h2>
-        <FormList :classNames="{ wrap: 'row-margin-contents' }">
+        <h2 class="text-title-2 row-margin-contents">체크리스트</h2>
+        <FormList>
           <FormListItem titleText="전문금융소비자 해당여부" :forceFocus="true">
             <FormInvalid :error="state.typeError">
               <BoxCheckList>
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="layerMyLoanCompatibilityAdequacyCustomer"
-                    id="layerMyLoanCompatibilityAdequacyCustomer1"
+                    name="layerMyLoanOnlineContractCheckCustomer"
+                    id="layerMyLoanOnlineContractCheckCustomer1"
                   >
                     <BoxCheckLabel>전문금융소비자</BoxCheckLabel>
                   </BoxCheck>
@@ -147,8 +147,8 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="layerMyLoanCompatibilityAdequacyCustomer"
-                    id="layerMyLoanCompatibilityAdequacyCustomer2"
+                    name="layerMyLoanOnlineContractCheckCustomer"
+                    id="layerMyLoanOnlineContractCheckCustomer2"
                   >
                     <BoxCheckLabel>일반금융소비자</BoxCheckLabel>
                   </BoxCheck>
@@ -166,7 +166,7 @@ export default {
 
           <FormListItem
             titleText="자금용도"
-            target="#layerMyLoanCompatibilityAdequacyPurposeButton"
+            target="#layerMyLoanOnlineContractCheckPurposeButton"
             :selectOnly="true"
           >
             <FormInvalid :error="state.usageError">
@@ -213,8 +213,8 @@ export default {
                     ]"
                     buttonTitle="자금용도 선택하기"
                     layerTitle="자금용도를 선택해 주세요"
-                    id="layerMyLoanCompatibilityAdequacyPurpose"
-                    buttonId="layerMyLoanCompatibilityAdequacyPurposeButton"
+                    id="layerMyLoanOnlineContractCheckPurpose"
+                    buttonId="layerMyLoanOnlineContractCheckPurposeButton"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -225,15 +225,14 @@ export default {
           <!-- Case : 자금용도 - '기타' 항목 선택 시 노출 -->
           <FormListItem
             titleText="자금용도 직접 입력"
-            target="#layerMyLoanCompatibilityAdequacyPurposeInput"
+            target="#layerMyLoanOnlineContractCheckPurposeInput"
           >
             <FormInvalid :error="state.usageInputError">
               <InputBlock :error="state.usageInputError">
                 <InputBlockCell :flexible="true">
                   <BasicInput
                     title="자금용도"
-                    id="layerMyLoanCompatibilityAdequacyPurposeInput"
-                    defaultValue="구입자금"
+                    id="layerMyLoanOnlineContractCheckPurposeInput"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -245,15 +244,15 @@ export default {
           <!-- Case :  일반금융소비자 선택 시 노출 -->
           <FormListItem
             titleText="연령"
-            target="#layerMyLoanCompatibilityAdequacyAge"
+            target="#layerMyLoanOnlineContractCheckAge"
             :disabled="true"
           >
             <FormInvalid :error="state.ageError">
-              <InputBlock :error="state.ageError">
+              <InputBlock :error="state.ageError" :disabled="true">
                 <InputBlockCell :flexible="true">
                   <BasicInput
                     title="연령"
-                    id="layerMyLoanCompatibilityAdequacyAge"
+                    id="layerMyLoanOnlineContractCheckAge"
                     defaultValue="만 25세"
                     :disabled="true"
                   />
@@ -269,8 +268,8 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="layerMyLoanCompatibilityAdequacyIncome"
-                    id="layerMyLoanCompatibilityAdequacyIncome1"
+                    name="layerMyLoanOnlineContractCheckIncome"
+                    id="layerMyLoanOnlineContractCheckIncome1"
                   >
                     <BoxCheckLabel>5천만원 미만</BoxCheckLabel>
                   </BoxCheck>
@@ -278,8 +277,8 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="layerMyLoanCompatibilityAdequacyIncome"
-                    id="layerMyLoanCompatibilityAdequacyIncome2"
+                    name="layerMyLoanOnlineContractCheckIncome"
+                    id="layerMyLoanOnlineContractCheckIncome2"
                   >
                     <BoxCheckLabel>5천만원 이상 ~ 1억원 미만</BoxCheckLabel>
                   </BoxCheck>
@@ -287,8 +286,8 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="layerMyLoanCompatibilityAdequacyIncome"
-                    id="layerMyLoanCompatibilityAdequacyIncome3"
+                    name="layerMyLoanOnlineContractCheckIncome"
+                    id="layerMyLoanOnlineContractCheckIncome3"
                   >
                     <BoxCheckLabel>1억원 이상</BoxCheckLabel>
                   </BoxCheck>
@@ -304,8 +303,8 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="layerMyLoanCompatibilityAdequacyAsset"
-                    id="layerMyLoanCompatibilityAdequacyAsset1"
+                    name="layerMyLoanOnlineContractCheckAsset"
+                    id="layerMyLoanOnlineContractCheckAsset1"
                   >
                     <BoxCheckLabel>1억원 미만</BoxCheckLabel>
                   </BoxCheck>
@@ -313,8 +312,8 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="layerMyLoanCompatibilityAdequacyAsset"
-                    id="layerMyLoanCompatibilityAdequacyAsset2"
+                    name="layerMyLoanOnlineContractCheckAsset"
+                    id="layerMyLoanOnlineContractCheckAsset2"
                   >
                     <BoxCheckLabel>1억원 이상 10억원 미만</BoxCheckLabel>
                   </BoxCheck>
@@ -322,8 +321,8 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="layerMyLoanCompatibilityAdequacyAsset"
-                    id="layerMyLoanCompatibilityAdequacyAsset3"
+                    name="layerMyLoanOnlineContractCheckAsset"
+                    id="layerMyLoanOnlineContractCheckAsset3"
                   >
                     <BoxCheckLabel>10억원 이상</BoxCheckLabel>
                   </BoxCheck>
@@ -337,7 +336,7 @@ export default {
           <!-- Case :  전문금융소비자 선택 시 노출 -->
           <FormListItem
             titleText="업력"
-            target="#layerMyLoanCompatibilityAdequacyCareerPeriod"
+            target="#layerMyLoanOnlineContractCheckCareerPeriod"
           >
             <FormInvalid :error="state.careerError">
               <InputBlock :error="state.careerError">
@@ -347,7 +346,7 @@ export default {
                     :useDelete="false"
                     pattern="\d*"
                     title="업력"
-                    id="layerMyLoanCompatibilityAdequacyCareerPeriod"
+                    id="layerMyLoanOnlineContractCheckCareerPeriod"
                   />
                 </InputBlockCell>
                 <template v-slot:innerRight>
@@ -359,7 +358,7 @@ export default {
           </FormListItem>
           <FormListItem
             titleText="매출액"
-            target="#layerMyLoanCompatibilityAdequacySalesButton"
+            target="#layerMyLoanOnlineContractCheckSalesButton"
             :selectOnly="true"
           >
             <FormInvalid :error="state.salesError">
@@ -374,8 +373,8 @@ export default {
                     ]"
                     buttonTitle="매출액 선택하기"
                     layerTitle="매출액를 선택해 주세요"
-                    id="layerMyLoanCompatibilityAdequacySales"
-                    buttonId="layerMyLoanCompatibilityAdequacySalesButton"
+                    id="layerMyLoanOnlineContractCheckSales"
+                    buttonId="layerMyLoanOnlineContractCheckSalesButton"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -384,7 +383,7 @@ export default {
           </FormListItem>
           <FormListItem
             titleText="순이익 "
-            target="#layerMyLoanCompatibilityAdequacyNetProfitButton"
+            target="#layerMyLoanOnlineContractCheckNetProfitButton"
             :selectOnly="true"
           >
             <FormInvalid :error="state.netProfitError">
@@ -399,8 +398,8 @@ export default {
                     ]"
                     buttonTitle="순이익  선택하기"
                     layerTitle="순이익을 선택해 주세요"
-                    id="layerMyLoanCompatibilityAdequacyNetProfit"
-                    buttonId="layerMyLoanCompatibilityAdequacyNetProfitButton"
+                    id="layerMyLoanOnlineContractCheckNetProfit"
+                    buttonId="layerMyLoanOnlineContractCheckNetProfitButton"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -409,7 +408,7 @@ export default {
           </FormListItem>
           <FormListItem
             titleText="총자산 "
-            target="#layerMyLoanCompatibilityAdequacyTotalAssetsButton"
+            target="#layerMyLoanOnlineContractCheckTotalAssetsButton"
             :selectOnly="true"
           >
             <FormInvalid :error="state.totalAssetsError">
@@ -424,8 +423,8 @@ export default {
                     ]"
                     buttonTitle="총자산  선택하기"
                     layerTitle="총자산을 선택해 주세요"
-                    id="layerMyLoanCompatibilityAdequacyTotalAssets"
-                    buttonId="layerMyLoanCompatibilityAdequacyTotalAssetsButton"
+                    id="layerMyLoanOnlineContractCheckTotalAssets"
+                    buttonId="layerMyLoanOnlineContractCheckTotalAssetsButton"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -436,7 +435,7 @@ export default {
 
           <FormListItem
             titleText="고정지출"
-            target="#layerMyLoanCompatibilityAdequacyFixedExpensesButton"
+            target="#layerMyLoanOnlineContractCheckFixedExpensesButton"
             :selectOnly="true"
           >
             <FormInvalid :error="state.expensesError">
@@ -463,8 +462,8 @@ export default {
                     ]"
                     buttonTitle="고정지출 선택하기"
                     layerTitle="고정지출을 선택해 주세요"
-                    id="layerMyLoanCompatibilityAdequacyFixedExpenses"
-                    buttonId="layerMyLoanCompatibilityAdequacyFixedExpensesButton"
+                    id="layerMyLoanOnlineContractCheckFixedExpenses"
+                    buttonId="layerMyLoanOnlineContractCheckFixedExpensesButton"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -478,8 +477,8 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="layerMyLoanCompatibilityAdequacyDebt"
-                    id="layerMyLoanCompatibilityAdequacyDebt1"
+                    name="layerMyLoanOnlineContractCheckDebt"
+                    id="layerMyLoanOnlineContractCheckDebt1"
                   >
                     <BoxCheckLabel>5천만원 미만</BoxCheckLabel>
                   </BoxCheck>
@@ -487,8 +486,8 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="layerMyLoanCompatibilityAdequacyDebt"
-                    id="layerMyLoanCompatibilityAdequacyDebt2"
+                    name="layerMyLoanOnlineContractCheckDebt"
+                    id="layerMyLoanOnlineContractCheckDebt2"
                   >
                     <BoxCheckLabel>5천만원 이상 5억원 미만</BoxCheckLabel>
                   </BoxCheck>
@@ -496,8 +495,8 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="layerMyLoanCompatibilityAdequacyDebt"
-                    id="layerMyLoanCompatibilityAdequacyDebt3"
+                    name="layerMyLoanOnlineContractCheckDebt"
+                    id="layerMyLoanOnlineContractCheckDebt3"
                   >
                     <BoxCheckLabel>5억원 이상</BoxCheckLabel>
                   </BoxCheck>
@@ -510,15 +509,15 @@ export default {
           <!-- Case :  일반금융소비자 선택 시 노출 -->
           <FormListItem
             titleText="신용점수"
-            target="#layerMyLoanCompatibilityAdequacyCreditScore"
+            target="#layerMyLoanOnlineContractCheckCreditScore"
             :disabled="true"
           >
             <FormInvalid :error="state.creditScoreError">
-              <InputBlock :error="state.creditScoreError">
+              <InputBlock :error="state.creditScoreError" :disabled="true">
                 <InputBlockCell :flexible="true">
                   <BasicInput
                     title="신용점수"
-                    id="layerMyLoanCompatibilityAdequacyCreditScore"
+                    id="layerMyLoanOnlineContractCheckCreditScore"
                     defaultValue="756점 (평가사 : NICE신용평가)"
                     :disabled="true"
                   />
@@ -532,7 +531,7 @@ export default {
           <!-- Case :  전문금융소비자 선택 시 노출 -->
           <FormListItem
             titleText="신용평가사 "
-            target="#layerMyLoanCompatibilityAdequacyCreditRatingAgencyButton"
+            target="#layerMyLoanOnlineContractCheckCreditRatingAgencyButton"
             :selectOnly="true"
           >
             <FormInvalid :error="state.creditRatingAgencyError">
@@ -547,8 +546,8 @@ export default {
                     ]"
                     buttonTitle="신용평가사  선택하기"
                     layerTitle="신용평가사를 선택해 주세요"
-                    id="layerMyLoanCompatibilityAdequacyCreditRatingAgency"
-                    buttonId="layerMyLoanCompatibilityAdequacyCreditRatingAgencyButton"
+                    id="layerMyLoanOnlineContractCheckCreditRatingAgency"
+                    buttonId="layerMyLoanOnlineContractCheckCreditRatingAgencyButton"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -557,7 +556,7 @@ export default {
           </FormListItem>
           <FormListItem
             titleText="신용등급 "
-            target="#layerMyLoanCompatibilityAdequacyCreditRatingButton"
+            target="#layerMyLoanOnlineContractCheckCreditRatingButton"
             :selectOnly="true"
           >
             <FormInvalid :error="state.creditRatingError">
@@ -572,8 +571,8 @@ export default {
                     ]"
                     buttonTitle="신용등급  선택하기"
                     layerTitle="신용등급을 선택해 주세요"
-                    id="layerMyLoanCompatibilityAdequacyCreditRating"
-                    buttonId="layerMyLoanCompatibilityAdequacyCreditRatingButton"
+                    id="layerMyLoanOnlineContractCheckCreditRating"
+                    buttonId="layerMyLoanOnlineContractCheckCreditRatingButton"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -584,7 +583,7 @@ export default {
 
           <FormListItem
             titleText="변제계획"
-            target="#layerMyLoanCompatibilityAdequacyLiquidationButton"
+            target="#layerMyLoanOnlineContractCheckLiquidationButton"
             :selectOnly="true"
           >
             <FormInvalid :error="state.liquidationError">
@@ -615,8 +614,8 @@ export default {
                     ]"
                     buttonTitle="변제계획 선택하기"
                     layerTitle="변제계획을 선택해 주세요"
-                    id="layerMyLoanCompatibilityAdequacyLiquidation"
-                    buttonId="layerMyLoanCompatibilityAdequacyLiquidationButton"
+                    id="layerMyLoanOnlineContractCheckLiquidation"
+                    buttonId="layerMyLoanOnlineContractCheckLiquidationButton"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -627,8 +626,8 @@ export default {
       </section>
 
       <section class="row-margin-container-medium">
-        <h2 class="text-title-2">적합성·적정성 확인</h2>
-        <BasicBox :class="$style['box']">
+        <h2 class="text-title-2 row-margin-contents">적합성·적정성 확인</h2>
+        <BasicBox>
           <ol
             :class="[$style['basic-list'], $style['basic-list--normal-margin']]"
           >
@@ -680,7 +679,7 @@ export default {
         <CheckBox
           id="LayerMyLoanCompatibilityAdequacyChk01"
           theme="secondary"
-          :classNames="{ wrap: $style['chk'] }"
+          :classNames="{ wrap: 'row-margin-item-group' }"
         >
           <CheckBoxObject />
           <CheckBoxLabelText
@@ -702,7 +701,7 @@ export default {
           신청인(또는 연대보증인) 김하나 (서명/인)
         </div>
 
-        <BasicBox theme="tertiary" class="row-margin-contents-group">
+        <BasicBox theme="senary" class="row-margin-contents-group">
           <div class="color-gray-secondary text-body-4">
             본 확인서는 [금융소비자 보호에 관한 법률] 제 17조 및 제 18조에 따라
             작성되었습니다.
@@ -729,5 +728,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/myLoan/LayerMyLoanCompatibilityAdequacy.scss';
+@import '@/assets/scss/views/myLoan/LayerMyLoanOnlineContractCheck.scss';
 </style>

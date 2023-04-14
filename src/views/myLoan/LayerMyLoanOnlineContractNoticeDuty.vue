@@ -219,7 +219,7 @@ export default {
         </CheckBoxLabelText>
       </CheckBox>
 
-      <BasicBox theme="tertiary" class="row-margin-contents-group">
+      <BasicBox theme="senary" class="row-margin-contents-group">
         <div class="color-gray-secondary text-body-4">
           위 고지 여부 확인 내용은 사실과 다름 없으며 본인이 직접 작성하였음을
           확인합니다.
@@ -242,5 +242,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/myLoan/LayerMyLoanNoticeDuty.scss';
+@import '@/assets/scss/views/myLoan/LayerMyLoanOnlineContractNoticeDuty.scss';
 </style>

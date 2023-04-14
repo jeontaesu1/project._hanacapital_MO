@@ -63,16 +63,14 @@ export default {
 
       <BasicBox>
         <div :class="$style['icon-box']">
-          <div :class="$style['icon-box__inner']">
-            <div :class="$style['icon-box__icon']">
-              <IconStar />
-            </div>
-            <div :class="$style['icon-box__content']">
-              <div class="text-body-2 color-black">
-                <span class="color-green font-weight-medium">김하나</span>님은
-                하나캐피탈에 등록된<br />
-                정식 모집인입니다
-              </div>
+          <div :class="$style['icon-box__icon']">
+            <IconStar />
+          </div>
+          <div :class="$style['icon-box__content']">
+            <div class="text-body-2">
+              <span class="color-green font-weight-medium">김하나</span>님은
+              하나캐피탈에 등록된<br />
+              정식 모집인입니다
             </div>
           </div>
         </div>
@@ -94,5 +92,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/myLoan/LayerMyLoanRecruiterRegistration.scss';
+@import '@/assets/scss/views/myLoan/LayerMyLoanProgressRecruiterRegistration.scss';
 </style>

@@ -10,16 +10,10 @@ import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
-/*
-import BasicBox from '@/components/ui/common/BasicBox.vue';
-import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
-import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
-import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
 import KeyValueList from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
-*/
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
@@ -34,16 +28,10 @@ export default {
     PageMainText,
     IllustObject,
     BasicHr,
-    /*
-    BasicBox,
-    BasicBoxHead,
-    BasicBoxHeadLeft,
-    BasicBoxHeadRight,
     KeyValueList,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
-    */
     ButtonList,
     ButtonListItem,
     BasicButton,
@@ -91,35 +79,37 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <!--
-      <BasicBox>
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>
-            <h3 class="text-body-2 font-weight-medium">
-              승인조건으로 재견적 하기
-            </h3>
-          </BasicBoxHeadLeft>
-          <BasicBoxHeadRight>
-            <div class="inline-wrap">
-              <TextButton
-                iconSize="regular"
-                :classNames="{ wrap: 'color-gray' }"
-              >
-                <template v-slot:rightIcon>
-                  <IconArrow />
-                </template>
-              </TextButton>
+      <ul :class="$style['logs']">
+        <li :class="$style['logs__item']">
+          <div :class="$style['logs__block']">
+            <div :class="$style['logs__row']">
+              <div div :class="$style['logs__contents']">
+                <h3 class="text-body-2 font-weight-medium">
+                  승인조건으로 재견적 하기
+                </h3>
+              </div>
+              <div div :class="$style['logs__right']">
+                <button type="button" :class="$style['logs__link']">
+                  <span :class="$style['logs__link-text']">진행하기</span>
+                </button>
+              </div>
             </div>
-          </BasicBoxHeadRight>
-        </BasicBoxHead>
-        <KeyValueList>
-          <KeyValueItem class="text-body-5">
-            <KeyValueTitle>선납금 + 보증금</KeyValueTitle>
-            <KeyValueText>20% (22,145,111원)</KeyValueText>
-          </KeyValueItem>
-        </KeyValueList>
-      </BasicBox>
-      -->
+
+            <BasicHr
+              type="contents"
+              theme="quaternary"
+              className="row-margin-contents-small"
+            />
+
+            <KeyValueList>
+              <KeyValueItem class="text-body-5">
+                <KeyValueTitle>선납금 + 보증금</KeyValueTitle>
+                <KeyValueText>20% (22,145,111원)</KeyValueText>
+              </KeyValueItem>
+            </KeyValueList>
+          </div>
+        </li>
+      </ul>
 
       <section :class="[$style['notice-section'], 'row-margin-contents-group']">
         <h3 :class="$style['notice-section__title']">진행방법</h3>

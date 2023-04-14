@@ -38,8 +38,8 @@ export default {
 
     onMounted(() => {
       store.ui.header.setTitle(() => '지정운전자');
-      store.ui.header.setLeftButtons(() => []);
-      store.ui.header.setRightButtons(() => ['close']);
+      store.ui.header.setLeftButtons(() => ['back']);
+      store.ui.header.setRightButtons(() => []);
     });
 
     onUnmounted(() => {
@@ -66,7 +66,7 @@ export default {
 
     <IllustObject type="license" />
 
-    <div class="inline-wrap align-right row-margin-item">
+    <div class="inline-wrap align-right row-margin-contents">
       <TextButton theme="quaternary">
         지정운전자 등록안내 및 유의사항
         <template v-slot:rightIcon>

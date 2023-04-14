@@ -140,5 +140,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/myLoan/LayerMyLoanAgree.scss';
+@import '@/assets/scss/views/myLoan/LayerMyLoanProgressAgree.scss';
 </style>

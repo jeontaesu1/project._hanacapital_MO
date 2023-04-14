@@ -6,13 +6,13 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import LayerMyLoanAgree from '@/views/myLoan/LayerMyLoanAgree.vue';
-import LayerMyLoanIdentification from '@/views/myLoan/LayerMyLoanIdentification.vue';
-import LayerMyLoanRecruiterRegistration from '@/views/myLoan/LayerMyLoanRecruiterRegistration.vue';
-import LayerMyLoanNoticeDuty from '@/views/myLoan/LayerMyLoanNoticeDuty.vue';
-import LayerMyLoanNoticeDutyNotAgree from '@/views/myLoan/LayerMyLoanNoticeDutyNotAgree.vue';
-import LayerMyLoanCompatibilityAdequacy from '@/views/myLoan/LayerMyLoanCompatibilityAdequacy.vue';
-import LayerMyLoanCompatibilityAdequacyNotAgree from '@/views/myLoan/LayerMyLoanCompatibilityAdequacyNotAgree.vue';
+import LayerMyLoanProgressAgree from '@/views/myLoan/LayerMyLoanProgressAgree.vue';
+import LayerMyLoanOnlineContractIdentification from '@/views/myLoan/LayerMyLoanOnlineContractIdentification.vue';
+import LayerMyLoanProgressRecruiterRegistration from '@/views/myLoan/LayerMyLoanProgressRecruiterRegistration.vue';
+import LayerMyLoanOnlineContractNoticeDuty from '@/views/myLoan/LayerMyLoanOnlineContractNoticeDuty.vue';
+import LayerMyLoanOnlineContractNoticeDutyNotAgree from '@/views/myLoan/LayerMyLoanOnlineContractNoticeDutyNotAgree.vue';
+import LayerMyLoanOnlineContractCheck from '@/views/myLoan/LayerMyLoanOnlineContractCheck.vue';
+import LayerMyLoanOnlineContractCheckAgree from '@/views/myLoan/LayerMyLoanOnlineContractCheckAgree.vue';
 
 export default {
   components: {
@@ -20,13 +20,13 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    LayerMyLoanAgree,
-    LayerMyLoanIdentification,
-    LayerMyLoanRecruiterRegistration,
-    LayerMyLoanNoticeDuty,
-    LayerMyLoanNoticeDutyNotAgree,
-    LayerMyLoanCompatibilityAdequacy,
-    LayerMyLoanCompatibilityAdequacyNotAgree,
+    LayerMyLoanProgressAgree,
+    LayerMyLoanOnlineContractIdentification,
+    LayerMyLoanProgressRecruiterRegistration,
+    LayerMyLoanOnlineContractNoticeDuty,
+    LayerMyLoanOnlineContractNoticeDutyNotAgree,
+    LayerMyLoanOnlineContractCheck,
+    LayerMyLoanOnlineContractCheckAgree,
   },
   setup() {
     const layer001 = ref(null);
@@ -124,12 +124,12 @@ export default {
       </ButtonListItem>
     </ButtonList>
 
-    <LayerMyLoanAgree ref="layer001" />
-    <LayerMyLoanIdentification ref="layer002" />
-    <LayerMyLoanRecruiterRegistration ref="layer003" />
-    <LayerMyLoanNoticeDuty ref="layer004" />
-    <LayerMyLoanNoticeDutyNotAgree ref="layer005" />
-    <LayerMyLoanCompatibilityAdequacy ref="layer006" />
-    <LayerMyLoanCompatibilityAdequacyNotAgree ref="layer007" />
+    <LayerMyLoanProgressAgree ref="layer001" />
+    <LayerMyLoanOnlineContractIdentification ref="layer002" />
+    <LayerMyLoanProgressRecruiterRegistration ref="layer003" />
+    <LayerMyLoanOnlineContractNoticeDuty ref="layer004" />
+    <LayerMyLoanOnlineContractNoticeDutyNotAgree ref="layer005" />
+    <LayerMyLoanOnlineContractCheck ref="layer006" />
+    <LayerMyLoanOnlineContractCheckAgree ref="layer007" />
   </PageContents>
 </template>

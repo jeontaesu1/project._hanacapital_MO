@@ -113,8 +113,8 @@
   }
 
   &--fixed-width {
-    > .basic-list {
-      &__symbol {
+    > .basic-list__item {
+      > .basic-list__symbol {
         min-width: 23px;
       }
     }

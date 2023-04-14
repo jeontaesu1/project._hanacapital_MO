@@ -1,2 +1,12 @@
-@import '@/assets/scss/components/import/account-list.scss';
-@import '@/assets/scss/components/import/detail-accordion.scss';
+.key-value-opener {
+  width: 16px;
+  height: 16px;
+}
+.account-contents {
+  padding-top: 16px;
+}
+.bank-logo {
+  display: block;
+  width: 20px;
+  height: 20px;
+}

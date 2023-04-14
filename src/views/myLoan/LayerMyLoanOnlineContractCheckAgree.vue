@@ -109,5 +109,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/myLoan/LayerMyLoanCompatibilityAdequacyNotAgree.scss';
+@import '@/assets/scss/views/myLoan/LayerMyLoanOnlineContractCheckAgree.scss';
 </style>

@@ -15,9 +15,9 @@ import UiAccordion from '@/components/ui/accordion/UiAccordion.vue';
 import UiAccordionItem from '@/components/ui/accordion/UiAccordionItem.vue';
 import UiAccordionLayer from '@/components/ui/accordion/UiAccordionLayer.vue';
 import UiAccordionOpener from '@/components/ui/accordion/UiAccordionOpener.vue';
+import CopyButton from '@/components/ui/button/CopyButton.vue';
 import LayerMyLoanPaymentVirtualNotice from '@/views/myLoan/LayerMyLoanPaymentVirtualNotice.vue';
 
-import IconCopy from '@/assets/images/icon/copy.svg?component';
 import iconImportant from '@/assets/images/icon/important.svg?component';
 import BankLogo001 from '@/assets/images/bank-logo/004.svg?component';
 import BankLogo002 from '@/assets/images/bank-logo/011.svg?component';
@@ -38,8 +38,8 @@ export default {
     UiAccordionItem,
     UiAccordionLayer,
     UiAccordionOpener,
+    CopyButton,
     LayerMyLoanPaymentVirtualNotice,
-    IconCopy,
     iconImportant,
     BankLogo001,
     BankLogo002,
@@ -62,8 +62,8 @@ export default {
 
     onMounted(() => {
       store.ui.header.setTitle(() => '결제/청구정보');
-      store.ui.header.setLeftButtons(() => []);
-      store.ui.header.setRightButtons(() => ['close']);
+      store.ui.header.setLeftButtons(() => ['back']);
+      store.ui.header.setRightButtons(() => []);
     });
 
     onUnmounted(() => {
@@ -82,8 +82,8 @@ export default {
 
 <template>
   <PageContents>
-    <div class="row-margin-contents-small">
-      <div class="flex-box">
+    <section class="row-margin-contents-small">
+      <div class="flex-box row-margin-contents">
         <div class="flex-box__cell flex-1">
           <h3 class="text-title-2">결제정보</h3>
         </div>
@@ -97,11 +97,8 @@ export default {
         </div>
       </div>
 
-      <BasicBox class="row-margin-contents">
-        <UiAccordion
-          tagName="div"
-          :classNames="{ wrap: $style['detail-accordion'] }"
-        >
+      <BasicBox>
+        <UiAccordion tagName="div">
           <KeyValueList>
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>결제방법</KeyValueTitle>
@@ -112,86 +109,54 @@ export default {
           <UiAccordionItem
             tagName="div"
             :classNames="{
-              item: [$style['detail-accordion__item'], 'row-margin-item-group'],
+              item: 'row-margin-item-group',
             }"
           >
-            <KeyValueList
-              :classNames="{
-                title: $style['account'],
-              }"
-            >
+            <KeyValueList>
               <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                <KeyValueTitle
-                  :classNames="{
-                    title: $style['account__title'],
-                  }"
-                  >계좌정보</KeyValueTitle
-                >
-                <KeyValueText
-                  :classNames="{
-                    title: $style['account__text'],
-                  }"
-                >
-                  <div :class="$style['detail-accordion__text']">
-                    <div :class="$style['account__num']">
-                      하나 123-456-7890123
+                <KeyValueTitle>계좌정보</KeyValueTitle>
+                <KeyValueText>
+                  <div class="flex-box">
+                    <div class="flex-box__cell flex-1">
+                      <CopyButton text="하나 123-456-7890123" align="right">
+                        하나 123-456-7890123
+                      </CopyButton>
                     </div>
-                    <button
-                      type="button"
-                      :class="[
-                        $style['account__copy'],
-                        $style['account__copy--small-margin'],
-                      ]"
-                    >
-                      <span class="for-a11y">복사하기</span>
-                      <IconCopy />
-                    </button>
-                    <UiAccordionOpener
-                      :classNames="{
-                        button: $style['detail-accordion__opener'],
-                      }"
-                    />
+                    <div class="flex-box__cell flex-box__cell--small">
+                      <UiAccordionOpener
+                        :classNames="{
+                          button: $style['key-value-opener'],
+                        }"
+                      />
+                    </div>
                   </div>
                 </KeyValueText>
               </KeyValueItem>
             </KeyValueList>
 
             <UiAccordionLayer>
-              <div :class="[$style['detail-accordion__contents']]">
-                <BasicBox theme="tertiary">
-                  <KeyValueList
-                    align="left"
-                    margin="regular"
-                    size="regular"
-                    :classNames="{ wrap: $style['account'] }"
-                  >
+              <div :class="$style['account-contents']">
+                <BasicBox theme="senary">
+                  <KeyValueList align="left" margin="regular" size="regular">
                     <KeyValueItem
                       :classNames="{
                         item: 'text-body-3',
                       }"
                     >
-                      <KeyValueTitle
-                        :classNames="{
-                          title: $style['account__title'],
-                        }"
-                      >
-                        <div :class="$style['account__logo']">
-                          <BankLogo001 />
+                      <KeyValueTitle>
+                        <div class="flex-box">
+                          <div class="flex-box__cell">
+                            <BankLogo001 :class="$style['bank-logo']" />
+                          </div>
+                          <div class="flex-box__cell flex-box__cell--mini">
+                            국민
+                          </div>
                         </div>
-                        국민
                       </KeyValueTitle>
-                      <KeyValueText
-                        :classNames="{
-                          text: $style['account__text'],
-                        }"
-                      >
-                        <div :class="$style['account__num']">
+                      <KeyValueText>
+                        <CopyButton text="국민 123-456-78901234">
                           123-456-78901234
-                        </div>
-                        <button type="button" :class="$style['account__copy']">
-                          <span class="for-a11y">복사하기</span>
-                          <IconCopy />
-                        </button>
+                        </CopyButton>
                       </KeyValueText>
                     </KeyValueItem>
                     <KeyValueItem
@@ -199,28 +164,20 @@ export default {
                         item: 'text-body-3',
                       }"
                     >
-                      <KeyValueTitle
-                        :classNames="{
-                          title: $style['account__title'],
-                        }"
-                      >
-                        <div :class="$style['account__logo']">
-                          <BankLogo002 />
+                      <KeyValueTitle>
+                        <div class="flex-box">
+                          <div class="flex-box__cell">
+                            <BankLogo002 :class="$style['bank-logo']" />
+                          </div>
+                          <div class="flex-box__cell flex-box__cell--mini">
+                            농협
+                          </div>
                         </div>
-                        농협
                       </KeyValueTitle>
-                      <KeyValueText
-                        :classNames="{
-                          text: $style['account__text'],
-                        }"
-                      >
-                        <div :class="$style['account__num']">
+                      <KeyValueText>
+                        <CopyButton text="농협 123-456-78901234">
                           123-456-78901234
-                        </div>
-                        <button type="button" :class="$style['account__copy']">
-                          <span class="for-a11y">복사하기</span>
-                          <IconCopy />
-                        </button>
+                        </CopyButton>
                       </KeyValueText>
                     </KeyValueItem>
                     <KeyValueItem
@@ -228,28 +185,20 @@ export default {
                         item: 'text-body-3',
                       }"
                     >
-                      <KeyValueTitle
-                        :classNames="{
-                          title: $style['account__title'],
-                        }"
-                      >
-                        <div :class="$style['account__logo']">
-                          <BankLogo003 />
+                      <KeyValueTitle>
+                        <div class="flex-box">
+                          <div class="flex-box__cell">
+                            <BankLogo003 :class="$style['bank-logo']" />
+                          </div>
+                          <div class="flex-box__cell flex-box__cell--mini">
+                            우리
+                          </div>
                         </div>
-                        농협
                       </KeyValueTitle>
-                      <KeyValueText
-                        :classNames="{
-                          text: $style['account__text'],
-                        }"
-                      >
-                        <div :class="$style['account__num']">
+                      <KeyValueText>
+                        <CopyButton text="우리 123-456-78901234">
                           123-456-78901234
-                        </div>
-                        <button type="button" :class="$style['account__copy']">
-                          <span class="for-a11y">복사하기</span>
-                          <IconCopy />
-                        </button>
+                        </CopyButton>
                       </KeyValueText>
                     </KeyValueItem>
                     <KeyValueItem
@@ -257,28 +206,20 @@ export default {
                         item: 'text-body-3',
                       }"
                     >
-                      <KeyValueTitle
-                        :classNames="{
-                          title: $style['account__title'],
-                        }"
-                      >
-                        <div :class="$style['account__logo']">
-                          <BankLogo004 />
+                      <KeyValueTitle>
+                        <div class="flex-box">
+                          <div class="flex-box__cell">
+                            <BankLogo004 :class="$style['bank-logo']" />
+                          </div>
+                          <div class="flex-box__cell flex-box__cell--mini">
+                            하나
+                          </div>
                         </div>
-                        하나
                       </KeyValueTitle>
-                      <KeyValueText
-                        :classNames="{
-                          text: $style['account__text'],
-                        }"
-                      >
-                        <div :class="$style['account__num']">
+                      <KeyValueText>
+                        <CopyButton text="하나 123-456-78901234">
                           123-456-78901234
-                        </div>
-                        <button type="button" :class="$style['account__copy']">
-                          <span class="for-a11y">복사하기</span>
-                          <IconCopy />
-                        </button>
+                        </CopyButton>
                       </KeyValueText>
                     </KeyValueItem>
                     <KeyValueItem
@@ -286,27 +227,22 @@ export default {
                         item: 'text-body-3',
                       }"
                     >
-                      <KeyValueTitle
-                        :classNames="{
-                          title: $style['account__title'],
-                        }"
-                      >
-                        <div :class="$style['account__logo']">
-                          <BankLogo005 />
+                      <KeyValueTitle>
+                        <div class="flex-box">
+                          <div class="flex-box__cell">
+                            <BankLogo005 :class="$style['bank-logo']" />
+                          </div>
+                          <div class="flex-box__cell flex-box__cell--mini">
+                            신한
+                          </div>
                         </div>
-                        신한
                       </KeyValueTitle>
-                      <KeyValueText
-                        :classNames="{
-                          text: $style['account__text'],
-                        }"
-                        ><div :class="$style['account__num']">
-                          123-456-78901234-11111111111111111111111
-                        </div>
-                        <button type="button" :class="$style['account__copy']">
-                          <span class="for-a11y">복사하기</span>
-                          <IconCopy />
-                        </button>
+                      <KeyValueText>
+                        <CopyButton
+                          text="신한 123-456-78901234-1234567890-12345"
+                        >
+                          123-456-78901234-1234567890-12345
+                        </CopyButton>
                       </KeyValueText>
                     </KeyValueItem>
                   </KeyValueList>
@@ -316,10 +252,10 @@ export default {
           </UiAccordionItem>
         </UiAccordion>
       </BasicBox>
-    </div>
+    </section>
 
-    <div class="row-margin-contents-small">
-      <div class="flex-box">
+    <section class="row-margin-contents-small">
+      <div class="flex-box row-margin-contents">
         <div class="flex-box__cell flex-1">
           <h3 class="text-title-2">청구정보</h3>
         </div>
@@ -332,8 +268,8 @@ export default {
         </div>
       </div>
 
-      <BasicBox class="row-margin-contents">
-        <KeyValueList>
+      <BasicBox>
+        <KeyValueList margin="regular">
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>청구방법</KeyValueTitle>
             <KeyValueText>이메일</KeyValueText>
@@ -360,7 +296,7 @@ export default {
           </KeyValueItem>
         </KeyValueList>
       </BasicBox>
-    </div>
+    </section>
 
     <LayerMyLoanPaymentVirtualNotice ref="layer001" />
   </PageContents>

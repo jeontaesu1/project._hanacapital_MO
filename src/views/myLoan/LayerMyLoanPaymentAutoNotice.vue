@@ -104,7 +104,9 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton>네, 모두 확인했습니다</BasicButton>
+            <BasicButton @click="layerSlotProps.close()"
+              >네, 모두 확인했습니다</BasicButton
+            >
           </ButtonListItem>
         </ButtonList>
       </template>
