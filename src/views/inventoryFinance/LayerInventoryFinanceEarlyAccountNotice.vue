@@ -1,6 +1,6 @@
 <script>
 //IF_M03_l001
-import { ref, reactive } from 'vue';
+import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
@@ -24,13 +24,8 @@ export default {
   },
   setup() {
     const layer = ref(null);
-    const state = reactive({
-      phoneError: false,
-      typeError: false,
-    });
 
     return {
-      state,
       layer,
     };
   },
@@ -64,9 +59,6 @@ export default {
                 것으로 고객님 고유의 입금전용 계좌입니다.
               </div>
             </div>
-            <div :class="[$style['contents-list__depth-4'], 'row-margin-mini']">
-              <p class="text-body-4 font-weight-light color-gray-tertiary"></p>
-            </div>
           </li>
           <li :class="$style['contents-list__item']">
             <div :class="$style['contents-list__head']">
@@ -89,7 +81,7 @@ export default {
           </li>
           <li :class="$style['contents-list__item']">
             <div :class="$style['contents-list__head']">
-              <div :class="$style['contents-list__symbol']">3</div>
+              <div :class="$style['contents-list__symbol']">4</div>
               <div :class="$style['contents-list__title']">
                 전액중도상환 또는 일부중도상환을 하실 경우에는 가상계좌로
                 입금하셔야 합니다.
