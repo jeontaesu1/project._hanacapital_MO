@@ -15,4 +15,39 @@
     font-weight: 500;
     color: inherit;
   }
+
+  &__accordion {
+    &-head {
+      display: flex;
+      align-items: center;
+    }
+
+    &-title {
+      flex: 1;
+      min-width: 0;
+      font-weight: 500;
+    }
+
+    &-opener {
+      &:before {
+        padding: 0;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+
+  &--depth {
+    margin-top: 8px;
+
+    .nav-menu__item + .nav-menu__item {
+      margin-top: 0;
+    }
+
+    .nav-menu__link {
+      padding: 8px 16px 6px 16px;
+      @include font-size-default(14);
+      font-weight: 400;
+    }
+  }
 }
