@@ -77,7 +77,7 @@ export default {
     </FilterTab>
 
     <!-- Case : 신용대출 - 상담 -->
-    <BasicBox>
+    <BasicBox :class="$style['box']">
       <BasicBoxHead>
         <BasicBoxHeadLeft>
           <div :class="$style['division-info']">
@@ -128,7 +128,7 @@ export default {
     <!-- //Case : 신용대출 - 상담 -->
 
     <!-- Case : 신용대출 - 심사중 -->
-    <BasicBox class="row-margin-item-group">
+    <BasicBox :class="$style['box']">
       <BasicBoxHead>
         <BasicBoxHeadLeft>
           <div :class="$style['division-info']">
@@ -181,7 +181,7 @@ export default {
     <!-- //Case : 신용대출 - 심사중 -->
 
     <!-- Case : 신용대출 - 약정 -->
-    <BasicBox class="row-margin-item-group">
+    <BasicBox :class="$style['box']">
       <BasicBoxHead>
         <BasicBoxHeadLeft>
           <div :class="$style['division-info']">
@@ -246,7 +246,7 @@ export default {
     <!-- //Case : 신용대출 - 약정 -->
 
     <!-- Case : 일반할부금융 - 약정 -->
-    <BasicBox class="row-margin-item-group">
+    <BasicBox :class="$style['box']">
       <BasicBoxHead>
         <BasicBoxHeadLeft>
           <div :class="$style['division-info']">
@@ -303,7 +303,7 @@ export default {
       </ButtonList>
     </BasicBox>
 
-    <BasicBox class="row-margin-item-group">
+    <BasicBox :class="$style['box']">
       <BasicBoxHead>
         <BasicBoxHeadLeft>
           <div :class="$style['division-info']">
@@ -368,7 +368,7 @@ export default {
     <!-- //Case : 일반할부금융 - 약정 -->
 
     <!-- Case : 오토금융 - 접수  -->
-    <BasicBox class="row-margin-item-group">
+    <BasicBox :class="$style['box']">
       <BasicBoxHead>
         <BasicBoxHeadLeft>
           <div :class="$style['division-info']">
@@ -428,7 +428,7 @@ export default {
     <!-- //Case : 오토금융 - 접수  -->
 
     <!-- Case : 오토금융 - 상담/심사  -->
-    <BasicBox class="row-margin-item-group">
+    <BasicBox :class="$style['box']">
       <BasicBoxHead>
         <BasicBoxHeadLeft>
           <div :class="$style['division-info']">
@@ -490,7 +490,7 @@ export default {
     <!-- //Case : 오토금융 - 상담/심사  -->
 
     <!-- Case : 오토금융 - 약정  -->
-    <BasicBox class="row-margin-item-group">
+    <BasicBox :class="$style['box']">
       <BasicBoxHead>
         <BasicBoxHeadLeft>
           <div :class="$style['division-info']">
@@ -559,7 +559,7 @@ export default {
     <!-- //Case : 오토금융 - 약정  -->
 
     <!-- Case : 오토금융 - 심사완료  -->
-    <BasicBox class="row-margin-item-group">
+    <BasicBox :class="$style['box']">
       <BasicBoxHead>
         <BasicBoxHeadLeft>
           <div :class="$style['division-info']">
@@ -599,13 +599,6 @@ export default {
           <KeyValueText class="text-body-3"> 300,000원 </KeyValueText>
         </KeyValueItem>
       </KeyValueList>
-
-      <BasicProgress
-        :total="4"
-        :current="4"
-        :classNames="{ wrap: 'row-margin-contents-small' }"
-        color="blue"
-      />
 
       <div
         :class="[
@@ -628,7 +621,7 @@ export default {
     <!-- //Case : 오토금융 - 심사완료  -->
 
     <!-- Case : 오토금융 - 계약준비중  -->
-    <BasicBox class="row-margin-item-group">
+    <BasicBox :class="$style['box']">
       <BasicBoxHead>
         <BasicBoxHeadLeft>
           <div :class="$style['division-info']">
@@ -668,13 +661,6 @@ export default {
           <KeyValueText class="text-body-3"> 300,000원 </KeyValueText>
         </KeyValueItem>
       </KeyValueList>
-
-      <BasicProgress
-        :total="4"
-        :current="4"
-        :classNames="{ wrap: 'row-margin-contents-small' }"
-        color="blue"
-      />
 
       <div
         :class="[
@@ -698,7 +684,7 @@ export default {
     <!-- //Case : 오토금융 - 계약준비중  -->
 
     <!-- Case : 오토금융 - 계약진행중  -->
-    <BasicBox class="row-margin-item-group">
+    <BasicBox :class="$style['box']">
       <BasicBoxHead>
         <BasicBoxHeadLeft>
           <div :class="$style['division-info']">
@@ -739,13 +725,6 @@ export default {
         </KeyValueItem>
       </KeyValueList>
 
-      <BasicProgress
-        :total="4"
-        :current="4"
-        :classNames="{ wrap: 'row-margin-contents-small' }"
-        color="blue"
-      />
-
       <div
         :class="[
           $style['inline-alert'],
@@ -768,7 +747,7 @@ export default {
     <!-- //Case : 오토금융 - 계약진행중  -->
 
     <!-- Case : 오토금융 - 취소  -->
-    <BasicBox class="row-margin-item-group">
+    <BasicBox :class="$style['box']">
       <BasicBoxHead>
         <BasicBoxHeadLeft>
           <div :class="$style['division-info']">
@@ -828,7 +807,7 @@ export default {
     <!-- //Case : 오토금융 - 취소  -->
 
     <!-- Case : 오토금융 - 차량출고중  -->
-    <BasicBox class="row-margin-item-group">
+    <BasicBox :class="$style['box']">
       <BasicBoxHead>
         <BasicBoxHeadLeft>
           <div :class="$style['division-info']">
@@ -869,13 +848,6 @@ export default {
         </KeyValueItem>
       </KeyValueList>
 
-      <BasicProgress
-        :total="4"
-        :current="4"
-        :classNames="{ wrap: 'row-margin-contents-small' }"
-        color="blue"
-      />
-
       <div
         :class="[
           $style['inline-alert'],
@@ -898,7 +870,7 @@ export default {
     <!-- //Case : 오토금융 - 차량출고중  -->
 
     <!-- Case : 오토금융 - 완료  -->
-    <BasicBox class="row-margin-item-group">
+    <BasicBox :class="$style['box']">
       <BasicBoxHead>
         <BasicBoxHeadLeft>
           <div :class="$style['division-info']">
@@ -958,7 +930,7 @@ export default {
     <!-- //Case : 오토금융 - 완료  -->
 
     <!-- Case : 오토금융 - 그 외  -->
-    <BasicBox class="row-margin-item-group">
+    <BasicBox :class="$style['box']">
       <BasicBoxHead>
         <BasicBoxHeadLeft>
           <div :class="$style['division-info']">
@@ -999,13 +971,6 @@ export default {
         </KeyValueItem>
       </KeyValueList>
 
-      <BasicProgress
-        :total="4"
-        :current="1"
-        :classNames="{ wrap: 'row-margin-contents-small' }"
-        color="blue"
-      />
-
       <div
         :class="[
           $style['inline-alert'],
@@ -1023,152 +988,6 @@ export default {
       </ButtonList>
     </BasicBox>
     <!-- //Case : 오토금융 - 그 외  -->
-
-    <!-- Case : 오토금융 - 송금완료  -->
-    <BasicBox class="row-margin-item-group">
-      <BasicBoxHead>
-        <BasicBoxHeadLeft>
-          <div :class="$style['division-info']">
-            <ul :class="$style['division-info__list']">
-              <li :class="$style['division-info__item']">
-                <div class="color-black text-body-4 font-weight-light">
-                  2023.01.10
-                </div>
-              </li>
-              <li :class="$style['division-info__item']">
-                <div class="color-blue text-body-4 font-weight-medium">
-                  오토금융
-                </div>
-              </li>
-            </ul>
-          </div>
-          <h3 class="text-body-1 font-weight-medium row-margin-small ellipsis">
-            오토리스
-          </h3>
-          <p class="text-body-3 color-gray row-margin-small">
-            현대 올 뉴 아반떼(CN7)/인스퍼레이션
-          </p>
-        </BasicBoxHeadLeft>
-        <BasicBoxHeadRight>
-          <RoundStatus :classNames="{ wrap: 'display-block' }" theme="undenary">
-            신규
-          </RoundStatus>
-        </BasicBoxHeadRight>
-      </BasicBoxHead>
-      <KeyValueList margin="regular">
-        <KeyValueItem>
-          <KeyValueTitle class="text-body-3">이용기간</KeyValueTitle>
-          <KeyValueText class="text-body-3">36개월</KeyValueText>
-        </KeyValueItem>
-        <KeyValueItem>
-          <KeyValueTitle class="text-body-3">월납부금액</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 300,000원 </KeyValueText>
-        </KeyValueItem>
-      </KeyValueList>
-
-      <BasicProgress
-        :total="4"
-        :current="1"
-        :classNames="{ wrap: 'row-margin-contents-small' }"
-        color="blue"
-      />
-
-      <div
-        :class="[
-          $style['inline-alert'],
-          $style['inline-alert--complete'],
-          'row-margin-contents-small',
-        ]"
-      >
-        <p :class="$style['inline-alert__text']">송금완료</p>
-      </div>
-
-      <ButtonList :classNames="{ wrap: 'row-margin-contents-small' }">
-        <ButtonListItem>
-          <BasicButton size="small" theme="tertiary" :minSide="true"
-            >견적보기</BasicButton
-          >
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton size="small" theme="tertiary" :minSide="true"
-            >서류등록</BasicButton
-          >
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton size="small" theme="tertiary" :minSide="true"
-            >차량번호 등록</BasicButton
-          >
-        </ButtonListItem>
-      </ButtonList>
-    </BasicBox>
-    <!-- //Case : 오토금융 - 송금완료  -->
-
-    <!-- Case : 오토금융 - 견적산출  -->
-    <BasicBox class="row-margin-item-group">
-      <BasicBoxHead>
-        <BasicBoxHeadLeft>
-          <div :class="$style['division-info']">
-            <ul :class="$style['division-info__list']">
-              <li :class="$style['division-info__item']">
-                <div class="color-black text-body-4 font-weight-light">
-                  2023.01.10
-                </div>
-              </li>
-              <li :class="$style['division-info__item']">
-                <div class="color-blue text-body-4 font-weight-medium">
-                  오토금융
-                </div>
-              </li>
-            </ul>
-          </div>
-          <h3 class="text-body-1 font-weight-medium row-margin-small ellipsis">
-            오토리스
-          </h3>
-          <p class="text-body-3 color-gray row-margin-small">
-            현대 올 뉴 아반떼(CN7)/인스퍼레이션
-          </p>
-        </BasicBoxHeadLeft>
-        <BasicBoxHeadRight>
-          <RoundStatus :classNames="{ wrap: 'display-block' }" theme="undenary">
-            신규
-          </RoundStatus>
-        </BasicBoxHeadRight>
-      </BasicBoxHead>
-      <KeyValueList margin="regular">
-        <KeyValueItem>
-          <KeyValueTitle class="text-body-3">이용기간</KeyValueTitle>
-          <KeyValueText class="text-body-3">36개월</KeyValueText>
-        </KeyValueItem>
-        <KeyValueItem>
-          <KeyValueTitle class="text-body-3">월납부금액</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 300,000원 </KeyValueText>
-        </KeyValueItem>
-      </KeyValueList>
-
-      <BasicProgress
-        :total="4"
-        :current="1"
-        :classNames="{ wrap: 'row-margin-contents-small' }"
-        color="blue"
-      />
-
-      <div
-        :class="[
-          $style['inline-alert'],
-          $style['inline-alert--complete'],
-          'row-margin-contents-small',
-        ]"
-      >
-        <p :class="$style['inline-alert__text']">견적산출</p>
-      </div>
-
-      <ButtonList :classNames="{ wrap: 'row-margin-contents-small' }">
-        <ButtonListItem>
-          <BasicButton size="small" theme="secondary">견적보기</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
-    </BasicBox>
-    <!-- //Case : 오토금융 - 견적산출  -->
 
     <!-- Case : 결과 없을 때 -->
     <div :class="$style['empty']">
