@@ -165,7 +165,7 @@ export default {
     </h3>
 
     <FormList>
-      <FormListItem titleText="대출금액" :forceFocus="true">
+      <FormListItem titleText="결제방법" :forceFocus="true">
         <BoxCheckList align="full">
           <BoxCheckListItem>
             <BoxCheck
