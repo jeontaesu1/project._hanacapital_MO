@@ -1,0 +1,17 @@
+.icon-box {
+  &__inner {
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    margin-right: 12px;
+  }
+
+  &__content {
+    flex: 1;
+    min-width: 0;
+  }
+}
