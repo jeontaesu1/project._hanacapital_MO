@@ -461,6 +461,10 @@ const datas = () => [
             date: '2023.04.07',
             text: '팝업 추가\n- 아파트 등기부등본\n- 아파트 등기부등본 확인',
           },
+          {
+            date: '2023.04.14',
+            text: '팝업 추가\n- 아파트 검색',
+          },
         ],
       },
       {
@@ -940,7 +944,7 @@ const datas = () => [
         log: [
           {
             date: '2023.04.14',
-            text: '팝업 추가\n- 한도/금리 확인',
+            text: '팝업 추가\n- 아파트 검색\n- 한도/금리 확인',
           },
         ],
       },
@@ -1186,8 +1190,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/auto-long-rental-001',
-        status: '',
-        create: '',
+        status: 'partend',
+        create: '2023.04.14',
         log: [],
       },
       {
@@ -1208,8 +1212,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/auto-lease-001',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.14',
         log: [],
       },
       {

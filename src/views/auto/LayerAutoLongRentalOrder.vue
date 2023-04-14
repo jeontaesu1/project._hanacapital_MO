@@ -60,9 +60,9 @@ export default {
         </PageSubText>
       </PageTextGroup>
 
-      <IllustObject type="complete" />
+      <IllustObject type="complete" :classNames="{ wrap: $style['illust'] }" />
 
-      <div class="row-margin-contents-group">
+      <div>
         <section :class="[$style['notice-section'], 'row-margin-contents']">
           <h3 :class="$style['notice-section__title']">차량 발주 신청</h3>
           <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
@@ -86,7 +86,7 @@ export default {
             </li>
           </ul>
         </section>
-        <section :class="$style['notice-section']">
+        <section :class="[$style['notice-section'], 'row-margin-contents']">
           <h3 :class="$style['notice-section__title']">주의사항</h3>
           <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
             <li :class="$style['basic-list__item']">

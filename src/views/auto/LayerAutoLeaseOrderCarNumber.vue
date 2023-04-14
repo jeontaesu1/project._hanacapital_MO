@@ -49,15 +49,15 @@ export default {
     BasicHr,
   },
   setup() {
-    const layer = ref(null);
-
     const state = reactive({
       carNumberError: false,
     });
 
+    const layer = ref(null);
+
     return {
-      layer,
       state,
+      layer,
     };
   },
 };
@@ -94,8 +94,8 @@ export default {
               <InputBlock :error="state.carNumberError">
                 <InputBlockCell :flexible="true">
                   <BasicInput
-                    id="layerAutoLeaseOrderCarNumberInput"
                     title="차량번호"
+                    id="layerAutoLeaseOrderCarNumberInput"
                   />
                 </InputBlockCell>
                 <template v-slot:right>
@@ -121,28 +121,32 @@ export default {
       <BasicHr className="row-margin-container-medium" />
 
       <!-- Case : 차량번호 등록_스크래핑 후 -->
-      <div>
+      <section>
         <h3 class="text-body-2 row-margin-item-medium">체크리스트</h3>
-        <CheckBox
-          id="LayerAutoLeaseOrderCarNumberCheckBox1"
-          theme="tertiary"
-          :defaultChecked="true"
-        >
-          <CheckBoxObject />
-          <CheckBoxLabelText>차량번호가 맞습니까?</CheckBoxLabelText>
-        </CheckBox>
-        <CheckBox
-          id="LayerAutoLeaseOrderCarNumberCheckBox2"
-          theme="tertiary"
-          :defaultChecked="true"
-          :classNames="{ wrap: 'row-margin-item-medium' }"
-        >
-          <CheckBoxObject />
-          <CheckBoxLabelText>
-            차량을 정상적으로 인수 하셨습니까?
-          </CheckBoxLabelText>
-        </CheckBox>
-      </div>
+        <ul class="reset-list">
+          <li class="row-margin-item-medium">
+            <CheckBox
+              id="LayerAutoLeaseOrderCarNumberCheckBox1"
+              theme="tertiary"
+            >
+              <CheckBoxObject />
+              <CheckBoxLabelText>차량번호가 맞습니까?</CheckBoxLabelText>
+            </CheckBox>
+          </li>
+          <li class="row-margin-item-medium">
+            <CheckBox
+              id="LayerAutoLeaseOrderCarNumberCheckBox2"
+              theme="tertiary"
+            >
+              <CheckBoxObject />
+              <CheckBoxLabelText>
+                차량을 정상적으로 인수 하셨습니까?
+              </CheckBoxLabelText>
+            </CheckBox>
+          </li>
+        </ul>
+      </section>
+      <!-- // Case : 차량번호 등록_스크래핑 후 -->
 
       <template v-slot:foot>
         <ButtonList

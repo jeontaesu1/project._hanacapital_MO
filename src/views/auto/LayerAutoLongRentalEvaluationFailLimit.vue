@@ -10,6 +10,7 @@ import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
+/*
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
@@ -18,12 +19,10 @@ import KeyValueList from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
+*/
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
-import TextButton from '@/components/ui/button/TextButton.vue';
-
-import IconArrow from '@/assets/images/icon/link.svg?component';
 
 export default {
   components: {
@@ -35,6 +34,7 @@ export default {
     PageMainText,
     IllustObject,
     BasicHr,
+    /*
     BasicBox,
     BasicBoxHead,
     BasicBoxHeadLeft,
@@ -43,12 +43,10 @@ export default {
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
+    */
     ButtonList,
     ButtonListItem,
     BasicButton,
-    TextButton,
-
-    IconArrow,
   },
   setup() {
     const layer = ref(null);
@@ -78,7 +76,7 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <IllustObject type="fail" />
+      <IllustObject type="fail" :classNames="{ wrap: $style['illust'] }" />
 
       <BasicHr
         type="contents"
@@ -93,6 +91,7 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
+      <!--
       <BasicBox>
         <BasicBoxHead>
           <BasicBoxHeadLeft>
@@ -120,6 +119,7 @@ export default {
           </KeyValueItem>
         </KeyValueList>
       </BasicBox>
+      -->
 
       <section :class="[$style['notice-section'], 'row-margin-contents-group']">
         <h3 :class="$style['notice-section__title']">진행방법</h3>
