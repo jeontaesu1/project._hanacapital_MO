@@ -15,7 +15,7 @@ import UiAccordion from '@/components/ui/accordion/UiAccordion.vue';
 import UiAccordionItem from '@/components/ui/accordion/UiAccordionItem.vue';
 import UiAccordionLayer from '@/components/ui/accordion/UiAccordionLayer.vue';
 import UiAccordionOpener from '@/components/ui/accordion/UiAccordionOpener.vue';
-import LayerMyLoanDetailPaymentVirtual from '@/views/myLoan/LayerMyLoanDetailPaymentVirtual.vue';
+import LayerMyLoanPaymentVirtualNotice from '@/views/myLoan/LayerMyLoanPaymentVirtualNotice.vue';
 
 import IconCopy from '@/assets/images/icon/copy.svg?component';
 import iconImportant from '@/assets/images/icon/important.svg?component';
@@ -38,7 +38,7 @@ export default {
     UiAccordionItem,
     UiAccordionLayer,
     UiAccordionOpener,
-    LayerMyLoanDetailPaymentVirtual,
+    LayerMyLoanPaymentVirtualNotice,
     IconCopy,
     iconImportant,
     BrandLogo001,
@@ -362,7 +362,7 @@ export default {
       </BasicBox>
     </div>
 
-    <LayerMyLoanDetailPaymentVirtual ref="layer001" />
+    <LayerMyLoanPaymentVirtualNotice ref="layer001" />
   </PageContents>
 </template>
 

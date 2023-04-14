@@ -15,7 +15,7 @@ import UiAccordion from '@/components/ui/accordion/UiAccordion.vue';
 import UiAccordionItem from '@/components/ui/accordion/UiAccordionItem.vue';
 import UiAccordionLayer from '@/components/ui/accordion/UiAccordionLayer.vue';
 import UiAccordionOpener from '@/components/ui/accordion/UiAccordionOpener.vue';
-import LayerMyLoanDetailPaymentAuto from '@/views/myLoan/LayerMyLoanDetailPaymentAuto.vue';
+import LayerMyLoanPaymentAutoNotice from '@/views/myLoan/LayerMyLoanPaymentAutoNotice.vue';
 
 import IconCopy from '@/assets/images/icon/copy.svg?component';
 import iconImportant from '@/assets/images/icon/important.svg?component';
@@ -38,7 +38,7 @@ export default {
     UiAccordionItem,
     UiAccordionLayer,
     UiAccordionOpener,
-    LayerMyLoanDetailPaymentAuto,
+    LayerMyLoanPaymentAutoNotice,
     IconCopy,
     iconImportant,
     BrandLogo001,
@@ -330,7 +330,7 @@ export default {
       </UiAccordion>
     </div>
 
-    <LayerMyLoanDetailPaymentAuto ref="layer001" />
+    <LayerMyLoanPaymentAutoNotice ref="layer001" />
   </PageContents>
 </template>
 
