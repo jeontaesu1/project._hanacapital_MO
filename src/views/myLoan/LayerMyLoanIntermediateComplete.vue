@@ -68,13 +68,13 @@ export default {
           중도상환신청 접수가<br />
           <strong>완료되었습니다</strong>
         </PageMainText>
-        <!-- case: 가상계좌 선택 시 노출  -->
+        <!-- Cass : 가상계좌 선택 시 노출  -->
         <PageSubText
           >신청하신 내용은 1~3 영업일 이후에 적용됩니다.<br />
           고객님의 소중한 정보 확인 후<br />
           심사결과를 알려드리겠습니다.</PageSubText
         >
-        <!-- // case: 가상계좌 선택 시 노출  -->
+        <!-- // Cass : 가상계좌 선택 시 노출  -->
         <PageSubText>하나캐피탈을 이용해주셔서 감사합니다.</PageSubText>
       </PageTextGroup>
 
@@ -88,7 +88,7 @@ export default {
         </BasicBoxHead>
 
         <KeyValueList margin="regular">
-          <!-- case: 가상계좌 선택 시 노출  -->
+          <!-- Cass : 가상계좌 선택 시 노출  -->
           <KeyValueItem
             :classNames="{
               item: 'text-body-3',
@@ -97,9 +97,9 @@ export default {
             <KeyValueTitle>결제방식</KeyValueTitle>
             <KeyValueText>가상계좌</KeyValueText>
           </KeyValueItem>
-          <!-- // case: 가상계좌 선택 시 노출  -->
+          <!-- // Cass : 가상계좌 선택 시 노출  -->
 
-          <!-- case: 즉시출금 선택 시 노출  -->
+          <!-- Cass : 즉시출금 선택 시 노출  -->
           <KeyValueItem
             :classNames="{
               item: 'text-body-3',
@@ -108,7 +108,7 @@ export default {
             <KeyValueTitle>결제방식</KeyValueTitle>
             <KeyValueText>즉시출금</KeyValueText>
           </KeyValueItem>
-          <!-- // case: 즉시출금 선택 시 노출  -->
+          <!-- // Cass : 즉시출금 선택 시 노출  -->
 
           <KeyValueItem
             :classNames="{

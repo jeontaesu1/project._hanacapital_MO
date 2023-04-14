@@ -36,8 +36,9 @@ import BasicHr from '@/components/ui/common/BasicHr.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
-import iconInformation from '@/assets/images/icon/information.svg?component';
 import LayerMyLoanIntermediateNotice from './LayerMyLoanIntermediateNotice.vue';
+
+import iconInformation from '@/assets/images/icon/information.svg?component';
 
 export default {
   components: {
@@ -75,27 +76,28 @@ export default {
     TextButton,
     NoticeText,
     UnitText,
-    iconInformation,
     LayerMyLoanIntermediateNotice,
+    iconInformation,
   },
   setup() {
-    const layer = ref(null);
-    const layer001 = ref(null);
-
-    const layer001Open = (e = {}) => {
-      layer001.value.layer.open(e.target);
-    };
-
     const state = reactive({
-      typeError: false,
-      amountError: false,
-      accountError: false,
       dateError: false,
+      amountError: false,
+      accountError001: false,
+      accountError002: false,
     });
 
+    const layer = ref(null);
+
+    const guideLayer001 = ref(null);
+
+    const guideLayer001Open = (e = {}) => {
+      guideLayer001.value.layer.open(e.target);
+    };
+
     return {
-      layer001,
-      layer001Open,
+      guideLayer001,
+      guideLayer001Open,
       state,
       layer,
     };
@@ -125,12 +127,10 @@ export default {
       <BasicBox>
         <BasicBoxHead>
           <BasicBoxHeadLeft>
-            <h3 class="text-body-1 font-weight-medium">오토론 12가4567</h3>
-            <p
-              class="text-body-4 color-gray row-margin-small row-margin-bottom-none"
-            >
-              벤츠 더 뉴 C-class(W205/S205)
-            </p>
+            <h3 class="text-body-1 font-weight-medium row-margin-small">
+              오토론 12가4567
+            </h3>
+            <p class="text-body-4 color-gray">벤츠 더 뉴 C-class(W205/S205)</p>
             <p class="text-body-5 color-gray font-weight-light row-margin-mini">
               가솔린 2.0 Sedan (개소세 30% 인하)<br />
               C200 AMG Line
@@ -183,7 +183,11 @@ export default {
 
         <KeyValueList>
           <KeyValueItem>
-            <KeyValueTitle class="text-body-1 color-black font-weight-medium">
+            <KeyValueTitle
+              :classNames="{
+                title: 'text-body-1 color-black font-weight-medium',
+              }"
+            >
               결제예정금액
             </KeyValueTitle>
             <KeyValueText>
@@ -193,61 +197,55 @@ export default {
         </KeyValueList>
       </BasicBox>
 
-      <FormList :classNames="{ wrap: 'row-margin-contents-group' }">
+      <FormList :classNames="{ wrap: 'row-margin-contents' }">
         <FormListItem titleText="상환방법" :forceFocus="true">
-          <FormInvalid :error="state.typeError">
-            <BoxCheckList>
-              <BoxCheckListItem>
-                <BoxCheck
-                  name="layerMyLoanIntermediateCheck001"
-                  id="layerMyLoanIntermediateCheck001_001"
-                  :defaultChecked="true"
-                >
-                  <BoxCheckLabel>일부상환</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  name="layerMyLoanIntermediateCheck001"
-                  id="layerMyLoanIntermediateCheck001_002"
-                >
-                  <BoxCheckLabel>전체상환</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-            </BoxCheckList>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
+          <BoxCheckList>
+            <BoxCheckListItem>
+              <BoxCheck
+                name="layerMyLoanIntermediateCheck001"
+                id="layerMyLoanIntermediateCheck001_001"
+                :defaultChecked="true"
+              >
+                <BoxCheckLabel>일부상환</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                name="layerMyLoanIntermediateCheck001"
+                id="layerMyLoanIntermediateCheck001_002"
+              >
+                <BoxCheckLabel>전체상환</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+          </BoxCheckList>
         </FormListItem>
 
-        <!-- Case : 일부상환일 경우 노출 -->
+        <!-- Case : 일부상환 선택 시 노출 -->
         <FormListItem titleText="상환기준" :forceFocus="true">
-          <FormInvalid :error="state.typeError">
-            <BoxCheckList>
-              <BoxCheckListItem>
-                <BoxCheck
-                  name="layerMyLoanIntermediateCheck002"
-                  id="layerMyLoanIntermediateCheck002_001"
-                  :defaultChecked="true"
-                >
-                  <BoxCheckLabel>원금기준</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  name="layerMyLoanIntermediateCheck002"
-                  id="layerMyLoanIntermediateCheck002_002"
-                >
-                  <BoxCheckLabel>입금액기준</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-            </BoxCheckList>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
+          <BoxCheckList>
+            <BoxCheckListItem>
+              <BoxCheck
+                name="layerMyLoanIntermediateCheck002"
+                id="layerMyLoanIntermediateCheck002_001"
+                :defaultChecked="true"
+              >
+                <BoxCheckLabel>원금기준</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                name="layerMyLoanIntermediateCheck002"
+                id="layerMyLoanIntermediateCheck002_002"
+              >
+                <BoxCheckLabel>입금액기준</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+          </BoxCheckList>
         </FormListItem>
 
         <FormListItem
           titleText="중도상환 후 결제일자"
-          target="#layerMyLoanIntermediateDate"
+          target="#layerMyLoanIntermediateDateButton"
           :selectOnly="true"
         >
           <FormInvalid :error="state.dateError">
@@ -270,15 +268,15 @@ export default {
                   ]"
                   buttonTitle="결제일자 선택하기"
                   layerTitle="결제일자를 선택해 주세요"
-                  id="layerMyLoanIntermediate001"
-                  buttonId="layerMyLoanIntermediateDate"
+                  id="layerMyLoanIntermediateDate"
+                  buttonId="layerMyLoanIntermediateDateButton"
                 />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
-        <!-- // Case : 일부상환일 경우 노출 -->
+        <!-- // Case : 일부상환 선택 시 노출 -->
 
         <FormListItem
           titleText="상환금액"
@@ -301,53 +299,51 @@ export default {
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
             <!-- Case : 상환금액 입력 시 노출 -->
-            <FormHelpText class="align-right">오십만원</FormHelpText>
+            <FormHelpText :classNames="{ wrap: 'align-right' }"
+              >오십만원</FormHelpText
+            >
             <!-- // Case : 상환금액 입력 시 노출 -->
           </FormInvalid>
         </FormListItem>
 
         <FormListItem titleText="결제방법" :forceFocus="true">
-          <FormInvalid :error="state.typeError">
-            <BoxCheckList>
-              <BoxCheckListItem>
-                <BoxCheck
-                  name="layerMyLoanIntermediateCheck003"
-                  id="layerMyLoanIntermediateCheck003_001"
-                  :defaultChecked="true"
-                >
-                  <BoxCheckLabel>즉시출금</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  name="layerMyLoanIntermediateCheck003"
-                  id="layerMyLoanIntermediateCheck003_002"
-                >
-                  <BoxCheckLabel>가상계좌</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-            </BoxCheckList>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
+          <BoxCheckList>
+            <BoxCheckListItem>
+              <BoxCheck
+                name="layerMyLoanIntermediateCheck003"
+                id="layerMyLoanIntermediateCheck003_001"
+                :defaultChecked="true"
+              >
+                <BoxCheckLabel>즉시출금</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                name="layerMyLoanIntermediateCheck003"
+                id="layerMyLoanIntermediateCheck003_002"
+              >
+                <BoxCheckLabel>가상계좌</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+          </BoxCheckList>
+          <div class="inline-wrap align-right row-margin-item">
+            <TextButton theme="quaternary" @click="guideLayer001Open">
+              중도상환신청 유의사항
+              <template v-slot:rightIcon>
+                <iconInformation />
+              </template>
+            </TextButton>
+          </div>
         </FormListItem>
 
-        <div class="inline-wrap align-right row-margin-item">
-          <TextButton theme="quaternary" @click="layer001Open">
-            중도상환신청 유의사항
-            <template v-slot:rightIcon>
-              <iconInformation />
-            </template>
-          </TextButton>
-        </div>
-
-        <!-- Case : 가상계좌일 경우 노출 -->
+        <!-- Case : 가상계좌 선택 시 노출 -->
         <FormListItem
           titleText="가상계좌"
-          target="#layerMyLoanIntermediateVirtualAccount"
+          target="#layerMyLoanIntermediateVirtualAccountButton"
           :selectOnly="true"
         >
-          <FormInvalid :error="state.accountError">
-            <InputBlock :error="state.accountError">
+          <FormInvalid :error="state.accountError001">
+            <InputBlock :error="state.accountError001">
               <InputBlockCell :flexible="true">
                 <BasicSelect
                   :option="[
@@ -382,24 +378,24 @@ export default {
                   ]"
                   buttonTitle="가상계좌 선택하기"
                   layerTitle="가상계좌를 선택해 주세요"
-                  id="layerMyLoanIntermediate"
-                  buttonId="layerMyLoanIntermediateVirtualAccount"
+                  id="layerMyLoanIntermediateVirtualAccount"
+                  buttonId="layerMyLoanIntermediateVirtualAccountButton"
                 />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
-        <!-- // Case : 가상계좌일 경우 노출 -->
+        <!-- // Case : 가상계좌 선택 시 노출 -->
 
-        <!-- Case : 즉시출금일 경우 노출 -->
+        <!-- Case : 즉시출금 선택 시 노출 -->
         <FormListItem
           titleText="출금계좌"
-          target="#layerMyLoanIntermediateImmediate"
+          target="#layerMyLoanIntermediateImmediateButton"
           :selectOnly="true"
         >
-          <FormInvalid :error="state.accountError">
-            <InputBlock :error="state.accountError">
+          <FormInvalid :error="state.accountError002">
+            <InputBlock :error="state.accountError002">
               <InputBlockCell :flexible="true">
                 <BasicSelect
                   :option="[
@@ -418,8 +414,8 @@ export default {
                   ]"
                   buttonTitle="출금계좌 선택하기"
                   layerTitle="즉시출금계좌를 선택해 주세요"
-                  id="layerMyLoanIntermediate002"
-                  buttonId="layerMyLoanIntermediateImmediate"
+                  id="layerMyLoanIntermediateImmediate"
+                  buttonId="layerMyLoanIntermediateImmediateButton"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -432,30 +428,19 @@ export default {
               계좌만 가능합니다.</FormHelpText
             >
           </FormInvalid>
+          <div class="flex-box row-margin-item">
+            <div class="flex-box__cell flex-1">
+              <NoticeText>새로운 계좌로 출금하시겠어요?</NoticeText>
+            </div>
+            <div class="flex-box__cell">
+              <TextButton theme="secondary" :underline="true" :block="true"
+                >신규계좌등록</TextButton
+              >
+            </div>
+          </div>
         </FormListItem>
-
-        <div class="row-margin-item">
-          <KeyValueList>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>
-                <NoticeText
-                  >새로운 계좌로 출금하시겠어요?</NoticeText
-                ></KeyValueTitle
-              >
-              <KeyValueText>
-                <TextButton theme="secondary" :underline="true"
-                  >신규계좌등록</TextButton
-                ></KeyValueText
-              >
-            </KeyValueItem>
-          </KeyValueList>
-        </div>
       </FormList>
-      <!-- // Case : 즉시출금일 경우 노출 -->
+      <!-- // Case : 즉시출금 선택 시 노출 -->
 
       <template v-slot:foot>
         <ButtonList
@@ -474,9 +459,5 @@ export default {
     </FullPopup>
   </UiLayer>
 
-  <LayerMyLoanIntermediateNotice ref="layer001" />
+  <LayerMyLoanIntermediateNotice ref="guideLayer001" />
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/myLoan/LayerMyLoanIntermediate.scss';
-</style>

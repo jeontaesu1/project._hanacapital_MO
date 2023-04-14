@@ -19,6 +19,7 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
+import StickyBar from '@/components/ui/common/StickyBar.vue';
 
 export default {
   components: {
@@ -37,6 +38,7 @@ export default {
     ButtonListItem,
     BasicButton,
     BasicHr,
+    StickyBar,
   },
   setup() {
     const store = {
@@ -63,8 +65,13 @@ export default {
 </script>
 
 <template>
-  <StepProgress :total="5" :current="4" />
   <PageContents>
+    <template v-slot:head>
+      <StickyBar>
+        <StepProgress :total="5" :current="4" />
+      </StickyBar>
+    </template>
+
     <PageTextGroup>
       <PageMainText>
         만기연장 처리 후<br />
@@ -89,7 +96,9 @@ export default {
           }"
         >
           <KeyValueTitle>대출일자</KeyValueTitle>
-          <KeyValueText class="color-green">2019.03.05</KeyValueText>
+          <KeyValueText>
+            <span class="color-green">2019.03.05</span>
+          </KeyValueText>
         </KeyValueItem>
 
         <KeyValueItem
@@ -98,7 +107,9 @@ export default {
           }"
         >
           <KeyValueTitle>대출실행금액</KeyValueTitle>
-          <KeyValueText class="color-green">11.700,000 원</KeyValueText>
+          <KeyValueText>
+            <span class="color-green">11.700,000 원</span>
+          </KeyValueText>
         </KeyValueItem>
 
         <KeyValueItem
@@ -125,7 +136,9 @@ export default {
           }"
         >
           <KeyValueTitle>기간</KeyValueTitle>
-          <KeyValueText class="color-green">2개월</KeyValueText>
+          <KeyValueText>
+            <span class="color-green">2개월</span>
+          </KeyValueText>
         </KeyValueItem>
 
         <KeyValueItem
@@ -161,22 +174,28 @@ export default {
           }"
         >
           <KeyValueTitle>연체이자율</KeyValueTitle>
-          <KeyValueText class="color-green">약정대출금리+3%</KeyValueText>
+          <KeyValueText>
+            <span class="color-green">약정대출금리+3%</span>
+          </KeyValueText>
         </KeyValueItem>
+      </KeyValueList>
 
-        <BasicHr
-          theme="quaternary"
-          type="contents"
-          className="row-margin-contents-small"
-        />
+      <BasicHr
+        theme="quaternary"
+        type="contents"
+        className="row-margin-contents-small"
+      />
 
+      <KeyValueList margin="regular">
         <KeyValueItem
           :classNames="{
             item: 'text-body-3',
           }"
         >
           <KeyValueTitle>만기일자</KeyValueTitle>
-          <KeyValueText class="color-green">2019.08.05</KeyValueText>
+          <KeyValueText>
+            <span class="color-green">2019.08.05</span>
+          </KeyValueText>
         </KeyValueItem>
 
         <KeyValueItem
@@ -185,7 +204,9 @@ export default {
           }"
         >
           <KeyValueTitle>만기시 상환금액</KeyValueTitle>
-          <KeyValueText class="color-green">11,895,530 원</KeyValueText>
+          <KeyValueText>
+            <span class="color-green">11,895,530 원</span>
+          </KeyValueText>
         </KeyValueItem>
 
         <KeyValueItem
@@ -194,7 +215,9 @@ export default {
           }"
         >
           <KeyValueTitle>원금</KeyValueTitle>
-          <KeyValueText class="color-green">11,700,000 원</KeyValueText>
+          <KeyValueText>
+            <span class="color-green">11,700,000 원</span>
+          </KeyValueText>
         </KeyValueItem>
 
         <KeyValueItem
@@ -203,7 +226,9 @@ export default {
           }"
         >
           <KeyValueTitle>이자</KeyValueTitle>
-          <KeyValueText class="color-green">195,530 원</KeyValueText>
+          <KeyValueText>
+            <span class="color-green">195,530 원</span>
+          </KeyValueText>
         </KeyValueItem>
       </KeyValueList>
     </BasicBox>

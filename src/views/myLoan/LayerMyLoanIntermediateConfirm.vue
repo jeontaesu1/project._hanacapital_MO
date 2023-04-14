@@ -57,14 +57,14 @@ export default {
 </script>
 
 <template>
-  <UiLayer ref="layer" type="full">
+  <UiLayer ref="layer" type="full" v-slot="layerSlotProps">
     <FullPopup>
       <template v-slot:head>
         <FullPopupHead>
-          <template v-slot:left>
-            <PopupButton type="back" />
-          </template>
           <PopupTitle>중도상환신청</PopupTitle>
+          <template v-slot:right>
+            <PopupButton @click="layerSlotProps.close()" />
+          </template>
         </FullPopupHead>
         <StepProgress :total="3" :current="2" />
       </template>
@@ -140,54 +140,56 @@ export default {
         </KeyValueList>
       </BasicBox>
 
-      <h3 class="text-title-2 row-margin-contents">중도상환조회 조건</h3>
+      <section class="row-margin-container-medium">
+        <h3 class="text-title-2 row-margin-contents">중도상환조회 조건</h3>
 
-      <BasicBox>
-        <KeyValueList margin="regular">
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>중도상환방법</KeyValueTitle>
-            <KeyValueText>일부상환(원금기준)</KeyValueText>
-          </KeyValueItem>
+        <BasicBox>
+          <KeyValueList margin="regular">
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
+            >
+              <KeyValueTitle>중도상환방법</KeyValueTitle>
+              <KeyValueText>일부상환(원금기준)</KeyValueText>
+            </KeyValueItem>
 
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>입금예정일자</KeyValueTitle>
-            <KeyValueText>2021.11.04</KeyValueText>
-          </KeyValueItem>
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
+            >
+              <KeyValueTitle>입금예정일자</KeyValueTitle>
+              <KeyValueText>2021.11.04</KeyValueText>
+            </KeyValueItem>
 
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>결제방법</KeyValueTitle>
-            <KeyValueText>가상계좌</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>입금가상계좌</KeyValueTitle>
-            <KeyValueText>하나 123-456-7890123</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>예금주</KeyValueTitle>
-            <KeyValueText>김하나</KeyValueText>
-          </KeyValueItem>
-        </KeyValueList>
-      </BasicBox>
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
+            >
+              <KeyValueTitle>결제방법</KeyValueTitle>
+              <KeyValueText>가상계좌</KeyValueText>
+            </KeyValueItem>
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
+            >
+              <KeyValueTitle>입금가상계좌</KeyValueTitle>
+              <KeyValueText>하나 123-456-7890123</KeyValueText>
+            </KeyValueItem>
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
+            >
+              <KeyValueTitle>예금주</KeyValueTitle>
+              <KeyValueText>김하나</KeyValueText>
+            </KeyValueItem>
+          </KeyValueList>
+        </BasicBox>
+      </section>
 
       <template v-slot:foot>
         <ButtonList
@@ -199,7 +201,7 @@ export default {
             <BasicButton :line="true" theme="quaternary">이전</BasicButton>
           </ButtonListItem>
           <ButtonListItem>
-            <BasicButton :minSide="true">상환</BasicButton>
+            <BasicButton>상환</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

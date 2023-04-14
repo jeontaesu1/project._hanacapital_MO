@@ -43,10 +43,11 @@ export default {
     BasicInput,
   },
   setup() {
-    const layer = ref(null);
     const state = reactive({
       phoneError: false,
     });
+
+    const layer = ref(null);
 
     return {
       state,
@@ -57,14 +58,14 @@ export default {
 </script>
 
 <template>
-  <UiLayer ref="layer" type="full">
+  <UiLayer ref="layer" type="full" v-slot="layerSlotProps">
     <FullPopup>
       <template v-slot:head>
         <FullPopupHead>
-          <template v-slot:left>
-            <PopupButton type="back" />
-          </template>
           <PopupTitle>지정운전자</PopupTitle>
+          <template v-slot:right>
+            <PopupButton @click="layerSlotProps.close()" />
+          </template>
         </FullPopupHead>
         <StepProgress :total="4" :current="1" />
       </template>
@@ -85,6 +86,7 @@ export default {
             <InputBlock :error="state.phoneError">
               <InputBlockCell :flexible="true">
                 <BasicInput
+                  type="number"
                   pattern="\d*"
                   title="휴대폰번호"
                   id="layerMyLoanDesignationDriverLMSPhone"

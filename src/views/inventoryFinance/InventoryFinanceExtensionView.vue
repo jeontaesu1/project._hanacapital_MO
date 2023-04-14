@@ -19,6 +19,7 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
+import StickyBar from '@/components/ui/common/StickyBar.vue';
 
 export default {
   components: {
@@ -37,6 +38,7 @@ export default {
     ButtonListItem,
     BasicButton,
     BasicHr,
+    StickyBar,
   },
   setup() {
     const store = {
@@ -63,8 +65,13 @@ export default {
 </script>
 
 <template>
-  <StepProgress :total="5" :current="2" />
   <PageContents>
+    <template v-slot:head>
+      <StickyBar>
+        <StepProgress :total="5" :current="2" />
+      </StickyBar>
+    </template>
+
     <PageTextGroup>
       <PageMainText>
         선택한 계약상품의<br />
@@ -163,13 +170,15 @@ export default {
           <KeyValueTitle>연체이자율</KeyValueTitle>
           <KeyValueText>10.5%</KeyValueText>
         </KeyValueItem>
+      </KeyValueList>
 
-        <BasicHr
-          theme="quaternary"
-          type="contents"
-          className="row-margin-item-group"
-        />
+      <BasicHr
+        theme="quaternary"
+        type="contents"
+        className="row-margin-item-group"
+      />
 
+      <KeyValueList margin="regular">
         <KeyValueItem
           :classNames="{
             item: 'text-body-3',
@@ -221,7 +230,3 @@ export default {
     </template>
   </PageContents>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/inventory-finance/InventoryFinanceExtensionView.scss';
-</style>

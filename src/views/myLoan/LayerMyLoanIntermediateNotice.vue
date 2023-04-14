@@ -43,8 +43,9 @@ export default {
           </template>
         </FullPopupHead>
       </template>
+
       <section class="row-margin-contents-group">
-        <h3 class="text-body-2 row-margin-item-group">신청 가능 상품</h3>
+        <h3 class="text-body-2 row-margin-item-medium">신청 가능 상품</h3>
 
         <ul
           :class="[
@@ -74,7 +75,7 @@ export default {
       </section>
 
       <section>
-        <h3 class="text-body-2 row-margin-item-group">신청 가능 시간</h3>
+        <h3 class="text-body-2 row-margin-item-medium">신청 가능 시간</h3>
 
         <ul
           :class="[
@@ -103,7 +104,7 @@ export default {
       </section>
 
       <section class="row-margin-contents-group">
-        <h3 class="text-body-2 row-margin-item-group">기본 운전자 범위</h3>
+        <h3 class="text-body-2 row-margin-item-medium">기본 운전자 범위</h3>
 
         <ul
           :class="[
@@ -125,12 +126,15 @@ export default {
           >
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              즉시출금은 '전자금융거래법'에 따라 '고객님의 명의로 인증된
-              자동이체계좌'에서만 출금이 가능합니다.
+              <div>
+                즉시출금은 '전자금융거래법'에 따라 '고객님의 명의로 인증된
+                자동이체계좌'에서만 출금이 가능합니다.
+              </div>
               <ul
                 :class="[
                   $style['basic-list'],
-                  $style['basic-list--regular-margin'],
+                  $style['basic-list--regular'],
+                  'row-margin-item',
                 ]"
               >
                 <li
@@ -196,14 +200,6 @@ export default {
               고객센터(180○-1110)로 연락 바랍니다.
             </div>
           </li>
-          <li
-            :class="[
-              $style['basic-list__item'],
-              'color-gray-tertiary',
-              'font-weight-regular',
-              'text-body-5',
-            ]"
-          ></li>
         </ul>
       </section>
 
@@ -214,7 +210,9 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton>네, 모두 확인했습니다</BasicButton>
+            <BasicButton @click="layerSlotProps.close()"
+              >네, 모두 확인했습니다</BasicButton
+            >
           </ButtonListItem>
         </ButtonList>
       </template>

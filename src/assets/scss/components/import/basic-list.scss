@@ -37,16 +37,16 @@
         border-radius: 50%;
         background-color: $color-gray-70;
 
-        .basic-list__item:global(.color-black) & {
+        .basic-list__item:global(.color-black) > & {
           background-color: $color-black;
         }
-        .basic-list__item:global(.color-green) & {
+        .basic-list__item:global(.color-green) > & {
           background-color: $color-green-50;
         }
-        .basic-list__item:global(.color-red) & {
+        .basic-list__item:global(.color-red) > & {
           background-color: $color-semantic-essential;
         }
-        .basic-list__item:global(.color-white) & {
+        .basic-list__item:global(.color-white) > & {
           background-color: $color-white;
         }
       }
@@ -60,28 +60,28 @@
   }
 
   &--regular {
-    .basic-list__item {
+    > .basic-list__item {
       padding-right: 0;
-    }
 
-    .basic-list__symbol {
-      margin-right: 6px;
+      > .basic-list__symbol {
+        margin-right: 6px;
 
-      &:empty {
-        min-width: 3px;
+        &:empty {
+          min-width: 3px;
 
-        &::before {
-          margin-left: 0;
-          left: 0;
-          width: 3px;
-          height: 3px;
+          &::before {
+            margin-left: 0;
+            left: 0;
+            width: 3px;
+            height: 3px;
+          }
         }
       }
     }
   }
 
   &--regular-margin {
-    .basic-list__item {
+    > .basic-list__item {
       & + .basic-list__item {
         margin-top: 12px;
       }
@@ -89,7 +89,7 @@
   }
 
   &--normal-margin {
-    .basic-list__item {
+    > .basic-list__item {
       & + .basic-list__item {
         margin-top: 10px;
       }
@@ -97,7 +97,7 @@
   }
 
   &--small-margin {
-    .basic-list__item {
+    > .basic-list__item {
       & + .basic-list__item {
         margin-top: 4px;
       }
@@ -105,7 +105,7 @@
   }
 
   &--mini-margin {
-    .basic-list__item {
+    > .basic-list__item {
       & + .basic-list__item {
         margin-top: 2px;
       }
@@ -113,7 +113,7 @@
   }
 
   &--fixed-width {
-    .basic-list {
+    > .basic-list {
       &__symbol {
         min-width: 23px;
       }

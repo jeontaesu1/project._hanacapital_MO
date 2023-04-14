@@ -32,10 +32,11 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
-import iconInformation from '@/assets/images/icon/information.svg?component';
-import iconCalendar from '@/assets/images/icon/Calendar.svg?component';
+import StickyBar from '@/components/ui/common/StickyBar.vue';
 
 import LayerInventoryFinanceEarlyAccountNotice from '@/views/inventoryFinance/LayerInventoryFinanceEarlyAccountNotice.vue';
+
+import iconInformation from '@/assets/images/icon/information.svg?component';
 
 export default {
   components: {
@@ -67,25 +68,25 @@ export default {
     ButtonListItem,
     BasicButton,
     TextButton,
-    iconInformation,
-    iconCalendar,
+    StickyBar,
     LayerInventoryFinanceEarlyAccountNotice,
+    iconInformation,
   },
   setup() {
-    const layer001 = ref(null);
-
-    const layer001Open = (e = {}) => {
-      layer001.value.layer.open(e.target);
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
     };
 
     const state = reactive({
       accountError: false,
     });
 
-    const store = {
-      ui: {
-        header: useUiHeaderStore(),
-      },
+    const layer001 = ref(null);
+
+    const layer001Open = (e = {}) => {
+      layer001.value.layer.open(e.target);
     };
 
     onMounted(() => {
@@ -101,17 +102,22 @@ export default {
     });
 
     return {
+      state,
       layer001,
       layer001Open,
-      state,
     };
   },
 };
 </script>
 
 <template>
-  <StepProgress :total="4" :current="2" />
   <PageContents>
+    <template v-slot:head>
+      <StickyBar>
+        <StepProgress :total="4" :current="2" />
+      </StickyBar>
+    </template>
+
     <PageTextGroup>
       <PageMainText>
         선택한 계약상품의 중도상환<br />
@@ -124,7 +130,9 @@ export default {
       <BasicBoxHead>
         <BasicBoxHeadLeft>
           <h3 class="text-body-1 font-weight-medium">렌터카 23호8998</h3>
-          <p class="text-body-4 color-gray">쏘나타 하이브리드(DN8) 스파이더</p>
+          <p class="text-body-4 color-gray row-margin-small">
+            쏘나타 하이브리드(DN8) 스파이더
+          </p>
         </BasicBoxHeadLeft>
       </BasicBoxHead>
 
@@ -169,24 +177,25 @@ export default {
         <BoxCheckList align="full">
           <BoxCheckListItem>
             <BoxCheck
-              name="inventoryFinanceEarlyForm"
-              id="inventoryFinanceEarlyForm001"
+              name="inventoryFinanceEarlyFormType"
+              id="inventoryFinanceEarlyFormType001"
+              :defaultChecked="true"
             >
               <BoxCheckLabel>오늘 즉시 출금</BoxCheckLabel>
             </BoxCheck>
           </BoxCheckListItem>
           <BoxCheckListItem>
             <BoxCheck
-              name="inventoryFinanceEarlyForm"
-              id="inventoryFinanceEarlyForm002"
+              name="inventoryFinanceEarlyFormType"
+              id="inventoryFinanceEarlyFormType002"
             >
               <BoxCheckLabel>가상계좌 입금</BoxCheckLabel>
             </BoxCheck>
           </BoxCheckListItem>
           <BoxCheckListItem>
             <BoxCheck
-              name="inventoryFinanceEarlyForm"
-              id="inventoryFinanceEarlyForm003"
+              name="inventoryFinanceEarlyFormType"
+              id="inventoryFinanceEarlyFormType003"
             >
               <BoxCheckLabel>중도상환 시뮬레이션</BoxCheckLabel>
             </BoxCheck>
@@ -194,18 +203,7 @@ export default {
         </BoxCheckList>
       </FormListItem>
 
-      <!-- case: 가상계좌 입금 선택 시 노출 -->
-      <div class="inline-wrap align-right row-margin-item">
-        <TextButton theme="quaternary" @click="layer001Open">
-          가상계좌 유의사항
-          <template v-slot:rightIcon>
-            <iconInformation />
-          </template>
-        </TextButton>
-      </div>
-      <!-- // case: 가상계좌 입금 선택 시 노출 -->
-
-      <!-- case: 오늘 즉시 출금 선택 시 노출 -->
+      <!-- Cass : 오늘 즉시 출금 선택 시 노출 -->
       <FormListItem
         titleText="즉시 출금 계좌"
         target="#inventoryFinanceEarlyFormImmediateButton"
@@ -233,16 +231,15 @@ export default {
                 layerTitle="즉시출금계좌를 선택해 주세요"
                 id="inventoryFinanceEarlyFormImmediate"
                 buttonId="inventoryFinanceEarlyFormImmediateButton"
-                defaultValue="1"
               />
             </InputBlockCell>
           </InputBlock>
           <FormInvalidMessage>Error Message</FormInvalidMessage>
         </FormInvalid>
       </FormListItem>
-      <!-- // case: 오늘 즉시 출금 선택 시 노출 -->
+      <!-- // Cass : 오늘 즉시 출금 선택 시 노출 -->
 
-      <!-- case: 출금 가능 계좌가 없을 시 노출 -->
+      <!-- Cass : 출금 가능 계좌가 없을 시 노출 -->
       <FormListItem titleText="즉시 출금 계좌" :disabled="true">
         <InputBlock :disabled="true">
           <InputBlockCell :flexible="true">
@@ -253,7 +250,22 @@ export default {
           </InputBlockCell>
         </InputBlock>
       </FormListItem>
-      <!-- // case: 출금 가능 계좌가 없을 시 노출 -->
+      <!-- // Cass : 출금 가능 계좌가 없을 시 노출 -->
+
+      <!-- Cass : 가상계좌 입금 선택 시 노출 -->
+      <FormListItem titleText="입금가상계좌" :forceFocus="true">
+        // 계좌번호 목록
+
+        <div class="inline-wrap align-right row-margin-item">
+          <TextButton theme="quaternary" @click="layer001Open">
+            가상계좌 유의사항
+            <template v-slot:rightIcon>
+              <iconInformation />
+            </template>
+          </TextButton>
+        </div>
+      </FormListItem>
+      <!-- // Cass : 가상계좌 입금 선택 시 노출 -->
 
       <FormListItem titleText="중도상환방법" :disabled="true">
         <InputBlock :disabled="true">
@@ -263,18 +275,9 @@ export default {
         </InputBlock>
       </FormListItem>
 
-      <!-- case: 중도상환 시뮬레이션 선택 시 노출 -->
-      <FormListItem titleText="입금일자">
-        <InputBlock>
-          <InputBlockCell :flexible="true">
-            <BasicInput defaultValue="2022.12.19" />
-          </InputBlockCell>
-          <template v-slot:innerRight>
-            <iconCalendar />
-          </template>
-        </InputBlock>
-      </FormListItem>
-      <!-- // case: 중도상환 시뮬레이션 선택 시 노출 -->
+      <!-- Cass : 중도상환 시뮬레이션 선택 시 노출 -->
+      <FormListItem titleText="입금일자">// 데이트 피커</FormListItem>
+      <!-- // Cass : 중도상환 시뮬레이션 선택 시 노출 -->
 
       <FormListItem titleText="상환금액" :disabled="true">
         <InputBlock :disabled="true">

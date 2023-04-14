@@ -43,7 +43,7 @@ export default {
       </template>
 
       <section class="row-margin-contents-group">
-        <h3 class="text-body-2 row-margin-item-group">등록안내 및 유의사항</h3>
+        <h3 class="text-body-2 row-margin-item-medium">등록안내 및 유의사항</h3>
 
         <ul
           :class="[
@@ -88,7 +88,7 @@ export default {
       </section>
 
       <section>
-        <h3 class="text-body-2 row-margin-item-group">기본 운전자 범위</h3>
+        <h3 class="text-body-2 row-margin-item-medium">기본 운전자 범위</h3>
 
         <ul
           :class="[
@@ -102,11 +102,12 @@ export default {
           >
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              법인 고객이 임직원운전자 한정특약에 미가입한 경우
+              <div>법인 고객이 임직원운전자 한정특약에 미가입한 경우</div>
               <ul
                 :class="[
                   $style['basic-list'],
-                  $style['basic-list--regular-margin'],
+                  $style['basic-list--regular'],
+                  'row-margin-item',
                 ]"
               >
                 <li
@@ -157,8 +158,14 @@ export default {
           >
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              법인고객이 임직원운전자 한정특약에 가입한 경우
-              <ul :class="$style['basic-list']">
+              <div>법인고객이 임직원운전자 한정특약에 가입한 경우</div>
+              <ul
+                :class="[
+                  $style['basic-list'],
+                  $style['basic-list--regular'],
+                  'row-margin-item',
+                ]"
+              >
                 <li
                   :class="[
                     $style['basic-list__item'],
@@ -194,13 +201,10 @@ export default {
             </div>
           </li>
         </ul>
-      </section>
-
-      <section class="row-margin-item-group">
         <ul
           :class="[
             $style['basic-list'],
-            'row-margin-item',
+            'row-margin-item-group',
             'color-gray-tertiary',
           ]"
         >
@@ -226,7 +230,9 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton>네, 모두 확인했습니다</BasicButton>
+            <BasicButton @click="layerSlotProps.close()"
+              >네, 모두 확인했습니다</BasicButton
+            >
           </ButtonListItem>
         </ButtonList>
       </template>

@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   padding: 12px 20px 4px;
+  transition: background-color 0.2s;
 
   &__text {
     flex: none;
@@ -40,5 +41,9 @@
       background-color: $color-navy-50;
       transition: width 0.2s;
     }
+  }
+
+  :global(.is-sticky) & {
+    background-color: $color-white;
   }
 }

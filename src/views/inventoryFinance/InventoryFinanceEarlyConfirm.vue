@@ -1,5 +1,5 @@
 <script>
-// IF_M03_p003
+// IF_M03_p003 즉시출금/가상계좌 입력 내용 확인
 import { onMounted, onUnmounted } from 'vue';
 
 import { useUiHeaderStore } from '@/stores/ui/header';
@@ -16,6 +16,7 @@ import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
+import StickyBar from '@/components/ui/common/StickyBar.vue';
 
 export default {
   components: {
@@ -31,6 +32,7 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicButton,
+    StickyBar,
   },
   setup() {
     const store = {
@@ -57,8 +59,13 @@ export default {
 </script>
 
 <template>
-  <StepProgress :total="4" :current="3" />
   <PageContents>
+    <template v-slot:head>
+      <StickyBar>
+        <StepProgress :total="4" :current="3" />
+      </StickyBar>
+    </template>
+
     <PageTextGroup>
       <PageMainText>
         중도 상환 조회 조건을<br />
@@ -67,7 +74,7 @@ export default {
     </PageTextGroup>
 
     <BasicBox>
-      <KeyValueList margin="regular">
+      <KeyValueList margin="regular-small">
         <KeyValueItem
           :classNames="{
             item: 'text-body-3',

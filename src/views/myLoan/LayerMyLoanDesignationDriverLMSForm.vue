@@ -47,11 +47,12 @@ export default {
     FormInvalidMessage,
   },
   setup() {
-    const layer = ref(null);
     const state = reactive({
       numberError: false,
       dateError: false,
     });
+
+    const layer = ref(null);
 
     return {
       state,
@@ -66,10 +67,10 @@ export default {
     <FullPopup>
       <template v-slot:head>
         <FullPopupHead>
-          <template v-slot:left>
-            <PopupButton type="back" />
-          </template>
           <PopupTitle>지정운전자</PopupTitle>
+          <template v-slot:right>
+            <PopupButton @click="layerSlotProps.close()" />
+          </template>
         </FullPopupHead>
         <StepProgress :total="4" :current="3" />
       </template>
@@ -85,14 +86,19 @@ export default {
         <FormListItem titleText="계약자와의 관계" :disabled="true">
           <InputBlock :disabled="true">
             <InputBlockCell :flexible="true">
-              <BasicInput defaultValue="친인척" :disabled="true" />
+              <BasicInput
+                title="계약자와의 관계"
+                defaultValue="친인척"
+                :disabled="true"
+              />
             </InputBlockCell>
           </InputBlock>
         </FormListItem>
+
         <FormListItem titleText="이름" :disabled="true">
           <InputBlock :disabled="true">
             <InputBlockCell :flexible="true">
-              <BasicInput defaultValue="김하나" :disabled="true" />
+              <BasicInput title="이름" defaultValue="김하나" :disabled="true" />
             </InputBlockCell>
           </InputBlock>
         </FormListItem>
@@ -100,7 +106,11 @@ export default {
         <FormListItem titleText="생년월일" :disabled="true">
           <InputBlock :disabled="true">
             <InputBlockCell :flexible="true">
-              <BasicInput defaultValue="89.01.01" :disabled="true" />
+              <BasicInput
+                title="생년월일"
+                defaultValue="89.01.01"
+                :disabled="true"
+              />
             </InputBlockCell>
           </InputBlock>
           <FormHelpText>주민등록증상 생년월일을 입력해 주세요.</FormHelpText>
@@ -176,7 +186,7 @@ export default {
                   layerTitle="면허발급번호를 선택해 주세요"
                   buttonId="layerMyLoanDesignationDriverLMSFormNumber"
                   :classNames="{
-                    wrap: 'input-width-category',
+                    wrap: 'input-width-driving-license',
                   }"
                 />
               </InputBlockCell>

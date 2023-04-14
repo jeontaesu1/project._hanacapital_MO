@@ -1,5 +1,5 @@
 <script>
-// LM_M01_l010_한도/금리 확인 팝업
+// LM_M01_l010
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -35,7 +35,6 @@ export default {
     PageTextGroup,
     PageMainText,
     StepProgress,
-
     BoxCheck,
     BoxCheckLabel,
     BoxCheckList,
@@ -56,13 +55,13 @@ export default {
 </script>
 
 <template>
-  <UiLayer ref="layer" type="full">
+  <UiLayer ref="layer" type="full" v-slot="layerSlotProps">
     <FullPopup>
       <template v-slot:head>
         <FullPopupHead>
           <PopupTitle>대출상담</PopupTitle>
-          <template v-slot:left>
-            <PopupButton type="back" />
+          <template v-slot:right>
+            <PopupButton @click="layerSlotProps.close()" />
           </template>
         </FullPopupHead>
         <StepProgress :total="3" :current="3" />
@@ -83,8 +82,10 @@ export default {
             id="layerLMBlogLoanCounselingProducts001"
             :defaultChecked="true"
           >
-            <BoxCheckLabel class="row-margin-item">아파트론</BoxCheckLabel>
-            <KeyValueList margin="small">
+            <BoxCheckLabel :classNames="{ label: 'row-margin-item' }"
+              >아파트론</BoxCheckLabel
+            >
+            <KeyValueList margin="mini">
               <KeyValueItem
                 :classNames="{
                   item: 'text-body-5',
@@ -99,7 +100,9 @@ export default {
                 }"
               >
                 <KeyValueTitle>금리</KeyValueTitle>
-                <KeyValueText class="color-green">13.2%</KeyValueText>
+                <KeyValueText>
+                  <span class="color-green">13.2%</span>
+                </KeyValueText>
               </KeyValueItem>
               <KeyValueItem
                 :classNames="{
@@ -107,7 +110,9 @@ export default {
                 }"
               >
                 <KeyValueTitle>신청대출기간</KeyValueTitle>
-                <KeyValueText class="color-green">36개월</KeyValueText>
+                <KeyValueText>
+                  <span class="color-green">36개월</span>
+                </KeyValueText>
               </KeyValueItem>
               <KeyValueItem
                 :classNames="{
@@ -127,8 +132,10 @@ export default {
             name="layerLMBlogLoanCounselingProducts"
             id="layerLMBlogLoanCounselingProducts002"
           >
-            <BoxCheckLabel class="row-margin-item">e하나신용대출</BoxCheckLabel>
-            <KeyValueList margin="small">
+            <BoxCheckLabel :classNames="{ label: 'row-margin-item' }"
+              >e하나신용대출</BoxCheckLabel
+            >
+            <KeyValueList margin="mini">
               <KeyValueItem
                 :classNames="{
                   item: 'text-body-5',
@@ -143,7 +150,9 @@ export default {
                 }"
               >
                 <KeyValueTitle>금리</KeyValueTitle>
-                <KeyValueText class="color-green">13.2%</KeyValueText>
+                <KeyValueText>
+                  <span class="color-green">13.2%</span>
+                </KeyValueText>
               </KeyValueItem>
               <KeyValueItem
                 :classNames="{
@@ -151,7 +160,9 @@ export default {
                 }"
               >
                 <KeyValueTitle>신청대출기간</KeyValueTitle>
-                <KeyValueText class="color-green">36개월</KeyValueText>
+                <KeyValueText>
+                  <span class="color-green">36개월</span>
+                </KeyValueText>
               </KeyValueItem>
               <KeyValueItem
                 :classNames="{
@@ -171,8 +182,10 @@ export default {
             name="layerLMBlogLoanCounselingProducts"
             id="layerLMBlogLoanCounselingProducts003"
           >
-            <BoxCheckLabel class="row-margin-item">행복아파트론</BoxCheckLabel>
-            <KeyValueList margin="small">
+            <BoxCheckLabel :classNames="{ label: 'row-margin-item' }"
+              >행복아파트론</BoxCheckLabel
+            >
+            <KeyValueList margin="mini">
               <KeyValueItem
                 :classNames="{
                   item: 'text-body-5',
@@ -187,7 +200,9 @@ export default {
                 }"
               >
                 <KeyValueTitle>금리</KeyValueTitle>
-                <KeyValueText class="color-green">13.2%</KeyValueText>
+                <KeyValueText>
+                  <span class="color-green">13.2%</span>
+                </KeyValueText>
               </KeyValueItem>
               <KeyValueItem
                 :classNames="{
@@ -195,7 +210,9 @@ export default {
                 }"
               >
                 <KeyValueTitle>신청대출기간</KeyValueTitle>
-                <KeyValueText class="color-green">36개월</KeyValueText>
+                <KeyValueText>
+                  <span class="color-green">36개월</span>
+                </KeyValueText>
               </KeyValueItem>
               <KeyValueItem
                 :classNames="{

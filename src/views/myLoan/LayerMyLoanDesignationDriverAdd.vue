@@ -65,11 +65,11 @@ export default {
     BasicInput,
   },
   setup() {
-    const layer = ref(null);
     const state = reactive({
       phoneError: false,
-      typeError: false,
     });
+
+    const layer = ref(null);
 
     return {
       state,
@@ -100,7 +100,7 @@ export default {
           선택하신 계약상품의 보험 조건을 확인 후<br />
           운전자 정보를 입력해 주세요.
         </PageSubText>
-        <PageSubText class="color-red">
+        <PageSubText :classNames="{ wrap: 'color-red' }">
           렌터카 상품에 한하여 운전자 지정이 가능합니다.
         </PageSubText>
       </PageTextGroup>
@@ -142,30 +142,27 @@ export default {
         </KeyValueList>
       </BasicBox>
 
-      <FormList :classNames="{ wrap: 'row-margin-contents-group' }">
+      <FormList :classNames="{ wrap: 'row-margin-contents' }">
         <FormListItem titleText="계약자와의 관계" :forceFocus="true">
-          <FormInvalid :error="state.typeError">
-            <BoxCheckList>
-              <BoxCheckListItem>
-                <BoxCheck
-                  name="layerMyLoanDesignationDriverAddCheck"
-                  id="layerMyLoanDesignationDriverAddCheck_001"
-                  :defaultChecked="true"
-                >
-                  <BoxCheckLabel>친인척</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  name="layerMyLoanDesignationDriverAddCheck"
-                  id="layerMyLoanDesignationDriverAddCheck_002"
-                >
-                  <BoxCheckLabel>기타</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-            </BoxCheckList>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
+          <BoxCheckList>
+            <BoxCheckListItem>
+              <BoxCheck
+                name="layerMyLoanDesignationDriverAddCheck"
+                id="layerMyLoanDesignationDriverAddCheck_001"
+                :defaultChecked="true"
+              >
+                <BoxCheckLabel>친인척</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                name="layerMyLoanDesignationDriverAddCheck"
+                id="layerMyLoanDesignationDriverAddCheck_002"
+              >
+                <BoxCheckLabel>기타</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+          </BoxCheckList>
         </FormListItem>
 
         <FormListItem
