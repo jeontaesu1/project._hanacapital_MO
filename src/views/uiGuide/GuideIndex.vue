@@ -123,8 +123,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/enter-date-001',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.14',
         log: [],
       },
       {
@@ -134,8 +134,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/search-workplace-001',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.14',
         log: [],
       },
       {

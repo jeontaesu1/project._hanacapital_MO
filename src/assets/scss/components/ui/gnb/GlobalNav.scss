@@ -1,0 +1,63 @@
+.gnb {
+  &__logged-in {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 12px 0 24px;
+
+    &__button {
+      width: 50px;
+      padding-left: 10px;
+    }
+  }
+
+  &__main-menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 91px;
+    @include reset-list;
+
+    li {
+      text-align: center;
+    }
+
+    &__icon {
+      font-size: 0;
+    }
+    &__title {
+      margin: 4px 0 0;
+      @include font-size-default(15);
+      font-weight: 500;
+    }
+  }
+
+  &__menu-title {
+    margin: 40px 0 0;
+    @include font-size-default(16);
+    font-weight: 700;
+  }
+  &__menu-list {
+    @include reset-list;
+    li {
+      margin-top: 24px;
+
+      &:first-child {
+        margin-top: 18px;
+      }
+    }
+    a {
+      display: flex;
+      width: 100%;
+      text-decoration: none;
+      color: inherit;
+    }
+    &__name {
+      margin: 0 0 0 12px;
+      @include font-size-default(14);
+      font-weight: 400;
+    }
+  }
+}
