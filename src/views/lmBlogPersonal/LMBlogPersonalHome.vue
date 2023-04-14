@@ -86,7 +86,10 @@ export default {
     <div :class="$style['menu']">
       <div div :class="$style['menu__inner']">
         <div :class="$style['menu__box']">
-          <RouterLink to="/" :class="$style['menu__link']">
+          <RouterLink
+            to="/lm-blog-personal/quick-counseling"
+            :class="$style['menu__link']"
+          >
             <div div :class="$style['menu__icon']">
               <IconConsultation />
             </div>
@@ -95,7 +98,10 @@ export default {
         </div>
 
         <div :class="$style['menu__box']">
-          <RouterLink to="/" :class="$style['menu__link']">
+          <RouterLink
+            to="/lm-blog-personal/sms-counseling"
+            :class="$style['menu__link']"
+          >
             <div div :class="$style['menu__icon']">
               <IconSms />
             </div>
