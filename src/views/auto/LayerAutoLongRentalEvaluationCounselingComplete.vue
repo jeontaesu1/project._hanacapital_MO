@@ -1,5 +1,5 @@
 <script>
-// AF_M01_l007
+// AF_M00_l010
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -20,8 +20,8 @@ export default {
     FullPopup,
     FullPopupHead,
     PopupButton,
-    IllustObject,
     IllustInfo,
+    IllustObject,
     IllustInfoTitle,
     IllustInfoText,
     ButtonList,
@@ -50,12 +50,12 @@ export default {
       </template>
 
       <IllustInfo>
-        <IllustObject type="error" />
+        <IllustObject type="complete" />
         <IllustInfoTitle>
-          견적 유효기간이<br />
-          <strong>만료되었습니다</strong>
+          상담접수가<br />
+          <strong>완료되었습니다</strong>
         </IllustInfoTitle>
-        <IllustInfoText>새로 견적을 진행해주세요.</IllustInfoText>
+        <IllustInfoText>요청하신 시간으로 연락드리겠습니다.</IllustInfoText>
       </IllustInfo>
 
       <template v-slot:foot>

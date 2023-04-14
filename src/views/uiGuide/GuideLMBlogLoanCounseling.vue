@@ -6,6 +6,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
+import LayerLMBlogLoanCounselingApartmentSearch from '@/views/lmBlog/LayerLMBlogLoanCounselingApartmentSearch.vue';
 import LayerLMBlogLoanCounselingApartmentPriceSearch from '@/views/lmBlog/LayerLMBlogLoanCounselingApartmentPriceSearch.vue';
 import LayerLMBlogLoanCounselingApartmentCertified from '@/views/lmBlog/LayerLMBlogLoanCounselingApartmentCertified.vue';
 import LayerLMBlogLoanCounselingApartmentCertifiedConfirm from '@/views/lmBlog/LayerLMBlogLoanCounselingApartmentCertifiedConfirm.vue';
@@ -18,6 +19,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
+    LayerLMBlogLoanCounselingApartmentSearch,
     LayerLMBlogLoanCounselingApartmentPriceSearch,
     LayerLMBlogLoanCounselingApartmentCertified,
     LayerLMBlogLoanCounselingApartmentCertifiedConfirm,
@@ -30,6 +32,7 @@ export default {
     const layer003 = ref(null);
     const layer004 = ref(null);
     const layer005 = ref(null);
+    const layer006 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -46,6 +49,9 @@ export default {
     const layer005Open = (e = {}) => {
       layer005.value.layer.open(e.target);
     };
+    const layer006Open = (e = {}) => {
+      layer006.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -53,11 +59,13 @@ export default {
       layer003,
       layer004,
       layer005,
+      layer006,
       layer001Open,
       layer002Open,
       layer003Open,
       layer004Open,
       layer005Open,
+      layer006Open,
     };
   },
 };
@@ -72,36 +80,42 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">
+        <BasicButton @click="layer001Open"
+          >아파트 검색<br />PF_M02_l003</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer002Open">
           아파트 시세검색<br />LM_M01_l004
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer002Open">
+        <BasicButton @click="layer003Open">
           아파트 등기부등본<br />LM_M01_l005, LM_M01_l006
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer003Open">
+        <BasicButton @click="layer004Open">
           아파트 등기부등본 확인<br />LM_M01_l007
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer004Open">
+        <BasicButton @click="layer005Open">
           대출가능 차량 기준안내<br />LM_M01_l009
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer005Open">
+        <BasicButton @click="layer006Open">
           한도 금리 확인<br />LM_M01_l010
         </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
-    <LayerLMBlogLoanCounselingApartmentPriceSearch ref="layer001" />
-    <LayerLMBlogLoanCounselingApartmentCertified ref="layer002" />
-    <LayerLMBlogLoanCounselingApartmentCertifiedConfirm ref="layer003" />
-    <LayerLMBlogLoanCounselingVehicleAvailable ref="layer004" />
-    <LayerLMBlogLoanCounselingProducts ref="layer005" />
+    <LayerLMBlogLoanCounselingApartmentSearch ref="layer001" />
+    <LayerLMBlogLoanCounselingApartmentPriceSearch ref="layer002" />
+    <LayerLMBlogLoanCounselingApartmentCertified ref="layer003" />
+    <LayerLMBlogLoanCounselingApartmentCertifiedConfirm ref="layer004" />
+    <LayerLMBlogLoanCounselingVehicleAvailable ref="layer005" />
+    <LayerLMBlogLoanCounselingProducts ref="layer006" />
   </PageContents>
 </template>
