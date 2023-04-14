@@ -29,10 +29,10 @@ import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
-import BoxCheck from '@/components/ui/form/BoxCheck.vue';
-import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
-import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
-import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
+// import BoxCheck from '@/components/ui/form/BoxCheck.vue';
+// import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
+// import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
+// import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 
 import CarLogo from '@/assets/images/car-logo/auto-hyundai.svg?component';
 
@@ -65,10 +65,10 @@ export default {
     FormInvalidMessage,
     FormHelpText,
     BasicSelect,
-    BoxCheck,
-    BoxCheckLabel,
-    BoxCheckList,
-    BoxCheckListItem,
+    // BoxCheck,
+    // BoxCheckLabel,
+    // BoxCheckList,
+    // BoxCheckListItem,
     CarLogo,
   },
   setup() {
@@ -135,7 +135,9 @@ export default {
               item: 'text-body-3',
             }"
           >
-            <KeyValueTitle>총 차량가격</KeyValueTitle>
+            <KeyValueTitle :classNames="{ title: 'color-black' }"
+              >총 차량가격</KeyValueTitle
+            >
             <KeyValueText>
               <UnitText rightUnit="원" align="right">23,500,000</UnitText>
             </KeyValueText>
@@ -248,7 +250,7 @@ export default {
             <!-- // DD : '대출신청금액'입력 시 노출 / 입력된 금액 한글로 표시 -->
           </FormInvalid>
         </FormListItem>
-
+        <!-- 대출기간 대기
         <FormListItem titleText="대출기간" :forceFocus="true">
           <FormInvalid :error="state.periodError">
             <BoxCheckList>
@@ -311,6 +313,7 @@ export default {
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
+        -->
       </FormList>
 
       <ul :class="$style['basic-list']">
@@ -346,7 +349,9 @@ export default {
               item: 'text-body-3',
             }"
           >
-            <KeyValueTitle>총 차량가격</KeyValueTitle>
+            <KeyValueTitle :classNames="{ title: 'color-black' }"
+              >월 납입금액</KeyValueTitle
+            >
             <!-- DD : 대출기간 선택 시 자동 계산된 금액 노출 -->
             <KeyValueText>
               <UnitText leftUnit="약" rightUnit="원" align="right"

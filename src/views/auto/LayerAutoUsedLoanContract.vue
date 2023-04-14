@@ -164,6 +164,7 @@ export default {
             <h3 class="text-title-2 row-margin-contents">신청금액</h3>
           </div>
           <div class="flex-box__cell">
+            <!-- Case : 수정 전 노출 -->
             <BasicButton
               size="mini"
               :line="true"
@@ -171,6 +172,16 @@ export default {
               inline="true"
               >수정</BasicButton
             >
+            <!-- // Case : 수정 전 노출 -->
+            <!-- Case : 수정 후 노출 -->
+            <BasicButton
+              size="mini"
+              :line="true"
+              theme="secondary"
+              inline="true"
+              >저장</BasicButton
+            >
+            <!-- // Case : 수정 후 노출 -->
           </div>
         </div>
 
@@ -183,6 +194,7 @@ export default {
           <FormListItem
             titleText="차량구입금액"
             target="#layerAutoUsedLoanContractCarAmount"
+            :require="true"
             :disabled="true"
           >
             <FormInvalid :error="state.carAmountError">

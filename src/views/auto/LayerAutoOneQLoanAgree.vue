@@ -53,8 +53,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>신용정보조회 동의를 위한</strong><br />
-          서비스 이용약관에 동의해주세요
+          신용정보조회 동의를 위한<br />
+          <strong>서비스 이용약관에 동의해주세요</strong>
         </PageMainText>
       </PageTextGroup>
 

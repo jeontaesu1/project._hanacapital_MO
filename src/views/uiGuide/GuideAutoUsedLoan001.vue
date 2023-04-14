@@ -145,11 +145,13 @@ export default {
           >차량번호 조회<br />AF_M06_l001</BasicButton
         >
       </ButtonListItem>
+      <!-- 대기     
       <ButtonListItem>
         <BasicButton @click="layer003Open"
           >사고이력조회<br />AF_M06_l003</BasicButton
         >
       </ButtonListItem>
+       -->
       <ButtonListItem>
         <BasicButton @click="layer004Open"
           >중고차 검색<br />AF_M06_l002</BasicButton

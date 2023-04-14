@@ -83,7 +83,7 @@ export default {
         </PageSubText>
       </PageTextGroup>
 
-      <IllustObject type="fail" :classNames="{ wrap: $style['illust'] }" />
+      <IllustObject type="complete" :classNames="{ wrap: $style['illust'] }" />
 
       <BasicBox className="row-margin-contents-group">
         <BasicBoxHead>

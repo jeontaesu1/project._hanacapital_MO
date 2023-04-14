@@ -36,16 +36,15 @@ export default {
       <template v-slot:head>
         <ToastPopupHead>
           <PopupTitle>
-            매매계약서 금액과 구입비용을<br />
-            알고 계신가요?
+            자동차등록증 매매계약서를<br />
+            갖고 계신가요?
           </PopupTitle>
         </ToastPopupHead>
       </template>
 
       <div>
         <p class="text-body-3 color-gray-tertiary row-margin-item-group">
-          매매계약서 금액과 상이할 경우 대출이 취소 될 수 있습니다.<br />
-          동의 하시겠습니까?
+          정상적인 대출진행을 위해서 자동차등록증 매매계약서는 필수 서류입니다.
         </p>
       </div>
 

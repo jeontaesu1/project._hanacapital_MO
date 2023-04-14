@@ -160,7 +160,7 @@ export default {
               <InputBlock :error="state.carAmountError">
                 <InputBlockCell :flexible="true">
                   <BasicInput
-                    title="대출신청금액"
+                    title="차량구입금액"
                     id="layerAutoUsedLoanFormCarAmount"
                     pattern="\d*"
                     :useDelete="false"
@@ -172,14 +172,14 @@ export default {
                 </template>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
-              <!-- DD : '대출신청금액'입력 시 노출 / 입력된 금액 한글로 표시 -->
+              <!-- DD : 금액 입력 시 노출 / 입력된 금액 한글로 표시 -->
               <FormHelpText
                 :classNames="{
                   wrap: 'align-right',
                 }"
                 >삼천오백만원
               </FormHelpText>
-              <!-- // DD : '대출신청금액'입력 시 노출 / 입력된 금액 한글로 표시 -->
+              <!-- // DD : 금액 입력 시 노출 / 입력된 금액 한글로 표시 -->
               <NoticeText :classNames="{ wrap: 'row-margin-item' }">
                 매매계약서상 매매금액을 입력해 주세요.
               </NoticeText>
@@ -206,14 +206,14 @@ export default {
                 </template>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
-              <!-- DD : '대출신청금액'입력 시 노출 / 입력된 금액 한글로 표시 -->
+              <!-- DD : 금액 입력 시 노출 / 입력된 금액 한글로 표시 -->
               <FormHelpText
                 :classNames="{
                   wrap: 'align-right',
                 }"
                 >삼천오백만원
               </FormHelpText>
-              <!-- // DD : '대출신청금액'입력 시 노출 / 입력된 금액 한글로 표시 -->
+              <!-- // DD : 금액 입력 시 노출 / 입력된 금액 한글로 표시 -->
               <NoticeText :classNames="{ wrap: 'row-margin-item' }">
                 최소 대출금액은 200만원 입니다.
               </NoticeText>
