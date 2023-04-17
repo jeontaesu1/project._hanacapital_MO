@@ -72,5 +72,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/myLoan/LayerMyLoanOnlineContractIdentification.scss';
+@import '@/assets/scss/views/myLoan/LayerMyLoanOnlineContractStartURL.scss';
 </style>

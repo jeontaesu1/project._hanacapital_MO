@@ -6,7 +6,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import LayerMyLoanProgressAgree from '@/views/myLoan/LayerMyLoanProgressAgree.vue';
+import LayerMyLoanOnlineContractDescription001_001 from '@/views/myLoan/LayerMyLoanOnlineContractDescription001_001.vue';
 
 export default {
   components: {
@@ -14,7 +14,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    LayerMyLoanProgressAgree,
+    LayerMyLoanOnlineContractDescription001_001,
   },
   setup() {
     const layer001 = ref(null);
@@ -41,11 +41,11 @@ export default {
     >
       <ButtonListItem>
         <BasicButton @click="layer001Open">
-          약관동의<br />My_M03_l001
+          일반신용대출 001<br />My_M03_l201
         </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
-    <LayerMyLoanProgressAgree ref="layer001" />
+    <LayerMyLoanOnlineContractDescription001_001 ref="layer001" />
   </PageContents>
 </template>

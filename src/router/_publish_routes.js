@@ -239,6 +239,56 @@ const routes = [
     component: () => import('@/views/uiGuide/GuideMyLoanProgress001.vue'),
   },
   {
+    path: '/guide/my-loan-progress-002',
+    name: '/guide/my-loan-progress-002',
+    component: () => import('@/views/uiGuide/GuideMyLoanProgress002.vue'),
+  },
+  {
+    path: '/guide/my-loan-progress-003',
+    name: '/guide/my-loan-progress-003',
+    component: () => import('@/views/uiGuide/GuideMyLoanProgress003.vue'),
+  },
+  {
+    path: '/guide/my-loan-progress-004',
+    name: '/guide/my-loan-progress-004',
+    component: () => import('@/views/uiGuide/GuideMyLoanProgress004.vue'),
+  },
+  {
+    path: '/guide/my-loan-progress-005',
+    name: '/guide/my-loan-progress-005',
+    component: () => import('@/views/uiGuide/GuideMyLoanProgress005.vue'),
+  },
+  {
+    path: '/guide/my-loan-progress-006',
+    name: '/guide/my-loan-progress-006',
+    component: () => import('@/views/uiGuide/GuideMyLoanProgress006.vue'),
+  },
+  {
+    path: '/guide/my-loan-progress-007',
+    name: '/guide/my-loan-progress-007',
+    component: () => import('@/views/uiGuide/GuideMyLoanProgress007.vue'),
+  },
+  {
+    path: '/guide/my-loan-progress-008',
+    name: '/guide/my-loan-progress-008',
+    component: () => import('@/views/uiGuide/GuideMyLoanProgress008.vue'),
+  },
+  {
+    path: '/guide/my-loan-progress-009',
+    name: '/guide/my-loan-progress-009',
+    component: () => import('@/views/uiGuide/GuideMyLoanProgress009.vue'),
+  },
+  {
+    path: '/guide/my-loan-progress-010',
+    name: '/guide/my-loan-progress-010',
+    component: () => import('@/views/uiGuide/GuideMyLoanProgress010.vue'),
+  },
+  {
+    path: '/guide/my-loan-progress-011',
+    name: '/guide/my-loan-progress-011',
+    component: () => import('@/views/uiGuide/GuideMyLoanProgress011.vue'),
+  },
+  {
     path: '/guide/search-workplace-001',
     name: '/guide/search-workplace-001',
     component: () => import('@/views/uiGuide/GuideSearchWorkplace001.vue'),

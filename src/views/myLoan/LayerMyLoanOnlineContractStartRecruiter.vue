@@ -92,5 +92,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/myLoan/LayerMyLoanProgressRecruiterRegistration.scss';
+@import '@/assets/scss/views/myLoan/LayerMyLoanOnlineContractStartRecruiter.scss';
 </style>
