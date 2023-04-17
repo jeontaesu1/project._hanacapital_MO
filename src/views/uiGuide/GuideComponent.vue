@@ -5236,10 +5236,26 @@ export default {
         <UnitText rightUnit="원" align="right">333,389</UnitText>
       </div>
       <div class="test-section-sub">
+        <h3 class="test-section-sub-title">vertical align center</h3>
+
+        <UnitText verticalAlign="center" leftUnit="$">333,389</UnitText>
+        <UnitText verticalAlign="center" rightUnit="원">333,389</UnitText>
+      </div>
+      <div class="test-section-sub">
         <h3 class="test-section-sub-title">Regular</h3>
 
         <UnitText size="regular" leftUnit="$">333,389</UnitText>
         <UnitText size="regular" rightUnit="원">333,389</UnitText>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Large</h3>
+
+        <UnitText size="large" verticalAlign="center" leftUnit="$"
+          >333,389</UnitText
+        >
+        <UnitText size="large" verticalAlign="center" rightUnit="원"
+          >333,389</UnitText
+        >
       </div>
     </section>
 
