@@ -344,7 +344,7 @@ export default {
                 buttonTitle="종료시간 선택하기"
                 layerTitle="종료시간을 선택해 주세요"
                 id="customerReservationCounselingEndTime"
-                buttonId="customerReservationCounselingStartEndButton"
+                buttonId="customerReservationCounselingEndTimeButton"
               />
             </InputBlockCell>
             <InputBlockCell margin="regular">

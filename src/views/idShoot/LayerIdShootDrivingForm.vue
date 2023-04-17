@@ -211,7 +211,7 @@ export default {
                   layerTitle="면허발급번호를 선택해 주세요"
                   buttonId="layerIdShootDrivingFormNumber"
                   :classNames="{
-                    wrap: 'input-width-category',
+                    wrap: 'input-width-driving-license',
                   }"
                 />
               </InputBlockCell>

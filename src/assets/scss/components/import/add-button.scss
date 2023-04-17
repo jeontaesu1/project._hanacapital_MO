@@ -1,0 +1,36 @@
+.add-button {
+  @include reset-button;
+  display: block;
+  width: 100%;
+  padding: 19px;
+  border-radius: 8px;
+  border: 1px solid $color-gray-20;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+  }
+
+  &__text {
+    display: block;
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+    @include font-size-default(14);
+  }
+
+  &__icon {
+    flex: none;
+    margin-left: 8px;
+
+    svg {
+      display: block;
+      width: 20px;
+      height: 20px;
+
+      * {
+        fill: $color-black;
+      }
+    }
+  }
+}

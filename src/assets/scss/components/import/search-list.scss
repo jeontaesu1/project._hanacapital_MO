@@ -17,12 +17,51 @@
   }
 
   &__text {
+    display: block;
     @include font-size-default(16);
     font-weight: 500;
 
     mark {
       color: $color-green-50;
       background-color: transparent;
+    }
+  }
+
+  &__date {
+    display: block;
+    margin-top: 4px;
+    @include font-size-default(12);
+    font-weight: 300;
+    color: $color-gray-60;
+  }
+
+  &__icon {
+    display: inline-flex;
+    vertical-align: top;
+    height: #{$line-height-default}em;
+    align-items: center;
+    margin: 0 4px;
+
+    &--first {
+      margin-left: 0;
+    }
+    &--last {
+      margin-right: 0;
+    }
+
+    svg {
+      flex: none;
+      display: block;
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  &--margin-regular {
+    .search-list__item {
+      & + .search-list__item {
+        margin-top: 16px;
+      }
     }
   }
 }

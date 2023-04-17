@@ -13,6 +13,10 @@ export default {
         return defaultClassNames();
       },
     },
+    align: {
+      Type: String,
+      default: null,
+    },
   },
   setup(props) {
     const customClassNames = computed(() => {
@@ -30,7 +34,13 @@ export default {
 </script>
 
 <template>
-  <div :class="[$style['box-head'], customClassNames.wrap]">
+  <div
+    :class="[
+      $style['box-head'],
+      { [$style[`box-head--align-${align}`]]: align },
+      customClassNames.wrap,
+    ]"
+  >
     <slot />
   </div>
 </template>

@@ -1,3 +1,4 @@
+@import '@vueform/slider/themes/default.css';
 @import '@/assets/fonts/SpoqaHanSansNeo/style.css';
 
 html,
@@ -73,6 +74,38 @@ body,
   vertical-align: top;
 }
 
+// contents-wrap
+.contents-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+// flex-box
+.flex-box {
+  display: flex;
+  align-items: center;
+
+  &__cell {
+    display: block;
+    flex: none;
+    min-width: 0;
+
+    & + & {
+      margin-left: 8px;
+    }
+
+    & + &--small {
+      margin-left: 4px;
+    }
+
+    & + &--mini {
+      margin-left: 2px;
+    }
+  }
+}
+
 // align-items
 .align-items-start.align-items-start {
   align-items: flex-start;
@@ -112,6 +145,9 @@ body,
 }
 
 // flex-n
+.flex-1.flex-1 {
+  flex: 1;
+}
 .flex-2.flex-2 {
   flex: 2;
 }
@@ -153,6 +189,9 @@ body,
 }
 .color-navy.color-navy {
   color: $color-navy-50;
+}
+.color-blue.color-blue {
+  color: $color-blue-50;
 }
 
 // text
@@ -286,7 +325,7 @@ body,
   @include row-margin-first-last;
 }
 .row-margin-item-small.row-margin-item-small {
-  margin-top: 6x;
+  margin-top: 6px;
   margin-bottom: 6px;
   @include row-margin-first-last;
 }

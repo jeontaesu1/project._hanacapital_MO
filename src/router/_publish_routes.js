@@ -234,6 +234,11 @@ const routes = [
     component: () => import('@/views/uiGuide/GuideMyLoanIntermediate001.vue'),
   },
   {
+    path: '/guide/my-loan-progress-001',
+    name: '/guide/my-loan-progress-001',
+    component: () => import('@/views/uiGuide/GuideMyLoanProgress001.vue'),
+  },
+  {
     path: '/guide/search-workplace-001',
     name: '/guide/search-workplace-001',
     component: () => import('@/views/uiGuide/GuideSearchWorkplace001.vue'),
@@ -242,6 +247,16 @@ const routes = [
     path: '/guide/enter-date-001',
     name: '/guide/enter-date-001',
     component: () => import('@/views/uiGuide/GuideEnterDate001.vue'),
+  },
+  {
+    path: '/guide/search-address-001',
+    name: '/guide/search-address-001',
+    component: () => import('@/views/uiGuide/GuideSearchAddress001.vue'),
+  },
+  {
+    path: '/guide/search-001',
+    name: '/guide/search-001',
+    component: () => import('@/views/uiGuide/GuideSearch001.vue'),
   },
 
   // home
@@ -698,6 +713,16 @@ const routes = [
     path: '/my-loan/designation-driver-empty',
     name: '/my-loan/designation-driver-empty',
     component: () => import('@/views/myLoan/MyLoanDesignationDriverEmpty.vue'),
+  },
+  {
+    path: '/my-loan/progress',
+    name: '/my-loan/progress',
+    component: () => import('@/views/myLoan/MyLoanProgress.vue'),
+  },
+  {
+    path: '/my-loan/progress-identification',
+    name: '/my-loan/progress-identification',
+    component: () => import('@/views/myLoan/MyLoanProgressIdentification.vue'),
   },
 ];
 

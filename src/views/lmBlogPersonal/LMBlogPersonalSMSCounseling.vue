@@ -92,7 +92,11 @@ export default {
     </PageTextGroup>
 
     <FormList>
-      <BasicTextarea :error="state.commentError" titleText="상담내용">
+      <BasicTextarea
+        :error="state.commentError"
+        titleText="상담내용"
+        title="상담내용"
+      >
         <template v-slot:bottom>
           <FormInvalidMessage>Error Message</FormInvalidMessage>
         </template>
