@@ -1,0 +1,46 @@
+@import '@/assets/scss/components/import/keyword-rank.scss';
+@import '@/assets/scss/components/import/search-list.scss';
+@import '@/assets/scss/components/import/empty.scss';
+
+.head {
+  padding-top: 14px;
+  padding-bottom: 7px;
+  min-height: 0;
+
+  &__left,
+  &__right {
+    flex: none;
+  }
+
+  &__center {
+    flex: 1;
+    min-width: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  &__form {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__input {
+    @include font-size-default(16);
+    height: #{$line-height-default}em;
+  }
+}
+
+.section {
+  & + & {
+    margin-top: 32px;
+    border-top: 1px solid $color-gray-20;
+    padding-top: 32px;
+  }
+
+  &__title {
+    margin: 0 0 16px;
+    @include font-size-default(12);
+    font-weight: 700;
+    color: $color-gray-60;
+  }
+}

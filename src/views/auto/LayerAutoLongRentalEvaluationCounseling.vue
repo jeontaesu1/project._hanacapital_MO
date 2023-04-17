@@ -39,15 +39,15 @@ export default {
     BasicSelect,
   },
   setup() {
-    const layer = ref(null);
-
     const state = reactive({
       timeError: false,
     });
 
+    const layer = ref(null);
+
     return {
-      layer,
       state,
+      layer,
     };
   },
 };
@@ -74,7 +74,7 @@ export default {
       <FormList>
         <FormListItem
           titleText="연락가능시간"
-          target="#layerAutoLongRentalEvaluationCounselingTimeButton"
+          target="#layerAutoLongRentalEvaluationCounselingStartTimeButton"
         >
           <FormInvalid :error="state.timeError">
             <InputBlock :error="state.timeError">
@@ -82,93 +82,99 @@ export default {
                 <BasicSelect
                   :option="[
                     {
-                      value: '1',
+                      value: '9',
                       text: '9',
                     },
                     {
-                      value: '2',
+                      value: '10',
                       text: '10',
                     },
                     {
-                      value: '3',
+                      value: '11',
                       text: '11',
                     },
                     {
-                      value: '4',
+                      value: '12',
                       text: '12',
                     },
                     {
-                      value: '5',
+                      value: '13',
                       text: '13',
                     },
                     {
-                      value: '6',
+                      value: '14',
                       text: '14',
                     },
                     {
-                      value: '7',
+                      value: '15',
                       text: '15',
                     },
                     {
-                      value: '8',
+                      value: '16',
                       text: '16',
                     },
                     {
-                      value: '9',
+                      value: '17',
                       text: '17',
                     },
                   ]"
-                  buttonTitle="시작시간을 선택해 주세요"
+                  buttonTitle="시작시간 선택하기"
                   layerTitle="시작시간을 선택해 주세요"
-                  id="layerAutoLongRentalEvaluationCounselingTime1"
-                  buttonId="layerAutoLongRentalEvaluationCounselingTimeButton"
+                  id="layerAutoLongRentalEvaluationCounselingStartTime"
+                  buttonId="layerAutoLongRentalEvaluationCounselingStartTimeButton"
                 />
               </InputBlockCell>
-              <InputBlockCell class="text-body-3">시</InputBlockCell>
-              <InputBlockCell type="sub">~</InputBlockCell>
-              <InputBlockCell :flexible="true">
+              <InputBlockCell margin="regular">
+                <div class="text-body-3">시</div>
+              </InputBlockCell>
+              <InputBlockCell margin="regular">
+                <div class="text-body-3">~</div>
+              </InputBlockCell>
+              <InputBlockCell :flexible="true" margin="regular">
                 <BasicSelect
                   :option="[
                     {
-                      value: '1',
+                      value: '10',
                       text: '10',
                     },
                     {
-                      value: '2',
+                      value: '11',
                       text: '11',
                     },
                     {
-                      value: '3',
+                      value: '12',
                       text: '12',
                     },
                     {
-                      value: '4',
+                      value: '13',
                       text: '13',
                     },
                     {
-                      value: '5',
+                      value: '14',
                       text: '14',
                     },
                     {
-                      value: '6',
+                      value: '15',
                       text: '15',
                     },
                     {
-                      value: '7',
+                      value: '16',
                       text: '16',
                     },
                     {
-                      value: '8',
+                      value: '17',
                       text: '17',
                     },
                   ]"
-                  buttonTitle="종료시간을 선택해 주세요"
+                  buttonTitle="종료시간 선택하기"
                   layerTitle="종료시간을 선택해 주세요"
-                  id="layerAutoLongRentalEvaluationCounselingTime2"
-                  buttonId="layerAutoLongRentalEvaluationCounselingTimeButton"
+                  id="layerAutoLongRentalEvaluationCounselingEndTime"
+                  buttonId="layerAutoLongRentalEvaluationCounselingEndTimeButton"
                 />
               </InputBlockCell>
-              <InputBlockCell class="text-body-3">시 사이</InputBlockCell>
+              <InputBlockCell margin="regular">
+                <div class="text-body-3">시 사이</div>
+              </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>

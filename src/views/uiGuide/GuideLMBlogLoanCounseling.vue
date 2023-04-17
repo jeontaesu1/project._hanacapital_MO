@@ -6,11 +6,13 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
+import LayerLMBlogLoanCounselingApartmentSearch from '@/views/lmBlog/LayerLMBlogLoanCounselingApartmentSearch.vue';
 import LayerLMBlogLoanCounselingApartmentPriceSearch from '@/views/lmBlog/LayerLMBlogLoanCounselingApartmentPriceSearch.vue';
 import LayerLMBlogLoanCounselingApartmentCertified from '@/views/lmBlog/LayerLMBlogLoanCounselingApartmentCertified.vue';
 import LayerLMBlogLoanCounselingApartmentCertifiedConfirm from '@/views/lmBlog/LayerLMBlogLoanCounselingApartmentCertifiedConfirm.vue';
+import LayerLMBlogLoanCounselingSelectBusiness from '@/views/lmBlog/LayerLMBlogLoanCounselingSelectBusiness.vue';
 import LayerLMBlogLoanCounselingVehicleAvailable from '@/views/lmBlog/LayerLMBlogLoanCounselingVehicleAvailable.vue';
-import LayerLMBlogLoanCounselingApartmentSearch from '@/views/lmBlog/LayerLMBlogLoanCounselingApartmentSearch.vue';
+import LayerLMBlogLoanCounselingProducts from '@/views/lmBlog/LayerLMBlogLoanCounselingProducts.vue';
 
 export default {
   components: {
@@ -18,11 +20,13 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
+    LayerLMBlogLoanCounselingApartmentSearch,
     LayerLMBlogLoanCounselingApartmentPriceSearch,
     LayerLMBlogLoanCounselingApartmentCertified,
     LayerLMBlogLoanCounselingApartmentCertifiedConfirm,
+    LayerLMBlogLoanCounselingSelectBusiness,
     LayerLMBlogLoanCounselingVehicleAvailable,
-    LayerLMBlogLoanCounselingApartmentSearch,
+    LayerLMBlogLoanCounselingProducts,
   },
   setup() {
     const layer001 = ref(null);
@@ -30,6 +34,8 @@ export default {
     const layer003 = ref(null);
     const layer004 = ref(null);
     const layer005 = ref(null);
+    const layer006 = ref(null);
+    const layer007 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -46,6 +52,12 @@ export default {
     const layer005Open = (e = {}) => {
       layer005.value.layer.open(e.target);
     };
+    const layer006Open = (e = {}) => {
+      layer006.value.layer.open(e.target);
+    };
+    const layer007Open = (e = {}) => {
+      layer007.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -53,11 +65,15 @@ export default {
       layer003,
       layer004,
       layer005,
+      layer006,
+      layer007,
       layer001Open,
       layer002Open,
       layer003Open,
       layer004Open,
       layer005Open,
+      layer006Open,
+      layer007Open,
     };
   },
 };
@@ -77,24 +93,34 @@ export default {
         >
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer002Open"
-          >아파트 시세검색<br />LM_M01_l004</BasicButton
-        >
+        <BasicButton @click="layer002Open">
+          아파트 시세검색<br />LM_M01_l004
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer003Open"
-          >아파트 등기부등본<br />LM_M01_l005, LM_M01_l006</BasicButton
-        >
+        <BasicButton @click="layer003Open">
+          아파트 등기부등본<br />LM_M01_l005, LM_M01_l006
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer004Open"
-          >아파트 등기부등본 확인<br />LM_M01_l007</BasicButton
-        >
+        <BasicButton @click="layer004Open">
+          아파트 등기부등본 확인<br />LM_M01_l007
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer005Open"
-          >대출가능 차량 기준안내<br />LM_M01_l009</BasicButton
-        >
+        <BasicButton @click="layer005Open">
+          사업자선택<br />LM_M01_l008
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer006Open">
+          대출가능 차량 기준안내<br />LM_M01_l009
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer007Open">
+          한도 금리 확인<br />LM_M01_l010
+        </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
@@ -102,6 +128,8 @@ export default {
     <LayerLMBlogLoanCounselingApartmentPriceSearch ref="layer002" />
     <LayerLMBlogLoanCounselingApartmentCertified ref="layer003" />
     <LayerLMBlogLoanCounselingApartmentCertifiedConfirm ref="layer004" />
-    <LayerLMBlogLoanCounselingVehicleAvailable ref="layer005" />
+    <LayerLMBlogLoanCounselingSelectBusiness ref="layer005" />
+    <LayerLMBlogLoanCounselingVehicleAvailable ref="layer006" />
+    <LayerLMBlogLoanCounselingProducts ref="layer007" />
   </PageContents>
 </template>

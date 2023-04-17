@@ -1,0 +1,20 @@
+@import '@/assets/scss/components/import/bank-brand.scss';
+
+.select {
+  position: relative;
+  display: block;
+
+  &__input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &__tab {
+    margin-bottom: 16px;
+  }
+}
+
+.bank-brand__block {
+  cursor: pointer;
+}

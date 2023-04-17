@@ -277,7 +277,11 @@ export default {
         </FormInvalid>
       </FormListItem>
 
-      <BasicTextarea :error="state.discriptionError" titleText="상담신청내용" />
+      <BasicTextarea
+        :error="state.discriptionError"
+        titleText="상담신청내용"
+        title="상담신청내용"
+      />
     </FormList>
 
     <div :class="[$style['agree-list'], 'row-margin-container']">

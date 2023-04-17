@@ -1,0 +1,32 @@
+.keyword-rank {
+  @include reset-list;
+  padding: 0 4px;
+
+  &__item {
+    & + & {
+      margin-top: 10px;
+    }
+  }
+
+  &__button {
+    @include reset-button;
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    @include font-size-default(14);
+    text-align: left;
+  }
+
+  &__num {
+    flex: none;
+    font-weight: 700;
+    color: $color-green-40;
+    margin-right: 16px;
+  }
+
+  &__text {
+    flex: 1;
+    min-width: 0;
+    font-weight: 500;
+  }
+}

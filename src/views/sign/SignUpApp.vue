@@ -13,7 +13,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 
-import HanaLogo from '@/assets/images/bank-logo/hana.svg?component';
+import HanaLogo from '@/assets/images/common/hana.svg?component';
 import IconArrow from '@/assets/images/icon/link.svg?component';
 
 export default {
