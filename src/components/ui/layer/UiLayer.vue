@@ -341,6 +341,16 @@ export default {
       layerContainer.value.focus();
     };
 
+    const wrapClick = () => {
+      if (props.backgroundClose) {
+        close();
+      }
+    };
+
+    const containerClick = (e) => {
+      e.stopPropagation();
+    };
+
     onMounted(() => {
       const body = document.getElementsByTagName('body')[0];
 
@@ -367,6 +377,8 @@ export default {
       close,
       loopFocusBefore,
       loopFocusAfter,
+      wrapClick,
+      containerClick,
     };
   },
 };
@@ -391,6 +403,7 @@ export default {
     :aria-hidden="state.opened ? 'false' : 'true'"
     :aria-modal="state.opened ? 'true' : null"
     :hidden="state.opened ? null : ''"
+    @click="wrapClick"
   >
     <div
       :class="[$style['layer__loop'], customClassNames.loop]"
@@ -402,6 +415,7 @@ export default {
       :class="[$style['layer__container'], customClassNames.container]"
       :style="`transition-duration: ${state.speed}ms;`"
       :tabindex="state.opened ? '0' : null"
+      @click="containerClick"
     >
       <slot :open="open" :close="close" />
     </div>
