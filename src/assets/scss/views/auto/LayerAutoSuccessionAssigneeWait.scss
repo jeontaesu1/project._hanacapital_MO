@@ -1,0 +1,30 @@
+@import '@/assets/scss/components/import/car-image.scss';
+@import '@/assets/scss/components/import/brand-info.scss';
+
+.illust {
+  padding-bottom: 0;
+}
+
+.box__link {
+  position: relative;
+}
+
+.detail__link {
+  @include reset-button;
+
+  svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

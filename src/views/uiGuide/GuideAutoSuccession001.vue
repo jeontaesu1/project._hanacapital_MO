@@ -15,10 +15,11 @@ import LayerAutoSuccessionAssigneeSearch from '@/views/auto/LayerAutoSuccessionA
 import LayerAutoSuccessionAssigneeLeaseConfirm from '@/views/auto/LayerAutoSuccessionAssigneeLeaseConfirm.vue';
 import LayerAutoSuccessionAssigneeRentalConfirm from '@/views/auto/LayerAutoSuccessionAssigneeRentalConfirm.vue';
 import LayerAutoSuccessionAssigneeForm from '@/views/auto/LayerAutoSuccessionAssigneeForm.vue';
-
+import LayerAutoSuccessionAssigneeAgree from '@/views/auto/LayerAutoSuccessionAssigneeAgree.vue';
+import LayerAutoSuccessionAssigneeWait from '@/views/auto/LayerAutoSuccessionAssigneeWait.vue';
 import LayerAutoSuccessionAttorneyIdentification from '@/views/auto/LayerAutoSuccessionAttorneyIdentification.vue';
-import LayerAutoSuccessionAttorneyComplete from '@/views/auto/LayerAutoSuccessionAttorneyComplete.vue';
 import LayerAutoSuccessionAssigneeIdentification from '@/views/auto/LayerAutoSuccessionAssigneeIdentification.vue';
+import LayerAutoSuccessionAttorneyComplete from '@/views/auto/LayerAutoSuccessionAttorneyComplete.vue';
 import LayerAutoSuccessionAssigneeAddDocumen from '@/views/auto/LayerAutoSuccessionAssigneeAddDocumen.vue';
 
 export default {
@@ -36,10 +37,11 @@ export default {
     LayerAutoSuccessionAssigneeLeaseConfirm,
     LayerAutoSuccessionAssigneeRentalConfirm,
     LayerAutoSuccessionAssigneeForm,
-
-    LayerAutoSuccessionAttorneyComplete,
-    LayerAutoSuccessionAssigneeIdentification,
+    LayerAutoSuccessionAssigneeAgree,
+    LayerAutoSuccessionAssigneeWait,
     LayerAutoSuccessionAttorneyIdentification,
+    LayerAutoSuccessionAssigneeIdentification,
+    LayerAutoSuccessionAttorneyComplete,
     LayerAutoSuccessionAssigneeAddDocumen,
   },
   setup() {
@@ -52,17 +54,12 @@ export default {
     const layer007 = ref(null);
     const layer008 = ref(null);
     const layer009 = ref(null);
-
     const layer010 = ref(null);
     const layer011 = ref(null);
     const layer012 = ref(null);
     const layer013 = ref(null);
-
-    const layer016 = ref(null);
-    const layer017 = ref(null);
-
-    const layer019 = ref(null);
-    const layer020 = ref(null);
+    const layer014 = ref(null);
+    const layer015 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -103,19 +100,11 @@ export default {
     const layer013Open = (e = {}) => {
       layer013.value.layer.open(e.target);
     };
-
-    const layer016Open = (e = {}) => {
-      layer016.value.layer.open(e.target);
+    const layer014Open = (e = {}) => {
+      layer014.value.layer.open(e.target);
     };
-    const layer017Open = (e = {}) => {
-      layer017.value.layer.open(e.target);
-    };
-
-    const layer019Open = (e = {}) => {
-      layer019.value.layer.open(e.target);
-    };
-    const layer020Open = (e = {}) => {
-      layer020.value.layer.open(e.target);
+    const layer015Open = (e = {}) => {
+      layer015.value.layer.open(e.target);
     };
 
     return {
@@ -132,12 +121,8 @@ export default {
       layer011,
       layer012,
       layer013,
-
-      layer016,
-      layer017,
-
-      layer019,
-      layer020,
+      layer014,
+      layer015,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -151,12 +136,8 @@ export default {
       layer011Open,
       layer012Open,
       layer013Open,
-
-      layer016Open,
-      layer017Open,
-
-      layer019Open,
-      layer020Open,
+      layer014Open,
+      layer015Open,
     };
   },
 };
@@ -212,69 +193,37 @@ export default {
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer009Open"
-          >양수인 정보입력<br />AF_M07_l008 / AF_M07_l009 / AF_M07_l010
+          >양수인 정보입력<br />AF_M07_l008 / AF_M07_l009
         </BasicButton>
       </ButtonListItem>
-
-      <!-- 
       <ButtonListItem>
         <BasicButton @click="layer010Open"
-          >렌트 승계 정보확인<br />AF_M07_l008</BasicButton
-        >
+          >신용정보조회동의<br />AF_M07_l010
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer011Open"
-          >렌트 상세조건 팝업<br />AF_M07_b004</BasicButton
+          >위임동의 요청 완료<br />AF_M07_l011</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer012Open"
-          >개인/개인사업자<br />AF_M07_l009</BasicButton
+          >양수인/신청인 본인확인<br />AF_M07_l019</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer013Open"
-          >법인사업자<br />AF_M07_l010</BasicButton
-        >
-      </ButtonListItem> -->
-      <!-- <ButtonListItem>
-        <BasicButton @click="layer013Open"
-          >신용정보조회동의<br />AF_M07_l011</BasicButton
+          >양수인/신청인 본인확인<br />AF_M07_l015</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer013Open"
-          >신청 완료<br />AF_M07_l019</BasicButton
+        <BasicButton @click="layer014Open"
+          >위임동의 완료<br />AF_M07_l014</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer013Open"
-          >위임동의 요청 완료<br />AF_M07_l012</BasicButton
-        >
-      </ButtonListItem>-->
-      <ButtonListItem>
-        <BasicButton @click="layer016Open"
-          >승계 본인확인<br />AF_M07_l019</BasicButton
-        >
-      </ButtonListItem>
-      <ButtonListItem>
-        <BasicButton @click="layer017Open"
-          >위임장 동의<br />AF_M07_l014</BasicButton
-        >
-      </ButtonListItem>
-      <!-- <ButtonListItem>
-        <BasicButton @click="layer018Open"
-          >동의 완료<br />AF_M07_l015</BasicButton
-        >
-      </ButtonListItem> -->
-      <ButtonListItem>
-        <BasicButton @click="layer019Open"
-          >승계 본인확인<br />AF_M07_l015</BasicButton
-        >
-      </ButtonListItem>
-      <ButtonListItem>
-        <BasicButton @click="layer020Open"
-          >팩스접수<br />AF_M07_l016</BasicButton
+        <BasicButton @click="layer015Open"
+          >심사서류 등록<br />AF_M07_l016</BasicButton
         >
       </ButtonListItem>
     </ButtonList>
@@ -288,13 +237,11 @@ export default {
     <LayerAutoSuccessionAssigneeLeaseConfirm ref="layer007" />
     <LayerAutoSuccessionAssigneeRentalConfirm ref="layer008" />
     <LayerAutoSuccessionAssigneeForm ref="layer009" />
-    <LayerAuto ref="layer010" />
-    <LayerAuto ref="layer011" />
-    <LayerAuto ref="layer012" />
-    <LayerAutoSuccessionAttorneyIdentification ref="layer016" />
-    <LayerAutoSuccessionAttorneyComplete ref="layer017" />
-    <LayerAuto ref="layer018" />
-    <LayerAutoSuccessionAssigneeIdentification ref="layer019" />
-    <LayerAutoSuccessionAssigneeAddDocumen ref="layer020" />
+    <LayerAutoSuccessionAssigneeAgree ref="layer010" />
+    <LayerAutoSuccessionAssigneeWait ref="layer011" />
+    <LayerAutoSuccessionAttorneyIdentification ref="layer012" />
+    <LayerAutoSuccessionAssigneeIdentification ref="layer013" />
+    <LayerAutoSuccessionAttorneyComplete ref="layer014" />
+    <LayerAutoSuccessionAssigneeAddDocumen ref="layer015" />
   </PageContents>
 </template>

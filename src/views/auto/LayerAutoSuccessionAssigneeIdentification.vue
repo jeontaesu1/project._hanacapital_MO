@@ -70,7 +70,7 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <!--  DD : 이름 입력 후 다음 버튼 클릭시 노출 / 생년월일 입력시 하단 다음 버튼 노출 -->
+      <!--  DD : 이름 입력 후 다음 버튼 클릭시 노출 / 생년월일 입력전 하단 다음 버튼 비노출 -->
       <FormList>
         <FormListItem
           titleText="생년월일"
@@ -91,7 +91,7 @@ export default {
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
-        <!-- // DD : 이름 입력 후 다음 버튼 클릭시 노출 / 생년월일 입력시 하단 다음 버튼 노출 -->
+        <!-- // DD : 이름 입력 후 다음 버튼 클릭시 노출 / 생년월일 입력전 하단 다음 버튼 비노출 -->
 
         <FormListItem
           titleText="이름"
@@ -117,11 +117,11 @@ export default {
             wrap: 'row-margin-none',
           }"
         >
-          <!-- DD : 이름 입력시 다음버튼 노출 -->
+          <!-- DD : 이름, 생년월일 각 폼 입력 시에만 다음버튼 노출 -->
           <ButtonListItem>
             <BasicButton theme="secondary">다음</BasicButton>
           </ButtonListItem>
-          <!-- // DD : 이름 입력시 다음버튼 노출 -->
+          <!-- // DD : 이름, 생년월일 각 폼 입력 시에만 다음버튼 노출 -->
         </ButtonList>
       </template>
     </FullPopup>

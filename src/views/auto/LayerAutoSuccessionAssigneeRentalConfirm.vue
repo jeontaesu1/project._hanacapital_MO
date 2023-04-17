@@ -26,6 +26,8 @@ import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
 import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
 import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 
+import LayerAutoSuccessionAssigneeRentalDetail from '@/views/auto/LayerAutoSuccessionAssigneeRentalDetail.vue';
+
 export default {
   components: {
     UiLayer,
@@ -51,12 +53,20 @@ export default {
     BoxCheckLabel,
     BoxCheckList,
     BoxCheckListItem,
+    LayerAutoSuccessionAssigneeRentalDetail,
   },
   setup() {
     const layer = ref(null);
+    const layer001 = ref(null);
+
+    const layer001Open = (e = {}) => {
+      layer001.value.layer.open(e.target);
+    };
 
     return {
       layer,
+      layer001,
+      layer001Open,
     };
   },
 };
@@ -196,11 +206,15 @@ export default {
             <BasicButton :line="true" theme="quaternary">이전</BasicButton>
           </ButtonListItem>
           <ButtonListItem>
-            <BasicButton theme="secondary">승계 신청하기</BasicButton>
+            <BasicButton theme="secondary" @click="layer001Open"
+              >승계 신청하기</BasicButton
+            >
           </ButtonListItem>
         </ButtonList>
       </template>
     </FullPopup>
+
+    <LayerAutoSuccessionAssigneeRentalDetail ref="layer001" />
   </UiLayer>
 </template>
 
