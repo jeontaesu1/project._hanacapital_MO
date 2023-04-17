@@ -4945,6 +4945,61 @@ export default {
           </li>
         </ul>
       </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Product</h3>
+        <ul :class="$style['logs']">
+          <li :class="$style['logs__item']">
+            <div :class="$style['logs__block']">
+              <div :class="$style['logs__row']">
+                <div div :class="$style['logs__contents']">
+                  <h3 class="text-body-1 font-weight-medium">스탁론</h3>
+                  <div class="text-body-4 color-gray row-margin-mini">
+                    하나증권 12-3456-7890123
+                  </div>
+                </div>
+                <RoundStatus theme="secondary">D-7</RoundStatus>
+                <div div :class="$style['logs__right']">
+                  <button type="button" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </button>
+                </div>
+              </div>
+
+              <BasicHr
+                type="contents"
+                theme="quaternary"
+                className="row-margin-contents-small"
+              />
+
+              <KeyValue margin="regular">
+                <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                  <KeyValueTitle>결제예정금액</KeyValueTitle>
+                  <KeyValueText :classNames="{ text: 'color-green' }"
+                    >845,000 원</KeyValueText
+                  >
+                </KeyValueItem>
+
+                <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                  <KeyValueTitle>결제일</KeyValueTitle>
+                  <KeyValueText>2022.02.05 (매월 5일)</KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                  <KeyValueTitle>결제회차</KeyValueTitle>
+                  <KeyValueText>16/60</KeyValueText>
+                </KeyValueItem>
+              </KeyValue>
+
+              <div
+                :class="[$style['logs__button'], 'row-margin-contents-small']"
+              >
+                <BasicButton size="small">연장</BasicButton>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
     </section>
 
     <section class="test-section">
