@@ -6,13 +6,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import LayerMyLoanAgree from '@/views/myLoan/LayerMyLoanAgree.vue';
-import LayerMyLoanIdentification from '@/views/myLoan/LayerMyLoanIdentification.vue';
-import LayerMyLoanRecruiterRegistration from '@/views/myLoan/LayerMyLoanRecruiterRegistration.vue';
-import LayerMyLoanNoticeDuty from '@/views/myLoan/LayerMyLoanNoticeDuty.vue';
-import LayerMyLoanNoticeDutyNotAgree from '@/views/myLoan/LayerMyLoanNoticeDutyNotAgree.vue';
-import LayerMyLoanCompatibilityAdequacy from '@/views/myLoan/LayerMyLoanCompatibilityAdequacy.vue';
-import LayerMyLoanCompatibilityAdequacyNotAgree from '@/views/myLoan/LayerMyLoanCompatibilityAdequacyNotAgree.vue';
+import LayerMyLoanProgressAgree from '@/views/myLoan/LayerMyLoanProgressAgree.vue';
 
 export default {
   components: {
@@ -20,60 +14,18 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    LayerMyLoanAgree,
-    LayerMyLoanIdentification,
-    LayerMyLoanRecruiterRegistration,
-    LayerMyLoanNoticeDuty,
-    LayerMyLoanNoticeDutyNotAgree,
-    LayerMyLoanCompatibilityAdequacy,
-    LayerMyLoanCompatibilityAdequacyNotAgree,
+    LayerMyLoanProgressAgree,
   },
   setup() {
     const layer001 = ref(null);
-    const layer002 = ref(null);
-    const layer003 = ref(null);
-    const layer004 = ref(null);
-    const layer005 = ref(null);
-    const layer006 = ref(null);
-    const layer007 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
     };
-    const layer002Open = (e = {}) => {
-      layer002.value.layer.open(e.target);
-    };
-    const layer003Open = (e = {}) => {
-      layer003.value.layer.open(e.target);
-    };
-    const layer004Open = (e = {}) => {
-      layer004.value.layer.open(e.target);
-    };
-    const layer005Open = (e = {}) => {
-      layer005.value.layer.open(e.target);
-    };
-    const layer006Open = (e = {}) => {
-      layer006.value.layer.open(e.target);
-    };
-    const layer007Open = (e = {}) => {
-      layer007.value.layer.open(e.target);
-    };
 
     return {
       layer001,
-      layer002,
-      layer003,
-      layer004,
-      layer005,
-      layer006,
-      layer007,
       layer001Open,
-      layer002Open,
-      layer003Open,
-      layer004Open,
-      layer005Open,
-      layer006Open,
-      layer007Open,
     };
   },
 };
@@ -92,44 +44,8 @@ export default {
           약관동의<br />My_M03_l001
         </BasicButton>
       </ButtonListItem>
-      <ButtonListItem>
-        <BasicButton @click="layer002Open">
-          본인인증(URL진입)<br />My_M03_l002
-        </BasicButton>
-      </ButtonListItem>
-      <ButtonListItem>
-        <BasicButton @click="layer003Open">
-          모집인등록증 제시<br />My_M03_l003
-        </BasicButton>
-      </ButtonListItem>
-      <ButtonListItem>
-        <BasicButton @click="layer004Open">
-          고지의무수행 확인서<br />My_M03_l004
-        </BasicButton>
-      </ButtonListItem>
-      <ButtonListItem>
-        <BasicButton @click="layer005Open">
-          고지의무수행 확인서_미동의시<br />My_M03_b001
-        </BasicButton>
-      </ButtonListItem>
-      <ButtonListItem>
-        <BasicButton @click="layer006Open">
-          적합성·적정성 확인서<br />My_M03_l005
-        </BasicButton>
-      </ButtonListItem>
-      <ButtonListItem>
-        <BasicButton @click="layer007Open">
-          적합성·적정성 확인서_미동의 시<br />My_M03_b002
-        </BasicButton>
-      </ButtonListItem>
     </ButtonList>
 
-    <LayerMyLoanAgree ref="layer001" />
-    <LayerMyLoanIdentification ref="layer002" />
-    <LayerMyLoanRecruiterRegistration ref="layer003" />
-    <LayerMyLoanNoticeDuty ref="layer004" />
-    <LayerMyLoanNoticeDutyNotAgree ref="layer005" />
-    <LayerMyLoanCompatibilityAdequacy ref="layer006" />
-    <LayerMyLoanCompatibilityAdequacyNotAgree ref="layer007" />
+    <LayerMyLoanProgressAgree ref="layer001" />
   </PageContents>
 </template>

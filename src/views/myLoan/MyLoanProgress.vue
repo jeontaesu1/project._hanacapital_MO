@@ -77,7 +77,7 @@ export default {
     </FilterTab>
 
     <!-- Case : 신용대출 - 상담 -->
-    <BasicBox :class="$style['box']">
+    <BasicBox :className="$style['box']">
       <BasicBoxHead>
         <BasicBoxHeadLeft>
           <div :class="$style['division-info']">
@@ -128,7 +128,7 @@ export default {
     <!-- //Case : 신용대출 - 상담 -->
 
     <!-- Case : 신용대출 - 심사중 -->
-    <BasicBox :class="$style['box']">
+    <BasicBox :className="$style['box']">
       <BasicBoxHead>
         <BasicBoxHeadLeft>
           <div :class="$style['division-info']">
@@ -181,7 +181,7 @@ export default {
     <!-- //Case : 신용대출 - 심사중 -->
 
     <!-- Case : 신용대출 - 약정 -->
-    <BasicBox :class="$style['box']">
+    <BasicBox :className="$style['box']">
       <BasicBoxHead>
         <BasicBoxHeadLeft>
           <div :class="$style['division-info']">
@@ -246,7 +246,7 @@ export default {
     <!-- //Case : 신용대출 - 약정 -->
 
     <!-- Case : 일반할부금융 - 약정 -->
-    <BasicBox :class="$style['box']">
+    <BasicBox :className="$style['box']">
       <BasicBoxHead>
         <BasicBoxHeadLeft>
           <div :class="$style['division-info']">
@@ -303,7 +303,7 @@ export default {
       </ButtonList>
     </BasicBox>
 
-    <BasicBox :class="$style['box']">
+    <BasicBox :className="$style['box']">
       <BasicBoxHead>
         <BasicBoxHeadLeft>
           <div :class="$style['division-info']">
@@ -367,8 +367,8 @@ export default {
     </BasicBox>
     <!-- //Case : 일반할부금융 - 약정 -->
 
-    <!-- Case : 오토금융 - 접수  -->
-    <BasicBox :class="$style['box']">
+    <!-- Case : 오토금융 - 접수 -->
+    <BasicBox :className="$style['box']">
       <BasicBoxHead>
         <BasicBoxHeadLeft>
           <div :class="$style['division-info']">
@@ -425,10 +425,10 @@ export default {
         </ButtonListItem>
       </ButtonList>
     </BasicBox>
-    <!-- //Case : 오토금융 - 접수  -->
+    <!-- //Case : 오토금융 - 접수 -->
 
-    <!-- Case : 오토금융 - 상담/심사  -->
-    <BasicBox :class="$style['box']">
+    <!-- Case : 오토금융 - 상담/심사 -->
+    <BasicBox :className="$style['box']">
       <BasicBoxHead>
         <BasicBoxHeadLeft>
           <div :class="$style['division-info']">
@@ -487,10 +487,10 @@ export default {
         </ButtonListItem>
       </ButtonList>
     </BasicBox>
-    <!-- //Case : 오토금융 - 상담/심사  -->
+    <!-- //Case : 오토금융 - 상담/심사 -->
 
-    <!-- Case : 오토금융 - 약정  -->
-    <BasicBox :class="$style['box']">
+    <!-- Case : 오토금융 - 약정 -->
+    <BasicBox :className="$style['box']">
       <BasicBoxHead>
         <BasicBoxHeadLeft>
           <div :class="$style['division-info']">
@@ -556,10 +556,10 @@ export default {
         </ButtonListItem>
       </ButtonList>
     </BasicBox>
-    <!-- //Case : 오토금융 - 약정  -->
+    <!-- //Case : 오토금융 - 약정 -->
 
-    <!-- Case : 오토금융 - 심사완료  -->
-    <BasicBox :class="$style['box']">
+    <!-- Case : 오토금융 - 심사완료 -->
+    <BasicBox :className="$style['box']">
       <BasicBoxHead>
         <BasicBoxHeadLeft>
           <div :class="$style['division-info']">
@@ -618,10 +618,10 @@ export default {
         </ButtonListItem>
       </ButtonList>
     </BasicBox>
-    <!-- //Case : 오토금융 - 심사완료  -->
+    <!-- //Case : 오토금융 - 심사완료 -->
 
-    <!-- Case : 오토금융 - 계약준비중  -->
-    <BasicBox :class="$style['box']">
+    <!-- Case : 오토금융 - 계약준비중 -->
+    <BasicBox :className="$style['box']">
       <BasicBoxHead>
         <BasicBoxHeadLeft>
           <div :class="$style['division-info']">
@@ -681,10 +681,10 @@ export default {
         </ButtonListItem>
       </ButtonList>
     </BasicBox>
-    <!-- //Case : 오토금융 - 계약준비중  -->
+    <!-- //Case : 오토금융 - 계약준비중 -->
 
-    <!-- Case : 오토금융 - 계약진행중  -->
-    <BasicBox :class="$style['box']">
+    <!-- Case : 오토금융 - 계약진행중 -->
+    <BasicBox :className="$style['box']">
       <BasicBoxHead>
         <BasicBoxHeadLeft>
           <div :class="$style['division-info']">
@@ -744,10 +744,10 @@ export default {
         </ButtonListItem>
       </ButtonList>
     </BasicBox>
-    <!-- //Case : 오토금융 - 계약진행중  -->
+    <!-- //Case : 오토금융 - 계약진행중 -->
 
-    <!-- Case : 오토금융 - 취소  -->
-    <BasicBox :class="$style['box']">
+    <!-- Case : 오토금융 - 취소 -->
+    <BasicBox :className="$style['box']">
       <BasicBoxHead>
         <BasicBoxHeadLeft>
           <div :class="$style['division-info']">
@@ -804,10 +804,10 @@ export default {
         </ButtonListItem>
       </ButtonList>
     </BasicBox>
-    <!-- //Case : 오토금융 - 취소  -->
+    <!-- //Case : 오토금융 - 취소 -->
 
-    <!-- Case : 오토금융 - 차량출고중  -->
-    <BasicBox :class="$style['box']">
+    <!-- Case : 오토금융 - 차량출고중 -->
+    <BasicBox :className="$style['box']">
       <BasicBoxHead>
         <BasicBoxHeadLeft>
           <div :class="$style['division-info']">
@@ -867,10 +867,10 @@ export default {
         </ButtonListItem>
       </ButtonList>
     </BasicBox>
-    <!-- //Case : 오토금융 - 차량출고중  -->
+    <!-- //Case : 오토금융 - 차량출고중 -->
 
-    <!-- Case : 오토금융 - 완료  -->
-    <BasicBox :class="$style['box']">
+    <!-- Case : 오토금융 - 완료 -->
+    <BasicBox :className="$style['box']">
       <BasicBoxHead>
         <BasicBoxHeadLeft>
           <div :class="$style['division-info']">
@@ -927,10 +927,10 @@ export default {
         </ButtonListItem>
       </ButtonList>
     </BasicBox>
-    <!-- //Case : 오토금융 - 완료  -->
+    <!-- //Case : 오토금융 - 완료 -->
 
-    <!-- Case : 오토금융 - 그 외  -->
-    <BasicBox :class="$style['box']">
+    <!-- Case : 오토금융 - 그 외 -->
+    <BasicBox :className="$style['box']">
       <BasicBoxHead>
         <BasicBoxHeadLeft>
           <div :class="$style['division-info']">
@@ -987,7 +987,7 @@ export default {
         </ButtonListItem>
       </ButtonList>
     </BasicBox>
-    <!-- //Case : 오토금융 - 그 외  -->
+    <!-- //Case : 오토금융 - 그 외 -->
 
     <!-- Case : 결과 없을 때 -->
     <div :class="$style['empty']">

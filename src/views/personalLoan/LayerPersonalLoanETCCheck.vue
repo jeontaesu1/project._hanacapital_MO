@@ -114,7 +114,7 @@ export default {
             >
               <BoxCheckLabel>e하나신용대출</BoxCheckLabel>
               <KeyValueList
-                margin="small"
+                margin="mini"
                 :classNames="{
                   wrap: 'row-margin-item',
                 }"
@@ -152,7 +152,7 @@ export default {
                 >행복아파트론</BoxCheckLabel
               >
               <KeyValueList
-                margin="small"
+                margin="mini"
                 :classNames="{
                   wrap: 'row-margin-item',
                 }"
@@ -190,7 +190,7 @@ export default {
                 >원큐자동차담보대출</BoxCheckLabel
               >
               <KeyValueList
-                margin="small"
+                margin="mini"
                 :classNames="{
                   wrap: 'row-margin-item',
                 }"

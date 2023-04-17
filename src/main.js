@@ -3,7 +3,10 @@ import { createPinia } from 'pinia';
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
 import App from '@/App.vue';
 import router from '@/router';
-import { createHead } from '@vueuse/head'; // 퍼블영역
+import { createHead } from '@vueuse/head';
+import { defineCustomElements } from '@duetds/date-picker/custom-element';
+
+defineCustomElements(window);
 
 const app = createApp(App);
 const head = createHead();
@@ -12,6 +15,6 @@ pinia.use(piniaPluginPersistedstate);
 
 app.use(pinia);
 app.use(router);
-app.use(head); // 퍼블영역
+app.use(head);
 
 app.mount('#app');

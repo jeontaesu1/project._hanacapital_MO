@@ -1,28 +1,48 @@
 .logs {
+  @include reset-list;
+
+  &__item {
+    & + & {
+      margin-top: 12px;
+    }
+  }
+
   &__block {
     position: relative;
-    display: flex;
-    align-items: center;
     padding: 19px;
     border: 1px solid $color-gray-20;
     border-radius: 8px;
     box-sizing: border-box;
   }
 
-  &__left {
+  &__row {
+    display: flex;
+    align-items: center;
+  }
+
+  &__contents {
     flex: 1;
     min-width: 0;
   }
 
+  &__right {
+    flex: none;
+    margin-left: auto;
+    padding-left: 8px;
+  }
+
+  &__title {
+    margin: 0 0 4px;
+    @include font-size-default(16);
+    font-weight: 500;
+  }
+
   &__link {
-    top: 50%;
-    right: 20px;
+    @include reset-button;
+    display: block;
     width: 18px;
     height: 18px;
-    margin-top: -9px;
-    border: none;
     background: url('/src/assets/images/icon/link.svg') no-repeat 50% 50%/ 100% 100%;
-    cursor: pointer;
 
     &::before {
       content: '';
@@ -33,13 +53,12 @@
       left: 0;
       width: 100%;
       height: 100%;
-      box-sizing: content-box;
+      box-sizing: border-box;
       background-color: rgba(0, 0, 0, 0);
     }
 
-    &__text {
-      font-size: 0;
-      opacity: 0;
+    &-text {
+      @include for-a11y;
     }
   }
 }

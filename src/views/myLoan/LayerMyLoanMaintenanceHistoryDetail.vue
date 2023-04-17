@@ -39,7 +39,12 @@ export default {
 </script>
 
 <template>
-  <UiLayer ref="layer" type="toast" :backgroundClose="true">
+  <UiLayer
+    ref="layer"
+    type="toast"
+    :backgroundClose="true"
+    v-slot="layerSlotProps"
+  >
     <ToastPopup>
       <template v-slot:head>
         <ToastPopupHead>
@@ -86,7 +91,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton>확인</BasicButton>
+            <BasicButton @click="layerSlotProps.close()">확인</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

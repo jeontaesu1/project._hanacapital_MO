@@ -5,7 +5,7 @@ import { ref, onMounted, onUnmounted } from 'vue';
 import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -15,7 +15,7 @@ import LayerMyLoanMaintenanceHistoryDetail from '@/views/myLoan/LayerMyLoanMaint
 export default {
   components: {
     PageContents,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -37,8 +37,8 @@ export default {
 
     onMounted(() => {
       store.ui.header.setTitle(() => '정비이력');
-      store.ui.header.setLeftButtons(() => []);
-      store.ui.header.setRightButtons(() => ['close']);
+      store.ui.header.setLeftButtons(() => ['back']);
+      store.ui.header.setRightButtons(() => []);
     });
 
     onUnmounted(() => {
@@ -57,133 +57,39 @@ export default {
 
 <template>
   <PageContents>
-    <div :class="$style['logs']">
-      <div :class="[$style['logs__block'], 'row-margin-item-medium']">
-        <div div :class="$style['logs__left']">
-          <h3 class="text-body-1 font-weight-medium">정비</h3>
-          <KeyValueList
-            align="left"
-            size="regular"
-            margin="small"
-            :classNames="{ wrap: 'row-margin-small' }"
-          >
-            <KeyValueItem :classNames="{ item: 'text-body-4' }">
-              <KeyValueTitle>수리점</KeyValueTitle>
-              <KeyValueText>서울 하나카수리센터</KeyValueText>
-            </KeyValueItem>
+    <ul :class="$style['logs']">
+      <li v-for="i in 5" :key="i" :class="$style['logs__item']">
+        <div :class="$style['logs__block']">
+          <div :class="$style['logs__row']">
+            <div div :class="$style['logs__contents']">
+              <h3 :class="$style['logs__title']">정비</h3>
+              <KeyValue align="left" size="regular" margin="mini">
+                <KeyValueItem :classNames="{ item: 'text-body-4' }">
+                  <KeyValueTitle>수리점</KeyValueTitle>
+                  <KeyValueText>서울 하나카수리센터</KeyValueText>
+                </KeyValueItem>
 
-            <KeyValueItem :classNames="{ item: 'text-body-4' }">
-              <KeyValueTitle>입고일</KeyValueTitle>
-              <KeyValueText>2021.08.24</KeyValueText>
-            </KeyValueItem>
-          </KeyValueList>
+                <KeyValueItem :classNames="{ item: 'text-body-4' }">
+                  <KeyValueTitle>입고일</KeyValueTitle>
+                  <KeyValueText>2021.08.24</KeyValueText>
+                </KeyValueItem>
+              </KeyValue>
+            </div>
+            <div div :class="$style['logs__right']">
+              <button
+                type="button"
+                :class="$style['logs__link']"
+                @click="layer001Open"
+              >
+                <span :class="$style['logs__link-text']">상세보기</span>
+              </button>
+            </div>
+          </div>
         </div>
-        <div div :class="$style['logs__right']">
-          <button
-            type="button"
-            :class="$style['logs__link']"
-            @click="layer001Open"
-          >
-            <span :class="$style['logs__link__text']">상세보기</span>
-          </button>
-        </div>
-      </div>
+      </li>
+    </ul>
 
-      <div :class="[$style['logs__block'], 'row-margin-item-medium']">
-        <div div :class="$style['logs__left']">
-          <h3 class="text-body-1 font-weight-medium">수리</h3>
-          <KeyValueList
-            align="left"
-            size="regular"
-            margin="small"
-            :classNames="{ wrap: 'row-margin-small' }"
-          >
-            <KeyValueItem :classNames="{ item: 'text-body-4' }">
-              <KeyValueTitle>수리점</KeyValueTitle>
-              <KeyValueText>서울 하나카수리센터</KeyValueText>
-            </KeyValueItem>
-
-            <KeyValueItem :classNames="{ item: 'text-body-4' }">
-              <KeyValueTitle>입고일</KeyValueTitle>
-              <KeyValueText>2021.08.24</KeyValueText>
-            </KeyValueItem>
-          </KeyValueList>
-        </div>
-        <div div :class="$style['logs__right']">
-          <button
-            type="button"
-            :class="$style['logs__link']"
-            @click="layer001Open"
-          >
-            <span :class="$style['logs__link__text']">상세보기</span>
-          </button>
-        </div>
-      </div>
-
-      <div :class="[$style['logs__block'], 'row-margin-item-medium']">
-        <div div :class="$style['logs__left']">
-          <h3 class="text-body-1 font-weight-medium">정비</h3>
-          <KeyValueList
-            align="left"
-            size="regular"
-            margin="small"
-            :classNames="{ wrap: 'row-margin-small' }"
-          >
-            <KeyValueItem :classNames="{ item: 'text-body-4' }">
-              <KeyValueTitle>수리점</KeyValueTitle>
-              <KeyValueText>서울 하나카수리센터</KeyValueText>
-            </KeyValueItem>
-
-            <KeyValueItem :classNames="{ item: 'text-body-4' }">
-              <KeyValueTitle>입고일</KeyValueTitle>
-              <KeyValueText>2021.08.24</KeyValueText>
-            </KeyValueItem>
-          </KeyValueList>
-        </div>
-        <div div :class="$style['logs__right']">
-          <button
-            type="button"
-            :class="$style['logs__link']"
-            @click="layer001Open"
-          >
-            <span :class="$style['logs__link__text']">상세보기</span>
-          </button>
-        </div>
-      </div>
-
-      <div :class="[$style['logs__block'], 'row-margin-item-medium']">
-        <div div :class="$style['logs__left']">
-          <h3 class="text-body-1 font-weight-medium">정비</h3>
-          <KeyValueList
-            align="left"
-            size="regular"
-            margin="small"
-            :classNames="{ wrap: 'row-margin-small' }"
-          >
-            <KeyValueItem :classNames="{ item: 'text-body-4' }">
-              <KeyValueTitle>수리점</KeyValueTitle>
-              <KeyValueText>서울 하나카수리센터</KeyValueText>
-            </KeyValueItem>
-
-            <KeyValueItem :classNames="{ item: 'text-body-4' }">
-              <KeyValueTitle>입고일</KeyValueTitle>
-              <KeyValueText>2021.08.24</KeyValueText>
-            </KeyValueItem>
-          </KeyValueList>
-        </div>
-        <div div :class="$style['logs__right']">
-          <button
-            type="button"
-            :class="$style['logs__link']"
-            @click="layer001Open"
-          >
-            <span :class="$style['logs__link__text']">상세보기</span>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <NoticeText :class="$style['notice']">
+    <NoticeText :classNames="{ wrap: 'row-margin-contents' }">
       사고/고장 접수, 정비관련 문의사항은<br />
       <span class="color-green">24시간 콜센터(1688-2040)</span>로 연락해 주세요.
     </NoticeText>

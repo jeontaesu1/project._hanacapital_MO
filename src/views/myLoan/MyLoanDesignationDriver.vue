@@ -48,8 +48,8 @@ export default {
 
     onMounted(() => {
       store.ui.header.setTitle(() => '지정운전자');
-      store.ui.header.setLeftButtons(() => []);
-      store.ui.header.setRightButtons(() => ['close']);
+      store.ui.header.setLeftButtons(() => ['back']);
+      store.ui.header.setRightButtons(() => []);
     });
 
     onUnmounted(() => {
@@ -97,27 +97,29 @@ export default {
           </h3>
         </BasicBoxHeadLeft>
         <BasicBoxHeadRight>
-          <TextButton :classNames="{ text: 'color-gray' }" underline="true"
+          <TextButton
+            :classNames="{ text: 'display-block color-gray' }"
+            underline="true"
             >변경</TextButton
           >
         </BasicBoxHeadRight>
       </BasicBoxHead>
       <KeyValueList margin="regular">
-        <KeyValueItem>
-          <KeyValueTitle class="text-body-3">생년월일</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 2022.02.02 </KeyValueText>
+        <KeyValueItem :classNames="{ item: 'text-body-3' }">
+          <KeyValueTitle>생년월일</KeyValueTitle>
+          <KeyValueText> 2022.02.02 </KeyValueText>
         </KeyValueItem>
-        <KeyValueItem>
-          <KeyValueTitle class="text-body-3">전화번호</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 010-1234-5678</KeyValueText>
+        <KeyValueItem :classNames="{ item: 'text-body-3' }">
+          <KeyValueTitle>전화번호</KeyValueTitle>
+          <KeyValueText> 010-1234-5678</KeyValueText>
         </KeyValueItem>
-        <KeyValueItem>
-          <KeyValueTitle class="text-body-3">운전면허번호</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 01-23-456789-01</KeyValueText>
+        <KeyValueItem :classNames="{ item: 'text-body-3' }">
+          <KeyValueTitle>운전면허번호</KeyValueTitle>
+          <KeyValueText> 01-23-456789-01</KeyValueText>
         </KeyValueItem>
-        <KeyValueItem>
-          <KeyValueTitle class="text-body-3">취득일자</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 2001.02.06</KeyValueText>
+        <KeyValueItem :classNames="{ item: 'text-body-3' }">
+          <KeyValueTitle>취득일자</KeyValueTitle>
+          <KeyValueText> 2001.02.06</KeyValueText>
         </KeyValueItem>
       </KeyValueList>
     </BasicBox>
@@ -131,44 +133,42 @@ export default {
           </h3>
         </BasicBoxHeadLeft>
         <BasicBoxHeadRight>
-          <TextButton :classNames="{ text: 'color-gray' }" underline="true"
+          <TextButton
+            :classNames="{ text: 'display-block color-gray' }"
+            underline="true"
             >변경</TextButton
           >
         </BasicBoxHeadRight>
       </BasicBoxHead>
       <KeyValueList margin="regular">
-        <KeyValueItem>
-          <KeyValueTitle class="text-body-3">생년월일</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 2022.02.02 </KeyValueText>
+        <KeyValueItem :classNames="{ item: 'text-body-3' }">
+          <KeyValueTitle>생년월일</KeyValueTitle>
+          <KeyValueText> 2022.02.02 </KeyValueText>
         </KeyValueItem>
-        <KeyValueItem>
-          <KeyValueTitle class="text-body-3">전화번호</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 010-1234-5678</KeyValueText>
+        <KeyValueItem :classNames="{ item: 'text-body-3' }">
+          <KeyValueTitle>전화번호</KeyValueTitle>
+          <KeyValueText> 010-1234-5678</KeyValueText>
         </KeyValueItem>
-        <KeyValueItem>
-          <KeyValueTitle class="text-body-3">운전면허번호</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 01-23-456789-01</KeyValueText>
+        <KeyValueItem :classNames="{ item: 'text-body-3' }">
+          <KeyValueTitle>운전면허번호</KeyValueTitle>
+          <KeyValueText> 01-23-456789-01</KeyValueText>
         </KeyValueItem>
-        <KeyValueItem>
-          <KeyValueTitle class="text-body-3">취득일자</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 2001.02.06</KeyValueText>
+        <KeyValueItem :classNames="{ item: 'text-body-3' }">
+          <KeyValueTitle>취득일자</KeyValueTitle>
+          <KeyValueText> 2001.02.06</KeyValueText>
         </KeyValueItem>
       </KeyValueList>
     </BasicBox>
 
     <!-- Case : 1인 등록시 노출 -->
-    <BasicBox class="row-margin-item">
-      <div :class="$style['wrap']">
-        <button type="button" :class="$style['button']">
-          <div :class="$style['button__inner']">
-            <div :class="$style['button__text']">지정운전자 추가등록</div>
-            <div :class="$style['button__icon']">
-              <IconAdd />
-            </div>
-          </div>
-        </button>
-      </div>
-    </BasicBox>
+    <button type="button" :class="[$style['add-button'], 'row-margin-item']">
+      <span :class="$style['add-button__inner']">
+        <span :class="$style['add-button__text']">지정운전자 추가등록</span>
+        <span :class="$style['add-button__icon']">
+          <IconAdd />
+        </span>
+      </span>
+    </button>
     <!-- //Case : 1인 등록시 노출 -->
   </PageContents>
 </template>

@@ -1,13 +1,18 @@
 .icon-box {
-  &__inner {
-    display: flex;
-    align-items: center;
-  }
+  display: flex;
+  align-items: center;
 
   &__icon {
+    flex: none;
     display: flex;
     align-items: center;
     margin-right: 12px;
+
+    svg {
+      display: block;
+      width: 28px;
+      height: 28px;
+    }
   }
 
   &__content {
