@@ -80,6 +80,9 @@ import SearchButton from '@/components/ui/button/SearchButton.vue';
 import SwitchCheckBox from '@/components/ui/form/SwitchCheckBox.vue';
 import BasicTooltip from '@/components/ui/tooltip/BasicTooltip.vue';
 import ContentsButton from '@/components/ui/button/ContentsButton.vue';
+import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
+import CarThumb from '@/components/ui/imageData/CarThumb.vue';
+import ColorChip from '@/components/ui/imageData/ColorChip.vue';
 // import InputDateBasic from '@/components/ui/form/InputDateBasic.vue';
 // import InputDateDual from '@/components/ui/form/InputDateDual.vue';
 // import InputRange from '@/components/ui/form/InputRange.vue';
@@ -199,6 +202,9 @@ export default {
     SwitchCheckBox,
     BasicTooltip,
     ContentsButton,
+    CarEmblem,
+    CarThumb,
+    ColorChip,
     // InputDateBasic,
     // InputDateDual,
     // InputRange,
@@ -1555,6 +1561,90 @@ export default {
               :minSide="true"
               name="testBoxCheckList002"
               id="testBoxCheckList002_004"
+            >
+              <BoxCheckLabel>Label 4</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+        </BoxCheckList>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Wrap - col 2</h3>
+
+        <BoxCheckList :wrap="true">
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList003"
+              id="testBoxCheckList003_001"
+            >
+              <BoxCheckLabel>Label 1</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList003"
+              id="testBoxCheckList003_002"
+            >
+              <BoxCheckLabel>Label 2</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList003"
+              id="testBoxCheckList003_003"
+            >
+              <BoxCheckLabel>Label 3</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList003"
+              id="testBoxCheckList003_004"
+            >
+              <BoxCheckLabel>Label 4</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+        </BoxCheckList>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Wrap - col 3</h3>
+
+        <BoxCheckList :wrap="true" :col="3">
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList004"
+              id="testBoxCheckList004_001"
+            >
+              <BoxCheckLabel>Label 1</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList004"
+              id="testBoxCheckList004_002"
+            >
+              <BoxCheckLabel>Label 2</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList004"
+              id="testBoxCheckList004_003"
+            >
+              <BoxCheckLabel>Label 3</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList004"
+              id="testBoxCheckList004_004"
             >
               <BoxCheckLabel>Label 4</BoxCheckLabel>
             </BoxCheck>
@@ -4859,21 +4949,11 @@ export default {
             <BasicBoxHeadLeft>
               <h3 class="text-body-1 font-weight-medium">제네시스</h3>
               <p class="text-body-4 color-gray row-margin-small">더 뉴 G70</p>
-              <UnitText
-                rightUnit="원"
-                :classNames="{
-                  wrap: 'row-margin-item',
-                }"
-                >628,190</UnitText
-              >
             </BasicBoxHeadLeft>
             <BasicBoxHeadRight>
-              <div :class="$style['car-image']">
-                <img
-                  src="@/assets/images/_dummy/car-sample.png"
-                  alt="차량 정보 넣어주세요"
-                />
-              </div>
+              <RoundStatus :classNames="{ wrap: 'display-block' }">
+                미신청
+              </RoundStatus>
             </BasicBoxHeadRight>
           </BasicBoxHead>
           // contnets
@@ -4887,21 +4967,11 @@ export default {
             <BasicBoxHeadLeft>
               <h3 class="text-body-1 font-weight-medium">제네시스</h3>
               <p class="text-body-4 color-gray row-margin-small">더 뉴 G70</p>
-              <UnitText
-                rightUnit="원"
-                :classNames="{
-                  wrap: 'row-margin-item',
-                }"
-                >628,190</UnitText
-              >
             </BasicBoxHeadLeft>
             <BasicBoxHeadRight>
-              <div :class="$style['car-image']">
-                <img
-                  src="@/assets/images/_dummy/car-sample.png"
-                  alt="차량 정보 넣어주세요"
-                />
-              </div>
+              <RoundStatus :classNames="{ wrap: 'display-block' }">
+                미신청
+              </RoundStatus>
             </BasicBoxHeadRight>
           </BasicBoxHead>
           // contnets
@@ -6383,6 +6453,58 @@ export default {
             </button>
           </li>
         </ol>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Car Emblem</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <CarEmblem code="auto-hyundai" name="현대차" />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Car Thumb</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <CarThumb src="/images/_dummy/car-thumb.png" />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Color Chip</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <ColorChip />
+        <ColorChip :colors="['244, 238, 238']" />
+        <ColorChip :colors="['244, 238, 238', '225, 213, 213', '66, 83, 82']" />
+        <ColorChip
+          :colors="[
+            '244, 238, 238',
+            '225, 213, 213',
+            '66, 83, 82',
+            '155, 171, 170',
+          ]"
+        />
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">small</h3>
+        <ColorChip size="small" />
+        <ColorChip size="small" :colors="['244, 238, 238']" />
+        <ColorChip
+          size="small"
+          :colors="['244, 238, 238', '225, 213, 213', '66, 83, 82']"
+        />
+        <ColorChip
+          size="small"
+          :colors="[
+            '244, 238, 238',
+            '225, 213, 213',
+            '66, 83, 82',
+            '155, 171, 170',
+          ]"
+        />
       </div>
     </section>
 

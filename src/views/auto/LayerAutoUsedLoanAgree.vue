@@ -63,7 +63,7 @@ export default {
           <li :class="$style['agree-list__all']">
             <div :class="$style['agree-list__all-head']">
               <CheckBox
-                id="layerPersonalLoanBusinessHouseAgreeAll"
+                id="layerAutoUsedLoanAgreeAll"
                 :classNames="{ wrap: $style['agree-list__all-checkbox'] }"
               >
                 <CheckBoxObject />
@@ -76,7 +76,7 @@ export default {
                 <li :class="$style['agree-list__item']">
                   <div :class="$style['agree-list__head']">
                     <CheckBox
-                      id="layerPersonalLoanBusinessHouseAgree001"
+                      id="layerAutoUsedLoanAgree001"
                       :classNames="{
                         wrap: $style['agree-list__checkbox'],
                       }"
@@ -97,7 +97,7 @@ export default {
                     <li :class="$style['agree-list__item']">
                       <div :class="$style['agree-list__head']">
                         <CheckBox
-                          id="layerPersonalLoanBusinessHouseAgree001_001"
+                          id="layerAutoUsedLoanAgree001_001"
                           :classNames="{
                             wrap: $style['agree-list__checkbox'],
                           }"
@@ -123,7 +123,7 @@ export default {
                     <li :class="$style['agree-list__item']">
                       <div :class="$style['agree-list__head']">
                         <CheckBox
-                          id="layerPersonalLoanBusinessHouseAgree001_002"
+                          id="layerAutoUsedLoanAgree001_002"
                           :classNames="{
                             wrap: $style['agree-list__checkbox'],
                           }"
@@ -151,7 +151,7 @@ export default {
                 <li :class="$style['agree-list__item']">
                   <div :class="$style['agree-list__head']">
                     <CheckBox
-                      id="layerPersonalLoanBusinessHouseAgree002"
+                      id="layerAutoUsedLoanAgree002"
                       :classNames="{
                         wrap: $style['agree-list__checkbox'],
                       }"
@@ -172,7 +172,7 @@ export default {
                     <li :class="$style['agree-list__item']">
                       <div :class="$style['agree-list__head']">
                         <CheckBox
-                          id="layerPersonalLoanBusinessHouseAgree002_001"
+                          id="layerAutoUsedLoanAgree002_001"
                           :classNames="{
                             wrap: $style['agree-list__checkbox'],
                           }"
@@ -198,7 +198,7 @@ export default {
                     <li :class="$style['agree-list__item']">
                       <div :class="$style['agree-list__head']">
                         <CheckBox
-                          id="layerPersonalLoanBusinessHouseAgree002_002"
+                          id="layerAutoUsedLoanAgree002_002"
                           :classNames="{
                             wrap: $style['agree-list__checkbox'],
                           }"
@@ -226,7 +226,7 @@ export default {
                 <li :class="$style['agree-list__item']">
                   <div :class="$style['agree-list__head']">
                     <CheckBox
-                      id="layerPersonalLoanBusinessHouseAgree003"
+                      id="layerAutoUsedLoanAgree003"
                       :classNames="{
                         wrap: $style['agree-list__checkbox'],
                       }"
@@ -247,7 +247,7 @@ export default {
                     <li :class="$style['agree-list__item']">
                       <div :class="$style['agree-list__head']">
                         <CheckBox
-                          id="layerPersonalLoanBusinessHouseAgree003_001"
+                          id="layerAutoUsedLoanAgree003_001"
                           :classNames="{
                             wrap: $style['agree-list__checkbox'],
                           }"
@@ -273,7 +273,7 @@ export default {
                     <li :class="$style['agree-list__item']">
                       <div :class="$style['agree-list__head']">
                         <CheckBox
-                          id="layerPersonalLoanBusinessHouseAgree003_002"
+                          id="layerAutoUsedLoanAgree003_002"
                           :classNames="{
                             wrap: $style['agree-list__checkbox'],
                           }"

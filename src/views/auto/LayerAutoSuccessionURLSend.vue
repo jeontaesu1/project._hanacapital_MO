@@ -72,6 +72,7 @@ export default {
             <InputBlock :error="state.phoneError">
               <InputBlockCell :flexible="true">
                 <BasicInput
+                  type="number"
                   pattern="\d*"
                   title="휴대폰번호"
                   id="layerAutoSuccessionURLSendPhone"

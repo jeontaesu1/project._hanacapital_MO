@@ -14,13 +14,14 @@ import PageMainText from '@/components/ui/text/PageMainText.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
-import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
 import KeyValueList from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
+import CarThumb from '@/components/ui/imageData/CarThumb.vue';
+import ColorChip from '@/components/ui/imageData/ColorChip.vue';
 
 export default {
   components: {
@@ -36,13 +37,14 @@ export default {
     BasicBox,
     BasicBoxHead,
     BasicBoxHeadLeft,
-    BasicBoxHeadRight,
     KeyValueList,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
     BasicHr,
     UnitText,
+    CarThumb,
+    ColorChip,
   },
   setup() {
     const layer = ref(null);
@@ -75,24 +77,17 @@ export default {
       <BasicBox>
         <BasicBoxHead align="top">
           <BasicBoxHeadLeft>
-            <h3 class="text-body-1 font-weight-medium">제네시스</h3>
-            <p class="text-body-4 color-gray row-margin-small">더 뉴 G70</p>
-            <UnitText
-              rightUnit="원"
-              :classNames="{
-                wrap: 'row-margin-item',
-              }"
-              >628,190</UnitText
-            >
-          </BasicBoxHeadLeft>
-          <BasicBoxHeadRight>
-            <div :class="$style['car-image']">
-              <img
-                src="@/assets/images/_dummy/car-sample.png"
-                alt="차량 정보 넣어주세요"
-              />
+            <div class="flex-box row-margin-item">
+              <div class="flex-box__cell flex-1">
+                <h3 class="text-body-1 font-weight-medium">제네시스</h3>
+                <p class="text-body-4 color-gray row-margin-small">더 뉴 G70</p>
+              </div>
+              <div class="flex-box__cell flex-box__cell--medium">
+                <CarThumb src="/images/_dummy/car-thumb.png" />
+              </div>
             </div>
-          </BasicBoxHeadRight>
+            <UnitText rightUnit="원"><strong>628,190</strong></UnitText>
+          </BasicBoxHeadLeft>
         </BasicBoxHead>
         <KeyValueList margin="regular">
           <KeyValueItem
@@ -128,7 +123,14 @@ export default {
             }"
           >
             <KeyValueTitle>외장색상</KeyValueTitle>
-            <KeyValueText>아틸라스 화이트<span>//컬러칩</span></KeyValueText>
+            <KeyValueText>
+              <div class="flex-box justify-conten-end">
+                <div class="flex-box__cell">아틸라스 화이트</div>
+                <div class="flex-box__cell">
+                  <ColorChip size="small" :colors="['248, 245, 245']" />
+                </div>
+              </div>
+            </KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem
@@ -137,9 +139,17 @@ export default {
             }"
           >
             <KeyValueTitle>내장색상</KeyValueTitle>
-            <KeyValueText
-              >네츄럴 베이지 / 다크 베이지<span>//컬러칩</span></KeyValueText
-            >
+            <KeyValueText>
+              <div class="flex-box justify-conten-end">
+                <div class="flex-box__cell">네츄럴 베이지 / 다크 베이지</div>
+                <div class="flex-box__cell">
+                  <ColorChip
+                    size="small"
+                    :colors="['244, 238, 238', '225, 213, 213']"
+                  />
+                </div>
+              </div>
+            </KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem
@@ -353,7 +363,3 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/auto/LayerAutoLongRentalDelivery.scss';
-</style>

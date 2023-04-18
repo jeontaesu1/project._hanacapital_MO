@@ -8,6 +8,7 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 import LayerAutoUsedLoanSearchAlert from '@/views/auto/LayerAutoUsedLoanSearchAlert.vue';
 import LayerAutoUsedLoanSearchNumber from '@/views/auto/LayerAutoUsedLoanSearchNumber.vue';
+import LayerAutoUsedLoanSearchConfirm from '@/views/auto/LayerAutoUsedLoanSearchConfirm.vue';
 import LayerAutoUsedLoanAccidentHistory from '@/views/auto/LayerAutoUsedLoanAccidentHistory.vue';
 import LayerAutoUsedLoanSearchModel from '@/views/auto/LayerAutoUsedLoanSearchModel.vue';
 import LayerAutoUsedLoanForm from '@/views/auto/LayerAutoUsedLoanForm.vue';
@@ -19,6 +20,8 @@ import LayerAutoUsedLoanConfirm from '@/views/auto/LayerAutoUsedLoanConfirm.vue'
 import LayerAutoUsedLoanInquiryForm from '@/views/auto/LayerAutoUsedLoanInquiryForm.vue';
 import LayerAutoUsedLoanInquiryComplete from '@/views/auto/LayerAutoUsedLoanInquiryComplete.vue';
 import LayerAutoUsedLoanContract from '@/views/auto/LayerAutoUsedLoanContract.vue';
+import LayerAutoUsedLoanContractAlert from '@/views/auto/LayerAutoUsedLoanContractAlert.vue';
+import LayerAutoUsedLoanContractConfirm from '@/views/auto/LayerAutoUsedLoanContractConfirm.vue';
 
 export default {
   components: {
@@ -28,6 +31,7 @@ export default {
     ButtonListItem,
     LayerAutoUsedLoanSearchAlert,
     LayerAutoUsedLoanSearchNumber,
+    LayerAutoUsedLoanSearchConfirm,
     LayerAutoUsedLoanAccidentHistory,
     LayerAutoUsedLoanSearchModel,
     LayerAutoUsedLoanForm,
@@ -39,6 +43,8 @@ export default {
     LayerAutoUsedLoanInquiryForm,
     LayerAutoUsedLoanInquiryComplete,
     LayerAutoUsedLoanContract,
+    LayerAutoUsedLoanContractAlert,
+    LayerAutoUsedLoanContractConfirm,
   },
   setup() {
     const layer001 = ref(null);
@@ -54,6 +60,9 @@ export default {
     const layer011 = ref(null);
     const layer012 = ref(null);
     const layer013 = ref(null);
+    const layer014 = ref(null);
+    const layer015 = ref(null);
+    const layer016 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -94,6 +103,15 @@ export default {
     const layer013Open = (e = {}) => {
       layer013.value.layer.open(e.target);
     };
+    const layer014Open = (e = {}) => {
+      layer014.value.layer.open(e.target);
+    };
+    const layer015Open = (e = {}) => {
+      layer015.value.layer.open(e.target);
+    };
+    const layer016Open = (e = {}) => {
+      layer016.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -109,6 +127,9 @@ export default {
       layer011,
       layer012,
       layer013,
+      layer014,
+      layer015,
+      layer016,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -122,6 +143,9 @@ export default {
       layer011Open,
       layer012Open,
       layer013Open,
+      layer014Open,
+      layer015Open,
+      layer016Open,
     };
   },
 };
@@ -145,77 +169,93 @@ export default {
           >차량번호 조회<br />AF_M06_l001</BasicButton
         >
       </ButtonListItem>
-      <!-- 대기     
       <ButtonListItem>
         <BasicButton @click="layer003Open"
-          >사고이력조회<br />AF_M06_l003</BasicButton
+          >구매차량확인<br />AF_M06_b002</BasicButton
         >
       </ButtonListItem>
-       -->
       <ButtonListItem>
         <BasicButton @click="layer004Open"
-          >중고차 검색<br />AF_M06_l002</BasicButton
+          >사고이력조회<br />AF_M06_l003</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer005Open"
-          >신청정보 입력<br />AF_M06_l005</BasicButton
+          >중고차 검색<br />AF_M06_l002</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer006Open"
-          >약관동의<br />AF_M06_l006</BasicButton
+          >신청정보 입력<br />AF_M06_l005</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer007Open"
-          >한도조회 결과 - 승인<br />AF_M06_l007</BasicButton
+          >약관동의<br />AF_M06_l006</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer008Open"
-          >한도조회 결과 - 진행불가<br />AF_M06_l007</BasicButton
+          >한도조회 결과 - 승인<br />AF_M06_l007</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer009Open"
-          >한도조회 결과 - 문의필요<br />AF_M06_l007</BasicButton
+          >한도조회 결과 - 진행불가<br />AF_M06_l007</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer010Open"
-          >선택차량확인<br />AF_M06_l009</BasicButton
+          >한도조회 결과 - 문의필요<br />AF_M06_l007</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer011Open"
-          >상담 신청<br />AF_M06_l009</BasicButton
+          >선택차량확인<br />AF_M06_l009</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer012Open"
-          >신청 완료<br />AF_M06_l010</BasicButton
+          >상담 신청<br />AF_M06_l009</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer013Open"
+          >신청 완료<br />AF_M06_l010</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer014Open"
           >약정신청서 작성<br />AF_M06_l008</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer015Open"
+          >매매계약서 금액, 구입비용 확인<br />AF_M06_b005</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer016Open"
+          >자동차등록증 매매계약서 확인<br />AF_M06_b006</BasicButton
         >
       </ButtonListItem>
     </ButtonList>
 
     <LayerAutoUsedLoanSearchAlert ref="layer001" />
     <LayerAutoUsedLoanSearchNumber ref="layer002" />
-    <LayerAutoUsedLoanAccidentHistory ref="layer003" />
-    <LayerAutoUsedLoanSearchModel ref="layer004" />
-    <LayerAutoUsedLoanForm ref="layer005" />
-    <LayerAutoUsedLoanAgree ref="layer006" />
-    <LayerAutoUsedLoanComplete ref="layer007" />
-    <LayerAutoUsedLoanFailReject ref="layer008" />
-    <LayerAutoUsedLoanInquiry ref="layer009" />
-    <LayerAutoUsedLoanConfirm ref="layer010" />
-    <LayerAutoUsedLoanInquiryForm ref="layer011" />
-    <LayerAutoUsedLoanInquiryComplete ref="layer012" />
-    <LayerAutoUsedLoanContract ref="layer013" />
+    <LayerAutoUsedLoanSearchConfirm ref="layer003" />
+    <LayerAutoUsedLoanAccidentHistory ref="layer004" />
+    <LayerAutoUsedLoanSearchModel ref="layer005" />
+    <LayerAutoUsedLoanForm ref="layer006" />
+    <LayerAutoUsedLoanAgree ref="layer007" />
+    <LayerAutoUsedLoanComplete ref="layer008" />
+    <LayerAutoUsedLoanFailReject ref="layer009" />
+    <LayerAutoUsedLoanInquiry ref="layer010" />
+    <LayerAutoUsedLoanConfirm ref="layer011" />
+    <LayerAutoUsedLoanInquiryForm ref="layer012" />
+    <LayerAutoUsedLoanInquiryComplete ref="layer013" />
+    <LayerAutoUsedLoanContract ref="layer014" />
+    <LayerAutoUsedLoanContractAlert ref="layer015" />
+    <LayerAutoUsedLoanContractConfirm ref="layer016" />
   </PageContents>
 </template>

@@ -23,10 +23,8 @@ import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
-
-import LayerAutoOneQLoanInquiryAlert from '@/views/auto/LayerAutoOneQLoanInquiryAlert.vue';
-
-import CarLogo from '@/assets/images/car-logo/auto-hyundai.svg?component';
+import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
+import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 
 export default {
   components: {
@@ -51,21 +49,14 @@ export default {
     BasicHr,
     UnitText,
     IllustObject,
-    LayerAutoOneQLoanInquiryAlert,
-    CarLogo,
+    CarEmblem,
+    CarThumb,
   },
   setup() {
     const layer = ref(null);
-    const layer001 = ref(null);
-
-    const layer001Open = (e = {}) => {
-      layer001.value.layer.open(e.target);
-    };
 
     return {
       layer,
-      layer001,
-      layer001Open,
     };
   },
 };
@@ -94,25 +85,24 @@ export default {
 
       <IllustObject type="error" :classNames="{ wrap: $style['illust'] }" />
 
-      <BasicBox className="row-margin-contents-group">
+      <BasicBox>
         <BasicBoxHead>
           <BasicBoxHeadLeft>
-            <p :class="$style['brand-info']">
-              <span :class="$style['brand-info__logo']"><CarLogo /></span>
-              2020년식
-            </p>
+            <div class="flex-box row-margin-mini">
+              <div class="flex-box__cell">
+                <CarEmblem code="auto-hyundai" name="현대차" />
+              </div>
+              <div class="flex-box__cell flex-box__cell--small">
+                <p class="text-body-4 font-weight-light">2020년식</p>
+              </div>
+            </div>
             <h3 class="text-body-1 font-weight-medium">캐스퍼</h3>
             <p class="text-body-4 color-gray row-margin-small">
               2022년형 가솔린 1.0 터보 밴
             </p>
           </BasicBoxHeadLeft>
           <BasicBoxHeadRight>
-            <div :class="$style['car-image']">
-              <img
-                src="@/assets/images/_dummy/car-sample.png"
-                alt="차량 정보 넣어주세요"
-              />
-            </div>
+            <CarThumb src="/images/_dummy/car-thumb.png" />
           </BasicBoxHeadRight>
         </BasicBoxHead>
         <KeyValueList margin="regular">
@@ -160,13 +150,15 @@ export default {
             <KeyValueTitle>금리</KeyValueTitle>
             <KeyValueText>3.5%</KeyValueText>
           </KeyValueItem>
+        </KeyValueList>
 
-          <BasicHr
-            theme="quaternary"
-            type="contents"
-            className="row-margin-contents-small"
-          />
+        <BasicHr
+          theme="quaternary"
+          type="contents"
+          className="row-margin-contents-small"
+        />
 
+        <KeyValueList>
           <KeyValueItem
             :classNames="{
               item: 'text-body-3',
@@ -195,15 +187,11 @@ export default {
             <BasicButton :line="true" theme="quaternary">이전</BasicButton>
           </ButtonListItem>
           <ButtonListItem>
-            <BasicButton theme="secondary" @click="layer001Open"
-              >문의요청</BasicButton
-            >
+            <BasicButton theme="secondary">문의요청</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
     </FullPopup>
-
-    <LayerAutoOneQLoanInquiryAlert ref="layer001" />
   </UiLayer>
 </template>
 

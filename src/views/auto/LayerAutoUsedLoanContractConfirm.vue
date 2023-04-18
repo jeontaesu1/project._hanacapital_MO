@@ -6,6 +6,7 @@ import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import ToastPopup from '@/components/ui/layer/ToastPopup.vue';
 import ToastPopupHead from '@/components/ui/layer/ToastPopupHead.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
+import PopupText from '@/components/ui/layer/PopupText.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
@@ -16,6 +17,7 @@ export default {
     ToastPopup,
     ToastPopupHead,
     PopupTitle,
+    PopupText,
     BasicButton,
     ButtonList,
     ButtonListItem,
@@ -42,11 +44,9 @@ export default {
         </ToastPopupHead>
       </template>
 
-      <div>
-        <p class="text-body-3 color-gray-tertiary row-margin-item-group">
-          정상적인 대출진행을 위해서 자동차등록증 매매계약서는 필수 서류입니다.
-        </p>
-      </div>
+      <PopupText>
+        정상적인 대출진행을 위해서 자동차등록증 매매계약서는 필수 서류입니다.
+      </PopupText>
 
       <template v-slot:foot>
         <ButtonList

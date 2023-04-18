@@ -21,8 +21,8 @@ import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
-
-import CarLogo from '@/assets/images/car-logo/auto-hyundai.svg?component';
+import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
+import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 
 export default {
   components: {
@@ -45,7 +45,8 @@ export default {
     KeyValueText,
     UnitText,
     IllustObject,
-    CarLogo,
+    CarEmblem,
+    CarThumb,
   },
   setup() {
     const layer = ref(null);
@@ -77,98 +78,92 @@ export default {
 
       <IllustObject type="complete" :classNames="{ wrap: $style['illust'] }" />
 
-      <div class="row-margin-contents-group">
-        <ul class="reset-list">
-          <li class="row-margin-item-group">
-            <BasicBox>
-              <BasicBoxHead>
-                <BasicBoxHeadLeft>
-                  <p :class="$style['brand-info']">
-                    <span :class="$style['brand-info__logo']"><CarLogo /></span>
-                    2020년식
-                  </p>
-                  <h3 class="text-body-1 font-weight-medium">
-                    쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
-                  </h3>
-                </BasicBoxHeadLeft>
-                <BasicBoxHeadRight>
-                  <div :class="$style['car-image']">
-                    <img
-                      src="@/assets/images/_dummy/car-sample.png"
-                      alt="차량 정보 넣어주세요"
-                    />
-                  </div>
-                </BasicBoxHeadRight>
-              </BasicBoxHead>
+      <div>
+        <BasicBox className="row-margin-item-group">
+          <BasicBoxHead>
+            <BasicBoxHeadLeft>
+              <div class="flex-box row-margin-mini">
+                <div class="flex-box__cell">
+                  <CarEmblem code="auto-hyundai" name="현대차" />
+                </div>
+                <div class="flex-box__cell flex-box__cell--small">
+                  <p class="text-body-4 font-weight-light">2020년식</p>
+                </div>
+              </div>
+              <h3 class="text-body-1 font-weight-medium">
+                쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
+              </h3>
+            </BasicBoxHeadLeft>
+            <BasicBoxHeadRight>
+              <CarThumb src="/images/_dummy/car-thumb.png" />
+            </BasicBoxHeadRight>
+          </BasicBoxHead>
 
-              <KeyValueList margin="regular">
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle
-                    :classNames="{
-                      title: 'color-black',
-                    }"
-                    >차량 조정기준가격</KeyValueTitle
-                  >
-                  <KeyValueText>
-                    <UnitText rightUnit="원" align="right">23,500,000</UnitText>
-                  </KeyValueText>
-                </KeyValueItem>
-              </KeyValueList>
-            </BasicBox>
-          </li>
-          <li class="row-margin-item-group">
-            <BasicBox>
-              <BasicBoxHead>
-                <BasicBoxHeadLeft>
-                  <h3 class="text-body-1 font-weight-medium">중고차오토론</h3>
-                </BasicBoxHeadLeft>
-              </BasicBoxHead>
+          <KeyValueList>
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
+            >
+              <KeyValueTitle
+                :classNames="{
+                  title: 'color-black',
+                }"
+                >차량 조정기준가격</KeyValueTitle
+              >
+              <KeyValueText>
+                <UnitText rightUnit="원" align="right">23,500,000</UnitText>
+              </KeyValueText>
+            </KeyValueItem>
+          </KeyValueList>
+        </BasicBox>
 
-              <KeyValueList margin="regular">
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>금리</KeyValueTitle>
-                  <KeyValueText>10.9 %</KeyValueText>
-                </KeyValueItem>
+        <BasicBox className="row-margin-item-group">
+          <BasicBoxHead>
+            <BasicBoxHeadLeft>
+              <h3 class="text-body-1 font-weight-medium">중고차오토론</h3>
+            </BasicBoxHeadLeft>
+          </BasicBoxHead>
 
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>개월수</KeyValueTitle>
-                  <KeyValueText>24 개월</KeyValueText>
-                </KeyValueItem>
+          <KeyValueList margin="regular">
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
+            >
+              <KeyValueTitle>금리</KeyValueTitle>
+              <KeyValueText>10.9 %</KeyValueText>
+            </KeyValueItem>
 
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>대출신청금액</KeyValueTitle>
-                  <KeyValueText>1,300 만원</KeyValueText>
-                </KeyValueItem>
-              </KeyValueList>
-            </BasicBox>
-          </li>
-        </ul>
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
+            >
+              <KeyValueTitle>개월수</KeyValueTitle>
+              <KeyValueText>24 개월</KeyValueText>
+            </KeyValueItem>
 
-        <ul :class="[$style['basic-list'], 'row-margin-contents']">
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              실제 대출을 진행할 때, 대출가능금액이 달라질 수 있습니다.
-            </div>
-          </li>
-        </ul>
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
+            >
+              <KeyValueTitle>대출신청금액</KeyValueTitle>
+              <KeyValueText>1,300 만원</KeyValueText>
+            </KeyValueItem>
+          </KeyValueList>
+        </BasicBox>
       </div>
+
+      <ul :class="[$style['basic-list'], 'row-margin-contents']">
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            실제 대출을 진행할 때, 대출가능금액이 달라질 수 있습니다.
+          </div>
+        </li>
+      </ul>
 
       <template v-slot:foot>
         <ButtonList

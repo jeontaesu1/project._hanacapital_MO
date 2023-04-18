@@ -1,6 +1,6 @@
 <script>
 // AF_M07_l002
-import { ref, reactive } from 'vue';
+import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
@@ -38,16 +38,9 @@ export default {
   },
   setup() {
     const layer = ref(null);
-    const state = reactive({
-      amountError: false,
-      periodError: false,
-      methodError: false,
-      testError001: false,
-    });
 
     return {
       layer,
-      state,
     };
   },
 };
@@ -75,18 +68,19 @@ export default {
         </PageSubText>
       </PageTextGroup>
 
-      <!-- Case : 검색 결과 없을 때 -->
+      <!-- Case : 차량 없을 때 -->
       <div :class="$style['empty']">
         <p :class="$style['empty__text']">승계 가능한 차량이 없습니다.</p>
       </div>
-      <!-- // Case : 검색 결과 없을 때 -->
+      <!-- // Case : 차량 없을 때 -->
 
+      <!-- Case : 차량 있을 때 -->
       <BoxCheckList align="full">
         <BoxCheckListItem>
           <BoxCheck
             :contents="true"
             type="checkbox"
-            id="LayerAutoSuccessionList_001"
+            id="layerAutoSuccessionList001"
           >
             <template v-slot:left>
               <BoxCheckObject />
@@ -98,7 +92,7 @@ export default {
           <BoxCheck
             :contents="true"
             type="checkbox"
-            id="LayerAutoSuccessionList_002"
+            id="layerAutoSuccessionList002"
           >
             <template v-slot:left>
               <BoxCheckObject />
@@ -110,7 +104,7 @@ export default {
           <BoxCheck
             :contents="true"
             type="checkbox"
-            id="LayerAutoSuccessionList_003"
+            id="layerAutoSuccessionList003"
           >
             <template v-slot:left>
               <BoxCheckObject />
@@ -122,7 +116,7 @@ export default {
           <BoxCheck
             :contents="true"
             type="checkbox"
-            id="LayerAutoSuccessionList_004"
+            id="layerAutoSuccessionList004"
           >
             <template v-slot:left>
               <BoxCheckObject />
@@ -131,6 +125,7 @@ export default {
           </BoxCheck>
         </BoxCheckListItem>
       </BoxCheckList>
+      <!-- // Case : 차량 있을 때 -->
 
       <template v-slot:foot>
         <ButtonList

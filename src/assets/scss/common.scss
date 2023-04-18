@@ -96,6 +96,10 @@ body,
       margin-left: 8px;
     }
 
+    & + &--medium {
+      margin-left: 16px;
+    }
+
     & + &--small {
       margin-left: 4px;
     }

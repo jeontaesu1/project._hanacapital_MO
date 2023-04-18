@@ -11,6 +11,7 @@ import LayerAutoOneQLoanAgree from '@/views/auto/LayerAutoOneQLoanAgree.vue';
 import LayerAutoOneQLoanError from '@/views/auto/LayerAutoOneQLoanError.vue';
 import LayerAutoOneQLoanAvailable from '@/views/auto/LayerAutoOneQLoanAvailable.vue';
 import LayerAutoOneQLoanInquiry from '@/views/auto/LayerAutoOneQLoanInquiry.vue';
+import LayerAutoOneQLoanInquiryAlert from '@/views/auto/LayerAutoOneQLoanInquiryAlert.vue';
 
 export default {
   components: {
@@ -23,6 +24,7 @@ export default {
     LayerAutoOneQLoanError,
     LayerAutoOneQLoanAvailable,
     LayerAutoOneQLoanInquiry,
+    LayerAutoOneQLoanInquiryAlert,
   },
   setup() {
     const layer001 = ref(null);
@@ -30,6 +32,7 @@ export default {
     const layer003 = ref(null);
     const layer004 = ref(null);
     const layer005 = ref(null);
+    const layer006 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -46,6 +49,9 @@ export default {
     const layer005Open = (e = {}) => {
       layer005.value.layer.open(e.target);
     };
+    const layer006Open = (e = {}) => {
+      layer006.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -53,11 +59,13 @@ export default {
       layer003,
       layer004,
       layer005,
+      layer006,
       layer001Open,
       layer002Open,
       layer003Open,
       layer004Open,
       layer005Open,
+      layer006Open,
     };
   },
 };
@@ -96,6 +104,11 @@ export default {
           >지점문의 대상<br />AF_M05_l004</BasicButton
         >
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer006Open"
+          >지점문의 완료<br />AF_M05_b002</BasicButton
+        >
+      </ButtonListItem>
     </ButtonList>
 
     <LayerAutoOneQLoanForm ref="layer001" />
@@ -103,5 +116,6 @@ export default {
     <LayerAutoOneQLoanError ref="layer003" />
     <LayerAutoOneQLoanAvailable ref="layer004" />
     <LayerAutoOneQLoanInquiry ref="layer005" />
+    <LayerAutoOneQLoanInquiryAlert ref="layer006" />
   </PageContents>
 </template>

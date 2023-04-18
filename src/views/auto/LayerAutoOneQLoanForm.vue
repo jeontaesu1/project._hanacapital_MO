@@ -29,12 +29,12 @@ import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
-// import BoxCheck from '@/components/ui/form/BoxCheck.vue';
-// import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
-// import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
-// import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
-
-import CarLogo from '@/assets/images/car-logo/auto-hyundai.svg?component';
+import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
+import CarThumb from '@/components/ui/imageData/CarThumb.vue';
+import BoxCheck from '@/components/ui/form/BoxCheck.vue';
+import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
+import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
+import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 
 export default {
   components: {
@@ -65,17 +65,17 @@ export default {
     FormInvalidMessage,
     FormHelpText,
     BasicSelect,
-    // BoxCheck,
-    // BoxCheckLabel,
-    // BoxCheckList,
-    // BoxCheckListItem,
-    CarLogo,
+    CarEmblem,
+    CarThumb,
+    BoxCheck,
+    BoxCheckLabel,
+    BoxCheckList,
+    BoxCheckListItem,
   },
   setup() {
     const state = reactive({
       branchError: false,
       loanAmountError: false,
-      periodError: false,
     });
 
     const layer = ref(null);
@@ -109,27 +109,24 @@ export default {
       <BasicBox>
         <BasicBoxHead>
           <BasicBoxHeadLeft>
-            <p :class="$style['brand-info']">
-              <span :class="$style['brand-info__logo']"><CarLogo /></span>
-              2020년식
-            </p>
-            <h3 class="text-body-1 font-weight-medium row-margin-mini">
-              캐스퍼
-            </h3>
+            <div class="flex-box row-margin-mini">
+              <div class="flex-box__cell">
+                <CarEmblem code="auto-hyundai" name="현대차" />
+              </div>
+              <div class="flex-box__cell flex-box__cell--small">
+                <p class="text-body-4 font-weight-light">2020년식</p>
+              </div>
+            </div>
+            <h3 class="text-body-1 font-weight-medium">캐스퍼</h3>
             <p class="text-body-4 color-gray row-margin-small">
               2022년형 가솔린 1.0 터보 밴
             </p>
           </BasicBoxHeadLeft>
           <BasicBoxHeadRight>
-            <div :class="$style['car-image']">
-              <img
-                src="@/assets/images/_dummy/car-sample.png"
-                alt="차량 정보 넣어주세요"
-              />
-            </div>
+            <CarThumb src="/images/_dummy/car-thumb.png" />
           </BasicBoxHeadRight>
         </BasicBoxHead>
-        <KeyValueList margin="regular">
+        <KeyValueList>
           <KeyValueItem
             :classNames="{
               item: 'text-body-3',
@@ -139,7 +136,9 @@ export default {
               >총 차량가격</KeyValueTitle
             >
             <KeyValueText>
-              <UnitText rightUnit="원" align="right">23,500,000</UnitText>
+              <UnitText rightUnit="원" align="right"
+                ><strong>23,500,000</strong></UnitText
+              >
             </KeyValueText>
           </KeyValueItem>
         </KeyValueList>
@@ -240,80 +239,74 @@ export default {
               </template>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
-            <!-- DD : '대출신청금액'입력 시 노출 / 입력된 금액 한글로 표시 -->
             <FormHelpText
               :classNames="{
                 wrap: 'align-right',
               }"
               >삼천오백만원</FormHelpText
             >
-            <!-- // DD : '대출신청금액'입력 시 노출 / 입력된 금액 한글로 표시 -->
           </FormInvalid>
         </FormListItem>
-        <!-- 대출기간 대기
+
         <FormListItem titleText="대출기간" :forceFocus="true">
-          <FormInvalid :error="state.periodError">
-            <BoxCheckList>
-              <BoxCheckListItem>
-                <BoxCheck
-                  :minSide="true"
-                  name="layerAutoOneQLoanFormPeriod"
-                  id="layerAutoOneQLoanFormPeriod1"
-                  :defaultChecked="true"
-                >
-                  <BoxCheckLabel>12개월</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  :minSide="true"
-                  name="layerAutoOneQLoanFormPeriod"
-                  id="layerAutoOneQLoanFormPeriod2"
-                >
-                  <BoxCheckLabel>24개월</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  :minSide="true"
-                  name="layerAutoOneQLoanFormPeriod"
-                  id="layerAutoOneQLoanFormPeriod3"
-                >
-                  <BoxCheckLabel>36개월</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  :minSide="true"
-                  name="layerAutoOneQLoanFormPeriod"
-                  id="layerAutoOneQLoanFormPeriod4"
-                >
-                  <BoxCheckLabel>48개월</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  :minSide="true"
-                  name="layerAutoOneQLoanFormPeriod"
-                  id="layerAutoOneQLoanFormPeriod5"
-                >
-                  <BoxCheckLabel>60개월</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  :minSide="true"
-                  name="layerAutoOneQLoanFormPeriod"
-                  id="layerAutoOneQLoanFormPeriod6"
-                >
-                  <BoxCheckLabel>72개월</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-            </BoxCheckList>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
+          <BoxCheckList :wrap="true" :col="3">
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="layerAutoOneQLoanFormPeriod"
+                id="layerAutoOneQLoanFormPeriod1"
+                :defaultChecked="true"
+              >
+                <BoxCheckLabel>12개월</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="layerAutoOneQLoanFormPeriod"
+                id="layerAutoOneQLoanFormPeriod2"
+              >
+                <BoxCheckLabel>24개월</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="layerAutoOneQLoanFormPeriod"
+                id="layerAutoOneQLoanFormPeriod3"
+              >
+                <BoxCheckLabel>36개월</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="layerAutoOneQLoanFormPeriod"
+                id="layerAutoOneQLoanFormPeriod4"
+              >
+                <BoxCheckLabel>48개월</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="layerAutoOneQLoanFormPeriod"
+                id="layerAutoOneQLoanFormPeriod5"
+              >
+                <BoxCheckLabel>60개월</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="layerAutoOneQLoanFormPeriod"
+                id="layerAutoOneQLoanFormPeriod6"
+              >
+                <BoxCheckLabel>72개월</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+          </BoxCheckList>
         </FormListItem>
-        -->
       </FormList>
 
       <ul :class="$style['basic-list']">
@@ -338,12 +331,7 @@ export default {
       </ul>
 
       <template v-slot:foot>
-        <KeyValueList
-          margin="regular"
-          :classNames="{
-            wrap: 'row-margin-contents-small',
-          }"
-        >
+        <KeyValueList>
           <KeyValueItem
             :classNames="{
               item: 'text-body-3',
@@ -352,19 +340,22 @@ export default {
             <KeyValueTitle :classNames="{ title: 'color-black' }"
               >월 납입금액</KeyValueTitle
             >
-            <!-- DD : 대출기간 선택 시 자동 계산된 금액 노출 -->
             <KeyValueText>
-              <UnitText leftUnit="약" rightUnit="원" align="right"
-                >254,760</UnitText
-              >
+              <div class="flex-box align-items-end justify-conten-end">
+                <div class="flex-box__cell">약</div>
+                <div class="flex-box__cell">
+                  <UnitText rightUnit="원" align="right"
+                    ><strong>254,760</strong></UnitText
+                  >
+                </div>
+              </div>
             </KeyValueText>
-            <!-- // DD : 대출기간 선택 시 자동 계산된 금액 노출 -->
           </KeyValueItem>
         </KeyValueList>
 
         <ButtonList
           :classNames="{
-            wrap: 'row-margin-none',
+            wrap: 'row-margin-contents-small',
           }"
         >
           <ButtonListItem>

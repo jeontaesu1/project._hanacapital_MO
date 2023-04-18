@@ -17,7 +17,6 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-
     IconTell,
   },
   setup() {
@@ -45,32 +44,22 @@ export default {
 <template>
   <PageContents>
     <div :class="$style['board-detail']">
-      <div
-        :class="[$style['board-detail__head'], 'flex-box align-items-start']"
-      >
-        <div :class="[$style['board-detail__left'], 'flex-box__cell flex-1']">
-          <h2
-            :class="[
-              $style['board-detail__title'],
-              'text-body-1 font-weight-medium',
-            ]"
-          >
-            홍길동
-          </h2>
-          <p :class="$style['board-detail__sub']">2022-07-05</p>
-        </div>
-        <div :class="$style['board-detail__right']">
-          <BasicButton
-            tagName="a"
-            size="mini"
-            :classNames="{ wrap: $style['icon-list__button'] }"
-            href="tel:010-1234-5678"
-          >
-            <template v-slot:leftIcon>
-              <IconTell />
-            </template>
-            010-1234-5678
-          </BasicButton>
+      <div :class="$style['board-detail__head']">
+        <div class="flex-box align-items-start">
+          <div class="flex-box__cell flex-1">
+            <h2 :class="[$style['board-detail__title'], 'text-body-1']">
+              홍길동
+            </h2>
+            <p :class="$style['board-detail__sub']">2022-07-05</p>
+          </div>
+          <div class="flex-box__cell">
+            <BasicButton tagName="a" size="mini" href="tel:010-1234-5678">
+              <template v-slot:leftIcon>
+                <IconTell />
+              </template>
+              010-1234-5678
+            </BasicButton>
+          </div>
         </div>
       </div>
       <section :class="$style['board-detail__contents']">
@@ -89,7 +78,7 @@ export default {
             :line="true"
             theme="quaternary"
             tagName="RouterLink"
-            to="/customer/notice-list"
+            to="/lm-blog/sms-counseling"
           >
             목록
           </BasicButton>

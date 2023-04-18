@@ -34,8 +34,8 @@ import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
 import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
 import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
-
-import CarLogo from '@/assets/images/car-logo/auto-hyundai.svg?component';
+import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
+import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 
 export default {
   components: {
@@ -71,13 +71,13 @@ export default {
     BoxCheckList,
     BoxCheckListItem,
     NoticeText,
-    CarLogo,
+    CarEmblem,
+    CarThumb,
   },
   setup() {
     const state = reactive({
       carAmountError: false,
       loanAmountError: false,
-      periodError: false,
     });
 
     const layer = ref(null);
@@ -95,7 +95,7 @@ export default {
     <FullPopup>
       <template v-slot:head>
         <FullPopupHead>
-          <PopupTitle>사고이력조회</PopupTitle>
+          <PopupTitle>중고차 오토론 한도조회</PopupTitle>
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
@@ -112,24 +112,23 @@ export default {
       <BasicBox>
         <BasicBoxHead>
           <BasicBoxHeadLeft>
-            <p :class="$style['brand-info']">
-              <span :class="$style['brand-info__logo']"><CarLogo /></span>
-              2020년식
-            </p>
-            <h3 class="text-body-1 font-weight-medium row-margin-mini">
+            <div class="flex-box row-margin-mini">
+              <div class="flex-box__cell">
+                <CarEmblem code="auto-hyundai" name="현대차" />
+              </div>
+              <div class="flex-box__cell flex-box__cell--small">
+                <p class="text-body-4 font-weight-light">2020년식</p>
+              </div>
+            </div>
+            <h3 class="text-body-1 font-weight-medium">
               쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
             </h3>
           </BasicBoxHeadLeft>
           <BasicBoxHeadRight>
-            <div :class="$style['car-image']">
-              <img
-                src="@/assets/images/_dummy/car-sample.png"
-                alt="차량 정보 넣어주세요"
-              />
-            </div>
+            <CarThumb src="/images/_dummy/car-thumb.png" />
           </BasicBoxHeadRight>
         </BasicBoxHead>
-        <KeyValueList margin="regular">
+        <KeyValueList>
           <KeyValueItem
             :classNames="{
               item: 'text-body-3',
@@ -145,135 +144,125 @@ export default {
         </KeyValueList>
       </BasicBox>
 
-      <section>
-        <FormList
-          :classNames="{
-            wrap: 'row-margin-contents',
-          }"
+      <FormList
+        :classNames="{
+          wrap: 'row-margin-contents',
+        }"
+      >
+        <FormListItem
+          titleText="차량구입금액"
+          target="#layerAutoUsedLoanFormCarAmount"
+          :require="true"
         >
-          <FormListItem
-            titleText="차량구입금액"
-            target="#layerAutoUsedLoanFormCarAmount"
-            :require="true"
-          >
-            <FormInvalid :error="state.carAmountError">
-              <InputBlock :error="state.carAmountError">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    title="차량구입금액"
-                    id="layerAutoUsedLoanFormCarAmount"
-                    pattern="\d*"
-                    :useDelete="false"
-                    align="right"
-                  />
-                </InputBlockCell>
-                <template v-slot:innerRight>
-                  <div class="text-body-3">원</div>
-                </template>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-              <!-- DD : 금액 입력 시 노출 / 입력된 금액 한글로 표시 -->
-              <FormHelpText
-                :classNames="{
-                  wrap: 'align-right',
-                }"
-                >삼천오백만원
-              </FormHelpText>
-              <!-- // DD : 금액 입력 시 노출 / 입력된 금액 한글로 표시 -->
-              <NoticeText :classNames="{ wrap: 'row-margin-item' }">
-                매매계약서상 매매금액을 입력해 주세요.
-              </NoticeText>
-            </FormInvalid>
-          </FormListItem>
+          <FormInvalid :error="state.carAmountError">
+            <InputBlock :error="state.carAmountError">
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  title="차량구입금액"
+                  id="layerAutoUsedLoanFormCarAmount"
+                  pattern="\d*"
+                  :useDelete="false"
+                  align="right"
+                />
+              </InputBlockCell>
+              <template v-slot:innerRight>
+                <div class="text-body-3">만원</div>
+              </template>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+            <FormHelpText
+              :classNames="{
+                wrap: 'align-right',
+              }"
+              >삼천오백만원
+            </FormHelpText>
+            <NoticeText :classNames="{ wrap: 'row-margin-item' }">
+              매매계약서상 매매금액을 입력해 주세요.
+            </NoticeText>
+          </FormInvalid>
+        </FormListItem>
 
-          <FormListItem
-            titleText="대출신청금액"
-            target="#layerAutoUsedLoanFormLoanAmount"
-          >
-            <FormInvalid :error="state.loanAmountError">
-              <InputBlock :error="state.loanAmountError">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    title="대출신청금액"
-                    id="layerAutoUsedLoanFormLoanAmount"
-                    pattern="\d*"
-                    :useDelete="false"
-                    align="right"
-                  />
-                </InputBlockCell>
-                <template v-slot:innerRight>
-                  <div class="text-body-3">원</div>
-                </template>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-              <!-- DD : 금액 입력 시 노출 / 입력된 금액 한글로 표시 -->
-              <FormHelpText
-                :classNames="{
-                  wrap: 'align-right',
-                }"
-                >삼천오백만원
-              </FormHelpText>
-              <!-- // DD : 금액 입력 시 노출 / 입력된 금액 한글로 표시 -->
-              <NoticeText :classNames="{ wrap: 'row-margin-item' }">
-                최소 대출금액은 200만원 입니다.
-              </NoticeText>
-              <NoticeText :classNames="{ wrap: 'row-margin-item' }">
-                대출신청금액은 차량 기준가격과 차량구입비용을 초과할 수
-                없습니다.
-              </NoticeText>
-            </FormInvalid>
-          </FormListItem>
+        <FormListItem
+          titleText="대출신청금액"
+          target="#layerAutoUsedLoanFormLoanAmount"
+        >
+          <FormInvalid :error="state.loanAmountError">
+            <InputBlock :error="state.loanAmountError">
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  title="대출신청금액"
+                  id="layerAutoUsedLoanFormLoanAmount"
+                  pattern="\d*"
+                  :useDelete="false"
+                  align="right"
+                />
+              </InputBlockCell>
+              <template v-slot:innerRight>
+                <div class="text-body-3">만원</div>
+              </template>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+            <FormHelpText
+              :classNames="{
+                wrap: 'align-right',
+              }"
+              >삼천오백만원
+            </FormHelpText>
+            <NoticeText :classNames="{ wrap: 'row-margin-item' }">
+              최소 대출금액은 200만원 입니다.
+            </NoticeText>
+            <NoticeText :classNames="{ wrap: 'row-margin-item' }">
+              대출신청금액은 차량 기준가격과 차량구입비용을 초과할 수 없습니다.
+            </NoticeText>
+          </FormInvalid>
+        </FormListItem>
 
-          <FormListItem titleText="대출기간" :forceFocus="true">
-            <FormInvalid :error="state.periodError">
-              <BoxCheckList>
-                <BoxCheckListItem>
-                  <BoxCheck
-                    :minSide="true"
-                    name="layerAutoUsedLoanFormPeriod"
-                    id="layerAutoUsedLoanFormPeriod001"
-                    :defaultChecked="true"
-                  >
-                    <BoxCheckLabel>24개월</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-                <BoxCheckListItem>
-                  <BoxCheck
-                    :minSide="true"
-                    name="layerAutoUsedLoanFormPeriod"
-                    id="layerAutoUsedLoanFormPeriod002"
-                  >
-                    <BoxCheckLabel>36개월</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-                <BoxCheckListItem>
-                  <BoxCheck
-                    :minSide="true"
-                    name="layerAutoUsedLoanFormPeriod"
-                    id="layerAutoUsedLoanFormPeriod003"
-                  >
-                    <BoxCheckLabel>48개월</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-                <BoxCheckListItem>
-                  <BoxCheck
-                    :minSide="true"
-                    name="layerAutoUsedLoanFormPeriod"
-                    id="layerAutoUsedLoanFormPeriod004"
-                  >
-                    <BoxCheckLabel>60개월</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-              </BoxCheckList>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-        </FormList>
+        <FormListItem titleText="대출기간" :forceFocus="true">
+          <BoxCheckList>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="layerAutoUsedLoanFormPeriod"
+                id="layerAutoUsedLoanFormPeriod001"
+                :defaultChecked="true"
+              >
+                <BoxCheckLabel>24개월</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="layerAutoUsedLoanFormPeriod"
+                id="layerAutoUsedLoanFormPeriod002"
+              >
+                <BoxCheckLabel>36개월</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="layerAutoUsedLoanFormPeriod"
+                id="layerAutoUsedLoanFormPeriod003"
+              >
+                <BoxCheckLabel>48개월</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="layerAutoUsedLoanFormPeriod"
+                id="layerAutoUsedLoanFormPeriod004"
+              >
+                <BoxCheckLabel>60개월</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+          </BoxCheckList>
+        </FormListItem>
+      </FormList>
 
-        <NoticeText>
-          실제 정보와 상이할 경우 한도 및 금리가 달라질 수 있습니다.
-        </NoticeText>
-      </section>
+      <NoticeText>
+        고객님의 신용등급에따라 금리와 한도가 달라질 수 있습니다.
+      </NoticeText>
 
       <template v-slot:foot>
         <ButtonList
@@ -292,7 +281,3 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/auto/LayerAutoUsedLoanForm.scss';
-</style>

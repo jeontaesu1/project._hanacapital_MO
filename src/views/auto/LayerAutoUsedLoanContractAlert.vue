@@ -6,10 +6,10 @@ import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import ToastPopup from '@/components/ui/layer/ToastPopup.vue';
 import ToastPopupHead from '@/components/ui/layer/ToastPopupHead.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
+import PopupText from '@/components/ui/layer/PopupText.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-import LayerAutoUsedLoanContractConfirm from '@/views/auto/LayerAutoUsedLoanContractConfirm.vue';
 
 export default {
   components: {
@@ -17,23 +17,16 @@ export default {
     ToastPopup,
     ToastPopupHead,
     PopupTitle,
+    PopupText,
     BasicButton,
     ButtonList,
     ButtonListItem,
-    LayerAutoUsedLoanContractConfirm,
   },
   setup() {
     const layer = ref(null);
-    const layer001 = ref(null);
-
-    const layer001Open = (e = {}) => {
-      layer001.value.layer.open(e.target);
-    };
 
     return {
       layer,
-      layer001,
-      layer001Open,
     };
   },
 };
@@ -51,12 +44,10 @@ export default {
         </ToastPopupHead>
       </template>
 
-      <div>
-        <p class="text-body-3 color-gray-tertiary row-margin-item-group">
-          매매계약서 금액과 상이할 경우 대출이 취소 될 수 있습니다.<br />
-          동의 하시겠습니까?
-        </p>
-      </div>
+      <PopupText>
+        매매계약서 금액과 상이할 경우 대출이 취소 될 수 있습니다.<br />
+        동의 하시겠습니까?
+      </PopupText>
 
       <template v-slot:foot>
         <ButtonList
@@ -68,14 +59,10 @@ export default {
             <BasicButton :line="true" theme="quaternary">미동의</BasicButton>
           </ButtonListItem>
           <ButtonListItem>
-            <BasicButton theme="secondary" @click="layer001Open"
-              >동의</BasicButton
-            >
+            <BasicButton theme="secondary">동의</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
     </ToastPopup>
-
-    <LayerAutoUsedLoanContractConfirm ref="layer001" />
   </UiLayer>
 </template>

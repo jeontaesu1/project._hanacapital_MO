@@ -15,7 +15,6 @@ import SearchButton from '@/components/ui/button/SearchButton.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
-import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
 import KeyValueList from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
@@ -26,9 +25,8 @@ import TextButton from '@/components/ui/button/TextButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
-import LayerAutoUsedLoanSearchConfirm from '@/views/auto/LayerAutoUsedLoanSearchConfirm.vue';
-
-import CarLogo from '@/assets/images/car-logo/auto-hyundai.svg?component';
+import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
+import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 
 export default {
   components: {
@@ -45,7 +43,6 @@ export default {
     BasicBox,
     BasicBoxHead,
     BasicBoxHeadLeft,
-    BasicBoxHeadRight,
     KeyValueList,
     KeyValueItem,
     KeyValueTitle,
@@ -56,22 +53,14 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicButton,
-    LayerAutoUsedLoanSearchConfirm,
-
-    CarLogo,
+    CarEmblem,
+    CarThumb,
   },
   setup() {
     const layer = ref(null);
-    const layer001 = ref(null);
-
-    const layer001Open = (e = {}) => {
-      layer001.value.layer.open(e.target);
-    };
 
     return {
       layer,
-      layer001,
-      layer001Open,
     };
   },
 };
@@ -107,7 +96,7 @@ export default {
       <!-- DD : 검색 후 노출 -->
       <BasicHr className="row-margin-container-medium" />
 
-      <section>
+      <section class="contents-wrap">
         <h3 class="text-title-2 row-margin-contents">차량정보</h3>
 
         <!-- Case : 결과 없을 때 -->
@@ -121,34 +110,31 @@ export default {
 
         <!-- Case : 결과 있을 경우 -->
         <ul class="reset-list">
-          <li class="row-margin-item-group">
+          <li v-for="i in 2" :key="i" class="row-margin-item-group">
             <BasicBox>
               <BasicBoxHead>
                 <BasicBoxHeadLeft>
-                  <p :class="$style['brand-info']">
-                    <span :class="$style['brand-info__logo']"><CarLogo /></span>
-                    2020년식
-                  </p>
-                  <h3 class="text-body-1 font-weight-medium">11가1111</h3>
-                  <p class="text-body-4 color-gray row-margin-small">
-                    쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
-                  </p>
-                </BasicBoxHeadLeft>
-                <BasicBoxHeadRight>
-                  <div :class="$style['car-image']">
-                    <img
-                      src="@/assets/images/_dummy/car-sample.png"
-                      alt="차량 정보 넣어주세요"
-                    />
+                  <div class="flex-box row-margin-item">
+                    <div class="flex-box__cell flex-1">
+                      <div class="flex-box row-margin-mini">
+                        <div class="flex-box__cell">
+                          <CarEmblem code="auto-hyundai" name="현대차" />
+                        </div>
+                        <div class="flex-box__cell flex-box__cell--small">
+                          <p class="text-body-4 font-weight-light">2020년식</p>
+                        </div>
+                      </div>
+                      <h3 class="text-body-1 font-weight-medium">11가1111</h3>
+                      <p class="text-body-4 color-gray row-margin-small">
+                        쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
+                      </p>
+                    </div>
+                    <div class="flex-box__cell flex-box__cell--medium">
+                      <CarThumb src="/images/_dummy/car-thumb.png" />
+                    </div>
                   </div>
-                </BasicBoxHeadRight>
-                <UnitText
-                  rightUnit="원"
-                  :classNames="{
-                    wrap: [$style['amount'], 'row-margin-item'],
-                  }"
-                  >741,620</UnitText
-                >
+                  <UnitText rightUnit="원"><strong>741,620</strong></UnitText>
+                </BasicBoxHeadLeft>
               </BasicBoxHead>
               <KeyValueList margin="regular">
                 <KeyValueItem
@@ -167,16 +153,18 @@ export default {
                 >
                   <KeyValueTitle>사고유무</KeyValueTitle>
                   <KeyValueText>
-                    Y
-                    <TextButton
-                      theme="tertiary"
-                      :underline="true"
-                      :classNames="{
-                        wrap: $style['link'],
-                      }"
-                    >
-                      세부이력
-                    </TextButton>
+                    <div class="flex-box justify-conten-end">
+                      <div class="flex-box__cell">Y</div>
+                      <div class="flex-box__cell">
+                        <TextButton
+                          theme="tertiary"
+                          :underline="true"
+                          :block="true"
+                        >
+                          세부이력
+                        </TextButton>
+                      </div>
+                    </div>
                   </KeyValueText>
                 </KeyValueItem>
               </KeyValueList>
@@ -187,87 +175,7 @@ export default {
                 }"
               >
                 <ButtonListItem>
-                  <BasicButton
-                    size="small"
-                    theme="secondary"
-                    @click="layer001Open"
-                    >차량 구매</BasicButton
-                  >
-                </ButtonListItem>
-              </ButtonList>
-            </BasicBox>
-          </li>
-
-          <li class="row-margin-item-group">
-            <BasicBox>
-              <BasicBoxHead>
-                <BasicBoxHeadLeft>
-                  <p :class="$style['brand-info']">
-                    <span :class="$style['brand-info__logo']"><CarLogo /></span>
-                    2020년식
-                  </p>
-                  <h3 class="text-body-1 font-weight-medium">11가1111</h3>
-                  <p class="text-body-4 color-gray row-margin-small">
-                    쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
-                  </p>
-                </BasicBoxHeadLeft>
-                <BasicBoxHeadRight>
-                  <div :class="$style['car-image']">
-                    <img
-                      src="@/assets/images/_dummy/car-sample.png"
-                      alt="차량 정보 넣어주세요"
-                    />
-                  </div>
-                </BasicBoxHeadRight>
-                <UnitText
-                  rightUnit="원"
-                  :classNames="{
-                    wrap: [$style['amount'], 'row-margin-item'],
-                  }"
-                  >741,620</UnitText
-                >
-              </BasicBoxHead>
-              <KeyValueList margin="regular">
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>주행거리</KeyValueTitle>
-                  <KeyValueText>65,000 Km</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>사고유무</KeyValueTitle>
-                  <KeyValueText>
-                    Y
-                    <TextButton
-                      theme="tertiary"
-                      :underline="true"
-                      :classNames="{
-                        wrap: $style['link'],
-                      }"
-                    >
-                      세부이력
-                    </TextButton>
-                  </KeyValueText>
-                </KeyValueItem>
-              </KeyValueList>
-
-              <ButtonList
-                :classNames="{
-                  wrap: 'row-margin-contents-small',
-                }"
-              >
-                <ButtonListItem>
-                  <BasicButton
-                    size="small"
-                    theme="secondary"
-                    @click="layer001Open"
+                  <BasicButton size="small" theme="secondary"
                     >차량 구매</BasicButton
                   >
                 </ButtonListItem>
@@ -279,8 +187,6 @@ export default {
       </section>
       <!-- // DD : 검색 후 노출 -->
     </FullPopup>
-
-    <LayerAutoUsedLoanSearchConfirm ref="layer001" />
   </UiLayer>
 </template>
 

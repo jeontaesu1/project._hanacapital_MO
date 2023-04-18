@@ -7,6 +7,7 @@ import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
+import StickyBar from '@/components/ui/common/StickyBar.vue';
 import UiTab from '@/components/ui/tab/UiTab.vue';
 import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
 import NavTab from '@/components/ui/tab/NavTab.vue';
@@ -21,8 +22,13 @@ import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
-
-import CarLogo from '@/assets/images/car-logo/auto-hyundai.svg?component';
+import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
+import CarThumb from '@/components/ui/imageData/CarThumb.vue';
+import UnitText from '@/components/ui/text/UnitText.vue';
+import UiAccordion from '@/components/ui/accordion/UiAccordion.vue';
+import UiAccordionItem from '@/components/ui/accordion/UiAccordionItem.vue';
+import UiAccordionLayer from '@/components/ui/accordion/UiAccordionLayer.vue';
+import UiAccordionOpener from '@/components/ui/accordion/UiAccordionOpener.vue';
 
 export default {
   components: {
@@ -31,6 +37,7 @@ export default {
     FullPopupHead,
     PopupTitle,
     PopupButton,
+    StickyBar,
     UiTab,
     UiTabPanel,
     NavTab,
@@ -45,8 +52,13 @@ export default {
     KeyValueTitle,
     KeyValueText,
     NoticeText,
-
-    CarLogo,
+    CarEmblem,
+    CarThumb,
+    UnitText,
+    UiAccordion,
+    UiAccordionItem,
+    UiAccordionLayer,
+    UiAccordionOpener,
   },
   setup() {
     const layer = ref(null);
@@ -73,38 +85,38 @@ export default {
       <BasicBox className="row-margin-container-medium">
         <div class="flex-box">
           <div class="flex-box__cell flex-1">
-            <p :class="$style['brand-info']">
-              <span :class="$style['brand-info__logo']"><CarLogo /></span>
-              2020년식
-            </p>
+            <div class="flex-box row-margin-mini">
+              <div class="flex-box__cell">
+                <CarEmblem code="auto-hyundai" name="현대차" />
+              </div>
+              <div class="flex-box__cell flex-box__cell--small">
+                <p class="text-body-4 font-weight-light">2020년식</p>
+              </div>
+            </div>
             <h3 class="text-body-1 font-weight-medium">11가1111</h3>
             <p class="text-body-4 color-gray row-margin-small">
               쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
             </p>
           </div>
-          <div class="flex-box__cell flex-none">
-            <div :class="$style['car-image']">
-              <img
-                src="@/assets/images/_dummy/car-sample.png"
-                alt="차량 정보 넣어주세요"
-              />
-            </div>
+          <div class="flex-box__cell flex-box__cell--medium">
+            <CarThumb src="/images/_dummy/car-thumb.png" />
           </div>
         </div>
       </BasicBox>
 
       <UiTab>
-        <NavTab :useUiTab="true">
-          <NavTabButton link="layerAutoUsedLoanAccidentHistoryTab001"
-            >요약정보</NavTabButton
-          >
-          <NavTabButton link="layerAutoUsedLoanAccidentHistoryTab002"
-            >상세정보</NavTabButton
-          >
-        </NavTab>
+        <StickyBar>
+          <NavTab :useUiTab="true">
+            <NavTabButton link="layerAutoUsedLoanAccidentHistoryTab001"
+              >요약정보</NavTabButton
+            >
+            <NavTabButton link="layerAutoUsedLoanAccidentHistoryTab002"
+              >상세정보</NavTabButton
+            >
+          </NavTab>
+        </StickyBar>
 
-        <!-- Tab : 요약정보 -->
-        <UiTabPanel name="layerAutoUsedLoanAccidentHistoryTab001">
+        <div class="contents-wrap">
           <NoticeText
             :classNames="{
               wrap: 'row-margin-contents',
@@ -113,9 +125,11 @@ export default {
             아래정보는 고객님께서 조회하신 차량에 대한 조회일 현재 (yyyy년 mm월
             dd일) 보험 개발원의 실시간 정보입니다.
           </NoticeText>
-          <div>
-            <ul class="reset-list">
-              <li class="row-margin-item-group">
+
+          <!-- Tab : 요약정보 -->
+          <UiTabPanel name="layerAutoUsedLoanAccidentHistoryTab001">
+            <div>
+              <section class="row-margin-item-group">
                 <BasicBox>
                   <BasicBoxHead>
                     <BasicBoxHeadLeft>
@@ -206,8 +220,8 @@ export default {
                     </KeyValueItem>
                   </KeyValueList>
                 </BasicBox>
-              </li>
-              <li class="row-margin-item-group">
+              </section>
+              <section class="row-margin-item-group">
                 <BasicBox>
                   <BasicBoxHead>
                     <BasicBoxHeadLeft>
@@ -268,25 +282,15 @@ export default {
                     </KeyValueItem>
                   </KeyValueList>
                 </BasicBox>
-              </li>
-            </ul>
-          </div>
-        </UiTabPanel>
-        <!-- // Tab : 요약정보 -->
+              </section>
+            </div>
+          </UiTabPanel>
+          <!-- // Tab : 요약정보 -->
 
-        <!-- Tab : 상세정보 -->
-        <UiTabPanel name="layerAutoUsedLoanAccidentHistoryTab002">
-          <NoticeText
-            :classNames="{
-              wrap: 'row-margin-contents',
-            }"
-          >
-            아래정보는 고객님께서 조회하신 차량에 대한 조회일 현재 (yyyy년 mm월
-            dd일) 보험 개발원의 실시간 정보입니다.
-          </NoticeText>
-          <section>
-            <ul class="reset-list">
-              <li class="row-margin-item-group">
+          <!-- Tab : 상세정보 -->
+          <UiTabPanel name="layerAutoUsedLoanAccidentHistoryTab002">
+            <div>
+              <section class="row-margin-item-group">
                 <BasicBox>
                   <BasicBoxHead>
                     <BasicBoxHeadLeft>
@@ -323,8 +327,8 @@ export default {
                     </KeyValueItem>
                   </KeyValueList>
                 </BasicBox>
-              </li>
-              <li class="row-margin-item-group">
+              </section>
+              <section class="row-margin-item-group">
                 <BasicBox>
                   <BasicBoxHead>
                     <BasicBoxHeadLeft>
@@ -354,8 +358,8 @@ export default {
                     </KeyValueItem>
                   </KeyValueList>
                 </BasicBox>
-              </li>
-              <li class="row-margin-item-group">
+              </section>
+              <section class="row-margin-item-group">
                 <BasicBox>
                   <BasicBoxHead>
                     <BasicBoxHeadLeft>
@@ -392,57 +396,278 @@ export default {
                     </KeyValueItem>
                   </KeyValueList>
                 </BasicBox>
-              </li>
-            </ul>
-          </section>
+              </section>
+            </div>
 
-          <section>
-            <h3 class="text-title-2 row-margin-contents">보험처리 내역</h3>
+            <section class="contents-wrap row-margin-container-medium">
+              <h3 class="text-title-2 row-margin-contents">보험처리 내역</h3>
 
-            <UiTab>
-              <RoundTab :useUiTab="true">
-                <RoundTabButton
-                  link="layerAutoUsedLoanAccidentHistoryTab001_001"
-                >
-                  내차보험
-                </RoundTabButton>
-                <RoundTabButton
-                  link="layerAutoUsedLoanAccidentHistoryTab001_002"
-                >
-                  타차보험
-                </RoundTabButton>
-                <RoundTabButton
-                  link="layerAutoUsedLoanAccidentHistoryTab001_003"
-                >
-                  타차피해
-                </RoundTabButton>
-              </RoundTab>
+              <UiTab>
+                <RoundTab :useUiTab="true">
+                  <RoundTabButton
+                    link="layerAutoUsedLoanAccidentHistoryTab001_001"
+                  >
+                    내차보험
+                  </RoundTabButton>
+                  <RoundTabButton
+                    link="layerAutoUsedLoanAccidentHistoryTab001_002"
+                  >
+                    타차보험
+                  </RoundTabButton>
+                  <RoundTabButton
+                    link="layerAutoUsedLoanAccidentHistoryTab001_003"
+                  >
+                    타차피해
+                  </RoundTabButton>
+                </RoundTab>
 
-              <!-- Tab : 내차보험 -->
-              <UiTabPanel name="layerAutoUsedLoanAccidentHistoryTab001_001">
-                <!-- Case : 결과 없을 때 -->
-                <div :class="$style['empty']">
-                  <p :class="$style['empty__text']">검색된 결과가 없습니다.</p>
-                </div>
-                <!-- // Case : 결과 없을 때 -->
-              </UiTabPanel>
-              <!-- // Tab : 내차보험 -->
+                <!-- Tab : 내차보험 -->
+                <UiTabPanel name="layerAutoUsedLoanAccidentHistoryTab001_001">
+                  <!-- Case : 내역 없을 때 -->
+                  <div :class="$style['empty']">
+                    <p :class="$style['empty__text']">
+                      검색된 결과가 없습니다.
+                    </p>
+                  </div>
+                  <!-- // Case : 내역 없을 때 -->
 
-              <!-- Tab : 타차보험 -->
-              <UiTabPanel name="layerAutoUsedLoanAccidentHistoryTab001_002">
-                // 타차보험
-              </UiTabPanel>
-              <!-- // Tab : 타차보험 -->
+                  <!-- Case : 내역 있을 때 -->
+                  <UiAccordion class="reset-list">
+                    <UiAccordionItem
+                      v-for="i in 3"
+                      :key="i"
+                      class="row-margin-item-group"
+                    >
+                      <BasicBox>
+                        <div class="flex-box">
+                          <div class="flex-box__cell">
+                            <div class="text-body-4 font-weight-light">
+                              2022.08.11
+                            </div>
+                          </div>
+                          <div class="flex-box__cell flex-1">
+                            <UnitText
+                              rightUnit="원"
+                              align="right"
+                              size="regular"
+                              >625,500</UnitText
+                            >
+                          </div>
+                          <div class="flex-box__cell">
+                            <UiAccordionOpener />
+                          </div>
+                        </div>
+                        <UiAccordionLayer>
+                          <div :class="$style['insurance-contents']">
+                            <KeyValueList margin="regular">
+                              <KeyValueItem
+                                :classNames="{
+                                  item: 'text-body-3',
+                                }"
+                              >
+                                <KeyValueTitle>부품</KeyValueTitle>
+                                <KeyValueText>240,360 원</KeyValueText>
+                              </KeyValueItem>
+                              <KeyValueItem
+                                :classNames="{
+                                  item: 'text-body-3',
+                                }"
+                              >
+                                <KeyValueTitle>공임</KeyValueTitle>
+                                <KeyValueText>81,000 원</KeyValueText>
+                              </KeyValueItem>
+                              <KeyValueItem
+                                :classNames="{
+                                  item: 'text-body-3',
+                                }"
+                              >
+                                <KeyValueTitle>도장</KeyValueTitle>
+                                <KeyValueText>244,940 원</KeyValueText>
+                              </KeyValueItem>
+                              <KeyValueItem
+                                :classNames="{
+                                  item: 'text-body-3',
+                                }"
+                              >
+                                <KeyValueTitle>보험비용</KeyValueTitle>
+                                <KeyValueText>566,300 원</KeyValueText>
+                              </KeyValueItem>
+                            </KeyValueList>
+                          </div>
+                        </UiAccordionLayer>
+                      </BasicBox>
+                    </UiAccordionItem>
+                  </UiAccordion>
+                  <!-- // Case : 내역 있을 때 -->
+                </UiTabPanel>
+                <!-- // Tab : 내차보험 -->
 
-              <!-- Tab : 타차피해 -->
-              <UiTabPanel name="layerAutoUsedLoanAccidentHistoryTab001_003">
-                // 타차피해
-              </UiTabPanel>
-              <!-- // Tab : 타차피해 -->
-            </UiTab>
-          </section>
-        </UiTabPanel>
-        <!-- // Tab : 상세정보 -->
+                <!-- Tab : 타차보험 -->
+                <UiTabPanel name="layerAutoUsedLoanAccidentHistoryTab001_002">
+                  <!-- Case : 내역 없을 때 -->
+                  <div :class="$style['empty']">
+                    <p :class="$style['empty__text']">
+                      검색된 결과가 없습니다.
+                    </p>
+                  </div>
+                  <!-- // Case : 내역 없을 때 -->
+
+                  <!-- Case : 내역 있을 때 -->
+                  <UiAccordion class="reset-list">
+                    <UiAccordionItem
+                      v-for="i in 3"
+                      :key="i"
+                      class="row-margin-item-group"
+                    >
+                      <BasicBox>
+                        <div class="flex-box">
+                          <div class="flex-box__cell">
+                            <div class="text-body-4 font-weight-light">
+                              2022.08.11
+                            </div>
+                          </div>
+                          <div class="flex-box__cell flex-1">
+                            <UnitText
+                              rightUnit="원"
+                              align="right"
+                              size="regular"
+                              >625,500</UnitText
+                            >
+                          </div>
+                          <div class="flex-box__cell">
+                            <UiAccordionOpener />
+                          </div>
+                        </div>
+                        <UiAccordionLayer>
+                          <div :class="$style['insurance-contents']">
+                            <KeyValueList margin="regular">
+                              <KeyValueItem
+                                :classNames="{
+                                  item: 'text-body-3',
+                                }"
+                              >
+                                <KeyValueTitle>부품</KeyValueTitle>
+                                <KeyValueText>240,360 원</KeyValueText>
+                              </KeyValueItem>
+                              <KeyValueItem
+                                :classNames="{
+                                  item: 'text-body-3',
+                                }"
+                              >
+                                <KeyValueTitle>공임</KeyValueTitle>
+                                <KeyValueText>81,000 원</KeyValueText>
+                              </KeyValueItem>
+                              <KeyValueItem
+                                :classNames="{
+                                  item: 'text-body-3',
+                                }"
+                              >
+                                <KeyValueTitle>도장</KeyValueTitle>
+                                <KeyValueText>244,940 원</KeyValueText>
+                              </KeyValueItem>
+                              <KeyValueItem
+                                :classNames="{
+                                  item: 'text-body-3',
+                                }"
+                              >
+                                <KeyValueTitle>보험비용</KeyValueTitle>
+                                <KeyValueText>566,300 원</KeyValueText>
+                              </KeyValueItem>
+                            </KeyValueList>
+                          </div>
+                        </UiAccordionLayer>
+                      </BasicBox>
+                    </UiAccordionItem>
+                  </UiAccordion>
+                  <!-- // Case : 내역 있을 때 -->
+                </UiTabPanel>
+                <!-- // Tab : 타차보험 -->
+
+                <!-- Tab : 타차피해 -->
+                <UiTabPanel name="layerAutoUsedLoanAccidentHistoryTab001_003">
+                  <!-- Case : 내역 없을 때 -->
+                  <div :class="$style['empty']">
+                    <p :class="$style['empty__text']">
+                      검색된 결과가 없습니다.
+                    </p>
+                  </div>
+                  <!-- // Case : 내역 없을 때 -->
+
+                  <!-- Case : 내역 있을 때 -->
+                  <UiAccordion class="reset-list">
+                    <UiAccordionItem
+                      v-for="i in 3"
+                      :key="i"
+                      class="row-margin-item-group"
+                    >
+                      <BasicBox>
+                        <div class="flex-box">
+                          <div class="flex-box__cell">
+                            <div class="text-body-4 font-weight-light">
+                              2022.08.11
+                            </div>
+                          </div>
+                          <div class="flex-box__cell flex-1">
+                            <UnitText
+                              rightUnit="원"
+                              align="right"
+                              size="regular"
+                              >625,500</UnitText
+                            >
+                          </div>
+                          <div class="flex-box__cell">
+                            <UiAccordionOpener />
+                          </div>
+                        </div>
+                        <UiAccordionLayer>
+                          <div :class="$style['insurance-contents']">
+                            <KeyValueList margin="regular">
+                              <KeyValueItem
+                                :classNames="{
+                                  item: 'text-body-3',
+                                }"
+                              >
+                                <KeyValueTitle>부품</KeyValueTitle>
+                                <KeyValueText>240,360 원</KeyValueText>
+                              </KeyValueItem>
+                              <KeyValueItem
+                                :classNames="{
+                                  item: 'text-body-3',
+                                }"
+                              >
+                                <KeyValueTitle>공임</KeyValueTitle>
+                                <KeyValueText>81,000 원</KeyValueText>
+                              </KeyValueItem>
+                              <KeyValueItem
+                                :classNames="{
+                                  item: 'text-body-3',
+                                }"
+                              >
+                                <KeyValueTitle>도장</KeyValueTitle>
+                                <KeyValueText>244,940 원</KeyValueText>
+                              </KeyValueItem>
+                              <KeyValueItem
+                                :classNames="{
+                                  item: 'text-body-3',
+                                }"
+                              >
+                                <KeyValueTitle>보험비용</KeyValueTitle>
+                                <KeyValueText>566,300 원</KeyValueText>
+                              </KeyValueItem>
+                            </KeyValueList>
+                          </div>
+                        </UiAccordionLayer>
+                      </BasicBox>
+                    </UiAccordionItem>
+                  </UiAccordion>
+                  <!-- // Case : 내역 있을 때 -->
+                </UiTabPanel>
+                <!-- // Tab : 타차피해 -->
+              </UiTab>
+            </section>
+          </UiTabPanel>
+          <!-- // Tab : 상세정보 -->
+        </div>
       </UiTab>
     </FullPopup>
   </UiLayer>

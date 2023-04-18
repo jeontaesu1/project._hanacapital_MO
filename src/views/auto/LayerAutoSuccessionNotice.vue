@@ -1,6 +1,6 @@
 <script>
 // AF_M07_l001
-import { ref, reactive } from 'vue';
+import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
@@ -26,16 +26,9 @@ export default {
   },
   setup() {
     const layer = ref(null);
-    const state = reactive({
-      amountError: false,
-      periodError: false,
-      methodError: false,
-      testError001: false,
-    });
 
     return {
       layer,
-      state,
     };
   },
 };

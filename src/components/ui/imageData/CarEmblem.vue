@@ -1,10 +1,9 @@
 <script>
-import { computed, useCssModule, provide } from 'vue';
+import { computed } from 'vue';
 
 const defaultClassNames = () => ({
   wrap: '',
-  list: '',
-  align: '',
+  img: '',
 });
 
 export default {
@@ -15,17 +14,17 @@ export default {
         return defaultClassNames();
       },
     },
-    align: {
+    size: {
       Type: String,
       default: null,
     },
-    wrap: {
-      Type: Boolean,
-      default: false,
+    code: {
+      Type: String,
+      default: null,
     },
-    col: {
-      Type: Number,
-      default: 2,
+    name: {
+      Type: String,
+      default: null,
     },
   },
   setup(props) {
@@ -33,8 +32,6 @@ export default {
       const { classNames } = props;
       return Object.assign(defaultClassNames(), classNames);
     });
-
-    provide('boxCheckListStyleModule', useCssModule());
 
     return {
       customClassNames,
@@ -44,23 +41,24 @@ export default {
 </script>
 
 <template>
-  <div
+  <span
     :class="[
-      $style['box-check-list'],
+      $style['car-emblem'],
       {
-        [$style[`box-check-list--align-${align}`]]: align,
-        [$style[`box-check-list--wrap`]]: wrap,
-        [$style[`box-check-list--col-${col}`]]: wrap,
+        [$style[`car-emblem--size-${size}`]]: size,
       },
       customClassNames.wrap,
     ]"
   >
-    <ul :class="[$style['box-check-list__list'], customClassNames.list]">
-      <slot />
-    </ul>
-  </div>
+    <img
+      v-if="code"
+      :src="`/images/car-emblem/${code}.svg`"
+      :alt="name"
+      :class="[$style['car-emblem__img'], customClassNames.img]"
+    />
+  </span>
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/components/ui/form/BoxCheckList.scss';
+@import '@/assets/scss/components/ui/imageData/CarEmblem.scss';
 </style>

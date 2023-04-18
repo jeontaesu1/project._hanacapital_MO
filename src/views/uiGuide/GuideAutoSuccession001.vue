@@ -9,8 +9,8 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import LayerAutoSuccessionNotice from '@/views/auto/LayerAutoSuccessionNotice.vue';
 import LayerAutoSuccessionList from '@/views/auto/LayerAutoSuccessionList.vue';
 import LayerAutoSuccessionAgree from '@/views/auto/LayerAutoSuccessionAgree.vue';
-import LayerAutoSuccessionURLSendComplete from '@/views/auto/LayerAutoSuccessionURLSendComplete.vue';
 import LayerAutoSuccessionURLSend from '@/views/auto/LayerAutoSuccessionURLSend.vue';
+import LayerAutoSuccessionURLSendComplete from '@/views/auto/LayerAutoSuccessionURLSendComplete.vue';
 
 export default {
   components: {
@@ -21,8 +21,8 @@ export default {
     LayerAutoSuccessionNotice,
     LayerAutoSuccessionList,
     LayerAutoSuccessionAgree,
-    LayerAutoSuccessionURLSendComplete,
     LayerAutoSuccessionURLSend,
+    LayerAutoSuccessionURLSendComplete,
   },
   setup() {
     const layer001 = ref(null);
@@ -88,12 +88,12 @@ export default {
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer004Open"
-          >승계 신청 URL 발송 완료<br />AF_M07_l004</BasicButton
+          >승계 신청 URL 발송<br />AF_M07_b002</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer005Open"
-          >승계 신청 URL 발송<br />AF_M07_b002</BasicButton
+          >승계 신청 URL 발송 완료<br />AF_M07_l004</BasicButton
         >
       </ButtonListItem>
     </ButtonList>
@@ -101,7 +101,7 @@ export default {
     <LayerAutoSuccessionNotice ref="layer001" />
     <LayerAutoSuccessionList ref="layer002" />
     <LayerAutoSuccessionAgree ref="layer003" />
-    <LayerAutoSuccessionURLSendComplete ref="layer004" />
-    <LayerAutoSuccessionURLSend ref="layer005" />
+    <LayerAutoSuccessionURLSend ref="layer004" />
+    <LayerAutoSuccessionURLSendComplete ref="layer005" />
   </PageContents>
 </template>

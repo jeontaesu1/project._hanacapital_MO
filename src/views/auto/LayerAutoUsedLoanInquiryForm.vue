@@ -172,7 +172,7 @@ export default {
                   buttonTitle="종료시간 선택하기"
                   layerTitle="종료시간을 선택해 주세요"
                   id="layerAutoUsedLoanInquiryFormEndTime"
-                  buttonId="layerAutoUsedLoanInquiryFormStartEndButton"
+                  buttonId="layerAutoUsedLoanInquiryFormEndTimeButton"
                 />
               </InputBlockCell>
               <InputBlockCell margin="regular">

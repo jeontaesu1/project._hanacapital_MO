@@ -1,6 +1,6 @@
 <script>
 // AF_M06_l009
-import { ref, reactive } from 'vue';
+import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
@@ -20,8 +20,8 @@ import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
-
-import CarLogo from '@/assets/images/car-logo/auto-hyundai.svg?component';
+import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
+import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 
 export default {
   components: {
@@ -43,19 +43,13 @@ export default {
     KeyValueTitle,
     KeyValueText,
     BasicHr,
-    CarLogo,
+    CarEmblem,
+    CarThumb,
   },
   setup() {
-    const state = reactive({
-      carAmountError: false,
-      loanAmountError: false,
-      periodError: false,
-    });
-
     const layer = ref(null);
 
     return {
-      state,
       layer,
     };
   },
@@ -83,21 +77,20 @@ export default {
       <BasicBox>
         <div class="flex-box">
           <div class="flex-box__cell flex-1">
-            <p :class="$style['brand-info']">
-              <span :class="$style['brand-info__logo']"><CarLogo /></span>
-              2020년식
-            </p>
+            <div class="flex-box row-margin-mini">
+              <div class="flex-box__cell">
+                <CarEmblem code="auto-hyundai" name="현대차" />
+              </div>
+              <div class="flex-box__cell flex-box__cell--small">
+                <p class="text-body-4 font-weight-light">2020년식</p>
+              </div>
+            </div>
             <h3 class="text-body-1 font-weight-medium">
               쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
             </h3>
           </div>
-          <div class="flex-box__cell flex-none">
-            <div :class="$style['car-image']">
-              <img
-                src="@/assets/images/_dummy/car-sample.png"
-                alt="차량 정보 넣어주세요"
-              />
-            </div>
+          <div class="flex-box__cell flex-box__cell--medium">
+            <CarThumb src="/images/_dummy/car-thumb.png" />
           </div>
         </div>
       </BasicBox>
@@ -110,22 +103,21 @@ export default {
         <BasicBox>
           <BasicBoxHead>
             <BasicBoxHeadLeft>
-              <p :class="$style['brand-info']">
-                <span :class="$style['brand-info__logo']"><CarLogo /></span>
-                2020년식
-              </p>
+              <div class="flex-box row-margin-mini">
+                <div class="flex-box__cell">
+                  <CarEmblem code="auto-hyundai" name="현대차" />
+                </div>
+                <div class="flex-box__cell flex-box__cell--small">
+                  <p class="text-body-4 font-weight-light">2020년식</p>
+                </div>
+              </div>
               <h3 class="text-body-1 font-weight-medium">11가1111</h3>
               <p class="text-body-4 color-gray row-margin-small">
                 쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
               </p>
             </BasicBoxHeadLeft>
             <BasicBoxHeadRight>
-              <div :class="$style['car-image']">
-                <img
-                  src="@/assets/images/_dummy/car-sample.png"
-                  alt="차량 정보 넣어주세요"
-                />
-              </div>
+              <CarThumb src="/images/_dummy/car-thumb.png" />
             </BasicBoxHeadRight>
           </BasicBoxHead>
           <KeyValueList margin="regular">
@@ -185,7 +177,3 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/auto/LayerAutoUsedLoanConfirm.scss';
-</style>

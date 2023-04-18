@@ -76,47 +76,12 @@ export default {
       <section>
         <h3 class="text-body-2 row-margin-item-medium">승계 신청 대상 차량</h3>
 
-        <BasicBox theme="tertiary">
-          <ul
-            :class="[$style['basic-list'], $style['basic-list--medium-margin']]"
-          >
+        <BasicBox theme="senary">
+          <ul class="reset-list">
             <li
-              :class="[
-                $style['basic-list__item'],
-                'text-body-3',
-                'color-black',
-                'font-weight-regular',
-              ]"
-            >
-              오토리스 222나 2222
-            </li>
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'text-body-3',
-                'color-black',
-                'font-weight-regular',
-              ]"
-            >
-              오토리스 222나 2222
-            </li>
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'text-body-3',
-                'color-black',
-                'font-weight-regular',
-              ]"
-            >
-              오토리스 222나 2222
-            </li>
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'text-body-3',
-                'color-black',
-                'font-weight-regular',
-              ]"
+              v-for="i in 4"
+              :key="i"
+              class="text-body-3 row-margin-item-group"
             >
               오토리스 222나 2222
             </li>
