@@ -8,7 +8,7 @@ import { useUiHeaderStore } from '@/stores/ui/header';
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -38,7 +38,7 @@ export default {
     PageContents,
     PageTextGroup,
     PageMainText,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -155,7 +155,7 @@ export default {
 
       <UiTabPanel name="PersonalLoanHappinessApartmentTab001_001">
         <BasicBox theme="tertiary">
-          <KeyValueList align="left" margin="regular">
+          <KeyValue align="left" margin="regular">
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>대상</KeyValueTitle>
               <KeyValueText>
@@ -180,10 +180,10 @@ export default {
               <KeyValueTitle>기간</KeyValueTitle>
               <KeyValueText> 12개월 ~ 120개월</KeyValueText>
             </KeyValueItem>
-          </KeyValueList>
+          </KeyValue>
         </BasicBox>
 
-        <KeyValueList
+        <KeyValue
           direction="vertical"
           :classNames="{
             wrap: 'row-margin-contents',
@@ -372,7 +372,7 @@ export default {
               >으로 자동전환되어 진행
             </KeyValueText>
           </KeyValueItem>
-        </KeyValueList>
+        </KeyValue>
       </UiTabPanel>
       <UiTabPanel name="PersonalLoanHappinessApartmentTab001_002">
         <div :class="$style['step']">
