@@ -85,13 +85,11 @@ export default {
             </KeyValueText>
           </KeyValueItem>
         </KeyValue>
-
         <BasicHr
           type="contents"
           theme="quaternary"
           className="row-margin-contents-small"
         />
-
         <KeyValue margin="regular">
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>대출원금</KeyValueTitle>
