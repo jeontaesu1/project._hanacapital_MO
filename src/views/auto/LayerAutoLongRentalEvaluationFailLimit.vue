@@ -10,7 +10,7 @@ import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -28,7 +28,7 @@ export default {
     PageMainText,
     IllustObject,
     BasicHr,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -101,12 +101,12 @@ export default {
               className="row-margin-contents-small"
             />
 
-            <KeyValueList>
+            <KeyValue>
               <KeyValueItem class="text-body-5">
                 <KeyValueTitle>선납금 + 보증금</KeyValueTitle>
                 <KeyValueText>20% (22,145,111원)</KeyValueText>
               </KeyValueItem>
-            </KeyValueList>
+            </KeyValue>
           </div>
         </li>
       </ul>

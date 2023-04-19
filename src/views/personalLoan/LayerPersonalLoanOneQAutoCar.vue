@@ -9,7 +9,7 @@ import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -23,7 +23,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -47,7 +47,7 @@ export default {
         </ToastPopupHead>
       </template>
 
-      <KeyValueList>
+      <KeyValue>
         <KeyValueItem>
           <KeyValueTitle>차량명의</KeyValueTitle>
           <KeyValueText>
@@ -77,7 +77,7 @@ export default {
             있을 경우 해지 후 대출 가능
           </KeyValueText>
         </KeyValueItem>
-      </KeyValueList>
+      </KeyValue>
 
       <ul :class="[$style['basic-list'], 'row-margin-contents']">
         <li :class="$style['basic-list__item']">

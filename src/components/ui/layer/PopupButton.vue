@@ -3,6 +3,7 @@ import { computed } from 'vue';
 
 import IconBack from '@/assets/images/common/back-left.svg?component';
 import IconClose from '@/assets/images/common/close.svg?component';
+import IconSearch from '@/assets/images/common/search.svg?component';
 
 const defaultClassNames = () => ({
   wrap: '',
@@ -37,11 +38,13 @@ export default {
     const icons = {
       close: IconClose,
       back: IconBack,
+      search: IconSearch,
     };
 
     const texts = {
       close: '레이어 닫기',
       back: '뒤로가기',
+      search: '검색',
     };
 
     return {

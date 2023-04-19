@@ -16,7 +16,7 @@ import PageSubText from '@/components/ui/text/PageSubText.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -37,7 +37,7 @@ export default {
     BasicBox,
     BasicBoxHead,
     BasicBoxHeadLeft,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -87,7 +87,7 @@ export default {
           </BasicBoxHeadLeft>
         </BasicBoxHead>
 
-        <KeyValueList margin="regular">
+        <KeyValue margin="regular">
           <!-- Case : 가상계좌 선택 시 노출  -->
           <KeyValueItem
             :classNames="{
@@ -136,7 +136,7 @@ export default {
             <KeyValueTitle>예금주</KeyValueTitle>
             <KeyValueText>김하나</KeyValueText>
           </KeyValueItem>
-        </KeyValueList>
+        </KeyValue>
       </BasicBox>
 
       <template v-slot:foot>
