@@ -18,7 +18,7 @@ import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -45,7 +45,7 @@ export default {
     BasicBox,
     BasicBoxHead,
     BasicBoxHeadLeft,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -91,7 +91,7 @@ export default {
             </BasicBoxHeadLeft>
           </BasicBoxHead>
 
-          <KeyValueList margin="regular">
+          <KeyValue margin="regular">
             <KeyValueItem
               :classNames="{
                 item: 'text-body-3',
@@ -118,7 +118,7 @@ export default {
               <KeyValueTitle>국적</KeyValueTitle>
               <KeyValueText>대한민국</KeyValueText>
             </KeyValueItem>
-          </KeyValueList>
+          </KeyValue>
         </BasicBox>
 
         <div class="row-margin-item-group">
@@ -1763,7 +1763,7 @@ export default {
                         조항을 준수할 것을 확약합니다.
                       </p>
                       <BasicBox>
-                        <KeyValueList margin="regular-small">
+                        <KeyValue margin="regular-small">
                           <KeyValueItem
                             :classNames="{
                               item: 'text-body-5',
@@ -1781,7 +1781,7 @@ export default {
                             <KeyValueTitle>차량번호</KeyValueTitle>
                             <KeyValueText>12가1234(차대번호출력)</KeyValueText>
                           </KeyValueItem>
-                        </KeyValueList>
+                        </KeyValue>
                       </BasicBox>
                     </div>
                   </UiAccordionLayer>

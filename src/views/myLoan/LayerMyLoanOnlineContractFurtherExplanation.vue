@@ -93,9 +93,10 @@ export default {
         <FormList :classNames="{ wrap: 'row-margin-contents-group' }">
           <FormListItem titleText="고객정보" :forceFocus="true">
             <FormInvalid :error="state.typeError">
-              <BoxCheckList>
+              <BoxCheckList :wrap="true">
                 <BoxCheckListItem>
                   <BoxCheck
+                    :minSide="true"
                     name="layerMyLoanOnlineContractFurtherExplanationType"
                     id="layerMyLoanOnlineContractFurtherExplanationType001"
                     :defaultChecked="true"
@@ -105,6 +106,7 @@ export default {
                 </BoxCheckListItem>
                 <BoxCheckListItem>
                   <BoxCheck
+                    :minSide="true"
                     name="layerMyLoanOnlineContractFurtherExplanationType"
                     id="layerMyLoanOnlineContractFurtherExplanationType002"
                   >
@@ -113,6 +115,7 @@ export default {
                 </BoxCheckListItem>
                 <BoxCheckListItem>
                   <BoxCheck
+                    :minSide="true"
                     name="layerMyLoanOnlineContractFurtherExplanationType"
                     id="layerMyLoanOnlineContractFurtherExplanationType003"
                   >
@@ -121,6 +124,7 @@ export default {
                 </BoxCheckListItem>
                 <BoxCheckListItem>
                   <BoxCheck
+                    :minSide="true"
                     name="layerMyLoanOnlineContractFurtherExplanationType"
                     id="layerMyLoanOnlineContractFurtherExplanationType004"
                   >
