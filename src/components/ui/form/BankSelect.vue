@@ -18,6 +18,7 @@ import UiTab from '@/components/ui/tab/UiTab.vue';
 import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
 import RoundTab from '@/components/ui/tab/RoundTab.vue';
 import RoundTabButton from '@/components/ui/tab/RoundTabButton.vue';
+import BankLogo from '@/components/ui/imageData/BankLogo.vue';
 
 const defaultClassNames = () => ({
   wrap: '',
@@ -266,6 +267,7 @@ export default {
     UiTabPanel,
     RoundTab,
     RoundTabButton,
+    BankLogo,
   },
   props: {
     classNames: {
@@ -509,10 +511,7 @@ export default {
                     @keyup="onKeyup($event, item)"
                   >
                     <span :class="$style['bank-brand__logo']">
-                      <img
-                        :src="`/images/bank-logo/${item.value}.svg`"
-                        alt=""
-                      />
+                      <BankLogo :code="item.value" />
                     </span>
                     <span :class="$style['bank-brand__text']">{{
                       item.text
@@ -545,10 +544,7 @@ export default {
                     @keyup="onKeyup($event, item)"
                   >
                     <span :class="$style['bank-brand__logo']">
-                      <img
-                        :src="`/images/securities-logo/${item.value}.svg`"
-                        alt=""
-                      />
+                      <BankLogo type="securities" :code="item.value" />
                     </span>
                     <span :class="$style['bank-brand__text']">{{
                       item.text

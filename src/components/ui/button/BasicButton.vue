@@ -1,5 +1,5 @@
 <script>
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 import { RouterLink } from 'vue-router';
 
 const defaultClassNames = () => ({
@@ -51,6 +51,8 @@ export default {
     },
   },
   setup(props, context) {
+    const button = ref(null);
+
     const setComponent = computed(() => {
       const { tagName } = props;
       return tagName === 'RouterLink' ? RouterLink : tagName;
@@ -78,13 +80,19 @@ export default {
       return Object.assign(defaultClassNames(), classNames);
     });
 
+    const getElement = () => {
+      return button.value;
+    };
+
     return {
+      button,
       setComponent,
       setType,
       isText,
       isLeftIcon,
       isRightIcon,
       customClassNames,
+      getElement,
     };
   },
 };
@@ -94,6 +102,7 @@ export default {
   <component
     :is="setComponent"
     v-bind="$attrs"
+    ref="button"
     :type="setType"
     :class="[
       $style['button'],

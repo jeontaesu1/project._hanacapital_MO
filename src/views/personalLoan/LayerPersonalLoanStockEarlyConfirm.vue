@@ -9,7 +9,7 @@ import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -27,7 +27,7 @@ export default {
     PageTextGroup,
     PageMainText,
     BasicBox,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -66,7 +66,7 @@ export default {
       </PageTextGroup>
 
       <BasicBox>
-        <KeyValueList margin="regular">
+        <KeyValue margin="regular">
           <KeyValueItem
             :classNames="{
               item: 'text-body-3',
@@ -120,7 +120,7 @@ export default {
             <KeyValueTitle>실납부액</KeyValueTitle>
             <KeyValueText>0 원</KeyValueText>
           </KeyValueItem>
-        </KeyValueList>
+        </KeyValue>
       </BasicBox>
 
       <ul :class="[$style['basic-list'], 'row-margin-contents']">

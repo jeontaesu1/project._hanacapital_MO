@@ -11,7 +11,7 @@ import StepProgress from '@/components/ui/progress/StepProgress.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -33,15 +33,11 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 import StickyBar from '@/components/ui/common/StickyBar.vue';
+import BankLogo from '@/components/ui/imageData/BankLogo.vue';
 
 import LayerInventoryFinanceEarlyAccountNotice from '@/views/inventoryFinance/LayerInventoryFinanceEarlyAccountNotice.vue';
 
 import iconInformation from '@/assets/images/icon/information.svg?component';
-import BankLogo001 from '@/assets/images/bank-logo/004.svg?component';
-import BankLogo002 from '@/assets/images/bank-logo/011.svg?component';
-import BankLogo003 from '@/assets/images/bank-logo/020.svg?component';
-import BankLogo004 from '@/assets/images/bank-logo/081.svg?component';
-import BankLogo005 from '@/assets/images/bank-logo/088.svg?component';
 
 export default {
   components: {
@@ -52,7 +48,7 @@ export default {
     BasicBox,
     BasicBoxHead,
     BasicBoxHeadLeft,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -74,13 +70,9 @@ export default {
     BasicButton,
     TextButton,
     StickyBar,
+    BankLogo,
     LayerInventoryFinanceEarlyAccountNotice,
     iconInformation,
-    BankLogo001,
-    BankLogo002,
-    BankLogo003,
-    BankLogo004,
-    BankLogo005,
   },
   setup() {
     const store = {
@@ -146,7 +138,7 @@ export default {
         </BasicBoxHeadLeft>
       </BasicBoxHead>
 
-      <KeyValueList margin="regular">
+      <KeyValue margin="regular">
         <KeyValueItem
           :classNames="{
             item: 'text-body-3',
@@ -173,7 +165,7 @@ export default {
           <KeyValueTitle>임직원특약</KeyValueTitle>
           <KeyValueText>2,039,040 원</KeyValueText>
         </KeyValueItem>
-      </KeyValueList>
+      </KeyValue>
     </BasicBox>
 
     <BasicHr className="row-margin-container-medium" />
@@ -265,7 +257,7 @@ export default {
       <!-- Case : 가상계좌 입금 선택 시 노출 -->
       <FormListItem titleText="입금가상계좌" :forceFocus="true">
         <BasicBox theme="senary">
-          <KeyValueList align="left" margin="regular" size="regular">
+          <KeyValue align="left" margin="regular" size="regular">
             <KeyValueItem
               :classNames="{
                 item: 'text-body-3',
@@ -274,7 +266,7 @@ export default {
               <KeyValueTitle>
                 <div class="flex-box">
                   <div class="flex-box__cell">
-                    <BankLogo001 :class="$style['bank-logo']" />
+                    <BankLogo size="small" code="004" />
                   </div>
                   <div class="flex-box__cell flex-box__cell--mini">국민</div>
                 </div>
@@ -289,7 +281,7 @@ export default {
               <KeyValueTitle>
                 <div class="flex-box">
                   <div class="flex-box__cell">
-                    <BankLogo002 :class="$style['bank-logo']" />
+                    <BankLogo size="small" code="011" />
                   </div>
                   <div class="flex-box__cell flex-box__cell--mini">농협</div>
                 </div>
@@ -304,7 +296,7 @@ export default {
               <KeyValueTitle>
                 <div class="flex-box">
                   <div class="flex-box__cell">
-                    <BankLogo003 :class="$style['bank-logo']" />
+                    <BankLogo size="small" code="020" />
                   </div>
                   <div class="flex-box__cell flex-box__cell--mini">우리</div>
                 </div>
@@ -319,7 +311,7 @@ export default {
               <KeyValueTitle>
                 <div class="flex-box">
                   <div class="flex-box__cell">
-                    <BankLogo004 :class="$style['bank-logo']" />
+                    <BankLogo size="small" code="081" />
                   </div>
                   <div class="flex-box__cell flex-box__cell--mini">하나</div>
                 </div>
@@ -334,14 +326,14 @@ export default {
               <KeyValueTitle>
                 <div class="flex-box">
                   <div class="flex-box__cell">
-                    <BankLogo005 :class="$style['bank-logo']" />
+                    <BankLogo size="small" code="088" />
                   </div>
                   <div class="flex-box__cell flex-box__cell--mini">신한</div>
                 </div>
               </KeyValueTitle>
-              <KeyValueText> 123-456-78901234-1234567890-12345 </KeyValueText>
+              <KeyValueText>123-456-78901234-1234567890-12345</KeyValueText>
             </KeyValueItem>
-          </KeyValueList>
+          </KeyValue>
         </BasicBox>
         <div class="inline-wrap align-right row-margin-item">
           <TextButton theme="quaternary" @click="layer001Open">
@@ -397,7 +389,3 @@ export default {
     <LayerInventoryFinanceEarlyAccountNotice ref="layer001" />
   </PageContents>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/inventory-finance/InventoryFinanceEarlyForm.scss';
-</style>
