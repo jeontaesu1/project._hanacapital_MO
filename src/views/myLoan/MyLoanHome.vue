@@ -94,7 +94,7 @@ export default {
           </div>
         </div>
 
-        <!-- DD : 렌터카일 경우 미노출 -->
+        <!-- Case : 렌터카일 경우 미노출 -->
         <BasicHr
           type="contents"
           theme="quaternary"
@@ -107,7 +107,7 @@ export default {
             <KeyValueText>78,000,000 원</KeyValueText>
           </KeyValueItem>
         </KeyValue>
-        <!-- //DD : 렌터카일 경우 미노출 -->
+        <!-- //Case : 렌터카일 경우 미노출 -->
       </BasicBox>
 
       <!-- Case :  캐피탈 계약 + 파트너사 양도계약 보유 경우 노출 -->
