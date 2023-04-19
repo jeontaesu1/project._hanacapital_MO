@@ -137,67 +137,67 @@ export default {
     >
       <ButtonListItem>
         <BasicButton @click="layer001Open">
-          일반리스 001<br />My_M03_l286
+          중요사항 안내_일반리스1<br />My_M03_l286
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer002Open">
-          일반리스 002<br />My_M03_l287
+          중요사항 안내_일반리스2<br />My_M03_l287
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer003Open">
-          일반리스 003<br />My_M03_l288
+          중요사항 안내_일반리스3<br />My_M03_l288
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer004Open">
-          일반리스 004<br />My_M03_l289
+          중요사항 안내_일반리스4<br />My_M03_l289
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer005Open">
-          일반리스 005<br />My_M03_l290
+          중요사항 안내_일반리스5<br />My_M03_l290
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer006Open">
-          일반리스 006<br />My_M03_l291
+          중요사항 안내_일반리스6<br />My_M03_l291
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer007Open">
-          일반리스 007<br />My_M03_l292
+          주요권리 안내_일반리스1<br />My_M03_l292
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer008Open">
-          일반리스 008<br />My_M03_l292
+          주요권리 안내_일반리스1<br />My_M03_l292
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer009Open">
-          일반리스 009<br />My_M03_l293
+          주요권리 안내_일반리스2<br />My_M03_l293
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer010Open">
-          일반리스 010<br />My_M03_l294
+          주요권리 안내_일반리스3<br />My_M03_l294
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer011Open">
-          일반리스 011<br />My_M03_l295
+          주요권리 안내_일반리스4<br />My_M03_l295
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer012Open">
-          일반리스 012<br />My_M03_l296
+          주요권리 안내_일반리스5<br />My_M03_l296
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer013Open">
-          일반리스 012<br />My_M99_l010
+          상품설명서 약관동의_일반리스설명서<br />My_M99_l010
         </BasicButton>
       </ButtonListItem>
     </ButtonList>

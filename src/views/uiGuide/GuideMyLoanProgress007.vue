@@ -137,67 +137,67 @@ export default {
     >
       <ButtonListItem>
         <BasicButton @click="layer001Open">
-          중고차오토론 001<br />My_M03_l242
+          중요사항 안내_중고차오토론(대출)1<br />My_M03_l242
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer002Open">
-          중고차오토론 002<br />My_M03_l243
+          중요사항 안내_중고차오토론(대출)2<br />My_M03_l243
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer003Open">
-          중고차오토론 003<br />My_M03_l244
+          중요사항 안내_중고차오토론(대출)3<br />My_M03_l244
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer004Open">
-          중고차오토론 004<br />My_M03_l245
+          중요사항 안내_중고차오토론(대출)4<br />My_M03_l245
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer005Open">
-          중고차오토론 005<br />My_M03_l246
+          중요사항 안내_중고차오토론(대출)5<br />My_M03_l246
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer006Open">
-          중고차오토론 006<br />My_M03_l247
+          중요사항 안내_중고차오토론(대출)6<br />My_M03_l247
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer007Open">
-          중고차오토론 007<br />My_M03_l248
+          주요권리 안내_중고차오토론(대출)1<br />My_M03_l248
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer008Open">
-          중고차오토론 008<br />My_M03_l248
+          주요권리 안내_중고차오토론(대출)1<br />My_M03_l248
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer009Open">
-          중고차오토론 009<br />My_M03_l249
+          주요권리 안내_중고차오토론(대출)2<br />My_M03_l249
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer010Open">
-          중고차오토론 010<br />My_M03_l250
+          주요권리 안내_중고차오토론(대출)3<br />My_M03_l250
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer011Open">
-          중고차오토론 011<br />My_M03_l251
+          주요권리 안내_중고차오토론(대출)4<br />My_M03_l251
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer012Open">
-          중고차오토론 012<br />My_M03_l252
+          주요권리 안내_중고차오토론(대출)5<br />My_M03_l252
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer013Open">
-          중고차오토론 013<br />My_M03_l054
+          상품설명서 약관동의_중고차오토론(대출)설명서<br />My_M03_l054
         </BasicButton>
       </ButtonListItem>
     </ButtonList>

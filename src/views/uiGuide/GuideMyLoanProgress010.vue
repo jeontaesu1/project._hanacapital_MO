@@ -129,62 +129,62 @@ export default {
     >
       <ButtonListItem>
         <BasicButton @click="layer001Open">
-          자동차운용리스 001<br />My_M03_l275
+          중요사항 안내_자동차운용리스1<br />My_M03_l275
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer002Open">
-          자동차운용리스 002<br />My_M03_l276
+          중요사항 안내_자동차운용리스2<br />My_M03_l276
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer003Open">
-          자동차운용리스 003<br />My_M03_l277
+          중요사항 안내_자동차운용리스3<br />My_M03_l277
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer004Open">
-          자동차운용리스 004<br />My_M03_l278
+          중요사항 안내_자동차운용리스4<br />My_M03_l278
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer005Open">
-          자동차운용리스 005<br />My_M03_l279
+          중요사항 안내_자동차운용리스5<br />My_M03_l279
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer006Open">
-          자동차운용리스 006<br />My_M03_l280
+          중요사항 안내_자동차운용리스6<br />My_M03_l280
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer007Open">
-          자동차운용리스 007<br />My_M03_l281
+          주요권리 안내_자동차운용리스1<br />My_M03_l281
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer008Open">
-          자동차운용리스 008<br />My_M03_l282
+          주요권리 안내_자동차운용리스2<br />My_M03_l282
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer009Open">
-          자동차운용리스 009<br />My_M03_l283
+          주요권리 안내_자동차운용리스3<br />My_M03_l283
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer010Open">
-          자동차운용리스 010<br />My_M03_l284
+          주요권리 안내_자동차운용리스4<br />My_M03_l284
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer011Open">
-          자동차운용리스 011<br />My_M03_l285
+          주요권리 안내_자동차운용리스5<br />My_M03_l285
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer012Open">
-          자동차운용리스 012<br />My_M99_l009
+          상품설명서 약관동의_자동차운용리스설명서<br />My_M99_l009
         </BasicButton>
       </ButtonListItem>
     </ButtonList>

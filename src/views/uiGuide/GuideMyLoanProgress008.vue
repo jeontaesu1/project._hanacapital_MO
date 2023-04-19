@@ -137,67 +137,67 @@ export default {
     >
       <ButtonListItem>
         <BasicButton @click="layer001Open">
-          자동차할부금융 001<br />My_M03_l253
+          중요사항 안내_자동차할부금융1<br />My_M03_l253
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer002Open">
-          자동차할부금융 002<br />My_M03_l254
+          중요사항 안내_자동차할부금융2<br />My_M03_l254
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer003Open">
-          자동차할부금융 003<br />My_M03_l255
+          중요사항 안내_자동차할부금융3<br />My_M03_l255
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer004Open">
-          자동차할부금융 004<br />My_M03_l256
+          중요사항 안내_자동차할부금융4<br />My_M03_l256
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer005Open">
-          자동차할부금융 005<br />My_M03_l257
+          중요사항 안내_자동차할부금융5<br />My_M03_l257
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer006Open">
-          자동차할부금융 006<br />My_M03_l258
+          중요사항 안내_자동차할부금융6<br />My_M03_l258
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer007Open">
-          자동차할부금융 007<br />My_M03_l259
+          주요권리 안내_자동차할부금융1<br />My_M03_l259
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer008Open">
-          자동차할부금융 008<br />My_M03_l259
+          주요권리 안내_자동차할부금융1<br />My_M03_l259
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer009Open">
-          자동차할부금융 009<br />My_M03_l260
+          주요권리 안내_자동차할부금융2<br />My_M03_l260
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer010Open">
-          자동차할부금융 010<br />My_M03_l261
+          주요권리 안내_자동차할부금융3<br />My_M03_l261
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer011Open">
-          자동차할부금융 011<br />My_M03_l262
+          주요권리 안내_자동차할부금융4<br />My_M03_l262
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer012Open">
-          자동차할부금융 012<br />My_M03_l263
+          주요권리 안내_자동차할부금융5<br />My_M03_l263
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer013Open">
-          자동차할부금융 013<br />My_M99_l007
+          상품설명서 약관동의_자동차할부금융설명서<br />My_M99_l007
         </BasicButton>
       </ButtonListItem>
     </ButtonList>

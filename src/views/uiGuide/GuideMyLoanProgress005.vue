@@ -113,52 +113,52 @@ export default {
     >
       <ButtonListItem>
         <BasicButton @click="layer001Open">
-          중도금대출 001<br />My_M03_l223
+          중요사항 안내_중도금대출1<br />My_M03_l223
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer002Open">
-          중도금대출 002<br />My_M03_l224
+          중요사항 안내_중도금대출2<br />My_M03_l224
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer003Open">
-          중도금대출 003<br />My_M03_l225
+          중요사항 안내_중도금대출3<br />My_M03_l225
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer004Open">
-          중도금대출 004<br />My_M03_l226
+          중요사항 안내_중도금대출4<br />My_M03_l226
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer005Open">
-          중도금대출 005<br />My_M03_l227
+          주요권리 안내_중도금대출1<br />My_M03_l227
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer006Open">
-          중도금대출 006<br />My_M03_l228
+          주요권리 안내_중도금대출2<br />My_M03_l228
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer007Open">
-          중도금대출 007<br />My_M03_l229
+          주요권리 안내_중도금대출3<br />My_M03_l229
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer008Open">
-          중도금대출 008<br />My_M03_l230
+          주요권리 안내_중도금대출4<br />My_M03_l230
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer009Open">
-          중도금대출 009<br />My_M99_l004
+          상품설명서 약관동의_중도금대출설명서(가계용)<br />My_M99_l004
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer010Open">
-          중도금대출 010<br />My_M99_l005
+          상품설명서 약관동의_중도금대출설명서(기업용)<br />My_M99_l005
         </BasicButton>
       </ButtonListItem>
     </ButtonList>

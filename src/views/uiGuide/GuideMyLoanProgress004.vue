@@ -145,72 +145,72 @@ export default {
     >
       <ButtonListItem>
         <BasicButton @click="layer001Open">
-          일반할부금융 001<br />My_M03_l211
+          중요사항 안내_일반할부금융1<br />My_M03_l211
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer002Open">
-          일반할부금융 002<br />My_M03_l212
+          중요사항 안내_일반할부금융2<br />My_M03_l212
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer003Open">
-          일반할부금융 003<br />My_M03_l213
+          중요사항 안내_일반할부금융3<br />My_M03_l213
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer004Open">
-          일반할부금융 004<br />My_M03_l214
+          중요사항 안내_일반할부금융4<br />My_M03_l214
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer005Open">
-          일반할부금융 005<br />My_M03_l215
+          중요사항 안내_일반할부금융5<br />My_M03_l215
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer006Open">
-          일반할부금융 006<br />My_M03_l216
+          중요사항 안내_일반할부금융6<br />My_M03_l216
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer007Open">
-          일반할부금융 007<br />My_M03_l217
+          중요사항 안내_일반할부금융7<br />My_M03_l217
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer008Open">
-          일반할부금융 008<br />My_M03_l218
+          주요권리 안내_일반할부금융1<br />My_M03_l218
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer009Open">
-          일반할부금융 009<br />My_M03_l218
+          주요권리 안내_일반할부금융1<br />My_M03_l218
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer010Open">
-          일반할부금융 010<br />My_M03_l219
+          주요권리 안내_일반할부금융2<br />My_M03_l219
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer011Open">
-          일반할부금융 011<br />My_M03_l220
+          주요권리 안내_일반할부금융3<br />My_M03_l220
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer012Open">
-          일반할부금융 012<br />My_M03_l221
+          주요권리 안내_일반할부금융4<br />My_M03_l221
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer013Open">
-          일반할부금융 013<br />My_M03_l222
+          주요권리 안내_일반할부금융5<br />My_M03_l222
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer014Open">
-          일반할부금융 014<br />My_M99_l003
+          상품설명서 약관동의_일반할부금융설명서<br />My_M99_l003
         </BasicButton>
       </ButtonListItem>
     </ButtonList>

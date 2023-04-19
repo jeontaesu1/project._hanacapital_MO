@@ -129,62 +129,62 @@ export default {
     >
       <ButtonListItem>
         <BasicButton @click="layer001Open">
-          일반신용대출 001<br />My_M03_l201
+          중요사항 안내_일반신용대출1<br />My_M03_l201
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer002Open">
-          일반신용대출 002<br />My_M03_l202
+          중요사항 안내_일반신용대출2<br />My_M03_l202
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer003Open">
-          일반신용대출 003<br />My_M03_l203
+          중요사항 안내_일반신용대출3<br />My_M03_l203
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer004Open">
-          일반신용대출 004<br />My_M03_l204
+          중요사항 안내_일반신용대출4<br />My_M03_l204
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer005Open">
-          일반신용대출 005<br />My_M03_l205
+          중요사항 안내_일반신용대출5<br />My_M03_l205
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer006Open">
-          일반신용대출 006<br />My_M03_l206
+          주요권리 안내_일반신용대출1<br />My_M03_l206
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer007Open">
-          일반신용대출 007<br />My_M03_l206
+          주요권리 안내_일반신용대출1<br />My_M03_l206
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer008Open">
-          일반신용대출 008<br />My_M03_l207
+          주요권리 안내_일반신용대출2<br />My_M03_l207
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer009Open">
-          일반신용대출 009<br />My_M03_l208
+          주요권리 안내_일반신용대출3<br />My_M03_l208
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer010Open">
-          일반신용대출 010<br />My_M03_l209
+          주요권리 안내_일반신용대출4<br />My_M03_l209
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer011Open">
-          일반신용대출 011<br />My_M03_l210
+          주요권리 안내_일반신용대출5<br />My_M03_l210
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer012Open">
-          일반신용대출 0012<br />My_M99_l001
+          상품설명서 약관동의_일반신용대출설명서<br />My_M99_l001
         </BasicButton>
       </ButtonListItem>
     </ButtonList>
