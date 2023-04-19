@@ -11,6 +11,18 @@ import LayerAutoSuccessionList from '@/views/auto/LayerAutoSuccessionList.vue';
 import LayerAutoSuccessionAgree from '@/views/auto/LayerAutoSuccessionAgree.vue';
 import LayerAutoSuccessionURLSend from '@/views/auto/LayerAutoSuccessionURLSend.vue';
 import LayerAutoSuccessionURLSendComplete from '@/views/auto/LayerAutoSuccessionURLSendComplete.vue';
+import LayerAutoSuccessionAssigneeSearch from '@/views/auto/LayerAutoSuccessionAssigneeSearch.vue';
+import LayerAutoSuccessionAssigneeLeaseConfirm from '@/views/auto/LayerAutoSuccessionAssigneeLeaseConfirm.vue';
+import LayerAutoSuccessionAssigneeRentalConfirm from '@/views/auto/LayerAutoSuccessionAssigneeRentalConfirm.vue';
+import LayerAutoSuccessionAssigneeForm from '@/views/auto/LayerAutoSuccessionAssigneeForm.vue';
+import LayerAutoSuccessionAssigneeAgree from '@/views/auto/LayerAutoSuccessionAssigneeAgree.vue';
+import LayerAutoSuccessionAssigneeWait from '@/views/auto/LayerAutoSuccessionAssigneeWait.vue';
+import LayerAutoSuccessionAttorneyIdentification from '@/views/auto/LayerAutoSuccessionAttorneyIdentification.vue';
+import LayerAutoSuccessionAssigneeIdentification from '@/views/auto/LayerAutoSuccessionAssigneeIdentification.vue';
+import LayerAutoSuccessionAttorneyComplete from '@/views/auto/LayerAutoSuccessionAttorneyComplete.vue';
+import LayerAutoSuccessionAssigneeAddDocumen from '@/views/auto/LayerAutoSuccessionAssigneeAddDocumen.vue';
+import LayerAutoSuccessionAttorneyConfirm from '@/views/auto/LayerAutoSuccessionAttorneyConfirm.vue';
+import LayerAutoSuccessionAssigneeComplete from '@/views/auto/LayerAutoSuccessionAssigneeComplete.vue';
 
 export default {
   components: {
@@ -23,6 +35,18 @@ export default {
     LayerAutoSuccessionAgree,
     LayerAutoSuccessionURLSend,
     LayerAutoSuccessionURLSendComplete,
+    LayerAutoSuccessionAssigneeSearch,
+    LayerAutoSuccessionAssigneeLeaseConfirm,
+    LayerAutoSuccessionAssigneeRentalConfirm,
+    LayerAutoSuccessionAssigneeForm,
+    LayerAutoSuccessionAssigneeAgree,
+    LayerAutoSuccessionAssigneeWait,
+    LayerAutoSuccessionAttorneyIdentification,
+    LayerAutoSuccessionAssigneeIdentification,
+    LayerAutoSuccessionAttorneyComplete,
+    LayerAutoSuccessionAssigneeAddDocumen,
+    LayerAutoSuccessionAttorneyConfirm,
+    LayerAutoSuccessionAssigneeComplete,
   },
   setup() {
     const layer001 = ref(null);
@@ -30,6 +54,18 @@ export default {
     const layer003 = ref(null);
     const layer004 = ref(null);
     const layer005 = ref(null);
+    const layer006 = ref(null);
+    const layer007 = ref(null);
+    const layer008 = ref(null);
+    const layer009 = ref(null);
+    const layer010 = ref(null);
+    const layer011 = ref(null);
+    const layer012 = ref(null);
+    const layer013 = ref(null);
+    const layer014 = ref(null);
+    const layer015 = ref(null);
+    const layer016 = ref(null);
+    const layer017 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -46,6 +82,42 @@ export default {
     const layer005Open = (e = {}) => {
       layer005.value.layer.open(e.target);
     };
+    const layer006Open = (e = {}) => {
+      layer006.value.layer.open(e.target);
+    };
+    const layer007Open = (e = {}) => {
+      layer007.value.layer.open(e.target);
+    };
+    const layer008Open = (e = {}) => {
+      layer008.value.layer.open(e.target);
+    };
+    const layer009Open = (e = {}) => {
+      layer009.value.layer.open(e.target);
+    };
+    const layer010Open = (e = {}) => {
+      layer010.value.layer.open(e.target);
+    };
+    const layer011Open = (e = {}) => {
+      layer011.value.layer.open(e.target);
+    };
+    const layer012Open = (e = {}) => {
+      layer012.value.layer.open(e.target);
+    };
+    const layer013Open = (e = {}) => {
+      layer013.value.layer.open(e.target);
+    };
+    const layer014Open = (e = {}) => {
+      layer014.value.layer.open(e.target);
+    };
+    const layer015Open = (e = {}) => {
+      layer015.value.layer.open(e.target);
+    };
+    const layer016Open = (e = {}) => {
+      layer016.value.layer.open(e.target);
+    };
+    const layer017Open = (e = {}) => {
+      layer017.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -53,11 +125,35 @@ export default {
       layer003,
       layer004,
       layer005,
+      layer006,
+      layer007,
+      layer008,
+      layer009,
+      layer010,
+      layer011,
+      layer012,
+      layer013,
+      layer014,
+      layer015,
+      layer016,
+      layer017,
       layer001Open,
       layer002Open,
       layer003Open,
       layer004Open,
       layer005Open,
+      layer006Open,
+      layer007Open,
+      layer008Open,
+      layer009Open,
+      layer010Open,
+      layer011Open,
+      layer012Open,
+      layer013Open,
+      layer014Open,
+      layer015Open,
+      layer016Open,
+      layer017Open,
     };
   },
 };
@@ -96,6 +192,66 @@ export default {
           >승계 신청 URL 발송 완료<br />AF_M07_l004</BasicButton
         >
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer006Open"
+          >양수인 신청<br />AF_M07_l005</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer007Open"
+          >리스 승계 상세정보<br />AF_M07_l006</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer008Open"
+          >렌트 승계 상세정보<br />AF_M07_l007</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer009Open"
+          >양수인 정보입력<br />AF_M07_l008 / AF_M07_l009
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer010Open"
+          >신용정보조회동의<br />AF_M07_l010
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer011Open"
+          >위임동의 요청 완료<br />AF_M07_l011</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer012Open"
+          >양수인/신청인 본인확인<br />AF_M07_l019</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer013Open"
+          >양수인/신청인 본인확인<br />AF_M07_l015</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer014Open"
+          >위임동의 완료<br />AF_M07_l014</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer015Open"
+          >심사서류 등록<br />AF_M07_l016</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer016Open"
+          >위임장 동의<br />AF_M07_l013</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer017Open"
+          >양수인 신청완료<br />AF_M07_l018</BasicButton
+        >
+      </ButtonListItem>
     </ButtonList>
 
     <LayerAutoSuccessionNotice ref="layer001" />
@@ -103,5 +259,17 @@ export default {
     <LayerAutoSuccessionAgree ref="layer003" />
     <LayerAutoSuccessionURLSend ref="layer004" />
     <LayerAutoSuccessionURLSendComplete ref="layer005" />
+    <LayerAutoSuccessionAssigneeSearch ref="layer006" />
+    <LayerAutoSuccessionAssigneeLeaseConfirm ref="layer007" />
+    <LayerAutoSuccessionAssigneeRentalConfirm ref="layer008" />
+    <LayerAutoSuccessionAssigneeForm ref="layer009" />
+    <LayerAutoSuccessionAssigneeAgree ref="layer010" />
+    <LayerAutoSuccessionAssigneeWait ref="layer011" />
+    <LayerAutoSuccessionAttorneyIdentification ref="layer012" />
+    <LayerAutoSuccessionAssigneeIdentification ref="layer013" />
+    <LayerAutoSuccessionAttorneyComplete ref="layer014" />
+    <LayerAutoSuccessionAssigneeAddDocumen ref="layer015" />
+    <LayerAutoSuccessionAttorneyConfirm ref="layer016" />
+    <LayerAutoSuccessionAssigneeComplete ref="layer017" />
   </PageContents>
 </template>

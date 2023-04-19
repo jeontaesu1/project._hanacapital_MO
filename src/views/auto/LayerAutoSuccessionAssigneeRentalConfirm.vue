@@ -1,3 +1,223 @@
 <script>
 // AF_M07_l007
+import { ref } from 'vue';
+
+import UiLayer from '@/components/ui/layer/UiLayer.vue';
+import PopupButton from '@/components/ui/layer/PopupButton.vue';
+import FullPopup from '@/components/ui/layer/FullPopup.vue';
+import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
+import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
+import PageMainText from '@/components/ui/text/PageMainText.vue';
+import PageSubText from '@/components/ui/text/PageSubText.vue';
+import StepProgress from '@/components/ui/progress/StepProgress.vue';
+import BasicBox from '@/components/ui/common/BasicBox.vue';
+import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
+import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
+import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
+import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
+import KeyValueText from '@/components/ui/text/KeyValueText.vue';
+import ButtonList from '@/components/ui/button/ButtonList.vue';
+import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
+import NoticeText from '@/components/ui/text/NoticeText.vue';
+import BoxCheck from '@/components/ui/form/BoxCheck.vue';
+import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
+import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
+import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
+
+import LayerAutoSuccessionAssigneeRentalDetail from '@/views/auto/LayerAutoSuccessionAssigneeRentalDetail.vue';
+
+export default {
+  components: {
+    UiLayer,
+    PopupButton,
+    FullPopup,
+    FullPopupHead,
+    PageTextGroup,
+    PageMainText,
+    PageSubText,
+    StepProgress,
+    BasicBox,
+    BasicBoxHead,
+    BasicBoxHeadLeft,
+    KeyValueList,
+    KeyValueItem,
+    KeyValueTitle,
+    KeyValueText,
+    ButtonList,
+    ButtonListItem,
+    BasicButton,
+    NoticeText,
+    BoxCheck,
+    BoxCheckLabel,
+    BoxCheckList,
+    BoxCheckListItem,
+    LayerAutoSuccessionAssigneeRentalDetail,
+  },
+  setup() {
+    const layer = ref(null);
+    const layer001 = ref(null);
+
+    const layer001Open = (e = {}) => {
+      layer001.value.layer.open(e.target);
+    };
+
+    return {
+      layer,
+      layer001,
+      layer001Open,
+    };
+  },
+};
 </script>
+
+<template>
+  <UiLayer ref="layer" type="full" v-slot="layerSlotProps">
+    <FullPopup>
+      <template v-slot:head>
+        <FullPopupHead>
+          <template v-slot:right>
+            <PopupButton @click="layerSlotProps.close()" />
+          </template>
+        </FullPopupHead>
+        <StepProgress :total="4" :current="3" />
+      </template>
+
+      <PageTextGroup>
+        <PageMainText>
+          렌트 승계 상세정보를<br />
+          <strong>확인해주세요</strong>
+        </PageMainText>
+        <PageSubText>
+          실제 차량을 운행하는 목적으로의 승계만 가능하며 신규로 리스계약을
+          체결하는 절차와 동일하게 금융회사가 정한 심시기준에 따라 심사가
+          이루어집니다.
+        </PageSubText>
+      </PageTextGroup>
+
+      <section>
+        <h2 class="text-title-2 row-margin-contents">리스 조건</h2>
+
+        <BasicBox>
+          <BasicBoxHead>
+            <BasicBoxHeadLeft>
+              <h3 class="text-body-1 font-weight-medium">렌터카</h3>
+            </BasicBoxHeadLeft>
+          </BasicBoxHead>
+          <KeyValueList margin="regular">
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
+            >
+              <KeyValueTitle>월 리스료</KeyValueTitle>
+              <KeyValueText>500,000 원</KeyValueText>
+            </KeyValueItem>
+
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
+            >
+              <KeyValueTitle>잔여기간</KeyValueTitle>
+              <KeyValueText>00개월</KeyValueText>
+            </KeyValueItem>
+          </KeyValueList>
+        </BasicBox>
+      </section>
+
+      <section class="row-margin-container-medium">
+        <div class="row-margin-contents">
+          <h2 class="text-title-2">승계 조건</h2>
+          <p
+            class="text-body-3 color-gray-tertiary font-weight-light row-margin-small"
+          >
+            판매 목적을 위한 승계는 전액선납 승계만 가능합니다.
+          </p>
+        </div>
+
+        <div>
+          <BoxCheckList>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="layerAutoSuccessionAssigneeRentalConfirmType"
+                id="layerAutoSuccessionAssigneeRentalConfirmType1"
+                :defaultChecked="true"
+              >
+                <BoxCheckLabel>동일 조건 승계</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="layerAutoSuccessionAssigneeRentalConfirmType"
+                id="layerAutoSuccessionAssigneeRentalConfirmType2"
+              >
+                <BoxCheckLabel>전액선납 승계</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+          </BoxCheckList>
+
+          <!-- Case : '동일 조건 승계' 선택시 노출 -->
+          <div class="row-margin-item-group">
+            <section
+              :class="[$style['notice-section'], 'row-margin-item-group']"
+            >
+              <NoticeText
+                >현재 계약자의 이용 조건을 동일하게 승계합니다.</NoticeText
+              >
+            </section>
+          </div>
+          <!-- // Case : '동일 조건 승계' 선택시 노출 -->
+
+          <!-- Case : '전액선납 승계' 선택시 노출 -->
+          <div class="row-margin-item-group">
+            <section
+              :class="[$style['notice-section'], 'row-margin-item-group']"
+            >
+              <ul class="reset-list">
+                <li class="row-margin-item">
+                  <NoticeText
+                    >승계 후 전액선납하는 정산비용이 발생합니다.</NoticeText
+                  >
+                </li>
+                <li class="row-margin-item">
+                  <NoticeText
+                    >승계 후 만기일자 이후 손님 명의로 자동차 소유권이전 등록
+                    절차가 이루어집니다.</NoticeText
+                  >
+                </li>
+              </ul>
+            </section>
+          </div>
+          <!-- // Case : '전액선납 승계' 선택시 노출 -->
+        </div>
+      </section>
+
+      <template v-slot:foot>
+        <ButtonList
+          :classNames="{
+            wrap: 'row-margin-none',
+          }"
+        >
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">이전</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton theme="secondary" @click="layer001Open"
+              >승계 신청하기</BasicButton
+            >
+          </ButtonListItem>
+        </ButtonList>
+      </template>
+    </FullPopup>
+
+    <LayerAutoSuccessionAssigneeRentalDetail ref="layer001" />
+  </UiLayer>
+</template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/auto/LayerAutoSuccessionAssigneeRentalConfirm.scss';
+</style>

@@ -1,0 +1,12 @@
+@import '@/assets/scss/components/import/switch-list.scss';
+@import '@/assets/scss/components/import/tooltip-section.scss';
+@import '@/assets/scss/components/import/basic-list.scss';
+
+.basic-list--no-symbol {
+  padding-left: 8px;
+}
+
+.tooltip-icon--small {
+  width: 18px;
+  height: 18px;
+}
