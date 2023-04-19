@@ -51,63 +51,65 @@ export default {
 
 <template>
   <PageContents>
-    <div :class="$style['consulting']">
-      <div :class="$style['consulting__inner']">
-        <div :class="$style['consulting__text']">
-          <div class="text-body-5 font-weight-light">하나캐피탈 대출상담사</div>
-          <div :class="$style['consulting__info']">
-            <div :class="$style['consulting__info-name']">김하나</div>
-            <div :class="$style['consulting__info-email']">hanakim@capital</div>
-          </div>
-          <TextButton
-            tagName="a"
-            href="tel:010-1234-5678"
-            theme="secondary"
-            :classNames="{ wrap: $style['consulting__tell'] }"
-          >
-            <template v-slot:leftIcon>
-              <IconTell />
-            </template>
-            010-1234-5678
-          </TextButton>
-          <div :class="$style['consulting__sub']">
-            <div :class="$style['consulting__sub-title']">
-              여신금융협회 등록번호
+    <div :class="$style['grid']">
+      <div :class="$style['consulting']">
+        <div :class="$style['consulting__inner']">
+          <div :class="$style['consulting__text']">
+            <div class="text-body-5 font-weight-light">
+              하나캐피탈 대출상담사
             </div>
-            <div :class="$style['consulting__sub-text']">1000024254</div>
+            <div :class="$style['consulting__info']">
+              <div :class="$style['consulting__info-name']">김하나</div>
+              <div :class="$style['consulting__info-email']">
+                hanakim@capital
+              </div>
+            </div>
+            <TextButton
+              tagName="a"
+              href="tel:010-1234-5678"
+              theme="secondary"
+              :classNames="{ wrap: $style['consulting__tell'] }"
+            >
+              <template v-slot:leftIcon>
+                <IconTell />
+              </template>
+              010-1234-5678
+            </TextButton>
+            <div :class="$style['consulting__sub']">
+              <div :class="$style['consulting__sub-title']">
+                여신금융협회 등록번호
+              </div>
+              <div :class="$style['consulting__sub-text']">1000024254</div>
+            </div>
           </div>
-        </div>
-        <div :class="$style['consulting__icon']">
-          <IconCustomer />
+          <div :class="$style['consulting__icon']">
+            <IconCustomer />
+          </div>
         </div>
       </div>
-    </div>
 
-    <div :class="$style['menu']">
-      <div div :class="$style['menu__inner']">
-        <div :class="$style['menu__box']">
-          <RouterLink
-            to="/lm-blog-personal/quick-counseling"
-            :class="$style['menu__link']"
-          >
-            <div div :class="$style['menu__icon']">
-              <IconConsultation />
-            </div>
-            <div div :class="$style['menu__title']">빠른 대출 상담</div>
-          </RouterLink>
-        </div>
+      <div :class="$style['menu']">
+        <RouterLink
+          to="/lm-blog-personal/quick-counseling"
+          :class="$style['menu__link']"
+        >
+          <div div :class="$style['menu__icon']">
+            <IconConsultation />
+          </div>
+          <div div :class="$style['menu__title']">빠른 대출 상담</div>
+        </RouterLink>
+      </div>
 
-        <div :class="$style['menu__box']">
-          <RouterLink
-            to="/lm-blog-personal/sms-counseling"
-            :class="$style['menu__link']"
-          >
-            <div div :class="$style['menu__icon']">
-              <IconSms />
-            </div>
-            <div div :class="$style['menu__title']">SMS 상담</div>
-          </RouterLink>
-        </div>
+      <div :class="$style['menu']">
+        <RouterLink
+          to="/lm-blog-personal/sms-counseling"
+          :class="$style['menu__link']"
+        >
+          <div div :class="$style['menu__icon']">
+            <IconSms />
+          </div>
+          <div div :class="$style['menu__title']">SMS 상담</div>
+        </RouterLink>
       </div>
     </div>
 

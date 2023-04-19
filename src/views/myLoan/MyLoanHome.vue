@@ -13,7 +13,7 @@ import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
 import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
 import RoundStatus from '@/components/ui/text/RoundStatus.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -36,7 +36,7 @@ export default {
     BasicBoxHeadLeft,
     BasicBoxHeadRight,
     RoundStatus,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -55,7 +55,7 @@ export default {
     };
 
     onMounted(() => {
-      store.ui.header.setTitle(() => '타이틀');
+      store.ui.header.setTitle(() => '내대출');
       store.ui.header.setLeftButtons(() => ['back']);
       store.ui.header.setRightButtons(() => []);
     });
@@ -71,7 +71,7 @@ export default {
 
 <template>
   <PageContents>
-    <div>
+    <section>
       <PageTextGroup>
         <PageMainText>
           김하나님이<br />
@@ -83,8 +83,8 @@ export default {
       </PageTextGroup>
 
       <BasicBox>
-        <BasicBoxHead :classNames="{ wrap: ['display-block', 'align-center'] }">
-          <div :class="$style['head']">
+        <div class="align-center">
+          <div :class="[$style['head']]">
             <div class="inline-block">
               <UnitText size="large" rightUnit="원" verticalAlign="center"
                 >400,000</UnitText
@@ -92,22 +92,31 @@ export default {
             </div>
             <div class="text-body-3 color-gray">당월 결제예정금액</div>
           </div>
-        </BasicBoxHead>
-        <KeyValueList>
+        </div>
+
+        <!-- DD : 렌터카일 경우 미노출 -->
+        <BasicHr
+          type="contents"
+          theme="quaternary"
+          className="row-margin-contents-small"
+        />
+
+        <KeyValue>
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>총 남은 원금</KeyValueTitle>
             <KeyValueText>78,000,000 원</KeyValueText>
           </KeyValueItem>
-        </KeyValueList>
+        </KeyValue>
+        <!-- //DD : 렌터카일 경우 미노출 -->
       </BasicBox>
 
-      <!-- Case :  캐피탈 계약 + 파트너사 양도계약 보유 시 노출 -->
+      <!-- Case :  캐피탈 계약 + 파트너사 양도계약 보유 경우 노출 -->
       <NoticeText :class="$style['notice']">
         렌탈/할부채권 양도계약은 총 금액에 포함되지 않습니다.
       </NoticeText>
-      <!-- //Case : 캐피탈 계약 + 파트너사 양도계약 보유 시 노출 -->
+      <!-- //Case : 캐피탈 계약 + 파트너사 양도계약 보유 경우 노출 -->
 
-      <!-- Case :  파트너사 양도계약(팩토링)만 보유시 노출 -->
+      <!-- Case :  파트너사 양도계약(팩토링)만 보유한 경우 노출 -->
       <ul :class="[$style['basic-list'], 'row-margin-container-medium']">
         <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']"></div>
@@ -129,8 +138,9 @@ export default {
           </div>
         </li>
       </ul>
-      <!-- //Case :  파트너사 양도계약(팩토링)만 보유시 노출 -->
+      <!-- //Case :  파트너사 양도계약(팩토링)만 보유한 경우 노출 -->
 
+      <!-- Case :  캐피탈 계약만 보유한 경우, 캐피탈 계약 + 파트너사 양도계약 보유한 경우 -->
       <div :class="[$style['icon-list'], 'row-margin-container-medium']">
         <ul :class="$style['icon-list__list']">
           <li :class="$style['icon-list__item']">
@@ -163,205 +173,263 @@ export default {
           </li>
         </ul>
       </div>
-    </div>
+      <!-- //Case :  캐피탈 계약만 보유한 경우, 캐피탈 계약 + 파트너사 양도계약 보유한 경우 -->
+    </section>
 
     <BasicHr class="row-margin-container-medium"></BasicHr>
 
+    <!-- Case : 캐피탈 계약 + 파트너사 양도계약 보유한 경우 -->
     <!-- Case : 캐피탈 계약만 보유한 경우 노출 -->
     <section>
       <h3 class="text-title-2 row-margin-contents">캐피탈 상품 계약</h3>
-      <BasicBox class="row-margin-item-group">
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>
-            <h3 class="text-body-1 font-weight-medium">스탁론</h3>
-            <div class="text-body-4 color-gray row-margin-small">
-              하나증권 12-3456-7890123
+
+      <ul :class="$style['logs']">
+        <li :class="$style['logs__item']">
+          <div :class="$style['logs__block']">
+            <div :class="$style['logs__row']">
+              <div div :class="$style['logs__contents']">
+                <h3 class="text-body-1 font-weight-medium">스탁론</h3>
+                <div class="text-body-4 color-gray row-margin-small">
+                  하나증권 12-3456-7890123
+                </div>
+              </div>
+              <RoundStatus theme="secondary">D-7</RoundStatus>
+              <div div :class="$style['logs__right']">
+                <button type="button" :class="$style['logs__link']">
+                  <span :class="$style['logs__link-text']">상세보기</span>
+                </button>
+              </div>
             </div>
-          </BasicBoxHeadLeft>
-          <BasicBoxHeadRight>
-            <RoundStatus
-              :classNames="{ wrap: 'display-block' }"
-              theme="secondary"
-            >
-              D-7
-            </RoundStatus>
-          </BasicBoxHeadRight>
-        </BasicBoxHead>
 
-        <KeyValueList margin="regular">
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>결제예정금액</KeyValueTitle>
-            <KeyValueText :classNames="{ text: 'color-green' }"
-              >845,000 원</KeyValueText
-            >
-          </KeyValueItem>
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>결제일</KeyValueTitle>
-            <KeyValueText>2022.02.05 (매월 5일)</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>결제회차</KeyValueTitle>
-            <KeyValueText>16/60</KeyValueText>
-          </KeyValueItem>
-        </KeyValueList>
+            <BasicHr
+              type="contents"
+              theme="quaternary"
+              className="row-margin-contents-small"
+            />
 
-        <BasicButton
-          size="small"
-          :classNames="{ wrap: 'row-margin-contents-small' }"
-          >연장</BasicButton
-        >
-      </BasicBox>
+            <KeyValue margin="regular">
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle>결제예정금액</KeyValueTitle>
+                <KeyValueText :classNames="{ text: 'color-green' }"
+                  >845,000 원</KeyValueText
+                >
+              </KeyValueItem>
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle>결제일</KeyValueTitle>
+                <KeyValueText>2022.02.05 (매월 5일)</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle>결제회차</KeyValueTitle>
+                <KeyValueText>16/60</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
 
-      <BasicBox class="row-margin-item-group">
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>
-            <h3 class="text-body-1 font-weight-medium">렌터카 531다3346</h3>
-            <div class="text-body-4 color-gray row-margin-small">
-              벤츠 더 뉴 C-class(W205/S205)
+            <div :class="[$style['logs__button'], 'row-margin-contents-small']">
+              <BasicButton size="small">연장</BasicButton>
             </div>
+          </div>
+        </li>
+        <li :class="$style['logs__item']">
+          <div :class="$style['logs__block']">
+            <div :class="$style['logs__row']">
+              <div div :class="$style['logs__contents']">
+                <h3 class="text-body-1 font-weight-medium">렌터카 531다3346</h3>
+                <div class="text-body-4 color-gray row-margin-small">
+                  벤츠 더 뉴 C-class(W205/S205)
+                </div>
+                <div
+                  class="text-body-5 color-gray row-margin-mini font-weight-light"
+                >
+                  가솔린 2.0 Sedan (개소세 30% 인하) C200 AMG Line
+                </div>
+              </div>
+              <RoundStatus theme="denary">D-7</RoundStatus>
+              <div div :class="$style['logs__right']">
+                <button type="button" :class="$style['logs__link']">
+                  <span :class="$style['logs__link-text']">상세보기</span>
+                </button>
+              </div>
+            </div>
+
+            <BasicHr
+              type="contents"
+              theme="quaternary"
+              className="row-margin-contents-small"
+            />
+
+            <KeyValue margin="regular">
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle>결제예정금액</KeyValueTitle>
+                <KeyValueText :classNames="{ text: 'color-blue' }"
+                  >845,000 원</KeyValueText
+                >
+              </KeyValueItem>
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle>결제일</KeyValueTitle>
+                <KeyValueText>2022.02.05 (매월 5일)</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle>결제회차</KeyValueTitle>
+                <KeyValueText>16/60</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+
             <div
-              class="text-body-5 color-gray font-weight-light row-margin-mini"
+              :class="[
+                $style['inline-alert'],
+                $style['inline-alert--error'],
+                'row-margin-contents-small',
+              ]"
             >
-              가솔린 2.0 Sedan (개소세 30% 인하) C200 AMG Line
+              <p :class="$style['inline-alert__text']">
+                계약만기일이 90일 남았습니다.<br />
+                만기후처리를 등록해 주세요.
+              </p>
             </div>
-          </BasicBoxHeadLeft>
-          <BasicBoxHeadRight>
-            <RoundStatus :classNames="{ wrap: 'display-block' }" theme="denary">
-              D-7
-            </RoundStatus>
-          </BasicBoxHeadRight>
-        </BasicBoxHead>
 
-        <KeyValueList margin="regular">
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>결제예정금액</KeyValueTitle>
-            <KeyValueText :classNames="{ text: 'color-blue' }"
-              >845,000 원</KeyValueText
+            <div :class="[$style['logs__button'], 'row-margin-contents-small']">
+              <BasicButton size="small" theme="secondary" line="true"
+                >만기안내장</BasicButton
+              >
+              <BasicButton
+                size="small"
+                theme="secondary"
+                :classNames="{ wrap: 'row-margin-item' }"
+                >만기후처리</BasicButton
+              >
+            </div>
+          </div>
+        </li>
+        <li :class="$style['logs__item']">
+          <div :class="$style['logs__block']">
+            <div :class="$style['logs__row']">
+              <div div :class="$style['logs__contents']">
+                <h3 class="text-body-1 font-weight-medium">e하나신용대출</h3>
+              </div>
+              <RoundStatus theme="secondary">D-day</RoundStatus>
+              <div div :class="$style['logs__right']">
+                <button type="button" :class="$style['logs__link']">
+                  <span :class="$style['logs__link-text']">상세보기</span>
+                </button>
+              </div>
+            </div>
+
+            <BasicHr
+              type="contents"
+              theme="quaternary"
+              className="row-margin-contents-small"
+            />
+
+            <KeyValue margin="regular">
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle>결제예정금액</KeyValueTitle>
+                <KeyValueText :classNames="{ text: 'color-green' }"
+                  >845,000 원</KeyValueText
+                >
+              </KeyValueItem>
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle>결제일</KeyValueTitle>
+                <KeyValueText>2022.02.05 (매월 5일)</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle>결제회차</KeyValueTitle>
+                <KeyValueText>16/60</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle>대출잔액</KeyValueTitle>
+                <KeyValueText>50,000,000 원</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </div>
+        </li>
+        <li :class="$style['logs__item']">
+          <div :class="$style['logs__block']">
+            <div :class="$style['logs__row']">
+              <div div :class="$style['logs__contents']">
+                <h3 class="text-body-1 font-weight-medium">오토론</h3>
+              </div>
+              <RoundStatus theme="nonary"> 연체 </RoundStatus>
+              <div div :class="$style['logs__right']">
+                <button type="button" :class="$style['logs__link']">
+                  <span :class="$style['logs__link-text']">상세보기</span>
+                </button>
+              </div>
+            </div>
+
+            <BasicHr
+              type="contents"
+              theme="quaternary"
+              className="row-margin-contents-small"
+            />
+
+            <KeyValue margin="regular">
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle>결제예정금액</KeyValueTitle>
+                <KeyValueText :classNames="{ text: 'color-blue' }"
+                  >845,000 원</KeyValueText
+                >
+              </KeyValueItem>
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle>결제일</KeyValueTitle>
+                <KeyValueText>2022.02.05 (매월 5일)</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle>결제회차</KeyValueTitle>
+                <KeyValueText>16/60</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle>대출잔액</KeyValueTitle>
+                <KeyValueText>50,000,000 원</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+
+            <div
+              :class="[
+                $style['inline-alert'],
+                $style['inline-alert--error'],
+                'row-margin-contents-small',
+              ]"
             >
-          </KeyValueItem>
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>결제일</KeyValueTitle>
-            <KeyValueText>2022.02.05 (매월 5일)</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>결제회차</KeyValueTitle>
-            <KeyValueText>16/60</KeyValueText>
-          </KeyValueItem>
-        </KeyValueList>
-
-        <div
-          :class="[
-            $style['inline-alert'],
-            $style['inline-alert--error'],
-            'row-margin-contents-small',
-          ]"
-        >
-          <p :class="$style['inline-alert__text']">
-            계약만기일이 90일 남았습니다.<br />
-            만기후처리를 등록해 주세요.
-          </p>
-        </div>
-
-        <div>
-          <BasicButton size="small" theme="secondary" line="true"
-            >만기안내장</BasicButton
-          >
-          <BasicButton
-            size="small"
-            theme="secondary"
-            :classNames="{ wrap: 'row-margin-item' }"
-          >
-            만기후처리
-          </BasicButton>
-        </div>
-      </BasicBox>
-
-      <BasicBox class="row-margin-item-group">
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>
-            <h3 class="text-body-1 font-weight-medium">e하나신용대출</h3>
-          </BasicBoxHeadLeft>
-          <BasicBoxHeadRight>
-            <RoundStatus
-              :classNames="{ wrap: 'display-block' }"
-              theme="secondary"
-            >
-              D-day
-            </RoundStatus>
-          </BasicBoxHeadRight>
-        </BasicBoxHead>
-
-        <KeyValueList margin="regular">
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>결제예정금액</KeyValueTitle>
-            <KeyValueText :classNames="{ text: 'color-green' }"
-              >845,000 원</KeyValueText
-            >
-          </KeyValueItem>
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>결제일</KeyValueTitle>
-            <KeyValueText>2022.02.05 (매월 5일)</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>결제회차</KeyValueTitle>
-            <KeyValueText>16/60</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>대출잔액</KeyValueTitle>
-            <KeyValueText>50,000,000 원</KeyValueText>
-          </KeyValueItem>
-        </KeyValueList>
-      </BasicBox>
-
-      <BasicBox class="row-margin-item-group">
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>
-            <h3 class="text-body-1 font-weight-medium">오토론</h3>
-          </BasicBoxHeadLeft>
-          <BasicBoxHeadRight>
-            <RoundStatus :classNames="{ wrap: 'display-block' }" theme="nonary">
-              연체
-            </RoundStatus>
-          </BasicBoxHeadRight>
-        </BasicBoxHead>
-
-        <KeyValueList margin="regular">
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>결제예정금액</KeyValueTitle>
-            <KeyValueText :classNames="{ text: 'color-blue' }"
-              >845,000 원</KeyValueText
-            >
-          </KeyValueItem>
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>결제일</KeyValueTitle>
-            <KeyValueText>2022.02.05 (매월 5일)</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>결제회차</KeyValueTitle>
-            <KeyValueText>16/60</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>대출잔액</KeyValueTitle>
-            <KeyValueText>50,000,000 원</KeyValueText>
-          </KeyValueItem>
-        </KeyValueList>
-
-        <div
-          :class="[
-            $style['inline-alert'],
-            $style['inline-alert--error'],
-            'row-margin-contents-small',
-          ]"
-        >
-          <p :class="$style['inline-alert__text']">만기일이 도래했습니다.</p>
-        </div>
-      </BasicBox>
+              <p :class="$style['inline-alert__text']">
+                만기일이 도래했습니다.
+              </p>
+            </div>
+          </div>
+        </li>
+      </ul>
     </section>
     <!-- //Case : 캐피탈 계약만 보유한 경우 노출 -->
+
+    <BasicHr class="row-margin-container-medium"></BasicHr>
 
     <!-- Case :파트너사 양도계약(팩토링)만 보유한 경우 노출 -->
     <section>
       <h3 class="text-title-2 row-margin-contents">렌탈/할부채권 양도계약</h3>
+
+      <!-- Case :  캐피탈 계약 + 파트너사 양도계약 보유 경우 노출 -->
+      <ul :class="[$style['basic-list'], 'row-margin-contents']">
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            하나캐피탈과 제휴된 렌탈(할부)사와의 계약입니다.
+          </div>
+        </li>
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            기간 및 잔액의 경우, 입금반영 스케줄에 따라 실제와 상이할 수
+            있습니다.
+          </div>
+        </li>
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            자세한 내용은 각 렌탈(할부)사로 문의 부탁드립니다.
+          </div>
+        </li>
+      </ul>
+      <!-- //Case :  캐피탈 계약 + 파트너사 양도계약 보유 경우 노출 -->
+
       <BasicBox class="row-margin-item-group">
         <BasicBoxHead>
           <BasicBoxHeadLeft>
@@ -373,7 +441,7 @@ export default {
           </BasicBoxHeadLeft>
         </BasicBoxHead>
 
-        <KeyValueList margin="regular">
+        <KeyValue margin="regular">
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>월 납입금</KeyValueTitle>
             <KeyValueText :classNames="{ text: 'color-green' }"
@@ -388,160 +456,58 @@ export default {
             <KeyValueTitle>할부금액</KeyValueTitle>
             <KeyValueText>999,999,999 원</KeyValueText>
           </KeyValueItem>
-        </KeyValueList>
+        </KeyValue>
 
         <BasicButton
           tagName="a"
-          href="tel:"
           size="small"
           :classNames="{ wrap: 'row-margin-contents-small' }"
-          >야나두 전화연결</BasicButton
         >
+          <template v-slot:leftIcon>
+            <IconTell />
+          </template>
+          야나두 전화연결
+        </BasicButton>
       </BasicBox>
 
       <BasicBox class="row-margin-item-group">
         <BasicBoxHead>
           <BasicBoxHeadLeft>
-            <h3 class="text-body-1 font-weight-medium">렌터카 531다3346</h3>
+            <h3 class="text-body-1 font-weight-medium">현대렌탈</h3>
             <div class="text-body-4 color-gray row-margin-small">
-              벤츠 더 뉴 C-class(W205/S205)
-            </div>
-            <div
-              class="text-body-5 color-gray font-weight-light row-margin-mini"
-            >
-              가솔린 2.0 Sedan (개소세 30% 인하) C200 AMG Line
+              품목명 1줄로 여기까지 여기까지 씁니다.<br />
+              길 경우 이렇게 2줄까지 됩니다.
             </div>
           </BasicBoxHeadLeft>
-          <BasicBoxHeadRight>
-            <RoundStatus :classNames="{ wrap: 'display-block' }" theme="denary">
-              D-7
-            </RoundStatus>
-          </BasicBoxHeadRight>
         </BasicBoxHead>
 
-        <KeyValueList margin="regular">
+        <KeyValue margin="regular">
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>결제예정금액</KeyValueTitle>
-            <KeyValueText :classNames="{ text: 'color-blue' }"
-              >845,000 원</KeyValueText
-            >
-          </KeyValueItem>
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>결제일</KeyValueTitle>
-            <KeyValueText>2022.02.05 (매월 5일)</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>결제회차</KeyValueTitle>
-            <KeyValueText>16/60</KeyValueText>
-          </KeyValueItem>
-        </KeyValueList>
-
-        <div
-          :class="[
-            $style['inline-alert'],
-            $style['inline-alert--error'],
-            'row-margin-contents-small',
-          ]"
-        >
-          <p :class="$style['inline-alert__text']">
-            계약만기일이 90일 남았습니다.<br />
-            만기후처리를 등록해 주세요.
-          </p>
-        </div>
-
-        <div>
-          <BasicButton size="small" theme="secondary" line="true"
-            >만기안내장</BasicButton
-          >
-          <BasicButton
-            size="small"
-            theme="secondary"
-            :classNames="{ wrap: 'row-margin-item' }"
-          >
-            만기후처리
-          </BasicButton>
-        </div>
-      </BasicBox>
-
-      <BasicBox class="row-margin-item-group">
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>
-            <h3 class="text-body-1 font-weight-medium">e하나신용대출</h3>
-          </BasicBoxHeadLeft>
-          <BasicBoxHeadRight>
-            <RoundStatus
-              :classNames="{ wrap: 'display-block' }"
-              theme="secondary"
-            >
-              D-day
-            </RoundStatus>
-          </BasicBoxHeadRight>
-        </BasicBoxHead>
-
-        <KeyValueList margin="regular">
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>결제예정금액</KeyValueTitle>
+            <KeyValueTitle>월 납입금</KeyValueTitle>
             <KeyValueText :classNames="{ text: 'color-green' }"
               >845,000 원</KeyValueText
             >
           </KeyValueItem>
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>결제일</KeyValueTitle>
-            <KeyValueText>2022.02.05 (매월 5일)</KeyValueText>
+            <KeyValueTitle>렌탈기간</KeyValueTitle>
+            <KeyValueText>16/60개월</KeyValueText>
           </KeyValueItem>
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>결제회차</KeyValueTitle>
-            <KeyValueText>16/60</KeyValueText>
+            <KeyValueTitle>렌탈잔액</KeyValueTitle>
+            <KeyValueText>999,999,999 원</KeyValueText>
           </KeyValueItem>
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>대출잔액</KeyValueTitle>
-            <KeyValueText>50,000,000 원</KeyValueText>
-          </KeyValueItem>
-        </KeyValueList>
-      </BasicBox>
+        </KeyValue>
 
-      <BasicBox class="row-margin-item-group">
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>
-            <h3 class="text-body-1 font-weight-medium">오토론</h3>
-          </BasicBoxHeadLeft>
-          <BasicBoxHeadRight>
-            <RoundStatus :classNames="{ wrap: 'display-block' }" theme="nonary">
-              연체
-            </RoundStatus>
-          </BasicBoxHeadRight>
-        </BasicBoxHead>
-
-        <KeyValueList margin="regular">
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>결제예정금액</KeyValueTitle>
-            <KeyValueText :classNames="{ text: 'color-blue' }"
-              >845,000 원</KeyValueText
-            >
-          </KeyValueItem>
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>결제일</KeyValueTitle>
-            <KeyValueText>2022.02.05 (매월 5일)</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>결제회차</KeyValueTitle>
-            <KeyValueText>16/60</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>대출잔액</KeyValueTitle>
-            <KeyValueText>50,000,000 원</KeyValueText>
-          </KeyValueItem>
-        </KeyValueList>
-
-        <div
-          :class="[
-            $style['inline-alert'],
-            $style['inline-alert--error'],
-            'row-margin-contents-small',
-          ]"
+        <BasicButton
+          tagName="a"
+          size="small"
+          :classNames="{ wrap: 'row-margin-contents-small' }"
         >
-          <p :class="$style['inline-alert__text']">만기일이 도래했습니다.</p>
-        </div>
+          <template v-slot:leftIcon>
+            <IconTell />
+          </template>
+          현대렌탈 전화연결
+        </BasicButton>
       </BasicBox>
     </section>
     <!-- //Case : 파트너사 양도계약(팩토링)만 보유한 경우 노출 -->
@@ -562,7 +528,7 @@ export default {
           </BasicBoxHeadRight>
         </BasicBoxHead>
 
-        <KeyValueList margin="regular">
+        <KeyValue margin="regular">
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>대출기간</KeyValueTitle>
             <KeyValueText>2021.01.02 ~ 2021.01.02</KeyValueText>
@@ -571,8 +537,89 @@ export default {
             <KeyValueTitle>대출원금</KeyValueTitle>
             <KeyValueText>999,999,999 원</KeyValueText>
           </KeyValueItem>
-        </KeyValueList>
+        </KeyValue>
       </BasicBox>
+
+      <!-- Case : 파트너사 양도계약(팩토링)만 보유한 경우 노출 -->
+      <BasicBox class="row-margin-item-group">
+        <BasicBoxHead>
+          <BasicBoxHeadLeft>
+            <h3 class="text-body-1 font-weight-medium">야나두</h3>
+            <div class="text-body-4 color-gray row-margin-small">
+              품목명 1줄로 여기까지 여기까지 씁니다.<br />
+              길 경우 이렇게 2줄까지 됩니다.
+            </div>
+          </BasicBoxHeadLeft>
+          <BasicBoxHeadRight>
+            <RoundStatus :classNames="{ wrap: 'display-block' }">
+              종료
+            </RoundStatus>
+          </BasicBoxHeadRight>
+        </BasicBoxHead>
+
+        <KeyValue margin="regular">
+          <KeyValueItem :classNames="{ item: 'text-body-3' }">
+            <KeyValueTitle>할부기간</KeyValueTitle>
+            <KeyValueText>16/60개월</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem :classNames="{ item: 'text-body-3' }">
+            <KeyValueTitle>할부금액</KeyValueTitle>
+            <KeyValueText>999,999,999 원</KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+
+        <BasicButton
+          tagName="a"
+          size="small"
+          :classNames="{ wrap: 'row-margin-contents-small' }"
+        >
+          <template v-slot:leftIcon>
+            <IconTell />
+          </template>
+          야나두 전화연결
+        </BasicButton>
+      </BasicBox>
+
+      <BasicBox class="row-margin-item-group">
+        <BasicBoxHead>
+          <BasicBoxHeadLeft>
+            <h3 class="text-body-1 font-weight-medium">현대렌탈</h3>
+            <div class="text-body-4 color-gray row-margin-small">
+              품목명 1줄로 여기까지 여기까지 씁니다.<br />
+              길 경우 이렇게 2줄까지 됩니다.
+            </div>
+          </BasicBoxHeadLeft>
+          <BasicBoxHeadRight>
+            <RoundStatus :classNames="{ wrap: 'display-block' }">
+              종료
+            </RoundStatus>
+          </BasicBoxHeadRight>
+        </BasicBoxHead>
+
+        <KeyValue margin="regular">
+          <KeyValueItem :classNames="{ item: 'text-body-3' }">
+            <KeyValueTitle>렌탈기간</KeyValueTitle>
+            <KeyValueText>16/60개월</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem :classNames="{ item: 'text-body-3' }">
+            <KeyValueTitle>렌탈잔액</KeyValueTitle>
+            <KeyValueText>999,999,999 원</KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+
+        <BasicButton
+          tagName="a"
+          size="small"
+          :classNames="{ wrap: 'row-margin-contents-small' }"
+        >
+          <template v-slot:leftIcon>
+            <IconTell />
+          </template>
+          현대렌탈 전화연결
+        </BasicButton>
+      </BasicBox>
+      <!-- //Case : 파트너사 양도계약(팩토링)만 보유한 경우 노출 -->
+      <!-- //Case : 캐피탈 계약 + 파트너사 양도계약 보유한 경우 -->
 
       <div>// 배너 영역 (내용 확인 후 진행 예정)</div>
     </section>

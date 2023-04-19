@@ -1,6 +1,13 @@
 @import '@/assets/scss/components/import/basic-list.scss';
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
 
 .consulting {
+  grid-column-start: 1;
+  grid-column-end: 3;
   border: 1px solid $color-gray-30;
   border-radius: 12px;
 
@@ -68,21 +75,8 @@
 }
 
 .menu {
-  margin-top: 16px;
-
-  &__inner {
-    display: flex;
-  }
-
-  &__box {
-    flex: 1;
-    border: 1px solid $color-gray-30;
-    border-radius: 12px;
-
-    & + & {
-      margin-left: 16px;
-    }
-  }
+  border: 1px solid $color-gray-30;
+  border-radius: 12px;
 
   &__link {
     display: block;
