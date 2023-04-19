@@ -11,7 +11,7 @@ textarea,
 [type='submit'],
 [type='text'],
 [type='password'],
-[type='search'],
+My_M03_l014 [type='search'],
 [type='email'],
 [type='url'],
 [type='number'],
@@ -337,6 +337,11 @@ body,
 .row-margin-item-medium.row-margin-item-medium {
   margin-top: 12px;
   margin-bottom: 12px;
+  @include row-margin-first-last;
+}
+.row-margin-item-group-small.row-margin-item-group-small {
+  margin-top: 14px;
+  margin-bottom: 14px;
   @include row-margin-first-last;
 }
 .row-margin-item-group.row-margin-item-group {
