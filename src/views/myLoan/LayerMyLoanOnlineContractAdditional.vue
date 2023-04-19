@@ -55,7 +55,8 @@ export default {
   setup() {
     const layer = ref(null);
     const state = reactive({
-      typeError: false,
+      typeError001: false,
+      typeError002: false,
       objectError: false,
     });
 
@@ -88,9 +89,52 @@ export default {
       </PageTextGroup>
 
       <FormList>
-        <FormListItem titleText="주거형태">// 주거형태</FormListItem>
+        <FormListItem titleText="주거형태" :forceFocus="true">
+          <FormInvalid :error="state.typeError001">
+            <BoxCheckList :wrap="true">
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="layerMyLoanOnlineContractAdditional001"
+                  id="layerMyLoanOnlineContractAdditional001_001"
+                >
+                  <BoxCheckLabel>아파트</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="layerMyLoanOnlineContractAdditional001"
+                  id="layerMyLoanOnlineContractAdditional001_002"
+                >
+                  <BoxCheckLabel>빌라/연립</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="layerMyLoanOnlineContractAdditional001"
+                  id="layerMyLoanOnlineContractAdditional001_003"
+                >
+                  <BoxCheckLabel>단독주택</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="layerMyLoanOnlineContractAdditional001"
+                  id="layerMyLoanOnlineContractAdditional001_004"
+                >
+                  <BoxCheckLabel>기타</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+            </BoxCheckList>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+
         <FormListItem titleText="주택소유구분" :forceFocus="true">
-          <FormInvalid :error="state.typeError">
+          <FormInvalid :error="state.typeError002">
             <BoxCheckList>
               <BoxCheckListItem>
                 <BoxCheck
