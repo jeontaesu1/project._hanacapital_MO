@@ -41,7 +41,7 @@ export default {
     >
       <ButtonListItem>
         <BasicButton @click="layer001Open"
-          >직장 검색 Common_M00_l012</BasicButton
+          >직장 검색<br />Common_M00_l012</BasicButton
         >
       </ButtonListItem>
     </ButtonList>

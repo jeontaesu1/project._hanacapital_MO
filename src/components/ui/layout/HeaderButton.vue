@@ -156,15 +156,14 @@ export default {
     <span :class="styleModule['header__button-text']">닫기</span>
   </button>
 
-  <button
+  <RouterLink
     v-else-if="type === 'setting'"
-    type="button"
+    to="/setting/home"
     :class="styleModule['header__button']"
-    @click="onClick"
   >
-    <IconSetting />
+    <IconSetting :class="styleModule['header__button-icon']" />
     <span :class="styleModule['header__button-text']">설정</span>
-  </button>
+  </RouterLink>
 
   <LayerGlobalNav
     ref="gnbLayer"

@@ -3,6 +3,7 @@
 import { onMounted, onUnmounted } from 'vue';
 import { useHead } from '@vueuse/head';
 
+import { useUiCommonStore } from '@/stores/ui/common';
 import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
@@ -32,32 +33,30 @@ export default {
 
     const store = {
       ui: {
+        common: useUiCommonStore(),
         header: useUiHeaderStore(),
       },
     };
 
     onMounted(() => {
+      store.ui.common.setRootClassName('page-gnb');
       store.ui.header.setTitle(() => ' ');
-      store.ui.header.setLeftButtons(() => ['']);
+      store.ui.header.setLeftButtons(() => []);
       store.ui.header.setRightButtons(() => ['search', 'setting']);
     });
 
     onUnmounted(() => {
+      store.ui.common.setRootClassName();
       store.ui.header.setTitle();
       store.ui.header.setLeftButtons();
       store.ui.header.setRightButtons();
     });
-
-    return {
-      store,
-    };
   },
 };
 </script>
 
 <template>
   <PageContents>
-    <!-- <h1>전체메뉴앱</h1> -->
     <GlobalNav />
   </PageContents>
 </template>

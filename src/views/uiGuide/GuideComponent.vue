@@ -6508,6 +6508,60 @@ export default {
       </div>
     </section>
 
+    <section class="test-section">
+      <h2 class="test-section-title">Rectal</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['rectal']">
+          <UiAccordion :classNames="{ wrap: $style['rectal__list'] }">
+            <UiAccordionItem
+              v-for="i in 3"
+              :key="i"
+              :classNames="{ item: $style['rectal__item'] }"
+            >
+              <div :class="$style['rectal__head']">
+                <div :class="$style['rectal__block']">
+                  <h2 :class="$style['rectal__name']">하나캐피탈</h2>
+                  <div :class="$style['rectal__privacy']">
+                    <span :class="$style['rectal__privacy-name']">홍길동</span>
+                    <span :class="$style['rectal__privacy-number']"
+                      >21-01-1234</span
+                    >
+                  </div>
+                </div>
+                <div :class="$style['rectal__right']">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['rectal__opener'] }"
+                  />
+                </div>
+              </div>
+
+              <UiAccordionLayer>
+                <BasicBox>
+                  <KeyValue>
+                    <KeyValueItem :classNames="{ item: 'text-body-4' }">
+                      <KeyValueTitle>법인번호</KeyValueTitle>
+                      <KeyValueText> 123-45-678910 </KeyValueText>
+                    </KeyValueItem>
+
+                    <KeyValueItem :classNames="{ item: 'text-body-4' }">
+                      <KeyValueTitle>대표번호</KeyValueTitle>
+                      <KeyValueText>1599-1234</KeyValueText>
+                    </KeyValueItem>
+
+                    <KeyValueItem :classNames="{ item: 'text-body-4' }">
+                      <KeyValueTitle>주소</KeyValueTitle>
+                      <KeyValueText> 서울 중구 을지로 35 </KeyValueText>
+                    </KeyValueItem>
+                  </KeyValue>
+                </BasicBox>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+          </UiAccordion>
+        </div>
+      </div>
+    </section>
+
     <!-- 작업중
     <section class="test-section">
       <h2 class="test-section-title">Component Title</h2>

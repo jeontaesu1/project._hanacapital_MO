@@ -37,7 +37,7 @@ export default {
           </template>
         </FullPopupHead>
       </template>
-      <!-- <h1>전체메뉴 웹</h1> -->
+
       <GlobalNav />
     </FullPopup>
   </UiLayer>

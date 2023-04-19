@@ -33,7 +33,6 @@ import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
-// import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 
 export default {
   components: {
@@ -71,10 +70,7 @@ export default {
   },
   setup() {
     const state = reactive({
-      typeError: false,
-      sumError: false,
-      termError: false,
-      interestRateError: false,
+      nameError: false,
     });
 
     const layer = ref(null);
@@ -89,8 +85,15 @@ export default {
 
 <template>
   <UiLayer ref="layer" type="full" v-slot="layerSlotProps">
-    <UiTab type="popup">
-      <FullPopup>
+    <UiTab ref="tab" type="popup" v-slot="tabSlotProps">
+      <FullPopup
+        :classNames="{
+          foot:
+            tabSlotProps.activeName !== 'layerSearchWorkplaceTab003'
+              ? 'display-none'
+              : '',
+        }"
+      >
         <template v-slot:head>
           <FullPopupHead>
             <PopupTitle>직장검색</PopupTitle>
@@ -99,137 +102,154 @@ export default {
             </template>
           </FullPopupHead>
           <NavTab :useUiTab="true" :head="true">
-            <NavTabButton link="testNavTab001_001">직장명</NavTabButton>
-            <NavTabButton link="testNavTab001_002">사업자번호</NavTabButton>
-            <NavTabButton link="testNavTab001_003">직접입력</NavTabButton>
+            <NavTabButton link="layerSearchWorkplaceTab001"
+              >직장명</NavTabButton
+            >
+            <NavTabButton link="layerSearchWorkplaceTab002"
+              >사업자번호</NavTabButton
+            >
+            <NavTabButton link="layerSearchWorkplaceTab003"
+              >직접입력</NavTabButton
+            >
           </NavTab>
         </template>
 
         <div>
-          <!-- 컨텐츠 -->
-          <UiTabPanel name="testNavTab001_001">
-            <!-- 검색 -->
-            <FormList>
-              <InputBlock type="search">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    type="search"
-                    title="직장명 검색어"
-                    placeholder="직장명 입력"
-                  />
-                </InputBlockCell>
-                <InputBlockCell type="search">
-                  <SearchButton />
-                </InputBlockCell> </InputBlock
-            ></FormList>
-            <NoticeText class="row-margin-contents row-margin-bottom-none"
-              >실제 직장 정보와 다른 경우 한도 및 금리가 달라질 수
-              있어요.</NoticeText
-            >
-            <!-- //검색 -->
+          <UiTabPanel name="layerSearchWorkplaceTab001">
+            <InputBlock type="search">
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  type="search"
+                  title="직장명 검색어"
+                  placeholder="직장명 입력"
+                />
+              </InputBlockCell>
+              <InputBlockCell type="search">
+                <SearchButton />
+              </InputBlockCell>
+            </InputBlock>
           </UiTabPanel>
 
-          <UiTabPanel name="testNavTab001_002">
-            <!-- 검색 -->
-            <FormList>
-              <InputBlock type="search">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    type="search"
-                    title="사업자번호 검색어"
-                    placeholder="사업자번호 입력"
-                  />
-                </InputBlockCell>
-                <InputBlockCell type="search">
-                  <SearchButton />
-                </InputBlockCell> </InputBlock
-            ></FormList>
-            <NoticeText class="row-margin-contents row-margin-bottom-none"
-              >실제 직장 정보와 다른 경우 한도 및 금리가 달라질 수
-              있어요.</NoticeText
-            >
-            <!-- //검색 -->
+          <UiTabPanel name="layerSearchWorkplaceTab002">
+            <InputBlock type="search">
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  type="search"
+                  title="사업자번호 검색어"
+                  placeholder="사업자번호 입력"
+                />
+              </InputBlockCell>
+              <InputBlockCell type="search">
+                <SearchButton />
+              </InputBlockCell>
+            </InputBlock>
           </UiTabPanel>
 
-          <UiTabPanel name="testNavTab001_003">
+          <UiTabPanel name="layerSearchWorkplaceTab003">
             <FormList>
-              <FormListItem titleText="이름" target="#testInput007">
-                <FormInvalid :error="state.testError001">
-                  <InputBlock :error="state.testError001">
+              <FormListItem
+                titleText="직장명"
+                target="#layerSearchWorkplaceName"
+              >
+                <FormInvalid :error="state.nameError">
+                  <InputBlock :error="state.nameError">
                     <InputBlockCell :flexible="true">
-                      <BasicInput title="이름" id="testInput007" />
+                      <BasicInput
+                        title="직장명"
+                        id="layerSearchWorkplaceName"
+                      />
                     </InputBlockCell>
                   </InputBlock>
                   <FormInvalidMessage>Error Message</FormInvalidMessage>
                 </FormInvalid>
               </FormListItem>
             </FormList>
-            <NoticeText class="row-margin-contents row-margin-bottom-none"
-              >실제 직장 정보와 다른 경우 한도 및 금리가 달라질 수
-              있어요.</NoticeText
-            >
           </UiTabPanel>
+
+          <NoticeText class="row-margin-contents"
+            >실제 직장 정보와 다른 경우 한도 및 금리가 달라질 수
+            있어요.</NoticeText
+          >
         </div>
 
-        <BasicHr className="row-margin-contents row-margin-container-medium" />
-
-        <p class="text-body-4"><span class="color-green">999</span> 건</p>
+        <!-- DD : 검색 후 노출 -->
         <BasicHr
-          theme="quaternary"
-          type="contents"
-          className="row-margin-item-medium"
+          className="row-margin-container-medium"
+          v-if="tabSlotProps.activeName !== 'layerSearchWorkplaceTab003'"
         />
-        <div :class="$style['rectal']">
-          <UiAccordion :classNames="{ wrap: $style['rectal__list'] }">
-            <UiAccordionItem
-              v-for="i in 3"
-              :key="i"
-              :classNames="{ item: $style['rectal__item'] }"
-            >
-              <div :class="$style['rectal__head']">
-                <div :class="$style['rectal__block']">
-                  <h2 :class="$style['rectal__name']">하나캐피탈</h2>
-                  <div :class="$style['rectal__privacy']">
-                    <span :class="$style['rectal__privacy__name']">홍길동</span>
-                    <span :class="$style['rectal__privacy__number']"
-                      >21-01-1234</span
-                    >
+
+        <div
+          class="contents-wrap"
+          v-if="tabSlotProps.activeName !== 'layerSearchWorkplaceTab003'"
+        >
+          <p class="text-body-4 font-weight-light color-gray-secondary">
+            <strong class="font-weight-medium color-green">999</strong> 건
+          </p>
+          <BasicHr
+            theme="quaternary"
+            type="contents"
+            className="row-margin-item-medium"
+          />
+
+          <!-- Case : 결과 없을 때 -->
+          <div :class="$style['empty']">
+            <p :class="$style['empty__text']">검색된 결과가 없습니다.</p>
+          </div>
+          <!-- // Case : 결과 없을 때 -->
+
+          <!-- Case : 결과 있을 때 -->
+          <div :class="$style['rectal']">
+            <UiAccordion :classNames="{ wrap: $style['rectal__list'] }">
+              <UiAccordionItem
+                v-for="i in 3"
+                :key="i"
+                :classNames="{ item: $style['rectal__item'] }"
+              >
+                <div :class="$style['rectal__head']">
+                  <div :class="$style['rectal__block']">
+                    <h2 :class="$style['rectal__name']">하나캐피탈</h2>
+                    <div :class="$style['rectal__privacy']">
+                      <span :class="$style['rectal__privacy-name']"
+                        >홍길동</span
+                      >
+                      <span :class="$style['rectal__privacy-number']"
+                        >21-01-1234</span
+                      >
+                    </div>
+                  </div>
+                  <div :class="$style['rectal__right']">
+                    <UiAccordionOpener
+                      :classNames="{ button: $style['rectal__opener'] }"
+                    />
                   </div>
                 </div>
-                <div :class="$style['rectal__right']">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['rectal__opener'] }"
-                  />
-                </div>
-              </div>
 
-              <UiAccordionLayer
-                :classNames="{ layer: $style['rectal__layer'] }"
-              >
-                <BasicBox>
-                  <KeyValueList>
-                    <KeyValueItem :classNames="{ item: 'text-body-4' }">
-                      <KeyValueTitle>법인번호</KeyValueTitle>
-                      <KeyValueText> 123-45-678910 </KeyValueText>
-                    </KeyValueItem>
+                <UiAccordionLayer>
+                  <BasicBox>
+                    <KeyValueList>
+                      <KeyValueItem :classNames="{ item: 'text-body-4' }">
+                        <KeyValueTitle>법인번호</KeyValueTitle>
+                        <KeyValueText> 123-45-678910 </KeyValueText>
+                      </KeyValueItem>
 
-                    <KeyValueItem :classNames="{ item: 'text-body-4' }">
-                      <KeyValueTitle>대표번호</KeyValueTitle>
-                      <KeyValueText>1599-1234</KeyValueText>
-                    </KeyValueItem>
+                      <KeyValueItem :classNames="{ item: 'text-body-4' }">
+                        <KeyValueTitle>대표번호</KeyValueTitle>
+                        <KeyValueText>1599-1234</KeyValueText>
+                      </KeyValueItem>
 
-                    <KeyValueItem :classNames="{ item: 'text-body-4' }">
-                      <KeyValueTitle>주소</KeyValueTitle>
-                      <KeyValueText> 서울 중구 을지로 35 </KeyValueText>
-                    </KeyValueItem>
-                  </KeyValueList>
-                </BasicBox>
-              </UiAccordionLayer>
-            </UiAccordionItem>
-          </UiAccordion>
+                      <KeyValueItem :classNames="{ item: 'text-body-4' }">
+                        <KeyValueTitle>주소</KeyValueTitle>
+                        <KeyValueText> 서울 중구 을지로 35 </KeyValueText>
+                      </KeyValueItem>
+                    </KeyValueList>
+                  </BasicBox>
+                </UiAccordionLayer>
+              </UiAccordionItem>
+            </UiAccordion>
+          </div>
+          <!-- // Case : 결과 있을 때 -->
         </div>
-
-        <!-- //컨텐츠 -->
+        <!-- // DD : 검색 후 노출 -->
 
         <template v-slot:foot>
           <ButtonList
@@ -246,6 +266,7 @@ export default {
     </UiTab>
   </UiLayer>
 </template>
+
 <style lang="scss" module>
 @import '@/assets/scss/views/searchWorkplace/LayerSearchWorkplace.scss';
 </style>

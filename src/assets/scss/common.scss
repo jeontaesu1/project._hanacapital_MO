@@ -74,6 +74,11 @@ body,
   vertical-align: top;
 }
 
+// display-none
+.display-none.display-none {
+  display: none;
+}
+
 // contents-wrap
 .contents-wrap {
   flex: 1;

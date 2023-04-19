@@ -1,54 +1,39 @@
 <script>
-import { ref } from 'vue';
+// Common_M00_p009
+import { onMounted, onUnmounted } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
-import BasicButton from '@/components/ui/button/BasicButton.vue';
-import ButtonList from '@/components/ui/button/ButtonList.vue';
-import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-import LayerGuideEnterDate from '@/views/guide/LayerGuideEnterDate.vue';
-
-// import Layer from '@/views/';
 
 export default {
   components: {
     PageContents,
-    BasicButton,
-    ButtonList,
-    ButtonListItem,
-    // Layer,
-    LayerGuideEnterDate,
   },
   setup() {
-    const layer001 = ref(null);
-
-    const layer001Open = (e = {}) => {
-      layer001.value.layer.open(e.target);
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
     };
 
-    return {
-      layer001,
-      layer001Open,
-    };
+    onMounted(() => {
+      store.ui.header.setTitle(() => '타이틀');
+      store.ui.header.setLeftButtons(() => ['back']);
+      store.ui.header.setRightButtons(() => []);
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setTitle();
+      store.ui.header.setLeftButtons();
+      store.ui.header.setRightButtons();
+    });
   },
 };
 </script>
 
 <template>
   <PageContents>
-    <ButtonList
-      :classNames="{
-        wrap: 'row-margin-none',
-      }"
-      align="full"
-    >
-      <ButtonListItem>
-        <BasicButton @click="layer001Open"
-          >날짜 입력<br />
-          Common_M00_p009</BasicButton
-        >
-      </ButtonListItem>
-    </ButtonList>
-
-    <LayerGuideEnterDate ref="layer001" />
+    <h1>Page</h1>
   </PageContents>
 </template>

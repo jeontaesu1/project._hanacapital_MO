@@ -30,10 +30,14 @@
     display: flex;
     margin-top: 4px;
 
-    &__name {
+    &-name {
+      display: block;
       position: relative;
       padding-right: 8px;
       margin-right: 9px;
+      @include font-size-default(13);
+      font-weight: 300;
+
       &::before {
         content: '';
         display: block;
@@ -45,11 +49,10 @@
         right: 0;
         margin-top: -6px;
       }
-      @include font-size-default(13);
-      font-weight: 300;
     }
 
-    &__number {
+    &-number {
+      display: block;
       @include font-size-default(13);
       font-weight: 300;
     }
@@ -65,8 +68,8 @@
 
   &__opener {
     flex: none;
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     position: static;
 
     &::before {
@@ -75,19 +78,5 @@
       left: 0;
       z-index: 10;
     }
-  }
-
-  &__layer {
-    dt {
-      font-weight: 400;
-    }
-  }
-
-  &__contents {
-    padding: 20px;
-    box-sizing: border-box;
-    @include font-size-default(14);
-    color: $color-gray-70;
-    background-color: $color-gray-10;
   }
 }
