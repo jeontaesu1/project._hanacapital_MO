@@ -56,7 +56,7 @@ export default {
         확인합니다.
       </PopupText>
 
-      <div class="row-margin-item-group">
+      <div class="row-margin-item-medium">
         <BoxCheck :contents="true" type="checkbox" id="testBoxCheck006_001">
           <template v-slot:left>
             <BoxCheckObject />
