@@ -37,9 +37,9 @@ export default {
     };
 
     onMounted(() => {
-      store.ui.header.setTitle(() => '전체메뉴');
-      store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => ['search']);
+      store.ui.header.setTitle(() => ' ');
+      store.ui.header.setLeftButtons(() => ['']);
+      store.ui.header.setRightButtons(() => ['search', 'setting']);
     });
 
     onUnmounted(() => {
@@ -57,8 +57,7 @@ export default {
 
 <template>
   <PageContents>
-    <h1>전체메뉴</h1>
-
+    <!-- <h1>전체메뉴앱</h1> -->
     <GlobalNav />
   </PageContents>
 </template>
