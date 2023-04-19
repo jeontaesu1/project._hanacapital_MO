@@ -12,7 +12,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -30,7 +30,7 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicBox,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -65,7 +65,7 @@ export default {
       </PageTextGroup>
 
       <BasicBox>
-        <KeyValueList>
+        <KeyValue>
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>제공되는 정보</KeyValueTitle>
             <KeyValueText> 휴대전화번호, 앱푸시ID </KeyValueText>
@@ -80,7 +80,7 @@ export default {
             <KeyValueTitle>제공기간</KeyValueTitle>
             <KeyValueText> 동의 철회 시 또는 앱삭제시까지 </KeyValueText>
           </KeyValueItem>
-        </KeyValueList>
+        </KeyValue>
       </BasicBox>
 
       <p class="text-body-3 color-gray row-margin-contents">

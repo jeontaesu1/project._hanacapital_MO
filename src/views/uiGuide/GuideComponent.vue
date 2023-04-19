@@ -80,6 +80,10 @@ import SearchButton from '@/components/ui/button/SearchButton.vue';
 import SwitchCheckBox from '@/components/ui/form/SwitchCheckBox.vue';
 import BasicTooltip from '@/components/ui/tooltip/BasicTooltip.vue';
 import ContentsButton from '@/components/ui/button/ContentsButton.vue';
+import BankLogo from '@/components/ui/imageData/BankLogo.vue';
+import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
+import CarThumb from '@/components/ui/imageData/CarThumb.vue';
+import ColorChip from '@/components/ui/imageData/ColorChip.vue';
 // import InputDateBasic from '@/components/ui/form/InputDateBasic.vue';
 // import InputDateDual from '@/components/ui/form/InputDateDual.vue';
 // import InputRange from '@/components/ui/form/InputRange.vue';
@@ -199,6 +203,10 @@ export default {
     SwitchCheckBox,
     BasicTooltip,
     ContentsButton,
+    BankLogo,
+    CarEmblem,
+    CarThumb,
+    ColorChip,
     // InputDateBasic,
     // InputDateDual,
     // InputRange,
@@ -1555,6 +1563,90 @@ export default {
               :minSide="true"
               name="testBoxCheckList002"
               id="testBoxCheckList002_004"
+            >
+              <BoxCheckLabel>Label 4</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+        </BoxCheckList>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Wrap - col 2</h3>
+
+        <BoxCheckList :wrap="true">
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList003"
+              id="testBoxCheckList003_001"
+            >
+              <BoxCheckLabel>Label 1</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList003"
+              id="testBoxCheckList003_002"
+            >
+              <BoxCheckLabel>Label 2</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList003"
+              id="testBoxCheckList003_003"
+            >
+              <BoxCheckLabel>Label 3</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList003"
+              id="testBoxCheckList003_004"
+            >
+              <BoxCheckLabel>Label 4</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+        </BoxCheckList>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Wrap - col 3</h3>
+
+        <BoxCheckList :wrap="true" :col="3">
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList004"
+              id="testBoxCheckList004_001"
+            >
+              <BoxCheckLabel>Label 1</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList004"
+              id="testBoxCheckList004_002"
+            >
+              <BoxCheckLabel>Label 2</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList004"
+              id="testBoxCheckList004_003"
+            >
+              <BoxCheckLabel>Label 3</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList004"
+              id="testBoxCheckList004_004"
             >
               <BoxCheckLabel>Label 4</BoxCheckLabel>
             </BoxCheck>
@@ -4859,21 +4951,11 @@ export default {
             <BasicBoxHeadLeft>
               <h3 class="text-body-1 font-weight-medium">제네시스</h3>
               <p class="text-body-4 color-gray row-margin-small">더 뉴 G70</p>
-              <UnitText
-                rightUnit="원"
-                :classNames="{
-                  wrap: 'row-margin-item',
-                }"
-                >628,190</UnitText
-              >
             </BasicBoxHeadLeft>
             <BasicBoxHeadRight>
-              <div :class="$style['car-image']">
-                <img
-                  src="@/assets/images/_dummy/car-sample.png"
-                  alt="차량 정보 넣어주세요"
-                />
-              </div>
+              <RoundStatus :classNames="{ wrap: 'display-block' }">
+                미신청
+              </RoundStatus>
             </BasicBoxHeadRight>
           </BasicBoxHead>
           // contnets
@@ -4887,21 +4969,11 @@ export default {
             <BasicBoxHeadLeft>
               <h3 class="text-body-1 font-weight-medium">제네시스</h3>
               <p class="text-body-4 color-gray row-margin-small">더 뉴 G70</p>
-              <UnitText
-                rightUnit="원"
-                :classNames="{
-                  wrap: 'row-margin-item',
-                }"
-                >628,190</UnitText
-              >
             </BasicBoxHeadLeft>
             <BasicBoxHeadRight>
-              <div :class="$style['car-image']">
-                <img
-                  src="@/assets/images/_dummy/car-sample.png"
-                  alt="차량 정보 넣어주세요"
-                />
-              </div>
+              <RoundStatus :classNames="{ wrap: 'display-block' }">
+                미신청
+              </RoundStatus>
             </BasicBoxHeadRight>
           </BasicBoxHead>
           // contnets
@@ -4940,6 +5012,61 @@ export default {
                     <span :class="$style['logs__link-text']">상세보기</span>
                   </button>
                 </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Product</h3>
+        <ul :class="$style['logs']">
+          <li :class="$style['logs__item']">
+            <div :class="$style['logs__block']">
+              <div :class="$style['logs__row']">
+                <div div :class="$style['logs__contents']">
+                  <h3 class="text-body-1 font-weight-medium">스탁론</h3>
+                  <div class="text-body-4 color-gray row-margin-mini">
+                    하나증권 12-3456-7890123
+                  </div>
+                </div>
+                <RoundStatus theme="secondary">D-7</RoundStatus>
+                <div div :class="$style['logs__right']">
+                  <button type="button" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </button>
+                </div>
+              </div>
+
+              <BasicHr
+                type="contents"
+                theme="quaternary"
+                className="row-margin-contents-small"
+              />
+
+              <KeyValue margin="regular">
+                <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                  <KeyValueTitle>결제예정금액</KeyValueTitle>
+                  <KeyValueText :classNames="{ text: 'color-green' }"
+                    >845,000 원</KeyValueText
+                  >
+                </KeyValueItem>
+
+                <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                  <KeyValueTitle>결제일</KeyValueTitle>
+                  <KeyValueText>2022.02.05 (매월 5일)</KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                  <KeyValueTitle>결제회차</KeyValueTitle>
+                  <KeyValueText>16/60</KeyValueText>
+                </KeyValueItem>
+              </KeyValue>
+
+              <div
+                :class="[$style['logs__button'], 'row-margin-contents-small']"
+              >
+                <BasicButton size="small">연장</BasicButton>
               </div>
             </div>
           </li>
@@ -5236,10 +5363,26 @@ export default {
         <UnitText rightUnit="원" align="right">333,389</UnitText>
       </div>
       <div class="test-section-sub">
+        <h3 class="test-section-sub-title">vertical align center</h3>
+
+        <UnitText verticalAlign="center" leftUnit="$">333,389</UnitText>
+        <UnitText verticalAlign="center" rightUnit="원">333,389</UnitText>
+      </div>
+      <div class="test-section-sub">
         <h3 class="test-section-sub-title">Regular</h3>
 
         <UnitText size="regular" leftUnit="$">333,389</UnitText>
         <UnitText size="regular" rightUnit="원">333,389</UnitText>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Large</h3>
+
+        <UnitText size="large" verticalAlign="center" leftUnit="$"
+          >333,389</UnitText
+        >
+        <UnitText size="large" verticalAlign="center" rightUnit="원"
+          >333,389</UnitText
+        >
       </div>
     </section>
 
@@ -6383,6 +6526,126 @@ export default {
             </button>
           </li>
         </ol>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Bank Logo</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <BankLogo code="081" name="하나은행" />
+        <BankLogo type="securities" code="261" name="교보증권" />
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Small</h3>
+        <BankLogo size="small" code="081" name="하나은행" />
+        <BankLogo size="small" type="securities" code="261" name="교보증권" />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Car Emblem</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <CarEmblem code="1001" name="현대" />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Car Thumb</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <CarThumb src="/images/_dummy/car-thumb.png" />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Color Chip</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <ColorChip />
+        <ColorChip :colors="['244, 238, 238']" />
+        <ColorChip :colors="['244, 238, 238', '225, 213, 213', '66, 83, 82']" />
+        <ColorChip
+          :colors="[
+            '244, 238, 238',
+            '225, 213, 213',
+            '66, 83, 82',
+            '155, 171, 170',
+          ]"
+        />
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">small</h3>
+        <ColorChip size="small" />
+        <ColorChip size="small" :colors="['244, 238, 238']" />
+        <ColorChip
+          size="small"
+          :colors="['244, 238, 238', '225, 213, 213', '66, 83, 82']"
+        />
+        <ColorChip
+          size="small"
+          :colors="[
+            '244, 238, 238',
+            '225, 213, 213',
+            '66, 83, 82',
+            '155, 171, 170',
+          ]"
+        />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Rectal</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['rectal']">
+          <UiAccordion :classNames="{ wrap: $style['rectal__list'] }">
+            <UiAccordionItem
+              v-for="i in 3"
+              :key="i"
+              :classNames="{ item: $style['rectal__item'] }"
+            >
+              <div :class="$style['rectal__head']">
+                <div :class="$style['rectal__block']">
+                  <h2 :class="$style['rectal__name']">하나캐피탈</h2>
+                  <div :class="$style['rectal__privacy']">
+                    <span :class="$style['rectal__privacy-name']">홍길동</span>
+                    <span :class="$style['rectal__privacy-number']"
+                      >21-01-1234</span
+                    >
+                  </div>
+                </div>
+                <div :class="$style['rectal__right']">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['rectal__opener'] }"
+                  />
+                </div>
+              </div>
+
+              <UiAccordionLayer>
+                <BasicBox>
+                  <KeyValue>
+                    <KeyValueItem :classNames="{ item: 'text-body-4' }">
+                      <KeyValueTitle>법인번호</KeyValueTitle>
+                      <KeyValueText> 123-45-678910 </KeyValueText>
+                    </KeyValueItem>
+
+                    <KeyValueItem :classNames="{ item: 'text-body-4' }">
+                      <KeyValueTitle>대표번호</KeyValueTitle>
+                      <KeyValueText>1599-1234</KeyValueText>
+                    </KeyValueItem>
+
+                    <KeyValueItem :classNames="{ item: 'text-body-4' }">
+                      <KeyValueTitle>주소</KeyValueTitle>
+                      <KeyValueText> 서울 중구 을지로 35 </KeyValueText>
+                    </KeyValueItem>
+                  </KeyValue>
+                </BasicBox>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+          </UiAccordion>
+        </div>
       </div>
     </section>
 

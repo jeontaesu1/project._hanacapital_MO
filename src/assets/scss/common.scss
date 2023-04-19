@@ -74,6 +74,11 @@ body,
   vertical-align: top;
 }
 
+// display-none
+.display-none.display-none {
+  display: none;
+}
+
 // contents-wrap
 .contents-wrap {
   flex: 1;
@@ -94,6 +99,14 @@ body,
 
     & + & {
       margin-left: 8px;
+    }
+
+    & + &--large {
+      margin-left: 20px;
+    }
+
+    & + &--medium {
+      margin-left: 16px;
     }
 
     & + &--small {

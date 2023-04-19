@@ -139,7 +139,11 @@
   }
 
   &__detail {
-    padding: 6px 20px 0 30px;
+    padding: 6px 32px 0 30px;
+
+    &-secondary {
+      padding: 8px 32px 0 30px;
+    }
   }
 
   &__list--secondary {

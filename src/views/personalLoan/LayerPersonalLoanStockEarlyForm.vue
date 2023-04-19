@@ -11,7 +11,7 @@ import PageMainText from '@/components/ui/text/PageMainText.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -43,7 +43,7 @@ export default {
     BasicBox,
     BasicBoxHead,
     BasicBoxHeadLeft,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -107,7 +107,7 @@ export default {
             </BasicBoxHeadLeft>
           </BasicBoxHead>
 
-          <KeyValueList margin="regular">
+          <KeyValue margin="regular">
             <KeyValueItem
               :classNames="{
                 item: 'text-body-3',
@@ -170,14 +170,14 @@ export default {
               <KeyValueTitle>결제예정금액</KeyValueTitle>
               <KeyValueText>14,000,000 원</KeyValueText>
             </KeyValueItem>
-          </KeyValueList>
+          </KeyValue>
         </BasicBox>
       </section>
 
       <BasicHr className="row-margin-container-medium" />
 
       <BasicBox>
-        <KeyValueList margin="regular">
+        <KeyValue margin="regular">
           <KeyValueItem
             :classNames="{
               item: 'text-body-3',
@@ -195,7 +195,7 @@ export default {
             <KeyValueTitle>결제방법</KeyValueTitle>
             <KeyValueText>오늘 즉시출금(2021-10-21)</KeyValueText>
           </KeyValueItem>
-        </KeyValueList>
+        </KeyValue>
       </BasicBox>
 
       <FormList :classNames="{ wrap: 'row-margin-contents-group' }">

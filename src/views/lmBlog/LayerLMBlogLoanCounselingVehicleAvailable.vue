@@ -7,7 +7,7 @@ import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -20,7 +20,7 @@ export default {
     FullPopup,
     FullPopupHead,
     PopupTitle,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -48,7 +48,7 @@ export default {
         </FullPopupHead>
       </template>
 
-      <KeyValueList
+      <KeyValue
         direction="vertical"
         :classNames="{
           wrap: 'row-margin-contents',
@@ -85,7 +85,7 @@ export default {
             차량 압류 및 설정 내역이 있을 경우 해지 후 대출 가능
           </KeyValueText>
         </KeyValueItem>
-      </KeyValueList>
+      </KeyValue>
 
       <NoticeText
         >차량 조회 결과(사고금액, 침수/도난/전손여부)에 따라 대출 제한이 될 수

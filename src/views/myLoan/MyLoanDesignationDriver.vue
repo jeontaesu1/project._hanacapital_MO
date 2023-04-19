@@ -13,7 +13,7 @@ import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
 import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -32,7 +32,7 @@ export default {
     BasicBoxHead,
     BasicBoxHeadLeft,
     BasicBoxHeadRight,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -104,7 +104,7 @@ export default {
           >
         </BasicBoxHeadRight>
       </BasicBoxHead>
-      <KeyValueList margin="regular">
+      <KeyValue margin="regular">
         <KeyValueItem :classNames="{ item: 'text-body-3' }">
           <KeyValueTitle>생년월일</KeyValueTitle>
           <KeyValueText> 2022.02.02 </KeyValueText>
@@ -121,7 +121,7 @@ export default {
           <KeyValueTitle>취득일자</KeyValueTitle>
           <KeyValueText> 2001.02.06</KeyValueText>
         </KeyValueItem>
-      </KeyValueList>
+      </KeyValue>
     </BasicBox>
 
     <BasicBox class="row-margin-item">
@@ -140,7 +140,7 @@ export default {
           >
         </BasicBoxHeadRight>
       </BasicBoxHead>
-      <KeyValueList margin="regular">
+      <KeyValue margin="regular">
         <KeyValueItem :classNames="{ item: 'text-body-3' }">
           <KeyValueTitle>생년월일</KeyValueTitle>
           <KeyValueText> 2022.02.02 </KeyValueText>
@@ -157,7 +157,7 @@ export default {
           <KeyValueTitle>취득일자</KeyValueTitle>
           <KeyValueText> 2001.02.06</KeyValueText>
         </KeyValueItem>
-      </KeyValueList>
+      </KeyValue>
     </BasicBox>
 
     <!-- Case : 1인 등록시 노출 -->

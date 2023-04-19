@@ -1,0 +1,82 @@
+.rectal {
+  display: block;
+
+  &__list {
+    @include reset-list;
+  }
+
+  &__item {
+    display: block;
+  }
+
+  &__head {
+    position: relative;
+    display: flex;
+    padding: 16px 0;
+  }
+
+  &__block {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__name {
+    margin: 0;
+    @include font-size-default(16);
+    font-weight: 500;
+  }
+
+  &__privacy {
+    display: flex;
+    margin-top: 4px;
+
+    &-name {
+      display: block;
+      position: relative;
+      padding-right: 8px;
+      margin-right: 9px;
+      @include font-size-default(13);
+      font-weight: 300;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 1px;
+        height: 12px;
+        background-color: $color-gray-30;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        margin-top: -6px;
+      }
+    }
+
+    &-number {
+      display: block;
+      @include font-size-default(13);
+      font-weight: 300;
+    }
+  }
+
+  &__right {
+    flex: none;
+    margin-left: auto;
+    padding-left: 4px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__opener {
+    flex: none;
+    width: 20px;
+    height: 20px;
+    position: static;
+
+    &::before {
+      padding: 0;
+      top: 0;
+      left: 0;
+      z-index: 10;
+    }
+  }
+}

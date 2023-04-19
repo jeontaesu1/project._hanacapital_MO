@@ -6,7 +6,7 @@ import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import ToastPopup from '@/components/ui/layer/ToastPopup.vue';
 import ToastPopupHead from '@/components/ui/layer/ToastPopupHead.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -20,7 +20,7 @@ export default {
     ToastPopup,
     ToastPopupHead,
     PopupTitle,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -50,7 +50,7 @@ export default {
         </ToastPopupHead>
       </template>
 
-      <KeyValueList margin="regular">
+      <KeyValue margin="regular">
         <KeyValueItem>
           <KeyValueTitle>상품명</KeyValueTitle>
           <KeyValueText>
@@ -73,7 +73,7 @@ export default {
           <KeyValueTitle>증권계좌번호</KeyValueTitle>
           <KeyValueText>(키움증권)***1234567</KeyValueText>
         </KeyValueItem>
-      </KeyValueList>
+      </KeyValue>
 
       <template v-slot:foot>
         <ButtonList

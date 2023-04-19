@@ -28,6 +28,10 @@ export default {
       Type: String,
       default: null,
     },
+    verticalAlign: {
+      Type: String,
+      default: null,
+    },
     size: {
       Type: String,
       default: null,
@@ -52,6 +56,7 @@ export default {
       $style['unit-text'],
       {
         [$style[`unit-text--align-${align}`]]: align,
+        [$style[`unit-text--vertical-align-${verticalAlign}`]]: verticalAlign,
         [$style[`unit-text--size-${size}`]]: size,
       },
       customClassNames.wrap,
