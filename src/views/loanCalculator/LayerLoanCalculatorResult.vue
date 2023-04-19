@@ -85,7 +85,6 @@ export default {
             </KeyValueText>
           </KeyValueItem>
         </KeyValue>
-
         <BasicHr
           type="contents"
           theme="quaternary"
