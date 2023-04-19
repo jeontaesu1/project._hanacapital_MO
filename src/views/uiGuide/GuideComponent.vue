@@ -6460,7 +6460,7 @@ export default {
       <h2 class="test-section-title">Car Emblem</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
-        <CarEmblem code="auto-hyundai" name="현대차" />
+        <CarEmblem code="1001" name="현대" />
       </div>
     </section>
 
