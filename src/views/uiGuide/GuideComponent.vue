@@ -80,6 +80,7 @@ import SearchButton from '@/components/ui/button/SearchButton.vue';
 import SwitchCheckBox from '@/components/ui/form/SwitchCheckBox.vue';
 import BasicTooltip from '@/components/ui/tooltip/BasicTooltip.vue';
 import ContentsButton from '@/components/ui/button/ContentsButton.vue';
+import BankLogo from '@/components/ui/imageData/BankLogo.vue';
 import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
 import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 import ColorChip from '@/components/ui/imageData/ColorChip.vue';
@@ -202,6 +203,7 @@ export default {
     SwitchCheckBox,
     BasicTooltip,
     ContentsButton,
+    BankLogo,
     CarEmblem,
     CarThumb,
     ColorChip,
@@ -6453,6 +6455,20 @@ export default {
             </button>
           </li>
         </ol>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Bank Logo</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <BankLogo code="081" name="하나은행" />
+        <BankLogo type="securities" code="261" name="교보증권" />
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Small</h3>
+        <BankLogo size="small" code="081" name="하나은행" />
+        <BankLogo size="small" type="securities" code="261" name="교보증권" />
       </div>
     </section>
 

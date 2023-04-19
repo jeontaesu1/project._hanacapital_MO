@@ -16,14 +16,11 @@ import UiAccordionItem from '@/components/ui/accordion/UiAccordionItem.vue';
 import UiAccordionLayer from '@/components/ui/accordion/UiAccordionLayer.vue';
 import UiAccordionOpener from '@/components/ui/accordion/UiAccordionOpener.vue';
 import CopyButton from '@/components/ui/button/CopyButton.vue';
+import BankLogo from '@/components/ui/imageData/BankLogo.vue';
+
 import LayerMyLoanPaymentVirtualNotice from '@/views/myLoan/LayerMyLoanPaymentVirtualNotice.vue';
 
 import iconImportant from '@/assets/images/icon/important.svg?component';
-import BankLogo001 from '@/assets/images/bank-logo/004.svg?component';
-import BankLogo002 from '@/assets/images/bank-logo/011.svg?component';
-import BankLogo003 from '@/assets/images/bank-logo/020.svg?component';
-import BankLogo004 from '@/assets/images/bank-logo/081.svg?component';
-import BankLogo005 from '@/assets/images/bank-logo/088.svg?component';
 
 export default {
   components: {
@@ -39,13 +36,9 @@ export default {
     UiAccordionLayer,
     UiAccordionOpener,
     CopyButton,
+    BankLogo,
     LayerMyLoanPaymentVirtualNotice,
     iconImportant,
-    BankLogo001,
-    BankLogo002,
-    BankLogo003,
-    BankLogo004,
-    BankLogo005,
   },
   setup() {
     const store = {
@@ -146,7 +139,7 @@ export default {
                       <KeyValueTitle>
                         <div class="flex-box">
                           <div class="flex-box__cell">
-                            <BankLogo001 :class="$style['bank-logo']" />
+                            <BankLogo size="small" code="004" />
                           </div>
                           <div class="flex-box__cell flex-box__cell--mini">
                             국민
@@ -167,7 +160,7 @@ export default {
                       <KeyValueTitle>
                         <div class="flex-box">
                           <div class="flex-box__cell">
-                            <BankLogo002 :class="$style['bank-logo']" />
+                            <BankLogo size="small" code="011" />
                           </div>
                           <div class="flex-box__cell flex-box__cell--mini">
                             농협
@@ -188,7 +181,7 @@ export default {
                       <KeyValueTitle>
                         <div class="flex-box">
                           <div class="flex-box__cell">
-                            <BankLogo003 :class="$style['bank-logo']" />
+                            <BankLogo size="small" code="020" />
                           </div>
                           <div class="flex-box__cell flex-box__cell--mini">
                             우리
@@ -209,7 +202,7 @@ export default {
                       <KeyValueTitle>
                         <div class="flex-box">
                           <div class="flex-box__cell">
-                            <BankLogo004 :class="$style['bank-logo']" />
+                            <BankLogo size="small" code="081" />
                           </div>
                           <div class="flex-box__cell flex-box__cell--mini">
                             하나
@@ -230,7 +223,7 @@ export default {
                       <KeyValueTitle>
                         <div class="flex-box">
                           <div class="flex-box__cell">
-                            <BankLogo005 :class="$style['bank-logo']" />
+                            <BankLogo size="small" code="088" />
                           </div>
                           <div class="flex-box__cell flex-box__cell--mini">
                             신한
