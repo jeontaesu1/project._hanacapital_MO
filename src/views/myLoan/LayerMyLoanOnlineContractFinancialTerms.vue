@@ -78,23 +78,8 @@ export default {
       </PageTextGroup>
 
       <FormList>
-        <FormListItem
-          titleText="인수일자"
-          target="#layerMyLoanOnlineContractFinancialTermsDate"
-        >
-          <FormInvalid :error="state.dateError">
-            <InputBlock :error="state.dateError">
-              <InputBlockCell :flexible="true">
-                <BasicInput
-                  title="인수일자"
-                  id="layerMyLoanOnlineContractFinancialTermsDate"
-                />
-              </InputBlockCell>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
-        </FormListItem>
-
+        <FormListItem titleText="차량 매매가격">// 차량 매매가격</FormListItem>
+        <FormListItem titleText="입금일자">// 데이트 피커</FormListItem>
         <FormListItem
           titleText="차량 판매자"
           target="#layerMyLoanOnlineContractFinancialTermsName"

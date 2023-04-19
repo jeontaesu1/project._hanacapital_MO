@@ -26,6 +26,9 @@ import BankSelect from '@/components/ui/form/BankSelect.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 
+import IconLogo from '@/assets/images/icon/hanacapital-small.svg?component';
+import IconLink from '@/assets/images/icon/link.svg?component';
+
 export default {
   components: {
     UiLayer,
@@ -51,6 +54,9 @@ export default {
     BankSelect,
     NoticeText,
     TextButton,
+
+    IconLogo,
+    IconLink,
   },
   setup() {
     const layer = ref(null);
@@ -149,7 +155,7 @@ export default {
         </FormListItem>
         <FormListItem
           titleText="계좌번호"
-          target="#layerAutoLeaseOrderDomesticAccount"
+          target="#layerMyLoanOnlineContractDirectDebitDomesticAccount"
         >
           <FormInvalid :error="state.domesticAccountError">
             <InputBlock :error="state.domesticAccountError">
@@ -157,7 +163,7 @@ export default {
                 <BasicInput
                   pattern="\d*"
                   title="계좌번호"
-                  id="layerAutoLeaseOrderDomesticAccount"
+                  id="layerMyLoanOnlineContractDirectDebitDomesticAccount"
                 />
               </InputBlockCell>
               <template v-slot:right>
@@ -182,6 +188,24 @@ export default {
         </FormListItem>
       </FormList>
 
+      <div :class="$style['join']">
+        <div :class="$style['join__inner']">
+          <div :class="$style['join__icon']"><IconLogo /></div>
+          <div :class="$style['join__title']">하나은행 계좌가 없으신가요?</div>
+          <TextButton
+            :block="true"
+            :classNames="{
+              wrap: [$style['join__link'], 'text-body-4 color-gray'],
+            }"
+          >
+            비대면 개설
+            <template v-slot:rightIcon>
+              <IconLink />
+            </template>
+          </TextButton>
+        </div>
+      </div>
+
       <template v-slot:foot>
         <ButtonList
           :classNames="{
@@ -199,3 +223,7 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/myLoan/LayerMyLoanOnlineContractDirectDebit.scss';
+</style>

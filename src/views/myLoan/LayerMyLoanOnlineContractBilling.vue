@@ -127,14 +127,14 @@ export default {
           <FormList>
             <FormListItem
               titleText="이메일"
-              target="#layerMyLoanOnlineContractBillingMail"
+              target="#layerMyLoanOnlineContractBillingMailId"
             >
               <FormInvalid :error="state.mailError">
                 <InputBlock :error="state.mailError">
                   <InputBlockCell :flexible="true">
                     <BasicInput
-                      title="이메일 아이디"
-                      id="layerMyLoanOnlineContractBillingMail"
+                      title="이메일"
+                      id="layerMyLoanOnlineContractBillingMailId"
                     />
                   </InputBlockCell>
                   <InputBlockCell margin="regular">@</InputBlockCell>

@@ -73,22 +73,26 @@ export default {
 
       <IllustObject type="complete" :classNames="{ wrap: $style['illust'] }" />
 
-      <ul :class="$style['logs']">
-        <li>
-          <div :class="$style['logs__block']">
-            <div :class="$style['logs__row']">
-              <div div :class="$style['logs__contents']">
-                <h3 class="text-body-3 font-weight-regular">전자약정계약서</h3>
-              </div>
-              <div div :class="$style['logs__right']">
-                <button type="button" :class="$style['logs__link']">
-                  <span :class="$style['logs__link-text']">진행하기</span>
-                </button>
+      <div>
+        <ul :class="$style['logs']">
+          <li>
+            <div :class="$style['logs__block']">
+              <div :class="$style['logs__row']">
+                <div div :class="$style['logs__contents']">
+                  <h3 class="text-body-3 font-weight-regular">
+                    전자약정계약서
+                  </h3>
+                </div>
+                <div div :class="$style['logs__right']">
+                  <button type="button" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">진행하기</span>
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </div>
 
       <BasicHr
         type="contents"

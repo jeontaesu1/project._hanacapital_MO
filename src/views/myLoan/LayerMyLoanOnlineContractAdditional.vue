@@ -56,7 +56,7 @@ export default {
     const layer = ref(null);
     const state = reactive({
       typeError: false,
-      objectError001: false,
+      objectError: false,
     });
 
     return {
@@ -88,6 +88,7 @@ export default {
       </PageTextGroup>
 
       <FormList>
+        <FormListItem titleText="주거형태">// 주거형태</FormListItem>
         <FormListItem titleText="주택소유구분" :forceFocus="true">
           <FormInvalid :error="state.typeError">
             <BoxCheckList>
@@ -129,8 +130,8 @@ export default {
           target="#layerMyLoanOnlineContractAdditionalobjectButton001"
           :selectOnly="true"
         >
-          <FormInvalid :error="state.objectError001">
-            <InputBlock :error="state.objectError001">
+          <FormInvalid :error="state.objectError">
+            <InputBlock :error="state.objectError">
               <InputBlockCell :flexible="true">
                 <BasicSelect
                   :option="[

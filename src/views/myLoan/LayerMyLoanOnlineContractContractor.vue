@@ -52,9 +52,9 @@ export default {
       addressError002_001: false,
       addressError002_002: false,
       addressError003: false,
-      addressError003_001: false,
-      addressError003_002: false,
-      addressError003_003: false,
+      addressError004: false,
+      addressError004_001: false,
+      addressError004_002: false,
     });
 
     return {
@@ -205,14 +205,14 @@ export default {
           <!-- case: 입력 후 노출 -->
           <FormListItem
             titleText="직장/사업장 주소"
-            target="#layerMyLoanOnlineContractContractorAddress003_001"
+            target="#layerMyLoanOnlineContractContractorAddress004"
           >
-            <FormInvalid :error="state.addressError003_001">
-              <InputBlock :error="state.addressError003_001">
+            <FormInvalid :error="state.addressError004">
+              <InputBlock :error="state.addressError004">
                 <InputBlockCell :flexible="true">
                   <BasicInput
                     title="직장/사업장 주소"
-                    id="layerMyLoanOnlineContractContractorAddress003_001"
+                    id="layerMyLoanOnlineContractContractorAddress004_001"
                     defaultValue="01001"
                     :disabled="true"
                   />
@@ -222,26 +222,26 @@ export default {
                 </template>
               </InputBlock>
               <InputBlock
-                :error="state.addressError003_002"
+                :error="state.addressError004_001"
                 :disabled="true"
                 :classNames="{ wrap: 'row-margin-item-group' }"
               >
                 <InputBlockCell :flexible="true">
                   <BasicInput
-                    id="layerMyLoanOnlineContractContractorAddress003_002"
+                    id="layerMyLoanOnlineContractContractorAddress004_002"
                     defaultValue="인천 서구 에코로 181"
                     :disabled="true"
                   />
                 </InputBlockCell>
               </InputBlock>
               <InputBlock
-                :error="state.addressError003_003"
+                :error="state.addressError004_002"
                 :disabled="true"
                 :classNames="{ wrap: 'row-margin-item-group' }"
               >
                 <InputBlockCell :flexible="true">
                   <BasicInput
-                    id="layerMyLoanOnlineContractContractorAddress003_003"
+                    id="layerMyLoanOnlineContractContractorAddress004_003"
                     defaultValue="하나금융 로비"
                     :disabled="true"
                   />

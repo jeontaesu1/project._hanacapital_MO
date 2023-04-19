@@ -47,7 +47,7 @@ export default {
         </ToastPopupHead>
       </template>
 
-      <PopupText class="color-black font-weight-medium"> [특약사항] </PopupText>
+      <PopupText class="color-black font-weight-medium">[특약사항]</PopupText>
 
       <PopupText class="row-margin-small">
         대출금액 및 이자율은 심사 결과에 따라 달라질 수 있음에 동의합니다.
