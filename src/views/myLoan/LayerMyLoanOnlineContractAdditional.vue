@@ -95,8 +95,8 @@ export default {
               <BoxCheckListItem>
                 <BoxCheck
                   :minSide="true"
-                  name="layerMyLoanOnlineContractAdditional001"
-                  id="layerMyLoanOnlineContractAdditional001_001"
+                  name="layerMyLoanOnlineContractAdditionalType001"
+                  id="layerMyLoanOnlineContractAdditionalType001_001"
                 >
                   <BoxCheckLabel>아파트</BoxCheckLabel>
                 </BoxCheck>
@@ -104,8 +104,8 @@ export default {
               <BoxCheckListItem>
                 <BoxCheck
                   :minSide="true"
-                  name="layerMyLoanOnlineContractAdditional001"
-                  id="layerMyLoanOnlineContractAdditional001_002"
+                  name="layerMyLoanOnlineContractAdditionalType001"
+                  id="layerMyLoanOnlineContractAdditionalType001_002"
                 >
                   <BoxCheckLabel>빌라/연립</BoxCheckLabel>
                 </BoxCheck>
@@ -113,8 +113,8 @@ export default {
               <BoxCheckListItem>
                 <BoxCheck
                   :minSide="true"
-                  name="layerMyLoanOnlineContractAdditional001"
-                  id="layerMyLoanOnlineContractAdditional001_003"
+                  name="layerMyLoanOnlineContractAdditionalType001"
+                  id="layerMyLoanOnlineContractAdditionalType001_003"
                 >
                   <BoxCheckLabel>단독주택</BoxCheckLabel>
                 </BoxCheck>
@@ -122,8 +122,8 @@ export default {
               <BoxCheckListItem>
                 <BoxCheck
                   :minSide="true"
-                  name="layerMyLoanOnlineContractAdditional001"
-                  id="layerMyLoanOnlineContractAdditional001_004"
+                  name="layerMyLoanOnlineContractAdditionalType001"
+                  id="layerMyLoanOnlineContractAdditionalType001_004"
                 >
                   <BoxCheckLabel>기타</BoxCheckLabel>
                 </BoxCheck>
@@ -139,8 +139,8 @@ export default {
               <BoxCheckListItem>
                 <BoxCheck
                   :minSide="true"
-                  name="layerMyLoanOnlineContractAdditionalType"
-                  id="layerMyLoanOnlineContractAdditionalType1"
+                  name="layerMyLoanOnlineContractAdditionalType002"
+                  id="layerMyLoanOnlineContractAdditionalType002_001"
                   :defaultChecked="true"
                 >
                   <BoxCheckLabel>본인소유</BoxCheckLabel>
@@ -149,8 +149,8 @@ export default {
               <BoxCheckListItem>
                 <BoxCheck
                   :minSide="true"
-                  name="layerMyLoanOnlineContractAdditionalType"
-                  id="layerMyLoanOnlineContractAdditionalType2"
+                  name="layerMyLoanOnlineContractAdditionalType002"
+                  id="layerMyLoanOnlineContractAdditionalType002_002"
                 >
                   <BoxCheckLabel>전/월세</BoxCheckLabel>
                 </BoxCheck>
@@ -158,8 +158,8 @@ export default {
               <BoxCheckListItem>
                 <BoxCheck
                   :minSide="true"
-                  name="layerMyLoanOnlineContractAdditionalType"
-                  id="layerMyLoanOnlineContractAdditionalType3"
+                  name="layerMyLoanOnlineContractAdditionalType002"
+                  id="layerMyLoanOnlineContractAdditionalType002_003"
                 >
                   <BoxCheckLabel>기타</BoxCheckLabel>
                 </BoxCheck>

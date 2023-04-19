@@ -146,8 +146,8 @@ export default {
                   :useDelete="false"
                   type="number"
                   pattern="\d*"
-                  title="차량 매매가격"
-                  id="layerMyLoanOnlineContractFinancialTermsBuy002"
+                  title="차량 매매가격 직접입력"
+                  id="layerMyLoanOnlineContractFinancialTermsBuySelf"
                 />
               </InputBlockCell>
               <template v-slot:innerRight>
