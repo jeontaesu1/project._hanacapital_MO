@@ -17,7 +17,7 @@ import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
 import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -40,7 +40,7 @@ export default {
     BasicBoxHead,
     BasicBoxHeadLeft,
     BasicBoxHeadRight,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -86,7 +86,7 @@ export default {
           </BasicBoxHeadRight>
         </BasicBoxHead>
 
-        <KeyValueList margin="regular">
+        <KeyValue margin="regular">
           <KeyValueItem
             :classNames="{
               item: 'text-body-3',
@@ -137,14 +137,14 @@ export default {
             <KeyValueTitle>환급금액</KeyValueTitle>
             <KeyValueText>999,999원</KeyValueText>
           </KeyValueItem>
-        </KeyValueList>
+        </KeyValue>
       </BasicBox>
 
       <section class="row-margin-container-medium">
         <h3 class="text-title-2 row-margin-contents">중도상환조회 조건</h3>
 
         <BasicBox>
-          <KeyValueList margin="regular">
+          <KeyValue margin="regular">
             <KeyValueItem
               :classNames="{
                 item: 'text-body-3',
@@ -187,7 +187,7 @@ export default {
               <KeyValueTitle>예금주</KeyValueTitle>
               <KeyValueText>김하나</KeyValueText>
             </KeyValueItem>
-          </KeyValueList>
+          </KeyValue>
         </BasicBox>
       </section>
 

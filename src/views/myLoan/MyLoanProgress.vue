@@ -12,7 +12,7 @@ import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
 import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
 import RoundStatus from '@/components/ui/text/RoundStatus.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -31,7 +31,7 @@ export default {
     BasicBoxHeadLeft,
     BasicBoxHeadRight,
     RoundStatus,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -104,7 +104,7 @@ export default {
           </RoundStatus>
         </BasicBoxHeadRight>
       </BasicBoxHead>
-      <KeyValueList margin="regular">
+      <KeyValue margin="regular">
         <KeyValueItem>
           <KeyValueTitle class="text-body-3">최대한도</KeyValueTitle>
           <KeyValueText class="text-body-3"> 500만원 </KeyValueText>
@@ -113,7 +113,7 @@ export default {
           <KeyValueTitle class="text-body-3">예상금리</KeyValueTitle>
           <KeyValueText class="text-body-3"> 10.9% (60개월 기준) </KeyValueText>
         </KeyValueItem>
-      </KeyValueList>
+      </KeyValue>
 
       <div
         :class="[
@@ -155,7 +155,7 @@ export default {
           </RoundStatus>
         </BasicBoxHeadRight>
       </BasicBoxHead>
-      <KeyValueList margin="regular">
+      <KeyValue margin="regular">
         <KeyValueItem>
           <KeyValueTitle class="text-body-3">대출금액/기간</KeyValueTitle>
           <KeyValueText class="text-body-3"> 400만원/36개월 </KeyValueText>
@@ -164,7 +164,7 @@ export default {
           <KeyValueTitle class="text-body-3">대출금리</KeyValueTitle>
           <KeyValueText class="text-body-3"> 10.9% </KeyValueText>
         </KeyValueItem>
-      </KeyValueList>
+      </KeyValue>
 
       <div
         :class="[
@@ -208,7 +208,7 @@ export default {
           </RoundStatus>
         </BasicBoxHeadRight>
       </BasicBoxHead>
-      <KeyValueList margin="regular">
+      <KeyValue margin="regular">
         <KeyValueItem>
           <KeyValueTitle class="text-body-3">대출금액/기간</KeyValueTitle>
           <KeyValueText class="text-body-3"> 400만원/36개월 </KeyValueText>
@@ -217,7 +217,7 @@ export default {
           <KeyValueTitle class="text-body-3">대출금리</KeyValueTitle>
           <KeyValueText class="text-body-3"> 10.9% </KeyValueText>
         </KeyValueItem>
-      </KeyValueList>
+      </KeyValue>
 
       <BasicProgress
         :total="4"
@@ -273,7 +273,7 @@ export default {
           </RoundStatus>
         </BasicBoxHeadRight>
       </BasicBoxHead>
-      <KeyValueList margin="regular">
+      <KeyValue margin="regular">
         <KeyValueItem>
           <KeyValueTitle class="text-body-3">대출금액/기간</KeyValueTitle>
           <KeyValueText class="text-body-3"> 24,990,000원/36개월 </KeyValueText>
@@ -282,7 +282,7 @@ export default {
           <KeyValueTitle class="text-body-3">월납부금액</KeyValueTitle>
           <KeyValueText class="text-body-3"> 300,000원 </KeyValueText>
         </KeyValueItem>
-      </KeyValueList>
+      </KeyValue>
 
       <div
         :class="[
@@ -330,7 +330,7 @@ export default {
           </RoundStatus>
         </BasicBoxHeadRight>
       </BasicBoxHead>
-      <KeyValueList margin="regular">
+      <KeyValue margin="regular">
         <KeyValueItem>
           <KeyValueTitle class="text-body-3">대출금액/기간</KeyValueTitle>
           <KeyValueText class="text-body-3"> 24,990,000원/36개월 </KeyValueText>
@@ -339,7 +339,7 @@ export default {
           <KeyValueTitle class="text-body-3">월납부금액</KeyValueTitle>
           <KeyValueText class="text-body-3"> 300,000원 </KeyValueText>
         </KeyValueItem>
-      </KeyValueList>
+      </KeyValue>
 
       <BasicProgress
         :total="4"
@@ -398,7 +398,7 @@ export default {
           </RoundStatus>
         </BasicBoxHeadRight>
       </BasicBoxHead>
-      <KeyValueList margin="regular">
+      <KeyValue margin="regular">
         <KeyValueItem>
           <KeyValueTitle class="text-body-3">차량가격</KeyValueTitle>
           <KeyValueText class="text-body-3"> 24,990,000원 </KeyValueText>
@@ -407,7 +407,7 @@ export default {
           <KeyValueTitle class="text-body-3">신청금액</KeyValueTitle>
           <KeyValueText class="text-body-3">24,990,000원</KeyValueText>
         </KeyValueItem>
-      </KeyValueList>
+      </KeyValue>
 
       <div
         :class="[
@@ -458,7 +458,7 @@ export default {
           </RoundStatus>
         </BasicBoxHeadRight>
       </BasicBoxHead>
-      <KeyValueList margin="regular">
+      <KeyValue margin="regular">
         <KeyValueItem>
           <KeyValueTitle class="text-body-3">대출금액/기간</KeyValueTitle>
           <KeyValueText class="text-body-3"> 24,990,000원/36개월 </KeyValueText>
@@ -467,7 +467,7 @@ export default {
           <KeyValueTitle class="text-body-3">월납부금액</KeyValueTitle>
           <KeyValueText class="text-body-3"> 300,000원 </KeyValueText>
         </KeyValueItem>
-      </KeyValueList>
+      </KeyValue>
 
       <div
         :class="[
@@ -520,7 +520,7 @@ export default {
           </RoundStatus>
         </BasicBoxHeadRight>
       </BasicBoxHead>
-      <KeyValueList margin="regular">
+      <KeyValue margin="regular">
         <KeyValueItem>
           <KeyValueTitle class="text-body-3">이용기간</KeyValueTitle>
           <KeyValueText class="text-body-3"> 36개월 </KeyValueText>
@@ -529,7 +529,7 @@ export default {
           <KeyValueTitle class="text-body-3">월납부금액</KeyValueTitle>
           <KeyValueText class="text-body-3"> 770,800원 </KeyValueText>
         </KeyValueItem>
-      </KeyValueList>
+      </KeyValue>
 
       <BasicProgress
         :total="4"
@@ -589,7 +589,7 @@ export default {
           </RoundStatus>
         </BasicBoxHeadRight>
       </BasicBoxHead>
-      <KeyValueList margin="regular">
+      <KeyValue margin="regular">
         <KeyValueItem>
           <KeyValueTitle class="text-body-3">대출금액/기간</KeyValueTitle>
           <KeyValueText class="text-body-3"> 24,990,000원/36개월 </KeyValueText>
@@ -598,7 +598,7 @@ export default {
           <KeyValueTitle class="text-body-3">월납부금액</KeyValueTitle>
           <KeyValueText class="text-body-3"> 300,000원 </KeyValueText>
         </KeyValueItem>
-      </KeyValueList>
+      </KeyValue>
 
       <div
         :class="[
@@ -651,7 +651,7 @@ export default {
           </RoundStatus>
         </BasicBoxHeadRight>
       </BasicBoxHead>
-      <KeyValueList margin="regular">
+      <KeyValue margin="regular">
         <KeyValueItem>
           <KeyValueTitle class="text-body-3">대출금액/기간</KeyValueTitle>
           <KeyValueText class="text-body-3"> 24,990,000원/36개월 </KeyValueText>
@@ -660,7 +660,7 @@ export default {
           <KeyValueTitle class="text-body-3">월납부금액</KeyValueTitle>
           <KeyValueText class="text-body-3"> 300,000원 </KeyValueText>
         </KeyValueItem>
-      </KeyValueList>
+      </KeyValue>
 
       <div
         :class="[
@@ -714,7 +714,7 @@ export default {
           </RoundStatus>
         </BasicBoxHeadRight>
       </BasicBoxHead>
-      <KeyValueList margin="regular">
+      <KeyValue margin="regular">
         <KeyValueItem>
           <KeyValueTitle class="text-body-3">대출금액/기간</KeyValueTitle>
           <KeyValueText class="text-body-3"> 24,990,000원/36개월 </KeyValueText>
@@ -723,7 +723,7 @@ export default {
           <KeyValueTitle class="text-body-3">월납부금액</KeyValueTitle>
           <KeyValueText class="text-body-3"> 300,000원 </KeyValueText>
         </KeyValueItem>
-      </KeyValueList>
+      </KeyValue>
 
       <div
         :class="[
@@ -777,7 +777,7 @@ export default {
           </RoundStatus>
         </BasicBoxHeadRight>
       </BasicBoxHead>
-      <KeyValueList margin="regular">
+      <KeyValue margin="regular">
         <KeyValueItem>
           <KeyValueTitle class="text-body-3">대출금액/기간</KeyValueTitle>
           <KeyValueText class="text-body-3"> 24,990,000원/36개월 </KeyValueText>
@@ -786,7 +786,7 @@ export default {
           <KeyValueTitle class="text-body-3">월납부금액</KeyValueTitle>
           <KeyValueText class="text-body-3"> 300,000원 </KeyValueText>
         </KeyValueItem>
-      </KeyValueList>
+      </KeyValue>
 
       <div
         :class="[
@@ -837,7 +837,7 @@ export default {
           </RoundStatus>
         </BasicBoxHeadRight>
       </BasicBoxHead>
-      <KeyValueList margin="regular">
+      <KeyValue margin="regular">
         <KeyValueItem>
           <KeyValueTitle class="text-body-3">대출금액/기간</KeyValueTitle>
           <KeyValueText class="text-body-3"> 24,990,000원/36개월 </KeyValueText>
@@ -846,7 +846,7 @@ export default {
           <KeyValueTitle class="text-body-3">월납부금액</KeyValueTitle>
           <KeyValueText class="text-body-3"> 300,000원 </KeyValueText>
         </KeyValueItem>
-      </KeyValueList>
+      </KeyValue>
 
       <div
         :class="[
@@ -900,7 +900,7 @@ export default {
           </RoundStatus>
         </BasicBoxHeadRight>
       </BasicBoxHead>
-      <KeyValueList margin="regular">
+      <KeyValue margin="regular">
         <KeyValueItem>
           <KeyValueTitle class="text-body-3">대출금액/기간</KeyValueTitle>
           <KeyValueText class="text-body-3"> 24,990,000원/36개월 </KeyValueText>
@@ -909,7 +909,7 @@ export default {
           <KeyValueTitle class="text-body-3">월납부금액</KeyValueTitle>
           <KeyValueText class="text-body-3"> 300,000원 </KeyValueText>
         </KeyValueItem>
-      </KeyValueList>
+      </KeyValue>
 
       <div
         :class="[
@@ -960,7 +960,7 @@ export default {
           </RoundStatus>
         </BasicBoxHeadRight>
       </BasicBoxHead>
-      <KeyValueList margin="regular">
+      <KeyValue margin="regular">
         <KeyValueItem>
           <KeyValueTitle class="text-body-3">대출금액/기간</KeyValueTitle>
           <KeyValueText class="text-body-3"> 24,990,000원/36개월 </KeyValueText>
@@ -969,7 +969,7 @@ export default {
           <KeyValueTitle class="text-body-3">월납부금액</KeyValueTitle>
           <KeyValueText class="text-body-3"> 300,000원 </KeyValueText>
         </KeyValueItem>
-      </KeyValueList>
+      </KeyValue>
 
       <div
         :class="[

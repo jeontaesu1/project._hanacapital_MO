@@ -5,7 +5,7 @@ import { onMounted, onUnmounted } from 'vue';
 import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -13,7 +13,7 @@ import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 export default {
   components: {
     PageContents,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -45,7 +45,7 @@ export default {
   <PageContents>
     <h3 class="text-title-2">하나캐피탈 본점</h3>
 
-    <KeyValueList
+    <KeyValue
       margin="regular"
       :classNames="{
         wrap: 'row-margin-contents',
@@ -63,7 +63,7 @@ export default {
         <KeyValueTitle>연락처</KeyValueTitle>
         <KeyValueText>1800-1111</KeyValueText>
       </KeyValueItem>
-    </KeyValueList>
+    </KeyValue>
 
     <div :class="$style['map-area']">
       <div style="height: 100%; background-color: lightgray">// 지도 영역</div>
