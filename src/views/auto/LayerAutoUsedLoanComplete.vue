@@ -15,7 +15,7 @@ import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
 import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -39,7 +39,7 @@ export default {
     BasicBoxHead,
     BasicBoxHeadLeft,
     BasicBoxHeadRight,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -99,7 +99,7 @@ export default {
             </BasicBoxHeadRight>
           </BasicBoxHead>
 
-          <KeyValueList>
+          <KeyValue>
             <KeyValueItem
               :classNames="{
                 item: 'text-body-3',
@@ -115,7 +115,7 @@ export default {
                 <UnitText rightUnit="원" align="right">23,500,000</UnitText>
               </KeyValueText>
             </KeyValueItem>
-          </KeyValueList>
+          </KeyValue>
         </BasicBox>
 
         <BasicBox className="row-margin-item-group">
@@ -125,7 +125,7 @@ export default {
             </BasicBoxHeadLeft>
           </BasicBoxHead>
 
-          <KeyValueList margin="regular">
+          <KeyValue margin="regular">
             <KeyValueItem
               :classNames="{
                 item: 'text-body-3',
@@ -152,7 +152,7 @@ export default {
               <KeyValueTitle>대출신청금액</KeyValueTitle>
               <KeyValueText>1,300 만원</KeyValueText>
             </KeyValueItem>
-          </KeyValueList>
+          </KeyValue>
         </BasicBox>
       </div>
 

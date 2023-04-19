@@ -17,7 +17,7 @@ import RoundTabButton from '@/components/ui/tab/RoundTabButton.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -47,7 +47,7 @@ export default {
     BasicBox,
     BasicBoxHead,
     BasicBoxHeadLeft,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -137,7 +137,7 @@ export default {
                     </BasicBoxHeadLeft>
                   </BasicBoxHead>
 
-                  <KeyValueList margin="regular">
+                  <KeyValue margin="regular">
                     <KeyValueItem
                       :classNames="{
                         item: 'text-body-3',
@@ -218,7 +218,7 @@ export default {
                       <KeyValueTitle>최초 보험 가입일</KeyValueTitle>
                       <KeyValueText>2013-08-14</KeyValueText>
                     </KeyValueItem>
-                  </KeyValueList>
+                  </KeyValue>
                 </BasicBox>
               </section>
               <section class="row-margin-item-group">
@@ -231,7 +231,7 @@ export default {
                     </BasicBoxHeadLeft>
                   </BasicBoxHead>
 
-                  <KeyValueList margin="regular">
+                  <KeyValue margin="regular">
                     <KeyValueItem
                       :classNames="{
                         item: 'text-body-3',
@@ -280,7 +280,7 @@ export default {
                       <KeyValueTitle>타차 피해</KeyValueTitle>
                       <KeyValueText>0회 / 0원</KeyValueText>
                     </KeyValueItem>
-                  </KeyValueList>
+                  </KeyValue>
                 </BasicBox>
               </section>
             </div>
@@ -298,7 +298,7 @@ export default {
                     </BasicBoxHeadLeft>
                   </BasicBoxHead>
 
-                  <KeyValueList margin="regular">
+                  <KeyValue margin="regular">
                     <KeyValueItem
                       :classNames="{
                         item: 'text-body-3',
@@ -325,7 +325,7 @@ export default {
                       <KeyValueTitle>관용</KeyValueTitle>
                       <KeyValueText>이력없음</KeyValueText>
                     </KeyValueItem>
-                  </KeyValueList>
+                  </KeyValue>
                 </BasicBox>
               </section>
               <section class="row-margin-item-group">
@@ -338,7 +338,7 @@ export default {
                     </BasicBoxHeadLeft>
                   </BasicBoxHead>
 
-                  <KeyValueList margin="regular">
+                  <KeyValue margin="regular">
                     <KeyValueItem
                       :classNames="{
                         item: 'text-body-3',
@@ -356,7 +356,7 @@ export default {
                       <KeyValueTitle>20-08-20</KeyValueTitle>
                       <KeyValueText>소유자 변경</KeyValueText>
                     </KeyValueItem>
-                  </KeyValueList>
+                  </KeyValue>
                 </BasicBox>
               </section>
               <section class="row-margin-item-group">
@@ -367,7 +367,7 @@ export default {
                     </BasicBoxHeadLeft>
                   </BasicBoxHead>
 
-                  <KeyValueList margin="regular">
+                  <KeyValue margin="regular">
                     <KeyValueItem
                       :classNames="{
                         item: 'text-body-3',
@@ -394,7 +394,7 @@ export default {
                       <KeyValueTitle>도난</KeyValueTitle>
                       <KeyValueText>이력없음</KeyValueText>
                     </KeyValueItem>
-                  </KeyValueList>
+                  </KeyValue>
                 </BasicBox>
               </section>
             </div>
@@ -459,7 +459,7 @@ export default {
                         </div>
                         <UiAccordionLayer>
                           <div :class="$style['insurance-contents']">
-                            <KeyValueList margin="regular">
+                            <KeyValue margin="regular">
                               <KeyValueItem
                                 :classNames="{
                                   item: 'text-body-3',
@@ -492,7 +492,7 @@ export default {
                                 <KeyValueTitle>보험비용</KeyValueTitle>
                                 <KeyValueText>566,300 원</KeyValueText>
                               </KeyValueItem>
-                            </KeyValueList>
+                            </KeyValue>
                           </div>
                         </UiAccordionLayer>
                       </BasicBox>
@@ -540,7 +540,7 @@ export default {
                         </div>
                         <UiAccordionLayer>
                           <div :class="$style['insurance-contents']">
-                            <KeyValueList margin="regular">
+                            <KeyValue margin="regular">
                               <KeyValueItem
                                 :classNames="{
                                   item: 'text-body-3',
@@ -573,7 +573,7 @@ export default {
                                 <KeyValueTitle>보험비용</KeyValueTitle>
                                 <KeyValueText>566,300 원</KeyValueText>
                               </KeyValueItem>
-                            </KeyValueList>
+                            </KeyValue>
                           </div>
                         </UiAccordionLayer>
                       </BasicBox>
@@ -621,7 +621,7 @@ export default {
                         </div>
                         <UiAccordionLayer>
                           <div :class="$style['insurance-contents']">
-                            <KeyValueList margin="regular">
+                            <KeyValue margin="regular">
                               <KeyValueItem
                                 :classNames="{
                                   item: 'text-body-3',
@@ -654,7 +654,7 @@ export default {
                                 <KeyValueTitle>보험비용</KeyValueTitle>
                                 <KeyValueText>566,300 원</KeyValueText>
                               </KeyValueItem>
-                            </KeyValueList>
+                            </KeyValue>
                           </div>
                         </UiAccordionLayer>
                       </BasicBox>

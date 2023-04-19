@@ -15,7 +15,7 @@ import PageMainText from '@/components/ui/text/PageMainText.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -55,7 +55,7 @@ export default {
     BasicBox,
     BasicBoxHead,
     BasicBoxHeadLeft,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -138,7 +138,7 @@ export default {
           </BasicBoxHeadLeft>
         </BasicBoxHead>
 
-        <KeyValueList margin="regular">
+        <KeyValue margin="regular">
           <KeyValueItem
             :classNames="{
               item: 'text-body-3',
@@ -173,7 +173,7 @@ export default {
             <KeyValueTitle>의료금리</KeyValueTitle>
             <KeyValueText>0.0%</KeyValueText>
           </KeyValueItem>
-        </KeyValueList>
+        </KeyValue>
 
         <BasicHr
           theme="quaternary"
@@ -181,7 +181,7 @@ export default {
           className="row-margin-item-group"
         />
 
-        <KeyValueList>
+        <KeyValue>
           <KeyValueItem>
             <KeyValueTitle
               :classNames="{
@@ -194,7 +194,7 @@ export default {
               <UnitText rightUnit="원" align="right">845,000</UnitText>
             </KeyValueText>
           </KeyValueItem>
-        </KeyValueList>
+        </KeyValue>
       </BasicBox>
 
       <FormList :classNames="{ wrap: 'row-margin-contents' }">

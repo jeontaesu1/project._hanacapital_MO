@@ -9,7 +9,7 @@ import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import StepProgress from '@/components/ui/progress/StepProgress.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -25,7 +25,7 @@ export default {
     PageMainText,
     StepProgress,
     BasicBox,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -74,7 +74,7 @@ export default {
     </PageTextGroup>
 
     <BasicBox>
-      <KeyValueList margin="regular-small">
+      <KeyValue margin="regular-small">
         <KeyValueItem
           :classNames="{
             item: 'text-body-3',
@@ -146,7 +146,7 @@ export default {
           <KeyValueTitle>실납부액</KeyValueTitle>
           <KeyValueText>7,486,670 원</KeyValueText>
         </KeyValueItem>
-      </KeyValueList>
+      </KeyValue>
     </BasicBox>
 
     <template v-slot:foot>

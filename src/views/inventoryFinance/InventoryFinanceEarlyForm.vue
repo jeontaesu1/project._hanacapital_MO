@@ -11,7 +11,7 @@ import StepProgress from '@/components/ui/progress/StepProgress.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -48,7 +48,7 @@ export default {
     BasicBox,
     BasicBoxHead,
     BasicBoxHeadLeft,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -138,7 +138,7 @@ export default {
         </BasicBoxHeadLeft>
       </BasicBoxHead>
 
-      <KeyValueList margin="regular">
+      <KeyValue margin="regular">
         <KeyValueItem
           :classNames="{
             item: 'text-body-3',
@@ -165,7 +165,7 @@ export default {
           <KeyValueTitle>임직원특약</KeyValueTitle>
           <KeyValueText>2,039,040 원</KeyValueText>
         </KeyValueItem>
-      </KeyValueList>
+      </KeyValue>
     </BasicBox>
 
     <BasicHr className="row-margin-container-medium" />
@@ -257,7 +257,7 @@ export default {
       <!-- Case : 가상계좌 입금 선택 시 노출 -->
       <FormListItem titleText="입금가상계좌" :forceFocus="true">
         <BasicBox theme="senary">
-          <KeyValueList align="left" margin="regular" size="regular">
+          <KeyValue align="left" margin="regular" size="regular">
             <KeyValueItem
               :classNames="{
                 item: 'text-body-3',
@@ -333,7 +333,7 @@ export default {
               </KeyValueTitle>
               <KeyValueText>123-456-78901234-1234567890-12345</KeyValueText>
             </KeyValueItem>
-          </KeyValueList>
+          </KeyValue>
         </BasicBox>
         <div class="inline-wrap align-right row-margin-item">
           <TextButton theme="quaternary" @click="layer001Open">

@@ -16,7 +16,7 @@ import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
 import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -52,7 +52,7 @@ export default {
     BasicBoxHead,
     BasicBoxHeadLeft,
     BasicBoxHeadRight,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -150,7 +150,7 @@ export default {
             <CarThumb src="/images/_dummy/car-thumb.png" />
           </BasicBoxHeadRight>
         </BasicBoxHead>
-        <KeyValueList margin="regular">
+        <KeyValue margin="regular">
           <KeyValueItem
             :classNames="{
               item: 'text-body-3',
@@ -159,7 +159,7 @@ export default {
             <KeyValueTitle>신청일자</KeyValueTitle>
             <KeyValueText>2022.12.26</KeyValueText>
           </KeyValueItem>
-        </KeyValueList>
+        </KeyValue>
 
         <ButtonList
           :classNames="{
@@ -330,7 +330,7 @@ export default {
         </FormList>
 
         <BasicBox className="row-margin-contents">
-          <KeyValueList margin="regular">
+          <KeyValue margin="regular">
             <KeyValueItem
               :classNames="{
                 item: 'text-body-3',
@@ -348,7 +348,7 @@ export default {
               <KeyValueTitle>월 납입금액</KeyValueTitle>
               <KeyValueText>605,300 원</KeyValueText>
             </KeyValueItem>
-          </KeyValueList>
+          </KeyValue>
         </BasicBox>
       </section>
 

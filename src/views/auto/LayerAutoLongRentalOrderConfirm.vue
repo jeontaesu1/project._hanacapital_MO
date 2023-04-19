@@ -14,7 +14,7 @@ import PageMainText from '@/components/ui/text/PageMainText.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -37,7 +37,7 @@ export default {
     BasicBox,
     BasicBoxHead,
     BasicBoxHeadLeft,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -89,7 +89,7 @@ export default {
             <UnitText rightUnit="원"><strong>628,190</strong></UnitText>
           </BasicBoxHeadLeft>
         </BasicBoxHead>
-        <KeyValueList margin="regular">
+        <KeyValue margin="regular">
           <KeyValueItem
             :classNames="{
               item: 'text-body-3',
@@ -238,7 +238,7 @@ export default {
             <KeyValueTitle>정비</KeyValueTitle>
             <KeyValueText>정비상품</KeyValueText>
           </KeyValueItem>
-        </KeyValueList>
+        </KeyValue>
 
         <BasicHr
           theme="quaternary"
@@ -246,7 +246,7 @@ export default {
           className="row-margin-contents-small"
         />
 
-        <KeyValueList margin="regular">
+        <KeyValue margin="regular">
           <KeyValueItem
             :classNames="{
               item: 'text-body-3',
@@ -273,7 +273,7 @@ export default {
             <KeyValueTitle>탁송 도착지</KeyValueTitle>
             <KeyValueText>탁송 도착지</KeyValueText>
           </KeyValueItem>
-        </KeyValueList>
+        </KeyValue>
 
         <BasicHr
           theme="quaternary"
@@ -281,7 +281,7 @@ export default {
           className="row-margin-contents-small"
         />
 
-        <KeyValueList margin="regular">
+        <KeyValue margin="regular">
           <KeyValueItem
             :classNames="{
               item: 'text-body-3',
@@ -299,7 +299,7 @@ export default {
             <KeyValueTitle>유형</KeyValueTitle>
             <KeyValueText>손님유형</KeyValueText>
           </KeyValueItem>
-        </KeyValueList>
+        </KeyValue>
 
         <BasicHr
           theme="quaternary"
@@ -307,7 +307,7 @@ export default {
           className="row-margin-contents-small"
         />
 
-        <KeyValueList margin="regular">
+        <KeyValue margin="regular">
           <KeyValueItem
             :classNames="{
               item: 'text-body-3',
@@ -343,7 +343,7 @@ export default {
             <KeyValueTitle>자기부담금(면책금)</KeyValueTitle>
             <KeyValueText>자기부담금(면책금)</KeyValueText>
           </KeyValueItem>
-        </KeyValueList>
+        </KeyValue>
       </BasicBox>
 
       <template v-slot:foot>

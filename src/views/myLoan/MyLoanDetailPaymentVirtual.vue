@@ -6,7 +6,7 @@ import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -26,7 +26,7 @@ export default {
   components: {
     PageContents,
     BasicBox,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -92,12 +92,12 @@ export default {
 
       <BasicBox>
         <UiAccordion tagName="div">
-          <KeyValueList>
+          <KeyValue>
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>결제방법</KeyValueTitle>
               <KeyValueText>가상계좌</KeyValueText>
             </KeyValueItem>
-          </KeyValueList>
+          </KeyValue>
 
           <UiAccordionItem
             tagName="div"
@@ -105,7 +105,7 @@ export default {
               item: 'row-margin-item-group',
             }"
           >
-            <KeyValueList>
+            <KeyValue>
               <KeyValueItem :classNames="{ item: 'text-body-3' }">
                 <KeyValueTitle>계좌정보</KeyValueTitle>
                 <KeyValueText>
@@ -125,12 +125,12 @@ export default {
                   </div>
                 </KeyValueText>
               </KeyValueItem>
-            </KeyValueList>
+            </KeyValue>
 
             <UiAccordionLayer>
               <div :class="$style['account-contents']">
                 <BasicBox theme="senary">
-                  <KeyValueList align="left" margin="regular" size="regular">
+                  <KeyValue align="left" margin="regular" size="regular">
                     <KeyValueItem
                       :classNames="{
                         item: 'text-body-3',
@@ -238,7 +238,7 @@ export default {
                         </CopyButton>
                       </KeyValueText>
                     </KeyValueItem>
-                  </KeyValueList>
+                  </KeyValue>
                 </BasicBox>
               </div>
             </UiAccordionLayer>
@@ -262,7 +262,7 @@ export default {
       </div>
 
       <BasicBox>
-        <KeyValueList margin="regular">
+        <KeyValue margin="regular">
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>청구방법</KeyValueTitle>
             <KeyValueText>이메일</KeyValueText>
@@ -287,7 +287,7 @@ export default {
             <KeyValueTitle>이메일</KeyValueTitle>
             <KeyValueText>hana@test.com</KeyValueText>
           </KeyValueItem>
-        </KeyValueList>
+        </KeyValue>
       </BasicBox>
     </section>
 

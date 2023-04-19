@@ -15,7 +15,7 @@ import PageMainText from '@/components/ui/text/PageMainText.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -35,7 +35,7 @@ export default {
     BasicBox,
     BasicBoxHead,
     BasicBoxHeadLeft,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -76,7 +76,7 @@ export default {
           </BasicBoxHeadLeft>
         </BasicBoxHead>
 
-        <KeyValueList margin="regular">
+        <KeyValue margin="regular">
           <KeyValueItem
             :classNames="{
               item: 'text-body-3',
@@ -111,7 +111,7 @@ export default {
             <KeyValueTitle>즉시출금계좌</KeyValueTitle>
             <KeyValueText>123-456-7890123</KeyValueText>
           </KeyValueItem>
-        </KeyValueList>
+        </KeyValue>
       </BasicBox>
 
       <template v-slot:foot>

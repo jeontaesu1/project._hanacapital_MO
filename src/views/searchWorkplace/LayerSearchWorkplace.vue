@@ -21,7 +21,7 @@ import NavTab from '@/components/ui/tab/NavTab.vue';
 import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -55,7 +55,7 @@ export default {
     SearchButton,
     BasicHr,
     BasicBox,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -226,7 +226,7 @@ export default {
 
                 <UiAccordionLayer>
                   <BasicBox>
-                    <KeyValueList>
+                    <KeyValue>
                       <KeyValueItem :classNames="{ item: 'text-body-4' }">
                         <KeyValueTitle>법인번호</KeyValueTitle>
                         <KeyValueText> 123-45-678910 </KeyValueText>
@@ -241,7 +241,7 @@ export default {
                         <KeyValueTitle>주소</KeyValueTitle>
                         <KeyValueText> 서울 중구 을지로 35 </KeyValueText>
                       </KeyValueItem>
-                    </KeyValueList>
+                    </KeyValue>
                   </BasicBox>
                 </UiAccordionLayer>
               </UiAccordionItem>

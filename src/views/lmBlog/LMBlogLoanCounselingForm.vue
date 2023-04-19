@@ -29,7 +29,7 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -65,7 +65,7 @@ export default {
     TextButton,
     BasicHr,
     BasicBox,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -930,7 +930,7 @@ export default {
       <section class="row-margin-container-medium">
         <h3 class="text-title-2 row-margin-contents">대출상담사 정보</h3>
         <BasicBox>
-          <KeyValueList margin="regular">
+          <KeyValue margin="regular">
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>영업센터</KeyValueTitle>
               <KeyValueText>서울소비자금융센터</KeyValueText>
@@ -939,7 +939,7 @@ export default {
               <KeyValueTitle>대출상담사</KeyValueTitle>
               <KeyValueText>김하나</KeyValueText>
             </KeyValueItem>
-          </KeyValueList>
+          </KeyValue>
         </BasicBox>
       </section>
     </div>
