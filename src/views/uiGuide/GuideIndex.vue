@@ -1464,8 +1464,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/my-loan/penalty',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.17',
         log: [],
       },
       {
@@ -1475,8 +1475,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/my-loan/car-tax',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.18',
         log: [],
       },
       {
