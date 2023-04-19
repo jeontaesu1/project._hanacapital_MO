@@ -32,12 +32,11 @@ export default {
       <template v-slot:head>
         <FullPopupHead>
           <template v-slot:right>
+            <PopupButton type="search" />
             <PopupButton @click="layerSlotProps.close()" />
           </template>
         </FullPopupHead>
       </template>
-
-      <h1>전체메뉴</h1>
 
       <GlobalNav />
     </FullPopup>

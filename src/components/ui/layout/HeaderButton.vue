@@ -12,6 +12,7 @@ import IconMenu from '@/assets/images/common/menu.svg?component';
 import IconSearch from '@/assets/images/common/search.svg?component';
 import IconShare from '@/assets/images/common/share.svg?component';
 import IconClose from '@/assets/images/common/close.svg?component';
+import IconSetting from '@/assets/images/common/setting.svg?component';
 
 export default {
   components: {
@@ -22,6 +23,7 @@ export default {
     IconMenu,
     IconSearch,
     IconShare,
+    IconSetting,
     IconClose,
   },
   props: {
@@ -153,6 +155,15 @@ export default {
     <IconClose :class="styleModule['header__button-icon']" />
     <span :class="styleModule['header__button-text']">닫기</span>
   </button>
+
+  <RouterLink
+    v-else-if="type === 'setting'"
+    to="/setting/home"
+    :class="styleModule['header__button']"
+  >
+    <IconSetting :class="styleModule['header__button-icon']" />
+    <span :class="styleModule['header__button-text']">설정</span>
+  </RouterLink>
 
   <LayerGlobalNav
     ref="gnbLayer"

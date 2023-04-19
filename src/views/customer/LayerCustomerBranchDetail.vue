@@ -5,7 +5,7 @@ import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -16,7 +16,7 @@ export default {
     PopupButton,
     FullPopup,
     FullPopupHead,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -44,7 +44,7 @@ export default {
 
       <h3 class="text-title-2">하나캐피탈 본점</h3>
 
-      <KeyValueList
+      <KeyValue
         margin="regular"
         :classNames="{
           wrap: 'row-margin-contents',
@@ -59,7 +59,7 @@ export default {
           <KeyValueTitle>증권계좌</KeyValueTitle>
           <KeyValueText>123456789</KeyValueText>
         </KeyValueItem>
-      </KeyValueList>
+      </KeyValue>
 
       <div :class="$style['map-area']">
         <div style="height: 100%; background-color: lightgray">

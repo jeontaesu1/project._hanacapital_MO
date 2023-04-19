@@ -17,7 +17,7 @@ import BoxCheck from '@/components/ui/form/BoxCheck.vue';
 import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
 import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
 import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -39,7 +39,7 @@ export default {
     BoxCheckLabel,
     BoxCheckList,
     BoxCheckListItem,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -85,7 +85,7 @@ export default {
             <BoxCheckLabel :classNames="{ label: 'row-margin-item' }"
               >아파트론</BoxCheckLabel
             >
-            <KeyValueList margin="mini">
+            <KeyValue margin="mini">
               <KeyValueItem
                 :classNames="{
                   item: 'text-body-5',
@@ -122,7 +122,7 @@ export default {
                 <KeyValueTitle>최대대출기간</KeyValueTitle>
                 <KeyValueText>60개월</KeyValueText>
               </KeyValueItem>
-            </KeyValueList>
+            </KeyValue>
           </BoxCheck>
         </BoxCheckListItem>
 
@@ -135,7 +135,7 @@ export default {
             <BoxCheckLabel :classNames="{ label: 'row-margin-item' }"
               >e하나신용대출</BoxCheckLabel
             >
-            <KeyValueList margin="mini">
+            <KeyValue margin="mini">
               <KeyValueItem
                 :classNames="{
                   item: 'text-body-5',
@@ -172,7 +172,7 @@ export default {
                 <KeyValueTitle>최대대출기간</KeyValueTitle>
                 <KeyValueText>60개월</KeyValueText>
               </KeyValueItem>
-            </KeyValueList>
+            </KeyValue>
           </BoxCheck>
         </BoxCheckListItem>
 
@@ -185,7 +185,7 @@ export default {
             <BoxCheckLabel :classNames="{ label: 'row-margin-item' }"
               >행복아파트론</BoxCheckLabel
             >
-            <KeyValueList margin="mini">
+            <KeyValue margin="mini">
               <KeyValueItem
                 :classNames="{
                   item: 'text-body-5',
@@ -222,7 +222,7 @@ export default {
                 <KeyValueTitle>최대대출기간</KeyValueTitle>
                 <KeyValueText>60개월</KeyValueText>
               </KeyValueItem>
-            </KeyValueList>
+            </KeyValue>
           </BoxCheck>
         </BoxCheckListItem>
       </BoxCheckList>

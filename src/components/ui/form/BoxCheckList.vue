@@ -19,6 +19,14 @@ export default {
       Type: String,
       default: null,
     },
+    wrap: {
+      Type: Boolean,
+      default: false,
+    },
+    col: {
+      Type: Number,
+      default: 2,
+    },
   },
   setup(props) {
     const customClassNames = computed(() => {
@@ -41,6 +49,8 @@ export default {
       $style['box-check-list'],
       {
         [$style[`box-check-list--align-${align}`]]: align,
+        [$style[`box-check-list--wrap`]]: wrap,
+        [$style[`box-check-list--col-${col}`]]: wrap,
       },
       customClassNames.wrap,
     ]"

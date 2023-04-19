@@ -61,4 +61,9 @@
       @include for-a11y;
     }
   }
+
+  &__button {
+    position: relative;
+    z-index: 11;
+  }
 }

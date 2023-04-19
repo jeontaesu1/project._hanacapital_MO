@@ -12,7 +12,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -34,7 +34,7 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicBox,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -86,7 +86,7 @@ export default {
 
         <UiTabPanel name="layerPersonalLoanEHanaLinkTab001_001">
           <BasicBox theme="tertiary">
-            <KeyValueList align="left">
+            <KeyValue align="left">
               <KeyValueItem>
                 <KeyValueTitle>대상</KeyValueTitle>
                 <KeyValueText>
@@ -109,10 +109,10 @@ export default {
                 <KeyValueTitle>기간</KeyValueTitle>
                 <KeyValueText>12개월 ~ 72개월</KeyValueText>
               </KeyValueItem>
-            </KeyValueList>
+            </KeyValue>
           </BasicBox>
 
-          <KeyValueList
+          <KeyValue
             direction="vertical"
             :classNames="{ wrap: 'row-margin-contents' }"
           >
@@ -174,7 +174,7 @@ export default {
                 </div>
               </KeyValueText>
             </KeyValueItem>
-          </KeyValueList>
+          </KeyValue>
         </UiTabPanel>
         <UiTabPanel name="layerPersonalLoanEHanaLinkTab001_002">
           <ul
