@@ -151,7 +151,7 @@ export default {
         );
       });
       const notOhterElements =
-        'script, link, style, base, meta, br, [aria-hidden], [inert], [data-ui-js]';
+        'script, link, style, base, meta, br, [aria-hidden], [inert], .js-not-inert, .js-not-inert *, [data-ui-js], [data-layer], [data-layer] *, option, ul, dl, table, thead, tbody, tfoot, tr, colgroup, col, :empty, .duet-date__dialog, .duet-date__dialog *';
       const layersParents = (() => {
         let re = [];
         for (let i = 0; i < layers.length; i++) {
