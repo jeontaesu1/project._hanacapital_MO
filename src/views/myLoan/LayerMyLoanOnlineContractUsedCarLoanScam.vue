@@ -151,13 +151,23 @@ export default {
 
         <div class="flex-box row-margin-item">
           <div class="flex-box__cell flex-box__cell--large">
-            <CheckBox id="testCheckBox021" theme="tertiary">
+            <CheckBox
+              type="radio"
+              name="layerMyLoanOnlineContractUsedCarLoanScam"
+              id="layerMyLoanOnlineContractUsedCarLoanScam001"
+              theme="tertiary"
+            >
               <CheckBoxObject />
               <CheckBoxLabelText>예, 있습니다.</CheckBoxLabelText>
             </CheckBox>
           </div>
           <div class="flex-box__cell flex-box__cell--large">
-            <CheckBox id="testCheckBox021" theme="tertiary">
+            <CheckBox
+              type="radio"
+              name="layerMyLoanOnlineContractUsedCarLoanScam"
+              id="layerMyLoanOnlineContractUsedCarLoanScam002"
+              theme="tertiary"
+            >
               <CheckBoxObject />
               <CheckBoxLabelText>아니오, 없습니다.</CheckBoxLabelText>
             </CheckBox>
