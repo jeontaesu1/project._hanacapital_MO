@@ -48,6 +48,16 @@
     }
   }
 
+  &--align {
+    &-right {
+      .input {
+        &__text {
+          text-align: right;
+        }
+      }
+    }
+  }
+
   :global {
     .duet-date,
     .duet-date__input-wrapper {
