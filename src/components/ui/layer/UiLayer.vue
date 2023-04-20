@@ -125,6 +125,7 @@ export default {
       stickyBar: {
         value: null,
       },
+      isContainerClick: false,
     });
 
     const layer = ref(null);
@@ -342,13 +343,14 @@ export default {
     };
 
     const wrapClick = () => {
-      if (props.backgroundClose) {
+      if (props.backgroundClose && !state.isContainerClick) {
         close();
       }
+      state.isContainerClick = false;
     };
 
-    const containerClick = (e) => {
-      e.stopPropagation();
+    const containerClick = () => {
+      state.isContainerClick = true;
     };
 
     onMounted(() => {
