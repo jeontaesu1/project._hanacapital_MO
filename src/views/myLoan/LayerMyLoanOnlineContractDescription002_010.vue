@@ -68,13 +68,14 @@ export default {
             의거하여, 할부금융상품은 같은 법에서 규정하는 청약철회권 대상 상품이
             아닙니다.
           </span>
-          <span class="font-weight-medium"
-            >(다만 재화를 제공받은 경우만 해당합니다.)</span
-          >
+          <span class="font-weight-medium">
+            (다만 재화를 제공받은 경우만 해당합니다.)
+          </span>
         </div>
 
         <NoticeText class="row-margin-item">
-          중도상환수수료가 없는 상품도 있으니 꼭 확인해보세요.
+          할부금융상품은 할부거래에 관한 법률 제 8조의 청약철회권과 같은 법
+          제16조의 항변권을 적용받으며, 주요한 특징은 아래와 같습니다.
         </NoticeText>
 
         <div class="row-margin-contents">
@@ -93,8 +94,10 @@ export default {
               >
                 <div :class="$style['basic-list__symbol']">-</div>
                 <div :class="$style['basic-list__content']">
-                  “할부 구입일 또는 목적물 인도를 받은 날로부터 7일 이내
-                  철회(취소)를 요청할 수 있는 권리”를 말합니다.
+                  <span class="font-weight-medium">
+                    “할부 구입일 또는 목적물 인도를 받은 날로부터 7일 이내
+                    철회(취소)를 요청할 수 있는 권리”</span
+                  >를 말합니다.
                 </div>
               </li>
             </ul>
@@ -117,8 +120,8 @@ export default {
                 <div :class="$style['basic-list__content']">
                   <span class="font-weight-medium">
                     “할부계약기간 중 물품, 서비스 등이 계약내용대로 이행되지
-                    않는 경우 등에 대해 잔여 할부금 지급을 거절할 수 있는 권리”
-                    를
+                    않는 경우 등에 대해 잔여 할부금 지급을 거절할 수 있는
+                    권리”를
                   </span>
                   말합니다.
                 </div>

@@ -64,8 +64,9 @@ export default {
           대출의 상환기일이 도래하기전에 상환할 경우,
           <span class="font-weight-medium">계약이 성립한 날로부터</span>
           <span class="color-red">
-            3년 경과후에도 최대 1%의 해약금(중도상환수수료)이 발생 </span
-          >해요!
+            3년 경과후에도 최대 1%의 해약금(중도상환수수료)이 발생
+          </span>
+          해요!
         </div>
 
         <section class="row-margin-contents">

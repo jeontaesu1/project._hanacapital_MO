@@ -76,9 +76,9 @@ export default {
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
               신용상태가 금리에 영향을 미치지 않는 본 상품은
-              <span class="font-weight-medium"
-                >금리인하요구 대상상품에 해당하지 않아요.</span
-              >
+              <span class="font-weight-medium">
+                금리인하요구 대상상품에 해당하지 않아요.
+              </span>
             </div>
           </li>
           <li
@@ -88,10 +88,10 @@ export default {
             <div :class="$style['basic-list__content']">
               『금융소비자 보호에 관한 법률』 시행령 제37조제1항 제3호가목에
               의거하여, 리스(시설대여)는 같은 법에서
-              <span class="font-weight-medium"
-                >규정하는 청약철회권 대상 상품이 아니에요. 다만, 재화를 제공받은
-                경우만 해당돼요.</span
-              >
+              <span class="font-weight-medium">
+                규정하는 청약철회권 대상 상품이 아니에요. 다만, 재화를 제공받은
+                경우만 해당돼요.
+              </span>
             </div>
           </li>
           <li
@@ -100,10 +100,10 @@ export default {
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
               리스상품은
-              <span class="font-weight-medium"
-                >계약이 성립한 날부터 3년 초과하여 상환하여도 중도해지수수료
-                또는 규정손해배상금이 부과되니 유의 해 주세요.</span
-              >
+              <span class="font-weight-medium">
+                계약이 성립한 날부터 3년 초과하여 상환하여도 중도해지수수료 또는
+                규정손해배상금이 부과되니 유의 해 주세요.
+              </span>
             </div>
           </li>
           <li
@@ -111,9 +111,9 @@ export default {
           >
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              <span class="font-weight-medium"
-                >반납할 경우 차량상태에 따라 일부 비용이 발생할 수 있어요.</span
-              >
+              <span class="font-weight-medium">
+                반납할 경우 차량상태에 따라 일부 비용이 발생할 수 있어요.
+              </span>
             </div>
           </li>
         </ul>

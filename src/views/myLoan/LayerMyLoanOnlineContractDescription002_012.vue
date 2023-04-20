@@ -138,10 +138,10 @@ export default {
           </li>
         </ul>
 
-        <NoticeText>
+        <NoticeText class="font-weight-medium">
           금융회사는 법령, 제3자의 이익 침해, 영업비밀의 침해 등의 사유가 있는
           경우 이를 고객에게 알리고
-          <span class="color-red">
+          <span class="color-red font-weight-regular">
             자료 열람을 제한하거나 거절할 수 있습니다.
           </span>
         </NoticeText>

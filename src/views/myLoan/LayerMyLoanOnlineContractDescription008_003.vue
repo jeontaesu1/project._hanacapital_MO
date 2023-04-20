@@ -52,7 +52,7 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>대출금을 만기 전에 상환하고 싶은데 </strong><br />
+          <strong>대출금을 만기 전에 상환하고 싶은데</strong><br />
           가능한가요?
         </PageMainText>
       </PageTextGroup>
@@ -62,19 +62,20 @@ export default {
       <div class="row-margin-item-group-small">
         <div class="text-body-2">
           <span class="font-weight-medium">운용리스</span>의 경우
-          <span class="color-red"
-            >계약이 성립한 날로부터
+          <span class="color-red">
+            계약이 성립한 날로부터
             <span class="font-weight-medium">3년 경과 후에도</span>
-            중도상환수수료가 부과</span
-          >되니 확인해야 해요!<span class="font-weight-medium"
-            >(중도해지 후 물건 반납 시 중도해지손해배상금, 물건 매입 시
-            규정손해배상금)</span
-          >
+            중도상환수수료가 부과
+          </span>
+          <span class="font-weight-medium">
+            (중도해지 후 물건 반납 시 중도해지손해배상금, 물건 매입 시
+            규정손해배상금)
+          </span>
           되니 확인해야 해요!
         </div>
 
         <section class="row-margin-contents">
-          <div class="color-gray-secondary text-body-4">규정손해배상금</div>
+          <div class="color-gray-secondary text-body-4">중도해지손해배상금</div>
           <ul :class="[$style['basic-list'], 'row-margin-mini']">
             <li
               :class="[

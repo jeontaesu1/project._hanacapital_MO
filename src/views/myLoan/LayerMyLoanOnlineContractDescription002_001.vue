@@ -67,8 +67,8 @@ export default {
               이루어지는 오토론과는 달리,
             </span>
             소비자-금융사-물품판매자 간의
-            <span class="font-weight-medium"
-              >3자계약에 따라 금융회사는 소비자를 대신하여 물품판매자에게
+            <span class="font-weight-medium">
+              3자계약에 따라 금융회사는 소비자를 대신하여 물품판매자에게
               대출금을 지급하고, 소비자는 할부 상품의 소유권을 취득</span
             >하게 되는 상품 이에요!
           </div>

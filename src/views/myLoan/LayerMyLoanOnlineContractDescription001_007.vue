@@ -70,9 +70,8 @@ export default {
         </div>
 
         <NoticeText class="color-red row-margin-item">
-          동일한 금융회사를 대상으로 최근 1개월 내에 2회 이상 대출계약을
-          철회하는 경우, 신규대출·만기연장 거절, 대출한도 축소, 금리우대 제한 등
-          불이익이 발생할 수 있습니다.
+          신용상태가 금리에 영향을 미치지 않는 상품은 금리인하요구권의 행사
+          대상에서 제외되오니, 상단의 체크박스를 확인 해 주세요.
         </NoticeText>
 
         <ul :class="$style['basic-list']">
@@ -127,7 +126,7 @@ export default {
             <BasicButton :line="true" theme="quaternary">이전</BasicButton>
           </ButtonListItem>
           <ButtonListItem>
-            <BasicButton :disabled="true">확인했습니다</BasicButton>
+            <BasicButton>확인했습니다</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

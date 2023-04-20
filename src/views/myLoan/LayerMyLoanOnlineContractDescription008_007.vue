@@ -63,9 +63,9 @@ export default {
         <div class="text-body-2">
           「여신전문금융업법」 제50조의 13(금리인하요구) 에서 정하는 바에 따라,
           <span class="font-weight-medium">운용리스</span>는
-          <span class="color-red"
-            >같은 법에서 규정하는 금리인하요구권 대상 상품이 아니에요.</span
-          >
+          <span class="color-red">
+            같은 법에서 규정하는 금리인하요구권 대상 상품이 아니에요.
+          </span>
         </div>
       </div>
 

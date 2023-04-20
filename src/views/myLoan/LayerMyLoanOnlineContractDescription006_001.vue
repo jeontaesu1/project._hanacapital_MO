@@ -65,8 +65,8 @@ export default {
           대출 약정 체결(2자 거래)로 이루어지는 오토론과는 달리,
           <span class="font-weight-medium">소비자 – 금융사 – 물품판매자</span>
           간의 3자 계약에 따라
-          <span class="font-weight-medium"
-            >금융회사는 소비자를 대신하여 물품판매자에게 대출금을 지급</span
+          <span class="font-weight-medium">
+            금융회사는 소비자를 대신하여 물품판매자에게 대출금을 지급</span
           >하고,
           <span class="color-red">소비자는 할부상품의 소유권을 취득</span>하게
           되는 상품이에요.

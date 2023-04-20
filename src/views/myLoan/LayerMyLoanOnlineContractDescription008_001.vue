@@ -71,17 +71,17 @@ export default {
             <span class="color-red">운용리스</span>로 구분돼요.
           </div>
           <div class="row-margin-item">
-            <span class="font-weight-medium"
-              >운용리스는 금융리스 외의 리스를 통칭해요.</span
+            <span class="font-weight-medium">
+              운용리스는 금융리스 외의 리스를 통칭해요.</span
             ><br />
             리스회사가 범용성이 높은 물건을 리스이용자에게 필요기간 동안
             이용하게 하고,
-            <span class="color-red"
-              >리스기간 종료 시 물건을 반환하는 것을 원칙으로 하는 계약</span
+            <span class="color-red">
+              리스기간 종료 시 물건을 반환하는 것을 원칙으로 하는 계약</span
             >을 의미하며,
-            <span class="font-weight-medium"
-              >리스료 전체에 대해 손비처리(비용처리)를 진행해요.</span
-            >
+            <span class="font-weight-medium">
+              리스료 전체에 대해 손비처리(비용처리)를 진행해요.
+            </span>
           </div>
         </div>
 

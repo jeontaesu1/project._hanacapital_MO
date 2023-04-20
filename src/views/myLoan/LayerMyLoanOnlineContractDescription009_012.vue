@@ -62,8 +62,8 @@ export default {
       <div class="row-margin-item-group-small">
         <div class="text-body-2">
           보다 상세한 손님의 권리는
-          <span class="font-weight-medium"
-            >인터넷 홈페이지(www.hanacapital.co.kr) 고객센터 →
+          <span class="font-weight-medium">
+            인터넷 홈페이지(www.hanacapital.co.kr) 고객센터 →
             금융소비자보호</span
           >에서 확인하실 수 있어요.
         </div>

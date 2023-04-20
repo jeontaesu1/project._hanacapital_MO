@@ -63,10 +63,10 @@ export default {
         <div class="text-body-2">
           일반적인 대출(신용대출, 오토론 등)과는 달리
           <span class="font-weight-medium">할부금융</span>의 경우
-          <span class="color-red"
-            >계약이 성립한 날로부터 3년 경과 후에도, 중도상환수수료
-            (중도상환수수료율 2%)가 발생해요.</span
-          >
+          <span class="color-red">
+            계약이 성립한 날로부터 3년 경과 후에도, 중도상환수수료
+            (중도상환수수료율 2%)가 발생해요.
+          </span>
         </div>
       </div>
 

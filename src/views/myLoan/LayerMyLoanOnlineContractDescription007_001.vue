@@ -72,11 +72,12 @@ export default {
           </div>
           <div class="row-margin-item">
             <span class="font-weight-medium">금융리스</span>는
-            <span class="color-red"
-              >물건의 소유에 따른 위험과 보상의 대부분이 고객에게 이전되는
+            <span class="color-red">
+              물건의 소유에 따른 위험과 보상의 대부분이 고객에게 이전되는
               리스</span
-            >에요. 본질적 기능은 고객에게 물건 취득자금에 대한 금융 편의를
-            제공하는 데에 있기 때문에,
+            >에요.<br />
+            본질적 기능은 고객에게 물건 취득자금에 대한 금융 편의를 제공하는
+            데에 있기 때문에,
             <span class="color-red">원칙적으로 반납이 불가해요!</span>
           </div>
         </div>

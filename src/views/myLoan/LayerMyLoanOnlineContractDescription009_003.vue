@@ -62,8 +62,8 @@ export default {
       <div class="row-margin-item-group-small">
         <div class="text-body-2">
           <span class="font-weight-medium">금융리스</span>의 경우
-          <span class="color-red"
-            >계약이 성립한 날로부터 3년 경과 후에도 중도상환수수료가 부과(물건
+          <span class="color-red">
+            계약이 성립한 날로부터 3년 경과 후에도 중도상환수수료가 부과(물건
             매입 시 규정손해배상금)</span
           >되니 확인해야 해요!
         </div>

@@ -63,12 +63,11 @@ export default {
         <div class="text-body-2">
           <span class="color-red">
             리스료 연체 시에는 법에서 정하는 범위 내에서 약정에 따라 정한
-            지연배상금율에 의한 지연배상금을 납부
+            지연배상금율에 의한 지연배상금을 납부</span
+          >하셔야 하며,
+          <span class="font-weight-medium">
+            신용점수 하락 및 금융거래 제한 등이 발생
           </span>
-          하셔야 하며,
-          <span class="font-weight-medium"
-            >신용점수 하락 및 금융거래 제한 등이 발생</span
-          >
           할 수 있으니 유의 해야해요!
         </div>
 

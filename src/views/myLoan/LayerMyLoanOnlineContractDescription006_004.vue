@@ -67,15 +67,13 @@ export default {
             <span class="color-red font-weight-medium">‘기한의 이익’</span
             >이라고 해요.
           </div>
-          <div class="row-margin-item">
-            <span class="font-weight-medium"
-              >이러한 기한의 이익이 상실되면,</span
-            >
-            <span class="color-red"
-              >고객은 모든 할부금을 즉시 상환하여야 하고, 연체이자 부담 및
-              일정기간 경과 후 신용도판단정보 등록 등</span
-            >
-            <span class="font-weight-medium">불이익이 발생 할 수 있어요!</span>
+          <div class="row-margin-item font-weight-medium">
+            이러한 기한의 이익이 상실되면,
+            <span class="color-red font-weight-regular">
+              고객은 모든 할부금을 즉시 상환하여야 하고, 연체이자 부담 및
+              일정기간 경과 후 신용도판단정보 등록 등
+            </span>
+            불이익이 발생 할 수 있어요!
           </div>
         </div>
       </div>

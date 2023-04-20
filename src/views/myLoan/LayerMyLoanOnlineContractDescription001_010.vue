@@ -62,8 +62,9 @@ export default {
       <div class="row-margin-item-group-small">
         <div class="text-body-2">
           <span class="font-weight-medium">
-            고객은 분쟁조정 또는 소송의 수행 등 권리구제를 위한 목적</span
-          >으로 금융회사가 기록 및 유지·관리하는 다음의 자료에 대한 열람(사본 및
+            고객은 분쟁조정 또는 소송의 수행 등 권리구제를 위한 목적
+          </span>
+          으로 금융회사가 기록 및 유지·관리하는 다음의 자료에 대한 열람(사본 및
           청취 포함)을 요구할 수 있어요.
         </div>
 

@@ -63,11 +63,10 @@ export default {
         <div class="text-body-2">
           <span class="font-weight-medium">
             금융회사가 아래와 같이 「금융소비자 보호에 관한 법률」(이하
-            “금융소비자보호법”)상 의무
-          </span>
-          를 위반하여 대출계약을 체결한 경우, 일반금융소비자는 해당 계약을
+            “금융소비자보호법”)상 의무</span
+          >를 위반하여 대출계약을 체결한 경우, 일반금융소비자는 해당 계약을
           위약금 등 수수료
-          <span class="font-weight-medium">부과 없이 해지할 수 있어요.</span>
+          <span class="font-weight-medium">부과 없이 해지할 수 있어요. </span>
           <span class="color-red">(다만 계약종료 시 행사 불가)</span>
         </div>
 

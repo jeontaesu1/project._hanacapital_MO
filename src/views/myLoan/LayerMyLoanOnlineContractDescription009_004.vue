@@ -66,9 +66,9 @@ export default {
             지연배상금율에 의한 지연배상금을 납부
           </span>
           하셔야 하며,
-          <span class="font-weight-medium"
-            >신용점수 하락 및 금융거래 제한 등이 발생</span
-          >
+          <span class="font-weight-medium">
+            신용점수 하락 및 금융거래 제한 등이 발생
+          </span>
           할 수 있으니 유의 해야해요!
         </div>
 

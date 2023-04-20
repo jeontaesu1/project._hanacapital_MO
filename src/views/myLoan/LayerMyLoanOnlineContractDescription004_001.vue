@@ -66,8 +66,8 @@ export default {
           <span class="font-weight-medium">오토론은</span> 판매사와 금융사 간의
           할부 약정 체결로 이루어지는 할부(3자 거래)와 달리
           <span class="font-weight-medium">
-            금융회사와 소비자의 대출 약정 체결 (2자 거래)로 이루어지며<br />
-          </span>
+            금융회사와 소비자의 대출 약정 체결 (2자 거래)</span
+          >로 이루어지며<br />
           <span class="color-red">대출금은 고객계좌 송금을 원칙으로 해요.</span>
         </div>
 

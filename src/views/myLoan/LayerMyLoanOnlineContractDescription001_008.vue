@@ -65,9 +65,9 @@ export default {
         <div class="text-body-2">
           고객은 계약체결일 또는 계약서류를 제공받은 날(다만 금전·재화·용역의
           지급이 늦게 이루어진 경우에는 그 지급일로 대체)로부터
-          <span class="font-weight-medium"
-            >14일 이내에 계약에 대한 청약을 철회할 수 있어요.</span
-          >
+          <span class="font-weight-medium">
+            14일 이내에 계약에 대한 청약을 철회할 수 있어요.
+          </span>
         </div>
 
         <NoticeText class="color-red row-margin-item">

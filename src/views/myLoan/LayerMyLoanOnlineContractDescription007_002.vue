@@ -63,18 +63,17 @@ export default {
         <div class="text-body-2">
           <div>
             리스 이용 시
-            <span class="font-weight-medium"
-              >고객이 부담해야 하는 금액에는 리스료와 수수료 등이
-              포함돼요.</span
-            >
+            <span class="font-weight-medium">
+              고객이 부담해야 하는 금액에는 리스료와 수수료 등이 포함돼요.
+            </span>
           </div>
           <div class="row-margin-item">
             또한 자동차의 구입, 인도, 유지, 사용, 등록말소, 폐차 등과 관련하여
             고객이 부담하여야 할 비용 중
-            <span class="color-red"
-              >리스료에 포함되지 않은 비용과 제세공과금(자동차세, 과태료, 벌과금
-              포함)은 고객이 부담해요.</span
-            >
+            <span class="color-red">
+              리스료에 포함되지 않은 비용과 제세공과금(자동차세, 과태료, 벌과금
+              포함)은 고객이 부담해요.
+            </span>
           </div>
         </div>
       </div>

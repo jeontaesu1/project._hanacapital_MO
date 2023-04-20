@@ -62,20 +62,20 @@ export default {
       <div class="row-margin-item-group-small">
         <div class="text-body-2">
           <div>
-            <span class="font-weight-medium"
-              >당사 인터넷 홈페이지(www.hanacapital.co.kr)
+            <span class="font-weight-medium">
+              당사 인터넷 홈페이지(www.hanacapital.co.kr)
             </span>
             및
-            <span class="font-weight-medium"
-              >고객센터(1800-1110)를 통해 금융상품에 관한 문의</span
+            <span class="font-weight-medium">
+              고객센터(1800-1110)를 통해 금융상품에 관한 문의</span
             >가 가능하며,
           </div>
 
           <div class="row-margin-item">
             <span class="font-weight-medium">분쟁 발생 시에는 </span>
             <span class="color-red">금융감독원(국번없이 1332)</span>
-            <span class="font-weight-medium">등에 도움을 요청</span> 할 수
-            있어요.
+            <span class="font-weight-medium">등에 도움을 요청</span>
+            할 수 있어요.
           </div>
         </div>
       </div>

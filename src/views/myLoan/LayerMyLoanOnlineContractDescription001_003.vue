@@ -54,7 +54,7 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>대출금을 만기 전에 상환하고 싶은데 </strong><br />
+          <strong>대출금을 만기 전에 상환하고 싶은데</strong><br />
           가능한가요?
         </PageMainText>
       </PageTextGroup>
@@ -65,9 +65,9 @@ export default {
         <div class="text-body-2">
           <div>
             대출 실행 후
-            <span class="font-weight-medium"
-              >3년 이내에 대출금액을 중도상환</span
-            >
+            <span class="font-weight-medium">
+              3년 이내에 대출금액을 중도상환
+            </span>
             할 경우,
             <span class="color-red">
               중도상환수수료(중도상환수수료율 2%)가 발생해요.

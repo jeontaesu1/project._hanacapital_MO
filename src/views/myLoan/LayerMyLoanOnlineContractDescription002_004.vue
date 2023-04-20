@@ -70,9 +70,8 @@ export default {
           </div>
           <div class="row-margin-item">
             <span class="color-red">
-              상세한 금액의 합계는 대출심사 후에 확인 가능
-            </span>
-            하므로 심사 후 담당자가 안내 드리도록 하겠습니다!
+              상세한 금액의 합계는 대출심사 후에 확인 가능</span
+            >하므로 심사 후 담당자가 안내 드리도록 하겠습니다!
           </div>
         </div>
       </div>

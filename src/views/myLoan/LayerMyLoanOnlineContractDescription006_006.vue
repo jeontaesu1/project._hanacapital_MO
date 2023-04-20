@@ -62,12 +62,12 @@ export default {
       <div class="row-margin-item-group-small">
         <div class="text-body-2">
           <div>
-            <span class="font-weight-medium"
-              >당사 인터넷 홈페이지(www.hanacapital.co.kr)</span
-            >
+            <span class="font-weight-medium">
+              당사 인터넷 홈페이지(www.hanacapital.co.kr)
+            </span>
             및
-            <span class="font-weight-medium"
-              >고객센터(1800-1110)를 통해 금융상품에 관한 문의</span
+            <span class="font-weight-medium">
+              고객센터(1800-1110)를 통해 금융상품에 관한 문의</span
             >가 가능하며,
           </div>
 

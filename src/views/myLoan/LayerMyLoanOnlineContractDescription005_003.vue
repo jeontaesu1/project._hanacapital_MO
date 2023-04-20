@@ -63,9 +63,9 @@ export default {
         <div class="text-body-2">
           기본적으로 <span class="font-weight-medium">대출금과 이자</span>에
           대한 상환의무를 부담하게 되며, 대출상품에 따라
-          <span class="color-red"
-            >인지세 등 추가적인 비용을 부담할 수 있어요.</span
-          >
+          <span class="color-red">
+            인지세 등 추가적인 비용을 부담할 수 있어요.
+          </span>
         </div>
       </div>
 

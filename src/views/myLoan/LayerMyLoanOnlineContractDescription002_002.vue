@@ -61,25 +61,23 @@ export default {
 
       <div class="row-margin-item-group-small">
         <div class="text-body-2">
-          <div>
-            <span class="font-weight-medium">
-              해당 금융거래로 인하여 개인신용평가회사가 개인싱용평점을 만들어 낼
-              때 신용정보주체에게 불이익이 발생할 수 있으며,
-            </span>
-            <span class="color-red">
+          <div class="font-weight-medium">
+            해당 금융거래로 인하여 개인신용평가회사가 개인싱용평점을 만들어 낼
+            때 신용정보주체에게 불이익이 발생할 수 있으며,
+            <span class="color-red font-weight-regular">
               개인신용평점 하락 시 불이익 발생 가능성이 있는 금융거래
             </span>
-            <span class="font-weight-medium">
-              는 신용공여, 신용카드, 시설대여 및 할부금융거래 등 입니다.
-            </span>
+            는 신용공여, 신용카드, 시설대여 및
+            <span class="color-red font-weight-regular">할부금융거래</span>
+            등 입니다.
           </div>
 
           <div class="row-margin-contents">
             또한,
             <span class="color-red">
               신용공여 (할부금융, 대출 등) 사실만으로 신용점수가 하락할
-              수있습니다.</span
-            ><br />
+              수있습니다.<br />
+            </span>
             당사가 신용조회회사를 통하여 귀하의 개인(신용)정보를 조회한 기록은
             타금융기관 등에 제공될 수 있습니다.
           </div>

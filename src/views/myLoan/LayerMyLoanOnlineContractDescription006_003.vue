@@ -63,9 +63,9 @@ export default {
         <div class="text-body-2">
           <span class="font-weight-medium">할부계약</span>을 체결하는 경우
           고객이 부담하여야 하는
-          <span class="color-red"
-            >총 금액에는 원리금, 수수료 등이 포함돼요.</span
-          >
+          <span class="color-red">
+            총 금액에는 원리금, 수수료 등이 포함돼요.
+          </span>
           상세한 금액의 합계는 대출심사 후에 확인 가능해서, 심사 후 담당자가
           안내 해 드릴게요.
         </div>
