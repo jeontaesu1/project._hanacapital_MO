@@ -6,6 +6,7 @@ import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
+import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import StepProgress from '@/components/ui/progress/StepProgress.vue';
 import CheckBox from '@/components/ui/form/CheckBox.vue';
@@ -33,6 +34,7 @@ export default {
     PopupButton,
     FullPopup,
     FullPopupHead,
+    PageTextGroup,
     PageMainText,
     StepProgress,
     CheckBox,
@@ -80,13 +82,15 @@ export default {
         <StepProgress :total="5" :current="5" />
       </template>
 
-      <PageMainText>
-        심사서류를<br />
-        <strong>등록해주세요</strong>
-      </PageMainText>
+      <PageTextGroup>
+        <PageMainText>
+          심사서류를<br />
+          <strong>등록해주세요</strong>
+        </PageMainText>
+      </PageTextGroup>
 
-      <div class="row-margin-contents-group row-margin-bottom-none">
-        <h3 class="text-body-2 row-margin-item-medium">심사서류 안내</h3>
+      <section>
+        <h3 class="text-body-2 row-margin-item-group">심사서류 안내</h3>
         <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
           <li
             :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
@@ -105,15 +109,20 @@ export default {
             </div>
           </li>
         </ul>
-      </div>
+      </section>
 
-      <section class="row-margin-container">
-        <CheckBox id="testCheckBox022" theme="tertiary" :defaultChecked="true">
+      <div class="row-margin-contents-group">
+        <CheckBox
+          id="layerAutoSuccessionAssigneeAddDocumenCheck"
+          theme="tertiary"
+          :defaultChecked="true"
+          :classNames="{ wrap: 'row-margin-item-medium' }"
+        >
           <CheckBoxObject />
           <CheckBoxLabelText>팩스 접수 예약하기</CheckBoxLabelText>
         </CheckBox>
 
-        <BoxCheckList class="row-margin-item-medium">
+        <BoxCheckList>
           <BoxCheckListItem>
             <BoxCheck
               :minSide="true"
@@ -143,39 +152,33 @@ export default {
             </BoxCheck>
           </BoxCheckListItem>
         </BoxCheckList>
-      </section>
 
-      <FormList>
-        <FormListItem
-          titleText="팩스발송번호"
-          target="#layerAutoSuccessionAssigneeAddDocumenNumber"
+        <FormList :classNames="{ wrap: 'row-margin-contents' }">
+          <FormListItem
+            titleText="팩스발송번호"
+            target="#layerAutoSuccessionAssigneeAddDocumenNumber"
+          >
+            <FormInvalid :error="state.numberError">
+              <InputBlock :error="state.numberError">
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    title="팩스발송번호"
+                    id="layerAutoSuccessionAssigneeAddDocumenNumber"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+        </FormList>
+
+        <NoticeText :classNames="{ wrap: 'row-margin-item' }">
+          접수 예정일/팩스 발송번호가 상이할 경우 서류 확인이 어렵습니다.
+        </NoticeText>
+        <NoticeText :classNames="{ wrap: 'row-margin-item' }"
+          >하나캐피탈 팩스번호(02-2037-XXXX)</NoticeText
         >
-          <FormInvalid :error="state.numberError">
-            <InputBlock :error="state.numberError">
-              <InputBlockCell :flexible="true">
-                <BasicInput
-                  title="팩스발송번호"
-                  id="layerAutoSuccessionAssigneeAddDocumenNumber"
-                />
-              </InputBlockCell>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
-        </FormListItem>
-      </FormList>
-
-      <section :class="[$style['notice-section'], 'row-margin-contents']">
-        <ul class="reset-list">
-          <li class="row-margin-item">
-            <NoticeText>
-              접수 예정일/팩스 발송번호가 상이할 경우 서류 확인이 어렵습니다.
-            </NoticeText>
-          </li>
-          <li class="row-margin-item">
-            <NoticeText>하나캐피탈 팩스번호(02-2037-XXXX)</NoticeText>
-          </li>
-        </ul>
-      </section>
+      </div>
 
       <template v-slot:foot>
         <ButtonList

@@ -37,12 +37,12 @@ export default {
 </script>
 
 <template>
-  <UiLayer ref="layer" type="full">
+  <UiLayer ref="layer" type="full" v-slot="layerSlotProps">
     <FullPopup>
       <template v-slot:head>
         <FullPopupHead>
-          <template v-slot:left>
-            <PopupButton type="back" />
+          <template v-slot:right>
+            <PopupButton @click="layerSlotProps.close()" />
           </template>
         </FullPopupHead>
       </template>

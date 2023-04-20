@@ -6,7 +6,7 @@ import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import ToastPopup from '@/components/ui/layer/ToastPopup.vue';
 import ToastPopupHead from '@/components/ui/layer/ToastPopupHead.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -24,7 +24,7 @@ export default {
     ToastPopup,
     ToastPopupHead,
     PopupTitle,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -54,84 +54,64 @@ export default {
         </ToastPopupHead>
       </template>
 
-      <KeyValueList margin="regular">
+      <KeyValue margin="regular">
         <KeyValueItem>
-          <KeyValueTitle :classNames="{ title: 'flex-box' }">
-            렌트료 합계
-            <BasicTooltip
-              placement="bottom"
-              :classNames="{ wrap: $style['switch-list__tip'] }"
-            >
-              <IconTooltip
-                :class="[$style['tooltip-icon--small'], 'display-block']"
-              />
-              <span class="for-a11y">(도움말)</span>
+          <KeyValueTitle>
+            <div class="flex-box">
+              <div class="flex-box__cell">렌트료 합계</div>
+              <div class="flex-box__cell flex-box__cell--small">
+                <BasicTooltip placement="bottom">
+                  <IconTooltip :class="$style['icon']" />
+                  <span class="for-a11y">(도움말)</span>
 
-              <template v-slot:contents>
-                <section :class="$style['tooltip-section']">
-                  <h3 :class="$style['tooltip-section__title']">렌트료 합계</h3>
-                  <ul
-                    :class="[
-                      $style['basic-list'],
-                      $style['basic-list--mini-margin'],
-                      $style['basic-list--no-symbol'],
-                    ]"
-                  >
-                    <li :class="[$style['basic-list__item'], 'color-white']">
-                      <div :class="$style['basic-list__content']">
+                  <template v-slot:contents>
+                    <section :class="$style['tooltip-section']">
+                      <h3 :class="$style['tooltip-section__title']">
+                        렌트료 합계
+                      </h3>
+                      <p :class="$style['tooltip-section__text']">
                         “잔여기간(00개월)×월 렌트료(0원)”으로 렌트료 총 납부금액
                         0원입니다.
-                      </div>
-                    </li>
-                  </ul>
-                </section>
-              </template>
-            </BasicTooltip>
+                      </p>
+                    </section>
+                  </template>
+                </BasicTooltip>
+              </div>
+            </div>
           </KeyValueTitle>
           <KeyValueText>
-            0 원<br />
-            <p
+            <div>0 원</div>
+            <div
               class="text-body-4 font-weight-light color-gray-tertiary row-margin-mini"
             >
               자동차세 포함
-            </p>
+            </div>
           </KeyValueText>
         </KeyValueItem>
 
         <KeyValueItem>
-          <KeyValueTitle :classNames="{ title: 'flex-box' }">
-            만기 인수 시 납부금액
-            <BasicTooltip
-              placement="bottom"
-              :classNames="{ wrap: $style['switch-list__tip'] }"
-            >
-              <IconTooltip
-                :class="[$style['tooltip-icon--small'], 'display-block']"
-              />
-              <span class="for-a11y">(도움말)</span>
+          <KeyValueTitle>
+            <div class="flex-box">
+              <div class="flex-box__cell">만기 인수 시 납부금액</div>
+              <div class="flex-box__cell flex-box__cell--small">
+                <BasicTooltip placement="bottom">
+                  <IconTooltip :class="$style['icon']" />
+                  <span class="for-a11y">(도움말)</span>
 
-              <template v-slot:contents>
-                <section :class="$style['tooltip-section']">
-                  <h3 :class="$style['tooltip-section__title']">
-                    만기 인수 시 납부금액
-                  </h3>
-                  <ul
-                    :class="[
-                      $style['basic-list'],
-                      $style['basic-list--mini-margin'],
-                      $style['basic-list--no-symbol'],
-                    ]"
-                  >
-                    <li :class="[$style['basic-list__item'], 'color-white']">
-                      <div :class="$style['basic-list__content']">
+                  <template v-slot:contents>
+                    <section :class="$style['tooltip-section']">
+                      <h3 :class="$style['tooltip-section__title']">
+                        만기 인수 시 납부금액
+                      </h3>
+                      <p :class="$style['tooltip-section__text']">
                         “잔존가치(0원)-보증금(0원)”으로 0원 납부하시면 인수
                         가능합니다.
-                      </div>
-                    </li>
-                  </ul>
-                </section>
-              </template>
-            </BasicTooltip>
+                      </p>
+                    </section>
+                  </template>
+                </BasicTooltip>
+              </div>
+            </div>
           </KeyValueTitle>
           <KeyValueText>0 원</KeyValueText>
         </KeyValueItem>
@@ -145,7 +125,7 @@ export default {
           <KeyValueTitle>승계수수료</KeyValueTitle>
           <KeyValueText>5,000,000 원</KeyValueText>
         </KeyValueItem>
-      </KeyValueList>
+      </KeyValue>
 
       <BasicHr
         theme="quaternary"
@@ -153,143 +133,105 @@ export default {
         className="row-margin-contents-small"
       />
 
-      <KeyValueList margin="regular">
+      <KeyValue margin="regular">
         <KeyValueItem>
-          <KeyValueTitle :classNames="{ title: 'flex-box' }">
-            보증금
-            <BasicTooltip
-              placement="top"
-              :classNames="{ wrap: $style['switch-list__tip'] }"
-            >
-              <IconTooltip
-                :class="[$style['tooltip-icon--small'], 'display-block']"
-              />
-              <span class="for-a11y">(도움말)</span>
+          <KeyValueTitle>
+            <div class="flex-box">
+              <div class="flex-box__cell">보증금</div>
+              <div class="flex-box__cell flex-box__cell--small">
+                <BasicTooltip>
+                  <IconTooltip :class="$style['icon']" />
+                  <span class="for-a11y">(도움말)</span>
 
-              <template v-slot:contents>
-                <section :class="$style['tooltip-section']">
-                  <h3 :class="$style['tooltip-section__title']">보증금</h3>
-                  <ul
-                    :class="[
-                      $style['basic-list'],
-                      $style['basic-list--mini-margin'],
-                      $style['basic-list--no-symbol'],
-                    ]"
-                  >
-                    <li :class="[$style['basic-list__item'], 'color-white']">
-                      <div :class="$style['basic-list__content']">
+                  <template v-slot:contents>
+                    <section :class="$style['tooltip-section']">
+                      <h3 :class="$style['tooltip-section__title']">보증금</h3>
+                      <p :class="$style['tooltip-section__text']">
                         렌트사에 예치해 놓은 금액(반환 시 환급)
-                      </div>
-                    </li>
-                  </ul>
-                </section>
-              </template>
-            </BasicTooltip>
+                      </p>
+                    </section>
+                  </template>
+                </BasicTooltip>
+              </div>
+            </div>
           </KeyValueTitle>
           <KeyValueText>0 원</KeyValueText>
         </KeyValueItem>
 
         <KeyValueItem>
-          <KeyValueTitle :classNames="{ title: 'flex-box' }">
-            잔여선납금
-            <BasicTooltip
-              placement="top"
-              :classNames="{ wrap: $style['switch-list__tip'] }"
-            >
-              <IconTooltip
-                :class="[$style['tooltip-icon--small'], 'display-block']"
-              />
-              <span class="for-a11y">(도움말)</span>
+          <KeyValueTitle>
+            <div class="flex-box">
+              <div class="flex-box__cell">잔여선납금</div>
+              <div class="flex-box__cell flex-box__cell--small">
+                <BasicTooltip>
+                  <IconTooltip :class="$style['icon']" />
+                  <span class="for-a11y">(도움말)</span>
 
-              <template v-slot:contents>
-                <section :class="$style['tooltip-section']">
-                  <h3 :class="$style['tooltip-section__title']">잔여선납금</h3>
-                  <ul
-                    :class="[
-                      $style['basic-list'],
-                      $style['basic-list--mini-margin'],
-                      $style['basic-list--no-symbol'],
-                    ]"
-                  >
-                    <li :class="[$style['basic-list__item'], 'color-white']">
-                      <div :class="$style['basic-list__content']">
+                  <template v-slot:contents>
+                    <section :class="$style['tooltip-section']">
+                      <h3 :class="$style['tooltip-section__title']">
+                        잔여선납금
+                      </h3>
+                      <p :class="$style['tooltip-section__text']">
                         잔여기간으로 나누어 매월 렌트료에 충당
-                      </div>
-                    </li>
-                  </ul>
-                </section>
-              </template>
-            </BasicTooltip>
+                      </p>
+                    </section>
+                  </template>
+                </BasicTooltip>
+              </div>
+            </div>
           </KeyValueTitle>
           <KeyValueText>0 원</KeyValueText>
         </KeyValueItem>
 
         <KeyValueItem>
-          <KeyValueTitle :classNames="{ title: 'flex-box' }">
-            잔존가치 (VAT포함)
-            <BasicTooltip
-              placement="top"
-              :classNames="{ wrap: $style['switch-list__tip'] }"
-            >
-              <IconTooltip
-                :class="[$style['tooltip-icon--small'], 'display-block']"
-              />
-              <span class="for-a11y">(도움말)</span>
+          <KeyValueTitle>
+            <div class="flex-box">
+              <div class="flex-box__cell">잔존가치 (VAT포함)</div>
+              <div class="flex-box__cell flex-box__cell--small">
+                <BasicTooltip>
+                  <IconTooltip :class="$style['icon']" />
+                  <span class="for-a11y">(도움말)</span>
 
-              <template v-slot:contents>
-                <section :class="$style['tooltip-section']">
-                  <h3 :class="$style['tooltip-section__title']">잔여선납금</h3>
-                  <ul
-                    :class="[
-                      $style['basic-list'],
-                      $style['basic-list--mini-margin'],
-                      $style['basic-list--no-symbol'],
-                    ]"
-                  >
-                    <li :class="[$style['basic-list__item'], 'color-white']">
-                      <div :class="$style['basic-list__content']">
+                  <template v-slot:contents>
+                    <section :class="$style['tooltip-section']">
+                      <h3 :class="$style['tooltip-section__title']">
+                        잔여선납금
+                      </h3>
+                      <p :class="$style['tooltip-section__text']">
                         만기 시 차량 인수를 위해 납입해야하는 비용
-                      </div>
-                    </li>
-                  </ul>
-                </section>
-              </template>
-            </BasicTooltip>
+                      </p>
+                    </section>
+                  </template>
+                </BasicTooltip>
+              </div>
+            </div>
           </KeyValueTitle>
           <KeyValueText>0 원</KeyValueText>
         </KeyValueItem>
 
         <KeyValueItem>
-          <KeyValueTitle :classNames="{ title: 'flex-box' }">
-            월 렌트료
-            <BasicTooltip
-              placement="top"
-              :classNames="{ wrap: $style['switch-list__tip'] }"
-            >
-              <IconTooltip
-                :class="[$style['tooltip-icon--small'], 'display-block']"
-              />
-              <span class="for-a11y">(도움말)</span>
+          <KeyValueTitle>
+            <div class="flex-box">
+              <div class="flex-box__cell">월 렌트료</div>
+              <div class="flex-box__cell flex-box__cell--small">
+                <BasicTooltip>
+                  <IconTooltip :class="$style['icon']" />
+                  <span class="for-a11y">(도움말)</span>
 
-              <template v-slot:contents>
-                <section :class="$style['tooltip-section']">
-                  <h3 :class="$style['tooltip-section__title']">월 렌트료</h3>
-                  <ul
-                    :class="[
-                      $style['basic-list'],
-                      $style['basic-list--mini-margin'],
-                      $style['basic-list--no-symbol'],
-                    ]"
-                  >
-                    <li :class="[$style['basic-list__item'], 'color-white']">
-                      <div :class="$style['basic-list__content']">
+                  <template v-slot:contents>
+                    <section :class="$style['tooltip-section']">
+                      <h3 :class="$style['tooltip-section__title']">
+                        월 렌트료
+                      </h3>
+                      <p :class="$style['tooltip-section__text']">
                         매월 렌트사에 납부해야하는 금액
-                      </div>
-                    </li>
-                  </ul>
-                </section>
-              </template>
-            </BasicTooltip>
+                      </p>
+                    </section>
+                  </template>
+                </BasicTooltip>
+              </div>
+            </div>
           </KeyValueTitle>
           <KeyValueText>0 원</KeyValueText>
         </KeyValueItem>
@@ -329,7 +271,7 @@ export default {
           <KeyValueTitle>보험가입정보</KeyValueTitle>
           <KeyValueText>-</KeyValueText>
         </KeyValueItem>
-      </KeyValueList>
+      </KeyValue>
 
       <template v-slot:foot>
         <ButtonList

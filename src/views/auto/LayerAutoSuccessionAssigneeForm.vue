@@ -127,21 +127,19 @@ export default {
       </PageTextGroup>
 
       <UiTab>
-        <div :class="$style['tab__inner']">
-          <StickyBar>
-            <NavTab :useUiTab="true" :auto="true">
-              <NavTabButton link="layerAutoSuccessionAssigneeFormTab001_001"
-                >개인</NavTabButton
-              >
-              <NavTabButton link="layerAutoSuccessionAssigneeFormTab001_002"
-                >개인사업자</NavTabButton
-              >
-              <NavTabButton link="layerAutoSuccessionAssigneeFormTab001_003"
-                >법인사업자</NavTabButton
-              >
-            </NavTab>
-          </StickyBar>
-        </div>
+        <StickyBar>
+          <NavTab :useUiTab="true" :auto="true">
+            <NavTabButton link="layerAutoSuccessionAssigneeFormTab001_001"
+              >개인</NavTabButton
+            >
+            <NavTabButton link="layerAutoSuccessionAssigneeFormTab001_002"
+              >개인사업자</NavTabButton
+            >
+            <NavTabButton link="layerAutoSuccessionAssigneeFormTab001_003"
+              >법인사업자</NavTabButton
+            >
+          </NavTab>
+        </StickyBar>
 
         <!-- Tab : 개인 -->
         <UiTabPanel name="layerAutoSuccessionAssigneeFormTab001_001">
@@ -451,27 +449,6 @@ export default {
             </FormListItem>
 
             <FormListItem
-              v-if="state.clearName"
-              titleText="사업자등록번호"
-              titleOptionalText="(10자리)"
-              target="#layerAutoSuccessionAssigneeFormBusinessLicense002"
-            >
-              <FormInvalid :error="state.buisnessLicenseError002">
-                <InputBlock :error="state.buisnessLicenseError002">
-                  <InputBlockCell :flexible="true">
-                    <BasicInput
-                      ref="license"
-                      title="사업자등록번호 (10자리)"
-                      id="layerAutoSuccessionAssigneeFormBusinessLicense002"
-                      @keyup="licenseCheck"
-                    />
-                  </InputBlockCell>
-                </InputBlock>
-                <FormInvalidMessage>Error Message</FormInvalidMessage>
-              </FormInvalid>
-            </FormListItem>
-
-            <FormListItem
               titleText="사업자번호"
               target="#layerAutoSuccessionAssigneeFormBuisnessLicense002"
             >
@@ -665,7 +642,7 @@ export default {
             <span class="color-blue">신청인 정보</span>를<br />
             <strong>입력해주세요</strong>
           </PageMainText>
-          <PageSubText>(심사결과 안내 및 승계상담 담당자 정보) </PageSubText>
+          <PageSubText>(심사결과 안내 및 승계상담 담당자 정보)</PageSubText>
         </PageTextGroup>
 
         <div class="row-margin-contents row-margin-top-none">
@@ -782,7 +759,3 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/personalLoan/LayerPersonalLoanEHanaLink.scss';
-</style>

@@ -17,7 +17,7 @@ import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
 import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -25,6 +25,7 @@ import BasicHr from '@/components/ui/common/BasicHr.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
+import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 
 export default {
   components: {
@@ -35,7 +36,6 @@ export default {
     PageTextGroup,
     PageMainText,
     StepProgress,
-
     InputBlock,
     InputBlockCell,
     BasicInput,
@@ -44,7 +44,7 @@ export default {
     BasicBoxHead,
     BasicBoxHeadLeft,
     BasicBoxHeadRight,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -52,6 +52,7 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicButton,
+    CarThumb,
   },
   setup() {
     const layer = ref(null);
@@ -98,7 +99,7 @@ export default {
       <!-- DD : 검색 후 노출 -->
       <BasicHr className="row-margin-container-medium" />
 
-      <section>
+      <section class="contents-wrap">
         <h3 class="text-title-2 row-margin-contents">차량정보</h3>
 
         <!-- Case : 결과 없을 때 -->
@@ -112,11 +113,13 @@ export default {
 
         <!-- Case : 결과 있을 경우 -->
         <ul class="reset-list">
-          <li class="row-margin-item-group">
+          <li v-for="i in 2" :key="i" class="row-margin-item-group">
             <BasicBox>
               <BasicBoxHead>
                 <BasicBoxHeadLeft>
-                  <p :class="$style['brand-info']">2020년식</p>
+                  <p class="text-body-4 font-weight-light row-margin-mini">
+                    2020년식
+                  </p>
                   <h3 class="text-body-1 font-weight-medium">
                     운용리스 11가1111
                   </h3>
@@ -125,15 +128,10 @@ export default {
                   </p>
                 </BasicBoxHeadLeft>
                 <BasicBoxHeadRight>
-                  <div :class="$style['car-image']">
-                    <img
-                      src="@/assets/images/_dummy/car-sample.png"
-                      alt="차량 정보 넣어주세요"
-                    />
-                  </div>
+                  <CarThumb src="/images/_dummy/car-thumb.png" />
                 </BasicBoxHeadRight>
               </BasicBoxHead>
-              <KeyValueList margin="regular">
+              <KeyValue margin="regular">
                 <KeyValueItem
                   :classNames="{
                     item: 'text-body-3',
@@ -142,52 +140,7 @@ export default {
                   <KeyValueTitle>차대번호</KeyValueTitle>
                   <KeyValueText>KMHEL00CPYA000001</KeyValueText>
                 </KeyValueItem>
-              </KeyValueList>
-
-              <ButtonList
-                :classNames="{
-                  wrap: 'row-margin-contents-small',
-                }"
-              >
-                <ButtonListItem>
-                  <BasicButton size="small" theme="secondary"
-                    >차량 승계</BasicButton
-                  >
-                </ButtonListItem>
-              </ButtonList>
-            </BasicBox>
-          </li>
-          <li class="row-margin-item-group">
-            <BasicBox>
-              <BasicBoxHead>
-                <BasicBoxHeadLeft>
-                  <p :class="$style['brand-info']">2020년식</p>
-                  <h3 class="text-body-1 font-weight-medium">
-                    운용리스 11가1111
-                  </h3>
-                  <p class="text-body-4 color-gray row-margin-small">
-                    쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
-                  </p>
-                </BasicBoxHeadLeft>
-                <BasicBoxHeadRight>
-                  <div :class="$style['car-image']">
-                    <img
-                      src="@/assets/images/_dummy/car-sample.png"
-                      alt="차량 정보 넣어주세요"
-                    />
-                  </div>
-                </BasicBoxHeadRight>
-              </BasicBoxHead>
-              <KeyValueList margin="regular">
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>차대번호</KeyValueTitle>
-                  <KeyValueText>KMHEL00CPYA000001</KeyValueText>
-                </KeyValueItem>
-              </KeyValueList>
+              </KeyValue>
 
               <ButtonList
                 :classNames="{
