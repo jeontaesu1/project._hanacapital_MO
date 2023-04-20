@@ -12,6 +12,12 @@ import LayerMyLoanOnlineContractNoticeDuty from '@/views/myLoan/LayerMyLoanOnlin
 import LayerMyLoanOnlineContractNoticeDutyNotAgree from '@/views/myLoan/LayerMyLoanOnlineContractNoticeDutyNotAgree.vue';
 import LayerMyLoanOnlineContractCheck from '@/views/myLoan/LayerMyLoanOnlineContractCheck.vue';
 import LayerMyLoanOnlineContractCheckAgree from '@/views/myLoan/LayerMyLoanOnlineContractCheckAgree.vue';
+import LayerMyLoanOnlineContractAgree from '@/views/myLoan/LayerMyLoanOnlineContractAgree.vue';
+import LayerMyLoanOnlineContractFurtherExplanation from '@/views/myLoan/LayerMyLoanOnlineContractFurtherExplanation.vue';
+import LayerMyLoanOnlineContractUsedCarLoanScam from '@/views/myLoan/LayerMyLoanOnlineContractUsedCarLoanScam.vue';
+import LayerMyLoanOnlineContractLoanCounselor from '@/views/myLoan/LayerMyLoanOnlineContractLoanCounselor.vue';
+import LayerMyLoanOnlineContractDescription from '@/views/myLoan/LayerMyLoanOnlineContractDescription.vue';
+import LayerMyLoanOnlineContractDescriptionConfirm from '@/views/myLoan/LayerMyLoanOnlineContractDescriptionConfirm.vue';
 
 export default {
   components: {
@@ -25,6 +31,12 @@ export default {
     LayerMyLoanOnlineContractNoticeDutyNotAgree,
     LayerMyLoanOnlineContractCheck,
     LayerMyLoanOnlineContractCheckAgree,
+    LayerMyLoanOnlineContractAgree,
+    LayerMyLoanOnlineContractFurtherExplanation,
+    LayerMyLoanOnlineContractUsedCarLoanScam,
+    LayerMyLoanOnlineContractLoanCounselor,
+    LayerMyLoanOnlineContractDescription,
+    LayerMyLoanOnlineContractDescriptionConfirm,
   },
   setup() {
     const layer001 = ref(null);
@@ -33,6 +45,12 @@ export default {
     const layer004 = ref(null);
     const layer005 = ref(null);
     const layer006 = ref(null);
+    const layer007 = ref(null);
+    const layer008 = ref(null);
+    const layer009 = ref(null);
+    const layer010 = ref(null);
+    const layer011 = ref(null);
+    const layer012 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -52,6 +70,24 @@ export default {
     const layer006Open = (e = {}) => {
       layer006.value.layer.open(e.target);
     };
+    const layer007Open = (e = {}) => {
+      layer007.value.layer.open(e.target);
+    };
+    const layer008Open = (e = {}) => {
+      layer008.value.layer.open(e.target);
+    };
+    const layer009Open = (e = {}) => {
+      layer009.value.layer.open(e.target);
+    };
+    const layer010Open = (e = {}) => {
+      layer010.value.layer.open(e.target);
+    };
+    const layer011Open = (e = {}) => {
+      layer011.value.layer.open(e.target);
+    };
+    const layer012Open = (e = {}) => {
+      layer012.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -60,12 +96,24 @@ export default {
       layer004,
       layer005,
       layer006,
+      layer007,
+      layer008,
+      layer009,
+      layer010,
+      layer011,
+      layer012,
       layer001Open,
       layer002Open,
       layer003Open,
       layer004Open,
       layer005Open,
       layer006Open,
+      layer007Open,
+      layer008Open,
+      layer009Open,
+      layer010Open,
+      layer011Open,
+      layer012Open,
     };
   },
 };
@@ -109,6 +157,36 @@ export default {
           적합성·적정성 확인서_미동의 시<br />My_M03_b002
         </BasicButton>
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer007Open">
+          약관동의<br />My_M03_l006
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer008Open">
+          추가설명 여부<br />My_M03_b003
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer009Open">
+          약관상세_중고차 대출사기 방지 안내문<br />My_M03_l012
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer010Open">
+          약관상세_대출상담사 설명 확인서<br />My_M03_l013
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer011Open">
+          상품설명서 확인 안내(공통)<br />My_M03_l200
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer012Open">
+          상품설명에 대한 확인(공통)<br />My_M03_b050
+        </BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <LayerMyLoanOnlineContractStartURL ref="layer001" />
@@ -117,5 +195,11 @@ export default {
     <LayerMyLoanOnlineContractNoticeDutyNotAgree ref="layer004" />
     <LayerMyLoanOnlineContractCheck ref="layer005" />
     <LayerMyLoanOnlineContractCheckAgree ref="layer006" />
+    <LayerMyLoanOnlineContractAgree ref="layer007" />
+    <LayerMyLoanOnlineContractFurtherExplanation ref="layer008" />
+    <LayerMyLoanOnlineContractUsedCarLoanScam ref="layer009" />
+    <LayerMyLoanOnlineContractLoanCounselor ref="layer010" />
+    <LayerMyLoanOnlineContractDescription ref="layer011" />
+    <LayerMyLoanOnlineContractDescriptionConfirm ref="layer012" />
   </PageContents>
 </template>
