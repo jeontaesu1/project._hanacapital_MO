@@ -7,12 +7,26 @@
     }
   }
 
+  &--margin {
+    &-small {
+      .logs__item {
+        & + .logs__item {
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+
   &__block {
     position: relative;
     padding: 19px;
     border: 1px solid $color-gray-20;
     border-radius: 8px;
     box-sizing: border-box;
+
+    &--small {
+      padding: 13px 16px 12px 16px;
+    }
   }
 
   &__row {
