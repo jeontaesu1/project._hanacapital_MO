@@ -68,7 +68,7 @@ export default {
       <IllustObject type="complete" :classNames="{ wrap: $style['illust'] }" />
 
       <div>
-        <ul :class="$style['logs']">
+        <ul :class="[$style['logs'], $style['logs--margin-small']]">
           <li :class="$style['logs__item']">
             <div :class="[$style['logs__block'], $style['logs__block--small']]">
               <div :class="$style['logs__row']">
@@ -85,7 +85,7 @@ export default {
               </div>
             </div>
           </li>
-          <li class="row-margin-item">
+          <li :class="$style['logs__item']">
             <div :class="[$style['logs__block'], $style['logs__block--small']]">
               <div :class="$style['logs__row']">
                 <div div :class="$style['logs__contents']">

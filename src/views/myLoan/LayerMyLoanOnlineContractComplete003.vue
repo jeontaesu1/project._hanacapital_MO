@@ -74,7 +74,7 @@ export default {
       <IllustObject type="complete" :classNames="{ wrap: $style['illust'] }" />
 
       <div>
-        <ul :class="$style['logs']">
+        <ul :class="[$style['logs'], $style['logs--margin-small']]">
           <li :class="$style['logs__item']">
             <div :class="[$style['logs__block'], $style['logs__block--small']]">
               <div :class="$style['logs__row']">
