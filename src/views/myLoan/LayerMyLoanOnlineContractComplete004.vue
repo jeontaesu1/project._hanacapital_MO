@@ -69,8 +69,8 @@ export default {
 
       <div>
         <ul :class="$style['logs']">
-          <li>
-            <div :class="$style['logs__block']">
+          <li :class="$style['logs__item']">
+            <div :class="[$style['logs__block'], $style['logs__block--small']]">
               <div :class="$style['logs__row']">
                 <div div :class="$style['logs__contents']">
                   <h3 class="text-body-3 font-weight-regular">
@@ -86,7 +86,7 @@ export default {
             </div>
           </li>
           <li class="row-margin-item">
-            <div :class="$style['logs__block']">
+            <div :class="[$style['logs__block'], $style['logs__block--small']]">
               <div :class="$style['logs__row']">
                 <div div :class="$style['logs__contents']">
                   <h3 class="text-body-3 font-weight-regular">
