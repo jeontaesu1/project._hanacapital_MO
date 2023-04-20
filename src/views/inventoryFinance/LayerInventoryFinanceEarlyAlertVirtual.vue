@@ -15,7 +15,7 @@ import PageMainText from '@/components/ui/text/PageMainText.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -24,12 +24,7 @@ import UiAccordionItem from '@/components/ui/accordion/UiAccordionItem.vue';
 import UiAccordionLayer from '@/components/ui/accordion/UiAccordionLayer.vue';
 import UiAccordionOpener from '@/components/ui/accordion/UiAccordionOpener.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
-
-import BankLogo001 from '@/assets/images/bank-logo/004.svg?component';
-import BankLogo002 from '@/assets/images/bank-logo/011.svg?component';
-import BankLogo003 from '@/assets/images/bank-logo/020.svg?component';
-import BankLogo004 from '@/assets/images/bank-logo/081.svg?component';
-import BankLogo005 from '@/assets/images/bank-logo/088.svg?component';
+import BankLogo from '@/components/ui/imageData/BankLogo.vue';
 
 export default {
   components: {
@@ -46,7 +41,7 @@ export default {
     BasicBoxHead,
     BasicBoxHeadLeft,
     BasicBox,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -55,12 +50,7 @@ export default {
     UiAccordionLayer,
     UiAccordionOpener,
     NoticeText,
-
-    BankLogo001,
-    BankLogo002,
-    BankLogo003,
-    BankLogo004,
-    BankLogo005,
+    BankLogo,
   },
   setup() {
     const layer = ref(null);
@@ -99,7 +89,7 @@ export default {
         </BasicBoxHead>
 
         <UiAccordion tagName="div">
-          <KeyValueList>
+          <KeyValue>
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>입금예정일자</KeyValueTitle>
               <KeyValueText>2021.03.04</KeyValueText>
@@ -108,7 +98,7 @@ export default {
               <KeyValueTitle>입금예정금액</KeyValueTitle>
               <KeyValueText>7,400,000 원</KeyValueText>
             </KeyValueItem>
-          </KeyValueList>
+          </KeyValue>
 
           <UiAccordionItem
             tagName="div"
@@ -116,7 +106,7 @@ export default {
               item: 'row-margin-item-group',
             }"
           >
-            <KeyValueList>
+            <KeyValue>
               <KeyValueItem :classNames="{ item: 'text-body-3' }">
                 <KeyValueTitle>계좌정보</KeyValueTitle>
                 <KeyValueText>
@@ -134,12 +124,12 @@ export default {
                   </div>
                 </KeyValueText>
               </KeyValueItem>
-            </KeyValueList>
+            </KeyValue>
 
             <UiAccordionLayer>
               <div :class="$style['account-contents']">
                 <BasicBox theme="senary">
-                  <KeyValueList align="left" margin="regular" size="regular">
+                  <KeyValue align="left" margin="regular" size="regular">
                     <KeyValueItem
                       :classNames="{
                         item: 'text-body-3',
@@ -148,14 +138,14 @@ export default {
                       <KeyValueTitle>
                         <div class="flex-box">
                           <div class="flex-box__cell">
-                            <BankLogo001 :class="$style['bank-logo']" />
+                            <BankLogo size="small" code="004" />
                           </div>
                           <div class="flex-box__cell flex-box__cell--mini">
                             국민
                           </div>
                         </div>
                       </KeyValueTitle>
-                      <KeyValueText> 123-456-78901234 </KeyValueText>
+                      <KeyValueText>123-456-78901234</KeyValueText>
                     </KeyValueItem>
                     <KeyValueItem
                       :classNames="{
@@ -165,14 +155,14 @@ export default {
                       <KeyValueTitle>
                         <div class="flex-box">
                           <div class="flex-box__cell">
-                            <BankLogo002 :class="$style['bank-logo']" />
+                            <BankLogo size="small" code="011" />
                           </div>
                           <div class="flex-box__cell flex-box__cell--mini">
                             농협
                           </div>
                         </div>
                       </KeyValueTitle>
-                      <KeyValueText> 123-456-78901234 </KeyValueText>
+                      <KeyValueText>123-456-78901234</KeyValueText>
                     </KeyValueItem>
                     <KeyValueItem
                       :classNames="{
@@ -182,14 +172,14 @@ export default {
                       <KeyValueTitle>
                         <div class="flex-box">
                           <div class="flex-box__cell">
-                            <BankLogo003 :class="$style['bank-logo']" />
+                            <BankLogo size="small" code="020" />
                           </div>
                           <div class="flex-box__cell flex-box__cell--mini">
                             우리
                           </div>
                         </div>
                       </KeyValueTitle>
-                      <KeyValueText> 123-456-78901234 </KeyValueText>
+                      <KeyValueText>123-456-78901234</KeyValueText>
                     </KeyValueItem>
                     <KeyValueItem
                       :classNames="{
@@ -199,14 +189,14 @@ export default {
                       <KeyValueTitle>
                         <div class="flex-box">
                           <div class="flex-box__cell">
-                            <BankLogo004 :class="$style['bank-logo']" />
+                            <BankLogo size="small" code="081" />
                           </div>
                           <div class="flex-box__cell flex-box__cell--mini">
                             하나
                           </div>
                         </div>
                       </KeyValueTitle>
-                      <KeyValueText> 123-456-78901234 </KeyValueText>
+                      <KeyValueText>123-456-78901234</KeyValueText>
                     </KeyValueItem>
                     <KeyValueItem
                       :classNames="{
@@ -216,28 +206,26 @@ export default {
                       <KeyValueTitle>
                         <div class="flex-box">
                           <div class="flex-box__cell">
-                            <BankLogo005 :class="$style['bank-logo']" />
+                            <BankLogo size="small" code="088" />
                           </div>
                           <div class="flex-box__cell flex-box__cell--mini">
                             신한
                           </div>
                         </div>
                       </KeyValueTitle>
-                      <KeyValueText>
-                        123-456-78901234-1234567890-12345
-                      </KeyValueText>
+                      <KeyValueText>123-456-78901234</KeyValueText>
                     </KeyValueItem>
-                  </KeyValueList>
+                  </KeyValue>
                 </BasicBox>
               </div>
             </UiAccordionLayer>
           </UiAccordionItem>
-          <KeyValueList>
+          <KeyValue>
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>예금주</KeyValueTitle>
               <KeyValueText>하나상사(하나캐피탈)</KeyValueText>
             </KeyValueItem>
-          </KeyValueList>
+          </KeyValue>
         </UiAccordion>
       </BasicBox>
 

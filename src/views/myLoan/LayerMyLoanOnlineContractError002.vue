@@ -115,7 +115,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton>확인</BasicButton>
+            <BasicButton>온라인약정 다시하기</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

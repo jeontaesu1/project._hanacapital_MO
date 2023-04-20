@@ -75,7 +75,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton tagName="a">
+            <BasicButton tagName="a" href="tel:1800-1110">
               <template v-slot:leftIcon>
                 <IconTell />
               </template>

@@ -169,6 +169,7 @@ export default {
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="차량 판매자"
+                  placeholder="이름 입력"
                   id="layerMyLoanOnlineContractFinancialTermsName"
                 />
               </InputBlockCell>

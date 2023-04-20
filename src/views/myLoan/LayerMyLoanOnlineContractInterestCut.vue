@@ -48,6 +48,7 @@ export default {
       </template>
 
       <KeyValue
+        margin="regular"
         direction="vertical"
         :classNames="{ wrap: 'row-margin-contents' }"
       >
@@ -55,6 +56,7 @@ export default {
           <KeyValueTitle>대상</KeyValueTitle>
           <KeyValueText>대출 취급일로부터 6개월 경과한 고객</KeyValueText>
         </KeyValueItem>
+
         <KeyValueItem>
           <KeyValueTitle>신용등급이 개선된 고객</KeyValueTitle>
           <KeyValueText>

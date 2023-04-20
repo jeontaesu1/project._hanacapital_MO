@@ -47,14 +47,18 @@ export default {
         </ToastPopupHead>
       </template>
 
-      <PopupText class="color-black font-weight-medium">[특약사항]</PopupText>
+      <section>
+        <h3 class="text-body-3 font-weight-medium row-margin-small">
+          [특약사항]
+        </h3>
 
-      <PopupText class="row-margin-small">
-        대출금액 및 이자율은 심사 결과에 따라 달라질 수 있음에 동의합니다.
-        본인이 “대출 조건 변경 동의서”를 작성하여 금융기관에 모사전송(FAX)하거나
-        금융기관이 관련 내용을 녹취하는 것으로 대출 조건 변경에 동의함을
-        확인합니다.
-      </PopupText>
+        <PopupText>
+          대출금액 및 이자율은 심사 결과에 따라 달라질 수 있음에 동의합니다.
+          본인이 “대출 조건 변경 동의서”를 작성하여 금융기관에
+          모사전송(FAX)하거나 금융기관이 관련 내용을 녹취하는 것으로 대출 조건
+          변경에 동의함을 확인합니다.
+        </PopupText>
+      </section>
 
       <div class="row-margin-item-medium">
         <BoxCheck :contents="true" type="checkbox" id="testBoxCheck006_001">

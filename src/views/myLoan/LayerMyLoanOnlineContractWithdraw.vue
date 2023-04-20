@@ -48,6 +48,7 @@ export default {
       </template>
 
       <KeyValue
+        margin="regular"
         direction="vertical"
         :classNames="{ wrap: 'row-margin-contents' }"
       >
