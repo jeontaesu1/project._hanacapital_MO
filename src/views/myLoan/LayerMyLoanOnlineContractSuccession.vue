@@ -83,7 +83,7 @@ export default {
         </PageMainText>
       </PageTextGroup>
       <section>
-        <h3 class="text-title-1 row-margin-contents">승계정보</h3>
+        <h3 class="text-title-2 row-margin-contents">승계정보</h3>
         <BasicBox>
           <KeyValue>
             <KeyValueItem>

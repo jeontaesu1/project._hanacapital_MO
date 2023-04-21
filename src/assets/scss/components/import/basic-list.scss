@@ -119,4 +119,17 @@
       }
     }
   }
+
+  &--fixed-width02 {
+    > .basic-list__item {
+      @include font-size-default(14);
+      font-weight: 400;
+
+      > .basic-list__symbol {
+        min-width: 16px;
+        @include font-size-default(14);
+        font-weight: 400;
+      }
+    }
+  }
 }
