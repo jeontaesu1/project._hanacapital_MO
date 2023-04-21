@@ -1,6 +1,6 @@
 <script>
 // My_M03_l013
-import { ref, reactive } from 'vue';
+import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
@@ -37,29 +37,9 @@ export default {
     CheckBoxObject,
   },
   setup() {
-    const state = reactive({
-      typeError: false,
-      usageError: false,
-      usageInputError: false,
-      careerError: false,
-      salesError: false,
-      netProfitError: false,
-      totalAssetsError: false,
-      ageError: false,
-      incomeError: false,
-      assetError: false,
-      expensesError: false,
-      debtError: false,
-      creditScoreError: false,
-      liquidationError: false,
-      creditRatingAgencyError: false,
-      creditRatingError: false,
-    });
-
     const layer = ref(null);
 
     return {
-      state,
       layer,
     };
   },
@@ -250,10 +230,10 @@ export default {
       </div>
 
       <BasicBox theme="senary" className="row-margin-contents-group">
-        <div class="color-gray-secondary text-body-4 font-weight-medium">
+        <p class="color-gray-secondary text-body-4 font-weight-medium">
           위 각 사항에 대한 기재사항은 사실과 다름없으며 본인이 직접
           작성하였음을 확인합니다.
-        </div>
+        </p>
       </BasicBox>
 
       <template v-slot:foot>

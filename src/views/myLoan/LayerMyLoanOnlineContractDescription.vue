@@ -13,11 +13,10 @@ import StepProgress from '@/components/ui/progress/StepProgress.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import PageSubText from '@/components/ui/text/PageSubText.vue';
-import BoxCheck from '@/components/ui/form/BoxCheck.vue';
-import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
-import BoxCheckObject from '@/components/ui/form/BoxCheckObject.vue';
-import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
-import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
+import BasicBox from '@/components/ui/common/BasicBox.vue';
+import CheckBox from '@/components/ui/form/CheckBox.vue';
+import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
+import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
 
 export default {
@@ -33,11 +32,10 @@ export default {
     PageTextGroup,
     PageMainText,
     PageSubText,
-    BoxCheck,
-    BoxCheckLabel,
-    BoxCheckObject,
-    BoxCheckList,
-    BoxCheckListItem,
+    BasicBox,
+    CheckBox,
+    CheckBoxLabelText,
+    CheckBoxObject,
     IllustObject,
   },
   setup() {
@@ -87,33 +85,30 @@ export default {
       <IllustObject type="license" :classNames="{ wrap: $style['illust'] }" />
 
       <div class="row-margin-contents">
-        <BoxCheckList align="full">
-          <BoxCheckListItem>
-            <BoxCheck
-              :contents="true"
-              type="checkbox"
-              id="layerMyLoanOnlineContractDescription001"
+        <BasicBox theme="septenary" className="row-margin-item">
+          <CheckBox
+            theme="secondary"
+            align="center"
+            id="layerMyLoanOnlineContractDescription001"
+          >
+            <CheckBoxObject />
+            <CheckBoxLabelText :classNames="{ text: 'text-body-3' }"
+              >상품의 중요사항 확인하기</CheckBoxLabelText
             >
-              <template v-slot:left>
-                <BoxCheckObject />
-              </template>
-              <BoxCheckLabel>상품의 중요사항 확인하기</BoxCheckLabel>
-            </BoxCheck>
-          </BoxCheckListItem>
-
-          <BoxCheckListItem>
-            <BoxCheck
-              :contents="true"
-              type="checkbox"
-              id="layerMyLoanOnlineContractDescription002"
+          </CheckBox>
+        </BasicBox>
+        <BasicBox theme="septenary" className="row-margin-item">
+          <CheckBox
+            theme="secondary"
+            align="center"
+            id="layerMyLoanOnlineContractDescription002"
+          >
+            <CheckBoxObject />
+            <CheckBoxLabelText :classNames="{ text: 'text-body-3' }"
+              >손님의 주요권리 확인하기</CheckBoxLabelText
             >
-              <template v-slot:left>
-                <BoxCheckObject />
-              </template>
-              <BoxCheckLabel>손님의 주요권리 확인하기</BoxCheckLabel>
-            </BoxCheck>
-          </BoxCheckListItem>
-        </BoxCheckList>
+          </CheckBox>
+        </BasicBox>
       </div>
 
       <template v-slot:foot>

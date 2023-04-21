@@ -86,7 +86,7 @@ export default {
           차량 인도 정보를<br />
           <strong>입력해 주세요</strong>
         </PageMainText>
-        <PageSubText> 하나캐피탈 탁송을 신청합니다. </PageSubText>
+        <PageSubText>하나캐피탈 탁송을 신청합니다.</PageSubText>
       </PageTextGroup>
 
       <FormList>
@@ -246,11 +246,10 @@ export default {
           titleText="인도지 주소"
           :forceFocus="true"
           :require="true"
-          :disabled="true"
+          target="#layerAutoLongRentalDeliveryFormAddressSearch"
         >
-          <FormInvalid>
-            <!-- DD : 주소 검색 후 선택한 주소의 우편번호, 도로명 주소 자동 입력 -->
-            <InputBlock>
+          <FormInvalid :error="state.addressError">
+            <InputBlock :error="state.addressError">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="인도지 우편번호"
@@ -259,13 +258,19 @@ export default {
                 />
               </InputBlockCell>
               <template v-slot:right>
-                <BasicButton size="mini" theme="tertiary">검색</BasicButton>
+                <BasicButton
+                  size="mini"
+                  theme="tertiary"
+                  id="layerAutoLongRentalDeliveryFormAddressSearch"
+                  >검색</BasicButton
+                >
               </template>
             </InputBlock>
+            <!-- DD : 주소 검색 및 입력 후 노출 -->
             <InputBlock
               :error="state.addressError"
               :classNames="{
-                wrap: 'row-margin-item',
+                wrap: 'row-margin-item-group',
               }"
             >
               <InputBlockCell :flexible="true">
@@ -276,12 +281,21 @@ export default {
                 />
               </InputBlockCell>
             </InputBlock>
-            <!-- // DD : 주소 검색 후 선택한 주소의 우편번호, 도로명 주소 자동 입력 -->
-            <InputBlock :error="state.addressError">
+            <InputBlock
+              :error="state.addressError"
+              :classNames="{
+                wrap: 'row-margin-item-group',
+              }"
+            >
               <InputBlockCell :flexible="true">
-                <BasicInput title="인도지 상세 주소" />
+                <BasicInput
+                  title="인도지 상세 주소"
+                  :disabled="true"
+                  defaultValue="1205호"
+                />
               </InputBlockCell>
             </InputBlock>
+            <!-- // DD : 주소 검색 및 입력 후 노출 -->
           </FormInvalid>
         </FormListItem>
 

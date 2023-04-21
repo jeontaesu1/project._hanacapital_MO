@@ -121,19 +121,17 @@ export default {
           </KeyValue>
         </BasicBox>
 
-        <div class="row-margin-item-group">
-          <ul :class="$style['basic-list']">
-            <li :class="$style['basic-list__item']">
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                본 확인서는 ‘특정 금융거래정보의 보고 및 이용 등에 관한 법률
-                시행령‘ 제10조의5(실제 소유자에 대한 확인)에 의하여 작성이
-                요구되는 필수 서식입니다. 작성하신 정보는 관련 법령에 의거
-                안전하게 관리됩니다.
-              </div>
-            </li>
-          </ul>
-        </div>
+        <ul :class="[$style['basic-list'], 'row-margin-item-group']">
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              본 확인서는 ‘특정 금융거래정보의 보고 및 이용 등에 관한 법률
+              시행령‘ 제10조의5(실제 소유자에 대한 확인)에 의하여 작성이
+              요구되는 필수 서식입니다. 작성하신 정보는 관련 법령에 의거
+              안전하게 관리됩니다.
+            </div>
+          </li>
+        </ul>
       </section>
       <!-- //Case : 일반할부금융(내구소비재)의 경우 노출 -->
 
@@ -563,8 +561,13 @@ export default {
                   </div>
                   <UiAccordionLayer>
                     <div :class="$style['agree-list__depth-contents']">
-                      <ul :class="$style['agree-list__list']">
-                        <li :class="$style['agree-list__item']">
+                      <UiAccordion
+                        :classNames="{ wrap: $style['agree-list__list'] }"
+                      >
+                        <UiAccordionItem
+                          :classNames="{ item: $style['agree-list__item'] }"
+                          :initialOpen="true"
+                        >
                           <div :class="$style['agree-list__head']">
                             <CheckBox
                               id="layerMyLoanOnlineContractAgree_005_001"
@@ -579,81 +582,83 @@ export default {
                               </CheckBoxLabelText>
                             </CheckBox>
                             <div :class="$style['agree-list__right']">
-                              <button
-                                type="button"
-                                :class="$style['agree-list__link']"
-                              >
-                                <span :class="$style['agree-list__link-text']">
-                                  상세보기
-                                </span>
-                              </button>
+                              <UiAccordionOpener
+                                :classNames="{
+                                  button: $style['agree-list__depth-opener'],
+                                }"
+                              />
                             </div>
                           </div>
-                          <ul
-                            :class="[
-                              $style['agree-list__list'],
-                              $style['agree-list__list--secondary'],
-                            ]"
-                          >
-                            <li :class="$style['agree-list__item']">
-                              <div :class="$style['agree-list__head']">
-                                <CheckBox
-                                  id="layerMyLoanOnlineContractAgree_005_001_001"
-                                  :classNames="{
-                                    wrap: $style['agree-list__checkbox'],
-                                  }"
-                                  theme="quinary"
-                                >
-                                  <CheckBoxObject />
-                                  <CheckBoxLabelText>
-                                    개인(신용)정보 수집·이용 동의
-                                  </CheckBoxLabelText>
-                                </CheckBox>
-                                <div :class="$style['agree-list__right']">
-                                  <button
-                                    type="button"
-                                    :class="$style['agree-list__link']"
+                          <UiAccordionLayer>
+                            <ul
+                              :class="[
+                                $style['agree-list__list'],
+                                $style['agree-list__list--secondary'],
+                              ]"
+                            >
+                              <li :class="$style['agree-list__item']">
+                                <div :class="$style['agree-list__head']">
+                                  <CheckBox
+                                    id="layerMyLoanOnlineContractAgree_005_001_001"
+                                    :classNames="{
+                                      wrap: $style['agree-list__checkbox'],
+                                    }"
+                                    theme="quinary"
                                   >
-                                    <span
-                                      :class="$style['agree-list__link-text']"
+                                    <CheckBoxObject />
+                                    <CheckBoxLabelText>
+                                      개인(신용)정보 수집·이용 동의
+                                    </CheckBoxLabelText>
+                                  </CheckBox>
+                                  <div :class="$style['agree-list__right']">
+                                    <button
+                                      type="button"
+                                      :class="$style['agree-list__link']"
                                     >
-                                      상세보기
-                                    </span>
-                                  </button>
+                                      <span
+                                        :class="$style['agree-list__link-text']"
+                                      >
+                                        상세보기
+                                      </span>
+                                    </button>
+                                  </div>
                                 </div>
-                              </div>
-                            </li>
-                            <li :class="$style['agree-list__item']">
-                              <div :class="$style['agree-list__head']">
-                                <CheckBox
-                                  id="layerMyLoanOnlineContractAgree_005_001_002"
-                                  :classNames="{
-                                    wrap: $style['agree-list__checkbox'],
-                                  }"
-                                  theme="quinary"
-                                >
-                                  <CheckBoxObject />
-                                  <CheckBoxLabelText>
-                                    고유식별정보 수집·이용 동의
-                                  </CheckBoxLabelText>
-                                </CheckBox>
-                                <div :class="$style['agree-list__right']">
-                                  <button
-                                    type="button"
-                                    :class="$style['agree-list__link']"
+                              </li>
+                              <li :class="$style['agree-list__item']">
+                                <div :class="$style['agree-list__head']">
+                                  <CheckBox
+                                    id="layerMyLoanOnlineContractAgree_005_001_002"
+                                    :classNames="{
+                                      wrap: $style['agree-list__checkbox'],
+                                    }"
+                                    theme="quinary"
                                   >
-                                    <span
-                                      :class="$style['agree-list__link-text']"
+                                    <CheckBoxObject />
+                                    <CheckBoxLabelText>
+                                      고유식별정보 수집·이용 동의
+                                    </CheckBoxLabelText>
+                                  </CheckBox>
+                                  <div :class="$style['agree-list__right']">
+                                    <button
+                                      type="button"
+                                      :class="$style['agree-list__link']"
                                     >
-                                      상세보기
-                                    </span>
-                                  </button>
+                                      <span
+                                        :class="$style['agree-list__link-text']"
+                                      >
+                                        상세보기
+                                      </span>
+                                    </button>
+                                  </div>
                                 </div>
-                              </div>
-                            </li>
-                          </ul>
-                        </li>
-                        <li :class="$style['agree-list__item']">
+                              </li>
+                            </ul>
+                          </UiAccordionLayer>
+                        </UiAccordionItem>
+                        <UiAccordionItem
+                          :classNames="{ item: $style['agree-list__item'] }"
+                          :initialOpen="true"
+                        >
                           <div :class="$style['agree-list__head']">
                             <CheckBox
                               id="layerMyLoanOnlineContractAgree_005_002"
@@ -668,82 +673,85 @@ export default {
                               </CheckBoxLabelText>
                             </CheckBox>
                             <div :class="$style['agree-list__right']">
-                              <button
-                                type="button"
-                                :class="$style['agree-list__link']"
-                              >
-                                <span :class="$style['agree-list__link-text']">
-                                  상세보기
-                                </span>
-                              </button>
+                              <UiAccordionOpener
+                                :classNames="{
+                                  button: $style['agree-list__depth-opener'],
+                                }"
+                              />
                             </div>
                           </div>
-                          <ul
-                            :class="[
-                              $style['agree-list__list'],
-                              $style['agree-list__list--secondary'],
-                            ]"
-                          >
-                            <li :class="$style['agree-list__item']">
-                              <div :class="$style['agree-list__head']">
-                                <CheckBox
-                                  id="layerMyLoanOnlineContractAgree_005_002_001"
-                                  :classNames="{
-                                    wrap: $style['agree-list__checkbox'],
-                                  }"
-                                  theme="quinary"
-                                >
-                                  <CheckBoxObject />
-                                  <CheckBoxLabelText
-                                    >개인(신용)정보 필수적
-                                    조회</CheckBoxLabelText
+                          <UiAccordionLayer>
+                            <ul
+                              :class="[
+                                $style['agree-list__list'],
+                                $style['agree-list__list--secondary'],
+                              ]"
+                            >
+                              <li :class="$style['agree-list__item']">
+                                <div :class="$style['agree-list__head']">
+                                  <CheckBox
+                                    id="layerMyLoanOnlineContractAgree_005_002_001"
+                                    :classNames="{
+                                      wrap: $style['agree-list__checkbox'],
+                                    }"
+                                    theme="quinary"
                                   >
-                                </CheckBox>
-                                <div :class="$style['agree-list__right']">
-                                  <button
-                                    type="button"
-                                    :class="$style['agree-list__link']"
-                                  >
-                                    <span
-                                      :class="$style['agree-list__link-text']"
+                                    <CheckBoxObject />
+                                    <CheckBoxLabelText
+                                      >개인(신용)정보 필수적
+                                      조회</CheckBoxLabelText
                                     >
-                                      상세보기
-                                    </span>
-                                  </button>
-                                </div>
-                              </div>
-                            </li>
-                            <li :class="$style['agree-list__item']">
-                              <div :class="$style['agree-list__head']">
-                                <CheckBox
-                                  id="layerMyLoanOnlineContractAgree_005_002_002"
-                                  :classNames="{
-                                    wrap: $style['agree-list__checkbox'],
-                                  }"
-                                  theme="quinary"
-                                >
-                                  <CheckBoxObject />
-                                  <CheckBoxLabelText
-                                    >고유식별정보 필수적 조회</CheckBoxLabelText
-                                  >
-                                </CheckBox>
-                                <div :class="$style['agree-list__right']">
-                                  <button
-                                    type="button"
-                                    :class="$style['agree-list__link']"
-                                  >
-                                    <span
-                                      :class="$style['agree-list__link-text']"
+                                  </CheckBox>
+                                  <div :class="$style['agree-list__right']">
+                                    <button
+                                      type="button"
+                                      :class="$style['agree-list__link']"
                                     >
-                                      상세보기
-                                    </span>
-                                  </button>
+                                      <span
+                                        :class="$style['agree-list__link-text']"
+                                      >
+                                        상세보기
+                                      </span>
+                                    </button>
+                                  </div>
                                 </div>
-                              </div>
-                            </li>
-                          </ul>
-                        </li>
-                        <li :class="$style['agree-list__item']">
+                              </li>
+                              <li :class="$style['agree-list__item']">
+                                <div :class="$style['agree-list__head']">
+                                  <CheckBox
+                                    id="layerMyLoanOnlineContractAgree_005_002_002"
+                                    :classNames="{
+                                      wrap: $style['agree-list__checkbox'],
+                                    }"
+                                    theme="quinary"
+                                  >
+                                    <CheckBoxObject />
+                                    <CheckBoxLabelText
+                                      >고유식별정보 필수적
+                                      조회</CheckBoxLabelText
+                                    >
+                                  </CheckBox>
+                                  <div :class="$style['agree-list__right']">
+                                    <button
+                                      type="button"
+                                      :class="$style['agree-list__link']"
+                                    >
+                                      <span
+                                        :class="$style['agree-list__link-text']"
+                                      >
+                                        상세보기
+                                      </span>
+                                    </button>
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
+                          </UiAccordionLayer>
+                        </UiAccordionItem>
+                        <UiAccordionItem
+                          :classNames="{ item: $style['agree-list__item'] }"
+                          :initialOpen="true"
+                        >
                           <div :class="$style['agree-list__head']">
                             <CheckBox
                               id="layerMyLoanOnlineContractAgree_005_003"
@@ -759,81 +767,80 @@ export default {
                               >
                             </CheckBox>
                             <div :class="$style['agree-list__right']">
-                              <button
-                                type="button"
-                                :class="$style['agree-list__link']"
-                              >
-                                <span :class="$style['agree-list__link-text']">
-                                  상세보기
-                                </span>
-                              </button>
+                              <UiAccordionOpener
+                                :classNames="{
+                                  button: $style['agree-list__depth-opener'],
+                                }"
+                              />
                             </div>
                           </div>
-                          <ul
-                            :class="[
-                              $style['agree-list__list'],
-                              $style['agree-list__list--secondary'],
-                            ]"
-                          >
-                            <li :class="$style['agree-list__item']">
-                              <div :class="$style['agree-list__head']">
-                                <CheckBox
-                                  id="layerMyLoanOnlineContractAgree_005_003_001"
-                                  :classNames="{
-                                    wrap: $style['agree-list__checkbox'],
-                                  }"
-                                  theme="quinary"
-                                >
-                                  <CheckBoxObject />
-                                  <CheckBoxLabelText>
-                                    개인(신용)정보 필수적 제공
-                                  </CheckBoxLabelText>
-                                </CheckBox>
-                                <div :class="$style['agree-list__right']">
-                                  <button
-                                    type="button"
-                                    :class="$style['agree-list__link']"
+                          <UiAccordionLayer>
+                            <ul
+                              :class="[
+                                $style['agree-list__list'],
+                                $style['agree-list__list--secondary'],
+                              ]"
+                            >
+                              <li :class="$style['agree-list__item']">
+                                <div :class="$style['agree-list__head']">
+                                  <CheckBox
+                                    id="layerMyLoanOnlineContractAgree_005_003_001"
+                                    :classNames="{
+                                      wrap: $style['agree-list__checkbox'],
+                                    }"
+                                    theme="quinary"
                                   >
-                                    <span
-                                      :class="$style['agree-list__link-text']"
+                                    <CheckBoxObject />
+                                    <CheckBoxLabelText>
+                                      개인(신용)정보 필수적 제공
+                                    </CheckBoxLabelText>
+                                  </CheckBox>
+                                  <div :class="$style['agree-list__right']">
+                                    <button
+                                      type="button"
+                                      :class="$style['agree-list__link']"
                                     >
-                                      상세보기
-                                    </span>
-                                  </button>
+                                      <span
+                                        :class="$style['agree-list__link-text']"
+                                      >
+                                        상세보기
+                                      </span>
+                                    </button>
+                                  </div>
                                 </div>
-                              </div>
-                            </li>
-                            <li :class="$style['agree-list__item']">
-                              <div :class="$style['agree-list__head']">
-                                <CheckBox
-                                  id="layerMyLoanOnlineContractAgree_005_003_002"
-                                  :classNames="{
-                                    wrap: $style['agree-list__checkbox'],
-                                  }"
-                                  theme="quinary"
-                                >
-                                  <CheckBoxObject />
-                                  <CheckBoxLabelText>
-                                    고유식별정보 필수적 제공
-                                  </CheckBoxLabelText>
-                                </CheckBox>
-                                <div :class="$style['agree-list__right']">
-                                  <button
-                                    type="button"
-                                    :class="$style['agree-list__link']"
+                              </li>
+                              <li :class="$style['agree-list__item']">
+                                <div :class="$style['agree-list__head']">
+                                  <CheckBox
+                                    id="layerMyLoanOnlineContractAgree_005_003_002"
+                                    :classNames="{
+                                      wrap: $style['agree-list__checkbox'],
+                                    }"
+                                    theme="quinary"
                                   >
-                                    <span
-                                      :class="$style['agree-list__link-text']"
+                                    <CheckBoxObject />
+                                    <CheckBoxLabelText>
+                                      고유식별정보 필수적 제공
+                                    </CheckBoxLabelText>
+                                  </CheckBox>
+                                  <div :class="$style['agree-list__right']">
+                                    <button
+                                      type="button"
+                                      :class="$style['agree-list__link']"
                                     >
-                                      상세보기
-                                    </span>
-                                  </button>
+                                      <span
+                                        :class="$style['agree-list__link-text']"
+                                      >
+                                        상세보기
+                                      </span>
+                                    </button>
+                                  </div>
                                 </div>
-                              </div>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
+                              </li>
+                            </ul>
+                          </UiAccordionLayer>
+                        </UiAccordionItem>
+                      </UiAccordion>
                     </div>
                   </UiAccordionLayer>
                 </UiAccordionItem>
@@ -1039,10 +1046,7 @@ export default {
 
                 <!-- Case : LM통해 신용대출 진입한 경우 노출 -->
                 <!-- 약관동의 : 대출상담사 설명 확인서 -->
-                <UiAccordionItem
-                  :classNames="{ item: $style['agree-list__depth-item'] }"
-                  :initialOpen="true"
-                >
+                <li :class="$style['agree-list__depth-item']">
                   <div :class="$style['agree-list__depth-head']">
                     <CheckBox
                       id="layerMyLoanOnlineContractAgree_007"
@@ -1056,7 +1060,7 @@ export default {
                       >
                     </CheckBox>
                   </div>
-                </UiAccordionItem>
+                </li>
                 <!-- //약관동의 : 대출상담사 설명 확인서 -->
                 <!-- //Case : LM통해 신용대출 진입한 경우 노출 -->
 
@@ -1089,8 +1093,13 @@ export default {
                   </div>
                   <UiAccordionLayer>
                     <div :class="$style['agree-list__depth-contents']">
-                      <ul :class="$style['agree-list__list']">
-                        <li :class="$style['agree-list__item']">
+                      <UiAccordion
+                        :classNames="{ wrap: $style['agree-list__list'] }"
+                      >
+                        <UiAccordionItem
+                          :classNames="{ item: $style['agree-list__item'] }"
+                          :initialOpen="true"
+                        >
                           <div :class="$style['agree-list__head']">
                             <CheckBox
                               id="layerMyLoanOnlineContractAgree_008_001"
@@ -1105,81 +1114,83 @@ export default {
                               </CheckBoxLabelText>
                             </CheckBox>
                             <div :class="$style['agree-list__right']">
-                              <button
-                                type="button"
-                                :class="$style['agree-list__link']"
-                              >
-                                <span :class="$style['agree-list__link-text']">
-                                  상세보기
-                                </span>
-                              </button>
+                              <UiAccordionOpener
+                                :classNames="{
+                                  button: $style['agree-list__depth-opener'],
+                                }"
+                              />
                             </div>
                           </div>
-                          <ul
-                            :class="[
-                              $style['agree-list__list'],
-                              $style['agree-list__list--secondary'],
-                            ]"
-                          >
-                            <li :class="$style['agree-list__item']">
-                              <div :class="$style['agree-list__head']">
-                                <CheckBox
-                                  id="layerMyLoanOnlineContractAgree_008_001_001"
-                                  :classNames="{
-                                    wrap: $style['agree-list__checkbox'],
-                                  }"
-                                  theme="quinary"
-                                >
-                                  <CheckBoxObject />
-                                  <CheckBoxLabelText>
-                                    개인(신용)정보 수집·이용 동의
-                                  </CheckBoxLabelText>
-                                </CheckBox>
-                                <div :class="$style['agree-list__right']">
-                                  <button
-                                    type="button"
-                                    :class="$style['agree-list__link']"
+                          <UiAccordionLayer>
+                            <ul
+                              :class="[
+                                $style['agree-list__list'],
+                                $style['agree-list__list--secondary'],
+                              ]"
+                            >
+                              <li :class="$style['agree-list__item']">
+                                <div :class="$style['agree-list__head']">
+                                  <CheckBox
+                                    id="layerMyLoanOnlineContractAgree_008_001_001"
+                                    :classNames="{
+                                      wrap: $style['agree-list__checkbox'],
+                                    }"
+                                    theme="quinary"
                                   >
-                                    <span
-                                      :class="$style['agree-list__link-text']"
+                                    <CheckBoxObject />
+                                    <CheckBoxLabelText>
+                                      개인(신용)정보 수집·이용 동의
+                                    </CheckBoxLabelText>
+                                  </CheckBox>
+                                  <div :class="$style['agree-list__right']">
+                                    <button
+                                      type="button"
+                                      :class="$style['agree-list__link']"
                                     >
-                                      상세보기
-                                    </span>
-                                  </button>
+                                      <span
+                                        :class="$style['agree-list__link-text']"
+                                      >
+                                        상세보기
+                                      </span>
+                                    </button>
+                                  </div>
                                 </div>
-                              </div>
-                            </li>
-                            <li :class="$style['agree-list__item']">
-                              <div :class="$style['agree-list__head']">
-                                <CheckBox
-                                  id="layerMyLoanOnlineContractAgree_008_001_002"
-                                  :classNames="{
-                                    wrap: $style['agree-list__checkbox'],
-                                  }"
-                                  theme="quinary"
-                                >
-                                  <CheckBoxObject />
-                                  <CheckBoxLabelText>
-                                    고유식별정보 동의 여부
-                                  </CheckBoxLabelText>
-                                </CheckBox>
-                                <div :class="$style['agree-list__right']">
-                                  <button
-                                    type="button"
-                                    :class="$style['agree-list__link']"
+                              </li>
+                              <li :class="$style['agree-list__item']">
+                                <div :class="$style['agree-list__head']">
+                                  <CheckBox
+                                    id="layerMyLoanOnlineContractAgree_008_001_002"
+                                    :classNames="{
+                                      wrap: $style['agree-list__checkbox'],
+                                    }"
+                                    theme="quinary"
                                   >
-                                    <span
-                                      :class="$style['agree-list__link-text']"
+                                    <CheckBoxObject />
+                                    <CheckBoxLabelText>
+                                      고유식별정보 동의 여부
+                                    </CheckBoxLabelText>
+                                  </CheckBox>
+                                  <div :class="$style['agree-list__right']">
+                                    <button
+                                      type="button"
+                                      :class="$style['agree-list__link']"
                                     >
-                                      상세보기
-                                    </span>
-                                  </button>
+                                      <span
+                                        :class="$style['agree-list__link-text']"
+                                      >
+                                        상세보기
+                                      </span>
+                                    </button>
+                                  </div>
                                 </div>
-                              </div>
-                            </li>
-                          </ul>
-                        </li>
-                        <li :class="$style['agree-list__item']">
+                              </li>
+                            </ul>
+                          </UiAccordionLayer>
+                        </UiAccordionItem>
+                        <UiAccordionItem
+                          :classNames="{ item: $style['agree-list__item'] }"
+                          :initialOpen="true"
+                        >
                           <div :class="$style['agree-list__head']">
                             <CheckBox
                               id="layerMyLoanOnlineContractAgree_008_002"
@@ -1194,81 +1205,81 @@ export default {
                               </CheckBoxLabelText>
                             </CheckBox>
                             <div :class="$style['agree-list__right']">
-                              <button
-                                type="button"
-                                :class="$style['agree-list__link']"
-                              >
-                                <span :class="$style['agree-list__link-text']">
-                                  상세보기
-                                </span>
-                              </button>
+                              <UiAccordionOpener
+                                :classNames="{
+                                  button: $style['agree-list__depth-opener'],
+                                }"
+                              />
                             </div>
                           </div>
-                          <ul
-                            :class="[
-                              $style['agree-list__list'],
-                              $style['agree-list__list--secondary'],
-                            ]"
-                          >
-                            <li :class="$style['agree-list__item']">
-                              <div :class="$style['agree-list__head']">
-                                <CheckBox
-                                  id="layerMyLoanOnlineContractAgree_008_002_001"
-                                  :classNames="{
-                                    wrap: $style['agree-list__checkbox'],
-                                  }"
-                                  theme="quinary"
-                                >
-                                  <CheckBoxObject />
-                                  <CheckBoxLabelText
-                                    >개인(신용)정보 제공 동의</CheckBoxLabelText
+                          <UiAccordionLayer>
+                            <ul
+                              :class="[
+                                $style['agree-list__list'],
+                                $style['agree-list__list--secondary'],
+                              ]"
+                            >
+                              <li :class="$style['agree-list__item']">
+                                <div :class="$style['agree-list__head']">
+                                  <CheckBox
+                                    id="layerMyLoanOnlineContractAgree_008_002_001"
+                                    :classNames="{
+                                      wrap: $style['agree-list__checkbox'],
+                                    }"
+                                    theme="quinary"
                                   >
-                                </CheckBox>
-                                <div :class="$style['agree-list__right']">
-                                  <button
-                                    type="button"
-                                    :class="$style['agree-list__link']"
-                                  >
-                                    <span
-                                      :class="$style['agree-list__link-text']"
+                                    <CheckBoxObject />
+                                    <CheckBoxLabelText
+                                      >개인(신용)정보 제공
+                                      동의</CheckBoxLabelText
                                     >
-                                      상세보기
-                                    </span>
-                                  </button>
-                                </div>
-                              </div>
-                            </li>
-                            <li :class="$style['agree-list__item']">
-                              <div :class="$style['agree-list__head']">
-                                <CheckBox
-                                  id="layerMyLoanOnlineContractAgree_008_002_002"
-                                  :classNames="{
-                                    wrap: $style['agree-list__checkbox'],
-                                  }"
-                                  theme="quinary"
-                                >
-                                  <CheckBoxObject />
-                                  <CheckBoxLabelText
-                                    >고유식별정보 동의 여부</CheckBoxLabelText
-                                  >
-                                </CheckBox>
-                                <div :class="$style['agree-list__right']">
-                                  <button
-                                    type="button"
-                                    :class="$style['agree-list__link']"
-                                  >
-                                    <span
-                                      :class="$style['agree-list__link-text']"
+                                  </CheckBox>
+                                  <div :class="$style['agree-list__right']">
+                                    <button
+                                      type="button"
+                                      :class="$style['agree-list__link']"
                                     >
-                                      상세보기
-                                    </span>
-                                  </button>
+                                      <span
+                                        :class="$style['agree-list__link-text']"
+                                      >
+                                        상세보기
+                                      </span>
+                                    </button>
+                                  </div>
                                 </div>
-                              </div>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
+                              </li>
+                              <li :class="$style['agree-list__item']">
+                                <div :class="$style['agree-list__head']">
+                                  <CheckBox
+                                    id="layerMyLoanOnlineContractAgree_008_002_002"
+                                    :classNames="{
+                                      wrap: $style['agree-list__checkbox'],
+                                    }"
+                                    theme="quinary"
+                                  >
+                                    <CheckBoxObject />
+                                    <CheckBoxLabelText
+                                      >고유식별정보 동의 여부</CheckBoxLabelText
+                                    >
+                                  </CheckBox>
+                                  <div :class="$style['agree-list__right']">
+                                    <button
+                                      type="button"
+                                      :class="$style['agree-list__link']"
+                                    >
+                                      <span
+                                        :class="$style['agree-list__link-text']"
+                                      >
+                                        상세보기
+                                      </span>
+                                    </button>
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
+                          </UiAccordionLayer>
+                        </UiAccordionItem>
+                      </UiAccordion>
                     </div>
                   </UiAccordionLayer>
                 </UiAccordionItem>
@@ -1878,7 +1889,9 @@ export default {
                   </div>
                   <UiAccordionLayer>
                     <div :class="$style['agree-list__depth-contents']">
-                      <ul :class="$style['agree-list__list']">
+                      <UiAccordion
+                        :classNames="{ wrap: $style['agree-list__list'] }"
+                      >
                         <li :class="$style['agree-list__item']">
                           <div :class="$style['agree-list__head']">
                             <CheckBox
@@ -1905,7 +1918,10 @@ export default {
                             </div>
                           </div>
                         </li>
-                        <li :class="$style['agree-list__item']">
+                        <UiAccordionItem
+                          :classNames="{ item: $style['agree-list__item'] }"
+                          :initialOpen="true"
+                        >
                           <div :class="$style['agree-list__head']">
                             <CheckBox
                               id="layerMyLoanOnlineContractAgree_015_002"
@@ -1920,82 +1936,81 @@ export default {
                               </CheckBoxLabelText>
                             </CheckBox>
                             <div :class="$style['agree-list__right']">
-                              <button
-                                type="button"
-                                :class="$style['agree-list__link']"
-                              >
-                                <span :class="$style['agree-list__link-text']">
-                                  상세보기
-                                </span>
-                              </button>
+                              <UiAccordionOpener
+                                :classNames="{
+                                  button: $style['agree-list__depth-opener'],
+                                }"
+                              />
                             </div>
                           </div>
-                          <ul
-                            :class="[
-                              $style['agree-list__list'],
-                              $style['agree-list__list--secondary'],
-                            ]"
-                          >
-                            <li :class="$style['agree-list__item']">
-                              <div :class="$style['agree-list__head']">
-                                <CheckBox
-                                  id="layerMyLoanOnlineContractAgree_015_002_001"
-                                  :classNames="{
-                                    wrap: $style['agree-list__checkbox'],
-                                  }"
-                                  theme="quinary"
-                                >
-                                  <CheckBoxObject />
-                                  <CheckBoxLabelText
-                                    >개인(신용)정보 필수적
-                                    수집·이용</CheckBoxLabelText
+                          <UiAccordionLayer>
+                            <ul
+                              :class="[
+                                $style['agree-list__list'],
+                                $style['agree-list__list--secondary'],
+                              ]"
+                            >
+                              <li :class="$style['agree-list__item']">
+                                <div :class="$style['agree-list__head']">
+                                  <CheckBox
+                                    id="layerMyLoanOnlineContractAgree_015_002_001"
+                                    :classNames="{
+                                      wrap: $style['agree-list__checkbox'],
+                                    }"
+                                    theme="quinary"
                                   >
-                                </CheckBox>
-                                <div :class="$style['agree-list__right']">
-                                  <button
-                                    type="button"
-                                    :class="$style['agree-list__link']"
-                                  >
-                                    <span
-                                      :class="$style['agree-list__link-text']"
+                                    <CheckBoxObject />
+                                    <CheckBoxLabelText
+                                      >개인(신용)정보 필수적
+                                      수집·이용</CheckBoxLabelText
                                     >
-                                      상세보기
-                                    </span>
-                                  </button>
-                                </div>
-                              </div>
-                            </li>
-                            <li :class="$style['agree-list__item']">
-                              <div :class="$style['agree-list__head']">
-                                <CheckBox
-                                  id="layerMyLoanOnlineContractAgree_015_002_002"
-                                  :classNames="{
-                                    wrap: $style['agree-list__checkbox'],
-                                  }"
-                                  theme="quinary"
-                                >
-                                  <CheckBoxObject />
-                                  <CheckBoxLabelText
-                                    >고유식별정보 필수적
-                                    수집·이용</CheckBoxLabelText
-                                  >
-                                </CheckBox>
-                                <div :class="$style['agree-list__right']">
-                                  <button
-                                    type="button"
-                                    :class="$style['agree-list__link']"
-                                  >
-                                    <span
-                                      :class="$style['agree-list__link-text']"
+                                  </CheckBox>
+                                  <div :class="$style['agree-list__right']">
+                                    <button
+                                      type="button"
+                                      :class="$style['agree-list__link']"
                                     >
-                                      상세보기
-                                    </span>
-                                  </button>
+                                      <span
+                                        :class="$style['agree-list__link-text']"
+                                      >
+                                        상세보기
+                                      </span>
+                                    </button>
+                                  </div>
                                 </div>
-                              </div>
-                            </li>
-                          </ul>
-                        </li>
+                              </li>
+                              <li :class="$style['agree-list__item']">
+                                <div :class="$style['agree-list__head']">
+                                  <CheckBox
+                                    id="layerMyLoanOnlineContractAgree_015_002_002"
+                                    :classNames="{
+                                      wrap: $style['agree-list__checkbox'],
+                                    }"
+                                    theme="quinary"
+                                  >
+                                    <CheckBoxObject />
+                                    <CheckBoxLabelText
+                                      >고유식별정보 필수적
+                                      수집·이용</CheckBoxLabelText
+                                    >
+                                  </CheckBox>
+                                  <div :class="$style['agree-list__right']">
+                                    <button
+                                      type="button"
+                                      :class="$style['agree-list__link']"
+                                    >
+                                      <span
+                                        :class="$style['agree-list__link-text']"
+                                      >
+                                        상세보기
+                                      </span>
+                                    </button>
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
+                          </UiAccordionLayer>
+                        </UiAccordionItem>
                         <li :class="$style['agree-list__item']">
                           <div :class="$style['agree-list__head']">
                             <CheckBox
@@ -2023,7 +2038,10 @@ export default {
                             </div>
                           </div>
                         </li>
-                        <li :class="$style['agree-list__item']">
+                        <UiAccordionItem
+                          :classNames="{ item: $style['agree-list__item'] }"
+                          :initialOpen="true"
+                        >
                           <div :class="$style['agree-list__head']">
                             <CheckBox
                               id="layerMyLoanOnlineContractAgree_015_004"
@@ -2038,112 +2056,111 @@ export default {
                               </CheckBoxLabelText>
                             </CheckBox>
                             <div :class="$style['agree-list__right']">
-                              <button
-                                type="button"
-                                :class="$style['agree-list__link']"
-                              >
-                                <span :class="$style['agree-list__link-text']">
-                                  상세보기
-                                </span>
-                              </button>
+                              <UiAccordionOpener
+                                :classNames="{
+                                  button: $style['agree-list__depth-opener'],
+                                }"
+                              />
                             </div>
                           </div>
-                          <ul
-                            :class="[
-                              $style['agree-list__list'],
-                              $style['agree-list__list--secondary'],
-                            ]"
-                          >
-                            <li :class="$style['agree-list__item']">
-                              <div :class="$style['agree-list__head']">
-                                <CheckBox
-                                  id="layerMyLoanOnlineContractAgree_015_004_001"
-                                  :classNames="{
-                                    wrap: $style['agree-list__checkbox'],
-                                  }"
-                                  theme="quinary"
-                                >
-                                  <CheckBoxObject />
-                                  <CheckBoxLabelText
-                                    >개인(신용)정보 필수적
-                                    제공(신용정보회사)</CheckBoxLabelText
+                          <UiAccordionLayer>
+                            <ul
+                              :class="[
+                                $style['agree-list__list'],
+                                $style['agree-list__list--secondary'],
+                              ]"
+                            >
+                              <li :class="$style['agree-list__item']">
+                                <div :class="$style['agree-list__head']">
+                                  <CheckBox
+                                    id="layerMyLoanOnlineContractAgree_015_004_001"
+                                    :classNames="{
+                                      wrap: $style['agree-list__checkbox'],
+                                    }"
+                                    theme="quinary"
                                   >
-                                </CheckBox>
-                                <div :class="$style['agree-list__right']">
-                                  <button
-                                    type="button"
-                                    :class="$style['agree-list__link']"
-                                  >
-                                    <span
-                                      :class="$style['agree-list__link-text']"
+                                    <CheckBoxObject />
+                                    <CheckBoxLabelText
+                                      >개인(신용)정보 필수적
+                                      제공(신용정보회사)</CheckBoxLabelText
                                     >
-                                      상세보기
-                                    </span>
-                                  </button>
-                                </div>
-                              </div>
-                            </li>
-                            <li :class="$style['agree-list__item']">
-                              <div :class="$style['agree-list__head']">
-                                <CheckBox
-                                  id="layerMyLoanOnlineContractAgree_015_004_002"
-                                  :classNames="{
-                                    wrap: $style['agree-list__checkbox'],
-                                  }"
-                                  theme="quinary"
-                                >
-                                  <CheckBoxObject />
-                                  <CheckBoxLabelText
-                                    >개인(신용)정보 필수적
-                                    제공(하나손해보험㈜)</CheckBoxLabelText
-                                  >
-                                </CheckBox>
-                                <div :class="$style['agree-list__right']">
-                                  <button
-                                    type="button"
-                                    :class="$style['agree-list__link']"
-                                  >
-                                    <span
-                                      :class="$style['agree-list__link-text']"
+                                  </CheckBox>
+                                  <div :class="$style['agree-list__right']">
+                                    <button
+                                      type="button"
+                                      :class="$style['agree-list__link']"
                                     >
-                                      상세보기
-                                    </span>
-                                  </button>
+                                      <span
+                                        :class="$style['agree-list__link-text']"
+                                      >
+                                        상세보기
+                                      </span>
+                                    </button>
+                                  </div>
                                 </div>
-                              </div>
-                            </li>
-                            <li :class="$style['agree-list__item']">
-                              <div :class="$style['agree-list__head']">
-                                <CheckBox
-                                  id="layerMyLoanOnlineContractAgree_015_004_003"
-                                  :classNames="{
-                                    wrap: $style['agree-list__checkbox'],
-                                  }"
-                                  theme="quinary"
-                                >
-                                  <CheckBoxObject />
-                                  <CheckBoxLabelText
-                                    >고유식별번호 필수적
-                                    제공(하나손해보험㈜)</CheckBoxLabelText
+                              </li>
+                              <li :class="$style['agree-list__item']">
+                                <div :class="$style['agree-list__head']">
+                                  <CheckBox
+                                    id="layerMyLoanOnlineContractAgree_015_004_002"
+                                    :classNames="{
+                                      wrap: $style['agree-list__checkbox'],
+                                    }"
+                                    theme="quinary"
                                   >
-                                </CheckBox>
-                                <div :class="$style['agree-list__right']">
-                                  <button
-                                    type="button"
-                                    :class="$style['agree-list__link']"
-                                  >
-                                    <span
-                                      :class="$style['agree-list__link-text']"
+                                    <CheckBoxObject />
+                                    <CheckBoxLabelText
+                                      >개인(신용)정보 필수적
+                                      제공(하나손해보험㈜)</CheckBoxLabelText
                                     >
-                                      상세보기
-                                    </span>
-                                  </button>
+                                  </CheckBox>
+                                  <div :class="$style['agree-list__right']">
+                                    <button
+                                      type="button"
+                                      :class="$style['agree-list__link']"
+                                    >
+                                      <span
+                                        :class="$style['agree-list__link-text']"
+                                      >
+                                        상세보기
+                                      </span>
+                                    </button>
+                                  </div>
                                 </div>
-                              </div>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
+                              </li>
+                              <li :class="$style['agree-list__item']">
+                                <div :class="$style['agree-list__head']">
+                                  <CheckBox
+                                    id="layerMyLoanOnlineContractAgree_015_004_003"
+                                    :classNames="{
+                                      wrap: $style['agree-list__checkbox'],
+                                    }"
+                                    theme="quinary"
+                                  >
+                                    <CheckBoxObject />
+                                    <CheckBoxLabelText
+                                      >고유식별번호 필수적
+                                      제공(하나손해보험㈜)</CheckBoxLabelText
+                                    >
+                                  </CheckBox>
+                                  <div :class="$style['agree-list__right']">
+                                    <button
+                                      type="button"
+                                      :class="$style['agree-list__link']"
+                                    >
+                                      <span
+                                        :class="$style['agree-list__link-text']"
+                                      >
+                                        상세보기
+                                      </span>
+                                    </button>
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
+                          </UiAccordionLayer>
+                        </UiAccordionItem>
+                      </UiAccordion>
                     </div>
                   </UiAccordionLayer>
                 </UiAccordionItem>
@@ -2184,8 +2201,13 @@ export default {
                   </div>
                   <UiAccordionLayer>
                     <div :class="$style['agree-list__depth-contents']">
-                      <ul :class="$style['agree-list__list']">
-                        <li :class="$style['agree-list__item']">
+                      <UiAccordion
+                        :classNames="{ wrap: $style['agree-list__list'] }"
+                      >
+                        <UiAccordionItem
+                          :classNames="{ item: $style['agree-list__item'] }"
+                          :initialOpen="true"
+                        >
                           <div :class="$style['agree-list__head']">
                             <CheckBox
                               id="layerMyLoanOnlineContractAgree_016_001"
@@ -2200,170 +2222,169 @@ export default {
                               </CheckBoxLabelText>
                             </CheckBox>
                             <div :class="$style['agree-list__right']">
-                              <button
-                                type="button"
-                                :class="$style['agree-list__link']"
-                              >
-                                <span :class="$style['agree-list__link-text']">
-                                  상세보기
-                                </span>
-                              </button>
+                              <UiAccordionOpener
+                                :classNames="{
+                                  button: $style['agree-list__depth-opener'],
+                                }"
+                              />
                             </div>
                           </div>
-                          <ul
-                            :class="[
-                              $style['agree-list__list'],
-                              $style['agree-list__list--secondary'],
-                            ]"
-                          >
-                            <li :class="$style['agree-list__item']">
-                              <div :class="$style['agree-list__head']">
-                                <CheckBox
-                                  id="layerMyLoanOnlineContractAgree_016_001_001"
-                                  :classNames="{
-                                    wrap: $style['agree-list__checkbox'],
-                                  }"
-                                  theme="quinary"
-                                >
-                                  <CheckBoxObject />
-                                  <CheckBoxLabelText
-                                    >금융상품 안내 및 이용권유를 위한
-                                    수집·이용</CheckBoxLabelText
+                          <UiAccordionLayer>
+                            <ul
+                              :class="[
+                                $style['agree-list__list'],
+                                $style['agree-list__list--secondary'],
+                              ]"
+                            >
+                              <li :class="$style['agree-list__item']">
+                                <div :class="$style['agree-list__head']">
+                                  <CheckBox
+                                    id="layerMyLoanOnlineContractAgree_016_001_001"
+                                    :classNames="{
+                                      wrap: $style['agree-list__checkbox'],
+                                    }"
+                                    theme="quinary"
                                   >
-                                </CheckBox>
-                                <div :class="$style['agree-list__right']">
-                                  <button
-                                    type="button"
-                                    :class="$style['agree-list__link']"
-                                  >
-                                    <span
-                                      :class="$style['agree-list__link-text']"
+                                    <CheckBoxObject />
+                                    <CheckBoxLabelText
+                                      >금융상품 안내 및 이용권유를 위한
+                                      수집·이용</CheckBoxLabelText
                                     >
-                                      상세보기
-                                    </span>
-                                  </button>
+                                  </CheckBox>
+                                  <div :class="$style['agree-list__right']">
+                                    <button
+                                      type="button"
+                                      :class="$style['agree-list__link']"
+                                    >
+                                      <span
+                                        :class="$style['agree-list__link-text']"
+                                      >
+                                        상세보기
+                                      </span>
+                                    </button>
+                                  </div>
                                 </div>
-                              </div>
-                            </li>
-                            <li :class="$style['agree-list__item']">
-                              <div :class="$style['agree-list__head']">
-                                <CheckBox
-                                  id="layerMyLoanOnlineContractAgree_016_001_002"
-                                  :classNames="{
-                                    wrap: $style['agree-list__checkbox'],
-                                  }"
-                                  theme="quinary"
-                                >
-                                  <CheckBoxObject />
-                                  <CheckBoxLabelText
-                                    >전자적 매체를 통한 광고성 정보의
-                                    수신</CheckBoxLabelText
+                              </li>
+                              <li :class="$style['agree-list__item']">
+                                <div :class="$style['agree-list__head']">
+                                  <CheckBox
+                                    id="layerMyLoanOnlineContractAgree_016_001_002"
+                                    :classNames="{
+                                      wrap: $style['agree-list__checkbox'],
+                                    }"
+                                    theme="quinary"
                                   >
-                                </CheckBox>
-                                <div :class="$style['agree-list__right']">
-                                  <button
-                                    type="button"
-                                    :class="$style['agree-list__link']"
-                                  >
-                                    <span
-                                      :class="$style['agree-list__link-text']"
+                                    <CheckBoxObject />
+                                    <CheckBoxLabelText
+                                      >전자적 매체를 통한 광고성 정보의
+                                      수신</CheckBoxLabelText
                                     >
-                                      상세보기
-                                    </span>
-                                  </button>
+                                  </CheckBox>
+                                  <div :class="$style['agree-list__right']">
+                                    <button
+                                      type="button"
+                                      :class="$style['agree-list__link']"
+                                    >
+                                      <span
+                                        :class="$style['agree-list__link-text']"
+                                      >
+                                        상세보기
+                                      </span>
+                                    </button>
+                                  </div>
                                 </div>
-                              </div>
-                              <ul
-                                :class="[
-                                  $style['agree-list__list'],
-                                  $style['agree-list__list--tertiary'],
-                                ]"
-                              >
-                                <li :class="$style['agree-list__item']">
-                                  <div :class="$style['agree-list__head']">
-                                    <CheckBox
-                                      id="layerMyLoanOnlineContractAgree_016_001_002_001"
-                                      :classNames="{
-                                        wrap: $style['agree-list__checkbox'],
-                                      }"
-                                      theme="quinary"
-                                    >
-                                      <CheckBoxObject />
-                                      <CheckBoxLabelText
-                                        >전체</CheckBoxLabelText
+                                <ul
+                                  :class="[
+                                    $style['agree-list__list'],
+                                    $style['agree-list__list--tertiary'],
+                                  ]"
+                                >
+                                  <li :class="$style['agree-list__item']">
+                                    <div :class="$style['agree-list__head']">
+                                      <CheckBox
+                                        id="layerMyLoanOnlineContractAgree_016_001_002_001"
+                                        :classNames="{
+                                          wrap: $style['agree-list__checkbox'],
+                                        }"
+                                        theme="quinary"
                                       >
-                                    </CheckBox>
-                                  </div>
-                                </li>
-                                <li :class="$style['agree-list__item']">
-                                  <div :class="$style['agree-list__head']">
-                                    <CheckBox
-                                      id="layerMyLoanOnlineContractAgree_016_001_002_002"
-                                      :classNames="{
-                                        wrap: $style['agree-list__checkbox'],
-                                      }"
-                                      theme="quinary"
-                                    >
-                                      <CheckBoxObject />
-                                      <CheckBoxLabelText
-                                        >전화</CheckBoxLabelText
+                                        <CheckBoxObject />
+                                        <CheckBoxLabelText
+                                          >전체</CheckBoxLabelText
+                                        >
+                                      </CheckBox>
+                                    </div>
+                                  </li>
+                                  <li :class="$style['agree-list__item']">
+                                    <div :class="$style['agree-list__head']">
+                                      <CheckBox
+                                        id="layerMyLoanOnlineContractAgree_016_001_002_002"
+                                        :classNames="{
+                                          wrap: $style['agree-list__checkbox'],
+                                        }"
+                                        theme="quinary"
                                       >
-                                    </CheckBox>
-                                  </div>
-                                </li>
-                                <li :class="$style['agree-list__item']">
-                                  <div :class="$style['agree-list__head']">
-                                    <CheckBox
-                                      id="layerMyLoanOnlineContractAgree_016_001_002_003"
-                                      :classNames="{
-                                        wrap: $style['agree-list__checkbox'],
-                                      }"
-                                      theme="quinary"
-                                    >
-                                      <CheckBoxObject />
-                                      <CheckBoxLabelText
-                                        >문자메시지</CheckBoxLabelText
+                                        <CheckBoxObject />
+                                        <CheckBoxLabelText
+                                          >전화</CheckBoxLabelText
+                                        >
+                                      </CheckBox>
+                                    </div>
+                                  </li>
+                                  <li :class="$style['agree-list__item']">
+                                    <div :class="$style['agree-list__head']">
+                                      <CheckBox
+                                        id="layerMyLoanOnlineContractAgree_016_001_002_003"
+                                        :classNames="{
+                                          wrap: $style['agree-list__checkbox'],
+                                        }"
+                                        theme="quinary"
                                       >
-                                    </CheckBox>
-                                  </div>
-                                </li>
-                                <li :class="$style['agree-list__item']">
-                                  <div :class="$style['agree-list__head']">
-                                    <CheckBox
-                                      id="layerMyLoanOnlineContractAgree_016_001_002_004"
-                                      :classNames="{
-                                        wrap: $style['agree-list__checkbox'],
-                                      }"
-                                      theme="quinary"
-                                    >
-                                      <CheckBoxObject />
-                                      <CheckBoxLabelText
-                                        >우편</CheckBoxLabelText
+                                        <CheckBoxObject />
+                                        <CheckBoxLabelText
+                                          >문자메시지</CheckBoxLabelText
+                                        >
+                                      </CheckBox>
+                                    </div>
+                                  </li>
+                                  <li :class="$style['agree-list__item']">
+                                    <div :class="$style['agree-list__head']">
+                                      <CheckBox
+                                        id="layerMyLoanOnlineContractAgree_016_001_002_004"
+                                        :classNames="{
+                                          wrap: $style['agree-list__checkbox'],
+                                        }"
+                                        theme="quinary"
                                       >
-                                    </CheckBox>
-                                  </div>
-                                </li>
-                                <li :class="$style['agree-list__item']">
-                                  <div :class="$style['agree-list__head']">
-                                    <CheckBox
-                                      id="layerMyLoanOnlineContractAgree_016_001_002_005"
-                                      :classNames="{
-                                        wrap: $style['agree-list__checkbox'],
-                                      }"
-                                      theme="quinary"
-                                    >
-                                      <CheckBoxObject />
-                                      <CheckBoxLabelText
-                                        >이메일</CheckBoxLabelText
+                                        <CheckBoxObject />
+                                        <CheckBoxLabelText
+                                          >우편</CheckBoxLabelText
+                                        >
+                                      </CheckBox>
+                                    </div>
+                                  </li>
+                                  <li :class="$style['agree-list__item']">
+                                    <div :class="$style['agree-list__head']">
+                                      <CheckBox
+                                        id="layerMyLoanOnlineContractAgree_016_001_002_005"
+                                        :classNames="{
+                                          wrap: $style['agree-list__checkbox'],
+                                        }"
+                                        theme="quinary"
                                       >
-                                    </CheckBox>
-                                  </div>
-                                </li>
-                              </ul>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
+                                        <CheckBoxObject />
+                                        <CheckBoxLabelText
+                                          >이메일</CheckBoxLabelText
+                                        >
+                                      </CheckBox>
+                                    </div>
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </UiAccordionLayer>
+                        </UiAccordionItem>
+                      </UiAccordion>
                     </div>
                   </UiAccordionLayer>
                 </UiAccordionItem>

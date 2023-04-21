@@ -1201,9 +1201,14 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/auto-long-rental-001',
-        status: 'partend',
+        status: 'end',
         create: '2023.04.14',
-        log: [],
+        log: [
+          {
+            date: '2023.04.21',
+            text: '팝업 추가\n- 인도요청 정보입력',
+          },
+        ],
       },
       {
         depth2: '오토리스\nAF_M02_p001',
