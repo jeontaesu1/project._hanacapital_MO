@@ -17,6 +17,7 @@ import LayerAutoLongRentalOrderConfirm from '@/views/auto/LayerAutoLongRentalOrd
 import LayerAutoLongRentalOrderAlert from '@/views/auto/LayerAutoLongRentalOrderAlert.vue';
 import LayerAutoLongRentalOrderComplete from '@/views/auto/LayerAutoLongRentalOrderComplete.vue';
 import LayerAutoLongRentalDelivery from '@/views/auto/LayerAutoLongRentalDelivery.vue';
+import LayerAutoLongRentalDeliveryForm from '@/views/auto/LayerAutoLongRentalDeliveryForm.vue';
 
 export default {
   components: {
@@ -35,6 +36,7 @@ export default {
     LayerAutoLongRentalOrderAlert,
     LayerAutoLongRentalOrderComplete,
     LayerAutoLongRentalDelivery,
+    LayerAutoLongRentalDeliveryForm,
   },
   setup() {
     const layer001 = ref(null);
@@ -48,6 +50,7 @@ export default {
     const layer009 = ref(null);
     const layer010 = ref(null);
     const layer011 = ref(null);
+    const layer012 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -82,6 +85,9 @@ export default {
     const layer011Open = (e = {}) => {
       layer011.value.layer.open(e.target);
     };
+    const layer012Open = (e = {}) => {
+      layer012.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -95,6 +101,7 @@ export default {
       layer009,
       layer010,
       layer011,
+      layer012,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -106,6 +113,7 @@ export default {
       layer009Open,
       layer010Open,
       layer011Open,
+      layer012Open,
     };
   },
 };
@@ -174,6 +182,11 @@ export default {
           >인도요청 안내<br />AF_M01_l011</BasicButton
         >
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer012Open"
+          >인도요청 정보입력<br />AF_M01_l012</BasicButton
+        >
+      </ButtonListItem>
     </ButtonList>
 
     <LayerAutoLongRentalEvaluationCounseling ref="layer001" />
@@ -187,5 +200,6 @@ export default {
     <LayerAutoLongRentalOrderAlert ref="layer009" />
     <LayerAutoLongRentalOrderComplete ref="layer010" />
     <LayerAutoLongRentalDelivery ref="layer011" />
+    <LayerAutoLongRentalDeliveryForm ref="layer012" />
   </PageContents>
 </template>
