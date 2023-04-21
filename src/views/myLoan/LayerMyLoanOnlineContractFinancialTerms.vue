@@ -24,6 +24,7 @@ import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
+import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
 
 export default {
   components: {
@@ -49,12 +50,14 @@ export default {
     InputBlock,
     InputBlockCell,
     BasicInput,
+    BasicDatepicker,
   },
   setup() {
     const layer = ref(null);
     const state = reactive({
       buyError: false,
       nameError: false,
+      dateError: false,
     });
 
     return {
@@ -99,7 +102,9 @@ export default {
                   name="layerMyLoanOnlineContractFinancialTermsBuy001"
                   id="layerMyLoanOnlineContractFinancialTermsBuy001_001"
                 >
-                  <BoxCheckLabel>+ 10만</BoxCheckLabel>
+                  <BoxCheckLabel>
+                    <span class="color-gray">+ 10만</span>
+                  </BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
               <BoxCheckListItem>
@@ -108,7 +113,9 @@ export default {
                   name="layerMyLoanOnlineContractFinancialTermsBuy001"
                   id="layerMyLoanOnlineContractFinancialTermsBuy001_002"
                 >
-                  <BoxCheckLabel>+ 100만</BoxCheckLabel>
+                  <BoxCheckLabel>
+                    <span class="color-gray">+ 100만</span>
+                  </BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
               <BoxCheckListItem>
@@ -117,7 +124,9 @@ export default {
                   name="layerMyLoanOnlineContractFinancialTermsBuy001"
                   id="layerMyLoanOnlineContractFinancialTermsBuy001_003"
                 >
-                  <BoxCheckLabel>+ 300만</BoxCheckLabel>
+                  <BoxCheckLabel>
+                    <span class="color-gray">+ 300만</span>
+                  </BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
               <BoxCheckListItem>
@@ -126,7 +135,9 @@ export default {
                   name="layerMyLoanOnlineContractFinancialTermsBuy001"
                   id="layerMyLoanOnlineContractFinancialTermsBuy001_004"
                 >
-                  <BoxCheckLabel>+ 500만</BoxCheckLabel>
+                  <BoxCheckLabel>
+                    <span class="color-gray">+ 500만</span>
+                  </BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
               <BoxCheckListItem>
@@ -135,7 +146,9 @@ export default {
                   name="layerMyLoanOnlineContractFinancialTermsBuy001"
                   id="layerMyLoanOnlineContractFinancialTermsBuy001_005"
                 >
-                  <BoxCheckLabel>+ 1000만</BoxCheckLabel>
+                  <BoxCheckLabel>
+                    <span class="color-gray">+ 1000만</span>
+                  </BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
             </BoxCheckList>
@@ -158,7 +171,24 @@ export default {
           </FormInvalid>
         </FormListItem>
 
-        <FormListItem titleText="입금일자">// 데이트 피커</FormListItem>
+        <FormListItem
+          titleText="인수일자"
+          target="#layerMyLoanOnlineContractFinancialTermsDateButton"
+        >
+          <FormInvalid :error="state.dateError">
+            <InputBlock :error="state.dateError">
+              <InputBlockCell :flexible="true">
+                <BasicDatepicker
+                  title="인수 요청일"
+                  id="layerMyLoanOnlineContractFinancialTermsDate"
+                  buttonId="layerMyLoanOnlineContractFinancialTermsDateButton"
+                  :onChange="testInputEvent"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
 
         <FormListItem
           titleText="차량 판매자"
