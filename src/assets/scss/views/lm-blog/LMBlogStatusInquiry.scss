@@ -1,0 +1,22 @@
+@import '@/assets/scss/components/import/division-info.scss';
+
+.status-inquiry {
+  @include reset-list;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: -30px -20px 0;
+  padding: 20px 16px;
+  background: #f9f9f9;
+  text-align: center;
+
+  &__number {
+    color: $color-green-50;
+    @include font-size-default(16);
+  }
+  &__text {
+    margin-top: 2px;
+    color: $color-gray-90;
+    @include font-size-default(12);
+  }
+}

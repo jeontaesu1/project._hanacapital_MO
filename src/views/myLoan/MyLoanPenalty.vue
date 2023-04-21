@@ -1,6 +1,6 @@
 <script>
 // My_M01_p006
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, reactive, onMounted, onUnmounted } from 'vue';
 
 import { useUiCommonStore } from '@/stores/ui/common';
 import { useUiHeaderStore } from '@/stores/ui/header';
@@ -18,6 +18,16 @@ import ToastPopup from '@/components/ui/layer/ToastPopup.vue';
 import ToastPopupHead from '@/components/ui/layer/ToastPopupHead.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 
+import FormList from '@/components/ui/form/FormList.vue';
+import FormListItem from '@/components/ui/form/FormListItem.vue';
+import FormInvalid from '@/components/ui/form/FormInvalid.vue';
+import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
+import InputBlock from '@/components/ui/form/InputBlock.vue';
+import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
+import BasicInput from '@/components/ui/form/BasicInput.vue';
+import BasicHr from '@/components/ui/common/BasicHr.vue';
+import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
+
 export default {
   components: {
     PageContents,
@@ -32,6 +42,14 @@ export default {
     ToastPopup,
     ToastPopupHead,
     PopupTitle,
+    FormList,
+    FormListItem,
+    FormInvalid,
+    FormInvalidMessage,
+    InputBlock,
+    InputBlockCell,
+    BasicHr,
+    BasicDatepicker,
   },
   setup() {
     const store = {
@@ -40,11 +58,18 @@ export default {
         header: useUiHeaderStore(),
       },
     };
-
     const alert = ref(null);
+    const state = reactive({
+      testError001: false,
+    });
+    const layerTest001 = ref(null);
     const layerTest003 = ref(null);
     const layerOpenTest003 = (e = {}) => {
       layerTest003.value.open(e.target);
+    };
+
+    const testInputEvent = (e = {}) => {
+      console.log(e.type, e.target);
     };
     undefined;
     const alertOpen = (options) => {
@@ -56,13 +81,8 @@ export default {
 
       // optional : 헤더 구성 변경
       store.ui.header.setTitle(() => '범칙금');
-      store.ui.header.setLeftButtons(() => []);
-      store.ui.header.setRightButtons(() => [
-        {
-          name: 'close',
-          onClick: () => alert('닫기 클릭'),
-        },
-      ]);
+      store.ui.header.setLeftButtons(() => ['back']);
+      store.ui.header.setRightButtons(() => []);
     });
 
     onUnmounted(() => {
@@ -78,8 +98,11 @@ export default {
       alert,
       alertOpen,
 
+      state,
+      layerTest001,
       layerTest003,
       layerOpenTest003,
+      testInputEvent,
     };
   },
 };
@@ -87,7 +110,40 @@ export default {
 
 <template>
   <PageContents>
-    <template v-slot:head>contents head</template>
+    <FormList>
+      <FormListItem titleText="검색조건" target="#testInput013StartButton">
+        <FormInvalid :error="state.testError001">
+          <InputBlock :error="state.testError001">
+            <InputBlockCell :flexible="true">
+              <BasicDatepicker
+                title="검색조건 시작 날짜"
+                id="testInput013Start"
+                buttonId="testInput013StartButton"
+                :max="state.testMaxDate001"
+                v-model="state.testMinDate001"
+                :onChange="testInputEvent"
+              />
+            </InputBlockCell>
+            <InputBlockCell margin="regular">
+              <div class="text-body-3">~</div>
+            </InputBlockCell>
+            <InputBlockCell :flexible="true" margin="regular">
+              <BasicDatepicker
+                title="검색조건 종료 날짜"
+                id="testInput013End"
+                buttonId="testInput013EndButton"
+                :min="state.testMinDate001"
+                v-model="state.testMaxDate001"
+                :onChange="testInputEvent"
+              />
+            </InputBlockCell>
+          </InputBlock>
+          <FormInvalidMessage>Error Message</FormInvalidMessage>
+        </FormInvalid>
+      </FormListItem>
+    </FormList>
+
+    <BasicHr className="row-margin-container-medium" />
 
     <ul :class="$style['logs']">
       <li :class="$style['logs__item']">
@@ -260,42 +316,8 @@ export default {
             <KeyValueText>대납청구(이체)</KeyValueText>
           </KeyValueItem>
         </KeyValue>
-
-        <template v-slot:foot>
-          <ButtonList
-            :classNames="{
-              wrap: 'row-margin-none',
-            }"
-          >
-            <ButtonListItem>
-              <BasicButton
-                :line="true"
-                theme="quaternary"
-                @click="layerSlotProps.close()"
-                >Button 1</BasicButton
-              >
-            </ButtonListItem>
-            <ButtonListItem>
-              <BasicButton @click="layerSlotProps.close()"
-                >Button 2</BasicButton
-              >
-            </ButtonListItem>
-          </ButtonList>
-        </template>
       </ToastPopup>
     </UiLayer>
-
-    <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton>조회</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
-    </template>
   </PageContents>
 </template>
 

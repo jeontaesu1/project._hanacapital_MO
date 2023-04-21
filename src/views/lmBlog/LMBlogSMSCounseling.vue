@@ -1,5 +1,5 @@
 <script>
-// LM_M03_p001
+//
 import { ref, reactive, onMounted, onUnmounted } from 'vue';
 
 import { useUiCommonStore } from '@/stores/ui/common';
@@ -7,8 +7,6 @@ import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
-import ButtonList from '@/components/ui/button/ButtonList.vue';
-import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
@@ -22,13 +20,12 @@ import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
+import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
 
 export default {
   components: {
     PageContents,
     BasicButton,
-    ButtonList,
-    ButtonListItem,
     FormList,
     FormListItem,
     FormInvalid,
@@ -42,6 +39,7 @@ export default {
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
+    BasicDatepicker,
   },
   setup() {
     const store = {
@@ -84,8 +82,37 @@ export default {
 
 <template>
   <PageContents>
-    <template v-slot:head>contents head</template>
     <FormList>
+      <FormListItem titleText="검색조건" target="#testInput013StartButton">
+        <FormInvalid :error="state.testError001">
+          <InputBlock :error="state.testError001">
+            <InputBlockCell :flexible="true">
+              <BasicDatepicker
+                title="검색조건 시작 날짜"
+                id="testInput013Start"
+                buttonId="testInput013StartButton"
+                :max="state.testMaxDate001"
+                v-model="state.testMinDate001"
+                :onChange="testInputEvent"
+              />
+            </InputBlockCell>
+            <InputBlockCell margin="regular">
+              <div class="text-body-3">~</div>
+            </InputBlockCell>
+            <InputBlockCell :flexible="true" margin="regular">
+              <BasicDatepicker
+                title="검색조건 종료 날짜"
+                id="testInput013End"
+                buttonId="testInput013EndButton"
+                :min="state.testMinDate001"
+                v-model="state.testMaxDate001"
+                :onChange="testInputEvent"
+              />
+            </InputBlockCell>
+          </InputBlock>
+          <FormInvalidMessage>Error Message</FormInvalidMessage>
+        </FormInvalid>
+      </FormListItem>
       <FormListItem titleText="신청자명" target="#testInput007">
         <FormInvalid :error="state.testError001">
           <InputBlock :error="state.testError001">
@@ -98,7 +125,7 @@ export default {
       </FormListItem>
     </FormList>
 
-    <div class="row-margin-contents-group">
+    <div class="row-margin-contents-group row-margin-bottom-none">
       <BasicButton :line="true"> 조회 </BasicButton>
     </div>
     <BasicHr className="row-margin-container-medium" />
@@ -151,19 +178,5 @@ export default {
     <!-- <div :class="$style['empty']">
       <p :class="$style['empty__text']">등록된 상담이 없습니다.</p>
     </div> -->
-    <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton :line="true" theme="quaternary">Button 1</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton>Button 2</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
-    </template>
   </PageContents>
 </template>
