@@ -113,7 +113,9 @@ export default {
       </div>
     </div>
 
-    <div>// 배너 영역 (내용 확인 후 진행 예정)</div>
+    <div class="row-margin-item-medium">
+      // 배너 영역 (내용 확인 후 진행 예정)
+    </div>
 
     <ul :class="[$style['basic-list'], $style['basic-list--small-margin']]">
       <li :class="$style['basic-list__item']">

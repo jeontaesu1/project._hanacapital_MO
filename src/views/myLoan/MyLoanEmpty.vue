@@ -1,6 +1,7 @@
 <script>
 // My_M01_p001 계약미보유
 import { onMounted, onUnmounted } from 'vue';
+import { RouterLink } from 'vue-router';
 
 import { useUiHeaderStore } from '@/stores/ui/header';
 
@@ -17,6 +18,7 @@ import ImgSample from '@/assets/images/_dummy/illustration-sample.svg?component'
 
 export default {
   components: {
+    RouterLink,
     PageContents,
     PageTextGroup,
     PageMainText,
@@ -71,7 +73,7 @@ export default {
     <div :class="$style['icon-list']">
       <ul :class="$style['icon-list__list']">
         <li :class="$style['icon-list__item']">
-          <button type="button" :class="$style['icon-list__block']">
+          <RouterLink to="" :class="$style['icon-list__block']">
             <span :class="$style['icon-list__icon']"><IconPig /></span>
             <span :class="$style['icon-list__content']">
               <span :class="$style['icon-list__text']"
@@ -79,10 +81,10 @@ export default {
               >
               <span :class="$style['icon-list__title']">e하나신용대출</span>
             </span>
-          </button>
+          </RouterLink>
         </li>
         <li :class="$style['icon-list__item']">
-          <button type="button" :class="$style['icon-list__block']">
+          <RouterLink to="" :class="$style['icon-list__block']">
             <span :class="$style['icon-list__icon']"><IconBuilding /></span>
             <span :class="$style['icon-list__content']">
               <span :class="$style['icon-list__text']"
@@ -90,10 +92,10 @@ export default {
               >
               <span :class="$style['icon-list__title']">행복아파트론</span>
             </span>
-          </button>
+          </RouterLink>
         </li>
         <li :class="$style['icon-list__item']">
-          <button type="button" :class="$style['icon-list__block']">
+          <RouterLink to="" :class="$style['icon-list__block']">
             <span :class="$style['icon-list__icon']"><IconCar /></span>
             <span :class="$style['icon-list__content']">
               <span :class="$style['icon-list__text']"
@@ -103,10 +105,10 @@ export default {
                 >원큐자동차담보대출</span
               >
             </span>
-          </button>
+          </RouterLink>
         </li>
         <li :class="$style['icon-list__item']">
-          <button type="button" :class="$style['icon-list__block']">
+          <RouterLink to="" :class="$style['icon-list__block']">
             <span :class="$style['icon-list__icon']"><IconInterestRate /></span>
             <span :class="$style['icon-list__content']">
               <span :class="$style['icon-list__text']"
@@ -114,7 +116,7 @@ export default {
               >
               <span :class="$style['icon-list__title']">스탁론</span>
             </span>
-          </button>
+          </RouterLink>
         </li>
       </ul>
     </div>

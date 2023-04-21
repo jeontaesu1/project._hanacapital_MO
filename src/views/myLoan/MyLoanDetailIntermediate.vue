@@ -129,8 +129,10 @@ export default {
             </p>
           </div>
         </BasicBox>
+      </div>
 
-        <ButtonList>
+      <div class="row-margin-contents">
+        <ButtonList :classNames="{ wrap: 'row-margin-none' }">
           <ButtonListItem>
             <BasicButton :line="true" theme="quaternary"
               >증명서 조회/발급</BasicButton

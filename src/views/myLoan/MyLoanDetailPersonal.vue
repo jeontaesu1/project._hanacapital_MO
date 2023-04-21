@@ -78,7 +78,12 @@ export default {
           <h3 class="text-title-2">e하나신용대출</h3>
         </div>
         <div class="flex-box__cell">
-          <RoundStatus theme="secondary"> D-7 </RoundStatus>
+          <RoundStatus
+            :classNames="{ wrap: 'display-block' }"
+            theme="secondary"
+          >
+            D-7
+          </RoundStatus>
         </div>
       </div>
       <div class="row-margin-contents">
@@ -138,8 +143,10 @@ export default {
             </p>
           </div>
         </BasicBox>
+      </div>
 
-        <ButtonList>
+      <div class="row-margin-contents">
+        <ButtonList :classNames="{ wrap: 'row-margin-none' }">
           <ButtonListItem>
             <BasicButton :line="true" theme="quaternary"
               >증명서 조회/발급</BasicButton

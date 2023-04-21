@@ -34,6 +34,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 import StickyBar from '@/components/ui/common/StickyBar.vue';
 import BankLogo from '@/components/ui/imageData/BankLogo.vue';
+import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
 
 import LayerInventoryFinanceEarlyAccountNotice from '@/views/inventoryFinance/LayerInventoryFinanceEarlyAccountNotice.vue';
 
@@ -71,6 +72,7 @@ export default {
     TextButton,
     StickyBar,
     BankLogo,
+    BasicDatepicker,
     LayerInventoryFinanceEarlyAccountNotice,
     iconInformation,
   },
@@ -83,6 +85,7 @@ export default {
 
     const state = reactive({
       accountError: false,
+      depositDateError: false,
     });
 
     const layer001 = ref(null);
@@ -355,7 +358,23 @@ export default {
       </FormListItem>
 
       <!-- Case : 중도상환 시뮬레이션 선택 시 노출 -->
-      <FormListItem titleText="입금일자">// 데이트 피커</FormListItem>
+      <FormListItem
+        titleText="입금일자"
+        target="#inventoryFinanceEarlyFormDepositDateButton"
+      >
+        <FormInvalid :error="state.depositDateError">
+          <InputBlock :error="state.depositDateError">
+            <InputBlockCell :flexible="true">
+              <BasicDatepicker
+                title="입금일자"
+                id="inventoryFinanceEarlyFormDepositDate"
+                buttonId="inventoryFinanceEarlyFormDepositDateButton"
+              />
+            </InputBlockCell>
+          </InputBlock>
+          <FormInvalidMessage>Error Message</FormInvalidMessage>
+        </FormInvalid>
+      </FormListItem>
       <!-- // Case : 중도상환 시뮬레이션 선택 시 노출 -->
 
       <FormListItem titleText="상환금액" :disabled="true">

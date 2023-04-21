@@ -92,100 +92,94 @@ export default {
         </BasicTooltip>
         <div :class="$style['switch-list__right']">
           <SwitchCheckBox
-            id="settingPush001"
+            id="autoSignIn"
             :classNames="{ wrap: $style['switch-list__check'] }"
           />
         </div>
       </li>
+      <li :class="$style['switch-list__item']">
+        <RouterLink to="/setting/push" :class="$style['switch-list__title']"
+          >PUSH 알림 설정</RouterLink
+        >
+      </li>
     </ul>
-    <div :class="[$style['nav-menu'], $style['top-menu']]">
-      <ul :class="$style['nav-menu__list']">
-        <li :class="$style['nav-menu__item']">
-          <RouterLink to="/setting/push" :class="$style['nav-menu__link']"
-            >PUSH 알림 설정</RouterLink
+
+    <BasicHr className="row-margin-container" />
+
+    <section>
+      <h3 class="text-title-2 row-margin-contents">인증센터</h3>
+
+      <div :class="$style['nav-menu']">
+        <UiAccordion :classNames="{ wrap: $style['nav-menu__list'] }">
+          <UiAccordionItem
+            :classNames="{
+              item: [$style['nav-menu__item']],
+            }"
           >
-        </li>
-      </ul>
-    </div>
+            <div :class="$style['nav-menu__head']">
+              <div :class="$style['nav-menu__link']">공동인증서 관리</div>
 
-    <BasicHr class="row-margin-container" />
-
-    <h3 class="text-title-2">인증센터</h3>
-
-    <div :class="[$style['nav-menu'], $style['bottom-menu']]">
-      <ul :class="$style['nav-menu__list']">
-        <li :class="$style['nav-menu__item']">
-          <UiAccordion :classNames="{ wrap: $style['nav-menu__accordion'] }">
-            <UiAccordionItem
-              :classNames="{
-                item: [
-                  $style['nav-menu__accordion-item'],
-                  'row-margin-item-group',
-                ],
-              }"
-            >
-              <div :class="$style['nav-menu__accordion-head']">
-                <div div :class="$style['nav-menu__accordion-title']">
-                  공동인증서 관리
-                </div>
-
+              <div :class="$style['nav-menu__right']">
                 <UiAccordionOpener
                   :classNames="{
-                    button: $style['nav-menu__accordion-opener'],
+                    button: $style['nav-menu__opener'],
                   }"
                 />
               </div>
-              <UiAccordionLayer>
-                <div :class="[$style['nav-menu'], $style['nav-menu--depth']]">
-                  <ul :class="$style['nav-menu__list']">
-                    <li :class="$style['nav-menu__item']">
-                      <RouterLink
-                        to="/setting/certificate-import"
-                        :class="$style['nav-menu__link']"
-                        >인증서 가져오기</RouterLink
-                      >
-                    </li>
-                    <li :class="$style['nav-menu__item']">
-                      <RouterLink
-                        to="/setting/certificate-export"
-                        :class="$style['nav-menu__link']"
-                        >인증서 내보내기</RouterLink
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </UiAccordionLayer>
-            </UiAccordionItem>
-          </UiAccordion>
-        </li>
+            </div>
+            <UiAccordionLayer>
+              <ul
+                :class="[
+                  $style['nav-menu__list'],
+                  $style['nav-menu__list--depth'],
+                ]"
+              >
+                <li :class="$style['nav-menu__item']">
+                  <RouterLink
+                    to="/setting/certificate-import"
+                    :class="$style['nav-menu__link']"
+                    >인증서 가져오기</RouterLink
+                  >
+                </li>
+                <li :class="$style['nav-menu__item']">
+                  <RouterLink
+                    to="/setting/certificate-export"
+                    :class="$style['nav-menu__link']"
+                    >인증서 내보내기</RouterLink
+                  >
+                </li>
+              </ul>
+            </UiAccordionLayer>
+          </UiAccordionItem>
 
-        <li :class="$style['nav-menu__item']">
-          <RouterLink to="/" :class="$style['nav-menu__link']"
-            >간편비밀번호 (재)등록</RouterLink
-          >
-        </li>
-        <li :class="$style['nav-menu__item']">
-          <RouterLink to="/" :class="$style['nav-menu__link']"
-            >얼굴인증 (재)등록</RouterLink
-          >
-        </li>
-        <li :class="$style['nav-menu__item']">
-          <RouterLink to="/" :class="$style['nav-menu__link']"
-            >지문인증 (재)등록</RouterLink
-          >
-        </li>
-        <li :class="$style['nav-menu__item']">
-          <RouterLink to="/" :class="$style['nav-menu__link']"
-            >Face ID (재)등록</RouterLink
-          >
-        </li>
-        <li :class="$style['nav-menu__item']">
-          <RouterLink to="/" :class="$style['nav-menu__link']"
-            >하나원사인 이용안내</RouterLink
-          >
-        </li>
-      </ul>
-    </div>
+          <li :class="$style['nav-menu__item']">
+            <button type="button" :class="$style['nav-menu__link']">
+              간편비밀번호 (재)등록
+            </button>
+          </li>
+          <li :class="$style['nav-menu__item']">
+            <button type="button" :class="$style['nav-menu__link']">
+              얼굴인증 (재)등록
+            </button>
+          </li>
+          <li :class="$style['nav-menu__item']">
+            <button type="button" :class="$style['nav-menu__link']">
+              지문인증 (재)등록
+            </button>
+          </li>
+          <li :class="$style['nav-menu__item']">
+            <button type="button" :class="$style['nav-menu__link']">
+              Face ID (재)등록
+            </button>
+          </li>
+          <li :class="$style['nav-menu__item']">
+            <RouterLink to="" :class="$style['nav-menu__link']">
+              하나원사인 이용안내
+            </RouterLink>
+          </li>
+        </UiAccordion>
+      </div>
+    </section>
 
     <div :class="$style['version']">
       <div :class="$style['version__inner']">

@@ -758,8 +758,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/inventory-finance/early-list',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.21',
         log: [],
       },
       {
@@ -769,8 +769,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/inventory-finance/early-form',
-        status: 'ing',
-        create: '',
+        status: 'end',
+        create: '2023.04.21',
         log: [],
       },
       {
@@ -1568,9 +1568,9 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/my-loan-progress-002',
-        status: 'end',
+        status: 'partend',
         create: '2023.04.14',
-        log: [{ date: '2023.04.21', text: '팝업 추가' }],
+        log: [],
       },
       {
         depth2: '진행상태조회\nMy_M03_p001',

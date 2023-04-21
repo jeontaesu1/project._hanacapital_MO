@@ -1,6 +1,7 @@
 <script>
 // My_M01_p002 오토금융
 import { onMounted, onUnmounted } from 'vue';
+import { RouterLink } from 'vue-router';
 
 import { useUiHeaderStore } from '@/stores/ui/header';
 
@@ -32,6 +33,7 @@ import iconDriver from '@/assets/images/icon/driver.svg?component';
 
 export default {
   components: {
+    RouterLink,
     PageContents,
     BasicHr,
     BasicBox,
@@ -99,7 +101,9 @@ export default {
             </div>
           </div>
           <div class="flex-box__cell">
-            <RoundStatus theme="denary"> D-7 </RoundStatus>
+            <RoundStatus :classNames="{ wrap: 'display-block' }" theme="denary">
+              D-7
+            </RoundStatus>
           </div>
         </div>
         <div class="row-margin-contents">
@@ -173,7 +177,9 @@ export default {
             </div>
           </div>
           <div class="flex-box__cell">
-            <RoundStatus theme="denary"> D-7 </RoundStatus>
+            <RoundStatus :classNames="{ wrap: 'display-block' }" theme="denary">
+              D-7
+            </RoundStatus>
           </div>
         </div>
         <div class="row-margin-contents">
@@ -243,7 +249,9 @@ export default {
             </div>
           </div>
           <div class="flex-box__cell">
-            <RoundStatus theme="denary"> D-7 </RoundStatus>
+            <RoundStatus :classNames="{ wrap: 'display-block' }" theme="denary">
+              D-7
+            </RoundStatus>
           </div>
         </div>
         <div class="row-margin-contents">
@@ -330,7 +338,9 @@ export default {
             </div>
           </div>
           <div class="flex-box__cell">
-            <RoundStatus theme="denary"> D-7 </RoundStatus>
+            <RoundStatus :classNames="{ wrap: 'display-block' }" theme="denary">
+              D-7
+            </RoundStatus>
           </div>
         </div>
         <div class="row-margin-contents">
@@ -409,7 +419,9 @@ export default {
             </div>
           </div>
           <div class="flex-box__cell">
-            <RoundStatus theme="denary"> D-7 </RoundStatus>
+            <RoundStatus :classNames="{ wrap: 'display-block' }" theme="denary">
+              D-7
+            </RoundStatus>
           </div>
         </div>
         <div class="row-margin-contents">
@@ -488,7 +500,9 @@ export default {
             </div>
           </div>
           <div class="flex-box__cell">
-            <RoundStatus theme="denary"> D-7 </RoundStatus>
+            <RoundStatus :classNames="{ wrap: 'display-block' }" theme="denary">
+              D-7
+            </RoundStatus>
           </div>
         </div>
         <div class="row-margin-contents">
@@ -567,7 +581,9 @@ export default {
             </div>
           </div>
           <div class="flex-box__cell">
-            <RoundStatus theme="denary"> D-7 </RoundStatus>
+            <RoundStatus :classNames="{ wrap: 'display-block' }" theme="denary">
+              D-7
+            </RoundStatus>
           </div>
         </div>
         <div class="row-margin-contents">
@@ -628,35 +644,37 @@ export default {
       </div>
       <!-- //Case : 중고차오토할부 -->
 
-      <ButtonList>
-        <ButtonListItem>
-          <BasicButton :line="true" theme="quaternary"
-            >증명서 조회/발급</BasicButton
-          >
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton :line="true" theme="quaternary"
-            >전자약정 계약서</BasicButton
-          >
-        </ButtonListItem>
-      </ButtonList>
-      <BasicButton
-        theme="tertiary"
-        :classNames="{ wrap: 'row-margin-item-medium' }"
-        >만기후처리</BasicButton
-      >
-      <BasicButton
-        theme="secondary"
-        :classNames="{ wrap: 'row-margin-item-medium' }"
-        >중도상환신청</BasicButton
-      >
+      <div class="row-margin-contents">
+        <ButtonList :classNames="{ wrap: 'row-margin-none' }">
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary"
+              >증명서 조회/발급</BasicButton
+            >
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary"
+              >전자약정 계약서</BasicButton
+            >
+          </ButtonListItem>
+        </ButtonList>
+        <BasicButton
+          theme="tertiary"
+          :classNames="{ wrap: 'row-margin-item-medium' }"
+          >만기후처리</BasicButton
+        >
+        <BasicButton
+          theme="secondary"
+          :classNames="{ wrap: 'row-margin-item-medium' }"
+          >중도상환신청</BasicButton
+        >
+      </div>
     </section>
 
     <BasicHr class="row-margin-container-medium"></BasicHr>
 
     <section>
       <div class="text-title-2 font-weight-bold">당월 결제금액</div>
-      <div class="text-title-2 color-green font-weight-bold row-margin-small">
+      <div class="text-title-2 color-blue font-weight-bold row-margin-small">
         총 999,999,999 원
       </div>
 
@@ -724,25 +742,25 @@ export default {
                 >
               </BasicBox>
             </UiAccordionLayer>
-
-            <KeyValue
-              margin="regular"
-              :classNames="{ wrap: 'row-margin-item-group' }"
-            >
-              <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                <KeyValueTitle>선수금</KeyValueTitle>
-                <KeyValueText>999,999,999 원</KeyValueText>
-              </KeyValueItem>
-              <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                <KeyValueTitle>범칙금</KeyValueTitle>
-                <KeyValueText>999,999,999 원</KeyValueText>
-              </KeyValueItem>
-              <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                <KeyValueTitle>자동차세</KeyValueTitle>
-                <KeyValueText>999,999,999 원</KeyValueText>
-              </KeyValueItem>
-            </KeyValue>
           </UiAccordionItem>
+
+          <KeyValue
+            margin="regular"
+            :classNames="{ wrap: 'row-margin-item-group' }"
+          >
+            <KeyValueItem :classNames="{ item: 'text-body-3' }">
+              <KeyValueTitle>선수금</KeyValueTitle>
+              <KeyValueText>999,999,999 원</KeyValueText>
+            </KeyValueItem>
+            <KeyValueItem :classNames="{ item: 'text-body-3' }">
+              <KeyValueTitle>범칙금</KeyValueTitle>
+              <KeyValueText>999,999,999 원</KeyValueText>
+            </KeyValueItem>
+            <KeyValueItem :classNames="{ item: 'text-body-3' }">
+              <KeyValueTitle>자동차세</KeyValueTitle>
+              <KeyValueText>999,999,999 원</KeyValueText>
+            </KeyValueItem>
+          </KeyValue>
         </UiAccordion>
       </BasicBox>
 
@@ -787,36 +805,42 @@ export default {
     <div :class="$style['icon-list']">
       <ul :class="$style['icon-list__list']">
         <li :class="$style['icon-list__item']">
-          <button type="button" :class="$style['icon-list__block']">
+          <RouterLink
+            to="/my-loan/maintenance-history"
+            :class="$style['icon-list__block']"
+          >
             <span :class="$style['icon-list__icon']"><IconInstallation /></span>
             <span :class="$style['icon-list__content']">
               <span :class="$style['icon-list__title']">정비이력</span>
             </span>
-          </button>
+          </RouterLink>
         </li>
         <li :class="$style['icon-list__item']">
-          <button type="button" :class="$style['icon-list__block']">
+          <RouterLink to="/my-loan/penalty" :class="$style['icon-list__block']">
             <span :class="$style['icon-list__icon']"><IconPenalty /></span>
             <span :class="$style['icon-list__content']">
               <span :class="$style['icon-list__title']">범칙금</span>
             </span>
-          </button>
+          </RouterLink>
         </li>
         <li :class="$style['icon-list__item']">
-          <button type="button" :class="$style['icon-list__block']">
+          <RouterLink to="/my-loan/car-tax" :class="$style['icon-list__block']">
             <span :class="$style['icon-list__icon']"><IconCar /></span>
             <span :class="$style['icon-list__content']">
               <span :class="$style['icon-list__title']">자동차세</span>
             </span>
-          </button>
+          </RouterLink>
         </li>
         <li :class="$style['icon-list__item']">
-          <button type="button" :class="$style['icon-list__block']">
+          <RouterLink
+            to="/my-loan/designation-driver-empty"
+            :class="$style['icon-list__block']"
+          >
             <span :class="$style['icon-list__icon']"><iconDriver /></span>
             <span :class="$style['icon-list__content']">
               <span :class="$style['icon-list__title']">지정운전자</span>
             </span>
-          </button>
+          </RouterLink>
         </li>
       </ul>
     </div>

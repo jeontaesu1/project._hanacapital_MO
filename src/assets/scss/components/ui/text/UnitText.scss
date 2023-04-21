@@ -26,8 +26,13 @@
     font-weight: 700;
   }
 
-  &--align-right {
-    justify-content: flex-end;
+  &--align {
+    &-center {
+      justify-content: center;
+    }
+    &-right {
+      justify-content: flex-end;
+    }
   }
 
   &--vertical-align-center {

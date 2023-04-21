@@ -85,11 +85,13 @@ export default {
       <BasicBox>
         <div class="align-center">
           <div :class="[$style['head']]">
-            <div class="inline-block">
-              <UnitText size="large" rightUnit="원" verticalAlign="center"
-                >400,000</UnitText
-              >
-            </div>
+            <UnitText
+              size="large"
+              rightUnit="원"
+              align="center"
+              verticalAlign="center"
+              >400,000</UnitText
+            >
             <div class="text-body-3 color-gray">당월 결제예정금액</div>
           </div>
         </div>
@@ -111,13 +113,13 @@ export default {
       </BasicBox>
 
       <!-- Case :  캐피탈 계약 + 파트너사 양도계약 보유 경우 노출 -->
-      <NoticeText :class="$style['notice']">
+      <NoticeText :classNames="{ wrap: $style['notice'] }">
         렌탈/할부채권 양도계약은 총 금액에 포함되지 않습니다.
       </NoticeText>
       <!-- //Case : 캐피탈 계약 + 파트너사 양도계약 보유 경우 노출 -->
 
       <!-- Case :  파트너사 양도계약(팩토링)만 보유한 경우 노출 -->
-      <ul :class="[$style['basic-list'], 'row-margin-container-medium']">
+      <ul :class="$style['basic-list']">
         <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']"></div>
           <div :class="$style['basic-list__content']">
@@ -193,7 +195,11 @@ export default {
                   하나증권 12-3456-7890123
                 </div>
               </div>
-              <RoundStatus theme="secondary">D-7</RoundStatus>
+              <RoundStatus
+                :classNames="{ wrap: 'display-block' }"
+                theme="secondary"
+                >D-7</RoundStatus
+              >
               <div div :class="$style['logs__right']">
                 <button type="button" :class="$style['logs__link']">
                   <span :class="$style['logs__link-text']">상세보기</span>
@@ -243,7 +249,11 @@ export default {
                   가솔린 2.0 Sedan (개소세 30% 인하) C200 AMG Line
                 </div>
               </div>
-              <RoundStatus theme="denary">D-7</RoundStatus>
+              <RoundStatus
+                :classNames="{ wrap: 'display-block' }"
+                theme="denary"
+                >D-7</RoundStatus
+              >
               <div div :class="$style['logs__right']">
                 <button type="button" :class="$style['logs__link']">
                   <span :class="$style['logs__link-text']">상세보기</span>
@@ -306,7 +316,11 @@ export default {
               <div div :class="$style['logs__contents']">
                 <h3 class="text-body-1 font-weight-medium">e하나신용대출</h3>
               </div>
-              <RoundStatus theme="secondary">D-day</RoundStatus>
+              <RoundStatus
+                :classNames="{ wrap: 'display-block' }"
+                theme="secondary"
+                >D-day</RoundStatus
+              >
               <div div :class="$style['logs__right']">
                 <button type="button" :class="$style['logs__link']">
                   <span :class="$style['logs__link-text']">상세보기</span>
@@ -348,7 +362,12 @@ export default {
               <div div :class="$style['logs__contents']">
                 <h3 class="text-body-1 font-weight-medium">오토론</h3>
               </div>
-              <RoundStatus theme="nonary"> 연체 </RoundStatus>
+              <RoundStatus
+                :classNames="{ wrap: 'display-block' }"
+                theme="nonary"
+              >
+                연체
+              </RoundStatus>
               <div div :class="$style['logs__right']">
                 <button type="button" :class="$style['logs__link']">
                   <span :class="$style['logs__link-text']">상세보기</span>
