@@ -152,7 +152,7 @@ export default {
         );
       });
       const notOhterElements =
-        'script, link, style, base, meta, br, [aria-hidden], [inert], .js-not-inert, .js-not-inert *, [data-ui-js], [data-layer], [data-layer] *, option, ul, dl, table, thead, tbody, tfoot, tr, colgroup, col, :empty, .duet-date__dialog, .duet-date__dialog *';
+        'script, link, style, base, meta, br, [aria-hidden], [inert], .js-not-inert, .js-not-inert *, [data-ui-js], option, ul, dl, table, thead, tbody, tfoot, tr, colgroup, col, :empty, .duet-date__dialog, .duet-date__dialog *';
       const layersParents = (() => {
         let re = [];
         for (let i = 0; i < layers.length; i++) {
@@ -166,7 +166,8 @@ export default {
           !item.classList.contains($style['layer']) &&
           !item.closest(`.${$style['layer']}`) &&
           !item.matches(notOhterElements) &&
-          !layersParents.find((parent) => parent === item)
+          !layersParents.find((parent) => parent === item) &&
+          !(!item.offsetWidth && !item.offsetHeight)
         );
       });
       const preLayersElements = (() => {
@@ -342,7 +343,7 @@ export default {
       layerContainer.value.focus();
     };
 
-    const wrapClick = () => {
+    const bodyClick = () => {
       if (props.backgroundClose && !state.isContainerClick) {
         close();
       }
@@ -359,9 +360,14 @@ export default {
       if (!layer.value.parentNode.matches('body')) {
         body.append(layer.value);
       }
+
+      body.addEventListener('click', bodyClick);
     });
 
     onBeforeUnmount(() => {
+      const body = document.getElementsByTagName('body')[0];
+
+      body.removeEventListener('click', bodyClick);
       close(0);
       layer.value.remove();
     });
@@ -379,7 +385,6 @@ export default {
       close,
       loopFocusBefore,
       loopFocusAfter,
-      wrapClick,
       containerClick,
     };
   },
@@ -405,7 +410,6 @@ export default {
     :aria-hidden="state.opened ? 'false' : 'true'"
     :aria-modal="state.opened ? 'true' : null"
     :hidden="state.opened ? null : ''"
-    @click="wrapClick"
   >
     <div
       :class="[$style['layer__loop'], customClassNames.loop]"
@@ -419,7 +423,12 @@ export default {
       :tabindex="state.opened ? '0' : null"
       @click="containerClick"
     >
-      <slot :open="open" :close="close" />
+      <slot
+        :open="open"
+        :close="close"
+        :opened="state.opened"
+        :display="state.display"
+      />
     </div>
     <div
       :class="[$style['layer__loop'], customClassNames.loop]"
