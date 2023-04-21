@@ -17,10 +17,6 @@ import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
-import BoxCheck from '@/components/ui/form/BoxCheck.vue';
-import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
-import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
-import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
@@ -43,10 +39,6 @@ export default {
     FormListItem,
     FormInvalid,
     FormInvalidMessage,
-    BoxCheck,
-    BoxCheckLabel,
-    BoxCheckList,
-    BoxCheckListItem,
     InputBlock,
     InputBlockCell,
     BasicInput,
@@ -91,68 +83,35 @@ export default {
       <FormList>
         <FormListItem titleText="차량 매매가격" :forceFocus="true">
           <FormInvalid :error="state.buyError">
-            <BoxCheckList
-              :wrap="true"
-              :col="3"
-              :classNames="{ wrap: 'row-margin-item-group' }"
-            >
-              <BoxCheckListItem>
-                <BoxCheck
-                  :minSide="true"
-                  name="layerMyLoanOnlineContractFinancialTermsBuy001"
-                  id="layerMyLoanOnlineContractFinancialTermsBuy001_001"
-                >
-                  <BoxCheckLabel>
-                    <span class="color-gray">+ 10만</span>
-                  </BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  :minSide="true"
-                  name="layerMyLoanOnlineContractFinancialTermsBuy001"
-                  id="layerMyLoanOnlineContractFinancialTermsBuy001_002"
-                >
-                  <BoxCheckLabel>
-                    <span class="color-gray">+ 100만</span>
-                  </BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  :minSide="true"
-                  name="layerMyLoanOnlineContractFinancialTermsBuy001"
-                  id="layerMyLoanOnlineContractFinancialTermsBuy001_003"
-                >
-                  <BoxCheckLabel>
-                    <span class="color-gray">+ 300만</span>
-                  </BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  :minSide="true"
-                  name="layerMyLoanOnlineContractFinancialTermsBuy001"
-                  id="layerMyLoanOnlineContractFinancialTermsBuy001_004"
-                >
-                  <BoxCheckLabel>
-                    <span class="color-gray">+ 500만</span>
-                  </BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  :minSide="true"
-                  name="layerMyLoanOnlineContractFinancialTermsBuy001"
-                  id="layerMyLoanOnlineContractFinancialTermsBuy001_005"
-                >
-                  <BoxCheckLabel>
-                    <span class="color-gray">+ 1000만</span>
-                  </BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-            </BoxCheckList>
-            <InputBlock :error="state.buyError">
+            <ButtonList :wrap="true" :col="3" class="row-margin-small">
+              <ButtonListItem>
+                <BasicButton :line="true" theme="quaternary" size="small">
+                  + 10만
+                </BasicButton>
+              </ButtonListItem>
+              <ButtonListItem>
+                <BasicButton :line="true" theme="quaternary" size="small">
+                  + 100만
+                </BasicButton>
+              </ButtonListItem>
+              <ButtonListItem>
+                <BasicButton :line="true" theme="quaternary" size="small">
+                  + 300만
+                </BasicButton>
+              </ButtonListItem>
+              <ButtonListItem>
+                <BasicButton :line="true" theme="quaternary" size="small">
+                  + 500만
+                </BasicButton>
+              </ButtonListItem>
+              <ButtonListItem>
+                <BasicButton :line="true" theme="quaternary" size="small">
+                  + 1000만
+                </BasicButton>
+              </ButtonListItem>
+            </ButtonList>
+
+            <InputBlock :error="state.buyError" class="row-margin-item-medium">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   align="right"
