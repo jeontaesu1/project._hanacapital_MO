@@ -85,6 +85,7 @@ import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
 import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 import ColorChip from '@/components/ui/imageData/ColorChip.vue';
 import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
+import MaskingText from '@/components/ui/text/MaskingText.vue';
 
 import BrandLogo001 from '@/assets/images/card-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/card-logo/lotte.svg?component';
@@ -206,6 +207,7 @@ export default {
     CarThumb,
     ColorChip,
     BasicDatepicker,
+    MaskingText,
     IconAdd,
     BrandLogo001,
     BrandLogo002,
@@ -1082,6 +1084,43 @@ export default {
           </ButtonListItem>
           <ButtonListItem>
             <BasicButton>Button 2</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Wrap - col 2</h3>
+        <ButtonList :wrap="true">
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">Button 1</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">Button 2</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">Button 3</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">Button 4</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Wrap - col 3</h3>
+        <ButtonList :wrap="true" :col="3">
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">Button 1</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">Button 2</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">Button 3</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">Button 4</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">Button 5</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </div>
@@ -6763,6 +6802,19 @@ export default {
             </UiAccordionItem>
           </UiAccordion>
         </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Masking Text</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <p class="text-body-2">
+          채무자인 고객은 본인의
+          <MaskingText>[신용상태가 개선]</MaskingText> 되었다고 판단되는 경우(예
+          : 취업, 승진, 재산증가, 개인신용평점 상승) 금융회사에
+          <MaskingText>[금리인하를 요구]</MaskingText> 할 수 있어요.
+        </p>
       </div>
     </section>
 

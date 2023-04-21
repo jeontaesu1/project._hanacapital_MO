@@ -18,6 +18,14 @@ export default {
       Type: String,
       default: null,
     },
+    wrap: {
+      Type: Boolean,
+      default: false,
+    },
+    col: {
+      Type: Number,
+      default: 2,
+    },
   },
   setup(props) {
     const customClassNames = computed(() => {
@@ -40,6 +48,8 @@ export default {
       $style['buttons'],
       {
         [$style[`buttons--align-${align}`]]: align,
+        [$style['buttons--wrap']]: wrap,
+        [$style[`buttons--col-${col}`]]: wrap,
       },
       customClassNames.wrap,
     ]"
