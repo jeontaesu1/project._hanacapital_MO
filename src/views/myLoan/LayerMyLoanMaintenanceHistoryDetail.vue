@@ -9,7 +9,7 @@ import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -23,7 +23,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -52,7 +52,7 @@ export default {
         </ToastPopupHead>
       </template>
 
-      <KeyValueList margin="regular">
+      <KeyValue margin="regular">
         <KeyValueItem>
           <KeyValueTitle>정비형태</KeyValueTitle>
           <KeyValueText>사고</KeyValueText>
@@ -82,7 +82,7 @@ export default {
           <KeyValueTitle>정비/수리내역</KeyValueTitle>
           <KeyValueText>엔진오일/에어컨필터/타이머</KeyValueText>
         </KeyValueItem>
-      </KeyValueList>
+      </KeyValue>
 
       <template v-slot:foot>
         <ButtonList

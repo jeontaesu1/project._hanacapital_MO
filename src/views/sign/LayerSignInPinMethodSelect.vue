@@ -40,34 +40,34 @@ export default {
         <ul :class="$style['icon-buttons__list']">
           <li :class="$style['icon-buttons__item']">
             <button type="button" :class="$style['icon-buttons__block']">
-              <div :class="$style['icon-buttons__icon']"><IconPhone /></div>
-              <div :class="$style['icon-buttons__content']">
-                <div :class="$style['icon-buttons__title']">간편비밀번호</div>
-              </div>
+              <span :class="$style['icon-buttons__icon']"><IconPhone /></span>
+              <span :class="$style['icon-buttons__content']">
+                <span :class="$style['icon-buttons__title']">간편비밀번호</span>
+              </span>
             </button>
           </li>
           <li :class="$style['icon-buttons__item']">
             <button type="button" :class="$style['icon-buttons__block']">
-              <div :class="$style['icon-buttons__icon']"><IconPhone /></div>
-              <div :class="$style['icon-buttons__content']">
-                <div :class="$style['icon-buttons__title']">얼굴인증</div>
-              </div>
+              <span :class="$style['icon-buttons__icon']"><IconPhone /></span>
+              <span :class="$style['icon-buttons__content']">
+                <span :class="$style['icon-buttons__title']">얼굴인증</span>
+              </span>
             </button>
           </li>
           <li :class="$style['icon-buttons__item']">
             <button type="button" :class="$style['icon-buttons__block']">
-              <div :class="$style['icon-buttons__icon']"><IconPhone /></div>
-              <div :class="$style['icon-buttons__content']">
-                <div :class="$style['icon-buttons__title']">지문인증</div>
-              </div>
+              <span :class="$style['icon-buttons__icon']"><IconPhone /></span>
+              <span :class="$style['icon-buttons__content']">
+                <span :class="$style['icon-buttons__title']">지문인증</span>
+              </span>
             </button>
           </li>
           <li :class="$style['icon-buttons__item']">
             <button type="button" :class="$style['icon-buttons__block']">
-              <div :class="$style['icon-buttons__icon']"><IconPhone /></div>
-              <div :class="$style['icon-buttons__content']">
-                <div :class="$style['icon-buttons__title']">Face ID 인증</div>
-              </div>
+              <span :class="$style['icon-buttons__icon']"><IconPhone /></span>
+              <span :class="$style['icon-buttons__content']">
+                <span :class="$style['icon-buttons__title']">Face ID 인증</span>
+              </span>
             </button>
           </li>
         </ul>

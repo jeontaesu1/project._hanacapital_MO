@@ -37,44 +37,44 @@ export default {
         <ul :class="$style['icon-buttons__list']">
           <li :class="$style['icon-buttons__item']">
             <button type="button" :class="$style['icon-buttons__block']">
-              <div :class="$style['icon-buttons__content']">
-                <div :class="$style['icon-buttons__title']">재고금융</div>
-              </div>
+              <span :class="$style['icon-buttons__content']">
+                <span :class="$style['icon-buttons__title']">재고금융</span>
+              </span>
             </button>
           </li>
           <li :class="$style['icon-buttons__item']">
             <button type="button" :class="$style['icon-buttons__block']">
-              <div :class="$style['icon-buttons__content']">
-                <div :class="$style['icon-buttons__title']">재고금융실사</div>
-              </div>
+              <span :class="$style['icon-buttons__content']">
+                <span :class="$style['icon-buttons__title']">재고금융실사</span>
+              </span>
             </button>
           </li>
           <li :class="$style['icon-buttons__item']">
             <button type="button" :class="$style['icon-buttons__block']">
-              <div :class="$style['icon-buttons__content']">
-                <div :class="$style['icon-buttons__title']">하나원큐오토</div>
-              </div>
+              <span :class="$style['icon-buttons__content']">
+                <span :class="$style['icon-buttons__title']">하나원큐오토</span>
+              </span>
             </button>
           </li>
           <li :class="$style['icon-buttons__item']">
             <button type="button" :class="$style['icon-buttons__block']">
-              <div :class="$style['icon-buttons__content']">
-                <div :class="$style['icon-buttons__title']">LM블로그</div>
-              </div>
+              <span :class="$style['icon-buttons__content']">
+                <span :class="$style['icon-buttons__title']">LM블로그</span>
+              </span>
             </button>
           </li>
           <li :class="$style['icon-buttons__item']">
             <button type="button" :class="$style['icon-buttons__block']">
-              <div :class="$style['icon-buttons__content']">
-                <div :class="$style['icon-buttons__title']">설비리스</div>
-              </div>
+              <span :class="$style['icon-buttons__content']">
+                <span :class="$style['icon-buttons__title']">설비리스</span>
+              </span>
             </button>
           </li>
           <li :class="$style['icon-buttons__item']">
             <button type="button" :class="$style['icon-buttons__block']">
-              <div :class="$style['icon-buttons__content']">
-                <div :class="$style['icon-buttons__title']">손님용 메인</div>
-              </div>
+              <span :class="$style['icon-buttons__content']">
+                <span :class="$style['icon-buttons__title']">손님용 메인</span>
+              </span>
             </button>
           </li>
         </ul>

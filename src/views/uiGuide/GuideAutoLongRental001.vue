@@ -13,8 +13,10 @@ import LayerAutoLongRentalEvaluationFailLimit from '@/views/auto/LayerAutoLongRe
 import LayerAutoLongRentalEvaluationFailReject from '@/views/auto/LayerAutoLongRentalEvaluationFailReject.vue';
 import LayerAutoLongRentalEvaluationExpire from '@/views/auto/LayerAutoLongRentalEvaluationExpire.vue';
 import LayerAutoLongRentalOrder from '@/views/auto/LayerAutoLongRentalOrder.vue';
+import LayerAutoLongRentalOrderConfirm from '@/views/auto/LayerAutoLongRentalOrderConfirm.vue';
 import LayerAutoLongRentalOrderAlert from '@/views/auto/LayerAutoLongRentalOrderAlert.vue';
 import LayerAutoLongRentalOrderComplete from '@/views/auto/LayerAutoLongRentalOrderComplete.vue';
+import LayerAutoLongRentalDelivery from '@/views/auto/LayerAutoLongRentalDelivery.vue';
 
 export default {
   components: {
@@ -29,8 +31,10 @@ export default {
     LayerAutoLongRentalEvaluationFailReject,
     LayerAutoLongRentalEvaluationExpire,
     LayerAutoLongRentalOrder,
+    LayerAutoLongRentalOrderConfirm,
     LayerAutoLongRentalOrderAlert,
     LayerAutoLongRentalOrderComplete,
+    LayerAutoLongRentalDelivery,
   },
   setup() {
     const layer001 = ref(null);
@@ -42,6 +46,8 @@ export default {
     const layer007 = ref(null);
     const layer008 = ref(null);
     const layer009 = ref(null);
+    const layer010 = ref(null);
+    const layer011 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -70,6 +76,12 @@ export default {
     const layer009Open = (e = {}) => {
       layer009.value.layer.open(e.target);
     };
+    const layer010Open = (e = {}) => {
+      layer010.value.layer.open(e.target);
+    };
+    const layer011Open = (e = {}) => {
+      layer011.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -81,6 +93,8 @@ export default {
       layer007,
       layer008,
       layer009,
+      layer010,
+      layer011,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -90,6 +104,8 @@ export default {
       layer007Open,
       layer008Open,
       layer009Open,
+      layer010Open,
+      layer011Open,
     };
   },
 };
@@ -140,12 +156,22 @@ export default {
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer008Open"
-          >발주신청 안내_팝업<br />AF_M01_b001</BasicButton
+          >계약조건 안내<br />AF_M01_l009</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer009Open"
+          >발주신청 안내_팝업<br />AF_M01_b001</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer010Open"
           >발주신청 완료<br />AF_M01_l010</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer011Open"
+          >인도요청 안내<br />AF_M01_l011</BasicButton
         >
       </ButtonListItem>
     </ButtonList>
@@ -157,7 +183,9 @@ export default {
     <LayerAutoLongRentalEvaluationFailReject ref="layer005" />
     <LayerAutoLongRentalEvaluationExpire ref="layer006" />
     <LayerAutoLongRentalOrder ref="layer007" />
-    <LayerAutoLongRentalOrderAlert ref="layer008" />
-    <LayerAutoLongRentalOrderComplete ref="layer009" />
+    <LayerAutoLongRentalOrderConfirm ref="layer008" />
+    <LayerAutoLongRentalOrderAlert ref="layer009" />
+    <LayerAutoLongRentalOrderComplete ref="layer010" />
+    <LayerAutoLongRentalDelivery ref="layer011" />
   </PageContents>
 </template>

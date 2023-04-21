@@ -20,7 +20,6 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    text-align: center;
     justify-content: flex-start;
     text-align: center;
     padding: 10px 14px;
@@ -34,16 +33,14 @@
 
   &__logo {
     flex: none;
+    align-self: center;
     display: block;
-    width: 60px;
-    height: 60px;
-    margin: 0 auto 2px;
+    margin-bottom: 2px;
 
-    svg,
-    img {
+    svg {
       display: block;
-      width: 100%;
-      height: 100%;
+      width: 60px;
+      height: 60px;
     }
   }
 

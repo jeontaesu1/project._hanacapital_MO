@@ -1,0 +1,21 @@
+.car-thumb {
+  display: block;
+  position: relative;
+  width: 70px;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-top: 68.571429%;
+  }
+
+  &__img {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: auto;
+    height: 100%;
+    transform: translateX(-50%);
+  }
+}

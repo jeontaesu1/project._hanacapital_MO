@@ -18,7 +18,7 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -43,7 +43,7 @@ export default {
     ButtonListItem,
     BasicButton,
     BasicBox,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -140,7 +140,7 @@ export default {
               type="contents"
               className="row-margin-contents-small"
             />
-            <KeyValueList margin="regular">
+            <KeyValue margin="regular">
               <KeyValueItem :classNames="{ item: 'text-body-3' }">
                 <KeyValueTitle>대출실행금액</KeyValueTitle>
                 <KeyValueText>3,500,000 원</KeyValueText>
@@ -149,7 +149,7 @@ export default {
                 <KeyValueTitle>상담일자</KeyValueTitle>
                 <KeyValueText>2022.12.21</KeyValueText>
               </KeyValueItem>
-            </KeyValueList>
+            </KeyValue>
 
             <ButtonList
               :classNames="{
@@ -175,7 +175,7 @@ export default {
               type="contents"
               className="row-margin-contents-small"
             />
-            <KeyValueList margin="regular">
+            <KeyValue margin="regular">
               <KeyValueItem :classNames="{ item: 'text-body-3' }">
                 <KeyValueTitle>대출실행금액</KeyValueTitle>
                 <KeyValueText>3,500,000 원</KeyValueText>
@@ -184,7 +184,7 @@ export default {
                 <KeyValueTitle>상담일자</KeyValueTitle>
                 <KeyValueText>2022.12.21</KeyValueText>
               </KeyValueItem>
-            </KeyValueList>
+            </KeyValue>
 
             <ButtonList
               :classNames="{

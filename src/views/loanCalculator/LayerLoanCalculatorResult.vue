@@ -13,7 +13,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -33,7 +33,7 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicBox,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -73,7 +73,7 @@ export default {
       </PageTextGroup>
 
       <BasicBox>
-        <KeyValueList>
+        <KeyValue>
           <KeyValueItem
             :classNames="{ item: 'text-body-3 align-items-center' }"
           >
@@ -84,13 +84,13 @@ export default {
               <UnitText rightUnit="원" align="right">333,389</UnitText>
             </KeyValueText>
           </KeyValueItem>
-        </KeyValueList>
+        </KeyValue>
         <BasicHr
           type="contents"
           theme="quaternary"
           className="row-margin-contents-small"
         />
-        <KeyValueList margin="regular">
+        <KeyValue margin="regular">
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>대출원금</KeyValueTitle>
             <KeyValueText>1,000,000 원</KeyValueText>
@@ -105,7 +105,7 @@ export default {
             <KeyValueTitle>총 상환금액</KeyValueTitle>
             <KeyValueText>1,000,167 원</KeyValueText>
           </KeyValueItem>
-        </KeyValueList>
+        </KeyValue>
       </BasicBox>
 
       <BasicHr className="row-margin-container-medium" />

@@ -16,7 +16,7 @@ import BoxCheck from '@/components/ui/form/BoxCheck.vue';
 import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
 import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
 import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
-import KeyValueList from '@/components/ui/text/KeyValue.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
@@ -40,7 +40,7 @@ export default {
     BoxCheckLabel,
     BoxCheckList,
     BoxCheckListItem,
-    KeyValueList,
+    KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
@@ -113,7 +113,7 @@ export default {
               :defaultChecked="true"
             >
               <BoxCheckLabel>e하나신용대출</BoxCheckLabel>
-              <KeyValueList
+              <KeyValue
                 margin="mini"
                 :classNames="{
                   wrap: 'row-margin-item',
@@ -136,7 +136,7 @@ export default {
                   <KeyValueTitle>예상 금리</KeyValueTitle>
                   <KeyValueText>15.1% (00개월 기준)</KeyValueText>
                 </KeyValueItem>
-              </KeyValueList>
+              </KeyValue>
             </BoxCheck>
           </BoxCheckListItem>
           <BoxCheckListItem>
@@ -151,7 +151,7 @@ export default {
                 }"
                 >행복아파트론</BoxCheckLabel
               >
-              <KeyValueList
+              <KeyValue
                 margin="mini"
                 :classNames="{
                   wrap: 'row-margin-item',
@@ -174,7 +174,7 @@ export default {
                   <KeyValueTitle>예상 금리</KeyValueTitle>
                   <KeyValueText>17.1% (00개월 기준)</KeyValueText>
                 </KeyValueItem>
-              </KeyValueList>
+              </KeyValue>
             </BoxCheck>
           </BoxCheckListItem>
           <BoxCheckListItem>
@@ -189,7 +189,7 @@ export default {
                 }"
                 >원큐자동차담보대출</BoxCheckLabel
               >
-              <KeyValueList
+              <KeyValue
                 margin="mini"
                 :classNames="{
                   wrap: 'row-margin-item',
@@ -212,7 +212,7 @@ export default {
                   <KeyValueTitle>예상 금리</KeyValueTitle>
                   <KeyValueText>17.1% (00개월 기준)</KeyValueText>
                 </KeyValueItem>
-              </KeyValueList>
+              </KeyValue>
             </BoxCheck>
           </BoxCheckListItem>
         </BoxCheckList>

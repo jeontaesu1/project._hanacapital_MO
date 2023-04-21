@@ -80,9 +80,12 @@ import SearchButton from '@/components/ui/button/SearchButton.vue';
 import SwitchCheckBox from '@/components/ui/form/SwitchCheckBox.vue';
 import BasicTooltip from '@/components/ui/tooltip/BasicTooltip.vue';
 import ContentsButton from '@/components/ui/button/ContentsButton.vue';
-// import InputDateBasic from '@/components/ui/form/InputDateBasic.vue';
-// import InputDateDual from '@/components/ui/form/InputDateDual.vue';
-// import InputRange from '@/components/ui/form/InputRange.vue';
+import BankLogo from '@/components/ui/imageData/BankLogo.vue';
+import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
+import CarThumb from '@/components/ui/imageData/CarThumb.vue';
+import ColorChip from '@/components/ui/imageData/ColorChip.vue';
+import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
+import MaskingText from '@/components/ui/text/MaskingText.vue';
 
 import BrandLogo001 from '@/assets/images/card-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/card-logo/lotte.svg?component';
@@ -199,9 +202,12 @@ export default {
     SwitchCheckBox,
     BasicTooltip,
     ContentsButton,
-    // InputDateBasic,
-    // InputDateDual,
-    // InputRange,
+    BankLogo,
+    CarEmblem,
+    CarThumb,
+    ColorChip,
+    BasicDatepicker,
+    MaskingText,
     IconAdd,
     BrandLogo001,
     BrandLogo002,
@@ -250,6 +256,10 @@ export default {
 
     const state = reactive({
       testError001: false,
+      testMinDate001: '',
+      testMaxDate001: '',
+      testMinDate002: '',
+      testMaxDate002: '',
     });
 
     const alert = ref(null);
@@ -1077,6 +1087,43 @@ export default {
           </ButtonListItem>
         </ButtonList>
       </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Wrap - col 2</h3>
+        <ButtonList :wrap="true">
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">Button 1</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">Button 2</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">Button 3</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">Button 4</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Wrap - col 3</h3>
+        <ButtonList :wrap="true" :col="3">
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">Button 1</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">Button 2</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">Button 3</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">Button 4</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">Button 5</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+      </div>
     </section>
 
     <section class="test-section">
@@ -1555,6 +1602,90 @@ export default {
               :minSide="true"
               name="testBoxCheckList002"
               id="testBoxCheckList002_004"
+            >
+              <BoxCheckLabel>Label 4</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+        </BoxCheckList>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Wrap - col 2</h3>
+
+        <BoxCheckList :wrap="true">
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList003"
+              id="testBoxCheckList003_001"
+            >
+              <BoxCheckLabel>Label 1</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList003"
+              id="testBoxCheckList003_002"
+            >
+              <BoxCheckLabel>Label 2</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList003"
+              id="testBoxCheckList003_003"
+            >
+              <BoxCheckLabel>Label 3</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList003"
+              id="testBoxCheckList003_004"
+            >
+              <BoxCheckLabel>Label 4</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+        </BoxCheckList>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Wrap - col 3</h3>
+
+        <BoxCheckList :wrap="true" :col="3">
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList004"
+              id="testBoxCheckList004_001"
+            >
+              <BoxCheckLabel>Label 1</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList004"
+              id="testBoxCheckList004_002"
+            >
+              <BoxCheckLabel>Label 2</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList004"
+              id="testBoxCheckList004_003"
+            >
+              <BoxCheckLabel>Label 3</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList004"
+              id="testBoxCheckList004_004"
             >
               <BoxCheckLabel>Label 4</BoxCheckLabel>
             </BoxCheck>
@@ -2260,25 +2391,48 @@ export default {
             </FormInvalid>
           </FormListItem>
 
-          <!-- 작업중
-          <FormListItem titleText="달력 1개 표기" target="#testInput012">
+          <FormListItem titleText="인도 요청일" target="#testInput012Button">
             <FormInvalid :error="state.testError001">
               <InputBlock :error="state.testError001">
                 <InputBlockCell :flexible="true">
-                  <InputDateBasic id="testInput012" />
+                  <BasicDatepicker
+                    title="인도 요청일"
+                    id="testInput012"
+                    buttonId="testInput012Button"
+                    :onChange="testInputEvent"
+                  />
                 </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
 
-          <FormListItem titleText="달력 2개 표기" target="#testInput013Start">
+          <FormListItem titleText="조회기간" target="#testInput013StartButton">
             <FormInvalid :error="state.testError001">
               <InputBlock :error="state.testError001">
-                <InputDateDual
-                  startId="testInput013Start"
-                  endId="testInput013End"
-                />
+                <InputBlockCell :flexible="true">
+                  <BasicDatepicker
+                    title="조회기간 시작 날짜"
+                    id="testInput013Start"
+                    buttonId="testInput013StartButton"
+                    :max="state.testMaxDate001"
+                    v-model="state.testMinDate001"
+                    :onChange="testInputEvent"
+                  />
+                </InputBlockCell>
+                <InputBlockCell margin="regular">
+                  <div class="text-body-3">~</div>
+                </InputBlockCell>
+                <InputBlockCell :flexible="true" margin="regular">
+                  <BasicDatepicker
+                    title="조회기간 종료 날짜"
+                    id="testInput013End"
+                    buttonId="testInput013EndButton"
+                    :min="state.testMinDate001"
+                    v-model="state.testMaxDate001"
+                    :onChange="testInputEvent"
+                  />
+                </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
@@ -2290,8 +2444,8 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="testInput014_001"
-                    id="testInput014_001_001"
+                    name="testInputCheck014"
+                    id="testInputCheck014_001"
                   >
                     <BoxCheckLabel>1개월</BoxCheckLabel>
                   </BoxCheck>
@@ -2299,8 +2453,8 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="testInput014_001"
-                    id="testInput014_001_002"
+                    name="testInputCheck014"
+                    id="testInputCheck014_002"
                   >
                     <BoxCheckLabel>3개월</BoxCheckLabel>
                   </BoxCheck>
@@ -2308,8 +2462,8 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="testInput014_001"
-                    id="testInput014_001_003"
+                    name="testInputCheck014"
+                    id="testInputCheck014_003"
                   >
                     <BoxCheckLabel>6개월</BoxCheckLabel>
                   </BoxCheck>
@@ -2317,24 +2471,42 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="testInput014_001"
-                    id="testInput014_001_004"
+                    name="testInputCheck014"
+                    id="testInputCheck014_004"
                   >
                     <BoxCheckLabel>1년</BoxCheckLabel>
                   </BoxCheck>
                 </BoxCheckListItem>
               </BoxCheckList>
               <InputBlock :error="state.testError001">
-                <InputDateDual
-                  startId="testInput014Start"
-                  endId="testInput014End"
-                />
+                <InputBlockCell :flexible="true">
+                  <BasicDatepicker
+                    title="조회기간 시작 날짜"
+                    id="testInput014Start"
+                    buttonId="testInput014StartButton"
+                    :max="state.testMaxDate002"
+                    v-model="state.testMinDate002"
+                    :onChange="testInputEvent"
+                  />
+                </InputBlockCell>
+                <InputBlockCell margin="regular">
+                  <div class="text-body-3">~</div>
+                </InputBlockCell>
+                <InputBlockCell :flexible="true" margin="regular">
+                  <BasicDatepicker
+                    title="조회기간 종료 날짜"
+                    id="testInput014End"
+                    buttonId="testInput014EndButton"
+                    :min="state.testMinDate002"
+                    v-model="state.testMaxDate002"
+                    :onChange="testInputEvent"
+                  />
+                </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
               <FormHelpText>조회기간은 최대 1년까지 가능해요.</FormHelpText>
             </FormInvalid>
           </FormListItem>
-          -->
 
           <BasicTextarea
             :error="state.testError001"
@@ -4889,21 +5061,11 @@ export default {
             <BasicBoxHeadLeft>
               <h3 class="text-body-1 font-weight-medium">제네시스</h3>
               <p class="text-body-4 color-gray row-margin-small">더 뉴 G70</p>
-              <UnitText
-                rightUnit="원"
-                :classNames="{
-                  wrap: 'row-margin-item',
-                }"
-                >628,190</UnitText
-              >
             </BasicBoxHeadLeft>
             <BasicBoxHeadRight>
-              <div :class="$style['car-image']">
-                <img
-                  src="@/assets/images/_dummy/car-sample.png"
-                  alt="차량 정보 넣어주세요"
-                />
-              </div>
+              <RoundStatus :classNames="{ wrap: 'display-block' }">
+                미신청
+              </RoundStatus>
             </BasicBoxHeadRight>
           </BasicBoxHead>
           // contnets
@@ -4917,21 +5079,11 @@ export default {
             <BasicBoxHeadLeft>
               <h3 class="text-body-1 font-weight-medium">제네시스</h3>
               <p class="text-body-4 color-gray row-margin-small">더 뉴 G70</p>
-              <UnitText
-                rightUnit="원"
-                :classNames="{
-                  wrap: 'row-margin-item',
-                }"
-                >628,190</UnitText
-              >
             </BasicBoxHeadLeft>
             <BasicBoxHeadRight>
-              <div :class="$style['car-image']">
-                <img
-                  src="@/assets/images/_dummy/car-sample.png"
-                  alt="차량 정보 넣어주세요"
-                />
-              </div>
+              <RoundStatus :classNames="{ wrap: 'display-block' }">
+                미신청
+              </RoundStatus>
             </BasicBoxHeadRight>
           </BasicBoxHead>
           // contnets
@@ -4970,6 +5122,61 @@ export default {
                     <span :class="$style['logs__link-text']">상세보기</span>
                   </button>
                 </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Product</h3>
+        <ul :class="$style['logs']">
+          <li :class="$style['logs__item']">
+            <div :class="$style['logs__block']">
+              <div :class="$style['logs__row']">
+                <div div :class="$style['logs__contents']">
+                  <h3 class="text-body-1 font-weight-medium">스탁론</h3>
+                  <div class="text-body-4 color-gray row-margin-mini">
+                    하나증권 12-3456-7890123
+                  </div>
+                </div>
+                <RoundStatus theme="secondary">D-7</RoundStatus>
+                <div div :class="$style['logs__right']">
+                  <button type="button" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </button>
+                </div>
+              </div>
+
+              <BasicHr
+                type="contents"
+                theme="quaternary"
+                className="row-margin-contents-small"
+              />
+
+              <KeyValue margin="regular">
+                <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                  <KeyValueTitle>결제예정금액</KeyValueTitle>
+                  <KeyValueText :classNames="{ text: 'color-green' }"
+                    >845,000 원</KeyValueText
+                  >
+                </KeyValueItem>
+
+                <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                  <KeyValueTitle>결제일</KeyValueTitle>
+                  <KeyValueText>2022.02.05 (매월 5일)</KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                  <KeyValueTitle>결제회차</KeyValueTitle>
+                  <KeyValueText>16/60</KeyValueText>
+                </KeyValueItem>
+              </KeyValue>
+
+              <div
+                :class="[$style['logs__button'], 'row-margin-contents-small']"
+              >
+                <BasicButton size="small">연장</BasicButton>
               </div>
             </div>
           </li>
@@ -5266,10 +5473,26 @@ export default {
         <UnitText rightUnit="원" align="right">333,389</UnitText>
       </div>
       <div class="test-section-sub">
+        <h3 class="test-section-sub-title">vertical align center</h3>
+
+        <UnitText verticalAlign="center" leftUnit="$">333,389</UnitText>
+        <UnitText verticalAlign="center" rightUnit="원">333,389</UnitText>
+      </div>
+      <div class="test-section-sub">
         <h3 class="test-section-sub-title">Regular</h3>
 
         <UnitText size="regular" leftUnit="$">333,389</UnitText>
         <UnitText size="regular" rightUnit="원">333,389</UnitText>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Large</h3>
+
+        <UnitText size="large" verticalAlign="center" leftUnit="$"
+          >333,389</UnitText
+        >
+        <UnitText size="large" verticalAlign="center" rightUnit="원"
+          >333,389</UnitText
+        >
       </div>
     </section>
 
@@ -6413,6 +6636,139 @@ export default {
             </button>
           </li>
         </ol>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Bank Logo</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <BankLogo code="081" name="하나은행" />
+        <BankLogo type="securities" code="261" name="교보증권" />
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Small</h3>
+        <BankLogo size="small" code="081" name="하나은행" />
+        <BankLogo size="small" type="securities" code="261" name="교보증권" />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Car Emblem</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <CarEmblem code="1001" name="현대" />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Car Thumb</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <CarThumb src="/images/_dummy/car-thumb.png" />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Color Chip</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <ColorChip />
+        <ColorChip :colors="['244, 238, 238']" />
+        <ColorChip :colors="['244, 238, 238', '225, 213, 213', '66, 83, 82']" />
+        <ColorChip
+          :colors="[
+            '244, 238, 238',
+            '225, 213, 213',
+            '66, 83, 82',
+            '155, 171, 170',
+          ]"
+        />
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">small</h3>
+        <ColorChip size="small" />
+        <ColorChip size="small" :colors="['244, 238, 238']" />
+        <ColorChip
+          size="small"
+          :colors="['244, 238, 238', '225, 213, 213', '66, 83, 82']"
+        />
+        <ColorChip
+          size="small"
+          :colors="[
+            '244, 238, 238',
+            '225, 213, 213',
+            '66, 83, 82',
+            '155, 171, 170',
+          ]"
+        />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Rectal</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['rectal']">
+          <UiAccordion :classNames="{ wrap: $style['rectal__list'] }">
+            <UiAccordionItem
+              v-for="i in 3"
+              :key="i"
+              :classNames="{ item: $style['rectal__item'] }"
+            >
+              <div :class="$style['rectal__head']">
+                <div :class="$style['rectal__block']">
+                  <h2 :class="$style['rectal__name']">하나캐피탈</h2>
+                  <div :class="$style['rectal__privacy']">
+                    <span :class="$style['rectal__privacy-name']">홍길동</span>
+                    <span :class="$style['rectal__privacy-number']"
+                      >21-01-1234</span
+                    >
+                  </div>
+                </div>
+                <div :class="$style['rectal__right']">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['rectal__opener'] }"
+                  />
+                </div>
+              </div>
+
+              <UiAccordionLayer>
+                <BasicBox>
+                  <KeyValue>
+                    <KeyValueItem :classNames="{ item: 'text-body-4' }">
+                      <KeyValueTitle>법인번호</KeyValueTitle>
+                      <KeyValueText> 123-45-678910 </KeyValueText>
+                    </KeyValueItem>
+
+                    <KeyValueItem :classNames="{ item: 'text-body-4' }">
+                      <KeyValueTitle>대표번호</KeyValueTitle>
+                      <KeyValueText>1599-1234</KeyValueText>
+                    </KeyValueItem>
+
+                    <KeyValueItem :classNames="{ item: 'text-body-4' }">
+                      <KeyValueTitle>주소</KeyValueTitle>
+                      <KeyValueText> 서울 중구 을지로 35 </KeyValueText>
+                    </KeyValueItem>
+                  </KeyValue>
+                </BasicBox>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+          </UiAccordion>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Masking Text</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <p class="text-body-2">
+          채무자인 고객은 본인의
+          <MaskingText>[신용상태가 개선]</MaskingText> 되었다고 판단되는 경우(예
+          : 취업, 승진, 재산증가, 개인신용평점 상승) 금융회사에
+          <MaskingText>[금리인하를 요구]</MaskingText> 할 수 있어요.
+        </p>
       </div>
     </section>
 
