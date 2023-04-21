@@ -129,13 +129,13 @@ const datas = () => [
       },
       {
         depth2: '날짜입력',
-        depth3: '팝업',
+        depth3: '',
         depth4: '',
         depth5: '',
         depth6: '',
         path: '/guide/enter-date-001',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.21',
         log: [],
       },
       {
@@ -1311,9 +1311,14 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/auto-succession-001',
-        status: 'partend',
+        status: 'end',
         create: '2023.04.19',
-        log: [],
+        log: [
+          {
+            date: '2023.04.21',
+            text: '팝업 추가\n- 본인인증\n- 양수인 신청\n- 리스 승계 상세정보\n- 리스상세조건\n- 렌트 승계 상세정보\n- 렌트상세조건\n- 양수인 정보입력\n- 신용정보조회동의\n- 위임동의 요청 완료\n- 양수인/신청인 본인확인\n- 양수인/신청인 본인확인\n- 위임동의 완료\n- 심사서류 등록\n- 위임장 동의\n- 양수인 신청완료',
+          },
+        ],
       },
     ],
   },

@@ -84,9 +84,8 @@ import BankLogo from '@/components/ui/imageData/BankLogo.vue';
 import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
 import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 import ColorChip from '@/components/ui/imageData/ColorChip.vue';
-// import InputDateBasic from '@/components/ui/form/InputDateBasic.vue';
-// import InputDateDual from '@/components/ui/form/InputDateDual.vue';
-// import InputRange from '@/components/ui/form/InputRange.vue';
+import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
+import MaskingText from '@/components/ui/text/MaskingText.vue';
 
 import BrandLogo001 from '@/assets/images/card-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/card-logo/lotte.svg?component';
@@ -207,9 +206,8 @@ export default {
     CarEmblem,
     CarThumb,
     ColorChip,
-    // InputDateBasic,
-    // InputDateDual,
-    // InputRange,
+    BasicDatepicker,
+    MaskingText,
     IconAdd,
     BrandLogo001,
     BrandLogo002,
@@ -258,6 +256,10 @@ export default {
 
     const state = reactive({
       testError001: false,
+      testMinDate001: '',
+      testMaxDate001: '',
+      testMinDate002: '',
+      testMaxDate002: '',
     });
 
     const alert = ref(null);
@@ -1082,6 +1084,43 @@ export default {
           </ButtonListItem>
           <ButtonListItem>
             <BasicButton>Button 2</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Wrap - col 2</h3>
+        <ButtonList :wrap="true">
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">Button 1</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">Button 2</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">Button 3</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">Button 4</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Wrap - col 3</h3>
+        <ButtonList :wrap="true" :col="3">
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">Button 1</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">Button 2</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">Button 3</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">Button 4</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">Button 5</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </div>
@@ -2352,25 +2391,48 @@ export default {
             </FormInvalid>
           </FormListItem>
 
-          <!-- 작업중
-          <FormListItem titleText="달력 1개 표기" target="#testInput012">
+          <FormListItem titleText="인도 요청일" target="#testInput012Button">
             <FormInvalid :error="state.testError001">
               <InputBlock :error="state.testError001">
                 <InputBlockCell :flexible="true">
-                  <InputDateBasic id="testInput012" />
+                  <BasicDatepicker
+                    title="인도 요청일"
+                    id="testInput012"
+                    buttonId="testInput012Button"
+                    :onChange="testInputEvent"
+                  />
                 </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
 
-          <FormListItem titleText="달력 2개 표기" target="#testInput013Start">
+          <FormListItem titleText="조회기간" target="#testInput013StartButton">
             <FormInvalid :error="state.testError001">
               <InputBlock :error="state.testError001">
-                <InputDateDual
-                  startId="testInput013Start"
-                  endId="testInput013End"
-                />
+                <InputBlockCell :flexible="true">
+                  <BasicDatepicker
+                    title="조회기간 시작 날짜"
+                    id="testInput013Start"
+                    buttonId="testInput013StartButton"
+                    :max="state.testMaxDate001"
+                    v-model="state.testMinDate001"
+                    :onChange="testInputEvent"
+                  />
+                </InputBlockCell>
+                <InputBlockCell margin="regular">
+                  <div class="text-body-3">~</div>
+                </InputBlockCell>
+                <InputBlockCell :flexible="true" margin="regular">
+                  <BasicDatepicker
+                    title="조회기간 종료 날짜"
+                    id="testInput013End"
+                    buttonId="testInput013EndButton"
+                    :min="state.testMinDate001"
+                    v-model="state.testMaxDate001"
+                    :onChange="testInputEvent"
+                  />
+                </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
@@ -2382,8 +2444,8 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="testInput014_001"
-                    id="testInput014_001_001"
+                    name="testInputCheck014"
+                    id="testInputCheck014_001"
                   >
                     <BoxCheckLabel>1개월</BoxCheckLabel>
                   </BoxCheck>
@@ -2391,8 +2453,8 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="testInput014_001"
-                    id="testInput014_001_002"
+                    name="testInputCheck014"
+                    id="testInputCheck014_002"
                   >
                     <BoxCheckLabel>3개월</BoxCheckLabel>
                   </BoxCheck>
@@ -2400,8 +2462,8 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="testInput014_001"
-                    id="testInput014_001_003"
+                    name="testInputCheck014"
+                    id="testInputCheck014_003"
                   >
                     <BoxCheckLabel>6개월</BoxCheckLabel>
                   </BoxCheck>
@@ -2409,24 +2471,42 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="testInput014_001"
-                    id="testInput014_001_004"
+                    name="testInputCheck014"
+                    id="testInputCheck014_004"
                   >
                     <BoxCheckLabel>1년</BoxCheckLabel>
                   </BoxCheck>
                 </BoxCheckListItem>
               </BoxCheckList>
               <InputBlock :error="state.testError001">
-                <InputDateDual
-                  startId="testInput014Start"
-                  endId="testInput014End"
-                />
+                <InputBlockCell :flexible="true">
+                  <BasicDatepicker
+                    title="조회기간 시작 날짜"
+                    id="testInput014Start"
+                    buttonId="testInput014StartButton"
+                    :max="state.testMaxDate002"
+                    v-model="state.testMinDate002"
+                    :onChange="testInputEvent"
+                  />
+                </InputBlockCell>
+                <InputBlockCell margin="regular">
+                  <div class="text-body-3">~</div>
+                </InputBlockCell>
+                <InputBlockCell :flexible="true" margin="regular">
+                  <BasicDatepicker
+                    title="조회기간 종료 날짜"
+                    id="testInput014End"
+                    buttonId="testInput014EndButton"
+                    :min="state.testMinDate002"
+                    v-model="state.testMaxDate002"
+                    :onChange="testInputEvent"
+                  />
+                </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
               <FormHelpText>조회기간은 최대 1년까지 가능해요.</FormHelpText>
             </FormInvalid>
           </FormListItem>
-          -->
 
           <BasicTextarea
             :error="state.testError001"
@@ -6646,6 +6726,19 @@ export default {
             </UiAccordionItem>
           </UiAccordion>
         </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Masking Text</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <p class="text-body-2">
+          채무자인 고객은 본인의
+          <MaskingText>[신용상태가 개선]</MaskingText> 되었다고 판단되는 경우(예
+          : 취업, 승진, 재산증가, 개인신용평점 상승) 금융회사에
+          <MaskingText>[금리인하를 요구]</MaskingText> 할 수 있어요.
+        </p>
       </div>
     </section>
 

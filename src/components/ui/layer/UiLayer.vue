@@ -125,6 +125,7 @@ export default {
       stickyBar: {
         value: null,
       },
+      isContainerClick: false,
     });
 
     const layer = ref(null);
@@ -151,7 +152,7 @@ export default {
         );
       });
       const notOhterElements =
-        'script, link, style, base, meta, br, [aria-hidden], [inert], [data-ui-js]';
+        'script, link, style, base, meta, br, [aria-hidden], [inert], .js-not-inert, .js-not-inert *, [data-ui-js], [data-layer], [data-layer] *, option, ul, dl, table, thead, tbody, tfoot, tr, colgroup, col, :empty, .duet-date__dialog, .duet-date__dialog *';
       const layersParents = (() => {
         let re = [];
         for (let i = 0; i < layers.length; i++) {
@@ -342,13 +343,14 @@ export default {
     };
 
     const wrapClick = () => {
-      if (props.backgroundClose) {
+      if (props.backgroundClose && !state.isContainerClick) {
         close();
       }
+      state.isContainerClick = false;
     };
 
-    const containerClick = (e) => {
-      e.stopPropagation();
+    const containerClick = () => {
+      state.isContainerClick = true;
     };
 
     onMounted(() => {

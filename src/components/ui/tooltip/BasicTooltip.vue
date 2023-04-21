@@ -1,5 +1,12 @@
 <script>
-import { computed, ref, reactive, onMounted, onUnmounted, nextTick } from 'vue';
+import {
+  computed,
+  ref,
+  reactive,
+  onMounted,
+  onBeforeUnmount,
+  nextTick,
+} from 'vue';
 
 const defaultClassNames = () => ({
   wrap: '',
@@ -26,6 +33,8 @@ export default {
       show: false,
       top: 0,
       tailLeft: 0,
+      isBubbleClick: false,
+      isButtonClick: false,
     });
 
     const button = ref(null);
@@ -74,8 +83,38 @@ export default {
       });
     };
 
+    const open = () => {
+      state.show = true;
+
+      nextTick(() => {
+        setPosition();
+      });
+    };
+
+    const close = () => {
+      state.show = false;
+
+      nextTick(() => {
+        setPosition();
+      });
+    };
+
+    const bodyClick = () => {
+      if (!state.isBubbleClick && !state.isButtonClick) {
+        close();
+      }
+
+      state.isBubbleClick = false;
+      state.isButtonClick = false;
+    };
+
+    const bubbleClick = () => {
+      state.isBubbleClick = true;
+    };
+
     const onClick = () => {
       toggle();
+      state.isButtonClick = true;
     };
 
     const onKeyup = (e) => {
@@ -92,12 +131,19 @@ export default {
     };
 
     onMounted(() => {
+      const body = document.getElementsByTagName('body')[0];
+
       setPosition();
+
+      body.addEventListener('click', bodyClick);
       window.addEventListener('resize', setPosition);
       window.addEventListener('orientationchange', setPosition);
     });
 
-    onUnmounted(() => {
+    onBeforeUnmount(() => {
+      const body = document.getElementsByTagName('body')[0];
+
+      body.removeEventListener('click', bodyClick);
       window.removeEventListener('resize', setPosition);
       window.removeEventListener('orientationchange', setPosition);
     });
@@ -108,8 +154,11 @@ export default {
       bubble,
       customClassNames,
       toggle,
+      open,
+      close,
       onClick,
       onKeyup,
+      bubbleClick,
     };
   },
 };
@@ -140,6 +189,7 @@ export default {
       ref="bubble"
       :class="[$style['tooltip__bubble'], customClassNames.bubble]"
       :style="`margin-top: -${state.top}px;`"
+      @click="bubbleClick"
     >
       <div
         :class="[$style['tooltip__tail'], customClassNames.tail]"
