@@ -129,13 +129,13 @@ const datas = () => [
       },
       {
         depth2: '날짜입력',
-        depth3: '팝업',
+        depth3: '',
         depth4: '',
         depth5: '',
         depth6: '',
         path: '/guide/enter-date-001',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.21',
         log: [],
       },
       {

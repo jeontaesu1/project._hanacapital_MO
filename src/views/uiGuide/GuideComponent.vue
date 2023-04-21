@@ -84,9 +84,7 @@ import BankLogo from '@/components/ui/imageData/BankLogo.vue';
 import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
 import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 import ColorChip from '@/components/ui/imageData/ColorChip.vue';
-// import InputDateBasic from '@/components/ui/form/InputDateBasic.vue';
-// import InputDateDual from '@/components/ui/form/InputDateDual.vue';
-// import InputRange from '@/components/ui/form/InputRange.vue';
+import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
 
 import BrandLogo001 from '@/assets/images/card-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/card-logo/lotte.svg?component';
@@ -207,9 +205,7 @@ export default {
     CarEmblem,
     CarThumb,
     ColorChip,
-    // InputDateBasic,
-    // InputDateDual,
-    // InputRange,
+    BasicDatepicker,
     IconAdd,
     BrandLogo001,
     BrandLogo002,
@@ -258,6 +254,10 @@ export default {
 
     const state = reactive({
       testError001: false,
+      testMinDate001: '',
+      testMaxDate001: '',
+      testMinDate002: '',
+      testMaxDate002: '',
     });
 
     const alert = ref(null);
@@ -2352,25 +2352,48 @@ export default {
             </FormInvalid>
           </FormListItem>
 
-          <!-- 작업중
-          <FormListItem titleText="달력 1개 표기" target="#testInput012">
+          <FormListItem titleText="인도 요청일" target="#testInput012Button">
             <FormInvalid :error="state.testError001">
               <InputBlock :error="state.testError001">
                 <InputBlockCell :flexible="true">
-                  <InputDateBasic id="testInput012" />
+                  <BasicDatepicker
+                    title="인도 요청일"
+                    id="testInput012"
+                    buttonId="testInput012Button"
+                    :onChange="testInputEvent"
+                  />
                 </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
 
-          <FormListItem titleText="달력 2개 표기" target="#testInput013Start">
+          <FormListItem titleText="조회기간" target="#testInput013StartButton">
             <FormInvalid :error="state.testError001">
               <InputBlock :error="state.testError001">
-                <InputDateDual
-                  startId="testInput013Start"
-                  endId="testInput013End"
-                />
+                <InputBlockCell :flexible="true">
+                  <BasicDatepicker
+                    title="조회기간 시작 날짜"
+                    id="testInput013Start"
+                    buttonId="testInput013StartButton"
+                    :max="state.testMaxDate001"
+                    v-model="state.testMinDate001"
+                    :onChange="testInputEvent"
+                  />
+                </InputBlockCell>
+                <InputBlockCell margin="regular">
+                  <div class="text-body-3">~</div>
+                </InputBlockCell>
+                <InputBlockCell :flexible="true" margin="regular">
+                  <BasicDatepicker
+                    title="조회기간 종료 날짜"
+                    id="testInput013End"
+                    buttonId="testInput013EndButton"
+                    :min="state.testMinDate001"
+                    v-model="state.testMaxDate001"
+                    :onChange="testInputEvent"
+                  />
+                </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
@@ -2382,8 +2405,8 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="testInput014_001"
-                    id="testInput014_001_001"
+                    name="testInputCheck014"
+                    id="testInputCheck014_001"
                   >
                     <BoxCheckLabel>1개월</BoxCheckLabel>
                   </BoxCheck>
@@ -2391,8 +2414,8 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="testInput014_001"
-                    id="testInput014_001_002"
+                    name="testInputCheck014"
+                    id="testInputCheck014_002"
                   >
                     <BoxCheckLabel>3개월</BoxCheckLabel>
                   </BoxCheck>
@@ -2400,8 +2423,8 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="testInput014_001"
-                    id="testInput014_001_003"
+                    name="testInputCheck014"
+                    id="testInputCheck014_003"
                   >
                     <BoxCheckLabel>6개월</BoxCheckLabel>
                   </BoxCheck>
@@ -2409,24 +2432,42 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="testInput014_001"
-                    id="testInput014_001_004"
+                    name="testInputCheck014"
+                    id="testInputCheck014_004"
                   >
                     <BoxCheckLabel>1년</BoxCheckLabel>
                   </BoxCheck>
                 </BoxCheckListItem>
               </BoxCheckList>
               <InputBlock :error="state.testError001">
-                <InputDateDual
-                  startId="testInput014Start"
-                  endId="testInput014End"
-                />
+                <InputBlockCell :flexible="true">
+                  <BasicDatepicker
+                    title="조회기간 시작 날짜"
+                    id="testInput014Start"
+                    buttonId="testInput014StartButton"
+                    :max="state.testMaxDate002"
+                    v-model="state.testMinDate002"
+                    :onChange="testInputEvent"
+                  />
+                </InputBlockCell>
+                <InputBlockCell margin="regular">
+                  <div class="text-body-3">~</div>
+                </InputBlockCell>
+                <InputBlockCell :flexible="true" margin="regular">
+                  <BasicDatepicker
+                    title="조회기간 종료 날짜"
+                    id="testInput014End"
+                    buttonId="testInput014EndButton"
+                    :min="state.testMinDate002"
+                    v-model="state.testMaxDate002"
+                    :onChange="testInputEvent"
+                  />
+                </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
               <FormHelpText>조회기간은 최대 1년까지 가능해요.</FormHelpText>
             </FormInvalid>
           </FormListItem>
-          -->
 
           <BasicTextarea
             :error="state.testError001"
