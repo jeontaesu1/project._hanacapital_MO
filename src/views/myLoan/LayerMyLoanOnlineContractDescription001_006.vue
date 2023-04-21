@@ -14,6 +14,7 @@ import NoticeText from '@/components/ui/text/NoticeText.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
+import MaskingText from '@/components/ui/text/MaskingText.vue';
 
 export default {
   components: {
@@ -29,6 +30,7 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicButton,
+    MaskingText,
   },
   setup() {
     const layer = ref(null);
@@ -64,9 +66,15 @@ export default {
       <div class="row-margin-item-group-small">
         <div class="text-body-2">
           채무자인 고객은 본인의
-          <span class="color-red">[신용상태가 개선]</span> 되었다고 판단되는
-          경우(예 : 취업, 승진, 재산증가, 개인신용평점 상승) 금융회사에
-          <span class="color-red">[금리인하를 요구]</span> 할 수 있어요.
+          <MaskingText>
+            <span class="color-red">[신용상태가 개선]</span>
+          </MaskingText>
+          되었다고 판단되는 경우(예 : 취업, 승진, 재산증가, 개인신용평점 상승)
+          금융회사에
+          <MaskingText>
+            <span class="color-red">[금리인하를 요구]</span>
+          </MaskingText>
+          할 수 있어요.
         </div>
 
         <NoticeText class="color-red row-margin-item">
