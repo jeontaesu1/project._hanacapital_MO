@@ -103,9 +103,7 @@ export default {
               </CheckBox>
             </div>
 
-            <div
-              :class="[$style['agree-list__contents'], 'row-margin-contents']"
-            >
+            <div class="row-margin-contents">
               <ul :class="$style['agree-list__list']">
                 <li :class="$style['agree-list__item']">
                   <div :class="$style['agree-list__head']">
