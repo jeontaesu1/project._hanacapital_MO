@@ -45,10 +45,11 @@ export default {
     ImgAccount,
   },
   setup() {
-    const layer = ref(null);
     const state = reactive({
       nameError: false,
     });
+
+    const layer = ref(null);
 
     return {
       state,
@@ -101,12 +102,7 @@ export default {
                 />
               </InputBlockCell>
               <template v-slot:innerRight>
-                <div
-                  class="color-red text-body-5"
-                  :class="$style['input-timer']"
-                >
-                  5:00
-                </div>
+                <div :class="$style['input-timer']">5:00</div>
               </template>
               <template v-slot:right>
                 <BasicButton size="mini" theme="quaternary">

@@ -263,7 +263,7 @@ export default {
           <InputBlock
             :error="state.mailError"
             :classNames="{
-              wrap: 'row-margin-item',
+              wrap: 'row-margin-item-group row-margin-bottom-none',
             }"
           >
             <InputBlockCell :flexible="true">

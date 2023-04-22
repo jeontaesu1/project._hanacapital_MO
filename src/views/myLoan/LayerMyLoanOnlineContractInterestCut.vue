@@ -47,11 +47,7 @@ export default {
         </ToastPopupHead>
       </template>
 
-      <KeyValue
-        margin="regular"
-        direction="vertical"
-        :classNames="{ wrap: 'row-margin-contents' }"
-      >
+      <KeyValue margin="regular" direction="vertical">
         <KeyValueItem>
           <KeyValueTitle>대상</KeyValueTitle>
           <KeyValueText>대출 취급일로부터 6개월 경과한 고객</KeyValueText>
@@ -64,10 +60,12 @@ export default {
             있습니다.
           </KeyValueText>
         </KeyValueItem>
+
         <KeyValueItem>
           <KeyValueTitle>신청조건</KeyValueTitle>
           <KeyValueText>연간 금리인하요구권 사용횟수가 2회 이내</KeyValueText>
         </KeyValueItem>
+
         <KeyValueItem>
           <KeyValueTitle>신청방법</KeyValueTitle>
           <KeyValueText>

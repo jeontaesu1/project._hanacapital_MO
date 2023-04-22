@@ -65,50 +65,48 @@ export default {
         </div>
       </div>
 
-      <div class="row-margin-contents-group">
-        <ButtonList
-          :classNames="{
-            wrap: 'row-margin-contents',
-          }"
-        >
-          <ButtonListItem>
-            <BasicButton :line="true">신분증 촬영</BasicButton>
-          </ButtonListItem>
-        </ButtonList>
+      <ButtonList
+        :classNames="{
+          wrap: 'row-margin-contents-group row-margin-bottom-none',
+        }"
+      >
+        <ButtonListItem>
+          <BasicButton :line="true">신분증 촬영</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
 
-        <ul :class="$style['basic-list']">
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              신분증에 빛이 반사되지 않도록 해주세요.
-            </div>
-          </li>
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              신분증보다 짙은 배경에서 촬영해주세요.
-            </div>
-          </li>
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              신분증의 모서리가 카메라 영역에 모두 들어오도록 촬영해 주세요.
-            </div>
-          </li>
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              신분증 안에 표시된 글자에 초점을 맞추어 촬영해주세요.
-            </div>
-          </li>
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              너무 밝거나 어두운 곳에서 촬영은 피해주세요.
-            </div>
-          </li>
-        </ul>
-      </div>
+      <ul :class="[$style['basic-list'], 'row-margin-contents']">
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            신분증에 빛이 반사되지 않도록 해주세요.
+          </div>
+        </li>
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            신분증보다 짙은 배경에서 촬영해주세요.
+          </div>
+        </li>
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            신분증의 모서리가 카메라 영역에 모두 들어오도록 촬영해 주세요.
+          </div>
+        </li>
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            신분증 안에 표시된 글자에 초점을 맞추어 촬영해주세요.
+          </div>
+        </li>
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            너무 밝거나 어두운 곳에서 촬영은 피해주세요.
+          </div>
+        </li>
+      </ul>
 
       <template v-slot:foot>
         <ButtonList

@@ -83,7 +83,11 @@ export default {
       <FormList>
         <FormListItem titleText="차량 매매가격" :forceFocus="true">
           <FormInvalid :error="state.buyError">
-            <ButtonList :wrap="true" :col="3" class="row-margin-small">
+            <ButtonList
+              :wrap="true"
+              :col="3"
+              :classNames="{ wrap: 'row-margin-item-group' }"
+            >
               <ButtonListItem>
                 <BasicButton :line="true" theme="quaternary" size="small">
                   + 10만
@@ -111,12 +115,11 @@ export default {
               </ButtonListItem>
             </ButtonList>
 
-            <InputBlock :error="state.buyError" class="row-margin-item-medium">
+            <InputBlock :error="state.buyError">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   align="right"
                   :useDelete="false"
-                  type="number"
                   pattern="\d*"
                   title="차량 매매가격 직접입력"
                   id="layerMyLoanOnlineContractFinancialTermsBuySelf"
@@ -141,7 +144,6 @@ export default {
                   title="인수 요청일"
                   id="layerMyLoanOnlineContractFinancialTermsDate"
                   buttonId="layerMyLoanOnlineContractFinancialTermsDateButton"
-                  :onChange="testInputEvent"
                 />
               </InputBlockCell>
             </InputBlock>

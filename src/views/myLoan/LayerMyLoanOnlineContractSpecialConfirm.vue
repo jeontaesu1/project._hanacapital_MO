@@ -10,9 +10,10 @@ import PopupText from '@/components/ui/layer/PopupText.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-import BoxCheck from '@/components/ui/form/BoxCheck.vue';
-import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
-import BoxCheckObject from '@/components/ui/form/BoxCheckObject.vue';
+import BasicBox from '@/components/ui/common/BasicBox.vue';
+import CheckBox from '@/components/ui/form/CheckBox.vue';
+import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
+import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
 
 export default {
   components: {
@@ -24,9 +25,10 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    BoxCheck,
-    BoxCheckLabel,
-    BoxCheckObject,
+    BasicBox,
+    CheckBox,
+    CheckBoxLabelText,
+    CheckBoxObject,
   },
   setup() {
     const layer = ref(null);
@@ -60,15 +62,19 @@ export default {
         </PopupText>
       </section>
 
-      <div class="row-margin-item-medium">
-        <BoxCheck :contents="true" type="checkbox" id="testBoxCheck006_001">
-          <template v-slot:left>
-            <BoxCheckObject />
-          </template>
-          <BoxCheckLabel class="text-body-3">
-            네, 계약사항에 대하여 충분히 이해했습니다.
-          </BoxCheckLabel>
-        </BoxCheck>
+      <div class="row-margin-item-group">
+        <BasicBox theme="septenary" className="row-margin-item">
+          <CheckBox
+            theme="secondary"
+            align="center"
+            id="layerMyLoanOnlineContractSpecialConfirmCheck"
+          >
+            <CheckBoxObject />
+            <CheckBoxLabelText :classNames="{ text: 'text-body-3' }"
+              >네, 계약사항에 대하여 충분히 이해했습니다.</CheckBoxLabelText
+            >
+          </CheckBox>
+        </BasicBox>
       </div>
 
       <template v-slot:foot>
@@ -88,7 +94,3 @@ export default {
     </ToastPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/myLoan/LayerMyLoanOnlineContractSpecialConfirm.scss';
-</style>

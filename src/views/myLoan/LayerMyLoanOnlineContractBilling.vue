@@ -55,11 +55,12 @@ export default {
     BasicSelect,
   },
   setup() {
-    const layer = ref(null);
     const state = reactive({
       phoneError: false,
       mailError: false,
     });
+
+    const layer = ref(null);
 
     return {
       state,
@@ -186,7 +187,7 @@ export default {
                 <InputBlock
                   :error="state.mailError"
                   :classNames="{
-                    wrap: 'row-margin-item',
+                    wrap: 'row-margin-item-group row-margin-bottom-none',
                   }"
                 >
                   <InputBlockCell :flexible="true">

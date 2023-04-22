@@ -93,12 +93,12 @@ export default {
           입력해 주세요
         </PageMainText>
 
-        <!-- case: 제휴사 중고차 약정일 경우 문구 노출 -->
+        <!-- Case: 제휴사 중고차 약정일 경우 문구 노출 -->
         <PageMainText>
           <strong>대출금 지급 및 자동이체</strong><br />
           계좌(본인계좌)를 입력해 주세요.
         </PageMainText>
-        <!-- // case: 제휴사 중고차 약정일 경우 문구 노출 -->
+        <!-- // Case: 제휴사 중고차 약정일 경우 문구 노출 -->
       </PageTextGroup>
 
       <FormList>

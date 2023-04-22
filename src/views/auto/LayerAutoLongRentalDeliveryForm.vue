@@ -270,7 +270,7 @@ export default {
             <InputBlock
               :error="state.addressError"
               :classNames="{
-                wrap: 'row-margin-item-group',
+                wrap: 'row-margin-item-group row-margin-bottom-none',
               }"
             >
               <InputBlockCell :flexible="true">
@@ -284,7 +284,7 @@ export default {
             <InputBlock
               :error="state.addressError"
               :classNames="{
-                wrap: 'row-margin-item-group',
+                wrap: 'row-margin-item-group row-margin-bottom-none',
               }"
             >
               <InputBlockCell :flexible="true">

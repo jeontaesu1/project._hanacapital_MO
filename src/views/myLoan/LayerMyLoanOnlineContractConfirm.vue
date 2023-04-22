@@ -68,204 +68,206 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <section>
-        <h3 class="text-title-2 row-margin-contents">계약자 정보</h3>
+      <div>
+        <section class="row-margin-container-medium">
+          <h3 class="text-title-2 row-margin-contents">계약자 정보</h3>
 
-        <BasicBox>
-          <KeyValue margin="regular">
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>성명</KeyValueTitle>
-              <KeyValueText>김하나</KeyValueText>
-            </KeyValueItem>
+          <BasicBox>
+            <KeyValue margin="regular">
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>성명</KeyValueTitle>
+                <KeyValueText>김하나</KeyValueText>
+              </KeyValueItem>
 
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>생년월일</KeyValueTitle>
-              <KeyValueText>1993.01.23</KeyValueText>
-            </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>생년월일</KeyValueTitle>
+                <KeyValueText>1993.01.23</KeyValueText>
+              </KeyValueItem>
 
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>자택주소</KeyValueTitle>
-              <KeyValueText>
-                (88733) 인천 서구 청라1동<br />
-                11, 청라동
-              </KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>사업자번호</KeyValueTitle>
-              <KeyValueText>12-345-6780</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>전화번호</KeyValueTitle>
-              <KeyValueText>010-1234-5678</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>이메일</KeyValueTitle>
-              <KeyValueText>hanacapital@gmail.com</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>청구서 수령방법</KeyValueTitle>
-              <KeyValueText>온라인(SMS)</KeyValueText>
-            </KeyValueItem>
-          </KeyValue>
-        </BasicBox>
-      </section>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>자택주소</KeyValueTitle>
+                <KeyValueText>
+                  (88733) 인천 서구 청라1동<br />
+                  11, 청라동
+                </KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>사업자번호</KeyValueTitle>
+                <KeyValueText>12-345-6780</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>전화번호</KeyValueTitle>
+                <KeyValueText>010-1234-5678</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>이메일</KeyValueTitle>
+                <KeyValueText>hanacapital@gmail.com</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>청구서 수령방법</KeyValueTitle>
+                <KeyValueText>온라인(SMS)</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </BasicBox>
+        </section>
 
-      <section class="row-margin-container-medium">
-        <h3 class="text-title-2 row-margin-contents">결제 정보</h3>
+        <section class="row-margin-container-medium">
+          <h3 class="text-title-2 row-margin-contents">결제 정보</h3>
 
-        <BasicBox>
-          <KeyValue margin="regular">
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>금융기관명</KeyValueTitle>
-              <KeyValueText>하나은행</KeyValueText>
-            </KeyValueItem>
+          <BasicBox>
+            <KeyValue margin="regular">
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>금융기관명</KeyValueTitle>
+                <KeyValueText>하나은행</KeyValueText>
+              </KeyValueItem>
 
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>출금계좌번호</KeyValueTitle>
-              <KeyValueText>***4567890123</KeyValueText>
-            </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>출금계좌번호</KeyValueTitle>
+                <KeyValueText>***4567890123</KeyValueText>
+              </KeyValueItem>
 
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>예금주명</KeyValueTitle>
-              <KeyValueText>김하나</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>결제일</KeyValueTitle>
-              <KeyValueText>매월 11일</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>1회차 납부일</KeyValueTitle>
-              <KeyValueText>2021.11.11</KeyValueText>
-            </KeyValueItem>
-          </KeyValue>
-        </BasicBox>
-      </section>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>예금주명</KeyValueTitle>
+                <KeyValueText>김하나</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>결제일</KeyValueTitle>
+                <KeyValueText>매월 11일</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>1회차 납부일</KeyValueTitle>
+                <KeyValueText>2021.11.11</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </BasicBox>
+        </section>
 
-      <section>
-        <h3 class="text-title-2 row-margin-contents">대출 정보</h3>
+        <section class="row-margin-container-medium">
+          <h3 class="text-title-2 row-margin-contents">대출 정보</h3>
 
-        <BasicBox>
-          <KeyValue margin="regular">
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>대출신청금액</KeyValueTitle>
-              <KeyValueText>15,000,000 원</KeyValueText>
-            </KeyValueItem>
+          <BasicBox>
+            <KeyValue margin="regular">
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>대출신청금액</KeyValueTitle>
+                <KeyValueText>15,000,000 원</KeyValueText>
+              </KeyValueItem>
 
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>상환기간</KeyValueTitle>
-              <KeyValueText>60 개월</KeyValueText>
-            </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>상환기간</KeyValueTitle>
+                <KeyValueText>60 개월</KeyValueText>
+              </KeyValueItem>
 
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>대출이자율</KeyValueTitle>
-              <KeyValueText>18.3 %</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>상환방법</KeyValueTitle>
-              <KeyValueText>원리금균등분할상환</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>지연배상금</KeyValueTitle>
-              <KeyValueText>20 %</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>월 납입금</KeyValueTitle>
-              <KeyValueText>383,350 원</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>인지대</KeyValueTitle>
-              <KeyValueText>0원</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>중도상환수수료</KeyValueTitle>
-              <KeyValueText>
-                중도상환원금 x 1% + 중도상환원금 x (0%-1%) x 잔존기간 /
-                (대출기간 - 30일)
-              </KeyValueText>
-            </KeyValueItem>
-          </KeyValue>
-        </BasicBox>
-      </section>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>대출이자율</KeyValueTitle>
+                <KeyValueText>18.3 %</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>상환방법</KeyValueTitle>
+                <KeyValueText>원리금균등분할상환</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>지연배상금</KeyValueTitle>
+                <KeyValueText>20 %</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>월 납입금</KeyValueTitle>
+                <KeyValueText>383,350 원</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>인지대</KeyValueTitle>
+                <KeyValueText>0원</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>중도상환수수료</KeyValueTitle>
+                <KeyValueText>
+                  중도상환원금 x 1% + 중도상환원금 x (0%-1%) x 잔존기간 /
+                  (대출기간 - 30일)
+                </KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </BasicBox>
+        </section>
+      </div>
 
       <template v-slot:foot>
         <ButtonList

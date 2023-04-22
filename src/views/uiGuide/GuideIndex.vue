@@ -824,9 +824,14 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/inventory-finance-early',
-        status: 'partend',
+        status: 'end',
         create: '2023.04.14',
-        log: [],
+        log: [
+          {
+            date: '2023.04.21',
+            text: '팝업 추가\n- 중도상환 입금 예약 신청_가상계좌 입금',
+          },
+        ],
       },
       {
         depth2: '만기연장',

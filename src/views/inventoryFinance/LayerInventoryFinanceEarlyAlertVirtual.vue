@@ -220,6 +220,7 @@ export default {
               </div>
             </UiAccordionLayer>
           </UiAccordionItem>
+
           <KeyValue>
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>예금주</KeyValueTitle>
@@ -253,5 +254,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/myLoan/MyLoanDetailPaymentVirtual.scss';
+@import '@/assets/scss/views/inventory-finance/LayerInventoryFinanceEarlyAlertVirtual.scss';
 </style>

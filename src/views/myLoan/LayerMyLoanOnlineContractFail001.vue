@@ -82,7 +82,7 @@ export default {
                 </div>
                 <div div :class="$style['logs__right']">
                   <button type="button" :class="$style['logs__link']">
-                    <span :class="$style['logs__link-text']">진행하기</span>
+                    <span :class="$style['logs__link-text']">상세보기</span>
                   </button>
                 </div>
               </div>
@@ -98,7 +98,7 @@ export default {
                 </div>
                 <div div :class="$style['logs__right']">
                   <button type="button" :class="$style['logs__link']">
-                    <span :class="$style['logs__link-text']">진행하기</span>
+                    <span :class="$style['logs__link-text']">상세보기</span>
                   </button>
                 </div>
               </div>

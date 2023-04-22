@@ -41,7 +41,7 @@ export default {
         </ToastPopupHead>
       </template>
 
-      <PopupText class="row-margin-small">
+      <PopupText>
         약정완료 시, 고객님의 계좌로 대출금이 즉시 입금됩니다.
       </PopupText>
 

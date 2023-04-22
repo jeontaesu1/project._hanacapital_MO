@@ -71,7 +71,11 @@ export default {
         </div>
       </div>
 
-      <ButtonList :class="$style['margin-top-regular']">
+      <ButtonList
+        :classNames="{
+          wrap: 'row-margin-contents-group row-margin-bottom-none',
+        }"
+      >
         <ButtonListItem>
           <BasicButton :line="true">신분증 촬영</BasicButton>
         </ButtonListItem>
