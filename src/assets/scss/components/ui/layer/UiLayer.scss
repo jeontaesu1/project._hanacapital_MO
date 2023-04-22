@@ -84,6 +84,12 @@
       &.layer--opened .layer__container {
         transform: translateY(0);
       }
+
+      :global(.is-date-picker-opened) & .layer__container,
+      :global(.is-date-picker-animated) & .layer__container {
+        transform: none;
+        transition: transform 0s !important;
+      }
     }
 
     &-toast-fix {

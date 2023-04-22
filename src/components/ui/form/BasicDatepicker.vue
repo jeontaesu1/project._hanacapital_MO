@@ -164,7 +164,7 @@ export default {
         clearTimeout(timer);
         html.classList.remove('is-date-picker-animated');
         callback();
-      }, 400);
+      }, 300);
     };
 
     const getElement = () => {
@@ -199,7 +199,7 @@ export default {
             if (formListItem && formListItem.checkInputed) {
               formListItem.checkInputed();
             }
-          }, 0);
+          }, 10);
         });
 
         return;
@@ -296,6 +296,9 @@ export default {
 
     const duetOpen = (e) => {
       const { pickerOpen } = props;
+      const html = document.getElementsByTagName('html')[0];
+
+      html.classList.add('is-date-picker-opened');
 
       if (formListItem && formListItem.selectFocus) {
         formListItem.selectFocus(true);
@@ -312,6 +315,9 @@ export default {
 
     const duetClose = (e) => {
       const { pickerClose } = props;
+      const html = document.getElementsByTagName('html')[0];
+
+      html.classList.remove('is-date-picker-opened');
 
       setSelectDisabled(true);
       animated(() => {
