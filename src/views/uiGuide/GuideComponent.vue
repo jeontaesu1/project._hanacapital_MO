@@ -4777,6 +4777,36 @@ export default {
       </div>
 
       <div class="test-section-sub">
+        <h3 class="test-section-sub-title">fixed width 한글</h3>
+        <ul
+          :class="[$style['basic-list'], $style['basic-list--fixed-width02']]"
+        >
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']">가.</div>
+            <div :class="$style['basic-list__content']">
+              양도인(승계 전 이용자)이 하나캐피탈에 예치한 보증금 및 잔여
+              선납금을 반환 없이 양수인(승계 후 이용자)에게 귀속합니다.
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']">나.</div>
+            <div :class="$style['basic-list__content']">
+              법인카드, 가족카드, 선불카드는 본인확인이 불가능합니다.
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']">다.</div>
+            <div :class="$style['basic-list__content']">
+              비씨카드는 비씨로고(
+              <span :class="$style['inline-logo']"><BrandLogo007 /></span>
+              )가 표시된 카드만 이용가능합니다.<br />
+              (예 : 농협BC, 우리카드, IBK카드 등)
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="test-section-sub">
         <h3 class="test-section-sub-title">regular margin (12px)</h3>
         <ul
           :class="[$style['basic-list'], $style['basic-list--regular-margin']]"
