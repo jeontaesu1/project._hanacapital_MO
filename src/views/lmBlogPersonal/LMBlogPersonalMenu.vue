@@ -72,5 +72,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/lm-blog-personal/LMBlogPersonalMenu.scss';
+@import '@/assets/scss/views/lmBlogPersonal/LMBlogPersonalMenu.scss';
 </style>

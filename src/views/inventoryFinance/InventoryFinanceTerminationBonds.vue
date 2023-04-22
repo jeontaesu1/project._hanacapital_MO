@@ -260,5 +260,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/inventory-finance/InventoryFinanceTerminationBonds.scss';
+@import '@/assets/scss/views/inventoryFinance/InventoryFinanceTerminationBonds.scss';
 </style>

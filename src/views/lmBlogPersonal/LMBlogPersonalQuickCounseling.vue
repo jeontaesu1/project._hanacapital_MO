@@ -243,5 +243,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/lm-blog-personal/LMBlogPersonalQuickCounseling.scss';
+@import '@/assets/scss/views/lmBlogPersonal/LMBlogPersonalQuickCounseling.scss';
 </style>

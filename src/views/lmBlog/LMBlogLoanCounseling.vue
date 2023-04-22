@@ -339,5 +339,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/lm-blog/LMBlogLoanCounseling.scss';
+@import '@/assets/scss/views/lmBlog/LMBlogLoanCounseling.scss';
 </style>

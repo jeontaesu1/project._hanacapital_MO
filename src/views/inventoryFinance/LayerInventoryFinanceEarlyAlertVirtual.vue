@@ -254,5 +254,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/inventory-finance/LayerInventoryFinanceEarlyAlertVirtual.scss';
+@import '@/assets/scss/views/inventoryFinance/LayerInventoryFinanceEarlyAlertVirtual.scss';
 </style>

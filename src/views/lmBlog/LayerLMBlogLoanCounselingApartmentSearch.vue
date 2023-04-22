@@ -118,5 +118,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/lm-blog/LayerLMBlogLoanCounselingApartmentSearch.scss';
+@import '@/assets/scss/views/lmBlog/LayerLMBlogLoanCounselingApartmentSearch.scss';
 </style>

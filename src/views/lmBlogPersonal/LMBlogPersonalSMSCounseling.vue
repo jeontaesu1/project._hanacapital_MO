@@ -222,5 +222,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/lm-blog-personal/LMBlogPersonalSMSCounseling.scss';
+@import '@/assets/scss/views/lmBlogPersonal/LMBlogPersonalSMSCounseling.scss';
 </style>

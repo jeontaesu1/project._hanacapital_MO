@@ -191,5 +191,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/lm-blog/LMBlogSMSCounseling.scss';
+@import '@/assets/scss/views/lmBlog/LMBlogSMSCounseling.scss';
 </style>

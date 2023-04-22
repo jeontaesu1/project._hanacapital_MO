@@ -161,5 +161,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/lm-blog-personal/LMBlogPersonalHome.scss';
+@import '@/assets/scss/views/lmBlogPersonal/LMBlogPersonalHome.scss';
 </style>

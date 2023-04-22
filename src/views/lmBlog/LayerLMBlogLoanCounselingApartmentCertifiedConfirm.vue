@@ -282,5 +282,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/lm-blog/LayerLMBlogLoanCounselingApartmentCertifiedConfirm.scss';
+@import '@/assets/scss/views/lmBlog/LayerLMBlogLoanCounselingApartmentCertifiedConfirm.scss';
 </style>

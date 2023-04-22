@@ -722,5 +722,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/lm-blog/LayerLMBlogLoanCounselingApartmentCertified.scss';
+@import '@/assets/scss/views/lmBlog/LayerLMBlogLoanCounselingApartmentCertified.scss';
 </style>

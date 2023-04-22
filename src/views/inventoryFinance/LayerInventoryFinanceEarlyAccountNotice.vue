@@ -109,5 +109,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/inventory-finance/LayerInventoryFinanceEarlyAccountNotice.scss';
+@import '@/assets/scss/views/inventoryFinance/LayerInventoryFinanceEarlyAccountNotice.scss';
 </style>

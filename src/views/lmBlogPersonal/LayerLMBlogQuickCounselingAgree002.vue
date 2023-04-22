@@ -121,5 +121,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/lm-blog-personal/LayerLMBlogQuickCounselingAgree002.scss';
+@import '@/assets/scss/views/lmBlogPersonal/LayerLMBlogQuickCounselingAgree002.scss';
 </style>

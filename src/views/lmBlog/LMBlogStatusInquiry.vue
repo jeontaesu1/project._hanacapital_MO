@@ -735,5 +735,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/lm-blog/LMBlogStatusInquiry.scss';
+@import '@/assets/scss/views/lmBlog/LMBlogStatusInquiry.scss';
 </style>

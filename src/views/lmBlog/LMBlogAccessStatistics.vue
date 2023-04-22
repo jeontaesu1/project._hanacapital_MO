@@ -126,5 +126,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/lm-blog/LMBlogAccessStatistics.scss';
+@import '@/assets/scss/views/lmBlog/LMBlogAccessStatistics.scss';
 </style>

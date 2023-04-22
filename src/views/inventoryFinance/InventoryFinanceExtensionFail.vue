@@ -113,5 +113,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/inventory-finance/InventoryFinanceExtensionFail.scss';
+@import '@/assets/scss/views/inventoryFinance/InventoryFinanceExtensionFail.scss';
 </style>
