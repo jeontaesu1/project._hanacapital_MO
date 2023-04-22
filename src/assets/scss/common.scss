@@ -298,6 +298,21 @@ body,
   text-overflow: ellipsis;
 }
 
+// multi-ellipsis
+.multi-ellipsis {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  max-height: #{$line-height-default * 2}em;
+
+  &--line-3 {
+    -webkit-line-clamp: 3;
+    max-height: #{$line-height-default * 3}em;
+  }
+}
+
 // reset-list
 .reset-list {
   @include reset-list;

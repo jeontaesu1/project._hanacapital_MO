@@ -3,20 +3,45 @@
 .status-inquiry {
   @include reset-list;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin: -30px -20px 0;
   padding: 20px 16px;
   background: #f9f9f9;
-  text-align: center;
+
+  &__item {
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+  }
 
   &__number {
     color: $color-green-50;
     @include font-size-default(16);
   }
+
   &__text {
     margin-top: 2px;
     color: $color-gray-90;
     @include font-size-default(12);
   }
+}
+
+.date {
+  @include font-size-default(13);
+  font-weight: 300;
+}
+
+.category {
+  @include font-size-default(13);
+  font-weight: 500;
+  color: $color-green-50;
+}
+
+.opener {
+  width: 20px;
+  height: 20px;
+}
+
+.contents {
+  margin-top: 20px;
+  border-top: 1px solid $color-gray-20;
+  padding-top: 20px;
 }

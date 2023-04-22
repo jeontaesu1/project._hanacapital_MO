@@ -62,7 +62,3 @@ export default {
     </ToastPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/myLoan/LayerMyLoanOnlineContractSpecialConfirm.scss';
-</style>

@@ -10,7 +10,6 @@ import PopupText from '@/components/ui/layer/PopupText.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
-
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import CheckBox from '@/components/ui/form/CheckBox.vue';
 import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
@@ -46,7 +45,7 @@ export default {
     <ToastPopup>
       <template v-slot:head>
         <ToastPopupHead>
-          <PopupTitle> 약정 중요사항을 확인해 주세요 </PopupTitle>
+          <PopupTitle>약정 중요사항을 확인해 주세요</PopupTitle>
         </ToastPopupHead>
       </template>
 
@@ -56,28 +55,16 @@ export default {
         확약합니다.
       </PopupText>
 
-      <BasicBox
-        theme="septenary"
-        class="row-margin-item-group row-margin-bottom-none"
-      >
-        <div :class="$style['agree-list']">
-          <div :class="$style['agree-list__container']">
-            <div :class="$style['agree-list__head']">
-              <CheckBox
-                id="testagree011_001_001"
-                :classNames="{
-                  wrap: $style['agree-list__checkbox'],
-                }"
-                theme="tertiary"
-              >
-                <CheckBoxObject />
-                <CheckBoxLabelText
-                  >네, 계약사항에 대하여 충분히 이해했습니다.</CheckBoxLabelText
-                >
-              </CheckBox>
-            </div>
-          </div>
-        </div>
+      <BasicBox theme="septenary" className="row-margin-item-group">
+        <CheckBox
+          id="layerMyLoanOnlineContractSuccessionImportantAgree"
+          theme="tertiary"
+        >
+          <CheckBoxObject />
+          <CheckBoxLabelText
+            >네, 계약사항에 대하여 충분히 이해했습니다.</CheckBoxLabelText
+          >
+        </CheckBox>
       </BasicBox>
 
       <template v-slot:foot>
@@ -97,7 +84,3 @@ export default {
     </ToastPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/myLoan/LayerMyLoanOnlineContractSuccessionImportant.scss';
-</style>

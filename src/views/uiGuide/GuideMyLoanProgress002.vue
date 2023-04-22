@@ -42,6 +42,10 @@ import LayerMyLoanOnlineContractInterestCut from '@/views/myLoan/LayerMyLoanOnli
 import LayerMyLoanOnlineContractWithdraw from '@/views/myLoan/LayerMyLoanOnlineContractWithdraw.vue';
 import LayerMyLoanOnlineContractDescription from '@/views/myLoan/LayerMyLoanOnlineContractDescription.vue';
 import LayerMyLoanOnlineContractDescriptionConfirm from '@/views/myLoan/LayerMyLoanOnlineContractDescriptionConfirm.vue';
+import LayerMyLoanOnlineContractSuccession from '@/views/myLoan/LayerMyLoanOnlineContractSuccession.vue';
+import LayerMyLoanOnlineContractSuccessionConfirm001 from '@/views/myLoan/LayerMyLoanOnlineContractSuccessionConfirm001.vue';
+import LayerMyLoanOnlineContractSuccessionConfirm002 from '@/views/myLoan/LayerMyLoanOnlineContractSuccessionConfirm002.vue';
+import LayerMyLoanOnlineContractSuccessionImportant from '@/views/myLoan/LayerMyLoanOnlineContractSuccessionImportant.vue';
 
 export default {
   components: {
@@ -85,6 +89,10 @@ export default {
     LayerMyLoanOnlineContractWithdraw,
     LayerMyLoanOnlineContractDescription,
     LayerMyLoanOnlineContractDescriptionConfirm,
+    LayerMyLoanOnlineContractSuccession,
+    LayerMyLoanOnlineContractSuccessionConfirm001,
+    LayerMyLoanOnlineContractSuccessionConfirm002,
+    LayerMyLoanOnlineContractSuccessionImportant,
   },
   setup() {
     const layer001 = ref(null);
@@ -123,6 +131,10 @@ export default {
     const layer034 = ref(null);
     const layer035 = ref(null);
     const layer036 = ref(null);
+    const layer037 = ref(null);
+    const layer038 = ref(null);
+    const layer039 = ref(null);
+    const layer040 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -232,6 +244,18 @@ export default {
     const layer036Open = (e = {}) => {
       layer036.value.layer.open(e.target);
     };
+    const layer037Open = (e = {}) => {
+      layer037.value.layer.open(e.target);
+    };
+    const layer038Open = (e = {}) => {
+      layer038.value.layer.open(e.target);
+    };
+    const layer039Open = (e = {}) => {
+      layer039.value.layer.open(e.target);
+    };
+    const layer040Open = (e = {}) => {
+      layer040.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -270,6 +294,10 @@ export default {
       layer034,
       layer035,
       layer036,
+      layer037,
+      layer038,
+      layer039,
+      layer040,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -306,6 +334,10 @@ export default {
       layer034Open,
       layer035Open,
       layer036Open,
+      layer037Open,
+      layer038Open,
+      layer039Open,
+      layer040Open,
     };
   },
 };
@@ -499,6 +531,26 @@ export default {
           상품설명에 대한 확인(공통)<br />My_M03_b050
         </BasicButton>
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer037Open"
+          >승계 본인확인<br />My_M03_l024</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer038Open"
+          >승계확약 확인<br />My_M03_l025
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer039Open"
+          >승계확약서 확인<br />My_M03_l026
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer040Open"
+          >승계 약정 중요사항 확인<br />My_M03_b016
+        </BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <LayerMyLoanOnlineContractStartURL ref="layer001" />
@@ -537,5 +589,9 @@ export default {
     <LayerMyLoanOnlineContractWithdraw ref="layer034" />
     <LayerMyLoanOnlineContractDescription ref="layer035" />
     <LayerMyLoanOnlineContractDescriptionConfirm ref="layer036" />
+    <LayerMyLoanOnlineContractSuccession ref="layer037" />
+    <LayerMyLoanOnlineContractSuccessionConfirm001 ref="layer038" />
+    <LayerMyLoanOnlineContractSuccessionConfirm002 ref="layer039" />
+    <LayerMyLoanOnlineContractSuccessionImportant ref="layer040" />
   </PageContents>
 </template>
