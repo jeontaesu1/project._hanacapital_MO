@@ -87,26 +87,20 @@ export default {
       <div class="row-margin-contents">
         <BasicBox theme="septenary" className="row-margin-item">
           <CheckBox
-            theme="secondary"
-            align="center"
+            theme="tertiary"
             id="layerMyLoanOnlineContractDescription001"
           >
             <CheckBoxObject />
-            <CheckBoxLabelText :classNames="{ text: 'text-body-3' }"
-              >상품의 중요사항 확인하기</CheckBoxLabelText
-            >
+            <CheckBoxLabelText>상품의 중요사항 확인하기</CheckBoxLabelText>
           </CheckBox>
         </BasicBox>
         <BasicBox theme="septenary" className="row-margin-item">
           <CheckBox
-            theme="secondary"
-            align="center"
+            theme="tertiary"
             id="layerMyLoanOnlineContractDescription002"
           >
             <CheckBoxObject />
-            <CheckBoxLabelText :classNames="{ text: 'text-body-3' }"
-              >손님의 주요권리 확인하기</CheckBoxLabelText
-            >
+            <CheckBoxLabelText>손님의 주요권리 확인하기</CheckBoxLabelText>
           </CheckBox>
         </BasicBox>
       </div>

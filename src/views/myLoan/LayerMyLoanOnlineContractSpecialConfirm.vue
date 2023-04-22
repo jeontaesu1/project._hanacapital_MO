@@ -65,12 +65,11 @@ export default {
       <div class="row-margin-item-group">
         <BasicBox theme="septenary" className="row-margin-item">
           <CheckBox
-            theme="secondary"
-            align="center"
+            theme="tertiary"
             id="layerMyLoanOnlineContractSpecialConfirmCheck"
           >
             <CheckBoxObject />
-            <CheckBoxLabelText :classNames="{ text: 'text-body-3' }"
+            <CheckBoxLabelText
               >네, 계약사항에 대하여 충분히 이해했습니다.</CheckBoxLabelText
             >
           </CheckBox>
