@@ -1,5 +1,5 @@
 <script>
-import { computed } from 'vue';
+import { computed, inject } from 'vue';
 
 const defaultClassNames = () => ({
   wrap: '',
@@ -19,6 +19,8 @@ export default {
     },
   },
   setup(props) {
+    const illustInfoStyleModule = inject('illustInfoStyleModule', {});
+
     const customClassNames = computed(() => {
       const { classNames } = props;
       return Object.assign(defaultClassNames(), classNames);
@@ -26,6 +28,7 @@ export default {
 
     return {
       customClassNames,
+      illustInfoStyleModule,
     };
   },
 };
@@ -38,6 +41,7 @@ export default {
       {
         [$style[`illust-object--type-${type}`]]: type,
       },
+      illustInfoStyleModule['illust-info__object'],
       customClassNames.wrap,
     ]"
   />

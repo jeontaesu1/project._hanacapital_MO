@@ -223,6 +223,11 @@ const routes = [
     component: () => import('@/views/uiGuide/GuideAutoSuccession001.vue'),
   },
   {
+    path: '/guide/my-loan-home-001',
+    name: '/guide/my-loan-home-001',
+    component: () => import('@/views/uiGuide/GuideMyLoanHome001.vue'),
+  },
+  {
     path: '/guide/my-loan-designation-driver-001',
     name: '/guide/my-loan-designation-driver-001',
     component: () =>
@@ -287,6 +292,50 @@ const routes = [
     path: '/guide/my-loan-progress-011',
     name: '/guide/my-loan-progress-011',
     component: () => import('@/views/uiGuide/GuideMyLoanProgress011.vue'),
+  },
+  {
+    path: '/guide/my-loan-certificate-001',
+    name: '/guide/my-loan-certificate-001',
+    component: () => import('@/views/uiGuide/GuideMyLoanCertificate001.vue'),
+  },
+  {
+    path: '/guide/my-loan-mortgage-001',
+    name: '/guide/my-loan-mortgage-001',
+    component: () => import('@/views/uiGuide/GuideMyLoanMortgage001.vue'),
+  },
+  {
+    path: '/guide/my-loan-post-maturity-001',
+    name: '/guide/my-loan-post-maturity-001',
+    component: () => import('@/views/uiGuide/GuideMyLoanPostMaturity001.vue'),
+  },
+  {
+    path: '/guide/my-loan-post-maturity-rental-001',
+    name: '/guide/my-loan-post-maturity-rental-001',
+    component: () =>
+      import('@/views/uiGuide/GuideMyLoanPostMaturityRental001.vue'),
+  },
+  {
+    path: '/guide/my-loan-post-maturity-lease-001',
+    name: '/guide/my-loan-post-maturity-lease-001',
+    component: () =>
+      import('@/views/uiGuide/GuideMyLoanPostMaturityLease001.vue'),
+  },
+  {
+    path: '/guide/my-loan-interest-rate-cut-request-001',
+    name: '/guide/my-loan-interest-rate-cut-request-001',
+    component: () =>
+      import('@/views/uiGuide/GuideMyLoanInterestRateCutRequest001.vue'),
+  },
+  {
+    path: '/guide/my-loan-subscription-withdrawal-right-001',
+    name: '/guide/my-loan-subscription-withdrawal-right-001',
+    component: () =>
+      import('@/views/uiGuide/GuideMyLoanSubscriptionWithdrawalRight001.vue'),
+  },
+  {
+    path: '/guide/my-loan-add-documents-001',
+    name: '/guide/my-loan-add-documents-001',
+    component: () => import('@/views/uiGuide/GuideMyLoanAddDocuments001.vue'),
   },
   {
     path: '/guide/search-workplace-001',
@@ -773,6 +822,43 @@ const routes = [
     path: '/my-loan/progress-identification',
     name: '/my-loan/progress-identification',
     component: () => import('@/views/myLoan/MyLoanProgressIdentification.vue'),
+  },
+  {
+    path: '/my-loan/post-maturity-rental-before',
+    name: '/my-loan/post-maturity-rental-before',
+    component: () =>
+      import('@/views/myLoan/MyLoanPostMaturityRentalBefore.vue'),
+  },
+  {
+    path: '/my-loan/post-maturity-rental-after',
+    name: '/my-loan/post-maturity-rental-after',
+    component: () => import('@/views/myLoan/MyLoanPostMaturityRentalAfter.vue'),
+  },
+  {
+    path: '/my-loan/post-maturity-lease-before',
+    name: '/my-loan/post-maturity-lease-before',
+    component: () => import('@/views/myLoan/MyLoanPostMaturityLeaseBefore.vue'),
+  },
+  {
+    path: '/my-loan/post-maturity-lease-after',
+    name: '/my-loan/post-maturity-lease-after',
+    component: () => import('@/views/myLoan/MyLoanPostMaturityLeaseAfter.vue'),
+  },
+  {
+    path: '/my-loan/interest-rate-cut-request',
+    name: '/my-loan/interest-rate-cut-request',
+    component: () => import('@/views/myLoan/MyLoanInterestRateCutRequest.vue'),
+  },
+  {
+    path: '/my-loan/subscription-withdrawal-right',
+    name: '/my-loan/subscription-withdrawal-right',
+    component: () =>
+      import('@/views/myLoan/MyLoanSubscriptionWithdrawalRight.vue'),
+  },
+  {
+    path: '/my-loan/add-documents-complete',
+    name: '/my-loan/add-documents-complete',
+    component: () => import('@/views/myLoan/MyLoanAddDocumentsComplete.vue'),
   },
 ];
 

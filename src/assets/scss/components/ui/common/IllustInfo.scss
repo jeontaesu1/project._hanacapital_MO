@@ -2,6 +2,10 @@
   padding-bottom: 80px;
   margin: auto 0;
 
+  &__object {
+    padding-bottom: 16px;
+  }
+
   &__title {
     margin: 0;
     @include font-size-head(20);
