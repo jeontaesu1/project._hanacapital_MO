@@ -1,0 +1,45 @@
+.bill-list {
+  @include reset-list;
+
+  &__item {
+    & + & {
+      margin-top: 24px;
+    }
+  }
+
+  &__head {
+    display: flex;
+  }
+
+  &__detail {
+    display: flex;
+    flex: 1;
+    min-width: 0;
+    align-items: center;
+
+    &-item {
+      @include font-size-default(16);
+      font-weight: 400;
+
+      & + & {
+        margin-left: 4px;
+      }
+    }
+  }
+
+  &__amount {
+    @include font-size-default(16);
+    font-weight: 900;
+  }
+
+  &__date {
+    display: block;
+    @include font-size-default(13);
+    color: $color-gray-70;
+    font-weight: 300;
+  }
+
+  &__head + &__date {
+    margin-top: 4px;
+  }
+}
