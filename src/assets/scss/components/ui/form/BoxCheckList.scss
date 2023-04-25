@@ -65,4 +65,12 @@
       }
     }
   }
+
+  &--col-4 {
+    .box-check-list {
+      &__item {
+        width: 25%;
+      }
+    }
+  }
 }
