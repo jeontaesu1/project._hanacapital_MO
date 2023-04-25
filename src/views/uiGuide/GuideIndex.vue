@@ -1391,8 +1391,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/my-loan-home-001',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.28',
         log: [],
       },
       {
@@ -1715,8 +1715,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/my-loan-certificate-001',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.28',
         log: [],
       },
       {
@@ -1726,8 +1726,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/my-loan-mortgage-001',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.28',
         log: [],
       },
       {

@@ -216,7 +216,8 @@ export default {
             <KeyValue margin="regular">
               <KeyValueItem :classNames="{ item: 'text-body-3' }">
                 <KeyValueTitle>결제예정금액</KeyValueTitle>
-                <KeyValueText :classNames="{ text: 'color-green' }"
+                <KeyValueText
+                  :classNames="{ text: 'color-green font-weight-medium' }"
                   >845,000 원</KeyValueText
                 >
               </KeyValueItem>
@@ -270,7 +271,8 @@ export default {
             <KeyValue margin="regular">
               <KeyValueItem :classNames="{ item: 'text-body-3' }">
                 <KeyValueTitle>결제예정금액</KeyValueTitle>
-                <KeyValueText :classNames="{ text: 'color-blue' }"
+                <KeyValueText
+                  :classNames="{ text: 'color-blue font-weight-medium' }"
                   >845,000 원</KeyValueText
                 >
               </KeyValueItem>
@@ -337,7 +339,8 @@ export default {
             <KeyValue margin="regular">
               <KeyValueItem :classNames="{ item: 'text-body-3' }">
                 <KeyValueTitle>결제예정금액</KeyValueTitle>
-                <KeyValueText :classNames="{ text: 'color-green' }"
+                <KeyValueText
+                  :classNames="{ text: 'color-green font-weight-medium' }"
                   >845,000 원</KeyValueText
                 >
               </KeyValueItem>
@@ -384,7 +387,8 @@ export default {
             <KeyValue margin="regular">
               <KeyValueItem :classNames="{ item: 'text-body-3' }">
                 <KeyValueTitle>결제예정금액</KeyValueTitle>
-                <KeyValueText :classNames="{ text: 'color-blue' }"
+                <KeyValueText
+                  :classNames="{ text: 'color-blue font-weight-medium' }"
                   >845,000 원</KeyValueText
                 >
               </KeyValueItem>
@@ -463,7 +467,8 @@ export default {
         <KeyValue margin="regular">
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>월 납입금</KeyValueTitle>
-            <KeyValueText :classNames="{ text: 'color-green' }"
+            <KeyValueText
+              :classNames="{ text: 'color-green font-weight-medium' }"
               >845,000 원</KeyValueText
             >
           </KeyValueItem>
@@ -503,7 +508,8 @@ export default {
         <KeyValue margin="regular">
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>월 납입금</KeyValueTitle>
-            <KeyValueText :classNames="{ text: 'color-green' }"
+            <KeyValueText
+              :classNames="{ text: 'color-green font-weight-medium' }"
               >845,000 원</KeyValueText
             >
           </KeyValueItem>

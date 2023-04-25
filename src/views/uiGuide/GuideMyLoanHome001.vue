@@ -6,7 +6,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import Layer from '@/views/myLoan/Layer.vue';
+import LayerMyLoanMaturityNotice from '@/views/myLoan/LayerMyLoanMaturityNotice.vue';
 
 export default {
   components: {
@@ -14,7 +14,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    Layer,
+    LayerMyLoanMaturityNotice,
   },
   setup() {
     const layer001 = ref(null);
@@ -41,11 +41,12 @@ export default {
     >
       <ButtonListItem>
         <BasicButton @click="layer001Open">
-          ㅇㅇㅇㅇㅇㅇ<br />ㅁㅁㅁㅁㅁㅁㅁ
+          만기안내장<br />
+          My_M08_l001
         </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
-    <Layer ref="layer001" />
+    <LayerMyLoanMaturityNotice ref="layer001" />
   </PageContents>
 </template>

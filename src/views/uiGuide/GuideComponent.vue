@@ -6671,6 +6671,87 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Bill List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <ul :class="$style['bill-list']">
+          <li :class="$style['bill-list__item']">
+            <CheckBox id="testBillCheckBox001" theme="secondary" full="true">
+              <CheckBoxObject />
+              <CheckBoxLabelText>
+                <span :class="$style['bill-list__block']">
+                  <span :class="$style['bill-list__head']">
+                    <span :class="$style['bill-list__detail']">
+                      <span :class="$style['bill-list__detail-item']">
+                        41/60
+                      </span>
+                      <span :class="$style['bill-list__detail-item']">
+                        회차
+                      </span>
+                      <span :class="$style['bill-list__detail-item']">
+                        <RoundStatus theme="nonary">연체</RoundStatus>
+                      </span>
+                    </span>
+                    <span :class="$style['bill-list__amount']">
+                      845,000 원
+                    </span>
+                  </span>
+                  <span :class="$style['bill-list__date']">2022.02.02</span>
+                </span>
+              </CheckBoxLabelText>
+            </CheckBox>
+          </li>
+          <li :class="$style['bill-list__item']">
+            <CheckBox id="testBillCheckBox002" theme="secondary" full="true">
+              <CheckBoxObject />
+              <CheckBoxLabelText>
+                <span :class="$style['bill-list__block']">
+                  <span :class="$style['bill-list__head']">
+                    <span :class="$style['bill-list__detail']">
+                      <span :class="$style['bill-list__detail-item']">
+                        41/60
+                      </span>
+                      <span :class="$style['bill-list__detail-item']">
+                        회차
+                      </span>
+                    </span>
+                    <span :class="$style['bill-list__amount']">
+                      845,000 원
+                    </span>
+                  </span>
+                  <span :class="$style['bill-list__date']">2022.02.02</span>
+                </span>
+              </CheckBoxLabelText>
+            </CheckBox>
+          </li>
+          <li :class="$style['bill-list__item']">
+            <CheckBox id="testBillCheckBox003" theme="secondary" full="true">
+              <CheckBoxObject />
+              <CheckBoxLabelText>
+                <span :class="$style['bill-list__block']">
+                  <span :class="$style['bill-list__head']">
+                    <span :class="$style['bill-list__detail']">
+                      <span :class="$style['bill-list__detail-item']">
+                        41/60
+                      </span>
+                      <span :class="$style['bill-list__detail-item']">
+                        회차
+                      </span>
+                    </span>
+                    <span :class="$style['bill-list__amount']">
+                      845,000 원
+                    </span>
+                  </span>
+                  <span :class="$style['bill-list__date']">2022.02.02</span>
+                </span>
+              </CheckBoxLabelText>
+            </CheckBox>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Keyword Rank</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
