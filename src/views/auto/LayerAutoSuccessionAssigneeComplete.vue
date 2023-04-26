@@ -79,7 +79,7 @@ export default {
         </PageSubText>
       </PageTextGroup>
 
-      <IllustObject type="complete" :classNames="{ wrap: $style['illust'] }" />
+      <IllustObject type="complete" />
 
       <div>
         <section class="row-margin-container-medium">

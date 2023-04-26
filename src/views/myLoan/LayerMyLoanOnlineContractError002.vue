@@ -71,7 +71,7 @@ export default {
         </PageSubText>
       </PageTextGroup>
 
-      <IllustObject type="error" :classNames="{ wrap: $style['illust'] }" />
+      <IllustObject type="error" />
 
       <BasicHr
         type="contents"
@@ -124,5 +124,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/myLoan/LayerMyLoanOnlineContractComplete002.scss';
+@import '@/assets/scss/views/myLoan/LayerMyLoanOnlineContractError002.scss';
 </style>

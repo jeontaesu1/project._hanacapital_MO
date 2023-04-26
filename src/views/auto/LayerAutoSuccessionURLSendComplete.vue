@@ -13,7 +13,6 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
-import BasicHr from '@/components/ui/common/BasicHr.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 
 export default {
@@ -29,7 +28,6 @@ export default {
     ButtonList,
     ButtonListItem,
     IllustObject,
-    BasicHr,
     BasicBox,
   },
   setup() {
@@ -65,13 +63,7 @@ export default {
         </PageSubText>
       </PageTextGroup>
 
-      <IllustObject type="complete" :classNames="{ wrap: $style['illust'] }" />
-
-      <BasicHr
-        type="contents"
-        theme="quaternary"
-        className="row-margin-container"
-      />
+      <IllustObject type="complete" />
 
       <section>
         <h3 class="text-body-2 row-margin-item-medium">승계 신청 대상 차량</h3>
@@ -103,7 +95,3 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/auto/LayerAutoSuccessionURLSendComplete.scss';
-</style>

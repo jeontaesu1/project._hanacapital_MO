@@ -1,5 +1,6 @@
 <script>
 // Member_M01_p001
+// Member_M02_p001
 import { reactive, onMounted, onUnmounted } from 'vue';
 
 import { useUiHeaderStore } from '@/stores/ui/header';
@@ -167,12 +168,12 @@ export default {
           </PageMainText>
         </PageTextGroup>
 
-        <IllustObject
-          type="certification"
-          :classNames="{ wrap: $style['illust'] }"
-        />
+        <IllustObject type="certification" />
 
-        <ButtonList align="full" :classNames="{ wrap: $style['buttons'] }">
+        <ButtonList
+          align="full"
+          :classNames="{ wrap: [$style['buttons'], 'row-margin-top-none'] }"
+        >
           <ButtonListItem>
             <BasicButton line="true" theme="quaternary"
               >공동인증서 등록</BasicButton

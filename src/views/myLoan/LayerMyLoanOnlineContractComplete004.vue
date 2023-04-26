@@ -65,7 +65,7 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <IllustObject type="complete" :classNames="{ wrap: $style['illust'] }" />
+      <IllustObject type="complete" />
 
       <div>
         <ul :class="[$style['logs'], $style['logs--margin-small']]">

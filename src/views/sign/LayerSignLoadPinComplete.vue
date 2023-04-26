@@ -62,15 +62,15 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <IllustObject type="complete" :classNames="{ wrap: $style['illust'] }" />
+      <IllustObject type="complete" />
 
       <BasicHr
         theme="tertiary"
         type="contents"
-        className="row-margin-contents"
+        className="row-margin-container row-margin-bottom-none"
       />
 
-      <ul :class="$style['switch-list']">
+      <ul :class="[$style['switch-list'], 'row-margin-contents']">
         <li :class="$style['switch-list__item']">
           <div :class="$style['switch-list__title']">
             앱 알림을 받아 보시겠어요?

@@ -56,7 +56,7 @@ export default {
         <PageSubText>리스 신청 화면으로 이동할게요</PageSubText>
       </PageTextGroup>
 
-      <IllustObject type="complete" :classNames="{ wrap: $style['illust'] }" />
+      <IllustObject type="complete" />
 
       <section :class="$style['notice-section']">
         <h3 :class="$style['notice-section__title']">주의사항</h3>

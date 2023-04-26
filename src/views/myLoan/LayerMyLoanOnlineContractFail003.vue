@@ -68,7 +68,7 @@ export default {
         <PageSubText>하나캐피탈을 이용해 주셔서 감사합니다.</PageSubText>
       </PageTextGroup>
 
-      <IllustObject type="fail" :classNames="{ wrap: $style['illust'] }" />
+      <IllustObject type="fail" />
 
       <div>
         <ul :class="[$style['logs'], $style['logs--margin-small']]">

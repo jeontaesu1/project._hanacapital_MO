@@ -61,7 +61,7 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <IllustObject type="complete" :classNames="{ wrap: $style['illust'] }" />
+      <IllustObject type="complete" />
 
       <div>// 배너 영역 (내용 확인 후 진행 예정)</div>
 

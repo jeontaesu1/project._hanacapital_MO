@@ -64,7 +64,7 @@ export default {
         <PageSubText>자세한 사항은 고객센터에 문의해 주세요.</PageSubText>
       </PageTextGroup>
 
-      <IllustObject type="fail" :classNames="{ wrap: $style['illust'] }" />
+      <IllustObject type="fail" />
 
       <BasicHr
         type="contents"

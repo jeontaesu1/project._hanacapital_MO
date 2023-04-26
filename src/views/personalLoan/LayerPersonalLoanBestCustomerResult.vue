@@ -67,69 +67,71 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <IllustObject type="complete" :classNames="{ wrap: $style['illust'] }" />
+      <IllustObject type="complete" />
 
-      <BasicBox theme="tertiary" className="row-margin-contents">
-        <div :class="$style['product-detail']">
-          <ul :class="$style['product-detail__list']">
-            <li :class="$style['product-detail__item']">
-              <div :class="$style['product-detail__icon']">
-                <IconSearchMoney />
-              </div>
-              <div :class="$style['product-detail__block']">
-                <div :class="$style['product-detail__title']">최대한도</div>
-                <div :class="$style['product-detail__desc']">
-                  <UnitText size="regular" rightUnit="만원">4,000</UnitText>
+      <div>
+        <BasicBox theme="tertiary" className="row-margin-contents">
+          <div :class="$style['product-detail']">
+            <ul :class="$style['product-detail__list']">
+              <li :class="$style['product-detail__item']">
+                <div :class="$style['product-detail__icon']">
+                  <IconSearchMoney />
                 </div>
-              </div>
-            </li>
-            <li :class="$style['product-detail__item']">
-              <div :class="$style['product-detail__icon']">
-                <IconInterestRate />
-              </div>
-              <div :class="$style['product-detail__block']">
-                <div :class="$style['product-detail__title']">예상금리</div>
-                <div :class="$style['product-detail__desc']">
-                  <UnitText size="regular" rightUnit="%">10.9</UnitText>
-                  <div :class="$style['product-detail__desc-sub']">
-                    (36개월 기준)
+                <div :class="$style['product-detail__block']">
+                  <div :class="$style['product-detail__title']">최대한도</div>
+                  <div :class="$style['product-detail__desc']">
+                    <UnitText size="regular" rightUnit="만원">4,000</UnitText>
                   </div>
                 </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </BasicBox>
+              </li>
+              <li :class="$style['product-detail__item']">
+                <div :class="$style['product-detail__icon']">
+                  <IconInterestRate />
+                </div>
+                <div :class="$style['product-detail__block']">
+                  <div :class="$style['product-detail__title']">예상금리</div>
+                  <div :class="$style['product-detail__desc']">
+                    <UnitText size="regular" rightUnit="%">10.9</UnitText>
+                    <div :class="$style['product-detail__desc-sub']">
+                      (36개월 기준)
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </BasicBox>
 
-      <ul :class="$style['basic-list']">
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            개인신용상태 및 금융서비스 이용기간 경과 시 이용이 제한될 수
-            있습니다.
-          </div>
-        </li>
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            금융서비스 이용기간은 당사 사정에 따라 변경될 수 있습니다.
-          </div>
-        </li>
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            해당 금리는 대출기간 개월 기준이며 대출기간에 따라 금리가 변경될 수
-            있습니다.
-          </div>
-        </li>
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            실제 정보와 입력 정보가 상이할 경우 대출가능금액 및 금리가 달라질 수
-            있습니다.
-          </div>
-        </li>
-      </ul>
+        <ul :class="$style['basic-list']">
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              개인신용상태 및 금융서비스 이용기간 경과 시 이용이 제한될 수
+              있습니다.
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              금융서비스 이용기간은 당사 사정에 따라 변경될 수 있습니다.
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              해당 금리는 대출기간 개월 기준이며 대출기간에 따라 금리가 변경될
+              수 있습니다.
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              실제 정보와 입력 정보가 상이할 경우 대출가능금액 및 금리가 달라질
+              수 있습니다.
+            </div>
+          </li>
+        </ul>
+      </div>
 
       <BasicHr
         type="contents"

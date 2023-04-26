@@ -3,6 +3,7 @@
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
+import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
@@ -13,6 +14,7 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 export default {
   components: {
     UiLayer,
+    PopupTitle,
     PopupButton,
     FullPopup,
     FullPopupHead,

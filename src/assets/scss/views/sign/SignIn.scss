@@ -1,9 +1,5 @@
 @import '@/assets/scss/components/import/join.scss';
 
-.illust {
-  padding-bottom: 40px;
-}
-
 .form {
   padding-bottom: 24px;
 }
@@ -52,5 +48,6 @@
     display: block;
     @include font-size-default(13);
     font-weight: 300;
+    color: $color-gray-80;
   }
 }

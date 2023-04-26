@@ -71,7 +71,7 @@ export default {
         </PageSubText>
       </PageTextGroup>
 
-      <IllustObject type="complete" :classNames="{ wrap: $style['illust'] }" />
+      <IllustObject type="complete" />
 
       <div>
         <ul :class="[$style['logs'], $style['logs--margin-small']]">
@@ -161,5 +161,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/myLoan/LayerMyLoanOnlineContractComplete004.scss';
+@import '@/assets/scss/views/myLoan/LayerMyLoanOnlineContractComplete005.scss';
 </style>

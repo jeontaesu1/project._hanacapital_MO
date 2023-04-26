@@ -71,7 +71,7 @@ export default {
         </PageSubText>
       </PageTextGroup>
 
-      <IllustObject type="complete" :classNames="{ wrap: $style['illust'] }" />
+      <IllustObject type="complete" />
 
       <BasicHr
         type="contents"
@@ -124,5 +124,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/myLoan/LayerMyLoanOnlineContractComplete001.scss';
+@import '@/assets/scss/views/myLoan/LayerMyLoanOnlineContractComplete002.scss';
 </style>

@@ -64,7 +64,7 @@ export default {
         <PageSubText>문의사항은 고객센터로 연락바랍니다.</PageSubText>
       </PageTextGroup>
 
-      <IllustObject type="fail" :classNames="{ wrap: $style['illust'] }" />
+      <IllustObject type="fail" />
 
       <BasicHr
         type="contents"

@@ -63,12 +63,9 @@ export default {
       </PageMainText>
     </PageTextGroup>
 
-    <IllustObject
-      type="certification"
-      :classNames="{ wrap: $style['illust'] }"
-    />
+    <IllustObject type="certification" />
 
-    <template v-slot:foot>
+    <div class="row-margin-item-group">
       <ButtonList
         align="full"
         :classNames="{
@@ -91,10 +88,6 @@ export default {
           </template>
         </TextButton>
       </div>
-    </template>
+    </div>
   </PageContents>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/sign/SignUpApp.scss';
-</style>
