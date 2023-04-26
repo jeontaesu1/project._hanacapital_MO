@@ -83,7 +83,7 @@ export default {
         </PageSubText>
       </PageTextGroup>
 
-      <IllustObject type="error" :classNames="{ wrap: $style['illust'] }" />
+      <IllustObject type="error" />
 
       <BasicBox>
         <BasicBoxHead>
@@ -194,7 +194,3 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/auto/LayerAutoOneQLoanInquiry.scss';
-</style>

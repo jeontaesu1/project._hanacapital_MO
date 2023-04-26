@@ -66,12 +66,12 @@ export default {
       </PageSubText>
     </PageTextGroup>
 
-    <IllustObject type="complete" :classNames="{ wrap: $style['illust'] }" />
+    <IllustObject type="complete" />
 
     <BasicHr
       theme="quaternary"
       type="contents"
-      className="row-margin-contents"
+      className="row-margin-container"
     />
 
     <div :class="$style['icon-list']">

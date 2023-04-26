@@ -71,7 +71,7 @@ export default {
         <PageSubText>등록 완료 후 익일 0시부터 적용됩니다.</PageSubText>
       </PageTextGroup>
 
-      <IllustObject type="complete" :classNames="{ wrap: $style['illust'] }" />
+      <IllustObject type="complete" />
 
       <BasicBox>
         <BasicBoxHead>
@@ -142,7 +142,3 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/myLoan/LayerMyLoanDesignationDriverLMSComplete.scss';
-</style>

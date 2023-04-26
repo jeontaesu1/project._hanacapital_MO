@@ -82,7 +82,7 @@ export default {
         </PageSubText>
       </PageTextGroup>
 
-      <IllustObject type="license" :classNames="{ wrap: $style['illust'] }" />
+      <IllustObject type="license" />
 
       <div class="row-margin-contents">
         <BasicBox theme="septenary" className="row-margin-item">
@@ -122,7 +122,3 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/myLoan/LayerMyLoanOnlineContractDescription.scss';
-</style>

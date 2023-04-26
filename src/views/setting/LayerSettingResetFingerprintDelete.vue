@@ -54,9 +54,9 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <IllustObject type="license" :classNames="{ wrap: $style['illust'] }" />
+      <IllustObject type="license" />
 
-      <section :class="[$style['notice-section'], 'row-margin-contents-group']">
+      <section :class="$style['notice-section']">
         <h3 :class="$style['notice-section__title']">유의사항</h3>
         <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
           <li :class="$style['basic-list__item']">

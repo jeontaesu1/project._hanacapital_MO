@@ -75,10 +75,7 @@ export default {
       </PageMainText>
     </PageTextGroup>
 
-    <IllustObject
-      type="certification"
-      :classNames="{ wrap: $style['illust'] }"
-    />
+    <IllustObject type="certification" />
 
     <FormList>
       <FormListItem

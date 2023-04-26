@@ -61,10 +61,7 @@ export default {
       </PageMainText>
     </PageTextGroup>
 
-    <IllustObject
-      type="certification"
-      :classNames="{ wrap: $style['illust'] }"
-    />
+    <IllustObject type="certification" />
 
     <FormList>
       <FormListItem titleText="인증번호" :forceFocus="true">

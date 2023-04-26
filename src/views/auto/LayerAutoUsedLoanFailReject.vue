@@ -67,7 +67,7 @@ export default {
         </PageSubText>
       </PageTextGroup>
 
-      <IllustObject type="fail" :classNames="{ wrap: $style['illust'] }" />
+      <IllustObject type="fail" />
 
       <BasicHr
         type="contents"

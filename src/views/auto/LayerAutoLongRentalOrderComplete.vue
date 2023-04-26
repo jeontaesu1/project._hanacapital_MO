@@ -59,7 +59,7 @@ export default {
         <PageSubText>전문상담사가 차량 배정 후, 연락 드리겠습니다.</PageSubText>
       </PageTextGroup>
 
-      <IllustObject type="complete" :classNames="{ wrap: $style['illust'] }" />
+      <IllustObject type="complete" />
 
       <BasicHr
         type="contents"

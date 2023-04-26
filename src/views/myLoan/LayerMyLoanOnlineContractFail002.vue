@@ -68,7 +68,7 @@ export default {
         <PageSubText>하나캐피탈을 이용해 주셔서 감사합니다.</PageSubText>
       </PageTextGroup>
 
-      <IllustObject type="fail" :classNames="{ wrap: $style['illust'] }" />
+      <IllustObject type="fail" />
 
       <BasicHr
         type="contents"
@@ -121,5 +121,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/myLoan/LayerMyLoanOnlineContractComplete002.scss';
+@import '@/assets/scss/views/myLoan/LayerMyLoanOnlineContractFail002.scss';
 </style>
