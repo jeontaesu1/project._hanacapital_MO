@@ -59,7 +59,7 @@ export default {
 
       <IllustObject type="license" :classNames="{ wrap: 'row-margin-none' }" />
 
-      <div class="row-margin-item-group-small">
+      <div>
         <div class="text-body-2">
           <div class="font-weight-medium">
             해당 금융거래로 인하여 개인신용평가회사가 개인싱용평점을 만들어 낼

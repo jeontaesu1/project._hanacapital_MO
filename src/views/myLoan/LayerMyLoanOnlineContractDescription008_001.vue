@@ -61,7 +61,7 @@ export default {
 
       <IllustObject type="license" :classNames="{ wrap: 'row-margin-none' }" />
 
-      <div class="row-margin-item-group-small">
+      <div>
         <div class="text-body-2">
           <div>
             <span class="font-weight-medium">리스</span>는 시설을 대여해주는
@@ -85,7 +85,7 @@ export default {
           </div>
         </div>
 
-        <NoticeText class="row-margin-item">
+        <NoticeText :classNames="{ wrap: 'row-margin-item' }">
           운용리스는 반납을 원칙으로 하며, 반환의무가 발생했을 경우 이를
           지체하면 반환지연금이 발생합니다.
         </NoticeText>

@@ -59,7 +59,7 @@ export default {
 
       <IllustObject type="license" :classNames="{ wrap: 'row-margin-none' }" />
 
-      <div class="row-margin-item-group-small">
+      <div>
         <div class="text-body-2">
           대출의 상환기일이 도래하기전에 상환할 경우,
           <span class="font-weight-medium">계약이 성립한 날로부터</span>

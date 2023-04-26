@@ -59,7 +59,7 @@ export default {
 
       <IllustObject type="license" :classNames="{ wrap: 'row-margin-none' }" />
 
-      <div class="row-margin-item-group-small">
+      <div>
         <div class="text-body-2">
           <span class="color-red">
             리스료 연체 시에는 법에서 정하는 범위 내에서 약정에 따라 정한

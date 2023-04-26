@@ -59,7 +59,7 @@ export default {
 
       <IllustObject type="license" :classNames="{ wrap: 'row-margin-none' }" />
 
-      <div class="row-margin-item-group-small">
+      <div>
         <div class="text-body-2">
           기본적으로
           <span class="font-weight-medium">대출금과 이자</span>

@@ -63,7 +63,7 @@ export default {
 
       <IllustObject type="license" :classNames="{ wrap: 'row-margin-none' }" />
 
-      <div class="row-margin-item-group-small">
+      <div>
         <div class="text-body-2">
           채무자인 고객은 본인의
           <MaskingText>
@@ -77,7 +77,7 @@ export default {
           할 수 있어요.
         </div>
 
-        <NoticeText class="color-red row-margin-item">
+        <NoticeText :classNames="{ wrap: 'color-red row-margin-item' }">
           신용상태가 금리에 영향을 미치지 않는 상품은 금리인하요구권의 행사
           대상에서 제외되오니, 상단의 체크박스를 확인 해 주세요.
         </NoticeText>

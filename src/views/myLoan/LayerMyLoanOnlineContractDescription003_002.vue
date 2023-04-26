@@ -59,9 +59,9 @@ export default {
 
       <IllustObject type="license" :classNames="{ wrap: 'row-margin-none' }" />
 
-      <div class="row-margin-item-group-small">
+      <div>
         <div :class="$style['contents-list']">
-          <ol
+          <ul
             :class="[
               $style['contents-list__list'],
               $style['contents-list__list--quinary'],
@@ -83,11 +83,11 @@ export default {
                 </div>
               </div>
             </li>
-          </ol>
+          </ul>
         </div>
 
         <div :class="[$style['contents-list'], 'row-margin-contents']">
-          <ol
+          <ul
             :class="[
               $style['contents-list__list'],
               $style['contents-list__list--quinary'],
@@ -109,11 +109,11 @@ export default {
                 </div>
               </div>
             </li>
-          </ol>
+          </ul>
         </div>
 
         <div :class="[$style['contents-list'], 'row-margin-contents']">
-          <ol
+          <ul
             :class="[
               $style['contents-list__list'],
               $style['contents-list__list--quinary'],
@@ -137,7 +137,7 @@ export default {
                 </div>
               </div>
             </li>
-          </ol>
+          </ul>
         </div>
       </div>
 

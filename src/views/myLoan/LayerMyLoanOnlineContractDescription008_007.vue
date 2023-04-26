@@ -59,7 +59,7 @@ export default {
 
       <IllustObject type="license" :classNames="{ wrap: 'row-margin-none' }" />
 
-      <div class="row-margin-item-group-small">
+      <div>
         <div class="text-body-2">
           「여신전문금융업법」 제50조의 13(금리인하요구) 에서 정하는 바에 따라,
           <span class="font-weight-medium">운용리스</span>는

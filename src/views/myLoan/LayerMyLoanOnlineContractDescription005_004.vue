@@ -61,7 +61,7 @@ export default {
 
       <IllustObject type="license" :classNames="{ wrap: 'row-margin-none' }" />
 
-      <div class="row-margin-item-group-small">
+      <div>
         <div class="text-body-2">
           <span class="font-weight-medium">
             담보의 제공은 재산상 손실을 가져올 수 있는 중대한 법률행위 </span
@@ -72,7 +72,7 @@ export default {
           >을 유의해야 해요!
         </div>
 
-        <NoticeText class="row-margin-item">
+        <NoticeText :classNames="{ wrap: 'row-margin-item' }">
           <span class="font-weight-medium">근저당 설정비용은 금융회사가,</span>
           <span class="color-red">말소비용은 고객</span>이 부담하니 참고해
           주세요.

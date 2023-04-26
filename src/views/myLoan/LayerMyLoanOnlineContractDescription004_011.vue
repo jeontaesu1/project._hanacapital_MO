@@ -1,5 +1,5 @@
 <script>
-// My_M03_l240
+// My_M03_l241
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -52,88 +52,21 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          자료열람을<br />
-          <strong>요구할 수 있어요</strong>
+          홈페이지에서<br />
+          <strong>언제든 확인해보세요</strong>
         </PageMainText>
       </PageTextGroup>
 
       <IllustObject type="license" :classNames="{ wrap: 'row-margin-none' }" />
 
-      <div class="row-margin-item-group-small">
+      <div>
         <div class="text-body-2">
+          보다 상세한 손님의 권리는
           <span class="font-weight-medium">
-            고객은 분쟁조정 또는 소송의 수행 등 권리구제를 위한 목적</span
-          >으로 금융회사가 기록 및 유지·관리하는 다음의 자료에 대한 열람(사본 및
-          청취 포함)을 요구할 수 있어요.
+            인터넷 홈페이지(www.hanacapital.co.kr) 고객센터 →
+            금융소비자보호</span
+          >에서 확인하실 수 있어요.
         </div>
-
-        <ul :class="[$style['basic-list'], 'row-margin-contents']">
-          <li
-            :class="[
-              $style['basic-list__item'],
-              'text-body-4',
-              'color-black',
-              'font-weight-regular',
-            ]"
-          >
-            <div :class="$style['basic-list__symbol']">-</div>
-            <div :class="$style['basic-list__content']">
-              계약체결에 관한 자료, 계약의 이행에 관한 자료
-            </div>
-          </li>
-          <li
-            :class="[
-              $style['basic-list__item'],
-              'text-body-4',
-              'color-black',
-              'font-weight-regular',
-            ]"
-          >
-            <div :class="$style['basic-list__symbol']">-</div>
-            <div :class="$style['basic-list__content']">
-              금융상품 등에 관한 광고 자료
-            </div>
-          </li>
-          <li
-            :class="[
-              $style['basic-list__item'],
-              'text-body-4',
-              'color-black',
-              'font-weight-regular',
-            ]"
-          >
-            <div :class="$style['basic-list__symbol']">-</div>
-            <div :class="$style['basic-list__content']">
-              고객의 권리행사에 관한 자료
-            </div>
-          </li>
-          <li
-            :class="[
-              $style['basic-list__item'],
-              'text-body-4',
-              'color-black',
-              'font-weight-regular',
-            ]"
-          >
-            <div :class="$style['basic-list__symbol']">-</div>
-            <div :class="$style['basic-list__content']">
-              내부통제기준의 제정 및 운영 등에 관한 자료
-            </div>
-          </li>
-          <li
-            :class="[
-              $style['basic-list__item'],
-              'text-body-4',
-              'color-black',
-              'font-weight-regular',
-            ]"
-          >
-            <div :class="$style['basic-list__symbol']">-</div>
-            <div :class="$style['basic-list__content']">
-              업무 위탁에 관한 자료
-            </div>
-          </li>
-        </ul>
       </div>
 
       <template v-slot:foot>
@@ -153,7 +86,3 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/myLoan/LayerMyLoanOnlineContractDescription004_011.scss';
-</style>

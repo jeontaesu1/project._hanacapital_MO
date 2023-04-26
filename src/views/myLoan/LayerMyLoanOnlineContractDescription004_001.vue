@@ -61,7 +61,7 @@ export default {
 
       <IllustObject type="license" :classNames="{ wrap: 'row-margin-none' }" />
 
-      <div class="row-margin-item-group-small">
+      <div>
         <div class="text-body-2">
           <span class="font-weight-medium">오토론은</span> 판매사와 금융사 간의
           할부 약정 체결로 이루어지는 할부(3자 거래)와 달리
@@ -71,7 +71,7 @@ export default {
           <span class="color-red">대출금은 고객계좌 송금을 원칙으로 해요.</span>
         </div>
 
-        <NoticeText class="row-margin-item">
+        <NoticeText :classNames="{ wrap: 'row-margin-item' }">
           대출금 지급 위임 여부에 따라 매도인에게 송금 가능합니다.
         </NoticeText>
       </div>

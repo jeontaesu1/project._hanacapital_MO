@@ -1,5 +1,5 @@
 <script>
-// My_M03_l250
+// My_M03_l251
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -52,22 +52,19 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          위법계약을<br />
-          <strong>해지할 수 있어요</strong>
+          자료열람을<br />
+          <strong>요구할 수 있어요</strong>
         </PageMainText>
       </PageTextGroup>
 
       <IllustObject type="license" :classNames="{ wrap: 'row-margin-none' }" />
 
-      <div class="row-margin-item-group-small">
+      <div>
         <div class="text-body-2">
           <span class="font-weight-medium">
-            금융회사가 아래와 같이 「금융소비자 보호에 관한 법률」(이하
-            “금융소비자보호법”)상 의무</span
-          >를 위반하여 대출계약을 체결한 경우, 일반금융소비자는 해당 계약을
-          위약금 등 수수료
-          <span class="font-weight-medium">부과 없이 해지할 수 있어요.</span>
-          <span class="color-red">(다만 계약종료 시 행사 불가)</span>
+            고객은 분쟁조정 또는 소송의 수행 등 권리구제를 위한 목적</span
+          >으로 금융회사가 기록 및 유지·관리하는 다음의 자료에 대한 열람(사본 및
+          청취 포함)을 요구할 수 있어요.
         </div>
 
         <ul :class="[$style['basic-list'], 'row-margin-contents']">
@@ -81,8 +78,7 @@ export default {
           >
             <div :class="$style['basic-list__symbol']">-</div>
             <div :class="$style['basic-list__content']">
-              금융소비자보호법 제17조 제3항을 위반하여 적합하지 아니하다고
-              인정되는 대출계약의 체결을 권유한 경우
+              계약체결에 관한 자료, 계약의 이행에 관한 자료
             </div>
           </li>
           <li
@@ -95,8 +91,7 @@ export default {
           >
             <div :class="$style['basic-list__symbol']">-</div>
             <div :class="$style['basic-list__content']">
-              금융소비자보호법 제18조 제2항을 위반하여 대출상품이 적정하지
-              아니한 경우임에도 해당 사실을 알리지 않거나 확인 받지 않은 경우
+              금융상품 등에 관한 광고 자료
             </div>
           </li>
           <li
@@ -109,8 +104,7 @@ export default {
           >
             <div :class="$style['basic-list__symbol']">-</div>
             <div :class="$style['basic-list__content']">
-              금융소비자보호법 제19조 제1항 또는 제3항을 위반하여 설명의무를
-              이행하지 아니한 경우
+              고객의 권리행사에 관한 자료
             </div>
           </li>
           <li
@@ -123,7 +117,7 @@ export default {
           >
             <div :class="$style['basic-list__symbol']">-</div>
             <div :class="$style['basic-list__content']">
-              금융소비자보호법 제20조 제1항을 위반하여 불공정영업행위를 한 경우
+              내부통제기준의 제정 및 운영 등에 관한 자료
             </div>
           </li>
           <li
@@ -136,7 +130,7 @@ export default {
           >
             <div :class="$style['basic-list__symbol']">-</div>
             <div :class="$style['basic-list__content']">
-              금융소비자보호법 제21조를 위반하여 부당권유행위를 한 경우
+              업무 위탁에 관한 자료
             </div>
           </li>
         </ul>

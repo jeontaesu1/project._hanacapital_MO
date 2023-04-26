@@ -61,7 +61,7 @@ export default {
 
       <IllustObject type="license" :classNames="{ wrap: 'row-margin-none' }" />
 
-      <div class="row-margin-item-group-small">
+      <div>
         <div class="text-body-2 font-weight-medium">
           <div>
             신용대출 상품은 고객님의 신용점수 및 자산상황 등 신용을 기반으로
@@ -73,7 +73,7 @@ export default {
           </div>
         </div>
 
-        <NoticeText class="row-margin-item">
+        <NoticeText :classNames="{ wrap: 'row-margin-item' }">
           신용대출을 실행하시면 신용점수가 하락할 수 있어 추가대출 및 신용카드
           상품 등의 이용에 불이익이 발생할 수 있습니다.
         </NoticeText>

@@ -18,7 +18,6 @@ import LayerMyLoanOnlineContractDescription004_009 from '@/views/myLoan/LayerMyL
 import LayerMyLoanOnlineContractDescription004_010 from '@/views/myLoan/LayerMyLoanOnlineContractDescription004_010.vue';
 import LayerMyLoanOnlineContractDescription004_011 from '@/views/myLoan/LayerMyLoanOnlineContractDescription004_011.vue';
 import LayerMyLoanOnlineContractDescription004_012 from '@/views/myLoan/LayerMyLoanOnlineContractDescription004_012.vue';
-import LayerMyLoanOnlineContractDescription004_013 from '@/views/myLoan/LayerMyLoanOnlineContractDescription004_013.vue';
 
 export default {
   components: {
@@ -38,7 +37,6 @@ export default {
     LayerMyLoanOnlineContractDescription004_010,
     LayerMyLoanOnlineContractDescription004_011,
     LayerMyLoanOnlineContractDescription004_012,
-    LayerMyLoanOnlineContractDescription004_013,
   },
   setup() {
     const layer001 = ref(null);
@@ -91,9 +89,6 @@ export default {
     const layer012Open = (e = {}) => {
       layer012.value.layer.open(e.target);
     };
-    const layer013Open = (e = {}) => {
-      layer013.value.layer.open(e.target);
-    };
 
     return {
       layer001,
@@ -121,7 +116,6 @@ export default {
       layer010Open,
       layer011Open,
       layer012Open,
-      layer013Open,
     };
   },
 };
@@ -172,31 +166,26 @@ export default {
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer008Open">
-          주요권리 안내_자동차오토론(대출)1<br />My_M03_l237
-        </BasicButton>
-      </ButtonListItem>
-      <ButtonListItem>
-        <BasicButton @click="layer009Open">
           주요권리 안내_자동차오토론(대출)2<br />My_M03_l238
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer010Open">
+        <BasicButton @click="layer009Open">
           주요권리 안내_자동차오토론(대출)3<br />My_M03_l239
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer011Open">
+        <BasicButton @click="layer010Open">
           주요권리 안내_자동차오토론(대출)4<br />My_M03_l240
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer012Open">
+        <BasicButton @click="layer011Open">
           주요권리 안내_자동차오토론(대출)5<br />My_M03_l241
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer013Open">
+        <BasicButton @click="layer012Open">
           상품설명서 약관동의_자동차오토론(대출)설명서<br />My_M99_l006
         </BasicButton>
       </ButtonListItem>
@@ -214,6 +203,5 @@ export default {
     <LayerMyLoanOnlineContractDescription004_010 ref="layer010" />
     <LayerMyLoanOnlineContractDescription004_011 ref="layer011" />
     <LayerMyLoanOnlineContractDescription004_012 ref="layer012" />
-    <LayerMyLoanOnlineContractDescription004_013 ref="layer013" />
   </PageContents>
 </template>

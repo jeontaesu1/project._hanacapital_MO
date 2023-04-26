@@ -61,7 +61,7 @@ export default {
 
       <IllustObject type="license" :classNames="{ wrap: 'row-margin-none' }" />
 
-      <div class="row-margin-item-group-small">
+      <div>
         <div class="text-body-2">
           대출 실행 후
           <span class="font-weight-medium">3년 이내에 대출금액을 중도상환</span>
@@ -71,7 +71,7 @@ export default {
           </span>
         </div>
 
-        <NoticeText class="row-margin-item">
+        <NoticeText :classNames="{ wrap: 'row-margin-item' }">
           동일 금융회사와 기존 대출계약을 해지하고 사실상 동일 계약을 체결한
           경우 양 계약기간을 합산하여 3년 경과 후에는 발생하지 않습니다.
         </NoticeText>

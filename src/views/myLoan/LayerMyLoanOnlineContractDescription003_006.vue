@@ -61,7 +61,7 @@ export default {
 
       <IllustObject type="license" :classNames="{ wrap: 'row-margin-none' }" />
 
-      <div class="row-margin-item-group-small">
+      <div>
         <div class="text-body-2">
           고객은 계약체결일 또는 계약서류를 제공받은 날(다만 금전·재화·용역의
           지급이 늦게 이루어진 경우에는 그 지급일로 대체)로부터
@@ -70,7 +70,7 @@ export default {
           </span>
         </div>
 
-        <NoticeText class="color-red row-margin-item">
+        <NoticeText :classNames="{ wrap: 'color-red row-margin-item' }">
           동일한 금융회사를 대상으로 최근 1개월 내에 2회 이상 대출계약을
           철회하는 경우, 신규대출·만기연장 거절, 대출한도 축소, 금리우대 제한 등
           불이익이 발생할 수 있습니다.

@@ -61,7 +61,7 @@ export default {
 
       <IllustObject type="license" :classNames="{ wrap: 'row-margin-none' }" />
 
-      <div class="row-margin-item-group-small">
+      <div>
         <div class="text-body-2">
           <div>
             대출 실행 후
@@ -80,7 +80,7 @@ export default {
           </div>
         </div>
 
-        <NoticeText class="row-margin-item">
+        <NoticeText :classNames="{ wrap: 'row-margin-item' }">
           중도상환수수료가 없는 상품도 있으니 꼭 확인해보세요.
         </NoticeText>
       </div>

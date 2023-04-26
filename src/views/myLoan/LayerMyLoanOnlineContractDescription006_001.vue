@@ -59,7 +59,7 @@ export default {
 
       <IllustObject type="license" :classNames="{ wrap: 'row-margin-none' }" />
 
-      <div class="row-margin-item-group-small">
+      <div>
         <div class="text-body-2">
           <span class="font-weight-medium">할부금융</span>은 금융회사와 소비자의
           대출 약정 체결(2자 거래)로 이루어지는 오토론과는 달리,

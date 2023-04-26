@@ -1,5 +1,5 @@
 <script>
-// My_M03_l238
+// My_M03_l239
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -10,7 +10,6 @@ import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
-import NoticeText from '@/components/ui/text/NoticeText.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
@@ -25,7 +24,6 @@ export default {
     PageTextGroup,
     PageMainText,
     IllustObject,
-    NoticeText,
     ButtonList,
     ButtonListItem,
     BasicButton,
@@ -54,27 +52,94 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          청약철회를<br />
-          <strong>요구할 수 있어요</strong>
+          위법계약을<br />
+          <strong>해지할 수 있어요</strong>
         </PageMainText>
       </PageTextGroup>
 
       <IllustObject type="license" :classNames="{ wrap: 'row-margin-none' }" />
 
-      <div class="row-margin-item-group-small">
+      <div>
         <div class="text-body-2">
-          고객은 계약체결일 또는 계약서류를 제공받은 날(다만 금전∙재화·용역의
-          지급이 늦게 이루어진 경우에는 그 지급일로 대체)로부터
           <span class="font-weight-medium">
-            14일 이내에 계약에 대한 청약을 철회할 수 있어요.
-          </span>
+            금융회사가 아래와 같이 「금융소비자 보호에 관한 법률」(이하
+            “금융소비자보호법”)상 의무</span
+          >를 위반하여 대출계약을 체결한 경우, 일반금융소비자는 해당 계약을
+          위약금 등 수수료
+          <span class="font-weight-medium">부과 없이 해지할 수 있어요.</span>
+          <span class="color-red">(다만 계약종료 시 행사 불가)</span>
         </div>
 
-        <NoticeText class="color-red row-margin-item">
-          동일한 금융회사를 대상으로 최근 1개월 내에 2회 이상 대출계약을
-          철회하는 경우, 신규대출·만기연장 거절, 대출한도 축소, 금리우대 제한 등
-          불이익이 발생할 수 있습니다.
-        </NoticeText>
+        <ul :class="[$style['basic-list'], 'row-margin-contents']">
+          <li
+            :class="[
+              $style['basic-list__item'],
+              'text-body-4',
+              'color-black',
+              'font-weight-regular',
+            ]"
+          >
+            <div :class="$style['basic-list__symbol']">-</div>
+            <div :class="$style['basic-list__content']">
+              금융소비자보호법 제17조 제3항을 위반하여 적합하지 아니하다고
+              인정되는 대출계약의 체결을 권유한 경우
+            </div>
+          </li>
+          <li
+            :class="[
+              $style['basic-list__item'],
+              'text-body-4',
+              'color-black',
+              'font-weight-regular',
+            ]"
+          >
+            <div :class="$style['basic-list__symbol']">-</div>
+            <div :class="$style['basic-list__content']">
+              금융소비자보호법 제18조 제2항을 위반하여 대출상품이 적정하지
+              아니한 경우임에도 해당 사실을 알리지 않거나 확인 받지 않은 경우
+            </div>
+          </li>
+          <li
+            :class="[
+              $style['basic-list__item'],
+              'text-body-4',
+              'color-black',
+              'font-weight-regular',
+            ]"
+          >
+            <div :class="$style['basic-list__symbol']">-</div>
+            <div :class="$style['basic-list__content']">
+              금융소비자보호법 제19조 제1항 또는 제3항을 위반하여 설명의무를
+              이행하지 아니한 경우
+            </div>
+          </li>
+          <li
+            :class="[
+              $style['basic-list__item'],
+              'text-body-4',
+              'color-black',
+              'font-weight-regular',
+            ]"
+          >
+            <div :class="$style['basic-list__symbol']">-</div>
+            <div :class="$style['basic-list__content']">
+              금융소비자보호법 제20조 제1항을 위반하여 불공정영업행위를 한 경우
+            </div>
+          </li>
+          <li
+            :class="[
+              $style['basic-list__item'],
+              'text-body-4',
+              'color-black',
+              'font-weight-regular',
+            ]"
+          >
+            <div :class="$style['basic-list__symbol']">-</div>
+            <div :class="$style['basic-list__content']">
+              금융소비자보호법 제21조를 위반하여 부당권유행위를 한 경우
+            </div>
+          </li>
+        </ul>
       </div>
 
       <template v-slot:foot>
@@ -94,3 +159,7 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/myLoan/LayerMyLoanOnlineContractDescription004_009.scss';
+</style>

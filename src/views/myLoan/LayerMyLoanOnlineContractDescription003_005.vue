@@ -59,7 +59,7 @@ export default {
 
       <IllustObject type="license" :classNames="{ wrap: 'row-margin-none' }" />
 
-      <div class="row-margin-item-group-small">
+      <div>
         <div class="text-body-2">
           <span class="font-weight-medium">
             금융회사가 아래와 같이 「금융소비자 보호에 관한 법률」(이하

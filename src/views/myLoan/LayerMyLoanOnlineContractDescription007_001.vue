@@ -61,7 +61,7 @@ export default {
 
       <IllustObject type="license" :classNames="{ wrap: 'row-margin-none' }" />
 
-      <div class="row-margin-item-group-small">
+      <div>
         <div class="text-body-2">
           <div>
             <span class="font-weight-medium">리스</span>는 시설을 대여해주는
@@ -82,7 +82,7 @@ export default {
           </div>
         </div>
 
-        <NoticeText class="row-margin-item">
+        <NoticeText :classNames="{ wrap: 'row-margin-item' }">
           금융리스는 이자, 감가상각비의 비용처리가 가능해요.
         </NoticeText>
       </div>

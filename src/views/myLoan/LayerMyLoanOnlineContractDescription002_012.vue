@@ -1,5 +1,5 @@
 <script>
-// My_M03_l221
+// My_M03_l222
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -9,7 +9,6 @@ import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
-import NoticeText from '@/components/ui/text/NoticeText.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
@@ -24,7 +23,6 @@ export default {
     PopupButton,
     PageTextGroup,
     PageMainText,
-    NoticeText,
     IllustObject,
     ButtonList,
     ButtonListItem,
@@ -54,97 +52,21 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          자료열람을<br />
-          <strong>요구할 수 있어요</strong>
+          홈페이지에서<br />
+          <strong>언제든 확인해보세요</strong>
         </PageMainText>
       </PageTextGroup>
 
       <IllustObject type="license" :classNames="{ wrap: 'row-margin-none' }" />
 
-      <div class="row-margin-item-group-small">
+      <div>
         <div class="text-body-2">
+          보다 상세한 손님의 권리는
           <span class="font-weight-medium">
-            고객은 분쟁조정 또는 소송의 수행 등 권리구제를 위한 목적
+            인터넷 홈페이지(www.hanacapital.co.kr) 고객센터 → 금융소비자보호
           </span>
-          으로 금융회사가 기록 및 유지·관리하는 다음의 자료에 대한 열람(사본 및
-          청취 포함)을 요구할 수 있어요.
+          에서 확인하실 수 있어요.
         </div>
-
-        <ul :class="[$style['basic-list'], 'row-margin-contents']">
-          <li
-            :class="[
-              $style['basic-list__item'],
-              'text-body-4',
-              'color-black',
-              'font-weight-regular',
-            ]"
-          >
-            <div :class="$style['basic-list__symbol']">-</div>
-            <div :class="$style['basic-list__content']">
-              계약체결에 관한 자료, 계약의 이행에 관한 자료
-            </div>
-          </li>
-          <li
-            :class="[
-              $style['basic-list__item'],
-              'text-body-4',
-              'color-black',
-              'font-weight-regular',
-            ]"
-          >
-            <div :class="$style['basic-list__symbol']">-</div>
-            <div :class="$style['basic-list__content']">
-              금융상품 등에 관한 광고 자료
-            </div>
-          </li>
-          <li
-            :class="[
-              $style['basic-list__item'],
-              'text-body-4',
-              'color-black',
-              'font-weight-regular',
-            ]"
-          >
-            <div :class="$style['basic-list__symbol']">-</div>
-            <div :class="$style['basic-list__content']">
-              고객의 권리행사에 관한 자료
-            </div>
-          </li>
-          <li
-            :class="[
-              $style['basic-list__item'],
-              'text-body-4',
-              'color-black',
-              'font-weight-regular',
-            ]"
-          >
-            <div :class="$style['basic-list__symbol']">-</div>
-            <div :class="$style['basic-list__content']">
-              내부통제기준의 제정 및 운영 등에 관한 자료
-            </div>
-          </li>
-          <li
-            :class="[
-              $style['basic-list__item'],
-              'text-body-4',
-              'color-black',
-              'font-weight-regular',
-            ]"
-          >
-            <div :class="$style['basic-list__symbol']">-</div>
-            <div :class="$style['basic-list__content']">
-              업무 위탁에 관한 자료
-            </div>
-          </li>
-        </ul>
-
-        <NoticeText class="font-weight-medium">
-          금융회사는 법령, 제3자의 이익 침해, 영업비밀의 침해 등의 사유가 있는
-          경우 이를 고객에게 알리고
-          <span class="color-red font-weight-regular">
-            자료 열람을 제한하거나 거절할 수 있습니다.
-          </span>
-        </NoticeText>
       </div>
 
       <template v-slot:foot>
@@ -164,7 +86,3 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/myLoan/LayerMyLoanOnlineContractDescription002_012.scss';
-</style>

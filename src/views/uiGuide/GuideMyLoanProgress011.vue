@@ -18,7 +18,6 @@ import LayerMyLoanOnlineContractDescription009_009 from '../myLoan/LayerMyLoanOn
 import LayerMyLoanOnlineContractDescription009_010 from '../myLoan/LayerMyLoanOnlineContractDescription009_010.vue';
 import LayerMyLoanOnlineContractDescription009_011 from '../myLoan/LayerMyLoanOnlineContractDescription009_011.vue';
 import LayerMyLoanOnlineContractDescription009_012 from '../myLoan/LayerMyLoanOnlineContractDescription009_012.vue';
-import LayerMyLoanOnlineContractDescription009_013 from '../myLoan/LayerMyLoanOnlineContractDescription009_013.vue';
 
 export default {
   components: {
@@ -38,7 +37,6 @@ export default {
     LayerMyLoanOnlineContractDescription009_010,
     LayerMyLoanOnlineContractDescription009_011,
     LayerMyLoanOnlineContractDescription009_012,
-    LayerMyLoanOnlineContractDescription009_013,
   },
   setup() {
     const layer001 = ref(null);
@@ -53,7 +51,6 @@ export default {
     const layer010 = ref(null);
     const layer011 = ref(null);
     const layer012 = ref(null);
-    const layer013 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -91,9 +88,6 @@ export default {
     const layer012Open = (e = {}) => {
       layer012.value.layer.open(e.target);
     };
-    const layer013Open = (e = {}) => {
-      layer013.value.layer.open(e.target);
-    };
 
     return {
       layer001,
@@ -108,7 +102,6 @@ export default {
       layer010,
       layer011,
       layer012,
-      layer013,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -121,7 +114,6 @@ export default {
       layer010Open,
       layer011Open,
       layer012Open,
-      layer013Open,
     };
   },
 };
@@ -172,31 +164,26 @@ export default {
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer008Open">
-          주요권리 안내_일반리스1<br />My_M03_l292
-        </BasicButton>
-      </ButtonListItem>
-      <ButtonListItem>
-        <BasicButton @click="layer009Open">
           주요권리 안내_일반리스2<br />My_M03_l293
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer010Open">
+        <BasicButton @click="layer009Open">
           주요권리 안내_일반리스3<br />My_M03_l294
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer011Open">
+        <BasicButton @click="layer010Open">
           주요권리 안내_일반리스4<br />My_M03_l295
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer012Open">
+        <BasicButton @click="layer011Open">
           주요권리 안내_일반리스5<br />My_M03_l296
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer013Open">
+        <BasicButton @click="layer012Open">
           상품설명서 약관동의_일반리스설명서<br />My_M99_l010
         </BasicButton>
       </ButtonListItem>
@@ -214,6 +201,5 @@ export default {
     <LayerMyLoanOnlineContractDescription009_010 ref="layer010" />
     <LayerMyLoanOnlineContractDescription009_011 ref="layer011" />
     <LayerMyLoanOnlineContractDescription009_012 ref="layer012" />
-    <LayerMyLoanOnlineContractDescription009_013 ref="layer013" />
   </PageContents>
 </template>

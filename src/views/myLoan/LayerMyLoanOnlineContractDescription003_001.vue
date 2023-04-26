@@ -61,13 +61,13 @@ export default {
 
       <IllustObject type="license" :classNames="{ wrap: 'row-margin-none' }" />
 
-      <div class="row-margin-item-group-small">
+      <div>
         <div class="font-weight-medium text-body-2">
           중도금대출은 분양대금 납부에만 사용되며, 하나캐피탈, 시행사, 신탁사,
           시공사 등의 협의에 의해 대출금액 및 대출금리가 결정됩니다.
         </div>
 
-        <NoticeText class="row-margin-item">
+        <NoticeText :classNames="{ wrap: 'row-margin-item' }">
           대출금은 분양계약서상 분양수익금 계좌로 입금됩니다.
         </NoticeText>
       </div>

@@ -1,5 +1,5 @@
 <script>
-// My_M03_l218
+// My_M03_l219
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -54,72 +54,81 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          금리인하를<br />
+          청약철회를<br />
           <strong>요구할 수 있어요</strong>
         </PageMainText>
       </PageTextGroup>
 
       <IllustObject type="license" :classNames="{ wrap: 'row-margin-none' }" />
 
-      <div class="row-margin-item-group-small">
+      <div>
         <div class="text-body-2">
-          채무자인 고객은 본인의
-          <span class="color-red">[신용상태가 개선]</span> 되었다고 판단되는
-          경우(예 : 취업, 승진, 재산증가, 개인신용평점 상승) 금융회사에
-          <span class="color-red">[금리인하를 요구]</span> 할 수 있어요.
+          <span class="color-red">
+            금융소비자 보호에 관한 법률 시행령 제37조 제1항 제3호가목에
+            의거하여, 할부금융상품은 같은 법에서 규정하는 청약철회권 대상 상품이
+            아닙니다.
+          </span>
+          <span class="font-weight-medium">
+            (다만 재화를 제공받은 경우만 해당합니다.)
+          </span>
         </div>
 
-        <NoticeText class="color-red row-margin-item">
-          신용상태가 금리에 영향을 미치지 않는 상품은 금리인하요구권의 행사
-          대상에서 제외되오니, 상단의 체크박스를 확인 해 주세요.
+        <NoticeText :classNames="{ wrap: 'row-margin-item' }">
+          할부금융상품은 할부거래에 관한 법률 제 8조의 청약철회권과 같은 법
+          제16조의 항변권을 적용받으며, 주요한 특징은 아래와 같습니다.
         </NoticeText>
 
-        <ul :class="$style['basic-list']">
-          <li
-            :class="[
-              $style['basic-list__item'],
-              'text-body-4',
-              'color-black',
-              'font-weight-regular',
-            ]"
-          >
-            <div :class="$style['basic-list__symbol']">-</div>
-            <div :class="$style['basic-list__content']">
-              금융회사는 금리인하를 요구하는 고객에게 신용상태 개선을 확인하는
-              데 필요한 자료의 제출을 요구할 수 있으며, 신용상태의 개선이
-              경미하여 금리인하 요구 인정 요건을 충족하지 못하는 경우 등
-              <span class="font-weight-medium">
-                심사 결과에 따라 고객의 금리인하 요구는 수용되지 않을 수 있어요.
-              </span>
+        <div class="row-margin-contents">
+          <div>
+            <div class="color-gray-secondary text-body-4">
+              할부거래법 상 청약철회권이란
             </div>
-          </li>
-          <li
-            :class="[
-              $style['basic-list__item'],
-              'text-body-4',
-              'color-black',
-              'font-weight-regular',
-            ]"
-          >
-            <div :class="$style['basic-list__symbol']">-</div>
-            <div :class="$style['basic-list__content']">
-              금융회사는 금리인하 요구를 받은 날부터
-              <span class="font-weight-medium">
-                ‘10영업일 이내’(고객에게 자료의 보완을 요구하는 날부터 자료가
-                제출되는 날까지의 기간은 포함되지 않아요)</span
-              >에
-              <span class="color-red">
-                금리인하 요구 수용 여부 및 그 사유를 고객에게 통지드려요.
-              </span>
-            </div>
-          </li>
-        </ul>
+            <ul :class="[$style['basic-list'], 'row-margin-mini']">
+              <li
+                :class="[
+                  $style['basic-list__item'],
+                  'text-body-4',
+                  'color-black',
+                  'font-weight-regular',
+                ]"
+              >
+                <div :class="$style['basic-list__symbol']">-</div>
+                <div :class="$style['basic-list__content']">
+                  <span class="font-weight-medium">
+                    “할부 구입일 또는 목적물 인도를 받은 날로부터 7일 이내
+                    철회(취소)를 요청할 수 있는 권리”</span
+                  >를 말합니다.
+                </div>
+              </li>
+            </ul>
+          </div>
 
-        <NoticeText class="color-red row-margin-item">
-          본 할부금융은 제품별 적용금리 반영되는 상품으로, 금융회사의
-          심사(신용도 등 반영)에 따라 금리가 차등 적용되는 대출이 아니므로,
-          금리인하요구권 대상에서 제외됩니다.
-        </NoticeText>
+          <div class="row-margin-contents">
+            <div class="color-gray-secondary text-body-4">
+              할부거래법 상 항변권이란
+            </div>
+            <ul :class="[$style['basic-list'], 'row-margin-mini']">
+              <li
+                :class="[
+                  $style['basic-list__item'],
+                  'text-body-4',
+                  'color-black',
+                  'font-weight-regular',
+                ]"
+              >
+                <div :class="$style['basic-list__symbol']">-</div>
+                <div :class="$style['basic-list__content']">
+                  <span class="font-weight-medium">
+                    “할부계약기간 중 물품, 서비스 등이 계약내용대로 이행되지
+                    않는 경우 등에 대해 잔여 할부금 지급을 거절할 수 있는
+                    권리”를
+                  </span>
+                  말합니다.
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
 
       <template v-slot:foot>

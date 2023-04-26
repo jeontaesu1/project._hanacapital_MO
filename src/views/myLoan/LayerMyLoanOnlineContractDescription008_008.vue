@@ -61,7 +61,7 @@ export default {
 
       <IllustObject type="license" :classNames="{ wrap: 'row-margin-none' }" />
 
-      <div class="row-margin-item-group-small">
+      <div>
         <div class="text-body-2">
           「금융소비자 보호에 관한 법률」 시행령 제27조 제1항 제3호가목에
           의거하여
@@ -71,7 +71,7 @@ export default {
           </span>
         </div>
 
-        <NoticeText class="row-margin-item">
+        <NoticeText :classNames="{ wrap: 'row-margin-item' }">
           재화(자동차)를 제공받은 경우만 해당됩니다.
         </NoticeText>
       </div>
