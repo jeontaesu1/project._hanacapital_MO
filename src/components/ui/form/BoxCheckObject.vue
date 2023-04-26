@@ -1,7 +1,7 @@
 <script>
 import { computed, inject } from 'vue';
 
-import IconCheck from '@/assets/images/icon/check.svg?component';
+import IconCheck from '@/assets/images/icon/check-l.svg?component';
 
 const defaultClassNames = () => ({
   object: '',
