@@ -6,7 +6,8 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import Layer from '@/views/myLoan/Layer.vue';
+import LayerMyLoanPostMaturityExtensionRequestComplete001 from '@/views/myLoan/LayerMyLoanPostMaturityExtensionRequestComplete001.vue';
+import LayerMyLoanPostMaturityLeasePurchaseCompanyMethod from '@/views/myLoan/LayerMyLoanPostMaturityLeasePurchaseCompanyMethod.vue';
 
 export default {
   components: {
@@ -14,18 +15,25 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    Layer,
+    LayerMyLoanPostMaturityExtensionRequestComplete001,
+    LayerMyLoanPostMaturityLeasePurchaseCompanyMethod,
   },
   setup() {
     const layer001 = ref(null);
+    const layer002 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
     };
+    const layer002Open = (e = {}) => {
+      layer002.value.layer.open(e.target);
+    };
 
     return {
       layer001,
+      layer002,
       layer001Open,
+      layer002Open,
     };
   },
 };
@@ -41,11 +49,17 @@ export default {
     >
       <ButtonListItem>
         <BasicButton @click="layer001Open">
-          ㅇㅇㅇㅇㅇㅇ<br />ㅁㅁㅁㅁㅁㅁㅁ
+          등록 완료(심사요청완료)_리스<br />My_M08_l008
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer002Open">
+          명의이전방법 선택 팝업<br />My_M08_b003
         </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
-    <Layer ref="layer001" />
+    <LayerMyLoanPostMaturityExtensionRequestComplete001 ref="layer001" />
+    <LayerMyLoanPostMaturityLeasePurchaseCompanyMethod ref="layer002" />
   </PageContents>
 </template>
