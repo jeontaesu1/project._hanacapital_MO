@@ -57,10 +57,11 @@ export default {
 
     const state = reactive({
       nameError001: false,
-      idNumberError001: false,
-      phoneError001: false,
       nameError002: false,
+      idNumberError001: false,
       idNumberError002: false,
+      phoneError001: false,
+      phoneError002: false,
       buisnessNameError: false,
       buisnessLicenseError: false,
     });

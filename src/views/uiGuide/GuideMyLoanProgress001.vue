@@ -20,6 +20,7 @@ import LayerMyLoanProgressInstallmentConsultation from '@/views/myLoan/LayerMyLo
 import LayerMyLoanProgressInstallmentConsultationCustomerInfo from '@/views/myLoan/LayerMyLoanProgressInstallmentConsultationCustomerInfo.vue';
 import LayerMyLoanProgressInstallmentConsultationForm from '@/views/myLoan/LayerMyLoanProgressInstallmentConsultationForm.vue';
 import LayerMyLoanProgressInstallmentConsultationComplete from '@/views/myLoan/LayerMyLoanProgressInstallmentConsultationComplete.vue';
+import LayerMyLoanProgressInstallmentConsultationFail from '@/views/myLoan/LayerMyLoanProgressInstallmentConsultationFail.vue';
 
 export default {
   components: {
@@ -41,6 +42,7 @@ export default {
     LayerMyLoanProgressInstallmentConsultationCustomerInfo,
     LayerMyLoanProgressInstallmentConsultationForm,
     LayerMyLoanProgressInstallmentConsultationComplete,
+    LayerMyLoanProgressInstallmentConsultationFail,
   },
 
   setup() {
@@ -58,6 +60,7 @@ export default {
     const layer012 = ref(null);
     const layer013 = ref(null);
     const layer014 = ref(null);
+    const layer015 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -101,6 +104,9 @@ export default {
     const layer014Open = (e = {}) => {
       layer014.value.layer.open(e.target);
     };
+    const layer015Open = (e = {}) => {
+      layer015.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -117,6 +123,7 @@ export default {
       layer012,
       layer013,
       layer014,
+      layer015,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -131,6 +138,7 @@ export default {
       layer012Open,
       layer013Open,
       layer014Open,
+      layer015Open,
     };
   },
 };
@@ -211,7 +219,12 @@ export default {
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer014Open">
-          할부상담 결과안내<br />PF_M10_l010
+          할부상담 결과안내_할부약정가능<br />PF_M10_l010
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer015Open">
+          할부상담 결과안내_추가심사필요<br />PF_M10_l010
         </BasicButton>
       </ButtonListItem>
     </ButtonList>
@@ -230,5 +243,6 @@ export default {
     <LayerMyLoanProgressInstallmentConsultationCustomerInfo ref="layer012" />
     <LayerMyLoanProgressInstallmentConsultationForm ref="layer013" />
     <LayerMyLoanProgressInstallmentConsultationComplete ref="layer014" />
+    <LayerMyLoanProgressInstallmentConsultationFail ref="layer015" />
   </PageContents>
 </template>

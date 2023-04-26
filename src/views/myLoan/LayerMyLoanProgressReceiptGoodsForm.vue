@@ -50,13 +50,10 @@ export default {
   },
   setup() {
     const state = reactive({
-      nameError: false,
       phoneError: false,
       deliveryDateError: false,
       installDateError: false,
-      addressError001: false,
-      addressError001_001: false,
-      addressError001_002: false,
+      addressError: false,
     });
 
     const layer = ref(null);
@@ -91,8 +88,8 @@ export default {
         <BoxCheckListItem>
           <BoxCheck
             :minSide="true"
-            name="layerMyLoanProgressReceiptGoodsFormAddress"
-            id="layerMyLoanProgressReceiptGoodsFormAddress1"
+            name="layerMyLoanProgressReceiptGoodsFormType"
+            id="layerMyLoanProgressReceiptGoodsFormType1"
             :defaultChecked="true"
           >
             <BoxCheckLabel>수령</BoxCheckLabel>
@@ -101,8 +98,8 @@ export default {
         <BoxCheckListItem>
           <BoxCheck
             :minSide="true"
-            name="layerMyLoanProgressReceiptGoodsFormAddress"
-            id="layerMyLoanProgressReceiptGoodsFormAddress2"
+            name="layerMyLoanProgressReceiptGoodsFormType"
+            id="layerMyLoanProgressReceiptGoodsFormType2"
           >
             <BoxCheckLabel>설치</BoxCheckLabel>
           </BoxCheck>
@@ -177,8 +174,8 @@ export default {
           titleText="설치장소"
           target="#layerMyLoanProgressReceiptGoodsFormAddress001Search"
         >
-          <FormInvalid :error="state.addressError001">
-            <InputBlock :error="state.addressError001">
+          <FormInvalid :error="state.addressError">
+            <InputBlock :error="state.addressError">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="설치장소 - 우편번호"
@@ -198,7 +195,7 @@ export default {
             </InputBlock>
             <!-- Case: 주소 검색 및 입력 후 노출 -->
             <InputBlock
-              :error="state.addressError001_001"
+              :error="state.addressError"
               :disabled="true"
               :classNames="{
                 wrap: 'row-margin-item-group row-margin-bottom-none',
@@ -214,7 +211,7 @@ export default {
               </InputBlockCell>
             </InputBlock>
             <InputBlock
-              :error="state.addressError001_002"
+              :error="state.addressError"
               :disabled="true"
               :classNames="{
                 wrap: 'row-margin-item-group row-margin-bottom-none',

@@ -101,7 +101,7 @@ export default {
               >
                 <KeyValueTitle>금리</KeyValueTitle>
                 <KeyValueText>
-                  <span class="color-green">13.2%</span>
+                  <span class="color-green font-weight-medium">13.2%</span>
                 </KeyValueText>
               </KeyValueItem>
               <KeyValueItem
@@ -111,7 +111,7 @@ export default {
               >
                 <KeyValueTitle>신청대출기간</KeyValueTitle>
                 <KeyValueText>
-                  <span class="color-green">36개월</span>
+                  <span class="color-green font-weight-medium">36개월</span>
                 </KeyValueText>
               </KeyValueItem>
               <KeyValueItem
@@ -151,7 +151,7 @@ export default {
               >
                 <KeyValueTitle>금리</KeyValueTitle>
                 <KeyValueText>
-                  <span class="color-green">13.2%</span>
+                  <span class="color-green font-weight-medium">13.2%</span>
                 </KeyValueText>
               </KeyValueItem>
               <KeyValueItem
@@ -161,7 +161,7 @@ export default {
               >
                 <KeyValueTitle>신청대출기간</KeyValueTitle>
                 <KeyValueText>
-                  <span class="color-green">36개월</span>
+                  <span class="color-green font-weight-medium">36개월</span>
                 </KeyValueText>
               </KeyValueItem>
               <KeyValueItem
@@ -201,7 +201,7 @@ export default {
               >
                 <KeyValueTitle>금리</KeyValueTitle>
                 <KeyValueText>
-                  <span class="color-green">13.2%</span>
+                  <span class="color-green font-weight-medium">13.2%</span>
                 </KeyValueText>
               </KeyValueItem>
               <KeyValueItem
@@ -211,7 +211,7 @@ export default {
               >
                 <KeyValueTitle>신청대출기간</KeyValueTitle>
                 <KeyValueText>
-                  <span class="color-green">36개월</span>
+                  <span class="color-green font-weight-medium">36개월</span>
                 </KeyValueText>
               </KeyValueItem>
               <KeyValueItem

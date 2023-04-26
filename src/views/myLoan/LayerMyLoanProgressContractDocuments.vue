@@ -43,7 +43,7 @@ export default {
   setup() {
     const state = reactive({
       nameError: false,
-      numberError: false,
+      birthDateError: false,
     });
 
     const layer = ref(null);
@@ -100,16 +100,16 @@ export default {
         <FormListItem
           titleText="생년월일"
           titleOptionalText="(6자리)"
-          target="#layerMyLoanProgressContractDocumentsNumber"
+          target="#layerMyLoanProgressContractDocumentsBirthDate"
         >
-          <FormInvalid :error="state.numberError">
-            <InputBlock :error="state.numberError">
+          <FormInvalid :error="state.birthDateError">
+            <InputBlock :error="state.birthDateError">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   type="number"
                   pattern="\d*"
                   title="주민등록번호 앞 6자리"
-                  id="layerMyLoanProgressContractDocumentsNumber"
+                  id="layerMyLoanProgressContractDocumentsBirthDate"
                 />
               </InputBlockCell>
             </InputBlock>

@@ -67,7 +67,8 @@ export default {
       </PageTextGroup>
 
       <section>
-        <h3 class="text-title-2 row-margin-contents">종료된 계약</h3>
+        <h3 class="text-title-2 row-margin-contents">계약자 정보</h3>
+
         <BasicBox>
           <BasicBoxHead>
             <BasicBoxHeadLeft>
@@ -107,6 +108,7 @@ export default {
 
       <section class="row-margin-container-medium">
         <h3 class="text-title-2 row-margin-contents">물건 정보</h3>
+
         <BasicBox>
           <BasicBoxHead>
             <BasicBoxHeadLeft>

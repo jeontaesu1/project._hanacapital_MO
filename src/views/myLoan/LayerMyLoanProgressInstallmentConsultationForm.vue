@@ -44,7 +44,7 @@ export default {
     const state = reactive({
       nameError: false,
       amountError: false,
-      dateError: false,
+      periodError: false,
     });
 
     const layer = ref(null);
@@ -127,11 +127,11 @@ export default {
 
         <FormListItem
           titleText="할부신청기간"
-          target="#layerMyLoanProgressInstallmentConsultationFormDateButton"
+          target="#layerMyLoanProgressInstallmentConsultationFormPeriodButton"
           :selectOnly="true"
         >
-          <FormInvalid :error="state.dateError">
-            <InputBlock :error="state.dateError">
+          <FormInvalid :error="state.periodError">
+            <InputBlock :error="state.periodError">
               <InputBlockCell :flexible="true">
                 <BasicSelect
                   :option="[
@@ -209,17 +209,13 @@ export default {
                     },
                     {
                       value: '19',
-                      text: '20개월',
-                    },
-                    {
-                      value: '19',
                       text: '21개월',
                     },
                   ]"
                   buttonTitle="할부신청기간 선택하기"
                   layerTitle="할부신청기간을 선택해 주세요"
-                  id="layerMyLoanProgressInstallmentConsultationFormDate"
-                  buttonId="layerMyLoanProgressInstallmentConsultationFormDateButton"
+                  id="layerMyLoanProgressInstallmentConsultationFormPeriod"
+                  buttonId="layerMyLoanProgressInstallmentConsultationFormPeriodButton"
                 />
               </InputBlockCell>
             </InputBlock>

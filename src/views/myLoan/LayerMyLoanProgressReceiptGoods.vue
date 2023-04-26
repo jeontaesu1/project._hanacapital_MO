@@ -40,7 +40,7 @@ export default {
   },
   setup() {
     const state = reactive({
-      numberError: false,
+      birthDateError: false,
       nameError: false,
     });
 
@@ -73,27 +73,27 @@ export default {
       </PageTextGroup>
 
       <FormList>
-        <!-- Case: 다음 버튼 누른 후 노출 -->
+        <!-- DD : 이름 입력 및 다음 버튼 누른 후 노출 -->
         <FormListItem
           titleText="생년월일"
           titleOptionalText="(6자리)"
-          target="#layerMyLoanProgressReceiptGoodsNumber"
+          target="#layerMyLoanProgressReceiptGoodsBirthDate"
         >
-          <FormInvalid :error="state.numberError">
-            <InputBlock :error="state.numberError">
+          <FormInvalid :error="state.birthDateError">
+            <InputBlock :error="state.birthDateError">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   type="number"
                   pattern="\d*"
                   title="주민등록번호 앞 6자리"
-                  id="layerMyLoanProgressReceiptGoodsNumber"
+                  id="layerMyLoanProgressReceiptGoodsBirthDate"
                 />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
-        <!-- // Case: 다음 버튼 누른 후 노출 -->
+        <!-- // DD : 이름 입력 및 다음 버튼 누른 후 노출 -->
 
         <FormListItem
           titleText="이름"

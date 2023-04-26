@@ -6,7 +6,8 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import Layer from '@/views/myLoan/Layer.vue';
+import LayerMyLoanAddDocumentsAgree from '@/views/myLoan/LayerMyLoanAddDocumentsAgree.vue';
+import LayerMyLoanAddDocumentsEmpty from '@/views/myLoan/LayerMyLoanAddDocumentsEmpty.vue';
 
 export default {
   components: {
@@ -14,18 +15,25 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    Layer,
+    LayerMyLoanAddDocumentsAgree,
+    LayerMyLoanAddDocumentsEmpty,
   },
   setup() {
     const layer001 = ref(null);
+    const layer002 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
     };
+    const layer002Open = (e = {}) => {
+      layer002.value.layer.open(e.target);
+    };
 
     return {
       layer001,
+      layer002,
       layer001Open,
+      layer002Open,
     };
   },
 };
@@ -41,11 +49,17 @@ export default {
     >
       <ButtonListItem>
         <BasicButton @click="layer001Open">
-          ㅇㅇㅇㅇㅇㅇ<br />ㅁㅁㅁㅁㅁㅁㅁ
+          약관동의<br />PMy_M07_l001
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer002Open">
+          서류등록<br />PMy_M07_l002
         </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
-    <Layer ref="layer001" />
+    <LayerMyLoanAddDocumentsAgree ref="layer001" />
+    <LayerMyLoanAddDocumentsEmpty ref="layer002" />
   </PageContents>
 </template>

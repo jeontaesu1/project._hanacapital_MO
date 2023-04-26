@@ -138,7 +138,3 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/myLoan/LayerMyLoanProgressReceiptGoodsAgree.scss';
-</style>
