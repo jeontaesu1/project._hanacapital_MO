@@ -220,7 +220,7 @@ export default {
       <ul
         :class="[
           $style['basic-list'],
-          'row-margin-contents',
+          'row-margin-contents-group',
           'row-margin-bottom-none',
         ]"
       >

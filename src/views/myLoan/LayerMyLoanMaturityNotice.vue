@@ -298,7 +298,7 @@ export default {
 
       <section>
         <PageMainText>만기처리안내</PageMainText>
-        <div class="row-margin-contents-group row-margin-bottom-none">
+        <div class="row-margin-contents-group">
           <div class="row-margin-container-medium">
             <h4 class="text-title-2">연장</h4>
             <!-- Case : 리스일 경우 노출 -->
@@ -540,8 +540,8 @@ export default {
                     >
                       <div :class="$style['basic-list__symbol']">-</div>
                       <div :class="$style['basic-list__content']">
-                        렌터카 만기일 이후 고객명의 보험가입 필수 (차대번호
-                        가입)
+                        렌터카 만기일 이후 고객명의 보험가입 필수<br />
+                        (차대번호 가입)
                       </div>
                     </li>
                   </ul>

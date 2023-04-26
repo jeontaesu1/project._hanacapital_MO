@@ -174,7 +174,7 @@ export default {
       <BasicHr className="row-margin-container-medium" />
 
       <div>
-        <div class="flex-box row-margin-contents row-margin-top-none">
+        <div class="flex-box row-margin-contents">
           <div class="flex-box__cell flex-1">
             <h3 class="text-title-2">발급항목</h3>
           </div>

@@ -135,15 +135,11 @@ export default {
             </KeyValueItem>
             <KeyValueItem>
               <KeyValueTitle>결제일</KeyValueTitle>
-              <KeyValueText :classNames="{ text: 'color-black' }">
-                매월 5일
-              </KeyValueText>
+              <KeyValueText> 매월 5일</KeyValueText>
             </KeyValueItem>
             <KeyValueItem>
               <KeyValueTitle>결제회차</KeyValueTitle>
-              <KeyValueText :classNames="{ text: 'color-black' }">
-                -
-              </KeyValueText>
+              <KeyValueText> -</KeyValueText>
             </KeyValueItem>
           </KeyValue>
         </BoxCheck>
@@ -188,15 +184,11 @@ export default {
             </KeyValueItem>
             <KeyValueItem>
               <KeyValueTitle>결제일</KeyValueTitle>
-              <KeyValueText :classNames="{ text: 'color-black' }">
-                매월 5일
-              </KeyValueText>
+              <KeyValueText> 매월 5일</KeyValueText>
             </KeyValueItem>
             <KeyValueItem>
               <KeyValueTitle>결제회차</KeyValueTitle>
-              <KeyValueText :classNames="{ text: 'color-black' }">
-                -
-              </KeyValueText>
+              <KeyValueText> -</KeyValueText>
             </KeyValueItem>
           </KeyValue>
         </BoxCheck>

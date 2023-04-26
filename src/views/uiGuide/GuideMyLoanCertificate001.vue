@@ -155,12 +155,12 @@ export default {
           My_M02_l011
         </BasicButton>
       </ButtonListItem>
-      <!--<ButtonListItem>
+      <ButtonListItem>
         <BasicButton @click="layer007Open">
           리스/렌터카 종료확인서<br />
           My_M02_l012
         </BasicButton>
-      </ButtonListItem>-->
+      </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer008Open">
           계산서/세금계산서<br />
@@ -173,7 +173,7 @@ export default {
           My_M02_l014
         </BasicButton>
       </ButtonListItem>
-      <!-- <ButtonListItem>
+      <ButtonListItem>
         <BasicButton @click="layer010Open">
           입금내역서<br />
           My_M02_l015
@@ -184,7 +184,7 @@ export default {
           스탁론 약정서<br />
           My_M02_l016
         </BasicButton>
-      </ButtonListItem> -->
+      </ButtonListItem>
     </ButtonList>
 
     <LayerMyLoanCertificateOnlineBillList ref="layer001" />
