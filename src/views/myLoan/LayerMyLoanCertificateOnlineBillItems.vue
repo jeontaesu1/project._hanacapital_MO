@@ -64,7 +64,6 @@ export default {
     const layer = ref(null);
 
     const state = reactive({
-      carNumberError: false,
       dateError: false,
       minDate: '2023.04.21',
       maxDate: '2023.04.21',
@@ -188,9 +187,7 @@ export default {
               theme="tertiary"
             >
               <CheckBoxObject />
-              <CheckBoxLabelText :classNames="{ text: $style['all-check'] }"
-                >전체 선택</CheckBoxLabelText
-              >
+              <CheckBoxLabelText>전체 선택</CheckBoxLabelText>
             </CheckBox>
           </div>
           <!-- //Case : 리스트가 있는 경우 -->
