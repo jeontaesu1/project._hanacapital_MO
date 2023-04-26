@@ -1580,7 +1580,12 @@ const datas = () => [
         path: '/guide/my-loan-progress-001',
         status: 'partend',
         create: '2023.04.14',
-        log: [],
+        log: [
+          {
+            date: '2023.04.28',
+            text: '팝업 추가\n- 품목 검색',
+          },
+        ],
       },
       {
         depth2: '진행상태조회\nMy_M03_p001',
