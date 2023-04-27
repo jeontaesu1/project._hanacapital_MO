@@ -59,7 +59,7 @@ export default {
             </CheckBoxLabelText>
           </CheckBox>
         </li>
-        <li>
+        <li class="row-margin-item-group">
           <CheckBox
             id="layerMyLoanPostMaturityRentalReturnConfirmCheckBox02"
             theme="tertiary"

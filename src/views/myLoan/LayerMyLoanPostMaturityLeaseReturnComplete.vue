@@ -84,7 +84,7 @@ export default {
         </BasicBoxHead>
         <KeyValue margin="regular">
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>렌트기간</KeyValueTitle>
+            <KeyValueTitle>리스기간</KeyValueTitle>
             <KeyValueText>2018.10.29~2021.10.29</KeyValueText>
           </KeyValueItem>
 
