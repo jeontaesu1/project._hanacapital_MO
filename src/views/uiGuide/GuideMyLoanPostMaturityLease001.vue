@@ -15,6 +15,10 @@ import LayerMyLoanPostMaturityLeasePurchaseUser from '@/views/myLoan/LayerMyLoan
 import LayerMyLoanPostMaturityLeasePurchaseUserConfirm from '@/views/myLoan/LayerMyLoanPostMaturityLeasePurchaseUserConfirm.vue';
 import LayerMyLoanPostMaturityLeasePurchaseUserComplete from '@/views/myLoan/LayerMyLoanPostMaturityLeasePurchaseUserComplete.vue';
 import LayerMyLoanPostMaturityLeasePurchaseCompany from '@/views/myLoan/LayerMyLoanPostMaturityLeasePurchaseCompany.vue';
+import LayerMyLoanPostMaturityLeasePurchaseCompanyEstimatedCost from '@/views/myLoan/LayerMyLoanPostMaturityLeasePurchaseCompanyEstimatedCost.vue';
+import LayerMyLoanPostMaturityLeasePurchaseCompanyFormDirect from '@/views/myLoan/LayerMyLoanPostMaturityLeasePurchaseCompanyFormDirect.vue';
+import LayerMyLoanPostMaturityLeasePurchaseCompanyFormAgent from '@/views/myLoan/LayerMyLoanPostMaturityLeasePurchaseCompanyFormAgent.vue';
+import LayerMyLoanPostMaturityLeasePurchaseCompanyComplete from '@/views/myLoan/LayerMyLoanPostMaturityLeasePurchaseCompanyComplete.vue';
 
 export default {
   components: {
@@ -31,6 +35,10 @@ export default {
     LayerMyLoanPostMaturityLeasePurchaseUserConfirm,
     LayerMyLoanPostMaturityLeasePurchaseUserComplete,
     LayerMyLoanPostMaturityLeasePurchaseCompany,
+    LayerMyLoanPostMaturityLeasePurchaseCompanyEstimatedCost,
+    LayerMyLoanPostMaturityLeasePurchaseCompanyFormDirect,
+    LayerMyLoanPostMaturityLeasePurchaseCompanyFormAgent,
+    LayerMyLoanPostMaturityLeasePurchaseCompanyComplete,
   },
   setup() {
     const layer001 = ref(null);
@@ -42,6 +50,10 @@ export default {
     const layer007 = ref(null);
     const layer008 = ref(null);
     const layer009 = ref(null);
+    const layer010 = ref(null);
+    const layer011 = ref(null);
+    const layer012 = ref(null);
+    const layer013 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -70,6 +82,18 @@ export default {
     const layer009Open = (e = {}) => {
       layer009.value.layer.open(e.target);
     };
+    const layer010Open = (e = {}) => {
+      layer010.value.layer.open(e.target);
+    };
+    const layer011Open = (e = {}) => {
+      layer011.value.layer.open(e.target);
+    };
+    const layer012Open = (e = {}) => {
+      layer012.value.layer.open(e.target);
+    };
+    const layer013Open = (e = {}) => {
+      layer013.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -81,6 +105,10 @@ export default {
       layer007,
       layer008,
       layer009,
+      layer010,
+      layer011,
+      layer012,
+      layer013,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -90,6 +118,10 @@ export default {
       layer007Open,
       layer008Open,
       layer009Open,
+      layer010Open,
+      layer011Open,
+      layer012Open,
+      layer013Open,
     };
   },
 };
@@ -148,6 +180,26 @@ export default {
           구매 유의사항 확인<br />My_M08_l027
         </BasicButton>
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer010Open">
+          구매예상비용 확인<br />My_M08_l028
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer011Open">
+          구매 정보 입력(직접 이전)<br />My_M08_l029
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer012Open">
+          구매 정보 입력(이전 대행)<br />My_M08_l030
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer013Open">
+          신청 완료<br />My_M08_l031
+        </BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <LayerMyLoanPostMaturityLeaseMethod ref="layer001" />
@@ -159,5 +211,9 @@ export default {
     <LayerMyLoanPostMaturityLeasePurchaseUserConfirm ref="layer007" />
     <LayerMyLoanPostMaturityLeasePurchaseUserComplete ref="layer008" />
     <LayerMyLoanPostMaturityLeasePurchaseCompany ref="layer009" />
+    <LayerMyLoanPostMaturityLeasePurchaseCompanyEstimatedCost ref="layer010" />
+    <LayerMyLoanPostMaturityLeasePurchaseCompanyFormDirect ref="layer011" />
+    <LayerMyLoanPostMaturityLeasePurchaseCompanyFormAgent ref="layer012" />
+    <LayerMyLoanPostMaturityLeasePurchaseCompanyComplete ref="layer013" />
   </PageContents>
 </template>

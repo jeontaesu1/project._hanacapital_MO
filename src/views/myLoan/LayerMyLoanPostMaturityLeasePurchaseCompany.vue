@@ -64,7 +64,13 @@ export default {
         <section class="row-margin-contents-group">
           <h3 class="text-body-2 row-margin-item-medium">소유권 이전등록</h3>
 
-          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+          <ul
+            :class="[
+              $style['basic-list'],
+              $style['basic-list--regular'],
+              $style['basic-list--regular-margin'],
+            ]"
+          >
             <li
               :class="[
                 $style['basic-list__item'],
@@ -101,7 +107,13 @@ export default {
         <section class="row-margin-contents-group">
           <h3 class="text-body-2 row-margin-item-medium">취·등록세</h3>
 
-          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+          <ul
+            :class="[
+              $style['basic-list'],
+              $style['basic-list--regular'],
+              $style['basic-list--regular-margin'],
+            ]"
+          >
             <li
               :class="[
                 $style['basic-list__item'],
@@ -124,7 +136,13 @@ export default {
         <section class="row-margin-contents-group">
           <h3 class="text-body-2 row-margin-item-medium">제3자이전 불가</h3>
 
-          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+          <ul
+            :class="[
+              $style['basic-list'],
+              $style['basic-list--regular'],
+              $style['basic-list--regular-margin'],
+            ]"
+          >
             <li
               :class="[
                 $style['basic-list__item'],
@@ -153,7 +171,13 @@ export default {
             범칙금/과태료/제세공과금 납부
           </h3>
 
-          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+          <ul
+            :class="[
+              $style['basic-list'],
+              $style['basic-list--regular'],
+              $style['basic-list--regular-margin'],
+            ]"
+          >
             <li
               :class="[
                 $style['basic-list__item'],
@@ -172,7 +196,13 @@ export default {
         <section class="row-margin-contents-group">
           <h3 class="text-body-2 row-margin-item-medium">보험가입</h3>
 
-          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+          <ul
+            :class="[
+              $style['basic-list'],
+              $style['basic-list--regular'],
+              $style['basic-list--regular-margin'],
+            ]"
+          >
             <li
               :class="[
                 $style['basic-list__item'],

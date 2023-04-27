@@ -230,9 +230,9 @@ export default {
 
                   <template v-slot:contents>
                     <section :class="$style['tooltip-section']">
-                      <h3 :class="$style['tooltip-section__title']">
+                      <h4 :class="$style['tooltip-section__title']">
                         매도용인감주소 안내
-                      </h3>
+                      </h4>
                       <ul
                         :class="[
                           $style['basic-list'],
