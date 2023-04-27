@@ -69,13 +69,13 @@ export default {
       <PageTextGroup>
         <PageMainText>
           <strong>발급할 계약을</strong><br />
-          선택하세요.
+          선택하세요
         </PageMainText>
       </PageTextGroup>
 
       <!-- Case : 계약이 없을 때 -->
       <div :class="$style['empty']">
-        <p :class="$style['empty__text']">발급 가능한 계약이 없습니다</p>
+        <p :class="$style['empty__text']">발급 가능한 계약이 없습니다.</p>
       </div>
 
       <template v-slot:foot>
