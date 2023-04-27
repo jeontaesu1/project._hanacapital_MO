@@ -1808,8 +1808,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/my-loan-post-maturity-lease-001',
-        status: '',
-        create: '',
+        status: 'partend',
+        create: '2023.04.28',
         log: [],
       },
       {
