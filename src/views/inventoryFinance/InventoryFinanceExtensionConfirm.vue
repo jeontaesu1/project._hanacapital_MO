@@ -97,7 +97,7 @@ export default {
         >
           <KeyValueTitle>대출일자</KeyValueTitle>
           <KeyValueText>
-            <span class="color-green">2019.03.05</span>
+            <span class="color-green font-weight-medium">2019.03.05</span>
           </KeyValueText>
         </KeyValueItem>
 
@@ -108,7 +108,7 @@ export default {
         >
           <KeyValueTitle>대출실행금액</KeyValueTitle>
           <KeyValueText>
-            <span class="color-green">11.700,000 원</span>
+            <span class="color-green font-weight-medium">11.700,000 원</span>
           </KeyValueText>
         </KeyValueItem>
 
@@ -137,7 +137,7 @@ export default {
         >
           <KeyValueTitle>기간</KeyValueTitle>
           <KeyValueText>
-            <span class="color-green">2개월</span>
+            <span class="color-green font-weight-medium">2개월</span>
           </KeyValueText>
         </KeyValueItem>
 
@@ -175,7 +175,7 @@ export default {
         >
           <KeyValueTitle>연체이자율</KeyValueTitle>
           <KeyValueText>
-            <span class="color-green">약정대출금리+3%</span>
+            <span class="color-green font-weight-medium">약정대출금리+3%</span>
           </KeyValueText>
         </KeyValueItem>
       </KeyValue>
@@ -194,7 +194,7 @@ export default {
         >
           <KeyValueTitle>만기일자</KeyValueTitle>
           <KeyValueText>
-            <span class="color-green">2019.08.05</span>
+            <span class="color-green font-weight-medium">2019.08.05</span>
           </KeyValueText>
         </KeyValueItem>
 
@@ -205,7 +205,7 @@ export default {
         >
           <KeyValueTitle>만기시 상환금액</KeyValueTitle>
           <KeyValueText>
-            <span class="color-green">11,895,530 원</span>
+            <span class="color-green font-weight-medium">11,895,530 원</span>
           </KeyValueText>
         </KeyValueItem>
 
@@ -216,7 +216,7 @@ export default {
         >
           <KeyValueTitle>원금</KeyValueTitle>
           <KeyValueText>
-            <span class="color-green">11,700,000 원</span>
+            <span class="color-green font-weight-medium">11,700,000 원</span>
           </KeyValueText>
         </KeyValueItem>
 
@@ -227,7 +227,7 @@ export default {
         >
           <KeyValueTitle>이자</KeyValueTitle>
           <KeyValueText>
-            <span class="color-green">195,530 원</span>
+            <span class="color-green font-weight-medium">195,530 원</span>
           </KeyValueText>
         </KeyValueItem>
       </KeyValue>

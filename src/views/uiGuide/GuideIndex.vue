@@ -1580,7 +1580,16 @@ const datas = () => [
         path: '/guide/my-loan-progress-001',
         status: 'partend',
         create: '2023.04.14',
-        log: [],
+        log: [
+          {
+            date: '2023.04.21',
+            text: '팝업 추가\n- 약관동의',
+          },
+          {
+            date: '2023.04.28',
+            text: '팝업 추가\n- 계약서류 조회\n- 이메일 전송\n- 신용정보조회동의\n- 신용정보조회동의 완료\n- 본인확인(URL진입)\n- 계약정보확인\n- 물품수령정보\n- 동의하기\n- 확인완료\n- 할부상담신청\n- 한도조회결과\n- 할부신청정보입력\n- 할부상담 결과안내',
+          },
+        ],
       },
       {
         depth2: '진행상태조회\nMy_M03_p001',
@@ -1858,9 +1867,14 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/my-loan-add-documents-001',
-        status: '',
-        create: '',
-        log: [],
+        status: 'partend',
+        create: '2023.04.28',
+        log: [
+          {
+            date: '2023.04.28',
+            text: '팝업 추가\n- 약관동의\n- 서류입력',
+          },
+        ],
       },
       {
         depth2: '서류등록',
@@ -1869,8 +1883,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/my-loan/add-documents-complete',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.4.28',
         log: [],
       },
     ],
