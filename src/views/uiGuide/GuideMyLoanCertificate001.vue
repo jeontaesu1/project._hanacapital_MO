@@ -6,6 +6,11 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
+import LayerMyLoanCertificate from '@/views/myLoan/LayerMyLoanCertificate.vue';
+import LayerMyLoanCertificateRepaymentList from '@/views/myLoan/LayerMyLoanCertificateRepaymentList.vue';
+import LayerMyLoanCertificateRepaymentMethod from '@/views/myLoan/LayerMyLoanCertificateRepaymentMethod.vue';
+import LayerMyLoanCertificateRepaymentEmail from '../myLoan/LayerMyLoanCertificateRepaymentEmail.vue';
+import LayerMyLoanCertificateRepaymentEmailComplete from '@/views/myLoan/LayerMyLoanCertificateRepaymentEmailComplete.vue';
 import LayerMyLoanCertificateOnlineBillList from '@/views/myLoan/LayerMyLoanCertificateOnlineBillList.vue';
 import LayerMyLoanCertificateOnlineBillItems from '@/views/myLoan/LayerMyLoanCertificateOnlineBillItems.vue';
 import LayerMyLoanCertificateConfirmationFinancialTransaction from '@/views/myLoan/LayerMyLoanCertificateConfirmationFinancialTransaction.vue';
@@ -24,6 +29,11 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
+    LayerMyLoanCertificate,
+    LayerMyLoanCertificateRepaymentList,
+    LayerMyLoanCertificateRepaymentMethod,
+    LayerMyLoanCertificateRepaymentEmail,
+    LayerMyLoanCertificateRepaymentEmailComplete,
     LayerMyLoanCertificateOnlineBillList,
     LayerMyLoanCertificateOnlineBillItems,
     LayerMyLoanCertificateConfirmationFinancialTransaction,
@@ -48,6 +58,11 @@ export default {
     const layer009 = ref(null);
     const layer010 = ref(null);
     const layer011 = ref(null);
+    const layer012 = ref(null);
+    const layer013 = ref(null);
+    const layer014 = ref(null);
+    const layer015 = ref(null);
+    const layer016 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -82,6 +97,21 @@ export default {
     const layer011Open = (e = {}) => {
       layer011.value.layer.open(e.target);
     };
+    const layer012Open = (e = {}) => {
+      layer012.value.layer.open(e.target);
+    };
+    const layer013Open = (e = {}) => {
+      layer013.value.layer.open(e.target);
+    };
+    const layer014Open = (e = {}) => {
+      layer014.value.layer.open(e.target);
+    };
+    const layer015Open = (e = {}) => {
+      layer015.value.layer.open(e.target);
+    };
+    const layer016Open = (e = {}) => {
+      layer016.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -95,6 +125,11 @@ export default {
       layer009,
       layer010,
       layer011,
+      layer012,
+      layer013,
+      layer014,
+      layer015,
+      layer016,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -106,6 +141,11 @@ export default {
       layer009Open,
       layer010Open,
       layer011Open,
+      layer012Open,
+      layer013Open,
+      layer014Open,
+      layer015Open,
+      layer016Open,
     };
   },
 };
@@ -121,82 +161,112 @@ export default {
     >
       <ButtonListItem>
         <BasicButton @click="layer001Open">
+          증명서 조회/발급<br />My_M02_l001
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer002Open">
+          상환스케줄<br />My_M02_l002
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer003Open">
+          발급방법선택팝업<br />My_M02_b001
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer004Open">
+          이메일발송<br />My_M02_l003
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer005Open">
+          이메일발송완료<br />My_M02_l005
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer006Open">
           온라인청구서<br />
           My_M02_l006
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer002Open">
+        <BasicButton @click="layer007Open">
           온라인청구서 조회<br />
           My_M02_l007
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer003Open">
+        <BasicButton @click="layer008Open">
           금융거래확인서<br />
           My_M02_l008
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer004Open">
+        <BasicButton @click="layer009Open">
           대출거래 및 잔액내역서<br />
           My_M02_l009
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer005Open">
+        <BasicButton @click="layer010Open">
           완납확인서<br />
           My_M02_l010
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer006Open">
+        <BasicButton @click="layer011Open">
           리스/렌터카 계약사실확인서<br />
           My_M02_l011
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer007Open">
+        <BasicButton @click="layer012Open">
           리스/렌터카 종료확인서<br />
           My_M02_l012
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer008Open">
+        <BasicButton @click="layer013Open">
           계산서/세금계산서<br />
           My_M02_l013
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer009Open">
+        <BasicButton @click="layer014Open">
           계산서/세금계산서 조회<br />
           My_M02_l014
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer010Open">
+        <BasicButton @click="layer015Open">
           입금내역서<br />
           My_M02_l015
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer011Open">
+        <BasicButton @click="layer016Open">
           스탁론 약정서<br />
           My_M02_l016
         </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
-    <LayerMyLoanCertificateOnlineBillList ref="layer001" />
-    <LayerMyLoanCertificateOnlineBillItems ref="layer002" />
-    <LayerMyLoanCertificateConfirmationFinancialTransaction ref="layer003" />
-    <LayerMyLoanCertificateLoanBalanceStatementList ref="layer004" />
-    <LayerMyLoanCertificateFullPaymentList ref="layer005" />
-    <LayerMyLoanCertificateLeaseRentalCarContractList ref="layer006" />
-    <LayerMyLoanCertificateLeaseRentalCarTerminationList ref="layer007" />
-    <LayerMyLoanCertificateInvoiceTaxInvoiceList ref="layer008" />
-    <LayerMyLoanCertificateInvoiceTaxInvoiceItems ref="layer009" />
-    <LayerMyLoanCertificatePaymentStatementList ref="layer010" />
-    <LayerMyLoanCertificateStockLoanList ref="layer011" />
+    <LayerMyLoanCertificate ref="layer001" />
+    <LayerMyLoanCertificateRepaymentList ref="layer002" />
+    <LayerMyLoanCertificateRepaymentMethod ref="layer003" />
+    <LayerMyLoanCertificateRepaymentEmail ref="layer004" />
+    <LayerMyLoanCertificateRepaymentEmailComplete ref="layer005" />
+    <LayerMyLoanCertificateOnlineBillList ref="layer006" />
+    <LayerMyLoanCertificateOnlineBillItems ref="layer007" />
+    <LayerMyLoanCertificateConfirmationFinancialTransaction ref="layer008" />
+    <LayerMyLoanCertificateLoanBalanceStatementList ref="layer009" />
+    <LayerMyLoanCertificateFullPaymentList ref="layer010" />
+    <LayerMyLoanCertificateLeaseRentalCarContractList ref="layer011" />
+    <LayerMyLoanCertificateLeaseRentalCarTerminationList ref="layer012" />
+    <LayerMyLoanCertificateInvoiceTaxInvoiceList ref="layer013" />
+    <LayerMyLoanCertificateInvoiceTaxInvoiceItems ref="layer014" />
+    <LayerMyLoanCertificatePaymentStatementList ref="layer015" />
+    <LayerMyLoanCertificateStockLoanList ref="layer016" />
   </PageContents>
 </template>

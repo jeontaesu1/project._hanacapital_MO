@@ -1,5 +1,5 @@
 <script>
-// My_M08_l012 렌트
+// My_M08_l012 리스
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -79,12 +79,12 @@ export default {
       <BasicBox>
         <BasicBoxHead>
           <BasicBoxHeadLeft>
-            <h3 class="text-body-1 font-weight-medium">렌트</h3>
+            <h3 class="text-body-1 font-weight-medium">리스</h3>
           </BasicBoxHeadLeft>
         </BasicBoxHead>
         <KeyValue margin="regular">
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>렌트기간</KeyValueTitle>
+            <KeyValueTitle>리스기간</KeyValueTitle>
             <KeyValueText>2018.10.29~2021.10.29</KeyValueText>
           </KeyValueItem>
 

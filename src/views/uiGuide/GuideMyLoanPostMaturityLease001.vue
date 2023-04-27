@@ -9,6 +9,7 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import LayerMyLoanPostMaturityLeaseMethod from '@/views/myLoan/LayerMyLoanPostMaturityLeaseMethod.vue';
 import LayerMyLoanPostMaturityLeaseExtension from '@/views/myLoan/LayerMyLoanPostMaturityLeaseExtension.vue';
 import LayerMyLoanPostMaturityLeaseExtensionConfirm from '@/views/myLoan/LayerMyLoanPostMaturityLeaseExtensionConfirm.vue';
+import LayerMyLoanPostMaturityLeaseReturnComplete from '@/views/myLoan/LayerMyLoanPostMaturityLeaseReturnComplete.vue';
 import LayerMyLoanPostMaturityLeaseReturnNotice001 from '@/views/myLoan/LayerMyLoanPostMaturityLeaseReturnNotice001.vue';
 import LayerMyLoanPostMaturityLeaseReturnNotice002 from '@/views/myLoan/LayerMyLoanPostMaturityLeaseReturnNotice002.vue';
 import LayerMyLoanPostMaturityLeasePurchaseUser from '@/views/myLoan/LayerMyLoanPostMaturityLeasePurchaseUser.vue';
@@ -16,6 +17,7 @@ import LayerMyLoanPostMaturityLeasePurchaseUserConfirm from '@/views/myLoan/Laye
 import LayerMyLoanPostMaturityLeasePurchaseUserComplete from '@/views/myLoan/LayerMyLoanPostMaturityLeasePurchaseUserComplete.vue';
 import LayerMyLoanPostMaturityLeasePurchaseCompany from '@/views/myLoan/LayerMyLoanPostMaturityLeasePurchaseCompany.vue';
 import LayerMyLoanPostMaturityLeasePurchaseCompanyEstimatedCost from '@/views/myLoan/LayerMyLoanPostMaturityLeasePurchaseCompanyEstimatedCost.vue';
+import LayerMyLoanPostMaturityLeasePurchaseCompanyMethod from '@/views/myLoan/LayerMyLoanPostMaturityLeasePurchaseCompanyMethod.vue';
 import LayerMyLoanPostMaturityLeasePurchaseCompanyFormDirect from '@/views/myLoan/LayerMyLoanPostMaturityLeasePurchaseCompanyFormDirect.vue';
 import LayerMyLoanPostMaturityLeasePurchaseCompanyFormAgent from '@/views/myLoan/LayerMyLoanPostMaturityLeasePurchaseCompanyFormAgent.vue';
 import LayerMyLoanPostMaturityLeasePurchaseCompanyComplete from '@/views/myLoan/LayerMyLoanPostMaturityLeasePurchaseCompanyComplete.vue';
@@ -29,6 +31,7 @@ export default {
     LayerMyLoanPostMaturityLeaseMethod,
     LayerMyLoanPostMaturityLeaseExtension,
     LayerMyLoanPostMaturityLeaseExtensionConfirm,
+    LayerMyLoanPostMaturityLeaseReturnComplete,
     LayerMyLoanPostMaturityLeaseReturnNotice001,
     LayerMyLoanPostMaturityLeaseReturnNotice002,
     LayerMyLoanPostMaturityLeasePurchaseUser,
@@ -36,6 +39,7 @@ export default {
     LayerMyLoanPostMaturityLeasePurchaseUserComplete,
     LayerMyLoanPostMaturityLeasePurchaseCompany,
     LayerMyLoanPostMaturityLeasePurchaseCompanyEstimatedCost,
+    LayerMyLoanPostMaturityLeasePurchaseCompanyMethod,
     LayerMyLoanPostMaturityLeasePurchaseCompanyFormDirect,
     LayerMyLoanPostMaturityLeasePurchaseCompanyFormAgent,
     LayerMyLoanPostMaturityLeasePurchaseCompanyComplete,
@@ -54,6 +58,8 @@ export default {
     const layer011 = ref(null);
     const layer012 = ref(null);
     const layer013 = ref(null);
+    const layer014 = ref(null);
+    const layer015 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -94,6 +100,12 @@ export default {
     const layer013Open = (e = {}) => {
       layer013.value.layer.open(e.target);
     };
+    const layer014Open = (e = {}) => {
+      layer014.value.layer.open(e.target);
+    };
+    const layer015Open = (e = {}) => {
+      layer015.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -109,6 +121,8 @@ export default {
       layer011,
       layer012,
       layer013,
+      layer014,
+      layer015,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -122,6 +136,8 @@ export default {
       layer011Open,
       layer012Open,
       layer013Open,
+      layer014Open,
+      layer015Open,
     };
   },
 };
@@ -152,51 +168,61 @@ export default {
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer004Open">
-          (LMS) 만기후 반환 안내(국산)<br />My_M08_l013
+          반환 신청 완료<br />My_M08_l012
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer005Open">
-          (LMS) 만기후 반환 안내(수입)<br />My_M08_l014
+          (LMS) 만기후 반환 안내(국산)<br />My_M08_l013
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer006Open">
-          구매 유의사항 확인<br />My_M08_l024
+          (LMS) 만기후 반환 안내(수입)<br />My_M08_l014
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer007Open">
-          구매 정보 확인<br />My_M08_l025
+          구매 유의사항 확인<br />My_M08_l024
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer008Open">
-          신청 완료<br />My_M08_l026
+          구매 정보 확인<br />My_M08_l025
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer009Open">
-          구매 유의사항 확인<br />My_M08_l027
+          신청 완료<br />My_M08_l026
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer010Open">
-          구매예상비용 확인<br />My_M08_l028
+          구매 유의사항 확인<br />My_M08_l027
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer011Open">
-          구매 정보 입력(직접 이전)<br />My_M08_l029
+          구매예상비용 확인<br />My_M08_l028
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer012Open">
-          구매 정보 입력(이전 대행)<br />My_M08_l030
+          명의이전방법 선택 팝업<br />My_M08_b003
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer013Open">
+          구매 정보 입력(직접 이전)<br />My_M08_l029
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer014Open">
+          구매 정보 입력(이전 대행)<br />My_M08_l030
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer015Open">
           신청 완료<br />My_M08_l031
         </BasicButton>
       </ButtonListItem>
@@ -205,15 +231,17 @@ export default {
     <LayerMyLoanPostMaturityLeaseMethod ref="layer001" />
     <LayerMyLoanPostMaturityLeaseExtension ref="layer002" />
     <LayerMyLoanPostMaturityLeaseExtensionConfirm ref="layer003" />
-    <LayerMyLoanPostMaturityLeaseReturnNotice001 ref="layer004" />
-    <LayerMyLoanPostMaturityLeaseReturnNotice002 ref="layer005" />
-    <LayerMyLoanPostMaturityLeasePurchaseUser ref="layer006" />
-    <LayerMyLoanPostMaturityLeasePurchaseUserConfirm ref="layer007" />
-    <LayerMyLoanPostMaturityLeasePurchaseUserComplete ref="layer008" />
-    <LayerMyLoanPostMaturityLeasePurchaseCompany ref="layer009" />
-    <LayerMyLoanPostMaturityLeasePurchaseCompanyEstimatedCost ref="layer010" />
-    <LayerMyLoanPostMaturityLeasePurchaseCompanyFormDirect ref="layer011" />
-    <LayerMyLoanPostMaturityLeasePurchaseCompanyFormAgent ref="layer012" />
-    <LayerMyLoanPostMaturityLeasePurchaseCompanyComplete ref="layer013" />
+    <LayerMyLoanPostMaturityLeaseReturnComplete ref="layer004" />
+    <LayerMyLoanPostMaturityLeaseReturnNotice001 ref="layer005" />
+    <LayerMyLoanPostMaturityLeaseReturnNotice002 ref="layer006" />
+    <LayerMyLoanPostMaturityLeasePurchaseUser ref="layer007" />
+    <LayerMyLoanPostMaturityLeasePurchaseUserConfirm ref="layer008" />
+    <LayerMyLoanPostMaturityLeasePurchaseUserComplete ref="layer009" />
+    <LayerMyLoanPostMaturityLeasePurchaseCompany ref="layer010" />
+    <LayerMyLoanPostMaturityLeasePurchaseCompanyEstimatedCost ref="layer011" />
+    <LayerMyLoanPostMaturityLeasePurchaseCompanyMethod ref="layer012" />
+    <LayerMyLoanPostMaturityLeasePurchaseCompanyFormDirect ref="layer013" />
+    <LayerMyLoanPostMaturityLeasePurchaseCompanyFormAgent ref="layer014" />
+    <LayerMyLoanPostMaturityLeasePurchaseCompanyComplete ref="layer015" />
   </PageContents>
 </template>

@@ -6,6 +6,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
+import LayerMyLoanElectronicFinancialTransactionAgree from '@/views/myLoan/LayerMyLoanElectronicFinancialTransactionAgree.vue';
 import LayerMyLoanMaturityNotice from '@/views/myLoan/LayerMyLoanMaturityNotice.vue';
 
 export default {
@@ -14,18 +15,25 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
+    LayerMyLoanElectronicFinancialTransactionAgree,
     LayerMyLoanMaturityNotice,
   },
   setup() {
     const layer001 = ref(null);
+    const layer002 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
     };
+    const layer002Open = (e = {}) => {
+      layer002.value.layer.open(e.target);
+    };
 
     return {
       layer001,
+      layer002,
       layer001Open,
+      layer002Open,
     };
   },
 };
@@ -41,12 +49,18 @@ export default {
     >
       <ButtonListItem>
         <BasicButton @click="layer001Open">
+          전자금융거래 약관 동의 팝업<br />My_M01_b001
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer002Open">
           만기안내장<br />
           My_M08_l001
         </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
-    <LayerMyLoanMaturityNotice ref="layer001" />
+    <LayerMyLoanElectronicFinancialTransactionAgree ref="layer001" />
+    <LayerMyLoanMaturityNotice ref="layer002" />
   </PageContents>
 </template>
