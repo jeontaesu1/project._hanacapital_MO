@@ -62,7 +62,7 @@ export default {
           <li :class="$style['agree-list__all']">
             <div :class="$style['agree-list__all-head']">
               <CheckBox
-                id="LayerMyLoanAgreeAll"
+                id="layerMyLoanAgreeAll"
                 :classNames="{ wrap: $style['agree-list__all-checkbox'] }"
               >
                 <CheckBoxObject />
@@ -75,7 +75,7 @@ export default {
                 <li :class="$style['agree-list__item']">
                   <div :class="$style['agree-list__head']">
                     <CheckBox
-                      id="LayerMyLoanAgree001"
+                      id="layerMyLoanAgree001"
                       :classNames="{
                         wrap: $style['agree-list__checkbox'],
                       }"
@@ -98,7 +98,7 @@ export default {
                 <li :class="$style['agree-list__item']">
                   <div :class="$style['agree-list__head']">
                     <CheckBox
-                      id="LayerMyLoanAgree002"
+                      id="layerMyLoanAgree002"
                       :classNames="{
                         wrap: $style['agree-list__checkbox'],
                       }"

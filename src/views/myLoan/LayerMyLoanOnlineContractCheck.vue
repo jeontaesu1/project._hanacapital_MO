@@ -686,7 +686,7 @@ export default {
         </BasicBox>
 
         <CheckBox
-          id="LayerMyLoanCompatibilityAdequacyChk01"
+          id="layerMyLoanCompatibilityAdequacyChk01"
           theme="secondary"
           :classNames="{ wrap: 'row-margin-item-group' }"
         >

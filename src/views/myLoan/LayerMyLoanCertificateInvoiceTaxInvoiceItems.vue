@@ -103,7 +103,7 @@ export default {
                   <BoxCheck
                     :minSide="true"
                     name="LayerMyLoanCertificateInvoiceTaxInvoiceItemsDateCheck"
-                    id="LayerMyLoanCertificateInvoiceTaxInvoiceItemsDateCheck001"
+                    id="layerMyLoanCertificateInvoiceTaxInvoiceItemsDateCheck001"
                   >
                     <BoxCheckLabel>1개월</BoxCheckLabel>
                   </BoxCheck>
@@ -112,7 +112,7 @@ export default {
                   <BoxCheck
                     :minSide="true"
                     name="LayerMyLoanCertificateInvoiceTaxInvoiceItemsDateCheck"
-                    id="LayerMyLoanCertificateInvoiceTaxInvoiceItemsDateCheck002"
+                    id="layerMyLoanCertificateInvoiceTaxInvoiceItemsDateCheck002"
                   >
                     <BoxCheckLabel>3개월</BoxCheckLabel>
                   </BoxCheck>
@@ -121,7 +121,7 @@ export default {
                   <BoxCheck
                     :minSide="true"
                     name="LayerMyLoanCertificateInvoiceTaxInvoiceItemsDateCheck"
-                    id="LayerMyLoanCertificateInvoiceTaxInvoiceItemsDateCheck003"
+                    id="layerMyLoanCertificateInvoiceTaxInvoiceItemsDateCheck003"
                   >
                     <BoxCheckLabel>6개월</BoxCheckLabel>
                   </BoxCheck>
@@ -130,7 +130,7 @@ export default {
                   <BoxCheck
                     :minSide="true"
                     name="LayerMyLoanCertificateInvoiceTaxInvoiceItemsDateCheck"
-                    id="LayerMyLoanCertificateInvoiceTaxInvoiceItemsDateCheck004"
+                    id="layerMyLoanCertificateInvoiceTaxInvoiceItemsDateCheck004"
                   >
                     <BoxCheckLabel>1년</BoxCheckLabel>
                   </BoxCheck>
@@ -140,7 +140,7 @@ export default {
                 <InputBlockCell :flexible="true">
                   <BasicDatepicker
                     title="조회기간 시작 날짜"
-                    id="LayerMyLoanCertificateInvoiceTaxInvoiceItemsDateStart"
+                    id="layerMyLoanCertificateInvoiceTaxInvoiceItemsDateStart"
                     buttonId="LayerMyLoanCertificateInvoiceTaxInvoiceItemsDateStartButton"
                     :max="state.maxDate"
                     v-model="state.minDate"
@@ -152,7 +152,7 @@ export default {
                 <InputBlockCell :flexible="true" margin="regular">
                   <BasicDatepicker
                     title="조회기간 종료 날짜"
-                    id="LayerMyLoanCertificateInvoiceTaxInvoiceItemsDateEnd"
+                    id="layerMyLoanCertificateInvoiceTaxInvoiceItemsDateEnd"
                     buttonId="LayerMyLoanCertificateInvoiceTaxInvoiceItemsDateEndButton"
                     :min="state.minDate"
                     v-model="state.maxDate"
@@ -181,7 +181,7 @@ export default {
           <!-- Case : 리스트가 있는 경우 -->
           <div class="flex-box__cell">
             <CheckBox
-              id="LayerMyLoanCertificateInvoiceTaxInvoiceItemsAll"
+              id="layerMyLoanCertificateInvoiceTaxInvoiceItemsAll"
               theme="tertiary"
             >
               <CheckBoxObject />

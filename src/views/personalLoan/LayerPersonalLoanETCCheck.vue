@@ -109,7 +109,7 @@ export default {
             <BoxCheck
               :contents="true"
               name="LayerPersonalLoanETCCheckType"
-              id="LayerPersonalLoanETCCheckType_001"
+              id="layerPersonalLoanETCCheckType_001"
               :defaultChecked="true"
             >
               <BoxCheckLabel>e하나신용대출</BoxCheckLabel>
@@ -143,7 +143,7 @@ export default {
             <BoxCheck
               :contents="true"
               name="LayerPersonalLoanETCCheckType"
-              id="LayerPersonalLoanETCCheckType_002"
+              id="layerPersonalLoanETCCheckType_002"
             >
               <BoxCheckLabel
                 :classNames="{
@@ -181,7 +181,7 @@ export default {
             <BoxCheck
               :contents="true"
               name="LayerPersonalLoanETCCheckType"
-              id="LayerPersonalLoanETCCheckType_003"
+              id="layerPersonalLoanETCCheckType_003"
             >
               <BoxCheckLabel
                 :classNames="{

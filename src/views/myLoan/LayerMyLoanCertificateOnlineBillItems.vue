@@ -105,7 +105,7 @@ export default {
                   <BoxCheck
                     :minSide="true"
                     name="LayerMyLoanCertificateOnlineBillItemsDateCheck"
-                    id="LayerMyLoanCertificateOnlineBillItemsDateCheck001"
+                    id="layerMyLoanCertificateOnlineBillItemsDateCheck001"
                   >
                     <BoxCheckLabel>1개월</BoxCheckLabel>
                   </BoxCheck>
@@ -114,7 +114,7 @@ export default {
                   <BoxCheck
                     :minSide="true"
                     name="LayerMyLoanCertificateOnlineBillItemsDateCheck"
-                    id="LayerMyLoanCertificateOnlineBillItemsDateCheck002"
+                    id="layerMyLoanCertificateOnlineBillItemsDateCheck002"
                   >
                     <BoxCheckLabel>3개월</BoxCheckLabel>
                   </BoxCheck>
@@ -123,7 +123,7 @@ export default {
                   <BoxCheck
                     :minSide="true"
                     name="LayerMyLoanCertificateOnlineBillItemsDateCheck"
-                    id="LayerMyLoanCertificateOnlineBillItemsDateCheck003"
+                    id="layerMyLoanCertificateOnlineBillItemsDateCheck003"
                   >
                     <BoxCheckLabel>6개월</BoxCheckLabel>
                   </BoxCheck>
@@ -132,7 +132,7 @@ export default {
                   <BoxCheck
                     :minSide="true"
                     name="LayerMyLoanCertificateOnlineBillItemsDateCheck"
-                    id="LayerMyLoanCertificateOnlineBillItemsDateCheck004"
+                    id="layerMyLoanCertificateOnlineBillItemsDateCheck004"
                   >
                     <BoxCheckLabel>1년</BoxCheckLabel>
                   </BoxCheck>
@@ -142,7 +142,7 @@ export default {
                 <InputBlockCell :flexible="true">
                   <BasicDatepicker
                     title="조회기간 시작 날짜"
-                    id="LayerMyLoanCertificateOnlineBillItemsDateStart"
+                    id="layerMyLoanCertificateOnlineBillItemsDateStart"
                     buttonId="LayerMyLoanCertificateOnlineBillItemsDateStartButton"
                     :max="state.maxDate"
                     v-model="state.minDate"
@@ -154,7 +154,7 @@ export default {
                 <InputBlockCell :flexible="true" margin="regular">
                   <BasicDatepicker
                     title="조회기간 종료 날짜"
-                    id="LayerMyLoanCertificateOnlineBillItemsDateEnd"
+                    id="layerMyLoanCertificateOnlineBillItemsDateEnd"
                     buttonId="LayerMyLoanCertificateOnlineBillItemsDateEndButton"
                     :min="state.minDate"
                     v-model="state.maxDate"
@@ -183,7 +183,7 @@ export default {
           <!-- Case : 리스트가 있는 경우 -->
           <div class="flex-box__cell">
             <CheckBox
-              id="LayerMyLoanCertificateOnlineBillItemsAll"
+              id="layerMyLoanCertificateOnlineBillItemsAll"
               theme="tertiary"
             >
               <CheckBoxObject />
@@ -197,7 +197,7 @@ export default {
         <ul :class="$style['bill-list']">
           <li :class="$style['bill-list__item']">
             <CheckBox
-              id="LayerMyLoanCertificateOnlineBillItemsCount01"
+              id="layerMyLoanCertificateOnlineBillItemsCount01"
               theme="secondary"
               full="true"
             >
@@ -231,7 +231,7 @@ export default {
           </li>
           <li :class="$style['bill-list__item']">
             <CheckBox
-              id="LayerMyLoanCertificateOnlineBillItemsCount02"
+              id="layerMyLoanCertificateOnlineBillItemsCount02"
               theme="secondary"
               full="true"
             >
@@ -258,7 +258,7 @@ export default {
           </li>
           <li :class="$style['bill-list__item']">
             <CheckBox
-              id="LayerMyLoanCertificateOnlineBillItemsCount03"
+              id="layerMyLoanCertificateOnlineBillItemsCount03"
               theme="secondary"
               full="true"
             >

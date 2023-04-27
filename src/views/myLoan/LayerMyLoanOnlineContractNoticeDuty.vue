@@ -204,7 +204,7 @@ export default {
       </BasicBox>
 
       <CheckBox
-        id="LayerMyLoanNoticeDutyChk01"
+        id="layerMyLoanNoticeDutyChk01"
         theme="secondary"
         :classNames="{ wrap: $style['chk'] }"
       >

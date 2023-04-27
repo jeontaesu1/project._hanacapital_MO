@@ -126,7 +126,7 @@ export default {
         <ul class="reset-list">
           <li class="row-margin-item-medium">
             <CheckBox
-              id="LayerAutoLeaseOrderCarNumberCheckBox1"
+              id="layerAutoLeaseOrderCarNumberCheckBox1"
               theme="tertiary"
             >
               <CheckBoxObject />
@@ -135,7 +135,7 @@ export default {
           </li>
           <li class="row-margin-item-medium">
             <CheckBox
-              id="LayerAutoLeaseOrderCarNumberCheckBox2"
+              id="layerAutoLeaseOrderCarNumberCheckBox2"
               theme="tertiary"
             >
               <CheckBoxObject />
