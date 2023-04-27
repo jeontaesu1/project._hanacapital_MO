@@ -51,7 +51,7 @@ export default {
           <div
             :class="[
               $style['logs__block'],
-              $style['logs__block--gray'],
+              $style['logs__block--secondary'],
               $style['logs__block--regular'],
             ]"
           >
@@ -61,7 +61,7 @@ export default {
               </div>
               <div :class="$style['logs__right']">
                 <button type="button" :class="$style['logs__link']">
-                  <span :class="$style['logs__link-text']">상세보기</span>
+                  <span :class="$style['logs__link-text']">바로가기</span>
                 </button>
               </div>
             </div>
@@ -71,7 +71,7 @@ export default {
           <div
             :class="[
               $style['logs__block'],
-              $style['logs__block--gray'],
+              $style['logs__block--secondary'],
               $style['logs__block--regular'],
             ]"
           >
@@ -81,7 +81,7 @@ export default {
               </div>
               <div :class="$style['logs__right']">
                 <button type="button" :class="$style['logs__link']">
-                  <span :class="$style['logs__link-text']">상세보기</span>
+                  <span :class="$style['logs__link-text']">바로가기</span>
                 </button>
               </div>
             </div>
@@ -91,7 +91,7 @@ export default {
           <div
             :class="[
               $style['logs__block'],
-              $style['logs__block--gray'],
+              $style['logs__block--secondary'],
               $style['logs__block--regular'],
             ]"
           >
@@ -101,7 +101,7 @@ export default {
               </div>
               <div :class="$style['logs__right']">
                 <button type="button" :class="$style['logs__link']">
-                  <span :class="$style['logs__link-text']">상세보기</span>
+                  <span :class="$style['logs__link-text']">바로가기</span>
                 </button>
               </div>
             </div>
@@ -111,7 +111,7 @@ export default {
           <div
             :class="[
               $style['logs__block'],
-              $style['logs__block--gray'],
+              $style['logs__block--secondary'],
               $style['logs__block--regular'],
             ]"
           >
@@ -123,7 +123,7 @@ export default {
               </div>
               <div :class="$style['logs__right']">
                 <button type="button" :class="$style['logs__link']">
-                  <span :class="$style['logs__link-text']">상세보기</span>
+                  <span :class="$style['logs__link-text']">바로가기</span>
                 </button>
               </div>
             </div>
@@ -133,7 +133,7 @@ export default {
           <div
             :class="[
               $style['logs__block'],
-              $style['logs__block--gray'],
+              $style['logs__block--secondary'],
               $style['logs__block--regular'],
             ]"
           >
@@ -143,7 +143,7 @@ export default {
               </div>
               <div :class="$style['logs__right']">
                 <button type="button" :class="$style['logs__link']">
-                  <span :class="$style['logs__link-text']">상세보기</span>
+                  <span :class="$style['logs__link-text']">바로가기</span>
                 </button>
               </div>
             </div>
@@ -153,7 +153,7 @@ export default {
           <div
             :class="[
               $style['logs__block'],
-              $style['logs__block--gray'],
+              $style['logs__block--secondary'],
               $style['logs__block--regular'],
             ]"
           >
@@ -165,7 +165,7 @@ export default {
               </div>
               <div :class="$style['logs__right']">
                 <button type="button" :class="$style['logs__link']">
-                  <span :class="$style['logs__link-text']">상세보기</span>
+                  <span :class="$style['logs__link-text']">바로가기</span>
                 </button>
               </div>
             </div>
@@ -175,7 +175,7 @@ export default {
           <div
             :class="[
               $style['logs__block'],
-              $style['logs__block--gray'],
+              $style['logs__block--secondary'],
               $style['logs__block--regular'],
             ]"
           >
@@ -187,7 +187,7 @@ export default {
               </div>
               <div :class="$style['logs__right']">
                 <button type="button" :class="$style['logs__link']">
-                  <span :class="$style['logs__link-text']">상세보기</span>
+                  <span :class="$style['logs__link-text']">바로가기</span>
                 </button>
               </div>
             </div>
@@ -197,7 +197,7 @@ export default {
           <div
             :class="[
               $style['logs__block'],
-              $style['logs__block--gray'],
+              $style['logs__block--secondary'],
               $style['logs__block--regular'],
             ]"
           >
@@ -209,7 +209,7 @@ export default {
               </div>
               <div :class="$style['logs__right']">
                 <button type="button" :class="$style['logs__link']">
-                  <span :class="$style['logs__link-text']">상세보기</span>
+                  <span :class="$style['logs__link-text']">바로가기</span>
                 </button>
               </div>
             </div>
@@ -219,7 +219,7 @@ export default {
           <div
             :class="[
               $style['logs__block'],
-              $style['logs__block--gray'],
+              $style['logs__block--secondary'],
               $style['logs__block--regular'],
             ]"
           >
@@ -229,7 +229,7 @@ export default {
               </div>
               <div :class="$style['logs__right']">
                 <button type="button" :class="$style['logs__link']">
-                  <span :class="$style['logs__link-text']">상세보기</span>
+                  <span :class="$style['logs__link-text']">바로가기</span>
                 </button>
               </div>
             </div>
@@ -239,7 +239,7 @@ export default {
           <div
             :class="[
               $style['logs__block'],
-              $style['logs__block--gray'],
+              $style['logs__block--secondary'],
               $style['logs__block--regular'],
             ]"
           >
@@ -249,7 +249,7 @@ export default {
               </div>
               <div :class="$style['logs__right']">
                 <button type="button" :class="$style['logs__link']">
-                  <span :class="$style['logs__link-text']">상세보기</span>
+                  <span :class="$style['logs__link-text']">바로가기</span>
                 </button>
               </div>
             </div>

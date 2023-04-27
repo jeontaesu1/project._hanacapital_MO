@@ -51,15 +51,15 @@ export default {
     BasicSelect,
   },
   setup() {
-    const layer = ref(null);
-
     const state = reactive({
       mailError: false,
     });
 
+    const layer = ref(null);
+
     return {
-      layer,
       state,
+      layer,
     };
   },
 };
@@ -115,7 +115,7 @@ export default {
       </BoxCheckList>
 
       <!-- Case: 직접 입력 선택시 -->
-      <FormList class="row-margin-item-group">
+      <FormList :classNames="{ wrap: 'row-margin-item-group' }">
         <FormListItem
           titleText="이메일"
           target="#LayerMyLoanCertificateRepaymentEmailId"
@@ -174,6 +174,7 @@ export default {
                 />
               </InputBlockCell>
             </InputBlock>
+            <!-- Case : 직접입력 선택 시 노출 -->
             <InputBlock
               :error="state.mailError"
               :classNames="{
@@ -187,6 +188,7 @@ export default {
                 />
               </InputBlockCell>
             </InputBlock>
+            <!-- // Case : 직접입력 선택 시 노출 -->
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>

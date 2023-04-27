@@ -84,7 +84,7 @@ export default {
         <KeyValue margin="regular">
           <KeyValueItem class="text-body-3">
             <KeyValueTitle>만기일자</KeyValueTitle>
-            <KeyValueText> 2023.01.05 </KeyValueText>
+            <KeyValueText>2023.01.05</KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem class="text-body-3">
@@ -95,66 +95,68 @@ export default {
       </BasicBox>
 
       <div class="row-margin-container-medium">
-        <h3 class="text-title-2 row-margin-contents">구매 예상 정산 비용</h3>
-        <BasicBox>
-          <BasicBoxHead>
-            <BasicBoxHeadLeft>
-              <h3 class="text-body-1 font-weight-medium">
-                예상비용 (입금/지급)
-              </h3>
-            </BasicBoxHeadLeft>
-            <BasicBoxHeadRight>
-              <UnitText rightUnit="원" align="right">99,999,999</UnitText>
-            </BasicBoxHeadRight>
-          </BasicBoxHead>
-          <KeyValue margin="regular">
-            <KeyValueItem class="text-body-3">
-              <KeyValueTitle>제세금(a)</KeyValueTitle>
-              <KeyValueText>0 원</KeyValueText>
-            </KeyValueItem>
+        <section class="row-margin-container-medium">
+          <h3 class="text-title-2 row-margin-contents">구매 예상 정산 비용</h3>
+          <BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-body-1 font-weight-medium">
+                  예상비용 (입금/지급)
+                </h3>
+              </BasicBoxHeadLeft>
+              <BasicBoxHeadRight>
+                <UnitText rightUnit="원" align="right">99,999,999</UnitText>
+              </BasicBoxHeadRight>
+            </BasicBoxHead>
+            <KeyValue margin="regular">
+              <KeyValueItem class="text-body-3">
+                <KeyValueTitle>제세금(a)</KeyValueTitle>
+                <KeyValueText>0 원</KeyValueText>
+              </KeyValueItem>
 
-            <KeyValueItem class="text-body-3">
-              <KeyValueTitle>보증금(b)</KeyValueTitle>
-              <KeyValueText>99,999,999 원</KeyValueText>
-            </KeyValueItem>
+              <KeyValueItem class="text-body-3">
+                <KeyValueTitle>보증금(b)</KeyValueTitle>
+                <KeyValueText>99,999,999 원</KeyValueText>
+              </KeyValueItem>
 
-            <KeyValueItem class="text-body-3">
-              <KeyValueTitle>잔존가치(c)</KeyValueTitle>
-              <KeyValueText>99,999,999 원</KeyValueText>
-            </KeyValueItem>
-          </KeyValue>
+              <KeyValueItem class="text-body-3">
+                <KeyValueTitle>잔존가치(c)</KeyValueTitle>
+                <KeyValueText>99,999,999 원</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
 
-          <BasicHr
-            theme="quaternary"
-            type="contents"
-            class="row-margin-contents-small"
-          />
+            <BasicHr
+              theme="quaternary"
+              type="contents"
+              class="row-margin-contents-small"
+            />
 
-          <KeyValue>
-            <KeyValueItem class="text-body-3">
-              <KeyValueTitle>합계 (a-b+c)</KeyValueTitle>
-              <KeyValueText>99,999,999 원</KeyValueText>
-            </KeyValueItem>
-          </KeyValue>
-        </BasicBox>
+            <KeyValue>
+              <KeyValueItem class="text-body-3">
+                <KeyValueTitle>합계 (a-b+c)</KeyValueTitle>
+                <KeyValueText>99,999,999 원</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </BasicBox>
 
-        <NoticeText :classNames="{ wrap: 'row-margin-item-group' }">
-          정산금액은 (만기일자) 기준으로 기준일자에 따라 변경될 수 있습니다.
-        </NoticeText>
-      </div>
+          <NoticeText :classNames="{ wrap: 'row-margin-item-group' }">
+            정산금액은 (만기일자) 기준으로 기준일자에 따라 변경될 수 있습니다.
+          </NoticeText>
+        </section>
 
-      <div>
-        <h3 class="text-title-2 row-margin-contents">
-          세금계산서 발행 금액(잔존가치)
-        </h3>
-        <BasicBox>
-          <KeyValue margin="regular">
-            <KeyValueItem class="text-body-3">
-              <KeyValueTitle>잔존가치</KeyValueTitle>
-              <KeyValueText>99,999,999 원</KeyValueText>
-            </KeyValueItem>
-          </KeyValue>
-        </BasicBox>
+        <section class="row-margin-container-medium">
+          <h3 class="text-title-2 row-margin-contents">
+            세금계산서 발행 금액(잔존가치)
+          </h3>
+          <BasicBox>
+            <KeyValue margin="regular">
+              <KeyValueItem class="text-body-3">
+                <KeyValueTitle>잔존가치</KeyValueTitle>
+                <KeyValueText>99,999,999 원</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </BasicBox>
+        </section>
       </div>
 
       <template v-slot:foot>

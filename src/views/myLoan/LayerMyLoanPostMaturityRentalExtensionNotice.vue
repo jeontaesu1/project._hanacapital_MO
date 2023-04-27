@@ -48,7 +48,7 @@ export default {
       </template>
 
       <div>
-        <section class="row-margin-contents-group">
+        <section>
           <h3 class="text-body-2 row-margin-item-medium">안내사항</h3>
 
           <ul
@@ -124,19 +124,19 @@ export default {
         </section>
       </div>
 
-      <template v-slot:foot>
+      <div :class="$style['bottom']">
         <BasicHr
           type="contents"
           theme="quaternary"
           className="row-margin-container"
         />
 
-        <div :class="[$style['icon-list'], $style['bottom-list']]">
+        <div :class="$style['icon-list']">
           <ul :class="$style['icon-list__list']">
             <li :class="$style['icon-list__item']">
               <div :class="$style['icon-list__block']">
                 <div :class="$style['icon-list__icon']"><IconCustomer /></div>
-                <div :class="$style['icon-list_›_content']">
+                <div :class="$style['icon-list__content']">
                   <div :class="$style['icon-list__title']">재렌트 상담</div>
                   <div
                     :class="[$style['icon-list__text'], 'font-weight-light']"
@@ -161,7 +161,7 @@ export default {
             </li>
           </ul>
         </div>
-      </template>
+      </div>
     </FullPopup>
   </UiLayer>
 </template>
