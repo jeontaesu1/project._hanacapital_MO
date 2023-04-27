@@ -1391,8 +1391,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/my-loan-home-001',
-        status: '',
-        create: '',
+        status: 'partend',
+        create: '2023.04.28',
         log: [],
       },
       {
@@ -1715,8 +1715,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/my-loan-certificate-001',
-        status: '',
-        create: '',
+        status: 'partend',
+        create: '2023.04.28',
         log: [],
       },
       {
@@ -1770,8 +1770,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/my-loan-post-maturity-rental-001',
-        status: '',
-        create: '',
+        status: 'partend',
+        create: '2023.04.28',
         log: [],
       },
       {
@@ -1803,8 +1803,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/my-loan-post-maturity-lease-001',
-        status: '',
-        create: '',
+        status: 'partend',
+        create: '2023.04.28',
         log: [],
       },
       {
