@@ -13,6 +13,8 @@ import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
+import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
+import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 import BoxCheck from '@/components/ui/form/BoxCheck.vue';
 import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
 import BoxCheckObject from '@/components/ui/form/BoxCheckObject.vue';
@@ -40,6 +42,8 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicButton,
+    BoxCheckList,
+    BoxCheckListItem,
     BoxCheck,
     BoxCheckLabel,
     BoxCheckObject,
@@ -90,121 +94,124 @@ export default {
         </CheckBox>
       </div>
 
-      <div class="row-margin-item">
-        <!-- Case : 리스트가 있는 경우 -->
-        <BoxCheck
-          :contents="true"
-          align="top"
-          type="checkbox"
-          id="LayerMyLoanCertificateStockLoanList_001"
-          :classNames="{
-            wrap: 'row-margin-item',
-          }"
-        >
-          <BasicBoxHead>
-            <BasicBoxHeadLeft>
-              <div class="flex-box align-items-start">
-                <div class="flex-box__cell"><BoxCheckObject /></div>
-                <div class="flex-box__cell flex-box__cell--small flex-1">
-                  <BoxCheckLabel :classNames="{ label: 'text-body-1' }">
-                    스탁론
-                  </BoxCheckLabel>
-                  <div class="text-body-4 color-gray row-margin-small">
-                    하나증권 ###-###-#######
+      <!-- Case : 리스트가 있는 경우 -->
+      <BoxCheckList
+        align="full"
+        :classNames="{
+          wrap: 'row-margin-item',
+        }"
+      >
+        <BoxCheckListItem>
+          <BoxCheck
+            :contents="true"
+            align="top"
+            type="checkbox"
+            id="LayerMyLoanCertificateStockLoanList_001"
+          >
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <div class="flex-box align-items-start">
+                  <div class="flex-box__cell"><BoxCheckObject /></div>
+                  <div class="flex-box__cell flex-box__cell--small flex-1">
+                    <BoxCheckLabel :classNames="{ label: 'text-body-1' }">
+                      스탁론
+                    </BoxCheckLabel>
+                    <div class="text-body-4 color-gray row-margin-small">
+                      하나증권 ###-###-#######
+                    </div>
                   </div>
                 </div>
-              </div>
-            </BasicBoxHeadLeft>
-            <BasicBoxHeadRight>
-              <RoundStatus :classNames="{ wrap: 'display-block' }">
-                종료
-              </RoundStatus>
-            </BasicBoxHeadRight>
-          </BasicBoxHead>
-          <KeyValue>
-            <KeyValueItem>
-              <KeyValueTitle>결제예정금액</KeyValueTitle>
-              <KeyValueText>999,999 원</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem>
-              <KeyValueTitle>결제일</KeyValueTitle>
-              <KeyValueText>2021.02.02 (매월 2일)</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem>
-              <KeyValueTitle>결제회차</KeyValueTitle>
-              <KeyValueText
-                :classNames="{ text: 'color-green font-weight-medium' }"
-              >
-                16/60
-              </KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem>
-              <KeyValueTitle>결제예정금액</KeyValueTitle>
-              <KeyValueText>8,000,000 원</KeyValueText>
-            </KeyValueItem>
-          </KeyValue>
-        </BoxCheck>
+              </BasicBoxHeadLeft>
+              <BasicBoxHeadRight>
+                <RoundStatus :classNames="{ wrap: 'display-block' }">
+                  종료
+                </RoundStatus>
+              </BasicBoxHeadRight>
+            </BasicBoxHead>
+            <KeyValue>
+              <KeyValueItem>
+                <KeyValueTitle>결제예정금액</KeyValueTitle>
+                <KeyValueText>999,999 원</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>결제일</KeyValueTitle>
+                <KeyValueText>2021.02.02 (매월 2일)</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>결제회차</KeyValueTitle>
+                <KeyValueText
+                  :classNames="{ text: 'color-green font-weight-medium' }"
+                >
+                  16/60
+                </KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>결제예정금액</KeyValueTitle>
+                <KeyValueText>8,000,000 원</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </BoxCheck>
+        </BoxCheckListItem>
 
-        <BoxCheck
-          :contents="true"
-          align="top"
-          type="checkbox"
-          id="LayerMyLoanCertificateStockLoanList_002"
-          :classNames="{
-            wrap: 'row-margin-item',
-          }"
-        >
-          <BasicBoxHead>
-            <BasicBoxHeadLeft>
-              <div class="flex-box align-items-start">
-                <div class="flex-box__cell"><BoxCheckObject /></div>
-                <div class="flex-box__cell flex-box__cell--small flex-1">
-                  <BoxCheckLabel :classNames="{ label: 'text-body-1' }">
-                    스탁론
-                  </BoxCheckLabel>
-                  <div class="text-body-4 color-gray row-margin-small">
-                    하나증권 ###-###-#######
+        <BoxCheckListItem>
+          <BoxCheck
+            :contents="true"
+            align="top"
+            type="checkbox"
+            id="LayerMyLoanCertificateStockLoanList_002"
+          >
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <div class="flex-box align-items-start">
+                  <div class="flex-box__cell"><BoxCheckObject /></div>
+                  <div class="flex-box__cell flex-box__cell--small flex-1">
+                    <BoxCheckLabel :classNames="{ label: 'text-body-1' }">
+                      스탁론
+                    </BoxCheckLabel>
+                    <div class="text-body-4 color-gray row-margin-small">
+                      하나증권 ###-###-#######
+                    </div>
                   </div>
                 </div>
-              </div>
-            </BasicBoxHeadLeft>
-            <BasicBoxHeadRight>
-              <RoundStatus :classNames="{ wrap: 'display-block' }">
-                종료
-              </RoundStatus>
-            </BasicBoxHeadRight>
-          </BasicBoxHead>
-          <KeyValue>
-            <KeyValueItem>
-              <KeyValueTitle>결제예정금액</KeyValueTitle>
-              <KeyValueText>999,999 원</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem>
-              <KeyValueTitle>결제일</KeyValueTitle>
-              <KeyValueText>2021.02.02 (매월 2일)</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem>
-              <KeyValueTitle>결제회차</KeyValueTitle>
-              <KeyValueText
-                :classNames="{ text: 'color-green font-weight-medium' }"
-              >
-                16/60
-              </KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem>
-              <KeyValueTitle>결제예정금액</KeyValueTitle>
-              <KeyValueText>8,000,000 원</KeyValueText>
-            </KeyValueItem>
-          </KeyValue>
-        </BoxCheck>
-        <!-- //Case : 리스트가 있는 경우 -->
+              </BasicBoxHeadLeft>
+              <BasicBoxHeadRight>
+                <RoundStatus :classNames="{ wrap: 'display-block' }">
+                  종료
+                </RoundStatus>
+              </BasicBoxHeadRight>
+            </BasicBoxHead>
+            <KeyValue>
+              <KeyValueItem>
+                <KeyValueTitle>결제예정금액</KeyValueTitle>
+                <KeyValueText>999,999 원</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>결제일</KeyValueTitle>
+                <KeyValueText>2021.02.02 (매월 2일)</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>결제회차</KeyValueTitle>
+                <KeyValueText
+                  :classNames="{ text: 'color-green font-weight-medium' }"
+                >
+                  16/60
+                </KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>결제예정금액</KeyValueTitle>
+                <KeyValueText>8,000,000 원</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </BoxCheck>
+        </BoxCheckListItem>
+      </BoxCheckList>
+      <!-- //Case : 리스트가 있는 경우 -->
 
-        <!-- Case : 리스트가 없는 경우 -->
-        <div :class="$style['empty']">
-          <p :class="$style['empty__text']">발급 가능한 계약이 없습니다.</p>
-        </div>
-        <!-- Case : 리스트가 없는 경우 -->
+      <!-- Case : 리스트가 없는 경우 -->
+      <div :class="$style['empty']">
+        <p :class="$style['empty__text']">발급 가능한 계약이 없습니다.</p>
       </div>
+      <!-- Case : 리스트가 없는 경우 -->
 
       <template v-slot:foot>
         <!-- Case : 리스트가 있는 경우 -->
