@@ -128,7 +128,7 @@ export default {
       <li v-for="i in 4" :key="i" :class="$style['logs__item']">
         <div :class="$style['logs__block']">
           <div :class="$style['logs__row']">
-            <div div :class="$style['logs__contents']">
+            <div :class="$style['logs__contents']">
               <h3 :class="$style['logs__title']">
                 어린이 보호구역 과속 및 신호위반 관련 과태료 청구
               </h3>
@@ -144,7 +144,7 @@ export default {
                 </KeyValueItem>
               </KeyValue>
             </div>
-            <div div :class="$style['logs__right']">
+            <div :class="$style['logs__right']">
               <button
                 type="button"
                 :class="$style['logs__link']"

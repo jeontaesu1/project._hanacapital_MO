@@ -277,7 +277,7 @@ export default {
 
         <!-- Case : 연체 -->
         <li class="row-margin-item-group">
-          <BasicBox class="row-margin-item-group">
+          <BasicBox className="row-margin-item-group">
             <BasicBoxHead>
               <BasicBoxHeadLeft>
                 <h3 class="text-body-1 font-weight-medium">10나 8941</h3>

@@ -83,12 +83,12 @@ export default {
         <li :class="$style['logs__item']">
           <div :class="$style['logs__block']">
             <div :class="$style['logs__row']">
-              <div div :class="$style['logs__contents']">
+              <div :class="$style['logs__contents']">
                 <h3 class="text-body-2 font-weight-medium">
                   승인조건으로 재견적 하기
                 </h3>
               </div>
-              <div div :class="$style['logs__right']">
+              <div :class="$style['logs__right']">
                 <button type="button" :class="$style['logs__link']">
                   <span :class="$style['logs__link-text']">진행하기</span>
                 </button>

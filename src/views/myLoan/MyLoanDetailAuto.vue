@@ -107,7 +107,7 @@ export default {
           </div>
         </div>
         <div class="row-margin-contents">
-          <BasicBox class="row-margin-item-group">
+          <BasicBox className="row-margin-item-group">
             <BasicBoxHead>
               <BasicBoxHeadLeft>
                 <div class="text-body-1 font-weight-medium">결제예정금액</div>
@@ -183,7 +183,7 @@ export default {
           </div>
         </div>
         <div class="row-margin-contents">
-          <BasicBox class="row-margin-item-group">
+          <BasicBox className="row-margin-item-group">
             <BasicBoxHead>
               <BasicBoxHeadLeft>
                 <div class="text-body-1 font-weight-medium">결제예정금액</div>
@@ -268,7 +268,7 @@ export default {
             </KeyValue>
           </BasicBox>
 
-          <BasicBox class="row-margin-item-group">
+          <BasicBox className="row-margin-item-group">
             <BasicBoxHead>
               <BasicBoxHeadLeft>
                 <div class="text-body-1 font-weight-medium">결제예정금액</div>
@@ -357,7 +357,7 @@ export default {
             </KeyValue>
           </BasicBox>
 
-          <BasicBox class="row-margin-item-group">
+          <BasicBox className="row-margin-item-group">
             <BasicBoxHead>
               <BasicBoxHeadLeft>
                 <div class="text-body-1 font-weight-medium">결제예정금액</div>
@@ -438,7 +438,7 @@ export default {
             </KeyValue>
           </BasicBox>
 
-          <BasicBox class="row-margin-item-group">
+          <BasicBox className="row-margin-item-group">
             <BasicBoxHead>
               <BasicBoxHeadLeft>
                 <div class="text-body-1 font-weight-medium">결제예정금액</div>
@@ -519,7 +519,7 @@ export default {
             </KeyValue>
           </BasicBox>
 
-          <BasicBox class="row-margin-item-group">
+          <BasicBox className="row-margin-item-group">
             <BasicBoxHead>
               <BasicBoxHeadLeft>
                 <div class="text-body-1 font-weight-medium">결제예정금액</div>
@@ -600,7 +600,7 @@ export default {
             </KeyValue>
           </BasicBox>
 
-          <BasicBox class="row-margin-item-group">
+          <BasicBox className="row-margin-item-group">
             <BasicBoxHead>
               <BasicBoxHeadLeft>
                 <div class="text-body-1 font-weight-medium">결제예정금액</div>
@@ -678,7 +678,7 @@ export default {
         총 999,999,999 원
       </div>
 
-      <BasicBox class="row-margin-contents">
+      <BasicBox className="row-margin-contents">
         <UiAccordion tagName="div">
           <KeyValue margin="regular">
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
@@ -768,10 +768,10 @@ export default {
         <li :class="$style['logs__item']">
           <div :class="$style['logs__block']">
             <div :class="$style['logs__row']">
-              <div div :class="$style['logs__contents']">
+              <div :class="$style['logs__contents']">
                 <h3 class="text-body-1 font-weight-medium">결제/청구정보</h3>
               </div>
-              <div div :class="$style['logs__right']">
+              <div :class="$style['logs__right']">
                 <button type="button" :class="$style['logs__link']">
                   <span :class="$style['logs__link-text']">상세보기</span>
                 </button>

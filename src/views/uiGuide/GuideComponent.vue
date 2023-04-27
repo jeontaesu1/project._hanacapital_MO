@@ -5122,7 +5122,7 @@ export default {
           <li v-for="i in 2" :key="i" :class="$style['logs__item']">
             <div :class="$style['logs__block']">
               <div :class="$style['logs__row']">
-                <div div :class="$style['logs__contents']">
+                <div :class="$style['logs__contents']">
                   <h3 :class="$style['logs__title']">정비</h3>
                   <KeyValue align="left" size="regular" margin="mini">
                     <KeyValueItem :classNames="{ item: 'text-body-4' }">
@@ -5136,7 +5136,7 @@ export default {
                     </KeyValueItem>
                   </KeyValue>
                 </div>
-                <div div :class="$style['logs__right']">
+                <div :class="$style['logs__right']">
                   <button
                     type="button"
                     :class="$style['logs__link']"
@@ -5157,14 +5157,14 @@ export default {
           <li :class="$style['logs__item']">
             <div :class="$style['logs__block']">
               <div :class="$style['logs__row']">
-                <div div :class="$style['logs__contents']">
+                <div :class="$style['logs__contents']">
                   <h3 class="text-body-1 font-weight-medium">스탁론</h3>
                   <div class="text-body-4 color-gray row-margin-mini">
                     하나증권 12-3456-7890123
                   </div>
                 </div>
                 <RoundStatus theme="secondary">D-7</RoundStatus>
-                <div div :class="$style['logs__right']">
+                <div :class="$style['logs__right']">
                   <button type="button" :class="$style['logs__link']">
                     <span :class="$style['logs__link-text']">상세보기</span>
                   </button>
@@ -5212,12 +5212,12 @@ export default {
           <li :class="$style['logs__item']">
             <div :class="[$style['logs__block'], $style['logs__block--small']]">
               <div :class="$style['logs__row']">
-                <div div :class="$style['logs__contents']">
+                <div :class="$style['logs__contents']">
                   <h3 class="text-body-3 font-weight-regular">
                     금리인하요구권 안내
                   </h3>
                 </div>
-                <div div :class="$style['logs__right']">
+                <div :class="$style['logs__right']">
                   <button type="button" :class="$style['logs__link']">
                     <span :class="$style['logs__link-text']">상세보기</span>
                   </button>
@@ -5228,12 +5228,12 @@ export default {
           <li :class="$style['logs__item']">
             <div :class="[$style['logs__block'], $style['logs__block--small']]">
               <div :class="$style['logs__row']">
-                <div div :class="$style['logs__contents']">
+                <div :class="$style['logs__contents']">
                   <h3 class="text-body-3 font-weight-regular">
                     청약철회권 안내
                   </h3>
                 </div>
-                <div div :class="$style['logs__right']">
+                <div :class="$style['logs__right']">
                   <button type="button" :class="$style['logs__link']">
                     <span :class="$style['logs__link-text']">상세보기</span>
                   </button>
@@ -5250,12 +5250,12 @@ export default {
           <li :class="$style['logs__item']">
             <div :class="[$style['logs__block'], $style['logs__block--small']]">
               <div :class="$style['logs__row']">
-                <div div :class="$style['logs__contents']">
+                <div :class="$style['logs__contents']">
                   <h3 class="text-body-3 font-weight-regular">
                     금리인하요구권 안내
                   </h3>
                 </div>
-                <div div :class="$style['logs__right']">
+                <div :class="$style['logs__right']">
                   <button type="button" :class="$style['logs__link']">
                     <span :class="$style['logs__link-text']">상세보기</span>
                   </button>
@@ -5266,12 +5266,12 @@ export default {
           <li :class="$style['logs__item']">
             <div :class="[$style['logs__block'], $style['logs__block--small']]">
               <div :class="$style['logs__row']">
-                <div div :class="$style['logs__contents']">
+                <div :class="$style['logs__contents']">
                   <h3 class="text-body-3 font-weight-regular">
                     청약철회권 안내
                   </h3>
                 </div>
-                <div div :class="$style['logs__right']">
+                <div :class="$style['logs__right']">
                   <button type="button" :class="$style['logs__link']">
                     <span :class="$style['logs__link-text']">상세보기</span>
                   </button>

@@ -61,7 +61,7 @@ export default {
       <li v-for="i in 5" :key="i" :class="$style['logs__item']">
         <div :class="$style['logs__block']">
           <div :class="$style['logs__row']">
-            <div div :class="$style['logs__contents']">
+            <div :class="$style['logs__contents']">
               <h3 :class="$style['logs__title']">정비</h3>
               <KeyValue align="left" size="regular" margin="mini">
                 <KeyValueItem :classNames="{ item: 'text-body-4' }">
@@ -75,7 +75,7 @@ export default {
                 </KeyValueItem>
               </KeyValue>
             </div>
-            <div div :class="$style['logs__right']">
+            <div :class="$style['logs__right']">
               <button
                 type="button"
                 :class="$style['logs__link']"

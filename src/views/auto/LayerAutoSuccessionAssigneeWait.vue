@@ -118,10 +118,10 @@ export default {
             <li :class="$style['logs__item']">
               <div :class="$style['logs__block']">
                 <div :class="$style['logs__row']">
-                  <div div :class="$style['logs__contents']">
+                  <div :class="$style['logs__contents']">
                     <h4 class="text-body-1 font-weight-medium">운용리스</h4>
                   </div>
-                  <div div :class="$style['logs__right']">
+                  <div :class="$style['logs__right']">
                     <button type="button" :class="$style['logs__link']">
                       <span :class="$style['logs__link-text']">상세보기</span>
                     </button>
@@ -176,10 +176,10 @@ export default {
             <li :class="$style['logs__item']">
               <div :class="$style['logs__block']">
                 <div :class="$style['logs__row']">
-                  <div div :class="$style['logs__contents']">
+                  <div :class="$style['logs__contents']">
                     <h4 class="text-body-1 font-weight-medium">렌터카</h4>
                   </div>
-                  <div div :class="$style['logs__right']">
+                  <div :class="$style['logs__right']">
                     <button type="button" :class="$style['logs__link']">
                       <span :class="$style['logs__link-text']">상세보기</span>
                     </button>

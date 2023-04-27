@@ -93,10 +93,10 @@ export default {
           to="/lm-blog-personal/quick-counseling"
           :class="$style['menu__link']"
         >
-          <div div :class="$style['menu__icon']">
+          <div :class="$style['menu__icon']">
             <IconConsultation />
           </div>
-          <div div :class="$style['menu__title']">빠른 대출 상담</div>
+          <div :class="$style['menu__title']">빠른 대출 상담</div>
         </RouterLink>
       </div>
 
@@ -105,10 +105,10 @@ export default {
           to="/lm-blog-personal/sms-counseling"
           :class="$style['menu__link']"
         >
-          <div div :class="$style['menu__icon']">
+          <div :class="$style['menu__icon']">
             <IconSms />
           </div>
-          <div div :class="$style['menu__title']">SMS 상담</div>
+          <div :class="$style['menu__title']">SMS 상담</div>
         </RouterLink>
       </div>
     </div>

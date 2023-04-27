@@ -75,12 +75,12 @@ export default {
           <li :class="$style['logs__item']">
             <div :class="[$style['logs__block'], $style['logs__block--small']]">
               <div :class="$style['logs__row']">
-                <div div :class="$style['logs__contents']">
+                <div :class="$style['logs__contents']">
                   <h3 class="text-body-3 font-weight-regular">
                     전자약정계약서
                   </h3>
                 </div>
-                <div div :class="$style['logs__right']">
+                <div :class="$style['logs__right']">
                   <button type="button" :class="$style['logs__link']">
                     <span :class="$style['logs__link-text']">상세보기</span>
                   </button>

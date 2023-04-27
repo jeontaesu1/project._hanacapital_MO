@@ -189,7 +189,7 @@ export default {
         <li :class="$style['logs__item']">
           <div :class="$style['logs__block']">
             <div :class="$style['logs__row']">
-              <div div :class="$style['logs__contents']">
+              <div :class="$style['logs__contents']">
                 <h3 class="text-body-1 font-weight-medium">스탁론</h3>
                 <div class="text-body-4 color-gray row-margin-small">
                   하나증권 12-3456-7890123
@@ -200,7 +200,7 @@ export default {
                 theme="secondary"
                 >D-7</RoundStatus
               >
-              <div div :class="$style['logs__right']">
+              <div :class="$style['logs__right']">
                 <button type="button" :class="$style['logs__link']">
                   <span :class="$style['logs__link-text']">상세보기</span>
                 </button>
@@ -238,7 +238,7 @@ export default {
         <li :class="$style['logs__item']">
           <div :class="$style['logs__block']">
             <div :class="$style['logs__row']">
-              <div div :class="$style['logs__contents']">
+              <div :class="$style['logs__contents']">
                 <h3 class="text-body-1 font-weight-medium">렌터카 531다3346</h3>
                 <div class="text-body-4 color-gray row-margin-small">
                   벤츠 더 뉴 C-class(W205/S205)
@@ -254,7 +254,7 @@ export default {
                 theme="denary"
                 >D-7</RoundStatus
               >
-              <div div :class="$style['logs__right']">
+              <div :class="$style['logs__right']">
                 <button type="button" :class="$style['logs__link']">
                   <span :class="$style['logs__link-text']">상세보기</span>
                 </button>
@@ -313,7 +313,7 @@ export default {
         <li :class="$style['logs__item']">
           <div :class="$style['logs__block']">
             <div :class="$style['logs__row']">
-              <div div :class="$style['logs__contents']">
+              <div :class="$style['logs__contents']">
                 <h3 class="text-body-1 font-weight-medium">e하나신용대출</h3>
               </div>
               <RoundStatus
@@ -321,7 +321,7 @@ export default {
                 theme="secondary"
                 >D-day</RoundStatus
               >
-              <div div :class="$style['logs__right']">
+              <div :class="$style['logs__right']">
                 <button type="button" :class="$style['logs__link']">
                   <span :class="$style['logs__link-text']">상세보기</span>
                 </button>
@@ -359,7 +359,7 @@ export default {
         <li :class="$style['logs__item']">
           <div :class="$style['logs__block']">
             <div :class="$style['logs__row']">
-              <div div :class="$style['logs__contents']">
+              <div :class="$style['logs__contents']">
                 <h3 class="text-body-1 font-weight-medium">오토론</h3>
               </div>
               <RoundStatus
@@ -368,7 +368,7 @@ export default {
               >
                 연체
               </RoundStatus>
-              <div div :class="$style['logs__right']">
+              <div :class="$style['logs__right']">
                 <button type="button" :class="$style['logs__link']">
                   <span :class="$style['logs__link-text']">상세보기</span>
                 </button>
@@ -449,7 +449,7 @@ export default {
       </ul>
       <!-- //Case :  캐피탈 계약 + 파트너사 양도계약 보유 경우 노출 -->
 
-      <BasicBox class="row-margin-item-group">
+      <BasicBox className="row-margin-item-group">
         <BasicBoxHead>
           <BasicBoxHeadLeft>
             <h3 class="text-body-1 font-weight-medium">야나두</h3>
@@ -489,7 +489,7 @@ export default {
         </BasicButton>
       </BasicBox>
 
-      <BasicBox class="row-margin-item-group">
+      <BasicBox className="row-margin-item-group">
         <BasicBoxHead>
           <BasicBoxHeadLeft>
             <h3 class="text-body-1 font-weight-medium">현대렌탈</h3>
@@ -535,7 +535,7 @@ export default {
 
     <section>
       <h3 class="text-title-2 row-margin-contents">종료된 계약</h3>
-      <BasicBox class="row-margin-item-group">
+      <BasicBox className="row-margin-item-group">
         <BasicBoxHead>
           <BasicBoxHeadLeft>
             <h3 class="text-body-1 font-weight-medium">스탁론</h3>
@@ -560,7 +560,7 @@ export default {
       </BasicBox>
 
       <!-- Case : 파트너사 양도계약(팩토링)만 보유한 경우 노출 -->
-      <BasicBox class="row-margin-item-group">
+      <BasicBox className="row-margin-item-group">
         <BasicBoxHead>
           <BasicBoxHeadLeft>
             <h3 class="text-body-1 font-weight-medium">야나두</h3>
@@ -599,7 +599,7 @@ export default {
         </BasicButton>
       </BasicBox>
 
-      <BasicBox class="row-margin-item-group">
+      <BasicBox className="row-margin-item-group">
         <BasicBoxHead>
           <BasicBoxHeadLeft>
             <h3 class="text-body-1 font-weight-medium">현대렌탈</h3>

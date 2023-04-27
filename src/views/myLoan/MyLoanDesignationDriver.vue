@@ -88,7 +88,7 @@ export default {
       </TextButton>
     </div>
 
-    <BasicBox class="row-margin-item">
+    <BasicBox className="row-margin-item">
       <BasicBoxHead>
         <BasicBoxHeadLeft>
           <div class="font-weight-light text-body-4">지정운전자 1</div>
@@ -124,7 +124,7 @@ export default {
       </KeyValue>
     </BasicBox>
 
-    <BasicBox class="row-margin-item">
+    <BasicBox className="row-margin-item">
       <BasicBoxHead>
         <BasicBoxHeadLeft>
           <div class="font-weight-light text-body-4">지정운전자 2</div>
