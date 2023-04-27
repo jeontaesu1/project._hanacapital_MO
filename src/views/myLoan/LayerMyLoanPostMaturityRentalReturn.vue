@@ -78,8 +78,8 @@ export default {
             키 모두 탁송 기사님께 차량과 함께 반납해 주세요.
           </div>
           <NoticeText :classNames="{ wrap: 'row-margin-item' }">
-            최종 차량가, 대금 송금계좌, 인도일 등의 필수 정보 확인을 위해 상사
-            직원이 연락 예정입니다.
+            수입차 : 사고로 인한 교체부분이 있을 경우 패널티가 발생 될 수
+            있습니다.
           </NoticeText>
         </div>
 
@@ -99,8 +99,8 @@ export default {
           <h3 class="text-body-2 row-margin-item-medium">반환약속 취소</h3>
           <div class="text-body-4 font-weight-light">
             반환일 당일 반환 취소시에는 추가금액이 발생될 수 있으니 일자, 장소
-            등 변동사항은 반환일 이전 당사로 연락바랍니다. (차량 반환 후 재출고
-            시 추가 비용이 발생됩니다.)
+            등 변동사항은 반환일 이전 당사로 연락바랍니다.<br />
+            (차량 반환 후 재출고 시 추가 비용이 발생됩니다.)
           </div>
         </div>
 

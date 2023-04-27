@@ -9,10 +9,6 @@ import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
-import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
-import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
-import BoxCheck from '@/components/ui/form/BoxCheck.vue';
-import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
 import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
@@ -24,6 +20,7 @@ import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
+import ContentsButton from '@/components/ui/button/ContentsButton.vue';
 
 export default {
   components: {
@@ -34,10 +31,6 @@ export default {
     PopupTitle,
     PageTextGroup,
     PageMainText,
-    BoxCheckList,
-    BoxCheckListItem,
-    BoxCheck,
-    BoxCheckLabel,
     KeyValue,
     KeyValueItem,
     KeyValueTitle,
@@ -49,6 +42,7 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicButton,
+    ContentsButton,
   },
   setup() {
     const layer = ref(null);
@@ -75,7 +69,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           <strong>발급할 계약을</strong><br />
-          선택하세요
+          선택하세요.
         </PageMainText>
       </PageTextGroup>
 
@@ -98,122 +92,132 @@ export default {
       <!-- // Case : 계약이 없을 때 -->
 
       <!-- Case : 계약이 있을 때 -->
-      <BoxCheckList align="full">
-        <BoxCheckListItem class="row-margin-item-group">
-          <BoxCheck
-            :contents="true"
-            name="layerMyLoanCertificateRepaymentListProducts"
-            id="layerMyLoanCertificateRepaymentListProducts001"
-            :defaultChecked="false"
-          >
-            <BoxCheckLabel>
-              <BasicBoxHead>
-                <BasicBoxHeadLeft>
-                  <h3 class="text-body-1 font-weight-medium">
-                    오토리스 05도6880
-                  </h3>
-                  <p class="text-body-4 color-gray row-margin-small">
-                    기아 레이 럭셔리
-                  </p>
-                </BasicBoxHeadLeft>
-                <BasicBoxHeadRight>
-                  <RoundStatus :classNames="{ wrap: 'display-block' }">
-                    종료
-                  </RoundStatus>
-                </BasicBoxHeadRight>
-              </BasicBoxHead>
-              <KeyValue margin="regular">
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>결제예정금액</KeyValueTitle>
-                  <KeyValueText>
-                    <span class="color-green font-weight-medium"
-                      >845,000 원</span
-                    >
-                  </KeyValueText>
-                </KeyValueItem>
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>결제일</KeyValueTitle>
-                  <KeyValueText>매월 5일</KeyValueText>
-                </KeyValueItem>
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>결제회차</KeyValueTitle>
-                  <KeyValueText>-</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
-            </BoxCheckLabel>
-          </BoxCheck>
-        </BoxCheckListItem>
+      <ContentsButton>
+        <BasicBoxHead>
+          <BasicBoxHeadLeft>
+            <h3 class="text-body-1 font-weight-medium">오토리스 05도6880</h3>
+            <p
+              class="text-body-4 color-gray font-weight-regular row-margin-small"
+            >
+              기아 레이 럭셔리
+            </p>
+          </BasicBoxHeadLeft>
+          <BasicBoxHeadRight>
+            <RoundStatus :classNames="{ wrap: 'display-block' }">
+              종료
+            </RoundStatus>
+          </BasicBoxHeadRight>
+        </BasicBoxHead>
 
-        <BoxCheckListItem>
-          <BoxCheck
-            :contents="true"
-            name="layerMyLoanCertificateRepaymentListProducts"
-            id="layerMyLoanCertificateRepaymentListProducts002"
-            :defaultChecked="false"
+        <KeyValue margin="regular">
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
           >
-            <BoxCheckLabel>
-              <BasicBoxHead>
-                <BasicBoxHeadLeft>
-                  <h3 class="text-body-1 font-weight-medium">
-                    오토리스 01바123
-                  </h3>
-                  <p class="text-body-4 color-gray row-margin-small">
-                    현대 펠리세이드 디젤 2.2 4WD (액세서리 변경) 프레스티지
-                    (7인승) 자동
-                  </p>
-                </BasicBoxHeadLeft>
-              </BasicBoxHead>
-              <KeyValue margin="regular">
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>결제예정금액</KeyValueTitle>
-                  <KeyValueText>
-                    <span class="color-green font-weight-medium"
-                      >845,000 원</span
-                    >
-                  </KeyValueText>
-                </KeyValueItem>
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>결제일</KeyValueTitle>
-                  <KeyValueText>매월 5일</KeyValueText>
-                </KeyValueItem>
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>결제회차</KeyValueTitle>
-                  <KeyValueText>41/60</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
-            </BoxCheckLabel>
-          </BoxCheck>
-        </BoxCheckListItem>
-      </BoxCheckList>
+            <KeyValueTitle>결제예정금액</KeyValueTitle>
+            <KeyValueText
+              :classNames="{
+                text: 'color-green font-weight-medium',
+              }"
+            >
+              845,000 원
+            </KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>결제일</KeyValueTitle>
+            <KeyValueText
+              :classNames="{
+                text: 'color-black',
+              }"
+            >
+              매월 5일
+            </KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>결제회차</KeyValueTitle>
+            <KeyValueText
+              :classNames="{
+                text: 'color-black',
+              }"
+            >
+              -
+            </KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+      </ContentsButton>
+
+      <ContentsButton :classNames="{ wrap: 'row-margin-item-group' }">
+        <BasicBoxHead>
+          <BasicBoxHeadLeft>
+            <h3 class="text-body-1 font-weight-medium">오토리스 01바123</h3>
+            <p
+              class="text-body-4 color-gray font-weight-regular row-margin-small"
+            >
+              현대 펠리세이드 디젤 2.2 4WD (액세서리 변경) 프레스티지 (7인승)
+              자동
+            </p>
+          </BasicBoxHeadLeft>
+        </BasicBoxHead>
+
+        <KeyValue margin="regular">
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>결제예정금액</KeyValueTitle>
+            <KeyValueText
+              :classNames="{
+                text: 'color-green font-weight-medium',
+              }"
+            >
+              845,000 원
+            </KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>결제일</KeyValueTitle>
+            <KeyValueText
+              :classNames="{
+                text: 'color-black',
+              }"
+            >
+              매월 5일
+            </KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>결제회차</KeyValueTitle>
+            <KeyValueText
+              :classNames="{
+                text: 'color-black',
+              }"
+            >
+              41/60
+            </KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+      </ContentsButton>
       <!-- Case : 계약이 있을 때 -->
     </FullPopup>
   </UiLayer>
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/lmBlog/LayerLMBlogLoanCounselingSelectBusiness.scss';
+@import '@/assets/scss/views/myLoan/LayerMyLoanCertificateRepaymentList.scss';
 </style>

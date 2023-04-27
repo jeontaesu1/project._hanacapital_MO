@@ -8,6 +8,7 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 import LayerMyLoanPostMaturityExtensionRequestComplete001 from '@/views/myLoan/LayerMyLoanPostMaturityExtensionRequestComplete001.vue';
 import LayerMyLoanPostMaturityLeasePurchaseCompanyMethod from '@/views/myLoan/LayerMyLoanPostMaturityLeasePurchaseCompanyMethod.vue';
+import LayerMyLoanPostMaturityLeaseReturnComplete from '@/views/myLoan/LayerMyLoanPostMaturityLeaseReturnComplete.vue';
 
 export default {
   components: {
@@ -17,10 +18,12 @@ export default {
     ButtonListItem,
     LayerMyLoanPostMaturityExtensionRequestComplete001,
     LayerMyLoanPostMaturityLeasePurchaseCompanyMethod,
+    LayerMyLoanPostMaturityLeaseReturnComplete,
   },
   setup() {
     const layer001 = ref(null);
     const layer002 = ref(null);
+    const layer003 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -28,12 +31,17 @@ export default {
     const layer002Open = (e = {}) => {
       layer002.value.layer.open(e.target);
     };
+    const layer003Open = (e = {}) => {
+      layer003.value.layer.open(e.target);
+    };
 
     return {
       layer001,
       layer002,
+      layer003,
       layer001Open,
       layer002Open,
+      layer003Open,
     };
   },
 };
@@ -57,9 +65,15 @@ export default {
           명의이전방법 선택 팝업<br />My_M08_b003
         </BasicButton>
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer003Open">
+          신청완료<br />My_M08_l012
+        </BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <LayerMyLoanPostMaturityExtensionRequestComplete001 ref="layer001" />
     <LayerMyLoanPostMaturityLeasePurchaseCompanyMethod ref="layer002" />
+    <layer-my-loan-post-maturity-lease-return-complete ref="layer003" />
   </PageContents>
 </template>

@@ -8,7 +8,12 @@ import ToastPopupHead from '@/components/ui/layer/ToastPopupHead.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 
 export default {
-  components: { UiLayer, ToastPopup, ToastPopupHead, PopupTitle },
+  components: {
+    UiLayer,
+    ToastPopup,
+    ToastPopupHead,
+    PopupTitle,
+  },
   setup() {
     const layer = ref(null);
 

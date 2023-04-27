@@ -8,7 +8,6 @@ import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
-import BasicBox from '@/components/ui/common/BasicBox.vue';
 
 export default {
   components: {
@@ -18,7 +17,6 @@ export default {
     PopupButton,
     PageTextGroup,
     PageMainText,
-    BasicBox,
   },
   setup() {
     const layer = ref(null);
@@ -48,195 +46,214 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <ul :class="$style['logs']">
-        <li :class="[$style['logs__item'], 'row-margin-item-group']">
-          <BasicBox theme="quinary">
+      <ul :class="[$style['logs'], $style['logs--margin-regular']]">
+        <li :class="$style['logs__item']">
+          <div
+            :class="[
+              $style['logs__block'],
+              $style['logs__block--gray'],
+              $style['logs__block--regular'],
+            ]"
+          >
             <div :class="$style['logs__row']">
               <div :class="$style['logs__contents']">
-                <div class="font-weight-medium">상환스케줄</div>
+                <h3 class="text-body-1 font-weight-medium">상환스케줄</h3>
               </div>
-              <div div :class="$style['logs__right']">
-                <button
-                  type="button"
-                  :class="$style['logs__link']"
-                  @click="layer001Open"
-                >
+              <div :class="$style['logs__right']">
+                <button type="button" :class="$style['logs__link']">
                   <span :class="$style['logs__link-text']">상세보기</span>
                 </button>
               </div>
             </div>
-          </BasicBox>
+          </div>
         </li>
-
-        <li :class="[$style['logs__item'], 'row-margin-item-group']">
-          <BasicBox theme="quinary">
+        <li :class="$style['logs__item']">
+          <div
+            :class="[
+              $style['logs__block'],
+              $style['logs__block--gray'],
+              $style['logs__block--regular'],
+            ]"
+          >
             <div :class="$style['logs__row']">
               <div :class="$style['logs__contents']">
-                <div class="font-weight-medium">온라인청구서</div>
+                <h3 class="text-body-1 font-weight-medium">온라인청구서</h3>
               </div>
-              <div div :class="$style['logs__right']">
-                <button
-                  type="button"
-                  :class="$style['logs__link']"
-                  @click="layer001Open"
-                >
+              <div :class="$style['logs__right']">
+                <button type="button" :class="$style['logs__link']">
                   <span :class="$style['logs__link-text']">상세보기</span>
                 </button>
               </div>
             </div>
-          </BasicBox>
+          </div>
         </li>
-
-        <li :class="[$style['logs__item'], 'row-margin-item-group']">
-          <BasicBox theme="quinary">
+        <li :class="$style['logs__item']">
+          <div
+            :class="[
+              $style['logs__block'],
+              $style['logs__block--gray'],
+              $style['logs__block--regular'],
+            ]"
+          >
             <div :class="$style['logs__row']">
               <div :class="$style['logs__contents']">
-                <div class="font-weight-medium">금융거래확인서</div>
+                <h3 class="text-body-1 font-weight-medium">금융거래확인서</h3>
               </div>
-              <div div :class="$style['logs__right']">
-                <button
-                  type="button"
-                  :class="$style['logs__link']"
-                  @click="layer001Open"
-                >
+              <div :class="$style['logs__right']">
+                <button type="button" :class="$style['logs__link']">
                   <span :class="$style['logs__link-text']">상세보기</span>
                 </button>
               </div>
             </div>
-          </BasicBox>
+          </div>
         </li>
-
-        <li :class="[$style['logs__item'], 'row-margin-item-group']">
-          <BasicBox theme="quinary">
+        <li :class="$style['logs__item']">
+          <div
+            :class="[
+              $style['logs__block'],
+              $style['logs__block--gray'],
+              $style['logs__block--regular'],
+            ]"
+          >
             <div :class="$style['logs__row']">
               <div :class="$style['logs__contents']">
-                <div class="font-weight-medium">대출거래 및 잔액내역서</div>
+                <h3 class="text-body-1 font-weight-medium">
+                  대출거래 및 잔액내역서
+                </h3>
               </div>
-              <div div :class="$style['logs__right']">
-                <button
-                  type="button"
-                  :class="$style['logs__link']"
-                  @click="layer001Open"
-                >
+              <div :class="$style['logs__right']">
+                <button type="button" :class="$style['logs__link']">
                   <span :class="$style['logs__link-text']">상세보기</span>
                 </button>
               </div>
             </div>
-          </BasicBox>
+          </div>
         </li>
-
-        <li :class="[$style['logs__item'], 'row-margin-item-group']">
-          <BasicBox theme="quinary">
+        <li :class="$style['logs__item']">
+          <div
+            :class="[
+              $style['logs__block'],
+              $style['logs__block--gray'],
+              $style['logs__block--regular'],
+            ]"
+          >
             <div :class="$style['logs__row']">
               <div :class="$style['logs__contents']">
-                <div class="font-weight-medium">완납확인서</div>
+                <h3 class="text-body-1 font-weight-medium">완납확인서</h3>
               </div>
-              <div div :class="$style['logs__right']">
-                <button
-                  type="button"
-                  :class="$style['logs__link']"
-                  @click="layer001Open"
-                >
+              <div :class="$style['logs__right']">
+                <button type="button" :class="$style['logs__link']">
                   <span :class="$style['logs__link-text']">상세보기</span>
                 </button>
               </div>
             </div>
-          </BasicBox>
+          </div>
         </li>
-
-        <li :class="[$style['logs__item'], 'row-margin-item-group']">
-          <BasicBox theme="quinary">
+        <li :class="$style['logs__item']">
+          <div
+            :class="[
+              $style['logs__block'],
+              $style['logs__block--gray'],
+              $style['logs__block--regular'],
+            ]"
+          >
             <div :class="$style['logs__row']">
               <div :class="$style['logs__contents']">
-                <div class="font-weight-medium">리스/렌터카 계약사실확인서</div>
+                <h3 class="text-body-1 font-weight-medium">
+                  리스/렌터카 계약사실확인서
+                </h3>
               </div>
-              <div div :class="$style['logs__right']">
-                <button
-                  type="button"
-                  :class="$style['logs__link']"
-                  @click="layer001Open"
-                >
+              <div :class="$style['logs__right']">
+                <button type="button" :class="$style['logs__link']">
                   <span :class="$style['logs__link-text']">상세보기</span>
                 </button>
               </div>
             </div>
-          </BasicBox>
+          </div>
         </li>
-
-        <li :class="[$style['logs__item'], 'row-margin-item-group']">
-          <BasicBox theme="quinary">
+        <li :class="$style['logs__item']">
+          <div
+            :class="[
+              $style['logs__block'],
+              $style['logs__block--gray'],
+              $style['logs__block--regular'],
+            ]"
+          >
             <div :class="$style['logs__row']">
               <div :class="$style['logs__contents']">
-                <div class="font-weight-medium">리스/렌터카 종료확인서</div>
+                <h3 class="text-body-1 font-weight-medium">
+                  리스/렌터카 종료확인서
+                </h3>
               </div>
-              <div div :class="$style['logs__right']">
-                <button
-                  type="button"
-                  :class="$style['logs__link']"
-                  @click="layer001Open"
-                >
+              <div :class="$style['logs__right']">
+                <button type="button" :class="$style['logs__link']">
                   <span :class="$style['logs__link-text']">상세보기</span>
                 </button>
               </div>
             </div>
-          </BasicBox>
+          </div>
         </li>
-
-        <li :class="[$style['logs__item'], 'row-margin-item-group']">
-          <BasicBox theme="quinary">
+        <li :class="$style['logs__item']">
+          <div
+            :class="[
+              $style['logs__block'],
+              $style['logs__block--gray'],
+              $style['logs__block--regular'],
+            ]"
+          >
             <div :class="$style['logs__row']">
               <div :class="$style['logs__contents']">
-                <div class="font-weight-medium">계산서/세금계산서</div>
+                <h3 class="text-body-1 font-weight-medium">
+                  계산서/세금계산서
+                </h3>
               </div>
-              <div div :class="$style['logs__right']">
-                <button
-                  type="button"
-                  :class="$style['logs__link']"
-                  @click="layer001Open"
-                >
+              <div :class="$style['logs__right']">
+                <button type="button" :class="$style['logs__link']">
                   <span :class="$style['logs__link-text']">상세보기</span>
                 </button>
               </div>
             </div>
-          </BasicBox>
+          </div>
         </li>
-
-        <li :class="[$style['logs__item'], 'row-margin-item-group']">
-          <BasicBox theme="quinary">
+        <li :class="$style['logs__item']">
+          <div
+            :class="[
+              $style['logs__block'],
+              $style['logs__block--gray'],
+              $style['logs__block--regular'],
+            ]"
+          >
             <div :class="$style['logs__row']">
               <div :class="$style['logs__contents']">
-                <div class="font-weight-medium">입금내역서</div>
+                <h3 class="text-body-1 font-weight-medium">입금내역서</h3>
               </div>
-              <div div :class="$style['logs__right']">
-                <button
-                  type="button"
-                  :class="$style['logs__link']"
-                  @click="layer001Open"
-                >
+              <div :class="$style['logs__right']">
+                <button type="button" :class="$style['logs__link']">
                   <span :class="$style['logs__link-text']">상세보기</span>
                 </button>
               </div>
             </div>
-          </BasicBox>
+          </div>
         </li>
-
-        <li :class="[$style['logs__item'], 'row-margin-item-group']">
-          <BasicBox theme="quinary">
+        <li :class="$style['logs__item']">
+          <div
+            :class="[
+              $style['logs__block'],
+              $style['logs__block--gray'],
+              $style['logs__block--regular'],
+            ]"
+          >
             <div :class="$style['logs__row']">
               <div :class="$style['logs__contents']">
-                <div class="font-weight-medium">스탁론약정서</div>
+                <h3 class="text-body-1 font-weight-medium">스탁론약정서</h3>
               </div>
-              <div div :class="$style['logs__right']">
-                <button
-                  type="button"
-                  :class="$style['logs__link']"
-                  @click="layer001Open"
-                >
+              <div :class="$style['logs__right']">
+                <button type="button" :class="$style['logs__link']">
                   <span :class="$style['logs__link-text']">상세보기</span>
                 </button>
               </div>
             </div>
-          </BasicBox>
+          </div>
         </li>
       </ul>
 

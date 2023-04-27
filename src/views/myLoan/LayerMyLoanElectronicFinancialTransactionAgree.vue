@@ -52,12 +52,12 @@ export default {
         근거하여 전자금융거래약관 동의가 필요합니다.
       </PopupText>
 
-      <div class="row-margin-item-group">
+      <div :class="[$style['agree-list'], 'row-margin-item-group']">
         <ul :class="$style['agree-list__list']">
           <li :class="$style['agree-list__item']">
             <div :class="$style['agree-list__head']">
               <CheckBox
-                id="layerSettingResetFaceAgree002"
+                id="LayerMyLoanElectronicFinancialTransactionAgree001"
                 :classNames="{
                   wrap: $style['agree-list__checkbox'],
                 }"

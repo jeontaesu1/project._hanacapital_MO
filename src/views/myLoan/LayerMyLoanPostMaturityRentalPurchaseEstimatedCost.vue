@@ -138,7 +138,7 @@ export default {
           </KeyValue>
         </BasicBox>
 
-        <NoticeText class="row-margin-item-group">
+        <NoticeText :classNames="{ wrap: 'row-margin-item-group' }">
           정산금액은 (만기일자) 기준으로 기준일자에 따라 변경될 수 있습니다.
         </NoticeText>
       </div>

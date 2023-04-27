@@ -125,43 +125,41 @@ export default {
       </div>
 
       <template v-slot:foot>
-        <div :class="$style['bottom-margin']">
-          <BasicHr
-            type="contents"
-            theme="quaternary"
-            className="row-margin-container"
-          />
+        <BasicHr
+          type="contents"
+          theme="quaternary"
+          className="row-margin-container"
+        />
 
-          <div :class="$style['icon-list']">
-            <ul :class="$style['icon-list__list']">
-              <li :class="$style['icon-list__item']">
-                <div :class="$style['icon-list__block']">
-                  <div :class="$style['icon-list__icon']"><IconCustomer /></div>
-                  <div :class="$style['icon-list__content']">
-                    <div :class="$style['icon-list__title']">재렌트 상담</div>
-                    <div
-                      :class="[$style['icon-list__text'], 'font-weight-light']"
-                    >
-                      (유)에이치서비스플랫폼
-                    </div>
-                  </div>
-                  <BasicButton
-                    tagName="a"
-                    size="mini"
-                    :line="true"
-                    theme="quaternary"
-                    :classNames="{ wrap: $style['icon-list__button'] }"
-                    href="tel:1800-9560"
+        <div :class="[$style['icon-list'], $style['bottom-list']]">
+          <ul :class="$style['icon-list__list']">
+            <li :class="$style['icon-list__item']">
+              <div :class="$style['icon-list__block']">
+                <div :class="$style['icon-list__icon']"><IconCustomer /></div>
+                <div :class="$style['icon-list_›_content']">
+                  <div :class="$style['icon-list__title']">재렌트 상담</div>
+                  <div
+                    :class="[$style['icon-list__text'], 'font-weight-light']"
                   >
-                    <template v-slot:leftIcon>
-                      <IconTell />
-                    </template>
-                    1800-9560
-                  </BasicButton>
+                    (유)에이치서비스플랫폼
+                  </div>
                 </div>
-              </li>
-            </ul>
-          </div>
+                <BasicButton
+                  tagName="a"
+                  size="mini"
+                  :line="true"
+                  theme="quaternary"
+                  :classNames="{ wrap: $style['icon-list__button'] }"
+                  href="tel:1800-9560"
+                >
+                  <template v-slot:leftIcon>
+                    <IconTell />
+                  </template>
+                  1800-9560
+                </BasicButton>
+              </div>
+            </li>
+          </ul>
         </div>
       </template>
     </FullPopup>

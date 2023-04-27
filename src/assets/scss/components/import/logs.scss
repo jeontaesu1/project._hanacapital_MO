@@ -15,6 +15,14 @@
         }
       }
     }
+
+    &-regular {
+      .logs__item {
+        & + .logs__item {
+          margin-top: 16px;
+        }
+      }
+    }
   }
 
   &__block {
@@ -24,8 +32,16 @@
     border-radius: 8px;
     box-sizing: border-box;
 
+    &--gray {
+      border-color: $color-gray-30;
+    }
+
     &--small {
       padding: 13px 16px 12px 16px;
+    }
+
+    &--regular {
+      padding: 15px;
     }
   }
 

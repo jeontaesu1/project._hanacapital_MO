@@ -45,25 +45,34 @@ export default {
         </ToastPopupHead>
       </template>
 
-      <div>
-        <CheckBox id="testCheckBox021" theme="tertiary">
-          <CheckBoxObject />
-          <CheckBoxLabelText class="color-gray-tertiary">
-            이용기간 중 발생된 범칙금/과태료, 기타비용 등에 대해서는 본인의
-            책임하에 부담할 것을 확약합니다.
-          </CheckBoxLabelText>
-        </CheckBox>
-      </div>
-
-      <div class="row-margin-item-group">
-        <CheckBox id="testCheckBox021" theme="tertiary">
-          <CheckBoxObject />
-          <CheckBoxLabelText class="color-gray-tertiary">
-            신청인(본인)은 반환 유의사항에 대해 충분한 설명을 듣고 잘 이해한 후
-            본인의 의사에 따라 반환을 신청합니다.
-          </CheckBoxLabelText>
-        </CheckBox>
-      </div>
+      <ul class="reset-list">
+        <li class="row-margin-item-group">
+          <CheckBox
+            id="layerMyLoanPostMaturityRentalReturnConfirmCheckBox01"
+            theme="tertiary"
+            :classNames="{ wrap: 'color-gray-tertiary' }"
+          >
+            <CheckBoxObject />
+            <CheckBoxLabelText>
+              이용기간 중 발생된 범칙금/과태료, 기타비용 등에 대해서는 본인의
+              책임하에 부담할 것을 확약합니다.
+            </CheckBoxLabelText>
+          </CheckBox>
+        </li>
+        <li>
+          <CheckBox
+            id="layerMyLoanPostMaturityRentalReturnConfirmCheckBox02"
+            theme="tertiary"
+            :classNames="{ wrap: 'color-gray-tertiary' }"
+          >
+            <CheckBoxObject />
+            <CheckBoxLabelText>
+              신청인(본인)은 반환 유의사항에 대해 충분한 설명을 듣고 잘 이해한
+              후 본인의 의사에 따라 반환을 신청합니다.
+            </CheckBoxLabelText>
+          </CheckBox>
+        </li>
+      </ul>
 
       <template v-slot:foot>
         <ButtonList

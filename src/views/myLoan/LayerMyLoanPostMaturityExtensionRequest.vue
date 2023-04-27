@@ -170,13 +170,14 @@ export default {
                   ]"
                   buttonTitle="통신사 선택하기"
                   layerTitle="통신사를 선택해 주세요"
-                  id="layerMyLoanPostMaturityExtensionRequestPhone"
+                  id="layerMyLoanPostMaturityExtensionRequestPhone01"
                   buttonId="layerMyLoanPostMaturityExtensionRequestPhoneButton"
                   :classNames="{
                     wrap: 'input-width-telecom',
                   }"
                   title="휴대폰번호"
                   :disabled="true"
+                  defaultValue="1"
                 />
               </InputBlockCell>
               <InputBlockCell :flexible="true" margin="regular">
@@ -184,7 +185,7 @@ export default {
                   type="number"
                   pattern="\d*"
                   title="휴대폰번호"
-                  id="layerIdentificationPhonePhone02"
+                  id="LayerMyLoanPostMaturityExtensionRequestPhone02"
                   defaultValue="01012345678"
                   :disabled="true"
                 />

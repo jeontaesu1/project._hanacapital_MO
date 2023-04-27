@@ -70,22 +70,22 @@ export default {
 
       <BasicBox>
         <KeyValue margin="regular">
-          <KeyValueItem class="text-body-3">
+          <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>상품</KeyValueTitle>
             <KeyValueText>렌터카</KeyValueText>
           </KeyValueItem>
 
-          <KeyValueItem class="text-body-3">
+          <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>렌트기간</KeyValueTitle>
             <KeyValueText>36개월</KeyValueText>
           </KeyValueItem>
 
-          <KeyValueItem class="text-body-3">
+          <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>보증금</KeyValueTitle>
             <KeyValueText>50% (99,999,999 원)</KeyValueText>
           </KeyValueItem>
 
-          <KeyValueItem class="text-body-3">
+          <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>선납금</KeyValueTitle>
             <KeyValueText>50% (99,999,999 원)</KeyValueText>
           </KeyValueItem>
