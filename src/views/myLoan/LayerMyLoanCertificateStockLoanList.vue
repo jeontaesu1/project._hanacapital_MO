@@ -87,35 +87,35 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
+      <!-- Case : 리스트가 있는 경우 -->
       <div class="inline-wrap align-right">
-        <CheckBox id="LayerMyLoanCertificateStockLoanListAll" theme="tertiary">
+        <CheckBox id="layerMyLoanCertificateStockLoanListAll" theme="tertiary">
           <CheckBoxObject />
           <CheckBoxLabelText>전체 선택</CheckBoxLabelText>
         </CheckBox>
       </div>
 
-      <!-- Case : 리스트가 있는 경우 -->
       <BoxCheckList
         align="full"
         :classNames="{
           wrap: 'row-margin-item',
         }"
       >
-        <BoxCheckListItem>
+        <BoxCheckListItem v-for="i in 3" :key="i">
           <BoxCheck
             :contents="true"
             align="top"
             type="checkbox"
-            id="LayerMyLoanCertificateStockLoanList_001"
+            :id="`layerMyLoanCertificateStockLoanList${i}`"
           >
             <BasicBoxHead>
               <BasicBoxHeadLeft>
-                <div class="flex-box align-items-start">
+                <div class="flex-box align-items-start text-body-1">
                   <div class="flex-box__cell"><BoxCheckObject /></div>
-                  <div class="flex-box__cell flex-box__cell--small flex-1">
-                    <BoxCheckLabel :classNames="{ label: 'text-body-1' }">
-                      스탁론
-                    </BoxCheckLabel>
+                  <div
+                    class="flex-box__cell flex-box__cell--small-regular flex-1"
+                  >
+                    <BoxCheckLabel>스탁론</BoxCheckLabel>
                     <div class="text-body-4 color-gray row-margin-small">
                       하나증권 ###-###-#######
                     </div>
@@ -128,16 +128,16 @@ export default {
                 </RoundStatus>
               </BasicBoxHeadRight>
             </BasicBoxHead>
-            <KeyValue>
-              <KeyValueItem>
+            <KeyValue margin="regular">
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
                 <KeyValueTitle>결제예정금액</KeyValueTitle>
                 <KeyValueText>999,999 원</KeyValueText>
               </KeyValueItem>
-              <KeyValueItem>
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
                 <KeyValueTitle>결제일</KeyValueTitle>
                 <KeyValueText>2021.02.02 (매월 2일)</KeyValueText>
               </KeyValueItem>
-              <KeyValueItem>
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
                 <KeyValueTitle>결제회차</KeyValueTitle>
                 <KeyValueText
                   :classNames="{ text: 'color-green font-weight-medium' }"
@@ -145,59 +145,7 @@ export default {
                   16/60
                 </KeyValueText>
               </KeyValueItem>
-              <KeyValueItem>
-                <KeyValueTitle>결제예정금액</KeyValueTitle>
-                <KeyValueText>8,000,000 원</KeyValueText>
-              </KeyValueItem>
-            </KeyValue>
-          </BoxCheck>
-        </BoxCheckListItem>
-
-        <BoxCheckListItem>
-          <BoxCheck
-            :contents="true"
-            align="top"
-            type="checkbox"
-            id="LayerMyLoanCertificateStockLoanList_002"
-          >
-            <BasicBoxHead>
-              <BasicBoxHeadLeft>
-                <div class="flex-box align-items-start">
-                  <div class="flex-box__cell"><BoxCheckObject /></div>
-                  <div class="flex-box__cell flex-box__cell--small flex-1">
-                    <BoxCheckLabel :classNames="{ label: 'text-body-1' }">
-                      스탁론
-                    </BoxCheckLabel>
-                    <div class="text-body-4 color-gray row-margin-small">
-                      하나증권 ###-###-#######
-                    </div>
-                  </div>
-                </div>
-              </BasicBoxHeadLeft>
-              <BasicBoxHeadRight>
-                <RoundStatus :classNames="{ wrap: 'display-block' }">
-                  종료
-                </RoundStatus>
-              </BasicBoxHeadRight>
-            </BasicBoxHead>
-            <KeyValue>
-              <KeyValueItem>
-                <KeyValueTitle>결제예정금액</KeyValueTitle>
-                <KeyValueText>999,999 원</KeyValueText>
-              </KeyValueItem>
-              <KeyValueItem>
-                <KeyValueTitle>결제일</KeyValueTitle>
-                <KeyValueText>2021.02.02 (매월 2일)</KeyValueText>
-              </KeyValueItem>
-              <KeyValueItem>
-                <KeyValueTitle>결제회차</KeyValueTitle>
-                <KeyValueText
-                  :classNames="{ text: 'color-green font-weight-medium' }"
-                >
-                  16/60
-                </KeyValueText>
-              </KeyValueItem>
-              <KeyValueItem>
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
                 <KeyValueTitle>결제예정금액</KeyValueTitle>
                 <KeyValueText>8,000,000 원</KeyValueText>
               </KeyValueItem>
@@ -227,7 +175,11 @@ export default {
         <!-- //Case : 리스트가 있는 경우 -->
 
         <!-- Case : 리스트가 없는 경우 -->
-        <ButtonList>
+        <ButtonList
+          :classNames="{
+            wrap: 'row-margin-none',
+          }"
+        >
           <ButtonListItem>
             <BasicButton>확인</BasicButton>
           </ButtonListItem>

@@ -69,7 +69,6 @@ export default {
         </FullPopupHead>
       </template>
 
-      <!-- Case : 근저당설정 조회 가능한 계약 없는 경우 -->
       <PageTextGroup>
         <PageMainText>
           근저당설정 조회/해지<br />
@@ -80,6 +79,7 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
+      <!-- Case : 근저당설정 조회 가능한 계약 없는 경우 -->
       <div :class="$style['empty']">
         <p :class="$style['empty__text']">
           근저당설정조회 가능한<br />
@@ -89,132 +89,128 @@ export default {
       <!-- //Case : 근저당설정 조회 가능한 계약 없는 경우 -->
 
       <!-- Case : 근저당설정 조회 가능한 계약 있는 경우 -->
-      <PageTextGroup>
-        <PageMainText>
-          근저당설정 조회/해지<br />
-          <strong
-            >가능한 상품은 총 <span class="color-green">2</span>건
-            입니다</strong
-          >
-        </PageMainText>
-      </PageTextGroup>
+      <ul class="reset-list">
+        <li class="row-margin-item-group">
+          <BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-body-1 font-weight-medium">
+                  오토할부 20고5678
+                </h3>
+              </BasicBoxHeadLeft>
+              <BasicBoxHeadRight>
+                <RoundStatus :classNames="{ wrap: 'display-block' }">
+                  종료
+                </RoundStatus>
+              </BasicBoxHeadRight>
+            </BasicBoxHead>
 
-      <div>
-        <BasicBox className="row-margin-item-group">
-          <BasicBoxHead>
-            <BasicBoxHeadLeft>
-              <h3 class="text-body-1 font-weight-medium">오토할부 20고5678</h3>
-            </BasicBoxHeadLeft>
-            <BasicBoxHeadRight>
-              <RoundStatus :classNames="{ wrap: 'display-block' }">
-                종료
-              </RoundStatus>
-            </BasicBoxHeadRight>
-          </BasicBoxHead>
-
-          <KeyValue margin="regular">
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>계약번호</KeyValueTitle>
-              <KeyValueText>L99999999999999</KeyValueText>
-            </KeyValueItem>
-
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>을부번호</KeyValueTitle>
-              <KeyValueText>482A-2021-143903</KeyValueText>
-            </KeyValueItem>
-
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>차대번호</KeyValueTitle>
-              <KeyValueText>KLAPC56LDNB23200</KeyValueText>
-            </KeyValueItem>
-
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>저당설정액</KeyValueTitle>
-              <KeyValueText>17,220,000원</KeyValueText>
-            </KeyValueItem>
-          </KeyValue>
-          <BasicButton
-            size="small"
-            :classNames="{ wrap: 'row-margin-contents-small' }"
-            >근저당설정 해지 신청</BasicButton
-          >
-        </BasicBox>
-
-        <BasicBox className="row-margin-item-group">
-          <BasicBoxHead>
-            <BasicBoxHeadLeft>
-              <h3 class="text-body-1 font-weight-medium">렌터카 07호3994</h3>
-            </BasicBoxHeadLeft>
-            <BasicBoxHeadRight>
-              <RoundStatus
-                theme="nonary"
-                :classNames="{ wrap: 'display-block' }"
+            <KeyValue margin="regular">
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
               >
-                연체
-              </RoundStatus>
-            </BasicBoxHeadRight>
-          </BasicBoxHead>
+                <KeyValueTitle>계약번호</KeyValueTitle>
+                <KeyValueText>L99999999999999</KeyValueText>
+              </KeyValueItem>
 
-          <KeyValue margin="regular">
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>계약번호</KeyValueTitle>
-              <KeyValueText>L99999999999999</KeyValueText>
-            </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>을부번호</KeyValueTitle>
+                <KeyValueText>482A-2021-143903</KeyValueText>
+              </KeyValueItem>
 
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>을부번호</KeyValueTitle>
-              <KeyValueText>482A-2021-143903</KeyValueText>
-            </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>차대번호</KeyValueTitle>
+                <KeyValueText>KLAPC56LDNB23200</KeyValueText>
+              </KeyValueItem>
 
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>저당설정액</KeyValueTitle>
+                <KeyValueText>17,220,000원</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+            <BasicButton
+              size="small"
+              :classNames="{ wrap: 'row-margin-contents-small' }"
+              >근저당설정 해지 신청</BasicButton
             >
-              <KeyValueTitle>차대번호</KeyValueTitle>
-              <KeyValueText>KLAPC56LDNB23200</KeyValueText>
-            </KeyValueItem>
+          </BasicBox>
+        </li>
 
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
+        <li class="row-margin-item-group">
+          <BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-body-1 font-weight-medium">렌터카 07호3994</h3>
+              </BasicBoxHeadLeft>
+              <BasicBoxHeadRight>
+                <RoundStatus
+                  theme="nonary"
+                  :classNames="{ wrap: 'display-block' }"
+                >
+                  연체
+                </RoundStatus>
+              </BasicBoxHeadRight>
+            </BasicBoxHead>
+
+            <KeyValue margin="regular">
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>계약번호</KeyValueTitle>
+                <KeyValueText>L99999999999999</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>을부번호</KeyValueTitle>
+                <KeyValueText>482A-2021-143903</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>차대번호</KeyValueTitle>
+                <KeyValueText>KLAPC56LDNB23200</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>저당설정액</KeyValueTitle>
+                <KeyValueText>17,220,000원</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+            <BasicButton
+              size="small"
+              :classNames="{ wrap: 'row-margin-contents-small' }"
+              >근저당설정 해지 신청</BasicButton
             >
-              <KeyValueTitle>저당설정액</KeyValueTitle>
-              <KeyValueText>17,220,000원</KeyValueText>
-            </KeyValueItem>
-          </KeyValue>
-          <BasicButton
-            size="small"
-            :classNames="{ wrap: 'row-margin-contents-small' }"
-            >근저당설정 해지 신청</BasicButton
-          >
-        </BasicBox>
-      </div>
+          </BasicBox>
+        </li>
+      </ul>
       <!-- //Case : 근저당설정 조회 가능한 계약 있는 경우 -->
 
       <ul

@@ -59,17 +59,17 @@ export default {
     CheckBoxObject,
   },
   setup() {
-    const layer = ref(null);
-
     const state = reactive({
       dateError: false,
       minDate: '2023.04.21',
       maxDate: '2023.04.21',
     });
 
+    const layer = ref(null);
+
     return {
-      layer,
       state,
+      layer,
     };
   },
 };
@@ -173,7 +173,7 @@ export default {
 
       <BasicHr className="row-margin-container-medium" />
 
-      <div>
+      <div class="contents-wrap">
         <div class="flex-box row-margin-contents">
           <div class="flex-box__cell flex-1">
             <h3 class="text-title-2">발급항목</h3>
@@ -193,55 +193,9 @@ export default {
 
         <!-- Case : 리스트가 있는 경우 -->
         <ul :class="$style['bill-list']">
-          <li :class="$style['bill-list__item']">
+          <li v-for="i in 3" :key="i" :class="$style['bill-list__item']">
             <CheckBox
-              id="LayerMyLoanCertificateInvoiceTaxInvoiceItemsCount01"
-              theme="secondary"
-              full="true"
-            >
-              <CheckBoxObject />
-              <CheckBoxLabelText>
-                <span :class="$style['bill-list__block']">
-                  <span :class="$style['bill-list__head']">
-                    <span :class="$style['bill-list__detail']">
-                      <span :class="$style['bill-list__detail-item']">
-                        2022.02.02
-                      </span>
-                    </span>
-                    <span :class="$style['bill-list__amount']">
-                      845,000 원
-                    </span>
-                  </span>
-                </span>
-              </CheckBoxLabelText>
-            </CheckBox>
-          </li>
-          <li :class="$style['bill-list__item']">
-            <CheckBox
-              id="LayerMyLoanCertificateInvoiceTaxInvoiceItemsCount02"
-              theme="secondary"
-              full="true"
-            >
-              <CheckBoxObject />
-              <CheckBoxLabelText>
-                <span :class="$style['bill-list__block']">
-                  <span :class="$style['bill-list__head']">
-                    <span :class="$style['bill-list__detail']">
-                      <span :class="$style['bill-list__detail-item']">
-                        2022.02.02
-                      </span>
-                    </span>
-                    <span :class="$style['bill-list__amount']">
-                      845,000 원
-                    </span>
-                  </span>
-                </span>
-              </CheckBoxLabelText>
-            </CheckBox>
-          </li>
-          <li :class="$style['bill-list__item']">
-            <CheckBox
-              id="LayerMyLoanCertificateInvoiceTaxInvoiceItemsCount03"
+              :id="`LayerMyLoanCertificateInvoiceTaxInvoiceItemsCount${i}`"
               theme="secondary"
               full="true"
             >

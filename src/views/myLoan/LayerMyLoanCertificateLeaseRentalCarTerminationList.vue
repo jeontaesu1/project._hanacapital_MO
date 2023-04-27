@@ -87,9 +87,10 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
+      <!-- Case : 리스트가 있는 경우 -->
       <div class="inline-wrap align-right">
         <CheckBox
-          id="LayerMyLoanCertificateLeaseRentalCarTerminationListAll"
+          id="layerMyLoanCertificateLeaseRentalCarTerminationListAll"
           theme="tertiary"
         >
           <CheckBoxObject />
@@ -97,28 +98,27 @@ export default {
         </CheckBox>
       </div>
 
-      <!-- Case : 리스트가 있는 경우 -->
       <BoxCheckList
         align="full"
         :classNames="{
           wrap: 'row-margin-item',
         }"
       >
-        <BoxCheckListItem>
+        <BoxCheckListItem v-for="i in 3" :key="i">
           <BoxCheck
             :contents="true"
             align="top"
             type="checkbox"
-            id="LayerMyLoanCertificateLeaseRentalCarTerminationList_001"
+            :id="`layerMyLoanCertificateLeaseRentalCarTerminationList${i}`"
           >
             <BasicBoxHead>
               <BasicBoxHeadLeft>
-                <div class="flex-box align-items-start">
+                <div class="flex-box align-items-start text-body-1">
                   <div class="flex-box__cell"><BoxCheckObject /></div>
-                  <div class="flex-box__cell flex-box__cell--small flex-1">
-                    <BoxCheckLabel :classNames="{ label: 'text-body-1' }">
-                      오토리스 05도6880
-                    </BoxCheckLabel>
+                  <div
+                    class="flex-box__cell flex-box__cell--small-regular flex-1"
+                  >
+                    <BoxCheckLabel>오토리스 05도6880</BoxCheckLabel>
                     <div class="text-body-4 color-gray row-margin-small">
                       현대 펠리세이드 디젤 2.2 4WD(액세서리 변경) 프레스티지
                       (7인승) 자동
@@ -132,8 +132,8 @@ export default {
                 </RoundStatus>
               </BasicBoxHeadRight>
             </BasicBoxHead>
-            <KeyValue>
-              <KeyValueItem>
+            <KeyValue margin="regular">
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
                 <KeyValueTitle>결제예정금액</KeyValueTitle>
                 <KeyValueText
                   :classNames="{ text: 'color-green font-weight-medium' }"
@@ -141,59 +141,11 @@ export default {
                   845,000 원
                 </KeyValueText>
               </KeyValueItem>
-              <KeyValueItem>
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
                 <KeyValueTitle>결제일</KeyValueTitle>
                 <KeyValueText> 매월 5일</KeyValueText>
               </KeyValueItem>
-              <KeyValueItem>
-                <KeyValueTitle>결제회차</KeyValueTitle>
-                <KeyValueText> -</KeyValueText>
-              </KeyValueItem>
-            </KeyValue>
-          </BoxCheck>
-        </BoxCheckListItem>
-
-        <BoxCheckListItem>
-          <BoxCheck
-            :contents="true"
-            align="top"
-            type="checkbox"
-            id="LayerMyLoanCertificateLeaseRentalCarTerminationList_002"
-          >
-            <BasicBoxHead>
-              <BasicBoxHeadLeft>
-                <div class="flex-box align-items-start">
-                  <div class="flex-box__cell"><BoxCheckObject /></div>
-                  <div class="flex-box__cell flex-box__cell--small flex-1">
-                    <BoxCheckLabel :classNames="{ label: 'text-body-1' }">
-                      오토리스 09다9999
-                    </BoxCheckLabel>
-                    <div class="text-body-4 color-gray row-margin-small">
-                      기아 레이 럭셔리
-                    </div>
-                  </div>
-                </div>
-              </BasicBoxHeadLeft>
-              <BasicBoxHeadRight>
-                <RoundStatus :classNames="{ wrap: 'display-block' }">
-                  종료
-                </RoundStatus>
-              </BasicBoxHeadRight>
-            </BasicBoxHead>
-            <KeyValue>
-              <KeyValueItem>
-                <KeyValueTitle>결제예정금액</KeyValueTitle>
-                <KeyValueText
-                  :classNames="{ text: 'color-green font-weight-medium' }"
-                >
-                  845,000 원
-                </KeyValueText>
-              </KeyValueItem>
-              <KeyValueItem>
-                <KeyValueTitle>결제일</KeyValueTitle>
-                <KeyValueText> 매월 5일</KeyValueText>
-              </KeyValueItem>
-              <KeyValueItem>
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
                 <KeyValueTitle>결제회차</KeyValueTitle>
                 <KeyValueText> -</KeyValueText>
               </KeyValueItem>
@@ -223,7 +175,11 @@ export default {
         <!-- //Case : 리스트가 있는 경우 -->
 
         <!-- Case : 리스트가 없는 경우 -->
-        <ButtonList>
+        <ButtonList
+          :classNames="{
+            wrap: 'row-margin-none',
+          }"
+        >
           <ButtonListItem>
             <BasicButton>확인</BasicButton>
           </ButtonListItem>

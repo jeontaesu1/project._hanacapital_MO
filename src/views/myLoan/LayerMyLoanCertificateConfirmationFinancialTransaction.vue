@@ -59,7 +59,7 @@ export default {
       </template>
 
       <div>
-        <section>
+        <section class="row-margin-container-medium">
           <h3 class="text-title-2 row-margin-contents">대출거래현황</h3>
           <!-- Case : 대출 거래 내역이 있을 경우 -->
           <BasicBox>
@@ -124,7 +124,7 @@ export default {
           <!-- //Case : 대출 거래 내역이 있을 경우 -->
 
           <!-- Case : 대출 거래 내역이 없을 경우 -->
-          <BasicBox :className="[$style['box'], 'row-margin-contents']">
+          <BasicBox :className="$style['box']">
             <div :class="$style['empty']">
               <p :class="$style['empty__text']">대출 거래 내역이 없습니다.</p>
             </div>
@@ -193,7 +193,7 @@ export default {
           <!-- //Case : 담보 내역이 있을 경우 -->
 
           <!-- Case : 담보 내역이 없을 경우 -->
-          <BasicBox :className="[$style['box'], 'row-margin-contents']">
+          <BasicBox :className="$style['box']">
             <div :class="$style['empty']">
               <p :class="$style['empty__text']">담보 내역이 없습니다.</p>
             </div>
@@ -202,13 +202,15 @@ export default {
         </section>
 
         <section class="row-margin-container-medium">
-          <h3 class="text-title-2 row-margin-small">기준일 현재 연체</h3>
-          <p class="text-body-3 color-gray">
-            연체대출금 및 지급보증대지급급 보유 또는 이자, 분할상환금,
-            분할상환원리금 지체 포함
-          </p>
+          <div class="row-margin-contents">
+            <h3 class="text-title-2">기준일 현재 연체</h3>
+            <p class="text-body-3 color-gray row-margin-small">
+              연체대출금 및 지급보증대지급급 보유 또는 이자, 분할상환금,
+              분할상환원리금 지체 포함
+            </p>
+          </div>
 
-          <BasicBox className="row-margin-contents">
+          <BasicBox>
             <KeyValue>
               <KeyValueItem
                 :classNames="{
@@ -223,15 +225,19 @@ export default {
         </section>
 
         <section class="row-margin-container-medium">
-          <h3 class="text-title-2 row-margin-small">
-            최근 3개월 내 10일 이상 계속된 연체 명세
-          </h3>
-          <p class="text-body-3 color-gray font-weight-light">
-            가산 일자 : 2022.02.02
-          </p>
+          <div class="row-margin-contents">
+            <h3 class="text-title-2">
+              최근 3개월 내 10일 이상 계속된 연체 명세
+            </h3>
+            <p
+              class="text-body-3 color-gray font-weight-light row-margin-small"
+            >
+              가산 일자 : 2022.02.02
+            </p>
+          </div>
 
           <!-- Case : 연체 내역이 있을 경우 -->
-          <BasicBox className="row-margin-contents">
+          <BasicBox>
             <BasicBoxHead>
               <BasicBoxHeadLeft>
                 <h3 class="text-body-1 font-weight-medium">
@@ -285,7 +291,7 @@ export default {
           <!-- //Case : 연체 내역이 있을 경우 -->
 
           <!-- Case : 연체 내역이 없을 경우 -->
-          <BasicBox :className="[$style['box'], 'row-margin-contents']">
+          <BasicBox :className="$style['box']">
             <div :class="$style['empty']">
               <p :class="$style['empty__text']">연체 내역이 없습니다.</p>
             </div>

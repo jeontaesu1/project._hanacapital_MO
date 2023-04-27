@@ -5379,7 +5379,7 @@ export default {
             <div
               :class="[
                 $style['logs__block'],
-                $style['logs__block--gray'],
+                $style['logs__block--secondary'],
                 $style['logs__block--regular'],
               ]"
             >
@@ -5401,7 +5401,7 @@ export default {
             <div
               :class="[
                 $style['logs__block'],
-                $style['logs__block--gray'],
+                $style['logs__block--secondary'],
                 $style['logs__block--regular'],
               ]"
             >

@@ -1,5 +1,5 @@
 <script>
-// My_M04_l001
+// My_M04_l001 본인인증 방법 선택
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';

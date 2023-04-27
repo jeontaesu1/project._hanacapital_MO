@@ -73,163 +73,169 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <section>
-        <!-- Case : 리스트가 있는 경우 -->
-        <ContentsButton :classNames="{ wrap: 'row-margin-item-group' }">
-          <BasicBoxHead>
-            <BasicBoxHeadLeft>
-              <h3 class="text-body-1 font-weight-medium">오토리스 05도6880</h3>
-              <p
-                class="text-body-4 color-gray font-weight-regular row-margin-small"
-              >
-                기아 레이 럭셔리
-              </p>
-            </BasicBoxHeadLeft>
-            <BasicBoxHeadRight>
-              <RoundStatus :classNames="{ wrap: 'display-block' }">
-                종료
-              </RoundStatus>
-            </BasicBoxHeadRight>
-          </BasicBoxHead>
-          <KeyValue margin="regular">
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>결제예정금액</KeyValueTitle>
-              <KeyValueText
+      <ul class="reset-list">
+        <li class="row-margin-item-group">
+          <!-- Case : 리스트가 있는 경우 -->
+          <ContentsButton>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-body-1 font-weight-medium">
+                  오토리스 05도6880
+                </h3>
+                <p
+                  class="text-body-4 color-gray font-weight-regular row-margin-small"
+                >
+                  기아 레이 럭셔리
+                </p>
+              </BasicBoxHeadLeft>
+              <BasicBoxHeadRight>
+                <RoundStatus :classNames="{ wrap: 'display-block' }">
+                  종료
+                </RoundStatus>
+              </BasicBoxHeadRight>
+            </BasicBoxHead>
+            <KeyValue margin="regular">
+              <KeyValueItem
                 :classNames="{
-                  text: 'color-green font-weight-medium',
+                  item: 'text-body-3',
                 }"
               >
-                0 원
-              </KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>결제일</KeyValueTitle>
-              <KeyValueText
+                <KeyValueTitle>결제예정금액</KeyValueTitle>
+                <KeyValueText
+                  :classNames="{
+                    text: 'color-green font-weight-medium',
+                  }"
+                >
+                  0 원
+                </KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem
                 :classNames="{
-                  text: 'color-black',
+                  item: 'text-body-3',
                 }"
               >
-                매월 5일
-              </KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>결제회차</KeyValueTitle>
-              <KeyValueText
+                <KeyValueTitle>결제일</KeyValueTitle>
+                <KeyValueText
+                  :classNames="{
+                    text: 'color-black',
+                  }"
+                >
+                  매월 5일
+                </KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem
                 :classNames="{
-                  text: 'color-black',
+                  item: 'text-body-3',
                 }"
               >
-                -
-              </KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>대출잔액</KeyValueTitle>
-              <KeyValueText
+                <KeyValueTitle>결제회차</KeyValueTitle>
+                <KeyValueText
+                  :classNames="{
+                    text: 'color-black',
+                  }"
+                >
+                  -
+                </KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem
                 :classNames="{
-                  text: 'color-black',
+                  item: 'text-body-3',
                 }"
               >
-                0원
-              </KeyValueText>
-            </KeyValueItem>
-          </KeyValue>
-        </ContentsButton>
+                <KeyValueTitle>대출잔액</KeyValueTitle>
+                <KeyValueText
+                  :classNames="{
+                    text: 'color-black',
+                  }"
+                >
+                  0원
+                </KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </ContentsButton>
+        </li>
 
-        <ContentsButton :classNames="{ wrap: 'row-margin-item-group' }">
-          <BasicBoxHead>
-            <BasicBoxHeadLeft>
-              <h3 class="text-body-1 font-weight-medium">렌터카 531다3378</h3>
-              <p
-                class="text-body-4 color-gray font-weight-regular row-margin-small"
-              >
-                현대 펠리세이드 디젤 2.2 4WD (액세서리 변경) 프레스티지 (7인승)
-                자동
-              </p>
-            </BasicBoxHeadLeft>
-          </BasicBoxHead>
-          <KeyValue margin="regular">
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>결제예정금액</KeyValueTitle>
-              <KeyValueText
+        <li class="row-margin-item-group">
+          <ContentsButton>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-body-1 font-weight-medium">렌터카 531다3378</h3>
+                <p
+                  class="text-body-4 color-gray font-weight-regular row-margin-small"
+                >
+                  현대 펠리세이드 디젤 2.2 4WD (액세서리 변경) 프레스티지
+                  (7인승) 자동
+                </p>
+              </BasicBoxHeadLeft>
+            </BasicBoxHead>
+            <KeyValue margin="regular">
+              <KeyValueItem
                 :classNames="{
-                  text: 'color-green font-weight-medium',
+                  item: 'text-body-3',
                 }"
               >
-                0 원
-              </KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>결제일</KeyValueTitle>
-              <KeyValueText
+                <KeyValueTitle>결제예정금액</KeyValueTitle>
+                <KeyValueText
+                  :classNames="{
+                    text: 'color-green font-weight-medium',
+                  }"
+                >
+                  0 원
+                </KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem
                 :classNames="{
-                  text: 'color-black',
+                  item: 'text-body-3',
                 }"
               >
-                매월 5일
-              </KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>결제회차</KeyValueTitle>
-              <KeyValueText
+                <KeyValueTitle>결제일</KeyValueTitle>
+                <KeyValueText
+                  :classNames="{
+                    text: 'color-black',
+                  }"
+                >
+                  매월 5일
+                </KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem
                 :classNames="{
-                  text: 'color-black',
+                  item: 'text-body-3',
                 }"
               >
-                -
-              </KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>대출잔액</KeyValueTitle>
-              <KeyValueText
+                <KeyValueTitle>결제회차</KeyValueTitle>
+                <KeyValueText
+                  :classNames="{
+                    text: 'color-black',
+                  }"
+                >
+                  -
+                </KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem
                 :classNames="{
-                  text: 'color-black',
+                  item: 'text-body-3',
                 }"
               >
-                0원
-              </KeyValueText>
-            </KeyValueItem>
-          </KeyValue>
-        </ContentsButton>
-        <!-- //Case : 리스트가 있는 경우 -->
+                <KeyValueTitle>대출잔액</KeyValueTitle>
+                <KeyValueText
+                  :classNames="{
+                    text: 'color-black',
+                  }"
+                >
+                  0원
+                </KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </ContentsButton>
+        </li>
+      </ul>
+      <!-- //Case : 리스트가 있는 경우 -->
 
-        <!-- Case : 리스트가 없는 경우 -->
-        <div :class="$style['empty']">
-          <p :class="$style['empty__text']">발급 가능한 계약이 없습니다.</p>
-        </div>
-        <!-- //Case : 리스트가 없는 경우 -->
-      </section>
+      <!-- Case : 리스트가 없는 경우 -->
+      <div :class="$style['empty']">
+        <p :class="$style['empty__text']">발급 가능한 계약이 없습니다.</p>
+      </div>
+      <!-- //Case : 리스트가 없는 경우 -->
 
       <!-- Case : 리스트가 없는 경우 -->
       <template v-slot:foot>

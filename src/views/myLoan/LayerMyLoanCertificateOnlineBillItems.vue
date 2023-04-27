@@ -61,17 +61,17 @@ export default {
     CheckBoxObject,
   },
   setup() {
-    const layer = ref(null);
-
     const state = reactive({
       dateError: false,
       minDate: '2023.04.21',
       maxDate: '2023.04.21',
     });
 
+    const layer = ref(null);
+
     return {
-      layer,
       state,
+      layer,
     };
   },
 };
@@ -175,7 +175,7 @@ export default {
 
       <BasicHr className="row-margin-container-medium" />
 
-      <div>
+      <div class="contents-wrap">
         <div class="flex-box row-margin-contents">
           <div class="flex-box__cell flex-1">
             <h3 class="text-title-2">발급항목</h3>
@@ -213,7 +213,11 @@ export default {
                         >회차</span
                       >
                       <span :class="$style['bill-list__detail-item']">
-                        <RoundStatus theme="nonary">연체</RoundStatus>
+                        <RoundStatus
+                          theme="nonary"
+                          :classNames="{ wrap: 'display-block' }"
+                          >연체</RoundStatus
+                        >
                       </span>
                     </span>
                     <span :class="$style['bill-list__amount']">
@@ -242,9 +246,6 @@ export default {
                       <span :class="$style['bill-list__detail-item']"
                         >회차</span
                       >
-                      <span :class="$style['bill-list__detail-item']">
-                        <RoundStatus theme="nonary">연체</RoundStatus>
-                      </span>
                     </span>
                     <span :class="$style['bill-list__amount']">
                       845,000 원

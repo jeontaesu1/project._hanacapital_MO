@@ -87,9 +87,10 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
+      <!-- Case : 리스트가 있는 경우 -->
       <div class="inline-wrap align-right">
         <CheckBox
-          id="LayerMyLoanCertificatePaymentStatementListAll"
+          id="layerMyLoanCertificatePaymentStatementListAll"
           theme="tertiary"
         >
           <CheckBoxObject />
@@ -97,7 +98,6 @@ export default {
         </CheckBox>
       </div>
 
-      <!-- Case : 리스트가 있는 경우 -->
       <BoxCheckList
         align="full"
         :classNames="{
@@ -109,16 +109,16 @@ export default {
             :contents="true"
             align="top"
             type="checkbox"
-            id="LayerMyLoanCertificatePaymentStatementList_001"
+            id="layerMyLoanCertificatePaymentStatementList_001"
           >
             <BasicBoxHead>
               <BasicBoxHeadLeft>
-                <div class="flex-box align-items-start">
+                <div class="flex-box align-items-start text-body-1">
                   <div class="flex-box__cell"><BoxCheckObject /></div>
-                  <div class="flex-box__cell flex-box__cell--small flex-1">
-                    <BoxCheckLabel :classNames="{ label: 'text-body-1' }">
-                      오토리스 05도6880
-                    </BoxCheckLabel>
+                  <div
+                    class="flex-box__cell flex-box__cell--small-regular flex-1"
+                  >
+                    <BoxCheckLabel>오토리스 05도6880</BoxCheckLabel>
                     <div class="text-body-4 color-gray row-margin-small">
                       기아 레이 럭셔리
                     </div>
@@ -131,12 +131,12 @@ export default {
                 </RoundStatus>
               </BasicBoxHeadRight>
             </BasicBoxHead>
-            <KeyValue>
-              <KeyValueItem>
+            <KeyValue margin="regular">
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
                 <KeyValueTitle>이용기간</KeyValueTitle>
                 <KeyValueText>매월 2021.01.04 ~ 2022.09.08</KeyValueText>
               </KeyValueItem>
-              <KeyValueItem>
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
                 <KeyValueTitle>결제회차</KeyValueTitle>
                 <KeyValueText
                   :classNames="{ text: 'color-green font-weight-medium' }"
@@ -144,28 +144,29 @@ export default {
                   매월 5일
                 </KeyValueText>
               </KeyValueItem>
-              <KeyValueItem>
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
                 <KeyValueTitle>결제예정금액</KeyValueTitle>
                 <KeyValueText>0 원</KeyValueText>
               </KeyValueItem>
             </KeyValue>
           </BoxCheck>
         </BoxCheckListItem>
+
         <BoxCheckListItem>
           <BoxCheck
             :contents="true"
             align="top"
             type="checkbox"
-            id="LayerMyLoanCertificatePaymentStatementList_002"
+            id="layerMyLoanCertificatePaymentStatementList_002"
           >
             <BasicBoxHead>
               <BasicBoxHeadLeft>
-                <div class="flex-box align-items-start">
+                <div class="flex-box align-items-start text-body-1">
                   <div class="flex-box__cell"><BoxCheckObject /></div>
-                  <div class="flex-box__cell flex-box__cell--small flex-1">
-                    <BoxCheckLabel :classNames="{ label: 'text-body-1' }">
-                      오토리스 09다9999
-                    </BoxCheckLabel>
+                  <div
+                    class="flex-box__cell flex-box__cell--small-regular flex-1"
+                  >
+                    <BoxCheckLabel>오토리스 09다9999</BoxCheckLabel>
                     <div class="text-body-4 color-gray row-margin-small">
                       기아 레이 럭셔리
                     </div>
@@ -173,12 +174,12 @@ export default {
                 </div>
               </BasicBoxHeadLeft>
             </BasicBoxHead>
-            <KeyValue>
-              <KeyValueItem>
+            <KeyValue margin="regular">
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
                 <KeyValueTitle>결제예정금액</KeyValueTitle>
                 <KeyValueText>매월 2021.01.04 ~ 2022.09.08 </KeyValueText>
               </KeyValueItem>
-              <KeyValueItem>
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
                 <KeyValueTitle>결제회차</KeyValueTitle>
                 <KeyValueText
                   :classNames="{ text: 'color-green font-weight-medium' }"
@@ -186,7 +187,7 @@ export default {
                   41/60 매월 5일
                 </KeyValueText>
               </KeyValueItem>
-              <KeyValueItem>
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
                 <KeyValueTitle>결제예정금액</KeyValueTitle>
                 <KeyValueText>800,000 원</KeyValueText>
               </KeyValueItem>
@@ -216,7 +217,11 @@ export default {
         <!-- //Case : 리스트가 있는 경우 -->
 
         <!-- Case : 리스트가 없는 경우 -->
-        <ButtonList>
+        <ButtonList
+          :classNames="{
+            wrap: 'row-margin-none',
+          }"
+        >
           <ButtonListItem>
             <BasicButton>확인</BasicButton>
           </ButtonListItem>

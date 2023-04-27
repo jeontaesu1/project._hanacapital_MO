@@ -105,7 +105,7 @@ export default {
         </NoticeText>
       </PageTextGroup>
 
-      <section>
+      <div>
         <BasicBox className="row-margin-item-group">
           <KeyValue>
             <KeyValueItem
@@ -292,32 +292,34 @@ export default {
           </KeyValue>
         </BasicBox>
         <!-- //Case : 렌트일 경우 노출 -->
-      </section>
+      </div>
 
-      <BasicHr className="row-margin-container-medium"></BasicHr>
+      <BasicHr className="row-margin-container-medium" />
 
-      <section>
+      <div>
         <PageMainText>만기처리안내</PageMainText>
         <div class="row-margin-contents-group">
-          <div class="row-margin-container-medium">
-            <h4 class="text-title-2">연장</h4>
-            <!-- Case : 리스일 경우 노출 -->
-            <p
-              class="text-body-4 color-gray row-margin-small font-weight-light"
-            >
-              차량의 잔존가치 9,999,999원으로 리스 기한 연장
-            </p>
-            <!-- //Case : 리스일 경우 노출 -->
+          <section class="row-margin-container-medium">
+            <div class="row-margin-contents">
+              <h4 class="text-title-2">연장</h4>
+              <!-- Case : 리스일 경우 노출 -->
+              <p
+                class="text-body-4 color-gray row-margin-small font-weight-light"
+              >
+                차량의 잔존가치 9,999,999원으로 리스 기한 연장
+              </p>
+              <!-- //Case : 리스일 경우 노출 -->
 
-            <!-- Case : 렌트일 경우 노출 -->
-            <p
-              class="text-body-4 color-gray row-margin-small font-weight-light"
-            >
-              차량의 잔존가치 9,999,999원으로 렌트 기한 연장
-            </p>
-            <!-- //Case : 렌트일 경우 노출 -->
+              <!-- Case : 렌트일 경우 노출 -->
+              <p
+                class="text-body-4 color-gray row-margin-small font-weight-light"
+              >
+                차량의 잔존가치 9,999,999원으로 렌트 기한 연장
+              </p>
+              <!-- //Case : 렌트일 경우 노출 -->
+            </div>
 
-            <BasicBox className="row-margin-contents row-margin-bottom-none">
+            <BasicBox>
               <KeyValue>
                 <KeyValueItem
                   :classNames="{
@@ -348,12 +350,12 @@ export default {
               단, 최초실행일로부터 60개월 이용 차량은 연장이 불가합니다.
             </NoticeText>
             <!-- //Case : 렌트일 경우 노출 -->
-          </div>
+          </section>
 
-          <div class="row-margin-container-medium">
-            <h4 class="text-title-2">구매</h4>
+          <section class="row-margin-container-medium">
+            <h4 class="text-title-2 row-margin-contents">구매</h4>
             <!-- Case : 리스일 경우 노출 -->
-            <BasicBox className="row-margin-contents">
+            <BasicBox>
               <KeyValue>
                 <KeyValueItem
                   :classNames="{
@@ -378,71 +380,78 @@ export default {
                 </KeyValueItem>
               </KeyValue>
             </BasicBox>
-            <ol
-              :class="[
-                $style['contents-list__list'],
-                $style['contents-list__list--quinary'],
-                'row-margin-contents',
-              ]"
-            >
-              <li :class="$style['contents-list__item']">
-                <div :class="$style['contents-list__head']">
-                  <div :class="$style['contents-list__symbol']">1</div>
-                  <div :class="$style['contents-list__title']">
-                    구매대금은 별도로 납부하셔야 합니다.
+            <div :class="[$style['contents-list'], 'row-margin-contents']">
+              <ol
+                :class="[
+                  $style['contents-list__list'],
+                  $style['contents-list__list--quinary'],
+                ]"
+              >
+                <li :class="$style['contents-list__item']">
+                  <div :class="$style['contents-list__head']">
+                    <div :class="$style['contents-list__symbol']">1</div>
+                    <div :class="$style['contents-list__title']">
+                      구매대금은 별도로 납부하셔야 합니다.
+                    </div>
                   </div>
-                </div>
-                <div
-                  :class="[$style['contents-list__depth-3'], 'row-margin-mini']"
-                >
-                  <p class="text-body-4 font-weight-light color-gray-tertiary">
-                    (리스 보증금이 있는 경우 차액분만 입금)
-                  </p>
-                </div>
-              </li>
-              <li :class="$style['contents-list__item']">
-                <div :class="$style['contents-list__head']">
-                  <div :class="$style['contents-list__symbol']">2</div>
-                  <div :class="$style['contents-list__title']">
-                    만기일 +10일 이내에 ‘차량등록명의’를 고객님으로 이전
-                    완료(3자 이전금지) 하셔야 하며, 미이전 시에는 자동차관리법에
-                    따른 범칙금이 부과됩니다.
+                  <div
+                    :class="[
+                      $style['contents-list__depth-3'],
+                      'row-margin-mini',
+                    ]"
+                  >
+                    <p
+                      class="text-body-4 font-weight-light color-gray-tertiary"
+                    >
+                      (리스 보증금이 있는 경우 차액분만 입금)
+                    </p>
                   </div>
-                </div>
-              </li>
-              <li :class="$style['contents-list__item']">
-                <div :class="$style['contents-list__head']">
-                  <div :class="$style['contents-list__symbol']">3</div>
-                  <div :class="$style['contents-list__title']">
-                    명의 이전에 소요되는 각종 비용(등록세, 취득세, 공채비용
-                    등)은 고객님 부담입니다.
+                </li>
+                <li :class="$style['contents-list__item']">
+                  <div :class="$style['contents-list__head']">
+                    <div :class="$style['contents-list__symbol']">2</div>
+                    <div :class="$style['contents-list__title']">
+                      만기일 +10일 이내에 ‘차량등록명의’를 고객님으로 이전
+                      완료(3자 이전금지) 하셔야 하며, 미이전 시에는
+                      자동차관리법에 따른 범칙금이 부과됩니다.
+                    </div>
                   </div>
-                </div>
-              </li>
-              <li :class="$style['contents-list__item']">
-                <div :class="$style['contents-list__head']">
-                  <div :class="$style['contents-list__symbol']">4</div>
-                  <div :class="$style['contents-list__title']">
-                    소유권이전 등록은 손님이 직접 이전하는 방법과,
-                    이전대행업체(주식회사 다코스)를 통한 이전 방법이 있습니다.
-                    이전대행업체를 통한 이전 등록 시 이전대행비용이 발생됩니다.
+                </li>
+                <li :class="$style['contents-list__item']">
+                  <div :class="$style['contents-list__head']">
+                    <div :class="$style['contents-list__symbol']">3</div>
+                    <div :class="$style['contents-list__title']">
+                      명의 이전에 소요되는 각종 비용(등록세, 취득세, 공채비용
+                      등)은 고객님 부담입니다.
+                    </div>
                   </div>
-                </div>
-              </li>
-              <li :class="$style['contents-list__item']">
-                <div :class="$style['contents-list__head']">
-                  <div :class="$style['contents-list__symbol']">5</div>
-                  <div :class="$style['contents-list__title']">
-                    『차량등록명의』가 이용자명의일 경우에도 차량 매입시
-                    취득세가 발생합니다.
+                </li>
+                <li :class="$style['contents-list__item']">
+                  <div :class="$style['contents-list__head']">
+                    <div :class="$style['contents-list__symbol']">4</div>
+                    <div :class="$style['contents-list__title']">
+                      소유권이전 등록은 손님이 직접 이전하는 방법과,
+                      이전대행업체(주식회사 다코스)를 통한 이전 방법이 있습니다.
+                      이전대행업체를 통한 이전 등록 시 이전대행비용이
+                      발생됩니다.
+                    </div>
                   </div>
-                </div>
-              </li>
-            </ol>
+                </li>
+                <li :class="$style['contents-list__item']">
+                  <div :class="$style['contents-list__head']">
+                    <div :class="$style['contents-list__symbol']">5</div>
+                    <div :class="$style['contents-list__title']">
+                      『차량등록명의』가 이용자명의일 경우에도 차량 매입시
+                      취득세가 발생합니다.
+                    </div>
+                  </div>
+                </li>
+              </ol>
+            </div>
             <!-- //Case : 리스일 경우 노출 -->
 
             <!-- Case : 렌트일 경우 노출 -->
-            <BasicBox className="row-margin-contents">
+            <BasicBox>
               <KeyValue>
                 <KeyValueItem
                   :classNames="{
@@ -467,139 +476,153 @@ export default {
                 </KeyValueItem>
               </KeyValue>
             </BasicBox>
-            <ol
-              :class="[
-                $style['contents-list__list'],
-                $style['contents-list__list--quinary'],
-                'row-margin-contents',
-              ]"
-            >
-              <li :class="$style['contents-list__item']">
-                <div :class="$style['contents-list__head']">
-                  <div :class="$style['contents-list__symbol']">1</div>
-                  <div :class="$style['contents-list__title']">
-                    구매대금은 별도로 납부하셔야 합니다.
+            <div :class="[$style['contents-list'], 'row-margin-contents']">
+              <ol
+                :class="[
+                  $style['contents-list__list'],
+                  $style['contents-list__list--quinary'],
+                ]"
+              >
+                <li :class="$style['contents-list__item']">
+                  <div :class="$style['contents-list__head']">
+                    <div :class="$style['contents-list__symbol']">1</div>
+                    <div :class="$style['contents-list__title']">
+                      구매대금은 별도로 납부하셔야 합니다.
+                    </div>
                   </div>
-                </div>
-                <div
-                  :class="[$style['contents-list__depth-3'], 'row-margin-mini']"
-                >
-                  <p class="text-body-4 font-weight-light color-gray-tertiary">
-                    (렌트 보증금이 있는 경우 차액분만 입금)
-                  </p>
-                </div>
-              </li>
-              <li :class="$style['contents-list__item']">
-                <div :class="$style['contents-list__head']">
-                  <div :class="$style['contents-list__symbol']">2</div>
-                  <div :class="$style['contents-list__title']">
-                    만기일 +10일 이내에 ‘차량등록명의’를 고객님으로 이전
-                    완료(3자 이전금지) 하셔야 하며, 미이전 시에는 자동차관리법에
-                    따른 범칙금이 부과됩니다.
-                  </div>
-                </div>
-              </li>
-              <li :class="$style['contents-list__item']">
-                <div :class="$style['contents-list__head']">
-                  <div :class="$style['contents-list__symbol']">3</div>
-                  <div :class="$style['contents-list__title']">
-                    명의 이전에 소요되는 각종 비용(등록세, 취득세, 공채비용
-                    등)은 고객님 부담입니다.
-                  </div>
-                </div>
-              </li>
-              <li :class="$style['contents-list__item']">
-                <div :class="$style['contents-list__head']">
-                  <div :class="$style['contents-list__symbol']">4</div>
-                  <div :class="$style['contents-list__title']">
-                    소유권이전 등록은 손님이 직접 이전하는 방법과,
-                    이전대행업체(주식회사 다코스)를 통한 이전 방법이 있습니다.
-                    이전대행업체를 통한 이전 등록 시 이전대행비용이 발생됩니다.
-                  </div>
-                </div>
-              </li>
-              <li :class="$style['contents-list__item']">
-                <div :class="$style['contents-list__head']">
-                  <div :class="$style['contents-list__symbol']">5</div>
-                  <div :class="$style['contents-list__title']">
-                    렌터카 보험적용 가능기간: 렌터카만기일~14일
-                  </div>
-                </div>
-                <div
-                  :class="[$style['contents-list__depth-3'], 'row-margin-mini']"
-                >
-                  <p class="text-body-4 font-weight-light color-gray-tertiary">
-                    (비영업일 포함/이후 보험적용 불가)
-                  </p>
-                  <ul :class="[$style['basic-list'], 'row-margin-mini']">
-                    <li
-                      :class="[
-                        $style['basic-list__item'],
-                        'text-body-4 color-black font-weight-regular',
-                      ]"
+                  <div
+                    :class="[
+                      $style['contents-list__depth-3'],
+                      'row-margin-mini',
+                    ]"
+                  >
+                    <p
+                      class="text-body-4 font-weight-light color-gray-tertiary"
                     >
-                      <div :class="$style['basic-list__symbol']">-</div>
-                      <div :class="$style['basic-list__content']">
-                        렌터카 만기일 이후 고객명의 보험가입 필수<br />
-                        (차대번호 가입)
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            </ol>
+                      (렌트 보증금이 있는 경우 차액분만 입금)
+                    </p>
+                  </div>
+                </li>
+                <li :class="$style['contents-list__item']">
+                  <div :class="$style['contents-list__head']">
+                    <div :class="$style['contents-list__symbol']">2</div>
+                    <div :class="$style['contents-list__title']">
+                      만기일 +10일 이내에 ‘차량등록명의’를 고객님으로 이전
+                      완료(3자 이전금지) 하셔야 하며, 미이전 시에는
+                      자동차관리법에 따른 범칙금이 부과됩니다.
+                    </div>
+                  </div>
+                </li>
+                <li :class="$style['contents-list__item']">
+                  <div :class="$style['contents-list__head']">
+                    <div :class="$style['contents-list__symbol']">3</div>
+                    <div :class="$style['contents-list__title']">
+                      명의 이전에 소요되는 각종 비용(등록세, 취득세, 공채비용
+                      등)은 고객님 부담입니다.
+                    </div>
+                  </div>
+                </li>
+                <li :class="$style['contents-list__item']">
+                  <div :class="$style['contents-list__head']">
+                    <div :class="$style['contents-list__symbol']">4</div>
+                    <div :class="$style['contents-list__title']">
+                      소유권이전 등록은 손님이 직접 이전하는 방법과,
+                      이전대행업체(주식회사 다코스)를 통한 이전 방법이 있습니다.
+                      이전대행업체를 통한 이전 등록 시 이전대행비용이
+                      발생됩니다.
+                    </div>
+                  </div>
+                </li>
+                <li :class="$style['contents-list__item']">
+                  <div :class="$style['contents-list__head']">
+                    <div :class="$style['contents-list__symbol']">5</div>
+                    <div :class="$style['contents-list__title']">
+                      렌터카 보험적용 가능기간: 렌터카만기일~14일
+                    </div>
+                  </div>
+                  <div
+                    :class="[
+                      $style['contents-list__depth-3'],
+                      'row-margin-mini',
+                    ]"
+                  >
+                    <p
+                      class="text-body-4 font-weight-light color-gray-tertiary"
+                    >
+                      (비영업일 포함/이후 보험적용 불가)
+                    </p>
+                    <ul :class="[$style['basic-list'], 'row-margin-mini']">
+                      <li
+                        :class="[
+                          $style['basic-list__item'],
+                          'text-body-4 color-black font-weight-regular',
+                        ]"
+                      >
+                        <div :class="$style['basic-list__symbol']">-</div>
+                        <div :class="$style['basic-list__content']">
+                          렌터카 만기일 이후 고객명의 보험가입 필수<br />
+                          (차대번호 가입)
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ol>
+            </div>
             <!-- //Case : 렌트일 경우 노출 -->
-          </div>
+          </section>
 
-          <div class="row-margin-container-medium">
-            <h4 class="text-title-2">반환</h4>
-            <p
-              class="text-body-4 color-gray row-margin-small font-weight-light"
-            >
-              차량 반환 일시와 장소를 협의하여 반환 후 차량 평가
-            </p>
-            <ol
-              :class="[
-                $style['contents-list__list'],
-                $style['contents-list__list--quinary'],
-                'row-margin-contents',
-              ]"
-            >
-              <li :class="$style['contents-list__item']">
-                <div :class="$style['contents-list__head']">
-                  <div :class="$style['contents-list__symbol']">1</div>
-                  <div :class="$style['contents-list__title']">
-                    평가 결과에 따라 ‘차량평가정산금‘이 발생될 수 있습니다.
+          <section class="row-margin-container-medium">
+            <div class="row-margin-contents">
+              <h4 class="text-title-2">반환</h4>
+              <p
+                class="text-body-4 color-gray row-margin-small font-weight-light"
+              >
+                차량 반환 일시와 장소를 협의하여 반환 후 차량 평가
+              </p>
+            </div>
+            <div :class="$style['contents-list']">
+              <ol
+                :class="[
+                  $style['contents-list__list'],
+                  $style['contents-list__list--quinary'],
+                ]"
+              >
+                <li :class="$style['contents-list__item']">
+                  <div :class="$style['contents-list__head']">
+                    <div :class="$style['contents-list__symbol']">1</div>
+                    <div :class="$style['contents-list__title']">
+                      평가 결과에 따라 ‘차량평가정산금‘이 발생될 수 있습니다.
+                    </div>
                   </div>
-                </div>
-              </li>
-              <li :class="$style['contents-list__item']">
-                <div :class="$style['contents-list__head']">
-                  <div :class="$style['contents-list__symbol']">2</div>
-                  <div :class="$style['contents-list__title']">
-                    차량 반환 지연 시에는 ‘반환지연금‘이 추가로 부과됩니다.
+                </li>
+                <li :class="$style['contents-list__item']">
+                  <div :class="$style['contents-list__head']">
+                    <div :class="$style['contents-list__symbol']">2</div>
+                    <div :class="$style['contents-list__title']">
+                      차량 반환 지연 시에는 ‘반환지연금‘이 추가로 부과됩니다.
+                    </div>
                   </div>
-                </div>
-              </li>
-              <li :class="$style['contents-list__item']">
-                <div :class="$style['contents-list__head']">
-                  <div :class="$style['contents-list__symbol']">3</div>
-                  <div :class="$style['contents-list__title']">
-                    반환 가능 여부 및 ‘차량평가정산금‘에 관한 세부내용은 약관을
-                    참조하시기 바랍니다.
+                </li>
+                <li :class="$style['contents-list__item']">
+                  <div :class="$style['contents-list__head']">
+                    <div :class="$style['contents-list__symbol']">3</div>
+                    <div :class="$style['contents-list__title']">
+                      반환 가능 여부 및 ‘차량평가정산금‘에 관한 세부내용은
+                      약관을 참조하시기 바랍니다.
+                    </div>
                   </div>
-                </div>
-              </li>
-            </ol>
-          </div>
+                </li>
+              </ol>
+            </div>
+          </section>
 
-          <div class="row-margin-container-medium">
-            <h4 class="text-title-2">공통사항</h4>
+          <section class="row-margin-container-medium">
+            <h4 class="text-title-2 row-margin-contents">공통사항</h4>
             <ul
               :class="[
                 $style['basic-list'],
                 $style['basic-list--regular-margin'],
-                'row-margin-contents',
               ]"
             >
               <li
@@ -671,9 +694,9 @@ export default {
                 </div>
               </li>
             </ul>
-          </div>
+          </section>
         </div>
-      </section>
+      </div>
 
       <BasicHr
         type="contents"

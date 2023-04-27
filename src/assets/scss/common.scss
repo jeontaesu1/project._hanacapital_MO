@@ -110,6 +110,10 @@ body,
       margin-left: 16px;
     }
 
+    & + &--small-regular {
+      margin-left: 6px;
+    }
+
     & + &--small {
       margin-left: 4px;
     }
