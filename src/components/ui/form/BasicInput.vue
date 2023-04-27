@@ -37,6 +37,14 @@ export default {
       Type: Boolean,
       default: true,
     },
+    readonly: {
+      Type: Boolean,
+      default: false,
+    },
+    disabled: {
+      Type: Boolean,
+      default: false,
+    },
     align: {
       Type: String,
       default: null,
@@ -153,13 +161,15 @@ export default {
           customClassNames.input,
         ]"
         :value="modelValue || state.val"
+        :disabled="disabled"
+        :readonly="readonly"
         @input="onInput"
         @keyup="onKeyup"
       />
     </div>
     <button
       type="button"
-      v-if="useDelete"
+      v-if="!disabled && !readonly && useDelete"
       :class="[$style['input__delete'], customClassNames.delete]"
       @click="deleteAction"
     >
