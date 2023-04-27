@@ -1869,12 +1869,7 @@ const datas = () => [
         path: '/guide/my-loan-add-documents-001',
         status: 'partend',
         create: '2023.04.28',
-        log: [
-          {
-            date: '2023.04.28',
-            text: '팝업 추가\n- 약관동의\n- 서류입력',
-          },
-        ],
+        log: [],
       },
       {
         depth2: '서류등록',
@@ -1884,7 +1879,7 @@ const datas = () => [
         depth6: '',
         path: '/my-loan/add-documents-complete',
         status: 'end',
-        create: '2023.4.28',
+        create: '2023.04.28',
         log: [],
       },
     ],

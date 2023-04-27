@@ -108,7 +108,7 @@ export default {
                 <BasicInput
                   type="number"
                   pattern="\d*"
-                  title="주민등록번호 앞 6자리"
+                  title="생년월일 (6자리)"
                   id="layerMyLoanProgressContractDocumentsBirthDate"
                 />
               </InputBlockCell>

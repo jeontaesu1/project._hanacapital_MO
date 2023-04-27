@@ -9,7 +9,6 @@ import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
-
 import IllustInfo from '@/components/ui/common/IllustInfo.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
 import IllustInfoTitle from '@/components/ui/common/IllustInfoTitle.vue';

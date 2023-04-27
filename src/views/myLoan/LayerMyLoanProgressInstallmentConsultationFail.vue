@@ -59,7 +59,7 @@ export default {
         <PageSubText>판매점과 협의 후 진행 바랍니다.</PageSubText>
       </PageTextGroup>
 
-      <IllustObject type="error" :classNames="{ wrap: $style['illust'] }" />
+      <IllustObject type="error" />
 
       <NoticeText>
         심사 시, 소득증빙 등 심사자료를 요청 할 수 있습니다.
@@ -79,7 +79,3 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/myLoan/LayerMyLoanProgressInstallmentConsultationFail.scss';
-</style>

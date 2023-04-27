@@ -53,8 +53,6 @@ export default {
     BasicButton,
   },
   setup() {
-    const layer = ref(null);
-
     const state = reactive({
       nameError001: false,
       nameError002: false,
@@ -66,9 +64,11 @@ export default {
       buisnessLicenseError: false,
     });
 
+    const layer = ref(null);
+
     return {
-      layer,
       state,
+      layer,
     };
   },
 };
@@ -87,8 +87,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          양수인(승계후이용자) 정보를<br />
-          <strong>입력해주세요</strong>
+          고객 정보를<br />
+          <strong>입력해 주세요</strong>
         </PageMainText>
       </PageTextGroup>
 
@@ -149,7 +149,7 @@ export default {
                     <!-- DD : 보안 키패드 열렸을 때 :isFocused="true" props 추가 해서 포커싱 스타일 적용 -->
                     <SecurityInput
                       title="주민등록번호 뒤 7자리"
-                      :dot="[true, true, true, true, true, true, true]"
+                      :dot="[true, true, true, false, false, false, false]"
                     />
                   </InputBlockCell>
                 </InputBlock>
@@ -219,7 +219,7 @@ export default {
                     <!-- DD : 보안 키패드 열렸을 때 :isFocused="true" props 추가 해서 포커싱 스타일 적용 -->
                     <SecurityInput
                       title="주민등록번호 뒤 7자리"
-                      :dot="[true, true, true, true, true, true, true]"
+                      :dot="[true, true, true, false, false, false, false]"
                     />
                   </InputBlockCell>
                 </InputBlock>
@@ -253,7 +253,7 @@ export default {
                 <InputBlock :error="state.buisnessNameError">
                   <InputBlockCell :flexible="true">
                     <BasicInput
-                      title="사상호명"
+                      title="상호명"
                       id="layerMyLoanProgressInstallmentConsultationCustomerInfoBuisnessName"
                     />
                   </InputBlockCell>

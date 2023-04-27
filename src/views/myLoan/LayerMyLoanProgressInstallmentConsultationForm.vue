@@ -78,15 +78,16 @@ export default {
       <FormList class="row-margin-contents">
         <FormListItem
           titleText="품목명"
-          target="#layerMyLoanProgressInstallmentConsultationFormName"
+          target="#layerMyLoanProgressInstallmentConsultationFormNameSearch"
         >
           <FormInvalid :error="state.nameError">
             <InputBlock :error="state.nameError">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="품목명"
-                  defaultValue="CCTV_무"
                   id="layerMyLoanProgressInstallmentConsultationFormName"
+                  :readonly="true"
+                  defaultValue="CCTV_무"
                 />
               </InputBlockCell>
               <template v-slot:right>

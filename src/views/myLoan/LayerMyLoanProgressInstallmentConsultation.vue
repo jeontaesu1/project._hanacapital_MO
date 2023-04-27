@@ -29,7 +29,6 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-
     IconCertificationPerson,
     IconPersonalTerms,
     IconSend,

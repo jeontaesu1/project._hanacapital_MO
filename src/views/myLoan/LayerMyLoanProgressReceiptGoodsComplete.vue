@@ -32,7 +32,6 @@ export default {
     ButtonListItem,
     BasicButton,
     BasicHr,
-
     IconCustomer,
     IconTell,
   },
@@ -68,7 +67,7 @@ export default {
         </PageSubText>
       </PageTextGroup>
 
-      <IllustObject type="complete" :classNames="{ wrap: $style['illust'] }" />
+      <IllustObject type="complete" />
 
       <BasicHr
         type="contents"

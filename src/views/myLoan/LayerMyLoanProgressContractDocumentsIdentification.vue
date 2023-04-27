@@ -54,7 +54,7 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <IllustObject type="license" :classNames="{ wrap: $style['illust'] }" />
+      <IllustObject type="license" />
 
       <template v-slot:foot>
         <ButtonList
@@ -70,7 +70,3 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/myLoan/LayerMyLoanProgressContractDocumentsIdentification.scss';
-</style>

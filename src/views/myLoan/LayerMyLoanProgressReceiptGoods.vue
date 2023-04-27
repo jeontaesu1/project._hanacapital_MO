@@ -70,16 +70,9 @@ export default {
           하나캐피탈 <span class="color-green">물품수령확인</span>을 위해<br />
           <strong>이름을 입력해 주세요</strong>
         </PageMainText>
-        <!-- DD : 이름 입력 및 다음 버튼 누른 후 노출 -->
-        <PageMainText>
-          하나캐피탈 <span class="color-green">물품수령확인</span>을 위해<br />
-          <strong>생년월일을 입력해 주세요</strong>
-        </PageMainText>
-        <!-- // DD : 이름 입력 및 다음 버튼 누른 후 노출 -->
       </PageTextGroup>
 
       <FormList>
-        <!-- DD : 이름 입력 및 다음 버튼 누른 후 노출 -->
         <FormListItem
           titleText="생년월일"
           titleOptionalText="(6자리)"
@@ -91,7 +84,7 @@ export default {
                 <BasicInput
                   type="number"
                   pattern="\d*"
-                  title="주민등록번호 앞 6자리"
+                  title="생년월일 (6자리)"
                   id="layerMyLoanProgressReceiptGoodsBirthDate"
                 />
               </InputBlockCell>
@@ -99,7 +92,6 @@ export default {
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
-        <!-- // DD : 이름 입력 및 다음 버튼 누른 후 노출 -->
 
         <FormListItem
           titleText="이름"

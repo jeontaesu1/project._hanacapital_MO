@@ -209,7 +209,7 @@ export default {
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer012Open">
-          한도조회결과<br />PF_M10_l007
+          고객정보입력<br />PF_M10_l007
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>

@@ -55,7 +55,7 @@ export default {
     <ToastPopup>
       <template v-slot:head>
         <ToastPopupHead>
-          <PopupTitle> E-mail을 입력해 주세요 </PopupTitle>
+          <PopupTitle>E-mail을 입력해 주세요</PopupTitle>
         </ToastPopupHead>
       </template>
 
