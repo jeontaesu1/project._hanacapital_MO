@@ -185,7 +185,7 @@ export default {
                   type="number"
                   pattern="\d*"
                   title="휴대폰번호"
-                  id="LayerMyLoanPostMaturityExtensionRequestPhone02"
+                  id="layerMyLoanPostMaturityExtensionRequestPhone02"
                   defaultValue="01012345678"
                   :disabled="true"
                 />

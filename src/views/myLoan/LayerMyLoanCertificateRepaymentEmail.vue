@@ -88,8 +88,8 @@ export default {
         <BoxCheckListItem>
           <BoxCheck
             :minSide="true"
-            name="LayerMyLoanCertificateRepaymentEmailCheckList001"
-            id="LayerMyLoanCertificateRepaymentEmailCheck001_001"
+            name="layerMyLoanCertificateRepaymentEmailCheckList001"
+            id="layerMyLoanCertificateRepaymentEmailCheck001_001"
           >
             <BoxCheckLabel>hana1234@hana.com</BoxCheckLabel>
           </BoxCheck>
@@ -97,8 +97,8 @@ export default {
         <BoxCheckListItem>
           <BoxCheck
             :minSide="true"
-            name="LayerMyLoanCertificateRepaymentEmailCheckList001"
-            id="LayerMyLoanCertificateRepaymentEmailCheck001_002"
+            name="layerMyLoanCertificateRepaymentEmailCheckList001"
+            id="layerMyLoanCertificateRepaymentEmailCheck001_002"
           >
             <BoxCheckLabel>hana9876@hana.com</BoxCheckLabel>
           </BoxCheck>
@@ -106,8 +106,8 @@ export default {
         <BoxCheckListItem>
           <BoxCheck
             :minSide="true"
-            name="LayerMyLoanCertificateRepaymentEmailCheckList001"
-            id="LayerMyLoanCertificateRepaymentEmailCheck001_003"
+            name="layerMyLoanCertificateRepaymentEmailCheckList001"
+            id="layerMyLoanCertificateRepaymentEmailCheck001_003"
           >
             <BoxCheckLabel>직접 입력</BoxCheckLabel>
           </BoxCheck>
@@ -125,7 +125,7 @@ export default {
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="이메일 아이디"
-                  id="LayerMyLoanCertificateRepaymentEmailId"
+                  id="layerMyLoanCertificateRepaymentEmailId"
                 />
               </InputBlockCell>
               <InputBlockCell margin="regular">@</InputBlockCell>
@@ -184,7 +184,7 @@ export default {
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="이메일 도메인 직접입력"
-                  id="LayerMyLoanCertificateRepaymentEmailDomainSelf"
+                  id="layerMyLoanCertificateRepaymentEmailDomainSelf"
                 />
               </InputBlockCell>
             </InputBlock>

@@ -108,7 +108,7 @@ export default {
           <BoxCheckListItem>
             <BoxCheck
               :contents="true"
-              name="LayerPersonalLoanETCCheckType"
+              name="layerPersonalLoanETCCheckType"
               id="layerPersonalLoanETCCheckType_001"
               :defaultChecked="true"
             >
@@ -142,7 +142,7 @@ export default {
           <BoxCheckListItem>
             <BoxCheck
               :contents="true"
-              name="LayerPersonalLoanETCCheckType"
+              name="layerPersonalLoanETCCheckType"
               id="layerPersonalLoanETCCheckType_002"
             >
               <BoxCheckLabel
@@ -180,7 +180,7 @@ export default {
           <BoxCheckListItem>
             <BoxCheck
               :contents="true"
-              name="LayerPersonalLoanETCCheckType"
+              name="layerPersonalLoanETCCheckType"
               id="layerPersonalLoanETCCheckType_003"
             >
               <BoxCheckLabel

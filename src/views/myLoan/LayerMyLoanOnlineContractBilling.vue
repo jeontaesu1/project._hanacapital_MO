@@ -184,6 +184,7 @@ export default {
                     />
                   </InputBlockCell>
                 </InputBlock>
+                <!-- Case : 직접입력 선택 시 노출 -->
                 <InputBlock
                   :error="state.mailError"
                   :classNames="{
@@ -197,6 +198,7 @@ export default {
                     />
                   </InputBlockCell>
                 </InputBlock>
+                <!-- // Case : 직접입력 선택 시 노출 -->
                 <FormInvalidMessage>Error Message</FormInvalidMessage>
               </FormInvalid>
             </FormListItem>

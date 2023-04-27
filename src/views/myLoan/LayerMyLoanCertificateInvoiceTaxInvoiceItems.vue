@@ -102,7 +102,7 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="LayerMyLoanCertificateInvoiceTaxInvoiceItemsDateCheck"
+                    name="layerMyLoanCertificateInvoiceTaxInvoiceItemsDateCheck"
                     id="layerMyLoanCertificateInvoiceTaxInvoiceItemsDateCheck001"
                   >
                     <BoxCheckLabel>1개월</BoxCheckLabel>
@@ -111,7 +111,7 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="LayerMyLoanCertificateInvoiceTaxInvoiceItemsDateCheck"
+                    name="layerMyLoanCertificateInvoiceTaxInvoiceItemsDateCheck"
                     id="layerMyLoanCertificateInvoiceTaxInvoiceItemsDateCheck002"
                   >
                     <BoxCheckLabel>3개월</BoxCheckLabel>
@@ -120,7 +120,7 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="LayerMyLoanCertificateInvoiceTaxInvoiceItemsDateCheck"
+                    name="layerMyLoanCertificateInvoiceTaxInvoiceItemsDateCheck"
                     id="layerMyLoanCertificateInvoiceTaxInvoiceItemsDateCheck003"
                   >
                     <BoxCheckLabel>6개월</BoxCheckLabel>
@@ -129,7 +129,7 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="LayerMyLoanCertificateInvoiceTaxInvoiceItemsDateCheck"
+                    name="layerMyLoanCertificateInvoiceTaxInvoiceItemsDateCheck"
                     id="layerMyLoanCertificateInvoiceTaxInvoiceItemsDateCheck004"
                   >
                     <BoxCheckLabel>1년</BoxCheckLabel>
