@@ -1,3 +1,71 @@
 <script>
 // My_M04_l001
+import { ref } from 'vue';
+
+import UiLayer from '@/components/ui/layer/UiLayer.vue';
+import ToastPopup from '@/components/ui/layer/ToastPopup.vue';
+import ToastPopupHead from '@/components/ui/layer/ToastPopupHead.vue';
+import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
+
+import IconPhone from '@/assets/images/icon/phone.svg?component';
+import IconCertification from '@/assets/images/icon/certification.svg?component';
+
+export default {
+  components: {
+    UiLayer,
+    ToastPopup,
+    ToastPopupHead,
+    PopupTitle,
+    IconPhone,
+    IconCertification,
+  },
+  setup() {
+    const layer = ref(null);
+
+    return {
+      layer,
+    };
+  },
+};
 </script>
+
+<template>
+  <UiLayer ref="layer" type="toast" :backgroundClose="true">
+    <ToastPopup>
+      <template v-slot:head>
+        <ToastPopupHead>
+          <PopupTitle>본인인증 방법을 선택해 주세요</PopupTitle>
+        </ToastPopupHead>
+      </template>
+
+      <div :class="$style['icon-buttons']">
+        <ul :class="$style['icon-buttons__list']">
+          <!-- Case : 개인(개인사업자)일 경우만 노출 -->
+          <li :class="$style['icon-buttons__item']">
+            <button type="button" :class="$style['icon-buttons__block']">
+              <span :class="$style['icon-buttons__icon']"><IconPhone /></span>
+              <span :class="$style['icon-buttons__content']">
+                <span :class="$style['icon-buttons__title']">휴대폰</span>
+              </span>
+            </button>
+          </li>
+          <!-- //Case : 개인(개인사업자)일 경우만 노출 -->
+          <li :class="$style['icon-buttons__item']">
+            <button type="button" :class="$style['icon-buttons__block']">
+              <span :class="$style['icon-buttons__icon']">
+                <IconCertification />
+              </span>
+              <span :class="$style['icon-buttons__content']">
+                <span :class="$style['icon-buttons__title']">공동인증서</span>
+              </span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </ToastPopup>
+  </UiLayer>
+</template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/myLoan/LayerMyLoanMortgageIdentificationMethodSelect.scss';
+</style>
