@@ -107,26 +107,10 @@ export default {
         <section class="row-margin-contents-group">
           <h3 class="text-body-2 row-margin-item-medium">취·등록세</h3>
 
-          <ul
-            :class="[
-              $style['basic-list'],
-              $style['basic-list--regular'],
-              $style['basic-list--regular-margin'],
-            ]"
-          >
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-4',
-              ]"
-            >
-              <div :class="$style['basic-list__content']">
-                취등록세는 국토부 과세표준금액과 당사 잔존가치금액을 상호
-                비교하여 더 높은 금액기준으로 산정됩니다.
-              </div>
-            </li>
-          </ul>
+          <p class="text-body-4 font-weight-light">
+            취등록세는 국토부 과세표준금액과 당사 잔존가치금액을 상호 비교하여
+            더 높은 금액기준으로 산정됩니다.
+          </p>
 
           <NoticeText :classNames="{ wrap: 'row-margin-item' }">
             지방세법 시행령 제18조(취득가격의 범위 등)
@@ -136,28 +120,12 @@ export default {
         <section class="row-margin-contents-group">
           <h3 class="text-body-2 row-margin-item-medium">제3자이전 불가</h3>
 
-          <ul
-            :class="[
-              $style['basic-list'],
-              $style['basic-list--regular'],
-              $style['basic-list--regular-margin'],
-            ]"
-          >
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-4',
-              ]"
-            >
-              <div :class="$style['basic-list__content']">
-                자동차관리법 제12조3항에 따라
-                <span class="color-red font-weight-regular"
-                  >계약자 외 제3자명의이전은 불가</span
-                >합니다.
-              </div>
-            </li>
-          </ul>
+          <p class="text-body-4 font-weight-light">
+            자동차관리법 제12조3항에 따라
+            <span class="color-red font-weight-regular"
+              >계약자 외 제3자명의이전은 불가</span
+            >합니다.
+          </p>
 
           <NoticeText :classNames="{ wrap: 'color-red row-margin-item' }">
             자동차관리법 제12조3항(이전등록)<br />
@@ -171,50 +139,18 @@ export default {
             범칙금/과태료/제세공과금 납부
           </h3>
 
-          <ul
-            :class="[
-              $style['basic-list'],
-              $style['basic-list--regular'],
-              $style['basic-list--regular-margin'],
-            ]"
-          >
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-4',
-              ]"
-            >
-              <div :class="$style['basic-list__content']">
-                오토리스 이용 중 발생한 각종 제세공과금(과태료, 범칙금 포함)등에
-                대해서는 본인의 책임하에 부담할 것을 확약합니다.
-              </div>
-            </li>
-          </ul>
+          <p class="text-body-4 font-weight-light">
+            오토리스 이용 중 발생한 각종 제세공과금(과태료, 범칙금 포함)등에
+            대해서는 본인의 책임하에 부담할 것을 확약합니다.
+          </p>
         </section>
 
         <section class="row-margin-contents-group">
           <h3 class="text-body-2 row-margin-item-medium">보험가입</h3>
 
-          <ul
-            :class="[
-              $style['basic-list'],
-              $style['basic-list--regular'],
-              $style['basic-list--regular-margin'],
-            ]"
-          >
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-4',
-              ]"
-            >
-              <div :class="$style['basic-list__content']">
-                자동차 소유권이전을 위해 보험에 가입되어 있어야 합니다.
-              </div>
-            </li>
-          </ul>
+          <p class="text-body-4 font-weight-light">
+            자동차 소유권이전을 위해 보험에 가입되어 있어야 합니다.
+          </p>
         </section>
       </div>
 

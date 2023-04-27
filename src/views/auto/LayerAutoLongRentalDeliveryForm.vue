@@ -296,6 +296,7 @@ export default {
               </InputBlockCell>
             </InputBlock>
             <!-- // DD : 주소 검색 및 입력 후 노출 -->
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
 

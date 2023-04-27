@@ -44,7 +44,7 @@ export default {
         </FullPopupHead>
       </template>
 
-      <InputBlock>
+      <InputBlock type="search">
         <InputBlockCell :flexible="true">
           <BasicInput
             type="search"
@@ -56,6 +56,8 @@ export default {
           <SearchButton />
         </InputBlockCell>
       </InputBlock>
+
+      <!-- Case : 검색 후 노출 -->
 
       <BasicHr className="row-margin-container-medium" />
 
@@ -69,19 +71,18 @@ export default {
       <div :class="$style['board']">
         <ul :class="$style['board__list']">
           <li v-for="i in 3" :key="i" :class="$style['board__item']">
-            <RouterLink
-              to="/customer/notice-detail"
-              :class="$style['board__link']"
-            >
+            <button type="button" :class="$style['board__link']">
               <span :class="$style['board__title']">
                 <span :class="$style['board__title-text']">LED전광판</span>
               </span>
               <span :class="$style['board__text']">㈜삼성애드</span>
-            </RouterLink>
+            </button>
           </li>
         </ul>
       </div>
       <!-- // Case : 검색 결과 있을 때 -->
+
+      <!-- // Case : 검색 후 노출 -->
     </FullPopup>
   </UiLayer>
 </template>

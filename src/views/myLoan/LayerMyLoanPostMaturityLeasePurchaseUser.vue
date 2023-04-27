@@ -64,42 +64,21 @@ export default {
         <section class="row-margin-contents-group">
           <h3 class="text-body-2 row-margin-item-medium">소유권 이전등록</h3>
 
-          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-4',
-              ]"
-            >
-              <div :class="$style['basic-list__content']">
-                이용자 명의 리스상품으로, 소유권 이전 등록 절차가 필요하지
-                않습니다.
-              </div>
-            </li>
-          </ul>
+          <p class="text-body-4 font-weight-light">
+            이용자 명의 리스상품으로, 소유권 이전 등록 절차가 필요하지 않습니다.
+          </p>
         </section>
 
         <section class="row-margin-contents-group">
           <h3 class="text-body-2 row-margin-item-medium">취득세</h3>
 
-          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-4',
-              ]"
-            >
-              <div :class="$style['basic-list__content']">
-                리스차량 이용자는 리스
-                <span class="color-red font-weight-regular"
-                  >계약 종료일로부터 60일이내에 취득세(2%)를 신고 납부</span
-                >하여야 합니다. (자진신고납부)<br />
-                불이행시 가산세를 포함한 금액으로 과세됩니다.
-              </div>
-            </li>
-          </ul>
+          <p class="text-body-4 font-weight-light">
+            리스차량 이용자는 리스
+            <span class="color-red font-weight-regular"
+              >계약 종료일로부터 60일이내에 취득세(2%)를 신고 납부</span
+            >하여야 합니다. (자진신고납부)<br />
+            불이행시 가산세를 포함한 금액으로 과세됩니다.
+          </p>
 
           <NoticeText :classNames="{ wrap: 'row-margin-item' }">
             지방세법 제15조(세율의특례)제2항제8호 및 같은법시행령 제30조 제2항
@@ -109,22 +88,11 @@ export default {
 
         <section class="row-margin-contents-group">
           <h3 class="text-body-2 row-margin-item-medium">저당해지</h3>
-
-          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-4',
-              ]"
-            >
-              <div :class="$style['basic-list__content']">
-                리스 종료 이후,
-                <span class="color-red font-weight-regular">저당해지</span>가
-                필요합니다.
-              </div>
-            </li>
-          </ul>
+          <p class="text-body-4 font-weight-light">
+            리스 종료 이후,
+            <span class="color-red font-weight-regular">저당해지</span>가
+            필요합니다.
+          </p>
 
           <NoticeText :classNames="{ wrap: 'row-margin-item' }">
             저당해지문의(대표번호) 1800-1110
@@ -146,7 +114,3 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/myLoan/LayerMyLoanPostMaturityLeasePurchaseUser.scss';
-</style>

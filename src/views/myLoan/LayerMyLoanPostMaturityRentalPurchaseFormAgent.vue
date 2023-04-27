@@ -89,28 +89,30 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <section>
-        <BasicBox>
-          <KeyValue>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>이전서류발송예정일자</KeyValueTitle>
-              <KeyValueText>2023.01.10</KeyValueText>
-            </KeyValueItem>
-          </KeyValue>
-        </BasicBox>
-      </section>
+      <BasicBox>
+        <KeyValue>
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>이전서류발송예정일자</KeyValueTitle>
+            <KeyValueText>2023.01.10</KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+      </BasicBox>
 
       <section class="row-margin-container-medium">
-        <h3 class="text-title-2 row-margin-small">이전대행 안내</h3>
-        <p class="text-body-3 color-gray-tertiary font-weight-light">
-          2023.01.10 이후 순차적으로 이전대행 안내 연락 드립니다.
-        </p>
+        <div class="row-margin-contents">
+          <h3 class="text-title-2">이전대행 안내</h3>
+          <p
+            class="text-body-3 color-gray-tertiary font-weight-light row-margin-small"
+          >
+            2023.01.10 이후 순차적으로 이전대행 안내 연락 드립니다.
+          </p>
+        </div>
 
-        <BasicBox className="row-margin-contents">
+        <BasicBox>
           <KeyValue margin="regular">
             <KeyValueItem
               :classNames="{
@@ -243,7 +245,7 @@ export default {
       <template v-slot:foot>
         <ButtonList
           :classNames="{
-            wrap: 'row-margin-contents-small',
+            wrap: 'row-margin-none',
           }"
         >
           <ButtonListItem>

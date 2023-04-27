@@ -38,7 +38,7 @@ export default {
         </FullPopupHead>
       </template>
 
-      <section class="row-margin-contents-group">
+      <section>
         <h3 class="text-body-2 row-margin-item-medium">안내사항</h3>
 
         <ul

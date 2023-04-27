@@ -80,28 +80,26 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <section>
-        <BasicBox>
-          <KeyValue margin="regular">
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>만기일자</KeyValueTitle>
-              <KeyValueText>2023.01.05</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>최종결제일자</KeyValueTitle>
-              <KeyValueText>2023.01.05</KeyValueText>
-            </KeyValueItem>
-          </KeyValue>
-        </BasicBox>
-      </section>
+      <BasicBox>
+        <KeyValue margin="regular">
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>만기일자</KeyValueTitle>
+            <KeyValueText>2023.01.05</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>최종결제일자</KeyValueTitle>
+            <KeyValueText>2023.01.05</KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+      </BasicBox>
 
       <section class="row-margin-container-medium">
         <h3 class="text-title-2 row-margin-contents">구매 예상 정산 비용</h3>
@@ -173,7 +171,7 @@ export default {
           계산서 발행 금액(잔존가치)
         </h3>
 
-        <BasicBox className="row-margin-contents">
+        <BasicBox>
           <KeyValue margin="regular">
             <KeyValueItem
               :classNames="{
@@ -190,7 +188,7 @@ export default {
       <template v-slot:foot>
         <ButtonList
           :classNames="{
-            wrap: 'row-margin-contents-small',
+            wrap: 'row-margin-none',
           }"
         >
           <ButtonListItem>

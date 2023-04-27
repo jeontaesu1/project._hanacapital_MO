@@ -197,14 +197,16 @@ export default {
               </BoxCheck>
             </BoxCheckListItem>
           </BoxCheckList>
-          <NoticeText :classNames="{ wrap: 'row-margin-item-group' }">
-            운용리스: 잔가를 설정하여 이용자에게 임대하는 상품<br />
-            <span class="color-red">(계산서 발행)</span>
-          </NoticeText>
-          <NoticeText :classNames="{ wrap: 'row-margin-item-group' }">
-            금융리스: 잔가를 별도로 운영하지 않고 이용자에게 임대하는 상품
-            <span class="color-red">(계산서 미발행)</span>
-          </NoticeText>
+          <div class="row-margin-item-group">
+            <NoticeText :classNames="{ wrap: 'row-margin-item' }">
+              운용리스: 잔가를 설정하여 이용자에게 임대하는 상품<br />
+              <span class="color-red">(계산서 발행)</span>
+            </NoticeText>
+            <NoticeText :classNames="{ wrap: 'row-margin-item' }">
+              금융리스: 잔가를 별도로 운영하지 않고 이용자에게 임대하는 상품
+              <span class="color-red">(계산서 미발행)</span>
+            </NoticeText>
+          </div>
         </FormListItem>
 
         <FormListItem titleText="기간선택" :forceFocus="true">
@@ -342,11 +344,7 @@ export default {
         </FormListItem>
 
         <!-- Case : '보증금' 선택 시 노출 -->
-        <FormListItem
-          titleText="보증금비율"
-          :forceFocus="true"
-          :disabled="true"
-        >
+        <FormListItem titleText="보증금비율" :forceFocus="true">
           <FormInvalid :error="state.depositError">
             <BoxCheckList
               :wrap="true"
@@ -428,7 +426,6 @@ export default {
               </BoxCheckListItem>
             </BoxCheckList>
 
-            <!-- Case : '금액입력' 선택시 활성화 -->
             <InputBlock :error="state.depositError" :disabled="true">
               <InputBlockCell :flexible="true">
                 <BasicInput
@@ -445,7 +442,6 @@ export default {
                 <div class="text-body-3">원</div>
               </template>
             </InputBlock>
-            <!-- //Case : '금액입력' 선택시 활성화 -->
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
@@ -534,7 +530,6 @@ export default {
               </BoxCheckListItem>
             </BoxCheckList>
 
-            <!-- Case : '금액입력' 선택시 활성화 -->
             <InputBlock :error="state.advancePaymentError" :disabled="true">
               <InputBlockCell :flexible="true">
                 <BasicInput
@@ -551,7 +546,6 @@ export default {
                 <div class="text-body-3">원</div>
               </template>
             </InputBlock>
-            <!-- //Case : '금액입력' 선택시 활성화 -->
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
@@ -561,7 +555,7 @@ export default {
       <template v-slot:foot>
         <ButtonList
           :classNames="{
-            wrap: 'row-margin-contents-small',
+            wrap: 'row-margin-none',
           }"
         >
           <ButtonListItem>

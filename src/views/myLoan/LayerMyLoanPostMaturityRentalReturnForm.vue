@@ -101,36 +101,36 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <ul :class="$style['basic-list']">
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            최대반환가능일자를 경과하여 반환하는 경우 반환지연금이 청구됩니다.
-          </div>
-        </li>
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            반환 신청은 2영업일 이후 가능합니다.
-          </div>
-        </li>
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            출고 후 설치하신 개인물품 모두 확인 및 제거후 반납해 주시기
-            바랍니다.
-          </div>
-        </li>
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            반환 시 탁송기사님께 인수 시 수령하신 키 전부를 반납해 주세요.
-          </div>
-        </li>
-      </ul>
+      <div>
+        <ul :class="[$style['basic-list'], 'row-margin-contents-group']">
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              최대반환가능일자를 경과하여 반환하는 경우 반환지연금이 청구됩니다.
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              반환 신청은 2영업일 이후 가능합니다.
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              출고 후 설치하신 개인물품 모두 확인 및 제거후 반납해 주시기
+              바랍니다.
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              반환 시 탁송기사님께 인수 시 수령하신 키 전부를 반납해 주세요.
+            </div>
+          </li>
+        </ul>
 
-      <section class="row-margin-contents-group row-margin-bottom-none">
-        <BasicBox className="row-margin-contents">
+        <BasicBox>
           <KeyValue margin="regular">
             <KeyValueItem
               :classNames="{
@@ -159,7 +159,7 @@ export default {
           </KeyValue>
         </BasicBox>
 
-        <FormList>
+        <FormList :classNames="{ wrap: 'row-margin-contents' }">
           <FormListItem
             titleText="반환예정일자"
             target="#layerMyLoanPostMaturityRentalReturnFormDateButton"
@@ -178,222 +178,225 @@ export default {
             </FormInvalid>
           </FormListItem>
         </FormList>
-      </section>
+      </div>
 
-      <section class="row-margin-container-medium">
-        <h3 class="text-title-2 row-margin-contents">반환 담당자 정보</h3>
+      <div class="row-margin-container-medium">
+        <section class="row-margin-container-medium">
+          <h3 class="text-title-2 row-margin-contents">반환 담당자 정보</h3>
 
-        <CheckBox
-          id="layerMyLoanPostMaturityRentalReturnFormCheckBox001"
-          theme="tertiary"
-          :classNames="{
-            wrap: 'row-margin-contents',
-          }"
-        >
-          <CheckBoxObject />
-          <CheckBoxLabelText>계약자 정보와 동일</CheckBoxLabelText>
-        </CheckBox>
-
-        <FormList>
-          <FormListItem
-            titleText="반환 담당자 이름"
-            target="#layerMyLoanPostMaturityRentalReturnFormName"
+          <CheckBox
+            id="layerMyLoanPostMaturityRentalReturnFormCheckBox001"
+            theme="tertiary"
+            :classNames="{
+              wrap: 'row-margin-contents',
+            }"
           >
-            <FormInvalid :error="state.nameError">
-              <InputBlock :error="state.nameError">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    title="반환 담당자 이름"
-                    id="layerMyLoanPostMaturityRentalReturnFormName"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
+            <CheckBoxObject />
+            <CheckBoxLabelText>계약자 정보와 동일</CheckBoxLabelText>
+          </CheckBox>
 
-          <FormListItem
-            titleText="휴대폰번호"
-            target="#layerMyLoanPostMaturityRentalReturnFormPhoneButton001"
-          >
-            <FormInvalid :error="state.phoneError">
-              <InputBlock :error="state.phoneError">
-                <InputBlockCell>
-                  <BasicSelect
-                    :option="[
-                      {
-                        value: '1',
-                        text: 'SKT',
-                      },
-                      {
-                        value: '2',
-                        text: 'KT',
-                      },
-                      {
-                        value: '3',
-                        text: 'LG U+',
-                      },
-                      {
-                        value: '4',
-                        text: '알뜰폰 SKT',
-                      },
-                      {
-                        value: '5',
-                        text: '알뜰폰 KT',
-                      },
-                      {
-                        value: '6',
-                        text: '알뜰폰 LG +',
-                      },
-                    ]"
-                    buttonTitle="통신사 선택하기"
-                    layerTitle="통신사를 선택해 주세요"
-                    id="layerMyLoanPostMaturityRentalReturnFormPhone001"
-                    buttonId="layerMyLoanPostMaturityRentalReturnFormPhoneButton001"
-                    :classNames="{
-                      wrap: 'input-width-telecom',
-                    }"
-                  />
-                </InputBlockCell>
-                <InputBlockCell :flexible="true" margin="regular">
-                  <BasicInput
-                    type="number"
-                    pattern="\d*"
-                    title="휴대폰번호"
-                    id="layerMyLoanPostMaturityRentalReturnFormPhone002"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-        </FormList>
-      </section>
+          <FormList>
+            <FormListItem
+              titleText="반환 담당자 이름"
+              target="#layerMyLoanPostMaturityRentalReturnFormName"
+            >
+              <FormInvalid :error="state.nameError">
+                <InputBlock :error="state.nameError">
+                  <InputBlockCell :flexible="true">
+                    <BasicInput
+                      title="반환 담당자 이름"
+                      id="layerMyLoanPostMaturityRentalReturnFormName"
+                    />
+                  </InputBlockCell>
+                </InputBlock>
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
 
-      <section>
-        <h3 class="text-title-2 row-margin-contents">반환 요청 정보</h3>
+            <FormListItem
+              titleText="휴대폰번호"
+              target="#layerMyLoanPostMaturityRentalReturnFormPhoneButton001"
+            >
+              <FormInvalid :error="state.phoneError">
+                <InputBlock :error="state.phoneError">
+                  <InputBlockCell>
+                    <BasicSelect
+                      :option="[
+                        {
+                          value: '1',
+                          text: 'SKT',
+                        },
+                        {
+                          value: '2',
+                          text: 'KT',
+                        },
+                        {
+                          value: '3',
+                          text: 'LG U+',
+                        },
+                        {
+                          value: '4',
+                          text: '알뜰폰 SKT',
+                        },
+                        {
+                          value: '5',
+                          text: '알뜰폰 KT',
+                        },
+                        {
+                          value: '6',
+                          text: '알뜰폰 LG +',
+                        },
+                      ]"
+                      buttonTitle="통신사 선택하기"
+                      layerTitle="통신사를 선택해 주세요"
+                      id="layerMyLoanPostMaturityRentalReturnFormPhone001"
+                      buttonId="layerMyLoanPostMaturityRentalReturnFormPhoneButton001"
+                      :classNames="{
+                        wrap: 'input-width-telecom',
+                      }"
+                    />
+                  </InputBlockCell>
+                  <InputBlockCell :flexible="true" margin="regular">
+                    <BasicInput
+                      type="number"
+                      pattern="\d*"
+                      title="휴대폰번호"
+                      id="layerMyLoanPostMaturityRentalReturnFormPhone002"
+                    />
+                  </InputBlockCell>
+                </InputBlock>
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
+          </FormList>
+        </section>
 
-        <FormList>
-          <FormListItem
-            titleText="반환요청 시간"
-            target="#layerMyLoanPostMaturityRentalReturnFormTimeButton"
-            :selectOnly="true"
-          >
-            <FormInvalid :error="state.timeError">
-              <InputBlock :error="state.timeError">
-                <InputBlockCell :flexible="true">
-                  <BasicSelect
-                    :option="[
-                      {
-                        value: '1',
-                        text: '9시',
-                      },
-                      {
-                        value: '2',
-                        text: '10시',
-                      },
-                      {
-                        value: '3',
-                        text: '11시',
-                      },
-                      {
-                        value: '4',
-                        text: '12시',
-                      },
-                      {
-                        value: '5',
-                        text: '13시',
-                      },
-                      {
-                        value: '6',
-                        text: '14시',
-                      },
-                      {
-                        value: '7',
-                        text: '15시',
-                      },
-                      {
-                        value: '8',
-                        text: '16시',
-                      },
-                      {
-                        value: '9',
-                        text: '17시',
-                      },
-                    ]"
-                    buttonTitle="반환요청 시간 선택하기"
-                    layerTitle="반환요청 시간을 선택해 주세요"
-                    id="layerMyLoanPostMaturityRentalReturnFormTime"
-                    buttonId="layerMyLoanPostMaturityRentalReturnFormTimeButton"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
+        <section class="row-margin-container-medium">
+          <h3 class="text-title-2 row-margin-contents">반환 요청 정보</h3>
 
-          <FormListItem
-            titleText="반환요청 장소"
-            :forceFocus="true"
-            target="#layerMyLoanPostMaturityRentalReturnFormAddressSearch"
-          >
-            <FormInvalid :error="state.addressError">
-              <InputBlock :error="state.addressError">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    title="반환요청 장소 우편번호"
-                    :disabled="true"
-                    defaultValue="01000"
-                  />
-                </InputBlockCell>
-                <template v-slot:right>
-                  <BasicButton
-                    size="mini"
-                    theme="tertiary"
-                    id="layerMyLoanPostMaturityRentalReturnFormAddressSearch"
-                    >검색</BasicButton
-                  >
-                </template>
-              </InputBlock>
-              <!-- DD : 주소 검색 및 입력 후 노출 -->
-              <InputBlock
-                :error="state.addressError"
-                :classNames="{
-                  wrap: 'row-margin-item-group row-margin-bottom-none',
-                }"
-              >
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    title="반환요청 장소 도로명 주소"
-                    :disabled="true"
-                    defaultValue="인천 서구 에코로 181"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <InputBlock
-                :error="state.addressError"
-                :classNames="{
-                  wrap: 'row-margin-item-group row-margin-bottom-none',
-                }"
-              >
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    title="반환요청 장소 상세 주소"
-                    :disabled="true"
-                    defaultValue="하나금융 로비"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <!-- // DD : 주소 검색 및 입력 후 노출 -->
-            </FormInvalid>
-          </FormListItem>
-        </FormList>
-      </section>
+          <FormList>
+            <FormListItem
+              titleText="반환요청 시간"
+              target="#layerMyLoanPostMaturityRentalReturnFormTimeButton"
+              :selectOnly="true"
+            >
+              <FormInvalid :error="state.timeError">
+                <InputBlock :error="state.timeError">
+                  <InputBlockCell :flexible="true">
+                    <BasicSelect
+                      :option="[
+                        {
+                          value: '1',
+                          text: '9시',
+                        },
+                        {
+                          value: '2',
+                          text: '10시',
+                        },
+                        {
+                          value: '3',
+                          text: '11시',
+                        },
+                        {
+                          value: '4',
+                          text: '12시',
+                        },
+                        {
+                          value: '5',
+                          text: '13시',
+                        },
+                        {
+                          value: '6',
+                          text: '14시',
+                        },
+                        {
+                          value: '7',
+                          text: '15시',
+                        },
+                        {
+                          value: '8',
+                          text: '16시',
+                        },
+                        {
+                          value: '9',
+                          text: '17시',
+                        },
+                      ]"
+                      buttonTitle="반환요청 시간 선택하기"
+                      layerTitle="반환요청 시간을 선택해 주세요"
+                      id="layerMyLoanPostMaturityRentalReturnFormTime"
+                      buttonId="layerMyLoanPostMaturityRentalReturnFormTimeButton"
+                    />
+                  </InputBlockCell>
+                </InputBlock>
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
+
+            <FormListItem
+              titleText="반환요청 장소"
+              :forceFocus="true"
+              target="#layerMyLoanPostMaturityRentalReturnFormAddressSearch"
+            >
+              <FormInvalid :error="state.addressError">
+                <InputBlock :error="state.addressError">
+                  <InputBlockCell :flexible="true">
+                    <BasicInput
+                      title="반환요청 장소 우편번호"
+                      :disabled="true"
+                      defaultValue="01000"
+                    />
+                  </InputBlockCell>
+                  <template v-slot:right>
+                    <BasicButton
+                      size="mini"
+                      theme="tertiary"
+                      id="layerMyLoanPostMaturityRentalReturnFormAddressSearch"
+                      >검색</BasicButton
+                    >
+                  </template>
+                </InputBlock>
+                <!-- DD : 주소 검색 및 입력 후 노출 -->
+                <InputBlock
+                  :error="state.addressError"
+                  :classNames="{
+                    wrap: 'row-margin-item-group row-margin-bottom-none',
+                  }"
+                >
+                  <InputBlockCell :flexible="true">
+                    <BasicInput
+                      title="반환요청 장소 도로명 주소"
+                      :disabled="true"
+                      defaultValue="인천 서구 에코로 181"
+                    />
+                  </InputBlockCell>
+                </InputBlock>
+                <InputBlock
+                  :error="state.addressError"
+                  :classNames="{
+                    wrap: 'row-margin-item-group row-margin-bottom-none',
+                  }"
+                >
+                  <InputBlockCell :flexible="true">
+                    <BasicInput
+                      title="반환요청 장소 상세 주소"
+                      :disabled="true"
+                      defaultValue="하나금융 로비"
+                    />
+                  </InputBlockCell>
+                </InputBlock>
+                <!-- // DD : 주소 검색 및 입력 후 노출 -->
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
+          </FormList>
+        </section>
+      </div>
 
       <template v-slot:foot>
         <ButtonList
           :classNames="{
-            wrap: 'row-margin-contents-small',
+            wrap: 'row-margin-none',
           }"
         >
           <ButtonListItem>

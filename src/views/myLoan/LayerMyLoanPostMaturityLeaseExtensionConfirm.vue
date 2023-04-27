@@ -1,6 +1,6 @@
 <script>
 // My_M08_l021
-import { ref, reactive } from 'vue';
+import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
@@ -51,19 +51,12 @@ export default {
     UnitText,
     BasicHr,
     BasicTooltip,
-
     IconTooltip,
   },
   setup() {
-    const state = reactive({
-      depositError: false,
-      advancePaymentError: false,
-    });
-
     const layer = ref(null);
 
     return {
-      state,
       layer,
     };
   },
@@ -91,7 +84,7 @@ export default {
       </PageTextGroup>
 
       <!-- Case : 운용리스일 경우 노출 -->
-      <section>
+      <div>
         <BasicBox>
           <KeyValue margin="regular">
             <KeyValueItem
@@ -179,7 +172,7 @@ export default {
             </KeyValueItem>
           </KeyValue>
         </BasicBox>
-      </section>
+      </div>
 
       <section class="row-margin-container-medium">
         <h3 class="text-title-2 row-margin-contents">예상 정산 비용</h3>
@@ -187,13 +180,13 @@ export default {
         <BasicBox>
           <BasicBoxHead>
             <BasicBoxHeadLeft>
-              <div class="flex-box row-margin-item-group">
+              <div class="flex-box">
                 <div class="flex-box__cell">
                   <h4 class="text-body-1 font-weight-medium">예상비용(지급)</h4>
                 </div>
                 <div class="flex-box__cell flex-box__cell--small">
                   <BasicTooltip placement="top">
-                    <IconTooltip :class="$style['icon']" />
+                    <IconTooltip class="display-block" />
                     <span class="for-a11y">(도움말)</span>
 
                     <template v-slot:contents>
@@ -381,7 +374,7 @@ export default {
       <template v-slot:foot>
         <ButtonList
           :classNames="{
-            wrap: 'row-margin-contents-small',
+            wrap: 'row-margin-none',
           }"
         >
           <ButtonListItem>
