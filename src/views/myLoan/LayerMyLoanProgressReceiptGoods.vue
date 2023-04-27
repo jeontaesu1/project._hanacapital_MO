@@ -70,6 +70,12 @@ export default {
           하나캐피탈 <span class="color-green">물품수령확인</span>을 위해<br />
           <strong>이름을 입력해 주세요</strong>
         </PageMainText>
+        <!-- DD : 이름 입력 및 다음 버튼 누른 후 노출 -->
+        <PageMainText>
+          하나캐피탈 <span class="color-green">물품수령확인</span>을 위해<br />
+          <strong>생년월일을 입력해 주세요</strong>
+        </PageMainText>
+        <!-- // DD : 이름 입력 및 다음 버튼 누른 후 노출 -->
       </PageTextGroup>
 
       <FormList>
