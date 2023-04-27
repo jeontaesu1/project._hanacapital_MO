@@ -343,8 +343,18 @@ export default {
       layerContainer.value.focus();
     };
 
-    const bodyClick = () => {
-      if (props.backgroundClose && !state.isContainerClick) {
+    const bodyClick = (e) => {
+      const { target } = e;
+      const closest = target.closest(`.${$style['layer']}`);
+
+      if (
+        props.backgroundClose &&
+        !state.isContainerClick &&
+        !(
+          target.classList.contains($style['layer']) && target !== layer.value
+        ) &&
+        !(closest && closest !== layer.value)
+      ) {
         close();
       }
       state.isContainerClick = false;
