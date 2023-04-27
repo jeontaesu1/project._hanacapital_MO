@@ -5207,7 +5207,55 @@ export default {
       </div>
 
       <div class="test-section-sub">
-        <h3 class="test-section-sub-title">small (height: 48px)</h3>
+        <h3 class="test-section-sub-title">
+          block secondary (border : gray-30 / #e0e0e0)
+        </h3>
+        <ul :class="[$style['logs'], $style['logs--margin-regular']]">
+          <li :class="$style['logs__item']">
+            <div
+              :class="[
+                $style['logs__block'],
+                $style['logs__block--secondary'],
+                $style['logs__block--regular'],
+              ]"
+            >
+              <div :class="$style['logs__row']">
+                <div :class="$style['logs__contents']">
+                  <h3 class="text-body-1 font-weight-medium">상환스케줄</h3>
+                </div>
+                <div :class="$style['logs__right']">
+                  <button type="button" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li :class="$style['logs__item']">
+            <div
+              :class="[
+                $style['logs__block'],
+                $style['logs__block--secondary'],
+                $style['logs__block--regular'],
+              ]"
+            >
+              <div :class="$style['logs__row']">
+                <div :class="$style['logs__contents']">
+                  <h3 class="text-body-1 font-weight-medium">온라인청구서</h3>
+                </div>
+                <div :class="$style['logs__right']">
+                  <button type="button" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">padding small</h3>
         <ul :class="$style['logs']">
           <li :class="$style['logs__item']">
             <div :class="[$style['logs__block'], $style['logs__block--small']]">
@@ -5245,6 +5293,48 @@ export default {
       </div>
 
       <div class="test-section-sub">
+        <h3 class="test-section-sub-title">padding regular</h3>
+        <ul :class="$style['logs']">
+          <li :class="$style['logs__item']">
+            <div
+              :class="[$style['logs__block'], $style['logs__block--regular']]"
+            >
+              <div :class="$style['logs__row']">
+                <div :class="$style['logs__contents']">
+                  <h3 class="text-body-1 font-weight-medium">
+                    금리인하요구권 안내
+                  </h3>
+                </div>
+                <div :class="$style['logs__right']">
+                  <button type="button" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li :class="$style['logs__item']">
+            <div
+              :class="[$style['logs__block'], $style['logs__block--regular']]"
+            >
+              <div :class="$style['logs__row']">
+                <div :class="$style['logs__contents']">
+                  <h3 class="text-body-1 font-weight-medium">
+                    청약철회권 안내
+                  </h3>
+                </div>
+                <div :class="$style['logs__right']">
+                  <button type="button" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="test-section-sub">
         <h3 class="test-section-sub-title">margin small (8px)</h3>
         <ul :class="[$style['logs'], $style['logs--margin-small']]">
           <li :class="$style['logs__item']">
@@ -5265,6 +5355,56 @@ export default {
           </li>
           <li :class="$style['logs__item']">
             <div :class="[$style['logs__block'], $style['logs__block--small']]">
+              <div :class="$style['logs__row']">
+                <div :class="$style['logs__contents']">
+                  <h3 class="text-body-3 font-weight-regular">
+                    청약철회권 안내
+                  </h3>
+                </div>
+                <div :class="$style['logs__right']">
+                  <button type="button" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">margin regular (16px)</h3>
+        <ul :class="[$style['logs'], $style['logs--margin-regular']]">
+          <li :class="$style['logs__item']">
+            <div
+              :class="[
+                $style['logs__block'],
+                $style['logs__block--gray'],
+                $style['logs__block--regular'],
+              ]"
+            >
+              <div :class="$style['logs__row']">
+                <div :class="$style['logs__contents']">
+                  <h3 class="text-body-3 font-weight-regular">
+                    금리인하요구권 안내
+                  </h3>
+                </div>
+                <div :class="$style['logs__right']">
+                  <button type="button" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li :class="$style['logs__item']">
+            <div
+              :class="[
+                $style['logs__block'],
+                $style['logs__block--gray'],
+                $style['logs__block--regular'],
+              ]"
+            >
               <div :class="$style['logs__row']">
                 <div :class="$style['logs__contents']">
                   <h3 class="text-body-3 font-weight-regular">
