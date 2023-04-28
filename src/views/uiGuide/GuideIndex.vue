@@ -1757,8 +1757,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/my-loan/post-maturity-rental-before',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.28',
         log: [],
       },
       {
@@ -1768,8 +1768,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/my-loan/post-maturity-rental-after',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.28',
         log: [],
       },
       {
@@ -1790,8 +1790,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/my-loan/post-maturity-lease-before',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.28',
         log: [],
       },
       {
@@ -1801,8 +1801,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/my-loan/post-maturity-lease-after',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.28',
         log: [],
       },
       {

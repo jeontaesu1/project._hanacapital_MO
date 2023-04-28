@@ -1,5 +1,20 @@
 @import '@/assets/scss/components/import/step.scss';
 @import '@/assets/scss/components/import/basic-list.scss';
-@import '@/assets/scss/components/import/notice-section.scss';
 @import '@/assets/scss/components/import/basic-table.scss';
 @import '@/assets/scss/components/import/contents-list.scss';
+
+.table-contents-list {
+  .contents-list__list--quinary {
+    > .contents-list__item {
+      > .contents-list__head {
+        > .contents-list__title {
+          @include font-size-default(13);
+        }
+
+        > .contents-list__symbol {
+          margin: 1px 4px 0 0;
+        }
+      }
+    }
+  }
+}
