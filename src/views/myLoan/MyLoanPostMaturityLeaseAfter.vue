@@ -23,6 +23,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
+import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 
 import IconPhone from '@/assets/images/icon/phone.svg?component';
 import IconSend from '@/assets/images/icon/send.svg?component';
@@ -57,6 +58,7 @@ export default {
     ButtonList,
     ButtonListItem,
     NoticeText,
+    RoundStatus,
     TextButton,
     IconPhone,
     IconSend,
@@ -395,18 +397,161 @@ export default {
                 수수료
               </h4>
               <div :class="$style['basic-table']">
-                <table>
-                  <colgroup>
-                    <col style="width: 120px" />
-                    <col />
-                  </colgroup>
-                  <tbody>
-                    <tr>
-                      <th>손해 배상금</th>
-                      <td>dsds</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div :class="$style['basic-table']">
+                  <table>
+                    <colgroup>
+                      <col style="width: 65px" />
+                      <col />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th>손해<br />배상금</th>
+                        <td class="align-left">
+                          <div :class="$style['contents-list']">
+                            <ol
+                              :class="[
+                                $style['contents-list__list'],
+                                $style['contents-list__list--quinary'],
+                              ]"
+                            >
+                              <li :class="$style['contents-list__item']">
+                                <div :class="$style['contents-list__head']">
+                                  <div :class="$style['contents-list__symbol']">
+                                    주1
+                                  </div>
+                                  <div
+                                    :class="[
+                                      $style['contents-list__title'],
+                                      'row-margin-mini',
+                                    ]"
+                                  >
+                                    <div class="text-body-4">
+                                      중도해지손해배상금
+                                    </div>
+                                    <p
+                                      class="text-caption-1 font-weight-light row-margin-small"
+                                    >
+                                      미회수원금 X 중도해지손해배상금률
+                                    </p>
+                                    <p class="text-caption-1 font-weight-light">
+                                      미회수원금 X 최고요율(80)% X (잔여기간
+                                      월수/리스기간 전체월수)
+                                    </p>
+                                  </div>
+                                </div>
+                              </li>
+                              <li :class="$style['contents-list__item']">
+                                <div :class="$style['contents-list__head']">
+                                  <div :class="$style['contents-list__symbol']">
+                                    주2
+                                  </div>
+                                  <div
+                                    :class="[
+                                      $style['contents-list__title'],
+                                      'row-margin-mini',
+                                    ]"
+                                  >
+                                    <div class="text-body-4">
+                                      규정손해배상금(차랑인수-운용리스)
+                                    </div>
+                                    <p
+                                      class="text-caption-1 font-weight-light row-margin-small"
+                                    >
+                                      미회수원금 X 규정손해배상금률
+                                    </p>
+                                    <p class="text-caption-1 font-weight-light">
+                                      미회수원금 X 최고요율(20)% X (잔여기간
+                                      월수/리스기간 전체월수)
+                                    </p>
+                                  </div>
+                                </div>
+                              </li>
+                              <li :class="$style['contents-list__item']">
+                                <div :class="$style['contents-list__head']">
+                                  <div :class="$style['contents-list__symbol']">
+                                    주3
+                                  </div>
+                                  <div
+                                    :class="[
+                                      $style['contents-list__title'],
+                                      'row-margin-mini',
+                                    ]"
+                                  >
+                                    <div class="text-body-4">
+                                      규정손해배상금(차량인수-금융리스)
+                                    </div>
+                                    <p
+                                      class="text-caption-1 font-weight-light row-margin-small"
+                                    >
+                                      미회수원금 X 규정손해배상금률
+                                    </p>
+                                    <p class="text-caption-1 font-weight-light">
+                                      미회수원금 X 최고요율(4)% X (잔여기간
+                                      월수/리스기간 전체월수)
+                                    </p>
+                                  </div>
+                                </div>
+                              </li>
+                            </ol>
+                          </div>
+
+                          <div class="row-margin-item">
+                            <div :class="[$style['basic-list']]">
+                              <div
+                                :class="[
+                                  $style['basic-list__item'],
+                                  'color-black',
+                                ]"
+                              >
+                                <div :class="$style['basic-list__symbol']">
+                                  ※
+                                </div>
+                                <div :class="$style['basic-list__content']">
+                                  단, 금융리스의 경우 대부업법에서 정하는
+                                  최고이자율을 초과하지 않는 범위로 합니다.
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>승계<br />수수료</th>
+                        <td class="align-left">
+                          <p class="row-margin-small text-body-4">
+                            운용리스, 금융리스
+                          </p>
+                          <p
+                            class="row-margin-none text-caption-1 font-weight-light"
+                          >
+                            미회수원금의 1%(승계수수료 최고 요율) X (잔여기간
+                            월수/리스기간 전체 월수) (min: 500,000원, max:
+                            900,000원)
+                          </p>
+
+                          <div class="row-margin-item">
+                            <div :class="[$style['basic-list']]">
+                              <div
+                                :class="[
+                                  $style['basic-list__item'],
+                                  'color-black',
+                                ]"
+                              >
+                                <div :class="$style['basic-list__symbol']">
+                                  ※
+                                </div>
+                                <div :class="$style['basic-list__content']">
+                                  단, 금융리스의 경우 대부업법에서 정하는
+                                  최고이자율을 초과하지 않는 범위로 합니다.
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
               <ul :class="[$style['basic-list'], 'row-margin-item']">
                 <li :class="$style['basic-list__item']">
@@ -808,8 +953,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/components/import/step.scss';
-@import '@/assets/scss/components/import/basic-list.scss';
-@import '@/assets/scss/components/import/notice-section.scss';
-@import '@/assets/scss/components/import/basic-table.scss';
+@import '@/assets/scss/views/myLoan/MyLoanPostMaturityLeaseAfter.scss';
 </style>

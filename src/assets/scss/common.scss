@@ -239,6 +239,11 @@ body,
   @include font-size-head(18);
 }
 
+.text-caption-1.text-caption-1 {
+  margin: 0;
+  @include font-size-head(11);
+}
+
 // font-weight
 .font-weight-thin.font-weight-thin {
   font-weight: 100;

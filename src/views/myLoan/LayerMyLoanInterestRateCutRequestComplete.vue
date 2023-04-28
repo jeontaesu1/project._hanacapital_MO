@@ -101,5 +101,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/myLoan/LayerMyLoanDesignationDriverLMSComplete.scss';
+@import '@/assets/scss/views/myLoan/LayerMyLoanInterestRateCutRequestComplete.scss';
 </style>

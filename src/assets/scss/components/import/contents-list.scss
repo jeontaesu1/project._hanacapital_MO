@@ -190,7 +190,8 @@
         .contents-list__symbol {
           margin-top: 3px;
           margin-right: 8px;
-          padding-top: 1px;
+          padding: 1px 5px 0;
+          box-sizing: border-box;
           min-width: 16px;
           min-height: 16px;
           border-radius: 100px;

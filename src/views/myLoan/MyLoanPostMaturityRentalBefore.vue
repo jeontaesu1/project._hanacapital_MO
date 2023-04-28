@@ -90,56 +90,67 @@ export default {
 </script>
 
 <template>
-  <PageContents>
-    <PageTextGroup>
-      <PageMainText>
-        렌터카 계약 만기 1개월 전까지<br />
-        <strong>만기후처리를 반드시 선택해 주세요</strong>
-      </PageMainText>
-    </PageTextGroup>
-    <BasicBox>
-      <BasicBoxHead>
-        <BasicBoxHeadLeft>
-          <div class="text-body-1 font-weight-medium">렌터카 07호3994</div>
-        </BasicBoxHeadLeft>
-      </BasicBoxHead>
-      <KeyValue margin="regular">
-        <KeyValueItem :classNames="{ item: 'text-body-3 font-weight-regular' }">
-          <KeyValueTitle>계약기간</KeyValueTitle>
-          <KeyValueText>2016.01.01 ~ 2021.01.01</KeyValueText>
-        </KeyValueItem>
-        <KeyValueItem :classNames="{ item: 'text-body-3 font-weight-regular' }">
-          <KeyValueTitle>잔존가치(VAT포함)</KeyValueTitle>
-          <KeyValueText>99,999,999 원</KeyValueText>
-        </KeyValueItem>
-        <KeyValueItem :classNames="{ item: 'text-body-3 font-weight-regular' }">
-          <KeyValueTitle>보증금</KeyValueTitle>
-          <KeyValueText>99,999,999 원</KeyValueText>
-        </KeyValueItem>
-        <KeyValueItem :classNames="{ item: 'text-body-3 font-weight-regular' }">
-          <KeyValueTitle>실납렌트료(VAT포함)</KeyValueTitle>
-          <KeyValueText>대출기간 만기일 전액 상환</KeyValueText>
-        </KeyValueItem>
-        <KeyValueItem :classNames="{ item: 'text-body-3 font-weight-regular' }">
-          <KeyValueTitle>약정주행거리</KeyValueTitle>
-          <KeyValueText>999,999 km</KeyValueText>
-        </KeyValueItem>
-        <KeyValueItem :classNames="{ item: 'text-body-3 font-weight-regular' }">
-          <KeyValueTitle>정비서비스</KeyValueTitle>
-          <KeyValueText>프리미엄</KeyValueText>
-        </KeyValueItem>
-      </KeyValue>
-    </BasicBox>
+  <UiTab v-slot="tabSlotProps">
+    <PageContents>
+      <PageTextGroup>
+        <PageMainText>
+          렌터카 계약 만기 1개월 전까지<br />
+          <strong>만기후처리를 반드시 선택해 주세요</strong>
+        </PageMainText>
+      </PageTextGroup>
+      <BasicBox>
+        <BasicBoxHead>
+          <BasicBoxHeadLeft>
+            <div class="text-body-1 font-weight-medium">렌터카 07호3994</div>
+          </BasicBoxHeadLeft>
+        </BasicBoxHead>
+        <KeyValue margin="regular">
+          <KeyValueItem
+            :classNames="{ item: 'text-body-3 font-weight-regular' }"
+          >
+            <KeyValueTitle>계약기간</KeyValueTitle>
+            <KeyValueText>2016.01.01 ~ 2021.01.01</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{ item: 'text-body-3 font-weight-regular' }"
+          >
+            <KeyValueTitle>잔존가치(VAT포함)</KeyValueTitle>
+            <KeyValueText>99,999,999 원</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{ item: 'text-body-3 font-weight-regular' }"
+          >
+            <KeyValueTitle>보증금</KeyValueTitle>
+            <KeyValueText>99,999,999 원</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{ item: 'text-body-3 font-weight-regular' }"
+          >
+            <KeyValueTitle>실납렌트료(VAT포함)</KeyValueTitle>
+            <KeyValueText>대출기간 만기일 전액 상환</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{ item: 'text-body-3 font-weight-regular' }"
+          >
+            <KeyValueTitle>약정주행거리</KeyValueTitle>
+            <KeyValueText>999,999 km</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{ item: 'text-body-3 font-weight-regular' }"
+          >
+            <KeyValueTitle>정비서비스</KeyValueTitle>
+            <KeyValueText>프리미엄</KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+      </BasicBox>
 
-    <BasicHr className="row-margin-container-medium" />
+      <BasicHr className="row-margin-container-medium" />
 
-    <UiTab>
       <NavTab :useUiTab="true" :scroll="true" :auto="true">
-        <NavTabButton link="testNavTab001_001">연장</NavTabButton>
+        <NavTabButton link="testNavTab001_001">연장1</NavTabButton>
         <NavTabButton link="testNavTab001_002">반환</NavTabButton>
         <NavTabButton link="testNavTab001_003">구매</NavTabButton>
       </NavTab>
-
       <UiTabPanel name="testNavTab001_001">
         <h3 class="text-title-2 row-margin-contents">만기후 연장 진행절차</h3>
         <div :class="$style['step']">
@@ -683,25 +694,30 @@ export default {
           </ul>
         </div>
       </UiTabPanel>
-    </UiTab>
 
-    <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton>연장신청</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
-    </template>
-  </PageContents>
+      <template v-slot:foot>
+        <ButtonList
+          :classNames="{
+            wrap: 'row-margin-none',
+          }"
+        >
+          <ButtonListItem>
+            <BasicButton v-if="tabSlotProps.activeName === 'testNavTab001_001'"
+              >연장신청</BasicButton
+            >
+            <BasicButton v-if="tabSlotProps.activeName === 'testNavTab001_002'"
+              >반환신청</BasicButton
+            >
+            <BasicButton v-if="tabSlotProps.activeName === 'testNavTab001_003'"
+              >구매신청</BasicButton
+            >
+          </ButtonListItem>
+        </ButtonList>
+      </template>
+    </PageContents>
+  </UiTab>
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/components/import/step.scss';
-@import '@/assets/scss/components/import/basic-list.scss';
-@import '@/assets/scss/components/import/notice-section.scss';
-@import '@/assets/scss/components/import/basic-table.scss';
+@import '@/assets/scss/views/myLoan/MyLoanPostMaturityRentalBefore.scss';
 </style>
