@@ -1,14 +1,36 @@
 <script>
 // My_M05_p001
-import { onMounted, onUnmounted } from 'vue';
+import { onMounted, onUnmounted, reactive } from 'vue';
 
 import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
+import PageMainText from '@/components/ui/text/PageMainText.vue';
+import PageSubText from '@/components/ui/text/PageSubText.vue';
+import BasicBox from '@/components/ui/common/BasicBox.vue';
+import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
+import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
+import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
+import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
+import KeyValueText from '@/components/ui/text/KeyValueText.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
 
 export default {
   components: {
     PageContents,
+    PageTextGroup,
+    PageMainText,
+    PageSubText,
+    BasicBox,
+    BasicBoxHead,
+    BasicBoxHeadLeft,
+    KeyValue,
+    KeyValueItem,
+    KeyValueTitle,
+    KeyValueText,
+    BasicButton,
   },
   setup() {
     const store = {
@@ -17,8 +39,15 @@ export default {
       },
     };
 
+    const state = reactive({
+      carNumberError: false,
+      dateError: false,
+      minDate: '2023.04.21',
+      maxDate: '2023.04.21',
+    });
+
     onMounted(() => {
-      store.ui.header.setTitle(() => '타이틀');
+      store.ui.header.setTitle(() => '금리인하요구권신청');
       store.ui.header.setLeftButtons(() => ['back']);
       store.ui.header.setRightButtons(() => []);
     });
@@ -28,12 +57,121 @@ export default {
       store.ui.header.setLeftButtons();
       store.ui.header.setRightButtons();
     });
+
+    return {
+      state,
+    };
   },
 };
 </script>
 
 <template>
   <PageContents>
-    <h1>Page</h1>
+    <PageTextGroup>
+      <PageMainText>
+        금리인하요구권 신청<br />
+        <strong>가능한 상품은 총 <span class="color-green">2</span>건</strong>
+      </PageMainText>
+      <PageSubText> 금리인하 대상상품만 조회됩니다. </PageSubText>
+    </PageTextGroup>
+
+    <section class="contents-wrap">
+      <!-- Case : 현재 금리인하가 가능한 상품이 없을 경우 -->
+      <div :class="$style['empty']">
+        <p :class="$style['empty__text']">
+          현재 금리인하가 가능한 상품이 없습니다.
+        </p>
+      </div>
+      <!-- //Case : 현재 금리인하가 가능한 상품이 없을 경우 -->
+
+      <ul class="reset-list">
+        <li class="row-margin-item-group">
+          <BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-body-1 font-weight-medium">
+                  오토할부 20고5678
+                </h3>
+                <p class="text-body-4 color-gray row-margin-small">
+                  벤츠 S-Class 세단 가솔린 3.0 S350 Long 자동
+                </p>
+              </BasicBoxHeadLeft>
+            </BasicBoxHead>
+
+            <KeyValue margin="regular">
+              <KeyValueItem
+                :classNames="{ item: 'text-body-3 font-weight-regular' }"
+              >
+                <KeyValueTitle>현재금리</KeyValueTitle>
+                <KeyValueText>4.50%</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem
+                :classNames="{ item: 'text-body-3 font-weight-regular' }"
+              >
+                <KeyValueTitle>월납입금</KeyValueTitle>
+                <KeyValueText>324,440 원</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem
+                :classNames="{ item: 'text-body-3 font-weight-regular' }"
+              >
+                <KeyValueTitle>대출잔액</KeyValueTitle>
+                <KeyValueText>4,820,000 원</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+
+            <BasicButton
+              size="small"
+              theme="secondary"
+              :classNames="{ wrap: 'row-margin-contents-small' }"
+              >금리인하 신청</BasicButton
+            >
+          </BasicBox>
+        </li>
+        <li class="row-margin-item-group">
+          <BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-body-1 font-weight-medium">행복아파트론</h3>
+              </BasicBoxHeadLeft>
+            </BasicBoxHead>
+
+            <KeyValue margin="regular">
+              <KeyValueItem
+                :classNames="{ item: 'text-body-3 font-weight-regular' }"
+              >
+                <KeyValueTitle>현재금리</KeyValueTitle>
+                <KeyValueText>4.50%</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem
+                :classNames="{ item: 'text-body-3 font-weight-regular' }"
+              >
+                <KeyValueTitle>월납입금</KeyValueTitle>
+                <KeyValueText>324,440 원</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem
+                :classNames="{ item: 'text-body-3 font-weight-regular' }"
+              >
+                <KeyValueTitle>대출잔액</KeyValueTitle>
+                <KeyValueText>4,820,000 원</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+
+            <BasicButton
+              size="small"
+              :classNames="{ wrap: 'row-margin-contents-small' }"
+              >금리인하 신청</BasicButton
+            >
+          </BasicBox>
+        </li>
+      </ul>
+    </section>
   </PageContents>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/myLoan/MyLoanInterestRateCutRequest.scss';
+</style>
