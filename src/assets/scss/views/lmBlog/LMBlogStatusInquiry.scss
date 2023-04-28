@@ -4,7 +4,7 @@
   @include reset-list;
   display: flex;
   padding: 0 16px;
-  background: #f9f9f9;
+  background-color: $color-gray-05;
 
   &__item {
     flex: 1;
@@ -13,29 +13,14 @@
   }
 
   &__category {
+    @include reset-button;
     position: relative;
     display: block;
     width: 100%;
     padding: 20px 0;
-    border: none;
-    background: none;
     box-sizing: border-box;
-    cursor: pointer;
 
-    &__number {
-      display: block;
-      color: $color-green-50;
-      @include font-size-default(16);
-    }
-
-    &__text {
-      display: block;
-      margin-top: 2px;
-      color: $color-gray-60;
-      @include font-size-default(12);
-    }
-
-    &.active {
+    &--active {
       &::after {
         content: '';
         display: block;
@@ -47,10 +32,23 @@
         background-color: $color-black;
       }
 
-      .status-inquiry__category__text {
+      .status-inquiry__text {
         color: $color-black;
       }
     }
+  }
+
+  &__number {
+    display: block;
+    color: $color-green-50;
+    @include font-size-default(16);
+  }
+
+  &__text {
+    display: block;
+    margin-top: 2px;
+    color: $color-gray-60;
+    @include font-size-default(12);
   }
 }
 

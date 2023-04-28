@@ -8,14 +8,17 @@ import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
+import BasicHr from '@/components/ui/common/BasicHr.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import PageSubText from '@/components/ui/text/PageSubText.vue';
+
 import IconCustomer from '@/assets/images/icon/customer-center.svg?component';
 import IconTell from '@/assets/images/icon/tell.svg?component';
+
 export default {
   components: {
     UiLayer,
@@ -23,6 +26,7 @@ export default {
     FullPopup,
     FullPopupHead,
     IllustObject,
+    BasicHr,
     ButtonList,
     ButtonListItem,
     BasicButton,
@@ -70,9 +74,9 @@ export default {
         >
       </PageTextGroup>
 
-      <IllustObject type="complete" :classNames="{ wrap: $style['illust'] }" />
+      <IllustObject type="complete" />
 
-      <ul :class="[$style['basic-list'], $style['basic-list--small-margin']]">
+      <ul :class="$style['basic-list']">
         <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']"></div>
           <div :class="$style['basic-list__content']">
@@ -87,36 +91,40 @@ export default {
           </div>
         </li>
       </ul>
-      <div class="row-margin-contents-group">
-        <div :class="$style['icon-list']">
-          <ul :class="$style['icon-list__list']">
-            <li :class="$style['icon-list__item']">
-              <div :class="$style['icon-list__block']">
-                <div :class="$style['icon-list__icon']"><IconCustomer /></div>
-                <div :class="$style['icon-list__content']">
-                  <div :class="$style['icon-list__title']">고객센터</div>
-                  <div :class="$style['icon-list__text']">
-                    평일 09:00 ~ 19:00
-                  </div>
-                </div>
-                <BasicButton
-                  tagName="a"
-                  size="mini"
-                  :line="true"
-                  theme="quaternary"
-                  :classNames="{ wrap: $style['icon-list__button'] }"
-                  href="tel:1800-1110"
-                >
-                  <template v-slot:leftIcon>
-                    <IconTell />
-                  </template>
-                  1800-1110
-                </BasicButton>
+
+      <BasicHr
+        theme="quaternary"
+        type="contents"
+        className="row-margin-container"
+      />
+
+      <div :class="$style['icon-list']">
+        <ul :class="$style['icon-list__list']">
+          <li :class="$style['icon-list__item']">
+            <div :class="$style['icon-list__block']">
+              <div :class="$style['icon-list__icon']"><IconCustomer /></div>
+              <div :class="$style['icon-list__content']">
+                <div :class="$style['icon-list__title']">고객센터</div>
+                <div :class="$style['icon-list__text']">평일 09:00 ~ 18:00</div>
               </div>
-            </li>
-          </ul>
-        </div>
+              <BasicButton
+                tagName="a"
+                size="mini"
+                :line="true"
+                theme="quaternary"
+                :classNames="{ wrap: $style['icon-list__button'] }"
+                href="tel:1800-1110"
+              >
+                <template v-slot:leftIcon>
+                  <IconTell />
+                </template>
+                1800-1110
+              </BasicButton>
+            </div>
+          </li>
+        </ul>
       </div>
+
       <template v-slot:foot>
         <ButtonList
           :classNames="{

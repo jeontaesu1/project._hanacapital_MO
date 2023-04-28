@@ -1823,8 +1823,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/my-loan/interest-rate-cut-request',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.28',
         log: [],
       },
       {
@@ -1834,8 +1834,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/my-loan-interest-rate-cut-request-001',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.28',
         log: [],
       },
       {
@@ -1845,8 +1845,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/my-loan/subscription-withdrawal-right',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.28',
         log: [],
       },
       {
@@ -1856,8 +1856,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/my-loan-subscription-withdrawal-right-001',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.04.28',
         log: [],
       },
       {

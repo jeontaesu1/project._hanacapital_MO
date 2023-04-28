@@ -60,9 +60,9 @@ export default {
         >
       </PageTextGroup>
 
-      <IllustObject type="complete" :classNames="{ wrap: $style['illust'] }" />
+      <IllustObject type="complete" />
 
-      <ul :class="[$style['basic-list'], $style['basic-list--small-margin']]">
+      <ul :class="$style['basic-list']">
         <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']"></div>
           <div :class="$style['basic-list__content']">
@@ -101,5 +101,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/myLoan/LayerMyLoanDesignationDriverLMSComplete.scss';
+@import '@/assets/scss/views/myLoan/LayerMyLoanInterestRateCutRequestComplete.scss';
 </style>

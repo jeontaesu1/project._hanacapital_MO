@@ -100,43 +100,45 @@ export default {
     <template v-slot:head>
       <ul :class="$style['status-inquiry']">
         <li :class="$style['status-inquiry__item']">
-          <button :class="$style['status-inquiry__category']">
-            <span :class="$style['status-inquiry__category__number']">10</span>
-            <span :class="$style['status-inquiry__category__text']">전체</span>
+          <button type="button" :class="$style['status-inquiry__category']">
+            <span :class="$style['status-inquiry__number']">10</span>
+            <span :class="$style['status-inquiry__text']">전체</span>
           </button>
         </li>
         <li :class="$style['status-inquiry__item']">
           <button
-            :class="[$style['status-inquiry__category'], $style['active']]"
+            type="button"
+            :class="[
+              $style['status-inquiry__category'],
+              $style['status-inquiry__category--active'],
+            ]"
           >
-            <span :class="$style['status-inquiry__category__number']">4</span>
-            <span :class="$style['status-inquiry__category__text']"
-              >신용동의</span
-            >
+            <span :class="$style['status-inquiry__number']">4</span>
+            <span :class="$style['status-inquiry__text']">신용동의</span>
           </button>
         </li>
         <li :class="$style['status-inquiry__item']">
-          <button :class="$style['status-inquiry__category']">
-            <span :class="$style['status-inquiry__category__number']">3</span>
-            <span :class="$style['status-inquiry__category__text']">상담</span>
+          <button type="button" :class="$style['status-inquiry__category']">
+            <span :class="$style['status-inquiry__number']">3</span>
+            <span :class="$style['status-inquiry__text']">상담</span>
           </button>
         </li>
         <li :class="$style['status-inquiry__item']">
-          <button :class="$style['status-inquiry__category']">
-            <span :class="$style['status-inquiry__category__number']">2</span>
-            <span :class="$style['status-inquiry__category__text']">계약</span>
+          <button type="button" :class="$style['status-inquiry__category']">
+            <span :class="$style['status-inquiry__number']">2</span>
+            <span :class="$style['status-inquiry__text']">계약</span>
           </button>
         </li>
         <li :class="$style['status-inquiry__item']">
-          <button :class="$style['status-inquiry__category']">
-            <span :class="$style['status-inquiry__category__number']">1</span>
-            <span :class="$style['status-inquiry__category__text']">심사</span>
+          <button type="button" :class="$style['status-inquiry__category']">
+            <span :class="$style['status-inquiry__number']">1</span>
+            <span :class="$style['status-inquiry__text']">심사</span>
           </button>
         </li>
         <li :class="$style['status-inquiry__item']">
-          <button :class="$style['status-inquiry__category']">
-            <span :class="$style['status-inquiry__category__number']">1</span>
-            <span :class="$style['status-inquiry__category__text']">송금</span>
+          <button type="button" :class="$style['status-inquiry__category']">
+            <span :class="$style['status-inquiry__number']">1</span>
+            <span :class="$style['status-inquiry__text']">송금</span>
           </button>
         </li>
       </ul>

@@ -7,6 +7,7 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 import LayerMyLoanSubscriptionWithdrawalRightConfirm from '@/views/myLoan/LayerMyLoanSubscriptionWithdrawalRightConfirm.vue';
+import LayerMyLoanSubscriptionWithdrawalRightNotice from '@/views/myLoan/LayerMyLoanSubscriptionWithdrawalRightNotice.vue';
 import LayerMyLoanSubscriptionWithdrawalRightForm from '@/views/myLoan/LayerMyLoanSubscriptionWithdrawalRightForm.vue';
 import LayerMyLoanSubscriptionWithdrawalRightComplete from '@/views/myLoan/LayerMyLoanSubscriptionWithdrawalRightComplete.vue';
 
@@ -17,6 +18,7 @@ export default {
     ButtonList,
     ButtonListItem,
     LayerMyLoanSubscriptionWithdrawalRightConfirm,
+    LayerMyLoanSubscriptionWithdrawalRightNotice,
     LayerMyLoanSubscriptionWithdrawalRightForm,
     LayerMyLoanSubscriptionWithdrawalRightComplete,
   },
@@ -24,6 +26,7 @@ export default {
     const layer001 = ref(null);
     const layer002 = ref(null);
     const layer003 = ref(null);
+    const layer004 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -34,14 +37,19 @@ export default {
     const layer003Open = (e = {}) => {
       layer003.value.layer.open(e.target);
     };
+    const layer004Open = (e = {}) => {
+      layer004.value.layer.open(e.target);
+    };
 
     return {
       layer001,
       layer002,
       layer003,
+      layer004,
       layer001Open,
       layer002Open,
       layer003Open,
+      layer004Open,
     };
   },
 };
@@ -63,12 +71,18 @@ export default {
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer002Open">
+          청약철회신청 유의사항
+          <br />My_M06_b001
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer003Open">
           정보입력
           <br />My_M06_l002
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer003Open">
+        <BasicButton @click="layer004Open">
           신청완료
           <br />My_M06_l003
         </BasicButton>
@@ -76,7 +90,8 @@ export default {
     </ButtonList>
 
     <LayerMyLoanSubscriptionWithdrawalRightConfirm ref="layer001" />
-    <LayerMyLoanSubscriptionWithdrawalRightForm ref="layer002" />
-    <LayerMyLoanSubscriptionWithdrawalRightComplete ref="layer003" />
+    <LayerMyLoanSubscriptionWithdrawalRightNotice ref="layer002" />
+    <LayerMyLoanSubscriptionWithdrawalRightForm ref="layer003" />
+    <LayerMyLoanSubscriptionWithdrawalRightComplete ref="layer004" />
   </PageContents>
 </template>

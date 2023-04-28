@@ -9,7 +9,6 @@ import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import StepProgress from '@/components/ui/progress/StepProgress.vue';
-
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
@@ -46,18 +45,17 @@ export default {
     BasicSelect,
   },
   setup() {
-    const layer = ref(null);
     const state = reactive({
-      numberError: false,
+      sumError: false,
+      typeError: false,
+      accountError: false,
     });
 
-    const testInputEvent = (e = {}) => {
-      console.log(e.type, e.target);
-    };
+    const layer = ref(null);
+
     return {
       state,
       layer,
-      testInputEvent,
     };
   },
 };
@@ -86,24 +84,24 @@ export default {
       <FormList>
         <FormListItem
           titleText="청약철회 상환금액"
-          :require="true"
-          target="#testInput001"
+          target="#layerMyLoanSubscriptionWithdrawalRightFormSum"
+          :disabled="true"
         >
-          <FormInvalid :error="state.testError001">
-            <InputBlock :error="state.testError001">
+          <FormInvalid :error="state.sumError">
+            <InputBlock :error="state.sumError" :disabled="true">
               <InputBlockCell :flexible="true">
                 <BasicInput
-                  ref="testInput"
-                  id="testInput001"
-                  type="number"
+                  pattern="\d*"
                   :useDelete="false"
                   align="right"
-                  @keyup="testInputEvent"
-                  @focus="testInputEvent"
-                  @blur="testInputEvent"
+                  id="layerMyLoanSubscriptionWithdrawalRightFormSum"
+                  defaultValue="10,002,120"
+                  :disabled="true"
                 />
               </InputBlockCell>
-              <template v-slot:right> 만원 </template>
+              <template v-slot:innerRight>
+                <div class="text-body-3">만원</div>
+              </template>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
             <FormHelpText
@@ -114,11 +112,20 @@ export default {
           </FormInvalid>
         </FormListItem>
 
-        <FormListItem titleText="결제방법" target="#testInput007">
-          <FormInvalid :error="state.testError001">
-            <InputBlock :error="state.testError001">
+        <FormListItem
+          titleText="결제방법"
+          target="#layerMyLoanSubscriptionWithdrawalRightFormType"
+          :disabled="true"
+        >
+          <FormInvalid :error="state.typeError">
+            <InputBlock :error="state.typeError" :disabled="true">
               <InputBlockCell :flexible="true">
-                <BasicInput title="결제방법" id="testInput007" />
+                <BasicInput
+                  title="결제방법"
+                  id="layerMyLoanSubscriptionWithdrawalRightFormType"
+                  defaultValue="가상계좌"
+                  :disabled="true"
+                />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -127,23 +134,23 @@ export default {
 
         <FormListItem
           titleText="계좌정보"
-          target="#testInput010Button"
+          target="#layerMyLoanSubscriptionWithdrawalRightFormAccountButton"
           :selectOnly="true"
         >
-          <FormInvalid :error="state.testError001">
-            <InputBlock :error="state.testError001">
+          <FormInvalid :error="state.accountError">
+            <InputBlock :error="state.accountError">
               <InputBlockCell :flexible="true">
                 <BasicSelect
                   :option="[
                     {
                       value: '1',
-                      text: '3개월',
+                      text: '하나 123-456-78457',
                     },
                   ]"
                   buttonTitle="계좌정보 선택하기"
                   layerTitle="계좌정보를 선택해 주세요"
-                  id="testInput010"
-                  buttonId="testInput010Button"
+                  id="layerMyLoanSubscriptionWithdrawalRightFormAccount"
+                  buttonId="layerMyLoanSubscriptionWithdrawalRightFormAccountButton"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -169,7 +176,3 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/myLoan/LayerMyLoanInterestRateCutRequestAgree.scss';
-</style>

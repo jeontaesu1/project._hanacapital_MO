@@ -9,7 +9,6 @@ import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import StepProgress from '@/components/ui/progress/StepProgress.vue';
-
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
@@ -21,7 +20,6 @@ import NoticeText from '@/components/ui/text/NoticeText.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
-
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 
 export default {
@@ -47,10 +45,12 @@ export default {
     BasicSelect,
   },
   setup() {
-    const layer = ref(null);
     const state = reactive({
-      numberError: false,
+      reasonError: false,
+      documentError: false,
     });
+
+    const layer = ref(null);
 
     return {
       state,
@@ -92,11 +92,11 @@ export default {
         <FormList>
           <FormListItem
             titleText="금리인하신청사유"
-            target="#testInput010Button"
+            target="#layerMyLoanInterestRateCutRequestFormReasonButton"
             :selectOnly="true"
           >
-            <FormInvalid :error="state.testError001">
-              <InputBlock :error="state.testError001">
+            <FormInvalid :error="state.reasonError">
+              <InputBlock :error="state.reasonError">
                 <InputBlockCell :flexible="true">
                   <BasicSelect
                     :option="[
@@ -131,21 +131,22 @@ export default {
                     ]"
                     buttonTitle="금리인하신청 사유 선택하기"
                     layerTitle="금리인하신청 사유를 선택해 주세요"
-                    id="testInput010"
-                    buttonId="testInput010Button"
+                    id="layerMyLoanInterestRateCutRequestFormReason"
+                    buttonId="layerMyLoanInterestRateCutRequestFormReasonButton"
                   />
                 </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
+
           <FormListItem
             titleText="제출서류"
-            target="#testInput010Button"
+            target="#layerMyLoanInterestRateCutRequestFormDocumentButton"
             :selectOnly="true"
           >
-            <FormInvalid :error="state.testError001">
-              <InputBlock :error="state.testError001">
+            <FormInvalid :error="state.documentError">
+              <InputBlock :error="state.documentError">
                 <InputBlockCell :flexible="true">
                   <BasicSelect
                     :option="[
@@ -164,29 +165,32 @@ export default {
                     ]"
                     buttonTitle="제출서류를 선택하기"
                     layerTitle="제출서류를 선택해 주세요"
-                    id="testInput010"
-                    buttonId="testInput010Button"
+                    id="layerMyLoanInterestRateCutRequestFormDocument"
+                    buttonId="layerMyLoanInterestRateCutRequestFormDocumentButton"
                   />
                 </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
+              <div class="row-margin-item">
+                <NoticeText :classNames="{ wrap: 'row-margin-item' }">
+                  제출가능한 항목을 선택해 주세요.
+                </NoticeText>
+                <NoticeText :classNames="{ wrap: 'row-margin-item' }"
+                  >당사는 신청인의 신용상태 개선을 확인하기 위해 추가서류를
+                  요청할 수 있습니다.</NoticeText
+                >
+              </div>
             </FormInvalid>
           </FormListItem>
         </FormList>
-
-        <NoticeText :classNames="{ wrap: 'row-margin-item' }">
-          제출가능한 항목을 선택해 주세요.
-        </NoticeText>
-        <NoticeText :classNames="{ wrap: 'row-margin-item' }"
-          >당사는 신청인의 신용상태 개선을 확인하기 위해 추가서류를 요청할 수
-          있습니다.</NoticeText
-        >
       </div>
 
-      <BasicBox class="text-body-4 color-gray-secondary" theme="tertiary"
-        >본인은 상기 항목의 내용을 사실대로 기재하였고, 귀사의 신용평가시스템에
-        따른 결과에 이의를 제기하지 않겠습니다.</BasicBox
-      >
+      <BasicBox theme="tertiary">
+        <p class="text-body-4 color-gray-secondary">
+          본인은 상기 항목의 내용을 사실대로 기재하였고, 귀사의 신용평가시스템에
+          따른 결과에 이의를 제기하지 않겠습니다.
+        </p>
+      </BasicBox>
 
       <p
         class="row-margin-item-group align-right text-body-4 font-weight-medium color-gray-secondary"

@@ -1,6 +1,6 @@
 <script>
 // My_M05_p001
-import { onMounted, onUnmounted, reactive } from 'vue';
+import { onMounted, onUnmounted } from 'vue';
 
 import { useUiHeaderStore } from '@/stores/ui/header';
 
@@ -39,13 +39,6 @@ export default {
       },
     };
 
-    const state = reactive({
-      carNumberError: false,
-      dateError: false,
-      minDate: '2023.04.21',
-      maxDate: '2023.04.21',
-    });
-
     onMounted(() => {
       store.ui.header.setTitle(() => '금리인하요구권신청');
       store.ui.header.setLeftButtons(() => ['back']);
@@ -57,10 +50,6 @@ export default {
       store.ui.header.setLeftButtons();
       store.ui.header.setRightButtons();
     });
-
-    return {
-      state,
-    };
   },
 };
 </script>
@@ -70,105 +59,97 @@ export default {
     <PageTextGroup>
       <PageMainText>
         금리인하요구권 신청<br />
-        <strong>가능한 상품은 총 <span class="color-green">2</span>건</strong>
+        <strong>가능한 상품은 총 <span class="color-green">0</span>건</strong>
       </PageMainText>
-      <PageSubText> 금리인하 대상상품만 조회됩니다. </PageSubText>
+      <PageSubText>금리인하 대상상품만 조회됩니다.</PageSubText>
     </PageTextGroup>
 
-    <section class="contents-wrap">
-      <!-- Case : 현재 금리인하가 가능한 상품이 없을 경우 -->
-      <div :class="$style['empty']">
-        <p :class="$style['empty__text']">
-          현재 금리인하가 가능한 상품이 없습니다.
-        </p>
-      </div>
-      <!-- //Case : 현재 금리인하가 가능한 상품이 없을 경우 -->
+    <!-- Case : 보유 상품 없을 때 -->
+    <div :class="$style['empty']">
+      <p :class="$style['empty__text']">현재 보유하고 계신 상품이 없습니다.</p>
+    </div>
+    <!-- // Case : 보유 상품 없을 때 -->
 
-      <ul class="reset-list">
-        <li class="row-margin-item-group">
-          <BasicBox>
-            <BasicBoxHead>
-              <BasicBoxHeadLeft>
-                <h3 class="text-body-1 font-weight-medium">
-                  오토할부 20고5678
-                </h3>
-                <p class="text-body-4 color-gray row-margin-small">
-                  벤츠 S-Class 세단 가솔린 3.0 S350 Long 자동
-                </p>
-              </BasicBoxHeadLeft>
-            </BasicBoxHead>
+    <!-- Case : 가능 상품 없을 때 -->
+    <div :class="$style['empty']">
+      <p :class="$style['empty__text']">
+        현재 금리인하가 가능한 상품이 없습니다.
+      </p>
+    </div>
+    <!-- // Case : 가능 상품 없을 때 -->
 
-            <KeyValue margin="regular">
-              <KeyValueItem
-                :classNames="{ item: 'text-body-3 font-weight-regular' }"
-              >
-                <KeyValueTitle>현재금리</KeyValueTitle>
-                <KeyValueText>4.50%</KeyValueText>
-              </KeyValueItem>
+    <!-- Case :상품 있을 때 -->
+    <ul class="reset-list">
+      <li class="row-margin-item-group">
+        <BasicBox>
+          <BasicBoxHead>
+            <BasicBoxHeadLeft>
+              <h3 class="text-body-1 font-weight-medium">오토할부 20고5678</h3>
+              <p class="text-body-4 color-gray row-margin-small">
+                벤츠 S-Class 세단 가솔린 3.0 S350 Long 자동
+              </p>
+            </BasicBoxHeadLeft>
+          </BasicBoxHead>
 
-              <KeyValueItem
-                :classNames="{ item: 'text-body-3 font-weight-regular' }"
-              >
-                <KeyValueTitle>월납입금</KeyValueTitle>
-                <KeyValueText>324,440 원</KeyValueText>
-              </KeyValueItem>
+          <KeyValue margin="regular">
+            <KeyValueItem :classNames="{ item: 'text-body-3' }">
+              <KeyValueTitle>현재금리</KeyValueTitle>
+              <KeyValueText>4.50%</KeyValueText>
+            </KeyValueItem>
 
-              <KeyValueItem
-                :classNames="{ item: 'text-body-3 font-weight-regular' }"
-              >
-                <KeyValueTitle>대출잔액</KeyValueTitle>
-                <KeyValueText>4,820,000 원</KeyValueText>
-              </KeyValueItem>
-            </KeyValue>
+            <KeyValueItem :classNames="{ item: 'text-body-3' }">
+              <KeyValueTitle>월납입금</KeyValueTitle>
+              <KeyValueText>324,440 원</KeyValueText>
+            </KeyValueItem>
 
-            <BasicButton
-              size="small"
-              theme="secondary"
-              :classNames="{ wrap: 'row-margin-contents-small' }"
-              >금리인하 신청</BasicButton
-            >
-          </BasicBox>
-        </li>
-        <li class="row-margin-item-group">
-          <BasicBox>
-            <BasicBoxHead>
-              <BasicBoxHeadLeft>
-                <h3 class="text-body-1 font-weight-medium">행복아파트론</h3>
-              </BasicBoxHeadLeft>
-            </BasicBoxHead>
+            <KeyValueItem :classNames="{ item: 'text-body-3' }">
+              <KeyValueTitle>대출잔액</KeyValueTitle>
+              <KeyValueText>4,820,000 원</KeyValueText>
+            </KeyValueItem>
+          </KeyValue>
 
-            <KeyValue margin="regular">
-              <KeyValueItem
-                :classNames="{ item: 'text-body-3 font-weight-regular' }"
-              >
-                <KeyValueTitle>현재금리</KeyValueTitle>
-                <KeyValueText>4.50%</KeyValueText>
-              </KeyValueItem>
+          <BasicButton
+            size="small"
+            theme="secondary"
+            :classNames="{ wrap: 'row-margin-contents-small' }"
+            >금리인하 신청</BasicButton
+          >
+        </BasicBox>
+      </li>
+      <li class="row-margin-item-group">
+        <BasicBox>
+          <BasicBoxHead>
+            <BasicBoxHeadLeft>
+              <h3 class="text-body-1 font-weight-medium">행복아파트론</h3>
+            </BasicBoxHeadLeft>
+          </BasicBoxHead>
 
-              <KeyValueItem
-                :classNames="{ item: 'text-body-3 font-weight-regular' }"
-              >
-                <KeyValueTitle>월납입금</KeyValueTitle>
-                <KeyValueText>324,440 원</KeyValueText>
-              </KeyValueItem>
+          <KeyValue margin="regular">
+            <KeyValueItem :classNames="{ item: 'text-body-3' }">
+              <KeyValueTitle>현재금리</KeyValueTitle>
+              <KeyValueText>4.50%</KeyValueText>
+            </KeyValueItem>
 
-              <KeyValueItem
-                :classNames="{ item: 'text-body-3 font-weight-regular' }"
-              >
-                <KeyValueTitle>대출잔액</KeyValueTitle>
-                <KeyValueText>4,820,000 원</KeyValueText>
-              </KeyValueItem>
-            </KeyValue>
+            <KeyValueItem :classNames="{ item: 'text-body-3' }">
+              <KeyValueTitle>월납입금</KeyValueTitle>
+              <KeyValueText>324,440 원</KeyValueText>
+            </KeyValueItem>
 
-            <BasicButton
-              size="small"
-              :classNames="{ wrap: 'row-margin-contents-small' }"
-              >금리인하 신청</BasicButton
-            >
-          </BasicBox>
-        </li>
-      </ul>
-    </section>
+            <KeyValueItem :classNames="{ item: 'text-body-3' }">
+              <KeyValueTitle>대출잔액</KeyValueTitle>
+              <KeyValueText>4,820,000 원</KeyValueText>
+            </KeyValueItem>
+          </KeyValue>
+
+          <BasicButton
+            size="small"
+            :classNames="{ wrap: 'row-margin-contents-small' }"
+            >금리인하 신청</BasicButton
+          >
+        </BasicBox>
+      </li>
+    </ul>
+    <!-- // Case :상품 있을 때 -->
   </PageContents>
 </template>
 

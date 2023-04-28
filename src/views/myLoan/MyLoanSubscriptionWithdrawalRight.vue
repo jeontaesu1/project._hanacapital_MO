@@ -64,7 +64,7 @@ export default {
     <PageTextGroup>
       <PageMainText>
         청약철회권 신청<br />
-        <strong>가능한 상품은 총 <span class="color-green">2</span>건</strong>
+        <strong>가능한 상품은 총 <span class="color-green">0</span>건</strong>
       </PageMainText>
       <PageSubText
         >금융소비자 보호를 위해 대출 계약 후, 14일 동안 불이익 없이 청약 탈퇴할
@@ -72,71 +72,86 @@ export default {
       >
     </PageTextGroup>
 
-    <!-- Case : 현재 청약철회가 가능한 상품이 없을 경우 -->
-    <div :class="$style['empty']">
-      <p :class="$style['empty__text']">
-        현재 청약철회가 가능한 상품이 없습니다.
-      </p>
-    </div>
-    <!-- //Case : 현재 청약철회가 가능한 상품이 없을 경우 -->
-    <BasicBox>
-      <BasicBoxHead>
-        <BasicBoxHeadLeft>
-          <h3 class="text-body-1 font-weight-medium">소비자신용대출</h3>
-        </BasicBoxHeadLeft>
-      </BasicBoxHead>
-
-      <KeyValue margin="regular">
-        <KeyValueItem :classNames="{ item: 'text-body-3 font-weight-regular' }">
-          <KeyValueTitle>대출기간</KeyValueTitle>
-          <KeyValueText>2021.11.17 ~ 2026.11.21</KeyValueText>
-        </KeyValueItem>
-
-        <KeyValueItem :classNames="{ item: 'text-body-3 font-weight-regular' }">
-          <KeyValueTitle>대출금액</KeyValueTitle>
-          <KeyValueText>23,000,000 원</KeyValueText>
-        </KeyValueItem>
-
-        <KeyValueItem :classNames="{ item: 'text-body-3 font-weight-regular' }">
-          <KeyValueTitle>결제예정금액</KeyValueTitle>
-          <KeyValueText>4,820,000 원</KeyValueText>
-        </KeyValueItem>
-      </KeyValue>
-
-      <BasicButton
-        size="small"
-        :classNames="{ wrap: 'row-margin-contents-small' }"
-        >금리인하 신청</BasicButton
-      >
-    </BasicBox>
-
-    <div class="row-margin-contents-group">
-      <div :class="$style['icon-list']">
-        <ul :class="$style['icon-list__list']">
-          <li :class="$style['icon-list__item']">
-            <div :class="$style['icon-list__block']">
-              <div :class="$style['icon-list__icon']"><IconCustomer /></div>
-              <div :class="$style['icon-list__content']">
-                <div :class="$style['icon-list__title']">고객센터</div>
-                <div :class="$style['icon-list__text']">평일 09:00 ~ 19:00</div>
-              </div>
-              <BasicButton
-                tagName="a"
-                size="mini"
-                :line="true"
-                theme="quaternary"
-                :classNames="{ wrap: $style['icon-list__button'] }"
-                href="tel:1800-1110"
-              >
-                <template v-slot:leftIcon>
-                  <IconTell />
-                </template>
-                1800-1110
-              </BasicButton>
-            </div>
-          </li>
-        </ul>
+    <div class="contents-wrap">
+      <!-- Case : 보유 상품 없을 때 -->
+      <div :class="$style['empty']">
+        <p :class="$style['empty__text']">
+          현재 보유하고 계신 상품이 없습니다.
+        </p>
       </div>
+      <!-- // Case : 보유 상품 없을 때 -->
+
+      <!-- Case : 가능 상품 없을 때 -->
+      <div :class="$style['empty']">
+        <p :class="$style['empty__text']">
+          현재 청약철회가 가능한 상품이 없습니다.
+        </p>
+      </div>
+      <!-- // Case : 가능 상품 없을 때 -->
+
+      <!-- Case :상품 있을 때 -->
+      <ul class="reset-list">
+        <li v-for="i in 2" :key="i" class="row-margin-item-group">
+          <BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-body-1 font-weight-medium">소비자신용대출</h3>
+              </BasicBoxHeadLeft>
+            </BasicBoxHead>
+
+            <KeyValue margin="regular">
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle>대출기간</KeyValueTitle>
+                <KeyValueText>2021.11.17 ~ 2026.11.21</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle>대출금액</KeyValueTitle>
+                <KeyValueText>23,000,000 원</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem :classNames="{ item: 'text-body-3 ' }">
+                <KeyValueTitle>결제예정금액</KeyValueTitle>
+                <KeyValueText>4,820,000 원</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+
+            <BasicButton
+              size="small"
+              :classNames="{ wrap: 'row-margin-contents-small' }"
+              >청약철회 신청</BasicButton
+            >
+          </BasicBox>
+        </li>
+      </ul>
+      <!-- // Case :상품 있을 때 -->
+    </div>
+
+    <div :class="[$style['icon-list'], 'row-margin-contents-group']">
+      <ul :class="$style['icon-list__list']">
+        <li :class="$style['icon-list__item']">
+          <div :class="$style['icon-list__block']">
+            <div :class="$style['icon-list__icon']"><IconCustomer /></div>
+            <div :class="$style['icon-list__content']">
+              <div :class="$style['icon-list__title']">고객센터</div>
+              <div :class="$style['icon-list__text']">평일 09:00 ~ 19:00</div>
+            </div>
+            <BasicButton
+              tagName="a"
+              size="mini"
+              :line="true"
+              theme="quaternary"
+              :classNames="{ wrap: $style['icon-list__button'] }"
+              href="tel:1800-1110"
+            >
+              <template v-slot:leftIcon>
+                <IconTell />
+              </template>
+              1800-1110
+            </BasicButton>
+          </div>
+        </li>
+      </ul>
     </div>
   </PageContents>
 </template>

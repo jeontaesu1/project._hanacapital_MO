@@ -1,6 +1,6 @@
 <script>
 // My_M05_l002
-import { ref, reactive } from 'vue';
+import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
@@ -35,12 +35,8 @@ export default {
   },
   setup() {
     const layer = ref(null);
-    const state = reactive({
-      numberError: false,
-    });
 
     return {
-      state,
       layer,
     };
   },
@@ -71,7 +67,7 @@ export default {
           <li :class="$style['agree-list__all']">
             <div :class="$style['agree-list__all-head']">
               <CheckBox
-                id="layerMyLoanDesignationDriverLMSAgreeAgreeAll"
+                id="layerMyLoanInterestRateCutRequestAgreeAgreeAll"
                 :classNames="{ wrap: $style['agree-list__all-checkbox'] }"
               >
                 <CheckBoxObject />
@@ -84,7 +80,7 @@ export default {
                 <li :class="$style['agree-list__item']">
                   <div :class="$style['agree-list__head']">
                     <CheckBox
-                      id="layerMyLoanDesignationDriverLMSAgree_001"
+                      id="layerMyLoanInterestRateCutRequestAgree001"
                       :classNames="{
                         wrap: $style['agree-list__checkbox'],
                       }"
@@ -105,7 +101,7 @@ export default {
                     <li :class="$style['agree-list__item']">
                       <div :class="$style['agree-list__head']">
                         <CheckBox
-                          id="layerMyLoanDesignationDriverLMSAgree001_001"
+                          id="layerMyLoanInterestRateCutRequestAgree001_001"
                           :classNames="{
                             wrap: $style['agree-list__checkbox'],
                           }"
@@ -131,7 +127,7 @@ export default {
                     <li :class="$style['agree-list__item']">
                       <div :class="$style['agree-list__head']">
                         <CheckBox
-                          id="layerMyLoanDesignationDriverLMSAgree001_002"
+                          id="layerMyLoanInterestRateCutRequestAgree001_002"
                           :classNames="{
                             wrap: $style['agree-list__checkbox'],
                           }"
@@ -159,7 +155,7 @@ export default {
                 <li :class="$style['agree-list__item']">
                   <div :class="$style['agree-list__head']">
                     <CheckBox
-                      id="layerMyLoanDesignationDriverLMSAgree002"
+                      id="layerMyLoanInterestRateCutRequestAgree002"
                       :classNames="{
                         wrap: $style['agree-list__checkbox'],
                       }"
@@ -180,7 +176,7 @@ export default {
                     <li :class="$style['agree-list__item']">
                       <div :class="$style['agree-list__head']">
                         <CheckBox
-                          id="layerMyLoanDesignationDriverLMSAgree002_001"
+                          id="layerMyLoanInterestRateCutRequestAgree002_001"
                           :classNames="{
                             wrap: $style['agree-list__checkbox'],
                           }"
@@ -206,7 +202,7 @@ export default {
                     <li :class="$style['agree-list__item']">
                       <div :class="$style['agree-list__head']">
                         <CheckBox
-                          id="layerMyLoanDesignationDriverLMSAgree002_002"
+                          id="layerMyLoanInterestRateCutRequestAgree002_002"
                           :classNames="{
                             wrap: $style['agree-list__checkbox'],
                           }"
@@ -234,7 +230,7 @@ export default {
                 <li :class="$style['agree-list__item']">
                   <div :class="$style['agree-list__head']">
                     <CheckBox
-                      id="layerMyLoanDesignationDriverLMSAgree003"
+                      id="layerMyLoanInterestRateCutRequestAgree003"
                       :classNames="{
                         wrap: $style['agree-list__checkbox'],
                       }"
@@ -255,7 +251,7 @@ export default {
                     <li :class="$style['agree-list__item']">
                       <div :class="$style['agree-list__head']">
                         <CheckBox
-                          id="layerMyLoanDesignationDriverLMSAgree003_001"
+                          id="layerMyLoanInterestRateCutRequestAgree003_001"
                           :classNames="{
                             wrap: $style['agree-list__checkbox'],
                           }"
@@ -281,7 +277,7 @@ export default {
                     <li :class="$style['agree-list__item']">
                       <div :class="$style['agree-list__head']">
                         <CheckBox
-                          id="layerMyLoanDesignationDriverLMSAgree003_002"
+                          id="layerMyLoanInterestRateCutRequestAgree003_002"
                           :classNames="{
                             wrap: $style['agree-list__checkbox'],
                           }"
@@ -310,7 +306,7 @@ export default {
                 <li :class="$style['agree-list__item']">
                   <div :class="$style['agree-list__head']">
                     <CheckBox
-                      id="layerMyLoanDesignationDriverLMSAgree003"
+                      id="layerMyLoanInterestRateCutRequestAgree004"
                       :classNames="{
                         wrap: $style['agree-list__checkbox'],
                       }"
@@ -329,7 +325,7 @@ export default {
                     <li :class="$style['agree-list__item']">
                       <div :class="$style['agree-list__head']">
                         <CheckBox
-                          id="layerMyLoanDesignationDriverLMSAgree003_001"
+                          id="layerMyLoanInterestRateCutRequestAgree004_001"
                           :classNames="{
                             wrap: $style['agree-list__checkbox'],
                           }"
