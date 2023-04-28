@@ -434,18 +434,22 @@ export default {
                                     'row-margin-mini',
                                   ]"
                                 >
-                                  <div class="text-body-4">
+                                  <p class="text-body-4 row-margin-small">
                                     중도해지손해배상금
-                                  </div>
-                                  <p
-                                    class="text-caption-1 font-weight-light row-margin-small"
-                                  >
-                                    미회수원금 X 중도해지손해배상금률
                                   </p>
-                                  <p class="text-caption-1 font-weight-light">
-                                    미회수원금 X 최고요율(80)% X (잔여기간
-                                    월수/리스기간 전체월수)
-                                  </p>
+                                  <ul class="reset-list">
+                                    <li
+                                      class="text-caption-1 font-weight-light"
+                                    >
+                                      미회수원금 X 중도해지손해배상금률
+                                    </li>
+                                    <li
+                                      class="text-caption-1 font-weight-light row-margin-small"
+                                    >
+                                      미회수원금 X 최고요율(80)% X (잔여기간
+                                      월수/리스기간 전체월수)
+                                    </li>
+                                  </ul>
                                 </div>
                               </div>
                             </li>
@@ -460,18 +464,22 @@ export default {
                                     'row-margin-mini',
                                   ]"
                                 >
-                                  <div class="text-body-4">
+                                  <p class="text-body-4 row-margin-small">
                                     규정손해배상금(차랑인수-운용리스)
-                                  </div>
-                                  <p
-                                    class="text-caption-1 font-weight-light row-margin-small"
-                                  >
-                                    미회수원금 X 규정손해배상금률
                                   </p>
-                                  <p class="text-caption-1 font-weight-light">
-                                    미회수원금 X 최고요율(20)% X (잔여기간
-                                    월수/리스기간 전체월수)
-                                  </p>
+                                  <ul class="reset-list">
+                                    <li
+                                      class="text-caption-1 font-weight-light"
+                                    >
+                                      미회수원금 X 규정손해배상금률
+                                    </li>
+                                    <li
+                                      class="text-caption-1 font-weight-light row-margin-small"
+                                    >
+                                      미회수원금 X 최고요율(20)% X (잔여기간
+                                      월수/리스기간 전체월수)
+                                    </li>
+                                  </ul>
                                 </div>
                               </div>
                             </li>
@@ -486,18 +494,22 @@ export default {
                                     'row-margin-mini',
                                   ]"
                                 >
-                                  <div class="text-body-4">
+                                  <p class="text-body-4 row-margin-small">
                                     규정손해배상금(차량인수-금융리스)
-                                  </div>
-                                  <p
-                                    class="text-caption-1 font-weight-light row-margin-small"
-                                  >
-                                    미회수원금 X 규정손해배상금률
                                   </p>
-                                  <p class="text-caption-1 font-weight-light">
-                                    미회수원금 X 최고요율(4)% X (잔여기간
-                                    월수/리스기간 전체월수)
-                                  </p>
+                                  <ul class="reset-list">
+                                    <li
+                                      class="text-caption-1 font-weight-light"
+                                    >
+                                      미회수원금 X 규정손해배상금률
+                                    </li>
+                                    <li
+                                      class="text-caption-1 font-weight-light row-margin-small"
+                                    >
+                                      미회수원금 X 최고요율(4)% X (잔여기간
+                                      월수/리스기간 전체월수)
+                                    </li>
+                                  </ul>
                                 </div>
                               </div>
                             </li>
