@@ -6,7 +6,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import Layer from '@/views/myLoan/Layer.vue';
+//import Layer from '@/views/myLoan/Layer.vue';
 
 export default {
   components: {
@@ -14,7 +14,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    Layer,
+    //Layer,
   },
   setup() {
     const layer001 = ref(null);
