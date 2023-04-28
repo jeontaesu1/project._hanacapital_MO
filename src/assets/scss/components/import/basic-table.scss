@@ -25,6 +25,20 @@
     }
     > tbody {
       > tr {
+        > th {
+          padding: 11px 15px;
+          border-bottom: 1px solid $color-gray-30;
+          word-break: break-all;
+          @include font-size-default(12);
+          color: $color-gray-70;
+          font-weight: 400;
+          vertical-align: middle;
+          text-align: center;
+
+          &:first-child {
+            border-left: none;
+          }
+        }
         > td {
           padding: 11px 15px;
           border-left: 1px solid $color-gray-30;

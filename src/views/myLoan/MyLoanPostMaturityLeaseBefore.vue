@@ -92,50 +92,62 @@ export default {
 </script>
 
 <template>
-  <PageContents>
-    <PageTextGroup>
-      <PageMainText>
-        오토리스 계약 만기 1개월 전까지<br />
-        <strong>만기후처리를 반드시 선택해 주세요</strong>
-      </PageMainText>
-    </PageTextGroup>
-    <BasicBox>
-      <BasicBoxHead>
-        <BasicBoxHeadLeft>
-          <div class="text-body-1 font-weight-medium">오토리스 07호3994</div>
-        </BasicBoxHeadLeft>
-      </BasicBoxHead>
-      <KeyValue margin="regular">
-        <KeyValueItem :classNames="{ item: 'text-body-3 font-weight-regular' }">
-          <KeyValueTitle>계약기간</KeyValueTitle>
-          <KeyValueText>2016.01.01 ~ 2021.01.01</KeyValueText>
-        </KeyValueItem>
-        <KeyValueItem :classNames="{ item: 'text-body-3 font-weight-regular' }">
-          <KeyValueTitle>잔존가치</KeyValueTitle>
-          <KeyValueText>99,999,999 원</KeyValueText>
-        </KeyValueItem>
-        <KeyValueItem :classNames="{ item: 'text-body-3 font-weight-regular' }">
-          <KeyValueTitle>보증금</KeyValueTitle>
-          <KeyValueText>99,999,999 원</KeyValueText>
-        </KeyValueItem>
-        <KeyValueItem :classNames="{ item: 'text-body-3 font-weight-regular' }">
-          <KeyValueTitle>실납리스료</KeyValueTitle>
-          <KeyValueText>99,999,999 원</KeyValueText>
-        </KeyValueItem>
-        <KeyValueItem :classNames="{ item: 'text-body-3 font-weight-regular' }">
-          <KeyValueTitle>자동차세</KeyValueTitle>
-          <KeyValueText>포함</KeyValueText>
-        </KeyValueItem>
-        <KeyValueItem :classNames="{ item: 'text-body-3 font-weight-regular' }">
-          <KeyValueTitle>약정주행거리</KeyValueTitle>
-          <KeyValueText>999,999 km</KeyValueText>
-        </KeyValueItem>
-      </KeyValue>
-    </BasicBox>
+  <UiTab v-slot="tabSlotProps">
+    <PageContents>
+      <PageTextGroup>
+        <PageMainText>
+          오토리스 계약 만기 1개월 전까지<br />
+          <strong>만기후처리를 반드시 선택해 주세요</strong>
+        </PageMainText>
+      </PageTextGroup>
+      <BasicBox>
+        <BasicBoxHead>
+          <BasicBoxHeadLeft>
+            <div class="text-body-1 font-weight-medium">오토리스 07호3994</div>
+          </BasicBoxHeadLeft>
+        </BasicBoxHead>
+        <KeyValue margin="regular">
+          <KeyValueItem
+            :classNames="{ item: 'text-body-3 font-weight-regular' }"
+          >
+            <KeyValueTitle>계약기간</KeyValueTitle>
+            <KeyValueText>2016.01.01 ~ 2021.01.01</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{ item: 'text-body-3 font-weight-regular' }"
+          >
+            <KeyValueTitle>잔존가치</KeyValueTitle>
+            <KeyValueText>99,999,999 원</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{ item: 'text-body-3 font-weight-regular' }"
+          >
+            <KeyValueTitle>보증금</KeyValueTitle>
+            <KeyValueText>99,999,999 원</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{ item: 'text-body-3 font-weight-regular' }"
+          >
+            <KeyValueTitle>실납리스료</KeyValueTitle>
+            <KeyValueText>99,999,999 원</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{ item: 'text-body-3 font-weight-regular' }"
+          >
+            <KeyValueTitle>자동차세</KeyValueTitle>
+            <KeyValueText>포함</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{ item: 'text-body-3 font-weight-regular' }"
+          >
+            <KeyValueTitle>약정주행거리</KeyValueTitle>
+            <KeyValueText>999,999 km</KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+      </BasicBox>
 
-    <BasicHr className="row-margin-container-medium" />
+      <BasicHr className="row-margin-container-medium" />
 
-    <UiTab>
       <NavTab :useUiTab="true" :scroll="true" :auto="true">
         <NavTabButton link="testNavTab001_001">연장</NavTabButton>
         <NavTabButton link="testNavTab001_002">반환</NavTabButton>
@@ -397,13 +409,162 @@ export default {
               <div :class="$style['basic-table']">
                 <table>
                   <colgroup>
-                    <col style="width: 120px" />
+                    <col style="width: 65px" />
                     <col />
                   </colgroup>
                   <tbody>
                     <tr>
-                      <th>손해 배상금</th>
-                      <td>dsds</td>
+                      <th>손해<br />배상금</th>
+                      <td class="align-left">
+                        <div :class="$style['contents-list']">
+                          <ol
+                            :class="[
+                              $style['contents-list__list'],
+                              $style['contents-list__list--quinary'],
+                            ]"
+                          >
+                            <li :class="$style['contents-list__item']">
+                              <div :class="$style['contents-list__head']">
+                                <div :class="$style['contents-list__symbol']">
+                                  주1
+                                </div>
+                                <div
+                                  :class="[
+                                    $style['contents-list__title'],
+                                    'row-margin-mini',
+                                  ]"
+                                >
+                                  <p class="text-body-4 row-margin-small">
+                                    중도해지손해배상금
+                                  </p>
+                                  <ul class="reset-list">
+                                    <li
+                                      class="text-caption-1 font-weight-light"
+                                    >
+                                      미회수원금 X 중도해지손해배상금률
+                                    </li>
+                                    <li
+                                      class="text-caption-1 font-weight-light row-margin-small"
+                                    >
+                                      미회수원금 X 최고요율(80)% X (잔여기간
+                                      월수/리스기간 전체월수)
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </li>
+                            <li :class="$style['contents-list__item']">
+                              <div :class="$style['contents-list__head']">
+                                <div :class="$style['contents-list__symbol']">
+                                  주2
+                                </div>
+                                <div
+                                  :class="[
+                                    $style['contents-list__title'],
+                                    'row-margin-mini',
+                                  ]"
+                                >
+                                  <p class="text-body-4 row-margin-small">
+                                    규정손해배상금(차랑인수-운용리스)
+                                  </p>
+                                  <ul class="reset-list">
+                                    <li
+                                      class="text-caption-1 font-weight-light"
+                                    >
+                                      미회수원금 X 규정손해배상금률
+                                    </li>
+                                    <li
+                                      class="text-caption-1 font-weight-light row-margin-small"
+                                    >
+                                      미회수원금 X 최고요율(20)% X (잔여기간
+                                      월수/리스기간 전체월수)
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </li>
+                            <li :class="$style['contents-list__item']">
+                              <div :class="$style['contents-list__head']">
+                                <div :class="$style['contents-list__symbol']">
+                                  주3
+                                </div>
+                                <div
+                                  :class="[
+                                    $style['contents-list__title'],
+                                    'row-margin-mini',
+                                  ]"
+                                >
+                                  <p class="text-body-4 row-margin-small">
+                                    규정손해배상금(차량인수-금융리스)
+                                  </p>
+                                  <ul class="reset-list">
+                                    <li
+                                      class="text-caption-1 font-weight-light"
+                                    >
+                                      미회수원금 X 규정손해배상금률
+                                    </li>
+                                    <li
+                                      class="text-caption-1 font-weight-light row-margin-small"
+                                    >
+                                      미회수원금 X 최고요율(4)% X (잔여기간
+                                      월수/리스기간 전체월수)
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </li>
+                          </ol>
+                        </div>
+
+                        <div class="row-margin-item">
+                          <div :class="[$style['basic-list']]">
+                            <div
+                              :class="[
+                                $style['basic-list__item'],
+                                'color-black',
+                              ]"
+                            >
+                              <div :class="$style['basic-list__symbol']">※</div>
+                              <div :class="$style['basic-list__content']">
+                                단, 금융리스의 경우 대부업법에서 정하는
+                                최고이자율을 초과하지 않는 범위로 합니다.
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>승계<br />수수료</th>
+                      <td class="align-left">
+                        <p class="row-margin-small text-body-4">
+                          운용리스, 금융리스
+                        </p>
+                        <p
+                          class="row-margin-none text-caption-1 font-weight-light"
+                        >
+                          미회수원금의 1%(승계수수료 최고 요율) X (잔여기간
+                          월수/리스기간 전체 월수) (min: 500,000원, max:
+                          900,000원)
+                        </p>
+
+                        <div class="row-margin-item">
+                          <div :class="[$style['basic-list']]">
+                            <div
+                              :class="[
+                                $style['basic-list__item'],
+                                'color-black',
+                              ]"
+                            >
+                              <div :class="$style['basic-list__symbol']">※</div>
+                              <div :class="$style['basic-list__content']">
+                                단, 금융리스의 경우 대부업법에서 정하는
+                                최고이자율을 초과하지 않는 범위로 합니다.
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
@@ -791,25 +952,30 @@ export default {
           </ul>
         </div>
       </UiTabPanel>
-    </UiTab>
 
-    <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton>연장신청</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
-    </template>
-  </PageContents>
+      <template v-slot:foot>
+        <ButtonList
+          :classNames="{
+            wrap: 'row-margin-none',
+          }"
+        >
+          <ButtonListItem>
+            <BasicButton v-if="tabSlotProps.activeName === 'testNavTab001_001'"
+              >연장신청</BasicButton
+            >
+            <BasicButton v-if="tabSlotProps.activeName === 'testNavTab001_002'"
+              >반환신청</BasicButton
+            >
+            <BasicButton v-if="tabSlotProps.activeName === 'testNavTab001_003'"
+              >구매신청</BasicButton
+            >
+          </ButtonListItem>
+        </ButtonList>
+      </template>
+    </PageContents>
+  </UiTab>
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/components/import/step.scss';
-@import '@/assets/scss/components/import/basic-list.scss';
-@import '@/assets/scss/components/import/notice-section.scss';
-@import '@/assets/scss/components/import/basic-table.scss';
+@import '@/assets/scss/views/myLoan/MyLoanPostMaturityLeaseBefore.scss';
 </style>
