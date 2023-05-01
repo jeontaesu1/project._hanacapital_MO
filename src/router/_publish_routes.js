@@ -152,35 +152,48 @@ const routes = [
     component: () => import('@/views/uiGuide/GuideSignInBiometrics001.vue'),
   },
   {
-    path: '/guide/inventory-finance-early',
-    name: '/guide/inventory-finance-early',
+    path: '/guide/inventory-finance-early-001',
+    name: '/guide/inventory-finance-early-001',
     component: () =>
       import('@/views/uiGuide/GuideInventoryFinanceEarly001.vue'),
   },
   {
-    path: '/guide/setting-reset-pin',
-    name: '/guide/setting-reset-pin',
-    component: () => import('@/views/uiGuide/GuideSettingResetPin.vue'),
+    path: '/guide/inventory-finance-loan-agreement-001',
+    name: '/guide/inventory-finance-loan-agreement-001',
+    component: () =>
+      import('@/views/uiGuide/GuideInventoryFinanceLoanAgreement001.vue'),
   },
   {
-    path: '/guide/setting-reset-face',
-    name: '/guide/setting-reset-face',
-    component: () => import('@/views/uiGuide/GuideSettingResetFace.vue'),
+    path: '/guide/inventory-finance-url-state-001',
+    name: '/guide/inventory-finance-url-state-001',
+    component: () =>
+      import('@/views/uiGuide/GuideInventoryFinanceURLState001.vue'),
   },
   {
-    path: '/guide/setting-reset-fingerprint',
-    name: '/guide/setting-reset-fingerprint',
-    component: () => import('@/views/uiGuide/GuideSettingResetFingerprint.vue'),
+    path: '/guide/setting-reset-pin-001',
+    name: '/guide/setting-reset-pin-001',
+    component: () => import('@/views/uiGuide/GuideSettingResetPin001.vue'),
   },
   {
-    path: '/guide/setting-reset-face-id',
-    name: '/guide/setting-reset-face-id',
-    component: () => import('@/views/uiGuide/GuideSettingResetFaceId.vue'),
+    path: '/guide/setting-reset-face-001',
+    name: '/guide/setting-reset-face-001',
+    component: () => import('@/views/uiGuide/GuideSettingResetFace001.vue'),
   },
   {
-    path: '/guide/lm-blog-loan-counseling',
-    name: '/guide/lm-blog-loan-counseling',
-    component: () => import('@/views/uiGuide/GuideLMBlogLoanCounseling.vue'),
+    path: '/guide/setting-reset-fingerprint-001',
+    name: '/guide/setting-reset-fingerprint-001',
+    component: () =>
+      import('@/views/uiGuide/GuideSettingResetFingerprint001.vue'),
+  },
+  {
+    path: '/guide/setting-reset-face-id-001',
+    name: '/guide/setting-reset-face-id-001',
+    component: () => import('@/views/uiGuide/GuideSettingResetFaceId001.vue'),
+  },
+  {
+    path: '/guide/lm-blog-loan-counseling-001',
+    name: '/guide/lm-blog-loan-counseling-001',
+    component: () => import('@/views/uiGuide/GuideLMBlogLoanCounseling001.vue'),
   },
   {
     path: '/guide/id-shoot-001',
@@ -221,6 +234,11 @@ const routes = [
     path: '/guide/auto-succession-001',
     name: '/guide/auto-succession-001',
     component: () => import('@/views/uiGuide/GuideAutoSuccession001.vue'),
+  },
+  {
+    path: '/guide/auto-car-cart-001',
+    name: '/guide/auto-car-cart-001',
+    component: () => import('@/views/uiGuide/GuideAutoCarCart001.vue'),
   },
   {
     path: '/guide/my-loan-home-001',
@@ -294,6 +312,11 @@ const routes = [
     component: () => import('@/views/uiGuide/GuideMyLoanProgress011.vue'),
   },
   {
+    path: '/guide/my-loan-progress-012',
+    name: '/guide/my-loan-progress-012',
+    component: () => import('@/views/uiGuide/GuideMyLoanProgress012.vue'),
+  },
+  {
     path: '/guide/my-loan-certificate-001',
     name: '/guide/my-loan-certificate-001',
     component: () => import('@/views/uiGuide/GuideMyLoanCertificate001.vue'),
@@ -356,6 +379,70 @@ const routes = [
     path: '/guide/search-001',
     name: '/guide/search-001',
     component: () => import('@/views/uiGuide/GuideSearch001.vue'),
+  },
+  {
+    path: '/guide/my-info-edit-001',
+    name: '/guide/my-info-edit-001',
+    component: () => import('@/views/uiGuide/GuideMyInfoEdit001.vue'),
+  },
+  {
+    path: '/guide/my-info-direct-debit-account-001',
+    name: '/guide/my-info-direct-debit-account-001',
+    component: () =>
+      import('@/views/uiGuide/GuideMyInfoDirectDebitAccount001.vue'),
+  },
+  {
+    path: '/guide/my-info-billing-001',
+    name: '/guide/my-info-billing-001',
+    component: () => import('@/views/uiGuide/GuideMyInfoBilling001.vue'),
+  },
+  {
+    path: '/guide/my-info-marketing-001',
+    name: '/guide/my-info-marketing-001',
+    component: () => import('@/views/uiGuide/GuideMyInfoMarketing001.vue'),
+  },
+  {
+    path: '/guide/my-info-join-hana-money-001',
+    name: '/guide/my-info-join-hana-money-001',
+    component: () => import('@/views/uiGuide/GuideMyInfoJoinHanaMoney001.vue'),
+  },
+  {
+    path: '/guide/my-info-join-membership-001',
+    name: '/guide/my-info-join-membership-001',
+    component: () => import('@/views/uiGuide/GuideMyInfoJoinMembership001.vue'),
+  },
+  {
+    path: '/guide/my-info-withdraw-membership-001',
+    name: '/guide/my-info-withdraw-membership-001',
+    component: () =>
+      import('@/views/uiGuide/GuideMyInfoWithdrawMembership001.vue'),
+  },
+  {
+    path: '/guide/my-info-market-price-car-001',
+    name: '/guide/my-info-market-price-car-001',
+    component: () => import('@/views/uiGuide/GuideMyInfoMarketPriceCar001.vue'),
+  },
+  {
+    path: '/guide/my-info-market-price-realty-001',
+    name: '/guide/my-info-market-price-realty-001',
+    component: () =>
+      import('@/views/uiGuide/GuideMyInfoMarketPriceRealty001.vue'),
+  },
+  {
+    path: '/guide/sales-used-car-001',
+    name: '/guide/sales-used-car-001',
+    component: () => import('@/views/uiGuide/GuideSalesUsedCar001.vue'),
+  },
+  {
+    path: '/guide/sales-new-car-001',
+    name: '/guide/sales-new-car-001',
+    component: () => import('@/views/uiGuide/GuideSalesNewCar001.vue'),
+  },
+  {
+    path: '/guide/inventory-finance-check-001',
+    name: '/guide/inventory-finance-check-001',
+    component: () =>
+      import('@/views/uiGuide/GuideInventoryFinanceCheck001.vue'),
   },
 
   // home
@@ -599,6 +686,38 @@ const routes = [
     component: () =>
       import('@/views/inventoryFinance/InventoryFinanceTerminationBonds.vue'),
   },
+  {
+    path: '/inventory-finance/state-list',
+    name: '/inventory-finance/state-list',
+    component: () =>
+      import('@/views/inventoryFinance/InventoryFinanceStateList.vue'),
+  },
+  {
+    path: '/inventory-finance/state-add-info',
+    name: '/inventory-finance/state-add-info',
+    component: () =>
+      import('@/views/inventoryFinance/InventoryFinanceStateAddInfo.vue'),
+  },
+  {
+    path: '/inventory-finance/state-add-car-photo',
+    name: '/inventory-finance/state-add-car-photo',
+    component: () =>
+      import('@/views/inventoryFinance/InventoryFinanceStateAddCarPhoto.vue'),
+  },
+  {
+    path: '/inventory-finance/loan-agreement',
+    name: '/inventory-finance/loan-agreement',
+    component: () =>
+      import('@/views/inventoryFinance/InventoryFinanceLoanAgreement.vue'),
+  },
+  {
+    path: '/inventory-finance/loan-agreement-complete',
+    name: '/inventory-finance/loan-agreement-complete',
+    component: () =>
+      import(
+        '@/views/inventoryFinance/InventoryFinanceLoanAgreementComplete.vue'
+      ),
+  },
 
   // setting
   {
@@ -723,6 +842,21 @@ const routes = [
     path: '/auto/succession',
     name: '/auto/succession',
     component: () => import('@/views/auto/AutoSuccession.vue'),
+  },
+  {
+    path: '/auto/hot-deal',
+    name: '/auto/hot-deal',
+    component: () => import('@/views/auto/AutoHotDeal.vue'),
+  },
+  {
+    path: '/auto/car-cart',
+    name: '/auto/car-cart',
+    component: () => import('@/views/auto/AutoCarCart.vue'),
+  },
+  {
+    path: '/auto/car-cart-empty',
+    name: '/auto/car-cart-empty',
+    component: () => import('@/views/auto/AutoCarCartEmpty.vue'),
   },
 
   // business
@@ -859,6 +993,247 @@ const routes = [
     path: '/my-loan/add-documents-complete',
     name: '/my-loan/add-documents-complete',
     component: () => import('@/views/myLoan/MyLoanAddDocumentsComplete.vue'),
+  },
+
+  // my-info
+  {
+    path: '/my-info/home',
+    name: '/my-info/home',
+    component: () => import('@/views/myInfo/MyInfoHome.vue'),
+  },
+  {
+    path: '/my-info/edit',
+    name: '/my-info/edit',
+    component: () => import('@/views/myInfo/MyInfoEdit.vue'),
+  },
+  {
+    path: '/my-info/direct-debit-account',
+    name: '/my-info/direct-debit-account',
+    component: () => import('@/views/myInfo/MyInfoDirectDebitAccount.vue'),
+  },
+  {
+    path: '/my-info/billing',
+    name: '/my-info/billing',
+    component: () => import('@/views/myInfo/MyInfoBilling.vue'),
+  },
+  {
+    path: '/my-info/hana-money',
+    name: '/my-info/hana-money',
+    component: () => import('@/views/myInfo/MyInfoHanaMoney.vue'),
+  },
+  {
+    path: '/my-info/marketing',
+    name: '/my-info/marketing',
+    component: () => import('@/views/myInfo/MyInfoMarketing.vue'),
+  },
+  {
+    path: '/my-info/withdraw-member',
+    name: '/my-info/withdraw-member',
+    component: () => import('@/views/myInfo/MyInfoWithdrawMember.vue'),
+  },
+  {
+    path: '/my-info/withdraw-member-complete',
+    name: '/my-info/withdraw-member-complete',
+    component: () => import('@/views/myInfo/MyInfoWithdrawMemberComplete.vue'),
+  },
+  {
+    path: '/my-info/join-hana-money',
+    name: '/my-info/join-hana-money',
+    component: () => import('@/views/myInfo/MyInfoJoinHanaMoney.vue'),
+  },
+  {
+    path: '/my-info/join-membership',
+    name: '/my-info/join-membership',
+    component: () => import('@/views/myInfo/MyInfoJoinMembership.vue'),
+  },
+  {
+    path: '/my-info/join-membership-complete',
+    name: '/my-info/join-membership-complete',
+    component: () => import('@/views/myInfo/MyInfoJoinMembershipComplete.vue'),
+  },
+  {
+    path: '/my-info/withdraw-membership-complete',
+    name: '/my-info/withdraw-membership-complete',
+    component: () =>
+      import('@/views/myInfo/MyInfoWithdrawMembershipComplete.vue'),
+  },
+  {
+    path: '/my-info/market-price-car',
+    name: '/my-info/market-price-car',
+    component: () => import('@/views/myInfo/MyInfoMarketPriceCar.vue'),
+  },
+  {
+    path: '/my-info/market-price-realty',
+    name: '/my-info/market-price-realty',
+    component: () => import('@/views/myInfo/MyInfoMarketPriceRealty.vue'),
+  },
+
+  // sales-used-car
+  {
+    path: '/sales-used-car/new-counseling',
+    name: '/sales-used-car/new-counseling',
+    component: () =>
+      import('@/views/salesUsedCar/SalesUsedCarNewCounseling.vue'),
+  },
+  {
+    path: '/sales-used-car/counseling',
+    name: '/sales-used-car/counseling',
+    component: () => import('@/views/salesUsedCar/SalesUsedCarCounseling.vue'),
+  },
+  {
+    path: '/sales-used-car/counseling-complete',
+    name: '/sales-used-car/counseling-complete',
+    component: () =>
+      import('@/views/salesUsedCar/SalesUsedCarCounselingComplete.vue'),
+  },
+  {
+    path: '/sales-used-car/counseling-auto-complete',
+    name: '/sales-used-car/counseling-auto-complete',
+    component: () =>
+      import('@/views/salesUsedCar/SalesUsedCarCounselingAutoComplete.vue'),
+  },
+  {
+    path: '/sales-used-car/counseling-fail-001',
+    name: '/sales-used-car/counseling-fail-001',
+    component: () =>
+      import('@/views/salesUsedCar/SalesUsedCarCounselingFail001.vue'),
+  },
+  {
+    path: '/sales-used-car/counseling-fail-002',
+    name: '/sales-used-car/counseling-fail-002',
+    component: () =>
+      import('@/views/salesUsedCar/SalesUsedCarCounselingFail002.vue'),
+  },
+  {
+    path: '/sales-used-car/counseling-fail-003',
+    name: '/sales-used-car/counseling-fail-003',
+    component: () =>
+      import('@/views/salesUsedCar/SalesUsedCarCounselingFail003.vue'),
+  },
+  {
+    path: '/sales-used-car/counseling-fail-004',
+    name: '/sales-used-car/counseling-fail-004',
+    component: () =>
+      import('@/views/salesUsedCar/SalesUsedCarCounselingFail004.vue'),
+  },
+  {
+    path: '/sales-used-car/counseling-fail-005',
+    name: '/sales-used-car/counseling-fail-005',
+    component: () =>
+      import('@/views/salesUsedCar/SalesUsedCarCounselingFail005.vue'),
+  },
+  {
+    path: '/sales-used-car/counseling-impossible-001',
+    name: '/sales-used-car/counseling-impossible-001',
+    component: () =>
+      import('@/views/salesUsedCar/SalesUsedCarCounselingImpossible001.vue'),
+  },
+  {
+    path: '/sales-used-car/counseling-impossible-002',
+    name: '/sales-used-car/counseling-impossible-002',
+    component: () =>
+      import('@/views/salesUsedCar/SalesUsedCarCounselingImpossible002.vue'),
+  },
+  {
+    path: '/sales-used-car/counseling-edit',
+    name: '/sales-used-car/counseling-edit',
+    component: () =>
+      import('@/views/salesUsedCar/SalesUsedCarCounselingEdit.vue'),
+  },
+  {
+    path: '/sales-used-car/affiliate',
+    name: '/sales-used-car/affiliate',
+    component: () => import('@/views/salesUsedCar/SalesUsedCarAffiliate.vue'),
+  },
+  {
+    path: '/sales-used-car/affiliate-confirm',
+    name: '/sales-used-car/affiliate-confirm',
+    component: () =>
+      import('@/views/salesUsedCar/SalesUsedCarAffiliateConfirm.vue'),
+  },
+  {
+    path: '/sales-used-car/affiliate-form',
+    name: '/sales-used-car/affiliate-form',
+    component: () =>
+      import('@/views/salesUsedCar/SalesUsedCarAffiliateForm.vue'),
+  },
+  {
+    path: '/sales-used-car/affiliate-complete',
+    name: '/sales-used-car/affiliate-complete',
+    component: () =>
+      import('@/views/salesUsedCar/SalesUsedCarAffiliateComplete.vue'),
+  },
+
+  // sales-new-car
+  {
+    path: '/sales-new-car/home',
+    name: '/sales-new-car/home',
+    component: () => import('@/views/salesNewCar/SalesNewCarHome.vue'),
+  },
+  {
+    path: '/sales-new-car/new-counseling',
+    name: '/sales-new-car/new-counseling',
+    component: () => import('@/views/salesNewCar/SalesNewCarNewCounseling.vue'),
+  },
+  {
+    path: '/sales-new-car/counseling',
+    name: '/sales-new-car/counseling',
+    component: () => import('@/views/salesNewCar/SalesNewCarCounseling.vue'),
+  },
+  {
+    path: '/sales-new-car/counseling-complete',
+    name: '/sales-new-car/counseling-complete',
+    component: () =>
+      import('@/views/salesNewCar/SalesNewCarCounselingComplete.vue'),
+  },
+  {
+    path: '/sales-new-car/counseling-fail',
+    name: '/sales-new-car/counseling-fail',
+    component: () =>
+      import('@/views/salesNewCar/SalesNewCarCounselingFail.vue'),
+  },
+  {
+    path: '/sales-new-car/add-contract',
+    name: '/sales-new-car/add-contract',
+    component: () => import('@/views/salesNewCar/SalesNewCarAddContract.vue'),
+  },
+  {
+    path: '/sales-new-car/add-contract-complete',
+    name: '/sales-new-car/add-contract-complete',
+    component: () =>
+      import('@/views/salesNewCar/SalesNewCarAddContractComplete.vue'),
+  },
+  {
+    path: '/sales-new-car/unregistered-bonds',
+    name: '/sales-new-car/unregistered-bonds',
+    component: () =>
+      import('@/views/salesNewCar/SalesNewCarUnregisteredBonds.vue'),
+  },
+
+  // inventory-finance-check
+  {
+    path: '/inventory-finance-check/home',
+    name: '/inventory-finance-check/home',
+    component: () =>
+      import('@/views/InventoryFinanceCheck/InventoryFinanceCheckHome.vue'),
+  },
+
+  // lease-rent-estimation-system
+  {
+    path: '/lease-rent-estimation-system/pre-purchase',
+    name: '/lease-rent-estimation-system/pre-purchase',
+    component: () =>
+      import(
+        '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemPrePurchase.vue'
+      ),
+  },
+  {
+    path: '/lease-rent-estimation-system/pre-purchase-car-detail',
+    name: '/lease-rent-estimation-system/pre-purchase-car-detail',
+    component: () =>
+      import(
+        '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemPrePurchaseCarDetail.vue'
+      ),
   },
 ];
 

@@ -25,7 +25,7 @@ import LayerMyLoanOnlineContractExisting from '@/views/myLoan/LayerMyLoanOnlineC
 import LayerMyLoanOnlineContractExistingComplete from '@/views/myLoan/LayerMyLoanOnlineContractExistingComplete.vue';
 import LayerMyLoanOnlineContractFinancialTerms from '@/views/myLoan/LayerMyLoanOnlineContractFinancialTerms.vue';
 import LayerMyLoanOnlineContractAccountAuth from '@/views/myLoan/LayerMyLoanOnlineContractAccountAuth.vue';
-import LayerMyLoanOnlineContractConfirm from '@/views/myLoan/LayerMyLoanOnlineContractConfirm.vue';
+import LayerMyLoanOnlineContractConfirm001 from '@/views/myLoan/LayerMyLoanOnlineContractConfirm001.vue';
 import LayerMyLoanOnlineContractSpecialConfirm from '@/views/myLoan/LayerMyLoanOnlineContractSpecialConfirm.vue';
 import LayerMyLoanOnlineContractAutomatic from '@/views/myLoan/LayerMyLoanOnlineContractAutomatic.vue';
 import LayerMyLoanOnlineContractComplete001 from '@/views/myLoan/LayerMyLoanOnlineContractComplete001.vue';
@@ -72,7 +72,7 @@ export default {
     LayerMyLoanOnlineContractExistingComplete,
     LayerMyLoanOnlineContractFinancialTerms,
     LayerMyLoanOnlineContractAccountAuth,
-    LayerMyLoanOnlineContractConfirm,
+    LayerMyLoanOnlineContractConfirm001,
     LayerMyLoanOnlineContractSpecialConfirm,
     LayerMyLoanOnlineContractAutomatic,
     LayerMyLoanOnlineContractComplete001,
@@ -572,7 +572,7 @@ export default {
     <LayerMyLoanOnlineContractExistingComplete ref="layer017" />
     <LayerMyLoanOnlineContractFinancialTerms ref="layer018" />
     <LayerMyLoanOnlineContractAccountAuth ref="layer019" />
-    <LayerMyLoanOnlineContractConfirm ref="layer020" />
+    <LayerMyLoanOnlineContractConfirm001 ref="layer020" />
     <LayerMyLoanOnlineContractSpecialConfirm ref="layer021" />
     <LayerMyLoanOnlineContractAutomatic ref="layer022" />
     <LayerMyLoanOnlineContractComplete001 ref="layer023" />
