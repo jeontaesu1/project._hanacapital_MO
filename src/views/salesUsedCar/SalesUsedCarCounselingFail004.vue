@@ -1,14 +1,29 @@
 <script>
 // UC_M03_p002 사업자정보가 없는 경우
+
 import { onMounted, onUnmounted } from 'vue';
 
 import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import IllustObject from '@/components/ui/common/IllustObject.vue';
+import IllustInfo from '@/components/ui/common/IllustInfo.vue';
+import IllustInfoTitle from '@/components/ui/common/IllustInfoTitle.vue';
+import IllustInfoText from '@/components/ui/common/IllustInfoText.vue';
+import ButtonList from '@/components/ui/button/ButtonList.vue';
+import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
 
 export default {
   components: {
     PageContents,
+    IllustObject,
+    IllustInfo,
+    IllustInfoTitle,
+    IllustInfoText,
+    ButtonList,
+    ButtonListItem,
+    BasicButton,
   },
   setup() {
     const store = {
@@ -18,9 +33,9 @@ export default {
     };
 
     onMounted(() => {
-      store.ui.header.setTitle(() => '타이틀');
+      store.ui.header.setTitle(() => '중고할부·론');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => []);
+      store.ui.header.setRightButtons(() => ['menu']);
     });
 
     onUnmounted(() => {
@@ -34,7 +49,27 @@ export default {
 
 <template>
   <PageContents>
-    <h1>Page</h1>
+    <IllustInfo>
+      <IllustObject type="fail" />
+      <IllustInfoTitle>
+        상담등록에<br />
+        <strong>실패하였습니다</strong>
+      </IllustInfoTitle>
+      <IllustInfoText class="row-margin-item">
+        사업자정보가 존재하지 않습니다.<br />
+        사업자 선택 후 이용해주세요.
+      </IllustInfoText>
+    </IllustInfo>
+    <template v-slot:foot>
+      <ButtonList
+        :classNames="{
+          wrap: 'row-margin-none',
+        }"
+      >
+        <ButtonListItem>
+          <BasicButton theme="secondary">확인</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
+    </template>
   </PageContents>
 </template>
-
