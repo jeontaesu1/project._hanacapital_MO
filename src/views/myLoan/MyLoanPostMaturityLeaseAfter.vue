@@ -21,6 +21,7 @@ import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
 import StickyBar from '@/components/ui/common/StickyBar.vue';
 import NavTab from '@/components/ui/tab/NavTab.vue';
 import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 
@@ -33,6 +34,8 @@ import IconCall from '@/assets/images/icon/call.svg?component';
 import IconDocumentComplete from '@/assets/images/icon/document-complete.svg?component';
 import IconContract from '@/assets/images/icon/contract.svg?component';
 import IconCar from '@/assets/images/icon/car.svg?component';
+import IconCarCheck from '@/assets/images/icon/car-check.svg?component';
+import IconDocumentSearch from '@/assets/images/icon/document-search.svg?component';
 
 export default {
   components: {
@@ -53,6 +56,7 @@ export default {
     StickyBar,
     NavTab,
     NavTabButton,
+    BasicButton,
     NoticeText,
     TextButton,
     IconLink,
@@ -64,6 +68,8 @@ export default {
     IconDocumentComplete,
     IconContract,
     IconCar,
+    IconCarCheck,
+    IconDocumentSearch,
   },
   setup() {
     const store = {
@@ -963,7 +969,7 @@ export default {
                   >
                 </div>
                 <div :class="$style['step__icon']">
-                  <IconCar />
+                  <IconDocumentSearch />
                 </div>
               </div>
             </li>
@@ -1066,7 +1072,7 @@ export default {
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
-                  <IconCar />
+                  <IconCarCheck />
                 </div>
               </div>
             </li>
