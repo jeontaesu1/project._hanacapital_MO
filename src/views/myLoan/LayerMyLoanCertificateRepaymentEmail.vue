@@ -118,7 +118,7 @@ export default {
       <FormList :classNames="{ wrap: 'row-margin-item-group' }">
         <FormListItem
           titleText="이메일"
-          target="#LayerMyLoanCertificateRepaymentEmailId"
+          target="#layerMyLoanCertificateRepaymentEmailId"
         >
           <FormInvalid :error="state.mailError">
             <InputBlock :error="state.mailError">
