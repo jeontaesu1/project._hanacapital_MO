@@ -1,0 +1,18 @@
+@import '@/assets/scss/components/import/join.scss';
+@import '@/assets/scss/components/import/icon-list.scss';
+
+.head {
+  padding: 12px 0 8px 0;
+}
+
+.arrow {
+  display: block;
+  width: 10px;
+  height: 10px;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}

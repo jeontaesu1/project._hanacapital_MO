@@ -1393,8 +1393,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/sales-new-car/counseling',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.05.05',
         log: [],
       },
       {
@@ -1485,7 +1485,7 @@ const datas = () => [
     depth1: '리스/렌트 견적시스템 (영업용)',
     datas: [
       {
-        depth2: '선구매',
+        depth2: '선구매\nLR_M02_p005',
         depth3: '',
         depth4: '',
         depth5: '',
@@ -1496,8 +1496,8 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '선구매',
-        depth3: '등록 차량 상세',
+        depth2: '선구매\nLR_M02_p005',
+        depth3: '등록 차량 상세\nLR_M02_p007',
         depth4: '',
         depth5: '',
         depth6: '',
@@ -2442,8 +2442,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/my-info-billing-001',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.05.05',
         log: [],
       },
       {
@@ -2618,8 +2618,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/my-info-market-price-realty-001',
-        status: '',
-        create: '',
+        status: 'partend',
+        create: '2023.05.05',
         log: [],
       },
     ],
