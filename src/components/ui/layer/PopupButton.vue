@@ -18,6 +18,10 @@ export default {
       Type: String,
       default: 'close',
     },
+    theme: {
+      Type: String,
+      default: null,
+    },
     classNames: {
       Type: Object,
       default() {
@@ -61,7 +65,13 @@ export default {
   <button
     v-bind="$attrs"
     type="button"
-    :class="[$style['popup-button'], customClassNames.wrap]"
+    :class="[
+      $style['popup-button'],
+      {
+        [$style[`popup-button--theme-${theme}`]]: theme,
+      },
+      customClassNames.wrap,
+    ]"
   >
     <component
       :is="icons[type]"
