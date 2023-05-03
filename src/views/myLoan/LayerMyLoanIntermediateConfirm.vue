@@ -82,7 +82,9 @@ export default {
             <h3 class="text-body-1 font-weight-medium">중도상환 예상 금액</h3>
           </BasicBoxHeadLeft>
           <BasicBoxHeadRight>
-            <UnitText rightUnit="원" align="right">999,999,999</UnitText>
+            <UnitText verticalAlign="center" rightUnit="원" align="right"
+              >999,999,999</UnitText
+            >
           </BasicBoxHeadRight>
         </BasicBoxHead>
 

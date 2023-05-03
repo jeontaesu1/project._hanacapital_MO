@@ -103,7 +103,11 @@ export default {
       </BoxCheckList>
 
       <!-- Case: 새 아이디 직접 입력 선택 시 노출 -->
-      <FormList class="row-margin-item-group">
+      <FormList
+        :classNames="{
+          wrap: 'row-margin-item-group',
+        }"
+      >
         <FormListItem titleText="새 아이디" target="#layerSigninIdSelectNewId">
           <FormInvalid :error="state.idError">
             <InputBlock :error="state.idError">

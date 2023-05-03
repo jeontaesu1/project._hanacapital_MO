@@ -85,7 +85,11 @@ export default {
 
       <div :class="$style['img-account']"><ImgAccount /></div>
 
-      <FormList class="row-margin-contents-group">
+      <FormList
+        :classNames="{
+          wrap: 'row-margin-contents-group',
+        }"
+      >
         <FormListItem
           titleText="입금자명"
           target="#layerMyLoanOnlineContractAccountAuthName"

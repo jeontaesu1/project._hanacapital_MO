@@ -116,7 +116,11 @@ export default {
         </ul>
       </div>
 
-      <FormList class="row-margin-contents">
+      <FormList
+        :classNames="{
+          wrap: 'row-margin-contents-group',
+        }"
+      >
         <!-- Case : 개인 회원일 경우 노출 -->
         <FormListItem
           titleText="등본지"

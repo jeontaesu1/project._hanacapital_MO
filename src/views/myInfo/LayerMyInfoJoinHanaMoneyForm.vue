@@ -73,84 +73,82 @@ export default {
       </PageTextGroup>
 
       <FormList>
-        <FormList>
-          <FormListItem
-            titleText="이메일"
-            target="#layerMyInfoJoinHanaMoneyFormMailId"
-          >
-            <FormInvalid :error="state.mailError">
-              <InputBlock :error="state.mailError">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    title="이메일"
-                    id="layerMyInfoJoinHanaMoneyFormMailId"
-                  />
-                </InputBlockCell>
-                <InputBlockCell margin="regular">@</InputBlockCell>
-                <InputBlockCell margin="regular" :flexible="true">
-                  <BasicSelect
-                    :option="[
-                      {
-                        value: '1',
-                        text: 'naver.com',
-                      },
-                      {
-                        value: '2',
-                        text: 'hanmail.net',
-                      },
-                      {
-                        value: '3',
-                        text: 'gmail.com',
-                      },
-                      {
-                        value: '4',
-                        text: 'nate.com',
-                      },
-                      {
-                        value: '5',
-                        text: 'paran.com',
-                      },
-                      {
-                        value: '6',
-                        text: 'dreamwiz.com',
-                      },
-                      {
-                        value: '7',
-                        text: 'yahoo.com',
-                      },
-                      {
-                        value: '8',
-                        text: 'freechal.com',
-                      },
-                      {
-                        value: '9',
-                        text: '직접입력',
-                      },
-                    ]"
-                    buttonTitle="이메일 도메인 선택하기"
-                    layerTitle="이메일 도메인을 선택해 주세요"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <!-- Case : 직접입력 선택 시 노출 -->
-              <InputBlock
-                :error="state.mailError"
-                :classNames="{
-                  wrap: 'row-margin-item-group row-margin-bottom-none',
-                }"
-              >
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    title="이메일 도메인 직접입력"
-                    id="layerMyInfoJoinHanaMoneyFormDomainSelf"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <!-- // Case : 직접입력 선택 시 노출 -->
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-        </FormList>
+        <FormListItem
+          titleText="이메일"
+          target="#layerMyInfoJoinHanaMoneyFormMailId"
+        >
+          <FormInvalid :error="state.mailError">
+            <InputBlock :error="state.mailError">
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  title="이메일"
+                  id="layerMyInfoJoinHanaMoneyFormMailId"
+                />
+              </InputBlockCell>
+              <InputBlockCell margin="regular">@</InputBlockCell>
+              <InputBlockCell margin="regular" :flexible="true">
+                <BasicSelect
+                  :option="[
+                    {
+                      value: '1',
+                      text: 'naver.com',
+                    },
+                    {
+                      value: '2',
+                      text: 'hanmail.net',
+                    },
+                    {
+                      value: '3',
+                      text: 'gmail.com',
+                    },
+                    {
+                      value: '4',
+                      text: 'nate.com',
+                    },
+                    {
+                      value: '5',
+                      text: 'paran.com',
+                    },
+                    {
+                      value: '6',
+                      text: 'dreamwiz.com',
+                    },
+                    {
+                      value: '7',
+                      text: 'yahoo.com',
+                    },
+                    {
+                      value: '8',
+                      text: 'freechal.com',
+                    },
+                    {
+                      value: '9',
+                      text: '직접입력',
+                    },
+                  ]"
+                  buttonTitle="이메일 도메인 선택하기"
+                  layerTitle="이메일 도메인을 선택해 주세요"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <!-- Case : 직접입력 선택 시 노출 -->
+            <InputBlock
+              :error="state.mailError"
+              :classNames="{
+                wrap: 'row-margin-item-group row-margin-bottom-none',
+              }"
+            >
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  title="이메일 도메인 직접입력"
+                  id="layerMyInfoJoinHanaMoneyFormDomainSelf"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <!-- // Case : 직접입력 선택 시 노출 -->
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
 
         <FormListItem
           titleText="추천인 사번"
