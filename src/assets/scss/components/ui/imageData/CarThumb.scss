@@ -18,4 +18,16 @@
     height: 100%;
     transform: translateX(-50%);
   }
+
+  &--size {
+    &-medium {
+      width: 140px;
+
+      &::before {
+        content: '';
+        display: block;
+        padding-top: 71.43%;
+      }
+    }
+  }
 }
