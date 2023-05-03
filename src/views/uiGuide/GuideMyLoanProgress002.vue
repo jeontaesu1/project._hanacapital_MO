@@ -46,6 +46,7 @@ import LayerMyLoanOnlineContractSuccession from '@/views/myLoan/LayerMyLoanOnlin
 import LayerMyLoanOnlineContractSuccessionConfirm001 from '@/views/myLoan/LayerMyLoanOnlineContractSuccessionConfirm001.vue';
 import LayerMyLoanOnlineContractSuccessionConfirm002 from '@/views/myLoan/LayerMyLoanOnlineContractSuccessionConfirm002.vue';
 import LayerMyLoanOnlineContractSuccessionImportant from '@/views/myLoan/LayerMyLoanOnlineContractSuccessionImportant.vue';
+import LayerMyLoanOnlineContractConfirm002 from '@/views/myLoan/LayerMyLoanOnlineContractConfirm002.vue';
 
 export default {
   components: {
@@ -93,6 +94,7 @@ export default {
     LayerMyLoanOnlineContractSuccessionConfirm001,
     LayerMyLoanOnlineContractSuccessionConfirm002,
     LayerMyLoanOnlineContractSuccessionImportant,
+    LayerMyLoanOnlineContractConfirm002,
   },
   setup() {
     const layer001 = ref(null);
@@ -135,6 +137,7 @@ export default {
     const layer038 = ref(null);
     const layer039 = ref(null);
     const layer040 = ref(null);
+    const layer041 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -256,6 +259,9 @@ export default {
     const layer040Open = (e = {}) => {
       layer040.value.layer.open(e.target);
     };
+    const layer041Open = (e = {}) => {
+      layer041.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -298,6 +304,7 @@ export default {
       layer038,
       layer039,
       layer040,
+      layer041,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -338,6 +345,7 @@ export default {
       layer038Open,
       layer039Open,
       layer040Open,
+      layer041Open,
     };
   },
 };
@@ -551,6 +559,11 @@ export default {
           >승계 약정 중요사항 확인<br />My_M03_b016
         </BasicButton>
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer041Open"
+          >계약정보 최종확인_리스 승계 후<br />MY_M03_l022(MY_M03_l022le1)
+        </BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <LayerMyLoanOnlineContractStartURL ref="layer001" />
@@ -593,5 +606,6 @@ export default {
     <LayerMyLoanOnlineContractSuccessionConfirm001 ref="layer038" />
     <LayerMyLoanOnlineContractSuccessionConfirm002 ref="layer039" />
     <LayerMyLoanOnlineContractSuccessionImportant ref="layer040" />
+    <LayerMyLoanOnlineContractConfirm002 ref="layer041" />
   </PageContents>
 </template>
