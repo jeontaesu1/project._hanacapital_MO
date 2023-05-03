@@ -100,53 +100,44 @@ export default {
       <section class="row-margin-container-medium">
         <FormList>
           <FormListItem titleText="차감 수수료율" :forceFocus="true">
-            <BoxCheckList class="row-margin-item-group">
-              <BoxCheckListItem>
-                <BoxCheck
-                  :minSide="true"
-                  name="layerAutoUsedLoanContractPeriod"
-                  id="layerAutoUsedLoanContractPeriod001"
-                  :defaultChecked="true"
+            <ButtonList :wrap="true" :col="4" class="row-margin-item-group">
+              <ButtonListItem>
+                <BasicButton
+                  class="text-body-4 color-gray"
+                  :line="true"
+                  theme="quaternary"
+                  size="small"
+                  >+ 0.5%</BasicButton
                 >
-                  <BoxCheckLabel class="text-body-4 color-gray"
-                    >+ 0.5%</BoxCheckLabel
-                  >
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  :minSide="true"
-                  name="layerAutoUsedLoanContractPeriod"
-                  id="layerAutoUsedLoanContractPeriod002"
+              </ButtonListItem>
+              <ButtonListItem>
+                <BasicButton
+                  class="text-body-4 color-gray"
+                  :line="true"
+                  theme="quaternary"
+                  size="small"
+                  >+ 1.0%</BasicButton
                 >
-                  <BoxCheckLabel class="text-body-4 color-gray"
-                    >+ 1.0%</BoxCheckLabel
-                  >
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  :minSide="true"
-                  name="layerAutoUsedLoanContractPeriod"
-                  id="layerAutoUsedLoanContractPeriod003"
+              </ButtonListItem>
+              <ButtonListItem>
+                <BasicButton
+                  class="text-body-4 color-gray"
+                  :line="true"
+                  theme="quaternary"
+                  size="small"
+                  >+ 1.5%</BasicButton
                 >
-                  <BoxCheckLabel class="text-body-4 color-gray"
-                    >+ 1.5%</BoxCheckLabel
-                  >
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  :minSide="true"
-                  name="layerAutoUsedLoanContractPeriod"
-                  id="layerAutoUsedLoanContractPeriod004"
+              </ButtonListItem>
+              <ButtonListItem>
+                <BasicButton
+                  class="text-body-4 color-gray"
+                  :line="true"
+                  theme="quaternary"
+                  size="small"
+                  >+ 2.0%</BasicButton
                 >
-                  <BoxCheckLabel class="text-body-4 color-gray"
-                    >+ 2.0%</BoxCheckLabel
-                  >
-                </BoxCheck>
-              </BoxCheckListItem>
-            </BoxCheckList>
+              </ButtonListItem>
+            </ButtonList>
             <FormInvalid :error="state.carAmountError">
               <InputBlock
                 :error="state.carAmountError"

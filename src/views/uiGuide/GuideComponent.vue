@@ -1126,6 +1126,23 @@ export default {
           </ButtonListItem>
         </ButtonList>
       </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Wrap - col 4</h3>
+        <ButtonList :wrap="true" :col="4">
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">Button 1</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">Button 2</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">Button 3</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">Button 4</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+      </div>
     </section>
 
     <section class="test-section">
