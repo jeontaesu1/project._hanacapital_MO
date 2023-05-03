@@ -98,7 +98,7 @@ export default {
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
               각 계약별로 설정된 SMS안내 확인은
-              <span class="font-weight-medium">대출상세 > 결제청구정보</span>
+              <span class="font-weight-medium">대출상세 > 결제/청구 정보</span>
               메뉴를 이용하세요.
             </div>
           </li>

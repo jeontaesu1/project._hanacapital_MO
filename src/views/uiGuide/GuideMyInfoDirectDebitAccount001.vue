@@ -6,7 +6,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-// import Layer from '@/views/';
+import LayerMyInfoDirectDebitAccountEdit from '@/views/myInfo/LayerMyInfoDirectDebitAccountEdit.vue';
 
 export default {
   components: {
@@ -14,7 +14,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    // Layer,
+    LayerMyInfoDirectDebitAccountEdit,
   },
   setup() {
     const layer001 = ref(null);
@@ -40,12 +40,12 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open"
-          >ㅇㅇㅇㅇㅇ<br />ㅁㅁㅁㅁㅁㅁ</BasicButton
-        >
+        <BasicButton @click="layer001Open">
+          결제계좌 정보 입력<br />MI_M01_l005
+        </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
-    <Layer ref="layer001" />
+    <LayerMyInfoDirectDebitAccountEdit ref="layer001" />
   </PageContents>
 </template>

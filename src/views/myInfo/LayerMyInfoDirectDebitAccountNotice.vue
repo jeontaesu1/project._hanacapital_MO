@@ -40,7 +40,13 @@ export default {
       </template>
 
       <div>
-        <ul :class="$style['basic-list']">
+        <ul
+          :class="[
+            $style['basic-list'],
+            $style['basic-list--regular'],
+            $style['basic-list--regular-margin'],
+          ]"
+        >
           <li
             :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
           >
@@ -72,6 +78,7 @@ export default {
           </li>
         </ul>
       </div>
+
       <template v-slot:foot>
         <ButtonList
           :classNames="{

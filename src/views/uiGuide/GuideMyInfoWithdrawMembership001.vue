@@ -6,7 +6,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-// import Layer from '@/views/';
+import LayerMyInfoWithdrawMembershipAlert from '@/views/myInfo/LayerMyInfoWithdrawMembershipAlert.vue';
 
 export default {
   components: {
@@ -14,7 +14,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    // Layer,
+    LayerMyInfoWithdrawMembershipAlert,
   },
   setup() {
     const layer001 = ref(null);
@@ -40,12 +40,12 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open"
-          >ㅇㅇㅇㅇㅇ<br />ㅁㅁㅁㅁㅁㅁ</BasicButton
-        >
+        <BasicButton @click="layer001Open">
+          탈퇴 안내<br />MI_M01_b007
+        </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
-    <Layer ref="layer001" />
+    <LayerMyInfoWithdrawMembershipAlert ref="layer001" />
   </PageContents>
 </template>

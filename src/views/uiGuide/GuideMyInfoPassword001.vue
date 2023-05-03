@@ -6,7 +6,8 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import LayerMyInfoJoinMembershipAgree from '@/views/myInfo/LayerMyInfoJoinMembershipAgree.vue';
+import LayerMyInfoPassword from '@/views/myInfo/LayerMyInfoPassword.vue';
+import LayerMyInfoPasswordComplete from '@/views/myInfo/LayerMyInfoPasswordComplete.vue';
 
 export default {
   components: {
@@ -14,18 +15,25 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    LayerMyInfoJoinMembershipAgree,
+    LayerMyInfoPassword,
+    LayerMyInfoPasswordComplete,
   },
   setup() {
     const layer001 = ref(null);
+    const layer002 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
     };
+    const layer002Open = (e = {}) => {
+      layer002.value.layer.open(e.target);
+    };
 
     return {
       layer001,
+      layer002,
       layer001Open,
+      layer002Open,
     };
   },
 };
@@ -41,11 +49,17 @@ export default {
     >
       <ButtonListItem>
         <BasicButton @click="layer001Open">
-          약관동의<br />MI_M01_l015
+          비밀번호 재설정<br />MI_M01_l009
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer002Open">
+          비밀번호 변경완료<br />MI_M01_l010
         </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
-    <LayerMyInfoJoinMembershipAgree ref="layer001" />
+    <LayerMyInfoPassword ref="layer001" />
+    <LayerMyInfoPasswordComplete ref="layer002" />
   </PageContents>
 </template>

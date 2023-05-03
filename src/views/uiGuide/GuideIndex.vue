@@ -2448,6 +2448,17 @@ const datas = () => [
       },
       {
         depth2: '내정보 관리\nMI_M01_p001',
+        depth3: '비밀번호 변경',
+        depth4: '팝업',
+        depth5: '',
+        depth6: '',
+        path: '/guide/my-info-password-001',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '내정보 관리\nMI_M01_p001',
         depth3: '하나머니\nMI_M01_p005',
         depth4: '',
         depth5: '',
