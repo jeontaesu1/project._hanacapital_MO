@@ -36,6 +36,14 @@
     }
   }
 
+  &--vertical-align {
+    &-center {
+      .key-value__item {
+        align-items: center;
+      }
+    }
+  }
+
   &--direction {
     &-vertical {
       .key-value__item {

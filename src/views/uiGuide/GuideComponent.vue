@@ -5592,6 +5592,18 @@ export default {
       </div>
 
       <div class="test-section-sub">
+        <h3 class="test-section-sub-title">vertical align : center</h3>
+        <KeyValue verticalAlign="center">
+          <KeyValueItem>
+            <KeyValueTitle>총 가격</KeyValueTitle>
+            <KeyValueText>
+              <UnitText rightUnit="원" align="right"> 16,200,000 </UnitText>
+            </KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+      </div>
+
+      <div class="test-section-sub">
         <h3 class="test-section-sub-title">Vertical</h3>
         <KeyValue direction="vertical">
           <KeyValueItem>
