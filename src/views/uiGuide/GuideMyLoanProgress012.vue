@@ -10,6 +10,9 @@ import LayerMyLoanOnlineContractSuccessionConfirm004 from '@/views/myLoan/LayerM
 import LayerMyLoanOnlineContractIntermediateDocument001 from '@/views/myLoan/LayerMyLoanOnlineContractIntermediateDocument001.vue';
 import LayerMyLoanOnlineContractIntermediateDocument002 from '@/views/myLoan/LayerMyLoanOnlineContractIntermediateDocument002.vue';
 import LayerMyLoanOnlineContractIntermediateDocument003 from '@/views/myLoan/LayerMyLoanOnlineContractIntermediateDocument003.vue';
+import LayerMyLoanOnlineContractURLSelectDocument from '@/views/myLoan/LayerMyLoanOnlineContractURLSelectDocument.vue';
+import LayerMyLoanOnlineContractURLThing from '@/views/myLoan/LayerMyLoanOnlineContractURLThing.vue';
+import LayerMyLoanOnlineContractURLLeaseThingCheck from '@/views/myLoan/LayerMyLoanOnlineContractURLLeaseThingCheck.vue';
 
 export default {
   components: {
@@ -21,12 +24,18 @@ export default {
     LayerMyLoanOnlineContractIntermediateDocument001,
     LayerMyLoanOnlineContractIntermediateDocument002,
     LayerMyLoanOnlineContractIntermediateDocument003,
+    LayerMyLoanOnlineContractURLSelectDocument,
+    LayerMyLoanOnlineContractURLThing,
+    LayerMyLoanOnlineContractURLLeaseThingCheck,
   },
   setup() {
     const layer001 = ref(null);
     const layer002 = ref(null);
     const layer003 = ref(null);
     const layer004 = ref(null);
+    const layer005 = ref(null);
+    const layer006 = ref(null);
+    const layer007 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -40,16 +49,31 @@ export default {
     const layer004Open = (e = {}) => {
       layer004.value.layer.open(e.target);
     };
+    const layer005Open = (e = {}) => {
+      layer005.value.layer.open(e.target);
+    };
+    const layer006Open = (e = {}) => {
+      layer006.value.layer.open(e.target);
+    };
+    const layer007Open = (e = {}) => {
+      layer007.value.layer.open(e.target);
+    };
 
     return {
       layer001,
       layer002,
       layer003,
       layer004,
+      layer005,
+      layer006,
+      layer007,
       layer001Open,
       layer002Open,
       layer003Open,
       layer004Open,
+      layer005Open,
+      layer006Open,
+      layer007Open,
     };
   },
 };
@@ -83,11 +107,29 @@ export default {
           >채권 양도 통지서<br />BF_M04_l010</BasicButton
         >
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer005Open"
+          >약정 서류 확인<br />BF_M05_l008</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer006Open"
+          >물건수령증(장비견적서 포함)<br />BF_M05_l011</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer007Open"
+          >리스물건 점검보고서<br />BF_M05_l012</BasicButton
+        >
+      </ButtonListItem>
     </ButtonList>
 
     <LayerMyLoanOnlineContractSuccessionConfirm004 ref="layer001" />
     <LayerMyLoanOnlineContractIntermediateDocument001 ref="layer002" />
     <LayerMyLoanOnlineContractIntermediateDocument002 ref="layer003" />
     <LayerMyLoanOnlineContractIntermediateDocument003 ref="layer004" />
+    <LayerMyLoanOnlineContractURLSelectDocument ref="layer005" />
+    <LayerMyLoanOnlineContractURLThing ref="layer006" />
+    <LayerMyLoanOnlineContractURLLeaseThingCheck ref="layer007" />
   </PageContents>
 </template>

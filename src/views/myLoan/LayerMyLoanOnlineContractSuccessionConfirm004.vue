@@ -116,7 +116,7 @@ export default {
             <div :class="$style['agree-list']">
               <div :class="$style['agree-list__head']">
                 <CheckBox
-                  id="layerMyLoanOnlineContractSuccessionConfirm002Agree001"
+                  id="layerMyLoanOnlineContractSuccessionConfirm004Agree001"
                   :classNames="{
                     wrap: $style['agree-list__checkbox'],
                   }"
@@ -240,7 +240,7 @@ export default {
               <div :class="$style['agree-list']">
                 <div :class="$style['agree-list__head']">
                   <CheckBox
-                    id="layerMyLoanOnlineContractSuccessionConfirm002Agree002_001"
+                    id="layerMyLoanOnlineContractSuccessionConfirm004Agree002_001"
                     :classNames="{
                       wrap: $style['agree-list__checkbox'],
                     }"
@@ -258,7 +258,7 @@ export default {
               <div :class="$style['agree-list']">
                 <div :class="$style['agree-list__head']">
                   <CheckBox
-                    id="layerMyLoanOnlineContractSuccessionConfirm002Agree002_002"
+                    id="layerMyLoanOnlineContractSuccessionConfirm004Agree002_002"
                     :classNames="{
                       wrap: $style['agree-list__checkbox'],
                     }"
@@ -287,7 +287,7 @@ export default {
             <div :class="$style['agree-list']">
               <div :class="$style['agree-list__head']">
                 <CheckBox
-                  id="layerMyLoanOnlineContractSuccessionConfirm002Agree003"
+                  id="layerMyLoanOnlineContractSuccessionConfirm004Agree003"
                   :classNames="{
                     wrap: $style['agree-list__checkbox'],
                   }"
@@ -328,5 +328,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/myLoan/LayerMyLoanOnlineContractSuccessionConfirm002.scss';
+@import '@/assets/scss/views/myLoan/LayerMyLoanOnlineContractSuccessionConfirm004.scss';
 </style>
