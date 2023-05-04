@@ -236,5 +236,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/myLoan/LayerMyLoanOnlineContractDirectDebit.scss';
+@import '@/assets/scss/views/myInfo/LayerMyInfoDirectDebitAccountEdit.scss';
 </style>
