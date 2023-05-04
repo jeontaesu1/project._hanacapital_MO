@@ -18,10 +18,6 @@ import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import FormHelpText from '@/components/ui/form/FormHelpText.vue';
-import BoxCheck from '@/components/ui/form/BoxCheck.vue';
-import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
-import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
-import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 
 export default {
   components: {
@@ -41,10 +37,6 @@ export default {
     FormInvalid,
     FormInvalidMessage,
     FormHelpText,
-    BoxCheck,
-    BoxCheckLabel,
-    BoxCheckList,
-    BoxCheckListItem,
   },
   setup() {
     const state = reactive({
