@@ -46,7 +46,7 @@ export default {
       </template>
 
       <ul class="reset-list">
-        <li>
+        <li class="row-margin-item-group-small">
           <CheckBox
             id="layerMyLoanOnlineContractAgreeConfirmCheckBox01"
             theme="tertiary"
@@ -59,7 +59,7 @@ export default {
             </CheckBoxLabelText>
           </CheckBox>
         </li>
-        <li class="row-margin-item-group">
+        <li class="row-margin-item-group-small">
           <CheckBox
             id="layerMyLoanOnlineContractAgreeConfirmCheckBox02"
             theme="tertiary"
@@ -73,7 +73,7 @@ export default {
             </CheckBoxLabelText>
           </CheckBox>
         </li>
-        <li>
+        <li class="row-margin-item-group-small">
           <CheckBox
             id="layerMyLoanOnlineContractAgreeConfirmCheckBox03"
             theme="tertiary"

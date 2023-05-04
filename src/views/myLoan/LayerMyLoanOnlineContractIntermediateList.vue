@@ -69,12 +69,13 @@ export default {
           아현 푸르지오 클라시티에<br />
           <!-- Case : 중도금 대출 내역이 있는 경우 -->
           <strong>중도금 대출 대상자입니다</strong>
-          <PageSubText>대출신청을 진행해 주세요.</PageSubText>
           <!-- Case : 중도금 대출 내역이 있는 경우 -->
+          <br />
+          <!-- Case : 중도금 대출 내역이 없는 경우 -->
+          <strong>중도금 대출 대상자가 아닙니다</strong>
+          <!-- Case : 중도금 대출 내역이 없는 경우 -->
 
-          <!-- Case : 중도금 대출 내역이 없는 경우 -->
-          <!-- <strong>중도금 대출 대상자가 아닙니다</strong> -->
-          <!-- Case : 중도금 대출 내역이 없는 경우 -->
+          <PageSubText>대출신청을 진행해 주세요.</PageSubText>
         </PageMainText>
       </PageTextGroup>
 

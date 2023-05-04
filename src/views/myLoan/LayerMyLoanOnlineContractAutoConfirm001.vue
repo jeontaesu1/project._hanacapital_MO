@@ -216,7 +216,7 @@ export default {
                     <CarThumb src="/images/_dummy/car-thumb.png" />
                   </div>
                 </div>
-                <UnitText rightUnit="원"><strong>628,190</strong></UnitText>
+                <UnitText rightUnit="원">13,850,000</UnitText>
               </BasicBoxHeadLeft>
             </BasicBoxHead>
             <KeyValue margin="regular">
@@ -273,7 +273,7 @@ export default {
                   item: 'text-body-3',
                 }"
               >
-                <KeyValueTitle>지연배상금</KeyValueTitle>
+                <KeyValueTitle>지연배상금율</KeyValueTitle>
                 <KeyValueText>
                   14.5 %<br />
                   (약정이율 + 3%<br />

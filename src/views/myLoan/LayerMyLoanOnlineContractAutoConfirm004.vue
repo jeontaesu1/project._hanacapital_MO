@@ -469,7 +469,7 @@ export default {
               감가금액=반환시점의 자동차의 기대가치(혹은 중고차시세)X감가율의 합
             </p>
             <p class="text-body-4 font-weight-light color-gray-tertiary">
-              규감가비 산정기준은 홈페이지 참조
+              감가비 산정기준은 홈페이지 참조
             </p>
           </div>
 

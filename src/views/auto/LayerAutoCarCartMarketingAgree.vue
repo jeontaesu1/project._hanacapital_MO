@@ -132,7 +132,7 @@ export default {
                         >
                           <CheckBoxObject />
                           <CheckBoxLabelText>
-                            고유식별번호 선택적 수집·이용
+                            금융상품 안내 및 이용권유를 위한 수집·이용
                           </CheckBoxLabelText>
                         </CheckBox>
                       </div>
