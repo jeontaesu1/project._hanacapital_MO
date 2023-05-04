@@ -54,12 +54,14 @@ export default {
           <h3 class="text-title-2">청구정보</h3>
         </div>
         <div class="flex-box__cell">
-          <TextButton theme="secondary">
-            <span class="text-body-4">변경</span>
-            <template v-slot:rightIcon>
-              <LinkGreen />
-            </template>
-          </TextButton>
+          <div class="inline-wrap">
+            <TextButton theme="secondary">
+              <span class="text-body-4">변경</span>
+              <template v-slot:rightIcon>
+                <LinkGreen />
+              </template>
+            </TextButton>
+          </div>
         </div>
       </div>
 
@@ -226,12 +228,14 @@ export default {
           <h3 class="text-title-2">연락처 정보</h3>
         </div>
         <div class="flex-box__cell">
-          <TextButton theme="secondary">
-            <span class="text-body-4">변경</span>
-            <template v-slot:rightIcon>
-              <LinkGreen />
-            </template>
-          </TextButton>
+          <div class="inline-wrap">
+            <TextButton theme="secondary">
+              <span class="text-body-4">변경</span>
+              <template v-slot:rightIcon>
+                <LinkGreen />
+              </template>
+            </TextButton>
+          </div>
         </div>
       </div>
 
