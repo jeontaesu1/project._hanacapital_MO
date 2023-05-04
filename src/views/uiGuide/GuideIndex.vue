@@ -928,8 +928,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/inventory-finance/state-list',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.05.05',
         log: [],
       },
       {
@@ -1775,8 +1775,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/auto/car-cart',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.05.05',
         log: [],
       },
       {
@@ -1786,8 +1786,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/auto/car-cart-empty',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.05.05',
         log: [],
       },
       {

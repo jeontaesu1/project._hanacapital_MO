@@ -465,7 +465,7 @@ export default {
           <BasicBox theme="tertiary" className="align-center">
             <CarThumb
               size="medium"
-              src="/images/_dummy/car-thumb-01.png"
+              src="/images/_dummy/car-thumb.png"
               :classNames="{ wrap: 'inline-block' }"
             />
           </BasicBox>

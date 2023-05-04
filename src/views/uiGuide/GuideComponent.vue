@@ -124,6 +124,7 @@ import IconDocumentComplete from '@/assets/images/icon/document-complete.svg?com
 import IconTooltip from '@/assets/images/icon/tooltip.svg?component';
 import IconLink from '@/assets/images/icon/link.svg?component';
 import IconStar from '@/assets/images/icon/star.svg?component';
+import IconCloseSmall from '@/assets/images/common/close-small.svg?component';
 
 export default {
   components: {
@@ -247,6 +248,7 @@ export default {
     IconTooltip,
     IconLink,
     IconStar,
+    IconCloseSmall,
   },
 
   setup() {
@@ -788,6 +790,36 @@ export default {
             <IconAdd />
           </template>
         </TextButton>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">close Button (24px)</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <button type="button" :class="$style['close-button']">
+          <IconCloseSmall />
+        </button>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Secondary</h3>
+        <button
+          type="button"
+          :class="[$style['close-button'], $style['close-button--secondary']]"
+        >
+          <IconCloseSmall />
+        </button>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Tertiary</h3>
+        <button
+          type="button"
+          :class="[$style['close-button'], $style['close-button--tertiary']]"
+        >
+          <IconCloseSmall />
+        </button>
       </div>
     </section>
 
