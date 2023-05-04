@@ -1764,8 +1764,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/auto/hot-deal',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.05.05',
         log: [],
       },
       {
