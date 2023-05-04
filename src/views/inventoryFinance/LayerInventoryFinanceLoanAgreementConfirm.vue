@@ -70,7 +70,7 @@ export default {
           않겠습니다.
         </p>
 
-        <div :class="$style['basic-table']">
+        <div :class="[$style['basic-table'], 'row-margin-item-group']">
           <table>
             <colgroup>
               <col style="width: 102px" />
@@ -85,12 +85,59 @@ export default {
             <tbody>
               <tr>
                 <td class="text-body-5 color-gray">취급 불가 차량</td>
-                <td>
-                  <ul :class="$style['basic-list']">
-                    <li :class="$style['basic-list__item']">
+                <td class="align-left">
+                  <ul
+                    :class="[
+                      $style['basic-list'],
+                      $style['basic-list--normal-margin'],
+                    ]"
+                  >
+                    <li
+                      :class="[
+                        $style['basic-list__item'],
+                        'color-black',
+                        'text-body-4',
+                      ]"
+                    >
                       <div :class="$style['basic-list__symbol']"></div>
                       <div :class="$style['basic-list__content']">
-                        연락드릴 시간 : 평일 오전 09:00~ 오후 05:30
+                        위탁 판매 차량
+                      </div>
+                    </li>
+                    <li
+                      :class="[
+                        $style['basic-list__item'],
+                        'color-black',
+                        'text-body-4',
+                      ]"
+                    >
+                      <div :class="$style['basic-list__symbol']"></div>
+                      <div :class="$style['basic-list__content']">
+                        상사 이전 1개월 초과 차량
+                      </div>
+                    </li>
+                    <li
+                      :class="[
+                        $style['basic-list__item'],
+                        'color-black',
+                        'text-body-4',
+                      ]"
+                    >
+                      <div :class="$style['basic-list__symbol']"></div>
+                      <div :class="$style['basic-list__content']">
+                        병행 수입(Gray)차량
+                      </div>
+                    </li>
+                    <li
+                      :class="[
+                        $style['basic-list__item'],
+                        'color-black',
+                        'text-body-4',
+                      ]"
+                    >
+                      <div :class="$style['basic-list__symbol']"></div>
+                      <div :class="$style['basic-list__content']">
+                        상사건 거래 및 도매업자 매입 차량
                       </div>
                     </li>
                   </ul>
@@ -101,6 +148,16 @@ export default {
         </div>
       </section>
 
+      <section class="row-margin-contents">
+        <h3 class="text-body-2">근저당권 추가 설정</h3>
+        <p class="text-body-4 font-weight-light row-margin-item-medium">
+          신청자주의 신용/재무상태 악화, 부도, 연체 등 경영상태 악화 시
+          재고금융이용차량에 대한 담보력 증가 위해 최초 차량 근저당권 설정에
+          더하여 근저당권 추가 설정 가능하며 그러한 경우, 귀사의 근저당권 추가
+          설정에 대해 이의를 제기하지 않겠습니다.
+        </p>
+      </section>
+
       <template v-slot:foot>
         <ButtonList
           :classNames="{
@@ -108,10 +165,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton :line="true" theme="quaternary">다음에</BasicButton>
-          </ButtonListItem>
-          <ButtonListItem>
-            <BasicButton theme="secondary">상담원 연결</BasicButton>
+            <BasicButton>확인</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

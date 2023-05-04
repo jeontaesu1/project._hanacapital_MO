@@ -113,10 +113,7 @@ export default {
 
       <FormList>
         <!-- case : 개인 회원일 경우 노출 -->
-        <FormListItem
-          titleText="휴대전화"
-          target="#layerMyInfoEditPhonePhone001"
-        >
+        <FormListItem titleText="휴대전화" target="#layerMyInfoEditPhone001">
           <FormInvalid :error="state.phoneError001">
             <InputBlock :error="state.phoneError001">
               <InputBlockCell :flexible="true">
@@ -124,7 +121,7 @@ export default {
                   type="number"
                   pattern="\d*"
                   title="휴대전화"
-                  id="layerMyInfoEditPhonePhone001"
+                  id="layerMyInfoEditPhone001"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -132,10 +129,7 @@ export default {
           </FormInvalid>
         </FormListItem>
 
-        <FormListItem
-          titleText="자택전화"
-          target="#layerMyInfoEditPhonePhone002"
-        >
+        <FormListItem titleText="자택전화" target="#layerMyInfoEditPhone002">
           <FormInvalid :error="state.phoneError002">
             <InputBlock :error="state.phoneError002">
               <InputBlockCell :flexible="true">
@@ -143,7 +137,7 @@ export default {
                   type="number"
                   pattern="\d*"
                   title="자택전화"
-                  id="layerMyInfoEditPhonePhone002"
+                  id="layerMyInfoEditPhone002"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -151,10 +145,7 @@ export default {
           </FormInvalid>
         </FormListItem>
 
-        <FormListItem
-          titleText="직장전화"
-          target="#layerMyInfoEditPhonePhone003"
-        >
+        <FormListItem titleText="직장전화" target="#layerMyInfoEditPhone003">
           <FormInvalid :error="state.phoneError003">
             <InputBlock :error="state.phoneError003">
               <InputBlockCell :flexible="true">
@@ -162,7 +153,7 @@ export default {
                   type="number"
                   pattern="\d*"
                   title="직장전화"
-                  id="layerMyInfoEditPhonePhone003"
+                  id="layerMyInfoEditPhone003"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -174,7 +165,7 @@ export default {
         <!-- // case : 개인사업자/법인 회원일 경우 노출 -->
         <FormListItem
           titleText="대표자 사무실"
-          target="#layerMyInfoEditPhonePhone004"
+          target="#layerMyInfoEditPhone004"
         >
           <FormInvalid :error="state.phoneError004">
             <InputBlock :error="state.phoneError004">
@@ -183,7 +174,7 @@ export default {
                   type="number"
                   pattern="\d*"
                   title="대표자 사무실"
-                  id="layerMyInfoEditPhonePhone004"
+                  id="layerMyInfoEditPhone004"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -193,7 +184,7 @@ export default {
 
         <FormListItem
           titleText="대표자 휴대전화"
-          target="#layerMyInfoEditPhonePhone005"
+          target="#layerMyInfoEditPhone005"
         >
           <FormInvalid :error="state.phoneError005">
             <InputBlock :error="state.phoneError005">
@@ -202,7 +193,7 @@ export default {
                   type="number"
                   pattern="\d*"
                   title="대표자 휴대전화"
-                  id="layerMyInfoEditPhonePhone005"
+                  id="layerMyInfoEditPhone005"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -212,7 +203,7 @@ export default {
 
         <FormListItem
           titleText="담당자1 사무실"
-          target="#layerMyInfoEditPhonePhone006"
+          target="#layerMyInfoEditPhone006"
         >
           <FormInvalid :error="state.phoneError006">
             <InputBlock :error="state.phoneError006">
@@ -221,7 +212,7 @@ export default {
                   type="number"
                   pattern="\d*"
                   title="담당자1 사무실"
-                  id="layerMyInfoEditPhonePhone006"
+                  id="layerMyInfoEditPhone006"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -231,7 +222,7 @@ export default {
 
         <FormListItem
           titleText="담당자1 휴대전화"
-          target="#layerMyInfoEditPhonePhone007"
+          target="#layerMyInfoEditPhone007"
         >
           <FormInvalid :error="state.phoneError007">
             <InputBlock :error="state.phoneError007">
@@ -240,7 +231,7 @@ export default {
                   type="number"
                   pattern="\d*"
                   title="담당자1 휴대전화"
-                  id="layerMyInfoEditPhonePhone007"
+                  id="layerMyInfoEditPhone007"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -250,7 +241,7 @@ export default {
 
         <FormListItem
           titleText="담당자2 사무실"
-          target="#layerMyInfoEditPhonePhone008"
+          target="#layerMyInfoEditPhone008"
         >
           <FormInvalid :error="state.phoneError008">
             <InputBlock :error="state.phoneError008">
@@ -259,7 +250,7 @@ export default {
                   type="number"
                   pattern="\d*"
                   title="담당자2 사무실"
-                  id="layerMyInfoEditPhonePhone008"
+                  id="layerMyInfoEditPhone008"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -269,7 +260,7 @@ export default {
 
         <FormListItem
           titleText="담당자2 휴대전화"
-          target="#layerMyInfoEditPhonePhone009"
+          target="#layerMyInfoEditPhone009"
         >
           <FormInvalid :error="state.phoneError009">
             <InputBlock :error="state.phoneError009">
@@ -278,7 +269,7 @@ export default {
                   type="number"
                   pattern="\d*"
                   title="담당자2 휴대전화"
-                  id="layerMyInfoEditPhonePhone009"
+                  id="layerMyInfoEditPhone009"
                 />
               </InputBlockCell>
             </InputBlock>

@@ -115,6 +115,9 @@ export default {
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
+            <FormHelpText>
+              비밀번호 8~16자리 (영문/숫자/특수문자 혼합)
+            </FormHelpText>
           </FormInvalid>
         </FormListItem>
       </FormList>

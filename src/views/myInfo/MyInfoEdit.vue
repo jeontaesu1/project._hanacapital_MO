@@ -65,6 +65,7 @@ export default {
 
       <BasicBox>
         <KeyValue margin="regular">
+          <!-- Case: 개인회원일 경우 노출 -->
           <KeyValueItem
             :classNames="{
               item: 'text-body-3',
@@ -138,6 +139,83 @@ export default {
             <KeyValueTitle>이메일</KeyValueTitle>
             <KeyValueText>hana@test.com</KeyValueText>
           </KeyValueItem>
+          <!-- // Case: 개인회원일 경우 노출 -->
+
+          <!-- Case: 개인사업자/법인일 경우 노출 -->
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>사업장</KeyValueTitle>
+            <KeyValueText>
+              12345<br />
+              경기 성남시 분당구 중앙공원로<br />
+              20 하나아파트 853동 4590호
+            </KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>본점</KeyValueTitle>
+            <KeyValueText>
+              12345<br />
+              경기 성남시 분당구 중앙공원로<br />
+              20 하나아파트 853동 4590호
+            </KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>등본지</KeyValueTitle>
+            <KeyValueText>
+              12345<br />
+              경기 성남시 분당구 중앙공원로<br />
+              20 하나아파트 853동 4590호
+            </KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>실거주지</KeyValueTitle>
+            <KeyValueText>
+              12345<br />
+              경기 성남시 분당구 중앙공원로<br />
+              20 하나아파트 853동 4590호
+            </KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>기타주소</KeyValueTitle>
+            <KeyValueText>
+              12345<br />
+              경기 성남시 분당구 중앙공원로<br />
+              20 하나아파트 853동 4590호
+            </KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>이메일</KeyValueTitle>
+            <KeyValueText>hana@test.com</KeyValueText>
+          </KeyValueItem>
+          <!-- // Case: 개인사업자/법인 경우 노출 -->
         </KeyValue>
       </BasicBox>
     </section>

@@ -73,13 +73,15 @@ export default {
       <BasicBox>
         <BasicBoxHead>
           <BasicBoxHeadLeft>
-            <p class="text-body-4 row-margin-small font-weight-light">
+            <p
+              class="text-body-4 row-margin-small font-weight-medium color-green"
+            >
               기업금융
             </p>
             <h3 class="text-body-1 font-weight-medium">의료기리스</h3>
           </BasicBoxHeadLeft>
           <BasicBoxHeadRight>
-            <RoundStatus theme="secondary">정상(신규)</RoundStatus>
+            <RoundStatus theme="undenary">신규</RoundStatus>
           </BasicBoxHeadRight>
         </BasicBoxHead>
         <KeyValue margin="regular">

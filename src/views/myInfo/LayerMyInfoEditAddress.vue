@@ -124,7 +124,7 @@ export default {
         <!-- Case : 개인 회원일 경우 노출 -->
         <FormListItem
           titleText="등본지"
-          target="#layerMyInfoEditAddressAddress001Search"
+          target="#layerMyInfoEditAddress001Search"
         >
           <FormInvalid :error="state.addressError001">
             <InputBlock :error="state.addressError001">
@@ -133,14 +133,14 @@ export default {
                   title="등본지 - 우편번호"
                   defaultValue="12345"
                   :disabled="true"
-                  id="layerMyInfoEditAddressAddress001"
+                  id="layerMyInfoEditAddress001"
                 />
               </InputBlockCell>
               <template v-slot:right>
                 <BasicButton
                   size="mini"
                   theme="tertiary"
-                  id="layerMyInfoEditAddressAddress001Search"
+                  id="layerMyInfoEditAddress001Search"
                   >검색</BasicButton
                 >
               </template>
@@ -156,7 +156,7 @@ export default {
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="등본지 - 주소"
-                  id="layerMyInfoEditAddressAddress001_001"
+                  id="layerMyInfoEditAddress001_001"
                   defaultValue="경기 성남시 분당구 중안공원로 20"
                   :disabled="true"
                 />
@@ -172,7 +172,7 @@ export default {
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="등본지- 상세주소"
-                  id="llayerMyInfoEditAddressAddress001_002"
+                  id="llayerMyInfoEditAddress001_002"
                   defaultValue="하나아파트 853동 4590호"
                   :disabled="true"
                 />
@@ -185,7 +185,7 @@ export default {
 
         <FormListItem
           titleText="실거주지"
-          target="#layerMyInfoEditAddressAddress002Search"
+          target="#layerMyInfoEditAddress002Search"
         >
           <FormInvalid :error="state.addressError002">
             <InputBlock :error="state.addressError002">
@@ -194,14 +194,14 @@ export default {
                   title="실거주지 - 우편번호"
                   defaultValue="12345"
                   :disabled="true"
-                  id="layerMyInfoEditAddressAddress002"
+                  id="layerMyInfoEditAddress002"
                 />
               </InputBlockCell>
               <template v-slot:right>
                 <BasicButton
                   size="mini"
                   theme="tertiary"
-                  id="layerMyInfoEditAddressAddress002Search"
+                  id="layerMyInfoEditAddress002Search"
                   >검색</BasicButton
                 >
               </template>
@@ -217,7 +217,7 @@ export default {
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="실거주지 - 주소"
-                  id="layerMyInfoEditAddressAddress002_001"
+                  id="layerMyInfoEditAddress002_001"
                   defaultValue="경기 성남시 분당구 중안공원로 20"
                   :disabled="true"
                 />
@@ -233,7 +233,7 @@ export default {
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="실거주지 - 상세주소"
-                  id="llayerMyInfoEditAddressAddress002_002"
+                  id="llayerMyInfoEditAddress002_002"
                   defaultValue="하나아파트 853동 4590호"
                   :disabled="true"
                 />
@@ -256,7 +256,7 @@ export default {
 
         <FormListItem
           titleText="직장주소"
-          target="#layerMyInfoEditAddressAddress003Search"
+          target="#layerMyInfoEditAddress003Search"
         >
           <FormInvalid :error="state.addressError003">
             <InputBlock :error="state.addressError003">
@@ -272,7 +272,7 @@ export default {
                 <BasicButton
                   size="mini"
                   theme="tertiary"
-                  id="layerMyInfoEditAddressAddress003Search"
+                  id="layerMyInfoEditAddress003Search"
                   >검색</BasicButton
                 >
               </template>
@@ -288,7 +288,7 @@ export default {
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="직장주소 - 주소"
-                  id="layerMyInfoEditAddressAddress003_001"
+                  id="layerMyInfoEditAddress003_001"
                   defaultValue="경기 성남시 분당구 중안공원로 20"
                   :disabled="true"
                 />
@@ -304,7 +304,7 @@ export default {
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="직장주소 - 상세주소"
-                  id="llayerMyInfoEditAddressAddress003_002"
+                  id="llayerMyInfoEditAddress003_002"
                   defaultValue="하나아파트 853동 4590호"
                   :disabled="true"
                 />
@@ -317,7 +317,7 @@ export default {
 
         <FormListItem
           titleText="기타주소1"
-          target="#layerMyInfoEditAddressAddress004Search"
+          target="#layerMyInfoEditAddress004Search"
         >
           <FormInvalid :error="state.addressError004">
             <InputBlock :error="state.addressError004">
@@ -326,14 +326,14 @@ export default {
                   title="기타주소1 - 우편번호"
                   defaultValue="12345"
                   :disabled="true"
-                  id="layerMyInfoEditAddressAddress004"
+                  id="layerMyInfoEditAddress004"
                 />
               </InputBlockCell>
               <template v-slot:right>
                 <BasicButton
                   size="mini"
                   theme="tertiary"
-                  id="layerMyInfoEditAddressAddress004Search"
+                  id="layerMyInfoEditAddress004Search"
                   >검색</BasicButton
                 >
               </template>
@@ -349,7 +349,7 @@ export default {
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="기타주소1 - 주소"
-                  id="layerMyInfoEditAddressAddress004_001"
+                  id="layerMyInfoEditAddress004_001"
                   defaultValue="경기 성남시 분당구 중안공원로 20"
                   :disabled="true"
                 />
@@ -365,7 +365,7 @@ export default {
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="기타주소1 - 상세주소"
-                  id="llayerMyInfoEditAddressAddress004_002"
+                  id="llayerMyInfoEditAddress004_002"
                   defaultValue="하나아파트 853동 4590호"
                   :disabled="true"
                 />
@@ -378,7 +378,7 @@ export default {
 
         <FormListItem
           titleText="기타주소2"
-          target="#layerMyInfoEditAddressAddress005Search"
+          target="#layerMyInfoEditAddress005Search"
         >
           <FormInvalid :error="state.addressError005">
             <InputBlock :error="state.addressError005">
@@ -387,14 +387,14 @@ export default {
                   title="기타주소2 - 우편번호"
                   defaultValue="12345"
                   :disabled="true"
-                  id="layerMyInfoEditAddressAddress005"
+                  id="layerMyInfoEditAddress005"
                 />
               </InputBlockCell>
               <template v-slot:right>
                 <BasicButton
                   size="mini"
                   theme="tertiary"
-                  id="layerMyInfoEditAddressAddress005Search"
+                  id="layerMyInfoEditAddress005Search"
                   >검색</BasicButton
                 >
               </template>
@@ -410,7 +410,7 @@ export default {
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="기타주소2 - 주소"
-                  id="layerMyInfoEditAddressAddress005_001"
+                  id="layerMyInfoEditAddress005_001"
                   defaultValue="경기 성남시 분당구 중안공원로 20"
                   :disabled="true"
                 />
@@ -426,7 +426,7 @@ export default {
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="기타주소2 - 상세주소"
-                  id="llayerMyInfoEditAddressAddress005_002"
+                  id="llayerMyInfoEditAddress005_002"
                   defaultValue="하나아파트 853동 4590호"
                   :disabled="true"
                 />
@@ -518,7 +518,7 @@ export default {
         <!-- Case : 개인사업자/법인 회원일 경우 노출 -->
         <FormListItem
           titleText="사업장"
-          target="#layerMyInfoEditAddressAddress006Search"
+          target="#layerMyInfoEditAddress006Search"
         >
           <FormInvalid :error="state.addressError006">
             <InputBlock :error="state.addressError006">
@@ -527,14 +527,14 @@ export default {
                   title="사업장 - 우편번호"
                   defaultValue="12345"
                   :disabled="true"
-                  id="layerMyInfoEditAddressAddress006"
+                  id="layerMyInfoEditAddress006"
                 />
               </InputBlockCell>
               <template v-slot:right>
                 <BasicButton
                   size="mini"
                   theme="tertiary"
-                  id="layerMyInfoEditAddressAddress006Search"
+                  id="layerMyInfoEditAddress006Search"
                   >검색</BasicButton
                 >
               </template>
@@ -550,7 +550,7 @@ export default {
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="사업장 - 주소"
-                  id="layerMyInfoEditAddressAddress006_001"
+                  id="layerMyInfoEditAddress006_001"
                   defaultValue="서울 강남구 역삼동"
                   :disabled="true"
                 />
@@ -566,7 +566,7 @@ export default {
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="사업장 - 상세주소"
-                  id="llayerMyInfoEditAddressAddress006_002"
+                  id="llayerMyInfoEditAddress006_002"
                   defaultValue="하나금융그룹 강남사옥 1층"
                   :disabled="true"
                 />
@@ -579,7 +579,7 @@ export default {
 
         <FormListItem
           titleText="본점"
-          target="#layerMyInfoEditAddressAddress007Search"
+          target="#layerMyInfoEditAddress007Search"
         >
           <FormInvalid :error="state.addressError007">
             <InputBlock :error="state.addressError007">
@@ -588,7 +588,7 @@ export default {
                   title="본점 - 우편번호"
                   defaultValue="12345"
                   :disabled="true"
-                  id="layerMyInfoEditAddressAddress007"
+                  id="layerMyInfoEditAddress007"
                 />
               </InputBlockCell>
               <template v-slot:right>
@@ -611,7 +611,7 @@ export default {
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="본점 - 주소"
-                  id="layerMyInfoEditAddressAddress007_001"
+                  id="layerMyInfoEditAddress007_001"
                   defaultValue="서울 강남구 역삼동"
                   :disabled="true"
                 />
@@ -627,7 +627,7 @@ export default {
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="본점 - 상세주소"
-                  id="llayerMyInfoEditAddressAddress007_002"
+                  id="llayerMyInfoEditAddress007_002"
                   defaultValue="하나금융그룹 강남사옥 1층"
                   :disabled="true"
                 />
@@ -650,7 +650,7 @@ export default {
 
         <FormListItem
           titleText="등본지"
-          target="#layerMyInfoEditAddressAddress008Search"
+          target="#layerMyInfoEditAddress008Search"
         >
           <FormInvalid :error="state.addressError008">
             <InputBlock :error="state.addressError008">
@@ -659,14 +659,14 @@ export default {
                   title="등본지 - 우편번호"
                   defaultValue="12345"
                   :disabled="true"
-                  id="layerMyInfoEditAddressAddress008"
+                  id="layerMyInfoEditAddress008"
                 />
               </InputBlockCell>
               <template v-slot:right>
                 <BasicButton
                   size="mini"
                   theme="tertiary"
-                  id="layerMyInfoEditAddressAddress008Search"
+                  id="layerMyInfoEditAddress008Search"
                   >검색</BasicButton
                 >
               </template>
@@ -682,7 +682,7 @@ export default {
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="등본지 - 주소"
-                  id="layerMyInfoEditAddressAddress008_001"
+                  id="layerMyInfoEditAddress008_001"
                   defaultValue="서울 강남구 역삼동"
                   :disabled="true"
                 />
@@ -698,7 +698,7 @@ export default {
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="등본지 - 상세주소"
-                  id="llayerMyInfoEditAddressAddress008_002"
+                  id="llayerMyInfoEditAddress008_002"
                   defaultValue="하나금융그룹 강남사옥 1층"
                   :disabled="true"
                 />
@@ -711,7 +711,7 @@ export default {
 
         <FormListItem
           titleText="실거주지"
-          target="#layerMyInfoEditAddressAddress009Search"
+          target="#layerMyInfoEditAddress009Search"
         >
           <FormInvalid :error="state.addressError009">
             <InputBlock :error="state.addressError009">
@@ -720,14 +720,14 @@ export default {
                   title="실거주지 - 우편번호"
                   defaultValue="12345"
                   :disabled="true"
-                  id="layerMyInfoEditAddressAddress009"
+                  id="layerMyInfoEditAddress009"
                 />
               </InputBlockCell>
               <template v-slot:right>
                 <BasicButton
                   size="mini"
                   theme="tertiary"
-                  id="layerMyInfoEditAddressAddress009Search"
+                  id="layerMyInfoEditAddress009Search"
                   >검색</BasicButton
                 >
               </template>
@@ -743,14 +743,14 @@ export default {
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="실거주지- 주소"
-                  id="layerMyInfoEditAddressAddress009_001"
+                  id="layerMyInfoEditAddress009_001"
                   defaultValue="서울 강남구 역삼동"
                   :disabled="true"
                 />
               </InputBlockCell>
             </InputBlock>
             <InputBlock
-              :error="state.addressError004"
+              :error="state.addressError009"
               :disabled="true"
               :classNames="{
                 wrap: 'row-margin-item-group row-margin-bottom-none',
@@ -759,7 +759,7 @@ export default {
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="실거주지 - 상세주소"
-                  id="llayerMyInfoEditAddressAddress009_002"
+                  id="llayerMyInfoEditAddress009_002"
                   defaultValue="하나금융그룹 강남사옥 1층"
                   :disabled="true"
                 />
@@ -782,7 +782,7 @@ export default {
 
         <FormListItem
           titleText="기타주소"
-          target="#layerMyInfoEditAddressAddress010Search"
+          target="#layerMyInfoEditAddress010Search"
         >
           <FormInvalid :error="state.addressError010">
             <InputBlock :error="state.addressError010">
@@ -791,14 +791,14 @@ export default {
                   title="기타주소 - 우편번호"
                   defaultValue="12345"
                   :disabled="true"
-                  id="layerMyInfoEditAddressAddress010"
+                  id="layerMyInfoEditAddress010"
                 />
               </InputBlockCell>
               <template v-slot:right>
                 <BasicButton
                   size="mini"
                   theme="tertiary"
-                  id="layerMyInfoEditAddressAddress010Search"
+                  id="layerMyInfoEditAddress010Search"
                   >검색</BasicButton
                 >
               </template>
@@ -814,7 +814,7 @@ export default {
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="기타주소 - 주소"
-                  id="layerMyInfoEditAddressAddress010_001"
+                  id="layerMyInfoEditAddress010_001"
                   defaultValue="경기 성남시 분당구 중안공원로 20"
                   :disabled="true"
                 />
@@ -830,7 +830,7 @@ export default {
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="기타주소 - 상세주소"
-                  id="llayerMyInfoEditAddressAddress010_002"
+                  id="llayerMyInfoEditAddress010_002"
                   defaultValue="하나아파트 853동 4590호"
                   :disabled="true"
                 />

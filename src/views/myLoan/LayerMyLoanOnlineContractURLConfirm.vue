@@ -287,7 +287,9 @@ export default {
                   item: 'text-body-3 color-red',
                 }"
               >
-                <KeyValueTitle>연체이자율</KeyValueTitle>
+                <KeyValueTitle :classNames="{ title: 'color-red' }">
+                  연체이자율
+                </KeyValueTitle>
                 <KeyValueText>
                   14.5%<br />
                   약정이자율 + 최대 3%<br />

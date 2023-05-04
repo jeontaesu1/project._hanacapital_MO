@@ -91,7 +91,7 @@ export default {
       <UiAccordionItem v-for="i in 1" :key="i" class="row-margin-item-group">
         <BasicBox>
           <div class="flex-box">
-            <div>
+            <div class="flex-box__cell flex-1">
               <p class="text-body-4 font-weight-light">2020년식</p>
               <h3 class="text-body-1 font-weight-medium">재고금융 20노1511</h3>
               <p class="text-body-4 color-gray row-margin-small">
@@ -99,7 +99,6 @@ export default {
                 패키지 플러스
               </p>
             </div>
-            <div class="flex-box__cell flex-1"></div>
             <div class="flex-box__cell">
               <UiAccordionOpener />
             </div>

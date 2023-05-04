@@ -95,5 +95,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/myInfo/LayerMyInfoEditAddress.scss';
+@import '@/assets/scss/views/myInfo/LayerMyInfoDirectDebitAccountNotice.scss';
 </style>
