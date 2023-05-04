@@ -7075,7 +7075,7 @@ export default {
       </div>
 
       <div class="test-section-sub">
-        <h3 class="test-section-sub-title">size: medim (140px / 100px)</h3>
+        <h3 class="test-section-sub-title">size: medium</h3>
         <CarThumb size="medium" src="/images/_dummy/car-thumb.png" />
       </div>
     </section>
