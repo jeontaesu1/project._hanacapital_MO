@@ -1,0 +1,45 @@
+.check-box-list {
+  display: block;
+
+  &__list {
+    @include reset-list;
+    display: flex;
+    align-items: stretch;
+  }
+
+  &__item {
+    display: flex;
+    align-items: stretch;
+    flex: 1;
+    min-width: 0;
+    box-sizing: border-box;
+
+    & + & {
+      margin-left: 6px;
+    }
+  }
+
+  &--wrap {
+    &::before {
+      content: '';
+      display: table;
+    }
+
+    .check-box-list {
+      &__list {
+        margin: -8px 0 0 -6px;
+        flex-wrap: wrap;
+      }
+
+      &__item {
+        flex: none;
+        width: 50%;
+        padding: 8px 0 0 6px;
+
+        & + .check-box-list__item {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}

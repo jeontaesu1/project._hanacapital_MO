@@ -1129,6 +1129,67 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">check box list</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div
+          :class="[$style['check-box-list'], $style['check-box-list--wrap']]"
+        >
+          <ul :class="$style['check-box-list__list']">
+            <li :class="$style['check-box-list__item']">
+              <CheckBox
+                id="myInfoMarketingAgree001_001"
+                :classNames="{
+                  wrap: $style['agree-list__checkbox'],
+                }"
+                theme="quinary"
+              >
+                <CheckBoxObject />
+                <CheckBoxLabelText>전화</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+            <li :class="$style['check-box-list__item']">
+              <CheckBox
+                id="myInfoMarketingAgree001_002"
+                :classNames="{
+                  wrap: $style['agree-list__checkbox'],
+                }"
+                theme="quinary"
+              >
+                <CheckBoxObject />
+                <CheckBoxLabelText>문자메시지</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+            <li :class="$style['check-box-list__item']">
+              <CheckBox
+                id="myInfoMarketingAgree001_003"
+                :classNames="{
+                  wrap: $style['agree-list__checkbox'],
+                }"
+                theme="quinary"
+              >
+                <CheckBoxObject />
+                <CheckBoxLabelText>우편</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+            <li :class="$style['check-box-list__item']">
+              <CheckBox
+                id="myInfoMarketingAgree001_004"
+                :classNames="{
+                  wrap: $style['agree-list__checkbox'],
+                }"
+                theme="quinary"
+              >
+                <CheckBoxObject />
+                <CheckBoxLabelText>이메일</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">CheckBox</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
