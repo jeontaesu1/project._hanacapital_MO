@@ -17,6 +17,7 @@ import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
+import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
@@ -38,6 +39,7 @@ export default {
     KeyValueTitle,
     KeyValueText,
     BasicBoxHead,
+    BasicBoxHeadLeft,
     ButtonList,
     ButtonListItem,
     BasicButton,
@@ -82,7 +84,9 @@ export default {
 
           <BasicBox>
             <BasicBoxHead>
-              <h3 class="text-body-1 font-weight-medium">양도자</h3>
+              <BasicBoxHeadLeft>
+                <h3 class="text-body-1 font-weight-medium">양도자</h3>
+              </BasicBoxHeadLeft>
             </BasicBoxHead>
             <KeyValue margin="regular">
               <KeyValueItem
@@ -114,7 +118,9 @@ export default {
 
           <BasicBox className="row-margin-item-group">
             <BasicBoxHead>
-              <h3 class="text-body-1 font-weight-medium">양수자</h3>
+              <BasicBoxHeadLeft>
+                <h3 class="text-body-1 font-weight-medium">양수자</h3>
+              </BasicBoxHeadLeft>
             </BasicBoxHead>
             <KeyValue margin="regular">
               <KeyValueItem
@@ -215,7 +221,11 @@ export default {
 
           <BasicBox>
             <BasicBoxHead>
-              <h3 class="text-body-1 font-weight-medium">중도금대출(비주택)</h3>
+              <BasicBoxHeadLeft>
+                <h3 class="text-body-1 font-weight-medium">
+                  중도금대출(비주택)
+                </h3>
+              </BasicBoxHeadLeft>
             </BasicBoxHead>
             <KeyValue margin="regular">
               <KeyValueItem

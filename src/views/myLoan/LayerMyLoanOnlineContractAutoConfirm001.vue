@@ -204,7 +204,7 @@ export default {
               <BasicBoxHeadLeft>
                 <div class="flex-box row-margin-item">
                   <div class="flex-box__cell flex-1">
-                    <div class="flex-box__cell">
+                    <div class="row-margin-mini">
                       <CarEmblem code="1001" name="현대" />
                     </div>
                     <h3 class="text-body-1 font-weight-medium">캐스퍼</h3>

@@ -74,12 +74,12 @@ export default {
 
       <IllustObject type="complete" />
 
-      <div>
-        <h3 class="text-body-2">승계 신청 대상 물건</h3>
-        <BasicBox theme="tertiary" className="row-margin-item-medium">
+      <section>
+        <h3 class="text-body-2 row-margin-item-medium">승계 신청 대상 물건</h3>
+        <BasicBox theme="tertiary">
           <div class="text-body-3">오시리아 스위첸 마티에 [V1 101호]</div>
         </BasicBox>
-      </div>
+      </section>
 
       <BasicHr
         type="contents"

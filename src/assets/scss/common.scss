@@ -372,6 +372,11 @@ body,
   margin-bottom: 8px;
   @include row-margin-first-last;
 }
+.row-margin-item-regular.row-margin-item-regular {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  @include row-margin-first-last;
+}
 .row-margin-item-medium.row-margin-item-medium {
   margin-top: 12px;
   margin-bottom: 12px;

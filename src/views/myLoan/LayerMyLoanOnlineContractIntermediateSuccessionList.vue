@@ -12,6 +12,7 @@ import PageMainText from '@/components/ui/text/PageMainText.vue';
 import PageSubText from '@/components/ui/text/PageSubText.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
+import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
 import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
@@ -32,6 +33,7 @@ export default {
     PageSubText,
     BasicBox,
     BasicBoxHead,
+    BasicBoxHeadLeft,
     KeyValue,
     KeyValueItem,
     KeyValueTitle,
@@ -67,11 +69,11 @@ export default {
         <PageMainText>
           아현 푸르지오 클라시티 V1에<br />
           <strong>분양권 승계 진행건입니다</strong>
-
-          <!-- Case : 대상건이 있는 경우 -->
-          <PageSubText>승계 대상 호실을 선택해주세요.</PageSubText>
-          <!-- Case : 대상건이 있는 경우 -->
         </PageMainText>
+
+        <!-- Case : 대상건이 있는 경우 -->
+        <PageSubText>승계 대상 호실을 선택해주세요.</PageSubText>
+        <!-- // Case : 대상건이 있는 경우 -->
       </PageTextGroup>
 
       <!-- Case : 대상건이 없는 경우 -->
@@ -81,62 +83,18 @@ export default {
           하나캐피탈에 승계 안내를 요청해주세요.
         </p>
       </div>
-      <!-- Case : 대상건이 없는 경우 -->
+      <!-- // Case : 대상건이 없는 경우 -->
 
       <!-- Case : 대상건이 있는 경우 -->
       <ul class="reset-list">
-        <li class="row-margin-item-group">
+        <li v-for="i in 3" :key="i" class="row-margin-item-group">
           <BasicBox>
             <BasicBoxHead>
-              <h3 class="text-body-1 font-weight-medium">
-                아현 푸르지오 클라시티 V1 5동 101호
-              </h3>
-            </BasicBoxHead>
-
-            <KeyValue margin="regular">
-              <KeyValueItem
-                :classNames="{
-                  item: 'text-body-3',
-                }"
-              >
-                <KeyValueTitle>양도인</KeyValueTitle>
-                <KeyValueText>김하나</KeyValueText>
-              </KeyValueItem>
-
-              <KeyValueItem
-                :classNames="{
-                  item: 'text-body-3',
-                }"
-              >
-                <KeyValueTitle>약정 제출</KeyValueTitle>
-                <KeyValueText>N</KeyValueText>
-              </KeyValueItem>
-
-              <KeyValueItem
-                :classNames="{
-                  item: 'text-body-3',
-                }"
-              >
-                <KeyValueTitle>서류 제출</KeyValueTitle>
-                <KeyValueText>N</KeyValueText>
-              </KeyValueItem>
-
-              <BasicButton
-                size="small"
-                :classNames="{ wrap: 'row-margin-contents-small' }"
-              >
-                승계신청
-              </BasicButton>
-            </KeyValue>
-          </BasicBox>
-        </li>
-
-        <li class="row-margin-item-group">
-          <BasicBox>
-            <BasicBoxHead>
-              <h3 class="text-body-1 font-weight-medium">
-                아현 푸르지오 클라시티 V1 5동 101호
-              </h3>
+              <BasicBoxHeadLeft>
+                <h3 class="text-body-1 font-weight-medium">
+                  아현 푸르지오 클라시티 V1 5동 101호
+                </h3>
+              </BasicBoxHeadLeft>
             </BasicBoxHead>
 
             <KeyValue margin="regular">
@@ -177,8 +135,9 @@ export default {
           </BasicBox>
         </li>
       </ul>
-      <!-- Case : 대상건이 있는 경우 -->
+      <!-- // Case : 대상건이 있는 경우 -->
 
+      <!-- Case : 대상건이 없는 경우 -->
       <template v-slot:foot>
         <ButtonList
           :classNames="{
@@ -190,6 +149,7 @@ export default {
           </ButtonListItem>
         </ButtonList>
       </template>
+      <!-- // Case : 대상건이 없는 경우 -->
     </FullPopup>
   </UiLayer>
 </template>

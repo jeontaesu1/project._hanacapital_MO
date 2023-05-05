@@ -43,17 +43,17 @@ export default {
     BasicButton,
   },
   setup() {
-    const layer = ref(null);
-
     const state = reactive({
       phonError001: false,
       claimError001: false,
       depositError001: false,
     });
 
+    const layer = ref(null);
+
     return {
-      layer,
       state,
+      layer,
     };
   },
 };

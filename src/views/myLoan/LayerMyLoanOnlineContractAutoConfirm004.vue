@@ -18,7 +18,6 @@ import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
 import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
-import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
 import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
@@ -43,7 +42,6 @@ export default {
     BasicBoxHead,
     BasicBoxHeadLeft,
     CarEmblem,
-    BasicBoxHeadRight,
     CarThumb,
     ButtonList,
     ButtonListItem,
@@ -180,28 +178,28 @@ export default {
           <BasicBox>
             <BasicBoxHead>
               <BasicBoxHeadLeft>
-                <div class="flex-box row-margin-mini">
-                  <div class="flex-box__cell">
-                    <CarEmblem code="1001" name="현대" />
+                <div class="flex-box row-margin-item">
+                  <div class="flex-box__cell flex-1">
+                    <div class="row-margin-mini">
+                      <CarEmblem code="1001" name="현대" />
+                    </div>
+                    <h3
+                      class="text-body-1 font-weight-medium row-margin-small row-margin-top-none"
+                    >
+                      캐스퍼
+                    </h3>
+                    <p class="text-body-4 color-gray">
+                      가솔린 1.0터보 디 에센셜 + 캐스퍼 액티브Ⅱ
+                    </p>
+                  </div>
+                  <div class="flex-box__cell flex-box__cell--medium">
+                    <CarThumb src="/images/_dummy/car-thumb.png" />
                   </div>
                 </div>
-                <h3
-                  class="text-body-1 font-weight-medium row-margin-small row-margin-top-none"
-                >
-                  캐스퍼
-                </h3>
-                <p class="text-body-4 color-gray">
-                  가솔린 1.0터보 디 에센셜 + 캐스퍼 액티브Ⅱ
-                </p>
-                <UnitText rightUnit="원" class="row-margin-item">
-                  17,800,000
-                </UnitText>
+                <UnitText rightUnit="원">17,800,000</UnitText>
               </BasicBoxHeadLeft>
-              <BasicBoxHeadRight>
-                <CarThumb src="/images/_dummy/car-thumb.png" />
-              </BasicBoxHeadRight>
             </BasicBoxHead>
-            <KeyValue>
+            <KeyValue margin="regular">
               <KeyValueItem
                 :classNames="{
                   item: 'text-body-3',
@@ -412,7 +410,7 @@ export default {
         <section class="row-margin-container-medium">
           <h3 class="text-title-2 row-margin-contents">리스조건 안내</h3>
 
-          <div>
+          <section class="row-margin-contents">
             <h4 class="text-body-4 color-gray-secondary font-weight-regular">
               중도해지 손해배상금
             </h4>
@@ -425,9 +423,9 @@ export default {
               1년 이하인 경우에는 월 단위 또는 일 단위로 차등하여 인하하는
               방식으로 적용.
             </p>
-          </div>
+          </section>
 
-          <div class="row-margin-contents">
+          <section class="row-margin-contents">
             <h4 class="text-body-4 color-gray-secondary font-weight-regular">
               규정손해배상금
             </h4>
@@ -440,9 +438,9 @@ export default {
               1년 이하인 경우에는 월 단위 또는 일 단위로 차등하여 인하하는
               방식으로 적용.
             </p>
-          </div>
+          </section>
 
-          <div>
+          <section class="row-margin-contents">
             <h4 class="text-body-4 color-gray-secondary font-weight-regular">
               승계수수료
             </h4>
@@ -450,18 +448,18 @@ export default {
               미회수원금X승계수수료 최고요율(1%)X(잔여기간 월수/리스기간
               전체월수)
             </p>
-          </div>
+          </section>
 
-          <div class="row-margin-contents">
+          <section class="row-margin-contents">
             <h4 class="text-body-4 color-gray-secondary font-weight-regular">
               반환지원금
             </h4>
             <p class="text-body-2 row-margin-mini">
               일리스료+(일리스료X반환지연금률 100%)X경과일수
             </p>
-          </div>
+          </section>
 
-          <div class="row-margin-contents">
+          <section class="row-margin-contents">
             <h4 class="text-body-4 color-gray-secondary font-weight-regular">
               반환자동차평가/가치감가비용
             </h4>
@@ -471,14 +469,14 @@ export default {
             <p class="text-body-4 font-weight-light color-gray-tertiary">
               감가비 산정기준은 홈페이지 참조
             </p>
-          </div>
+          </section>
 
-          <div>
+          <section class="row-margin-contents">
             <h4 class="text-body-4 color-gray-secondary font-weight-regular">
               지연배상금률
             </h4>
             <p class="text-body-2 row-margin-mini">연 20%</p>
-          </div>
+          </section>
         </section>
       </div>
 

@@ -46,9 +46,9 @@ export default {
   },
   setup() {
     const state = reactive({
-      nameError001: false,
+      nameError: false,
       idNumberError: false,
-      phoneError001: false,
+      phoneError: false,
       buisnessNameError: false,
       buisnessLicenseError: false,
     });
@@ -87,8 +87,8 @@ export default {
           titleText="이름"
           target="#layerMyLoanOnlineContractIntermediateSuccessionAssigneeFormName001"
         >
-          <FormInvalid :error="state.nameError001">
-            <InputBlock :error="state.nameError001">
+          <FormInvalid :error="state.nameError">
+            <InputBlock :error="state.nameError">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="이름"
@@ -131,8 +131,8 @@ export default {
           titleText="휴대폰번호"
           target="#layerMyLoanOnlineContractIntermediateSuccessionAssigneeFormPhone001"
         >
-          <FormInvalid :error="state.phoneError001">
-            <InputBlock :error="state.phoneError001">
+          <FormInvalid :error="state.phoneError">
+            <InputBlock :error="state.phoneError">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   type="number"
@@ -181,7 +181,7 @@ export default {
             <FormHelpText>‘-’ 를 제외하고 입력해주세요.</FormHelpText>
           </FormInvalid>
         </FormListItem>
-        <!-- Case : 개인사업자 -->
+        <!-- // Case : 개인사업자 -->
       </FormList>
 
       <template v-slot:foot>

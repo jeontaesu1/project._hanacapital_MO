@@ -194,10 +194,8 @@ export default {
           <BasicBox>
             <BasicBoxHead>
               <BasicBoxHeadLeft>
-                <div class="flex-box row-margin-mini">
-                  <div class="flex-box__cell">
-                    <CarEmblem code="1001" name="현대" />
-                  </div>
+                <div class="row-margin-mini">
+                  <CarEmblem code="1001" name="현대" />
                 </div>
                 <h3 class="text-body-1 font-weight-medium">올 뉴 아반떼</h3>
                 <p class="text-body-4 color-gray row-margin-small">
@@ -208,7 +206,7 @@ export default {
                 <CarThumb src="/images/_dummy/car-thumb.png" />
               </BasicBoxHeadRight>
             </BasicBoxHead>
-            <KeyValue>
+            <KeyValue margin="regular">
               <KeyValueItem
                 :classNames="{
                   item: 'text-body-3',

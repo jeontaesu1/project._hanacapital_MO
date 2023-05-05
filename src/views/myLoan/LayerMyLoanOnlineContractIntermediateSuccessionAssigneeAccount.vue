@@ -45,7 +45,12 @@ export default {
     BasicSelect,
   },
   setup() {
-    const state = reactive({});
+    const state = reactive({
+      nameError: false,
+      bankError: false,
+      accountError: false,
+      mailError: false,
+    });
 
     const layer = ref(null);
 
@@ -81,8 +86,8 @@ export default {
           titleText="이름"
           target="#layerMyLoanOnlineContractIntermediateSuccessionAssigneeAccountName"
         >
-          <FormInvalid :error="state.nameError001">
-            <InputBlock :error="state.nameError001">
+          <FormInvalid :error="state.nameError">
+            <InputBlock :error="state.nameError">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="이름"
@@ -99,8 +104,8 @@ export default {
           target="#layerMyLoanOnlineContractIntermediateSuccessionAssigneeAccountBankButton"
           :selectOnly="true"
         >
-          <FormInvalid :error="state.testError001">
-            <InputBlock :error="state.testError001">
+          <FormInvalid :error="state.bankError">
+            <InputBlock :error="state.bankError">
               <InputBlockCell :flexible="true">
                 <BankSelect
                   id="layerMyLoanOnlineContractIntermediateSuccessionAssigneeAccountBank"
@@ -117,8 +122,8 @@ export default {
           titleText="계좌번호"
           target="#layerMyLoanOnlineContractIntermediateSuccessionAssigneeAccount"
         >
-          <FormInvalid :error="state.domesticAccountError">
-            <InputBlock :error="state.domesticAccountError">
+          <FormInvalid :error="state.accountError">
+            <InputBlock :error="state.accountError">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   pattern="\d*"

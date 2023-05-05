@@ -69,18 +69,11 @@ export default {
         <PageMainText>
           하나캐피탈 <span class="color-green">중도금 대출</span><br />
           모바일 약정을 위하여<br />
-          <!-- Case : 기본 -->
           <strong>이름을 입력해 주세요</strong>
-          <!-- // Case : 기본 -->
-          <br />
-          <!-- Case : 생년월일 입력 시 -->
-          <strong>생년월일을 입력해주세요</strong>
-          <!-- // Case : 생년월일 입력 시 -->
         </PageMainText>
       </PageTextGroup>
 
       <FormList>
-        <!-- Case : 생년월일 입력 시 -->
         <FormListItem
           titleText="생년월일"
           titleOptionalText="(6자리)"
@@ -100,9 +93,7 @@ export default {
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
-        <!-- // Case : 생년월일 입력 시 -->
 
-        <!-- Case : 기본 -->
         <FormListItem
           titleText="이름"
           target="#layerMyLoanOnlineContractIntermediateIdentificationName"
@@ -119,7 +110,6 @@ export default {
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
-        <!-- // Case : 기본 -->
       </FormList>
 
       <template v-slot:foot>

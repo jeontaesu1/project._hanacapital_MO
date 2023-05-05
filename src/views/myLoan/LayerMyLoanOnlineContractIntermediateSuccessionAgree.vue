@@ -69,40 +69,42 @@ export default {
       </PageTextGroup>
 
       <BasicBox>
-        <div :class="$style['row-margin-item-small-group']">
-          <ol
-            :class="[$style['basic-list'], $style['basic-list--normal-margin']]"
+        <ol
+          :class="[
+            $style['basic-list'],
+            $style['basic-list--normal-margin'],
+            'row-margin-item-regular',
+          ]"
+        >
+          <li
+            :class="[
+              $style['basic-list__item'],
+              'color-gray-tertiary',
+              'font-weight-regular',
+              'text-body-3',
+            ]"
           >
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-gray-tertiary',
-                'font-weight-regular',
-                'text-body-3',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']">1.</div>
-              <div :class="$style['basic-list__content']">
-                손님의 동의 하에 승계 후 이용자 또는 승계 후 이용자로부터 위임을
-                받은 신청인에게 승계 계약관련 분양/금융정보가 제공됩니다.
-              </div>
-            </li>
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-gray-tertiary',
-                'font-weight-regular',
-                'text-body-3',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']">2.</div>
-              <div :class="$style['basic-list__content']">
-                관련 정보 제공 동의는 승계절차 완료 또는 계약종결시점 종료되며,
-                중도에 정보제공동의 철회가 가능합니다.
-              </div>
-            </li>
-          </ol>
-        </div>
+            <div :class="$style['basic-list__symbol']">1.</div>
+            <div :class="$style['basic-list__content']">
+              손님의 동의 하에 승계 후 이용자 또는 승계 후 이용자로부터 위임을
+              받은 신청인에게 승계 계약관련 분양/금융정보가 제공됩니다.
+            </div>
+          </li>
+          <li
+            :class="[
+              $style['basic-list__item'],
+              'color-gray-tertiary',
+              'font-weight-regular',
+              'text-body-3',
+            ]"
+          >
+            <div :class="$style['basic-list__symbol']">2.</div>
+            <div :class="$style['basic-list__content']">
+              관련 정보 제공 동의는 승계절차 완료 또는 계약종결시점 종료되며,
+              중도에 정보제공동의 철회가 가능합니다.
+            </div>
+          </li>
+        </ol>
 
         <NoticeText>
           정보제공 동의를 거부하실 수 있으나, 거부 시 승계진행이 불가할 수
@@ -110,25 +112,16 @@ export default {
         </NoticeText>
       </BasicBox>
 
-      <div :class="[$style['agree-list'], 'row-margin-contents']">
-        <ul :class="$style['agree-list__list']">
-          <li :class="$style['agree-list__item']">
-            <div :class="$style['agree-list__head']">
-              <CheckBox
-                id="layerMyLoanOnlineContractIntermediateSuccessionAgree001"
-                :classNames="{
-                  wrap: $style['agree-list__checkbox'],
-                }"
-                theme="tertiary"
-              >
-                <CheckBoxObject />
-                <CheckBoxLabelText>
-                  승계 계약관련 정보제공에 동의하십니까?
-                </CheckBoxLabelText>
-              </CheckBox>
-            </div>
-          </li>
-        </ul>
+      <div class="row-margin-contents">
+        <CheckBox
+          id="layerMyLoanOnlineContractIntermediateSuccessionAgree001"
+          theme="tertiary"
+        >
+          <CheckBoxObject />
+          <CheckBoxLabelText>
+            승계 계약관련 정보제공에 동의하십니까?
+          </CheckBoxLabelText>
+        </CheckBox>
       </div>
 
       <template v-slot:foot>

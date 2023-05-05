@@ -188,12 +188,10 @@ export default {
           <h3 class="text-title-2 row-margin-contents">차량 정보</h3>
 
           <BasicBox align="top">
-            <div class="flex-box">
+            <div class="flex-box row-margin-item">
               <div class="flex-box__cell flex-1">
-                <div class="flex-box row-margin-mini">
-                  <div class="flex-box__cell">
-                    <CarEmblem code="1001" name="현대" />
-                  </div>
+                <div class="row-margin-mini">
+                  <CarEmblem code="1001" name="현대" />
                 </div>
                 <h3
                   class="text-body-1 font-weight-medium row-margin-small row-margin-top-none"
@@ -201,14 +199,12 @@ export default {
                   올 뉴 아반떼
                 </h3>
                 <p class="text-body-4 color-gray">인스퍼레이션</p>
-                <UnitText rightUnit="원" class="row-margin-item">
-                  24,990,000
-                </UnitText>
               </div>
               <div class="flex-box__cell flex-box__cell--medium">
                 <CarThumb src="/images/_dummy/car-thumb.png" />
               </div>
             </div>
+            <UnitText rightUnit="원">24,990,000</UnitText>
           </BasicBox>
         </section>
 
