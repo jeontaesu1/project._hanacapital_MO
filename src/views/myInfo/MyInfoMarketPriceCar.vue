@@ -49,9 +49,9 @@ export default {
 <template>
   <PageContents>
     <PageTextGroup>
-      <RoundStatus theme="secondary" :classNames="{ wrap: 'row-margin-item' }">
-        모바일 전용
-      </RoundStatus>
+      <div class="inline-wrap row-margin-item">
+        <RoundStatus theme="secondary">모바일 전용</RoundStatus>
+      </div>
 
       <PageMainText>
         매월 업데이트 되는 차량정보로<br />

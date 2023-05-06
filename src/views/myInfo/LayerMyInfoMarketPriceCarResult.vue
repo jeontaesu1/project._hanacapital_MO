@@ -96,13 +96,9 @@ export default {
       </PageTextGroup>
 
       <div>
-        <BasicBox theme="secondary" className="align-center">
-          <CarThumb
-            size="medium"
-            src="/images/_dummy/car-thumb.png"
-            :classNames="{ wrap: 'inline-block' }"
-          />
-        </BasicBox>
+        <div class="flex-box justify-conten-center row-margin-contents-group">
+          <CarThumb size="medium" src="/images/_dummy/car-thumb.png" />
+        </div>
 
         <FormList>
           <FormListItem
@@ -153,18 +149,16 @@ export default {
       <BasicHr className="row-margin-container-medium" />
 
       <BasicBox>
-        <div class="align-center">
-          <div :class="[$style['head']]">
-            <UnitText
-              size="large"
-              rightUnit="만원"
-              align="center"
-              verticalAlign="center"
-            >
-              1,700
-            </UnitText>
-            <div class="text-body-3 color-gray">평균시세</div>
-          </div>
+        <div :class="[$style['head']]">
+          <UnitText
+            size="large"
+            rightUnit="만원"
+            align="center"
+            verticalAlign="center"
+          >
+            1,700
+          </UnitText>
+          <div class="text-body-3 color-gray">평균시세</div>
         </div>
 
         <BasicHr
@@ -172,6 +166,7 @@ export default {
           theme="quaternary"
           className="row-margin-contents-small"
         />
+
         <KeyValue margin="regular">
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>1년 후 예상 시세</KeyValueTitle>

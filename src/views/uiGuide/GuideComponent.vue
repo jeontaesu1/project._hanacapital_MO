@@ -7198,13 +7198,6 @@ export default {
           <img src="@/assets/images/_dummy/box-detail.png" alt="샘플 이미지" />
         </div>
       </div>
-      <div class="test-section-sub">
-        <h3 class="test-section-sub-title">full</h3>
-
-        <div :class="[$style['image-view'], $style['image-view--type-full']]">
-          <img src="@/assets/images/_dummy/box-detail.png" alt="샘플 이미지" />
-        </div>
-      </div>
     </section>
 
     <!-- 작업중

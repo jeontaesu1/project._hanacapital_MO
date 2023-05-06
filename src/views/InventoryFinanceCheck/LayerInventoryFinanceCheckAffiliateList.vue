@@ -16,7 +16,7 @@ import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import SearchButton from '@/components/ui/button/SearchButton.vue';
-import BasicBox from '@/components/ui/common/BasicBox.vue';
+import ContentsButton from '@/components/ui/button/ContentsButton.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
 import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
@@ -45,7 +45,7 @@ export default {
     BasicInput,
     BasicHr,
     SearchButton,
-    BasicBox,
+    ContentsButton,
     BasicBoxHead,
     BasicBoxHeadLeft,
     BasicBoxHeadRight,
@@ -55,7 +55,6 @@ export default {
     KeyValueTitle,
     KeyValueText,
     TextButton,
-
     IconArrow,
   },
   setup() {
@@ -124,7 +123,7 @@ export default {
       <!-- Case : 검색 후 노출 -->
       <BasicHr className="row-margin-container-medium" />
 
-      <section class="contents-wrap">
+      <div class="contents-wrap">
         <!-- Case : 검색 결과 없을 때 -->
         <div :class="$style['empty']">
           <p :class="$style['empty__text']">검색된 내역이 없습니다.</p>
@@ -134,7 +133,7 @@ export default {
         <!-- Case : 검색 결과 있을 때 -->
         <ul class="reset-list">
           <li class="row-margin-item-group">
-            <BasicBox>
+            <ContentsButton>
               <BasicBoxHead>
                 <BasicBoxHeadLeft>
                   <h3 class="text-body-1 font-weight-medium">
@@ -160,13 +159,15 @@ export default {
                   }"
                 >
                   <KeyValueTitle>본사</KeyValueTitle>
-                  <KeyValueText>매매상사(중고차)</KeyValueText>
+                  <KeyValueText>
+                    <span class="color-black">매매상사(중고차)</span>
+                  </KeyValueText>
                 </KeyValueItem>
               </KeyValue>
-            </BasicBox>
+            </ContentsButton>
           </li>
           <li class="row-margin-item-group">
-            <BasicBox>
+            <ContentsButton>
               <BasicBoxHead>
                 <BasicBoxHeadLeft>
                   <h3 class="text-body-1 font-weight-medium">
@@ -192,10 +193,12 @@ export default {
                   }"
                 >
                   <KeyValueTitle>지점</KeyValueTitle>
-                  <KeyValueText>판매대리점</KeyValueText>
+                  <KeyValueText>
+                    <span class="color-black">판매대리점</span>
+                  </KeyValueText>
                 </KeyValueItem>
               </KeyValue>
-            </BasicBox>
+            </ContentsButton>
           </li>
         </ul>
 
@@ -208,7 +211,7 @@ export default {
           </TextButton>
         </div>
         <!-- // Case : 검색 결과 있을 때 -->
-      </section>
+      </div>
       <!-- // Case : 검색 후 노출 -->
     </FullPopup>
   </UiLayer>

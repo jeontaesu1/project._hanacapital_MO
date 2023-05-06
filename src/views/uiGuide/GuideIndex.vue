@@ -1458,7 +1458,7 @@ const datas = () => [
     depth1: '재고금융실사 (영업용)',
     datas: [
       {
-        depth2: '',
+        depth2: 'IF_M11_p001',
         depth3: '',
         depth4: '',
         depth5: '',
@@ -2483,8 +2483,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/my-info/marketing',
-        status: 'ing',
-        create: '2023.05.05',
+        status: '',
+        create: '',
         log: [],
       },
       {
