@@ -53,12 +53,10 @@ export default {
 <template>
   <PageContents>
     <PageTextGroup>
-      <PageMainText
-        :classNames="{
-          wrap: 'font-weight-regular',
-        }"
-      >
-        <span class="color-green">주식회사알차이노베이션</span>님<br />
+      <PageMainText>
+        <span class="color-green font-weight-regular"
+          >주식회사알차이노베이션</span
+        >님<br />
         2건 중 1건 온라인약정이<br />
         <strong> 완료되었습니다 </strong>
       </PageMainText>
@@ -81,7 +79,11 @@ export default {
               </p>
             </div>
             <div class="flex-box__cell">
-              <RoundStatus theme="secondary">성공</RoundStatus>
+              <RoundStatus
+                theme="secondary"
+                :classNames="{ wrap: 'display-block' }"
+                >성공</RoundStatus
+              >
             </div>
           </div>
         </BasicBox>
@@ -97,7 +99,11 @@ export default {
               </p>
             </div>
             <div class="flex-box__cell">
-              <RoundStatus theme="nonary">실패</RoundStatus>
+              <RoundStatus
+                theme="nonary"
+                :classNames="{ wrap: 'display-block' }"
+                >실패</RoundStatus
+              >
             </div>
           </div>
         </BasicBox>

@@ -3,6 +3,7 @@
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
+import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
@@ -21,6 +22,7 @@ import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 export default {
   components: {
     UiLayer,
+    PopupTitle,
     PopupButton,
     FullPopup,
     FullPopupHead,
@@ -51,6 +53,7 @@ export default {
     <FullPopup>
       <template v-slot:head>
         <FullPopupHead>
+          <PopupTitle>리스계약확인서</PopupTitle>
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
@@ -213,20 +216,15 @@ export default {
         </p>
       </BasicBox>
 
-      <ul class="reset-list row-margin-item-group">
-        <li class="flex-box justify-conten-end">
-          <div class="flex-box__cell">
-            <p class="text-body-3 font-weight-light color-gray">2000.01.01</p>
-          </div>
-        </li>
-        <li class="flex-box justify-conten-end row-margin-item-group">
-          <div class="flex-box__cell">
-            <p class="text-body-4 font-weight-regular">
-              리스 신청인(이름) 김하나 (인)
-            </p>
-          </div>
-        </li>
-      </ul>
+      <p
+        class="text-body-3 font-weight-light color-gray row-margin-item-group align-right"
+      >
+        2000.01.01
+      </p>
+
+      <p class="text-body-4 font-weight-regular align-right">
+        리스 신청인(이름) 김하나 (인)
+      </p>
 
       <template v-slot:foot>
         <ButtonList

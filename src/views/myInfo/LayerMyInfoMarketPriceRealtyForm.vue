@@ -61,38 +61,35 @@ export default {
       </PageTextGroup>
       <!-- // DD : 검색 전 노출 -->
 
-      <InputBlock type="search">
-        <InputBlockCell :flexible="true">
-          <BasicInput
-            type="search"
-            title="아파트 검색어"
-            placeholder="동(읍/면) 또는 아파트 이름 입력"
-          />
-        </InputBlockCell>
-        <InputBlockCell type="search">
-          <SearchButton />
-        </InputBlockCell>
-      </InputBlock>
+      <div>
+        <InputBlock type="search">
+          <InputBlockCell :flexible="true">
+            <BasicInput
+              type="search"
+              title="아파트 검색어"
+              placeholder="동(읍/면) 또는 아파트 이름 입력"
+            />
+          </InputBlockCell>
+          <InputBlockCell type="search">
+            <SearchButton />
+          </InputBlockCell>
+        </InputBlock>
 
-      <ul
-        :class="[
-          $style['basic-list'],
-          'row-margin-contents row-margin-bottom-none',
-        ]"
-      >
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            아파트/오피스텔만 확인할 수 있습니다.
-          </div>
-        </li>
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            부동산 정보는 매월 업데이트되고 있습니다.
-          </div>
-        </li>
-      </ul>
+        <ul :class="[$style['basic-list'], 'row-margin-contents']">
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              아파트/오피스텔만 확인할 수 있습니다.
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              부동산 정보는 매월 업데이트되고 있습니다.
+            </div>
+          </li>
+        </ul>
+      </div>
 
       <!-- DD : 검색 후 노출 -->
 

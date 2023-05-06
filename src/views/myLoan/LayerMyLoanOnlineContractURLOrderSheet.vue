@@ -94,7 +94,9 @@ export default {
         </KeyValue>
       </BasicBox>
 
-      <p class="text-body-4 font-weight-light row-margin-item-group">
+      <p
+        class="text-body-4 font-weight-light row-margin-item-group row-margin-bottom-none"
+      >
         리스(시설대여)회사인 하나캐피탈주식회사(이하 '갑'이라 한다.)와
         리스이용자인 [$이름$] (이하 '병'이라 한다)간에 $YYYY$년 $MM$월
         $DD$일자로 체결한 리스계약(계약번호 : $00000000$)에 따라, '갑'은 '병'이
@@ -108,7 +110,7 @@ export default {
         주문조건에 의한 책임을 부담하기로 합니다.
       </p>
 
-      <div class="row-margin-item-group-small row-margin-bottom-none">
+      <div class="row-margin-contents-group row-margin-bottom-none">
         <section class="row-margin-contents-group">
           <h3 class="text-body-2 font-weight-bold row-margin-item-medium">
             물건명세
@@ -192,31 +194,25 @@ export default {
             </KeyValue>
           </BasicBox>
         </section>
-      </div>
 
-      <ul class="reset-list row-margin-contents-group row-margin-bottom-none">
-        <li class="flex-box justify-conten-end align-items-start">
-          <div class="flex-box__cell">
-            <p class="text-body-4 font-weight-regular">주문인(갑)</p>
-          </div>
-          <div class="flex-box__cell flex-box__cell--mini">
-            <p class="text-body-4 font-weight-regular">
-              하나캐피탈주식회사<br />
-              대표이사 박승오
-            </p>
-          </div>
-        </li>
-        <li
-          class="flex-box justify-conten-end align-items-start row-margin-item-group"
-        >
-          <div class="flex-box__cell">
-            <p class="text-body-4 font-weight-regular">대여시설이용자(병)</p>
-          </div>
-          <div class="flex-box__cell flex-box__cell--mini">
-            <p class="text-body-4 font-weight-regular">김하나 (인)</p>
-          </div>
-        </li>
-      </ul>
+        <ul class="reset-list row-margin-contents-group">
+          <li class="row-margin-item-group">
+            <div class="flex-box align-items-start align-right text-body-4">
+              <div class="flex-box__cell flex-1">주문인(갑)</div>
+              <div class="flex-box__cell flex-box__cell--mini">
+                하나캐피탈주식회사<br />
+                대표이사 박승오
+              </div>
+            </div>
+          </li>
+          <li class="row-margin-item-group">
+            <div class="flex-box align-items-start align-right text-body-4">
+              <div class="flex-box__cell flex-1">대여시설이용자(병)</div>
+              <div class="flex-box__cell flex-box__cell--mini">김하나 (인)</div>
+            </div>
+          </li>
+        </ul>
+      </div>
 
       <BasicHr className="row-margin-container-medium" />
 
@@ -224,11 +220,7 @@ export default {
         <h3 class="text-title-2 row-margin-contents">주문조건</h3>
 
         <ul
-          :class="[
-            $style['basic-list'],
-            $style['basic-list--regular'],
-            $style['basic-list--regular-margin'],
-          ]"
+          :class="[$style['basic-list'], $style['basic-list--regular-margin']]"
         >
           <li
             :class="[$style['basic-list__item'], 'color-black', 'text-body-4']"

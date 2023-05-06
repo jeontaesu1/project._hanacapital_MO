@@ -87,14 +87,20 @@ export default {
       <PageSubText>확인 후 약정해 주세요.</PageSubText>
     </PageTextGroup>
 
-    <UiAccordion class="reset-list">
-      <UiAccordionItem v-for="i in 1" :key="i" class="row-margin-item-group">
+    <UiAccordion>
+      <UiAccordionItem
+        v-for="i in 3"
+        :key="i"
+        :classNames="{ item: 'row-margin-item-group' }"
+      >
         <BasicBox>
           <div class="flex-box">
             <div class="flex-box__cell flex-1">
               <p class="text-body-4 font-weight-light">2020년식</p>
-              <h3 class="text-body-1 font-weight-medium">재고금융 20노1511</h3>
-              <p class="text-body-4 color-gray row-margin-small">
+              <h3 class="text-body-1 font-weight-medium row-margin-small">
+                재고금융 20노1511
+              </h3>
+              <p class="text-body-4 color-gray">
                 수입/BMW 5시리즈(7세대) 520d M스포츠<br />
                 패키지 플러스
               </p>
@@ -191,9 +197,11 @@ export default {
                 >
                   <KeyValueTitle>서류등록</KeyValueTitle>
                   <KeyValueText>
-                    <TextButton theme="secondary" :underline="true">
-                      서류확인
-                    </TextButton>
+                    <div class="inline-wrap">
+                      <TextButton theme="secondary" :underline="true">
+                        서류확인
+                      </TextButton>
+                    </div>
                   </KeyValueText>
                 </KeyValueItem>
               </KeyValue>

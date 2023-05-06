@@ -36,6 +36,12 @@ import LayerMyLoanOnlineContractIntermediateSuccessionAssigneeAccount from '@/vi
 import LayerMyLoanOnlineContractIntermediateSuccessionAssigneeConfirm from '@/views/myLoan/LayerMyLoanOnlineContractIntermediateSuccessionAssigneeConfirm.vue';
 import LayerMyLoanOnlineContractIntermediateSuccessionAssigneeComplete from '@/views/myLoan/LayerMyLoanOnlineContractIntermediateSuccessionAssigneeComplete.vue';
 import LayerMyLoanOnlineContractIntermediateSuccessionDocumentList from '@/views/myLoan/LayerMyLoanOnlineContractIntermediateSuccessionDocumentList.vue';
+import LayerMyLoanOnlineContractURL from '@/views/myLoan/LayerMyLoanOnlineContractURL.vue';
+import LayerMyLoanOnlineContractURLConfirm from '@/views/myLoan/LayerMyLoanOnlineContractURLConfirm.vue';
+import LayerMyLoanOnlineContractURLOrderSheet from '@/views/myLoan/LayerMyLoanOnlineContractURLOrderSheet.vue';
+import LayerMyLoanOnlineContractURLLease from '@/views/myLoan/LayerMyLoanOnlineContractURLLease.vue';
+import LayerMyLoanOnlineContractURLComplete from '@/views/myLoan/LayerMyLoanOnlineContractURLComplete.vue';
+import LayerMyLoanOnlineContractURLFail from '@/views/myLoan/LayerMyLoanOnlineContractURLFail.vue';
 
 export default {
   components: {
@@ -73,6 +79,12 @@ export default {
     LayerMyLoanOnlineContractIntermediateSuccessionAssigneeConfirm,
     LayerMyLoanOnlineContractIntermediateSuccessionAssigneeComplete,
     LayerMyLoanOnlineContractIntermediateSuccessionDocumentList,
+    LayerMyLoanOnlineContractURL,
+    LayerMyLoanOnlineContractURLConfirm,
+    LayerMyLoanOnlineContractURLOrderSheet,
+    LayerMyLoanOnlineContractURLLease,
+    LayerMyLoanOnlineContractURLComplete,
+    LayerMyLoanOnlineContractURLFail,
   },
   setup() {
     const layer001 = ref(null);
@@ -105,6 +117,12 @@ export default {
     const layer030 = ref(null);
     const layer031 = ref(null);
     const layer032 = ref(null);
+    const layer033 = ref(null);
+    const layer034 = ref(null);
+    const layer035 = ref(null);
+    const layer036 = ref(null);
+    const layer037 = ref(null);
+    const layer038 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -196,6 +214,24 @@ export default {
     const layer032Open = (e = {}) => {
       layer032.value.layer.open(e.target);
     };
+    const layer033Open = (e = {}) => {
+      layer033.value.layer.open(e.target);
+    };
+    const layer034Open = (e = {}) => {
+      layer034.value.layer.open(e.target);
+    };
+    const layer035Open = (e = {}) => {
+      layer035.value.layer.open(e.target);
+    };
+    const layer036Open = (e = {}) => {
+      layer036.value.layer.open(e.target);
+    };
+    const layer037Open = (e = {}) => {
+      layer037.value.layer.open(e.target);
+    };
+    const layer038Open = (e = {}) => {
+      layer038.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -228,6 +264,12 @@ export default {
       layer030,
       layer031,
       layer032,
+      layer033,
+      layer034,
+      layer035,
+      layer036,
+      layer037,
+      layer038,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -258,6 +300,12 @@ export default {
       layer030Open,
       layer031Open,
       layer032Open,
+      layer033Open,
+      layer034Open,
+      layer035Open,
+      layer036Open,
+      layer037Open,
+      layer038Open,
     };
   },
 };
@@ -421,6 +469,36 @@ export default {
           서류 요청<br />BF_M04_l025
         </BasicButton>
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer033Open">
+          약정 정보 확인<br />BF_M05_l006
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer034Open">
+          계약정보 최종확인<br />BF_M05_l007
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer035Open">
+          주문서<br />BF_M05_l009
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer036Open">
+          리스계약확인서<br />BF_M05_l010
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer037Open">
+          약정완료<br />BF_M05_l013
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer038Open">
+          약정실패<br />BF_M05_l013
+        </BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <LayerMyLoanOnlineContractAgreeConfirm ref="layer001" />
@@ -469,5 +547,11 @@ export default {
     <LayerMyLoanOnlineContractIntermediateSuccessionDocumentList
       ref="layer032"
     />
+    <LayerMyLoanOnlineContractURL ref="layer033" />
+    <LayerMyLoanOnlineContractURLConfirm ref="layer034" />
+    <LayerMyLoanOnlineContractURLOrderSheet ref="layer035" />
+    <LayerMyLoanOnlineContractURLLease ref="layer036" />
+    <LayerMyLoanOnlineContractURLComplete ref="layer037" />
+    <LayerMyLoanOnlineContractURLFail ref="layer038" />
   </PageContents>
 </template>

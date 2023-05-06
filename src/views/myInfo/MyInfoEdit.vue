@@ -11,6 +11,7 @@ import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
+
 import LinkGreen from '@/assets/images/icon/link-green.svg?component';
 
 export default {
@@ -54,14 +55,16 @@ export default {
           <h3 class="text-title-2">청구정보</h3>
         </div>
         <div class="flex-box__cell">
-          <div class="inline-wrap">
-            <TextButton theme="secondary">
-              <span class="text-body-4">변경</span>
-              <template v-slot:rightIcon>
-                <LinkGreen />
-              </template>
-            </TextButton>
-          </div>
+          <TextButton
+            theme="secondary"
+            :block="true"
+            :classNames="{ wrap: 'text-body-4' }"
+          >
+            변경
+            <template v-slot:rightIcon>
+              <LinkGreen />
+            </template>
+          </TextButton>
         </div>
       </div>
 
@@ -228,14 +231,16 @@ export default {
           <h3 class="text-title-2">연락처 정보</h3>
         </div>
         <div class="flex-box__cell">
-          <div class="inline-wrap">
-            <TextButton theme="secondary">
-              <span class="text-body-4">변경</span>
-              <template v-slot:rightIcon>
-                <LinkGreen />
-              </template>
-            </TextButton>
-          </div>
+          <TextButton
+            theme="secondary"
+            :block="true"
+            :classNames="{ wrap: 'text-body-4' }"
+          >
+            변경
+            <template v-slot:rightIcon>
+              <LinkGreen />
+            </template>
+          </TextButton>
         </div>
       </div>
 

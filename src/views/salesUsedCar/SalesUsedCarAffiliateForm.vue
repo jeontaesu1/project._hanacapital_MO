@@ -43,16 +43,16 @@ export default {
     CheckBoxLabelText,
   },
   setup() {
-    const state = reactive({
-      accountError: false,
-      mailError: false,
-    });
-
     const store = {
       ui: {
         header: useUiHeaderStore(),
       },
     };
+
+    const state = reactive({
+      accountError: false,
+      mailError: false,
+    });
 
     onMounted(() => {
       store.ui.header.setTitle(() => '중고차 매매상사 할부 제휴 협약');

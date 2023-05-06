@@ -11,6 +11,7 @@ import PageMainText from '@/components/ui/text/PageMainText.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
+import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
@@ -30,6 +31,7 @@ export default {
     InputBlock,
     InputBlockCell,
     BasicInput,
+    BasicSelect,
     FormList,
     FormListItem,
     FormInvalid,

@@ -145,7 +145,7 @@ export default {
       </FormList>
 
       <section class="row-margin-container-medium row-margin-bottom-none">
-        <h3 class="text-title-2">계좌정보</h3>
+        <h3 class="text-title-2 row-margin-contents">계좌정보</h3>
 
         <FormList>
           <FormListItem

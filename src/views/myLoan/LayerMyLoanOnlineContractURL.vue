@@ -81,7 +81,11 @@ export default {
             <h3 class="text-body-1 font-weight-medium">의료기리스</h3>
           </BasicBoxHeadLeft>
           <BasicBoxHeadRight>
-            <RoundStatus theme="undenary">신규</RoundStatus>
+            <RoundStatus
+              theme="undenary"
+              :classNames="{ wrap: 'display-block' }"
+              >신규</RoundStatus
+            >
           </BasicBoxHeadRight>
         </BasicBoxHead>
         <KeyValue margin="regular">

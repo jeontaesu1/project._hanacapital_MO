@@ -193,7 +193,7 @@ export default {
           </FormInvalid>
         </FormListItem>
       </FormList>
-      <!-- Case: 직접 입력 선택시 -->
+      <!-- // Case: 직접 입력 선택시 -->
 
       <template v-slot:foot>
         <ButtonList

@@ -113,6 +113,7 @@ export default {
           :classNames="{
             item: 'text-body-3',
           }"
+          verticalAlign="center"
         >
           <KeyValueTitle
             :classNames="{

@@ -35,21 +35,21 @@ export default {
     BasicButton,
   },
   setup() {
-    const state = reactive({
-      nameError: false,
-      birthDateError: false,
-      businessNumber: false,
-    });
-
     const store = {
       ui: {
         header: useUiHeaderStore(),
       },
     };
 
+    const state = reactive({
+      nameError: false,
+      birthDateError: false,
+      businessNumber: false,
+    });
+
     onMounted(() => {
-      store.ui.header.setTitle(() => '');
-      store.ui.header.setLeftButtons(() => ['']);
+      store.ui.header.setTitle(() => ' ');
+      store.ui.header.setLeftButtons(() => []);
       store.ui.header.setRightButtons(() => []);
     });
 

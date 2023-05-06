@@ -68,6 +68,7 @@ export default {
         연락처 등을 변경할 수 있습니다.
       </PageSubText>
     </PageTextGroup>
+
     <div>
       <ul class="reset-list">
         <li class="row-margin-item-group">
@@ -77,7 +78,11 @@ export default {
                 <h3 class="text-body-1 font-weight-medium">신용대출</h3>
               </BasicBoxHeadLeft>
               <BasicBoxHeadRight>
-                <RoundStatus theme="secondary">정상</RoundStatus>
+                <RoundStatus
+                  theme="secondary"
+                  :classNames="{ wrap: 'display-block' }"
+                  >정상</RoundStatus
+                >
               </BasicBoxHeadRight>
             </BasicBoxHead>
 
@@ -127,7 +132,11 @@ export default {
                 </h3>
               </BasicBoxHeadLeft>
               <BasicBoxHeadRight>
-                <RoundStatus theme="secondary">정상</RoundStatus>
+                <RoundStatus
+                  theme="secondary"
+                  :classNames="{ wrap: 'display-block' }"
+                  >정상</RoundStatus
+                >
               </BasicBoxHeadRight>
             </BasicBoxHead>
 
@@ -169,7 +178,11 @@ export default {
                 </h3>
               </BasicBoxHeadLeft>
               <BasicBoxHeadRight>
-                <RoundStatus theme="secondary">정상</RoundStatus>
+                <RoundStatus
+                  theme="secondary"
+                  :classNames="{ wrap: 'display-block' }"
+                  >정상</RoundStatus
+                >
               </BasicBoxHeadRight>
             </BasicBoxHead>
 

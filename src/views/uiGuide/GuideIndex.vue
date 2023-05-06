@@ -2574,7 +2574,7 @@ const datas = () => [
       {
         depth2: '하나캐피탈 멤버십',
         depth3: '탈퇴',
-        depth4: '완료',
+        depth4: '완료\nMI_M01_p012',
         depth5: '',
         depth6: '',
         path: '/my-info/withdraw-membership-complete',

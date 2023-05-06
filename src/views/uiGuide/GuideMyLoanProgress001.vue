@@ -22,12 +22,6 @@ import LayerMyLoanProgressInstallmentConsultationForm from '@/views/myLoan/Layer
 import LayerMyLoanProgressInstallmentConsultationSearch from '@/views/myLoan/LayerMyLoanProgressInstallmentConsultationSearch.vue';
 import LayerMyLoanProgressInstallmentConsultationComplete from '@/views/myLoan/LayerMyLoanProgressInstallmentConsultationComplete.vue';
 import LayerMyLoanProgressInstallmentConsultationFail from '@/views/myLoan/LayerMyLoanProgressInstallmentConsultationFail.vue';
-import LayerMyLoanOnlineContractURL from '@/views/myLoan/LayerMyLoanOnlineContractURL.vue';
-import LayerMyLoanOnlineContractURLConfirm from '@/views/myLoan/LayerMyLoanOnlineContractURLConfirm.vue';
-import LayerMyLoanOnlineContractURLOrderSheet from '@/views/myLoan/LayerMyLoanOnlineContractURLOrderSheet.vue';
-import LayerMyLoanOnlineContractURLLease from '@/views/myLoan/LayerMyLoanOnlineContractURLLease.vue';
-import LayerMyLoanOnlineContractURLComplete from '@/views/myLoan/LayerMyLoanOnlineContractURLComplete.vue';
-import LayerMyLoanOnlineContractURLFail from '@/views/myLoan/LayerMyLoanOnlineContractURLFail.vue';
 
 export default {
   components: {
@@ -51,12 +45,6 @@ export default {
     LayerMyLoanProgressInstallmentConsultationSearch,
     LayerMyLoanProgressInstallmentConsultationComplete,
     LayerMyLoanProgressInstallmentConsultationFail,
-    LayerMyLoanOnlineContractURL,
-    LayerMyLoanOnlineContractURLConfirm,
-    LayerMyLoanOnlineContractURLOrderSheet,
-    LayerMyLoanOnlineContractURLLease,
-    LayerMyLoanOnlineContractURLComplete,
-    LayerMyLoanOnlineContractURLFail,
   },
 
   setup() {
@@ -76,12 +64,6 @@ export default {
     const layer014 = ref(null);
     const layer015 = ref(null);
     const layer016 = ref(null);
-    const layer017 = ref(null);
-    const layer018 = ref(null);
-    const layer019 = ref(null);
-    const layer020 = ref(null);
-    const layer021 = ref(null);
-    const layer022 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -131,24 +113,6 @@ export default {
     const layer016Open = (e = {}) => {
       layer016.value.layer.open(e.target);
     };
-    const layer017Open = (e = {}) => {
-      layer017.value.layer.open(e.target);
-    };
-    const layer018Open = (e = {}) => {
-      layer018.value.layer.open(e.target);
-    };
-    const layer019Open = (e = {}) => {
-      layer019.value.layer.open(e.target);
-    };
-    const layer020Open = (e = {}) => {
-      layer020.value.layer.open(e.target);
-    };
-    const layer021Open = (e = {}) => {
-      layer021.value.layer.open(e.target);
-    };
-    const layer022Open = (e = {}) => {
-      layer022.value.layer.open(e.target);
-    };
 
     return {
       layer001,
@@ -167,12 +131,6 @@ export default {
       layer014,
       layer015,
       layer016,
-      layer017,
-      layer018,
-      layer019,
-      layer020,
-      layer021,
-      layer022,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -189,12 +147,6 @@ export default {
       layer014Open,
       layer015Open,
       layer016Open,
-      layer017Open,
-      layer018Open,
-      layer019Open,
-      layer020Open,
-      layer021Open,
-      layer022Open,
     };
   },
 };
@@ -288,36 +240,6 @@ export default {
           할부상담 결과안내_추가심사필요<br />PF_M10_l010
         </BasicButton>
       </ButtonListItem>
-      <ButtonListItem>
-        <BasicButton @click="layer017Open">
-          약정 정보 확인<br />BF_M05_l006
-        </BasicButton>
-      </ButtonListItem>
-      <ButtonListItem>
-        <BasicButton @click="layer018Open">
-          계약정보 최종확인<br />BF_M05_l007
-        </BasicButton>
-      </ButtonListItem>
-      <ButtonListItem>
-        <BasicButton @click="layer019Open">
-          주문서<br />BF_M05_l009
-        </BasicButton>
-      </ButtonListItem>
-      <ButtonListItem>
-        <BasicButton @click="layer020Open">
-          리스계약확인서<br />BF_M05_l010
-        </BasicButton>
-      </ButtonListItem>
-      <ButtonListItem>
-        <BasicButton @click="layer021Open">
-          약정완료<br />BF_M05_l013
-        </BasicButton>
-      </ButtonListItem>
-      <ButtonListItem>
-        <BasicButton @click="layer022Open">
-          약정실패<br />BF_M05_l013
-        </BasicButton>
-      </ButtonListItem>
     </ButtonList>
 
     <LayerMyLoanProgressAgree ref="layer001" />
@@ -336,11 +258,5 @@ export default {
     <LayerMyLoanProgressInstallmentConsultationSearch ref="layer014" />
     <LayerMyLoanProgressInstallmentConsultationComplete ref="layer015" />
     <LayerMyLoanProgressInstallmentConsultationFail ref="layer016" />
-    <LayerMyLoanOnlineContractURL ref="layer017" />
-    <LayerMyLoanOnlineContractURLConfirm ref="layer018" />
-    <LayerMyLoanOnlineContractURLOrderSheet ref="layer019" />
-    <LayerMyLoanOnlineContractURLLease ref="layer020" />
-    <LayerMyLoanOnlineContractURLComplete ref="layer021" />
-    <LayerMyLoanOnlineContractURLFail ref="layer022" />
   </PageContents>
 </template>

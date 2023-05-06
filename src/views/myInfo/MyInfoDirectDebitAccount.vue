@@ -1,6 +1,6 @@
 <script>
 // MI_M01_p003
-import { ref, onMounted, onUnmounted } from 'vue';
+import { onMounted, onUnmounted } from 'vue';
 
 import { useUiHeaderStore } from '@/stores/ui/header';
 
@@ -17,7 +17,6 @@ import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
-import LayerMyInfoDirectDebitAccountNotice from '@/views/myInfo/LayerMyInfoDirectDebitAccountNotice.vue';
 
 export default {
   components: {
@@ -34,19 +33,12 @@ export default {
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
-    LayerMyInfoDirectDebitAccountNotice,
   },
   setup() {
     const store = {
       ui: {
         header: useUiHeaderStore(),
       },
-    };
-
-    const layer001 = ref(null);
-
-    const layer001Open = (e = {}) => {
-      layer001.value.layer.open(e.target);
     };
 
     onMounted(() => {
@@ -60,11 +52,6 @@ export default {
       store.ui.header.setLeftButtons();
       store.ui.header.setRightButtons();
     });
-
-    return {
-      layer001,
-      layer001Open,
-    };
   },
 };
 </script>
@@ -83,13 +70,17 @@ export default {
     <div>
       <ul class="reset-list">
         <li class="row-margin-item-group">
-          <ContentsButton @click="layer001Open">
+          <ContentsButton>
             <BasicBoxHead>
               <BasicBoxHeadLeft>
                 <h3 class="text-body-1 font-weight-medium">신용대출</h3>
               </BasicBoxHeadLeft>
               <BasicBoxHeadRight>
-                <RoundStatus theme="secondary">정상</RoundStatus>
+                <RoundStatus
+                  theme="secondary"
+                  :classNames="{ wrap: 'display-block' }"
+                  >정상</RoundStatus
+                >
               </BasicBoxHeadRight>
             </BasicBoxHead>
 
@@ -139,7 +130,7 @@ export default {
         </li>
 
         <li class="row-margin-item-group">
-          <ContentsButton @click="layer001Open">
+          <ContentsButton>
             <BasicBoxHead>
               <BasicBoxHeadLeft>
                 <h3 class="text-body-1 font-weight-medium">
@@ -147,7 +138,11 @@ export default {
                 </h3>
               </BasicBoxHeadLeft>
               <BasicBoxHeadRight>
-                <RoundStatus theme="secondary">정상</RoundStatus>
+                <RoundStatus
+                  theme="secondary"
+                  :classNames="{ wrap: 'display-block' }"
+                  >정상</RoundStatus
+                >
               </BasicBoxHeadRight>
             </BasicBoxHead>
 
@@ -189,7 +184,7 @@ export default {
         </li>
 
         <li class="row-margin-item-group">
-          <ContentsButton @click="layer001Open">
+          <ContentsButton>
             <BasicBoxHead>
               <BasicBoxHeadLeft>
                 <h3 class="text-body-1 font-weight-medium">
@@ -197,7 +192,11 @@ export default {
                 </h3>
               </BasicBoxHeadLeft>
               <BasicBoxHeadRight>
-                <RoundStatus theme="secondary">정상</RoundStatus>
+                <RoundStatus
+                  theme="secondary"
+                  :classNames="{ wrap: 'display-block' }"
+                  >정상</RoundStatus
+                >
               </BasicBoxHeadRight>
             </BasicBoxHead>
 
@@ -239,6 +238,5 @@ export default {
         </li>
       </ul>
     </div>
-    <LayerMyInfoDirectDebitAccountNotice ref="layer001" />
   </PageContents>
 </template>

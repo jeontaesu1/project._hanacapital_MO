@@ -47,12 +47,7 @@ export default {
 </script>
 
 <template>
-  <UiLayer
-    ref="layer"
-    type="toast"
-    :backgroundClose="true"
-    v-slot="layerSlotProps"
-  >
+  <UiLayer ref="layer" type="toast" :backgroundClose="true">
     <ToastPopup>
       <template v-slot:head>
         <ToastPopupHead>
@@ -101,8 +96,8 @@ export default {
                           개인(신용)정보 선택적 수집·이용 동의
                         </CheckBoxLabelText>
                       </CheckBox>
-                      <!-- case : 멤버십 수신 동의일 경우 노출 -->
                       <div :class="$style['agree-list__right']">
+                        <!-- case : 멤버십 수신 동의일 경우 노출 -->
                         <RoundStatus
                           :classNames="{ wrap: 'display-block' }"
                           size="small"
@@ -110,6 +105,7 @@ export default {
                         >
                           보통
                         </RoundStatus>
+                        <!-- // case : 멤버십 수신 동의일 경우 노출 -->
                         <button
                           type="button"
                           :class="$style['agree-list__link']"
@@ -119,7 +115,6 @@ export default {
                           </span>
                         </button>
                       </div>
-                      <!-- // case : 멤버십 수신 동의일 경우 노출 -->
                     </div>
                     <ul
                       :class="[
@@ -272,7 +267,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton @click="layerSlotProps.close()">확인</BasicButton>
+            <BasicButton>확인</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

@@ -595,7 +595,7 @@ export default {
                 <BasicButton
                   size="mini"
                   theme="tertiary"
-                  id="layerMyInfoEditAddressAddress007Search"
+                  id="layerMyInfoEditAddress007Search"
                   >검색</BasicButton
                 >
               </template>

@@ -74,8 +74,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          신용카드 인증을 위해<br />
-          <strong>이름을 입력해 주세요</strong>
+          변경하실 연락처 정보를<br />
+          <strong>입력하세요</strong>
         </PageMainText>
       </PageTextGroup>
 
@@ -111,7 +111,7 @@ export default {
         </ul>
       </div>
 
-      <FormList>
+      <FormList :classNames="{ wrap: 'row-margin-contents-group' }">
         <!-- case : 개인 회원일 경우 노출 -->
         <FormListItem titleText="휴대전화" target="#layerMyInfoEditPhone001">
           <FormInvalid :error="state.phoneError001">
@@ -162,7 +162,7 @@ export default {
         </FormListItem>
         <!-- // case : 개인 회원일 경우 노출 -->
 
-        <!-- // case : 개인사업자/법인 회원일 경우 노출 -->
+        <!-- case : 개인사업자/법인 회원일 경우 노출 -->
         <FormListItem
           titleText="대표자 사무실"
           target="#layerMyInfoEditPhone004"
@@ -276,6 +276,7 @@ export default {
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
+        <!-- // case : 개인사업자/법인 회원일 경우 노출 -->
       </FormList>
 
       <template v-slot:foot>

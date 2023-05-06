@@ -43,12 +43,12 @@ export default {
     UnitText,
   },
   setup() {
-    const layer = ref(null);
-
     const state = reactive({
       nameError: false,
       yearError: false,
     });
+
+    const layer = ref(null);
 
     return {
       state,
@@ -70,119 +70,124 @@ export default {
         </FullPopupHead>
       </template>
 
-      <FormList>
-        <FormListItem titleText="모델명" target="#layerSalesUsedCarSearchName">
-          <FormInvalid :error="state.nameError">
-            <InputBlock :error="state.nameError">
-              <InputBlockCell :flexible="true">
-                <BasicInput title="모델명" id="layerSalesUsedCarSearchName" />
-              </InputBlockCell>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
-        </FormListItem>
+      <div>
+        <FormList>
+          <FormListItem
+            titleText="모델명"
+            target="#layerSalesUsedCarSearchName"
+          >
+            <FormInvalid :error="state.nameError">
+              <InputBlock :error="state.nameError">
+                <InputBlockCell :flexible="true">
+                  <BasicInput title="모델명" id="layerSalesUsedCarSearchName" />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
 
-        <FormListItem
-          titleText="연식"
-          target="#layerSalesUsedCarSearchYearButton"
-          :selectOnly="true"
-        >
-          <FormInvalid :error="state.yearError">
-            <InputBlock :error="state.yearError">
-              <InputBlockCell :flexible="true">
-                <BasicSelect
-                  :option="[
-                    {
-                      value: '1',
-                      text: '2023년',
-                    },
-                    {
-                      value: '2',
-                      text: '2022년',
-                    },
-                    {
-                      value: '3',
-                      text: '2021년',
-                    },
-                    {
-                      value: '4',
-                      text: '2020년',
-                    },
-                    {
-                      value: '5',
-                      text: '2019년',
-                    },
-                    {
-                      value: '6',
-                      text: '2018년',
-                    },
-                    {
-                      value: '7',
-                      text: '2017년',
-                    },
-                    {
-                      value: '8',
-                      text: '2016년',
-                    },
-                    {
-                      value: '9',
-                      text: '2015년',
-                    },
-                    {
-                      value: '10',
-                      text: '2014년',
-                    },
-                    {
-                      value: '11',
-                      text: '2013년',
-                    },
-                    {
-                      value: '12',
-                      text: '2012년',
-                    },
-                    {
-                      value: '13',
-                      text: '2011년',
-                    },
-                    {
-                      value: '14',
-                      text: '2010년',
-                    },
-                    {
-                      value: '15',
-                      text: '2009년',
-                    },
-                    {
-                      value: '16',
-                      text: '2008년',
-                    },
-                    {
-                      value: '17',
-                      text: '2007년',
-                    },
-                    {
-                      value: '18',
-                      text: '2006년',
-                    },
-                    {
-                      value: '19',
-                      text: '2005년',
-                    },
-                  ]"
-                  buttonTitle="연식 선택하기"
-                  layerTitle="연식을 선택해 주세요"
-                  id="layerSalesUsedCarSearchYear"
-                  buttonId="layerSalesUsedCarSearchYearButton"
-                />
-              </InputBlockCell>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
-        </FormListItem>
-      </FormList>
+          <FormListItem
+            titleText="연식"
+            target="#layerSalesUsedCarSearchYearButton"
+            :selectOnly="true"
+          >
+            <FormInvalid :error="state.yearError">
+              <InputBlock :error="state.yearError">
+                <InputBlockCell :flexible="true">
+                  <BasicSelect
+                    :option="[
+                      {
+                        value: '1',
+                        text: '2023년',
+                      },
+                      {
+                        value: '2',
+                        text: '2022년',
+                      },
+                      {
+                        value: '3',
+                        text: '2021년',
+                      },
+                      {
+                        value: '4',
+                        text: '2020년',
+                      },
+                      {
+                        value: '5',
+                        text: '2019년',
+                      },
+                      {
+                        value: '6',
+                        text: '2018년',
+                      },
+                      {
+                        value: '7',
+                        text: '2017년',
+                      },
+                      {
+                        value: '8',
+                        text: '2016년',
+                      },
+                      {
+                        value: '9',
+                        text: '2015년',
+                      },
+                      {
+                        value: '10',
+                        text: '2014년',
+                      },
+                      {
+                        value: '11',
+                        text: '2013년',
+                      },
+                      {
+                        value: '12',
+                        text: '2012년',
+                      },
+                      {
+                        value: '13',
+                        text: '2011년',
+                      },
+                      {
+                        value: '14',
+                        text: '2010년',
+                      },
+                      {
+                        value: '15',
+                        text: '2009년',
+                      },
+                      {
+                        value: '16',
+                        text: '2008년',
+                      },
+                      {
+                        value: '17',
+                        text: '2007년',
+                      },
+                      {
+                        value: '18',
+                        text: '2006년',
+                      },
+                      {
+                        value: '19',
+                        text: '2005년',
+                      },
+                    ]"
+                    buttonTitle="연식 선택하기"
+                    layerTitle="연식을 선택해 주세요"
+                    id="layerSalesUsedCarSearchYear"
+                    buttonId="layerSalesUsedCarSearchYearButton"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+        </FormList>
 
-      <div class="row-margin-contents-group">
-        <BasicButton theme="secondary" :line="true">조회</BasicButton>
+        <div class="row-margin-contents-group">
+          <BasicButton theme="secondary" :line="true">조회</BasicButton>
+        </div>
       </div>
 
       <BasicHr className="row-margin-container-medium" />
@@ -195,28 +200,19 @@ export default {
 
       <!-- Case : 조회 결과 있을 때 -->
       <ul class="reset-list">
-        <li class="row-margin-item-group">
+        <li v-for="i in 3" :key="i" class="row-margin-item-group">
           <BasicBox>
-            <CarEmblem code="1002" name="기아" />
+            <div class="row-margin-mini">
+              <CarEmblem code="1002" name="기아" />
+            </div>
             <h3 class="text-body-1 font-weight-medium">노블레스</h3>
             <p class="text-body-4 color-gray row-margin-small">
               2.2 디젤 11인승 노블레스
             </p>
             <div class="row-margin-item">
-              <UnitText size="regular" rightUnit="만원">5,500</UnitText>
-            </div>
-          </BasicBox>
-        </li>
-
-        <li class="row-margin-item-group">
-          <BasicBox>
-            <CarEmblem code="1002" name="기아" />
-            <h3 class="text-body-1 font-weight-medium">노블레스</h3>
-            <p class="text-body-4 color-gray row-margin-small">
-              뉴 카니발(YP) 3.0 가솔린 9인승 노블레스
-            </p>
-            <div class="row-margin-item">
-              <UnitText size="regular" rightUnit="만원">5,300</UnitText>
+              <UnitText size="regular" rightUnit="만원"
+                ><strong>5,500</strong></UnitText
+              >
             </div>
           </BasicBox>
         </li>
