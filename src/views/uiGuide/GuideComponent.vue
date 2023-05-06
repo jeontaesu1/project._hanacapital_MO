@@ -87,6 +87,7 @@ import ColorChip from '@/components/ui/imageData/ColorChip.vue';
 import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
 import MaskingText from '@/components/ui/text/MaskingText.vue';
 import FilterButton from '@/components/ui/button/FilterButton.vue';
+import DeleteButton from '@/components/ui/button/DeleteButton.vue';
 
 import BrandLogo001 from '@/assets/images/card-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/card-logo/lotte.svg?component';
@@ -124,7 +125,6 @@ import IconDocumentComplete from '@/assets/images/icon/document-complete.svg?com
 import IconTooltip from '@/assets/images/icon/tooltip.svg?component';
 import IconLink from '@/assets/images/icon/link.svg?component';
 import IconStar from '@/assets/images/icon/star.svg?component';
-import IconCloseSmall from '@/assets/images/common/close-small.svg?component';
 
 export default {
   components: {
@@ -211,6 +211,7 @@ export default {
     BasicDatepicker,
     MaskingText,
     FilterButton,
+    DeleteButton,
     IconAdd,
     BrandLogo001,
     BrandLogo002,
@@ -248,7 +249,6 @@ export default {
     IconTooltip,
     IconLink,
     IconStar,
-    IconCloseSmall,
   },
 
   setup() {
@@ -794,31 +794,37 @@ export default {
     </section>
 
     <section class="test-section">
-      <h2 class="test-section-title">close Button (24px)</h2>
+      <h2 class="test-section-title">Delete Button</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
-        <button type="button" :class="$style['close-button']">
-          <IconCloseSmall />
-        </button>
+        <DeleteButton />
       </div>
 
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Secondary</h3>
-        <button
-          type="button"
-          :class="[$style['close-button'], $style['close-button--secondary']]"
-        >
-          <IconCloseSmall />
-        </button>
+        <DeleteButton theme="secondary" />
       </div>
 
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Tertiary</h3>
+        <DeleteButton theme="tertiary" />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Add Button</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
         <button
           type="button"
-          :class="[$style['close-button'], $style['close-button--tertiary']]"
+          :class="[$style['add-button'], 'row-margin-item']"
         >
-          <IconCloseSmall />
+          <span :class="$style['add-button__inner']">
+            <span :class="$style['add-button__text']">지정운전자 추가등록</span>
+            <span :class="$style['add-button__icon']">
+              <IconAdd />
+            </span>
+          </span>
         </button>
       </div>
     </section>

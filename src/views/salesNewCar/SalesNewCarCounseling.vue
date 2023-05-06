@@ -301,7 +301,7 @@ export default {
                     :option="[
                       {
                         value: '1',
-                        text: '타다대우',
+                        text: '타타대우',
                       },
                       {
                         value: '2',
@@ -394,7 +394,7 @@ export default {
           </FormListItem>
         </FormList>
 
-        <div class="row-margin-contents-group">
+        <section class="row-margin-contents-group">
           <h4 class="text-body-2 row-margin-item-medium">세부모델 선택</h4>
           <BoxCheckList align="full">
             <BoxCheckListItem>
@@ -413,10 +413,10 @@ export default {
               </BoxCheck>
             </BoxCheckListItem>
           </BoxCheckList>
-        </div>
+        </section>
 
         <!-- Case : 세부모델 선택 시  -->
-        <div class="row-margin-contents-group">
+        <section class="row-margin-contents-group">
           <h4 class="text-body-2 row-margin-item-medium">트림</h4>
           <BoxCheckList align="full">
             <BoxCheckListItem>
@@ -426,7 +426,9 @@ export default {
                     <span class="flex-box__cell flex-1">
                       모던 + 캐스퍼 액티브Ⅱ
                     </span>
-                    <span class="flex-box__cell">16,850,000 원</span>
+                    <span class="flex-box__cell flex-box__cell--regular"
+                      >16,850,000 원</span
+                    >
                   </span>
                 </BoxCheckLabel>
               </BoxCheck>
@@ -438,7 +440,9 @@ export default {
                     <span class="flex-box__cell flex-1">
                       스마트 + 캐스퍼 액티브Ⅰ
                     </span>
-                    <span class="flex-box__cell">16,850,000 원</span>
+                    <span class="flex-box__cell flex-box__cell--regular"
+                      >16,850,000 원</span
+                    >
                   </span>
                 </BoxCheckLabel>
               </BoxCheck>
@@ -450,24 +454,24 @@ export default {
                     <span class="flex-box__cell flex-1">
                       인스퍼레이션 + 캐스퍼 액티브Ⅱ
                     </span>
-                    <span class="flex-box__cell">16,850,000 원</span>
+                    <span class="flex-box__cell flex-box__cell--regular"
+                      >16,850,000 원</span
+                    >
                   </span>
                 </BoxCheckLabel>
               </BoxCheck>
             </BoxCheckListItem>
           </BoxCheckList>
-        </div>
+        </section>
         <!-- //Case : 세부모델 선택 시  -->
 
         <!-- Case : 트림 선택 시  -->
         <div class="row-margin-contents-group">
           <h4 class="text-body-2 row-margin-item-medium">차량 이미지</h4>
-          <BasicBox theme="tertiary" className="align-center">
-            <CarThumb
-              size="medium"
-              src="/images/_dummy/car-thumb.png"
-              :classNames="{ wrap: 'inline-block' }"
-            />
+          <BasicBox theme="tertiary">
+            <div class="flex-box justify-conten-center">
+              <CarThumb size="medium" src="/images/_dummy/car-thumb.png" />
+            </div>
           </BasicBox>
         </div>
         <!-- //Case : 트림 선택 시  -->
@@ -483,7 +487,9 @@ export default {
                 <BoxCheckLabel>
                   <span class="flex-box">
                     <span class="flex-box__cell flex-1">에센셜 플러스</span>
-                    <span class="flex-box__cell"> + 1,520,000 원 </span>
+                    <span class="flex-box__cell flex-box__cell--regular">
+                      + 1,520,000 원
+                    </span>
                   </span>
                 </BoxCheckLabel>
               </BoxCheck>
@@ -496,7 +502,9 @@ export default {
                 <BoxCheckLabel>
                   <span class="flex-box">
                     <span class="flex-box__cell flex-1">썬루프</span>
-                    <span class="flex-box__cell"> + 1,520,000 원 </span>
+                    <span class="flex-box__cell flex-box__cell--regular">
+                      + 1,520,000 원
+                    </span>
                   </span>
                 </BoxCheckLabel>
               </BoxCheck>
@@ -509,7 +517,9 @@ export default {
                 <BoxCheckLabel>
                   <span class="flex-box">
                     <span class="flex-box__cell flex-1">기타옵션</span>
-                    <span class="flex-box__cell"> + 0 원 </span>
+                    <span class="flex-box__cell flex-box__cell--regular">
+                      + 0 원
+                    </span>
                   </span>
                 </BoxCheckLabel>
               </BoxCheck>
@@ -560,7 +570,7 @@ export default {
           </FormList>
           <!-- //Case : 옵션 선택 : 기타옵션 선택 시 -->
 
-          <BasicBox className="row-margin-container-medium" theme="tertiary">
+          <BasicBox className="row-margin-container-medium" theme="senary">
             <KeyValue verticalAlign="center">
               <KeyValueItem :classNames="{ item: 'text-body-3' }">
                 <KeyValueTitle>총 차량가격</KeyValueTitle>
@@ -578,56 +588,58 @@ export default {
           </BasicBox>
         </div>
       </section>
+    </div>
 
-      <BasicHr className="row-margin-container-medium"></BasicHr>
+    <BasicHr className="row-margin-container-medium"></BasicHr>
 
-      <section>
+    <div>
+      <section class="row-margin-container-medium">
         <h3 class="text-title-2 row-margin-contents">대출 신청 정보</h3>
         <FormList>
           <FormListItem titleText="대출금리" :forceFocus="true">
             <FormInvalid :error="state.interestRateError">
-              <BoxCheckList :classNames="{ wrap: 'row-margin-item-group' }">
-                <BoxCheckListItem>
+              <ButtonList :classNames="{ wrap: 'row-margin-item-group' }">
+                <ButtonListItem>
                   <BasicButton
-                    size="small"
                     :line="true"
                     theme="quaternary"
+                    size="small"
                     :minSide="true"
                   >
                     + 100만
                   </BasicButton>
-                </BoxCheckListItem>
-                <BoxCheckListItem>
+                </ButtonListItem>
+                <ButtonListItem>
                   <BasicButton
-                    size="small"
                     :line="true"
                     theme="quaternary"
+                    size="small"
                     :minSide="true"
                   >
                     + 300만
                   </BasicButton>
-                </BoxCheckListItem>
-                <BoxCheckListItem>
+                </ButtonListItem>
+                <ButtonListItem>
                   <BasicButton
-                    size="small"
                     :line="true"
                     theme="quaternary"
+                    size="small"
                     :minSide="true"
                   >
                     + 500만
                   </BasicButton>
-                </BoxCheckListItem>
-                <BoxCheckListItem>
+                </ButtonListItem>
+                <ButtonListItem>
                   <BasicButton
-                    size="small"
                     :line="true"
                     theme="quaternary"
+                    size="small"
                     :minSide="true"
                   >
-                    + 1,000만
+                    + 1000만
                   </BasicButton>
-                </BoxCheckListItem>
-              </BoxCheckList>
+                </ButtonListItem>
+              </ButtonList>
               <InputBlock :error="state.interestRateError">
                 <InputBlockCell :flexible="true">
                   <BasicInput

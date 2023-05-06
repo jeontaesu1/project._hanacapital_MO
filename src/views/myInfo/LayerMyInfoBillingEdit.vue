@@ -97,11 +97,7 @@ export default {
         </PageSubText>
       </PageTextGroup>
 
-      <FormList
-        :classNames="{
-          wrap: 'row-margin-contents',
-        }"
-      >
+      <FormList>
         <FormListItem
           titleText="청구방법"
           target="#layerMyInfoBillingEditBillingMethodButton"
@@ -267,7 +263,7 @@ export default {
                 <BasicInput
                   title="청구지 주소"
                   id="layerMyInfoBillingEditAddress001"
-                  disabled="disabled"
+                  :disabled="true"
                   defaultValue="22742 인천 서구 에코로 181 하나금융그룹통합데이터센터"
                 />
               </InputBlockCell>
@@ -364,7 +360,7 @@ export default {
         </FormListItem>
       </FormList>
 
-      <div class="flex-box">
+      <div class="flex-box row-margin-contents">
         <div class="flex-box__cell flex-1">
           <NoticeText>주소,연락처,이메일이 변경되었나요?</NoticeText>
         </div>

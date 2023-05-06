@@ -10,7 +10,6 @@ import PageMainText from '@/components/ui/text/PageMainText.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-import BasicBox from '@/components/ui/common/BasicBox.vue';
 import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 import ColorChip from '@/components/ui/imageData/ColorChip.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
@@ -29,7 +28,6 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    BasicBox,
     CarThumb,
     ColorChip,
     UnitText,
@@ -83,157 +81,189 @@ export default {
           <div class="flex-box__cell flex-1">
             <div class="inline-wrap">
               <RoundStatus theme="nonary" size="small">HOT</RoundStatus>
-              <h3 class="text-title-2 row-margin-item">쏘나타</h3>
+            </div>
+            <h3 class="text-title-2 row-margin-item">쏘나타</h3>
+          </div>
+          <div class="flex-box__cell flex-box__cell--medium">
+            <CarThumb src="/images/_dummy/car-thumb.png" />
+          </div>
+        </div>
+
+        <!-- DD : 1개 이하 slide--once 클래스 추가 -->
+        <div :class="[$style['slide'], $style['slide--once']]">
+          <div :class="$style['slide__scroller']">
+            <div :class="$style['slide__inner']">
+              <ul :class="$style['slide__list']">
+                <li :class="$style['slide__item']">
+                  <div :class="$style['slide__block']">
+                    <div class="text-body-4 color-gray row-margin-item">
+                      뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
+                    </div>
+                    <UnitText rightUnit="원">월 325,000</UnitText>
+
+                    <BasicHr
+                      type="contents"
+                      theme="quaternary"
+                      className="row-margin-contents-small"
+                    />
+
+                    <KeyValue margin="regular">
+                      <KeyValueItem
+                        :classNames="{
+                          item: 'text-body-3',
+                        }"
+                      >
+                        <KeyValueTitle>외장</KeyValueTitle>
+                        <KeyValueText>
+                          <div class="flex-box justify-conten-end">
+                            <div class="flex-box__cell">아틸라스 화이트</div>
+                            <div class="flex-box__cell">
+                              <ColorChip
+                                :colors="['248, 245, 245']"
+                                size="small"
+                              ></ColorChip>
+                            </div>
+                          </div>
+                        </KeyValueText>
+                      </KeyValueItem>
+                      <KeyValueItem
+                        :classNames="{
+                          item: 'text-body-3',
+                        }"
+                      >
+                        <KeyValueTitle>내장</KeyValueTitle>
+                        <KeyValueText>
+                          <div class="flex-box justify-conten-end">
+                            <div class="flex-box__cell">
+                              네츄럴 베이지 / 다크 베이지
+                            </div>
+                            <div class="flex-box__cell">
+                              <ColorChip
+                                :colors="['244, 238, 238', '225, 213, 213']"
+                                size="small"
+                              ></ColorChip>
+                            </div>
+                          </div>
+                        </KeyValueText>
+                      </KeyValueItem>
+                      <KeyValueItem
+                        :classNames="{
+                          item: 'text-body-3',
+                        }"
+                      >
+                        <KeyValueTitle>옵션</KeyValueTitle>
+                        <KeyValueText>선루프1 외 2개</KeyValueText>
+                      </KeyValueItem>
+                    </KeyValue>
+
+                    <ButtonList
+                      :classNames="{ wrap: 'row-margin-contents-small' }"
+                    >
+                      <ButtonListItem>
+                        <BasicButton size="small"> 즉시출고 </BasicButton>
+                      </ButtonListItem>
+                    </ButtonList>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
-          <div class="flex-box__cell">
+        </div>
+      </section>
+
+      <BasicHr
+        type="contents"
+        theme="quaternary"
+        className="row-margin-container-medium"
+      />
+
+      <section>
+        <div class="flex-box row-margin-contents">
+          <div class="flex-box__cell flex-1">
+            <h3 class="text-title-2 row-margin-item">그랜저</h3>
+          </div>
+          <div class="flex-box__cell flex-box__cell--medium">
             <CarThumb src="/images/_dummy/car-thumb.png" />
           </div>
         </div>
 
         <div :class="$style['slide']">
-          <div :class="$style['slide__inner']">
-            <ul :class="$style['slide__list']">
-              <li :class="$style['slide__item']" v-for="i in 1" :key="i">
-                <BasicBox theme="secondary">
-                  <div class="text-body-4 color-gray row-margin-item">
-                    뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
+          <div :class="$style['slide__scroller']">
+            <div :class="$style['slide__inner']">
+              <ul :class="$style['slide__list']">
+                <li v-for="i in 5" :key="i" :class="$style['slide__item']">
+                  <div :class="$style['slide__block']">
+                    <div class="text-body-4 color-gray row-margin-item">
+                      뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
+                    </div>
+                    <UnitText rightUnit="원">월 325,000</UnitText>
+
+                    <BasicHr
+                      type="contents"
+                      theme="quaternary"
+                      className="row-margin-contents-small"
+                    />
+
+                    <KeyValue margin="regular">
+                      <KeyValueItem
+                        :classNames="{
+                          item: 'text-body-3',
+                        }"
+                      >
+                        <KeyValueTitle>외장</KeyValueTitle>
+                        <KeyValueText>
+                          <div class="flex-box justify-conten-end">
+                            <div class="flex-box__cell">아틸라스 화이트</div>
+                            <div class="flex-box__cell">
+                              <ColorChip
+                                :colors="['248, 245, 245']"
+                                size="small"
+                              ></ColorChip>
+                            </div>
+                          </div>
+                        </KeyValueText>
+                      </KeyValueItem>
+                      <KeyValueItem
+                        :classNames="{
+                          item: 'text-body-3',
+                        }"
+                      >
+                        <KeyValueTitle>내장</KeyValueTitle>
+                        <KeyValueText>
+                          <div class="flex-box justify-conten-end">
+                            <div class="flex-box__cell">
+                              네츄럴 베이지 / 다크 베이지
+                            </div>
+                            <div class="flex-box__cell">
+                              <ColorChip
+                                :colors="['244, 238, 238', '225, 213, 213']"
+                                size="small"
+                              ></ColorChip>
+                            </div>
+                          </div>
+                        </KeyValueText>
+                      </KeyValueItem>
+                      <KeyValueItem
+                        :classNames="{
+                          item: 'text-body-3',
+                        }"
+                      >
+                        <KeyValueTitle>옵션</KeyValueTitle>
+                        <KeyValueText>선루프1 외 2개</KeyValueText>
+                      </KeyValueItem>
+                    </KeyValue>
+
+                    <ButtonList
+                      :classNames="{ wrap: 'row-margin-contents-small' }"
+                    >
+                      <ButtonListItem>
+                        <BasicButton size="small"> 즉시출고 </BasicButton>
+                      </ButtonListItem>
+                    </ButtonList>
                   </div>
-                  <UnitText rightUnit="원">월 325,000</UnitText>
-
-                  <BasicHr
-                    theme="quaternary"
-                    className="row-margin-contents-small"
-                  />
-
-                  <KeyValue verticalAlign="center" margin="regular">
-                    <KeyValueItem>
-                      <KeyValueTitle>외장</KeyValueTitle>
-                      <KeyValueText>
-                        <div class="flex-box justify-conten-end">
-                          <div class="flex-box__cell">아틸라스 화이트</div>
-                          <div class="flex-box__cell">
-                            <ColorChip
-                              :colors="['248, 245, 245']"
-                              size="small"
-                            ></ColorChip>
-                          </div>
-                        </div>
-                      </KeyValueText>
-                    </KeyValueItem>
-                    <KeyValueItem>
-                      <KeyValueTitle>내장</KeyValueTitle>
-                      <KeyValueText>
-                        <div class="flex-box justify-conten-end">
-                          <div class="flex-box__cell">
-                            네츄럴 베이지 / 다크 베이지
-                          </div>
-                          <div class="flex-box__cell">
-                            <ColorChip
-                              :colors="['244, 238, 238', '225, 213, 213']"
-                              size="small"
-                            ></ColorChip>
-                          </div>
-                        </div>
-                      </KeyValueText>
-                    </KeyValueItem>
-                    <KeyValueItem>
-                      <KeyValueTitle>옵션</KeyValueTitle>
-                      <KeyValueText>선루프1 외 2개</KeyValueText>
-                    </KeyValueItem>
-                  </KeyValue>
-
-                  <ButtonList
-                    :classNames="{ wrap: 'row-margin-contents-small' }"
-                  >
-                    <ButtonListItem>
-                      <BasicButton size="small"> 즉시출고 </BasicButton>
-                    </ButtonListItem>
-                  </ButtonList>
-                </BasicBox>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <BasicHr theme="quaternary" className="row-margin-container-medium" />
-
-      <section>
-        <div class="flex-box row-margin-contents">
-          <div class="flex-box__cell flex-1">
-            <div class="inline-wrap">
-              <h3 class="text-title-2 row-margin-item">그랜저</h3>
+                </li>
+              </ul>
             </div>
-          </div>
-          <div class="flex-box__cell">
-            <CarThumb src="/images/_dummy/car-thumb.png" />
-          </div>
-        </div>
-
-        <!-- DD : 카드가 2개 이상일 때, slide--side 클래스 추가 -->
-        <div :class="[$style['slide'], $style['slide--side']]">
-          <div :class="$style['slide__inner']">
-            <ul :class="$style['slide__list']">
-              <li :class="$style['slide__item']" v-for="i in 3" :key="i">
-                <BasicBox theme="secondary">
-                  <div class="text-body-4 color-gray row-margin-item">
-                    뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
-                  </div>
-                  <UnitText rightUnit="원">월 325,000</UnitText>
-
-                  <BasicHr
-                    theme="quaternary"
-                    className="row-margin-contents-small"
-                  />
-
-                  <KeyValue verticalAlign="center" margin="regular">
-                    <KeyValueItem>
-                      <KeyValueTitle>외장</KeyValueTitle>
-                      <KeyValueText>
-                        <div class="flex-box justify-conten-end">
-                          <div class="flex-box__cell">아틸라스 화이트</div>
-                          <div class="flex-box__cell">
-                            <ColorChip
-                              :colors="['248, 245, 245']"
-                              size="small"
-                            ></ColorChip>
-                          </div>
-                        </div>
-                      </KeyValueText>
-                    </KeyValueItem>
-                    <KeyValueItem>
-                      <KeyValueTitle>내장</KeyValueTitle>
-                      <KeyValueText>
-                        <div class="flex-box justify-conten-end">
-                          <div class="flex-box__cell">
-                            네츄럴 베이지 / 다크 베이지
-                          </div>
-                          <div class="flex-box__cell">
-                            <ColorChip
-                              :colors="['244, 238, 238', '225, 213, 213']"
-                              size="small"
-                            ></ColorChip>
-                          </div>
-                        </div>
-                      </KeyValueText>
-                    </KeyValueItem>
-                    <KeyValueItem>
-                      <KeyValueTitle>옵션</KeyValueTitle>
-                      <KeyValueText>선루프1 외 2개</KeyValueText>
-                    </KeyValueItem>
-                  </KeyValue>
-
-                  <ButtonList
-                    :classNames="{ wrap: 'row-margin-contents-small' }"
-                  >
-                    <ButtonListItem>
-                      <BasicButton size="small"> 즉시출고 </BasicButton>
-                    </ButtonListItem>
-                  </ButtonList>
-                </BasicBox>
-              </li>
-            </ul>
           </div>
         </div>
       </section>

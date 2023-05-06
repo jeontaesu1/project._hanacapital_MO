@@ -13,7 +13,6 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
-import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
 import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
@@ -23,8 +22,8 @@ import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
+import DeleteButton from '@/components/ui/button/DeleteButton.vue';
 
-import IconCloseSmall from '@/assets/images/common/close-small.svg?component';
 import IconAdd from '@/assets/images/icon/add.svg?component';
 
 export default {
@@ -38,7 +37,6 @@ export default {
     BasicBox,
     BasicBoxHead,
     BasicBoxHeadLeft,
-    BasicBoxHeadRight,
     RoundStatus,
     CarThumb,
     CarEmblem,
@@ -48,7 +46,7 @@ export default {
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
-    IconCloseSmall,
+    DeleteButton,
     IconAdd,
   },
   setup() {
@@ -90,7 +88,7 @@ export default {
             <BasicBox>
               <BasicBoxHead align="top">
                 <BasicBoxHeadLeft>
-                  <div class="flex-box">
+                  <div class="flex-box row-margin-mini">
                     <div class="flex-box__cell">
                       <CarEmblem code="1001" name="현대" />
                     </div>
@@ -99,31 +97,41 @@ export default {
                         2020년식
                       </span>
                     </div>
+                    <div class="flex-box__cell flex-box__cell--small flex-1">
+                      <div class="inline-wrap align-right">
+                        <RoundStatus>2022.09.03 까지</RoundStatus>
+                      </div>
+                    </div>
                   </div>
 
-                  <div class="text-body-1 color-black font-weight-medium">
-                    쏘나타
+                  <div class="flex-box">
+                    <div class="flex-box__cell flex-1">
+                      <div class="text-body-1 color-black font-weight-medium">
+                        쏘나타
+                      </div>
+                      <div class="text-body-4 color-gray row-margin-small">
+                        뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
+                      </div>
+                    </div>
+                    <div class="flex-box__cell flex-box__cell--medium">
+                      <CarThumb src="/images/_dummy/car-thumb.png" />
+                    </div>
                   </div>
-                  <div class="text-body-4 color-gray row-margin-small">
-                    뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
-                  </div>
+
                   <UnitText
                     rightUnit="원"
                     :classNames="{ wrap: 'row-margin-item' }"
                     >16,900,000</UnitText
                   >
                 </BasicBoxHeadLeft>
-                <BasicBoxHeadRight>
-                  <RoundStatus>2022.09.03 까지</RoundStatus>
-                  <CarThumb
-                    src="/images/_dummy/car-thumb.png"
-                    :classNames="{ wrap: 'row-margin-item-medium' }"
-                  />
-                </BasicBoxHeadRight>
               </BasicBoxHead>
 
-              <KeyValue verticalAlign="center" margin="regular">
-                <KeyValueItem>
+              <KeyValue margin="regular">
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
                   <KeyValueTitle>외장</KeyValueTitle>
                   <KeyValueText>
                     <div class="flex-box justify-conten-end">
@@ -137,7 +145,11 @@ export default {
                     </div>
                   </KeyValueText>
                 </KeyValueItem>
-                <KeyValueItem>
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
                   <KeyValueTitle>내장</KeyValueTitle>
                   <KeyValueText>
                     <div class="flex-box justify-conten-end">
@@ -153,7 +165,11 @@ export default {
                     </div>
                   </KeyValueText>
                 </KeyValueItem>
-                <KeyValueItem>
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
                   <KeyValueTitle>옵션</KeyValueTitle>
                   <KeyValueText>선루프1 외 2개</KeyValueText>
                 </KeyValueItem>
@@ -173,12 +189,35 @@ export default {
 
       <section class="row-margin-container-medium">
         <h3 class="text-title-2 row-margin-contents">관심있는 차</h3>
+
+        <!-- Case : 목록 없을 때 -->
+        <button type="button" :class="$style['add-button']">
+          <span :class="$style['add-button__inner']">
+            <span :class="$style['add-button__text']">
+              관심있는 차 추가등록
+            </span>
+            <span :class="$style['add-button__icon']">
+              <IconAdd />
+            </span>
+          </span>
+        </button>
+        <!-- // Case : 목록 없을 때 -->
+
+        <!-- Case : 목록 있을 때 -->
         <ul class="reset-list">
           <li v-for="i in 2" :key="i" class="row-margin-item-group">
             <BasicBox>
-              <div class="flex-box align-items-start">
+              <div class="flex-box row-margin-mini">
                 <div class="flex-box__cell flex-1">
                   <CarEmblem code="1001" name="현대" />
+                </div>
+                <div class="flex-box__cell flex-box__cell--small">
+                  <DeleteButton theme="secondary" />
+                </div>
+              </div>
+
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
                   <div class="text-body-1 color-black font-weight-medium">
                     쏘나타
                   </div>
@@ -186,21 +225,8 @@ export default {
                     뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
                   </div>
                 </div>
-
-                <div class="flex-box__cell align-right">
-                  <button
-                    type="button"
-                    :class="[
-                      $style['close-button'],
-                      $style['close-button--secondary'],
-                    ]"
-                  >
-                    <IconCloseSmall />
-                  </button>
-                  <CarThumb
-                    src="/images/_dummy/car-thumb.png"
-                    :classNames="{ wrap: 'row-margin-item-medium' }"
-                  />
+                <div class="flex-box__cell flex-box__cell--medium">
+                  <CarThumb src="/images/_dummy/car-thumb.png" />
                 </div>
               </div>
 
@@ -214,20 +240,7 @@ export default {
             </BasicBox>
           </li>
         </ul>
-
-        <button
-          type="button"
-          :class="[$style['add-button'], 'row-margin-item-group']"
-        >
-          <span :class="$style['add-button__inner']">
-            <span :class="$style['add-button__text']">
-              관심있는 차 추가등록
-            </span>
-            <span :class="$style['add-button__icon']">
-              <IconAdd />
-            </span>
-          </span>
-        </button>
+        <!-- // Case : 목록 있을 때 -->
       </section>
     </div>
   </PageContents>

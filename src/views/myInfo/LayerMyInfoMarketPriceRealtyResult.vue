@@ -154,7 +154,7 @@ export default {
               name="layerMyInfoMarketPriceRealtyResultType"
               id="layerMyInfoMarketPriceRealtyResultType001"
             >
-              <BoxCheckLabel>전세</BoxCheckLabel>
+              <BoxCheckLabel>매매</BoxCheckLabel>
             </BoxCheck>
           </BoxCheckListItem>
           <BoxCheckListItem>
@@ -163,7 +163,7 @@ export default {
               name="layerMyInfoMarketPriceRealtyResultType"
               id="layerMyInfoMarketPriceRealtyResultType002"
             >
-              <BoxCheckLabel>매매</BoxCheckLabel>
+              <BoxCheckLabel>전세</BoxCheckLabel>
             </BoxCheck>
           </BoxCheckListItem>
         </BoxCheckList>
@@ -173,17 +173,15 @@ export default {
 
       <div>
         <BasicBox>
-          <div class="align-center">
-            <div :class="[$style['head']]">
-              <UnitText
-                size="large"
-                rightUnit="만원"
-                align="center"
-                verticalAlign="center"
-                >8억 2,700</UnitText
-              >
-              <div class="text-body-3 color-gray">최근시세</div>
-            </div>
+          <div :class="[$style['head']]">
+            <UnitText
+              size="large"
+              rightUnit="만원"
+              align="center"
+              verticalAlign="center"
+              >8억 2,700</UnitText
+            >
+            <div class="text-body-3 color-gray">최근시세</div>
           </div>
 
           <BasicHr
@@ -196,10 +194,15 @@ export default {
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>상한가</KeyValueTitle>
               <KeyValueText>
-                <div class="flex-box justify-conten-end">
-                  <div class="flex-box__cell">2억 6,000 만원</div>
+                <div class="flex-box">
+                  <div class="flex-box__cell flex-1 align-right">
+                    2억 6,000 만원
+                  </div>
                   <div class="flex-box__cell">
-                    <RoundStatus theme="nonary">
+                    <RoundStatus
+                      theme="nonary"
+                      :classNames="{ wrap: 'display-block' }"
+                    >
                       <span class="flex-box">
                         <span class="flex-box__cell">
                           <span :class="$style['arrow']">
@@ -208,6 +211,7 @@ export default {
                         </span>
                         <span class="flex-box__cell flex-box__cell--mini">
                           2.5%
+                          <span class="for-a11y">상승</span>
                         </span>
                       </span>
                     </RoundStatus>
@@ -219,10 +223,15 @@ export default {
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>하한가</KeyValueTitle>
               <KeyValueText>
-                <div class="flex-box justify-conten-end">
-                  <div class="flex-box__cell">2억 3,000 만원</div>
+                <div class="flex-box">
+                  <div class="flex-box__cell flex-1 align-right">
+                    2억 3,000 만원
+                  </div>
                   <div class="flex-box__cell">
-                    <RoundStatus theme="denary">
+                    <RoundStatus
+                      theme="denary"
+                      :classNames="{ wrap: 'display-block' }"
+                    >
                       <span class="flex-box">
                         <span class="flex-box__cell">
                           <span :class="$style['arrow']">
@@ -231,6 +240,7 @@ export default {
                         </span>
                         <span class="flex-box__cell flex-box__cell--mini">
                           2.0%
+                          <span class="for-a11y">하락</span>
                         </span>
                       </span>
                     </RoundStatus>
@@ -250,7 +260,9 @@ export default {
             <RoundTabButton tagName="button" type="button">3년</RoundTabButton>
           </RoundTab>
 
-          <div class="row-margin-contents-group">// 그래프 영역</div>
+          <div class="row-margin-contents-group">
+            // 그래프 영역 라이브러리 확인 후 진행
+          </div>
         </div>
 
         <div :class="$style['icon-list']">

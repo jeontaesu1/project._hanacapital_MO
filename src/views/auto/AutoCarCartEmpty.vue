@@ -53,7 +53,7 @@ export default {
       </PageMainText>
     </PageTextGroup>
 
-    <IllustObject type="license" />
+    <IllustObject />
 
     <template v-slot:foot>
       <ButtonList
