@@ -81,7 +81,12 @@ const datas = () => [
         path: '/guide/identification-002',
         status: 'end',
         create: '2023.03.24',
-        log: [],
+        log: [
+          {
+            date: '2023.05.05',
+            text: '팝업 추가\n- 메뉴진입 본인인증 안내',
+          },
+        ],
       },
       {
         depth2: '신분증 촬영 및 정보 입력',
@@ -1382,8 +1387,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/sales-new-car/new-counseling',
-        status: 'ing',
-        create: '2023.05.05',
+        status: '',
+        create: '',
         log: [],
       },
       {
@@ -1797,8 +1802,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/auto-car-cart-001',
-        status: '',
-        create: '',
+        status: 'partend',
+        create: '2023.05.05',
         log: [],
       },
     ],
@@ -2060,10 +2065,6 @@ const datas = () => [
             date: '2023.04.28',
             text: '팝업 추가\n- 계약서류 조회\n- 이메일 전송\n- 신용정보조회동의\n- 신용정보조회동의 완료\n- 본인확인(URL진입)\n- 계약정보확인\n- 물품수령정보\n- 동의하기\n- 확인완료\n- 할부상담신청\n- 한도조회결과\n- 할부신청정보입력\n- 품목 검색\n- 할부상담 결과안내',
           },
-          {
-            date: '2023.05.05',
-            text: '팝업 추가\n- 약정 정보 확인\n- 계약정보 최종확인\n- 주문서\n- 리스계약확인서\n- 약정완료\n- 약정실패',
-          },
         ],
       },
       {
@@ -2082,7 +2083,7 @@ const datas = () => [
           },
           {
             date: '2023.05.05',
-            text: '팝업 추가\n- 계약정보 최종확인_리스 승계 후',
+            text: '팝업 추가\n- 승계확약서_오토리스\n- 승계확약서_오토리스\n- 계약정보 최종확인_리스 승계 후\n- 계약정보 최종확인_장기렌터카 승계전\n- 계약정보 최종확인_장기렌터카 신규/승계후/연장',
           },
         ],
       },
@@ -2093,7 +2094,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/my-loan-progress-012',
-        status: 'partend',
+        status: 'end',
         create: '2023.05.05',
         log: [],
       },
@@ -2620,7 +2621,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '부동산 시세조회',
+        depth2: '부동산 시세조회\nMI_M01_p014',
         depth3: '',
         depth4: '',
         depth5: '',
@@ -2631,7 +2632,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '부동산 시세조회',
+        depth2: '부동산 시세조회\nMI_M01_p014',
         depth3: '팝업',
         depth4: '',
         depth5: '',
