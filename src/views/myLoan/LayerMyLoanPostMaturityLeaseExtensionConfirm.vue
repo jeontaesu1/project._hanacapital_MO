@@ -86,7 +86,7 @@ export default {
       <!-- Case : 운용리스일 경우 노출 -->
       <div>
         <BasicBox>
-          <KeyValue margin="regular">
+          <KeyValue margin="regular" verticalAlign="center">
             <KeyValueItem
               :classNames="{
                 item: 'text-body-3',

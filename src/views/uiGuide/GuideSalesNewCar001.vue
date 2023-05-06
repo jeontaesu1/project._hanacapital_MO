@@ -6,7 +6,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-// import Layer from '@/views/';
+import LayerSalesNewCarUnregisteredBonds from '@/views/salesNewCar/LayerSalesNewCarUnregisteredBonds.vue';
 
 export default {
   components: {
@@ -14,7 +14,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    // Layer,
+    LayerSalesNewCarUnregisteredBonds,
   },
   setup() {
     const layer001 = ref(null);
@@ -41,11 +41,11 @@ export default {
     >
       <ButtonListItem>
         <BasicButton @click="layer001Open"
-          >ㅇㅇㅇㅇㅇ<br />ㅁㅁㅁㅁㅁㅁ</BasicButton
+          >차량/저당 미등록 채권 안내<br />NC_M01_l002</BasicButton
         >
       </ButtonListItem>
     </ButtonList>
 
-    <Layer ref="layer001" />
+    <LayerSalesNewCarUnregisteredBonds ref="layer001" />
   </PageContents>
 </template>

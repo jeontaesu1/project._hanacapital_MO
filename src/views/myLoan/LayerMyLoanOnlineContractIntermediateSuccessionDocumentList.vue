@@ -12,6 +12,7 @@ import PageMainText from '@/components/ui/text/PageMainText.vue';
 import PageSubText from '@/components/ui/text/PageSubText.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
+import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
 import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
@@ -32,6 +33,7 @@ export default {
     PageSubText,
     BasicBox,
     BasicBoxHead,
+    BasicBoxHeadLeft,
     KeyValue,
     KeyValueItem,
     KeyValueTitle,

@@ -21,6 +21,9 @@ import LayerMyLoanOnlineContractIntermediateIdentification from '@/views/myLoan/
 import LayerMyLoanOnlineContractIntermediateList from '@/views/myLoan/LayerMyLoanOnlineContractIntermediateList.vue';
 import LayerMyLoanOnlineContractIntermediateContractorConfirm from '@/views/myLoan/LayerMyLoanOnlineContractIntermediateContractorConfirm.vue';
 import LayerMyLoanOnlineContractIntermediateAgree from '@/views/myLoan/LayerMyLoanOnlineContractIntermediateAgree.vue';
+import LayerMyLoanOnlineContractIntermediateDocument001 from '@/views/myLoan/LayerMyLoanOnlineContractIntermediateDocument001.vue';
+import LayerMyLoanOnlineContractIntermediateDocument002 from '@/views/myLoan/LayerMyLoanOnlineContractIntermediateDocument002.vue';
+import LayerMyLoanOnlineContractIntermediateDocument003 from '@/views/myLoan/LayerMyLoanOnlineContractIntermediateDocument003.vue';
 import LayerMyLoanOnlineContractIntermediateConfirm from '@/views/myLoan/LayerMyLoanOnlineContractIntermediateConfirm.vue';
 import LayerMyLoanOnlineContractIntermediateComplete from '@/views/myLoan/LayerMyLoanOnlineContractIntermediateComplete.vue';
 import LayerMyLoanOnlineContractIntermediateFail from '@/views/myLoan/LayerMyLoanOnlineContractIntermediateFail.vue';
@@ -38,8 +41,11 @@ import LayerMyLoanOnlineContractIntermediateSuccessionAssigneeComplete from '@/v
 import LayerMyLoanOnlineContractIntermediateSuccessionDocumentList from '@/views/myLoan/LayerMyLoanOnlineContractIntermediateSuccessionDocumentList.vue';
 import LayerMyLoanOnlineContractURL from '@/views/myLoan/LayerMyLoanOnlineContractURL.vue';
 import LayerMyLoanOnlineContractURLConfirm from '@/views/myLoan/LayerMyLoanOnlineContractURLConfirm.vue';
+import LayerMyLoanOnlineContractURLSelectDocument from '@/views/myLoan/LayerMyLoanOnlineContractURLSelectDocument.vue';
 import LayerMyLoanOnlineContractURLOrderSheet from '@/views/myLoan/LayerMyLoanOnlineContractURLOrderSheet.vue';
 import LayerMyLoanOnlineContractURLLease from '@/views/myLoan/LayerMyLoanOnlineContractURLLease.vue';
+import LayerMyLoanOnlineContractURLThing from '@/views/myLoan/LayerMyLoanOnlineContractURLThing.vue';
+import LayerMyLoanOnlineContractURLLeaseThingCheck from '@/views/myLoan/LayerMyLoanOnlineContractURLLeaseThingCheck.vue';
 import LayerMyLoanOnlineContractURLComplete from '@/views/myLoan/LayerMyLoanOnlineContractURLComplete.vue';
 import LayerMyLoanOnlineContractURLFail from '@/views/myLoan/LayerMyLoanOnlineContractURLFail.vue';
 
@@ -64,6 +70,9 @@ export default {
     LayerMyLoanOnlineContractIntermediateList,
     LayerMyLoanOnlineContractIntermediateContractorConfirm,
     LayerMyLoanOnlineContractIntermediateAgree,
+    LayerMyLoanOnlineContractIntermediateDocument001,
+    LayerMyLoanOnlineContractIntermediateDocument002,
+    LayerMyLoanOnlineContractIntermediateDocument003,
     LayerMyLoanOnlineContractIntermediateConfirm,
     LayerMyLoanOnlineContractIntermediateComplete,
     LayerMyLoanOnlineContractIntermediateFail,
@@ -81,8 +90,11 @@ export default {
     LayerMyLoanOnlineContractIntermediateSuccessionDocumentList,
     LayerMyLoanOnlineContractURL,
     LayerMyLoanOnlineContractURLConfirm,
+    LayerMyLoanOnlineContractURLSelectDocument,
     LayerMyLoanOnlineContractURLOrderSheet,
     LayerMyLoanOnlineContractURLLease,
+    LayerMyLoanOnlineContractURLThing,
+    LayerMyLoanOnlineContractURLLeaseThingCheck,
     LayerMyLoanOnlineContractURLComplete,
     LayerMyLoanOnlineContractURLFail,
   },
@@ -123,6 +135,12 @@ export default {
     const layer036 = ref(null);
     const layer037 = ref(null);
     const layer038 = ref(null);
+    const layer039 = ref(null);
+    const layer040 = ref(null);
+    const layer041 = ref(null);
+    const layer042 = ref(null);
+    const layer043 = ref(null);
+    const layer044 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -232,6 +250,24 @@ export default {
     const layer038Open = (e = {}) => {
       layer038.value.layer.open(e.target);
     };
+    const layer039Open = (e = {}) => {
+      layer039.value.layer.open(e.target);
+    };
+    const layer040Open = (e = {}) => {
+      layer040.value.layer.open(e.target);
+    };
+    const layer041Open = (e = {}) => {
+      layer041.value.layer.open(e.target);
+    };
+    const layer042Open = (e = {}) => {
+      layer042.value.layer.open(e.target);
+    };
+    const layer043Open = (e = {}) => {
+      layer043.value.layer.open(e.target);
+    };
+    const layer044Open = (e = {}) => {
+      layer044.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -270,6 +306,12 @@ export default {
       layer036,
       layer037,
       layer038,
+      layer039,
+      layer040,
+      layer041,
+      layer042,
+      layer043,
+      layer044,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -306,6 +348,12 @@ export default {
       layer036Open,
       layer037Open,
       layer038Open,
+      layer039Open,
+      layer040Open,
+      layer041Open,
+      layer042Open,
+      layer043Open,
+      layer044Open,
     };
   },
 };
@@ -395,107 +443,137 @@ export default {
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer018Open">
+        <BasicButton @click="layer018Open"
+          >중도금 분할 실행 동의서<br />BF_M04_l008</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer019Open"
+          >채권 양도 담보설정계약서<br />BF_M04_l009</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer020Open"
+          >채권 양도 통지서<br />BF_M04_l010</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer021Open">
           대출신청정보 확인<br />BF_M04_l011
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer019Open">
+        <BasicButton @click="layer022Open">
           온라인 약정 완료<br />BF_M04_l012
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer020Open">
+        <BasicButton @click="layer023Open">
           온라인 약정 실패<br />BF_M04_l012
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer021Open">
+        <BasicButton @click="layer024Open">
           양도인 승계_본인확인<br />BF_M04_l013
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer022Open">
+        <BasicButton @click="layer025Open">
           양도인 승계_승계 호실 검색<br />BF_M04_l014
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer023Open">
+        <BasicButton @click="layer026Open">
           양도인 승계_승계 정보 확인<br />BF_M04_l015
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer024Open">
+        <BasicButton @click="layer027Open">
           양도인 승계_승계 신청 동의<br />BF_M04_l016
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer025Open">
+        <BasicButton @click="layer028Open">
           양도인 승계_신청 완료<br />BF_M04_l017
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer026Open">
+        <BasicButton @click="layer029Open">
           신용정보조회동의<br />BF_M04_l003
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer027Open">
+        <BasicButton @click="layer030Open">
           양수인 승계_승계 호실 검색<br />BF_M04_l019
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer028Open">
+        <BasicButton @click="layer031Open">
           양수인 승계_계약자정보 입력<br />BF_M04_l020
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer029Open">
+        <BasicButton @click="layer032Open">
           양수인 승계_계좌 정보 입력<br />BF_M04_l021
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer030Open">
+        <BasicButton @click="layer033Open">
           계약정보 최종확인<br />BF_M04_l022
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer031Open">
+        <BasicButton @click="layer034Open">
           양수인 승계_신청 완료<br />BF_M04_l023
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer032Open">
+        <BasicButton @click="layer035Open">
           서류 요청<br />BF_M04_l025
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer033Open">
+        <BasicButton @click="layer036Open">
           약정 정보 확인<br />BF_M05_l006
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer034Open">
+        <BasicButton @click="layer037Open">
           계약정보 최종확인<br />BF_M05_l007
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer035Open">
+        <BasicButton @click="layer038Open"
+          >약정 서류 확인<br />BF_M05_l008</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer039Open">
           주문서<br />BF_M05_l009
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer036Open">
+        <BasicButton @click="layer040Open">
           리스계약확인서<br />BF_M05_l010
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer037Open">
+        <BasicButton @click="layer041Open"
+          >물건수령증(장비견적서 포함)<br />BF_M05_l011</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer042Open"
+          >리스물건 점검보고서<br />BF_M05_l012</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer043Open">
           약정완료<br />BF_M05_l013
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer038Open">
+        <BasicButton @click="layer044Open">
           약정실패<br />BF_M05_l013
         </BasicButton>
       </ButtonListItem>
@@ -516,42 +594,48 @@ export default {
     <LayerMyLoanOnlineContractIntermediateList ref="layer015" />
     <LayerMyLoanOnlineContractIntermediateContractorConfirm ref="layer016" />
     <LayerMyLoanOnlineContractIntermediateAgree ref="layer017" />
-    <LayerMyLoanOnlineContractIntermediateConfirm ref="layer018" />
-    <LayerMyLoanOnlineContractIntermediateComplete ref="layer019" />
-    <LayerMyLoanOnlineContractIntermediateFail ref="layer020" />
+    <LayerMyLoanOnlineContractIntermediateDocument001 ref="layer018" />
+    <LayerMyLoanOnlineContractIntermediateDocument002 ref="layer019" />
+    <LayerMyLoanOnlineContractIntermediateDocument003 ref="layer020" />
+    <LayerMyLoanOnlineContractIntermediateConfirm ref="layer021" />
+    <LayerMyLoanOnlineContractIntermediateComplete ref="layer022" />
+    <LayerMyLoanOnlineContractIntermediateFail ref="layer023" />
     <LayerMyLoanOnlineContractIntermediateSuccessionIdentification
-      ref="layer021"
+      ref="layer024"
     />
-    <LayerMyLoanOnlineContractIntermediateSuccessionList ref="layer022" />
-    <LayerMyLoanOnlineContractIntermediateSuccessionConfirm ref="layer023" />
-    <LayerMyLoanOnlineContractIntermediateSuccessionAgree ref="layer024" />
-    <LayerMyLoanOnlineContractIntermediateSuccessionComplete ref="layer025" />
+    <LayerMyLoanOnlineContractIntermediateSuccessionList ref="layer025" />
+    <LayerMyLoanOnlineContractIntermediateSuccessionConfirm ref="layer026" />
+    <LayerMyLoanOnlineContractIntermediateSuccessionAgree ref="layer027" />
+    <LayerMyLoanOnlineContractIntermediateSuccessionComplete ref="layer028" />
     <LayerMyLoanOnlineContractIntermediateSuccessionCreditInfoAgree
-      ref="layer026"
-    />
-    <LayerMyLoanOnlineContractIntermediateSuccessionAssigneeRoomList
-      ref="layer027"
-    />
-    <LayerMyLoanOnlineContractIntermediateSuccessionAssigneeForm
-      ref="layer028"
-    />
-    <LayerMyLoanOnlineContractIntermediateSuccessionAssigneeAccount
       ref="layer029"
     />
-    <LayerMyLoanOnlineContractIntermediateSuccessionAssigneeConfirm
+    <LayerMyLoanOnlineContractIntermediateSuccessionAssigneeRoomList
       ref="layer030"
     />
-    <LayerMyLoanOnlineContractIntermediateSuccessionAssigneeComplete
+    <LayerMyLoanOnlineContractIntermediateSuccessionAssigneeForm
       ref="layer031"
     />
-    <LayerMyLoanOnlineContractIntermediateSuccessionDocumentList
+    <LayerMyLoanOnlineContractIntermediateSuccessionAssigneeAccount
       ref="layer032"
     />
-    <LayerMyLoanOnlineContractURL ref="layer033" />
-    <LayerMyLoanOnlineContractURLConfirm ref="layer034" />
-    <LayerMyLoanOnlineContractURLOrderSheet ref="layer035" />
-    <LayerMyLoanOnlineContractURLLease ref="layer036" />
-    <LayerMyLoanOnlineContractURLComplete ref="layer037" />
-    <LayerMyLoanOnlineContractURLFail ref="layer038" />
+    <LayerMyLoanOnlineContractIntermediateSuccessionAssigneeConfirm
+      ref="layer033"
+    />
+    <LayerMyLoanOnlineContractIntermediateSuccessionAssigneeComplete
+      ref="layer034"
+    />
+    <LayerMyLoanOnlineContractIntermediateSuccessionDocumentList
+      ref="layer035"
+    />
+    <LayerMyLoanOnlineContractURL ref="layer036" />
+    <LayerMyLoanOnlineContractURLConfirm ref="layer037" />
+    <LayerMyLoanOnlineContractURLSelectDocument ref="layer038" />
+    <LayerMyLoanOnlineContractURLOrderSheet ref="layer039" />
+    <LayerMyLoanOnlineContractURLLease ref="layer040" />
+    <LayerMyLoanOnlineContractURLThing ref="layer041" />
+    <LayerMyLoanOnlineContractURLLeaseThingCheck ref="layer042" />
+    <LayerMyLoanOnlineContractURLComplete ref="layer043" />
+    <LayerMyLoanOnlineContractURLFail ref="layer044" />
   </PageContents>
 </template>

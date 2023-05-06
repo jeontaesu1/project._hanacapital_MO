@@ -110,7 +110,6 @@ export default {
                 <BankSelect
                   id="layerMyLoanOnlineContractIntermediateSuccessionAssigneeAccountBank"
                   buttonId="layerMyLoanOnlineContractIntermediateSuccessionAssigneeAccountBankButton"
-                  :onChange="testInputEvent"
                 />
               </InputBlockCell>
             </InputBlock>
