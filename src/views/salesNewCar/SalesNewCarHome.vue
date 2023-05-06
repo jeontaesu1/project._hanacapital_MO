@@ -15,10 +15,10 @@ import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
-import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
-import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 import BoxCheck from '@/components/ui/form/BoxCheck.vue';
 import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
+import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
+import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
@@ -32,6 +32,11 @@ import UiAccordionItem from '@/components/ui/accordion/UiAccordionItem.vue';
 import UiAccordionLayer from '@/components/ui/accordion/UiAccordionLayer.vue';
 import UiAccordionOpener from '@/components/ui/accordion/UiAccordionOpener.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
+import IconPerson from '@/assets/images/icon/person.svg?component';
+import FilterButton from '@/components/ui/button/FilterButton.vue';
+import RoundStatus from '@/components/ui/text/RoundStatus.vue';
+import IconArrow from '@/assets/images/icon/dropdown.svg?component';
+import TextButton from '@/components/ui/button/TextButton.vue';
 
 export default {
   components: {
@@ -43,10 +48,10 @@ export default {
     KeyValueText,
     BasicButton,
     BasicHr,
-    BoxCheckList,
-    BoxCheckListItem,
     BoxCheck,
     BoxCheckLabel,
+    BoxCheckList,
+    BoxCheckListItem,
     InputBlock,
     InputBlockCell,
     BasicInput,
@@ -62,6 +67,11 @@ export default {
     UnitText,
     ButtonList,
     ButtonListItem,
+    FilterButton,
+    RoundStatus,
+    TextButton,
+    IconPerson,
+    IconArrow,
   },
   setup() {
     const store = {
@@ -78,9 +88,9 @@ export default {
     });
 
     onMounted(() => {
-      store.ui.header.setTitle(() => '현황조회');
+      store.ui.header.setTitle(() => '중고할부·론 홈');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => []);
+      store.ui.header.setRightButtons(() => ['menu']);
     });
 
     onUnmounted(() => {
@@ -98,54 +108,74 @@ export default {
 
 <template>
   <PageContents>
-    <template v-slot:head>
-      <ul :class="$style['status-inquiry']">
-        <li :class="$style['status-inquiry__item']">
-          <button type="button" :class="$style['status-inquiry__category']">
-            <span :class="$style['status-inquiry__number']">10</span>
-            <span :class="$style['status-inquiry__text']">전체</span>
-          </button>
-        </li>
-        <li :class="$style['status-inquiry__item']">
-          <button
-            type="button"
-            :class="[
-              $style['status-inquiry__category'],
-              $style['status-inquiry__category--active'],
-            ]"
-          >
-            <span :class="$style['status-inquiry__number']">4</span>
-            <span :class="$style['status-inquiry__text']">신용동의</span>
-          </button>
-        </li>
-        <li :class="$style['status-inquiry__item']">
-          <button type="button" :class="$style['status-inquiry__category']">
-            <span :class="$style['status-inquiry__number']">3</span>
-            <span :class="$style['status-inquiry__text']">상담</span>
-          </button>
-        </li>
-        <li :class="$style['status-inquiry__item']">
-          <button type="button" :class="$style['status-inquiry__category']">
-            <span :class="$style['status-inquiry__number']">2</span>
-            <span :class="$style['status-inquiry__text']">계약</span>
-          </button>
-        </li>
-        <li :class="$style['status-inquiry__item']">
-          <button type="button" :class="$style['status-inquiry__category']">
-            <span :class="$style['status-inquiry__number']">1</span>
-            <span :class="$style['status-inquiry__text']">심사</span>
-          </button>
-        </li>
-        <li :class="$style['status-inquiry__item']">
-          <button type="button" :class="$style['status-inquiry__category']">
-            <span :class="$style['status-inquiry__number']">1</span>
-            <span :class="$style['status-inquiry__text']">송금</span>
-          </button>
-        </li>
-      </ul>
-    </template>
+    <section class="row-margin-container-medium">
+      <BasicBox>
+        <div class="flex-box">
+          <div class="flex-box__cell">
+            <div :class="$style['icon-profile']"><IconPerson /></div>
+          </div>
+          <div class="flex-box__cell--medium">
+            <p class="text-body-5 font-weight-light row-margin-small">
+              하나캐피탈
+            </p>
+            <p class="text-title-1 font-weight-medium">김하나</p>
+          </div>
+        </div>
+      </BasicBox>
+    </section>
 
-    <div>
+    <section>
+      <div class="flex-box row-margin-contents">
+        <div class="flex-box__cell flex-1">
+          <h3 class="text-title-2 row-margin-none">현황조회</h3>
+        </div>
+
+        <div class="flex-box__cell">
+          <!-- <FilterButton :active="true" /> -->
+          <FilterButton />
+        </div>
+      </div>
+      <div class="row-margin-contents-group row-margin-top-none">
+        <ul :class="[$style['status-inquiry'], $style['status-inquiry--gap']]">
+          <li :class="$style['status-inquiry__item']">
+            <button type="button" :class="$style['status-inquiry__category']">
+              <span :class="$style['status-inquiry__number']">10</span>
+              <span :class="$style['status-inquiry__text']">전체</span>
+            </button>
+          </li>
+          <li :class="$style['status-inquiry__item']">
+            <button
+              type="button"
+              :class="[
+                $style['status-inquiry__category'],
+                $style['status-inquiry__category--active'],
+              ]"
+            >
+              <span :class="$style['status-inquiry__number']">4</span>
+              <span :class="$style['status-inquiry__text']">신용동의</span>
+            </button>
+          </li>
+          <li :class="$style['status-inquiry__item']">
+            <button type="button" :class="$style['status-inquiry__category']">
+              <span :class="$style['status-inquiry__number']">3</span>
+              <span :class="$style['status-inquiry__text']">상담</span>
+            </button>
+          </li>
+          <li :class="$style['status-inquiry__item']">
+            <button type="button" :class="$style['status-inquiry__category']">
+              <span :class="$style['status-inquiry__number']">2</span>
+              <span :class="$style['status-inquiry__text']">계약</span>
+            </button>
+          </li>
+          <li :class="$style['status-inquiry__item']">
+            <button type="button" :class="$style['status-inquiry__category']">
+              <span :class="$style['status-inquiry__number']">1</span>
+              <span :class="$style['status-inquiry__text']">송금</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+
       <FormList>
         <FormListItem titleText="조회기간" :forceFocus="true">
           <FormInvalid :error="state.dateError">
@@ -156,7 +186,7 @@ export default {
                   name="lMBlogStatusInquiryDateCheck"
                   id="lMBlogStatusInquiryDateCheck001"
                 >
-                  <BoxCheckLabel>1개월</BoxCheckLabel>
+                  <BoxCheckLabel>1주</BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
               <BoxCheckListItem>
@@ -165,7 +195,7 @@ export default {
                   name="lMBlogStatusInquiryDateCheck"
                   id="lMBlogStatusInquiryDateCheck002"
                 >
-                  <BoxCheckLabel>3개월</BoxCheckLabel>
+                  <BoxCheckLabel>2주</BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
               <BoxCheckListItem>
@@ -174,7 +204,7 @@ export default {
                   name="lMBlogStatusInquiryDateCheck"
                   id="lMBlogStatusInquiryDateCheck003"
                 >
-                  <BoxCheckLabel>6개월</BoxCheckLabel>
+                  <BoxCheckLabel>1개월</BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
               <BoxCheckListItem>
@@ -183,7 +213,7 @@ export default {
                   name="lMBlogStatusInquiryDateCheck"
                   id="lMBlogStatusInquiryDateCheck004"
                 >
-                  <BoxCheckLabel>직접입력</BoxCheckLabel>
+                  <BoxCheckLabel>직접설정</BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
             </BoxCheckList>
@@ -213,23 +243,46 @@ export default {
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
-
-        <FormListItem titleText="고객명 입력" target="#lMBlogStatusInquiryName">
-          <FormInvalid :error="state.nameError">
-            <InputBlock :error="state.nameError">
-              <InputBlockCell :flexible="true">
-                <BasicInput title="고객명 입력" id="lMBlogStatusInquiryName" />
-              </InputBlockCell>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
+        <FormListItem titleText="조회조건" :forceFocus="true">
+          <FormInvalid :error="state.testError001">
+            <BoxCheckList :classNames="{ wrap: 'row-margin-item-group' }">
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="testInputCheck014"
+                  id="testInputCheck014_001"
+                  :defaultChecked="true"
+                >
+                  <BoxCheckLabel>고객명</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="testInputCheck014"
+                  id="testInputCheck014_002"
+                >
+                  <BoxCheckLabel>메모</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+            </BoxCheckList>
           </FormInvalid>
         </FormListItem>
+        <InputBlock type="search" class="row-margin-item-group">
+          <InputBlockCell :flexible="true">
+            <BasicInput
+              type="search"
+              title="검색어 입력"
+              placeholder="검색어 입력"
+            />
+          </InputBlockCell>
+        </InputBlock>
       </FormList>
 
       <div class="row-margin-contents-group">
         <BasicButton :line="true"> 조회 </BasicButton>
       </div>
-    </div>
+    </section>
 
     <BasicHr className="row-margin-container-medium" />
 
@@ -237,23 +290,39 @@ export default {
       <!-- Case : 신용동의 -->
       <UiAccordionItem :classNames="{ item: 'row-margin-item-medium' }">
         <BasicBox>
-          <div :class="[$style['division-info'], 'row-margin-small']">
-            <ul :class="$style['division-info__list']">
-              <li :class="[$style['division-info__item'], $style['date']]">
-                2023.01.10
-              </li>
-              <li :class="[$style['division-info__item'], $style['category']]">
-                신용동의
-              </li>
-            </ul>
+          <div class="flex-box row-margin-item">
+            <div class="flex-box__cell flex-1">
+              <div :class="$style['division-info']">
+                <ul :class="$style['division-info__list']">
+                  <li :class="$style['division-info__item']">
+                    <div class="color-black text-body-4 font-weight-light">
+                      2023.01.10
+                    </div>
+                  </li>
+                  <li :class="$style['division-info__item']">
+                    <div class="color-green text-body-4 font-weight-medium">
+                      신용동의
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <p class="text-body-1 row-margin-small font-weight-medium">
+                홍길동
+              </p>
+            </div>
+            <div class="flex-box__cell">
+              <RoundStatus theme="denary">모바일</RoundStatus>
+            </div>
           </div>
-
           <div class="flex-box">
             <div class="flex-box__cell flex-1">
-              <h3 class="text-body-1 font-weight-medium">김하나</h3>
+              <h4 :class="$style['amount-text']">신청금액</h4>
             </div>
             <div class="flex-box__cell flex-box__cell--medium">
               <div class="flex-box">
+                <div class="flex-box__cell">
+                  <UnitText size="regular" rightUnit="만원">3,000</UnitText>
+                </div>
                 <div class="flex-box__cell flex-box__cell--small">
                   <UiAccordionOpener
                     :classNames="{ button: $style['opener'] }"
@@ -263,41 +332,104 @@ export default {
             </div>
           </div>
 
-          <UiAccordionLayer>
+          <UiAccordionLayer class="row-margin-contents-small">
             <div :class="$style['contents']">
+              <BasicHr
+                type="contents"
+                theme="quaternary"
+                className="row-margin-contents-group"
+              />
+              <div
+                :class="[
+                  $style['multi-progress'],
+                  'row-margin-contents-small row-margin-top-none',
+                ]"
+              >
+                <ul :class="$style['multi-progress__list']">
+                  <li>본인인증</li>
+                  <li :class="$style['active']">계약자정보</li>
+                  <li>금융조건</li>
+                  <li>면허정보</li>
+                  <li>약관동의</li>
+                  <li>본인인증</li>
+                  <li>ARS</li>
+                </ul>
+              </div>
               <KeyValue margin="regular">
                 <KeyValueItem
                   :classNames="{
                     item: 'text-body-3',
                   }"
                 >
-                  <KeyValueTitle>신용동의</KeyValueTitle>
-                  <KeyValueText>2023.32.32</KeyValueText>
+                  <KeyValueTitle>주민등록번호</KeyValueTitle>
+                  <KeyValueText>920101-2******</KeyValueText>
+                </KeyValueItem>
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>요청일자</KeyValueTitle>
+                  <KeyValueText>2022.11.14</KeyValueText>
+                </KeyValueItem>
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>심사상태</KeyValueTitle>
+                  <KeyValueText>동의완료</KeyValueText>
+                </KeyValueItem>
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>메모</KeyValueTitle>
+                  <KeyValueText>메모 내용</KeyValueText>
                 </KeyValueItem>
               </KeyValue>
+              <div
+                :class="[$style['logs__button'], 'row-margin-contents-small']"
+              >
+                <BasicButton theme="tertiary" size="small">연장</BasicButton>
+              </div>
             </div>
           </UiAccordionLayer>
         </BasicBox>
       </UiAccordionItem>
       <!-- // Case : 신용동의 -->
 
-      <!-- Case : 상담 -->
+      <!-- Case : 상담중 -->
       <UiAccordionItem :classNames="{ item: 'row-margin-item-medium' }">
         <BasicBox>
-          <div :class="[$style['division-info'], 'row-margin-small']">
-            <ul :class="$style['division-info__list']">
-              <li :class="[$style['division-info__item'], $style['date']]">
-                2023.01.10
-              </li>
-              <li :class="[$style['division-info__item'], $style['category']]">
-                상담
-              </li>
-            </ul>
+          <div class="flex-box row-margin-item">
+            <div class="flex-box__cell flex-1">
+              <div :class="$style['division-info']">
+                <ul :class="$style['division-info__list']">
+                  <li :class="$style['division-info__item']">
+                    <div class="color-black text-body-4 font-weight-light">
+                      2023.01.10
+                    </div>
+                  </li>
+                  <li :class="$style['division-info__item']">
+                    <div class="color-green text-body-4 font-weight-medium">
+                      상담중
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <p class="text-body-1 row-margin-small font-weight-medium">
+                홍길동
+              </p>
+            </div>
+            <div class="flex-box__cell">
+              <RoundStatus theme="denary">모바일</RoundStatus>
+            </div>
           </div>
-
           <div class="flex-box">
             <div class="flex-box__cell flex-1">
-              <h3 class="text-body-1 font-weight-medium">이하나</h3>
+              <h4 :class="$style['amount-text']">신청금액</h4>
             </div>
             <div class="flex-box__cell flex-box__cell--medium">
               <div class="flex-box">
@@ -313,52 +445,64 @@ export default {
             </div>
           </div>
 
-          <UiAccordionLayer>
+          <UiAccordionLayer class="row-margin-contents-small">
             <div :class="$style['contents']">
+              <BasicHr
+                type="contents"
+                theme="quaternary"
+                className="row-margin-contents-group"
+              />
+              <div
+                :class="[
+                  $style['multi-progress'],
+                  'row-margin-contents-small row-margin-top-none',
+                ]"
+              >
+                <ul :class="$style['multi-progress__list']">
+                  <li>본인인증</li>
+                  <li :class="$style['active']">계약자정보</li>
+                  <li>금융조건</li>
+                  <li>면허정보</li>
+                  <li>약관동의</li>
+                  <li>본인인증</li>
+                  <li>ARS</li>
+                </ul>
+              </div>
               <KeyValue margin="regular">
                 <KeyValueItem
                   :classNames="{
                     item: 'text-body-3',
                   }"
                 >
-                  <KeyValueTitle>상품명</KeyValueTitle>
-                  <KeyValueText>행복아파트론</KeyValueText>
+                  <KeyValueTitle>주민등록번호</KeyValueTitle>
+                  <KeyValueText>920101-2******</KeyValueText>
                 </KeyValueItem>
-
                 <KeyValueItem
                   :classNames="{
                     item: 'text-body-3',
                   }"
                 >
-                  <KeyValueTitle>신용동의</KeyValueTitle>
-                  <KeyValueText>2023.01.16</KeyValueText>
+                  <KeyValueTitle>요청일자</KeyValueTitle>
+                  <KeyValueText>2022.11.14</KeyValueText>
                 </KeyValueItem>
-
                 <KeyValueItem
                   :classNames="{
                     item: 'text-body-3',
                   }"
                 >
-                  <KeyValueTitle>상담번호</KeyValueTitle>
-                  <KeyValueText>C42302010014400</KeyValueText>
+                  <KeyValueTitle>차종/모델명</KeyValueTitle>
+                  <KeyValueText
+                    >6시리즈 그란 투리스모(4세대) 630<br />Dx드라이브GT럭셔리
+                    라인</KeyValueText
+                  >
                 </KeyValueItem>
-
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>심사</KeyValueTitle>
-                  <KeyValueText>승인</KeyValueText>
-                </KeyValueItem>
-
                 <KeyValueItem
                   :classNames="{
                     item: 'text-body-3',
                   }"
                 >
                   <KeyValueTitle>대출기간</KeyValueTitle>
-                  <KeyValueText>36개월</KeyValueText>
+                  <KeyValueText>60개월</KeyValueText>
                 </KeyValueItem>
 
                 <KeyValueItem
@@ -366,44 +510,138 @@ export default {
                     item: 'text-body-3',
                   }"
                 >
-                  <KeyValueTitle>금리</KeyValueTitle>
-                  <KeyValueText>14.60%</KeyValueText>
+                  <KeyValueTitle>기본/최종 금리</KeyValueTitle>
+                  <KeyValueText>
+                    <div>7.9%/7.9%, 03/O/o</div>
+                    <div class="row-margin-item">
+                      <TextButton :underline="true" theme="secondary"
+                        >수수료차감</TextButton
+                      >
+                    </div>
+                  </KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>매매상사</KeyValueTitle>
+                  <KeyValueText>14.60 %</KeyValueText>
+                </KeyValueItem>
+                <!-- case :: 자동승인 -->
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>심사상태</KeyValueTitle>
+                  <KeyValueText>상담중-자동승인</KeyValueText>
+                </KeyValueItem>
+                <!-- //case :: 자동승인 -->
+                <!-- case :: 지점문의 -->
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>심사상태</KeyValueTitle>
+                  <KeyValueText class="color-red">상담중-지점문의</KeyValueText>
+                </KeyValueItem>
+                <!-- //case :: 지점문의 -->
+                <!-- case :: 시스템거절 -->
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>심사상태</KeyValueTitle>
+                  <KeyValueText class="color-red"
+                    >상담중-시스템거절</KeyValueText
+                  >
+                </KeyValueItem>
+                <!-- //case :: 시스템거절 -->
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>메모</KeyValueTitle>
+                  <KeyValueText>메모 내용</KeyValueText>
                 </KeyValueItem>
               </KeyValue>
-
-              <ButtonList :classNames="{ wrap: 'row-margin-contents-small' }">
+              <!-- Case :: 상담중-자동승인 -->
+              <div
+                :class="[
+                  $style['logs__button'],
+                  'row-margin-contents-small row-margin-bottom-none',
+                ]"
+              >
+                <BasicButton theme="quaternary" :line="true" size="small"
+                  >상담변경</BasicButton
+                >
+              </div>
+              <ButtonList class="row-margin-item">
                 <ButtonListItem>
-                  <BasicButton size="small" theme="tertiary"
-                    >서류등록</BasicButton
+                  <BasicButton theme="tertiary" size="small"
+                    >고객서류등록</BasicButton
                   >
                 </ButtonListItem>
                 <ButtonListItem>
-                  <BasicButton size="small">상담변경</BasicButton>
+                  <BasicButton size="small">계약확정</BasicButton>
                 </ButtonListItem>
               </ButtonList>
+              <!-- //Case :: 상담중-자동승인 -->
+              <!-- Case :: 상담중-지점문의,상담중-시스템거절 -->
+              <ButtonList class="row-margin-contents-small">
+                <ButtonListItem>
+                  <BasicButton theme="quaternary" :line="true" size="small"
+                    >상담변경</BasicButton
+                  >
+                </ButtonListItem>
+                <ButtonListItem>
+                  <BasicButton theme="tertiary" size="small"
+                    >고객서류등록</BasicButton
+                  >
+                </ButtonListItem>
+              </ButtonList>
+              <!-- //Case :: 상담중-지점문의,상담중-시스템거절 -->
             </div>
           </UiAccordionLayer>
         </BasicBox>
       </UiAccordionItem>
-      <!-- // Case : 상담 -->
+      <!-- // Case : 상담중 -->
 
-      <!-- Case : 계약 -->
+      <!-- Case : 계약중 -->
       <UiAccordionItem :classNames="{ item: 'row-margin-item-medium' }">
         <BasicBox>
-          <div :class="[$style['division-info'], 'row-margin-small']">
-            <ul :class="$style['division-info__list']">
-              <li :class="[$style['division-info__item'], $style['date']]">
-                2023.01.10
-              </li>
-              <li :class="[$style['division-info__item'], $style['category']]">
-                계약
-              </li>
-            </ul>
+          <div class="flex-box row-margin-item">
+            <div class="flex-box__cell flex-1">
+              <div :class="$style['division-info']">
+                <ul :class="$style['division-info__list']">
+                  <li :class="$style['division-info__item']">
+                    <div class="color-black text-body-4 font-weight-light">
+                      2023.01.10
+                    </div>
+                  </li>
+                  <li :class="$style['division-info__item']">
+                    <div class="color-green text-body-4 font-weight-medium">
+                      계약중
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <p class="text-body-1 row-margin-small font-weight-medium">
+                홍길동
+              </p>
+            </div>
+            <div class="flex-box__cell">
+              <RoundStatus theme="denary">모바일</RoundStatus>
+            </div>
           </div>
-
           <div class="flex-box">
             <div class="flex-box__cell flex-1">
-              <h3 class="text-body-1 font-weight-medium">박하나</h3>
+              <h4 :class="$style['amount-text']">신청금액</h4>
             </div>
             <div class="flex-box__cell flex-box__cell--medium">
               <div class="flex-box">
@@ -419,70 +657,64 @@ export default {
             </div>
           </div>
 
-          <UiAccordionLayer>
+          <UiAccordionLayer class="row-margin-contents-small">
             <div :class="$style['contents']">
+              <BasicHr
+                type="contents"
+                theme="quaternary"
+                className="row-margin-contents-group"
+              />
+              <div
+                :class="[
+                  $style['multi-progress'],
+                  'row-margin-contents-small row-margin-top-none',
+                ]"
+              >
+                <ul :class="$style['multi-progress__list']">
+                  <li>본인인증</li>
+                  <li :class="$style['active']">계약자정보</li>
+                  <li>금융조건</li>
+                  <li>면허정보</li>
+                  <li>약관동의</li>
+                  <li>본인인증</li>
+                  <li>ARS</li>
+                </ul>
+              </div>
               <KeyValue margin="regular">
                 <KeyValueItem
                   :classNames="{
                     item: 'text-body-3',
                   }"
                 >
-                  <KeyValueTitle>상품명</KeyValueTitle>
-                  <KeyValueText>행복아파트론</KeyValueText>
+                  <KeyValueTitle>주민등록번호</KeyValueTitle>
+                  <KeyValueText>920101-2******</KeyValueText>
                 </KeyValueItem>
-
                 <KeyValueItem
                   :classNames="{
                     item: 'text-body-3',
                   }"
                 >
-                  <KeyValueTitle>신용동의</KeyValueTitle>
-                  <KeyValueText>2023.01.16</KeyValueText>
+                  <KeyValueTitle>요청일자</KeyValueTitle>
+                  <KeyValueText>2022.11.14</KeyValueText>
                 </KeyValueItem>
-
                 <KeyValueItem
                   :classNames="{
                     item: 'text-body-3',
                   }"
                 >
-                  <KeyValueTitle>상담번호</KeyValueTitle>
-                  <KeyValueText>C42302010014400</KeyValueText>
+                  <KeyValueTitle>차종/모델명</KeyValueTitle>
+                  <KeyValueText
+                    >6시리즈 그란 투리스모(4세대) 630<br />Dx드라이브GT럭셔리
+                    라인</KeyValueText
+                  >
                 </KeyValueItem>
-
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>품의번호</KeyValueTitle>
-                  <KeyValueText>D42302010014400</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>심사</KeyValueTitle>
-                  <KeyValueText>승인</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>정산결과</KeyValueTitle>
-                  <KeyValueText>미완료</KeyValueText>
-                </KeyValueItem>
-
                 <KeyValueItem
                   :classNames="{
                     item: 'text-body-3',
                   }"
                 >
                   <KeyValueTitle>대출기간</KeyValueTitle>
-                  <KeyValueText>36개월</KeyValueText>
+                  <KeyValueText>60개월</KeyValueText>
                 </KeyValueItem>
 
                 <KeyValueItem
@@ -490,41 +722,150 @@ export default {
                     item: 'text-body-3',
                   }"
                 >
-                  <KeyValueTitle>금리</KeyValueTitle>
-                  <KeyValueText>14.60%</KeyValueText>
+                  <KeyValueTitle>기본/최종 금리</KeyValueTitle>
+                  <KeyValueText> 7.9%/7.9%, 03/O/o </KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>매매상사</KeyValueTitle>
+                  <KeyValueText>14.60 %</KeyValueText>
+                </KeyValueItem>
+                <!-- case :: 계약중-자동승인 -->
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>심사상태</KeyValueTitle>
+                  <KeyValueText>계약중-자동승인</KeyValueText>
+                </KeyValueItem>
+                <!-- //case :: 계약중-자동승인 -->
+                <!-- case :: 계약완료-자동승인 -->
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>심사상태</KeyValueTitle>
+                  <KeyValueText>계약완료-자동승인</KeyValueText>
+                </KeyValueItem>
+                <!-- //case :: 계약완료-자동승인 -->
+                <!-- case :: 계약중-지점문의 -->
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>심사상태</KeyValueTitle>
+                  <KeyValueText class="color-red">계약중-지점문의</KeyValueText>
+                </KeyValueItem>
+                <!-- //case :: 계약중-지점문의 -->
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>지급계좌</KeyValueTitle>
+                  <KeyValueText>하나은행 791271726311133</KeyValueText>
+                </KeyValueItem>
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>메모</KeyValueTitle>
+                  <KeyValueText>메모 내용</KeyValueText>
                 </KeyValueItem>
               </KeyValue>
-
-              <ButtonList :classNames="{ wrap: 'row-margin-contents-small' }">
+              <!-- Case :: 계약중-자동승인 -->
+              <ButtonList class="row-margin-contents-small">
                 <ButtonListItem>
-                  <BasicButton size="small" theme="tertiary"
-                    >서류등록</BasicButton
+                  <BasicButton theme="tertiary" size="small"
+                    >고객서류등록</BasicButton
+                  >
+                </ButtonListItem>
+                <ButtonListItem>
+                  <BasicButton size="small">계약확정</BasicButton>
+                </ButtonListItem>
+              </ButtonList>
+              <!-- //Case :: 계약중-자동승인 -->
+              <!-- Case :: 계약완료-자동승인 -->
+              <ButtonList class="row-margin-contents-small">
+                <ButtonListItem>
+                  <BasicButton theme="tertiary" size="small"
+                    >고객서류등록</BasicButton
+                  >
+                </ButtonListItem>
+                <ButtonListItem>
+                  <BasicButton size="small" :disabled="true"
+                    >송금요청</BasicButton
                   >
                 </ButtonListItem>
               </ButtonList>
+              <!-- //Case :: 계약완료-자동승인 -->
+
+              <!-- Case :: 상담중-지점문의,상담중-시스템거절 -->
+              <div
+                :class="[
+                  $style['logs__button'],
+                  'row-margin-contents-small row-margin-bottom-none',
+                ]"
+              >
+                <BasicButton :line="true" size="small">재상담</BasicButton>
+              </div>
+              <ButtonList class="row-margin-item">
+                <ButtonListItem>
+                  <BasicButton theme="tertiary" size="small"
+                    >고객서류등록</BasicButton
+                  >
+                </ButtonListItem>
+                <ButtonListItem>
+                  <BasicButton size="small" :disabled="true"
+                    >계약확정</BasicButton
+                  >
+                </ButtonListItem>
+              </ButtonList>
+              <!-- //Case :: 상담중-지점문의,상담중-시스템거절 -->
             </div>
           </UiAccordionLayer>
         </BasicBox>
       </UiAccordionItem>
-      <!-- // Case : 계약 -->
+      <!-- // Case : 계약중 -->
 
-      <!-- Case : 심사 -->
+      <!-- Case : 계약완료 -->
       <UiAccordionItem :classNames="{ item: 'row-margin-item-medium' }">
         <BasicBox>
-          <div :class="[$style['division-info'], 'row-margin-small']">
-            <ul :class="$style['division-info__list']">
-              <li :class="[$style['division-info__item'], $style['date']]">
-                2023.01.10
-              </li>
-              <li :class="[$style['division-info__item'], $style['category']]">
-                심사
-              </li>
-            </ul>
+          <div class="flex-box row-margin-item">
+            <div class="flex-box__cell flex-1">
+              <div :class="$style['division-info']">
+                <ul :class="$style['division-info__list']">
+                  <li :class="$style['division-info__item']">
+                    <div class="color-black text-body-4 font-weight-light">
+                      2023.01.10
+                    </div>
+                  </li>
+                  <li :class="$style['division-info__item']">
+                    <div class="color-green text-body-4 font-weight-medium">
+                      계약완료
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <p class="text-body-1 row-margin-small font-weight-medium">
+                홍길동
+              </p>
+            </div>
+            <div class="flex-box__cell">
+              <RoundStatus theme="denary">모바일</RoundStatus>
+            </div>
           </div>
-
           <div class="flex-box">
             <div class="flex-box__cell flex-1">
-              <h3 class="text-body-1 font-weight-medium">유하나</h3>
+              <h4 :class="$style['amount-text']">신청금액</h4>
             </div>
             <div class="flex-box__cell flex-box__cell--medium">
               <div class="flex-box">
@@ -540,70 +881,64 @@ export default {
             </div>
           </div>
 
-          <UiAccordionLayer>
+          <UiAccordionLayer class="row-margin-contents-small">
             <div :class="$style['contents']">
+              <BasicHr
+                type="contents"
+                theme="quaternary"
+                className="row-margin-contents-group"
+              />
+              <div
+                :class="[
+                  $style['multi-progress'],
+                  'row-margin-contents-small row-margin-top-none',
+                ]"
+              >
+                <ul :class="$style['multi-progress__list']">
+                  <li>본인인증</li>
+                  <li :class="$style['active']">계약자정보</li>
+                  <li>금융조건</li>
+                  <li>면허정보</li>
+                  <li>약관동의</li>
+                  <li>본인인증</li>
+                  <li>ARS</li>
+                </ul>
+              </div>
               <KeyValue margin="regular">
                 <KeyValueItem
                   :classNames="{
                     item: 'text-body-3',
                   }"
                 >
-                  <KeyValueTitle>상품명</KeyValueTitle>
-                  <KeyValueText>행복아파트론</KeyValueText>
+                  <KeyValueTitle>주민등록번호</KeyValueTitle>
+                  <KeyValueText>920101-2******</KeyValueText>
                 </KeyValueItem>
-
                 <KeyValueItem
                   :classNames="{
                     item: 'text-body-3',
                   }"
                 >
-                  <KeyValueTitle>신용동의</KeyValueTitle>
-                  <KeyValueText>2023.01.16</KeyValueText>
+                  <KeyValueTitle>요청일자</KeyValueTitle>
+                  <KeyValueText>2022.11.14</KeyValueText>
                 </KeyValueItem>
-
                 <KeyValueItem
                   :classNames="{
                     item: 'text-body-3',
                   }"
                 >
-                  <KeyValueTitle>상담번호</KeyValueTitle>
-                  <KeyValueText>C42302010014400</KeyValueText>
+                  <KeyValueTitle>차종/모델명</KeyValueTitle>
+                  <KeyValueText
+                    >6시리즈 그란 투리스모(4세대) 630<br />Dx드라이브GT럭셔리
+                    라인</KeyValueText
+                  >
                 </KeyValueItem>
-
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>품의번호</KeyValueTitle>
-                  <KeyValueText>D42302010014400</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>심사</KeyValueTitle>
-                  <KeyValueText>승인</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>정산결과</KeyValueTitle>
-                  <KeyValueText>미완료</KeyValueText>
-                </KeyValueItem>
-
                 <KeyValueItem
                   :classNames="{
                     item: 'text-body-3',
                   }"
                 >
                   <KeyValueTitle>대출기간</KeyValueTitle>
-                  <KeyValueText>36개월</KeyValueText>
+                  <KeyValueText>60개월</KeyValueText>
                 </KeyValueItem>
 
                 <KeyValueItem
@@ -611,15 +946,245 @@ export default {
                     item: 'text-body-3',
                   }"
                 >
-                  <KeyValueTitle>금리</KeyValueTitle>
-                  <KeyValueText>14.60%</KeyValueText>
+                  <KeyValueTitle>기본/최종 금리</KeyValueTitle>
+                  <KeyValueText> 7.9%/7.9%, 03/O/o </KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>매매상사</KeyValueTitle>
+                  <KeyValueText>14.60 %</KeyValueText>
+                </KeyValueItem>
+                <!-- case :: 계약완료-자동승인 -->
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>심사상태</KeyValueTitle>
+                  <KeyValueText>계약완료-자동승인</KeyValueText>
+                </KeyValueItem>
+                <!-- //case :: 계약완료-자동승인 -->
+
+                <!-- case :: 계약완료-지점문의 -->
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>심사상태</KeyValueTitle>
+                  <KeyValueText class="color-red"
+                    >계약완료-지점문의</KeyValueText
+                  >
+                </KeyValueItem>
+                <!-- //case :: 계약완료-지점문의 -->
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>지급계좌</KeyValueTitle>
+                  <KeyValueText>하나은행 791271726311133</KeyValueText>
+                </KeyValueItem>
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>메모</KeyValueTitle>
+                  <KeyValueText>메모 내용</KeyValueText>
                 </KeyValueItem>
               </KeyValue>
-
-              <ButtonList :classNames="{ wrap: 'row-margin-contents-small' }">
+              <!-- Case :: 계약완료-자동승인 -->
+              <ButtonList class="row-margin-contents-small">
                 <ButtonListItem>
-                  <BasicButton size="small" theme="tertiary"
-                    >서류등록</BasicButton
+                  <BasicButton theme="tertiary" size="small"
+                    >고객서류등록</BasicButton
+                  >
+                </ButtonListItem>
+                <ButtonListItem>
+                  <BasicButton size="small">송금요청</BasicButton>
+                </ButtonListItem>
+              </ButtonList>
+              <!-- //Case :: 계약완료-자동승인 -->
+              <!-- Case :: 계약완료-자동승인 -->
+              <ButtonList class="row-margin-contents-small">
+                <ButtonListItem>
+                  <BasicButton theme="tertiary" size="small"
+                    >고객서류등록</BasicButton
+                  >
+                </ButtonListItem>
+                <ButtonListItem>
+                  <BasicButton size="small" :disabled="true"
+                    >송금요청</BasicButton
+                  >
+                </ButtonListItem>
+              </ButtonList>
+              <!-- //Case :: 계약완료-자동승인 -->
+            </div>
+          </UiAccordionLayer>
+        </BasicBox>
+      </UiAccordionItem>
+      <!-- // Case : 계약완료 -->
+
+      <!-- Case : 송금대기 -->
+      <UiAccordionItem :classNames="{ item: 'row-margin-item-medium' }">
+        <BasicBox>
+          <div class="flex-box row-margin-item">
+            <div class="flex-box__cell flex-1">
+              <div :class="$style['division-info']">
+                <ul :class="$style['division-info__list']">
+                  <li :class="$style['division-info__item']">
+                    <div class="color-black text-body-4 font-weight-light">
+                      2023.01.10
+                    </div>
+                  </li>
+                  <li :class="$style['division-info__item']">
+                    <div class="color-green text-body-4 font-weight-medium">
+                      송금대기(지점문의)
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <p class="text-body-1 row-margin-small font-weight-medium">
+                홍길동
+              </p>
+            </div>
+            <div class="flex-box__cell">
+              <RoundStatus theme="denary">모바일</RoundStatus>
+            </div>
+          </div>
+          <div class="flex-box">
+            <div class="flex-box__cell flex-1">
+              <h4 :class="$style['amount-text']">신청금액</h4>
+            </div>
+            <div class="flex-box__cell flex-box__cell--medium">
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <UnitText size="regular" rightUnit="만원">3,000</UnitText>
+                </div>
+                <div class="flex-box__cell flex-box__cell--small">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['opener'] }"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <UiAccordionLayer class="row-margin-contents-small">
+            <div :class="$style['contents']">
+              <BasicHr
+                type="contents"
+                theme="quaternary"
+                className="row-margin-contents-group"
+              />
+              <div
+                :class="[
+                  $style['multi-progress'],
+                  'row-margin-contents-small row-margin-top-none',
+                ]"
+              >
+                <ul :class="$style['multi-progress__list']">
+                  <li>본인인증</li>
+                  <li :class="$style['active']">계약자정보</li>
+                  <li>금융조건</li>
+                  <li>면허정보</li>
+                  <li>약관동의</li>
+                  <li>본인인증</li>
+                  <li>ARS</li>
+                </ul>
+              </div>
+              <KeyValue margin="regular">
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>주민등록번호</KeyValueTitle>
+                  <KeyValueText>920101-2******</KeyValueText>
+                </KeyValueItem>
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>요청일자</KeyValueTitle>
+                  <KeyValueText>2022.11.14</KeyValueText>
+                </KeyValueItem>
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>차종/모델명</KeyValueTitle>
+                  <KeyValueText
+                    >6시리즈 그란 투리스모(4세대) 630<br />Dx드라이브GT럭셔리
+                    라인</KeyValueText
+                  >
+                </KeyValueItem>
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>대출기간</KeyValueTitle>
+                  <KeyValueText>60개월</KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>기본/최종 금리</KeyValueTitle>
+                  <KeyValueText> 7.9%/7.9%, 03/O/o </KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>매매상사</KeyValueTitle>
+                  <KeyValueText>14.60 %</KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>심사상태</KeyValueTitle>
+                  <KeyValueText class="color-red"
+                    >송금대기(지점문의)</KeyValueText
+                  >
+                </KeyValueItem>
+
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>지급계좌</KeyValueTitle>
+                  <KeyValueText>하나은행 791271726311133</KeyValueText>
+                </KeyValueItem>
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>메모</KeyValueTitle>
+                  <KeyValueText>메모 내용</KeyValueText>
+                </KeyValueItem>
+              </KeyValue>
+              <ButtonList class="row-margin-contents-small">
+                <ButtonListItem>
+                  <BasicButton theme="tertiary" size="small"
+                    >고객서류등록</BasicButton
                   >
                 </ButtonListItem>
               </ButtonList>
@@ -627,25 +1192,38 @@ export default {
           </UiAccordionLayer>
         </BasicBox>
       </UiAccordionItem>
-      <!-- // Case : 심사 -->
+      <!-- // Case : 송금대기 -->
 
       <!-- Case : 송금 -->
       <UiAccordionItem :classNames="{ item: 'row-margin-item-medium' }">
         <BasicBox>
-          <div :class="[$style['division-info'], 'row-margin-small']">
-            <ul :class="$style['division-info__list']">
-              <li :class="[$style['division-info__item'], $style['date']]">
-                2023.01.10
-              </li>
-              <li :class="[$style['division-info__item'], $style['category']]">
-                송금
-              </li>
-            </ul>
+          <div class="flex-box row-margin-item">
+            <div class="flex-box__cell flex-1">
+              <div :class="$style['division-info']">
+                <ul :class="$style['division-info__list']">
+                  <li :class="$style['division-info__item']">
+                    <div class="color-black text-body-4 font-weight-light">
+                      2023.01.10
+                    </div>
+                  </li>
+                  <li :class="$style['division-info__item']">
+                    <div class="color-green text-body-4 font-weight-medium">
+                      송금
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <p class="text-body-1 row-margin-small font-weight-medium">
+                홍길동
+              </p>
+            </div>
+            <div class="flex-box__cell">
+              <RoundStatus theme="denary">모바일</RoundStatus>
+            </div>
           </div>
-
           <div class="flex-box">
             <div class="flex-box__cell flex-1">
-              <h3 class="text-body-1 font-weight-medium">송하나</h3>
+              <h4 :class="$style['amount-text']">신청금액</h4>
             </div>
             <div class="flex-box__cell flex-box__cell--medium">
               <div class="flex-box">
@@ -661,70 +1239,64 @@ export default {
             </div>
           </div>
 
-          <UiAccordionLayer>
+          <UiAccordionLayer class="row-margin-contents-small">
             <div :class="$style['contents']">
+              <BasicHr
+                type="contents"
+                theme="quaternary"
+                className="row-margin-contents-group"
+              />
+              <div
+                :class="[
+                  $style['multi-progress'],
+                  'row-margin-contents-small row-margin-top-none',
+                ]"
+              >
+                <ul :class="$style['multi-progress__list']">
+                  <li>본인인증</li>
+                  <li :class="$style['active']">계약자정보</li>
+                  <li>금융조건</li>
+                  <li>면허정보</li>
+                  <li>약관동의</li>
+                  <li>본인인증</li>
+                  <li>ARS</li>
+                </ul>
+              </div>
               <KeyValue margin="regular">
                 <KeyValueItem
                   :classNames="{
                     item: 'text-body-3',
                   }"
                 >
-                  <KeyValueTitle>상품명</KeyValueTitle>
-                  <KeyValueText>행복아파트론</KeyValueText>
+                  <KeyValueTitle>주민등록번호</KeyValueTitle>
+                  <KeyValueText>920101-2******</KeyValueText>
                 </KeyValueItem>
-
                 <KeyValueItem
                   :classNames="{
                     item: 'text-body-3',
                   }"
                 >
-                  <KeyValueTitle>신용동의</KeyValueTitle>
-                  <KeyValueText>2023.01.16</KeyValueText>
+                  <KeyValueTitle>요청일자</KeyValueTitle>
+                  <KeyValueText>2022.11.14</KeyValueText>
                 </KeyValueItem>
-
                 <KeyValueItem
                   :classNames="{
                     item: 'text-body-3',
                   }"
                 >
-                  <KeyValueTitle>상담번호</KeyValueTitle>
-                  <KeyValueText>C42302010014400</KeyValueText>
+                  <KeyValueTitle>차종/모델명</KeyValueTitle>
+                  <KeyValueText
+                    >6시리즈 그란 투리스모(4세대) 630<br />Dx드라이브GT럭셔리
+                    라인</KeyValueText
+                  >
                 </KeyValueItem>
-
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>품의번호</KeyValueTitle>
-                  <KeyValueText>D42302010014400</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>심사</KeyValueTitle>
-                  <KeyValueText>승인</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>정산결과</KeyValueTitle>
-                  <KeyValueText>완료</KeyValueText>
-                </KeyValueItem>
-
                 <KeyValueItem
                   :classNames="{
                     item: 'text-body-3',
                   }"
                 >
                   <KeyValueTitle>대출기간</KeyValueTitle>
-                  <KeyValueText>36개월</KeyValueText>
+                  <KeyValueText>60개월</KeyValueText>
                 </KeyValueItem>
 
                 <KeyValueItem
@@ -732,15 +1304,49 @@ export default {
                     item: 'text-body-3',
                   }"
                 >
-                  <KeyValueTitle>금리</KeyValueTitle>
-                  <KeyValueText>14.60%</KeyValueText>
+                  <KeyValueTitle>기본/최종 금리</KeyValueTitle>
+                  <KeyValueText> 7.9%/7.9%, 03/O/o </KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>매매상사</KeyValueTitle>
+                  <KeyValueText>14.60 %</KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>심사상태</KeyValueTitle>
+                  <KeyValueText>계약중-자동승인</KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>지급계좌</KeyValueTitle>
+                  <KeyValueText>하나은행 791271726311133</KeyValueText>
+                </KeyValueItem>
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>메모</KeyValueTitle>
+                  <KeyValueText>메모 내용</KeyValueText>
                 </KeyValueItem>
               </KeyValue>
-
-              <ButtonList :classNames="{ wrap: 'row-margin-contents-small' }">
+              <ButtonList class="row-margin-contents-small">
                 <ButtonListItem>
-                  <BasicButton size="small" theme="tertiary"
-                    >서류등록</BasicButton
+                  <BasicButton theme="tertiary" size="small"
+                    >고객서류등록</BasicButton
                   >
                 </ButtonListItem>
               </ButtonList>
@@ -750,9 +1356,42 @@ export default {
       </UiAccordionItem>
       <!-- // Case : 송금 -->
     </UiAccordion>
+
+    <div class="inline-wrap align-center row-margin-item-group">
+      <TextButton :classNames="{ wrap: 'text-body-4 color-gray' }">
+        더보기
+        <template v-slot:rightIcon>
+          <IconArrow />
+        </template>
+      </TextButton>
+    </div>
+
+    <!-- Case : 결과 없을 때 -->
+    <div :class="$style['empty']">
+      <p :class="$style['empty__text']">조회된 결과가 없습니다.</p>
+    </div>
+    <!-- // Case : 결과 없을 때 -->
+
+    <template v-slot:foot>
+      <ButtonList
+        :classNames="{
+          wrap: 'row-margin-none',
+        }"
+      >
+        <ButtonListItem>
+          <BasicButton theme="quaternary" size="small">신규상담</BasicButton>
+        </ButtonListItem>
+        <ButtonListItem>
+          <BasicButton theme="quaternary" size="small">차량검색</BasicButton>
+        </ButtonListItem>
+        <ButtonListItem>
+          <BasicButton theme="quaternary" size="small">상사검색</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
+    </template>
   </PageContents>
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/lmBlog/LMBlogStatusInquiry.scss';
+@import '@/assets/scss/views/salesNewCar/SalesNewCarHome.scss';
 </style>
