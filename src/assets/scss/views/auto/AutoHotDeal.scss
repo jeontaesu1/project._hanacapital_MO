@@ -1,0 +1,38 @@
+@import '@/assets/scss/components/import/empty.scss';
+
+.bg {
+  background-color: $color-navy-05;
+  margin: 0 -20px -40px;
+  padding: 30px 20px 40px;
+}
+
+.slide {
+  &__inner {
+    overflow: hidden;
+    margin: -20px;
+  }
+
+  &__list {
+    @include reset-list;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 20px;
+  }
+
+  &__item {
+    flex: 1;
+    min-width: 0;
+    box-shadow: 1px 1px 8px rgba($color-black, 0.12);
+
+    & + & {
+      margin-left: 16px;
+    }
+  }
+
+  &--side {
+    .slide__item {
+      flex: 0 0 93.75%;
+    }
+  }
+}

@@ -320,7 +320,7 @@ export default {
             </div>
 
             <BasicBox>
-              <KeyValue>
+              <KeyValue verticalAlign="center">
                 <KeyValueItem
                   :classNames="{
                     item: 'text-body-1 font-weight-medium',
@@ -356,7 +356,7 @@ export default {
             <h4 class="text-title-2 row-margin-contents">구매</h4>
             <!-- Case : 리스일 경우 노출 -->
             <BasicBox>
-              <KeyValue>
+              <KeyValue verticalAlign="center">
                 <KeyValueItem
                   :classNames="{
                     item: 'text-body-1 font-weight-medium',
@@ -452,7 +452,7 @@ export default {
 
             <!-- Case : 렌트일 경우 노출 -->
             <BasicBox>
-              <KeyValue>
+              <KeyValue verticalAlign="center">
                 <KeyValueItem
                   :classNames="{
                     item: 'text-body-1 font-weight-medium',
