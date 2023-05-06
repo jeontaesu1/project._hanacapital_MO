@@ -1802,7 +1802,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/auto-car-cart-001',
-        status: 'partend',
+        status: 'end',
         create: '2023.05.05',
         log: [],
       },
