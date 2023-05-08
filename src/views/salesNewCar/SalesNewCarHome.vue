@@ -37,6 +37,7 @@ import FilterButton from '@/components/ui/button/FilterButton.vue';
 import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import IconArrow from '@/assets/images/icon/dropdown.svg?component';
 import TextButton from '@/components/ui/button/TextButton.vue';
+import MultiProgress from '@/components/ui/progress/MultiProgress.vue';
 
 export default {
   components: {
@@ -70,6 +71,7 @@ export default {
     FilterButton,
     RoundStatus,
     TextButton,
+    MultiProgress,
     IconPerson,
     IconArrow,
   },
@@ -347,7 +349,9 @@ export default {
               >
                 <ul :class="$style['multi-progress__list']">
                   <li>본인인증</li>
-                  <li :class="$style['active']">계약자정보</li>
+                  <li :class="$style['active']" aria-current="true">
+                    계약자정보
+                  </li>
                   <li>금융조건</li>
                   <li>면허정보</li>
                   <li>약관동의</li>
@@ -460,7 +464,9 @@ export default {
               >
                 <ul :class="$style['multi-progress__list']">
                   <li>본인인증</li>
-                  <li :class="$style['active']">계약자정보</li>
+                  <li :class="$style['active']" aria-current="true">
+                    계약자정보
+                  </li>
                   <li>금융조건</li>
                   <li>면허정보</li>
                   <li>약관동의</li>
@@ -672,7 +678,9 @@ export default {
               >
                 <ul :class="$style['multi-progress__list']">
                   <li>본인인증</li>
-                  <li :class="$style['active']">계약자정보</li>
+                  <li :class="$style['active']" aria-current="true">
+                    계약자정보
+                  </li>
                   <li>금융조건</li>
                   <li>면허정보</li>
                   <li>약관동의</li>
@@ -896,7 +904,9 @@ export default {
               >
                 <ul :class="$style['multi-progress__list']">
                   <li>본인인증</li>
-                  <li :class="$style['active']">계약자정보</li>
+                  <li :class="$style['active']" aria-current="true">
+                    계약자정보
+                  </li>
                   <li>금융조건</li>
                   <li>면허정보</li>
                   <li>약관동의</li>
@@ -1090,7 +1100,9 @@ export default {
               >
                 <ul :class="$style['multi-progress__list']">
                   <li>본인인증</li>
-                  <li :class="$style['active']">계약자정보</li>
+                  <li :class="$style['active']" aria-current="true">
+                    계약자정보
+                  </li>
                   <li>금융조건</li>
                   <li>면허정보</li>
                   <li>약관동의</li>
@@ -1254,7 +1266,9 @@ export default {
               >
                 <ul :class="$style['multi-progress__list']">
                   <li>본인인증</li>
-                  <li :class="$style['active']">계약자정보</li>
+                  <li :class="$style['active']" aria-current="true">
+                    계약자정보
+                  </li>
                   <li>금융조건</li>
                   <li>면허정보</li>
                   <li>약관동의</li>
