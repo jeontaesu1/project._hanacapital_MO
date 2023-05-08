@@ -6592,6 +6592,92 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Scroll Section</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">세로스크롤 + 스티키</h3>
+        <div
+          :class="[
+            $style['basic-table'],
+            $style['basic-table--scroll'],
+            $style['basic-table--sticky'],
+          ]"
+        >
+          <table>
+            <colgroup>
+              <col style="width: 83px" />
+              <col style="width: 148px" />
+              <col />
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">제조사</th>
+                <th scope="col">모델명</th>
+                <th scope="col">차량 금액</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>기아</td>
+                <td>2.2 디젤 11인승 노블레스</td>
+                <td>5,500 만원</td>
+              </tr>
+              <tr>
+                <td>기아</td>
+                <td>2.2 디젤 11인승 노블레스</td>
+                <td>5,500 만원</td>
+              </tr>
+              <tr>
+                <td>기아</td>
+                <td>2.2 디젤 11인승 노블레스</td>
+                <td>5,500 만원</td>
+              </tr>
+              <tr>
+                <td>기아</td>
+                <td>2.2 디젤 11인승 노블레스</td>
+                <td>5,500 만원</td>
+              </tr>
+              <tr>
+                <td>기아</td>
+                <td>2.2 디젤 11인승 노블레스</td>
+                <td>5,500 만원</td>
+              </tr>
+              <tr>
+                <td>기아</td>
+                <td>2.2 디젤 11인승 노블레스</td>
+                <td>5,500 만원</td>
+              </tr>
+              <tr>
+                <td>기아</td>
+                <td>2.2 디젤 11인승 노블레스</td>
+                <td>5,500 만원</td>
+              </tr>
+              <tr>
+                <td>기아</td>
+                <td>2.2 디젤 11인승 노블레스</td>
+                <td>5,500 만원</td>
+              </tr>
+              <tr>
+                <td>기아</td>
+                <td>2.2 디젤 11인승 노블레스</td>
+                <td>5,500 만원</td>
+              </tr>
+              <tr>
+                <td>기아</td>
+                <td>2.2 디젤 11인승 노블레스</td>
+                <td>5,500 만원</td>
+              </tr>
+              <tr>
+                <td>기아</td>
+                <td>2.2 디젤 11인승 노블레스</td>
+                <td>5,500 만원</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">SwitchCheckBox (스위치)</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
