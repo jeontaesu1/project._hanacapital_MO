@@ -7234,6 +7234,22 @@ export default {
       <h2 class="test-section-title">Component Title</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
+        <div
+          :class="[
+            $style['multi-progress'],
+            'row-margin-contents-small row-margin-top-none',
+          ]"
+        >
+          <ul :class="$style['multi-progress__list']">
+            <li>본인인증</li>
+            <li :class="$style['active']" aria-current="true">계약자정보</li>
+            <li>금융조건</li>
+            <li>면허정보</li>
+            <li>약관동의</li>
+            <li>본인인증</li>
+            <li>ARS</li>
+          </ul>
+        </div>
       </div>
     </section>
   </div>
