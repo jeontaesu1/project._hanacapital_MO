@@ -33,6 +33,8 @@ import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 import CheckBox from '@/components/ui/form/CheckBox.vue';
 import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
 import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
+import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
+import UnitText from '@/components/ui/text/UnitText.vue';
 
 export default {
   components: {
@@ -62,9 +64,11 @@ export default {
     BoxCheckList,
     BoxCheckListItem,
     NoticeText,
+    CarEmblem,
     CheckBox,
     CheckBoxLabelText,
     CheckBoxObject,
+    UnitText,
   },
   setup() {
     const store = {
@@ -292,11 +296,184 @@ export default {
     <!-- 정보 조회 -->
     <BasicHr class="row-margin-container-medium" />
     <section>
-      <div>테이블</div>
+      <div
+        :class="[
+          $style['basic-table'],
+          $style['basic-table--scroll'],
+          $style['basic-table--sticky'],
+        ]"
+      >
+        <table>
+          <colgroup>
+            <col style="width: 83px" />
+            <col style="width: 148px" />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">제조사</th>
+              <th scope="col">모델명</th>
+              <th scope="col">차량 금액</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>기아</td>
+              <td>2.2 디젤 11인승 노블레스</td>
+              <td>5,500 만원</td>
+            </tr>
+            <tr>
+              <td>기아</td>
+              <td>2.2 디젤 11인승 노블레스</td>
+              <td>5,500 만원</td>
+            </tr>
+            <tr>
+              <td>기아</td>
+              <td>2.2 디젤 11인승 노블레스</td>
+              <td>5,500 만원</td>
+            </tr>
+            <tr>
+              <td>기아</td>
+              <td>2.2 디젤 11인승 노블레스</td>
+              <td>5,500 만원</td>
+            </tr>
+            <tr>
+              <td>기아</td>
+              <td>2.2 디젤 11인승 노블레스</td>
+              <td>5,500 만원</td>
+            </tr>
+            <tr>
+              <td>기아</td>
+              <td>2.2 디젤 11인승 노블레스</td>
+              <td>5,500 만원</td>
+            </tr>
+            <tr>
+              <td>기아</td>
+              <td>2.2 디젤 11인승 노블레스</td>
+              <td>5,500 만원</td>
+            </tr>
+            <tr>
+              <td>기아</td>
+              <td>2.2 디젤 11인승 노블레스</td>
+              <td>5,500 만원</td>
+            </tr>
+            <tr>
+              <td>기아</td>
+              <td>2.2 디젤 11인승 노블레스</td>
+              <td>5,500 만원</td>
+            </tr>
+            <tr>
+              <td>기아</td>
+              <td>2.2 디젤 11인승 노블레스</td>
+              <td>5,500 만원</td>
+            </tr>
+            <tr>
+              <td>기아</td>
+              <td>2.2 디젤 11인승 노블레스</td>
+              <td>5,500 만원</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <BasicBox class="row-margin-contents">
+        <div class="flex-box row-margin-mini justify-conten-start">
+          <CarEmblem code="1001" name="현대" />
+        </div>
+        <h3 class="text-body-1 font-weight-medium">GS(4세대)</h3>
+        <p class="text-body-4 color-gray font-weight-regular row-margin-small">
+          300 슈프림
+        </p>
+        <div class="row-margin-small">
+          <UnitText verticalAlign="center" rightUnit="원">333,389</UnitText>
+        </div>
+      </BasicBox>
+      <FormList>
+        <FormListItem
+          titleText="차량구입금액"
+          :forceFocus="true"
+          :require="true"
+        >
+          <FormInvalid :error="state.testError001">
+            <BoxCheckList :wrap="true" :col="3" class="row-margin-item-group">
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="testBoxCheckList005"
+                  id="testBoxCheckList005_001"
+                >
+                  <BoxCheckLabel class="text-body-4 color-gray"
+                    >+ 10만</BoxCheckLabel
+                  >
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="testBoxCheckList005"
+                  id="testBoxCheckList005_002"
+                >
+                  <BoxCheckLabel class="text-body-4 color-gray"
+                    >+ 100만</BoxCheckLabel
+                  >
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="testBoxCheckList005"
+                  id="testBoxCheckList005_003"
+                >
+                  <BoxCheckLabel class="text-body-4 color-gray"
+                    >+ 300만</BoxCheckLabel
+                  >
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="testBoxCheckList005"
+                  id="testBoxCheckList005_004"
+                >
+                  <BoxCheckLabel class="text-body-4 color-gray"
+                    >+ 500만</BoxCheckLabel
+                  >
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="testBoxCheckList005"
+                  id="testBoxCheckList005_005"
+                >
+                  <BoxCheckLabel class="text-body-4 color-gray"
+                    >+ 1,000만</BoxCheckLabel
+                  >
+                </BoxCheck>
+              </BoxCheckListItem>
+            </BoxCheckList>
+            <InputBlock :error="state.testError001">
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  ref="testInput"
+                  id="testInput001"
+                  pattern="\d*"
+                  :useDelete="false"
+                  align="right"
+                  defaultValue="15,300,000"
+                />
+              </InputBlockCell>
+              <template v-slot:innerRight>원</template>
+            </InputBlock>
+            <NoticeText class="row-margin-item"
+              >차량구입금액은 2백만원 이상 입력해주세요.</NoticeText
+            >
+          </FormInvalid>
+        </FormListItem>
+      </FormList>
     </section>
     <!-- //정보 조회 -->
     <!-- 금융 정보 -->
-    <section>
+    <section class="row-margin-container-medium">
       <h3 class="text-body-2 row-margin-contents">금융 정보</h3>
 
       <FormList>
@@ -481,3 +658,7 @@ export default {
     <!-- //조회 후 나오는 푸터 버튼 영역 -->
   </PageContents>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/salesUsedCar/SalesUsedCarCounseling.scss';
+</style>
