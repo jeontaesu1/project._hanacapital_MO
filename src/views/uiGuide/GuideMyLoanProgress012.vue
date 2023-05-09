@@ -48,6 +48,7 @@ import LayerMyLoanOnlineContractURLThing from '@/views/myLoan/LayerMyLoanOnlineC
 import LayerMyLoanOnlineContractURLLeaseThingCheck from '@/views/myLoan/LayerMyLoanOnlineContractURLLeaseThingCheck.vue';
 import LayerMyLoanOnlineContractURLComplete from '@/views/myLoan/LayerMyLoanOnlineContractURLComplete.vue';
 import LayerMyLoanOnlineContractURLFail from '@/views/myLoan/LayerMyLoanOnlineContractURLFail.vue';
+import LayerMyLoanOnlineContractUsedLoanAgreeVue from '@/views/myLoan/LayerMyLoanOnlineContractUsedLoanAgree.vue';
 
 export default {
   components: {
@@ -97,6 +98,7 @@ export default {
     LayerMyLoanOnlineContractURLLeaseThingCheck,
     LayerMyLoanOnlineContractURLComplete,
     LayerMyLoanOnlineContractURLFail,
+    LayerMyLoanOnlineContractUsedLoanAgreeVue,
   },
   setup() {
     const layer001 = ref(null);
@@ -141,6 +143,7 @@ export default {
     const layer042 = ref(null);
     const layer043 = ref(null);
     const layer044 = ref(null);
+    const layer045 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -268,6 +271,9 @@ export default {
     const layer044Open = (e = {}) => {
       layer044.value.layer.open(e.target);
     };
+    const layer045Open = (e = {}) => {
+      layer045.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -312,6 +318,7 @@ export default {
       layer042,
       layer043,
       layer044,
+      layer045,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -354,6 +361,7 @@ export default {
       layer042Open,
       layer043Open,
       layer044Open,
+      layer045Open,
     };
   },
 };
@@ -439,7 +447,7 @@ export default {
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer017Open">
-          약관동의<br />BF_M04_l007
+          중도금 대출_약관동의<br />BF_M04_l007
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
@@ -577,6 +585,11 @@ export default {
           약정실패<br />BF_M05_l013
         </BasicButton>
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer045Open">
+          중고차 오토론_약관동의<br />AF_M98_l001
+        </BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <LayerMyLoanOnlineContractAgreeConfirm ref="layer001" />
@@ -637,5 +650,6 @@ export default {
     <LayerMyLoanOnlineContractURLLeaseThingCheck ref="layer042" />
     <LayerMyLoanOnlineContractURLComplete ref="layer043" />
     <LayerMyLoanOnlineContractURLFail ref="layer044" />
+    <LayerMyLoanOnlineContractUsedLoanAgreeVue ref="layer045" />
   </PageContents>
 </template>
