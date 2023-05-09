@@ -108,5 +108,10 @@
     &-secondary {
       background-color: $color-navy-05;
     }
+
+    &-tertiary {
+      color: $color-white;
+      background-color: $color-black;
+    }
   }
 }

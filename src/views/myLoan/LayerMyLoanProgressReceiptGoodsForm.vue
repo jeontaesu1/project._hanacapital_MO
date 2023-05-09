@@ -106,7 +106,11 @@ export default {
         </BoxCheckListItem>
       </BoxCheckList>
 
-      <FormList class="row-margin-contents">
+      <FormList
+        :classNames="{
+          wrap: 'row-margin-contents',
+        }"
+      >
         <!-- Case : 수령 선택 시 노출 -->
         <FormListItem
           titleText="수령 휴대폰번호"

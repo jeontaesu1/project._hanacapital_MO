@@ -128,7 +128,7 @@ export default {
             <CarThumb src="/images/_dummy/car-thumb.png" />
           </BasicBoxHeadRight>
         </BasicBoxHead>
-        <KeyValue>
+        <KeyValue verticalAlign="center">
           <KeyValueItem
             :classNames="{
               item: 'text-body-3',

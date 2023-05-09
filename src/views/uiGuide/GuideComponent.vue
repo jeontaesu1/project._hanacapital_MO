@@ -2263,6 +2263,80 @@ export default {
           </FormListItem>
 
           <FormListItem
+            titleText="확장 셀렉트 2"
+            target="#layerTestButton"
+            :selectOnly="true"
+          >
+            <FormInvalid :error="state.testError001">
+              <InputBlock :error="state.testError001">
+                <InputBlockCell :flexible="true">
+                  <ExtendSelect
+                    buttonTitle="확장 셀렉트2 선택하기"
+                    layerTitle="확장 셀렉트2를 선택해 주세요"
+                    buttonId="layerTestButton"
+                    :onChange="testInputEvent"
+                  >
+                    <div :class="$style['icon-buttons']">
+                      <ul :class="$style['icon-buttons__list']">
+                        <li :class="$style['icon-buttons__item']">
+                          <ExtendSelectOption
+                            value="1"
+                            text="옵션명1"
+                            :classNames="{
+                              option: $style['icon-buttons__block'],
+                            }"
+                          >
+                            <span :class="$style['icon-buttons__content']">
+                              <span :class="$style['icon-buttons__title']">
+                                옵션명1<br />
+                                옵션명1 설명 텍스트 옵션명1 설명 텍스트
+                              </span>
+                            </span>
+                          </ExtendSelectOption>
+                        </li>
+                        <li :class="$style['icon-buttons__item']">
+                          <ExtendSelectOption
+                            value="2"
+                            text="옵션명2"
+                            :classNames="{
+                              option: $style['icon-buttons__block'],
+                            }"
+                          >
+                            <span :class="$style['icon-buttons__content']">
+                              <span :class="$style['icon-buttons__title']">
+                                옵션명2<br />
+                                옵션명2 설명 텍스트 옵션명2 설명 텍스트
+                              </span>
+                            </span>
+                          </ExtendSelectOption>
+                        </li>
+                      </ul>
+                    </div>
+                  </ExtendSelect>
+                </InputBlockCell>
+              </InputBlock>
+              <!-- Case : 옵션 선택 후 노출 -->
+              <InputBlock
+                :error="state.testError001"
+                :classNames="{
+                  wrap: 'row-margin-item-group row-margin-bottom-none',
+                }"
+              >
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    title="옵션"
+                    id="layerTestOption"
+                    disabled="disabled"
+                    defaultValue="옵션 설명 텍스트 노출"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <!-- //Case : 옵션 선택 후 노출 -->
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem
             titleText="카드사"
             target="#testInput009"
             :selectOnly="true"
@@ -5518,6 +5592,18 @@ export default {
       </div>
 
       <div class="test-section-sub">
+        <h3 class="test-section-sub-title">vertical align : center</h3>
+        <KeyValue verticalAlign="center">
+          <KeyValueItem>
+            <KeyValueTitle>총 가격</KeyValueTitle>
+            <KeyValueText>
+              <UnitText rightUnit="원" align="right"> 16,200,000 </UnitText>
+            </KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+      </div>
+
+      <div class="test-section-sub">
         <h3 class="test-section-sub-title">Vertical</h3>
         <KeyValue direction="vertical">
           <KeyValueItem>
@@ -7100,6 +7186,17 @@ export default {
         <FilterButton />
         <FilterButton :active="true" />
         <FilterButton :active="true" theme="secondary" />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">image view</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <div :class="$style['image-view']">
+          <img src="@/assets/images/_dummy/box-detail.png" alt="샘플 이미지" />
+        </div>
       </div>
     </section>
 

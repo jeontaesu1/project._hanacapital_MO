@@ -386,6 +386,11 @@ const routes = [
     component: () => import('@/views/uiGuide/GuideMyInfoEdit001.vue'),
   },
   {
+    path: '/guide/my-info-password-001',
+    name: '/guide/my-info-password-001',
+    component: () => import('@/views/uiGuide/GuideMyInfoPassword001.vue'),
+  },
+  {
     path: '/guide/my-info-direct-debit-account-001',
     name: '/guide/my-info-direct-debit-account-001',
     component: () =>

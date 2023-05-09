@@ -6,7 +6,9 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-// import Layer from '@/views/';
+import LayerMyInfoJoinHanaMoneyForm from '@/views/myInfo/LayerMyInfoJoinHanaMoneyForm.vue';
+import LayerMyInfoJoinHanaMoneyAgree from '@/views/myInfo/LayerMyInfoJoinHanaMoneyAgree.vue';
+import LayerMyInfoJoinHanaMoneyComplete from '@/views/myInfo/LayerMyInfoJoinHanaMoneyComplete.vue';
 
 export default {
   components: {
@@ -14,18 +16,32 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    // Layer,
+    LayerMyInfoJoinHanaMoneyForm,
+    LayerMyInfoJoinHanaMoneyAgree,
+    LayerMyInfoJoinHanaMoneyComplete,
   },
   setup() {
     const layer001 = ref(null);
+    const layer002 = ref(null);
+    const layer003 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
     };
+    const layer002Open = (e = {}) => {
+      layer002.value.layer.open(e.target);
+    };
+    const layer003Open = (e = {}) => {
+      layer003.value.layer.open(e.target);
+    };
 
     return {
       layer001,
+      layer002,
+      layer003,
       layer001Open,
+      layer002Open,
+      layer003Open,
     };
   },
 };
@@ -40,12 +56,24 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open"
-          >ㅇㅇㅇㅇㅇ<br />ㅁㅁㅁㅁㅁㅁ</BasicButton
-        >
+        <BasicButton @click="layer001Open">
+          가입정보 입력<br />MI_M01_l012
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer002Open">
+          약관동의<br />MI_M01_l013
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer003Open">
+          가입 완료<br />MI_M01_l014
+        </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
-    <Layer ref="layer001" />
+    <LayerMyInfoJoinHanaMoneyForm ref="layer001" />
+    <LayerMyInfoJoinHanaMoneyAgree ref="layer002" />
+    <LayerMyInfoJoinHanaMoneyComplete ref="layer003" />
   </PageContents>
 </template>

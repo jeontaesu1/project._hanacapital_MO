@@ -75,7 +75,11 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <FormList class="row-margin-contents">
+      <FormList
+        :classNames="{
+          wrap: 'row-margin-contents',
+        }"
+      >
         <FormListItem
           titleText="품목명"
           target="#layerMyLoanProgressInstallmentConsultationFormNameSearch"
