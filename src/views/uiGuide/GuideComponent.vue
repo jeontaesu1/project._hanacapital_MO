@@ -7304,6 +7304,72 @@ export default {
       </div>
     </section>
 
+    <section class="test-section">
+      <h2 class="test-section-title">Q&A List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <div :class="$style['qna']">
+          <UiAccordion :classNames="{ wrap: $style['qna__list'] }">
+            <UiAccordionItem :classNames="{ item: $style['qna__item'] }">
+              <div :class="$style['qna__head']">
+                <div :class="$style['qna__symbol']">Q</div>
+                <div :class="$style['qna__block']">
+                  <div :class="$style['qna__title']">
+                    하나캐피탈 멤버십 가입은<br />
+                    어떻게 하나요?
+                  </div>
+                </div>
+                <div :class="$style['qna__right']">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['qna__opener'] }"
+                  />
+                </div>
+              </div>
+
+              <UiAccordionLayer :classNames="{ layer: $style['qna__layer'] }">
+                <div :class="$style['qna__contents']">
+                  <div :class="$style['qna__symbol']">A</div>
+                  <div :class="$style['qna__text']">
+                    하나캐피탈 회원가입은 성별 나이 특정제한 없이 하나캐피탈
+                    이용 및 관심있으신 손님이시면 누구나 가입가능하며, 홈페이지
+                    및 모바일에서 멤버십 가입하기를 통해 가입하실 수 있습니다.
+                  </div>
+                </div>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+            <UiAccordionItem :classNames="{ item: $style['qna__item'] }">
+              <div :class="$style['qna__head']">
+                <div :class="$style['qna__symbol']">Q</div>
+                <div :class="$style['qna__block']">
+                  <div :class="$style['qna__title']">
+                    하나캐피탈 멤버십 가입은<br />
+                    어떻게 하나요?
+                  </div>
+                </div>
+                <div :class="$style['qna__right']">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['qna__opener'] }"
+                  />
+                </div>
+              </div>
+
+              <UiAccordionLayer :classNames="{ layer: $style['qna__layer'] }">
+                <div :class="$style['qna__contents']">
+                  <div :class="$style['qna__symbol']">A</div>
+                  <div :class="$style['qna__text']">
+                    하나캐피탈 회원가입은 성별 나이 특정제한 없이 하나캐피탈
+                    이용 및 관심있으신 손님이시면 누구나 가입가능하며, 홈페이지
+                    및 모바일에서 멤버십 가입하기를 통해 가입하실 수 있습니다.
+                  </div>
+                </div>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+          </UiAccordion>
+        </div>
+      </div>
+    </section>
+
     <!-- 작업중
     <section class="test-section">
       <h2 class="test-section-title">Component Title</h2>
