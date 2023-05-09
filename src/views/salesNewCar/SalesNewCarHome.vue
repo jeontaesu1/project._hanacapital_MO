@@ -37,7 +37,6 @@ import FilterButton from '@/components/ui/button/FilterButton.vue';
 import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import IconArrow from '@/assets/images/icon/dropdown.svg?component';
 import TextButton from '@/components/ui/button/TextButton.vue';
-import MultiProgress from '@/components/ui/progress/MultiProgress.vue';
 
 export default {
   components: {
@@ -71,7 +70,6 @@ export default {
     FilterButton,
     RoundStatus,
     TextButton,
-    MultiProgress,
     IconPerson,
     IconArrow,
   },
@@ -334,7 +332,9 @@ export default {
             </div>
           </div>
 
-          <UiAccordionLayer class="row-margin-contents-small">
+          <UiAccordionLayer
+            :class="[$style['accordion-gap'], 'row-margin-contents-small']"
+          >
             <div :class="$style['contents']">
               <BasicHr
                 type="contents"
@@ -449,7 +449,9 @@ export default {
             </div>
           </div>
 
-          <UiAccordionLayer class="row-margin-contents-small">
+          <UiAccordionLayer
+            :class="[$style['accordion-gap'], 'row-margin-contents-small']"
+          >
             <div :class="$style['contents']">
               <BasicHr
                 type="contents"
@@ -663,7 +665,9 @@ export default {
             </div>
           </div>
 
-          <UiAccordionLayer class="row-margin-contents-small">
+          <UiAccordionLayer
+            :class="[$style['accordion-gap'], 'row-margin-contents-small']"
+          >
             <div :class="$style['contents']">
               <BasicHr
                 type="contents"
@@ -889,7 +893,9 @@ export default {
             </div>
           </div>
 
-          <UiAccordionLayer class="row-margin-contents-small">
+          <UiAccordionLayer
+            :class="[$style['accordion-gap'], 'row-margin-contents-small']"
+          >
             <div :class="$style['contents']">
               <BasicHr
                 type="contents"
@@ -1085,7 +1091,9 @@ export default {
             </div>
           </div>
 
-          <UiAccordionLayer class="row-margin-contents-small">
+          <UiAccordionLayer
+            :class="[$style['accordion-gap'], 'row-margin-contents-small']"
+          >
             <div :class="$style['contents']">
               <BasicHr
                 type="contents"
@@ -1251,7 +1259,9 @@ export default {
             </div>
           </div>
 
-          <UiAccordionLayer class="row-margin-contents-small">
+          <UiAccordionLayer
+            :class="[$style['accordion-gap'], 'row-margin-contents-small']"
+          >
             <div :class="$style['contents']">
               <BasicHr
                 type="contents"
