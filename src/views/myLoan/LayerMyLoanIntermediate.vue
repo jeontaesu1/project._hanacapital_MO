@@ -191,7 +191,9 @@ export default {
               결제예정금액
             </KeyValueTitle>
             <KeyValueText>
-              <UnitText rightUnit="원" align="right">845,000</UnitText>
+              <UnitText verticalAlign="center" rightUnit="원" align="right">
+                845,000
+              </UnitText>
             </KeyValueText>
           </KeyValueItem>
         </KeyValue>

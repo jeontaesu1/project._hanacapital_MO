@@ -40,12 +40,12 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open"
-          >ㅇㅇㅇㅇㅇ<br />ㅁㅁㅁㅁㅁㅁ</BasicButton
-        >
+        <BasicButton @click="layer001Open">버튼</BasicButton>
       </ButtonListItem>
     </ButtonList>
 
+    <!--
     <Layer ref="layer001" />
+    -->
   </PageContents>
 </template>

@@ -99,7 +99,7 @@ export default {
             </BasicBoxHeadRight>
           </BasicBoxHead>
 
-          <KeyValue>
+          <KeyValue verticalAlign="center">
             <KeyValueItem
               :classNames="{
                 item: 'text-body-3',

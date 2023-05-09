@@ -5,10 +5,22 @@ import { onMounted, onUnmounted } from 'vue';
 import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
+import PageMainText from '@/components/ui/text/PageMainText.vue';
+import IllustObject from '@/components/ui/common/IllustObject.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
+import ButtonList from '@/components/ui/button/ButtonList.vue';
+import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 export default {
   components: {
     PageContents,
+    PageTextGroup,
+    PageMainText,
+    IllustObject,
+    BasicButton,
+    ButtonList,
+    ButtonListItem,
   },
   setup() {
     const store = {
@@ -18,7 +30,7 @@ export default {
     };
 
     onMounted(() => {
-      store.ui.header.setTitle(() => '타이틀');
+      store.ui.header.setTitle(() => '차바구니');
       store.ui.header.setLeftButtons(() => ['back']);
       store.ui.header.setRightButtons(() => []);
     });
@@ -34,6 +46,25 @@ export default {
 
 <template>
   <PageContents>
-    <h1>Page</h1>
+    <PageTextGroup>
+      <PageMainText>
+        마음에 드는 차를 담아두면<br />
+        <strong>혜택 알림을 받을 수 있어요!</strong>
+      </PageMainText>
+    </PageTextGroup>
+
+    <IllustObject />
+
+    <template v-slot:foot>
+      <ButtonList
+        :classNames="{
+          wrap: 'row-margin-none',
+        }"
+      >
+        <ButtonListItem>
+          <BasicButton theme="secondary">관심있는 차 등록</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
+    </template>
   </PageContents>
 </template>

@@ -38,7 +38,7 @@ export default {
         </FullPopupHead>
       </template>
 
-      <div :class="$style['image-view']">
+      <div :class="$style['view']">
         <img src="@/assets/images/_dummy/img-sample.png" alt="샘플 이미지" />
       </div>
     </FullPopup>
