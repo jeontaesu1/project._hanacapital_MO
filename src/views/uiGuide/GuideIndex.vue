@@ -1362,7 +1362,12 @@ const datas = () => [
         path: '/guide/sales-new-car-001',
         status: 'partend',
         create: '2023.05.05',
-        log: [],
+        log: [
+          {
+            date: '2023.05.12',
+            text: '팝업 추가\n- 차량번호 등록\n- 판매점 조회\n- 판매사원 조회',
+          },
+        ],
       },
       {
         depth2: '홈\nNC_M01_p001',
@@ -2483,8 +2488,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/my-info/marketing',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.05.12',
         log: [],
       },
       {
