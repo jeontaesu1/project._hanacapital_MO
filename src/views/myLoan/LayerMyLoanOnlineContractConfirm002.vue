@@ -16,6 +16,7 @@ import StepProgress from '@/components/ui/progress/StepProgress.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
+import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
 import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
@@ -40,6 +41,7 @@ export default {
     BasicBox,
     BasicBoxHead,
     BasicBoxHeadLeft,
+    BasicBoxHeadRight,
     UnitText,
     KeyValue,
     KeyValueItem,
@@ -208,10 +210,10 @@ export default {
               <BasicBoxHeadLeft>
                 <div class="flex-box row-margin-item">
                   <div class="flex-box__cell flex-1">
-                    <CarEmblem code="1001" name="현대" />
-                    <h4 class="text-body-1 font-weight-medium row-margin-mini">
-                      캐스퍼
-                    </h4>
+                    <div class="row-margin-mini">
+                      <CarEmblem code="1001" name="현대" />
+                    </div>
+                    <h4 class="text-body-1 font-weight-medium">캐스퍼</h4>
                     <p class="text-body-4 color-gray row-margin-small">
                       올 뉴 아반떼/인스퍼레이션
                     </p>
@@ -252,10 +254,16 @@ export default {
           <BasicBox>
             <BasicBoxHead align="top">
               <BasicBoxHeadLeft>
-                <p class="text-body-4 font-weight-light">2023.01.10</p>
-                <h4 class="text-body-1 font-weight-medium row-margin-small">
-                  운용리스
-                </h4>
+                <p class="text-body-4 font-weight-light row-margin-small">
+                  2023.01.10
+                </p>
+                <!-- Case : 운용리스 -->
+                <h4 class="text-body-1 font-weight-medium">운용리스</h4>
+                <!-- //Case : 운용리스 -->
+
+                <!-- Case : 금융리스 -->
+                <h4 class="text-body-1 font-weight-medium">금융리스</h4>
+                <!-- // Case : 금융리스 -->
               </BasicBoxHeadLeft>
             </BasicBoxHead>
 
@@ -456,111 +464,166 @@ export default {
           <h3 class="text-title-2 row-margin-contents">리스조건 안내</h3>
 
           <!-- Case : 운용리스일 경우 노출 -->
-          <KeyValue direction="vertical">
-            <KeyValueItem>
-              <KeyValueTitle>중도해지 손해배상금</KeyValueTitle>
-              <KeyValueText>
-                미회수원금X최고요율(80%)X(잔여기간 월수/리스기간 전체월수)
-                <div :class="$style['sub']">
-                  중도해지손해배상금률은 리스 기간이 경과함에 따라 연/월/일
-                  단위로 차등하여 인하되는 방식으로 적용하며, 계약해지일 현재의
-                  잔존일수가 1년 이하인 경우에는 월 단위 또는 일 단위로 차등하여
-                  인하하는 방식으로 적용.
-                </div>
-              </KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem>
-              <KeyValueTitle>규정손해배상금</KeyValueTitle>
-              <KeyValueText>
-                미회수원금X최고요율(20%)X(잔여기간 월수/리스시간 전체월수)
-                <div :class="$style['sub']">
-                  규정손해배상금률은 리스 기간이 경과함에 따라 연/월/일 단위로
-                  차등하여 인하되는 방식으로 적용하며, 계약해지일 현재의
-                  잔존일수가 1년 이하인 경우에는 월 단위 또는 일 단위로 차등하여
-                  인하하는 방식으로 적용.
-                </div>
-              </KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem>
-              <KeyValueTitle>승계수수료</KeyValueTitle>
-              <KeyValueText>
-                미회수원금X승계수수료 최고요율(1%)X(잔여기간 월수/리스기간
-                전체월수)
-              </KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem>
-              <KeyValueTitle>반환지연금</KeyValueTitle>
-              <KeyValueText>
-                일리스료+(일리스료X반환지연금률 100%)X경과일수
-              </KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem>
-              <KeyValueTitle>반환자동차평가/가치감가비용</KeyValueTitle>
-              <KeyValueText>
-                감가금액=반환시점의 자동차의 기대가치(혹은 중고차시세)X감가율의
-                합
-                <div :class="$style['sub']">
-                  감가비 산정기준은 홈페이지 참조
-                </div>
-              </KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem>
-              <KeyValueTitle>지연배상금률</KeyValueTitle>
-              <KeyValueText> 연 20% </KeyValueText>
-            </KeyValueItem>
-          </KeyValue>
+          <section class="row-margin-contents">
+            <h4
+              class="text-body-4 color-gray-secondary font-weight-regular row-margin-mini"
+            >
+              중도해지 손해배상금
+            </h4>
+            <p class="text-body-2">
+              미회수원금X최고요율(80%)X(잔여기간 월수/리스기간 전체월수)
+            </p>
+            <p
+              class="text-body-4 color-gray-tertiary font-weight-light row-margin-mini"
+            >
+              중도해지손해배상금률은 리스 기간이 경과함에 따라 연/월/일 단위로
+              차등하여 인하되는 방식으로 적용하며, 계약해지일 현재의 잔존일수가
+              1년 이하인 경우에는 월 단위 또는 일 단위로 차등하여 인하하는
+              방식으로 적용.
+            </p>
+          </section>
+          <section class="row-margin-contents">
+            <h4
+              class="text-body-4 color-gray-secondary font-weight-regular row-margin-mini"
+            >
+              규정손해배상금
+            </h4>
+            <p class="text-body-2">
+              미회수원금X최고요율(20%)X(잔여기간 월수/리스시간 전체월수)
+            </p>
+            <p
+              class="text-body-4 color-gray-tertiary font-weight-light row-margin-mini"
+            >
+              규정손해배상금률은 리스 기간이 경과함에 따라 연/월/일 단위로
+              차등하여 인하되는 방식으로 적용하며, 계약해지일 현재의 잔존일수가
+              1년 이하인 경우에는 월 단위 또는 일 단위로 차등하여 인하하는
+              방식으로 적용.
+            </p>
+          </section>
+          <section class="row-margin-contents">
+            <h4
+              class="text-body-4 color-gray-secondary font-weight-regular row-margin-mini"
+            >
+              승계수수료
+            </h4>
+            <p class="text-body-2">
+              미회수원금X승계수수료 최고요율(1%)X(잔여기간 월수/리스기간
+              전체월수)
+            </p>
+            <p
+              class="text-body-4 color-gray-tertiary font-weight-light row-margin-mini"
+            >
+              최소금액 : 500,000원/최대금액 900,000원
+            </p>
+          </section>
+          <section class="row-margin-contents">
+            <h4
+              class="text-body-4 color-gray-secondary font-weight-regular row-margin-mini"
+            >
+              반환지연금
+            </h4>
+            <p class="text-body-2">
+              일리스료+(일리스료X반환지연금률 100%)X경과일수
+            </p>
+          </section>
+          <section class="row-margin-contents">
+            <h4
+              class="text-body-4 color-gray-secondary font-weight-regular row-margin-mini"
+            >
+              반환자동차평가/가치감가비용
+            </h4>
+            <p class="text-body-2">
+              감가금액=반환시점의 자동차의 기대가치(혹은 중고차시세)X감가율의 합
+            </p>
+            <p
+              class="text-body-4 color-gray-tertiary font-weight-light row-margin-mini"
+            >
+              감가비 산정기준은 홈페이지 참조
+            </p>
+          </section>
+          <section class="row-margin-contents">
+            <h4
+              class="text-body-4 color-gray-secondary font-weight-regular row-margin-mini"
+            >
+              지연배상금률
+            </h4>
+            <p class="text-body-2">연 20%</p>
+          </section>
           <!-- //Case : 운용리스일 경우 노출 -->
 
           <!-- Case : 금융리스일 경우 노출 -->
-          <KeyValue direction="vertical">
-            <KeyValueItem>
-              <KeyValueTitle>규정손해배상금</KeyValueTitle>
-              <KeyValueText>
-                미회수원금X최고요율(4%)
-                <div :class="$style['sub']">
-                  규정손해배상금률은 리스 기간이 경과함에 따라 연/월/일 단위로
-                  차등하여 인하되는 방식으로 적용하며, 계약해지일 현재의
-                  잔존일수가 1년 이하인 경우에는 월 단위 또는 일 단위로 차등하여
-                  인하하는 방식으로 적용.
-                </div>
-              </KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem>
-              <KeyValueTitle>승계수수료</KeyValueTitle>
-              <KeyValueText>
-                미회수원금X승계수수료 최고요율(1%)X(잔여기간 월수/리스기간
-                전체월수)
-                <div :class="$style['sub']">
-                  최소금액 : 500,000원/최대금액 900,000원
-                </div>
-              </KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem>
-              <KeyValueTitle>반환지연금</KeyValueTitle>
-              <KeyValueText>
-                일리스료+(일리스료X반환지연금률 100%)X경과일수
-              </KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem>
-              <KeyValueTitle>반환자동차평가/가치감가비용</KeyValueTitle>
-              <KeyValueText>
-                감가금액=반환시점의 자동차의 기대가치(혹은 중고차시세)X감가율의
-                합
-                <div :class="$style['sub']">
-                  감가비 산정기준은 홈페이지 참조
-                </div>
-              </KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem>
-              <KeyValueTitle>지연배상금률</KeyValueTitle>
-              <KeyValueText>
-                연 6.9%
-                <div :class="$style['sub']">
-                  약정이자율+최대3%, 법정최고금리 이내
-                </div>
-              </KeyValueText>
-            </KeyValueItem>
-          </KeyValue>
+          <section class="row-margin-contents">
+            <h4
+              class="text-body-4 color-gray-secondary font-weight-regular row-margin-mini"
+            >
+              규정손해배상금
+            </h4>
+            <p class="text-body-2">
+              미회수원금X최고요율(4%) X(잔여기간 월수/리스기간 전체월수)
+            </p>
+            <p
+              class="text-body-4 color-gray-tertiary font-weight-light row-margin-mini"
+            >
+              규정손해배상금률은 리스 기간이 경과함에 따라 연/월/일 단위로
+              차등하여 인하되는 방식으로 적용하며, 계약해지일 현재의 잔존일수가
+              1년 이하인 경우에는 월 단위 또는 일 단위로 차등하여 인하하는
+              방식으로 적용.
+            </p>
+          </section>
+          <section class="row-margin-contents">
+            <h4
+              class="text-body-4 color-gray-secondary font-weight-regular row-margin-mini"
+            >
+              승계수수료
+            </h4>
+            <p class="text-body-2">
+              미회수원금X승계수수료 최고요율(1%)X(잔여기간 월수/리스기간
+              전체월수)
+            </p>
+            <p
+              class="text-body-4 color-gray-tertiary font-weight-light row-margin-mini"
+            >
+              최소금액 : 500,000원/최대금액 900,000원
+            </p>
+          </section>
+          <section class="row-margin-contents">
+            <h4
+              class="text-body-4 color-gray-secondary font-weight-regular row-margin-mini"
+            >
+              반환지연금
+            </h4>
+            <p class="text-body-2">
+              일리스료+(일리스료X반환지연금률 100%)X경과일수
+            </p>
+          </section>
+          <section class="row-margin-contents">
+            <h4
+              class="text-body-4 color-gray-secondary font-weight-regular row-margin-mini"
+            >
+              반환자동차평가/가치감가비용
+            </h4>
+            <p class="text-body-2">
+              감가금액=반환시점의 자동차의 기대가치(혹은 중고차시세)X감가율의 합
+            </p>
+            <p
+              class="text-body-4 color-gray-tertiary font-weight-light row-margin-mini"
+            >
+              감가비 산정기준은 홈페이지 참조
+            </p>
+          </section>
+          <section class="row-margin-contents">
+            <h4
+              class="text-body-4 color-gray-secondary font-weight-regular row-margin-mini"
+            >
+              지연배상금률
+            </h4>
+            <p class="text-body-2">연 6.9%</p>
+            <p
+              class="text-body-4 color-gray-tertiary font-weight-light row-margin-mini"
+            >
+              약정이자율+최대3%, 법정최고금리 이내
+            </p>
+          </section>
           <!-- //Case : 금융리스일 경우 노출 -->
         </section>
 
@@ -570,149 +633,153 @@ export default {
             자동차 근저당 설정계약서
           </h3>
 
-          <section>
-            <h4 class="text-body-2 row-margin-item-medium">
-              채권자 겸 근저당권자
-            </h4>
+          <div>
+            <section class="row-margin-contents-group">
+              <h4 class="text-body-2 row-margin-item-medium">
+                채권자 겸 근저당권자
+              </h4>
 
-            <BasicBox>
-              <KeyValue margin="regular">
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>주소</KeyValueTitle>
-                  <KeyValueText>
-                    88733<br />
-                    인천 서구 청라1동 11, 청라동
-                  </KeyValueText>
-                </KeyValueItem>
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>상호</KeyValueTitle>
-                  <KeyValueText>하나캐피탈</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
-            </BasicBox>
-          </section>
+              <BasicBox>
+                <KeyValue margin="regular">
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>주소</KeyValueTitle>
+                    <KeyValueText>
+                      88733<br />
+                      인천 서구 청라1동 11, 청라동
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>상호</KeyValueTitle>
+                    <KeyValueText>하나캐피탈</KeyValueText>
+                  </KeyValueItem>
+                </KeyValue>
+              </BasicBox>
+            </section>
 
-          <section class="row-margin-contents-group">
-            <h4 class="text-body-2 row-margin-item-medium">근저당권 설정인</h4>
+            <section class="row-margin-contents-group">
+              <h4 class="text-body-2 row-margin-item-medium">
+                근저당권 설정인
+              </h4>
 
-            <BasicBox>
-              <KeyValue margin="regular">
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>주소</KeyValueTitle>
-                  <KeyValueText>
-                    88733<br />
-                    인천 서구 청라1동 11, 청라동
-                  </KeyValueText>
-                </KeyValueItem>
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>성명</KeyValueTitle>
-                  <KeyValueText>김하나</KeyValueText>
-                </KeyValueItem>
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>생년월일</KeyValueTitle>
-                  <KeyValueText>1998.01.23</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
-            </BasicBox>
-          </section>
+              <BasicBox>
+                <KeyValue margin="regular">
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>주소</KeyValueTitle>
+                    <KeyValueText>
+                      88733<br />
+                      인천 서구 청라1동 11, 청라동
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>성명</KeyValueTitle>
+                    <KeyValueText>김하나</KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>생년월일</KeyValueTitle>
+                    <KeyValueText>1998.01.23</KeyValueText>
+                  </KeyValueItem>
+                </KeyValue>
+              </BasicBox>
+            </section>
 
-          <section class="row-margin-contents-group">
-            <h4 class="text-body-2 row-margin-item-medium">채무자</h4>
+            <section class="row-margin-contents-group">
+              <h4 class="text-body-2 row-margin-item-medium">채무자</h4>
 
-            <BasicBox>
-              <KeyValue margin="regular">
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>주소</KeyValueTitle>
-                  <KeyValueText>
-                    88733<br />
-                    인천 서구 청라1동 11, 청라동
-                  </KeyValueText>
-                </KeyValueItem>
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>성명</KeyValueTitle>
-                  <KeyValueText>홍길동</KeyValueText>
-                </KeyValueItem>
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>
-                    설정금액<br />
-                    (채권가액)
-                  </KeyValueTitle>
-                  <KeyValueText>
-                    금 100,000,000 원정<br />
-                    (100,000,000 원)
-                  </KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
-            </BasicBox>
-          </section>
+              <BasicBox>
+                <KeyValue margin="regular">
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>주소</KeyValueTitle>
+                    <KeyValueText>
+                      88733<br />
+                      인천 서구 청라1동 11, 청라동
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>성명</KeyValueTitle>
+                    <KeyValueText>홍길동</KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>
+                      설정금액<br />
+                      (채권가액)
+                    </KeyValueTitle>
+                    <KeyValueText>
+                      금 100,000,000 원정<br />
+                      (100,000,000 원)
+                    </KeyValueText>
+                  </KeyValueItem>
+                </KeyValue>
+              </BasicBox>
+            </section>
+          </div>
+        </section>
 
-          <section class="row-margin-contents-group">
-            <h4 class="text-body-2 row-margin-item-medium">자동차의 표시</h4>
+        <section class="row-margin-container-medium">
+          <h3 class="text-title-2 row-margin-contents">자동차의 표시</h3>
 
-            <BasicBox>
-              <BasicBoxHead>
-                <BasicBoxHeadLeft>
-                  <div class="flex-box row-margin-mini">
-                    <div class="flex-box__cell">
-                      <CarEmblem code="1001" name="현대" />
-                    </div>
-                    <div class="flex-box__cell flex-box__cell--small">
-                      <p class="text-body-4 font-weight-light">2020년식</p>
-                    </div>
+          <BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <div class="flex-box row-margin-mini">
+                  <div class="flex-box__cell">
+                    <CarEmblem code="1001" name="현대" />
                   </div>
-                  <h3 class="text-body-1 font-weight-medium">123가1234</h3>
-                  <p class="text-body-4 color-gray row-margin-small">
-                    올 뉴 아반떼/인스퍼레이션
-                  </p>
-                </BasicBoxHeadLeft>
-                <BasicBoxHeadRight>
-                  <CarThumb src="/images/_dummy/car-thumb.png" />
-                </BasicBoxHeadRight>
-              </BasicBoxHead>
-              <KeyValue margin="regular">
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>차대번호</KeyValueTitle>
-                  <KeyValueText>ASDFSD1231ASDF</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
-            </BasicBox>
-          </section>
+                  <div class="flex-box__cell flex-box__cell--small">
+                    <p class="text-body-4 font-weight-light">2020년식</p>
+                  </div>
+                </div>
+                <h3 class="text-body-1 font-weight-medium">123가1234</h3>
+                <p class="text-body-4 color-gray row-margin-small">
+                  올 뉴 아반떼/인스퍼레이션
+                </p>
+              </BasicBoxHeadLeft>
+              <BasicBoxHeadRight>
+                <CarThumb src="/images/_dummy/car-thumb.png" />
+              </BasicBoxHeadRight>
+            </BasicBoxHead>
+            <KeyValue margin="regular">
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>차대번호</KeyValueTitle>
+                <KeyValueText>ASDFSD1231ASDF</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </BasicBox>
         </section>
         <!-- //Case : 자동차 근저당 설정이 되어있을 경우 노출 -->
       </div>
@@ -734,7 +801,3 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/myLoan/LayerMyLoanOnlineContractConfirm002.scss';
-</style>

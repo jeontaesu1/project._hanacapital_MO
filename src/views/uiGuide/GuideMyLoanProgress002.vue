@@ -46,7 +46,11 @@ import LayerMyLoanOnlineContractSuccession from '@/views/myLoan/LayerMyLoanOnlin
 import LayerMyLoanOnlineContractSuccessionConfirm001 from '@/views/myLoan/LayerMyLoanOnlineContractSuccessionConfirm001.vue';
 import LayerMyLoanOnlineContractSuccessionConfirm002 from '@/views/myLoan/LayerMyLoanOnlineContractSuccessionConfirm002.vue';
 import LayerMyLoanOnlineContractSuccessionImportant from '@/views/myLoan/LayerMyLoanOnlineContractSuccessionImportant.vue';
+import LayerMyLoanOnlineContractSuccessionConfirm003 from '@/views/myLoan/LayerMyLoanOnlineContractSuccessionConfirm003.vue';
+import LayerMyLoanOnlineContractSuccessionConfirm004 from '@/views/myLoan/LayerMyLoanOnlineContractSuccessionConfirm004.vue';
 import LayerMyLoanOnlineContractConfirm002 from '@/views/myLoan/LayerMyLoanOnlineContractConfirm002.vue';
+import LayerMyLoanOnlineContractConfirm003 from '@/views/myLoan/LayerMyLoanOnlineContractConfirm003.vue';
+import LayerMyLoanOnlineContractConfirm004 from '@/views/myLoan/LayerMyLoanOnlineContractConfirm004.vue';
 
 export default {
   components: {
@@ -94,7 +98,11 @@ export default {
     LayerMyLoanOnlineContractSuccessionConfirm001,
     LayerMyLoanOnlineContractSuccessionConfirm002,
     LayerMyLoanOnlineContractSuccessionImportant,
+    LayerMyLoanOnlineContractSuccessionConfirm003,
+    LayerMyLoanOnlineContractSuccessionConfirm004,
     LayerMyLoanOnlineContractConfirm002,
+    LayerMyLoanOnlineContractConfirm003,
+    LayerMyLoanOnlineContractConfirm004,
   },
   setup() {
     const layer001 = ref(null);
@@ -138,6 +146,10 @@ export default {
     const layer039 = ref(null);
     const layer040 = ref(null);
     const layer041 = ref(null);
+    const layer042 = ref(null);
+    const layer043 = ref(null);
+    const layer044 = ref(null);
+    const layer045 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -262,6 +274,18 @@ export default {
     const layer041Open = (e = {}) => {
       layer041.value.layer.open(e.target);
     };
+    const layer042Open = (e = {}) => {
+      layer042.value.layer.open(e.target);
+    };
+    const layer043Open = (e = {}) => {
+      layer043.value.layer.open(e.target);
+    };
+    const layer044Open = (e = {}) => {
+      layer044.value.layer.open(e.target);
+    };
+    const layer045Open = (e = {}) => {
+      layer045.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -305,6 +329,10 @@ export default {
       layer039,
       layer040,
       layer041,
+      layer042,
+      layer043,
+      layer044,
+      layer045,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -346,6 +374,10 @@ export default {
       layer039Open,
       layer040Open,
       layer041Open,
+      layer042Open,
+      layer043Open,
+      layer044Open,
+      layer045Open,
     };
   },
 };
@@ -561,7 +593,27 @@ export default {
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer041Open"
+          >승계확약서_오토리스<br />MY_M03_l026(MY_M03_l026a)
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer042Open"
+          >승계확약서_오토리스<br />AF_M98_l005</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer043Open"
           >계약정보 최종확인_리스 승계 후<br />MY_M03_l022(MY_M03_l022le1)
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer044Open"
+          >계약정보 최종확인_장기렌터카 승계전<br />MY_M03_l022(MY_M03_l022pa1)
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer045Open"
+          >계약정보 최종확인_장기렌터카 신규/승계후/연장<br />MY_M03_l022(MY_M03_l022pa2)
         </BasicButton>
       </ButtonListItem>
     </ButtonList>
@@ -606,6 +658,10 @@ export default {
     <LayerMyLoanOnlineContractSuccessionConfirm001 ref="layer038" />
     <LayerMyLoanOnlineContractSuccessionConfirm002 ref="layer039" />
     <LayerMyLoanOnlineContractSuccessionImportant ref="layer040" />
-    <LayerMyLoanOnlineContractConfirm002 ref="layer041" />
+    <LayerMyLoanOnlineContractSuccessionConfirm003 ref="layer041" />
+    <LayerMyLoanOnlineContractSuccessionConfirm004 ref="layer042" />
+    <LayerMyLoanOnlineContractConfirm002 ref="layer043" />
+    <LayerMyLoanOnlineContractConfirm003 ref="layer044" />
+    <LayerMyLoanOnlineContractConfirm004 ref="layer045" />
   </PageContents>
 </template>

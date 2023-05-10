@@ -64,55 +64,43 @@ export default {
         <PageMainText>중도금 분할 실행 동의서</PageMainText>
       </PageTextGroup>
 
-      <div>
-        <BasicBox>
-          <BasicBoxHead>
-            <BasicBoxHeadLeft>
-              <h3 class="text-body-1 font-weight-medium">김하나</h3>
-            </BasicBoxHeadLeft>
-          </BasicBoxHead>
-          <KeyValue margin="regular">
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>총 분할 회차</KeyValueTitle>
-              <KeyValueText>
-                5회차<br />
-                (999,999,999 원 / 100,000,000 원)
-              </KeyValueText>
-            </KeyValueItem>
+      <BasicBox>
+        <BasicBoxHead>
+          <BasicBoxHeadLeft>
+            <h3 class="text-body-1 font-weight-medium">김하나</h3>
+          </BasicBoxHeadLeft>
+        </BasicBoxHead>
+        <KeyValue margin="regular">
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>총 분할 회차</KeyValueTitle>
+            <KeyValueText>
+              5회차<br />
+              (999,999,999 원 / 100,000,000 원)
+            </KeyValueText>
+          </KeyValueItem>
 
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>세부사항</KeyValueTitle>
-              <KeyValueText>하단 세부내용 참조</KeyValueText>
-            </KeyValueItem>
-          </KeyValue>
-        </BasicBox>
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>세부사항</KeyValueTitle>
+            <KeyValueText>하단 세부내용 참조</KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+      </BasicBox>
 
-        <ul class="reset-list row-margin-contents">
-          <li class="row-margin-contents">
-            <div :class="$style['image-view']">
-              <img
-                src="@/assets/images/_dummy/box-detail.png"
-                alt="샘플 이미지"
-              />
-            </div>
-          </li>
-          <li class="row-margin-contents">
-            <div :class="$style['image-view']">
-              <img
-                src="@/assets/images/_dummy/box-detail.png"
-                alt="샘플 이미지"
-              />
-            </div>
-          </li>
-        </ul>
+      <div class="row-margin-contents">
+        <div :class="[$style['image-view'], 'row-margin-contents']">
+          <img src="@/assets/images/_dummy/box-detail.png" alt="샘플 이미지" />
+        </div>
+        <div :class="[$style['image-view'], 'row-margin-contents']">
+          <img src="@/assets/images/_dummy/box-detail.png" alt="샘플 이미지" />
+        </div>
       </div>
 
       <template v-slot:foot>

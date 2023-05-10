@@ -13,7 +13,7 @@
 
   &__key {
     flex: none;
-    margin-right: 16px;
+    margin-right: 8px;
     color: $color-gray-60;
   }
 
@@ -32,6 +32,14 @@
 
       .key-value__value {
         text-align: left;
+      }
+    }
+  }
+
+  &--vertical-align {
+    &-center {
+      .key-value__item {
+        align-items: center;
       }
     }
   }
@@ -91,7 +99,7 @@
 
     &-medium {
       .key-value__key {
-        width: 60px;
+        width: 72px;
       }
     }
   }

@@ -17,6 +17,10 @@ export default {
       Type: String,
       default: null,
     },
+    verticalAlign: {
+      Type: String,
+      default: null,
+    },
     direction: {
       Type: String,
       default: null,
@@ -51,6 +55,7 @@ export default {
       $style['key-value'],
       {
         [$style[`key-value--align-${align}`]]: align,
+        [$style[`key-value--vertical-align-${verticalAlign}`]]: verticalAlign,
         [$style[`key-value--direction-${direction}`]]: direction,
         [$style[`key-value--margin-${margin}`]]: margin,
         [$style[`key-value--size-${size}`]]: size,

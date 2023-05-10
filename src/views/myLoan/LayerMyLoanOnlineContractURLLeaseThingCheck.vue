@@ -1,6 +1,6 @@
 <script>
 // BF_M05_l012
-import { ref, reactive } from 'vue';
+import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
@@ -17,25 +17,6 @@ import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import CheckBox from '@/components/ui/form/CheckBox.vue';
 import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
 import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
-
-const dummyData = () => [
-  {
-    product: '레이져',
-    model: '프로레이져',
-    manufacturer: '(주)루트로닉',
-    number: '100AAAAAA000',
-    date: '2022.12.01',
-    supplier: '공급사1',
-  },
-  {
-    product: '레이져',
-    model: '프로레이져',
-    manufacturer: '(주)루트로닉',
-    number: '100AAAAAA000',
-    date: '2022.12.01',
-    supplier: '공급사1',
-  },
-];
 
 export default {
   components: {
@@ -56,14 +37,9 @@ export default {
     CheckBoxObject,
   },
   setup() {
-    const state = reactive({
-      data: dummyData(),
-    });
-
     const layer = ref(null);
 
     return {
-      state,
       layer,
     };
   },
@@ -155,11 +131,7 @@ export default {
           <h3 class="text-title-2 row-margin-contents">점검물건</h3>
 
           <ul class="reset-list">
-            <li
-              v-for="(item, i) in state.data"
-              :key="i"
-              class="row-margin-item-group"
-            >
+            <li v-for="i in 2" :key="i" class="row-margin-item-group">
               <BasicBox>
                 <KeyValue margin="regular">
                   <KeyValueItem
@@ -168,7 +140,7 @@ export default {
                     }"
                   >
                     <KeyValueTitle>물건명</KeyValueTitle>
-                    <KeyValueText>{{ item.product }}</KeyValueText>
+                    <KeyValueText>레이져</KeyValueText>
                   </KeyValueItem>
 
                   <KeyValueItem
@@ -177,7 +149,7 @@ export default {
                     }"
                   >
                     <KeyValueTitle>모델명</KeyValueTitle>
-                    <KeyValueText>{{ item.model }}</KeyValueText>
+                    <KeyValueText>프로레이져</KeyValueText>
                   </KeyValueItem>
 
                   <KeyValueItem
@@ -186,7 +158,7 @@ export default {
                     }"
                   >
                     <KeyValueTitle>제조사</KeyValueTitle>
-                    <KeyValueText>{{ item.manufacturer }}</KeyValueText>
+                    <KeyValueText>(주)루트로닉</KeyValueText>
                   </KeyValueItem>
 
                   <KeyValueItem
@@ -195,7 +167,7 @@ export default {
                     }"
                   >
                     <KeyValueTitle>제조번호</KeyValueTitle>
-                    <KeyValueText>{{ item.number }}</KeyValueText>
+                    <KeyValueText>100AAAAAA000</KeyValueText>
                   </KeyValueItem>
 
                   <KeyValueItem
@@ -204,7 +176,7 @@ export default {
                     }"
                   >
                     <KeyValueTitle>제조일자</KeyValueTitle>
-                    <KeyValueText>{{ item.date }}</KeyValueText>
+                    <KeyValueText>2022.12.01</KeyValueText>
                   </KeyValueItem>
 
                   <KeyValueItem
@@ -213,7 +185,7 @@ export default {
                     }"
                   >
                     <KeyValueTitle>공급자</KeyValueTitle>
-                    <KeyValueText>{{ item.supplier }}</KeyValueText>
+                    <KeyValueText>공급사1</KeyValueText>
                   </KeyValueItem>
                 </KeyValue>
               </BasicBox>

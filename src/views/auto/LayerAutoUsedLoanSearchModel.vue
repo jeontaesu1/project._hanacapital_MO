@@ -109,15 +109,19 @@ export default {
                   :option="[
                     {
                       value: '1',
-                      text: 'option1',
+                      text: '현대',
                     },
                     {
                       value: '2',
-                      text: 'option2',
+                      text: '기아',
                     },
                     {
                       value: '3',
-                      text: 'option3',
+                      text: '제네시스',
+                    },
+                    {
+                      value: '4',
+                      text: '쉐보레',
                     },
                   ]"
                   buttonTitle="브랜드 선택하기"
@@ -143,15 +147,15 @@ export default {
                   :option="[
                     {
                       value: '1',
-                      text: 'option1',
+                      text: '쏘나타',
                     },
                     {
                       value: '2',
-                      text: 'option2',
+                      text: '그랜저',
                     },
                     {
                       value: '3',
-                      text: 'option3',
+                      text: '아반떼',
                     },
                   ]"
                   buttonTitle="모델명 선택하기"
@@ -275,15 +279,19 @@ export default {
                   :option="[
                     {
                       value: '1',
-                      text: 'option1',
+                      text: '2967cc',
                     },
                     {
                       value: '2',
-                      text: 'option2',
+                      text: '가솔린',
                     },
                     {
                       value: '3',
-                      text: 'option3',
+                      text: '디젤',
+                    },
+                    {
+                      value: '4',
+                      text: '전기',
                     },
                   ]"
                   buttonTitle="엔진타입 선택하기"
@@ -309,15 +317,19 @@ export default {
                   :option="[
                     {
                       value: '1',
-                      text: 'option1',
+                      text: '쏘나타 뉴 라이즈 1.6T-Gdi 스마트',
                     },
                     {
                       value: '2',
-                      text: 'option2',
+                      text: '봉고3 트럭 다용도복합 냉동탑차 1톤',
                     },
                     {
                       value: '3',
-                      text: 'option3',
+                      text: '봉고3 EV 리스',
+                    },
+                    {
+                      value: '4',
+                      text: '봉고3 윙바디',
                     },
                   ]"
                   buttonTitle="세부모델 선택하기"

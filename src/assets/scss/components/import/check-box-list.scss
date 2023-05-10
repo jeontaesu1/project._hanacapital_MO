@@ -1,44 +1,38 @@
 .check-box-list {
   display: block;
 
+  &::before {
+    content: '';
+    display: table;
+  }
+
   &__list {
     @include reset-list;
     display: flex;
     align-items: stretch;
+    flex-wrap: wrap;
+    margin: -2px 0 0 -8px;
   }
 
   &__item {
     display: flex;
     align-items: stretch;
-    flex: 1;
+    flex: auto;
     min-width: 0;
     box-sizing: border-box;
-
-    & + & {
-      margin-left: 6px;
-    }
+    padding: 2px 0 0 8px;
   }
 
   &--wrap {
-    &::before {
-      content: '';
-      display: table;
-    }
-
     .check-box-list {
       &__list {
         margin: -8px 0 0 -6px;
-        flex-wrap: wrap;
       }
 
       &__item {
         flex: none;
         width: 50%;
         padding: 8px 0 0 6px;
-
-        & + .check-box-list__item {
-          margin-left: 0;
-        }
       }
     }
   }

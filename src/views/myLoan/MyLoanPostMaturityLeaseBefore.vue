@@ -34,6 +34,8 @@ import IconCall from '@/assets/images/icon/call.svg?component';
 import IconDocumentComplete from '@/assets/images/icon/document-complete.svg?component';
 import IconContract from '@/assets/images/icon/contract.svg?component';
 import IconCar from '@/assets/images/icon/car.svg?component';
+import IconCarCheck from '@/assets/images/icon/car-check.svg?component';
+import IconDocumentSearch from '@/assets/images/icon/document-search.svg?component';
 
 export default {
   components: {
@@ -44,7 +46,6 @@ export default {
     BasicBox,
     BasicBoxHead,
     BasicBoxHeadLeft,
-    BasicButton,
     KeyValue,
     KeyValueItem,
     KeyValueTitle,
@@ -54,6 +55,7 @@ export default {
     StickyBar,
     NavTab,
     NavTabButton,
+    BasicButton,
     ButtonList,
     ButtonListItem,
     NoticeText,
@@ -66,6 +68,8 @@ export default {
     IconDocumentComplete,
     IconContract,
     IconCar,
+    IconCarCheck,
+    IconDocumentSearch,
   },
   setup() {
     const store = {
@@ -825,7 +829,7 @@ export default {
                   >
                 </div>
                 <div :class="$style['step__icon']">
-                  <IconCar />
+                  <IconDocumentSearch />
                 </div>
               </div>
             </li>
@@ -928,7 +932,7 @@ export default {
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
-                  <IconCar />
+                  <IconCarCheck />
                 </div>
               </div>
             </li>

@@ -64,52 +64,40 @@ export default {
         <PageMainText>채권 양도 통지서</PageMainText>
       </PageTextGroup>
 
-      <div>
-        <BasicBox>
-          <BasicBoxHead>
-            <BasicBoxHeadLeft>
-              <h3 class="text-body-1 font-weight-medium">김하나</h3>
-            </BasicBoxHeadLeft>
-          </BasicBoxHead>
-          <KeyValue margin="regular">
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>생년월일</KeyValueTitle>
-              <KeyValueText>1993.01.23</KeyValueText>
-            </KeyValueItem>
+      <BasicBox>
+        <BasicBoxHead>
+          <BasicBoxHeadLeft>
+            <h3 class="text-body-1 font-weight-medium">김하나</h3>
+          </BasicBoxHeadLeft>
+        </BasicBoxHead>
+        <KeyValue margin="regular">
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>생년월일</KeyValueTitle>
+            <KeyValueText>1993.01.23</KeyValueText>
+          </KeyValueItem>
 
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>분양정보</KeyValueTitle>
-              <KeyValueText>오시리아 스위첸</KeyValueText>
-            </KeyValueItem>
-          </KeyValue>
-        </BasicBox>
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>분양정보</KeyValueTitle>
+            <KeyValueText>오시리아 스위첸</KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+      </BasicBox>
 
-        <ul class="reset-list row-margin-contents">
-          <li class="row-margin-contents">
-            <div :class="$style['image-view']">
-              <img
-                src="@/assets/images/_dummy/box-detail.png"
-                alt="샘플 이미지"
-              />
-            </div>
-          </li>
-          <li class="row-margin-contents">
-            <div :class="$style['image-view']">
-              <img
-                src="@/assets/images/_dummy/box-detail.png"
-                alt="샘플 이미지"
-              />
-            </div>
-          </li>
-        </ul>
+      <div class="row-margin-contents">
+        <div :class="[$style['image-view'], 'row-margin-contents']">
+          <img src="@/assets/images/_dummy/box-detail.png" alt="샘플 이미지" />
+        </div>
+        <div :class="[$style['image-view'], 'row-margin-contents']">
+          <img src="@/assets/images/_dummy/box-detail.png" alt="샘플 이미지" />
+        </div>
       </div>
 
       <template v-slot:foot>

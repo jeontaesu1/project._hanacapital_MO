@@ -118,7 +118,7 @@ export default {
       <FormList :classNames="{ wrap: 'row-margin-item-group' }">
         <FormListItem
           titleText="이메일"
-          target="#LayerMyLoanCertificateRepaymentEmailId"
+          target="#layerMyLoanCertificateRepaymentEmailId"
         >
           <FormInvalid :error="state.mailError">
             <InputBlock :error="state.mailError">
@@ -193,7 +193,7 @@ export default {
           </FormInvalid>
         </FormListItem>
       </FormList>
-      <!-- Case: 직접 입력 선택시 -->
+      <!-- // Case: 직접 입력 선택시 -->
 
       <template v-slot:foot>
         <ButtonList

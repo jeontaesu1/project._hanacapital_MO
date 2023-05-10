@@ -82,49 +82,25 @@ export default {
           >
             <ul :class="$style['check-box-list__list']">
               <li :class="$style['check-box-list__item']">
-                <CheckBox
-                  id="myInfoMarketingAgree001_001"
-                  :classNames="{
-                    wrap: $style['agree-list__checkbox'],
-                  }"
-                  theme="quinary"
-                >
+                <CheckBox id="myInfoMarketingAgree001_001" theme="quinary">
                   <CheckBoxObject />
                   <CheckBoxLabelText>전화</CheckBoxLabelText>
                 </CheckBox>
               </li>
               <li :class="$style['check-box-list__item']">
-                <CheckBox
-                  id="myInfoMarketingAgree001_002"
-                  :classNames="{
-                    wrap: $style['agree-list__checkbox'],
-                  }"
-                  theme="quinary"
-                >
+                <CheckBox id="myInfoMarketingAgree001_002" theme="quinary">
                   <CheckBoxObject />
                   <CheckBoxLabelText>문자메시지</CheckBoxLabelText>
                 </CheckBox>
               </li>
               <li :class="$style['check-box-list__item']">
-                <CheckBox
-                  id="myInfoMarketingAgree001_003"
-                  :classNames="{
-                    wrap: $style['agree-list__checkbox'],
-                  }"
-                  theme="quinary"
-                >
+                <CheckBox id="myInfoMarketingAgree001_003" theme="quinary">
                   <CheckBoxObject />
                   <CheckBoxLabelText>우편</CheckBoxLabelText>
                 </CheckBox>
               </li>
               <li :class="$style['check-box-list__item']">
-                <CheckBox
-                  id="myInfoMarketingAgree001_004"
-                  :classNames="{
-                    wrap: $style['agree-list__checkbox'],
-                  }"
-                  theme="quinary"
-                >
+                <CheckBox id="myInfoMarketingAgree001_004" theme="quinary">
                   <CheckBoxObject />
                   <CheckBoxLabelText>이메일</CheckBoxLabelText>
                 </CheckBox>
@@ -173,49 +149,25 @@ export default {
           >
             <ul :class="$style['check-box-list__list']">
               <li :class="$style['check-box-list__item']">
-                <CheckBox
-                  id="myInfoMarketingAgree002_001"
-                  :classNames="{
-                    wrap: $style['agree-list__checkbox'],
-                  }"
-                  theme="quinary"
-                >
+                <CheckBox id="myInfoMarketingAgree002_001" theme="quinary">
                   <CheckBoxObject />
                   <CheckBoxLabelText>전화</CheckBoxLabelText>
                 </CheckBox>
               </li>
               <li :class="$style['check-box-list__item']">
-                <CheckBox
-                  id="myInfoMarketingAgree002_002"
-                  :classNames="{
-                    wrap: $style['agree-list__checkbox'],
-                  }"
-                  theme="quinary"
-                >
+                <CheckBox id="myInfoMarketingAgree002_002" theme="quinary">
                   <CheckBoxObject />
                   <CheckBoxLabelText>문자메시지</CheckBoxLabelText>
                 </CheckBox>
               </li>
               <li :class="$style['check-box-list__item']">
-                <CheckBox
-                  id="myInfoMarketingAgree002_003"
-                  :classNames="{
-                    wrap: $style['agree-list__checkbox'],
-                  }"
-                  theme="quinary"
-                >
+                <CheckBox id="myInfoMarketingAgree002_003" theme="quinary">
                   <CheckBoxObject />
                   <CheckBoxLabelText>우편</CheckBoxLabelText>
                 </CheckBox>
               </li>
               <li :class="$style['check-box-list__item']">
-                <CheckBox
-                  id="myInfoMarketingAgree002_004"
-                  :classNames="{
-                    wrap: $style['agree-list__checkbox'],
-                  }"
-                  theme="quinary"
-                >
+                <CheckBox id="myInfoMarketingAgree002_004" theme="quinary">
                   <CheckBoxObject />
                   <CheckBoxLabelText>이메일</CheckBoxLabelText>
                 </CheckBox>

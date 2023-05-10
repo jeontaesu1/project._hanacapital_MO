@@ -51,70 +51,68 @@ export default {
       </PageMainText>
     </PageTextGroup>
 
-    <div>
-      <BasicBox>
-        <div>
-          <h3 class="text-body-4 font-weight-light">사용 신청할 수 있는</h3>
-          <div class="flex-box row-margin-small">
-            <div class="flex-box__cell">
-              <h3 class="text-body-1 font-weight-medium">사용가능 하나머니</h3>
-            </div>
-            <div class="flex-box__cell flex-1 flex-box__cell--medium">
-              <UnitText size="regular" rightUnit="원" align="right"
-                ><span class="color-green">35,000</span></UnitText
-              >
-            </div>
+    <BasicBox>
+      <section>
+        <h3 class="text-body-4 font-weight-light row-margin-small">
+          사용 신청할 수 있는
+        </h3>
+        <div class="flex-box">
+          <div class="flex-box__cell flex-1">
+            <h4 class="text-body-1 font-weight-medium">사용가능 하나머니</h4>
+          </div>
+          <div class="flex-box__cell flex-box__cell--medium">
+            <UnitText size="regular" rightUnit="원" align="right"
+              ><span class="color-green">35,000</span></UnitText
+            >
           </div>
         </div>
+      </section>
 
-        <BasicHr
-          type="contents"
-          theme="quaternary"
-          className="row-margin-contents-small"
-        />
+      <BasicHr
+        type="contents"
+        theme="quaternary"
+        className="row-margin-contents-small"
+      />
 
-        <div>
-          <h3 class="text-body-4 font-weight-light">
-            사용가능 머니로 전환 예정인
-          </h3>
-          <div class="flex-box row-margin-small">
-            <div class="flex-box__cell">
-              <h3 class="text-body-1 font-weight-medium">
-                가용예정 하나머니는
-              </h3>
-            </div>
-            <div class="flex-box__cell flex-1 flex-box__cell--medium">
-              <UnitText size="regular" rightUnit="원" align="right"
-                ><span class="color-green">5,000</span></UnitText
-              >
-            </div>
+      <section>
+        <h3 class="text-body-4 font-weight-light row-margin-small">
+          사용가능 머니로 전환 예정인
+        </h3>
+        <div class="flex-box">
+          <div class="flex-box__cell flex-1">
+            <h4 class="text-body-1 font-weight-medium">가용예정 하나머니는</h4>
+          </div>
+          <div class="flex-box__cell flex-box__cell--medium">
+            <UnitText size="regular" rightUnit="원" align="right"
+              ><span class="color-green">5,000</span></UnitText
+            >
           </div>
         </div>
+      </section>
 
-        <BasicHr
-          type="contents"
-          theme="quaternary"
-          className="row-margin-contents-small"
-        />
+      <BasicHr
+        type="contents"
+        theme="quaternary"
+        className="row-margin-contents-small"
+      />
 
-        <div>
-          <h3 class="text-body-4 font-weight-light">
-            유효기간 종료로 익월 소멸 예정인
-          </h3>
-          <div class="flex-box row-margin-small">
-            <div class="flex-box__cell">
-              <h3 class="text-body-1 font-weight-medium">
-                익월소멸예정 하나머니
-              </h3>
-            </div>
-            <div class="flex-box__cell flex-1 flex-box__cell--medium">
-              <UnitText size="regular" rightUnit="원" align="right"
-                ><span class="color-green">0</span></UnitText
-              >
-            </div>
+      <section>
+        <h3 class="text-body-4 font-weight-light row-margin-small">
+          유효기간 종료로 익월 소멸 예정인
+        </h3>
+        <div class="flex-box">
+          <div class="flex-box__cell flex-1">
+            <h4 class="text-body-1 font-weight-medium">
+              익월소멸예정 하나머니
+            </h4>
+          </div>
+          <div class="flex-box__cell flex-box__cell--medium">
+            <UnitText size="regular" rightUnit="원" align="right"
+              ><span class="color-green">0</span></UnitText
+            >
           </div>
         </div>
-      </BasicBox>
-    </div>
+      </section>
+    </BasicBox>
   </PageContents>
 </template>

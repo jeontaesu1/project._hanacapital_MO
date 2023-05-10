@@ -1,6 +1,6 @@
 <script>
 // NC_M01_l002
-import { ref, reactive } from 'vue';
+import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import ToastPopup from '@/components/ui/layer/ToastPopup.vue';
@@ -16,30 +16,6 @@ import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
-
-const dummyData = () => [
-  {
-    name: '홍길동',
-    number: 'D1234-12345-123',
-    date: '2022.10.28',
-    deadline: '2022.11.10',
-    product: '상품명',
-  },
-  {
-    name: '홍길동',
-    number: 'D1234-12345-123',
-    date: '2022.10.28',
-    deadline: '2022.11.10',
-    product: '상품명',
-  },
-  {
-    name: '홍길동',
-    number: 'D1234-12345-123',
-    date: '2022.10.28',
-    deadline: '2022.11.10',
-    product: '상품명',
-  },
-];
 
 export default {
   components: {
@@ -59,14 +35,9 @@ export default {
     KeyValueText,
   },
   setup() {
-    const state = reactive({
-      data: dummyData(),
-    });
-
     const layer = ref(null);
 
     return {
-      state,
       layer,
     };
   },
@@ -83,15 +54,11 @@ export default {
       </template>
 
       <ul class="reset-list">
-        <li
-          v-for="(item, i) in state.data"
-          :key="i"
-          class="row-margin-item-group"
-        >
+        <li v-for="i in 3" :key="i" class="row-margin-item-group">
           <BasicBox>
             <BasicBoxHead>
               <BasicBoxHeadLeft>
-                <h3 class="text-body-1 font-weight-medium">{{ item.name }}</h3>
+                <h3 class="text-body-1 font-weight-medium">홍길동</h3>
               </BasicBoxHeadLeft>
             </BasicBoxHead>
             <KeyValue margin="regular">
@@ -101,7 +68,7 @@ export default {
                 }"
               >
                 <KeyValueTitle>채권번호</KeyValueTitle>
-                <KeyValueText>{{ item.number }}</KeyValueText>
+                <KeyValueText>D1234-12345-123</KeyValueText>
               </KeyValueItem>
 
               <KeyValueItem
@@ -110,7 +77,7 @@ export default {
                 }"
               >
                 <KeyValueTitle>실행일</KeyValueTitle>
-                <KeyValueText>{{ item.date }}</KeyValueText>
+                <KeyValueText>2022.10.28</KeyValueText>
               </KeyValueItem>
 
               <KeyValueItem
@@ -119,7 +86,7 @@ export default {
                 }"
               >
                 <KeyValueTitle>등록기한</KeyValueTitle>
-                <KeyValueText>{{ item.deadline }}</KeyValueText>
+                <KeyValueText>2022.11.10</KeyValueText>
               </KeyValueItem>
               <KeyValueItem
                 :classNames="{
@@ -127,7 +94,7 @@ export default {
                 }"
               >
                 <KeyValueTitle>상품명</KeyValueTitle>
-                <KeyValueText>{{ item.product }}</KeyValueText>
+                <KeyValueText>상품명</KeyValueText>
               </KeyValueItem>
             </KeyValue>
           </BasicBox>

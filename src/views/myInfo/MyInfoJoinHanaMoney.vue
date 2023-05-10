@@ -100,7 +100,6 @@ export default {
               </div>
             </div>
           </li>
-
           <li :class="$style['authority__item']">
             <div :class="$style['authority__icon']">
               <ImgSample />

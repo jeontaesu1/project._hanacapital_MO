@@ -5,10 +5,24 @@ import { onMounted, onUnmounted } from 'vue';
 import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
+import PageMainText from '@/components/ui/text/PageMainText.vue';
+import PageSubText from '@/components/ui/text/PageSubText.vue';
+import IllustObject from '@/components/ui/common/IllustObject.vue';
+import ButtonList from '@/components/ui/button/ButtonList.vue';
+import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
 
 export default {
   components: {
     PageContents,
+    PageTextGroup,
+    PageMainText,
+    PageSubText,
+    IllustObject,
+    ButtonList,
+    ButtonListItem,
+    BasicButton,
   },
   setup() {
     const store = {
@@ -18,7 +32,7 @@ export default {
     };
 
     onMounted(() => {
-      store.ui.header.setTitle(() => '타이틀');
+      store.ui.header.setTitle(() => '하나캐피탈 멤버십');
       store.ui.header.setLeftButtons(() => ['back']);
       store.ui.header.setRightButtons(() => []);
     });
@@ -34,7 +48,30 @@ export default {
 
 <template>
   <PageContents>
-    <h1>Page</h1>
+    <PageTextGroup>
+      <PageMainText>
+        축하드려요!<br />
+        하나캐피탈 멤버십 회원가입이<br />
+        <strong>완료되었습니다</strong>
+      </PageMainText>
+      <PageSubText>
+        하나캐피탈 멤버십을 통해<br />
+        더 많은 혜택을 누려 보세요.
+      </PageSubText>
+    </PageTextGroup>
+
+    <IllustObject type="complete" />
+
+    <template v-slot:foot>
+      <ButtonList
+        :classNames="{
+          wrap: 'row-margin-none',
+        }"
+      >
+        <ButtonListItem>
+          <BasicButton>확인</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
+    </template>
   </PageContents>
 </template>
-

@@ -32,25 +32,6 @@ import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 
 import IconArrow from '@/assets/images/icon/dropdown.svg?component';
 
-const dummyData = () => [
-  {
-    number: '180주8300',
-    name: 'K5 하이브리드(DL3) 노블레스',
-    date: '2022.09.22',
-    branch001: '퍼펌승',
-    branch002: '퍼펌승',
-    deadline: '2022.10.06',
-  },
-  {
-    number: '180주8300',
-    name: 'K5 하이브리드(DL3) 노블레스',
-    date: '2022.09.22',
-    branch001: '퍼펌승',
-    branch002: '퍼펌승',
-    deadline: '2022.10.06',
-  },
-];
-
 export default {
   components: {
     PageContents,
@@ -78,7 +59,6 @@ export default {
     FormListItem,
     FormInvalid,
     FormInvalidMessage,
-
     IconArrow,
   },
   setup() {
@@ -94,8 +74,6 @@ export default {
       branchError002: false,
       searchError001: false,
       searchError002: false,
-
-      data: dummyData(),
     });
 
     onMounted(() => {
@@ -130,12 +108,13 @@ export default {
       </div>
     </BasicBox>
 
-    <section>
+    <div>
       <FormList>
         <!-- DD : 계정의 취급부서 자동 입력 -->
         <FormListItem
           titleText="취급부서"
           target="#inventoryFinanceCheckHomeDepartment"
+          :disabled="true"
         >
           <FormInvalid :error="state.departmentError">
             <InputBlock :error="state.departmentError">
@@ -255,26 +234,24 @@ export default {
         </FormListItem>
       </FormList>
 
-      <div class="row-margin-contents-group">
-        <ButtonList
-          :classNames="{
-            wrap: 'row-margin-none',
-          }"
-        >
-          <ButtonListItem>
-            <BasicButton :line="true" theme="quaternary">초기화</BasicButton>
-          </ButtonListItem>
-          <ButtonListItem>
-            <BasicButton :line="true">검색</BasicButton>
-          </ButtonListItem>
-        </ButtonList>
-      </div>
-    </section>
+      <ButtonList
+        :classNames="{
+          wrap: 'row-margin-contents-group',
+        }"
+      >
+        <ButtonListItem>
+          <BasicButton :line="true" theme="quaternary">초기화</BasicButton>
+        </ButtonListItem>
+        <ButtonListItem>
+          <BasicButton :line="true">검색</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
+    </div>
 
     <!-- Case : 검색 후 노출 -->
     <BasicHr className="row-margin-container-medium" />
 
-    <section class="contents-wrap">
+    <div class="contents-wrap">
       <!-- Case : 검색내역이 없을 경우 -->
       <div :class="$style['empty']">
         <p :class="$style['empty__text']">검색된 내역이 없습니다.</p>
@@ -282,20 +259,14 @@ export default {
       <!-- //Case : 검색내역이 없을 경우 -->
 
       <!-- Case : 검색내역 있을 경우 -->
-      <ul class="reset-list row-margin-item-group">
-        <li
-          v-for="(item, i) in state.data"
-          :key="i"
-          class="row-margin-item-group"
-        >
+      <ul class="reset-list">
+        <li v-for="i in 2" :key="i" class="row-margin-item-group">
           <BasicBox>
             <BasicBoxHead>
               <BasicBoxHeadLeft>
-                <h3 class="text-body-1 font-weight-medium">
-                  {{ item.number }}
-                </h3>
+                <h3 class="text-body-1 font-weight-medium">180주8300</h3>
                 <p class="text-body-4 color-gray row-margin-small">
-                  {{ item.name }}
+                  K5 하이브리드(DL3) 노블레스
                 </p>
               </BasicBoxHeadLeft>
             </BasicBoxHead>
@@ -307,7 +278,7 @@ export default {
                 }"
               >
                 <KeyValueTitle>실행일</KeyValueTitle>
-                <KeyValueText>{{ item.date }}</KeyValueText>
+                <KeyValueText>2022.09.22</KeyValueText>
               </KeyValueItem>
 
               <KeyValueItem
@@ -316,7 +287,7 @@ export default {
                 }"
               >
                 <KeyValueTitle>제휴점</KeyValueTitle>
-                <KeyValueText>{{ item.branch001 }}</KeyValueText>
+                <KeyValueText>퍼펌승</KeyValueText>
               </KeyValueItem>
 
               <KeyValueItem
@@ -325,7 +296,7 @@ export default {
                 }"
               >
                 <KeyValueTitle>매매상사</KeyValueTitle>
-                <KeyValueText>{{ item.branch002 }}</KeyValueText>
+                <KeyValueText>퍼펌승</KeyValueText>
               </KeyValueItem>
 
               <KeyValueItem
@@ -334,12 +305,16 @@ export default {
                 }"
               >
                 <KeyValueTitle>실사기한</KeyValueTitle>
-                <KeyValueText>{{ item.deadline }}</KeyValueText>
+                <KeyValueText>2022.10.06</KeyValueText>
               </KeyValueItem>
             </KeyValue>
 
             <div class="row-margin-contents-small">
-              <ButtonList>
+              <ButtonList
+                :classNames="{
+                  wrap: 'row-margin-none',
+                }"
+              >
                 <ButtonListItem>
                   <BasicButton :line="true" size="small"
                     >미실사 사유등록</BasicButton
@@ -372,7 +347,7 @@ export default {
         </TextButton>
       </div>
       <!-- //Case : 검색내역 있을 경우 -->
-    </section>
+    </div>
     <!-- //Case : 검색 후 노출 -->
   </PageContents>
 </template>
