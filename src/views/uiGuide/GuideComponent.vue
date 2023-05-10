@@ -7123,6 +7123,7 @@ export default {
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
         <ColorChip />
+        <ColorChip type="input" />
         <ColorChip :colors="['244, 238, 238']" />
         <ColorChip :colors="['244, 238, 238', '225, 213, 213', '66, 83, 82']" />
         <ColorChip
