@@ -6,7 +6,8 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-// import Layer from '@/views/';
+import LayerEquipmentLeaseEstimateSchedule from '@/views/equipmentLease/LayerEquipmentLeaseEstimateSchedule.vue';
+import LayerEquipmentLeaseEstimateURLSchedule from '@/views/equipmentLease/LayerEquipmentLeaseEstimateURLSchedule.vue';
 
 export default {
   components: {
@@ -14,18 +15,25 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    // Layer,
+    LayerEquipmentLeaseEstimateSchedule,
+    LayerEquipmentLeaseEstimateURLSchedule,
   },
   setup() {
     const layer001 = ref(null);
+    const layer002 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
     };
+    const layer002Open = (e = {}) => {
+      layer002.value.layer.open(e.target);
+    };
 
     return {
       layer001,
+      layer002,
       layer001Open,
+      layer002Open,
     };
   },
 };
@@ -40,12 +48,18 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">버튼</BasicButton>
+        <BasicButton @click="layer001Open">
+          예상 상환스케쥴<br />EL_M01_l001
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer001Open">
+          견적서 고객 전송 URL - 예상 상환스케쥴<br />EL_M01_l005
+        </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
-    <!--
-    <Layer ref="layer001" />
-    -->
+    <LayerEquipmentLeaseEstimateSchedule ref="layer001" />
+    <LayerEquipmentLeaseEstimateURLSchedule ref="layer002" />
   </PageContents>
 </template>
