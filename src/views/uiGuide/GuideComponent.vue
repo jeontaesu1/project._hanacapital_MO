@@ -1438,6 +1438,78 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">check list</h2>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <div :class="$style['check-box-list']">
+          <ul :class="$style['check-box-list__list']">
+            <li :class="$style['check-box-list__item']">
+              <CheckBox id="testCheck001_001" theme="quinary">
+                <CheckBoxObject />
+                <CheckBoxLabelText>전화</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+            <li :class="$style['check-box-list__item']">
+              <CheckBox id="testCheck001_002" theme="quinary">
+                <CheckBoxObject />
+                <CheckBoxLabelText>문자메시지</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+            <li :class="$style['check-box-list__item']">
+              <CheckBox id="testCheck001_003" theme="quinary">
+                <CheckBoxObject />
+                <CheckBoxLabelText>우편</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+            <li :class="$style['check-box-list__item']">
+              <CheckBox id="testCheck001_004" theme="quinary">
+                <CheckBoxObject />
+                <CheckBoxLabelText>이메일</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Wrap - col 2</h3>
+
+        <div
+          :class="[$style['check-box-list'], $style['check-box-list--wrap']]"
+        >
+          <ul :class="$style['check-box-list__list']">
+            <li :class="$style['check-box-list__item']">
+              <CheckBox id="myInfoMarketingAgree002_001" theme="quinary">
+                <CheckBoxObject />
+                <CheckBoxLabelText>전화</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+            <li :class="$style['check-box-list__item']">
+              <CheckBox id="myInfoMarketingAgree002_002" theme="quinary">
+                <CheckBoxObject />
+                <CheckBoxLabelText>문자메시지</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+            <li :class="$style['check-box-list__item']">
+              <CheckBox id="myInfoMarketingAgree002_003" theme="quinary">
+                <CheckBoxObject />
+                <CheckBoxLabelText>우편</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+            <li :class="$style['check-box-list__item']">
+              <CheckBox id="myInfoMarketingAgree002_004" theme="quinary">
+                <CheckBoxObject />
+                <CheckBoxLabelText>이메일</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">BoxCheck</h2>
 
       <div class="test-section-sub">
