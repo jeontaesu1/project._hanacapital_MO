@@ -39,7 +39,35 @@
     font-weight: 300;
   }
 
-  &__head + &__date {
+  &__head + &__date,
+  &__head + &__contents {
     margin-top: 4px;
+  }
+
+  &__contents {
+    display: flex;
+
+    &-left + &-right {
+      margin-left: auto;
+    }
+
+    &-list {
+      @include reset-list;
+    }
+
+    &-item {
+      display: flex;
+      @include font-size-default(13);
+      color: $color-gray-80;
+      font-weight: 300;
+    }
+
+    &-item + &-item {
+      margin-top: 2px;
+    }
+
+    &-key + &-value {
+      margin-left: 4px;
+    }
   }
 }
