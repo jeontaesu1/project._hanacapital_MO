@@ -143,6 +143,7 @@ export default {
                             </div>
                           </div>
                         </li>
+                        <!-- Case : 중고차 오토론일 경우 노출 -->
                         <li :class="$style['agree-list__item']">
                           <div :class="$style['agree-list__head']">
                             <CheckBox
@@ -195,6 +196,7 @@ export default {
                             </div>
                           </div>
                         </li>
+                        <!-- // Case : 중고차 오토론일 경우 노출 -->
                         <li :class="$style['agree-list__item']">
                           <div :class="$style['agree-list__head']">
                             <CheckBox
@@ -305,6 +307,7 @@ export default {
                 </UiAccordionItem>
                 <!-- //약관동의 : 상품 이용약관 전체동의 -->
 
+                <!-- Case : 할부론일 경우 노출 -->
                 <!-- 약관동의 : 출금이체 신청약관 전체동의 -->
                 <UiAccordionItem
                   :classNames="{ item: $style['agree-list__depth-item'] }"
@@ -388,6 +391,7 @@ export default {
                   </UiAccordionLayer>
                 </UiAccordionItem>
                 <!-- //약관동의 : 출금이체 신청약관 전체동의 -->
+                <!-- // Case : 할부론일 경우 노출 -->
 
                 <!-- 약관동의 : 실제소유자 확인 -->
                 <UiAccordionItem
@@ -1018,6 +1022,7 @@ export default {
                 </UiAccordionItem>
                 <!-- //약관동의 : 전자금융거래약관 -->
 
+                <!-- Case : 중고차 오토론일 경우 노출 -->
                 <!-- 약관동의 : 중고차 오토론 주요사항 전체동의 -->
                 <UiAccordionItem
                   :classNames="{ item: $style['agree-list__depth-item'] }"
@@ -1155,7 +1160,9 @@ export default {
                   </UiAccordionLayer>
                 </UiAccordionItem>
                 <!-- // 약관동의 : 중고차 오토론 주요사항 전체동의 -->
+                <!-- // Case : 중고차 오토론일 경우 노출 -->
 
+                <!-- Case : 중고차 할부인 경우 노출 -->
                 <!-- 약관동의 : 중고차 할부 주요사항 전체동의 -->
                 <UiAccordionItem
                   :classNames="{ item: $style['agree-list__depth-item'] }"
@@ -1319,7 +1326,9 @@ export default {
                   </UiAccordionLayer>
                 </UiAccordionItem>
                 <!-- // 약관동의 : 중고차 오토론 주요사항 전체동의 -->
+                <!-- // Case : 중고차 할부인 경우 노출 -->
 
+                <!-- Case : 하나캐피탈 멤버십 기가입자일 경우 미노출 -->
                 <!-- 약관동의 : 하나캐피탈 멤버십 가입 필수 전체동의 -->
                 <UiAccordionItem
                   :classNames="{ item: $style['agree-list__depth-item'] }"
@@ -1842,6 +1851,7 @@ export default {
                   </UiAccordionLayer>
                 </UiAccordionItem>
                 <!-- //약관동의 : 하나캐피탈 멤버십 가입 선택 전체동의 -->
+                <!-- // Case : 하나캐피탈 멤버십 기가입자일 경우 미노출 -->
               </UiAccordion>
             </div>
           </li>

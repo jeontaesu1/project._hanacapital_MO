@@ -235,5 +235,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/customer/CustomerFinancialConsumerProtectionInterestRateCutRequestInfo.scss';
+@import '@/assets/scss/views/customer/CustomerFinancialConsumerProtectionWithdrawSubscriptionInfo.scss';
 </style>
