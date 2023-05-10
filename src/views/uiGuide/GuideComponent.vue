@@ -1167,67 +1167,6 @@ export default {
     </section>
 
     <section class="test-section">
-      <h2 class="test-section-title">check box list</h2>
-      <div class="test-section-sub">
-        <h3 class="test-section-sub-title">Default</h3>
-        <div
-          :class="[$style['check-box-list'], $style['check-box-list--wrap']]"
-        >
-          <ul :class="$style['check-box-list__list']">
-            <li :class="$style['check-box-list__item']">
-              <CheckBox
-                id="myInfoMarketingAgree001_001"
-                :classNames="{
-                  wrap: $style['agree-list__checkbox'],
-                }"
-                theme="quinary"
-              >
-                <CheckBoxObject />
-                <CheckBoxLabelText>전화</CheckBoxLabelText>
-              </CheckBox>
-            </li>
-            <li :class="$style['check-box-list__item']">
-              <CheckBox
-                id="myInfoMarketingAgree001_002"
-                :classNames="{
-                  wrap: $style['agree-list__checkbox'],
-                }"
-                theme="quinary"
-              >
-                <CheckBoxObject />
-                <CheckBoxLabelText>문자메시지</CheckBoxLabelText>
-              </CheckBox>
-            </li>
-            <li :class="$style['check-box-list__item']">
-              <CheckBox
-                id="myInfoMarketingAgree001_003"
-                :classNames="{
-                  wrap: $style['agree-list__checkbox'],
-                }"
-                theme="quinary"
-              >
-                <CheckBoxObject />
-                <CheckBoxLabelText>우편</CheckBoxLabelText>
-              </CheckBox>
-            </li>
-            <li :class="$style['check-box-list__item']">
-              <CheckBox
-                id="myInfoMarketingAgree001_004"
-                :classNames="{
-                  wrap: $style['agree-list__checkbox'],
-                }"
-                theme="quinary"
-              >
-                <CheckBoxObject />
-                <CheckBoxLabelText>이메일</CheckBoxLabelText>
-              </CheckBox>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="test-section">
       <h2 class="test-section-title">CheckBox</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -1438,7 +1377,7 @@ export default {
     </section>
 
     <section class="test-section">
-      <h2 class="test-section-title">check list</h2>
+      <h2 class="test-section-title">CheckBox list</h2>
 
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -1481,25 +1420,25 @@ export default {
         >
           <ul :class="$style['check-box-list__list']">
             <li :class="$style['check-box-list__item']">
-              <CheckBox id="myInfoMarketingAgree002_001" theme="quinary">
+              <CheckBox id="testCheck002_001" theme="quinary">
                 <CheckBoxObject />
                 <CheckBoxLabelText>전화</CheckBoxLabelText>
               </CheckBox>
             </li>
             <li :class="$style['check-box-list__item']">
-              <CheckBox id="myInfoMarketingAgree002_002" theme="quinary">
+              <CheckBox id="testCheck002_002" theme="quinary">
                 <CheckBoxObject />
                 <CheckBoxLabelText>문자메시지</CheckBoxLabelText>
               </CheckBox>
             </li>
             <li :class="$style['check-box-list__item']">
-              <CheckBox id="myInfoMarketingAgree002_003" theme="quinary">
+              <CheckBox id="testCheck002_003" theme="quinary">
                 <CheckBoxObject />
                 <CheckBoxLabelText>우편</CheckBoxLabelText>
               </CheckBox>
             </li>
             <li :class="$style['check-box-list__item']">
-              <CheckBox id="myInfoMarketingAgree002_004" theme="quinary">
+              <CheckBox id="testCheck002_004" theme="quinary">
                 <CheckBoxObject />
                 <CheckBoxLabelText>이메일</CheckBoxLabelText>
               </CheckBox>
@@ -7194,6 +7133,126 @@ export default {
                 </span>
               </CheckBoxLabelText>
             </CheckBox>
+          </li>
+        </ul>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Contents list</h3>
+        <ul :class="$style['bill-list']">
+          <li :class="$style['bill-list__item']">
+            <div :class="$style['bill-list__block']">
+              <div :class="$style['bill-list__head']">
+                <div :class="$style['bill-list__detail']">
+                  <span :class="$style['bill-list__detail-item']">1회차</span>
+                </div>
+                <div :class="$style['bill-list__amount']">1,232,456,345 원</div>
+              </div>
+              <div :class="$style['bill-list__contents']">
+                <div :class="$style['bill-list__contents-left']">
+                  <dl :class="$style['bill-list__contents-list']">
+                    <div :class="$style['bill-list__contents-item']">
+                      <dt :class="$style['bill-list__contents-key']">원금</dt>
+                      <dd :class="$style['bill-list__contents-value']">
+                        912,232,321 원
+                      </dd>
+                    </div>
+                    <div :class="$style['bill-list__contents-item']">
+                      <dt :class="$style['bill-list__contents-key']">이자</dt>
+                      <dd :class="$style['bill-list__contents-value']">
+                        902,123,223 원
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+                <div :class="$style['bill-list__contents-right']">
+                  <dl :class="$style['bill-list__contents-list']">
+                    <div :class="$style['bill-list__contents-item']">
+                      <dt :class="$style['bill-list__contents-key']">잔액</dt>
+                      <dd :class="$style['bill-list__contents-value']">
+                        982,232,123 원
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li :class="$style['bill-list__item']">
+            <div :class="$style['bill-list__block']">
+              <div :class="$style['bill-list__head']">
+                <div :class="$style['bill-list__detail']">
+                  <span :class="$style['bill-list__detail-item']">2회차</span>
+                </div>
+                <div :class="$style['bill-list__amount']">1,232,456,345 원</div>
+              </div>
+              <div :class="$style['bill-list__contents']">
+                <div :class="$style['bill-list__contents-left']">
+                  <dl :class="$style['bill-list__contents-list']">
+                    <div :class="$style['bill-list__contents-item']">
+                      <dt :class="$style['bill-list__contents-key']">원금</dt>
+                      <dd :class="$style['bill-list__contents-value']">
+                        912,232,321 원
+                      </dd>
+                    </div>
+                    <div :class="$style['bill-list__contents-item']">
+                      <dt :class="$style['bill-list__contents-key']">이자</dt>
+                      <dd :class="$style['bill-list__contents-value']">
+                        902,123,223 원
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+                <div :class="$style['bill-list__contents-right']">
+                  <dl :class="$style['bill-list__contents-list']">
+                    <div :class="$style['bill-list__contents-item']">
+                      <dt :class="$style['bill-list__contents-key']">잔액</dt>
+                      <dd :class="$style['bill-list__contents-value']">
+                        982,232,123 원
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li :class="$style['bill-list__item']">
+            <div :class="$style['bill-list__block']">
+              <div :class="$style['bill-list__head']">
+                <div :class="$style['bill-list__detail']">
+                  <span :class="$style['bill-list__detail-item']">3회차</span>
+                </div>
+                <div :class="$style['bill-list__amount']">1,232,456,345 원</div>
+              </div>
+              <div :class="$style['bill-list__contents']">
+                <div :class="$style['bill-list__contents-left']">
+                  <dl :class="$style['bill-list__contents-list']">
+                    <div :class="$style['bill-list__contents-item']">
+                      <dt :class="$style['bill-list__contents-key']">원금</dt>
+                      <dd :class="$style['bill-list__contents-value']">
+                        912,232,321 원
+                      </dd>
+                    </div>
+                    <div :class="$style['bill-list__contents-item']">
+                      <dt :class="$style['bill-list__contents-key']">이자</dt>
+                      <dd :class="$style['bill-list__contents-value']">
+                        902,123,223 원
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+                <div :class="$style['bill-list__contents-right']">
+                  <dl :class="$style['bill-list__contents-list']">
+                    <div :class="$style['bill-list__contents-item']">
+                      <dt :class="$style['bill-list__contents-key']">잔액</dt>
+                      <dd :class="$style['bill-list__contents-value']">
+                        982,232,123 원
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+            </div>
           </li>
         </ul>
       </div>
