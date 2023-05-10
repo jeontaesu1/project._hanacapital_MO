@@ -35,5 +35,25 @@
     &-septenary {
       padding: 11px 15px;
     }
+
+    &-octonary {
+      border-color: transparent;
+      background: rgba($color-green-50, 0.1);
+    }
+
+    &-nonary {
+      border-color: transparent;
+      background-color: $color-navy-05;
+    }
+
+    // &-denary {
+    // }
+  }
+
+  &--radius {
+    &-secondary {
+      border-radius: 0;
+      background-color: $color-gray-05;
+    }
   }
 }
