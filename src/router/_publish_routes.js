@@ -64,6 +64,11 @@ const routes = [
     component: () => import('@/views/uiGuide/GuideError001.vue'),
   },
   {
+    path: '/guide/personal-loan-001',
+    name: '/guide/personal-loan-001',
+    component: () => import('@/views/uiGuide/GuidePersonalLoan001.vue'),
+  },
+  {
     path: '/guide/personal-loan-e-hana-001',
     name: '/guide/personal-loan-e-hana-001',
     component: () => import('@/views/uiGuide/GuidePersonalLoanEHana001.vue'),
@@ -449,6 +454,22 @@ const routes = [
     component: () =>
       import('@/views/uiGuide/GuideInventoryFinanceCheck001.vue'),
   },
+  {
+    path: '/guide/regist-document-001',
+    name: '/guide/regist-document-001',
+    component: () => import('@/views/uiGuide/GuideRegistDocument001.vue'),
+  },
+  {
+    path: '/guide/business-equipment-lease-001',
+    name: '/guide/business-equipment-lease-001',
+    component: () =>
+      import('@/views/uiGuide/GuideBusinessEquipmentLease001.vue'),
+  },
+  {
+    path: '/guide/equipment-lease-001',
+    name: '/guide/equipment-lease-001',
+    component: () => import('@/views/uiGuide/GuideEquipmentLease001.vue'),
+  },
 
   // home
   {
@@ -605,8 +626,140 @@ const routes = [
     component: () =>
       import('@/views/customer/CustomerReservationCounselingComplete.vue'),
   },
+  {
+    path: '/customer/clause',
+    name: '/customer/clause',
+    component: () => import('@/views/customer/CustomerClause.vue'),
+  },
+  {
+    path: '/customer/clause-detail',
+    name: '/customer/clause-detail',
+    component: () => import('@/views/customer/CustomerClauseDetail.vue'),
+  },
+  {
+    path: '/customer/financial-consumer-protection',
+    name: '/customer/financial-consumer-protection',
+    component: () =>
+      import('@/views/customer/CustomerFinancialConsumerProtection.vue'),
+  },
+  {
+    path: '/customer/financial-consumer-protection-charter',
+    name: '/customer/financial-consumer-protection-charter',
+    component: () =>
+      import('@/views/customer/CustomerFinancialConsumerProtectionCharter.vue'),
+  },
+  {
+    path: '/customer/financial-consumer-protection-organization',
+    name: '/customer/financial-consumer-protection-organization',
+    component: () =>
+      import(
+        '@/views/customer/CustomerFinancialConsumerProtectionOrganization.vue'
+      ),
+  },
+  {
+    path: '/customer/financial-consumer-protection-system',
+    name: '/customer/financial-consumer-protection-system',
+    component: () =>
+      import('@/views/customer/CustomerFinancialConsumerProtectionSystem.vue'),
+  },
+  {
+    path: '/customer/financial-consumer-protection-webzine',
+    name: '/customer/financial-consumer-protection-webzine',
+    component: () =>
+      import('@/views/customer/CustomerFinancialConsumerProtectionWebzine.vue'),
+  },
+  {
+    path: '/customer/financial-consumer-protection-notice-list',
+    name: '/customer/financial-consumer-protection-notice-list',
+    component: () =>
+      import(
+        '@/views/customer/CustomerFinancialConsumerProtectionNoticeList.vue'
+      ),
+  },
+  {
+    path: '/customer/financial-consumer-protection-notice-view',
+    name: '/customer/financial-consumer-protection-notice-view',
+    component: () =>
+      import(
+        '@/views/customer/CustomerFinancialConsumerProtectionNoticeView.vue'
+      ),
+  },
+  {
+    path: '/customer/financial-consumer-protection-interest-rate-cut-request-info',
+    name: '/customer/financial-consumer-protection-interest-rate-cut-request-info',
+    component: () =>
+      import(
+        '@/views/customer/CustomerFinancialConsumerProtectionInterestRateCutRequestInfo.vue'
+      ),
+  },
+  {
+    path: '/customer/financial-consumer-protection-withdraw-subscription-info',
+    name: '/customer/financial-consumer-protection-withdraw-subscription-info',
+    component: () =>
+      import(
+        '@/views/customer/CustomerFinancialConsumerProtectionWithdrawSubscriptionInfo.vue'
+      ),
+  },
+  {
+    path: '/customer/financial-consumer-protection-exemption-early-redemption-fee',
+    name: '/customer/financial-consumer-protection-exemption-early-redemption-fee',
+    component: () =>
+      import(
+        '@/views/customer/CustomerFinancialConsumerProtectionExemptionEarlyRedemptionFee.vue'
+      ),
+  },
+  {
+    path: '/customer/financial-consumer-protection-data',
+    name: '/customer/financial-consumer-protection-data',
+    component: () =>
+      import('@/views/customer/CustomerFinancialConsumerProtectionData.vue'),
+  },
+  {
+    path: '/customer/financial-consumer-protection-data-detail',
+    name: '/customer/financial-consumer-protection-data-detail',
+    component: () =>
+      import(
+        '@/views/customer/CustomerFinancialConsumerProtectionDataDetail.vue'
+      ),
+  },
 
   // inventory-financing
+  {
+    path: '/inventory-finance/home',
+    name: '/inventory-finance/home',
+    component: () =>
+      import('@/views/inventoryFinance/InventoryFinanceHome.vue'),
+  },
+  {
+    path: '/inventory-finance/loan-limit-inquiry',
+    name: '/inventory-finance/loan-limit-inquiry',
+    component: () =>
+      import('@/views/inventoryFinance/InventoryFinanceLoanLimitInquiry.vue'),
+  },
+  {
+    path: '/inventory-finance/loan-limit-inquiry-search-car-number',
+    name: '/inventory-finance/loan-limit-inquiry-search-car-number',
+    component: () =>
+      import(
+        '@/views/inventoryFinance/InventoryFinanceLoanLimitInquirySearchCarNumber.vue'
+      ),
+  },
+  {
+    path: '/inventory-finance/loan-limit-inquiry-search-car-model',
+    name: '/inventory-finance/loan-limit-inquiry-search-car-model',
+    component: () =>
+      import(
+        '@/views/inventoryFinance/InventoryFinanceLoanLimitInquirySearchCarModel.vue'
+      ),
+  },
+  {
+    path: '/inventory-finance/loan-limit-inquiry-complete',
+    name: '/inventory-finance/loan-limit-inquiry-complete',
+    component: () =>
+      import(
+        '@/views/inventoryFinance/InventoryFinanceLoanLimitInquiryComplete.vue'
+      ),
+  },
   {
     path: '/inventory-finance/early-list',
     name: '/inventory-finance/early-list',
@@ -745,6 +898,11 @@ const routes = [
     name: '/setting/certificate-export',
     component: () => import('@/views/setting/SettingCertificateExport.vue'),
   },
+  {
+    path: '/setting/hana-one-sign-guide',
+    name: '/setting/hana-one-sign-guide',
+    component: () => import('@/views/setting/SettingHanaOneSignGuide.vue'),
+  },
 
   // lm-blog
   {
@@ -874,6 +1032,11 @@ const routes = [
     path: '/business/industrial-lease',
     name: '/business/industrial-lease',
     component: () => import('@/views/business/BusinessIndustrialLease.vue'),
+  },
+  {
+    path: '/business/equipment-lease',
+    name: '/business/equipment-lease',
+    component: () => import('@/views/business/BusinessEquipmentLease.vue'),
   },
 
   // my-loan
@@ -1075,6 +1238,11 @@ const routes = [
 
   // sales-used-car
   {
+    path: '/sales-used-car/home',
+    name: '/sales-used-car/home',
+    component: () => import('@/views/salesUsedCar/SalesUsedCarHome.vue'),
+  },
+  {
     path: '/sales-used-car/new-counseling',
     name: '/sales-used-car/new-counseling',
     component: () =>
@@ -1239,6 +1407,123 @@ const routes = [
       import(
         '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemPrePurchaseCarDetail.vue'
       ),
+  },
+
+  // company
+  {
+    path: '/company/about',
+    name: '/company/about',
+    component: () => import('@/views/company/CompanyAbout.vue'),
+  },
+  {
+    path: '/company/ceo',
+    name: '/company/ceo',
+    component: () => import('@/views/company/CompanyCEO.vue'),
+  },
+  {
+    path: '/company/history',
+    name: '/company/history',
+    component: () => import('@/views/company/CompanyHistory.vue'),
+  },
+  {
+    path: '/company/business-areas',
+    name: '/company/business-areas',
+    component: () => import('@/views/company/CompanyBusinessAreas.vue'),
+  },
+  {
+    path: '/company/ir-list',
+    name: '/company/ir-list',
+    component: () => import('@/views/company/CompanyIRList.vue'),
+  },
+  {
+    path: '/company/ir-detail',
+    name: '/company/ir-detail',
+    component: () => import('@/views/company/CompanyIRDetail.vue'),
+  },
+  {
+    path: '/company/sustainable-management-list',
+    name: '/company/sustainable-management-list',
+    component: () =>
+      import('@/views/company/CompanySustainableManagementList.vue'),
+  },
+  {
+    path: '/company/sustainable-management-detail',
+    name: '/company/sustainable-management-detail',
+    component: () =>
+      import('@/views/company/CompanySustainableManagementDetail.vue'),
+  },
+  {
+    path: '/company/group',
+    name: '/company/group',
+    component: () => import('@/views/company/CompanyGroup.vue'),
+  },
+  {
+    path: '/company/ethics-charter',
+    name: '/company/ethics-charter',
+    component: () => import('@/views/company/CompanyEthicsCharter.vue'),
+  },
+  {
+    path: '/company/ethics-code',
+    name: '/company/ethics-code',
+    component: () => import('@/views/company/CompanyEthicsCode.vue'),
+  },
+  {
+    path: '/company/human-rights-declaration',
+    name: '/company/human-rights-declaration',
+    component: () =>
+      import('@/views/company/CompanyHumanRightsDeclaration.vue'),
+  },
+  {
+    path: '/company/human-rights-declaration-structure',
+    name: '/company/human-rights-declaration-structure',
+    component: () =>
+      import('@/views/company/CompanyHumanRightsDeclarationStructure.vue'),
+  },
+  {
+    path: '/company/recruit-guide',
+    name: '/company/recruit-guide',
+    component: () => import('@/views/company/CompanyRecruitGuide.vue'),
+  },
+  {
+    path: '/company/personnel-welfare',
+    name: '/company/personnel-welfare',
+    component: () => import('@/views/company/CompanyPersonnelWelfare.vue'),
+  },
+  {
+    path: '/company/recruit-list',
+    name: '/company/recruit-list',
+    component: () => import('@/views/company/CompanyRecruitList.vue'),
+  },
+  {
+    path: '/company/recruit-detail',
+    name: '/company/recruit-detail',
+    component: () => import('@/views/company/CompanyRecruitDetail.vue'),
+  },
+
+  // equipment-lease
+  {
+    path: '/equipment-lease/estimate',
+    name: '/equipment-lease/estimate',
+    component: () =>
+      import('@/views/equipmentLease/EquipmentLeaseEstimate.vue'),
+  },
+  {
+    path: '/equipment-lease/estimate-result',
+    name: '/equipment-lease/estimate-result',
+    component: () =>
+      import('@/views/equipmentLease/EquipmentLeaseEstimateResult.vue'),
+  },
+  {
+    path: '/equipment-lease/state-estimate',
+    name: '/equipment-lease/state-estimate',
+    component: () =>
+      import('@/views/equipmentLease/EquipmentLeaseStateEstimate.vue'),
+  },
+  {
+    path: '/equipment-lease/state-internal-memo',
+    name: '/equipment-lease/state-internal-memo',
+    component: () =>
+      import('@/views/equipmentLease/EquipmentLeaseStateInternalMemo.vue'),
   },
 ];
 

@@ -87,6 +87,7 @@ import ColorChip from '@/components/ui/imageData/ColorChip.vue';
 import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
 import MaskingText from '@/components/ui/text/MaskingText.vue';
 import FilterButton from '@/components/ui/button/FilterButton.vue';
+import DeleteButton from '@/components/ui/button/DeleteButton.vue';
 
 import BrandLogo001 from '@/assets/images/card-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/card-logo/lotte.svg?component';
@@ -210,6 +211,7 @@ export default {
     BasicDatepicker,
     MaskingText,
     FilterButton,
+    DeleteButton,
     IconAdd,
     BrandLogo001,
     BrandLogo002,
@@ -792,6 +794,42 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Delete Button</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <DeleteButton />
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Secondary</h3>
+        <DeleteButton theme="secondary" />
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Tertiary</h3>
+        <DeleteButton theme="tertiary" />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Add Button</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <button
+          type="button"
+          :class="[$style['add-button'], 'row-margin-item']"
+        >
+          <span :class="$style['add-button__inner']">
+            <span :class="$style['add-button__text']">지정운전자 추가등록</span>
+            <span :class="$style['add-button__icon']">
+              <IconAdd />
+            </span>
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">inline wrap</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -1129,6 +1167,67 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">check box list</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div
+          :class="[$style['check-box-list'], $style['check-box-list--wrap']]"
+        >
+          <ul :class="$style['check-box-list__list']">
+            <li :class="$style['check-box-list__item']">
+              <CheckBox
+                id="myInfoMarketingAgree001_001"
+                :classNames="{
+                  wrap: $style['agree-list__checkbox'],
+                }"
+                theme="quinary"
+              >
+                <CheckBoxObject />
+                <CheckBoxLabelText>전화</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+            <li :class="$style['check-box-list__item']">
+              <CheckBox
+                id="myInfoMarketingAgree001_002"
+                :classNames="{
+                  wrap: $style['agree-list__checkbox'],
+                }"
+                theme="quinary"
+              >
+                <CheckBoxObject />
+                <CheckBoxLabelText>문자메시지</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+            <li :class="$style['check-box-list__item']">
+              <CheckBox
+                id="myInfoMarketingAgree001_003"
+                :classNames="{
+                  wrap: $style['agree-list__checkbox'],
+                }"
+                theme="quinary"
+              >
+                <CheckBoxObject />
+                <CheckBoxLabelText>우편</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+            <li :class="$style['check-box-list__item']">
+              <CheckBox
+                id="myInfoMarketingAgree001_004"
+                :classNames="{
+                  wrap: $style['agree-list__checkbox'],
+                }"
+                theme="quinary"
+              >
+                <CheckBoxObject />
+                <CheckBoxLabelText>이메일</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">CheckBox</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -1335,6 +1434,78 @@ export default {
           <CheckBoxObject />
           <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
         </CheckBox>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">check list</h2>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <div :class="$style['check-box-list']">
+          <ul :class="$style['check-box-list__list']">
+            <li :class="$style['check-box-list__item']">
+              <CheckBox id="testCheck001_001" theme="quinary">
+                <CheckBoxObject />
+                <CheckBoxLabelText>전화</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+            <li :class="$style['check-box-list__item']">
+              <CheckBox id="testCheck001_002" theme="quinary">
+                <CheckBoxObject />
+                <CheckBoxLabelText>문자메시지</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+            <li :class="$style['check-box-list__item']">
+              <CheckBox id="testCheck001_003" theme="quinary">
+                <CheckBoxObject />
+                <CheckBoxLabelText>우편</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+            <li :class="$style['check-box-list__item']">
+              <CheckBox id="testCheck001_004" theme="quinary">
+                <CheckBoxObject />
+                <CheckBoxLabelText>이메일</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Wrap - col 2</h3>
+
+        <div
+          :class="[$style['check-box-list'], $style['check-box-list--wrap']]"
+        >
+          <ul :class="$style['check-box-list__list']">
+            <li :class="$style['check-box-list__item']">
+              <CheckBox id="myInfoMarketingAgree002_001" theme="quinary">
+                <CheckBoxObject />
+                <CheckBoxLabelText>전화</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+            <li :class="$style['check-box-list__item']">
+              <CheckBox id="myInfoMarketingAgree002_002" theme="quinary">
+                <CheckBoxObject />
+                <CheckBoxLabelText>문자메시지</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+            <li :class="$style['check-box-list__item']">
+              <CheckBox id="myInfoMarketingAgree002_003" theme="quinary">
+                <CheckBoxObject />
+                <CheckBoxLabelText>우편</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+            <li :class="$style['check-box-list__item']">
+              <CheckBox id="myInfoMarketingAgree002_004" theme="quinary">
+                <CheckBoxObject />
+                <CheckBoxLabelText>이메일</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -7073,6 +7244,11 @@ export default {
         <h3 class="test-section-sub-title">Default</h3>
         <CarThumb src="/images/_dummy/car-thumb.png" />
       </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">size: medium</h3>
+        <CarThumb size="medium" src="/images/_dummy/car-thumb.png" />
+      </div>
     </section>
 
     <section class="test-section">
@@ -7196,6 +7372,72 @@ export default {
 
         <div :class="$style['image-view']">
           <img src="@/assets/images/_dummy/box-detail.png" alt="샘플 이미지" />
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Q&A List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <div :class="$style['qna']">
+          <UiAccordion :classNames="{ wrap: $style['qna__list'] }">
+            <UiAccordionItem :classNames="{ item: $style['qna__item'] }">
+              <div :class="$style['qna__head']">
+                <div :class="$style['qna__symbol']">Q</div>
+                <div :class="$style['qna__block']">
+                  <div :class="$style['qna__title']">
+                    하나캐피탈 멤버십 가입은<br />
+                    어떻게 하나요?
+                  </div>
+                </div>
+                <div :class="$style['qna__right']">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['qna__opener'] }"
+                  />
+                </div>
+              </div>
+
+              <UiAccordionLayer :classNames="{ layer: $style['qna__layer'] }">
+                <div :class="$style['qna__contents']">
+                  <div :class="$style['qna__symbol']">A</div>
+                  <div :class="$style['qna__text']">
+                    하나캐피탈 회원가입은 성별 나이 특정제한 없이 하나캐피탈
+                    이용 및 관심있으신 손님이시면 누구나 가입가능하며, 홈페이지
+                    및 모바일에서 멤버십 가입하기를 통해 가입하실 수 있습니다.
+                  </div>
+                </div>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+            <UiAccordionItem :classNames="{ item: $style['qna__item'] }">
+              <div :class="$style['qna__head']">
+                <div :class="$style['qna__symbol']">Q</div>
+                <div :class="$style['qna__block']">
+                  <div :class="$style['qna__title']">
+                    하나캐피탈 멤버십 가입은<br />
+                    어떻게 하나요?
+                  </div>
+                </div>
+                <div :class="$style['qna__right']">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['qna__opener'] }"
+                  />
+                </div>
+              </div>
+
+              <UiAccordionLayer :classNames="{ layer: $style['qna__layer'] }">
+                <div :class="$style['qna__contents']">
+                  <div :class="$style['qna__symbol']">A</div>
+                  <div :class="$style['qna__text']">
+                    하나캐피탈 회원가입은 성별 나이 특정제한 없이 하나캐피탈
+                    이용 및 관심있으신 손님이시면 누구나 가입가능하며, 홈페이지
+                    및 모바일에서 멤버십 가입하기를 통해 가입하실 수 있습니다.
+                  </div>
+                </div>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+          </UiAccordion>
         </div>
       </div>
     </section>
