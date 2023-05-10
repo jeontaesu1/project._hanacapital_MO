@@ -1,3 +1,3 @@
 <script>
-// Common_M00_l029 고객서류등록
+// Common_M00_l040 고객서류등록
 </script>

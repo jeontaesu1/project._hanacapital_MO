@@ -88,6 +88,7 @@ import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
 import MaskingText from '@/components/ui/text/MaskingText.vue';
 import FilterButton from '@/components/ui/button/FilterButton.vue';
 import DeleteButton from '@/components/ui/button/DeleteButton.vue';
+import RoundButton from '@/components/ui/button/RoundButton.vue';
 
 import BrandLogo001 from '@/assets/images/card-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/card-logo/lotte.svg?component';
@@ -125,6 +126,7 @@ import IconDocumentComplete from '@/assets/images/icon/document-complete.svg?com
 import IconTooltip from '@/assets/images/icon/tooltip.svg?component';
 import IconLink from '@/assets/images/icon/link.svg?component';
 import IconStar from '@/assets/images/icon/star.svg?component';
+import IconTell from '@/assets/images/icon/tell.svg?component';
 
 export default {
   components: {
@@ -212,6 +214,7 @@ export default {
     MaskingText,
     FilterButton,
     DeleteButton,
+    RoundButton,
     IconAdd,
     BrandLogo001,
     BrandLogo002,
@@ -249,6 +252,7 @@ export default {
     IconTooltip,
     IconLink,
     IconStar,
+    IconTell,
   },
 
   setup() {
@@ -593,6 +597,12 @@ export default {
           </template>
           Button
         </BasicButton>
+        <BasicButton inline="true" size="mini">
+          Button
+          <template v-slot:rightIcon>
+            <div :class="$style['loading-icon']"></div>
+          </template>
+        </BasicButton>
         <BasicButton tagName="a" inline="true" disabledStyle="true">
           Button
           <template v-slot:rightIcon>
@@ -808,6 +818,41 @@ export default {
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Tertiary</h3>
         <DeleteButton theme="tertiary" />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Round Button</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <RoundButton size="mini" tagName="a" href="tel:1800-1110">
+          Button
+        </RoundButton>
+        <RoundButton
+          size="mini"
+          tagName="a"
+          href="tel:1800-1110"
+          disabledStyle="true"
+        >
+          Button
+        </RoundButton>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Icon</h3>
+        <RoundButton size="mini" tagName="a" href="tel:1800-1110">
+          <template v-slot:leftIcon>
+            <IconTell />
+          </template>
+          Button
+        </RoundButton>
+
+        <RoundButton size="mini" tagName="a" href="tel:1800-1110">
+          Button
+          <template v-slot:rightIcon>
+            <IconTell />
+          </template>
+        </RoundButton>
       </div>
     </section>
 
@@ -7151,6 +7196,170 @@ export default {
             '155, 171, 170',
           ]"
         />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Color Chip - Radio List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['colorchip']">
+          <ul :class="$style['colorchip__list']">
+            <li :class="$style['colorchip__item']">
+              <input
+                type="radio"
+                name="colorChipCheck001"
+                id="colorChipCheck001__001"
+                :class="$style['colorchip__input']"
+                checked
+              />
+              <div :class="$style['colorchip__block']">
+                <label
+                  for="colorChipCheck001__001"
+                  :class="$style['colorchip__label']"
+                ></label>
+                <ColorChip />
+              </div>
+            </li>
+            <li :class="$style['colorchip__item']">
+              <input
+                type="radio"
+                name="colorChipCheck001"
+                id="colorChipCheck001__002"
+                :class="$style['colorchip__input']"
+              />
+              <div :class="$style['colorchip__block']">
+                <label
+                  for="colorChipCheck001__002"
+                  :class="$style['colorchip__label']"
+                ></label>
+                <ColorChip :colors="['248, 245, 245']" />
+              </div>
+            </li>
+            <li :class="$style['colorchip__item']">
+              <input
+                type="radio"
+                name="colorChipCheck001"
+                id="colorChipCheck001__003"
+                :class="$style['colorchip__input']"
+              />
+              <div :class="$style['colorchip__block']">
+                <label
+                  for="colorChipCheck001__003"
+                  :class="$style['colorchip__label']"
+                ></label>
+                <ColorChip :colors="['66, 83, 82']" />
+              </div>
+            </li>
+            <li :class="$style['colorchip__item']">
+              <input
+                type="radio"
+                name="colorChipCheck001"
+                id="colorChipCheck001__004"
+                :class="$style['colorchip__input']"
+              />
+              <div :class="$style['colorchip__block']">
+                <label
+                  for="colorChipCheck001__004"
+                  :class="$style['colorchip__label']"
+                ></label>
+                <ColorChip :colors="['120, 13, 32']" />
+              </div>
+            </li>
+            <li :class="$style['colorchip__item']">
+              <input
+                type="radio"
+                name="colorChipCheck001"
+                id="colorChipCheck001__005"
+                :class="$style['colorchip__input']"
+              />
+              <div :class="$style['colorchip__block']">
+                <label
+                  for="colorChipCheck001__005"
+                  :class="$style['colorchip__label']"
+                ></label>
+                <ColorChip :colors="['66, 66, 66']" />
+              </div>
+            </li>
+            <li :class="$style['colorchip__item']">
+              <input
+                type="radio"
+                name="colorChipCheck001"
+                id="colorChipCheck001__006"
+                :class="$style['colorchip__input']"
+              />
+              <div :class="$style['colorchip__block']">
+                <label
+                  for="colorChipCheck001__006"
+                  :class="$style['colorchip__label']"
+                ></label>
+                <ColorChip :colors="['0, 0, 0']" />
+              </div>
+            </li>
+            <li :class="$style['colorchip__item']">
+              <input
+                type="radio"
+                name="colorChipCheck001"
+                id="colorChipCheck001__007"
+                :class="$style['colorchip__input']"
+              />
+              <div :class="$style['colorchip__block']">
+                <label
+                  for="colorChipCheck001__007"
+                  :class="$style['colorchip__label']"
+                ></label>
+                <ColorChip :colors="['244, 238, 238', '225, 213, 213']" />
+              </div>
+            </li>
+            <li :class="$style['colorchip__item']">
+              <input
+                type="radio"
+                name="colorChipCheck001"
+                id="colorChipCheck001__008"
+                :class="$style['colorchip__input']"
+              />
+              <div :class="$style['colorchip__block']">
+                <label
+                  for="colorChipCheck001__008"
+                  :class="$style['colorchip__label']"
+                ></label>
+                <ColorChip :colors="['66, 83, 82', '155, 171, 170']" />
+              </div>
+            </li>
+            <li :class="$style['colorchip__item']">
+              <input
+                type="radio"
+                name="colorChipCheck001"
+                id="colorChipCheck001__009"
+                :class="$style['colorchip__input']"
+              />
+              <div :class="$style['colorchip__block']">
+                <label
+                  for="colorChipCheck001__009"
+                  :class="$style['colorchip__label']"
+                ></label>
+                <ColorChip :colors="['0, 40, 86']" />
+              </div>
+            </li>
+            <li :class="$style['colorchip__item']">
+              <input
+                type="radio"
+                name="colorChipCheck001"
+                id="colorChipCheck001__010"
+                :class="$style['colorchip__input']"
+              />
+              <div :class="$style['colorchip__block']">
+                <label
+                  for="colorChipCheck001__010"
+                  :class="$style['colorchip__label']"
+                >
+                  <span class="for-a11y">직접 입력</span>
+                </label>
+                <ColorChip type="input" />
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
