@@ -1,37 +1,19 @@
 @import '@/assets/scss/components/import/division-info.scss';
 @import '@/assets/scss/components/import/status-inquiry.scss';
 @import '@/assets/scss/components/import/empty.scss';
-@import '@/assets/scss/components/import/multi-progress.scss';
+@import '@/assets/scss/components/import/salesperson-card.scss';
 
-.icon-profile {
-  display: block;
-  flex: none;
-  width: 48px;
-  height: 48px;
-  padding: 12px;
-  box-sizing: border-box;
-  border-radius: 50%;
-  background-color: $color-gray-10;
-  overflow: hidden;
-
-  svg {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
+.opener {
+  width: 20px;
+  height: 20px;
 }
 
-.amount-text {
-  margin: 0;
-  color: $color-gray-50;
-  @include font-size-default(13);
-  font-weight: 400;
-}
-
-.accordion-gap {
+.accordion-layer {
   margin: 0 -19px;
+}
 
-  .contents {
-    padding: 0 19px;
-  }
+.accordion-contents {
+  margin: 20px 19px 0;
+  border-top: 1px solid $color-gray-20;
+  padding-top: 20px;
 }

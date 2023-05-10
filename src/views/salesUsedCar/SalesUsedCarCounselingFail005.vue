@@ -34,7 +34,7 @@ export default {
     onMounted(() => {
       store.ui.header.setTitle(() => '중고할부·론');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => ['menu']);
+      store.ui.header.setRightButtons(() => []);
     });
 
     onUnmounted(() => {
@@ -54,11 +54,12 @@ export default {
         상담등록에<br />
         <strong>실패하였습니다</strong>
       </IllustInfoTitle>
-      <IllustInfoText class="row-margin-item">
+      <IllustInfoText>
         상담등록이 완료되었으나 파일업로드가 실패하였습니다.<br />
         재업로드 해주시기 바랍니다.
       </IllustInfoText>
     </IllustInfo>
+
     <template v-slot:foot>
       <ButtonList
         :classNames="{

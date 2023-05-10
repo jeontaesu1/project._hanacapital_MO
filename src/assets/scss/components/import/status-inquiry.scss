@@ -2,10 +2,12 @@
   @include reset-list;
   display: flex;
   padding: 0 16px;
+  margin-bottom: 30px;
   background-color: $color-gray-05;
 
   &--gap {
-    margin: 0 -20px;
+    margin-left: -20px;
+    margin-right: -20px;
   }
 
   &__item {
@@ -36,6 +38,7 @@
 
       .status-inquiry__text {
         color: $color-black;
+        font-weight: 500;
       }
     }
   }
@@ -44,6 +47,7 @@
     display: block;
     color: $color-green-50;
     @include font-size-default(16);
+    font-weight: 700;
   }
 
   &__text {
@@ -51,5 +55,11 @@
     margin-top: 2px;
     color: $color-gray-60;
     @include font-size-default(12);
+  }
+
+  &--secondary {
+    .status-inquiry__number {
+      color: $color-blue-50;
+    }
   }
 }

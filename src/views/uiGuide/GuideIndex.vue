@@ -1175,7 +1175,12 @@ const datas = () => [
         path: '/guide/sales-used-car-001',
         status: 'partend',
         create: '2023.05.05',
-        log: [],
+        log: [
+          {
+            date: '2023.05.10',
+            text: '팝업 추가\n- 매매상사 약정 현황 조회\n- 차량정보 팝업\n- 수수료차감 팝업\n- 매매상사(차량 소유자)계좌 조회\n- 매매상사(차량 소유자)계좌 등록',
+          },
+        ],
       },
       {
         depth2: '신규상담\nUC_M02_p001',
@@ -1185,7 +1190,7 @@ const datas = () => [
         depth6: '',
         path: '/sales-used-car/new-counseling',
         status: 'end',
-        create: '2023.05.02',
+        create: '2023.05.10',
         log: [],
       },
       {
@@ -1195,8 +1200,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/sales-used-car/counseling',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.05.10',
         log: [],
       },
       {
@@ -1207,7 +1212,7 @@ const datas = () => [
         depth6: '',
         path: '/sales-used-car/counseling-complete',
         status: 'end',
-        create: '2023.05.02',
+        create: '2023.05.10',
         log: [],
       },
       {
@@ -1218,7 +1223,7 @@ const datas = () => [
         depth6: '',
         path: '/sales-used-car/counseling-auto-complete',
         status: 'end',
-        create: '2023.05.02',
+        create: '2023.05.10',
         log: [],
       },
       {
@@ -1229,7 +1234,7 @@ const datas = () => [
         depth6: '',
         path: '/sales-used-car/counseling-fail-001',
         status: 'end',
-        create: '2023.05.02',
+        create: '2023.05.10',
         log: [],
       },
       {
@@ -1240,7 +1245,7 @@ const datas = () => [
         depth6: '',
         path: '/sales-used-car/counseling-fail-002',
         status: 'end',
-        create: '2023.05.02',
+        create: '2023.05.10',
         log: [],
       },
       {
@@ -1251,7 +1256,7 @@ const datas = () => [
         depth6: '',
         path: '/sales-used-car/counseling-fail-003',
         status: 'end',
-        create: '2023.05.02',
+        create: '2023.05.10',
         log: [],
       },
       {
@@ -1262,7 +1267,7 @@ const datas = () => [
         depth6: '',
         path: '/sales-used-car/counseling-fail-004',
         status: 'end',
-        create: '2023.05.02',
+        create: '2023.05.10',
         log: [],
       },
       {
@@ -1273,7 +1278,7 @@ const datas = () => [
         depth6: '',
         path: '/sales-used-car/counseling-fail-005',
         status: 'end',
-        create: '2023.05.02',
+        create: '2023.05.10',
         log: [],
       },
       {
@@ -1284,7 +1289,7 @@ const datas = () => [
         depth6: '',
         path: '/sales-used-car/counseling-impossible-001',
         status: 'end',
-        create: '2023.05.02',
+        create: '2023.05.10',
         log: [],
       },
       {
@@ -1295,7 +1300,7 @@ const datas = () => [
         depth6: '',
         path: '/sales-used-car/counseling-impossible-002',
         status: 'end',
-        create: '2023.05.02',
+        create: '2023.05.10',
         log: [],
       },
       {
@@ -1305,8 +1310,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/sales-used-car/counseling-edit',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.05.10',
         log: [],
       },
       {
@@ -1376,8 +1381,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/sales-new-car/home',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.05.10',
         log: [],
       },
       {

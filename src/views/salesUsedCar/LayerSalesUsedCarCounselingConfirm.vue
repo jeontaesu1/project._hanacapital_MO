@@ -50,8 +50,9 @@ export default {
           <PopupTitle> 차량정보를 확인해 주세요 </PopupTitle>
         </ToastPopupHead>
       </template>
+
       <div>
-        <div class="flex-box justify-conten-start">
+        <div class="flex-box">
           <div class="flex-box__cell">
             <CarEmblem code="1001" name="현대" />
           </div>
@@ -59,16 +60,18 @@ export default {
             <p class="text-body-4 font-weight-light">2020년식</p>
           </div>
         </div>
-        <h3 class="text-body-1 font-weight-medium">캐스퍼</h3>
+        <h3 class="text-body-1 font-weight-medium">11가1111</h3>
         <p class="text-body-4 color-gray row-margin-small">
-          2022년형 가솔린 1.0 터보 밴
+          뉴 카니발(YP) 3.0 가솔린 9인승 노블레스
         </p>
       </div>
+
       <BasicHr
         class="row-margin-contents-small"
         theme="quaternary"
         type="contents"
       />
+
       <KeyValue margin="regular">
         <KeyValueItem>
           <KeyValueTitle>배기량</KeyValueTitle>

@@ -1,6 +1,5 @@
 <script>
 // UC_M03_l004
-
 import { ref } from 'vue';
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
@@ -66,14 +65,14 @@ export default {
         </FullPopupHead>
       </template>
 
-      <section>
+      <div>
         <FormList>
           <FormListItem
             titleText="매매상사"
             :forceFocus="true"
             :disabled="true"
           >
-            <InputBlock>
+            <InputBlock :disabled="true">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   placeholder="현대오토스 / 210-91-12345"
@@ -82,32 +81,32 @@ export default {
                 />
               </InputBlockCell>
               <template v-slot:right>
-                <BasicButton
-                  size="mini"
-                  theme="quaternary"
-                  @click="select(false)"
-                >
+                <BasicButton size="mini" theme="quaternary">
                   매매상사 재선택
                 </BasicButton>
               </template>
             </InputBlock>
           </FormListItem>
         </FormList>
-      </section>
-      <!-- Case : 검색 후 노출 -->
+      </div>
 
       <BasicHr className="row-margin-container-medium" />
 
-      <!-- Case : 결과 있을 때 -->
-
-      <!-- // Case : 결과 후 노출 성명/상호 -->
-      <section>
+      <div class="contents-wrap">
         <PageTextGroup>
           <PageMainText>
             <strong>아래 해당하는 계좌를</strong><br />
             선택해 주세요
           </PageMainText>
         </PageTextGroup>
+
+        <!-- Case : 결과 없을 때 -->
+        <div :class="$style['empty']">
+          <p :class="$style['empty__text']">검색된 결과가 없습니다.</p>
+        </div>
+        <!-- Case : 결과 없을 때 -->
+
+        <!-- Case : 결과 있을 때 -->
         <ul :class="[$style['address-list'], $style['address-list--select']]">
           <li :class="$style['address-list__item']">
             <ContentsButton>
@@ -144,14 +143,8 @@ export default {
             </ContentsButton>
           </li>
         </ul>
-      </section>
-      <!-- // Case : 검색 후 노출 성명/상호 -->
-
-      <!-- Case : 결과 없을 때 -->
-      <div :class="$style['empty']">
-        <p :class="$style['empty__text']">검색된 결과가 없습니다.</p>
+        <!-- // Case : 결과 있을 때 -->
       </div>
-      <!-- Case : 결과 없을 때 -->
     </FullPopup>
   </UiLayer>
 </template>

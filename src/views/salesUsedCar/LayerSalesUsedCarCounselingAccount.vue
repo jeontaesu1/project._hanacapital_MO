@@ -1,6 +1,5 @@
 <script>
 // UC_M03_l003
-
 import { ref } from 'vue';
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
@@ -63,108 +62,92 @@ export default {
           </template>
         </FullPopupHead>
       </template>
-      <BoxCheckList :classNames="{ wrap: 'row-margin-contents' }">
-        <BoxCheckListItem>
-          <BoxCheck
-            :minSide="true"
-            name="testInputCheck014"
-            id="testInputCheck014_001"
-            :defaultChecked="true"
-          >
-            <BoxCheckLabel>성명/상호</BoxCheckLabel>
-          </BoxCheck>
-        </BoxCheckListItem>
-        <BoxCheckListItem>
-          <BoxCheck
-            :minSide="true"
-            name="testInputCheck014"
-            id="testInputCheck014_002"
-          >
-            <BoxCheckLabel>주민/사업자번호</BoxCheckLabel>
-          </BoxCheck>
-        </BoxCheckListItem>
-      </BoxCheckList>
-      <InputBlock type="search">
-        <InputBlockCell :flexible="true">
-          <BasicInput
-            type="search"
-            title="검색어 입력"
-            placeholder="검색어 입력"
-          />
-        </InputBlockCell>
-        <InputBlockCell type="search">
-          <SearchButton />
-        </InputBlockCell>
-      </InputBlock>
+
+      <div>
+        <BoxCheckList :classNames="{ wrap: 'row-margin-contents' }">
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="layerSalesUsedCarCounselingAccountType"
+              id="layerSalesUsedCarCounselingAccountType001"
+              :defaultChecked="true"
+            >
+              <BoxCheckLabel>성명/상호</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="layerSalesUsedCarCounselingAccountType"
+              id="layerSalesUsedCarCounselingAccountType002"
+            >
+              <BoxCheckLabel>주민/사업자번호</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+        </BoxCheckList>
+        <InputBlock type="search">
+          <InputBlockCell :flexible="true">
+            <BasicInput
+              type="search"
+              title="검색어 입력"
+              placeholder="검색어 입력"
+            />
+          </InputBlockCell>
+          <InputBlockCell type="search">
+            <SearchButton />
+          </InputBlockCell>
+        </InputBlock>
+      </div>
 
       <!-- Case : 검색 후 노출 -->
-
       <BasicHr className="row-margin-container-medium" />
 
-      <!-- Case : 결과 있을 때 -->
+      <div class="contents-wrap">
+        <!-- Case : 결과 없을 때 -->
+        <div :class="$style['empty']">
+          <p :class="$style['empty__text']">검색된 결과가 없습니다.</p>
+        </div>
+        <!-- Case : 결과 없을 때 -->
 
-      <!-- // Case : 결과 후 노출 성명/상호 -->
-      <section>
-        <ul class="reset-list row-margin-contents">
-          <li class="row-margin-container">
-            <p class="text-body-1 font-weight-medium row-margin-small">
-              현대오토스 신촌
-            </p>
-            <KeyValue align="left" margin="mini" size="large">
-              <KeyValueItem :classNames="{ item: 'text-body-4' }">
-                <KeyValueTitle>사업자번호</KeyValueTitle>
-                <KeyValueText> 210-91-12345</KeyValueText>
-              </KeyValueItem>
-            </KeyValue>
+        <!-- Case : 결과 있을 때 -->
+        <ul :class="$style['address-list']">
+          <!-- Case : 사업자 -->
+          <li :class="$style['address-list__item']">
+            <div :class="$style['address-list__block']">
+              <div :class="$style['address-list__title']">현대오토스 신촌</div>
+              <KeyValue align="left" margin="mini" size="medium">
+                <KeyValueItem :classNames="{ item: 'text-body-4' }">
+                  <KeyValueTitle>사업자번호</KeyValueTitle>
+                  <KeyValueText>210-91-12345</KeyValueText>
+                </KeyValueItem>
+              </KeyValue>
+              <button type="button" :class="$style['address-list__button']">
+                <span class="for-a11y">선택</span>
+              </button>
+            </div>
           </li>
-          <li class="row-margin-container">
-            <p class="text-body-1 font-weight-medium row-margin-small">
-              현대오토스 신촌
-            </p>
-            <KeyValue align="left" margin="mini" size="large">
-              <KeyValueItem :classNames="{ item: 'text-body-4' }">
-                <KeyValueTitle>사업자번호</KeyValueTitle>
-                <KeyValueText> 210-91-12345</KeyValueText>
-              </KeyValueItem>
-            </KeyValue>
-          </li>
-        </ul>
-      </section>
-      <!-- // Case : 검색 후 노출 성명/상호 -->
+          <!-- // Case : 사업자 -->
 
-      <!-- // Case : 결과 후 노출 성명/상호 -->
-      <section>
-        <ul class="reset-list row-margin-contents">
-          <li class="row-margin-container">
-            <p class="text-body-1 font-weight-medium row-margin-small">
-              홍길동
-            </p>
-            <KeyValue align="left" margin="mini" size="large">
-              <KeyValueItem :classNames="{ item: 'text-body-4' }">
-                <KeyValueTitle>주민등록번호</KeyValueTitle>
-                <KeyValueText>920101-2******</KeyValueText>
-              </KeyValueItem>
-            </KeyValue>
+          <!-- Case : 소유자 -->
+          <li :class="$style['address-list__item']">
+            <div :class="$style['address-list__block']">
+              <div :class="$style['address-list__title']">홍길동</div>
+              <KeyValue align="left" margin="mini" size="medium">
+                <KeyValueItem :classNames="{ item: 'text-body-4' }">
+                  <KeyValueTitle>주민등록번호</KeyValueTitle>
+                  <KeyValueText>920101-2******</KeyValueText>
+                </KeyValueItem>
+              </KeyValue>
+              <button type="button" :class="$style['address-list__button']">
+                <span class="for-a11y">선택</span>
+              </button>
+            </div>
           </li>
-          <li class="row-margin-container">
-            <p class="text-body-1 font-weight-medium row-margin-small">
-              홍길동
-            </p>
-            <KeyValue align="left" margin="mini" size="large">
-              <KeyValueItem :classNames="{ item: 'text-body-4' }">
-                <KeyValueTitle>주민등록번호</KeyValueTitle>
-                <KeyValueText>920101-2******</KeyValueText>
-              </KeyValueItem>
-            </KeyValue>
-          </li>
+          <!-- // Case : 소유자 -->
         </ul>
-      </section>
-      <!-- // Case : 검색 후 노출 성명/상호 -->
-      <!-- Case : 결과 없을 때 -->
-      <div :class="$style['empty']">
-        <p :class="$style['empty__text']">검색된 결과가 없습니다.</p>
+        <!-- // Case : 결과 있을 때 -->
       </div>
-      <!-- Case : 결과 없을 때 -->
+      <!-- // Case : 검색 후 노출 -->
     </FullPopup>
   </UiLayer>
 </template>

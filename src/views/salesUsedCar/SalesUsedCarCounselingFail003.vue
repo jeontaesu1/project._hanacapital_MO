@@ -34,7 +34,7 @@ export default {
     onMounted(() => {
       store.ui.header.setTitle(() => '중고할부·론');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => ['menu']);
+      store.ui.header.setRightButtons(() => []);
     });
 
     onUnmounted(() => {
@@ -54,10 +54,9 @@ export default {
         상담등록에<br />
         <strong>실패하였습니다</strong>
       </IllustInfoTitle>
-      <IllustInfoText class="row-margin-item">
-        차량금액보다 대출신청금액이 큽니다.
-      </IllustInfoText>
+      <IllustInfoText>차량금액보다 대출신청금액이 큽니다.</IllustInfoText>
     </IllustInfo>
+
     <template v-slot:foot>
       <ButtonList
         :classNames="{

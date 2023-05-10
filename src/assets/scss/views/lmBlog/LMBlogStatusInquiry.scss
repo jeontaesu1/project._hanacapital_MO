@@ -1,6 +1,10 @@
 @import '@/assets/scss/components/import/division-info.scss';
 @import '@/assets/scss/components/import/status-inquiry.scss';
 
+.status-inquiry {
+  margin-bottom: 0;
+}
+
 .date {
   @include font-size-default(13);
   font-weight: 300;

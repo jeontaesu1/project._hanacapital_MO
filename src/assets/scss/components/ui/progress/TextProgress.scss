@@ -1,15 +1,17 @@
-.multi-progress {
-  margin: 0 -19px;
+.progress {
+  margin: 0 0 20px;
+
   &__list {
+    @include reset-list;
     position: relative;
     display: flex;
-    justify-content: space-between;
-    padding-top: 8px;
-    @include reset-list;
+    padding: 8px 0;
+    margin: 0 -20px;
   }
 
-  li {
+  &__item {
     flex: 1;
+    min-width: 0;
     position: relative;
     padding-bottom: 20px;
     @include font-size-default(10);
@@ -52,13 +54,13 @@
       }
     }
 
-    &.active {
+    &--active {
       &:after {
         content: '';
         border-bottom: 2px dashed $color-gray-20;
       }
 
-      ~ li {
+      ~ .progress__item {
         color: $color-gray-60;
         &:before {
           border-color: $color-gray-20;

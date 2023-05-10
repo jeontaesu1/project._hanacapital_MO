@@ -56,7 +56,7 @@ export default {
     onMounted(() => {
       store.ui.header.setTitle(() => '중고할부·론');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => ['menu']);
+      store.ui.header.setRightButtons(() => []);
     });
 
     onUnmounted(() => {
@@ -76,7 +76,9 @@ export default {
         <strong>불가능한 고객입니다</strong>
       </PageMainText>
     </PageTextGroup>
+
     <IllustObject type="fail" />
+
     <BasicBox>
       <BasicBoxHead>
         <BasicBoxHeadLeft>
@@ -88,15 +90,17 @@ export default {
               <p class="text-body-4 font-weight-light">2020년식</p>
             </div>
           </div>
-          <h3 class="text-body-1 font-weight-medium">GS(4세대)</h3>
-          <p class="text-body-4 color-gray row-margin-small">300 슈프림</p>
+          <h3 class="text-body-1 font-weight-medium">캐스퍼</h3>
+          <p class="text-body-4 color-gray row-margin-small">
+            2022년형 가솔린 1.0 터보 밴
+          </p>
         </BasicBoxHeadLeft>
         <BasicBoxHeadRight>
           <CarThumb src="/images/_dummy/car-thumb.png" />
         </BasicBoxHeadRight>
       </BasicBoxHead>
       <div>
-        <KeyValue class="row-margin-item">
+        <KeyValue>
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>신청금액</KeyValueTitle>
             <KeyValueText>2,000,000 원</KeyValueText>
@@ -110,22 +114,21 @@ export default {
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>금리</KeyValueTitle>
             <KeyValueText>
-              <div class="flex-box justify-conten-end">
-                <span class="flex-box__cell">9.1%</span>
-                <TextButton
-                  class="flex-box__cell"
-                  theme="tertiary"
-                  :underline="true"
-                  >수수료차감</TextButton
-                >
+              <div class="flex-box">
+                <span class="flex-box__cell flex-1">9.1%</span>
+                <span class="flex-box__cell">
+                  <TextButton theme="tertiary" :underline="true" :block="true"
+                    >수수료차감</TextButton
+                  >
+                </span>
               </div>
             </KeyValueText>
           </KeyValueItem>
         </KeyValue>
-        <NoticeText :classNames="{ wrap: 'color-red' }">
+        <NoticeText :classNames="{ wrap: 'color-red row-margin-item' }">
           대출기간별 금리 상이
         </NoticeText>
-        <KeyValue class="row-margin-item-group">
+        <KeyValue :classNames="{ wrap: 'row-margin-item-group' }">
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>심사상태</KeyValueTitle>
             <KeyValueText>상담중-시스템거절</KeyValueText>
@@ -133,6 +136,7 @@ export default {
         </KeyValue>
       </div>
     </BasicBox>
+
     <template v-slot:foot>
       <ButtonList
         :classNames="{

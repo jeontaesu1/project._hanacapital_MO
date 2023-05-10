@@ -58,7 +58,7 @@ export default {
     onMounted(() => {
       store.ui.header.setTitle(() => '중고할부·론');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => ['menu']);
+      store.ui.header.setRightButtons(() => []);
     });
 
     onUnmounted(() => {
@@ -72,35 +72,24 @@ export default {
 
 <template>
   <PageContents>
-    <!-- 상담등록 성공 -->
     <PageTextGroup>
       <PageMainText>
         상담등록이<br />
         <strong>완료되었습니다</strong>
       </PageMainText>
+      <!-- 상담등록 성공 -->
       <PageSubText
         >온라인 약정을 진행하시려면 ‘계약확정’을 눌러주세요.</PageSubText
       >
-    </PageTextGroup>
-    <!-- //상담등록 성공 -->
-    <!-- 상담등록 성공_일반심사A -->
-    <PageTextGroup>
-      <PageMainText>
-        상담등록이<br />
-        <strong>완료되었습니다</strong>
-      </PageMainText>
+      <!-- //상담등록 성공 -->
+      <!-- 상담등록 성공_일반심사A -->
       <PageSubText>지점문의 바랍니다.</PageSubText>
-    </PageTextGroup>
-    <!-- //상담등록 성공_일반심사A -->
-    <!-- 상담등록 성공_일반심사 or 정밀심사 or 예외심사 -->
-    <PageTextGroup>
-      <PageMainText>
-        상담등록이<br />
-        <strong>완료되었습니다</strong>
-      </PageMainText>
+      <!-- //상담등록 성공_일반심사A -->
+      <!-- 상담등록 성공_일반심사 or 정밀심사 or 예외심사 -->
       <PageSubText>지점문의 바랍니다.</PageSubText>
+      <!-- //상담등록 성공_일반심사 or 정밀심사 or 예외심사 -->
     </PageTextGroup>
-    <!-- //상담등록 성공_일반심사 or 정밀심사 or 예외심사 -->
+
     <IllustObject type="complete" />
 
     <BasicBox>
@@ -124,7 +113,7 @@ export default {
         </BasicBoxHeadRight>
       </BasicBoxHead>
       <div>
-        <KeyValue class="row-margin-item">
+        <KeyValue>
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>신청금액</KeyValueTitle>
             <KeyValueText>2,000,000 원</KeyValueText>
@@ -138,48 +127,44 @@ export default {
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>금리</KeyValueTitle>
             <KeyValueText>
-              <div class="flex-box justify-conten-end">
-                <span class="flex-box__cell">9.1%</span>
-                <TextButton
-                  class="flex-box__cell"
-                  theme="tertiary"
-                  :underline="true"
-                  >수수료차감</TextButton
-                >
+              <div class="flex-box">
+                <span class="flex-box__cell flex-1">9.1%</span>
+                <span class="flex-box__cell">
+                  <TextButton theme="tertiary" :underline="true" :block="true"
+                    >수수료차감</TextButton
+                  >
+                </span>
               </div>
             </KeyValueText>
           </KeyValueItem>
         </KeyValue>
-        <NoticeText :classNames="{ wrap: 'color-red' }">
+        <NoticeText :classNames="{ wrap: 'color-red row-margin-item' }">
           대출기간별 금리 상이
         </NoticeText>
-        <!-- 상담등록 성공 -->
-        <KeyValue class="row-margin-item-group">
+        <KeyValue :classNames="{ wrap: 'row-margin-item-group' }">
+          <!-- 상담등록 성공 -->
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>심사상태</KeyValueTitle>
             <KeyValueText>상담중</KeyValueText>
           </KeyValueItem>
-        </KeyValue>
-        <!-- //상담등록 성공 -->
+          <!-- //상담등록 성공 -->
 
-        <!-- 상담등록 성공_일반심사A -->
-        <KeyValue class="row-margin-item-group">
+          <!-- 상담등록 성공_일반심사A -->
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>심사상태</KeyValueTitle>
             <KeyValueText>지점문의</KeyValueText>
           </KeyValueItem>
-        </KeyValue>
-        <!-- //상담등록 성공_일반심사A -->
-        <!-- 상담등록 성공_일반심사 or 정밀심사 or 예외심사 -->
-        <KeyValue class="row-margin-item-group">
+          <!-- //상담등록 성공_일반심사A -->
+          <!-- 상담등록 성공_일반심사 or 정밀심사 or 예외심사 -->
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>심사상태</KeyValueTitle>
             <KeyValueText>지점문의</KeyValueText>
           </KeyValueItem>
+          <!-- //상담등록 성공_일반심사 or 정밀심사 or 예외심사 -->
         </KeyValue>
-        <!-- //상담등록 성공_일반심사 or 정밀심사 or 예외심사 -->
       </div>
     </BasicBox>
+
     <template v-slot:foot>
       <ButtonList
         :classNames="{

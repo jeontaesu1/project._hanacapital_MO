@@ -1,6 +1,6 @@
 <script>
 // UC_M03_l002
-import { ref, reactive, nextTick } from 'vue';
+import { ref, reactive } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
@@ -40,38 +40,14 @@ export default {
   },
   setup() {
     const state = reactive({
-      modifyMode: false,
-      carAmountError: false,
-      loanAmountError: false,
+      rateError: false,
     });
 
     const layer = ref(null);
-    const modifyButton = ref(null);
-    const saveButton = ref(null);
-
-    const modify = () => {
-      state.modifyMode = true;
-
-      nextTick(() => {
-        saveButton.value.button.focus();
-      });
-    };
-
-    const save = () => {
-      state.modifyMode = false;
-
-      nextTick(() => {
-        modifyButton.value.button.focus();
-      });
-    };
 
     return {
       state,
       layer,
-      modifyButton,
-      saveButton,
-      modify,
-      save,
     };
   },
 };
@@ -89,120 +65,79 @@ export default {
         </FullPopupHead>
       </template>
 
-      <section class="row-margin-container-medium">
-        <FormList>
-          <FormListItem titleText="차감 수수료율" :forceFocus="true">
-            <ButtonList :wrap="true" :col="4" class="row-margin-item-group">
+      <FormList>
+        <FormListItem titleText="차감 수수료율" :forceFocus="true">
+          <FormInvalid :error="state.rateError">
+            <ButtonList
+              :wrap="true"
+              :col="4"
+              :classNames="{ wrap: 'row-margin-item-group' }"
+            >
               <ButtonListItem>
-                <BasicButton
-                  class="text-body-4 color-gray"
-                  :line="true"
-                  theme="quaternary"
-                  size="small"
+                <BasicButton :line="true" theme="quaternary" size="small"
                   >+ 0.5%</BasicButton
                 >
               </ButtonListItem>
               <ButtonListItem>
-                <BasicButton
-                  class="text-body-4 color-gray"
-                  :line="true"
-                  theme="quaternary"
-                  size="small"
+                <BasicButton :line="true" theme="quaternary" size="small"
                   >+ 1.0%</BasicButton
                 >
               </ButtonListItem>
               <ButtonListItem>
-                <BasicButton
-                  class="text-body-4 color-gray"
-                  :line="true"
-                  theme="quaternary"
-                  size="small"
+                <BasicButton :line="true" theme="quaternary" size="small"
                   >+ 1.5%</BasicButton
                 >
               </ButtonListItem>
               <ButtonListItem>
-                <BasicButton
-                  class="text-body-4 color-gray"
-                  :line="true"
-                  theme="quaternary"
-                  size="small"
+                <BasicButton :line="true" theme="quaternary" size="small"
                   >+ 2.0%</BasicButton
                 >
               </ButtonListItem>
             </ButtonList>
-            <FormInvalid :error="state.carAmountError">
-              <InputBlock
-                :error="state.carAmountError"
-                :disabled="!state.modifyMode"
-              >
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    title="숫자만 입력하세요."
-                    id="layerAutoUsedLoanContractCarAmount"
-                    pattern="\d*"
-                    :useDelete="false"
-                    align="right"
-                    defaultValue="1"
-                  />
-                </InputBlockCell>
-                <template v-slot:innerRight>
-                  <div class="text-body-3 color-black">%</div>
-                </template>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-              <FormHelpText>숫자만 입력하세요.</FormHelpText>
-            </FormInvalid>
-          </FormListItem>
-          <FormListItem titleText="금리/수수료 변경 전">
-            <FormInvalid :error="state.testError001">
-              <InputBlock :error="state.testError001">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    :useDelete="false"
-                    :disabled="!state.modifyMode"
-                    defaultValue="3.5%"
-                  />
-                </InputBlockCell>
-                <InputBlockCell type="sub" class="color-black"
-                  >/</InputBlockCell
-                >
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    :useDelete="false"
-                    :disabled="!state.modifyMode"
-                    defaultValue="3.5%"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-          <FormListItem titleText="금리/수수료 변경 후">
-            <FormInvalid :error="state.testError001">
-              <InputBlock :error="state.testError001">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    :useDelete="false"
-                    :disabled="!state.modifyMode"
-                    defaultValue="3.5%"
-                  />
-                </InputBlockCell>
-                <InputBlockCell type="sub" class="color-black"
-                  >/</InputBlockCell
-                >
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    :useDelete="false"
-                    :disabled="!state.modifyMode"
-                    defaultValue="3.5%"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-        </FormList>
-      </section>
+            <InputBlock :error="state.rateError">
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  type="number"
+                  pattern="\d*"
+                  title="차감 수수료율"
+                  :useDelete="false"
+                  align="right"
+                  defaultValue="1"
+                />
+              </InputBlockCell>
+              <template v-slot:innerRight>
+                <div class="text-body-3">%</div>
+              </template>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+            <FormHelpText>숫자만 입력하세요.</FormHelpText>
+          </FormInvalid>
+        </FormListItem>
+
+        <FormListItem titleText="금리/수수료 변경 전" :forceFocus="true">
+          <InputBlock>
+            <InputBlockCell :flexible="true" margin="regular">
+              <div class="color-gray-quinary">2%</div>
+            </InputBlockCell>
+            <InputBlockCell margin="regular">/</InputBlockCell>
+            <InputBlockCell :flexible="true" margin="regular">
+              <div class="color-gray-quinary">3%</div>
+            </InputBlockCell>
+          </InputBlock>
+        </FormListItem>
+
+        <FormListItem titleText="금리/수수료 변경 후" :forceFocus="true">
+          <InputBlock>
+            <InputBlockCell :flexible="true" margin="regular">
+              <div class="color-gray-quinary">2.5%</div>
+            </InputBlockCell>
+            <InputBlockCell margin="regular">/</InputBlockCell>
+            <InputBlockCell :flexible="true" margin="regular">
+              <div class="color-gray-quinary">3.5%</div>
+            </InputBlockCell>
+          </InputBlock>
+        </FormListItem>
+      </FormList>
 
       <template v-slot:foot>
         <ButtonList

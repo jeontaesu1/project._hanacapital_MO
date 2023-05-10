@@ -34,7 +34,7 @@ export default {
     onMounted(() => {
       store.ui.header.setTitle(() => '중고할부·론');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => ['menu']);
+      store.ui.header.setRightButtons(() => []);
     });
 
     onUnmounted(() => {
@@ -54,11 +54,12 @@ export default {
         상담등록에<br />
         <strong>실패하였습니다</strong>
       </IllustInfoTitle>
-      <IllustInfoText class="row-margin-item">
+      <IllustInfoText>
         기존에 등록되어있는 주민등록번호입니다.<br />
         기존 등록되어있는 주민등록번호는 수정이 불가능합니다.
       </IllustInfoText>
     </IllustInfo>
+
     <template v-slot:foot>
       <ButtonList
         :classNames="{

@@ -35,7 +35,7 @@ export default {
     onMounted(() => {
       store.ui.header.setTitle(() => '중고할부·론');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => ['menu']);
+      store.ui.header.setRightButtons(() => []);
     });
 
     onUnmounted(() => {
@@ -55,11 +55,12 @@ export default {
         상담등록에<br />
         <strong>실패하였습니다</strong>
       </IllustInfoTitle>
-      <IllustInfoText class="row-margin-item">
+      <IllustInfoText>
         사업자정보가 존재하지 않습니다.<br />
         사업자 선택 후 이용해주세요.
       </IllustInfoText>
     </IllustInfo>
+
     <template v-slot:foot>
       <ButtonList
         :classNames="{

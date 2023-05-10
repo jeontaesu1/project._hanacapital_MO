@@ -52,13 +52,19 @@ export default {
         header: useUiHeaderStore(),
       },
     };
+
     const state = reactive({
-      testError001: false,
+      nameError: false,
+      birthdayError: false,
+      phoneError: false,
+      productError: false,
+      memoError: false,
     });
+
     onMounted(() => {
       store.ui.header.setTitle(() => '중고할부·론');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => ['menu']);
+      store.ui.header.setRightButtons(() => []);
     });
 
     onUnmounted(() => {
@@ -82,34 +88,52 @@ export default {
         <strong>입력해 주세요</strong>
       </PageMainText>
     </PageTextGroup>
-    <section>
+
+    <div>
       <FormList>
-        <FormListItem titleText="성명" target="#testInput001">
-          <FormInvalid :error="state.testError001">
-            <InputBlock :error="state.testError001">
+        <FormListItem titleText="성명" target="#salesUsedCarNewCounselingName">
+          <FormInvalid :error="state.nameError">
+            <InputBlock :error="state.nameError">
               <InputBlockCell :flexible="true">
-                <BasicInput title="성명" id="testInput001" />
+                <BasicInput title="성명" id="salesUsedCarNewCounselingName" />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
-        <FormListItem titleText="생년월일" target="#testInput002">
-          <FormInvalid :error="state.testError001">
-            <InputBlock :error="state.testError001">
+
+        <FormListItem
+          titleText="생년월일"
+          target="#salesUsedCarNewCounselingBirthday"
+        >
+          <FormInvalid :error="state.birthdayError">
+            <InputBlock :error="state.birthdayError">
               <InputBlockCell :flexible="true">
-                <BasicInput title="생년월일" id="testInput002" />
+                <BasicInput
+                  type="number"
+                  pattern="\d*"
+                  title="생년월일"
+                  id="salesUsedCarNewCounselingBirthday"
+                />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
             <FormHelpText>숫자만 입력해 주세요. (예:230503)</FormHelpText>
           </FormInvalid>
         </FormListItem>
-        <FormListItem titleText="휴대폰번호" target="#testInput003">
-          <FormInvalid :error="state.testError001">
-            <InputBlock :error="state.testError001">
+
+        <FormListItem
+          titleText="휴대폰번호"
+          target="#salesUsedCarNewCounselingPhone"
+        >
+          <FormInvalid :error="state.phoneError">
+            <InputBlock :error="state.phoneError">
               <InputBlockCell :flexible="true">
-                <BasicInput title="휴대폰번호" id="testInput003" />
+                <BasicInput
+                  pattern="\d*"
+                  title="휴대폰번호"
+                  id="salesUsedCarNewCounselingPhone"
+                />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -117,13 +141,13 @@ export default {
         </FormListItem>
 
         <FormListItem titleText="상품선택" :forceFocus="true">
-          <FormInvalid :error="state.testError001">
+          <FormInvalid :error="state.productError">
             <BoxCheckList :classNames="{ wrap: 'row-margin-item-group' }">
               <BoxCheckListItem>
                 <BoxCheck
                   :minSide="true"
-                  name="testInputCheck014"
-                  id="testInputCheck014_001"
+                  name="salesUsedCarNewCounselingProduct"
+                  id="salesUsedCarNewCounselingProduct001"
                   :defaultChecked="true"
                 >
                   <BoxCheckLabel>모바일</BoxCheckLabel>
@@ -132,22 +156,22 @@ export default {
               <BoxCheckListItem>
                 <BoxCheck
                   :minSide="true"
-                  name="testInputCheck014"
-                  id="testInputCheck014_002"
+                  name="salesUsedCarNewCounselingProduct"
+                  id="salesUsedCarNewCounselingProduct002"
                 >
                   <BoxCheckLabel>중고차할부</BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
             </BoxCheckList>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
 
         <BasicTextarea
-          :error="state.testError001"
+          :error="state.memoError"
           titleText="메모"
           titleOptionalText="(매매상사, 직원명, 연락처를 입력하세요.)"
-          :maxlength="150"
-          :count="false"
+          :maxlength="20"
           title="메모"
         >
           <template v-slot:bottom>
@@ -156,7 +180,8 @@ export default {
           </template>
         </BasicTextarea>
       </FormList>
-    </section>
+    </div>
+
     <section class="row-margin-contents-group">
       <h3 class="text-body-2 row-margin-item-medium">신용조회동의 요청</h3>
       <ButtonList class="row-margin-none">
@@ -176,14 +201,7 @@ export default {
         }"
       >
         <ButtonListItem>
-          <BasicButton
-            :line="true"
-            theme="quaternary"
-            tagName="RouterLink"
-            to="/lm-blog/sms-counseling"
-          >
-            목록
-          </BasicButton>
+          <BasicButton :line="true" theme="quaternary">목록</BasicButton>
         </ButtonListItem>
       </ButtonList>
     </template>
