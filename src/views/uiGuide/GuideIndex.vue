@@ -472,6 +472,10 @@ const datas = () => [
             date: '2023.04.07',
             text: '팝업 추가\n- e하나신용대출(연계) 안내',
           },
+          {
+            date: '2023.05.12',
+            text: '팝업 추가\n- 소득 정보 입력\n- 주택정보 입력',
+          },
         ],
       },
       {
@@ -3020,8 +3024,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/company/history',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.05.12',
         log: [],
       },
       {
@@ -3053,8 +3057,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/company/ir-detail',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.05.12',
         log: [],
       },
       {
@@ -3075,8 +3079,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/company/sustainable-management-detail',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.05.12',
         log: [],
       },
       {
