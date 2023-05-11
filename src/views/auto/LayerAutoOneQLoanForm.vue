@@ -126,7 +126,7 @@ export default {
             <CarThumb src="/images/_dummy/car-thumb.png" />
           </BasicBoxHeadRight>
         </BasicBoxHead>
-        <KeyValue>
+        <KeyValue verticalAlign="center">
           <KeyValueItem
             :classNames="{
               item: 'text-body-3',
@@ -331,7 +331,7 @@ export default {
       </ul>
 
       <template v-slot:foot>
-        <KeyValue>
+        <KeyValue verticalAlign="center">
           <KeyValueItem
             :classNames="{
               item: 'text-body-3',

@@ -5,10 +5,24 @@ import { onMounted, onUnmounted } from 'vue';
 import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
+import PageMainText from '@/components/ui/text/PageMainText.vue';
+import PageSubText from '@/components/ui/text/PageSubText.vue';
+import IllustObject from '@/components/ui/common/IllustObject.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
+import ButtonList from '@/components/ui/button/ButtonList.vue';
+import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 export default {
   components: {
     PageContents,
+    PageTextGroup,
+    PageMainText,
+    PageSubText,
+    IllustObject,
+    BasicButton,
+    ButtonList,
+    ButtonListItem,
   },
   setup() {
     const store = {
@@ -18,7 +32,7 @@ export default {
     };
 
     onMounted(() => {
-      store.ui.header.setTitle(() => '타이틀');
+      store.ui.header.setTitle(() => '회원탈퇴');
       store.ui.header.setLeftButtons(() => ['back']);
       store.ui.header.setRightButtons(() => []);
     });
@@ -34,7 +48,29 @@ export default {
 
 <template>
   <PageContents>
-    <h1>Page</h1>
+    <PageTextGroup>
+      <PageMainText>
+        회원탈퇴를<br />
+        <strong>하시겠어요?</strong>
+      </PageMainText>
+      <PageSubText>본인인증이 완료되면 회원탈퇴가 완료됩니다.</PageSubText>
+    </PageTextGroup>
+
+    <IllustObject type="license" />
+
+    <template v-slot:foot>
+      <ButtonList
+        :classNames="{
+          wrap: 'row-margin-none',
+        }"
+      >
+        <ButtonListItem>
+          <BasicButton :line="true" theme="quaternary">취소</BasicButton>
+        </ButtonListItem>
+        <ButtonListItem>
+          <BasicButton>네, 탈퇴하겠습니다</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
+    </template>
   </PageContents>
 </template>
-

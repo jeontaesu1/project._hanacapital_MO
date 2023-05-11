@@ -110,6 +110,10 @@ body,
       margin-left: 16px;
     }
 
+    & + &--regular {
+      margin-left: 12px;
+    }
+
     & + &--small-regular {
       margin-left: 6px;
     }
@@ -204,6 +208,12 @@ body,
 }
 .color-gray-tertiary.color-gray-tertiary {
   color: $color-gray-80;
+}
+.color-gray-quaternary.color-gray-quaternary {
+  color: $color-gray-50;
+}
+.color-gray-quinary.color-gray-quinary {
+  color: $color-gray-40;
 }
 .color-navy.color-navy {
   color: $color-navy-50;
@@ -370,6 +380,11 @@ body,
 .row-margin-item.row-margin-item {
   margin-top: 8px;
   margin-bottom: 8px;
+  @include row-margin-first-last;
+}
+.row-margin-item-regular.row-margin-item-regular {
+  margin-top: 10px;
+  margin-bottom: 10px;
   @include row-margin-first-last;
 }
 .row-margin-item-medium.row-margin-item-medium {

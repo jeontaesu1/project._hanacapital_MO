@@ -18,4 +18,10 @@
     height: 100%;
     transform: translateX(-50%);
   }
+
+  &--size {
+    &-medium {
+      width: 140px;
+    }
+  }
 }

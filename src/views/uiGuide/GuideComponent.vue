@@ -76,6 +76,7 @@ import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import ScrollSection from '@/components/ui/section/ScrollSection.vue';
 import StepProgress from '@/components/ui/progress/StepProgress.vue';
 import BasicProgress from '@/components/ui/progress/BasicProgress.vue';
+import TextProgress from '@/components/ui/progress/TextProgress.vue';
 import SearchButton from '@/components/ui/button/SearchButton.vue';
 import SwitchCheckBox from '@/components/ui/form/SwitchCheckBox.vue';
 import BasicTooltip from '@/components/ui/tooltip/BasicTooltip.vue';
@@ -87,6 +88,9 @@ import ColorChip from '@/components/ui/imageData/ColorChip.vue';
 import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
 import MaskingText from '@/components/ui/text/MaskingText.vue';
 import FilterButton from '@/components/ui/button/FilterButton.vue';
+import DeleteButton from '@/components/ui/button/DeleteButton.vue';
+import SelectTable from '@/components/ui/table/SelectTable.vue';
+import SelectTableRow from '@/components/ui/table/SelectTableRow.vue';
 
 import BrandLogo001 from '@/assets/images/card-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/card-logo/lotte.svg?component';
@@ -198,6 +202,7 @@ export default {
     RoundStatus,
     StepProgress,
     BasicProgress,
+    TextProgress,
     SearchButton,
     ScrollSection,
     SwitchCheckBox,
@@ -210,6 +215,9 @@ export default {
     BasicDatepicker,
     MaskingText,
     FilterButton,
+    DeleteButton,
+    SelectTable,
+    SelectTableRow,
     IconAdd,
     BrandLogo001,
     BrandLogo002,
@@ -792,6 +800,42 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Delete Button</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <DeleteButton />
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Secondary</h3>
+        <DeleteButton theme="secondary" />
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Tertiary</h3>
+        <DeleteButton theme="tertiary" />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Add Button</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <button
+          type="button"
+          :class="[$style['add-button'], 'row-margin-item']"
+        >
+          <span :class="$style['add-button__inner']">
+            <span :class="$style['add-button__text']">지정운전자 추가등록</span>
+            <span :class="$style['add-button__icon']">
+              <IconAdd />
+            </span>
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">inline wrap</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -1140,9 +1184,6 @@ export default {
           </ButtonListItem>
           <ButtonListItem>
             <BasicButton :line="true" theme="quaternary">Button 4</BasicButton>
-          </ButtonListItem>
-          <ButtonListItem>
-            <BasicButton :line="true" theme="quaternary">Button 5</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </div>
@@ -2278,6 +2319,80 @@ export default {
                   </ExtendSelect>
                 </InputBlockCell>
               </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem
+            titleText="확장 셀렉트 2"
+            target="#layerTestButton"
+            :selectOnly="true"
+          >
+            <FormInvalid :error="state.testError001">
+              <InputBlock :error="state.testError001">
+                <InputBlockCell :flexible="true">
+                  <ExtendSelect
+                    buttonTitle="확장 셀렉트2 선택하기"
+                    layerTitle="확장 셀렉트2를 선택해 주세요"
+                    buttonId="layerTestButton"
+                    :onChange="testInputEvent"
+                  >
+                    <div :class="$style['icon-buttons']">
+                      <ul :class="$style['icon-buttons__list']">
+                        <li :class="$style['icon-buttons__item']">
+                          <ExtendSelectOption
+                            value="1"
+                            text="옵션명1"
+                            :classNames="{
+                              option: $style['icon-buttons__block'],
+                            }"
+                          >
+                            <span :class="$style['icon-buttons__content']">
+                              <span :class="$style['icon-buttons__title']">
+                                옵션명1<br />
+                                옵션명1 설명 텍스트 옵션명1 설명 텍스트
+                              </span>
+                            </span>
+                          </ExtendSelectOption>
+                        </li>
+                        <li :class="$style['icon-buttons__item']">
+                          <ExtendSelectOption
+                            value="2"
+                            text="옵션명2"
+                            :classNames="{
+                              option: $style['icon-buttons__block'],
+                            }"
+                          >
+                            <span :class="$style['icon-buttons__content']">
+                              <span :class="$style['icon-buttons__title']">
+                                옵션명2<br />
+                                옵션명2 설명 텍스트 옵션명2 설명 텍스트
+                              </span>
+                            </span>
+                          </ExtendSelectOption>
+                        </li>
+                      </ul>
+                    </div>
+                  </ExtendSelect>
+                </InputBlockCell>
+              </InputBlock>
+              <!-- Case : 옵션 선택 후 노출 -->
+              <InputBlock
+                :error="state.testError001"
+                :classNames="{
+                  wrap: 'row-margin-item-group row-margin-bottom-none',
+                }"
+              >
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    title="옵션"
+                    id="layerTestOption"
+                    disabled="disabled"
+                    defaultValue="옵션 설명 텍스트 노출"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <!-- //Case : 옵션 선택 후 노출 -->
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
@@ -5538,6 +5653,18 @@ export default {
       </div>
 
       <div class="test-section-sub">
+        <h3 class="test-section-sub-title">vertical align : center</h3>
+        <KeyValue verticalAlign="center">
+          <KeyValueItem>
+            <KeyValueTitle>총 가격</KeyValueTitle>
+            <KeyValueText>
+              <UnitText rightUnit="원" align="right"> 16,200,000 </UnitText>
+            </KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+      </div>
+
+      <div class="test-section-sub">
         <h3 class="test-section-sub-title">Vertical</h3>
         <KeyValue direction="vertical">
           <KeyValueItem>
@@ -6226,6 +6353,25 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">TextProgress</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <TextProgress
+          :steps="[
+            '본인인증',
+            '계약자정보',
+            '금융조건',
+            '면허정보',
+            '약관동의',
+            '본인인증',
+            'ARS',
+          ]"
+          :current="1"
+        />
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Empty</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -6482,6 +6628,60 @@ export default {
           </table>
         </div>
         <!-- // table -->
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">SelectTable</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <SelectTable>
+          <template v-slot:colgroup>
+            <col style="width: 83px" />
+            <col />
+            <col style="width: 90px" />
+          </template>
+
+          <template v-slot:head>
+            <tr>
+              <th>제조사</th>
+              <th>모델명</th>
+              <th>차량 금액</th>
+            </tr>
+          </template>
+
+          <SelectTableRow>
+            <td>기아</td>
+            <td>2.2 디젤 11인승 노블레스</td>
+            <td>5,500 만원</td>
+          </SelectTableRow>
+          <SelectTableRow :initialActive="true">
+            <td>기아</td>
+            <td>뉴 카니발(YP) 3.0 가솔린 9인승 노블레스</td>
+            <td>5,300 만원</td>
+          </SelectTableRow>
+          <SelectTableRow>
+            <td>기아</td>
+            <td>2.2 디젤 11인승 노블레스</td>
+            <td>5,500 만원</td>
+          </SelectTableRow>
+          <SelectTableRow>
+            <td>기아</td>
+            <td>2.2 디젤 11인승 노블레스</td>
+            <td>5,500 만원</td>
+          </SelectTableRow>
+          <SelectTableRow>
+            <td>기아</td>
+            <td>뉴 카니발(YP) 3.0 가솔린 9인승 노블레스</td>
+            <td>5,300 만원</td>
+          </SelectTableRow>
+          <SelectTableRow>
+            <td>기아</td>
+            <td>2.2 디젤 11인승 노블레스</td>
+            <td>5,500 만원</td>
+          </SelectTableRow>
+        </SelectTable>
       </div>
     </section>
 
@@ -7093,6 +7293,11 @@ export default {
         <h3 class="test-section-sub-title">Default</h3>
         <CarThumb src="/images/_dummy/car-thumb.png" />
       </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">size: medium</h3>
+        <CarThumb size="medium" src="/images/_dummy/car-thumb.png" />
+      </div>
     </section>
 
     <section class="test-section">
@@ -7206,6 +7411,17 @@ export default {
         <FilterButton />
         <FilterButton :active="true" />
         <FilterButton :active="true" theme="secondary" />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">image view</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <div :class="$style['image-view']">
+          <img src="@/assets/images/_dummy/box-detail.png" alt="샘플 이미지" />
+        </div>
       </div>
     </section>
 

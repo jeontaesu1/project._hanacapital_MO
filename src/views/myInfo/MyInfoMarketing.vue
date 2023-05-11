@@ -37,4 +37,3 @@ export default {
     <h1>Page</h1>
   </PageContents>
 </template>
-

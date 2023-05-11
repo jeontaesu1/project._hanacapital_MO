@@ -35,4 +35,16 @@
   &__text {
     @include for-a11y;
   }
+
+  &--theme {
+    &-white {
+      .popup-button {
+        &__icon {
+          * {
+            fill: $color-white;
+          }
+        }
+      }
+    }
+  }
 }

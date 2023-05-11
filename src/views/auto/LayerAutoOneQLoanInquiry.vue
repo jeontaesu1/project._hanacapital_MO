@@ -158,7 +158,7 @@ export default {
           className="row-margin-contents-small"
         />
 
-        <KeyValue>
+        <KeyValue verticalAlign="center">
           <KeyValueItem
             :classNames="{
               item: 'text-body-3',
