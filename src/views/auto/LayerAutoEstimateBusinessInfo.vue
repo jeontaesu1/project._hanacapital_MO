@@ -123,6 +123,8 @@ export default {
               <InputBlock :error="state.businessNumberError">
                 <InputBlockCell :flexible="true">
                   <BasicInput
+                    type="number"
+                    pattern="\d*"
                     title="사업자번호 입력"
                     id="layerAutoEstimateBusinessInfoBusinessNumber"
                   />

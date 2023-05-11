@@ -120,7 +120,7 @@ export default {
         </PageTextGroup>
       </div>
 
-      <div class="contents-wrap">
+      <div>
         <section class="row-margin-contents-group">
           <h3 class="text-body-2 row-margin-item-medium">외장색상</h3>
           <KeyValue>
@@ -435,18 +435,19 @@ export default {
       </div>
 
       <template v-slot:foot>
-        <div :class="$style['bottom']">
-          <KeyValue verticalAlign="center">
-            <KeyValueItem :classNames="{ item: 'text-body-3' }">
-              <KeyValueTitle :classNames="{ title: 'color-black' }"
-                >총 차량가격</KeyValueTitle
-              >
-              <KeyValueText>
-                <UnitText rightUnit="원" align="right">16,920,000</UnitText>
-              </KeyValueText>
-            </KeyValueItem>
-          </KeyValue>
-        </div>
+        <KeyValue
+          verticalAlign="center"
+          :classNames="{ wrap: 'row-margin-contents-small' }"
+        >
+          <KeyValueItem :classNames="{ item: 'text-body-3' }">
+            <KeyValueTitle :classNames="{ title: 'color-black' }"
+              >총 차량가격</KeyValueTitle
+            >
+            <KeyValueText>
+              <UnitText rightUnit="원" align="right">16,920,000</UnitText>
+            </KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
 
         <ButtonList
           :classNames="{

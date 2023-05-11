@@ -27,11 +27,11 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicTooltip,
-    IconTooltip,
     BoxCheck,
     BoxCheckLabel,
     BoxCheckList,
     BoxCheckListItem,
+    IconTooltip,
   },
   setup() {
     const layer = ref(null);

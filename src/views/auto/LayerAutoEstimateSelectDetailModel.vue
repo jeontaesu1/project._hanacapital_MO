@@ -135,7 +135,7 @@ export default {
             >
               <BoxCheckLabel>2022년형 가솔린 1.0 터보 밴</BoxCheckLabel>
               <div class="text-body-4 color-gray row-margin-small">
-                A3(3세대) 세단 40 TFSI 2019
+                개소세 5% 기준
               </div>
             </BoxCheck>
           </li>
@@ -143,18 +143,19 @@ export default {
       </div>
 
       <template v-slot:foot>
-        <div :class="$style['bottom']">
-          <KeyValue verticalAlign="center">
-            <KeyValueItem :classNames="{ item: 'text-body-3' }">
-              <KeyValueTitle :classNames="{ title: 'color-black' }"
-                >총 차량가격</KeyValueTitle
-              >
-              <KeyValueText>
-                <UnitText rightUnit="원" align="right"> 0 </UnitText>
-              </KeyValueText>
-            </KeyValueItem>
-          </KeyValue>
-        </div>
+        <KeyValue
+          verticalAlign="center"
+          :classNames="{ wrap: 'row-margin-contents-small' }"
+        >
+          <KeyValueItem :classNames="{ item: 'text-body-3' }">
+            <KeyValueTitle :classNames="{ title: 'color-black' }"
+              >총 차량가격</KeyValueTitle
+            >
+            <KeyValueText>
+              <UnitText rightUnit="원" align="right"> 0 </UnitText>
+            </KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
 
         <ButtonList
           :classNames="{
@@ -172,7 +173,3 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/auto/LayerAutoEstimateSelectDetailModel.scss';
-</style>

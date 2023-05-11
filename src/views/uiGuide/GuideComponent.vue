@@ -875,6 +875,23 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Upload Input</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['upload-input']">
+          <input
+            type="file"
+            id="upload01"
+            :class="[$style['upload-input__input'], 'row-margin-item']"
+          />
+          <label for="upload01" :class="$style['upload-input__label']">
+            <span :class="$style['upload-input__text']">이미지 첨부</span>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">inline wrap</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -7449,6 +7466,149 @@ export default {
 
         <div :class="$style['image-view']">
           <img src="@/assets/images/_dummy/box-detail.png" alt="샘플 이미지" />
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Gallery File</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <div :class="$style['gallery-file']">
+          <ul :class="$style['gallery-file__list']">
+            <li :class="$style['gallery-file__item']">
+              <!-- DD : 에러시 gallery-file__block--error 클래스 추가 -->
+              <div
+                :class="[
+                  $style['gallery-file__block'],
+                  $style['gallery-file__block--error'],
+                ]"
+              >
+                <div :class="$style['gallery-file__image']"></div>
+                <button type="button" :class="$style['gallery-file__link']">
+                  <span class="for-a11y">미리보기</span>
+                </button>
+                <button type="button" :class="$style['gallery-file__delete']">
+                  <span class="for-a11y">삭제</span>
+                </button>
+              </div>
+            </li>
+            <li :class="$style['gallery-file__item']">
+              <!-- DD : 에러시 gallery-file__block--error 클래스 추가 -->
+              <div
+                :class="[
+                  $style['gallery-file__block'],
+                  $style['gallery-file__block--pdf'],
+                  $style['gallery-file__block--error'],
+                ]"
+              >
+                <div :class="$style['gallery-file__icon']"></div>
+                <button type="button" :class="$style['gallery-file__link']">
+                  <span class="for-a11y">미리보기</span>
+                </button>
+                <button type="button" :class="$style['gallery-file__delete']">
+                  <span class="for-a11y">삭제</span>
+                </button>
+              </div>
+            </li>
+            <li :class="$style['gallery-file__item']">
+              <div
+                :class="[
+                  $style['gallery-file__block'],
+                  $style['gallery-file__block--pdf'],
+                ]"
+              >
+                <div :class="$style['gallery-file__icon']"></div>
+                <button type="button" :class="$style['gallery-file__link']">
+                  <span class="for-a11y">미리보기</span>
+                </button>
+                <button type="button" :class="$style['gallery-file__delete']">
+                  <span class="for-a11y">삭제</span>
+                </button>
+              </div>
+            </li>
+            <li :class="$style['gallery-file__item']">
+              <div :class="$style['gallery-file__block']">
+                <div :class="$style['gallery-file__image']">
+                  <img
+                    src="@/assets/images/_dummy/file-sample.png"
+                    alt="샘플 이미지"
+                  />
+                </div>
+                <button type="button" :class="$style['gallery-file__link']">
+                  <span class="for-a11y">미리보기</span>
+                </button>
+                <button type="button" :class="$style['gallery-file__delete']">
+                  <span class="for-a11y">삭제</span>
+                </button>
+              </div>
+            </li>
+            <li :class="$style['gallery-file__item']">
+              <div :class="$style['gallery-file__block']">
+                <div :class="$style['gallery-file__image']">
+                  <img
+                    src="@/assets/images/_dummy/file-sample.png"
+                    alt="샘플 이미지"
+                  />
+                </div>
+                <button type="button" :class="$style['gallery-file__link']">
+                  <span class="for-a11y">미리보기</span>
+                </button>
+                <button type="button" :class="$style['gallery-file__delete']">
+                  <span class="for-a11y">삭제</span>
+                </button>
+              </div>
+            </li>
+            <li :class="$style['gallery-file__item']">
+              <div :class="$style['gallery-file__block']">
+                <div :class="$style['gallery-file__image']">
+                  <img
+                    src="@/assets/images/_dummy/file-sample.png"
+                    alt="샘플 이미지"
+                  />
+                </div>
+                <button type="button" :class="$style['gallery-file__link']">
+                  <span class="for-a11y">미리보기</span>
+                </button>
+                <button type="button" :class="$style['gallery-file__delete']">
+                  <span class="for-a11y">삭제</span>
+                </button>
+              </div>
+            </li>
+            <li :class="$style['gallery-file__item']">
+              <div :class="$style['gallery-file__block']">
+                <div :class="$style['gallery-file__image']">
+                  <img
+                    src="@/assets/images/_dummy/file-sample.png"
+                    alt="샘플 이미지"
+                  />
+                </div>
+                <button type="button" :class="$style['gallery-file__link']">
+                  <span class="for-a11y">미리보기</span>
+                </button>
+                <button type="button" :class="$style['gallery-file__delete']">
+                  <span class="for-a11y">삭제</span>
+                </button>
+              </div>
+            </li>
+            <li :class="$style['gallery-file__item']">
+              <div :class="$style['gallery-file__block']">
+                <div :class="$style['gallery-file__image']">
+                  <img
+                    src="@/assets/images/_dummy/file-sample.png"
+                    alt="샘플 이미지"
+                  />
+                </div>
+                <button type="button" :class="$style['gallery-file__link']">
+                  <span class="for-a11y">미리보기</span>
+                </button>
+                <button type="button" :class="$style['gallery-file__delete']">
+                  <span class="for-a11y">삭제</span>
+                </button>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </section>

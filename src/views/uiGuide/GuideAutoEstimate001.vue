@@ -8,7 +8,7 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 import LayerAutoEstimateCounseling from '../auto/LayerAutoEstimateCounseling.vue';
 import LayerAutoEstimateCounselingComplete from '../auto/LayerAutoEstimateCounselingComplete.vue';
-import LayerAutoEstimateSearchCar from '../auto/LayerAutoEstimateSearchCar.vue';
+// import LayerAutoEstimateSearchCar from '../auto/LayerAutoEstimateSearchCar.vue';
 import LayerAutoEstimateSelectRecommend from '../auto/LayerAutoEstimateSelectRecommend.vue';
 import LayerAutoEstimateSelectDetailModel from '../auto/LayerAutoEstimateSelectDetailModel.vue';
 import LayerAutoEstimateSelectTrim from '../auto/LayerAutoEstimateSelectTrim.vue';
@@ -33,7 +33,7 @@ export default {
     ButtonListItem,
     LayerAutoEstimateCounseling,
     LayerAutoEstimateCounselingComplete,
-    LayerAutoEstimateSearchCar,
+    // LayerAutoEstimateSearchCar,
     LayerAutoEstimateSelectRecommend,
     LayerAutoEstimateSelectDetailModel,
     LayerAutoEstimateSelectTrim,
@@ -185,11 +185,11 @@ export default {
           >상담 신청완료<br />AF_M00_l010</BasicButton
         >
       </ButtonListItem>
-      <ButtonListItem>
+      <!-- <ButtonListItem>
         <BasicButton @click="layer004Open">
           자동차 검색<br />AF_M00_b001
         </BasicButton>
-      </ButtonListItem>
+      </ButtonListItem> -->
       <ButtonListItem>
         <BasicButton @click="layer006Open">
           추천 차량 선택<br />AF_M00_l018
@@ -269,7 +269,7 @@ export default {
 
     <LayerAutoEstimateCounseling ref="layer001" />
     <LayerAutoEstimateCounselingComplete ref="layer002" />
-    <LayerAutoEstimateSearchCar ref="layer004" />
+    <!-- <LayerAutoEstimateSearchCar ref="layer004" /> -->
     <LayerAutoEstimateSelectRecommend ref="layer006" />
     <LayerAutoEstimateSelectDetailModel ref="layer007" />
     <LayerAutoEstimateSelectTrim ref="layer008" />

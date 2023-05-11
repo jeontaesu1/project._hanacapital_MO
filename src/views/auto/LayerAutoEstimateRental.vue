@@ -237,10 +237,19 @@ export default {
 
         <div class="row-margin-contents-group row-margin-bottom-none">
           <PageTextGroup>
+            <!-- Case : 재견적이 아닐 경우 -->
             <PageMainText>
               견적조건을<br />
               <strong>선택해 주세요</strong>
             </PageMainText>
+            <!--// Case : 재견적이 아닐 경우 -->
+
+            <!-- Case : 재견적일 경우 -->
+            <PageMainText>
+              승인 가능한 견적을<br />
+              <strong>선택해 주세요 (재견적)</strong>
+            </PageMainText>
+            <!-- //Case : 재견적일 경우 -->
           </PageTextGroup>
         </div>
 
@@ -270,6 +279,7 @@ export default {
             <h3 class="text-body-2 font-weight-bold row-margin-item-medium">
               이용기간
             </h3>
+            <!-- Case : 재견적이 아닐 경우 -->
             <BoxCheckList :wrap="true" :col="3">
               <BoxCheckListItem>
                 <BoxCheck
@@ -300,6 +310,22 @@ export default {
                 </BoxCheck>
               </BoxCheckListItem>
             </BoxCheckList>
+            <!-- //Case : 재견적이 아닐 경우 -->
+
+            <!-- Case : 재견적일 경우 -->
+            <BoxCheckList>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="layerAutoEstimateRentalUsePeriod01"
+                  id="layerAutoEstimateRentalUsePeriod01__001"
+                  :defaultChecked="true"
+                >
+                  <BoxCheckLabel>60개월</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+            </BoxCheckList>
+            <!-- //Case : 재견적일 경우 -->
 
             <NoticeText :classNames="{ wrap: 'row-margin-item' }"
               >이용기간이 길수록 월 납입금이 저렴해요.

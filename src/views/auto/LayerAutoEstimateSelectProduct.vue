@@ -1,6 +1,6 @@
 <script>
 // AF_M00_l008
-import { ref, reactive } from 'vue';
+import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
@@ -38,14 +38,9 @@ export default {
     iconInformation,
   },
   setup() {
-    const state = reactive({
-      discountPriceError: false,
-    });
-
     const layer = ref(null);
 
     return {
-      state,
       layer,
     };
   },

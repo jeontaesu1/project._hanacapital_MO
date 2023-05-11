@@ -100,15 +100,12 @@ export default {
         <FormList>
           <FormListItem
             titleText="이름"
-            target="#layerAutoEstimateUserInfoBusinessName"
+            target="#layerAutoEstimateUserInfoName"
           >
-            <FormInvalid :error="state.NameError">
-              <InputBlock :error="state.NameError">
+            <FormInvalid :error="state.nameError">
+              <InputBlock :error="state.nameError">
                 <InputBlockCell :flexible="true">
-                  <BasicInput
-                    title="이름"
-                    id="layerAutoEstimateUserInfoBusinessName"
-                  />
+                  <BasicInput title="이름" id="layerAutoEstimateUserInfoName" />
                 </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -117,7 +114,7 @@ export default {
 
           <FormListItem
             titleText="연락처"
-            target="#layerAutoEstimateUserInfoBusinessPhone"
+            target="#layerAutoEstimateUserInfoPhone"
           >
             <FormInvalid :error="state.phoneError">
               <InputBlock :error="state.phoneError">
@@ -126,7 +123,7 @@ export default {
                     type="number"
                     pattern="\d*"
                     title="연락처"
-                    id="layerAutoEstimateUserInfoBusinessPhone"
+                    id="layerAutoEstimateUserInfoPhone"
                   />
                 </InputBlockCell>
               </InputBlock>

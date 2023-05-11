@@ -1,0 +1,120 @@
+/* gallery-file */
+.gallery-file {
+  &::before {
+    content: '';
+    display: table;
+  }
+
+  &__list {
+    @include reset-list;
+    margin: -8px 0 0 -8px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+
+  &__item {
+    width: 25%;
+    padding: 8px 0 0 8px;
+    box-sizing: border-box;
+  }
+
+  &__block {
+    position: relative;
+    background-color: $color-gray-05;
+    border: 1px solid $color-gray-20;
+    border-radius: 4px;
+
+    &::before {
+      content: '';
+      display: block;
+      padding-top: 100%;
+    }
+  }
+
+  &__image,
+  &__icon,
+  &__link {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__image {
+    border-radius: 11px;
+    overflow: hidden;
+
+    img {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 25.67567%;
+      left: 50%;
+      width: 48.648648%;
+      height: 48.648648%;
+      background: no-repeat 50% 50% / 100% 100%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__block--error > &__image,
+  &__image:empty {
+    &:after {
+      background-image: url('@/assets/images/icon/img-default.svg');
+    }
+  }
+
+  &__block--pdf {
+    .gallery-file__icon {
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 25.67567%;
+        left: 50%;
+        width: 48.648648%;
+        height: 48.648648%;
+        background: no-repeat 50% 50% / 100% 100%;
+        background-image: url('@/assets/images/icon/pdf-color.svg');
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  &__block--pdf.gallery-file__block--error {
+    .gallery-file__icon {
+      &:after {
+        background-image: url('@/assets/images/icon/pdf-default.svg');
+      }
+    }
+  }
+
+  &__link {
+    @include reset-button;
+  }
+
+  &__delete {
+    @include reset-button;
+    display: block;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: url('@/assets/images/icon/file-delete.svg') no-repeat 50% 50%;
+  }
+}

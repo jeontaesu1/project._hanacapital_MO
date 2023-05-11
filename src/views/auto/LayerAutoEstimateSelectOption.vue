@@ -249,9 +249,9 @@ export default {
               <FormInvalidMessage>Error Message</FormInvalidMessage>
 
               <!-- Case : 입력 후 노출 -->
-              <FormHelpText :classNames="{ wrap: 'align-right' }"
-                >이백만원</FormHelpText
-              >
+              <FormHelpText :classNames="{ wrap: 'align-right' }">
+                이백만원
+              </FormHelpText>
               <!-- //Case : 입력 후 노출 -->
             </FormInvalid>
           </FormListItem>
@@ -260,19 +260,19 @@ export default {
       </div>
 
       <template v-slot:foot>
-        <div :class="$style['bottom']">
-          <KeyValue verticalAlign="center">
-            <KeyValueItem :classNames="{ item: 'text-body-3' }">
-              <KeyValueTitle :classNames="{ title: 'color-black' }"
-                >총 차량가격</KeyValueTitle
-              >
-              <KeyValueText>
-                <UnitText rightUnit="원" align="right">16,920,000</UnitText>
-              </KeyValueText>
-            </KeyValueItem>
-          </KeyValue>
-        </div>
-
+        <KeyValue
+          verticalAlign="center"
+          :classNames="{ wrap: 'row-margin-contents-small' }"
+        >
+          <KeyValueItem :classNames="{ item: 'text-body-3' }">
+            <KeyValueTitle :classNames="{ title: 'color-black' }">
+              총 차량가격
+            </KeyValueTitle>
+            <KeyValueText>
+              <UnitText rightUnit="원" align="right">16,920,000</UnitText>
+            </KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
         <ButtonList
           :classNames="{
             wrap: 'row-margin-none',
@@ -289,7 +289,3 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/auto/LayerAutoEstimateSelectOption.scss';
-</style>
