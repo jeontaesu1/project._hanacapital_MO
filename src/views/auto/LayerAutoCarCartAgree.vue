@@ -235,5 +235,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/auto/layerAutoCarCartAgree.scss';
+@import '@/assets/scss/views/auto/LayerAutoCarCartAgree.scss';
 </style>
