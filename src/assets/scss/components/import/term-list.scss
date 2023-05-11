@@ -55,7 +55,7 @@
   }
 
   &__contents {
-    padding: 16px;
+    padding: 16px 16px 0;
   }
 
   &__link {
@@ -100,6 +100,10 @@
         border: none;
         border-radius: 0;
         padding: 10px 0;
+
+        > .term-list__title {
+          @include font-size-default(15);
+        }
       }
     }
   }
