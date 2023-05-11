@@ -63,7 +63,7 @@ export default {
             :line="true"
             theme="quaternary"
             tagName="RouterLink"
-            to="/customer/notice-list"
+            to="/customer/financial-consumer-protection-data"
           >
             목록
           </BasicButton>

@@ -369,7 +369,7 @@ export default {
           </div>
         </section>
 
-        <section>
+        <section class="row-margin-container-medium">
           <h3 class="text-title-2 row-margin-contents">인수차량 정보</h3>
 
           <BasicBox className="row-margin-item-group">

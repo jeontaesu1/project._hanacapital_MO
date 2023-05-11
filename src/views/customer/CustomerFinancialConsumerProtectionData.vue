@@ -109,7 +109,6 @@ export default {
         </li>
       </ul>
     </div>
-    <!-- // Case : 검색 결과 있을 때 -->
 
     <div class="inline-wrap align-center row-margin-contents">
       <TextButton :classNames="{ wrap: 'text-body-4 color-gray' }">
@@ -119,6 +118,7 @@ export default {
         </template>
       </TextButton>
     </div>
+    <!-- // Case : 검색 결과 있을 때 -->
   </PageContents>
 </template>
 

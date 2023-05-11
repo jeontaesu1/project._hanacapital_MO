@@ -168,6 +168,11 @@ export default {
                 <KeyValueTitle>지연배상금</KeyValueTitle>
                 <KeyValueText>12.9 %</KeyValueText>
               </KeyValueItem>
+              <NoticeText :classNames="{ wrap: 'color-red row-margin-item' }">
+                약정이율 + 3% (단, 무이자상품일 경우 9%)
+              </NoticeText>
+            </KeyValue>
+            <KeyValue :classNames="{ wrap: 'row-margin-item-group' }">
               <KeyValueItem
                 :classNames="{
                   item: 'text-body-3',
@@ -237,12 +242,6 @@ export default {
               </KeyValueItem>
             </KeyValue>
           </BasicBox>
-
-          <NoticeText :classNames="{ wrap: 'row-margin-item-group' }">
-            매매계약서를 허위로 작성하거나 중고차 구매용도 이외에 다른 목적으로
-            대출금을 신청하는 경우, 사문서 위조·사기 등으로 형사고발 조치 될 수
-            있으니 주의해 주시기 바랍니다.
-          </NoticeText>
         </section>
 
         <section class="row-margin-container-medium">
@@ -371,7 +370,7 @@ export default {
           </div>
         </section>
 
-        <section>
+        <section class="row-margin-contents-group">
           <h3 class="text-title-2 row-margin-contents">자동차의 표시</h3>
 
           <BasicBox className="row-margin-item-group">

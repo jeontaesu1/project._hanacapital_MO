@@ -5,10 +5,12 @@ import { onMounted, onUnmounted } from 'vue';
 import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import { RouterLink } from 'vue-router';
 
 export default {
   components: {
     PageContents,
+    RouterLink,
   },
   setup() {
     const store = {
@@ -48,9 +50,12 @@ export default {
               <h3 class="text-body-1 font-weight-medium">금융소비자보호헌장</h3>
             </div>
             <div :class="$style['logs__right']">
-              <button type="button" :class="$style['logs__link']">
+              <RouterLink
+                to="/customer/financial-consumer-protection-charter"
+                :class="$style['logs__link']"
+              >
                 <span :class="$style['logs__link-text']">상세보기</span>
-              </button>
+              </RouterLink>
             </div>
           </div>
         </div>
@@ -68,9 +73,12 @@ export default {
               <h3 class="text-body-1 font-weight-medium">금융소비자보호조직</h3>
             </div>
             <div :class="$style['logs__right']">
-              <button type="button" :class="$style['logs__link']">
+              <RouterLink
+                to="/customer/financial-consumer-protection-organization"
+                :class="$style['logs__link']"
+              >
                 <span :class="$style['logs__link-text']">상세보기</span>
-              </button>
+              </RouterLink>
             </div>
           </div>
         </div>
@@ -88,9 +96,12 @@ export default {
               <h3 class="text-body-1 font-weight-medium">금융소비자보호체계</h3>
             </div>
             <div :class="$style['logs__right']">
-              <button type="button" :class="$style['logs__link']">
+              <RouterLink
+                to="/customer/financial-consumer-protection-system"
+                :class="$style['logs__link']"
+              >
                 <span :class="$style['logs__link-text']">상세보기</span>
-              </button>
+              </RouterLink>
             </div>
           </div>
         </div>
@@ -108,9 +119,12 @@ export default {
               <h3 class="text-body-1 font-weight-medium">금융소비자보호웹진</h3>
             </div>
             <div :class="$style['logs__right']">
-              <button type="button" :class="$style['logs__link']">
+              <RouterLink
+                to="/customer/financial-consumer-protection-webzine"
+                :class="$style['logs__link']"
+              >
                 <span :class="$style['logs__link-text']">상세보기</span>
-              </button>
+              </RouterLink>
             </div>
           </div>
         </div>
@@ -128,9 +142,12 @@ export default {
               <h3 class="text-body-1 font-weight-medium">금융소비자보호공시</h3>
             </div>
             <div :class="$style['logs__right']">
-              <button type="button" :class="$style['logs__link']">
+              <RouterLink
+                to="/customer/financial-consumer-protection-notice-list"
+                :class="$style['logs__link']"
+              >
                 <span :class="$style['logs__link-text']">상세보기</span>
-              </button>
+              </RouterLink>
             </div>
           </div>
         </div>
@@ -148,9 +165,12 @@ export default {
               <h3 class="text-body-1 font-weight-medium">금융소비자보호자료</h3>
             </div>
             <div :class="$style['logs__right']">
-              <button type="button" :class="$style['logs__link']">
+              <RouterLink
+                to="/customer/financial-consumer-protection-data"
+                :class="$style['logs__link']"
+              >
                 <span :class="$style['logs__link-text']">상세보기</span>
-              </button>
+              </RouterLink>
             </div>
           </div>
         </div>
@@ -170,9 +190,12 @@ export default {
               </h3>
             </div>
             <div :class="$style['logs__right']">
-              <button type="button" :class="$style['logs__link']">
+              <RouterLink
+                to="/customer/financial-consumer-protection-interest-rate-cut-request-info"
+                :class="$style['logs__link']"
+              >
                 <span :class="$style['logs__link-text']">상세보기</span>
-              </button>
+              </RouterLink>
             </div>
           </div>
         </div>
@@ -190,9 +213,12 @@ export default {
               <h3 class="text-body-1 font-weight-medium">청약철회권 안내</h3>
             </div>
             <div :class="$style['logs__right']">
-              <button type="button" :class="$style['logs__link']">
+              <RouterLink
+                to="/customer/financial-consumer-protection-withdraw-subscription-info"
+                :class="$style['logs__link']"
+              >
                 <span :class="$style['logs__link-text']">상세보기</span>
-              </button>
+              </RouterLink>
             </div>
           </div>
         </div>
@@ -212,9 +238,12 @@ export default {
               </h3>
             </div>
             <div :class="$style['logs__right']">
-              <button type="button" :class="$style['logs__link']">
+              <RouterLink
+                to="/customer/financial-consumer-protection-exemption-early-redemption-fee"
+                :class="$style['logs__link']"
+              >
                 <span :class="$style['logs__link-text']">상세보기</span>
-              </button>
+              </RouterLink>
             </div>
           </div>
         </div>

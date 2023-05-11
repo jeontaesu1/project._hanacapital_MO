@@ -43,11 +43,10 @@ export default {
 <template>
   <PageContents>
     <PageTextGroup>
-      <PageMainText>금융소비자보호헌장</PageMainText>
+      <PageMainText>금융소비자보호조직</PageMainText>
       <PageSubText>
-        하나캐피탈 모든 임직원은 금융소비자의 권익 보호가 지속성장의 초석임을
-        인식하고, 최상의 상품과 서비스로, 고객만족을 추구하여 금융소비자로부터
-        신뢰받는 금융인이 되고자 다음 사항을 적극 실천할 것을 다짐합니다.
+        하나캐피탈은 상품개발 및 판매, 사후관리에 대한 내부준칙을 마련하여
+        소비자보호 체계를 구축하 여 소비자의 관점에서 제도를 운영하고 있습니다.
       </PageSubText>
     </PageTextGroup>
 

@@ -86,7 +86,7 @@ export default {
           </p>
         </li>
 
-        <li class="row-margin-contents-group">
+        <li>
           <h3 class="text-body-2 row-margin-item-medium">하나,</h3>
           <p class="text-body-4 font-weight-light">
             금융소비자가 원하는 다양한 라이프스타일의 실현을 지원하는
@@ -95,15 +95,15 @@ export default {
           </p>
         </li>
       </ul>
-    </div>
 
-    <div class="flex-box row-margin-contents-group align-right">
-      <div class="flex-box__cell flex-1">
-        <div class="text-body-3 color-gray font-weight-light row-margin-item">
-          2013. 06. 01 제정
-        </div>
-        <div class="flex-box__cell">
-          <IconLogoMain />
+      <div class="flex-box row-margin-contents-group align-right">
+        <div class="flex-box__cell flex-1">
+          <div class="text-body-3 color-gray font-weight-light row-margin-item">
+            2013. 06. 01 제정
+          </div>
+          <div class="flex-box__cell">
+            <IconLogoMain />
+          </div>
         </div>
       </div>
     </div>

@@ -585,8 +585,8 @@ export default {
       </UiTab>
       <!-- // case: 복수 견적일 경우 탭 노출 -->
 
-      <!-- case: 단일 견적일 경우 탭 없이 contents만 노출 -->
-      <section>
+      <!-- case: 단일 견적일 경우 노출 -->
+      <section class="row-margin-container-medium">
         <BasicBox>
           <BasicBoxHead>
             <BasicBoxHeadLeft>
@@ -747,7 +747,7 @@ export default {
           </KeyValue>
         </BasicBox>
       </section>
-      <!-- // case: 단일 견적일 경우 탭 없이 contents만 노출 -->
+      <!-- // case: 단일 견적일 경우 노출 -->
     </FullPopup>
   </UiLayer>
 </template>
