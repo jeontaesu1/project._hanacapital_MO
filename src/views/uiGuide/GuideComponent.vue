@@ -76,6 +76,7 @@ import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import ScrollSection from '@/components/ui/section/ScrollSection.vue';
 import StepProgress from '@/components/ui/progress/StepProgress.vue';
 import BasicProgress from '@/components/ui/progress/BasicProgress.vue';
+import TextProgress from '@/components/ui/progress/TextProgress.vue';
 import SearchButton from '@/components/ui/button/SearchButton.vue';
 import SwitchCheckBox from '@/components/ui/form/SwitchCheckBox.vue';
 import BasicTooltip from '@/components/ui/tooltip/BasicTooltip.vue';
@@ -88,6 +89,8 @@ import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
 import MaskingText from '@/components/ui/text/MaskingText.vue';
 import FilterButton from '@/components/ui/button/FilterButton.vue';
 import DeleteButton from '@/components/ui/button/DeleteButton.vue';
+import SelectTable from '@/components/ui/table/SelectTable.vue';
+import SelectTableRow from '@/components/ui/table/SelectTableRow.vue';
 
 import BrandLogo001 from '@/assets/images/card-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/card-logo/lotte.svg?component';
@@ -199,6 +202,7 @@ export default {
     RoundStatus,
     StepProgress,
     BasicProgress,
+    TextProgress,
     SearchButton,
     ScrollSection,
     SwitchCheckBox,
@@ -212,6 +216,8 @@ export default {
     MaskingText,
     FilterButton,
     DeleteButton,
+    SelectTable,
+    SelectTableRow,
     IconAdd,
     BrandLogo001,
     BrandLogo002,
@@ -1161,6 +1167,23 @@ export default {
           </ButtonListItem>
           <ButtonListItem>
             <BasicButton :line="true" theme="quaternary">Button 5</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Wrap - col 4</h3>
+        <ButtonList :wrap="true" :col="4">
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">Button 1</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">Button 2</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">Button 3</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">Button 4</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </div>
@@ -6330,6 +6353,25 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">TextProgress</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <TextProgress
+          :steps="[
+            '본인인증',
+            '계약자정보',
+            '금융조건',
+            '면허정보',
+            '약관동의',
+            '본인인증',
+            'ARS',
+          ]"
+          :current="1"
+        />
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Empty</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -6586,6 +6628,60 @@ export default {
           </table>
         </div>
         <!-- // table -->
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">SelectTable</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <SelectTable>
+          <template v-slot:colgroup>
+            <col style="width: 83px" />
+            <col />
+            <col style="width: 90px" />
+          </template>
+
+          <template v-slot:head>
+            <tr>
+              <th>제조사</th>
+              <th>모델명</th>
+              <th>차량 금액</th>
+            </tr>
+          </template>
+
+          <SelectTableRow>
+            <td>기아</td>
+            <td>2.2 디젤 11인승 노블레스</td>
+            <td>5,500 만원</td>
+          </SelectTableRow>
+          <SelectTableRow :initialActive="true">
+            <td>기아</td>
+            <td>뉴 카니발(YP) 3.0 가솔린 9인승 노블레스</td>
+            <td>5,300 만원</td>
+          </SelectTableRow>
+          <SelectTableRow>
+            <td>기아</td>
+            <td>2.2 디젤 11인승 노블레스</td>
+            <td>5,500 만원</td>
+          </SelectTableRow>
+          <SelectTableRow>
+            <td>기아</td>
+            <td>2.2 디젤 11인승 노블레스</td>
+            <td>5,500 만원</td>
+          </SelectTableRow>
+          <SelectTableRow>
+            <td>기아</td>
+            <td>뉴 카니발(YP) 3.0 가솔린 9인승 노블레스</td>
+            <td>5,300 만원</td>
+          </SelectTableRow>
+          <SelectTableRow>
+            <td>기아</td>
+            <td>2.2 디젤 11인승 노블레스</td>
+            <td>5,500 만원</td>
+          </SelectTableRow>
+        </SelectTable>
       </div>
     </section>
 
