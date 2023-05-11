@@ -1420,8 +1420,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/sales-used-car/home',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.05.12',
         log: [],
       },
       {
