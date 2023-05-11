@@ -837,11 +837,58 @@ export default {
         <h3 class="test-section-sub-title">Default</h3>
         <div :class="$style['download']">
           <div :class="$style['download__block']">
+            <h4 class="text-body-1 font-weight-medium">
+              건강한금융 금융생활정보
+            </h4>
+            <p class="text-body-4 font-weight-light row-margin-small">
+              2022.10.25
+            </p>
+          </div>
+          <a href="" :class="$style['download__button']" download>
+            <IconDownload />
+            <span class="for-a11y">다운로드</span>
+          </a>
+        </div>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">align-center</h3>
+        <div :class="[$style['download'], $style['download--align-center']]">
+          <div :class="$style['download__block']">
+            <h4 class="text-body-1 font-weight-medium">
+              건강한금융 금융생활정보
+            </h4>
+            <p class="text-body-4 font-weight-light row-margin-small">
+              2022.10.25
+            </p>
+          </div>
+          <a href="" :class="$style['download__button']" download>
+            <IconDownload />
+            <span class="for-a11y">다운로드</span>
+          </a>
+        </div>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">secondary</h3>
+        <div
+          :class="[
+            $style['download'],
+            $style['download--align-center'],
+            $style['download--theme-secondary'],
+          ]"
+        >
+          <div :class="$style['download__block']">
             <p class="text-body-4 font-weight-medium">
               하나캐피탈IR_2022.2Q.pdf
             </p>
           </div>
-          <a href="" :class="$style['download__button']" download>
+          <a
+            href=""
+            :class="[
+              $style['download__button'],
+              $style['download__button--secondary'],
+            ]"
+            download
+          >
             <IconDownload />
             <span class="for-a11y">다운로드</span>
           </a>
