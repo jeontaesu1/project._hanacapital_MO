@@ -125,6 +125,7 @@ import IconDocumentComplete from '@/assets/images/icon/document-complete.svg?com
 import IconTooltip from '@/assets/images/icon/tooltip.svg?component';
 import IconLink from '@/assets/images/icon/link.svg?component';
 import IconStar from '@/assets/images/icon/star.svg?component';
+import IconDownload from '@/assets/images/icon/download.svg?component';
 
 export default {
   components: {
@@ -249,6 +250,7 @@ export default {
     IconTooltip,
     IconLink,
     IconStar,
+    IconDownload,
   },
 
   setup() {
@@ -826,6 +828,22 @@ export default {
             </span>
           </span>
         </button>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Download Button</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <a href="" :class="$style['download-button']" download>
+          <div :class="[$style['download-button__text'], 'text-body-4']">
+            하나캐피탈IR_2022.2Q.pdf
+          </div>
+          <span :class="$style['download-button__icon']">
+            <IconDownload />
+            <span class="for-a11y">다운로드</span>
+          </span>
+        </a>
       </div>
     </section>
 
