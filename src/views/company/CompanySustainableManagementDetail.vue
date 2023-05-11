@@ -54,26 +54,30 @@ export default {
       <div :class="$style['board-detail__foot']">
         <ul class="reset-list">
           <li class="row-margin-item-group">
-            <a href="" :class="$style['download-button']" download>
-              <div :class="[$style['download-button__text'], 'text-body-4']">
-                하나캐피탈IR_2022.2Q.pdf
+            <div :class="$style['download']">
+              <div :class="$style['download__block']">
+                <p class="text-body-4 font-weight-medium">
+                  하나캐피탈 ESG채권 투자자 안내문.pdf
+                </p>
               </div>
-              <span :class="$style['download-button__icon']">
+              <a href="" :class="$style['download__button']" download>
                 <IconDownload />
                 <span class="for-a11y">다운로드</span>
-              </span>
-            </a>
+              </a>
+            </div>
           </li>
           <li class="row-margin-item-group">
-            <a href="" :class="$style['download-button']" download>
-              <div :class="[$style['download-button__text'], 'text-body-4']">
-                하나캐피탈IR_2022.2Q.pdf
+            <div :class="$style['download']">
+              <div :class="[$style['download__block'], 'text-body-4']">
+                <p class="text-body-4 font-weight-medium">
+                  하나캐피탈 ESG채권 투자자 안내문.pdf
+                </p>
               </div>
-              <span :class="$style['download-button__icon']">
+              <a href="" :class="$style['download__button']" download>
                 <IconDownload />
                 <span class="for-a11y">다운로드</span>
-              </span>
-            </a>
+              </a>
+            </div>
           </li>
         </ul>
       </div>
@@ -101,5 +105,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/company/CompanyIRDetail.scss';
+@import '@/assets/scss/views/company/CompanySustainableManagementDetail.scss';
 </style>
