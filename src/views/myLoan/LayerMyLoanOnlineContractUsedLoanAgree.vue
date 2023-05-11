@@ -307,7 +307,7 @@ export default {
                 </UiAccordionItem>
                 <!-- //약관동의 : 상품 이용약관 전체동의 -->
 
-                <!-- Case : 할부론일 경우 노출 -->
+                <!-- Case : 중고차 할부,론일 경우 노출 -->
                 <!-- 약관동의 : 출금이체 신청약관 전체동의 -->
                 <UiAccordionItem
                   :classNames="{ item: $style['agree-list__depth-item'] }"
@@ -391,7 +391,7 @@ export default {
                   </UiAccordionLayer>
                 </UiAccordionItem>
                 <!-- //약관동의 : 출금이체 신청약관 전체동의 -->
-                <!-- // Case : 할부론일 경우 노출 -->
+                <!-- // Case : 중고차 할부,론일 경우 노출 -->
 
                 <!-- 약관동의 : 실제소유자 확인 -->
                 <UiAccordionItem
