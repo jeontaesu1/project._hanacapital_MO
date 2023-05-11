@@ -832,18 +832,20 @@ export default {
     </section>
 
     <section class="test-section">
-      <h2 class="test-section-title">Download Button</h2>
+      <h2 class="test-section-title">Download</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
-        <a href="" :class="$style['download-button']" download>
-          <div :class="[$style['download-button__text'], 'text-body-4']">
-            하나캐피탈IR_2022.2Q.pdf
+        <div :class="$style['download']">
+          <div :class="$style['download__block']">
+            <p class="text-body-4 font-weight-medium">
+              하나캐피탈IR_2022.2Q.pdf
+            </p>
           </div>
-          <span :class="$style['download-button__icon']">
+          <a href="" :class="$style['download__button']" download>
             <IconDownload />
             <span class="for-a11y">다운로드</span>
-          </span>
-        </a>
+          </a>
+        </div>
       </div>
     </section>
 
