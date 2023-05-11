@@ -3108,8 +3108,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/company/ethics-code',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.05.12',
         log: [],
       },
       {
