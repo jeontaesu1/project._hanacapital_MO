@@ -468,7 +468,12 @@ export default {
                   class="row-margin-item font-weight-medium text-body-1"
                 >
                   <div class="flex-box">
-                    <div class="flex-box__cell">d</div>
+                    <div :class="['flex-box__cell', $style['vision-emblem']]">
+                      <img
+                        src="@/assets/images/icon/img-emblem1.png"
+                        alt="임시이미지"
+                      />
+                    </div>
                     <div class="flex-box__cell flex-box__cell--medium">
                       <h4 class="row-margin-small font-weight-medium">
                         하늘색 컬러
@@ -488,7 +493,12 @@ export default {
                   class="row-margin-item font-weight-medium text-body-1"
                 >
                   <div class="flex-box">
-                    <div class="flex-box__cell">d</div>
+                    <div :class="['flex-box__cell', $style['vision-emblem']]">
+                      <img
+                        src="@/assets/images/icon/img-emblem2.png"
+                        alt="임시이미지"
+                      />
+                    </div>
                     <div class="flex-box__cell flex-box__cell--medium">
                       <h4 class="row-margin-small font-weight-medium">지구</h4>
                       <p
@@ -506,7 +516,12 @@ export default {
                   class="row-margin-item font-weight-medium text-body-1"
                 >
                   <div class="flex-box">
-                    <div class="flex-box__cell">d</div>
+                    <div :class="['flex-box__cell', $style['vision-emblem']]">
+                      <img
+                        src="@/assets/images/icon/img-emblem3.png"
+                        alt="임시이미지"
+                      />
+                    </div>
                     <div class="flex-box__cell flex-box__cell--medium">
                       <h4 class="row-margin-small font-weight-medium">
                         숫자 1
@@ -521,6 +536,9 @@ export default {
                 </BasicBox>
               </li>
             </ul>
+          </div>
+          <div :class="$style['line-box']">
+            <img src="@/assets/images/icon/img-emblem4.png" alt="임시이미지" />
           </div>
           <p
             class="text-title-1 font-weight-light align-center row-margin-item-group row-margin-bottom-none"
@@ -625,22 +643,24 @@ export default {
               </li>
             </ul>
           </div>
-          <p
-            class="text-title-1 font-weight-light align-center row-margin-item-group row-margin-bottom-none"
-          >
-            Integrity
-          </p>
-          <p
-            class="text-body-1 font-weight-medium align-center row-margin-mini row-margin-bottom-none"
-          >
-            정직 · 성실 · 투명
-          </p>
-          <p
-            class="text-body-3 font-weight-light align-center color-gray-tertiary row-margin-item"
-          >
-            금융인의 기본적인 윤리로 항상 맡은 바를<br />
-            정직하고 성실하게 이행하는 것
-          </p>
+          <div :class="$style['line-box']">
+            <h4
+              class="text-title-1 font-weight-medium row-margin-item-group row-margin-bottom-none color-green"
+            >
+              Integrity
+            </h4>
+            <p
+              class="text-body-1 font-weight-medium row-margin-mini row-margin-bottom-none"
+            >
+              정직 · 성실 · 투명
+            </p>
+            <p
+              class="text-body-3 font-weight-light color-gray-tertiary row-margin-item"
+            >
+              금융인의 기본적인 윤리로 항상 맡은 바를<br />
+              정직하고 성실하게 이행하는 것
+            </p>
+          </div>
         </section>
       </UiTabPanel>
 
@@ -654,25 +674,42 @@ export default {
           >
             그룹경영전략, 재무관리
           </p>
-          <ul class="reset-list">
+
+          <div>컨텐츠 정리중</div>
+          <!-- <ul class="reset-list">
             <li class="row-margin-item-group">
               <BasicBox
                 theme="septenary"
                 radius="secondary"
-                class="row-margin-item font-weight-medium text-body-1"
+                class="row-margin-item font-weight-medium"
               >
-                <h4 class="row-margin-small font-weight-medium">
-                  <span class="color-green">O</span>ur value<br />가장 손님중심
-                  그룹
+                <h4 class="row-margin-small font-weight-medium text-body-1">
+                  하나은행 <span class="color-green">100%</span>
                 </h4>
                 <p
                   class="color-gray text-body-4 font-weight-regular row-margin-none"
                 >
-                  손님을 우선하는 하나만의 가치를 실현
+                  금융그룹 Main 유통채널
                 </p>
               </BasicBox>
             </li>
-          </ul>
+            <li class="row-margin-item-group">
+              <BasicBox
+                theme="septenary"
+                radius="secondary"
+                class="row-margin-item font-weight-medium"
+              >
+                <h4 class="row-margin-small font-weight-medium text-body-1">
+                  하나증권 <span class="color-green">100%</span>
+                </h4>
+                <p
+                  class="color-gray text-body-4 font-weight-regular row-margin-none"
+                >
+                  AM &amp; IB 제공 <sup>1)</sup>
+                </p>
+              </BasicBox>
+            </li>
+          </ul> -->
         </section>
       </UiTabPanel>
     </PageContents>

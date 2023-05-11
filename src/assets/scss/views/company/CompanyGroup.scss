@@ -36,3 +36,35 @@
     }
   }
 }
+
+.vision-emblem {
+  img {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.line-box {
+  position: relative;
+  padding-top: 16px;
+  text-align: center;
+  font-size: 0;
+
+  > h4 {
+    padding-top: 16px;
+  }
+
+  img {
+    width: 78px;
+    height: 108px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 16px;
+    border-right: 1px dashed $color-green-50;
+  }
+}
