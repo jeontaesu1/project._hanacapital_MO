@@ -107,5 +107,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/customer/CustomerNoticeDetail.scss';
+@import '@/assets/scss/views/customer/CustomerClauseDetail.scss';
 </style>
