@@ -23,7 +23,6 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
-import LayerMyLoanOnlineContractUsedLoanEarlyRedemptionFee from '@/views/myLoan/LayerMyLoanOnlineContractUsedLoanEarlyRedemptionFee.vue';
 
 export default {
   components: {
@@ -48,20 +47,12 @@ export default {
     BasicButton,
     TextButton,
     NoticeText,
-    LayerMyLoanOnlineContractUsedLoanEarlyRedemptionFee,
   },
   setup() {
     const layer = ref(null);
-    const layer001 = ref(null);
-
-    const layer001Open = (e = {}) => {
-      layer001.value.layer.open(e.target);
-    };
 
     return {
       layer,
-      layer001,
-      layer001Open,
     };
   },
 };
@@ -147,7 +138,6 @@ export default {
                         :block="true"
                         underline="true"
                         theme="secondary"
-                        @click="layer001Open"
                       >
                         수수료 산식
                       </TextButton>
@@ -159,7 +149,10 @@ export default {
                 대출기간별 수수료가 상이하며, 대출일로부터 3년 이내 상환 시 적용
               </NoticeText>
             </KeyValue>
-            <KeyValue :classNames="{ wrap: 'row-margin-item-group' }">
+            <KeyValue
+              margin="regular"
+              :classNames="{ wrap: 'row-margin-item-group' }"
+            >
               <KeyValueItem
                 :classNames="{
                   item: 'text-body-3',
@@ -172,7 +165,10 @@ export default {
                 약정이율 + 3% (단, 무이자상품일 경우 9%)
               </NoticeText>
             </KeyValue>
-            <KeyValue :classNames="{ wrap: 'row-margin-item-group' }">
+            <KeyValue
+              margin="regular"
+              :classNames="{ wrap: 'row-margin-item-group' }"
+            >
               <KeyValueItem
                 :classNames="{
                   item: 'text-body-3',
@@ -370,7 +366,7 @@ export default {
           </div>
         </section>
 
-        <section class="row-margin-contents-group">
+        <section class="row-margin-container-medium">
           <h3 class="text-title-2 row-margin-contents">자동차의 표시</h3>
 
           <BasicBox className="row-margin-item-group">
@@ -391,7 +387,7 @@ export default {
               </BasicBoxHeadLeft>
             </BasicBoxHead>
 
-            <KeyValue verticalAlign="center">
+            <KeyValue>
               <KeyValueItem
                 :classNames="{
                   item: 'text-body-3',
@@ -421,6 +417,4 @@ export default {
       </template>
     </FullPopup>
   </UiLayer>
-
-  <LayerMyLoanOnlineContractUsedLoanEarlyRedemptionFee ref="layer001" />
 </template>

@@ -52,6 +52,7 @@ import LayerMyLoanOnlineContractUsedLoanAgreeVue from '@/views/myLoan/LayerMyLoa
 import LayerMyLoanOnlineContractUsedLoanConfirm001 from '@/views/myLoan/LayerMyLoanOnlineContractUsedLoanConfirm001.vue';
 import LayerMyLoanOnlineContractUsedLoanFinalConfirm001 from '@/views/myLoan/LayerMyLoanOnlineContractUsedLoanFinalConfirm001.vue';
 import LayerMyLoanOnlineContractUsedLoanComplete from '@/views/myLoan/LayerMyLoanOnlineContractUsedLoanComplete.vue';
+import LayerMyLoanOnlineContractUsedLoanEarlyRedemptionFee from '@/views/myLoan/LayerMyLoanOnlineContractUsedLoanEarlyRedemptionFee.vue';
 import LayerMyLoanOnlineContractUsedLoanNoticeVue from '@/views/myLoan/LayerMyLoanOnlineContractUsedLoanNotice.vue';
 import LayerMyLoanOnlineContractUsedLoanConfirm002 from '@/views/myLoan/LayerMyLoanOnlineContractUsedLoanConfirm002.vue';
 import LayerMyLoanOnlineContractUsedLoanFinalConfirm002 from '@/views/myLoan/LayerMyLoanOnlineContractUsedLoanFinalConfirm002.vue';
@@ -108,6 +109,7 @@ export default {
     LayerMyLoanOnlineContractUsedLoanConfirm001,
     LayerMyLoanOnlineContractUsedLoanFinalConfirm001,
     LayerMyLoanOnlineContractUsedLoanComplete,
+    LayerMyLoanOnlineContractUsedLoanEarlyRedemptionFee,
     LayerMyLoanOnlineContractUsedLoanNoticeVue,
     LayerMyLoanOnlineContractUsedLoanConfirm002,
     LayerMyLoanOnlineContractUsedLoanFinalConfirm002,
@@ -162,6 +164,7 @@ export default {
     const layer049 = ref(null);
     const layer050 = ref(null);
     const layer051 = ref(null);
+    const layer052 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -310,6 +313,9 @@ export default {
     const layer051Open = (e = {}) => {
       layer051.value.layer.open(e.target);
     };
+    const layer052Open = (e = {}) => {
+      layer052.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -361,6 +367,7 @@ export default {
       layer049,
       layer050,
       layer051,
+      layer052,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -410,6 +417,7 @@ export default {
       layer049Open,
       layer050Open,
       layer051Open,
+      layer052Open,
     };
   },
 };
@@ -655,16 +663,21 @@ export default {
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer049Open">
-          약관상세_할부금 수령 위임안내<br />AF_M98_l009
+          중도상환 수수료 산식 팝업<br />AF_M98_b001
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer050Open">
-          계약정보 최종확인_중고차 할부<br />AF_M98_l010
+          약관상세_할부금 수령 위임안내<br />AF_M98_l009
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer051Open">
+          계약정보 최종확인_중고차 할부<br />AF_M98_l010
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer052Open">
           계약정보 최종확인_약정정보확인 중고차할부<br />AF_M98_l011
         </BasicButton>
       </ButtonListItem>
@@ -732,8 +745,9 @@ export default {
     <LayerMyLoanOnlineContractUsedLoanConfirm001 ref="layer046" />
     <LayerMyLoanOnlineContractUsedLoanFinalConfirm001 ref="layer047" />
     <LayerMyLoanOnlineContractUsedLoanComplete ref="layer048" />
-    <LayerMyLoanOnlineContractUsedLoanNoticeVue ref="layer049" />
-    <LayerMyLoanOnlineContractUsedLoanConfirm002 ref="layer050" />
-    <LayerMyLoanOnlineContractUsedLoanFinalConfirm002 ref="layer051" />
+    <LayerMyLoanOnlineContractUsedLoanEarlyRedemptionFee ref="layer049" />
+    <LayerMyLoanOnlineContractUsedLoanNoticeVue ref="layer050" />
+    <LayerMyLoanOnlineContractUsedLoanConfirm002 ref="layer051" />
+    <LayerMyLoanOnlineContractUsedLoanFinalConfirm002 ref="layer052" />
   </PageContents>
 </template>

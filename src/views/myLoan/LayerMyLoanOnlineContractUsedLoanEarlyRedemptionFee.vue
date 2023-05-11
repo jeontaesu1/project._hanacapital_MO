@@ -75,7 +75,7 @@ export default {
         </ul>
 
         <NoticeText :classNames="{ wrap: 'row-margin-item-regular' }">
-          잔존기간 : 30일 미만 상환 시 ‘대출사용기간＇을 30일로 간주
+          잔존기간 : 30일 미만 상환 시 ‘대출사용기간’을 30일로 간주
         </NoticeText>
       </div>
 

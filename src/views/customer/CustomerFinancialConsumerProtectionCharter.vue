@@ -8,6 +8,7 @@ import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import PageSubText from '@/components/ui/text/PageSubText.vue';
+
 import IconLogoMain from '@/assets/images/icon/logo_main.svg?component';
 
 export default {
@@ -52,49 +53,45 @@ export default {
     </PageTextGroup>
 
     <div>
-      <ul class="reset-list">
-        <li class="row-margin-contents-group">
-          <h3 class="text-body-2 row-margin-item-medium">하나,</h3>
-          <p class="text-body-4 font-weight-light">
-            금융소비자와 직원간 인격 및 의견 존중을 기반으로, 금융소비자가
-            적합한 상품이나 서비스를 선택할 수 있도록, 정확하고 진실된 정보를
-            제공하겠습니다.
-          </p>
-        </li>
+      <div class="row-margin-contents-group">
+        <h3 class="text-body-2 row-margin-item-medium">하나,</h3>
+        <p class="text-body-4 font-weight-light">
+          금융소비자와 직원간 인격 및 의견 존중을 기반으로, 금융소비자가 적합한
+          상품이나 서비스를 선택할 수 있도록, 정확하고 진실된 정보를
+          제공하겠습니다.
+        </p>
+      </div>
 
-        <li class="row-margin-contents-group">
-          <h3 class="text-body-2 row-margin-item-medium">하나,</h3>
-          <p class="text-body-4 font-weight-light">
-            금융소비자에게 진정 도움이 되는 상품과 서비스를 제공함으로써, 고객의
-            성공과 건강한 금융문화정착에 이바지하겠습니다.
-          </p>
-        </li>
+      <div class="row-margin-contents-group">
+        <h3 class="text-body-2 row-margin-item-medium">하나,</h3>
+        <p class="text-body-4 font-weight-light">
+          금융소비자에게 진정 도움이 되는 상품과 서비스를 제공함으로써, 고객의
+          성공과 건강한 금융문화정착에 이바지하겠습니다.
+        </p>
+      </div>
+      <div class="row-margin-contents-group">
+        <h3 class="text-body-2 row-margin-item-medium">하나,</h3>
+        <p class="text-body-4 font-weight-light">
+          금융소비자가 믿고 의지할 수 있는 금융파트너로서, 금융소비자의 권익을
+          침해하는 불합리한 금융 관행 개선에 최선을 다하겠습니다.
+        </p>
+      </div>
+      <div class="row-margin-contents-group">
+        <h3 class="text-body-2 row-margin-item-medium">하나,</h3>
+        <p class="text-body-4 font-weight-light">
+          금융소비자의 피해와 불만에 적극적으로 개선하는 최고의 금융파트너가
+          되도록 하겠습니다.
+        </p>
+      </div>
 
-        <li class="row-margin-contents-group">
-          <h3 class="text-body-2 row-margin-item-medium">하나,</h3>
-          <p class="text-body-4 font-weight-light">
-            금융소비자가 믿고 의지할 수 있는 금융파트너로서, 금융소비자의 권익을
-            침해하는 불합리한 금융 관행 개선에 최선을 다하겠습니다.
-          </p>
-        </li>
-
-        <li class="row-margin-contents-group">
-          <h3 class="text-body-2 row-margin-item-medium">하나,</h3>
-          <p class="text-body-4 font-weight-light">
-            금융소비자의 피해와 불만에 적극적으로 개선하는 최고의 금융파트너가
-            되도록 하겠습니다.
-          </p>
-        </li>
-
-        <li>
-          <h3 class="text-body-2 row-margin-item-medium">하나,</h3>
-          <p class="text-body-4 font-weight-light">
-            금융소비자가 원하는 다양한 라이프스타일의 실현을 지원하는
-            생활금융파트너로서, 금융소외계층에게도 금융기회를 제공하도록 항상
-            노력하겠습니다.
-          </p>
-        </li>
-      </ul>
+      <div class="row-margin-contents-group">
+        <h3 class="text-body-2 row-margin-item-medium">하나,</h3>
+        <p class="text-body-4 font-weight-light">
+          금융소비자가 원하는 다양한 라이프스타일의 실현을 지원하는
+          생활금융파트너로서, 금융소외계층에게도 금융기회를 제공하도록 항상
+          노력하겠습니다.
+        </p>
+      </div>
 
       <div class="flex-box row-margin-contents-group align-right">
         <div class="flex-box__cell flex-1">

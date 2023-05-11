@@ -255,7 +255,7 @@ export default {
               </BasicBoxHeadLeft>
             </BasicBoxHead>
 
-            <KeyValue verticalAlign="center">
+            <KeyValue margin="regular">
               <KeyValueItem
                 :classNames="{
                   item: 'text-body-3',
@@ -285,8 +285,9 @@ export default {
         >
           <CheckBoxObject />
           <CheckBoxLabelText>
-            본 할부금융 계약조건에 대하여 충분히 이해하고, 확인 및 동의하여
-            아래의 인증 수단을 통하여 본 약정을 체결합니다.
+            본인은 중고 자동차 매매계약에 따라 상기 차량을 이상없이
+            인수하였으며, 중고 자동차 구입자금 대출을 위해 하나캐피탈에 인수증
+            제출을 동의합니다.
           </CheckBoxLabelText>
         </CheckBox>
       </div>
