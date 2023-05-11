@@ -45,40 +45,6 @@
     }
   }
 
-  &__term {
-    display: block;
-
-    &-head {
-      display: flex;
-      align-items: flex-start;
-      padding: 15px;
-      border: 1px solid $color-gray-40;
-      border-radius: 8px;
-    }
-
-    &-checkbox {
-      flex: 0 1 auto;
-      min-width: 0;
-    }
-
-    &-opener {
-      flex: none;
-      margin-left: 10px;
-
-      &:only-child {
-        margin-left: 0;
-      }
-    }
-    &-item {
-      & + & {
-        margin-top: 21px;
-      }
-    }
-    &-contents {
-      padding: 24px 16px 10px;
-    }
-  }
-
   &__depth {
     display: block;
     @include reset-list;
