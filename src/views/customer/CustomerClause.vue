@@ -75,7 +75,7 @@ export default {
             >
               <li :class="$style['term-list__item']">
                 <div :class="$style['term-list__head']">
-                  <div class="text-body-2 font-weight-medium">
+                  <div :class="$style['term-list__title']">
                     본인확인 이용약관
                   </div>
                   <div :class="$style['term-list__right']">
@@ -89,7 +89,7 @@ export default {
               </li>
               <li :class="$style['term-list__item']">
                 <div :class="$style['term-list__head']">
-                  <div class="text-body-2 font-weight-medium">
+                  <div :class="$style['term-list__title']">
                     개인정보 수집·이용, 취급위탁 동의
                   </div>
                   <div :class="$style['term-list__right']">
@@ -103,7 +103,7 @@ export default {
               </li>
               <li :class="$style['term-list__item']">
                 <div :class="$style['term-list__head']">
-                  <div class="text-body-2 font-weight-medium">
+                  <div :class="$style['term-list__title']">
                     통신사 본인확인 이용약관 동의
                   </div>
                   <div :class="$style['term-list__right']">
@@ -117,7 +117,7 @@ export default {
               </li>
               <li :class="$style['term-list__item']">
                 <div :class="$style['term-list__head']">
-                  <div class="text-body-2 font-weight-medium">
+                  <div :class="$style['term-list__title']">
                     고유식별정보 처리 동의
                   </div>
                   <div :class="$style['term-list__right']">
@@ -158,9 +158,7 @@ export default {
             >
               <li :class="$style['term-list__item']">
                 <div :class="$style['term-list__head']">
-                  <div class="text-body-2 font-weight-medium">
-                    서비스 이용약관
-                  </div>
+                  <div :class="$style['term-list__title']">서비스 이용약관</div>
                   <div :class="$style['term-list__right']">
                     <button type="button" :class="$style['term-list__link']">
                       <span :class="$style['term-list__link-text']">
@@ -172,7 +170,7 @@ export default {
               </li>
               <li :class="$style['term-list__item']">
                 <div :class="$style['term-list__head']">
-                  <div class="text-body-2 font-weight-medium">
+                  <div :class="$style['term-list__title']">
                     개인(신용)정보 선택적 수집·이용 동의
                   </div>
                   <div :class="$style['term-list__right']">
@@ -186,7 +184,7 @@ export default {
               </li>
               <li :class="$style['term-list__item']">
                 <div :class="$style['term-list__head']">
-                  <div class="text-body-2 font-weight-medium">
+                  <div :class="$style['term-list__title']">
                     개인(신용)정보 선택적 제공 동의
                   </div>
                   <div :class="$style['term-list__right']">
@@ -200,7 +198,7 @@ export default {
               </li>
               <li :class="$style['term-list__item']">
                 <div :class="$style['term-list__head']">
-                  <div class="text-body-2 font-weight-medium">
+                  <div :class="$style['term-list__title']">
                     개인(신용)정보 필수적 수집·이용 동의
                   </div>
                   <div :class="$style['term-list__right']">
@@ -214,7 +212,7 @@ export default {
               </li>
               <li :class="$style['term-list__item']">
                 <div :class="$style['term-list__head']">
-                  <div class="text-body-2 font-weight-medium">
+                  <div :class="$style['term-list__title']">
                     개인(신용)정보 필수적 제공 동의
                   </div>
                   <div :class="$style['term-list__right']">
@@ -254,7 +252,7 @@ export default {
             >
               <li :class="$style['term-list__item']">
                 <div :class="$style['term-list__head']">
-                  <div class="text-body-2 font-weight-medium">
+                  <div :class="$style['term-list__title']">
                     전자금융거래확인
                   </div>
                   <div :class="$style['term-list__right']">
@@ -268,7 +266,7 @@ export default {
               </li>
               <li :class="$style['term-list__item']">
                 <div :class="$style['term-list__head']">
-                  <div class="text-body-2 font-weight-medium">
+                  <div :class="$style['term-list__title']">
                     여신거래기본약관
                   </div>
                   <div :class="$style['term-list__right']">
@@ -282,7 +280,7 @@ export default {
               </li>
               <li :class="$style['term-list__item']">
                 <div :class="$style['term-list__head']">
-                  <div class="text-body-2 font-weight-medium">자동이체약관</div>
+                  <div :class="$style['term-list__title']">자동이체약관</div>
                   <div :class="$style['term-list__right']">
                     <button type="button" :class="$style['term-list__link']">
                       <span :class="$style['term-list__link-text']">
@@ -294,7 +292,7 @@ export default {
               </li>
               <li :class="$style['term-list__item']">
                 <div :class="$style['term-list__head']">
-                  <div class="text-body-2 font-weight-medium">
+                  <div :class="$style['term-list__title']">
                     전설기계/상용차 대출 약관
                   </div>
                   <div :class="$style['term-list__right']">
@@ -308,7 +306,7 @@ export default {
               </li>
               <li :class="$style['term-list__item']">
                 <div :class="$style['term-list__head']">
-                  <div class="text-body-2 font-weight-medium">렌터카 약관</div>
+                  <div :class="$style['term-list__title']">렌터카 약관</div>
                   <div :class="$style['term-list__right']">
                     <button type="button" :class="$style['term-list__link']">
                       <span :class="$style['term-list__link-text']">
@@ -320,7 +318,7 @@ export default {
               </li>
               <li :class="$style['term-list__item']">
                 <div :class="$style['term-list__head']">
-                  <div class="text-body-2 font-weight-medium">
+                  <div :class="$style['term-list__title']">
                     렌터카 승계 약관
                   </div>
                   <div :class="$style['term-list__right']">
@@ -334,7 +332,7 @@ export default {
               </li>
               <li :class="$style['term-list__item']">
                 <div :class="$style['term-list__head']">
-                  <div class="text-body-2 font-weight-medium">
+                  <div :class="$style['term-list__title']">
                     시설대여(리스) 약관
                   </div>
                   <div :class="$style['term-list__right']">
@@ -348,7 +346,7 @@ export default {
               </li>
               <li :class="$style['term-list__item']">
                 <div :class="$style['term-list__head']">
-                  <div class="text-body-2 font-weight-medium">
+                  <div :class="$style['term-list__title']">
                     일반신용대출약관
                   </div>
                   <div :class="$style['term-list__right']">
@@ -362,7 +360,7 @@ export default {
               </li>
               <li :class="$style['term-list__item']">
                 <div :class="$style['term-list__head']">
-                  <div class="text-body-2 font-weight-medium">
+                  <div :class="$style['term-list__title']">
                     일반할부금융약관
                   </div>
                   <div :class="$style['term-list__right']">
@@ -376,7 +374,7 @@ export default {
               </li>
               <li :class="$style['term-list__item']">
                 <div :class="$style['term-list__head']">
-                  <div class="text-body-2 font-weight-medium">
+                  <div :class="$style['term-list__title']">
                     자동차리스 표준약관
                   </div>
                   <div :class="$style['term-list__right']">
@@ -390,7 +388,7 @@ export default {
               </li>
               <li :class="$style['term-list__item']">
                 <div :class="$style['term-list__head']">
-                  <div class="text-body-2 font-weight-medium">
+                  <div :class="$style['term-list__title']">
                     자동차오토론(대출)약관
                   </div>
                   <div :class="$style['term-list__right']">
@@ -404,7 +402,7 @@ export default {
               </li>
               <li :class="$style['term-list__item']">
                 <div :class="$style['term-list__head']">
-                  <div class="text-body-2 font-weight-medium">
+                  <div :class="$style['term-list__title']">
                     자동차할부금융 약관
                   </div>
                   <div :class="$style['term-list__right']">
@@ -418,7 +416,7 @@ export default {
               </li>
               <li :class="$style['term-list__item']">
                 <div :class="$style['term-list__head']">
-                  <div class="text-body-2 font-weight-medium">
+                  <div :class="$style['term-list__title']">
                     중고차 자동차대출표준약관
                   </div>
                   <div :class="$style['term-list__right']">
@@ -432,7 +430,7 @@ export default {
               </li>
               <li :class="$style['term-list__item']">
                 <div :class="$style['term-list__head']">
-                  <div class="text-body-2 font-weight-medium">할부금융약관</div>
+                  <div :class="$style['term-list__title']">할부금융약관</div>
                   <div :class="$style['term-list__right']">
                     <button type="button" :class="$style['term-list__link']">
                       <span :class="$style['term-list__link-text']">
@@ -444,7 +442,7 @@ export default {
               </li>
               <li :class="$style['term-list__item']">
                 <div :class="$style['term-list__head']">
-                  <div class="text-body-2 font-weight-medium">
+                  <div :class="$style['term-list__title']">
                     전세자금대출약관
                   </div>
                   <div :class="$style['term-list__right']">
@@ -523,7 +521,7 @@ export default {
             >
               <li :class="$style['term-list__item']">
                 <div :class="$style['term-list__head']">
-                  <div class="text-body-2 font-weight-medium">
+                  <div :class="$style['term-list__title']">
                     개인(신용)정보 필수적 조회 동의
                   </div>
                   <div :class="$style['term-list__right']">
@@ -537,7 +535,7 @@ export default {
               </li>
               <li :class="$style['term-list__item']">
                 <div :class="$style['term-list__head']">
-                  <div class="text-body-2 font-weight-medium">
+                  <div :class="$style['term-list__title']">
                     개인(신용)정보 필수적 제공 동의
                   </div>
                   <div :class="$style['term-list__right']">
@@ -551,7 +549,7 @@ export default {
               </li>
               <li :class="$style['term-list__item']">
                 <div :class="$style['term-list__head']">
-                  <div class="text-body-2 font-weight-medium">
+                  <div :class="$style['term-list__title']">
                     개인(신용)정보 선택적 수집·이용 동의
                   </div>
                   <div :class="$style['term-list__right']">
@@ -565,9 +563,7 @@ export default {
               </li>
               <li :class="$style['term-list__item']">
                 <div :class="$style['term-list__head']">
-                  <div class="text-body-2 font-weight-medium">
-                    고객권리안내문
-                  </div>
+                  <div :class="$style['term-list__title']">고객권리안내문</div>
                   <div :class="$style['term-list__right']">
                     <button type="button" :class="$style['term-list__link']">
                       <span :class="$style['term-list__link-text']">
@@ -579,7 +575,7 @@ export default {
               </li>
               <li :class="$style['term-list__item']">
                 <div :class="$style['term-list__head']">
-                  <div class="text-body-2 font-weight-medium">
+                  <div :class="$style['term-list__title']">
                     개인(신용)정보 필수적 수집·이용 동의
                   </div>
                   <div :class="$style['term-list__right']">
@@ -593,7 +589,7 @@ export default {
               </li>
               <li :class="$style['term-list__item']">
                 <div :class="$style['term-list__head']">
-                  <div class="text-body-2 font-weight-medium">
+                  <div :class="$style['term-list__title']">
                     신용정보활용체제
                   </div>
                   <div :class="$style['term-list__right']">
@@ -632,7 +628,7 @@ export default {
             >
               <li :class="$style['term-list__item']">
                 <div :class="$style['term-list__head']">
-                  <div class="text-body-2 font-weight-medium">
+                  <div :class="$style['term-list__title']">
                     제 3자 제공 현황
                   </div>
                   <div :class="$style['term-list__right']">
@@ -646,9 +642,7 @@ export default {
               </li>
               <li :class="$style['term-list__item']">
                 <div :class="$style['term-list__head']">
-                  <div class="text-body-2 font-weight-medium">
-                    업무 위탁 현황
-                  </div>
+                  <div :class="$style['term-list__title']">업무 위탁 현황</div>
                   <div :class="$style['term-list__right']">
                     <button type="button" :class="$style['term-list__link']">
                       <span :class="$style['term-list__link-text']">
