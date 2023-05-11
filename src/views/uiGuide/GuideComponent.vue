@@ -4512,6 +4512,235 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">term List - 약관</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <UiAccordion
+          tagName="ul"
+          :classNames="{ wrap: $style['term-list__list'] }"
+        >
+          <UiAccordionItem :classNames="{ item: $style['term-list__item'] }">
+            <div :class="$style['term-list__head']">
+              <div :class="$style['term-list__title']">
+                온라인 서비스 이용약관
+              </div>
+              <div :class="$style['term-list__right']">
+                <button type="button" :class="$style['term-list__link']">
+                  <span :class="$style['term-list__link-text']">상세보기</span>
+                </button>
+              </div>
+            </div>
+          </UiAccordionItem>
+          <UiAccordionItem
+            :classNames="{ item: $style['term-list__item'] }"
+            :initialOpen="true"
+          >
+            <div :class="$style['term-list__head']">
+              <div :class="$style['term-list__title']">휴대폰 인증약관</div>
+              <div :class="$style['term-list__right']">
+                <UiAccordionOpener
+                  :classNames="{ button: $style['term-list__opener'] }"
+                />
+              </div>
+            </div>
+
+            <UiAccordionLayer>
+              <div :class="$style['term-list__contents']">
+                <ul
+                  :class="[
+                    $style['term-list__list'],
+                    $style['term-list__list--secondary'],
+                  ]"
+                >
+                  <li :class="$style['term-list__item']">
+                    <div :class="$style['term-list__head']">
+                      <div :class="$style['term-list__title']">
+                        본인확인 이용약관
+                      </div>
+                      <div :class="$style['term-list__right']">
+                        <button
+                          type="button"
+                          :class="$style['term-list__link']"
+                        >
+                          <span :class="$style['term-list__link-text']">
+                            상세보기
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                  <li :class="$style['term-list__item']">
+                    <div :class="$style['term-list__head']">
+                      <div :class="$style['term-list__title']">
+                        개인정보 수집·이용, 취급위탁 동의
+                      </div>
+                      <div :class="$style['term-list__right']">
+                        <button
+                          type="button"
+                          :class="$style['term-list__link']"
+                        >
+                          <span :class="$style['term-list__link-text']">
+                            상세보기
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                  <li :class="$style['term-list__item']">
+                    <div :class="$style['term-list__head']">
+                      <div :class="$style['term-list__title']">
+                        통신사 본인확인 이용약관 동의
+                      </div>
+                      <div :class="$style['term-list__right']">
+                        <button
+                          type="button"
+                          :class="$style['term-list__link']"
+                        >
+                          <span :class="$style['term-list__link-text']">
+                            상세보기
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                  <li :class="$style['term-list__item']">
+                    <div :class="$style['term-list__head']">
+                      <div :class="$style['term-list__title']">
+                        고유식별정보 처리 동의
+                      </div>
+                      <div :class="$style['term-list__right']">
+                        <button
+                          type="button"
+                          :class="$style['term-list__link']"
+                        >
+                          <span :class="$style['term-list__link-text']">
+                            상세보기
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </UiAccordionLayer>
+          </UiAccordionItem>
+          <UiAccordionItem
+            :classNames="{ item: $style['term-list__item'] }"
+            :initialOpen="true"
+          >
+            <div :class="$style['term-list__head']">
+              <div :class="$style['term-list__title']">
+                하나멤버스 서비스 이용약관
+              </div>
+              <div :class="$style['term-list__right']">
+                <UiAccordionOpener
+                  :classNames="{ button: $style['term-list__opener'] }"
+                />
+              </div>
+            </div>
+
+            <UiAccordionLayer>
+              <div :class="$style['term-list__contents']">
+                <ul
+                  :class="[
+                    $style['term-list__list'],
+                    $style['term-list__list--secondary'],
+                  ]"
+                >
+                  <li :class="$style['term-list__item']">
+                    <div :class="$style['term-list__head']">
+                      <div :class="$style['term-list__title']">
+                        서비스 이용약관
+                      </div>
+                      <div :class="$style['term-list__right']">
+                        <button
+                          type="button"
+                          :class="$style['term-list__link']"
+                        >
+                          <span :class="$style['term-list__link-text']">
+                            상세보기
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                  <li :class="$style['term-list__item']">
+                    <div :class="$style['term-list__head']">
+                      <div :class="$style['term-list__title']">
+                        개인(신용)정보 선택적 수집·이용 동의
+                      </div>
+                      <div :class="$style['term-list__right']">
+                        <button
+                          type="button"
+                          :class="$style['term-list__link']"
+                        >
+                          <span :class="$style['term-list__link-text']">
+                            상세보기
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                  <li :class="$style['term-list__item']">
+                    <div :class="$style['term-list__head']">
+                      <div :class="$style['term-list__title']">
+                        개인(신용)정보 선택적 제공 동의
+                      </div>
+                      <div :class="$style['term-list__right']">
+                        <button
+                          type="button"
+                          :class="$style['term-list__link']"
+                        >
+                          <span :class="$style['term-list__link-text']">
+                            상세보기
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                  <li :class="$style['term-list__item']">
+                    <div :class="$style['term-list__head']">
+                      <div :class="$style['term-list__title']">
+                        개인(신용)정보 필수적 수집·이용 동의
+                      </div>
+                      <div :class="$style['term-list__right']">
+                        <button
+                          type="button"
+                          :class="$style['term-list__link']"
+                        >
+                          <span :class="$style['term-list__link-text']">
+                            상세보기
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                  <li :class="$style['term-list__item']">
+                    <div :class="$style['term-list__head']">
+                      <div :class="$style['term-list__title']">
+                        개인(신용)정보 필수적 제공 동의
+                      </div>
+                      <div :class="$style['term-list__right']">
+                        <button
+                          type="button"
+                          :class="$style['term-list__link']"
+                        >
+                          <span :class="$style['term-list__link-text']">
+                            상세보기
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </UiAccordionLayer>
+          </UiAccordionItem>
+        </UiAccordion>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">FAQ List</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
