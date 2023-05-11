@@ -18,7 +18,6 @@ import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
 import ToastPopup from '@/components/ui/layer/ToastPopup.vue';
 import ToastPopupHead from '@/components/ui/layer/ToastPopupHead.vue';
 import AlertPopup from '@/components/ui/layer/AlertPopup.vue';
-import AlertSystem from '@/components/ui/layer/AlertSystem.vue';
 import CheckBox from '@/components/ui/form/CheckBox.vue';
 import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
 import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
@@ -143,7 +142,6 @@ export default {
     ToastPopup,
     ToastPopupHead,
     AlertPopup,
-    AlertSystem,
     ButtonList,
     ButtonListItem,
     CheckBox,
@@ -272,7 +270,6 @@ export default {
       testMaxDate002: '',
     });
 
-    const alert = ref(null);
     const layerTest001 = ref(null);
     const layerTest002 = ref(null);
     const layerTest003 = ref(null);
@@ -289,10 +286,7 @@ export default {
         console.error('Failed to copy text: ', err);
       }
     };
-    undefined;
-    const alertOpen = (options) => {
-      alert.value.open(options);
-    };
+
     const layerOpenTest001 = (e = {}) => {
       layerTest001.value.open(e.target);
     };
@@ -304,36 +298,6 @@ export default {
     };
     const layerOpenTest004 = (e = {}) => {
       layerTest004.value.open(e.target);
-    };
-    const alertOpenTest001 = () => {
-      alertOpen({
-        title: '타이틀',
-        message:
-          '여기에 내용이 표시될 예정입니다.\n줄바꿈은 \\n 이용.\n세 줄일 경우는 이렿게 표시됩니다.',
-        buttons: [
-          {
-            text: '취소',
-            theme: 'quaternary',
-            line: true,
-            callback: (closeFn) => {
-              console.log('취소');
-              closeFn();
-            },
-            closeAfterCallback: () => {
-              console.log('[취소] 닫는 애니메이션 끝난 후 호출 될 함수');
-            },
-          },
-          {
-            callback: (closeFn) => {
-              console.log('확인');
-              closeFn();
-            },
-            closeAfterCallback: () => {
-              console.log('[확인] 닫는 애니메이션 끝난 후 호출 될 함수');
-            },
-          },
-        ],
-      });
     };
 
     const testErrorUpdate001 = (val) => {
@@ -361,18 +325,15 @@ export default {
 
     return {
       state,
-      alert,
       layerTest001,
       layerTest002,
       layerTest003,
       layerTest004,
       testAccordion,
-      alertOpen,
       layerOpenTest001,
       layerOpenTest002,
       layerOpenTest003,
       layerOpenTest004,
-      alertOpenTest001,
       testErrorUpdate001,
       testInputEvent,
       testAccordionAllOpen,
@@ -877,8 +838,6 @@ export default {
     <section class="test-section">
       <h2 class="test-section-title">Layer</h2>
       <div class="test-section-sub">
-        <AlertSystem ref="alert" />
-
         <UiLayer ref="layerTest001" type="full" v-slot="layerSlotProps">
           <FullPopup>
             <template v-slot:head>
@@ -1030,8 +989,6 @@ export default {
             <PopupText>// contents</PopupText>
             <PopupText>// contents</PopupText>
 
-            <BasicButton @click="alertOpenTest001">얼럿 열기</BasicButton>
-
             <template v-slot:foot>
               <ButtonList
                 :classNames="{
@@ -1062,8 +1019,6 @@ export default {
           하단 레이어 팝업 (고정 높이값)
         </BasicButton>
         <BasicButton @click="layerOpenTest004">얼럿형 팝업</BasicButton>
-
-        <BasicButton @click="alertOpenTest001">얼럿</BasicButton>
       </div>
     </section>
 

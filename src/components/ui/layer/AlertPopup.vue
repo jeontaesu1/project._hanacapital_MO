@@ -20,6 +20,10 @@ export default {
       Type: Boolean,
       default: false,
     },
+    forceBodyHide: {
+      Type: Boolean,
+      default: false,
+    },
   },
   setup(props, context) {
     const customClassNames = computed(() => {
@@ -28,7 +32,8 @@ export default {
     });
 
     const isSlot = computed(() => {
-      return Boolean(context.slots.default);
+      const { forceBodyHide } = props;
+      return !forceBodyHide && Boolean(context.slots.default);
     });
 
     const isHead = computed(() => {
