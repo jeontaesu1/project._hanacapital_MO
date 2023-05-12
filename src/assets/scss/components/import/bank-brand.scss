@@ -16,6 +16,7 @@
   }
 
   &__block {
+    @include reset-button;
     width: 100%;
     box-sizing: border-box;
     display: flex;
@@ -26,8 +27,14 @@
     border-radius: 8px;
     border: 2px solid transparent;
 
+    &:active,
     &:global(.is-selected) {
-      border-color: $color-black;
+      border-color: $color-navy-50;
+
+      .bank-brand__text {
+        color: $color-navy-50;
+        font-weight: 500;
+      }
     }
   }
 
@@ -49,5 +56,13 @@
     display: block;
     width: 100%;
     @include font-size-default(14);
+  }
+
+  &--col-2 {
+    .bank-brand {
+      &__item {
+        width: 50%;
+      }
+    }
   }
 }

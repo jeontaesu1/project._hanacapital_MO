@@ -8,6 +8,7 @@ import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import SearchButton from '@/components/ui/button/SearchButton.vue';
+import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 
 export default {
   components: {
@@ -17,6 +18,7 @@ export default {
     FullPopupHead,
     BasicInput,
     SearchButton,
+    CarThumb,
   },
   setup() {
     const layer = ref(null);
@@ -110,7 +112,20 @@ export default {
       <!-- // Case : 자동 완성 -->
 
       <!-- Case : 검색 결과 있을 때 -->
-      <div class="row-margin-contents">// 라디오 선택 UI</div>
+      <div class="row-margin-contents">
+        <div :class="[$style['bank-brand'], $style['bank-brand--col-2']]">
+          <ul :class="$style['bank-brand__list']">
+            <li v-for="i in 8" :key="i" :class="$style['bank-brand__item']">
+              <button type="button" :class="$style['bank-brand__block']">
+                <span :class="$style['bank-brand__logo']">
+                  <CarThumb src="/images/_dummy/car-thumb.png" />
+                </span>
+                <span :class="$style['bank-brand__text']">K5 2020</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
       <!-- // Case : 검색 결과 있을 때 -->
     </FullPopup>
   </UiLayer>
