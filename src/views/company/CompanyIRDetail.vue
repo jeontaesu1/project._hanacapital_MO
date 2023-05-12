@@ -52,13 +52,26 @@ export default {
         //게시물 내용 노출
       </section>
       <div :class="$style['board-detail__foot']">
-        <div :class="$style['download']">
+        <div
+          :class="[
+            $style['download'],
+            $style['download--align-center'],
+            $style['download--theme-secondary'],
+          ]"
+        >
           <div :class="$style['download__block']">
             <p class="text-body-4 font-weight-medium">
               하나캐피탈IR_2022.2Q.pdf
             </p>
           </div>
-          <a href="" :class="$style['download__button']" download>
+          <a
+            href=""
+            :class="[
+              $style['download__button'],
+              $style['download__button--secondary'],
+            ]"
+            download
+          >
             <IconDownload />
             <span class="for-a11y">다운로드</span>
           </a>

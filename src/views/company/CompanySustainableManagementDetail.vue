@@ -54,26 +54,52 @@ export default {
       <div :class="$style['board-detail__foot']">
         <ul class="reset-list">
           <li class="row-margin-item-group">
-            <div :class="$style['download']">
+            <div
+              :class="[
+                $style['download'],
+                $style['download--align-center'],
+                $style['download--theme-secondary'],
+              ]"
+            >
               <div :class="$style['download__block']">
                 <p class="text-body-4 font-weight-medium">
                   하나캐피탈 ESG채권 투자자 안내문.pdf
                 </p>
               </div>
-              <a href="" :class="$style['download__button']" download>
+              <a
+                href=""
+                :class="[
+                  $style['download__button'],
+                  $style['download__button--secondary'],
+                ]"
+                download
+              >
                 <IconDownload />
                 <span class="for-a11y">다운로드</span>
               </a>
             </div>
           </li>
           <li class="row-margin-item-group">
-            <div :class="$style['download']">
-              <div :class="[$style['download__block'], 'text-body-4']">
+            <div
+              :class="[
+                $style['download'],
+                $style['download--align-center'],
+                $style['download--theme-secondary'],
+              ]"
+            >
+              <div :class="$style['download__block']">
                 <p class="text-body-4 font-weight-medium">
                   하나캐피탈 ESG채권 투자자 안내문.pdf
                 </p>
               </div>
-              <a href="" :class="$style['download__button']" download>
+              <a
+                href=""
+                :class="[
+                  $style['download__button'],
+                  $style['download__button--secondary'],
+                ]"
+                download
+              >
                 <IconDownload />
                 <span class="for-a11y">다운로드</span>
               </a>
