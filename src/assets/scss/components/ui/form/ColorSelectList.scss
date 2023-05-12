@@ -1,0 +1,18 @@
+.color-selects {
+  &::before {
+    content: '';
+    display: table;
+  }
+
+  &__list {
+    @include reset-list;
+    display: flex;
+    flex-wrap: wrap;
+    margin: -20px 0 0 -15px;
+  }
+
+  &__item {
+    flex: none;
+    padding: 20px 0 0 15px;
+  }
+}

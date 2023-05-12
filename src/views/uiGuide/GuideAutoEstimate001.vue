@@ -8,10 +8,11 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 import LayerAutoEstimateCounseling from '../auto/LayerAutoEstimateCounseling.vue';
 import LayerAutoEstimateCounselingComplete from '../auto/LayerAutoEstimateCounselingComplete.vue';
-// import LayerAutoEstimateSearchCar from '../auto/LayerAutoEstimateSearchCar.vue';
+import LayerAutoEstimateSearchCar from '../auto/LayerAutoEstimateSearchCar.vue';
 import LayerAutoEstimateSelectRecommend from '../auto/LayerAutoEstimateSelectRecommend.vue';
 import LayerAutoEstimateSelectDetailModel from '../auto/LayerAutoEstimateSelectDetailModel.vue';
 import LayerAutoEstimateSelectTrim from '../auto/LayerAutoEstimateSelectTrim.vue';
+import LayerAutoEstimateEmptyDetailModelAlert from '../auto/LayerAutoEstimateEmptyDetailModelAlert.vue';
 import LayerAutoEstimateSelectColor from '../auto/LayerAutoEstimateSelectColor.vue';
 import LayerAutoEstimateSelectOption from '../auto/LayerAutoEstimateSelectOption.vue';
 import LayerAutoEstimateConfirm from '../auto/LayerAutoEstimateConfirm.vue';
@@ -33,10 +34,11 @@ export default {
     ButtonListItem,
     LayerAutoEstimateCounseling,
     LayerAutoEstimateCounselingComplete,
-    // LayerAutoEstimateSearchCar,
+    LayerAutoEstimateSearchCar,
     LayerAutoEstimateSelectRecommend,
     LayerAutoEstimateSelectDetailModel,
     LayerAutoEstimateSelectTrim,
+    LayerAutoEstimateEmptyDetailModelAlert,
     LayerAutoEstimateSelectColor,
     LayerAutoEstimateSelectOption,
     LayerAutoEstimateConfirm,
@@ -69,6 +71,7 @@ export default {
     const layer018 = ref(null);
     const layer019 = ref(null);
     const layer020 = ref(null);
+    const layer021 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -124,6 +127,9 @@ export default {
     const layer020Open = (e = {}) => {
       layer020.value.layer.open(e.target);
     };
+    const layer021Open = (e = {}) => {
+      layer021.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -144,6 +150,7 @@ export default {
       layer018,
       layer019,
       layer020,
+      layer021,
       layer001Open,
       layer002Open,
       layer004Open,
@@ -162,6 +169,7 @@ export default {
       layer018Open,
       layer019Open,
       layer020Open,
+      layer021Open,
     };
   },
 };
@@ -185,11 +193,11 @@ export default {
           >상담 신청완료<br />AF_M00_l010</BasicButton
         >
       </ButtonListItem>
-      <!-- <ButtonListItem>
+      <ButtonListItem>
         <BasicButton @click="layer004Open">
           자동차 검색<br />AF_M00_b001
         </BasicButton>
-      </ButtonListItem> -->
+      </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer006Open">
           추천 차량 선택<br />AF_M00_l018
@@ -207,61 +215,66 @@ export default {
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer009Open">
-          옵션 선택<br />AF_M00_l005
+          세부 모델 선택 팝업2 - 선택 결과가 없을 경우<br />AF_M00_b018
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer010Open">
-          색상 선택<br />AF_M00_l006
+          옵션 선택<br />AF_M00_l005
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer011Open">
-          최종 정보 확인<br />AF_M00_l007
+          색상 선택<br />AF_M00_l006
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer012Open">
-          상품 선택<br />AF_M00_l008
+          최종 정보 확인<br />AF_M00_l007
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer013Open">
-          상담 신청(사업자)<br />AF_M00_l011
+          상품 선택<br />AF_M00_l008
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer014Open">
-          조회 정보 입력<br />AF_M00_l012
+          상담 신청(사업자)<br />AF_M00_l011
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer015Open">
-          견적 조회(리스)<br />AF_M02_l001
+          조회 정보 입력<br />AF_M00_l012
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer016Open">
-          견적 조회(장기렌터카)<br />AF_M01_l001
+          견적 조회(리스)<br />AF_M02_l001
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer017Open">
-          견적 조회(장기렌터카) - 보험 선택 팝업<br />AF_M00_b013
+          견적 조회(장기렌터카)<br />AF_M01_l001
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer018Open">
-          견적 조회(장기렌터카) - 견적서 보기 팝업<br />AF_M00_l015
+          견적 조회(장기렌터카) - 보험 선택 팝업<br />AF_M00_b013
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer019Open">
-          신용정보조회 동의 안내<br />AF_M00_l016
+          견적 조회(장기렌터카) - 견적서 보기 팝업<br />AF_M00_l015
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer020Open">
+          신용정보조회 동의 안내<br />AF_M00_l016
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer021Open">
           신용정보조회 동의 완료<br />AF_M00_l017
         </BasicButton>
       </ButtonListItem>
@@ -269,21 +282,22 @@ export default {
 
     <LayerAutoEstimateCounseling ref="layer001" />
     <LayerAutoEstimateCounselingComplete ref="layer002" />
-    <!-- <LayerAutoEstimateSearchCar ref="layer004" /> -->
+    <LayerAutoEstimateSearchCar ref="layer004" />
     <LayerAutoEstimateSelectRecommend ref="layer006" />
     <LayerAutoEstimateSelectDetailModel ref="layer007" />
     <LayerAutoEstimateSelectTrim ref="layer008" />
-    <LayerAutoEstimateSelectOption ref="layer009" />
-    <LayerAutoEstimateSelectColor ref="layer010" />
-    <LayerAutoEstimateConfirm ref="layer011" />
-    <LayerAutoEstimateSelectProduct ref="layer012" />
-    <LayerAutoEstimateBusinessInfo ref="layer013" />
-    <LayerAutoEstimateUserInfo ref="layer014" />
-    <LayerAutoEstimateLease ref="layer015" />
-    <LayerAutoEstimateRental ref="layer016" />
-    <LayerAutoEstimateSelectInsurance ref="layer017" />
-    <LayerAutoEstimateView ref="layer018" />
-    <LayerAutoEstimateIdentification ref="layer019" />
-    <LayerAutoEstimateCreditInfoComplete ref="layer020" />
+    <LayerAutoEstimateEmptyDetailModelAlert ref="layer009" />
+    <LayerAutoEstimateSelectOption ref="layer010" />
+    <LayerAutoEstimateSelectColor ref="layer011" />
+    <LayerAutoEstimateConfirm ref="layer012" />
+    <LayerAutoEstimateSelectProduct ref="layer013" />
+    <LayerAutoEstimateBusinessInfo ref="layer014" />
+    <LayerAutoEstimateUserInfo ref="layer015" />
+    <LayerAutoEstimateLease ref="layer016" />
+    <LayerAutoEstimateRental ref="layer017" />
+    <LayerAutoEstimateSelectInsurance ref="layer018" />
+    <LayerAutoEstimateView ref="layer019" />
+    <LayerAutoEstimateIdentification ref="layer020" />
+    <LayerAutoEstimateCreditInfoComplete ref="layer021" />
   </PageContents>
 </template>

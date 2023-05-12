@@ -17,7 +17,6 @@ import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
 import BoxCheckObject from '@/components/ui/form/BoxCheckObject.vue';
 import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
 import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
-import BasicHr from '@/components/ui/common/BasicHr.vue';
 import RoundButton from '@/components/ui/button/RoundButton.vue';
 import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
@@ -52,7 +51,6 @@ export default {
     BoxCheckObject,
     BoxCheckList,
     BoxCheckListItem,
-    BasicHr,
     RoundButton,
     KeyValue,
     KeyValueItem,
@@ -93,7 +91,7 @@ export default {
           <template v-slot:right>
             <div class="flex-box">
               <div class="flex-box__cell">
-                <RoundButton size="mini" tagName="a" href="tel:1800-1110">
+                <RoundButton tagName="a" href="tel:1800-1110">
                   <template v-slot:leftIcon>
                     <IconTell />
                   </template>
@@ -108,174 +106,174 @@ export default {
         </FullPopupHead>
       </template>
 
-      <div>
-        <div class="text-body-4 font-weight-light">현대</div>
-        <h3 class="text-body-1 font-weight-medium row-margin-mini">캐스퍼</h3>
-        <div class="text-body-4 color-gray row-margin-small">
-          인스퍼레이션 + 캐스퍼 액티브Ⅱ
+      <div :class="$style['car-info']">
+        <div :class="$style['car-info__inner']">
+          <div>
+            <div class="text-body-4 font-weight-light">현대</div>
+            <h3 class="text-body-1 font-weight-medium row-margin-mini">
+              캐스퍼
+            </h3>
+            <div class="text-body-4 color-gray row-margin-small">
+              인스퍼레이션 + 캐스퍼 액티브Ⅱ
+            </div>
+          </div>
         </div>
       </div>
 
-      <BasicHr theme="quaternary" className="row-margin-contents"></BasicHr>
+      <PageTextGroup>
+        <PageMainText>
+          자동차 옵션을<br />
+          <strong>선택해 주세요</strong>
+        </PageMainText>
+        <PageSubText>옵션은 선택하지 않으셔도 됩니다.</PageSubText>
+      </PageTextGroup>
 
-      <div class="row-margin-item-regular row-margin-bottom-none">
-        <PageTextGroup>
-          <PageMainText>
-            자동차 옵션을<br />
-            <strong>선택해 주세요</strong>
-          </PageMainText>
-          <PageSubText>옵션은 선택하지 않으셔도 됩니다.</PageSubText>
-        </PageTextGroup>
-      </div>
-
-      <div class="contents-wrap">
-        <BoxCheckList align="full">
-          <BoxCheckListItem>
-            <BoxCheck
-              :contents="true"
-              type="checkbox"
-              id="LayerAutoEstimateSelectOption001"
-            >
-              <template v-slot:left>
-                <BoxCheckObject />
-              </template>
-              <BoxCheckLabel>
-                <span class="flex-box">
-                  <span class="flex-box__cell flex-1">스토리지</span>
-                  <span class="flex-box__cell flex-box__cell--regular">
-                    + 70,000 원
-                  </span>
-                </span>
-              </BoxCheckLabel>
-            </BoxCheck>
-          </BoxCheckListItem>
-          <BoxCheckListItem>
-            <BoxCheck
-              :contents="true"
-              type="checkbox"
-              id="LayerAutoEstimateSelectOption002"
-            >
-              <template v-slot:left>
-                <BoxCheckObject />
-              </template>
-              <BoxCheckLabel>
-                <span class="flex-box">
-                  <span class="flex-box__cell flex-1">액티비 플러스</span>
-                  <span class="flex-box__cell flex-box__cell--regular">
-                    + 500,000 원
-                  </span>
-                </span>
-              </BoxCheckLabel>
-            </BoxCheck>
-          </BoxCheckListItem>
-          <BoxCheckListItem>
-            <BoxCheck
-              :contents="true"
-              type="checkbox"
-              id="LayerAutoEstimateSelectOption003"
-              ><template v-slot:left>
-                <BoxCheckObject />
-              </template>
-              <BoxCheckLabel>
-                <span class="flex-box">
-                  <span class="flex-box__cell flex-1">선루프</span>
-                  <span class="flex-box__cell flex-box__cell--regular">
-                    + 400,000 원
-                  </span>
-                </span>
-              </BoxCheckLabel>
-            </BoxCheck>
-          </BoxCheckListItem>
-          <BoxCheckListItem>
-            <BoxCheck
-              :contents="true"
-              type="checkbox"
-              id="LayerAutoEstimateSelectOption004"
-              ><template v-slot:left>
-                <BoxCheckObject />
-              </template>
-              <BoxCheckLabel>
-                <span class="flex-box">
-                  <span class="flex-box__cell flex-1">기타옵션</span>
-                  <span class="flex-box__cell flex-box__cell--regular">
-                    + 0 원
-                  </span>
-                </span>
-              </BoxCheckLabel>
-            </BoxCheck>
-          </BoxCheckListItem>
-        </BoxCheckList>
-
-        <!-- Case : 기타옵션 선택 시 -->
-        <FormList :classNames="{ wrap: 'row-margin-contents' }">
-          <FormListItem
-            titleText="옵션명"
-            target="#layerAutoEstimateSelectOptionName"
+      <BoxCheckList align="full">
+        <BoxCheckListItem>
+          <BoxCheck
+            :contents="true"
+            type="checkbox"
+            id="layerAutoEstimateSelectOption001"
           >
-            <FormInvalid :error="state.optionNameError">
-              <InputBlock :error="state.optionNameError">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    title="옵션명 입력"
-                    placeholder="옵션명을 입력해 주세요."
-                    id="layerAutoEstimateSelectOptionName"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-
-          <FormListItem
-            titleText="옵션금액"
-            target="#layerAutoEstimateSelectOptionPrice"
+            <template v-slot:left>
+              <BoxCheckObject />
+            </template>
+            <BoxCheckLabel>
+              <span class="flex-box">
+                <span class="flex-box__cell flex-1">스토리지</span>
+                <span class="flex-box__cell flex-box__cell--regular">
+                  + 70,000 원
+                </span>
+              </span>
+            </BoxCheckLabel>
+          </BoxCheck>
+        </BoxCheckListItem>
+        <BoxCheckListItem>
+          <BoxCheck
+            :contents="true"
+            type="checkbox"
+            id="layerAutoEstimateSelectOption002"
           >
-            <FormInvalid :error="state.optionPriceError">
-              <InputBlock :error="state.optionPriceError">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    title="옵션금액 입력"
-                    placeholder="옵션금액을 입력해 주세요."
-                    id="layerAutoEstimateSelectOptionPrice"
-                    pattern="\d*"
-                    :useDelete="false"
-                    align="right"
-                  />
-                </InputBlockCell>
-                <template v-slot:innerRight>
-                  <div class="text-body-3">원</div>
-                </template>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            <template v-slot:left>
+              <BoxCheckObject />
+            </template>
+            <BoxCheckLabel>
+              <span class="flex-box">
+                <span class="flex-box__cell flex-1">액티비 플러스</span>
+                <span class="flex-box__cell flex-box__cell--regular">
+                  + 500,000 원
+                </span>
+              </span>
+            </BoxCheckLabel>
+          </BoxCheck>
+        </BoxCheckListItem>
+        <BoxCheckListItem>
+          <BoxCheck
+            :contents="true"
+            type="checkbox"
+            id="layerAutoEstimateSelectOption003"
+            ><template v-slot:left>
+              <BoxCheckObject />
+            </template>
+            <BoxCheckLabel>
+              <span class="flex-box">
+                <span class="flex-box__cell flex-1">선루프</span>
+                <span class="flex-box__cell flex-box__cell--regular">
+                  + 400,000 원
+                </span>
+              </span>
+            </BoxCheckLabel>
+          </BoxCheck>
+        </BoxCheckListItem>
+        <BoxCheckListItem>
+          <BoxCheck
+            :contents="true"
+            type="checkbox"
+            id="layerAutoEstimateSelectOption004"
+            ><template v-slot:left>
+              <BoxCheckObject />
+            </template>
+            <BoxCheckLabel>
+              <span class="flex-box">
+                <span class="flex-box__cell flex-1">기타옵션</span>
+                <span class="flex-box__cell flex-box__cell--regular">
+                  + 0 원
+                </span>
+              </span>
+            </BoxCheckLabel>
+          </BoxCheck>
+        </BoxCheckListItem>
+      </BoxCheckList>
 
-              <!-- Case : 입력 후 노출 -->
-              <FormHelpText :classNames="{ wrap: 'align-right' }">
-                이백만원
-              </FormHelpText>
-              <!-- //Case : 입력 후 노출 -->
-            </FormInvalid>
-          </FormListItem>
-        </FormList>
-        <!-- //Case : 기타옵션 선택 시 -->
-      </div>
+      <!-- Case : 기타옵션 선택 시 -->
+      <FormList :classNames="{ wrap: 'row-margin-contents' }">
+        <FormListItem
+          titleText="옵션명"
+          target="#layerAutoEstimateSelectOptionName"
+        >
+          <FormInvalid :error="state.optionNameError">
+            <InputBlock :error="state.optionNameError">
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  title="옵션명 입력"
+                  placeholder="옵션명을 입력해 주세요."
+                  id="layerAutoEstimateSelectOptionName"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+
+        <FormListItem
+          titleText="옵션금액"
+          target="#layerAutoEstimateSelectOptionPrice"
+        >
+          <FormInvalid :error="state.optionPriceError">
+            <InputBlock :error="state.optionPriceError">
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  title="옵션금액 입력"
+                  placeholder="옵션금액을 입력해 주세요."
+                  id="layerAutoEstimateSelectOptionPrice"
+                  pattern="\d*"
+                  :useDelete="false"
+                  align="right"
+                />
+              </InputBlockCell>
+              <template v-slot:innerRight>
+                <div class="text-body-3">원</div>
+              </template>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+
+            <!-- Case : 입력 후 노출 -->
+            <FormHelpText :classNames="{ wrap: 'align-right' }">
+              이백만원
+            </FormHelpText>
+            <!-- //Case : 입력 후 노출 -->
+          </FormInvalid>
+        </FormListItem>
+      </FormList>
+      <!-- //Case : 기타옵션 선택 시 -->
 
       <template v-slot:foot>
-        <KeyValue
-          verticalAlign="center"
-          :classNames="{ wrap: 'row-margin-contents-small' }"
-        >
+        <KeyValue verticalAlign="center">
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle :classNames="{ title: 'color-black' }">
               총 차량가격
             </KeyValueTitle>
             <KeyValueText>
-              <UnitText rightUnit="원" align="right">16,920,000</UnitText>
+              <UnitText rightUnit="원" align="right"
+                ><strong>16,920,000</strong></UnitText
+              >
             </KeyValueText>
           </KeyValueItem>
         </KeyValue>
+
         <ButtonList
           :classNames="{
-            wrap: 'row-margin-none',
+            wrap: 'row-margin-contents-small',
           }"
         >
           <ButtonListItem>
@@ -289,3 +287,7 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/auto/LayerAutoEstimateSelectOption.scss';
+</style>

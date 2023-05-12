@@ -40,144 +40,145 @@ export default {
         </FullPopupHead>
       </template>
 
-      <div class="contents-wrap">
-        <p
-          class="text-body-4 font-weight-light color-gray-secondary row-margin-item-medium"
-        >
-          <strong class="font-weight-medium color-green">6</strong> 건
-        </p>
+      <p class="text-body-4 font-weight-light color-gray-secondary">
+        <strong class="font-weight-medium color-green">6</strong> 건
+      </p>
+      <BasicHr
+        theme="quaternary"
+        type="contents"
+        className="row-margin-item-medium"
+      />
 
-        <BasicHr theme="quaternary" type="contents" />
+      <div class="contents-wrap row-margin-item-medium">
+        <div :class="$style['files']">
+          <ul :class="$style['files__list']">
+            <!-- Case : 이미지 -->
+            <li :class="$style['files__item']">
+              <div :class="$style['files__block']">
+                <div :class="$style['files__image']">
+                  <img
+                    src="@/assets/images/_dummy/file-sample.png"
+                    alt="파일 이름 넣어주세요"
+                    @error="
+                      (e) => {
+                        e.target.parentNode.classList.add('is-error');
+                      }
+                    "
+                  />
+                </div>
+                <button type="button" :class="$style['files__link']">
+                  <span class="for-a11y">미리보기</span>
+                </button>
+                <button type="button" :class="$style['files__delete']">
+                  <span class="for-a11y">삭제</span>
+                </button>
+              </div>
+            </li>
+            <!-- // Case : 이미지 -->
 
-        <div :class="[$style['gallery-file'], 'row-margin-contents']">
-          <ul :class="$style['gallery-file__list']">
-            <li :class="$style['gallery-file__item']">
-              <!-- DD : 에러시 gallery-file__block--error 클래스 추가 -->
-              <div
-                :class="[
-                  $style['gallery-file__block'],
-                  $style['gallery-file__block--error'],
-                ]"
-              >
-                <div :class="$style['gallery-file__image']"></div>
-                <button type="button" :class="$style['gallery-file__link']">
-                  <span class="for-a11y">미리보기</span>
-                </button>
-                <button type="button" :class="$style['gallery-file__delete']">
-                  <span class="for-a11y">삭제</span>
-                </button>
-              </div>
-            </li>
-            <li :class="$style['gallery-file__item']">
-              <!-- DD : 에러시 gallery-file__block--error 클래스 추가 -->
-              <div
-                :class="[
-                  $style['gallery-file__block'],
-                  $style['gallery-file__block--pdf'],
-                  $style['gallery-file__block--error'],
-                ]"
-              >
-                <div :class="$style['gallery-file__icon']"></div>
-                <button type="button" :class="$style['gallery-file__link']">
-                  <span class="for-a11y">미리보기</span>
-                </button>
-                <button type="button" :class="$style['gallery-file__delete']">
-                  <span class="for-a11y">삭제</span>
-                </button>
-              </div>
-            </li>
-            <li :class="$style['gallery-file__item']">
-              <div
-                :class="[
-                  $style['gallery-file__block'],
-                  $style['gallery-file__block--pdf'],
-                ]"
-              >
-                <div :class="$style['gallery-file__icon']"></div>
-                <button type="button" :class="$style['gallery-file__link']">
-                  <span class="for-a11y">미리보기</span>
-                </button>
-                <button type="button" :class="$style['gallery-file__delete']">
-                  <span class="for-a11y">삭제</span>
-                </button>
-              </div>
-            </li>
-            <li :class="$style['gallery-file__item']">
-              <div :class="$style['gallery-file__block']">
-                <div :class="$style['gallery-file__image']">
+            <!-- Case : 이미지 에러 -->
+            <li :class="$style['files__item']">
+              <div :class="$style['files__block']">
+                <div :class="$style['files__image']">
                   <img
-                    src="@/assets/images/_dummy/file-sample.png"
-                    alt="샘플 이미지"
+                    src="/"
+                    alt="파일 이름 넣어주세요"
+                    @error="
+                      (e) => {
+                        e.target.parentNode.classList.add('is-error');
+                      }
+                    "
                   />
                 </div>
-                <button type="button" :class="$style['gallery-file__link']">
+                <button type="button" :class="$style['files__link']">
                   <span class="for-a11y">미리보기</span>
                 </button>
-                <button type="button" :class="$style['gallery-file__delete']">
+                <button type="button" :class="$style['files__delete']">
                   <span class="for-a11y">삭제</span>
                 </button>
               </div>
             </li>
-            <li :class="$style['gallery-file__item']">
-              <div :class="$style['gallery-file__block']">
-                <div :class="$style['gallery-file__image']">
-                  <img
-                    src="@/assets/images/_dummy/file-sample.png"
-                    alt="샘플 이미지"
-                  />
+            <!-- // Case : 이미지 에러 -->
+
+            <!-- Case : PDF -->
+            <li :class="$style['files__item']">
+              <div :class="$style['files__block']">
+                <div
+                  :class="[$style['files__icon'], $style['files__icon--pdf']]"
+                >
+                  <span class="for-a11y">파일 이름 넣어주세요</span>
                 </div>
-                <button type="button" :class="$style['gallery-file__link']">
+                <button type="button" :class="$style['files__link']">
                   <span class="for-a11y">미리보기</span>
                 </button>
-                <button type="button" :class="$style['gallery-file__delete']">
+                <button type="button" :class="$style['files__delete']">
                   <span class="for-a11y">삭제</span>
                 </button>
               </div>
             </li>
-            <li :class="$style['gallery-file__item']">
-              <div :class="$style['gallery-file__block']">
-                <div :class="$style['gallery-file__image']">
+            <!-- // Case : PDF -->
+
+            <li :class="$style['files__item']">
+              <div :class="$style['files__block']">
+                <div :class="$style['files__image']">
                   <img
                     src="@/assets/images/_dummy/file-sample.png"
-                    alt="샘플 이미지"
+                    alt="파일 이름 넣어주세요"
+                    @error="
+                      (e) => {
+                        e.target.parentNode.classList.add('is-error');
+                      }
+                    "
                   />
                 </div>
-                <button type="button" :class="$style['gallery-file__link']">
+                <button type="button" :class="$style['files__link']">
                   <span class="for-a11y">미리보기</span>
                 </button>
-                <button type="button" :class="$style['gallery-file__delete']">
+                <button type="button" :class="$style['files__delete']">
                   <span class="for-a11y">삭제</span>
                 </button>
               </div>
             </li>
-            <li :class="$style['gallery-file__item']">
-              <div :class="$style['gallery-file__block']">
-                <div :class="$style['gallery-file__image']">
+
+            <li :class="$style['files__item']">
+              <div :class="$style['files__block']">
+                <div :class="$style['files__image']">
                   <img
                     src="@/assets/images/_dummy/file-sample.png"
-                    alt="샘플 이미지"
+                    alt="파일 이름 넣어주세요"
+                    @error="
+                      (e) => {
+                        e.target.parentNode.classList.add('is-error');
+                      }
+                    "
                   />
                 </div>
-                <button type="button" :class="$style['gallery-file__link']">
+                <button type="button" :class="$style['files__link']">
                   <span class="for-a11y">미리보기</span>
                 </button>
-                <button type="button" :class="$style['gallery-file__delete']">
+                <button type="button" :class="$style['files__delete']">
                   <span class="for-a11y">삭제</span>
                 </button>
               </div>
             </li>
-            <li :class="$style['gallery-file__item']">
-              <div :class="$style['gallery-file__block']">
-                <div :class="$style['gallery-file__image']">
+
+            <li :class="$style['files__item']">
+              <div :class="$style['files__block']">
+                <div :class="$style['files__image']">
                   <img
                     src="@/assets/images/_dummy/file-sample.png"
-                    alt="샘플 이미지"
+                    alt="파일 이름 넣어주세요"
+                    @error="
+                      (e) => {
+                        e.target.parentNode.classList.add('is-error');
+                      }
+                    "
                   />
                 </div>
-                <button type="button" :class="$style['gallery-file__link']">
+                <button type="button" :class="$style['files__link']">
                   <span class="for-a11y">미리보기</span>
                 </button>
-                <button type="button" :class="$style['gallery-file__delete']">
+                <button type="button" :class="$style['files__delete']">
                   <span class="for-a11y">삭제</span>
                 </button>
               </div>

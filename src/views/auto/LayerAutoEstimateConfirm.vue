@@ -96,7 +96,7 @@ export default {
           <template v-slot:right>
             <div class="flex-box">
               <div class="flex-box__cell">
-                <RoundButton size="mini" tagName="a" href="tel:1800-1110">
+                <RoundButton tagName="a" href="tel:1800-1110">
                   <template v-slot:leftIcon>
                     <IconTell />
                   </template>
@@ -118,261 +118,267 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <div class="contents-wrap">
-        <BasicBox className="row-margin-contents">
-          <BasicBoxHead align="top">
-            <BasicBoxHeadLeft>
-              <CarEmblem code="1001" name="현대" />
-              <h3 class="text-body-1 font-weight-medium">캐스퍼</h3>
-            </BasicBoxHeadLeft>
-            <BasicBoxHeadRight>
-              <div class="flex-box">
-                <div class="flex-box__cell">
-                  <CarThumb src="/images/_dummy/car-thumb.png" />
-                </div>
-                <div class="flex-box__cell">
-                  <TextButton
-                    :block="true"
-                    underline="true"
-                    :classNames="{ wrap: 'text-body-5 color-gray' }"
-                    >변경</TextButton
-                  >
-                </div>
+      <BasicBox>
+        <BasicBoxHead align="top">
+          <BasicBoxHeadLeft>
+            <CarEmblem code="1001" name="현대" />
+            <h3 class="text-body-1 font-weight-medium">캐스퍼</h3>
+          </BasicBoxHeadLeft>
+          <BasicBoxHeadRight>
+            <div class="flex-box">
+              <div class="flex-box__cell">
+                <CarThumb src="/images/_dummy/car-thumb.png" />
               </div>
-            </BasicBoxHeadRight>
-          </BasicBoxHead>
-
-          <ul class="reset-list">
-            <li class="row-margin-item-group">
-              <KeyValue margin="regular">
-                <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                  <KeyValueTitle>세부모델</KeyValueTitle>
-                  <KeyValueText>
-                    <div class="flex-box justify-conten-end">
-                      <div class="flex-box__cell">16,850,000 원</div>
-                      <div class="flex-box__cell">
-                        <TextButton
-                          :block="true"
-                          underline="true"
-                          :classNames="{ wrap: 'text-body-5 color-gray' }"
-                          >변경</TextButton
-                        >
-                      </div>
-                    </div>
-                  </KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
-
-              <BasicBox theme="tertiary" className="row-margin-item-group">
-                <KeyValue margin="regular">
-                  <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                    <KeyValueTitle>모델명</KeyValueTitle>
-                    <KeyValueText>2022년형 가솔린 1.0 터보 밴</KeyValueText>
-                  </KeyValueItem>
-                  <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                    <KeyValueTitle>세부 모델명</KeyValueTitle>
-                    <KeyValueText>스마트 + 캐스퍼 액티브Ⅰ</KeyValueText>
-                  </KeyValueItem>
-                </KeyValue>
-              </BasicBox>
-            </li>
-
-            <li class="row-margin-item-group">
-              <KeyValue margin="regular">
-                <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                  <KeyValueTitle>옵션</KeyValueTitle>
-                  <KeyValueText>
-                    <div class="flex-box justify-conten-end">
-                      <div class="flex-box__cell">16,850,000 원</div>
-                      <div class="flex-box__cell">
-                        <TextButton
-                          :block="true"
-                          underline="true"
-                          :classNames="{ wrap: 'text-body-5 color-gray' }"
-                          >변경</TextButton
-                        >
-                      </div>
-                    </div>
-                  </KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
-
-              <BasicBox theme="tertiary" className="row-margin-item-group">
-                <KeyValue margin="regular">
-                  <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                    <KeyValueTitle>선택옵션 1</KeyValueTitle>
-                    <KeyValueText>선루프</KeyValueText>
-                  </KeyValueItem>
-                  <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                    <KeyValueTitle>선택옵션 2</KeyValueTitle>
-                    <KeyValueText>기타옵션</KeyValueText>
-                  </KeyValueItem>
-                </KeyValue>
-              </BasicBox>
-            </li>
-
-            <li class="row-margin-item-group">
-              <KeyValue margin="regular">
-                <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                  <KeyValueTitle>색상</KeyValueTitle>
-                  <KeyValueText>
-                    <div class="flex-box justify-conten-end">
-                      <div class="flex-box__cell">16,850,000 원</div>
-                      <div class="flex-box__cell">
-                        <TextButton
-                          :block="true"
-                          underline="true"
-                          :classNames="{ wrap: 'text-body-5 color-gray' }"
-                          >변경</TextButton
-                        >
-                      </div>
-                    </div>
-                  </KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
-
-              <BasicBox theme="tertiary" className="row-margin-item-group">
-                <KeyValue margin="regular">
-                  <KeyValueItem
-                    :classNames="{
-                      item: 'text-body-3',
-                    }"
-                  >
-                    <KeyValueTitle>외장</KeyValueTitle>
-                    <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">아틸라스 화이트</div>
-                        <div class="flex-box__cell">
-                          <ColorChip
-                            :colors="['241, 233, 233']"
-                            size="small"
-                          ></ColorChip>
-                        </div>
-                      </div>
-                    </KeyValueText>
-                  </KeyValueItem>
-                  <KeyValueItem
-                    :classNames="{
-                      item: 'text-body-3',
-                    }"
-                  >
-                    <KeyValueTitle>내장</KeyValueTitle>
-                    <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">
-                          네츄럴 베이지 / 다크 베이지
-                        </div>
-                        <div class="flex-box__cell">
-                          <ColorChip
-                            :colors="['244, 238, 238', '225, 213, 213']"
-                            size="small"
-                          ></ColorChip>
-                        </div>
-                      </div>
-                    </KeyValueText>
-                  </KeyValueItem>
-                </KeyValue>
-              </BasicBox>
-            </li>
-          </ul>
-        </BasicBox>
-
-        <FormList>
-          <FormListItem
-            titleText="할인금액 (선택)"
-            target="#layerAutoEstimateConfirmDiscountPrice"
-          >
-            <FormInvalid :error="state.discountPriceError">
-              <InputBlock :error="state.discountPriceError">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    title="할인금액 입력"
-                    id="layerAutoEstimateConfirmDiscountPrice"
-                  />
-                </InputBlockCell>
-                <template v-slot:innerRight>
-                  <div class="text-body-3">원</div>
-                </template>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-        </FormList>
-
-        <ul :class="[$style['basic-list'], 'row-margin-item']">
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              국산차 리스 또는 수입차(상품무관) 예정자에 한하여 입력해 주세요.
+              <div class="flex-box__cell">
+                <TextButton
+                  :block="true"
+                  underline="true"
+                  :classNames="{ wrap: 'text-body-5 color-gray' }"
+                  >변경</TextButton
+                >
+              </div>
             </div>
+          </BasicBoxHeadRight>
+        </BasicBoxHead>
+
+        <ul class="reset-list">
+          <li class="row-margin-item-group">
+            <KeyValue margin="regular">
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle>세부모델</KeyValueTitle>
+                <KeyValueText>
+                  <div class="flex-box">
+                    <div class="flex-box__cell flex-1">16,850,000 원</div>
+                    <div class="flex-box__cell">
+                      <TextButton
+                        :block="true"
+                        underline="true"
+                        :classNames="{ wrap: 'text-body-5 color-gray' }"
+                        >변경</TextButton
+                      >
+                    </div>
+                  </div>
+                </KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+
+            <BasicBox theme="senary" className="row-margin-item-group">
+              <KeyValue margin="regular">
+                <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                  <KeyValueTitle>모델명</KeyValueTitle>
+                  <KeyValueText>2022년형 가솔린 1.0 터보 밴</KeyValueText>
+                </KeyValueItem>
+                <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                  <KeyValueTitle>세부 모델명</KeyValueTitle>
+                  <KeyValueText>스마트 + 캐스퍼 액티브Ⅰ</KeyValueText>
+                </KeyValueItem>
+              </KeyValue>
+            </BasicBox>
           </li>
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              판매사에서 제시하는 차량할인가격 입력해 주세요.
-            </div>
+
+          <li class="row-margin-item-group">
+            <KeyValue margin="regular">
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle>옵션</KeyValueTitle>
+                <KeyValueText>
+                  <div class="flex-box">
+                    <div class="flex-box__cell flex-1">16,850,000 원</div>
+                    <div class="flex-box__cell">
+                      <TextButton
+                        :block="true"
+                        underline="true"
+                        :classNames="{ wrap: 'text-body-5 color-gray' }"
+                        >변경</TextButton
+                      >
+                    </div>
+                  </div>
+                </KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+
+            <BasicBox theme="senary" className="row-margin-item-group">
+              <KeyValue margin="regular">
+                <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                  <KeyValueTitle>선택옵션 1</KeyValueTitle>
+                  <KeyValueText>선루프</KeyValueText>
+                </KeyValueItem>
+                <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                  <KeyValueTitle>선택옵션 2</KeyValueTitle>
+                  <KeyValueText>기타옵션</KeyValueText>
+                </KeyValueItem>
+              </KeyValue>
+            </BasicBox>
+          </li>
+
+          <li class="row-margin-item-group">
+            <KeyValue margin="regular">
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle>색상</KeyValueTitle>
+                <KeyValueText>
+                  <div class="flex-box">
+                    <div class="flex-box__cell flex-1">16,850,000 원</div>
+                    <div class="flex-box__cell">
+                      <TextButton
+                        :block="true"
+                        underline="true"
+                        :classNames="{ wrap: 'text-body-5 color-gray' }"
+                        >변경</TextButton
+                      >
+                    </div>
+                  </div>
+                </KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+
+            <BasicBox theme="senary" className="row-margin-item-group">
+              <KeyValue margin="regular">
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>외장</KeyValueTitle>
+                  <KeyValueText>
+                    <div class="flex-box">
+                      <div class="flex-box__cell flex-1">아틸라스 화이트</div>
+                      <div class="flex-box__cell">
+                        <ColorChip
+                          :colors="['241, 233, 233']"
+                          size="small"
+                        ></ColorChip>
+                      </div>
+                    </div>
+                  </KeyValueText>
+                </KeyValueItem>
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>내장</KeyValueTitle>
+                  <KeyValueText>
+                    <div class="flex-box">
+                      <div class="flex-box__cell flex-1">
+                        네츄럴 베이지 / 다크 베이지
+                      </div>
+                      <div class="flex-box__cell">
+                        <ColorChip
+                          :colors="['244, 238, 238', '225, 213, 213']"
+                          size="small"
+                        ></ColorChip>
+                      </div>
+                    </div>
+                  </KeyValueText>
+                </KeyValueItem>
+              </KeyValue>
+            </BasicBox>
           </li>
         </ul>
+      </BasicBox>
 
-        <div class="flex-box row-margin-item-group row-margin-bottom-none">
-          <div class="flex-box__cell text-body-5 color-gray-secondary">
-            할인금액 안내
-          </div>
-          <div class="flex-box__cell flex-box__cell--small">
-            <BasicTooltip placement="top">
-              <IconTooltip :class="$style['icon']" />
-              <span class="for-a11y">(도움말)</span>
-
-              <template v-slot:contents>
-                <section :class="$style['tooltip-section']">
-                  <h3 :class="$style['tooltip-section__title']">
-                    할인금액 안내
-                  </h3>
-                  <ul
-                    :class="[
-                      $style['basic-list'],
-                      $style['basic-list--mini-margin'],
-                    ]"
-                  >
-                    <li :class="[$style['basic-list__item'], 'color-white']">
-                      <div :class="$style['basic-list__symbol']"></div>
-                      <div :class="$style['basic-list__content']">
-                        할인금액은 자동차 판매사에서 제시하는 금액이에요.
-                      </div>
-                    </li>
-                    <li :class="[$style['basic-list__item'], 'color-white']">
-                      <div :class="$style['basic-list__symbol']"></div>
-                      <div :class="$style['basic-list__content']">
-                        입력하지 않으셔도 견적 조회는 가능하지만, 계약시점에 월
-                        납입금이 변경될 수 있어요.
-                      </div>
-                    </li>
-                  </ul>
-                </section>
+      <FormList :classNames="{ wrap: 'row-margin-contents' }">
+        <FormListItem
+          titleText="할인금액"
+          titleOptionalText="(선택)"
+          target="#layerAutoEstimateConfirmDiscountPrice"
+        >
+          <FormInvalid :error="state.discountPriceError">
+            <InputBlock :error="state.discountPriceError">
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  title="할인금액 입력"
+                  id="layerAutoEstimateConfirmDiscountPrice"
+                  pattern="\d*"
+                  :useDelete="false"
+                  align="right"
+                />
+              </InputBlockCell>
+              <template v-slot:innerRight>
+                <div class="text-body-3">원</div>
               </template>
-            </BasicTooltip>
-          </div>
-        </div>
-      </div>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+
+            <ul :class="[$style['basic-list'], 'row-margin-item']">
+              <li :class="$style['basic-list__item']">
+                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__content']">
+                  국산차 리스 또는 수입차(상품무관) 예정자에 한하여 입력해
+                  주세요.
+                </div>
+              </li>
+              <li :class="$style['basic-list__item']">
+                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__content']">
+                  판매사에서 제시하는 차량할인가격 입력해 주세요.
+                </div>
+              </li>
+            </ul>
+
+            <div class="flex-box row-margin-item-group">
+              <div class="flex-box__cell text-body-5 color-gray-secondary">
+                할인금액 안내
+              </div>
+              <div class="flex-box__cell flex-box__cell--small">
+                <BasicTooltip placement="top" :fit="true">
+                  <IconTooltip :class="$style['icon']" />
+                  <span class="for-a11y">(도움말)</span>
+
+                  <template v-slot:contents>
+                    <section :class="$style['tooltip-section']">
+                      <h3 :class="$style['tooltip-section__title']">
+                        할인금액 안내
+                      </h3>
+                      <ul
+                        :class="[
+                          $style['basic-list'],
+                          $style['basic-list--mini-margin'],
+                        ]"
+                      >
+                        <li
+                          :class="[$style['basic-list__item'], 'color-white']"
+                        >
+                          <div :class="$style['basic-list__symbol']"></div>
+                          <div :class="$style['basic-list__content']">
+                            할인금액은 자동차 판매사에서 제시하는 금액이에요.
+                          </div>
+                        </li>
+                        <li
+                          :class="[$style['basic-list__item'], 'color-white']"
+                        >
+                          <div :class="$style['basic-list__symbol']"></div>
+                          <div :class="$style['basic-list__content']">
+                            입력하지 않으셔도 견적 조회는 가능하지만, 계약시점에
+                            월 납입금이 변경될 수 있어요.
+                          </div>
+                        </li>
+                      </ul>
+                    </section>
+                  </template>
+                </BasicTooltip>
+              </div>
+            </div>
+          </FormInvalid>
+        </FormListItem>
+      </FormList>
 
       <template v-slot:foot>
-        <KeyValue
-          verticalAlign="center"
-          :classNames="{ wrap: 'row-margin-contents-small' }"
-        >
+        <KeyValue verticalAlign="center">
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle :classNames="{ title: 'color-black' }">
               총 차량가격
             </KeyValueTitle>
             <KeyValueText>
-              <UnitText rightUnit="원" align="right">16,920,000</UnitText>
+              <UnitText rightUnit="원" align="right"
+                ><strong>16,920,000</strong></UnitText
+              >
             </KeyValueText>
           </KeyValueItem>
         </KeyValue>
 
         <ButtonList
           :classNames="{
-            wrap: 'row-margin-none',
+            wrap: 'row-margin-contents-small',
           }"
         >
           <ButtonListItem>

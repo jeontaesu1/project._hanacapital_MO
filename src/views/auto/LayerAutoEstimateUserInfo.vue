@@ -73,7 +73,7 @@ export default {
           <template v-slot:right>
             <div class="flex-box">
               <div class="flex-box__cell">
-                <RoundButton size="mini" tagName="a" href="tel:1800-1110">
+                <RoundButton tagName="a" href="tel:1800-1110">
                   <template v-slot:leftIcon>
                     <IconTell />
                   </template>
@@ -96,138 +96,132 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <div class="contents-wrap">
-        <FormList>
-          <FormListItem
-            titleText="이름"
-            target="#layerAutoEstimateUserInfoName"
-          >
-            <FormInvalid :error="state.nameError">
-              <InputBlock :error="state.nameError">
-                <InputBlockCell :flexible="true">
-                  <BasicInput title="이름" id="layerAutoEstimateUserInfoName" />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
+      <FormList>
+        <FormListItem titleText="이름" target="#layerAutoEstimateUserInfoName">
+          <FormInvalid :error="state.nameError">
+            <InputBlock :error="state.nameError">
+              <InputBlockCell :flexible="true">
+                <BasicInput title="이름" id="layerAutoEstimateUserInfoName" />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
 
-          <FormListItem
-            titleText="연락처"
-            target="#layerAutoEstimateUserInfoPhone"
-          >
-            <FormInvalid :error="state.phoneError">
-              <InputBlock :error="state.phoneError">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    type="number"
-                    pattern="\d*"
-                    title="연락처"
-                    id="layerAutoEstimateUserInfoPhone"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-        </FormList>
+        <FormListItem
+          titleText="연락처"
+          target="#layerAutoEstimateUserInfoPhone"
+        >
+          <FormInvalid :error="state.phoneError">
+            <InputBlock :error="state.phoneError">
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  type="number"
+                  pattern="\d*"
+                  title="연락처"
+                  id="layerAutoEstimateUserInfoPhone"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+      </FormList>
 
-        <div :class="[$style['agree-list'], 'row-margin-contents-group']">
-          <ul :class="$style['agree-list__container']">
-            <li :class="$style['agree-list__all']">
-              <div :class="$style['agree-list__all-head']">
-                <CheckBox
-                  id="LayerAutoEstimateUserInfoAgreeAll"
-                  :classNames="{ wrap: $style['agree-list__all-checkbox'] }"
-                >
-                  <CheckBoxObject />
-                  <CheckBoxLabelText>전체동의</CheckBoxLabelText>
-                </CheckBox>
-              </div>
+      <div :class="[$style['agree-list'], 'row-margin-contents-group']">
+        <ul :class="$style['agree-list__container']">
+          <li :class="$style['agree-list__all']">
+            <div :class="$style['agree-list__all-head']">
+              <CheckBox
+                id="layerAutoEstimateUserInfoAgreeAll"
+                :classNames="{ wrap: $style['agree-list__all-checkbox'] }"
+              >
+                <CheckBoxObject />
+                <CheckBoxLabelText>전체동의</CheckBoxLabelText>
+              </CheckBox>
+            </div>
 
-              <div :class="$style['agree-list__all-contents']">
-                <ul :class="$style['agree-list__list']">
-                  <li :class="$style['agree-list__item']">
-                    <div :class="$style['agree-list__head']">
-                      <CheckBox
-                        id="LayerAutoEstimateUserInfo001"
-                        :classNames="{
-                          wrap: $style['agree-list__checkbox'],
-                        }"
-                        theme="tertiary"
-                      >
-                        <CheckBoxObject />
-                        <CheckBoxLabelText
-                          >개인(신용)정보 필수적 수집·이용
-                          동의</CheckBoxLabelText
-                        >
-                      </CheckBox>
-                    </div>
-                    <ul
-                      :class="[
-                        $style['agree-list__list'],
-                        $style['agree-list__list--secondary'],
-                      ]"
+            <div :class="$style['agree-list__all-contents']">
+              <ul :class="$style['agree-list__list']">
+                <li :class="$style['agree-list__item']">
+                  <div :class="$style['agree-list__head']">
+                    <CheckBox
+                      id="layerAutoEstimateUserInfo001"
+                      :classNames="{
+                        wrap: $style['agree-list__checkbox'],
+                      }"
+                      theme="tertiary"
                     >
-                      <li :class="$style['agree-list__item']">
-                        <div :class="$style['agree-list__head']">
-                          <CheckBox
-                            id="LayerAutoEstimateUserInfo001_001"
-                            :classNames="{
-                              wrap: $style['agree-list__checkbox'],
-                            }"
-                            theme="quinary"
+                      <CheckBoxObject />
+                      <CheckBoxLabelText
+                        >개인(신용)정보 필수적 수집·이용 동의</CheckBoxLabelText
+                      >
+                    </CheckBox>
+                  </div>
+                  <ul
+                    :class="[
+                      $style['agree-list__list'],
+                      $style['agree-list__list--secondary'],
+                    ]"
+                  >
+                    <li :class="$style['agree-list__item']">
+                      <div :class="$style['agree-list__head']">
+                        <CheckBox
+                          id="layerAutoEstimateUserInfo001_001"
+                          :classNames="{
+                            wrap: $style['agree-list__checkbox'],
+                          }"
+                          theme="quinary"
+                        >
+                          <CheckBoxObject />
+                          <CheckBoxLabelText>
+                            개인(신용)정보 필수적 수집·이용
+                          </CheckBoxLabelText>
+                        </CheckBox>
+                        <div :class="$style['agree-list__right']">
+                          <button
+                            type="button"
+                            :class="$style['agree-list__link']"
                           >
-                            <CheckBoxObject />
-                            <CheckBoxLabelText>
-                              개인(신용)정보 필수적 수집·이용
-                            </CheckBoxLabelText>
-                          </CheckBox>
-                          <div :class="$style['agree-list__right']">
-                            <button
-                              type="button"
-                              :class="$style['agree-list__link']"
-                            >
-                              <span :class="$style['agree-list__link-text']">
-                                상세보기
-                              </span>
-                            </button>
-                          </div>
+                            <span :class="$style['agree-list__link-text']">
+                              상세보기
+                            </span>
+                          </button>
                         </div>
-                      </li>
-                      <li :class="$style['agree-list__item']">
-                        <div :class="$style['agree-list__head']">
-                          <CheckBox
-                            id="LayerAutoEstimateUserInfo001_002"
-                            :classNames="{
-                              wrap: $style['agree-list__checkbox'],
-                            }"
-                            theme="quinary"
+                      </div>
+                    </li>
+                    <li :class="$style['agree-list__item']">
+                      <div :class="$style['agree-list__head']">
+                        <CheckBox
+                          id="layerAutoEstimateUserInfo001_002"
+                          :classNames="{
+                            wrap: $style['agree-list__checkbox'],
+                          }"
+                          theme="quinary"
+                        >
+                          <CheckBoxObject />
+                          <CheckBoxLabelText>
+                            고유식별번호 필수적 수집·이용
+                          </CheckBoxLabelText>
+                        </CheckBox>
+                        <div :class="$style['agree-list__right']">
+                          <button
+                            type="button"
+                            :class="$style['agree-list__link']"
                           >
-                            <CheckBoxObject />
-                            <CheckBoxLabelText>
-                              고유식별번호 필수적 수집·이용
-                            </CheckBoxLabelText>
-                          </CheckBox>
-                          <div :class="$style['agree-list__right']">
-                            <button
-                              type="button"
-                              :class="$style['agree-list__link']"
-                            >
-                              <span :class="$style['agree-list__link-text']">
-                                상세보기
-                              </span>
-                            </button>
-                          </div>
+                            <span :class="$style['agree-list__link-text']">
+                              상세보기
+                            </span>
+                          </button>
                         </div>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
       </div>
 
       <template v-slot:foot>

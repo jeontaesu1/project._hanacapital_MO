@@ -27,6 +27,10 @@ export default {
       Type: String,
       default: 'top',
     },
+    fit: {
+      Type: Boolean,
+      default: false,
+    },
   },
   setup(props) {
     const state = reactive({
@@ -170,6 +174,7 @@ export default {
       $style['tooltip'],
       {
         [$style['tooltip--bottom']]: placement === 'bottom',
+        [$style['tooltip--fit']]: fit,
         'is-show': state.show,
       },
       customClassNames.wrap,

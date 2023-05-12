@@ -1,0 +1,125 @@
+.files {
+  &::before {
+    content: '';
+    display: table;
+  }
+
+  &__list {
+    @include reset-list;
+    margin: -8px 0 0 -8px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    flex: none;
+    width: 25%;
+    padding: 8px 0 0 8px;
+    box-sizing: border-box;
+  }
+
+  &__block {
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      padding-top: 100%;
+    }
+  }
+
+  &__link {
+    @include reset-button;
+  }
+
+  &__delete {
+    @include reset-button;
+    display: block;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    width: 24px;
+    height: 24px;
+    background: url('@/assets/images/icon/file-delete.svg') no-repeat 50% 50% /
+      100% 100%;
+
+    &::before {
+      content: '';
+      display: block;
+      padding: 4px;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      background-color: rgba(0, 0, 0, 0);
+    }
+  }
+
+  &__image,
+  &__icon,
+  &__link {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  &__image,
+  &__icon {
+    overflow: hidden;
+    border-radius: 4px;
+    border: 1px solid $color-gray-20;
+    background-color: $color-gray-05;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 50%;
+      height: 50%;
+      background: no-repeat 50% 50% / 100% 100%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      display: block;
+      position: relative;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    &:empty,
+    &:global(.is-error) {
+      &::before {
+        background-image: url('@/assets/images/icon/img-default.svg');
+      }
+    }
+
+    &:global(.is-error) img {
+      opacity: 0;
+    }
+  }
+
+  &__icon {
+    &--pdf {
+      &::before {
+        background-image: url('@/assets/images/icon/pdf-color.svg');
+      }
+    }
+  }
+}

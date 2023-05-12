@@ -75,7 +75,7 @@ export default {
           <template v-slot:right>
             <div class="flex-box">
               <div class="flex-box__cell">
-                <RoundButton size="mini" tagName="a" href="tel:1800-1110">
+                <RoundButton tagName="a" href="tel:1800-1110">
                   <template v-slot:leftIcon>
                     <IconTell />
                   </template>
@@ -97,71 +97,69 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <div class="contents-wrap">
-        <FormList>
-          <FormListItem
-            titleText="사업자명"
-            target="#layerAutoEstimateBusinessInfoBusinessManName"
-          >
-            <FormInvalid :error="state.businessNameError">
-              <InputBlock :error="state.businessNameError">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    title="사업자명 입력"
-                    id="layerAutoEstimateBusinessInfoBusinessManName"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-          <FormListItem
-            titleText="사업자번호"
-            target="#layerAutoEstimateBusinessInfoBusinessNumber"
-          >
-            <FormInvalid :error="state.businessNumberError">
-              <InputBlock :error="state.businessNumberError">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    type="number"
-                    pattern="\d*"
-                    title="사업자번호 입력"
-                    id="layerAutoEstimateBusinessInfoBusinessNumber"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-        </FormList>
+      <FormList>
+        <FormListItem
+          titleText="사업자명"
+          target="#layerAutoEstimateBusinessInfoBusinessManName"
+        >
+          <FormInvalid :error="state.businessNameError">
+            <InputBlock :error="state.businessNameError">
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  title="사업자명 입력"
+                  id="layerAutoEstimateBusinessInfoBusinessManName"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+        <FormListItem
+          titleText="사업자번호"
+          target="#layerAutoEstimateBusinessInfoBusinessNumber"
+        >
+          <FormInvalid :error="state.businessNumberError">
+            <InputBlock :error="state.businessNumberError">
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  type="number"
+                  pattern="\d*"
+                  title="사업자번호 입력"
+                  id="layerAutoEstimateBusinessInfoBusinessNumber"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+      </FormList>
 
-        <section class="row-margin-contents-group">
-          <h3 class="text-body-2 font-weight-bold row-margin-item-medium">
-            개업 연월일이 1년이 지났나요?
-          </h3>
-          <BoxCheckList>
-            <BoxCheckListItem>
-              <BoxCheck
-                :minSide="true"
-                name="layerAutoEstimateBusinessInfoCheck"
-                id="layerAutoEstimateBusinessInfoCheck001"
-                :defaultChecked="true"
-              >
-                <BoxCheckLabel>예</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck
-                :minSide="true"
-                name="layerAutoEstimateBusinessInfoCheck"
-                id="layerAutoEstimateBusinessInfoCheck002"
-              >
-                <BoxCheckLabel>아니오</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-          </BoxCheckList>
-        </section>
-      </div>
+      <section class="row-margin-contents-group">
+        <h3 class="text-body-2 font-weight-bold row-margin-item-medium">
+          개업 연월일이 1년이 지났나요?
+        </h3>
+        <BoxCheckList>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="layerAutoEstimateBusinessInfoCheck"
+              id="layerAutoEstimateBusinessInfoCheck001"
+              :defaultChecked="true"
+            >
+              <BoxCheckLabel>예</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="layerAutoEstimateBusinessInfoCheck"
+              id="layerAutoEstimateBusinessInfoCheck002"
+            >
+              <BoxCheckLabel>아니오</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+        </BoxCheckList>
+      </section>
 
       <template v-slot:foot>
         <ButtonList
