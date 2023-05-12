@@ -92,7 +92,7 @@ export default {
         있습니다.</NoticeText
       >
 
-      <NoticeText class="row-margin-item"
+      <NoticeText :classNames="{ wrap: 'row-margin-item' }"
         >차량 압류/설정 여부는 자동차민원 대국민포털(https://ecar.go.kr)에서
         조회 가능합니다.</NoticeText
       >

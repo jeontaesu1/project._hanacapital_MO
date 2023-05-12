@@ -70,9 +70,7 @@ export default {
       </PageTextGroup>
 
       <section>
-        <h3 class="font-weight-bold text-body-2 row-margin-item-group">
-          할부상담 절차
-        </h3>
+        <h3 class="text-body-2 row-margin-item-group">할부상담 절차</h3>
 
         <div :class="$style['step']">
           <ul :class="$style['step__list']">
