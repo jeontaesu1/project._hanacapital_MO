@@ -125,6 +125,7 @@ import IconDocumentComplete from '@/assets/images/icon/document-complete.svg?com
 import IconTooltip from '@/assets/images/icon/tooltip.svg?component';
 import IconLink from '@/assets/images/icon/link.svg?component';
 import IconStar from '@/assets/images/icon/star.svg?component';
+import IconDownload from '@/assets/images/icon/download.svg?component';
 
 export default {
   components: {
@@ -249,6 +250,7 @@ export default {
     IconTooltip,
     IconLink,
     IconStar,
+    IconDownload,
   },
 
   setup() {
@@ -830,6 +832,71 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Download</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['download']">
+          <div :class="$style['download__block']">
+            <h4 class="text-body-1 font-weight-medium">
+              건강한금융 금융생활정보
+            </h4>
+            <p class="text-body-4 font-weight-light row-margin-small">
+              2022.10.25
+            </p>
+          </div>
+          <a href="" :class="$style['download__button']" download>
+            <IconDownload />
+            <span class="for-a11y">다운로드</span>
+          </a>
+        </div>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">align-center</h3>
+        <div :class="[$style['download'], $style['download--align-center']]">
+          <div :class="$style['download__block']">
+            <h4 class="text-body-1 font-weight-medium">
+              건강한금융 금융생활정보
+            </h4>
+            <p class="text-body-4 font-weight-light row-margin-small">
+              2022.10.25
+            </p>
+          </div>
+          <a href="" :class="$style['download__button']" download>
+            <IconDownload />
+            <span class="for-a11y">다운로드</span>
+          </a>
+        </div>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">secondary</h3>
+        <div
+          :class="[
+            $style['download'],
+            $style['download--align-center'],
+            $style['download--theme-secondary'],
+          ]"
+        >
+          <div :class="$style['download__block']">
+            <p class="text-body-4 font-weight-medium">
+              하나캐피탈IR_2022.2Q.pdf
+            </p>
+          </div>
+          <a
+            href=""
+            :class="[
+              $style['download__button'],
+              $style['download__button--secondary'],
+            ]"
+            download
+          >
+            <IconDownload />
+            <span class="for-a11y">다운로드</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">inline wrap</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -1373,6 +1440,78 @@ export default {
           <CheckBoxObject />
           <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
         </CheckBox>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">CheckBox list</h2>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <div :class="$style['check-box-list']">
+          <ul :class="$style['check-box-list__list']">
+            <li :class="$style['check-box-list__item']">
+              <CheckBox id="testCheck001_001" theme="quinary">
+                <CheckBoxObject />
+                <CheckBoxLabelText>전화</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+            <li :class="$style['check-box-list__item']">
+              <CheckBox id="testCheck001_002" theme="quinary">
+                <CheckBoxObject />
+                <CheckBoxLabelText>문자메시지</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+            <li :class="$style['check-box-list__item']">
+              <CheckBox id="testCheck001_003" theme="quinary">
+                <CheckBoxObject />
+                <CheckBoxLabelText>우편</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+            <li :class="$style['check-box-list__item']">
+              <CheckBox id="testCheck001_004" theme="quinary">
+                <CheckBoxObject />
+                <CheckBoxLabelText>이메일</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Wrap - col 2</h3>
+
+        <div
+          :class="[$style['check-box-list'], $style['check-box-list--wrap']]"
+        >
+          <ul :class="$style['check-box-list__list']">
+            <li :class="$style['check-box-list__item']">
+              <CheckBox id="testCheck002_001" theme="quinary">
+                <CheckBoxObject />
+                <CheckBoxLabelText>전화</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+            <li :class="$style['check-box-list__item']">
+              <CheckBox id="testCheck002_002" theme="quinary">
+                <CheckBoxObject />
+                <CheckBoxLabelText>문자메시지</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+            <li :class="$style['check-box-list__item']">
+              <CheckBox id="testCheck002_003" theme="quinary">
+                <CheckBoxObject />
+                <CheckBoxLabelText>우편</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+            <li :class="$style['check-box-list__item']">
+              <CheckBox id="testCheck002_004" theme="quinary">
+                <CheckBoxObject />
+                <CheckBoxLabelText>이메일</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -7064,6 +7203,126 @@ export default {
           </li>
         </ul>
       </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Contents list</h3>
+        <ul :class="$style['bill-list']">
+          <li :class="$style['bill-list__item']">
+            <div :class="$style['bill-list__block']">
+              <div :class="$style['bill-list__head']">
+                <div :class="$style['bill-list__detail']">
+                  <span :class="$style['bill-list__detail-item']">1회차</span>
+                </div>
+                <div :class="$style['bill-list__amount']">1,232,456,345 원</div>
+              </div>
+              <div :class="$style['bill-list__contents']">
+                <div :class="$style['bill-list__contents-left']">
+                  <dl :class="$style['bill-list__contents-list']">
+                    <div :class="$style['bill-list__contents-item']">
+                      <dt :class="$style['bill-list__contents-key']">원금</dt>
+                      <dd :class="$style['bill-list__contents-value']">
+                        912,232,321 원
+                      </dd>
+                    </div>
+                    <div :class="$style['bill-list__contents-item']">
+                      <dt :class="$style['bill-list__contents-key']">이자</dt>
+                      <dd :class="$style['bill-list__contents-value']">
+                        902,123,223 원
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+                <div :class="$style['bill-list__contents-right']">
+                  <dl :class="$style['bill-list__contents-list']">
+                    <div :class="$style['bill-list__contents-item']">
+                      <dt :class="$style['bill-list__contents-key']">잔액</dt>
+                      <dd :class="$style['bill-list__contents-value']">
+                        982,232,123 원
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li :class="$style['bill-list__item']">
+            <div :class="$style['bill-list__block']">
+              <div :class="$style['bill-list__head']">
+                <div :class="$style['bill-list__detail']">
+                  <span :class="$style['bill-list__detail-item']">2회차</span>
+                </div>
+                <div :class="$style['bill-list__amount']">1,232,456,345 원</div>
+              </div>
+              <div :class="$style['bill-list__contents']">
+                <div :class="$style['bill-list__contents-left']">
+                  <dl :class="$style['bill-list__contents-list']">
+                    <div :class="$style['bill-list__contents-item']">
+                      <dt :class="$style['bill-list__contents-key']">원금</dt>
+                      <dd :class="$style['bill-list__contents-value']">
+                        912,232,321 원
+                      </dd>
+                    </div>
+                    <div :class="$style['bill-list__contents-item']">
+                      <dt :class="$style['bill-list__contents-key']">이자</dt>
+                      <dd :class="$style['bill-list__contents-value']">
+                        902,123,223 원
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+                <div :class="$style['bill-list__contents-right']">
+                  <dl :class="$style['bill-list__contents-list']">
+                    <div :class="$style['bill-list__contents-item']">
+                      <dt :class="$style['bill-list__contents-key']">잔액</dt>
+                      <dd :class="$style['bill-list__contents-value']">
+                        982,232,123 원
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li :class="$style['bill-list__item']">
+            <div :class="$style['bill-list__block']">
+              <div :class="$style['bill-list__head']">
+                <div :class="$style['bill-list__detail']">
+                  <span :class="$style['bill-list__detail-item']">3회차</span>
+                </div>
+                <div :class="$style['bill-list__amount']">1,232,456,345 원</div>
+              </div>
+              <div :class="$style['bill-list__contents']">
+                <div :class="$style['bill-list__contents-left']">
+                  <dl :class="$style['bill-list__contents-list']">
+                    <div :class="$style['bill-list__contents-item']">
+                      <dt :class="$style['bill-list__contents-key']">원금</dt>
+                      <dd :class="$style['bill-list__contents-value']">
+                        912,232,321 원
+                      </dd>
+                    </div>
+                    <div :class="$style['bill-list__contents-item']">
+                      <dt :class="$style['bill-list__contents-key']">이자</dt>
+                      <dd :class="$style['bill-list__contents-value']">
+                        902,123,223 원
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+                <div :class="$style['bill-list__contents-right']">
+                  <dl :class="$style['bill-list__contents-list']">
+                    <div :class="$style['bill-list__contents-item']">
+                      <dt :class="$style['bill-list__contents-key']">잔액</dt>
+                      <dd :class="$style['bill-list__contents-value']">
+                        982,232,123 원
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
     </section>
 
     <section class="test-section">
@@ -7239,6 +7498,72 @@ export default {
 
         <div :class="$style['image-view']">
           <img src="@/assets/images/_dummy/box-detail.png" alt="샘플 이미지" />
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Q&A List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <div :class="$style['qna']">
+          <UiAccordion :classNames="{ wrap: $style['qna__list'] }">
+            <UiAccordionItem :classNames="{ item: $style['qna__item'] }">
+              <div :class="$style['qna__head']">
+                <div :class="$style['qna__symbol']">Q</div>
+                <div :class="$style['qna__block']">
+                  <div :class="$style['qna__title']">
+                    하나캐피탈 멤버십 가입은<br />
+                    어떻게 하나요?
+                  </div>
+                </div>
+                <div :class="$style['qna__right']">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['qna__opener'] }"
+                  />
+                </div>
+              </div>
+
+              <UiAccordionLayer :classNames="{ layer: $style['qna__layer'] }">
+                <div :class="$style['qna__contents']">
+                  <div :class="$style['qna__symbol']">A</div>
+                  <div :class="$style['qna__text']">
+                    하나캐피탈 회원가입은 성별 나이 특정제한 없이 하나캐피탈
+                    이용 및 관심있으신 손님이시면 누구나 가입가능하며, 홈페이지
+                    및 모바일에서 멤버십 가입하기를 통해 가입하실 수 있습니다.
+                  </div>
+                </div>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+            <UiAccordionItem :classNames="{ item: $style['qna__item'] }">
+              <div :class="$style['qna__head']">
+                <div :class="$style['qna__symbol']">Q</div>
+                <div :class="$style['qna__block']">
+                  <div :class="$style['qna__title']">
+                    하나캐피탈 멤버십 가입은<br />
+                    어떻게 하나요?
+                  </div>
+                </div>
+                <div :class="$style['qna__right']">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['qna__opener'] }"
+                  />
+                </div>
+              </div>
+
+              <UiAccordionLayer :classNames="{ layer: $style['qna__layer'] }">
+                <div :class="$style['qna__contents']">
+                  <div :class="$style['qna__symbol']">A</div>
+                  <div :class="$style['qna__text']">
+                    하나캐피탈 회원가입은 성별 나이 특정제한 없이 하나캐피탈
+                    이용 및 관심있으신 손님이시면 누구나 가입가능하며, 홈페이지
+                    및 모바일에서 멤버십 가입하기를 통해 가입하실 수 있습니다.
+                  </div>
+                </div>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+          </UiAccordion>
         </div>
       </div>
     </section>
