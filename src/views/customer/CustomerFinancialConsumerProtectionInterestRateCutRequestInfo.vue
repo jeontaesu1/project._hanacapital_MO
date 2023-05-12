@@ -53,16 +53,14 @@ export default {
     </PageTextGroup>
 
     <section>
-      <h3 class="text-title-2 font-weight-bold row-margin-small">
-        대상대출상품
-      </h3>
+      <h3 class="text-title-2 row-margin-small">대상대출상품</h3>
       <p class="text-body-3 color-gray-tertiary font-weight-light">
         차주의 신용상태가 금리에 영향을 주지 않는, 아래와 같은 대출을 제외한
         모든 대출 상품
       </p>
 
-      <section class="reset-list row-margin-contents">
-        <h4 class="text-body-2 font-weight-bold row-margin-item-medium">
+      <section class="row-margin-contents">
+        <h4 class="text-body-2 row-margin-item-medium">
           금리인하 요구 대상이 아닌 대출
         </h4>
 
@@ -125,7 +123,7 @@ export default {
       </section>
 
       <section class="row-margin-contents-group">
-        <h4 class="text-body-2 font-weight-bold row-margin-item-medium">
+        <h4 class="text-body-2 row-margin-item-medium">
           금리인하 가능한 대표상품*
         </h4>
 
@@ -181,7 +179,7 @@ export default {
       </section>
 
       <section class="row-margin-contents-group row-margin-bottom-none">
-        <h4 class="text-body-2 font-weight-bold row-margin-item-medium">
+        <h4 class="text-body-2 row-margin-item-medium">
           개인고객 한정 금리인하요구 대상 상품**
         </h4>
 
@@ -232,16 +230,14 @@ export default {
     </section>
 
     <section class="row-margin-container-medium row-margin-bottom-none">
-      <h3 class="text-title-2 font-weight-bold row-margin-small">신청사유</h3>
+      <h3 class="text-title-2 row-margin-small">신청사유</h3>
       <p class="text-body-3 color-gray-tertiary font-weight-light">
         대출 등 여신거래 기간 중 아래의 경우 등 신용상태가 개선이 나타났다고
         인정되는 경우 금리인하를 요구할 수 있음
       </p>
 
       <section class="reset-list row-margin-contents">
-        <h4 class="text-body-2 font-weight-bold row-margin-item-medium">
-          가계대출
-        </h4>
+        <h4 class="text-body-2 row-margin-item-medium">가계대출</h4>
 
         <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
           <li
@@ -290,9 +286,7 @@ export default {
       </section>
 
       <section class="row-margin-contents-group">
-        <h4 class="text-body-2 font-weight-bold row-margin-item-medium">
-          기업대출
-        </h4>
+        <h4 class="text-body-2 row-margin-item-medium">기업대출</h4>
 
         <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
           <li
@@ -339,9 +333,7 @@ export default {
     </section>
 
     <section class="row-margin-container-medium">
-      <h3 class="text-title-2 font-weight-bold row-margin-small">
-        신청방법 및 결과통지
-      </h3>
+      <h3 class="text-title-2 row-margin-small">신청방법 및 결과통지</h3>
       <p class="text-body-3 color-gray-tertiary font-weight-light">
         채널별 신청방법은 아래와 같음
       </p>
@@ -349,8 +341,8 @@ export default {
       <div :class="[$style['basic-table'], 'row-margin-contents']">
         <table>
           <colgroup>
-            <col style="width: 101px" />
-            <col style="width: 101px" />
+            <col />
+            <col />
             <col style="width: 120px" />
           </colgroup>
           <thead>

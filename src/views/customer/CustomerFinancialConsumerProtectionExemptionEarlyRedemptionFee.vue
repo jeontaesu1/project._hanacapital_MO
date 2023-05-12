@@ -52,7 +52,7 @@ export default {
     </PageTextGroup>
 
     <section>
-      <h4 class="text-body-2 font-weight-bold row-margin-item-medium">
+      <h4 class="text-body-2 row-margin-item-medium">
         중도상환수수료 면제기준
       </h4>
 

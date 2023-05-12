@@ -69,6 +69,7 @@ export default {
           성공과 건강한 금융문화정착에 이바지하겠습니다.
         </p>
       </div>
+
       <div class="row-margin-contents-group">
         <h3 class="text-body-2 row-margin-item-medium">하나,</h3>
         <p class="text-body-4 font-weight-light">
@@ -76,6 +77,7 @@ export default {
           침해하는 불합리한 금융 관행 개선에 최선을 다하겠습니다.
         </p>
       </div>
+
       <div class="row-margin-contents-group">
         <h3 class="text-body-2 row-margin-item-medium">하나,</h3>
         <p class="text-body-4 font-weight-light">
@@ -93,7 +95,7 @@ export default {
         </p>
       </div>
 
-      <div class="flex-box row-margin-contents-group align-right">
+      <div class="flex-box align-right">
         <div class="flex-box__cell flex-1">
           <div class="text-body-3 color-gray font-weight-light row-margin-item">
             2013. 06. 01 제정

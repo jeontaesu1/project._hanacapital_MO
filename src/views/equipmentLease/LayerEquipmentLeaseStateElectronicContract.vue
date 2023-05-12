@@ -76,13 +76,16 @@ export default {
         <FormListItem
           titleText="이름"
           target="#layerEquipmentLeaseStateElectronicContractName"
+          :disabled="true"
         >
           <FormInvalid :error="state.nameError">
-            <InputBlock :error="state.nameError">
+            <InputBlock :error="state.nameError" :disabled="true">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="이름"
+                  defaultValue="김하나"
                   id="layerEquipmentLeaseStateElectronicContractName"
+                  :disabled="true"
                 />
               </InputBlockCell>
             </InputBlock>

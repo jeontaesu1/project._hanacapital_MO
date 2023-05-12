@@ -40,6 +40,7 @@ export default {
   },
   setup() {
     const state = reactive({
+      nameError: false,
       phoneError: false,
     });
 
@@ -72,12 +73,24 @@ export default {
       </PageTextGroup>
 
       <FormList>
-        <FormListItem titleText="이름" :disabled="true">
-          <InputBlock :disabled="true">
-            <InputBlockCell :flexible="true">
-              <BasicInput title="이름" defaultValue="김하나" :disabled="true" />
-            </InputBlockCell>
-          </InputBlock>
+        <FormListItem
+          titleText="이름"
+          target="#layerEquipmentLeaseEstimateSendName"
+          :disabled="true"
+        >
+          <FormInvalid :error="state.nameError">
+            <InputBlock :error="state.nameError" :disabled="true">
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  title="이름"
+                  defaultValue="김하나"
+                  id="layerEquipmentLeaseEstimateSendName"
+                  :disabled="true"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
         </FormListItem>
 
         <FormListItem
@@ -88,6 +101,7 @@ export default {
             <InputBlock :error="state.phoneError">
               <InputBlockCell :flexible="true">
                 <BasicInput
+                  type="number"
                   pattern="\d*"
                   title="휴대폰번호"
                   id="layerEquipmentLeaseEstimateSendPhone"

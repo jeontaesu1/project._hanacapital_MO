@@ -51,12 +51,11 @@ export default {
     </PageTextGroup>
 
     <section>
-      <h3 class="text-title-2 font-weight-bold row-margin-small">행사요건</h3>
+      <h3 class="text-title-2">행사요건</h3>
 
       <section class="reset-list row-margin-contents">
-        <h4 class="text-body-2 font-weight-bold row-margin-item-medium">
-          적용대상
-        </h4>
+        <h4 class="text-body-2 row-margin-item-medium">적용대상</h4>
+
         <p class="text-body-4 font-weight-light row-margin-item">
           금융소비자 보호법상 일반금융소비자(개인/개인사업자/상시근로자 5인 미만
           법인 등)
@@ -73,9 +72,7 @@ export default {
       </section>
 
       <section class="row-margin-contents-group">
-        <h4 class="text-body-2 font-weight-bold row-margin-item-medium">
-          적용상품
-        </h4>
+        <h4 class="text-body-2 row-margin-item-medium">적용상품</h4>
         <p class="text-body-4 font-weight-light">
           시설대여, 할부금융, 연불판매 등을 제외한 대출성 상품
         </p>
@@ -94,10 +91,8 @@ export default {
         </ul>
       </section>
 
-      <section class="row-margin-contents-group row-margin-bottom-none">
-        <h4 class="text-body-2 font-weight-bold row-margin-item-medium">
-          절차
-        </h4>
+      <section class="row-margin-contents-group">
+        <h4 class="text-body-2 row-margin-item-medium">절차</h4>
         <p class="text-body-4 font-weight-light row-margin-item">
           대출계약 후 14일 이내 철회의 의사표시를 하고 원리금 등을 상환함으로써
           계약으로부터 탈퇴
@@ -133,10 +128,8 @@ export default {
         </ul>
       </section>
 
-      <section class="row-margin-contents-group row-margin-bottom-none">
-        <h4 class="text-body-2 font-weight-bold row-margin-item-medium">
-          요건
-        </h4>
+      <section class="row-margin-contents-group">
+        <h4 class="text-body-2 row-margin-item-medium">요건</h4>
         <p class="text-body-4 font-weight-light row-margin-item">
           철회기간(14일)내에 원리금 및 부대비용 등 반환 → 원금, 이자(경과이자) +
           금융사로부터 받은 재화, 용역 및 금융사가 부담한 근저당권 비용 / 인지세
@@ -145,10 +138,8 @@ export default {
         </p>
       </section>
 
-      <section class="row-margin-contents-group row-margin-bottom-none">
-        <h4 class="text-body-2 font-weight-bold row-margin-item-medium">
-          철회효과
-        </h4>
+      <section class="row-margin-contents-group">
+        <h4 class="text-body-2 row-margin-item-medium">철회효과</h4>
 
         <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
           <li
@@ -175,15 +166,11 @@ export default {
       </section>
     </section>
 
-    <section class="row-margin-container-medium row-margin-bottom-none">
-      <h3 class="text-title-2 font-weight-bold row-margin-small">
-        신청방법 및 필요서류
-      </h3>
+    <section class="row-margin-container-medium">
+      <h3 class="text-title-2">신청방법 및 필요서류</h3>
 
-      <section class="reset-list row-margin-contents">
-        <h4 class="text-body-2 font-weight-bold row-margin-item-medium">
-          신청방법
-        </h4>
+      <section class="row-margin-contents">
+        <h4 class="text-body-2 row-margin-item-medium">신청방법</h4>
 
         <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
           <li
@@ -207,10 +194,8 @@ export default {
         </ul>
       </section>
 
-      <section class="reset-list row-margin-contents">
-        <h4 class="text-body-2 font-weight-bold row-margin-item-medium">
-          필요서류
-        </h4>
+      <section class="row-margin-contents-group">
+        <h4 class="text-body-2 row-margin-item-medium">필요서류</h4>
 
         <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
           <li

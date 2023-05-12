@@ -12,6 +12,8 @@ import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import SearchButton from '@/components/ui/button/SearchButton.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
+
+import IconDownload from '@/assets/images/icon/download.svg?component';
 import IconArrow from '@/assets/images/icon/dropdown.svg?component';
 
 export default {
@@ -24,6 +26,7 @@ export default {
     BasicHr,
     SearchButton,
     TextButton,
+    IconDownload,
     IconArrow,
   },
   setup() {
@@ -92,18 +95,24 @@ export default {
     <!-- // Case : 검색 결과 없을 때 -->
 
     <!-- Case : 검색 결과 있을 때 -->
-    <div :class="$style['board']">
-      <ul :class="$style['board__list']">
-        <li v-for="i in 10" :key="i" :class="$style['board__item']">
-          <span :class="$style['board__title']">
-            <span :class="$style['board__title-text']">
+    <ul class="reset-list">
+      <li v-for="i in 10" :key="i" class="row-margin-container">
+        <div :class="$style['download']">
+          <div :class="$style['download__block']">
+            <h4 class="text-body-1 font-weight-medium">
               건강한금융 금융생활정보
-            </span>
-          </span>
-          <span :class="$style['board__text']">2022.10.25</span>
-        </li>
-      </ul>
-    </div>
+            </h4>
+            <p class="text-body-4 font-weight-light row-margin-small">
+              2022.10.25
+            </p>
+          </div>
+          <a href="" :class="$style['download__button']" download>
+            <IconDownload />
+            <span class="for-a11y">다운로드</span>
+          </a>
+        </div>
+      </li>
+    </ul>
     <!-- // Case : 검색 결과 있을 때 -->
 
     <div class="inline-wrap align-center row-margin-contents">
