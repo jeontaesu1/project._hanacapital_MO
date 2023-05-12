@@ -44,6 +44,7 @@ export default {
           <colgroup>
             <col style="width: 82px" />
             <col />
+            <col />
           </colgroup>
           <thead>
             <tr>
