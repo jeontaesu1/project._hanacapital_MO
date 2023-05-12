@@ -28,7 +28,7 @@ export default {
     onMounted(() => {
       store.ui.header.setTitle(() => '윤리강령');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => ['menu']);
+      store.ui.header.setRightButtons(() => []);
     });
 
     onUnmounted(() => {

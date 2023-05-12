@@ -121,12 +121,8 @@ export default {
 
         <!-- Tab : 자영업자 -->
         <UiTabPanel name="layerPersonalLoanBusinessHouseFormTab001">
-          <div class="row-margin-contents">
-            <h3 class="text-body-5 font-weight-medium color-gray-secondary">
-              아파트 정보
-            </h3>
-
-            <div class="row-margin-item">
+          <FormList>
+            <FormListItem titleText="아파트 정보" :forceFocus="true">
               <BasicButton :line="true">아파트 검색</BasicButton>
 
               <!-- DD : 아파트 검색 완료 후 노출 -->
@@ -151,10 +147,8 @@ export default {
                 <CheckBoxObject />
                 <CheckBoxLabelText>소유지 거주중</CheckBoxLabelText>
               </CheckBox>
-            </div>
-          </div>
+            </FormListItem>
 
-          <FormList>
             <FormListItem
               titleText="부동산 설정금액"
               titleOptionalText="(필수)"
@@ -176,15 +170,17 @@ export default {
                   </template>
                 </InputBlock>
                 <FormInvalidMessage>Error Message</FormInvalidMessage>
+                <!-- Case : 값 입력후 노출 -->
                 <FormHelpText
                   :classNames="{
                     wrap: 'align-right',
                   }"
                   >일억원</FormHelpText
                 >
+                <!-- // Case : 값 입력후 노출 -->
                 <div class="flex-box align-items-start row-margin-item">
                   <div class="flex-box__cell flex-1">
-                    <NoticeText :classNames="{ wrap: 'row-margin-item' }">
+                    <NoticeText>
                       금액 확인이 필요한 경우,
                       <span class="color-black">[등기부등본 조회]</span> 버튼
                       클릭 후, 조회된 금액을 입력해 주세요. 등기부등본 미조회 시
@@ -192,7 +188,11 @@ export default {
                     </NoticeText>
                   </div>
                   <div class="flex-box__cell flex-box__cell--medium">
-                    <TextButton theme="secondary" :underline="true">
+                    <TextButton
+                      theme="secondary"
+                      :underline="true"
+                      :block="true"
+                    >
                       등기부등본 조회
                     </TextButton>
                   </div>
@@ -220,12 +220,14 @@ export default {
                   </template>
                 </InputBlock>
                 <FormInvalidMessage>Error Message</FormInvalidMessage>
+                <!-- Case : 값 입력후 노출 -->
                 <FormHelpText
                   :classNames="{
                     wrap: 'align-right',
                   }"
                   >일억원</FormHelpText
                 >
+                <!-- // Case : 값 입력후 노출 -->
               </FormInvalid>
             </FormListItem>
 
@@ -333,12 +335,8 @@ export default {
 
         <!-- Tab : 기타 -->
         <UiTabPanel name="layerPersonalLoanBusinessHouseFormTab002">
-          <div class="row-margin-contents">
-            <h3 class="text-body-5 font-weight-medium color-gray-secondary">
-              아파트 정보
-            </h3>
-
-            <div class="row-margin-item">
+          <FormList>
+            <FormListItem titleText="아파트 정보" :forceFocus="true">
               <BasicButton :line="true">아파트 검색</BasicButton>
 
               <!-- DD : 아파트 검색 완료 후 노출 -->
@@ -363,10 +361,8 @@ export default {
                 <CheckBoxObject />
                 <CheckBoxLabelText>소유지 거주중</CheckBoxLabelText>
               </CheckBox>
-            </div>
-          </div>
+            </FormListItem>
 
-          <FormList>
             <FormListItem
               titleText="부동산 설정금액"
               titleOptionalText="(필수)"
@@ -388,12 +384,14 @@ export default {
                   </template>
                 </InputBlock>
                 <FormInvalidMessage>Error Message</FormInvalidMessage>
+                <!-- Case : 값 입력후 노출 -->
                 <FormHelpText
                   :classNames="{
                     wrap: 'align-right',
                   }"
                   >일억원</FormHelpText
                 >
+                <!-- // Case : 값 입력후 노출 -->
                 <div class="flex-box align-items-start row-margin-item">
                   <div class="flex-box__cell flex-1">
                     <NoticeText :classNames="{ wrap: 'row-margin-item' }">
@@ -404,7 +402,11 @@ export default {
                     </NoticeText>
                   </div>
                   <div class="flex-box__cell flex-box__cell--medium">
-                    <TextButton theme="secondary" :underline="true">
+                    <TextButton
+                      theme="secondary"
+                      :underline="true"
+                      :block="true"
+                    >
                       등기부등본 조회
                     </TextButton>
                   </div>
@@ -432,12 +434,14 @@ export default {
                   </template>
                 </InputBlock>
                 <FormInvalidMessage>Error Message</FormInvalidMessage>
+                <!-- Case : 값 입력후 노출 -->
                 <FormHelpText
                   :classNames="{
                     wrap: 'align-right',
                   }"
                   >일억원</FormHelpText
                 >
+                <!-- // Case : 값 입력후 노출 -->
               </FormInvalid>
             </FormListItem>
           </FormList>

@@ -1,7 +1,9 @@
 @import '@/assets/scss/components/import/empty.scss';
 
 .sub {
+  display: inline-block;
+  vertical-align: top;
+  margin: 4px 0 0 4px;
   @include font-size-default(14);
   font-weight: 400;
-  margin-left: 4px;
 }

@@ -18,8 +18,6 @@ import LayerPersonalLoanEHanaInput from '@/views/personalLoan/LayerPersonalLoanE
 import LayerPersonalLoanEHanaLink from '@/views/personalLoan/LayerPersonalLoanEHanaLink.vue';
 import LayerPersonalLoanEHanaFinance from '@/views/personalLoan/LayerPersonalLoanEHanaFinance.vue';
 import LayerPersonalLoanEHanaComplete from '@/views/personalLoan/LayerPersonalLoanEHanaComplete.vue';
-import LayerPersonalLoanIncomeInfoForm from '@/views/personalLoan/LayerPersonalLoanIncomeInfoForm.vue';
-import LayerPersonalLoanBusinessHouseForm from '@/views/personalLoan/LayerPersonalLoanBusinessHouseForm.vue';
 
 export default {
   components: {
@@ -39,8 +37,6 @@ export default {
     LayerPersonalLoanEHanaLink,
     LayerPersonalLoanEHanaFinance,
     LayerPersonalLoanEHanaComplete,
-    LayerPersonalLoanIncomeInfoForm,
-    LayerPersonalLoanBusinessHouseForm,
   },
   setup() {
     const layer001 = ref(null);
@@ -55,8 +51,6 @@ export default {
     const layer010 = ref(null);
     const layer011 = ref(null);
     const layer012 = ref(null);
-    const layer013 = ref(null);
-    const layer014 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -94,12 +88,6 @@ export default {
     const layer012Open = (e = {}) => {
       layer012.value.layer.open(e.target);
     };
-    const layer013Open = (e = {}) => {
-      layer013.value.layer.open(e.target);
-    };
-    const layer014Open = (e = {}) => {
-      layer014.value.layer.open(e.target);
-    };
 
     return {
       layer001,
@@ -114,8 +102,6 @@ export default {
       layer010,
       layer011,
       layer012,
-      layer013,
-      layer014,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -128,8 +114,6 @@ export default {
       layer010Open,
       layer011Open,
       layer012Open,
-      layer013Open,
-      layer014Open,
     };
   },
 };
@@ -214,18 +198,6 @@ export default {
           대출신청 완료<br />PF_M01_l009
         </BasicButton>
       </ButtonListItem>
-
-      <ButtonListItem>
-        <BasicButton @click="layer013Open">
-          소득 정보 입력<br />PF_M01_l003
-        </BasicButton>
-      </ButtonListItem>
-
-      <ButtonListItem>
-        <BasicButton @click="layer014Open">
-          주택정보 입력<br />PF_M09_l002
-        </BasicButton>
-      </ButtonListItem>
     </ButtonList>
 
     <LayerPersonalLoanIdentificationMethodSelect ref="layer001" />
@@ -240,7 +212,5 @@ export default {
     <LayerPersonalLoanEHanaLink ref="layer010" />
     <LayerPersonalLoanEHanaFinance ref="layer011" />
     <LayerPersonalLoanEHanaComplete ref="layer012" />
-    <LayerPersonalLoanIncomeInfoForm ref="layer013" />
-    <LayerPersonalLoanBusinessHouseForm ref="layer014" />
   </PageContents>
 </template>

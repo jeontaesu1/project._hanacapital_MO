@@ -1,6 +1,6 @@
 <script>
 // NC_M08_p001
-import { onMounted, onUnmounted, reactive } from 'vue';
+import { onMounted, onUnmounted } from 'vue';
 
 import { useUiHeaderStore } from '@/stores/ui/header';
 
@@ -12,30 +12,6 @@ import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
-
-const dummyData = () => [
-  {
-    name: '홍길동',
-    number: 'D1234-12345-123',
-    date: '2022.10.28',
-    deadline: '2022.11.10',
-    product: '상품명',
-  },
-  {
-    name: '홍길동',
-    number: 'D1234-12345-123',
-    date: '2022.10.28',
-    deadline: '2022.11.10',
-    product: '상품명',
-  },
-  {
-    name: '홍길동',
-    number: 'D1234-12345-123',
-    date: '2022.10.28',
-    deadline: '2022.11.10',
-    product: '상품명',
-  },
-];
 
 export default {
   components: {
@@ -49,10 +25,6 @@ export default {
     KeyValueText,
   },
   setup() {
-    const state = reactive({
-      data: dummyData(),
-    });
-
     const store = {
       ui: {
         header: useUiHeaderStore(),
@@ -62,7 +34,7 @@ export default {
     onMounted(() => {
       store.ui.header.setTitle(() => '하나원큐오토');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => ['menu']);
+      store.ui.header.setRightButtons(() => []);
     });
 
     onUnmounted(() => {
@@ -70,10 +42,6 @@ export default {
       store.ui.header.setLeftButtons();
       store.ui.header.setRightButtons();
     });
-
-    return {
-      state,
-    };
   },
 };
 </script>
@@ -90,17 +58,11 @@ export default {
       <!-- // Case : 내역 없을 경우 -->
 
       <ul class="reset-list">
-        <li
-          v-for="(item, i) in state.data"
-          :key="i"
-          class="row-margin-contents"
-        >
+        <li v-for="i in 3" :key="i" class="row-margin-contents">
           <BasicBox>
             <BasicBoxHead>
               <BasicBoxHeadLeft>
-                <h3 class="text-body-1 font-weight-medium">
-                  {{ item.name }}
-                </h3>
+                <h3 class="text-body-1 font-weight-medium">홍길동</h3>
               </BasicBoxHeadLeft>
             </BasicBoxHead>
 
@@ -111,7 +73,7 @@ export default {
                 }"
               >
                 <KeyValueTitle>채권번호</KeyValueTitle>
-                <KeyValueText>{{ item.number }}</KeyValueText>
+                <KeyValueText>D1234-12345-123</KeyValueText>
               </KeyValueItem>
 
               <KeyValueItem
@@ -120,7 +82,7 @@ export default {
                 }"
               >
                 <KeyValueTitle>실행일</KeyValueTitle>
-                <KeyValueText>{{ item.date }}</KeyValueText>
+                <KeyValueText>2022.10.28</KeyValueText>
               </KeyValueItem>
 
               <KeyValueItem
@@ -129,7 +91,7 @@ export default {
                 }"
               >
                 <KeyValueTitle>등록기한</KeyValueTitle>
-                <KeyValueText>{{ item.deadline }}</KeyValueText>
+                <KeyValueText>2022.11.10</KeyValueText>
               </KeyValueItem>
 
               <KeyValueItem
@@ -138,7 +100,7 @@ export default {
                 }"
               >
                 <KeyValueTitle>상품명</KeyValueTitle>
-                <KeyValueText>{{ item.product }}</KeyValueText>
+                <KeyValueText>상품명</KeyValueText>
               </KeyValueItem>
             </KeyValue>
           </BasicBox>

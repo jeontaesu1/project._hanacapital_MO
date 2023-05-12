@@ -13,11 +13,6 @@
     position: relative;
     display: flex;
     padding: 16px 0;
-
-    .qna__symbol {
-      color: $color-navy-50;
-      background-color: rgba($color-navy-50, 0.1);
-    }
   }
 
   &__symbol {
@@ -29,18 +24,35 @@
     text-align: center;
     @include font-size-default(12);
     font-weight: 500;
-    color: $color-gray-60;
-    background-color: $color-gray-20;
-    border-radius: 50px;
+    color: $color-navy-50;
+    border-radius: 50%;
     box-sizing: border-box;
+    background-color: rgba($color-navy-50, 0.1);
+
+    &--answer {
+      color: $color-gray-60;
+      background-color: $color-gray-20;
+    }
   }
 
-  &__block {
+  &__cell {
     flex: 1;
     min-width: 0;
   }
 
+  &__opener {
+    position: static;
+
+    &::before {
+      padding: 0;
+      top: 0;
+      left: 0;
+      z-index: 10;
+    }
+  }
+
   &__title {
+    margin: 0;
     @include font-size-default(16);
     font-weight: 500;
   }
@@ -51,20 +63,6 @@
     padding-left: 4px;
     display: flex;
     align-items: center;
-  }
-
-  &__opener {
-    flex: none;
-    width: 18px;
-    height: 18px;
-    position: static;
-
-    &::before {
-      padding: 0;
-      top: 0;
-      left: 0;
-      z-index: 10;
-    }
   }
 
   &__layer {
@@ -78,7 +76,9 @@
     box-sizing: border-box;
     background-color: $color-gray-10;
   }
+
   &__text {
+    margin: 0;
     @include font-size-default(14);
     color: $color-gray-70;
   }

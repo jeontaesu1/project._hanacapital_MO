@@ -27,19 +27,6 @@ import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 
-const dummyData = () => [
-  {
-    name: '강남구(쌍용)',
-    salesperson: '없음',
-    buisnessLicense: '123-12-*****',
-  },
-  {
-    name: '강남구(쌍용)',
-    salesperson: '없음',
-    buisnessLicense: '920101-2******',
-  },
-];
-
 export default {
   components: {
     UiLayer,
@@ -72,8 +59,6 @@ export default {
       searchError: false,
       birthDateError: false,
       phoneError: false,
-
-      data: dummyData(),
     });
 
     const layer = ref(null);
@@ -98,207 +83,191 @@ export default {
         </FullPopupHead>
       </template>
 
-      <div class="contents-wrap">
-        <div>
-          <BoxCheckList :wrap="true">
-            <BoxCheckListItem>
-              <BoxCheck
-                :minSide="true"
-                name="layerSalesNewCarAddContractSalespersonType"
-                id="layerSalesNewCarAddContractSalespersonType001"
-                :defaultChecked="true"
-              >
-                <BoxCheckLabel>성명/상호</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck
-                :minSide="true"
-                name="layerSalesNewCarAddContractSalespersonType"
-                id="layerSalesNewCarAddContractSalespersonType002"
-              >
-                <BoxCheckLabel>소속직원</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck
-                :minSide="true"
-                name="layerSalesNewCarAddContractSalespersonType"
-                id="layerSalesNewCarAddContractSalespersonType003"
-              >
-                <BoxCheckLabel>지점명</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck
-                :minSide="true"
-                name="layerSalesNewCarAddContractSalespersonType"
-                id="layerSalesNewCarAddContractSalespersonType004"
-              >
-                <BoxCheckLabel>주민/사업번호</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-          </BoxCheckList>
-
-          <FormList :classNames="{ wrap: 'row-margin-contents' }">
-            <FormListItem
-              titleText="검색어"
-              target="#layerSalesNewCarAddContractSalespersonSearch"
+      <div>
+        <BoxCheckList :wrap="true">
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="layerSalesNewCarAddContractSalespersonType"
+              id="layerSalesNewCarAddContractSalespersonType001"
+              :defaultChecked="true"
             >
-              <FormInvalid :error="state.searchError">
-                <InputBlock :error="state.searchError">
-                  <InputBlockCell :flexible="true">
-                    <BasicInput
-                      title="검색어"
-                      id="layerSalesNewCarAddContractSalespersonSearch"
-                    />
-                  </InputBlockCell>
-                </InputBlock>
-                <FormInvalidMessage>Error Message</FormInvalidMessage>
-              </FormInvalid>
-            </FormListItem>
-
-            <FormListItem
-              titleText="생년월일"
-              titleOptionalText="(8자리)"
-              target="#layerSalesNewCarAddContractSalespersonBirthDate"
+              <BoxCheckLabel>성명/상호</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="layerSalesNewCarAddContractSalespersonType"
+              id="layerSalesNewCarAddContractSalespersonType002"
             >
-              <FormInvalid :error="state.birthDateError">
-                <InputBlock :error="state.birthDateError">
-                  <InputBlockCell :flexible="true">
-                    <BasicInput
-                      type="number"
-                      pattern="\d*"
-                      title="생년월일 8자리"
-                      id="layerSalesNewCarAddContractSalespersonBirthDate"
-                    />
-                  </InputBlockCell>
-                </InputBlock>
-                <FormInvalidMessage>Error Message</FormInvalidMessage>
-              </FormInvalid>
-            </FormListItem>
-
-            <FormListItem
-              titleText="휴대폰 뒷번호"
-              titleOptionalText="(4자리)"
-              target="#layerSalesNewCarAddContractSalespersonPhone"
+              <BoxCheckLabel>소속직원</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="layerSalesNewCarAddContractSalespersonType"
+              id="layerSalesNewCarAddContractSalespersonType003"
             >
-              <FormInvalid :error="state.phoneError">
-                <InputBlock :error="state.phoneError">
-                  <InputBlockCell :flexible="true">
-                    <BasicInput
-                      type="number"
-                      pattern="\d*"
-                      title="휴대폰 뒷번호 4자리"
-                      id="layerSalesNewCarAddContractSalespersonPhone"
-                    />
-                  </InputBlockCell>
-                </InputBlock>
-                <FormInvalidMessage>Error Message</FormInvalidMessage>
-              </FormInvalid>
-            </FormListItem>
-          </FormList>
+              <BoxCheckLabel>지점명</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="layerSalesNewCarAddContractSalespersonType"
+              id="layerSalesNewCarAddContractSalespersonType004"
+            >
+              <BoxCheckLabel>주민/사업번호</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+        </BoxCheckList>
 
-          <div class="row-margin-contents-group">
-            <BasicButton :line="true" theme="secondary">조회</BasicButton>
-          </div>
+        <FormList :classNames="{ wrap: 'row-margin-contents' }">
+          <FormListItem
+            titleText="검색어"
+            target="#layerSalesNewCarAddContractSalespersonSearch"
+          >
+            <FormInvalid :error="state.searchError">
+              <InputBlock :error="state.searchError">
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    title="검색어"
+                    id="layerSalesNewCarAddContractSalespersonSearch"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem
+            titleText="생년월일"
+            titleOptionalText="(8자리)"
+            target="#layerSalesNewCarAddContractSalespersonBirthDate"
+          >
+            <FormInvalid :error="state.birthDateError">
+              <InputBlock :error="state.birthDateError">
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    type="number"
+                    pattern="\d*"
+                    title="생년월일 8자리"
+                    id="layerSalesNewCarAddContractSalespersonBirthDate"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem
+            titleText="휴대폰 뒷번호"
+            titleOptionalText="(4자리)"
+            target="#layerSalesNewCarAddContractSalespersonPhone"
+          >
+            <FormInvalid :error="state.phoneError">
+              <InputBlock :error="state.phoneError">
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    type="number"
+                    pattern="\d*"
+                    title="휴대폰 뒷번호 4자리"
+                    id="layerSalesNewCarAddContractSalespersonPhone"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+        </FormList>
+
+        <div class="row-margin-contents-group">
+          <BasicButton :line="true" theme="secondary">조회</BasicButton>
         </div>
-
-        <BasicHr className="row-margin-container-medium" />
-
-        <!-- Case : 검색 전 -->
-        <div class="contents-wrap">
-          <h3 class="text-body-5 color-gray-secondary row-margin-contents">
-            최근 실행 내역
-          </h3>
-
-          <!-- Case : 최근 실행 내역이 없을 경우 -->
-          <div :class="$style['empty']">
-            <p :class="$style['empty__text']">검색어를 입력해주세요.</p>
-          </div>
-          <!-- // Case : 최근 실행 내역이 없을 경우 -->
-
-          <!-- Case : 최근 실행 내역이 있을 경우 -->
-          <ul :class="$style['search-list']">
-            <li
-              :class="$style['search-list__item']"
-              v-for="(item, i) in state.data"
-              :key="i"
-            >
-              <button type="button" :class="$style['search-list__link']">
-                <span
-                  :class="[$style['search-list__text'], 'row-margin-small']"
-                >
-                  {{ item.name }}
-                </span>
-                <KeyValue align="left" margin="mini" size="medium">
-                  <KeyValueItem :classNames="{ item: 'text-body-4' }">
-                    <KeyValueTitle>소속직원</KeyValueTitle>
-                    <KeyValueText>{{ item.salesperson }}</KeyValueText>
-                  </KeyValueItem>
-                  <KeyValueItem :classNames="{ item: 'text-body-4' }">
-                    <KeyValueTitle>사업자번호</KeyValueTitle>
-                    <KeyValueText>{{ item.buisnessLicense }}</KeyValueText>
-                  </KeyValueItem>
-                </KeyValue>
-              </button>
-            </li>
-          </ul>
-          <!-- // Case : 최근 실행 내역이 있을 경우 -->
-        </div>
-        <!-- // Case : 검색 전 -->
-
-        <!-- Case : 검색 후 -->
-        <div class="contents-wrap">
-          <!-- Case : 검색 결과 없을 경우 -->
-          <div :class="$style['empty']">
-            <p :class="$style['empty__text']">검색된 결과가 없습니다.</p>
-          </div>
-          <!-- // Case : 검색 결과 없을 경우 -->
-
-          <!-- Case : 검색 결과 있을 경우 -->
-          <ul :class="$style['search-list']">
-            <li
-              :class="$style['search-list__item']"
-              v-for="(item, i) in state.data"
-              :key="i"
-            >
-              <button type="button" :class="$style['search-list__link']">
-                <span
-                  :class="[$style['search-list__text'], 'row-margin-small']"
-                >
-                  {{ item.name }}
-                </span>
-                <KeyValue align="left" margin="mini" size="medium">
-                  <KeyValueItem :classNames="{ item: 'text-body-4' }">
-                    <KeyValueTitle>소속직원</KeyValueTitle>
-                    <KeyValueText>{{ item.salesperson }}</KeyValueText>
-                  </KeyValueItem>
-                  <KeyValueItem :classNames="{ item: 'text-body-4' }">
-                    <KeyValueTitle>사업자번호</KeyValueTitle>
-                    <KeyValueText>{{ item.buisnessLicense }}</KeyValueText>
-                  </KeyValueItem>
-                </KeyValue>
-              </button>
-            </li>
-          </ul>
-
-          <div class="flex-box row-margin-container">
-            <div class="flex-box__cell flex-1">
-              <NoticeText :classNames="{ wrap: 'row-margin-item' }">
-                기존에 검색한 이력이 있나요?
-              </NoticeText>
-            </div>
-            <div class="flex-box__cell flex-box__cell--medium">
-              <TextButton :underline="true" theme="tertiary"
-                >최근 실행 내역</TextButton
-              >
-            </div>
-          </div>
-          <!-- // Case : 검색 결과 있을 경우 -->
-        </div>
-        <!-- // Case : 검색 후 -->
       </div>
+
+      <BasicHr className="row-margin-container-medium" />
+
+      <!-- Case : 검색 전 -->
+      <div class="contents-wrap">
+        <h3 class="text-body-5 color-gray-secondary row-margin-contents">
+          최근 실행 내역
+        </h3>
+
+        <!-- Case : 최근 실행 내역이 없을 경우 -->
+        <div :class="$style['empty']">
+          <p :class="$style['empty__text']">검색어를 입력해주세요.</p>
+        </div>
+        <!-- // Case : 최근 실행 내역이 없을 경우 -->
+
+        <!-- Case : 최근 실행 내역이 있을 경우 -->
+        <ul :class="$style['search-list']">
+          <li :class="$style['search-list__item']" v-for="i in 3" :key="i">
+            <button type="button" :class="$style['search-list__link']">
+              <span :class="[$style['search-list__text'], 'row-margin-small']">
+                강남구(쌍용)
+              </span>
+              <KeyValue align="left" margin="mini" size="medium">
+                <KeyValueItem :classNames="{ item: 'text-body-4' }">
+                  <KeyValueTitle>소속직원</KeyValueTitle>
+                  <KeyValueText>없음</KeyValueText>
+                </KeyValueItem>
+                <KeyValueItem :classNames="{ item: 'text-body-4' }">
+                  <KeyValueTitle>사업자번호</KeyValueTitle>
+                  <KeyValueText>123-12-*****</KeyValueText>
+                </KeyValueItem>
+              </KeyValue>
+            </button>
+          </li>
+        </ul>
+        <!-- // Case : 최근 실행 내역이 있을 경우 -->
+      </div>
+      <!-- // Case : 검색 전 -->
+
+      <!-- Case : 검색 후 -->
+      <div class="contents-wrap">
+        <!-- Case : 검색 결과 없을 경우 -->
+        <div :class="$style['empty']">
+          <p :class="$style['empty__text']">검색된 결과가 없습니다.</p>
+        </div>
+        <!-- // Case : 검색 결과 없을 경우 -->
+
+        <!-- Case : 검색 결과 있을 경우 -->
+        <ul :class="$style['search-list']">
+          <li :class="$style['search-list__item']" v-for="i in 4" :key="i">
+            <button type="button" :class="$style['search-list__link']">
+              <span :class="[$style['search-list__text'], 'row-margin-small']">
+                강남구(쌍용)
+              </span>
+              <KeyValue align="left" margin="mini" size="medium">
+                <KeyValueItem :classNames="{ item: 'text-body-4' }">
+                  <KeyValueTitle>소속직원</KeyValueTitle>
+                  <KeyValueText>없음</KeyValueText>
+                </KeyValueItem>
+                <KeyValueItem :classNames="{ item: 'text-body-4' }">
+                  <KeyValueTitle>사업자번호</KeyValueTitle>
+                  <KeyValueText>123-12-*****</KeyValueText>
+                </KeyValueItem>
+              </KeyValue>
+            </button>
+          </li>
+        </ul>
+
+        <div class="flex-box row-margin-container">
+          <div class="flex-box__cell flex-1">
+            <NoticeText>기존에 검색한 이력이 있나요?</NoticeText>
+          </div>
+          <div class="flex-box__cell flex-box__cell--medium">
+            <TextButton :underline="true" theme="tertiary" :block="true"
+              >최근 실행 내역</TextButton
+            >
+          </div>
+        </div>
+        <!-- // Case : 검색 결과 있을 경우 -->
+      </div>
+      <!-- // Case : 검색 후 -->
     </FullPopup>
   </UiLayer>
 </template>

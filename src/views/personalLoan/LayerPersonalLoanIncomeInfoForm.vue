@@ -129,18 +129,22 @@ export default {
           <FormList>
             <FormListItem
               titleText="직장명"
-              target="#layerPersonalLoanIncomeInfoFormWorkName"
+              target="#layerPersonalLoanIncomeInfoFormWorkNameSearch"
             >
               <FormInvalid :error="state.workNameError">
                 <InputBlock :error="state.workNameError">
                   <InputBlockCell :flexible="true">
                     <BasicInput
                       title="직장명"
+                      :disabled="true"
                       id="layerPersonalLoanIncomeInfoFormWorkName"
                     />
                   </InputBlockCell>
                   <template v-slot:right>
-                    <BasicButton size="mini" theme="tertiary"
+                    <BasicButton
+                      size="mini"
+                      theme="tertiary"
+                      id="layerPersonalLoanIncomeInfoFormWorkNameSearch"
                       >직장 검색</BasicButton
                     >
                   </template>

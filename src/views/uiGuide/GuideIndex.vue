@@ -498,8 +498,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/personal-loan-001',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.05.12',
         log: [],
       },
       {
@@ -520,16 +520,12 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/personal-loan-e-hana-001',
-        status: 'partend',
+        status: 'end',
         create: '2023.03.31',
         log: [
           {
             date: '2023.04.07',
             text: '팝업 추가\n- e하나신용대출(연계) 안내',
-          },
-          {
-            date: '2023.05.12',
-            text: '팝업 추가\n- 소득 정보 입력\n- 주택정보 입력',
           },
         ],
       },
@@ -551,7 +547,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/personal-loan-happiness-apartment-001',
-        status: 'partend',
+        status: 'end',
         create: '2023.03.31',
         log: [
           {
@@ -593,7 +589,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/personal-loan-one-q-auto-001',
-        status: 'partend',
+        status: 'end',
         create: '2023.03.31',
         log: [],
       },
@@ -615,7 +611,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/personal-loan-best-customer-001',
-        status: 'partend',
+        status: 'end',
         create: '2023.03.31',
         log: [],
       },
@@ -686,9 +682,14 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/personal-loan-business-house-001',
-        status: 'partend',
+        status: 'end',
         create: '2023.03.31',
-        log: [],
+        log: [
+          {
+            date: '2023.05.12',
+            text: '팝업 추가\n- 주택정보 입력',
+          },
+        ],
       },
       {
         depth2: '내구소비재할부\nPF_M10_p001',

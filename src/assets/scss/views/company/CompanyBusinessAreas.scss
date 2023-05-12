@@ -29,3 +29,31 @@
     text-align: center;
   }
 }
+
+.nation {
+  display: flex;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: $color-navy-05;
+
+  &__left {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__right {
+    flex: none;
+    margin-left: 16px;
+  }
+
+  &__sub {
+    @include font-size-default(13);
+    color: $color-gray-70;
+    margin-bottom: 2px;
+  }
+
+  &__title {
+    @include font-size-default(16);
+    font-weight: 500;
+  }
+}

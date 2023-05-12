@@ -8,8 +8,7 @@ import PageContents from '@/components/ui/layout/PageContents.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-
-import IconDownload from '@/assets/images/icon/download.svg?component';
+import DownloadButton from '@/components/ui/button/DownloadButton.vue';
 
 export default {
   components: {
@@ -17,7 +16,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    IconDownload,
+    DownloadButton,
   },
   setup() {
     const store = {
@@ -29,7 +28,7 @@ export default {
     onMounted(() => {
       store.ui.header.setTitle(() => 'IR정보');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => ['menu']);
+      store.ui.header.setRightButtons(() => []);
     });
 
     onUnmounted(() => {
@@ -48,34 +47,38 @@ export default {
         <h2 :class="$style['board-detail__title']">2022년 2분기 IR 자료</h2>
         <p :class="$style['board-detail__sub']">2022.08.09</p>
       </div>
+
       <section :class="$style['board-detail__contents']">
         //게시물 내용 노출
       </section>
+
       <div :class="$style['board-detail__foot']">
-        <div
-          :class="[
-            $style['download'],
-            $style['download--align-center'],
-            $style['download--theme-secondary'],
-          ]"
-        >
-          <div :class="$style['download__block']">
-            <p class="text-body-4 font-weight-medium">
-              하나캐피탈IR_2022.2Q.pdf
-            </p>
-          </div>
-          <a
-            href=""
-            :class="[
-              $style['download__button'],
-              $style['download__button--secondary'],
-            ]"
-            download
-          >
-            <IconDownload />
-            <span class="for-a11y">다운로드</span>
-          </a>
-        </div>
+        <ul class="reset-list">
+          <li class="row-margin-item-group">
+            <div class="flex-box">
+              <div class="flex-box__cell flex-1">
+                <div class="text-body-4 font-weight-medium">
+                  하나캐피탈IR_2022.2Q.pdf
+                </div>
+              </div>
+              <div class="flex-box__cell">
+                <DownloadButton tagName="a" href="/foo/bar.pdf" download />
+              </div>
+            </div>
+          </li>
+          <li class="row-margin-item-group">
+            <div class="flex-box">
+              <div class="flex-box__cell flex-1">
+                <div class="text-body-4 font-weight-medium">
+                  하나캐피탈IR_2022.2Q.pdf
+                </div>
+              </div>
+              <div class="flex-box__cell">
+                <DownloadButton tagName="a" href="/foo/bar.pdf" download />
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
 
@@ -90,7 +93,7 @@ export default {
             :line="true"
             theme="quaternary"
             tagName="RouterLink"
-            to="/lm-blog/sms-counseling"
+            to="/company/ir-list"
           >
             목록
           </BasicButton>

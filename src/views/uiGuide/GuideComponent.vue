@@ -94,6 +94,7 @@ import RoundButton from '@/components/ui/button/RoundButton.vue';
 import ColorSelect from '@/components/ui/form/ColorSelect.vue';
 import ColorSelectList from '@/components/ui/form/ColorSelectList.vue';
 import ColorSelectListItem from '@/components/ui/form/ColorSelectListItem.vue';
+import DownloadButton from '@/components/ui/button/DownloadButton.vue';
 
 import BrandLogo001 from '@/assets/images/card-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/card-logo/lotte.svg?component';
@@ -133,7 +134,6 @@ import IconLink from '@/assets/images/icon/link.svg?component';
 import IconStar from '@/assets/images/icon/star.svg?component';
 import IconTell from '@/assets/images/icon/tell.svg?component';
 import IconDropdown from '@/assets/images/icon/dropdown.svg?component';
-import IconDownload from '@/assets/images/icon/download.svg?component';
 
 export default {
   components: {
@@ -227,6 +227,7 @@ export default {
     ColorSelect,
     ColorSelectList,
     ColorSelectListItem,
+    DownloadButton,
     IconAdd,
     BrandLogo001,
     BrandLogo002,
@@ -266,7 +267,6 @@ export default {
     IconStar,
     IconTell,
     IconDropdown,
-    IconDownload,
   },
 
   setup() {
@@ -363,6 +363,193 @@ export default {
 <template>
   <div class="test-component-wrap">
     <h1 class="test-title">Components</h1>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Layer</h2>
+      <div class="test-section-sub">
+        <UiLayer ref="layerTest001" type="full" v-slot="layerSlotProps">
+          <FullPopup>
+            <template v-slot:head>
+              <FullPopupHead>
+                <template v-slot:left>
+                  <PopupButton type="back" />
+                  <PopupButton type="back">커스텀 텍스트</PopupButton>
+                </template>
+                <PopupTitle>타이틀</PopupTitle>
+                <template v-slot:right>
+                  <PopupButton @click="layerSlotProps.close()" />
+                </template>
+              </FullPopupHead>
+            </template>
+
+            <PopupText>// contents</PopupText>
+
+            <BasicButton @click="layerOpenTest002">
+              하단 레이어 팝업
+            </BasicButton>
+
+            <template v-slot:foot>
+              <ButtonList
+                :classNames="{
+                  wrap: 'row-margin-none',
+                }"
+              >
+                <ButtonListItem>
+                  <BasicButton :line="true" theme="quaternary"
+                    >Button 1</BasicButton
+                  >
+                </ButtonListItem>
+                <ButtonListItem>
+                  <BasicButton>Button 2</BasicButton>
+                </ButtonListItem>
+              </ButtonList>
+            </template>
+          </FullPopup>
+        </UiLayer>
+
+        <UiLayer
+          ref="layerTest002"
+          type="toast"
+          :backgroundClose="true"
+          v-slot="layerSlotProps"
+        >
+          <ToastPopup>
+            <template v-slot:outerTop>
+              <div class="inline-wrap align-right">
+                <TextButton
+                  :classNames="{ wrap: 'text-body-4 color-white' }"
+                  :underline="true"
+                >
+                  2주간 다시 보지 않기
+                </TextButton>
+              </div>
+            </template>
+
+            <template v-slot:head>
+              <ToastPopupHead>
+                <PopupTitle>타이틀</PopupTitle>
+                <PopupSubTitle>서브 타이틀 및 텍스트</PopupSubTitle>
+                <template v-slot:right>
+                  <PopupButton @click="layerSlotProps.close()" />
+                </template>
+              </ToastPopupHead>
+            </template>
+
+            <PopupText>// contents</PopupText>
+            <PopupText>// contents</PopupText>
+            <PopupText>// contents</PopupText>
+            <PopupText>// contents</PopupText>
+            <PopupText>// contents</PopupText>
+            <PopupText>// contents</PopupText>
+
+            <BasicButton @click="layerOpenTest003">
+              하단 레이어 팝업 (고정 높이값)
+            </BasicButton>
+
+            <template v-slot:foot>
+              <ButtonList
+                :classNames="{
+                  wrap: 'row-margin-none',
+                }"
+              >
+                <ButtonListItem>
+                  <BasicButton :line="true" theme="quaternary"
+                    >Button 1</BasicButton
+                  >
+                </ButtonListItem>
+                <ButtonListItem>
+                  <BasicButton>Button 2</BasicButton>
+                </ButtonListItem>
+              </ButtonList>
+            </template>
+          </ToastPopup>
+        </UiLayer>
+
+        <UiLayer ref="layerTest003" type="toast-fix" v-slot="layerSlotProps">
+          <ToastPopup :fix="true">
+            <template v-slot:head>
+              <ToastPopupHead>
+                <PopupTitle>타이틀</PopupTitle>
+                <PopupSubTitle>서브 타이틀 및 텍스트</PopupSubTitle>
+              </ToastPopupHead>
+            </template>
+
+            <PopupText>// contents</PopupText>
+            <PopupText>// contents</PopupText>
+            <PopupText>// contents</PopupText>
+            <PopupText>// contents</PopupText>
+            <PopupText>// contents</PopupText>
+            <PopupText>// contents</PopupText>
+
+            <BasicButton @click="layerOpenTest004">
+              레이어 팝업 열기
+            </BasicButton>
+
+            <template v-slot:foot>
+              <ButtonList
+                :classNames="{
+                  wrap: 'row-margin-none',
+                }"
+              >
+                <ButtonListItem>
+                  <BasicButton
+                    :line="true"
+                    theme="quaternary"
+                    @click="layerSlotProps.close()"
+                    >Button 1</BasicButton
+                  >
+                </ButtonListItem>
+                <ButtonListItem>
+                  <BasicButton @click="layerSlotProps.close()"
+                    >Button 2</BasicButton
+                  >
+                </ButtonListItem>
+              </ButtonList>
+            </template>
+          </ToastPopup>
+        </UiLayer>
+
+        <UiLayer ref="layerTest004" v-slot="layerSlotProps">
+          <AlertPopup>
+            <template v-slot:head>
+              <PopupTitle>타이틀</PopupTitle>
+            </template>
+
+            <PopupText>// contents</PopupText>
+            <PopupText>// contents</PopupText>
+
+            <template v-slot:foot>
+              <ButtonList
+                :classNames="{
+                  wrap: 'row-margin-none',
+                }"
+              >
+                <ButtonListItem>
+                  <BasicButton
+                    :line="true"
+                    theme="quaternary"
+                    @click="layerSlotProps.close()"
+                    >Button 1</BasicButton
+                  >
+                </ButtonListItem>
+                <ButtonListItem>
+                  <BasicButton @click="layerSlotProps.close()"
+                    >Button 2</BasicButton
+                  >
+                </ButtonListItem>
+              </ButtonList>
+            </template>
+          </AlertPopup>
+        </UiLayer>
+
+        <BasicButton @click="layerOpenTest001">풀 팝업</BasicButton>
+        <BasicButton @click="layerOpenTest002">하단 레이어 팝업</BasicButton>
+        <BasicButton @click="layerOpenTest003">
+          하단 레이어 팝업 (고정 높이값)
+        </BasicButton>
+        <BasicButton @click="layerOpenTest004">얼럿형 팝업</BasicButton>
+      </div>
+    </section>
 
     <section class="test-section">
       <h2 class="test-section-title">BasicButton</h2>
@@ -843,7 +1030,7 @@ export default {
     </section>
 
     <section class="test-section">
-      <h2 class="test-section-title">Upload Input</h2>
+      <h2 class="test-section-title">Upload Button</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
         <div :class="$style['upload-button']">
@@ -856,6 +1043,19 @@ export default {
             <span :class="$style['upload-button__text']">이미지 첨부</span>
           </label>
         </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Download Button</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <DownloadButton />
+        <DownloadButton tagName="a" href="/foo/bar.pdf" download />
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Secondary</h3>
+        <DownloadButton theme="secondary" />
       </div>
     </section>
 
@@ -895,193 +1095,6 @@ export default {
             </KeyValueItem>
           </KeyValue>
         </ContentsButton>
-      </div>
-    </section>
-
-    <section class="test-section">
-      <h2 class="test-section-title">Layer</h2>
-      <div class="test-section-sub">
-        <UiLayer ref="layerTest001" type="full" v-slot="layerSlotProps">
-          <FullPopup>
-            <template v-slot:head>
-              <FullPopupHead>
-                <template v-slot:left>
-                  <PopupButton type="back" />
-                  <PopupButton type="back">커스텀 텍스트</PopupButton>
-                </template>
-                <PopupTitle>타이틀</PopupTitle>
-                <template v-slot:right>
-                  <PopupButton @click="layerSlotProps.close()" />
-                </template>
-              </FullPopupHead>
-            </template>
-
-            <PopupText>// contents</PopupText>
-
-            <BasicButton @click="layerOpenTest002">
-              하단 레이어 팝업
-            </BasicButton>
-
-            <template v-slot:foot>
-              <ButtonList
-                :classNames="{
-                  wrap: 'row-margin-none',
-                }"
-              >
-                <ButtonListItem>
-                  <BasicButton :line="true" theme="quaternary"
-                    >Button 1</BasicButton
-                  >
-                </ButtonListItem>
-                <ButtonListItem>
-                  <BasicButton>Button 2</BasicButton>
-                </ButtonListItem>
-              </ButtonList>
-            </template>
-          </FullPopup>
-        </UiLayer>
-
-        <UiLayer
-          ref="layerTest002"
-          type="toast"
-          :backgroundClose="true"
-          v-slot="layerSlotProps"
-        >
-          <ToastPopup>
-            <template v-slot:outerTop>
-              <div class="inline-wrap align-right">
-                <TextButton
-                  :classNames="{ wrap: 'text-body-4 color-white' }"
-                  :underline="true"
-                >
-                  2주간 다시 보지 않기
-                </TextButton>
-              </div>
-            </template>
-
-            <template v-slot:head>
-              <ToastPopupHead>
-                <PopupTitle>타이틀</PopupTitle>
-                <PopupSubTitle>서브 타이틀 및 텍스트</PopupSubTitle>
-                <template v-slot:right>
-                  <PopupButton @click="layerSlotProps.close()" />
-                </template>
-              </ToastPopupHead>
-            </template>
-
-            <PopupText>// contents</PopupText>
-            <PopupText>// contents</PopupText>
-            <PopupText>// contents</PopupText>
-            <PopupText>// contents</PopupText>
-            <PopupText>// contents</PopupText>
-            <PopupText>// contents</PopupText>
-
-            <BasicButton @click="layerOpenTest003">
-              하단 레이어 팝업 (고정 높이값)
-            </BasicButton>
-
-            <template v-slot:foot>
-              <ButtonList
-                :classNames="{
-                  wrap: 'row-margin-none',
-                }"
-              >
-                <ButtonListItem>
-                  <BasicButton :line="true" theme="quaternary"
-                    >Button 1</BasicButton
-                  >
-                </ButtonListItem>
-                <ButtonListItem>
-                  <BasicButton>Button 2</BasicButton>
-                </ButtonListItem>
-              </ButtonList>
-            </template>
-          </ToastPopup>
-        </UiLayer>
-
-        <UiLayer ref="layerTest003" type="toast-fix" v-slot="layerSlotProps">
-          <ToastPopup :fix="true">
-            <template v-slot:head>
-              <ToastPopupHead>
-                <PopupTitle>타이틀</PopupTitle>
-                <PopupSubTitle>서브 타이틀 및 텍스트</PopupSubTitle>
-              </ToastPopupHead>
-            </template>
-
-            <PopupText>// contents</PopupText>
-            <PopupText>// contents</PopupText>
-            <PopupText>// contents</PopupText>
-            <PopupText>// contents</PopupText>
-            <PopupText>// contents</PopupText>
-            <PopupText>// contents</PopupText>
-
-            <BasicButton @click="layerOpenTest004">
-              레이어 팝업 열기
-            </BasicButton>
-
-            <template v-slot:foot>
-              <ButtonList
-                :classNames="{
-                  wrap: 'row-margin-none',
-                }"
-              >
-                <ButtonListItem>
-                  <BasicButton
-                    :line="true"
-                    theme="quaternary"
-                    @click="layerSlotProps.close()"
-                    >Button 1</BasicButton
-                  >
-                </ButtonListItem>
-                <ButtonListItem>
-                  <BasicButton @click="layerSlotProps.close()"
-                    >Button 2</BasicButton
-                  >
-                </ButtonListItem>
-              </ButtonList>
-            </template>
-          </ToastPopup>
-        </UiLayer>
-
-        <UiLayer ref="layerTest004" v-slot="layerSlotProps">
-          <AlertPopup>
-            <template v-slot:head>
-              <PopupTitle>타이틀</PopupTitle>
-            </template>
-
-            <PopupText>// contents</PopupText>
-            <PopupText>// contents</PopupText>
-
-            <template v-slot:foot>
-              <ButtonList
-                :classNames="{
-                  wrap: 'row-margin-none',
-                }"
-              >
-                <ButtonListItem>
-                  <BasicButton
-                    :line="true"
-                    theme="quaternary"
-                    @click="layerSlotProps.close()"
-                    >Button 1</BasicButton
-                  >
-                </ButtonListItem>
-                <ButtonListItem>
-                  <BasicButton @click="layerSlotProps.close()"
-                    >Button 2</BasicButton
-                  >
-                </ButtonListItem>
-              </ButtonList>
-            </template>
-          </AlertPopup>
-        </UiLayer>
-
-        <BasicButton @click="layerOpenTest001">풀 팝업</BasicButton>
-        <BasicButton @click="layerOpenTest002">하단 레이어 팝업</BasicButton>
-        <BasicButton @click="layerOpenTest003">
-          하단 레이어 팝업 (고정 높이값)
-        </BasicButton>
-        <BasicButton @click="layerOpenTest004">얼럿형 팝업</BasicButton>
       </div>
     </section>
 
@@ -1418,68 +1431,33 @@ export default {
     </section>
 
     <section class="test-section">
-      <h2 class="test-section-title">CheckBox list</h2>
+      <h2 class="test-section-title">Check list</h2>
 
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
 
-        <div :class="$style['check-box-list']">
-          <ul :class="$style['check-box-list__list']">
-            <li :class="$style['check-box-list__item']">
+        <div :class="$style['check-list']">
+          <ul :class="$style['check-list__list']">
+            <li :class="$style['check-list__item']">
               <CheckBox id="testCheck001_001" theme="quinary">
                 <CheckBoxObject />
                 <CheckBoxLabelText>전화</CheckBoxLabelText>
               </CheckBox>
             </li>
-            <li :class="$style['check-box-list__item']">
+            <li :class="$style['check-list__item']">
               <CheckBox id="testCheck001_002" theme="quinary">
                 <CheckBoxObject />
                 <CheckBoxLabelText>문자메시지</CheckBoxLabelText>
               </CheckBox>
             </li>
-            <li :class="$style['check-box-list__item']">
+            <li :class="$style['check-list__item']">
               <CheckBox id="testCheck001_003" theme="quinary">
                 <CheckBoxObject />
                 <CheckBoxLabelText>우편</CheckBoxLabelText>
               </CheckBox>
             </li>
-            <li :class="$style['check-box-list__item']">
+            <li :class="$style['check-list__item']">
               <CheckBox id="testCheck001_004" theme="quinary">
-                <CheckBoxObject />
-                <CheckBoxLabelText>이메일</CheckBoxLabelText>
-              </CheckBox>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="test-section-sub">
-        <h3 class="test-section-sub-title">Wrap - col 2</h3>
-
-        <div
-          :class="[$style['check-box-list'], $style['check-box-list--wrap']]"
-        >
-          <ul :class="$style['check-box-list__list']">
-            <li :class="$style['check-box-list__item']">
-              <CheckBox id="testCheck002_001" theme="quinary">
-                <CheckBoxObject />
-                <CheckBoxLabelText>전화</CheckBoxLabelText>
-              </CheckBox>
-            </li>
-            <li :class="$style['check-box-list__item']">
-              <CheckBox id="testCheck002_002" theme="quinary">
-                <CheckBoxObject />
-                <CheckBoxLabelText>문자메시지</CheckBoxLabelText>
-              </CheckBox>
-            </li>
-            <li :class="$style['check-box-list__item']">
-              <CheckBox id="testCheck002_003" theme="quinary">
-                <CheckBoxObject />
-                <CheckBoxLabelText>우편</CheckBoxLabelText>
-              </CheckBox>
-            </li>
-            <li :class="$style['check-box-list__item']">
-              <CheckBox id="testCheck002_004" theme="quinary">
                 <CheckBoxObject />
                 <CheckBoxLabelText>이메일</CheckBoxLabelText>
               </CheckBox>
@@ -7264,26 +7242,26 @@ export default {
               </div>
               <div :class="$style['bill-list__contents']">
                 <div :class="$style['bill-list__contents-left']">
-                  <dl :class="$style['bill-list__contents-list']">
-                    <div :class="$style['bill-list__contents-item']">
-                      <dt :class="$style['bill-list__contents-key']">원금</dt>
-                      <dd :class="$style['bill-list__contents-value']">
+                  <dl :class="$style['bill-list__sub']">
+                    <div :class="$style['bill-list__sub-item']">
+                      <dt :class="$style['bill-list__sub-key']">원금</dt>
+                      <dd :class="$style['bill-list__sub-value']">
                         912,232,321 원
                       </dd>
                     </div>
-                    <div :class="$style['bill-list__contents-item']">
-                      <dt :class="$style['bill-list__contents-key']">이자</dt>
-                      <dd :class="$style['bill-list__contents-value']">
+                    <div :class="$style['bill-list__sub-item']">
+                      <dt :class="$style['bill-list__sub-key']">이자</dt>
+                      <dd :class="$style['bill-list__sub-value']">
                         902,123,223 원
                       </dd>
                     </div>
                   </dl>
                 </div>
                 <div :class="$style['bill-list__contents-right']">
-                  <dl :class="$style['bill-list__contents-list']">
-                    <div :class="$style['bill-list__contents-item']">
-                      <dt :class="$style['bill-list__contents-key']">잔액</dt>
-                      <dd :class="$style['bill-list__contents-value']">
+                  <dl :class="$style['bill-list__sub']">
+                    <div :class="$style['bill-list__sub-item']">
+                      <dt :class="$style['bill-list__sub-key']">잔액</dt>
+                      <dd :class="$style['bill-list__sub-value']">
                         982,232,123 원
                       </dd>
                     </div>
@@ -7302,26 +7280,26 @@ export default {
               </div>
               <div :class="$style['bill-list__contents']">
                 <div :class="$style['bill-list__contents-left']">
-                  <dl :class="$style['bill-list__contents-list']">
-                    <div :class="$style['bill-list__contents-item']">
-                      <dt :class="$style['bill-list__contents-key']">원금</dt>
-                      <dd :class="$style['bill-list__contents-value']">
+                  <dl :class="$style['bill-list__sub']">
+                    <div :class="$style['bill-list__sub-item']">
+                      <dt :class="$style['bill-list__sub-key']">원금</dt>
+                      <dd :class="$style['bill-list__sub-value']">
                         912,232,321 원
                       </dd>
                     </div>
-                    <div :class="$style['bill-list__contents-item']">
-                      <dt :class="$style['bill-list__contents-key']">이자</dt>
-                      <dd :class="$style['bill-list__contents-value']">
+                    <div :class="$style['bill-list__sub-item']">
+                      <dt :class="$style['bill-list__sub-key']">이자</dt>
+                      <dd :class="$style['bill-list__sub-value']">
                         902,123,223 원
                       </dd>
                     </div>
                   </dl>
                 </div>
                 <div :class="$style['bill-list__contents-right']">
-                  <dl :class="$style['bill-list__contents-list']">
-                    <div :class="$style['bill-list__contents-item']">
-                      <dt :class="$style['bill-list__contents-key']">잔액</dt>
-                      <dd :class="$style['bill-list__contents-value']">
+                  <dl :class="$style['bill-list__sub']">
+                    <div :class="$style['bill-list__sub-item']">
+                      <dt :class="$style['bill-list__sub-key']">잔액</dt>
+                      <dd :class="$style['bill-list__sub-value']">
                         982,232,123 원
                       </dd>
                     </div>
@@ -7340,26 +7318,26 @@ export default {
               </div>
               <div :class="$style['bill-list__contents']">
                 <div :class="$style['bill-list__contents-left']">
-                  <dl :class="$style['bill-list__contents-list']">
-                    <div :class="$style['bill-list__contents-item']">
-                      <dt :class="$style['bill-list__contents-key']">원금</dt>
-                      <dd :class="$style['bill-list__contents-value']">
+                  <dl :class="$style['bill-list__sub']">
+                    <div :class="$style['bill-list__sub-item']">
+                      <dt :class="$style['bill-list__sub-key']">원금</dt>
+                      <dd :class="$style['bill-list__sub-value']">
                         912,232,321 원
                       </dd>
                     </div>
-                    <div :class="$style['bill-list__contents-item']">
-                      <dt :class="$style['bill-list__contents-key']">이자</dt>
-                      <dd :class="$style['bill-list__contents-value']">
+                    <div :class="$style['bill-list__sub-item']">
+                      <dt :class="$style['bill-list__sub-key']">이자</dt>
+                      <dd :class="$style['bill-list__sub-value']">
                         902,123,223 원
                       </dd>
                     </div>
                   </dl>
                 </div>
                 <div :class="$style['bill-list__contents-right']">
-                  <dl :class="$style['bill-list__contents-list']">
-                    <div :class="$style['bill-list__contents-item']">
-                      <dt :class="$style['bill-list__contents-key']">잔액</dt>
-                      <dd :class="$style['bill-list__contents-value']">
+                  <dl :class="$style['bill-list__sub']">
+                    <div :class="$style['bill-list__sub-item']">
+                      <dt :class="$style['bill-list__sub-key']">잔액</dt>
+                      <dd :class="$style['bill-list__sub-value']">
                         982,232,123 원
                       </dd>
                     </div>
@@ -7624,7 +7602,7 @@ export default {
     </section>
 
     <section class="test-section">
-      <h2 class="test-section-title">Q&A List</h2>
+      <h2 class="test-section-title">Q&A</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
 
@@ -7633,11 +7611,11 @@ export default {
             <UiAccordionItem :classNames="{ item: $style['qna__item'] }">
               <div :class="$style['qna__head']">
                 <div :class="$style['qna__symbol']">Q</div>
-                <div :class="$style['qna__block']">
-                  <div :class="$style['qna__title']">
+                <div :class="$style['qna__cell']">
+                  <h3 :class="$style['qna__title']">
                     하나캐피탈 멤버십 가입은<br />
                     어떻게 하나요?
-                  </div>
+                  </h3>
                 </div>
                 <div :class="$style['qna__right']">
                   <UiAccordionOpener
@@ -7648,11 +7626,21 @@ export default {
 
               <UiAccordionLayer :classNames="{ layer: $style['qna__layer'] }">
                 <div :class="$style['qna__contents']">
-                  <div :class="$style['qna__symbol']">A</div>
-                  <div :class="$style['qna__text']">
-                    하나캐피탈 회원가입은 성별 나이 특정제한 없이 하나캐피탈
-                    이용 및 관심있으신 손님이시면 누구나 가입가능하며, 홈페이지
-                    및 모바일에서 멤버십 가입하기를 통해 가입하실 수 있습니다.
+                  <div
+                    :class="[
+                      $style['qna__symbol'],
+                      $style['qna__symbol--answer'],
+                    ]"
+                  >
+                    A
+                  </div>
+                  <div :class="$style['qna__cell']">
+                    <p :class="$style['qna__text']">
+                      하나캐피탈 회원가입은 성별 나이 특정제한 없이 하나캐피탈
+                      이용 및 관심있으신 손님이시면 누구나 가입가능하며,
+                      홈페이지 및 모바일에서 멤버십 가입하기를 통해 가입하실 수
+                      있습니다.
+                    </p>
                   </div>
                 </div>
               </UiAccordionLayer>
@@ -7660,11 +7648,11 @@ export default {
             <UiAccordionItem :classNames="{ item: $style['qna__item'] }">
               <div :class="$style['qna__head']">
                 <div :class="$style['qna__symbol']">Q</div>
-                <div :class="$style['qna__block']">
-                  <div :class="$style['qna__title']">
-                    하나캐피탈 멤버십 가입은<br />
-                    어떻게 하나요?
-                  </div>
+                <div :class="$style['qna__cell']">
+                  <h3 :class="$style['qna__title']">
+                    하나캐피탈 멤버십 가입 시<br />
+                    연회비나 기타비용이 들어가나요?
+                  </h3>
                 </div>
                 <div :class="$style['qna__right']">
                   <UiAccordionOpener
@@ -7675,11 +7663,91 @@ export default {
 
               <UiAccordionLayer :classNames="{ layer: $style['qna__layer'] }">
                 <div :class="$style['qna__contents']">
-                  <div :class="$style['qna__symbol']">A</div>
-                  <div :class="$style['qna__text']">
-                    하나캐피탈 회원가입은 성별 나이 특정제한 없이 하나캐피탈
-                    이용 및 관심있으신 손님이시면 누구나 가입가능하며, 홈페이지
-                    및 모바일에서 멤버십 가입하기를 통해 가입하실 수 있습니다.
+                  <div
+                    :class="[
+                      $style['qna__symbol'],
+                      $style['qna__symbol--answer'],
+                    ]"
+                  >
+                    A
+                  </div>
+                  <div :class="$style['qna__cell']">
+                    <p :class="$style['qna__text']">
+                      하나캐피탈 멤버십은 손님들께 전액 무료로 제공되는 서비스로
+                      추가비용이 발생하지 않습니다.
+                    </p>
+                  </div>
+                </div>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+            <UiAccordionItem :classNames="{ item: $style['qna__item'] }">
+              <div :class="$style['qna__head']">
+                <div :class="$style['qna__symbol']">Q</div>
+                <div :class="$style['qna__cell']">
+                  <h3 :class="$style['qna__title']">
+                    보험 서비스는<br />
+                    직접 신청해야만 하나요?
+                  </h3>
+                </div>
+                <div :class="$style['qna__right']">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['qna__opener'] }"
+                  />
+                </div>
+              </div>
+
+              <UiAccordionLayer :classNames="{ layer: $style['qna__layer'] }">
+                <div :class="$style['qna__contents']">
+                  <div
+                    :class="[
+                      $style['qna__symbol'],
+                      $style['qna__symbol--answer'],
+                    ]"
+                  >
+                    A
+                  </div>
+                  <div :class="$style['qna__cell']">
+                    <p :class="$style['qna__text']">
+                      네. 사고 시 하나손해보험 고객센터로 직접 접수해주셔야
+                      보상이 가능합니다.
+                    </p>
+                  </div>
+                </div>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+            <UiAccordionItem :classNames="{ item: $style['qna__item'] }">
+              <div :class="$style['qna__head']">
+                <div :class="$style['qna__symbol']">Q</div>
+                <div :class="$style['qna__cell']">
+                  <h3 :class="$style['qna__title']">
+                    하나캐피탈 멤버십 탈회는<br />
+                    어떻게 해야하나요?
+                  </h3>
+                </div>
+                <div :class="$style['qna__right']">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['qna__opener'] }"
+                  />
+                </div>
+              </div>
+
+              <UiAccordionLayer :classNames="{ layer: $style['qna__layer'] }">
+                <div :class="$style['qna__contents']">
+                  <div
+                    :class="[
+                      $style['qna__symbol'],
+                      $style['qna__symbol--answer'],
+                    ]"
+                  >
+                    A
+                  </div>
+                  <div :class="$style['qna__cell']">
+                    <p :class="$style['qna__text']">
+                      탈회를 원하실 경우, 고객센터(1800-1110) 또는 하나캐피탈
+                      홈페이지 및 WEB/APP을 통해 편리하게 처리 가능합니다.<br />
+                      단, 탈회 즉시 모든 멤버십 서비스를 이용할 수 없으니
+                      신중하게 생각하시길 바랍니다.
+                    </p>
                   </div>
                 </div>
               </UiAccordionLayer>
@@ -7938,71 +8006,6 @@ export default {
             </UiAccordionLayer>
           </UiAccordionItem>
         </UiAccordion>
-      </div>
-    </section>
-
-    <section class="test-section">
-      <h2 class="test-section-title">Download</h2>
-      <div class="test-section-sub">
-        <h3 class="test-section-sub-title">Default</h3>
-        <div :class="$style['download']">
-          <div :class="$style['download__block']">
-            <h4 class="text-body-1 font-weight-medium">
-              건강한금융 금융생활정보
-            </h4>
-            <p class="text-body-4 font-weight-light row-margin-small">
-              2022.10.25
-            </p>
-          </div>
-          <a href="" :class="$style['download__button']" download>
-            <IconDownload />
-            <span class="for-a11y">다운로드</span>
-          </a>
-        </div>
-      </div>
-      <div class="test-section-sub">
-        <h3 class="test-section-sub-title">align-center</h3>
-        <div :class="[$style['download'], $style['download--align-center']]">
-          <div :class="$style['download__block']">
-            <h4 class="text-body-1 font-weight-medium">
-              건강한금융 금융생활정보
-            </h4>
-            <p class="text-body-4 font-weight-light row-margin-small">
-              2022.10.25
-            </p>
-          </div>
-          <a href="" :class="$style['download__button']" download>
-            <IconDownload />
-            <span class="for-a11y">다운로드</span>
-          </a>
-        </div>
-      </div>
-      <div class="test-section-sub">
-        <h3 class="test-section-sub-title">secondary</h3>
-        <div
-          :class="[
-            $style['download'],
-            $style['download--align-center'],
-            $style['download--theme-secondary'],
-          ]"
-        >
-          <div :class="$style['download__block']">
-            <p class="text-body-4 font-weight-medium">
-              하나캐피탈IR_2022.2Q.pdf
-            </p>
-          </div>
-          <a
-            href=""
-            :class="[
-              $style['download__button'],
-              $style['download__button--secondary'],
-            ]"
-            download
-          >
-            <IconDownload />
-            <span class="for-a11y">다운로드</span>
-          </a>
-        </div>
       </div>
     </section>
 

@@ -1,6 +1,6 @@
 <script>
 // NC_M04_p002
-import { ref, reactive, onMounted, onUnmounted } from 'vue';
+import { reactive, onMounted, onUnmounted } from 'vue';
 
 import { useUiHeaderStore } from '@/stores/ui/header';
 
@@ -26,8 +26,6 @@ import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 
-import LayerSalesNewCarAddContractIssueNumber from '@/views/salesNewCar/LayerSalesNewCarAddContractIssueNumber.vue';
-
 export default {
   components: {
     PageContents,
@@ -51,7 +49,6 @@ export default {
     FormInvalid,
     FormInvalidMessage,
     FormHelpText,
-    LayerSalesNewCarAddContractIssueNumber,
   },
   setup() {
     const state = reactive({
@@ -68,16 +65,10 @@ export default {
       },
     };
 
-    const layer = ref(null);
-
-    const layerOpen = (e = {}) => {
-      layer.value.layer.open(e.target);
-    };
-
     onMounted(() => {
       store.ui.header.setTitle(() => '신차모바일');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => ['menu']);
+      store.ui.header.setRightButtons(() => []);
     });
 
     onUnmounted(() => {
@@ -88,8 +79,6 @@ export default {
 
     return {
       state,
-      layer,
-      layerOpen,
     };
   },
 };
@@ -247,7 +236,7 @@ export default {
         <h3 class="text-title-2 row-margin-contents">금융 세부조건</h3>
 
         <!-- Case : [금융상품 – GM]일 경우 노출 -->
-        <BasicButton :line="true" theme="secondary" @click="layerOpen">
+        <BasicButton :line="true" theme="secondary">
           출고번호 조회
         </BasicButton>
         <!-- //Case : [금융상품 – GM]일 경우 노출 -->
@@ -290,22 +279,18 @@ export default {
         <FormList>
           <FormListItem
             titleText="판매대리점"
-            target="#salesNewCarAddContractStore"
+            target="#salesNewCarAddContractStoreSearch"
           >
             <FormInvalid :error="state.storeError">
               <InputBlock :error="state.storeError">
                 <InputBlockCell :flexible="true">
-                  <BasicInput
-                    title="판매대리점"
-                    :disabled="true"
-                    defaultValue="오토에너지"
-                  />
+                  <BasicInput title="판매대리점" :disabled="true" />
                 </InputBlockCell>
                 <template v-slot:right>
                   <BasicButton
                     size="mini"
                     theme="tertiary"
-                    id="salesNewCarAddContractStore"
+                    id="salesNewCarAddContractStoreSearch"
                     >검색</BasicButton
                   >
                 </template>
@@ -316,22 +301,18 @@ export default {
 
           <FormListItem
             titleText="판매사원"
-            target="#salesNewCarAddContractSalesperson"
+            target="#salesNewCarAddContractSalespersonSearch"
           >
             <FormInvalid :error="state.salespersonError">
               <InputBlock :error="state.salespersonError">
                 <InputBlockCell :flexible="true">
-                  <BasicInput
-                    title="판매사원"
-                    :disabled="true"
-                    defaultValue="강남규"
-                  />
+                  <BasicInput title="판매사원" :disabled="true" />
                 </InputBlockCell>
                 <template v-slot:right>
                   <BasicButton
                     size="mini"
                     theme="tertiary"
-                    id="salesNewCarAddContractSalesperson"
+                    id="salesNewCarAddContractSalespersonSearch"
                     >검색</BasicButton
                   >
                 </template>
@@ -416,6 +397,7 @@ export default {
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
+
           <FormListItem
             titleText="은행명"
             target="#salesNewCarAddContractBankButton"
@@ -433,6 +415,7 @@ export default {
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
+
           <FormListItem
             titleText="계좌번호"
             target="#salesNewCarAddContractAccount"
@@ -481,7 +464,5 @@ export default {
         </ButtonListItem>
       </ButtonList>
     </template>
-
-    <LayerSalesNewCarAddContractIssueNumber ref="layer" />
   </PageContents>
 </template>

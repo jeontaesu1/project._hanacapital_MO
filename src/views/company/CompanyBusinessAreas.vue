@@ -35,7 +35,7 @@ export default {
     onMounted(() => {
       store.ui.header.setTitle(() => '사업분야');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => ['menu']);
+      store.ui.header.setRightButtons(() => []);
     });
 
     onUnmounted(() => {
@@ -61,13 +61,13 @@ export default {
       </PageMainText>
     </PageTextGroup>
 
-    <BasicHr
-      theme="quaternary"
-      type="contents"
-      className="row-margin-container row-margin-top-none"
-    />
-
     <div>
+      <BasicHr
+        theme="quaternary"
+        type="contents"
+        className="row-margin-container"
+      />
+
       <section :class="$style['company-info']">
         <div :class="$style['company-info__icon']">
           <IconPersonalFinance />
@@ -152,14 +152,32 @@ export default {
           지역별 최적화된 금융상품 및 서비스를 제공할 수 있도록<br />
           최선을 다하고 있습니다.
         </p>
-      </section>
-    </div>
 
-    <div class="row-margin-item-medium">
-      // 배너 영역 (내용 확인 후 진행 예정)
-    </div>
-    <div class="row-margin-item-medium">
-      // 배너 영역 (내용 확인 후 진행 예정)
+        <ul class="reset-list row-margin-contents-group">
+          <li class="row-margin-item-medium">
+            <div :class="$style['nation']">
+              <div :class="$style['nation__left']">
+                <div :class="$style['nation__sub']">SINARMAS HANA FINANCE</div>
+                <div :class="$style['nation__title']">인도네시아</div>
+              </div>
+              <div :class="$style['nation__right']">
+                <!-- // -->
+              </div>
+            </div>
+          </li>
+          <li class="row-margin-item-medium">
+            <div :class="$style['nation']">
+              <div :class="$style['nation__left']">
+                <div :class="$style['nation__sub']">HANA MICRO FINANCE</div>
+                <div :class="$style['nation__title']">미얀마</div>
+              </div>
+              <div :class="$style['nation__right']">
+                <!-- // -->
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
     </div>
   </PageContents>
 </template>

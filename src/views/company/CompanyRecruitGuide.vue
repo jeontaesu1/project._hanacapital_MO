@@ -47,7 +47,7 @@ export default {
     onMounted(() => {
       store.ui.header.setTitle(() => '채용안내');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => ['menu']);
+      store.ui.header.setRightButtons(() => []);
     });
 
     onUnmounted(() => {
@@ -93,53 +93,61 @@ export default {
           </h3>
 
           <div :class="$style['grid-list']">
-            <div :class="$style['grid-list__item']">
-              <BasicBox theme="secondary">
-                <p class="text-body-1 font-weight-medium">PASSION</p>
-                <p class="text-body-4 color-gray row-margin-small">열정</p>
-              </BasicBox>
-            </div>
-            <div :class="$style['grid-list__item']">
-              <BasicBox theme="secondary">
-                <p class="text-body-1 font-weight-medium">OPENNESS</p>
-                <p class="text-body-4 color-gray row-margin-small">열린마음</p>
-              </BasicBox>
-            </div>
-            <div :class="$style['grid-list__item']">
-              <BasicBox theme="secondary">
-                <p class="text-body-1 font-weight-medium">EXCELLENCE</p>
-                <p class="text-body-4 color-gray row-margin-small">전문성</p>
-              </BasicBox>
-            </div>
-            <div :class="$style['grid-list__item']">
-              <BasicBox theme="secondary">
-                <p class="text-body-1 font-weight-medium">RESPECT</p>
-                <p class="text-body-4 color-gray row-margin-small">
-                  존경과 배려
-                </p>
-              </BasicBox>
-            </div>
-            <div
-              :class="[
-                $style['grid-list__item'],
-                $style['grid-list__item--full'],
-              ]"
-            >
-              <BasicBox theme="secondary">
-                <p class="text-body-1 font-weight-medium">WITH CUSTOMER</p>
-                <p class="text-body-4 color-gray row-margin-small">손님 우선</p>
-              </BasicBox>
-            </div>
+            <ul :class="$style['grid-list__inner']">
+              <li :class="$style['grid-list__item']">
+                <BasicBox theme="secondary">
+                  <p class="text-body-1 font-weight-medium">PASSION</p>
+                  <p class="text-body-4 color-gray row-margin-small">열정</p>
+                </BasicBox>
+              </li>
+              <li :class="$style['grid-list__item']">
+                <BasicBox theme="secondary">
+                  <p class="text-body-1 font-weight-medium">OPENNESS</p>
+                  <p class="text-body-4 color-gray row-margin-small">
+                    열린마음
+                  </p>
+                </BasicBox>
+              </li>
+              <li :class="$style['grid-list__item']">
+                <BasicBox theme="secondary">
+                  <p class="text-body-1 font-weight-medium">EXCELLENCE</p>
+                  <p class="text-body-4 color-gray row-margin-small">전문성</p>
+                </BasicBox>
+              </li>
+              <li :class="$style['grid-list__item']">
+                <BasicBox theme="secondary">
+                  <p class="text-body-1 font-weight-medium">RESPECT</p>
+                  <p class="text-body-4 color-gray row-margin-small">
+                    존경과 배려
+                  </p>
+                </BasicBox>
+              </li>
+              <li
+                :class="[
+                  $style['grid-list__item'],
+                  $style['grid-list__item--full'],
+                ]"
+              >
+                <BasicBox theme="secondary">
+                  <p class="text-body-1 font-weight-medium">WITH CUSTOMER</p>
+                  <p class="text-body-4 color-gray row-margin-small">
+                    손님 우선
+                  </p>
+                </BasicBox>
+              </li>
+            </ul>
           </div>
         </section>
 
         <section class="row-margin-container-medium">
-          <h3 class="text-head-2 row-margin-small">하나인재상</h3>
-          <p class="text-body-3 color-gray-tertiary font-weight-light">
-            비전달성을 위한 전문 역량과 리더십을 겸비한 리더
-          </p>
+          <div class="row-margin-contents">
+            <h3 class="text-head-2 row-margin-small">하나인재상</h3>
+            <p class="text-body-3 color-gray-tertiary font-weight-light">
+              비전달성을 위한 전문 역량과 리더십을 겸비한 리더
+            </p>
+          </div>
 
-          <ul class="reset-list row-margin-contents">
+          <ul class="reset-list">
             <li class="row-margin-item-medium">
               <BasicBox theme="tertiary">
                 <h4 class="text-body-1 font-weight-medium">성과 리더십</h4>
@@ -148,49 +156,27 @@ export default {
                   실행력을 갖는 것
                 </p>
 
-                <div class="flex-box row-margin-item">
-                  <div class="flex-box__cell flex-1">
-                    <ul
-                      :class="[
-                        $style['basic-list'],
-                        $style['basic-list--small-margin'],
-                      ]"
-                    >
-                      <li :class="$style['basic-list__item']">
-                        <div :class="$style['basic-list__symbol']"></div>
-                        <div :class="$style['basic-list__content']">
-                          성과지향
-                        </div>
-                      </li>
-                      <li :class="$style['basic-list__item']">
-                        <div :class="$style['basic-list__symbol']"></div>
-                        <div :class="$style['basic-list__content']">
-                          휴먼 네트워크
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="flex-box__cell flex-1 flex-box__cell--small">
-                    <ul
-                      :class="[
-                        $style['basic-list'],
-                        $style['basic-list--small-margin'],
-                      ]"
-                    >
-                      <li :class="$style['basic-list__item']">
-                        <div :class="$style['basic-list__symbol']"></div>
-                        <div :class="$style['basic-list__content']">
-                          문제해결
-                        </div>
-                      </li>
-                      <li :class="$style['basic-list__item']">
-                        <div :class="$style['basic-list__symbol']"></div>
-                        <div :class="$style['basic-list__content']">
-                          고객지향
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
+                <div :class="[$style['grid-basic-list'], 'row-margin-item']">
+                  <ul :class="$style['basic-list']">
+                    <li :class="$style['basic-list__item']">
+                      <div :class="$style['basic-list__symbol']"></div>
+                      <div :class="$style['basic-list__content']">성과지향</div>
+                    </li>
+                    <li :class="$style['basic-list__item']">
+                      <div :class="$style['basic-list__symbol']"></div>
+                      <div :class="$style['basic-list__content']">문제해결</div>
+                    </li>
+                    <li :class="$style['basic-list__item']">
+                      <div :class="$style['basic-list__symbol']"></div>
+                      <div :class="$style['basic-list__content']">
+                        휴먼 네트워크
+                      </div>
+                    </li>
+                    <li :class="$style['basic-list__item']">
+                      <div :class="$style['basic-list__symbol']"></div>
+                      <div :class="$style['basic-list__content']">고객지향</div>
+                    </li>
+                  </ul>
                 </div>
               </BasicBox>
             </li>
@@ -202,49 +188,27 @@ export default {
                   형성하여 이끌어 가는 것
                 </p>
 
-                <div class="flex-box row-margin-item">
-                  <div class="flex-box__cell flex-1">
-                    <ul
-                      :class="[
-                        $style['basic-list'],
-                        $style['basic-list--small-margin'],
-                      ]"
-                    >
-                      <li :class="$style['basic-list__item']">
-                        <div :class="$style['basic-list__symbol']"></div>
-                        <div :class="$style['basic-list__content']">
-                          신뢰구축
-                        </div>
-                      </li>
-                      <li :class="$style['basic-list__item']">
-                        <div :class="$style['basic-list__symbol']"></div>
-                        <div :class="$style['basic-list__content']">
-                          감성지능
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="flex-box__cell flex-1 flex-box__cell--small">
-                    <ul
-                      :class="[
-                        $style['basic-list'],
-                        $style['basic-list--small-margin'],
-                      ]"
-                    >
-                      <li :class="$style['basic-list__item']">
-                        <div :class="$style['basic-list__symbol']"></div>
-                        <div :class="$style['basic-list__content']">
-                          인재육성
-                        </div>
-                      </li>
-                      <li :class="$style['basic-list__item']">
-                        <div :class="$style['basic-list__symbol']"></div>
-                        <div :class="$style['basic-list__content']">
-                          커뮤니케이션
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
+                <div :class="[$style['grid-basic-list'], 'row-margin-item']">
+                  <ul :class="$style['basic-list']">
+                    <li :class="$style['basic-list__item']">
+                      <div :class="$style['basic-list__symbol']"></div>
+                      <div :class="$style['basic-list__content']">신뢰구축</div>
+                    </li>
+                    <li :class="$style['basic-list__item']">
+                      <div :class="$style['basic-list__symbol']"></div>
+                      <div :class="$style['basic-list__content']">인재육성</div>
+                    </li>
+                    <li :class="$style['basic-list__item']">
+                      <div :class="$style['basic-list__symbol']"></div>
+                      <div :class="$style['basic-list__content']">감성지능</div>
+                    </li>
+                    <li :class="$style['basic-list__item']">
+                      <div :class="$style['basic-list__symbol']"></div>
+                      <div :class="$style['basic-list__content']">
+                        커뮤니케이션
+                      </div>
+                    </li>
+                  </ul>
                 </div>
               </BasicBox>
             </li>
@@ -256,49 +220,29 @@ export default {
                   방향을 구체적으로 제시하며 이를 구성원들과 함께 공유하는 것
                 </p>
 
-                <div class="flex-box row-margin-item">
-                  <div class="flex-box__cell flex-1">
-                    <ul
-                      :class="[
-                        $style['basic-list'],
-                        $style['basic-list--small-margin'],
-                      ]"
-                    >
-                      <li :class="$style['basic-list__item']">
-                        <div :class="$style['basic-list__symbol']"></div>
-                        <div :class="$style['basic-list__content']">
-                          변화선도
-                        </div>
-                      </li>
-                      <li :class="$style['basic-list__item']">
-                        <div :class="$style['basic-list__symbol']"></div>
-                        <div :class="$style['basic-list__content']">
-                          전략적 사고
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="flex-box__cell flex-1 flex-box__cell--small">
-                    <ul
-                      :class="[
-                        $style['basic-list'],
-                        $style['basic-list--small-margin'],
-                      ]"
-                    >
-                      <li :class="$style['basic-list__item']">
-                        <div :class="$style['basic-list__symbol']"></div>
-                        <div :class="$style['basic-list__content']">
-                          비전제시
-                        </div>
-                      </li>
-                      <li :class="$style['basic-list__item']">
-                        <div :class="$style['basic-list__symbol']"></div>
-                        <div :class="$style['basic-list__content']">
-                          글로벌 마인드
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
+                <div :class="[$style['grid-basic-list'], 'row-margin-item']">
+                  <ul :class="$style['basic-list']">
+                    <li :class="$style['basic-list__item']">
+                      <div :class="$style['basic-list__symbol']"></div>
+                      <div :class="$style['basic-list__content']">변화선도</div>
+                    </li>
+                    <li :class="$style['basic-list__item']">
+                      <div :class="$style['basic-list__symbol']"></div>
+                      <div :class="$style['basic-list__content']">비전제시</div>
+                    </li>
+                    <li :class="$style['basic-list__item']">
+                      <div :class="$style['basic-list__symbol']"></div>
+                      <div :class="$style['basic-list__content']">
+                        전략적 사고
+                      </div>
+                    </li>
+                    <li :class="$style['basic-list__item']">
+                      <div :class="$style['basic-list__symbol']"></div>
+                      <div :class="$style['basic-list__content']">
+                        글로벌 마인드
+                      </div>
+                    </li>
+                  </ul>
                 </div>
               </BasicBox>
             </li>

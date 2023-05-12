@@ -71,7 +71,7 @@ export default {
           </BasicBoxHeadLeft>
           <BasicBoxHeadRight>
             <UnitText verticalAlign="center" rightUnit="원" align="right">
-              333,389
+              <strong>333,389</strong>
             </UnitText>
           </BasicBoxHeadRight>
         </BasicBoxHead>
@@ -106,124 +106,48 @@ export default {
 
       <BasicHr className="row-margin-container-medium" />
 
-      <section>
-        <ul :class="$style['bill-list']">
-          <li :class="$style['bill-list__item']">
-            <div :class="$style['bill-list__block']">
-              <div :class="$style['bill-list__head']">
-                <div :class="$style['bill-list__detail']">
-                  <span :class="$style['bill-list__detail-item']">1회차</span>
-                </div>
-                <div :class="$style['bill-list__amount']">1,232,456,345 원</div>
+      <ul :class="$style['bill-list']">
+        <li v-for="i in 7" :key="i" :class="$style['bill-list__item']">
+          <div :class="$style['bill-list__block']">
+            <div :class="$style['bill-list__head']">
+              <div :class="$style['bill-list__detail']">
+                <span :class="$style['bill-list__detail-item']"
+                  >{{ i }}회차</span
+                >
               </div>
-              <div :class="$style['bill-list__contents']">
-                <div :class="$style['bill-list__contents-left']">
-                  <dl :class="$style['bill-list__contents-list']">
-                    <div :class="$style['bill-list__contents-item']">
-                      <dt :class="$style['bill-list__contents-key']">원금</dt>
-                      <dd :class="$style['bill-list__contents-value']">
-                        912,232,321 원
-                      </dd>
-                    </div>
-                    <div :class="$style['bill-list__contents-item']">
-                      <dt :class="$style['bill-list__contents-key']">이자</dt>
-                      <dd :class="$style['bill-list__contents-value']">
-                        902,123,223 원
-                      </dd>
-                    </div>
-                  </dl>
-                </div>
-                <div :class="$style['bill-list__contents-right']">
-                  <dl :class="$style['bill-list__contents-list']">
-                    <div :class="$style['bill-list__contents-item']">
-                      <dt :class="$style['bill-list__contents-key']">잔액</dt>
-                      <dd :class="$style['bill-list__contents-value']">
-                        982,232,123 원
-                      </dd>
-                    </div>
-                  </dl>
-                </div>
+              <div :class="$style['bill-list__amount']">1,232,456,345 원</div>
+            </div>
+            <div :class="$style['bill-list__contents']">
+              <div :class="$style['bill-list__contents-left']">
+                <dl :class="$style['bill-list__sub']">
+                  <div :class="$style['bill-list__sub-item']">
+                    <dt :class="$style['bill-list__sub-key']">원금</dt>
+                    <dd :class="$style['bill-list__sub-value']">
+                      912,232,321 원
+                    </dd>
+                  </div>
+                  <div :class="$style['bill-list__sub-item']">
+                    <dt :class="$style['bill-list__sub-key']">이자</dt>
+                    <dd :class="$style['bill-list__sub-value']">
+                      902,123,223 원
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+              <div :class="$style['bill-list__contents-right']">
+                <dl :class="$style['bill-list__sub']">
+                  <div :class="$style['bill-list__sub-item']">
+                    <dt :class="$style['bill-list__sub-key']">잔액</dt>
+                    <dd :class="$style['bill-list__sub-value']">
+                      982,232,123 원
+                    </dd>
+                  </div>
+                </dl>
               </div>
             </div>
-          </li>
-          <li :class="$style['bill-list__item']">
-            <div :class="$style['bill-list__block']">
-              <div :class="$style['bill-list__head']">
-                <div :class="$style['bill-list__detail']">
-                  <span :class="$style['bill-list__detail-item']">2회차</span>
-                </div>
-                <div :class="$style['bill-list__amount']">1,232,456,345 원</div>
-              </div>
-              <div :class="$style['bill-list__contents']">
-                <div :class="$style['bill-list__contents-left']">
-                  <dl :class="$style['bill-list__contents-list']">
-                    <div :class="$style['bill-list__contents-item']">
-                      <dt :class="$style['bill-list__contents-key']">원금</dt>
-                      <dd :class="$style['bill-list__contents-value']">
-                        912,232,321 원
-                      </dd>
-                    </div>
-                    <div :class="$style['bill-list__contents-item']">
-                      <dt :class="$style['bill-list__contents-key']">이자</dt>
-                      <dd :class="$style['bill-list__contents-value']">
-                        902,123,223 원
-                      </dd>
-                    </div>
-                  </dl>
-                </div>
-                <div :class="$style['bill-list__contents-right']">
-                  <dl :class="$style['bill-list__contents-list']">
-                    <div :class="$style['bill-list__contents-item']">
-                      <dt :class="$style['bill-list__contents-key']">잔액</dt>
-                      <dd :class="$style['bill-list__contents-value']">
-                        982,232,123 원
-                      </dd>
-                    </div>
-                  </dl>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li :class="$style['bill-list__item']">
-            <div :class="$style['bill-list__block']">
-              <div :class="$style['bill-list__head']">
-                <div :class="$style['bill-list__detail']">
-                  <span :class="$style['bill-list__detail-item']">3회차</span>
-                </div>
-                <div :class="$style['bill-list__amount']">1,232,456,345 원</div>
-              </div>
-              <div :class="$style['bill-list__contents']">
-                <div :class="$style['bill-list__contents-left']">
-                  <dl :class="$style['bill-list__contents-list']">
-                    <div :class="$style['bill-list__contents-item']">
-                      <dt :class="$style['bill-list__contents-key']">원금</dt>
-                      <dd :class="$style['bill-list__contents-value']">
-                        912,232,321 원
-                      </dd>
-                    </div>
-                    <div :class="$style['bill-list__contents-item']">
-                      <dt :class="$style['bill-list__contents-key']">이자</dt>
-                      <dd :class="$style['bill-list__contents-value']">
-                        902,123,223 원
-                      </dd>
-                    </div>
-                  </dl>
-                </div>
-                <div :class="$style['bill-list__contents-right']">
-                  <dl :class="$style['bill-list__contents-list']">
-                    <div :class="$style['bill-list__contents-item']">
-                      <dt :class="$style['bill-list__contents-key']">잔액</dt>
-                      <dd :class="$style['bill-list__contents-value']">
-                        982,232,123 원
-                      </dd>
-                    </div>
-                  </dl>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </section>
+          </div>
+        </li>
+      </ul>
 
       <template v-slot:foot>
         <ButtonList

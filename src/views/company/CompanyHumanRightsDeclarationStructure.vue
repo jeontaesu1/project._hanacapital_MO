@@ -28,7 +28,7 @@ export default {
     onMounted(() => {
       store.ui.header.setTitle(() => '인권선언문 구성체계');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => ['menu']);
+      store.ui.header.setRightButtons(() => []);
     });
 
     onUnmounted(() => {
@@ -105,244 +105,172 @@ export default {
         이해관계자 구분 및 인권 이슈
       </h3>
 
-      <div>
-        <section class="row-margin-contents-group">
-          <h4 class="text-body-2 row-margin-item-medium">임직원</h4>
+      <section class="row-margin-contents-group">
+        <h4 class="text-body-2 row-margin-item-medium">임직원</h4>
 
-          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-4',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                차별 금지 (Code One 2조)
-              </div>
-            </li>
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-4',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                공정한 평가와 보상 (Code One 18조, 19조)
-              </div>
-            </li>
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-4',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                안전한 근무환경 (인권위, 인권경영 가이드 라인)
-              </div>
-            </li>
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-4',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                근무여건 개선 (Code One 20조)
-              </div>
-            </li>
-          </ul>
-        </section>
+        <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+          <li
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-4']"
+          >
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              차별 금지 (Code One 2조)
+            </div>
+          </li>
+          <li
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-4']"
+          >
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              공정한 평가와 보상 (Code One 18조, 19조)
+            </div>
+          </li>
+          <li
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-4']"
+          >
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              안전한 근무환경 (인권위, 인권경영 가이드 라인)
+            </div>
+          </li>
+          <li
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-4']"
+          >
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              근무여건 개선 (Code One 20조)
+            </div>
+          </li>
+        </ul>
+      </section>
 
-        <section class="row-margin-contents-group">
-          <h4 class="text-body-2 row-margin-item-medium">손님</h4>
+      <section class="row-margin-contents-group">
+        <h4 class="text-body-2 row-margin-item-medium">손님</h4>
 
-          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-4',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                금융취약계층 보호 (감독원, 소비자보호 모범규준안)
-              </div>
-            </li>
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-4',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                차별적 금융서비스 금지
-              </div>
-            </li>
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-4',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                정보 보호 (Code One 5조)
-              </div>
-            </li>
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-4',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                도움이 되는 금융서비스 (그룹비전 반영)
-              </div>
-            </li>
-          </ul>
-        </section>
+        <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+          <li
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-4']"
+          >
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              금융취약계층 보호 (감독원, 소비자보호 모범규준안)
+            </div>
+          </li>
+          <li
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-4']"
+          >
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              차별적 금융서비스 금지
+            </div>
+          </li>
+          <li
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-4']"
+          >
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              정보 보호 (Code One 5조)
+            </div>
+          </li>
+          <li
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-4']"
+          >
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              도움이 되는 금융서비스 (그룹비전 반영)
+            </div>
+          </li>
+        </ul>
+      </section>
 
-        <section class="row-margin-contents-group">
-          <h4 class="text-body-2 row-margin-item-medium">주주/투자자</h4>
+      <section class="row-margin-contents-group">
+        <h4 class="text-body-2 row-margin-item-medium">주주/투자자</h4>
 
-          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-4',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                공정한 정보제공 (Code One 22조)
-              </div>
-            </li>
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-4',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                상호 신뢰관계 유지
-              </div>
-            </li>
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-4',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                가치 제고 (Code One 24조)
-              </div>
-            </li>
-          </ul>
-        </section>
+        <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+          <li
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-4']"
+          >
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              공정한 정보제공 (Code One 22조)
+            </div>
+          </li>
+          <li
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-4']"
+          >
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">상호 신뢰관계 유지</div>
+          </li>
+          <li
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-4']"
+          >
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              가치 제고 (Code One 24조)
+            </div>
+          </li>
+        </ul>
+      </section>
 
-        <section class="row-margin-contents-group">
-          <h4 class="text-body-2 row-margin-item-medium">협력회사</h4>
+      <section class="row-margin-contents-group">
+        <h4 class="text-body-2 row-margin-item-medium">협력회사</h4>
 
-          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-4',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                상생과 공존 (Code One 23조)
-              </div>
-            </li>
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-4',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                불공정, 부정거래 금지
-              </div>
-            </li>
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-4',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                인권, 윤리경영 지원 (인권위, 인권경영 가이드 라인)
-              </div>
-            </li>
-          </ul>
-        </section>
+        <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+          <li
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-4']"
+          >
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              상생과 공존 (Code One 23조)
+            </div>
+          </li>
+          <li
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-4']"
+          >
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              불공정, 부정거래 금지
+            </div>
+          </li>
+          <li
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-4']"
+          >
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              인권, 윤리경영 지원 (인권위, 인권경영 가이드 라인)
+            </div>
+          </li>
+        </ul>
+      </section>
 
-        <section class="row-margin-contents-group">
-          <h4 class="text-body-2 row-margin-item-medium">지역회사</h4>
+      <section class="row-margin-contents-group">
+        <h4 class="text-body-2 row-margin-item-medium">지역회사</h4>
 
-          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-4',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                지역사회 구성원의 인권 보호 (인권위, 인권경영 가이드 라인)
-              </div>
-            </li>
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-4',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                소외계층 지원 (Code One 25조)
-              </div>
-            </li>
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-4',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">부정거래 차단</div>
-            </li>
-          </ul>
-        </section>
-      </div>
+        <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+          <li
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-4']"
+          >
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              지역사회 구성원의 인권 보호 (인권위, 인권경영 가이드 라인)
+            </div>
+          </li>
+          <li
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-4']"
+          >
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              소외계층 지원 (Code One 25조)
+            </div>
+          </li>
+          <li
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-4']"
+          >
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">부정거래 차단</div>
+          </li>
+        </ul>
+      </section>
     </section>
   </PageContents>
 </template>

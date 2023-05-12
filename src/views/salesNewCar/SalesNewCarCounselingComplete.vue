@@ -52,7 +52,7 @@ export default {
     onMounted(() => {
       store.ui.header.setTitle(() => '신차모바일');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => ['menu']);
+      store.ui.header.setRightButtons(() => []);
     });
 
     onUnmounted(() => {
@@ -75,91 +75,87 @@ export default {
 
     <IllustObject type="complete" />
 
-    <div>
-      <BasicBox className="row-margin-item-group">
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>
-            <div class="flex-box row-margin-mini">
-              <div class="flex-box__cell">
-                <CarEmblem code="1001" name="현대" />
-              </div>
-            </div>
-            <h3 class="text-body-1 font-weight-medium">캐스퍼</h3>
-            <p class="text-body-4 color-gray row-margin-small">스마트</p>
-          </BasicBoxHeadLeft>
-          <BasicBoxHeadRight>
-            <CarThumb src="/images/_dummy/car-thumb.png" />
-          </BasicBoxHeadRight>
-        </BasicBoxHead>
+    <BasicBox>
+      <BasicBoxHead>
+        <BasicBoxHeadLeft>
+          <div class="row-margin-mini">
+            <CarEmblem code="1001" name="현대" />
+          </div>
+          <h3 class="text-body-1 font-weight-medium">캐스퍼</h3>
+          <p class="text-body-4 color-gray row-margin-small">스마트</p>
+        </BasicBoxHeadLeft>
+        <BasicBoxHeadRight>
+          <CarThumb src="/images/_dummy/car-thumb.png" />
+        </BasicBoxHeadRight>
+      </BasicBoxHead>
 
-        <KeyValue margin="regular">
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>신청금액</KeyValueTitle>
-            <KeyValueText>3,000,000 원</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>대출기간</KeyValueTitle>
-            <KeyValueText>36개월</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>금리</KeyValueTitle>
-            <KeyValueText>6.2%</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>설정율/금액</KeyValueTitle>
-            <KeyValueText>0% / 0 원</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>AG수수료율/금액</KeyValueTitle>
-            <KeyValueText>0.50% / 15,000 원</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>CM수수료율/금액</KeyValueTitle>
-            <KeyValueText>0.50% / 15,000 원</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>추가프로모션 금액</KeyValueTitle>
-            <KeyValueText>0 원</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>진행상태</KeyValueTitle>
-            <KeyValueText>상담중</KeyValueText>
-          </KeyValueItem>
-        </KeyValue>
-      </BasicBox>
-    </div>
+      <KeyValue margin="regular">
+        <KeyValueItem
+          :classNames="{
+            item: 'text-body-3',
+          }"
+        >
+          <KeyValueTitle>신청금액</KeyValueTitle>
+          <KeyValueText>3,000,000 원</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem
+          :classNames="{
+            item: 'text-body-3',
+          }"
+        >
+          <KeyValueTitle>대출기간</KeyValueTitle>
+          <KeyValueText>36개월</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem
+          :classNames="{
+            item: 'text-body-3',
+          }"
+        >
+          <KeyValueTitle>금리</KeyValueTitle>
+          <KeyValueText>6.2%</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem
+          :classNames="{
+            item: 'text-body-3',
+          }"
+        >
+          <KeyValueTitle>설정율/금액</KeyValueTitle>
+          <KeyValueText>0% / 0 원</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem
+          :classNames="{
+            item: 'text-body-3',
+          }"
+        >
+          <KeyValueTitle>AG수수료율/금액</KeyValueTitle>
+          <KeyValueText>0.50% / 15,000 원</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem
+          :classNames="{
+            item: 'text-body-3',
+          }"
+        >
+          <KeyValueTitle>CM수수료율/금액</KeyValueTitle>
+          <KeyValueText>0.50% / 15,000 원</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem
+          :classNames="{
+            item: 'text-body-3',
+          }"
+        >
+          <KeyValueTitle>추가프로모션 금액</KeyValueTitle>
+          <KeyValueText>0 원</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem
+          :classNames="{
+            item: 'text-body-3',
+          }"
+        >
+          <KeyValueTitle>진행상태</KeyValueTitle>
+          <KeyValueText>상담중</KeyValueText>
+        </KeyValueItem>
+      </KeyValue>
+    </BasicBox>
 
     <template v-slot:foot>
       <ButtonList

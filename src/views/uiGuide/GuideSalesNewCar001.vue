@@ -10,6 +10,7 @@ import LayerSalesNewCarUnregisteredBonds from '@/views/salesNewCar/LayerSalesNew
 import LayerSalesNewCarAddNumber from '@/views/salesNewCar/LayerSalesNewCarAddNumber.vue';
 import LayerSalesNewCarAddContractStore from '@/views/salesNewCar/LayerSalesNewCarAddContractStore.vue';
 import LayerSalesNewCarAddContractSalesperson from '@/views/salesNewCar/LayerSalesNewCarAddContractSalesperson.vue';
+import LayerSalesNewCarAddContractIssueNumber from '@/views/salesNewCar/LayerSalesNewCarAddContractIssueNumber.vue';
 
 export default {
   components: {
@@ -21,12 +22,14 @@ export default {
     LayerSalesNewCarAddNumber,
     LayerSalesNewCarAddContractStore,
     LayerSalesNewCarAddContractSalesperson,
+    LayerSalesNewCarAddContractIssueNumber,
   },
   setup() {
     const layer001 = ref(null);
     const layer002 = ref(null);
     const layer003 = ref(null);
     const layer004 = ref(null);
+    const layer005 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -40,16 +43,21 @@ export default {
     const layer004Open = (e = {}) => {
       layer004.value.layer.open(e.target);
     };
+    const layer005Open = (e = {}) => {
+      layer005.value.layer.open(e.target);
+    };
 
     return {
       layer001,
       layer002,
       layer003,
       layer004,
+      layer005,
       layer001Open,
       layer002Open,
       layer003Open,
       layer004Open,
+      layer005Open,
     };
   },
 };
@@ -83,11 +91,17 @@ export default {
           >판매사원 조회<br />NC_M04_l002</BasicButton
         >
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer005Open"
+          >출고번호 조회<br />NC_M04_l003</BasicButton
+        >
+      </ButtonListItem>
     </ButtonList>
 
     <LayerSalesNewCarUnregisteredBonds ref="layer001" />
     <LayerSalesNewCarAddNumber ref="layer002" />
     <LayerSalesNewCarAddContractStore ref="layer003" />
     <LayerSalesNewCarAddContractSalesperson ref="layer004" />
+    <LayerSalesNewCarAddContractIssueNumber ref="layer005" />
   </PageContents>
 </template>

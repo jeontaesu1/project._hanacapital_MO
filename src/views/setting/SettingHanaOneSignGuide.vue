@@ -70,36 +70,38 @@ export default {
           하나 원사인 얼굴인증은?
         </h3>
 
-        <section>
-          <h4 class="text-body-2 row-margin-item-small">안전해요</h4>
-          <p class="text-body-4 color-gray-senary">
-            얼굴인증은 사용자의 얼굴을 인식하고 수치로 변환하여 암호화 한 후
-            분산 저장하며, 사용자의 사진을 저장하지 않아 더욱 안전합니다.
-          </p>
+        <div>
+          <section class="row-margin-contents-group">
+            <h4 class="text-body-2 row-margin-item-small">안전해요</h4>
+            <p class="text-body-4 color-gray-senary">
+              얼굴인증은 사용자의 얼굴을 인식하고 수치로 변환하여 암호화 한 후
+              분산 저장하며, 사용자의 사진을 저장하지 않아 더욱 안전합니다.
+            </p>
 
-          <div :class="[$style['illustration-img'], 'row-margin-container']">
-            <ImgSample />
-          </div>
-        </section>
+            <div :class="[$style['illustration-img'], 'row-margin-container']">
+              <ImgSample />
+            </div>
+          </section>
 
-        <section class="row-margin-contents-group">
-          <h4 class="text-body-2 row-margin-item-small">편리해요</h4>
-          <p class="text-body-4 color-gray-senary">
-            스마트폰 카메라를 보고 눈을 한번 깜빡이기만 하면 끝!<br />
-            비밀번호를 기억할 필요없이 얼굴만으로 쉽고 편리하게 로그인 및 인증을
-            해보세요.
-          </p>
-          <NoticeText :classNames="{ wrap: 'row-margin-item' }">
-            ‘하나 원사인 비밀번호‘ 1회 등록 후 ‘얼굴인증‘을 추가로 등록하여
-            이용하세요.
-          </NoticeText>
+          <section class="row-margin-contents-group">
+            <h4 class="text-body-2 row-margin-item-small">편리해요</h4>
+            <p class="text-body-4 color-gray-senary">
+              스마트폰 카메라를 보고 눈을 한번 깜빡이기만 하면 끝!<br />
+              비밀번호를 기억할 필요없이 얼굴만으로 쉽고 편리하게 로그인 및
+              인증을 해보세요.
+            </p>
+            <NoticeText :classNames="{ wrap: 'row-margin-item' }">
+              ‘하나 원사인 비밀번호‘ 1회 등록 후 ‘얼굴인증‘을 추가로 등록하여
+              이용하세요.
+            </NoticeText>
 
-          <div :class="[$style['illustration-img'], 'row-margin-container']">
-            <ImgSample />
-          </div>
+            <div :class="[$style['illustration-img'], 'row-margin-container']">
+              <ImgSample />
+            </div>
 
-          <BasicButton>하나 원사인 얼굴인증 (재)등록</BasicButton>
-        </section>
+            <BasicButton>하나 원사인 얼굴인증 (재)등록</BasicButton>
+          </section>
+        </div>
       </section>
     </div>
 
