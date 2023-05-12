@@ -145,10 +145,10 @@ export default {
                   </div>
                 </KeyValueText>
               </KeyValueItem>
-              <NoticeText :classNames="{ wrap: 'color-red row-margin-item' }">
-                대출기간별 수수료가 상이하며, 대출일로부터 3년 이내 상환 시 적용
-              </NoticeText>
             </KeyValue>
+            <NoticeText :classNames="{ wrap: 'color-red row-margin-item' }">
+              대출기간별 수수료가 상이하며, 대출일로부터 3년 이내 상환 시 적용
+            </NoticeText>
             <KeyValue
               margin="regular"
               :classNames="{ wrap: 'row-margin-item-group' }"

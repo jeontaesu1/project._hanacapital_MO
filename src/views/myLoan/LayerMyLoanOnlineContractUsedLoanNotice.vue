@@ -44,14 +44,12 @@ export default {
         </FullPopupHead>
       </template>
 
-      <div>
-        <p class="text-body-3 color-gray font-weight-regular">
-          자동차 할부금융 계약에 의거 본인이 수령할 할부금에 대해서는
-          매도인(판매회사)에게 수령할 권한을 위임하는 동시에 아래의 계좌로
-          송금하여 줄 것을 요청하며 이 요청에 따라 귀사가 해당 할부금을 송금하여
-          입금된 시점에 신청인 겸 계약자가 수령 할 것으로 간주됨을 확약합니다.
-        </p>
-      </div>
+      <p class="text-body-3 color-gray font-weight-regular">
+        자동차 할부금융 계약에 의거 본인이 수령할 할부금에 대해서는
+        매도인(판매회사)에게 수령할 권한을 위임하는 동시에 아래의 계좌로
+        송금하여 줄 것을 요청하며 이 요청에 따라 귀사가 해당 할부금을 송금하여
+        입금된 시점에 신청인 겸 계약자가 수령 할 것으로 간주됨을 확약합니다.
+      </p>
 
       <template v-slot:foot>
         <ButtonList

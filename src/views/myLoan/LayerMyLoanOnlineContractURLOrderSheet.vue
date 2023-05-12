@@ -90,6 +90,7 @@ export default {
             }"
           >
             <KeyValueTitle>수락기한</KeyValueTitle>
+            <KeyValueText></KeyValueText>
           </KeyValueItem>
         </KeyValue>
       </BasicBox>

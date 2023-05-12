@@ -245,10 +245,10 @@ export default {
                     <CarEmblem code="1001" name="현대" />
                   </div>
                   <div class="flex-box__cell flex-box__cell--small">
-                    <p class="text-body-4 font-weight-light">10나9999</p>
+                    <p class="text-body-4 font-weight-light">2020년식</p>
                   </div>
                 </div>
-                <h3 class="text-body-1 font-weight-medium">123가1234</h3>
+                <h3 class="text-body-1 font-weight-medium">10나9999</h3>
                 <p class="text-body-4 color-gray row-margin-small">
                   가솔린 1.0 에센셜
                 </p>

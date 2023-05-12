@@ -1,16 +1,16 @@
 <script>
 // Customer_M09_p001
 import { onMounted, onUnmounted } from 'vue';
+import { RouterLink } from 'vue-router';
 
 import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
-import { RouterLink } from 'vue-router';
 
 export default {
   components: {
-    PageContents,
     RouterLink,
+    PageContents,
   },
   setup() {
     const store = {

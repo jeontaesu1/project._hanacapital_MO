@@ -12,8 +12,8 @@ import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import SearchButton from '@/components/ui/button/SearchButton.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
+import DownloadButton from '@/components/ui/button/DownloadButton.vue';
 
-import IconDownload from '@/assets/images/icon/download.svg?component';
 import IconArrow from '@/assets/images/icon/dropdown.svg?component';
 
 export default {
@@ -26,7 +26,7 @@ export default {
     BasicHr,
     SearchButton,
     TextButton,
-    IconDownload,
+    DownloadButton,
     IconArrow,
   },
   setup() {
@@ -97,8 +97,8 @@ export default {
     <!-- Case : 검색 결과 있을 때 -->
     <ul class="reset-list">
       <li v-for="i in 10" :key="i" class="row-margin-container">
-        <div :class="$style['download']">
-          <div :class="$style['download__block']">
+        <div class="flex-box">
+          <div class="flex-box__cell flex-1">
             <h4 class="text-body-1 font-weight-medium">
               건강한금융 금융생활정보
             </h4>
@@ -106,10 +106,9 @@ export default {
               2022.10.25
             </p>
           </div>
-          <a href="" :class="$style['download__button']" download>
-            <IconDownload />
-            <span class="for-a11y">다운로드</span>
-          </a>
+          <div class="flex-box__cell">
+            <DownloadButton tagName="a" href="/foo/bar.pdf" download />
+          </div>
         </div>
       </li>
     </ul>

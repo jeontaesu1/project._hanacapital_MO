@@ -41,7 +41,7 @@ export default {
         </ToastPopupHead>
       </template>
 
-      <div>
+      <section>
         <h3 class="text-body-2 row-margin-item-medium">
           중도상환 수수료율(2%)
         </h3>
@@ -77,7 +77,7 @@ export default {
         <NoticeText :classNames="{ wrap: 'row-margin-item-regular' }">
           잔존기간 : 30일 미만 상환 시 ‘대출사용기간’을 30일로 간주
         </NoticeText>
-      </div>
+      </section>
 
       <template v-slot:foot>
         <ButtonList
