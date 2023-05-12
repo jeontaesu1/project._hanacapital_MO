@@ -53,7 +53,7 @@ export default {
     <section>
       <h3 class="text-title-2">행사요건</h3>
 
-      <section class="reset-list row-margin-contents">
+      <section class="row-margin-contents">
         <h4 class="text-body-2 row-margin-item-medium">적용대상</h4>
 
         <p class="text-body-4 font-weight-light row-margin-item">

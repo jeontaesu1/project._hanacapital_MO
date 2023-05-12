@@ -236,7 +236,7 @@ export default {
         인정되는 경우 금리인하를 요구할 수 있음
       </p>
 
-      <section class="reset-list row-margin-contents">
+      <section class="row-margin-contents">
         <h4 class="text-body-2 row-margin-item-medium">가계대출</h4>
 
         <ul :class="[$style['basic-list'], $style['basic-list--regular']]">

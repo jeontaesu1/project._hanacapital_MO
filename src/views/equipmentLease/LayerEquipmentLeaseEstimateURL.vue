@@ -72,7 +72,6 @@ export default {
       </PageTextGroup>
 
       <!-- Case : 복수 견적일 경우 탭 노출 -->
-
       <StickyBar>
         <NavTab>
           <NavTabButton tagName="button" type="button" :active="true">
@@ -84,123 +83,121 @@ export default {
       </StickyBar>
       <!-- // Case : 복수 견적일 경우 탭 노출 -->
 
-      <section>
-        <BasicBox>
-          <BasicBoxHead>
-            <BasicBoxHeadLeft>
-              <h3 class="text-body-1 font-weight-medium">
-                OOO레이져글자수열다섯글자수
-              </h3>
-            </BasicBoxHeadLeft>
-          </BasicBoxHead>
+      <BasicBox>
+        <BasicBoxHead>
+          <BasicBoxHeadLeft>
+            <h3 class="text-body-1 font-weight-medium">
+              OOO레이져글자수열다섯글자수
+            </h3>
+          </BasicBoxHeadLeft>
+        </BasicBoxHead>
 
-          <KeyValue margin="regular">
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>취득원가</KeyValueTitle>
-              <KeyValueText>99,999,000원</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>기간</KeyValueTitle>
-              <KeyValueText>24개월</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>상환금리</KeyValueTitle>
-              <KeyValueText>5%</KeyValueText>
-            </KeyValueItem>
+        <KeyValue margin="regular">
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>취득원가</KeyValueTitle>
+            <KeyValueText>99,999,000원</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>기간</KeyValueTitle>
+            <KeyValueText>24개월</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>상환금리</KeyValueTitle>
+            <KeyValueText>5%</KeyValueText>
+          </KeyValueItem>
 
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>보증금</KeyValueTitle>
-              <KeyValueText>20% (2,000,000 원)</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>잔존가치</KeyValueTitle>
-              <KeyValueText>20% (2,000,000 원)</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>유예원금</KeyValueTitle>
-              <KeyValueText>20% (2,000,000 원)</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>월리스료</KeyValueTitle>
-              <KeyValueText>100,000,000원</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>총납입액</KeyValueTitle>
-              <KeyValueText>100,000,000원</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>이자총액</KeyValueTitle>
-              <KeyValueText>100,000,000원</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>보험조건</KeyValueTitle>
-              <KeyValueText>이용자책임부보</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>납입방식</KeyValueTitle>
-              <KeyValueText>1개월 후불</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>상환스케줄</KeyValueTitle>
-              <KeyValueText>
-                <div class="inline-wrap align-right">
-                  <TextButton :underline="true" theme="secondary">
-                    상세보기
-                  </TextButton>
-                </div>
-              </KeyValueText>
-            </KeyValueItem>
-          </KeyValue>
-        </BasicBox>
-      </section>
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>보증금</KeyValueTitle>
+            <KeyValueText>20% (2,000,000 원)</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>잔존가치</KeyValueTitle>
+            <KeyValueText>20% (2,000,000 원)</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>유예원금</KeyValueTitle>
+            <KeyValueText>20% (2,000,000 원)</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>월리스료</KeyValueTitle>
+            <KeyValueText>100,000,000원</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>총납입액</KeyValueTitle>
+            <KeyValueText>100,000,000원</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>이자총액</KeyValueTitle>
+            <KeyValueText>100,000,000원</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>보험조건</KeyValueTitle>
+            <KeyValueText>이용자책임부보</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>납입방식</KeyValueTitle>
+            <KeyValueText>1개월 후불</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>상환스케줄</KeyValueTitle>
+            <KeyValueText>
+              <div class="inline-wrap align-right">
+                <TextButton :underline="true" theme="secondary">
+                  상세보기
+                </TextButton>
+              </div>
+            </KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+      </BasicBox>
 
       <section class="row-margin-container-medium">
         <h3 class="text-title-2 row-margin-contents">견적정보</h3>
