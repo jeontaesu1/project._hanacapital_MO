@@ -665,5 +665,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/auto/layerAutoEstimateLease.scss';
+@import '@/assets/scss/views/auto/LayerAutoEstimateLease.scss';
 </style>

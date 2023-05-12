@@ -18,7 +18,7 @@ import BasicBox from '@/components/ui/common/BasicBox.vue';
 import IconContract from '@/assets/images/icon/contract.svg?component';
 import IconCompleted from '@/assets/images/icon/completed.svg?component';
 import IconConsulting from '@/assets/images/icon/consulting.svg?component';
-import IconHealthScreenings from '@/assets/images/icon/Health-screenings.svg?component';
+import IconHealthScreenings from '@/assets/images/icon/health-screenings.svg?component';
 
 export default {
   components: {
