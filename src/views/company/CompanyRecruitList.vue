@@ -1,6 +1,7 @@
 <script>
 // Company_M08_p016
 import { onMounted, onUnmounted } from 'vue';
+import { RouterLink } from 'vue-router';
 
 import { useUiHeaderStore } from '@/stores/ui/header';
 
@@ -13,6 +14,7 @@ import BasicHr from '@/components/ui/common/BasicHr.vue';
 import SearchButton from '@/components/ui/button/SearchButton.vue';
 import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
+
 import IconArrow from '@/assets/images/icon/dropdown.svg?component';
 
 export default {
@@ -26,6 +28,7 @@ export default {
     SearchButton,
     RoundStatus,
     TextButton,
+    RouterLink,
     IconArrow,
   },
   setup() {
@@ -93,174 +96,51 @@ export default {
     </div>
     <!-- // Case : 검색 결과 없을 때 -->
 
-    <!-- Case : 검색 결과 있을 때 -->
-    <ul :class="$style['board__list']">
-      <li :class="$style['board__item']">
-        <button type="button" :class="$style['board__link']">
-          <div class="flex-box row-margin-small">
-            <div class="flex-box__cell flex-1">
-              <span :class="$style['board__title']">
-                <span :class="$style['board__title-text']"> 채용공고 </span>
-              </span>
+    <!-- Case : 검색 결과 있을 때(리스트 10개씩 정렬) -->
+    <div :class="$style['board']">
+      <ul :class="$style['board__list']">
+        <li :class="$style['board__item']">
+          <RouterLink
+            to="/company/recruit-detail"
+            :class="$style['board__link']"
+          >
+            <div class="flex-box row-margin-small">
+              <div class="flex-box__cell flex-1">
+                <span :class="$style['board__title']">
+                  <span :class="$style['board__title-text']">채용공고</span>
+                </span>
+              </div>
+              <RoundStatus
+                :classNames="{ wrap: 'display-block' }"
+                theme="secondary"
+              >
+                진행중
+              </RoundStatus>
             </div>
-            <RoundStatus
-              :classNames="{ wrap: 'display-block' }"
-              theme="secondary"
-            >
-              진행중
-            </RoundStatus>
-          </div>
-          <span :class="$style['board__text']">2022.08.09</span>
-        </button>
-      </li>
-      <li :class="$style['board__item']">
-        <button type="button" :class="$style['board__link']">
-          <div class="flex-box row-margin-small">
-            <div class="flex-box__cell flex-1">
-              <span :class="$style['board__title']">
-                <span :class="$style['board__title-text']"> 채용공고 </span>
-              </span>
+            <span :class="$style['board__text']">2022.08.09</span>
+          </RouterLink>
+        </li>
+        <li :class="$style['board__item']">
+          <RouterLink
+            to="/company/recruit-detail"
+            :class="$style['board__link']"
+          >
+            <div class="flex-box row-margin-small">
+              <div class="flex-box__cell flex-1">
+                <span :class="$style['board__title']">
+                  <span :class="$style['board__title-text']">채용공고</span>
+                </span>
+              </div>
+              <RoundStatus :classNames="{ wrap: 'display-block' }">
+                종료
+              </RoundStatus>
             </div>
-            <RoundStatus
-              :classNames="{ wrap: 'display-block' }"
-              theme="secondary"
-            >
-              진행중
-            </RoundStatus>
-          </div>
-          <span :class="$style['board__text']">2022.04.28</span>
-        </button>
-      </li>
-      <li :class="$style['board__item']">
-        <button type="button" :class="$style['board__link']">
-          <div class="flex-box row-margin-small">
-            <div class="flex-box__cell flex-1">
-              <span :class="$style['board__title']">
-                <span :class="$style['board__title-text']"> 채용공고 </span>
-              </span>
-            </div>
-            <RoundStatus
-              :classNames="{ wrap: 'display-block' }"
-              theme="secondary"
-            >
-              진행중
-            </RoundStatus>
-          </div>
-          <span :class="$style['board__text']">2022.02.18</span>
-        </button>
-      </li>
-      <li :class="$style['board__item']">
-        <button type="button" :class="$style['board__link']">
-          <div class="flex-box row-margin-small">
-            <div class="flex-box__cell flex-1">
-              <span :class="$style['board__title']">
-                <span :class="$style['board__title-text']"> 채용공고 </span>
-              </span>
-            </div>
-            <RoundStatus
-              :classNames="{ wrap: 'display-block' }"
-              theme="secondary"
-            >
-              진행중
-            </RoundStatus>
-          </div>
-          <span :class="$style['board__text']">2021.11.26</span>
-        </button>
-      </li>
-      <li :class="$style['board__item']">
-        <button type="button" :class="$style['board__link']">
-          <div class="flex-box row-margin-small">
-            <div class="flex-box__cell flex-1">
-              <span :class="$style['board__title']">
-                <span :class="$style['board__title-text']"> 채용공고 </span>
-              </span>
-            </div>
-            <RoundStatus
-              :classNames="{ wrap: 'display-block' }"
-              theme="secondary"
-            >
-              진행중
-            </RoundStatus>
-          </div>
-          <span :class="$style['board__text']">2021.10.13</span>
-        </button>
-      </li>
-      <li :class="$style['board__item']">
-        <button type="button" :class="$style['board__link']">
-          <div class="flex-box row-margin-small">
-            <div class="flex-box__cell flex-1">
-              <span :class="$style['board__title']">
-                <span :class="$style['board__title-text']"> 채용공고 </span>
-              </span>
-            </div>
-            <RoundStatus :classNames="{ wrap: 'display-block' }">
-              종료
-            </RoundStatus>
-          </div>
-          <span :class="$style['board__text']">2021.10.13</span>
-        </button>
-      </li>
-      <li :class="$style['board__item']">
-        <button type="button" :class="$style['board__link']">
-          <div class="flex-box row-margin-small">
-            <div class="flex-box__cell flex-1">
-              <span :class="$style['board__title']">
-                <span :class="$style['board__title-text']"> 채용공고 </span>
-              </span>
-            </div>
-            <RoundStatus :classNames="{ wrap: 'display-block' }">
-              종료
-            </RoundStatus>
-          </div>
-          <span :class="$style['board__text']">2021.07.12</span>
-        </button>
-      </li>
-      <li :class="$style['board__item']">
-        <button type="button" :class="$style['board__link']">
-          <div class="flex-box row-margin-small">
-            <div class="flex-box__cell flex-1">
-              <span :class="$style['board__title']">
-                <span :class="$style['board__title-text']"> 채용공고 </span>
-              </span>
-            </div>
-            <RoundStatus :classNames="{ wrap: 'display-block' }">
-              종료
-            </RoundStatus>
-          </div>
-          <span :class="$style['board__text']">2021.07.12</span>
-        </button>
-      </li>
-      <li :class="$style['board__item']">
-        <button type="button" :class="$style['board__link']">
-          <div class="flex-box row-margin-small">
-            <div class="flex-box__cell flex-1">
-              <span :class="$style['board__title']">
-                <span :class="$style['board__title-text']"> 채용공고 </span>
-              </span>
-            </div>
-            <RoundStatus :classNames="{ wrap: 'display-block' }">
-              종료
-            </RoundStatus>
-          </div>
-          <span :class="$style['board__text']">2021.07.12</span>
-        </button>
-      </li>
-      <li :class="$style['board__item']">
-        <button type="button" :class="$style['board__link']">
-          <div class="flex-box row-margin-small">
-            <div class="flex-box__cell flex-1">
-              <span :class="$style['board__title']">
-                <span :class="$style['board__title-text']"> 채용공고 </span>
-              </span>
-            </div>
-            <RoundStatus :classNames="{ wrap: 'display-block' }">
-              종료
-            </RoundStatus>
-          </div>
-          <span :class="$style['board__text']">2021.07.12</span>
-        </button>
-      </li>
-    </ul>
+            <span :class="$style['board__text']">2022.08.09</span>
+          </RouterLink>
+        </li>
+      </ul>
+    </div>
+    <!-- // Case : 검색 결과 있을 때 -->
 
     <div class="inline-wrap align-center row-margin-item-group">
       <TextButton :classNames="{ wrap: 'text-body-4 color-gray' }">
@@ -270,7 +150,6 @@ export default {
         </template>
       </TextButton>
     </div>
-    <!-- // Case : 검색 결과 있을 때 -->
   </PageContents>
 </template>
 

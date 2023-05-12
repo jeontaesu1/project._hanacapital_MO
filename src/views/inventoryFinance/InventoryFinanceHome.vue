@@ -194,87 +194,63 @@ export default {
       className="row-margin-container"
     />
 
-    <div :class="$style['icon-buttons']">
-      <ul :class="$style['icon-buttons__list']">
-        <li :class="$style['icon-buttons__item']">
-          <button type="button" :class="$style['icon-buttons__block']">
-            <span :class="$style['icon-buttons__icon']">
-              <IconSearchMoney />
+    <div :class="$style['icon-list']">
+      <ul :class="$style['icon-list__list']">
+        <li :class="$style['icon-list__item']">
+          <RouterLink to="" :class="$style['icon-list__block']">
+            <span :class="$style['icon-list__icon']"><IconSearchMoney /></span>
+            <span :class="$style['icon-list__content']">
+              <span :class="$style['icon-list__title']">한도조회</span>
             </span>
-            <span :class="$style['icon-buttons__content']">
-              <span
-                :class="[$style['icon-buttons__title'], 'font-weight-medium']"
-              >
-                한도조회
-              </span>
-            </span>
-          </button>
+          </RouterLink>
         </li>
-        <li :class="$style['icon-buttons__item']">
-          <button type="button" :class="$style['icon-buttons__block']">
-            <span :class="$style['icon-buttons__icon']">
-              <IconDeposit />
+        <li :class="$style['icon-list__item']">
+          <RouterLink to="" :class="$style['icon-list__block']">
+            <span :class="$style['icon-list__icon']"><IconDeposit /></span>
+            <span :class="$style['icon-list__content']">
+              <span :class="$style['icon-list__title']">대출신청</span>
             </span>
-            <span :class="$style['icon-buttons__content']">
-              <span
-                :class="[$style['icon-buttons__title'], 'font-weight-medium']"
-                >대출신청</span
-              >
-            </span>
-          </button>
+          </RouterLink>
         </li>
-        <li :class="$style['icon-buttons__item']">
-          <button type="button" :class="$style['icon-buttons__block']">
-            <span :class="$style['icon-buttons__icon']">
+        <li :class="$style['icon-list__item']">
+          <RouterLink to="" :class="$style['icon-list__block']">
+            <span :class="$style['icon-list__icon']">
               <IconCommissionRateRepayment />
             </span>
-            <span :class="$style['icon-buttons__content']">
-              <span
-                :class="[$style['icon-buttons__title'], 'font-weight-medium']"
-                >중도상환</span
-              >
+            <span :class="$style['icon-list__content']">
+              <span :class="$style['icon-list__title']">중도상환</span>
             </span>
-          </button>
+          </RouterLink>
         </li>
-        <li :class="$style['icon-buttons__item']">
-          <button type="button" :class="$style['icon-buttons__block']">
-            <span :class="$style['icon-buttons__icon']">
+        <li :class="$style['icon-list__item']">
+          <RouterLink to="" :class="$style['icon-list__block']">
+            <span :class="$style['icon-list__icon']">
               <IconDateWhite />
             </span>
-            <span :class="$style['icon-buttons__content']">
-              <span
-                :class="[$style['icon-buttons__title'], 'font-weight-medium']"
-                >만기연장</span
-              >
+            <span :class="$style['icon-list__content']">
+              <span :class="$style['icon-list__title']">만기연장</span>
             </span>
-          </button>
+          </RouterLink>
         </li>
-        <li :class="$style['icon-buttons__item']">
-          <button type="button" :class="$style['icon-buttons__block']">
-            <span :class="$style['icon-buttons__icon']">
+        <li :class="$style['icon-list__item']">
+          <RouterLink to="" :class="$style['icon-list__block']">
+            <span :class="$style['icon-list__icon']">
               <IconDocumentAdd />
             </span>
-            <span :class="$style['icon-buttons__content']">
-              <span
-                :class="[$style['icon-buttons__title'], 'font-weight-medium']"
-              >
-                구비서류추가등록
-              </span>
+            <span :class="$style['icon-list__content']">
+              <span :class="$style['icon-list__title']">구비서류추가등록</span>
             </span>
-          </button>
+          </RouterLink>
         </li>
-        <li :class="$style['icon-buttons__item']">
-          <button type="button" :class="$style['icon-buttons__block']">
-            <span :class="$style['icon-buttons__icon']">
+        <li :class="$style['icon-list__item']">
+          <RouterLink to="" :class="$style['icon-list__block']">
+            <span :class="$style['icon-list__icon']">
               <IconCheckCompleted />
             </span>
-            <span :class="$style['icon-buttons__content']">
-              <span
-                :class="[$style['icon-buttons__title'], 'font-weight-medium']"
-                >종료건 확인</span
-              >
+            <span :class="$style['icon-list__content']">
+              <span :class="$style['icon-list__title']">종료건 확인</span>
             </span>
-          </button>
+          </RouterLink>
         </li>
       </ul>
     </div>

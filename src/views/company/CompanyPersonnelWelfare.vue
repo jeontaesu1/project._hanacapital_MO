@@ -298,7 +298,6 @@ export default {
                   <ul
                     :class="[
                       $style['basic-list'],
-                      $style['basic-list--regular'],
                       $style['basic-list--mini-margin'],
                     ]"
                   >

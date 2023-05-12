@@ -70,7 +70,7 @@ export default {
     <IllustObject type="complete" />
 
     <BasicBox>
-      <KeyValue margin="regular">
+      <KeyValue>
         <KeyValueItem
           :classNames="{
             item: 'text-body-3',

@@ -7,10 +7,9 @@ import { useUiHeaderStore } from '@/stores/ui/header';
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
-import UiTab from '@/components/ui/tab/UiTab.vue';
+import StickyBar from '@/components/ui/common/StickyBar.vue';
 import NavTab from '@/components/ui/tab/NavTab.vue';
 import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
-import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import KeyValue from '@/components/ui/text/KeyValue.vue';
@@ -26,8 +25,7 @@ export default {
     PageContents,
     PageTextGroup,
     PageMainText,
-    UiTab,
-    UiTabPanel,
+    StickyBar,
     NavTab,
     NavTabButton,
     BasicBox,
@@ -71,116 +69,17 @@ export default {
       </PageMainText>
     </PageTextGroup>
 
-    <!-- Case : 상품권한 2개(상품권한 1개일 경우 Tab 없어짐) -->
-    <UiTab>
-      <NavTab :useUiTab="true" class="row-margin-contents-group">
-        <NavTabButton link="inventoryFinanceLoanLimitInquiryNavTab001_001">
+    <!-- Case : 상품권한 2개일 경우 노출 -->
+    <StickyBar>
+      <NavTab class="row-margin-bottom-none">
+        <NavTabButton tagName="button" type="button" :active="true">
           재고금융
         </NavTabButton>
-        <NavTabButton link="inventoryFinanceLoanLimitInquiryNavTab001_002">
-          재고금융 Ⅱ
-        </NavTabButton>
+        <NavTabButton tagName="button" type="button">재고금융 Ⅱ</NavTabButton>
       </NavTab>
+    </StickyBar>
+    <!-- // Case : 상품권한 2개일 경우 노출 -->
 
-      <UiTabPanel name="inventoryFinanceLoanLimitInquiryNavTab001_001">
-        <BasicBox class="row-margin-contents-group">
-          <BasicBoxHead>
-            <h3 class="text-body-1 font-weight-medium">
-              주식회사알차이노베이션 (재고금융)
-            </h3>
-          </BasicBoxHead>
-
-          <KeyValue margin="regular">
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>약정기간</KeyValueTitle>
-              <KeyValueText>2021.11.10 ~ 2022.03.10</KeyValueText>
-            </KeyValueItem>
-
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>한도금액</KeyValueTitle>
-              <KeyValueText>200,000,000 원</KeyValueText>
-            </KeyValueItem>
-
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>한도잔액</KeyValueTitle>
-              <KeyValueText>2,000,000 원</KeyValueText>
-            </KeyValueItem>
-
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>실행건수</KeyValueTitle>
-              <KeyValueText>N 건</KeyValueText>
-            </KeyValueItem>
-          </KeyValue>
-        </BasicBox>
-      </UiTabPanel>
-
-      <UiTabPanel name="inventoryFinanceLoanLimitInquiryNavTab001_002">
-        <BasicBox class="row-margin-contents-group">
-          <BasicBoxHead>
-            <h3 class="text-body-1 font-weight-medium">
-              주식회사알차이노베이션 (재고금융 Ⅱ)
-            </h3>
-          </BasicBoxHead>
-
-          <KeyValue margin="regular">
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>약정기간</KeyValueTitle>
-              <KeyValueText>2021.11.10 ~ 2022.03.10</KeyValueText>
-            </KeyValueItem>
-
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>한도금액</KeyValueTitle>
-              <KeyValueText>200,000,000 원</KeyValueText>
-            </KeyValueItem>
-
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>한도잔액</KeyValueTitle>
-              <KeyValueText>2,000,000 원</KeyValueText>
-            </KeyValueItem>
-
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>실행건수</KeyValueTitle>
-              <KeyValueText>N 건</KeyValueText>
-            </KeyValueItem>
-          </KeyValue>
-        </BasicBox>
-      </UiTabPanel>
-    </UiTab>
-    <!-- // Case : 상품권한 2개 -->
-
-    <!-- Case : 상품권한 1개 -->
     <BasicBox class="row-margin-contents-group">
       <BasicBoxHead>
         <h3 class="text-body-1 font-weight-medium">
@@ -226,7 +125,6 @@ export default {
         </KeyValueItem>
       </KeyValue>
     </BasicBox>
-    <!-- // Case : 상품권한 1개 -->
 
     <template v-slot:foot>
       <ButtonList

@@ -455,7 +455,7 @@ export default {
       </section>
 
       <section :class="[$style['notice-section'], 'row-margin-contents']">
-        <h3 :class="$style['notice-section__title']">견적시 유의사항</h3>
+        <h4 :class="$style['notice-section__title']">견적시 유의사항</h4>
         <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
@@ -473,7 +473,7 @@ export default {
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              하나캐피탈㈜는 고객님의 리스료 미납 등 채무불이행 및 리스물건
+              하나캐피탈㈜는 손님의 리스료 미납 등 채무불이행 및 리스물건
               반납의무 위반을 대비하여 보증보험회사와 신용보험 계약을 체결할 수
               있습니다.
             </div>

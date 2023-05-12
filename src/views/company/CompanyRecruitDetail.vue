@@ -62,7 +62,7 @@ export default {
             :line="true"
             theme="quaternary"
             tagName="RouterLink"
-            to=""
+            to="/company/recruit-list"
           >
             목록
           </BasicButton>

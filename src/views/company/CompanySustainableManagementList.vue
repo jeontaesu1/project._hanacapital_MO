@@ -1,6 +1,7 @@
 <script>
 // Company_M08_p007
 import { onMounted, onUnmounted } from 'vue';
+import { RouterLink } from 'vue-router';
 
 import { useUiHeaderStore } from '@/stores/ui/header';
 
@@ -12,6 +13,7 @@ import BasicInput from '@/components/ui/form/BasicInput.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import SearchButton from '@/components/ui/button/SearchButton.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
+
 import IconArrow from '@/assets/images/icon/dropdown.svg?component';
 
 export default {
@@ -24,6 +26,7 @@ export default {
     BasicHr,
     SearchButton,
     TextButton,
+    RouterLink,
     IconArrow,
   },
   setup() {
@@ -92,108 +95,25 @@ export default {
     <!-- // Case : 검색 결과 없을 때 -->
 
     <!-- Case : 검색 결과 있을 때 -->
-    <ul :class="$style['board__list']">
-      <li :class="$style['board__item']">
-        <button type="button" :class="$style['board__link']">
-          <span :class="$style['board__title']">
-            <span :class="$style['board__title-text']">
-              ESG채권 투자자 안내문
+    <div :class="$style['board']">
+      <ul :class="$style['board__list']">
+        <li v-for="i in 10" :key="i" :class="$style['board__item']">
+          <RouterLink
+            to="/company/sustainable-management-detail"
+            :class="$style['board__link']"
+          >
+            <span :class="$style['board__title']">
+              <span :class="$style['board__title-text']">
+                ESG채권 인증보고서
+              </span>
             </span>
-          </span>
-          <span :class="$style['board__text']">2022.08.09</span>
-        </button>
-      </li>
-      <li :class="$style['board__item']">
-        <button type="button" :class="$style['board__link']">
-          <span :class="$style['board__title']">
-            <span :class="$style['board__title-text']">
-              ESG채권 투자자 안내문
-            </span>
-          </span>
-          <span :class="$style['board__text']">2022.04.28</span>
-        </button>
-      </li>
-      <li :class="$style['board__item']">
-        <button type="button" :class="$style['board__link']">
-          <span :class="$style['board__title']">
-            <span :class="$style['board__title-text']">
-              ESG채권 인증보고서
-            </span>
-          </span>
-          <span :class="$style['board__text']">2022.02.18</span>
-        </button>
-      </li>
-      <li :class="$style['board__item']">
-        <button type="button" :class="$style['board__link']">
-          <span :class="$style['board__title']">
-            <span :class="$style['board__title-text']">
-              ESG채권 인증보고서
-            </span>
-          </span>
-          <span :class="$style['board__text']">2021.11.26</span>
-        </button>
-      </li>
-      <li :class="$style['board__item']">
-        <button type="button" :class="$style['board__link']">
-          <span :class="$style['board__title']">
-            <span :class="$style['board__title-text']">
-              ESG채권 인증보고서
-            </span>
-          </span>
-          <span :class="$style['board__text']">2021.10.13</span>
-        </button>
-      </li>
-      <li :class="$style['board__item']">
-        <button type="button" :class="$style['board__link']">
-          <span :class="$style['board__title']">
-            <span :class="$style['board__title-text']">
-              ESG채권 인증보고서
-            </span>
-          </span>
-          <span :class="$style['board__text']">2021.07.12</span>
-        </button>
-      </li>
-      <li :class="$style['board__item']">
-        <button type="button" :class="$style['board__link']">
-          <span :class="$style['board__title']">
-            <span :class="$style['board__title-text']">
-              ESG채권 인증보고서
-            </span>
-          </span>
-          <span :class="$style['board__text']">2021.05.20</span>
-        </button>
-      </li>
-      <li :class="$style['board__item']">
-        <button type="button" :class="$style['board__link']">
-          <span :class="$style['board__title']">
-            <span :class="$style['board__title-text']">
-              ESG채권 인증보고서
-            </span>
-          </span>
-          <span :class="$style['board__text']">2021.05.20</span>
-        </button>
-      </li>
-      <li :class="$style['board__item']">
-        <button type="button" :class="$style['board__link']">
-          <span :class="$style['board__title']">
-            <span :class="$style['board__title-text']">
-              ESG채권 인증보고서
-            </span>
-          </span>
-          <span :class="$style['board__text']">2020.09.08</span>
-        </button>
-      </li>
-      <li :class="$style['board__item']">
-        <button type="button" :class="$style['board__link']">
-          <span :class="$style['board__title']">
-            <span :class="$style['board__title-text']">
-              ESG채권 인증보고서
-            </span>
-          </span>
-          <span :class="$style['board__text']">2020.08.31</span>
-        </button>
-      </li>
-    </ul>
+            <span :class="$style['board__text']">2020.09.08</span>
+          </RouterLink>
+        </li>
+      </ul>
+    </div>
+
+    <!-- // Case : 검색 결과 있을 때 -->
 
     <div class="inline-wrap align-center row-margin-item-group">
       <TextButton :classNames="{ wrap: 'text-body-4 color-gray' }">
@@ -203,7 +123,6 @@ export default {
         </template>
       </TextButton>
     </div>
-    <!-- // Case : 검색 결과 있을 때 -->
   </PageContents>
 </template>
 

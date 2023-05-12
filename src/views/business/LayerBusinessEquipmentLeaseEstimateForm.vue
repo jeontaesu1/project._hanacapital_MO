@@ -43,8 +43,6 @@ export default {
     BasicButton,
   },
   setup() {
-    const layer = ref(null);
-
     const state = reactive({
       memberTypeError: false,
       nameError: false,
@@ -56,9 +54,11 @@ export default {
       businessError: false,
     });
 
+    const layer = ref(null);
+
     return {
-      layer,
       state,
+      layer,
     };
   },
 };

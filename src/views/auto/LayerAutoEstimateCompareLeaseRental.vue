@@ -31,7 +31,12 @@ export default {
 </script>
 
 <template>
-  <UiLayer ref="layer" type="toast" :backgroundClose="true">
+  <UiLayer
+    ref="layer"
+    type="toast"
+    :backgroundClose="true"
+    v-slot="layerSlotProps"
+  >
     <ToastPopup>
       <template v-slot:head>
         <ToastPopupHead>
@@ -55,62 +60,62 @@ export default {
           </thead>
           <tbody>
             <tr>
-              <td class="color-gray">관련법률</td>
+              <th>관련법률</th>
               <td>여신전문<br />금융업법<br />시설대대여법</td>
               <td>여객자동차운수<br />사업법상<br />자동차 대여사업</td>
             </tr>
             <tr>
-              <td class="color-gray">등록명의</td>
+              <th>등록명의</th>
               <td>리스회사</td>
               <td>렌트회사</td>
             </tr>
             <tr>
-              <td class="color-gray">번호판</td>
+              <th>번호판</th>
               <td>자가용</td>
               <td style="padding: 0">영업용(하/허/호)</td>
             </tr>
             <tr>
-              <td class="color-gray">차종</td>
+              <th>차종</th>
               <td>제한 없음</td>
               <td>15인승 이하,<br />승합, 승용차</td>
             </tr>
             <tr>
-              <td class="color-gray">차량제한</td>
+              <th>차량제한</th>
               <td>없음</td>
               <td>있음</td>
             </tr>
             <tr>
-              <td class="color-gray">최소<br />대여기간</td>
+              <th>최소<br />대여기간</th>
               <td>1년 이상</td>
               <td>1년 이상<br />(장기렌트)</td>
             </tr>
             <tr>
-              <td class="color-gray">부가세</td>
+              <th>부가세</th>
               <td>면세</td>
               <td>과세<br />(VAT 10% 포함)</td>
             </tr>
             <tr>
-              <td class="color-gray">보험요율</td>
+              <th>보험요율</th>
               <td>고객보험 요율<br />(보험 경력 유지)</td>
               <td>공가금액의 4%</td>
             </tr>
             <tr>
-              <td class="color-gray">공채<br />매입률</td>
+              <th>공채<br />매입률</th>
               <td>배기량에 따라<br />4%~20%</td>
               <td>없음</td>
             </tr>
             <tr>
-              <td class="color-gray">차동차세</td>
+              <th>차동차세</th>
               <td>CC당<br />130~286원</td>
               <td>CC당<br />18~24원</td>
             </tr>
             <tr>
-              <td class="color-gray">주행제한<br />거리</td>
+              <th>주행제한<br />거리</th>
               <td>최대 4만 km</td>
               <td>최대 5만 km</td>
             </tr>
             <tr>
-              <td class="color-gray">정비<br />서비스</td>
+              <th>정비<br />서비스</th>
               <td>미제공</td>
               <td>제공<br />(단, 국산차 Self 상품 및 수입차 렌트 제외)</td>
             </tr>
@@ -125,7 +130,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton>확인</BasicButton>
+            <BasicButton @click="layerSlotProps.close()">확인</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
