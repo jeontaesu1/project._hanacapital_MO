@@ -1464,7 +1464,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/sales-used-car-001',
-        status: 'partend',
+        status: 'end',
         create: '2023.05.05',
         log: [
           {
@@ -1672,7 +1672,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/sales-new-car-001',
-        status: 'partend',
+        status: 'end',
         create: '2023.05.05',
         log: [
           {
@@ -1835,7 +1835,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/equipment-lease-001',
-        status: 'partend',
+        status: 'end',
         create: '2023.05.12',
         log: [],
       },
@@ -3052,7 +3052,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/my-info-market-price-realty-001',
-        status: 'partend',
+        status: 'end',
         create: '2023.05.05',
         log: [],
       },
