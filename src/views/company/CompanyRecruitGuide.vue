@@ -65,15 +65,17 @@ export default {
       <template v-slot:head>
         <StickyBar>
           <NavTab :head="true" :useUiTab="true">
-            <NavTabButton link="companyHistoryTab001">인재상</NavTabButton>
-            <NavTabButton link="companyHistoryTab002">전형방법</NavTabButton>
+            <NavTabButton link="companyRecruitGuideTab001">인재상</NavTabButton>
+            <NavTabButton link="companyRecruitGuideTab002"
+              >전형방법</NavTabButton
+            >
           </NavTab>
         </StickyBar>
       </template>
 
       <!-- Tab : 인재상 -->
-      <UiTabPanel name="companyHistoryTab001">
-        <PageTextGroup>
+      <UiTabPanel name="companyRecruitGuideTab001">
+        <PageTextGroup :classNames="{ wrap: 'row-margin-container-medium' }">
           <PageMainText>
             <span class="color-green">POWER on Integrity</span> 라는 핵심가치를
             체득, 실천함으로써 기업 문화를 계승, 발전시키며
@@ -86,39 +88,35 @@ export default {
         </PageTextGroup>
 
         <section :class="$style['bg']">
-          <h3 class="text-head-2 row-margin-item-medium">
+          <h3 class="text-head-2 row-margin-contents">
             핵심가치 <span class="color-green">INTEGRITY</span>
           </h3>
 
           <div :class="$style['grid-list']">
             <div :class="$style['grid-list__item']">
               <BasicBox theme="secondary">
-                <div class="text-body-1 font-weight-medium">PASSION</div>
-                <div class="text-body-4 color-gray row-margin-small">열정</div>
+                <p class="text-body-1 font-weight-medium">PASSION</p>
+                <p class="text-body-4 color-gray row-margin-small">열정</p>
               </BasicBox>
             </div>
             <div :class="$style['grid-list__item']">
               <BasicBox theme="secondary">
-                <div class="text-body-1 font-weight-medium">OPENNESS</div>
-                <div class="text-body-4 color-gray row-margin-small">
-                  열린마음
-                </div>
+                <p class="text-body-1 font-weight-medium">OPENNESS</p>
+                <p class="text-body-4 color-gray row-margin-small">열린마음</p>
               </BasicBox>
             </div>
             <div :class="$style['grid-list__item']">
               <BasicBox theme="secondary">
-                <div class="text-body-1 font-weight-medium">EXCELLENCE</div>
-                <div class="text-body-4 color-gray row-margin-small">
-                  전문성
-                </div>
+                <p class="text-body-1 font-weight-medium">EXCELLENCE</p>
+                <p class="text-body-4 color-gray row-margin-small">전문성</p>
               </BasicBox>
             </div>
             <div :class="$style['grid-list__item']">
               <BasicBox theme="secondary">
-                <div class="text-body-1 font-weight-medium">RESPECT</div>
-                <div class="text-body-4 color-gray row-margin-small">
+                <p class="text-body-1 font-weight-medium">RESPECT</p>
+                <p class="text-body-4 color-gray row-margin-small">
                   존경과 배려
-                </div>
+                </p>
               </BasicBox>
             </div>
             <div
@@ -128,10 +126,8 @@ export default {
               ]"
             >
               <BasicBox theme="secondary">
-                <div class="text-body-1 font-weight-medium">WITH CUSTOMER</div>
-                <div class="text-body-4 color-gray row-margin-small">
-                  손님 우선
-                </div>
+                <p class="text-body-1 font-weight-medium">WITH CUSTOMER</p>
+                <p class="text-body-4 color-gray row-margin-small">손님 우선</p>
               </BasicBox>
             </div>
           </div>
@@ -311,8 +307,8 @@ export default {
       </UiTabPanel>
       <!-- // Tab : 인재상 -->
 
-      <!-- Tab : 2004 ~ 2010 -->
-      <UiTabPanel name="companyHistoryTab002">
+      <!-- Tab : 전형방법 -->
+      <UiTabPanel name="companyRecruitGuideTab002">
         <div :class="$style['step']">
           <ul :class="$style['step__list']">
             <li :class="$style['step__item']">
@@ -361,8 +357,8 @@ export default {
                     <div :class="$style['step__badge']">STEP 2</div>
                   </div>
                   <div :class="$style['step__text']">
-                    <strong>입사지원서 작성</strong> 후 홈페이지 상에<br />
-                    <strong>On-Line 등록</strong>해 접수를 진행합니다.
+                    입사지원서를 토대로<br />
+                    <strong>지원자의 기본능력을 평가</strong>합니다.
                   </div>
                   <div class="row-margin-item-small">
                     <ul
@@ -374,15 +370,9 @@ export default {
                       <li :class="$style['basic-list__item']">
                         <div :class="$style['basic-list__symbol']"></div>
                         <div :class="$style['basic-list__content']">
-                          채용공고 : 현재 채용중인 분야를 확인하고 곧바로
-                          지원하는 방법
-                        </div>
-                      </li>
-                      <li :class="$style['basic-list__item']">
-                        <div :class="$style['basic-list__symbol']"></div>
-                        <div :class="$style['basic-list__content']">
-                          상시입사지원 : 현재 채용하지 않지만 지원을 남겨 향후
-                          채용에 대비
+                          이에 따라 입사 지원서를 작성하실 때 전공, 경력사항 및
+                          자기소개서 등을 성실하게 작성하여야 하며, 기재사항이
+                          허위로 판명될 때에는 합격이 취소됩니다.
                         </div>
                       </li>
                     </ul>
@@ -397,11 +387,11 @@ export default {
               <div :class="$style['step__inner']">
                 <div :class="$style['step__contents']">
                   <div :class="$style['step__top']">
-                    <div :class="$style['step__badge']">STEP 2</div>
+                    <div :class="$style['step__badge']">STEP 3</div>
                   </div>
                   <div :class="$style['step__text']">
-                    <strong>입사지원서 작성</strong> 후 홈페이지 상에<br />
-                    <strong>On-Line 등록</strong>해 접수를 진행합니다.
+                    서류전형 합격자들을 대상으로<br />
+                    <strong>면접을 진행</strong>합니다.
                   </div>
                   <div class="row-margin-item-small">
                     <ul
@@ -413,15 +403,17 @@ export default {
                       <li :class="$style['basic-list__item']">
                         <div :class="$style['basic-list__symbol']"></div>
                         <div :class="$style['basic-list__content']">
-                          채용공고 : 현재 채용중인 분야를 확인하고 곧바로
-                          지원하는 방법
+                          지원자의 수행능력 및 성실도 등을 검증하기 위해 각
+                          지원분야별 임원급 및 해당 부서장을 면접위원으로
+                          위촉합니다.
                         </div>
                       </li>
                       <li :class="$style['basic-list__item']">
                         <div :class="$style['basic-list__symbol']"></div>
                         <div :class="$style['basic-list__content']">
-                          상시입사지원 : 현재 채용하지 않지만 지원을 남겨 향후
-                          채용에 대비
+                          기본적으로 면접은 4~5명의 그룹면접으로 진행되며,
+                          질의응답 형식으로 진행되나 채용 유형에 따라 1인 면접도
+                          실시할 수 있습니다.
                         </div>
                       </li>
                     </ul>
@@ -436,11 +428,15 @@ export default {
               <div :class="$style['step__inner']">
                 <div :class="$style['step__contents']">
                   <div :class="$style['step__top']">
-                    <div :class="$style['step__badge']">STEP 2</div>
+                    <div :class="$style['step__badge']">STEP 4</div>
                   </div>
                   <div :class="$style['step__text']">
-                    <strong>입사지원서 작성</strong> 후 홈페이지 상에<br />
-                    <strong>On-Line 등록</strong>해 접수를 진행합니다.
+                    면접을 전 후하여 회사에서 지정한<br />
+                    병원의 종합검진으로
+                    <strong
+                      >건강진단 결과가 나온 이후 회사규정에 따라 최종 합격
+                      여부가 결정</strong
+                    >됩니다.
                   </div>
                   <div class="row-margin-item-small">
                     <ul
@@ -452,15 +448,18 @@ export default {
                       <li :class="$style['basic-list__item']">
                         <div :class="$style['basic-list__symbol']"></div>
                         <div :class="$style['basic-list__content']">
-                          채용공고 : 현재 채용중인 분야를 확인하고 곧바로
-                          지원하는 방법
+                          통상 면접전형 합격자에 대하여 혈액검사를 통한 간
+                          장기검사, 혈압, 청력, 시력, X-ray, 검진 등 종합검진을
+                          실시합니다.
                         </div>
                       </li>
                       <li :class="$style['basic-list__item']">
                         <div :class="$style['basic-list__symbol']"></div>
                         <div :class="$style['basic-list__content']">
-                          상시입사지원 : 현재 채용하지 않지만 지원을 남겨 향후
-                          채용에 대비
+                          건강 진단일 2~3일 전부터 음주는 물론 무리한
+                          활동/운동이나 약물복용을 삼가고, 검진 전날 저녁 09:00
+                          이후부터 검진 시까지는 공복을 유지하여야 정확한
+                          검진결과를 얻을 수 있습니다.
                         </div>
                       </li>
                     </ul>
@@ -474,7 +473,7 @@ export default {
           </ul>
         </div>
       </UiTabPanel>
-      <!-- // Tab : 2004 ~ 2010 -->
+      <!-- // Tab : 전형방법 -->
     </PageContents>
   </UiTab>
 </template>

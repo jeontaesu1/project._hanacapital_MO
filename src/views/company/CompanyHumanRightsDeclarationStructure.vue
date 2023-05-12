@@ -7,33 +7,16 @@ import { useUiHeaderStore } from '@/stores/ui/header';
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
-import ButtonList from '@/components/ui/button/ButtonList.vue';
-import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-import BasicButton from '@/components/ui/button/BasicButton.vue';
-import TextButton from '@/components/ui/button/TextButton.vue';
-import RoundStatus from '@/components/ui/text/RoundStatus.vue';
-import BasicHr from '@/components/ui/common/BasicHr.vue';
+import PageSubText from '@/components/ui/text/PageSubText.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
-
-import IconHyendaiRentalCare from '@/assets/images/icon/hyendai-rental-care.svg?component';
-import IconBuilding from '@/assets/images/icon/building.svg?component';
-import IconCar from '@/assets/images/icon/car.svg?component';
 
 export default {
   components: {
     PageContents,
     PageTextGroup,
     PageMainText,
-    ButtonList,
-    ButtonListItem,
-    BasicButton,
-    TextButton,
-    RoundStatus,
-    BasicHr,
+    PageSubText,
     BasicBox,
-    IconHyendaiRentalCare,
-    IconBuilding,
-    IconCar,
   },
   setup() {
     const store = {
@@ -43,7 +26,7 @@ export default {
     };
 
     onMounted(() => {
-      store.ui.header.setTitle(() => '윤리강령');
+      store.ui.header.setTitle(() => '인권선언문 구성체계');
       store.ui.header.setLeftButtons(() => ['back']);
       store.ui.header.setRightButtons(() => ['menu']);
     });
@@ -59,41 +42,58 @@ export default {
 
 <template>
   <PageContents>
-    <PageTextGroup>
+    <PageTextGroup :classNames="{ wrap: 'row-margin-container-medium' }">
       <PageMainText>
-        이 모든 질문에<br />
-        <strong>“예”라고 답할 수 있으면 행하십시오</strong>
+        <strong>하나금융그룹 인권선언</strong>
       </PageMainText>
       <PageSubText>
-        스스로 판단하기 어려운 사항은<br />
-        윤리 또는 준법담당 부서에 의견을 물을 수 있습니다.
+        하나금융그룹은 기업의 사회적 책임을 충실히 이행하고 모든 이해관계자와의
+        건강한 성장을 추구하기 위하여 ‘함께 성장하며 행복을 나누는 금융’을
+        그룹의 미션으로 정하고, 이를 바탕으로 윤리적 가치가 반영된 의사결정
+        기준과 행동 원칙을 담은 ‘Code One(하나금융그룹 윤리강령)’을 통해
+        인권경영을 실천하고 있습니다.<br />
+        또한 하나금융그룹은 UN의 ‘세계인권선언(Universal Declaration of Human
+        Rights)’과 ‘기업과 인권 이행지침<br />
+        (Guiding Principles on Business and Human Rights)’ 에서 제시하는 인권
+        원칙을 지지하며, 아래와 같이 그룹의 모든 이해관계자의 인권을 보호하고
+        인권침해가 발생하지 않도록 노력하겠습니다.
       </PageSubText>
     </PageTextGroup>
 
     <section :class="$style['bg']">
-      <h3 class="text-head-2 row-margin-item-medium">
-        윤리적 판단을 위한 질문
-      </h3>
+      <h3 class="text-head-2 row-margin-contents">인권선언문 구성체계</h3>
 
       <ul class="reset-list">
         <li class="row-margin-item-medium">
           <BasicBox theme="secondary">
             <p class="text-body-1 font-weight-medium align-center">
-              내 결정이 Code One에 부합하는가?
+              기업이념의 최상위 개념으로<br />
+              기업의 존재이유와 궁극적 목적 제시
+            </p>
+            <p class="text-body-4 color-gray align-center row-margin-small">
+              하나금융 그룹의 미션 제시를 통한 ‘인권경영’ 표현
             </p>
           </BasicBox>
         </li>
         <li class="row-margin-item-medium">
           <BasicBox theme="secondary">
             <p class="text-body-1 font-weight-medium align-center">
-              내 행동이 다른 임직원이나 언론에 공개 되어도 문제가 없겠는가?
+              미션을 구체적으로 실천하기 위한<br />
+              의사결정의 원칙 및 행동기준
+            </p>
+            <p class="text-body-4 color-gray align-center row-margin-small">
+              Code One을 통해 그룹 인권경영 실천기준 제시
             </p>
           </BasicBox>
         </li>
         <li class="row-margin-item-medium">
           <BasicBox theme="secondary">
             <p class="text-body-1 font-weight-medium align-center">
-              다른 사람이 이 자리에 있더라도 똑같은 판단을 내리겠는가?
+              국제인권 기준 (세계인권선언,<br />
+              기업과 인권 이행지침)의 지지와 준수
+            </p>
+            <p class="text-body-4 color-gray align-center row-margin-small">
+              그룹의 모든 이해관계자의 인권보호 및 존중의지 선언
             </p>
           </BasicBox>
         </li>
@@ -101,11 +101,13 @@ export default {
     </section>
 
     <section class="row-margin-container-medium">
-      <h3 class="text-head-2 row-margin-item-medium">제 1장 임직원의 자세</h3>
+      <h3 class="text-head-2 row-margin-contents">
+        이해관계자 구분 및 인권 이슈
+      </h3>
 
-      <div :class="$style['contents-list']">
+      <div>
         <section class="row-margin-contents-group">
-          <h3 class="text-body-2 row-margin-item-medium">상품안내</h3>
+          <h4 class="text-body-2 row-margin-item-medium">임직원</h4>
 
           <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
             <li
@@ -117,7 +119,7 @@ export default {
             >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                대출한도 : 최저 100만원 ~ 최대 1억원
+                차별 금지 (Code One 2조)
               </div>
             </li>
             <li
@@ -129,7 +131,7 @@ export default {
             >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                금리 : 고정 연 4.9% ~ 18.9%
+                공정한 평가와 보상 (Code One 18조, 19조)
               </div>
             </li>
             <li
@@ -141,7 +143,7 @@ export default {
             >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                대출기간 : 12개월 ~ 120개월
+                안전한 근무환경 (인권위, 인권경영 가이드 라인)
               </div>
             </li>
             <li
@@ -153,120 +155,26 @@ export default {
             >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                연체이자율 :
-                <strong class="font-weight-medium"
-                  >약정이율+3% (법정최고금리 연 20% 이내)</strong
-                >
+                근무여건 개선 (Code One 20조)
               </div>
             </li>
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-4',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                <div>중도상환수수료</div>
-                <ul
-                  :class="[
-                    $style['basic-list'],
-                    $style['basic-list--regular'],
-                    'row-margin-item',
-                  ]"
-                >
-                  <li
-                    :class="[
-                      $style['basic-list__item'],
-                      'color-black',
-                      'text-body-4',
-                      'font-weight-regular',
-                    ]"
-                  >
-                    <div :class="$style['basic-list__symbol']">-</div>
-                    <div :class="$style['basic-list__content']">
-                      e하나신용대출 : 0%
-                    </div>
-                  </li>
-                  <li
-                    :class="[
-                      $style['basic-list__item'],
-                      'color-black',
-                      'text-body-4',
-                      'font-weight-regular',
-                    ]"
-                  >
-                    <div :class="$style['basic-list__symbol']">-</div>
-                    <div :class="$style['basic-list__content']">
-                      행복아파트론 · 원큐자동차담보대출 대출일로부터 3년 이내
-                      상환 시 적용, 중도상환수수료율 2%
-                    </div>
-                  </li>
-                  <li
-                    :class="[
-                      $style['basic-list__item'],
-                      'color-black',
-                      'text-body-4',
-                      'font-weight-regular',
-                    ]"
-                  >
-                    <div :class="$style['basic-list__symbol']">-</div>
-                    <div :class="$style['basic-list__content']">
-                      <div>중도상환수수료 산식</div>
+          </ul>
+        </section>
 
-                      <ul
-                        :class="[
-                          $style['basic-list'],
-                          $style['basic-list--small-margin'],
-                          'row-margin-item',
-                        ]"
-                      >
-                        <li
-                          :class="[
-                            $style['basic-list__item'],
-                            'font-weight-regular',
-                            'color-gray-tertiary',
-                          ]"
-                        >
-                          <div :class="$style['basic-list__symbol']">※</div>
-                          <div :class="$style['basic-list__content']">
-                            만기 1년 이상 :<br />
-                            중도상환원금 × 1% + 중도상환원금 × (중도상환수수료율
-                            - 1%) × 잔존기간/(대출기간-30일)
-                          </div>
-                        </li>
-                        <li
-                          :class="[
-                            $style['basic-list__item'],
-                            'font-weight-regular',
-                            'color-gray-tertiary',
-                          ]"
-                        >
-                          <div :class="$style['basic-list__symbol']">※</div>
-                          <div :class="$style['basic-list__content']">
-                            만기 1년 미만 :<br />
-                            중도상환원금 × (중도상환수수료율) ×
-                            잔존기간/(대출기간-30일)
-                          </div>
-                        </li>
-                        <li
-                          :class="[
-                            $style['basic-list__item'],
-                            'font-weight-regular',
-                            'color-gray-tertiary',
-                          ]"
-                        >
-                          <div :class="$style['basic-list__symbol']">※</div>
-                          <div :class="$style['basic-list__content']">
-                            잔존기간 :<br />
-                            30일 미만 상환 시 '대출사용기간'을 30일로 간주
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
+        <section class="row-margin-contents-group">
+          <h4 class="text-body-2 row-margin-item-medium">손님</h4>
+
+          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'color-black',
+                'text-body-4',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                금융취약계층 보호 (감독원, 소비자보호 모범규준안)
               </div>
             </li>
             <li
@@ -278,7 +186,7 @@ export default {
             >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                상환방법 및 이자 납부시기 : 원리금균등분할상환, 매월 후취
+                차별적 금융서비스 금지
               </div>
             </li>
             <li
@@ -290,45 +198,147 @@ export default {
             >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                <div>
-                  인지세는 5천만원 초과 실행 시 발생하며 하나캐피탈과
-                  금융소비자가 50%씩 부담합니다.
-                </div>
-                <ul
-                  :class="[
-                    $style['basic-list'],
-                    $style['basic-list--regular'],
-                    'row-margin-item',
-                  ]"
-                >
-                  <li
-                    :class="[
-                      $style['basic-list__item'],
-                      'color-black',
-                      'text-body-4',
-                      'font-weight-regular',
-                    ]"
-                  >
-                    <div :class="$style['basic-list__symbol']">-</div>
-                    <div :class="$style['basic-list__content']">
-                      대출금액 5천만원 초과 1억원 이하 : 7만원
-                    </div>
-                  </li>
-                  <li
-                    :class="[
-                      $style['basic-list__item'],
-                      'color-black',
-                      'text-body-4',
-                      'font-weight-regular',
-                    ]"
-                  >
-                    <div :class="$style['basic-list__symbol']">-</div>
-                    <div :class="$style['basic-list__content']">
-                      대출금액 1억원 초과 10억원 이하 : 15만원
-                    </div>
-                  </li>
-                </ul>
+                정보 보호 (Code One 5조)
               </div>
+            </li>
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'color-black',
+                'text-body-4',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                도움이 되는 금융서비스 (그룹비전 반영)
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section class="row-margin-contents-group">
+          <h4 class="text-body-2 row-margin-item-medium">주주/투자자</h4>
+
+          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'color-black',
+                'text-body-4',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                공정한 정보제공 (Code One 22조)
+              </div>
+            </li>
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'color-black',
+                'text-body-4',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                상호 신뢰관계 유지
+              </div>
+            </li>
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'color-black',
+                'text-body-4',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                가치 제고 (Code One 24조)
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section class="row-margin-contents-group">
+          <h4 class="text-body-2 row-margin-item-medium">협력회사</h4>
+
+          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'color-black',
+                'text-body-4',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                상생과 공존 (Code One 23조)
+              </div>
+            </li>
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'color-black',
+                'text-body-4',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                불공정, 부정거래 금지
+              </div>
+            </li>
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'color-black',
+                'text-body-4',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                인권, 윤리경영 지원 (인권위, 인권경영 가이드 라인)
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section class="row-margin-contents-group">
+          <h4 class="text-body-2 row-margin-item-medium">지역회사</h4>
+
+          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'color-black',
+                'text-body-4',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                지역사회 구성원의 인권 보호 (인권위, 인권경영 가이드 라인)
+              </div>
+            </li>
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'color-black',
+                'text-body-4',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                소외계층 지원 (Code One 25조)
+              </div>
+            </li>
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'color-black',
+                'text-body-4',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">부정거래 차단</div>
             </li>
           </ul>
         </section>

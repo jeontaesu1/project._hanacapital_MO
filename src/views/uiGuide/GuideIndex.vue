@@ -3130,8 +3130,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/company/human-rights-declaration-structure',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.05.12',
         log: [],
       },
       {
@@ -3141,8 +3141,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/company/recruit-guide',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.05.12',
         log: [],
       },
       {
