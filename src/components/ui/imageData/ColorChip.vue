@@ -23,6 +23,10 @@ export default {
       Type: Array,
       default: [],
     },
+    type: {
+      Type: String,
+      default: null,
+    },
   },
   setup(props) {
     const customClassNames = computed(() => {
@@ -44,6 +48,7 @@ export default {
       $style[`color-chip--length-${colors.length}`],
       {
         [$style[`color-chip--size-${size}`]]: size,
+        [$style[`color-chip--type-${type}`]]: type,
       },
       customClassNames.wrap,
     ]"

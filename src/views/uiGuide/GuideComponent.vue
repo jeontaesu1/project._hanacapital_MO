@@ -90,6 +90,7 @@ import FilterButton from '@/components/ui/button/FilterButton.vue';
 import DeleteButton from '@/components/ui/button/DeleteButton.vue';
 import SelectTable from '@/components/ui/table/SelectTable.vue';
 import SelectTableRow from '@/components/ui/table/SelectTableRow.vue';
+import RoundButton from '@/components/ui/button/RoundButton.vue';
 
 import BrandLogo001 from '@/assets/images/card-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/card-logo/lotte.svg?component';
@@ -127,6 +128,7 @@ import IconDocumentComplete from '@/assets/images/icon/document-complete.svg?com
 import IconTooltip from '@/assets/images/icon/tooltip.svg?component';
 import IconLink from '@/assets/images/icon/link.svg?component';
 import IconStar from '@/assets/images/icon/star.svg?component';
+import IconTell from '@/assets/images/icon/tell.svg?component';
 
 export default {
   components: {
@@ -216,6 +218,7 @@ export default {
     DeleteButton,
     SelectTable,
     SelectTableRow,
+    RoundButton,
     IconAdd,
     BrandLogo001,
     BrandLogo002,
@@ -253,6 +256,7 @@ export default {
     IconTooltip,
     IconLink,
     IconStar,
+    IconTell,
   },
 
   setup() {
@@ -560,6 +564,12 @@ export default {
           </template>
           Button
         </BasicButton>
+        <BasicButton inline="true" size="mini">
+          Button
+          <template v-slot:rightIcon>
+            <div :class="$style['loading-icon']"></div>
+          </template>
+        </BasicButton>
         <BasicButton tagName="a" inline="true" disabledStyle="true">
           Button
           <template v-slot:rightIcon>
@@ -779,6 +789,41 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Round Button</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <RoundButton size="mini" tagName="a" href="tel:1800-1110">
+          Button
+        </RoundButton>
+        <RoundButton
+          size="mini"
+          tagName="a"
+          href="tel:1800-1110"
+          disabledStyle="true"
+        >
+          Button
+        </RoundButton>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Icon</h3>
+        <RoundButton size="mini" tagName="a" href="tel:1800-1110">
+          <template v-slot:leftIcon>
+            <IconTell />
+          </template>
+          Button
+        </RoundButton>
+
+        <RoundButton size="mini" tagName="a" href="tel:1800-1110">
+          Button
+          <template v-slot:rightIcon>
+            <IconTell />
+          </template>
+        </RoundButton>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Add Button</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -793,6 +838,23 @@ export default {
             </span>
           </span>
         </button>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Upload Input</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['upload-input']">
+          <input
+            type="file"
+            id="upload01"
+            :class="[$style['upload-input__input'], 'row-margin-item']"
+          />
+          <label for="upload01" :class="$style['upload-input__label']">
+            <span :class="$style['upload-input__text']">이미지 첨부</span>
+          </label>
+        </div>
       </div>
     </section>
 
@@ -7174,6 +7236,7 @@ export default {
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
         <ColorChip />
+        <ColorChip type="input" />
         <ColorChip :colors="['244, 238, 238']" />
         <ColorChip :colors="['244, 238, 238', '225, 213, 213', '66, 83, 82']" />
         <ColorChip
@@ -7202,6 +7265,170 @@ export default {
             '155, 171, 170',
           ]"
         />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Color Chip - Radio List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['colorchip']">
+          <ul :class="$style['colorchip__list']">
+            <li :class="$style['colorchip__item']">
+              <input
+                type="radio"
+                name="colorChipCheck001"
+                id="colorChipCheck001__001"
+                :class="$style['colorchip__input']"
+                checked
+              />
+              <div :class="$style['colorchip__block']">
+                <label
+                  for="colorChipCheck001__001"
+                  :class="$style['colorchip__label']"
+                ></label>
+                <ColorChip />
+              </div>
+            </li>
+            <li :class="$style['colorchip__item']">
+              <input
+                type="radio"
+                name="colorChipCheck001"
+                id="colorChipCheck001__002"
+                :class="$style['colorchip__input']"
+              />
+              <div :class="$style['colorchip__block']">
+                <label
+                  for="colorChipCheck001__002"
+                  :class="$style['colorchip__label']"
+                ></label>
+                <ColorChip :colors="['248, 245, 245']" />
+              </div>
+            </li>
+            <li :class="$style['colorchip__item']">
+              <input
+                type="radio"
+                name="colorChipCheck001"
+                id="colorChipCheck001__003"
+                :class="$style['colorchip__input']"
+              />
+              <div :class="$style['colorchip__block']">
+                <label
+                  for="colorChipCheck001__003"
+                  :class="$style['colorchip__label']"
+                ></label>
+                <ColorChip :colors="['66, 83, 82']" />
+              </div>
+            </li>
+            <li :class="$style['colorchip__item']">
+              <input
+                type="radio"
+                name="colorChipCheck001"
+                id="colorChipCheck001__004"
+                :class="$style['colorchip__input']"
+              />
+              <div :class="$style['colorchip__block']">
+                <label
+                  for="colorChipCheck001__004"
+                  :class="$style['colorchip__label']"
+                ></label>
+                <ColorChip :colors="['120, 13, 32']" />
+              </div>
+            </li>
+            <li :class="$style['colorchip__item']">
+              <input
+                type="radio"
+                name="colorChipCheck001"
+                id="colorChipCheck001__005"
+                :class="$style['colorchip__input']"
+              />
+              <div :class="$style['colorchip__block']">
+                <label
+                  for="colorChipCheck001__005"
+                  :class="$style['colorchip__label']"
+                ></label>
+                <ColorChip :colors="['66, 66, 66']" />
+              </div>
+            </li>
+            <li :class="$style['colorchip__item']">
+              <input
+                type="radio"
+                name="colorChipCheck001"
+                id="colorChipCheck001__006"
+                :class="$style['colorchip__input']"
+              />
+              <div :class="$style['colorchip__block']">
+                <label
+                  for="colorChipCheck001__006"
+                  :class="$style['colorchip__label']"
+                ></label>
+                <ColorChip :colors="['0, 0, 0']" />
+              </div>
+            </li>
+            <li :class="$style['colorchip__item']">
+              <input
+                type="radio"
+                name="colorChipCheck001"
+                id="colorChipCheck001__007"
+                :class="$style['colorchip__input']"
+              />
+              <div :class="$style['colorchip__block']">
+                <label
+                  for="colorChipCheck001__007"
+                  :class="$style['colorchip__label']"
+                ></label>
+                <ColorChip :colors="['244, 238, 238', '225, 213, 213']" />
+              </div>
+            </li>
+            <li :class="$style['colorchip__item']">
+              <input
+                type="radio"
+                name="colorChipCheck001"
+                id="colorChipCheck001__008"
+                :class="$style['colorchip__input']"
+              />
+              <div :class="$style['colorchip__block']">
+                <label
+                  for="colorChipCheck001__008"
+                  :class="$style['colorchip__label']"
+                ></label>
+                <ColorChip :colors="['66, 83, 82', '155, 171, 170']" />
+              </div>
+            </li>
+            <li :class="$style['colorchip__item']">
+              <input
+                type="radio"
+                name="colorChipCheck001"
+                id="colorChipCheck001__009"
+                :class="$style['colorchip__input']"
+              />
+              <div :class="$style['colorchip__block']">
+                <label
+                  for="colorChipCheck001__009"
+                  :class="$style['colorchip__label']"
+                ></label>
+                <ColorChip :colors="['0, 40, 86']" />
+              </div>
+            </li>
+            <li :class="$style['colorchip__item']">
+              <input
+                type="radio"
+                name="colorChipCheck001"
+                id="colorChipCheck001__010"
+                :class="$style['colorchip__input']"
+              />
+              <div :class="$style['colorchip__block']">
+                <label
+                  for="colorChipCheck001__010"
+                  :class="$style['colorchip__label']"
+                >
+                  <span class="for-a11y">직접 입력</span>
+                </label>
+                <ColorChip type="input" />
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -7290,6 +7517,149 @@ export default {
 
         <div :class="$style['image-view']">
           <img src="@/assets/images/_dummy/box-detail.png" alt="샘플 이미지" />
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Gallery File</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <div :class="$style['gallery-file']">
+          <ul :class="$style['gallery-file__list']">
+            <li :class="$style['gallery-file__item']">
+              <!-- DD : 에러시 gallery-file__block--error 클래스 추가 -->
+              <div
+                :class="[
+                  $style['gallery-file__block'],
+                  $style['gallery-file__block--error'],
+                ]"
+              >
+                <div :class="$style['gallery-file__image']"></div>
+                <button type="button" :class="$style['gallery-file__link']">
+                  <span class="for-a11y">미리보기</span>
+                </button>
+                <button type="button" :class="$style['gallery-file__delete']">
+                  <span class="for-a11y">삭제</span>
+                </button>
+              </div>
+            </li>
+            <li :class="$style['gallery-file__item']">
+              <!-- DD : 에러시 gallery-file__block--error 클래스 추가 -->
+              <div
+                :class="[
+                  $style['gallery-file__block'],
+                  $style['gallery-file__block--pdf'],
+                  $style['gallery-file__block--error'],
+                ]"
+              >
+                <div :class="$style['gallery-file__icon']"></div>
+                <button type="button" :class="$style['gallery-file__link']">
+                  <span class="for-a11y">미리보기</span>
+                </button>
+                <button type="button" :class="$style['gallery-file__delete']">
+                  <span class="for-a11y">삭제</span>
+                </button>
+              </div>
+            </li>
+            <li :class="$style['gallery-file__item']">
+              <div
+                :class="[
+                  $style['gallery-file__block'],
+                  $style['gallery-file__block--pdf'],
+                ]"
+              >
+                <div :class="$style['gallery-file__icon']"></div>
+                <button type="button" :class="$style['gallery-file__link']">
+                  <span class="for-a11y">미리보기</span>
+                </button>
+                <button type="button" :class="$style['gallery-file__delete']">
+                  <span class="for-a11y">삭제</span>
+                </button>
+              </div>
+            </li>
+            <li :class="$style['gallery-file__item']">
+              <div :class="$style['gallery-file__block']">
+                <div :class="$style['gallery-file__image']">
+                  <img
+                    src="@/assets/images/_dummy/file-sample.png"
+                    alt="샘플 이미지"
+                  />
+                </div>
+                <button type="button" :class="$style['gallery-file__link']">
+                  <span class="for-a11y">미리보기</span>
+                </button>
+                <button type="button" :class="$style['gallery-file__delete']">
+                  <span class="for-a11y">삭제</span>
+                </button>
+              </div>
+            </li>
+            <li :class="$style['gallery-file__item']">
+              <div :class="$style['gallery-file__block']">
+                <div :class="$style['gallery-file__image']">
+                  <img
+                    src="@/assets/images/_dummy/file-sample.png"
+                    alt="샘플 이미지"
+                  />
+                </div>
+                <button type="button" :class="$style['gallery-file__link']">
+                  <span class="for-a11y">미리보기</span>
+                </button>
+                <button type="button" :class="$style['gallery-file__delete']">
+                  <span class="for-a11y">삭제</span>
+                </button>
+              </div>
+            </li>
+            <li :class="$style['gallery-file__item']">
+              <div :class="$style['gallery-file__block']">
+                <div :class="$style['gallery-file__image']">
+                  <img
+                    src="@/assets/images/_dummy/file-sample.png"
+                    alt="샘플 이미지"
+                  />
+                </div>
+                <button type="button" :class="$style['gallery-file__link']">
+                  <span class="for-a11y">미리보기</span>
+                </button>
+                <button type="button" :class="$style['gallery-file__delete']">
+                  <span class="for-a11y">삭제</span>
+                </button>
+              </div>
+            </li>
+            <li :class="$style['gallery-file__item']">
+              <div :class="$style['gallery-file__block']">
+                <div :class="$style['gallery-file__image']">
+                  <img
+                    src="@/assets/images/_dummy/file-sample.png"
+                    alt="샘플 이미지"
+                  />
+                </div>
+                <button type="button" :class="$style['gallery-file__link']">
+                  <span class="for-a11y">미리보기</span>
+                </button>
+                <button type="button" :class="$style['gallery-file__delete']">
+                  <span class="for-a11y">삭제</span>
+                </button>
+              </div>
+            </li>
+            <li :class="$style['gallery-file__item']">
+              <div :class="$style['gallery-file__block']">
+                <div :class="$style['gallery-file__image']">
+                  <img
+                    src="@/assets/images/_dummy/file-sample.png"
+                    alt="샘플 이미지"
+                  />
+                </div>
+                <button type="button" :class="$style['gallery-file__link']">
+                  <span class="for-a11y">미리보기</span>
+                </button>
+                <button type="button" :class="$style['gallery-file__delete']">
+                  <span class="for-a11y">삭제</span>
+                </button>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
