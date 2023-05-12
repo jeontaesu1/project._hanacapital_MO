@@ -1,0 +1,21 @@
+@import '@/assets/scss/components/import/basic-list.scss';
+@import '@/assets/scss/components/import/step.scss';
+
+.bg {
+  background-color: $color-gray-15;
+  margin: 0 -20px;
+  padding: 40px 20px;
+}
+
+.grid-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+
+  &__item {
+    &--full {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+  }
+}
