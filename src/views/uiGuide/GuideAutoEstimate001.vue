@@ -6,25 +6,25 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import LayerAutoEstimateCounseling from '../auto/LayerAutoEstimateCounseling.vue';
-import LayerAutoEstimateCounselingComplete from '../auto/LayerAutoEstimateCounselingComplete.vue';
-import LayerAutoEstimateSearchCar from '../auto/LayerAutoEstimateSearchCar.vue';
-import LayerAutoEstimateSelectRecommend from '../auto/LayerAutoEstimateSelectRecommend.vue';
-import LayerAutoEstimateSelectDetailModel from '../auto/LayerAutoEstimateSelectDetailModel.vue';
-import LayerAutoEstimateSelectTrim from '../auto/LayerAutoEstimateSelectTrim.vue';
-import LayerAutoEstimateEmptyDetailModelAlert from '../auto/LayerAutoEstimateEmptyDetailModelAlert.vue';
-import LayerAutoEstimateSelectColor from '../auto/LayerAutoEstimateSelectColor.vue';
-import LayerAutoEstimateSelectOption from '../auto/LayerAutoEstimateSelectOption.vue';
-import LayerAutoEstimateConfirm from '../auto/LayerAutoEstimateConfirm.vue';
-import LayerAutoEstimateSelectProduct from '../auto/LayerAutoEstimateSelectProduct.vue';
-import LayerAutoEstimateBusinessInfo from '../auto/LayerAutoEstimateBusinessInfo.vue';
-import LayerAutoEstimateUserInfo from '../auto/LayerAutoEstimateUserInfo.vue';
-import LayerAutoEstimateLease from '../auto/LayerAutoEstimateLease.vue';
-import LayerAutoEstimateRental from '../auto/LayerAutoEstimateRental.vue';
-import LayerAutoEstimateSelectInsurance from '../auto/LayerAutoEstimateSelectInsurance.vue';
-import LayerAutoEstimateView from '../auto/LayerAutoEstimateView.vue';
-import LayerAutoEstimateIdentification from '../auto/LayerAutoEstimateIdentification.vue';
-import LayerAutoEstimateCreditInfoComplete from '../auto/LayerAutoEstimateCreditInfoComplete.vue';
+import LayerAutoEstimateCounseling from '@/views/auto/LayerAutoEstimateCounseling.vue';
+import LayerAutoEstimateCounselingComplete from '@/views/auto/LayerAutoEstimateCounselingComplete.vue';
+import LayerAutoEstimateSearchCar from '@/views/auto/LayerAutoEstimateSearchCar.vue';
+import LayerAutoEstimateSelectRecommend from '@/views/auto/LayerAutoEstimateSelectRecommend.vue';
+import LayerAutoEstimateSelectDetailModel from '@/views/auto/LayerAutoEstimateSelectDetailModel.vue';
+import LayerAutoEstimateSelectTrim from '@/views/auto/LayerAutoEstimateSelectTrim.vue';
+import LayerAutoEstimateEmptyDetailModelAlert from '@/views/auto/LayerAutoEstimateEmptyDetailModelAlert.vue';
+import LayerAutoEstimateSelectColor from '@/views/auto/LayerAutoEstimateSelectColor.vue';
+import LayerAutoEstimateSelectOption from '@/views/auto/LayerAutoEstimateSelectOption.vue';
+import LayerAutoEstimateConfirm from '@/views/auto/LayerAutoEstimateConfirm.vue';
+import LayerAutoEstimateSelectProduct from '@/views/auto/LayerAutoEstimateSelectProduct.vue';
+import LayerAutoEstimateBusinessInfo from '@/views/auto/LayerAutoEstimateBusinessInfo.vue';
+import LayerAutoEstimateUserInfo from '@/views/auto/LayerAutoEstimateUserInfo.vue';
+import LayerAutoEstimateLease from '@/views/auto/LayerAutoEstimateLease.vue';
+import LayerAutoEstimateRental from '@/views/auto/LayerAutoEstimateRental.vue';
+import LayerAutoEstimateSelectInsurance from '@/views/auto/LayerAutoEstimateSelectInsurance.vue';
+import LayerAutoEstimateView from '@/views/auto/LayerAutoEstimateView.vue';
+import LayerAutoEstimateIdentification from '@/views/auto/LayerAutoEstimateIdentification.vue';
+import LayerAutoEstimateCreditInfoComplete from '@/views/auto/LayerAutoEstimateCreditInfoComplete.vue';
 
 export default {
   components: {

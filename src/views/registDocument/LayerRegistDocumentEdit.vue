@@ -140,7 +140,7 @@ export default {
                 <div :class="$style['files__block']">
                   <div :class="$style['files__image']">
                     <img
-                      src="/"
+                      src=""
                       alt="파일 이름 넣어주세요"
                       @error="
                         (e) => {
