@@ -354,12 +354,12 @@ export default {
           </thead>
           <tbody>
             <tr>
-              <td class="text-body-5 color-gray">신청경로</td>
+              <th>신청경로</th>
               <td>1800-1110</td>
               <td>영업점 방문</td>
             </tr>
             <tr>
-              <td class="text-body-5 color-gray">신청방법</td>
+              <th>신청방법</th>
               <td>유선</td>
               <td>신분증 지참</td>
             </tr>
