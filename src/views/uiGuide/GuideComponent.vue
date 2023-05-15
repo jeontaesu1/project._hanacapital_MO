@@ -7503,7 +7503,7 @@ export default {
         <CarEmblem code="1001" name="현대" />
       </div>
       <div class="test-section-sub">
-        <h3 class="test-section-sub-title">Default</h3>
+        <h3 class="test-section-sub-title">Size Medium</h3>
         <CarEmblem code="1001" name="현대" size="medium" />
       </div>
     </section>
