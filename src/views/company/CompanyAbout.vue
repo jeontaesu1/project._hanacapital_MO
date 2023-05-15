@@ -62,26 +62,59 @@ export default {
 
         <ButtonList :wrap="true" :classNames="{ wrap: 'row-margin-contents' }">
           <ButtonListItem>
-            <BasicButton size="mini" theme="quaternary">
+            <BasicButton
+              size="mini"
+              theme="quaternary"
+              tagName="RouterLink"
+              to="/company/ceo"
+            >
               CEO 인사말
             </BasicButton>
           </ButtonListItem>
           <ButtonListItem>
-            <BasicButton size="mini" theme="quaternary">연혁</BasicButton>
+            <BasicButton
+              size="mini"
+              theme="quaternary"
+              tagName="RouterLink"
+              to="/company/history"
+              >연혁</BasicButton
+            >
           </ButtonListItem>
           <ButtonListItem>
-            <BasicButton size="mini" theme="quaternary">사업분야</BasicButton>
+            <BasicButton
+              size="mini"
+              theme="quaternary"
+              tagName="RouterLink"
+              to="/company/business-areas"
+              >사업분야</BasicButton
+            >
           </ButtonListItem>
           <ButtonListItem>
-            <BasicButton size="mini" theme="quaternary">IR 정보</BasicButton>
+            <BasicButton
+              size="mini"
+              theme="quaternary"
+              tagName="RouterLink"
+              to="/company/ir-list"
+              >IR 정보</BasicButton
+            >
           </ButtonListItem>
           <ButtonListItem>
-            <BasicButton size="mini" theme="quaternary">
+            <BasicButton
+              size="mini"
+              theme="quaternary"
+              tagName="RouterLink"
+              to="/company/sustainable-management-list"
+            >
               지속가능경영
             </BasicButton>
           </ButtonListItem>
           <ButtonListItem>
-            <BasicButton size="mini" theme="quaternary">
+            <BasicButton
+              size="mini"
+              theme="quaternary"
+              tagName="RouterLink"
+              to="/company/group"
+            >
               하나금융그룹
             </BasicButton>
           </ButtonListItem>
@@ -97,18 +130,40 @@ export default {
 
         <ButtonList :wrap="true" :classNames="{ wrap: 'row-margin-contents' }">
           <ButtonListItem>
-            <BasicButton size="mini" theme="quaternary">윤리현장</BasicButton>
+            <BasicButton
+              size="mini"
+              theme="quaternary"
+              tagName="RouterLink"
+              to="/company/ethics-charter"
+              >윤리현장</BasicButton
+            >
           </ButtonListItem>
           <ButtonListItem>
-            <BasicButton size="mini" theme="quaternary">윤리강령</BasicButton>
+            <BasicButton
+              size="mini"
+              theme="quaternary"
+              tagName="RouterLink"
+              to="/company/ethics-code"
+              >윤리강령</BasicButton
+            >
           </ButtonListItem>
           <ButtonListItem>
-            <BasicButton size="mini" theme="quaternary">
+            <BasicButton
+              size="mini"
+              theme="quaternary"
+              tagName="RouterLink"
+              to="/company/human-rights-declaration"
+            >
               인권선언문
             </BasicButton>
           </ButtonListItem>
           <ButtonListItem>
-            <BasicButton size="mini" theme="quaternary">
+            <BasicButton
+              size="mini"
+              theme="quaternary"
+              tagName="RouterLink"
+              to="/company/human-rights-declaration-structure"
+            >
               인권선언문 구성체계
             </BasicButton>
           </ButtonListItem>
@@ -123,22 +178,35 @@ export default {
 
         <ButtonList :wrap="true" :classNames="{ wrap: 'row-margin-contents' }">
           <ButtonListItem>
-            <BasicButton size="mini" theme="quaternary">채용안내</BasicButton>
+            <BasicButton
+              size="mini"
+              theme="quaternary"
+              tagName="RouterLink"
+              to="/company/recruit-guide"
+              >채용안내</BasicButton
+            >
           </ButtonListItem>
           <ButtonListItem>
-            <BasicButton size="mini" theme="quaternary">
+            <BasicButton
+              size="mini"
+              theme="quaternary"
+              tagName="RouterLink"
+              to="/company/personnel-welfare"
+            >
               인사/복리후생
             </BasicButton>
           </ButtonListItem>
           <ButtonListItem>
-            <BasicButton size="mini" theme="quaternary">채용공고</BasicButton>
+            <BasicButton
+              size="mini"
+              theme="quaternary"
+              tagName="RouterLink"
+              to="/company/recruit-list"
+              >채용공고</BasicButton
+            >
           </ButtonListItem>
         </ButtonList>
       </section>
     </div>
   </PageContents>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/myLoan/MyLoanEmpty.scss';
-</style>

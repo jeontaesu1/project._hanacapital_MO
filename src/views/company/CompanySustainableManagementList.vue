@@ -112,7 +112,6 @@ export default {
         </li>
       </ul>
     </div>
-
     <!-- // Case : 검색 결과 있을 때 -->
 
     <div class="inline-wrap align-center row-margin-item-group">

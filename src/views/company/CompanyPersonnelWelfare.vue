@@ -6,6 +6,7 @@ import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import UiTab from '@/components/ui/tab/UiTab.vue';
+import StickyBar from '@/components/ui/common/StickyBar.vue';
 import NavTab from '@/components/ui/tab/NavTab.vue';
 import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
 import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
@@ -31,6 +32,7 @@ export default {
     PageContents,
     UiTab,
     UiTabPanel,
+    StickyBar,
     NavTab,
     NavTabButton,
     PageTextGroup,
@@ -72,16 +74,20 @@ export default {
 </script>
 
 <template>
-  <PageContents>
-    <UiTab>
-      <NavTab :useUiTab="true">
-        <NavTabButton link="companyPersonnelWelfareNavTab001_001">
-          인사제도
-        </NavTabButton>
-        <NavTabButton link="companyPersonnelWelfareNavTab001_002">
-          복리후생
-        </NavTabButton>
-      </NavTab>
+  <UiTab>
+    <PageContents>
+      <template v-slot:head>
+        <StickyBar>
+          <NavTab :head="true" :useUiTab="true">
+            <NavTabButton link="companyPersonnelWelfareNavTab001_001">
+              인사제도
+            </NavTabButton>
+            <NavTabButton link="companyPersonnelWelfareNavTab001_002">
+              복리후생
+            </NavTabButton>
+          </NavTab>
+        </StickyBar>
+      </template>
 
       <UiTabPanel name="companyPersonnelWelfareNavTab001_001">
         <div :class="$style['authority']">
@@ -298,6 +304,7 @@ export default {
                   <ul
                     :class="[
                       $style['basic-list'],
+                      $style['basic-list--regular'],
                       $style['basic-list--mini-margin'],
                     ]"
                   >
@@ -331,8 +338,8 @@ export default {
           </ul>
         </div>
       </UiTabPanel>
-    </UiTab>
-  </PageContents>
+    </PageContents>
+  </UiTab>
 </template>
 
 <style lang="scss" module>

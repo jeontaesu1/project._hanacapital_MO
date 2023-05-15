@@ -197,7 +197,10 @@ export default {
     <div :class="$style['icon-list']">
       <ul :class="$style['icon-list__list']">
         <li :class="$style['icon-list__item']">
-          <RouterLink to="" :class="$style['icon-list__block']">
+          <RouterLink
+            to="/inventory-finance/loan-limit-inquiry"
+            :class="$style['icon-list__block']"
+          >
             <span :class="$style['icon-list__icon']"><IconSearchMoney /></span>
             <span :class="$style['icon-list__content']">
               <span :class="$style['icon-list__title']">한도조회</span>
@@ -205,7 +208,10 @@ export default {
           </RouterLink>
         </li>
         <li :class="$style['icon-list__item']">
-          <RouterLink to="" :class="$style['icon-list__block']">
+          <RouterLink
+            to="/inventory-finance/loan-agreement"
+            :class="$style['icon-list__block']"
+          >
             <span :class="$style['icon-list__icon']"><IconDeposit /></span>
             <span :class="$style['icon-list__content']">
               <span :class="$style['icon-list__title']">대출신청</span>
@@ -213,7 +219,10 @@ export default {
           </RouterLink>
         </li>
         <li :class="$style['icon-list__item']">
-          <RouterLink to="" :class="$style['icon-list__block']">
+          <RouterLink
+            to="/inventory-finance/early-list"
+            :class="$style['icon-list__block']"
+          >
             <span :class="$style['icon-list__icon']">
               <IconCommissionRateRepayment />
             </span>
@@ -223,7 +232,10 @@ export default {
           </RouterLink>
         </li>
         <li :class="$style['icon-list__item']">
-          <RouterLink to="" :class="$style['icon-list__block']">
+          <RouterLink
+            to="/inventory-finance/extension-list"
+            :class="$style['icon-list__block']"
+          >
             <span :class="$style['icon-list__icon']">
               <IconDateWhite />
             </span>
@@ -233,7 +245,10 @@ export default {
           </RouterLink>
         </li>
         <li :class="$style['icon-list__item']">
-          <RouterLink to="" :class="$style['icon-list__block']">
+          <RouterLink
+            to="/inventory-finance/add-documents"
+            :class="$style['icon-list__block']"
+          >
             <span :class="$style['icon-list__icon']">
               <IconDocumentAdd />
             </span>
@@ -243,7 +258,10 @@ export default {
           </RouterLink>
         </li>
         <li :class="$style['icon-list__item']">
-          <RouterLink to="" :class="$style['icon-list__block']">
+          <RouterLink
+            to="/inventory-finance/termination-bonds"
+            :class="$style['icon-list__block']"
+          >
             <span :class="$style['icon-list__icon']">
               <IconCheckCompleted />
             </span>

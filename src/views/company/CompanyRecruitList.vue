@@ -96,9 +96,10 @@ export default {
     </div>
     <!-- // Case : 검색 결과 없을 때 -->
 
-    <!-- Case : 검색 결과 있을 때(리스트 10개씩 정렬) -->
+    <!-- Case : 검색 결과 있을 때 -->
     <div :class="$style['board']">
       <ul :class="$style['board__list']">
+        <!-- Case : 진행중 -->
         <li :class="$style['board__item']">
           <RouterLink
             to="/company/recruit-detail"
@@ -110,16 +111,21 @@ export default {
                   <span :class="$style['board__title-text']">채용공고</span>
                 </span>
               </div>
-              <RoundStatus
-                :classNames="{ wrap: 'display-block' }"
-                theme="secondary"
-              >
-                진행중
-              </RoundStatus>
+              <div class="flex-box__cell flex-box__cell--small">
+                <RoundStatus
+                  :classNames="{ wrap: 'display-block' }"
+                  theme="secondary"
+                >
+                  진행중
+                </RoundStatus>
+              </div>
             </div>
             <span :class="$style['board__text']">2022.08.09</span>
           </RouterLink>
         </li>
+        <!-- // Case : 진행중 -->
+
+        <!-- Case : 종료 -->
         <li :class="$style['board__item']">
           <RouterLink
             to="/company/recruit-detail"
@@ -131,13 +137,16 @@ export default {
                   <span :class="$style['board__title-text']">채용공고</span>
                 </span>
               </div>
-              <RoundStatus :classNames="{ wrap: 'display-block' }">
-                종료
-              </RoundStatus>
+              <div class="flex-box__cell flex-box__cell--small">
+                <RoundStatus :classNames="{ wrap: 'display-block' }">
+                  종료
+                </RoundStatus>
+              </div>
             </div>
             <span :class="$style['board__text']">2022.08.09</span>
           </RouterLink>
         </li>
+        <!-- // Case : 종료 -->
       </ul>
     </div>
     <!-- // Case : 검색 결과 있을 때 -->

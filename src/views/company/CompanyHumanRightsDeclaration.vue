@@ -51,11 +51,12 @@ export default {
         건강한 성장을 추구하기 위하여 ‘함께 성장하며 행복을 나누는 금융’을
         그룹의 미션으로 정하고, 이를 바탕으로 윤리적 가치가 반영된 의사결정
         기준과 행동 원칙을 담은 ‘Code One(하나금융그룹 윤리강령)’을 통해
-        인권경영을 실천하고 있습니다. 또한 하나금융그룹은 UN의
-        ‘세계인권선언(Universal Declaration of Human Rights)’과 ‘기업과 인권
-        이행지침 (Guiding Principles on Business and Human Rights)’ 에서
-        제시하는 인권 원칙을 지지하며, 아래와 같이 그룹의 모든 이해관계자의
-        인권을 보호하고 인권침해가 발생하지 않도록 노력하겠습니다.
+        인권경영을 실천하고 있습니다.<br />
+        또한 하나금융그룹은 UN의 ‘세계인권선언(Universal Declaration of Human
+        Rights)’과 ‘기업과 인권 이행지침 (Guiding Principles on Business and
+        Human Rights)’ 에서 제시하는 인권 원칙을 지지하며, 아래와 같이 그룹의
+        모든 이해관계자의 인권을 보호하고 인권침해가 발생하지 않도록
+        노력하겠습니다.
       </PageSubText>
     </PageTextGroup>
 

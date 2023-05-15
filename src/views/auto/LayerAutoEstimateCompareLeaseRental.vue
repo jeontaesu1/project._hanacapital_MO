@@ -72,7 +72,7 @@ export default {
             <tr>
               <th>번호판</th>
               <td>자가용</td>
-              <td style="padding: 0">영업용(하/허/호)</td>
+              <td>영업용<br />(하/허/호)</td>
             </tr>
             <tr>
               <th>차종</th>

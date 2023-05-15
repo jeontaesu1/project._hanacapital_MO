@@ -80,7 +80,9 @@ export default {
             대출가능한도
           </KeyValueTitle>
           <KeyValueText>
-            <UnitText rightUnit="원" align="right">23,000,000</UnitText>
+            <UnitText rightUnit="원" align="right"
+              ><strong>23,000,000</strong></UnitText
+            >
           </KeyValueText>
         </KeyValueItem>
       </KeyValue>

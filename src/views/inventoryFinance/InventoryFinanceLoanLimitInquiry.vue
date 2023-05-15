@@ -71,7 +71,7 @@ export default {
 
     <!-- Case : 상품권한 2개일 경우 노출 -->
     <StickyBar>
-      <NavTab class="row-margin-bottom-none">
+      <NavTab>
         <NavTabButton tagName="button" type="button" :active="true">
           재고금융
         </NavTabButton>
@@ -80,51 +80,55 @@ export default {
     </StickyBar>
     <!-- // Case : 상품권한 2개일 경우 노출 -->
 
-    <BasicBox class="row-margin-contents-group">
-      <BasicBoxHead>
-        <h3 class="text-body-1 font-weight-medium">
-          주식회사알차이노베이션 (재고금융 Ⅱ)
-        </h3>
-      </BasicBoxHead>
+    <ul class="reset-list">
+      <li class="row-margin-item-group">
+        <BasicBox>
+          <BasicBoxHead>
+            <h3 class="text-body-1 font-weight-medium">
+              주식회사알차이노베이션 (재고금융 Ⅱ)
+            </h3>
+          </BasicBoxHead>
 
-      <KeyValue margin="regular">
-        <KeyValueItem
-          :classNames="{
-            item: 'text-body-3',
-          }"
-        >
-          <KeyValueTitle>약정기간</KeyValueTitle>
-          <KeyValueText>2021.11.10 ~ 2022.03.10</KeyValueText>
-        </KeyValueItem>
+          <KeyValue margin="regular">
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
+            >
+              <KeyValueTitle>약정기간</KeyValueTitle>
+              <KeyValueText>2021.11.10 ~ 2022.03.10</KeyValueText>
+            </KeyValueItem>
 
-        <KeyValueItem
-          :classNames="{
-            item: 'text-body-3',
-          }"
-        >
-          <KeyValueTitle>한도금액</KeyValueTitle>
-          <KeyValueText>200,000,000 원</KeyValueText>
-        </KeyValueItem>
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
+            >
+              <KeyValueTitle>한도금액</KeyValueTitle>
+              <KeyValueText>200,000,000 원</KeyValueText>
+            </KeyValueItem>
 
-        <KeyValueItem
-          :classNames="{
-            item: 'text-body-3',
-          }"
-        >
-          <KeyValueTitle>한도잔액</KeyValueTitle>
-          <KeyValueText>2,000,000 원</KeyValueText>
-        </KeyValueItem>
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
+            >
+              <KeyValueTitle>한도잔액</KeyValueTitle>
+              <KeyValueText>2,000,000 원</KeyValueText>
+            </KeyValueItem>
 
-        <KeyValueItem
-          :classNames="{
-            item: 'text-body-3',
-          }"
-        >
-          <KeyValueTitle>실행건수</KeyValueTitle>
-          <KeyValueText>N 건</KeyValueText>
-        </KeyValueItem>
-      </KeyValue>
-    </BasicBox>
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
+            >
+              <KeyValueTitle>실행건수</KeyValueTitle>
+              <KeyValueText>N 건</KeyValueText>
+            </KeyValueItem>
+          </KeyValue>
+        </BasicBox>
+      </li>
+    </ul>
 
     <template v-slot:foot>
       <ButtonList

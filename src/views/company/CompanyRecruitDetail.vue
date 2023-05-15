@@ -45,9 +45,8 @@ export default {
         <h2 :class="$style['board-detail__title']">채용공고</h2>
         <p :class="$style['board-detail__sub']">2022.08.09</p>
       </div>
-      <section :class="[$style['board-detail__contents'], 'text-body-3']">
-        하나캐피탈 채용공고 안내문입니다.<br />
-        감사합니다.
+      <section :class="$style['board-detail__contents']">
+        // 게시물 내용 노출
       </section>
     </div>
 

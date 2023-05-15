@@ -233,7 +233,7 @@ export default {
                     align="right"
                     :useDelete="false"
                     pattern="\d*"
-                    title="보증금 선택시 산출된 금액 출력"
+                    title="보증금"
                     id="layerBusinessEquipmentLeaseEstimateCheckListDepositMedical"
                     defaultValue="10,002,120"
                     :disabled="true"
@@ -319,7 +319,7 @@ export default {
                     align="right"
                     :useDelete="false"
                     pattern="\d*"
-                    title="보증금 선택시 산출된 금액 출력"
+                    title="보증금"
                     id="layerBusinessEquipmentLeaseEstimateCheckListDepositScreen01"
                     defaultValue="10,002,120"
                     :disabled="true"
@@ -403,7 +403,7 @@ export default {
                     align="right"
                     :useDelete="false"
                     pattern="\d*"
-                    title="유예원금 선택시 산출된 금액 출력"
+                    title="유예원금"
                     id="layerBusinessEquipmentLeaseEstimateCheckListDepositScreen02"
                     defaultValue="10,002,120"
                     :disabled="true"
@@ -427,6 +427,7 @@ export default {
         </BasicButton>
       </div>
 
+      <!-- Case : 견적계산 누른 후 노출 -->
       <BasicHr className="row-margin-container-medium" />
 
       <section>
@@ -452,34 +453,35 @@ export default {
             </KeyValueItem>
           </KeyValue>
         </BasicBox>
-      </section>
 
-      <section :class="[$style['notice-section'], 'row-margin-contents']">
-        <h4 :class="$style['notice-section__title']">견적시 유의사항</h4>
-        <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              상기 견적은 금융조건에 따라 변동될 수 있으며, 리스(상담) 신청 시
-              정확한 견적 확인이 가능합니다.
-            </div>
-          </li>
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              장비의 보험조건은 ‘이용자 책임 부보’ 조건입니다.
-            </div>
-          </li>
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              하나캐피탈㈜는 손님의 리스료 미납 등 채무불이행 및 리스물건
-              반납의무 위반을 대비하여 보증보험회사와 신용보험 계약을 체결할 수
-              있습니다.
-            </div>
-          </li>
-        </ul>
+        <section :class="[$style['notice-section'], 'row-margin-contents']">
+          <h4 :class="$style['notice-section__title']">견적시 유의사항</h4>
+          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+            <li :class="$style['basic-list__item']">
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                상기 견적은 금융조건에 따라 변동될 수 있으며, 리스(상담) 신청 시
+                정확한 견적 확인이 가능합니다.
+              </div>
+            </li>
+            <li :class="$style['basic-list__item']">
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                장비의 보험조건은 ‘이용자 책임 부보’ 조건입니다.
+              </div>
+            </li>
+            <li :class="$style['basic-list__item']">
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                하나캐피탈㈜는 손님의 리스료 미납 등 채무불이행 및 리스물건
+                반납의무 위반을 대비하여 보증보험회사와 신용보험 계약을 체결할
+                수 있습니다.
+              </div>
+            </li>
+          </ul>
+        </section>
       </section>
+      <!-- // Case : 견적계산 누른 후 노출 -->
 
       <template v-slot:foot>
         <ButtonList
