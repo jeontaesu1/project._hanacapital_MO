@@ -41,7 +41,10 @@ export default {
 
 <template>
   <PageContents>
-    <UiAccordion tagName="ul" :classNames="{ wrap: $style['term-list__list'] }">
+    <UiAccordion
+      tagName="ul"
+      :classNames="{ wrap: $style['term-list__list '] }"
+    >
       <UiAccordionItem :classNames="{ item: $style['term-list__item'] }">
         <div :class="$style['term-list__head']">
           <div :class="$style['term-list__title']">온라인 서비스 이용약관</div>
