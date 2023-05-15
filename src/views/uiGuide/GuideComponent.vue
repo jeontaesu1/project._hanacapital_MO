@@ -4580,14 +4580,11 @@ export default {
     </section>
 
     <section class="test-section">
-      <h2 class="test-section-title">term List - 약관</h2>
+      <h2 class="test-section-title">Term List</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
-        <UiAccordion
-          tagName="ul"
-          :classNames="{ wrap: $style['term-list__list'] }"
-        >
-          <UiAccordionItem :classNames="{ item: $style['term-list__item'] }">
+        <UiAccordion :classNames="{ wrap: $style['term-list__list'] }">
+          <li :class="$style['term-list__item']">
             <div :class="$style['term-list__head']">
               <div :class="$style['term-list__title']">
                 온라인 서비스 이용약관
@@ -4598,7 +4595,8 @@ export default {
                 </button>
               </div>
             </div>
-          </UiAccordionItem>
+          </li>
+
           <UiAccordionItem
             :classNames="{ item: $style['term-list__item'] }"
             :initialOpen="true"
@@ -4675,118 +4673,6 @@ export default {
                     <div :class="$style['term-list__head']">
                       <div :class="$style['term-list__title']">
                         고유식별정보 처리 동의
-                      </div>
-                      <div :class="$style['term-list__right']">
-                        <button
-                          type="button"
-                          :class="$style['term-list__link']"
-                        >
-                          <span :class="$style['term-list__link-text']">
-                            상세보기
-                          </span>
-                        </button>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </UiAccordionLayer>
-          </UiAccordionItem>
-          <UiAccordionItem
-            :classNames="{ item: $style['term-list__item'] }"
-            :initialOpen="true"
-          >
-            <div :class="$style['term-list__head']">
-              <div :class="$style['term-list__title']">
-                하나멤버스 서비스 이용약관
-              </div>
-              <div :class="$style['term-list__right']">
-                <UiAccordionOpener
-                  :classNames="{ button: $style['term-list__opener'] }"
-                />
-              </div>
-            </div>
-
-            <UiAccordionLayer>
-              <div :class="$style['term-list__contents']">
-                <ul
-                  :class="[
-                    $style['term-list__list'],
-                    $style['term-list__list--secondary'],
-                  ]"
-                >
-                  <li :class="$style['term-list__item']">
-                    <div :class="$style['term-list__head']">
-                      <div :class="$style['term-list__title']">
-                        서비스 이용약관
-                      </div>
-                      <div :class="$style['term-list__right']">
-                        <button
-                          type="button"
-                          :class="$style['term-list__link']"
-                        >
-                          <span :class="$style['term-list__link-text']">
-                            상세보기
-                          </span>
-                        </button>
-                      </div>
-                    </div>
-                  </li>
-                  <li :class="$style['term-list__item']">
-                    <div :class="$style['term-list__head']">
-                      <div :class="$style['term-list__title']">
-                        개인(신용)정보 선택적 수집·이용 동의
-                      </div>
-                      <div :class="$style['term-list__right']">
-                        <button
-                          type="button"
-                          :class="$style['term-list__link']"
-                        >
-                          <span :class="$style['term-list__link-text']">
-                            상세보기
-                          </span>
-                        </button>
-                      </div>
-                    </div>
-                  </li>
-                  <li :class="$style['term-list__item']">
-                    <div :class="$style['term-list__head']">
-                      <div :class="$style['term-list__title']">
-                        개인(신용)정보 선택적 제공 동의
-                      </div>
-                      <div :class="$style['term-list__right']">
-                        <button
-                          type="button"
-                          :class="$style['term-list__link']"
-                        >
-                          <span :class="$style['term-list__link-text']">
-                            상세보기
-                          </span>
-                        </button>
-                      </div>
-                    </div>
-                  </li>
-                  <li :class="$style['term-list__item']">
-                    <div :class="$style['term-list__head']">
-                      <div :class="$style['term-list__title']">
-                        개인(신용)정보 필수적 수집·이용 동의
-                      </div>
-                      <div :class="$style['term-list__right']">
-                        <button
-                          type="button"
-                          :class="$style['term-list__link']"
-                        >
-                          <span :class="$style['term-list__link-text']">
-                            상세보기
-                          </span>
-                        </button>
-                      </div>
-                    </div>
-                  </li>
-                  <li :class="$style['term-list__item']">
-                    <div :class="$style['term-list__head']">
-                      <div :class="$style['term-list__title']">
-                        개인(신용)정보 필수적 제공 동의
                       </div>
                       <div :class="$style['term-list__right']">
                         <button
@@ -7089,92 +6975,6 @@ export default {
     </section>
 
     <section class="test-section">
-      <h2 class="test-section-title">Scroll Section</h2>
-      <div class="test-section-sub">
-        <h3 class="test-section-sub-title">세로스크롤 + 스티키</h3>
-        <div
-          :class="[
-            $style['basic-table'],
-            $style['basic-table--scroll'],
-            $style['basic-table--sticky'],
-          ]"
-        >
-          <table>
-            <colgroup>
-              <col style="width: 83px" />
-              <col style="width: 148px" />
-              <col />
-            </colgroup>
-            <thead>
-              <tr>
-                <th scope="col">제조사</th>
-                <th scope="col">모델명</th>
-                <th scope="col">차량 금액</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>기아</td>
-                <td>2.2 디젤 11인승 노블레스</td>
-                <td>5,500 만원</td>
-              </tr>
-              <tr>
-                <td>기아</td>
-                <td>2.2 디젤 11인승 노블레스</td>
-                <td>5,500 만원</td>
-              </tr>
-              <tr>
-                <td>기아</td>
-                <td>2.2 디젤 11인승 노블레스</td>
-                <td>5,500 만원</td>
-              </tr>
-              <tr>
-                <td>기아</td>
-                <td>2.2 디젤 11인승 노블레스</td>
-                <td>5,500 만원</td>
-              </tr>
-              <tr>
-                <td>기아</td>
-                <td>2.2 디젤 11인승 노블레스</td>
-                <td>5,500 만원</td>
-              </tr>
-              <tr>
-                <td>기아</td>
-                <td>2.2 디젤 11인승 노블레스</td>
-                <td>5,500 만원</td>
-              </tr>
-              <tr>
-                <td>기아</td>
-                <td>2.2 디젤 11인승 노블레스</td>
-                <td>5,500 만원</td>
-              </tr>
-              <tr>
-                <td>기아</td>
-                <td>2.2 디젤 11인승 노블레스</td>
-                <td>5,500 만원</td>
-              </tr>
-              <tr>
-                <td>기아</td>
-                <td>2.2 디젤 11인승 노블레스</td>
-                <td>5,500 만원</td>
-              </tr>
-              <tr>
-                <td>기아</td>
-                <td>2.2 디젤 11인승 노블레스</td>
-                <td>5,500 만원</td>
-              </tr>
-              <tr>
-                <td>기아</td>
-                <td>2.2 디젤 11인승 노블레스</td>
-                <td>5,500 만원</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <section class="test-section">
       <h2 class="test-section-title">SwitchCheckBox (스위치)</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -8349,22 +8149,6 @@ export default {
       <h2 class="test-section-title">Component Title</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
-        <div
-          :class="[
-            $style['multi-progress'],
-            'row-margin-contents-small row-margin-top-none',
-          ]"
-        >
-          <ul :class="$style['multi-progress__list']">
-            <li>본인인증</li>
-            <li :class="$style['active']" aria-current="true">계약자정보</li>
-            <li>금융조건</li>
-            <li>면허정보</li>
-            <li>약관동의</li>
-            <li>본인인증</li>
-            <li>ARS</li>
-          </ul>
-        </div>
       </div>
     </section>
   </div>

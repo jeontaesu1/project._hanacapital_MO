@@ -23,8 +23,6 @@ import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
-import FormInvalid from '@/components/ui/form/FormInvalid.vue';
-import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
 import UiAccordion from '@/components/ui/accordion/UiAccordion.vue';
 import UiAccordionItem from '@/components/ui/accordion/UiAccordionItem.vue';
@@ -58,8 +56,6 @@ export default {
     BasicInput,
     FormList,
     FormListItem,
-    FormInvalid,
-    FormInvalidMessage,
     UiAccordion,
     UiAccordionItem,
     UiAccordionLayer,
@@ -180,105 +176,100 @@ export default {
       <div v-if="state.filterOpen">
         <FormList>
           <FormListItem titleText="조회기간" :forceFocus="true">
-            <FormInvalid>
-              <BoxCheckList :classNames="{ wrap: 'row-margin-item-group' }">
-                <BoxCheckListItem>
-                  <BoxCheck
-                    :minSide="true"
-                    name="lMBlogStatusInquiryDateCheck"
-                    id="lMBlogStatusInquiryDateCheck001"
-                  >
-                    <BoxCheckLabel>1주</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-                <BoxCheckListItem>
-                  <BoxCheck
-                    :minSide="true"
-                    name="lMBlogStatusInquiryDateCheck"
-                    id="lMBlogStatusInquiryDateCheck002"
-                  >
-                    <BoxCheckLabel>2주</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-                <BoxCheckListItem>
-                  <BoxCheck
-                    :minSide="true"
-                    name="lMBlogStatusInquiryDateCheck"
-                    id="lMBlogStatusInquiryDateCheck003"
-                  >
-                    <BoxCheckLabel>1개월</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-                <BoxCheckListItem>
-                  <BoxCheck
-                    :minSide="true"
-                    name="lMBlogStatusInquiryDateCheck"
-                    id="lMBlogStatusInquiryDateCheck004"
-                  >
-                    <BoxCheckLabel>직접설정</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-              </BoxCheckList>
-              <InputBlock>
-                <InputBlockCell :flexible="true">
-                  <BasicDatepicker
-                    title="조회기간 시작 날짜"
-                    id="lMBlogStatusInquiryDateStart"
-                    buttonId="lMBlogStatusInquiryDateStartButton"
-                    :max="state.maxDate"
-                    v-model="state.minDate"
-                  />
-                </InputBlockCell>
-                <InputBlockCell margin="regular">
-                  <div class="text-body-3">~</div>
-                </InputBlockCell>
-                <InputBlockCell :flexible="true" margin="regular">
-                  <BasicDatepicker
-                    title="조회기간 종료 날짜"
-                    id="lMBlogStatusInquiryDateEnd"
-                    buttonId="lMBlogStatusInquiryDateEndButton"
-                    :min="state.minDate"
-                    v-model="state.maxDate"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
+            <BoxCheckList :classNames="{ wrap: 'row-margin-item-group' }">
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="salesUsedCarHomeDateCheck"
+                  id="salesUsedCarHomeDateCheck001"
+                >
+                  <BoxCheckLabel>1주</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="salesUsedCarHomeDateCheck"
+                  id="salesUsedCarHomeDateCheck002"
+                >
+                  <BoxCheckLabel>2주</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="salesUsedCarHomeDateCheck"
+                  id="salesUsedCarHomeDateCheck003"
+                >
+                  <BoxCheckLabel>1개월</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="salesUsedCarHomeDateCheck"
+                  id="salesUsedCarHomeDateCheck004"
+                >
+                  <BoxCheckLabel>직접설정</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+            </BoxCheckList>
+            <InputBlock>
+              <InputBlockCell :flexible="true">
+                <BasicDatepicker
+                  title="조회기간 시작 날짜"
+                  id="salesUsedCarHomeDateStart"
+                  buttonId="salesUsedCarHomeDateStartButton"
+                  :max="state.maxDate"
+                  v-model="state.minDate"
+                />
+              </InputBlockCell>
+              <InputBlockCell margin="regular">
+                <div class="text-body-3">~</div>
+              </InputBlockCell>
+              <InputBlockCell :flexible="true" margin="regular">
+                <BasicDatepicker
+                  title="조회기간 종료 날짜"
+                  id="salesUsedCarHomeDateEnd"
+                  buttonId="salesUsedCarHomeDateEndButton"
+                  :min="state.minDate"
+                  v-model="state.maxDate"
+                />
+              </InputBlockCell>
+            </InputBlock>
           </FormListItem>
           <FormListItem titleText="조회조건" :forceFocus="true">
-            <FormInvalid>
-              <BoxCheckList :classNames="{ wrap: 'row-margin-item-group' }">
-                <BoxCheckListItem>
-                  <BoxCheck
-                    :minSide="true"
-                    name="salesUsedCarHomeType"
-                    id="salesUsedCarHomeType001"
-                    :defaultChecked="true"
-                  >
-                    <BoxCheckLabel>고객명</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-                <BoxCheckListItem>
-                  <BoxCheck
-                    :minSide="true"
-                    name="salesUsedCarHomeType"
-                    id="salesUsedCarHomeType002"
-                  >
-                    <BoxCheckLabel>메모</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-              </BoxCheckList>
-            </FormInvalid>
+            <BoxCheckList :classNames="{ wrap: 'row-margin-item-group' }">
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="salesUsedCarHomeType"
+                  id="salesUsedCarHomeType001"
+                  :defaultChecked="true"
+                >
+                  <BoxCheckLabel>고객명</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="salesUsedCarHomeType"
+                  id="salesUsedCarHomeType002"
+                >
+                  <BoxCheckLabel>메모</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+            </BoxCheckList>
+            <InputBlock>
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  type="search"
+                  title="검색어 입력"
+                  placeholder="검색어 입력"
+                />
+              </InputBlockCell>
+            </InputBlock>
           </FormListItem>
-          <InputBlock class="row-margin-item-group">
-            <InputBlockCell :flexible="true">
-              <BasicInput
-                type="search"
-                title="검색어 입력"
-                placeholder="검색어 입력"
-              />
-            </InputBlockCell>
-          </InputBlock>
         </FormList>
 
         <div class="row-margin-contents-group">

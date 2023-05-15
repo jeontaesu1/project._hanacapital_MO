@@ -41,8 +41,8 @@ export default {
 
 <template>
   <PageContents>
-    <UiAccordion tagName="ul" :classNames="{ wrap: $style['term-list__list'] }">
-      <UiAccordionItem :classNames="{ item: $style['term-list__item'] }">
+    <UiAccordion :classNames="{ wrap: $style['term-list__list'] }">
+      <li :class="$style['term-list__item']">
         <div :class="$style['term-list__head']">
           <div :class="$style['term-list__title']">온라인 서비스 이용약관</div>
           <div :class="$style['term-list__right']">
@@ -51,7 +51,8 @@ export default {
             </button>
           </div>
         </div>
-      </UiAccordionItem>
+      </li>
+
       <UiAccordionItem
         :classNames="{ item: $style['term-list__item'] }"
         :initialOpen="true"
@@ -133,6 +134,7 @@ export default {
           </div>
         </UiAccordionLayer>
       </UiAccordionItem>
+
       <UiAccordionItem
         :classNames="{ item: $style['term-list__item'] }"
         :initialOpen="true"
@@ -458,46 +460,29 @@ export default {
           </div>
         </UiAccordionLayer>
       </UiAccordionItem>
-      <UiAccordionItem :classNames="{ item: $style['term-list__item'] }">
-        <div
-          :class="[
-            $style['logs__block'],
-            $style['logs__block--secondary'],
-            $style['logs__block--regular'],
-          ]"
-        >
-          <div :class="$style['logs__row']">
-            <div :class="$style['logs__contents']">
-              <h3 class="text-body-1 font-weight-medium">개인정보 처리방침</h3>
-            </div>
-            <div :class="$style['logs__right']">
-              <button type="button" :class="$style['logs__link']">
-                <span :class="$style['logs__link-text']">상세보기</span>
-              </button>
-            </div>
+
+      <li :class="$style['term-list__item']">
+        <div :class="$style['term-list__head']">
+          <div :class="$style['term-list__title']">개인정보 처리방침</div>
+          <div :class="$style['term-list__right']">
+            <button type="button" :class="$style['term-list__link']">
+              <span :class="$style['term-list__link-text']">상세보기</span>
+            </button>
           </div>
         </div>
-      </UiAccordionItem>
-      <UiAccordionItem :classNames="{ item: $style['term-list__item'] }">
-        <div
-          :class="[
-            $style['logs__block'],
-            $style['logs__block--secondary'],
-            $style['logs__block--regular'],
-          ]"
-        >
-          <div :class="$style['logs__row']">
-            <div :class="$style['logs__contents']">
-              <h3 class="text-body-1 font-weight-medium">고객정보 취급방침</h3>
-            </div>
-            <div :class="$style['logs__right']">
-              <button type="button" :class="$style['logs__link']">
-                <span :class="$style['logs__link-text']">상세보기</span>
-              </button>
-            </div>
+      </li>
+
+      <li :class="$style['term-list__item']">
+        <div :class="$style['term-list__head']">
+          <div :class="$style['term-list__title']">고객정보 취급방침</div>
+          <div :class="$style['term-list__right']">
+            <button type="button" :class="$style['term-list__link']">
+              <span :class="$style['term-list__link-text']">상세보기</span>
+            </button>
           </div>
         </div>
-      </UiAccordionItem>
+      </li>
+
       <UiAccordionItem
         :classNames="{ item: $style['term-list__item'] }"
         :initialOpen="true"
@@ -605,6 +590,7 @@ export default {
           </div>
         </UiAccordionLayer>
       </UiAccordionItem>
+
       <UiAccordionItem
         :classNames="{ item: $style['term-list__item'] }"
         :initialOpen="true"
@@ -656,94 +642,54 @@ export default {
           </div>
         </UiAccordionLayer>
       </UiAccordionItem>
-      <UiAccordionItem :classNames="{ item: $style['term-list__item'] }">
-        <div
-          :class="[
-            $style['logs__block'],
-            $style['logs__block--secondary'],
-            $style['logs__block--regular'],
-          ]"
-        >
-          <div :class="$style['logs__row']">
-            <div :class="$style['logs__contents']">
-              <h3 class="text-body-1 font-weight-medium">
-                이메일주소 무단수집거부
-              </h3>
-            </div>
-            <div :class="$style['logs__right']">
-              <button type="button" :class="$style['logs__link']">
-                <span :class="$style['logs__link-text']">상세보기</span>
-              </button>
-            </div>
+
+      <li :class="$style['term-list__item']">
+        <div :class="$style['term-list__head']">
+          <div :class="$style['term-list__title']">이메일주소 무단수집거부</div>
+          <div :class="$style['term-list__right']">
+            <button type="button" :class="$style['term-list__link']">
+              <span :class="$style['term-list__link-text']">상세보기</span>
+            </button>
           </div>
         </div>
-      </UiAccordionItem>
-      <UiAccordionItem :classNames="{ item: $style['term-list__item'] }">
-        <div
-          :class="[
-            $style['logs__block'],
-            $style['logs__block--secondary'],
-            $style['logs__block--regular'],
-          ]"
-        >
-          <div :class="$style['logs__row']">
-            <div :class="$style['logs__contents']">
-              <h3 class="text-body-1 font-weight-medium">
-                하나RE 멤버십약관 서비스 이용약관
-              </h3>
-            </div>
-            <div :class="$style['logs__right']">
-              <button type="button" :class="$style['logs__link']">
-                <span :class="$style['logs__link-text']">상세보기</span>
-              </button>
-            </div>
+      </li>
+
+      <li :class="$style['term-list__item']">
+        <div :class="$style['term-list__head']">
+          <div :class="$style['term-list__title']">
+            하나RE 멤버십약관 서비스 이용약관
+          </div>
+          <div :class="$style['term-list__right']">
+            <button type="button" :class="$style['term-list__link']">
+              <span :class="$style['term-list__link-text']">상세보기</span>
+            </button>
           </div>
         </div>
-      </UiAccordionItem>
-      <UiAccordionItem :classNames="{ item: $style['term-list__item'] }">
-        <div
-          :class="[
-            $style['logs__block'],
-            $style['logs__block--secondary'],
-            $style['logs__block--regular'],
-          ]"
-        >
-          <div :class="$style['logs__row']">
-            <div :class="$style['logs__contents']">
-              <h3 class="text-body-1 font-weight-medium">
-                하나캐피탈 멤버십 약관
-              </h3>
-            </div>
-            <div :class="$style['logs__right']">
-              <button type="button" :class="$style['logs__link']">
-                <span :class="$style['logs__link-text']">상세보기</span>
-              </button>
-            </div>
+      </li>
+
+      <li :class="$style['term-list__item']">
+        <div :class="$style['term-list__head']">
+          <div :class="$style['term-list__title']">하나캐피탈 멤버십 약관</div>
+          <div :class="$style['term-list__right']">
+            <button type="button" :class="$style['term-list__link']">
+              <span :class="$style['term-list__link-text']">상세보기</span>
+            </button>
           </div>
         </div>
-      </UiAccordionItem>
-      <UiAccordionItem :classNames="{ item: $style['term-list__item'] }">
-        <div
-          :class="[
-            $style['logs__block'],
-            $style['logs__block--secondary'],
-            $style['logs__block--regular'],
-          ]"
-        >
-          <div :class="$style['logs__row']">
-            <div :class="$style['logs__contents']">
-              <h3 class="text-body-1 font-weight-medium">
-                영상정보처리기기 관리방침
-              </h3>
-            </div>
-            <div :class="$style['logs__right']">
-              <button type="button" :class="$style['logs__link']">
-                <span :class="$style['logs__link-text']">상세보기</span>
-              </button>
-            </div>
+      </li>
+
+      <li :class="$style['term-list__item']">
+        <div :class="$style['term-list__head']">
+          <div :class="$style['term-list__title']">
+            영상정보처리기기 관리방침
+          </div>
+          <div :class="$style['term-list__right']">
+            <button type="button" :class="$style['term-list__link']">
+              <span :class="$style['term-list__link-text']">상세보기</span>
+            </button>
           </div>
         </div>
-      </UiAccordionItem>
+      </li>
     </UiAccordion>
   </PageContents>
 </template>
