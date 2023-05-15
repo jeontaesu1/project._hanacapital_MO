@@ -6,7 +6,13 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-// import Layer from '@/views/';
+import LayerEquipmentLeaseEstimateSchedule from '@/views/equipmentLease/LayerEquipmentLeaseEstimateSchedule.vue';
+import LayerEquipmentLeaseEstimateSend from '@/views/equipmentLease/LayerEquipmentLeaseEstimateSend.vue';
+import LayerEquipmentLeaseEstimateURL from '@/views/equipmentLease/LayerEquipmentLeaseEstimateURL.vue';
+import LayerEquipmentLeaseEstimateURLSchedule from '@/views/equipmentLease/LayerEquipmentLeaseEstimateURLSchedule.vue';
+import LayerEquipmentLeaseStatePriorAgree from '@/views/equipmentLease/LayerEquipmentLeaseStatePriorAgree.vue';
+import LayerEquipmentLeaseStateCounselingAgree from '@/views/equipmentLease/LayerEquipmentLeaseStateCounselingAgree.vue';
+import LayerEquipmentLeaseStateElectronicContract from '@/views/equipmentLease/LayerEquipmentLeaseStateElectronicContract.vue';
 
 export default {
   components: {
@@ -14,18 +20,60 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    // Layer,
+    LayerEquipmentLeaseEstimateSchedule,
+    LayerEquipmentLeaseEstimateSend,
+    LayerEquipmentLeaseEstimateURL,
+    LayerEquipmentLeaseEstimateURLSchedule,
+    LayerEquipmentLeaseStatePriorAgree,
+    LayerEquipmentLeaseStateCounselingAgree,
+    LayerEquipmentLeaseStateElectronicContract,
   },
   setup() {
     const layer001 = ref(null);
+    const layer002 = ref(null);
+    const layer003 = ref(null);
+    const layer004 = ref(null);
+    const layer005 = ref(null);
+    const layer006 = ref(null);
+    const layer007 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
     };
+    const layer002Open = (e = {}) => {
+      layer002.value.layer.open(e.target);
+    };
+    const layer003Open = (e = {}) => {
+      layer003.value.layer.open(e.target);
+    };
+    const layer004Open = (e = {}) => {
+      layer004.value.layer.open(e.target);
+    };
+    const layer005Open = (e = {}) => {
+      layer005.value.layer.open(e.target);
+    };
+    const layer006Open = (e = {}) => {
+      layer006.value.layer.open(e.target);
+    };
+    const layer007Open = (e = {}) => {
+      layer007.value.layer.open(e.target);
+    };
 
     return {
       layer001,
+      layer002,
+      layer003,
+      layer004,
+      layer005,
+      layer006,
+      layer007,
       layer001Open,
+      layer002Open,
+      layer003Open,
+      layer004Open,
+      layer005Open,
+      layer006Open,
+      layer007Open,
     };
   },
 };
@@ -40,12 +88,48 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">버튼</BasicButton>
+        <BasicButton @click="layer001Open">
+          예상 상환스케쥴<br />EL_M01_l001
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer002Open">
+          견적서 전송 정보 입력<br />EL_M01_l002
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer003Open">
+          견적 확인<br />EL_M01_l004
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer004Open">
+          견적서 고객 전송 URL - 예상 상환스케쥴<br />EL_M01_l005
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer005Open">
+          사전동의 요청 정보 입력 팝업<br />EL_M02_l001
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer006Open">
+          상담동의 요청 정보 입력 팝업<br />EL_M02_l002
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer007Open">
+          전자약정 전송 정보 입력 팝업<br />EL_M02_l003
+        </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
-    <!--
-    <Layer ref="layer001" />
-    -->
+    <LayerEquipmentLeaseEstimateSchedule ref="layer001" />
+    <LayerEquipmentLeaseEstimateSend ref="layer002" />
+    <LayerEquipmentLeaseEstimateURL ref="layer003" />
+    <LayerEquipmentLeaseEstimateURLSchedule ref="layer004" />
+    <LayerEquipmentLeaseStatePriorAgree ref="layer005" />
+    <LayerEquipmentLeaseStateCounselingAgree ref="layer006" />
+    <LayerEquipmentLeaseStateElectronicContract ref="layer007" />
   </PageContents>
 </template>

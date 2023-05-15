@@ -55,7 +55,8 @@ export default {
       }
 
       state.title = title;
-      state.message = message.split(/\n/);
+      state.message =
+        typeof message === 'string' ? message.split(/\n/) : message;
       state.buttons = buttons;
 
       layer.value.open();
@@ -101,7 +102,10 @@ export default {
 
 <template>
   <UiLayer ref="layer" :onAfterClosed="state.onAfterClosed">
-    <AlertPopup :force-head-hide="!state.title.length">
+    <AlertPopup
+      :forceHeadHide="!state.title.length"
+      :forceBodyHide="!state.message[0].length"
+    >
       <template v-slot:head>
         <PopupTitle>{{ state.title }}</PopupTitle>
       </template>

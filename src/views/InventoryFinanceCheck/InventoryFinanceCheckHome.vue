@@ -79,7 +79,7 @@ export default {
     onMounted(() => {
       store.ui.header.setTitle(() => '재고금융실사');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => ['menu']);
+      store.ui.header.setRightButtons(() => []);
     });
 
     onUnmounted(() => {

@@ -1,13 +1,19 @@
 <script>
 import { computed } from 'vue';
 
+import IconInput from '@/assets/images/icon/input.svg?component';
+
 const defaultClassNames = () => ({
   wrap: '',
   inner: '',
   cell: '',
+  icon: '',
 });
 
 export default {
+  components: {
+    IconInput,
+  },
   props: {
     classNames: {
       Type: Object,
@@ -22,6 +28,10 @@ export default {
     colors: {
       Type: Array,
       default: [],
+    },
+    type: {
+      Type: String,
+      default: null,
     },
   },
   setup(props) {
@@ -44,11 +54,16 @@ export default {
       $style[`color-chip--length-${colors.length}`],
       {
         [$style[`color-chip--size-${size}`]]: size,
+        [$style[`color-chip--type-${type}`]]: type,
       },
       customClassNames.wrap,
     ]"
   >
-    <span :class="[$style['color-chip__inner'], customClassNames.inner]">
+    <IconInput
+      v-if="type === 'text'"
+      :class="[$style['color-chip__icon'], customClassNames.icon]"
+    />
+    <span v-else :class="[$style['color-chip__inner'], customClassNames.inner]">
       <span
         v-for="(item, i) in colors"
         :key="i"

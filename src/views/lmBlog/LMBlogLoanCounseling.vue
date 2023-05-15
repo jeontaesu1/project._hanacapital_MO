@@ -138,7 +138,7 @@ export default {
 
     <div>
       <section class="row-margin-contents">
-        <h3 class="text-body-2 font-weight-bold row-margin-item-group">
+        <h3 class="text-body-2 row-margin-item-group">
           본 고객은 적법한 절차에 의해 모집한 고객임을 확인합니다.
         </h3>
         <BoxCheckList>
@@ -225,7 +225,7 @@ export default {
     <section class="contents-wrap">
       <div class="flex-box row-margin-contents">
         <div class="flex-box__cell flex-1">
-          <h3 class="text-title-2 font-weight-bold">신용정보조회 동의내역</h3>
+          <h3 class="text-title-2">신용정보조회 동의내역</h3>
         </div>
         <div class="flex-box__cell flex-box__cell--medium">
           <!-- Case : 조회 필터 입력 전 -->

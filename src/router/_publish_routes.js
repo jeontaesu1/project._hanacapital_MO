@@ -470,6 +470,31 @@ const routes = [
     name: '/guide/equipment-lease-001',
     component: () => import('@/views/uiGuide/GuideEquipmentLease001.vue'),
   },
+  {
+    path: '/guide/alert-001',
+    name: '/guide/alert-001',
+    component: () => import('@/views/uiGuide/GuideAlert001.vue'),
+  },
+  {
+    path: '/guide/alert-002',
+    name: '/guide/alert-002',
+    component: () => import('@/views/uiGuide/GuideAlert002.vue'),
+  },
+  {
+    path: '/guide/alert-003',
+    name: '/guide/alert-003',
+    component: () => import('@/views/uiGuide/GuideAlert003.vue'),
+  },
+  {
+    path: '/guide/alert-004',
+    name: '/guide/alert-004',
+    component: () => import('@/views/uiGuide/GuideAlert004.vue'),
+  },
+  {
+    path: '/guide/toast-alert-001',
+    name: '/guide/toast-alert-001',
+    component: () => import('@/views/uiGuide/GuideToastAlert001.vue'),
+  },
 
   // home
   {

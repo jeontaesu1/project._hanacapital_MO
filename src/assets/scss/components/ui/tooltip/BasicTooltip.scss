@@ -42,6 +42,17 @@
     }
   }
 
+  &--fit {
+    .tooltip__bubble {
+      left: 0;
+      right: 0;
+    }
+
+    .tooltip__tail {
+      transform: translateX(20px);
+    }
+  }
+
   &:global(.is-show) {
     .tooltip__bubble {
       display: block;

@@ -32,7 +32,7 @@ export default {
     onMounted(() => {
       store.ui.header.setTitle(() => '접속통계');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => ['menu']);
+      store.ui.header.setRightButtons(() => []);
     });
 
     onUnmounted(() => {
