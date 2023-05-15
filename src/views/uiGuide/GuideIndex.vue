@@ -2001,7 +2001,12 @@ const datas = () => [
         path: '/guide/auto-estimate-001',
         status: 'end',
         create: '2023.05.12',
-        log: [],
+        log: [
+          {
+            date: '2023.05.19',
+            text: '팝업 추가\n- 제조사 선택\n- 종류 선택',
+          },
+        ],
       },
       {
         depth2: '장기렌터카\nAF_M01_p001',
@@ -2187,7 +2192,12 @@ const datas = () => [
         path: '/guide/auto-car-cart-001',
         status: 'end',
         create: '2023.05.05',
-        log: [],
+        log: [
+          {
+            date: '2023.05.19',
+            text: '팝업 추가\n- 제조사 선택\n- 차종 선택',
+          },
+        ],
       },
     ],
   },
