@@ -8,8 +8,10 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 import LayerAutoEstimateCounseling from '@/views/auto/LayerAutoEstimateCounseling.vue';
 import LayerAutoEstimateCounselingComplete from '@/views/auto/LayerAutoEstimateCounselingComplete.vue';
+import LayerAutoEstimateSelectBrand from '@/views/auto/LayerAutoEstimateSelectBrand.vue';
 import LayerAutoEstimateSearchCar from '@/views/auto/LayerAutoEstimateSearchCar.vue';
 import LayerAutoEstimateSelectRecommend from '@/views/auto/LayerAutoEstimateSelectRecommend.vue';
+import LayerAutoEstimateSelectModel from '@/views/auto/LayerAutoEstimateSelectModel.vue';
 import LayerAutoEstimateSelectDetailModel from '@/views/auto/LayerAutoEstimateSelectDetailModel.vue';
 import LayerAutoEstimateSelectTrim from '@/views/auto/LayerAutoEstimateSelectTrim.vue';
 import LayerAutoEstimateEmptyDetailModelAlert from '@/views/auto/LayerAutoEstimateEmptyDetailModelAlert.vue';
@@ -34,8 +36,10 @@ export default {
     ButtonListItem,
     LayerAutoEstimateCounseling,
     LayerAutoEstimateCounselingComplete,
+    LayerAutoEstimateSelectBrand,
     LayerAutoEstimateSearchCar,
     LayerAutoEstimateSelectRecommend,
+    LayerAutoEstimateSelectModel,
     LayerAutoEstimateSelectDetailModel,
     LayerAutoEstimateSelectTrim,
     LayerAutoEstimateEmptyDetailModelAlert,
@@ -55,7 +59,9 @@ export default {
   setup() {
     const layer001 = ref(null);
     const layer002 = ref(null);
+    const layer003 = ref(null);
     const layer004 = ref(null);
+    const layer005 = ref(null);
     const layer006 = ref(null);
     const layer007 = ref(null);
     const layer008 = ref(null);
@@ -79,8 +85,14 @@ export default {
     const layer002Open = (e = {}) => {
       layer002.value.layer.open(e.target);
     };
+    const layer003Open = (e = {}) => {
+      layer003.value.layer.open(e.target);
+    };
     const layer004Open = (e = {}) => {
       layer004.value.layer.open(e.target);
+    };
+    const layer005Open = (e = {}) => {
+      layer005.value.layer.open(e.target);
     };
     const layer006Open = (e = {}) => {
       layer006.value.layer.open(e.target);
@@ -134,7 +146,9 @@ export default {
     return {
       layer001,
       layer002,
+      layer003,
       layer004,
+      layer005,
       layer006,
       layer007,
       layer008,
@@ -153,7 +167,9 @@ export default {
       layer021,
       layer001Open,
       layer002Open,
+      layer003Open,
       layer004Open,
+      layer005Open,
       layer006Open,
       layer007Open,
       layer008Open,
@@ -194,8 +210,18 @@ export default {
         >
       </ButtonListItem>
       <ButtonListItem>
+        <BasicButton @click="layer003Open"
+          >제조사 선택<br />AF_M00_l001</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
         <BasicButton @click="layer004Open">
           자동차 검색<br />AF_M00_b001
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer005Open">
+          종류 선택<br />AF_M00_l003
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
@@ -282,8 +308,10 @@ export default {
 
     <LayerAutoEstimateCounseling ref="layer001" />
     <LayerAutoEstimateCounselingComplete ref="layer002" />
+    <LayerAutoEstimateSelectBrand ref="layer003" />
     <LayerAutoEstimateSearchCar ref="layer004" />
     <LayerAutoEstimateSelectRecommend ref="layer006" />
+    <LayerAutoEstimateSelectModel ref="layer005" />
     <LayerAutoEstimateSelectDetailModel ref="layer007" />
     <LayerAutoEstimateSelectTrim ref="layer008" />
     <LayerAutoEstimateEmptyDetailModelAlert ref="layer009" />
