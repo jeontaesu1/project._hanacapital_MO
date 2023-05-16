@@ -1862,8 +1862,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/equipment-lease/estimate',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.05.19',
         log: [],
       },
       {
