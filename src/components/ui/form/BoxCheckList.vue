@@ -23,6 +23,10 @@ export default {
       Type: Boolean,
       default: false,
     },
+    spacing: {
+      Type: String,
+      default: null,
+    },
     col: {
       Type: Number,
       default: 2,
@@ -50,6 +54,7 @@ export default {
       {
         [$style[`box-check-list--align-${align}`]]: align,
         [$style['box-check-list--wrap']]: wrap,
+        [$style[`box-check-list--spacing-${spacing}`]]: spacing,
         [$style[`box-check-list--col-${col}`]]: wrap,
       },
       customClassNames.wrap,
