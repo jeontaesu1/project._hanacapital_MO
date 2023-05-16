@@ -1,7 +1,5 @@
 <script>
-import { ref, reactive, onMounted } from 'vue';
-
-import { useUiLoadingStore } from '@/stores/ui/loading';
+import { ref, reactive } from 'vue';
 
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
@@ -270,12 +268,6 @@ export default {
   },
 
   setup() {
-    const store = {
-      ui: {
-        loading: useUiLoadingStore(),
-      },
-    };
-
     const state = reactive({
       testError001: false,
       testMinDate001: '',
@@ -328,14 +320,6 @@ export default {
     const testAccordionAllClose = () => {
       testAccordion.value.allClose();
     };
-
-    onMounted(() => {
-      store.ui.loading.show();
-
-      setTimeout(() => {
-        store.ui.loading.hide();
-      }, 1000);
-    });
 
     return {
       state,

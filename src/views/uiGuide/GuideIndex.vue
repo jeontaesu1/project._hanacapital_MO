@@ -29,6 +29,17 @@ const datas = () => [
     depth1: '공통',
     datas: [
       {
+        depth2: '로딩',
+        depth3: '',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/guide/loading-001',
+        status: 'end',
+        create: '2023.05.16',
+        log: [],
+      },
+      {
         depth2: '레이아웃',
         depth3: 'Type 1',
         depth4: '',

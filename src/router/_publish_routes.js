@@ -495,6 +495,11 @@ const routes = [
     name: '/guide/toast-alert-001',
     component: () => import('@/views/uiGuide/GuideToastAlert001.vue'),
   },
+  {
+    path: '/guide/loading-001',
+    name: '/guide/loading-001',
+    component: () => import('@/views/uiGuide/GuideLoading001.vue'),
+  },
 
   // home
   {
