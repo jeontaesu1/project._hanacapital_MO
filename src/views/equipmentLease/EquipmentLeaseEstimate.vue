@@ -18,10 +18,12 @@ import StickyBar from '@/components/ui/common/StickyBar.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
+import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
+import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import UiAccordion from '@/components/ui/accordion/UiAccordion.vue';
 import UiAccordionItem from '@/components/ui/accordion/UiAccordionItem.vue';
@@ -49,10 +51,12 @@ export default {
     InputBlock,
     InputBlockCell,
     BasicInput,
+    BasicSelect,
     FormList,
     FormListItem,
     FormInvalid,
     FormInvalidMessage,
+    FormHelpText,
     BasicHr,
     UiAccordion,
     UiAccordionItem,
@@ -75,6 +79,14 @@ export default {
       nameError: false,
       equipmentNameError: false,
       acquisitionCostError: false,
+      depositRatioError: false,
+      depositInputError: false,
+      valueRatioError: false,
+      valueInputError: false,
+      deferredPrincipalRatioError: false,
+      deferredPrincipalInputError: false,
+      interestSupportInputError: false,
+      InsuranceRateError: false,
     });
 
     onMounted(() => {
@@ -107,6 +119,7 @@ export default {
                 title="고객 이름"
                 id="equipmentLeaseEstimateName"
                 align="right"
+                :useDelete="false"
               />
             </InputBlockCell>
             <template v-slot:innerRight>
@@ -163,7 +176,7 @@ export default {
                     :minSide="true"
                     name="equipmentLeaseEstimateCheck001"
                     id="equipmentLeaseEstimateCheck001_001"
-                    :defaultChecked="true"
+                    size="small"
                   >
                     <BoxCheckLabel>의료기</BoxCheckLabel>
                   </BoxCheck>
@@ -173,6 +186,7 @@ export default {
                     :minSide="true"
                     name="equipmentLeaseEstimateCheck001"
                     id="equipmentLeaseEstimateCheck001_002"
+                    size="small"
                   >
                     <BoxCheckLabel>스크린골프</BoxCheckLabel>
                   </BoxCheck>
@@ -205,7 +219,28 @@ export default {
 
           <UiAccordionLayer :classNames="{ layer: $style['estimate__layer'] }">
             <section :class="$style['estimate__contents']">
-              // 내용 노출
+              <BoxCheckList>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck002"
+                    id="equipmentLeaseEstimateCheck002_001"
+                    size="small"
+                  >
+                    <BoxCheckLabel>유이자</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck002"
+                    id="equipmentLeaseEstimateCheck002_002"
+                    size="small"
+                  >
+                    <BoxCheckLabel>무이자</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+              </BoxCheckList>
             </section>
           </UiAccordionLayer>
         </UiAccordionItem>
@@ -271,6 +306,7 @@ export default {
                                   title="취득원가"
                                   id="equipmentLeaseEstimateAcquisitionCost"
                                   pattern="\d*"
+                                  :useDelete="false"
                                   align="right"
                                 />
                               </InputBlockCell>
@@ -345,7 +381,116 @@ export default {
                 </KeyValue>
               </div>
             </div>
+            <div :class="$style['estimate__arrow']">
+              <UiAccordionOpener
+                :classNames="{ button: $style['estimate__opener'] }"
+              />
+            </div>
           </div>
+
+          <UiAccordionLayer :classNames="{ layer: $style['estimate__layer'] }">
+            <section :class="$style['estimate__contents']">
+              <BoxCheckList :wrap="true" col="3" spacing="small">
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck003"
+                    id="equipmentLeaseEstimateCheck003_001"
+                    size="small"
+                  >
+                    <BoxCheckLabel>12개월</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck003"
+                    id="equipmentLeaseEstimateCheck003_002"
+                    size="small"
+                  >
+                    <BoxCheckLabel>24개월</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck003"
+                    id="equipmentLeaseEstimateCheck003_003"
+                    size="small"
+                  >
+                    <BoxCheckLabel>36개월</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck003"
+                    id="equipmentLeaseEstimateCheck003_004"
+                    size="small"
+                  >
+                    <BoxCheckLabel>48개월</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck003"
+                    id="equipmentLeaseEstimateCheck003_005"
+                    size="small"
+                  >
+                    <BoxCheckLabel>60개월</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck003"
+                    id="equipmentLeaseEstimateCheck003_006"
+                    size="small"
+                  >
+                    <BoxCheckLabel>직접입력</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+              </BoxCheckList>
+
+              <!-- Case : 직접 입력 선택시 노출 -->
+              <FormList :classNames="{ wrap: 'row-margin-item-group' }">
+                <FormListItem
+                  titleText="기간 수기입력"
+                  target="#equipmentLeaseEstimatePeriod"
+                >
+                  <FormInvalid :error="state.periodError">
+                    <InputBlock :error="state.periodError">
+                      <InputBlockCell :flexible="true">
+                        <BasicInput
+                          title="기간 수기입력"
+                          id="equipmentLeaseEstimatePeriod"
+                          type="number"
+                          pattern="\d*"
+                          :useDelete="false"
+                          align="right"
+                        />
+                      </InputBlockCell>
+                      <template v-slot:innerRight>
+                        <div class="text-body-3">개월</div>
+                      </template>
+                    </InputBlock>
+                    <FormInvalidMessage> Error Message </FormInvalidMessage>
+                    <FormHelpText>최대 60개월까지 가능합니다.</FormHelpText>
+                  </FormInvalid>
+                </FormListItem>
+              </FormList>
+              <!-- //Case : 직접 입력 선택시 노출 -->
+
+              <ButtonList :classNames="{ wrap: 'row-margin-item-group' }">
+                <ButtonListItem>
+                  <BasicButton theme="tertiary" size="small">
+                    적용
+                  </BasicButton>
+                </ButtonListItem>
+              </ButtonList>
+            </section>
+          </UiAccordionLayer>
         </UiAccordionItem>
 
         <UiAccordionItem :classNames="{ item: $style['estimate__item'] }">
@@ -391,7 +536,327 @@ export default {
 
           <UiAccordionLayer :classNames="{ layer: $style['estimate__layer'] }">
             <section :class="$style['estimate__contents']">
-              // 내용 노출
+              <BoxCheckList :wrap="true" col="3" spacing="small">
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck004"
+                    id="equipmentLeaseEstimateCheck004_001"
+                    size="small"
+                  >
+                    <BoxCheckLabel>없음</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck004"
+                    id="equipmentLeaseEstimateCheck004_002"
+                    size="small"
+                  >
+                    <BoxCheckLabel>10%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck004"
+                    id="equipmentLeaseEstimateCheck004_003"
+                    size="small"
+                  >
+                    <BoxCheckLabel>20%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck004"
+                    id="equipmentLeaseEstimateCheck004_004"
+                    size="small"
+                  >
+                    <BoxCheckLabel>30%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck004"
+                    id="equipmentLeaseEstimateCheck004_005"
+                    size="small"
+                  >
+                    <BoxCheckLabel>40%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck004"
+                    id="equipmentLeaseEstimateCheck004_006"
+                    size="small"
+                  >
+                    <BoxCheckLabel>50%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+              </BoxCheckList>
+
+              <FormList :classNames="{ wrap: 'row-margin-item-group' }">
+                <FormListItem
+                  titleText="비율"
+                  target="#equipmentLeaseEstimateDepositRatioButton"
+                  :selectOnly="true"
+                >
+                  <FormInvalid :error="state.depositRatioError">
+                    <InputBlock :error="state.depositRatioError">
+                      <InputBlockCell :flexible="true">
+                        <BasicSelect
+                          :option="[
+                            {
+                              value: '1',
+                              text: '선택',
+                            },
+                            {
+                              value: '2',
+                              text: '1%',
+                            },
+                            {
+                              value: '3',
+                              text: '2%',
+                            },
+                            {
+                              value: '4',
+                              text: '3%',
+                            },
+                            {
+                              value: '5',
+                              text: '4%',
+                            },
+                            {
+                              value: '6',
+                              text: '5%',
+                            },
+                            {
+                              value: '7',
+                              text: '6%',
+                            },
+                            {
+                              value: '8',
+                              text: '7%',
+                            },
+                            {
+                              value: '9',
+                              text: '8%',
+                            },
+                            {
+                              value: '10',
+                              text: '9%',
+                            },
+                            {
+                              value: '11',
+                              text: '10%',
+                            },
+                            {
+                              value: '12',
+                              text: '11%',
+                            },
+                            {
+                              value: '13',
+                              text: '12%',
+                            },
+                            {
+                              value: '14',
+                              text: '13%',
+                            },
+                            {
+                              value: '15',
+                              text: '14%',
+                            },
+                            {
+                              value: '16',
+                              text: '15%',
+                            },
+                            {
+                              value: '17',
+                              text: '16%',
+                            },
+                            {
+                              value: '18',
+                              text: '17%',
+                            },
+                            {
+                              value: '19',
+                              text: '18%',
+                            },
+                            {
+                              value: '20',
+                              text: '19%',
+                            },
+                            {
+                              value: '21',
+                              text: '20%',
+                            },
+                            {
+                              value: '22',
+                              text: '21%',
+                            },
+                            {
+                              value: '23',
+                              text: '22%',
+                            },
+                            {
+                              value: '24',
+                              text: '23%',
+                            },
+                            {
+                              value: '25',
+                              text: '24%',
+                            },
+                            {
+                              value: '26',
+                              text: '25%',
+                            },
+                            {
+                              value: '27',
+                              text: '26%',
+                            },
+                            {
+                              value: '28',
+                              text: '27%',
+                            },
+                            {
+                              value: '29',
+                              text: '28%',
+                            },
+                            {
+                              value: '30',
+                              text: '29%',
+                            },
+                            {
+                              value: '31',
+                              text: '30%',
+                            },
+                            {
+                              value: '32',
+                              text: '31%',
+                            },
+                            {
+                              value: '33',
+                              text: '32%',
+                            },
+                            {
+                              value: '34',
+                              text: '33%',
+                            },
+                            {
+                              value: '35',
+                              text: '34%',
+                            },
+                            {
+                              value: '36',
+                              text: '35%',
+                            },
+                            {
+                              value: '37',
+                              text: '36%',
+                            },
+                            {
+                              value: '38',
+                              text: '37%',
+                            },
+                            {
+                              value: '39',
+                              text: '38%',
+                            },
+                            {
+                              value: '40',
+                              text: '39%',
+                            },
+                            {
+                              value: '41',
+                              text: '40%',
+                            },
+                            {
+                              value: '42',
+                              text: '41%',
+                            },
+                            {
+                              value: '43',
+                              text: '42%',
+                            },
+                            {
+                              value: '44',
+                              text: '43%',
+                            },
+                            {
+                              value: '45',
+                              text: '44%',
+                            },
+                            {
+                              value: '46',
+                              text: '45%',
+                            },
+                            {
+                              value: '47',
+                              text: '46%',
+                            },
+                            {
+                              value: '48',
+                              text: '47%',
+                            },
+                            {
+                              value: '49',
+                              text: '48%',
+                            },
+                            {
+                              value: '50',
+                              text: '49%',
+                            },
+                            {
+                              value: '51',
+                              text: '50%',
+                            },
+                          ]"
+                          buttonTitle="보증금 비율 선택하기"
+                          layerTitle="보증금 비율을 선택하세요"
+                          id="equipmentLeaseEstimateDepositRatio"
+                          buttonId="equipmentLeaseEstimateDepositRatioButton"
+                        />
+                      </InputBlockCell>
+                    </InputBlock>
+                    <FormInvalidMessage> Error Message </FormInvalidMessage>
+                  </FormInvalid>
+                </FormListItem>
+
+                <FormListItem
+                  titleText="보증금 수기입력"
+                  target="#equipmentLeaseEstimateAcquisitionDepositInput"
+                >
+                  <FormInvalid :error="state.depositInputError">
+                    <InputBlock :error="state.depositInputError">
+                      <InputBlockCell :flexible="true">
+                        <BasicInput
+                          title="보증금 수기입력"
+                          id="equipmentLeaseEstimateAcquisitionDepositInput"
+                          pattern="\d*"
+                          :useDelete="false"
+                          align="right"
+                        />
+                      </InputBlockCell>
+                      <template v-slot:innerRight>
+                        <div class="text-body-3">원</div>
+                      </template>
+                    </InputBlock>
+                    <FormInvalidMessage> Error Message </FormInvalidMessage>
+                  </FormInvalid>
+                </FormListItem>
+              </FormList>
+
+              <ButtonList :classNames="{ wrap: 'row-margin-item-group' }">
+                <ButtonListItem>
+                  <BasicButton theme="tertiary" size="small">
+                    적용
+                  </BasicButton>
+                </ButtonListItem>
+              </ButtonList>
             </section>
           </UiAccordionLayer>
         </UiAccordionItem>
@@ -422,7 +887,327 @@ export default {
 
           <UiAccordionLayer :classNames="{ layer: $style['estimate__layer'] }">
             <section :class="$style['estimate__contents']">
-              // 내용 노출
+              <BoxCheckList :wrap="true" col="3" spacing="small">
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck005"
+                    id="equipmentLeaseEstimateCheck005_001"
+                    size="small"
+                  >
+                    <BoxCheckLabel>없음</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck005"
+                    id="equipmentLeaseEstimateCheck005_002"
+                    size="small"
+                  >
+                    <BoxCheckLabel>10%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck005"
+                    id="equipmentLeaseEstimateCheck005_003"
+                    size="small"
+                  >
+                    <BoxCheckLabel>20%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck005"
+                    id="equipmentLeaseEstimateCheck005_004"
+                    size="small"
+                  >
+                    <BoxCheckLabel>30%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck005"
+                    id="equipmentLeaseEstimateCheck005_005"
+                    size="small"
+                  >
+                    <BoxCheckLabel>40%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck005"
+                    id="equipmentLeaseEstimateCheck005_006"
+                    size="small"
+                  >
+                    <BoxCheckLabel>50%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+              </BoxCheckList>
+
+              <FormList :classNames="{ wrap: 'row-margin-item-group' }">
+                <FormListItem
+                  titleText="비율"
+                  target="#equipmentLeaseEstimateValueRatioButton"
+                  :selectOnly="true"
+                >
+                  <FormInvalid :error="state.valueRatioError">
+                    <InputBlock :error="state.valueRatioError">
+                      <InputBlockCell :flexible="true">
+                        <BasicSelect
+                          :option="[
+                            {
+                              value: '1',
+                              text: '선택',
+                            },
+                            {
+                              value: '2',
+                              text: '1%',
+                            },
+                            {
+                              value: '3',
+                              text: '2%',
+                            },
+                            {
+                              value: '4',
+                              text: '3%',
+                            },
+                            {
+                              value: '5',
+                              text: '4%',
+                            },
+                            {
+                              value: '6',
+                              text: '5%',
+                            },
+                            {
+                              value: '7',
+                              text: '6%',
+                            },
+                            {
+                              value: '8',
+                              text: '7%',
+                            },
+                            {
+                              value: '9',
+                              text: '8%',
+                            },
+                            {
+                              value: '10',
+                              text: '9%',
+                            },
+                            {
+                              value: '11',
+                              text: '10%',
+                            },
+                            {
+                              value: '12',
+                              text: '11%',
+                            },
+                            {
+                              value: '13',
+                              text: '12%',
+                            },
+                            {
+                              value: '14',
+                              text: '13%',
+                            },
+                            {
+                              value: '15',
+                              text: '14%',
+                            },
+                            {
+                              value: '16',
+                              text: '15%',
+                            },
+                            {
+                              value: '17',
+                              text: '16%',
+                            },
+                            {
+                              value: '18',
+                              text: '17%',
+                            },
+                            {
+                              value: '19',
+                              text: '18%',
+                            },
+                            {
+                              value: '20',
+                              text: '19%',
+                            },
+                            {
+                              value: '21',
+                              text: '20%',
+                            },
+                            {
+                              value: '22',
+                              text: '21%',
+                            },
+                            {
+                              value: '23',
+                              text: '22%',
+                            },
+                            {
+                              value: '24',
+                              text: '23%',
+                            },
+                            {
+                              value: '25',
+                              text: '24%',
+                            },
+                            {
+                              value: '26',
+                              text: '25%',
+                            },
+                            {
+                              value: '27',
+                              text: '26%',
+                            },
+                            {
+                              value: '28',
+                              text: '27%',
+                            },
+                            {
+                              value: '29',
+                              text: '28%',
+                            },
+                            {
+                              value: '30',
+                              text: '29%',
+                            },
+                            {
+                              value: '31',
+                              text: '30%',
+                            },
+                            {
+                              value: '32',
+                              text: '31%',
+                            },
+                            {
+                              value: '33',
+                              text: '32%',
+                            },
+                            {
+                              value: '34',
+                              text: '33%',
+                            },
+                            {
+                              value: '35',
+                              text: '34%',
+                            },
+                            {
+                              value: '36',
+                              text: '35%',
+                            },
+                            {
+                              value: '37',
+                              text: '36%',
+                            },
+                            {
+                              value: '38',
+                              text: '37%',
+                            },
+                            {
+                              value: '39',
+                              text: '38%',
+                            },
+                            {
+                              value: '40',
+                              text: '39%',
+                            },
+                            {
+                              value: '41',
+                              text: '40%',
+                            },
+                            {
+                              value: '42',
+                              text: '41%',
+                            },
+                            {
+                              value: '43',
+                              text: '42%',
+                            },
+                            {
+                              value: '44',
+                              text: '43%',
+                            },
+                            {
+                              value: '45',
+                              text: '44%',
+                            },
+                            {
+                              value: '46',
+                              text: '45%',
+                            },
+                            {
+                              value: '47',
+                              text: '46%',
+                            },
+                            {
+                              value: '48',
+                              text: '47%',
+                            },
+                            {
+                              value: '49',
+                              text: '48%',
+                            },
+                            {
+                              value: '50',
+                              text: '49%',
+                            },
+                            {
+                              value: '51',
+                              text: '50%',
+                            },
+                          ]"
+                          buttonTitle="잔존가치 비율 선택하기"
+                          layerTitle="잔존가치 비율을 선택하세요"
+                          id="equipmentLeaseEstimateValueRatio"
+                          buttonId="equipmentLeaseEstimateValueRatioButton"
+                        />
+                      </InputBlockCell>
+                    </InputBlock>
+                    <FormInvalidMessage> Error Message </FormInvalidMessage>
+                  </FormInvalid>
+                </FormListItem>
+
+                <FormListItem
+                  titleText="잔존가치 수기입력"
+                  target="#equipmentLeaseEstimateAcquisitionValueInput"
+                >
+                  <FormInvalid :error="state.valueInputError">
+                    <InputBlock :error="state.valueInputError">
+                      <InputBlockCell :flexible="true">
+                        <BasicInput
+                          title="잔존가치 수기입력"
+                          id="equipmentLeaseEstimateAcquisitionValueInput"
+                          pattern="\d*"
+                          :useDelete="false"
+                          align="right"
+                        />
+                      </InputBlockCell>
+                      <template v-slot:innerRight>
+                        <div class="text-body-3">원</div>
+                      </template>
+                    </InputBlock>
+                    <FormInvalidMessage> Error Message </FormInvalidMessage>
+                  </FormInvalid>
+                </FormListItem>
+              </FormList>
+
+              <ButtonList :classNames="{ wrap: 'row-margin-item-group' }">
+                <ButtonListItem>
+                  <BasicButton theme="tertiary" size="small">
+                    적용
+                  </BasicButton>
+                </ButtonListItem>
+              </ButtonList>
             </section>
           </UiAccordionLayer>
         </UiAccordionItem>
@@ -453,7 +1238,327 @@ export default {
 
           <UiAccordionLayer :classNames="{ layer: $style['estimate__layer'] }">
             <section :class="$style['estimate__contents']">
-              // 내용 노출
+              <BoxCheckList :wrap="true" col="3" spacing="small">
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck006"
+                    id="equipmentLeaseEstimateCheck006_001"
+                    size="small"
+                  >
+                    <BoxCheckLabel>없음</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck006"
+                    id="equipmentLeaseEstimateCheck006_002"
+                    size="small"
+                  >
+                    <BoxCheckLabel>10%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck006"
+                    id="equipmentLeaseEstimateCheck006_003"
+                    size="small"
+                  >
+                    <BoxCheckLabel>20%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck006"
+                    id="equipmentLeaseEstimateCheck006_004"
+                    size="small"
+                  >
+                    <BoxCheckLabel>30%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck006"
+                    id="equipmentLeaseEstimateCheck006_005"
+                    size="small"
+                  >
+                    <BoxCheckLabel>40%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck006"
+                    id="equipmentLeaseEstimateCheck006_006"
+                    size="small"
+                  >
+                    <BoxCheckLabel>50%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+              </BoxCheckList>
+
+              <FormList :classNames="{ wrap: 'row-margin-item-group' }">
+                <FormListItem
+                  titleText="비율"
+                  target="#equipmentLeaseEstimateDeferredPrincipalRatioButton"
+                  :selectOnly="true"
+                >
+                  <FormInvalid :error="state.deferredPrincipalRatioError">
+                    <InputBlock :error="state.deferredPrincipalRatioError">
+                      <InputBlockCell :flexible="true">
+                        <BasicSelect
+                          :option="[
+                            {
+                              value: '1',
+                              text: '선택',
+                            },
+                            {
+                              value: '2',
+                              text: '1%',
+                            },
+                            {
+                              value: '3',
+                              text: '2%',
+                            },
+                            {
+                              value: '4',
+                              text: '3%',
+                            },
+                            {
+                              value: '5',
+                              text: '4%',
+                            },
+                            {
+                              value: '6',
+                              text: '5%',
+                            },
+                            {
+                              value: '7',
+                              text: '6%',
+                            },
+                            {
+                              value: '8',
+                              text: '7%',
+                            },
+                            {
+                              value: '9',
+                              text: '8%',
+                            },
+                            {
+                              value: '10',
+                              text: '9%',
+                            },
+                            {
+                              value: '11',
+                              text: '10%',
+                            },
+                            {
+                              value: '12',
+                              text: '11%',
+                            },
+                            {
+                              value: '13',
+                              text: '12%',
+                            },
+                            {
+                              value: '14',
+                              text: '13%',
+                            },
+                            {
+                              value: '15',
+                              text: '14%',
+                            },
+                            {
+                              value: '16',
+                              text: '15%',
+                            },
+                            {
+                              value: '17',
+                              text: '16%',
+                            },
+                            {
+                              value: '18',
+                              text: '17%',
+                            },
+                            {
+                              value: '19',
+                              text: '18%',
+                            },
+                            {
+                              value: '20',
+                              text: '19%',
+                            },
+                            {
+                              value: '21',
+                              text: '20%',
+                            },
+                            {
+                              value: '22',
+                              text: '21%',
+                            },
+                            {
+                              value: '23',
+                              text: '22%',
+                            },
+                            {
+                              value: '24',
+                              text: '23%',
+                            },
+                            {
+                              value: '25',
+                              text: '24%',
+                            },
+                            {
+                              value: '26',
+                              text: '25%',
+                            },
+                            {
+                              value: '27',
+                              text: '26%',
+                            },
+                            {
+                              value: '28',
+                              text: '27%',
+                            },
+                            {
+                              value: '29',
+                              text: '28%',
+                            },
+                            {
+                              value: '30',
+                              text: '29%',
+                            },
+                            {
+                              value: '31',
+                              text: '30%',
+                            },
+                            {
+                              value: '32',
+                              text: '31%',
+                            },
+                            {
+                              value: '33',
+                              text: '32%',
+                            },
+                            {
+                              value: '34',
+                              text: '33%',
+                            },
+                            {
+                              value: '35',
+                              text: '34%',
+                            },
+                            {
+                              value: '36',
+                              text: '35%',
+                            },
+                            {
+                              value: '37',
+                              text: '36%',
+                            },
+                            {
+                              value: '38',
+                              text: '37%',
+                            },
+                            {
+                              value: '39',
+                              text: '38%',
+                            },
+                            {
+                              value: '40',
+                              text: '39%',
+                            },
+                            {
+                              value: '41',
+                              text: '40%',
+                            },
+                            {
+                              value: '42',
+                              text: '41%',
+                            },
+                            {
+                              value: '43',
+                              text: '42%',
+                            },
+                            {
+                              value: '44',
+                              text: '43%',
+                            },
+                            {
+                              value: '45',
+                              text: '44%',
+                            },
+                            {
+                              value: '46',
+                              text: '45%',
+                            },
+                            {
+                              value: '47',
+                              text: '46%',
+                            },
+                            {
+                              value: '48',
+                              text: '47%',
+                            },
+                            {
+                              value: '49',
+                              text: '48%',
+                            },
+                            {
+                              value: '50',
+                              text: '49%',
+                            },
+                            {
+                              value: '51',
+                              text: '50%',
+                            },
+                          ]"
+                          buttonTitle="유예원금 비율 선택하기"
+                          layerTitle="유예원금 비율을 선택하세요"
+                          id="equipmentLeaseEstimateDeferredPrincipalRatio"
+                          buttonId="equipmentLeaseEstimateDeferredPrincipalRatioButton"
+                        />
+                      </InputBlockCell>
+                    </InputBlock>
+                    <FormInvalidMessage> Error Message </FormInvalidMessage>
+                  </FormInvalid>
+                </FormListItem>
+
+                <FormListItem
+                  titleText="유예원금 수기입력"
+                  target="#equipmentLeaseEstimateAcquisitionDeferredPrincipalInput"
+                >
+                  <FormInvalid :error="state.deferredPrincipalInputError">
+                    <InputBlock :error="state.deferredPrincipalInputError">
+                      <InputBlockCell :flexible="true">
+                        <BasicInput
+                          title="유예원금 수기입력"
+                          id="equipmentLeaseEstimateAcquisitionDeferredPrincipalInput"
+                          pattern="\d*"
+                          :useDelete="false"
+                          align="right"
+                        />
+                      </InputBlockCell>
+                      <template v-slot:innerRight>
+                        <div class="text-body-3">원</div>
+                      </template>
+                    </InputBlock>
+                    <FormInvalidMessage> Error Message </FormInvalidMessage>
+                  </FormInvalid>
+                </FormListItem>
+              </FormList>
+
+              <ButtonList :classNames="{ wrap: 'row-margin-item-group' }">
+                <ButtonListItem>
+                  <BasicButton theme="tertiary" size="small">
+                    적용
+                  </BasicButton>
+                </ButtonListItem>
+              </ButtonList>
             </section>
           </UiAccordionLayer>
         </UiAccordionItem>
@@ -486,7 +1591,251 @@ export default {
 
           <UiAccordionLayer :classNames="{ layer: $style['estimate__layer'] }">
             <section :class="$style['estimate__contents']">
-              // 내용 노출
+              <BoxCheckList :wrap="true" col="6" spacing="small">
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck007"
+                    id="equipmentLeaseEstimateCheck007_001"
+                    size="small"
+                  >
+                    <BoxCheckLabel>없음</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck007"
+                    id="equipmentLeaseEstimateCheck007_002"
+                    size="small"
+                  >
+                    <BoxCheckLabel>1%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck007"
+                    id="equipmentLeaseEstimateCheck007_003"
+                    size="small"
+                  >
+                    <BoxCheckLabel>2%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck007"
+                    id="equipmentLeaseEstimateCheck007_004"
+                    size="small"
+                  >
+                    <BoxCheckLabel>3%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck007"
+                    id="equipmentLeaseEstimateCheck007_005"
+                    size="small"
+                  >
+                    <BoxCheckLabel>4%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck007"
+                    id="equipmentLeaseEstimateCheck007_006"
+                    size="small"
+                  >
+                    <BoxCheckLabel>5%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck007"
+                    id="equipmentLeaseEstimateCheck007_007"
+                    size="small"
+                  >
+                    <BoxCheckLabel>6%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck007"
+                    id="equipmentLeaseEstimateCheck007_008"
+                    size="small"
+                  >
+                    <BoxCheckLabel>7%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck007"
+                    id="equipmentLeaseEstimateCheck007_009"
+                    size="small"
+                  >
+                    <BoxCheckLabel>8%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck007"
+                    id="equipmentLeaseEstimateCheck007_010"
+                    size="small"
+                  >
+                    <BoxCheckLabel>9%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck007"
+                    id="equipmentLeaseEstimateCheck007_011"
+                    size="small"
+                  >
+                    <BoxCheckLabel>10%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck007"
+                    id="equipmentLeaseEstimateCheck007_012"
+                    size="small"
+                  >
+                    <BoxCheckLabel>11%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck007"
+                    id="equipmentLeaseEstimateCheck007_013"
+                    size="small"
+                  >
+                    <BoxCheckLabel>12%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck007"
+                    id="equipmentLeaseEstimateCheck007_014"
+                    size="small"
+                  >
+                    <BoxCheckLabel>13%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck007"
+                    id="equipmentLeaseEstimateCheck007_015"
+                    size="small"
+                  >
+                    <BoxCheckLabel>14%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck007"
+                    id="equipmentLeaseEstimateCheck007_016"
+                    size="small"
+                  >
+                    <BoxCheckLabel>15%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck007"
+                    id="equipmentLeaseEstimateCheck007_017"
+                    size="small"
+                  >
+                    <BoxCheckLabel>16%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck007"
+                    id="equipmentLeaseEstimateCheck007_018"
+                    size="small"
+                  >
+                    <BoxCheckLabel>17%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck007"
+                    id="equipmentLeaseEstimateCheck007_019"
+                    size="small"
+                  >
+                    <BoxCheckLabel>18%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck007"
+                    id="equipmentLeaseEstimateCheck007_020"
+                    size="small"
+                  >
+                    <BoxCheckLabel>19%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck007"
+                    id="equipmentLeaseEstimateCheck007_021"
+                    size="small"
+                  >
+                    <BoxCheckLabel>20%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+              </BoxCheckList>
+
+              <FormList :classNames="{ wrap: 'row-margin-item-group' }">
+                <FormListItem
+                  titleText="금액"
+                  target="#equipmentLeaseEstimateAcquisitionInterestSupportInput"
+                >
+                  <FormInvalid :error="state.interestSupportInputError">
+                    <InputBlock :error="state.interestSupportInputError">
+                      <InputBlockCell :flexible="true">
+                        <BasicInput
+                          title="공급자 이자지원 금액"
+                          id="equipmentLeaseEstimateAcquisitionInterestSupportInput"
+                          pattern="\d*"
+                          :useDelete="false"
+                          align="right"
+                        />
+                      </InputBlockCell>
+                      <template v-slot:innerRight>
+                        <div class="text-body-3">원</div>
+                      </template>
+                    </InputBlock>
+                    <FormInvalidMessage> Error Message </FormInvalidMessage>
+                  </FormInvalid>
+                </FormListItem>
+              </FormList>
+
+              <ButtonList :classNames="{ wrap: 'row-margin-item-group' }">
+                <ButtonListItem>
+                  <BasicButton theme="tertiary" size="small">
+                    적용
+                  </BasicButton>
+                </ButtonListItem>
+              </ButtonList>
             </section>
           </UiAccordionLayer>
         </UiAccordionItem>
@@ -514,7 +1863,28 @@ export default {
 
           <UiAccordionLayer :classNames="{ layer: $style['estimate__layer'] }">
             <section :class="$style['estimate__contents']">
-              // 내용 노출
+              <BoxCheckList>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck008"
+                    id="equipmentLeaseEstimateCheck008_001"
+                    size="small"
+                  >
+                    <BoxCheckLabel>1개월 후불</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck008"
+                    id="equipmentLeaseEstimateCheck008_002"
+                    size="small"
+                  >
+                    <BoxCheckLabel>1개월 선불</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+              </BoxCheckList>
             </section>
           </UiAccordionLayer>
         </UiAccordionItem>
@@ -547,7 +1917,63 @@ export default {
 
           <UiAccordionLayer :classNames="{ layer: $style['estimate__layer'] }">
             <section :class="$style['estimate__contents']">
-              // 내용 노출
+              <BoxCheckList>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck009"
+                    id="equipmentLeaseEstimateCheck009_001"
+                    size="small"
+                  >
+                    <BoxCheckLabel>이용자 책임부보</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="equipmentLeaseEstimateCheck009"
+                    id="equipmentLeaseEstimateCheck009_002"
+                    size="small"
+                  >
+                    <BoxCheckLabel>당사부보</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+              </BoxCheckList>
+
+              <FormList :classNames="{ wrap: 'row-margin-item-group' }">
+                <FormListItem
+                  titleText="보험요율"
+                  target="#equipmentLeaseEstimateInsuranceRate"
+                >
+                  <FormInvalid :error="state.InsuranceRateError">
+                    <InputBlock :error="state.InsuranceRateError">
+                      <InputBlockCell :flexible="true">
+                        <BasicInput
+                          title="보험요율"
+                          id="equipmentLeaseEstimateInsuranceRate"
+                          type="number"
+                          pattern="\d*"
+                          :useDelete="false"
+                          align="right"
+                        />
+                      </InputBlockCell>
+                      <template v-slot:innerRight>
+                        <div class="text-body-3">%</div>
+                      </template>
+                    </InputBlock>
+                    <FormInvalidMessage> Error Message </FormInvalidMessage>
+                    <FormHelpText>최대 10%까지 가능합니다.</FormHelpText>
+                  </FormInvalid>
+                </FormListItem>
+              </FormList>
+
+              <ButtonList :classNames="{ wrap: 'row-margin-item-group' }">
+                <ButtonListItem>
+                  <BasicButton theme="tertiary" size="small">
+                    적용
+                  </BasicButton>
+                </ButtonListItem>
+              </ButtonList>
             </section>
           </UiAccordionLayer>
         </UiAccordionItem>
