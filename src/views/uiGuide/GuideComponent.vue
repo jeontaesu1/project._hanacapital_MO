@@ -1739,6 +1739,54 @@ export default {
           </BoxCheckListItem>
         </BoxCheckList>
       </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Spacing - small (6px)</h3>
+
+        <BoxCheckList :wrap="true" spacing="small">
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList007"
+              id="testBoxCheckList007_001"
+              size="small"
+            >
+              <BoxCheckLabel>Label 1</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList007"
+              id="testBoxCheckList007_002"
+              size="small"
+            >
+              <BoxCheckLabel>Label 2</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList007"
+              id="testBoxCheckList007_003"
+              size="small"
+            >
+              <BoxCheckLabel>Label 3</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList007"
+              id="testBoxCheckList007_004"
+              size="small"
+            >
+              <BoxCheckLabel>Label 4</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+        </BoxCheckList>
+      </div>
+
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Wrap - col 2</h3>
 
@@ -1885,7 +1933,7 @@ export default {
               id="testBoxCheckList006_001"
               size="small"
             >
-              <BoxCheckLabel>Label 1</BoxCheckLabel>
+              <BoxCheckLabel>없음</BoxCheckLabel>
             </BoxCheck>
           </BoxCheckListItem>
           <BoxCheckListItem>
@@ -1895,7 +1943,7 @@ export default {
               id="testBoxCheckList006_002"
               size="small"
             >
-              <BoxCheckLabel>Label 2</BoxCheckLabel>
+              <BoxCheckLabel>1%</BoxCheckLabel>
             </BoxCheck>
           </BoxCheckListItem>
           <BoxCheckListItem>
@@ -1905,7 +1953,7 @@ export default {
               id="testBoxCheckList006_003"
               size="small"
             >
-              <BoxCheckLabel>Label 3</BoxCheckLabel>
+              <BoxCheckLabel>2%</BoxCheckLabel>
             </BoxCheck>
           </BoxCheckListItem>
           <BoxCheckListItem>
@@ -1915,7 +1963,7 @@ export default {
               id="testBoxCheckList006_004"
               size="small"
             >
-              <BoxCheckLabel>Label 4</BoxCheckLabel>
+              <BoxCheckLabel>3%</BoxCheckLabel>
             </BoxCheck>
           </BoxCheckListItem>
           <BoxCheckListItem>
@@ -1925,7 +1973,7 @@ export default {
               id="testBoxCheckList006_005"
               size="small"
             >
-              <BoxCheckLabel>Label 5</BoxCheckLabel>
+              <BoxCheckLabel>4%</BoxCheckLabel>
             </BoxCheck>
           </BoxCheckListItem>
           <BoxCheckListItem>
@@ -1935,7 +1983,7 @@ export default {
               id="testBoxCheckList006_006"
               size="small"
             >
-              <BoxCheckLabel>Label 6</BoxCheckLabel>
+              <BoxCheckLabel>5%</BoxCheckLabel>
             </BoxCheck>
           </BoxCheckListItem>
           <BoxCheckListItem>
@@ -1945,7 +1993,7 @@ export default {
               id="testBoxCheckList006_007"
               size="small"
             >
-              <BoxCheckLabel>Label 7</BoxCheckLabel>
+              <BoxCheckLabel>6%</BoxCheckLabel>
             </BoxCheck>
           </BoxCheckListItem>
         </BoxCheckList>
