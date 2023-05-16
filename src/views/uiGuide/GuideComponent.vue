@@ -1739,6 +1739,54 @@ export default {
           </BoxCheckListItem>
         </BoxCheckList>
       </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Spacing - small (6px)</h3>
+
+        <BoxCheckList :wrap="true" spacing="small">
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList007"
+              id="testBoxCheckList007_001"
+              size="small"
+            >
+              <BoxCheckLabel>Label 1</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList007"
+              id="testBoxCheckList007_002"
+              size="small"
+            >
+              <BoxCheckLabel>Label 2</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList007"
+              id="testBoxCheckList007_003"
+              size="small"
+            >
+              <BoxCheckLabel>Label 3</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList007"
+              id="testBoxCheckList007_004"
+              size="small"
+            >
+              <BoxCheckLabel>Label 4</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+        </BoxCheckList>
+      </div>
+
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Wrap - col 2</h3>
 
@@ -1870,6 +1918,82 @@ export default {
               id="testBoxCheckList005_005"
             >
               <BoxCheckLabel>Label 4</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+        </BoxCheckList>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Wrap - col 6</h3>
+
+        <BoxCheckList :wrap="true" col="6" spacing="small">
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList006"
+              id="testBoxCheckList006_001"
+              size="small"
+            >
+              <BoxCheckLabel>없음</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList006"
+              id="testBoxCheckList006_002"
+              size="small"
+            >
+              <BoxCheckLabel>1%</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList006"
+              id="testBoxCheckList006_003"
+              size="small"
+            >
+              <BoxCheckLabel>2%</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList006"
+              id="testBoxCheckList006_004"
+              size="small"
+            >
+              <BoxCheckLabel>3%</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList006"
+              id="testBoxCheckList006_005"
+              size="small"
+            >
+              <BoxCheckLabel>4%</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList006"
+              id="testBoxCheckList006_006"
+              size="small"
+            >
+              <BoxCheckLabel>5%</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList006"
+              id="testBoxCheckList006_007"
+              size="small"
+            >
+              <BoxCheckLabel>6%</BoxCheckLabel>
             </BoxCheck>
           </BoxCheckListItem>
         </BoxCheckList>
