@@ -6,7 +6,6 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-// import Layer from '@/views/';
 import LayerMyLoanDesignationDriverNotice from '@/views/myLoan/LayerMyLoanDesignationDriverNotice.vue';
 import LayerMyLoanDesignationDriverAdd from '@/views/myLoan/LayerMyLoanDesignationDriverAdd.vue';
 import LayerMyLoanDesignationDriverAddComplete from '@/views/myLoan/LayerMyLoanDesignationDriverAddComplete.vue';
@@ -21,7 +20,6 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    // Layer,
     LayerMyLoanDesignationDriverNotice,
     LayerMyLoanDesignationDriverAdd,
     LayerMyLoanDesignationDriverAddComplete,
