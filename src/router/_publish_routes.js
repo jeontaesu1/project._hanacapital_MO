@@ -495,12 +495,67 @@ const routes = [
     name: '/guide/toast-alert-001',
     component: () => import('@/views/uiGuide/GuideToastAlert001.vue'),
   },
+  {
+    path: '/guide/loading-001',
+    name: '/guide/loading-001',
+    component: () => import('@/views/uiGuide/GuideLoading001.vue'),
+  },
+  {
+    path: '/guide/main-001',
+    name: '/guide/main-001',
+    component: () => import('@/views/uiGuide/GuideMain001.vue'),
+  },
+  {
+    path: '/guide/main-002',
+    name: '/guide/main-002',
+    component: () => import('@/views/uiGuide/GuideMain002.vue'),
+  },
 
   // home
   {
-    path: '/home',
-    name: '/home',
-    component: () => import('@/views/home/HomePage.vue'),
+    path: '/main/home-001',
+    name: '/main/home-001',
+    component: () => import('@/views/main/MainHome001.vue'),
+  },
+  {
+    path: '/main/home-002',
+    name: '/main/home-002',
+    component: () => import('@/views/main/MainHome002.vue'),
+  },
+  {
+    path: '/main/push',
+    name: '/main/push',
+    component: () => import('@/views/main/MainPush.vue'),
+  },
+  {
+    path: '/main/rental',
+    name: '/main/rental',
+    component: () => import('@/views/main/MainRental.vue'),
+  },
+  {
+    path: '/main/used-rental',
+    name: '/main/used-rental',
+    component: () => import('@/views/main/MainUsedRental.vue'),
+  },
+  {
+    path: '/main/fortune',
+    name: '/main/fortune',
+    component: () => import('@/views/main/MainFortune.vue'),
+  },
+  {
+    path: '/main/my-loan',
+    name: '/main/my-loan',
+    component: () => import('@/views/main/MainMyLoan.vue'),
+  },
+  {
+    path: '/main/product',
+    name: '/main/product',
+    component: () => import('@/views/main/MainProduct.vue'),
+  },
+  {
+    path: '/main/benefit',
+    name: '/main/benefit',
+    component: () => import('@/views/main/MainBenefit.vue'),
   },
 
   // sign

@@ -21,8 +21,6 @@ import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
-import FormInvalid from '@/components/ui/form/FormInvalid.vue';
-import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
 import FilterButton from '@/components/ui/button/FilterButton.vue';
@@ -51,8 +49,6 @@ export default {
     BasicInput,
     FormList,
     FormListItem,
-    FormInvalid,
-    FormInvalidMessage,
     FormHelpText,
     BasicDatepicker,
     FilterButton,
@@ -149,117 +145,112 @@ export default {
       <div v-if="state.filterOpen">
         <FormList>
           <FormListItem titleText="조회기간" :forceFocus="true">
-            <FormInvalid>
-              <BoxCheckList :classNames="{ wrap: 'row-margin-item-group' }">
-                <BoxCheckListItem>
-                  <BoxCheck
-                    :minSide="true"
-                    name="lMBlogStatusInquiryDateCheck"
-                    id="lMBlogStatusInquiryDateCheck001"
-                  >
-                    <BoxCheckLabel>오늘</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-                <BoxCheckListItem>
-                  <BoxCheck
-                    :minSide="true"
-                    name="lMBlogStatusInquiryDateCheck"
-                    id="lMBlogStatusInquiryDateCheck002"
-                  >
-                    <BoxCheckLabel>1주</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-                <BoxCheckListItem>
-                  <BoxCheck
-                    :minSide="true"
-                    name="lMBlogStatusInquiryDateCheck"
-                    id="lMBlogStatusInquiryDateCheck003"
-                  >
-                    <BoxCheckLabel>1개월</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-                <BoxCheckListItem>
-                  <BoxCheck
-                    :minSide="true"
-                    name="lMBlogStatusInquiryDateCheck"
-                    id="lMBlogStatusInquiryDateCheck004"
-                  >
-                    <BoxCheckLabel>직접설정</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-              </BoxCheckList>
-              <InputBlock>
-                <InputBlockCell :flexible="true">
-                  <BasicDatepicker
-                    title="조회기간 시작 날짜"
-                    id="lMBlogStatusInquiryDateStart"
-                    buttonId="lMBlogStatusInquiryDateStartButton"
-                    :max="state.maxDate"
-                    v-model="state.minDate"
-                  />
-                </InputBlockCell>
-                <InputBlockCell margin="regular">
-                  <div class="text-body-3">~</div>
-                </InputBlockCell>
-                <InputBlockCell :flexible="true" margin="regular">
-                  <BasicDatepicker
-                    title="조회기간 종료 날짜"
-                    id="lMBlogStatusInquiryDateEnd"
-                    buttonId="lMBlogStatusInquiryDateEndButton"
-                    :min="state.minDate"
-                    v-model="state.maxDate"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-              <FormHelpText
-                >최근 3개월 이내, 최대 1개월 단위 조회 가능</FormHelpText
-              >
-            </FormInvalid>
+            <BoxCheckList :classNames="{ wrap: 'row-margin-item-group' }">
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="equipmentLeaseStateInternalMemoDateCheck"
+                  id="equipmentLeaseStateInternalMemoDateCheck001"
+                >
+                  <BoxCheckLabel>오늘</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="equipmentLeaseStateInternalMemoDateCheck"
+                  id="equipmentLeaseStateInternalMemoDateCheck002"
+                >
+                  <BoxCheckLabel>1주</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="equipmentLeaseStateInternalMemoDateCheck"
+                  id="equipmentLeaseStateInternalMemoDateCheck003"
+                >
+                  <BoxCheckLabel>1개월</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="equipmentLeaseStateInternalMemoDateCheck"
+                  id="equipmentLeaseStateInternalMemoDateCheck004"
+                >
+                  <BoxCheckLabel>직접설정</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+            </BoxCheckList>
+            <InputBlock>
+              <InputBlockCell :flexible="true">
+                <BasicDatepicker
+                  title="조회기간 시작 날짜"
+                  id="equipmentLeaseStateInternalMemoDateStart"
+                  buttonId="equipmentLeaseStateInternalMemoDateStartButton"
+                  :max="state.maxDate"
+                  v-model="state.minDate"
+                />
+              </InputBlockCell>
+              <InputBlockCell margin="regular">
+                <div class="text-body-3">~</div>
+              </InputBlockCell>
+              <InputBlockCell :flexible="true" margin="regular">
+                <BasicDatepicker
+                  title="조회기간 종료 날짜"
+                  id="equipmentLeaseStateInternalMemoDateEnd"
+                  buttonId="equipmentLeaseStateInternalMemoDateEndButton"
+                  :min="state.minDate"
+                  v-model="state.maxDate"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <FormHelpText
+              >최근 3개월 이내, 최대 1개월 단위 조회 가능</FormHelpText
+            >
           </FormListItem>
           <FormListItem titleText="조회조건" :forceFocus="true">
-            <FormInvalid>
-              <BoxCheckList :classNames="{ wrap: 'row-margin-item-group' }">
-                <BoxCheckListItem>
-                  <BoxCheck
-                    :minSide="true"
-                    name="salesUsedCarHomeType"
-                    id="salesUsedCarHomeType001"
-                    :defaultChecked="true"
-                  >
-                    <BoxCheckLabel>전체상품</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-                <BoxCheckListItem>
-                  <BoxCheck
-                    :minSide="true"
-                    name="salesUsedCarHomeType"
-                    id="salesUsedCarHomeType002"
-                  >
-                    <BoxCheckLabel>의료기</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-                <BoxCheckListItem>
-                  <BoxCheck
-                    :minSide="true"
-                    name="salesUsedCarHomeType"
-                    id="salesUsedCarHomeType002"
-                  >
-                    <BoxCheckLabel>스크린골프</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-              </BoxCheckList>
-            </FormInvalid>
+            <BoxCheckList :classNames="{ wrap: 'row-margin-item-group' }">
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="salesUsedCarHomeType"
+                  id="salesUsedCarHomeType001"
+                  :defaultChecked="true"
+                >
+                  <BoxCheckLabel>전체상품</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="salesUsedCarHomeType"
+                  id="salesUsedCarHomeType002"
+                >
+                  <BoxCheckLabel>의료기</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="salesUsedCarHomeType"
+                  id="salesUsedCarHomeType002"
+                >
+                  <BoxCheckLabel>스크린골프</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+            </BoxCheckList>
+            <InputBlock class="row-margin-item-group">
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  type="search"
+                  title="검색어 입력"
+                  placeholder="검색어 입력"
+                />
+              </InputBlockCell>
+            </InputBlock>
           </FormListItem>
-          <InputBlock class="row-margin-item-group">
-            <InputBlockCell :flexible="true">
-              <BasicInput
-                type="search"
-                title="검색어 입력"
-                placeholder="검색어 입력"
-              />
-            </InputBlockCell>
-          </InputBlock>
         </FormList>
 
         <div class="row-margin-contents-group">
@@ -271,6 +262,7 @@ export default {
         v-if="state.filterOpen"
         className="row-margin-container-medium"
       />
+
       <ul class="reset-list">
         <li class="row-margin-item-group">
           <BasicBox>
@@ -291,6 +283,7 @@ export default {
                 >
               </div>
             </div>
+
             <BasicHr
               theme="quaternary"
               type="contents"
@@ -309,9 +302,9 @@ export default {
                   }"
                   >약정여부</KeyValueTitle
                 >
-                <KeyValueText class="color-green font-weight-medium">
-                  미완료</KeyValueText
-                >
+                <KeyValueText>
+                  <span class="color-green font-weight-medium">미완료</span>
+                </KeyValueText>
               </KeyValueItem>
               <KeyValueItem
                 :classNames="{
@@ -324,9 +317,8 @@ export default {
                   }"
                   >물건명</KeyValueTitle
                 >
-                <KeyValueText>울쎄라 </KeyValueText>
+                <KeyValueText>울쎄라</KeyValueText>
               </KeyValueItem>
-
               <KeyValueItem
                 :classNames="{
                   item: 'text-body-3',
@@ -377,6 +369,7 @@ export default {
                 >
               </div>
             </div>
+
             <BasicHr
               theme="quaternary"
               type="contents"
@@ -395,10 +388,12 @@ export default {
                   }"
                   >약정여부</KeyValueTitle
                 >
-                <KeyValueText class="color-green font-weight-medium">
-                  완료<br />
-                  (동의일: 2023.02.23)</KeyValueText
-                >
+                <KeyValueText>
+                  <span class="color-green font-weight-medium">
+                    완료<br />
+                    (동의일: 2023.02.23)
+                  </span>
+                </KeyValueText>
               </KeyValueItem>
               <KeyValueItem
                 :classNames="{
@@ -411,9 +406,8 @@ export default {
                   }"
                   >물건명</KeyValueTitle
                 >
-                <KeyValueText>울쎄라 </KeyValueText>
+                <KeyValueText>울쎄라</KeyValueText>
               </KeyValueItem>
-
               <KeyValueItem
                 :classNames="{
                   item: 'text-body-3',
@@ -458,11 +452,13 @@ export default {
         </TextButton>
       </div>
     </section>
+
     <BasicHr
       theme="tertiary"
       type="contents"
       className="row-margin-container"
     />
+
     <div :class="$style['icon-list']">
       <ul :class="$style['icon-list__list']">
         <li :class="$style['icon-list__item']">

@@ -74,37 +74,4 @@
       }
     }
   }
-
-  &--scroll {
-    overflow-y: auto;
-    height: 243px;
-    border-bottom: 1px solid $color-gray-30;
-    table {
-      > tbody {
-        > tr {
-          &:last-child {
-            > td {
-              border-bottom: none;
-            }
-          }
-          &:hover {
-            > td {
-              background: rgba(20, 59, 117, 0.08);
-            }
-          }
-        }
-      }
-    }
-  }
-  &--sticky {
-    table {
-      > thead {
-        th {
-          position: sticky;
-          top: 0;
-          background: #fff;
-        }
-      }
-    }
-  }
 }

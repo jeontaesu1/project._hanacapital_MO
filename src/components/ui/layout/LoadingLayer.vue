@@ -1,4 +1,5 @@
 <script>
+// Common_M00_p001
 import { reactive, computed, watch, nextTick } from 'vue';
 
 import { useUiLoadingStore } from '@/stores/ui/loading';
