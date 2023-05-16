@@ -1635,6 +1635,22 @@ export default {
           </template>
         </BoxCheck>
       </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">size : small</h3>
+
+        <BoxCheck name="testBoxCheck007" id="testBoxCheck007_001" size="small">
+          <BoxCheckLabel>Label</BoxCheckLabel>
+        </BoxCheck>
+
+        <BoxCheck name="testBoxCheck007" id="testBoxCheck007_002" size="small">
+          <BoxCheckLabel>Label</BoxCheckLabel>
+        </BoxCheck>
+
+        <BoxCheck name="testBoxCheck007" id="testBoxCheck007_003" size="small">
+          <BoxCheckLabel>Label<br />2 line label</BoxCheckLabel>
+        </BoxCheck>
+      </div>
     </section>
 
     <section class="test-section">
