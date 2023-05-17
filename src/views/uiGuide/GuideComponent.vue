@@ -6754,6 +6754,56 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Board Detail</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['board-detail']">
+          <div :class="$style['board-detail__head']">
+            <h2 :class="$style['board-detail__category']">원큐자동차상식</h2>
+            <h3 :class="$style['board-detail__title']">2022년 2분기 IR 자료</h3>
+            <h4 :class="$style['board-detail__text']">
+              하나캐피탈과 함께 알아봐요!
+            </h4>
+            <p :class="$style['board-detail__sub']">2022.08.09</p>
+          </div>
+
+          <section :class="$style['board-detail__contents']">
+            //게시물 내용 노출
+          </section>
+
+          <div :class="$style['board-detail__foot']">
+            <ul class="reset-list">
+              <li class="row-margin-item-group">
+                <div class="flex-box">
+                  <div class="flex-box__cell flex-1">
+                    <div class="text-body-4 font-weight-medium">
+                      하나캐피탈IR_2022.2Q.pdf
+                    </div>
+                  </div>
+                  <div class="flex-box__cell">
+                    <DownloadButton tagName="a" href="/foo/bar.pdf" download />
+                  </div>
+                </div>
+              </li>
+              <li class="row-margin-item-group">
+                <div class="flex-box">
+                  <div class="flex-box__cell flex-1">
+                    <div class="text-body-4 font-weight-medium">
+                      하나캐피탈IR_2022.2Q.pdf
+                    </div>
+                  </div>
+                  <div class="flex-box__cell">
+                    <DownloadButton tagName="a" href="/foo/bar.pdf" download />
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Notice section</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
