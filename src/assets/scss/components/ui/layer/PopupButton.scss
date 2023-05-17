@@ -32,6 +32,15 @@
     }
   }
 
+  &--active {
+    .popup-button__icon {
+      * {
+        fill: $color-green-50;
+        stroke: $color-green-50;
+      }
+    }
+  }
+
   &__text {
     @include for-a11y;
   }
@@ -42,6 +51,15 @@
         &__icon {
           * {
             fill: $color-white;
+          }
+        }
+      }
+
+      &.popup-button--active {
+        .popup-button__icon {
+          * {
+            fill: $color-green-50;
+            stroke: $color-green-50;
           }
         }
       }
