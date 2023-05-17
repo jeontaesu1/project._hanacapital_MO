@@ -342,8 +342,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/main-002',
-        status: '',
-        create: '',
+        status: 'partend',
+        create: '2023.05.19',
         log: [],
       },
       {
@@ -364,8 +364,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/main/rental',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.05.19',
         log: [],
       },
       {
@@ -408,8 +408,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/main/product',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.05.19',
         log: [],
       },
       {
@@ -2268,11 +2268,15 @@ const datas = () => [
         depth6: '',
         path: '/guide/auto-succession-001',
         status: 'end',
-        create: '2023.04.19',
+        create: '2023.05.19',
         log: [
           {
             date: '2023.04.21',
             text: '팝업 추가\n- 본인인증\n- 양수인 신청\n- 리스 승계 상세정보\n- 리스상세조건\n- 렌트 승계 상세정보\n- 렌트상세조건\n- 양수인 정보입력\n- 신용정보조회동의\n- 위임동의 요청 완료\n- 양수인/신청인 본인확인\n- 양수인/신청인 본인확인\n- 위임동의 완료\n- 심사서류 등록\n- 위임장 동의\n- 양수인 신청완료',
+          },
+          {
+            date: '2023.05.19',
+            text: '팝업 추가\n- 승계신청 완료',
           },
         ],
       },
