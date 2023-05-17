@@ -32,7 +32,7 @@ export default {
 
     onMounted(() => {
       store.ui.header.setTitle(() => '렌탈 서비스');
-      store.ui.header.setLeftButtons(() => []);
+      store.ui.header.setLeftButtons(() => ['back']);
       store.ui.header.setRightButtons(() => []);
     });
 
@@ -67,7 +67,7 @@ export default {
     <div :class="$style['icon-list']">
       <ul :class="$style['icon-list__list']">
         <li :class="$style['icon-list__item']">
-          <RouterLink to="" :class="$style['icon-list__block']">
+          <button type="button" :class="$style['icon-list__block']">
             <span :class="$style['icon-list__icon']">
               <IconHyendaiRentalCare />
             </span>
@@ -84,10 +84,10 @@ export default {
                 다양한 렌탈 상품을 이용해보세요.
               </span>
             </span>
-          </RouterLink>
+          </button>
         </li>
         <li :class="$style['icon-list__item']">
-          <RouterLink to="" :class="$style['icon-list__block']">
+          <button type="button" :class="$style['icon-list__block']">
             <span :class="$style['icon-list__icon']"><IconCeragem /></span>
             <span :class="$style['icon-list__content']">
               <span :class="$style['icon-list__title']">세라젬</span>
@@ -101,7 +101,7 @@ export default {
                 세라젬 제품을 렌탈 이용해 보세요.
               </span>
             </span>
-          </RouterLink>
+          </button>
         </li>
       </ul>
     </div>

@@ -78,16 +78,10 @@ export default {
       </div>
 
       <UiTabPanel name="mainProductTab001_001">
-        <!-- Case : 상품이 없을 경우 -->
-        <div :class="$style['empty']">
-          <p :class="$style['empty__text']">상품을 준비중입니다.</p>
-        </div>
-        <!-- // Case : 상품이 없을 경우 -->
-
         <div :class="$style['icon-list']">
           <ul :class="$style['icon-list__list']">
             <li :class="$style['icon-list__item']">
-              <button type="button" :class="$style['icon-list__block']">
+              <RouterLink to="" :class="$style['icon-list__block']">
                 <span :class="$style['icon-list__icon']"><IconPig /></span>
                 <span :class="$style['icon-list__content']">
                   <span
@@ -119,10 +113,10 @@ export default {
                     </div>
                   </div>
                 </span>
-              </button>
+              </RouterLink>
             </li>
             <li :class="$style['icon-list__item']">
-              <button type="button" :class="$style['icon-list__block']">
+              <RouterLink to="" :class="$style['icon-list__block']">
                 <span :class="$style['icon-list__icon']"><IconBuilding /></span>
                 <span :class="$style['icon-list__content']">
                   <span
@@ -154,10 +148,10 @@ export default {
                     </div>
                   </div>
                 </span>
-              </button>
+              </RouterLink>
             </li>
             <li :class="$style['icon-list__item']">
-              <button type="button" :class="$style['icon-list__block']">
+              <RouterLink to="" :class="$style['icon-list__block']">
                 <span :class="$style['icon-list__icon']"><IconCar /></span>
                 <span :class="$style['icon-list__content']">
                   <span
@@ -189,10 +183,10 @@ export default {
                     </div>
                   </div>
                 </span>
-              </button>
+              </RouterLink>
             </li>
             <li :class="$style['icon-list__item']">
-              <button type="button" :class="$style['icon-list__block']">
+              <RouterLink to="" :class="$style['icon-list__block']">
                 <span :class="$style['icon-list__icon']">
                   <IconInterestRate />
                 </span>
@@ -226,7 +220,7 @@ export default {
                     </div>
                   </div>
                 </span>
-              </button>
+              </RouterLink>
             </li>
           </ul>
         </div>
@@ -246,7 +240,7 @@ export default {
         <div :class="$style['icon-list']">
           <ul :class="$style['icon-list__list']">
             <li :class="$style['icon-list__item']">
-              <button type="button" :class="$style['icon-list__block']">
+              <RouterLink to="" :class="$style['icon-list__block']">
                 <span :class="$style['icon-list__icon']"><IconPig /></span>
                 <span :class="$style['icon-list__content']">
                   <span
@@ -284,10 +278,10 @@ export default {
                     지금 가입하면 최대 1만원 지원!
                   </RoundStatus>
                 </span>
-              </button>
+              </RouterLink>
             </li>
             <li :class="$style['icon-list__item']">
-              <button type="button" :class="$style['icon-list__block']">
+              <RouterLink to="" :class="$style['icon-list__block']">
                 <span :class="$style['icon-list__icon']">
                   <IconInterestRate />
                 </span>
@@ -321,11 +315,12 @@ export default {
                     </div>
                   </div>
                 </span>
-              </button>
+              </RouterLink>
             </li>
           </ul>
         </div>
       </UiTabPanel>
+
       <UiTabPanel name="mainProductTab001_003">
         <!-- Case : 상품이 없을 경우 -->
         <div :class="$style['empty']">
@@ -336,7 +331,7 @@ export default {
         <div :class="$style['icon-list']">
           <ul :class="$style['icon-list__list']">
             <li :class="$style['icon-list__item']">
-              <button type="button" :class="$style['icon-list__block']">
+              <RouterLink to="" :class="$style['icon-list__block']">
                 <span :class="$style['icon-list__icon']"><IconCar /></span>
                 <span :class="$style['icon-list__content']">
                   <span
@@ -374,11 +369,12 @@ export default {
                     지금 가입하면 최대 1만원 지원!
                   </RoundStatus>
                 </span>
-              </button>
+              </RouterLink>
             </li>
           </ul>
         </div>
       </UiTabPanel>
+
       <UiTabPanel name="mainProductTab001_004">
         <!-- Case : 상품이 없을 경우 -->
         <div :class="$style['empty']">
@@ -386,8 +382,16 @@ export default {
         </div>
         <!-- // Case : 상품이 없을 경우 -->
 
-        <div class="row-margin-contents">
-          // 배너 영역 (내용 확인 후 진행 예정)
+        <div>
+          <div class="row-margin-contents">
+            // 배너 영역 (내용 확인 후 진행 예정)
+          </div>
+          <div class="row-margin-contents">
+            // 배너 영역 (내용 확인 후 진행 예정)
+          </div>
+          <div class="row-margin-contents">
+            // 배너 영역 (내용 확인 후 진행 예정)
+          </div>
         </div>
       </UiTabPanel>
     </UiTab>

@@ -26,6 +26,7 @@ import LayerAutoSuccessionAttorneyComplete from '@/views/auto/LayerAutoSuccessio
 import LayerAutoSuccessionAssigneeAddDocumen from '@/views/auto/LayerAutoSuccessionAssigneeAddDocumen.vue';
 import LayerAutoSuccessionAttorneyConfirm from '@/views/auto/LayerAutoSuccessionAttorneyConfirm.vue';
 import LayerAutoSuccessionAssigneeComplete from '@/views/auto/LayerAutoSuccessionAssigneeComplete.vue';
+import LayerAutoSuccessionComplete from '@/views/auto/LayerAutoSuccessionComplete.vue';
 
 export default {
   components: {
@@ -53,6 +54,7 @@ export default {
     LayerAutoSuccessionAssigneeAddDocumen,
     LayerAutoSuccessionAttorneyConfirm,
     LayerAutoSuccessionAssigneeComplete,
+    LayerAutoSuccessionComplete,
   },
   setup() {
     const layer001 = ref(null);
@@ -75,6 +77,7 @@ export default {
     const layer018 = ref(null);
     const layer019 = ref(null);
     const layer020 = ref(null);
+    const layer021 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -136,6 +139,9 @@ export default {
     const layer020Open = (e = {}) => {
       layer020.value.layer.open(e.target);
     };
+    const layer021Open = (e = {}) => {
+      layer021.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -158,6 +164,7 @@ export default {
       layer018,
       layer019,
       layer020,
+      layer021,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -178,6 +185,7 @@ export default {
       layer018Open,
       layer019Open,
       layer020Open,
+      layer021Open,
     };
   },
 };
@@ -291,6 +299,11 @@ export default {
           >양수인 신청완료<br />AF_M07_l019</BasicButton
         >
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer021Open">
+          승계신청 완료 <br />AF_M07_l004
+        </BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <LayerAutoSuccessionNotice ref="layer001" />
@@ -313,5 +326,6 @@ export default {
     <LayerAutoSuccessionAssigneeAddDocumen ref="layer018" />
     <LayerAutoSuccessionAttorneyConfirm ref="layer019" />
     <LayerAutoSuccessionAssigneeComplete ref="layer020" />
+    <LayerAutoSuccessionComplete ref="layer021" />
   </PageContents>
 </template>
