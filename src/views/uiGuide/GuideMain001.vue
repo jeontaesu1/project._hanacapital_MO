@@ -6,7 +6,10 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-// import Layer from '@/views/';
+import LayerMainNotice001 from '@/views/main/LayerMainNotice001.vue';
+import LayerMainNotice002 from '@/views/main/LayerMainNotice002.vue';
+import LayerMainNotice003 from '@/views/main/LayerMainNotice003.vue';
+import LayerMainNotice004 from '@/views/main/LayerMainNotice004.vue';
 
 export default {
   components: {
@@ -14,18 +17,39 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    // Layer,
+    LayerMainNotice001,
+    LayerMainNotice002,
+    LayerMainNotice003,
+    LayerMainNotice004,
   },
   setup() {
     const layer001 = ref(null);
+    const layer002 = ref(null);
+    const layer003 = ref(null);
+    const layer004 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
     };
+    const layer002Open = (e = {}) => {
+      layer002.value.layer.open(e.target);
+    };
+    const layer003Open = (e = {}) => {
+      layer003.value.layer.open(e.target);
+    };
+    const layer004Open = (e = {}) => {
+      layer004.value.layer.open(e.target);
+    };
 
     return {
       layer001,
+      layer002,
+      layer003,
+      layer004,
       layer001Open,
+      layer002Open,
+      layer003Open,
+      layer004Open,
     };
   },
 };
@@ -40,10 +64,30 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open"> oooo<br />ooooooo </BasicButton>
+        <BasicButton @click="layer001Open">
+          공지팝업<br />Main_M01_l001_type1
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer002Open">
+          공지팝업<br />Main_M01_l001_type2
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer003Open">
+          공지팝업<br />Main_M01_l001_type3
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer004Open">
+          공지팝업<br />Main_M01_l001_type4
+        </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
-    <!-- <Layer ref="layer001" /> -->
+    <LayerMainNotice001 ref="layer001" />
+    <LayerMainNotice002 ref="layer002" />
+    <LayerMainNotice003 ref="layer003" />
+    <LayerMainNotice004 ref="layer004" />
   </PageContents>
 </template>
