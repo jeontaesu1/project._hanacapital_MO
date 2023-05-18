@@ -59,7 +59,7 @@ export default {
             <BasicButton :line="true" theme="quaternary">미동의</BasicButton>
           </ButtonListItem>
           <ButtonListItem>
-            <BasicButton theme="secondary">동의</BasicButton>
+            <BasicButton>동의</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

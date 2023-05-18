@@ -114,7 +114,7 @@ export default {
         </BoxCheckListItem>
       </BoxCheckList>
 
-      <!-- Case: 직접 입력 선택시 -->
+      <!-- Case: 이메일 주소 직접 입력 선택시 노출 -->
       <FormList :classNames="{ wrap: 'row-margin-item-group' }">
         <FormListItem
           titleText="이메일"
@@ -174,7 +174,7 @@ export default {
                 />
               </InputBlockCell>
             </InputBlock>
-            <!-- Case : 직접입력 선택 시 노출 -->
+            <!-- Case : 이메일 도메인 직접입력 선택 시 노출 -->
             <InputBlock
               :error="state.mailError"
               :classNames="{
@@ -188,12 +188,12 @@ export default {
                 />
               </InputBlockCell>
             </InputBlock>
-            <!-- // Case : 직접입력 선택 시 노출 -->
+            <!-- // Case : 이메일 도메인 직접입력 선택 시 노출 -->
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
       </FormList>
-      <!-- // Case: 직접 입력 선택시 -->
+      <!-- // Case: 이메일 주소 직접 입력 선택시 노출 -->
 
       <template v-slot:foot>
         <ButtonList

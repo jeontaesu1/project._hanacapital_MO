@@ -178,7 +178,7 @@ export default {
             <KeyValueTitle>차량 가격</KeyValueTitle>
             <KeyValueText
               :classNames="{
-                text: 'color-blue',
+                text: 'color-green',
               }"
             >
               63,000,000 원
@@ -356,7 +356,7 @@ export default {
             <BasicButton tagName="a" theme="tertiary">견적서 보기</BasicButton>
           </ButtonListItem>
           <ButtonListItem>
-            <BasicButton theme="secondary">인도요청</BasicButton>
+            <BasicButton>인도요청</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

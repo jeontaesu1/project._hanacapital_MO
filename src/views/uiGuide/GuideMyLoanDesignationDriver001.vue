@@ -14,6 +14,8 @@ import LayerMyLoanDesignationDriverLMS from '@/views/myLoan/LayerMyLoanDesignati
 import LayerMyLoanDesignationDriverLMSAgree from '@/views/myLoan/LayerMyLoanDesignationDriverLMSAgree.vue';
 import LayerMyLoanDesignationDriverLMSForm from '@/views/myLoan/LayerMyLoanDesignationDriverLMSForm.vue';
 import LayerMyLoanDesignationDriverLMSComplete from '@/views/myLoan/LayerMyLoanDesignationDriverLMSComplete.vue';
+import LayerMyLoanDesignationDriverEmpty from '@/views/myLoan/LayerMyLoanDesignationDriverEmpty.vue';
+import LayerMyLoanDesignationDriver from '@/views/myLoan/LayerMyLoanDesignationDriver.vue';
 
 export default {
   components: {
@@ -29,6 +31,8 @@ export default {
     LayerMyLoanDesignationDriverLMSAgree,
     LayerMyLoanDesignationDriverLMSForm,
     LayerMyLoanDesignationDriverLMSComplete,
+    LayerMyLoanDesignationDriverEmpty,
+    LayerMyLoanDesignationDriver,
   },
   setup() {
     const layer001 = ref(null);
@@ -38,6 +42,8 @@ export default {
     const layer005 = ref(null);
     const layer006 = ref(null);
     const layer007 = ref(null);
+    const layer008 = ref(null);
+    const layer009 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -60,6 +66,12 @@ export default {
     const layer007Open = (e = {}) => {
       layer007.value.layer.open(e.target);
     };
+    const layer008Open = (e = {}) => {
+      layer008.value.layer.open(e.target);
+    };
+    const layer009Open = (e = {}) => {
+      layer009.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -69,6 +81,8 @@ export default {
       layer005,
       layer006,
       layer007,
+      layer008,
+      layer009,
 
       layer001Open,
       layer002Open,
@@ -77,6 +91,8 @@ export default {
       layer005Open,
       layer006Open,
       layer007Open,
+      layer008Open,
+      layer009Open,
     };
   },
 };
@@ -125,6 +141,16 @@ export default {
           등록완료<br />My_M01_l012
         </BasicButton>
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer008Open">
+          지정운전자 - 등록 전<br />My_M01_p008
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer009Open">
+          지정운전자 - 등록 후<br />My_M01_p008
+        </BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <LayerMyLoanDesignationDriverNotice ref="layer001" />
@@ -134,5 +160,7 @@ export default {
     <LayerMyLoanDesignationDriverLMSAgree ref="layer005" />
     <LayerMyLoanDesignationDriverLMSForm ref="layer006" />
     <LayerMyLoanDesignationDriverLMSComplete ref="layer007" />
+    <LayerMyLoanDesignationDriverEmpty ref="layer008" />
+    <LayerMyLoanDesignationDriver ref="layer009" />
   </PageContents>
 </template>

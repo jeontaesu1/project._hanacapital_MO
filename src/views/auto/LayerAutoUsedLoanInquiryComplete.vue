@@ -50,7 +50,7 @@ export default {
       <IllustInfo>
         <IllustObject type="complete" />
         <IllustInfoTitle>
-          <strong class="color-blue">중고차오토론</strong> 접수가<br />
+          <strong class="color-green">중고차오토론</strong> 접수가<br />
           <strong>완료되었습니다</strong>
         </IllustInfoTitle>
       </IllustInfo>
@@ -62,7 +62,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton theme="secondary">확인</BasicButton>
+            <BasicButton>확인</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

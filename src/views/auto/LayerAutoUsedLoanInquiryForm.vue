@@ -69,7 +69,7 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong class="color-blue">중고차오토론</strong> 상담 안내를 위한<br />
+          <strong class="color-green">중고차오토론</strong> 상담 안내를 위한<br />
           <strong>연락처를 입력해 주세요</strong>
         </PageMainText>
       </PageTextGroup>
@@ -209,7 +209,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton theme="secondary">확인</BasicButton>
+            <BasicButton>확인</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

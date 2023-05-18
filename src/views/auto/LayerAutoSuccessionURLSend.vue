@@ -92,7 +92,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton theme="secondary">문자메세지(SMS)보내기</BasicButton>
+            <BasicButton>문자메세지(SMS)보내기</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

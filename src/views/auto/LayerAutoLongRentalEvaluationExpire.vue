@@ -65,7 +65,10 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton theme="secondary">확인</BasicButton>
+            <BasicButton :line="true" theme="quaternary">확인</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton>새 견적 내기</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

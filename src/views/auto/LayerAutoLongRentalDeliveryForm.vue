@@ -314,7 +314,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton theme="secondary">인도요청</BasicButton>
+            <BasicButton>인도요청</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

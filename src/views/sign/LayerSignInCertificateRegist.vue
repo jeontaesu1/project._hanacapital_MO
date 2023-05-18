@@ -18,7 +18,7 @@ import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
-import PartInput from '@/components/ui/form/PartInput.vue';
+import SecurityInput from '@/components/ui/form/SecurityInput.vue';
 
 export default {
   components: {
@@ -38,7 +38,7 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicButton,
-    PartInput,
+    SecurityInput,
   },
   setup() {
     const state = reactive({
@@ -96,18 +96,16 @@ export default {
                 <BasicInput
                   type="number"
                   pattern="\d*"
-                  title="주민등록번호"
+                  title="주민등록번호 앞 6자리"
                   id="layerSignCertificateIdNumber01"
                 />
               </InputBlockCell>
               <InputBlockCell type="sub">-</InputBlockCell>
               <InputBlockCell :flexible="true">
-                <PartInput
-                  type="number"
-                  pattern="\d*"
-                  title="주민등록번호 뒤 7자리 중 첫번째자리"
-                  id="layerSignCertificateIdNumber02"
-                  :afterDot="6"
+                <!-- DD : 보안 키패드 열렸을 때 :isFocused="true" props 추가 해서 포커싱 스타일 적용 -->
+                <SecurityInput
+                  title="주민등록번호 뒤 7자리"
+                  :dot="[true, true, true, false, false, false, false]"
                 />
               </InputBlockCell>
             </InputBlock>

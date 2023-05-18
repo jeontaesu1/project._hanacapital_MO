@@ -639,7 +639,8 @@ export default {
       <section>
         <PageTextGroup>
           <PageMainText>
-            <span class="color-blue">신청인 정보</span>를<br />
+            <span class="color-green font-weight-regular">신청인 정보</span
+            >를<br />
             <strong>입력해주세요</strong>
           </PageMainText>
           <PageSubText>(심사결과 안내 및 승계상담 담당자 정보)</PageSubText>
@@ -752,7 +753,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton theme="secondary">다음</BasicButton>
+            <BasicButton>다음</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

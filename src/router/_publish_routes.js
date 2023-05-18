@@ -251,6 +251,27 @@ const routes = [
     component: () => import('@/views/uiGuide/GuideMyLoanHome001.vue'),
   },
   {
+    path: '/guide/my-loan-detail-payment-001',
+    name: '/guide/my-loan-detail-payment-001',
+    component: () => import('@/views/uiGuide/GuideMyLoanDetailPayment001.vue'),
+  },
+  {
+    path: '/guide/my-loan-maintenance-history-001',
+    name: '/guide/my-loan-maintenance-history-001',
+    component: () =>
+      import('@/views/uiGuide/GuideMyLoanMaintenanceHistory001.vue'),
+  },
+  {
+    path: '/guide/my-loan-penalty-001',
+    name: '/guide/my-loan-penalty-001',
+    component: () => import('@/views/uiGuide/GuideMyLoanPenalty001.vue'),
+  },
+  {
+    path: '/guide/my-loan-car-tax-001',
+    name: '/guide/my-loan-car-tax-001',
+    component: () => import('@/views/uiGuide/GuideMyLoanCarTax001.vue'),
+  },
+  {
     path: '/guide/my-loan-designation-driver-001',
     name: '/guide/my-loan-designation-driver-001',
     component: () =>
@@ -1104,41 +1125,6 @@ const routes = [
     path: '/my-loan/detail-medical-instalment',
     name: '/my-loan/detail-medical-instalment',
     component: () => import('@/views/myLoan/MyLoanDetailMedicalInstalment.vue'),
-  },
-  {
-    path: '/my-loan/detail-payment-virtual',
-    name: '/my-loan/detail-payment-virtual',
-    component: () => import('@/views/myLoan/MyLoanDetailPaymentVirtual.vue'),
-  },
-  {
-    path: '/my-loan/detail-payment-auto',
-    name: '/my-loan/detail-payment-auto',
-    component: () => import('@/views/myLoan/MyLoanDetailPaymentAuto.vue'),
-  },
-  {
-    path: '/my-loan/maintenance-history',
-    name: '/my-loan/maintenance-history',
-    component: () => import('@/views/myLoan/MyLoanMaintenanceHistory.vue'),
-  },
-  {
-    path: '/my-loan/penalty',
-    name: '/my-loan/penalty',
-    component: () => import('@/views/myLoan/MyLoanPenalty.vue'),
-  },
-  {
-    path: '/my-loan/car-tax',
-    name: '/my-loan/car-tax',
-    component: () => import('@/views/myLoan/MyLoanCarTax.vue'),
-  },
-  {
-    path: '/my-loan/designation-driver',
-    name: '/my-loan/designation-driver',
-    component: () => import('@/views/myLoan/MyLoanDesignationDriver.vue'),
-  },
-  {
-    path: '/my-loan/designation-driver-empty',
-    name: '/my-loan/designation-driver-empty',
-    component: () => import('@/views/myLoan/MyLoanDesignationDriverEmpty.vue'),
   },
   {
     path: '/my-loan/progress',
