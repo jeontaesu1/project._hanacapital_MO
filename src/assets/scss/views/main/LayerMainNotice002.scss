@@ -1,6 +1,11 @@
 .swipe-box {
   overflow: hidden;
+  height: 400px;
   border-radius: 20px;
+
+  > div {
+    height: 400px;
+  }
 }
 
 .pagination {
