@@ -56,7 +56,7 @@ export default {
 </script>
 
 <template>
-  <PageContents>
+  <PageContents :classNames="{ body: $style['wrap'] }">
     <PageTextGroup>
       <PageMainText><strong>혜택</strong></PageMainText>
     </PageTextGroup>
