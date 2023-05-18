@@ -49,7 +49,7 @@ export default {
       {
         [$style[`buttons--align-${align}`]]: align,
         [$style['buttons--wrap']]: wrap,
-        [$style[`buttons--col-${col}`]]: wrap,
+        [$style[`buttons--col-${col}`]]: wrap && col > 2,
       },
       customClassNames.wrap,
     ]"
