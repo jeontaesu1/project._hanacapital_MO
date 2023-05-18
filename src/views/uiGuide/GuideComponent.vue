@@ -8414,7 +8414,10 @@ export default {
                 <button type="button" :class="$style['benefit__button']">
                   <div :class="$style['benefit__inner']">
                     <div :class="$style['benefit__left']">
-                      <RoundStatus size="small" theme="duodenary"
+                      <RoundStatus
+                        size="small"
+                        theme="duodenary"
+                        :classNames="{ wrap: 'row-margin-item-regular' }"
                         >진행중</RoundStatus
                       >
                       <h3 :class="$style['benefit__title']">
@@ -8441,7 +8444,10 @@ export default {
               <div :class="$style['benefit__block']">
                 <div :class="$style['benefit__inner']">
                   <div :class="$style['benefit__left']">
-                    <RoundStatus size="small" theme="duodenary"
+                    <RoundStatus
+                      size="small"
+                      theme="duodenary"
+                      :classNames="{ wrap: 'row-margin-item-regular' }"
                       >진행중</RoundStatus
                     >
                     <h3 :class="$style['benefit__title']">
@@ -8493,7 +8499,10 @@ export default {
                 <button type="button" :class="$style['benefit__button']">
                   <div :class="$style['benefit__inner']">
                     <div :class="$style['benefit__left']">
-                      <RoundStatus size="small" theme="duodenary"
+                      <RoundStatus
+                        size="small"
+                        theme="duodenary"
+                        :classNames="{ wrap: 'row-margin-item-regular' }"
                         >종료</RoundStatus
                       >
                       <h3 :class="$style['benefit__title']">

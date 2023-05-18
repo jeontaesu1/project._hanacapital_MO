@@ -106,7 +106,10 @@ export default {
             <button type="button" :class="$style['benefit__button']">
               <div :class="$style['benefit__inner']">
                 <div :class="$style['benefit__left']">
-                  <RoundStatus size="small" theme="duodenary"
+                  <RoundStatus
+                    size="small"
+                    theme="duodenary"
+                    :classNames="{ wrap: 'row-margin-item-regular' }"
                     >진행중</RoundStatus
                   >
                   <h3 :class="$style['benefit__title']">
@@ -134,7 +137,10 @@ export default {
             <button type="button" :class="$style['benefit__button']">
               <div :class="$style['benefit__inner']">
                 <div :class="$style['benefit__left']">
-                  <RoundStatus size="small" theme="duodenary"
+                  <RoundStatus
+                    size="small"
+                    theme="duodenary"
+                    :classNames="{ wrap: 'row-margin-item-regular' }"
                     >진행중</RoundStatus
                   >
                   <h3 :class="$style['benefit__title']">
@@ -159,7 +165,10 @@ export default {
             <button type="button" :class="$style['benefit__button']">
               <div :class="$style['benefit__inner']">
                 <div :class="$style['benefit__left']">
-                  <RoundStatus size="small" theme="duodenary"
+                  <RoundStatus
+                    size="small"
+                    theme="duodenary"
+                    :classNames="{ wrap: 'row-margin-item-regular' }"
                     >진행중</RoundStatus
                   >
                   <h3 :class="$style['benefit__title']">
@@ -187,7 +196,12 @@ export default {
           <div :class="$style['benefit__block']">
             <div :class="$style['benefit__inner']">
               <div :class="$style['benefit__left']">
-                <RoundStatus size="small" theme="duodenary">진행중</RoundStatus>
+                <RoundStatus
+                  size="small"
+                  theme="duodenary"
+                  :classNames="{ wrap: 'row-margin-item-regular' }"
+                  >진행중</RoundStatus
+                >
                 <h3 :class="$style['benefit__title']">에코플러스 자동차보험</h3>
                 <p :class="$style['benefit__sub']">
                   오늘 신청하면 혜택이 두배!<br />
@@ -227,7 +241,12 @@ export default {
             <button type="button" :class="$style['benefit__button']">
               <div :class="$style['benefit__inner']">
                 <div :class="$style['benefit__left']">
-                  <RoundStatus size="small" theme="duodenary">종료</RoundStatus>
+                  <RoundStatus
+                    size="small"
+                    theme="duodenary"
+                    :classNames="{ wrap: 'row-margin-item-regular' }"
+                    >종료</RoundStatus
+                  >
                   <h3 :class="$style['benefit__title']">
                     에코플러스 자동차보험
                   </h3>
