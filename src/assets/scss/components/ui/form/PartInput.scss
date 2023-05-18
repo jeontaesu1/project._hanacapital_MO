@@ -30,5 +30,17 @@
     width: 100%;
     @include font-size-head(18);
     height: #{$line-height-head}em;
+
+    &[disabled] {
+      color: $color-gray-40;
+    }
+  }
+
+  &--disabled {
+    .part-input {
+      &__dot {
+        background-color: $color-gray-40;
+      }
+    }
   }
 }

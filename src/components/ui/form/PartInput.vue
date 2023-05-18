@@ -36,6 +36,10 @@ export default {
     modelValue: {
       Type: String,
     },
+    disabled: {
+      Type: Boolean,
+      default: false,
+    },
   },
   setup(props, { emit }) {
     const input = ref(null);
@@ -80,7 +84,15 @@ export default {
 </script>
 
 <template>
-  <div :class="[$style['part-input'], customClassNames.wrap]">
+  <div
+    :class="[
+      $style['part-input'],
+      {
+        [$style['part-input--disabled']]: disabled,
+      },
+      customClassNames.wrap,
+    ]"
+  >
     <div
       v-for="item in beforeDot"
       :key="item"
@@ -97,6 +109,7 @@ export default {
         :class="[$style['part-input__input'], customClassNames.input]"
         :maxlength="length"
         :value="modelValue"
+        :disabled="disabled"
         @input="onInput"
         @focusin="checkLength"
         @focusout="checkLength"
