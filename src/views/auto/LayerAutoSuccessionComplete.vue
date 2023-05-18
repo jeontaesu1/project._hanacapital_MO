@@ -135,7 +135,9 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton theme="tertiary">승계신청 URL 전송</BasicButton>
+            <BasicButton :minSide="true" theme="tertiary">
+              승계신청 URL 전송
+            </BasicButton>
           </ButtonListItem>
           <ButtonListItem>
             <BasicButton>확인</BasicButton>
