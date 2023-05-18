@@ -39,7 +39,7 @@ export default {
     };
 
     onMounted(() => {
-      store.ui.header.setTitle(() => '');
+      store.ui.header.setTitle(() => ' ');
       store.ui.header.setLeftButtons(() => []);
       store.ui.header.setRightButtons(() => []);
     });
@@ -54,7 +54,7 @@ export default {
 </script>
 
 <template>
-  <PageContents>
+  <PageContents :classNames="{ body: $style['wrap'] }">
     <PageTextGroup>
       <PageMainText>
         <strong>상품</strong>

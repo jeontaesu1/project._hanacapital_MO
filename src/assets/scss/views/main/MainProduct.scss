@@ -1,6 +1,10 @@
 @import '@/assets/scss/components/import/icon-list.scss';
 @import '@/assets/scss/components/import/empty.scss';
 
+.wrap {
+  padding-top: 0;
+}
+
 .symbol {
   flex: none;
   position: relative;
