@@ -97,7 +97,6 @@ export default {
               <InputBlockCell :flexible="true">
                 <BasicInput
                   align="right"
-                  type="number"
                   :useDelete="false"
                   pattern="\d*"
                   title="부동산 설정금액"

@@ -58,7 +58,6 @@ export default {
             <SwitchCheckBox
               id="layerMainFunSubscriptionPush01"
               :classNames="{ wrap: $style['switch-list__check'] }"
-              :defaultChecked="true"
             />
           </div>
         </li>
@@ -68,7 +67,6 @@ export default {
             <SwitchCheckBox
               id="layerMainFunSubscriptionPush02"
               :classNames="{ wrap: $style['switch-list__check'] }"
-              :defaultChecked="true"
             />
           </div>
         </li>

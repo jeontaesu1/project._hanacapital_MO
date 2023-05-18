@@ -94,32 +94,32 @@ export default {
             </BoxCheck>
           </BoxCheckListItem>
         </BoxCheckList>
-      </section>
 
-      <!-- Case: ‘있음’ 선택_아파트정보 수집된 경우 -->
-      <BasicBox className="row-margin-item-group">
-        <div class="flex-box">
-          <div class="flex-box__cell flex-1">
-            <p class="text-body-3">
-              인천광역시 연수구 송도동 39-1<br />
-              더샵 랜드마크시티 [158.67/134.3㎡]
-            </p>
+        <!-- Case: ‘있음’ 선택_아파트정보 수집된 경우 -->
+        <BasicBox className="row-margin-item-group">
+          <div class="flex-box">
+            <div class="flex-box__cell flex-1">
+              <p class="text-body-3">
+                인천광역시 연수구 송도동 39-1<br />
+                더샵 랜드마크시티 [158.67/134.3㎡]
+              </p>
 
-            <div class="flex-box text-body-5 row-margin-mini">
-              <div class="flex-box__cell color-gray-secondary">
-                부동산 설정 금액
+              <div class="flex-box text-body-5 row-margin-mini">
+                <div class="flex-box__cell color-gray-secondary">
+                  부동산 설정 금액
+                </div>
+                <div class="flex-box__cell color-gray-tertiary">5,000만원</div>
               </div>
-              <div class="flex-box__cell color-gray-tertiary">5,000만원</div>
             </div>
+            <TextButton
+              :classNames="{ text: 'display-block color-gray' }"
+              underline="true"
+              >변경</TextButton
+            >
           </div>
-          <TextButton
-            :classNames="{ text: 'display-block color-gray' }"
-            underline="true"
-            >변경</TextButton
-          >
-        </div>
-      </BasicBox>
-      <!-- // Case: ‘있음’ 선택_아파트정보 수집된 경우 -->
+        </BasicBox>
+        <!-- // Case: ‘있음’ 선택_아파트정보 수집된 경우 -->
+      </section>
 
       <template v-slot:foot>
         <ButtonList

@@ -1,6 +1,7 @@
 <script>
 // PF_M05_l002
 import { ref } from 'vue';
+
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
@@ -252,7 +253,7 @@ export default {
             >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                금리인하요구권 및 대출계약 철회권에 대한 자세한 사항은 당사
+                금리인하요구권 및 대출계약 철회권에 대한 자세한 사항은
                 홈페이지에서 확인하시기 바랍니다.
               </div>
             </li>
@@ -298,7 +299,7 @@ export default {
         </UiTabPanel>
       </UiTab>
 
-      <ul :class="[$style['basic-list'], $style['margin-top-regular']]">
+      <ul :class="[$style['basic-list'], 'row-margin-contents']">
         <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']"></div>
           <div :class="$style['basic-list__content']">
