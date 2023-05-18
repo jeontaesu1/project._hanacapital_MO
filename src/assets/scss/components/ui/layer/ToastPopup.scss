@@ -92,4 +92,18 @@
   &--fix {
     height: 100%;
   }
+
+  &--banner {
+    border-radius: 20px;
+    margin: 0 16px 60px;
+
+    .popup__body-inner {
+      padding: 0;
+
+      svg {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
 }

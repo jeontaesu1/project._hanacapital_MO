@@ -5,11 +5,13 @@ import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import ToastPopup from '@/components/ui/layer/ToastPopup.vue';
+import ImgSample from '@/assets/images/_dummy/box-detail.svg?component';
 
 export default {
   components: {
     UiLayer,
     ToastPopup,
+    ImgSample,
   },
   setup() {
     const layer = ref(null);
@@ -21,11 +23,7 @@ export default {
 </script>
 
 <template>
-  <UiLayer ref="layer" type="toast" :backgroundClose="true">
-    <ToastPopup> cx </ToastPopup>
+  <UiLayer ref="layer" type="toast-banner" :backgroundClose="true">
+    <ToastPopup :banner="true"> <ImgSample /> </ToastPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/main/LayerMainNotice003.scss';
-</style>
