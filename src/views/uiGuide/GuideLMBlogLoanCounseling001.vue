@@ -94,7 +94,7 @@ export default {
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer002Open">
-          아파트 시세검색<br />LM_M01_l004
+          아파트 시세검색<br />LM_M01_l011
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
