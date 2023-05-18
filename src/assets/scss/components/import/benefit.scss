@@ -158,13 +158,25 @@
   }
 
   &__icon {
+    position: relative;
+    display: block;
     width: 124px;
-    height: 86px;
-    margin: -16.5px -19px -16.5px 0;
+    margin: -19px -19px -19px 0;
+
+    &::before {
+      content: '';
+      display: block;
+      padding-top: 69.366666%;
+    }
 
     img {
       display: block;
-      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: auto;
+      height: 100%;
+      transform: translateX(-50%);
     }
   }
 
