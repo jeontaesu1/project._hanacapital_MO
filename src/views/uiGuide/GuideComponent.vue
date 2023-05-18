@@ -5,7 +5,6 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
-import IconAdd from '@/assets/images/icon/add.svg?component';
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import PopupSubTitle from '@/components/ui/layer/PopupSubTitle.vue';
@@ -101,6 +100,7 @@ import BrandLogo004 from '@/assets/images/card-logo/shinhan.svg?component';
 import BrandLogo005 from '@/assets/images/card-logo/kb.svg?component';
 import BrandLogo006 from '@/assets/images/card-logo/hyundai.svg?component';
 import BrandLogo007 from '@/assets/images/card-logo/bc.svg?component';
+import IconAdd from '@/assets/images/icon/add.svg?component';
 import IconCall from '@/assets/images/icon/call.svg?component';
 import IconCamera from '@/assets/images/icon/camera.svg?component';
 import IconFolder from '@/assets/images/icon/folder.svg?component';
@@ -4720,7 +4720,7 @@ export default {
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
 
-        <UiTab v-slot="tabSlotProps">
+        <UiTab v-slot="tabSlotProps" initialOpen="testTab001_003">
           <UiTabList>
             <UiTabButton link="testTab001_001">Tab 1</UiTabButton>
             <UiTabButton link="testTab001_002">Tab 2</UiTabButton>
@@ -8111,27 +8111,6 @@ export default {
         </UiAccordion>
       </div>
     </section>
-
-    <!-- 작업중
-    <section class="test-section">
-      <h2 class="test-section-title">Component Title</h2>
-      <div class="test-section-sub">
-        <h3 class="test-section-sub-title">Default</h3>
-        <InputRange />
-
-        < !-- 소스 카피 기능용 소스(미구현) -- >
-        <div class="test-section-copy">
-          <div>
-            <button class="test-section-copy-button" @click="copyToClipboard">
-              copy
-            </button>
-          </div>
-          <pre class="test-section-copy-code" ref="preRef"></pre>
-        </div>
-        < !-- //소스 카피 기능용 소스 -- >
-      </div>
-    </section>
-    -->
 
     <section class="test-section">
       <h2 class="test-section-title">Component Title</h2>

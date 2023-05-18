@@ -511,7 +511,7 @@ const routes = [
     component: () => import('@/views/uiGuide/GuideMain002.vue'),
   },
 
-  // home
+  // main
   {
     path: '/main/home-001',
     name: '/main/home-001',
