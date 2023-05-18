@@ -21,6 +21,7 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
+import NoticeText from '@/components/ui/text/NoticeText.vue';
 
 export default {
   components: {
@@ -43,6 +44,7 @@ export default {
     ButtonList,
     FormHelpText,
     TextButton,
+    NoticeText,
   },
   setup() {
     const state = reactive({
@@ -95,6 +97,7 @@ export default {
               <InputBlockCell :flexible="true">
                 <BasicInput
                   align="right"
+                  type="number"
                   :useDelete="false"
                   pattern="\d*"
                   title="부동산 설정금액"
@@ -106,14 +109,29 @@ export default {
               </template>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
-            <FormHelpText>
-              등기부등본 상의 채권최고액을 입력해주세요.<br />
-              (근저당설정이 2건 이상일 경우 합산하여 입력)
+
+            <!-- Case : 값 입력후 노출 -->
+            <FormHelpText
+              :classNames="{
+                wrap: 'align-right',
+              }"
+            >
+              구천만원
             </FormHelpText>
-            <div class="inline-wrap row-margin-item">
-              <TextButton theme="secondary" :underline="true"
-                >등기부등본 조회</TextButton
-              >
+            <!-- // Case : 값 입력후 노출 -->
+
+            <div class="flex-box align-items-start row-margin-item">
+              <div class="flex-box__cell flex-1">
+                <NoticeText>
+                  등기부등본 상의 채권최고액을 입력해주세요. (근저당설정이 2건
+                  이상일 경우 합산하여 입력)
+                </NoticeText>
+              </div>
+              <div class="flex-box__cell flex-box__cell--medium">
+                <TextButton theme="secondary" :underline="true" :block="true">
+                  등기부등본 조회
+                </TextButton>
+              </div>
             </div>
           </FormInvalid>
         </FormListItem>
@@ -126,7 +144,10 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton>확인</BasicButton>
+            <BasicButton :line="true" theme="quaternary">이전</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton>획인</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

@@ -342,8 +342,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/main-002',
-        status: '',
-        create: '',
+        status: 'partend',
+        create: '2023.05.19',
         log: [],
       },
       {
@@ -679,6 +679,10 @@ const datas = () => [
             date: '2023.04.14',
             text: '팝업 추가\n- 아파트 검색',
           },
+          {
+            date: '2023.05.19',
+            text: '팝업 추가\n-  아파트 정보 입력',
+          },
         ],
       },
       {
@@ -712,7 +716,12 @@ const datas = () => [
         path: '/guide/personal-loan-one-q-auto-001',
         status: 'end',
         create: '2023.03.31',
-        log: [],
+        log: [
+          {
+            date: '2023.05.19',
+            text: '팝업 추가\n-   차량 정보 입력',
+          },
+        ],
       },
       {
         depth2: '우수고객추가대출\nPF_M05_p001',
@@ -734,7 +743,12 @@ const datas = () => [
         path: '/guide/personal-loan-best-customer-001',
         status: 'end',
         create: '2023.03.31',
-        log: [],
+        log: [
+          {
+            date: '2023.05.19',
+            text: '팝업 추가\n- 우수고객추가대출 안내_상품안내',
+          },
+        ],
       },
       {
         depth2: 'e임대주택론(임대보증금 담보대출)\nPF_M06_p001',
@@ -836,6 +850,10 @@ const datas = () => [
           {
             date: '2023.04.07',
             text: '팝업 추가\n- 한도/금리 확인\n- 아파트 검색',
+          },
+          {
+            date: '2023.05.19',
+            text: '팝업 추가\n- 한도조회 입력',
           },
         ],
       },
