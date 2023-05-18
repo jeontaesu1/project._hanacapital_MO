@@ -8403,6 +8403,213 @@ export default {
       </div>
     </section>
 
+    <section class="test-section">
+      <h2 class="test-section-title">Benefit List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['benefit']">
+          <ul :class="$style['benefit__list']">
+            <li :class="$style['benefit__item']">
+              <div :class="$style['benefit__block']">
+                <button type="button" :class="$style['benefit__button']">
+                  <div :class="$style['benefit__inner']">
+                    <div :class="$style['benefit__left']">
+                      <RoundStatus size="small" theme="duodenary"
+                        >진행중</RoundStatus
+                      >
+                      <h3 :class="$style['benefit__title']">
+                        에코플러스 자동차보험
+                      </h3>
+                      <p :class="$style['benefit__sub']">지금 바로 GO!</p>
+                      <div :class="$style['benefit__date']">
+                        2022.12.01 ~ 2022.12.31
+                      </div>
+                    </div>
+                    <div :class="$style['benefit__right']">
+                      <div :class="$style['benefit__icon']">
+                        <img
+                          src="@/assets/images/_dummy/banner-money-up.png"
+                          alt="샘플 아이콘"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </li>
+            <li :class="$style['benefit__item']">
+              <div :class="$style['benefit__block']">
+                <div :class="$style['benefit__inner']">
+                  <div :class="$style['benefit__left']">
+                    <RoundStatus size="small" theme="duodenary"
+                      >진행중</RoundStatus
+                    >
+                    <h3 :class="$style['benefit__title']">
+                      에코플러스 자동차보험
+                    </h3>
+                    <p :class="$style['benefit__sub']">
+                      오늘 신청하면 혜택이 두배!<br />
+                      1+1 한명 더 자동 가입되는 안심 혜택 놓치지 마세요.
+                    </p>
+                    <div :class="$style['benefit__link']">
+                      <TextButton
+                        theme="secondary"
+                        :block="true"
+                        :classNames="{ wrap: $style['benefit__link-button'] }"
+                      >
+                        바로가기
+                        <template v-slot:rightIcon>
+                          <IconLink />
+                        </template>
+                      </TextButton>
+                    </div>
+                  </div>
+                  <div :class="$style['benefit__right']">
+                    <div :class="$style['benefit__icon']">
+                      <img
+                        src="@/assets/images/_dummy/banner-money-up.png"
+                        alt="샘플 아이콘"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">End</h3>
+        <div :class="$style['benefit']">
+          <ul :class="$style['benefit__list']">
+            <li :class="$style['benefit__item']">
+              <div
+                :class="[
+                  $style['benefit__block'],
+                  $style['benefit__block--end'],
+                ]"
+              >
+                <button type="button" :class="$style['benefit__button']">
+                  <div :class="$style['benefit__inner']">
+                    <div :class="$style['benefit__left']">
+                      <RoundStatus size="small" theme="duodenary"
+                        >종료</RoundStatus
+                      >
+                      <h3 :class="$style['benefit__title']">
+                        에코플러스 자동차보험
+                      </h3>
+                      <p :class="$style['benefit__sub']">
+                        오늘 신청하면 혜택이 두배!<br />
+                        1+1 한명 더 자동 가입되는 안심 혜택 놓치지 마세요.
+                      </p>
+                      <div :class="$style['benefit__date']">
+                        2022.12.01 ~ 2022.12.31
+                      </div>
+                    </div>
+                    <div :class="$style['benefit__right']">
+                      <div :class="$style['benefit__icon']">
+                        <img
+                          src="@/assets/images/_dummy/banner-money-up.png"
+                          alt="샘플 아이콘"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Fun</h3>
+        <div :class="$style['benefit']">
+          <ul :class="$style['benefit__list']">
+            <li :class="$style['benefit__item']">
+              <div
+                :class="[
+                  $style['benefit__block'],
+                  $style['benefit__block--fun'],
+                ]"
+              >
+                <button type="button" :class="$style['benefit__button']">
+                  <div :class="$style['benefit__inner']">
+                    <div :class="$style['benefit__left']">
+                      <h3 :class="$style['benefit__title']">
+                        소모품 교체하기 (초보자 가이드)
+                      </h3>
+                      <p :class="$style['benefit__sub']">
+                        소모품 교체 체크리스트!<br />
+                        초보자 가이드로 언제 어디서나 쉽게 교체할 수 있어요.
+                        초보자 가이드로 언제 어디서나 쉽게 교체할 수 있어요.
+                      </p>
+                    </div>
+                    <div :class="$style['benefit__right']">
+                      <div
+                        :class="$style['benefit__thumbnail']"
+                        style="
+                          background-image: url('/src/assets/images/_dummy/thumbnail-sample2.jpg');
+                        "
+                      ></div>
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Coupon</h3>
+        <div :class="$style['benefit']">
+          <ul :class="$style['benefit__list']">
+            <li :class="$style['benefit__item']">
+              <div
+                :class="[
+                  $style['benefit__block'],
+                  $style['benefit__block--coupon'],
+                ]"
+              >
+                <div :class="$style['benefit__inner']">
+                  <div :class="$style['benefit__left']">
+                    <button type="button" :class="$style['benefit__button']">
+                      <div :class="$style['benefit__logo']">
+                        <img
+                          src="@/assets/images/_dummy/logo-sample.png"
+                          alt="샘플 로고"
+                        />
+                      </div>
+                      <div :class="$style['benefit__info']">
+                        <div :class="$style['benefit__category']">스타벅스</div>
+                        <div :class="$style['benefit__title']">
+                          디카페인 콜드브루 라떼 T 쿠폰
+                        </div>
+                        <div :class="$style['benefit__date']">
+                          2022.12.01 ~ 2022.12.31
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                  <div :class="$style['benefit__right']">
+                    <DownloadButton
+                      tagName="a"
+                      href="/foo/bar.png"
+                      theme="secondary"
+                      download
+                      :class="$style['benefit__download']"
+                    />
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <!-- 작업중
     <section class="test-section">
       <h2 class="test-section-title">Component Title</h2>

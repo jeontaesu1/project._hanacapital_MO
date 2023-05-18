@@ -177,6 +177,7 @@ export default {
                     name="equipmentLeaseEstimateCheck001"
                     id="equipmentLeaseEstimateCheck001_001"
                     size="small"
+                    :defaultChecked="true"
                   >
                     <BoxCheckLabel>의료기</BoxCheckLabel>
                   </BoxCheck>
@@ -226,6 +227,7 @@ export default {
                     name="equipmentLeaseEstimateCheck002"
                     id="equipmentLeaseEstimateCheck002_001"
                     size="small"
+                    :defaultChecked="true"
                   >
                     <BoxCheckLabel>유이자</BoxCheckLabel>
                   </BoxCheck>
@@ -417,6 +419,7 @@ export default {
                     name="equipmentLeaseEstimateCheck003"
                     id="equipmentLeaseEstimateCheck003_003"
                     size="small"
+                    :defaultChecked="true"
                   >
                     <BoxCheckLabel>36개월</BoxCheckLabel>
                   </BoxCheck>
@@ -543,6 +546,7 @@ export default {
                     name="equipmentLeaseEstimateCheck004"
                     id="equipmentLeaseEstimateCheck004_001"
                     size="small"
+                    :defaultChecked="true"
                   >
                     <BoxCheckLabel>없음</BoxCheckLabel>
                   </BoxCheck>
@@ -894,6 +898,7 @@ export default {
                     name="equipmentLeaseEstimateCheck005"
                     id="equipmentLeaseEstimateCheck005_001"
                     size="small"
+                    :defaultChecked="true"
                   >
                     <BoxCheckLabel>없음</BoxCheckLabel>
                   </BoxCheck>
@@ -1245,6 +1250,7 @@ export default {
                     name="equipmentLeaseEstimateCheck006"
                     id="equipmentLeaseEstimateCheck006_001"
                     size="small"
+                    :defaultChecked="true"
                   >
                     <BoxCheckLabel>없음</BoxCheckLabel>
                   </BoxCheck>
@@ -1598,6 +1604,7 @@ export default {
                     name="equipmentLeaseEstimateCheck007"
                     id="equipmentLeaseEstimateCheck007_001"
                     size="small"
+                    :defaultChecked="true"
                   >
                     <BoxCheckLabel>없음</BoxCheckLabel>
                   </BoxCheck>
@@ -1870,6 +1877,7 @@ export default {
                     name="equipmentLeaseEstimateCheck008"
                     id="equipmentLeaseEstimateCheck008_001"
                     size="small"
+                    :defaultChecked="true"
                   >
                     <BoxCheckLabel>1개월 후불</BoxCheckLabel>
                   </BoxCheck>
@@ -1924,6 +1932,7 @@ export default {
                     name="equipmentLeaseEstimateCheck009"
                     id="equipmentLeaseEstimateCheck009_001"
                     size="small"
+                    :defaultChecked="true"
                   >
                     <BoxCheckLabel>이용자 책임부보</BoxCheckLabel>
                   </BoxCheck>
@@ -2063,7 +2072,7 @@ export default {
         </ButtonListItem>
         <!-- Case : 견적 개수 3개일 경우, 미노출 -->
         <ButtonListItem>
-          <BasicButton theme="quaternary" line="true">
+          <BasicButton theme="quaternary" line="true" :minSide="true">
             견적추가 (최대 3개)
           </BasicButton>
         </ButtonListItem>

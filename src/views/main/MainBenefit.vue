@@ -15,6 +15,7 @@ import FilterTabButton from '@/components/ui/tab/FilterTabButton.vue';
 import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import DownloadButton from '@/components/ui/button/DownloadButton.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
+
 import IconLink from '@/assets/images/icon/link.svg?component';
 
 export default {
@@ -101,9 +102,60 @@ export default {
         <!-- Case : 이벤트 탭 선택 시 -->
         <!-- Case : 진행중인 경우 -->
         <li :class="$style['benefit__item']">
-          <div
-            :class="[$style['benefit__block'], $style['benefit__block--event']]"
-          >
+          <div :class="$style['benefit__block']">
+            <button type="button" :class="$style['benefit__button']">
+              <div :class="$style['benefit__inner']">
+                <div :class="$style['benefit__left']">
+                  <RoundStatus size="small" theme="duodenary"
+                    >진행중</RoundStatus
+                  >
+                  <h3 :class="$style['benefit__title']">
+                    에코플러스 자동차보험
+                  </h3>
+                  <div :class="$style['benefit__date']">
+                    2022.12.01 ~ 2022.12.31
+                  </div>
+                </div>
+                <div :class="$style['benefit__right']">
+                  <div :class="$style['benefit__icon']">
+                    <img
+                      src="@/assets/images/_dummy/banner-money-up.png"
+                      alt="샘플 아이콘"
+                    />
+                  </div>
+                </div>
+              </div>
+            </button>
+          </div>
+        </li>
+
+        <li :class="$style['benefit__item']">
+          <div :class="$style['benefit__block']">
+            <button type="button" :class="$style['benefit__button']">
+              <div :class="$style['benefit__inner']">
+                <div :class="$style['benefit__left']">
+                  <RoundStatus size="small" theme="duodenary"
+                    >진행중</RoundStatus
+                  >
+                  <h3 :class="$style['benefit__title']">
+                    에코플러스 자동차보험
+                  </h3>
+                </div>
+                <div :class="$style['benefit__right']">
+                  <div :class="$style['benefit__icon']">
+                    <img
+                      src="@/assets/images/_dummy/banner-money-up.png"
+                      alt="샘플 아이콘"
+                    />
+                  </div>
+                </div>
+              </div>
+            </button>
+          </div>
+        </li>
+
+        <li :class="$style['benefit__item']">
+          <div :class="$style['benefit__block']">
             <button type="button" :class="$style['benefit__button']">
               <div :class="$style['benefit__inner']">
                 <div :class="$style['benefit__left']">
@@ -121,7 +173,7 @@ export default {
                 <div :class="$style['benefit__right']">
                   <div :class="$style['benefit__icon']">
                     <img
-                      src="@/assets/images/_dummy/banner-sample.png"
+                      src="@/assets/images/_dummy/banner-money-up.png"
                       alt="샘플 아이콘"
                     />
                   </div>
@@ -132,9 +184,7 @@ export default {
         </li>
 
         <li :class="$style['benefit__item']">
-          <div
-            :class="[$style['benefit__block'], $style['benefit__block--event']]"
-          >
+          <div :class="$style['benefit__block']">
             <div :class="$style['benefit__inner']">
               <div :class="$style['benefit__left']">
                 <RoundStatus size="small" theme="duodenary">진행중</RoundStatus>
@@ -143,9 +193,6 @@ export default {
                   오늘 신청하면 혜택이 두배!<br />
                   1+1 한명 더 자동 가입되는 안심 혜택 놓치지 마세요.
                 </p>
-                <div :class="$style['benefit__date']">
-                  2022.12.01 ~ 2022.12.31
-                </div>
                 <div :class="$style['benefit__link']">
                   <TextButton
                     theme="secondary"
@@ -162,7 +209,7 @@ export default {
               <div :class="$style['benefit__right']">
                 <div :class="$style['benefit__icon']">
                   <img
-                    src="@/assets/images/_dummy/banner-sample.png"
+                    src="@/assets/images/_dummy/banner-money-up.png"
                     alt="샘플 아이콘"
                   />
                 </div>
@@ -175,11 +222,7 @@ export default {
         <!-- Case : 종료된 경우 -->
         <li :class="$style['benefit__item']">
           <div
-            :class="[
-              $style['benefit__block'],
-              $style['benefit__block--event'],
-              $style['benefit__block--event-end'],
-            ]"
+            :class="[$style['benefit__block'], $style['benefit__block--end']]"
           >
             <button type="button" :class="$style['benefit__button']">
               <div :class="$style['benefit__inner']">
@@ -199,7 +242,7 @@ export default {
                 <div :class="$style['benefit__right']">
                   <div :class="$style['benefit__icon']">
                     <img
-                      src="@/assets/images/_dummy/banner-sample.png"
+                      src="@/assets/images/_dummy/banner-money-up.png"
                       alt="샘플 아이콘"
                     />
                   </div>
@@ -223,7 +266,12 @@ export default {
                   <p :class="$style['benefit__sub']">소모품 교체 체크리스트!</p>
                 </div>
                 <div :class="$style['benefit__right']">
-                  <div :class="$style['benefit__thumbnail']"></div>
+                  <div
+                    :class="$style['benefit__thumbnail']"
+                    style="
+                      background-image: url('/src/assets/images/_dummy/thumbnail-sample3.jpg');
+                    "
+                  ></div>
                 </div>
               </div>
             </button>
@@ -247,7 +295,12 @@ export default {
                   </p>
                 </div>
                 <div :class="$style['benefit__right']">
-                  <div :class="$style['benefit__thumbnail']"></div>
+                  <div
+                    :class="$style['benefit__thumbnail']"
+                    style="
+                      background-image: url('/src/assets/images/_dummy/thumbnail-sample2.jpg');
+                    "
+                  ></div>
                 </div>
               </div>
             </button>
