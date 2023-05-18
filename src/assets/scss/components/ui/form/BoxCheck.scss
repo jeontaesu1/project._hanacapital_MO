@@ -307,6 +307,22 @@
       .box-check__label {
         @include font-size-default(13);
       }
+
+      &.box-check--min-side {
+        .box-check__block {
+          padding-left: 0px;
+          padding-right: 0px;
+        }
+
+        .box-check__input {
+          &:checked {
+            & + .box-check__block {
+              padding-left: 0px;
+              padding-right: 0px;
+            }
+          }
+        }
+      }
     }
   }
 }
