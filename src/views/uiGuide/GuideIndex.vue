@@ -2906,7 +2906,18 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '서류등록',
+        depth2: '서류등록\nMy_M07_l002',
+        depth3: '',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/my-loan/my-loan-add-documents',
+        status: 'end',
+        create: '2023.05.19',
+        log: [],
+      },
+      {
+        depth2: '서류등록\nMy_M07_l002',
         depth3: '팝업',
         depth4: '',
         depth5: '',
@@ -2914,10 +2925,15 @@ const datas = () => [
         path: '/guide/my-loan-add-documents-001',
         status: 'partend',
         create: '2023.04.28',
-        log: [],
+        log: [
+          {
+            date: '2023.05.19',
+            text: '팝업 추가\n- 내 서류 등록 내역',
+          },
+        ],
       },
       {
-        depth2: '서류등록',
+        depth2: '서류등록\nMy_M07_l002',
         depth3: '등록완료\nMy_M07_p001',
         depth4: '',
         depth5: '',

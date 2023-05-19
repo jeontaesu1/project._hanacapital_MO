@@ -132,6 +132,7 @@ import IconLink from '@/assets/images/icon/link.svg?component';
 import IconStar from '@/assets/images/icon/star.svg?component';
 import IconTell from '@/assets/images/icon/tell.svg?component';
 import IconDropdown from '@/assets/images/icon/dropdown.svg?component';
+import IconimgColor from '@/assets/images/icon/img-color.svg?component';
 
 export default {
   components: {
@@ -265,6 +266,7 @@ export default {
     IconStar,
     IconTell,
     IconDropdown,
+    IconimgColor,
   },
 
   setup() {
@@ -1026,6 +1028,67 @@ export default {
           <label for="testUpload001" :class="$style['upload-button__label']">
             <span :class="$style['upload-button__text']">이미지 첨부</span>
           </label>
+        </div>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Upload File List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['upload-file']">
+          <ul :class="$style['upload-file__list']">
+            <li :class="$style['upload-file__item']">
+              <div :class="$style['upload-file__icon']">
+                <IconimgColor />
+              </div>
+              <div :class="$style['upload-file__content']">
+                <div :class="$style['upload-file__name']">첨부파일명.jpg</div>
+              </div>
+              <div :class="$style['upload-file__button']">
+                <BasicButton line="true" theme="quaternary" size="mini">
+                  삭제
+                </BasicButton>
+              </div>
+            </li>
+            <li :class="$style['upload-file__item']">
+              <div :class="$style['upload-file__icon']">
+                <IconimgColor />
+              </div>
+              <div :class="$style['upload-file__content']">
+                <div :class="$style['upload-file__name']">
+                  첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명.jpeg
+                </div>
+              </div>
+              <div :class="$style['upload-file__button']">
+                <BasicButton line="true" theme="quaternary" size="mini">
+                  삭제
+                </BasicButton>
+              </div>
+            </li>
+            <li :class="$style['upload-file__item']">
+              <div :class="$style['upload-file__icon']">
+                <IconimgColor />
+              </div>
+              <div :class="$style['upload-file__content']">
+                <div :class="$style['upload-file__name']">첨부파일명.jpg</div>
+                <div :class="$style['upload-file__date']">
+                  2023-05-08 18:15:44
+                </div>
+              </div>
+            </li>
+            <li :class="$style['upload-file__item']">
+              <div :class="$style['upload-file__icon']">
+                <IconimgColor />
+              </div>
+              <div :class="$style['upload-file__content']">
+                <div :class="$style['upload-file__name']">
+                  첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명.jpeg
+                </div>
+                <div :class="$style['upload-file__date']">
+                  2023-05-08 18:15:44
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </section>

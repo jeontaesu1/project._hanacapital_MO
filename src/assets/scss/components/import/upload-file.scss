@@ -1,0 +1,57 @@
+.upload-file {
+  &__list {
+    @include reset-list;
+  }
+
+  &__item {
+    display: flex;
+
+    & + & {
+      margin-top: 16px;
+    }
+  }
+
+  &__icon {
+    flex: none;
+
+    svg {
+      display: block;
+      width: 36px;
+      height: 36px;
+    }
+
+    & + .upload-file__content {
+      margin-left: 12px;
+    }
+  }
+
+  &__content {
+    flex: 1;
+    min-width: 0;
+    margin-top: 7.5px;
+
+    & + .upload-file__button {
+      margin-left: 12px;
+    }
+  }
+
+  &__name {
+    @include font-size-default(14);
+    color: $color-black;
+
+    & + .upload-file__date {
+      margin-top: 4px;
+    }
+  }
+
+  &__date {
+    @include font-size-default(13);
+    color: $color-black;
+    font-weight: 300;
+  }
+
+  &__button {
+    flex: none;
+    margin-top: 3px;
+  }
+}
