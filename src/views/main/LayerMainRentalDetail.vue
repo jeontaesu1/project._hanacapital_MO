@@ -39,9 +39,14 @@ export default {
         </FullPopupHead>
       </template>
 
-      <iframe src="" width="100%" height="100%">
-        // 제휴사 모바일웹 화면 노출
-      </iframe>
+      <div :class="$style['web-viewer']">
+        <!-- DD : 제휴사 모바일웹 화면 노출 -->
+        <iframe src="https://" frameborder="0"></iframe>
+      </div>
     </FullPopup>
   </UiLayer>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/main/LayerMainRentalDetail.scss';
+</style>

@@ -48,16 +48,18 @@ export default {
       <div :class="$style['coupon-detail']">
         <div :class="$style['coupon-detail__head']">
           <div :class="$style['coupon-detail__left']">
-            <img
-              src="@/assets/images/_dummy/brand-logo.png"
-              alt="샘플 이미지"
-            />
+            <div :class="$style['coupon-detail__brand-logo']">
+              <img
+                src="@/assets/images/_dummy/brand-logo.png"
+                alt="샘플 이미지"
+              />
+            </div>
           </div>
           <div :class="$style['coupon-detail__right']">
-            <h2 :class="$style['coupon-detail__brand-name']">스타벅스</h2>
-            <p :class="$style['coupon-detail__title']">
+            <p :class="$style['coupon-detail__brand-name']">스타벅스</p>
+            <h3 :class="$style['coupon-detail__title']">
               디카페인 콜드브루 라떼 T 쿠폰
-            </p>
+            </h3>
           </div>
         </div>
 

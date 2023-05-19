@@ -42,8 +42,10 @@ export default {
         </FullPopupHead>
       </template>
 
-      <div :class="$style['image-view']">
-        <img src="@/assets/images/_dummy/box-detail.png" alt="샘플 이미지" />
+      <div :class="$style['event-view']">
+        <div :class="[$style['image-view'], $style['image-view--full']]">
+          <img src="@/assets/images/_dummy/box-detail.png" alt="샘플 이미지" />
+        </div>
       </div>
 
       <template v-slot:foot>

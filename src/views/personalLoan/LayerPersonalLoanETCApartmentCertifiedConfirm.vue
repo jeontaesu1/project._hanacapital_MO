@@ -70,9 +70,9 @@ export default {
       <div>
         <NoticeText :classNames="{ wrap: 'color-red' }">
           3번의 (근)저당권 및 전세권 등 (을구)란의 채권최고액을 확인하시고
-          부동산 설정금액란에 설정금액을 입력 바랍니다.<br />
-          근저당권 설정이 2건 이상인 경우, 합산 금액을 입력바랍니다.<br />
-          하단의 확인 버튼을 누르시면 설정금액 입력란이 나오게 됩니다.
+          부동산 설정금액란에 설정금액을 입력 바랍니다. 근저당권 설정이 2건
+          이상인 경우, 합산 금액을 입력바랍니다. 하단의 확인 버튼을 누르시면
+          설정금액 입력란이 나오게 됩니다.
         </NoticeText>
 
         <div :class="[$style['address-box'], 'row-margin-contents-group']">
