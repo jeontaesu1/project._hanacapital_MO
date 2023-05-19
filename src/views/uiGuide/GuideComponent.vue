@@ -132,6 +132,7 @@ import IconLink from '@/assets/images/icon/link.svg?component';
 import IconStar from '@/assets/images/icon/star.svg?component';
 import IconTell from '@/assets/images/icon/tell.svg?component';
 import IconDropdown from '@/assets/images/icon/dropdown.svg?component';
+import Iconimg from '@/assets/images/icon/img.svg?component';
 
 export default {
   components: {
@@ -265,6 +266,7 @@ export default {
     IconStar,
     IconTell,
     IconDropdown,
+    Iconimg,
   },
 
   setup() {
@@ -1024,6 +1026,19 @@ export default {
             :class="$style['upload-button__input']"
           />
           <label for="testUpload001" :class="$style['upload-button__label']">
+            <span :class="$style['upload-button__text']">이미지 첨부</span>
+          </label>
+        </div>
+        <div :class="$style['upload-button']">
+          <input
+            type="file"
+            id="testUpload002"
+            :class="$style['upload-button__input']"
+          />
+          <label for="testUpload002" :class="$style['upload-button__label']">
+            <span :class="$style['upload-button__img']">
+              <Iconimg />
+            </span>
             <span :class="$style['upload-button__text']">이미지 첨부</span>
           </label>
         </div>
