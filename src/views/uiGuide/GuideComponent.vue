@@ -133,6 +133,7 @@ import IconStar from '@/assets/images/icon/star.svg?component';
 import IconTell from '@/assets/images/icon/tell.svg?component';
 import IconDropdown from '@/assets/images/icon/dropdown.svg?component';
 import IconimgColor from '@/assets/images/icon/img-color.svg?component';
+import Iconimg from '@/assets/images/icon/img.svg?component';
 
 export default {
   components: {
@@ -267,6 +268,7 @@ export default {
     IconTell,
     IconDropdown,
     IconimgColor,
+    Iconimg,
   },
 
   setup() {
@@ -1029,6 +1031,21 @@ export default {
             <span :class="$style['upload-button__text']">이미지 첨부</span>
           </label>
         </div>
+        <div :class="$style['upload-button']">
+          <input
+            type="file"
+            id="testUpload002"
+            :class="$style['upload-button__input']"
+          />
+          <label for="testUpload002" :class="$style['upload-button__label']">
+            <span :class="$style['upload-button__img']">
+              <Iconimg />
+            </span>
+            <span :class="$style['upload-button__text']">이미지 첨부</span>
+          </label>
+        </div>
+      </div>
+    </section>
 
     <section class="test-section">
       <h2 class="test-section-title">Upload File List</h2>
