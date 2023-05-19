@@ -1,17 +1,17 @@
 <script>
-// Common_M00_b001
+// Common_M00_b050
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import ToastPopup from '@/components/ui/layer/ToastPopup.vue';
 import ToastPopupHead from '@/components/ui/layer/ToastPopupHead.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
-import PopupSubTitle from '@/components/ui/layer/PopupSubTitle.vue';
 
-import IconPhone from '@/assets/images/icon/phone.svg?component';
-import IconCertification from '@/assets/images/icon/certification.svg?component';
-import IconCard from '@/assets/images/icon/card.svg?component';
-import IconEasyAuthentication from '@/assets/images/icon/easy-authentication.svg?component';
+import IconHanaOneSign from '@/assets/images/icon/hana-onesign.svg?component';
+import IconToss from '@/assets/images/icon/toss-icon.svg?component';
+import IconKakaotalk from '@/assets/images/icon/kakaotalk.svg?component';
+import IconNaver from '@/assets/images/icon/naver.svg?component';
+import IconPass from '@/assets/images/icon/pass.svg?component';
 
 export default {
   components: {
@@ -19,11 +19,11 @@ export default {
     ToastPopup,
     ToastPopupHead,
     PopupTitle,
-    PopupSubTitle,
-    IconPhone,
-    IconCertification,
-    IconCard,
-    IconEasyAuthentication,
+    IconHanaOneSign,
+    IconToss,
+    IconKakaotalk,
+    IconNaver,
+    IconPass,
   },
   setup() {
     const layer = ref(null);
@@ -40,11 +40,7 @@ export default {
     <ToastPopup>
       <template v-slot:head>
         <ToastPopupHead>
-          <PopupTitle>본인인증 방법을 선택해 주세요</PopupTitle>
-          <PopupSubTitle>
-            대출상담 및 한도조회를 위한 신용정보조회는<br />
-            개인신용평점에 영향을 주지 않습니다.
-          </PopupSubTitle>
+          <PopupTitle>간편인증 방법을 선택해 주세요</PopupTitle>
         </ToastPopupHead>
       </template>
 
@@ -52,39 +48,51 @@ export default {
         <ul :class="$style['icon-buttons__list']">
           <li :class="$style['icon-buttons__item']">
             <button type="button" :class="$style['icon-buttons__block']">
-              <span :class="$style['icon-buttons__icon']"><IconPhone /></span>
+              <span :class="$style['icon-buttons__icon']"
+                ><IconHanaOneSign
+              /></span>
               <span :class="$style['icon-buttons__content']">
-                <span :class="$style['icon-buttons__title']">휴대폰</span>
+                <span :class="$style['icon-buttons__title']">하나원사인</span>
               </span>
             </button>
           </li>
           <li :class="$style['icon-buttons__item']">
             <button type="button" :class="$style['icon-buttons__block']">
               <span :class="$style['icon-buttons__icon']">
-                <IconCertification />
+                <IconToss />
               </span>
               <span :class="$style['icon-buttons__content']">
-                <span :class="$style['icon-buttons__title']">공동인증서</span>
-              </span>
-            </button>
-          </li>
-          <li :class="$style['icon-buttons__item']">
-            <button type="button" :class="$style['icon-buttons__block']">
-              <span :class="$style['icon-buttons__icon']"><IconCard /></span>
-              <span :class="$style['icon-buttons__content']">
-                <span :class="$style['icon-buttons__title']">신용카드</span>
+                <span :class="$style['icon-buttons__title']">토스</span>
               </span>
             </button>
           </li>
           <li :class="$style['icon-buttons__item']">
             <button type="button" :class="$style['icon-buttons__block']">
               <span :class="$style['icon-buttons__icon']">
-                <IconEasyAuthentication />
+                <IconKakaotalk />
               </span>
               <span :class="$style['icon-buttons__content']">
-                <span :class="$style['icon-buttons__title']">
-                  간편인증 (민간인증서)
-                </span>
+                <span :class="$style['icon-buttons__title']">카카오</span>
+              </span>
+            </button>
+          </li>
+          <li :class="$style['icon-buttons__item']">
+            <button type="button" :class="$style['icon-buttons__block']">
+              <span :class="$style['icon-buttons__icon']">
+                <IconNaver />
+              </span>
+              <span :class="$style['icon-buttons__content']">
+                <span :class="$style['icon-buttons__title']"> 네이버 </span>
+              </span>
+            </button>
+          </li>
+          <li :class="$style['icon-buttons__item']">
+            <button type="button" :class="$style['icon-buttons__block']">
+              <span :class="$style['icon-buttons__icon']">
+                <IconPass />
+              </span>
+              <span :class="$style['icon-buttons__content']">
+                <span :class="$style['icon-buttons__title']"> PASS </span>
               </span>
             </button>
           </li>
