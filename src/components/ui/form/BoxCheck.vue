@@ -54,6 +54,10 @@ export default {
     modelValue: {
       Type: Boolean,
     },
+    size: {
+      Type: String,
+      default: null,
+    },
   },
   setup(props, { emit, slots }) {
     const state = reactive({
@@ -144,6 +148,7 @@ export default {
         [$style[`box-check--align-${align}`]]: align,
         [$style['box-check--contents']]: contents,
         [$style['box-check--min-side']]: minSide,
+        [$style[`box-check--size-${size}`]]: size,
       },
       customClassNames.wrap,
     ]"

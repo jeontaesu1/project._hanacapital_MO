@@ -7,7 +7,7 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 import LayerMyLoanAddDocumentsAgree from '@/views/myLoan/LayerMyLoanAddDocumentsAgree.vue';
-import LayerMyLoanAddDocumentsEmpty from '@/views/myLoan/LayerMyLoanAddDocumentsEmpty.vue';
+import LayerMyLoanAddDocumentsList from '@/views/myLoan/LayerMyLoanAddDocumentsList.vue';
 
 export default {
   components: {
@@ -16,7 +16,7 @@ export default {
     ButtonList,
     ButtonListItem,
     LayerMyLoanAddDocumentsAgree,
-    LayerMyLoanAddDocumentsEmpty,
+    LayerMyLoanAddDocumentsList,
   },
   setup() {
     const layer001 = ref(null);
@@ -49,17 +49,17 @@ export default {
     >
       <ButtonListItem>
         <BasicButton @click="layer001Open">
-          약관동의<br />PMy_M07_l001
+          약관동의<br />My_M07_l001
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer002Open">
-          서류등록<br />PMy_M07_l002
+          내 서류 등록 내역<br />My_M07_l003
         </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
     <LayerMyLoanAddDocumentsAgree ref="layer001" />
-    <LayerMyLoanAddDocumentsEmpty ref="layer002" />
+    <LayerMyLoanAddDocumentsList ref="layer002" />
   </PageContents>
 </template>

@@ -12,14 +12,31 @@
   }
 
   &__label {
-    display: block;
+    display: flex;
+    align-items: center;
     padding: 19px;
     border: 1px solid $color-gray-20;
     border-radius: 8px;
     box-sizing: border-box;
   }
 
+  &__img {
+    flex: none;
+
+    svg {
+      display: block;
+      width: 36px;
+      height: 36px;
+    }
+
+    & + .upload-button__text {
+      margin-left: 12px;
+    }
+  }
+
   &__text {
+    flex: 1;
+    min-width: 0;
     position: relative;
     display: block;
     padding-right: 28px;

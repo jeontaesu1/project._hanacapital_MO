@@ -152,6 +152,10 @@ const datas = () => [
             date: '2023.05.05',
             text: '팝업 추가\n- 메뉴진입 본인인증 안내',
           },
+          {
+            date: '2023.05.19',
+            text: '팝업 추가\n- 간편인증 선택 팝업\n-간편인증 이용약관 동의',
+          },
         ],
       },
       {
@@ -342,8 +346,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/main-002',
-        status: '',
-        create: '',
+        status: 'partend',
+        create: '2023.05.19',
         log: [],
       },
       {
@@ -419,8 +423,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/main/benefit',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.05.19',
         log: [],
       },
     ],
@@ -830,7 +834,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/personal-loan-etc-001',
-        status: 'partend',
+        status: 'pending',
         create: '2023.03.31',
         log: [
           {
@@ -1972,8 +1976,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/equipment-lease/estimate',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.05.19',
         log: [],
       },
       {
@@ -2902,7 +2906,18 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '서류등록',
+        depth2: '서류등록\nMy_M07_l002',
+        depth3: '',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/my-loan/my-loan-add-documents',
+        status: 'end',
+        create: '2023.05.19',
+        log: [],
+      },
+      {
+        depth2: '서류등록\nMy_M07_l002',
         depth3: '팝업',
         depth4: '',
         depth5: '',
@@ -2910,10 +2925,15 @@ const datas = () => [
         path: '/guide/my-loan-add-documents-001',
         status: 'partend',
         create: '2023.04.28',
-        log: [],
+        log: [
+          {
+            date: '2023.05.19',
+            text: '팝업 추가\n- 내 서류 등록 내역',
+          },
+        ],
       },
       {
-        depth2: '서류등록',
+        depth2: '서류등록\nMy_M07_l002',
         depth3: '등록완료\nMy_M07_p001',
         depth4: '',
         depth5: '',

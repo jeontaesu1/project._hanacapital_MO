@@ -6,7 +6,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-// import Layer from '@/views/';
+import LayerMainFunDetail from '@/views/main/LayerMainFunDetail.vue';
 
 export default {
   components: {
@@ -14,7 +14,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    // Layer,
+    LayerMainFunDetail,
   },
   setup() {
     const layer001 = ref(null);
@@ -40,10 +40,12 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open"> oooo<br />ooooooo </BasicButton>
+        <BasicButton @click="layer001Open">
+          FUN 상세<br />Main_M05_l002
+        </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
-    <!-- <Layer ref="layer001" /> -->
+    <LayerMainFunDetail ref="layer001" />
   </PageContents>
 </template>

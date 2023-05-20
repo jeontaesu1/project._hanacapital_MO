@@ -353,7 +353,6 @@ export default {
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer025Open"
-
           >상담 신청완료<br />AF_M00_l010</BasicButton
         >
       </ButtonListItem>

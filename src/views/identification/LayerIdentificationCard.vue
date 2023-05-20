@@ -93,8 +93,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          신용카드 인증을 위해<br />
-          <strong>이름을 입력해 주세요</strong>
+          카드번호를<br />
+          <strong>입력해 주세요</strong>
         </PageMainText>
       </PageTextGroup>
 
@@ -360,7 +360,11 @@ export default {
           <FormInvalid :error="state.nameError">
             <InputBlock :error="state.nameError">
               <InputBlockCell :flexible="true">
-                <BasicInput title="이름" id="layerIdentificationCardName" />
+                <BasicInput
+                  title="이름"
+                  id="layerIdentificationCardName"
+                  align="right"
+                />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>

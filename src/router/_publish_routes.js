@@ -1238,6 +1238,11 @@ const routes = [
       import('@/views/myLoan/MyLoanSubscriptionWithdrawalRight.vue'),
   },
   {
+    path: '/my-loan/my-loan-add-documents',
+    name: '/my-loan/my-loan-add-documents',
+    component: () => import('@/views/myLoan/MyLoanAddDocuments.vue'),
+  },
+  {
     path: '/my-loan/add-documents-complete',
     name: '/my-loan/add-documents-complete',
     component: () => import('@/views/myLoan/MyLoanAddDocumentsComplete.vue'),

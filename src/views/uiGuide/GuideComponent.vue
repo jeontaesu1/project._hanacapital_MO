@@ -132,6 +132,8 @@ import IconLink from '@/assets/images/icon/link.svg?component';
 import IconStar from '@/assets/images/icon/star.svg?component';
 import IconTell from '@/assets/images/icon/tell.svg?component';
 import IconDropdown from '@/assets/images/icon/dropdown.svg?component';
+import IconImgColor from '@/assets/images/icon/img-color.svg?component';
+import IconImg from '@/assets/images/icon/img.svg?component';
 
 export default {
   components: {
@@ -265,6 +267,8 @@ export default {
     IconStar,
     IconTell,
     IconDropdown,
+    IconImgColor,
+    IconImg,
   },
 
   setup() {
@@ -1027,6 +1031,82 @@ export default {
             <span :class="$style['upload-button__text']">이미지 첨부</span>
           </label>
         </div>
+        <div :class="$style['upload-button']">
+          <input
+            type="file"
+            id="testUpload002"
+            :class="$style['upload-button__input']"
+          />
+          <label for="testUpload002" :class="$style['upload-button__label']">
+            <span :class="$style['upload-button__img']">
+              <IconImg />
+            </span>
+            <span :class="$style['upload-button__text']">이미지 첨부</span>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Upload File List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['upload-file']">
+          <ul :class="$style['upload-file__list']">
+            <li :class="$style['upload-file__item']">
+              <div :class="$style['upload-file__icon']">
+                <IconImgColor />
+              </div>
+              <div :class="$style['upload-file__content']">
+                <div :class="$style['upload-file__name']">첨부파일명.jpg</div>
+              </div>
+              <div :class="$style['upload-file__button']">
+                <BasicButton line="true" theme="quaternary" size="mini">
+                  삭제
+                </BasicButton>
+              </div>
+            </li>
+            <li :class="$style['upload-file__item']">
+              <div :class="$style['upload-file__icon']">
+                <IconImgColor />
+              </div>
+              <div :class="$style['upload-file__content']">
+                <div :class="$style['upload-file__name']">
+                  첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명.jpeg
+                </div>
+              </div>
+              <div :class="$style['upload-file__button']">
+                <BasicButton line="true" theme="quaternary" size="mini">
+                  삭제
+                </BasicButton>
+              </div>
+            </li>
+            <li :class="$style['upload-file__item']">
+              <div :class="$style['upload-file__icon']">
+                <IconImgColor />
+              </div>
+              <div :class="$style['upload-file__content']">
+                <div :class="$style['upload-file__name']">첨부파일명.jpg</div>
+                <div :class="$style['upload-file__date']">
+                  2023-05-08 18:15:44
+                </div>
+              </div>
+            </li>
+            <li :class="$style['upload-file__item']">
+              <div :class="$style['upload-file__icon']">
+                <IconImgColor />
+              </div>
+              <div :class="$style['upload-file__content']">
+                <div :class="$style['upload-file__name']">
+                  첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명.jpeg
+                </div>
+                <div :class="$style['upload-file__date']">
+                  2023-05-08 18:15:44
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -1635,6 +1715,22 @@ export default {
           </template>
         </BoxCheck>
       </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">size : small</h3>
+
+        <BoxCheck name="testBoxCheck007" id="testBoxCheck007_001" size="small">
+          <BoxCheckLabel>Label</BoxCheckLabel>
+        </BoxCheck>
+
+        <BoxCheck name="testBoxCheck007" id="testBoxCheck007_002" size="small">
+          <BoxCheckLabel>Label</BoxCheckLabel>
+        </BoxCheck>
+
+        <BoxCheck name="testBoxCheck007" id="testBoxCheck007_003" size="small">
+          <BoxCheckLabel>Label<br />2 line label</BoxCheckLabel>
+        </BoxCheck>
+      </div>
     </section>
 
     <section class="test-section">
@@ -1723,6 +1819,54 @@ export default {
           </BoxCheckListItem>
         </BoxCheckList>
       </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Spacing - small (6px)</h3>
+
+        <BoxCheckList :wrap="true" spacing="small">
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList007"
+              id="testBoxCheckList007_001"
+              size="small"
+            >
+              <BoxCheckLabel>Label 1</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList007"
+              id="testBoxCheckList007_002"
+              size="small"
+            >
+              <BoxCheckLabel>Label 2</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList007"
+              id="testBoxCheckList007_003"
+              size="small"
+            >
+              <BoxCheckLabel>Label 3</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList007"
+              id="testBoxCheckList007_004"
+              size="small"
+            >
+              <BoxCheckLabel>Label 4</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+        </BoxCheckList>
+      </div>
+
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Wrap - col 2</h3>
 
@@ -1854,6 +1998,82 @@ export default {
               id="testBoxCheckList005_005"
             >
               <BoxCheckLabel>Label 4</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+        </BoxCheckList>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Wrap - col 6</h3>
+
+        <BoxCheckList :wrap="true" col="6" spacing="small">
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList006"
+              id="testBoxCheckList006_001"
+              size="small"
+            >
+              <BoxCheckLabel>없음</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList006"
+              id="testBoxCheckList006_002"
+              size="small"
+            >
+              <BoxCheckLabel>1%</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList006"
+              id="testBoxCheckList006_003"
+              size="small"
+            >
+              <BoxCheckLabel>2%</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList006"
+              id="testBoxCheckList006_004"
+              size="small"
+            >
+              <BoxCheckLabel>3%</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList006"
+              id="testBoxCheckList006_005"
+              size="small"
+            >
+              <BoxCheckLabel>4%</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList006"
+              id="testBoxCheckList006_006"
+              size="small"
+            >
+              <BoxCheckLabel>5%</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList006"
+              id="testBoxCheckList006_007"
+              size="small"
+            >
+              <BoxCheckLabel>6%</BoxCheckLabel>
             </BoxCheck>
           </BoxCheckListItem>
         </BoxCheckList>
@@ -4716,6 +4936,105 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Estimate List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['estimate']">
+          <UiAccordion :classNames="{ wrap: $style['estimate__list'] }">
+            <UiAccordionItem :classNames="{ item: $style['estimate__item'] }">
+              <div :class="$style['estimate__head']">
+                <div :class="$style['estimate__block']">
+                  <div :class="$style['estimate__left']">
+                    <KeyValue align="left" size="regular">
+                      <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                        <KeyValueTitle>품목</KeyValueTitle>
+                        <KeyValueText>의료기</KeyValueText>
+                      </KeyValueItem>
+                    </KeyValue>
+                  </div>
+                </div>
+                <div :class="$style['estimate__arrow']">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['estimate__opener'] }"
+                  />
+                </div>
+              </div>
+
+              <UiAccordionLayer
+                :classNames="{ layer: $style['estimate__layer'] }"
+              >
+                <section :class="$style['estimate__contents']">
+                  // 내용 노출
+                </section>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+
+            <UiAccordionItem :classNames="{ item: $style['estimate__item'] }">
+              <div :class="$style['estimate__head']">
+                <div :class="$style['estimate__block']">
+                  <div :class="$style['estimate__left']">
+                    <KeyValue align="left" size="regular">
+                      <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                        <KeyValueTitle>보증금</KeyValueTitle>
+                        <KeyValueText>0%</KeyValueText>
+                      </KeyValueItem>
+                    </KeyValue>
+                  </div>
+                  <div :class="$style['estimate__right']">
+                    <div class="text-body-3 font-weight-bold">0 원</div>
+                  </div>
+                </div>
+                <div :class="$style['estimate__arrow']">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['estimate__opener'] }"
+                  />
+                </div>
+              </div>
+
+              <UiAccordionLayer
+                :classNames="{ layer: $style['estimate__layer'] }"
+              >
+                <section :class="$style['estimate__contents']">
+                  // 내용 노출
+                </section>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+          </UiAccordion>
+
+          <div :class="$style['estimate__foot']">
+            <KeyValue margin="regular" verticalAlign="center">
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle
+                  :classNames="{ title: 'color-black font-weight-medium' }"
+                >
+                  월 리스료
+                </KeyValueTitle>
+                <KeyValueText>
+                  <BasicButton size="mini" inline="true">계산하기</BasicButton>
+                </KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle
+                  :classNames="{
+                    title: 'color-black font-weight-medium',
+                  }"
+                >
+                  IRR
+                </KeyValueTitle>
+                <KeyValueText>
+                  <UnitText rightUnit="%" align="right">
+                    <strong>-</strong>
+                  </UnitText>
+                </KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Tab Base</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -6064,6 +6383,7 @@ export default {
         <RoundStatus theme="nonary">텍스트</RoundStatus>
         <RoundStatus theme="denary">텍스트</RoundStatus>
         <RoundStatus theme="undenary">텍스트</RoundStatus>
+        <RoundStatus theme="duodenary">텍스트</RoundStatus>
       </div>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Small</h3>
@@ -6078,6 +6398,7 @@ export default {
         <RoundStatus size="small" theme="nonary">텍스트</RoundStatus>
         <RoundStatus size="small" theme="denary">텍스트</RoundStatus>
         <RoundStatus size="small" theme="undenary">텍스트</RoundStatus>
+        <RoundStatus size="small" theme="duodenary">텍스트</RoundStatus>
       </div>
     </section>
 
@@ -6609,6 +6930,56 @@ export default {
               <IconArrow />
             </template>
           </TextButton>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Board Detail</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['board-detail']">
+          <div :class="$style['board-detail__head']">
+            <h2 :class="$style['board-detail__category']">원큐자동차상식</h2>
+            <h3 :class="$style['board-detail__title']">2022년 2분기 IR 자료</h3>
+            <h4 :class="$style['board-detail__text']">
+              하나캐피탈과 함께 알아봐요!
+            </h4>
+            <p :class="$style['board-detail__sub']">2022.08.09</p>
+          </div>
+
+          <section :class="$style['board-detail__contents']">
+            //게시물 내용 노출
+          </section>
+
+          <div :class="$style['board-detail__foot']">
+            <ul class="reset-list">
+              <li class="row-margin-item-group">
+                <div class="flex-box">
+                  <div class="flex-box__cell flex-1">
+                    <div class="text-body-4 font-weight-medium">
+                      하나캐피탈IR_2022.2Q.pdf
+                    </div>
+                  </div>
+                  <div class="flex-box__cell">
+                    <DownloadButton tagName="a" href="/foo/bar.pdf" download />
+                  </div>
+                </div>
+              </li>
+              <li class="row-margin-item-group">
+                <div class="flex-box">
+                  <div class="flex-box__cell flex-1">
+                    <div class="text-body-4 font-weight-medium">
+                      하나캐피탈IR_2022.2Q.pdf
+                    </div>
+                  </div>
+                  <div class="flex-box__cell">
+                    <DownloadButton tagName="a" href="/foo/bar.pdf" download />
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -8109,6 +8480,222 @@ export default {
             </UiAccordionLayer>
           </UiAccordionItem>
         </UiAccordion>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Benefit List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['benefit']">
+          <ul :class="$style['benefit__list']">
+            <li :class="$style['benefit__item']">
+              <div :class="$style['benefit__block']">
+                <button type="button" :class="$style['benefit__button']">
+                  <div :class="$style['benefit__inner']">
+                    <div :class="$style['benefit__left']">
+                      <RoundStatus
+                        size="small"
+                        theme="duodenary"
+                        :classNames="{ wrap: 'row-margin-item-regular' }"
+                        >진행중</RoundStatus
+                      >
+                      <h3 :class="$style['benefit__title']">
+                        에코플러스 자동차보험
+                      </h3>
+                      <p :class="$style['benefit__sub']">지금 바로 GO!</p>
+                      <div :class="$style['benefit__date']">
+                        2022.12.01 ~ 2022.12.31
+                      </div>
+                    </div>
+                    <div :class="$style['benefit__right']">
+                      <div :class="$style['benefit__icon']">
+                        <img
+                          src="@/assets/images/_dummy/banner-money-up.png"
+                          alt="샘플 아이콘"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </li>
+            <li :class="$style['benefit__item']">
+              <div :class="$style['benefit__block']">
+                <div :class="$style['benefit__inner']">
+                  <div :class="$style['benefit__left']">
+                    <RoundStatus
+                      size="small"
+                      theme="duodenary"
+                      :classNames="{ wrap: 'row-margin-item-regular' }"
+                      >진행중</RoundStatus
+                    >
+                    <h3 :class="$style['benefit__title']">
+                      에코플러스 자동차보험
+                    </h3>
+                    <p :class="$style['benefit__sub']">
+                      오늘 신청하면 혜택이 두배!<br />
+                      1+1 한명 더 자동 가입되는 안심 혜택 놓치지 마세요.
+                    </p>
+                    <div :class="$style['benefit__link']">
+                      <TextButton
+                        theme="secondary"
+                        :block="true"
+                        :classNames="{ wrap: $style['benefit__link-button'] }"
+                      >
+                        바로가기
+                        <template v-slot:rightIcon>
+                          <IconLink />
+                        </template>
+                      </TextButton>
+                    </div>
+                  </div>
+                  <div :class="$style['benefit__right']">
+                    <div :class="$style['benefit__icon']">
+                      <img
+                        src="@/assets/images/_dummy/banner-money-up.png"
+                        alt="샘플 아이콘"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">End</h3>
+        <div :class="$style['benefit']">
+          <ul :class="$style['benefit__list']">
+            <li :class="$style['benefit__item']">
+              <div
+                :class="[
+                  $style['benefit__block'],
+                  $style['benefit__block--end'],
+                ]"
+              >
+                <button type="button" :class="$style['benefit__button']">
+                  <div :class="$style['benefit__inner']">
+                    <div :class="$style['benefit__left']">
+                      <RoundStatus
+                        size="small"
+                        theme="duodenary"
+                        :classNames="{ wrap: 'row-margin-item-regular' }"
+                        >종료</RoundStatus
+                      >
+                      <h3 :class="$style['benefit__title']">
+                        에코플러스 자동차보험
+                      </h3>
+                      <p :class="$style['benefit__sub']">
+                        오늘 신청하면 혜택이 두배!<br />
+                        1+1 한명 더 자동 가입되는 안심 혜택 놓치지 마세요.
+                      </p>
+                      <div :class="$style['benefit__date']">
+                        2022.12.01 ~ 2022.12.31
+                      </div>
+                    </div>
+                    <div :class="$style['benefit__right']">
+                      <div :class="$style['benefit__icon']">
+                        <img
+                          src="@/assets/images/_dummy/banner-money-up.png"
+                          alt="샘플 아이콘"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Fun</h3>
+        <div :class="$style['benefit']">
+          <ul :class="$style['benefit__list']">
+            <li :class="$style['benefit__item']">
+              <div
+                :class="[
+                  $style['benefit__block'],
+                  $style['benefit__block--fun'],
+                ]"
+              >
+                <button type="button" :class="$style['benefit__button']">
+                  <div :class="$style['benefit__inner']">
+                    <div :class="$style['benefit__left']">
+                      <h3 :class="$style['benefit__title']">
+                        소모품 교체하기 (초보자 가이드)
+                      </h3>
+                      <p :class="$style['benefit__sub']">
+                        소모품 교체 체크리스트!<br />
+                        초보자 가이드로 언제 어디서나 쉽게 교체할 수 있어요.
+                        초보자 가이드로 언제 어디서나 쉽게 교체할 수 있어요.
+                      </p>
+                    </div>
+                    <div :class="$style['benefit__right']">
+                      <div
+                        :class="$style['benefit__thumbnail']"
+                        style="
+                          background-image: url('/src/assets/images/_dummy/thumbnail-sample2.jpg');
+                        "
+                      ></div>
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Coupon</h3>
+        <div :class="$style['benefit']">
+          <ul :class="$style['benefit__list']">
+            <li :class="$style['benefit__item']">
+              <div
+                :class="[
+                  $style['benefit__block'],
+                  $style['benefit__block--coupon'],
+                ]"
+              >
+                <div :class="$style['benefit__inner']">
+                  <div :class="$style['benefit__left']">
+                    <button type="button" :class="$style['benefit__button']">
+                      <div :class="$style['benefit__logo']">
+                        <img
+                          src="@/assets/images/_dummy/logo-sample.png"
+                          alt="샘플 로고"
+                        />
+                      </div>
+                      <div :class="$style['benefit__info']">
+                        <div :class="$style['benefit__category']">스타벅스</div>
+                        <div :class="$style['benefit__title']">
+                          디카페인 콜드브루 라떼 T 쿠폰
+                        </div>
+                        <div :class="$style['benefit__date']">
+                          2022.12.01 ~ 2022.12.31
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                  <div :class="$style['benefit__right']">
+                    <DownloadButton
+                      tagName="a"
+                      href="/foo/bar.png"
+                      theme="secondary"
+                      download
+                      :class="$style['benefit__download']"
+                    />
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 

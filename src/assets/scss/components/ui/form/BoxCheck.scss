@@ -289,4 +289,40 @@
       }
     }
   }
+
+  &--size {
+    &-small {
+      .box-check__block {
+        padding: 7px 11px;
+      }
+
+      .box-check__input {
+        &:checked {
+          & + .box-check__block {
+            padding: 6px 10px;
+          }
+        }
+      }
+
+      .box-check__label {
+        @include font-size-default(13);
+      }
+
+      &.box-check--min-side {
+        .box-check__block {
+          padding-left: 0px;
+          padding-right: 0px;
+        }
+
+        .box-check__input {
+          &:checked {
+            & + .box-check__block {
+              padding-left: 0px;
+              padding-right: 0px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
