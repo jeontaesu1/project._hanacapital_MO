@@ -9,6 +9,7 @@ import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import CouponLogo from '@/components/ui/imageData/CouponLogo.vue';
 
 import IconDownload from '@/assets/images/icon/download.svg?component';
 
@@ -21,6 +22,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
+    CouponLogo,
     IconDownload,
   },
   setup() {
@@ -48,12 +50,7 @@ export default {
       <div :class="$style['coupon-detail']">
         <div :class="$style['coupon-detail__head']">
           <div :class="$style['coupon-detail__left']">
-            <div :class="$style['coupon-detail__brand-logo']">
-              <img
-                src="@/assets/images/_dummy/brand-logo.png"
-                alt="샘플 이미지"
-              />
-            </div>
+            <CouponLogo src="/images/_dummy/logo-sample.png" />
           </div>
           <div :class="$style['coupon-detail__right']">
             <p :class="$style['coupon-detail__brand-name']">스타벅스</p>
@@ -72,6 +69,7 @@ export default {
           </div>
         </section>
       </div>
+
       <template v-slot:foot>
         <ButtonList
           :classNames="{
@@ -79,7 +77,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton tagName="a" href="/foo/bar.pdf" download>
+            <BasicButton tagName="a" href="/foo/bar.png" download>
               <template v-slot:leftIcon>
                 <IconDownload />
               </template>
