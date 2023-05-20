@@ -12,6 +12,7 @@ import LayerMainAffiliate from '@/views/main/LayerMainAffiliate.vue';
 import LayerMainEventDetail from '@/views/main/LayerMainEventDetail.vue';
 import LayerMainCouponDetail from '@/views/main/LayerMainCouponDetail.vue';
 import LayerMainFunDetail from '@/views/main/LayerMainFunDetail.vue';
+import LayerMainFunSubscription from '@/views/main/LayerMainFunSubscription.vue';
 
 export default {
   components: {
@@ -25,6 +26,7 @@ export default {
     LayerMainEventDetail,
     LayerMainCouponDetail,
     LayerMainFunDetail,
+    LayerMainFunSubscription,
   },
   setup() {
     const layer001 = ref(null);
@@ -33,6 +35,7 @@ export default {
     const layer004 = ref(null);
     const layer005 = ref(null);
     const layer006 = ref(null);
+    const layer007 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -52,6 +55,9 @@ export default {
     const layer006Open = (e = {}) => {
       layer006.value.layer.open(e.target);
     };
+    const layer007Open = (e = {}) => {
+      layer007.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -60,12 +66,14 @@ export default {
       layer004,
       layer005,
       layer006,
+      layer007,
       layer001Open,
       layer002Open,
       layer003Open,
       layer004Open,
       layer005Open,
       layer006Open,
+      layer007Open,
     };
   },
 };
@@ -109,6 +117,11 @@ export default {
           FUN 상세<br />Main_M05_l002
         </BasicButton>
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer007Open">
+          FUN 구독<br />Main_M05_b001
+        </BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <LayerMainPushDetail ref="layer001" />
@@ -117,5 +130,6 @@ export default {
     <LayerMainEventDetail ref="layer004" />
     <LayerMainCouponDetail ref="layer005" />
     <LayerMainFunDetail ref="layer006" />
+    <LayerMainFunSubscription ref="layer007" />
   </PageContents>
 </template>
