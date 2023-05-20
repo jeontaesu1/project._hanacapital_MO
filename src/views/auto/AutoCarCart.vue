@@ -177,7 +177,7 @@ export default {
 
               <ButtonList :classNames="{ wrap: 'row-margin-contents-small' }">
                 <ButtonListItem>
-                  <BasicButton BasicButton size="small"> 견적보기 </BasicButton>
+                  <BasicButton size="small"> 견적보기 </BasicButton>
                 </ButtonListItem>
               </ButtonList>
             </BasicBox>
@@ -230,7 +230,7 @@ export default {
 
               <ButtonList :classNames="{ wrap: 'row-margin-contents-small' }">
                 <ButtonListItem>
-                  <BasicButton BasicButton size="small"> 견적보기 </BasicButton>
+                  <BasicButton size="small"> 견적보기 </BasicButton>
                 </ButtonListItem>
               </ButtonList>
             </BasicBox>

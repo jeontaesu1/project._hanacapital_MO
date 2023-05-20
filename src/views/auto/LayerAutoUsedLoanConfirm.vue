@@ -170,7 +170,7 @@ export default {
             <BasicButton :line="true" theme="quaternary">재선택</BasicButton>
           </ButtonListItem>
           <ButtonListItem>
-            <BasicButton BasicButton>다음</BasicButton>
+            <BasicButton>다음</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

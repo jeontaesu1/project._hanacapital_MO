@@ -1,5 +1,5 @@
 <script>
-// ㅊ
+// Customer_M02_p002
 import { reactive, onMounted, onUnmounted } from 'vue';
 
 import { useUiHeaderStore } from '@/stores/ui/header';

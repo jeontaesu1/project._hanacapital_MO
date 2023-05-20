@@ -68,9 +68,6 @@ export default {
       carTypeError: false,
       carNameError: false,
       carRegionError: false,
-      /*
-      categoryError: false,
-      */
     });
 
     onMounted(() => {
