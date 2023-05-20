@@ -252,7 +252,7 @@ export default {
               </div>
               <RoundStatus
                 :classNames="{ wrap: 'display-block' }"
-                theme="denary"
+                theme="secondary"
                 >D-7</RoundStatus
               >
               <div :class="$style['logs__right']">
@@ -272,7 +272,7 @@ export default {
               <KeyValueItem :classNames="{ item: 'text-body-3' }">
                 <KeyValueTitle>결제예정금액</KeyValueTitle>
                 <KeyValueText
-                  :classNames="{ text: 'color-blue font-weight-medium' }"
+                  :classNames="{ text: 'color-green font-weight-medium' }"
                   >845,000 원</KeyValueText
                 >
               </KeyValueItem>
@@ -300,12 +300,9 @@ export default {
             </div>
 
             <div :class="[$style['logs__button'], 'row-margin-contents-small']">
-              <BasicButton size="small" theme="secondary" line="true"
-                >만기안내장</BasicButton
-              >
+              <BasicButton size="small" line="true">만기안내장</BasicButton>
               <BasicButton
                 size="small"
-                theme="secondary"
                 :classNames="{ wrap: 'row-margin-item' }"
                 >만기후처리</BasicButton
               >
@@ -388,7 +385,7 @@ export default {
               <KeyValueItem :classNames="{ item: 'text-body-3' }">
                 <KeyValueTitle>결제예정금액</KeyValueTitle>
                 <KeyValueText
-                  :classNames="{ text: 'color-blue font-weight-medium' }"
+                  :classNames="{ text: 'color-green font-weight-medium' }"
                   >845,000 원</KeyValueText
                 >
               </KeyValueItem>

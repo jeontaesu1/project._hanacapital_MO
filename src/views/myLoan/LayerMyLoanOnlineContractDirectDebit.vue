@@ -62,6 +62,7 @@ export default {
     const layer = ref(null);
     const state = reactive({
       dateError: false,
+      paymentDateError: false,
       importedBankError: false,
       domesticAccountError: false,
     });
@@ -143,6 +144,28 @@ export default {
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
+        <!-- Case : 오토 할부/론에서만 결제일 선택 후 노출 -->
+        <FormListItem
+          titleText="1회차 납부일"
+          target="#layerMyLoanOnlineContractDirectDebitPaymentDate"
+          :disabled="true"
+        >
+          <FormInvalid :error="state.paymentDateError">
+            <InputBlock :error="state.paymentDateError" :disabled="true">
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  pattern="\d*"
+                  title="1회차 납부일"
+                  id="layerMyLoanOnlineContractDirectDebitPaymentDate"
+                  :disabled="true"
+                  defaultValue="2022.04.25"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+        <!-- // Case : 오토 할부/론에서만 결제일 선택 후 노출 -->
         <FormListItem
           titleText="은행"
           target="#layerMyLoanOnlineContractDirectDebitImportedBankButton"
@@ -223,7 +246,7 @@ export default {
             <BasicButton :line="true" theme="quaternary">이전</BasicButton>
           </ButtonListItem>
           <ButtonListItem>
-            <BasicButton>다음</BasicButton>
+            <BasicButton>계좌인증</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

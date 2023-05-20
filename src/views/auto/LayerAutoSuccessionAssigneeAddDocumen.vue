@@ -187,7 +187,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton theme="secondary">다음</BasicButton>
+            <BasicButton>다음</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

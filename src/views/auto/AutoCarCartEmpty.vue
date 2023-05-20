@@ -62,7 +62,7 @@ export default {
         }"
       >
         <ButtonListItem>
-          <BasicButton theme="secondary">관심있는 차 등록</BasicButton>
+          <BasicButton BasicButton>관심있는 차 등록</BasicButton>
         </ButtonListItem>
       </ButtonList>
     </template>

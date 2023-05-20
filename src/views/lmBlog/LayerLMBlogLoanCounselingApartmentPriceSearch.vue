@@ -1,5 +1,5 @@
 <script>
-// LM_M01_l004
+// LM_M01_l011
 import { ref, reactive } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -403,9 +403,10 @@ export default {
               titleText="전세가"
               titleOptionalText="(상한가)"
               target="#layerLMBlogLoanCounselingApartmentPriceSearchLease"
+              :disabled="true"
             >
               <FormInvalid :error="state.leaseError">
-                <InputBlock :error="state.leaseError">
+                <InputBlock :error="state.leaseError" :disabled="true">
                   <InputBlockCell :flexible="true">
                     <BasicInput
                       align="right"
@@ -413,6 +414,7 @@ export default {
                       pattern="\d*"
                       title="전세가(상한가)"
                       id="layerLMBlogLoanCounselingApartmentPriceSearchLease"
+                      :disabled="true"
                     />
                   </InputBlockCell>
                   <template v-slot:innerRight>

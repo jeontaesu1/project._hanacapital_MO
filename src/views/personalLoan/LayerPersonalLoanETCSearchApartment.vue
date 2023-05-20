@@ -6,7 +6,9 @@ import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
-import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
+import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
+import PageMainText from '@/components/ui/text/PageMainText.vue';
+import PageSubText from '@/components/ui/text/PageSubText.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
@@ -19,7 +21,9 @@ export default {
     PopupButton,
     FullPopup,
     FullPopupHead,
-    PopupTitle,
+    PageTextGroup,
+    PageMainText,
+    PageSubText,
     BasicHr,
     InputBlock,
     InputBlockCell,
@@ -41,40 +45,52 @@ export default {
     <FullPopup>
       <template v-slot:head>
         <FullPopupHead>
-          <PopupTitle>아파트 검색</PopupTitle>
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
         </FullPopupHead>
       </template>
 
-      <InputBlock type="search" :classNames="{ wrap: 'row-margin-contents' }">
-        <InputBlockCell :flexible="true">
-          <BasicInput
-            type="search"
-            title="아파트 검색어"
-            placeholder="동(읍/면) 또는 아파트 이름 입력"
-          />
-        </InputBlockCell>
-        <InputBlockCell type="search">
-          <SearchButton />
-        </InputBlockCell>
-      </InputBlock>
+      <PageTextGroup>
+        <PageMainText>
+          아파트를<br />
+          <strong>검색해 주세요</strong>
+        </PageMainText>
+        <PageSubText>
+          본인 소유 또는 배우자 공동 소유만<br />
+          대출 진행이 가능합니다.
+        </PageSubText>
+      </PageTextGroup>
 
-      <ul :class="$style['basic-list']">
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            아파트/오피스텔만 확인할 수 있습니다.
-          </div>
-        </li>
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            부동산 정보는 매월 업데이트되고 있습니다.
-          </div>
-        </li>
-      </ul>
+      <div>
+        <InputBlock type="search" :classNames="{ wrap: 'row-margin-contents' }">
+          <InputBlockCell :flexible="true">
+            <BasicInput
+              type="search"
+              title="아파트 검색어"
+              placeholder="동(읍/면) 또는 아파트 이름 입력"
+            />
+          </InputBlockCell>
+          <InputBlockCell type="search">
+            <SearchButton />
+          </InputBlockCell>
+        </InputBlock>
+
+        <ul :class="$style['basic-list']">
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              아파트/오피스텔만 확인할 수 있습니다.
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              부동산 정보는 매월 업데이트되고 있습니다.
+            </div>
+          </li>
+        </ul>
+      </div>
 
       <!-- Case : 검색 후 노출 -->
 

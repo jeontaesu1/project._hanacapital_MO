@@ -110,7 +110,6 @@ export default {
 
           <BasicButton
             size="small"
-            theme="secondary"
             :classNames="{ wrap: 'row-margin-contents-small' }"
             >금리인하 신청</BasicButton
           >

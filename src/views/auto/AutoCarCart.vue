@@ -177,9 +177,7 @@ export default {
 
               <ButtonList :classNames="{ wrap: 'row-margin-contents-small' }">
                 <ButtonListItem>
-                  <BasicButton theme="secondary" size="small">
-                    견적보기
-                  </BasicButton>
+                  <BasicButton BasicButton size="small"> 견적보기 </BasicButton>
                 </ButtonListItem>
               </ButtonList>
             </BasicBox>
@@ -212,7 +210,7 @@ export default {
                   <CarEmblem code="1001" name="현대" />
                 </div>
                 <div class="flex-box__cell flex-box__cell--small">
-                  <DeleteButton theme="secondary" />
+                  <DeleteButton BasicButton />
                 </div>
               </div>
 
@@ -232,9 +230,7 @@ export default {
 
               <ButtonList :classNames="{ wrap: 'row-margin-contents-small' }">
                 <ButtonListItem>
-                  <BasicButton theme="secondary" size="small">
-                    견적보기
-                  </BasicButton>
+                  <BasicButton BasicButton size="small"> 견적보기 </BasicButton>
                 </ButtonListItem>
               </ButtonList>
             </BasicBox>

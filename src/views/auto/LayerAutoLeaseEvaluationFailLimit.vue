@@ -102,10 +102,18 @@ export default {
             />
 
             <KeyValue>
+              <!-- Case : 운용리스 일 경우 노출 -->
               <KeyValueItem class="text-body-5">
                 <KeyValueTitle>선납금 + 보증금</KeyValueTitle>
                 <KeyValueText>20% (22,145,111원)</KeyValueText>
               </KeyValueItem>
+              <!-- // Case : 운용리스 일 경우 노출 -->
+              <!-- Case : 금융리스 일 경우 노출 -->
+              <KeyValueItem class="text-body-5">
+                <KeyValueTitle>선납금</KeyValueTitle>
+                <KeyValueText>20% (22,145,111원)</KeyValueText>
+              </KeyValueItem>
+              <!-- // Case : 금융리스 일 경우 노출 -->
             </KeyValue>
           </div>
         </li>
@@ -124,7 +132,7 @@ export default {
             <div :class="$style['basic-list__symbol']">2.</div>
             <div :class="$style['basic-list__content']">
               한도증액 신청을 하여 정밀심사를 진행한다.<br />
-              <span class="color-blue"
+              <span class="color-green"
                 >(한도증액 신청은 별도 서류를 징구합니다.)</span
               >
             </div>
@@ -142,7 +150,7 @@ export default {
             <BasicButton :line="true" theme="quaternary">다음에</BasicButton>
           </ButtonListItem>
           <ButtonListItem>
-            <BasicButton theme="secondary">상담원 연결</BasicButton>
+            <BasicButton>상담원 연결</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

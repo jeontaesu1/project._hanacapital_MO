@@ -369,8 +369,8 @@ export default {
                     <div :class="$style['step__badge']">STEP 5</div>
                   </div>
                   <div :class="$style['step__text']">
-                    계약사항에 대해<strong>이해하였음을 유선상 확인</strong
-                    >합니다.
+                    계약사항에 대해
+                    <strong>이해하였음을 유선상 확인</strong>합니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
@@ -738,26 +738,17 @@ export default {
               <h4
                 class="text-body-4 color-gray-secondary font-weight-regular row-margin-mini"
               >
-                대출부대비용
+                인지세
               </h4>
 
-              <p class="text-body-4 color-gray-tertiary font-weight-light">
-                (인지세는 하나캐피탈과 금융소비자가 50%씩 부담합니다.)
-                <br />
+              <p class="text-body-2 font-weight-regular">
+                하나캐피탈과 금융소비자가 각각50% 부담
               </p>
-              <ul :class="[$style['basic-list'], 'row-margin-item']">
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'text-body-4',
-                    'color-black',
-                    'font-weight-regular',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']">-</div>
-                  <div :class="$style['basic-list__content']">인지세 1만원</div>
-                </li>
-              </ul>
+              <p
+                class="text-body-4 font-weight-light color-gray-tertiary row-margin-mini"
+              >
+                (인지세 1만원)
+              </p>
             </section>
 
             <section class="row-margin-contents">
@@ -960,8 +951,7 @@ export default {
                   </div>
                   <div :class="$style['step__text']">
                     지정 평가기관에서
-                    <strong>반환자동차의 상태 및 성능을 평가</strong
-                    >합니다.라인약정으로 계약이 진행됩니다.
+                    <strong>반환자동차의 상태 및 성능을 평가</strong>합니다.
                   </div>
                   <NoticeText :classNames="{ wrap: 'row-margin-item-small' }"
                     >평가결과에 따라 ‘차량평가정산금’이 발생될 수

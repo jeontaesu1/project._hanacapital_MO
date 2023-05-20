@@ -211,7 +211,7 @@ export default {
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer011Open"
-          >선택차량확인<br />AF_M06_l009</BasicButton
+          >선택차량확인<br />AF_M06_l011</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>

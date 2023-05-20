@@ -145,7 +145,7 @@ export default {
       <li :class="$style['gnb__item']">
         <RouterLink :class="$style['gnb__link']" to="">
           <div :class="$style['gnb__icon']"><ImgSample2 /></div>
-          <p :class="$style['gnb__name']">원큐자동차담보대출</p>
+          <p :class="$style['gnb__name']">우수고객추가대출</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">

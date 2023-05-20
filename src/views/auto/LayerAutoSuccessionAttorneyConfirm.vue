@@ -382,7 +382,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton theme="secondary">위임 동의하기</BasicButton>
+            <BasicButton>위임 동의하기</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

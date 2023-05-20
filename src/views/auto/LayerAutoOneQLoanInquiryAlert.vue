@@ -42,8 +42,8 @@ export default {
       <div>
         <p class="text-body-3 color-gray-tertiary row-margin-item-group">
           김하나님 연락처
-          <strong class="font-weight-medium color-blue">010-1234-****</strong>로
-          연락드리겠습니다.
+          <strong class="font-weight-medium color-green">010-1234-****</strong
+          >로 연락드리겠습니다.
         </p>
       </div>
 
@@ -54,7 +54,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton theme="secondary">확인</BasicButton>
+            <BasicButton>확인</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

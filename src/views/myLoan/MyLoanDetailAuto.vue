@@ -662,9 +662,7 @@ export default {
           :classNames="{ wrap: 'row-margin-item-medium' }"
           >만기후처리</BasicButton
         >
-        <BasicButton
-          theme="secondary"
-          :classNames="{ wrap: 'row-margin-item-medium' }"
+        <BasicButton :classNames="{ wrap: 'row-margin-item-medium' }"
           >중도상환신청</BasicButton
         >
       </div>
