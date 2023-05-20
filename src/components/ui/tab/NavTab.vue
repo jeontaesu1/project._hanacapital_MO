@@ -15,6 +15,7 @@ import UiTabList from '@/components/ui/tab/UiTabList.vue';
 const defaultClassNames = () => ({
   wrap: '',
   inner: '',
+  scroller: '',
   list: '',
 });
 
@@ -139,7 +140,7 @@ export default {
     <div :class="[$style['nav-tab__inner'], customClassNames.inner]">
       <div
         ref="scroller"
-        :class="[$style['nav-tab__scroller'], customClassNames.inner]"
+        :class="[$style['nav-tab__scroller'], customClassNames.scroller]"
       >
         <component
           :is="setComponent"
