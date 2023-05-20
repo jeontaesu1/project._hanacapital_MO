@@ -47,7 +47,7 @@ export default {
         </FullPopupHead>
       </template>
 
-      <div :class="[$style['upload-file'], 'row-margin-contents']">
+      <div :class="$style['upload-file']">
         <ul :class="$style['upload-file__list']">
           <li :class="$style['upload-file__item']">
             <div :class="$style['upload-file__icon']">

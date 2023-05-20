@@ -61,12 +61,26 @@
   &--spacing {
     &-small {
       .box-check-list {
-        &__list {
-          margin: -6px 0 0 -6px;
-        }
-
         &__item {
-          padding: 6px 0 0 6px;
+          & + .box-check-list__item {
+            margin-left: 6px;
+          }
+        }
+      }
+
+      &.box-check-list--wrap {
+        .box-check-list {
+          &__list {
+            margin: -6px 0 0 -6px;
+          }
+
+          &__item {
+            padding: 6px 0 0 6px;
+
+            & + .box-check-list__item {
+              margin-left: 0;
+            }
+          }
         }
       }
     }

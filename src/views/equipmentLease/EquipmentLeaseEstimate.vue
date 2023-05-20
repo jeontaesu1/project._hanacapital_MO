@@ -145,12 +145,12 @@ export default {
     </StickyBar>
     <!-- // Case : 복수 견적일 경우 탭 노출 -->
 
-    <div :class="$style['estimate']">
-      <UiAccordion :classNames="{ wrap: $style['estimate__list'] }">
-        <UiAccordionItem :classNames="{ item: $style['estimate__item'] }">
-          <div :class="$style['estimate__head']">
-            <div :class="$style['estimate__block']">
-              <div :class="$style['estimate__left']">
+    <div :class="$style['estimate-list']">
+      <UiAccordion :classNames="{ wrap: $style['estimate-list__list'] }">
+        <UiAccordionItem :classNames="{ item: $style['estimate-list__item'] }">
+          <div :class="$style['estimate-list__head']">
+            <div :class="$style['estimate-list__block']">
+              <div :class="$style['estimate-list__left']">
                 <KeyValue align="left" size="regular" verticalAlign="center">
                   <KeyValueItem :classNames="{ item: 'text-body-3' }">
                     <KeyValueTitle>
@@ -161,15 +161,17 @@ export default {
                 </KeyValue>
               </div>
             </div>
-            <div :class="$style['estimate__arrow']">
+            <div :class="$style['estimate-list__arrow']">
               <UiAccordionOpener
-                :classNames="{ button: $style['estimate__opener'] }"
+                :classNames="{ button: $style['estimate-list__opener'] }"
               />
             </div>
           </div>
 
-          <UiAccordionLayer :classNames="{ layer: $style['estimate__layer'] }">
-            <section :class="$style['estimate__contents']">
+          <UiAccordionLayer
+            :classNames="{ layer: $style['estimate-list__layer'] }"
+          >
+            <section :class="$style['estimate-list__contents']">
               <BoxCheckList>
                 <BoxCheckListItem>
                   <BoxCheck
@@ -197,10 +199,10 @@ export default {
           </UiAccordionLayer>
         </UiAccordionItem>
 
-        <UiAccordionItem :classNames="{ item: $style['estimate__item'] }">
-          <div :class="$style['estimate__head']">
-            <div :class="$style['estimate__block']">
-              <div :class="$style['estimate__left']">
+        <UiAccordionItem :classNames="{ item: $style['estimate-list__item'] }">
+          <div :class="$style['estimate-list__head']">
+            <div :class="$style['estimate-list__block']">
+              <div :class="$style['estimate-list__left']">
                 <KeyValue align="left" size="regular" verticalAlign="center">
                   <KeyValueItem :classNames="{ item: 'text-body-3' }">
                     <KeyValueTitle>
@@ -211,15 +213,17 @@ export default {
                 </KeyValue>
               </div>
             </div>
-            <div :class="$style['estimate__arrow']">
+            <div :class="$style['estimate-list__arrow']">
               <UiAccordionOpener
-                :classNames="{ button: $style['estimate__opener'] }"
+                :classNames="{ button: $style['estimate-list__opener'] }"
               />
             </div>
           </div>
 
-          <UiAccordionLayer :classNames="{ layer: $style['estimate__layer'] }">
-            <section :class="$style['estimate__contents']">
+          <UiAccordionLayer
+            :classNames="{ layer: $style['estimate-list__layer'] }"
+          >
+            <section :class="$style['estimate-list__contents']">
               <BoxCheckList>
                 <BoxCheckListItem>
                   <BoxCheck
@@ -248,10 +252,10 @@ export default {
         </UiAccordionItem>
 
         <!-- Case : 하나인 견적등록이 아닐 경우 -->
-        <UiAccordionItem :classNames="{ item: $style['estimate__item'] }">
-          <div :class="$style['estimate__head']">
-            <div :class="$style['estimate__block']">
-              <div :class="$style['estimate__left']">
+        <UiAccordionItem :classNames="{ item: $style['estimate-list__item'] }">
+          <div :class="$style['estimate-list__head']">
+            <div :class="$style['estimate-list__block']">
+              <div :class="$style['estimate-list__left']">
                 <KeyValue align="left" size="regular">
                   <KeyValueItem :classNames="{ item: 'text-body-3' }">
                     <KeyValueTitle>
@@ -286,10 +290,10 @@ export default {
           </div>
         </UiAccordionItem>
 
-        <UiAccordionItem :classNames="{ item: $style['estimate__item'] }">
-          <div :class="$style['estimate__head']">
-            <div :class="$style['estimate__block']">
-              <div :class="$style['estimate__left']">
+        <UiAccordionItem :classNames="{ item: $style['estimate-list__item'] }">
+          <div :class="$style['estimate-list__head']">
+            <div :class="$style['estimate-list__block']">
+              <div :class="$style['estimate-list__left']">
                 <KeyValue align="left" size="regular">
                   <KeyValueItem :classNames="{ item: 'text-body-3' }">
                     <KeyValueTitle>
@@ -332,10 +336,10 @@ export default {
         <!-- //Case : 하나인 견적등록이 아닐 경우 -->
 
         <!-- Case : 하나인 견적등록일 경우 -->
-        <UiAccordionItem :classNames="{ item: $style['estimate__item'] }">
-          <div :class="$style['estimate__head']">
-            <div :class="$style['estimate__block']">
-              <div :class="$style['estimate__left']">
+        <UiAccordionItem :classNames="{ item: $style['estimate-list__item'] }">
+          <div :class="$style['estimate-list__head']">
+            <div :class="$style['estimate-list__block']">
+              <div :class="$style['estimate-list__left']">
                 <KeyValue align="left" size="regular">
                   <KeyValueItem :classNames="{ item: 'text-body-3' }">
                     <KeyValueTitle>
@@ -349,10 +353,10 @@ export default {
           </div>
         </UiAccordionItem>
 
-        <UiAccordionItem :classNames="{ item: $style['estimate__item'] }">
-          <div :class="$style['estimate__head']">
-            <div :class="$style['estimate__block']">
-              <div :class="$style['estimate__left']">
+        <UiAccordionItem :classNames="{ item: $style['estimate-list__item'] }">
+          <div :class="$style['estimate-list__head']">
+            <div :class="$style['estimate-list__block']">
+              <div :class="$style['estimate-list__left']">
                 <KeyValue>
                   <KeyValueItem :classNames="{ item: 'text-body-3' }">
                     <KeyValueTitle>
@@ -369,10 +373,10 @@ export default {
         </UiAccordionItem>
         <!-- //Case : 하나인 견적등록일 경우 -->
 
-        <UiAccordionItem :classNames="{ item: $style['estimate__item'] }">
-          <div :class="$style['estimate__head']">
-            <div :class="$style['estimate__block']">
-              <div :class="$style['estimate__left']">
+        <UiAccordionItem :classNames="{ item: $style['estimate-list__item'] }">
+          <div :class="$style['estimate-list__head']">
+            <div :class="$style['estimate-list__block']">
+              <div :class="$style['estimate-list__left']">
                 <KeyValue align="left" size="regular">
                   <KeyValueItem :classNames="{ item: 'text-body-3' }">
                     <KeyValueTitle>
@@ -383,15 +387,17 @@ export default {
                 </KeyValue>
               </div>
             </div>
-            <div :class="$style['estimate__arrow']">
+            <div :class="$style['estimate-list__arrow']">
               <UiAccordionOpener
-                :classNames="{ button: $style['estimate__opener'] }"
+                :classNames="{ button: $style['estimate-list__opener'] }"
               />
             </div>
           </div>
 
-          <UiAccordionLayer :classNames="{ layer: $style['estimate__layer'] }">
-            <section :class="$style['estimate__contents']">
+          <UiAccordionLayer
+            :classNames="{ layer: $style['estimate-list__layer'] }"
+          >
+            <section :class="$style['estimate-list__contents']">
               <BoxCheckList :wrap="true" col="3" spacing="small">
                 <BoxCheckListItem>
                   <BoxCheck
@@ -496,10 +502,10 @@ export default {
           </UiAccordionLayer>
         </UiAccordionItem>
 
-        <UiAccordionItem :classNames="{ item: $style['estimate__item'] }">
-          <div :class="$style['estimate__head']">
-            <div :class="$style['estimate__block']">
-              <div :class="$style['estimate__left']">
+        <UiAccordionItem :classNames="{ item: $style['estimate-list__item'] }">
+          <div :class="$style['estimate-list__head']">
+            <div :class="$style['estimate-list__block']">
+              <div :class="$style['estimate-list__left']">
                 <KeyValue align="left" size="regular">
                   <KeyValueItem :classNames="{ item: 'text-body-3' }">
                     <KeyValueTitle>
@@ -513,10 +519,10 @@ export default {
           </div>
         </UiAccordionItem>
 
-        <UiAccordionItem :classNames="{ item: $style['estimate__item'] }">
-          <div :class="$style['estimate__head']">
-            <div :class="$style['estimate__block']">
-              <div :class="$style['estimate__left']">
+        <UiAccordionItem :classNames="{ item: $style['estimate-list__item'] }">
+          <div :class="$style['estimate-list__head']">
+            <div :class="$style['estimate-list__block']">
+              <div :class="$style['estimate-list__left']">
                 <KeyValue align="left" size="regular">
                   <KeyValueItem :classNames="{ item: 'text-body-3' }">
                     <KeyValueTitle>
@@ -526,19 +532,21 @@ export default {
                   </KeyValueItem>
                 </KeyValue>
               </div>
-              <div :class="$style['estimate__right']">
+              <div :class="$style['estimate-list__right']">
                 <div class="text-body-3 font-weight-bold">0 원</div>
               </div>
             </div>
-            <div :class="$style['estimate__arrow']">
+            <div :class="$style['estimate-list__arrow']">
               <UiAccordionOpener
-                :classNames="{ button: $style['estimate__opener'] }"
+                :classNames="{ button: $style['estimate-list__opener'] }"
               />
             </div>
           </div>
 
-          <UiAccordionLayer :classNames="{ layer: $style['estimate__layer'] }">
-            <section :class="$style['estimate__contents']">
+          <UiAccordionLayer
+            :classNames="{ layer: $style['estimate-list__layer'] }"
+          >
+            <section :class="$style['estimate-list__contents']">
               <BoxCheckList :wrap="true" col="3" spacing="small">
                 <BoxCheckListItem>
                   <BoxCheck
@@ -865,10 +873,10 @@ export default {
           </UiAccordionLayer>
         </UiAccordionItem>
 
-        <UiAccordionItem :classNames="{ item: $style['estimate__item'] }">
-          <div :class="$style['estimate__head']">
-            <div :class="$style['estimate__block']">
-              <div :class="$style['estimate__left']">
+        <UiAccordionItem :classNames="{ item: $style['estimate-list__item'] }">
+          <div :class="$style['estimate-list__head']">
+            <div :class="$style['estimate-list__block']">
+              <div :class="$style['estimate-list__left']">
                 <KeyValue align="left" size="regular">
                   <KeyValueItem :classNames="{ item: 'text-body-3' }">
                     <KeyValueTitle>
@@ -878,19 +886,21 @@ export default {
                   </KeyValueItem>
                 </KeyValue>
               </div>
-              <div :class="$style['estimate__right']">
+              <div :class="$style['estimate-list__right']">
                 <div class="text-body-3 font-weight-bold">0 원</div>
               </div>
             </div>
-            <div :class="$style['estimate__arrow']">
+            <div :class="$style['estimate-list__arrow']">
               <UiAccordionOpener
-                :classNames="{ button: $style['estimate__opener'] }"
+                :classNames="{ button: $style['estimate-list__opener'] }"
               />
             </div>
           </div>
 
-          <UiAccordionLayer :classNames="{ layer: $style['estimate__layer'] }">
-            <section :class="$style['estimate__contents']">
+          <UiAccordionLayer
+            :classNames="{ layer: $style['estimate-list__layer'] }"
+          >
+            <section :class="$style['estimate-list__contents']">
               <BoxCheckList :wrap="true" col="3" spacing="small">
                 <BoxCheckListItem>
                   <BoxCheck
@@ -1217,10 +1227,10 @@ export default {
           </UiAccordionLayer>
         </UiAccordionItem>
 
-        <UiAccordionItem :classNames="{ item: $style['estimate__item'] }">
-          <div :class="$style['estimate__head']">
-            <div :class="$style['estimate__block']">
-              <div :class="$style['estimate__left']">
+        <UiAccordionItem :classNames="{ item: $style['estimate-list__item'] }">
+          <div :class="$style['estimate-list__head']">
+            <div :class="$style['estimate-list__block']">
+              <div :class="$style['estimate-list__left']">
                 <KeyValue align="left" size="regular">
                   <KeyValueItem :classNames="{ item: 'text-body-3' }">
                     <KeyValueTitle>
@@ -1230,19 +1240,21 @@ export default {
                   </KeyValueItem>
                 </KeyValue>
               </div>
-              <div :class="$style['estimate__right']">
+              <div :class="$style['estimate-list__right']">
                 <div class="text-body-3 font-weight-bold">0 원</div>
               </div>
             </div>
-            <div :class="$style['estimate__arrow']">
+            <div :class="$style['estimate-list__arrow']">
               <UiAccordionOpener
-                :classNames="{ button: $style['estimate__opener'] }"
+                :classNames="{ button: $style['estimate-list__opener'] }"
               />
             </div>
           </div>
 
-          <UiAccordionLayer :classNames="{ layer: $style['estimate__layer'] }">
-            <section :class="$style['estimate__contents']">
+          <UiAccordionLayer
+            :classNames="{ layer: $style['estimate-list__layer'] }"
+          >
+            <section :class="$style['estimate-list__contents']">
               <BoxCheckList :wrap="true" col="3" spacing="small">
                 <BoxCheckListItem>
                   <BoxCheck
@@ -1569,10 +1581,10 @@ export default {
           </UiAccordionLayer>
         </UiAccordionItem>
 
-        <UiAccordionItem :classNames="{ item: $style['estimate__item'] }">
-          <div :class="$style['estimate__head']">
-            <div :class="$style['estimate__block']">
-              <div :class="$style['estimate__left']">
+        <UiAccordionItem :classNames="{ item: $style['estimate-list__item'] }">
+          <div :class="$style['estimate-list__head']">
+            <div :class="$style['estimate-list__block']">
+              <div :class="$style['estimate-list__left']">
                 <KeyValue align="left" size="regular">
                   <KeyValueItem :classNames="{ item: 'text-body-3' }">
                     <KeyValueTitle>
@@ -1584,19 +1596,21 @@ export default {
                   </KeyValueItem>
                 </KeyValue>
               </div>
-              <div :class="$style['estimate__right']">
+              <div :class="$style['estimate-list__right']">
                 <div class="text-body-3 font-weight-bold">0 원</div>
               </div>
             </div>
-            <div :class="$style['estimate__arrow']">
+            <div :class="$style['estimate-list__arrow']">
               <UiAccordionOpener
-                :classNames="{ button: $style['estimate__opener'] }"
+                :classNames="{ button: $style['estimate-list__opener'] }"
               />
             </div>
           </div>
 
-          <UiAccordionLayer :classNames="{ layer: $style['estimate__layer'] }">
-            <section :class="$style['estimate__contents']">
+          <UiAccordionLayer
+            :classNames="{ layer: $style['estimate-list__layer'] }"
+          >
+            <section :class="$style['estimate-list__contents']">
               <BoxCheckList :wrap="true" col="6" spacing="small">
                 <BoxCheckListItem>
                   <BoxCheck
@@ -1847,10 +1861,10 @@ export default {
           </UiAccordionLayer>
         </UiAccordionItem>
 
-        <UiAccordionItem :classNames="{ item: $style['estimate__item'] }">
-          <div :class="$style['estimate__head']">
-            <div :class="$style['estimate__block']">
-              <div :class="$style['estimate__left']">
+        <UiAccordionItem :classNames="{ item: $style['estimate-list__item'] }">
+          <div :class="$style['estimate-list__head']">
+            <div :class="$style['estimate-list__block']">
+              <div :class="$style['estimate-list__left']">
                 <KeyValue align="left" size="regular">
                   <KeyValueItem :classNames="{ item: 'text-body-3' }">
                     <KeyValueTitle>
@@ -1861,15 +1875,17 @@ export default {
                 </KeyValue>
               </div>
             </div>
-            <div :class="$style['estimate__arrow']">
+            <div :class="$style['estimate-list__arrow']">
               <UiAccordionOpener
-                :classNames="{ button: $style['estimate__opener'] }"
+                :classNames="{ button: $style['estimate-list__opener'] }"
               />
             </div>
           </div>
 
-          <UiAccordionLayer :classNames="{ layer: $style['estimate__layer'] }">
-            <section :class="$style['estimate__contents']">
+          <UiAccordionLayer
+            :classNames="{ layer: $style['estimate-list__layer'] }"
+          >
+            <section :class="$style['estimate-list__contents']">
               <BoxCheckList>
                 <BoxCheckListItem>
                   <BoxCheck
@@ -1897,10 +1913,10 @@ export default {
           </UiAccordionLayer>
         </UiAccordionItem>
 
-        <UiAccordionItem :classNames="{ item: $style['estimate__item'] }">
-          <div :class="$style['estimate__head']">
-            <div :class="$style['estimate__block']">
-              <div :class="$style['estimate__left']">
+        <UiAccordionItem :classNames="{ item: $style['estimate-list__item'] }">
+          <div :class="$style['estimate-list__head']">
+            <div :class="$style['estimate-list__block']">
+              <div :class="$style['estimate-list__left']">
                 <KeyValue align="left" size="regular">
                   <KeyValueItem :classNames="{ item: 'text-body-3' }">
                     <KeyValueTitle>
@@ -1912,19 +1928,21 @@ export default {
                   </KeyValueItem>
                 </KeyValue>
               </div>
-              <div :class="$style['estimate__right']">
+              <div :class="$style['estimate-list__right']">
                 <div class="text-body-3 font-weight-bold">0%</div>
               </div>
             </div>
-            <div :class="$style['estimate__arrow']">
+            <div :class="$style['estimate-list__arrow']">
               <UiAccordionOpener
-                :classNames="{ button: $style['estimate__opener'] }"
+                :classNames="{ button: $style['estimate-list__opener'] }"
               />
             </div>
           </div>
 
-          <UiAccordionLayer :classNames="{ layer: $style['estimate__layer'] }">
-            <section :class="$style['estimate__contents']">
+          <UiAccordionLayer
+            :classNames="{ layer: $style['estimate-list__layer'] }"
+          >
+            <section :class="$style['estimate-list__contents']">
               <BoxCheckList>
                 <BoxCheckListItem>
                   <BoxCheck
@@ -1988,7 +2006,7 @@ export default {
         </UiAccordionItem>
       </UiAccordion>
 
-      <div :class="$style['estimate__foot']">
+      <div :class="$style['estimate-list__foot']">
         <!-- Case : 견적 계산 전 -->
         <KeyValue margin="regular" verticalAlign="center">
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
@@ -1998,15 +2016,17 @@ export default {
               월 리스료
             </KeyValueTitle>
             <KeyValueText>
-              <BasicButton size="mini" inline="true">계산하기</BasicButton>
-              <!-- Case : 로딩중 -->
-              <BasicButton size="mini" inline="true">
-                계산중
-                <template v-slot:rightIcon>
-                  <div :class="$style['loading-icon']"></div>
-                </template>
-              </BasicButton>
-              <!-- //Case : 로딩중 -->
+              <div class="inline-wrap">
+                <BasicButton size="mini" inline="true">계산하기</BasicButton>
+                <!-- Case : 로딩중 -->
+                <BasicButton size="mini" inline="true">
+                  계산중
+                  <template v-slot:rightIcon>
+                    <div :class="$style['loading-icon']"></div>
+                  </template>
+                </BasicButton>
+                <!-- //Case : 로딩중 -->
+              </div>
             </KeyValueText>
           </KeyValueItem>
 

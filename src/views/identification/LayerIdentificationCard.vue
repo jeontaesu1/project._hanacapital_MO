@@ -360,11 +360,7 @@ export default {
           <FormInvalid :error="state.nameError">
             <InputBlock :error="state.nameError">
               <InputBlockCell :flexible="true">
-                <BasicInput
-                  title="이름"
-                  id="layerIdentificationCardName"
-                  align="right"
-                />
+                <BasicInput title="이름" id="layerIdentificationCardName" />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>

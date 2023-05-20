@@ -11,6 +11,7 @@ import { useHead } from '@vueuse/head';
 import favicon from '@/assets/images/common/favicon.ico';
 import DefaultLayout from '@/layouts/DefaultLayout.vue';
 import NoneLayout from '@/layouts/NoneLayout.vue';
+import MainBenefitLayout from '@/layouts/main/MainBenefitLayout.vue';
 import LoadingLayer from '@/components/ui/layout/LoadingLayer.vue';
 
 export default {
@@ -87,6 +88,7 @@ export default {
     const layouts = {
       DefaultLayout,
       NoneLayout,
+      MainBenefitLayout,
     };
     const layout = computed(() => {
       const { layout } = route.meta;

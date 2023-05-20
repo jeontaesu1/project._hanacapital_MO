@@ -556,6 +556,7 @@ const routes = [
     path: '/main/benefit',
     name: '/main/benefit',
     component: () => import('@/views/main/MainBenefit.vue'),
+    meta: { layout: 'MainBenefitLayout' },
   },
 
   // sign

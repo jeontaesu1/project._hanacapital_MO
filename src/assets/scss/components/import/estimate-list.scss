@@ -1,4 +1,4 @@
-.estimate {
+.estimate-list {
   border: 1px solid $color-gray-20;
   border-radius: 8px;
   overflow: hidden;
@@ -9,7 +9,7 @@
     }
 
     &:global(.is-accordion-opened) {
-      .estimate__head {
+      .estimate-list__head {
         background-color: rgba($color-navy-50, 0.08);
       }
 
@@ -44,8 +44,9 @@
 
   &__arrow {
     flex: none;
+    margin-top: 1px;
 
-    .estimate__opener {
+    .estimate-list__opener {
       position: static;
 
       &::before {

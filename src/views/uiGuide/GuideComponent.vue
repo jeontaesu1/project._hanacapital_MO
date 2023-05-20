@@ -92,6 +92,10 @@ import ColorSelect from '@/components/ui/form/ColorSelect.vue';
 import ColorSelectList from '@/components/ui/form/ColorSelectList.vue';
 import ColorSelectListItem from '@/components/ui/form/ColorSelectListItem.vue';
 import DownloadButton from '@/components/ui/button/DownloadButton.vue';
+import BasicBanner from '@/components/ui/banner/BasicBanner.vue';
+import EventBanner from '@/components/ui/banner/EventBanner.vue';
+import FunBanner from '@/components/ui/banner/FunBanner.vue';
+import CouponBanner from '@/components/ui/banner/CouponBanner.vue';
 
 import BrandLogo001 from '@/assets/images/card-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/card-logo/lotte.svg?component';
@@ -228,6 +232,10 @@ export default {
     ColorSelectList,
     ColorSelectListItem,
     DownloadButton,
+    BasicBanner,
+    EventBanner,
+    FunBanner,
+    CouponBanner,
     IconAdd,
     BrandLogo001,
     BrandLogo002,
@@ -4939,12 +4947,14 @@ export default {
       <h2 class="test-section-title">Estimate List</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
-        <div :class="$style['estimate']">
-          <UiAccordion :classNames="{ wrap: $style['estimate__list'] }">
-            <UiAccordionItem :classNames="{ item: $style['estimate__item'] }">
-              <div :class="$style['estimate__head']">
-                <div :class="$style['estimate__block']">
-                  <div :class="$style['estimate__left']">
+        <div :class="$style['estimate-list']">
+          <UiAccordion :classNames="{ wrap: $style['estimate-list__list'] }">
+            <UiAccordionItem
+              :classNames="{ item: $style['estimate-list__item'] }"
+            >
+              <div :class="$style['estimate-list__head']">
+                <div :class="$style['estimate-list__block']">
+                  <div :class="$style['estimate-list__left']">
                     <KeyValue align="left" size="regular">
                       <KeyValueItem :classNames="{ item: 'text-body-3' }">
                         <KeyValueTitle>품목</KeyValueTitle>
@@ -4953,26 +4963,28 @@ export default {
                     </KeyValue>
                   </div>
                 </div>
-                <div :class="$style['estimate__arrow']">
+                <div :class="$style['estimate-list__arrow']">
                   <UiAccordionOpener
-                    :classNames="{ button: $style['estimate__opener'] }"
+                    :classNames="{ button: $style['estimate-list__opener'] }"
                   />
                 </div>
               </div>
 
               <UiAccordionLayer
-                :classNames="{ layer: $style['estimate__layer'] }"
+                :classNames="{ layer: $style['estimate-list__layer'] }"
               >
-                <section :class="$style['estimate__contents']">
+                <section :class="$style['estimate-list__contents']">
                   // 내용 노출
                 </section>
               </UiAccordionLayer>
             </UiAccordionItem>
 
-            <UiAccordionItem :classNames="{ item: $style['estimate__item'] }">
-              <div :class="$style['estimate__head']">
-                <div :class="$style['estimate__block']">
-                  <div :class="$style['estimate__left']">
+            <UiAccordionItem
+              :classNames="{ item: $style['estimate-list__item'] }"
+            >
+              <div :class="$style['estimate-list__head']">
+                <div :class="$style['estimate-list__block']">
+                  <div :class="$style['estimate-list__left']">
                     <KeyValue align="left" size="regular">
                       <KeyValueItem :classNames="{ item: 'text-body-3' }">
                         <KeyValueTitle>보증금</KeyValueTitle>
@@ -4980,28 +4992,28 @@ export default {
                       </KeyValueItem>
                     </KeyValue>
                   </div>
-                  <div :class="$style['estimate__right']">
+                  <div :class="$style['estimate-list__right']">
                     <div class="text-body-3 font-weight-bold">0 원</div>
                   </div>
                 </div>
-                <div :class="$style['estimate__arrow']">
+                <div :class="$style['estimate-list__arrow']">
                   <UiAccordionOpener
-                    :classNames="{ button: $style['estimate__opener'] }"
+                    :classNames="{ button: $style['estimate-list__opener'] }"
                   />
                 </div>
               </div>
 
               <UiAccordionLayer
-                :classNames="{ layer: $style['estimate__layer'] }"
+                :classNames="{ layer: $style['estimate-list__layer'] }"
               >
-                <section :class="$style['estimate__contents']">
+                <section :class="$style['estimate-list__contents']">
                   // 내용 노출
                 </section>
               </UiAccordionLayer>
             </UiAccordionItem>
           </UiAccordion>
 
-          <div :class="$style['estimate__foot']">
+          <div :class="$style['estimate-list__foot']">
             <KeyValue margin="regular" verticalAlign="center">
               <KeyValueItem :classNames="{ item: 'text-body-3' }">
                 <KeyValueTitle
@@ -8484,218 +8496,245 @@ export default {
     </section>
 
     <section class="test-section">
-      <h2 class="test-section-title">Benefit List</h2>
+      <h2 class="test-section-title">BasicBanner</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
-        <div :class="$style['benefit']">
-          <ul :class="$style['benefit__list']">
-            <li :class="$style['benefit__item']">
-              <div :class="$style['benefit__block']">
-                <button type="button" :class="$style['benefit__button']">
-                  <div :class="$style['benefit__inner']">
-                    <div :class="$style['benefit__left']">
-                      <RoundStatus
-                        size="small"
-                        theme="duodenary"
-                        :classNames="{ wrap: 'row-margin-item-regular' }"
-                        >진행중</RoundStatus
-                      >
-                      <h3 :class="$style['benefit__title']">
-                        에코플러스 자동차보험
-                      </h3>
-                      <p :class="$style['benefit__sub']">지금 바로 GO!</p>
-                      <div :class="$style['benefit__date']">
-                        2022.12.01 ~ 2022.12.31
-                      </div>
-                    </div>
-                    <div :class="$style['benefit__right']">
-                      <div :class="$style['benefit__icon']">
-                        <img
-                          src="@/assets/images/_dummy/banner-money-up.png"
-                          alt="샘플 아이콘"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </button>
-              </div>
-            </li>
-            <li :class="$style['benefit__item']">
-              <div :class="$style['benefit__block']">
-                <div :class="$style['benefit__inner']">
-                  <div :class="$style['benefit__left']">
-                    <RoundStatus
-                      size="small"
-                      theme="duodenary"
-                      :classNames="{ wrap: 'row-margin-item-regular' }"
-                      >진행중</RoundStatus
-                    >
-                    <h3 :class="$style['benefit__title']">
-                      에코플러스 자동차보험
-                    </h3>
-                    <p :class="$style['benefit__sub']">
-                      오늘 신청하면 혜택이 두배!<br />
-                      1+1 한명 더 자동 가입되는 안심 혜택 놓치지 마세요.
-                    </p>
-                    <div :class="$style['benefit__link']">
-                      <TextButton
-                        theme="secondary"
-                        :block="true"
-                        :classNames="{ wrap: $style['benefit__link-button'] }"
-                      >
-                        바로가기
-                        <template v-slot:rightIcon>
-                          <IconLink />
-                        </template>
-                      </TextButton>
-                    </div>
-                  </div>
-                  <div :class="$style['benefit__right']">
-                    <div :class="$style['benefit__icon']">
-                      <img
-                        src="@/assets/images/_dummy/banner-money-up.png"
-                        alt="샘플 아이콘"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
+
+        <BasicBanner
+          thumb="/images/_dummy/banner-money-up.png"
+          @click="() => {}"
+        >
+          <p class="text-body-4 color-gray row-margin-mini">
+            비용NO! 보험NO! 내 차OK!
+          </p>
+          <h3 class="text-body-1 font-weight-medium">다이렉트 장기렌터카</h3>
+        </BasicBanner>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">RouterLink</h3>
+
+        <BasicBanner
+          tagName="RouterLink"
+          to=""
+          thumb="/images/_dummy/banner-money-up.png"
+        >
+          <p class="text-body-4 color-gray row-margin-mini">
+            비용NO! 보험NO! 내 차OK!
+          </p>
+          <h3 class="text-body-1 font-weight-medium">다이렉트 장기렌터카</h3>
+        </BasicBanner>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">EventBanner</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <EventBanner
+          thumb="/images/_dummy/banner-money-up.png"
+          @click="() => {}"
+        >
+          <div class="inline-wrap row-margin-item-regular">
+            <RoundStatus size="small" theme="duodenary">진행중</RoundStatus>
+          </div>
+          <h3 class="text-body-1 font-weight-medium ellipsis">
+            에코플러스 자동차보험
+          </h3>
+          <p class="text-body-4 color-gray row-margin-mini multi-ellipsis">
+            지금 바로 GO!
+          </p>
+          <p
+            class="text-body-5 color-gray font-weight-light row-margin-item-regular"
+          >
+            2022.12.01 ~ 2022.12.31
+          </p>
+        </EventBanner>
+
+        <EventBanner
+          thumb="/images/_dummy/banner-money-up.png"
+          @click="() => {}"
+          :disabledStyle="true"
+        >
+          <div class="inline-wrap row-margin-item-regular">
+            <RoundStatus size="small" theme="duodenary">종료</RoundStatus>
+          </div>
+          <h3 class="text-body-1 font-weight-medium ellipsis">
+            에코플러스 자동차보험
+          </h3>
+          <p class="text-body-4 color-gray row-margin-mini multi-ellipsis">
+            지금 바로 GO!
+          </p>
+          <p
+            class="text-body-5 color-gray font-weight-light row-margin-item-regular"
+          >
+            2022.12.01 ~ 2022.12.31
+          </p>
+        </EventBanner>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">RouterLink</h3>
+
+        <EventBanner
+          tagName="RouterLink"
+          to=""
+          thumb="/images/_dummy/banner-money-up.png"
+        >
+          <div class="inline-wrap row-margin-item-regular">
+            <RoundStatus size="small" theme="duodenary">진행중</RoundStatus>
+          </div>
+          <h3 class="text-body-1 font-weight-medium ellipsis">
+            에코플러스 자동차보험
+          </h3>
+          <p class="text-body-4 color-gray row-margin-mini multi-ellipsis">
+            지금 바로 GO!
+          </p>
+          <p
+            class="text-body-5 color-gray font-weight-light row-margin-item-regular"
+          >
+            2022.12.01 ~ 2022.12.31
+          </p>
+        </EventBanner>
+
+        <EventBanner
+          tagName="RouterLink"
+          to=""
+          thumb="/images/_dummy/banner-money-up.png"
+          :disabledStyle="true"
+        >
+          <div class="inline-wrap row-margin-item-regular">
+            <RoundStatus size="small" theme="duodenary">종료</RoundStatus>
+          </div>
+          <h3 class="text-body-1 font-weight-medium ellipsis">
+            에코플러스 자동차보험
+          </h3>
+          <p class="text-body-4 color-gray row-margin-mini multi-ellipsis">
+            지금 바로 GO!
+          </p>
+          <p
+            class="text-body-5 color-gray font-weight-light row-margin-item-regular"
+          >
+            2022.12.01 ~ 2022.12.31
+          </p>
+        </EventBanner>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">FunBanner</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <FunBanner
+          thumb="/images/_dummy/thumbnail-sample2.jpg"
+          @click="() => {}"
+        >
+          <h3 class="text-body-1 font-weight-medium ellipsis">
+            중고차 구입 꿀팁
+          </h3>
+          <p class="text-body-4 color-gray row-margin-mini multi-ellipsis">
+            중고차 구입 이렇게만 하면 전문가 부럽지 않은 구매가이드
+          </p>
+        </FunBanner>
+
+        <FunBanner
+          thumb="/images/_dummy/thumbnail-sample3.jpg"
+          @click="() => {}"
+        >
+          <h3 class="text-body-1 font-weight-medium ellipsis">
+            중고차 구입 꿀팁
+          </h3>
+          <p class="text-body-4 color-gray row-margin-mini multi-ellipsis">
+            중고차 구입 이렇게만 하면 전문가 부럽지 않은 구매가이드
+          </p>
+        </FunBanner>
       </div>
 
       <div class="test-section-sub">
-        <h3 class="test-section-sub-title">End</h3>
-        <div :class="$style['benefit']">
-          <ul :class="$style['benefit__list']">
-            <li :class="$style['benefit__item']">
-              <div
-                :class="[
-                  $style['benefit__block'],
-                  $style['benefit__block--end'],
-                ]"
-              >
-                <button type="button" :class="$style['benefit__button']">
-                  <div :class="$style['benefit__inner']">
-                    <div :class="$style['benefit__left']">
-                      <RoundStatus
-                        size="small"
-                        theme="duodenary"
-                        :classNames="{ wrap: 'row-margin-item-regular' }"
-                        >종료</RoundStatus
-                      >
-                      <h3 :class="$style['benefit__title']">
-                        에코플러스 자동차보험
-                      </h3>
-                      <p :class="$style['benefit__sub']">
-                        오늘 신청하면 혜택이 두배!<br />
-                        1+1 한명 더 자동 가입되는 안심 혜택 놓치지 마세요.
-                      </p>
-                      <div :class="$style['benefit__date']">
-                        2022.12.01 ~ 2022.12.31
-                      </div>
-                    </div>
-                    <div :class="$style['benefit__right']">
-                      <div :class="$style['benefit__icon']">
-                        <img
-                          src="@/assets/images/_dummy/banner-money-up.png"
-                          alt="샘플 아이콘"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </button>
-              </div>
-            </li>
-          </ul>
-        </div>
+        <h3 class="test-section-sub-title">RouterLink</h3>
+
+        <FunBanner
+          tagName="RouterLink"
+          to=""
+          thumb="/images/_dummy/thumbnail-sample2.jpg"
+        >
+          <h3 class="text-body-1 font-weight-medium ellipsis">
+            중고차 구입 꿀팁
+          </h3>
+          <p class="text-body-4 color-gray row-margin-mini multi-ellipsis">
+            중고차 구입 이렇게만 하면 전문가 부럽지 않은 구매가이드
+          </p>
+        </FunBanner>
+
+        <FunBanner
+          tagName="RouterLink"
+          to=""
+          thumb="/images/_dummy/thumbnail-sample3.jpg"
+        >
+          <h3 class="text-body-1 font-weight-medium ellipsis">
+            중고차 구입 꿀팁
+          </h3>
+          <p class="text-body-4 color-gray row-margin-mini multi-ellipsis">
+            중고차 구입 이렇게만 하면 전문가 부럽지 않은 구매가이드
+          </p>
+        </FunBanner>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">CouponBanner</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <CouponBanner logo="/images/_dummy/logo-sample.png" @click="() => {}">
+          <p class="text-body-4 font-weight-light row-margin-mini ellipsis">
+            스타벅스
+          </p>
+          <h3 class="text-body-3 font-weight-medium multi-ellipsis">
+            디카페인 콜드브루 라떼 T 쿠폰
+          </h3>
+          <p class="text-body-5 color-gray font-weight-light row-margin-item">
+            2022.12.01 ~ 2022.12.31
+          </p>
+          <template v-slot:download>
+            <DownloadButton
+              tagName="a"
+              href="/foo/bar.png"
+              theme="secondary"
+              download
+              text="교환권 저장"
+            />
+          </template>
+        </CouponBanner>
       </div>
 
       <div class="test-section-sub">
-        <h3 class="test-section-sub-title">Fun</h3>
-        <div :class="$style['benefit']">
-          <ul :class="$style['benefit__list']">
-            <li :class="$style['benefit__item']">
-              <div
-                :class="[
-                  $style['benefit__block'],
-                  $style['benefit__block--fun'],
-                ]"
-              >
-                <button type="button" :class="$style['benefit__button']">
-                  <div :class="$style['benefit__inner']">
-                    <div :class="$style['benefit__left']">
-                      <h3 :class="$style['benefit__title']">
-                        소모품 교체하기 (초보자 가이드)
-                      </h3>
-                      <p :class="$style['benefit__sub']">
-                        소모품 교체 체크리스트!<br />
-                        초보자 가이드로 언제 어디서나 쉽게 교체할 수 있어요.
-                        초보자 가이드로 언제 어디서나 쉽게 교체할 수 있어요.
-                      </p>
-                    </div>
-                    <div :class="$style['benefit__right']">
-                      <div
-                        :class="$style['benefit__thumbnail']"
-                        style="
-                          background-image: url('/src/assets/images/_dummy/thumbnail-sample2.jpg');
-                        "
-                      ></div>
-                    </div>
-                  </div>
-                </button>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
+        <h3 class="test-section-sub-title">RouterLink</h3>
 
-      <div class="test-section-sub">
-        <h3 class="test-section-sub-title">Coupon</h3>
-        <div :class="$style['benefit']">
-          <ul :class="$style['benefit__list']">
-            <li :class="$style['benefit__item']">
-              <div
-                :class="[
-                  $style['benefit__block'],
-                  $style['benefit__block--coupon'],
-                ]"
-              >
-                <div :class="$style['benefit__inner']">
-                  <div :class="$style['benefit__left']">
-                    <button type="button" :class="$style['benefit__button']">
-                      <div :class="$style['benefit__logo']">
-                        <img
-                          src="@/assets/images/_dummy/logo-sample.png"
-                          alt="샘플 로고"
-                        />
-                      </div>
-                      <div :class="$style['benefit__info']">
-                        <div :class="$style['benefit__category']">스타벅스</div>
-                        <div :class="$style['benefit__title']">
-                          디카페인 콜드브루 라떼 T 쿠폰
-                        </div>
-                        <div :class="$style['benefit__date']">
-                          2022.12.01 ~ 2022.12.31
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-                  <div :class="$style['benefit__right']">
-                    <DownloadButton
-                      tagName="a"
-                      href="/foo/bar.png"
-                      theme="secondary"
-                      download
-                      :class="$style['benefit__download']"
-                    />
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
+        <CouponBanner
+          logo="/images/_dummy/logo-sample.png"
+          tagName="RouterLink"
+          to=""
+        >
+          <p class="text-body-4 font-weight-light row-margin-mini ellipsis">
+            스타벅스
+          </p>
+          <h3 class="text-body-3 font-weight-medium multi-ellipsis">
+            디카페인 콜드브루 라떼 T 쿠폰
+          </h3>
+          <p class="text-body-5 color-gray font-weight-light row-margin-item">
+            2022.12.01 ~ 2022.12.31
+          </p>
+          <template v-slot:download>
+            <DownloadButton
+              tagName="a"
+              href="/foo/bar.png"
+              theme="secondary"
+              download
+              text="교환권 저장"
+            />
+          </template>
+        </CouponBanner>
       </div>
     </section>
 

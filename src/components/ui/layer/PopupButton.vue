@@ -6,6 +6,7 @@ import IconClose from '@/assets/images/common/close.svg?component';
 import IconSearch from '@/assets/images/common/search.svg?component';
 import IconShare from '@/assets/images/common/share.svg?component';
 import IconSubscript from '@/assets/images/common/subscription.svg?component';
+import IconSubscriptOn from '@/assets/images/common/subscription-on.svg?component';
 
 const defaultClassNames = () => ({
   wrap: '',
@@ -53,6 +54,14 @@ export default {
       subscript: IconSubscript,
     };
 
+    const iconsActive = {
+      close: IconClose,
+      back: IconBack,
+      search: IconSearch,
+      share: IconShare,
+      subscript: IconSubscriptOn,
+    };
+
     const texts = {
       close: '레이어 닫기',
       back: '뒤로가기',
@@ -65,6 +74,7 @@ export default {
       customClassNames,
       isSlot,
       icons,
+      iconsActive,
       texts,
     };
   },
@@ -83,10 +93,10 @@ export default {
       },
       customClassNames.wrap,
     ]"
-    :title="active ? '선택 됨' : null"
+    :title="active ? '활성화 됨' : null"
   >
     <component
-      :is="icons[type]"
+      :is="active ? iconsActive[type] : icons[type]"
       :class="[$style['popup-button__icon'], customClassNames.icon]"
     />
     <span

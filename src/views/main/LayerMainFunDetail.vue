@@ -36,8 +36,8 @@ export default {
       <template v-slot:head>
         <FullPopupHead>
           <template v-slot:right>
-            <PopupButton type="subscript" theme="white" />
-            <PopupButton type="subscript" theme="white" :active="true" />
+            <PopupButton type="subscript" />
+            <PopupButton type="subscript" :active="true" />
             <PopupButton type="share" />
             <PopupButton @click="layerSlotProps.close()" />
           </template>
