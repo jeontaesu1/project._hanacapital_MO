@@ -1,6 +1,5 @@
 <script>
-// AF_M07_l008
-// AF_M07_l009
+// AF_M07_l009 / AF_M07_l010
 import { ref, reactive } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';

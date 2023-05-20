@@ -1,0 +1,26 @@
+@import '@/assets/scss/components/import/icon-list.scss';
+@import '@/assets/scss/components/import/empty.scss';
+
+.wrap {
+  padding-top: 0;
+}
+
+.symbol {
+  flex: none;
+  position: relative;
+  display: block;
+  height: #{$line-height-default}em;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -1px 0 0 -1px;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background-color: $color-gray-80;
+  }
+}

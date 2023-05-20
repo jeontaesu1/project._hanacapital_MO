@@ -6,6 +6,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
+import LayerMainPushDetail from '@/views/main/LayerMainPushDetail.vue';
 import LayerMainRentalDetail from '@/views/main/LayerMainRentalDetail.vue';
 import LayerMainAffiliate from '@/views/main/LayerMainAffiliate.vue';
 import LayerMainEventDetail from '@/views/main/LayerMainEventDetail.vue';
@@ -18,6 +19,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
+    LayerMainPushDetail,
     LayerMainRentalDetail,
     LayerMainAffiliate,
     LayerMainEventDetail,
@@ -30,6 +32,7 @@ export default {
     const layer003 = ref(null);
     const layer004 = ref(null);
     const layer005 = ref(null);
+    const layer006 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -46,6 +49,9 @@ export default {
     const layer005Open = (e = {}) => {
       layer005.value.layer.open(e.target);
     };
+    const layer006Open = (e = {}) => {
+      layer006.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -53,11 +59,13 @@ export default {
       layer003,
       layer004,
       layer005,
+      layer006,
       layer001Open,
       layer002Open,
       layer003Open,
       layer004Open,
       layer005Open,
+      layer006Open,
     };
   },
 };
@@ -73,35 +81,41 @@ export default {
     >
       <ButtonListItem>
         <BasicButton @click="layer001Open">
+          알림함_상세<br />Main_M06_l001
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer002Open">
           렌탈 상세<br />Main_M07_l001</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer002Open">
+        <BasicButton @click="layer003Open">
           제휴사 연결<br />Main_M07_l002</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer003Open">
+        <BasicButton @click="layer004Open">
           이벤트 상세<br />Main_M05_l001</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer004Open">
+        <BasicButton @click="layer005Open">
           쿠폰 상세<br />Main_M05_l003</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer005Open">
+        <BasicButton @click="layer006Open">
           FUN 상세<br />Main_M05_l002
         </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
-    <LayerMainRentalDetail ref="layer001" />
-    <LayerMainAffiliate ref="layer002" />
-    <LayerMainEventDetail ref="layer003" />
-    <LayerMainCouponDetail ref="layer004" />
-    <LayerMainFunDetail ref="layer005" />
+    <LayerMainPushDetail ref="layer001" />
+    <LayerMainRentalDetail ref="layer002" />
+    <LayerMainAffiliate ref="layer003" />
+    <LayerMainEventDetail ref="layer004" />
+    <LayerMainCouponDetail ref="layer005" />
+    <LayerMainFunDetail ref="layer006" />
   </PageContents>
 </template>
