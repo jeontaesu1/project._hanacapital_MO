@@ -73,6 +73,7 @@ export default {
         <h3 class="text-body-2 font-weight-bold row-margin-item-medium">
           본인/배우자 공동명의 아파트
         </h3>
+
         <BoxCheckList>
           <BoxCheckListItem>
             <BoxCheck

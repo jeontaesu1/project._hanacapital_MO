@@ -857,11 +857,7 @@ const datas = () => [
           },
           {
             date: '2023.05.19',
-            text: '팝업 추가\n- 한도조회 입력',
-          },
-          {
-            date: '2023.05.19',
-            text: '팝업 추가\n- 아파트 등기부등본 확인',
+            text: '팝업 추가\n- 한도조회 입력\n- 아파트 등기부등본 확인',
           },
         ],
       },
@@ -2921,7 +2917,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/my-loan-add-documents-001',
-        status: 'partend',
+        status: 'end',
         create: '2023.04.28',
         log: [
           {

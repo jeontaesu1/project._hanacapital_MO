@@ -35,12 +35,7 @@ export default {
 </script>
 
 <template>
-  <UiLayer
-    ref="layer"
-    type="toast"
-    :backgroundClose="true"
-    v-slot="layerSlotProps"
-  >
+  <UiLayer ref="layer" type="toast" :backgroundClose="true">
     <ToastPopup>
       <template v-slot:head>
         <ToastPopupHead>
@@ -56,7 +51,7 @@ export default {
           <div :class="$style['switch-list__title']">원큐자동차상식</div>
           <div :class="$style['switch-list__right']">
             <SwitchCheckBox
-              id="layerMainFunSubscriptionPush01"
+              id="layerMainFunSubscription001"
               :classNames="{ wrap: $style['switch-list__check'] }"
             />
           </div>
@@ -65,7 +60,7 @@ export default {
           <div :class="$style['switch-list__title']">하카캐북</div>
           <div :class="$style['switch-list__right']">
             <SwitchCheckBox
-              id="layerMainFunSubscriptionPush02"
+              id="layerMainFunSubscription002"
               :classNames="{ wrap: $style['switch-list__check'] }"
             />
           </div>
@@ -79,7 +74,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton @click="layerSlotProps.close()">확인</BasicButton>
+            <BasicButton>확인</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
