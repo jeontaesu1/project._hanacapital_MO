@@ -346,7 +346,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/main-002',
-        status: 'partend',
+        status: 'end',
         create: '2023.05.19',
         log: [],
       },
@@ -840,6 +840,10 @@ const datas = () => [
           {
             date: '2023.04.07',
             text: '팝업 추가\n- 한도/금리 확인\n- 아파트 검색',
+          },
+          {
+            date: '2023.05.19',
+            text: '팝업 추가\n- 아파트 등기부등본 확인',
           },
         ],
       },
