@@ -8,6 +8,7 @@ import {
   onBeforeMount,
   onMounted,
   onUpdated,
+  useCssModule,
 } from 'vue';
 
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
@@ -79,6 +80,7 @@ export default {
     const { emit } = context;
     let timer = null;
 
+    const $style = useCssModule();
     const formListStyleModule = inject('formListStyleModule');
 
     const state = reactive({
@@ -179,6 +181,11 @@ export default {
 
     provide('formListItem', {
       helpClass: formListStyleModule['form__help'],
+    });
+
+    provide('basicTextarea', {
+      helpClass: $style['input__help'],
+      invalidClass: $style['input__invalid'],
     });
 
     return {
