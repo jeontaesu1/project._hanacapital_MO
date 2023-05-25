@@ -64,5 +64,30 @@
         }
       }
     }
+    &-circle {
+      width: 32px;
+      height: 32px;
+      &::before {
+        top: 0;
+        left: 0;
+        padding: 0;
+        background-color: rgba($color-black, 0.2);
+        border-radius: 50%;
+        z-index: 1;
+      }
+      .popup-button {
+        &__icon {
+          position: absolute;
+          left: 7px;
+          top: 7px;
+          z-index: 3;
+          width: 18px !important;
+          height: 18px !important;
+          * {
+            fill: $color-white;
+          }
+        }
+      }
+    }
   }
 }
