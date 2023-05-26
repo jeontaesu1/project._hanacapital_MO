@@ -1,0 +1,33 @@
+.close-area {
+  padding-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.banner {
+  border-radius: 20px;
+  overflow: hidden;
+
+  &__block {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      padding-top: 146.341463%;
+    }
+
+    img {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

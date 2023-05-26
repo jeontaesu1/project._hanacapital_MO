@@ -453,7 +453,7 @@ export default {
             2.2 디젤 11인승 노블레스
           </h3>
           <div class="row-margin-item">
-            <UnitText rightUnit="만원">
+            <UnitText rightUnit="원">
               <strong>55,000,000</strong>
             </UnitText>
           </div>

@@ -22,10 +22,6 @@ export default {
       Type: Boolean,
       default: false,
     },
-    banner: {
-      Type: Boolean,
-      default: false,
-    },
   },
   setup(props, context) {
     const customClassNames = computed(() => {
@@ -68,7 +64,6 @@ export default {
       $style['popup'],
       {
         [$style['popup--fix']]: fix,
-        [$style['popup--banner']]: banner,
       },
       customClassNames.wrap,
     ]"

@@ -23,8 +23,8 @@ export default {
     IconMenu,
     IconSearch,
     IconShare,
-    IconSetting,
     IconClose,
+    IconSetting,
   },
   props: {
     type: {

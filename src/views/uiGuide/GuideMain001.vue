@@ -65,22 +65,22 @@ export default {
     >
       <ButtonListItem>
         <BasicButton @click="layer001Open">
-          공지팝업<br />Main_M01_l001_type1
+          공지팝업 Type 1<br />Main_M01_l001
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer002Open">
-          공지팝업<br />Main_M01_l001_type2
+          공지팝업 Type 2<br />Main_M01_l001
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer003Open">
-          공지팝업<br />Main_M01_l001_type3
+          공지팝업 Type 3<br />Main_M01_l001
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer004Open">
-          공지팝업<br />Main_M01_l001_type4
+          공지팝업 Type 4<br />Main_M01_l001
         </BasicButton>
       </ButtonListItem>
     </ButtonList>

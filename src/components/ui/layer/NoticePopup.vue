@@ -3,10 +3,10 @@ import { computed, useCssModule, provide } from 'vue';
 
 const defaultClassNames = () => ({
   wrap: '',
-  closeTop: '',
-  closeBottom: '',
-  body: '',
+  outerTop: '',
   outerBottom: '',
+  block: '',
+  body: '',
 });
 
 export default {
@@ -16,6 +16,10 @@ export default {
       default() {
         return defaultClassNames();
       },
+    },
+    fix: {
+      Type: Boolean,
+      default: false,
     },
   },
   setup(props, context) {
@@ -28,12 +32,8 @@ export default {
       return Boolean(context.slots.default);
     });
 
-    const isCloseButtonTop = computed(() => {
-      return Boolean(context.slots.closeTop);
-    });
-
-    const isCloseButtonBottom = computed(() => {
-      return Boolean(context.slots.closeBottom);
+    const isOuterTop = computed(() => {
+      return Boolean(context.slots.outerTop);
     });
 
     const isOuterBottom = computed(() => {
@@ -45,8 +45,7 @@ export default {
     return {
       customClassNames,
       isSlot,
-      isCloseButtonTop,
-      isCloseButtonBottom,
+      isOuterTop,
       isOuterBottom,
     };
   },
@@ -55,39 +54,29 @@ export default {
 
 <template>
   <div :class="[$style['popup'], customClassNames.wrap]">
-    <!-- 상단 닫기버튼 -->
     <div
-      v-if="isCloseButtonTop"
-      :class="[$style['popup__close-top'], customClassNames.closeTop]"
+      v-if="isOuterTop"
+      :class="[$style['popup__outer-top'], customClassNames.outerTop]"
     >
-      <slot name="closeTop" />
+      <slot name="outerTop" />
     </div>
-    <!-- //상단 닫기버튼 -->
-
-    <!-- 컨텐츠 -->
-    <slot />
-    <!-- //컨텐츠 -->
-
-    <!-- 하단 닫기버튼 -->
-    <div
-      v-if="isCloseButtonBottom"
-      :class="[$style['popup__close-bottom'], customClassNames.closeBottom]"
-    >
-      <slot name="closeBottom" />
+    <div :class="[$style['popup__block'], customClassNames.block]">
+      <div
+        v-if="isSlot"
+        :class="[$style['popup__body'], customClassNames.body]"
+      >
+        <slot />
+      </div>
     </div>
-    <!-- //하단 닫기버튼 -->
-
-    <!-- 하단 outer영역 -->
     <div
       v-if="isOuterBottom"
       :class="[$style['popup__outer-bottom'], customClassNames.outerBottom]"
     >
       <slot name="outerBottom" />
     </div>
-    <!-- //하단 outer영역 -->
   </div>
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/components/ui/layer/BannerPopup.scss';
+@import '@/assets/scss/components/ui/layer/NoticePopup.scss';
 </style>

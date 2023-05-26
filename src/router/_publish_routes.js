@@ -841,19 +841,11 @@ const routes = [
       import('@/views/inventoryFinance/InventoryFinanceLoanLimitInquiry.vue'),
   },
   {
-    path: '/inventory-finance/loan-limit-inquiry-search-car-number',
-    name: '/inventory-finance/loan-limit-inquiry-search-car-number',
+    path: '/inventory-finance/loan-limit-inquiry-search',
+    name: '/inventory-finance/loan-limit-inquiry-search',
     component: () =>
       import(
-        '@/views/inventoryFinance/InventoryFinanceLoanLimitInquirySearchCarNumber.vue'
-      ),
-  },
-  {
-    path: '/inventory-finance/loan-limit-inquiry-search-car-model',
-    name: '/inventory-finance/loan-limit-inquiry-search-car-model',
-    component: () =>
-      import(
-        '@/views/inventoryFinance/InventoryFinanceLoanLimitInquirySearchCarModel.vue'
+        '@/views/inventoryFinance/InventoryFinanceLoanLimitInquirySearch.vue'
       ),
   },
   {

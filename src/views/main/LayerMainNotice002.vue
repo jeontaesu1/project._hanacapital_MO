@@ -1,75 +1,126 @@
 <script>
 // Main_M01_l001 Type 2
-
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, reactive, onMounted } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
-import BannerPopup from '@/components/ui/layer/BannerPopup.vue';
-import ImgSample from '@/assets/images/_dummy/box-detail.svg?component';
+import NoticePopup from '@/components/ui/layer/NoticePopup.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
-import Swiper from 'swiper';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import SwiperCore, { Pagination } from 'swiper';
-SwiperCore.use([Pagination]);
+import { Pagination, A11y } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/vue';
 
 export default {
   components: {
     UiLayer,
-    ImgSample,
-    BannerPopup,
+    NoticePopup,
     PopupButton,
     TextButton,
+    Swiper,
+    SwiperSlide,
   },
   setup() {
+    const state = reactive({
+      paginationEl: null,
+    });
+
     const layer = ref(null);
-    const swiperContainer = ref(null);
-    const paginationContainer = ref(null);
-    let swiper = null;
+    const pagination = ref(null);
 
     onMounted(() => {
-      swiper = new Swiper(swiperContainer.value, {
-        pagination: {
-          el: paginationContainer.value,
-          clickable: true,
-          renderBullet: function (index, className) {
-            return '<span class="' + className + '">' + (index + 1) + '</span>';
-          },
-        },
-      });
+      state.paginationEl = pagination.value;
     });
-    onUnmounted(() => {
-      if (swiper) {
-        swiper.destroy();
-        swiper = null;
-      }
-    });
+
     return {
+      state,
       layer,
-      swiperContainer,
-      paginationContainer,
+      pagination,
+      modules: [Pagination, A11y],
     };
-  },
-  data() {
-    return {};
   },
 };
 </script>
 
 <template>
-  <UiLayer
-    ref="layer"
-    type="banner"
-    :backgroundClose="true"
-    v-slot="layerSlotProps"
-  >
-    <BannerPopup>
-      <template v-slot:closeBottom>
-        <PopupButton theme="circle" @click="layerSlotProps.close()" />
-      </template>
+  <UiLayer ref="layer" type="notice" v-slot="layerSlotProps">
+    <NoticePopup
+      :classNames="{
+        wrap: $style['layer'],
+      }"
+    >
+      <div :class="$style['banner']">
+        <Swiper
+          v-if="state.paginationEl"
+          :modules="modules"
+          :pagination="{
+            el: state.paginationEl,
+          }"
+        >
+          <!-- Case : 링크 기능 없을 때 -->
+          <SwiperSlide>
+            <div :class="$style['banner__block']">
+              <img
+                src="/images/_dummy/notice-banner-2.webp"
+                :alt="'배너 설명 넣어주세요.'"
+                @error="
+                  (e) => {
+                    e.target.parentNode.classList.add('is-error');
+                  }
+                "
+              />
+            </div>
+          </SwiperSlide>
+          <!-- // Case : 링크 기능 없을 때 -->
+
+          <!-- Case : 링크 기능 있을 때 -->
+          <SwiperSlide>
+            <a href="" :class="$style['banner__block']">
+              <img
+                src="/images/_dummy/notice-banner-2.webp"
+                :alt="'배너 설명 넣어주세요.'"
+                @error="
+                  (e) => {
+                    e.target.parentNode.classList.add('is-error');
+                  }
+                "
+              />
+            </a>
+          </SwiperSlide>
+          <!-- // Case : 링크 기능 있을 때 -->
+
+          <SwiperSlide>
+            <div :class="$style['banner__block']">
+              <img
+                src="/images/_dummy/notice-banner-2.webp"
+                :alt="'배너 설명 넣어주세요.'"
+                @error="
+                  (e) => {
+                    e.target.parentNode.classList.add('is-error');
+                  }
+                "
+              />
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <div :class="$style['banner__block']">
+              <img
+                src="/images/_dummy/notice-banner-2.webp"
+                :alt="'배너 설명 넣어주세요.'"
+                @error="
+                  (e) => {
+                    e.target.parentNode.classList.add('is-error');
+                  }
+                "
+              />
+            </div>
+          </SwiperSlide>
+        </Swiper>
+
+        <div ref="pagination" :class="$style['banner__pagination']"></div>
+      </div>
+
       <template v-slot:outerBottom>
-        <div class="inline-wrap align-right">
+        <div :class="$style['bottom']">
           <TextButton
             :classNames="{ wrap: 'text-body-4 color-white' }"
             :underline="true"
@@ -77,21 +128,12 @@ export default {
             오늘 하루 보지 않기
           </TextButton>
         </div>
-      </template>
-      <div :class="$style['swipe-box']">
-        <div ref="swiperContainer" class="swiper swiper-container">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide"><ImgSample /></div>
-            <div class="swiper-slide"><ImgSample /></div>
-            <div class="swiper-slide"><ImgSample /></div>
-          </div>
+
+        <div :class="$style['close-area']">
+          <PopupButton theme="circle" @click="layerSlotProps.close()" />
         </div>
-      </div>
-      <div
-        ref="paginationContainer"
-        :class="[$style['pagination'], 'swiper-pagination']"
-      ></div>
-    </BannerPopup>
+      </template>
+    </NoticePopup>
   </UiLayer>
 </template>
 
