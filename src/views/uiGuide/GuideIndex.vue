@@ -304,6 +304,22 @@ const datas = () => [
     ],
   },
   {
+    depth1: '스플래시',
+    datas: [
+      {
+        depth2: 'Common_M00_p006',
+        depth3: '',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/splash',
+        status: 'end',
+        create: '2023.05.26',
+        log: [],
+      },
+    ],
+  },
+  {
     depth1: '메인',
     datas: [
       {
@@ -313,7 +329,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/main/home-001',
-        status: '',
+        status: 'ing',
         create: '',
         log: [],
       },
@@ -335,7 +351,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/main/home-002',
-        status: '',
+        status: 'ing',
         create: '',
         log: [],
       },
@@ -539,7 +555,12 @@ const datas = () => [
         path: '/guide/sign-up-app-001',
         status: 'end',
         create: '2023.04.07',
-        log: [],
+        log: [
+          {
+            date: '2023.05.26',
+            text: '팝업 추가\n- 둘러보기',
+          },
+        ],
       },
       {
         depth2: '간편비밀번호 불러오기(APP)\nMember_M07_p001',
@@ -1290,8 +1311,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/inventory-finance/extension-form',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.05.26',
         log: [],
       },
       {
@@ -1369,17 +1390,6 @@ const datas = () => [
         path: '/inventory-finance/state-add-info',
         status: 'end',
         create: '2023.05.05',
-        log: [],
-      },
-      {
-        depth2: '신청현황',
-        depth3: '차량사진 등록\nIF_M02_p007',
-        depth4: '',
-        depth5: '',
-        depth6: '',
-        path: '/inventory-finance/state-add-car-photo',
-        status: '',
-        create: '',
         log: [],
       },
       {
@@ -2582,7 +2592,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/my-loan-progress-001',
-        status: 'partend',
+        status: 'end',
         create: '2023.04.14',
         log: [
           {
@@ -2617,6 +2627,10 @@ const datas = () => [
             date: '2023.05.05',
             text: '팝업 추가\n- 승계확약서_오토리스\n- 승계확약서_오토리스\n- 계약정보 최종확인_리스 승계 후\n- 계약정보 최종확인_장기렌터카 승계전\n- 계약정보 최종확인_장기렌터카 신규/승계후/연장',
           },
+          {
+            date: '2023.05.26',
+            text: '팝업 추가\n- 약관상세_실제소유자 확인\n- 약관상세_할부금 지급 안내\n- 약관상세_청약의 철회권 안내\n- 약관상세_신용점수 하락가능 안내\n- 약관상세_기한 이익상실 안내\n- 약관상세_금리인하 요구권 안내',
+          },
         ],
       },
       {
@@ -2632,6 +2646,10 @@ const datas = () => [
           {
             date: '2023.05.12',
             text: '팝업 추가\n- 중고차 오토론_약관동의\n- 계약정보 최종확인_중고차오토론\n- 계약정보 최종확인_약정정보확인\n- 약정완료_오토금융\n- 중도상환 수수료 산식 팝업\n- 약관상세_할부금 수령 위임안내\n- 계약정보 최종확인_중고차 할부\n- 계약정보 최종확인_약정정보확인 중고차할부',
+          },
+          {
+            date: '2023.05.26',
+            text: '팝업 추가\n- 약정완료',
           },
         ],
       },

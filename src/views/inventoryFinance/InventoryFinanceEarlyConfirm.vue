@@ -52,8 +52,6 @@ export default {
       store.ui.header.setLeftButtons();
       store.ui.header.setRightButtons();
     });
-
-    return {};
   },
 };
 </script>

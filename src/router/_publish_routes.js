@@ -532,6 +532,14 @@ const routes = [
     component: () => import('@/views/uiGuide/GuideMain002.vue'),
   },
 
+  // splash
+  {
+    path: '/splash',
+    name: '/splash',
+    component: () => import('@/views/splash/SplashPage.vue'),
+    meta: { layout: 'FullLayout' },
+  },
+
   // main
   {
     path: '/main/home-001',
@@ -951,12 +959,6 @@ const routes = [
     name: '/inventory-finance/state-add-info',
     component: () =>
       import('@/views/inventoryFinance/InventoryFinanceStateAddInfo.vue'),
-  },
-  {
-    path: '/inventory-finance/state-add-car-photo',
-    name: '/inventory-finance/state-add-car-photo',
-    component: () =>
-      import('@/views/inventoryFinance/InventoryFinanceStateAddCarPhoto.vue'),
   },
   {
     path: '/inventory-finance/loan-agreement',

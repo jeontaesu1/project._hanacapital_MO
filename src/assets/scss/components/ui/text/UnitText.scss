@@ -39,28 +39,41 @@
     align-items: center;
   }
 
-  &--size-regular {
-    .unit-text__left,
-    .unit-text__right {
-      @include font-size-default(13);
+  &--size {
+    &-regular {
+      .unit-text__left,
+      .unit-text__right {
+        @include font-size-default(13);
+      }
+
+      .unit-text__val {
+        @include font-size-default(16);
+        font-weight: 500;
+      }
     }
 
-    .unit-text__val {
-      @include font-size-default(16);
-      font-weight: 500;
-    }
-  }
+    &-medium {
+      .unit-text__left,
+      .unit-text__right {
+        @include font-size-default(14);
+      }
 
-  &--size-large {
-    .unit-text__left,
-    .unit-text__right {
-      @include font-size-head(18);
-      font-weight: 500;
+      .unit-text__val {
+        @include font-size-head(24);
+      }
     }
 
-    .unit-text__val {
-      @include font-size-head(28);
-      font-weight: 900;
+    &-large {
+      .unit-text__left,
+      .unit-text__right {
+        @include font-size-head(18);
+        font-weight: 500;
+      }
+
+      .unit-text__val {
+        @include font-size-head(28);
+        font-weight: 900;
+      }
     }
   }
 }

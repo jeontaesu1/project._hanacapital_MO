@@ -114,9 +114,14 @@ export default {
               <!-- Case : 이미지 -->
               <li :class="$style['files__item']">
                 <div :class="$style['files__block']">
-                  <div :class="$style['files__image']">
+                  <div
+                    :class="$style['files__image']"
+                    :style="{
+                      backgroundImage: `url('/images/_dummy/file-sample.png')`,
+                    }"
+                  >
                     <img
-                      src="@/assets/images/_dummy/file-sample.png"
+                      src="/images/_dummy/file-sample.png"
                       alt="파일 이름 넣어주세요"
                       @error="
                         (e) => {
@@ -138,7 +143,12 @@ export default {
               <!-- Case : 이미지 에러 -->
               <li :class="$style['files__item']">
                 <div :class="$style['files__block']">
-                  <div :class="$style['files__image']">
+                  <div
+                    :class="$style['files__image']"
+                    :style="{
+                      backgroundImage: `url('')`,
+                    }"
+                  >
                     <img
                       src=""
                       alt="파일 이름 넣어주세요"
@@ -179,9 +189,14 @@ export default {
 
               <li :class="$style['files__item']">
                 <div :class="$style['files__block']">
-                  <div :class="$style['files__image']">
+                  <div
+                    :class="$style['files__image']"
+                    :style="{
+                      backgroundImage: `url('/images/_dummy/file-sample.png')`,
+                    }"
+                  >
                     <img
-                      src="@/assets/images/_dummy/file-sample.png"
+                      src="/images/_dummy/file-sample.png"
                       alt="파일 이름 넣어주세요"
                       @error="
                         (e) => {
@@ -201,9 +216,14 @@ export default {
 
               <li :class="$style['files__item']">
                 <div :class="$style['files__block']">
-                  <div :class="$style['files__image']">
+                  <div
+                    :class="$style['files__image']"
+                    :style="{
+                      backgroundImage: `url('/images/_dummy/file-sample.png')`,
+                    }"
+                  >
                     <img
-                      src="@/assets/images/_dummy/file-sample.png"
+                      src="/images/_dummy/file-sample.png"
                       alt="파일 이름 넣어주세요"
                       @error="
                         (e) => {
@@ -223,9 +243,14 @@ export default {
 
               <li :class="$style['files__item']">
                 <div :class="$style['files__block']">
-                  <div :class="$style['files__image']">
+                  <div
+                    :class="$style['files__image']"
+                    :style="{
+                      backgroundImage: `url('/images/_dummy/file-sample.png')`,
+                    }"
+                  >
                     <img
-                      src="@/assets/images/_dummy/file-sample.png"
+                      src="/images/_dummy/file-sample.png"
                       alt="파일 이름 넣어주세요"
                       @error="
                         (e) => {
