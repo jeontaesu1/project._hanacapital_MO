@@ -531,6 +531,12 @@ const routes = [
     name: '/guide/main-002',
     component: () => import('@/views/uiGuide/GuideMain002.vue'),
   },
+  {
+    path: '/guide/lease-rent-estimation-system-001',
+    name: '/guide/lease-rent-estimation-system-001',
+    component: () =>
+      import('@/views/uiGuide/GuideLeaseRentEstimationSystem001.vue'),
+  },
 
   // splash
   {
@@ -1474,6 +1480,30 @@ const routes = [
     component: () =>
       import(
         '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemPrePurchaseCarDetail.vue'
+      ),
+  },
+  {
+    path: '/lease-rent-estimation-system/save-review',
+    name: '/lease-rent-estimation-system/save-review',
+    component: () =>
+      import(
+        '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemSaveReview.vue'
+      ),
+  },
+  {
+    path: '/lease-rent-estimation-system/save-review-approval-request-rent',
+    name: '/lease-rent-estimation-system/save-review-approval-request-rent',
+    component: () =>
+      import(
+        '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemSaveReviewApprovalRequestRent.vue'
+      ),
+  },
+  {
+    path: '/lease-rent-estimation-system/save-review-approval-request-lease',
+    name: '/lease-rent-estimation-system/save-review-approval-request-lease',
+    component: () =>
+      import(
+        '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemSaveReviewApprovalRequestLease.vue'
       ),
   },
 
