@@ -32,5 +32,13 @@
         fill: $color-black;
       }
     }
+
+    &--secondary {
+      svg {
+        * {
+          fill: $color-gray-60;
+        }
+      }
+    }
   }
 }
