@@ -12,6 +12,7 @@ import {
 
 import { useUiScrollBlockStore } from '@/stores/ui/scrollBlock';
 import { useUiHeaderStore } from '@/stores/ui/header';
+import { useUiStickyStore } from '@/stores/ui/sticky';
 
 const defaultClassNames = () => ({
   wrap: '',
@@ -36,6 +37,7 @@ export default {
       ui: {
         scrollBlock: useUiScrollBlockStore(),
         header: useUiHeaderStore(),
+        sticky: useUiStickyStore(),
       },
     };
 
@@ -44,6 +46,7 @@ export default {
       marginTop: '0',
       marginBottom: '0',
       height: '0',
+      storeKey: null,
     });
 
     const wrap = ref(null);
@@ -56,8 +59,37 @@ export default {
     });
 
     const headerH = computed(() => {
-      return store.ui.header.height;
+      const popupHead =
+        popupLayout && popupLayout.head && popupLayout.head.value;
+      const popupHeadH = (() => {
+        if (popupHead) {
+          return popupHead.offsetHeight;
+        } else {
+          return 0;
+        }
+      })();
+
+      return popupHeadH || store.ui.header.height;
     });
+
+    const stickyH = computed(() => {
+      return getStickyH();
+    });
+
+    const getStickyH = () => {
+      const { items } = store.ui.sticky;
+      let height = 0;
+
+      if (state.storeKey) {
+        for (let i = 0; i < items.length; i++) {
+          if (items[i].key === state.storeKey) break;
+
+          height += items[i].height;
+        }
+      }
+
+      return height;
+    };
 
     const setMargin = () => {
       const contentsEl = contents.value;
@@ -100,18 +132,29 @@ export default {
           return html.scrollTop;
         }
       })();
+      const stickyH = getStickyH();
+      const height = contentsInnerEl.offsetHeight;
+
+      if (popupHead) {
+        if (state.storeKey) {
+          store.ui.sticky.remove(state.storeKey);
+          state.storeKey = null;
+        }
+      } else if (state.storeKey) {
+        store.ui.sticky.update(state.storeKey, height);
+      } else {
+        state.storeKey = store.ui.sticky.add(height);
+      }
 
       if (
-        (popupHead && scrollTop < offsetTop - popupHeadH) ||
-        scrollTop < offsetTop - headerH.value
+        (popupHead && scrollTop < offsetTop - popupHeadH - stickyH) ||
+        scrollTop < offsetTop - headerH.value - stickyH
       ) {
         if (state.isSticky) {
           state.isSticky = false;
         }
         return;
       }
-
-      const height = contentsInnerEl.offsetHeight;
 
       state.height = `${height}px`;
 
@@ -165,6 +208,10 @@ export default {
     });
 
     onBeforeUnmount(() => {
+      if (state.storeKey) {
+        store.ui.sticky.remove(state.storeKey);
+      }
+
       window.removeEventListener('load', load);
       window.removeEventListener('scroll', scroll);
       window.removeEventListener('resize', resize);
@@ -184,6 +231,7 @@ export default {
       fake,
       customClassNames,
       headerH,
+      stickyH,
     };
   },
 };
@@ -195,7 +243,7 @@ export default {
       ref="contents"
       :style="{
         position: state.isSticky ? 'fixed' : 'static',
-        top: state.isSticky ? `${headerH}px` : null,
+        top: state.isSticky ? `${headerH + stickyH}px` : null,
         left: state.isSticky ? '0' : null,
         width: state.isSticky ? '100%' : null,
         zIndex: state.isSticky ? '1000' : null,

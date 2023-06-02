@@ -1,6 +1,7 @@
 <script>
 import {
   ref,
+  reactive,
   computed,
   onMounted,
   onUpdated,
@@ -15,10 +16,15 @@ import { useUiScrollBlockStore } from '@/stores/ui/scrollBlock';
 import { useUiHeaderStore } from '@/stores/ui/header';
 
 import HeaderButton from '@/components/ui/layout/HeaderButton.vue';
+import RoundButton from '@/components/ui/button/RoundButton.vue';
+
+import IconDownload from '@/assets/images/icon/download.svg?component';
 
 export default {
   components: {
     HeaderButton,
+    RoundButton,
+    IconDownload,
   },
   setup() {
     const store = {
@@ -28,6 +34,10 @@ export default {
         header: useUiHeaderStore(),
       },
     };
+
+    const state = reactive({
+      isScroll: false,
+    });
 
     const header = ref(null);
     const fixbar = ref(null);
@@ -51,7 +61,7 @@ export default {
     });
 
     const rightButtons = computed(() => {
-      const defaultButtons = ['push', 'menu'];
+      const defaultButtons = ['menu'];
       return store.ui.header.rightButtons || defaultButtons;
     });
 
@@ -69,8 +79,10 @@ export default {
       if (html && header.value) {
         if (isBlocking.value) {
           header.value.style.marginLeft = `-${blockingScrollLeft.value}px`;
+          state.isScroll = store.ui.scrollBlock.scrollTop > 0;
         } else {
           header.value.style.marginLeft = `-${html.scrollLeft}px`;
+          state.isScroll = html.scrollTop > 0;
         }
       }
     };
@@ -110,6 +122,7 @@ export default {
 
     return {
       store,
+      state,
       header,
       fixbar,
       fake,
@@ -123,13 +136,31 @@ export default {
 </script>
 
 <template>
-  <div :class="$style['header-wrap']">
+  <div
+    :class="[
+      $style['header-wrap'],
+      {
+        [$style[`header-wrap--theme-${store.ui.header.theme}`]]:
+          store.ui.header.theme,
+      },
+    ]"
+  >
     <div
       ref="fixbar"
       :class="$style['header-fix']"
       :style="`${isBlocking ? `margin-right: ${scrollbarsWidth}px` : ''}`"
     >
-      <header ref="header" :class="$style['header']">
+      <header
+        ref="header"
+        :class="[
+          $style['header'],
+          {
+            [$style['header--scroll']]: state.isScroll,
+            [$style[`header--theme-${store.ui.header.theme}`]]:
+              store.ui.header.theme,
+          },
+        ]"
+      >
         <div :class="$style['header__left']">
           <HeaderButton
             v-for="item in leftButtons"
@@ -144,6 +175,18 @@ export default {
           </h1>
         </div>
         <div :class="$style['header__right']">
+          <RoundButton
+            v-if="store.ui.header.useAppButton"
+            theme="secondary"
+            :classNames="{
+              wrap: $style['header__app'],
+            }"
+          >
+            <template v-slot:leftIcon>
+              <IconDownload />
+            </template>
+            앱설치
+          </RoundButton>
           <HeaderButton
             v-for="item in rightButtons"
             :key="`right_${typeof item === 'string' ? item : item.name}`"

@@ -1,13 +1,13 @@
 <script>
 // Main_M01_l001 Type 2
 import { ref, reactive, onMounted } from 'vue';
+import { Pagination, A11y } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import NoticePopup from '@/components/ui/layer/NoticePopup.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
-import { Pagination, A11y } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/vue';
 
 export default {
   components: {

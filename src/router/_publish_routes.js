@@ -581,13 +581,11 @@ const routes = [
     path: '/main/my-loan',
     name: '/main/my-loan',
     component: () => import('@/views/main/MainMyLoan.vue'),
-    meta: { layout: 'MainDefaultLayout' },
   },
   {
     path: '/main/product',
     name: '/main/product',
     component: () => import('@/views/main/MainProduct.vue'),
-    meta: { layout: 'MainDefaultLayout' },
   },
   {
     path: '/main/benefit',

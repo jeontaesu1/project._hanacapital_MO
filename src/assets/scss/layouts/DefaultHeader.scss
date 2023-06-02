@@ -1,5 +1,11 @@
 .header-wrap {
   display: block;
+
+  &--theme {
+    &-secondary {
+      background-color: $color-navy-05;
+    }
+  }
 }
 .header-fake {
   display: block;
@@ -19,7 +25,22 @@
   min-height: 48px;
   box-sizing: border-box;
   padding: 12px 16px;
-  background-color: $color-white;
+  background-color: rgba($color-white, 0);
+  transition: background-color 0.2s;
+
+  &--scroll {
+    background-color: $color-white;
+  }
+
+  &--theme {
+    &-secondary {
+      background-color: $color-navy-05;
+
+      &.header--scroll {
+        background-color: $color-white;
+      }
+    }
+  }
 
   &__left,
   &__right {
@@ -113,5 +134,10 @@
         background-color: $color-semantic-essential;
       }
     }
+  }
+
+  &__app {
+    flex: none;
+    margin: -1px 12px -1px 0;
   }
 }

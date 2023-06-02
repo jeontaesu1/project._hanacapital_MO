@@ -472,8 +472,9 @@ export default {
       type="toast"
       :onAfterClosed="onAfterClosed"
       :backgroundClose="true"
+      v-slot="layerSlotProps"
     >
-      <ToastPopup>
+      <ToastPopup v-if="layerSlotProps.display !== 'none'">
         <template v-slot:head>
           <ToastPopupHead>
             <PopupTitle>{{ layerTitle || '은행 선택' }}</PopupTitle>

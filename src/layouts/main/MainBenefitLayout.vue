@@ -14,12 +14,13 @@ export default {
   <div :class="$style['layout']">
     <div :class="$style['layout__head']">
       <MainBenefitHeader />
+      <DockBar />
     </div>
     <div :class="$style['layout__body']">
       <slot />
     </div>
     <div :class="$style['layout__foot']">
-      <DockBar />
+      <div :class="$style['fake-dock-bar']"></div>
     </div>
   </div>
 </template>

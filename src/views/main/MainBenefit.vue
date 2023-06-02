@@ -1,5 +1,9 @@
 <script>
 // Main_M05_p001
+import { onMounted, onUnmounted } from 'vue';
+
+import { useUiDockBarStore } from '@/stores/ui/dockBar';
+
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
@@ -29,6 +33,21 @@ export default {
     EventBanner,
     FunBanner,
     CouponBanner,
+  },
+  setup() {
+    const store = {
+      ui: {
+        dockBar: useUiDockBarStore(),
+      },
+    };
+
+    onMounted(() => {
+      store.ui.dockBar.setActive(() => 'benefit');
+    });
+
+    onUnmounted(() => {
+      store.ui.dockBar.setActive();
+    });
   },
 };
 </script>

@@ -81,13 +81,22 @@ export default {
     onMounted(() => {
       store.ui.header.setTitle(() => 'e하나신용대출');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => ['share']);
+      store.ui.header.setRightButtons(() => [
+        {
+          name: 'share',
+          onClick: () => {
+            alert('공유하기 클릭');
+          },
+        },
+      ]);
+      store.ui.header.setTheme(() => 'secondary');
     });
 
     onUnmounted(() => {
       store.ui.header.setTitle();
       store.ui.header.setLeftButtons();
       store.ui.header.setRightButtons();
+      store.ui.header.setTheme();
     });
   },
 };

@@ -2,6 +2,8 @@
 // Main_M01_p001
 import { onMounted, onUnmounted } from 'vue';
 import { RouterLink } from 'vue-router';
+import { Pagination, A11y } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/vue';
 
 import { useUiCommonStore } from '@/stores/ui/common';
 import { useUiHeaderStore } from '@/stores/ui/header';
@@ -16,6 +18,9 @@ import BubbleProgress from '@/components/ui/progress/BubbleProgress.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
+import MainBanner from '@/components/ui/banner/MainBanner.vue';
+import SlideBanner from '@/components/ui/banner/SlideBanner.vue';
+import SlideBannerBlock from '@/components/ui/banner/SlideBannerBlock.vue';
 
 import IconRegistration from '@/assets/images/icon/registration.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
@@ -23,6 +28,7 @@ import IconClover from '@/assets/images/icon/clover.svg?component';
 import IconGraph from '@/assets/images/icon/graph.svg?component';
 import IconCrown from '@/assets/images/icon/crown.svg?component';
 import IconLink from '@/assets/images/icon/link.svg?component';
+import IconCapitalSmall from '@/assets/images/icon/img-capital-small.svg?component';
 import ImgMainSample from '@/assets/images/_dummy/main-sample.svg?component';
 
 export default {
@@ -38,12 +44,18 @@ export default {
     TextButton,
     CarThumb,
     BasicHr,
+    MainBanner,
+    SlideBanner,
+    SlideBannerBlock,
+    Swiper,
+    SwiperSlide,
     IconRegistration,
     IconCalculate,
     IconClover,
     IconGraph,
     IconCrown,
     IconLink,
+    IconCapitalSmall,
     ImgMainSample,
   },
   setup() {
@@ -57,18 +69,20 @@ export default {
     onMounted(() => {
       store.ui.common.setRootClassName('page-home');
 
-      store.ui.header.setTitle(() => '타이틀');
-      store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => []);
+      store.ui.header.setTitle(() => ' ');
+      store.ui.header.setUseAppButton(() => true);
     });
 
     onUnmounted(() => {
       store.ui.common.setRootClassName();
 
       store.ui.header.setTitle();
-      store.ui.header.setLeftButtons();
-      store.ui.header.setRightButtons();
+      store.ui.header.setUseAppButton();
     });
+
+    return {
+      modules: [Pagination, A11y],
+    };
   },
 };
 </script>
@@ -513,6 +527,91 @@ export default {
         </BasicBox>
       </section>
       <!-- // 신용대출 -->
+
+      <div class="row-margin-contents">
+        <!-- 일반 배너 -->
+        <MainBanner
+          thumb="/images/_dummy/banner-coway.png"
+          tagName="RouterLink"
+          to=""
+        >
+          <div class="text-body-1 font-weight-light">
+            다양하게 제공하는<br />
+            <strong>렌탈 서비스</strong>
+          </div>
+          <div class="inline-wrap row-margin-item-medium">
+            <TextButton
+              tagName="div"
+              iconSize="small"
+              :classNames="{
+                wrap: 'color-green',
+              }"
+            >
+              렌탈상품 둘러보기
+              <template v-slot:rightIcon>
+                <IconLink />
+              </template>
+            </TextButton>
+          </div>
+        </MainBanner>
+        <!-- // 일반 배너 -->
+
+        <!-- 슬라이드 배너 A -->
+        <SlideBanner>
+          <Swiper :modules="modules" pagination>
+            <!-- Case : 링크 기능 없을 때 -->
+            <SwiperSlide>
+              <SlideBannerBlock
+                thumb="/images/_dummy/banner-sample.png"
+                :action="false"
+              >
+                <div class="text-body-1 font-weight-medium">
+                  높아진 한도 확인하세요!
+                </div>
+                <div class="text-body-4 color-gray row-margin-mini">
+                  지금 신용조회하면 상품이 와르르
+                </div>
+              </SlideBannerBlock>
+            </SwiperSlide>
+            <!-- //Case : 링크 기능 없을 때 -->
+
+            <!-- Case : 링크 기능 있을 때 (RouterLink) -->
+            <SwiperSlide>
+              <SlideBannerBlock
+                thumb="/images/_dummy/banner-sample.png"
+                tagName="RouterLink"
+                to=""
+              >
+                <div class="text-body-1 font-weight-medium">
+                  높아진 한도 확인하세요!
+                </div>
+                <div class="text-body-4 color-gray row-margin-mini">
+                  지금 신용조회하면 상품이 와르르
+                </div>
+              </SlideBannerBlock>
+            </SwiperSlide>
+            <!-- // Case : 링크 기능 있을 때 -->
+
+            <!-- Case : 링크 기능 있을 때 (a tag) -->
+            <SwiperSlide>
+              <SlideBannerBlock
+                thumb="/images/_dummy/banner-sample.png"
+                tagName="a"
+                href=""
+              >
+                <div class="text-body-1 font-weight-medium">
+                  높아진 한도 확인하세요!
+                </div>
+                <div class="text-body-4 color-gray row-margin-mini">
+                  지금 신용조회하면 상품이 와르르
+                </div>
+              </SlideBannerBlock>
+            </SwiperSlide>
+            <!-- // Case : 링크 기능 있을 때 -->
+          </Swiper>
+        </SlideBanner>
+        <!-- // 슬라이드 배너 A -->
+      </div>
     </div>
 
     <BasicHr theme="secondary" :className="$style['hr']" />
@@ -587,6 +686,164 @@ export default {
         </div>
       </section>
       <!-- // 이런 서비스는 어때요? -->
+
+      <!-- FUN -->
+      <section :class="$style['fun']">
+        <div :class="$style['fun__head']">
+          <div :class="$style['fun__head-left']">
+            <h2 :class="$style['fun__head-title']">FUN</h2>
+          </div>
+          <div :class="$style['fun__head-right']">
+            <TextButton
+              :block="true"
+              :classNames="{ wrap: 'text-body-4 color-gray' }"
+            >
+              더보기
+              <template v-slot:rightIcon>
+                <IconLink />
+              </template>
+            </TextButton>
+          </div>
+        </div>
+        <div :class="$style['fun__contents']">
+          <ul :class="$style['fun__list']">
+            <li :class="$style['fun__item']">
+              <RouterLink to="" :class="$style['fun__block']">
+                <span
+                  :class="$style['fun__thumb']"
+                  :style="{
+                    backgroundImage: `url('/images/_dummy/thumbnail-sample2.jpg')`,
+                  }"
+                >
+                  <img
+                    src="/images/_dummy/thumbnail-sample2.jpg"
+                    @error="
+                      (e) => {
+                        e.target.parentNode.classList.add('is-error');
+                      }
+                    "
+                  />
+                </span>
+                <span :class="$style['fun__sub']">하대리 일상 공감</span>
+                <span :class="$style['fun__title']">중고차 구입 꿀팁</span>
+              </RouterLink>
+            </li>
+            <li :class="$style['fun__item']">
+              <RouterLink to="" :class="$style['fun__block']">
+                <span
+                  :class="$style['fun__thumb']"
+                  :style="{
+                    backgroundImage: `url('/images/_dummy/thumbnail-sample3.jpg')`,
+                  }"
+                >
+                  <img
+                    src="/images/_dummy/thumbnail-sample3.jpg"
+                    @error="
+                      (e) => {
+                        e.target.parentNode.classList.add('is-error');
+                      }
+                    "
+                  />
+                </span>
+                <span :class="$style['fun__sub']">자동차 관리 체크리스트</span>
+                <span :class="$style['fun__title']">소모품 교체하기</span>
+              </RouterLink>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- // FUN -->
+
+      <!-- 슬라이드 배너 B -->
+      <SlideBanner>
+        <Swiper :modules="modules" pagination>
+          <!-- Case : 링크 기능 없을 때 -->
+          <SwiperSlide>
+            <SlideBannerBlock
+              thumb="/images/_dummy/banner-shield.png"
+              :action="false"
+            >
+              <div class="text-body-1 font-weight-medium">
+                에코플러스 자동차보험
+              </div>
+              <div class="text-body-4 color-gray row-margin-mini">
+                지금 바로 GO!
+              </div>
+            </SlideBannerBlock>
+          </SwiperSlide>
+          <!-- //Case : 링크 기능 없을 때 -->
+
+          <!-- Case : 링크 기능 있을 때 (RouterLink) -->
+          <SwiperSlide>
+            <SlideBannerBlock
+              thumb="/images/_dummy/banner-shield.png"
+              tagName="RouterLink"
+              to=""
+            >
+              <div class="text-body-1 font-weight-medium">
+                에코플러스 자동차보험
+              </div>
+              <div class="text-body-4 color-gray row-margin-mini">
+                지금 바로 GO!
+              </div>
+            </SlideBannerBlock>
+          </SwiperSlide>
+          <!-- // Case : 링크 기능 있을 때 -->
+
+          <!-- Case : 링크 기능 있을 때 (a tag) -->
+          <SwiperSlide>
+            <SlideBannerBlock
+              thumb="/images/_dummy/banner-shield.png"
+              tagName="a"
+              href=""
+            >
+              <div class="text-body-1 font-weight-medium">
+                에코플러스 자동차보험
+              </div>
+              <div class="text-body-4 color-gray row-margin-mini">
+                지금 바로 GO!
+              </div>
+            </SlideBannerBlock>
+          </SwiperSlide>
+          <!-- // Case : 링크 기능 있을 때 -->
+        </Swiper>
+      </SlideBanner>
+      <!-- // 슬라이드 배너 B -->
+    </div>
+
+    <BasicHr theme="secondary" :className="$style['hr']" />
+
+    <div>
+      <!-- 앱 다운로드 안내 -->
+      <section :class="$style['app']">
+        <div :class="$style['app__icon']">
+          <IconCapitalSmall />
+        </div>
+        <h2 :class="$style['app__title']">
+          다양한 금융서비스 제공<br />
+          <strong>쉽고 빠른 하나원큐 하나캐피탈!</strong>
+        </h2>
+        <div class="inline-wrap">
+          <TextButton theme="secondary" :underline="true">
+            앱 다운로드
+          </TextButton>
+        </div>
+      </section>
+      <!-- // 앱 다운로드 안내 -->
+
+      <!-- 공지 -->
+      <section :class="$style['notice']">
+        <h2 class="for-a11y">공지사항</h2>
+        <RouterLink to="" :class="$style['notice__block']">
+          <span :class="$style['notice__text']">
+            채권양도 관련 개인신용정보 제공사실 공지문
+          </span>
+          <span :class="$style['notice__icon']">
+            <IconLink />
+          </span>
+        </RouterLink>
+      </section>
+      <!-- // 공지 -->
     </div>
   </PageContents>
 </template>

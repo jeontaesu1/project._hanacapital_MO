@@ -36,6 +36,10 @@ export default {
       Type: String,
       default: null,
     },
+    action: {
+      Type: Boolean,
+      default: true,
+    },
     disabled: {
       Type: Boolean,
       default: false,
@@ -105,7 +109,7 @@ export default {
     </div>
     <component
       :is="setComponent"
-      v-if="!disabled"
+      v-if="!disabled && action"
       v-bind="$attrs"
       :type="setType"
       :class="[$style['banner__button'], customClassNames.button]"
