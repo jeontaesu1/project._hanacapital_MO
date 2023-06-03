@@ -590,7 +590,7 @@ export default {
       </section>
     </div>
 
-    <BasicHr className="row-margin-container-medium"></BasicHr>
+    <BasicHr className="row-margin-container-medium" />
 
     <div>
       <section class="row-margin-container-medium">

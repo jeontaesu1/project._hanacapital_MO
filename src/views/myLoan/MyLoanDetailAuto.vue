@@ -668,7 +668,7 @@ export default {
       </div>
     </section>
 
-    <BasicHr class="row-margin-container-medium"></BasicHr>
+    <BasicHr class="row-margin-container-medium" />
 
     <section>
       <div class="text-title-2 font-weight-bold">당월 결제금액</div>
@@ -798,7 +798,7 @@ export default {
       </ul>
     </section>
 
-    <BasicHr class="row-margin-container-medium"></BasicHr>
+    <BasicHr class="row-margin-container-medium" />
 
     <div :class="$style['icon-list']">
       <ul :class="$style['icon-list__list']">

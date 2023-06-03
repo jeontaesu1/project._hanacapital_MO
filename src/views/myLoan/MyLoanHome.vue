@@ -178,7 +178,7 @@ export default {
       <!-- //Case :  캐피탈 계약만 보유한 경우, 캐피탈 계약 + 파트너사 양도계약 보유한 경우 -->
     </section>
 
-    <BasicHr class="row-margin-container-medium"></BasicHr>
+    <BasicHr class="row-margin-container-medium" />
 
     <!-- Case : 캐피탈 계약 + 파트너사 양도계약 보유한 경우 -->
     <!-- Case : 캐피탈 계약만 보유한 경우 노출 -->
@@ -420,7 +420,7 @@ export default {
     </section>
     <!-- //Case : 캐피탈 계약만 보유한 경우 노출 -->
 
-    <BasicHr class="row-margin-container-medium"></BasicHr>
+    <BasicHr class="row-margin-container-medium" />
 
     <!-- Case :파트너사 양도계약(팩토링)만 보유한 경우 노출 -->
     <section>
@@ -534,7 +534,7 @@ export default {
     </section>
     <!-- //Case : 파트너사 양도계약(팩토링)만 보유한 경우 노출 -->
 
-    <BasicHr class="row-margin-container-medium"></BasicHr>
+    <BasicHr class="row-margin-container-medium" />
 
     <section>
       <h3 class="text-title-2 row-margin-contents">종료된 계약</h3>

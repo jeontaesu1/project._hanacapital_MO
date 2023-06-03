@@ -89,7 +89,7 @@ export default {
         >
       </section>
 
-      <BasicHr className="row-margin-container-medium"></BasicHr>
+      <BasicHr className="row-margin-container-medium" />
 
       <div class="contents-wrap">
         <p class="text-body-4 font-weight-light color-gray-secondary">
