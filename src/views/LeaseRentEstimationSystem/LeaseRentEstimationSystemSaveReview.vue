@@ -91,7 +91,7 @@ export default {
 
     onMounted(() => {
       store.ui.header.setTitle(() => '하나원큐오토');
-      store.ui.header.setLeftButtons(() => ['']);
+      store.ui.header.setLeftButtons(() => []);
       store.ui.header.setRightButtons(() => ['menu']);
     });
 
@@ -344,9 +344,8 @@ export default {
         className="row-margin-container-medium"
       />
 
-      <!-- Case : 가견적 탭 선택시 노출 -->
       <UiAccordion>
-        <!-- Case : 장기렌트 -->
+        <!-- Case : 가견적 - 장기렌트 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div class="flex-box">
@@ -561,9 +560,9 @@ export default {
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 장기렌트 -->
+        <!-- //Case : 가견적 - 장기렌트 -->
 
-        <!-- Case : 선구매 -->
+        <!-- Case : 가견적 - 선구매 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div class="flex-box">
@@ -778,9 +777,9 @@ export default {
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 선구매 -->
+        <!-- //Case : 가견적 - 선구매 -->
 
-        <!-- Case : 운용리스 (중고차) -->
+        <!-- Case : 가견적 - 운용리스 (중고차) -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div class="flex-box">
@@ -1001,9 +1000,9 @@ export default {
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 운용리스 (중고차) -->
+        <!-- //Case : 가견적 - 운용리스 (중고차) -->
 
-        <!-- Case : 금융리스 (중고차) -->
+        <!-- Case : 가견적 - 금융리스 (중고차) -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div class="flex-box">
@@ -1223,9 +1222,9 @@ export default {
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 금융리스 (중고차) -->
+        <!-- //Case : 가견적 - 금융리스 (중고차) -->
 
-        <!-- Case : 할부 -->
+        <!-- Case : 가견적 - 할부 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div class="flex-box">
@@ -1432,13 +1431,9 @@ export default {
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 할부 -->
-      </UiAccordion>
-      <!-- //Case : 가견적 탭 선택시 노출 -->
+        <!-- //Case : 가견적 - 할부 -->
 
-      <!-- Case : 견적 탭 선택시 노출 -->
-      <UiAccordion>
-        <!-- Case : 장기렌트 -->
+        <!-- Case : 견적 - 장기렌트 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div class="flex-box">
@@ -1703,9 +1698,9 @@ export default {
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 장기렌트 -->
+        <!-- //Case : 견적 - 장기렌트 -->
 
-        <!-- Case : 선구매 -->
+        <!-- Case : 견적 - 선구매 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div class="flex-box">
@@ -1970,9 +1965,9 @@ export default {
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 선구매 -->
+        <!-- //Case : 견적 - 선구매 -->
 
-        <!-- Case : 운용리스 -->
+        <!-- Case : 견적 - 운용리스 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div class="flex-box">
@@ -2179,9 +2174,9 @@ export default {
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 운용리스 -->
+        <!-- //Case : 견적 - 운용리스 -->
 
-        <!-- Case : 할부 -->
+        <!-- Case : 견적 - 할부 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div class="flex-box">
@@ -2404,13 +2399,9 @@ export default {
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 할부 -->
-      </UiAccordion>
-      <!-- //Case : 견적 탭 선택시 노출 -->
+        <!-- //Case : 견적 - 할부 -->
 
-      <!-- Case : 심사 탭 선택시 노출 -->
-      <UiAccordion>
-        <!-- Case : 장기렌트 -->
+        <!-- Case : 심사 - 장기렌트 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div class="flex-box">
@@ -2728,9 +2719,9 @@ export default {
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 장기렌트 -->
+        <!-- //Case : 심사 - 장기렌트 -->
 
-        <!-- Case : 선구매 -->
+        <!-- Case : 심사 - 선구매 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div class="flex-box">
@@ -3020,9 +3011,9 @@ export default {
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 선구매 -->
+        <!-- //Case : 심사 - 선구매 -->
 
-        <!-- Case : 운용리스 -->
+        <!-- Case : 심사 - 운용리스 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div class="flex-box">
@@ -3381,9 +3372,9 @@ export default {
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 운용리스 -->
+        <!-- //Case : 심사 - 운용리스 -->
 
-        <!-- Case : 할부 -->
+        <!-- Case : 심사 - 할부 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div class="flex-box">
@@ -3663,13 +3654,9 @@ export default {
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 할부 -->
-      </UiAccordion>
-      <!-- //Case : 심사 탭 선택시 노출 -->
+        <!-- //Case : 심사 - 할부 -->
 
-      <!-- Case : 품의 탭 선택시 노출 -->
-      <UiAccordion>
-        <!-- Case : 장기렌트 -->
+        <!-- Case : 품의 - 장기렌트 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div class="flex-box">
@@ -3928,9 +3915,9 @@ export default {
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 장기렌트 -->
+        <!-- //Case : 품의 - 장기렌트 -->
 
-        <!-- Case : 선구매 -->
+        <!-- Case : 품의 - 선구매 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div class="flex-box">
@@ -4189,9 +4176,9 @@ export default {
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 선구매 -->
+        <!-- //Case : 품의 - 선구매 -->
 
-        <!-- Case : 운용리스 -->
+        <!-- Case : 품의 - 운용리스 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div class="flex-box">
@@ -4445,9 +4432,9 @@ export default {
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 운용리스 -->
+        <!-- //Case : 품의 - 운용리스 -->
 
-        <!-- Case : 할부 -->
+        <!-- Case : 품의 - 할부 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div class="flex-box">
@@ -4675,13 +4662,9 @@ export default {
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 할부 -->
-      </UiAccordion>
-      <!-- //Case : 품의 탭 선택시 노출 -->
+        <!-- //Case : 품의 - 할부 -->
 
-      <!-- Case : 인도 탭 선택시 노출 -->
-      <UiAccordion>
-        <!-- Case : 장기렌트 -->
+        <!-- Case : 인도 - 장기렌트 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div class="flex-box">
@@ -4951,9 +4934,9 @@ export default {
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 장기렌트 -->
+        <!-- //Case : 인도 - 장기렌트 -->
 
-        <!-- Case : 선구매 -->
+        <!-- Case : 인도 - 선구매 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div class="flex-box">
@@ -5223,9 +5206,9 @@ export default {
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 선구매 -->
+        <!-- //Case : 인도 - 선구매 -->
 
-        <!-- Case : 운용리스 -->
+        <!-- Case : 인도 - 운용리스 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div class="flex-box">
@@ -5545,9 +5528,9 @@ export default {
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 운용리스 -->
+        <!-- //Case : 인도 - 운용리스 -->
 
-        <!-- Case : 할부 -->
+        <!-- Case : 인도 - 할부 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div class="flex-box">
@@ -5810,10 +5793,8 @@ export default {
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 할부 -->
-        <!-- //Case : 인도 탭 선택시 노출 -->
+        <!-- //Case : 인도 - 할부 -->
       </UiAccordion>
-      <!-- //Case : 인도 탭 선택시 노출 -->
 
       <!-- Case : 결과 없을 때 -->
       <div :class="$style['empty']">

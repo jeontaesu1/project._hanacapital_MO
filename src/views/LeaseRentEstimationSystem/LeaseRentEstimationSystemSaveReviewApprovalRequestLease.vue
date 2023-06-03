@@ -255,7 +255,6 @@ export default {
               <KeyValueTitle>출고/유형</KeyValueTitle>
               <KeyValueText>대리점출고 / 현금결제, 리스사명의</KeyValueText>
             </KeyValueItem>
-            <!-- //Case : 운용리스/금융리스일 경우 -->
           </KeyValue>
         </BasicBox>
       </section>
