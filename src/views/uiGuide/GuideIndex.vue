@@ -1949,6 +1949,28 @@ const datas = () => [
     depth1: '리스/렌트 견적시스템 (영업용)',
     datas: [
       {
+        depth2: '신차',
+        depth3: '렌트견적\nLR_M02_p001',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/lease-rent-estimation-system/rent',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '신차',
+        depth3: '리스견적\nLR_M02_p002',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/lease-rent-estimation-system/lease',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
         depth2: '선구매\nLR_M02_p005',
         depth3: '',
         depth4: '',

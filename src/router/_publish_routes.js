@@ -1460,7 +1460,7 @@ const routes = [
     path: '/inventory-finance-check/home',
     name: '/inventory-finance-check/home',
     component: () =>
-      import('@/views/InventoryFinanceCheck/InventoryFinanceCheckHome.vue'),
+      import('@/views/inventoryFinanceCheck/InventoryFinanceCheckHome.vue'),
   },
 
   // lease-rent-estimation-system
@@ -1469,7 +1469,7 @@ const routes = [
     name: '/lease-rent-estimation-system/pre-purchase',
     component: () =>
       import(
-        '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemPrePurchase.vue'
+        '@/views/leaseRentEstimationSystem/LeaseRentEstimationSystemPrePurchase.vue'
       ),
   },
   {
@@ -1477,7 +1477,7 @@ const routes = [
     name: '/lease-rent-estimation-system/pre-purchase-car-detail',
     component: () =>
       import(
-        '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemPrePurchaseCarDetail.vue'
+        '@/views/leaseRentEstimationSystem/LeaseRentEstimationSystemPrePurchaseCarDetail.vue'
       ),
   },
   {
@@ -1485,7 +1485,7 @@ const routes = [
     name: '/lease-rent-estimation-system/save-review',
     component: () =>
       import(
-        '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemSaveReview.vue'
+        '@/views/leaseRentEstimationSystem/LeaseRentEstimationSystemSaveReview.vue'
       ),
   },
   {
@@ -1493,7 +1493,7 @@ const routes = [
     name: '/lease-rent-estimation-system/save-review-approval-request-rent',
     component: () =>
       import(
-        '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemSaveReviewApprovalRequestRent.vue'
+        '@/views/leaseRentEstimationSystem/LeaseRentEstimationSystemSaveReviewApprovalRequestRent.vue'
       ),
   },
   {
@@ -1501,7 +1501,23 @@ const routes = [
     name: '/lease-rent-estimation-system/save-review-approval-request-lease',
     component: () =>
       import(
-        '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemSaveReviewApprovalRequestLease.vue'
+        '@/views/leaseRentEstimationSystem/LeaseRentEstimationSystemSaveReviewApprovalRequestLease.vue'
+      ),
+  },
+  {
+    path: '/lease-rent-estimation-system/rent',
+    name: '/lease-rent-estimation-system/rent',
+    component: () =>
+      import(
+        '@/views/leaseRentEstimationSystem/LeaseRentEstimationSystemRent.vue'
+      ),
+  },
+  {
+    path: '/lease-rent-estimation-system/lease',
+    name: '/lease-rent-estimation-system/lease',
+    component: () =>
+      import(
+        '@/views/leaseRentEstimationSystem/LeaseRentEstimationSystemLease.vue'
       ),
   },
 
