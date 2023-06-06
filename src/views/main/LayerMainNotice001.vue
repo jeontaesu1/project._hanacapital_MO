@@ -10,11 +10,11 @@ import TextButton from '@/components/ui/button/TextButton.vue';
 
 export default {
   components: {
+    Swiper,
+    SwiperSlide,
     UiLayer,
     ToastPopup,
     TextButton,
-    Swiper,
-    SwiperSlide,
   },
   setup() {
     const layer = ref(null);

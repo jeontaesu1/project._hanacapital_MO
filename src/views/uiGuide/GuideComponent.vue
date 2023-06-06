@@ -18,6 +18,9 @@ import AlertPopup from '@/components/ui/layer/AlertPopup.vue';
 import CheckBox from '@/components/ui/form/CheckBox.vue';
 import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
 import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
+import RadioButton from '@/components/ui/form/RadioButton.vue';
+import RadioButtonLabelText from '@/components/ui/form/RadioButtonLabelText.vue';
+import RadioButtonObject from '@/components/ui/form/RadioButtonObject.vue';
 import BoxCheck from '@/components/ui/form/BoxCheck.vue';
 import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
 import BoxCheckObject from '@/components/ui/form/BoxCheckObject.vue';
@@ -92,6 +95,7 @@ import ColorSelect from '@/components/ui/form/ColorSelect.vue';
 import ColorSelectList from '@/components/ui/form/ColorSelectList.vue';
 import ColorSelectListItem from '@/components/ui/form/ColorSelectListItem.vue';
 import DownloadButton from '@/components/ui/button/DownloadButton.vue';
+import SettingButton from '@/components/ui/button/SettingButton.vue';
 import BasicBanner from '@/components/ui/banner/BasicBanner.vue';
 import EventBanner from '@/components/ui/banner/EventBanner.vue';
 import FunBanner from '@/components/ui/banner/FunBanner.vue';
@@ -158,6 +162,9 @@ export default {
     CheckBox,
     CheckBoxLabelText,
     CheckBoxObject,
+    RadioButton,
+    RadioButtonLabelText,
+    RadioButtonObject,
     BoxCheck,
     BoxCheckLabel,
     BoxCheckObject,
@@ -232,6 +239,7 @@ export default {
     ColorSelectList,
     ColorSelectListItem,
     DownloadButton,
+    SettingButton,
     BasicBanner,
     EventBanner,
     FunBanner,
@@ -1152,6 +1160,15 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Setting Button</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <SettingButton />
+        <SettingButton tagName="a" href="" />
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">inline wrap</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -1519,6 +1536,247 @@ export default {
           <CheckBoxObject />
           <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
         </CheckBox>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">RadioButton</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <RadioButton
+          name="testRadioButton001"
+          id="testRadioButton001_001"
+          @change="testInputEvent"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton001"
+          id="testRadioButton001_002"
+          :defaultChecked="true"
+          @change="testInputEvent"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton001d"
+          id="testRadioButton001d_001"
+          :disabled="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton001d"
+          id="testRadioButton001d_002"
+          :disabled="true"
+          :defaultChecked="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Align Center</h3>
+        <RadioButton
+          name="testRadioButton002"
+          id="testRadioButton002_001"
+          align="center"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton002"
+          id="testRadioButton002_002"
+          align="center"
+          :defaultChecked="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton002d"
+          id="testRadioButton002d_001"
+          align="center"
+          :disabled="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton002d"
+          id="testRadioButton002d_002"
+          align="center"
+          :disabled="true"
+          :defaultChecked="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Full</h3>
+        <RadioButton
+          name="testRadioButton003"
+          id="testRadioButton003_001"
+          :full="true"
+        >
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+          <RadioButtonObject />
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton003"
+          id="testRadioButton003_002"
+          :full="true"
+          :defaultChecked="true"
+        >
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+          <RadioButtonObject />
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton003d"
+          id="testRadioButton003d_001"
+          :full="true"
+          :disabled="true"
+        >
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+          <RadioButtonObject />
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton003d"
+          id="testRadioButton003d_002"
+          :full="true"
+          :disabled="true"
+          :defaultChecked="true"
+        >
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+          <RadioButtonObject />
+        </RadioButton>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Only Object</h3>
+        <RadioButton
+          name="testRadioButton004"
+          id="testRadioButton004_001"
+          :onlyObject="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton004"
+          id="testRadioButton004_002"
+          :onlyObject="true"
+          :defaultChecked="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton004d"
+          id="testRadioButton004d_001"
+          :onlyObject="true"
+          :disabled="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton004d"
+          id="testRadioButton004d_002"
+          :onlyObject="true"
+          :disabled="true"
+          :defaultChecked="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">secondary</h3>
+        <RadioButton
+          name="testRadioButton005"
+          id="testRadioButton005_001"
+          theme="secondary"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton005"
+          id="testRadioButton005_002"
+          theme="secondary"
+          :defaultChecked="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton005d"
+          id="testRadioButton005d_001"
+          theme="secondary"
+          :disabled="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton005d"
+          id="testRadioButton005d_002"
+          theme="secondary"
+          :disabled="true"
+          :defaultChecked="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">tertiary</h3>
+        <RadioButton
+          name="testRadioButton006"
+          id="testRadioButton006_001"
+          theme="tertiary"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton006"
+          id="testRadioButton006_002"
+          theme="tertiary"
+          :defaultChecked="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton006d"
+          id="testRadioButton006d_001"
+          theme="tertiary"
+          :disabled="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton006d"
+          id="testRadioButton006d_002"
+          theme="tertiary"
+          :disabled="true"
+          :defaultChecked="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
       </div>
     </section>
 
@@ -7374,20 +7632,26 @@ export default {
           :defaultChecked="true"
           :disabled="true"
         />
-
-        <!-- 소스 카피 기능용 소스(미구현) -->
-        <div class="test-section-copy">
-          <div><button class="test-section-copy-button">copy</button></div>
-          <pre class="test-section-copy-code">
-            import SwitchCheckBox from '@/components/ui/form/SwitchCheckBox.vue';
-            components: {
-              SwitchCheckBox,
-            }
-            <SwitchCheckBox id="인풋과 매칭될 아이디 할당" />
-            <SwitchCheckBox id="test" /> // 예시
-          </pre>
-        </div>
-        <!-- //소스 카피 기능용 소스 -->
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">secondary</h3>
+        <SwitchCheckBox id="testSwitchCheckBox005" theme="secondary" />
+        <SwitchCheckBox
+          id="testSwitchCheckBox006"
+          theme="secondary"
+          :defaultChecked="true"
+        />
+        <SwitchCheckBox
+          id="testSwitchCheckBox007"
+          theme="secondary"
+          :disabled="true"
+        />
+        <SwitchCheckBox
+          id="testSwitchCheckBox008"
+          theme="secondary"
+          :defaultChecked="true"
+          :disabled="true"
+        />
       </div>
     </section>
 
@@ -7888,6 +8152,10 @@ export default {
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
         <CarEmblem code="1001" name="현대" />
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Size Small</h3>
+        <CarEmblem code="1001" name="현대" size="small" />
       </div>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Size Medium</h3>

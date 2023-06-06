@@ -35,6 +35,8 @@ import ImgMainSample from '@/assets/images/_dummy/main-sample.svg?component';
 export default {
   components: {
     RouterLink,
+    Swiper,
+    SwiperSlide,
     PageContents,
     PageTextGroup,
     PageMainText,
@@ -48,8 +50,6 @@ export default {
     MainBanner,
     SlideBanner,
     SlideBannerBlock,
-    Swiper,
-    SwiperSlide,
     IconRegistration,
     IconCalculate,
     IconClover,

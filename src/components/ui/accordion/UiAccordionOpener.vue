@@ -9,6 +9,7 @@ const defaultClassNames = () => ({
 });
 
 export default {
+  inheritAttrs: false,
   components: {
     IconArrow,
   },
@@ -18,6 +19,10 @@ export default {
       default() {
         return defaultClassNames();
       },
+    },
+    toggleAction: {
+      Type: Boolean,
+      default: true,
     },
     text: {
       Type: String,
@@ -55,6 +60,7 @@ export default {
 
 <template>
   <button
+    v-bind="$attrs"
     type="button"
     :class="[
       styleModule['accordion__opener'],
@@ -63,7 +69,7 @@ export default {
       },
       customClassNames.button,
     ]"
-    @click="uiAccordionItem.toggle()"
+    @click="toggleAction && uiAccordionItem.toggle()"
   >
     <IconArrow />
     <span

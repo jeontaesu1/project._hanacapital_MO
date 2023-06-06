@@ -68,6 +68,15 @@
         }
       }
 
+      &.box-check-list--align-full {
+        .box-check-list__item {
+          & + .box-check-list__item {
+            margin-left: 0;
+            margin-top: 6px;
+          }
+        }
+      }
+
       &.box-check-list--wrap {
         .box-check-list {
           &__list {

@@ -1,12 +1,18 @@
 <script>
-import { ref, computed, reactive, onBeforeMount, watch } from 'vue';
+import {
+  ref,
+  computed,
+  useCssModule,
+  provide,
+  reactive,
+  watch,
+  onBeforeMount,
+} from 'vue';
 
 const defaultClassNames = () => ({
   wrap: '',
   input: '',
   label: '',
-  object: '',
-  text: '',
 });
 
 export default {
@@ -18,17 +24,29 @@ export default {
         return defaultClassNames();
       },
     },
-    theme: {
-      Type: String,
-      default: null,
-    },
     type: {
       Type: String,
-      default: 'checkbox',
+      default: 'radio',
     },
     id: {
       Type: String,
       required: true,
+    },
+    align: {
+      Type: String,
+      default: null,
+    },
+    theme: {
+      Type: String,
+      default: null,
+    },
+    onlyObject: {
+      Type: Boolean,
+      default: false,
+    },
+    full: {
+      Type: Boolean,
+      default: false,
     },
     defaultChecked: {
       Type: Boolean,
@@ -40,6 +58,7 @@ export default {
   },
   setup(props, { emit }) {
     const state = reactive({
+      theme: { value: null },
       checked: false,
     });
 
@@ -62,6 +81,13 @@ export default {
     };
 
     watch(
+      () => props.theme,
+      (cur) => {
+        state.theme.value = cur;
+      }
+    );
+
+    watch(
       () => props.modelValue,
       (cur) => {
         state.checked = cur;
@@ -69,10 +95,16 @@ export default {
     );
 
     onBeforeMount(() => {
+      state.theme.value = props.theme;
+
       const { modelValue, defaultChecked } = props;
+
       state.checked =
         typeof modelValue === 'boolean' ? modelValue : defaultChecked;
     });
+
+    provide('radioButtonStyleModule', useCssModule());
+    provide('radioButtonTheme', state.theme);
 
     return {
       state,
@@ -88,9 +120,12 @@ export default {
 <template>
   <div
     :class="[
-      $style['switch-checkbox'],
+      $style['radio'],
       {
-        [$style[`switch-checkbox--theme-${theme}`]]: theme,
+        [$style[`radio--theme-${theme}`]]: theme,
+        [$style[`radio--align-${align}`]]: align,
+        [$style['radio--only-object']]: onlyObject,
+        [$style['radio--full']]: full,
       },
       customClassNames.wrap,
     ]"
@@ -99,25 +134,17 @@ export default {
       ref="input"
       v-bind="$attrs"
       :type="type"
-      :class="[$style['switch-checkbox__input'], customClassNames.input]"
+      :class="[$style['radio__input'], customClassNames.input]"
       :id="id"
       :checked="state.checked"
       @change="onChange"
     />
-    <label
-      :for="id"
-      :class="[$style['switch-checkbox__label'], customClassNames.label]"
-    >
-      <span
-        :class="[$style['switch-checkbox__object'], customClassNames.object]"
-      />
-      <span :class="[$style['switch-checkbox__text'], customClassNames.text]">
-        On/Off
-      </span>
+    <label :for="id" :class="[$style['radio__label'], customClassNames.label]">
+      <slot />
     </label>
   </div>
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/components/ui/form/SwitchCheckBox.scss';
+@import '@/assets/scss/components/ui/form/RadioButton.scss';
 </style>

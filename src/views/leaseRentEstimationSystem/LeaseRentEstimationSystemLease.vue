@@ -1,5 +1,5 @@
 <script>
-// LR_M02_p005
+// LR_M02_p002
 import { onMounted, onUnmounted } from 'vue';
 
 import { useUiHeaderStore } from '@/stores/ui/header';
@@ -37,3 +37,7 @@ export default {
     <h1>Page</h1>
   </PageContents>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/leaseRentEstimationSystem/LeaseRentEstimationSystemLease.scss';
+</style>

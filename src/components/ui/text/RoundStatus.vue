@@ -21,6 +21,10 @@ export default {
       Type: String,
       default: null,
     },
+    block: {
+      Type: Boolean,
+      default: false,
+    },
   },
   setup(props) {
     const customClassNames = computed(() => {
@@ -40,6 +44,7 @@ export default {
     :class="[
       $style['status'],
       {
+        [$style['status--block']]: block,
         [$style[`status--theme-${theme}`]]: theme,
         [$style[`status--size-${size}`]]: size,
       },

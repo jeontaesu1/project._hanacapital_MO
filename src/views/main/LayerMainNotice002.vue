@@ -11,12 +11,12 @@ import TextButton from '@/components/ui/button/TextButton.vue';
 
 export default {
   components: {
+    Swiper,
+    SwiperSlide,
     UiLayer,
     NoticePopup,
     PopupButton,
     TextButton,
-    Swiper,
-    SwiperSlide,
   },
   setup() {
     const state = reactive({

@@ -1955,8 +1955,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/lease-rent-estimation-system/rent',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.08',
         log: [],
       },
       {
