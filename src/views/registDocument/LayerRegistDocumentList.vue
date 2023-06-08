@@ -14,9 +14,11 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
+import BasicTooltip from '@/components/ui/tooltip/BasicTooltip.vue';
 
 import IconAdd from '@/assets/images/icon/add.svg?component';
 import IconCheckDocument from '@/assets/images/icon/check-document.svg?component';
+import IconTooltip from '@/assets/images/icon/tooltip.svg?component';
 
 export default {
   components: {
@@ -32,8 +34,10 @@ export default {
     ButtonListItem,
     BasicButton,
     BasicBox,
+    BasicTooltip,
     IconAdd,
     IconCheckDocument,
+    IconTooltip,
   },
   setup() {
     const layer = ref(null);
@@ -70,7 +74,27 @@ export default {
 
       <div>
         <section class="row-margin-contents-group">
-          <h3 class="text-body-2 row-margin-item-medium">운전면허증(필수)</h3>
+          <div class="flex-box row-margin-item-medium">
+            <div class="flex-box__cell">
+              <h3 class="text-body-2">운전면허증(필수)</h3>
+            </div>
+            <div class="flex-box__cell flex-box__cell--small">
+              <BasicTooltip placement="top" :fit="true">
+                <IconTooltip :class="$style['icon']" />
+                <span class="for-a11y">(도움말)</span>
+
+                <template v-slot:contents>
+                  <section :class="$style['tooltip-section']">
+                    <h4 :class="$style['tooltip-section__title']">운전면허증</h4>
+                    <p :class="$style['tooltip-section__text']">
+                      재직확인을 위한 서류: 건강보험자격득실확인서, 재직증명서 등
+                    </p>
+                  </section>
+                </template>
+              </BasicTooltip>
+            </div>
+          </div>
+
           <!-- Case : 서류 등록 전 -->
           <button
             type="button"
@@ -124,7 +148,7 @@ export default {
         </section>
 
         <section class="row-margin-contents-group">
-          <h3 class="text-body-2 row-margin-item-medium">자동차등록증(선택)</h3>
+          <h3 class="text-body-2 row-margin-item-medium">자동차등록증</h3>
           <!-- Case : 서류 등록 전 -->
           <button
             type="button"
@@ -178,7 +202,7 @@ export default {
         </section>
 
         <section class="row-margin-contents-group">
-          <h3 class="text-body-2 row-margin-item-medium">기타서류(선택)</h3>
+          <h3 class="text-body-2 row-margin-item-medium">기타서류</h3>
           <!-- Case : 서류 등록 전 -->
           <button
             type="button"

@@ -3,9 +3,11 @@
 import { ref, reactive } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
-import ToastPopup from '@/components/ui/layer/ToastPopup.vue';
-import ToastPopupHead from '@/components/ui/layer/ToastPopupHead.vue';
-import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
+import FullPopup from '@/components/ui/layer/FullPopup.vue';
+import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
+import PopupButton from '@/components/ui/layer/PopupButton.vue';
+import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
+import PageMainText from '@/components/ui/text/PageMainText.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
@@ -13,7 +15,6 @@ import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
-import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
@@ -21,9 +22,11 @@ import BasicInput from '@/components/ui/form/BasicInput.vue';
 export default {
   components: {
     UiLayer,
-    ToastPopup,
-    ToastPopupHead,
-    PopupTitle,
+    FullPopup,
+    FullPopupHead,
+    PopupButton,
+    PageTextGroup,
+    PageMainText,
     BasicButton,
     ButtonList,
     ButtonListItem,
@@ -31,7 +34,6 @@ export default {
     FormListItem,
     FormInvalid,
     FormInvalidMessage,
-    FormHelpText,
     InputBlock,
     InputBlockCell,
     BasicInput,
@@ -52,13 +54,22 @@ export default {
 </script>
 
 <template>
-  <UiLayer ref="layer" type="toast" :backgroundClose="true">
-    <ToastPopup>
+  <UiLayer ref="layer" type="full" v-slot="layerSlotProps" :backgroundClose="true">
+    <FullPopup>
       <template v-slot:head>
-        <ToastPopupHead>
-          <PopupTitle>차량번호를 등록해 주세요</PopupTitle>
-        </ToastPopupHead>
+        <FullPopupHead>
+          <template v-slot:right>
+            <PopupButton @click="layerSlotProps.close()" />
+          </template>
+        </FullPopupHead>
       </template>
+
+      <PageTextGroup>
+        <PageMainText>
+          <strong>차량번호를</strong><br />
+          등록해주세요
+        </PageMainText>
+      </PageTextGroup>
 
       <FormList>
         <FormListItem
@@ -73,9 +84,13 @@ export default {
                   id="layerSalesNewCarAddNumberNumber"
                 />
               </InputBlockCell>
+              <template v-slot:right>
+                <BasicButton size="mini" theme="tertiary">
+                  확인
+                </BasicButton>
+              </template>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
-            <FormHelpText>특수문자/영문/기호 입력불가 합니다.</FormHelpText>
           </FormInvalid>
         </FormListItem>
       </FormList>
@@ -85,8 +100,8 @@ export default {
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              기타문의사항은 하나캐피탈 고객센터 (1800-1110)으로 연락주시기
-              바랍니다.
+              기타문의사항은 하나캐피탈 고객센터<br />
+              (1800-1110)으로 연락주시기 바랍니다.
             </div>
           </li>
         </ul>
@@ -99,11 +114,11 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton theme="secondary">등록</BasicButton>
+            <BasicButton>다음</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
-    </ToastPopup>
+    </FullPopup>
   </UiLayer>
 </template>
 
