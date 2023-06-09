@@ -765,12 +765,6 @@ export default {
           </template>
           Button
         </BasicButton>
-        <BasicButton inline="true" size="mini">
-          Button
-          <template v-slot:rightIcon>
-            <div :class="$style['loading-icon']"></div>
-          </template>
-        </BasicButton>
         <BasicButton tagName="a" inline="true" disabledStyle="true">
           Button
           <template v-slot:rightIcon>
@@ -1204,6 +1198,24 @@ export default {
             </KeyValueItem>
           </KeyValue>
         </ContentsButton>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Loading Icon</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sun-title">Default</h3>
+
+        <div
+          style="
+            display: inline-block;
+            padding: 20px;
+            background-color: #bdbdbd;
+            box-sizing: border-box;
+          "
+        >
+          <div :class="$style['loading-icon']"></div>
+        </div>
       </div>
     </section>
 
@@ -7467,7 +7479,7 @@ export default {
         <SelectTable>
           <template v-slot:colgroup>
             <col style="width: 83px" />
-            <col />
+            <col style="width: 200px" />
             <col style="width: 90px" />
           </template>
 
