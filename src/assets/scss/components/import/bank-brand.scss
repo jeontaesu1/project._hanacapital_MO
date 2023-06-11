@@ -58,10 +58,12 @@
     @include font-size-default(14);
   }
 
-  &--col-2 {
-    .bank-brand {
-      &__item {
-        width: 50%;
+  &--col {
+    &-2 {
+      .bank-brand {
+        &__item {
+          width: 50%;
+        }
       }
     }
   }
