@@ -85,9 +85,12 @@ export default {
 
                 <template v-slot:contents>
                   <section :class="$style['tooltip-section']">
-                    <h4 :class="$style['tooltip-section__title']">운전면허증</h4>
+                    <h4 :class="$style['tooltip-section__title']">
+                      운전면허증
+                    </h4>
                     <p :class="$style['tooltip-section__text']">
-                      재직확인을 위한 서류: 건강보험자격득실확인서, 재직증명서 등
+                      재직확인을 위한 서류: 건강보험자격득실확인서, 재직증명서
+                      등
                     </p>
                   </section>
                 </template>
@@ -260,6 +263,81 @@ export default {
           </ul>
           <!-- //Case : 서류 등록 후 -->
         </section>
+      </div>
+
+      <div class="row-margin-contents-group">
+        <ul :class="$style['basic-list']">
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              서류등록 파일은 jpg, jpeg, png, gif, tif, pdf만 가능합니다.
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              서류등록 파일은 최대 30개까지 등록 가능합니다.
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              고객님께서 제출하신 서류는 본 금융거래 이외의 다른 목적으로
+              사용되지 않습니다.
+            </div>
+          </li>
+          <!-- 오토승계인 경우 노출 -->
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              외국인 : 국내거소사실증명원, 국내거소신고증(앞/뒤면)
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              렌터카 임직원 상품 승계 시 임직원 증빙자료를 꼭 등록해주세요.
+            </div>
+          </li>
+          <!-- // 오토승계인 경우 노출 -->
+        </ul>
+
+        <!-- 설비리스 물건점검 사진등록인 경우 노출 -->
+        <section :class="[$style['notice-section'], 'row-margin-item-group']">
+          <h3 :class="$style['notice-section__title']">
+            물건검수사진 등록 안내
+          </h3>
+          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+            <li :class="$style['basic-list__item']">
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                <div>아래의 내용을 촬영 후 첨부해 주세요.</div>
+
+                <ol :class="[$style['basic-list'], 'row-margin-item']">
+                  <li :class="$style['basic-list__item']">
+                    <div :class="$style['basic-list__symbol']">1.</div>
+                    <div :class="$style['basic-list__content']">
+                      리스물건의 전면 사진
+                    </div>
+                  </li>
+                  <li :class="$style['basic-list__item']">
+                    <div :class="$style['basic-list__symbol']">2.</div>
+                    <div :class="$style['basic-list__content']">
+                      물건제원표 사진
+                    </div>
+                  </li>
+                  <li :class="$style['basic-list__item']">
+                    <div :class="$style['basic-list__symbol']">3.</div>
+                    <div :class="$style['basic-list__content']">
+                      사업장(상호포함) 사진
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <!-- //설비리스 물건점검 사진등록인 경우 노출 -->
       </div>
 
       <template v-slot:foot>

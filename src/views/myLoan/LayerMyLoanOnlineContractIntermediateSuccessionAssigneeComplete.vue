@@ -65,8 +65,9 @@ export default {
           <strong>완료되었습니다</strong>
         </PageMainText>
         <PageSubText>
-          고객님의 소중한 정보를 확인 후<br />
-          심사결과를 알려드리겠습니다.
+          약정이 완료되었습니다.<br />
+          하나캐피탈을 이용해 주셔서 감사합니다.<br />
+          대출금송금을 위해 ARS를 진행해주세요.
         </PageSubText>
       </PageTextGroup>
 
