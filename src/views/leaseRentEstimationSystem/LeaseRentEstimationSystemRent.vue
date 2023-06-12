@@ -2140,11 +2140,7 @@ export default {
                                 />
                               </InputBlockCell>
                               <InputBlockCell>
-                                <!-- Case : 할인율 선택시 color-gray-quinary 클래스값 제거 -->
-                                <div class="text-body-3 color-gray-quinary">
-                                  %
-                                </div>
-                                <!-- // Case : 할인율 선택시 color-gray-quinary 클래스값 제거 -->
+                                <div class="text-body-3">%</div>
                               </InputBlockCell>
                               <!-- Case : 할인율 선택시 :disabled="false" 기능 제외 -->
                               <InputBlockCell :flexible="true">
