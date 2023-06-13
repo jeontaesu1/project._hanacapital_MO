@@ -13,6 +13,7 @@ import IconSearch from '@/assets/images/common/search.svg?component';
 import IconShare from '@/assets/images/common/share.svg?component';
 import IconClose from '@/assets/images/common/close.svg?component';
 import IconSetting from '@/assets/images/common/setting.svg?component';
+import IconHome from '@/assets/images/common/home.svg?component';
 
 export default {
   components: {
@@ -25,6 +26,7 @@ export default {
     IconShare,
     IconClose,
     IconSetting,
+    IconHome,
   },
   props: {
     type: {
@@ -164,6 +166,16 @@ export default {
     <IconSetting :class="styleModule['header__button-icon']" />
     <span :class="styleModule['header__button-text']">설정</span>
   </RouterLink>
+
+  <button
+    v-else-if="type === 'homeButton'"
+    type="button"
+    :class="styleModule['header__button']"
+    @click="onClick"
+  >
+    <IconHome :class="styleModule['header__button-icon']" />
+    <span :class="styleModule['header__button-text']">홈</span>
+  </button>
 
   <LayerGlobalNav
     ref="gnbLayer"

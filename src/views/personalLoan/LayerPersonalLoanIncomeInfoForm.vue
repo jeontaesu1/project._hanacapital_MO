@@ -129,17 +129,11 @@ export default {
               </BoxCheck>
             </BoxCheckListItem>
           </BoxCheckList>
-
-          <!-- Case : 기타 선택 시 노출 -->
-          <NoticeText :classNames="{ wrap: 'row-margin-item-group' }">
-            급여소득자, 자영업자가 아니어도 한도조회를 신청할 수 있습니다.
-          </NoticeText>
-          <!-- // Case : 기타 선택 시 노출 -->
         </FormListItem>
       </FormList>
 
-      <div class="row-margin-container-medium">
-        <!-- Case : 급여소득자 선택 시 노출 -->
+      <!-- Case : 급여소득자 선택 시 노출 -->
+      <div class="row-margin-container-medium row-margin-bottom-none">
         <section>
           <!-- Case : 원큐자동차담보대출에서 공공마이데이터 정보 미출력 시, 문구 노출 -->
           <div class="row-margin-contents">
@@ -222,133 +216,139 @@ export default {
             </FormListItem>
           </FormList>
         </section>
-        <!-- // Case : 급여소득자 선택 시 노출 -->
-
-        <!-- Case : 자영업자 선택 시 노출 -->
-        <section>
-          <FormList>
-            <FormListItem
-              titleText="상호명"
-              target="#layerPersonalLoanIncomeInfoFormBuisnessName"
-            >
-              <FormInvalid :error="state.buisnessNameError">
-                <InputBlock :error="state.buisnessNameError">
-                  <InputBlockCell :flexible="true">
-                    <BasicInput
-                      title="상호명"
-                      id="layerPersonalLoanIncomeInfoFormBuisnessName"
-                    />
-                  </InputBlockCell>
-                </InputBlock>
-                <FormInvalidMessage>Error Message</FormInvalidMessage>
-              </FormInvalid>
-            </FormListItem>
-
-            <FormListItem
-              titleText="사업자번호"
-              target="#layerPersonalLoanIncomeInfoFormBuisnessLicense"
-            >
-              <FormInvalid :error="state.buisnessLicenseError">
-                <InputBlock :error="state.buisnessLicenseError">
-                  <InputBlockCell :flexible="true">
-                    <BasicInput
-                      type="number"
-                      pattern="\d*"
-                      title="사업자번호"
-                      id="layerPersonalLoanIncomeInfoFormBuisnessLicense"
-                    />
-                  </InputBlockCell>
-                  <template v-slot:right>
-                    <BasicButton size="mini" theme="quaternary"
-                      >확인</BasicButton
-                    >
-                  </template>
-                </InputBlock>
-                <FormInvalidMessage>Error Message</FormInvalidMessage>
-                <FormHelpText>‘-’를 제외하고 입력해주세요.</FormHelpText>
-              </FormInvalid>
-            </FormListItem>
-
-            <FormListItem
-              titleText="사업개시일"
-              target="#layerPersonalLoanIncomeInfoFormBuisnessDateButton"
-            >
-              <FormInvalid :error="state.buisnessDateError">
-                <InputBlock :error="state.buisnessDateError">
-                  <InputBlockCell :flexible="true">
-                    <BasicDatepicker
-                      title="사업개시일"
-                      id="layerPersonalLoanIncomeInfoFormBuisnessDate"
-                      buttonId="layerPersonalLoanIncomeInfoFormBuisnessDateButton"
-                    />
-                  </InputBlockCell>
-                </InputBlock>
-                <FormInvalidMessage>Error Message</FormInvalidMessage>
-              </FormInvalid>
-            </FormListItem>
-
-            <!-- Case : 사업자 주택담보대출에서 진입 시, 노출 -->
-            <FormListItem
-              titleText="사업자주소"
-              :forceFocus="true"
-              target="#layerPersonalLoanIncomeInfoFormBuisnessAddressSearch"
-            >
-              <FormInvalid :error="state.buisnessAddressError">
-                <InputBlock :error="state.buisnessAddressError">
-                  <InputBlockCell :flexible="true">
-                    <BasicInput
-                      title="사업자주소 우편번호"
-                      :disabled="true"
-                      defaultValue="01000"
-                    />
-                  </InputBlockCell>
-                  <template v-slot:right>
-                    <BasicButton
-                      size="mini"
-                      theme="tertiary"
-                      id="layerPersonalLoanIncomeInfoFormBuisnessAddressSearch"
-                      >검색</BasicButton
-                    >
-                  </template>
-                </InputBlock>
-                <!-- DD : 주소 검색 및 입력 후 노출 -->
-                <InputBlock
-                  :error="state.buisnessAddressError"
-                  :classNames="{
-                    wrap: 'row-margin-item-group row-margin-bottom-none',
-                  }"
-                >
-                  <InputBlockCell :flexible="true">
-                    <BasicInput
-                      title="사업자주소 도로명 주소"
-                      :disabled="true"
-                      defaultValue="인천 서구 에코로 181"
-                    />
-                  </InputBlockCell>
-                </InputBlock>
-                <InputBlock
-                  :error="state.buisnessAddressError"
-                  :classNames="{
-                    wrap: 'row-margin-item-group row-margin-bottom-none',
-                  }"
-                >
-                  <InputBlockCell :flexible="true">
-                    <BasicInput
-                      title="사업자주소 상세 주소"
-                      :disabled="true"
-                      defaultValue="하나금융 로비"
-                    />
-                  </InputBlockCell>
-                </InputBlock>
-                <!-- // DD : 주소 검색 및 입력 후 노출 -->
-                <FormInvalidMessage>Error Message</FormInvalidMessage>
-              </FormInvalid>
-            </FormListItem>
-            <!-- // Case : 사업자 주택담보대출에서 진입 시, 노출 -->
-          </FormList>
-        </section>
-        <!-- // Case : 자영업자 선택 시 노출 -->
       </div>
+      <!-- // Case : 급여소득자 선택 시 노출 -->
+
+      <!-- Case : 자영업자 선택 시 노출 -->
+      <div class="row-margin-contents row-margin-bottom-none">
+        <FormList>
+          <FormListItem
+            titleText="상호명"
+            target="#layerPersonalLoanIncomeInfoFormBuisnessName"
+          >
+            <FormInvalid :error="state.buisnessNameError">
+              <InputBlock :error="state.buisnessNameError">
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    title="상호명"
+                    id="layerPersonalLoanIncomeInfoFormBuisnessName"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem
+            titleText="사업자번호"
+            target="#layerPersonalLoanIncomeInfoFormBuisnessLicense"
+          >
+            <FormInvalid :error="state.buisnessLicenseError">
+              <InputBlock :error="state.buisnessLicenseError">
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    type="number"
+                    pattern="\d*"
+                    title="사업자번호"
+                    id="layerPersonalLoanIncomeInfoFormBuisnessLicense"
+                  />
+                </InputBlockCell>
+                <template v-slot:right>
+                  <BasicButton size="mini" theme="quaternary">확인</BasicButton>
+                </template>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+              <FormHelpText>‘-’를 제외하고 입력해주세요.</FormHelpText>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem
+            titleText="사업개시일"
+            target="#layerPersonalLoanIncomeInfoFormBuisnessDateButton"
+          >
+            <FormInvalid :error="state.buisnessDateError">
+              <InputBlock :error="state.buisnessDateError">
+                <InputBlockCell :flexible="true">
+                  <BasicDatepicker
+                    title="사업개시일"
+                    id="layerPersonalLoanIncomeInfoFormBuisnessDate"
+                    buttonId="layerPersonalLoanIncomeInfoFormBuisnessDateButton"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <!-- Case : 사업자 주택담보대출에서 진입 시, 노출 -->
+          <FormListItem
+            titleText="사업자주소"
+            :forceFocus="true"
+            target="#layerPersonalLoanIncomeInfoFormBuisnessAddressSearch"
+          >
+            <FormInvalid :error="state.buisnessAddressError">
+              <InputBlock :error="state.buisnessAddressError">
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    title="사업자주소 우편번호"
+                    :disabled="true"
+                    defaultValue="01000"
+                  />
+                </InputBlockCell>
+                <template v-slot:right>
+                  <BasicButton
+                    size="mini"
+                    theme="tertiary"
+                    id="layerPersonalLoanIncomeInfoFormBuisnessAddressSearch"
+                    >검색</BasicButton
+                  >
+                </template>
+              </InputBlock>
+              <!-- DD : 주소 검색 및 입력 후 노출 -->
+              <InputBlock
+                :error="state.buisnessAddressError"
+                :classNames="{
+                  wrap: 'row-margin-item-group row-margin-bottom-none',
+                }"
+              >
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    title="사업자주소 도로명 주소"
+                    :disabled="true"
+                    defaultValue="인천 서구 에코로 181"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <InputBlock
+                :error="state.buisnessAddressError"
+                :classNames="{
+                  wrap: 'row-margin-item-group row-margin-bottom-none',
+                }"
+              >
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    title="사업자주소 상세 주소"
+                    :disabled="true"
+                    defaultValue="하나금융 로비"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <!-- // DD : 주소 검색 및 입력 후 노출 -->
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+          <!-- // Case : 사업자 주택담보대출에서 진입 시, 노출 -->
+        </FormList>
+      </div>
+      <!-- // Case : 자영업자 선택 시 노출 -->
+
+      <!-- Case : 기타 선택 시 노출 -->
+      <div class="row-margin-item-group row-margin-bottom-none">
+        <NoticeText :classNames="{ wrap: 'row-margin-item-group' }">
+          급여소득자, 자영업자가 아니어도 한도조회를 신청할 수 있습니다.
+        </NoticeText>
+      </div>
+      <!-- // Case : 기타 선택 시 노출 -->
 
       <template v-slot:foot>
         <ButtonList

@@ -143,19 +143,18 @@ export default {
           <FormListItem
             titleText="차량번호"
             titleOptionalText="(선택)"
-            target="#salesUsedCarCounselingNumberSearch"
+            target="#salesUsedCarCounselingNumber"
           >
             <FormInvalid :error="state.numberError">
               <InputBlock :error="state.numberError">
                 <InputBlockCell :flexible="true">
-                  <BasicInput title="차량번호" id="salesUsedCarCounselingNumberSearch" />
+                  <BasicInput
+                    title="차량번호"
+                    id="salesUsedCarCounselingNumber"
+                  />
                 </InputBlockCell>
                 <template v-slot:right>
-                  <BasicButton
-                    size="mini"
-                    theme="tertiary"
-                    >조회</BasicButton
-                  >
+                  <BasicButton size="mini" theme="tertiary">조회</BasicButton>
                 </template>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>

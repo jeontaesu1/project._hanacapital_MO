@@ -1,6 +1,6 @@
 <script>
 // BF_M04_l002
-import { ref, reactive } from 'vue';
+import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import FullPopup from '@/components/ui/layer/FullPopup.vue';
@@ -20,33 +20,6 @@ import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-
-const dummyData = () => [
-  {
-    contract: 'N',
-    ars: 'N',
-    document: 'N',
-    buttonText: '대출신청',
-  },
-  {
-    contract: 'Y',
-    ars: 'N',
-    document: 'N',
-    buttonText: 'ARS 계약 안내',
-  },
-  {
-    contract: 'Y',
-    ars: 'Y',
-    document: 'N',
-    buttonText: '서류 등록',
-  },
-  {
-    contract: 'Y',
-    ars: 'Y',
-    document: 'Y',
-    buttonText: '서류 등록',
-  },
-];
 
 export default {
   components: {
@@ -70,14 +43,9 @@ export default {
     ButtonListItem,
   },
   setup() {
-    const state = reactive({
-      data: dummyData(),
-    });
-
     const layer = ref(null);
 
     return {
-      state,
       layer,
     };
   },
@@ -125,11 +93,7 @@ export default {
 
       <!-- Case : 중도금 대출 내역이 있는 경우 -->
       <ul class="reset-list">
-        <li
-          v-for="(item, i) in state.data"
-          :key="i"
-          class="row-margin-item-group"
-        >
+        <li class="row-margin-item-group">
           <BasicBox>
             <BasicBoxHead>
               <BasicBoxHeadLeft>
@@ -146,7 +110,7 @@ export default {
                 }"
               >
                 <KeyValueTitle>약정 완료여부</KeyValueTitle>
-                <KeyValueText>{{ item.contract }}</KeyValueText>
+                <KeyValueText>N</KeyValueText>
               </KeyValueItem>
 
               <KeyValueItem
@@ -155,7 +119,7 @@ export default {
                 }"
               >
                 <KeyValueTitle>ARS 완료여부</KeyValueTitle>
-                <KeyValueText>{{ item.ars }}</KeyValueText>
+                <KeyValueText>N</KeyValueText>
               </KeyValueItem>
 
               <KeyValueItem
@@ -164,13 +128,151 @@ export default {
                 }"
               >
                 <KeyValueTitle>서류 제출</KeyValueTitle>
-                <KeyValueText>{{ item.document }}</KeyValueText>
+                <KeyValueText>N</KeyValueText>
               </KeyValueItem>
 
               <BasicButton
                 size="small"
                 :classNames="{ wrap: 'row-margin-contents-small' }"
-                >{{ item.buttonText }}</BasicButton
+                >대출신청</BasicButton
+              >
+            </KeyValue>
+          </BasicBox>
+        </li>
+        <li class="row-margin-item-group">
+          <BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-body-1 font-weight-medium">
+                  아현 푸르지오 클라시티 V1 101호
+                </h3>
+              </BasicBoxHeadLeft>
+            </BasicBoxHead>
+
+            <KeyValue margin="regular">
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>약정 완료여부</KeyValueTitle>
+                <KeyValueText>Y</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>ARS 완료여부</KeyValueTitle>
+                <KeyValueText>N</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>서류 제출</KeyValueTitle>
+                <KeyValueText>N</KeyValueText>
+              </KeyValueItem>
+
+              <BasicButton
+                size="small"
+                :classNames="{ wrap: 'row-margin-contents-small' }"
+                >ARS 계약 안내</BasicButton
+              >
+            </KeyValue>
+          </BasicBox>
+        </li>
+        <li class="row-margin-item-group">
+          <BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-body-1 font-weight-medium">
+                  아현 푸르지오 클라시티 V1 101호
+                </h3>
+              </BasicBoxHeadLeft>
+            </BasicBoxHead>
+
+            <KeyValue margin="regular">
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>약정 완료여부</KeyValueTitle>
+                <KeyValueText>Y</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>ARS 완료여부</KeyValueTitle>
+                <KeyValueText>Y</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>서류 제출</KeyValueTitle>
+                <KeyValueText>N</KeyValueText>
+              </KeyValueItem>
+
+              <BasicButton
+                size="small"
+                :classNames="{ wrap: 'row-margin-contents-small' }"
+                >서류 등록</BasicButton
+              >
+            </KeyValue>
+          </BasicBox>
+        </li>
+        <li class="row-margin-item-group">
+          <BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-body-1 font-weight-medium">
+                  아현 푸르지오 클라시티 V1 101호
+                </h3>
+              </BasicBoxHeadLeft>
+            </BasicBoxHead>
+
+            <KeyValue margin="regular">
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>약정 완료여부</KeyValueTitle>
+                <KeyValueText>Y</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>ARS 완료여부</KeyValueTitle>
+                <KeyValueText>Y</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>서류 제출</KeyValueTitle>
+                <KeyValueText>Y</KeyValueText>
+              </KeyValueItem>
+
+              <BasicButton
+                size="small"
+                :classNames="{ wrap: 'row-margin-contents-small' }"
+                >서류 등록</BasicButton
               >
             </KeyValue>
           </BasicBox>

@@ -79,8 +79,8 @@ export default {
               <h3 class="text-body-2">운전면허증(필수)</h3>
             </div>
             <div class="flex-box__cell flex-box__cell--small">
-              <BasicTooltip placement="top" :fit="true">
-                <IconTooltip :class="$style['icon']" />
+              <BasicTooltip>
+                <IconTooltip class="display-block" />
                 <span class="for-a11y">(도움말)</span>
 
                 <template v-slot:contents>
@@ -286,7 +286,7 @@ export default {
               사용되지 않습니다.
             </div>
           </li>
-          <!-- 오토승계인 경우 노출 -->
+          <!-- Case : 오토승계 -->
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
@@ -299,10 +299,10 @@ export default {
               렌터카 임직원 상품 승계 시 임직원 증빙자료를 꼭 등록해주세요.
             </div>
           </li>
-          <!-- // 오토승계인 경우 노출 -->
+          <!-- // Case : 오토승계 -->
         </ul>
 
-        <!-- 설비리스 물건점검 사진등록인 경우 노출 -->
+        <!-- Case : 설비리스 물건점검 사진등록 -->
         <section :class="[$style['notice-section'], 'row-margin-item-group']">
           <h3 :class="$style['notice-section__title']">
             물건검수사진 등록 안내
@@ -337,7 +337,7 @@ export default {
             </li>
           </ul>
         </section>
-        <!-- //설비리스 물건점검 사진등록인 경우 노출 -->
+        <!-- // Case : 설비리스 물건점검 사진등록 -->
       </div>
 
       <template v-slot:foot>

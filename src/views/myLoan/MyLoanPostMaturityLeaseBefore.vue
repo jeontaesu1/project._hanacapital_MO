@@ -814,8 +814,7 @@ export default {
                   </div>
                   <div :class="$style['step__text']">
                     지정 평가기관에서
-                    <strong>반환자동차의 상태 및 성능을 평가</strong
-                    >합니다.
+                    <strong>반환자동차의 상태 및 성능을 평가</strong>합니다.
                   </div>
                   <NoticeText :classNames="{ wrap: 'row-margin-item-small' }"
                     >평가결과에 따라 ‘차량평가정산금’이 발생될 수

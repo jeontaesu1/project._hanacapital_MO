@@ -54,7 +54,7 @@ export default {
 </script>
 
 <template>
-  <UiLayer ref="layer" type="full" v-slot="layerSlotProps" :backgroundClose="true">
+  <UiLayer ref="layer" type="full" v-slot="layerSlotProps">
     <FullPopup>
       <template v-slot:head>
         <FullPopupHead>
@@ -76,8 +76,8 @@ export default {
           titleText="차량번호"
           target="#layerSalesNewCarAddNumberNumber"
         >
-          <FormInvalid :error="state.nameError">
-            <InputBlock :error="state.nameError">
+          <FormInvalid :error="state.numberError">
+            <InputBlock :error="state.numberError">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="차량번호"
@@ -85,9 +85,7 @@ export default {
                 />
               </InputBlockCell>
               <template v-slot:right>
-                <BasicButton size="mini" theme="tertiary">
-                  확인
-                </BasicButton>
+                <BasicButton size="mini" theme="tertiary"> 확인 </BasicButton>
               </template>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -95,17 +93,15 @@ export default {
         </FormListItem>
       </FormList>
 
-      <div class="row-margin-item-group">
-        <ul :class="$style['basic-list']">
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              기타문의사항은 하나캐피탈 고객센터<br />
-              (1800-1110)으로 연락주시기 바랍니다.
-            </div>
-          </li>
-        </ul>
-      </div>
+      <ul :class="[$style['basic-list'], 'row-margin-item-group']">
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            기타문의사항은 하나캐피탈 고객센터<br />
+            (1800-1110)으로 연락주시기 바랍니다.
+          </div>
+        </li>
+      </ul>
 
       <template v-slot:foot>
         <ButtonList
