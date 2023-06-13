@@ -122,5 +122,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/leaseRentEstimationSystem/LayerLeaseRentEstimationSystemSaveReviewCarNumber.scss';
+@import '@/assets/scss/views/LeaseRentEstimationSystem/LayerLeaseRentEstimationSystemSaveReviewCarNumber.scss';
 </style>

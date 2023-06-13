@@ -6,10 +6,10 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import LayerInventoryFinanceCheckForm001 from '@/views/inventoryFinanceCheck/LayerInventoryFinanceCheckForm001.vue';
-import LayerInventoryFinanceCheckForm002 from '@/views/inventoryFinanceCheck/LayerInventoryFinanceCheckForm002.vue';
-import LayerInventoryFinanceCheckViewImage from '@/views/inventoryFinanceCheck/LayerInventoryFinanceCheckViewImage.vue';
-import LayerInventoryFinanceCheckAffiliateList from '@/views/inventoryFinanceCheck/LayerInventoryFinanceCheckAffiliateList.vue';
+import LayerInventoryFinanceCheckForm001 from '@/views/InventoryFinanceCheck/LayerInventoryFinanceCheckForm001.vue';
+import LayerInventoryFinanceCheckForm002 from '@/views/InventoryFinanceCheck/LayerInventoryFinanceCheckForm002.vue';
+import LayerInventoryFinanceCheckViewImage from '@/views/InventoryFinanceCheck/LayerInventoryFinanceCheckViewImage.vue';
+import LayerInventoryFinanceCheckAffiliateList from '@/views/InventoryFinanceCheck/LayerInventoryFinanceCheckAffiliateList.vue';
 
 export default {
   components: {

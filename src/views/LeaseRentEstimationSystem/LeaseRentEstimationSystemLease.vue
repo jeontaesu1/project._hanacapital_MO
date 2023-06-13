@@ -5528,5 +5528,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/leaseRentEstimationSystem/LeaseRentEstimationSystemLease.scss';
+@import '@/assets/scss/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemLease.scss';
 </style>

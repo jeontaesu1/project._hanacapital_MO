@@ -6,8 +6,8 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import LayerLeaseRentEstimationSystemSaveReviewCarNumber from '@/views/leaseRentEstimationSystem/LayerLeaseRentEstimationSystemSaveReviewCarNumber.vue';
-import LayerLeaseRentEstimationSystemSaveReviewDelivery from '@/views/leaseRentEstimationSystem/LayerLeaseRentEstimationSystemSaveReviewDelivery.vue';
+import LayerLeaseRentEstimationSystemSaveReviewCarNumber from '@/views/LeaseRentEstimationSystem/LayerLeaseRentEstimationSystemSaveReviewCarNumber.vue';
+import LayerLeaseRentEstimationSystemSaveReviewDelivery from '@/views/LeaseRentEstimationSystem/LayerLeaseRentEstimationSystemSaveReviewDelivery.vue';
 
 export default {
   components: {

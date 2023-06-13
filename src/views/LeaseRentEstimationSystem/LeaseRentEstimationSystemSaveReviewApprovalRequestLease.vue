@@ -1,5 +1,5 @@
 <script>
-// LR_M04_p004
+// LR_M04_p005
 import { reactive, onMounted, onUnmounted } from 'vue';
 
 import { useUiHeaderStore } from '@/stores/ui/header';
@@ -57,8 +57,6 @@ export default {
     const state = reactive({
       storeError: false,
       salespersonError: false,
-      consignmentCompanyNameError: false,
-      registrationCompanyNameError: false,
       bankError: false,
       accountError: false,
       domesticBankNameError: false,
@@ -101,6 +99,7 @@ export default {
               <h3 class="text-body-1 font-weight-medium">홍길동</h3>
             </BasicBoxHeadLeft>
           </BasicBoxHead>
+
           <KeyValue margin="regular">
             <!-- Case : 개인일 경우 -->
             <KeyValueItem
@@ -110,6 +109,14 @@ export default {
             >
               <KeyValueTitle>주민등록번호</KeyValueTitle>
               <KeyValueText>710908-1******</KeyValueText>
+            </KeyValueItem>
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
+            >
+              <KeyValueTitle>진행일정</KeyValueTitle>
+              <KeyValueText>2022.10.03</KeyValueText>
             </KeyValueItem>
             <!-- //Case : 개인일 경우 -->
 
@@ -175,29 +182,35 @@ export default {
             </KeyValueItem>
             <!-- //Case : 법인사업자일 경우 -->
 
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>진행일정</KeyValueTitle>
-              <KeyValueText>2022.10.03</KeyValueText>
-            </KeyValueItem>
+            <!-- Case : 상품명 - 운용리스/금융리스일 경우 -->
             <KeyValueItem
               :classNames="{
                 item: 'text-body-3',
               }"
             >
               <KeyValueTitle>상품명</KeyValueTitle>
-              <KeyValueText>장기렌트</KeyValueText>
+              <KeyValueText>운용리스</KeyValueText>
             </KeyValueItem>
+            <!-- //Case : 상품명 - 운용리스/금융리스일 경우 -->
+
+            <!-- Case : 상품명 - 할부일 경우 -->
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
+            >
+              <KeyValueTitle>상품명</KeyValueTitle>
+              <KeyValueText>할부</KeyValueText>
+            </KeyValueItem>
+            <!-- //Case : 상품명 - 할부일 경우 -->
+
             <KeyValueItem
               :classNames="{
                 item: 'text-body-3',
               }"
             >
               <KeyValueTitle>견적번호</KeyValueTitle>
-              <KeyValueText>[강남지점]A12345678978</KeyValueText>
+              <KeyValueText>[대구지점]A12345678978</KeyValueText>
             </KeyValueItem>
             <KeyValueItem
               :classNames="{
@@ -215,8 +228,8 @@ export default {
                 item: 'text-body-3',
               }"
             >
-              <KeyValueTitle>차량 가격</KeyValueTitle>
-              <KeyValueText> 41,100,000 원 </KeyValueText>
+              <KeyValueTitle>취득원가</KeyValueTitle>
+              <KeyValueText>42,915,025 원</KeyValueText>
             </KeyValueItem>
             <KeyValueItem
               :classNames="{
@@ -224,7 +237,7 @@ export default {
               }"
             >
               <KeyValueTitle>선납금/보증금</KeyValueTitle>
-              <KeyValueText> 0 원 / 0 원</KeyValueText>
+              <KeyValueText>4,110,000 원 / 8,220,000 원</KeyValueText>
             </KeyValueItem>
             <KeyValueItem
               :classNames="{
@@ -232,15 +245,7 @@ export default {
               }"
             >
               <KeyValueTitle>월납입금</KeyValueTitle>
-              <KeyValueText>902,770 원</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>탁송</KeyValueTitle>
-              <KeyValueText>외주탁송, 부산 출고장, 서울 도착</KeyValueText>
+              <KeyValueText>628,190 원</KeyValueText>
             </KeyValueItem>
             <KeyValueItem
               :classNames="{
@@ -248,29 +253,30 @@ export default {
               }"
             >
               <KeyValueTitle>출고/유형</KeyValueTitle>
-              <KeyValueText>대리점출고 / 개인</KeyValueText>
+              <KeyValueText>대리점출고 / 현금결제, 리스사명의</KeyValueText>
             </KeyValueItem>
           </KeyValue>
         </BasicBox>
       </section>
 
+      <!-- Case : 인증 중고차일 경우, 미노출 -->
       <section class="row-margin-container-medium">
         <h3 class="text-title-2 row-margin-contents">판매점 정보</h3>
         <FormList>
           <FormListItem
-            titleText="판매대리점"
-            target="#leaseRentEstimationSystemSaveReviewApprovalRequestRentStoreSearch"
+            titleText="전시장(판매대리점)"
+            target="#leaseRentEstimationSystemSaveReviewApprovalRequestLeaseStoreSearch"
           >
             <FormInvalid :error="state.storeError">
               <InputBlock :error="state.storeError">
                 <InputBlockCell :flexible="true">
-                  <BasicInput title="판매대리점" :disabled="true" />
+                  <BasicInput title="전시장(판매대리점)" :disabled="true" />
                 </InputBlockCell>
                 <template v-slot:right>
                   <BasicButton
                     size="mini"
                     theme="tertiary"
-                    id="leaseRentEstimationSystemSaveReviewApprovalRequestRentStoreSearch"
+                    id="leaseRentEstimationSystemSaveReviewApprovalRequestLeaseStoreSearch"
                     >검색</BasicButton
                   >
                 </template>
@@ -279,19 +285,19 @@ export default {
             </FormInvalid>
           </FormListItem>
           <FormListItem
-            titleText="판매사원"
-            target="#leaseRentEstimationSystemSaveReviewApprovalRequestRentSalespersonSearch"
+            titleText="딜러(판매사원)"
+            target="#leaseRentEstimationSystemSaveReviewApprovalRequestLeaseSalespersonSearch"
           >
             <FormInvalid :error="state.salespersonError">
               <InputBlock :error="state.salespersonError">
                 <InputBlockCell :flexible="true">
-                  <BasicInput title="판매사원" :disabled="true" />
+                  <BasicInput title="딜러(판매사원)" :disabled="true" />
                 </InputBlockCell>
                 <template v-slot:right>
                   <BasicButton
                     size="mini"
                     theme="tertiary"
-                    id="leaseRentEstimationSystemSaveReviewApprovalRequestRentSalespersonSearch"
+                    id="leaseRentEstimationSystemSaveReviewApprovalRequestLeaseSalespersonSearch"
                     >검색</BasicButton
                   >
                 </template>
@@ -301,62 +307,13 @@ export default {
           </FormListItem>
         </FormList>
       </section>
+      <!-- //Case : 인증 중고차일 경우, 미노출 -->
 
       <section class="row-margin-container-medium">
         <h3 class="text-title-2 row-margin-contents">영업사원(AG) 정보</h3>
         <BasicBox>
           <h4 class="text-body-1 font-weight-medium">김사원</h4>
         </BasicBox>
-      </section>
-
-      <section class="row-margin-container-medium">
-        <h3 class="text-title-2 row-margin-contents">차량 정보</h3>
-        <FormList>
-          <FormListItem
-            titleText="탁송업체"
-            target="#leaseRentEstimationSystemSaveReviewApprovalRequestRentConsignmentCompany"
-            :disabled="true"
-          >
-            <FormInvalid :error="state.consignmentCompanyNameError">
-              <InputBlock
-                :error="state.consignmentCompanyNameError"
-                :disabled="true"
-              >
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    title="탁송업체"
-                    id="leaseRentEstimationSystemSaveReviewApprovalRequestRentConsignmentCompany"
-                    :disabled="true"
-                    defaultValue="㈜샘솔"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-          <FormListItem
-            titleText="등록업체"
-            target="#leaseRentEstimationSystemSaveReviewApprovalRequestRentRegistrationCompanyName"
-            :disabled="true"
-          >
-            <FormInvalid :error="state.registrationCompanyNameError">
-              <InputBlock
-                :error="state.registrationCompanyNameError"
-                :disabled="true"
-              >
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    title="등록업체"
-                    id="leaseRentEstimationSystemSaveReviewApprovalRequestRentRegistrationCompanyName"
-                    :disabled="true"
-                    defaultValue="㈜하나캐피탈"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-        </FormList>
       </section>
 
       <section class="row-margin-container-medium">
@@ -372,15 +329,15 @@ export default {
         <FormList>
           <FormListItem
             titleText="은행명"
-            target="#leaseRentEstimationSystemSaveReviewApprovalRequestRentBankButton"
+            target="#leaseRentEstimationSystemSaveReviewApprovalRequestLeaseBankButton"
             :selectOnly="true"
           >
             <FormInvalid :error="state.bankError">
               <InputBlock :error="state.bankError">
                 <InputBlockCell :flexible="true">
                   <BankSelect
-                    id="leaseRentEstimationSystemSaveReviewApprovalRequestRentBank"
-                    buttonId="leaseRentEstimationSystemSaveReviewApprovalRequestRentBankButton"
+                    id="leaseRentEstimationSystemSaveReviewApprovalRequestLeaseBank"
+                    buttonId="leaseRentEstimationSystemSaveReviewApprovalRequestLeaseBankButton"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -390,7 +347,7 @@ export default {
 
           <FormListItem
             titleText="계좌번호"
-            target="#leaseRentEstimationSystemSaveReviewApprovalRequestRentAccount"
+            target="#leaseRentEstimationSystemSaveReviewApprovalRequestLeaseAccount"
           >
             <FormInvalid :error="state.accountError">
               <InputBlock :error="state.accountError">
@@ -398,7 +355,7 @@ export default {
                   <BasicInput
                     pattern="\d*"
                     title="계좌번호"
-                    id="leaseRentEstimationSystemSaveReviewApprovalRequestRentAccount"
+                    id="leaseRentEstimationSystemSaveReviewApprovalRequestLeaseAccount"
                   />
                 </InputBlockCell>
                 <template v-slot:right>
@@ -415,7 +372,7 @@ export default {
           </FormListItem>
           <FormListItem
             titleText="예금주명"
-            target="#leaseRentEstimationSystemSaveReviewApprovalRequestRentDomesticBankName"
+            target="#leaseRentEstimationSystemSaveReviewApprovalRequestLeaseDomesticBankName"
             :disabled="true"
           >
             <FormInvalid :error="state.domesticBankNameError">
@@ -423,7 +380,7 @@ export default {
                 <InputBlockCell :flexible="true">
                   <BasicInput
                     title="예금주명"
-                    id="leaseRentEstimationSystemSaveReviewApprovalRequestRentDomesticBankName"
+                    id="leaseRentEstimationSystemSaveReviewApprovalRequestLeaseDomesticBankName"
                     :disabled="true"
                   />
                 </InputBlockCell>
@@ -444,7 +401,7 @@ export default {
           </div>
         </div>
 
-        <!-- Case : : 등록 전 -->
+        <!-- Case : 등록 전 -->
         <button
           type="button"
           :class="[$style['add-button'], 'row-margin-item']"
@@ -461,9 +418,9 @@ export default {
             </span>
           </span>
         </button>
-        <!-- //Case : : 등록 전 -->
+        <!-- //Case : 등록 전 -->
 
-        <!-- Case : : 등록 후 -->
+        <!-- Case : 등록 후 -->
         <BasicBox>
           <div class="flex-box">
             <div class="flex-box__cell">
@@ -479,7 +436,7 @@ export default {
             </div>
           </div>
         </BasicBox>
-        <!-- //Case : : 등록 후 -->
+        <!-- //Case : 등록 후 -->
       </section>
     </div>
 
@@ -503,5 +460,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/leaseRentEstimationSystem/LeaseRentEstimationSystemSaveReviewApprovalRequestRent.scss';
+@import '@/assets/scss/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemSaveReviewApprovalRequestLease.scss';
 </style>
