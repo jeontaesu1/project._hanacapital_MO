@@ -1,6 +1,6 @@
 <script>
 // BF_M04_l002
-import { ref } from 'vue';
+import { ref, reactive } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import FullPopup from '@/components/ui/layer/FullPopup.vue';
@@ -20,6 +20,33 @@ import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+
+const dummyData = () => [
+  {
+    contract: 'N',
+    ars: 'N',
+    document: 'N',
+    buttonText: '대출신청',
+  },
+  {
+    contract: 'Y',
+    ars: 'N',
+    document: 'N',
+    buttonText: 'ARS 계약 안내',
+  },
+  {
+    contract: 'Y',
+    ars: 'Y',
+    document: 'N',
+    buttonText: '서류 등록',
+  },
+  {
+    contract: 'Y',
+    ars: 'Y',
+    document: 'Y',
+    buttonText: '서류 등록',
+  },
+];
 
 export default {
   components: {
@@ -43,9 +70,14 @@ export default {
     ButtonListItem,
   },
   setup() {
+    const state = reactive({
+      data: dummyData(),
+    });
+
     const layer = ref(null);
 
     return {
+      state,
       layer,
     };
   },
@@ -65,20 +97,25 @@ export default {
         <StepProgress :total="5" :current="1" />
       </template>
 
+      <!-- Case : 중도금 대출 내역이 없는 경우 -->
+      <PageTextGroup>
+        <PageMainText>
+          김하나님은<br />
+          <strong>중도금 대출 대상자가 아닙니다</strong>
+        </PageMainText>
+      </PageTextGroup>
+      <!-- // Case : 중도금 대출 내역이 없는 경우 -->
+
+      <!-- Case : 중도금 대출 내역이 있는 경우 -->
       <PageTextGroup>
         <PageMainText>
           김하나님은<br />
           아현 푸르지오 클라시티에<br />
-          <!-- Case : 중도금 대출 내역이 있는 경우 -->
           <strong>중도금 대출 대상자입니다</strong>
-          <!-- // Case : 중도금 대출 내역이 있는 경우 -->
-          <br />
-          <!-- Case : 중도금 대출 내역이 없는 경우 -->
-          <strong>중도금 대출 대상자가 아닙니다</strong>
-          <!-- // Case : 중도금 대출 내역이 없는 경우 -->
-          <PageSubText>대출신청을 진행해 주세요.</PageSubText>
         </PageMainText>
+        <PageSubText>대출신청을 진행해 주세요.</PageSubText>
       </PageTextGroup>
+      <!-- // Case : 중도금 대출 내역이 있는 경우 -->
 
       <!-- Case : 중도금 대출 내역이 없는 경우 -->
       <div :class="$style['empty']">
@@ -88,7 +125,11 @@ export default {
 
       <!-- Case : 중도금 대출 내역이 있는 경우 -->
       <ul class="reset-list">
-        <li v-for="i in 3" :key="i" class="row-margin-item-group">
+        <li
+          v-for="(item, i) in state.data"
+          :key="i"
+          class="row-margin-item-group"
+        >
           <BasicBox>
             <BasicBoxHead>
               <BasicBoxHeadLeft>
@@ -105,7 +146,7 @@ export default {
                 }"
               >
                 <KeyValueTitle>약정 완료여부</KeyValueTitle>
-                <KeyValueText>N</KeyValueText>
+                <KeyValueText>{{ item.contract }}</KeyValueText>
               </KeyValueItem>
 
               <KeyValueItem
@@ -114,13 +155,22 @@ export default {
                 }"
               >
                 <KeyValueTitle>ARS 완료여부</KeyValueTitle>
-                <KeyValueText>N</KeyValueText>
+                <KeyValueText>{{ item.ars }}</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>서류 제출</KeyValueTitle>
+                <KeyValueText>{{ item.document }}</KeyValueText>
               </KeyValueItem>
 
               <BasicButton
                 size="small"
                 :classNames="{ wrap: 'row-margin-contents-small' }"
-                >대출신청</BasicButton
+                >{{ item.buttonText }}</BasicButton
               >
             </KeyValue>
           </BasicBox>

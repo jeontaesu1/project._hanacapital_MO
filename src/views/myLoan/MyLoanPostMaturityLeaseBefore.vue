@@ -229,8 +229,8 @@ export default {
                     <div :class="$style['step__badge']">STEP 5</div>
                   </div>
                   <div :class="$style['step__text']">
-                    계약사항에 대해<strong>이해하였음을 유선상 확인</strong
-                    >합니다.
+                    계약사항에 대해
+                    <strong>이해하였음을 유선상 확인</strong>합니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
@@ -815,7 +815,7 @@ export default {
                   <div :class="$style['step__text']">
                     지정 평가기관에서
                     <strong>반환자동차의 상태 및 성능을 평가</strong
-                    >합니다.라인약정으로 계약이 진행됩니다.
+                    >합니다.
                   </div>
                   <NoticeText :classNames="{ wrap: 'row-margin-item-small' }"
                     >평가결과에 따라 ‘차량평가정산금’이 발생될 수

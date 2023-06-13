@@ -148,13 +148,12 @@ export default {
             <FormInvalid :error="state.numberError">
               <InputBlock :error="state.numberError">
                 <InputBlockCell :flexible="true">
-                  <BasicInput title="차량번호" :disabled="true" />
+                  <BasicInput title="차량번호" id="salesUsedCarCounselingEditNumberSearch" />
                 </InputBlockCell>
                 <template v-slot:right>
                   <BasicButton
                     size="mini"
                     theme="tertiary"
-                    id="salesUsedCarCounselingEditNumberSearch"
                     >조회</BasicButton
                   >
                 </template>

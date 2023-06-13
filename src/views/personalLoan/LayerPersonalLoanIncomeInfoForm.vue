@@ -9,11 +9,10 @@ import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import PageSubText from '@/components/ui/text/PageSubText.vue';
-import NavTab from '@/components/ui/tab/NavTab.vue';
-import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
-import StickyBar from '@/components/ui/common/StickyBar.vue';
-import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
-import UiTab from '@/components/ui/tab/UiTab.vue';
+import BoxCheck from '@/components/ui/form/BoxCheck.vue';
+import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
+import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
+import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormHelpText from '@/components/ui/form/FormHelpText.vue';
@@ -26,6 +25,7 @@ import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
+import NoticeText from '@/components/ui/text/NoticeText.vue';
 
 export default {
   components: {
@@ -36,11 +36,10 @@ export default {
     PageTextGroup,
     PageMainText,
     PageSubText,
-    NavTab,
-    NavTabButton,
-    StickyBar,
-    UiTabPanel,
-    UiTab,
+    BoxCheck,
+    BoxCheckLabel,
+    BoxCheckList,
+    BoxCheckListItem,
     FormList,
     FormListItem,
     FormHelpText,
@@ -53,6 +52,7 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicButton,
+    NoticeText,
   },
   setup() {
     const state = reactive({
@@ -97,23 +97,50 @@ export default {
         </PageSubText>
       </PageTextGroup>
 
-      <UiTab>
-        <StickyBar>
-          <NavTab :useUiTab="true" auto="true">
-            <NavTabButton link="layerPersonalLoanIncomeInfoFormTab001">
-              급여소득자
-            </NavTabButton>
-            <NavTabButton link="layerPersonalLoanIncomeInfoFormTab002">
-              자영업자
-            </NavTabButton>
-            <NavTabButton link="layerPersonalLoanIncomeInfoFormTab003">
-              기타
-            </NavTabButton>
-          </NavTab>
-        </StickyBar>
+      <FormList>
+        <FormListItem titleText="소득구분" :forceFocus="true">
+          <BoxCheckList>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="layerPersonalLoanIncomeInfoFormType"
+                id="layerPersonalLoanIncomeInfoFormType001"
+                :defaultChecked="true"
+              >
+                <BoxCheckLabel>급여소득자</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="layerPersonalLoanIncomeInfoFormType"
+                id="layerPersonalLoanIncomeInfoFormType002"
+              >
+                <BoxCheckLabel>자영업자</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="layerPersonalLoanIncomeInfoFormType"
+                id="layerPersonalLoanIncomeInfoFormType003"
+              >
+                <BoxCheckLabel>기타</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+          </BoxCheckList>
 
-        <!-- Tab : 급여소득자 -->
-        <UiTabPanel name="layerPersonalLoanIncomeInfoFormTab001">
+          <!-- Case : 기타 선택 시 노출 -->
+          <NoticeText :classNames="{ wrap: 'row-margin-item-group' }">
+            급여소득자, 자영업자가 아니어도 한도조회를 신청할 수 있습니다.
+          </NoticeText>
+          <!-- // Case : 기타 선택 시 노출 -->
+        </FormListItem>
+      </FormList>
+
+      <div class="row-margin-container-medium">
+        <!-- Case : 급여소득자 선택 시 노출 -->
+        <section>
           <!-- Case : 원큐자동차담보대출에서 공공마이데이터 정보 미출력 시, 문구 노출 -->
           <div class="row-margin-contents">
             <h3 class="text-title-2 row-margin-small">
@@ -194,11 +221,11 @@ export default {
               </FormInvalid>
             </FormListItem>
           </FormList>
-        </UiTabPanel>
-        <!-- // Tab : 급여소득자 -->
+        </section>
+        <!-- // Case : 급여소득자 선택 시 노출 -->
 
-        <!-- Tab : 자영업자 -->
-        <UiTabPanel name="layerPersonalLoanIncomeInfoFormTab002">
+        <!-- Case : 자영업자 선택 시 노출 -->
+        <section>
           <FormList>
             <FormListItem
               titleText="상호명"
@@ -319,20 +346,9 @@ export default {
             </FormListItem>
             <!-- // Case : 사업자 주택담보대출에서 진입 시, 노출 -->
           </FormList>
-        </UiTabPanel>
-        <!-- // Tab : 자영업자 -->
-
-        <!-- Tab : 기타 -->
-        <UiTabPanel name="layerPersonalLoanIncomeInfoFormTab003">
-          <div :class="$style['empty']">
-            <p :class="$style['empty__text']">
-              급여소득자, 자영업자가 아니어도<br />
-              한도조회를 신청할 수 있습니다.
-            </p>
-          </div>
-        </UiTabPanel>
-        <!-- // Tab : 기타 -->
-      </UiTab>
+        </section>
+        <!-- // Case : 자영업자 선택 시 노출 -->
+      </div>
 
       <template v-slot:foot>
         <ButtonList

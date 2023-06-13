@@ -74,9 +74,6 @@ export default {
                 <button type="button" :class="$style['files__link']">
                   <span class="for-a11y">미리보기</span>
                 </button>
-                <button type="button" :class="$style['files__delete']">
-                  <span class="for-a11y">삭제</span>
-                </button>
               </div>
             </li>
             <!-- // Case : 이미지 -->
@@ -103,9 +100,6 @@ export default {
                 <button type="button" :class="$style['files__link']">
                   <span class="for-a11y">미리보기</span>
                 </button>
-                <button type="button" :class="$style['files__delete']">
-                  <span class="for-a11y">삭제</span>
-                </button>
               </div>
             </li>
             <!-- // Case : 이미지 에러 -->
@@ -120,9 +114,6 @@ export default {
                 </div>
                 <button type="button" :class="$style['files__link']">
                   <span class="for-a11y">미리보기</span>
-                </button>
-                <button type="button" :class="$style['files__delete']">
-                  <span class="for-a11y">삭제</span>
                 </button>
               </div>
             </li>
@@ -149,9 +140,6 @@ export default {
                 <button type="button" :class="$style['files__link']">
                   <span class="for-a11y">미리보기</span>
                 </button>
-                <button type="button" :class="$style['files__delete']">
-                  <span class="for-a11y">삭제</span>
-                </button>
               </div>
             </li>
 
@@ -176,9 +164,6 @@ export default {
                 <button type="button" :class="$style['files__link']">
                   <span class="for-a11y">미리보기</span>
                 </button>
-                <button type="button" :class="$style['files__delete']">
-                  <span class="for-a11y">삭제</span>
-                </button>
               </div>
             </li>
 
@@ -202,9 +187,6 @@ export default {
                 </div>
                 <button type="button" :class="$style['files__link']">
                   <span class="for-a11y">미리보기</span>
-                </button>
-                <button type="button" :class="$style['files__delete']">
-                  <span class="for-a11y">삭제</span>
                 </button>
               </div>
             </li>
