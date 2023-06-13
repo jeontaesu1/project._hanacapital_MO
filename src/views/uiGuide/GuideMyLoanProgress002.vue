@@ -49,6 +49,8 @@ import LayerMyLoanOnlineContractWithdraw from '@/views/myLoan/LayerMyLoanOnlineC
 import LayerMyLoanOnlineContractDescription from '@/views/myLoan/LayerMyLoanOnlineContractDescription.vue';
 import LayerMyLoanOnlineContractDescriptionConfirm from '@/views/myLoan/LayerMyLoanOnlineContractDescriptionConfirm.vue';
 import LayerMyLoanOnlineContractSuccession from '@/views/myLoan/LayerMyLoanOnlineContractSuccession.vue';
+import LayerMyLoanOnlineContractSuccessionGuide001 from '@/views/myLoan/LayerMyLoanOnlineContractSuccessionGuide001.vue';
+import LayerMyLoanOnlineContractSuccessionGuide002 from '@/views/myLoan/LayerMyLoanOnlineContractSuccessionGuide002.vue';
 import LayerMyLoanOnlineContractSuccessionConfirm001 from '@/views/myLoan/LayerMyLoanOnlineContractSuccessionConfirm001.vue';
 import LayerMyLoanOnlineContractSuccessionConfirm002 from '@/views/myLoan/LayerMyLoanOnlineContractSuccessionConfirm002.vue';
 import LayerMyLoanOnlineContractSuccessionImportant from '@/views/myLoan/LayerMyLoanOnlineContractSuccessionImportant.vue';
@@ -107,6 +109,8 @@ export default {
     LayerMyLoanOnlineContractDescription,
     LayerMyLoanOnlineContractDescriptionConfirm,
     LayerMyLoanOnlineContractSuccession,
+    LayerMyLoanOnlineContractSuccessionGuide001,
+    LayerMyLoanOnlineContractSuccessionGuide002,
     LayerMyLoanOnlineContractSuccessionConfirm001,
     LayerMyLoanOnlineContractSuccessionConfirm002,
     LayerMyLoanOnlineContractSuccessionImportant,
@@ -168,6 +172,8 @@ export default {
     const layer049 = ref(null);
     const layer050 = ref(null);
     const layer051 = ref(null);
+    const layer052 = ref(null);
+    const layer053 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -322,6 +328,12 @@ export default {
     const layer051Open = (e = {}) => {
       layer051.value.layer.open(e.target);
     };
+    const layer052Open = (e = {}) => {
+      layer052.value.layer.open(e.target);
+    };
+    const layer053Open = (e = {}) => {
+      layer053.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -375,6 +387,8 @@ export default {
       layer049,
       layer050,
       layer051,
+      layer052,
+      layer053,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -426,6 +440,8 @@ export default {
       layer049Open,
       layer050Open,
       layer051Open,
+      layer052Open,
+      layer053Open,
     };
   },
 };
@@ -655,6 +671,16 @@ export default {
         >
       </ButtonListItem>
       <ButtonListItem>
+        <BasicButton @click="layer052Open"
+          >할부금융 안내 - CO 코드일 경우<br />PF_M10_b002</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer053Open"
+          >할부금융 안내 - LO 코드일 경우<br />PF_M10_b003</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
         <BasicButton @click="layer038Open"
           >승계확약 확인<br />My_M03_l025
         </BasicButton>
@@ -739,6 +765,8 @@ export default {
     <LayerMyLoanOnlineContractDescription ref="layer035" />
     <LayerMyLoanOnlineContractDescriptionConfirm ref="layer036" />
     <LayerMyLoanOnlineContractSuccession ref="layer037" />
+    <LayerMyLoanOnlineContractSuccessionGuide001 ref="layer052" />
+    <LayerMyLoanOnlineContractSuccessionGuide002 ref="layer053" />
     <LayerMyLoanOnlineContractSuccessionConfirm001 ref="layer038" />
     <LayerMyLoanOnlineContractSuccessionConfirm002 ref="layer039" />
     <LayerMyLoanOnlineContractSuccessionImportant ref="layer040" />

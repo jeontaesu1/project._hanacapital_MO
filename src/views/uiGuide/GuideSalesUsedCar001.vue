@@ -13,6 +13,7 @@ import LayerSalesUsedCarCounselingAccount from '@/views/salesUsedCar/LayerSalesU
 import LayerSalesUsedCarCounselingAccountSelect from '@/views/salesUsedCar/LayerSalesUsedCarCounselingAccountSelect.vue';
 import LayerSalesUsedCarSearch from '@/views/salesUsedCar/LayerSalesUsedCarSearch.vue';
 import LayerSalesUsedCarAffiliateIdentificationMethodSelect from '@/views/salesUsedCar/LayerSalesUsedCarAffiliateIdentificationMethodSelect.vue';
+import LayerSalesUsedCarAffiliateClauseDetail001 from '@/views/salesUsedCar/LayerSalesUsedCarAffiliateClauseDetail001.vue';
 
 export default {
   components: {
@@ -27,6 +28,7 @@ export default {
     LayerSalesUsedCarCounselingAccountSelect,
     LayerSalesUsedCarSearch,
     LayerSalesUsedCarAffiliateIdentificationMethodSelect,
+    LayerSalesUsedCarAffiliateClauseDetail001,
   },
   setup() {
     const layer001 = ref(null);
@@ -36,6 +38,7 @@ export default {
     const layer005 = ref(null);
     const layer006 = ref(null);
     const layer007 = ref(null);
+    const layer008 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -58,6 +61,9 @@ export default {
     const layer007Open = (e = {}) => {
       layer007.value.layer.open(e.target);
     };
+    const layer008Open = (e = {}) => {
+      layer008.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -67,6 +73,7 @@ export default {
       layer005,
       layer006,
       layer007,
+      layer008,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -74,6 +81,7 @@ export default {
       layer005Open,
       layer006Open,
       layer007Open,
+      layer008Open,
     };
   },
 };
@@ -122,6 +130,11 @@ export default {
           본인인증 선택<br />UC_M08_b002
         </BasicButton>
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer008Open">
+          제휴 협약 동의 팝업<br />UC_M08_l001
+        </BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <LayerSalesUsedCarStateList ref="layer001" />
@@ -131,5 +144,6 @@ export default {
     <LayerSalesUsedCarCounselingAccountSelect ref="layer005" />
     <LayerSalesUsedCarSearch ref="layer006" />
     <LayerSalesUsedCarAffiliateIdentificationMethodSelect ref="layer007" />
+    <LayerSalesUsedCarAffiliateClauseDetail001 ref="layer008" />
   </PageContents>
 </template>
