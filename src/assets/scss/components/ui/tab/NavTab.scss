@@ -99,6 +99,27 @@
     }
   }
 
+  &__item--disabled {
+    .nav-tab__button {
+      cursor: default;
+    }
+
+    .nav-tab__text {
+      color: $color-gray-40;
+    }
+
+    &.nav-tab__item--active,
+    &.nav-tab__item:global(.is-tab-opened) {
+      .nav-tab__button {
+        border-bottom-color: $color-gray-60;
+      }
+
+      .nav-tab__text {
+        color: $color-gray-60;
+      }
+    }
+  }
+
   &--scroll {
     .nav-tab__inner {
       &::before,
