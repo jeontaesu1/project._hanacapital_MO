@@ -59,15 +59,6 @@ export default {
     role="img"
     :aria-label="`총 ${total}단계 중 ${current}단계`"
   >
-    <div :class="[$style['progress__text'], customClassNames.text]">
-      <div :class="[$style['progress__current'], customClassNames.current]">
-        {{ current }}
-      </div>
-      <div>/</div>
-      <div :class="[$style['progress__total'], customClassNames.total]">
-        {{ total }}
-      </div>
-    </div>
     <div :class="[$style['progress__bar'], customClassNames.bar]">
       <div
         :class="[$style['progress__bar-active'], customClassNames.barActive]"
