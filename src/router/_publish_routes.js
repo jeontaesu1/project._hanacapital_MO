@@ -537,6 +537,12 @@ const routes = [
     component: () =>
       import('@/views/uiGuide/GuideLeaseRentEstimationSystem001.vue'),
   },
+  {
+    path: '/guide/lease-rent-estimation-system-002',
+    name: '/guide/lease-rent-estimation-system-002',
+    component: () =>
+      import('@/views/uiGuide/GuideLeaseRentEstimationSystem002.vue'),
+  },
 
   // splash
   {
@@ -1518,6 +1524,14 @@ const routes = [
     component: () =>
       import(
         '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemLease.vue'
+      ),
+  },
+  {
+    path: '/lease-rent-estimation-system/view-estimation',
+    name: '/lease-rent-estimation-system/view-estimation',
+    component: () =>
+      import(
+        '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemViewEstimation.vue'
       ),
   },
 

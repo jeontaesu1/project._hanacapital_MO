@@ -22,6 +22,7 @@ import LayerMyLoanCertificateInvoiceTaxInvoiceList from '@/views/myLoan/LayerMyL
 import LayerMyLoanCertificateInvoiceTaxInvoiceItems from '@/views/myLoan/LayerMyLoanCertificateInvoiceTaxInvoiceItems.vue';
 import LayerMyLoanCertificatePaymentStatementList from '@/views/myLoan/LayerMyLoanCertificatePaymentStatementList.vue';
 import LayerMyLoanCertificateStockLoanList from '@/views/myLoan/LayerMyLoanCertificateStockLoanList.vue';
+import LayerMyLoanCertificateDepositDetailsInquiry from '@/views/myLoan/LayerMyLoanCertificateDepositDetailsInquiry.vue';
 
 export default {
   components: {
@@ -45,6 +46,7 @@ export default {
     LayerMyLoanCertificateInvoiceTaxInvoiceItems,
     LayerMyLoanCertificatePaymentStatementList,
     LayerMyLoanCertificateStockLoanList,
+    LayerMyLoanCertificateDepositDetailsInquiry,
   },
   setup() {
     const layer001 = ref(null);
@@ -63,6 +65,7 @@ export default {
     const layer014 = ref(null);
     const layer015 = ref(null);
     const layer016 = ref(null);
+    const layer017 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -112,6 +115,9 @@ export default {
     const layer016Open = (e = {}) => {
       layer016.value.layer.open(e.target);
     };
+    const layer017Open = (e = {}) => {
+      layer017.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -130,6 +136,7 @@ export default {
       layer014,
       layer015,
       layer016,
+      layer017,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -146,6 +153,7 @@ export default {
       layer014Open,
       layer015Open,
       layer016Open,
+      layer017Open,
     };
   },
 };
@@ -250,6 +258,12 @@ export default {
           My_M02_l016
         </BasicButton>
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer017Open">
+          입금내역서 조회<br />
+          My_M02_l017
+        </BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <LayerMyLoanCertificate ref="layer001" />
@@ -268,5 +282,6 @@ export default {
     <LayerMyLoanCertificateInvoiceTaxInvoiceItems ref="layer014" />
     <LayerMyLoanCertificatePaymentStatementList ref="layer015" />
     <LayerMyLoanCertificateStockLoanList ref="layer016" />
+    <LayerMyLoanCertificateDepositDetailsInquiry ref="layer017" />
   </PageContents>
 </template>

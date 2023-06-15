@@ -1953,6 +1953,28 @@ const datas = () => [
     depth1: '리스/렌트 견적시스템 (영업용)',
     datas: [
       {
+        depth2: '공통',
+        depth3: '팝업',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/guide/lease-rent-estimation-system-002',
+        status: 'end',
+        create: '2023.06.16',
+        log: [],
+      },
+      {
+        depth2: '공통',
+        depth3: '견적서 보기\nLR_M00_p003',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/lease-rent-estimation-system/view-estimation',
+        status: 'end',
+        create: '2023.06.16',
+        log: [],
+      },
+      {
         depth2: '신차',
         depth3: '렌트견적\nLR_M02_p001',
         depth4: '',
@@ -2338,7 +2360,12 @@ const datas = () => [
         path: '/guide/auto-used-loan-001',
         status: 'end',
         create: '2023.04.19',
-        log: [],
+        log: [
+          {
+            date: '2023.06.16',
+            text: '팝업 추가\n- 한도조회 정보 입력',
+          },
+        ],
       },
       {
         depth2: '오토승계\nAF_M07_p001',
@@ -2505,7 +2532,12 @@ const datas = () => [
         path: '/guide/my-loan-home-001',
         status: 'end',
         create: '2023.04.28',
-        log: [],
+        log: [
+          {
+            date: '2023.06.16',
+            text: '팝업 추가\n- 종료된 계약 팝업',
+          },
+        ],
       },
       {
         depth2: '상세계약현황\nMy_M01_p002',
@@ -2846,7 +2878,12 @@ const datas = () => [
         path: '/guide/my-loan-certificate-001',
         status: 'end',
         create: '2023.04.28',
-        log: [],
+        log: [
+          {
+            date: '2023.06.16',
+            text: '팝업 추가\n- 입금내역서 조회',
+          },
+        ],
       },
       {
         depth2: '근저당설정 조회/해지',
