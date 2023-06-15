@@ -7,11 +7,8 @@ import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
-import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
-import PageMainText from '@/components/ui/text/PageMainText.vue';
-import ButtonList from '@/components/ui/button/ButtonList.vue';
-import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-import BasicButton from '@/components/ui/button/BasicButton.vue';
+
+import IconSample from '@/assets/images/_dummy/sample.svg?component';
 
 export default {
   components: {
@@ -20,11 +17,7 @@ export default {
     FullPopupHead,
     PopupTitle,
     PopupButton,
-    PageTextGroup,
-    PageMainText,
-    ButtonList,
-    ButtonListItem,
-    BasicButton,
+    IconSample,
   },
   setup() {
     const layer = ref(null);
@@ -41,30 +34,57 @@ export default {
     <FullPopup>
       <template v-slot:head>
         <FullPopupHead>
-          <PopupTitle>타이틀</PopupTitle>
+          <PopupTitle>견적서 보기</PopupTitle>
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
         </FullPopupHead>
       </template>
 
-      <PageTextGroup>
-        <PageMainText>
-          문구
-        </PageMainText>
-      </PageTextGroup>
+      <div :class="[$style['share-list'], $style['share-list--col-3']]">
+        <ul :class="$style['share-list__list']">
+          <li :class="$style['share-list__item']">
+            <a
+              href="/foo/bar.pdf"
+              download
+              :class="$style['share-list__button']"
+            >
+              <span :class="$style['share-list__icon']">
+                <IconSample />
+              </span>
+              <span :class="$style['share-list__text']">PDF 다운로드</span>
+            </a>
+          </li>
+          <li :class="$style['share-list__item']">
+            <a
+              href="/foo/bar.pdf"
+              download
+              :class="$style['share-list__button']"
+            >
+              <span :class="$style['share-list__icon']">
+                <IconSample />
+              </span>
+              <span :class="$style['share-list__text']">JPG 다운로드</span>
+            </a>
+          </li>
+          <li :class="$style['share-list__item']">
+            <button type="button" :class="$style['share-list__button']">
+              <span :class="$style['share-list__icon']">
+                <IconSample />
+              </span>
+              <span :class="$style['share-list__text']">인쇄</span>
+            </button>
+          </li>
+        </ul>
+      </div>
 
-      <template v-slot:foot>
-        <ButtonList
-          :classNames="{
-            wrap: 'row-margin-none',
-          }"
-        >
-          <ButtonListItem>
-            <BasicButton>확인</BasicButton>
-          </ButtonListItem>
-        </ButtonList>
-      </template>
+      <div :class="[$style['image-view'], 'row-margin-contents-group']">
+        <img src="@/assets/images/_dummy/box-detail.png" alt="샘플 이미지" />
+      </div>
     </FullPopup>
   </UiLayer>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/LeaseRentEstimationSystem/LayerLeaseRentEstimationSystemViewEstimationURL.scss';
+</style>

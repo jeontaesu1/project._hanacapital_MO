@@ -28,6 +28,10 @@
     @include font-size-default(15);
   }
 
+  &__list {
+    @include reset-list;
+  }
+
   &__item {
     & + & {
       border-top: 1px solid $color-gray-20;

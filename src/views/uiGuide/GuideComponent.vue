@@ -143,6 +143,8 @@ import IconDropdown from '@/assets/images/icon/dropdown.svg?component';
 import IconImgColor from '@/assets/images/icon/img-color.svg?component';
 import IconImg from '@/assets/images/icon/img.svg?component';
 
+import IconSample from '@/assets/images/_dummy/sample.svg?component';
+
 export default {
   components: {
     BasicButton,
@@ -285,6 +287,7 @@ export default {
     IconDropdown,
     IconImgColor,
     IconImg,
+    IconSample,
   },
 
   setup() {
@@ -9198,11 +9201,187 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Share List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <div :class="$style['share-list']">
+          <ul :class="$style['share-list__list']">
+            <li :class="$style['share-list__item']">
+              <button type="button" :class="$style['share-list__button']">
+                <span :class="$style['share-list__icon']">
+                  <IconSample />
+                </span>
+                <span :class="$style['share-list__text']">카카오톡</span>
+              </button>
+            </li>
+            <li :class="$style['share-list__item']">
+              <a
+                href="/foo/bar.pdf"
+                download
+                :class="$style['share-list__button']"
+              >
+                <span :class="$style['share-list__icon']">
+                  <IconSample />
+                </span>
+                <span :class="$style['share-list__text']">PDF 다운로드</span>
+              </a>
+            </li>
+            <li :class="$style['share-list__item']">
+              <a
+                href="/foo/bar.pdf"
+                download
+                :class="$style['share-list__button']"
+              >
+                <span :class="$style['share-list__icon']">
+                  <IconSample />
+                </span>
+                <span :class="$style['share-list__text']">JPG 다운로드</span>
+              </a>
+            </li>
+            <li :class="$style['share-list__item']">
+              <button type="button" :class="$style['share-list__button']">
+                <span :class="$style['share-list__icon']">
+                  <IconSample />
+                </span>
+                <span :class="$style['share-list__text']">인쇄</span>
+              </button>
+            </li>
+            <li :class="$style['share-list__item']">
+              <button type="button" :class="$style['share-list__button']">
+                <span :class="$style['share-list__icon']">
+                  <IconSample />
+                </span>
+                <span :class="$style['share-list__text']">열기</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">col 3</h3>
+
+        <div :class="[$style['share-list'], $style['share-list--col-3']]">
+          <ul :class="$style['share-list__list']">
+            <li :class="$style['share-list__item']">
+              <button type="button" :class="$style['share-list__button']">
+                <span :class="$style['share-list__icon']">
+                  <IconSample />
+                </span>
+                <span :class="$style['share-list__text']">카카오톡</span>
+              </button>
+            </li>
+            <li :class="$style['share-list__item']">
+              <a
+                href="/foo/bar.pdf"
+                download
+                :class="$style['share-list__button']"
+              >
+                <span :class="$style['share-list__icon']">
+                  <IconSample />
+                </span>
+                <span :class="$style['share-list__text']">PDF 다운로드</span>
+              </a>
+            </li>
+            <li :class="$style['share-list__item']">
+              <a
+                href="/foo/bar.pdf"
+                download
+                :class="$style['share-list__button']"
+              >
+                <span :class="$style['share-list__icon']">
+                  <IconSample />
+                </span>
+                <span :class="$style['share-list__text']">JPG 다운로드</span>
+              </a>
+            </li>
+            <li :class="$style['share-list__item']">
+              <button type="button" :class="$style['share-list__button']">
+                <span :class="$style['share-list__icon']">
+                  <IconSample />
+                </span>
+                <span :class="$style['share-list__text']">인쇄</span>
+              </button>
+            </li>
+            <li :class="$style['share-list__item']">
+              <button type="button" :class="$style['share-list__button']">
+                <span :class="$style['share-list__icon']">
+                  <IconSample />
+                </span>
+                <span :class="$style['share-list__text']">열기</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">col 4</h3>
+
+        <div :class="[$style['share-list'], $style['share-list--col-4']]">
+          <ul :class="$style['share-list__list']">
+            <li :class="$style['share-list__item']">
+              <button type="button" :class="$style['share-list__button']">
+                <span :class="$style['share-list__icon']">
+                  <IconSample />
+                </span>
+                <span :class="$style['share-list__text']">카카오톡</span>
+              </button>
+            </li>
+            <li :class="$style['share-list__item']">
+              <a
+                href="/foo/bar.pdf"
+                download
+                :class="$style['share-list__button']"
+              >
+                <span :class="$style['share-list__icon']">
+                  <IconSample />
+                </span>
+                <span :class="$style['share-list__text']">PDF 다운로드</span>
+              </a>
+            </li>
+            <li :class="$style['share-list__item']">
+              <a
+                href="/foo/bar.pdf"
+                download
+                :class="$style['share-list__button']"
+              >
+                <span :class="$style['share-list__icon']">
+                  <IconSample />
+                </span>
+                <span :class="$style['share-list__text']">JPG 다운로드</span>
+              </a>
+            </li>
+            <li :class="$style['share-list__item']">
+              <button type="button" :class="$style['share-list__button']">
+                <span :class="$style['share-list__icon']">
+                  <IconSample />
+                </span>
+                <span :class="$style['share-list__text']">인쇄</span>
+              </button>
+            </li>
+            <li :class="$style['share-list__item']">
+              <button type="button" :class="$style['share-list__button']">
+                <span :class="$style['share-list__icon']">
+                  <IconSample />
+                </span>
+                <span :class="$style['share-list__text']">열기</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!--
+    <section class="test-section">
       <h2 class="test-section-title">Component Title</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
+
+        내용
       </div>
     </section>
+    -->
   </div>
 </template>
 

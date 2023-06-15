@@ -250,7 +250,7 @@ export default {
           </FormListItem>
           <!-- //Case : 자금용도 - '기타' 항목 선택 시 노출 -->
 
-          <!-- Case :  일반금융소비자 선택 시 노출 -->
+          <!-- Case : 일반금융소비자 선택 시 노출 -->
           <FormListItem
             titleText="연령"
             target="#layerMyLoanOnlineContractCheckAge"
@@ -340,9 +340,9 @@ export default {
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
-          <!-- //Case :  일반금융소비자 선택 시 노출 -->
+          <!-- //Case : 일반금융소비자 선택 시 노출 -->
 
-          <!-- Case :  전문금융소비자 선택 시 노출 -->
+          <!-- Case : 전문금융소비자 선택 시 노출 -->
           <FormListItem
             titleText="업력"
             target="#layerMyLoanOnlineContractCheckCareerPeriod"
@@ -405,7 +405,7 @@ export default {
                         text: '항목 미정',
                       },
                     ]"
-                    buttonTitle="순이익  선택하기"
+                    buttonTitle="순이익 선택하기"
                     layerTitle="순이익을 선택해 주세요"
                     id="layerMyLoanOnlineContractCheckNetProfit"
                     buttonId="layerMyLoanOnlineContractCheckNetProfitButton"
@@ -430,7 +430,7 @@ export default {
                         text: '항목 미정',
                       },
                     ]"
-                    buttonTitle="총자산  선택하기"
+                    buttonTitle="총자산 선택하기"
                     layerTitle="총자산을 선택해 주세요"
                     id="layerMyLoanOnlineContractCheckTotalAssets"
                     buttonId="layerMyLoanOnlineContractCheckTotalAssetsButton"
@@ -440,7 +440,7 @@ export default {
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
-          <!--// Case :  전문금융소비자 선택 시 노출 -->
+          <!--// Case : 전문금융소비자 선택 시 노출 -->
 
           <FormListItem
             titleText="고정지출"
@@ -515,7 +515,7 @@ export default {
             </FormInvalid>
           </FormListItem>
 
-          <!-- Case :  일반금융소비자 선택 시 노출 -->
+          <!-- Case : 일반금융소비자 선택 시 노출 -->
           <FormListItem
             titleText="신용점수"
             target="#layerMyLoanOnlineContractCheckCreditScore"
@@ -535,9 +535,9 @@ export default {
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
-          <!-- //Case :  일반금융소비자 선택 시 노출 -->
+          <!-- //Case : 일반금융소비자 선택 시 노출 -->
 
-          <!-- Case :  전문금융소비자 선택 시 노출 -->
+          <!-- Case : 전문금융소비자 선택 시 노출 -->
           <FormListItem
             titleText="신용평가사 "
             target="#layerMyLoanOnlineContractCheckCreditRatingAgencyButton"
@@ -553,7 +553,7 @@ export default {
                         text: '항목 미정',
                       },
                     ]"
-                    buttonTitle="신용평가사  선택하기"
+                    buttonTitle="신용평가사 선택하기"
                     layerTitle="신용평가사를 선택해 주세요"
                     id="layerMyLoanOnlineContractCheckCreditRatingAgency"
                     buttonId="layerMyLoanOnlineContractCheckCreditRatingAgencyButton"
@@ -578,7 +578,7 @@ export default {
                         text: '항목 미정',
                       },
                     ]"
-                    buttonTitle="신용등급  선택하기"
+                    buttonTitle="신용등급 선택하기"
                     layerTitle="신용등급을 선택해 주세요"
                     id="layerMyLoanOnlineContractCheckCreditRating"
                     buttonId="layerMyLoanOnlineContractCheckCreditRatingButton"
@@ -588,7 +588,7 @@ export default {
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
-          <!-- //Case :  전문금융소비자 선택 시 노출 -->
+          <!-- //Case : 전문금융소비자 선택 시 노출 -->
 
           <FormListItem
             titleText="변제계획"
@@ -687,15 +687,11 @@ export default {
 
         <CheckBox
           id="layerMyLoanCompatibilityAdequacyChk01"
-          theme="secondary"
+          theme="tertiary"
           :classNames="{ wrap: 'row-margin-item-group' }"
         >
           <CheckBoxObject />
-          <CheckBoxLabelText
-            :classNames="{
-              text: ['font-weight-regular', 'text-body-3'],
-            }"
-          >
+          <CheckBoxLabelText>
             본인은 당사에서 제공한 적합성·적정성 관련 정보와 관련하여 위 사항에
             동의합니다.
           </CheckBoxLabelText>

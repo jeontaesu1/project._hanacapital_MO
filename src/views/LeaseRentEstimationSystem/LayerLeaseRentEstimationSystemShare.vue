@@ -1,70 +1,138 @@
 <script>
-// LR_M00_l007
+// LR_M03_l001
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
-import FullPopup from '@/components/ui/layer/FullPopup.vue';
-import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
+import ToastPopup from '@/components/ui/layer/ToastPopup.vue';
+import ToastPopupHead from '@/components/ui/layer/ToastPopupHead.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
-import PopupButton from '@/components/ui/layer/PopupButton.vue';
-import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
-import PageMainText from '@/components/ui/text/PageMainText.vue';
-import ButtonList from '@/components/ui/button/ButtonList.vue';
-import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
+import FormList from '@/components/ui/form/FormList.vue';
+import FormListItem from '@/components/ui/form/FormListItem.vue';
+import InputBlock from '@/components/ui/form/InputBlock.vue';
+import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
+
+import IconSample from '@/assets/images/_dummy/sample.svg?component';
 
 export default {
   components: {
     UiLayer,
-    FullPopup,
-    FullPopupHead,
+    ToastPopup,
+    ToastPopupHead,
     PopupTitle,
-    PopupButton,
-    PageTextGroup,
-    PageMainText,
-    ButtonList,
-    ButtonListItem,
     BasicButton,
+    FormList,
+    FormListItem,
+    InputBlock,
+    InputBlockCell,
+    IconSample,
   },
   setup() {
     const layer = ref(null);
 
+    const copy = (text) => {
+      navigator.clipboard.writeText(text).then(() => {
+        console.log('success');
+      });
+    };
+
     return {
       layer,
+      copy,
     };
   },
 };
 </script>
 
 <template>
-  <UiLayer ref="layer" type="full" v-slot="layerSlotProps">
-    <FullPopup>
+  <UiLayer ref="layer" type="toast" :backgroundClose="true">
+    <ToastPopup>
       <template v-slot:head>
-        <FullPopupHead>
-          <PopupTitle>타이틀</PopupTitle>
-          <template v-slot:right>
-            <PopupButton @click="layerSlotProps.close()" />
-          </template>
-        </FullPopupHead>
+        <ToastPopupHead>
+          <PopupTitle>공유하기</PopupTitle>
+        </ToastPopupHead>
       </template>
 
-      <PageTextGroup>
-        <PageMainText>
-          문구
-        </PageMainText>
-      </PageTextGroup>
+      <div :class="[$style['share-list'], $style['share-list--col-3']]">
+        <ul :class="$style['share-list__list']">
+          <li :class="$style['share-list__item']">
+            <button type="button" :class="$style['share-list__button']">
+              <span :class="$style['share-list__icon']">
+                <IconSample />
+              </span>
+              <span :class="$style['share-list__text']">카카오톡</span>
+            </button>
+          </li>
+          <li :class="$style['share-list__item']">
+            <a
+              href="/foo/bar.pdf"
+              download
+              :class="$style['share-list__button']"
+            >
+              <span :class="$style['share-list__icon']">
+                <IconSample />
+              </span>
+              <span :class="$style['share-list__text']">PDF 다운로드</span>
+            </a>
+          </li>
+          <li :class="$style['share-list__item']">
+            <a
+              href="/foo/bar.pdf"
+              download
+              :class="$style['share-list__button']"
+            >
+              <span :class="$style['share-list__icon']">
+                <IconSample />
+              </span>
+              <span :class="$style['share-list__text']">JPG 다운로드</span>
+            </a>
+          </li>
+          <li :class="$style['share-list__item']">
+            <button type="button" :class="$style['share-list__button']">
+              <span :class="$style['share-list__icon']">
+                <IconSample />
+              </span>
+              <span :class="$style['share-list__text']">인쇄</span>
+            </button>
+          </li>
+          <li :class="$style['share-list__item']">
+            <button type="button" :class="$style['share-list__button']">
+              <span :class="$style['share-list__icon']">
+                <IconSample />
+              </span>
+              <span :class="$style['share-list__text']">열기</span>
+            </button>
+          </li>
+        </ul>
+      </div>
 
-      <template v-slot:foot>
-        <ButtonList
-          :classNames="{
-            wrap: 'row-margin-none',
-          }"
-        >
-          <ButtonListItem>
-            <BasicButton>확인</BasicButton>
-          </ButtonListItem>
-        </ButtonList>
-      </template>
-    </FullPopup>
+      <FormList :classNames="{ wrap: 'row-margin-contents' }">
+        <FormListItem titleText="URL" :forceFocus="true">
+          <InputBlock :disabled="true">
+            <InputBlockCell :flexible="true">
+              <div class="ellipsis">
+                https://www.hanacapital.co.kr/personal/info/directLoan.hnc
+              </div>
+            </InputBlockCell>
+            <template v-slot:right>
+              <BasicButton
+                size="mini"
+                theme="quaternary"
+                @click="
+                  copy(
+                    'https://www.hanacapital.co.kr/personal/info/directLoan.hnc'
+                  )
+                "
+                >URL 복사</BasicButton
+              >
+            </template>
+          </InputBlock>
+        </FormListItem>
+      </FormList>
+    </ToastPopup>
   </UiLayer>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/LeaseRentEstimationSystem/LayerLeaseRentEstimationSystemShare.scss';
+</style>

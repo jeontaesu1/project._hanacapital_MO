@@ -7,11 +7,11 @@ import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
-import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
-import PageMainText from '@/components/ui/text/PageMainText.vue';
-import ButtonList from '@/components/ui/button/ButtonList.vue';
-import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-import BasicButton from '@/components/ui/button/BasicButton.vue';
+import BasicHr from '@/components/ui/common/BasicHr.vue';
+import InputBlock from '@/components/ui/form/InputBlock.vue';
+import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
+import BasicInput from '@/components/ui/form/BasicInput.vue';
+import SearchButton from '@/components/ui/button/SearchButton.vue';
 
 export default {
   components: {
@@ -20,11 +20,11 @@ export default {
     FullPopupHead,
     PopupTitle,
     PopupButton,
-    PageTextGroup,
-    PageMainText,
-    ButtonList,
-    ButtonListItem,
-    BasicButton,
+    BasicHr,
+    InputBlock,
+    InputBlockCell,
+    BasicInput,
+    SearchButton,
   },
   setup() {
     const layer = ref(null);
@@ -41,30 +41,95 @@ export default {
     <FullPopup>
       <template v-slot:head>
         <FullPopupHead>
-          <PopupTitle>타이틀</PopupTitle>
+          <PopupTitle>판매점 조회</PopupTitle>
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
         </FullPopupHead>
       </template>
 
-      <PageTextGroup>
-        <PageMainText>
-          문구
-        </PageMainText>
-      </PageTextGroup>
+      <InputBlock>
+        <InputBlockCell :flexible="true">
+          <BasicInput
+            type="search"
+            title="판매점 조회 검색어"
+            placeholder="검색어 입력"
+          />
+        </InputBlockCell>
+        <InputBlockCell type="search">
+          <SearchButton />
+        </InputBlockCell>
+      </InputBlock>
 
-      <template v-slot:foot>
-        <ButtonList
-          :classNames="{
-            wrap: 'row-margin-none',
-          }"
-        >
-          <ButtonListItem>
-            <BasicButton>확인</BasicButton>
-          </ButtonListItem>
-        </ButtonList>
-      </template>
+      <!-- Case : 검색 후 노출 -->
+
+      <BasicHr className="row-margin-container-medium" />
+
+      <!-- Case : 결과 없을 때 -->
+      <div :class="$style['empty']">
+        <p :class="$style['empty__text']">검색된 결과가 없습니다.</p>
+      </div>
+      <!-- Case : 결과 없을 때 -->
+
+      <!-- Case : 결과 있을 때 -->
+      <ul :class="$style['search-list']">
+        <li :class="$style['search-list__item']">
+          <button type="button" :class="$style['search-list__link']">
+            <span :class="$style['search-list__text']">
+              <mark>오토</mark>큐브㈜일산몰
+            </span>
+          </button>
+        </li>
+        <li :class="$style['search-list__item']">
+          <button type="button" :class="$style['search-list__link']">
+            <span :class="$style['search-list__text']">
+              <mark>오토</mark>큐브㈜일산몰
+            </span>
+          </button>
+        </li>
+        <li :class="$style['search-list__item']">
+          <button type="button" :class="$style['search-list__link']">
+            <span :class="$style['search-list__text']">
+              <mark>오토</mark>큐브㈜일산몰
+            </span>
+          </button>
+        </li>
+        <li :class="$style['search-list__item']">
+          <button type="button" :class="$style['search-list__link']">
+            <span :class="$style['search-list__text']">
+              <mark>오토</mark>큐브㈜일산몰
+            </span>
+          </button>
+        </li>
+        <li :class="$style['search-list__item']">
+          <button type="button" :class="$style['search-list__link']">
+            <span :class="$style['search-list__text']">
+              <mark>오토</mark>큐브㈜일산몰
+            </span>
+          </button>
+        </li>
+        <li :class="$style['search-list__item']">
+          <button type="button" :class="$style['search-list__link']">
+            <span :class="$style['search-list__text']">
+              <mark>오토</mark>큐브㈜일산몰
+            </span>
+          </button>
+        </li>
+        <li :class="$style['search-list__item']">
+          <button type="button" :class="$style['search-list__link']">
+            <span :class="$style['search-list__text']">
+              <mark>오토</mark>큐브㈜일산몰
+            </span>
+          </button>
+        </li>
+      </ul>
+      <!-- // Case : 결과 있을 때 -->
+
+      <!-- // Case : 검색 후 노출 -->
     </FullPopup>
   </UiLayer>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/LeaseRentEstimationSystem/LayerLeaseRentEstimationSystemSearchStore.scss';
+</style>
