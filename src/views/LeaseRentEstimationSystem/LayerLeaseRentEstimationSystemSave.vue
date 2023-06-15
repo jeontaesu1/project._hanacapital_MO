@@ -41,7 +41,7 @@ export default {
     <FullPopup>
       <template v-slot:head>
         <FullPopupHead>
-          <PopupTitle>타이틀</PopupTitle>
+          <PopupTitle>견적 저장</PopupTitle>
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
@@ -49,9 +49,7 @@ export default {
       </template>
 
       <PageTextGroup>
-        <PageMainText>
-          문구
-        </PageMainText>
+        <PageMainText> 문구 </PageMainText>
       </PageTextGroup>
 
       <template v-slot:foot>
