@@ -73,7 +73,7 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong class="color-green">한도 조회</strong>를 위한<br />
+          <strong class="color-green">한도 조회</strong>를 위해<br />
           <strong>정보를 입력해주세요.</strong>
         </PageMainText>
       </PageTextGroup>
@@ -134,7 +134,7 @@ export default {
                 <li :class="$style['agree-list__item']">
                   <div :class="$style['agree-list__head']">
                     <CheckBox
-                      id="layerAutoUsedLoanLimitInquiry001"
+                      id="layerAutoUsedLoanLimitInquiryAgree001"
                       :classNames="{
                         wrap: $style['agree-list__checkbox'],
                       }"
@@ -150,7 +150,7 @@ export default {
                 <li :class="$style['agree-list__item']">
                   <div :class="$style['agree-list__head']">
                     <CheckBox
-                      id="layerAutoUsedLoanLimitInquiry002"
+                      id="layerAutoUsedLoanLimitInquiryAgree002"
                       :classNames="{
                         wrap: $style['agree-list__checkbox'],
                       }"
