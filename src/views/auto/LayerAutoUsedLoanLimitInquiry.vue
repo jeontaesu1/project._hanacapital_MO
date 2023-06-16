@@ -73,8 +73,7 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong><span class="color-green">한도 조회</span></strong
-          >를 위한<br />
+          <strong class="color-green">한도 조회</strong>를 위한<br />
           <strong>정보를 입력해주세요.</strong>
         </PageMainText>
       </PageTextGroup>
