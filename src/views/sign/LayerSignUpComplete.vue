@@ -59,10 +59,7 @@ export default {
       <IllustObject />
 
       <!-- DD : 하드코딩 배너 -->
-      <BasicBanner
-        thumb="/src/assets/images/banner/banner-money-up.png"
-        @click="() => {}"
-      >
+      <BasicBanner thumb="/images/banner/banner-money-up.png" @click="() => {}">
         <p class="text-body-4 color-gray row-margin-mini nowrap">
           자동차, 부동산 시세가 궁금하다면?
         </p>

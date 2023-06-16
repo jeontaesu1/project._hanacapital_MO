@@ -69,7 +69,7 @@ export default {
       <BasicBanner
         tagName="RouterLink"
         to="/my-info/join-membership"
-        thumb="/src/assets/images/banner/banner-money-up.png"
+        thumb="/images/banner/banner-money-up.png"
       >
         <p class="text-body-4 color-gray row-margin-mini nowrap">
           회원만을 위한 특별한 혜택
