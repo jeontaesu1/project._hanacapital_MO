@@ -31,6 +31,8 @@ import IconLink from '@/assets/images/icon/link.svg?component';
 import IconCapitalSmall from '@/assets/images/icon/img-capital-small.svg?component';
 import ImgMainSample from '@/assets/images/_dummy/main-sample.svg?component';
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 export default {
   components: {
     RouterLink,
@@ -81,6 +83,7 @@ export default {
     });
 
     return {
+      BASE_URL,
       modules: [Pagination, A11y],
     };
   },
@@ -720,7 +723,7 @@ export default {
                 <span
                   :class="$style['fun__thumb']"
                   :style="{
-                    backgroundImage: `url('/images/_dummy/thumbnail-sample2.jpg')`,
+                    backgroundImage: `url('${BASE_URL}images/_dummy/thumbnail-sample2.jpg')`,
                   }"
                 >
                   <img
@@ -741,7 +744,7 @@ export default {
                 <span
                   :class="$style['fun__thumb']"
                   :style="{
-                    backgroundImage: `url('/images/_dummy/thumbnail-sample3.jpg')`,
+                    backgroundImage: `url('${BASE_URL}images/_dummy/thumbnail-sample3.jpg')`,
                   }"
                 >
                   <img

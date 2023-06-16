@@ -145,6 +145,8 @@ import IconImg from '@/assets/images/icon/img.svg?component';
 
 import IconSample from '@/assets/images/_dummy/sample.svg?component';
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 export default {
   components: {
     BasicButton,
@@ -345,6 +347,7 @@ export default {
     };
 
     return {
+      BASE_URL,
       state,
       layerTest001,
       layerTest002,
@@ -8559,7 +8562,7 @@ export default {
                 <div
                   :class="$style['files__image']"
                   :style="{
-                    backgroundImage: `url('/images/_dummy/file-sample.png')`,
+                    backgroundImage: `url('${BASE_URL}images/_dummy/file-sample.png')`,
                   }"
                 >
                   <img
@@ -8634,7 +8637,7 @@ export default {
                 <div
                   :class="$style['files__image']"
                   :style="{
-                    backgroundImage: `url('/images/_dummy/file-sample.png')`,
+                    backgroundImage: `url('${BASE_URL}images/_dummy/file-sample.png')`,
                   }"
                 >
                   <img
@@ -8661,7 +8664,7 @@ export default {
                 <div
                   :class="$style['files__image']"
                   :style="{
-                    backgroundImage: `url('/images/_dummy/file-sample.png')`,
+                    backgroundImage: `url('${BASE_URL}images/_dummy/file-sample.png')`,
                   }"
                 >
                   <img
@@ -8688,7 +8691,7 @@ export default {
                 <div
                   :class="$style['files__image']"
                   :style="{
-                    backgroundImage: `url('/images/_dummy/file-sample.png')`,
+                    backgroundImage: `url('${BASE_URL}images/_dummy/file-sample.png')`,
                   }"
                 >
                   <img

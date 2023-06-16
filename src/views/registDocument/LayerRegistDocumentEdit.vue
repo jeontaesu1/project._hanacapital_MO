@@ -13,6 +13,8 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 export default {
   components: {
     UiLayer,
@@ -30,6 +32,7 @@ export default {
     const layer = ref(null);
 
     return {
+      BASE_URL,
       layer,
     };
   },
@@ -117,7 +120,7 @@ export default {
                   <div
                     :class="$style['files__image']"
                     :style="{
-                      backgroundImage: `url('/images/_dummy/file-sample.png')`,
+                      backgroundImage: `url('${BASE_URL}images/_dummy/file-sample.png')`,
                     }"
                   >
                     <img
@@ -192,7 +195,7 @@ export default {
                   <div
                     :class="$style['files__image']"
                     :style="{
-                      backgroundImage: `url('/images/_dummy/file-sample.png')`,
+                      backgroundImage: `url('${BASE_URL}images/_dummy/file-sample.png')`,
                     }"
                   >
                     <img
@@ -219,7 +222,7 @@ export default {
                   <div
                     :class="$style['files__image']"
                     :style="{
-                      backgroundImage: `url('/images/_dummy/file-sample.png')`,
+                      backgroundImage: `url('${BASE_URL}images/_dummy/file-sample.png')`,
                     }"
                   >
                     <img
@@ -246,7 +249,7 @@ export default {
                   <div
                     :class="$style['files__image']"
                     :style="{
-                      backgroundImage: `url('/images/_dummy/file-sample.png')`,
+                      backgroundImage: `url('${BASE_URL}images/_dummy/file-sample.png')`,
                     }"
                   >
                     <img
