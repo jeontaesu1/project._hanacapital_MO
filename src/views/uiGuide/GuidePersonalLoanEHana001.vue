@@ -189,7 +189,7 @@ export default {
 
       <ButtonListItem>
         <BasicButton @click="layer011Open">
-          신청 정보 입력- 금융상품 안내 팝업<br />PF_M01_l009
+          신청 정보 입력- 금융상품 안내 팝업<br />PF_M01_b004
         </BasicButton>
       </ButtonListItem>
 

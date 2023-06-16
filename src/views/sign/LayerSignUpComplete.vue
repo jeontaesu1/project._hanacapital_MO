@@ -58,15 +58,19 @@ export default {
 
       <IllustObject />
 
+      <!-- DD : 하드코딩 배너 -->
       <BasicBanner
         thumb="/src/assets/images/banner/banner-money-up.png"
         @click="() => {}"
       >
-        <p class="text-body-4 color-gray row-margin-mini">
+        <p class="text-body-4 color-gray row-margin-mini nowrap">
           자동차, 부동산 시세가 궁금하다면?
         </p>
-        <h3 class="text-body-1 font-weight-medium">하나캐피탈 앱 설치하기</h3>
+        <h3 class="text-body-1 font-weight-medium nowrap">
+          하나캐피탈 앱 설치하기
+        </h3>
       </BasicBanner>
+      <!-- // DD : 하드코딩 배너 -->
 
       <template v-slot:foot>
         <ButtonList

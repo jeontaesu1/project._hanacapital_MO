@@ -557,6 +557,7 @@ export default {
         <!-- // 일반 배너 -->
 
         <!-- 슬라이드 배너 A -->
+        <!-- DD : 관리자 등록 배너 -->
         <SlideBanner>
           <Swiper :modules="modules" pagination>
             <!-- Case : 링크 기능 없을 때 -->
@@ -565,10 +566,12 @@ export default {
                 thumb="/images/_dummy/banner-sample.png"
                 :action="false"
               >
-                <div class="text-body-1 font-weight-medium">
+                <div class="text-body-1 font-weight-medium ellipsis">
                   높아진 한도 확인하세요!
                 </div>
-                <div class="text-body-4 color-gray row-margin-mini">
+                <div
+                  class="text-body-4 color-gray row-margin-mini multi-ellipsis"
+                >
                   지금 신용조회하면 상품이 와르르
                 </div>
               </SlideBannerBlock>
@@ -582,10 +585,12 @@ export default {
                 tagName="RouterLink"
                 to=""
               >
-                <div class="text-body-1 font-weight-medium">
+                <div class="text-body-1 font-weight-medium ellipsis">
                   높아진 한도 확인하세요!
                 </div>
-                <div class="text-body-4 color-gray row-margin-mini">
+                <div
+                  class="text-body-4 color-gray row-margin-mini multi-ellipsis"
+                >
                   지금 신용조회하면 상품이 와르르
                 </div>
               </SlideBannerBlock>
@@ -599,17 +604,20 @@ export default {
                 tagName="a"
                 href=""
               >
-                <div class="text-body-1 font-weight-medium">
+                <div class="text-body-1 font-weight-medium ellipsis">
                   높아진 한도 확인하세요!
                 </div>
-                <div class="text-body-4 color-gray row-margin-mini">
+                <div
+                  class="text-body-4 color-gray row-margin-mini multi-ellipsis"
+                >
                   지금 신용조회하면 상품이 와르르
                 </div>
               </SlideBannerBlock>
             </SwiperSlide>
-            <!-- // Case : 링크 기능 있을 때 -->
+            <!-- // Case : 링크 기능 있을 때 (a tag) -->
           </Swiper>
         </SlideBanner>
+        <!-- // DD : 관리자 등록 배너 -->
         <!-- // 슬라이드 배너 A -->
       </div>
     </div>
@@ -755,6 +763,7 @@ export default {
       <!-- // FUN -->
 
       <!-- 슬라이드 배너 B -->
+      <!-- DD : 관리자 등록 배너 -->
       <SlideBanner>
         <Swiper :modules="modules" pagination>
           <!-- Case : 링크 기능 없을 때 -->
@@ -763,10 +772,12 @@ export default {
               thumb="/images/_dummy/banner-shield.png"
               :action="false"
             >
-              <div class="text-body-1 font-weight-medium">
+              <div class="text-body-1 font-weight-medium ellipsis">
                 에코플러스 자동차보험
               </div>
-              <div class="text-body-4 color-gray row-margin-mini">
+              <div
+                class="text-body-4 color-gray row-margin-mini multi-ellipsis"
+              >
                 지금 바로 GO!
               </div>
             </SlideBannerBlock>
@@ -780,10 +791,12 @@ export default {
               tagName="RouterLink"
               to=""
             >
-              <div class="text-body-1 font-weight-medium">
+              <div class="text-body-1 font-weight-medium ellipsis">
                 에코플러스 자동차보험
               </div>
-              <div class="text-body-4 color-gray row-margin-mini">
+              <div
+                class="text-body-4 color-gray row-margin-mini multi-ellipsis"
+              >
                 지금 바로 GO!
               </div>
             </SlideBannerBlock>
@@ -797,17 +810,20 @@ export default {
               tagName="a"
               href=""
             >
-              <div class="text-body-1 font-weight-medium">
+              <div class="text-body-1 font-weight-medium ellipsis">
                 에코플러스 자동차보험
               </div>
-              <div class="text-body-4 color-gray row-margin-mini">
+              <div
+                class="text-body-4 color-gray row-margin-mini multi-ellipsis"
+              >
                 지금 바로 GO!
               </div>
             </SlideBannerBlock>
           </SwiperSlide>
-          <!-- // Case : 링크 기능 있을 때 -->
+          <!-- // Case : 링크 기능 있을 때 (a tag) -->
         </Swiper>
       </SlideBanner>
+      <!-- // DD : 관리자 등록 배너 -->
       <!-- // 슬라이드 배너 B -->
     </div>
 

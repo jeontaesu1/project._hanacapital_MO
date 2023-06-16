@@ -128,35 +128,92 @@ export default {
       </div>
     </div>
 
+    <!-- DD : 관리자 등록 배너 -->
     <SlideBanner :classNames="{ wrap: 'row-margin-contents' }">
       <Swiper :modules="modules" pagination>
-        <SwiperSlide v-for="i in 3" :key="i">
+        <!-- Case : 링크 기능 없을 때 -->
+        <SwiperSlide>
+          <SlideBannerBlock
+            thumb="/images/_dummy/banner-sample.png"
+            :action="false"
+          >
+            <div class="text-body-1 font-weight-medium ellipsis">
+              원큐자동차담보대출
+            </div>
+            <div class="text-body-4 color-gray row-margin-mini multi-ellipsis">
+              자동차 소유 고객을 위한<br />
+              쉽고 빠른 금융서비스
+            </div>
+          </SlideBannerBlock>
+        </SwiperSlide>
+        <!-- //Case : 링크 기능 없을 때 -->
+
+        <!-- Case : 링크 기능 있을 때 (RouterLink) -->
+        <SwiperSlide>
           <SlideBannerBlock
             thumb="/images/_dummy/banner-sample.png"
             tagName="RouterLink"
             to=""
           >
-            <div class="text-body-1 font-weight-medium">원큐자동차담보대출</div>
-            <div class="text-body-4 color-gray row-margin-mini">
+            <div class="text-body-1 font-weight-medium ellipsis">
+              원큐자동차담보대출
+            </div>
+            <div class="text-body-4 color-gray row-margin-mini multi-ellipsis">
               자동차 소유 고객을 위한<br />
               쉽고 빠른 금융서비스
             </div>
 
-            <TextButton
-              tagName="span"
-              :classNames="{
-                wrap: 'text-body-4 color-gray row-margin-item-regular',
-              }"
-            >
-              자세히보기
-              <template v-slot:rightIcon>
-                <IconLink />
-              </template>
-            </TextButton>
+            <div class="inline-wrap row-margin-item-regular">
+              <TextButton
+                tagName="span"
+                :classNames="{
+                  wrap: 'text-body-4 color-gray',
+                }"
+              >
+                자세히보기
+                <template v-slot:rightIcon>
+                  <IconLink />
+                </template>
+              </TextButton>
+            </div>
           </SlideBannerBlock>
         </SwiperSlide>
+        <!-- // Case : 링크 기능 있을 때 -->
+
+        <!-- Case : 링크 기능 있을 때 (a tag) -->
+        <SwiperSlide>
+          <SlideBannerBlock
+            thumb="/images/_dummy/banner-sample.png"
+            tagName="a"
+            href=""
+          >
+            <div class="text-body-1 font-weight-medium ellipsis">
+              원큐자동차담보대출
+            </div>
+            <div class="text-body-4 color-gray row-margin-mini multi-ellipsis">
+              자동차 소유 고객을 위한<br />
+              쉽고 빠른 금융서비스
+            </div>
+
+            <div class="inline-wrap row-margin-item-regular">
+              <TextButton
+                tagName="span"
+                :classNames="{
+                  wrap: 'text-body-4 color-gray',
+                }"
+              >
+                자세히보기
+                <template v-slot:rightIcon>
+                  <IconLink />
+                </template>
+              </TextButton>
+            </div>
+          </SlideBannerBlock>
+        </SwiperSlide>
+        <!-- // Case : 링크 기능 있을 때 (a tag) -->
       </Swiper>
     </SlideBanner>
+    <!-- // DD : 관리자 등록 배너 -->
 
     <ul :class="[$style['basic-list'], $style['basic-list--small-margin']]">
       <li :class="$style['basic-list__item']">

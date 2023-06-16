@@ -65,18 +65,20 @@ export default {
 
       <IllustObject type="complete" />
 
+      <!-- DD : 하드코딩 배너 -->
       <BasicBanner
         tagName="RouterLink"
-        to=""
+        to="/my-info/join-membership"
         thumb="/src/assets/images/banner/banner-money-up.png"
       >
-        <p class="text-body-4 color-gray row-margin-mini">
+        <p class="text-body-4 color-gray row-margin-mini nowrap">
           회원만을 위한 특별한 혜택
         </p>
-        <h3 class="text-body-1 font-weight-medium">
+        <h3 class="text-body-1 font-weight-medium nowrap">
           하나캐피탈 멤버십 가입하기
         </h3>
       </BasicBanner>
+      <!-- // DD : 하드코딩 배너 -->
 
       <BasicHr
         type="contents"

@@ -278,6 +278,11 @@ body,
   text-decoration: none;
 }
 
+// nowrap
+.nowrap.nowrap {
+  white-space: nowrap;
+}
+
 // ellipsis
 .ellipsis.ellipsis {
   white-space: nowrap;
