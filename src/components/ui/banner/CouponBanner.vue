@@ -2,6 +2,8 @@
 import { computed } from 'vue';
 import { RouterLink } from 'vue-router';
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const defaultClassNames = () => ({
   wrap: '',
   inner: '',
@@ -75,11 +77,22 @@ export default {
       return Boolean(context.slots.download);
     });
 
+    const imgSrc = computed(() => {
+      const { logo = '' } = props;
+
+      if (logo.match(/^\//)) {
+        return BASE_URL + logo.replace(/^\//, '');
+      } else {
+        return logo;
+      }
+    });
+
     return {
       setComponent,
       setType,
       customClassNames,
       isDownload,
+      imgSrc,
     };
   },
 };
@@ -102,7 +115,7 @@ export default {
       <div v-if="logo" :class="[$style['banner__logo'], customClassNames.logo]">
         <div :class="[$style['banner__logo-img'], customClassNames.logoImg]">
           <img
-            :src="logo"
+            :src="imgSrc"
             @error="
               (e) => {
                 e.target.parentNode.classList.add('is-error');
