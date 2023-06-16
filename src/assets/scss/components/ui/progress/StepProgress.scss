@@ -1,31 +1,8 @@
 .progress {
   display: flex;
   align-items: center;
-  padding: 12px 20px 4px;
+  padding: 19px 20px 11px;
   transition: background-color 0.2s;
-
-  &__text {
-    flex: none;
-    display: flex;
-    align-items: center;
-    margin-right: 10px;
-    @include font-size-default(12);
-    font-weight: 500;
-    color: $color-gray-60;
-
-    div {
-      flex: none;
-    }
-  }
-
-  &__total {
-    margin-left: 2px;
-  }
-
-  &__current {
-    margin-right: 2px;
-    color: $color-navy-50;
-  }
 
   &__bar {
     flex: 1;

@@ -1,26 +1,37 @@
 <script>
 // LM_M06_p001
 import { onMounted, onUnmounted } from 'vue';
-import { useRouter } from 'vue-router';
+import { RouterLink, useRouter } from 'vue-router';
+import { Pagination, A11y } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/vue';
 
 import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
+import SlideBanner from '@/components/ui/banner/SlideBanner.vue';
+import SlideBannerBlock from '@/components/ui/banner/SlideBannerBlock.vue';
 
 import IconCustomer from '@/assets/images/icon/customer-center.svg?component';
 import IconTell from '@/assets/images/icon/tell.svg?component';
 import IconSms from '@/assets/images/icon/sms.svg?component';
 import IconConsultation from '@/assets/images/icon/consultation.svg?component';
+import IconLink from '@/assets/images/icon/link.svg?component';
 
 export default {
   components: {
+    RouterLink,
+    Swiper,
+    SwiperSlide,
     PageContents,
     TextButton,
+    SlideBanner,
+    SlideBannerBlock,
     IconCustomer,
     IconTell,
     IconSms,
     IconConsultation,
+    IconLink,
   },
   setup() {
     const store = {
@@ -45,6 +56,10 @@ export default {
       store.ui.header.setLeftButtons();
       store.ui.header.setRightButtons();
     });
+
+    return {
+      modules: [Pagination, A11y],
+    };
   },
 };
 </script>
@@ -113,9 +128,35 @@ export default {
       </div>
     </div>
 
-    <div class="row-margin-item-medium">
-      // 배너 영역 (내용 확인 후 진행 예정)
-    </div>
+    <SlideBanner :classNames="{ wrap: 'row-margin-contents' }">
+      <Swiper :modules="modules" pagination>
+        <SwiperSlide v-for="i in 3" :key="i">
+          <SlideBannerBlock
+            thumb="/images/_dummy/banner-sample.png"
+            tagName="RouterLink"
+            to=""
+          >
+            <div class="text-body-1 font-weight-medium">원큐자동차담보대출</div>
+            <div class="text-body-4 color-gray row-margin-mini">
+              자동차 소유 고객을 위한<br />
+              쉽고 빠른 금융서비스
+            </div>
+
+            <TextButton
+              tagName="span"
+              :classNames="{
+                wrap: 'text-body-4 color-gray row-margin-item-regular',
+              }"
+            >
+              자세히보기
+              <template v-slot:rightIcon>
+                <IconLink />
+              </template>
+            </TextButton>
+          </SlideBannerBlock>
+        </SwiperSlide>
+      </Swiper>
+    </SlideBanner>
 
     <ul :class="[$style['basic-list'], $style['basic-list--small-margin']]">
       <li :class="$style['basic-list__item']">
