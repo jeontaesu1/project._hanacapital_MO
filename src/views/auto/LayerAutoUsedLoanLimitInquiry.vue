@@ -104,7 +104,6 @@ export default {
             <InputBlock :error="state.numberError">
               <InputBlockCell :flexible="true">
                 <BasicInput
-                  type="number"
                   pattern="\d*"
                   title="연락처"
                   id="layerAutoUsedLoanLimitInquiryNumber"

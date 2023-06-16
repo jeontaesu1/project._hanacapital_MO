@@ -101,7 +101,7 @@ export default {
             <InputBlock :error="state.titleError">
               <InputBlockCell :flexible="true">
                 <BasicInput
-                  title="고객명"
+                  title="견적 제목"
                   id="layerLeaseRentEstimationSystemSaveTitle"
                 />
               </InputBlockCell>
