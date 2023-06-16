@@ -74,9 +74,7 @@ export default {
                 </h3>
               </BasicBoxHeadLeft>
               <BasicBoxHeadRight>
-                <RoundStatus :classNames="{ wrap: 'display-block' }">
-                  종료
-                </RoundStatus>
+                <RoundStatus :block="true">종료</RoundStatus>
               </BasicBoxHeadRight>
             </BasicBoxHead>
             <KeyValue margin="regular">
@@ -105,15 +103,15 @@ export default {
             <BasicBoxHead>
               <BasicBoxHeadLeft>
                 <h3 class="text-body-1 font-weight-medium">야나두</h3>
-                <p class="text-body-4 color-gray row-margin-small">
+                <p
+                  class="text-body-4 color-gray row-margin-small multi-ellipsis"
+                >
                   품목명 1줄로 여기까지 여기까지 씁니다.<br />
                   길 경우 이렇게 2줄까지 됩니다.
                 </p>
               </BasicBoxHeadLeft>
               <BasicBoxHeadRight>
-                <RoundStatus :classNames="{ wrap: 'display-block' }">
-                  종료
-                </RoundStatus>
+                <RoundStatus :block="true">종료</RoundStatus>
               </BasicBoxHeadRight>
             </BasicBoxHead>
             <KeyValue margin="regular">
@@ -140,6 +138,7 @@ export default {
               tagName="a"
               size="small"
               :classNames="{ wrap: 'row-margin-contents-small' }"
+              href="tel:0000-0000"
             >
               <template v-slot:leftIcon>
                 <IconTell />
@@ -153,15 +152,15 @@ export default {
             <BasicBoxHead>
               <BasicBoxHeadLeft>
                 <h3 class="text-body-1 font-weight-medium">현대렌탈</h3>
-                <p class="text-body-4 color-gray row-margin-small">
+                <p
+                  class="text-body-4 color-gray row-margin-small multi-ellipsis"
+                >
                   품목명 1줄로 여기까지 여기까지 씁니다.<br />
                   길 경우 이렇게 2줄까지 됩니다.
                 </p>
               </BasicBoxHeadLeft>
               <BasicBoxHeadRight>
-                <RoundStatus :classNames="{ wrap: 'display-block' }">
-                  종료
-                </RoundStatus>
+                <RoundStatus :block="true">종료</RoundStatus>
               </BasicBoxHeadRight>
             </BasicBoxHead>
             <KeyValue margin="regular">
@@ -188,6 +187,7 @@ export default {
               tagName="a"
               size="small"
               :classNames="{ wrap: 'row-margin-contents-small' }"
+              href="tel:0000-0000"
             >
               <template v-slot:leftIcon>
                 <IconTell />

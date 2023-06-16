@@ -53,200 +53,198 @@ export default {
       </template>
 
       <div>
-        <ul class="reset-list">
-          <li class="row-margin-item-group">
-            <BasicBox>
-              <BasicBoxHead>
-                <BasicBoxHeadLeft>
-                  <h3 class="text-body-1 font-weight-medium">외관</h3>
-                </BasicBoxHeadLeft>
-              </BasicBoxHead>
-              <KeyValue margin="regular">
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>전장 (mm)</KeyValueTitle>
-                  <KeyValueText>3,595</KeyValueText>
-                </KeyValueItem>
+        <section class="row-margin-item-group">
+          <BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-body-1 font-weight-medium">외관</h3>
+              </BasicBoxHeadLeft>
+            </BasicBoxHead>
+            <KeyValue margin="regular">
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>전장 (mm)</KeyValueTitle>
+                <KeyValueText>3,595</KeyValueText>
+              </KeyValueItem>
 
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>전폭 (mm)</KeyValueTitle>
-                  <KeyValueText>1,595</KeyValueText>
-                </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>전폭 (mm)</KeyValueTitle>
+                <KeyValueText>1,595</KeyValueText>
+              </KeyValueItem>
 
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>전고 (mm)</KeyValueTitle>
-                  <KeyValueText>1,575 (1,605)</KeyValueText>
-                </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>전고 (mm)</KeyValueTitle>
+                <KeyValueText>1,575 (1,605)</KeyValueText>
+              </KeyValueItem>
 
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>축간거리 (mm)</KeyValueTitle>
-                  <KeyValueText>2,400</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
-            </BasicBox>
-          </li>
-          <li class="row-margin-item-group">
-            <BasicBox>
-              <BasicBoxHead>
-                <BasicBoxHeadLeft>
-                  <h3 class="text-body-1 font-weight-medium">엔진</h3>
-                </BasicBoxHeadLeft>
-              </BasicBoxHead>
-              <KeyValue margin="regular">
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>엔진형식</KeyValueTitle>
-                  <KeyValueText>3,595</KeyValueText>
-                </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>축간거리 (mm)</KeyValueTitle>
+                <KeyValueText>2,400</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </BasicBox>
+        </section>
+        <section class="row-margin-item-group">
+          <BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-body-1 font-weight-medium">엔진</h3>
+              </BasicBoxHeadLeft>
+            </BasicBoxHead>
+            <KeyValue margin="regular">
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>엔진형식</KeyValueTitle>
+                <KeyValueText>3,595</KeyValueText>
+              </KeyValueItem>
 
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>배기량</KeyValueTitle>
-                  <KeyValueText>1,595</KeyValueText>
-                </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>배기량</KeyValueTitle>
+                <KeyValueText>1,595</KeyValueText>
+              </KeyValueItem>
 
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>최고출력(PS/rpm)</KeyValueTitle>
-                  <KeyValueText>1,575 (1,605)</KeyValueText>
-                </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>최고출력(PS/rpm)</KeyValueTitle>
+                <KeyValueText>1,575 (1,605)</KeyValueText>
+              </KeyValueItem>
 
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>최대토크(kgf.m/rpm)</KeyValueTitle>
-                  <KeyValueText>2,400</KeyValueText>
-                </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>최대토크(kgf.m/rpm)</KeyValueTitle>
+                <KeyValueText>2,400</KeyValueText>
+              </KeyValueItem>
 
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>연료탱크(ℓ)</KeyValueTitle>
-                  <KeyValueText>35</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
-            </BasicBox>
-          </li>
-          <li class="row-margin-item-group">
-            <BasicBox>
-              <BasicBoxHead>
-                <BasicBoxHeadLeft>
-                  <h3 class="text-body-1 font-weight-medium">연비</h3>
-                </BasicBoxHeadLeft>
-              </BasicBoxHead>
-              <KeyValue margin="regular">
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>연료</KeyValueTitle>
-                  <KeyValueText>휘발유</KeyValueText>
-                </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>연료탱크(ℓ)</KeyValueTitle>
+                <KeyValueText>35</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </BasicBox>
+        </section>
+        <section class="row-margin-item-group">
+          <BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-body-1 font-weight-medium">연비</h3>
+              </BasicBoxHeadLeft>
+            </BasicBoxHead>
+            <KeyValue margin="regular">
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>연료</KeyValueTitle>
+                <KeyValueText>휘발유</KeyValueText>
+              </KeyValueItem>
 
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>복합연비(km/ℓ)</KeyValueTitle>
-                  <KeyValueText>14.3</KeyValueText>
-                </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>복합연비(km/ℓ)</KeyValueTitle>
+                <KeyValueText>14.3</KeyValueText>
+              </KeyValueItem>
 
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>도심연비(km/ℓ)</KeyValueTitle>
-                  <KeyValueText>13.4</KeyValueText>
-                </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>도심연비(km/ℓ)</KeyValueTitle>
+                <KeyValueText>13.4</KeyValueText>
+              </KeyValueItem>
 
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>고속도로연비(km/ℓ)</KeyValueTitle>
-                  <KeyValueText>15.5</KeyValueText>
-                </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>고속도로연비(km/ℓ)</KeyValueTitle>
+                <KeyValueText>15.5</KeyValueText>
+              </KeyValueItem>
 
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>CO2 배출량(g/km)</KeyValueTitle>
-                  <KeyValueText>115</KeyValueText>
-                </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>CO2 배출량(g/km)</KeyValueTitle>
+                <KeyValueText>115</KeyValueText>
+              </KeyValueItem>
 
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>배기량(cc)</KeyValueTitle>
-                  <KeyValueText>998</KeyValueText>
-                </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>배기량(cc)</KeyValueTitle>
+                <KeyValueText>998</KeyValueText>
+              </KeyValueItem>
 
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>공차중량(kg)</KeyValueTitle>
-                  <KeyValueText>985</KeyValueText>
-                </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>공차중량(kg)</KeyValueTitle>
+                <KeyValueText>985</KeyValueText>
+              </KeyValueItem>
 
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>변속기</KeyValueTitle>
-                  <KeyValueText>자동4단</KeyValueText>
-                </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>변속기</KeyValueTitle>
+                <KeyValueText>자동4단</KeyValueText>
+              </KeyValueItem>
 
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>타이어(‘’)</KeyValueTitle>
-                  <KeyValueText>15</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
-            </BasicBox>
-          </li>
-        </ul>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>타이어(‘’)</KeyValueTitle>
+                <KeyValueText>15</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </BasicBox>
+        </section>
       </div>
     </FullPopup>
   </UiLayer>
