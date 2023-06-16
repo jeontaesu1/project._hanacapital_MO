@@ -710,7 +710,7 @@ export default {
           신청인(또는 연대보증인) 김하나 (서명/인)
         </div>
 
-        <BasicBox theme="senary" class="row-margin-contents-group">
+        <BasicBox theme="senary" className="row-margin-contents-group">
           <div class="color-gray-secondary text-body-4">
             본 확인서는 [금융소비자 보호에 관한 법률] 제 17조 및 제 18조에 따라
             작성되었습니다.

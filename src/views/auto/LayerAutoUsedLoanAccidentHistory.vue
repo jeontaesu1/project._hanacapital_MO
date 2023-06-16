@@ -436,7 +436,9 @@ export default {
                     <UiAccordionItem
                       v-for="i in 3"
                       :key="i"
-                      class="row-margin-item-group"
+                      :classNames="{
+                        item: 'row-margin-item-group',
+                      }"
                     >
                       <BasicBox>
                         <div class="flex-box">
@@ -517,7 +519,9 @@ export default {
                     <UiAccordionItem
                       v-for="i in 3"
                       :key="i"
-                      class="row-margin-item-group"
+                      :classNames="{
+                        item: 'row-margin-item-group',
+                      }"
                     >
                       <BasicBox>
                         <div class="flex-box">
@@ -598,7 +602,9 @@ export default {
                     <UiAccordionItem
                       v-for="i in 3"
                       :key="i"
-                      class="row-margin-item-group"
+                      :classNames="{
+                        item: 'row-margin-item-group',
+                      }"
                     >
                       <BasicBox>
                         <div class="flex-box">

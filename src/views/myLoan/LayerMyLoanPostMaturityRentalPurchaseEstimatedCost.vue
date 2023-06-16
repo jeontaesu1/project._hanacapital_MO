@@ -128,7 +128,7 @@ export default {
             <BasicHr
               theme="quaternary"
               type="contents"
-              class="row-margin-contents-small"
+              className="row-margin-contents-small"
             />
 
             <KeyValue>
