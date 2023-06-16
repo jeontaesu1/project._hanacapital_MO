@@ -242,7 +242,11 @@ export default {
                 </BoxCheck>
               </BoxCheckListItem>
             </BoxCheckList>
-            <InputBlock class="row-margin-item-group">
+            <InputBlock
+              :classNames="{
+                wrap: 'row-margin-item-group',
+              }"
+            >
               <InputBlockCell :flexible="true">
                 <BasicInput
                   type="search"

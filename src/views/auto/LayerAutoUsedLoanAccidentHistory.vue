@@ -432,11 +432,17 @@ export default {
                   <!-- // Case : 내역 없을 때 -->
 
                   <!-- Case : 내역 있을 때 -->
-                  <UiAccordion class="reset-list">
+                  <UiAccordion
+                    :classNames="{
+                      wrap: 'reset-list',
+                    }"
+                  >
                     <UiAccordionItem
                       v-for="i in 3"
                       :key="i"
-                      class="row-margin-item-group"
+                      :classNames="{
+                        item: 'row-margin-item-group',
+                      }"
                     >
                       <BasicBox>
                         <div class="flex-box">
@@ -513,11 +519,17 @@ export default {
                   <!-- // Case : 내역 없을 때 -->
 
                   <!-- Case : 내역 있을 때 -->
-                  <UiAccordion class="reset-list">
+                  <UiAccordion
+                    :classNames="{
+                      wrap: 'reset-list',
+                    }"
+                  >
                     <UiAccordionItem
                       v-for="i in 3"
                       :key="i"
-                      class="row-margin-item-group"
+                      :classNames="{
+                        item: 'row-margin-item-group',
+                      }"
                     >
                       <BasicBox>
                         <div class="flex-box">
@@ -594,11 +606,17 @@ export default {
                   <!-- // Case : 내역 없을 때 -->
 
                   <!-- Case : 내역 있을 때 -->
-                  <UiAccordion class="reset-list">
+                  <UiAccordion
+                    :classNames="{
+                      wrap: 'reset-list',
+                    }"
+                  >
                     <UiAccordionItem
                       v-for="i in 3"
                       :key="i"
-                      class="row-margin-item-group"
+                      :classNames="{
+                        item: 'row-margin-item-group',
+                      }"
                     >
                       <BasicBox>
                         <div class="flex-box">

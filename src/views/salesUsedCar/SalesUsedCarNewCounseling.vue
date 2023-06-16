@@ -184,7 +184,11 @@ export default {
 
     <section class="row-margin-contents-group">
       <h3 class="text-body-2 row-margin-item-medium">신용조회동의 요청</h3>
-      <ButtonList class="row-margin-none">
+      <ButtonList
+        :classNames="{
+          wrap: 'row-margin-none',
+        }"
+      >
         <ButtonListItem>
           <BasicButton theme="tertiary">ARS연결</BasicButton>
         </ButtonListItem>
