@@ -432,7 +432,11 @@ export default {
                   <!-- // Case : 내역 없을 때 -->
 
                   <!-- Case : 내역 있을 때 -->
-                  <UiAccordion class="reset-list">
+                  <UiAccordion
+                    :classNames="{
+                      wrap: 'reset-list',
+                    }"
+                  >
                     <UiAccordionItem
                       v-for="i in 3"
                       :key="i"
@@ -515,7 +519,11 @@ export default {
                   <!-- // Case : 내역 없을 때 -->
 
                   <!-- Case : 내역 있을 때 -->
-                  <UiAccordion class="reset-list">
+                  <UiAccordion
+                    :classNames="{
+                      wrap: 'reset-list',
+                    }"
+                  >
                     <UiAccordionItem
                       v-for="i in 3"
                       :key="i"
@@ -598,7 +606,11 @@ export default {
                   <!-- // Case : 내역 없을 때 -->
 
                   <!-- Case : 내역 있을 때 -->
-                  <UiAccordion class="reset-list">
+                  <UiAccordion
+                    :classNames="{
+                      wrap: 'reset-list',
+                    }"
+                  >
                     <UiAccordionItem
                       v-for="i in 3"
                       :key="i"
