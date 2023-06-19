@@ -5,8 +5,6 @@ import { onMounted, onUnmounted, reactive } from 'vue';
 import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
-import BasicBox from '@/components/ui/common/BasicBox.vue';
-import BasicButton from '@/components/ui/button/BasicButton.vue';
 import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
@@ -16,14 +14,13 @@ import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import SearchButton from '@/components/ui/button/SearchButton.vue';
-import BasicHr from '@/components/ui/common/BasicHr.vue';
-import BankSelect from '@/components/ui/form/BankSelect.vue';
+import ContentsButton from '@/components/ui/button/ContentsButton.vue';
+import CarThumb from '@/components/ui/imageData/CarThumb.vue';
+import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 
 export default {
   components: {
     PageContents,
-    BasicBox,
-    BasicButton,
     FormList,
     FormListItem,
     FormInvalid,
@@ -33,8 +30,9 @@ export default {
     InputBlockCell,
     BasicInput,
     SearchButton,
-    BasicHr,
-    BankSelect,
+    ContentsButton,
+    CarThumb,
+    RoundStatus,
   },
   setup() {
     const store = {
@@ -69,17 +67,6 @@ export default {
 
 <template>
   <PageContents>
-    <BasicBox className="row-margin-contents-group">
-      <div class="flex-box">
-        <div class="flex-box__cell flex-1">
-          <div class="text-body-3">선구매 차량을 등록하시겠습니까?</div>
-        </div>
-        <div class="flex-box__cell">
-          <BasicButton theme="secondary" size="mini">등록</BasicButton>
-        </div>
-      </div>
-    </BasicBox>
-
     <InputBlock type="search">
       <InputBlockCell :flexible="true">
         <BasicInput
@@ -134,10 +121,7 @@ export default {
         <FormInvalid :error="state.brandError">
           <InputBlock :error="state.brandError">
             <InputBlockCell :flexible="true">
-              <BankSelect
-                id="LeaseRentEstimationSystemPrePurchaseChooseCarBrand"
-                buttonId="LeaseRentEstimationSystemPrePurchaseChooseCarBrandButton"
-              />
+              // 브랜드 선택 컴포넌트
             </InputBlockCell>
           </InputBlock>
           <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -145,8 +129,53 @@ export default {
       </FormListItem>
     </FormList>
 
-    <div>// 자동차 선택 버튼 영역</div>
-
-    <BasicHr className="row-margin-contents" />
+    <div :class="$style['car-select']">
+      <ul :class="$style['car-select__list']">
+        <li :class="$style['car-select__item']">
+          <ContentsButton theme="secondary">
+            <CarThumb
+              src="/images/_dummy/car-thumb.png"
+              :class="$style['car-select__img']"
+            />
+            <h3 class="text-body-3 row-margin-mini">올 뉴 아반떼</h3>
+            <RoundStatus theme="secondary">27대</RoundStatus>
+          </ContentsButton>
+        </li>
+        <li :class="$style['car-select__item']">
+          <ContentsButton theme="secondary">
+            <CarThumb
+              src="/images/_dummy/car-thumb.png"
+              :class="$style['car-select__img']"
+            />
+            <h3 class="text-body-3 row-margin-mini">올 뉴 아반떼</h3>
+            <RoundStatus theme="secondary">27대</RoundStatus>
+          </ContentsButton>
+        </li>
+        <li :class="$style['car-select__item']">
+          <ContentsButton theme="secondary">
+            <CarThumb
+              src="/images/_dummy/car-thumb.png"
+              :class="$style['car-select__img']"
+            />
+            <h3 class="text-body-3 row-margin-mini">올 뉴 아반떼</h3>
+            <RoundStatus theme="secondary">27대</RoundStatus>
+          </ContentsButton>
+        </li>
+        <li :class="$style['car-select__item']">
+          <ContentsButton theme="secondary">
+            <CarThumb
+              src="/images/_dummy/car-thumb.png"
+              :class="$style['car-select__img']"
+            />
+            <h3 class="text-body-3 row-margin-mini">올 뉴 아반떼</h3>
+            <RoundStatus theme="secondary">27대</RoundStatus>
+          </ContentsButton>
+        </li>
+      </ul>
+    </div>
   </PageContents>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemPrePurchaseChooseCar.scss';
+</style>

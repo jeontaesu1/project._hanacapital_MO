@@ -1,0 +1,23 @@
+.car-select {
+  position: relative;
+
+  &::before {
+    content: '';
+    display: table;
+  }
+
+  &__list {
+    @include reset-list;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    width: 50%;
+    text-align: center;
+  }
+
+  &__img {
+    margin: 0 auto;
+  }
+}
