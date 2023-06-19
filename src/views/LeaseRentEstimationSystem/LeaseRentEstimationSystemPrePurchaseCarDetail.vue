@@ -331,7 +331,7 @@ export default {
               >
             </BasicBoxHeadLeft>
             <BasicBoxHeadRight>
-              <RoundStatus theme="denary">선구매 10대</RoundStatus>
+              <RoundStatus theme="secondary">선구매 12대</RoundStatus>
               <CarThumb
                 src="/images/_dummy/car-thumb.png"
                 :classNames="{ wrap: 'row-margin-item-medium' }"
@@ -393,12 +393,12 @@ export default {
                       <div class="flex-box__cell">
                         <div :class="$style['number']">
                           <div :class="$style['number__item']">
-                            <TextButton theme="tertiary" underline="true">
+                            <TextButton theme="secondary" underline="true">
                               D12345678
                             </TextButton>
                           </div>
                           <div :class="$style['number__item']">
-                            <TextButton theme="tertiary" underline="true">
+                            <TextButton theme="secondary" underline="true">
                               D12345678
                             </TextButton>
                           </div>
@@ -421,27 +421,27 @@ export default {
                   <BasicBox theme="senary">
                     <div :class="$style['number']">
                       <div :class="$style['number__item']">
-                        <TextButton theme="tertiary" underline="true">
+                        <TextButton theme="secondary" underline="true">
                           D12345678
                         </TextButton>
                       </div>
                       <div :class="$style['number__item']">
-                        <TextButton theme="tertiary" underline="true">
+                        <TextButton theme="secondary" underline="true">
                           D12345678
                         </TextButton>
                       </div>
                       <div :class="$style['number__item']">
-                        <TextButton theme="tertiary" underline="true">
+                        <TextButton theme="secondary" underline="true">
                           D12345678
                         </TextButton>
                       </div>
                       <div :class="$style['number__item']">
-                        <TextButton theme="tertiary" underline="true">
+                        <TextButton theme="secondary" underline="true">
                           D12345678
                         </TextButton>
                       </div>
                       <div :class="$style['number__item']">
-                        <TextButton theme="tertiary" underline="true">
+                        <TextButton theme="secondary" underline="true">
                           D12345678
                         </TextButton>
                       </div>

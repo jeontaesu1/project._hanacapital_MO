@@ -80,7 +80,9 @@ export default {
       </InputBlockCell>
     </InputBlock>
 
-    <FormList :classNames="{ wrap: 'row-margin-contents' }">
+    <FormList
+      :classNames="{ wrap: 'row-margin-contents row-margin-bottom-none' }"
+    >
       <FormListItem
         titleText="제휴사"
         target="#LeaseRentEstimationSystemPrePurchaseChooseCarAffiliate"
@@ -129,7 +131,7 @@ export default {
       </FormListItem>
     </FormList>
 
-    <div :class="$style['car-select']">
+    <div :class="[$style['car-select'], 'row-margin-container-medium']">
       <ul :class="$style['car-select__list']">
         <li :class="$style['car-select__item']">
           <ContentsButton theme="secondary">
@@ -137,8 +139,8 @@ export default {
               src="/images/_dummy/car-thumb.png"
               :class="$style['car-select__img']"
             />
-            <h3 class="text-body-3 row-margin-mini">올 뉴 아반떼</h3>
-            <RoundStatus theme="secondary">27대</RoundStatus>
+            <h3 class="text-body-3 row-margin-mini">캐스퍼</h3>
+            <RoundStatus theme="secondary">22대</RoundStatus>
           </ContentsButton>
         </li>
         <li :class="$style['car-select__item']">
@@ -157,8 +159,8 @@ export default {
               src="/images/_dummy/car-thumb.png"
               :class="$style['car-select__img']"
             />
-            <h3 class="text-body-3 row-margin-mini">올 뉴 아반떼</h3>
-            <RoundStatus theme="secondary">27대</RoundStatus>
+            <h3 class="text-body-3 row-margin-mini">아반떼-N</h3>
+            <RoundStatus theme="secondary">22대</RoundStatus>
           </ContentsButton>
         </li>
         <li :class="$style['car-select__item']">
@@ -167,8 +169,8 @@ export default {
               src="/images/_dummy/car-thumb.png"
               :class="$style['car-select__img']"
             />
-            <h3 class="text-body-3 row-margin-mini">올 뉴 아반떼</h3>
-            <RoundStatus theme="secondary">27대</RoundStatus>
+            <h3 class="text-body-3 row-margin-mini">더 뉴 그랜저</h3>
+            <RoundStatus theme="secondary">22대</RoundStatus>
           </ContentsButton>
         </li>
       </ul>
