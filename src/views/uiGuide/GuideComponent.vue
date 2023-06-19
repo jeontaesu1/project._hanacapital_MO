@@ -1205,6 +1205,25 @@ export default {
           </KeyValue>
         </ContentsButton>
       </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Secondary</h3>
+
+        <ContentsButton theme="secondary">
+          <h3 class="text-body-1 row-margin-small">타이틀</h3>
+          <KeyValue align="left" margin="mini" size="medium">
+            <KeyValueItem :classNames="{ item: 'text-body-4 color-black' }">
+              <KeyValueTitle>도로명</KeyValueTitle>
+              <KeyValueText>인천 서구 에코로 181</KeyValueText>
+            </KeyValueItem>
+
+            <KeyValueItem :classNames="{ item: 'text-body-4 color-black' }">
+              <KeyValueTitle>입력 주소</KeyValueTitle>
+              <KeyValueText>하나금융그룹 로비</KeyValueText>
+            </KeyValueItem>
+          </KeyValue>
+        </ContentsButton>
+      </div>
     </section>
 
     <section class="test-section">

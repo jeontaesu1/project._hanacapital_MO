@@ -34,4 +34,22 @@
       @include for-a11y;
     }
   }
+
+  &--theme {
+    &-secondary {
+      .contents-button__content {
+        padding: 16px;
+      }
+
+      .contents-button__button {
+        border-color: transparent;
+
+        &:hover,
+        &:active,
+        &:focus-visible {
+          border-color: $color-navy-50;
+        }
+      }
+    }
+  }
 }
