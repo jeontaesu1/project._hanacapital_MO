@@ -15,6 +15,7 @@ import LayerMyLoanOnlineContractAutoConfirm004 from '@/views/myLoan/LayerMyLoanO
 import LayerMyLoanOnlineContractAutoConfirm005 from '@/views/myLoan/LayerMyLoanOnlineContractAutoConfirm005.vue';
 import LayerMyLoanOnlineContractAutoConfirm006 from '@/views/myLoan/LayerMyLoanOnlineContractAutoConfirm006.vue';
 import LayerMyLoanOnlineContractAutoConfirm007 from '@/views/myLoan/LayerMyLoanOnlineContractAutoConfirm007.vue';
+import LayerMyLoanOnlineContractAutoLeaseRentalComplete from '@/views/myLoan/LayerMyLoanOnlineContractAutoLeaseRentalComplete.vue';
 import LayerMyLoanOnlineContractSuccessionNotice001 from '@/views/myLoan/LayerMyLoanOnlineContractSuccessionNotice001.vue';
 import LayerMyLoanOnlineContractSuccessionNotice002 from '@/views/myLoan/LayerMyLoanOnlineContractSuccessionNotice002.vue';
 import LayerMyLoanOnlineContractIntermediateIdentification from '@/views/myLoan/LayerMyLoanOnlineContractIntermediateIdentification.vue';
@@ -72,6 +73,7 @@ export default {
     LayerMyLoanOnlineContractAutoConfirm005,
     LayerMyLoanOnlineContractAutoConfirm006,
     LayerMyLoanOnlineContractAutoConfirm007,
+    LayerMyLoanOnlineContractAutoLeaseRentalComplete,
     LayerMyLoanOnlineContractSuccessionNotice001,
     LayerMyLoanOnlineContractSuccessionNotice002,
     LayerMyLoanOnlineContractIntermediateIdentification,
@@ -165,6 +167,7 @@ export default {
     const layer050 = ref(null);
     const layer051 = ref(null);
     const layer052 = ref(null);
+    const layer053 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -316,6 +319,9 @@ export default {
     const layer052Open = (e = {}) => {
       layer052.value.layer.open(e.target);
     };
+    const layer053Open = (e = {}) => {
+      layer053.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -368,6 +374,7 @@ export default {
       layer050,
       layer051,
       layer052,
+      layer053,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -418,6 +425,7 @@ export default {
       layer050Open,
       layer051Open,
       layer052Open,
+      layer053Open,
     };
   },
 };
@@ -474,6 +482,11 @@ export default {
       <ButtonListItem>
         <BasicButton @click="layer009Open">
           약정정보 확인<br />AF_M99_l010
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer053Open">
+          약정완료<br />AF_M99_l009
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
@@ -692,6 +705,7 @@ export default {
     <LayerMyLoanOnlineContractAutoConfirm005 ref="layer007" />
     <LayerMyLoanOnlineContractAutoConfirm006 ref="layer008" />
     <LayerMyLoanOnlineContractAutoConfirm007 ref="layer009" />
+    <LayerMyLoanOnlineContractAutoLeaseRentalComplete ref="layer053" />
     <LayerMyLoanOnlineContractSuccessionNotice001 ref="layer010" />
     <LayerMyLoanOnlineContractSuccessionNotice002 ref="layer011" />
     <LayerMyLoanOnlineContractIntermediateIdentification ref="layer014" />

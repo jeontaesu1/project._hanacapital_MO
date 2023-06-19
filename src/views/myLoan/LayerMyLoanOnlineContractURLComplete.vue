@@ -115,6 +115,9 @@ export default {
           }"
         >
           <ButtonListItem>
+            <BasicButton theme="tertiary">물건점검 진행</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
             <BasicButton>확인</BasicButton>
           </ButtonListItem>
         </ButtonList>

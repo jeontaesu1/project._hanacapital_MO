@@ -108,6 +108,31 @@ export default {
             />
           </div>
         </li>
+        <li :class="$style['switch-list__item']">
+          <div :class="$style['switch-list__title']">운세 알림</div>
+          <BasicTooltip
+            placement="bottom"
+            :classNames="{ wrap: $style['switch-list__tip'] }"
+          >
+            <IconTooltip class="display-block" />
+            <span class="for-a11y">(도움말)</span>
+
+            <template v-slot:contents>
+              <section :class="$style['tooltip-section']">
+                <h3 :class="$style['tooltip-section__title']">운세 알림</h3>
+                <p :class="$style['tooltip-section__text']">
+                  운세서비스 정보를 수신합니다.
+                </p>
+              </section>
+            </template>
+          </BasicTooltip>
+          <div :class="$style['switch-list__right']">
+            <SwitchCheckBox
+              id="settingPush003"
+              :classNames="{ wrap: $style['switch-list__check'] }"
+            />
+          </div>
+        </li>
       </ul>
     </div>
   </PageContents>

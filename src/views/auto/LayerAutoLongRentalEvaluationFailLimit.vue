@@ -124,7 +124,7 @@ export default {
             <div :class="$style['basic-list__symbol']">2.</div>
             <div :class="$style['basic-list__content']">
               한도증액 신청을 하여 정밀심사를 진행한다.<br />
-              <span class="color-blue"
+              <span class="color-green"
                 >(한도증액 신청은 별도 서류를 징구합니다.)</span
               >
             </div>
@@ -142,7 +142,7 @@ export default {
             <BasicButton :line="true" theme="quaternary">다음에</BasicButton>
           </ButtonListItem>
           <ButtonListItem>
-            <BasicButton theme="secondary">상담원 연결</BasicButton>
+            <BasicButton>상담원 연결</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

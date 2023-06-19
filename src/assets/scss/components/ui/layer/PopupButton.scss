@@ -32,6 +32,15 @@
     }
   }
 
+  &--active {
+    .popup-button__icon {
+      * {
+        fill: $color-green-50;
+        stroke: $color-green-50;
+      }
+    }
+  }
+
   &__text {
     @include for-a11y;
   }
@@ -45,28 +54,38 @@
           }
         }
       }
+
+      &.popup-button--active {
+        .popup-button__icon {
+          * {
+            fill: $color-green-50;
+            stroke: $color-green-50;
+          }
+        }
+      }
     }
+
     &-circle {
       width: 32px;
       height: 32px;
-      &::before {
-        top: 0;
-        left: 0;
-        padding: 0;
-        background-color: rgba($color-black, 0.2);
-        border-radius: 50%;
-        z-index: 1;
-      }
+      border-radius: 50%;
+      box-sizing: border-box;
+      padding: 7px;
+      background-color: rgba($color-black, 0.2);
+
       .popup-button {
         &__icon {
-          position: absolute;
-          left: 7px;
-          top: 7px;
-          z-index: 3;
-          width: 18px !important;
-          height: 18px !important;
           * {
             fill: $color-white;
+          }
+        }
+      }
+
+      &.popup-button--active {
+        .popup-button__icon {
+          * {
+            fill: $color-green-50;
+            stroke: $color-green-50;
           }
         }
       }

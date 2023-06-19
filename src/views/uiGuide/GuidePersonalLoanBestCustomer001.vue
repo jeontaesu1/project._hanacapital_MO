@@ -10,6 +10,7 @@ import LayerPersonalLoanIdentificationMethodSelect from '@/views/personalLoan/La
 import LayerPersonalLoanBestCustomerAgree from '@/views/personalLoan/LayerPersonalLoanBestCustomerAgree.vue';
 import LayerPersonalLoanBestCustomerResult from '@/views/personalLoan/LayerPersonalLoanBestCustomerResult.vue';
 import LayerPersonalLoanBestCustomerInput from '@/views/personalLoan/LayerPersonalLoanBestCustomerInput.vue';
+import LayerPersonalLoanBestCustomerGuide from '@/views/personalLoan/LayerPersonalLoanBestCustomerGuide.vue';
 
 export default {
   components: {
@@ -21,12 +22,14 @@ export default {
     LayerPersonalLoanBestCustomerAgree,
     LayerPersonalLoanBestCustomerResult,
     LayerPersonalLoanBestCustomerInput,
+    LayerPersonalLoanBestCustomerGuide,
   },
   setup() {
     const layer001 = ref(null);
     const layer002 = ref(null);
     const layer003 = ref(null);
     const layer004 = ref(null);
+    const layer005 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -40,16 +43,21 @@ export default {
     const layer004Open = (e = {}) => {
       layer004.value.layer.open(e.target);
     };
+    const layer005Open = (e = {}) => {
+      layer005.value.layer.open(e.target);
+    };
 
     return {
       layer001,
       layer002,
       layer003,
       layer004,
+      layer005,
       layer001Open,
       layer002Open,
       layer003Open,
       layer004Open,
+      layer005Open,
     };
   },
 };
@@ -83,11 +91,17 @@ export default {
           신청 정보 입력<br />PF_M05_l004
         </BasicButton>
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer005Open">
+          우수고객추가대출 안내_상품안내<br />PF_M05_l002
+        </BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <LayerPersonalLoanIdentificationMethodSelect ref="layer001" />
     <LayerPersonalLoanBestCustomerAgree ref="layer002" />
     <LayerPersonalLoanBestCustomerResult ref="layer003" />
     <LayerPersonalLoanBestCustomerInput ref="layer004" />
+    <LayerPersonalLoanBestCustomerGuide ref="layer005" />
   </PageContents>
 </template>

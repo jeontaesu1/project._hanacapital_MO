@@ -1,0 +1,13 @@
+.dock-bar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 55px;
+  background-color: #e1e1e1;
+}
+.logo {
+  margin: 0;
+  text-align: center;
+  @include font-size-default(20);
+}

@@ -109,6 +109,12 @@
     }
   }
 
+  &__item--force-focus {
+    .form__title {
+      cursor: default;
+    }
+  }
+
   &__item--disabled {
     .form__title {
       color: $color-gray-40;

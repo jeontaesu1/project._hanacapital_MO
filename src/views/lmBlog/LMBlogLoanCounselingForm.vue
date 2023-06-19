@@ -350,19 +350,9 @@ export default {
           </div>
           <!-- DD : 아파트 시세 입력 후 노출 -->
           <BasicBox className="row-margin-item-group row-margin-bottom-none">
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                인천광역시 연수구 송도동 39-1<br />
-                더샵 랜드마크시티 [158.67/134.3㎡]
-              </div>
-              <div class="flex-box__cell flex-box__cell--mini">
-                <TextButton
-                  :classNames="{ wrap: 'text-body-5 color-gray display-block' }"
-                  :underline="true"
-                >
-                  변경
-                </TextButton>
-              </div>
+            <div class="text-body-3">
+              인천광역시 연수구 송도동 39-1<br />
+              더샵 랜드마크시티 [158.67/134.3㎡]
             </div>
           </BasicBox>
           <!-- // DD : 아파트 시세 입력 후 노출 -->

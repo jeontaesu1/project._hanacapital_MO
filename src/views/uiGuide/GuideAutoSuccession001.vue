@@ -26,6 +26,7 @@ import LayerAutoSuccessionAttorneyComplete from '@/views/auto/LayerAutoSuccessio
 import LayerAutoSuccessionAssigneeAddDocumen from '@/views/auto/LayerAutoSuccessionAssigneeAddDocumen.vue';
 import LayerAutoSuccessionAttorneyConfirm from '@/views/auto/LayerAutoSuccessionAttorneyConfirm.vue';
 import LayerAutoSuccessionAssigneeComplete from '@/views/auto/LayerAutoSuccessionAssigneeComplete.vue';
+import LayerAutoSuccessionComplete from '@/views/auto/LayerAutoSuccessionComplete.vue';
 
 export default {
   components: {
@@ -53,6 +54,7 @@ export default {
     LayerAutoSuccessionAssigneeAddDocumen,
     LayerAutoSuccessionAttorneyConfirm,
     LayerAutoSuccessionAssigneeComplete,
+    LayerAutoSuccessionComplete,
   },
   setup() {
     const layer001 = ref(null);
@@ -75,6 +77,7 @@ export default {
     const layer018 = ref(null);
     const layer019 = ref(null);
     const layer020 = ref(null);
+    const layer021 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -136,6 +139,9 @@ export default {
     const layer020Open = (e = {}) => {
       layer020.value.layer.open(e.target);
     };
+    const layer021Open = (e = {}) => {
+      layer021.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -158,6 +164,7 @@ export default {
       layer018,
       layer019,
       layer020,
+      layer021,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -178,6 +185,7 @@ export default {
       layer018Open,
       layer019Open,
       layer020Open,
+      layer021Open,
     };
   },
 };
@@ -218,17 +226,17 @@ export default {
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer006Open"
-          >승계 신청 URL 발송 완료<br />AF_M07_l004</BasicButton
+          >승계 신청 URL 발송 완료<br />AF_M07_l005</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer007Open"
-          >양수인 신청<br />AF_M07_l005</BasicButton
+          >양수인 신청<br />AF_M07_l006</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer008Open"
-          >리스 승계 상세정보<br />AF_M07_l006</BasicButton
+          >리스 승계 상세정보<br />AF_M07_l007</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
@@ -238,7 +246,7 @@ export default {
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer010Open"
-          >렌트 승계 상세정보<br />AF_M07_l007</BasicButton
+          >렌트 승계 상세정보<br />AF_M07_l008</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
@@ -248,48 +256,53 @@ export default {
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer012Open"
-          >양수인 정보입력<br />AF_M07_l008 / AF_M07_l009
+          >양수인 정보입력<br />AF_M07_l009 / AF_M07_l010
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer013Open"
-          >신용정보조회동의<br />AF_M07_l010
+          >신용정보조회동의<br />AF_M07_l011
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer014Open"
-          >위임동의 요청 완료<br />AF_M07_l011</BasicButton
+          >위임동의 요청 완료<br />AF_M07_l012</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer015Open"
-          >양수인/신청인 본인확인<br />AF_M07_l019</BasicButton
+          >양수인/신청인 본인확인<br />AF_M07_l013</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer016Open"
-          >양수인/신청인 본인확인<br />AF_M07_l015</BasicButton
+          >양수인/신청인 본인확인<br />AF_M07_l016</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer017Open"
-          >위임동의 완료<br />AF_M07_l014</BasicButton
+          >위임동의 완료<br />AF_M07_l015</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer018Open"
-          >심사서류 등록<br />AF_M07_l016</BasicButton
+          >심사서류 등록<br />AF_M07_l018</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer019Open"
-          >위임장 동의<br />AF_M07_l013</BasicButton
+          >위임장 동의<br />AF_M07_l014</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer020Open"
-          >양수인 신청완료<br />AF_M07_l018</BasicButton
+          >양수인 신청완료<br />AF_M07_l019</BasicButton
         >
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer021Open">
+          승계신청 완료 <br />AF_M07_l004
+        </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
@@ -313,5 +326,6 @@ export default {
     <LayerAutoSuccessionAssigneeAddDocumen ref="layer018" />
     <LayerAutoSuccessionAttorneyConfirm ref="layer019" />
     <LayerAutoSuccessionAssigneeComplete ref="layer020" />
+    <LayerAutoSuccessionComplete ref="layer021" />
   </PageContents>
 </template>

@@ -89,7 +89,36 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <section>
+      <div>
+        <ul :class="$style['basic-list']">
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              이용자 명의 리스상품으로, 소유권 이전 등록 절차가 필요하지
+              않습니다.
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              취득세가 발생됩니다. 리스차량 이용자는 리스
+              <span class="color-red font-weight-regular"
+                >계약 종료일로부터 60일이내에 취득세(2%)를 신고 납부</span
+              >하여야 합니다. 불이행시 가산세를 포함한 금액으로 과세됩니다.
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              리스 종료 이후,
+              <span class="color-red font-weight-regular">저당해지</span>가
+              필요합니다.
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <section class="row-margin-container-medium">
         <h3 class="text-title-2 row-margin-contents">정산 정보</h3>
 
         <BasicBox className="row-margin-contents">
@@ -158,43 +187,6 @@ export default {
           환불예정일자는 회사 내부사정에 따라 변경 될 수 있습니다.
         </NoticeText>
         <!-- //Case : 정산금액 -금액일 경우 노출 -->
-      </section>
-
-      <section class="row-margin-container-medium">
-        <h3 class="text-body-2 row-margin-item-medium">유의사항</h3>
-
-        <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
-          <li
-            :class="[$style['basic-list__item'], 'color-black', 'text-body-4']"
-          >
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              이용자 명의 리스상품으로, 소유권 이전 등록 절차가 필요하지
-              않습니다.
-            </div>
-          </li>
-          <li
-            :class="[$style['basic-list__item'], 'color-black', 'text-body-4']"
-          >
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              취득세가 발생됩니다. 리스차량 이용자는 리스
-              <span class="color-red font-weight-regular"
-                >계약 종료일로부터 60일이내에 취득세(2%)를 신고 납부</span
-              >하여야 합니다. 불이행시 가산세를 포함한 금액으로 과세됩니다.
-            </div>
-          </li>
-          <li
-            :class="[$style['basic-list__item'], 'color-black', 'text-body-4']"
-          >
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              리스 종료 이후,
-              <span class="color-red font-weight-regular">저당해지</span>가
-              필요합니다.
-            </div>
-          </li>
-        </ul>
       </section>
 
       <template v-slot:foot>

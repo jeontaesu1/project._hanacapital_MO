@@ -63,7 +63,8 @@ export default {
       <PageTextGroup>
         <PageMainText>하나캐피탈(주) 귀중</PageMainText>
         <PageSubText>
-          본인은 하나캐피탈(주)에 리스를 신청함에 있어 다음의 사항을 확인합니다.
+          리스 신청인 본인은 하나캐피탈 주식회사에 리스를 신청함에 있어 다음의
+          사항을 확인합니다.
         </PageSubText>
       </PageTextGroup>
 
@@ -83,7 +84,7 @@ export default {
               item: 'text-body-3',
             }"
           >
-            <KeyValueTitle>취득원가(한도)</KeyValueTitle>
+            <KeyValueTitle>취득원가</KeyValueTitle>
             <KeyValueText>100,000,00 원</KeyValueText>
           </KeyValueItem>
 
@@ -110,8 +111,11 @@ export default {
               item: 'text-body-3',
             }"
           >
-            <KeyValueTitle>적용금리</KeyValueTitle>
-            <KeyValueText>8.3500%</KeyValueText>
+            <KeyValueTitle>리스보증금</KeyValueTitle>
+            <KeyValueText>
+              000,000,000 원<br />
+              (취득원가의 N%)
+            </KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem
@@ -119,8 +123,8 @@ export default {
               item: 'text-body-3',
             }"
           >
-            <KeyValueTitle>보증금</KeyValueTitle>
-            <KeyValueText>2,800,000 원</KeyValueText>
+            <KeyValueTitle>금리</KeyValueTitle>
+            <KeyValueText>8.3500%</KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem
@@ -137,11 +141,8 @@ export default {
               item: 'text-body-3',
             }"
           >
-            <KeyValueTitle>
-              매회리스료<br />
-              N ~ N회
-            </KeyValueTitle>
-            <KeyValueText>2,440,300 원</KeyValueText>
+            <KeyValueTitle>매회리스료 방식</KeyValueTitle>
+            <KeyValueText>매회 1개월 후불</KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem
@@ -149,11 +150,11 @@ export default {
               item: 'text-body-3',
             }"
           >
-            <KeyValueTitle>
-              매회리스료<br />
-              N ~ N회
-            </KeyValueTitle>
-            <KeyValueText>2,440,300 원</KeyValueText>
+            <KeyValueTitle>매회리스료 상환</KeyValueTitle>
+            <KeyValueText>
+              (1회~N회)<br />
+              000,000,000 원
+            </KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem
@@ -163,8 +164,8 @@ export default {
           >
             <KeyValueTitle>납부일자</KeyValueTitle>
             <KeyValueText>
-              매월15일자<br />
-              (1개월 후불)
+              매월 15일자<br />
+              (1회차 납부일자: 2023.01.01)
             </KeyValueText>
           </KeyValueItem>
 
@@ -174,10 +175,7 @@ export default {
             }"
           >
             <KeyValueTitle>중도해지수수료</KeyValueTitle>
-            <KeyValueText>
-              해지 시점<br />
-              미회수원금의 2.00%
-            </KeyValueText>
+            <KeyValueText>잔여원금의 2%</KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem
@@ -186,7 +184,7 @@ export default {
             }"
           >
             <KeyValueTitle>종료후처리</KeyValueTitle>
-            <KeyValueText>구매</KeyValueText>
+            <KeyValueText>무상양도</KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem
@@ -197,8 +195,7 @@ export default {
             <KeyValueTitle>연체이자율</KeyValueTitle>
             <KeyValueText>
               연 00%<br />
-              ※ 약정이율+최대3%,<br />
-              법정최고금리이내
+              (상환금리 N% + 3%)
             </KeyValueText>
           </KeyValueItem>
         </KeyValue>

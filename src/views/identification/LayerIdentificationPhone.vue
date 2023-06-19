@@ -80,20 +80,6 @@ export default {
           휴대폰 본인인증을 위해<br />
           <strong>이름을 입력해 주세요</strong>
         </PageMainText>
-
-        <div :class="[$style['inline-alert'], 'row-margin-item-group']">
-          <p :class="$style['inline-alert__text']">인증이 완료되었습니다.</p>
-        </div>
-
-        <div
-          :class="[
-            $style['inline-alert'],
-            $style['inline-alert--error'],
-            'row-margin-item-group',
-          ]"
-        >
-          <p :class="$style['inline-alert__text']">인증이 실패하였습니다.</p>
-        </div>
       </PageTextGroup>
 
       <FormList>

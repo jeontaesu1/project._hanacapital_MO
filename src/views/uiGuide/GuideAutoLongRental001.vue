@@ -113,7 +113,7 @@ export default {
     >
       <ButtonListItem>
         <BasicButton @click="layer001Open"
-          >심사승인(시스템심사)<br />AF_M01_l004</BasicButton
+          >심사승인(시스템심사)<br />AF_M01_l013</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>

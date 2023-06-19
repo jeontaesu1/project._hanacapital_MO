@@ -92,6 +92,7 @@ export default {
       >
         <FormListItem
           titleText="입금자명"
+          :forceFocus="true"
           target="#layerMyLoanOnlineContractAccountAuthName"
         >
           <FormInvalid :error="state.nameError">

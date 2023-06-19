@@ -1,16 +1,12 @@
 <script>
 // Main_M01_l001 Type 1
-
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import ToastPopup from '@/components/ui/layer/ToastPopup.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
+import { Pagination, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Pagination } from 'swiper';
-import ImgSample from '@/assets/images/_dummy/box-detail.svg?component';
-import 'swiper/css';
-import 'swiper/css/pagination';
 
 export default {
   components: {
@@ -19,27 +15,13 @@ export default {
     TextButton,
     Swiper,
     SwiperSlide,
-    ImgSample,
   },
   setup() {
     const layer = ref(null);
-    const onSwiper = (swiper) => {
-      console.log(swiper);
-    };
-    const onSlideChange = () => {
-      console.log('slide change');
-    };
+
     return {
       layer,
-      onSwiper,
-      onSlideChange,
-      pagination: {
-        clickable: true,
-        renderBullet: function (index, className) {
-          return '<span class="' + className + '">' + (index + 1) + '</span>';
-        },
-      },
-      modules: [Pagination],
+      modules: [Pagination, A11y],
     };
   },
 };
@@ -47,7 +29,11 @@ export default {
 
 <template>
   <UiLayer ref="layer" type="toast" :backgroundClose="true">
-    <ToastPopup>
+    <ToastPopup
+      :classNames="{
+        bodyInner: $style['layer-body-inner'],
+      }"
+    >
       <template v-slot:outerTop>
         <div class="inline-wrap align-right">
           <TextButton
@@ -59,12 +45,68 @@ export default {
         </div>
       </template>
 
-      <div :class="$style['swipe-box']">
-        <swiper :pagination="pagination" :modules="modules" class="mySwiper">
-          <swiper-slide><ImgSample /></swiper-slide>
-          <swiper-slide><ImgSample /></swiper-slide>
-          <swiper-slide><ImgSample /></swiper-slide>
-        </swiper>
+      <div :class="$style['banner']">
+        <Swiper :modules="modules" pagination>
+          <!-- Case : 링크 기능 없을 때 -->
+          <SwiperSlide>
+            <div :class="$style['banner__block']">
+              <img
+                src="/images/_dummy/notice-banner-1.webp"
+                :alt="'배너 설명 넣어주세요.'"
+                @error="
+                  (e) => {
+                    e.target.parentNode.classList.add('is-error');
+                  }
+                "
+              />
+            </div>
+          </SwiperSlide>
+          <!-- // Case : 링크 기능 없을 때 -->
+
+          <!-- Case : 링크 기능 있을 때 -->
+          <SwiperSlide>
+            <a href="" :class="$style['banner__block']">
+              <img
+                src="/images/_dummy/notice-banner-1.webp"
+                :alt="'배너 설명 넣어주세요.'"
+                @error="
+                  (e) => {
+                    e.target.parentNode.classList.add('is-error');
+                  }
+                "
+              />
+            </a>
+          </SwiperSlide>
+          <!-- // Case : 링크 기능 있을 때 -->
+
+          <SwiperSlide>
+            <div :class="$style['banner__block']">
+              <img
+                src="/images/_dummy/notice-banner-1.webp"
+                :alt="'배너 설명 넣어주세요.'"
+                @error="
+                  (e) => {
+                    e.target.parentNode.classList.add('is-error');
+                  }
+                "
+              />
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <div :class="$style['banner__block']">
+              <img
+                src="/images/_dummy/notice-banner-1.webp"
+                :alt="'배너 설명 넣어주세요.'"
+                @error="
+                  (e) => {
+                    e.target.parentNode.classList.add('is-error');
+                  }
+                "
+              />
+            </div>
+          </SwiperSlide>
+        </Swiper>
       </div>
     </ToastPopup>
   </UiLayer>

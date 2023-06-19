@@ -1,5 +1,6 @@
 .key-value {
-  @include reset-list;
+  margin: 0;
+  padding: 0;
 
   &__item {
     display: flex;

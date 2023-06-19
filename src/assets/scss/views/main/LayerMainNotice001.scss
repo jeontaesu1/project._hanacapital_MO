@@ -1,31 +1,59 @@
-.swipe-box {
+.layer-body-inner {
+  padding: 0;
+}
+
+.banner {
   border-radius: 20px 20px 0 0;
   overflow: hidden;
-  margin: -8px -20px -16px;
-  font-size: 0;
 
-  svg {
-    width: 100%;
-    border-radius: 20px 20px 0 0;
+  &__block {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      padding-top: 88.88889%;
+    }
+
+    img {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
   }
 
-  :global .swiper-pagination {
-    text-align: left;
+  :global(.swiper-pagination-bullets) {
+    position: absolute;
+    z-index: 10;
+    left: 20px;
     bottom: 24px;
-    padding-left: 20px;
+    font-size: 0;
+    line-height: 0;
+    text-align: center;
   }
 
-  :global .swiper-pagination-bullet {
-    width: 6px !important;
-    height: 6px !important;
-    background: $color-gray-50 !important;
-    opacity: 0.5;
-    border-radius: 5px;
-    margin: 0 5px 0 0 !important;
+  :global(.swiper-pagination-bullet) {
+    display: inline-block;
+    vertical-align: top;
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    background-color: $color-gray-50;
+    transition: width 0.3s, background-color 0.3s;
+
+    & + :global(.swiper-pagination-bullet) {
+      margin-left: 5px;
+    }
   }
-  :global .swiper-pagination-bullet-active {
-    width: 10px !important;
-    background: $color-black !important;
-    opacity: 1;
+
+  :global(.swiper-pagination-bullet-active) {
+    width: 10px;
+    background-color: $color-black;
   }
 }

@@ -93,8 +93,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          신용카드 인증을 위해<br />
-          <strong>이름을 입력해 주세요</strong>
+          카드번호를<br />
+          <strong>입력해 주세요</strong>
         </PageMainText>
       </PageTextGroup>
 

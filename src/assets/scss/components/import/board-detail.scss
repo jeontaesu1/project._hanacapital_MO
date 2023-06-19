@@ -11,18 +11,34 @@
     margin-bottom: 30px;
   }
 
-  &__title {
+  &__category {
     margin: 0;
-    @include font-size-head(20);
-    font-weight: 500;
+    @include font-size-head(13);
+    color: $color-green-50;
+    font-weight: 400;
 
-    & + .board-detail__sub {
+    & + .board-detail__title {
       margin-top: 8px;
     }
   }
 
+  &__title {
+    margin: 0;
+    @include font-size-head(20);
+    font-weight: 500;
+  }
+
+  &__text {
+    margin: 0;
+    margin-top: 4px;
+    @include font-size-default(14);
+    color: $color-black;
+    font-weight: 300;
+  }
+
   &__sub {
     margin: 0;
+    margin-top: 8px;
     @include font-size-default(13);
     color: $color-gray-70;
     font-weight: 300;

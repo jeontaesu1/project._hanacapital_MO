@@ -10,8 +10,6 @@ import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
 import NavTab from '@/components/ui/tab/NavTab.vue';
 import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
 import StickyBar from '@/components/ui/common/StickyBar.vue';
-import BasicBox from '@/components/ui/common/BasicBox.vue';
-import BasicHr from '@/components/ui/common/BasicHr.vue';
 
 export default {
   components: {
@@ -21,8 +19,6 @@ export default {
     NavTab,
     NavTabButton,
     StickyBar,
-    BasicBox,
-    BasicHr,
   },
   setup() {
     const store = {
@@ -34,7 +30,7 @@ export default {
     onMounted(() => {
       store.ui.header.setTitle(() => '하나금융그룹');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => ['menu']);
+      store.ui.header.setRightButtons(() => []);
     });
 
     onUnmounted(() => {
@@ -52,39 +48,40 @@ export default {
       <template v-slot:head>
         <StickyBar>
           <NavTab :head="true" :useUiTab="true">
-            <NavTabButton link="testNavTab001_001">비전과 미션</NavTabButton>
-            <NavTabButton link="testNavTab001_002">핵심가치</NavTabButton>
-            <NavTabButton link="testNavTab001_003">관계사</NavTabButton>
+            <NavTabButton link="companyGroupTab001">비전과 미션</NavTabButton>
+            <NavTabButton link="companyGroupTab002">핵심가치</NavTabButton>
+            <NavTabButton link="companyGroupTab003">관계사</NavTabButton>
           </NavTab>
         </StickyBar>
       </template>
 
-      <UiTabPanel name="testNavTab001_001">
-        <section>
+      <UiTabPanel name="companyGroupTab001">
+        <div :class="$style['image-view']">
           <img src="@/assets/images/_dummy/box-detail.png" alt="샘플 이미지" />
-        </section>
+        </div>
       </UiTabPanel>
 
-      <UiTabPanel name="testNavTab001_002">
-        <section>
+      <UiTabPanel name="companyGroupTab002">
+        <section class="row-margin-contents-group">
           <h3 class="text-title-1 font-weight-medium row-margin-item">
             <span class="color-green">POWER</span> on Integrity
           </h3>
-          <p
-            class="row-margin-top-none row-margin-contents-group font-weight-light text-body-3 color-gray-tertiary"
-          >
+          <p class="text-body-3 font-weight-light color-gray-tertiary">
             하나금융그룹은 하나인만의 생각하는 방식, 창조적이고 강력한
             기업문화를 가지고 있습니다. 하나인들이 공유하고 실천하는 핵심가치는
             기업 활동에 있어서 가치판단과 행동의 기준이 되는 가장 소중한
             무형자산입니다.
           </p>
         </section>
+        <div :class="$style['image-view']">
+          <img src="@/assets/images/_dummy/box-detail.png" alt="샘플 이미지" />
+        </div>
       </UiTabPanel>
 
-      <UiTabPanel name="testNavTab001_003">
-        <section>
+      <UiTabPanel name="companyGroupTab003">
+        <div :class="$style['image-view']">
           <img src="@/assets/images/_dummy/box-detail.png" alt="샘플 이미지" />
-        </section>
+        </div>
       </UiTabPanel>
     </PageContents>
   </UiTab>

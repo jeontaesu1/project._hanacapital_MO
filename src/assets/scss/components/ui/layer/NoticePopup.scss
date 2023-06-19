@@ -1,0 +1,19 @@
+.popup {
+  display: block;
+  width: 100%;
+  max-width: 328px;
+
+  &__outer-top,
+  &__outer-bottom {
+    display: block;
+  }
+
+  &__block {
+    border-radius: 20px;
+    background-color: $color-white;
+  }
+
+  &__body {
+    position: relative;
+  }
+}

@@ -157,7 +157,7 @@ export default {
                       <div class="flex-box__cell">Y</div>
                       <div class="flex-box__cell">
                         <TextButton
-                          theme="tertiary"
+                          theme="secondary"
                           :underline="true"
                           :block="true"
                         >
@@ -175,9 +175,7 @@ export default {
                 }"
               >
                 <ButtonListItem>
-                  <BasicButton size="small" theme="secondary"
-                    >차량 구매</BasicButton
-                  >
+                  <BasicButton size="small" BasicButton>차량 구매</BasicButton>
                 </ButtonListItem>
               </ButtonList>
             </BasicBox>

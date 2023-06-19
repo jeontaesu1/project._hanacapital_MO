@@ -44,7 +44,7 @@ export default {
         </FullPopupHead>
       </template>
 
-      // contents
+      <section>// contents</section>
 
       <template v-slot:foot>
         <ButtonList

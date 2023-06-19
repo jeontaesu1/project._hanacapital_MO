@@ -40,7 +40,7 @@ export default {
       <template v-slot:head>
         <ToastPopupHead>
           <PopupTitle>
-            <span class="color-blue">111가1111</span> 차량에 대하여<br />
+            <span class="color-green">111가1111</span> 차량에 대하여<br />
             승계를 신청하시겠습니까?
           </PopupTitle>
         </ToastPopupHead>
@@ -69,7 +69,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton theme="secondary">네, 동의합니다</BasicButton>
+            <BasicButton>네, 동의합니다</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

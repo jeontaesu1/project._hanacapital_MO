@@ -251,6 +251,27 @@ const routes = [
     component: () => import('@/views/uiGuide/GuideMyLoanHome001.vue'),
   },
   {
+    path: '/guide/my-loan-detail-payment-001',
+    name: '/guide/my-loan-detail-payment-001',
+    component: () => import('@/views/uiGuide/GuideMyLoanDetailPayment001.vue'),
+  },
+  {
+    path: '/guide/my-loan-maintenance-history-001',
+    name: '/guide/my-loan-maintenance-history-001',
+    component: () =>
+      import('@/views/uiGuide/GuideMyLoanMaintenanceHistory001.vue'),
+  },
+  {
+    path: '/guide/my-loan-penalty-001',
+    name: '/guide/my-loan-penalty-001',
+    component: () => import('@/views/uiGuide/GuideMyLoanPenalty001.vue'),
+  },
+  {
+    path: '/guide/my-loan-car-tax-001',
+    name: '/guide/my-loan-car-tax-001',
+    component: () => import('@/views/uiGuide/GuideMyLoanCarTax001.vue'),
+  },
+  {
     path: '/guide/my-loan-designation-driver-001',
     name: '/guide/my-loan-designation-driver-001',
     component: () =>
@@ -510,8 +531,22 @@ const routes = [
     name: '/guide/main-002',
     component: () => import('@/views/uiGuide/GuideMain002.vue'),
   },
+  {
+    path: '/guide/lease-rent-estimation-system-001',
+    name: '/guide/lease-rent-estimation-system-001',
+    component: () =>
+      import('@/views/uiGuide/GuideLeaseRentEstimationSystem001.vue'),
+  },
 
-  // home
+  // splash
+  {
+    path: '/splash',
+    name: '/splash',
+    component: () => import('@/views/splash/SplashPage.vue'),
+    meta: { layout: 'FullLayout' },
+  },
+
+  // main
   {
     path: '/main/home-001',
     name: '/main/home-001',
@@ -546,16 +581,19 @@ const routes = [
     path: '/main/my-loan',
     name: '/main/my-loan',
     component: () => import('@/views/main/MainMyLoan.vue'),
+    meta: { layout: 'MainDefaultLayout' },
   },
   {
     path: '/main/product',
     name: '/main/product',
     component: () => import('@/views/main/MainProduct.vue'),
+    meta: { layout: 'MainDefaultLayout' },
   },
   {
     path: '/main/benefit',
     name: '/main/benefit',
     component: () => import('@/views/main/MainBenefit.vue'),
+    meta: { layout: 'MainBenefitLayout' },
   },
 
   // sign
@@ -817,19 +855,11 @@ const routes = [
       import('@/views/inventoryFinance/InventoryFinanceLoanLimitInquiry.vue'),
   },
   {
-    path: '/inventory-finance/loan-limit-inquiry-search-car-number',
-    name: '/inventory-finance/loan-limit-inquiry-search-car-number',
+    path: '/inventory-finance/loan-limit-inquiry-search',
+    name: '/inventory-finance/loan-limit-inquiry-search',
     component: () =>
       import(
-        '@/views/inventoryFinance/InventoryFinanceLoanLimitInquirySearchCarNumber.vue'
-      ),
-  },
-  {
-    path: '/inventory-finance/loan-limit-inquiry-search-car-model',
-    name: '/inventory-finance/loan-limit-inquiry-search-car-model',
-    component: () =>
-      import(
-        '@/views/inventoryFinance/InventoryFinanceLoanLimitInquirySearchCarModel.vue'
+        '@/views/inventoryFinance/InventoryFinanceLoanLimitInquirySearch.vue'
       ),
   },
   {
@@ -935,12 +965,6 @@ const routes = [
     name: '/inventory-finance/state-add-info',
     component: () =>
       import('@/views/inventoryFinance/InventoryFinanceStateAddInfo.vue'),
-  },
-  {
-    path: '/inventory-finance/state-add-car-photo',
-    name: '/inventory-finance/state-add-car-photo',
-    component: () =>
-      import('@/views/inventoryFinance/InventoryFinanceStateAddCarPhoto.vue'),
   },
   {
     path: '/inventory-finance/loan-agreement',
@@ -1161,41 +1185,6 @@ const routes = [
     component: () => import('@/views/myLoan/MyLoanDetailMedicalInstalment.vue'),
   },
   {
-    path: '/my-loan/detail-payment-virtual',
-    name: '/my-loan/detail-payment-virtual',
-    component: () => import('@/views/myLoan/MyLoanDetailPaymentVirtual.vue'),
-  },
-  {
-    path: '/my-loan/detail-payment-auto',
-    name: '/my-loan/detail-payment-auto',
-    component: () => import('@/views/myLoan/MyLoanDetailPaymentAuto.vue'),
-  },
-  {
-    path: '/my-loan/maintenance-history',
-    name: '/my-loan/maintenance-history',
-    component: () => import('@/views/myLoan/MyLoanMaintenanceHistory.vue'),
-  },
-  {
-    path: '/my-loan/penalty',
-    name: '/my-loan/penalty',
-    component: () => import('@/views/myLoan/MyLoanPenalty.vue'),
-  },
-  {
-    path: '/my-loan/car-tax',
-    name: '/my-loan/car-tax',
-    component: () => import('@/views/myLoan/MyLoanCarTax.vue'),
-  },
-  {
-    path: '/my-loan/designation-driver',
-    name: '/my-loan/designation-driver',
-    component: () => import('@/views/myLoan/MyLoanDesignationDriver.vue'),
-  },
-  {
-    path: '/my-loan/designation-driver-empty',
-    name: '/my-loan/designation-driver-empty',
-    component: () => import('@/views/myLoan/MyLoanDesignationDriverEmpty.vue'),
-  },
-  {
     path: '/my-loan/progress',
     name: '/my-loan/progress',
     component: () => import('@/views/myLoan/MyLoanProgress.vue'),
@@ -1236,6 +1225,11 @@ const routes = [
     name: '/my-loan/subscription-withdrawal-right',
     component: () =>
       import('@/views/myLoan/MyLoanSubscriptionWithdrawalRight.vue'),
+  },
+  {
+    path: '/my-loan/my-loan-add-documents',
+    name: '/my-loan/my-loan-add-documents',
+    component: () => import('@/views/myLoan/MyLoanAddDocuments.vue'),
   },
   {
     path: '/my-loan/add-documents-complete',
@@ -1486,6 +1480,30 @@ const routes = [
     component: () =>
       import(
         '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemPrePurchaseCarDetail.vue'
+      ),
+  },
+  {
+    path: '/lease-rent-estimation-system/save-review',
+    name: '/lease-rent-estimation-system/save-review',
+    component: () =>
+      import(
+        '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemSaveReview.vue'
+      ),
+  },
+  {
+    path: '/lease-rent-estimation-system/save-review-approval-request-rent',
+    name: '/lease-rent-estimation-system/save-review-approval-request-rent',
+    component: () =>
+      import(
+        '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemSaveReviewApprovalRequestRent.vue'
+      ),
+  },
+  {
+    path: '/lease-rent-estimation-system/save-review-approval-request-lease',
+    name: '/lease-rent-estimation-system/save-review-approval-request-lease',
+    component: () =>
+      import(
+        '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemSaveReviewApprovalRequestLease.vue'
       ),
   },
 

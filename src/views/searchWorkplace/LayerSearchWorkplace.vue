@@ -85,7 +85,7 @@ export default {
 
 <template>
   <UiLayer ref="layer" type="full" v-slot="layerSlotProps">
-    <UiTab ref="tab" type="popup" v-slot="tabSlotProps">
+    <UiTab type="popup" v-slot="tabSlotProps">
       <FullPopup
         :classNames="{
           foot:

@@ -638,7 +638,8 @@ export default {
                                 >
                                   <CheckBoxObject />
                                   <CheckBoxLabelText
-                                    >개인(신용)정보 제공 동의</CheckBoxLabelText
+                                    >개인(신용)정보 제공(조회)
+                                    동의</CheckBoxLabelText
                                   >
                                 </CheckBox>
                                 <div :class="$style['agree-list__right']">
@@ -666,7 +667,8 @@ export default {
                                 >
                                   <CheckBoxObject />
                                   <CheckBoxLabelText
-                                    >고유식별정보 제공 동의</CheckBoxLabelText
+                                    >고유식별정보 제공(조회)
+                                    동의</CheckBoxLabelText
                                   >
                                 </CheckBox>
                                 <div :class="$style['agree-list__right']">
@@ -741,6 +743,24 @@ export default {
                     </div>
                   </UiAccordionLayer>
                 </UiAccordionItem>
+
+                <li :class="$style['agree-list__depth-item']">
+                  <div :class="$style['agree-list__depth-head']">
+                    <CheckBox
+                      id="layerPersonalLoanEHanaAgree003"
+                      :classNames="{
+                        wrap: $style['agree-list__depth-checkbox'],
+                      }"
+                    >
+                      <CheckBoxObject />
+                      <CheckBoxLabelText>
+                        <span class="color-gray-secondary">(선택)</span>
+                        소득정보 자동산출 약관<br />
+                        (스크래핑)
+                      </CheckBoxLabelText>
+                    </CheckBox>
+                  </div>
+                </li>
               </UiAccordion>
             </div>
           </li>

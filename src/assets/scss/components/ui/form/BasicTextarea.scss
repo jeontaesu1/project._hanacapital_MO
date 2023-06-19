@@ -81,6 +81,11 @@
     }
   }
 
+  &__help,
+  &__invalid {
+    margin-top: 0;
+  }
+
   &--focus,
   &--inputed {
     .input__count-current {

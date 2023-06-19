@@ -5,7 +5,6 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
-import IconAdd from '@/assets/images/icon/add.svg?component';
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import PopupSubTitle from '@/components/ui/layer/PopupSubTitle.vue';
@@ -93,6 +92,10 @@ import ColorSelect from '@/components/ui/form/ColorSelect.vue';
 import ColorSelectList from '@/components/ui/form/ColorSelectList.vue';
 import ColorSelectListItem from '@/components/ui/form/ColorSelectListItem.vue';
 import DownloadButton from '@/components/ui/button/DownloadButton.vue';
+import BasicBanner from '@/components/ui/banner/BasicBanner.vue';
+import EventBanner from '@/components/ui/banner/EventBanner.vue';
+import FunBanner from '@/components/ui/banner/FunBanner.vue';
+import CouponBanner from '@/components/ui/banner/CouponBanner.vue';
 
 import BrandLogo001 from '@/assets/images/card-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/card-logo/lotte.svg?component';
@@ -101,6 +104,7 @@ import BrandLogo004 from '@/assets/images/card-logo/shinhan.svg?component';
 import BrandLogo005 from '@/assets/images/card-logo/kb.svg?component';
 import BrandLogo006 from '@/assets/images/card-logo/hyundai.svg?component';
 import BrandLogo007 from '@/assets/images/card-logo/bc.svg?component';
+import IconAdd from '@/assets/images/icon/add.svg?component';
 import IconCall from '@/assets/images/icon/call.svg?component';
 import IconCamera from '@/assets/images/icon/camera.svg?component';
 import IconFolder from '@/assets/images/icon/folder.svg?component';
@@ -132,6 +136,8 @@ import IconLink from '@/assets/images/icon/link.svg?component';
 import IconStar from '@/assets/images/icon/star.svg?component';
 import IconTell from '@/assets/images/icon/tell.svg?component';
 import IconDropdown from '@/assets/images/icon/dropdown.svg?component';
+import IconImgColor from '@/assets/images/icon/img-color.svg?component';
+import IconImg from '@/assets/images/icon/img.svg?component';
 
 export default {
   components: {
@@ -226,6 +232,10 @@ export default {
     ColorSelectList,
     ColorSelectListItem,
     DownloadButton,
+    BasicBanner,
+    EventBanner,
+    FunBanner,
+    CouponBanner,
     IconAdd,
     BrandLogo001,
     BrandLogo002,
@@ -265,6 +275,8 @@ export default {
     IconStar,
     IconTell,
     IconDropdown,
+    IconImgColor,
+    IconImg,
   },
 
   setup() {
@@ -1027,6 +1039,82 @@ export default {
             <span :class="$style['upload-button__text']">이미지 첨부</span>
           </label>
         </div>
+        <div :class="$style['upload-button']">
+          <input
+            type="file"
+            id="testUpload002"
+            :class="$style['upload-button__input']"
+          />
+          <label for="testUpload002" :class="$style['upload-button__label']">
+            <span :class="$style['upload-button__img']">
+              <IconImg />
+            </span>
+            <span :class="$style['upload-button__text']">이미지 첨부</span>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Upload File List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['upload-file']">
+          <ul :class="$style['upload-file__list']">
+            <li :class="$style['upload-file__item']">
+              <div :class="$style['upload-file__icon']">
+                <IconImgColor />
+              </div>
+              <div :class="$style['upload-file__content']">
+                <div :class="$style['upload-file__name']">첨부파일명.jpg</div>
+              </div>
+              <div :class="$style['upload-file__button']">
+                <BasicButton line="true" theme="quaternary" size="mini">
+                  삭제
+                </BasicButton>
+              </div>
+            </li>
+            <li :class="$style['upload-file__item']">
+              <div :class="$style['upload-file__icon']">
+                <IconImgColor />
+              </div>
+              <div :class="$style['upload-file__content']">
+                <div :class="$style['upload-file__name']">
+                  첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명.jpeg
+                </div>
+              </div>
+              <div :class="$style['upload-file__button']">
+                <BasicButton line="true" theme="quaternary" size="mini">
+                  삭제
+                </BasicButton>
+              </div>
+            </li>
+            <li :class="$style['upload-file__item']">
+              <div :class="$style['upload-file__icon']">
+                <IconImgColor />
+              </div>
+              <div :class="$style['upload-file__content']">
+                <div :class="$style['upload-file__name']">첨부파일명.jpg</div>
+                <div :class="$style['upload-file__date']">
+                  2023-05-08 18:15:44
+                </div>
+              </div>
+            </li>
+            <li :class="$style['upload-file__item']">
+              <div :class="$style['upload-file__icon']">
+                <IconImgColor />
+              </div>
+              <div :class="$style['upload-file__content']">
+                <div :class="$style['upload-file__name']">
+                  첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명.jpeg
+                </div>
+                <div :class="$style['upload-file__date']">
+                  2023-05-08 18:15:44
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -1635,6 +1723,22 @@ export default {
           </template>
         </BoxCheck>
       </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">size : small</h3>
+
+        <BoxCheck name="testBoxCheck007" id="testBoxCheck007_001" size="small">
+          <BoxCheckLabel>Label</BoxCheckLabel>
+        </BoxCheck>
+
+        <BoxCheck name="testBoxCheck007" id="testBoxCheck007_002" size="small">
+          <BoxCheckLabel>Label</BoxCheckLabel>
+        </BoxCheck>
+
+        <BoxCheck name="testBoxCheck007" id="testBoxCheck007_003" size="small">
+          <BoxCheckLabel>Label<br />2 line label</BoxCheckLabel>
+        </BoxCheck>
+      </div>
     </section>
 
     <section class="test-section">
@@ -1723,6 +1827,54 @@ export default {
           </BoxCheckListItem>
         </BoxCheckList>
       </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Spacing - small (6px)</h3>
+
+        <BoxCheckList :wrap="true" spacing="small">
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList007"
+              id="testBoxCheckList007_001"
+              size="small"
+            >
+              <BoxCheckLabel>Label 1</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList007"
+              id="testBoxCheckList007_002"
+              size="small"
+            >
+              <BoxCheckLabel>Label 2</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList007"
+              id="testBoxCheckList007_003"
+              size="small"
+            >
+              <BoxCheckLabel>Label 3</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList007"
+              id="testBoxCheckList007_004"
+              size="small"
+            >
+              <BoxCheckLabel>Label 4</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+        </BoxCheckList>
+      </div>
+
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Wrap - col 2</h3>
 
@@ -1854,6 +2006,82 @@ export default {
               id="testBoxCheckList005_005"
             >
               <BoxCheckLabel>Label 4</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+        </BoxCheckList>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Wrap - col 6</h3>
+
+        <BoxCheckList :wrap="true" col="6" spacing="small">
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList006"
+              id="testBoxCheckList006_001"
+              size="small"
+            >
+              <BoxCheckLabel>없음</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList006"
+              id="testBoxCheckList006_002"
+              size="small"
+            >
+              <BoxCheckLabel>1%</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList006"
+              id="testBoxCheckList006_003"
+              size="small"
+            >
+              <BoxCheckLabel>2%</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList006"
+              id="testBoxCheckList006_004"
+              size="small"
+            >
+              <BoxCheckLabel>3%</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList006"
+              id="testBoxCheckList006_005"
+              size="small"
+            >
+              <BoxCheckLabel>4%</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList006"
+              id="testBoxCheckList006_006"
+              size="small"
+            >
+              <BoxCheckLabel>5%</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList006"
+              id="testBoxCheckList006_007"
+              size="small"
+            >
+              <BoxCheckLabel>6%</BoxCheckLabel>
             </BoxCheck>
           </BoxCheckListItem>
         </BoxCheckList>
@@ -4716,11 +4944,114 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Estimate List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['estimate-list']">
+          <UiAccordion :classNames="{ wrap: $style['estimate-list__list'] }">
+            <UiAccordionItem
+              :classNames="{ item: $style['estimate-list__item'] }"
+            >
+              <div :class="$style['estimate-list__head']">
+                <div :class="$style['estimate-list__block']">
+                  <div :class="$style['estimate-list__left']">
+                    <KeyValue align="left" size="regular">
+                      <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                        <KeyValueTitle>품목</KeyValueTitle>
+                        <KeyValueText>의료기</KeyValueText>
+                      </KeyValueItem>
+                    </KeyValue>
+                  </div>
+                </div>
+                <div :class="$style['estimate-list__arrow']">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['estimate-list__opener'] }"
+                  />
+                </div>
+              </div>
+
+              <UiAccordionLayer
+                :classNames="{ layer: $style['estimate-list__layer'] }"
+              >
+                <section :class="$style['estimate-list__contents']">
+                  // 내용 노출
+                </section>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+
+            <UiAccordionItem
+              :classNames="{ item: $style['estimate-list__item'] }"
+            >
+              <div :class="$style['estimate-list__head']">
+                <div :class="$style['estimate-list__block']">
+                  <div :class="$style['estimate-list__left']">
+                    <KeyValue align="left" size="regular">
+                      <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                        <KeyValueTitle>보증금</KeyValueTitle>
+                        <KeyValueText>0%</KeyValueText>
+                      </KeyValueItem>
+                    </KeyValue>
+                  </div>
+                  <div :class="$style['estimate-list__right']">
+                    <div class="text-body-3 font-weight-bold">0 원</div>
+                  </div>
+                </div>
+                <div :class="$style['estimate-list__arrow']">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['estimate-list__opener'] }"
+                  />
+                </div>
+              </div>
+
+              <UiAccordionLayer
+                :classNames="{ layer: $style['estimate-list__layer'] }"
+              >
+                <section :class="$style['estimate-list__contents']">
+                  // 내용 노출
+                </section>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+          </UiAccordion>
+
+          <div :class="$style['estimate-list__foot']">
+            <KeyValue margin="regular" verticalAlign="center">
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle
+                  :classNames="{ title: 'color-black font-weight-medium' }"
+                >
+                  월 리스료
+                </KeyValueTitle>
+                <KeyValueText>
+                  <BasicButton size="mini" inline="true">계산하기</BasicButton>
+                </KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle
+                  :classNames="{
+                    title: 'color-black font-weight-medium',
+                  }"
+                >
+                  IRR
+                </KeyValueTitle>
+                <KeyValueText>
+                  <UnitText rightUnit="%" align="right">
+                    <strong>-</strong>
+                  </UnitText>
+                </KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Tab Base</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
 
-        <UiTab v-slot="tabSlotProps">
+        <UiTab v-slot="tabSlotProps" initialOpen="testTab001_003">
           <UiTabList>
             <UiTabButton link="testTab001_001">Tab 1</UiTabButton>
             <UiTabButton link="testTab001_002">Tab 2</UiTabButton>
@@ -6064,6 +6395,7 @@ export default {
         <RoundStatus theme="nonary">텍스트</RoundStatus>
         <RoundStatus theme="denary">텍스트</RoundStatus>
         <RoundStatus theme="undenary">텍스트</RoundStatus>
+        <RoundStatus theme="duodenary">텍스트</RoundStatus>
       </div>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Small</h3>
@@ -6078,6 +6410,7 @@ export default {
         <RoundStatus size="small" theme="nonary">텍스트</RoundStatus>
         <RoundStatus size="small" theme="denary">텍스트</RoundStatus>
         <RoundStatus size="small" theme="undenary">텍스트</RoundStatus>
+        <RoundStatus size="small" theme="duodenary">텍스트</RoundStatus>
       </div>
     </section>
 
@@ -6609,6 +6942,56 @@ export default {
               <IconArrow />
             </template>
           </TextButton>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Board Detail</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['board-detail']">
+          <div :class="$style['board-detail__head']">
+            <h2 :class="$style['board-detail__category']">원큐자동차상식</h2>
+            <h3 :class="$style['board-detail__title']">2022년 2분기 IR 자료</h3>
+            <h4 :class="$style['board-detail__text']">
+              하나캐피탈과 함께 알아봐요!
+            </h4>
+            <p :class="$style['board-detail__sub']">2022.08.09</p>
+          </div>
+
+          <section :class="$style['board-detail__contents']">
+            //게시물 내용 노출
+          </section>
+
+          <div :class="$style['board-detail__foot']">
+            <ul class="reset-list">
+              <li class="row-margin-item-group">
+                <div class="flex-box">
+                  <div class="flex-box__cell flex-1">
+                    <div class="text-body-4 font-weight-medium">
+                      하나캐피탈IR_2022.2Q.pdf
+                    </div>
+                  </div>
+                  <div class="flex-box__cell">
+                    <DownloadButton tagName="a" href="/foo/bar.pdf" download />
+                  </div>
+                </div>
+              </li>
+              <li class="row-margin-item-group">
+                <div class="flex-box">
+                  <div class="flex-box__cell flex-1">
+                    <div class="text-body-4 font-weight-medium">
+                      하나캐피탈IR_2022.2Q.pdf
+                    </div>
+                  </div>
+                  <div class="flex-box__cell">
+                    <DownloadButton tagName="a" href="/foo/bar.pdf" download />
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -7870,9 +8253,14 @@ export default {
             <!-- Case : 이미지 -->
             <li :class="$style['files__item']">
               <div :class="$style['files__block']">
-                <div :class="$style['files__image']">
+                <div
+                  :class="$style['files__image']"
+                  :style="{
+                    backgroundImage: `url('/images/_dummy/file-sample.png')`,
+                  }"
+                >
                   <img
-                    src="@/assets/images/_dummy/file-sample.png"
+                    src="/images/_dummy/file-sample.png"
                     alt="파일 이름 넣어주세요"
                     @error="
                       (e) => {
@@ -7894,7 +8282,12 @@ export default {
             <!-- Case : 이미지 에러 -->
             <li :class="$style['files__item']">
               <div :class="$style['files__block']">
-                <div :class="$style['files__image']">
+                <div
+                  :class="$style['files__image']"
+                  :style="{
+                    backgroundImage: `url('')`,
+                  }"
+                >
                   <img
                     src=""
                     alt="파일 이름 넣어주세요"
@@ -7935,9 +8328,14 @@ export default {
 
             <li :class="$style['files__item']">
               <div :class="$style['files__block']">
-                <div :class="$style['files__image']">
+                <div
+                  :class="$style['files__image']"
+                  :style="{
+                    backgroundImage: `url('/images/_dummy/file-sample.png')`,
+                  }"
+                >
                   <img
-                    src="@/assets/images/_dummy/file-sample.png"
+                    src="/images/_dummy/file-sample.png"
                     alt="파일 이름 넣어주세요"
                     @error="
                       (e) => {
@@ -7957,9 +8355,14 @@ export default {
 
             <li :class="$style['files__item']">
               <div :class="$style['files__block']">
-                <div :class="$style['files__image']">
+                <div
+                  :class="$style['files__image']"
+                  :style="{
+                    backgroundImage: `url('/images/_dummy/file-sample.png')`,
+                  }"
+                >
                   <img
-                    src="@/assets/images/_dummy/file-sample.png"
+                    src="/images/_dummy/file-sample.png"
                     alt="파일 이름 넣어주세요"
                     @error="
                       (e) => {
@@ -7979,9 +8382,14 @@ export default {
 
             <li :class="$style['files__item']">
               <div :class="$style['files__block']">
-                <div :class="$style['files__image']">
+                <div
+                  :class="$style['files__image']"
+                  :style="{
+                    backgroundImage: `url('/images/_dummy/file-sample.png')`,
+                  }"
+                >
                   <img
-                    src="@/assets/images/_dummy/file-sample.png"
+                    src="/images/_dummy/file-sample.png"
                     alt="파일 이름 넣어주세요"
                     @error="
                       (e) => {
@@ -8112,26 +8520,248 @@ export default {
       </div>
     </section>
 
-    <!-- 작업중
     <section class="test-section">
-      <h2 class="test-section-title">Component Title</h2>
+      <h2 class="test-section-title">BasicBanner</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
-        <InputRange />
 
-        < !-- 소스 카피 기능용 소스(미구현) -- >
-        <div class="test-section-copy">
-          <div>
-            <button class="test-section-copy-button" @click="copyToClipboard">
-              copy
-            </button>
-          </div>
-          <pre class="test-section-copy-code" ref="preRef"></pre>
-        </div>
-        < !-- //소스 카피 기능용 소스 -- >
+        <BasicBanner
+          thumb="/images/_dummy/banner-money-up.png"
+          @click="() => {}"
+        >
+          <p class="text-body-4 color-gray row-margin-mini">
+            비용NO! 보험NO! 내 차OK!
+          </p>
+          <h3 class="text-body-1 font-weight-medium">다이렉트 장기렌터카</h3>
+        </BasicBanner>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">RouterLink</h3>
+
+        <BasicBanner
+          tagName="RouterLink"
+          to=""
+          thumb="/images/_dummy/banner-money-up.png"
+        >
+          <p class="text-body-4 color-gray row-margin-mini">
+            비용NO! 보험NO! 내 차OK!
+          </p>
+          <h3 class="text-body-1 font-weight-medium">다이렉트 장기렌터카</h3>
+        </BasicBanner>
       </div>
     </section>
-    -->
+
+    <section class="test-section">
+      <h2 class="test-section-title">EventBanner</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <EventBanner
+          thumb="/images/_dummy/banner-money-up.png"
+          @click="() => {}"
+        >
+          <div class="inline-wrap row-margin-item-regular">
+            <RoundStatus size="small" theme="duodenary">진행중</RoundStatus>
+          </div>
+          <h3 class="text-body-1 font-weight-medium ellipsis">
+            에코플러스 자동차보험
+          </h3>
+          <p class="text-body-4 color-gray row-margin-mini multi-ellipsis">
+            지금 바로 GO!
+          </p>
+          <p
+            class="text-body-5 color-gray font-weight-light row-margin-item-regular"
+          >
+            2022.12.01 ~ 2022.12.31
+          </p>
+        </EventBanner>
+
+        <EventBanner
+          thumb="/images/_dummy/banner-money-up.png"
+          @click="() => {}"
+          :disabledStyle="true"
+        >
+          <div class="inline-wrap row-margin-item-regular">
+            <RoundStatus size="small" theme="duodenary">종료</RoundStatus>
+          </div>
+          <h3 class="text-body-1 font-weight-medium ellipsis">
+            에코플러스 자동차보험
+          </h3>
+          <p class="text-body-4 color-gray row-margin-mini multi-ellipsis">
+            지금 바로 GO!
+          </p>
+          <p
+            class="text-body-5 color-gray font-weight-light row-margin-item-regular"
+          >
+            2022.12.01 ~ 2022.12.31
+          </p>
+        </EventBanner>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">RouterLink</h3>
+
+        <EventBanner
+          tagName="RouterLink"
+          to=""
+          thumb="/images/_dummy/banner-money-up.png"
+        >
+          <div class="inline-wrap row-margin-item-regular">
+            <RoundStatus size="small" theme="duodenary">진행중</RoundStatus>
+          </div>
+          <h3 class="text-body-1 font-weight-medium ellipsis">
+            에코플러스 자동차보험
+          </h3>
+          <p class="text-body-4 color-gray row-margin-mini multi-ellipsis">
+            지금 바로 GO!
+          </p>
+          <p
+            class="text-body-5 color-gray font-weight-light row-margin-item-regular"
+          >
+            2022.12.01 ~ 2022.12.31
+          </p>
+        </EventBanner>
+
+        <EventBanner
+          tagName="RouterLink"
+          to=""
+          thumb="/images/_dummy/banner-money-up.png"
+          :disabledStyle="true"
+        >
+          <div class="inline-wrap row-margin-item-regular">
+            <RoundStatus size="small" theme="duodenary">종료</RoundStatus>
+          </div>
+          <h3 class="text-body-1 font-weight-medium ellipsis">
+            에코플러스 자동차보험
+          </h3>
+          <p class="text-body-4 color-gray row-margin-mini multi-ellipsis">
+            지금 바로 GO!
+          </p>
+          <p
+            class="text-body-5 color-gray font-weight-light row-margin-item-regular"
+          >
+            2022.12.01 ~ 2022.12.31
+          </p>
+        </EventBanner>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">FunBanner</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <FunBanner
+          thumb="/images/_dummy/thumbnail-sample2.jpg"
+          @click="() => {}"
+        >
+          <h3 class="text-body-1 font-weight-medium ellipsis">
+            중고차 구입 꿀팁
+          </h3>
+          <p class="text-body-4 color-gray row-margin-mini multi-ellipsis">
+            중고차 구입 이렇게만 하면 전문가 부럽지 않은 구매가이드
+          </p>
+        </FunBanner>
+
+        <FunBanner
+          thumb="/images/_dummy/thumbnail-sample3.jpg"
+          @click="() => {}"
+        >
+          <h3 class="text-body-1 font-weight-medium ellipsis">
+            중고차 구입 꿀팁
+          </h3>
+          <p class="text-body-4 color-gray row-margin-mini multi-ellipsis">
+            중고차 구입 이렇게만 하면 전문가 부럽지 않은 구매가이드
+          </p>
+        </FunBanner>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">RouterLink</h3>
+
+        <FunBanner
+          tagName="RouterLink"
+          to=""
+          thumb="/images/_dummy/thumbnail-sample2.jpg"
+        >
+          <h3 class="text-body-1 font-weight-medium ellipsis">
+            중고차 구입 꿀팁
+          </h3>
+          <p class="text-body-4 color-gray row-margin-mini multi-ellipsis">
+            중고차 구입 이렇게만 하면 전문가 부럽지 않은 구매가이드
+          </p>
+        </FunBanner>
+
+        <FunBanner
+          tagName="RouterLink"
+          to=""
+          thumb="/images/_dummy/thumbnail-sample3.jpg"
+        >
+          <h3 class="text-body-1 font-weight-medium ellipsis">
+            중고차 구입 꿀팁
+          </h3>
+          <p class="text-body-4 color-gray row-margin-mini multi-ellipsis">
+            중고차 구입 이렇게만 하면 전문가 부럽지 않은 구매가이드
+          </p>
+        </FunBanner>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">CouponBanner</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <CouponBanner logo="/images/_dummy/logo-sample.png" @click="() => {}">
+          <p class="text-body-4 font-weight-light row-margin-mini ellipsis">
+            스타벅스
+          </p>
+          <h3 class="text-body-3 font-weight-medium multi-ellipsis">
+            디카페인 콜드브루 라떼 T 쿠폰
+          </h3>
+          <p class="text-body-5 color-gray font-weight-light row-margin-item">
+            2022.12.01 ~ 2022.12.31
+          </p>
+          <template v-slot:download>
+            <DownloadButton
+              tagName="a"
+              href="/foo/bar.png"
+              theme="secondary"
+              download
+              text="교환권 저장"
+            />
+          </template>
+        </CouponBanner>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">RouterLink</h3>
+
+        <CouponBanner
+          logo="/images/_dummy/logo-sample.png"
+          tagName="RouterLink"
+          to=""
+        >
+          <p class="text-body-4 font-weight-light row-margin-mini ellipsis">
+            스타벅스
+          </p>
+          <h3 class="text-body-3 font-weight-medium multi-ellipsis">
+            디카페인 콜드브루 라떼 T 쿠폰
+          </h3>
+          <p class="text-body-5 color-gray font-weight-light row-margin-item">
+            2022.12.01 ~ 2022.12.31
+          </p>
+          <template v-slot:download>
+            <DownloadButton
+              tagName="a"
+              href="/foo/bar.png"
+              theme="secondary"
+              download
+              text="교환권 저장"
+            />
+          </template>
+        </CouponBanner>
+      </div>
+    </section>
 
     <section class="test-section">
       <h2 class="test-section-title">Component Title</h2>
