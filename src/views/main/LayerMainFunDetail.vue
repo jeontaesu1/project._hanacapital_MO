@@ -9,6 +9,7 @@ import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import BasicBanner from '@/components/ui/banner/BasicBanner.vue';
 
 export default {
   components: {
@@ -19,6 +20,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
+    BasicBanner,
   },
   setup() {
     const layer = ref(null);
@@ -58,9 +60,16 @@ export default {
           //게시물 내용 노출
         </section>
 
-        <div class="row-margin-contents">
-          // 배너 영역 (내용 확인 후 진행 예정)
-        </div>
+        <BasicBanner
+          thumb="/images/_dummy/banner-money-up.png"
+          @click="() => {}"
+          :classNames="{ wrap: 'row-margin-contents' }"
+        >
+          <p class="text-body-4 color-gray row-margin-mini">
+            비용NO! 보험NO! 내 차OK!
+          </p>
+          <h3 class="text-body-1 font-weight-medium">다이렉트 장기렌터카</h3>
+        </BasicBanner>
       </div>
 
       <!-- Case : 링크 콘텐츠일 경우 -->
