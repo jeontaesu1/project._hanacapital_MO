@@ -54,7 +54,7 @@ export default {
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer002Open">
-          대출신청 확인<br />IF_M02_b001
+          대출신청 확인<br />IF_M02_b005
         </BasicButton>
       </ButtonListItem>
     </ButtonList>

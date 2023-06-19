@@ -543,6 +543,18 @@ const routes = [
     component: () =>
       import('@/views/uiGuide/GuideLeaseRentEstimationSystem002.vue'),
   },
+  {
+    path: '/guide/lease-rent-estimation-system-003',
+    name: '/guide/lease-rent-estimation-system-003',
+    component: () =>
+      import('@/views/uiGuide/GuideLeaseRentEstimationSystem003.vue'),
+  },
+  {
+    path: '/guide/lease-rent-estimation-system-004',
+    name: '/guide/lease-rent-estimation-system-004',
+    component: () =>
+      import('@/views/uiGuide/GuideLeaseRentEstimationSystem004.vue'),
+  },
 
   // splash
   {
@@ -1471,11 +1483,35 @@ const routes = [
 
   // lease-rent-estimation-system
   {
+    path: '/lease-rent-estimation-system/home',
+    name: '/lease-rent-estimation-system/home',
+    component: () =>
+      import(
+        '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemHome.vue'
+      ),
+  },
+  {
     path: '/lease-rent-estimation-system/pre-purchase',
     name: '/lease-rent-estimation-system/pre-purchase',
     component: () =>
       import(
         '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemPrePurchase.vue'
+      ),
+  },
+  {
+    path: '/lease-rent-estimation-system/pre-purchase-choose-car',
+    name: '/lease-rent-estimation-system/pre-purchase-choose-car',
+    component: () =>
+      import(
+        '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemPrePurchaseChooseCar.vue'
+      ),
+  },
+  {
+    path: '/lease-rent-estimation-system/pre-purchase-regist-car',
+    name: '/lease-rent-estimation-system/pre-purchase-regist-car',
+    component: () =>
+      import(
+        '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemPrePurchaseRegistCar.vue'
       ),
   },
   {
@@ -1532,6 +1568,94 @@ const routes = [
     component: () =>
       import(
         '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemViewEstimation.vue'
+      ),
+  },
+  {
+    path: '/lease-rent-estimation-system/used-lease',
+    name: '/lease-rent-estimation-system/used-lease',
+    component: () =>
+      import(
+        '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemUsedLease.vue'
+      ),
+  },
+  {
+    path: '/lease-rent-estimation-system/installment',
+    name: '/lease-rent-estimation-system/installment',
+    component: () =>
+      import(
+        '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemInstallment.vue'
+      ),
+  },
+  {
+    path: '/lease-rent-estimation-system/test-drive-car',
+    name: '/lease-rent-estimation-system/test-drive-car',
+    component: () =>
+      import(
+        '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemTestDriveCar.vue'
+      ),
+  },
+  {
+    path: '/lease-rent-estimation-system/my-info',
+    name: '/lease-rent-estimation-system/my-info',
+    component: () =>
+      import(
+        '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemMyInfo.vue'
+      ),
+  },
+  {
+    path: '/lease-rent-estimation-system/notice-list',
+    name: '/lease-rent-estimation-system/notice-list',
+    component: () =>
+      import(
+        '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemNoticeList.vue'
+      ),
+  },
+  {
+    path: '/lease-rent-estimation-system/notice-detail',
+    name: '/lease-rent-estimation-system/notice-detail',
+    component: () =>
+      import(
+        '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemNoticeDetail.vue'
+      ),
+  },
+  {
+    path: '/lease-rent-estimation-system/notice-edit',
+    name: '/lease-rent-estimation-system/notice-edit',
+    component: () =>
+      import(
+        '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemNoticeEdit.vue'
+      ),
+  },
+  {
+    path: '/lease-rent-estimation-system/admin-status',
+    name: '/lease-rent-estimation-system/admin-status',
+    component: () =>
+      import(
+        '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemAdminStatus.vue'
+      ),
+  },
+  {
+    path: '/lease-rent-estimation-system/admin-setting-home',
+    name: '/lease-rent-estimation-system/admin-setting-home',
+    component: () =>
+      import(
+        '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemAdminSettingHome.vue'
+      ),
+  },
+  {
+    path: '/lease-rent-estimation-system/admin-setting-role',
+    name: '/lease-rent-estimation-system/admin-setting-role',
+    component: () =>
+      import(
+        '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemAdminSettingRole.vue'
+      ),
+  },
+  {
+    path: '/lease-rent-estimation-system/admin-setting-default',
+    name: '/lease-rent-estimation-system/admin-setting-default',
+    component: () =>
+      import(
+        '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemAdminSettingDefault.vue'
       ),
   },
 
@@ -1650,6 +1774,14 @@ const routes = [
     name: '/equipment-lease/state-internal-memo',
     component: () =>
       import('@/views/equipmentLease/EquipmentLeaseStateInternalMemo.vue'),
+  },
+
+  // onboarding
+  {
+    path: '/onboarding/home',
+    name: '/onboarding/home',
+    component: () => import('@/views/onboarding/OnboardingHome.vue'),
+    meta: { layout: 'NoneLayout' },
   },
 ];
 
