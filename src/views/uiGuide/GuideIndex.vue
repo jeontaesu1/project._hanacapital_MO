@@ -2058,8 +2058,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/lease-rent-estimation-system/pre-purchase',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.21',
         log: [],
       },
       {
@@ -2113,8 +2113,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/lease-rent-estimation-system/used-lease',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.21',
         log: [],
       },
       {

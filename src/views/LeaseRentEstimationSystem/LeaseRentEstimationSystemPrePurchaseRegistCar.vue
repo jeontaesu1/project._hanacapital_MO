@@ -164,7 +164,7 @@ export default {
     // 아코디언 열때 Ajax 통신시 예시 : end
 
     onMounted(() => {
-      store.ui.header.setTitle(() => '장기 렌트');
+      store.ui.header.setTitle(() => '선구매');
       store.ui.header.setLeftButtons(() => ['back']);
       store.ui.header.setRightButtons(() => []);
     });
