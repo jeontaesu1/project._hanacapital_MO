@@ -19,6 +19,10 @@ import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
+import NoticeText from '@/components/ui/text/NoticeText.vue';
+
+import IconLink from '@/assets/images/icon/link.svg?component';
+import IconCheckDocument from '@/assets/images/icon/check-document.svg?component';
 
 export default {
   components: {
@@ -39,6 +43,9 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicButton,
+    NoticeText,
+    IconLink,
+    IconCheckDocument,
   },
   setup() {
     const layer = ref(null);
@@ -178,7 +185,7 @@ export default {
         </section>
 
         <section class="row-margin-container-medium">
-          <h3 class="text-title-2 row-margin-contents">계약 조건</h3>
+          <h3 class="text-title-2 row-margin-contents">계약 정보</h3>
 
           <BasicBox>
             <BasicBoxHead>
@@ -247,7 +254,7 @@ export default {
                 }"
               >
                 <KeyValueTitle>대출만료일</KeyValueTitle>
-                <KeyValueText>2023-08-02</KeyValueText>
+                <KeyValueText>2023.08.02</KeyValueText>
               </KeyValueItem>
               <KeyValueItem
                 :classNames="{
@@ -259,6 +266,58 @@ export default {
               </KeyValueItem>
             </KeyValue>
           </BasicBox>
+        </section>
+
+        <section class="row-margin-container-medium">
+          <div class="flex-box row-margin-contents">
+            <div class="flex-box__cell">
+              <h3 class="text-title-2">서류등록</h3>
+            </div>
+            <div class="flex-box__cell flex-box__cell--small">
+              <div class="text-body-3">(선택)</div>
+            </div>
+          </div>
+
+          <!-- Case : : 등록 전 -->
+          <button
+            type="button"
+            :class="[$style['add-button'], 'row-margin-item']"
+          >
+            <span :class="$style['add-button__inner']">
+              <span :class="$style['add-button__text']">서류등록</span>
+              <span
+                :class="[
+                  $style['add-button__icon'],
+                  $style['add-button__icon--secondary'],
+                ]"
+              >
+                <IconLink />
+              </span>
+            </span>
+          </button>
+          <!-- //Case : : 등록 전 -->
+
+          <!-- Case : : 등록 후 -->
+          <BasicBox>
+            <div class="flex-box">
+              <div class="flex-box__cell">
+                <IconCheckDocument class="display-block" />
+              </div>
+              <div class="flex-box__cell flex-1">
+                <div class="text-body-3">등록 완료</div>
+              </div>
+              <div class="flex-box__cell">
+                <BasicButton size="mini" theme="quaternary">
+                  추가첨부
+                </BasicButton>
+              </div>
+            </div>
+          </BasicBox>
+          <!-- //Case : : 등록 후 -->
+
+          <NoticeText :classNames="{ wrap: 'row-margin-item-group' }">
+            약정 후 해당 URL로 재진입 시 추가 서류 등록이 가능합니다.
+          </NoticeText>
         </section>
       </div>
 
