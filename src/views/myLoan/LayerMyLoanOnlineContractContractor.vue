@@ -20,6 +20,7 @@ import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
+import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 
 export default {
   components: {
@@ -41,6 +42,7 @@ export default {
     InputBlock,
     InputBlockCell,
     BasicInput,
+    BasicSelect,
   },
   setup() {
     const state = reactive({
@@ -232,15 +234,97 @@ export default {
 
             <FormListItem
               titleText="직장/사업장 전화번호"
-              target="#layerMyLoanOnlineContractContractorPhone002"
+              target="#layerMyLoanOnlineContractContractorPhoneButton"
             >
               <FormInvalid :error="state.phoneError002">
                 <InputBlock :error="state.phoneError002">
-                  <InputBlockCell :flexible="true">
+                  <InputBlockCell>
+                    <BasicSelect
+                      :option="[
+                        {
+                          value: '1',
+                          text: '02',
+                        },
+                        {
+                          value: '2',
+                          text: '051',
+                        },
+                        {
+                          value: '3',
+                          text: '033',
+                        },
+                        {
+                          value: '3',
+                          text: '032',
+                        },
+                        {
+                          value: '3',
+                          text: '062',
+                        },
+                        {
+                          value: '3',
+                          text: '042',
+                        },
+                        {
+                          value: '3',
+                          text: '052',
+                        },
+                        {
+                          value: '3',
+                          text: '044',
+                        },
+                        {
+                          value: '3',
+                          text: '031',
+                        },
+                        {
+                          value: '3',
+                          text: '033',
+                        },
+                        {
+                          value: '3',
+                          text: '043',
+                        },
+                        {
+                          value: '3',
+                          text: '041',
+                        },
+                        {
+                          value: '3',
+                          text: '063',
+                        },
+                        {
+                          value: '3',
+                          text: '061',
+                        },
+                        {
+                          value: '3',
+                          text: '054',
+                        },
+                        {
+                          value: '3',
+                          text: '055',
+                        },
+                        {
+                          value: '3',
+                          text: '064',
+                        },
+                      ]"
+                      buttonTitle="지역번호 선택하기"
+                      layerTitle="지역번호를 선택해 주세요"
+                      id="layerMyLoanOnlineContractContractorPhone002"
+                      buttonId="layerMyLoanOnlineContractContractorPhoneButton"
+                      :classNames="{
+                        wrap: 'input-width-telecom',
+                      }"
+                      defaultValue="1"
+                    />
+                  </InputBlockCell>
+                  <InputBlockCell :flexible="true" margin="regular">
                     <BasicInput
                       pattern="\d*"
                       title="직장/사업장 전화번호"
-                      id="layerMyLoanOnlineContractContractorPhone002"
+                      id="layerMyLoanOnlineContractContractorPhone003"
                     />
                   </InputBlockCell>
                 </InputBlock>

@@ -16,6 +16,8 @@ import LayerAutoLongRentalOrderAlert from '@/views/auto/LayerAutoLongRentalOrder
 import LayerAutoLongRentalOrderComplete from '@/views/auto/LayerAutoLongRentalOrderComplete.vue';
 import LayerAutoLongRentalDelivery from '@/views/auto/LayerAutoLongRentalDelivery.vue';
 import LayerAutoLongRentalDeliveryForm from '@/views/auto/LayerAutoLongRentalDeliveryForm.vue';
+import LayerAutoLongRentalOrderExpire from '@/views/auto/LayerAutoLongRentalOrderExpire.vue';
+import LayerAutoLongRentalOrderFail from '@/views/auto/LayerAutoLongRentalOrderFail.vue';
 
 export default {
   components: {
@@ -33,6 +35,8 @@ export default {
     LayerAutoLongRentalOrderComplete,
     LayerAutoLongRentalDelivery,
     LayerAutoLongRentalDeliveryForm,
+    LayerAutoLongRentalOrderExpire,
+    LayerAutoLongRentalOrderFail,
   },
   setup() {
     const layer001 = ref(null);
@@ -45,6 +49,8 @@ export default {
     const layer008 = ref(null);
     const layer009 = ref(null);
     const layer010 = ref(null);
+    const layer011 = ref(null);
+    const layer012 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -76,6 +82,12 @@ export default {
     const layer010Open = (e = {}) => {
       layer010.value.layer.open(e.target);
     };
+    const layer011Open = (e = {}) => {
+      layer011.value.layer.open(e.target);
+    };
+    const layer012Open = (e = {}) => {
+      layer012.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -88,6 +100,8 @@ export default {
       layer008,
       layer009,
       layer010,
+      layer011,
+      layer012,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -98,6 +112,8 @@ export default {
       layer008Open,
       layer009Open,
       layer010Open,
+      layer011Open,
+      layer012Open,
     };
   },
 };
@@ -161,6 +177,16 @@ export default {
           >인도요청 정보입력<br />AF_M01_l012</BasicButton
         >
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer011Open">
+          발주완료 견적 만료 안내<br />AF_M01_l014
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer012Open">
+          발주차량 정보 변동 안내<br />AF_M01_l015
+        </BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <LayerAutoLongRentalEvaluationComplete ref="layer001" />
@@ -173,5 +199,7 @@ export default {
     <LayerAutoLongRentalOrderComplete ref="layer008" />
     <LayerAutoLongRentalDelivery ref="layer009" />
     <LayerAutoLongRentalDeliveryForm ref="layer010" />
+    <LayerAutoLongRentalOrderExpire ref="layer011" />
+    <LayerAutoLongRentalOrderFail ref="layer012" />
   </PageContents>
 </template>
