@@ -1852,6 +1852,39 @@ export default {
           </ul>
         </div>
       </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Col - 3</h3>
+
+        <div :class="[$style['check-list'], $style['check-list--col-3']]">
+          <ul :class="$style['check-list__list']">
+            <li :class="$style['check-list__item']">
+              <CheckBox id="testCheck002_001" theme="quinary">
+                <CheckBoxObject />
+                <CheckBoxLabelText>전화</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+            <li :class="$style['check-list__item']">
+              <CheckBox id="testCheck002_002" theme="quinary">
+                <CheckBoxObject />
+                <CheckBoxLabelText>문자메시지</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+            <li :class="$style['check-list__item']">
+              <CheckBox id="testCheck002_003" theme="quinary">
+                <CheckBoxObject />
+                <CheckBoxLabelText>우편</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+            <li :class="$style['check-list__item']">
+              <CheckBox id="testCheck002_004" theme="quinary">
+                <CheckBoxObject />
+                <CheckBoxLabelText>이메일</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <section class="test-section">
