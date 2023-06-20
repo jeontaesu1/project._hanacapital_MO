@@ -5359,6 +5359,110 @@ export default {
           </div>
         </div>
       </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Disabled</h3>
+        <div
+          :class="[$style['estimate-list'], $style['estimate-list--disabled']]"
+        >
+          <UiAccordion :classNames="{ wrap: $style['estimate-list__list'] }">
+            <UiAccordionItem
+              :classNames="{ item: $style['estimate-list__item'] }"
+              :initialOpen="true"
+            >
+              <div :class="$style['estimate-list__head']">
+                <div :class="$style['estimate-list__block']">
+                  <div :class="$style['estimate-list__left']">
+                    <KeyValue align="left" size="regular">
+                      <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                        <KeyValueTitle>품목</KeyValueTitle>
+                        <KeyValueText>의료기</KeyValueText>
+                      </KeyValueItem>
+                    </KeyValue>
+                  </div>
+                </div>
+                <div :class="$style['estimate-list__arrow']">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['estimate-list__opener'] }"
+                  />
+                </div>
+              </div>
+
+              <UiAccordionLayer
+                :classNames="{ layer: $style['estimate-list__layer'] }"
+              >
+                <section :class="$style['estimate-list__contents']">
+                  // 내용 노출
+                </section>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+
+            <UiAccordionItem
+              :classNames="{ item: $style['estimate-list__item'] }"
+              :initialOpen="true"
+            >
+              <div :class="$style['estimate-list__head']">
+                <div :class="$style['estimate-list__block']">
+                  <div :class="$style['estimate-list__left']">
+                    <KeyValue align="left" size="regular">
+                      <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                        <KeyValueTitle>보증금</KeyValueTitle>
+                        <KeyValueText>0%</KeyValueText>
+                      </KeyValueItem>
+                    </KeyValue>
+                  </div>
+                  <div :class="$style['estimate-list__right']">
+                    <div class="text-body-3 font-weight-bold">0 원</div>
+                  </div>
+                </div>
+                <div :class="$style['estimate-list__arrow']">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['estimate-list__opener'] }"
+                  />
+                </div>
+              </div>
+
+              <UiAccordionLayer
+                :classNames="{ layer: $style['estimate-list__layer'] }"
+              >
+                <section :class="$style['estimate-list__contents']">
+                  // 내용 노출
+                </section>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+          </UiAccordion>
+
+          <div :class="$style['estimate-list__foot']">
+            <KeyValue margin="regular" verticalAlign="center">
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle
+                  :classNames="{ title: 'color-black font-weight-medium' }"
+                >
+                  월 리스료
+                </KeyValueTitle>
+                <KeyValueText>
+                  <BasicButton size="mini" inline="true">계산하기</BasicButton>
+                </KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle
+                  :classNames="{
+                    title: 'color-black font-weight-medium',
+                  }"
+                >
+                  IRR
+                </KeyValueTitle>
+                <KeyValueText>
+                  <UnitText rightUnit="%" align="right">
+                    <strong>-</strong>
+                  </UnitText>
+                </KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="test-section">
