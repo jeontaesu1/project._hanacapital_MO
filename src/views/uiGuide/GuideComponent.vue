@@ -1,5 +1,7 @@
 <script>
 import { ref, reactive } from 'vue';
+import { Pagination, A11y } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/vue';
 
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
@@ -100,6 +102,9 @@ import BasicBanner from '@/components/ui/banner/BasicBanner.vue';
 import EventBanner from '@/components/ui/banner/EventBanner.vue';
 import FunBanner from '@/components/ui/banner/FunBanner.vue';
 import CouponBanner from '@/components/ui/banner/CouponBanner.vue';
+import SlideBanner from '@/components/ui/banner/SlideBanner.vue';
+import SlideBannerBlock from '@/components/ui/banner/SlideBannerBlock.vue';
+import BasicBannerSlide from '@/components/ui/banner/BasicBannerSlide.vue';
 
 import BrandLogo001 from '@/assets/images/card-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/card-logo/lotte.svg?component';
@@ -149,6 +154,9 @@ const BASE_URL = import.meta.env.BASE_URL;
 
 export default {
   components: {
+    Swiper,
+    SwiperSlide,
+
     BasicButton,
     TextButton,
     UiLayer,
@@ -248,6 +256,10 @@ export default {
     EventBanner,
     FunBanner,
     CouponBanner,
+    SlideBanner,
+    SlideBannerBlock,
+    BasicBannerSlide,
+
     IconAdd,
     BrandLogo001,
     BrandLogo002,
@@ -348,6 +360,7 @@ export default {
 
     return {
       BASE_URL,
+      modules: [Pagination, A11y],
       state,
       layerTest001,
       layerTest002,
@@ -3182,6 +3195,257 @@ export default {
                     buttonId="testInput011Button"
                     :onChange="testInputEvent"
                   />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem
+            titleText="브랜드"
+            target="#testInput015Button"
+            :selectOnly="true"
+          >
+            <FormInvalid :error="state.testError001">
+              <InputBlock :error="state.testError001">
+                <InputBlockCell :flexible="true">
+                  <ExtendSelect
+                    buttonTitle="브랜드 선택하기"
+                    layerTitle="브랜드를 선택해 주세요"
+                    buttonId="testInput015Button"
+                    :onChange="testInputEvent"
+                  >
+                    <UiTab>
+                      <RoundTab
+                        :useUiTab="true"
+                        :classNames="{ wrap: 'row-margin-item-group' }"
+                      >
+                        <RoundTabButton
+                          link="leaseRentEstimationSystemPrePurchaseChooseCarBrandTab001"
+                        >
+                          국산
+                        </RoundTabButton>
+                        <RoundTabButton
+                          link="leaseRentEstimationSystemPrePurchaseChooseCarBrandTab002"
+                        >
+                          수입
+                        </RoundTabButton>
+                      </RoundTab>
+
+                      <UiTabPanel
+                        name="leaseRentEstimationSystemPrePurchaseChooseCarBrandTab001"
+                      >
+                        <div
+                          :class="[
+                            $style['bank-brand'],
+                            $style['bank-brand--col-3'],
+                          ]"
+                        >
+                          <ul :class="$style['bank-brand__list']">
+                            <li :class="$style['bank-brand__item']">
+                              <ExtendSelectOption
+                                value="1001"
+                                text="현대"
+                                :classNames="{
+                                  option: $style['bank-brand__block'],
+                                }"
+                              >
+                                <span :class="$style['bank-brand__logo']">
+                                  <CarEmblem code="1001" size="medium" />
+                                </span>
+                                <span :class="$style['bank-brand__text']"
+                                  >현대</span
+                                >
+                              </ExtendSelectOption>
+                            </li>
+                            <li :class="$style['bank-brand__item']">
+                              <ExtendSelectOption
+                                value="1012"
+                                text="제네시스"
+                                :classNames="{
+                                  option: $style['bank-brand__block'],
+                                }"
+                              >
+                                <span :class="$style['bank-brand__logo']">
+                                  <CarEmblem code="1012" size="medium" />
+                                </span>
+                                <span :class="$style['bank-brand__text']"
+                                  >제네시스</span
+                                >
+                              </ExtendSelectOption>
+                            </li>
+                            <li :class="$style['bank-brand__item']">
+                              <ExtendSelectOption
+                                value="1002"
+                                text="기아"
+                                :classNames="{
+                                  option: $style['bank-brand__block'],
+                                }"
+                              >
+                                <span :class="$style['bank-brand__logo']">
+                                  <CarEmblem code="1002" size="medium" />
+                                </span>
+                                <span :class="$style['bank-brand__text']"
+                                  >기아</span
+                                >
+                              </ExtendSelectOption>
+                            </li>
+                            <li :class="$style['bank-brand__item']">
+                              <ExtendSelectOption
+                                value="1003"
+                                text="르노삼성"
+                                :classNames="{
+                                  option: $style['bank-brand__block'],
+                                }"
+                              >
+                                <span :class="$style['bank-brand__logo']">
+                                  <CarEmblem code="1003" size="medium" />
+                                </span>
+                                <span :class="$style['bank-brand__text']"
+                                  >르노삼성</span
+                                >
+                              </ExtendSelectOption>
+                            </li>
+                            <li :class="$style['bank-brand__item']">
+                              <ExtendSelectOption
+                                value="1006"
+                                text="쉐보레"
+                                :classNames="{
+                                  option: $style['bank-brand__block'],
+                                }"
+                              >
+                                <span :class="$style['bank-brand__logo']">
+                                  <CarEmblem code="1006" size="medium" />
+                                </span>
+                                <span :class="$style['bank-brand__text']"
+                                  >쉐보레</span
+                                >
+                              </ExtendSelectOption>
+                            </li>
+                            <li :class="$style['bank-brand__item']">
+                              <ExtendSelectOption
+                                value="1005"
+                                text="쌍용"
+                                :classNames="{
+                                  option: $style['bank-brand__block'],
+                                }"
+                              >
+                                <span :class="$style['bank-brand__logo']">
+                                  <CarEmblem code="1005" size="medium" />
+                                </span>
+                                <span :class="$style['bank-brand__text']"
+                                  >쌍용</span
+                                >
+                              </ExtendSelectOption>
+                            </li>
+                          </ul>
+                        </div>
+                      </UiTabPanel>
+
+                      <UiTabPanel
+                        name="leaseRentEstimationSystemPrePurchaseChooseCarBrandTab002"
+                      >
+                        <ul :class="$style['bank-brand__list']">
+                          <li :class="$style['bank-brand__item']">
+                            <ExtendSelectOption
+                              value="2001"
+                              text="벤츠"
+                              :classNames="{
+                                option: $style['bank-brand__block'],
+                              }"
+                            >
+                              <span :class="$style['bank-brand__logo']">
+                                <CarEmblem code="2001" size="medium" />
+                              </span>
+                              <span :class="$style['bank-brand__text']"
+                                >벤츠</span
+                              >
+                            </ExtendSelectOption>
+                          </li>
+                          <li :class="$style['bank-brand__item']">
+                            <ExtendSelectOption
+                              value="2002"
+                              text="BMW"
+                              :classNames="{
+                                option: $style['bank-brand__block'],
+                              }"
+                            >
+                              <span :class="$style['bank-brand__logo']">
+                                <CarEmblem code="2002" size="medium" />
+                              </span>
+                              <span :class="$style['bank-brand__text']"
+                                >BMW</span
+                              >
+                            </ExtendSelectOption>
+                          </li>
+                          <li :class="$style['bank-brand__item']">
+                            <ExtendSelectOption
+                              value="2003"
+                              text="아우디"
+                              :classNames="{
+                                option: $style['bank-brand__block'],
+                              }"
+                            >
+                              <span :class="$style['bank-brand__logo']">
+                                <CarEmblem code="2003" size="medium" />
+                              </span>
+                              <span :class="$style['bank-brand__text']"
+                                >아우디</span
+                              >
+                            </ExtendSelectOption>
+                          </li>
+                          <li :class="$style['bank-brand__item']">
+                            <ExtendSelectOption
+                              value="2017"
+                              text="포르쉐"
+                              :classNames="{
+                                option: $style['bank-brand__block'],
+                              }"
+                            >
+                              <span :class="$style['bank-brand__logo']">
+                                <CarEmblem code="2017" size="medium" />
+                              </span>
+                              <span :class="$style['bank-brand__text']"
+                                >포르쉐</span
+                              >
+                            </ExtendSelectOption>
+                          </li>
+                          <li :class="$style['bank-brand__item']">
+                            <ExtendSelectOption
+                              value="2018"
+                              text="마세라티"
+                              :classNames="{
+                                option: $style['bank-brand__block'],
+                              }"
+                            >
+                              <span :class="$style['bank-brand__logo']">
+                                <CarEmblem code="2018" size="medium" />
+                              </span>
+                              <span :class="$style['bank-brand__text']"
+                                >마세라티</span
+                              >
+                            </ExtendSelectOption>
+                          </li>
+                          <li :class="$style['bank-brand__item']">
+                            <ExtendSelectOption
+                              value="2025"
+                              text="벤틀리"
+                              :classNames="{
+                                option: $style['bank-brand__block'],
+                              }"
+                            >
+                              <span :class="$style['bank-brand__logo']">
+                                <CarEmblem code="2025" size="medium" />
+                              </span>
+                              <span :class="$style['bank-brand__text']"
+                                >벤틀리</span
+                              >
+                            </ExtendSelectOption>
+                          </li>
+                        </ul>
+                      </UiTabPanel>
+                    </UiTab>
+                  </ExtendSelect>
                 </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -9203,6 +9467,134 @@ export default {
             />
           </template>
         </CouponBanner>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">SlideBanner</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <SlideBanner>
+          <Swiper :modules="modules" pagination>
+            <!-- Case : 링크 기능 없을 때 -->
+            <SwiperSlide>
+              <SlideBannerBlock
+                thumb="/images/_dummy/banner-sample.png"
+                :action="false"
+              >
+                <div class="text-body-1 font-weight-medium ellipsis">
+                  높아진 한도 확인하세요!
+                </div>
+                <div
+                  class="text-body-4 color-gray row-margin-mini multi-ellipsis"
+                >
+                  지금 신용조회하면 상품이 와르르
+                </div>
+              </SlideBannerBlock>
+            </SwiperSlide>
+            <!-- //Case : 링크 기능 없을 때 -->
+
+            <!-- Case : 링크 기능 있을 때 (RouterLink) -->
+            <SwiperSlide>
+              <SlideBannerBlock
+                thumb="/images/_dummy/banner-sample.png"
+                tagName="RouterLink"
+                to=""
+              >
+                <div class="text-body-1 font-weight-medium ellipsis">
+                  높아진 한도 확인하세요!
+                </div>
+                <div
+                  class="text-body-4 color-gray row-margin-mini multi-ellipsis"
+                >
+                  지금 신용조회하면 상품이 와르르
+                </div>
+              </SlideBannerBlock>
+            </SwiperSlide>
+            <!-- // Case : 링크 기능 있을 때 -->
+
+            <!-- Case : 링크 기능 있을 때 (a tag) -->
+            <SwiperSlide>
+              <SlideBannerBlock
+                thumb="/images/_dummy/banner-sample.png"
+                tagName="a"
+                href=""
+              >
+                <div class="text-body-1 font-weight-medium ellipsis">
+                  높아진 한도 확인하세요!
+                </div>
+                <div
+                  class="text-body-4 color-gray row-margin-mini multi-ellipsis"
+                >
+                  지금 신용조회하면 상품이 와르르
+                </div>
+              </SlideBannerBlock>
+            </SwiperSlide>
+            <!-- // Case : 링크 기능 있을 때 (a tag) -->
+          </Swiper>
+        </SlideBanner>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">BasicBannerSlide</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <BasicBannerSlide>
+          <Swiper :modules="modules" pagination>
+            <!-- Case : 링크 기능 없을 때 -->
+            <SwiperSlide>
+              <BasicBanner
+                thumb="/images/_dummy/banner-001.png"
+                :action="false"
+              >
+                <p class="text-body-4 color-gray row-margin-mini ellipsis">
+                  서브 텍스트 최대 한줄 노출 서브 텍스트 최대 한줄 노출
+                </p>
+                <h3 class="text-body-1 font-weight-medium ellipsis">
+                  타이틀 텍스트 최대 한줄 노출 타이틀 텍스트 최대 한줄 노출
+                </h3>
+              </BasicBanner>
+            </SwiperSlide>
+            <!-- //Case : 링크 기능 없을 때 -->
+
+            <!-- Case : 링크 기능 있을 때 (RouterLink) -->
+            <SwiperSlide>
+              <BasicBanner
+                thumb="/images/_dummy/banner-001.png"
+                tagName="RouterLink"
+                to=""
+              >
+                <p class="text-body-4 color-gray row-margin-mini ellipsis">
+                  서브 텍스트 최대 한줄 노출 서브 텍스트 최대 한줄 노출
+                </p>
+                <h3 class="text-body-1 font-weight-medium ellipsis">
+                  타이틀 텍스트 최대 한줄 노출 타이틀 텍스트 최대 한줄 노출
+                </h3>
+              </BasicBanner>
+            </SwiperSlide>
+            <!-- // Case : 링크 기능 있을 때 -->
+
+            <!-- Case : 링크 기능 있을 때 (a tag) -->
+            <SwiperSlide>
+              <BasicBanner
+                thumb="/images/_dummy/banner-001.png"
+                tagName="a"
+                href=""
+              >
+                <p class="text-body-4 color-gray row-margin-mini ellipsis">
+                  서브 텍스트 최대 한줄 노출 서브 텍스트 최대 한줄 노출
+                </p>
+                <h3 class="text-body-1 font-weight-medium ellipsis">
+                  타이틀 텍스트 최대 한줄 노출 타이틀 텍스트 최대 한줄 노출
+                </h3>
+              </BasicBanner>
+            </SwiperSlide>
+            <!-- // Case : 링크 기능 있을 때 (a tag) -->
+          </Swiper>
+        </BasicBannerSlide>
       </div>
     </section>
 

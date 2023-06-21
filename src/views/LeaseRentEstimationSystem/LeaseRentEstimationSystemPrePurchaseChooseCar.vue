@@ -16,6 +16,13 @@ import BasicInput from '@/components/ui/form/BasicInput.vue';
 import SearchButton from '@/components/ui/button/SearchButton.vue';
 import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 import RoundStatus from '@/components/ui/text/RoundStatus.vue';
+import ExtendSelect from '@/components/ui/form/ExtendSelect.vue';
+import ExtendSelectOption from '@/components/ui/form/ExtendSelectOption.vue';
+import UiTab from '@/components/ui/tab/UiTab.vue';
+import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
+import RoundTab from '@/components/ui/tab/RoundTab.vue';
+import RoundTabButton from '@/components/ui/tab/RoundTabButton.vue';
+import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
 
 export default {
   components: {
@@ -31,6 +38,13 @@ export default {
     SearchButton,
     CarThumb,
     RoundStatus,
+    ExtendSelect,
+    ExtendSelectOption,
+    UiTab,
+    UiTabPanel,
+    RoundTab,
+    RoundTabButton,
+    CarEmblem,
   },
   setup() {
     const store = {
@@ -47,7 +61,14 @@ export default {
     onMounted(() => {
       store.ui.header.setTitle(() => '선구매');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => []);
+      store.ui.header.setRightButtons(() => [
+        {
+          name: 'addButton',
+          onClick: () => {
+            console.log('등록 버튼 클릭');
+          },
+        },
+      ]);
     });
 
     onUnmounted(() => {
@@ -126,7 +147,238 @@ export default {
         <FormInvalid :error="state.brandError">
           <InputBlock :error="state.brandError">
             <InputBlockCell :flexible="true">
-              // 브랜드 선택 컴포넌트
+              <ExtendSelect
+                buttonTitle="브랜드 선택하기"
+                layerTitle="브랜드를 선택해 주세요"
+                buttonId="leaseRentEstimationSystemPrePurchaseChooseCarBrandButton"
+              >
+                <UiTab>
+                  <RoundTab
+                    :useUiTab="true"
+                    :classNames="{ wrap: 'row-margin-item-group' }"
+                  >
+                    <RoundTabButton
+                      link="leaseRentEstimationSystemPrePurchaseChooseCarBrandTab001"
+                    >
+                      국산
+                    </RoundTabButton>
+                    <RoundTabButton
+                      link="leaseRentEstimationSystemPrePurchaseChooseCarBrandTab002"
+                    >
+                      수입
+                    </RoundTabButton>
+                  </RoundTab>
+
+                  <UiTabPanel
+                    name="leaseRentEstimationSystemPrePurchaseChooseCarBrandTab001"
+                  >
+                    <div
+                      :class="[
+                        $style['bank-brand'],
+                        $style['bank-brand--col-3'],
+                      ]"
+                    >
+                      <ul :class="$style['bank-brand__list']">
+                        <li :class="$style['bank-brand__item']">
+                          <ExtendSelectOption
+                            value="1001"
+                            text="현대"
+                            :classNames="{
+                              option: $style['bank-brand__block'],
+                            }"
+                          >
+                            <span :class="$style['bank-brand__logo']">
+                              <CarEmblem code="1001" size="medium" />
+                            </span>
+                            <span :class="$style['bank-brand__text']"
+                              >현대</span
+                            >
+                          </ExtendSelectOption>
+                        </li>
+                        <li :class="$style['bank-brand__item']">
+                          <ExtendSelectOption
+                            value="1012"
+                            text="제네시스"
+                            :classNames="{
+                              option: $style['bank-brand__block'],
+                            }"
+                          >
+                            <span :class="$style['bank-brand__logo']">
+                              <CarEmblem code="1012" size="medium" />
+                            </span>
+                            <span :class="$style['bank-brand__text']"
+                              >제네시스</span
+                            >
+                          </ExtendSelectOption>
+                        </li>
+                        <li :class="$style['bank-brand__item']">
+                          <ExtendSelectOption
+                            value="1002"
+                            text="기아"
+                            :classNames="{
+                              option: $style['bank-brand__block'],
+                            }"
+                          >
+                            <span :class="$style['bank-brand__logo']">
+                              <CarEmblem code="1002" size="medium" />
+                            </span>
+                            <span :class="$style['bank-brand__text']"
+                              >기아</span
+                            >
+                          </ExtendSelectOption>
+                        </li>
+                        <li :class="$style['bank-brand__item']">
+                          <ExtendSelectOption
+                            value="1003"
+                            text="르노삼성"
+                            :classNames="{
+                              option: $style['bank-brand__block'],
+                            }"
+                          >
+                            <span :class="$style['bank-brand__logo']">
+                              <CarEmblem code="1003" size="medium" />
+                            </span>
+                            <span :class="$style['bank-brand__text']"
+                              >르노삼성</span
+                            >
+                          </ExtendSelectOption>
+                        </li>
+                        <li :class="$style['bank-brand__item']">
+                          <ExtendSelectOption
+                            value="1006"
+                            text="쉐보레"
+                            :classNames="{
+                              option: $style['bank-brand__block'],
+                            }"
+                          >
+                            <span :class="$style['bank-brand__logo']">
+                              <CarEmblem code="1006" size="medium" />
+                            </span>
+                            <span :class="$style['bank-brand__text']"
+                              >쉐보레</span
+                            >
+                          </ExtendSelectOption>
+                        </li>
+                        <li :class="$style['bank-brand__item']">
+                          <ExtendSelectOption
+                            value="1005"
+                            text="쌍용"
+                            :classNames="{
+                              option: $style['bank-brand__block'],
+                            }"
+                          >
+                            <span :class="$style['bank-brand__logo']">
+                              <CarEmblem code="1005" size="medium" />
+                            </span>
+                            <span :class="$style['bank-brand__text']"
+                              >쌍용</span
+                            >
+                          </ExtendSelectOption>
+                        </li>
+                      </ul>
+                    </div>
+                  </UiTabPanel>
+
+                  <UiTabPanel
+                    name="leaseRentEstimationSystemPrePurchaseChooseCarBrandTab002"
+                  >
+                    <ul :class="$style['bank-brand__list']">
+                      <li :class="$style['bank-brand__item']">
+                        <ExtendSelectOption
+                          value="2001"
+                          text="벤츠"
+                          :classNames="{
+                            option: $style['bank-brand__block'],
+                          }"
+                        >
+                          <span :class="$style['bank-brand__logo']">
+                            <CarEmblem code="2001" size="medium" />
+                          </span>
+                          <span :class="$style['bank-brand__text']">벤츠</span>
+                        </ExtendSelectOption>
+                      </li>
+                      <li :class="$style['bank-brand__item']">
+                        <ExtendSelectOption
+                          value="2002"
+                          text="BMW"
+                          :classNames="{
+                            option: $style['bank-brand__block'],
+                          }"
+                        >
+                          <span :class="$style['bank-brand__logo']">
+                            <CarEmblem code="2002" size="medium" />
+                          </span>
+                          <span :class="$style['bank-brand__text']">BMW</span>
+                        </ExtendSelectOption>
+                      </li>
+                      <li :class="$style['bank-brand__item']">
+                        <ExtendSelectOption
+                          value="2003"
+                          text="아우디"
+                          :classNames="{
+                            option: $style['bank-brand__block'],
+                          }"
+                        >
+                          <span :class="$style['bank-brand__logo']">
+                            <CarEmblem code="2003" size="medium" />
+                          </span>
+                          <span :class="$style['bank-brand__text']"
+                            >아우디</span
+                          >
+                        </ExtendSelectOption>
+                      </li>
+                      <li :class="$style['bank-brand__item']">
+                        <ExtendSelectOption
+                          value="2017"
+                          text="포르쉐"
+                          :classNames="{
+                            option: $style['bank-brand__block'],
+                          }"
+                        >
+                          <span :class="$style['bank-brand__logo']">
+                            <CarEmblem code="2017" size="medium" />
+                          </span>
+                          <span :class="$style['bank-brand__text']"
+                            >포르쉐</span
+                          >
+                        </ExtendSelectOption>
+                      </li>
+                      <li :class="$style['bank-brand__item']">
+                        <ExtendSelectOption
+                          value="2018"
+                          text="마세라티"
+                          :classNames="{
+                            option: $style['bank-brand__block'],
+                          }"
+                        >
+                          <span :class="$style['bank-brand__logo']">
+                            <CarEmblem code="2018" size="medium" />
+                          </span>
+                          <span :class="$style['bank-brand__text']"
+                            >마세라티</span
+                          >
+                        </ExtendSelectOption>
+                      </li>
+                      <li :class="$style['bank-brand__item']">
+                        <ExtendSelectOption
+                          value="2025"
+                          text="벤틀리"
+                          :classNames="{
+                            option: $style['bank-brand__block'],
+                          }"
+                        >
+                          <span :class="$style['bank-brand__logo']">
+                            <CarEmblem code="2025" size="medium" />
+                          </span>
+                          <span :class="$style['bank-brand__text']"
+                            >벤틀리</span
+                          >
+                        </ExtendSelectOption>
+                      </li>
+                    </ul>
+                  </UiTabPanel>
+                </UiTab>
+              </ExtendSelect>
             </InputBlockCell>
           </InputBlock>
           <FormInvalidMessage>Error Message</FormInvalidMessage>

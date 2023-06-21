@@ -192,7 +192,17 @@ export default {
     onMounted(() => {
       store.ui.header.setTitle(() => '선구매');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => []);
+      store.ui.header.setRightButtons(() => [
+        {
+          name: 'roundButton',
+          text: '렌트로 이동',
+          theme: 'secondary',
+          onClick: () => {
+            console.log('렌트로 이동 버튼 클릭');
+          },
+        },
+        'menu',
+      ]);
     });
 
     onUnmounted(() => {

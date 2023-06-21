@@ -2102,7 +2102,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/lease-rent-estimation-system/pre-purchase-choose-car',
-        status: 'partend',
+        status: 'end',
         create: '2023.06.21',
         log: [],
       },
