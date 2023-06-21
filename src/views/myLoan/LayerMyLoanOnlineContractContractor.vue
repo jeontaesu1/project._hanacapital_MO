@@ -234,7 +234,7 @@ export default {
 
             <FormListItem
               titleText="직장/사업장 전화번호"
-              target="#layerMyLoanOnlineContractContractorPhoneButton"
+              target="#layerMyLoanOnlineContractContractorPhone002FirstButton"
             >
               <FormInvalid :error="state.phoneError002">
                 <InputBlock :error="state.phoneError002">
@@ -254,66 +254,66 @@ export default {
                           text: '033',
                         },
                         {
-                          value: '3',
+                          value: '4',
                           text: '032',
                         },
                         {
-                          value: '3',
+                          value: '5',
                           text: '062',
                         },
                         {
-                          value: '3',
+                          value: '6',
                           text: '042',
                         },
                         {
-                          value: '3',
+                          value: '7',
                           text: '052',
                         },
                         {
-                          value: '3',
+                          value: '8',
                           text: '044',
                         },
                         {
-                          value: '3',
+                          value: '9',
                           text: '031',
                         },
                         {
-                          value: '3',
+                          value: '10',
                           text: '033',
                         },
                         {
-                          value: '3',
+                          value: '11',
                           text: '043',
                         },
                         {
-                          value: '3',
+                          value: '12',
                           text: '041',
                         },
                         {
-                          value: '3',
+                          value: '13',
                           text: '063',
                         },
                         {
-                          value: '3',
+                          value: '14',
                           text: '061',
                         },
                         {
-                          value: '3',
+                          value: '15',
                           text: '054',
                         },
                         {
-                          value: '3',
+                          value: '16',
                           text: '055',
                         },
                         {
-                          value: '3',
+                          value: '17',
                           text: '064',
                         },
                       ]"
                       buttonTitle="지역번호 선택하기"
                       layerTitle="지역번호를 선택해 주세요"
-                      id="layerMyLoanOnlineContractContractorPhone002"
-                      buttonId="layerMyLoanOnlineContractContractorPhoneButton"
+                      id="layerMyLoanOnlineContractContractorPhone002First"
+                      buttonId="layerMyLoanOnlineContractContractorPhone002FirstButton"
                       :classNames="{
                         wrap: 'input-width-telecom',
                       }"
@@ -324,7 +324,7 @@ export default {
                     <BasicInput
                       pattern="\d*"
                       title="직장/사업장 전화번호"
-                      id="layerMyLoanOnlineContractContractorPhone003"
+                      id="layerMyLoanOnlineContractContractorPhone002"
                     />
                   </InputBlockCell>
                 </InputBlock>
