@@ -17,7 +17,7 @@
   background-color: $color-gray-15;
 }
 
-.product-detail {
+.product-setting {
   display: flex;
 
   &__title {
@@ -26,7 +26,7 @@
     @include font-size-default(13);
     color: $color-gray-70;
 
-    & + .product-detail__contents {
+    & + .product-setting__contents {
       flex: 1;
       margin-left: 8px;
     }

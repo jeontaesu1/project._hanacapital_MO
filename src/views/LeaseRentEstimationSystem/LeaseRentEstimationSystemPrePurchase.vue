@@ -130,8 +130,6 @@ export default {
       addOptionItemPriceError: false,
       specialModificationError: false,
       specialModificationPriceError: false,
-      feeCMError: false,
-      feeAGError: false,
       etcCMError: false,
       etcAGError: false,
       prepaymentsRatioError: [false, false, false],

@@ -85,7 +85,7 @@ export default {
     >
       <FormListItem
         titleText="제휴사"
-        target="#LeaseRentEstimationSystemPrePurchaseChooseCarAffiliate"
+        target="#leaseRentEstimationSystemPrePurchaseChooseCarAffiliate"
       >
         <FormInvalid :error="state.affiliateError">
           <InputBlock :error="state.affiliateError">
@@ -107,7 +107,7 @@ export default {
                 ]"
                 buttonTitle="제휴사 선택하기"
                 layerTitle="제휴사를 선택해 주세요"
-                buttonId="LeaseRentEstimationSystemPrePurchaseChooseCarAffiliate"
+                buttonId="leaseRentEstimationSystemPrePurchaseChooseCarAffiliate"
               />
             </InputBlockCell>
           </InputBlock>
@@ -117,7 +117,7 @@ export default {
 
       <FormListItem
         titleText="브랜드"
-        target="#LeaseRentEstimationSystemPrePurchaseChooseCarBrandButton"
+        target="#leaseRentEstimationSystemPrePurchaseChooseCarBrandButton"
         :selectOnly="true"
       >
         <FormInvalid :error="state.brandError">

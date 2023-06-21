@@ -31,7 +31,6 @@ import RoundTab from '@/components/ui/tab/RoundTab.vue';
 import RoundTabButton from '@/components/ui/tab/RoundTabButton.vue';
 import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
 import CarThumb from '@/components/ui/imageData/CarThumb.vue';
-import ColorChip from '@/components/ui/imageData/ColorChip.vue';
 import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
@@ -50,7 +49,6 @@ import RadioButtonObject from '@/components/ui/form/RadioButtonObject.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
 import SwitchCheckBox from '@/components/ui/form/SwitchCheckBox.vue';
-import DeleteButton from '@/components/ui/button/DeleteButton.vue';
 
 import IconScroll from '@/assets/images/icon/scroll.svg?component';
 
@@ -82,7 +80,6 @@ export default {
     RoundTabButton,
     CarEmblem,
     CarThumb,
-    ColorChip,
     RoundStatus,
     FormList,
     FormListItem,
@@ -101,7 +98,6 @@ export default {
     NoticeText,
     UnitText,
     SwitchCheckBox,
-    DeleteButton,
     IconScroll,
   },
   setup() {
@@ -116,22 +112,14 @@ export default {
       productsSlider: null,
       productsAccordionAnimate: false,
       viewDocument: false,
-      exteriorETCError: false,
-      exteriorETCPriceError: false,
-      interiorETCError: false,
-      interiorETCPriceError: false,
-      carAmountPriceError: false,
-      optionETCError: false,
-      optionETCPriceError: false,
-      deliveryDiscountPriceError: false,
-      deliveryDiscountRatioError: false,
-      deliveryManufacturerPriceError: false,
+      carNumberError: false,
+      carSearchError: false,
+      salePriceError: false,
       feeCMError: false,
       feeAGError: false,
-      etcCMError: false,
-      etcAGError: false,
       publicBondDiscountError: false,
       etcPriceError: false,
+      consignmentPriceError: false,
       interestSubsidyError: false,
       suppliesSupportError: false,
       advancePaymentError: false,
@@ -258,7 +246,11 @@ export default {
                   </BoxCheckList>
 
                   <div
-                    :class="[$style['check-list'], $style['check-list--col-3']]"
+                    :class="[
+                      $style['check-list'],
+                      $style['check-list--col-3'],
+                      'row-margin-item-group',
+                    ]"
                   >
                     <ul :class="$style['check-list__list']">
                       <li :class="$style['check-list__item']">
@@ -293,10 +285,471 @@ export default {
                       </li>
                     </ul>
                   </div>
+
+                  <!-- Case : 차량번호 선택시 노출 -->
+                  <FormList>
+                    <FormListItem
+                      titleText="차량번호"
+                      target="#leaseRentEstimationSystemUsedLeaseCarNumber"
+                    >
+                      <FormInvalid :error="state.carNumberError">
+                        <InputBlock :error="state.carNumberError">
+                          <InputBlockCell :flexible="true">
+                            <BasicInput
+                              title="차량번호"
+                              id="leaseRentEstimationSystemUsedLeaseCarNumber"
+                            />
+                          </InputBlockCell>
+                          <template v-slot:right>
+                            <BasicButton size="mini" theme="tertiary">
+                              조회
+                            </BasicButton>
+                          </template>
+                        </InputBlock>
+                        <FormInvalidMessage>Error Message</FormInvalidMessage>
+                      </FormInvalid>
+                    </FormListItem>
+                  </FormList>
+                  <!-- Case : 차량번호 선택시 노출 -->
                 </div>
               </div>
             </li>
 
+            <!-- Case : 차량번호, 차량명 선택시 노출 -->
+            <UiAccordionItem
+              :classNames="{ item: $style['estimate-list__item'] }"
+              v-slot="accordionItemSlotProps"
+            >
+              <div :class="$style['estimate-list__head']">
+                <div :class="$style['estimate-list__block']">
+                  <div :class="$style['estimate-list__left']">
+                    <KeyValue
+                      align="left"
+                      size="regular"
+                      verticalAlign="center"
+                    >
+                      <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                        <KeyValueTitle>
+                          <div class="text-body-4">등록년월</div>
+                        </KeyValueTitle>
+                        <KeyValueText>2022년 1월</KeyValueText>
+                      </KeyValueItem>
+                    </KeyValue>
+                  </div>
+                </div>
+                <div :class="$style['estimate-list__arrow']">
+                  <UiAccordionOpener
+                    :toggleAction="false"
+                    :classNames="{ button: $style['estimate-list__opener'] }"
+                    @click="
+                      testAccordionToggle(accordionItemSlotProps, testAjax)
+                    "
+                  />
+                </div>
+              </div>
+
+              <UiAccordionLayer
+                :classNames="{ layer: $style['estimate-list__layer'] }"
+              >
+                <section :class="$style['estimate-list__contents']">
+                  <BoxCheckList spacing="small" :wrap="true" :col="3">
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemUsedLeaseRegisterYear"
+                        id="leaseRentEstimationSystemUsedLeaseRegisterYear_001"
+                        size="small"
+                        :defaultChecked="true"
+                      >
+                        <BoxCheckLabel>2022년</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemUsedLeaseRegisterYear"
+                        id="leaseRentEstimationSystemUsedLeaseRegisterYear_002"
+                        size="small"
+                      >
+                        <BoxCheckLabel>2021년</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemUsedLeaseRegisterYear"
+                        id="leaseRentEstimationSystemUsedLeaseRegisterYear_003"
+                        size="small"
+                      >
+                        <BoxCheckLabel>2020년</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemUsedLeaseRegisterYear"
+                        id="leaseRentEstimationSystemUsedLeaseRegisterYear_004"
+                        size="small"
+                      >
+                        <BoxCheckLabel>2019년</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemUsedLeaseRegisterYear"
+                        id="leaseRentEstimationSystemUsedLeaseRegisterYear_005"
+                        size="small"
+                      >
+                        <BoxCheckLabel>2018년</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemUsedLeaseRegisterYear"
+                        id="leaseRentEstimationSystemUsedLeaseRegisterYear_006"
+                        size="small"
+                      >
+                        <BoxCheckLabel>2017년</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemUsedLeaseRegisterYear"
+                        id="leaseRentEstimationSystemUsedLeaseRegisterYear_007"
+                        size="small"
+                      >
+                        <BoxCheckLabel>2016년</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemUsedLeaseRegisterYear"
+                        id="leaseRentEstimationSystemUsedLeaseRegisterYear_008"
+                        size="small"
+                      >
+                        <BoxCheckLabel>2015년</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemUsedLeaseRegisterYear"
+                        id="leaseRentEstimationSystemUsedLeaseRegisterYear_009"
+                        size="small"
+                      >
+                        <BoxCheckLabel>2014년</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemUsedLeaseRegisterYear"
+                        id="leaseRentEstimationSystemUsedLeaseRegisterYear_010"
+                        size="small"
+                      >
+                        <BoxCheckLabel>2013년</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemUsedLeaseRegisterYear"
+                        id="leaseRentEstimationSystemUsedLeaseRegisterYear_011"
+                        size="small"
+                      >
+                        <BoxCheckLabel>2012년</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                  </BoxCheckList>
+
+                  <BoxCheckList
+                    spacing="small"
+                    :wrap="true"
+                    :col="3"
+                    :classNames="{ wrap: 'row-margin-item-group' }"
+                  >
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemUsedLeaseRegisterMonth"
+                        id="leaseRentEstimationSystemUsedLeaseRegisterMonth_001"
+                        size="small"
+                        :defaultChecked="true"
+                      >
+                        <BoxCheckLabel>1월</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemUsedLeaseRegisterMonth"
+                        id="leaseRentEstimationSystemUsedLeaseRegisterMonth_002"
+                        size="small"
+                      >
+                        <BoxCheckLabel>2월</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemUsedLeaseRegisterMonth"
+                        id="leaseRentEstimationSystemUsedLeaseRegisterMonth_003"
+                        size="small"
+                      >
+                        <BoxCheckLabel>3월</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemUsedLeaseRegisterMonth"
+                        id="leaseRentEstimationSystemUsedLeaseRegisterMonth_004"
+                        size="small"
+                      >
+                        <BoxCheckLabel>4월</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemUsedLeaseRegisterMonth"
+                        id="leaseRentEstimationSystemUsedLeaseRegisterMonth_005"
+                        size="small"
+                      >
+                        <BoxCheckLabel>5월</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemUsedLeaseRegisterMonth"
+                        id="leaseRentEstimationSystemUsedLeaseRegisterMonth_006"
+                        size="small"
+                      >
+                        <BoxCheckLabel>6월</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemUsedLeaseRegisterMonth"
+                        id="leaseRentEstimationSystemUsedLeaseRegisterMonth_007"
+                        size="small"
+                      >
+                        <BoxCheckLabel>7월</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemUsedLeaseRegisterMonth"
+                        id="leaseRentEstimationSystemUsedLeaseRegisterMonth_008"
+                        size="small"
+                      >
+                        <BoxCheckLabel>8월</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemUsedLeaseRegisterMonth"
+                        id="leaseRentEstimationSystemUsedLeaseRegisterMonth_009"
+                        size="small"
+                      >
+                        <BoxCheckLabel>9월</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemUsedLeaseRegisterMonth"
+                        id="leaseRentEstimationSystemUsedLeaseRegisterMonth_010"
+                        size="small"
+                      >
+                        <BoxCheckLabel>10월</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemUsedLeaseRegisterMonth"
+                        id="leaseRentEstimationSystemUsedLeaseRegisterMonth_011"
+                        size="small"
+                      >
+                        <BoxCheckLabel>11월</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemUsedLeaseRegisterMonth"
+                        id="leaseRentEstimationSystemUsedLeaseRegisterMonth_012"
+                        size="small"
+                      >
+                        <BoxCheckLabel>12월</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                  </BoxCheckList>
+                </section>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+
+            <!-- Case : 차량번호 선택시에만 노출 -->
+            <li :class="$style['estimate-list__item']">
+              <div :class="$style['estimate-list__head']">
+                <div :class="$style['estimate-list__block']">
+                  <div :class="$style['estimate-list__left']">
+                    <div :class="$style['product-setting']">
+                      <div :class="$style['product-setting__title']">
+                        차량검색
+                      </div>
+                      <div :class="$style['product-setting__contents']">
+                        <FormList
+                          :classNames="{ wrap: 'row-margin-item-group' }"
+                        >
+                          <FormListItem
+                            titleText="검색어"
+                            target="#leaseRentEstimationSystemUsedLeaseCarSearch"
+                          >
+                            <FormInvalid :error="state.carSearchError">
+                              <InputBlock :error="state.carSearchError">
+                                <InputBlockCell :flexible="true">
+                                  <BasicInput
+                                    title="검색어 입력"
+                                    id="leaseRentEstimationSystemUsedLeaseCarSearch"
+                                  />
+                                </InputBlockCell>
+                                <template v-slot:innerRight>
+                                  <BasicButton size="mini" theme="tertiary">
+                                    조회
+                                  </BasicButton>
+                                </template>
+                              </InputBlock>
+                              <FormInvalidMessage
+                                >Error Message</FormInvalidMessage
+                              >
+                            </FormInvalid>
+                          </FormListItem>
+                        </FormList>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- Case : 차량명 선택시에만 노출 -->
+
+            <UiAccordionItem
+              :classNames="{ item: $style['estimate-list__item'] }"
+              v-slot="accordionItemSlotProps"
+            >
+              <div :class="$style['estimate-list__head']">
+                <div :class="$style['estimate-list__block']">
+                  <div :class="$style['estimate-list__left']">
+                    <KeyValue
+                      align="left"
+                      size="regular"
+                      verticalAlign="center"
+                    >
+                      <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                        <KeyValueTitle>
+                          <div class="text-body-4">차량선택</div>
+                        </KeyValueTitle>
+                        <KeyValueText
+                          >기아 K5(DL3) 2.0 가솔린 프레스티지</KeyValueText
+                        >
+                      </KeyValueItem>
+                    </KeyValue>
+                  </div>
+                </div>
+                <div :class="$style['estimate-list__arrow']">
+                  <UiAccordionOpener
+                    :toggleAction="false"
+                    :classNames="{ button: $style['estimate-list__opener'] }"
+                    @click="
+                      testAccordionToggle(accordionItemSlotProps, testAjax)
+                    "
+                  />
+                </div>
+              </div>
+
+              <UiAccordionLayer
+                :classNames="{ layer: $style['estimate-list__layer'] }"
+              >
+                <section :class="$style['estimate-list__contents']">
+                  <ul class="reset-list">
+                    <li class="row-margin-item-group">
+                      <RadioButton
+                        theme="tertiary"
+                        :full="true"
+                        name="leaseRentEstimationSystemUsedLeaseCarSelect002"
+                        id="leaseRentEstimationSystemUsedLeaseCarSelect002_001"
+                        :defaultChecked="true"
+                      >
+                        <RadioButtonObject />
+                        <RadioButtonLabelText>
+                          <span class="display-block"
+                            >기아 K5(DL3) 2.0 가솔린 프레스티지</span
+                          >
+                        </RadioButtonLabelText>
+                      </RadioButton>
+                    </li>
+                    <li class="row-margin-item-group">
+                      <RadioButton
+                        theme="tertiary"
+                        :full="true"
+                        name="leaseRentEstimationSystemUsedLeaseCarSelect002"
+                        id="leaseRentEstimationSystemUsedLeaseCarSelect002_002"
+                      >
+                        <RadioButtonObject />
+                        <RadioButtonLabelText>
+                          <span class="display-block"
+                            >기아 K5(DL3) 2.0 가솔린 트렌디</span
+                          >
+                        </RadioButtonLabelText>
+                      </RadioButton>
+                    </li>
+                    <li class="row-margin-item-group">
+                      <RadioButton
+                        theme="tertiary"
+                        :full="true"
+                        name="leaseRentEstimationSystemUsedLeaseCarSelect002"
+                        id="leaseRentEstimationSystemUsedLeaseCarSelect002_003"
+                      >
+                        <RadioButtonObject />
+                        <RadioButtonLabelText>
+                          <span class="display-block"
+                            >기아 K5(DL3) 2.0 가솔린 시그니처</span
+                          >
+                        </RadioButtonLabelText>
+                      </RadioButton>
+                    </li>
+                    <li class="row-margin-item-group">
+                      <RadioButton
+                        theme="tertiary"
+                        :full="true"
+                        name="leaseRentEstimationSystemUsedLeaseCarSelect002"
+                        id="leaseRentEstimationSystemUsedLeaseCarSelect002_004"
+                      >
+                        <RadioButtonObject />
+                        <RadioButtonLabelText>
+                          <span class="display-block"
+                            >기아 K5(DL3) 2.0 가솔린 노블레스</span
+                          >
+                        </RadioButtonLabelText>
+                      </RadioButton>
+                    </li>
+                  </ul>
+                </section>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+            <!-- //Case : 차량번호, 차량명 선택시 노출 -->
+
+            <!-- Case : 브랜드 선택시 노출 -->
             <!-- 브랜드 -->
             <UiAccordionItem
               :classNames="{ item: $style['estimate-list__item'] }"
@@ -781,7 +1234,9 @@ export default {
                       >
                         <RadioButtonObject />
                         <RadioButtonLabelText>
-                          <span class="display-block">2022년형 가솔린 1.0</span>
+                          <span class="display-block"
+                            >2022년형 가솔린 1.0 터보 밴</span
+                          >
                           <span
                             class="flex-box row-margin-mini text-body-5 color-gray-secondary"
                           >
@@ -792,7 +1247,7 @@ export default {
                               <RoundStatus
                                 :block="true"
                                 size="small"
-                                theme="secondary"
+                                theme="denary"
                               >
                                 재고한정
                               </RoundStatus>
@@ -950,1366 +1405,36 @@ export default {
               </UiAccordionLayer>
             </UiAccordionItem>
             <!-- // 트림 -->
-
-            <!-- 외장 -->
-            <UiAccordionItem
-              :classNames="{ item: $style['estimate-list__item'] }"
-              v-slot="accordionItemSlotProps"
-            >
-              <div :class="$style['estimate-list__head']">
-                <div :class="$style['estimate-list__block']">
-                  <div :class="$style['estimate-list__left']">
-                    <KeyValue align="left" size="regular">
-                      <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                        <KeyValueTitle>
-                          <div class="text-body-4">외장</div>
-                        </KeyValueTitle>
-                        <KeyValueText>
-                          <div class="flex-box align-items-start">
-                            <div class="flex-box__cell">
-                              <ColorChip
-                                :colors="['66, 66, 66']"
-                                size="small"
-                              ></ColorChip>
-                            </div>
-                            <div class="flex-box__cell flex-1">
-                              티탄 그레이 메탈릭(R4G)
-                            </div>
-                          </div>
-                        </KeyValueText>
-                      </KeyValueItem>
-                    </KeyValue>
-                  </div>
-                  <div :class="$style['estimate-list__right']">
-                    <div class="text-body-3 font-weight-bold">400,000 원</div>
-                  </div>
-                </div>
-                <div :class="$style['estimate-list__arrow']">
-                  <UiAccordionOpener
-                    :toggleAction="false"
-                    :classNames="{ button: $style['estimate-list__opener'] }"
-                    @click="
-                      testAccordionToggle(accordionItemSlotProps, testAjax)
-                    "
-                  />
-                </div>
-              </div>
-
-              <UiAccordionLayer
-                :classNames="{ layer: $style['estimate-list__layer'] }"
-              >
-                <section :class="$style['estimate-list__contents']">
-                  <NoticeText :classNames="{ wrap: 'row-margin-item-group' }"
-                    >원색계열(빨강, 주황, 노랑, 초록, 보라)은 구매(인수) 조건만
-                    진행 가능합니다.</NoticeText
-                  >
-                  <ul class="reset-list">
-                    <li class="row-margin-item-group">
-                      <RadioButton
-                        theme="tertiary"
-                        :full="true"
-                        name="leaseRentEstimationSystemUsedLeaseExterior"
-                        id="leaseRentEstimationSystemUsedLeaseExterior_001"
-                        :defaultChecked="true"
-                      >
-                        <RadioButtonObject />
-                        <RadioButtonLabelText>
-                          <span class="flex-box">
-                            <span class="flex-box__cell">
-                              <ColorChip size="small"></ColorChip>
-                            </span>
-                            <span
-                              class="flex-box__cell flex-box__cell--small-regular flex-1"
-                              >선택안함</span
-                            >
-                          </span>
-                        </RadioButtonLabelText>
-                      </RadioButton>
-                    </li>
-                    <li class="row-margin-item-group">
-                      <RadioButton
-                        theme="tertiary"
-                        :full="true"
-                        name="leaseRentEstimationSystemUsedLeaseExterior"
-                        id="leaseRentEstimationSystemUsedLeaseExterior_002"
-                      >
-                        <RadioButtonObject />
-                        <RadioButtonLabelText>
-                          <span class="flex-box">
-                            <span class="flex-box__cell">
-                              <ColorChip
-                                :colors="['66, 66, 66']"
-                                size="small"
-                              ></ColorChip>
-                            </span>
-                            <span
-                              class="flex-box__cell flex-box__cell--small-regular flex-1"
-                              >티탄 그레이 메탈릭(R4G)</span
-                            >
-                          </span>
-                        </RadioButtonLabelText>
-                      </RadioButton>
-                    </li>
-                    <li class="row-margin-item-group">
-                      <RadioButton
-                        theme="tertiary"
-                        :full="true"
-                        name="leaseRentEstimationSystemUsedLeaseExterior"
-                        id="leaseRentEstimationSystemUsedLeaseExterior_003"
-                      >
-                        <RadioButtonObject />
-                        <RadioButtonLabelText>
-                          <span class="flex-box">
-                            <span class="flex-box__cell">
-                              <ColorChip
-                                :colors="['244, 241, 241']"
-                                size="small"
-                              ></ColorChip>
-                            </span>
-                            <span
-                              class="flex-box__cell flex-box__cell--small-regular flex-1"
-                              >언블리치드 아이보리(NES)</span
-                            >
-                          </span>
-                        </RadioButtonLabelText>
-                      </RadioButton>
-                    </li>
-                    <li class="row-margin-item-group">
-                      <RadioButton
-                        theme="tertiary"
-                        :full="true"
-                        name="leaseRentEstimationSystemUsedLeaseExterior"
-                        id="leaseRentEstimationSystemUsedLeaseExterior_004"
-                      >
-                        <RadioButtonObject />
-                        <RadioButtonLabelText>
-                          <span class="flex-box">
-                            <span class="flex-box__cell">
-                              <ColorChip
-                                :colors="['241, 242, 244']"
-                                size="small"
-                              ></ColorChip>
-                            </span>
-                            <span
-                              class="flex-box__cell flex-box__cell--small-regular flex-1"
-                              >아틸라스 화이트(SAW)</span
-                            >
-                            <span class="flex-box__cell font-weight-medium">
-                              400,000 원
-                            </span>
-                          </span>
-                        </RadioButtonLabelText>
-                      </RadioButton>
-                    </li>
-                    <li class="row-margin-item-group">
-                      <RadioButton
-                        theme="tertiary"
-                        :full="true"
-                        name="leaseRentEstimationSystemUsedLeaseExterior"
-                        id="leaseRentEstimationSystemUsedLeaseExterior_005"
-                      >
-                        <RadioButtonObject />
-                        <RadioButtonLabelText>
-                          <span class="flex-box">
-                            <span class="flex-box__cell">
-                              <ColorChip
-                                :colors="['78, 105, 100']"
-                                size="small"
-                              ></ColorChip>
-                            </span>
-                            <span
-                              class="flex-box__cell flex-box__cell--small-regular flex-1"
-                              >톰보이 카키(TKS)</span
-                            >
-                            <span class="flex-box__cell font-weight-medium">
-                              700,000 원
-                            </span>
-                          </span>
-                          <span
-                            :class="[
-                              $style['color-etc'],
-                              'flex-box',
-                              'row-margin-mini',
-                            ]"
-                          >
-                            <span
-                              class="flex-box__cell text-body-5 color-green"
-                            >
-                              연계된 옵션 선택 필요
-                            </span>
-                            <span
-                              class="flex-box__cell flex-box__cell--small-regular"
-                            >
-                              <RoundStatus
-                                :block="true"
-                                size="small"
-                                theme="secondary"
-                              >
-                                재고한정
-                              </RoundStatus>
-                            </span>
-                          </span>
-                        </RadioButtonLabelText>
-                      </RadioButton>
-                    </li>
-                    <li class="row-margin-item-group">
-                      <RadioButton
-                        theme="tertiary"
-                        :full="true"
-                        name="leaseRentEstimationSystemUsedLeaseExterior"
-                        id="leaseRentEstimationSystemUsedLeaseExterior_006"
-                      >
-                        <RadioButtonObject />
-                        <RadioButtonLabelText>
-                          <span class="flex-box">
-                            <span class="flex-box__cell">
-                              <ColorChip
-                                :colors="['37, 59, 117']"
-                                size="small"
-                              ></ColorChip>
-                            </span>
-                            <span
-                              class="flex-box__cell flex-box__cell--small-regular flex-1"
-                              >아틀란티스 네이비(NAV)</span
-                            >
-                            <span class="flex-box__cell font-weight-medium">
-                              300,000 원
-                            </span>
-                          </span>
-                          <span
-                            :class="[
-                              $style['color-etc'],
-                              'flex-box',
-                              'row-margin-mini',
-                            ]"
-                          >
-                            <span
-                              class="flex-box__cell flex-box__cell--small-regular"
-                            >
-                              <RoundStatus
-                                :block="true"
-                                size="small"
-                                theme="secondary"
-                              >
-                                재고한정
-                              </RoundStatus>
-                            </span>
-                          </span>
-                        </RadioButtonLabelText>
-                      </RadioButton>
-                    </li>
-                    <li class="row-margin-item-group">
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell">
-                          <RadioButton
-                            theme="tertiary"
-                            :onlyObject="true"
-                            name="leaseRentEstimationSystemUsedLeaseExterior"
-                            id="leaseRentEstimationSystemUsedLeaseExterior_007"
-                          >
-                            <RadioButtonObject />
-                            <RadioButtonLabelText
-                              >직접입력</RadioButtonLabelText
-                            >
-                          </RadioButton>
-                        </div>
-                        <div
-                          class="flex-box__cell flex-box__cell--small-regular flex-1"
-                        >
-                          <FormList>
-                            <FormListItem
-                              titleText="외장 색상 명칭"
-                              target="#leaseRentEstimationSystemUsedLeaseExteriorETC"
-                              :forceFocus="true"
-                              :disabled="true"
-                            >
-                              <FormInvalid :error="state.exteriorETCError">
-                                <InputBlock
-                                  :error="state.exteriorETCError"
-                                  :disabled="true"
-                                >
-                                  <InputBlockCell :flexible="true">
-                                    <BasicInput
-                                      title="외장 색상 명칭"
-                                      id="leaseRentEstimationSystemUsedLeaseExteriorETC"
-                                      :disabled="true"
-                                    />
-                                  </InputBlockCell>
-                                </InputBlock>
-                                <FormInvalidMessage>
-                                  Error Message
-                                </FormInvalidMessage>
-                              </FormInvalid>
-                            </FormListItem>
-                            <FormListItem
-                              titleText="금액"
-                              target="#leaseRentEstimationSystemUsedLeaseExteriorETCPrice"
-                              :forceFocus="true"
-                              :disabled="true"
-                            >
-                              <FormInvalid :error="state.exteriorETCPriceError">
-                                <InputBlock
-                                  :error="state.exteriorETCPriceError"
-                                  :disabled="true"
-                                >
-                                  <InputBlockCell :flexible="true">
-                                    <BasicInput
-                                      title="금액"
-                                      id="leaseRentEstimationSystemUsedLeaseExteriorETCPrice"
-                                      pattern="\d*"
-                                      :useDelete="false"
-                                      align="right"
-                                      :disabled="true"
-                                    />
-                                  </InputBlockCell>
-                                  <template v-slot:innerRight>
-                                    <div class="text-body-3">원</div>
-                                  </template>
-                                </InputBlock>
-                                <FormInvalidMessage>
-                                  Error Message
-                                </FormInvalidMessage>
-                              </FormInvalid>
-                            </FormListItem>
-                          </FormList>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </section>
-              </UiAccordionLayer>
-            </UiAccordionItem>
-            <!-- // 외장 -->
-
-            <!-- 내장 -->
-            <UiAccordionItem
-              :classNames="{ item: $style['estimate-list__item'] }"
-              v-slot="accordionItemSlotProps"
-            >
-              <div :class="$style['estimate-list__head']">
-                <div :class="$style['estimate-list__block']">
-                  <div :class="$style['estimate-list__left']">
-                    <KeyValue align="left" size="regular">
-                      <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                        <KeyValueTitle>
-                          <div class="text-body-4">내장</div>
-                        </KeyValueTitle>
-                        <KeyValueText>
-                          <div class="flex-box align-items-start">
-                            <div class="flex-box__cell">
-                              <ColorChip
-                                :colors="['241, 233, 233']"
-                                size="small"
-                              ></ColorChip>
-                            </div>
-                            <div class="flex-box__cell flex-1">그레이</div>
-                          </div>
-                        </KeyValueText>
-                      </KeyValueItem>
-                    </KeyValue>
-                  </div>
-                </div>
-                <div :class="$style['estimate-list__arrow']">
-                  <UiAccordionOpener
-                    :toggleAction="false"
-                    :classNames="{ button: $style['estimate-list__opener'] }"
-                    @click="
-                      testAccordionToggle(accordionItemSlotProps, testAjax)
-                    "
-                  />
-                </div>
-              </div>
-
-              <UiAccordionLayer
-                :classNames="{ layer: $style['estimate-list__layer'] }"
-              >
-                <section :class="$style['estimate-list__contents']">
-                  <ul class="reset-list">
-                    <li class="row-margin-item-group">
-                      <RadioButton
-                        theme="tertiary"
-                        :full="true"
-                        name="leaseRentEstimationSystemUsedLeaseInterior"
-                        id="leaseRentEstimationSystemUsedLeaseInterior_001"
-                        :defaultChecked="true"
-                      >
-                        <RadioButtonObject />
-                        <RadioButtonLabelText>
-                          <span class="flex-box">
-                            <span class="flex-box__cell">
-                              <ColorChip size="small"></ColorChip>
-                            </span>
-                            <span
-                              class="flex-box__cell flex-box__cell--small-regular flex-1"
-                              >선택안함</span
-                            >
-                          </span>
-                        </RadioButtonLabelText>
-                      </RadioButton>
-                    </li>
-                    <li class="row-margin-item-group">
-                      <RadioButton
-                        theme="tertiary"
-                        :full="true"
-                        name="leaseRentEstimationSystemUsedLeaseInterior"
-                        id="leaseRentEstimationSystemUsedLeaseInterior_002"
-                      >
-                        <RadioButtonObject />
-                        <RadioButtonLabelText>
-                          <span class="flex-box">
-                            <span class="flex-box__cell">
-                              <ColorChip
-                                :colors="['66, 66, 66']"
-                                size="small"
-                              ></ColorChip>
-                            </span>
-                            <span
-                              class="flex-box__cell flex-box__cell--small-regular flex-1"
-                              >그레이</span
-                            >
-                          </span>
-                        </RadioButtonLabelText>
-                      </RadioButton>
-                    </li>
-                    <li class="row-margin-item-group">
-                      <RadioButton
-                        theme="tertiary"
-                        :full="true"
-                        name="leaseRentEstimationSystemUsedLeaseInterior"
-                        id="leaseRentEstimationSystemUsedLeaseInterior_003"
-                      >
-                        <RadioButtonObject />
-                        <RadioButtonLabelText>
-                          <span class="flex-box">
-                            <span class="flex-box__cell">
-                              <ColorChip
-                                :colors="['244, 241, 241']"
-                                size="small"
-                              ></ColorChip>
-                            </span>
-                            <span
-                              class="flex-box__cell flex-box__cell--small-regular flex-1"
-                              >아이보리</span
-                            >
-                          </span>
-                        </RadioButtonLabelText>
-                      </RadioButton>
-                    </li>
-                    <li class="row-margin-item-group">
-                      <RadioButton
-                        theme="tertiary"
-                        :full="true"
-                        name="leaseRentEstimationSystemUsedLeaseInterior"
-                        id="leaseRentEstimationSystemUsedLeaseInterior_004"
-                      >
-                        <RadioButtonObject />
-                        <RadioButtonLabelText>
-                          <span class="flex-box">
-                            <span class="flex-box__cell">
-                              <ColorChip
-                                :colors="['241, 242, 244']"
-                                size="small"
-                              ></ColorChip>
-                            </span>
-                            <span
-                              class="flex-box__cell flex-box__cell--small-regular flex-1"
-                              >화이트</span
-                            >
-                            <span class="flex-box__cell font-weight-medium">
-                              400,000 원
-                            </span>
-                          </span>
-                          <span
-                            :class="[
-                              $style['color-etc'],
-                              'flex-box',
-                              'row-margin-mini',
-                            ]"
-                          >
-                            <span
-                              class="flex-box__cell text-body-5 color-green"
-                            >
-                              선택된 외장 조합 불가
-                            </span>
-                          </span>
-                        </RadioButtonLabelText>
-                      </RadioButton>
-                    </li>
-                    <li class="row-margin-item-group">
-                      <RadioButton
-                        theme="tertiary"
-                        :full="true"
-                        name="leaseRentEstimationSystemUsedLeaseInterior"
-                        id="leaseRentEstimationSystemUsedLeaseInterior_005"
-                      >
-                        <RadioButtonObject />
-                        <RadioButtonLabelText>
-                          <span class="flex-box">
-                            <span class="flex-box__cell">
-                              <ColorChip
-                                :colors="['78, 105, 100']"
-                                size="small"
-                              ></ColorChip>
-                            </span>
-                            <span
-                              class="flex-box__cell flex-box__cell--small-regular flex-1"
-                              >카키</span
-                            >
-                            <span class="flex-box__cell font-weight-medium">
-                              700,000 원
-                            </span>
-                          </span>
-                          <span
-                            :class="[
-                              $style['color-etc'],
-                              'flex-box',
-                              'row-margin-mini',
-                            ]"
-                          >
-                            <span
-                              class="flex-box__cell text-body-5 color-green"
-                            >
-                              연계된 옵션 선택 필요
-                            </span>
-                            <span
-                              class="flex-box__cell flex-box__cell--small-regular"
-                            >
-                              <RoundStatus
-                                :block="true"
-                                size="small"
-                                theme="secondary"
-                              >
-                                재고한정
-                              </RoundStatus>
-                            </span>
-                          </span>
-                        </RadioButtonLabelText>
-                      </RadioButton>
-                    </li>
-                    <li class="row-margin-item-group">
-                      <RadioButton
-                        theme="tertiary"
-                        :full="true"
-                        name="leaseRentEstimationSystemUsedLeaseInterior"
-                        id="leaseRentEstimationSystemUsedLeaseInterior_006"
-                      >
-                        <RadioButtonObject />
-                        <RadioButtonLabelText>
-                          <span class="flex-box">
-                            <span class="flex-box__cell">
-                              <ColorChip
-                                :colors="['37, 59, 117']"
-                                size="small"
-                              ></ColorChip>
-                            </span>
-                            <span
-                              class="flex-box__cell flex-box__cell--small-regular flex-1"
-                              >네이비</span
-                            >
-                            <span class="flex-box__cell font-weight-medium">
-                              300,000 원
-                            </span>
-                          </span>
-                          <span
-                            :class="[
-                              $style['color-etc'],
-                              'flex-box',
-                              'row-margin-mini',
-                            ]"
-                          >
-                            <span
-                              class="flex-box__cell flex-box__cell--small-regular"
-                            >
-                              <RoundStatus
-                                :block="true"
-                                size="small"
-                                theme="secondary"
-                              >
-                                재고한정
-                              </RoundStatus>
-                            </span>
-                          </span>
-                        </RadioButtonLabelText>
-                      </RadioButton>
-                    </li>
-                    <li class="row-margin-item-group">
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell">
-                          <RadioButton
-                            theme="tertiary"
-                            :onlyObject="true"
-                            name="leaseRentEstimationSystemUsedLeaseInterior"
-                            id="leaseRentEstimationSystemUsedLeaseInterior_007"
-                          >
-                            <RadioButtonObject />
-                            <RadioButtonLabelText
-                              >직접입력</RadioButtonLabelText
-                            >
-                          </RadioButton>
-                        </div>
-                        <div
-                          class="flex-box__cell flex-box__cell--small-regular flex-1"
-                        >
-                          <FormList>
-                            <FormListItem
-                              titleText="내장 색상 명칭"
-                              target="#leaseRentEstimationSystemUsedLeaseInteriorETC"
-                              :forceFocus="true"
-                              :disabled="true"
-                            >
-                              <FormInvalid :error="state.interiorETCError">
-                                <InputBlock
-                                  :error="state.interiorETCError"
-                                  :disabled="true"
-                                >
-                                  <InputBlockCell :flexible="true">
-                                    <BasicInput
-                                      title="내장 색상 명칭"
-                                      id="leaseRentEstimationSystemUsedLeaseInteriorETC"
-                                      :disabled="true"
-                                    />
-                                  </InputBlockCell>
-                                </InputBlock>
-                                <FormInvalidMessage>
-                                  Error Message
-                                </FormInvalidMessage>
-                              </FormInvalid>
-                            </FormListItem>
-                            <FormListItem
-                              titleText="금액"
-                              target="#leaseRentEstimationSystemUsedLeaseInteriorETCPrice"
-                              :forceFocus="true"
-                              :disabled="true"
-                            >
-                              <FormInvalid :error="state.interiorETCPriceError">
-                                <InputBlock
-                                  :error="state.interiorETCPriceError"
-                                  :disabled="true"
-                                >
-                                  <InputBlockCell :flexible="true">
-                                    <BasicInput
-                                      title="금액"
-                                      id="leaseRentEstimationSystemUsedLeaseInteriorETCPrice"
-                                      pattern="\d*"
-                                      :useDelete="false"
-                                      align="right"
-                                      :disabled="true"
-                                    />
-                                  </InputBlockCell>
-                                  <template v-slot:innerRight>
-                                    <div class="text-body-3">원</div>
-                                  </template>
-                                </InputBlock>
-                                <FormInvalidMessage>
-                                  Error Message
-                                </FormInvalidMessage>
-                              </FormInvalid>
-                            </FormListItem>
-                          </FormList>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </section>
-              </UiAccordionLayer>
-            </UiAccordionItem>
-            <!-- // 내장 -->
+            <!-- //Case : 브랜드 선택시 노출 -->
           </UiAccordion>
-
-          <div :class="$style['estimate-list__foot']">
-            <ul class="reset-list">
-              <li class="row-margin-item-group">
-                <RadioButton
-                  theme="tertiary"
-                  :full="true"
-                  align="center"
-                  name="leaseRentEstimationSystemUsedLeaseCarAmount"
-                  id="leaseRentEstimationSystemUsedLeaseCarAmount_001"
-                  :defaultChecked="true"
-                >
-                  <RadioButtonObject />
-                  <RadioButtonLabelText>
-                    <span class="flex-box">
-                      <span class="flex-box__cell flex-1 font-weight-medium">
-                        기본가격
-                      </span>
-                      <!-- DD : 기본가격 선택시 color-gray-quinary 클래스 값 제거 -->
-                      <span class="flex-box__cell color-gray-quinary">
-                        <UnitText rightUnit="원" align="right">
-                          16,900,000
-                        </UnitText>
-                      </span>
-                    </span>
-                  </RadioButtonLabelText>
-                </RadioButton>
-              </li>
-              <li class="row-margin-item-group">
-                <RadioButton
-                  theme="tertiary"
-                  :full="true"
-                  name="leaseRentEstimationSystemUsedLeaseCarAmount"
-                  id="leaseRentEstimationSystemUsedLeaseCarAmount_002"
-                >
-                  <RadioButtonObject />
-                  <RadioButtonLabelText>수기입력</RadioButtonLabelText>
-                </RadioButton>
-                <div :class="[$style['car-amount'], 'row-margin-item']">
-                  <!-- DD : 수기입력 선택시 :disabled="false" -->
-                  <FormList>
-                    <FormListItem
-                      titleText="차량금액"
-                      target="#leaseRentEstimationSystemUsedLeaseCarAmountPrice"
-                      :forceFocus="true"
-                      :disabled="true"
-                    >
-                      <FormInvalid :error="state.carAmountPriceError">
-                        <InputBlock
-                          :error="state.carAmountPriceError"
-                          :disabled="true"
-                        >
-                          <InputBlockCell :flexible="true">
-                            <BasicInput
-                              title="차량금액"
-                              id="leaseRentEstimationSystemUsedLeaseCarAmountPrice"
-                              pattern="\d*"
-                              :useDelete="false"
-                              align="right"
-                              :disabled="true"
-                            />
-                          </InputBlockCell>
-                          <template v-slot:innerRight>
-                            <div class="text-body-3">원</div>
-                          </template>
-                        </InputBlock>
-                        <FormInvalidMessage>Error Message</FormInvalidMessage>
-                      </FormInvalid>
-                    </FormListItem>
-                  </FormList>
-                  <!-- // DD : 수기입력 선택시 :disabled="false" -->
-                </div>
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        <section :class="[$style['estimate-list'], 'row-margin-item-group']">
-          <UiAccordion tagName="div" :defaultSpeed="0">
-            <UiAccordionItem tagName="div" v-slot="accordionItemSlotProps">
-              <div :class="$style['estimate-list__top']">
-                <div class="flex-box">
-                  <div class="flex-box__cell flex-1">
-                    <h3 :class="$style['estimate-list__title']">옵션 선택</h3>
-                  </div>
-                  <div class="flex-box__cell">
-                    <UiAccordionOpener
-                      :classNames="{
-                        button: $style['estimate-list__top-opener'],
-                      }"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <UiAccordionLayer>
-                <div :class="$style['option-select']">
-                  <ul :class="$style['option-select__list']">
-                    <li :class="$style['option-select__item']">
-                      <div :class="$style['option-select__block']">
-                        <CheckBox
-                          :full="true"
-                          theme="secondary"
-                          id="leaseRentEstimationSystemUsedLeaseOption001"
-                          :defaultChecked="true"
-                          :classNames="{
-                            wrap: $style['option-select__check'],
-                            input: $style['option-select__input'],
-                            label: $style['option-select__label'],
-                          }"
-                        >
-                          <CheckBoxObject />
-                          <CheckBoxLabelText
-                            :classNames="{
-                              text: $style['option-select__label-text'],
-                            }"
-                          >
-                            <span class="flex-box">
-                              <span
-                                class="flex-box__cell flex-1 font-weight-regular"
-                                >현대 스마트 센서 I</span
-                              >
-                              <span class="flex-box__cell font-weight-medium">
-                                700,000 원
-                              </span>
-                            </span>
-                            <span
-                              class="display-block text-body-5 color-gray-secondary row-margin-mini"
-                            >
-                              전방 충돌방지 보조(교차로대향차), 후측방 충돌방지
-                              보조, 후방 교차 충돌방지 보조, 안전 하차 경고,
-                              스마트 크루즈 컨트롤(스탑앤고 기능 미포함),
-                              내비게이션 기반 스마트 크루즈 컨트롤(안전구간,
-                              곡선로)
-                            </span>
-                          </CheckBoxLabelText>
-                        </CheckBox>
-                      </div>
-                    </li>
-                    <li :class="$style['option-select__item']">
-                      <div :class="$style['option-select__block']">
-                        <CheckBox
-                          :full="true"
-                          theme="secondary"
-                          id="leaseRentEstimationSystemUsedLeaseOption002"
-                          :classNames="{
-                            wrap: $style['option-select__check'],
-                            input: $style['option-select__input'],
-                            label: $style['option-select__label'],
-                          }"
-                        >
-                          <CheckBoxObject />
-                          <CheckBoxLabelText
-                            :classNames="{
-                              text: $style['option-select__label-text'],
-                            }"
-                          >
-                            <span class="flex-box">
-                              <span
-                                class="flex-box__cell flex-1 font-weight-regular"
-                                >컴포트</span
-                              >
-                              <span class="flex-box__cell font-weight-medium">
-                                400,000 원
-                              </span>
-                            </span>
-                            <span
-                              class="display-block text-body-5 color-gray-secondary row-margin-mini"
-                            >
-                              1열 풀 폴딩 시트, 2열 슬라이딩 & 리클라이닝 시트,
-                              USB 충전기(2열 1개)
-                            </span>
-                            <span class="flex-box row-margin-mini">
-                              <span
-                                class="flex-box__cell text-body-5 color-green"
-                              >
-                                연계된 옵션 선택 필요
-                              </span>
-                            </span>
-                          </CheckBoxLabelText>
-                        </CheckBox>
-                      </div>
-                    </li>
-                    <li :class="$style['option-select__item']">
-                      <div :class="$style['option-select__block']">
-                        <CheckBox
-                          :full="true"
-                          theme="secondary"
-                          id="leaseRentEstimationSystemUsedLeaseOption003"
-                          :classNames="{
-                            wrap: $style['option-select__check'],
-                            input: $style['option-select__input'],
-                            label: $style['option-select__label'],
-                          }"
-                        >
-                          <CheckBoxObject />
-                          <CheckBoxLabelText
-                            :classNames="{
-                              text: $style['option-select__label-text'],
-                            }"
-                          >
-                            <span class="flex-box">
-                              <span
-                                class="flex-box__cell flex-1 font-weight-regular"
-                                >선루프</span
-                              >
-                              <span class="flex-box__cell font-weight-medium">
-                                400,000 원
-                              </span>
-                            </span>
-                            <span
-                              class="display-block text-body-5 color-gray-secondary row-margin-mini"
-                            >
-                              선루프, A필라 블랙테이프
-                            </span>
-                          </CheckBoxLabelText>
-                        </CheckBox>
-                      </div>
-                    </li>
-                    <li :class="$style['option-select__item']">
-                      <div :class="$style['option-select__block']">
-                        <CheckBox
-                          :full="true"
-                          theme="secondary"
-                          id="leaseRentEstimationSystemUsedLeaseOption004"
-                          :classNames="{
-                            wrap: $style['option-select__check'],
-                            input: $style['option-select__input'],
-                            label: $style['option-select__label'],
-                          }"
-                        >
-                          <CheckBoxObject />
-                          <CheckBoxLabelText
-                            :classNames="{
-                              text: $style['option-select__label-text'],
-                            }"
-                          >
-                            <span class="flex-box">
-                              <span
-                                class="flex-box__cell flex-1 font-weight-regular"
-                                >스타일</span
-                              >
-                              <span class="flex-box__cell font-weight-medium">
-                                400,000 원
-                              </span>
-                            </span>
-                            <span
-                              class="display-block text-body-5 color-gray-secondary row-margin-mini"
-                            >
-                              17인치 알로이 휠 &amp; 타이어, 아웃사이드 미러(LED
-                              방향지시등), LED 리어콤비램프
-                            </span>
-                            <span class="flex-box row-margin-mini">
-                              <span
-                                class="flex-box__cell flex-box__cell--small-regular"
-                              >
-                                <RoundStatus
-                                  :block="true"
-                                  size="small"
-                                  theme="secondary"
-                                >
-                                  재고한정
-                                </RoundStatus>
-                              </span>
-                            </span>
-                          </CheckBoxLabelText>
-                        </CheckBox>
-                      </div>
-                    </li>
-                    <li
-                      :class="[
-                        $style['option-select__item'],
-                        $style['option-select__item--selected'],
-                      ]"
-                    >
-                      <div :class="$style['option-select__block']">
-                        <span class="flex-box text-body-4">
-                          <span class="flex-box__cell font-weight-medium">
-                            <DeleteButton />
-                          </span>
-                          <span
-                            class="flex-box__cell flex-box__cell--small-regular flex-1 font-weight-regular"
-                            >옵션 입력값 출력</span
-                          >
-                          <span class="flex-box__cell font-weight-medium">
-                            400,000 원
-                          </span>
-                        </span>
-                      </div>
-                    </li>
-                    <li :class="$style['option-select__item']">
-                      <div :class="$style['option-select__block']">
-                        <FormList>
-                          <FormListItem
-                            titleText="옵션 명칭"
-                            target="#leaseRentEstimationSystemUsedLeaseOptionETC"
-                            :forceFocus="true"
-                          >
-                            <FormInvalid :error="state.optionETCError">
-                              <InputBlock :error="state.optionETCError">
-                                <InputBlockCell :flexible="true">
-                                  <BasicInput
-                                    title="옵션 명칭"
-                                    id="leaseRentEstimationSystemUsedLeaseOptionETC"
-                                  />
-                                </InputBlockCell>
-                              </InputBlock>
-                              <FormInvalidMessage
-                                >Error Message</FormInvalidMessage
-                              >
-                            </FormInvalid>
-                          </FormListItem>
-                          <FormListItem
-                            titleText="금액"
-                            target="#leaseRentEstimationSystemUsedLeaseOptionETCPrice"
-                            :forceFocus="true"
-                          >
-                            <FormInvalid :error="state.optionETCPriceError">
-                              <InputBlock :error="state.optionETCPriceError">
-                                <InputBlockCell :flexible="true">
-                                  <BasicInput
-                                    title="금액"
-                                    id="leaseRentEstimationSystemUsedLeaseOptionETCPrice"
-                                    pattern="\d*"
-                                    :useDelete="false"
-                                    align="right"
-                                  />
-                                </InputBlockCell>
-                                <template v-slot:innerRight>
-                                  <div class="text-body-3">원</div>
-                                </template>
-                              </InputBlock>
-                              <FormInvalidMessage
-                                >Error Message</FormInvalidMessage
-                              >
-                            </FormInvalid>
-                          </FormListItem>
-                        </FormList>
-                        <div class="row-margin-item-group">
-                          <BasicButton size="small" theme="quaternary"
-                            >적용</BasicButton
-                          >
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </UiAccordionLayer>
-
-              <div v-if="!accordionItemSlotProps.opened">
-                <div :class="$style['option-select']">
-                  <ul :class="$style['option-select__list']">
-                    <li :class="$style['option-select__item']">
-                      <div :class="$style['option-select__block']">
-                        <span class="flex-box text-body-4">
-                          <span
-                            class="flex-box__cell flex-1 font-weight-regular"
-                            >현대 스마트 센서 I</span
-                          >
-                          <span class="flex-box__cell font-weight-medium">
-                            700,000 원
-                          </span>
-                        </span>
-                        <span
-                          class="display-block text-body-5 color-gray-secondary row-margin-mini"
-                        >
-                          전방 충돌방지 보조(교차로대향차), 후측방 충돌방지
-                          보조, 후방 교차 충돌방지 보조, 안전 하차 경고, 스마트
-                          크루즈 컨트롤(스탑앤고 기능 미포함), 내비게이션 기반
-                          스마트 크루즈 컨트롤(안전구간, 곡선로)
-                        </span>
-                      </div>
-                    </li>
-                    <li :class="$style['option-select__item']">
-                      <div :class="$style['option-select__block']">
-                        <span class="flex-box text-body-4">
-                          <span
-                            class="flex-box__cell flex-1 font-weight-regular"
-                            >컴포트</span
-                          >
-                          <span class="flex-box__cell font-weight-medium">
-                            400,000 원
-                          </span>
-                        </span>
-                        <span
-                          class="display-block text-body-5 color-gray-secondary row-margin-mini"
-                        >
-                          1열 풀 폴딩 시트, 2열 슬라이딩 & 리클라이닝 시트, USB
-                          충전기(2열 1개)
-                        </span>
-                        <span class="flex-box row-margin-mini">
-                          <span class="flex-box__cell text-body-5 color-green">
-                            연계된 옵션 선택 필요
-                          </span>
-                        </span>
-                      </div>
-                    </li>
-                    <li :class="$style['option-select__item']">
-                      <div :class="$style['option-select__block']">
-                        <span class="flex-box text-body-4">
-                          <span
-                            class="flex-box__cell flex-1 font-weight-regular"
-                            >옵션 입력값 출력</span
-                          >
-                          <span class="flex-box__cell font-weight-medium">
-                            400,000 원
-                          </span>
-                        </span>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </UiAccordionItem>
-          </UiAccordion>
-          <div :class="$style['estimate-list__foot']">
-            <KeyValue verticalAlign="center">
-              <KeyValueItem :classNames="{ item: 'text-body-4' }">
-                <KeyValueTitle
-                  :classNames="{
-                    title: 'color-black font-weight-bold',
-                  }"
-                >
-                  옵션 (+색상)
-                </KeyValueTitle>
-                <KeyValueText>
-                  <UnitText rightUnit="원" align="right"> 1,200,000 </UnitText>
-                </KeyValueText>
-              </KeyValueItem>
-            </KeyValue>
-          </div>
-        </section>
-
-        <section :class="[$style['estimate-list'], 'row-margin-item-group']">
-          <div :class="$style['estimate-list__top']">
-            <h3 :class="$style['estimate-list__title']">할인/탁송료</h3>
-          </div>
-          <div :class="$style['estimate-list__foot']">
-            <BoxCheckList spacing="small">
-              <BoxCheckListItem>
-                <BoxCheck
-                  :minSide="true"
-                  name="leaseRentEstimationSystemUsedLeaseDelivery"
-                  id="leaseRentEstimationSystemUsedLeaseDelivery001"
-                  size="small"
-                  :defaultChecked="true"
-                >
-                  <BoxCheckLabel>대리점출고</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  :minSide="true"
-                  name="leaseRentEstimationSystemUsedLeaseDelivery"
-                  id="leaseRentEstimationSystemUsedLeaseDelivery002"
-                  size="small"
-                >
-                  <BoxCheckLabel>특판출고</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-            </BoxCheckList>
-
-            <!-- Case : 특판출고 선택시 비노출 -->
-            <section class="row-margin-item-group">
-              <div class="flex-box align-items-start row-margin-item-group">
-                <div class="flex-box__cell flex-1">
-                  <h4 class="text-body-4">대리점 출고시 할인</h4>
-                </div>
-                <div class="flex-box__cell flex-box__cell--medium">
-                  <CheckBox
-                    id="leaseRentEstimationSystemUsedLeaseDeliveryDiscountOnOff"
-                    theme="tertiary"
-                  >
-                    <CheckBoxObject />
-                    <CheckBoxLabelText>개소세 감면액 포함</CheckBoxLabelText>
-                  </CheckBox>
-                </div>
-              </div>
-              <ul class="reset-list">
-                <li class="row-margin-item-group">
-                  <div class="flex-box align-items-start">
-                    <div class="flex-box__cell">
-                      <RadioButton
-                        theme="tertiary"
-                        :onlyObject="true"
-                        name="leaseRentEstimationSystemUsedLeaseDeliveryDiscount"
-                        id="leaseRentEstimationSystemUsedLeaseDeliveryDiscount001"
-                      >
-                        <RadioButtonObject />
-                        <RadioButtonLabelText>할인액</RadioButtonLabelText>
-                      </RadioButton>
-                    </div>
-                    <div
-                      class="flex-box__cell flex-box__cell--small-regular flex-1"
-                    >
-                      <!-- Case : 할인액 선택시 :disabled="false" -->
-                      <FormList>
-                        <FormListItem
-                          titleText="할인액"
-                          target="#leaseRentEstimationSystemUsedLeaseDeliveryDiscountPrice"
-                          :forceFocus="true"
-                          :disabled="true"
-                        >
-                          <FormInvalid
-                            :error="state.deliveryDiscountPriceError"
-                          >
-                            <InputBlock
-                              :error="state.deliveryDiscountPriceError"
-                              :disabled="true"
-                            >
-                              <InputBlockCell :flexible="true">
-                                <BasicInput
-                                  title="할인액"
-                                  id="leaseRentEstimationSystemUsedLeaseDeliveryDiscountPrice"
-                                  pattern="\d*"
-                                  :useDelete="false"
-                                  align="right"
-                                  defaultValue="0"
-                                  :disabled="true"
-                                />
-                              </InputBlockCell>
-                              <template v-slot:innerRight>
-                                <div class="text-body-3">원</div>
-                              </template>
-                            </InputBlock>
-                            <FormInvalidMessage>
-                              Error Message
-                            </FormInvalidMessage>
-                          </FormInvalid>
-                        </FormListItem>
-                      </FormList>
-                      <!-- // Case : 할인액 선택시 :disabled="false" -->
-                    </div>
-                  </div>
-                </li>
-                <li class="row-margin-item-group">
-                  <div class="flex-box align-items-start">
-                    <div class="flex-box__cell">
-                      <RadioButton
-                        theme="tertiary"
-                        :onlyObject="true"
-                        name="leaseRentEstimationSystemUsedLeaseDeliveryDiscount"
-                        id="leaseRentEstimationSystemUsedLeaseDeliveryDiscount002"
-                      >
-                        <RadioButtonObject />
-                        <RadioButtonLabelText>할인액</RadioButtonLabelText>
-                      </RadioButton>
-                    </div>
-                    <div
-                      class="flex-box__cell flex-box__cell--small-regular flex-1"
-                    >
-                      <!-- Case : 할인율 선택시 :disabled="false" -->
-                      <FormList>
-                        <FormListItem
-                          titleText="할인율"
-                          target="#leaseRentEstimationSystemUsedLeaseDeliveryDiscountRatio"
-                          :forceFocus="true"
-                          :disabled="true"
-                        >
-                          <FormInvalid
-                            :error="state.deliveryDiscountRatioError"
-                          >
-                            <InputBlock
-                              :error="state.deliveryDiscountRatioError"
-                              :disabled="true"
-                            >
-                              <InputBlockCell>
-                                <BasicInput
-                                  type="number"
-                                  title="할인율 비율(%)"
-                                  id="leaseRentEstimationSystemUsedLeaseFeeCMRatio"
-                                  pattern="\d*"
-                                  :useDelete="false"
-                                  align="right"
-                                  defaultValue="0"
-                                  :classNames="{ wrap: 'input-width-ratio' }"
-                                  :disabled="true"
-                                />
-                              </InputBlockCell>
-                              <InputBlockCell>
-                                <div class="text-body-3">%</div>
-                              </InputBlockCell>
-                              <!-- Case : 할인율 선택시 :disabled="false" 기능 제외 -->
-                              <InputBlockCell :flexible="true">
-                                <BasicInput
-                                  title="할인율 금액"
-                                  id="leaseRentEstimationSystemUsedLeaseFeeCMPrice"
-                                  pattern="\d*"
-                                  :useDelete="false"
-                                  align="right"
-                                  defaultValue="0"
-                                  :disabled="true"
-                                />
-                              </InputBlockCell>
-                              <InputBlockCell>
-                                <div class="text-body-3 color-gray-quinary">
-                                  원
-                                </div>
-                              </InputBlockCell>
-                              <!-- // Case : 할인율 선택시 :disabled="false" 기능 제외 -->
-                            </InputBlock>
-                            <FormInvalidMessage>
-                              Error Message
-                            </FormInvalidMessage>
-                          </FormInvalid>
-                        </FormListItem>
-                      </FormList>
-                      <!-- // Case : 할인율 선택시 :disabled="false" -->
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </section>
-            <!-- // Case : 특판출고 선택시 비노출 -->
-          </div>
-          <div :class="$style['estimate-list__foot']">
-            <section>
-              <h4 class="text-body-4 row-margin-item-group">제조사탁송</h4>
-              <FormList>
-                <FormListItem
-                  titleText="금액"
-                  target="#leaseRentEstimationSystemUsedLeaseDeliveryManufacturerPrice"
-                  :forceFocus="true"
-                  :disabled="true"
-                >
-                  <FormInvalid :error="state.deliveryManufacturerPriceError">
-                    <InputBlock
-                      :error="state.deliveryManufacturerPriceError"
-                      :disabled="true"
-                    >
-                      <InputBlockCell :flexible="true">
-                        <BasicInput
-                          title="금액"
-                          id="leaseRentEstimationSystemUsedLeaseDeliveryManufacturerPrice"
-                          pattern="\d*"
-                          :useDelete="false"
-                          align="right"
-                          defaultValue="0"
-                          :disabled="true"
-                        />
-                      </InputBlockCell>
-                      <template v-slot:innerRight>
-                        <div class="text-body-3">원</div>
-                      </template>
-                    </InputBlock>
-                    <FormInvalidMessage> Error Message </FormInvalidMessage>
-                  </FormInvalid>
-                </FormListItem>
-              </FormList>
-            </section>
-          </div>
         </section>
 
         <div :class="$style['total']">
-          <KeyValue margin="regular">
-            <KeyValueItem :classNames="{ item: 'text-body-3' }">
-              <KeyValueTitle>순수차량가격</KeyValueTitle>
-              <KeyValueText>0 원</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem :classNames="{ item: 'text-body-3' }">
-              <KeyValueTitle>할인금액</KeyValueTitle>
-              <KeyValueText>0 원</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem :classNames="{ item: 'text-body-3' }">
-              <KeyValueTitle>개소세감면</KeyValueTitle>
-              <KeyValueText>0 원</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem :classNames="{ item: 'text-body-3' }">
-              <KeyValueTitle>제조사탁송료</KeyValueTitle>
-              <KeyValueText>0 원</KeyValueText>
-            </KeyValueItem>
-          </KeyValue>
-
-          <BasicHr
-            theme="tertiary"
-            type="contents"
-            className="row-margin-contents-small"
-          />
-
-          <KeyValue verticalAlign="center">
-            <KeyValueItem :classNames="{ item: 'text-body-3' }">
-              <KeyValueTitle
-                :classNames="{
-                  title: 'color-black font-weight-bold',
-                }"
-              >
-                출고가격 (계산서)
-              </KeyValueTitle>
-              <KeyValueText>
-                <div class="color-green">
-                  <UnitText rightUnit="원" align="right">44,174,225</UnitText>
-                </div>
-              </KeyValueText>
-            </KeyValueItem>
-          </KeyValue>
+          <h3 class="text-body-3 row-margin-item-group">판매가격</h3>
+          <FormList>
+            <FormListItem
+              titleText="금액"
+              target="#leaseRentEstimationSystemUsedLeaseSalePrice"
+            >
+              <FormInvalid :error="state.salePriceError">
+                <InputBlock :error="state.salePriceError">
+                  <InputBlockCell :flexible="true">
+                    <BasicInput
+                      title="금액"
+                      id="leaseRentEstimationSystemUsedLeaseSalePrice"
+                      pattern="\d*"
+                      :useDelete="false"
+                      align="right"
+                    />
+                  </InputBlockCell>
+                  <template v-slot:innerRight>
+                    <div class="text-body-3">원</div>
+                  </template>
+                </InputBlock>
+                <FormInvalidMessage> Error Message </FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
+          </FormList>
         </div>
       </section>
 
@@ -2335,7 +1460,6 @@ export default {
                           <div class="text-body-4">상품</div>
                         </KeyValueTitle>
                         <KeyValueText>
-                          <!-- Case : 기본 -->
                           <BoxCheckList spacing="small">
                             <BoxCheckListItem>
                               <BoxCheck
@@ -2359,11 +1483,6 @@ export default {
                               </BoxCheck>
                             </BoxCheckListItem>
                           </BoxCheckList>
-                          <!-- // Case : 기본 -->
-
-                          <!-- Case : 특판출고 -->
-                          <div>운용리스</div>
-                          <!-- // Case : 특판출고 -->
                         </KeyValueText>
                       </KeyValueItem>
                     </KeyValue>
@@ -2436,52 +1555,7 @@ export default {
                         <KeyValueTitle>
                           <div class="text-body-4">등록명의</div>
                         </KeyValueTitle>
-                        <KeyValueText>
-                          <!-- Case : 기본 -->
-                          <div>
-                            <BoxCheckList spacing="small">
-                              <BoxCheckListItem>
-                                <BoxCheck
-                                  :minSide="true"
-                                  name="leaseRentEstimationSystemUsedLeaseRegistName"
-                                  id="leaseRentEstimationSystemUsedLeaseRegistName_001"
-                                  size="small"
-                                  :defaultChecked="true"
-                                >
-                                  <BoxCheckLabel>금융회사</BoxCheckLabel>
-                                </BoxCheck>
-                              </BoxCheckListItem>
-                              <BoxCheckListItem>
-                                <BoxCheck
-                                  :minSide="true"
-                                  name="leaseRentEstimationSystemUsedLeaseRegistName"
-                                  id="leaseRentEstimationSystemUsedLeaseRegistName_002"
-                                  size="small"
-                                >
-                                  <BoxCheckLabel>리스이용자</BoxCheckLabel>
-                                </BoxCheck>
-                              </BoxCheckListItem>
-                            </BoxCheckList>
-                            <!-- Case : { 등록명의 : 리스이용자 } 선택시 노출 -->
-                            <div class="row-margin-item">
-                              <CheckBox
-                                id="leaseRentEstimationSystemUsedLeaseCommercialLicensePlate"
-                                theme="tertiary"
-                              >
-                                <CheckBoxObject />
-                                <CheckBoxLabelText
-                                  >영업용 번호판</CheckBoxLabelText
-                                >
-                              </CheckBox>
-                            </div>
-                            <!-- // Case : { 등록명의 : 리스이용자 } 선택시 노출 -->
-                          </div>
-                          <!-- // Case : 기본 -->
-
-                          <!-- Case : 특판출고 -->
-                          <div>금융회사</div>
-                          <!-- // Case : 특판출고 -->
-                        </KeyValueText>
+                        <KeyValueText>리스사</KeyValueText>
                       </KeyValueItem>
                     </KeyValue>
                   </div>
@@ -2500,37 +1574,7 @@ export default {
                         <KeyValueTitle>
                           <div class="text-body-4">자동차세</div>
                         </KeyValueTitle>
-                        <KeyValueText>
-                          <!-- Case : { 등록명의 : 금융회사 } 선택시 노출 -->
-                          <BoxCheckList spacing="small">
-                            <BoxCheckListItem>
-                              <BoxCheck
-                                :minSide="true"
-                                name="leaseRentEstimationSystemUsedLeaseCarTax"
-                                id="leaseRentEstimationSystemUsedLeaseCarTax_001"
-                                size="small"
-                                :defaultChecked="true"
-                              >
-                                <BoxCheckLabel>포함</BoxCheckLabel>
-                              </BoxCheck>
-                            </BoxCheckListItem>
-                            <BoxCheckListItem>
-                              <BoxCheck
-                                :minSide="true"
-                                name="leaseRentEstimationSystemUsedLeaseCarTax"
-                                id="leaseRentEstimationSystemUsedLeaseCarTax_002"
-                                size="small"
-                              >
-                                <BoxCheckLabel>고객별도</BoxCheckLabel>
-                              </BoxCheck>
-                            </BoxCheckListItem>
-                          </BoxCheckList>
-                          <!-- // Case : { 등록명의 : 금융회사 } 선택시 노출 -->
-
-                          <!-- Case : { 등록명의 : 리스이용자 } 선택시 노출 -->
-                          <div>고객별도</div>
-                          <!-- // Case : { 등록명의 : 리스이용자 } 선택시 노출 -->
-                        </KeyValueText>
+                        <KeyValueText>고객별도</KeyValueText>
                       </KeyValueItem>
                     </KeyValue>
                   </div>
@@ -2539,63 +1583,8 @@ export default {
             </li>
             <!-- // 자동차세 -->
 
-            <!-- 차량대금 -->
-            <li :class="$style['estimate-list__item']">
-              <div :class="$style['estimate-list__head']">
-                <div :class="$style['estimate-list__block']">
-                  <div :class="$style['estimate-list__left']">
-                    <KeyValue align="left" size="medium" verticalAlign="center">
-                      <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                        <KeyValueTitle>
-                          <div class="text-body-4">차량대금</div>
-                        </KeyValueTitle>
-                        <KeyValueText>
-                          <!-- Case : 기본 -->
-                          <!-- Case : { 상품 : 운용리스, 등록명의 : 금융회사 } 선택시 노출 -->
-                          <BoxCheckList spacing="small">
-                            <BoxCheckListItem>
-                              <BoxCheck
-                                :minSide="true"
-                                name="leaseRentEstimationSystemUsedLeaseCarPayment"
-                                id="leaseRentEstimationSystemUsedLeaseCarPayment_001"
-                                size="small"
-                                :defaultChecked="true"
-                              >
-                                <BoxCheckLabel>카드결제</BoxCheckLabel>
-                              </BoxCheck>
-                            </BoxCheckListItem>
-                            <BoxCheckListItem>
-                              <BoxCheck
-                                :minSide="true"
-                                name="leaseRentEstimationSystemUsedLeaseCarPayment"
-                                id="leaseRentEstimationSystemUsedLeaseCarPayment_002"
-                                size="small"
-                              >
-                                <BoxCheckLabel>현금결제</BoxCheckLabel>
-                              </BoxCheck>
-                            </BoxCheckListItem>
-                          </BoxCheckList>
-                          <!-- // Case : { 상품 : 운용리스, 등록명의 : 금융회사 } 선택시 노출 -->
-
-                          <!-- Case : [{ 상품 : 운용리스, 등록명의 : 리스이용자 }, { 상품 : 금융리스 }] 선택시 노출 -->
-                          <div>현금결제</div>
-                          <!-- // Case : [{ 상품 : 운용리스, 등록명의 : 리스이용자 }, { 상품 : 금융리스 }] 선택시 노출 -->
-                          <!-- // Case : 기본 -->
-
-                          <!-- Case : 특판출고 -->
-                          <div>카드결제</div>
-                          <!-- // Case : 특판출고 -->
-                        </KeyValueText>
-                      </KeyValueItem>
-                    </KeyValue>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <!-- // 차량대금 -->
-
-            <!-- Case : 수입차 선택시 노출 -->
-            <!-- 제휴사 -->
+            <!-- Case : 인증중고차일 경우, 노출 -->
+            <!-- Case : 제휴사 있을 때 -->
             <UiAccordionItem
               :classNames="{ item: $style['estimate-list__item'] }"
             >
@@ -2667,10 +1656,28 @@ export default {
                 </section>
               </UiAccordionLayer>
             </UiAccordionItem>
-            <!-- // 제휴사 -->
-            <!-- // Case : 수입차 선택시 노출 -->
+            <!-- // Case : 제휴사 있을 때 -->
 
-            <!-- Case : "견적 기본설정"에서 수수료 표시하지 않음 선택시 비노출 -->
+            <!-- Case : 제휴사 없을 때 -->
+            <li :class="$style['estimate-list__item']">
+              <div :class="$style['estimate-list__head']">
+                <div :class="$style['estimate-list__block']">
+                  <div :class="$style['estimate-list__left']">
+                    <KeyValue align="left" size="medium" verticalAlign="center">
+                      <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                        <KeyValueTitle>
+                          <div class="text-body-4">제휴사</div>
+                        </KeyValueTitle>
+                        <KeyValueText>제휴사 없음</KeyValueText>
+                      </KeyValueItem>
+                    </KeyValue>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- //Case :  제휴사 없을 때 -->
+            <!-- //Case : 인증중고차일 경우, 노출 -->
+
             <!-- 수수료 -->
             <UiAccordionItem
               :classNames="{ item: $style['estimate-list__item'] }"
@@ -2702,18 +1709,25 @@ export default {
                 :classNames="{ layer: $style['estimate-list__layer'] }"
               >
                 <section :class="$style['estimate-list__contents']">
-                  <!-- Case : { 상품 : 운용리스 } 선택시 노출 -->
+                  <!-- Case : 상품 - 운용리스 선택시 노출 -->
+                  <!-- Case : 일반중고차일 경우 -->
                   <NoticeText :classNames="{ wrap: 'row-margin-item-group' }"
-                    >한도: AG+CM 9.9% 이내 (단 AG 3% 이내)</NoticeText
+                    >한도: AG+딜러 7% 이내</NoticeText
                   >
-                  <!-- // Case : { 상품 : 운용리스 } 선택시 노출 -->
+                  <!-- //Case : 일반중고차일 경우 -->
 
-                  <!-- Case : { 상품 : 금융리스 } 선택시 노출 -->
+                  <!-- Case : 인증중고차일 경우 -->
+                  <NoticeText :classNames="{ wrap: 'row-margin-item-group' }"
+                    >한도: AG+딜러 13% 이내(단 AG 3%이내)</NoticeText
+                  >
+                  <!-- //Case : 인증중고차일 경우 -->
+                  <!-- //Case : 상품 - 운용리스 선택시 노출 -->
+
+                  <!-- Case : 상품 - 금융리스 선택시 노출 -->
                   <NoticeText :classNames="{ wrap: 'row-margin-item-group' }"
                     >한도: 500만원까지 3%, 500만원 초과 최대 2.25%</NoticeText
                   >
-                  <!-- // Case : { 상품 : 금융리스 } 선택시 노출 -->
-
+                  <!-- // Case : 상품 - 금융리스 선택시 노출 -->
                   <FormList>
                     <FormListItem
                       titleText="CM"
@@ -2800,137 +1814,6 @@ export default {
               </UiAccordionLayer>
             </UiAccordionItem>
             <!-- // 수수료 -->
-            <!-- // Case : "견적 기본설정"에서 수수료 표시하지 않음 선택시 비노출 -->
-
-            <!-- Case : "견적 기본설정"에서 수수료 표시하지 않음 선택시 노출 -->
-            <!-- 기타 -->
-            <UiAccordionItem
-              :classNames="{ item: $style['estimate-list__item'] }"
-            >
-              <div :class="$style['estimate-list__head']">
-                <div :class="$style['estimate-list__block']">
-                  <div :class="$style['estimate-list__left']">
-                    <KeyValue align="left" size="medium" verticalAlign="center">
-                      <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                        <KeyValueTitle>
-                          <div class="text-body-4">기타</div>
-                        </KeyValueTitle>
-                        <KeyValueText>
-                          CM : (0%) 0 원<br />
-                          AG : (0%) 0 원
-                        </KeyValueText>
-                      </KeyValueItem>
-                    </KeyValue>
-                  </div>
-                </div>
-                <div :class="$style['estimate-list__arrow']">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['estimate-list__opener'] }"
-                  />
-                </div>
-              </div>
-
-              <UiAccordionLayer
-                :classNames="{ layer: $style['estimate-list__layer'] }"
-              >
-                <section :class="$style['estimate-list__contents']">
-                  <!-- Case : { 상품 : 운용리스 } 선택시 노출 -->
-                  <NoticeText :classNames="{ wrap: 'row-margin-item-group' }"
-                    >한도: AG+CM 9.9% 이내 (단 AG 3% 이내)</NoticeText
-                  >
-                  <!-- // Case : { 상품 : 운용리스 } 선택시 노출 -->
-
-                  <!-- Case : { 상품 : 금융리스 } 선택시 노출 -->
-                  <NoticeText :classNames="{ wrap: 'row-margin-item-group' }"
-                    >한도: 500만원까지 3%, 500만원 초과 최대 2.25%</NoticeText
-                  >
-                  <!-- // Case : { 상품 : 금융리스 } 선택시 노출 -->
-
-                  <FormList>
-                    <FormListItem
-                      titleText="CM"
-                      target="#leaseRentEstimationSystemUsedLeaseETCCMRatio"
-                    >
-                      <FormInvalid :error="state.etcCMError">
-                        <InputBlock :error="state.etcCMError">
-                          <InputBlockCell>
-                            <BasicInput
-                              type="number"
-                              title="CM 비율(%)"
-                              id="leaseRentEstimationSystemUsedLeaseETCCMRatio"
-                              pattern="\d*"
-                              :useDelete="false"
-                              align="right"
-                              defaultValue="0"
-                              :classNames="{ wrap: 'input-width-ratio' }"
-                            />
-                          </InputBlockCell>
-                          <InputBlockCell>
-                            <div class="text-body-3">%</div>
-                          </InputBlockCell>
-                          <InputBlockCell :flexible="true">
-                            <BasicInput
-                              title="CM 금액"
-                              id="leaseRentEstimationSystemUsedLeaseETCCMPrice"
-                              pattern="\d*"
-                              :useDelete="false"
-                              align="right"
-                              defaultValue="0"
-                              :disabled="true"
-                            />
-                          </InputBlockCell>
-                          <InputBlockCell>
-                            <div class="text-body-3 color-gray-quinary">원</div>
-                          </InputBlockCell>
-                        </InputBlock>
-                        <FormInvalidMessage>Error Message</FormInvalidMessage>
-                      </FormInvalid>
-                    </FormListItem>
-                    <FormListItem
-                      titleText="AG"
-                      target="#leaseRentEstimationSystemUsedLeaseETCAGRatio"
-                    >
-                      <FormInvalid :error="state.etcAGError">
-                        <InputBlock :error="state.etcAGError">
-                          <InputBlockCell>
-                            <BasicInput
-                              type="number"
-                              title="AG 비율(%)"
-                              id="leaseRentEstimationSystemUsedLeaseETCAGRatio"
-                              pattern="\d*"
-                              :useDelete="false"
-                              align="right"
-                              defaultValue="0"
-                              :classNames="{ wrap: 'input-width-ratio' }"
-                            />
-                          </InputBlockCell>
-                          <InputBlockCell>
-                            <div class="text-body-3">%</div>
-                          </InputBlockCell>
-                          <InputBlockCell :flexible="true">
-                            <BasicInput
-                              title="AG 금액"
-                              id="leaseRentEstimationSystemUsedLeaseETCAGPrice"
-                              pattern="\d*"
-                              :useDelete="false"
-                              align="right"
-                              defaultValue="0"
-                              :disabled="true"
-                            />
-                          </InputBlockCell>
-                          <InputBlockCell>
-                            <div class="text-body-3 color-gray-quinary">원</div>
-                          </InputBlockCell>
-                        </InputBlock>
-                        <FormInvalidMessage>Error Message</FormInvalidMessage>
-                      </FormInvalid>
-                    </FormListItem>
-                  </FormList>
-                </section>
-              </UiAccordionLayer>
-            </UiAccordionItem>
-            <!-- // 기타 -->
-            <!-- // Case : "견적 기본설정"에서 수수료 표시하지 않음 선택시 노출 -->
 
             <!-- 취급지점 -->
             <UiAccordionItem
@@ -2982,15 +1865,6 @@ export default {
                         <BoxCheckLabel>강남지점</BoxCheckLabel>
                       </BoxCheck>
                     </BoxCheckListItem>
-                    <BoxCheckListItem>
-                      <BoxCheck
-                        name="leaseRentEstimationSystemUsedLeaseCheck002"
-                        id="leaseRentEstimationSystemUsedLeaseCheck002_003"
-                        size="small"
-                      >
-                        <BoxCheckLabel>서초지점</BoxCheckLabel>
-                      </BoxCheck>
-                    </BoxCheckListItem>
                   </BoxCheckList>
                 </section>
               </UiAccordionLayer>
@@ -2998,6 +1872,7 @@ export default {
             <!-- // 취급지점 -->
 
             <!-- 취득세 -->
+            <!-- Case : 상품 - 운용리스 선택시 노출  -->
             <li :class="$style['estimate-list__item']">
               <div :class="$style['estimate-list__head']">
                 <div :class="$style['estimate-list__block']">
@@ -3008,7 +1883,6 @@ export default {
                           <div class="text-body-4">취득세</div>
                         </KeyValueTitle>
                         <KeyValueText>
-                          <!-- Case : { 상품 : 운용리스 } 선택시 노출 -->
                           <div>
                             <BoxCheckList spacing="small">
                               <BoxCheckListItem>
@@ -3034,37 +1908,10 @@ export default {
                               </BoxCheckListItem>
                             </BoxCheckList>
 
-                            <div class="row-margin-item-group">
-                              <strong>999,999,999 원</strong>
+                            <div class="align-right row-margin-item-group">
+                              <strong class="text-body-3">0 원</strong>
                             </div>
                           </div>
-                          <!-- // Case : { 상품 : 운용리스 } 선택시 노출 -->
-
-                          <!-- Case : { 상품 : 금융리스 } 선택시 노출 -->
-                          <KeyValue>
-                            <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                              <KeyValueTitle>
-                                <div class="color-black">고객별도</div>
-                              </KeyValueTitle>
-                              <KeyValueText>
-                                <strong>0 원</strong>
-                              </KeyValueText>
-                            </KeyValueItem>
-                          </KeyValue>
-                          <!-- // Case : { 상품 : 금융리스 } 선택시 노출 -->
-
-                          <!-- Case : 특판출고 -->
-                          <KeyValue>
-                            <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                              <KeyValueTitle>
-                                <div class="color-black">포함</div>
-                              </KeyValueTitle>
-                              <KeyValueText>
-                                <strong>0 원</strong>
-                              </KeyValueText>
-                            </KeyValueItem>
-                          </KeyValue>
-                          <!-- // Case : 특판출고 -->
                         </KeyValueText>
                       </KeyValueItem>
                     </KeyValue>
@@ -3072,131 +1919,89 @@ export default {
                 </div>
               </div>
             </li>
-            <!-- // 취득세 -->
+            <!-- //Case : 상품 - 운용리스 선택시 노출  -->
 
-            <!-- 공채지역 -->
-            <UiAccordionItem
-              :classNames="{ item: $style['estimate-list__item'] }"
-            >
+            <!-- Case : 상품 - 금융리스 선택시 노출  -->
+            <li :class="$style['estimate-list__item']">
               <div :class="$style['estimate-list__head']">
                 <div :class="$style['estimate-list__block']">
                   <div :class="$style['estimate-list__left']">
                     <KeyValue align="left" size="medium" verticalAlign="center">
                       <KeyValueItem :classNames="{ item: 'text-body-3' }">
                         <KeyValueTitle>
-                          <div class="text-body-4">공채지역</div>
+                          <div class="text-body-4">취득세</div>
                         </KeyValueTitle>
                         <KeyValueText>
-                          서울 (매입 12% 4,830,000)
-                          <!-- Case : 매입 없음 일 때
-                            부산 (매입 없음)
-                          -->
+                          <div class="flex-box">
+                            <div class="flex-box__cell">고객별도</div>
+                            <div class="flex-box__cell flex-1 align-right">
+                              <strong>0 원</strong>
+                            </div>
+                          </div>
                         </KeyValueText>
                       </KeyValueItem>
                     </KeyValue>
                   </div>
                 </div>
-                <div :class="$style['estimate-list__arrow']">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['estimate-list__opener'] }"
-                  />
+              </div>
+            </li>
+            <!-- //Case : 상품 - 금융리스 선택시 노출  -->
+            <!-- // 취득세 -->
+
+            <!-- 감면 -->
+            <li :class="$style['estimate-list__item']">
+              <div :class="$style['estimate-list__head']">
+                <div :class="$style['estimate-list__block']">
+                  <div :class="$style['estimate-list__left']">
+                    <KeyValue align="left" size="medium" verticalAlign="center">
+                      <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                        <KeyValueTitle>
+                          <div class="text-body-4">감면</div>
+                        </KeyValueTitle>
+                        <KeyValueText>
+                          <div :class="$style['check-list']">
+                            <ul :class="$style['check-list__list']">
+                              <li :class="$style['check-list__item']">
+                                <CheckBox
+                                  id="leaseRentEstimationSystemUsedLeaseReduction001_001"
+                                  theme="quinary"
+                                >
+                                  <CheckBoxObject />
+                                  <CheckBoxLabelText>경차</CheckBoxLabelText>
+                                </CheckBox>
+                              </li>
+                              <li :class="$style['check-list__item']">
+                                <CheckBox
+                                  id="leaseRentEstimationSystemUsedLeaseReduction001_002"
+                                  theme="quinary"
+                                >
+                                  <CheckBoxObject />
+                                  <CheckBoxLabelText
+                                    >하이브리드</CheckBoxLabelText
+                                  >
+                                </CheckBox>
+                              </li>
+                              <li :class="$style['check-list__item']">
+                                <CheckBox
+                                  id="leaseRentEstimationSystemUsedLeaseReduction001_003"
+                                  theme="quinary"
+                                >
+                                  <CheckBoxObject />
+                                  <CheckBoxLabelText
+                                    >전기/수소차</CheckBoxLabelText
+                                  >
+                                </CheckBox>
+                              </li>
+                            </ul>
+                          </div>
+                        </KeyValueText>
+                      </KeyValueItem>
+                    </KeyValue>
+                  </div>
                 </div>
               </div>
-
-              <UiAccordionLayer
-                :classNames="{ layer: $style['estimate-list__layer'] }"
-              >
-                <section :class="$style['estimate-list__contents']">
-                  <BoxCheckList spacing="small" :wrap="true" :col="3">
-                    <BoxCheckListItem>
-                      <BoxCheck
-                        :minSide="true"
-                        name="leaseRentEstimationSystemUsedLeaseCheck003"
-                        id="leaseRentEstimationSystemUsedLeaseCheck003_001"
-                        size="small"
-                        :defaultChecked="true"
-                      >
-                        <BoxCheckLabel>서울</BoxCheckLabel>
-                      </BoxCheck>
-                    </BoxCheckListItem>
-                    <BoxCheckListItem>
-                      <BoxCheck
-                        :minSide="true"
-                        name="leaseRentEstimationSystemUsedLeaseCheck003"
-                        id="leaseRentEstimationSystemUsedLeaseCheck003_002"
-                        size="small"
-                      >
-                        <BoxCheckLabel>수원</BoxCheckLabel>
-                      </BoxCheck>
-                    </BoxCheckListItem>
-                    <BoxCheckListItem>
-                      <BoxCheck
-                        name="leaseRentEstimationSystemUsedLeaseCheck003"
-                        id="leaseRentEstimationSystemUsedLeaseCheck003_003"
-                        size="small"
-                      >
-                        <BoxCheckLabel>인천</BoxCheckLabel>
-                      </BoxCheck>
-                    </BoxCheckListItem>
-                    <BoxCheckListItem>
-                      <BoxCheck
-                        name="leaseRentEstimationSystemUsedLeaseCheck003"
-                        id="leaseRentEstimationSystemUsedLeaseCheck003_004"
-                        size="small"
-                      >
-                        <BoxCheckLabel>대전</BoxCheckLabel>
-                      </BoxCheck>
-                    </BoxCheckListItem>
-                    <BoxCheckListItem>
-                      <BoxCheck
-                        name="leaseRentEstimationSystemUsedLeaseCheck003"
-                        id="leaseRentEstimationSystemUsedLeaseCheck003_005"
-                        size="small"
-                      >
-                        <BoxCheckLabel>부산</BoxCheckLabel>
-                      </BoxCheck>
-                    </BoxCheckListItem>
-                    <BoxCheckListItem>
-                      <BoxCheck
-                        name="leaseRentEstimationSystemUsedLeaseCheck003"
-                        id="leaseRentEstimationSystemUsedLeaseCheck003_006"
-                        size="small"
-                      >
-                        <BoxCheckLabel>대구</BoxCheckLabel>
-                      </BoxCheck>
-                    </BoxCheckListItem>
-                    <BoxCheckListItem>
-                      <BoxCheck
-                        name="leaseRentEstimationSystemUsedLeaseCheck003"
-                        id="leaseRentEstimationSystemUsedLeaseCheck003_007"
-                        size="small"
-                      >
-                        <BoxCheckLabel>함양</BoxCheckLabel>
-                      </BoxCheck>
-                    </BoxCheckListItem>
-                    <BoxCheckListItem>
-                      <BoxCheck
-                        name="leaseRentEstimationSystemUsedLeaseCheck003"
-                        id="leaseRentEstimationSystemUsedLeaseCheck003_008"
-                        size="small"
-                      >
-                        <BoxCheckLabel>창원</BoxCheckLabel>
-                      </BoxCheck>
-                    </BoxCheckListItem>
-                    <BoxCheckListItem>
-                      <BoxCheck
-                        name="leaseRentEstimationSystemUsedLeaseCheck003"
-                        id="leaseRentEstimationSystemUsedLeaseCheck003_009"
-                        size="small"
-                      >
-                        <BoxCheckLabel>광주</BoxCheckLabel>
-                      </BoxCheck>
-                    </BoxCheckListItem>
-                  </BoxCheckList>
-                </section>
-              </UiAccordionLayer>
-            </UiAccordionItem>
-            <!-- // 공채지역 -->
+            </li>
+            <!-- // 감면 -->
 
             <!-- 공채할인 -->
             <li :class="$style['estimate-list__item']">
@@ -3209,9 +2014,8 @@ export default {
                           <div class="text-body-4">공채할인</div>
                         </KeyValueTitle>
                         <KeyValueText>
+                          <!-- Case : 상품 - 운용리스일 경우 -->
                           <div class="row-margin-item-group">
-                            <!-- Case : 기본 -->
-                            <!-- Case : { 상품 : 운용리스 } 선택시 노출 -->
                             <BoxCheckList spacing="small">
                               <BoxCheckListItem>
                                 <BoxCheck
@@ -3235,21 +2039,16 @@ export default {
                                 </BoxCheck>
                               </BoxCheckListItem>
                             </BoxCheckList>
-                            <!-- // Case : { 상품 : 운용리스 } 선택시 노출 -->
-
-                            <!-- Case : { 상품 : 금융리스 } 선택시 노출 -->
-                            <div>고객별도</div>
-                            <!-- // Case : { 상품 : 금융리스 } 선택시 노출 -->
-                            <!-- // Case : 기본 -->
-
-                            <!-- Case : 특판출고 -->
-                            <div>포함</div>
-                            <!-- // Case : 특판출고 -->
                           </div>
+                          <!-- //Case : 상품 - 운용리스일 경우 -->
+
+                          <!-- Case : 상품 - 금융리스일 경우 -->
+                          <div class="row-margin-item-group">고객별도</div>
+                          <!-- //Case : 상품 - 금융리스일 경우 -->
 
                           <FormList>
                             <FormListItem
-                              titleText="할인율"
+                              titleText="금액"
                               target="#leaseRentEstimationSystemUsedLeasePublicBondDiscountRatio"
                             >
                               <FormInvalid
@@ -3258,38 +2057,18 @@ export default {
                                 <InputBlock
                                   :error="state.publicBondDiscountError"
                                 >
-                                  <InputBlockCell>
-                                    <BasicInput
-                                      type="number"
-                                      title="공채할인율 비율(%)"
-                                      id="leaseRentEstimationSystemUsedLeasePublicBondDiscountRatio"
-                                      pattern="\d*"
-                                      :useDelete="false"
-                                      align="right"
-                                      defaultValue="0"
-                                      :classNames="{
-                                        wrap: 'input-width-ratio',
-                                      }"
-                                    />
-                                  </InputBlockCell>
-                                  <InputBlockCell>
-                                    <div class="text-body-3">%</div>
-                                  </InputBlockCell>
                                   <InputBlockCell :flexible="true">
                                     <BasicInput
-                                      title="공채할인율 금액"
+                                      title="공채할인 금액"
                                       id="leaseRentEstimationSystemUsedLeasePublicBondDiscountPrice"
                                       pattern="\d*"
                                       :useDelete="false"
                                       align="right"
                                       defaultValue="0"
-                                      :disabled="true"
                                     />
                                   </InputBlockCell>
                                   <InputBlockCell>
-                                    <div class="text-body-3 color-gray-quinary">
-                                      원
-                                    </div>
+                                    <div class="text-body-3">원</div>
                                   </InputBlockCell>
                                 </InputBlock>
                                 <FormInvalidMessage
@@ -3318,7 +2097,6 @@ export default {
                           <div class="text-body-4">기타비용</div>
                         </KeyValueTitle>
                         <KeyValueText>
-                          <!-- Case : 기본 -->
                           <div>
                             <div class="row-margin-item-group">고객별도</div>
                             <FormList>
@@ -3349,13 +2127,6 @@ export default {
                               </FormListItem>
                             </FormList>
                           </div>
-                          <!-- // Case : 기본 -->
-
-                          <!-- Case : 특판출고 -->
-                          <div class="align-right">
-                            <strong>0 원</strong>
-                          </div>
-                          <!-- / Case : 특판출고 -->
                         </KeyValueText>
                       </KeyValueItem>
                     </KeyValue>
@@ -3365,56 +2136,51 @@ export default {
             </li>
             <!-- // 기타비용 -->
 
-            <!-- Case : 차량 전기차 선택 시에만 노출 -->
-            <!-- 지원지역 -->
-            <UiAccordionItem
-              :classNames="{ item: $style['estimate-list__item'] }"
-            >
+            <!-- 탁송료 -->
+            <li :class="$style['estimate-list__item']">
               <div :class="$style['estimate-list__head']">
                 <div :class="$style['estimate-list__block']">
                   <div :class="$style['estimate-list__left']">
                     <KeyValue align="left" size="medium" verticalAlign="center">
                       <KeyValueItem :classNames="{ item: 'text-body-3' }">
                         <KeyValueTitle>
-                          <div class="text-body-4">지원지역</div>
-                        </KeyValueTitle>
-                        <KeyValueText>해당없음</KeyValueText>
-                      </KeyValueItem>
-                    </KeyValue>
-                  </div>
-                </div>
-                <div :class="$style['estimate-list__arrow']">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['estimate-list__opener'] }"
-                  />
-                </div>
-              </div>
-
-              <UiAccordionLayer
-                :classNames="{ layer: $style['estimate-list__layer'] }"
-              >
-                <section :class="$style['estimate-list__contents']">
-                  <NoticeText
-                    >선택한 지역의 보조금 수령 가능여부 및 금액을 최종 재확인 후
-                    진행하여 주시기 바랍니다.</NoticeText
-                  >
-                </section>
-              </UiAccordionLayer>
-            </UiAccordionItem>
-            <!-- // 지원지역 -->
-
-            <!-- 보조금 -->
-            <li :class="$style['estimate-list__item']">
-              <div :class="$style['estimate-list__head']">
-                <div :class="$style['estimate-list__block']">
-                  <div :class="$style['estimate-list__left']">
-                    <KeyValue size="medium" verticalAlign="center">
-                      <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                        <KeyValueTitle>
-                          <div class="text-body-4">보조금</div>
+                          <div class="text-body-4">탁송료</div>
                         </KeyValueTitle>
                         <KeyValueText>
-                          <strong>0 원</strong>
+                          <div>
+                            <div class="row-margin-item-group">고객별도</div>
+                            <FormList>
+                              <FormListItem
+                                titleText="금액"
+                                target="#leaseRentEstimationSystemUsedLeaseConsignmentPrice"
+                              >
+                                <FormInvalid
+                                  :error="state.consignmentPriceError"
+                                >
+                                  <InputBlock
+                                    :error="state.consignmentPriceError"
+                                  >
+                                    <InputBlockCell :flexible="true">
+                                      <BasicInput
+                                        title="탁송료 금액"
+                                        id="leaseRentEstimationSystemUsedLeaseConsignmentPrice"
+                                        pattern="\d*"
+                                        :useDelete="false"
+                                        align="right"
+                                        defaultValue="0"
+                                      />
+                                    </InputBlockCell>
+                                    <InputBlockCell>
+                                      <div class="text-body-3">원</div>
+                                    </InputBlockCell>
+                                  </InputBlock>
+                                  <FormInvalidMessage
+                                    >Error Message</FormInvalidMessage
+                                  >
+                                </FormInvalid>
+                              </FormListItem>
+                            </FormList>
+                          </div>
                         </KeyValueText>
                       </KeyValueItem>
                     </KeyValue>
@@ -3422,8 +2188,7 @@ export default {
                 </div>
               </div>
             </li>
-            <!-- // 보조금 -->
-            <!-- // Case : 차량 전기차 선택 시에만 노출 -->
+            <!-- // 탁송료 -->
 
             <!-- 이손금 -->
             <li :class="$style['estimate-list__item']">
@@ -3585,7 +2350,7 @@ export default {
             </li>
             <!-- // 용품지원 -->
 
-            <!-- Case : { 상품 : 금융리스 } 선택시 노출 -->
+            <!-- Case : 상품 - 금융리스 선택시 노출 -->
             <!-- 선수금 -->
             <li :class="$style['estimate-list__item']">
               <div :class="$style['estimate-list__head']">
@@ -3632,7 +2397,7 @@ export default {
               </div>
             </li>
             <!-- // 선수금 -->
-            <!-- // Case : { 상품 : 금융리스 } 선택시 노출 -->
+            <!-- // Case : 상품 - 금융리스 선택시 노출 -->
           </UiAccordion>
         </div>
 
@@ -3654,6 +2419,32 @@ export default {
             className="row-margin-contents-small"
           />
 
+          <!-- Case : 취득원가 계산 전 -->
+          <KeyValue verticalAlign="center">
+            <KeyValueItem :classNames="{ item: 'text-body-3' }">
+              <KeyValueTitle
+                :classNames="{
+                  title: 'color-black font-weight-bold',
+                }"
+              >
+                취득원가
+              </KeyValueTitle>
+              <KeyValueText>
+                <BasicButton size="mini" inline="true">계산하기</BasicButton>
+                <!-- Case : 계산중 -->
+                <BasicButton size="mini" inline="true">
+                  계산중
+                  <template v-slot:rightIcon>
+                    <div :class="$style['loading-icon']"></div>
+                  </template>
+                </BasicButton>
+                <!-- // Case : 계산중 -->
+              </KeyValueText>
+            </KeyValueItem>
+          </KeyValue>
+          <!-- //Case : 취득원가 계산 전 -->
+
+          <!-- Case : 취득원가 계산 후 -->
           <KeyValue verticalAlign="center">
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle
@@ -3670,6 +2461,7 @@ export default {
               </KeyValueText>
             </KeyValueItem>
           </KeyValue>
+          <!-- //Case : 취득원가 계산 후 -->
         </div>
       </section>
 
@@ -3683,13 +2475,13 @@ export default {
           </div>
         </div>
 
-        <!-- Case : 차량 선택 전 -->
+        <!-- Case : 취득원가 계산 전 -->
         <div :class="$style['empty']">
-          <p :class="$style['empty__text']">차량을 선택해 주세요.</p>
+          <p :class="$style['empty__text']">취득원가를 먼저 계산해 주세요</p>
         </div>
-        <!-- // Case : 차량 선택 전 -->
+        <!-- // Case : 취득원가 계산 전 -->
 
-        <!-- Case : 차량 선택 후 -->
+        <!-- Case : 취득원가 계산 후 -->
         <div
           :class="[
             $style['products'],
@@ -3786,7 +2578,7 @@ export default {
                               </KeyValueTitle>
                               <KeyValueText>
                                 <!-- Case : 운용리스 -->
-                                <div>재리스/구매/반납</div>
+                                <div>구매/반납</div>
                                 <!-- // Case : 운용리스 -->
 
                                 <!-- Case : 금융리스 -->
@@ -3894,7 +2686,6 @@ export default {
                   <!-- // 기간 -->
 
                   <!-- Case : 운용리스 : start -->
-
                   <!-- 약정거리 -->
                   <UiAccordionItem
                     :classNames="{ item: $style['estimate-list__item'] }"
@@ -3949,16 +2740,6 @@ export default {
                               :defaultChecked="true"
                             >
                               <BoxCheckLabel>30,000 km</BoxCheckLabel>
-                            </BoxCheck>
-                          </BoxCheckListItem>
-                          <BoxCheckListItem>
-                            <BoxCheck
-                              :minSide="true"
-                              :name="`leaseRentEstimationSystemUsedLeaseProducts${i}_check002`"
-                              :id="`leaseRentEstimationSystemUsedLeaseProducts${i}_check002_003`"
-                              size="small"
-                            >
-                              <BoxCheckLabel>40,000 km</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
                         </BoxCheckList>
@@ -4876,10 +3657,10 @@ export default {
                               <KeyValueText>
                                 <div class="flex-box">
                                   <div class="flex-box__cell flex-1">
-                                    최대(51.5%)
+                                    최대(48%)
                                   </div>
                                   <div class="flex-box__cell">
-                                    <strong>9,321,500 원</strong>
+                                    <strong>33,810,000 원</strong>
                                   </div>
                                 </div>
                               </KeyValueText>
@@ -4908,7 +3689,7 @@ export default {
                             size="small"
                             :defaultChecked="true"
                           >
-                            <BoxCheckLabel>최대(51%)</BoxCheckLabel>
+                            <BoxCheckLabel>최대(48%)</BoxCheckLabel>
                           </BoxCheck>
                         </div>
                         <BoxCheckList spacing="small" :wrap="true" :col="4">
@@ -4919,7 +3700,7 @@ export default {
                               :id="`leaseRentEstimationSystemUsedLeaseProducts${i}_check006_001`"
                               size="small"
                             >
-                              <BoxCheckLabel>50%</BoxCheckLabel>
+                              <BoxCheckLabel>47%</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
                           <BoxCheckListItem>
@@ -4929,7 +3710,7 @@ export default {
                               :id="`leaseRentEstimationSystemUsedLeaseProducts${i}_check006_002`"
                               size="small"
                             >
-                              <BoxCheckLabel>49%</BoxCheckLabel>
+                              <BoxCheckLabel>46%</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
                           <BoxCheckListItem>
@@ -4939,7 +3720,7 @@ export default {
                               :id="`leaseRentEstimationSystemUsedLeaseProducts${i}_check006_003`"
                               size="small"
                             >
-                              <BoxCheckLabel>48%</BoxCheckLabel>
+                              <BoxCheckLabel>45%</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
                           <BoxCheckListItem>
@@ -4949,7 +3730,7 @@ export default {
                               :id="`leaseRentEstimationSystemUsedLeaseProducts${i}_check006_004`"
                               size="small"
                             >
-                              <BoxCheckLabel>47%</BoxCheckLabel>
+                              <BoxCheckLabel>44%</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
                           <BoxCheckListItem>
@@ -4959,7 +3740,7 @@ export default {
                               :id="`leaseRentEstimationSystemUsedLeaseProducts${i}_check006_005`"
                               size="small"
                             >
-                              <BoxCheckLabel>46%</BoxCheckLabel>
+                              <BoxCheckLabel>43%</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
                           <BoxCheckListItem>
@@ -4969,7 +3750,7 @@ export default {
                               :id="`leaseRentEstimationSystemUsedLeaseProducts${i}_check006_006`"
                               size="small"
                             >
-                              <BoxCheckLabel>45%</BoxCheckLabel>
+                              <BoxCheckLabel>42%</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
                           <BoxCheckListItem>
@@ -4979,7 +3760,7 @@ export default {
                               :id="`leaseRentEstimationSystemUsedLeaseProducts${i}_check006_007`"
                               size="small"
                             >
-                              <BoxCheckLabel>44%</BoxCheckLabel>
+                              <BoxCheckLabel>41%</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
                           <BoxCheckListItem>
@@ -4989,7 +3770,7 @@ export default {
                               :id="`leaseRentEstimationSystemUsedLeaseProducts${i}_check006_008`"
                               size="small"
                             >
-                              <BoxCheckLabel>43%</BoxCheckLabel>
+                              <BoxCheckLabel>40%</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
                           <BoxCheckListItem>
@@ -4999,7 +3780,7 @@ export default {
                               :id="`leaseRentEstimationSystemUsedLeaseProducts${i}_check006_009`"
                               size="small"
                             >
-                              <BoxCheckLabel>42%</BoxCheckLabel>
+                              <BoxCheckLabel>39%</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
                           <BoxCheckListItem>
@@ -5009,7 +3790,7 @@ export default {
                               :id="`leaseRentEstimationSystemUsedLeaseProducts${i}_check006_010`"
                               size="small"
                             >
-                              <BoxCheckLabel>41%</BoxCheckLabel>
+                              <BoxCheckLabel>38%</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
                           <BoxCheckListItem>
@@ -5019,7 +3800,7 @@ export default {
                               :id="`leaseRentEstimationSystemUsedLeaseProducts${i}_check006_011`"
                               size="small"
                             >
-                              <BoxCheckLabel>40%</BoxCheckLabel>
+                              <BoxCheckLabel>37%</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
                           <BoxCheckListItem>
@@ -5029,7 +3810,7 @@ export default {
                               :id="`leaseRentEstimationSystemUsedLeaseProducts${i}_check006_012`"
                               size="small"
                             >
-                              <BoxCheckLabel>39%</BoxCheckLabel>
+                              <BoxCheckLabel>36%</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
                           <BoxCheckListItem>
@@ -5039,7 +3820,7 @@ export default {
                               :id="`leaseRentEstimationSystemUsedLeaseProducts${i}_check006_013`"
                               size="small"
                             >
-                              <BoxCheckLabel>38%</BoxCheckLabel>
+                              <BoxCheckLabel>35%</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
                           <BoxCheckListItem>
@@ -5049,7 +3830,7 @@ export default {
                               :id="`leaseRentEstimationSystemUsedLeaseProducts${i}_check006_014`"
                               size="small"
                             >
-                              <BoxCheckLabel>37%</BoxCheckLabel>
+                              <BoxCheckLabel>34%</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
                           <BoxCheckListItem>
@@ -5059,7 +3840,7 @@ export default {
                               :id="`leaseRentEstimationSystemUsedLeaseProducts${i}_check006_015`"
                               size="small"
                             >
-                              <BoxCheckLabel>36%</BoxCheckLabel>
+                              <BoxCheckLabel>33%</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
                           <BoxCheckListItem>
@@ -5069,7 +3850,7 @@ export default {
                               :id="`leaseRentEstimationSystemUsedLeaseProducts${i}_check006_016`"
                               size="small"
                             >
-                              <BoxCheckLabel>35%</BoxCheckLabel>
+                              <BoxCheckLabel>32%</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
                           <BoxCheckListItem>
@@ -5079,7 +3860,7 @@ export default {
                               :id="`leaseRentEstimationSystemUsedLeaseProducts${i}_check006_017`"
                               size="small"
                             >
-                              <BoxCheckLabel>34%</BoxCheckLabel>
+                              <BoxCheckLabel>31%</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
                           <BoxCheckListItem>
@@ -5089,7 +3870,7 @@ export default {
                               :id="`leaseRentEstimationSystemUsedLeaseProducts${i}_check006_018`"
                               size="small"
                             >
-                              <BoxCheckLabel>33%</BoxCheckLabel>
+                              <BoxCheckLabel>30%</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
                           <BoxCheckListItem>
@@ -5099,7 +3880,7 @@ export default {
                               :id="`leaseRentEstimationSystemUsedLeaseProducts${i}_check006_019`"
                               size="small"
                             >
-                              <BoxCheckLabel>32%</BoxCheckLabel>
+                              <BoxCheckLabel>29%</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
                           <BoxCheckListItem>
@@ -5109,7 +3890,7 @@ export default {
                               :id="`leaseRentEstimationSystemUsedLeaseProducts${i}_check006_020`"
                               size="small"
                             >
-                              <BoxCheckLabel>31%</BoxCheckLabel>
+                              <BoxCheckLabel>28%</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
                         </BoxCheckList>
@@ -5263,11 +4044,7 @@ export default {
                     <div :class="$style['estimate-list__head']">
                       <div :class="$style['estimate-list__block']">
                         <div :class="$style['estimate-list__left']">
-                          <KeyValue
-                            align="left"
-                            size="regular"
-                            verticalAlign="center"
-                          >
+                          <KeyValue align="left" size="regular">
                             <KeyValueItem :classNames="{ item: 'text-body-3' }">
                               <KeyValueTitle>
                                 <div class="text-body-4">할인<br />지원금</div>
@@ -5286,11 +4063,7 @@ export default {
                     <div :class="$style['estimate-list__head']">
                       <div :class="$style['estimate-list__block']">
                         <div :class="$style['estimate-list__left']">
-                          <KeyValue
-                            align="left"
-                            size="regular"
-                            verticalAlign="center"
-                          >
+                          <KeyValue align="left" size="regular">
                             <KeyValueItem :classNames="{ item: 'text-body-3' }">
                               <KeyValueTitle>
                                 <div class="text-body-4">추가<br />수수료</div>
@@ -5304,8 +4077,42 @@ export default {
                   </li>
                   <!-- // 추가 수수료 -->
 
+                  <!-- 출고전 납입 -->
+                  <li :class="$style['estimate-list__item']">
+                    <div :class="$style['estimate-list__head']">
+                      <div :class="$style['estimate-list__block']">
+                        <div :class="$style['estimate-list__left']">
+                          <KeyValue align="left" size="regular">
+                            <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                              <KeyValueTitle>
+                                <div class="text-body-4">출고전<br />납입</div>
+                              </KeyValueTitle>
+                              <KeyValueText>
+                                <KeyValue>
+                                  <KeyValueItem
+                                    :classNames="{ item: 'text-body-3' }"
+                                  >
+                                    <KeyValueTitle>
+                                      <div class="color-black">
+                                        선납금+보증금
+                                      </div>
+                                    </KeyValueTitle>
+                                    <KeyValueText>
+                                      <strong>10,000,000 원</strong>
+                                    </KeyValueText>
+                                  </KeyValueItem>
+                                </KeyValue>
+                              </KeyValueText>
+                            </KeyValueItem>
+                          </KeyValue>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- // 출고전 납입 -->
                   <!-- // Case : 운용리스 : end -->
 
+                  <!-- Case : 금융리스 : start -->
                   <!-- 대출원금 -->
                   <li :class="$style['estimate-list__item']">
                     <div :class="$style['estimate-list__head']">
@@ -5332,31 +4139,12 @@ export default {
                     <div :class="$style['estimate-list__head']">
                       <div :class="$style['estimate-list__block']">
                         <div :class="$style['estimate-list__left']">
-                          <KeyValue
-                            align="left"
-                            size="regular"
-                            verticalAlign="center"
-                          >
+                          <KeyValue>
                             <KeyValueItem :classNames="{ item: 'text-body-3' }">
                               <KeyValueTitle>
                                 <div class="text-body-4">출고전<br />납입</div>
                               </KeyValueTitle>
-                              <KeyValueText>
-                                <KeyValue>
-                                  <KeyValueItem
-                                    :classNames="{ item: 'text-body-3' }"
-                                  >
-                                    <KeyValueTitle>
-                                      <div class="color-black">
-                                        선납금+보증금
-                                      </div>
-                                    </KeyValueTitle>
-                                    <KeyValueText>
-                                      <strong>4,426,000 원</strong>
-                                    </KeyValueText>
-                                  </KeyValueItem>
-                                </KeyValue>
-                              </KeyValueText>
+                              <KeyValueText><strong>0 원</strong></KeyValueText>
                             </KeyValueItem>
                           </KeyValue>
                         </div>
@@ -5364,6 +4152,7 @@ export default {
                     </div>
                   </li>
                   <!-- // 출고전 납입 -->
+                  <!-- //Case : 금융리스 : end -->
                 </UiAccordion>
 
                 <div :class="$style['estimate-list__foot']">
@@ -5404,8 +4193,16 @@ export default {
                       </KeyValueTitle>
                       <KeyValueText>
                         <UnitText rightUnit="원" align="right">
-                          880,300
+                          6,191,360
                         </UnitText>
+                        <div
+                          class="flex-box font-weight-medium text-body-3 row-margin-mini"
+                        >
+                          <div class="flex-box__cell flex-1">~ 6,191,360</div>
+                          <div class="flex-box__cell flex-box__cell--mini">
+                            원
+                          </div>
+                        </div>
                       </KeyValueText>
                     </KeyValueItem>
                     <!-- // Case : 견적 계산 후 -->
@@ -5416,7 +4213,7 @@ export default {
             <!-- // item -->
           </Swiper>
         </div>
-        <!-- // Case : 차량 선택 후 -->
+        <!-- // Case : 취득원가 계산 후 -->
       </section>
 
       <ButtonList
@@ -5455,6 +4252,14 @@ export default {
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
+              고객님과 계약 전에 반드시 요청 받은 차량이 맞는지 트림 및 변속기,
+              제원, 내외장 색상, 탁송료, 채권 등 정보 등을 다시 한번 확인하시기
+              바랍니다.
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
               하나캐피탈에서 제공하는 차량 정보의 가격, 색상, 판매조건에 오류가
               있을 수 있습니다. 계약전에 필히 확인하여 주시기 바랍니다.
             </div>
@@ -5462,8 +4267,15 @@ export default {
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
+              제조사의 악세사리(Customizing) 옵션(TUIX, TUON 등) 선택시 출고장에
+              제한이 있습니다. 전용 출고장의 탁송료를 선택해 주세요.
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
               견적에 표시된 차량에는 재고차량이나 단종된 차량이 포함되어 있을 수
-              있습니다. 실제 판매하는 차량인지 확인하시기 바랍니다.
+              있습니다.
             </div>
           </li>
           <li :class="$style['basic-list__item']">
@@ -5471,15 +4283,6 @@ export default {
             <div :class="$style['basic-list__content']">
               수동 변속기나 특이한 색상, 일반용 LPG, 특판 출고 등은 판매사나
               금융사에 따라 취급되지 않을 수 있습니다.
-            </div>
-          </li>
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              전기차 진행시, 지자체 예산 조기소진 등의 사유로 보조금이 변동될 수
-              있으며, 이 경우 상기 견적은 변경될 수 있습니다. 취급 전
-              <span class="color-red font-weight-medium">반드시</span> 확인
-              바랍니다.
             </div>
           </li>
         </ul>

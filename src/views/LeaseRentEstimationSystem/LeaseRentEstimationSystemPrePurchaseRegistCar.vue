@@ -2162,11 +2162,11 @@ export default {
                   <div :class="$style['estimate-list__head']">
                     <div :class="$style['estimate-list__block']">
                       <div :class="$style['estimate-list__left']">
-                        <div :class="$style['product-detail']">
-                          <div :class="$style['product-detail__title']">
+                        <div :class="$style['product-setting']">
+                          <div :class="$style['product-setting__title']">
                             상품
                           </div>
-                          <div :class="$style['product-detail__contents']">
+                          <div :class="$style['product-setting__contents']">
                             <BoxCheckList spacing="small" :wrap="true">
                               <BoxCheckListItem>
                                 <BoxCheck
@@ -2200,7 +2200,7 @@ export default {
                             >
                               <FormListItem
                                 titleText="차량 수"
-                                target="#LeaseRentEstimationSystemPrePurchaseRegistCar_carQuantity001"
+                                target="#leaseRentEstimationSystemPrePurchaseRegistCar_carQuantity001"
                               >
                                 <FormInvalid :error="state.carQuantityError001">
                                   <InputBlock
@@ -2209,7 +2209,7 @@ export default {
                                     <InputBlockCell :flexible="true">
                                       <BasicInput
                                         title="차량 수 입력"
-                                        id="LeaseRentEstimationSystemPrePurchaseRegistCar_carQuantity001"
+                                        id="leaseRentEstimationSystemPrePurchaseRegistCar_carQuantity001"
                                         pattern="\d*"
                                         :useDelete="false"
                                         align="right"
@@ -2730,11 +2730,11 @@ export default {
                   <div :class="$style['estimate-list__head']">
                     <div :class="$style['estimate-list__block']">
                       <div :class="$style['estimate-list__left']">
-                        <div :class="$style['product-detail']">
-                          <div :class="$style['product-detail__title']">
+                        <div :class="$style['product-setting']">
+                          <div :class="$style['product-setting__title']">
                             상품
                           </div>
-                          <div :class="$style['product-detail__contents']">
+                          <div :class="$style['product-setting__contents']">
                             <BoxCheckList spacing="small" :wrap="true">
                               <BoxCheckListItem>
                                 <BoxCheck
@@ -2768,7 +2768,7 @@ export default {
                             >
                               <FormListItem
                                 titleText="차량 수"
-                                target="#LeaseRentEstimationSystemPrePurchaseRegistCar_carQuantity002"
+                                target="#leaseRentEstimationSystemPrePurchaseRegistCar_carQuantity002"
                               >
                                 <FormInvalid :error="state.carQuantityError002">
                                   <InputBlock
@@ -2777,7 +2777,7 @@ export default {
                                     <InputBlockCell :flexible="true">
                                       <BasicInput
                                         title="차량 수 입력"
-                                        id="LeaseRentEstimationSystemPrePurchaseRegistCar_carQuantity002"
+                                        id="leaseRentEstimationSystemPrePurchaseRegistCar_carQuantity002"
                                         pattern="\d*"
                                         :useDelete="false"
                                         align="right"
