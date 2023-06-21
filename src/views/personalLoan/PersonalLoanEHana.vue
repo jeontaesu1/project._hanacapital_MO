@@ -8,7 +8,6 @@ import { useUiHeaderStore } from '@/stores/ui/header';
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
-import PageSubText from '@/components/ui/text/PageSubText.vue';
 import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
@@ -32,6 +31,7 @@ import IconCalculate from '@/assets/images/icon/calculate.svg?component';
 import IconSearchMoney from '@/assets/images/icon/search-money.svg?component';
 import IconPersonalTerms from '@/assets/images/icon/personal-terms.svg?component';
 import IconSend from '@/assets/images/icon/send.svg?component';
+import IconContract from '@/assets/images/icon/contract.svg?component';
 import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 import ImgZeroCommission from '@/assets/images/illustration/img-zero-commission.svg';
 import Img120Months from '@/assets/images/illustration/img-120months.svg?component';
@@ -42,7 +42,6 @@ export default {
     PageContents,
     PageTextGroup,
     PageMainText,
-    PageSubText,
     KeyValue,
     KeyValueItem,
     KeyValueTitle,
@@ -65,6 +64,7 @@ export default {
     IconSearchMoney,
     IconPersonalTerms,
     IconSend,
+    IconContract,
     IconDeposit,
     ImgZeroCommission,
     Img120Months,
@@ -164,57 +164,46 @@ export default {
       </BasicBox>
     </div>
 
-    <div :class="['row-margin-container-medium']">
-      <PageTextGroup
-        :classNames="{
-          wrap: 'row-margin-item-group',
-        }"
-      >
-        <PageMainText><strong>중도상환수수료 면제!</strong></PageMainText>
-        <PageSubText>
-          언제, 얼마를 상환해도 <br />
-          상환수수료가 발생하지 않습니다. <br />
+    <div class="row-margin-container-medium">
+      <section class="row-margin-container-medium">
+        <h3 class="text-title-1 font-weight-medium row-margin-item">
+          중도상환수수료 면제!
+        </h3>
+        <p class="text-body-3">
+          언제, 얼마를 상환해도<br />
+          상환수수료가 발생하지 않습니다.<br />
           필요 시 바로 상환하여, 이자 부담을 줄여보세요.
-        </PageSubText>
-      </PageTextGroup>
-      <div :class="$style['illustration-img']">
-        <ImgZeroCommission />
-      </div>
-    </div>
+        </p>
+        <div :class="[$style['illustration-img'], 'row-margin-item-group']">
+          <ImgZeroCommission />
+        </div>
+      </section>
 
-    <div :class="['row-margin-container-medium']">
-      <PageTextGroup
-        :classNames="{
-          wrap: 'row-margin-item-group',
-        }"
-      >
-        <PageMainText><strong>대출최대기간 120개월</strong></PageMainText>
-        <PageSubText>
-          내 마음대로 최대 120개월까지 <br />
+      <section class="row-margin-container-medium">
+        <h3 class="text-title-1 font-weight-medium row-margin-item">
+          대출최대기간 120개월
+        </h3>
+        <p class="text-body-3">
+          내 마음대로 최대 120개월까지<br />
           대출기간을 설정하여 월납입부담을 줄여보세요.
-        </PageSubText>
-      </PageTextGroup>
-      <div :class="$style['illustration-img']">
-        <Img120Months />
-      </div>
+        </p>
+        <div :class="[$style['illustration-img'], 'row-margin-item-group']">
+          <Img120Months />
+        </div>
+      </section>
     </div>
 
     <UiTab>
       <StickyBar>
         <NavTab :useUiTab="true" :auto="true">
-          <NavTabButton link="PersonalLoanEHanaTab001_001"
-            >상품안내</NavTabButton
-          >
-          <NavTabButton link="PersonalLoanEHanaTab001_002"
-            >진행절차</NavTabButton
-          >
-          <NavTabButton link="PersonalLoanEHanaTab001_003"
-            >유의사항</NavTabButton
-          >
+          <NavTabButton link="personalLoanEHanaTab001">상품안내</NavTabButton>
+          <NavTabButton link="personalLoanEHanaTab002">진행절차</NavTabButton>
+          <NavTabButton link="personalLoanEHanaTab003">유의사항</NavTabButton>
         </NavTab>
       </StickyBar>
 
-      <UiTabPanel name="PersonalLoanEHanaTab001_001">
+      <!-- 상품안내 -->
+      <UiTabPanel name="personalLoanEHanaTab001">
         <BasicBox theme="tertiary">
           <KeyValue align="left" margin="regular">
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
@@ -250,7 +239,7 @@ export default {
         >
           <KeyValueItem>
             <KeyValueTitle>상환방법</KeyValueTitle>
-            <KeyValueText> 원리금균등분할상환 </KeyValueText>
+            <KeyValueText>원리금균등분할상환</KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem>
@@ -261,16 +250,22 @@ export default {
           <KeyValueItem>
             <KeyValueTitle>연체이자율</KeyValueTitle>
             <KeyValueText>
-              약정이율 + 3%
-              <p :class="$style['sub']">(법정최고금리 연 20% 이내)</p>
+              <div>약정이율 + 3%</div>
+              <div
+                class="text-body-4 font-weight-light color-gray-tertiary row-margin-mini"
+              >
+                (법정최고금리 연 20% 이내)
+              </div>
             </KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem>
             <KeyValueTitle>대출부대비용</KeyValueTitle>
             <KeyValueText>
-              5천만원 초과 실행 시 인지세 발생
-              <div :class="$style['sub']">
+              <div>5천만원 초과 실행 시 인지세 발생</div>
+              <div
+                class="text-body-4 font-weight-light color-gray-tertiary row-margin-mini"
+              >
                 (인지세는 하나캐피탈과 금융소비자가 50%씩 부담합니다.)
               </div>
               <ul :class="[$style['basic-list'], 'row-margin-item']">
@@ -305,8 +300,10 @@ export default {
           </KeyValueItem>
         </KeyValue>
       </UiTabPanel>
+      <!-- // 상품안내 -->
 
-      <UiTabPanel name="PersonalLoanEHanaTab001_002">
+      <!-- 진행절차 -->
+      <UiTabPanel name="personalLoanEHanaTab002">
         <div :class="$style['step']">
           <ul :class="$style['step__list']">
             <li :class="$style['step__item']">
@@ -332,8 +329,8 @@ export default {
                     <div :class="$style['step__badge']">STEP 2</div>
                   </div>
                   <div :class="$style['step__text']">
-                    한도 확인 후, 신청정보를 입력하여
-                    <strong>약정을 진행</strong>합니다.
+                    대출 한도 확인 후, 신청정보를 입력하여
+                    <strong>대출신청을 진행</strong>합니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
@@ -348,8 +345,8 @@ export default {
                     <div :class="$style['step__badge']">STEP 3</div>
                   </div>
                   <div :class="$style['step__text']">
-                    제출하신 정보로 최종심사 후 손님께
-                    <strong>결과를 안내</strong>해드립니다.
+                    제출하신 정보를 바탕으로 심사 후 손님께
+                    <strong>결과를 안내</strong>해 드립니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
@@ -364,6 +361,22 @@ export default {
                     <div :class="$style['step__badge']">STEP 4</div>
                   </div>
                   <div :class="$style['step__text']">
+                    문자로 전송된 안내에 따라
+                    <strong>온라인 약정을 진행</strong>합니다.
+                  </div>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconContract />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__top']">
+                    <div :class="$style['step__badge']">STEP 5</div>
+                  </div>
+                  <div :class="$style['step__text']">
                     계좌로 <strong>대출금을 입금</strong>해드립니다.
                   </div>
                 </div>
@@ -375,8 +388,10 @@ export default {
           </ul>
         </div>
       </UiTabPanel>
+      <!-- // 진행절차 -->
 
-      <UiTabPanel name="PersonalLoanEHanaTab001_003">
+      <!-- 유의사항 -->
+      <UiTabPanel name="personalLoanEHanaTab003">
         <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
           <li
             :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
@@ -466,24 +481,25 @@ export default {
           </li>
         </ul>
       </UiTabPanel>
-    </UiTab>
+      <!-- // 유의사항 -->
 
-    <ul :class="[$style['basic-list'], $style['margin-top-regular']]">
-      <li :class="$style['basic-list__item']">
-        <div :class="$style['basic-list__symbol']"></div>
-        <div :class="$style['basic-list__content']">
-          준법심의필 22-722<br />
-          (2022.03.14~2023.03.13)
-        </div>
-      </li>
-      <li :class="$style['basic-list__item']">
-        <div :class="$style['basic-list__symbol']"></div>
-        <div :class="$style['basic-list__content']">
-          여신금융협회 심의필 제2022-L1h-01783호<br />
-          (2022.03.14~2023.03.13)
-        </div>
-      </li>
-    </ul>
+      <ul :class="[$style['basic-list'], 'row-margin-contents']">
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            준법심의필 22-722<br />
+            (2022.03.14~2023.03.13)
+          </div>
+        </li>
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            여신금융협회 심의필 제2022-L1h-01783호<br />
+            (2022.03.14~2023.03.13)
+          </div>
+        </li>
+      </ul>
+    </UiTab>
 
     <BasicHr
       type="contents"
