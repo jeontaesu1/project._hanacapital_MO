@@ -301,6 +301,17 @@ const datas = () => [
         create: '2023.05.12',
         log: [],
       },
+      {
+        depth2: '온보딩',
+        depth3: '',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/guide/onboarding',
+        status: 'end',
+        create: '2023.06.23',
+        log: [],
+      },
     ],
   },
   {

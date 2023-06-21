@@ -537,6 +537,12 @@ const routes = [
     component: () =>
       import('@/views/uiGuide/GuideLeaseRentEstimationSystem001.vue'),
   },
+  {
+    path: '/guide/onboarding',
+    name: '/guide/onboarding',
+    component: () => import('@/views/uiGuide/GuideOnboarding.vue'),
+    meta: { layout: 'FullLayout' },
+  },
 
   // splash
   {
