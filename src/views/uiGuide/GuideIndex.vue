@@ -2047,8 +2047,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/lease-rent-estimation-system-003',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.21',
         log: [],
       },
       {
@@ -2102,8 +2102,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/lease-rent-estimation-system-004',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.21',
         log: [],
       },
       {
