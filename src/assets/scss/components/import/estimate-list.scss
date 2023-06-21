@@ -3,6 +3,35 @@
   border-radius: 8px;
   overflow: hidden;
 
+  &__top {
+    position: relative;
+    padding: 19px 15px 12px;
+    border-bottom: 1px solid $color-gray-20;
+  }
+
+  &__top-opener {
+    width: 20px;
+    height: 20px;
+    position: static;
+
+    &::before {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 0;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    @include font-size-default(15);
+  }
+
+  &__list {
+    @include reset-list;
+  }
+
   &__item {
     & + & {
       border-top: 1px solid $color-gray-20;
@@ -22,7 +51,7 @@
   &__head {
     position: relative;
     display: flex;
-    padding: 20px;
+    padding: 20px 15px;
     box-sizing: border-box;
   }
 
@@ -39,12 +68,15 @@
 
   &__right {
     flex: none;
-    margin-right: 8px;
+    margin-left: auto;
+    padding-left: 8px;
   }
 
   &__arrow {
     flex: none;
     margin-top: 1px;
+    margin-left: auto;
+    padding-left: 8px;
 
     .estimate-list__opener {
       position: static;
@@ -60,14 +92,58 @@
   }
 
   &__contents {
-    padding: 23px 20px;
+    padding: 24px 19px;
     box-sizing: border-box;
   }
 
   &__foot {
-    padding: 20px;
+    padding: 20px 15px;
     border-top: 1px solid $color-gray-20;
     background-color: $color-gray-05;
     box-sizing: border-box;
+  }
+
+  &__top + &__foot {
+    border-top: none;
+  }
+
+  &--full {
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  &--disabled {
+    border-color: rgba($color-gray-20, 0.5);
+
+    .estimate-list__list {
+      position: relative;
+    }
+
+    .estimate-list__top,
+    .estimate-list__list {
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba($color-white, 0.5);
+        z-index: 20;
+      }
+    }
+
+    .estimate-list__top {
+      border-bottom-color: rgba($color-gray-20, 0.5);
+    }
+
+    .estimate-list__foot {
+      border-top: none;
+      margin-top: 1px;
+      box-shadow: 0 -1px 0 rgba($color-gray-20, 0.5);
+    }
   }
 }

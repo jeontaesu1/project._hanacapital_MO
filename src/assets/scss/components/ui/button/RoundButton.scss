@@ -69,6 +69,22 @@
     margin-right: -4px;
   }
 
+  &--theme {
+    &-secondary {
+      color: $color-white;
+      border-color: $color-green-50;
+      background-color: $color-green-50;
+
+      .button__icon {
+        svg {
+          * {
+            fill: $color-white;
+          }
+        }
+      }
+    }
+  }
+
   &[disabled],
   &--disabled,
   &[disabled]:hover,

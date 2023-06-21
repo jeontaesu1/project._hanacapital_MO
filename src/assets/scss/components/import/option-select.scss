@@ -1,0 +1,54 @@
+.option-select {
+  display: block;
+
+  &__list {
+    @include reset-list;
+  }
+
+  &__item {
+    & + & {
+      border-top: 1px solid $color-gray-20;
+    }
+  }
+
+  &__block {
+    position: relative;
+    z-index: 0;
+    padding: 20px 15px;
+  }
+
+  &__check {
+    position: static;
+  }
+
+  &__label {
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color-navy-50, 0);
+    }
+  }
+
+  &__label-text {
+    padding-top: 2px;
+    @include font-size-default(14);
+  }
+
+  &__input {
+    &:checked + .option-select__label {
+      &::before {
+        background-color: rgba($color-navy-50, 0.08);
+      }
+    }
+  }
+
+  &__item--selected {
+    background-color: rgba($color-navy-50, 0.08);
+  }
+}

@@ -185,6 +185,9 @@ body,
   &-driving-license {
     width: 100px;
   }
+  &-ratio {
+    width: 60px;
+  }
 }
 
 // text
@@ -220,7 +223,7 @@ body,
 
 .text-caption-1.text-caption-1 {
   margin: 0;
-  @include font-size-head(11);
+  @include font-size-default(11);
 }
 
 // font-weight
@@ -275,6 +278,11 @@ body,
   text-decoration: none;
 }
 
+// nowrap
+.nowrap.nowrap {
+  white-space: nowrap;
+}
+
 // ellipsis
 .ellipsis.ellipsis {
   white-space: nowrap;
@@ -294,6 +302,17 @@ body,
   &--line-3 {
     -webkit-line-clamp: 3;
     max-height: #{$line-height-default * 3}em;
+  }
+
+  &.text-title-1,
+  &.text-title-2 {
+    max-height: #{$line-height-head * 2}em;
+
+    .multi-ellipsis {
+      &--line-3 {
+        max-height: #{$line-height-head * 3}em;
+      }
+    }
   }
 }
 

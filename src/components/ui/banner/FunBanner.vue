@@ -2,6 +2,8 @@
 import { computed } from 'vue';
 import { RouterLink } from 'vue-router';
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const defaultClassNames = () => ({
   wrap: '',
   contents: '',
@@ -36,6 +38,10 @@ export default {
       Type: String,
       default: null,
     },
+    action: {
+      Type: Boolean,
+      default: true,
+    },
     disabled: {
       Type: Boolean,
       default: false,
@@ -61,10 +67,21 @@ export default {
       return Object.assign(defaultClassNames(), classNames);
     });
 
+    const imgSrc = computed(() => {
+      const { thumb = '' } = props;
+
+      if (thumb.match(/^\//)) {
+        return BASE_URL + thumb.replace(/^\//, '');
+      } else {
+        return thumb;
+      }
+    });
+
     return {
       setComponent,
       setType,
       customClassNames,
+      imgSrc,
     };
   },
 };
@@ -94,7 +111,7 @@ export default {
         }"
       >
         <img
-          :src="thumb"
+          :src="imgSrc"
           @error="
             (e) => {
               e.target.parentNode.classList.add('is-error');
@@ -105,7 +122,7 @@ export default {
     </div>
     <component
       :is="setComponent"
-      v-if="!disabled"
+      v-if="!disabled && action"
       v-bind="$attrs"
       :type="setType"
       :class="[$style['banner__button'], customClassNames.button]"

@@ -1,5 +1,7 @@
 <script>
 import { ref, reactive } from 'vue';
+import { Pagination, A11y } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/vue';
 
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
@@ -18,6 +20,9 @@ import AlertPopup from '@/components/ui/layer/AlertPopup.vue';
 import CheckBox from '@/components/ui/form/CheckBox.vue';
 import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
 import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
+import RadioButton from '@/components/ui/form/RadioButton.vue';
+import RadioButtonLabelText from '@/components/ui/form/RadioButtonLabelText.vue';
+import RadioButtonObject from '@/components/ui/form/RadioButtonObject.vue';
 import BoxCheck from '@/components/ui/form/BoxCheck.vue';
 import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
 import BoxCheckObject from '@/components/ui/form/BoxCheckObject.vue';
@@ -92,10 +97,14 @@ import ColorSelect from '@/components/ui/form/ColorSelect.vue';
 import ColorSelectList from '@/components/ui/form/ColorSelectList.vue';
 import ColorSelectListItem from '@/components/ui/form/ColorSelectListItem.vue';
 import DownloadButton from '@/components/ui/button/DownloadButton.vue';
+import SettingButton from '@/components/ui/button/SettingButton.vue';
 import BasicBanner from '@/components/ui/banner/BasicBanner.vue';
 import EventBanner from '@/components/ui/banner/EventBanner.vue';
 import FunBanner from '@/components/ui/banner/FunBanner.vue';
 import CouponBanner from '@/components/ui/banner/CouponBanner.vue';
+import SlideBanner from '@/components/ui/banner/SlideBanner.vue';
+import SlideBannerBlock from '@/components/ui/banner/SlideBannerBlock.vue';
+import BasicBannerSlide from '@/components/ui/banner/BasicBannerSlide.vue';
 
 import BrandLogo001 from '@/assets/images/card-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/card-logo/lotte.svg?component';
@@ -139,8 +148,15 @@ import IconDropdown from '@/assets/images/icon/dropdown.svg?component';
 import IconImgColor from '@/assets/images/icon/img-color.svg?component';
 import IconImg from '@/assets/images/icon/img.svg?component';
 
+import IconSample from '@/assets/images/_dummy/sample.svg?component';
+
+const BASE_URL = import.meta.env.BASE_URL;
+
 export default {
   components: {
+    Swiper,
+    SwiperSlide,
+
     BasicButton,
     TextButton,
     UiLayer,
@@ -158,6 +174,9 @@ export default {
     CheckBox,
     CheckBoxLabelText,
     CheckBoxObject,
+    RadioButton,
+    RadioButtonLabelText,
+    RadioButtonObject,
     BoxCheck,
     BoxCheckLabel,
     BoxCheckObject,
@@ -232,10 +251,15 @@ export default {
     ColorSelectList,
     ColorSelectListItem,
     DownloadButton,
+    SettingButton,
     BasicBanner,
     EventBanner,
     FunBanner,
     CouponBanner,
+    SlideBanner,
+    SlideBannerBlock,
+    BasicBannerSlide,
+
     IconAdd,
     BrandLogo001,
     BrandLogo002,
@@ -277,6 +301,7 @@ export default {
     IconDropdown,
     IconImgColor,
     IconImg,
+    IconSample,
   },
 
   setup() {
@@ -334,6 +359,8 @@ export default {
     };
 
     return {
+      BASE_URL,
+      modules: [Pagination, A11y],
       state,
       layerTest001,
       layerTest002,
@@ -757,12 +784,6 @@ export default {
           </template>
           Button
         </BasicButton>
-        <BasicButton inline="true" size="mini">
-          Button
-          <template v-slot:rightIcon>
-            <div :class="$style['loading-icon']"></div>
-          </template>
-        </BasicButton>
         <BasicButton tagName="a" inline="true" disabledStyle="true">
           Button
           <template v-slot:rightIcon>
@@ -1023,6 +1044,26 @@ export default {
           </span>
         </button>
       </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Icon - secondary</h3>
+        <button
+          type="button"
+          :class="[$style['add-button'], 'row-margin-item']"
+        >
+          <span :class="$style['add-button__inner']">
+            <span :class="$style['add-button__text']">지정운전자 추가등록</span>
+            <span
+              :class="[
+                $style['add-button__icon'],
+                $style['add-button__icon--secondary'],
+              ]"
+            >
+              <IconAdd />
+            </span>
+          </span>
+        </button>
+      </div>
     </section>
 
     <section class="test-section">
@@ -1132,6 +1173,15 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Setting Button</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <SettingButton />
+        <SettingButton tagName="a" href="" />
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">inline wrap</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -1167,6 +1217,24 @@ export default {
             </KeyValueItem>
           </KeyValue>
         </ContentsButton>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Loading Icon</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sun-title">Default</h3>
+
+        <div
+          style="
+            display: inline-block;
+            padding: 20px;
+            background-color: #bdbdbd;
+            box-sizing: border-box;
+          "
+        >
+          <div :class="$style['loading-icon']"></div>
+        </div>
       </div>
     </section>
 
@@ -1503,6 +1571,247 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">RadioButton</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <RadioButton
+          name="testRadioButton001"
+          id="testRadioButton001_001"
+          @change="testInputEvent"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton001"
+          id="testRadioButton001_002"
+          :defaultChecked="true"
+          @change="testInputEvent"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton001d"
+          id="testRadioButton001d_001"
+          :disabled="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton001d"
+          id="testRadioButton001d_002"
+          :disabled="true"
+          :defaultChecked="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Align Center</h3>
+        <RadioButton
+          name="testRadioButton002"
+          id="testRadioButton002_001"
+          align="center"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton002"
+          id="testRadioButton002_002"
+          align="center"
+          :defaultChecked="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton002d"
+          id="testRadioButton002d_001"
+          align="center"
+          :disabled="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton002d"
+          id="testRadioButton002d_002"
+          align="center"
+          :disabled="true"
+          :defaultChecked="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Full</h3>
+        <RadioButton
+          name="testRadioButton003"
+          id="testRadioButton003_001"
+          :full="true"
+        >
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+          <RadioButtonObject />
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton003"
+          id="testRadioButton003_002"
+          :full="true"
+          :defaultChecked="true"
+        >
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+          <RadioButtonObject />
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton003d"
+          id="testRadioButton003d_001"
+          :full="true"
+          :disabled="true"
+        >
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+          <RadioButtonObject />
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton003d"
+          id="testRadioButton003d_002"
+          :full="true"
+          :disabled="true"
+          :defaultChecked="true"
+        >
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+          <RadioButtonObject />
+        </RadioButton>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Only Object</h3>
+        <RadioButton
+          name="testRadioButton004"
+          id="testRadioButton004_001"
+          :onlyObject="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton004"
+          id="testRadioButton004_002"
+          :onlyObject="true"
+          :defaultChecked="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton004d"
+          id="testRadioButton004d_001"
+          :onlyObject="true"
+          :disabled="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton004d"
+          id="testRadioButton004d_002"
+          :onlyObject="true"
+          :disabled="true"
+          :defaultChecked="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">secondary</h3>
+        <RadioButton
+          name="testRadioButton005"
+          id="testRadioButton005_001"
+          theme="secondary"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton005"
+          id="testRadioButton005_002"
+          theme="secondary"
+          :defaultChecked="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton005d"
+          id="testRadioButton005d_001"
+          theme="secondary"
+          :disabled="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton005d"
+          id="testRadioButton005d_002"
+          theme="secondary"
+          :disabled="true"
+          :defaultChecked="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">tertiary</h3>
+        <RadioButton
+          name="testRadioButton006"
+          id="testRadioButton006_001"
+          theme="tertiary"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton006"
+          id="testRadioButton006_002"
+          theme="tertiary"
+          :defaultChecked="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton006d"
+          id="testRadioButton006d_001"
+          theme="tertiary"
+          :disabled="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton006d"
+          id="testRadioButton006d_002"
+          theme="tertiary"
+          :disabled="true"
+          :defaultChecked="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Check list</h2>
 
       <div class="test-section-sub">
@@ -1530,6 +1839,39 @@ export default {
             </li>
             <li :class="$style['check-list__item']">
               <CheckBox id="testCheck001_004" theme="quinary">
+                <CheckBoxObject />
+                <CheckBoxLabelText>이메일</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Col - 3</h3>
+
+        <div :class="[$style['check-list'], $style['check-list--col-3']]">
+          <ul :class="$style['check-list__list']">
+            <li :class="$style['check-list__item']">
+              <CheckBox id="testCheck002_001" theme="quinary">
+                <CheckBoxObject />
+                <CheckBoxLabelText>전화</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+            <li :class="$style['check-list__item']">
+              <CheckBox id="testCheck002_002" theme="quinary">
+                <CheckBoxObject />
+                <CheckBoxLabelText>문자메시지</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+            <li :class="$style['check-list__item']">
+              <CheckBox id="testCheck002_003" theme="quinary">
+                <CheckBoxObject />
+                <CheckBoxLabelText>우편</CheckBoxLabelText>
+              </CheckBox>
+            </li>
+            <li :class="$style['check-list__item']">
+              <CheckBox id="testCheck002_004" theme="quinary">
                 <CheckBoxObject />
                 <CheckBoxLabelText>이메일</CheckBoxLabelText>
               </CheckBox>
@@ -2853,6 +3195,257 @@ export default {
                     buttonId="testInput011Button"
                     :onChange="testInputEvent"
                   />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem
+            titleText="브랜드"
+            target="#testInput015Button"
+            :selectOnly="true"
+          >
+            <FormInvalid :error="state.testError001">
+              <InputBlock :error="state.testError001">
+                <InputBlockCell :flexible="true">
+                  <ExtendSelect
+                    buttonTitle="브랜드 선택하기"
+                    layerTitle="브랜드를 선택해 주세요"
+                    buttonId="testInput015Button"
+                    :onChange="testInputEvent"
+                  >
+                    <UiTab>
+                      <RoundTab
+                        :useUiTab="true"
+                        :classNames="{ wrap: 'row-margin-item-group' }"
+                      >
+                        <RoundTabButton
+                          link="leaseRentEstimationSystemPrePurchaseChooseCarBrandTab001"
+                        >
+                          국산
+                        </RoundTabButton>
+                        <RoundTabButton
+                          link="leaseRentEstimationSystemPrePurchaseChooseCarBrandTab002"
+                        >
+                          수입
+                        </RoundTabButton>
+                      </RoundTab>
+
+                      <UiTabPanel
+                        name="leaseRentEstimationSystemPrePurchaseChooseCarBrandTab001"
+                      >
+                        <div
+                          :class="[
+                            $style['bank-brand'],
+                            $style['bank-brand--col-3'],
+                          ]"
+                        >
+                          <ul :class="$style['bank-brand__list']">
+                            <li :class="$style['bank-brand__item']">
+                              <ExtendSelectOption
+                                value="1001"
+                                text="현대"
+                                :classNames="{
+                                  option: $style['bank-brand__block'],
+                                }"
+                              >
+                                <span :class="$style['bank-brand__logo']">
+                                  <CarEmblem code="1001" size="medium" />
+                                </span>
+                                <span :class="$style['bank-brand__text']"
+                                  >현대</span
+                                >
+                              </ExtendSelectOption>
+                            </li>
+                            <li :class="$style['bank-brand__item']">
+                              <ExtendSelectOption
+                                value="1012"
+                                text="제네시스"
+                                :classNames="{
+                                  option: $style['bank-brand__block'],
+                                }"
+                              >
+                                <span :class="$style['bank-brand__logo']">
+                                  <CarEmblem code="1012" size="medium" />
+                                </span>
+                                <span :class="$style['bank-brand__text']"
+                                  >제네시스</span
+                                >
+                              </ExtendSelectOption>
+                            </li>
+                            <li :class="$style['bank-brand__item']">
+                              <ExtendSelectOption
+                                value="1002"
+                                text="기아"
+                                :classNames="{
+                                  option: $style['bank-brand__block'],
+                                }"
+                              >
+                                <span :class="$style['bank-brand__logo']">
+                                  <CarEmblem code="1002" size="medium" />
+                                </span>
+                                <span :class="$style['bank-brand__text']"
+                                  >기아</span
+                                >
+                              </ExtendSelectOption>
+                            </li>
+                            <li :class="$style['bank-brand__item']">
+                              <ExtendSelectOption
+                                value="1003"
+                                text="르노삼성"
+                                :classNames="{
+                                  option: $style['bank-brand__block'],
+                                }"
+                              >
+                                <span :class="$style['bank-brand__logo']">
+                                  <CarEmblem code="1003" size="medium" />
+                                </span>
+                                <span :class="$style['bank-brand__text']"
+                                  >르노삼성</span
+                                >
+                              </ExtendSelectOption>
+                            </li>
+                            <li :class="$style['bank-brand__item']">
+                              <ExtendSelectOption
+                                value="1006"
+                                text="쉐보레"
+                                :classNames="{
+                                  option: $style['bank-brand__block'],
+                                }"
+                              >
+                                <span :class="$style['bank-brand__logo']">
+                                  <CarEmblem code="1006" size="medium" />
+                                </span>
+                                <span :class="$style['bank-brand__text']"
+                                  >쉐보레</span
+                                >
+                              </ExtendSelectOption>
+                            </li>
+                            <li :class="$style['bank-brand__item']">
+                              <ExtendSelectOption
+                                value="1005"
+                                text="쌍용"
+                                :classNames="{
+                                  option: $style['bank-brand__block'],
+                                }"
+                              >
+                                <span :class="$style['bank-brand__logo']">
+                                  <CarEmblem code="1005" size="medium" />
+                                </span>
+                                <span :class="$style['bank-brand__text']"
+                                  >쌍용</span
+                                >
+                              </ExtendSelectOption>
+                            </li>
+                          </ul>
+                        </div>
+                      </UiTabPanel>
+
+                      <UiTabPanel
+                        name="leaseRentEstimationSystemPrePurchaseChooseCarBrandTab002"
+                      >
+                        <ul :class="$style['bank-brand__list']">
+                          <li :class="$style['bank-brand__item']">
+                            <ExtendSelectOption
+                              value="2001"
+                              text="벤츠"
+                              :classNames="{
+                                option: $style['bank-brand__block'],
+                              }"
+                            >
+                              <span :class="$style['bank-brand__logo']">
+                                <CarEmblem code="2001" size="medium" />
+                              </span>
+                              <span :class="$style['bank-brand__text']"
+                                >벤츠</span
+                              >
+                            </ExtendSelectOption>
+                          </li>
+                          <li :class="$style['bank-brand__item']">
+                            <ExtendSelectOption
+                              value="2002"
+                              text="BMW"
+                              :classNames="{
+                                option: $style['bank-brand__block'],
+                              }"
+                            >
+                              <span :class="$style['bank-brand__logo']">
+                                <CarEmblem code="2002" size="medium" />
+                              </span>
+                              <span :class="$style['bank-brand__text']"
+                                >BMW</span
+                              >
+                            </ExtendSelectOption>
+                          </li>
+                          <li :class="$style['bank-brand__item']">
+                            <ExtendSelectOption
+                              value="2003"
+                              text="아우디"
+                              :classNames="{
+                                option: $style['bank-brand__block'],
+                              }"
+                            >
+                              <span :class="$style['bank-brand__logo']">
+                                <CarEmblem code="2003" size="medium" />
+                              </span>
+                              <span :class="$style['bank-brand__text']"
+                                >아우디</span
+                              >
+                            </ExtendSelectOption>
+                          </li>
+                          <li :class="$style['bank-brand__item']">
+                            <ExtendSelectOption
+                              value="2017"
+                              text="포르쉐"
+                              :classNames="{
+                                option: $style['bank-brand__block'],
+                              }"
+                            >
+                              <span :class="$style['bank-brand__logo']">
+                                <CarEmblem code="2017" size="medium" />
+                              </span>
+                              <span :class="$style['bank-brand__text']"
+                                >포르쉐</span
+                              >
+                            </ExtendSelectOption>
+                          </li>
+                          <li :class="$style['bank-brand__item']">
+                            <ExtendSelectOption
+                              value="2018"
+                              text="마세라티"
+                              :classNames="{
+                                option: $style['bank-brand__block'],
+                              }"
+                            >
+                              <span :class="$style['bank-brand__logo']">
+                                <CarEmblem code="2018" size="medium" />
+                              </span>
+                              <span :class="$style['bank-brand__text']"
+                                >마세라티</span
+                              >
+                            </ExtendSelectOption>
+                          </li>
+                          <li :class="$style['bank-brand__item']">
+                            <ExtendSelectOption
+                              value="2025"
+                              text="벤틀리"
+                              :classNames="{
+                                option: $style['bank-brand__block'],
+                              }"
+                            >
+                              <span :class="$style['bank-brand__logo']">
+                                <CarEmblem code="2025" size="medium" />
+                              </span>
+                              <span :class="$style['bank-brand__text']"
+                                >벤틀리</span
+                              >
+                            </ExtendSelectOption>
+                          </li>
+                        </ul>
+                      </UiTabPanel>
+                    </UiTab>
+                  </ExtendSelect>
                 </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -4981,6 +5574,110 @@ export default {
 
             <UiAccordionItem
               :classNames="{ item: $style['estimate-list__item'] }"
+            >
+              <div :class="$style['estimate-list__head']">
+                <div :class="$style['estimate-list__block']">
+                  <div :class="$style['estimate-list__left']">
+                    <KeyValue align="left" size="regular">
+                      <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                        <KeyValueTitle>보증금</KeyValueTitle>
+                        <KeyValueText>0%</KeyValueText>
+                      </KeyValueItem>
+                    </KeyValue>
+                  </div>
+                  <div :class="$style['estimate-list__right']">
+                    <div class="text-body-3 font-weight-bold">0 원</div>
+                  </div>
+                </div>
+                <div :class="$style['estimate-list__arrow']">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['estimate-list__opener'] }"
+                  />
+                </div>
+              </div>
+
+              <UiAccordionLayer
+                :classNames="{ layer: $style['estimate-list__layer'] }"
+              >
+                <section :class="$style['estimate-list__contents']">
+                  // 내용 노출
+                </section>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+          </UiAccordion>
+
+          <div :class="$style['estimate-list__foot']">
+            <KeyValue margin="regular" verticalAlign="center">
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle
+                  :classNames="{ title: 'color-black font-weight-medium' }"
+                >
+                  월 리스료
+                </KeyValueTitle>
+                <KeyValueText>
+                  <BasicButton size="mini" inline="true">계산하기</BasicButton>
+                </KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle
+                  :classNames="{
+                    title: 'color-black font-weight-medium',
+                  }"
+                >
+                  IRR
+                </KeyValueTitle>
+                <KeyValueText>
+                  <UnitText rightUnit="%" align="right">
+                    <strong>-</strong>
+                  </UnitText>
+                </KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Disabled</h3>
+        <div
+          :class="[$style['estimate-list'], $style['estimate-list--disabled']]"
+        >
+          <UiAccordion :classNames="{ wrap: $style['estimate-list__list'] }">
+            <UiAccordionItem
+              :classNames="{ item: $style['estimate-list__item'] }"
+              :initialOpen="true"
+            >
+              <div :class="$style['estimate-list__head']">
+                <div :class="$style['estimate-list__block']">
+                  <div :class="$style['estimate-list__left']">
+                    <KeyValue align="left" size="regular">
+                      <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                        <KeyValueTitle>품목</KeyValueTitle>
+                        <KeyValueText>의료기</KeyValueText>
+                      </KeyValueItem>
+                    </KeyValue>
+                  </div>
+                </div>
+                <div :class="$style['estimate-list__arrow']">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['estimate-list__opener'] }"
+                  />
+                </div>
+              </div>
+
+              <UiAccordionLayer
+                :classNames="{ layer: $style['estimate-list__layer'] }"
+              >
+                <section :class="$style['estimate-list__contents']">
+                  // 내용 노출
+                </section>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+
+            <UiAccordionItem
+              :classNames="{ item: $style['estimate-list__item'] }"
+              :initialOpen="true"
             >
               <div :class="$style['estimate-list__head']">
                 <div :class="$style['estimate-list__block']">
@@ -7189,7 +7886,7 @@ export default {
         <SelectTable>
           <template v-slot:colgroup>
             <col style="width: 83px" />
-            <col />
+            <col style="width: 200px" />
             <col style="width: 90px" />
           </template>
 
@@ -7354,20 +8051,26 @@ export default {
           :defaultChecked="true"
           :disabled="true"
         />
-
-        <!-- 소스 카피 기능용 소스(미구현) -->
-        <div class="test-section-copy">
-          <div><button class="test-section-copy-button">copy</button></div>
-          <pre class="test-section-copy-code">
-            import SwitchCheckBox from '@/components/ui/form/SwitchCheckBox.vue';
-            components: {
-              SwitchCheckBox,
-            }
-            <SwitchCheckBox id="인풋과 매칭될 아이디 할당" />
-            <SwitchCheckBox id="test" /> // 예시
-          </pre>
-        </div>
-        <!-- //소스 카피 기능용 소스 -->
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">secondary</h3>
+        <SwitchCheckBox id="testSwitchCheckBox005" theme="secondary" />
+        <SwitchCheckBox
+          id="testSwitchCheckBox006"
+          theme="secondary"
+          :defaultChecked="true"
+        />
+        <SwitchCheckBox
+          id="testSwitchCheckBox007"
+          theme="secondary"
+          :disabled="true"
+        />
+        <SwitchCheckBox
+          id="testSwitchCheckBox008"
+          theme="secondary"
+          :defaultChecked="true"
+          :disabled="true"
+        />
       </div>
     </section>
 
@@ -7870,6 +8573,10 @@ export default {
         <CarEmblem code="1001" name="현대" />
       </div>
       <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Size Small</h3>
+        <CarEmblem code="1001" name="현대" size="small" />
+      </div>
+      <div class="test-section-sub">
         <h3 class="test-section-sub-title">Size Medium</h3>
         <CarEmblem code="1001" name="현대" size="medium" />
       </div>
@@ -8256,7 +8963,7 @@ export default {
                 <div
                   :class="$style['files__image']"
                   :style="{
-                    backgroundImage: `url('/images/_dummy/file-sample.png')`,
+                    backgroundImage: `url('${BASE_URL}images/_dummy/file-sample.png')`,
                   }"
                 >
                   <img
@@ -8331,7 +9038,7 @@ export default {
                 <div
                   :class="$style['files__image']"
                   :style="{
-                    backgroundImage: `url('/images/_dummy/file-sample.png')`,
+                    backgroundImage: `url('${BASE_URL}images/_dummy/file-sample.png')`,
                   }"
                 >
                   <img
@@ -8358,7 +9065,7 @@ export default {
                 <div
                   :class="$style['files__image']"
                   :style="{
-                    backgroundImage: `url('/images/_dummy/file-sample.png')`,
+                    backgroundImage: `url('${BASE_URL}images/_dummy/file-sample.png')`,
                   }"
                 >
                   <img
@@ -8385,7 +9092,7 @@ export default {
                 <div
                   :class="$style['files__image']"
                   :style="{
-                    backgroundImage: `url('/images/_dummy/file-sample.png')`,
+                    backgroundImage: `url('${BASE_URL}images/_dummy/file-sample.png')`,
                   }"
                 >
                   <img
@@ -8764,11 +9471,449 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">SlideBanner</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <SlideBanner>
+          <Swiper :modules="modules" pagination>
+            <!-- Case : 링크 기능 없을 때 -->
+            <SwiperSlide>
+              <SlideBannerBlock
+                thumb="/images/_dummy/banner-sample.png"
+                :action="false"
+              >
+                <div class="text-body-1 font-weight-medium ellipsis">
+                  높아진 한도 확인하세요!
+                </div>
+                <div
+                  class="text-body-4 color-gray row-margin-mini multi-ellipsis"
+                >
+                  지금 신용조회하면 상품이 와르르
+                </div>
+              </SlideBannerBlock>
+            </SwiperSlide>
+            <!-- //Case : 링크 기능 없을 때 -->
+
+            <!-- Case : 링크 기능 있을 때 (RouterLink) -->
+            <SwiperSlide>
+              <SlideBannerBlock
+                thumb="/images/_dummy/banner-sample.png"
+                tagName="RouterLink"
+                to=""
+              >
+                <div class="text-body-1 font-weight-medium ellipsis">
+                  높아진 한도 확인하세요!
+                </div>
+                <div
+                  class="text-body-4 color-gray row-margin-mini multi-ellipsis"
+                >
+                  지금 신용조회하면 상품이 와르르
+                </div>
+              </SlideBannerBlock>
+            </SwiperSlide>
+            <!-- // Case : 링크 기능 있을 때 -->
+
+            <!-- Case : 링크 기능 있을 때 (a tag) -->
+            <SwiperSlide>
+              <SlideBannerBlock
+                thumb="/images/_dummy/banner-sample.png"
+                tagName="a"
+                href=""
+              >
+                <div class="text-body-1 font-weight-medium ellipsis">
+                  높아진 한도 확인하세요!
+                </div>
+                <div
+                  class="text-body-4 color-gray row-margin-mini multi-ellipsis"
+                >
+                  지금 신용조회하면 상품이 와르르
+                </div>
+              </SlideBannerBlock>
+            </SwiperSlide>
+            <!-- // Case : 링크 기능 있을 때 (a tag) -->
+          </Swiper>
+        </SlideBanner>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">BasicBannerSlide</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <BasicBannerSlide>
+          <Swiper :modules="modules" pagination>
+            <!-- Case : 링크 기능 없을 때 -->
+            <SwiperSlide>
+              <BasicBanner
+                thumb="/images/_dummy/banner-001.png"
+                :action="false"
+              >
+                <p class="text-body-4 color-gray row-margin-mini ellipsis">
+                  서브 텍스트 최대 한줄 노출 서브 텍스트 최대 한줄 노출
+                </p>
+                <h3 class="text-body-1 font-weight-medium ellipsis">
+                  타이틀 텍스트 최대 한줄 노출 타이틀 텍스트 최대 한줄 노출
+                </h3>
+              </BasicBanner>
+            </SwiperSlide>
+            <!-- //Case : 링크 기능 없을 때 -->
+
+            <!-- Case : 링크 기능 있을 때 (RouterLink) -->
+            <SwiperSlide>
+              <BasicBanner
+                thumb="/images/_dummy/banner-001.png"
+                tagName="RouterLink"
+                to=""
+              >
+                <p class="text-body-4 color-gray row-margin-mini ellipsis">
+                  서브 텍스트 최대 한줄 노출 서브 텍스트 최대 한줄 노출
+                </p>
+                <h3 class="text-body-1 font-weight-medium ellipsis">
+                  타이틀 텍스트 최대 한줄 노출 타이틀 텍스트 최대 한줄 노출
+                </h3>
+              </BasicBanner>
+            </SwiperSlide>
+            <!-- // Case : 링크 기능 있을 때 -->
+
+            <!-- Case : 링크 기능 있을 때 (a tag) -->
+            <SwiperSlide>
+              <BasicBanner
+                thumb="/images/_dummy/banner-001.png"
+                tagName="a"
+                href=""
+              >
+                <p class="text-body-4 color-gray row-margin-mini ellipsis">
+                  서브 텍스트 최대 한줄 노출 서브 텍스트 최대 한줄 노출
+                </p>
+                <h3 class="text-body-1 font-weight-medium ellipsis">
+                  타이틀 텍스트 최대 한줄 노출 타이틀 텍스트 최대 한줄 노출
+                </h3>
+              </BasicBanner>
+            </SwiperSlide>
+            <!-- // Case : 링크 기능 있을 때 (a tag) -->
+          </Swiper>
+        </BasicBannerSlide>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Status Inquiry</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <ul :class="$style['status-inquiry']">
+          <li :class="$style['status-inquiry__item']">
+            <button type="button" :class="$style['status-inquiry__category']">
+              <span :class="$style['status-inquiry__number']">10</span>
+              <span :class="$style['status-inquiry__text']">전체</span>
+            </button>
+          </li>
+          <li :class="$style['status-inquiry__item']">
+            <button
+              type="button"
+              :class="[
+                $style['status-inquiry__category'],
+                $style['status-inquiry__category--active'],
+              ]"
+            >
+              <span :class="$style['status-inquiry__number']">4</span>
+              <span :class="$style['status-inquiry__text']">신용동의</span>
+            </button>
+          </li>
+          <li :class="$style['status-inquiry__item']">
+            <button type="button" :class="$style['status-inquiry__category']">
+              <span :class="$style['status-inquiry__number']">3</span>
+              <span :class="$style['status-inquiry__text']">상담</span>
+            </button>
+          </li>
+          <li :class="$style['status-inquiry__item']">
+            <button type="button" :class="$style['status-inquiry__category']">
+              <span :class="$style['status-inquiry__number']">2</span>
+              <span :class="$style['status-inquiry__text']">계약</span>
+            </button>
+          </li>
+          <li :class="$style['status-inquiry__item']">
+            <button type="button" :class="$style['status-inquiry__category']">
+              <span :class="$style['status-inquiry__number']">1</span>
+              <span :class="$style['status-inquiry__text']">송금</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">gap</h3>
+        <ul :class="[$style['status-inquiry'], $style['status-inquiry--gap']]">
+          <li :class="$style['status-inquiry__item']">
+            <button type="button" :class="$style['status-inquiry__category']">
+              <span :class="$style['status-inquiry__number']">10</span>
+              <span :class="$style['status-inquiry__text']">전체</span>
+            </button>
+          </li>
+          <li :class="$style['status-inquiry__item']">
+            <button
+              type="button"
+              :class="[
+                $style['status-inquiry__category'],
+                $style['status-inquiry__category--active'],
+              ]"
+            >
+              <span :class="$style['status-inquiry__number']">4</span>
+              <span :class="$style['status-inquiry__text']">신용동의</span>
+            </button>
+          </li>
+          <li :class="$style['status-inquiry__item']">
+            <button type="button" :class="$style['status-inquiry__category']">
+              <span :class="$style['status-inquiry__number']">3</span>
+              <span :class="$style['status-inquiry__text']">상담</span>
+            </button>
+          </li>
+          <li :class="$style['status-inquiry__item']">
+            <button type="button" :class="$style['status-inquiry__category']">
+              <span :class="$style['status-inquiry__number']">2</span>
+              <span :class="$style['status-inquiry__text']">계약</span>
+            </button>
+          </li>
+          <li :class="$style['status-inquiry__item']">
+            <button type="button" :class="$style['status-inquiry__category']">
+              <span :class="$style['status-inquiry__number']">1</span>
+              <span :class="$style['status-inquiry__text']">송금</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">secondary</h3>
+        <ul
+          :class="[
+            $style['status-inquiry'],
+            $style['status-inquiry--secondary'],
+          ]"
+        >
+          <li :class="$style['status-inquiry__item']">
+            <button type="button" :class="$style['status-inquiry__category']">
+              <span :class="$style['status-inquiry__number']">10</span>
+              <span :class="$style['status-inquiry__text']">전체</span>
+            </button>
+          </li>
+          <li :class="$style['status-inquiry__item']">
+            <button
+              type="button"
+              :class="[
+                $style['status-inquiry__category'],
+                $style['status-inquiry__category--active'],
+              ]"
+            >
+              <span :class="$style['status-inquiry__number']">4</span>
+              <span :class="$style['status-inquiry__text']">신용동의</span>
+            </button>
+          </li>
+          <li :class="$style['status-inquiry__item']">
+            <button type="button" :class="$style['status-inquiry__category']">
+              <span :class="$style['status-inquiry__number']">3</span>
+              <span :class="$style['status-inquiry__text']">상담</span>
+            </button>
+          </li>
+          <li :class="$style['status-inquiry__item']">
+            <button type="button" :class="$style['status-inquiry__category']">
+              <span :class="$style['status-inquiry__number']">2</span>
+              <span :class="$style['status-inquiry__text']">계약</span>
+            </button>
+          </li>
+          <li :class="$style['status-inquiry__item']">
+            <button type="button" :class="$style['status-inquiry__category']">
+              <span :class="$style['status-inquiry__number']">1</span>
+              <span :class="$style['status-inquiry__text']">송금</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Share List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <div :class="$style['share-list']">
+          <ul :class="$style['share-list__list']">
+            <li :class="$style['share-list__item']">
+              <button type="button" :class="$style['share-list__button']">
+                <span :class="$style['share-list__icon']">
+                  <IconSample />
+                </span>
+                <span :class="$style['share-list__text']">카카오톡</span>
+              </button>
+            </li>
+            <li :class="$style['share-list__item']">
+              <a
+                href="/foo/bar.pdf"
+                download
+                :class="$style['share-list__button']"
+              >
+                <span :class="$style['share-list__icon']">
+                  <IconSample />
+                </span>
+                <span :class="$style['share-list__text']">PDF 다운로드</span>
+              </a>
+            </li>
+            <li :class="$style['share-list__item']">
+              <a
+                href="/foo/bar.pdf"
+                download
+                :class="$style['share-list__button']"
+              >
+                <span :class="$style['share-list__icon']">
+                  <IconSample />
+                </span>
+                <span :class="$style['share-list__text']">JPG 다운로드</span>
+              </a>
+            </li>
+            <li :class="$style['share-list__item']">
+              <button type="button" :class="$style['share-list__button']">
+                <span :class="$style['share-list__icon']">
+                  <IconSample />
+                </span>
+                <span :class="$style['share-list__text']">인쇄</span>
+              </button>
+            </li>
+            <li :class="$style['share-list__item']">
+              <button type="button" :class="$style['share-list__button']">
+                <span :class="$style['share-list__icon']">
+                  <IconSample />
+                </span>
+                <span :class="$style['share-list__text']">열기</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">col 3</h3>
+
+        <div :class="[$style['share-list'], $style['share-list--col-3']]">
+          <ul :class="$style['share-list__list']">
+            <li :class="$style['share-list__item']">
+              <button type="button" :class="$style['share-list__button']">
+                <span :class="$style['share-list__icon']">
+                  <IconSample />
+                </span>
+                <span :class="$style['share-list__text']">카카오톡</span>
+              </button>
+            </li>
+            <li :class="$style['share-list__item']">
+              <a
+                href="/foo/bar.pdf"
+                download
+                :class="$style['share-list__button']"
+              >
+                <span :class="$style['share-list__icon']">
+                  <IconSample />
+                </span>
+                <span :class="$style['share-list__text']">PDF 다운로드</span>
+              </a>
+            </li>
+            <li :class="$style['share-list__item']">
+              <a
+                href="/foo/bar.pdf"
+                download
+                :class="$style['share-list__button']"
+              >
+                <span :class="$style['share-list__icon']">
+                  <IconSample />
+                </span>
+                <span :class="$style['share-list__text']">JPG 다운로드</span>
+              </a>
+            </li>
+            <li :class="$style['share-list__item']">
+              <button type="button" :class="$style['share-list__button']">
+                <span :class="$style['share-list__icon']">
+                  <IconSample />
+                </span>
+                <span :class="$style['share-list__text']">인쇄</span>
+              </button>
+            </li>
+            <li :class="$style['share-list__item']">
+              <button type="button" :class="$style['share-list__button']">
+                <span :class="$style['share-list__icon']">
+                  <IconSample />
+                </span>
+                <span :class="$style['share-list__text']">열기</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">col 4</h3>
+
+        <div :class="[$style['share-list'], $style['share-list--col-4']]">
+          <ul :class="$style['share-list__list']">
+            <li :class="$style['share-list__item']">
+              <button type="button" :class="$style['share-list__button']">
+                <span :class="$style['share-list__icon']">
+                  <IconSample />
+                </span>
+                <span :class="$style['share-list__text']">카카오톡</span>
+              </button>
+            </li>
+            <li :class="$style['share-list__item']">
+              <a
+                href="/foo/bar.pdf"
+                download
+                :class="$style['share-list__button']"
+              >
+                <span :class="$style['share-list__icon']">
+                  <IconSample />
+                </span>
+                <span :class="$style['share-list__text']">PDF 다운로드</span>
+              </a>
+            </li>
+            <li :class="$style['share-list__item']">
+              <a
+                href="/foo/bar.pdf"
+                download
+                :class="$style['share-list__button']"
+              >
+                <span :class="$style['share-list__icon']">
+                  <IconSample />
+                </span>
+                <span :class="$style['share-list__text']">JPG 다운로드</span>
+              </a>
+            </li>
+            <li :class="$style['share-list__item']">
+              <button type="button" :class="$style['share-list__button']">
+                <span :class="$style['share-list__icon']">
+                  <IconSample />
+                </span>
+                <span :class="$style['share-list__text']">인쇄</span>
+              </button>
+            </li>
+            <li :class="$style['share-list__item']">
+              <button type="button" :class="$style['share-list__button']">
+                <span :class="$style['share-list__icon']">
+                  <IconSample />
+                </span>
+                <span :class="$style['share-list__text']">열기</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!--
+    <section class="test-section">
       <h2 class="test-section-title">Component Title</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
+
+        내용
       </div>
     </section>
+    -->
   </div>
 </template>
 

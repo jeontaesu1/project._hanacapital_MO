@@ -6,6 +6,8 @@ export const useUiHeaderStore = defineStore('uiHeader', {
     leftButtons: null,
     rightButtons: null,
     height: 0,
+    useAppButton: false,
+    theme: null,
   }),
   actions: {
     setTitle(title = () => null) {
@@ -19,6 +21,12 @@ export const useUiHeaderStore = defineStore('uiHeader', {
     },
     setHeight(height = 0) {
       this.height = height;
+    },
+    setUseAppButton(useAppButton = () => false) {
+      this.useAppButton = useAppButton();
+    },
+    setTheme(theme = () => null) {
+      this.theme = theme();
     },
   },
 });

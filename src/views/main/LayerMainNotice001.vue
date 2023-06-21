@@ -1,20 +1,20 @@
 <script>
 // Main_M01_l001 Type 1
 import { ref } from 'vue';
+import { Pagination, A11y } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import ToastPopup from '@/components/ui/layer/ToastPopup.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
-import { Pagination, A11y } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/vue';
 
 export default {
   components: {
+    Swiper,
+    SwiperSlide,
     UiLayer,
     ToastPopup,
     TextButton,
-    Swiper,
-    SwiperSlide,
   },
   setup() {
     const layer = ref(null);

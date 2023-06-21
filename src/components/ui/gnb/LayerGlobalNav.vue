@@ -27,8 +27,24 @@ export default {
 </script>
 
 <template>
-  <UiLayer ref="layer" type="full" v-slot="layerSlotProps">
-    <FullPopup>
+  <UiLayer
+    ref="layer"
+    type="full"
+    v-slot="layerSlotProps"
+    :classNames="{
+      wrap: $style['gnb-layer'],
+    }"
+  >
+    <FullPopup
+      :classNames="{
+        wrap: [
+          $style['gnb'],
+          {
+            [$style['gnb--opened']]: layerSlotProps.opened,
+          },
+        ],
+      }"
+    >
       <template v-slot:head>
         <FullPopupHead>
           <template v-slot:right>
@@ -42,3 +58,7 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/components/ui/gnb/LayerGlobalNav.scss';
+</style>

@@ -21,6 +21,7 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    align-items: stretch;
     justify-content: flex-start;
     text-align: center;
     padding: 10px 14px;
@@ -54,14 +55,15 @@
   &__text {
     flex: none;
     display: block;
-    width: 100%;
     @include font-size-default(14);
   }
 
-  &--col-2 {
-    .bank-brand {
-      &__item {
-        width: 50%;
+  &--col {
+    &-2 {
+      .bank-brand {
+        &__item {
+          width: 50%;
+        }
       }
     }
   }

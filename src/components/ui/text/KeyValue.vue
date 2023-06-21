@@ -50,7 +50,7 @@ export default {
 </script>
 
 <template>
-  <dl
+  <div
     :class="[
       $style['key-value'],
       {
@@ -63,8 +63,10 @@ export default {
       customClassNames.wrap,
     ]"
   >
-    <slot />
-  </dl>
+    <dl :class="[$style['key-value__list'], customClassNames.list]">
+      <slot />
+    </dl>
+  </div>
 </template>
 
 <style lang="scss" module>

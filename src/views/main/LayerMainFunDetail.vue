@@ -9,6 +9,7 @@ import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import BasicBanner from '@/components/ui/banner/BasicBanner.vue';
 
 export default {
   components: {
@@ -19,6 +20,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
+    BasicBanner,
   },
   setup() {
     const layer = ref(null);
@@ -58,9 +60,53 @@ export default {
           //게시물 내용 노출
         </section>
 
+        <!-- DD : 관리자 등록 배너 -->
         <div class="row-margin-contents">
-          // 배너 영역 (내용 확인 후 진행 예정)
+          <!-- Case : 링크 기능 없을 때 -->
+          <BasicBanner
+            thumb="/images/_dummy/banner-money-up.png"
+            :action="false"
+          >
+            <p class="text-body-4 color-gray row-margin-mini ellipsis">
+              링크 기능 없을 때 Case 최대 한줄 노출
+            </p>
+            <h3 class="text-body-1 font-weight-medium ellipsis">
+              타이틀 최대 한줄 노출 타이틀 최대 한줄 노출
+            </h3>
+          </BasicBanner>
+          <!-- // Case : 링크 기능 없을 때 -->
+
+          <!-- Case : 링크 기능 있을 때 (RouterLink) -->
+          <BasicBanner
+            thumb="/images/_dummy/banner-money-up.png"
+            tagName="RouterLink"
+            to=""
+          >
+            <p class="text-body-4 color-gray row-margin-mini ellipsis">
+              링크 기능 있을 때 (RouterLink) Case 최대 한줄 노출
+            </p>
+            <h3 class="text-body-1 font-weight-medium ellipsis">
+              타이틀 최대 한줄 노출 타이틀 최대 한줄 노출
+            </h3>
+          </BasicBanner>
+          <!-- // Case : 링크 기능 있을 때 -->
+
+          <!-- Case : 링크 기능 있을 때 (a tag) -->
+          <BasicBanner
+            thumb="/images/_dummy/banner-money-up.png"
+            tagName="a"
+            href=""
+          >
+            <p class="text-body-4 color-gray row-margin-mini ellipsis">
+              링크 기능 있을 때 (a tag) Case 최대 한줄 노출
+            </p>
+            <h3 class="text-body-1 font-weight-medium ellipsis">
+              타이틀 최대 한줄 노출 타이틀 최대 한줄 노출
+            </h3>
+          </BasicBanner>
+          <!-- // Case : 링크 기능 있을 때 (a tag) -->
         </div>
+        <!-- // DD : 관리자 등록 배너 -->
       </div>
 
       <!-- Case : 링크 콘텐츠일 경우 -->

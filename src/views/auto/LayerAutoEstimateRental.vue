@@ -532,7 +532,7 @@ export default {
         </section>
       </div>
 
-      <BasicHr className="row-margin-container-medium"></BasicHr>
+      <BasicHr className="row-margin-container-medium" />
 
       <div>
         <BasicBox>

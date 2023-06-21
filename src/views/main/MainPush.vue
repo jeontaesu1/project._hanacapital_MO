@@ -2,6 +2,7 @@
 // Main_M06_p001
 import { onMounted, onUnmounted } from 'vue';
 
+import { useUiLayoutStore } from '@/stores/ui/layout';
 import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
@@ -18,17 +19,22 @@ export default {
   setup() {
     const store = {
       ui: {
+        layout: useUiLayoutStore(),
         header: useUiHeaderStore(),
       },
     };
 
     onMounted(() => {
+      store.ui.layout.setUseFooter(false);
+
       store.ui.header.setTitle(() => '알림');
       store.ui.header.setLeftButtons(() => ['back']);
       store.ui.header.setRightButtons(() => ['setting']);
     });
 
     onUnmounted(() => {
+      store.ui.layout.setUseFooter();
+
       store.ui.header.setTitle();
       store.ui.header.setLeftButtons();
       store.ui.header.setRightButtons();

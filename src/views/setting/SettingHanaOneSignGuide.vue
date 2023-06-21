@@ -7,6 +7,8 @@ import { useUiHeaderStore } from '@/stores/ui/header';
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
+import BasicBanner from '@/components/ui/banner/BasicBanner.vue';
+
 import ImgSample from '@/assets/images/_dummy/illustration-sample.svg?component';
 
 export default {
@@ -14,6 +16,7 @@ export default {
     PageContents,
     BasicButton,
     NoticeText,
+    BasicBanner,
     ImgSample,
   },
   setup() {
@@ -40,9 +43,19 @@ export default {
 
 <template>
   <PageContents>
-    <div class="row-margin-contents-group">
-      // 배너 영역 (내용 확인 후 진행 예정)
-    </div>
+    <!-- DD : 하드코딩 배너 -->
+    <BasicBanner
+      thumb="/images/banner/banner-money-up.png"
+      @click="() => {}"
+      :classNames="{ wrap: 'row-margin-contents-group' }"
+    >
+      <p class="text-body-4 color-gray row-margin-mini nowrap">
+        스마트폰에 카메라만 있으면<br />
+        얼굴로 간편하게
+      </p>
+      <h3 class="text-body-1 font-weight-medium nowrap">로그인 · 인증 OK!</h3>
+    </BasicBanner>
+    <!-- // DD : 하드코딩 배너 -->
 
     <div>
       <section class="row-margin-container-medium">

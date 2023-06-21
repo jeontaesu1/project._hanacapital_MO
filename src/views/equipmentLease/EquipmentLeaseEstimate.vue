@@ -154,7 +154,7 @@ export default {
                 <KeyValue align="left" size="regular" verticalAlign="center">
                   <KeyValueItem :classNames="{ item: 'text-body-3' }">
                     <KeyValueTitle>
-                      <span class="inline-block text-body-4">품목</span>
+                      <div class="text-body-4">품목</div>
                     </KeyValueTitle>
                     <KeyValueText> 의료기 </KeyValueText>
                   </KeyValueItem>
@@ -206,7 +206,7 @@ export default {
                 <KeyValue align="left" size="regular" verticalAlign="center">
                   <KeyValueItem :classNames="{ item: 'text-body-3' }">
                     <KeyValueTitle>
-                      <span class="inline-block text-body-4">이자구분</span>
+                      <div class="text-body-4">이자구분</div>
                     </KeyValueTitle>
                     <KeyValueText> 유이자 </KeyValueText>
                   </KeyValueItem>
@@ -259,7 +259,7 @@ export default {
                 <KeyValue align="left" size="regular">
                   <KeyValueItem :classNames="{ item: 'text-body-3' }">
                     <KeyValueTitle>
-                      <span class="inline-block text-body-4">장비명</span>
+                      <div class="text-body-4">장비명</div>
                     </KeyValueTitle>
                     <KeyValueText>
                       <FormList>
@@ -297,7 +297,7 @@ export default {
                 <KeyValue align="left" size="regular">
                   <KeyValueItem :classNames="{ item: 'text-body-3' }">
                     <KeyValueTitle>
-                      <span class="inline-block text-body-4">취득원가</span>
+                      <div class="text-body-4">취득원가</div>
                     </KeyValueTitle>
                     <KeyValueText>
                       <FormList>
@@ -343,7 +343,7 @@ export default {
                 <KeyValue align="left" size="regular">
                   <KeyValueItem :classNames="{ item: 'text-body-3' }">
                     <KeyValueTitle>
-                      <span class="inline-block text-body-4">장비명</span>
+                      <div class="text-body-4">장비명</div>
                     </KeyValueTitle>
                     <KeyValueText>레이져</KeyValueText>
                   </KeyValueItem>
@@ -360,7 +360,7 @@ export default {
                 <KeyValue>
                   <KeyValueItem :classNames="{ item: 'text-body-3' }">
                     <KeyValueTitle>
-                      <span class="inline-block text-body-4">취득원가</span>
+                      <div class="text-body-4">취득원가</div>
                     </KeyValueTitle>
                     <KeyValueText :classNames="{ text: 'font-weight-bold' }">
                       18,700,000 원
@@ -380,7 +380,7 @@ export default {
                 <KeyValue align="left" size="regular">
                   <KeyValueItem :classNames="{ item: 'text-body-3' }">
                     <KeyValueTitle>
-                      <span class="inline-block text-body-4">기간</span>
+                      <div class="text-body-4">기간</div>
                     </KeyValueTitle>
                     <KeyValueText>36개월</KeyValueText>
                   </KeyValueItem>
@@ -509,7 +509,7 @@ export default {
                 <KeyValue align="left" size="regular">
                   <KeyValueItem :classNames="{ item: 'text-body-3' }">
                     <KeyValueTitle>
-                      <span class="inline-block text-body-4">적용금리</span>
+                      <div class="text-body-4">적용금리</div>
                     </KeyValueTitle>
                     <KeyValueText>0%</KeyValueText>
                   </KeyValueItem>
@@ -526,7 +526,7 @@ export default {
                 <KeyValue align="left" size="regular">
                   <KeyValueItem :classNames="{ item: 'text-body-3' }">
                     <KeyValueTitle>
-                      <span class="inline-block text-body-4">보증금</span>
+                      <div class="text-body-4">보증금</div>
                     </KeyValueTitle>
                     <KeyValueText>0%</KeyValueText>
                   </KeyValueItem>
@@ -880,7 +880,7 @@ export default {
                 <KeyValue align="left" size="regular">
                   <KeyValueItem :classNames="{ item: 'text-body-3' }">
                     <KeyValueTitle>
-                      <span class="inline-block text-body-4">잔존가치</span>
+                      <div class="text-body-4">잔존가치</div>
                     </KeyValueTitle>
                     <KeyValueText>0%</KeyValueText>
                   </KeyValueItem>
@@ -1234,7 +1234,7 @@ export default {
                 <KeyValue align="left" size="regular">
                   <KeyValueItem :classNames="{ item: 'text-body-3' }">
                     <KeyValueTitle>
-                      <span class="inline-block text-body-4">유예원금</span>
+                      <div class="text-body-4">유예원금</div>
                     </KeyValueTitle>
                     <KeyValueText>0%</KeyValueText>
                   </KeyValueItem>
@@ -1588,9 +1588,7 @@ export default {
                 <KeyValue align="left" size="regular">
                   <KeyValueItem :classNames="{ item: 'text-body-3' }">
                     <KeyValueTitle>
-                      <span class="inline-block text-body-4"
-                        >공급자<br />이자지원</span
-                      >
+                      <div class="text-body-4">공급자<br />이자지원</div>
                     </KeyValueTitle>
                     <KeyValueText>0%</KeyValueText>
                   </KeyValueItem>
@@ -1868,7 +1866,7 @@ export default {
                 <KeyValue align="left" size="regular">
                   <KeyValueItem :classNames="{ item: 'text-body-3' }">
                     <KeyValueTitle>
-                      <span class="inline-block text-body-4">납입방식</span>
+                      <div class="text-body-4">납입방식</div>
                     </KeyValueTitle>
                     <KeyValueText>1개월 후불</KeyValueText>
                   </KeyValueItem>
@@ -1920,9 +1918,7 @@ export default {
                 <KeyValue align="left" size="regular">
                   <KeyValueItem :classNames="{ item: 'text-body-3' }">
                     <KeyValueTitle>
-                      <span class="inline-block text-body-4"
-                        >보험조건<br />/요율</span
-                      >
+                      <div class="text-body-4">보험조건<br />/요율</div>
                     </KeyValueTitle>
                     <KeyValueText>이용자 책임부보</KeyValueText>
                   </KeyValueItem>

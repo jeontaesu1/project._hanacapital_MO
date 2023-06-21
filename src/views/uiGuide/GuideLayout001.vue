@@ -83,12 +83,20 @@ export default {
 
     // contents
 
-    <button type="button" @click="store.ui.common.setApp(true)">
-      APP 모드 ON
-    </button>
-    <button type="button" @click="store.ui.common.setApp(false)">
-      APP 모드 OFF
-    </button>
+    <StickyBar>
+      <NavTab :scroll="true" :auto="true">
+        <NavTabButton tagName="button" type="button">Tab 1</NavTabButton>
+        <NavTabButton tagName="button" type="button">Tab 2</NavTabButton>
+        <NavTabButton tagName="button" type="button">Tab 3</NavTabButton>
+        <NavTabButton tagName="button" type="button">Tab 4</NavTabButton>
+        <NavTabButton tagName="button" type="button" :active="true">
+          Tab 5
+        </NavTabButton>
+        <NavTabButton tagName="button" type="button">Tab 6</NavTabButton>
+        <NavTabButton tagName="button" type="button">Tab 7</NavTabButton>
+        <NavTabButton tagName="button" type="button">Tab 8</NavTabButton>
+      </NavTab>
+    </StickyBar>
 
     <div style="height: 1500px; border: 10px dotted #666">
       스크롤 생기게 하기 위한 더미

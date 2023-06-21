@@ -19,4 +19,12 @@
     box-sizing: border-box;
     padding: 8px 0 0 8px;
   }
+
+  &--col {
+    &-3 {
+      .check-list__item {
+        width: 33.333333%;
+      }
+    }
+  }
 }

@@ -6,6 +6,7 @@
   @include font-size-default(11);
   font-weight: 500;
   color: $color-gray-70;
+  text-align: center;
   border: 1px solid $color-gray-20;
   background-color: $color-gray-20;
 
@@ -75,6 +76,10 @@
       border-color: transparent;
       background-color: rgba($color-navy-90, 0.7);
     }
+  }
+
+  &--block {
+    display: block;
   }
 
   &--size {

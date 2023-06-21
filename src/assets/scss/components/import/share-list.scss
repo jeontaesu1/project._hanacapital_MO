@@ -1,0 +1,66 @@
+.share-list {
+  &::before {
+    content: '';
+    display: table;
+  }
+
+  &__list {
+    @include reset-list;
+    margin: -16px 0 0 -16px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    flex: none;
+    box-sizing: border-box;
+    width: 50%;
+    padding: 16px 0 0 16px;
+  }
+
+  &__button {
+    @include reset-button;
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &__icon {
+    display: block;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 8px;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__text {
+    display: block;
+    margin: 0 -8px;
+    @include font-size-default(13);
+    font-weight: 500;
+  }
+
+  &--col {
+    &-3 {
+      .share-list {
+        &__item {
+          width: 33.333333%;
+        }
+      }
+    }
+    &-4 {
+      .share-list {
+        &__item {
+          width: 25%;
+        }
+      }
+    }
+  }
+}

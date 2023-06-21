@@ -9,6 +9,8 @@ import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 export default {
   components: {
     UiLayer,
@@ -22,6 +24,7 @@ export default {
     const layer = ref(null);
 
     return {
+      BASE_URL,
       layer,
     };
   },
@@ -58,7 +61,7 @@ export default {
                 <div
                   :class="$style['files__image']"
                   :style="{
-                    backgroundImage: `url('/images/_dummy/file-sample.png')`,
+                    backgroundImage: `url('${BASE_URL}images/_dummy/file-sample.png')`,
                   }"
                 >
                   <img
@@ -73,9 +76,6 @@ export default {
                 </div>
                 <button type="button" :class="$style['files__link']">
                   <span class="for-a11y">미리보기</span>
-                </button>
-                <button type="button" :class="$style['files__delete']">
-                  <span class="for-a11y">삭제</span>
                 </button>
               </div>
             </li>
@@ -103,9 +103,6 @@ export default {
                 <button type="button" :class="$style['files__link']">
                   <span class="for-a11y">미리보기</span>
                 </button>
-                <button type="button" :class="$style['files__delete']">
-                  <span class="for-a11y">삭제</span>
-                </button>
               </div>
             </li>
             <!-- // Case : 이미지 에러 -->
@@ -121,9 +118,6 @@ export default {
                 <button type="button" :class="$style['files__link']">
                   <span class="for-a11y">미리보기</span>
                 </button>
-                <button type="button" :class="$style['files__delete']">
-                  <span class="for-a11y">삭제</span>
-                </button>
               </div>
             </li>
             <!-- // Case : PDF -->
@@ -133,7 +127,7 @@ export default {
                 <div
                   :class="$style['files__image']"
                   :style="{
-                    backgroundImage: `url('/images/_dummy/file-sample.png')`,
+                    backgroundImage: `url('${BASE_URL}images/_dummy/file-sample.png')`,
                   }"
                 >
                   <img
@@ -148,9 +142,6 @@ export default {
                 </div>
                 <button type="button" :class="$style['files__link']">
                   <span class="for-a11y">미리보기</span>
-                </button>
-                <button type="button" :class="$style['files__delete']">
-                  <span class="for-a11y">삭제</span>
                 </button>
               </div>
             </li>
@@ -160,7 +151,7 @@ export default {
                 <div
                   :class="$style['files__image']"
                   :style="{
-                    backgroundImage: `url('/images/_dummy/file-sample.png')`,
+                    backgroundImage: `url('${BASE_URL}images/_dummy/file-sample.png')`,
                   }"
                 >
                   <img
@@ -175,9 +166,6 @@ export default {
                 </div>
                 <button type="button" :class="$style['files__link']">
                   <span class="for-a11y">미리보기</span>
-                </button>
-                <button type="button" :class="$style['files__delete']">
-                  <span class="for-a11y">삭제</span>
                 </button>
               </div>
             </li>
@@ -187,7 +175,7 @@ export default {
                 <div
                   :class="$style['files__image']"
                   :style="{
-                    backgroundImage: `url('/images/_dummy/file-sample.png')`,
+                    backgroundImage: `url('${BASE_URL}images/_dummy/file-sample.png')`,
                   }"
                 >
                   <img
@@ -202,9 +190,6 @@ export default {
                 </div>
                 <button type="button" :class="$style['files__link']">
                   <span class="for-a11y">미리보기</span>
-                </button>
-                <button type="button" :class="$style['files__delete']">
-                  <span class="for-a11y">삭제</span>
                 </button>
               </div>
             </li>

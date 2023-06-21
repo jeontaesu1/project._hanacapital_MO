@@ -68,6 +68,15 @@
         }
       }
 
+      &.box-check-list--align-full {
+        .box-check-list__item {
+          & + .box-check-list__item {
+            margin-left: 0;
+            margin-top: 6px;
+          }
+        }
+      }
+
       &.box-check-list--wrap {
         .box-check-list {
           &__list {
@@ -86,26 +95,28 @@
     }
   }
 
-  &--col-3 {
-    .box-check-list {
-      &__item {
-        width: 33.333333%;
+  &--col {
+    &-3 {
+      .box-check-list {
+        &__item {
+          width: 33.333333%;
+        }
       }
     }
-  }
 
-  &--col-4 {
-    .box-check-list {
-      &__item {
-        width: 25%;
+    &-4 {
+      .box-check-list {
+        &__item {
+          width: 25%;
+        }
       }
     }
-  }
 
-  &--col-6 {
-    .box-check-list {
-      &__item {
-        width: 16.666666%;
+    &-6 {
+      .box-check-list {
+        &__item {
+          width: 16.666666%;
+        }
       }
     }
   }

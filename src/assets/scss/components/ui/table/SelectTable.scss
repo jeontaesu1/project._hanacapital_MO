@@ -22,6 +22,18 @@
             border-bottom: none;
           }
         }
+
+        &:global(.is-disabled) {
+          > td {
+            color: $color-gray-40;
+          }
+
+          &:global(.is-selected) {
+            > td {
+              background-color: $color-gray-05;
+            }
+          }
+        }
       }
     }
   }
@@ -48,5 +60,19 @@
     flex: 1;
     min-height: 0;
     overflow: auto;
+  }
+
+  &--disabled {
+    .basic-table {
+      > table {
+        > thead {
+          > tr {
+            > th {
+              color: $color-gray-40;
+            }
+          }
+        }
+      }
+    }
   }
 }

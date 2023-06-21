@@ -18,6 +18,10 @@ export default {
         return defaultClassNames();
       },
     },
+    theme: {
+      Type: String,
+      default: null,
+    },
     type: {
       Type: String,
       default: 'checkbox',
@@ -82,7 +86,15 @@ export default {
 </script>
 
 <template>
-  <div :class="[$style['switch-checkbox'], customClassNames.wrap]">
+  <div
+    :class="[
+      $style['switch-checkbox'],
+      {
+        [$style[`switch-checkbox--theme-${theme}`]]: theme,
+      },
+      customClassNames.wrap,
+    ]"
+  >
     <input
       ref="input"
       v-bind="$attrs"

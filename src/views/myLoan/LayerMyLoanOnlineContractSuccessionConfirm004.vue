@@ -236,7 +236,7 @@ export default {
           </p>
 
           <div class="row-margin-item-group">
-            <BasicBox theme="septenary" class="row-margin-item">
+            <BasicBox theme="septenary" className="row-margin-item">
               <div :class="$style['agree-list']">
                 <div :class="$style['agree-list__head']">
                   <CheckBox
@@ -254,7 +254,7 @@ export default {
                 </div>
               </div>
             </BasicBox>
-            <BasicBox theme="septenary" class="row-margin-item">
+            <BasicBox theme="septenary" className="row-margin-item">
               <div :class="$style['agree-list']">
                 <div :class="$style['agree-list__head']">
                   <CheckBox
