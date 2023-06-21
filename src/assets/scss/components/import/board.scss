@@ -9,6 +9,21 @@
     & + & {
       margin-top: 32px;
     }
+
+    &--mark {
+      .board__title-text {
+        color: $color-green-50;
+        font-weight: 700;
+      }
+    }
+
+    &--hidden {
+      .board__title-text,
+      .board__info-date,
+      .board__info-hits {
+        color: $color-gray-40;
+      }
+    }
   }
 
   &__link {
@@ -73,5 +88,40 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    margin-top: 4px;
+
+    &-date {
+      display: block;
+      @include font-size-default(13);
+      color: $color-black;
+      font-weight: 300;
+    }
+
+    &-hits {
+      display: block;
+      position: relative;
+      padding-left: 13px;
+      @include font-size-default(13);
+      color: $color-gray-70;
+      font-weight: 300;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 6px;
+        margin-top: -6px;
+        width: 1px;
+        height: 12px;
+        background-color: $color-gray-30;
+      }
+    }
   }
 }

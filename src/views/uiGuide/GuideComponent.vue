@@ -142,6 +142,8 @@ import IconTell from '@/assets/images/icon/tell.svg?component';
 import IconDropdown from '@/assets/images/icon/dropdown.svg?component';
 import IconImgColor from '@/assets/images/icon/img-color.svg?component';
 import IconImg from '@/assets/images/icon/img.svg?component';
+import IconPin from '@/assets/images/common/pin.svg?component';
+import IconPinOn from '@/assets/images/common/pin_on.svg?component';
 
 import IconSample from '@/assets/images/_dummy/sample.svg?component';
 
@@ -289,6 +291,8 @@ export default {
     IconDropdown,
     IconImgColor,
     IconImg,
+    IconPin,
+    IconPinOn,
     IconSample,
   },
 
@@ -7228,6 +7232,32 @@ export default {
                 </span>
               </button>
             </li>
+            <li :class="[$style['board__item'], $style['board__item--mark']]">
+              <RouterLink to="" :class="$style['board__link']">
+                <span :class="$style['board__title']">
+                  <span :class="$style['board__title-text']">
+                    중요 지정된 게시물
+                  </span>
+                </span>
+                <span :class="$style['board__info']">
+                  <span :class="$style['board__info-date']">2021.03.16</span>
+                  <span :class="$style['board__info-hits']">조회 18</span>
+                </span>
+              </RouterLink>
+            </li>
+            <li :class="[$style['board__item'], $style['board__item--hidden']]">
+              <RouterLink to="" :class="$style['board__link']">
+                <span :class="$style['board__title']">
+                  <span :class="$style['board__title-text']">
+                    [노출 중지됨] 테스트2
+                  </span>
+                </span>
+                <span :class="$style['board__info']">
+                  <span :class="$style['board__info-date']">2021.03.16</span>
+                  <span :class="$style['board__info-hits']">조회 18</span>
+                </span>
+              </RouterLink>
+            </li>
           </ul>
         </div>
 
@@ -7288,6 +7318,43 @@ export default {
               </li>
             </ul>
           </div>
+        </div>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Flex Head</h3>
+        <div :class="$style['board-detail']">
+          <div
+            :class="[
+              $style['board-detail__head'],
+              $style['board-detail__head--flex'],
+            ]"
+          >
+            <div :class="$style['board-detail__head-block']">
+              <h2 :class="$style['board-detail__title']">첨부파일</h2>
+              <div :class="$style['board-detail__sub']">
+                <div :class="$style['board-detail__sub-list']">
+                  <div :class="$style['board-detail__sub-item']">
+                    2021.03.16
+                  </div>
+                  <div :class="$style['board-detail__sub-item']">조회 18</div>
+                </div>
+              </div>
+            </div>
+            <!-- Case : 일반 게시물일 경우 -->
+            <div :class="$style['board-detail__head-icon']">
+              <IconPin />
+            </div>
+            <!-- //Case : 일반 게시물일 경우 -->
+            <!-- Case : 중요 지정된 게시물일 경우 -->
+            <div :class="$style['board-detail__head-icon']">
+              <IconPinOn />
+            </div>
+            <!-- //Case : 중요 지정된 게시물일 경우 -->
+          </div>
+
+          <section :class="$style['board-detail__contents']">
+            //게시물 내용 노출
+          </section>
         </div>
       </div>
     </section>
