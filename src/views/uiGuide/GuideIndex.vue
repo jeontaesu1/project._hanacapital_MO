@@ -1972,7 +1972,12 @@ const datas = () => [
         path: '/guide/lease-rent-estimation-system-002',
         status: 'end',
         create: '2023.06.16',
-        log: [],
+        log: [
+          {
+            date: '2023.06.23',
+            text: '팝업 추가\n-  견적서 진행사항 안내',
+          },
+        ],
       },
       {
         depth2: '공통',
@@ -2047,8 +2052,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/lease-rent-estimation-system-003',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.23',
         log: [],
       },
       {
@@ -2102,8 +2107,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/lease-rent-estimation-system-004',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.23',
         log: [],
       },
       {
@@ -2168,8 +2173,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/lease-rent-estimation-system/my-info',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.23',
         log: [],
       },
       {
@@ -2223,8 +2228,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/lease-rent-estimation-system/admin-setting-home',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.23',
         log: [],
       },
       {
@@ -2234,8 +2239,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/lease-rent-estimation-system/admin-setting-role',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.23',
         log: [],
       },
       {
@@ -2245,8 +2250,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/lease-rent-estimation-system/admin-setting-default',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.23',
         log: [],
       },
     ],
@@ -2263,7 +2268,12 @@ const datas = () => [
         path: '/guide/equipment-lease-001',
         status: 'end',
         create: '2023.05.12',
-        log: [],
+        log: [
+          {
+            date: '2023.06.23',
+            text: '팝업 추가\n-  견적보기 팝업\n-  신용정보조회동의\n-  사전동의 완료',
+          },
+        ],
       },
       {
         depth2: '견적계산기\nEL_M01_p001',
@@ -2301,17 +2311,6 @@ const datas = () => [
       {
         depth2: '현황조회',
         depth3: '품의\nEL_M02_p002',
-        depth4: '',
-        depth5: '',
-        depth6: '',
-        path: '/equipment-lease/state-internal-memo',
-        status: 'end',
-        create: '2023.05.16',
-        log: [],
-      },
-      {
-        depth2: '현황조회',
-        depth3: '팝업',
         depth4: '',
         depth5: '',
         depth6: '',
