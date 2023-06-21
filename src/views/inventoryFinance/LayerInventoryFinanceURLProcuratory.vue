@@ -111,7 +111,7 @@ export default {
             </li>
             <li :class="$style['contents-list__item']">
               <div :class="$style['contents-list__head']">
-                <div :class="$style['contents-list__symbol']">3</div>
+                <div :class="$style['contents-list__symbol']">4</div>
                 <div :class="$style['contents-list__title']">
                   해피콜을 통하여 이루어지는 제1항 내지 제4항의 행위
                 </div>
