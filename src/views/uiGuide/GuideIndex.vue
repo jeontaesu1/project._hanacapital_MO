@@ -2025,8 +2025,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/lease-rent-estimation-system/installment',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.23',
         log: [],
       },
       {
@@ -2036,8 +2036,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/lease-rent-estimation-system/test-drive-car',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.23',
         log: [],
       },
       {
@@ -2212,8 +2212,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/lease-rent-estimation-system/admin-status',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.23',
         log: [],
       },
       {
