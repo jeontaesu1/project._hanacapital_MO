@@ -24,7 +24,6 @@ import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
 import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
 import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 import SettingButton from '@/components/ui/button/SettingButton.vue';
-import BasicHr from '@/components/ui/common/BasicHr.vue';
 import UiTab from '@/components/ui/tab/UiTab.vue';
 import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
 import RoundTab from '@/components/ui/tab/RoundTab.vue';
@@ -73,7 +72,6 @@ export default {
     BoxCheckList,
     BoxCheckListItem,
     SettingButton,
-    BasicHr,
     UiTab,
     UiTabPanel,
     RoundTab,
@@ -614,6 +612,7 @@ export default {
                           <FormListItem
                             titleText="검색어"
                             target="#leaseRentEstimationSystemUsedLeaseCarSearch"
+                            :forceFocus="true"
                           >
                             <FormInvalid :error="state.carSearchError">
                               <InputBlock :error="state.carSearchError">
@@ -623,7 +622,7 @@ export default {
                                     id="leaseRentEstimationSystemUsedLeaseCarSearch"
                                   />
                                 </InputBlockCell>
-                                <template v-slot:innerRight>
+                                <template v-slot:right>
                                   <BasicButton size="mini" theme="tertiary">
                                     조회
                                   </BasicButton>
@@ -1585,6 +1584,7 @@ export default {
 
             <!-- Case : 인증중고차일 경우, 노출 -->
             <!-- Case : 제휴사 있을 때 -->
+            <!-- 제휴사 -->
             <UiAccordionItem
               :classNames="{ item: $style['estimate-list__item'] }"
             >
@@ -1656,9 +1656,11 @@ export default {
                 </section>
               </UiAccordionLayer>
             </UiAccordionItem>
+            <!-- // 제휴사 -->
             <!-- // Case : 제휴사 있을 때 -->
 
             <!-- Case : 제휴사 없을 때 -->
+            <!-- 제휴사 -->
             <li :class="$style['estimate-list__item']">
               <div :class="$style['estimate-list__head']">
                 <div :class="$style['estimate-list__block']">
@@ -1675,6 +1677,7 @@ export default {
                 </div>
               </div>
             </li>
+            <!-- // 제휴사 -->
             <!-- //Case :  제휴사 없을 때 -->
             <!-- //Case : 인증중고차일 경우, 노출 -->
 
@@ -2049,7 +2052,7 @@ export default {
                           <FormList>
                             <FormListItem
                               titleText="금액"
-                              target="#leaseRentEstimationSystemUsedLeasePublicBondDiscountRatio"
+                              target="#leaseRentEstimationSystemUsedLeasePublicBondDiscountPrice"
                             >
                               <FormInvalid
                                 :error="state.publicBondDiscountError"
@@ -2402,23 +2405,6 @@ export default {
         </div>
 
         <div :class="[$style['total'], 'row-margin-none']">
-          <KeyValue margin="regular">
-            <KeyValueItem :classNames="{ item: 'text-body-3' }">
-              <KeyValueTitle>취득원가</KeyValueTitle>
-              <KeyValueText>46,797,665 원</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem :classNames="{ item: 'text-body-3' }">
-              <KeyValueTitle>탁송료</KeyValueTitle>
-              <KeyValueText>300,000 원</KeyValueText>
-            </KeyValueItem>
-          </KeyValue>
-
-          <BasicHr
-            theme="tertiary"
-            type="contents"
-            className="row-margin-contents-small"
-          />
-
           <!-- Case : 취득원가 계산 전 -->
           <KeyValue verticalAlign="center">
             <KeyValueItem :classNames="{ item: 'text-body-3' }">

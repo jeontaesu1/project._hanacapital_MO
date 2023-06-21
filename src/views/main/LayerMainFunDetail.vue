@@ -60,16 +60,53 @@ export default {
           //게시물 내용 노출
         </section>
 
-        <BasicBanner
-          thumb="/images/_dummy/banner-money-up.png"
-          @click="() => {}"
-          :classNames="{ wrap: 'row-margin-contents' }"
-        >
-          <p class="text-body-4 color-gray row-margin-mini">
-            비용NO! 보험NO! 내 차OK!
-          </p>
-          <h3 class="text-body-1 font-weight-medium">다이렉트 장기렌터카</h3>
-        </BasicBanner>
+        <!-- DD : 관리자 등록 배너 -->
+        <div class="row-margin-contents">
+          <!-- Case : 링크 기능 없을 때 -->
+          <BasicBanner
+            thumb="/images/_dummy/banner-money-up.png"
+            :action="false"
+          >
+            <p class="text-body-4 color-gray row-margin-mini ellipsis">
+              링크 기능 없을 때 Case 최대 한줄 노출
+            </p>
+            <h3 class="text-body-1 font-weight-medium ellipsis">
+              타이틀 최대 한줄 노출 타이틀 최대 한줄 노출
+            </h3>
+          </BasicBanner>
+          <!-- // Case : 링크 기능 없을 때 -->
+
+          <!-- Case : 링크 기능 있을 때 (RouterLink) -->
+          <BasicBanner
+            thumb="/images/_dummy/banner-money-up.png"
+            tagName="RouterLink"
+            to=""
+          >
+            <p class="text-body-4 color-gray row-margin-mini ellipsis">
+              링크 기능 있을 때 (RouterLink) Case 최대 한줄 노출
+            </p>
+            <h3 class="text-body-1 font-weight-medium ellipsis">
+              타이틀 최대 한줄 노출 타이틀 최대 한줄 노출
+            </h3>
+          </BasicBanner>
+          <!-- // Case : 링크 기능 있을 때 -->
+
+          <!-- Case : 링크 기능 있을 때 (a tag) -->
+          <BasicBanner
+            thumb="/images/_dummy/banner-money-up.png"
+            tagName="a"
+            href=""
+          >
+            <p class="text-body-4 color-gray row-margin-mini ellipsis">
+              링크 기능 있을 때 (a tag) Case 최대 한줄 노출
+            </p>
+            <h3 class="text-body-1 font-weight-medium ellipsis">
+              타이틀 최대 한줄 노출 타이틀 최대 한줄 노출
+            </h3>
+          </BasicBanner>
+          <!-- // Case : 링크 기능 있을 때 (a tag) -->
+        </div>
+        <!-- // DD : 관리자 등록 배너 -->
       </div>
 
       <!-- Case : 링크 콘텐츠일 경우 -->

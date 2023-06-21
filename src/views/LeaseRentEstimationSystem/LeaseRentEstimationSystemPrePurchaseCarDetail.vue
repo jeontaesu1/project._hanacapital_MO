@@ -114,7 +114,7 @@ export default {
           <h3 class="text-body-1 font-weight-medium row-margin-mini">뉴 QM6</h3>
         </div>
         <div class="flex-box__cell">
-          <RoundStatus theme="undenary">전체 22대</RoundStatus>
+          <RoundStatus theme="undenary" :block="true">전체 22대</RoundStatus>
         </div>
       </div>
     </div>
@@ -124,183 +124,184 @@ export default {
       theme="quaternary"
     ></BasicHr>
 
-    <FormList>
-      <FormListItem titleText="구분" :forceFocus="true">
-        <BoxCheckList :wrap="true" :col="3">
-          <BoxCheckListItem>
-            <BoxCheck
-              :minSide="true"
-              name="leaseRentEstimationSystemPrePurchaseCarDetailDivision"
-              id="leaseRentEstimationSystemPrePurchaseCarDetailDivision01"
-            >
-              <BoxCheckLabel>전체</BoxCheckLabel>
-            </BoxCheck>
-          </BoxCheckListItem>
-          <BoxCheckListItem>
-            <BoxCheck
-              :minSide="true"
-              name="leaseRentEstimationSystemPrePurchaseCarDetailDivision"
-              id="leaseRentEstimationSystemPrePurchaseCarDetailDivision02"
-            >
-              <BoxCheckLabel>선구매</BoxCheckLabel>
-            </BoxCheck>
-          </BoxCheckListItem>
-          <BoxCheckListItem>
-            <BoxCheck
-              :minSide="true"
-              name="leaseRentEstimationSystemPrePurchaseCarDetailDivision"
-              id="leaseRentEstimationSystemPrePurchaseCarDetailDivision03"
-            >
-              <BoxCheckLabel>즉시출고</BoxCheckLabel>
-            </BoxCheck>
-          </BoxCheckListItem>
-        </BoxCheckList>
-      </FormListItem>
+    <div>
+      <FormList>
+        <FormListItem titleText="구분" :forceFocus="true">
+          <BoxCheckList :wrap="true" :col="3">
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="leaseRentEstimationSystemPrePurchaseCarDetailDivision"
+                id="leaseRentEstimationSystemPrePurchaseCarDetailDivision01"
+              >
+                <BoxCheckLabel>전체</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="leaseRentEstimationSystemPrePurchaseCarDetailDivision"
+                id="leaseRentEstimationSystemPrePurchaseCarDetailDivision02"
+              >
+                <BoxCheckLabel>선구매</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="leaseRentEstimationSystemPrePurchaseCarDetailDivision"
+                id="leaseRentEstimationSystemPrePurchaseCarDetailDivision03"
+              >
+                <BoxCheckLabel>즉시출고</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+          </BoxCheckList>
+        </FormListItem>
 
-      <FormListItem
-        titleText="라인업"
-        target="#leaseRentEstimationSystemPrePurchaseCarDetailLineupButton"
-        :selectOnly="true"
+        <FormListItem
+          titleText="라인업"
+          target="#leaseRentEstimationSystemPrePurchaseCarDetailLineupButton"
+          :selectOnly="true"
+        >
+          <FormInvalid :error="state.lineupError">
+            <InputBlock :error="state.lineupError">
+              <InputBlockCell :flexible="true">
+                <BasicSelect
+                  :option="[
+                    {
+                      value: '1',
+                      text: '전체',
+                    },
+                    {
+                      value: '2',
+                      text: '2023년형 LPG 2.0 Lpe 2WD(면세가격)',
+                    },
+                    {
+                      value: '3',
+                      text: '2023년형 LPG 2.0 Lpe 2WD(면세가격)',
+                    },
+                  ]"
+                  buttonTitle="라인업 선택하기"
+                  layerTitle="라인업을 선택해 주세요"
+                  id="leaseRentEstimationSystemPrePurchaseCarDetailLineup"
+                  buttonId="leaseRentEstimationSystemPrePurchaseCarDetailLineupButton"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+
+        <!-- Case : 라인업 선택 시 노출 -->
+        <FormListItem
+          titleText="트림"
+          target="#leaseRentEstimationSystemPrePurchaseCarDetailTrimButton"
+          :selectOnly="true"
+        >
+          <FormInvalid :error="state.trimError">
+            <InputBlock :error="state.trimError">
+              <InputBlockCell :flexible="true">
+                <BasicSelect
+                  :option="[
+                    {
+                      value: '1',
+                      text: '전체',
+                    },
+                    {
+                      value: '2',
+                      text: '디 에센셜',
+                    },
+                    {
+                      value: '3',
+                      text: '디 에센셜',
+                    },
+                  ]"
+                  buttonTitle="트림 선택하기"
+                  layerTitle="트림을 선택해 주세요"
+                  id="leaseRentEstimationSystemPrePurchaseCarDetailTrim"
+                  buttonId="leaseRentEstimationSystemPrePurchaseCarDetailTrimButton"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+        <!-- // Case : 라인업 선택 시 노출 -->
+
+        <FormListItem
+          titleText="외장"
+          target="#leaseRentEstimationSystemPrePurchaseCarDetailExteriorButton"
+          :selectOnly="true"
+        >
+          <FormInvalid :error="state.exteriorError">
+            <InputBlock :error="state.exteriorError">
+              <InputBlockCell :flexible="true">
+                <BasicSelect
+                  :option="[
+                    {
+                      value: '1',
+                      text: '전체',
+                    },
+                    {
+                      value: '2',
+                      text: '2023년형 LPG 2.0 Lpe 2WD(면세가격)',
+                    },
+                    {
+                      value: '3',
+                      text: '2023년형 LPG 2.0 Lpe 2WD(면세가격)',
+                    },
+                  ]"
+                  buttonTitle="외장 선택하기"
+                  layerTitle="외장을 선택해 주세요"
+                  id="leaseRentEstimationSystemPrePurchaseCarDetailExterior"
+                  buttonId="leaseRentEstimationSystemPrePurchaseCarDetailExteriorButton"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+
+        <FormListItem
+          titleText="내장"
+          target="#leaseRentEstimationSystemPrePurchaseCarDetailInteriorButton"
+          :selectOnly="true"
+        >
+          <FormInvalid :error="state.interiorError">
+            <InputBlock :error="state.interiorError">
+              <InputBlockCell :flexible="true">
+                <BasicSelect
+                  :option="[
+                    {
+                      value: '1',
+                      text: '전체',
+                    },
+                    {
+                      value: '2',
+                      text: '블랙 인조가죽 시트',
+                    },
+                    {
+                      value: '3',
+                      text: '블랙 가죽 시트',
+                    },
+                  ]"
+                  buttonTitle="내장 선택하기"
+                  layerTitle="내장을 선택해 주세요"
+                  id="leaseRentEstimationSystemPrePurchaseCarDetailInterior"
+                  buttonId="leaseRentEstimationSystemPrePurchaseCarDetailInteriorButton"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+      </FormList>
+
+      <NoticeText :classNames="{ wrap: 'row-margin-contents' }"
+        >계약번호를 클릭하시면 견적으로 이동하고, 조건에 맞춰 견적을 뽑고
+        심사신청을 바로 하실 수 있습니다.</NoticeText
       >
-        <FormInvalid :error="state.lineupError">
-          <InputBlock :error="state.lineupError">
-            <InputBlockCell :flexible="true">
-              <BasicSelect
-                :option="[
-                  {
-                    value: '1',
-                    text: '전체',
-                  },
-                  {
-                    value: '2',
-                    text: '2023년형 LPG 2.0 Lpe 2WD(면세가격)',
-                  },
-                  {
-                    value: '3',
-                    text: '2023년형 LPG 2.0 Lpe 2WD(면세가격)',
-                  },
-                ]"
-                buttonTitle="라인업 선택하기"
-                layerTitle="라인업을 선택해 주세요"
-                id="leaseRentEstimationSystemPrePurchaseCarDetailLineup"
-                buttonId="leaseRentEstimationSystemPrePurchaseCarDetailLineupButton"
-              />
-            </InputBlockCell>
-          </InputBlock>
-          <FormInvalidMessage>Error Message</FormInvalidMessage>
-        </FormInvalid>
-      </FormListItem>
-
-      <!-- Case : 라인업 선택 시 -->
-      <FormListItem
-        titleText="트림"
-        target="#leaseRentEstimationSystemPrePurchaseCarDetailTrimButton"
-        :selectOnly="true"
-      >
-        <FormInvalid :error="state.trimError">
-          <InputBlock :error="state.trimError">
-            <InputBlockCell :flexible="true">
-              <BasicSelect
-                :option="[
-                  {
-                    value: '1',
-                    text: '전체',
-                  },
-                  {
-                    value: '2',
-                    text: '디 에센셜',
-                  },
-                  {
-                    value: '3',
-                    text: '디 에센셜',
-                  },
-                ]"
-                buttonTitle="트림 선택하기"
-                layerTitle="트림을 선택해 주세요"
-                id="leaseRentEstimationSystemPrePurchaseCarDetailTrim"
-                buttonId="leaseRentEstimationSystemPrePurchaseCarDetailTrimButton"
-              />
-            </InputBlockCell>
-          </InputBlock>
-          <FormInvalidMessage>Error Message</FormInvalidMessage>
-        </FormInvalid>
-      </FormListItem>
-      <!-- //Case : 라인업 선택 시 -->
-
-      <FormListItem
-        titleText="외장"
-        target="#leaseRentEstimationSystemPrePurchaseCarDetailExteriorButton"
-        :selectOnly="true"
-      >
-        <FormInvalid :error="state.exteriorError">
-          <InputBlock :error="state.exteriorError">
-            <InputBlockCell :flexible="true">
-              <BasicSelect
-                :option="[
-                  {
-                    value: '1',
-                    text: '전체',
-                  },
-                  {
-                    value: '2',
-                    text: '2023년형 LPG 2.0 Lpe 2WD(면세가격)',
-                  },
-                  {
-                    value: '3',
-                    text: '2023년형 LPG 2.0 Lpe 2WD(면세가격)',
-                  },
-                ]"
-                buttonTitle="외장 선택하기"
-                layerTitle="외장을 선택해 주세요"
-                id="leaseRentEstimationSystemPrePurchaseCarDetailExterior"
-                buttonId="leaseRentEstimationSystemPrePurchaseCarDetailExteriorButton"
-              />
-            </InputBlockCell>
-          </InputBlock>
-          <FormInvalidMessage>Error Message</FormInvalidMessage>
-        </FormInvalid>
-      </FormListItem>
-
-      <FormListItem
-        titleText="내장"
-        target="#leaseRentEstimationSystemPrePurchaseCarDetailInteriorButton"
-        :selectOnly="true"
-      >
-        <FormInvalid :error="state.interiorError">
-          <InputBlock :error="state.interiorError">
-            <InputBlockCell :flexible="true">
-              <BasicSelect
-                :option="[
-                  {
-                    value: '1',
-                    text: '전체',
-                  },
-                  {
-                    value: '2',
-                    text: '블랙 인조가죽 시트',
-                  },
-                  {
-                    value: '3',
-                    text: '블랙 가죽 시트',
-                  },
-                ]"
-                buttonTitle="내장 선택하기"
-                layerTitle="내장을 선택해 주세요"
-                id="leaseRentEstimationSystemPrePurchaseCarDetailInterior"
-                buttonId="leaseRentEstimationSystemPrePurchaseCarDetailInteriorButton"
-              />
-            </InputBlockCell>
-          </InputBlock>
-          <FormInvalidMessage>Error Message</FormInvalidMessage>
-        </FormInvalid>
-      </FormListItem>
-    </FormList>
-
-    <NoticeText
-      :classNames="{ wrap: 'row-margin-contents row-margin-bottom-none' }"
-      >계약번호를 클릭하시면 견적으로 이동하고, 조건에 맞춰 견적을 뽑고
-      심사신청을 바로 하실 수 있습니다.</NoticeText
-    >
+    </div>
 
     <BasicHr className="row-margin-container-medium"></BasicHr>
 
@@ -331,7 +332,9 @@ export default {
               >
             </BasicBoxHeadLeft>
             <BasicBoxHeadRight>
-              <RoundStatus theme="secondary">선구매 12대</RoundStatus>
+              <div class="inline-wrap align-right">
+                <RoundStatus theme="secondary">선구매 12대</RoundStatus>
+              </div>
               <CarThumb
                 src="/images/_dummy/car-thumb.png"
                 :classNames="{ wrap: 'row-margin-item-medium' }"
@@ -339,69 +342,71 @@ export default {
             </BasicBoxHeadRight>
           </BasicBoxHead>
 
-          <UiAccordion tagName="div">
-            <KeyValue margin="regular">
-              <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                <KeyValueTitle>외장</KeyValueTitle>
-                <KeyValueText>
-                  <div class="flex-box justify-conten-end">
-                    <div class="flex-box__cell">아틸라스 화이트</div>
-                    <div class="flex-box__cell">
-                      <ColorChip :colors="['248, 245, 245']" size="small" />
-                    </div>
+          <KeyValue margin="regular">
+            <KeyValueItem :classNames="{ item: 'text-body-3' }">
+              <KeyValueTitle>외장</KeyValueTitle>
+              <KeyValueText>
+                <div class="flex-box">
+                  <div class="flex-box__cell flex-1">아틸라스 화이트</div>
+                  <div class="flex-box__cell">
+                    <ColorChip :colors="['248, 245, 245']" size="small" />
                   </div>
-                </KeyValueText>
-              </KeyValueItem>
+                </div>
+              </KeyValueText>
+            </KeyValueItem>
 
-              <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                <KeyValueTitle>내장</KeyValueTitle>
-                <KeyValueText>
-                  <div class="flex-box justify-conten-end">
-                    <div class="flex-box__cell">
-                      네츄럴 베이지 / 다크 베이지
-                    </div>
-                    <div class="flex-box__cell">
-                      <ColorChip
-                        :colors="['244, 238, 238', '225, 213, 213']"
-                        size="small"
-                      />
-                    </div>
+            <KeyValueItem :classNames="{ item: 'text-body-3' }">
+              <KeyValueTitle>내장</KeyValueTitle>
+              <KeyValueText>
+                <div class="flex-box">
+                  <div class="flex-box__cell flex-1">
+                    네츄럴 베이지 / 다크 베이지
                   </div>
-                </KeyValueText>
-              </KeyValueItem>
-              <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                <KeyValueTitle>옵션</KeyValueTitle>
-                <KeyValueText>
-                  운적석파워시트(전동식 요추 받침장치 포함) + 동승석 파워시트 +
-                  앞좌석 통풍 시트 + 뒷자석 열선시트 S-Link 패키지 I 매직
-                  테일게이트
-                </KeyValueText>
-              </KeyValueItem>
-            </KeyValue>
+                  <div class="flex-box__cell">
+                    <ColorChip
+                      :colors="['244, 238, 238', '225, 213, 213']"
+                      size="small"
+                    />
+                  </div>
+                </div>
+              </KeyValueText>
+            </KeyValueItem>
+            <KeyValueItem :classNames="{ item: 'text-body-3' }">
+              <KeyValueTitle>옵션</KeyValueTitle>
+              <KeyValueText>
+                운적석파워시트(전동식 요추 받침장치 포함) + 동승석 파워시트 +
+                앞좌석 통풍 시트 + 뒷자석 열선시트 S-Link 패키지 I 매직
+                테일게이트
+              </KeyValueText>
+            </KeyValueItem>
+          </KeyValue>
 
-            <UiAccordionItem
-              tagName="div"
-              :classNames="{
-                item: 'row-margin-item-group',
-              }"
-            >
-              <KeyValue>
+          <UiAccordion
+            tagName="div"
+            :classNames="{
+              wrap: 'row-margin-item-group',
+            }"
+          >
+            <UiAccordionItem tagName="div">
+              <KeyValue verticalAlign="center">
                 <KeyValueItem :classNames="{ item: 'text-body-3' }">
                   <KeyValueTitle>계약번호</KeyValueTitle>
                   <KeyValueText>
                     <div class="flex-box justify-conten-end">
                       <div class="flex-box__cell">
                         <div :class="$style['number']">
-                          <div :class="$style['number__item']">
-                            <TextButton theme="secondary" underline="true">
-                              D12345678
-                            </TextButton>
-                          </div>
-                          <div :class="$style['number__item']">
-                            <TextButton theme="secondary" underline="true">
-                              D12345678
-                            </TextButton>
-                          </div>
+                          <ul :class="$style['number__list']">
+                            <li :class="$style['number__item']">
+                              <TextButton theme="secondary" :underline="true">
+                                D12345678
+                              </TextButton>
+                            </li>
+                            <li :class="$style['number__item']">
+                              <TextButton theme="secondary" :underline="true">
+                                D12345678
+                              </TextButton>
+                            </li>
+                          </ul>
                         </div>
                       </div>
                       <div class="flex-box__cell flex-box__cell--small">
@@ -420,31 +425,33 @@ export default {
                 <div :class="$style['detail-contents']">
                   <BasicBox theme="senary">
                     <div :class="$style['number']">
-                      <div :class="$style['number__item']">
-                        <TextButton theme="secondary" underline="true">
-                          D12345678
-                        </TextButton>
-                      </div>
-                      <div :class="$style['number__item']">
-                        <TextButton theme="secondary" underline="true">
-                          D12345678
-                        </TextButton>
-                      </div>
-                      <div :class="$style['number__item']">
-                        <TextButton theme="secondary" underline="true">
-                          D12345678
-                        </TextButton>
-                      </div>
-                      <div :class="$style['number__item']">
-                        <TextButton theme="secondary" underline="true">
-                          D12345678
-                        </TextButton>
-                      </div>
-                      <div :class="$style['number__item']">
-                        <TextButton theme="secondary" underline="true">
-                          D12345678
-                        </TextButton>
-                      </div>
+                      <ul :class="$style['number__list']">
+                        <li :class="$style['number__item']">
+                          <TextButton theme="secondary" underline="true">
+                            D12345678
+                          </TextButton>
+                        </li>
+                        <li :class="$style['number__item']">
+                          <TextButton theme="secondary" underline="true">
+                            D12345678
+                          </TextButton>
+                        </li>
+                        <li :class="$style['number__item']">
+                          <TextButton theme="secondary" underline="true">
+                            D12345678
+                          </TextButton>
+                        </li>
+                        <li :class="$style['number__item']">
+                          <TextButton theme="secondary" underline="true">
+                            D12345678
+                          </TextButton>
+                        </li>
+                        <li :class="$style['number__item']">
+                          <TextButton theme="secondary" underline="true">
+                            D12345678
+                          </TextButton>
+                        </li>
+                      </ul>
                     </div>
                   </BasicBox>
                 </div>

@@ -1,25 +1,32 @@
 .key-value-opener {
   width: 16px;
-  height: 21px;
+  height: 16px;
 
   &::before {
     padding-left: 0;
     left: 0;
   }
 }
+
 .detail-contents {
   padding-top: 16px;
 }
 
 .number {
-  font-size: 0;
-  line-height: 0;
-  margin-top: -16px;
-  margin-left: -6px;
+  &::before {
+    content: '';
+    display: table;
+  }
+
+  &__list {
+    @include reset-list;
+    margin: -16px 0 0 -8px;
+    font-size: 0;
+    line-height: 0;
+  }
 
   &__item {
     display: inline-block;
-    padding-left: 8px;
-    padding-top: 16px;
+    padding: 16px 0 0 8px;
   }
 }

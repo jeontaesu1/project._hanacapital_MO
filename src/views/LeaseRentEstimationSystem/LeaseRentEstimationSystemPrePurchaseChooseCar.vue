@@ -14,7 +14,6 @@ import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import SearchButton from '@/components/ui/button/SearchButton.vue';
-import ContentsButton from '@/components/ui/button/ContentsButton.vue';
 import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 
@@ -30,7 +29,6 @@ export default {
     InputBlockCell,
     BasicInput,
     SearchButton,
-    ContentsButton,
     CarThumb,
     RoundStatus,
   },
@@ -67,7 +65,7 @@ export default {
 
 <template>
   <PageContents>
-    <InputBlock type="search">
+    <InputBlock>
       <InputBlockCell :flexible="true">
         <BasicInput
           type="search"
@@ -83,12 +81,15 @@ export default {
     <FormList
       :classNames="{ wrap: 'row-margin-contents row-margin-bottom-none' }"
     >
+      <!-- Case : 제휴사 검색후 :disabled="false" 변경 -->
       <FormListItem
         titleText="제휴사"
         target="#leaseRentEstimationSystemPrePurchaseChooseCarAffiliate"
+        :selectOnly="true"
+        :disabled="true"
       >
         <FormInvalid :error="state.affiliateError">
-          <InputBlock :error="state.affiliateError">
+          <InputBlock :error="state.affiliateError" :disabled="true">
             <InputBlockCell :flexible="true">
               <BasicSelect
                 :option="[
@@ -108,12 +109,14 @@ export default {
                 buttonTitle="제휴사 선택하기"
                 layerTitle="제휴사를 선택해 주세요"
                 buttonId="leaseRentEstimationSystemPrePurchaseChooseCarAffiliate"
+                :disabled="true"
               />
             </InputBlockCell>
           </InputBlock>
           <FormInvalidMessage>Error Message</FormInvalidMessage>
         </FormInvalid>
       </FormListItem>
+      <!-- // Case : 제휴사 검색후 :disabled="false" 변경 -->
 
       <FormListItem
         titleText="브랜드"
@@ -131,47 +134,24 @@ export default {
       </FormListItem>
     </FormList>
 
-    <div :class="[$style['car-select'], 'row-margin-container-medium']">
-      <ul :class="$style['car-select__list']">
-        <li :class="$style['car-select__item']">
-          <ContentsButton theme="secondary">
-            <CarThumb
-              src="/images/_dummy/car-thumb.png"
-              :class="$style['car-select__img']"
-            />
-            <h3 class="text-body-3 row-margin-mini">캐스퍼</h3>
-            <RoundStatus theme="secondary">22대</RoundStatus>
-          </ContentsButton>
-        </li>
-        <li :class="$style['car-select__item']">
-          <ContentsButton theme="secondary">
-            <CarThumb
-              src="/images/_dummy/car-thumb.png"
-              :class="$style['car-select__img']"
-            />
-            <h3 class="text-body-3 row-margin-mini">올 뉴 아반떼</h3>
-            <RoundStatus theme="secondary">27대</RoundStatus>
-          </ContentsButton>
-        </li>
-        <li :class="$style['car-select__item']">
-          <ContentsButton theme="secondary">
-            <CarThumb
-              src="/images/_dummy/car-thumb.png"
-              :class="$style['car-select__img']"
-            />
-            <h3 class="text-body-3 row-margin-mini">아반떼-N</h3>
-            <RoundStatus theme="secondary">22대</RoundStatus>
-          </ContentsButton>
-        </li>
-        <li :class="$style['car-select__item']">
-          <ContentsButton theme="secondary">
-            <CarThumb
-              src="/images/_dummy/car-thumb.png"
-              :class="$style['car-select__img']"
-            />
-            <h3 class="text-body-3 row-margin-mini">더 뉴 그랜저</h3>
-            <RoundStatus theme="secondary">22대</RoundStatus>
-          </ContentsButton>
+    <div
+      :class="[
+        $style['bank-brand'],
+        $style['bank-brand--col-2'],
+        'row-margin-container-medium',
+      ]"
+    >
+      <ul :class="$style['bank-brand__list']">
+        <li v-for="i in 4" :key="i" :class="$style['bank-brand__item']">
+          <button type="button" :class="$style['bank-brand__block']">
+            <span :class="$style['bank-brand__logo']">
+              <CarThumb src="/images/_dummy/car-thumb.png" />
+            </span>
+            <span :class="$style['bank-brand__text']">캐스퍼</span>
+            <span class="inline-wrap row-margin-mini">
+              <RoundStatus theme="secondary">22대</RoundStatus>
+            </span>
+          </button>
         </li>
       </ul>
     </div>

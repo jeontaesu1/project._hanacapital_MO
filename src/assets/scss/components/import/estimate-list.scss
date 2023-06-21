@@ -116,9 +116,14 @@
   }
 
   &--disabled {
+    border-color: rgba($color-gray-20, 0.5);
+
     .estimate-list__list {
       position: relative;
+    }
 
+    .estimate-list__top,
+    .estimate-list__list {
       &::before {
         content: '';
         position: absolute;
@@ -131,10 +136,14 @@
       }
     }
 
-    .estimate-list__top + .estimate-list__list {
-      &::before {
-        top: -56px;
-      }
+    .estimate-list__top {
+      border-bottom-color: rgba($color-gray-20, 0.5);
+    }
+
+    .estimate-list__foot {
+      border-top: none;
+      margin-top: 1px;
+      box-shadow: 0 -1px 0 rgba($color-gray-20, 0.5);
     }
   }
 }

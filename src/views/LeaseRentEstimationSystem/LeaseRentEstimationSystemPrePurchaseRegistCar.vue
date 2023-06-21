@@ -104,7 +104,6 @@ export default {
     };
 
     const state = reactive({
-      productsAccordionAnimate: false,
       exteriorETCError: false,
       exteriorETCPriceError: false,
       interiorETCError: false,
@@ -125,16 +124,7 @@ export default {
       dateError001: false,
       dateError002: false,
       dateError003: false,
-      defaultDate: '2020.12.12',
     });
-
-    const productsAccordionAnimateStart = () => {
-      state.productsAccordionAnimate = true;
-    };
-
-    const productsAccordionAnimateEnd = () => {
-      state.productsAccordionAnimate = false;
-    };
 
     // 아코디언 열때 Ajax 통신시 예시 : start
     const testAjax = () => {
@@ -177,8 +167,6 @@ export default {
 
     return {
       state,
-      productsAccordionAnimateStart,
-      productsAccordionAnimateEnd,
       testAjax,
       testAccordionToggle,
     };
@@ -2107,8 +2095,8 @@ export default {
                 출고가격 (계산서)
               </KeyValueTitle>
               <KeyValueText>
-                <div class="flex-box justify-conten-end">
-                  <div class="flex-box__cell">
+                <div class="flex-box">
+                  <div class="flex-box__cell flex-1">
                     <div class="color-green">
                       <UnitText rightUnit="원" align="right">0</UnitText>
                     </div>
@@ -2151,10 +2139,6 @@ export default {
               </div>
 
               <UiAccordion
-                :onBeforeOpened="productsAccordionAnimateStart"
-                :onBeforeClosed="productsAccordionAnimateStart"
-                :onAfterOpened="productsAccordionAnimateEnd"
-                :onAfterClosed="productsAccordionAnimateEnd"
                 :classNames="{ wrap: $style['estimate-list__list'] }"
               >
                 <!-- 상품 -->
@@ -2481,12 +2465,14 @@ export default {
                               <div class="text-body-4">계약번호</div>
                             </KeyValueTitle>
                             <KeyValueText>
-                              <TextButton
-                                theme="secondary"
-                                :underline="true"
-                                :class="$style['input-button']"
-                                >일괄입력</TextButton
-                              >
+                              <div class="inline-wrap">
+                                <TextButton
+                                  theme="secondary"
+                                  :underline="true"
+                                  :class="$style['input-button']"
+                                  >일괄입력</TextButton
+                                >
+                              </div>
                             </KeyValueText>
                           </KeyValueItem>
                         </KeyValue>
@@ -2719,10 +2705,6 @@ export default {
               </div>
 
               <UiAccordion
-                :onBeforeOpened="productsAccordionAnimateStart"
-                :onBeforeClosed="productsAccordionAnimateStart"
-                :onAfterOpened="productsAccordionAnimateEnd"
-                :onAfterClosed="productsAccordionAnimateEnd"
                 :classNames="{ wrap: $style['estimate-list__list'] }"
               >
                 <!-- 상품 -->
@@ -2744,6 +2726,7 @@ export default {
                                   "
                                   id="leaseRentEstimationSystemPrePurchaseRegistCarProducts002_check001_001"
                                   size="small"
+                                  :disabled="true"
                                   :defaultChecked="true"
                                 >
                                   <BoxCheckLabel>선구매</BoxCheckLabel>
@@ -2757,6 +2740,7 @@ export default {
                                   "
                                   id="leaseRentEstimationSystemPrePurchaseRegistCarProducts002_check001_002"
                                   size="small"
+                                  :disabled="true"
                                 >
                                   <BoxCheckLabel>즉시출고</BoxCheckLabel>
                                 </BoxCheck>
@@ -2769,10 +2753,12 @@ export default {
                               <FormListItem
                                 titleText="차량 수"
                                 target="#leaseRentEstimationSystemPrePurchaseRegistCar_carQuantity002"
+                                :disabled="true"
                               >
                                 <FormInvalid :error="state.carQuantityError002">
                                   <InputBlock
                                     :error="state.carQuantityError002"
+                                    :disabled="true"
                                   >
                                     <InputBlockCell :flexible="true">
                                       <BasicInput
@@ -2781,6 +2767,7 @@ export default {
                                         pattern="\d*"
                                         :useDelete="false"
                                         align="right"
+                                        :disabled="true"
                                         defaultValue="2"
                                       />
                                     </InputBlockCell>
@@ -3055,6 +3042,7 @@ export default {
                                 theme="secondary"
                                 :underline="true"
                                 :class="$style['input-button']"
+                                tagName="span"
                                 >일괄입력</TextButton
                               >
                             </KeyValueText>
@@ -3096,12 +3084,14 @@ export default {
                                   <FormListItem
                                     titleText="계약번호"
                                     target="#leaseRentEstimationSystemRent_contractNumber002"
+                                    :disabled="true"
                                   >
                                     <FormInvalid
                                       :error="state.contractNumberError003"
                                     >
                                       <InputBlock
                                         :error="state.contractNumberError003"
+                                        :disabled="true"
                                       >
                                         <InputBlockCell :flexible="true">
                                           <BasicInput
@@ -3110,6 +3100,7 @@ export default {
                                             type="number"
                                             pattern="\d*"
                                             defaultValue="9000321511"
+                                            :disabled="true"
                                           />
                                         </InputBlockCell>
                                       </InputBlock>
@@ -3123,18 +3114,21 @@ export default {
                                     titleText="차대번호"
                                     titleOptionalText="(계약번호)"
                                     target="#leaseRentEstimationSystemRent_CarIdNumber002"
+                                    :disabled="true"
                                   >
                                     <FormInvalid
                                       :error="state.carIdNumberError003"
                                     >
                                       <InputBlock
                                         :error="state.carIdNumberError003"
+                                        :disabled="true"
                                       >
                                         <InputBlockCell :flexible="true">
                                           <BasicInput
                                             title="차대번호 입력"
                                             id="leaseRentEstimationSystemRent_CarIdNumber002"
                                             defaultValue="DWAB87436A1538752"
+                                            :disabled="true"
                                           />
                                         </InputBlockCell>
                                       </InputBlock>
@@ -3147,15 +3141,20 @@ export default {
                                   <FormListItem
                                     titleText="출고예정일"
                                     target="#leaseRentEstimationSystemPrePurchaseRegistCar_DateButton002"
+                                    :disabled="true"
                                   >
                                     <FormInvalid :error="state.dateError003">
-                                      <InputBlock :error="state.dateError003">
+                                      <InputBlock
+                                        :error="state.dateError003"
+                                        :disabled="true"
+                                      >
                                         <InputBlockCell :flexible="true">
                                           <BasicDatepicker
                                             title="출고예정일"
                                             id="leaseRentEstimationSystemPrePurchaseRegistCar_Date002"
                                             buttonId="leaseRentEstimationSystemPrePurchaseRegistCar_DateButton002"
-                                            v-model="state.defaultDate"
+                                            defaultValue="2020.12.12"
+                                            :disabled="true"
                                           />
                                         </InputBlockCell>
                                       </InputBlock>
