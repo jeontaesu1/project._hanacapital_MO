@@ -191,6 +191,8 @@ export default {
             v-for="item in rightButtons"
             :key="`right_${typeof item === 'string' ? item : item.name}`"
             :type="typeof item === 'string' ? item : item.name"
+            :text="item.text"
+            :theme="item.theme"
             :onClick="item.onClick"
           />
         </div>

@@ -136,6 +136,16 @@
     }
   }
 
+  &__round-button {
+    flex: none;
+    margin: -1px 0;
+  }
+
+  &__button + &__round-button,
+  &__round-button + &__button {
+    margin-left: 12px;
+  }
+
   &__app {
     flex: none;
     margin: -1px 12px -1px 0;

@@ -6,7 +6,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-// import Layer from '@/views/LeaseRentEstimationSystem/Layer.vue';
+import LayerLeaseRentEstimationSystemPrePurchaseBatchRegist from '@/views/LeaseRentEstimationSystem/LayerLeaseRentEstimationSystemPrePurchaseBatchRegist.vue';
 
 export default {
   components: {
@@ -14,7 +14,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    // Layer,
+    LayerLeaseRentEstimationSystemPrePurchaseBatchRegist,
   },
   setup() {
     const layer001 = ref(null);
@@ -40,12 +40,12 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">aaaaaa<br />bbbbbbbbb</BasicButton>
+        <BasicButton @click="layer001Open">
+          차대번호 일괄입력 팝업<br />LR_M02_b010
+        </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
-    <!--
-    <Layer ref="layer001" />
-    -->
+    <LayerLeaseRentEstimationSystemPrePurchaseBatchRegist ref="layer001" />
   </PageContents>
 </template>

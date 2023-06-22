@@ -50,6 +50,7 @@ export default {
 
     const state = reactive({
       nameError001: false,
+      nameError001_001: false,
       birthDateError001: false,
     });
 

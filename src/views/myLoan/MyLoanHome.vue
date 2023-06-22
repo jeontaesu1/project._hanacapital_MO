@@ -1,6 +1,8 @@
 <script>
 // My_M01_p001
 import { onMounted, onUnmounted } from 'vue';
+import { Pagination, A11y } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/vue';
 
 import { useUiHeaderStore } from '@/stores/ui/header';
 
@@ -20,6 +22,8 @@ import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
+import BasicBanner from '@/components/ui/banner/BasicBanner.vue';
+import BasicBannerSlide from '@/components/ui/banner/BasicBannerSlide.vue';
 
 import IconCertification from '@/assets/images/icon/certification.svg?component';
 import IconBuilding from '@/assets/images/icon/building.svg?component';
@@ -27,6 +31,8 @@ import IconTell from '@/assets/images/icon/tell.svg?component';
 
 export default {
   components: {
+    Swiper,
+    SwiperSlide,
     PageContents,
     PageTextGroup,
     PageMainText,
@@ -43,6 +49,8 @@ export default {
     UnitText,
     BasicButton,
     NoticeText,
+    BasicBanner,
+    BasicBannerSlide,
     IconCertification,
     IconBuilding,
     IconTell,
@@ -65,6 +73,10 @@ export default {
       store.ui.header.setLeftButtons();
       store.ui.header.setRightButtons();
     });
+
+    return {
+      modules: [Pagination, A11y],
+    };
   },
 };
 </script>
@@ -643,7 +655,50 @@ export default {
       <!-- //Case : 파트너사 양도계약(팩토링)만 보유한 경우 노출 -->
       <!-- //Case : 캐피탈 계약 + 파트너사 양도계약 보유한 경우 -->
 
-      <div>// 배너 영역 (내용 확인 후 진행 예정)</div>
+      <!-- DD : 하드코딩 배너 -->
+      <BasicBannerSlide>
+        <Swiper :modules="modules" pagination>
+          <SwiperSlide>
+            <BasicBanner
+              thumb="/images/_dummy/banner-001.png"
+              tagName="RouterLink"
+              to=""
+            >
+              <p class="text-body-4 color-gray row-margin-mini">
+                비용NO! 보험NO! 내 차OK!
+              </p>
+              <h3 class="text-body-1 font-weight-medium">
+                다이렉트 장기렌터카
+              </h3>
+            </BasicBanner>
+          </SwiperSlide>
+          <SwiperSlide>
+            <BasicBanner
+              thumb="/images/_dummy/banner-001.png"
+              tagName="RouterLink"
+              to=""
+            >
+              <p class="text-body-4 color-gray row-margin-mini">
+                내용 작업 예정
+              </p>
+              <h3 class="text-body-1 font-weight-medium">내용 작업 예정</h3>
+            </BasicBanner>
+          </SwiperSlide>
+          <SwiperSlide>
+            <BasicBanner
+              thumb="/images/_dummy/banner-001.png"
+              tagName="RouterLink"
+              to=""
+            >
+              <p class="text-body-4 color-gray row-margin-mini">
+                내용 작업 예정
+              </p>
+              <h3 class="text-body-1 font-weight-medium">내용 작업 예정</h3>
+            </BasicBanner>
+          </SwiperSlide>
+        </Swiper>
+      </BasicBannerSlide>
+      <!-- // DD : 하드코딩 배너 -->
     </section>
   </PageContents>
 </template>

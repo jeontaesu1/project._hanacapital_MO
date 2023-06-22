@@ -1483,14 +1483,6 @@ const routes = [
 
   // lease-rent-estimation-system
   {
-    path: '/lease-rent-estimation-system/home',
-    name: '/lease-rent-estimation-system/home',
-    component: () =>
-      import(
-        '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemHome.vue'
-      ),
-  },
-  {
     path: '/lease-rent-estimation-system/pre-purchase',
     name: '/lease-rent-estimation-system/pre-purchase',
     component: () =>
