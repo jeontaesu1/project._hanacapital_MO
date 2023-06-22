@@ -25,10 +25,6 @@ import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
 import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 import SettingButton from '@/components/ui/button/SettingButton.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
-import UiTab from '@/components/ui/tab/UiTab.vue';
-import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
-import RoundTab from '@/components/ui/tab/RoundTab.vue';
-import RoundTabButton from '@/components/ui/tab/RoundTabButton.vue';
 import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
 import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 import ColorChip from '@/components/ui/imageData/ColorChip.vue';
@@ -76,10 +72,6 @@ export default {
     BoxCheckListItem,
     SettingButton,
     BasicHr,
-    UiTab,
-    UiTabPanel,
-    RoundTab,
-    RoundTabButton,
     CarEmblem,
     CarThumb,
     ColorChip,
@@ -271,203 +263,76 @@ export default {
                 :classNames="{ layer: $style['estimate-list__layer'] }"
               >
                 <section :class="$style['estimate-list__contents']">
-                  <UiTab>
-                    <RoundTab
-                      :useUiTab="true"
-                      :classNames="{ wrap: 'row-margin-item-group' }"
-                    >
-                      <RoundTabButton
-                        link="leaseRentEstimationSystemInstallmentBrand_001"
+                  <ul :class="$style['bank-brand__list']">
+                    <li :class="$style['bank-brand__item']">
+                      <button
+                        type="button"
+                        :class="$style['bank-brand__block']"
                       >
-                        국산
-                      </RoundTabButton>
-                      <RoundTabButton
-                        link="leaseRentEstimationSystemInstallmentBrand_002"
+                        <span :class="$style['bank-brand__logo']">
+                          <CarEmblem code="2001" size="medium" />
+                        </span>
+                        <span :class="$style['bank-brand__text']">벤츠</span>
+                      </button>
+                    </li>
+                    <li :class="$style['bank-brand__item']">
+                      <button
+                        type="button"
+                        :class="$style['bank-brand__block']"
                       >
-                        수입
-                      </RoundTabButton>
-                    </RoundTab>
-
-                    <UiTabPanel
-                      name="leaseRentEstimationSystemInstallmentBrand_001"
-                    >
-                      <div
-                        :class="[
-                          $style['bank-brand'],
-                          $style['bank-brand--col-3'],
-                        ]"
+                        <span :class="$style['bank-brand__logo']">
+                          <CarEmblem code="2002" size="medium" />
+                        </span>
+                        <span :class="$style['bank-brand__text']">BMW</span>
+                      </button>
+                    </li>
+                    <li :class="$style['bank-brand__item']">
+                      <button
+                        type="button"
+                        :class="$style['bank-brand__block']"
                       >
-                        <ul :class="$style['bank-brand__list']">
-                          <li :class="$style['bank-brand__item']">
-                            <button
-                              type="button"
-                              :class="$style['bank-brand__block']"
-                            >
-                              <span :class="$style['bank-brand__logo']">
-                                <CarEmblem code="1001" size="medium" />
-                              </span>
-                              <span :class="$style['bank-brand__text']"
-                                >현대</span
-                              >
-                            </button>
-                          </li>
-                          <li :class="$style['bank-brand__item']">
-                            <!-- DD : 선택 된 요소 is-selected 클래스 값 추가 및 title="선택 됨" 속성 추가 -->
-                            <button
-                              type="button"
-                              :class="[
-                                $style['bank-brand__block'],
-                                'is-selected',
-                              ]"
-                              title="선택 됨"
-                            >
-                              <span :class="$style['bank-brand__logo']">
-                                <CarEmblem code="1012" size="medium" />
-                              </span>
-                              <span :class="$style['bank-brand__text']"
-                                >제네시스</span
-                              >
-                            </button>
-                          </li>
-                          <li :class="$style['bank-brand__item']">
-                            <button
-                              type="button"
-                              :class="$style['bank-brand__block']"
-                            >
-                              <span :class="$style['bank-brand__logo']">
-                                <CarEmblem code="1002" size="medium" />
-                              </span>
-                              <span :class="$style['bank-brand__text']"
-                                >기아</span
-                              >
-                            </button>
-                          </li>
-                          <li :class="$style['bank-brand__item']">
-                            <button
-                              type="button"
-                              :class="$style['bank-brand__block']"
-                            >
-                              <span :class="$style['bank-brand__logo']">
-                                <CarEmblem code="1003" size="medium" />
-                              </span>
-                              <span :class="$style['bank-brand__text']"
-                                >르노삼성</span
-                              >
-                            </button>
-                          </li>
-                          <li :class="$style['bank-brand__item']">
-                            <button
-                              type="button"
-                              :class="$style['bank-brand__block']"
-                            >
-                              <span :class="$style['bank-brand__logo']">
-                                <CarEmblem code="1006" size="medium" />
-                              </span>
-                              <span :class="$style['bank-brand__text']"
-                                >쉐보레</span
-                              >
-                            </button>
-                          </li>
-                          <li :class="$style['bank-brand__item']">
-                            <button
-                              type="button"
-                              :class="$style['bank-brand__block']"
-                            >
-                              <span :class="$style['bank-brand__logo']">
-                                <CarEmblem code="1005" size="medium" />
-                              </span>
-                              <span :class="$style['bank-brand__text']"
-                                >쌍용</span
-                              >
-                            </button>
-                          </li>
-                        </ul>
-                      </div>
-                    </UiTabPanel>
-
-                    <UiTabPanel
-                      name="leaseRentEstimationSystemInstallmentBrand_002"
-                    >
-                      <ul :class="$style['bank-brand__list']">
-                        <li :class="$style['bank-brand__item']">
-                          <button
-                            type="button"
-                            :class="$style['bank-brand__block']"
-                          >
-                            <span :class="$style['bank-brand__logo']">
-                              <CarEmblem code="2001" size="medium" />
-                            </span>
-                            <span :class="$style['bank-brand__text']"
-                              >벤츠</span
-                            >
-                          </button>
-                        </li>
-                        <li :class="$style['bank-brand__item']">
-                          <button
-                            type="button"
-                            :class="$style['bank-brand__block']"
-                          >
-                            <span :class="$style['bank-brand__logo']">
-                              <CarEmblem code="2002" size="medium" />
-                            </span>
-                            <span :class="$style['bank-brand__text']">BMW</span>
-                          </button>
-                        </li>
-                        <li :class="$style['bank-brand__item']">
-                          <button
-                            type="button"
-                            :class="$style['bank-brand__block']"
-                          >
-                            <span :class="$style['bank-brand__logo']">
-                              <CarEmblem code="2003" size="medium" />
-                            </span>
-                            <span :class="$style['bank-brand__text']"
-                              >아우디</span
-                            >
-                          </button>
-                        </li>
-                        <li :class="$style['bank-brand__item']">
-                          <button
-                            type="button"
-                            :class="$style['bank-brand__block']"
-                          >
-                            <span :class="$style['bank-brand__logo']">
-                              <CarEmblem code="2017" size="medium" />
-                            </span>
-                            <span :class="$style['bank-brand__text']"
-                              >포르쉐</span
-                            >
-                          </button>
-                        </li>
-                        <li :class="$style['bank-brand__item']">
-                          <button
-                            type="button"
-                            :class="$style['bank-brand__block']"
-                          >
-                            <span :class="$style['bank-brand__logo']">
-                              <CarEmblem code="2018" size="medium" />
-                            </span>
-                            <span :class="$style['bank-brand__text']"
-                              >마세라티</span
-                            >
-                          </button>
-                        </li>
-                        <li :class="$style['bank-brand__item']">
-                          <button
-                            type="button"
-                            :class="$style['bank-brand__block']"
-                          >
-                            <span :class="$style['bank-brand__logo']">
-                              <CarEmblem code="2025" size="medium" />
-                            </span>
-                            <span :class="$style['bank-brand__text']"
-                              >벤틀리</span
-                            >
-                          </button>
-                        </li>
-                      </ul>
-                    </UiTabPanel>
-                  </UiTab>
+                        <span :class="$style['bank-brand__logo']">
+                          <CarEmblem code="2003" size="medium" />
+                        </span>
+                        <span :class="$style['bank-brand__text']">아우디</span>
+                      </button>
+                    </li>
+                    <li :class="$style['bank-brand__item']">
+                      <button
+                        type="button"
+                        :class="$style['bank-brand__block']"
+                      >
+                        <span :class="$style['bank-brand__logo']">
+                          <CarEmblem code="2017" size="medium" />
+                        </span>
+                        <span :class="$style['bank-brand__text']">포르쉐</span>
+                      </button>
+                    </li>
+                    <li :class="$style['bank-brand__item']">
+                      <button
+                        type="button"
+                        :class="$style['bank-brand__block']"
+                      >
+                        <span :class="$style['bank-brand__logo']">
+                          <CarEmblem code="2018" size="medium" />
+                        </span>
+                        <span :class="$style['bank-brand__text']"
+                          >마세라티</span
+                        >
+                      </button>
+                    </li>
+                    <li :class="$style['bank-brand__item']">
+                      <button
+                        type="button"
+                        :class="$style['bank-brand__block']"
+                      >
+                        <span :class="$style['bank-brand__logo']">
+                          <CarEmblem code="2025" size="medium" />
+                        </span>
+                        <span :class="$style['bank-brand__text']">벤틀리</span>
+                      </button>
+                    </li>
+                  </ul>
                 </section>
               </UiAccordionLayer>
             </UiAccordionItem>
@@ -1949,24 +1814,9 @@ export default {
           </div>
           <div :class="$style['estimate-list__foot']">
             <section class="row-margin-item-group">
-              <div class="flex-box align-items-start row-margin-item-group">
-                <div class="flex-box__cell flex-1">
-                  <h4
-                    class="text-body-3 font-weight-medium row-margin-item-group"
-                  >
-                    대리점 출고시 할인
-                  </h4>
-                </div>
-                <div class="flex-box__cell flex-box__cell--medium">
-                  <CheckBox
-                    id="leaseRentEstimationSystemInstallmentDiscountOnOff"
-                    theme="tertiary"
-                  >
-                    <CheckBoxObject />
-                    <CheckBoxLabelText>개소세 감면액 포함</CheckBoxLabelText>
-                  </CheckBox>
-                </div>
-              </div>
+              <h4 class="text-body-3 font-weight-medium row-margin-item-group">
+                대리점 출고시 할인
+              </h4>
               <ul class="reset-list">
                 <li class="row-margin-item-group">
                   <div class="flex-box align-items-start">
@@ -2113,10 +1963,6 @@ export default {
             </KeyValueItem>
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>할인금액</KeyValueTitle>
-              <KeyValueText>0 원</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem :classNames="{ item: 'text-body-3' }">
-              <KeyValueTitle>제조사탁송료</KeyValueTitle>
               <KeyValueText>0 원</KeyValueText>
             </KeyValueItem>
           </KeyValue>

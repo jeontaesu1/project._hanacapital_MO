@@ -2179,44 +2179,6 @@ export default {
               </ul>
             </section>
           </div>
-          <div :class="$style['estimate-list__foot']">
-            <section>
-              <h4 class="text-body-4 font-weight-medium row-margin-item-group">
-                제조사탁송
-              </h4>
-              <FormList>
-                <FormListItem
-                  titleText="금액"
-                  target="#leaseRentEstimationSystemTestDriveCarDeliveryManufacturerPrice"
-                  :forceFocus="true"
-                  :disabled="true"
-                >
-                  <FormInvalid :error="state.deliveryManufacturerPriceError">
-                    <InputBlock
-                      :error="state.deliveryManufacturerPriceError"
-                      :disabled="true"
-                    >
-                      <InputBlockCell :flexible="true">
-                        <BasicInput
-                          title="금액"
-                          id="leaseRentEstimationSystemTestDriveCarDeliveryManufacturerPrice"
-                          pattern="\d*"
-                          :useDelete="false"
-                          align="right"
-                          defaultValue="0"
-                          :disabled="true"
-                        />
-                      </InputBlockCell>
-                      <template v-slot:innerRight>
-                        <div class="text-body-3">원</div>
-                      </template>
-                    </InputBlock>
-                    <FormInvalidMessage> Error Message </FormInvalidMessage>
-                  </FormInvalid>
-                </FormListItem>
-              </FormList>
-            </section>
-          </div>
         </section>
 
         <div :class="$style['total']">
@@ -2231,10 +2193,6 @@ export default {
             </KeyValueItem>
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>개소세감면</KeyValueTitle>
-              <KeyValueText>0 원</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem :classNames="{ item: 'text-body-3' }">
-              <KeyValueTitle>제조사탁송료</KeyValueTitle>
               <KeyValueText>0 원</KeyValueText>
             </KeyValueItem>
           </KeyValue>
