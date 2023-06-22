@@ -13,6 +13,9 @@ import LayerEquipmentLeaseEstimateURLSchedule from '@/views/equipmentLease/Layer
 import LayerEquipmentLeaseStatePriorAgree from '@/views/equipmentLease/LayerEquipmentLeaseStatePriorAgree.vue';
 import LayerEquipmentLeaseStateCounselingAgree from '@/views/equipmentLease/LayerEquipmentLeaseStateCounselingAgree.vue';
 import LayerEquipmentLeaseStateElectronicContract from '@/views/equipmentLease/LayerEquipmentLeaseStateElectronicContract.vue';
+import LayerEquipmentLeaseStateDetail from '@/views/equipmentLease/LayerEquipmentLeaseStateDetail.vue';
+import LayerEquipmentLeaseStateAgree from '@/views/equipmentLease/LayerEquipmentLeaseStateAgree.vue';
+import LayerEquipmentLeaseStateComplete from '@/views/equipmentLease/LayerEquipmentLeaseStateComplete.vue';
 
 export default {
   components: {
@@ -27,6 +30,9 @@ export default {
     LayerEquipmentLeaseStatePriorAgree,
     LayerEquipmentLeaseStateCounselingAgree,
     LayerEquipmentLeaseStateElectronicContract,
+    LayerEquipmentLeaseStateDetail,
+    LayerEquipmentLeaseStateAgree,
+    LayerEquipmentLeaseStateComplete,
   },
   setup() {
     const layer001 = ref(null);
@@ -36,6 +42,9 @@ export default {
     const layer005 = ref(null);
     const layer006 = ref(null);
     const layer007 = ref(null);
+    const layer008 = ref(null);
+    const layer009 = ref(null);
+    const layer010 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -58,6 +67,15 @@ export default {
     const layer007Open = (e = {}) => {
       layer007.value.layer.open(e.target);
     };
+    const layer008Open = (e = {}) => {
+      layer008.value.layer.open(e.target);
+    };
+    const layer009Open = (e = {}) => {
+      layer009.value.layer.open(e.target);
+    };
+    const layer010Open = (e = {}) => {
+      layer010.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -67,6 +85,9 @@ export default {
       layer005,
       layer006,
       layer007,
+      layer008,
+      layer009,
+      layer010,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -74,6 +95,9 @@ export default {
       layer005Open,
       layer006Open,
       layer007Open,
+      layer008Open,
+      layer009Open,
+      layer010Open,
     };
   },
 };
@@ -122,6 +146,21 @@ export default {
           전자약정 전송 정보 입력 팝업<br />EL_M02_l003
         </BasicButton>
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer008Open">
+          견적보기 팝업<br />EL_M02_l004
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer009Open">
+          신용정보조회동의<br />EL_M02_l005
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer010Open">
+          사전동의 완료<br />EL_M02_l006
+        </BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <LayerEquipmentLeaseEstimateSchedule ref="layer001" />
@@ -131,5 +170,8 @@ export default {
     <LayerEquipmentLeaseStatePriorAgree ref="layer005" />
     <LayerEquipmentLeaseStateCounselingAgree ref="layer006" />
     <LayerEquipmentLeaseStateElectronicContract ref="layer007" />
+    <LayerEquipmentLeaseStateDetail ref="layer008" />
+    <LayerEquipmentLeaseStateAgree ref="layer009" />
+    <LayerEquipmentLeaseStateComplete ref="layer010" />
   </PageContents>
 </template>
