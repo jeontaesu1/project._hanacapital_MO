@@ -1837,6 +1837,7 @@ export default {
                     <li :class="$style['option-select__item']">
                       <div :class="$style['option-select__block']">
                         <FormList>
+                          <!-- Case : 국산차 선택시, 노출 -->
                           <FormListItem
                             titleText="옵션 명칭"
                             target="#leaseRentEstimationSystemLeaseOptionETC"
@@ -1856,6 +1857,7 @@ export default {
                               >
                             </FormInvalid>
                           </FormListItem>
+                          <!-- //Case : 국산차 선택시, 노출 -->
                           <FormListItem
                             titleText="금액"
                             target="#leaseRentEstimationSystemLeaseOptionETCPrice"
@@ -2012,6 +2014,7 @@ export default {
                 <div class="flex-box__cell flex-1">
                   <h4 class="text-body-4">대리점 출고시 할인</h4>
                 </div>
+                <!-- Case : 수입차 선택시, 미노출 -->
                 <div class="flex-box__cell flex-box__cell--medium">
                   <CheckBox
                     id="leaseRentEstimationSystemLeaseDeliveryDiscountOnOff"
@@ -2021,6 +2024,7 @@ export default {
                     <CheckBoxLabelText>개소세 감면액 포함</CheckBoxLabelText>
                   </CheckBox>
                 </div>
+                <!-- //Case : 수입차 선택시, 미노출 -->
               </div>
               <ul class="reset-list">
                 <li class="row-margin-item-group">
@@ -2159,10 +2163,13 @@ export default {
             </section>
             <!-- // Case : 특판출고 선택시 비노출 -->
           </div>
+
+          <!-- Case : { 할인/탁송료 : 탁송방법 } '외주탁송' 또는 { 차량 선택 : 브랜드 } '수입차' 선택시, 미노출 -->
           <div :class="$style['estimate-list__foot']">
             <section>
               <h4 class="text-body-4 row-margin-item-group">제조사탁송</h4>
               <FormList>
+                <!-- Case : { 차량 선택 } - '수입차' 선택 & '트림' 프로세스 완료 시, :disabled="false" -->
                 <FormListItem
                   titleText="금액"
                   target="#leaseRentEstimationSystemLeaseDeliveryManufacturerPrice"
@@ -2192,9 +2199,11 @@ export default {
                     <FormInvalidMessage> Error Message </FormInvalidMessage>
                   </FormInvalid>
                 </FormListItem>
+                <!-- //Case : { 차량 선택 } - '수입차' 선택 & '트림' 프로세스 완료 시, :disabled="false" -->
               </FormList>
             </section>
           </div>
+          <!-- //Case : { 할인/탁송료 : 탁송방법 } '외주탁송' 또는 { 차량 선택 : 브랜드 } '수입차' 선택시, 미노출 -->
         </section>
 
         <div :class="$style['total']">
@@ -2211,10 +2220,12 @@ export default {
               <KeyValueTitle>개소세감면</KeyValueTitle>
               <KeyValueText>0 원</KeyValueText>
             </KeyValueItem>
+            <!-- Case : { 할인/탁송료 : 탁송방법 } '외주탁송' 또는 { 차량 선택 : 브랜드 } '수입차' 선택시, 미노출 -->
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>제조사탁송료</KeyValueTitle>
               <KeyValueText>0 원</KeyValueText>
             </KeyValueItem>
+            <!-- //Case : { 할인/탁송료 : 탁송방법 } '외주탁송' 또는 { 차량 선택 : 브랜드 } '수입차' 선택시, 미노출 -->
           </KeyValue>
 
           <BasicHr
