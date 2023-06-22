@@ -288,13 +288,13 @@ export default {
           <KeyValue margin="regular">
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>
-                <div class="text-body-4">상호</div>
+                <div class="text-body-3">상호</div>
               </KeyValueTitle>
               <KeyValueText>드림카센터</KeyValueText>
             </KeyValueItem>
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>
-                <div class="text-body-4">주소</div>
+                <div class="text-body-3">주소</div>
               </KeyValueTitle>
               <KeyValueText>
                 서울 강남구 헌릉로 745길 25 216호<br />
@@ -303,7 +303,7 @@ export default {
             </KeyValueItem>
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>
-                <div class="text-body-4">대표이사</div>
+                <div class="text-body-3">대표이사</div>
               </KeyValueTitle>
               <KeyValueText>김하나 (인)</KeyValueText>
             </KeyValueItem>
@@ -316,13 +316,13 @@ export default {
           <KeyValue margin="regular">
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>
-                <div class="text-body-4">상호</div>
+                <div class="text-body-3">상호</div>
               </KeyValueTitle>
               <KeyValueText>하나캐피탈주식회사</KeyValueText>
             </KeyValueItem>
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>
-                <div class="text-body-4">주소</div>
+                <div class="text-body-3">주소</div>
               </KeyValueTitle>
               <KeyValueText>
                 서울특별시 강남구 테헤란로 127<br />
@@ -331,7 +331,7 @@ export default {
             </KeyValueItem>
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>
-                <div class="text-body-4">대표이사</div>
+                <div class="text-body-3">대표이사</div>
               </KeyValueTitle>
               <KeyValueText>박승오 (인)</KeyValueText>
             </KeyValueItem>
