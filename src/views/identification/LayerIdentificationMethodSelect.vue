@@ -11,7 +11,7 @@ import PopupSubTitle from '@/components/ui/layer/PopupSubTitle.vue';
 import IconPhone from '@/assets/images/icon/phone.svg?component';
 import IconCertification from '@/assets/images/icon/certification.svg?component';
 import IconCard from '@/assets/images/icon/card.svg?component';
-import IconKakaopay from '@/assets/images/icon/kakaopay.svg?component';
+import IconEasyAuthentication from '@/assets/images/icon/easy-authentication.svg?component';
 
 export default {
   components: {
@@ -23,7 +23,7 @@ export default {
     IconPhone,
     IconCertification,
     IconCard,
-    IconKakaopay,
+    IconEasyAuthentication,
   },
   setup() {
     const layer = ref(null);
@@ -78,11 +78,13 @@ export default {
           </li>
           <li :class="$style['icon-buttons__item']">
             <button type="button" :class="$style['icon-buttons__block']">
-              <span :class="$style['icon-buttons__icon']"
-                ><IconKakaopay
-              /></span>
+              <span :class="$style['icon-buttons__icon']">
+                <IconEasyAuthentication />
+              </span>
               <span :class="$style['icon-buttons__content']">
-                <span :class="$style['icon-buttons__title']">카카오페이</span>
+                <span :class="$style['icon-buttons__title']">
+                  간편인증 (민간인증서)
+                </span>
               </span>
             </button>
           </li>

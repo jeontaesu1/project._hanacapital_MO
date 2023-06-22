@@ -89,7 +89,10 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton @click="layerSlotProps.close()">확인</BasicButton>
+            <BasicButton :line="true" theme="quaternary">미동의</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton @click="layerSlotProps.close()">동의</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

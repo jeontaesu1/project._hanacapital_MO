@@ -58,18 +58,65 @@
     }
   }
 
-  &--col-3 {
-    .box-check-list {
-      &__item {
-        width: 33.333333%;
+  &--spacing {
+    &-small {
+      .box-check-list {
+        &__item {
+          & + .box-check-list__item {
+            margin-left: 6px;
+          }
+        }
+      }
+
+      &.box-check-list--align-full {
+        .box-check-list__item {
+          & + .box-check-list__item {
+            margin-left: 0;
+            margin-top: 6px;
+          }
+        }
+      }
+
+      &.box-check-list--wrap {
+        .box-check-list {
+          &__list {
+            margin: -6px 0 0 -6px;
+          }
+
+          &__item {
+            padding: 6px 0 0 6px;
+
+            & + .box-check-list__item {
+              margin-left: 0;
+            }
+          }
+        }
       }
     }
   }
 
-  &--col-4 {
-    .box-check-list {
-      &__item {
-        width: 25%;
+  &--col {
+    &-3 {
+      .box-check-list {
+        &__item {
+          width: 33.333333%;
+        }
+      }
+    }
+
+    &-4 {
+      .box-check-list {
+        &__item {
+          width: 25%;
+        }
+      }
+    }
+
+    &-6 {
+      .box-check-list {
+        &__item {
+          width: 16.666666%;
+        }
       }
     }
   }

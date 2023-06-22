@@ -1,0 +1,85 @@
+.qna {
+  display: block;
+
+  &__list {
+    @include reset-list;
+  }
+
+  &__item {
+    display: block;
+  }
+
+  &__head {
+    position: relative;
+    display: flex;
+    padding: 16px 0;
+  }
+
+  &__symbol {
+    flex: none;
+    margin: 2px 8px 0 0;
+    padding: 1px 0;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    @include font-size-default(12);
+    font-weight: 500;
+    color: $color-navy-50;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background-color: rgba($color-navy-50, 0.1);
+
+    &--answer {
+      color: $color-gray-60;
+      background-color: $color-gray-20;
+    }
+  }
+
+  &__cell {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__opener {
+    position: static;
+
+    &::before {
+      padding: 0;
+      top: 0;
+      left: 0;
+      z-index: 10;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    @include font-size-default(16);
+    font-weight: 500;
+  }
+
+  &__right {
+    flex: none;
+    margin-left: auto;
+    padding-left: 4px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__layer {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  &__contents {
+    display: flex;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: $color-gray-10;
+  }
+
+  &__text {
+    margin: 0;
+    @include font-size-default(14);
+    color: $color-gray-70;
+  }
+}

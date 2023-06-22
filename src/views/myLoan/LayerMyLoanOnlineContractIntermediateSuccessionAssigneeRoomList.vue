@@ -130,15 +130,6 @@ export default {
                   item: 'text-body-3',
                 }"
               >
-                <KeyValueTitle>인지대 납부</KeyValueTitle>
-                <KeyValueText>N</KeyValueText>
-              </KeyValueItem>
-
-              <KeyValueItem
-                :classNames="{
-                  item: 'text-body-3',
-                }"
-              >
                 <KeyValueTitle>서류 제출</KeyValueTitle>
                 <KeyValueText>N</KeyValueText>
               </KeyValueItem>
@@ -147,7 +138,7 @@ export default {
                 size="small"
                 :classNames="{ wrap: 'row-margin-contents-small' }"
               >
-                승계신청
+                대출신청
               </BasicButton>
             </KeyValue>
           </BasicBox>

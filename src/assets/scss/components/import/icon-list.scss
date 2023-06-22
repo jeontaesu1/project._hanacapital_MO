@@ -45,6 +45,10 @@ div.icon-list__block {
       width: 100%;
       height: 100%;
     }
+
+    &--white {
+      background-color: $color-white;
+    }
   }
 
   &__content {
@@ -54,6 +58,11 @@ div.icon-list__block {
   }
 
   &__icon + &__content {
+    margin-left: 16px;
+  }
+
+  &__etc {
+    display: block;
     margin-left: 16px;
   }
 

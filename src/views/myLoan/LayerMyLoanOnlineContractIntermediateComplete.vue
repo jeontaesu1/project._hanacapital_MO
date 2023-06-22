@@ -65,8 +65,9 @@ export default {
           <strong>완료되었습니다</strong>
         </PageMainText>
         <PageSubText>
-          전자약정계약서를 고객님의 휴대폰으로 전송하였습니다.<br />
-          고객님의 소중한 정보를 확인 후 심사결과를 알려드리겠습니다.
+          약정이 완료되었습니다.<br />
+          하나캐피탈을 이용해 주셔서 감사합니다.<br />
+          대출금송금을 위해 ARS를 진행해주세요.
         </PageSubText>
       </PageTextGroup>
 
@@ -112,7 +113,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton>확인</BasicButton>
+            <BasicButton>ARS 계약 안내</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

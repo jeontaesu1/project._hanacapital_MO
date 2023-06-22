@@ -1,5 +1,5 @@
 <script>
-// AF_M07_l004
+// AF_M07_l005
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -57,7 +57,7 @@ export default {
           <strong>완료되었습니다</strong>
         </PageMainText>
         <PageSubText>
-          <strong class="font-weight-medium color-blue">010-####-5678</strong>
+          <strong class="font-weight-medium color-green">010-####-5678</strong>
           으로<br />
           승계 신청 문자가 정상적으로 발송되었습니다.
         </PageSubText>
@@ -88,7 +88,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton theme="secondary">확인</BasicButton>
+            <BasicButton>확인</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

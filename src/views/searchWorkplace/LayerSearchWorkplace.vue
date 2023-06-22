@@ -85,7 +85,7 @@ export default {
 
 <template>
   <UiLayer ref="layer" type="full" v-slot="layerSlotProps">
-    <UiTab ref="tab" type="popup" v-slot="tabSlotProps">
+    <UiTab type="popup" v-slot="tabSlotProps">
       <FullPopup
         :classNames="{
           foot:
@@ -166,10 +166,9 @@ export default {
             </FormList>
           </UiTabPanel>
 
-          <NoticeText class="row-margin-contents"
-            >실제 직장 정보와 다른 경우 한도 및 금리가 달라질 수
-            있어요.</NoticeText
-          >
+          <NoticeText :classNames="{ wrap: 'row-margin-contents' }">
+            실제 직장 정보와 다른 경우 한도 및 금리가 달라질 수 있어요.
+          </NoticeText>
         </div>
 
         <!-- DD : 검색 후 노출 -->

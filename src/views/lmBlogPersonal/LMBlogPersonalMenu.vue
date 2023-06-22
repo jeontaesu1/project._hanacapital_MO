@@ -26,6 +26,10 @@ export default {
       store.ui.header.setLeftButtons(() => []);
       store.ui.header.setRightButtons(() => [
         {
+          name: 'homeButton',
+          onClick: () => router.push('/lm-blog-personal/home'),
+        },
+        {
           name: 'close',
           onClick: () => router.push('/lm-blog-personal/home'),
         },

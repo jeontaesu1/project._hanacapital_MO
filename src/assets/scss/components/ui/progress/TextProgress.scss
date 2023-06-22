@@ -1,0 +1,76 @@
+.progress {
+  margin: 0 0 20px;
+
+  &__list {
+    @include reset-list;
+    position: relative;
+    display: flex;
+    padding: 8px 0;
+    margin: 0 -20px;
+  }
+
+  &__item {
+    flex: 1;
+    min-width: 0;
+    position: relative;
+    padding-bottom: 20px;
+    @include font-size-default(10);
+    color: $color-green-40;
+    font-weight: 400;
+    text-align: center;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      box-sizing: border-box;
+      border: 2px solid $color-green-40;
+      background: $color-white;
+    }
+
+    &:after {
+      content: '';
+      height: 2px;
+      width: 100%;
+      border-bottom: 2px solid $color-green-40;
+      position: absolute;
+      bottom: 2px;
+      left: 50%;
+      z-index: -1;
+    }
+
+    &:last-child {
+      &:before {
+        left: auto;
+        right: 50%;
+      }
+      &:after {
+        display: none;
+      }
+    }
+
+    &--active {
+      &:after {
+        content: '';
+        border-bottom: 2px dashed $color-gray-20;
+      }
+
+      ~ .progress__item {
+        color: $color-gray-60;
+        &:before {
+          border-color: $color-gray-20;
+          background: $color-gray-20;
+        }
+        &:after {
+          content: '';
+          border-bottom: 2px dashed $color-gray-20;
+        }
+      }
+    }
+  }
+}

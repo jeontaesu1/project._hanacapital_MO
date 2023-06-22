@@ -57,8 +57,10 @@ export default {
 
     const state = reactive({
       typeError: false,
-      productError: false,
       categoryError: false,
+      productError001: false,
+      productError002: false,
+      productError003: false,
       corporateError: false,
       nameError: false,
       phoneError: false,
@@ -66,9 +68,6 @@ export default {
       carTypeError: false,
       carNameError: false,
       carRegionError: false,
-      /*
-      categoryError: false,
-      */
     });
 
     onMounted(() => {
@@ -121,44 +120,6 @@ export default {
       </FormListItem>
 
       <FormListItem
-        titleText="상담 상품"
-        target="#customerReservationCounselingProductButton"
-        :selectOnly="true"
-      >
-        <FormInvalid :error="state.productError">
-          <InputBlock :error="state.productError">
-            <InputBlockCell :flexible="true">
-              <BasicSelect
-                :option="[
-                  {
-                    value: '1',
-                    text: '신용대출',
-                  },
-                  {
-                    value: '2',
-                    text: '자동차담보대출',
-                  },
-                  {
-                    value: '3',
-                    text: '스탁론',
-                  },
-                  {
-                    value: '4',
-                    text: '주택담보대출',
-                  },
-                ]"
-                buttonTitle="상품 선택하기"
-                layerTitle="상품을 선택해 주세요"
-                id="customerReservationCounselingProduct"
-                buttonId="customerReservationCounselingProductButton"
-              />
-            </InputBlockCell>
-          </InputBlock>
-          <FormInvalidMessage>Error Message</FormInvalidMessage>
-        </FormInvalid>
-      </FormListItem>
-
-      <FormListItem
         titleText="상담 분야"
         target="#customerReservationCounselingCategoryButton"
         :selectOnly="true"
@@ -196,6 +157,128 @@ export default {
         </FormInvalid>
       </FormListItem>
 
+      <!-- Case : 상담분야 '개인금융' 선택 시 -->
+      <FormListItem
+        titleText="상담 상품"
+        target="#customerReservationCounselingProduct001Button"
+        :selectOnly="true"
+      >
+        <FormInvalid :error="state.productError001">
+          <InputBlock :error="state.productError001">
+            <InputBlockCell :flexible="true">
+              <BasicSelect
+                :option="[
+                  {
+                    value: '1',
+                    text: '신용대출',
+                  },
+                  {
+                    value: '2',
+                    text: '자동차담보대출',
+                  },
+                  {
+                    value: '3',
+                    text: '스탁론',
+                  },
+                  {
+                    value: '4',
+                    text: '주택담보대출',
+                  },
+                ]"
+                buttonTitle="상품 선택하기"
+                layerTitle="상품을 선택해 주세요"
+                id="customerReservationCounselingProduct001"
+                buttonId="customerReservationCounselingProduct001Button"
+              />
+            </InputBlockCell>
+          </InputBlock>
+          <FormInvalidMessage>Error Message</FormInvalidMessage>
+        </FormInvalid>
+      </FormListItem>
+      <!-- // Case : 상담분야 '개인금융' 선택 시 -->
+
+      <!-- Case : 상담분야 '자동차금융' 선택 시 -->
+      <FormListItem
+        titleText="상담 상품"
+        target="#customerReservationCounselingProduct002Button"
+        :selectOnly="true"
+      >
+        <FormInvalid :error="state.productError002">
+          <InputBlock :error="state.productError002">
+            <InputBlockCell :flexible="true">
+              <BasicSelect
+                :option="[
+                  {
+                    value: '1',
+                    text: '신차할부(오토론)',
+                  },
+                  {
+                    value: '2',
+                    text: '신차리스',
+                  },
+                  {
+                    value: '3',
+                    text: '중고차오토론',
+                  },
+                  {
+                    value: '4',
+                    text: '렌터카',
+                  },
+                ]"
+                buttonTitle="상품 선택하기"
+                layerTitle="상품을 선택해 주세요"
+                id="customerReservationCounselingProduct002"
+                buttonId="customerReservationCounselingProduct002Button"
+              />
+            </InputBlockCell>
+          </InputBlock>
+          <FormInvalidMessage>Error Message</FormInvalidMessage>
+        </FormInvalid>
+      </FormListItem>
+      <!-- // Case : 상담분야 '자동차금융' 선택 시 -->
+
+      <!-- Case : 상담분야 '기업금융' 선택 시 -->
+      <FormListItem
+        titleText="상담 상품"
+        target="#customerReservationCounselingProduct003Button"
+        :selectOnly="true"
+      >
+        <FormInvalid :error="state.productError003">
+          <InputBlock :error="state.productError003">
+            <InputBlockCell :flexible="true">
+              <BasicSelect
+                :option="[
+                  {
+                    value: '1',
+                    text: '의료기리스',
+                  },
+                ]"
+                buttonTitle="상품 선택하기"
+                layerTitle="상품을 선택해 주세요"
+                id="customerReservationCounselingProduct003"
+                buttonId="customerReservationCounselingProduct003Button"
+              />
+            </InputBlockCell>
+          </InputBlock>
+          <FormInvalidMessage>Error Message</FormInvalidMessage>
+        </FormInvalid>
+      </FormListItem>
+      <!-- // Case : 상담분야 '기업금융' 선택 시 -->
+
+      <FormListItem
+        titleText="이름"
+        target="#customerReservationCounselingName"
+      >
+        <FormInvalid :error="state.nameError">
+          <InputBlock :error="state.nameError">
+            <InputBlockCell :flexible="true">
+              <BasicInput title="이름" id="customerReservationCounselingName" />
+            </InputBlockCell>
+          </InputBlock>
+          <FormInvalidMessage>Error Message</FormInvalidMessage>
+        </FormInvalid>
+      </FormListItem>
+
       <!-- Case : 회원구분 법인 선택 시 -->
       <FormListItem
         titleText="법인명"
@@ -214,20 +297,6 @@ export default {
         </FormInvalid>
       </FormListItem>
       <!-- // Case : 회원구분 법인 선택 시 -->
-
-      <FormListItem
-        titleText="이름"
-        target="#customerReservationCounselingName"
-      >
-        <FormInvalid :error="state.nameError">
-          <InputBlock :error="state.nameError">
-            <InputBlockCell :flexible="true">
-              <BasicInput title="이름" id="customerReservationCounselingName" />
-            </InputBlockCell>
-          </InputBlock>
-          <FormInvalidMessage>Error Message</FormInvalidMessage>
-        </FormInvalid>
-      </FormListItem>
 
       <FormListItem
         titleText="연락처"
@@ -357,7 +426,7 @@ export default {
 
       <!-- Case : 상담상품 자동차금융 선택 시 -->
       <FormListItem
-        titleText="상담 분야"
+        titleText="차량구분"
         target="#customerReservationCounselingCarTypeButton"
         :selectOnly="true"
       >

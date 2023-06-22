@@ -90,6 +90,7 @@ export default {
             }"
           >
             <KeyValueTitle>수락기한</KeyValueTitle>
+            <KeyValueText></KeyValueText>
           </KeyValueItem>
         </KeyValue>
       </BasicBox>
@@ -112,9 +113,7 @@ export default {
 
       <div class="row-margin-contents-group row-margin-bottom-none">
         <section class="row-margin-contents-group">
-          <h3 class="text-body-2 font-weight-bold row-margin-item-medium">
-            물건명세
-          </h3>
+          <h3 class="text-body-2 row-margin-item-medium">물건명세</h3>
 
           <BasicBox>
             <KeyValue margin="regular">
@@ -140,9 +139,7 @@ export default {
         </section>
 
         <section class="row-margin-contents-group">
-          <h3 class="text-body-2 font-weight-bold row-margin-item-medium">
-            물건대금
-          </h3>
+          <h3 class="text-body-2 row-margin-item-medium">물건대금</h3>
 
           <BasicBox>
             <KeyValue margin="regular">
@@ -159,9 +156,7 @@ export default {
         </section>
 
         <section class="row-margin-contents-group">
-          <h3 class="text-body-2 font-weight-bold row-margin-item-medium">
-            물건대금 지급방법
-          </h3>
+          <h3 class="text-body-2 row-margin-item-medium">물건대금 지급방법</h3>
 
           <BasicBox>
             <h4 class="text-body-2 font-weight-regular row-margin-small">
@@ -177,9 +172,7 @@ export default {
         </section>
 
         <section class="row-margin-contents-group">
-          <h3 class="text-body-2 font-weight-bold row-margin-item-medium">
-            특약사항
-          </h3>
+          <h3 class="text-body-2 row-margin-item-medium">특약사항</h3>
 
           <BasicBox>
             <KeyValue margin="regular">

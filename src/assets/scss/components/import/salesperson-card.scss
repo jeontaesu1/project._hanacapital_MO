@@ -1,0 +1,42 @@
+.salesperson-card {
+  border-radius: 12px;
+  border: 1px solid $color-gray-20;
+  padding: 23px 19px;
+  display: flex;
+  align-items: center;
+
+  &__image {
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-right: 16px;
+    background-color: $color-gray-10;
+
+    svg {
+      display: block;
+      width: 24px;
+      height: 24px;
+      flex: none;
+    }
+  }
+
+  &__content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__sub {
+    @include font-size-default(12);
+    font-weight: 300;
+    margin-bottom: 4px;
+  }
+
+  &__name {
+    @include font-size-default(20);
+    font-weight: 500;
+  }
+}

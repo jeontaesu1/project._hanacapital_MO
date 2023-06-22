@@ -1,5 +1,5 @@
 <script>
-// AF_M07_l019
+// AF_M07_l013
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -63,7 +63,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton theme="secondary">본인인증</BasicButton>
+            <BasicButton>본인인증</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

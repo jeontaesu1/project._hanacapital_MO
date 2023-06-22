@@ -251,8 +251,9 @@ export default {
       type="toast"
       :onAfterClosed="onAfterClosed"
       :backgroundClose="true"
+      v-slot="layerSlotProps"
     >
-      <ToastPopup>
+      <ToastPopup v-if="layerSlotProps.display !== 'none'">
         <template v-slot:head>
           <ToastPopupHead>
             <PopupTitle>{{ layerTitle || '선택해 주세요' }}</PopupTitle>

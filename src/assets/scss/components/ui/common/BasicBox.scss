@@ -37,23 +37,21 @@
     }
 
     &-octonary {
-      border-color: transparent;
-      background: rgba($color-green-50, 0.1);
+      border-radius: 12px;
+      border-color: $color-white;
+      background-color: $color-white;
     }
 
     &-nonary {
-      border-color: transparent;
-      background-color: $color-navy-05;
+      border-radius: 12px;
+      border-color: $color-blue-50;
+      background-color: $color-blue-50;
     }
 
-    // &-denary {
-    // }
-  }
-
-  &--radius {
-    &-secondary {
-      border-radius: 0;
-      background-color: $color-gray-05;
+    &-denary {
+      border-radius: 12px;
+      border-color: $color-green-50;
+      background-color: $color-green-50;
     }
   }
 }

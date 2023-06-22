@@ -14,6 +14,12 @@ import LayerMyLoanOnlineContractCheck from '@/views/myLoan/LayerMyLoanOnlineCont
 import LayerMyLoanOnlineContractCheckAgree from '@/views/myLoan/LayerMyLoanOnlineContractCheckAgree.vue';
 import LayerMyLoanOnlineContractAgree from '@/views/myLoan/LayerMyLoanOnlineContractAgree.vue';
 import LayerMyLoanOnlineContractFurtherExplanation from '@/views/myLoan/LayerMyLoanOnlineContractFurtherExplanation.vue';
+import LayerMyLoanOnlineContractClauseDetail001 from '@/views/myLoan/LayerMyLoanOnlineContractClauseDetail001.vue';
+import LayerMyLoanOnlineContractClauseDetail002 from '@/views/myLoan/LayerMyLoanOnlineContractClauseDetail002.vue';
+import LayerMyLoanOnlineContractClauseDetail003 from '@/views/myLoan/LayerMyLoanOnlineContractClauseDetail003.vue';
+import LayerMyLoanOnlineContractClauseDetail004 from '@/views/myLoan/LayerMyLoanOnlineContractClauseDetail004.vue';
+import LayerMyLoanOnlineContractClauseDetail005 from '@/views/myLoan/LayerMyLoanOnlineContractClauseDetail005.vue';
+import LayerMyLoanOnlineContractClauseDetail006 from '@/views/myLoan/LayerMyLoanOnlineContractClauseDetail006.vue';
 import LayerMyLoanOnlineContractUsedCarLoanScam from '@/views/myLoan/LayerMyLoanOnlineContractUsedCarLoanScam.vue';
 import LayerMyLoanOnlineContractLoanCounselor from '@/views/myLoan/LayerMyLoanOnlineContractLoanCounselor.vue';
 import LayerMyLoanOnlineContractContractor from '@/views/myLoan/LayerMyLoanOnlineContractContractor.vue';
@@ -43,6 +49,8 @@ import LayerMyLoanOnlineContractWithdraw from '@/views/myLoan/LayerMyLoanOnlineC
 import LayerMyLoanOnlineContractDescription from '@/views/myLoan/LayerMyLoanOnlineContractDescription.vue';
 import LayerMyLoanOnlineContractDescriptionConfirm from '@/views/myLoan/LayerMyLoanOnlineContractDescriptionConfirm.vue';
 import LayerMyLoanOnlineContractSuccession from '@/views/myLoan/LayerMyLoanOnlineContractSuccession.vue';
+import LayerMyLoanOnlineContractSuccessionGuide001 from '@/views/myLoan/LayerMyLoanOnlineContractSuccessionGuide001.vue';
+import LayerMyLoanOnlineContractSuccessionGuide002 from '@/views/myLoan/LayerMyLoanOnlineContractSuccessionGuide002.vue';
 import LayerMyLoanOnlineContractSuccessionConfirm001 from '@/views/myLoan/LayerMyLoanOnlineContractSuccessionConfirm001.vue';
 import LayerMyLoanOnlineContractSuccessionConfirm002 from '@/views/myLoan/LayerMyLoanOnlineContractSuccessionConfirm002.vue';
 import LayerMyLoanOnlineContractSuccessionImportant from '@/views/myLoan/LayerMyLoanOnlineContractSuccessionImportant.vue';
@@ -66,6 +74,12 @@ export default {
     LayerMyLoanOnlineContractCheckAgree,
     LayerMyLoanOnlineContractAgree,
     LayerMyLoanOnlineContractFurtherExplanation,
+    LayerMyLoanOnlineContractClauseDetail001,
+    LayerMyLoanOnlineContractClauseDetail002,
+    LayerMyLoanOnlineContractClauseDetail003,
+    LayerMyLoanOnlineContractClauseDetail004,
+    LayerMyLoanOnlineContractClauseDetail005,
+    LayerMyLoanOnlineContractClauseDetail006,
     LayerMyLoanOnlineContractUsedCarLoanScam,
     LayerMyLoanOnlineContractLoanCounselor,
     LayerMyLoanOnlineContractContractor,
@@ -95,6 +109,8 @@ export default {
     LayerMyLoanOnlineContractDescription,
     LayerMyLoanOnlineContractDescriptionConfirm,
     LayerMyLoanOnlineContractSuccession,
+    LayerMyLoanOnlineContractSuccessionGuide001,
+    LayerMyLoanOnlineContractSuccessionGuide002,
     LayerMyLoanOnlineContractSuccessionConfirm001,
     LayerMyLoanOnlineContractSuccessionConfirm002,
     LayerMyLoanOnlineContractSuccessionImportant,
@@ -150,6 +166,14 @@ export default {
     const layer043 = ref(null);
     const layer044 = ref(null);
     const layer045 = ref(null);
+    const layer046 = ref(null);
+    const layer047 = ref(null);
+    const layer048 = ref(null);
+    const layer049 = ref(null);
+    const layer050 = ref(null);
+    const layer051 = ref(null);
+    const layer052 = ref(null);
+    const layer053 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -286,6 +310,30 @@ export default {
     const layer045Open = (e = {}) => {
       layer045.value.layer.open(e.target);
     };
+    const layer046Open = (e = {}) => {
+      layer046.value.layer.open(e.target);
+    };
+    const layer047Open = (e = {}) => {
+      layer047.value.layer.open(e.target);
+    };
+    const layer048Open = (e = {}) => {
+      layer048.value.layer.open(e.target);
+    };
+    const layer049Open = (e = {}) => {
+      layer049.value.layer.open(e.target);
+    };
+    const layer050Open = (e = {}) => {
+      layer050.value.layer.open(e.target);
+    };
+    const layer051Open = (e = {}) => {
+      layer051.value.layer.open(e.target);
+    };
+    const layer052Open = (e = {}) => {
+      layer052.value.layer.open(e.target);
+    };
+    const layer053Open = (e = {}) => {
+      layer053.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -333,6 +381,14 @@ export default {
       layer043,
       layer044,
       layer045,
+      layer046,
+      layer047,
+      layer048,
+      layer049,
+      layer050,
+      layer051,
+      layer052,
+      layer053,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -378,6 +434,14 @@ export default {
       layer043Open,
       layer044Open,
       layer045Open,
+      layer046Open,
+      layer047Open,
+      layer048Open,
+      layer049Open,
+      layer050Open,
+      layer051Open,
+      layer052Open,
+      layer053Open,
     };
   },
 };
@@ -429,6 +493,36 @@ export default {
       <ButtonListItem>
         <BasicButton @click="layer008Open">
           추가설명 여부<br />My_M03_b003
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer046Open">
+          약관상세_실제소유자 확인<br />My_M03_l032
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer047Open">
+          약관상세_할부금 지급 안내<br />My_M03_l007
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer048Open">
+          약관상세_청약의 철회권 안내<br />My_M03_l008
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer049Open">
+          약관상세_신용점수 하락가능 안내<br />My_M03_l009
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer050Open">
+          약관상세_기한 이익상실 안내<br />My_M03_l010
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer051Open">
+          약관상세_금리인하 요구권 안내<br />My_M03_l011
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
@@ -577,6 +671,16 @@ export default {
         >
       </ButtonListItem>
       <ButtonListItem>
+        <BasicButton @click="layer052Open"
+          >할부금융 안내 - CO 코드일 경우<br />PF_M10_b002</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer053Open"
+          >할부금융 안내 - LO 코드일 경우<br />PF_M10_b003</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
         <BasicButton @click="layer038Open"
           >승계확약 확인<br />My_M03_l025
         </BasicButton>
@@ -626,6 +730,12 @@ export default {
     <LayerMyLoanOnlineContractCheckAgree ref="layer006" />
     <LayerMyLoanOnlineContractAgree ref="layer007" />
     <LayerMyLoanOnlineContractFurtherExplanation ref="layer008" />
+    <LayerMyLoanOnlineContractClauseDetail001 ref="layer046" />
+    <LayerMyLoanOnlineContractClauseDetail002 ref="layer047" />
+    <LayerMyLoanOnlineContractClauseDetail003 ref="layer048" />
+    <LayerMyLoanOnlineContractClauseDetail004 ref="layer049" />
+    <LayerMyLoanOnlineContractClauseDetail005 ref="layer050" />
+    <LayerMyLoanOnlineContractClauseDetail006 ref="layer051" />
     <LayerMyLoanOnlineContractUsedCarLoanScam ref="layer009" />
     <LayerMyLoanOnlineContractLoanCounselor ref="layer010" />
     <LayerMyLoanOnlineContractContractor ref="layer011" />
@@ -655,6 +765,8 @@ export default {
     <LayerMyLoanOnlineContractDescription ref="layer035" />
     <LayerMyLoanOnlineContractDescriptionConfirm ref="layer036" />
     <LayerMyLoanOnlineContractSuccession ref="layer037" />
+    <LayerMyLoanOnlineContractSuccessionGuide001 ref="layer052" />
+    <LayerMyLoanOnlineContractSuccessionGuide002 ref="layer053" />
     <LayerMyLoanOnlineContractSuccessionConfirm001 ref="layer038" />
     <LayerMyLoanOnlineContractSuccessionConfirm002 ref="layer039" />
     <LayerMyLoanOnlineContractSuccessionImportant ref="layer040" />

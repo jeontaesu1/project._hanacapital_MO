@@ -18,6 +18,7 @@ import LayerMyLoanOnlineContractDescription009_009 from '../myLoan/LayerMyLoanOn
 import LayerMyLoanOnlineContractDescription009_010 from '../myLoan/LayerMyLoanOnlineContractDescription009_010.vue';
 import LayerMyLoanOnlineContractDescription009_011 from '../myLoan/LayerMyLoanOnlineContractDescription009_011.vue';
 import LayerMyLoanOnlineContractDescription009_012 from '../myLoan/LayerMyLoanOnlineContractDescription009_012.vue';
+import LayerMyLoanOnlineContractDescription009_013 from '../myLoan/LayerMyLoanOnlineContractDescription009_013.vue';
 
 export default {
   components: {
@@ -37,6 +38,7 @@ export default {
     LayerMyLoanOnlineContractDescription009_010,
     LayerMyLoanOnlineContractDescription009_011,
     LayerMyLoanOnlineContractDescription009_012,
+    LayerMyLoanOnlineContractDescription009_013,
   },
   setup() {
     const layer001 = ref(null);
@@ -51,6 +53,7 @@ export default {
     const layer010 = ref(null);
     const layer011 = ref(null);
     const layer012 = ref(null);
+    const layer013 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -88,6 +91,9 @@ export default {
     const layer012Open = (e = {}) => {
       layer012.value.layer.open(e.target);
     };
+    const layer013Open = (e = {}) => {
+      layer013.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -102,6 +108,7 @@ export default {
       layer010,
       layer011,
       layer012,
+      layer013,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -114,6 +121,7 @@ export default {
       layer010Open,
       layer011Open,
       layer012Open,
+      layer013Open,
     };
   },
 };
@@ -187,6 +195,11 @@ export default {
           상품설명서 약관동의_일반리스설명서<br />My_M99_l010
         </BasicButton>
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer012Open">
+          상품설명서 약관동의_일반대출설명서<br />My_M99_l011
+        </BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <LayerMyLoanOnlineContractDescription009_001 ref="layer001" />
@@ -201,5 +214,6 @@ export default {
     <LayerMyLoanOnlineContractDescription009_010 ref="layer010" />
     <LayerMyLoanOnlineContractDescription009_011 ref="layer011" />
     <LayerMyLoanOnlineContractDescription009_012 ref="layer012" />
+    <LayerMyLoanOnlineContractDescription009_013 ref="layer013" />
   </PageContents>
 </template>

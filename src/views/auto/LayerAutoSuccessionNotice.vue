@@ -131,7 +131,7 @@ export default {
               <div :class="$style['basic-list__content']">
                 승계 후 첫 도래 원리금(리스료/렌트료)은 일할 계산 금액이 아닌
                 원리금 계산 전체 금액이 청구됩니다.
-                <strong class="font-weight-medium color-blue"
+                <strong class="font-weight-medium color-green"
                   >차량 인도시점 원리금 일괄 정산은 당사자간 정산</strong
                 >해 주세요.
               </div>
@@ -165,7 +165,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton theme="secondary">네, 모두 확인했습니다</BasicButton>
+            <BasicButton>네, 모두 확인했습니다</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

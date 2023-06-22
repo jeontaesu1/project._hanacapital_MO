@@ -1,5 +1,5 @@
 <script>
-// AF_M07_l005
+// AF_M07_l006
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -141,24 +141,24 @@ export default {
                   <KeyValueText>KMHEL00CPYA000001</KeyValueText>
                 </KeyValueItem>
               </KeyValue>
-
-              <ButtonList
-                :classNames="{
-                  wrap: 'row-margin-contents-small',
-                }"
-              >
-                <ButtonListItem>
-                  <BasicButton size="small" theme="secondary"
-                    >차량 승계</BasicButton
-                  >
-                </ButtonListItem>
-              </ButtonList>
             </BasicBox>
           </li>
         </ul>
         <!-- // Case : 결과 있을 경우 -->
       </section>
       <!-- // DD : 검색 후 노출 -->
+
+      <template v-slot:foot>
+        <ButtonList
+          :classNames="{
+            wrap: 'row-margin-none',
+          }"
+        >
+          <ButtonListItem>
+            <BasicButton>다음</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+      </template>
     </FullPopup>
   </UiLayer>
 </template>

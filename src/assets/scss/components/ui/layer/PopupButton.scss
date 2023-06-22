@@ -32,6 +32,15 @@
     }
   }
 
+  &--active {
+    .popup-button__icon {
+      * {
+        fill: $color-green-50;
+        stroke: $color-green-50;
+      }
+    }
+  }
+
   &__text {
     @include for-a11y;
   }
@@ -42,6 +51,41 @@
         &__icon {
           * {
             fill: $color-white;
+          }
+        }
+      }
+
+      &.popup-button--active {
+        .popup-button__icon {
+          * {
+            fill: $color-green-50;
+            stroke: $color-green-50;
+          }
+        }
+      }
+    }
+
+    &-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      box-sizing: border-box;
+      padding: 7px;
+      background-color: rgba($color-black, 0.2);
+
+      .popup-button {
+        &__icon {
+          * {
+            fill: $color-white;
+          }
+        }
+      }
+
+      &.popup-button--active {
+        .popup-button__icon {
+          * {
+            fill: $color-green-50;
+            stroke: $color-green-50;
           }
         }
       }

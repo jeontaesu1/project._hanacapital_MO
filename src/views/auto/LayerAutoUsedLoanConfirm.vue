@@ -1,5 +1,5 @@
 <script>
-// AF_M06_l009
+// AF_M06_l011
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -170,7 +170,7 @@ export default {
             <BasicButton :line="true" theme="quaternary">재선택</BasicButton>
           </ButtonListItem>
           <ButtonListItem>
-            <BasicButton theme="secondary">다음</BasicButton>
+            <BasicButton>다음</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

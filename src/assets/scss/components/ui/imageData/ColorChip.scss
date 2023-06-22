@@ -1,7 +1,8 @@
 .color-chip {
+  position: relative;
   display: block;
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   box-sizing: border-box;
   border-radius: 8px;
   overflow: hidden;
@@ -67,5 +68,15 @@
       height: 21px;
       border-radius: 4px;
     }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: -20px 0 0 -20px;
   }
 }

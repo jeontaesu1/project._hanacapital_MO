@@ -55,4 +55,30 @@
       }
     }
   }
+
+  &--theme {
+    &-secondary {
+      .switch-checkbox {
+        &__object {
+          width: 28px;
+          height: 16px;
+
+          &::after {
+            width: 12px;
+            height: 12px;
+          }
+        }
+
+        &__input {
+          &:checked + .switch-checkbox__label {
+            .switch-checkbox__object {
+              &::after {
+                transform: translateX(12px);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

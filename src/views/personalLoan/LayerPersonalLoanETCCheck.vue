@@ -11,7 +11,6 @@ import PageMainText from '@/components/ui/text/PageMainText.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import BoxCheck from '@/components/ui/form/BoxCheck.vue';
 import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
 import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
@@ -35,7 +34,6 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    BasicSelect,
     BoxCheck,
     BoxCheckLabel,
     BoxCheckList,
@@ -85,25 +83,6 @@ export default {
       </PageTextGroup>
 
       <div>
-        <div class="inline-wrap align-right row-margin-item">
-          <BasicSelect
-            theme="sort"
-            :option="[
-              {
-                value: '1',
-                text: '한도순',
-              },
-              {
-                value: '2',
-                text: '금리순',
-              },
-            ]"
-            buttonTitle="정렬 기준 선택하기"
-            layerTitle="정렬 기준을 선택해 주세요"
-            defaultValue="1"
-          />
-        </div>
-
         <BoxCheckList align="full">
           <BoxCheckListItem>
             <BoxCheck

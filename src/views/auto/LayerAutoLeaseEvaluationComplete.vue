@@ -78,7 +78,11 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton theme="secondary">신청</BasicButton>
+            <BasicButton theme="tertiary">최종 견적서 보기</BasicButton>
+          </ButtonListItem>
+
+          <ButtonListItem>
+            <BasicButton>신청</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

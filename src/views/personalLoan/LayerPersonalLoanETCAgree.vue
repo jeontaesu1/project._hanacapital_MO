@@ -742,7 +742,11 @@ export default {
                     </div>
                   </UiAccordionLayer>
                 </UiAccordionItem>
-                <li :class="$style['agree-list__depth-item']">
+
+                <UiAccordionItem
+                  :classNames="{ item: $style['agree-list__depth-item'] }"
+                  :initialOpen="true"
+                >
                   <div :class="$style['agree-list__depth-head']">
                     <CheckBox
                       id="layerPersonalLoanETCAgree003"
@@ -752,32 +756,57 @@ export default {
                     >
                       <CheckBoxObject />
                       <CheckBoxLabelText>
-                        <span class="color-gray-secondary">(선택)</span>
-                        직장정보 자동저장 서비스 이용</CheckBoxLabelText
-                      >
+                        <span class="color-gray-secondary">(선택)</span> 약정서
+                        정보 자동입력 신청
+                      </CheckBoxLabelText>
                     </CheckBox>
+                    <div :class="$style['agree-list__right']">
+                      <UiAccordionOpener
+                        :classNames="{
+                          button: $style['agree-list__depth-opener'],
+                        }"
+                      />
+                    </div>
                   </div>
-                </li>
+
+                  <UiAccordionLayer>
+                    <div :class="$style['agree-list__depth-contents']">
+                      <ul :class="$style['agree-list__list']">
+                        <li :class="$style['agree-list__item']">
+                          <div :class="$style['agree-list__head']">
+                            <CheckBox
+                              id="layerPersonalLoanETCAgree003_001"
+                              :classNames="{
+                                wrap: $style['agree-list__checkbox'],
+                              }"
+                              theme="tertiary"
+                            >
+                              <CheckBoxObject />
+                              <CheckBoxLabelText>
+                                자동입력 서비스 동의
+                              </CheckBoxLabelText>
+                            </CheckBox>
+                            <div :class="$style['agree-list__right']">
+                              <button
+                                type="button"
+                                :class="$style['agree-list__link']"
+                              >
+                                <span :class="$style['agree-list__link-text']">
+                                  상세보기
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </UiAccordionLayer>
+                </UiAccordionItem>
+
                 <li :class="$style['agree-list__depth-item']">
                   <div :class="$style['agree-list__depth-head']">
                     <CheckBox
                       id="layerPersonalLoanETCAgree004"
-                      :classNames="{
-                        wrap: $style['agree-list__depth-checkbox'],
-                      }"
-                    >
-                      <CheckBoxObject />
-                      <CheckBoxLabelText>
-                        <span class="color-gray-secondary">(선택)</span>
-                        직장정보 자동입력 서비스 이용</CheckBoxLabelText
-                      >
-                    </CheckBox>
-                  </div>
-                </li>
-                <li :class="$style['agree-list__depth-item']">
-                  <div :class="$style['agree-list__depth-head']">
-                    <CheckBox
-                      id="layerPersonalLoanETCAgree005"
                       :classNames="{
                         wrap: $style['agree-list__depth-checkbox'],
                       }"

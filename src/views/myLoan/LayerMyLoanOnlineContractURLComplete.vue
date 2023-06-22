@@ -73,6 +73,23 @@ export default {
 
       <IllustObject type="complete" />
 
+      <ul :class="$style['logs']">
+        <li :class="$style['logs__item']">
+          <div :class="[$style['logs__block'], $style['logs__block--small']]">
+            <div :class="$style['logs__row']">
+              <div :class="$style['logs__contents']">
+                <h3 class="text-body-3 font-weight-regular">물건점검 진행</h3>
+              </div>
+              <div :class="$style['logs__right']">
+                <button type="button" :class="$style['logs__link']">
+                  <span :class="$style['logs__link-text']">상세보기</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+
       <BasicHr
         type="contents"
         theme="quaternary"

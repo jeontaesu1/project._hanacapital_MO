@@ -17,6 +17,7 @@
     border-radius: 12px;
     background-color: rgba($color-black, 0.9);
     transform: translateY(-100%);
+    text-align: left;
   }
 
   &__tail {
@@ -39,6 +40,17 @@
       top: auto;
       bottom: 100%;
       transform: rotate(180deg);
+    }
+  }
+
+  &--fit {
+    .tooltip__bubble {
+      left: 0;
+      right: 0;
+    }
+
+    .tooltip__tail {
+      transform: translateX(20px);
     }
   }
 

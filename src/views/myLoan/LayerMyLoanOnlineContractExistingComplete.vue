@@ -41,7 +41,11 @@ export default {
         </ToastPopupHead>
       </template>
 
-      <PopupText class="row-margin-small">
+      <PopupText
+        :classNames="{
+          text: 'row-margin-small',
+        }"
+      >
         전화상담원이 정보확인 후 전화드리겠습니다.<br />
         (상담가능시간 : 평일 09~18시)
       </PopupText>

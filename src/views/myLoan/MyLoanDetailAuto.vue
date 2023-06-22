@@ -662,15 +662,13 @@ export default {
           :classNames="{ wrap: 'row-margin-item-medium' }"
           >만기후처리</BasicButton
         >
-        <BasicButton
-          theme="secondary"
-          :classNames="{ wrap: 'row-margin-item-medium' }"
+        <BasicButton :classNames="{ wrap: 'row-margin-item-medium' }"
           >중도상환신청</BasicButton
         >
       </div>
     </section>
 
-    <BasicHr class="row-margin-container-medium"></BasicHr>
+    <BasicHr className="row-margin-container-medium" />
 
     <section>
       <div class="text-title-2 font-weight-bold">당월 결제금액</div>
@@ -800,7 +798,7 @@ export default {
       </ul>
     </section>
 
-    <BasicHr class="row-margin-container-medium"></BasicHr>
+    <BasicHr className="row-margin-container-medium" />
 
     <div :class="$style['icon-list']">
       <ul :class="$style['icon-list__list']">

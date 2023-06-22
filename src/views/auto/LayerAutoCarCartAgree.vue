@@ -226,7 +226,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton theme="secondary">확인</BasicButton>
+            <BasicButton>확인</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
@@ -235,5 +235,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/auto/layerAutoCarCartAgree.scss';
+@import '@/assets/scss/views/auto/LayerAutoCarCartAgree.scss';
 </style>

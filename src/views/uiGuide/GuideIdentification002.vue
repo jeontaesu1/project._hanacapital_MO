@@ -12,12 +12,12 @@ import LayerIdentificationBusiness from '@/views/identification/LayerIdentificat
 import LayerIdentificationMethodSelect from '@/views/identification/LayerIdentificationMethodSelect.vue';
 import LayerIdentificationPhone from '@/views/identification/LayerIdentificationPhone.vue';
 import LayerIdentificationPhoneAgree from '@/views/identification/LayerIdentificationPhoneAgree.vue';
-import LayerIdentificationCertificate from '@/views/identification/LayerIdentificationCertificate.vue';
 import LayerIdentificationCard from '@/views/identification/LayerIdentificationCard.vue';
 import LayerIdentificationCardAgree from '@/views/identification/LayerIdentificationCardAgree.vue';
 import LayerIdentificationCardARS from '@/views/identification/LayerIdentificationCardARS.vue';
-import LayerIdentificationKakaopay from '@/views/identification/LayerIdentificationKakaopay.vue';
+import LayerIdentificationKakaopayMethodSelect from '@/views/identification/LayerIdentificationKakaopayMethodSelect.vue';
 import LayerIdentificationKakaopayIn from '@/views/identification/LayerIdentificationKakaopayIn.vue';
+import LayerIdentificationKakaopayAgree from '@/views/identification/LayerIdentificationKakaopayAgree.vue';
 
 export default {
   components: {
@@ -31,12 +31,12 @@ export default {
     LayerIdentificationMethodSelect,
     LayerIdentificationPhone,
     LayerIdentificationPhoneAgree,
-    LayerIdentificationCertificate,
     LayerIdentificationCard,
     LayerIdentificationCardAgree,
     LayerIdentificationCardARS,
-    LayerIdentificationKakaopay,
+    LayerIdentificationKakaopayMethodSelect,
     LayerIdentificationKakaopayIn,
+    LayerIdentificationKakaopayAgree,
   },
   setup() {
     const layer001 = ref(null);
@@ -51,6 +51,8 @@ export default {
     const layer010 = ref(null);
     const layer011 = ref(null);
     const layer012 = ref(null);
+    const layer013 = ref(null);
+    const layer014 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -88,6 +90,12 @@ export default {
     const layer012Open = (e = {}) => {
       layer012.value.layer.open(e.target);
     };
+    const layer013Open = (e = {}) => {
+      layer013.value.layer.open(e.target);
+    };
+    const layer014Open = (e = {}) => {
+      layer014.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -102,6 +110,8 @@ export default {
       layer010,
       layer011,
       layer012,
+      layer013,
+      layer014,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -114,6 +124,8 @@ export default {
       layer010Open,
       layer011Open,
       layer012Open,
+      layer013Open,
+      layer014Open,
     };
   },
 };
@@ -158,11 +170,6 @@ export default {
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer007Open">
-          개인 - 공동인증서<br />Common_M00_l003
-        </BasicButton>
-      </ButtonListItem>
-      <ButtonListItem>
         <BasicButton @click="layer008Open">
           개인 - 신용카드<br />Common_M00_l004
         </BasicButton>
@@ -178,13 +185,18 @@ export default {
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer011Open">
-          개인 - 카카오페이<br />Common_M00_l005
+        <BasicButton @click="layer014Open">
+          개인 - 간편인증 방법 선택<br />Common_M00_b050
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer013Open">
+          개인 - 간편인증 이용약관 동의<br />Common_M00_b051
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer012Open">
-          개인 - 카카오페이 인증 진행중<br />Common_M00_b007
+          개인 - 간편인증수단 인증안내<br />Common_M00_b052
         </BasicButton>
       </ButtonListItem>
     </ButtonList>
@@ -195,11 +207,11 @@ export default {
     <LayerIdentificationMethodSelect ref="layer004" />
     <LayerIdentificationPhone ref="layer005" />
     <LayerIdentificationPhoneAgree ref="layer006" />
-    <LayerIdentificationCertificate ref="layer007" />
     <LayerIdentificationCard ref="layer008" />
     <LayerIdentificationCardAgree ref="layer009" />
     <LayerIdentificationCardARS ref="layer010" />
-    <LayerIdentificationKakaopay ref="layer011" />
     <LayerIdentificationKakaopayIn ref="layer012" />
+    <LayerIdentificationKakaopayAgree ref="layer013" />
+    <LayerIdentificationKakaopayMethodSelect ref="layer014" />
   </PageContents>
 </template>

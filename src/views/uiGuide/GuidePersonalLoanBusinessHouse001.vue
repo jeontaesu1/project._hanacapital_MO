@@ -9,6 +9,7 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import LayerPersonalLoanIdentificationMethodSelect from '@/views/personalLoan/LayerPersonalLoanIdentificationMethodSelect.vue';
 import LayerPersonalLoanBusinessHouseAgree from '@/views/personalLoan/LayerPersonalLoanBusinessHouseAgree.vue';
 import LayerPersonalLoanBusinessHouseNotice from '@/views/personalLoan/LayerPersonalLoanBusinessHouseNotice.vue';
+import LayerPersonalLoanBusinessHouseForm from '@/views/personalLoan/LayerPersonalLoanBusinessHouseForm.vue';
 import LayerPersonalLoanBusinessHouseComplete from '@/views/personalLoan/LayerPersonalLoanBusinessHouseComplete.vue';
 
 export default {
@@ -20,6 +21,7 @@ export default {
     LayerPersonalLoanIdentificationMethodSelect,
     LayerPersonalLoanBusinessHouseAgree,
     LayerPersonalLoanBusinessHouseNotice,
+    LayerPersonalLoanBusinessHouseForm,
     LayerPersonalLoanBusinessHouseComplete,
   },
   setup() {
@@ -27,6 +29,7 @@ export default {
     const layer002 = ref(null);
     const layer003 = ref(null);
     const layer004 = ref(null);
+    const layer005 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -40,16 +43,21 @@ export default {
     const layer004Open = (e = {}) => {
       layer004.value.layer.open(e.target);
     };
+    const layer005Open = (e = {}) => {
+      layer005.value.layer.open(e.target);
+    };
 
     return {
       layer001,
       layer002,
       layer003,
       layer004,
+      layer005,
       layer001Open,
       layer002Open,
       layer003Open,
       layer004Open,
+      layer005Open,
     };
   },
 };
@@ -83,6 +91,12 @@ export default {
 
       <ButtonListItem>
         <BasicButton @click="layer004Open">
+          주택정보 입력<br />PF_M09_l002
+        </BasicButton>
+      </ButtonListItem>
+
+      <ButtonListItem>
+        <BasicButton @click="layer005Open">
           상담신청 완료<br />PF_M09_l003
         </BasicButton>
       </ButtonListItem>
@@ -91,6 +105,7 @@ export default {
     <LayerPersonalLoanIdentificationMethodSelect ref="layer001" />
     <LayerPersonalLoanBusinessHouseAgree ref="layer002" />
     <LayerPersonalLoanBusinessHouseNotice ref="layer003" />
-    <LayerPersonalLoanBusinessHouseComplete ref="layer004" />
+    <LayerPersonalLoanBusinessHouseForm ref="layer004" />
+    <LayerPersonalLoanBusinessHouseComplete ref="layer005" />
   </PageContents>
 </template>

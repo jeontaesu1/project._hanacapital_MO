@@ -1,0 +1,45 @@
+.info {
+  &::before {
+    content: '';
+    display: table;
+  }
+
+  &__list {
+    @include reset-list;
+    display: flex;
+    flex-wrap: wrap;
+    margin: -16px 0 0 -16px;
+  }
+
+  &__item {
+    flex: none;
+    box-sizing: border-box;
+    width: 50%;
+    padding: 16px 0 0 16px;
+  }
+
+  &__block {
+    padding: 20px 20px 15px;
+    border-radius: 12px;
+    background-color: $color-gray-05;
+  }
+
+  &__icon {
+    display: block;
+    width: 36px;
+    height: 36px;
+    margin-bottom: 11px;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__title {
+    display: block;
+    @include font-size-default(15);
+    font-weight: 500;
+  }
+}

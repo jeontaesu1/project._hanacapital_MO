@@ -97,5 +97,12 @@
         flex: 1;
       }
     }
+
+    &-notice {
+      .layer__container {
+        width: 100%;
+        max-width: 328px;
+      }
+    }
   }
 }

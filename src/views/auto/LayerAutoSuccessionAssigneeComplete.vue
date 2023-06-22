@@ -1,5 +1,5 @@
 <script>
-// AF_M07_l018
+// AF_M07_l019
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -252,7 +252,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton theme="secondary">확인</BasicButton>
+            <BasicButton>확인</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

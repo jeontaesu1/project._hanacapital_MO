@@ -1,0 +1,42 @@
+@import '@/assets/scss/components/import/estimate-list.scss';
+@import '@/assets/scss/components/import/bank-brand.scss';
+@import '@/assets/scss/components/import/loading-icon.scss';
+@import '@/assets/scss/components/import/notice-section.scss';
+@import '@/assets/scss/components/import/basic-list.scss';
+@import '@/assets/scss/components/import/option-select.scss';
+@import '@/assets/scss/components/import/empty.scss';
+
+.color-etc {
+  margin-left: 27px;
+}
+
+.car-amount {
+  margin-left: 30px;
+}
+
+.total {
+  margin: 40px -20px 0;
+  padding: 24px 20px;
+  background-color: $color-gray-15;
+}
+
+.products {
+  margin: 0 -20px;
+  overflow: hidden;
+
+  .estimate-list {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+
+  :global(.swiper) {
+    padding: 0 14px;
+    overflow: visible;
+  }
+
+  &--accordion-animate {
+    :global(.swiper-wrapper) {
+      height: auto !important;
+    }
+  }
+}

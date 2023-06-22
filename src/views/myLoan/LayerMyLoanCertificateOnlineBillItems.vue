@@ -143,7 +143,7 @@ export default {
                   <BasicDatepicker
                     title="조회기간 시작 날짜"
                     id="layerMyLoanCertificateOnlineBillItemsDateStart"
-                    buttonId="LayerMyLoanCertificateOnlineBillItemsDateStartButton"
+                    buttonId="layerMyLoanCertificateOnlineBillItemsDateStartButton"
                     :max="state.maxDate"
                     v-model="state.minDate"
                   />
@@ -155,7 +155,7 @@ export default {
                   <BasicDatepicker
                     title="조회기간 종료 날짜"
                     id="layerMyLoanCertificateOnlineBillItemsDateEnd"
-                    buttonId="LayerMyLoanCertificateOnlineBillItemsDateEndButton"
+                    buttonId="layerMyLoanCertificateOnlineBillItemsDateEndButton"
                     :min="state.minDate"
                     v-model="state.maxDate"
                   />

@@ -4,6 +4,9 @@ import { computed } from 'vue';
 import IconBack from '@/assets/images/common/back-left.svg?component';
 import IconClose from '@/assets/images/common/close.svg?component';
 import IconSearch from '@/assets/images/common/search.svg?component';
+import IconShare from '@/assets/images/common/share.svg?component';
+import IconSubscript from '@/assets/images/common/subscription.svg?component';
+import IconSubscriptOn from '@/assets/images/common/subscription-on.svg?component';
 
 const defaultClassNames = () => ({
   wrap: '',
@@ -21,6 +24,10 @@ export default {
     theme: {
       Type: String,
       default: null,
+    },
+    active: {
+      Type: Boolean,
+      default: false,
     },
     classNames: {
       Type: Object,
@@ -43,18 +50,31 @@ export default {
       close: IconClose,
       back: IconBack,
       search: IconSearch,
+      share: IconShare,
+      subscript: IconSubscript,
+    };
+
+    const iconsActive = {
+      close: IconClose,
+      back: IconBack,
+      search: IconSearch,
+      share: IconShare,
+      subscript: IconSubscriptOn,
     };
 
     const texts = {
       close: '레이어 닫기',
       back: '뒤로가기',
       search: '검색',
+      share: '공유하기',
+      subscript: '구독하기',
     };
 
     return {
       customClassNames,
       isSlot,
       icons,
+      iconsActive,
       texts,
     };
   },
@@ -68,13 +88,15 @@ export default {
     :class="[
       $style['popup-button'],
       {
+        [$style['popup-button--active']]: active,
         [$style[`popup-button--theme-${theme}`]]: theme,
       },
       customClassNames.wrap,
     ]"
+    :title="active ? '활성화 됨' : null"
   >
     <component
-      :is="icons[type]"
+      :is="active ? iconsActive[type] : icons[type]"
       :class="[$style['popup-button__icon'], customClassNames.icon]"
     />
     <span

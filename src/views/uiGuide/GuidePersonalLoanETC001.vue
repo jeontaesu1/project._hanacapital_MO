@@ -12,6 +12,8 @@ import LayerPersonalLoanETCAutoSubmit from '@/views/personalLoan/LayerPersonalLo
 import LayerPersonalLoanETCValusation from '@/views/personalLoan/LayerPersonalLoanETCValusation.vue';
 import LayerPersonalLoanETCCheck from '@/views/personalLoan/LayerPersonalLoanETCCheck.vue';
 import LayerPersonalLoanETCSearchApartment from '@/views/personalLoan/LayerPersonalLoanETCSearchApartment.vue';
+import LayerPersonalLoanETCApartmentCertifiedConfirm from '@/views/personalLoan/LayerPersonalLoanETCApartmentCertifiedConfirm.vue';
+import LayerPersonalLoanETCApartment from '@/views/personalLoan/LayerPersonalLoanETCApartment.vue';
 
 export default {
   components: {
@@ -25,6 +27,8 @@ export default {
     LayerPersonalLoanETCValusation,
     LayerPersonalLoanETCCheck,
     LayerPersonalLoanETCSearchApartment,
+    LayerPersonalLoanETCApartmentCertifiedConfirm,
+    LayerPersonalLoanETCApartment,
   },
   setup() {
     const layer001 = ref(null);
@@ -33,6 +37,8 @@ export default {
     const layer004 = ref(null);
     const layer005 = ref(null);
     const layer006 = ref(null);
+    const layer007 = ref(null);
+    const layer008 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -52,6 +58,12 @@ export default {
     const layer006Open = (e = {}) => {
       layer006.value.layer.open(e.target);
     };
+    const layer007Open = (e = {}) => {
+      layer007.value.layer.open(e.target);
+    };
+    const layer008Open = (e = {}) => {
+      layer008.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -60,12 +72,16 @@ export default {
       layer004,
       layer005,
       layer006,
+      layer007,
+      layer008,
       layer001Open,
       layer002Open,
       layer003Open,
       layer004Open,
       layer005Open,
       layer006Open,
+      layer007Open,
+      layer008Open,
     };
   },
 };
@@ -98,6 +114,12 @@ export default {
       </ButtonListItem>
 
       <ButtonListItem>
+        <BasicButton @click="layer008Open">
+          한도조회 입력<br />PF_M11_l003
+        </BasicButton>
+      </ButtonListItem>
+
+      <ButtonListItem>
         <BasicButton @click="layer006Open">
           아파트 검색<br />PF_M11_l004
         </BasicButton>
@@ -114,13 +136,21 @@ export default {
           한도/금리 확인<br />PF_M11_l007
         </BasicButton>
       </ButtonListItem>
+
+      <ButtonListItem>
+        <BasicButton @click="layer007Open">
+          아파트 등기부등본 확인<br />PF_M11_l006
+        </BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <LayerPersonalLoanETCAgree ref="layer001" />
     <LayerPersonalLoanIdentificationMethodSelect ref="layer002" />
     <LayerPersonalLoanETCAutoSubmit ref="layer003" />
+    <LayerPersonalLoanETCApartment ref="layer008" />
     <LayerPersonalLoanETCSearchApartment ref="layer006" />
     <LayerPersonalLoanETCValusation ref="layer004" />
     <LayerPersonalLoanETCCheck ref="layer005" />
+    <LayerPersonalLoanETCApartmentCertifiedConfirm ref="layer007" />
   </PageContents>
 </template>

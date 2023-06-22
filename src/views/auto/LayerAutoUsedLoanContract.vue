@@ -359,7 +359,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton theme="secondary">약정하기</BasicButton>
+            <BasicButton>약정하기</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

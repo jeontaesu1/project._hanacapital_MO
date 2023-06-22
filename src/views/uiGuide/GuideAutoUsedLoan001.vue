@@ -22,6 +22,7 @@ import LayerAutoUsedLoanInquiryComplete from '@/views/auto/LayerAutoUsedLoanInqu
 import LayerAutoUsedLoanContract from '@/views/auto/LayerAutoUsedLoanContract.vue';
 import LayerAutoUsedLoanContractAlert from '@/views/auto/LayerAutoUsedLoanContractAlert.vue';
 import LayerAutoUsedLoanContractConfirm from '@/views/auto/LayerAutoUsedLoanContractConfirm.vue';
+import LayerAutoUsedLoanLimitInquiry from '@/views/auto/LayerAutoUsedLoanLimitInquiry.vue';
 
 export default {
   components: {
@@ -45,6 +46,7 @@ export default {
     LayerAutoUsedLoanContract,
     LayerAutoUsedLoanContractAlert,
     LayerAutoUsedLoanContractConfirm,
+    LayerAutoUsedLoanLimitInquiry,
   },
   setup() {
     const layer001 = ref(null);
@@ -63,6 +65,7 @@ export default {
     const layer014 = ref(null);
     const layer015 = ref(null);
     const layer016 = ref(null);
+    const layer017 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -112,6 +115,9 @@ export default {
     const layer016Open = (e = {}) => {
       layer016.value.layer.open(e.target);
     };
+    const layer017Open = (e = {}) => {
+      layer017.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -130,6 +136,7 @@ export default {
       layer014,
       layer015,
       layer016,
+      layer017,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -146,6 +153,7 @@ export default {
       layer014Open,
       layer015Open,
       layer016Open,
+      layer017Open,
     };
   },
 };
@@ -211,7 +219,7 @@ export default {
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer011Open"
-          >선택차량확인<br />AF_M06_l009</BasicButton
+          >선택차량확인<br />AF_M06_l011</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
@@ -239,6 +247,11 @@ export default {
           >자동차등록증 매매계약서 확인<br />AF_M06_b006</BasicButton
         >
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer017Open"
+          >한도조회 정보 입력<br />AF_M06_l012</BasicButton
+        >
+      </ButtonListItem>
     </ButtonList>
 
     <LayerAutoUsedLoanSearchAlert ref="layer001" />
@@ -257,5 +270,6 @@ export default {
     <LayerAutoUsedLoanContract ref="layer014" />
     <LayerAutoUsedLoanContractAlert ref="layer015" />
     <LayerAutoUsedLoanContractConfirm ref="layer016" />
+    <LayerAutoUsedLoanLimitInquiry ref="layer017" />
   </PageContents>
 </template>

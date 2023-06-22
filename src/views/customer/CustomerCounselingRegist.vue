@@ -201,11 +201,7 @@ export default {
         </FormInvalid>
       </FormListItem>
 
-      <FormListItem
-        titleText="이메일"
-        titleOptionalText="이메일"
-        target="#customerCounselingRegistMailId"
-      >
+      <FormListItem titleText="이메일" target="#customerCounselingRegistMailId">
         <FormInvalid :error="state.mailError">
           <InputBlock :error="state.mailError">
             <InputBlockCell :flexible="true">

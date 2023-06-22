@@ -1,0 +1,55 @@
+@import '@/assets/scss/components/import/basic-list.scss';
+@import '@/assets/scss/components/import/step.scss';
+
+.bg {
+  background-color: $color-gray-15;
+  margin: 0 -20px;
+  padding: 40px 20px;
+}
+
+.grid-list {
+  &::before {
+    content: '';
+    display: table;
+  }
+
+  &__inner {
+    @include reset-list;
+    margin: -12px 0 0 -12px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    width: 50%;
+    padding: 12px 0 0 12px;
+    box-sizing: border-box;
+
+    &--full {
+      width: 100%;
+    }
+  }
+}
+
+.grid-basic-list {
+  &::before {
+    content: '';
+    display: table;
+  }
+
+  .basic-list {
+    margin: -4px 0 0 -4px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .basic-list__item {
+    width: 50%;
+    padding: 4px 0 0 4px;
+    box-sizing: border-box;
+
+    & + .basic-list__item {
+      margin: 0;
+    }
+  }
+}

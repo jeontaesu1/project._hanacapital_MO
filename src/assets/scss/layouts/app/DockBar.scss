@@ -1,0 +1,57 @@
+.dock-bar {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: $color-white;
+
+  &__list {
+    @include reset-list;
+    display: flex;
+  }
+
+  &__item {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    padding: 9px 0 5px;
+    text-align: center;
+  }
+
+  &__icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin: 0 auto 2px;
+
+    * {
+      fill: $color-gray-40;
+    }
+  }
+
+  &__text {
+    display: block;
+    @include font-size-default(10);
+    color: $color-gray-60;
+  }
+
+  &__item--active {
+    .dock-bar {
+      &__icon {
+        * {
+          fill: $color-black;
+        }
+      }
+
+      &__text {
+        color: $color-black;
+      }
+    }
+  }
+}

@@ -13,6 +13,7 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
+import BasicBanner from '@/components/ui/banner/BasicBanner.vue';
 
 import IconCustomer from '@/assets/images/icon/customer-center.svg?component';
 import IconTell from '@/assets/images/icon/tell.svg?component';
@@ -30,6 +31,7 @@ export default {
     ButtonListItem,
     IllustObject,
     BasicHr,
+    BasicBanner,
     IconCustomer,
     IconTell,
   },
@@ -63,7 +65,20 @@ export default {
 
       <IllustObject type="complete" />
 
-      <div>// 배너 영역 (내용 확인 후 진행 예정)</div>
+      <!-- DD : 하드코딩 배너 -->
+      <BasicBanner
+        tagName="RouterLink"
+        to="/my-info/join-membership"
+        thumb="/images/banner/banner-money-up.png"
+      >
+        <p class="text-body-4 color-gray row-margin-mini nowrap">
+          회원만을 위한 특별한 혜택
+        </p>
+        <h3 class="text-body-1 font-weight-medium nowrap">
+          하나캐피탈 멤버십 가입하기
+        </h3>
+      </BasicBanner>
+      <!-- // DD : 하드코딩 배너 -->
 
       <BasicHr
         type="contents"

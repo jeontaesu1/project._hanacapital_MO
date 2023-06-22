@@ -1,0 +1,30 @@
+.check-list {
+  display: block;
+
+  &::before {
+    content: '';
+    display: table;
+  }
+
+  &__list {
+    @include reset-list;
+    display: flex;
+    flex-wrap: wrap;
+    margin: -8px 0 0 -8px;
+  }
+
+  &__item {
+    flex: none;
+    width: 50%;
+    box-sizing: border-box;
+    padding: 8px 0 0 8px;
+  }
+
+  &--col {
+    &-3 {
+      .check-list__item {
+        width: 33.333333%;
+      }
+    }
+  }
+}

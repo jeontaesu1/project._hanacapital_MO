@@ -13,6 +13,7 @@ import IllustObject from '@/components/ui/common/IllustObject.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
+import BasicBanner from '@/components/ui/banner/BasicBanner.vue';
 
 export default {
   components: {
@@ -27,6 +28,7 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicButton,
+    BasicBanner,
   },
   setup() {
     const layer = ref(null);
@@ -64,7 +66,16 @@ export default {
 
       <IllustObject type="complete" />
 
-      <div>// 배너 영역 (내용 확인 후 진행 예정)</div>
+      <!-- DD : 하드코딩 배너 -->
+      <BasicBanner thumb="/images/banner/banner-money-up.png" @click="() => {}">
+        <p class="text-body-4 color-gray row-margin-mini nowrap">
+          더 많은 혜택을 누려보세요!
+        </p>
+        <h3 class="text-body-1 font-weight-medium nowrap">
+          하나머니 앱 설치하기
+        </h3>
+      </BasicBanner>
+      <!-- // DD : 하드코딩 배너 -->
 
       <template v-slot:foot>
         <ButtonList

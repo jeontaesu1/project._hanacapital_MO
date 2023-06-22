@@ -187,7 +187,7 @@ export default {
             <BasicButton :line="true" theme="quaternary">이전</BasicButton>
           </ButtonListItem>
           <ButtonListItem>
-            <BasicButton theme="secondary">문의요청</BasicButton>
+            <BasicButton>문의요청</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
