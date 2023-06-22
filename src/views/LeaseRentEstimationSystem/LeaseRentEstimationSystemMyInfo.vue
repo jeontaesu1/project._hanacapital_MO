@@ -98,14 +98,16 @@ export default {
       </KeyValue>
     </BasicBox>
 
-    <div class="inline-wrap align-center row-margin-container-medium">
-      <TextButton
-        :underline="true"
-        theme="quaternary"
-        :classNames="{ text: 'text-body-4 color-gray' }"
-      >
-        로그아웃
-      </TextButton>
-    </div>
+    <template v-slot:foot>
+      <div class="inline-wrap align-center">
+        <TextButton
+          :underline="true"
+          theme="quaternary"
+          :classNames="{ text: 'text-body-4 color-gray' }"
+        >
+          로그아웃
+        </TextButton>
+      </div>
+    </template>
   </PageContents>
 </template>

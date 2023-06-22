@@ -301,7 +301,7 @@ export default {
                         >
                           <div :class="$style['agree-list__head']">
                             <CheckBox
-                              id="layerEquipmentLeaseStateAgree_001_002"
+                              id="layerEquipmentLeaseStateAgree_001_003"
                               :classNames="{
                                 wrap: $style['agree-list__checkbox'],
                               }"
@@ -330,7 +330,7 @@ export default {
                               <li :class="$style['agree-list__item']">
                                 <div :class="$style['agree-list__head']">
                                   <CheckBox
-                                    id="layerEquipmentLeaseStateAgree_001_002_001"
+                                    id="layerEquipmentLeaseStateAgree_001_003_001"
                                     :classNames="{
                                       wrap: $style['agree-list__checkbox'],
                                     }"
@@ -358,7 +358,7 @@ export default {
                               <li :class="$style['agree-list__item']">
                                 <div :class="$style['agree-list__head']">
                                   <CheckBox
-                                    id="layerEquipmentLeaseStateAgree_001_002_002"
+                                    id="layerEquipmentLeaseStateAgree_001_003_002"
                                     :classNames="{
                                       wrap: $style['agree-list__checkbox'],
                                     }"

@@ -79,7 +79,7 @@ export default {
 
 <template>
   <PageContents>
-    <div>
+    <div class="row-margin-contents">
       <div class="text-title-2 font-weight-bold row-margin-small">
         모델 설정
       </div>
@@ -88,7 +88,7 @@ export default {
       </div>
     </div>
 
-    <div class="row-margin-contents row-margin-bottom-none">
+    <div>
       <FormList>
         <FormListItem
           titleText="브랜드"
@@ -136,36 +136,36 @@ export default {
           </FormInvalid>
         </FormListItem>
 
-        <!--  Case : 선택시 노출 -->
+        <!--  Case : 브랜드 선택시 노출 -->
         <FormListItem titleText="브랜드 고유번호" :disabled="true">
           <InputBlock :disabled="true">
             <InputBlockCell :flexible="true">
               <BasicInput defaultValue="221" :disabled="true" />
             </InputBlockCell>
           </InputBlock>
-        </FormListItem>
 
-        <ButtonList
-          align="left"
-          :classNames="{ wrap: 'row-margin-contents row-margin-bottom-none' }"
-        >
-          <ButtonListItem>
-            <BasicButton :line="true" theme="quaternary" size="mini">
-              렌트 숨김
-            </BasicButton>
-          </ButtonListItem>
-          <ButtonListItem>
-            <BasicButton :line="true" theme="quaternary" size="mini">
-              리스 숨김
-            </BasicButton>
-          </ButtonListItem>
-          <ButtonListItem>
-            <BasicButton :line="true" theme="quaternary" size="mini">
-              할부 숨김
-            </BasicButton>
-          </ButtonListItem>
-        </ButtonList>
-        <!-- // Case : 선택시 노출 -->
+          <ButtonList
+            align="left"
+            :classNames="{ wrap: 'row-margin-contents' }"
+          >
+            <ButtonListItem>
+              <BasicButton :line="true" theme="quaternary" size="mini">
+                렌트 숨김
+              </BasicButton>
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton :line="true" theme="quaternary" size="mini">
+                리스 숨김
+              </BasicButton>
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton :line="true" theme="quaternary" size="mini">
+                할부 숨김
+              </BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </FormListItem>
+        <!-- // Case : 브랜드 선택시 노출 -->
 
         <FormListItem
           titleText="모델"
@@ -213,36 +213,36 @@ export default {
           </FormInvalid>
         </FormListItem>
 
-        <!--  Case : 선택시 노출 -->
+        <!--  Case : 모델 선택시 노출 -->
         <FormListItem titleText="모델 고유번호" :disabled="true">
           <InputBlock :disabled="true">
             <InputBlockCell :flexible="true">
               <BasicInput defaultValue="11079" :disabled="true" />
             </InputBlockCell>
           </InputBlock>
-        </FormListItem>
 
-        <ButtonList
-          align="left"
-          :classNames="{ wrap: 'row-margin-contents row-margin-bottom-none' }"
-        >
-          <ButtonListItem>
-            <BasicButton :line="true" theme="quaternary" size="mini">
-              렌트 숨김
-            </BasicButton>
-          </ButtonListItem>
-          <ButtonListItem>
-            <BasicButton :line="true" theme="quaternary" size="mini">
-              리스 숨김
-            </BasicButton>
-          </ButtonListItem>
-          <ButtonListItem>
-            <BasicButton :line="true" theme="quaternary" size="mini">
-              할부 숨김
-            </BasicButton>
-          </ButtonListItem>
-        </ButtonList>
-        <!-- // Case : 선택시 노출 -->
+          <ButtonList
+            align="left"
+            :classNames="{ wrap: 'row-margin-contents row-margin-bottom-none' }"
+          >
+            <ButtonListItem>
+              <BasicButton :line="true" theme="quaternary" size="mini">
+                렌트 숨김
+              </BasicButton>
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton :line="true" theme="quaternary" size="mini">
+                리스 숨김
+              </BasicButton>
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton :line="true" theme="quaternary" size="mini">
+                할부 숨김
+              </BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </FormListItem>
+        <!-- // Case : 모델 선택시 노출 -->
 
         <FormListItem
           titleText="라인업"
@@ -282,36 +282,36 @@ export default {
           </FormInvalid>
         </FormListItem>
 
-        <!-- Case : 선택시 노출 -->
+        <!-- Case : 라인업 선택시 노출 -->
         <FormListItem titleText="라인업 고유번호" :disabled="true">
           <InputBlock :disabled="true">
             <InputBlockCell :flexible="true">
               <BasicInput defaultValue="221" :disabled="true" />
             </InputBlockCell>
           </InputBlock>
-        </FormListItem>
 
-        <ButtonList
-          align="left"
-          :classNames="{ wrap: 'row-margin-contents row-margin-bottom-none' }"
-        >
-          <ButtonListItem>
-            <BasicButton :line="true" theme="quaternary" size="mini">
-              렌트 숨김
-            </BasicButton>
-          </ButtonListItem>
-          <ButtonListItem>
-            <BasicButton :line="true" theme="quaternary" size="mini">
-              리스 숨김
-            </BasicButton>
-          </ButtonListItem>
-          <ButtonListItem>
-            <BasicButton :line="true" theme="quaternary" size="mini">
-              할부 숨김
-            </BasicButton>
-          </ButtonListItem>
-        </ButtonList>
-        <!-- // Case : 선택시 노출 -->
+          <ButtonList
+            align="left"
+            :classNames="{ wrap: 'row-margin-contents row-margin-bottom-none' }"
+          >
+            <ButtonListItem>
+              <BasicButton :line="true" theme="quaternary" size="mini">
+                렌트 숨김
+              </BasicButton>
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton :line="true" theme="quaternary" size="mini">
+                리스 숨김
+              </BasicButton>
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton :line="true" theme="quaternary" size="mini">
+                할부 숨김
+              </BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </FormListItem>
+        <!-- // Case : 라인업 선택시 노출 -->
 
         <FormListItem
           titleText="트림"
@@ -351,682 +351,687 @@ export default {
           </FormInvalid>
         </FormListItem>
 
-        <!-- Case : 선택시 노출 -->
+        <!-- Case : 트림 선택시 노출 -->
         <FormListItem titleText="트림 고유번호" :disabled="true">
           <InputBlock :disabled="true">
             <InputBlockCell :flexible="true">
               <BasicInput defaultValue="1038389" :disabled="true" />
             </InputBlockCell>
           </InputBlock>
-        </FormListItem>
 
-        <ButtonList
-          align="left"
-          :classNames="{ wrap: 'row-margin-contents row-margin-bottom-none' }"
-        >
-          <ButtonListItem>
-            <BasicButton :line="true" theme="quaternary" size="mini">
-              렌트 숨김
-            </BasicButton>
-          </ButtonListItem>
-          <ButtonListItem>
-            <BasicButton :line="true" theme="quaternary" size="mini">
-              리스 숨김
-            </BasicButton>
-          </ButtonListItem>
-          <ButtonListItem>
-            <BasicButton :line="true" theme="quaternary" size="mini">
-              할부 숨김
-            </BasicButton>
-          </ButtonListItem>
-        </ButtonList>
-        <!-- // Case : 선택시 노출 -->
+          <ButtonList
+            align="left"
+            :classNames="{ wrap: 'row-margin-contents row-margin-bottom-none' }"
+          >
+            <ButtonListItem>
+              <BasicButton :line="true" theme="quaternary" size="mini">
+                렌트 숨김
+              </BasicButton>
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton :line="true" theme="quaternary" size="mini">
+                리스 숨김
+              </BasicButton>
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton :line="true" theme="quaternary" size="mini">
+                할부 숨김
+              </BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </FormListItem>
+        <!-- // Case : 트림 선택시 노출 -->
       </FormList>
     </div>
 
     <BasicHr class="row-margin-container-medium" />
 
-    <section>
-      <h3 class="text-title-2 row-margin-contents">렌트 설정</h3>
+    <div>
+      <section class="row-margin-container-medium">
+        <h3 class="text-title-2 row-margin-contents">렌트 설정</h3>
 
-      <div>
-        <section class="row-margin-container-medium">
-          <h4 class="text-body-2 row-margin-item-medium">브랜드 숨김</h4>
+        <div>
+          <section class="row-margin-container-medium">
+            <h4 class="text-body-2 row-margin-item-medium">브랜드 숨김</h4>
 
-          <BoxCheckList align="full">
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="rentalBrandBoxCheck_001"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>벤틀리 235</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="rentalBrandBoxCheck_002"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>롤스로이스 223</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="rentalBrandBoxCheck_003"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>테슬라 441</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="rentalBrandBoxCheck_004"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>페라리 262</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="rentalBrandBoxCheck_005"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>람보르기니 234</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-          </BoxCheckList>
-        </section>
+            <BoxCheckList align="full">
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="rentalBrandBoxCheck_001"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>벤틀리 235</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="rentalBrandBoxCheck_002"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>롤스로이스 223</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="rentalBrandBoxCheck_003"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>테슬라 441</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="rentalBrandBoxCheck_004"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>페라리 262</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="rentalBrandBoxCheck_005"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>람보르기니 234</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+            </BoxCheckList>
+          </section>
 
-        <section class="row-margin-container-medium">
-          <h4 class="text-body-2 row-margin-item-medium">모델 숨김</h4>
+          <section class="row-margin-container-medium">
+            <h4 class="text-body-2 row-margin-item-medium">모델 숨김</h4>
 
-          <BoxCheckList align="full">
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="rentalModelBoxCheck_001"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>현대 넥쏘 10273</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="rentalModelBoxCheck_002"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>르노코리아 뉴 마스터 10405</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="rentalModelBoxCheck_003"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>벤츠 AMG GT 10503</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="rentalModelBoxCheck_004"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>현대 쏠라티 10350</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-          </BoxCheckList>
-        </section>
+            <BoxCheckList align="full">
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="rentalModelBoxCheck_001"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>현대 넥쏘 10273</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="rentalModelBoxCheck_002"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>르노코리아 뉴 마스터 10405</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="rentalModelBoxCheck_003"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>벤츠 AMG GT 10503</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="rentalModelBoxCheck_004"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>현대 쏠라티 10350</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+            </BoxCheckList>
+          </section>
 
-        <section class="row-margin-container-medium">
-          <h4 class="text-body-2 row-margin-item-medium">라인업 숨김</h4>
+          <section class="row-margin-container-medium">
+            <h4 class="text-body-2 row-margin-item-medium">라인업 숨김</h4>
 
-          <BoxCheckList align="full">
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="rentalLineUpBoxCheck_001"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>
-                  현대 더 뉴 코나 2021년형 가솔리 1.6 터보 N Line 2WD (개소세 5%
-                  기준) 105605
-                </BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="rentalLineUpBoxCheck_002"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>
-                  제네시스 Electrified GV70 2022년형 EV (개소세 5% 기준) 1121180
-                </BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-          </BoxCheckList>
-        </section>
+            <BoxCheckList align="full">
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="rentalLineUpBoxCheck_001"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>
+                    현대 더 뉴 코나 2021년형 가솔리 1.6 터보 N Line 2WD (개소세
+                    5% 기준) 105605
+                  </BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="rentalLineUpBoxCheck_002"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>
+                    제네시스 Electrified GV70 2022년형 EV (개소세 5% 기준)
+                    1121180
+                  </BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+            </BoxCheckList>
+          </section>
 
-        <section class="row-margin-container-medium">
-          <h4 class="text-body-2 row-margin-item-medium">트림 숨김</h4>
+          <section class="row-margin-container-medium">
+            <h4 class="text-body-2 row-margin-item-medium">트림 숨김</h4>
 
-          <BoxCheckList align="full">
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="rentalTrimBoxCheck_001"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>
-                  현대 스타리아 2021년형 투어러 디젤 2.2 11인승 스마트 2WD M
-                  1030158
-                </BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="rentalTrimBoxCheck_002"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>
-                  제네시스 Electrified GV80 2022년형 EV (개소세 5% 기준) AWD a
-                  1034936
-                </BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-          </BoxCheckList>
-        </section>
-      </div>
-    </section>
+            <BoxCheckList align="full">
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="rentalTrimBoxCheck_001"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>
+                    현대 스타리아 2021년형 투어러 디젤 2.2 11인승 스마트 2WD M
+                    1030158
+                  </BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="rentalTrimBoxCheck_002"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>
+                    제네시스 Electrified GV80 2022년형 EV (개소세 5% 기준) AWD a
+                    1034936
+                  </BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+            </BoxCheckList>
+          </section>
+        </div>
+      </section>
 
-    <section class="row-margin-container-medium">
-      <h3 class="text-title-2 row-margin-contents">리스 설정</h3>
+      <section class="row-margin-container-medium">
+        <h3 class="text-title-2 row-margin-contents">리스 설정</h3>
 
-      <div>
-        <section class="row-margin-container-medium">
-          <h4 class="text-body-2 row-margin-item-medium">브랜드 숨김</h4>
+        <div>
+          <section class="row-margin-container-medium">
+            <h4 class="text-body-2 row-margin-item-medium">브랜드 숨김</h4>
 
-          <BoxCheckList align="full">
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="leaseBrandBoxCheck_001"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>벤틀리 235</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="leaseBrandBoxCheck_002"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>롤스로이스 223</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="leaseBrandBoxCheck_003"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>테슬라 441</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="leaseBrandBoxCheck_004"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>페라리 262</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="leaseBrandBoxCheck_005"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>람보르기니 234</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-          </BoxCheckList>
-        </section>
+            <BoxCheckList align="full">
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="leaseBrandBoxCheck_001"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>벤틀리 235</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="leaseBrandBoxCheck_002"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>롤스로이스 223</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="leaseBrandBoxCheck_003"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>테슬라 441</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="leaseBrandBoxCheck_004"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>페라리 262</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="leaseBrandBoxCheck_005"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>람보르기니 234</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+            </BoxCheckList>
+          </section>
 
-        <section class="row-margin-container-medium">
-          <h4 class="text-body-2 row-margin-item-medium">모델 숨김</h4>
+          <section class="row-margin-container-medium">
+            <h4 class="text-body-2 row-margin-item-medium">모델 숨김</h4>
 
-          <BoxCheckList align="full">
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="leaseModelBoxCheck_001"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>현대 넥쏘 10273</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="leaseModelBoxCheck_002"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>르노코리아 뉴 마스터 10405</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="leaseModelBoxCheck_003"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>벤츠 AMG GT 10503</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="leaseModelBoxCheck_004"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>현대 쏠라티 10350</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-          </BoxCheckList>
-        </section>
+            <BoxCheckList align="full">
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="leaseModelBoxCheck_001"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>현대 넥쏘 10273</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="leaseModelBoxCheck_002"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>르노코리아 뉴 마스터 10405</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="leaseModelBoxCheck_003"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>벤츠 AMG GT 10503</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="leaseModelBoxCheck_004"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>현대 쏠라티 10350</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+            </BoxCheckList>
+          </section>
 
-        <section class="row-margin-container-medium">
-          <h4 class="text-body-2 row-margin-item-medium">라인업 숨김</h4>
+          <section class="row-margin-container-medium">
+            <h4 class="text-body-2 row-margin-item-medium">라인업 숨김</h4>
 
-          <BoxCheckList align="full">
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="leaseLineUpBoxCheck_001"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>
-                  현대 더 뉴 코나 2021년형 가솔리 1.6 터보 N Line 2WD (개소세 5%
-                  기준) 105605
-                </BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="leaseLineUpBoxCheck_002"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>
-                  제네시스 Electrified GV70 2022년형 EV (개소세 5% 기준) 1121180
-                </BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-          </BoxCheckList>
-        </section>
+            <BoxCheckList align="full">
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="leaseLineUpBoxCheck_001"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>
+                    현대 더 뉴 코나 2021년형 가솔리 1.6 터보 N Line 2WD (개소세
+                    5% 기준) 105605
+                  </BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="leaseLineUpBoxCheck_002"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>
+                    제네시스 Electrified GV70 2022년형 EV (개소세 5% 기준)
+                    1121180
+                  </BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+            </BoxCheckList>
+          </section>
 
-        <section class="row-margin-container-medium">
-          <h4 class="text-body-2 row-margin-item-medium">트림 숨김</h4>
+          <section class="row-margin-container-medium">
+            <h4 class="text-body-2 row-margin-item-medium">트림 숨김</h4>
 
-          <BoxCheckList align="full">
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="leaseTrimBoxCheck_001"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>
-                  현대 스타리아 2021년형 투어러 디젤 2.2 11인승 스마트 2WD M
-                  1030158
-                </BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="leaseTrimBoxCheck_002"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>
-                  제네시스 Electrified GV80 2022년형 EV (개소세 5% 기준) AWD a
-                  1034936
-                </BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-          </BoxCheckList>
-        </section>
-      </div>
-    </section>
+            <BoxCheckList align="full">
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="leaseTrimBoxCheck_001"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>
+                    현대 스타리아 2021년형 투어러 디젤 2.2 11인승 스마트 2WD M
+                    1030158
+                  </BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="leaseTrimBoxCheck_002"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>
+                    제네시스 Electrified GV80 2022년형 EV (개소세 5% 기준) AWD a
+                    1034936
+                  </BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+            </BoxCheckList>
+          </section>
+        </div>
+      </section>
 
-    <section>
-      <h3 class="text-title-2 row-margin-contents">할부 설정</h3>
+      <section class="row-margin-container-medium">
+        <h3 class="text-title-2 row-margin-contents">할부 설정</h3>
 
-      <div>
-        <section class="row-margin-container-medium">
-          <h4 class="text-body-2 row-margin-item-medium">브랜드 숨김</h4>
+        <div>
+          <section class="row-margin-container-medium">
+            <h4 class="text-body-2 row-margin-item-medium">브랜드 숨김</h4>
 
-          <BoxCheckList align="full">
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="installmentBrandBoxCheck_001"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>벤틀리 235</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="installmentBrandBoxCheck_002"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>롤스로이스 223</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="installmentBrandBoxCheck_003"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>테슬라 441</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="installmentBrandBoxCheck_004"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>페라리 262</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="installmentBrandBoxCheck_005"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>람보르기니 234</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-          </BoxCheckList>
-        </section>
+            <BoxCheckList align="full">
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="installmentBrandBoxCheck_001"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>벤틀리 235</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="installmentBrandBoxCheck_002"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>롤스로이스 223</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="installmentBrandBoxCheck_003"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>테슬라 441</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="installmentBrandBoxCheck_004"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>페라리 262</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="installmentBrandBoxCheck_005"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>람보르기니 234</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+            </BoxCheckList>
+          </section>
 
-        <section class="row-margin-container-medium">
-          <h4 class="text-body-2 row-margin-item-medium">모델 숨김</h4>
+          <section class="row-margin-container-medium">
+            <h4 class="text-body-2 row-margin-item-medium">모델 숨김</h4>
 
-          <BoxCheckList align="full">
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="installmentModelBoxCheck_001"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>현대 넥쏘 10273</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="installmentModelBoxCheck_002"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>르노코리아 뉴 마스터 10405</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="installmentModelBoxCheck_003"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>벤츠 AMG GT 10503</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="installmentModelBoxCheck_004"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>현대 쏠라티 10350</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-          </BoxCheckList>
-        </section>
+            <BoxCheckList align="full">
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="installmentModelBoxCheck_001"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>현대 넥쏘 10273</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="installmentModelBoxCheck_002"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>르노코리아 뉴 마스터 10405</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="installmentModelBoxCheck_003"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>벤츠 AMG GT 10503</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="installmentModelBoxCheck_004"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>현대 쏠라티 10350</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+            </BoxCheckList>
+          </section>
 
-        <section class="row-margin-container-medium">
-          <h4 class="text-body-2 row-margin-item-medium">라인업 숨김</h4>
+          <section class="row-margin-container-medium">
+            <h4 class="text-body-2 row-margin-item-medium">라인업 숨김</h4>
 
-          <BoxCheckList align="full">
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="installmentLineUpBoxCheck_001"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>
-                  현대 더 뉴 코나 2021년형 가솔리 1.6 터보 N Line 2WD (개소세 5%
-                  기준) 105605
-                </BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="installmentLineUpBoxCheck_002"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>
-                  제네시스 Electrified GV70 2022년형 EV (개소세 5% 기준) 1121180
-                </BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-          </BoxCheckList>
-        </section>
+            <BoxCheckList align="full">
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="installmentLineUpBoxCheck_001"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>
+                    현대 더 뉴 코나 2021년형 가솔리 1.6 터보 N Line 2WD (개소세
+                    5% 기준) 105605
+                  </BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="installmentLineUpBoxCheck_002"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>
+                    제네시스 Electrified GV70 2022년형 EV (개소세 5% 기준)
+                    1121180
+                  </BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+            </BoxCheckList>
+          </section>
 
-        <section class="row-margin-container-medium">
-          <h4 class="text-body-2 row-margin-item-medium">트림 숨김</h4>
+          <section class="row-margin-container-medium">
+            <h4 class="text-body-2 row-margin-item-medium">트림 숨김</h4>
 
-          <BoxCheckList align="full">
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="installmentTrimBoxCheck_001"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>
-                  현대 스타리아 2021년형 투어러 디젤 2.2 11인승 스마트 2WD M
-                  1030158
-                </BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck
-                :contents="true"
-                type="checkbox"
-                id="installmentTrimBoxCheck_002"
-                :classNames="{ block: 'align-items-start' }"
-              >
-                <template v-slot:left>
-                  <BoxCheckObject />
-                </template>
-                <BoxCheckLabel>
-                  제네시스 Electrified GV80 2022년형 EV (개소세 5% 기준) AWD a
-                  1034936
-                </BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-          </BoxCheckList>
-        </section>
-      </div>
-    </section>
+            <BoxCheckList align="full">
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="installmentTrimBoxCheck_001"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>
+                    현대 스타리아 2021년형 투어러 디젤 2.2 11인승 스마트 2WD M
+                    1030158
+                  </BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="installmentTrimBoxCheck_002"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>
+                    제네시스 Electrified GV80 2022년형 EV (개소세 5% 기준) AWD a
+                    1034936
+                  </BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+            </BoxCheckList>
+          </section>
+        </div>
+      </section>
+    </div>
 
     <template v-slot:foot>
       <ButtonList

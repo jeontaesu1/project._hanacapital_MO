@@ -5,6 +5,7 @@ import { ref } from 'vue';
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
+import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import StepProgress from '@/components/ui/progress/StepProgress.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
@@ -19,6 +20,7 @@ export default {
     UiLayer,
     FullPopup,
     FullPopupHead,
+    PopupTitle,
     PopupButton,
     StepProgress,
     PageTextGroup,
@@ -43,6 +45,7 @@ export default {
     <FullPopup>
       <template v-slot:head>
         <FullPopupHead>
+          <PopupTitle>진행사항안내</PopupTitle>
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>

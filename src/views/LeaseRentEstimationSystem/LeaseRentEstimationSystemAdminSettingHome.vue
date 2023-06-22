@@ -44,108 +44,110 @@ export default {
 
 <template>
   <PageContents>
-    <section>
-      <h3 class="text-title-2 row-margin-contents">홈 기본 화면</h3>
+    <div>
+      <section class="row-margin-container-medium">
+        <h3 class="text-title-2 row-margin-contents">홈 기본 화면</h3>
 
-      <BoxCheckList>
-        <BoxCheckListItem>
-          <BoxCheck
-            :minSide="true"
-            name="leaseRentEstimationSystemAdminSettingHomeCheck"
-            id="leaseRentEstimationSystemAdminSettingHomeCheck001"
-            :defaultChecked="true"
-          >
-            <BoxCheckLabel>하나원큐오토</BoxCheckLabel>
-          </BoxCheck>
-        </BoxCheckListItem>
-        <BoxCheckListItem>
-          <BoxCheck
-            :minSide="true"
-            name="leaseRentEstimationSystemAdminSettingHomeCheck"
-            id="leaseRentEstimationSystemAdminSettingHomeCheck002"
-          >
-            <BoxCheckLabel>국산차 할부</BoxCheckLabel>
-          </BoxCheck>
-        </BoxCheckListItem>
-        <BoxCheckListItem>
-          <BoxCheck
-            :minSide="true"
-            name="leaseRentEstimationSystemAdminSettingHomeCheck"
-            id="leaseRentEstimationSystemAdminSettingHomeCheck003"
-          >
-            <BoxCheckLabel>중고 할부</BoxCheckLabel>
-          </BoxCheck>
-        </BoxCheckListItem>
-      </BoxCheckList>
-    </section>
+        <BoxCheckList>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="leaseRentEstimationSystemAdminSettingHomeCheck"
+              id="leaseRentEstimationSystemAdminSettingHomeCheck001"
+              :defaultChecked="true"
+            >
+              <BoxCheckLabel>하나원큐오토</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="leaseRentEstimationSystemAdminSettingHomeCheck"
+              id="leaseRentEstimationSystemAdminSettingHomeCheck002"
+            >
+              <BoxCheckLabel>국산차 할부</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="leaseRentEstimationSystemAdminSettingHomeCheck"
+              id="leaseRentEstimationSystemAdminSettingHomeCheck003"
+            >
+              <BoxCheckLabel>중고 할부</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+        </BoxCheckList>
+      </section>
 
-    <section class="row-margin-container-medium">
-      <div class="flex-box row-margin-contents">
-        <div class="flex-box__cell">
-          <h3 class="text-title-2">하단 메뉴 설정</h3>
+      <section class="row-margin-container-medium">
+        <div class="flex-box row-margin-contents">
+          <div class="flex-box__cell">
+            <h3 class="text-title-2">하단 메뉴 설정</h3>
+          </div>
+          <div class="flex-box__cell flex-box__cell--small">
+            <div class="text-body-3">(1개 이상 필수)</div>
+          </div>
         </div>
-        <div class="flex-box__cell flex-box__cell--small">
-          <div class="text-body-3">(1개 이상 필수)</div>
-        </div>
-      </div>
 
-      <ul :class="$style['switch-list']">
-        <li :class="$style['switch-list__item']">
-          <div :class="$style['switch-list__title']">렌트</div>
-          <div :class="$style['switch-list__right']">
-            <SwitchCheckBox
-              id="leaseRentEstimationSystemAdminSettingHome001"
-              :classNames="{ wrap: $style['switch-list__check'] }"
-            />
-          </div>
-        </li>
-        <li :class="$style['switch-list__item']">
-          <div :class="$style['switch-list__title']">신차 리스</div>
-          <div :class="$style['switch-list__right']">
-            <SwitchCheckBox
-              id="leaseRentEstimationSystemAdminSettingHome002"
-              :classNames="{ wrap: $style['switch-list__check'] }"
-            />
-          </div>
-        </li>
-        <li :class="$style['switch-list__item']">
-          <div :class="$style['switch-list__title']">중고 리스</div>
-          <div :class="$style['switch-list__right']">
-            <SwitchCheckBox
-              id="leaseRentEstimationSystemAdminSettingHome003"
-              :classNames="{ wrap: $style['switch-list__check'] }"
-            />
-          </div>
-        </li>
-        <li :class="$style['switch-list__item']">
-          <div :class="$style['switch-list__title']">국산 할부</div>
-          <div :class="$style['switch-list__right']">
-            <SwitchCheckBox
-              id="leaseRentEstimationSystemAdminSettingHome004"
-              :classNames="{ wrap: $style['switch-list__check'] }"
-            />
-          </div>
-        </li>
-        <li :class="$style['switch-list__item']">
-          <div :class="$style['switch-list__title']">수입 할부</div>
-          <div :class="$style['switch-list__right']">
-            <SwitchCheckBox
-              id="leaseRentEstimationSystemAdminSettingHome005"
-              :classNames="{ wrap: $style['switch-list__check'] }"
-            />
-          </div>
-        </li>
-        <li :class="$style['switch-list__item']">
-          <div :class="$style['switch-list__title']">중고 할부</div>
-          <div :class="$style['switch-list__right']">
-            <SwitchCheckBox
-              id="leaseRentEstimationSystemAdminSettingHome006"
-              :classNames="{ wrap: $style['switch-list__check'] }"
-            />
-          </div>
-        </li>
-      </ul>
-    </section>
+        <ul :class="$style['switch-list']">
+          <li :class="$style['switch-list__item']">
+            <div :class="$style['switch-list__title']">렌트</div>
+            <div :class="$style['switch-list__right']">
+              <SwitchCheckBox
+                id="leaseRentEstimationSystemAdminSettingHome001"
+                :classNames="{ wrap: $style['switch-list__check'] }"
+              />
+            </div>
+          </li>
+          <li :class="$style['switch-list__item']">
+            <div :class="$style['switch-list__title']">신차 리스</div>
+            <div :class="$style['switch-list__right']">
+              <SwitchCheckBox
+                id="leaseRentEstimationSystemAdminSettingHome002"
+                :classNames="{ wrap: $style['switch-list__check'] }"
+              />
+            </div>
+          </li>
+          <li :class="$style['switch-list__item']">
+            <div :class="$style['switch-list__title']">중고 리스</div>
+            <div :class="$style['switch-list__right']">
+              <SwitchCheckBox
+                id="leaseRentEstimationSystemAdminSettingHome003"
+                :classNames="{ wrap: $style['switch-list__check'] }"
+              />
+            </div>
+          </li>
+          <li :class="$style['switch-list__item']">
+            <div :class="$style['switch-list__title']">국산 할부</div>
+            <div :class="$style['switch-list__right']">
+              <SwitchCheckBox
+                id="leaseRentEstimationSystemAdminSettingHome004"
+                :classNames="{ wrap: $style['switch-list__check'] }"
+              />
+            </div>
+          </li>
+          <li :class="$style['switch-list__item']">
+            <div :class="$style['switch-list__title']">수입 할부</div>
+            <div :class="$style['switch-list__right']">
+              <SwitchCheckBox
+                id="leaseRentEstimationSystemAdminSettingHome005"
+                :classNames="{ wrap: $style['switch-list__check'] }"
+              />
+            </div>
+          </li>
+          <li :class="$style['switch-list__item']">
+            <div :class="$style['switch-list__title']">중고 할부</div>
+            <div :class="$style['switch-list__right']">
+              <SwitchCheckBox
+                id="leaseRentEstimationSystemAdminSettingHome006"
+                :classNames="{ wrap: $style['switch-list__check'] }"
+              />
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
   </PageContents>
 </template>
 

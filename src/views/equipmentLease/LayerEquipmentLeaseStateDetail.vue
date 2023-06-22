@@ -172,12 +172,12 @@ export default {
           </KeyValueItem>
           <KeyValueItem
             :classNames="{
-              item: 'text-body-3',
+              item: 'text-body-3 align-items-center',
             }"
           >
             <KeyValueTitle>상환스케줄</KeyValueTitle>
             <KeyValueText>
-              <div class="inline-wrap align-right">
+              <div class="inline-wrap">
                 <TextButton :underline="true" theme="secondary">
                   상세보기
                 </TextButton>
@@ -230,7 +230,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton @click="layerSlotProps.close()">확인</BasicButton>
+            <BasicButton>확인</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

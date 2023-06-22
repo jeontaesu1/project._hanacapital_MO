@@ -204,44 +204,42 @@ export default {
           </BoxCheck>
         </BoxCheckListItem>
       </BoxCheckList>
+
+      <ButtonList
+        :classNames="{
+          wrap: 'row-margin-container-medium',
+        }"
+      >
+        <ButtonListItem>
+          <BasicButton>권한 설정</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
     </div>
 
-    <ButtonList
-      :classNames="{
-        wrap: 'row-margin-container-medium',
-      }"
-    >
-      <ButtonListItem>
-        <BasicButton>권한 설정</BasicButton>
-      </ButtonListItem>
-    </ButtonList>
+    <!-- Case : 권한 설정 선택시 노출 -->
+    <BasicHr className="row-margin-container-medium" />
 
-    <!-- Case : 권한 설정 선택시 리스트 노출 -->
-    <div>
-      <BasicHr className="row-margin-container-medium" />
+    <section>
+      <h3 class="text-title-2 row-margin-contents">등록된 권한 리스트</h3>
 
-      <section>
-        <h3 class="text-title-2 row-margin-contents">등록된 권한 리스트</h3>
-
-        <ul class="reset-list">
-          <li v-for="i in 5" :key="i" class="row-margin-item-group">
-            <BasicBox>
-              <div class="flex-box row-margin-small">
-                <div class="flex-box__cell flex-1">
-                  <div class="text-body-1 font-weight-medium">A10000</div>
-                </div>
-                <div class="flex-box__cell flex-box__cell--small">
-                  <DeleteButton />
-                </div>
+      <ul class="reset-list">
+        <li v-for="i in 5" :key="i" class="row-margin-item-group">
+          <BasicBox>
+            <div class="flex-box row-margin-small">
+              <div class="flex-box__cell flex-1">
+                <div class="text-body-1 font-weight-medium">A10000</div>
               </div>
-              <div class="text-body-4">
-                관리자 권한, 선구매 등록, 시승차 견적 허용, 중고 리스 허용
+              <div class="flex-box__cell flex-box__cell--small">
+                <DeleteButton />
               </div>
-            </BasicBox>
-          </li>
-        </ul>
-      </section>
-    </div>
-    <!-- // Case : 권한 설정 선택시 리스트 노출 -->
+            </div>
+            <div class="text-body-4">
+              관리자 권한, 선구매 등록, 시승차 견적 허용, 중고 리스 허용
+            </div>
+          </BasicBox>
+        </li>
+      </ul>
+    </section>
+    <!-- // Case : 권한 설정 선택시 노출 -->
   </PageContents>
 </template>
