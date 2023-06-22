@@ -193,24 +193,18 @@ export default {
 
         <KeyValue margin="regular">
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>
-              <div class="text-body-3">상호</div>
-            </KeyValueTitle>
+            <KeyValueTitle>상호</KeyValueTitle>
             <KeyValueText>드림카센터</KeyValueText>
           </KeyValueItem>
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>
-              <div class="text-body-3">주소</div>
-            </KeyValueTitle>
+            <KeyValueTitle>주소</KeyValueTitle>
             <KeyValueText>
               서울 강남구 헌릉로 745길 25 216호<br />
               (율현동, 강남자동차매매단지)
             </KeyValueText>
           </KeyValueItem>
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>
-              <div class="text-body-3">대표이사</div>
-            </KeyValueTitle>
+            <KeyValueTitle>대표이사</KeyValueTitle>
             <KeyValueText>김하나 (인)</KeyValueText>
           </KeyValueItem>
         </KeyValue>

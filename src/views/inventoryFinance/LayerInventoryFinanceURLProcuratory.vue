@@ -124,8 +124,8 @@ export default {
       <section class="row-margin-container-medium">
         <h3 class="text-title-2 row-margin-contents">수임인 및 위임인</h3>
 
-        <ul class="reset-list">
-          <li class="row-margin-item-group">
+        <div>
+          <section class="row-margin-item-group">
             <BasicBox>
               <BasicBoxHead>
                 <BasicBoxHeadLeft>
@@ -173,9 +173,9 @@ export default {
                 </KeyValueItem>
               </KeyValue>
             </BasicBox>
-          </li>
+          </section>
 
-          <li class="row-margin-item-group">
+          <section class="row-margin-item-group">
             <BasicBox>
               <BasicBoxHead>
                 <BasicBoxHeadLeft>
@@ -193,8 +193,8 @@ export default {
                 </KeyValueItem>
               </KeyValue>
             </BasicBox>
-          </li>
-        </ul>
+          </section>
+        </div>
       </section>
 
       <template v-slot:foot>
