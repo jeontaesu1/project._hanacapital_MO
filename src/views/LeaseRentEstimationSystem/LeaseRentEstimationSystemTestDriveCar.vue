@@ -266,6 +266,7 @@ export default {
               </div>
             </li>
             <!-- // 차량 번호 -->
+
             <!-- 브랜드 -->
             <UiAccordionItem
               :classNames="{ item: $style['estimate-list__item'] }"
@@ -3973,7 +3974,7 @@ export default {
                         >
                           <FormListItem
                             titleText="비율"
-                            :target="`#leaseRentEstimationSystemLeaseProducts${i}_prepaymentsRatioButton`"
+                            :target="`#leaseRentEstimationSystemTestDriveCarProducts${i}_prepaymentsRatioButton`"
                             :selectOnly="true"
                           >
                             <FormInvalid
@@ -4076,7 +4077,7 @@ export default {
                           </FormListItem>
                           <FormListItem
                             titleText="금액"
-                            :target="`#leaseRentEstimationSystemLeaseProducts${i}_prepaymentsPriceButton`"
+                            :target="`#leaseRentEstimationSystemTestDriveCarProducts${i}_prepaymentsPriceButton`"
                             :selectOnly="true"
                           >
                             <FormInvalid
@@ -4139,7 +4140,7 @@ export default {
                           </FormListItem>
                           <FormListItem
                             titleText="선납금 수기입력"
-                            :target="`#leaseRentEstimationSystemLeaseProducts${i}_prepaymentsPriceInput`"
+                            :target="`#leaseRentEstimationSystemTestDriveCarProducts${i}_prepaymentsPriceInput`"
                           >
                             <FormInvalid
                               :error="state.prepaymentsPriceInputError[i]"
@@ -4425,7 +4426,7 @@ export default {
                         >
                           <FormListItem
                             titleText="비율"
-                            :target="`#leaseRentEstimationSystemLeaseProducts${i}_depositRatioButton`"
+                            :target="`#leaseRentEstimationSystemTestDriveCarProducts${i}_depositRatioButton`"
                             :selectOnly="true"
                           >
                             <FormInvalid :error="state.depositRatioError[i]">
@@ -4524,7 +4525,7 @@ export default {
                           </FormListItem>
                           <FormListItem
                             titleText="금액"
-                            :target="`#leaseRentEstimationSystemLeaseProducts${i}_depositPriceButton`"
+                            :target="`#leaseRentEstimationSystemTestDriveCarProducts${i}_depositPriceButton`"
                             :selectOnly="true"
                           >
                             <FormInvalid :error="state.depositPriceError[i]">
@@ -4567,7 +4568,7 @@ export default {
                           </FormListItem>
                           <FormListItem
                             titleText="보증금 수기입력"
-                            :target="`#leaseRentEstimationSystemLeaseProducts${i}_depositPriceInput`"
+                            :target="`#leaseRentEstimationSystemTestDriveCarProducts${i}_depositPriceInput`"
                           >
                             <FormInvalid
                               :error="state.depositPriceInputError[i]"
@@ -4845,7 +4846,7 @@ export default {
                         >
                           <FormListItem
                             titleText="비율"
-                            :target="`#leaseRentEstimationSystemLeaseProducts${i}_residualValueRatioButton`"
+                            :target="`#leaseRentEstimationSystemTestDriveCarProducts${i}_residualValueRatioButton`"
                             :selectOnly="true"
                           >
                             <FormInvalid
@@ -4948,7 +4949,7 @@ export default {
                           </FormListItem>
                           <FormListItem
                             titleText="잔존가치 수기입력"
-                            :target="`#leaseRentEstimationSystemLeaseProducts${i}_residualValuePriceInput`"
+                            :target="`#leaseRentEstimationSystemTestDriveCarProducts${i}_residualValuePriceInput`"
                           >
                             <FormInvalid
                               :error="state.residualValueInputError[i]"

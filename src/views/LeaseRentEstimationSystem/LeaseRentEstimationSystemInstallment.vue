@@ -276,9 +276,11 @@ export default {
                       </button>
                     </li>
                     <li :class="$style['bank-brand__item']">
+                      <!-- DD : 선택 된 요소 is-selected 클래스 값 추가 및 title="선택 됨" 속성 추가 -->
                       <button
                         type="button"
-                        :class="$style['bank-brand__block']"
+                        :class="[$style['bank-brand__block'], 'is-selected']"
+                        title="선택 됨"
                       >
                         <span :class="$style['bank-brand__logo']">
                           <CarEmblem code="2002" size="medium" />

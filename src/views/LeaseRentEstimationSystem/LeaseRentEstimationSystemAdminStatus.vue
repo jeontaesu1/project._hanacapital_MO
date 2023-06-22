@@ -239,7 +239,7 @@ export default {
       </FormList>
 
       <BasicButton
-        line="true"
+        :line="true"
         :classNames="{
           wrap: 'row-margin-container-medium row-margin-bottom-none',
         }"
