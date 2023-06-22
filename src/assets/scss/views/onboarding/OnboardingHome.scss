@@ -1,0 +1,102 @@
+.onboarding {
+  &__contents {
+    height: 100%;
+    background-color: $color-gray-05;
+
+    :global(.swiper-container),
+    :global(.swiper-wrapper) {
+      height: 100%;
+    }
+
+    :global(.swiper-slide) {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      height: 100%;
+      padding-bottom: 122px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+  }
+
+  &__body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  &__title {
+    margin: 0;
+    padding-top: 58px;
+    font-weight: 500;
+    @include font-size-default(20);
+  }
+
+  &__text {
+    margin: 0;
+    padding-top: 8px;
+    color: $color-gray-80;
+    font-weight: 300;
+  }
+
+  &__image {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    img {
+      width: 100%;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 122px;
+    box-sizing: border-box;
+    background-color: $color-gray-05;
+    z-index: 10;
+
+    :global(.swiper-pagination) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: static;
+      z-index: 10;
+      left: 0;
+      bottom: 0;
+      height: 38px;
+      font-size: 0;
+      line-height: 0;
+      text-align: center;
+    }
+
+    :global(.swiper-pagination-bullet) {
+      display: inline-block;
+      vertical-align: top;
+      width: 6px;
+      height: 6px;
+      border-radius: 3px;
+      background-color: $color-gray-50;
+      transition: auto;
+
+      & + :global(.swiper-pagination-bullet) {
+        margin-left: 5px;
+      }
+    }
+
+    :global(.swiper-pagination-bullet-active) {
+      width: 10px;
+      background-color: $color-black;
+    }
+  }
+
+  &__button {
+    padding: 16px 20px;
+  }
+}
