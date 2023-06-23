@@ -1773,7 +1773,7 @@ const routes = [
     path: '/onboarding/home',
     name: '/onboarding/home',
     component: () => import('@/views/onboarding/OnboardingHome.vue'),
-    meta: { layout: 'NoneLayout' },
+    meta: { layout: 'FullLayout' },
   },
 ];
 
