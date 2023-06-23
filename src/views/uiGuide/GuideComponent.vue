@@ -105,6 +105,7 @@ import CouponBanner from '@/components/ui/banner/CouponBanner.vue';
 import SlideBanner from '@/components/ui/banner/SlideBanner.vue';
 import SlideBannerBlock from '@/components/ui/banner/SlideBannerBlock.vue';
 import BasicBannerSlide from '@/components/ui/banner/BasicBannerSlide.vue';
+import PinButton from '@/components/ui/button/PinButton.vue';
 
 import BrandLogo001 from '@/assets/images/card-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/card-logo/lotte.svg?component';
@@ -147,8 +148,6 @@ import IconTell from '@/assets/images/icon/tell.svg?component';
 import IconDropdown from '@/assets/images/icon/dropdown.svg?component';
 import IconImgColor from '@/assets/images/icon/img-color.svg?component';
 import IconImg from '@/assets/images/icon/img.svg?component';
-import IconPin from '@/assets/images/common/pin.svg?component';
-import IconPinOn from '@/assets/images/common/pin_on.svg?component';
 
 import IconSample from '@/assets/images/_dummy/sample.svg?component';
 
@@ -261,6 +260,7 @@ export default {
     SlideBanner,
     SlideBannerBlock,
     BasicBannerSlide,
+    PinButton,
 
     IconAdd,
     BrandLogo001,
@@ -303,8 +303,7 @@ export default {
     IconDropdown,
     IconImgColor,
     IconImg,
-    IconPin,
-    IconPinOn,
+
     IconSample,
   },
 
@@ -1182,6 +1181,16 @@ export default {
         <h3 class="test-section-sub-title">Default</h3>
         <SettingButton />
         <SettingButton tagName="a" href="" />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Pin Button</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <PinButton />
+        <PinButton tagName="a" href="" />
+        <PinButton :active="true" />
       </div>
     </section>
 
@@ -7641,8 +7650,14 @@ export default {
                   </span>
                 </span>
                 <span :class="$style['board__info']">
-                  <span :class="$style['board__info-date']">2021.03.16</span>
-                  <span :class="$style['board__info-hits']">조회 18</span>
+                  <span :class="$style['board__info-item']">2021.03.16</span>
+                  <span
+                    :class="[
+                      $style['board__info-item'],
+                      $style['board__info-item--hits'],
+                    ]"
+                    >조회 18</span
+                  >
                 </span>
               </RouterLink>
             </li>
@@ -7654,8 +7669,14 @@ export default {
                   </span>
                 </span>
                 <span :class="$style['board__info']">
-                  <span :class="$style['board__info-date']">2021.03.16</span>
-                  <span :class="$style['board__info-hits']">조회 18</span>
+                  <span :class="$style['board__info-item']">2021.03.16</span>
+                  <span
+                    :class="[
+                      $style['board__info-item'],
+                      $style['board__info-item--hits'],
+                    ]"
+                    >조회 18</span
+                  >
                 </span>
               </RouterLink>
             </li>
@@ -7685,6 +7706,12 @@ export default {
               하나캐피탈과 함께 알아봐요!
             </h4>
             <p :class="$style['board-detail__sub']">2022.08.09</p>
+            <div :class="$style['board-detail__sub']">
+              <div :class="$style['board-detail__sub-list']">
+                <div :class="$style['board-detail__sub-item']">2021.03.16</div>
+                <div :class="$style['board-detail__sub-item']">조회 18</div>
+              </div>
+            </div>
           </div>
 
           <section :class="$style['board-detail__contents']">
@@ -7719,43 +7746,6 @@ export default {
               </li>
             </ul>
           </div>
-        </div>
-      </div>
-      <div class="test-section-sub">
-        <h3 class="test-section-sub-title">Flex Head</h3>
-        <div :class="$style['board-detail']">
-          <div
-            :class="[
-              $style['board-detail__head'],
-              $style['board-detail__head--flex'],
-            ]"
-          >
-            <div :class="$style['board-detail__head-block']">
-              <h2 :class="$style['board-detail__title']">첨부파일</h2>
-              <div :class="$style['board-detail__sub']">
-                <div :class="$style['board-detail__sub-list']">
-                  <div :class="$style['board-detail__sub-item']">
-                    2021.03.16
-                  </div>
-                  <div :class="$style['board-detail__sub-item']">조회 18</div>
-                </div>
-              </div>
-            </div>
-            <!-- Case : 일반 게시물일 경우 -->
-            <div :class="$style['board-detail__head-icon']">
-              <IconPin />
-            </div>
-            <!-- //Case : 일반 게시물일 경우 -->
-            <!-- Case : 중요 지정된 게시물일 경우 -->
-            <div :class="$style['board-detail__head-icon']">
-              <IconPinOn />
-            </div>
-            <!-- //Case : 중요 지정된 게시물일 경우 -->
-          </div>
-
-          <section :class="$style['board-detail__contents']">
-            //게시물 내용 노출
-          </section>
         </div>
       </div>
     </section>
@@ -9965,6 +9955,60 @@ export default {
                 </span>
                 <span :class="$style['share-list__text']">열기</span>
               </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">File List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <div :class="$style['file-list']">
+          <ul :class="$style['file-list__list']">
+            <li :class="$style['file-list__item']">
+              <a
+                href="/foo/bar.pdf"
+                :class="$style['file-list__head']"
+                download
+              >
+                <span :class="$style['file-list__sub']">[파일]</span>
+                <span :class="$style['file-list__name']"
+                  >2020년형_avante-price-20210331.jpg</span
+                >
+              </a>
+              <div :class="$style['file-list__img']">
+                <img src="/images/_dummy/box-detail.png" alt="" />
+              </div>
+            </li>
+            <li :class="$style['file-list__item']">
+              <a
+                href="/foo/bar.pdf"
+                :class="$style['file-list__head']"
+                download
+              >
+                <span :class="$style['file-list__sub']">[파일]</span>
+                <span :class="$style['file-list__name']"
+                  >2020년형_avante-price-20210331.pdf</span
+                >
+              </a>
+            </li>
+            <li :class="$style['file-list__item']">
+              <a
+                href="/foo/bar.pdf"
+                :class="$style['file-list__head']"
+                download
+              >
+                <span :class="$style['file-list__sub']">[파일]</span>
+                <span :class="$style['file-list__name']"
+                  >2020년형_avante-price-20210331.jpg</span
+                >
+              </a>
+              <div :class="$style['file-list__img']">
+                <img src="/images/_dummy/box-detail.png" alt="" />
+              </div>
             </li>
           </ul>
         </div>

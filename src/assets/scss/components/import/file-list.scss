@@ -1,0 +1,45 @@
+.file-list {
+  display: block;
+
+  &__list {
+    @include reset-list;
+  }
+
+  &__item {
+    & + & {
+      margin-top: 20px;
+    }
+  }
+
+  &__head {
+    display: flex;
+    color: inherit;
+    text-decoration: none;
+    @include font-size-default(14);
+  }
+
+  &__sub {
+    display: block;
+    flex: none;
+    margin-right: 4px;
+    color: $color-gray-70;
+  }
+
+  &__name {
+    display: block;
+    flex: 1;
+    min-width: 0;
+    color: $color-gray-90;
+  }
+
+  &__img {
+    margin-top: 16px;
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+  }
+}

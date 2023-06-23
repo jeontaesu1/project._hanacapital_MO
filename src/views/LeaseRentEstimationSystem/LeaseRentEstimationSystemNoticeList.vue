@@ -45,7 +45,7 @@ export default {
     onMounted(() => {
       store.ui.header.setTitle(() => '공지사항(즉시출고)');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => ['menu']);
+      store.ui.header.setRightButtons(() => []);
     });
 
     onUnmounted(() => {
@@ -66,7 +66,13 @@ export default {
         }"
       >
         <ButtonListItem>
-          <BasicButton :line="true" theme="quaternary">글쓰기</BasicButton>
+          <BasicButton
+            :line="true"
+            theme="quaternary"
+            tagName="RouterLink"
+            to="/lease-rent-estimation-system/notice-edit"
+            >글쓰기</BasicButton
+          >
         </ButtonListItem>
       </ButtonList>
 
@@ -108,7 +114,7 @@ export default {
 
     <div class="contents-wrap">
       <p class="text-body-4 font-weight-light color-gray-secondary">
-        <strong class="font-weight-medium color-green">0</strong> 건
+        <strong class="font-weight-medium color-green">999</strong> 건
       </p>
       <BasicHr
         theme="quaternary"
@@ -137,12 +143,19 @@ export default {
                 </span>
               </span>
               <span :class="$style['board__info']">
-                <span :class="$style['board__info-date']">2021.03.16</span>
-                <span :class="$style['board__info-hits']">조회 18</span>
+                <span :class="$style['board__info-item']">2021.03.16</span>
+                <span
+                  :class="[
+                    $style['board__info-item'],
+                    $style['board__info-item--hits'],
+                  ]"
+                  >조회 18</span
+                >
               </span>
             </RouterLink>
           </li>
           <!-- // Case : 중요 지정된 게시물 -->
+
           <!-- Case : 노출 중지된 게시물 - 관리자 권한 없는 계정은 미노출 -->
           <li :class="[$style['board__item'], $style['board__item--hidden']]">
             <RouterLink
@@ -155,13 +168,20 @@ export default {
                 </span>
               </span>
               <span :class="$style['board__info']">
-                <span :class="$style['board__info-date']">2021.03.16</span>
-                <span :class="$style['board__info-hits']">조회 18</span>
+                <span :class="$style['board__info-item']">2021.03.16</span>
+                <span
+                  :class="[
+                    $style['board__info-item'],
+                    $style['board__info-item--hits'],
+                  ]"
+                  >조회 18</span
+                >
               </span>
             </RouterLink>
           </li>
           <!-- // Case : 노출 중지된 게시물 - 관리자 권한 없는 계정은 미노출 -->
-          <li :class="$style['board__item']">
+
+          <li v-for="i in 3" :key="i" :class="$style['board__item']">
             <RouterLink
               to="/lease-rent-estimation-system/notice-detail"
               :class="$style['board__link']"
@@ -172,8 +192,14 @@ export default {
                 </span>
               </span>
               <span :class="$style['board__info']">
-                <span :class="$style['board__info-date']">2021.03.16</span>
-                <span :class="$style['board__info-hits']">조회 18</span>
+                <span :class="$style['board__info-item']">2021.03.16</span>
+                <span
+                  :class="[
+                    $style['board__info-item'],
+                    $style['board__info-item--hits'],
+                  ]"
+                  >조회 18</span
+                >
               </span>
             </RouterLink>
           </li>

@@ -19,8 +19,7 @@
 
     &--hidden {
       .board__title-text,
-      .board__info-date,
-      .board__info-hits {
+      .board__info-item {
         color: $color-gray-40;
       }
     }
@@ -52,7 +51,6 @@
     min-width: 0;
     margin: 0;
     @include font-size-default(16);
-    color: $color-black;
     font-weight: 500;
     white-space: nowrap;
     overflow: hidden;
@@ -83,7 +81,6 @@
   &__text {
     display: block;
     @include font-size-default(13);
-    color: $color-black;
     font-weight: 300;
     white-space: nowrap;
     overflow: hidden;
@@ -95,32 +92,32 @@
     align-items: center;
     margin-top: 4px;
 
-    &-date {
-      display: block;
-      @include font-size-default(13);
-      color: $color-black;
-      font-weight: 300;
-    }
-
-    &-hits {
-      display: block;
+    &-item {
+      flex: none;
       position: relative;
-      padding-left: 13px;
+      display: block;
       @include font-size-default(13);
-      color: $color-gray-70;
       font-weight: 300;
 
-      &::before {
-        content: '';
-        display: block;
-        position: absolute;
-        z-index: 1;
-        top: 50%;
-        left: 6px;
-        margin-top: -6px;
-        width: 1px;
-        height: 12px;
-        background-color: $color-gray-30;
+      & + & {
+        padding-left: 13px;
+
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          z-index: 1;
+          top: 50%;
+          left: 6px;
+          margin-top: -6px;
+          width: 1px;
+          height: 12px;
+          background-color: $color-gray-30;
+        }
+      }
+
+      &--hits {
+        color: $color-gray-70;
       }
     }
   }
