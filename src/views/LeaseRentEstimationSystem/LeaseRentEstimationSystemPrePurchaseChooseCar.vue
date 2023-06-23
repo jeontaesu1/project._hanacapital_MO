@@ -102,15 +102,15 @@ export default {
     <FormList
       :classNames="{ wrap: 'row-margin-contents row-margin-bottom-none' }"
     >
-      <!-- Case : 제휴사 검색후 :disabled="false" 변경 -->
+      <!-- Case : 제휴사 검색전 :disabled="true" 검색후 :disabled="false" -->
       <FormListItem
         titleText="제휴사"
         target="#leaseRentEstimationSystemPrePurchaseChooseCarAffiliate"
         :selectOnly="true"
-        :disabled="true"
+        :disabled="false"
       >
         <FormInvalid :error="state.affiliateError">
-          <InputBlock :error="state.affiliateError" :disabled="true">
+          <InputBlock :error="state.affiliateError" :disabled="false">
             <InputBlockCell :flexible="true">
               <BasicSelect
                 :option="[
@@ -130,14 +130,14 @@ export default {
                 buttonTitle="제휴사 선택하기"
                 layerTitle="제휴사를 선택해 주세요"
                 buttonId="leaseRentEstimationSystemPrePurchaseChooseCarAffiliate"
-                :disabled="true"
+                :disabled="false"
               />
             </InputBlockCell>
           </InputBlock>
           <FormInvalidMessage>Error Message</FormInvalidMessage>
         </FormInvalid>
       </FormListItem>
-      <!-- // Case : 제휴사 검색후 :disabled="false" 변경 -->
+      <!-- // Case : 제휴사 검색전 :disabled="true" 검색후 :disabled="false" -->
 
       <FormListItem
         titleText="브랜드"

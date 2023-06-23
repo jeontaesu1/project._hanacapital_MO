@@ -1452,7 +1452,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/inventory-finance-url-state-001',
-        status: 'partend',
+        status: 'end',
         create: '2023.05.05',
         log: [
           {
