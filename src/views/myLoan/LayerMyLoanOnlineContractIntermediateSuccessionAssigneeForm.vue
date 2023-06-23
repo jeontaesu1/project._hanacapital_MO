@@ -123,7 +123,7 @@ export default {
                 <!-- DD : 보안 키패드 열렸을 때 :isFocused="true" props 추가 해서 포커싱 스타일 적용 -->
                 <SecurityInput
                   title="주민등록번호 뒤 7자리"
-                  :dot="[true, true, true, false, false, false, false]"
+                  :dot="[true, true, true, true, true, true, true]"
                   :disabled="true"
                 />
               </InputBlockCell>
