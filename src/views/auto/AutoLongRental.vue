@@ -73,13 +73,22 @@ export default {
     onMounted(() => {
       store.ui.header.setTitle(() => '장기렌터카');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => ['share']);
+      store.ui.header.setRightButtons(() => [
+        {
+          name: 'share',
+          onClick: () => {
+            alert('공유하기 클릭');
+          },
+        },
+      ]);
+      store.ui.header.setTheme(() => 'secondary');
     });
 
     onUnmounted(() => {
       store.ui.header.setTitle();
       store.ui.header.setLeftButtons();
       store.ui.header.setRightButtons();
+      store.ui.header.setTheme();
     });
   },
 };
@@ -158,7 +167,7 @@ export default {
         <h3 class="text-title-1 font-weight-medium row-margin-item">
           세금보험료 걱정 NO!
         </h3>
-        <p class="text-body-3">
+        <p class="text-body-3 color-gray-tertiary">
           계약기간동안 자동차세와<br />
           각종 보험료를 절약해보세요.
         </p>
@@ -171,7 +180,7 @@ export default {
         <h3 class="text-title-1 font-weight-medium row-margin-item">
           맞춤요금제 선택!
         </h3>
-        <p class="text-body-3">
+        <p class="text-body-3 color-gray-tertiary">
           나에게 맞는 상품을 설정하여<br />
           월납입부담을 줄여보세요.
         </p>
@@ -184,7 +193,7 @@ export default {
         <h3 class="text-title-1 font-weight-medium row-margin-item">
           초기비용 ZERO!
         </h3>
-        <p class="text-body-3">
+        <p class="text-body-3 color-gray-tertiary">
           초기비용 걱정없이 다이렉트 렌트카로<br />
           저렴하게 이용해보세요.
         </p>
