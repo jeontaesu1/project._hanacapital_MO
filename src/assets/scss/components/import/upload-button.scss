@@ -9,6 +9,25 @@
     height: 100%;
     opacity: 0;
     box-sizing: border-box;
+
+    &[disabled] {
+      cursor: default;
+
+      & + .upload-button__label {
+        .upload-button__img {
+          opacity: 0.5;
+        }
+
+        .upload-button__text {
+          color: $color-gray-40;
+          cursor: default;
+
+          &::before {
+            background-image: url('@/assets/images/icon/add-disabled.svg');
+          }
+        }
+      }
+    }
   }
 
   &__label {
