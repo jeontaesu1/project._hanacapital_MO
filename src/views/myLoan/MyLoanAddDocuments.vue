@@ -90,7 +90,7 @@ export default {
             <div :class="$style['upload-file__name']">첨부파일명.jpg</div>
           </div>
           <div :class="$style['upload-file__button']">
-            <BasicButton line="true" theme="quaternary" size="mini">
+            <BasicButton :line="true" theme="quaternary" size="mini">
               삭제
             </BasicButton>
           </div>
@@ -105,7 +105,7 @@ export default {
             </div>
           </div>
           <div :class="$style['upload-file__button']">
-            <BasicButton line="true" theme="quaternary" size="mini">
+            <BasicButton :line="true" theme="quaternary" size="mini">
               삭제
             </BasicButton>
           </div>
@@ -158,7 +158,7 @@ export default {
         }"
       >
         <ButtonListItem>
-          <BasicButton line="true" theme="quaternary">
+          <BasicButton :line="true" theme="quaternary">
             서류등록 내역
           </BasicButton>
         </ButtonListItem>

@@ -2084,11 +2084,11 @@ export default {
         }"
       >
         <ButtonListItem>
-          <BasicButton theme="quaternary" line="true">견적수정</BasicButton>
+          <BasicButton theme="quaternary" :line="true">견적수정</BasicButton>
         </ButtonListItem>
         <!-- Case : 견적 개수 3개일 경우, 미노출 -->
         <ButtonListItem>
-          <BasicButton theme="quaternary" line="true" :minSide="true">
+          <BasicButton theme="quaternary" :line="true" :minSide="true">
             견적추가 (최대 3개)
           </BasicButton>
         </ButtonListItem>
