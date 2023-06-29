@@ -14,8 +14,8 @@ import TextButton from '@/components/ui/button/TextButton.vue';
 import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 
 import IconTell from '@/assets/images/icon/tell.svg?component';
-import IconCar from '@/assets/images/icon/car.svg?component';
-import IconBuilding from '@/assets/images/icon/building.svg?component';
+import IconCarRent from '@/assets/images/icon/car-rent.svg?component';
+import IconCarSecurity from '@/assets/images/icon/car-security.svg?component';
 import iconInformation from '@/assets/images/icon/information.svg?component';
 
 export default {
@@ -31,8 +31,8 @@ export default {
     TextButton,
     RoundStatus,
     IconTell,
-    IconCar,
-    IconBuilding,
+    IconCarRent,
+    IconCarSecurity,
     iconInformation,
   },
   setup() {
@@ -96,7 +96,9 @@ export default {
         <ul :class="$style['icon-list__list']">
           <li :class="$style['icon-list__item']">
             <button type="button" :class="$style['icon-list__block']">
-              <span :class="$style['icon-list__icon']"><IconBuilding /></span>
+              <span :class="$style['icon-list__icon']">
+                <IconCarSecurity />
+              </span>
               <span :class="$style['icon-list__content']">
                 <span :class="$style['icon-list__text']"
                   >다양한 혜택, 편리한 내차 이용</span
@@ -115,7 +117,7 @@ export default {
           </li>
           <li :class="$style['icon-list__item']">
             <RouterLink to="" :class="$style['icon-list__block']">
-              <span :class="$style['icon-list__icon']"><IconCar /></span>
+              <span :class="$style['icon-list__icon']"><IconCarRent /></span>
               <span :class="$style['icon-list__content']">
                 <span :class="$style['icon-list__text']"
                   >비용 NO! 보험 NO! 내차 OK!</span

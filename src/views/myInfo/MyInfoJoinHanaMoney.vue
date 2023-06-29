@@ -11,7 +11,12 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import ImgSample from '@/assets/images/_dummy/sample-gnb.svg?component';
+import ImgPoint from '@/assets/images/icon/point.svg?component';
+import ImgAddMoney from '@/assets/images/icon/add-money.svg?component';
+import ImgCommissionRate from '@/assets/images/icon/commission-rate.svg?component';
+import ImgBarcode from '@/assets/images/icon/barcode.svg?component';
+import ImgRemittance from '@/assets/images/icon/remittance.svg?component';
+import ImgDutchPay from '@/assets/images/icon/dutch-pay.svg?component';
 
 export default {
   components: {
@@ -22,7 +27,12 @@ export default {
     ButtonList,
     ButtonListItem,
 
-    ImgSample,
+    ImgPoint,
+    ImgAddMoney,
+    ImgCommissionRate,
+    ImgBarcode,
+    ImgRemittance,
+    ImgDutchPay,
   },
   setup() {
     const store = {
@@ -60,7 +70,7 @@ export default {
         <ul :class="$style['authority__list']">
           <li :class="$style['authority__item']">
             <div :class="$style['authority__icon']">
-              <ImgSample />
+              <ImgPoint />
             </div>
             <div :class="$style['authority__contents']">
               <div :class="$style['authority__head']">
@@ -74,7 +84,7 @@ export default {
           </li>
           <li :class="$style['authority__item']">
             <div :class="$style['authority__icon']">
-              <ImgSample />
+              <ImgAddMoney />
             </div>
             <div :class="$style['authority__contents']">
               <div :class="$style['authority__head']">
@@ -88,7 +98,7 @@ export default {
           </li>
           <li :class="$style['authority__item']">
             <div :class="$style['authority__icon']">
-              <ImgSample />
+              <ImgCommissionRate />
             </div>
             <div :class="$style['authority__contents']">
               <div :class="$style['authority__head']">
@@ -102,7 +112,7 @@ export default {
           </li>
           <li :class="$style['authority__item']">
             <div :class="$style['authority__icon']">
-              <ImgSample />
+              <ImgBarcode />
             </div>
             <div :class="$style['authority__contents']">
               <div :class="$style['authority__head']">
@@ -116,7 +126,7 @@ export default {
           </li>
           <li :class="$style['authority__item']">
             <div :class="$style['authority__icon']">
-              <ImgSample />
+              <ImgRemittance />
             </div>
             <div :class="$style['authority__contents']">
               <div :class="$style['authority__head']">
@@ -130,7 +140,7 @@ export default {
           </li>
           <li :class="$style['authority__item']">
             <div :class="$style['authority__icon']">
-              <ImgSample />
+              <ImgDutchPay />
             </div>
             <div :class="$style['authority__contents']">
               <div :class="$style['authority__head']">

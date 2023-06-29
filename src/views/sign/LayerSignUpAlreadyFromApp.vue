@@ -50,7 +50,7 @@ export default {
       </template>
 
       <IllustInfo>
-        <IllustObject type="complete" />
+        <IllustObject type="error" />
         <IllustInfoTitle>
           김하나님은 하나캐피탈 앱에서<br />
           <strong>회원으로 가입하셨습니다</strong>

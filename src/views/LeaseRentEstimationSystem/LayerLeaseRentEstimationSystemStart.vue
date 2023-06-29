@@ -60,7 +60,7 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <IllustObject />
+      <IllustObject type="checklist" />
 
       <template v-slot:foot>
         <ButtonList

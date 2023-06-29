@@ -8,7 +8,9 @@ import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 
-import IconSample from '@/assets/images/_dummy/sample.svg?component';
+import IconPdfDownload from '@/assets/images/icon/pdf-download.svg?component';
+import IconJpgDownload from '@/assets/images/icon/jpg-download.svg?component';
+import IconPrint from '@/assets/images/icon/print.svg?component';
 
 export default {
   components: {
@@ -17,7 +19,9 @@ export default {
     FullPopupHead,
     PopupTitle,
     PopupButton,
-    IconSample,
+    IconPdfDownload,
+    IconJpgDownload,
+    IconPrint,
   },
   setup() {
     const layer = ref(null);
@@ -50,7 +54,7 @@ export default {
               :class="$style['share-list__button']"
             >
               <span :class="$style['share-list__icon']">
-                <IconSample />
+                <IconPdfDownload />
               </span>
               <span :class="$style['share-list__text']">PDF 다운로드</span>
             </a>
@@ -62,7 +66,7 @@ export default {
               :class="$style['share-list__button']"
             >
               <span :class="$style['share-list__icon']">
-                <IconSample />
+                <IconJpgDownload />
               </span>
               <span :class="$style['share-list__text']">JPG 다운로드</span>
             </a>
@@ -70,7 +74,7 @@ export default {
           <li :class="$style['share-list__item']">
             <button type="button" :class="$style['share-list__button']">
               <span :class="$style['share-list__icon']">
-                <IconSample />
+                <IconPrint />
               </span>
               <span :class="$style['share-list__text']">인쇄</span>
             </button>
