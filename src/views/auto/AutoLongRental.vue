@@ -431,7 +431,13 @@ export default {
               </p>
 
               <ul :class="[$style['basic-list'], 'row-margin-item']">
-                <li :class="$style['basic-list__item']">
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-gray-tertiary',
+                    'font-weight-regular',
+                  ]"
+                >
                   <div :class="$style['basic-list__symbol']">※</div>
                   <div :class="$style['basic-list__content']">
                     잔여렌트료 = 앞면표기 "월렌트료" X (미청구 잔여개월수 -

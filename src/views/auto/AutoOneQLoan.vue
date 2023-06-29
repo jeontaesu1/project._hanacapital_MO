@@ -143,9 +143,7 @@ export default {
               <KeyValueTitle>대상</KeyValueTitle>
               <KeyValueText>
                 <div>국산차 전 브랜드</div>
-                <div
-                  class="text-body-5 font-weight-light color-gray-tertiary row-margin-mini"
-                >
+                <div class="text-body-5 color-gray-tertiary row-margin-mini">
                   개인손님
                 </div>
               </KeyValueText>
@@ -189,6 +187,7 @@ export default {
                     $style['basic-list__item'],
                     'color-black',
                     'text-body-4',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']">-</div>
@@ -209,28 +208,12 @@ export default {
           <KeyValueItem>
             <KeyValueTitle>연체이자율</KeyValueTitle>
             <KeyValueText>
-              <ul
-                :class="[$style['basic-list'], $style['basic-list--regular']]"
+              <div>약정이율 + 3%</div>
+              <div
+                class="text-body-4 font-weight-light color-gray-tertiary row-margin-mini"
               >
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'color-black',
-                    'text-body-2 ',
-                    'font-weight-regular',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']"></div>
-                  <div :class="$style['basic-list__content']">
-                    <div>약정이율 + 3%</div>
-                    <div
-                      class="text-body-4 font-weight-light color-gray-tertiary row-margin-mini"
-                    >
-                      (법정최고금리 연20% 이내)
-                    </div>
-                  </div>
-                </li>
-              </ul>
+                (법정최고금리 연20% 이내)
+              </div>
             </KeyValueText>
           </KeyValueItem>
 
@@ -240,7 +223,11 @@ export default {
               <div>이자납일일에 납입(월할, 후취)</div>
               <div :class="[$style['basic-list'], 'row-margin-item']">
                 <div
-                  :class="[$style['basic-list__item'], 'color-gray-tertiary']"
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-gray-tertiary',
+                    'font-weight-regular',
+                  ]"
                 >
                   <div :class="$style['basic-list__symbol']">※</div>
                   <div :class="$style['basic-list__content']">
@@ -264,6 +251,7 @@ export default {
                     $style['basic-list__item'],
                     'color-black',
                     'text-body-4',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']">-</div>
@@ -276,6 +264,7 @@ export default {
                     $style['basic-list__item'],
                     'color-black',
                     'text-body-4',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']">-</div>
@@ -288,6 +277,7 @@ export default {
                     $style['basic-list__item'],
                     'color-black',
                     'text-body-4',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']">-</div>
@@ -300,6 +290,7 @@ export default {
                     $style['basic-list__item'],
                     'color-black',
                     'text-body-4',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']">-</div>
@@ -389,7 +380,13 @@ export default {
 
       <!-- 유의사항 -->
       <UiTabPanel name="personalLoanEHanaTab003">
-        <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+        <ul
+          :class="[
+            $style['basic-list'],
+            $style['basic-list--regular'],
+            $style['basic-list--regular-margin'],
+          ]"
+        >
           <li
             :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
           >

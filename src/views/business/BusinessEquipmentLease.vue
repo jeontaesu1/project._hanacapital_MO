@@ -189,15 +189,33 @@ export default {
               >
                 (법정최고금리 연 20% 이내)
               </div>
-              <ul :class="[$style['basic-list'], 'row-margin-item']">
-                <li :class="[$style['basic-list__item'], 'color-green']">
+              <ul
+                :class="[
+                  $style['basic-list'],
+                  $style['basic-list--small-margin'],
+                  'row-margin-item',
+                ]"
+              >
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-green',
+                    'font-weight-regular',
+                  ]"
+                >
                   <div :class="$style['basic-list__symbol']">※</div>
                   <div :class="$style['basic-list__content']">
                     단, 연체발생시점에 약정이율이 없는 경우 약정금리는 상법상
                     상사법정이율과 상호금융 가계자금대출금리*중 높은 금리 적용
                   </div>
                 </li>
-                <li :class="[$style['basic-list__item'], 'color-green']">
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-green',
+                    'font-weight-regular',
+                  ]"
+                >
                   <div :class="$style['basic-list__symbol']">※</div>
                   <div :class="$style['basic-list__content']">
                     한국은행에서 매월 발표하는 가장 최근의 비은행 금융기관
@@ -261,14 +279,19 @@ export default {
                       <div :class="$style['contents-list__title']">
                         <div>공통서류</div>
 
-                        <ul :class="[$style['basic-list'], 'row-margin-item']">
+                        <ul
+                          :class="[
+                            $style['basic-list'],
+                            $style['basic-list--small-margin'],
+                            'row-margin-item',
+                          ]"
+                        >
                           <li
                             :class="[
                               $style['basic-list__item'],
                               'text-body-4',
                               'color-black',
                               'font-weight-regular',
-                              'row-margin-small',
                             ]"
                           >
                             <div :class="$style['basic-list__symbol']">-</div>
@@ -282,7 +305,6 @@ export default {
                               'text-body-4',
                               'color-black',
                               'font-weight-regular',
-                              'row-margin-small',
                             ]"
                           >
                             <div :class="$style['basic-list__symbol']">-</div>
@@ -296,7 +318,6 @@ export default {
                               'text-body-4',
                               'color-black',
                               'font-weight-regular',
-                              'row-margin-small',
                             ]"
                           >
                             <div :class="$style['basic-list__symbol']">-</div>
@@ -310,7 +331,6 @@ export default {
                               'text-body-4',
                               'color-black',
                               'font-weight-regular',
-                              'row-margin-small',
                             ]"
                           >
                             <div :class="$style['basic-list__symbol']">-</div>
@@ -324,7 +344,6 @@ export default {
                               'text-body-4',
                               'color-black',
                               'font-weight-regular',
-                              'row-margin-small',
                             ]"
                           >
                             <div :class="$style['basic-list__symbol']">-</div>
@@ -338,7 +357,6 @@ export default {
                               'text-body-4',
                               'color-black',
                               'font-weight-regular',
-                              'row-margin-small',
                             ]"
                           >
                             <div :class="$style['basic-list__symbol']">-</div>
@@ -352,7 +370,6 @@ export default {
                               'text-body-4',
                               'color-black',
                               'font-weight-regular',
-                              'row-margin-small',
                             ]"
                           >
                             <div :class="$style['basic-list__symbol']">-</div>
@@ -370,14 +387,19 @@ export default {
                       <div :class="$style['contents-list__title']">
                         <div>법인추가서류</div>
 
-                        <ul :class="[$style['basic-list'], 'row-margin-item']">
+                        <ul
+                          :class="[
+                            $style['basic-list'],
+                            $style['basic-list--small-margin'],
+                            'row-margin-item',
+                          ]"
+                        >
                           <li
                             :class="[
                               $style['basic-list__item'],
                               'text-body-4',
                               'color-black',
                               'font-weight-regular',
-                              'row-margin-small',
                             ]"
                           >
                             <div :class="$style['basic-list__symbol']">-</div>
@@ -391,7 +413,6 @@ export default {
                               'text-body-4',
                               'color-black',
                               'font-weight-regular',
-                              'row-margin-small',
                             ]"
                           >
                             <div :class="$style['basic-list__symbol']">-</div>
@@ -405,7 +426,6 @@ export default {
                               'text-body-4',
                               'color-black',
                               'font-weight-regular',
-                              'row-margin-small',
                             ]"
                           >
                             <div :class="$style['basic-list__symbol']">-</div>
@@ -419,7 +439,6 @@ export default {
                               'text-body-4',
                               'color-black',
                               'font-weight-regular',
-                              'row-margin-small',
                             ]"
                           >
                             <div :class="$style['basic-list__symbol']">-</div>
@@ -433,7 +452,6 @@ export default {
                               'text-body-4',
                               'color-black',
                               'font-weight-regular',
-                              'row-margin-small',
                             ]"
                           >
                             <div :class="$style['basic-list__symbol']">-</div>
@@ -447,7 +465,6 @@ export default {
                               'text-body-4',
                               'color-black',
                               'font-weight-regular',
-                              'row-margin-small',
                             ]"
                           >
                             <div :class="$style['basic-list__symbol']">-</div>
@@ -461,7 +478,6 @@ export default {
                               'text-body-4',
                               'color-black',
                               'font-weight-regular',
-                              'row-margin-small',
                             ]"
                           >
                             <div :class="$style['basic-list__symbol']">-</div>
@@ -475,7 +491,6 @@ export default {
                               'text-body-4',
                               'color-black',
                               'font-weight-regular',
-                              'row-margin-small',
                             ]"
                           >
                             <div :class="$style['basic-list__symbol']">-</div>
@@ -610,7 +625,13 @@ export default {
 
       <!-- 유의사항 -->
       <UiTabPanel name="personalLoanEHanaTab003">
-        <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+        <ul
+          :class="[
+            $style['basic-list'],
+            $style['basic-list--regular'],
+            $style['basic-list--regular-margin'],
+          ]"
+        >
           <li
             :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
           >

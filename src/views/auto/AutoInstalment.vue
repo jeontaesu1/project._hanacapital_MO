@@ -251,7 +251,11 @@ export default {
                 ]"
               >
                 <li
-                  :class="[$style['basic-list__item'], 'font-weight-regular']"
+                  :class="[
+                    $style['basic-list__item'],
+                    'font-weight-regular',
+                    'color-gray-tertiary',
+                  ]"
                 >
                   <div :class="$style['basic-list__symbol']">※</div>
                   <div :class="$style['basic-list__content']">
@@ -259,7 +263,11 @@ export default {
                   </div>
                 </li>
                 <li
-                  :class="[$style['basic-list__item'], 'font-weight-regular']"
+                  :class="[
+                    $style['basic-list__item'],
+                    'font-weight-regular',
+                    'color-gray-tertiary',
+                  ]"
                 >
                   <div :class="$style['basic-list__symbol']">※</div>
                   <div :class="$style['basic-list__content']">
@@ -320,7 +328,11 @@ export default {
 
               <div :class="[$style['basic-list'], 'row-margin-item']">
                 <div
-                  :class="[$style['basic-list__item'], 'font-weight-regular']"
+                  :class="[
+                    $style['basic-list__item'],
+                    'font-weight-regular',
+                    'color-gray-tertiary',
+                  ]"
                 >
                   <div :class="$style['basic-list__symbol']">※</div>
                   <div :class="$style['basic-list__content']">

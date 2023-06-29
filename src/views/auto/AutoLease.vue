@@ -211,9 +211,7 @@ export default {
               <KeyValueTitle>기간</KeyValueTitle>
               <KeyValueText>
                 <div>최저 연 0.0%~최고 연 6.9%</div>
-                <div
-                  class="text-body-5 font-weight-light color-gray-tertiary row-margin-mini"
-                >
+                <div class="text-body-5 color-gray-tertiary row-margin-mini">
                   (금융소비자의 개인신용평점에 따라 차등 적용)
                 </div>
               </KeyValueText>
@@ -436,7 +434,13 @@ export default {
                     </li>
                   </ol>
                   <div :class="[$style['basic-list'], 'row-margin-item']">
-                    <div :class="$style['basic-list__item']">
+                    <div
+                      :class="[
+                        $style['basic-list__item'],
+                        'font-weight-regular',
+                        'color-gray-tertiary',
+                      ]"
+                    >
                       <div :class="$style['basic-list__symbol']">※</div>
                       <div :class="$style['basic-list__content']">
                         단, 금융리스의 경우 대부업법에서 정하는 최고이자율을
@@ -509,7 +513,13 @@ export default {
                     </li>
                   </ol>
                   <div :class="[$style['basic-list'], 'row-margin-item']">
-                    <div :class="$style['basic-list__item']">
+                    <div
+                      :class="[
+                        $style['basic-list__item'],
+                        'font-weight-regular',
+                        'color-gray-tertiary',
+                      ]"
+                    >
                       <div :class="$style['basic-list__symbol']">※</div>
                       <div :class="$style['basic-list__content']">
                         단, 금융리스의 경우 대부업법에서 정하는 최고이자율을
@@ -615,7 +625,11 @@ export default {
 
               <div :class="[$style['basic-list'], 'row-margin-item']">
                 <div
-                  :class="[$style['basic-list__item'], 'color-gray-tertiary']"
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-gray-tertiary',
+                    'font-weight-regular',
+                  ]"
                 >
                   <div :class="$style['basic-list__symbol']">※</div>
                   <div :class="$style['basic-list__content']">
@@ -630,6 +644,7 @@ export default {
                           $style['basic-list__item'],
                           'text-body-5',
                           'color-black',
+                          'font-weight-regular',
                         ]"
                       >
                         <div :class="$style['basic-list__symbol']">-</div>
@@ -647,7 +662,7 @@ export default {
                                 $style['basic-list__item'],
                                 'text-body-5',
                                 'color-gray-tertiary',
-                                'font-weight-light',
+                                'font-weight-regular',
                               ]"
                             >
                               <div :class="$style['basic-list__symbol']">*</div>
@@ -681,6 +696,7 @@ export default {
                     $style['basic-list__item'],
                     'text-body-5',
                     'color-black',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']">-</div>
@@ -695,13 +711,25 @@ export default {
                   $style['basic-list--small-margin'],
                 ]"
               >
-                <li :class="$style['basic-list__item']">
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'font-weight-regular',
+                    'color-gray-tertiary',
+                  ]"
+                >
                   <div :class="$style['basic-list__symbol']">※</div>
                   <div :class="$style['basic-list__content']">
                     근저당설정은 개인신용평점에 따라 차등 적용
                   </div>
                 </li>
-                <li :class="$style['basic-list__item']">
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'font-weight-regular',
+                    'color-gray-tertiary',
+                  ]"
+                >
                   <div :class="$style['basic-list__symbol']">※</div>
                   <div :class="$style['basic-list__content']">
                     근저당설정비용 당사 부담 / 해지비용 금융소비자 부담
@@ -719,7 +747,13 @@ export default {
               </p>
 
               <ul :class="[$style['basic-list'], 'row-margin-item']">
-                <li :class="[$style['basic-list__item'], 'color-black']">
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-black',
+                    'font-weight-regular',
+                  ]"
+                >
                   <div :class="$style['basic-list__symbol']">-</div>
                   <div :class="$style['basic-list__content']">인지세 1만원</div>
                 </li>

@@ -187,7 +187,7 @@ export default {
           </p>
           <!-- //case : 렌트 -->
 
-          <NoticeText class="row-margin-item">
+          <NoticeText class="row-margin-item color-gray-tertiary">
             주의<br />심사비용 등 승계 조건에 따라 소요되는 비용으로
             승계수수료가 부과됩니다.</NoticeText
           >
@@ -214,7 +214,7 @@ export default {
                     <h4 class="text-body-2 font-weight-medium row-margin-mini">
                       양도인
                     </h4>
-                    <p class="text-body-3 color-gray">
+                    <p class="text-body-5 color-gray">
                       리스 승계 시 위약금이 발생하지 않아<br />유리합니다.
                     </p>
                   </div>
@@ -231,7 +231,7 @@ export default {
                     <h4 class="text-body-2 font-weight-medium row-margin-mini">
                       양수인
                     </h4>
-                    <p class="text-body-3 color-gray">
+                    <p class="text-body-5 color-gray">
                       초기비용이 상대적으로 저렴하고, 등록 비용이 별도로
                       발생하지 않아 유리합니다.
                     </p>
@@ -262,9 +262,7 @@ export default {
               <KeyValueTitle>한도</KeyValueTitle>
               <KeyValueText>
                 <div>금융리스 : 양도인 적용금리 동일 적용</div>
-                <div
-                  class="text-body-5 font-weight-light color-gray-tertiary row-margin-mini"
-                >
+                <div class="text-body-5 color-gray-tertiary row-margin-mini">
                   (동일조건승계)
                 </div>
               </KeyValueText>
@@ -324,7 +322,7 @@ export default {
             <KeyValueText>
               <div>원리금균등상환</div>
               <div
-                class="text-body-5 font-weight-light color-gray-tertiary row-margin-mini"
+                class="text-body-4 font-weight-light color-gray-tertiary row-margin-mini"
               >
                 월 리스트 자동이체(통장)
               </div>
@@ -341,7 +339,7 @@ export default {
             <KeyValueText>
               <div>하나캐피탈</div>
               <div
-                class="text-body-5 font-weight-light color-gray-tertiary row-margin-mini"
+                class="text-body-4 font-weight-light color-gray-tertiary row-margin-mini"
               >
                 단, 이용자명의 시 저당설정 추가
               </div>
@@ -493,7 +491,13 @@ export default {
                           </li>
                         </ul>
                         <div :class="[$style['basic-list'], 'row-margin-mini']">
-                          <div :class="$style['basic-list__item']">
+                          <div
+                            :class="[
+                              $style['basic-list__item'],
+                              'font-weight-regular',
+                              'color-gray-tertiary',
+                            ]"
+                          >
                             <div :class="$style['basic-list__symbol']">※</div>
                             <div :class="$style['basic-list__content']">
                               단, 금융리스의 경우 대부업법에서 정하는
@@ -537,7 +541,7 @@ export default {
                             월수/리스기간 전체월수)
                           </div>
                           <div
-                            class="text-body-5 font-weight-light color-gray-tertiary row-margin-mini"
+                            class="text-body-5 color-gray-tertiary row-margin-mini"
                           >
                             (min : 500,000원, max : 900,000원)
                           </div>
@@ -545,7 +549,14 @@ export default {
                       </li>
                     </ul>
                     <div :class="[$style['basic-list'], 'row-margin-mini']">
-                      <div :class="[$style['basic-list__item'], 'text-body-5']">
+                      <div
+                        :class="[
+                          $style['basic-list__item'],
+                          'text-body-5',
+                          'font-weight-regular',
+                          'color-gray-tertiary',
+                        ]"
+                      >
                         <div :class="$style['basic-list__symbol']">※</div>
                         <div :class="$style['basic-list__content']">
                           단, 금융리스의 경우 대부업법에서 정하는 최고이자율을
@@ -557,7 +568,14 @@ export default {
                 </li>
               </ul>
               <ul :class="[$style['basic-list'], 'row-margin-item-group']">
-                <li :class="[$style['basic-list__item'], 'text-body-5']">
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'text-body-5',
+                    'font-weight-regular',
+                    'color-gray-tertiary',
+                  ]"
+                >
                   <div :class="$style['basic-list__symbol']">※</div>
                   <div :class="$style['basic-list__content']">
                     주1) ‘중도해지손해배상금’은 고객이 계약의 중도해지를 이유로
@@ -566,7 +584,14 @@ export default {
                     배상하기 위하여 지급해야 하는 금액을 의미합니다.
                   </div>
                 </li>
-                <li :class="[$style['basic-list__item'], 'text-body-5']">
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'text-body-5',
+                    'font-weight-regular',
+                    'color-gray-tertiary',
+                  ]"
+                >
                   <div :class="$style['basic-list__symbol']">※</div>
                   <div :class="$style['basic-list__content']">
                     주2) 규정손해배상금은 고객이 계약의 중도해지를 이유로
@@ -607,7 +632,11 @@ export default {
               </ul>
               <div :class="[$style['basic-list'], 'row-margin-item']">
                 <div
-                  :class="[$style['basic-list__item'], 'color-gray-tertiary']"
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-gray-tertiary',
+                    'font-weight-regular',
+                  ]"
                 >
                   <div :class="$style['basic-list__symbol']">※</div>
                   <div :class="$style['basic-list__content']">
@@ -762,7 +791,13 @@ export default {
             <KeyValueText>
               <div>중도해지수수료율=잔여렌트료X해지위약금율</div>
               <div :class="[$style['basic-list'], 'row-margin-mini']">
-                <div :class="$style['basic-list__item']">
+                <div
+                  :class="[
+                    $style['basic-list__item'],
+                    'font-weight-regular',
+                    'color-gray-tertiary',
+                  ]"
+                >
                   <div :class="$style['basic-list__symbol']">※</div>
                   <div :class="$style['basic-list__content']">
                     잔여렌트료=앞면표기’월렌트료’X(미청구
@@ -854,8 +889,15 @@ export default {
               >
                 (일렌트료=“월렌트료”/30)
               </div>
-              <div :class="[$style['basic-list'], 'row-margin-item']">
-                <div :class="$style['basic-list__item']">
+              <div :class="[$style['basic-list'], 'row-margin-mini']">
+                <div
+                  :class="[
+                    $style['basic-list__item'],
+                    'font-weight-regular',
+                    'color-gray-tertiary',
+                    'text-body-5',
+                  ]"
+                >
                   <div :class="$style['basic-list__symbol']">※</div>
                   <div :class="$style['basic-list__content']">
                     차량반환 시 차량원상복구가 원칙이며, 이에 따른 비용이 발생할
@@ -991,7 +1033,13 @@ export default {
 
       <!-- 유의사항 -->
       <UiTabPanel name="personalLoanEHanaTab003">
-        <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+        <ul
+          :class="[
+            $style['basic-list'],
+            $style['basic-list--regular'],
+            $style['basic-list--regular-margin'],
+          ]"
+        >
           <li
             :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
           >
@@ -1095,15 +1143,14 @@ export default {
         <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']"></div>
           <div :class="$style['basic-list__content']">
-            준법심의필 22-17187<br />
-            (2022.05.09~2023.05.08)
+            준법심의필 22-1197 <br />(2022.05.01~2023.04.30)
           </div>
         </li>
         <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']"></div>
           <div :class="$style['basic-list__content']">
-            여신금융협회 심의필 제2022-C1h-03830호<br />
-            (2022.05.09~2023.05.08)
+            여신금융협회 심의필 제 2022-C1h-03103호<br />
+            (2022.05.01~2023.04.30)
           </div>
         </li>
       </ul>
