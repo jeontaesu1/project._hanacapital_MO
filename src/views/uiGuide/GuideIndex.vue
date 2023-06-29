@@ -2534,8 +2534,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/auto/used-loan',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.30',
         log: [],
       },
       {
