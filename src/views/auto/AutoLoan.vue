@@ -165,7 +165,11 @@ export default {
               <div>원리금균등분할상환</div>
               <div :class="[$style['basic-list'], 'row-margin-item']">
                 <div
-                  :class="[$style['basic-list__item'], 'color-gray-tertiary']"
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-gray-tertiary',
+                    'font-weight-regular',
+                  ]"
                 >
                   <div :class="$style['basic-list__symbol']">※</div>
                   <div :class="$style['basic-list__content']">
@@ -186,6 +190,7 @@ export default {
                     $style['basic-list__item'],
                     'color-black',
                     'text-body-4',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']">-</div>
@@ -204,6 +209,7 @@ export default {
               <ul
                 :class="[
                   $style['basic-list'],
+                  $style['basic-list--regular'],
                   $style['basic-list--mini-margin'],
                 ]"
               >
@@ -244,13 +250,25 @@ export default {
                   'row-margin-item',
                 ]"
               >
-                <li :class="$style['basic-list__item']">
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-gray-tertiary',
+                    'font-weight-regular',
+                  ]"
+                >
                   <div :class="$style['basic-list__symbol']">※</div>
                   <div :class="$style['basic-list__content']">
                     잔존기간 : 30일 미만 상환 시 '대출 사용기간'을 30일로 간주
                   </div>
                 </li>
-                <li :class="$style['basic-list__item']">
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-gray-tertiary',
+                    'font-weight-regular',
+                  ]"
+                >
                   <div :class="$style['basic-list__symbol']">※</div>
                   <div :class="$style['basic-list__content']">
                     중도상환수수료율 : 유이자 2%/무이자 0%
@@ -305,7 +323,13 @@ export default {
               </ul>
 
               <div :class="[$style['basic-list'], 'row-margin-item']">
-                <div :class="$style['basic-list__item']">
+                <div
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-gray-tertiary',
+                    'font-weight-regular',
+                  ]"
+                >
                   <div :class="$style['basic-list__symbol']">※</div>
                   <div :class="$style['basic-list__content']">
                     <div>
@@ -337,7 +361,7 @@ export default {
                                 $style['basic-list__item'],
                                 'text-body-5',
                                 'color-gray-tertiary',
-                                'font-weight-light',
+                                'font-weight-regular',
                               ]"
                             >
                               <div :class="$style['basic-list__symbol']">*</div>
@@ -374,6 +398,7 @@ export default {
                     $style['basic-list__item'],
                     'color-black',
                     'text-body-4',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']">-</div>
@@ -386,6 +411,7 @@ export default {
                     $style['basic-list__item'],
                     'color-black',
                     'text-body-4',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']">-</div>
@@ -398,6 +424,7 @@ export default {
                     $style['basic-list__item'],
                     'color-black',
                     'text-body-4',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']">-</div>
@@ -410,6 +437,7 @@ export default {
                     $style['basic-list__item'],
                     'color-black',
                     'text-body-4',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']">-</div>
@@ -497,7 +525,13 @@ export default {
 
       <!-- 유의사항 -->
       <UiTabPanel name="personalLoanEHanaTab003">
-        <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+        <ul
+          :class="[
+            $style['basic-list'],
+            $style['basic-list--regular'],
+            $style['basic-list--regular-margin'],
+          ]"
+        >
           <li
             :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
           >
