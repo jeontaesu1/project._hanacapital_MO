@@ -98,7 +98,7 @@ export default {
     <div :class="$style['bg']">
       <PageTextGroup>
         <PageMainText>
-          저렴한 금리,
+          저렴한 금리,<br />
           <strong>간편한 이용</strong>
         </PageMainText>
       </PageTextGroup>

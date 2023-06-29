@@ -22,6 +22,7 @@ import UiTab from '@/components/ui/tab/UiTab.vue';
 import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
 import NavTab from '@/components/ui/tab/NavTab.vue';
 import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
 
 import IconPerson from '@/assets/images/icon/person.svg?component';
 import IconCar from '@/assets/images/icon/car.svg?component';
@@ -53,6 +54,7 @@ export default {
     UiTabPanel,
     NavTab,
     NavTabButton,
+    TextButton,
 
     IconPerson,
     IconCar,
@@ -727,7 +729,7 @@ export default {
           </KeyValueItem>
 
           <KeyValueItem>
-            <KeyValueTitle>중도해지수수료</KeyValueTitle>
+            <KeyValueTitle>만기시 유의사항</KeyValueTitle>
             <KeyValueText>
               <p class="row-margin-none">
                 만기 시 차량을 매입하실 경우 손님의 명의로 이전하는데 필요한
@@ -741,6 +743,12 @@ export default {
               <p class="row-margin-none">
                 차량 반납시 유의사항을 꼭 확인하여 주시기 바랍니다.
               </p>
+
+              <div class="row-margin-item-group">
+                <TextButton theme="secondary" :underline="true">
+                  차량 반납 시 유의사항
+                </TextButton>
+              </div>
             </KeyValueText>
           </KeyValueItem>
         </KeyValue>
