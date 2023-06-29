@@ -614,7 +614,9 @@ export default {
               </ul>
 
               <div :class="[$style['basic-list'], 'row-margin-item']">
-                <div :class="$style['basic-list__item']">
+                <div
+                  :class="[$style['basic-list__item'], 'color-gray-tertiary']"
+                >
                   <div :class="$style['basic-list__symbol']">※</div>
                   <div :class="$style['basic-list__content']">
                     <div>
@@ -628,7 +630,6 @@ export default {
                           $style['basic-list__item'],
                           'text-body-5',
                           'color-black',
-                          'font-weight-regular',
                         ]"
                       >
                         <div :class="$style['basic-list__symbol']">-</div>
@@ -680,7 +681,6 @@ export default {
                     $style['basic-list__item'],
                     'text-body-5',
                     'color-black',
-                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']">-</div>
@@ -693,7 +693,6 @@ export default {
                 :class="[
                   $style['basic-list'],
                   $style['basic-list--small-margin'],
-                  'row-margin-small',
                 ]"
               >
                 <li :class="$style['basic-list__item']">
@@ -744,7 +743,7 @@ export default {
                 차량 반납시 유의사항을 꼭 확인하여 주시기 바랍니다.
               </p>
 
-              <div class="row-margin-item-group">
+              <div class="row-margin-contents">
                 <TextButton theme="secondary" :underline="true">
                   차량 반납 시 유의사항
                 </TextButton>
@@ -827,7 +826,13 @@ export default {
 
       <!-- 유의사항 -->
       <UiTabPanel name="personalLoanEHanaTab003">
-        <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+        <ul
+          :class="[
+            $style['basic-list'],
+            $style['basic-list--regular'],
+            $style['basic-list--regular-margin'],
+          ]"
+        >
           <li
             :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
           >
@@ -931,7 +936,7 @@ export default {
         <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']"></div>
           <div :class="$style['basic-list__content']">
-            준법심의필 22-42<br />
+            준법심의필 22-41<br />
             (2022.01.28~2023.01.27)
           </div>
         </li>
@@ -975,7 +980,7 @@ export default {
           <BasicButton theme="tertiary">견적조회</BasicButton>
         </ButtonListItem>
         <ButtonListItem>
-          <BasicButton>렌터카 신청</BasicButton>
+          <BasicButton>리스 신청</BasicButton>
         </ButtonListItem>
       </ButtonList>
     </template>

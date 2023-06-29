@@ -210,7 +210,9 @@ export default {
           <BasicBox theme="duodenary">
             <div class="flex-box">
               <div class="flex-box__cell flex-1">
-                <h3 class="text-body-4 color-gray row-margin-mini">카니발</h3>
+                <h3 class="text-body-4 color-gray font-weight-regular">
+                  카니발
+                </h3>
                 <p class="text-body-1 font-weight-medium">월 350,000 원~</p>
               </div>
               <div class="flex-box__cell">
@@ -223,7 +225,9 @@ export default {
           <BasicBox theme="duodenary">
             <div class="flex-box">
               <div class="flex-box__cell flex-1">
-                <h3 class="text-body-4 color-gray row-margin-mini">카니발</h3>
+                <h3 class="text-body-4 color-gray font-weight-regular">
+                  스포티지
+                </h3>
                 <p class="text-body-1 font-weight-medium">월 350,000 원~</p>
               </div>
               <div class="flex-box__cell">
@@ -236,7 +240,37 @@ export default {
           <BasicBox theme="duodenary">
             <div class="flex-box">
               <div class="flex-box__cell flex-1">
-                <h3 class="text-body-4 color-gray row-margin-mini">카니발</h3>
+                <h3 class="text-body-4 color-gray font-weight-regular">
+                  아반떼
+                </h3>
+                <p class="text-body-1 font-weight-medium">월 350,000 원~</p>
+              </div>
+              <div class="flex-box__cell">
+                <CarThumb src="/images/_dummy/car-thumb.png" />
+              </div>
+            </div>
+          </BasicBox>
+        </li>
+        <li class="row-margin-item-group">
+          <BasicBox theme="duodenary">
+            <div class="flex-box">
+              <div class="flex-box__cell flex-1">
+                <h3 class="text-body-4 color-gray font-weight-regular">K5</h3>
+                <p class="text-body-1 font-weight-medium">월 350,000 원~</p>
+              </div>
+              <div class="flex-box__cell">
+                <CarThumb src="/images/_dummy/car-thumb.png" />
+              </div>
+            </div>
+          </BasicBox>
+        </li>
+        <li class="row-margin-item-group">
+          <BasicBox theme="duodenary">
+            <div class="flex-box">
+              <div class="flex-box__cell flex-1">
+                <h3 class="text-body-4 color-gray font-weight-regular">
+                  쏘나타
+                </h3>
                 <p class="text-body-1 font-weight-medium">월 350,000 원~</p>
               </div>
               <div class="flex-box__cell">
@@ -280,10 +314,14 @@ export default {
           }"
         >
           <KeyValueItem>
-            <KeyValueTitle>상환방법</KeyValueTitle>
+            <KeyValueTitle>취급조건</KeyValueTitle>
             <KeyValueText>
               <ul
-                :class="[$style['basic-list'], $style['basic-list--regular']]"
+                :class="[
+                  $style['basic-list'],
+                  $style['basic-list--regular'],
+                  $style['basic-list--mini-margin'],
+                ]"
               >
                 <li
                   :class="[
@@ -517,7 +555,13 @@ export default {
 
       <!-- 유의사항 -->
       <UiTabPanel name="personalLoanEHanaTab003">
-        <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+        <ul
+          :class="[
+            $style['basic-list'],
+            $style['basic-list--regular'],
+            $style['basic-list--regular-margin'],
+          ]"
+        >
           <li
             :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
           >

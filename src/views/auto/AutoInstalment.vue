@@ -264,7 +264,11 @@ export default {
             <KeyValueTitle>연체이자율</KeyValueTitle>
             <KeyValueText>
               <ul
-                :class="[$style['basic-list'], $style['basic-list--regular']]"
+                :class="[
+                  $style['basic-list'],
+                  $style['basic-list--regular'],
+                  $style['basic-list--mini-margin'],
+                ]"
               >
                 <li
                   :class="[
@@ -319,7 +323,6 @@ export default {
                           $style['basic-list__item'],
                           'text-body-5',
                           'color-black',
-                          'font-weight-regular',
                         ]"
                       >
                         <div :class="$style['basic-list__symbol']">-</div>
@@ -374,6 +377,7 @@ export default {
                     $style['basic-list__item'],
                     'color-black',
                     'text-body-4',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']">-</div>
@@ -386,6 +390,7 @@ export default {
                     $style['basic-list__item'],
                     'color-black',
                     'text-body-4',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']">-</div>
@@ -398,6 +403,7 @@ export default {
                     $style['basic-list__item'],
                     'color-black',
                     'text-body-4',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']">-</div>
@@ -410,6 +416,7 @@ export default {
                     $style['basic-list__item'],
                     'color-black',
                     'text-body-4',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']">-</div>
@@ -497,7 +504,13 @@ export default {
 
       <!-- 유의사항 -->
       <UiTabPanel name="personalLoanEHanaTab003">
-        <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+        <ul
+          :class="[
+            $style['basic-list'],
+            $style['basic-list--regular'],
+            $style['basic-list--regular-margin'],
+          ]"
+        >
           <li
             :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
           >
