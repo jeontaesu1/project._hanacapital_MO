@@ -36,7 +36,9 @@ import IconCalculate from '@/assets/images/icon/calculate.svg?component';
 import IconDocumentComplete from '@/assets/images/icon/document-complete.svg?component';
 import IconTakingOver from '@/assets/images/icon/taking-over.svg?component';
 import IconAssignment from '@/assets/images/icon/assignment.svg?component';
-import ImgSample from '@/assets/images/_dummy/illustration-sample.svg?component';
+import ImgChangeAutoLoan from '@/assets/images/illustration/img-change-auto-loan.svg?component';
+import ImgAutoLease from '@/assets/images/illustration/img-auto-lease.svg?component';
+import ImgAutoRent from '@/assets/images/illustration/img-auto-rent.svg?component';
 
 export default {
   components: {
@@ -62,7 +64,6 @@ export default {
 
     IconDeposit,
     IconSend,
-    ImgSample,
     IconPhone,
     IconPersonalTerms,
     IconCall,
@@ -72,6 +73,9 @@ export default {
     IconTakingOver,
     IconAssignment,
     IconPerson,
+    ImgChangeAutoLoan,
+    ImgAutoLease,
+    ImgAutoRent,
   },
   setup() {
     const store = {
@@ -124,7 +128,7 @@ export default {
         </PageTextGroup>
 
         <div :class="[$style['illustration-img'], 'row-margin-contents']">
-          <ImgSample />
+          <ImgChangeAutoLoan />
         </div>
 
         <BasicBox theme="secondary">
@@ -188,7 +192,7 @@ export default {
               부과됩니다.
             </NoticeText>
             <div :class="[$style['illustration-img'], 'row-margin-item-group']">
-              <ImgSample />
+              <ImgAutoLease />
             </div>
           </section>
 
@@ -1009,7 +1013,7 @@ export default {
               부과됩니다.
             </NoticeText>
             <div :class="[$style['illustration-img'], 'row-margin-item-group']">
-              <ImgSample />
+              <ImgAutoRent />
             </div>
           </section>
 

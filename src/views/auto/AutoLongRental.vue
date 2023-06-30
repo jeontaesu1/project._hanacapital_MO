@@ -30,7 +30,10 @@ import IconCheckDocument from '@/assets/images/icon/check-document.svg?component
 import IconContract from '@/assets/images/icon/contract.svg?component';
 import IconConsulting from '@/assets/images/icon/consulting.svg?component';
 import IconSend from '@/assets/images/icon/send.svg?component';
-import ImgSample from '@/assets/images/_dummy/illustration-sample.svg?component';
+import ImgLongTermCarRentalMain from '@/assets/images/illustration/img-long-term-car-rental-main.svg?component';
+import ImgLongTermCarRental01 from '@/assets/images/illustration/img-long-term-car-rental01.svg?component';
+import ImgLongTermCarRental02 from '@/assets/images/illustration/img-long-term-car-rental02.svg?component';
+import ImgLongTermCarRental03 from '@/assets/images/illustration/img-long-term-car-rental03.svg?component';
 
 export default {
   components: {
@@ -57,9 +60,12 @@ export default {
     IconDate,
     IconCheckDocument,
     IconSend,
-    ImgSample,
     IconContract,
     IconConsulting,
+    ImgLongTermCarRentalMain,
+    ImgLongTermCarRental01,
+    ImgLongTermCarRental02,
+    ImgLongTermCarRental03,
   },
   setup() {
     const store = {
@@ -104,7 +110,7 @@ export default {
       </PageTextGroup>
 
       <div :class="[$style['illustration-img'], 'row-margin-contents']">
-        <ImgSample />
+        <ImgLongTermCarRentalMain />
       </div>
 
       <BasicBox theme="secondary">
@@ -171,7 +177,7 @@ export default {
           각종 보험료를 절약해보세요.
         </p>
         <div :class="[$style['illustration-img'], 'row-margin-item-group']">
-          <ImgSample />
+          <ImgLongTermCarRental01 />
         </div>
       </section>
 
@@ -184,7 +190,7 @@ export default {
           월납입부담을 줄여보세요.
         </p>
         <div :class="[$style['illustration-img'], 'row-margin-item-group']">
-          <ImgSample />
+          <ImgLongTermCarRental02 />
         </div>
       </section>
 
@@ -197,7 +203,7 @@ export default {
           저렴하게 이용해보세요.
         </p>
         <div :class="[$style['illustration-img'], 'row-margin-item-group']">
-          <ImgSample />
+          <ImgLongTermCarRental03 />
         </div>
       </section>
     </div>

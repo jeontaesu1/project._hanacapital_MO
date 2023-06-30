@@ -28,7 +28,7 @@ import IconSend from '@/assets/images/icon/send.svg?component';
 import IconConsulting from '@/assets/images/icon/consulting.svg?component';
 import IconConsultation from '@/assets/images/icon/consultation.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
-import ImgSample from '@/assets/images/_dummy/illustration-sample.svg?component';
+import ImgUsedCarAutoloan from '@/assets/images/illustration/img-used-car-autoloan.svg?component';
 
 export default {
   components: {
@@ -51,11 +51,11 @@ export default {
     IconRate,
     IconDate,
     IconSend,
-    ImgSample,
     IconPersonalTerms,
     IconConsultation,
     IconCalculate,
     IconConsulting,
+    ImgUsedCarAutoloan,
   },
   setup() {
     const store = {
@@ -101,7 +101,7 @@ export default {
       </PageTextGroup>
 
       <div :class="[$style['illustration-img'], 'row-margin-contents']">
-        <ImgSample />
+        <ImgUsedCarAutoloan />
       </div>
 
       <BasicBox theme="secondary">

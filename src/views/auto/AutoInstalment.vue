@@ -26,7 +26,7 @@ import IconContract from '@/assets/images/icon/contract.svg?component';
 import IconSend from '@/assets/images/icon/send.svg?component';
 import IconConsulting from '@/assets/images/icon/consulting.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
-import ImgSample from '@/assets/images/_dummy/illustration-sample.svg?component';
+import ImgAutoMonthlyPayment from '@/assets/images/illustration/img-auto-monthly-payment.svg?component';
 
 export default {
   components: {
@@ -48,10 +48,10 @@ export default {
     IconDeposit,
     IconDate,
     IconSend,
-    ImgSample,
     IconContract,
     IconCalculate,
     IconConsulting,
+    ImgAutoMonthlyPayment,
   },
   setup() {
     const store = {
@@ -96,7 +96,7 @@ export default {
       </PageTextGroup>
 
       <div :class="[$style['illustration-img'], 'row-margin-contents']">
-        <ImgSample />
+        <ImgAutoMonthlyPayment />
       </div>
 
       <BasicBox theme="secondary">

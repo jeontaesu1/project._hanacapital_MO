@@ -33,7 +33,9 @@ import IconRate from '@/assets/images/icon/rate.svg?component';
 import IconSend from '@/assets/images/icon/send.svg?component';
 import IconConsulting from '@/assets/images/icon/consulting.svg?component';
 import IconConsultation from '@/assets/images/icon/consultation.svg?component';
-import ImgSample from '@/assets/images/_dummy/illustration-sample.svg?component';
+import ImgDirectAutolease from '@/assets/images/illustration/img-direct-autolease.svg?component';
+import ImgZeroCommission from '@/assets/images/illustration/img-zero-commission.svg?component';
+import ImgSimplePay from '@/assets/images/illustration/img-simple-pay.svg?component';
 
 export default {
   components: {
@@ -61,11 +63,13 @@ export default {
     IconDate,
     IconCommission,
     IconSend,
-    ImgSample,
     IconContract,
     IconConsultation,
     IconConsulting,
     IconRate,
+    ImgDirectAutolease,
+    ImgZeroCommission,
+    ImgSimplePay,
   },
   setup() {
     const store = {
@@ -110,7 +114,7 @@ export default {
       </PageTextGroup>
 
       <div :class="[$style['illustration-img'], 'row-margin-contents']">
-        <ImgSample />
+        <ImgDirectAutolease />
       </div>
 
       <BasicBox theme="secondary">
@@ -170,7 +174,7 @@ export default {
           취득세 공채 비용을 리스료에 포함 할 수 있어 차량구매 초기비용 절감!
         </p>
         <div :class="[$style['illustration-img'], 'row-margin-item-group']">
-          <ImgSample />
+          <ImgZeroCommission />
         </div>
       </section>
 
@@ -183,7 +187,7 @@ export default {
           차량금액만 알려주세요!
         </p>
         <div :class="[$style['illustration-img'], 'row-margin-item-group']">
-          <ImgSample />
+          <ImgSimplePay />
         </div>
       </section>
     </div>
