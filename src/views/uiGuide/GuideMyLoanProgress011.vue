@@ -196,7 +196,7 @@ export default {
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer012Open">
+        <BasicButton @click="layer013Open">
           상품설명서 약관동의_일반대출설명서<br />My_M99_l011
         </BasicButton>
       </ButtonListItem>
