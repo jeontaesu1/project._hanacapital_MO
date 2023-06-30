@@ -10041,7 +10041,7 @@ export default {
                   A
                 </div>
                 <div :class="$style['manual-qna__cell']">
-                  <p :class="$style['manual-qna__text']">
+                  <div :class="$style['manual-qna__text']">
                     대출상품 이용 시,
                     <span class="color-red"
                       >대출계약의 체결만으로도 신용점수가 하락할 수
@@ -10052,7 +10052,7 @@ export default {
                       >‘9. 신용점수에 미치는 영향’</span
                     >
                     확인)
-                  </p>
+                  </div>
                 </div>
               </div>
             </li>
@@ -10075,36 +10075,38 @@ export default {
                   A
                 </div>
                 <div :class="$style['manual-qna__cell']">
-                  <p :class="$style['manual-qna__text']">
-                    대출 실행 후
-                    <span class="color-green"
-                      >3년 이내에 대출금액을 중도 상환</span
-                    >할 경우,
-                    <span class="color-red"
-                      >최대 2%의 중도상환수수료가 발생*</span
-                    >합니다. 아울러
-                    <span class="color-green"
-                      >동일 금융회사와 기존 대출계약을 해지하고 사실상 동일
-                      계약을 체결한 경우 양 계약기간을 합산하여 3년 경과 후에는
-                      면제됩니다.</span
-                    >
-                    중도상환수수료는 대출의 잔여일수 및 상환금액에 따라
-                    달라지며, 중도상환 시 향후 원리금 상환 부담금액이 감소하게
-                    됩니다. (&#9758;<span class="color-red"
-                      >‘4. 수수료 등 비용부담’, ‘10. 해지에 관한 사항’</span
-                    >
-                    확인)
-                  </p>
-                  <ul :class="[$style['basic-list'], 'row-margin-item']">
-                    <li :class="$style['basic-list__item']">
-                      <div :class="$style['basic-list__symbol']"></div>
-                      <div :class="$style['basic-list__content']">
-                        예) 2천만을 중도상환(적용요율을 2%로 가정)할 경우,
-                        고객은 최대 40만원의 중도상환수수료를 금융회사에
-                        납부해야 함
-                      </div>
-                    </li>
-                  </ul>
+                  <div :class="$style['manual-qna__text']">
+                    <div>
+                      대출 실행 후
+                      <span class="color-green"
+                        >3년 이내에 대출금액을 중도 상환</span
+                      >할 경우,
+                      <span class="color-red"
+                        >최대 2%의 중도상환수수료가 발생*</span
+                      >합니다. 아울러
+                      <span class="color-green"
+                        >동일 금융회사와 기존 대출계약을 해지하고 사실상 동일
+                        계약을 체결한 경우 양 계약기간을 합산하여 3년 경과
+                        후에는 면제됩니다.</span
+                      >
+                      중도상환수수료는 대출의 잔여일수 및 상환금액에 따라
+                      달라지며, 중도상환 시 향후 원리금 상환 부담금액이 감소하게
+                      됩니다. (&#9758;<span class="color-red"
+                        >‘4. 수수료 등 비용부담’, ‘10. 해지에 관한 사항’</span
+                      >
+                      확인)
+                    </div>
+                    <ul :class="[$style['basic-list'], 'row-margin-item']">
+                      <li :class="$style['basic-list__item']">
+                        <div :class="$style['basic-list__symbol']"></div>
+                        <div :class="$style['basic-list__content']">
+                          예) 2천만을 중도상환(적용요율을 2%로 가정)할 경우,
+                          고객은 최대 40만원의 중도상환수수료를 금융회사에
+                          납부해야 함
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </li>
