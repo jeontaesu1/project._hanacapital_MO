@@ -53,7 +53,7 @@ export default {
       </PageMainText>
     </PageTextGroup>
 
-    <IllustObject />
+    <IllustObject type="alarm" />
 
     <template v-slot:foot>
       <ButtonList

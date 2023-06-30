@@ -7,7 +7,10 @@ import ToastPopup from '@/components/ui/layer/ToastPopup.vue';
 import ToastPopupHead from '@/components/ui/layer/ToastPopupHead.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 
-import IconPhone from '@/assets/images/icon/phone.svg?component';
+import IconPassword from '@/assets/images/icon/password.svg?component';
+import IconFace from '@/assets/images/icon/face.svg?component';
+import IconFinger from '@/assets/images/icon/finger.svg?component';
+import IconFaceId from '@/assets/images/icon/faceId.svg?component';
 
 export default {
   components: {
@@ -15,7 +18,10 @@ export default {
     ToastPopup,
     ToastPopupHead,
     PopupTitle,
-    IconPhone,
+    IconPassword,
+    IconFace,
+    IconFinger,
+    IconFaceId,
   },
   setup() {
     const layer = ref(null);
@@ -40,7 +46,9 @@ export default {
         <ul :class="$style['icon-buttons__list']">
           <li :class="$style['icon-buttons__item']">
             <button type="button" :class="$style['icon-buttons__block']">
-              <span :class="$style['icon-buttons__icon']"><IconPhone /></span>
+              <span :class="$style['icon-buttons__icon']"
+                ><IconPassword
+              /></span>
               <span :class="$style['icon-buttons__content']">
                 <span :class="$style['icon-buttons__title']">간편비밀번호</span>
               </span>
@@ -48,7 +56,7 @@ export default {
           </li>
           <li :class="$style['icon-buttons__item']">
             <button type="button" :class="$style['icon-buttons__block']">
-              <span :class="$style['icon-buttons__icon']"><IconPhone /></span>
+              <span :class="$style['icon-buttons__icon']"><IconFace /></span>
               <span :class="$style['icon-buttons__content']">
                 <span :class="$style['icon-buttons__title']">얼굴인증</span>
               </span>
@@ -56,7 +64,7 @@ export default {
           </li>
           <li :class="$style['icon-buttons__item']">
             <button type="button" :class="$style['icon-buttons__block']">
-              <span :class="$style['icon-buttons__icon']"><IconPhone /></span>
+              <span :class="$style['icon-buttons__icon']"><IconFinger /></span>
               <span :class="$style['icon-buttons__content']">
                 <span :class="$style['icon-buttons__title']">지문인증</span>
               </span>
@@ -64,7 +72,7 @@ export default {
           </li>
           <li :class="$style['icon-buttons__item']">
             <button type="button" :class="$style['icon-buttons__block']">
-              <span :class="$style['icon-buttons__icon']"><IconPhone /></span>
+              <span :class="$style['icon-buttons__icon']"><IconFaceId /></span>
               <span :class="$style['icon-buttons__content']">
                 <span :class="$style['icon-buttons__title']">Face ID 인증</span>
               </span>

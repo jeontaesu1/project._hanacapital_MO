@@ -21,9 +21,9 @@ import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
 import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
 import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 
-import IconSearchMoney from '@/assets/images/icon/search-money.svg?component';
-import IconDeposit from '@/assets/images/icon/deposit.svg?component';
-import IconCommisionRate from '@/assets/images/icon/commission-rate.svg?component';
+import IconHomeSetting from '@/assets/images/icon/home-setting.svg?component';
+import IconSettingDecide from '@/assets/images/icon/setting-decide.svg?component';
+import IconBasicSetting from '@/assets/images/icon/basic-setting.svg?component';
 import IconPlayStore from '@/assets/images/icon/playstore.svg?component';
 
 export default {
@@ -44,9 +44,9 @@ export default {
     BoxCheckLabel,
     BoxCheckList,
     BoxCheckListItem,
-    IconSearchMoney,
-    IconDeposit,
-    IconCommisionRate,
+    IconHomeSetting,
+    IconSettingDecide,
+    IconBasicSetting,
     IconPlayStore,
   },
   setup() {
@@ -89,7 +89,7 @@ export default {
         <li :class="$style['setting-menu__item']">
           <RouterLink :class="$style['setting-menu__link']" to="">
             <div :class="$style['setting-menu__icon']">
-              <IconSearchMoney />
+              <IconHomeSetting />
             </div>
             <div :class="$style['setting-menu__title']">홈 설정</div>
           </RouterLink>
@@ -97,7 +97,7 @@ export default {
         <li :class="$style['setting-menu__item']">
           <RouterLink :class="$style['setting-menu__link']" to="">
             <div :class="$style['setting-menu__icon']">
-              <IconDeposit />
+              <IconSettingDecide />
             </div>
             <div :class="$style['setting-menu__title']">관리지정</div>
           </RouterLink>
@@ -105,7 +105,7 @@ export default {
         <li :class="$style['setting-menu__item']">
           <RouterLink :class="$style['setting-menu__link']" to="">
             <div :class="$style['setting-menu__icon']">
-              <IconCommisionRate />
+              <IconBasicSetting />
             </div>
             <div :class="$style['setting-menu__title']">기본설정</div>
           </RouterLink>

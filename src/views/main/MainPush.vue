@@ -8,7 +8,7 @@ import { useUiHeaderStore } from '@/stores/ui/header';
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
 
-import ImgAlarm from '@/assets/images/_dummy/sample-alarm.svg?component';
+import ImgAlarm from '@/assets/images/icon/notify.svg?component';
 
 export default {
   components: {

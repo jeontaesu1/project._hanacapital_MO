@@ -121,14 +121,6 @@ export default {
               <li :class="$style['bank-brand__item']">
                 <button type="button" :class="$style['bank-brand__block']">
                   <span :class="$style['bank-brand__logo']">
-                    <CarEmblem code="1012" size="medium" />
-                  </span>
-                  <span :class="$style['bank-brand__text']">제네시스</span>
-                </button>
-              </li>
-              <li :class="$style['bank-brand__item']">
-                <button type="button" :class="$style['bank-brand__block']">
-                  <span :class="$style['bank-brand__logo']">
                     <CarEmblem code="1002" size="medium" />
                   </span>
                   <span :class="$style['bank-brand__text']">기아</span>
@@ -145,6 +137,14 @@ export default {
               <li :class="$style['bank-brand__item']">
                 <button type="button" :class="$style['bank-brand__block']">
                   <span :class="$style['bank-brand__logo']">
+                    <CarEmblem code="1005" size="medium" />
+                  </span>
+                  <span :class="$style['bank-brand__text']">쌍용</span>
+                </button>
+              </li>
+              <li :class="$style['bank-brand__item']">
+                <button type="button" :class="$style['bank-brand__block']">
+                  <span :class="$style['bank-brand__logo']">
                     <CarEmblem code="1006" size="medium" />
                   </span>
                   <span :class="$style['bank-brand__text']">쉐보레</span>
@@ -153,9 +153,17 @@ export default {
               <li :class="$style['bank-brand__item']">
                 <button type="button" :class="$style['bank-brand__block']">
                   <span :class="$style['bank-brand__logo']">
-                    <CarEmblem code="1005" size="medium" />
+                    <CarEmblem code="1012" size="medium" />
                   </span>
-                  <span :class="$style['bank-brand__text']">쌍용</span>
+                  <span :class="$style['bank-brand__text']">제네시스</span>
+                </button>
+              </li>
+              <li :class="$style['bank-brand__item']">
+                <button type="button" :class="$style['bank-brand__block']">
+                  <span :class="$style['bank-brand__logo']">
+                    <CarEmblem code="1015" size="medium" />
+                  </span>
+                  <span :class="$style['bank-brand__text']">대창모터스</span>
                 </button>
               </li>
             </ul>
@@ -164,6 +172,14 @@ export default {
 
         <UiTabPanel name="layerAutoEstimateSelectBrand1_002">
           <ul :class="$style['bank-brand__list']">
+            <li :class="$style['bank-brand__item']">
+              <button type="button" :class="$style['bank-brand__block']">
+                <span :class="$style['bank-brand__logo']">
+                  <CarEmblem code="1009" size="medium" />
+                </span>
+                <span :class="$style['bank-brand__text']">타타대우</span>
+              </button>
+            </li>
             <li :class="$style['bank-brand__item']">
               <button type="button" :class="$style['bank-brand__block']">
                 <span :class="$style['bank-brand__logo']">
@@ -191,6 +207,86 @@ export default {
             <li :class="$style['bank-brand__item']">
               <button type="button" :class="$style['bank-brand__block']">
                 <span :class="$style['bank-brand__logo']">
+                  <CarEmblem code="2004" size="medium" />
+                </span>
+                <span :class="$style['bank-brand__text']">도요타</span>
+              </button>
+            </li>
+            <li :class="$style['bank-brand__item']">
+              <button type="button" :class="$style['bank-brand__block']">
+                <span :class="$style['bank-brand__logo']">
+                  <CarEmblem code="2005" size="medium" />
+                </span>
+                <span :class="$style['bank-brand__text']">폭스바겐</span>
+              </button>
+            </li>
+            <li :class="$style['bank-brand__item']">
+              <button type="button" :class="$style['bank-brand__block']">
+                <span :class="$style['bank-brand__logo']">
+                  <CarEmblem code="2007" size="medium" />
+                </span>
+                <span :class="$style['bank-brand__text']">혼다</span>
+              </button>
+            </li>
+            <li :class="$style['bank-brand__item']">
+              <button type="button" :class="$style['bank-brand__block']">
+                <span :class="$style['bank-brand__logo']">
+                  <CarEmblem code="2008" size="medium" />
+                </span>
+                <span :class="$style['bank-brand__text']">포드</span>
+              </button>
+            </li>
+            <li :class="$style['bank-brand__item']">
+              <button type="button" :class="$style['bank-brand__block']">
+                <span :class="$style['bank-brand__logo']">
+                  <CarEmblem code="2009" size="medium" />
+                </span>
+                <span :class="$style['bank-brand__text']">크라이슬러</span>
+              </button>
+            </li>
+            <li :class="$style['bank-brand__item']">
+              <button type="button" :class="$style['bank-brand__block']">
+                <span :class="$style['bank-brand__logo']">
+                  <CarEmblem code="2010" size="medium" />
+                </span>
+                <span :class="$style['bank-brand__text']">볼보</span>
+              </button>
+            </li>
+            <li :class="$style['bank-brand__item']">
+              <button type="button" :class="$style['bank-brand__block']">
+                <span :class="$style['bank-brand__logo']">
+                  <CarEmblem code="2011" size="medium" />
+                </span>
+                <span :class="$style['bank-brand__text']">푸조</span>
+              </button>
+            </li>
+            <li :class="$style['bank-brand__item']">
+              <button type="button" :class="$style['bank-brand__block']">
+                <span :class="$style['bank-brand__logo']">
+                  <CarEmblem code="2012" size="medium" />
+                </span>
+                <span :class="$style['bank-brand__text']">GM</span>
+              </button>
+            </li>
+            <li :class="$style['bank-brand__item']">
+              <button type="button" :class="$style['bank-brand__block']">
+                <span :class="$style['bank-brand__logo']">
+                  <CarEmblem code="2013" size="medium" />
+                </span>
+                <span :class="$style['bank-brand__text']">재규어</span>
+              </button>
+            </li>
+            <li :class="$style['bank-brand__item']">
+              <button type="button" :class="$style['bank-brand__block']">
+                <span :class="$style['bank-brand__logo']">
+                  <CarEmblem code="2014" size="medium" />
+                </span>
+                <span :class="$style['bank-brand__text']">랜드로버</span>
+              </button>
+            </li>
+            <li :class="$style['bank-brand__item']">
+              <button type="button" :class="$style['bank-brand__block']">
+                <span :class="$style['bank-brand__logo']">
                   <CarEmblem code="2017" size="medium" />
                 </span>
                 <span :class="$style['bank-brand__text']">포르쉐</span>
@@ -207,9 +303,161 @@ export default {
             <li :class="$style['bank-brand__item']">
               <button type="button" :class="$style['bank-brand__block']">
                 <span :class="$style['bank-brand__logo']">
+                  <CarEmblem code="2019" size="medium" />
+                </span>
+                <span :class="$style['bank-brand__text']">페라리</span>
+              </button>
+            </li>
+            <li :class="$style['bank-brand__item']">
+              <button type="button" :class="$style['bank-brand__block']">
+                <span :class="$style['bank-brand__logo']">
+                  <CarEmblem code="2021" size="medium" />
+                </span>
+                <span :class="$style['bank-brand__text']">람보르기니</span>
+              </button>
+            </li>
+            <li :class="$style['bank-brand__item']">
+              <button type="button" :class="$style['bank-brand__block']">
+                <span :class="$style['bank-brand__logo']">
                   <CarEmblem code="2025" size="medium" />
                 </span>
                 <span :class="$style['bank-brand__text']">벤틀리</span>
+              </button>
+            </li>
+            <li :class="$style['bank-brand__item']">
+              <button type="button" :class="$style['bank-brand__block']">
+                <span :class="$style['bank-brand__logo']">
+                  <CarEmblem code="2026" size="medium" />
+                </span>
+                <span :class="$style['bank-brand__text']">애스톤마틴</span>
+              </button>
+            </li>
+            <li :class="$style['bank-brand__item']">
+              <button type="button" :class="$style['bank-brand__block']">
+                <span :class="$style['bank-brand__logo']">
+                  <CarEmblem code="2030" size="medium" />
+                </span>
+                <span :class="$style['bank-brand__text']">시트로엥</span>
+              </button>
+            </li>
+            <li :class="$style['bank-brand__item']">
+              <button type="button" :class="$style['bank-brand__block']">
+                <span :class="$style['bank-brand__logo']">
+                  <CarEmblem code="2032" size="medium" />
+                </span>
+                <span :class="$style['bank-brand__text']">캐딜락</span>
+              </button>
+            </li>
+            <li :class="$style['bank-brand__item']">
+              <button type="button" :class="$style['bank-brand__block']">
+                <span :class="$style['bank-brand__logo']">
+                  <CarEmblem code="2033" size="medium" />
+                </span>
+                <span :class="$style['bank-brand__text']">렉서스</span>
+              </button>
+            </li>
+            <li :class="$style['bank-brand__item']">
+              <button type="button" :class="$style['bank-brand__block']">
+                <span :class="$style['bank-brand__logo']">
+                  <CarEmblem code="2034" size="medium" />
+                </span>
+                <span :class="$style['bank-brand__text']">롤스로이스</span>
+              </button>
+            </li>
+            <li :class="$style['bank-brand__item']">
+              <button type="button" :class="$style['bank-brand__block']">
+                <span :class="$style['bank-brand__logo']">
+                  <CarEmblem code="2035" size="medium" />
+                </span>
+                <span :class="$style['bank-brand__text']">링컨</span>
+              </button>
+            </li>
+            <li :class="$style['bank-brand__item']">
+              <button type="button" :class="$style['bank-brand__block']">
+                <span :class="$style['bank-brand__logo']">
+                  <CarEmblem code="2037" size="medium" />
+                </span>
+                <span :class="$style['bank-brand__text']">미니</span>
+              </button>
+            </li>
+            <li :class="$style['bank-brand__item']">
+              <button type="button" :class="$style['bank-brand__block']">
+                <span :class="$style['bank-brand__logo']">
+                  <CarEmblem code="2039" size="medium" />
+                </span>
+                <span :class="$style['bank-brand__text']">인피니티</span>
+              </button>
+            </li>
+            <li :class="$style['bank-brand__item']">
+              <button type="button" :class="$style['bank-brand__block']">
+                <span :class="$style['bank-brand__logo']">
+                  <CarEmblem code="2040" size="medium" />
+                </span>
+                <span :class="$style['bank-brand__text']">지프</span>
+              </button>
+            </li>
+            <li :class="$style['bank-brand__item']">
+              <button type="button" :class="$style['bank-brand__block']">
+                <span :class="$style['bank-brand__logo']">
+                  <CarEmblem code="2041" size="medium" />
+                </span>
+                <span :class="$style['bank-brand__text']">맥라렌</span>
+              </button>
+            </li>
+            <li :class="$style['bank-brand__item']">
+              <button type="button" :class="$style['bank-brand__block']">
+                <span :class="$style['bank-brand__logo']">
+                  <CarEmblem code="2046" size="medium" />
+                </span>
+                <span :class="$style['bank-brand__text']">닷지</span>
+              </button>
+            </li>
+            <li :class="$style['bank-brand__item']">
+              <button type="button" :class="$style['bank-brand__block']">
+                <span :class="$style['bank-brand__logo']">
+                  <CarEmblem code="2056" size="medium" />
+                </span>
+                <span :class="$style['bank-brand__text']">애스턴마틴</span>
+              </button>
+            </li>
+            <li :class="$style['bank-brand__item']">
+              <button type="button" :class="$style['bank-brand__block']">
+                <span :class="$style['bank-brand__logo']">
+                  <CarEmblem code="2074" size="medium" />
+                </span>
+                <span :class="$style['bank-brand__text']">토요타</span>
+              </button>
+            </li>
+            <li :class="$style['bank-brand__item']">
+              <button type="button" :class="$style['bank-brand__block']">
+                <span :class="$style['bank-brand__logo']">
+                  <CarEmblem code="2075" size="medium" />
+                </span>
+                <span :class="$style['bank-brand__text']">테슬라</span>
+              </button>
+            </li>
+            <li :class="$style['bank-brand__item']">
+              <button type="button" :class="$style['bank-brand__block']">
+                <span :class="$style['bank-brand__logo']">
+                  <CarEmblem code="2080" size="medium" />
+                </span>
+                <span :class="$style['bank-brand__text']">할리데이비슨</span>
+              </button>
+            </li>
+            <li :class="$style['bank-brand__item']">
+              <button type="button" :class="$style['bank-brand__block']">
+                <span :class="$style['bank-brand__logo']">
+                  <CarEmblem code="2082" size="medium" />
+                </span>
+                <span :class="$style['bank-brand__text']">맥라렌</span>
+              </button>
+            </li>
+            <li :class="$style['bank-brand__item']">
+              <button type="button" :class="$style['bank-brand__block']">
+                <span :class="$style['bank-brand__logo']">
+                  <CarEmblem code="2083" size="medium" />
+                </span>
+                <span :class="$style['bank-brand__text']">에스턴마틴</span>
               </button>
             </li>
           </ul>

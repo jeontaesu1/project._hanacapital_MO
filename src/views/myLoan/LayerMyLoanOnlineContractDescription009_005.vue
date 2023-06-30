@@ -57,7 +57,7 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <IllustObject type="license" :classNames="{ wrap: 'row-margin-none' }" />
+      <IllustObject type="faq" :classNames="{ wrap: 'row-margin-none' }" />
 
       <div>
         <ul :class="[$style['basic-list'], $style['basic-list--regular']]">

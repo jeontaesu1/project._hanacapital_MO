@@ -55,7 +55,7 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <IllustObject />
+      <IllustObject type="password" />
 
       <section :class="[$style['notice-section'], 'row-margin-contents']">
         <h3 :class="$style['notice-section__title']">유의사항</h3>

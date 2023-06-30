@@ -59,7 +59,7 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <IllustObject type="license" />
+      <IllustObject type="contract" />
 
       <BasicBox>
         <div :class="$style['icon-box']">
