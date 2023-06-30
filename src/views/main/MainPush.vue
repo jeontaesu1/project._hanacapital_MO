@@ -8,13 +8,13 @@ import { useUiHeaderStore } from '@/stores/ui/header';
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
 
-import ImgAlarm from '@/assets/images/icon/notify.svg?component';
+import IconNotify from '@/assets/images/icon/notify.svg?component';
 
 export default {
   components: {
     PageContents,
     NoticeText,
-    ImgAlarm,
+    IconNotify,
   },
   setup() {
     const store = {
@@ -50,7 +50,7 @@ export default {
       <ul :class="$style['alarm__list']">
         <li :class="[$style['alarm__item'], $style['alarm__item--new']]">
           <div :class="$style['alarm__block']">
-            <div :class="$style['alarm__icon']"><ImgAlarm /></div>
+            <div :class="$style['alarm__icon']"><IconNotify /></div>
             <div :class="$style['alarm__information']">
               <h3 :class="[$style['alarm__title'], 'ellipsis']">
                 범칙금 금액 안내범칙금 금액 안내범칙금 금액 안내범칙금 금액
@@ -70,7 +70,7 @@ export default {
         </li>
         <li :class="[$style['alarm__item'], $style['alarm__item--new']]">
           <div :class="$style['alarm__block']">
-            <div :class="$style['alarm__icon']"><ImgAlarm /></div>
+            <div :class="$style['alarm__icon']"><IconNotify /></div>
             <div :class="$style['alarm__information']">
               <h3 :class="[$style['alarm__title'], 'ellipsis']">
                 범칙금 금액 안내범칙금 금액 안내범칙금 금액 안내범칙금 금액
@@ -90,7 +90,7 @@ export default {
         </li>
         <li :class="$style['alarm__item']">
           <div :class="$style['alarm__block']">
-            <div :class="$style['alarm__icon']"><ImgAlarm /></div>
+            <div :class="$style['alarm__icon']"><IconNotify /></div>
             <div :class="$style['alarm__information']">
               <h3 :class="[$style['alarm__title'], 'ellipsis']">
                 범칙금 금액 안내범칙금 금액 안내범칙금 금액 안내범칙금 금액
@@ -110,7 +110,7 @@ export default {
         </li>
         <li :class="$style['alarm__item']">
           <div :class="$style['alarm__block']">
-            <div :class="$style['alarm__icon']"><ImgAlarm /></div>
+            <div :class="$style['alarm__icon']"><IconNotify /></div>
             <div :class="$style['alarm__information']">
               <h3 :class="[$style['alarm__title'], 'ellipsis']">
                 범칙금 금액 안내범칙금 금액 안내범칙금 금액 안내범칙금 금액
