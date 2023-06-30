@@ -291,7 +291,7 @@ export default {
                       A
                     </div>
                     <div :class="$style['manual-qna__cell']">
-                      <p :class="$style['manual-qna__text']">
+                      <div :class="$style['manual-qna__text']">
                         <span class="color-green underline"
                           >당사 인터넷 홈페이지</span
                         ><br />
@@ -308,7 +308,7 @@ export default {
                           >
                           등에 도움을 요청</span
                         >하실 수 있습니다.
-                      </p>
+                      </div>
                     </div>
                   </div>
                 </li>
