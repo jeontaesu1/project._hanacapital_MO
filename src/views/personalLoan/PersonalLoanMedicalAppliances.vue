@@ -143,20 +143,20 @@ export default {
     >
       <StickyBar>
         <NavTab :useUiTab="true" :auto="true">
-          <NavTabButton link="personalLoanHappinessApartmentTab001"
+          <NavTabButton link="personalLoanMedicalAppliancesTab001"
             >상품안내</NavTabButton
           >
-          <NavTabButton link="personalLoanHappinessApartmentTab002"
+          <NavTabButton link="personalLoanMedicalAppliancesTab002"
             >진행절차</NavTabButton
           >
-          <NavTabButton link="personalLoanHappinessApartmentTab003"
+          <NavTabButton link="personalLoanMedicalAppliancesTab003"
             >유의사항</NavTabButton
           >
         </NavTab>
       </StickyBar>
 
       <!-- 상품안내 -->
-      <UiTabPanel name="personalLoanHappinessApartmentTab001">
+      <UiTabPanel name="personalLoanMedicalAppliancesTab001">
         <BasicBox theme="tertiary">
           <KeyValue align="left" margin="regular">
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
@@ -673,7 +673,7 @@ export default {
       <!-- // 상품안내 -->
 
       <!-- 진행절차 -->
-      <UiTabPanel name="personalLoanHappinessApartmentTab002">
+      <UiTabPanel name="personalLoanMedicalAppliancesTab002">
         <div :class="$style['step']">
           <ul :class="$style['step__list']">
             <li :class="$style['step__item']">
@@ -775,7 +775,7 @@ export default {
       <!-- // 진행절차 -->
 
       <!-- 유의사항 -->
-      <UiTabPanel name="personalLoanHappinessApartmentTab003">
+      <UiTabPanel name="personalLoanMedicalAppliancesTab003">
         <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
           <li
             :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
