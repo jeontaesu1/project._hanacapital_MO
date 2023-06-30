@@ -1,0 +1,71 @@
+.manual-check {
+  display: block;
+
+  &::before {
+    content: '';
+    display: table;
+  }
+
+  &__list {
+    @include reset-list;
+    margin: -10px 0 0 -10px;
+  }
+
+  &__item {
+    padding: 10px 0 0 10px;
+
+    &--checked {
+      .manual-check__object::before {
+        border-color: $color-black;
+        background-color: $color-black;
+      }
+    }
+  }
+
+  &__block {
+    display: flex;
+    align-items: flex-start;
+    @include font-size-default(13);
+  }
+
+  &__object {
+    flex: none;
+    position: relative;
+    display: block;
+    min-width: 10px;
+    height: #{$line-height-default}em;
+    margin-right: 6px;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -5px 0 0 -5px;
+      width: 8px;
+      height: 8px;
+      border-radius: 2px;
+      border: 1px solid $color-gray-60;
+      background-color: transparent;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    color: $color-black;
+  }
+
+  &--wrap {
+    .manual-check {
+      &__list {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      &__item {
+        flex: none;
+      }
+    }
+  }
+}

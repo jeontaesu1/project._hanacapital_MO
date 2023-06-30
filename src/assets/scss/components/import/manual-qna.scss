@@ -1,0 +1,61 @@
+.manual-qna {
+  display: block;
+
+  &__list {
+    @include reset-list;
+  }
+
+  &__item {
+    display: block;
+
+    & + & {
+      margin-top: 24px;
+    }
+  }
+
+  &__head {
+    position: relative;
+    display: flex;
+  }
+
+  &__symbol {
+    flex: none;
+    margin: 1px 8px 0 0;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    @include font-size-default(12);
+    font-weight: 500;
+    color: $color-navy-50;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background-color: rgba($color-navy-50, 0.1);
+
+    &--answer {
+      color: $color-gray-60;
+      background-color: $color-gray-15;
+    }
+  }
+
+  &__cell {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__title {
+    margin: 0;
+    @include font-size-default(14);
+    font-weight: 500;
+  }
+
+  &__contents {
+    display: flex;
+    margin-top: 8px;
+  }
+
+  &__text {
+    margin: 0;
+    @include font-size-default(14);
+    color: $color-gray-80;
+  }
+}

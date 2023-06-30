@@ -666,8 +666,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/e-hana',
-        status: 'pending',
-        create: '',
+        status: 'end',
+        create: '2023.06.28',
         log: [],
       },
       {
@@ -693,8 +693,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/happiness-apartment',
-        status: 'pending',
-        create: '',
+        status: 'end',
+        create: '2023.06.28',
         log: [],
       },
       {
@@ -728,8 +728,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/apartment',
-        status: 'pending',
-        create: '',
+        status: 'end',
+        create: '2023.06.28',
         log: [],
       },
       {
@@ -739,8 +739,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/one-q-auto',
-        status: 'pending',
-        create: '',
+        status: 'end',
+        create: '2023.06.28',
         log: [],
       },
       {
@@ -766,8 +766,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/best-customer',
-        status: 'pending',
-        create: '',
+        status: 'end',
+        create: '2023.06.28',
         log: [],
       },
       {
@@ -793,8 +793,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/e-rental-house',
-        status: 'pending',
-        create: '',
+        status: 'end',
+        create: '2023.06.28',
         log: [],
       },
       {
@@ -804,8 +804,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/stock',
-        status: 'pending',
-        create: '',
+        status: 'end',
+        create: '2023.06.28',
         log: [],
       },
       {
@@ -842,8 +842,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/business-house',
-        status: 'pending',
-        create: '',
+        status: 'end',
+        create: '2023.06.28',
         log: [],
       },
       {
@@ -869,8 +869,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/consumer-durables',
-        status: 'pending',
-        create: '',
+        status: 'end',
+        create: '2023.06.28',
         log: [],
       },
       {
@@ -880,7 +880,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/personal-loan-etc-001',
-        status: 'pending',
+        status: 'end',
         create: '2023.03.31',
         log: [
           {
@@ -1458,6 +1458,10 @@ const datas = () => [
           {
             date: '2023.06.23',
             text: '팝업 추가\n- 재고금융 한도거래 확약서\n- 재고금융 건별 대출 관련 위임장',
+          },
+          {
+            date: '2023.06.28',
+            text: '팝업 추가\n- 필수서류확인',
           },
         ],
       },
@@ -2911,6 +2915,10 @@ const datas = () => [
           {
             date: '2023.05.05',
             text: '팝업 추가\n- 약정 정보 확인\n- 계약정보 최종확인\n- 주문서\n- 리스계약확인서\n- 약정완료\n- 약정실패',
+          },
+          {
+            date: '2023.06.28',
+            text: '팝업 추가\n- 계약서류 다운로드',
           },
         ],
       },

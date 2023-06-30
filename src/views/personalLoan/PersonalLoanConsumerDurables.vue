@@ -22,11 +22,11 @@ import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
 
 import IconRate from '@/assets/images/icon/rate.svg?component';
 import IconDate from '@/assets/images/icon/date.svg?component';
-import IconCalculate from '@/assets/images/icon/calculate.svg?component';
 import IconConsulting from '@/assets/images/icon/consulting.svg?component';
-import IconService from '@/assets/images/icon/service.svg?component';
 import IconSend from '@/assets/images/icon/send.svg?component';
+import IconPersonalTerms from '@/assets/images/icon/personal-terms.svg?component';
 import IconDeposit from '@/assets/images/icon/deposit.svg?component';
+import IconCalculate from '@/assets/images/icon/calculate.svg?component';
 import ImgSample from '@/assets/images/_dummy/illustration-sample.svg?component';
 
 export default {
@@ -47,11 +47,11 @@ export default {
     NavTabButton,
     IconRate,
     IconDate,
-    IconCalculate,
     IconConsulting,
-    IconService,
     IconSend,
+    IconPersonalTerms,
     IconDeposit,
+    IconCalculate,
     ImgSample,
   },
   setup() {
@@ -132,29 +132,32 @@ export default {
       </BasicBox>
     </div>
 
-    <UiTab>
-      <div :class="$style['tab__inner']">
-        <StickyBar>
-          <NavTab :useUiTab="true" :auto="true">
-            <NavTabButton link="PersonalLoanConsumerDurablesTab001_001"
-              >상품안내</NavTabButton
-            >
-            <NavTabButton link="PersonalLoanConsumerDurablesTab001_002"
-              >진행절차</NavTabButton
-            >
-            <NavTabButton link="PersonalLoanConsumerDurablesTab001_003"
-              >유의사항</NavTabButton
-            >
-          </NavTab>
-        </StickyBar>
-      </div>
+    <UiTab
+      :classNames="{
+        wrap: 'row-margin-container-medium row-margin-bottom-none',
+      }"
+    >
+      <StickyBar>
+        <NavTab :useUiTab="true" :auto="true">
+          <NavTabButton link="personalLoanHappinessApartmentTab001"
+            >상품안내</NavTabButton
+          >
+          <NavTabButton link="personalLoanHappinessApartmentTab002"
+            >진행절차</NavTabButton
+          >
+          <NavTabButton link="personalLoanHappinessApartmentTab003"
+            >유의사항</NavTabButton
+          >
+        </NavTab>
+      </StickyBar>
 
-      <UiTabPanel name="PersonalLoanConsumerDurablesTab001_001">
+      <!-- 상품안내 -->
+      <UiTabPanel name="personalLoanHappinessApartmentTab001">
         <BasicBox theme="tertiary">
           <KeyValue align="left" margin="regular">
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>대상</KeyValueTitle>
-              <KeyValueText>개인, 개인사업자 및 법인 </KeyValueText>
+              <KeyValueText>개인, 개인사업자 및 법인</KeyValueText>
             </KeyValueItem>
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
@@ -170,14 +173,15 @@ export default {
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>기간</KeyValueTitle>
               <KeyValueText>
-                3개월 ~ 36개월
-                <div :class="$style['small-sub']">
+                <div>3개월 ~ 36개월</div>
+                <div class="text-body-5 color-gray-tertiary row-margin-mini">
                   일부품목에 한하여 120개월까지 가능
                 </div>
               </KeyValueText>
             </KeyValueItem>
           </KeyValue>
         </BasicBox>
+
         <KeyValue
           direction="vertical"
           :classNames="{
@@ -200,8 +204,8 @@ export default {
                   :class="[
                     $style['basic-list__item'],
                     'text-body-4',
-                    'color-black',
                     'font-weight-regular',
+                    'color-black',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']">-</div>
@@ -214,8 +218,8 @@ export default {
                   :class="[
                     $style['basic-list__item'],
                     'text-body-4',
-                    'color-black',
                     'font-weight-regular',
+                    'color-black',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']">-</div>
@@ -235,9 +239,9 @@ export default {
                 <li
                   :class="[
                     $style['basic-list__item'],
-                    'color-gray-tertiary',
-                    'font-weight-regular',
                     'text-body-5',
+                    'font-weight-regular',
+                    'color-gray-tertiary',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']">※</div>
@@ -248,9 +252,9 @@ export default {
                 <li
                   :class="[
                     $style['basic-list__item'],
-                    'color-gray-tertiary',
-                    'font-weight-regular',
                     'text-body-5',
+                    'font-weight-regular',
+                    'color-gray-tertiary',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']">※</div>
@@ -261,9 +265,9 @@ export default {
                 <li
                   :class="[
                     $style['basic-list__item'],
-                    'color-gray-tertiary',
-                    'font-weight-regular',
                     'text-body-5',
+                    'font-weight-regular',
+                    'color-gray-tertiary',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']">※</div>
@@ -278,8 +282,10 @@ export default {
           <KeyValueItem>
             <KeyValueTitle>대출부대비용</KeyValueTitle>
             <KeyValueText>
-              5천만원 초과 실행 시 인지세 발생
-              <div :class="$style['sub']">
+              <div>5천만원 초과 실행 시 인지세 발생</div>
+              <div
+                class="text-body-4 font-weight-light color-gray-tertiary row-margin-mini"
+              >
                 (인지세는 하나캐피탈과 금융소비자가 50%씩 부담합니다.)
               </div>
               <ul :class="[$style['basic-list'], 'row-margin-item']">
@@ -287,8 +293,8 @@ export default {
                   :class="[
                     $style['basic-list__item'],
                     'text-body-4',
-                    'color-black',
                     'font-weight-regular',
+                    'color-black',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']">-</div>
@@ -300,8 +306,8 @@ export default {
                   :class="[
                     $style['basic-list__item'],
                     'text-body-4',
-                    'color-black',
                     'font-weight-regular',
+                    'color-black',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']">-</div>
@@ -320,9 +326,9 @@ export default {
                 <li
                   :class="[
                     $style['basic-list__item'],
-                    'color-gray-tertiary',
-                    'font-weight-regular',
                     'text-body-5',
+                    'font-weight-regular',
+                    'color-gray-tertiary',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']">※</div>
@@ -338,38 +344,42 @@ export default {
             <KeyValueTitle>연체이자율</KeyValueTitle>
             <KeyValueText>
               <ul
-                :class="[
-                  $style['basic-list'],
-                  $style['basic-list--regular'],
-                  $style['basic-list--mini-margin'],
-                ]"
+                :class="[$style['basic-list'], $style['basic-list--regular']]"
               >
                 <li
                   :class="[
                     $style['basic-list__item'],
                     'text-body-2',
-                    'color-black',
                     'font-weight-regular',
+                    'color-black',
                   ]"
                 >
-                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__symbol']">-</div>
                   <div :class="$style['basic-list__content']">
-                    유이자 : 약정이율+3%,
-                    <div :class="$style['sub']">(법정최고금리 연 20% 이내)</div>
+                    <div>유이자 : 약정이율+3%,</div>
+                    <div
+                      class="text-body-4 font-weight-light color-gray-tertiary row-margin-mini"
+                    >
+                      (법정최고금리 연 20% 이내)
+                    </div>
                   </div>
                 </li>
                 <li
                   :class="[
                     $style['basic-list__item'],
                     'text-body-2',
-                    'color-black',
                     'font-weight-regular',
+                    'color-black',
                   ]"
                 >
-                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__symbol']">-</div>
                   <div :class="$style['basic-list__content']">
-                    무이자 : 상사약정금리+3%,
-                    <div :class="$style['sub']">(법정최고금리 연 20% 이내)</div>
+                    <div>무이자 : 상사약정금리+3%,</div>
+                    <div
+                      class="text-body-4 font-weight-light color-gray-tertiary row-margin-mini"
+                    >
+                      (법정최고금리 연 20% 이내)
+                    </div>
                   </div>
                 </li>
               </ul>
@@ -383,24 +393,24 @@ export default {
                 <li
                   :class="[
                     $style['basic-list__item'],
-                    'color-gray-tertiary',
-                    'font-weight-regular',
                     'text-body-5',
+                    'font-weight-regular',
+                    'color-gray-tertiary',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']">※</div>
                   <div :class="$style['basic-list__content']">
                     <div>
-                      단,연체 발생 시점에 약정금리가 없는 경우는 아래의 사항을
+                      단, 연체 발생 시점에 약정금리가 없는 경우는 아래의 사항을
                       적용함
                     </div>
                     <ul :class="[$style['basic-list'], 'row-margin-small']">
                       <li
                         :class="[
                           $style['basic-list__item'],
-                          'color-black',
-                          'font-weight-regular',
                           'text-body-5',
+                          'font-weight-regular',
+                          'color-black',
                         ]"
                       >
                         <div :class="$style['basic-list__symbol']">-</div>
@@ -409,12 +419,28 @@ export default {
                             약정금리는 상법상 상사법정이율과 상호금융
                             가계자금대출금리 *중 높은 금리 적용
                           </div>
-                          <div
-                            class="text-body-5 color-gray-tertiary row-margin-small"
+                          <ul
+                            :class="[
+                              $style['basic-list'],
+                              $style['basic-list--small-margin'],
+                              'row-margin-small',
+                            ]"
                           >
-                            * 한국은행에서 매월 발표하는 가장 최근의
-                            비은행금융기관 가중평균대출금리(신규대출 기준)
-                          </div>
+                            <li
+                              :class="[
+                                $style['basic-list__item'],
+                                'text-body-5',
+                                'font-weight-regular',
+                                'color-gray-tertiary',
+                              ]"
+                            >
+                              <div :class="$style['basic-list__symbol']">*</div>
+                              <div :class="$style['basic-list__content']">
+                                한국은행에서 매월 발표하는 가장 최근의
+                                비은행금융기관 가중평균대출금리 (신규대출 기준)
+                              </div>
+                            </li>
+                          </ul>
                         </div>
                       </li>
                     </ul>
@@ -422,6 +448,11 @@ export default {
                 </li>
               </ul>
             </KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>이자부과시기</KeyValueTitle>
+            <KeyValueText>매월 후취</KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem>
@@ -643,7 +674,10 @@ export default {
           </KeyValueItem>
         </KeyValue>
       </UiTabPanel>
-      <UiTabPanel name="PersonalLoanConsumerDurablesTab001_002">
+      <!-- // 상품안내 -->
+
+      <!-- 진행절차 -->
+      <UiTabPanel name="personalLoanHappinessApartmentTab002">
         <div :class="$style['step']">
           <ul :class="$style['step__list']">
             <li :class="$style['step__item']">
@@ -673,7 +707,7 @@ export default {
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
-                  <IconService />
+                  <IconSend />
                 </div>
               </div>
             </li>
@@ -690,7 +724,7 @@ export default {
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
-                  <IconSend />
+                  <IconPersonalTerms />
                 </div>
               </div>
             </li>
@@ -714,7 +748,10 @@ export default {
           </ul>
         </div>
       </UiTabPanel>
-      <UiTabPanel name="PersonalLoanConsumerDurablesTab001_003">
+      <!-- // 진행절차 -->
+
+      <!-- 유의사항 -->
+      <UiTabPanel name="personalLoanHappinessApartmentTab003">
         <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
           <li
             :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
@@ -804,24 +841,25 @@ export default {
           </li>
         </ul>
       </UiTabPanel>
-    </UiTab>
+      <!-- // 유의사항 -->
 
-    <ul :class="[$style['basic-list'], $style['margin-top-regular']]">
-      <li :class="$style['basic-list__item']">
-        <div :class="$style['basic-list__symbol']"></div>
-        <div :class="$style['basic-list__content']">
-          준법심의필 22-54<br />
-          (2022.01.28~2023.01.27)
-        </div>
-      </li>
-      <li :class="$style['basic-list__item']">
-        <div :class="$style['basic-list__symbol']"></div>
-        <div :class="$style['basic-list__content']">
-          여신금융협회 심의필 제2022-L1h-00827호<br />
-          (2022.02.09~2023.02.08)
-        </div>
-      </li>
-    </ul>
+      <ul :class="[$style['basic-list'], 'row-margin-contents']">
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            준법심의필 22-54<br />
+            (2022.01.28~2023.01.27)
+          </div>
+        </li>
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            여신금융협회 심의필 제2022-L1h-00827호<br />
+            (2022.02.09~2023.02.08)
+          </div>
+        </li>
+      </ul>
+    </UiTab>
 
     <BasicHr
       type="contents"

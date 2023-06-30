@@ -22,6 +22,7 @@ import LayerMyLoanProgressInstallmentConsultationForm from '@/views/myLoan/Layer
 import LayerMyLoanProgressInstallmentConsultationSearch from '@/views/myLoan/LayerMyLoanProgressInstallmentConsultationSearch.vue';
 import LayerMyLoanProgressInstallmentConsultationComplete from '@/views/myLoan/LayerMyLoanProgressInstallmentConsultationComplete.vue';
 import LayerMyLoanProgressInstallmentConsultationFail from '@/views/myLoan/LayerMyLoanProgressInstallmentConsultationFail.vue';
+import LayerMyLoanProgressContractDocumentsDownload from '@/views/myLoan/LayerMyLoanProgressContractDocumentsDownload.vue';
 
 export default {
   components: {
@@ -45,6 +46,7 @@ export default {
     LayerMyLoanProgressInstallmentConsultationSearch,
     LayerMyLoanProgressInstallmentConsultationComplete,
     LayerMyLoanProgressInstallmentConsultationFail,
+    LayerMyLoanProgressContractDocumentsDownload,
   },
 
   setup() {
@@ -64,6 +66,7 @@ export default {
     const layer014 = ref(null);
     const layer015 = ref(null);
     const layer016 = ref(null);
+    const layer017 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -113,6 +116,9 @@ export default {
     const layer016Open = (e = {}) => {
       layer016.value.layer.open(e.target);
     };
+    const layer017Open = (e = {}) => {
+      layer017.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -131,6 +137,7 @@ export default {
       layer014,
       layer015,
       layer016,
+      layer017,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -147,6 +154,7 @@ export default {
       layer014Open,
       layer015Open,
       layer016Open,
+      layer017Open,
     };
   },
 };
@@ -240,6 +248,11 @@ export default {
           할부상담 결과안내_추가심사필요<br />PF_M10_l010
         </BasicButton>
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer017Open">
+          계약서류 다운로드<br />My_M03_l028
+        </BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <LayerMyLoanProgressAgree ref="layer001" />
@@ -258,5 +271,6 @@ export default {
     <LayerMyLoanProgressInstallmentConsultationSearch ref="layer014" />
     <LayerMyLoanProgressInstallmentConsultationComplete ref="layer015" />
     <LayerMyLoanProgressInstallmentConsultationFail ref="layer016" />
+    <LayerMyLoanProgressContractDocumentsDownload ref="layer017" />
   </PageContents>
 </template>

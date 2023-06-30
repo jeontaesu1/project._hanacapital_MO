@@ -312,7 +312,7 @@ export default {
             </div>
 
             <div :class="[$style['logs__button'], 'row-margin-contents-small']">
-              <BasicButton size="small" line="true">만기안내장</BasicButton>
+              <BasicButton size="small" :line="true">만기안내장</BasicButton>
               <BasicButton
                 size="small"
                 :classNames="{ wrap: 'row-margin-item' }"

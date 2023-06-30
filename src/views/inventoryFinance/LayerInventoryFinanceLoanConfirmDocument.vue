@@ -62,7 +62,7 @@ export default {
               </div>
             </div>
             <div :class="$style['upload-file__button']">
-              <BasicButton line="true" theme="quaternary" size="mini">
+              <BasicButton :line="true" theme="quaternary" size="mini">
                 미리보기
               </BasicButton>
             </div>
@@ -78,7 +78,7 @@ export default {
               </div>
             </div>
             <div :class="$style['upload-file__button']">
-              <BasicButton line="true" theme="quaternary" size="mini">
+              <BasicButton :line="true" theme="quaternary" size="mini">
                 미리보기
               </BasicButton>
             </div>
@@ -94,7 +94,7 @@ export default {
               </div>
             </div>
             <div :class="$style['upload-file__button']">
-              <BasicButton line="true" theme="quaternary" size="mini">
+              <BasicButton :line="true" theme="quaternary" size="mini">
                 미리보기
               </BasicButton>
             </div>

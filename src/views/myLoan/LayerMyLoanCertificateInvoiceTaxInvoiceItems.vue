@@ -165,7 +165,7 @@ export default {
           </FormListItem>
         </FormList>
         <BasicButton
-          line="true"
+          :line="true"
           :classNames="{ wrap: 'row-margin-contents-group' }"
           >조회</BasicButton
         >
