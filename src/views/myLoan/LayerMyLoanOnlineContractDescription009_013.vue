@@ -122,12 +122,7 @@ export default {
                     <td class="align-left">
                       <div :class="$style['manual-check']">
                         <ul :class="$style['manual-check__list']">
-                          <li
-                            :class="[
-                              $style['manual-check__item'],
-                              $style['manual-check__item--checked'],
-                            ]"
-                          >
+                          <li :class="$style['manual-check__item']">
                             <div :class="$style['manual-check__block']">
                               <div
                                 :class="$style['manual-check__object']"
@@ -166,12 +161,7 @@ export default {
                     <td class="align-left">
                       <div :class="$style['manual-check']">
                         <ul :class="$style['manual-check__list']">
-                          <li
-                            :class="[
-                              $style['manual-check__item'],
-                              $style['manual-check__item--checked'],
-                            ]"
-                          >
+                          <li :class="$style['manual-check__item']">
                             <div :class="$style['manual-check__block']">
                               <div
                                 :class="$style['manual-check__object']"
@@ -220,12 +210,7 @@ export default {
                     <td class="align-left">
                       <div :class="$style['manual-check']">
                         <ul :class="$style['manual-check__list']">
-                          <li
-                            :class="[
-                              $style['manual-check__item'],
-                              $style['manual-check__item--checked'],
-                            ]"
-                          >
+                          <li :class="$style['manual-check__item']">
                             <div :class="$style['manual-check__block']">
                               <div
                                 :class="$style['manual-check__object']"
@@ -346,7 +331,7 @@ export default {
                 <div :class="$style['basic-list__symbol']"></div>
                 <div :class="$style['basic-list__content']">
                   금융채연동금리 : 금융투자협회에서 공시하는 금융채Ⅱ AA0 3년물
-                  또는 금융채Ⅱ AA0 5년물(KIS채권평가 기준）금리에 가산금리를
+                  또는 금융채Ⅱ AA0 5년물(KIS채권평가 기준) 금리에 가산금리를
                   적용하여 매 3개월마다 변경
                 </div>
               </li>
@@ -668,7 +653,7 @@ export default {
               항목(<span :class="$style['blank-box']"></span>) 금액(<span
                 :class="$style['blank-box']"
               ></span
-              >) %
+              >) %,원
             </p>
           </section>
 
@@ -1219,7 +1204,7 @@ export default {
                       만기 시 상환금액 (<span
                         :class="$style['blank-box']"
                       ></span
-                      >) 원
+                      >)원
                     </div>
                   </li>
                 </ul>
@@ -1318,7 +1303,9 @@ export default {
             >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                <div>「이자를 납입하기로 약정한 날」에 납입하지 아니한 때</div>
+                <div class="underline">
+                  「이자를 납입하기로 약정한 날」에 납입하지 아니한 때
+                </div>
                 <ul :class="[$style['basic-list'], 'row-margin-item']">
                   <li
                     :class="[
@@ -1342,10 +1329,9 @@ export default {
                   <p
                     class="text-body-4 font-weight-light color-gray-tertiary row-margin-item"
                   >
-                    (예시) 원금 5천만원(월 80만원 분할상환), 약정이자율 연 7%,
-                    연체가산이자율 연 3%인 중고차 오토론 대출의 분할
-                    상환금(80만원) 및 이자(20만원)를 미납하여 연체가 발생하고,
-                    연체 발생 후 2개월 시점에 납부할 경우 연체이자
+                    (예시) 원금 1억2천만원, 약정이자율 연 5%, 연체가산이자율은
+                    연 3%인 대출의 이자(50만원)를 미납하여 연체가 발생하고,
+                    연체발생후 31 일 시점에 납부할 경우 연체이자
                   </p>
 
                   <div :class="$style['basic-table']">
@@ -1369,19 +1355,19 @@ export default {
                             <td>
                               지체된 약정이자(50만원) × 연8%(5% + 3%) × 14/365
                             </td>
-                            <td>1,534 원</td>
+                            <td>1,534원</td>
                           </tr>
                           <tr>
                             <th>연체 15일<br />~30일분</th>
                             <td>원금(1억2천만원) × 연8%(5% + 3%) × 16/365</td>
-                            <td>420,822 원</td>
+                            <td>420,822원</td>
                           </tr>
                         </tbody>
                         <tfoot>
                           <tr>
                             <td>계</td>
                             <td></td>
-                            <td>419,422,356 원</td>
+                            <td>419,422,356원</td>
                           </tr>
                         </tfoot>
                       </table>
@@ -1423,6 +1409,148 @@ export default {
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
                 <div class="underline">
+                  「원금을 상환하기로 약정한 날」에 상환하지 아니한 때
+                </div>
+                <ul :class="[$style['basic-list'], 'row-margin-item']">
+                  <li
+                    :class="[
+                      $style['basic-list__item'],
+                      'color-black',
+                      'text-body-4',
+                      'font-weight-regular',
+                    ]"
+                  >
+                    <div :class="$style['basic-list__symbol']">-</div>
+                    <div :class="$style['basic-list__content']">
+                      원금을 상환하여야 할 날의 다음날부터는 대출원금에 대한
+                      연체이자를 내셔야 합니다.
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'color-black',
+                'text-body-2',
+                'font-weight-regular',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                <div class="underline">
+                  「분할상환금(또는 분할상환 원리금)을 상환하기로 한 날」에
+                  상환하지 아니한 때
+                </div>
+                <ul :class="[$style['basic-list'], 'row-margin-item']">
+                  <li
+                    :class="[
+                      $style['basic-list__item'],
+                      'color-black',
+                      'text-body-4',
+                      'font-weight-regular',
+                    ]"
+                  >
+                    <div :class="$style['basic-list__symbol']">-</div>
+                    <div :class="$style['basic-list__content']">
+                      분할상환금(또는 분할상환원리금)을 상환하여야할 날의
+                      다음날부터는 해당 분할상환금(또는 분할상환원리금)에 대한
+                      연체이자를, 2회 이상 연속하여 지체한 때에는 기한이익상실로
+                      인하여 대출원금에 대한 연체이자를 내셔야 합니다.
+                    </div>
+                  </li>
+                </ul>
+
+                <div class="row-margin-contents">
+                  <p
+                    class="text-body-4 font-weight-light color-gray-tertiary row-margin-item"
+                  >
+                    (예시) 원금 1억2천만원, 분할상환 원리금 매월 150만원,
+                    약정이자율 연 5%, 연체가산이자율 연 3%인 대출의 분할상환
+                    원리금을 미납하여 연체가 발생하고, 연체발생후 2개월 시점에
+                    납부할 경우 연체이자
+                  </p>
+
+                  <div :class="$style['basic-table']">
+                    <div :class="$style['basic-table']">
+                      <table>
+                        <colgroup>
+                          <col style="width: 85px" />
+                          <col />
+                          <col style="width: 92px" />
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th>연체기간</th>
+                            <th>연체이자 계산방법</th>
+                            <th>연체이자</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th>연체발생<br />~1개월분</th>
+                            <td>
+                              지체된 분할상환 원리금(150만원) × 연8%(5% + 3%) ×
+                              1/12
+                            </td>
+                            <td>10,000원</td>
+                          </tr>
+                          <tr>
+                            <th>연체<br />1~2개월분</th>
+                            <td>원금(1억2천만원) × 연8%(5% + 3%) × 1/12</td>
+                            <td>800,000원</td>
+                          </tr>
+                        </tbody>
+                        <tfoot>
+                          <tr>
+                            <td>계</td>
+                            <td></td>
+                            <td>810,000원</td>
+                          </tr>
+                        </tfoot>
+                      </table>
+                    </div>
+                  </div>
+
+                  <ul :class="[$style['basic-list'], 'row-margin-item']">
+                    <li
+                      :class="[
+                        $style['basic-list__item'],
+                        'color-gray-tertiary',
+                        'font-weight-regular',
+                      ]"
+                    >
+                      <div :class="$style['basic-list__symbol']">※</div>
+                      <div :class="$style['basic-list__content']">
+                        분할상환 원리금 및 기한이익상실전 발생한 약정이자는 별도
+                      </div>
+                    </li>
+                  </ul>
+
+                  <NoticeText :classNames="{ wrap: 'row-margin-item-medium' }">
+                    위 내용은 이해를 돕기위해 원리금 분할상환 대출의
+                    연체이자만을 월단위로 단순하게 계산한 예시이며, 원금
+                    분할상환 대출의 경우 기한이익 상실기준이 다르게
+                    적용(약정이자 상환기일 14일 경과시 기한이익 상실)됨에 따라
+                    연체이자 계산방식 및 금액이 위 예시와 다르게 적용될 수
+                    있습니다. 실제 납부금액은 연체이자에 약정이자 및
+                    분할상환금(또는 분할상환원리금)을 포함하여 계산됩니다.
+                  </NoticeText>
+                </div>
+              </div>
+            </li>
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'color-black',
+                'text-body-2',
+                'font-weight-regular',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                <div class="underline">
                   여신거래기본약관 제8조에서 정한 대출기한 전의 채무변제 의무
                   사유에 해당되어 기한의 이익이 상실된 때
                 </div>
@@ -1447,9 +1575,10 @@ export default {
           </ul>
 
           <p class="text-body-2 row-margin-contents">
-            이자납입 연체로 인하여 대출잔액에 연체이율이 적용되었을 경우,
-            연체이자 전액을 납입하지 않고 일부연체이자를 납입하는 경우에도
-            연체이자 전액을 납입하기 전까지 대출잔액에 연체이율이 적용됩니다.
+            이자납입 연체로 인하여 대출잔액에 연체이율이 적용되었을 경우, 연체
+            이자 전액을 납입하지 않고 일부연체이자를 납입하는 경우에도 연체이자
+            전액을 납입하기 전까지 대출잔액에 연체이율이 적용됨을 유의하시기
+            바랍니다.
           </p>
         </section>
 

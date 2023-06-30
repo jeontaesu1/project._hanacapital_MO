@@ -3,6 +3,5 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.indentSize": "tabSize",
-  "editor.renderWhitespace": "all",
-  "liveServer.settings.port": 5501
+  "editor.renderWhitespace": "all"
 }

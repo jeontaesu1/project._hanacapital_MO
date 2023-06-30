@@ -231,9 +231,9 @@ export default {
                     <div :class="$style['manual-qna__cell']">
                       <div :class="$style['manual-qna__text']">
                         <div>
-                          대출금
-                          <span class="color-red underline"
-                            >연체 시에는 법에서 정하는 범위 내에서 약정에 따라
+                          <span class="color-black">대출금</span>
+                          <span class="color-red underline">
+                            연체 시에는 법에서 정하는 범위 내에서 약정에 따라
                             연체이자율이 적용*</span
                           >되며,
                           <span class="color-green"
@@ -342,7 +342,7 @@ export default {
                   </tr>
                   <tr>
                     <th>적용금리</th>
-                    <td>2%</td>
+                    <td>%</td>
                   </tr>
                   <tr>
                     <th>대출한도</th>
@@ -353,12 +353,7 @@ export default {
                     <td class="align-left">
                       <div :class="$style['manual-check']">
                         <ul :class="$style['manual-check__list']">
-                          <li
-                            :class="[
-                              $style['manual-check__item'],
-                              $style['manual-check__item--checked'],
-                            ]"
-                          >
+                          <li :class="$style['manual-check__item']">
                             <div :class="$style['manual-check__block']">
                               <div
                                 :class="$style['manual-check__object']"
@@ -384,7 +379,16 @@ export default {
                   </tr>
                   <tr>
                     <th>대출기간</th>
-                    <td>취급 후 24개월</td>
+                    <td>
+                      취급 후
+                      <span
+                        :class="[
+                          $style['blank-box'],
+                          $style['blank-box--small'],
+                        ]"
+                      ></span
+                      >개월
+                    </td>
                   </tr>
                   <tr>
                     <th>중도상환수수료<br />부과 여부 및 요율</th>
@@ -704,25 +708,24 @@ export default {
                   <div>
                     채무자인 고객은 「여신전문금융업법」
                     제50조의13(금리인하요구)에서 정하는 바에 따라
-                    <strong class="font-weight-medium"
-                      >본인의
-                      <span class="underline italic color-gray"
-                        >[신용상태가 개선]</span
+                    <span class="underline"
+                      ><strong class="font-weight-medium"
+                        >본인의
+                        <span class="italic color-gray">[신용상태가 개선]</span>
+                        되었다고 판단되는 경우(예 : 취업, 승진 등 소득증가,
+                        재산증가, 신용평가등급(평점) 등 용도 상승, 기타 신용상태
+                        개선)</strong
                       >
-                      되었다고 판단되는 경우(예 : 취업, 승진 등 소득증가,
-                      재산증가, 신용평가등급(평점) 등 용도 상승, 기타 신용상태
-                      개선)</strong
-                    >
-                    *금융회사에
-                    <strong
-                      class="underline italic color-gray font-weight-medium"
-                      >[금리인하를 요구]</strong
+                      *금융회사에
+                      <strong class="italic color-gray font-weight-medium"
+                        >[금리인하를 요구]</strong
+                      ></span
                     >
                     할 수 있습니다.
                     <strong class="color-green font-weight-medium"
                       >단, 신용상태가 금리에 영향을 미치지 않는 상품은
-                      금리인하요구권의 행사 대 상에서 제외되오니, 상단의
-                      체크박스를 확인하여 주 시기 바랍니다.</strong
+                      금리인하요구권의 행사 대상에서 제외되오니, 상단의
+                      체크박스를 확인하여 주시기 바랍니다.</strong
                     >
                   </div>
 
@@ -815,21 +818,8 @@ export default {
             <h4 class="text-body-2 row-margin-item-medium">
               보증료 :
               <span class="font-weight-regular"
-                >(<span
-                  :class="[
-                    $style['blank-box'],
-                    $style['blank-box--medium'],
-                    'align-center',
-                  ]"
-                ></span
-                >) 원 또는 대출금액의 (<span
-                  :class="[
-                    $style['blank-box'],
-                    $style['blank-box--medium'],
-                    'align-center',
-                  ]"
-                ></span
-                >) %</span
+                >(<span :class="$style['blank-box']"></span>) 원 또는 대출금액의
+                (<span :class="$style['blank-box']"></span>) %</span
               >
             </h4>
             <p class="text-body-2">
@@ -1497,6 +1487,41 @@ export default {
                       모든 대출금(또는 해당 대출금)의 기한이익을 즉시 상실하며,
                       금융회사는 기한의 이익 상실 사유 발생 즉시 기한이익을
                       상실하였다는 사실을 서면통지 합니다.
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'color-black',
+                'text-body-2',
+                'font-weight-regular',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                <strong class="font-weight-medium underline">
+                  대출기한이 도래되었거나 기한이익이 상실된 대출을 하나라도
+                  상환하지 아니한 때 등 (여신거래기본약관 제8조제2항, 제3항,
+                  제4항에서 정한 사유)
+                </strong>
+                <ul :class="[$style['basic-list'], 'row-margin-contents']">
+                  <li
+                    :class="[
+                      $style['basic-list__item'],
+                      'color-black',
+                      'text-body-4',
+                      'font-weight-regular',
+                    ]"
+                  >
+                    <div :class="$style['basic-list__symbol']">-</div>
+                    <div :class="$style['basic-list__content']">
+                      금융회사의 서면통지가 도달한 날부터 일정 시일이 경과하면
+                      기한이익을 상실하며, 모든 대출금(또는 해당 대출금)을
+                      대출기한이 도래하기 전임에도 불구하고 곧 상환하셔야
+                      합니다.
                     </div>
                   </li>
                 </ul>
@@ -2457,10 +2482,22 @@ export default {
                         >
                           <div class="text-body-5 color-gray">
                             고객확인 : 20<span
-                              :class="$style['blank-box']"
+                              :class="[
+                                $style['blank-box'],
+                                $style['blank-box--small'],
+                              ]"
                             ></span
-                            >.<span :class="$style['blank-box']"></span>.<span
-                              :class="$style['blank-box']"
+                            >.<span
+                              :class="[
+                                $style['blank-box'],
+                                $style['blank-box--small'],
+                              ]"
+                            ></span
+                            >.<span
+                              :class="[
+                                $style['blank-box'],
+                                $style['blank-box--small'],
+                              ]"
                             ></span
                             >.<span
                               :class="[

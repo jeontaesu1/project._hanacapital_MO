@@ -145,9 +145,10 @@ export default {
                     <li :class="$style['basic-list__item']">
                       <div :class="$style['basic-list__symbol']"></div>
                       <div :class="$style['basic-list__content']">
-                        예) 2천만을 중도상환(적용요율을 2%로 가정)할 경우,
-                        고객은 최대 40만원의 중도상환수수료를 금융회사에
-                        납부해야 함
+                        재화를 제공받은 경우에 금융소비자보호법 상 청약철회권
+                        행사가 불가능(금융소비자보호법 시행령
+                        제37조제1항제3호가목)하며, 할부거래법 상 철회권과
+                        항변권은 별도 적용
                       </div>
                     </li>
                   </ul>
@@ -185,19 +186,21 @@ export default {
                         <div>
                           할부금의 경우
                           <span class="color-green underline"
-                            >계약이 성립한 날로부터
-                          </span>
-                          <span class="color-red underline">
-                            3년 경과 후에도 최대 1%의 해약금(중도상환수수료)이
-                            발생* </span
-                          ><span class="underline"
-                            >하오니 참고하여 주시기 바랍니다. </span
+                            >계약이 성립한 날로부터</span
+                          >
+                          <span class="color-red underline"
+                            >3년 경과 후에도 최대 1%의 해약금(중도상환수수료)이
+                            발생*</span
+                          >
+                          <span class="underline"
+                            >하오니 참고하여 주시기 바랍니다.</span
                           >(☞<span class="color-red"
                             >‘4. 수수료 등 비용부담’, ‘10. 해지에 관한
                             사항’</span
                           >
                           확인)
                         </div>
+
                         <ul :class="[$style['basic-list'], 'row-margin-item']">
                           <li :class="$style['basic-list__item']">
                             <div :class="$style['basic-list__symbol']"></div>
@@ -359,7 +362,7 @@ export default {
                           지불하셔야</span
                         >
                         하며,
-                        <span class="color-green"
+                        <span class="color-green underline"
                           >신용점수 하락 및 금융거래 제한 등이 발생</span
                         >할 수 있으니 유의하여 주시기 바랍니다. (☞<span
                           class="color-red"
@@ -653,14 +656,7 @@ export default {
                                     기타
                                   </div>
                                   <div class="inline-block">
-                                    (<span
-                                      :class="[
-                                        $style['blank-box'],
-                                        $style['blank-box--medium'],
-                                        'align-center',
-                                      ]"
-                                    ></span
-                                    >)
+                                    (<span :class="$style['blank-box']"></span>)
                                   </div>
                                 </div>
                               </div>
@@ -1023,19 +1019,18 @@ export default {
                   <div>
                     채무자인 고객은 「여신전문금융업법」
                     제50조의13(금리인하요구)에서 정하는 바에 따라
-                    <strong class="font-weight-medium"
-                      >본인의
-                      <span class="underline italic color-gray"
-                        >[신용상태가 개선]</span
+                    <span class="underline"
+                      ><strong class="font-weight-medium"
+                        >본인의
+                        <span class="italic color-gray">[신용상태가 개선]</span>
+                        되었다고 판단되는 경우(예 : 취업, 승진 등 소득증가,
+                        재산증가, 신용평가등급(평점) 등 용도 상승, 기타 신용상태
+                        개선)</strong
                       >
-                      되었다고 판단되는 경우(예 : 취업, 승진 등 소득증가,
-                      재산증가, 신용평가등급(평점) 등 용도 상승, 기타 신용상태
-                      개선)</strong
-                    >
-                    *금융회사에
-                    <strong
-                      class="underline italic color-gray font-weight-medium"
-                      >[금리인하를 요구]</strong
+                      *금융회사에
+                      <strong class="italic color-gray font-weight-medium"
+                        >[금리인하를 요구]</strong
+                      ></span
                     >
                     할 수 있습니다.
                     <strong class="color-green font-weight-medium"
@@ -1277,14 +1272,7 @@ export default {
                 <div :class="$style['basic-list__content']">
                   <div>
                     등록면허세, 지방교육세, 등기신청수수료 및 법무사수수료:
-                    (<span
-                      :class="[
-                        $style['blank-box'],
-                        $style['blank-box--medium'],
-                        'align-center',
-                      ]"
-                    ></span
-                    >) 원
+                    (<span :class="$style['blank-box']"></span>) 원
                   </div>
 
                   <ul :class="[$style['basic-list'], 'row-margin-contents']">
@@ -1316,11 +1304,7 @@ export default {
                 <div :class="$style['basic-list__content']">
                   <div>
                     근저당물건의 조사 또는 감정평가 수수료 : (<span
-                      :class="[
-                        $style['blank-box'],
-                        $style['blank-box--medium'],
-                        'align-center',
-                      ]"
+                      :class="$style['blank-box']"
                     ></span
                     >) 원
                   </div>
@@ -1355,11 +1339,7 @@ export default {
                 <div :class="$style['basic-list__content']">
                   <div>
                     기타 비용으로서 부담주체가 분명하지 아니한 비용 : (<span
-                      :class="[
-                        $style['blank-box'],
-                        $style['blank-box--medium'],
-                        'align-center',
-                      ]"
+                      :class="$style['blank-box']"
                     ></span
                     >) 원
                   </div>
@@ -1794,11 +1774,11 @@ export default {
 
           <p class="text-body-2 font-weight-medium">
             연체이자율은 유이자[대출이자율 + 연체가산이자율], 무이자의 경우
-            [상거래기본이자율(6%) + 연체가산이자율]로 적용되며, 법정최고금리인
-            20% 이내로 적용됩니다.
-            <span class="color-green">(연체가산이율은 연 3%)</span> 다만 상품에
-            따라 연체이자율이 일부 달라지는 경우가 있으므로, 유의하여 주시기
-            바랍니다.
+            [상거래기본이자율(6%) + 연체가산이자율]로 적용되며,
+            <span class="underline">법정최고금리인 20% 이내로 적용됩니다.</span>
+            <span class="color-green underline">(연체가산이율은 연 3%)</span>
+            다만 상품에 따라 연체이자율이 일부 달라지는 경우가 있으므로,
+            유의하여 주시기 바랍니다.
           </p>
 
           <section class="row-margin-contents">
@@ -2460,9 +2440,11 @@ export default {
             >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                ① 대출금 중도상환 시 전액상환 또는 부분상환 가능하며, ② 휴일에
-                중도상환 불가, ③ 대출금 중도상환금 확인은 당사
-                콜센터(1800-1110)을 통하여 가능하오니 확인바랍니다.
+                <div class="underline">
+                  ① 대출금 중도상환 시 전액상환 또는 부분상환 가능하며, ② 휴일에
+                  중도상환 불가, ③ 대출금 중도상환금 확인은 당사
+                  콜센터(1800-1110)을 통하여 가능하오니 확인바랍니다.
+                </div>
               </div>
             </li>
           </ul>
@@ -3353,10 +3335,22 @@ export default {
                         >
                           <div class="text-body-5 color-gray">
                             고객확인 : 20<span
-                              :class="$style['blank-box']"
+                              :class="[
+                                $style['blank-box'],
+                                $style['blank-box--small'],
+                              ]"
                             ></span
-                            >.<span :class="$style['blank-box']"></span>.<span
-                              :class="$style['blank-box']"
+                            >.<span
+                              :class="[
+                                $style['blank-box'],
+                                $style['blank-box--small'],
+                              ]"
+                            ></span
+                            >.<span
+                              :class="[
+                                $style['blank-box'],
+                                $style['blank-box--small'],
+                              ]"
                             ></span
                             >.<span
                               :class="[

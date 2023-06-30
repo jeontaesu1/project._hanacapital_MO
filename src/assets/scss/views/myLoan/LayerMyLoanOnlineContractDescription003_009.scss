@@ -15,16 +15,16 @@
 
 .blank-box {
   display: inline-block;
-  min-width: 14px;
+  min-width: 60px;
   vertical-align: bottom;
-  text-align: left;
+  text-align: center;
+
+  &--small {
+    min-width: 14px;
+  }
 
   &--regular {
     min-width: 54px;
-  }
-
-  &--medium {
-    min-width: 60px;
   }
 }
 

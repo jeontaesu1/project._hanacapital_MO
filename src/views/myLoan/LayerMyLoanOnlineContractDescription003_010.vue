@@ -343,7 +343,7 @@ export default {
                   </tr>
                   <tr>
                     <th>적용금리</th>
-                    <td>2%</td>
+                    <td>%</td>
                   </tr>
                   <tr>
                     <th>대출한도</th>
@@ -354,12 +354,7 @@ export default {
                     <td class="align-left">
                       <div :class="$style['manual-check']">
                         <ul :class="$style['manual-check__list']">
-                          <li
-                            :class="[
-                              $style['manual-check__item'],
-                              $style['manual-check__item--checked'],
-                            ]"
-                          >
+                          <li :class="$style['manual-check__item']">
                             <div :class="$style['manual-check__block']">
                               <div
                                 :class="$style['manual-check__object']"
@@ -385,7 +380,16 @@ export default {
                   </tr>
                   <tr>
                     <th>대출기간</th>
-                    <td>취급 후 24개월</td>
+                    <td>
+                      취급 후
+                      <span
+                        :class="[
+                          $style['blank-box'],
+                          $style['blank-box--small'],
+                        ]"
+                      ></span
+                      >개월
+                    </td>
                   </tr>
                   <tr>
                     <th>중도상환수수료<br />부과 여부 및 요율</th>
@@ -705,19 +709,18 @@ export default {
                   <div>
                     채무자인 고객은 「여신전문금융업법」
                     제50조의13(금리인하요구)에서 정하는 바에 따라
-                    <strong class="font-weight-medium"
-                      >본인의
-                      <span class="underline italic color-gray"
-                        >[신용상태가 개선]</span
+                    <span class="underline"
+                      ><strong class="font-weight-medium"
+                        >본인의
+                        <span class="italic color-gray">[신용상태가 개선]</span>
+                        되었다고 판단되는 경우(예 : 취업, 승진 등 소득증가,
+                        재산증가, 신용평가등급(평점) 등 용도 상승, 기타 신용상태
+                        개선)</strong
                       >
-                      되었다고 판단되는 경우(예 : 취업, 승진 등 소득증가,
-                      재산증가, 신용평가등급(평점) 등 용도 상승, 기타 신용상태
-                      개선)</strong
-                    >
-                    *금융회사에
-                    <strong
-                      class="underline italic color-gray font-weight-medium"
-                      >[금리인하를 요구]</strong
+                      *금융회사에
+                      <strong class="italic color-gray font-weight-medium"
+                        >[금리인하를 요구]</strong
+                      ></span
                     >
                     할 수 있습니다.
                     <strong class="color-green font-weight-medium"
@@ -817,21 +820,8 @@ export default {
             <h4 class="text-body-2 row-margin-item-medium">
               보증료 :
               <span class="font-weight-regular"
-                >(<span
-                  :class="[
-                    $style['blank-box'],
-                    $style['blank-box--medium'],
-                    'align-center',
-                  ]"
-                ></span
-                >) 원 또는 대출금액의 (<span
-                  :class="[
-                    $style['blank-box'],
-                    $style['blank-box--medium'],
-                    'align-center',
-                  ]"
-                ></span
-                >) %</span
+                >(<span :class="$style['blank-box']"></span>) 원 또는 대출금액의
+                (<span :class="$style['blank-box']"></span>) %</span
               >
             </h4>
             <p class="text-body-2">
@@ -1728,7 +1718,7 @@ export default {
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
                 <div>대출계약의 해지 시 중도상환수수료가 없습니다.</div>
-                <ul :class="[$style['basic-list'], 'row-margin-item']">
+                <ul :class="[$style['basic-list'], 'row-margin-contents']">
                   <li
                     :class="[
                       $style['basic-list__item'],
@@ -2438,10 +2428,22 @@ export default {
                         >
                           <div class="text-body-5 color-gray">
                             고객확인 : 20<span
-                              :class="$style['blank-box']"
+                              :class="[
+                                $style['blank-box'],
+                                $style['blank-box--small'],
+                              ]"
                             ></span
-                            >.<span :class="$style['blank-box']"></span>.<span
-                              :class="$style['blank-box']"
+                            >.<span
+                              :class="[
+                                $style['blank-box'],
+                                $style['blank-box--small'],
+                              ]"
+                            ></span
+                            >.<span
+                              :class="[
+                                $style['blank-box'],
+                                $style['blank-box--small'],
+                              ]"
                             ></span
                             >.<span
                               :class="[

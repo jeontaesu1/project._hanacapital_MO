@@ -860,19 +860,18 @@ export default {
                   <div>
                     채무자인 고객은 「여신전문금융업법」
                     제50조의13(금리인하요구)에서 정하는 바에 따라
-                    <strong class="font-weight-medium"
-                      >본인의
-                      <span class="underline italic color-gray"
-                        >[신용상태가 개선]</span
+                    <span class="underline"
+                      ><strong class="font-weight-medium"
+                        >본인의
+                        <span class="italic color-gray">[신용상태가 개선]</span>
+                        되었다고 판단되는 경우(예 : 취업, 승진 등 소득증가,
+                        재산증가, 신용평가등급(평점) 등 용도 상승, 기타 신용상태
+                        개선)</strong
                       >
-                      되었다고 판단되는 경우(예 : 취업, 승진 등 소득증가,
-                      재산증가, 신용평가등급(평점) 등 용도 상승, 기타 신용상태
-                      개선)</strong
-                    >
-                    *금융회사에
-                    <strong
-                      class="underline italic color-gray font-weight-medium"
-                      >[금리인하를 요구]</strong
+                      *금융회사에
+                      <strong class="italic color-gray font-weight-medium"
+                        >[금리인하를 요구]</strong
+                      ></span
                     >
                     할 수 있습니다.
                     <strong class="color-green font-weight-medium"
@@ -1463,9 +1462,12 @@ export default {
 
           <p class="text-body-2 font-weight-medium">
             연체이자율은 [대출이자율 + 연체가산이자율]로 적용되며,
-            법정최고금리인 20% 이내로 적용됩니다. (연체가산이율은 연 3%) 다만
-            상품에 따라 연체이자율이 일부 달라지는 경우가 있으므로, 유의하여
-            주시기 바랍니다.
+            <span class="underline"
+              >법정최고금리인 20% 이내로 적용됩니다. (연체가산이율은 연
+              3%)</span
+            >
+            다만 상품에 따라 연체이자율이 일부 달라지는 경우가 있으므로,
+            유의하여 주시기 바랍니다.
           </p>
 
           <section class="row-margin-contents">
@@ -2901,18 +2903,30 @@ export default {
                           ]"
                         >
                           <div class="text-body-5 color-gray">
-                            고객확인 : 20<span :class="$style['blank-box']"
-                              >23</span
-                            >.<span :class="$style['blank-box']">04</span>.<span
-                              :class="$style['blank-box']"
-                              >06</span
+                            고객확인 : 20<span
+                              :class="[
+                                $style['blank-box'],
+                                $style['blank-box--small'],
+                              ]"
+                            ></span
+                            >.<span
+                              :class="[
+                                $style['blank-box'],
+                                $style['blank-box--small'],
+                              ]"
+                            ></span
+                            >.<span
+                              :class="[
+                                $style['blank-box'],
+                                $style['blank-box--small'],
+                              ]"
+                            ></span
                             >.<span
                               :class="[
                                 $style['blank-box'],
                                 $style['blank-box--regular'],
                               ]"
-                              >격날터</span
-                            >
+                            ></span>
                           </div>
                         </div>
                         <div class="inline-block">
