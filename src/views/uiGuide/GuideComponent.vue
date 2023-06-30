@@ -6397,7 +6397,7 @@ export default {
         <BasicBox theme="quaternary">// contnets</BasicBox>
         <BasicBox theme="quinary">// contnets</BasicBox>
         <BasicBox theme="senary">// contnets</BasicBox>
-        <BasicBox theme="duodenary">// contnets</BasicBox>
+        <BasicBox theme="undenary">// contnets</BasicBox>
       </div>
     </section>
 

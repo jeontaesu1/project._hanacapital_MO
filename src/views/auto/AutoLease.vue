@@ -167,8 +167,7 @@ export default {
           리스 초기비용 0원!
         </h3>
         <p class="text-body-3 color-gray-tertiary">
-          취득세 공채 비용을 리스료에 포함 할 수 있어<br />차량구매 초기비용
-          절감!
+          취득세 공채 비용을 리스료에 포함 할 수 있어 차량구매 초기비용 절감!
         </p>
         <div :class="[$style['illustration-img'], 'row-margin-item-group']">
           <ImgSample />
@@ -192,19 +191,19 @@ export default {
     <UiTab>
       <StickyBar>
         <NavTab :useUiTab="true" :auto="true">
-          <NavTabButton link="personalLoanEHanaTab001">상품안내</NavTabButton>
-          <NavTabButton link="personalLoanEHanaTab002">진행절차</NavTabButton>
-          <NavTabButton link="personalLoanEHanaTab003">유의사항</NavTabButton>
+          <NavTabButton link="autoLeaseTab001">상품안내</NavTabButton>
+          <NavTabButton link="autoLeaseTab002">진행절차</NavTabButton>
+          <NavTabButton link="autoLeaseTab003">유의사항</NavTabButton>
         </NavTab>
       </StickyBar>
 
       <!-- 상품안내 -->
-      <UiTabPanel name="personalLoanEHanaTab001">
+      <UiTabPanel name="autoLeaseTab001">
         <BasicBox theme="tertiary">
           <KeyValue align="left" margin="regular">
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>대상</KeyValueTitle>
-              <KeyValueText>개인(사업자) 및 법인사업자 </KeyValueText>
+              <KeyValueText>개인(사업자) 및 법인사업자</KeyValueText>
             </KeyValueItem>
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
@@ -219,7 +218,7 @@ export default {
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>기간</KeyValueTitle>
-              <KeyValueText> 12개월 ~ 120개월</KeyValueText>
+              <KeyValueText>12개월 ~ 120개월</KeyValueText>
             </KeyValueItem>
           </KeyValue>
         </BasicBox>
@@ -230,15 +229,15 @@ export default {
             wrap: 'row-margin-contents',
           }"
         >
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
+          <KeyValueItem>
             <KeyValueTitle>상환방법</KeyValueTitle>
             <KeyValueText>원리금균등분할상환</KeyValueText>
           </KeyValueItem>
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
+          <KeyValueItem>
             <KeyValueTitle>이자납부시기</KeyValueTitle>
             <KeyValueText>매월 후취</KeyValueText>
           </KeyValueItem>
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
+          <KeyValueItem>
             <KeyValueTitle>차량소유권</KeyValueTitle>
             <KeyValueText
               ><div>하나캐피탈</div>
@@ -249,331 +248,304 @@ export default {
               </div>
             </KeyValueText>
           </KeyValueItem>
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
+          <KeyValueItem>
             <KeyValueTitle>수수료</KeyValueTitle>
             <KeyValueText>
-              <ul class="reset-list">
-                <li class="row-margin-item">
-                  <div
-                    :class="[
-                      $style['basic-list'],
-                      $style['basic-list--regular'],
-                      'row-margin-item',
-                    ]"
-                  >
+              <ul
+                :class="[$style['basic-list'], $style['basic-list--regular']]"
+              >
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'text-body-2',
+                    'font-weight-regular',
+                    'color-black',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    <div>손해배상금</div>
                     <div
                       :class="[
-                        $style['basic-list__item'],
-                        'color-black',
-                        'text-body-2 ',
-                        'font-weight-regular',
+                        $style['contents-list'],
+                        $style['table-contents-list'],
+                        'row-margin-item',
                       ]"
                     >
-                      <div :class="$style['basic-list__symbol']"></div>
-                      <div :class="$style['basic-list__content']">
-                        손해배상금
-                      </div>
-                    </div>
-                  </div>
-                  <ol class="reset-list">
-                    <li class="row-margin-item">
-                      <div :class="$style['contents-list']">
-                        <div
-                          :class="[
-                            $style['contents-list__list'],
-                            $style['contents-list__list--quinary'],
-                          ]"
-                        >
-                          <div :class="$style['contents-list__item']">
-                            <div :class="$style['contents-list__head']">
-                              <div :class="$style['contents-list__symbol']">
-                                주1
-                              </div>
-                              <div :class="$style['contents-list__title']">
-                                중도해지손해배상금
-                              </div>
+                      <ol
+                        :class="[
+                          $style['contents-list__list'],
+                          $style['contents-list__list--quinary'],
+                        ]"
+                      >
+                        <li :class="$style['contents-list__item']">
+                          <div :class="$style['contents-list__head']">
+                            <div :class="$style['contents-list__symbol']">
+                              주1
+                            </div>
+                            <div :class="$style['contents-list__title']">
+                              <div>중도해지손해배상금</div>
                             </div>
                           </div>
-                        </div>
-                      </div>
-                      <ul :class="[$style['basic-list'], 'row-margin-item']">
-                        <li
-                          :class="[
-                            $style['basic-list__item'],
-                            'text-body-4',
-                            'color-black',
-                            'font-weight-regular',
-                            'row-margin-item',
-                          ]"
-                        >
-                          <div :class="$style['basic-list__symbol']">-</div>
-                          <div :class="$style['basic-list__content']">
-                            미회수원금 X 중도해지손해배상금률
-                          </div>
-                        </li>
-                        <li
-                          :class="[
-                            $style['basic-list__item'],
-                            'text-body-4',
-                            'color-black',
-                            'font-weight-regular',
-                            'row-margin-item',
-                          ]"
-                        >
-                          <div :class="$style['basic-list__symbol']">-</div>
-                          <div :class="$style['basic-list__content']">
-                            미회수원금 X 최고요율(80)% X (잔여기간 월수/리스기간
-                            전체월수)
-                          </div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="row-margin-item">
-                      <div :class="$style['contents-list']">
-                        <div
-                          :class="[
-                            $style['contents-list__list'],
-                            $style['contents-list__list--quinary'],
-                          ]"
-                        >
-                          <div :class="$style['contents-list__item']">
-                            <div :class="$style['contents-list__head']">
-                              <div :class="$style['contents-list__symbol']">
-                                주2
+                          <ul
+                            :class="[$style['basic-list'], 'row-margin-item']"
+                          >
+                            <li
+                              :class="[
+                                $style['basic-list__item'],
+                                'text-body-4',
+                                'font-weight-regular',
+                                'color-black',
+                              ]"
+                            >
+                              <div :class="$style['basic-list__symbol']">-</div>
+                              <div :class="$style['basic-list__content']">
+                                미회수원금 X 중도해지손해배상금률
                               </div>
-                              <div :class="$style['contents-list__title']">
-                                규정손해배상금(차량인수-운용리스)
+                            </li>
+                            <li
+                              :class="[
+                                $style['basic-list__item'],
+                                'text-body-4',
+                                'font-weight-regular',
+                                'color-black',
+                              ]"
+                            >
+                              <div :class="$style['basic-list__symbol']">-</div>
+                              <div :class="$style['basic-list__content']">
+                                미회수원금 X 최고요율(80)% X (잔여기간
+                                월수/리스기간 전체월수)
                               </div>
+                            </li>
+                          </ul>
+                        </li>
+                        <li :class="$style['contents-list__item']">
+                          <div :class="$style['contents-list__head']">
+                            <div :class="$style['contents-list__symbol']">
+                              주2
+                            </div>
+                            <div :class="$style['contents-list__title']">
+                              <div>규정손해배상금(차량인수-운용리스)</div>
                             </div>
                           </div>
-                        </div>
-                      </div>
-                      <ul :class="[$style['basic-list'], 'row-margin-item']">
-                        <li
-                          :class="[
-                            $style['basic-list__item'],
-                            'text-body-4',
-                            'color-black',
-                            'font-weight-regular',
-                            'row-margin-item',
-                          ]"
-                        >
-                          <div :class="$style['basic-list__symbol']">-</div>
-                          <div :class="$style['basic-list__content']">
-                            미회수원금 X 규정손해배상금률
-                          </div>
-                        </li>
-                        <li
-                          :class="[
-                            $style['basic-list__item'],
-                            'text-body-4',
-                            'color-black',
-                            'font-weight-regular',
-                            'row-margin-item',
-                          ]"
-                        >
-                          <div :class="$style['basic-list__symbol']">-</div>
-                          <div :class="$style['basic-list__content']">
-                            미회수원금 X 최고요율(20)% X (잔여기간 월수/리스기간
-                            전체월수)
-                          </div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="row-margin-item">
-                      <div :class="$style['contents-list']">
-                        <div
-                          :class="[
-                            $style['contents-list__list'],
-                            $style['contents-list__list--quinary'],
-                          ]"
-                        >
-                          <div :class="$style['contents-list__item']">
-                            <div :class="$style['contents-list__head']">
-                              <div :class="$style['contents-list__symbol']">
-                                주3
+                          <ul
+                            :class="[$style['basic-list'], 'row-margin-item']"
+                          >
+                            <li
+                              :class="[
+                                $style['basic-list__item'],
+                                'text-body-4',
+                                'font-weight-regular',
+                                'color-black',
+                              ]"
+                            >
+                              <div :class="$style['basic-list__symbol']">-</div>
+                              <div :class="$style['basic-list__content']">
+                                미회수원금 X 규정손해배상금률
                               </div>
-                              <div :class="$style['contents-list__title']">
-                                규정손해배상금(차량인수-금융리스)
+                            </li>
+                            <li
+                              :class="[
+                                $style['basic-list__item'],
+                                'text-body-4',
+                                'font-weight-regular',
+                                'color-black',
+                              ]"
+                            >
+                              <div :class="$style['basic-list__symbol']">-</div>
+                              <div :class="$style['basic-list__content']">
+                                미회수원금 X 최고요율(20)% X (잔여기간
+                                월수/리스기간 전체월수)
                               </div>
+                            </li>
+                          </ul>
+                        </li>
+                        <li :class="$style['contents-list__item']">
+                          <div :class="$style['contents-list__head']">
+                            <div :class="$style['contents-list__symbol']">
+                              주3
+                            </div>
+                            <div :class="$style['contents-list__title']">
+                              <div>규정손해배상금(차량인수-금융리스)</div>
                             </div>
                           </div>
-                        </div>
-                      </div>
-                      <ul :class="[$style['basic-list'], 'row-margin-item']">
-                        <li
-                          :class="[
-                            $style['basic-list__item'],
-                            'text-body-4',
-                            'color-black',
-                            'font-weight-regular',
-                            'row-margin-item',
-                          ]"
-                        >
-                          <div :class="$style['basic-list__symbol']">-</div>
-                          <div :class="$style['basic-list__content']">
-                            미회수원금 X 규정손해배상금률
-                          </div>
+                          <ul
+                            :class="[$style['basic-list'], 'row-margin-item']"
+                          >
+                            <li
+                              :class="[
+                                $style['basic-list__item'],
+                                'text-body-4',
+                                'font-weight-regular',
+                                'color-black',
+                              ]"
+                            >
+                              <div :class="$style['basic-list__symbol']">-</div>
+                              <div :class="$style['basic-list__content']">
+                                미회수원금 X 규정손해배상금률
+                              </div>
+                            </li>
+                            <li
+                              :class="[
+                                $style['basic-list__item'],
+                                'text-body-4',
+                                'font-weight-regular',
+                                'color-black',
+                              ]"
+                            >
+                              <div :class="$style['basic-list__symbol']">-</div>
+                              <div :class="$style['basic-list__content']">
+                                미회수원금 X 최고요율(3)% X (잔여기간
+                                월수/리스기간 전체월수)
+                              </div>
+                            </li>
+                          </ul>
+                          <ul
+                            :class="[
+                              $style['basic-list'],
+                              $style['basic-list--small-margin'],
+                              'row-margin-item',
+                            ]"
+                          >
+                            <li
+                              :class="[
+                                $style['basic-list__item'],
+                                'text-body-5',
+                                'font-weight-regular',
+                                'color-gray-tertiary',
+                              ]"
+                            >
+                              <div :class="$style['basic-list__symbol']">※</div>
+                              <div :class="$style['basic-list__content']">
+                                단, 금융리스의 경우 대부업법에서 정하는
+                                최고이자율을 초과하지 않는 범위로 합니다.
+                              </div>
+                            </li>
+                          </ul>
                         </li>
-                        <li
-                          :class="[
-                            $style['basic-list__item'],
-                            'text-body-4',
-                            'color-black',
-                            'font-weight-regular',
-                            'row-margin-item',
-                          ]"
-                        >
-                          <div :class="$style['basic-list__symbol']">-</div>
-                          <div :class="$style['basic-list__content']">
-                            미회수원금 X 최고요율(3)% X (잔여기간 월수/리스기간
-                            전체월수)
-                          </div>
-                        </li>
-                      </ul>
-                    </li>
-                  </ol>
-                  <div :class="[$style['basic-list'], 'row-margin-item']">
-                    <div
-                      :class="[
-                        $style['basic-list__item'],
-                        'font-weight-regular',
-                        'color-gray-tertiary',
-                      ]"
-                    >
-                      <div :class="$style['basic-list__symbol']">※</div>
-                      <div :class="$style['basic-list__content']">
-                        단, 금융리스의 경우 대부업법에서 정하는 최고이자율을
-                        초과하지 않는 범위로 합니다.
-                      </div>
+                      </ol>
                     </div>
                   </div>
                 </li>
-                <li class="row-margin-item">
-                  <div
-                    :class="[
-                      $style['basic-list'],
-                      $style['basic-list--regular'],
-                      'row-margin-item',
-                    ]"
-                  >
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'text-body-2',
+                    'font-weight-regular',
+                    'color-black',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    <div>승계수수료</div>
                     <div
                       :class="[
-                        $style['basic-list__item'],
-                        'color-black',
-                        'text-body-2 ',
-                        'font-weight-regular',
+                        $style['contents-list'],
+                        $style['table-contents-list'],
+                        'row-margin-item',
                       ]"
                     >
-                      <div :class="$style['basic-list__symbol']"></div>
-                      <div :class="$style['basic-list__content']">
-                        승계수수료
-                      </div>
-                    </div>
-                  </div>
-                  <ol class="reset-list">
-                    <li class="row-margin-item">
-                      <div :class="$style['contents-list']">
-                        <div
-                          :class="[
-                            $style['contents-list__list'],
-                            $style['contents-list__list--quinary'],
-                          ]"
-                        >
-                          <div :class="$style['contents-list__item']">
-                            <div :class="$style['contents-list__head']">
-                              <div :class="$style['contents-list__symbol']">
-                                1
-                              </div>
-                              <div :class="$style['contents-list__title']">
-                                운용리스, 금융리스
-                              </div>
+                      <ol
+                        :class="[
+                          $style['contents-list__list'],
+                          $style['contents-list__list--quinary'],
+                        ]"
+                      >
+                        <li :class="$style['contents-list__item']">
+                          <div :class="$style['contents-list__head']">
+                            <div :class="$style['contents-list__symbol']">
+                              1
+                            </div>
+                            <div :class="$style['contents-list__title']">
+                              <div>운용리스, 금융리스</div>
                             </div>
                           </div>
-                        </div>
-                      </div>
-                      <ul :class="[$style['basic-list'], 'row-margin-item']">
-                        <li
-                          :class="[
-                            $style['basic-list__item'],
-                            'text-body-4',
-                            'color-black',
-                            'font-weight-regular',
-                            'row-margin-item',
-                          ]"
-                        >
-                          <div :class="$style['basic-list__symbol']">-</div>
-                          <div :class="$style['basic-list__content']">
-                            미회수원금의 1%(승계수수료 최고 요율) X (잔여기간
-                            월수/리스기간 전체 월수) (min : 500,000원, max :
-                            900,000원)
-                          </div>
+                          <ul
+                            :class="[$style['basic-list'], 'row-margin-item']"
+                          >
+                            <li
+                              :class="[
+                                $style['basic-list__item'],
+                                'text-body-4',
+                                'font-weight-regular',
+                                'color-black',
+                              ]"
+                            >
+                              <div :class="$style['basic-list__symbol']">-</div>
+                              <div :class="$style['basic-list__content']">
+                                미회수원금의 1%(승계수수료 최고 요율) X
+                                (잔여기간 월수/리스기간 전체 월수) (min :
+                                500,000원, max : 900,000원)
+                              </div>
+                            </li>
+                          </ul>
+                          <ul
+                            :class="[
+                              $style['basic-list'],
+                              $style['basic-list--small-margin'],
+                              'row-margin-item',
+                            ]"
+                          >
+                            <li
+                              :class="[
+                                $style['basic-list__item'],
+                                'text-body-5',
+                                'font-weight-regular',
+                                'color-gray-tertiary',
+                              ]"
+                            >
+                              <div :class="$style['basic-list__symbol']">※</div>
+                              <div :class="$style['basic-list__content']">
+                                단, 금융리스의 경우 대부업법에서 정하는
+                                최고이자율을 초과하지 않는 범위로 합니다.
+                              </div>
+                            </li>
+                          </ul>
                         </li>
-                      </ul>
-                    </li>
-                  </ol>
-                  <div :class="[$style['basic-list'], 'row-margin-item']">
-                    <div
-                      :class="[
-                        $style['basic-list__item'],
-                        'font-weight-regular',
-                        'color-gray-tertiary',
-                      ]"
-                    >
-                      <div :class="$style['basic-list__symbol']">※</div>
-                      <div :class="$style['basic-list__content']">
-                        단, 금융리스의 경우 대부업법에서 정하는 최고이자율을
-                        초과하지 않는 범위로 합니다.
-                      </div>
+                      </ol>
                     </div>
                   </div>
                 </li>
-                <li class="row-margin-item">
-                  <ul
-                    :class="[
-                      $style['basic-list'],
-                      $style['basic-list--regular'],
-                      'row-margin-item',
-                    ]"
-                  >
-                    <li
-                      :class="[
-                        $style['basic-list__item'],
-                        'color-black',
-                        'text-body-3',
-                        'font-weight-light',
-                      ]"
-                    >
-                      <div :class="$style['basic-list__symbol']"></div>
-                      <div :class="$style['basic-list__content']">
-                        주1) ‘중도해지손해배상금’은 고객이 계약의 중도해지를
-                        이유로
-                        <strong class="font-weight-regular"
-                          >자동차를 반환</strong
-                        >하고자 할 때 ‘자동차리스 표준약관’ 제24조에 따라
-                        금융회사에 발생한 손해를 배상하기 위하여 지급해야 하는
-                        금액을 의미합니다.
-                      </div>
-                    </li>
-                    <li
-                      :class="[
-                        $style['basic-list__item'],
-                        'color-black',
-                        'text-body-3',
-                        'font-weight-light',
-                      ]"
-                    >
-                      <div :class="$style['basic-list__symbol']"></div>
-                      <div :class="$style['basic-list__content']">
-                        주2) 규정손해배상금은 고객이 계약의 중도해지를 이유로
-                        <strong class="font-weight-regular"
-                          >자동차를 매입</strong
-                        >하고자 할 때 ‘자동차리스 표준약관’ 제23조에 따라
-                        금융회사에 발생한 손해를 배상하기 위하여 지급해야 하는
-                        금액을 의미합니다.
-                      </div>
-                    </li>
-                  </ul>
+              </ul>
+              <ul
+                :class="[
+                  $style['basic-list'],
+                  $style['basic-list--regular'],
+                  $style['basic-list--regular-margin'],
+                  'row-margin-item',
+                ]"
+              >
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'text-body-3',
+                    'color-black',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    주1) ‘중도해지손해배상금’은 고객이 계약의 중도해지를 이유로
+                    <strong class="font-weight-regular">자동차를 반환</strong
+                    >하고자 할 때 ‘자동차리스 표준약관’ 제24조에 따라 금융회사에
+                    발생한 손해를 배상하기 위하여 지급해야 하는 금액을
+                    의미합니다.
+                  </div>
+                </li>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'text-body-3',
+                    'color-black',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    주2) 규정손해배상금은 고객이 계약의 중도해지를 이유로
+                    <strong class="font-weight-regular">자동차를 매입</strong
+                    >하고자 할 때 ‘자동차리스 표준약관’ 제23조에 따라 금융회사에
+                    발생한 손해를 배상하기 위하여 지급해야 하는 금액을
+                    의미합니다.
+                  </div>
                 </li>
               </ul>
             </KeyValueText>
@@ -583,7 +555,11 @@ export default {
             <KeyValueTitle>연체이자율</KeyValueTitle>
             <KeyValueText>
               <ul
-                :class="[$style['basic-list'], $style['basic-list--regular']]"
+                :class="[
+                  $style['basic-list'],
+                  $style['basic-list--regular'],
+                  $style['basic-list--mini-margin'],
+                ]"
               >
                 <li
                   :class="[
@@ -623,10 +599,11 @@ export default {
                 </li>
               </ul>
 
-              <div :class="[$style['basic-list'], 'row-margin-item']">
-                <div
+              <ul :class="[$style['basic-list'], 'row-margin-item']">
+                <li
                   :class="[
                     $style['basic-list__item'],
+                    'text-body-5',
                     'color-gray-tertiary',
                     'font-weight-regular',
                   ]"
@@ -638,8 +615,8 @@ export default {
                       적용함
                     </div>
 
-                    <div :class="[$style['basic-list'], 'row-margin-small']">
-                      <div
+                    <ul :class="[$style['basic-list'], 'row-margin-small']">
+                      <li
                         :class="[
                           $style['basic-list__item'],
                           'text-body-5',
@@ -654,10 +631,10 @@ export default {
                             가계자금대출금리 *중 높은 금리 적용
                           </div>
 
-                          <div
+                          <ul
                             :class="[$style['basic-list'], 'row-margin-small']"
                           >
-                            <div
+                            <li
                               :class="[
                                 $style['basic-list__item'],
                                 'text-body-5',
@@ -670,14 +647,14 @@ export default {
                                 한국은행에서 매월 발표하는 가장 최근의
                                 비은행금융기관 가중평균대출금리 (신규대출 기준)
                               </div>
-                            </div>
-                          </div>
+                            </li>
+                          </ul>
                         </div>
-                      </div>
-                    </div>
+                      </li>
+                    </ul>
                   </div>
-                </div>
-              </div>
+                </li>
+              </ul>
             </KeyValueText>
           </KeyValueItem>
 
@@ -690,8 +667,8 @@ export default {
             <KeyValueTitle>기타비용</KeyValueTitle>
             <KeyValueText>
               <div>저당설정(이용자명의 시 저당설정 추가)</div>
-              <div :class="[$style['basic-list'], 'row-margin-item']">
-                <div
+              <ul :class="[$style['basic-list'], 'row-margin-item']">
+                <li
                   :class="[
                     $style['basic-list__item'],
                     'text-body-5',
@@ -703,8 +680,8 @@ export default {
                   <div :class="$style['basic-list__content']">
                     <div>설정금액: 대출원금의 0~100%</div>
                   </div>
-                </div>
-              </div>
+                </li>
+              </ul>
               <ul
                 :class="[
                   $style['basic-list'],
@@ -777,7 +754,7 @@ export default {
                 차량 반납시 유의사항을 꼭 확인하여 주시기 바랍니다.
               </p>
 
-              <div class="row-margin-contents">
+              <div class="inline-wrap row-margin-contents">
                 <TextButton theme="secondary" :underline="true">
                   차량 반납 시 유의사항
                 </TextButton>
@@ -789,7 +766,7 @@ export default {
       <!-- // 상품안내 -->
 
       <!-- 진행절차 -->
-      <UiTabPanel name="personalLoanEHanaTab002">
+      <UiTabPanel name="autoLeaseTab002">
         <div :class="$style['step']">
           <ul :class="$style['step__list']">
             <li :class="$style['step__item']">
@@ -859,7 +836,7 @@ export default {
       <!-- // 진행절차 -->
 
       <!-- 유의사항 -->
-      <UiTabPanel name="personalLoanEHanaTab003">
+      <UiTabPanel name="autoLeaseTab003">
         <ul
           :class="[
             $style['basic-list'],

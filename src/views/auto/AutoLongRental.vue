@@ -27,7 +27,6 @@ import IconPerson from '@/assets/images/icon/person.svg?component';
 import IconCar from '@/assets/images/icon/car.svg?component';
 import IconDate from '@/assets/images/icon/date.svg?component';
 import IconCheckDocument from '@/assets/images/icon/check-document.svg?component';
-
 import IconContract from '@/assets/images/icon/contract.svg?component';
 import IconConsulting from '@/assets/images/icon/consulting.svg?component';
 import IconSend from '@/assets/images/icon/send.svg?component';
@@ -204,10 +203,10 @@ export default {
     </div>
 
     <section class="row-margin-container-medium row-margin-top-none">
-      <h3 class="row-margin-contents">차량정보</h3>
+      <h3 class="text-title-2 row-margin-contents">차량정보</h3>
       <ul class="reset-list">
         <li class="row-margin-item-group">
-          <BasicBox theme="duodenary">
+          <BasicBox theme="undenary">
             <div class="flex-box">
               <div class="flex-box__cell flex-1">
                 <h3 class="text-body-4 color-gray font-weight-regular">
@@ -222,7 +221,7 @@ export default {
           </BasicBox>
         </li>
         <li class="row-margin-item-group">
-          <BasicBox theme="duodenary">
+          <BasicBox theme="undenary">
             <div class="flex-box">
               <div class="flex-box__cell flex-1">
                 <h3 class="text-body-4 color-gray font-weight-regular">
@@ -237,7 +236,7 @@ export default {
           </BasicBox>
         </li>
         <li class="row-margin-item-group">
-          <BasicBox theme="duodenary">
+          <BasicBox theme="undenary">
             <div class="flex-box">
               <div class="flex-box__cell flex-1">
                 <h3 class="text-body-4 color-gray font-weight-regular">
@@ -252,7 +251,7 @@ export default {
           </BasicBox>
         </li>
         <li class="row-margin-item-group">
-          <BasicBox theme="duodenary">
+          <BasicBox theme="undenary">
             <div class="flex-box">
               <div class="flex-box__cell flex-1">
                 <h3 class="text-body-4 color-gray font-weight-regular">K5</h3>
@@ -265,7 +264,7 @@ export default {
           </BasicBox>
         </li>
         <li class="row-margin-item-group">
-          <BasicBox theme="duodenary">
+          <BasicBox theme="undenary">
             <div class="flex-box">
               <div class="flex-box__cell flex-1">
                 <h3 class="text-body-4 color-gray font-weight-regular">
@@ -285,14 +284,14 @@ export default {
     <UiTab>
       <StickyBar>
         <NavTab :useUiTab="true" :auto="true">
-          <NavTabButton link="personalLoanEHanaTab001">상품안내</NavTabButton>
-          <NavTabButton link="personalLoanEHanaTab002">진행절차</NavTabButton>
-          <NavTabButton link="personalLoanEHanaTab003">유의사항</NavTabButton>
+          <NavTabButton link="autoLongRentalTab001">상품안내</NavTabButton>
+          <NavTabButton link="autoLongRentalTab002">진행절차</NavTabButton>
+          <NavTabButton link="autoLongRentalTab003">유의사항</NavTabButton>
         </NavTab>
       </StickyBar>
 
       <!-- 상품안내 -->
-      <UiTabPanel name="personalLoanEHanaTab001">
+      <UiTabPanel name="autoLongRentalTab001">
         <BasicBox theme="tertiary">
           <KeyValue align="left" margin="regular">
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
@@ -490,7 +489,7 @@ export default {
       <!-- // 상품안내 -->
 
       <!-- 진행절차 -->
-      <UiTabPanel name="personalLoanEHanaTab002">
+      <UiTabPanel name="autoLongRentalTab002">
         <div :class="$style['step']">
           <ul :class="$style['step__list']">
             <li :class="$style['step__item']">
@@ -560,7 +559,7 @@ export default {
       <!-- // 진행절차 -->
 
       <!-- 유의사항 -->
-      <UiTabPanel name="personalLoanEHanaTab003">
+      <UiTabPanel name="autoLongRentalTab003">
         <ul
           :class="[
             $style['basic-list'],

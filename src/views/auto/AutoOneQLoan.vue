@@ -129,14 +129,14 @@ export default {
     <UiTab>
       <StickyBar>
         <NavTab :useUiTab="true" :auto="true">
-          <NavTabButton link="personalLoanEHanaTab001">상품안내</NavTabButton>
-          <NavTabButton link="personalLoanEHanaTab002">진행절차</NavTabButton>
-          <NavTabButton link="personalLoanEHanaTab003">유의사항</NavTabButton>
+          <NavTabButton link="autoOneQLoanTab001">상품안내</NavTabButton>
+          <NavTabButton link="autoOneQLoanTab002">진행절차</NavTabButton>
+          <NavTabButton link="autoOneQLoanTab003">유의사항</NavTabButton>
         </NavTab>
       </StickyBar>
 
       <!-- 상품안내 -->
-      <UiTabPanel name="personalLoanEHanaTab001">
+      <UiTabPanel name="autoOneQLoanTab001">
         <BasicBox theme="tertiary">
           <KeyValue align="left" margin="regular">
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
@@ -151,7 +151,7 @@ export default {
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>한도</KeyValueTitle>
-              <KeyValueText>차량 가격 이내 </KeyValueText>
+              <KeyValueText>차량 가격 이내</KeyValueText>
             </KeyValueItem>
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
@@ -172,17 +172,17 @@ export default {
             wrap: 'row-margin-contents',
           }"
         >
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
+          <KeyValueItem>
             <KeyValueTitle>상환방법</KeyValueTitle>
-            <KeyValueText> 원리금균등분할상환 </KeyValueText>
+            <KeyValueText>원리금균등분할상환</KeyValueText>
           </KeyValueItem>
 
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
+          <KeyValueItem>
             <KeyValueTitle>저당설정</KeyValueTitle>
             <KeyValueText>
               <div>개인신용평점에 따라 차등 적용</div>
-              <div :class="[$style['basic-list'], 'row-margin-item']">
-                <div
+              <ul :class="[$style['basic-list'], 'row-margin-item']">
+                <li
                   :class="[
                     $style['basic-list__item'],
                     'color-black',
@@ -195,14 +195,14 @@ export default {
                     대출원금의 0% ~ 100%<br />(설정비용은 당사 부담/해지비용은
                     금융소비자 부담)
                   </div>
-                </div>
-              </div>
+                </li>
+              </ul>
             </KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem>
             <KeyValueTitle>중도상환수수료</KeyValueTitle>
-            <KeyValueText> 면제 </KeyValueText>
+            <KeyValueText>면제</KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem>
@@ -221,8 +221,8 @@ export default {
             <KeyValueTitle>이자부과시기</KeyValueTitle>
             <KeyValueText>
               <div>이자납일일에 납입(월할, 후취)</div>
-              <div :class="[$style['basic-list'], 'row-margin-item']">
-                <div
+              <ul :class="[$style['basic-list'], 'row-margin-item']">
+                <li
                   :class="[
                     $style['basic-list__item'],
                     'color-gray-tertiary',
@@ -233,8 +233,8 @@ export default {
                   <div :class="$style['basic-list__content']">
                     금융소비자의 개인신용평점에 따라 대출한도가 차등적용됩니다.
                   </div>
-                </div>
-              </div>
+                </li>
+              </ul>
             </KeyValueText>
           </KeyValueItem>
 
@@ -306,7 +306,7 @@ export default {
       <!-- // 상품안내 -->
 
       <!-- 진행절차 -->
-      <UiTabPanel name="personalLoanEHanaTab002">
+      <UiTabPanel name="autoOneQLoanTab002">
         <div :class="$style['step']">
           <ul :class="$style['step__list']">
             <li :class="$style['step__item']">
@@ -379,7 +379,7 @@ export default {
       <!-- // 진행절차 -->
 
       <!-- 유의사항 -->
-      <UiTabPanel name="personalLoanEHanaTab003">
+      <UiTabPanel name="autoOneQLoanTab003">
         <ul
           :class="[
             $style['basic-list'],
