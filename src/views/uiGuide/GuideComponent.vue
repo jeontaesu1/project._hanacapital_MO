@@ -6994,6 +6994,7 @@ export default {
         <IllustObject type="certification" />
         <IllustObject type="star" />
         <IllustObject type="appfree" />
+        <IllustObject type="rental" />
       </div>
     </section>
 

@@ -92,7 +92,7 @@ export default {
           <InputBlock :error="state.titleError">
             <InputBlockCell :flexible="true">
               <BasicInput
-                title="견적 제목"
+                title="제목"
                 id="leaseRentEstimationSystemNoticeEditTitle"
               />
             </InputBlockCell>
@@ -128,7 +128,11 @@ export default {
         </FormInvalid>
       </FormListItem>
 
-      <BasicTextarea :error="state.reasonError" titleText="내용" title="내용" />
+      <BasicTextarea :error="state.reasonError" titleText="내용" title="내용">
+        <template v-slot:bottom>
+          <FormInvalidMessage>Error Message</FormInvalidMessage>
+        </template>
+      </BasicTextarea>
     </FormList>
 
     <section class="row-margin-contents-group">
@@ -203,114 +207,60 @@ export default {
         </div>
       </div>
 
-      <!-- Case : 파일 등록 시 노출 -->
       <div class="row-margin-contents">
-        <div
-          :class="[
-            $style['upload-file'],
-            'row-margin-item-group',
-            'row-margin-bottom-none',
-          ]"
-        >
-          <div :class="$style['upload-file__list']">
-            <div :class="$style['upload-file__item']">
-              <div :class="$style['upload-file__icon']">
-                <IconFile />
-              </div>
-              <div :class="$style['upload-file__content']">
-                <div :class="$style['upload-file__name']">첨부파일명.txt</div>
-              </div>
-              <div :class="$style['upload-file__button']">
-                <BasicButton line="true" theme="quaternary" size="mini">
-                  삭제
-                </BasicButton>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- // Case : 파일 등록 시 노출 -->
-
-        <!-- Case : 이미지 등록 시 노출(이미지 2개 첨부 시) -->
-        <div
-          :class="[
-            $style['upload-file'],
-            'row-margin-item-group',
-            'row-margin-bottom-none',
-          ]"
-        >
-          <div :class="$style['upload-file__list']">
-            <div :class="$style['upload-file__item']">
-              <div :class="$style['upload-file__icon']">
-                <IconImgColor />
-              </div>
-              <div :class="$style['upload-file__content']">
-                <div :class="$style['upload-file__name']">첨부파일명.jpg</div>
-              </div>
-              <div :class="$style['upload-file__button']">
-                <BasicButton line="true" theme="quaternary" size="mini">
-                  삭제
-                </BasicButton>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <FormList :classNames="{ wrap: 'row-margin-item-medium' }">
-          <BasicTextarea
-            :error="state.explanationError001"
-            titleText="이미지 설명"
-            :maxlength="100"
-            :count="true"
-            title="이미지 설명"
-          >
-            <template v-slot:bottom>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-              <FormHelpText>100자 이내로 작성해 주세요</FormHelpText>
-            </template>
-          </BasicTextarea>
-        </FormList>
-        <!--// Case : 이미지 등록 시 노출(이미지 2개 첨부 시) -->
-
-        <div
-          :class="[
-            $style['upload-file'],
-            'row-margin-item-group',
-            'row-margin-bottom-none',
-          ]"
-        >
-          <div :class="$style['upload-file__list']">
-            <div :class="$style['upload-file__item']">
-              <div :class="$style['upload-file__icon']">
-                <IconImgColor />
-              </div>
-              <div :class="$style['upload-file__content']">
-                <div :class="$style['upload-file__name']">
-                  첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명.jpeg
+        <div :class="$style['upload-file']">
+          <ul class="reset-list">
+            <!-- Case : 파일 -->
+            <li class="row-margin-item-group">
+              <div :class="$style['upload-file__item']">
+                <div :class="$style['upload-file__icon']">
+                  <IconFile />
+                </div>
+                <div :class="$style['upload-file__content']">
+                  <div :class="$style['upload-file__name']">첨부파일명.txt</div>
+                </div>
+                <div :class="$style['upload-file__button']">
+                  <BasicButton line="true" theme="quaternary" size="mini">
+                    삭제
+                  </BasicButton>
                 </div>
               </div>
-              <div :class="$style['upload-file__button']">
-                <BasicButton line="true" theme="quaternary" size="mini">
-                  삭제
-                </BasicButton>
-              </div>
-            </div>
-          </div>
-        </div>
+            </li>
+            <!-- // Case : 파일 -->
 
-        <FormList :classNames="{ wrap: 'row-margin-item-medium' }">
-          <BasicTextarea
-            :error="state.explanationError002"
-            titleText="이미지 설명"
-            :maxlength="100"
-            :count="true"
-            title="이미지 설명"
-          >
-            <template v-slot:bottom>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-              <FormHelpText>100자 이내로 작성해 주세요</FormHelpText>
-            </template>
-          </BasicTextarea>
-        </FormList>
+            <!-- Case : 이미지 -->
+            <li class="row-margin-item-group">
+              <div :class="$style['upload-file__item']">
+                <div :class="$style['upload-file__icon']">
+                  <IconImgColor />
+                </div>
+                <div :class="$style['upload-file__content']">
+                  <div :class="$style['upload-file__name']">첨부파일명.jpg</div>
+                </div>
+                <div :class="$style['upload-file__button']">
+                  <BasicButton line="true" theme="quaternary" size="mini">
+                    삭제
+                  </BasicButton>
+                </div>
+              </div>
+              <FormList :classNames="{ wrap: 'row-margin-item-medium' }">
+                <BasicTextarea
+                  :error="state.explanationError001"
+                  titleText="이미지 설명"
+                  :maxlength="100"
+                  :count="true"
+                  title="이미지 설명"
+                >
+                  <template v-slot:bottom>
+                    <FormInvalidMessage>Error Message</FormInvalidMessage>
+                    <FormHelpText>100자 이내로 작성해 주세요</FormHelpText>
+                  </template>
+                </BasicTextarea>
+              </FormList>
+            </li>
+            <!-- // Case : 이미지 -->
+          </ul>
+        </div>
       </div>
       <!-- // Case : 첨부 후  -->
 

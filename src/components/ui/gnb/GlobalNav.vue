@@ -150,7 +150,7 @@ export default {
 
   <ul :class="$style['main-menu']">
     <!-- Case : 로그인 후 -->
-    <li v-if="!isLoggedIn" :class="$style['main-menu__item']">
+    <li v-if="isLoggedIn" :class="$style['main-menu__item']">
       <RouterLink :class="$style['main-menu__link']" to="">
         <div :class="$style['main-menu__icon']"><IconMyInfo /></div>
         <p :class="$style['main-menu__title']">내 정보</p>
@@ -375,7 +375,7 @@ export default {
     </ul>
   </section>
 
-  <section v-if="store.ui.common.isAPP" :class="$style['gnb__section']">
+  <section v-if="!store.ui.common.isAPP" :class="$style['gnb__section']">
     <h3 :class="$style['gnb__section-title']">고객센터</h3>
     <ul :class="$style['gnb__list']">
       <li :class="$style['gnb__item']">
@@ -428,7 +428,7 @@ export default {
     <ul :class="$style['gnb__list']">
       <li :class="$style['gnb__item']">
         <RouterLink :class="$style['gnb__link']" to="">
-          <div :class="$style['gnb__icon']"><IconMyLoan /></div>
+          <div :class="$style['gnb__icon']"><IconMy /></div>
           <p :class="$style['gnb__name']">내 정보 관리</p>
         </RouterLink>
       </li>
@@ -501,7 +501,7 @@ export default {
     </ul>
   </section>
 
-  <section v-if="!store.ui.common.isAPP" :class="$style['gnb__section']">
+  <section v-if="store.ui.common.isAPP" :class="$style['gnb__section']">
     <h3 :class="$style['gnb__section-title']">고객센터</h3>
     <ul :class="$style['gnb__list']">
       <li :class="$style['gnb__item']">
@@ -524,13 +524,13 @@ export default {
       </li>
       <li :class="$style['gnb__item']">
         <RouterLink :class="$style['gnb__link']" to="">
-          <div :class="$style['gnb__icon']"><IconLocation /></div>
+          <div :class="$style['gnb__icon']"><IconTerms /></div>
           <p :class="$style['gnb__name']">정책 및 약관</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
         <RouterLink :class="$style['gnb__link']" to="">
-          <div :class="$style['gnb__icon']"><IconArs /></div>
+          <div :class="$style['gnb__icon']"><IconWarning /></div>
           <p :class="$style['gnb__name']">금융소비자보호</p>
         </RouterLink>
       </li>
