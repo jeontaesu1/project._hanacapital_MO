@@ -28,7 +28,7 @@ import IconCompleted from '@/assets/images/icon/completed.svg?component';
 import IconSend from '@/assets/images/icon/send.svg?component';
 import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
-import ImgAptLoan from '@/assets/images/illustration/img-apt-loan.svg?component';
+import ImgAptLoan from '@/assets/images/contents/img-apt-loan.svg?component';
 
 export default {
   components: {

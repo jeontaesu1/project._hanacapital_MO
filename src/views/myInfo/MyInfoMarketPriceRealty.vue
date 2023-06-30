@@ -59,7 +59,7 @@ export default {
       </PageMainText>
     </PageTextGroup>
 
-    <IllustObject type="complete" />
+    <IllustObject type="graph" />
 
     <template v-slot:foot>
       <ButtonList

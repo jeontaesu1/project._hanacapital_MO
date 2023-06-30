@@ -34,7 +34,7 @@ import IconSend from '@/assets/images/icon/send.svg?component';
 import IconCompleted from '@/assets/images/icon/completed.svg?component';
 import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
-import ImgStockLoan from '@/assets/images/illustration/img-stock-loan.svg?component';
+import ImgStockLoan from '@/assets/images/contents/img-stock-loan.svg?component';
 
 export default {
   components: {

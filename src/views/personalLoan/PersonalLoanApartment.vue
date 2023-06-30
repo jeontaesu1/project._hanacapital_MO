@@ -32,7 +32,7 @@ import IconSend from '@/assets/images/icon/send.svg?component';
 import IconContract from '@/assets/images/icon/contract.svg?component';
 import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
-import ImgHouseLoan from '@/assets/images/illustration/img-house-loan.svg?component';
+import ImgHouseLoan from '@/assets/images/contents/img-house-loan.svg?component';
 
 export default {
   components: {
