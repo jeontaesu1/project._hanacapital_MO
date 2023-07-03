@@ -2218,6 +2218,17 @@ const datas = () => [
       },
       {
         depth2: '서비스',
+        depth3: '이용약관\nLR_M05_p005',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/lease-rent-estimation-system/terms-of-use',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '서비스',
         depth3: '관리자',
         depth4: '이용현황\nLR_M05_p006',
         depth5: '',

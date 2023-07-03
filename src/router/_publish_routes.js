@@ -1619,6 +1619,14 @@ const routes = [
       ),
   },
   {
+    path: '/lease-rent-estimation-system/terms-of-use',
+    name: '/lease-rent-estimation-system/terms-of-use',
+    component: () =>
+      import(
+        '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemTermsOfUse.vue'
+      ),
+  },
+  {
     path: '/lease-rent-estimation-system/admin-status',
     name: '/lease-rent-estimation-system/admin-status',
     component: () =>
