@@ -2223,8 +2223,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/lease-rent-estimation-system/terms-of-use',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.07.05',
         log: [],
       },
       {
