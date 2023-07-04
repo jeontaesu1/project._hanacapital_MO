@@ -592,26 +592,17 @@ export default {
               <h4
                 class="text-body-4 color-gray-secondary font-weight-regular row-margin-mini"
               >
-                대출부대비용
+                인지세
               </h4>
 
-              <p class="text-body-4 color-gray-tertiary font-weight-light">
-                (인지세는 하나캐피탈과 금융소비자가 50%씩 부담합니다.)
-                <br />
+              <p class="text-body-2 font-weight-regular">
+                하나캐피탈과 금융소비자가 각각50% 부담
               </p>
-              <ul :class="[$style['basic-list'], 'row-margin-item']">
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'text-body-4',
-                    'color-black',
-                    'font-weight-regular',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']">-</div>
-                  <div :class="$style['basic-list__content']">인지세 1만원</div>
-                </li>
-              </ul>
+              <p
+                class="text-body-4 font-weight-light color-gray-tertiary row-margin-mini"
+              >
+                (인지세 1만원)
+              </p>
             </section>
 
             <section class="row-margin-contents">

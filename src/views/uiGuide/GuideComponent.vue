@@ -105,6 +105,7 @@ import CouponBanner from '@/components/ui/banner/CouponBanner.vue';
 import SlideBanner from '@/components/ui/banner/SlideBanner.vue';
 import SlideBannerBlock from '@/components/ui/banner/SlideBannerBlock.vue';
 import BasicBannerSlide from '@/components/ui/banner/BasicBannerSlide.vue';
+import PinButton from '@/components/ui/button/PinButton.vue';
 
 import BrandLogo001 from '@/assets/images/card-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/card-logo/lotte.svg?component';
@@ -259,6 +260,7 @@ export default {
     SlideBanner,
     SlideBannerBlock,
     BasicBannerSlide,
+    PinButton,
 
     IconAdd,
     BrandLogo001,
@@ -301,6 +303,7 @@ export default {
     IconDropdown,
     IconImgColor,
     IconImg,
+
     IconSample,
   },
 
@@ -1110,7 +1113,7 @@ export default {
                 <div :class="$style['upload-file__name']">첨부파일명.jpg</div>
               </div>
               <div :class="$style['upload-file__button']">
-                <BasicButton line="true" theme="quaternary" size="mini">
+                <BasicButton :line="true" theme="quaternary" size="mini">
                   삭제
                 </BasicButton>
               </div>
@@ -1125,7 +1128,7 @@ export default {
                 </div>
               </div>
               <div :class="$style['upload-file__button']">
-                <BasicButton line="true" theme="quaternary" size="mini">
+                <BasicButton :line="true" theme="quaternary" size="mini">
                   삭제
                 </BasicButton>
               </div>
@@ -1178,6 +1181,16 @@ export default {
         <h3 class="test-section-sub-title">Default</h3>
         <SettingButton />
         <SettingButton tagName="a" href="" />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Pin Button</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <PinButton />
+        <PinButton tagName="a" href="" />
+        <PinButton :active="true" />
       </div>
     </section>
 
@@ -7630,6 +7643,44 @@ export default {
                 </span>
               </button>
             </li>
+            <li :class="[$style['board__item'], $style['board__item--mark']]">
+              <RouterLink to="" :class="$style['board__link']">
+                <span :class="$style['board__title']">
+                  <span :class="$style['board__title-text']">
+                    중요 지정된 게시물
+                  </span>
+                </span>
+                <span :class="$style['board__info']">
+                  <span :class="$style['board__info-item']">2021.03.16</span>
+                  <span
+                    :class="[
+                      $style['board__info-item'],
+                      $style['board__info-item--hits'],
+                    ]"
+                    >조회 18</span
+                  >
+                </span>
+              </RouterLink>
+            </li>
+            <li :class="[$style['board__item'], $style['board__item--hidden']]">
+              <RouterLink to="" :class="$style['board__link']">
+                <span :class="$style['board__title']">
+                  <span :class="$style['board__title-text']">
+                    [노출 중지됨] 테스트2
+                  </span>
+                </span>
+                <span :class="$style['board__info']">
+                  <span :class="$style['board__info-item']">2021.03.16</span>
+                  <span
+                    :class="[
+                      $style['board__info-item'],
+                      $style['board__info-item--hits'],
+                    ]"
+                    >조회 18</span
+                  >
+                </span>
+              </RouterLink>
+            </li>
           </ul>
         </div>
 
@@ -7656,6 +7707,12 @@ export default {
               하나캐피탈과 함께 알아봐요!
             </h4>
             <p :class="$style['board-detail__sub']">2022.08.09</p>
+            <div :class="$style['board-detail__sub']">
+              <div :class="$style['board-detail__sub-list']">
+                <div :class="$style['board-detail__sub-item']">2021.03.16</div>
+                <div :class="$style['board-detail__sub-item']">조회 18</div>
+              </div>
+            </div>
           </div>
 
           <section :class="$style['board-detail__contents']">
@@ -9899,6 +9956,60 @@ export default {
                 </span>
                 <span :class="$style['share-list__text']">열기</span>
               </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">File List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <div :class="$style['file-list']">
+          <ul :class="$style['file-list__list']">
+            <li :class="$style['file-list__item']">
+              <a
+                href="/foo/bar.pdf"
+                :class="$style['file-list__head']"
+                download
+              >
+                <span :class="$style['file-list__sub']">[파일]</span>
+                <span :class="$style['file-list__name']"
+                  >2020년형_avante-price-20210331.jpg</span
+                >
+              </a>
+              <div :class="$style['file-list__img']">
+                <img src="/images/_dummy/box-detail.png" alt="" />
+              </div>
+            </li>
+            <li :class="$style['file-list__item']">
+              <a
+                href="/foo/bar.pdf"
+                :class="$style['file-list__head']"
+                download
+              >
+                <span :class="$style['file-list__sub']">[파일]</span>
+                <span :class="$style['file-list__name']"
+                  >2020년형_avante-price-20210331.pdf</span
+                >
+              </a>
+            </li>
+            <li :class="$style['file-list__item']">
+              <a
+                href="/foo/bar.pdf"
+                :class="$style['file-list__head']"
+                download
+              >
+                <span :class="$style['file-list__sub']">[파일]</span>
+                <span :class="$style['file-list__name']"
+                  >2020년형_avante-price-20210331.jpg</span
+                >
+              </a>
+              <div :class="$style['file-list__img']">
+                <img src="/images/_dummy/box-detail.png" alt="" />
+              </div>
             </li>
           </ul>
         </div>

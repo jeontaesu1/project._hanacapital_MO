@@ -97,7 +97,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton line="true" theme="quaternary">아니오</BasicButton>
+            <BasicButton :line="true" theme="quaternary">아니오</BasicButton>
           </ButtonListItem>
           <ButtonListItem>
             <BasicButton>네</BasicButton>

@@ -2179,6 +2179,7 @@ export default {
             <section>
               <h4 class="text-body-4 row-margin-item-group">제조사탁송</h4>
               <FormList>
+                <!-- Case : { 상품설정 : 탁송방법 } 제조사탁송 선택시, disabled="false" -->
                 <FormListItem
                   titleText="금액"
                   target="#leaseRentEstimationSystemRentDeliveryManufacturerPrice"
@@ -2208,6 +2209,7 @@ export default {
                     <FormInvalidMessage> Error Message </FormInvalidMessage>
                   </FormInvalid>
                 </FormListItem>
+                <!-- //Case : { 상품설정 : 탁송방법 } 제조사탁송 선택시, disabled="false" -->
               </FormList>
             </section>
           </div>

@@ -1,0 +1,53 @@
+@import '@/assets/scss/components/import/icon-list.scss';
+@import '@/assets/scss/components/import/status-inquiry.scss';
+
+.setting-menu {
+  &__list {
+    @include reset-list;
+    display: flex;
+  }
+
+  &__item {
+    flex: 1;
+
+    & + & {
+      margin-left: 16px;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 0 24px;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+  }
+
+  &__icon {
+    display: block;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto;
+    padding: 6px;
+    background-color: $color-gray-10;
+    border-radius: 16px;
+    box-sizing: border-box;
+
+    svg {
+      display: block;
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  &__title {
+    @include font-size-default(13);
+    font-weight: 500;
+    margin-top: 8px;
+    color: $color-black;
+  }
+}
+
+.status-inquiry {
+  border-radius: 8px;
+}

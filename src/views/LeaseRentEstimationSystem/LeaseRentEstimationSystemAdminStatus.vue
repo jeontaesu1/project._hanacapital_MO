@@ -1,14 +1,53 @@
 <script>
 // LR_M05_p006
-import { onMounted, onUnmounted } from 'vue';
+import { reactive, onMounted, onUnmounted } from 'vue';
+import { RouterLink } from 'vue-router';
 
 import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
+import BasicHr from '@/components/ui/common/BasicHr.vue';
+import InputBlock from '@/components/ui/form/InputBlock.vue';
+import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
+import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
+import BasicSelect from '@/components/ui/form/BasicSelect.vue';
+import FormList from '@/components/ui/form/FormList.vue';
+import FormListItem from '@/components/ui/form/FormListItem.vue';
+import FormInvalid from '@/components/ui/form/FormInvalid.vue';
+import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
+import BoxCheck from '@/components/ui/form/BoxCheck.vue';
+import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
+import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
+import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
+
+import IconSearchMoney from '@/assets/images/icon/search-money.svg?component';
+import IconDeposit from '@/assets/images/icon/deposit.svg?component';
+import IconCommisionRate from '@/assets/images/icon/commission-rate.svg?component';
+import IconPlayStore from '@/assets/images/icon/playstore.svg?component';
 
 export default {
   components: {
+    RouterLink,
     PageContents,
+    BasicButton,
+    BasicHr,
+    InputBlock,
+    InputBlockCell,
+    BasicDatepicker,
+    BasicSelect,
+    FormList,
+    FormListItem,
+    FormInvalid,
+    FormInvalidMessage,
+    BoxCheck,
+    BoxCheckLabel,
+    BoxCheckList,
+    BoxCheckListItem,
+    IconSearchMoney,
+    IconDeposit,
+    IconCommisionRate,
+    IconPlayStore,
   },
   setup() {
     const store = {
@@ -17,8 +56,15 @@ export default {
       },
     };
 
+    const state = reactive({
+      conditionError: false,
+      dateError: false,
+      minDate: '2023.04.21',
+      maxDate: '2023.04.21',
+    });
+
     onMounted(() => {
-      store.ui.header.setTitle(() => '타이틀');
+      store.ui.header.setTitle(() => '관리자');
       store.ui.header.setLeftButtons(() => ['back']);
       store.ui.header.setRightButtons(() => []);
     });
@@ -28,12 +74,237 @@ export default {
       store.ui.header.setLeftButtons();
       store.ui.header.setRightButtons();
     });
+
+    return {
+      state,
+    };
   },
 };
 </script>
 
 <template>
   <PageContents>
-    <h1>Page</h1>
+    <div :class="$style['setting-menu']">
+      <ul :class="$style['setting-menu__list']">
+        <li :class="$style['setting-menu__item']">
+          <RouterLink :class="$style['setting-menu__link']" to="">
+            <div :class="$style['setting-menu__icon']">
+              <IconSearchMoney />
+            </div>
+            <div :class="$style['setting-menu__title']">홈 설정</div>
+          </RouterLink>
+        </li>
+        <li :class="$style['setting-menu__item']">
+          <RouterLink :class="$style['setting-menu__link']" to="">
+            <div :class="$style['setting-menu__icon']">
+              <IconDeposit />
+            </div>
+            <div :class="$style['setting-menu__title']">관리지정</div>
+          </RouterLink>
+        </li>
+        <li :class="$style['setting-menu__item']">
+          <RouterLink :class="$style['setting-menu__link']" to="">
+            <div :class="$style['setting-menu__icon']">
+              <IconCommisionRate />
+            </div>
+            <div :class="$style['setting-menu__title']">기본설정</div>
+          </RouterLink>
+        </li>
+      </ul>
+    </div>
+
+    <BasicHr className="row-margin-container-medium"></BasicHr>
+
+    <section>
+      <div class="flex-box row-margin-contents">
+        <div class="flex-box__cell">
+          <h2 class="text-title-2">현황조회</h2>
+        </div>
+        <div class="flex-box__cell flex-box__cell--small">
+          <div class="text-body-3">(견적일 기준)</div>
+        </div>
+      </div>
+
+      <BoxCheckList>
+        <BoxCheckListItem>
+          <BoxCheck
+            :minSide="true"
+            name="leaseRentEstimationSystemAdminStatus_check"
+            id="leaseRentEstimationSystemAdminStatus_check001"
+            :defaultChecked="true"
+          >
+            <BoxCheckLabel>하나원큐오토</BoxCheckLabel>
+          </BoxCheck>
+        </BoxCheckListItem>
+        <BoxCheckListItem>
+          <BoxCheck
+            :minSide="true"
+            name="leaseRentEstimationSystemAdminStatus_check"
+            id="leaseRentEstimationSystemAdminStatus_check002"
+          >
+            <BoxCheckLabel>국산차 할부</BoxCheckLabel>
+          </BoxCheck>
+        </BoxCheckListItem>
+        <BoxCheckListItem>
+          <BoxCheck
+            :minSide="true"
+            name="leaseRentEstimationSystemAdminStatus_check"
+            id="leaseRentEstimationSystemAdminStatus_check003"
+          >
+            <BoxCheckLabel>중고 할부</BoxCheckLabel>
+          </BoxCheck>
+        </BoxCheckListItem>
+      </BoxCheckList>
+
+      <FormList :classNames="{ wrap: 'row-margin-contents-group' }">
+        <FormListItem
+          titleText="조회조건"
+          target="#leaseRentEstimationSystemAdminStatusConditionButton"
+          :selectOnly="true"
+        >
+          <FormInvalid :error="state.conditionError">
+            <InputBlock :error="state.conditionError">
+              <InputBlockCell :flexible="true">
+                <BasicSelect
+                  :option="[
+                    {
+                      value: '1',
+                      text: '전체',
+                    },
+                    {
+                      value: '2',
+                      text: '렌트',
+                    },
+                    {
+                      value: '3',
+                      text: '신차 리스',
+                    },
+                    {
+                      value: '4',
+                      text: '수입차 할부',
+                    },
+                    {
+                      value: '5',
+                      text: '시승차',
+                    },
+                    {
+                      value: '6',
+                      text: '선구매',
+                    },
+                    {
+                      value: '7',
+                      text: '중고차 리스',
+                    },
+                  ]"
+                  buttonTitle="조회조건 선택하기"
+                  layerTitle="현황조회 조건을 선택해 주세요"
+                  id="leaseRentEstimationSystemAdminStatusCondition001"
+                  buttonId="leaseRentEstimationSystemAdminStatusConditionButton"
+                  defaultValue="1"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+
+        <FormListItem titleText="조회기간" :forceFocus="true">
+          <FormInvalid :error="state.dateError">
+            <InputBlock :error="state.dateError">
+              <InputBlockCell :flexible="true">
+                <BasicDatepicker
+                  title="조회기간 시작 날짜"
+                  id="leaseRentEstimationSystemAdminStatusDateStart"
+                  buttonId="leaseRentEstimationSystemAdminStatusDateStartButton"
+                  :max="state.maxDate"
+                  v-model="state.minDate"
+                />
+              </InputBlockCell>
+              <InputBlockCell margin="regular">
+                <div class="text-body-3">~</div>
+              </InputBlockCell>
+              <InputBlockCell :flexible="true" margin="regular">
+                <BasicDatepicker
+                  title="조회기간 종료 날짜"
+                  id="leaseRentEstimationSystemAdminStatusDateEnd"
+                  buttonId="leaseRentEstimationSystemAdminStatusDateEndButton"
+                  :min="state.minDate"
+                  v-model="state.maxDate"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+      </FormList>
+
+      <BasicButton
+        :line="true"
+        :classNames="{
+          wrap: 'row-margin-container-medium row-margin-bottom-none',
+        }"
+      >
+        조회
+      </BasicButton>
+
+      <ul :class="[$style['status-inquiry'], 'row-margin-contents-group']">
+        <li :class="$style['status-inquiry__item']">
+          <button type="button" :class="$style['status-inquiry__category']">
+            <span :class="$style['status-inquiry__number']">10</span>
+            <span :class="$style['status-inquiry__text']">가견적</span>
+          </button>
+        </li>
+        <li :class="$style['status-inquiry__item']">
+          <button type="button" :class="$style['status-inquiry__category']">
+            <span :class="$style['status-inquiry__number']">4</span>
+            <span :class="$style['status-inquiry__text']">견적</span>
+          </button>
+        </li>
+        <li :class="$style['status-inquiry__item']">
+          <button type="button" :class="$style['status-inquiry__category']">
+            <span :class="$style['status-inquiry__number']">3</span>
+            <span :class="$style['status-inquiry__text']">심사</span>
+          </button>
+        </li>
+        <li :class="$style['status-inquiry__item']">
+          <button type="button" :class="$style['status-inquiry__category']">
+            <span :class="$style['status-inquiry__number']">2</span>
+            <span :class="$style['status-inquiry__text']">품의</span>
+          </button>
+        </li>
+        <li :class="$style['status-inquiry__item']">
+          <button type="button" :class="$style['status-inquiry__category']">
+            <span :class="$style['status-inquiry__number']">1</span>
+            <span :class="$style['status-inquiry__text']">인도</span>
+          </button>
+        </li>
+      </ul>
+    </section>
+
+    <BasicHr
+      theme="quaternary"
+      type="contents"
+      className="row-margin-container"
+    />
+
+    <div :class="$style['icon-list']">
+      <ul :class="$style['icon-list__list']">
+        <li :class="$style['icon-list__item']">
+          <button type="button" :class="$style['icon-list__block']">
+            <span :class="$style['icon-list__icon']"><IconPlayStore /></span>
+            <span :class="$style['icon-list__content']">
+              <span class="display-block text-body-4 color-gray"
+                >아직 앱이 없으시다면</span
+              >
+              <span :class="$style['icon-list__title']">다운로드 하기</span>
+            </span>
+          </button>
+        </li>
+      </ul>
+    </div>
   </PageContents>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemAdminStatus.scss';
+</style>

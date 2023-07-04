@@ -1,6 +1,7 @@
 <script>
 // Common_M00_l017
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
+import { useRoute } from 'vue-router';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
@@ -17,7 +18,16 @@ export default {
     GlobalNav,
   },
   setup() {
+    const route = useRoute();
+
     const layer = ref(null);
+
+    watch(
+      () => route.path,
+      () => {
+        layer.value.close();
+      }
+    );
 
     return {
       layer,

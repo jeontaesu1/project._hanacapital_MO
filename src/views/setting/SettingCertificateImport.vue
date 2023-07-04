@@ -169,7 +169,7 @@ export default {
         }"
       >
         <ButtonListItem>
-          <BasicButton line="true" :minSide="true"
+          <BasicButton :line="true" :minSide="true"
             >QR코드로 가져오기</BasicButton
           >
         </ButtonListItem>

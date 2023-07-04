@@ -302,14 +302,14 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '온보딩',
+        depth2: '온보딩\nCommon_M00_p010',
         depth3: '',
         depth4: '',
         depth5: '',
         depth6: '',
         path: '/onboarding/home',
         status: 'end',
-        create: '2023.06.22',
+        create: '2023.06.23',
         log: [],
       },
     ],
@@ -666,8 +666,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/e-hana',
-        status: 'pending',
-        create: '',
+        status: 'end',
+        create: '2023.06.28',
         log: [],
       },
       {
@@ -693,8 +693,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/happiness-apartment',
-        status: 'pending',
-        create: '',
+        status: 'end',
+        create: '2023.06.28',
         log: [],
       },
       {
@@ -728,8 +728,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/apartment',
-        status: 'pending',
-        create: '',
+        status: 'end',
+        create: '2023.06.28',
         log: [],
       },
       {
@@ -739,8 +739,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/one-q-auto',
-        status: 'pending',
-        create: '',
+        status: 'end',
+        create: '2023.06.28',
         log: [],
       },
       {
@@ -766,8 +766,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/best-customer',
-        status: 'pending',
-        create: '',
+        status: 'end',
+        create: '2023.06.28',
         log: [],
       },
       {
@@ -793,8 +793,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/e-rental-house',
-        status: 'pending',
-        create: '',
+        status: 'end',
+        create: '2023.06.28',
         log: [],
       },
       {
@@ -804,8 +804,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/stock',
-        status: 'pending',
-        create: '',
+        status: 'end',
+        create: '2023.06.28',
         log: [],
       },
       {
@@ -842,8 +842,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/business-house',
-        status: 'pending',
-        create: '',
+        status: 'end',
+        create: '2023.06.28',
         log: [],
       },
       {
@@ -869,8 +869,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/consumer-durables',
-        status: 'pending',
-        create: '',
+        status: 'end',
+        create: '2023.06.28',
         log: [],
       },
       {
@@ -880,7 +880,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/personal-loan-etc-001',
-        status: 'pending',
+        status: 'end',
         create: '2023.03.31',
         log: [
           {
@@ -1439,6 +1439,10 @@ const datas = () => [
             date: '2023.05.16',
             text: '팝업 추가\n- 대출신청 확인',
           },
+          {
+            date: '2023.06.23',
+            text: '팝업 추가\n- 서류확인',
+          },
         ],
       },
       {
@@ -1448,9 +1452,18 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/inventory-finance-url-state-001',
-        status: 'partend',
+        status: 'end',
         create: '2023.05.05',
-        log: [],
+        log: [
+          {
+            date: '2023.06.23',
+            text: '팝업 추가\n- 재고금융 한도거래 확약서\n- 재고금융 건별 대출 관련 위임장',
+          },
+          {
+            date: '2023.06.28',
+            text: '팝업 추가\n- 필수서류확인',
+          },
+        ],
       },
     ],
   },
@@ -1632,6 +1645,10 @@ const datas = () => [
           {
             date: '2023.06.13',
             text: '팝업 추가\n- 제휴 협약 동의 팝업',
+          },
+          {
+            date: '2023.06.23',
+            text: '팝업 추가\n- 실천 서약서 동의 팝업',
           },
         ],
       },
@@ -1972,7 +1989,12 @@ const datas = () => [
         path: '/guide/lease-rent-estimation-system-002',
         status: 'end',
         create: '2023.06.16',
-        log: [],
+        log: [
+          {
+            date: '2023.06.23',
+            text: '팝업 추가\n-  견적서 진행사항 안내',
+          },
+        ],
       },
       {
         depth2: '공통',
@@ -2058,8 +2080,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/lease-rent-estimation-system/installment',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.23',
         log: [],
       },
       {
@@ -2069,8 +2091,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/lease-rent-estimation-system/test-drive-car',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.23',
         log: [],
       },
       {
@@ -2157,8 +2179,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/lease-rent-estimation-system/my-info',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.23',
         log: [],
       },
       {
@@ -2168,8 +2190,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/lease-rent-estimation-system/notice-list',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.23',
         log: [],
       },
       {
@@ -2179,8 +2201,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/lease-rent-estimation-system/notice-detail',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.23',
         log: [],
       },
       {
@@ -2201,8 +2223,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/lease-rent-estimation-system/admin-status',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.23',
         log: [],
       },
       {
@@ -2212,8 +2234,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/lease-rent-estimation-system/admin-setting-home',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.23',
         log: [],
       },
       {
@@ -2223,8 +2245,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/lease-rent-estimation-system/admin-setting-role',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.23',
         log: [],
       },
       {
@@ -2234,8 +2256,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/lease-rent-estimation-system/admin-setting-default',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.23',
         log: [],
       },
     ],
@@ -2252,7 +2274,12 @@ const datas = () => [
         path: '/guide/equipment-lease-001',
         status: 'end',
         create: '2023.05.12',
-        log: [],
+        log: [
+          {
+            date: '2023.06.23',
+            text: '팝업 추가\n-  견적보기 팝업\n-  신용정보조회동의\n-  사전동의 완료',
+          },
+        ],
       },
       {
         depth2: '견적계산기\nEL_M01_p001',
@@ -2290,17 +2317,6 @@ const datas = () => [
       {
         depth2: '현황조회',
         depth3: '품의\nEL_M02_p002',
-        depth4: '',
-        depth5: '',
-        depth6: '',
-        path: '/equipment-lease/state-internal-memo',
-        status: 'end',
-        create: '2023.05.16',
-        log: [],
-      },
-      {
-        depth2: '현황조회',
-        depth3: '팝업',
         depth4: '',
         depth5: '',
         depth6: '',
@@ -2458,6 +2474,10 @@ const datas = () => [
           {
             date: '2023.04.21',
             text: '팝업 추가\n- 인도요청 정보입력',
+          },
+          {
+            date: '2023.06.23',
+            text: '팝업 추가\n- 발주완료 견적 만료 안내\n- 발주차량 정보 변동 안내',
           },
         ],
       },
@@ -2895,6 +2915,10 @@ const datas = () => [
           {
             date: '2023.05.05',
             text: '팝업 추가\n- 약정 정보 확인\n- 계약정보 최종확인\n- 주문서\n- 리스계약확인서\n- 약정완료\n- 약정실패',
+          },
+          {
+            date: '2023.06.28',
+            text: '팝업 추가\n- 계약서류 다운로드',
           },
         ],
       },
