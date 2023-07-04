@@ -1,5 +1,5 @@
 <script>
-// My_M08_l013 국산
+// My_M08_l022
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
