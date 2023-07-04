@@ -2690,7 +2690,12 @@ const datas = () => [
         path: '/guide/business-equipment-lease-001',
         status: 'end',
         create: '2023.05.16',
-        log: [],
+        log: [
+          {
+            date: '2023.07.07',
+            text: '팝업 추가\n- 상품선택\n- 사업자 정보 입력\n- 서비스이용약관동의\n- 심사결과(시스템심사)\n- 심사결과(정밀심사)\n- 심사결과(부결)\n- 견적서보기',
+          },
+        ],
       },
       {
         depth2: '의료비∙설비',
