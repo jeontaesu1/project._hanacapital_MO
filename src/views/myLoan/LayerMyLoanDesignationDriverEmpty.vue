@@ -68,7 +68,7 @@ export default {
         </PageSubText>
       </PageTextGroup>
 
-      <IllustObject type="license" />
+      <IllustObject type="driver" />
 
       <div class="inline-wrap align-right row-margin-contents">
         <TextButton theme="quaternary">

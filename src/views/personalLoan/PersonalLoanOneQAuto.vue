@@ -32,7 +32,7 @@ import IconSend from '@/assets/images/icon/send.svg?component';
 import IconContract from '@/assets/images/icon/contract.svg?component';
 import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
-import ImgSample from '@/assets/images/_dummy/illustration-sample.svg?component';
+import ImgOneQCarloan from '@/assets/images/contents/img-oneQ-carloan.svg?component';
 
 export default {
   components: {
@@ -62,7 +62,7 @@ export default {
     IconContract,
     IconDeposit,
     IconCalculate,
-    ImgSample,
+    ImgOneQCarloan,
   },
   setup() {
     const store = {
@@ -107,7 +107,7 @@ export default {
       </PageTextGroup>
 
       <div :class="[$style['illustration-img'], 'row-margin-contents']">
-        <ImgSample />
+        <ImgOneQCarloan />
       </div>
 
       <BasicBox theme="secondary">
@@ -156,20 +156,20 @@ export default {
     >
       <StickyBar>
         <NavTab :useUiTab="true" :auto="true">
-          <NavTabButton link="personalLoanHappinessApartmentTab001"
+          <NavTabButton link="personalLoanOneQAutoTab001"
             >상품안내</NavTabButton
           >
-          <NavTabButton link="personalLoanHappinessApartmentTab002"
+          <NavTabButton link="personalLoanOneQAutoTab002"
             >진행절차</NavTabButton
           >
-          <NavTabButton link="personalLoanHappinessApartmentTab003"
+          <NavTabButton link="personalLoanOneQAutoTab003"
             >유의사항</NavTabButton
           >
         </NavTab>
       </StickyBar>
 
       <!-- 상품안내 -->
-      <UiTabPanel name="personalLoanHappinessApartmentTab001">
+      <UiTabPanel name="personalLoanOneQAutoTab001">
         <BasicBox theme="tertiary">
           <KeyValue align="left" margin="regular">
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
@@ -371,7 +371,7 @@ export default {
       <!-- // 상품안내 -->
 
       <!-- 진행절차 -->
-      <UiTabPanel name="personalLoanHappinessApartmentTab002">
+      <UiTabPanel name="personalLoanOneQAutoTab002">
         <div :class="$style['step']">
           <ul :class="$style['step__list']">
             <li :class="$style['step__item']">
@@ -460,7 +460,7 @@ export default {
       <!-- // 진행절차 -->
 
       <!-- 유의사항 -->
-      <UiTabPanel name="personalLoanHappinessApartmentTab003">
+      <UiTabPanel name="personalLoanOneQAutoTab003">
         <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
           <li
             :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"

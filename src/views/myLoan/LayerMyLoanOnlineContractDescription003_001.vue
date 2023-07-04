@@ -59,7 +59,10 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <IllustObject type="license" :classNames="{ wrap: 'row-margin-none' }" />
+      <IllustObject
+        type="middlepay"
+        :classNames="{ wrap: 'row-margin-none' }"
+      />
 
       <div>
         <div class="font-weight-medium text-body-2">

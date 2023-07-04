@@ -1,5 +1,5 @@
 <script>
-// LR_M03_l001
+// LR_M00_l007
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -12,7 +12,11 @@ import FormListItem from '@/components/ui/form/FormListItem.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 
-import IconSample from '@/assets/images/_dummy/sample.svg?component';
+import IconKakaotalk from '@/assets/images/icon/kakaotalk.svg?component';
+import IconPdfDownload from '@/assets/images/icon/pdf-download.svg?component';
+import IconJpgDownload from '@/assets/images/icon/jpg-download.svg?component';
+import IconPrint from '@/assets/images/icon/print.svg?component';
+import IconFileOpen from '@/assets/images/icon/file-open.svg?component';
 
 export default {
   components: {
@@ -25,7 +29,11 @@ export default {
     FormListItem,
     InputBlock,
     InputBlockCell,
-    IconSample,
+    IconKakaotalk,
+    IconPdfDownload,
+    IconJpgDownload,
+    IconPrint,
+    IconFileOpen,
   },
   setup() {
     const layer = ref(null);
@@ -58,7 +66,7 @@ export default {
           <li :class="$style['share-list__item']">
             <button type="button" :class="$style['share-list__button']">
               <span :class="$style['share-list__icon']">
-                <IconSample />
+                <IconKakaotalk />
               </span>
               <span :class="$style['share-list__text']">카카오톡</span>
             </button>
@@ -70,7 +78,7 @@ export default {
               :class="$style['share-list__button']"
             >
               <span :class="$style['share-list__icon']">
-                <IconSample />
+                <IconPdfDownload />
               </span>
               <span :class="$style['share-list__text']">PDF 다운로드</span>
             </a>
@@ -82,7 +90,7 @@ export default {
               :class="$style['share-list__button']"
             >
               <span :class="$style['share-list__icon']">
-                <IconSample />
+                <IconJpgDownload />
               </span>
               <span :class="$style['share-list__text']">JPG 다운로드</span>
             </a>
@@ -90,7 +98,7 @@ export default {
           <li :class="$style['share-list__item']">
             <button type="button" :class="$style['share-list__button']">
               <span :class="$style['share-list__icon']">
-                <IconSample />
+                <IconPrint />
               </span>
               <span :class="$style['share-list__text']">인쇄</span>
             </button>
@@ -98,7 +106,7 @@ export default {
           <li :class="$style['share-list__item']">
             <button type="button" :class="$style['share-list__button']">
               <span :class="$style['share-list__icon']">
-                <IconSample />
+                <IconFileOpen />
               </span>
               <span :class="$style['share-list__text']">열기</span>
             </button>

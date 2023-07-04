@@ -54,7 +54,7 @@ export default {
         </p>
       </div>
 
-      <IllustObject :classNames="{ wrap: $style['illust'] }" />
+      <IllustObject :classNames="{ wrap: $style['illust'] }" type="faceID" />
 
       <template v-slot:foot>
         <ButtonList

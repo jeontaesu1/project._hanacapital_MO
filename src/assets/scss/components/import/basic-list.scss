@@ -80,6 +80,14 @@
     }
   }
 
+  &--large-margin {
+    > .basic-list__item {
+      & + .basic-list__item {
+        margin-top: 24px;
+      }
+    }
+  }
+
   &--medium-margin {
     > .basic-list__item {
       & + .basic-list__item {

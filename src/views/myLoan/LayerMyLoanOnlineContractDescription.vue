@@ -82,7 +82,7 @@ export default {
         </PageSubText>
       </PageTextGroup>
 
-      <IllustObject type="license" />
+      <IllustObject type="check" />
 
       <div class="row-margin-contents">
         <BasicBox theme="septenary" className="row-margin-item">

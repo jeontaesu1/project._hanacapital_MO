@@ -63,7 +63,7 @@ export default {
       </PageMainText>
     </PageTextGroup>
 
-    <IllustObject type="certification" />
+    <IllustObject type="join" />
 
     <div class="row-margin-item-group">
       <ButtonList

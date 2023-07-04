@@ -74,4 +74,15 @@
       }
     }
   }
+
+  &__left-line.basic-table__left-line {
+    &,
+    &:first-child {
+      border-left: 1px solid $color-gray-30;
+    }
+  }
+
+  &__padding-none.basic-table__padding-none {
+    padding: 0;
+  }
 }

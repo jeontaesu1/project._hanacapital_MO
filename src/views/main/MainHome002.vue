@@ -30,7 +30,6 @@ import IconClover from '@/assets/images/icon/clover.svg?component';
 import IconGraph from '@/assets/images/icon/graph.svg?component';
 import IconCrown from '@/assets/images/icon/crown.svg?component';
 import IconLink from '@/assets/images/icon/link.svg?component';
-import ImgMainSample from '@/assets/images/_dummy/main-sample.svg?component';
 
 const BASE_URL = import.meta.env.BASE_URL;
 
@@ -58,7 +57,6 @@ export default {
     IconGraph,
     IconCrown,
     IconLink,
-    ImgMainSample,
   },
   setup() {
     const store = {
@@ -397,7 +395,7 @@ export default {
             렌터카 견적조회
           </p>
           <div :class="$style['card__image']">
-            <ImgMainSample />
+            <img src="@/assets/images/contents/img-car.png" alt="" />
           </div>
           <ul :class="[$style['buttons'], $style['buttons--auto']]">
             <li :class="$style['buttons__item']">
@@ -536,7 +534,7 @@ export default {
             신용대출 간편조회
           </p>
           <div :class="$style['card__image']">
-            <ImgMainSample />
+            <img src="@/assets/images/contents/img-document.png" alt="" />
           </div>
           <ul :class="[$style['buttons'], $style['buttons--personal']]">
             <li :class="$style['buttons__item']">

@@ -6397,7 +6397,7 @@ export default {
         <BasicBox theme="quaternary">// contnets</BasicBox>
         <BasicBox theme="quinary">// contnets</BasicBox>
         <BasicBox theme="senary">// contnets</BasicBox>
-        <BasicBox theme="duodenary">// contnets</BasicBox>
+        <BasicBox theme="undenary">// contnets</BasicBox>
       </div>
     </section>
 
@@ -6994,6 +6994,7 @@ export default {
         <IllustObject type="certification" />
         <IllustObject type="star" />
         <IllustObject type="appfree" />
+        <IllustObject type="rental" />
       </div>
     </section>
 
@@ -10011,6 +10012,170 @@ export default {
                 <img src="/images/_dummy/box-detail.png" alt="" />
               </div>
             </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Manual Q&A</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <div :class="$style['manual-qna']">
+          <ul :class="$style['manual-qna__list']">
+            <li :class="$style['manual-qna__item']">
+              <div :class="$style['manual-qna__head']">
+                <div :class="$style['manual-qna__symbol']">Q</div>
+                <div :class="$style['manual-qna__cell']">
+                  <h5 :class="$style['manual-qna__title']">
+                    대출이용과 신용도의 관계는?
+                  </h5>
+                </div>
+              </div>
+              <div :class="$style['manual-qna__contents']">
+                <div
+                  :class="[
+                    $style['manual-qna__symbol'],
+                    $style['manual-qna__symbol--answer'],
+                  ]"
+                >
+                  A
+                </div>
+                <div :class="$style['manual-qna__cell']">
+                  <div :class="$style['manual-qna__text']">
+                    대출상품 이용 시,
+                    <span class="color-red"
+                      >대출계약의 체결만으로도 신용점수가 하락할 수
+                      있으며,</span
+                    >
+                    신용점수 하락 시 대출 및 신용카드 상품 등의 이용에 불이익이
+                    발생할 수 있습니다.(&#9758;<span class="color-red"
+                      >‘9. 신용점수에 미치는 영향’</span
+                    >
+                    확인)
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li :class="$style['manual-qna__item']">
+              <div :class="$style['manual-qna__head']">
+                <div :class="$style['manual-qna__symbol']">Q</div>
+                <div :class="$style['manual-qna__cell']">
+                  <h5 :class="$style['manual-qna__title']">
+                    대출금을 만기 전에 상환하고 싶은데 가능한가요?
+                  </h5>
+                </div>
+              </div>
+              <div :class="$style['manual-qna__contents']">
+                <div
+                  :class="[
+                    $style['manual-qna__symbol'],
+                    $style['manual-qna__symbol--answer'],
+                  ]"
+                >
+                  A
+                </div>
+                <div :class="$style['manual-qna__cell']">
+                  <div :class="$style['manual-qna__text']">
+                    <div>
+                      대출 실행 후
+                      <span class="color-green"
+                        >3년 이내에 대출금액을 중도 상환</span
+                      >할 경우,
+                      <span class="color-red"
+                        >최대 2%의 중도상환수수료가 발생*</span
+                      >합니다. 아울러
+                      <span class="color-green"
+                        >동일 금융회사와 기존 대출계약을 해지하고 사실상 동일
+                        계약을 체결한 경우 양 계약기간을 합산하여 3년 경과
+                        후에는 면제됩니다.</span
+                      >
+                      중도상환수수료는 대출의 잔여일수 및 상환금액에 따라
+                      달라지며, 중도상환 시 향후 원리금 상환 부담금액이 감소하게
+                      됩니다. (&#9758;<span class="color-red"
+                        >‘4. 수수료 등 비용부담’, ‘10. 해지에 관한 사항’</span
+                      >
+                      확인)
+                    </div>
+                    <ul :class="[$style['basic-list'], 'row-margin-item']">
+                      <li :class="$style['basic-list__item']">
+                        <div :class="$style['basic-list__symbol']"></div>
+                        <div :class="$style['basic-list__content']">
+                          예) 2천만을 중도상환(적용요율을 2%로 가정)할 경우,
+                          고객은 최대 40만원의 중도상환수수료를 금융회사에
+                          납부해야 함
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Manual Check</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <div :class="$style['manual-check']">
+          <ul :class="$style['manual-check__list']">
+            <li :class="$style['manual-check__item']">
+              <div :class="$style['manual-check__block']">
+                <div :class="$style['manual-check__object']"></div>
+                <div :class="$style['manual-check__text']">개인</div>
+              </div>
+            </li>
+            <!-- Case : 선택된 항목  -->
+            <li
+              :class="[
+                $style['manual-check__item'],
+                $style['manual-check__item--checked'],
+              ]"
+            >
+              <div :class="$style['manual-check__block']">
+                <div :class="$style['manual-check__object']"></div>
+                <div :class="$style['manual-check__text']">
+                  개인사업자<br />
+                  개인사업자
+                </div>
+              </div>
+            </li>
+            <!-- // Case : 선택된 항목  -->
+          </ul>
+        </div>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Wrap</h3>
+
+        <div :class="[$style['manual-check'], $style['manual-check--wrap']]">
+          <ul :class="$style['manual-check__list']">
+            <li :class="$style['manual-check__item']">
+              <div :class="$style['manual-check__block']">
+                <div :class="$style['manual-check__object']"></div>
+                <div :class="$style['manual-check__text']">개인</div>
+              </div>
+            </li>
+            <!-- Case : 선택된 항목  -->
+            <li
+              :class="[
+                $style['manual-check__item'],
+                $style['manual-check__item--checked'],
+              ]"
+            >
+              <div :class="$style['manual-check__block']">
+                <div :class="$style['manual-check__object']"></div>
+                <div :class="$style['manual-check__text']">
+                  개인사업자<br />
+                  개인사업자
+                </div>
+              </div>
+            </li>
+            <!-- // Case : 선택된 항목  -->
           </ul>
         </div>
       </div>

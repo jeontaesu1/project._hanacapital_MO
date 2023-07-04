@@ -14,7 +14,7 @@ import IconPig from '@/assets/images/icon/pig.svg?component';
 import IconBuilding from '@/assets/images/icon/building.svg?component';
 import IconCar from '@/assets/images/icon/car.svg?component';
 import IconInterestRate from '@/assets/images/icon/interest-rate.svg?component';
-import ImgSample from '@/assets/images/_dummy/illustration-sample.svg?component';
+import ImgArea from '@/assets/images/illustration/img-area.svg?component';
 
 export default {
   components: {
@@ -27,7 +27,7 @@ export default {
     IconBuilding,
     IconCar,
     IconInterestRate,
-    ImgSample,
+    ImgArea,
   },
   setup() {
     const store = {
@@ -61,7 +61,7 @@ export default {
     </PageTextGroup>
 
     <div :class="$style['illustration-img']">
-      <ImgSample />
+      <ImgArea />
     </div>
 
     <BasicHr

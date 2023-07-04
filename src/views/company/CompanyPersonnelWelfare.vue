@@ -14,18 +14,18 @@ import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import PageSubText from '@/components/ui/text/PageSubText.vue';
 
-import IconCall from '@/assets/images/icon/call.svg?component';
 import IconCarSecurityBackground from '@/assets/images/icon/personal-terms-background.svg?component';
-import IconCertification from '@/assets/images/icon/certification.svg?component';
-import IconCertificationPerson from '@/assets/images/icon/certification-person.svg?component';
-import IconCamera from '@/assets/images/icon/camera.svg?component';
-import IconFolder from '@/assets/images/icon/folder.svg?component';
-import IconLocation from '@/assets/images/icon/location.svg?component';
-import IconDocument from '@/assets/images/icon/document.svg?component';
-import IconMaximum from '@/assets/images/icon/maximum.svg?component';
-import IconCompany from '@/assets/images/icon/company.svg?component';
-import IconCommisionRate from '@/assets/images/icon/commission-rate.svg?component';
-import IconCarSecurity from '@/assets/images/icon/car-security.svg?component';
+import IconHrPoint from '@/assets/images/icon/hr-point.svg?component';
+import IconTrophy from '@/assets/images/icon/trophy.svg?component';
+import IconGiftBox from '@/assets/images/icon/gift-box.svg?component';
+import IconSyringe from '@/assets/images/icon/syringe.svg?component';
+import IconEducation from '@/assets/images/icon/education.svg?component';
+import IconVacation from '@/assets/images/icon/vacation.svg?component';
+import IconCard from '@/assets/images/icon/card.svg?component';
+import IconStudy from '@/assets/images/icon/study.svg?component';
+import IconHealth from '@/assets/images/icon/health.svg?component';
+import IconInsurance from '@/assets/images/icon/insurance.svg?component';
+import IconVacationSpot from '@/assets/images/icon/vacation-spot.svg?component';
 
 export default {
   components: {
@@ -38,17 +38,17 @@ export default {
     PageTextGroup,
     PageMainText,
     PageSubText,
-    IconCall,
-    IconCertification,
-    IconCertificationPerson,
-    IconCamera,
-    IconFolder,
-    IconLocation,
-    IconDocument,
-    IconMaximum,
-    IconCompany,
-    IconCommisionRate,
-    IconCarSecurity,
+    IconGiftBox,
+    IconHrPoint,
+    IconTrophy,
+    IconSyringe,
+    IconEducation,
+    IconVacation,
+    IconCard,
+    IconStudy,
+    IconHealth,
+    IconInsurance,
+    IconVacationSpot,
     IconCarSecurityBackground,
   },
   setup() {
@@ -112,7 +112,7 @@ export default {
             </li>
             <li :class="$style['authority__item']">
               <div :class="$style['authority__icon']">
-                <IconCertificationPerson />
+                <IconTrophy />
               </div>
               <div :class="$style['authority__contents']">
                 <div :class="$style['authority__head']">
@@ -128,7 +128,7 @@ export default {
             </li>
             <li :class="$style['authority__item']">
               <div :class="$style['authority__icon']">
-                <IconCertification />
+                <IconHrPoint />
               </div>
               <div :class="$style['authority__contents']">
                 <div :class="$style['authority__head']">
@@ -163,7 +163,7 @@ export default {
           <ul :class="$style['authority__list']">
             <li :class="$style['authority__item']">
               <div :class="$style['authority__icon']">
-                <IconCall />
+                <IconGiftBox />
               </div>
               <div :class="$style['authority__contents']">
                 <div :class="$style['authority__head']">
@@ -180,7 +180,7 @@ export default {
             </li>
             <li :class="$style['authority__item']">
               <div :class="$style['authority__icon']">
-                <IconCamera />
+                <IconSyringe />
               </div>
               <div :class="$style['authority__contents']">
                 <div :class="$style['authority__head']">
@@ -196,7 +196,7 @@ export default {
             </li>
             <li :class="$style['authority__item']">
               <div :class="$style['authority__icon']">
-                <IconFolder />
+                <IconEducation />
               </div>
               <div :class="$style['authority__contents']">
                 <div :class="$style['authority__head']">
@@ -212,7 +212,7 @@ export default {
             </li>
             <li :class="$style['authority__item']">
               <div :class="$style['authority__icon']">
-                <IconLocation />
+                <IconVacation />
               </div>
               <div :class="$style['authority__contents']">
                 <div :class="$style['authority__head']">
@@ -229,7 +229,7 @@ export default {
             </li>
             <li :class="$style['authority__item']">
               <div :class="$style['authority__icon']">
-                <IconDocument />
+                <IconCard />
               </div>
               <div :class="$style['authority__contents']">
                 <div :class="$style['authority__head']">
@@ -243,7 +243,7 @@ export default {
             </li>
             <li :class="$style['authority__item']">
               <div :class="$style['authority__icon']">
-                <IconMaximum />
+                <IconStudy />
               </div>
               <div :class="$style['authority__contents']">
                 <div :class="$style['authority__head']">
@@ -257,7 +257,7 @@ export default {
             </li>
             <li :class="$style['authority__item']">
               <div :class="$style['authority__icon']">
-                <IconCompany />
+                <IconHealth />
               </div>
               <div :class="$style['authority__contents']">
                 <div :class="$style['authority__head']">
@@ -275,7 +275,7 @@ export default {
             </li>
             <li :class="$style['authority__item']">
               <div :class="$style['authority__icon']">
-                <IconCommisionRate />
+                <IconInsurance />
               </div>
               <div :class="$style['authority__contents']">
                 <div :class="$style['authority__head']">
@@ -292,7 +292,7 @@ export default {
             </li>
             <li :class="$style['authority__item']">
               <div :class="$style['authority__icon']">
-                <IconCarSecurity />
+                <IconVacationSpot />
               </div>
               <div :class="$style['authority__contents']">
                 <div :class="$style['authority__head']">

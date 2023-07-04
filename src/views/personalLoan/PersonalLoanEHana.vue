@@ -33,7 +33,7 @@ import IconSend from '@/assets/images/icon/send.svg?component';
 import IconContract from '@/assets/images/icon/contract.svg?component';
 import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
-import ImgSample from '@/assets/images/_dummy/illustration-sample.svg?component';
+import ImgUnsecuredLoan from '@/assets/images/contents/img-unsecured-loan.svg?component';
 import ImgZeroCommission from '@/assets/images/illustration/img-zero-commission.svg';
 import Img120Months from '@/assets/images/illustration/img-120months.svg?component';
 
@@ -66,7 +66,7 @@ export default {
     IconContract,
     IconDeposit,
     IconCalculate,
-    ImgSample,
+    ImgUnsecuredLoan,
     ImgZeroCommission,
     Img120Months,
   },
@@ -113,7 +113,7 @@ export default {
       </PageTextGroup>
 
       <div :class="[$style['illustration-img'], 'row-margin-contents']">
-        <ImgSample />
+        <ImgUnsecuredLoan />
       </div>
 
       <BasicBox theme="secondary">

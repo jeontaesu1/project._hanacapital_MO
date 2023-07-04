@@ -1,6 +1,5 @@
 <script>
 // AF_M06_p001
-
 import { onMounted, onUnmounted } from 'vue';
 
 import { useUiCommonStore } from '@/stores/ui/common';
@@ -29,7 +28,7 @@ import IconSend from '@/assets/images/icon/send.svg?component';
 import IconConsulting from '@/assets/images/icon/consulting.svg?component';
 import IconConsultation from '@/assets/images/icon/consultation.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
-import ImgSample from '@/assets/images/_dummy/illustration-sample.svg?component';
+import ImgUsedCarAutoloan from '@/assets/images/illustration/img-used-car-autoloan.svg?component';
 
 export default {
   components: {
@@ -52,11 +51,11 @@ export default {
     IconRate,
     IconDate,
     IconSend,
-    ImgSample,
     IconPersonalTerms,
     IconConsultation,
     IconCalculate,
     IconConsulting,
+    ImgUsedCarAutoloan,
   },
   setup() {
     const store = {
@@ -102,7 +101,7 @@ export default {
       </PageTextGroup>
 
       <div :class="[$style['illustration-img'], 'row-margin-contents']">
-        <ImgSample />
+        <ImgUsedCarAutoloan />
       </div>
 
       <BasicBox theme="secondary">
@@ -136,14 +135,14 @@ export default {
     <UiTab>
       <StickyBar>
         <NavTab :useUiTab="true" :auto="true">
-          <NavTabButton link="personalLoanEHanaTab001">상품안내</NavTabButton>
-          <NavTabButton link="personalLoanEHanaTab002">진행절차</NavTabButton>
-          <NavTabButton link="personalLoanEHanaTab003">유의사항</NavTabButton>
+          <NavTabButton link="autoUsedLoanTab001">상품안내</NavTabButton>
+          <NavTabButton link="autoUsedLoanTab002">진행절차</NavTabButton>
+          <NavTabButton link="autoUsedLoanTab003">유의사항</NavTabButton>
         </NavTab>
       </StickyBar>
 
       <!-- 상품안내 -->
-      <UiTabPanel name="personalLoanEHanaTab001">
+      <UiTabPanel name="autoUsedLoanTab001">
         <BasicBox theme="tertiary">
           <KeyValue align="left" margin="regular">
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
@@ -179,12 +178,12 @@ export default {
             wrap: 'row-margin-contents',
           }"
         >
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
+          <KeyValueItem>
             <KeyValueTitle>상환방법</KeyValueTitle>
-            <KeyValueText> 원리금균등분할 상환 방식, 매월/후취 </KeyValueText>
+            <KeyValueText>원리금균등분할 상환 방식, 매월/후취</KeyValueText>
           </KeyValueItem>
 
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
+          <KeyValueItem>
             <KeyValueTitle>저당설정</KeyValueTitle>
             <KeyValueText>
               <div>대출금액 10%,30%,50%</div>
@@ -414,7 +413,7 @@ export default {
       <!-- // 상품안내 -->
 
       <!-- 진행절차 -->
-      <UiTabPanel name="personalLoanEHanaTab002">
+      <UiTabPanel name="autoUsedLoanTab002">
         <div :class="$style['step']">
           <ul :class="$style['step__list']">
             <li :class="$style['step__item']">
@@ -485,7 +484,7 @@ export default {
       <!-- // 진행절차 -->
 
       <!-- 유의사항 -->
-      <UiTabPanel name="personalLoanEHanaTab003">
+      <UiTabPanel name="autoUsedLoanTab003">
         <ul
           :class="[
             $style['basic-list'],
@@ -642,5 +641,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/auto/AutoLoan.scss';
+@import '@/assets/scss/views/auto/AutoUsedLoan.scss';
 </style>

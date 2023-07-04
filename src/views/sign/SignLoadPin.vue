@@ -51,7 +51,7 @@ export default {
 <template>
   <PageContents>
     <IllustInfo>
-      <IllustObject />
+      <IllustObject type="error" />
       <IllustInfoTitle>
         하나캐피탈 앱을<br />
         <strong>이용한 이력이 있습니다</strong>

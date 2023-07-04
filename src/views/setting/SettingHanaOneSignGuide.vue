@@ -9,7 +9,8 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
 import BasicBanner from '@/components/ui/banner/BasicBanner.vue';
 
-import ImgSample from '@/assets/images/_dummy/illustration-sample.svg?component';
+import ImgSecurity from '@/assets/images/illustration/img-security.svg?component';
+import ImgConvenient from '@/assets/images/illustration/img-convenient.svg?component';
 
 export default {
   components: {
@@ -17,7 +18,8 @@ export default {
     BasicButton,
     NoticeText,
     BasicBanner,
-    ImgSample,
+    ImgSecurity,
+    ImgConvenient,
   },
   setup() {
     const store = {
@@ -92,7 +94,7 @@ export default {
             </p>
 
             <div :class="[$style['illustration-img'], 'row-margin-container']">
-              <ImgSample />
+              <ImgSecurity />
             </div>
           </section>
 
@@ -109,7 +111,7 @@ export default {
             </NoticeText>
 
             <div :class="[$style['illustration-img'], 'row-margin-container']">
-              <ImgSample />
+              <ImgConvenient />
             </div>
 
             <BasicButton>하나 원사인 얼굴인증 (재)등록</BasicButton>
