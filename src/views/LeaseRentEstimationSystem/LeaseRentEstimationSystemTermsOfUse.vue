@@ -20,7 +20,7 @@ export default {
     onMounted(() => {
       store.ui.header.setTitle(() => '이용약관');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => ['menu']);
+      store.ui.header.setRightButtons(() => []);
     });
 
     onUnmounted(() => {
