@@ -8788,6 +8788,9 @@ export default {
                       >21-01-1234</span
                     >
                   </div>
+                  <button type="button" :class="$style['rectal__button']">
+                    <span class="for-a11y">선택</span>
+                  </button>
                 </div>
                 <div :class="$style['rectal__right']">
                   <UiAccordionOpener
