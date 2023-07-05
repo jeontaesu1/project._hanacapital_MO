@@ -36,7 +36,6 @@ import IconCalculate from '@/assets/images/icon/calculate.svg?component';
 import IconDocumentComplete from '@/assets/images/icon/document-complete.svg?component';
 import IconTakingOver from '@/assets/images/icon/taking-over.svg?component';
 import IconAssignment from '@/assets/images/icon/assignment.svg?component';
-import ImgChangeAutoLoan from '@/assets/images/illustration/img-change-auto-loan.svg?component';
 import ImgAutoLease from '@/assets/images/illustration/img-auto-lease.svg?component';
 import ImgAutoRent from '@/assets/images/illustration/img-auto-rent.svg?component';
 
@@ -73,7 +72,6 @@ export default {
     IconTakingOver,
     IconAssignment,
     IconPerson,
-    ImgChangeAutoLoan,
     ImgAutoLease,
     ImgAutoRent,
   },
@@ -128,7 +126,7 @@ export default {
         </PageTextGroup>
 
         <div :class="[$style['illustration-img'], 'row-margin-contents']">
-          <ImgChangeAutoLoan />
+          <img src="@/assets/images/contents/img-change-auto-loan.png" alt="" />
         </div>
 
         <BasicBox theme="secondary">

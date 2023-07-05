@@ -34,7 +34,6 @@ import IconSend from '@/assets/images/icon/send.svg?component';
 import IconCompleted from '@/assets/images/icon/completed.svg?component';
 import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
-import ImgStockLoan from '@/assets/images/contents/img-stock-loan.svg?component';
 
 export default {
   components: {
@@ -66,7 +65,6 @@ export default {
     IconCompleted,
     IconDeposit,
     IconCalculate,
-    ImgStockLoan,
   },
   setup() {
     const store = {
@@ -112,7 +110,7 @@ export default {
       </PageTextGroup>
 
       <div :class="[$style['illustration-img'], 'row-margin-contents']">
-        <ImgStockLoan />
+        <img src="@/assets/images/contents/img-stock-loan.png" alt="" />
       </div>
 
       <BasicBox theme="secondary">
