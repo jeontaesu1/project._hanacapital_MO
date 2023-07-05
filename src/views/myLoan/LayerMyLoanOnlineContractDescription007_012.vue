@@ -2319,82 +2319,77 @@ export default {
 
         <div class="row-margin-container-medium">
           <div :class="[$style['basic-table'], 'row-margin-item']">
-            <div :class="$style['basic-table']">
-              <table>
-                <colgroup>
-                  <col style="width: 32px" />
-                  <col />
-                  <col />
-                </colgroup>
-                <tbody>
-                  <tr>
-                    <th
-                      rowspan="2"
-                      :class="$style['basic-table__padding-none']"
-                    >
-                      해<br />당<br />여<br />부
-                    </th>
-                    <td></td>
-                    <td class="align-left">
-                      본인은 하나캐피탈과 리스계약을 체결함에 있어 금융회사
-                      직원과 상담하여 본 설명서를 교부받았으며, 위에서 설명한
-                      내용을 포함하여 대출거래의 주요내용 및 고객부담비용에
-                      대하여 충분히 설명을 듣고 이해하였음을 확인합니다.
-                    </td>
-                  </tr>
-                  <tr>
-                    <td :class="$style['basic-table__left-line']"></td>
-                    <td class="align-left">
-                      본인은 금융회사 직원으로부터 금리인하요구권, 청약철회권,
-                      위법계약해지권 등 고객의 권리에 대하여 충분히 설명을 듣고
-                      이해하였음을 확인합니다.
-                    </td>
-                  </tr>
-                  <tr>
-                    <td colspan="3" class="align-left">
-                      <div class="inline-wrap">
-                        <div
-                          :class="[
-                            $style['margin-right-regular'],
-                            'inline-block',
-                          ]"
-                        >
-                          <div class="text-body-5 color-gray">
-                            고객확인 : 20<span
-                              :class="[
-                                $style['blank-box'],
-                                $style['blank-box--small'],
-                              ]"
-                            ></span
-                            >.<span
-                              :class="[
-                                $style['blank-box'],
-                                $style['blank-box--small'],
-                              ]"
-                            ></span
-                            >.<span
-                              :class="[
-                                $style['blank-box'],
-                                $style['blank-box--small'],
-                              ]"
-                            ></span
-                            >.<span
-                              :class="[
-                                $style['blank-box'],
-                                $style['blank-box--regular'],
-                              ]"
-                            ></span>
-                          </div>
-                        </div>
-                        <div class="inline-block">
-                          <div class="text-body-5 color-gray">(서명/인)</div>
+            <table>
+              <colgroup>
+                <col style="width: 32px" />
+                <col />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th rowspan="2" :class="$style['basic-table__padding-none']">
+                    해<br />당<br />여<br />부
+                  </th>
+                  <td></td>
+                  <td class="align-left">
+                    본인은 하나캐피탈과 리스계약을 체결함에 있어 금융회사 직원과
+                    상담하여 본 설명서를 교부받았으며, 위에서 설명한 내용을
+                    포함하여 대출거래의 주요내용 및 고객부담비용에 대하여 충분히
+                    설명을 듣고 이해하였음을 확인합니다.
+                  </td>
+                </tr>
+                <tr>
+                  <td :class="$style['basic-table__left-line']"></td>
+                  <td class="align-left">
+                    본인은 금융회사 직원으로부터 금리인하요구권, 청약철회권,
+                    위법계약해지권 등 고객의 권리에 대하여 충분히 설명을 듣고
+                    이해하였음을 확인합니다.
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="align-left">
+                    <div class="inline-wrap">
+                      <div
+                        :class="[
+                          $style['margin-right-regular'],
+                          'inline-block',
+                        ]"
+                      >
+                        <div class="text-body-5 color-gray">
+                          고객확인 : 20<span
+                            :class="[
+                              $style['blank-box'],
+                              $style['blank-box--small'],
+                            ]"
+                          ></span
+                          >.<span
+                            :class="[
+                              $style['blank-box'],
+                              $style['blank-box--small'],
+                            ]"
+                          ></span
+                          >.<span
+                            :class="[
+                              $style['blank-box'],
+                              $style['blank-box--small'],
+                            ]"
+                          ></span
+                          >.<span
+                            :class="[
+                              $style['blank-box'],
+                              $style['blank-box--regular'],
+                            ]"
+                          ></span>
                         </div>
                       </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+                      <div class="inline-block">
+                        <div class="text-body-5 color-gray">(서명/인)</div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
