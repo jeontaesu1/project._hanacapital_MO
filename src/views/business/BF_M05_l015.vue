@@ -19,6 +19,9 @@ import BoxCheck from '@/components/ui/form/BoxCheck.vue';
 import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
 import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
 import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
+import ButtonList from '@/components/ui/button/ButtonList.vue';
+import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 export default {
   components: {
@@ -39,6 +42,9 @@ export default {
     BoxCheckLabel,
     BoxCheckList,
     BoxCheckListItem,
+    BasicButton,
+    ButtonList,
+    ButtonListItem,
   },
   setup() {
     const state = reactive({
@@ -133,6 +139,18 @@ export default {
           </BoxCheckListItem>
         </BoxCheckList>
       </section>
+
+      <template v-slot:foot>
+        <ButtonList
+          :classNames="{
+            wrap: 'row-margin-none',
+          }"
+        >
+          <ButtonListItem>
+            <BasicButton>다음</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+      </template>
     </FullPopup>
   </UiLayer>
 </template>
