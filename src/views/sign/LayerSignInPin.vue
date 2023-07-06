@@ -10,6 +10,9 @@ import PageMainText from '@/components/ui/text/PageMainText.vue';
 import SecurityInput from '@/components/ui/form/SecurityInput.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
+
+import IconArrow from '@/assets/images/icon/link.svg?component';
 
 export default {
   components: {
@@ -21,6 +24,8 @@ export default {
     SecurityInput,
     FormInvalid,
     FormInvalidMessage,
+    TextButton,
+    IconArrow,
   },
   setup() {
     const state = reactive({
@@ -71,6 +76,22 @@ export default {
           간편 비밀번호가 일치하지 않습니다. (1/5)
         </FormInvalidMessage>
       </FormInvalid>
+
+      <div :class="[$style['flex-box'], 'row-margin-container-medium']">
+        <TextButton
+          :classNames="{ wrap: 'text-body-4 color-gray' }"
+          :underline="true"
+        >
+          간편비밀번호를 잊으셨나요?
+        </TextButton>
+
+        <TextButton theme="quaternary" :classNames="{ wrap: 'text-body-4' }">
+          다른 로그인 방식
+          <template v-slot:rightIcon>
+            <IconArrow />
+          </template>
+        </TextButton>
+      </div>
     </FullPopup>
   </UiLayer>
 </template>
