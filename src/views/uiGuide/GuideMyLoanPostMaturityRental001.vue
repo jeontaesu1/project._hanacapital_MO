@@ -222,12 +222,12 @@ export default {
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer010Open">
-          (LMS) 만기후 반환 안내(국산)<br />My_M08_l013
+          (LMS) 만기후 반환 안내(국산)<br />My_M08_l022
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer011Open">
-          (LMS) 만기후 반환 안내(수입)<br />My_M08_l014
+          (LMS) 만기후 반환 안내(수입)<br />My_M08_l023
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>

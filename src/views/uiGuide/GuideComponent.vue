@@ -1,5 +1,6 @@
 <script>
 import { ref, reactive } from 'vue';
+import { RouterLink } from 'vue-router';
 import { Pagination, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
@@ -106,6 +107,7 @@ import SlideBanner from '@/components/ui/banner/SlideBanner.vue';
 import SlideBannerBlock from '@/components/ui/banner/SlideBannerBlock.vue';
 import BasicBannerSlide from '@/components/ui/banner/BasicBannerSlide.vue';
 import PinButton from '@/components/ui/button/PinButton.vue';
+import SlideImageBanner from '@/components/ui/banner/SlideImageBanner.vue';
 
 import BrandLogo001 from '@/assets/images/card-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/card-logo/lotte.svg?component';
@@ -155,6 +157,7 @@ const BASE_URL = import.meta.env.BASE_URL;
 
 export default {
   components: {
+    RouterLink,
     Swiper,
     SwiperSlide,
 
@@ -261,6 +264,7 @@ export default {
     SlideBannerBlock,
     BasicBannerSlide,
     PinButton,
+    SlideImageBanner,
 
     IconAdd,
     BrandLogo001,
@@ -8784,6 +8788,9 @@ export default {
                       >21-01-1234</span
                     >
                   </div>
+                  <button type="button" :class="$style['rectal__button']">
+                    <span class="for-a11y">선택</span>
+                  </button>
                 </div>
                 <div :class="$style['rectal__right']">
                   <UiAccordionOpener
@@ -9593,6 +9600,53 @@ export default {
             <!-- // Case : 링크 기능 있을 때 (a tag) -->
           </Swiper>
         </SlideBanner>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">SlideImageBanner</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <SlideImageBanner :classNames="{ wrap: 'row-margin-contents' }">
+          <Swiper :modules="modules" pagination>
+            <!-- Case : 링크 기능 없을 때 -->
+            <SwiperSlide>
+              <div :class="$style['image-view']">
+                <img
+                  :src="`${BASE_URL}images/_dummy/banner-002.png`"
+                  alt="배너 설명 넣어주세요"
+                />
+              </div>
+            </SwiperSlide>
+            <!-- //Case : 링크 기능 없을 때 -->
+
+            <!-- Case : 링크 기능 있을 때 (RouterLink) -->
+            <SwiperSlide>
+              <RouterLink to="" class="link-block">
+                <div :class="$style['image-view']">
+                  <img
+                    :src="`${BASE_URL}images/_dummy/banner-002.png`"
+                    alt="배너 설명 넣어주세요"
+                  />
+                </div>
+              </RouterLink>
+            </SwiperSlide>
+            <!-- // Case : 링크 기능 있을 때 -->
+
+            <!-- Case : 링크 기능 있을 때 (a tag) -->
+            <SwiperSlide>
+              <a href="" class="link-block">
+                <div :class="$style['image-view']">
+                  <img
+                    :src="`${BASE_URL}images/_dummy/banner-002.png`"
+                    alt="배너 설명 넣어주세요"
+                  />
+                </div>
+              </a>
+            </SwiperSlide>
+            <!-- // Case : 링크 기능 있을 때 (a tag) -->
+          </Swiper>
+        </SlideImageBanner>
       </div>
     </section>
 

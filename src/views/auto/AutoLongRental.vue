@@ -30,7 +30,6 @@ import IconCheckDocument from '@/assets/images/icon/check-document.svg?component
 import IconContract from '@/assets/images/icon/contract.svg?component';
 import IconConsulting from '@/assets/images/icon/consulting.svg?component';
 import IconSend from '@/assets/images/icon/send.svg?component';
-import ImgLongTermCarRentalMain from '@/assets/images/illustration/img-long-term-car-rental-main.svg?component';
 import ImgLongTermCarRental01 from '@/assets/images/illustration/img-long-term-car-rental01.svg?component';
 import ImgLongTermCarRental02 from '@/assets/images/illustration/img-long-term-car-rental02.svg?component';
 import ImgLongTermCarRental03 from '@/assets/images/illustration/img-long-term-car-rental03.svg?component';
@@ -62,7 +61,6 @@ export default {
     IconSend,
     IconContract,
     IconConsulting,
-    ImgLongTermCarRentalMain,
     ImgLongTermCarRental01,
     ImgLongTermCarRental02,
     ImgLongTermCarRental03,
@@ -110,7 +108,10 @@ export default {
       </PageTextGroup>
 
       <div :class="[$style['illustration-img'], 'row-margin-contents']">
-        <ImgLongTermCarRentalMain />
+        <img
+          src="@/assets/images/contents/img-long-term-car-rental-main.png"
+          alt=""
+        />
       </div>
 
       <BasicBox theme="secondary">

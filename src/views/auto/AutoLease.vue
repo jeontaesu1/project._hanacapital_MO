@@ -33,7 +33,6 @@ import IconRate from '@/assets/images/icon/rate.svg?component';
 import IconSend from '@/assets/images/icon/send.svg?component';
 import IconConsulting from '@/assets/images/icon/consulting.svg?component';
 import IconConsultation from '@/assets/images/icon/consultation.svg?component';
-import ImgDirectAutolease from '@/assets/images/illustration/img-direct-autolease.svg?component';
 import ImgZeroCommission from '@/assets/images/illustration/img-zero-commission.svg?component';
 import ImgSimplePay from '@/assets/images/illustration/img-simple-pay.svg?component';
 
@@ -67,7 +66,6 @@ export default {
     IconConsultation,
     IconConsulting,
     IconRate,
-    ImgDirectAutolease,
     ImgZeroCommission,
     ImgSimplePay,
   },
@@ -114,7 +112,7 @@ export default {
       </PageTextGroup>
 
       <div :class="[$style['illustration-img'], 'row-margin-contents']">
-        <ImgDirectAutolease />
+        <img src="@/assets/images/contents/img-direct-autolease.png" alt="" />
       </div>
 
       <BasicBox theme="secondary">
