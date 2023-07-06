@@ -76,7 +76,7 @@ export default {
                 </div>
                 <div class="flex-box__cell flex-box__cell--medium flex-1">
                   <span class="color-navy text-body-1 font-weight-medium"
-                    >덴티움</span
+                    >치과용품(임플란트 외)</span
                   >
                 </div>
               </div>
@@ -96,7 +96,9 @@ export default {
                   <IconmedicalProgram />
                 </div>
                 <div class="flex-box__cell flex-box__cell--medium flex-1">
-                  <span class="text-body-1 font-weight-medium">덴티움</span>
+                  <span class="text-body-1 font-weight-medium"
+                    >의원용 프로그램</span
+                  >
                 </div>
               </div>
             </BoxCheckLabel>

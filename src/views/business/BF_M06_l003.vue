@@ -62,7 +62,7 @@ export default {
             :contents="true"
             type="radio"
             name="LayerAutoEstimateSelectDetailModel001"
-            id="layerAutoEstimateSelectDetailModel001_001"
+            id="layerAutoEstimateSelectDetailModel031_001"
           >
             <BoxCheckLabel>임플란트</BoxCheckLabel>
           </BoxCheck>
@@ -74,7 +74,7 @@ export default {
             :contents="true"
             type="radio"
             name="LayerAutoEstimateSelectDetailModel001"
-            id="layerAutoEstimateSelectDetailModel002_001"
+            id="layerAutoEstimateSelectDetailModel031_002"
           >
             <BoxCheckLabel>임플란트+체어</BoxCheckLabel>
           </BoxCheck>

@@ -194,20 +194,19 @@ export default {
                     align="right"
                     :useDelete="false"
                     pattern="\d*"
-                    title="유예원금"
+                    title="기간"
                     id="layerBusinessEquipmentLeaseEstimateCheckListDepositScreen02"
-                    defaultValue="10,002,120"
+                    defaultValue="10"
                     :disabled="true"
                   />
                 </InputBlockCell>
                 <template v-slot:innerRight>
-                  <div class="text-body-3">원</div>
+                  <div class="text-body-3">개월</div>
                 </template>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
-          <!-- // Case : '스크린골프' 선택 시 노출 -->
         </FormList>
 
         <BasicButton
@@ -218,7 +217,7 @@ export default {
         </BasicButton>
       </div>
 
-      <!-- Case : 견적계산 누른 후 노출 -->
+      <!-- Case : 계산하기 누른 후 노출 -->
       <BasicHr className="row-margin-container-medium" />
 
       <section>

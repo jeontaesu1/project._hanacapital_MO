@@ -142,7 +142,7 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open" :disabled="true">
+        <BasicButton @click="layer001Open">
           물품선택 <br />
           BF_M06_l001</BasicButton
         >

@@ -76,7 +76,7 @@ export default {
             :contents="true"
             type="radio"
             name="LayerAutoEstimateSelectDetailModel001"
-            id="layerAutoEstimateSelectDetailModel001_001"
+            id="layerAutoEstimateSelectDetailModel001_011"
           >
             <BoxCheckLabel>
               <div class="flex-box">
@@ -84,9 +84,7 @@ export default {
                   <IconDentium />
                 </div>
                 <div class="flex-box__cell flex-box__cell--medium flex-1">
-                  <span class="color-navy text-body-1 font-weight-medium"
-                    >덴티움</span
-                  >
+                  <span class="text-body-1 font-weight-medium">덴티움</span>
                 </div>
               </div>
             </BoxCheckLabel>
@@ -97,7 +95,7 @@ export default {
             :contents="true"
             type="radio"
             name="LayerAutoEstimateSelectDetailModel001"
-            id="layerAutoEstimateSelectDetailModel001_002"
+            id="layerAutoEstimateSelectDetailModel001_012"
           >
             <BoxCheckLabel>
               <div class="flex-box">
@@ -105,9 +103,7 @@ export default {
                   <IconShinhung />
                 </div>
                 <div class="flex-box__cell flex-box__cell--medium flex-1">
-                  <span class="color-navy text-body-1 font-weight-medium"
-                    >신흥</span
-                  >
+                  <span class="text-body-1 font-weight-medium">신흥</span>
                 </div>
               </div>
             </BoxCheckLabel>
@@ -126,7 +122,7 @@ export default {
                   <IconNeoBiotech />
                 </div>
                 <div class="flex-box__cell flex-box__cell--medium flex-1">
-                  <span class="color-navy text-body-1 font-weight-medium"
+                  <span class="text-body-1 font-weight-medium"
                     >네오바이오텍</span
                   >
                 </div>
@@ -147,7 +143,7 @@ export default {
                   <IconNeoImplant />
                 </div>
                 <div class="flex-box__cell flex-box__cell--medium flex-1">
-                  <span class="color-navy text-body-1 font-weight-medium"
+                  <span class="text-body-1 font-weight-medium"
                     >네오임플란트</span
                   >
                 </div>
@@ -168,9 +164,7 @@ export default {
                   <IconPointnix />
                 </div>
                 <div class="flex-box__cell flex-box__cell--medium flex-1">
-                  <span class="color-navy text-body-1 font-weight-medium"
-                    >포인트닉스</span
-                  >
+                  <span class="text-body-1 font-weight-medium">포인트닉스</span>
                 </div>
               </div>
             </BoxCheckLabel>
@@ -186,14 +180,12 @@ export default {
             id="layerAutoEstimateSelectDetailModel001_006"
           >
             <BoxCheckLabel>
-              <div class="flex-box color-navy text-body-1 font-weight-medium">
+              <div class="flex-box">
                 <div class="flex-box__cell">
                   <IconUbcare />
                 </div>
                 <div class="flex-box__cell flex-box__cell--medium flex-1">
-                  <span class="color-navy text-body-1 font-weight-medium"
-                    >유비케어</span
-                  >
+                  <span class="text-body-1 font-weight-medium">유비케어</span>
                 </div>
               </div>
             </BoxCheckLabel>
