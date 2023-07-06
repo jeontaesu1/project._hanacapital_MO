@@ -48,7 +48,7 @@ export default {
     <FullPopup>
       <template v-slot:head>
         <FullPopupHead>
-          <PopupTitle>일반리스 설명서</PopupTitle>
+          <PopupTitle>시설대여(금융리스) 설명서</PopupTitle>
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
@@ -56,6 +56,11 @@ export default {
       </template>
 
       <PageTextGroup>
+        <p
+          class="text-body-5 color-gray font-weight-light align-right row-margin-contents-small"
+        >
+          준법심의필(설):2023-14 (2023.03.01)
+        </p>
         <PageMainText>
           상품설명서<br />
           <strong>확인 안내</strong>
@@ -389,7 +394,7 @@ export default {
                 </tr>
                 <tr>
                   <th>보증금에 따른 리스료 예상할인율 및 할인금액</th>
-                  <td class="align-left">
+                  <td class="align-right">
                     <div>%</div>
                     <div class="row-margin-item-regular">원</div>
                   </td>
@@ -443,9 +448,19 @@ export default {
                 <tr>
                   <th>리스기간</th>
                   <td class="align-left">
-                    취급 후 24개월 또는<br />
-                    개월중 거치기간<br />
-                    개월
+                    취급 후
+                    <span
+                      :class="[$style['blank-box'], $style['blank-box--small']]"
+                    ></span
+                    >개월 또는<br />
+                    <span
+                      :class="[$style['blank-box'], $style['blank-box--small']]"
+                    ></span
+                    >개월중 거치기간<br />
+                    <span
+                      :class="[$style['blank-box'], $style['blank-box--small']]"
+                    ></span
+                    >개월
                   </td>
                 </tr>
                 <tr>
@@ -679,7 +694,7 @@ export default {
                       보증금 : 본 약정서에 따라 부담하는 각종 채무의 이행을
                       담보하기 위하여 약정서에 기재된 리스보증금을 이 계약
                       체결시에 당사(하나캐피탈(주))에 지급 할 수 있습니다.
-                      리스보증금을 지급한 경우 그 할인금액을 월 리스 료에서
+                      리스보증금을 지급한 경우 그 할인금액을 월 리스료에서
                       할인하여 고객님께 청구합니다.
                     </div>
                   </li>
@@ -918,7 +933,7 @@ export default {
                     <div :class="$style['manual-check__block']">
                       <div :class="$style['manual-check__object']"></div>
                       <div :class="$style['manual-check__text']">
-                        비대상선택됨
+                        비대상(선택됨)
                       </div>
                     </div>
                   </li>
@@ -1056,8 +1071,8 @@ export default {
               납부하는 비용으로 산식은 아래와 같습니다.
             </p>
             <p class="text-body-4 font-weight-light color-gray-tertiary">
-              규정손해배상금 = 미회수원금 x 규정손해배상금율<br />
-              규정손해배상금율 (유이자 : 110 %, 무이자 : 110 %)
+              규정손해배상금 = 미회수원금 x 규정손해배상금율*<br />
+              *규정손해배상금율 (유이자 : 110 %, 무이자 : 110 %)
             </p>
           </section>
 
@@ -1267,11 +1282,11 @@ export default {
                 <div :class="$style['basic-list__symbol']"></div>
                 <div :class="$style['basic-list__content']">
                   자동이체로 리스료 납입 시, 납입일에 잔고부족 등의 이체불가
-                  사유로 납입하실 금액 전부를 이체할 수 없는 경우 에는
-                  납입지정일 이후 회사가 정하는 출금일에 미납금액(지연배상금
-                  포함)을 출금하여 리스료에 충당할 수 있습니 다.(고객이 지정한
-                  납입일의 오전 10시 이전 청구되며, 금융기관 영업시간 내에
-                  리스료 잔액이 있어야 함)
+                  사유로 납입하실 금액 전부를 이체할 수 없는 경우에는 납입지정일
+                  이후 회사가 정하는 출금일에 미납금액(지연배상금 포함)을
+                  출금하여 리스료에 충당할 수 있습니다.(고객이 지정한 납입일의
+                  오전 10시 이전 청구되며, 금융기관 영업시간 내에 리스료 잔액이
+                  있어야 함)
                 </div>
               </li>
               <li
@@ -1314,14 +1329,14 @@ export default {
             </h4>
             <p class="text-body-2">
               리스료는 리스물건 취득비용(자동차가격, 취득세 등), 잔존가치 및
-              리스기간 등을 고려하여 산정되며, 리스보증금 또는 선납금을 납부할
-              경우 약정에 따라 리스료가 인하 가능합니다.
+              리스기간 등을 고려하여 산정되며, 리스보증금을 납부할 경우 약정에
+              따라 리스료가 인하 가능합니다.
             </p>
           </section>
         </section>
 
         <section class="row-margin-container-medium">
-          <h3 class="text-title-2 row-margin-contents">6. 지연배상금율</h3>
+          <h3 class="text-title-2 row-margin-contents">6. 지연배상금률</h3>
 
           <ul
             :class="[
@@ -1829,7 +1844,7 @@ export default {
                 <span class="color-green-secondary">규정손실금</span>이 부과 될
                 수 있습니다. 다만
                 <span class="color-green"
-                  >리스상품은 계약이 성립한 날부터 3년 초과하여 상환 하여도 </span
+                  >리스상품은 계약이 성립한 날부터 3년 초과하여 상환하여도 </span
                 ><span class="color-green-secondary">규정손실금</span>이
                 <span class="color-green">부과되니 유의</span>하여 주시기
                 바랍니다.
@@ -1988,14 +2003,14 @@ export default {
                       <div class="row-margin-item">
                         아래의 신용정보들은 한국신용정보원
                         「일반신용정보관리규약」에 따라 종합신용정보집중기관인
-                        한국신용정보원 에 제공, 집중, 활용됩니다.
+                        한국신용정보원에 제공, 집중, 활용됩니다.
                       </div>
                       <ul class="reset-list">
                         <li class="font-weight-light row-margin-small">
                           ① 개인식별정보(성명, 주민등록번호 등)
                         </li>
                         <li class="font-weight-light row-margin-small">
-                          ② 연체정보 등’ 정보(연체사실 등)
+                          ② ‘연체정보 등’ 정보(연체사실 등)
                         </li>
                         <li class="font-weight-light row-margin-small">
                           ③ 신용거래정보(대출, 보증현황 등)
@@ -2320,8 +2335,9 @@ export default {
                 <div :class="$style['basic-list__content']">
                   <div>
                     대출만기 시 리스물건을 매입할 경우, 고객의 명의로 이전하는
-                    데에 필요한 취득세 등의 제세공과금 및 만기시점 의
-                    물건가치(잔존가치)만큼의 비용이 발생할 수 있으며, 이는
+                    데에 필요한 취득세 등의 제세공과금 및 만기시점의
+                    물건가치(잔존가치)만큼의
+                    <span class="underline">비용이 발생</span>할 수 있으며, 이는
                     고객이 부담합니다.
                   </div>
 
@@ -2550,9 +2566,13 @@ export default {
                   <td></td>
                   <td class="align-left">
                     본인은 하나캐피탈과 리스계약을 체결함에 있어 금융회사 직원과
-                    상담하여 본 설명서를 교부받았으며, 위에서 설명한 내용을
-                    포함하여 대출거래의 주요내용 및 고객부담비용에 대하여 충분히
-                    설명을 듣고 이해하였음을 확인합니다.
+                    상담하여 본 설명서를
+                    <strong class="font-weight-medium">교부</strong>받았으며,
+                    위에서 설명한 내용을 포함하여 대출거래의 주요내용 및
+                    고객부담비용에 대하여 충분히
+                    <strong class="font-weight-medium">설명</strong>을 듣고
+                    <strong class="font-weight-medium">이해</strong>하였음을
+                    확인합니다.
                   </td>
                 </tr>
                 <tr>

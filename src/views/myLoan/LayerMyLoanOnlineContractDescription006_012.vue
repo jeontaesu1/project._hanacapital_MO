@@ -56,15 +56,23 @@ export default {
       </template>
 
       <PageTextGroup>
+        <p
+          class="text-body-5 color-gray font-weight-light align-right row-margin-contents-small"
+        >
+          준법심의필(설):2023-9 (2023.03.01)
+        </p>
         <PageMainText>
-          상품설명서<br />
-          <strong>확인 안내</strong>
+          상품설명서 약관에<br />
+          <strong>동의해주세요</strong>
         </PageMainText>
         <PageSubText>
-          이 설명서는 「금융소비자 보호에 관한 법률」 제19조제1항, 동 법 시행령
-          제14조제1항에 따라 금융상품에 관한 중요한 사항을 금융소비자(이하
-          “고객”)가 이해하기 쉽도록 설명하기 위한 중요 서류로, 금융소비자 보호에
-          관한 법령 및 내부통제기준에 따른 절차를 거쳐 제공됩니다.
+          <strong
+            >이 설명서는 「금융소비자 보호에 관한 법률」 제19조제1항, 동 법
+            시행령 제14조제1항에 따라 금융상품에 관한 중요한 사항을
+            금융소비자(이하 “고객”)가 이해하기 쉽도록 설명하기 위한 중요
+            서류</strong
+          >로, 금융소비자 보호에 관한 법령 및 내부통제기준에 따른 절차를 거쳐
+          제공됩니다.
         </PageSubText>
         <PageSubText>
           아래 <strong>설명내용을 제대로 이해하지 못한 상태에서</strong> 설명을
@@ -533,33 +541,16 @@ export default {
             <div>
               <div :class="[$style['manual-image'], 'row-margin-contents']">
                 <img
-                  src="@/assets/images/contents/manual/manual-graph-003.png"
+                  src="@/assets/images/contents/manual/manual-graph-007.png"
                   alt=""
                 />
               </div>
-              <p class="text-body-2 align-center">할부금융 상품 거래절차</p>
-              <ul :class="[$style['basic-list'], 'row-margin-item']">
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'color-black',
-                    'text-body-4',
-                    'font-weight-regular',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']">-</div>
-                  <div :class="$style['basic-list__content']">
-                    렌탈이나 리스가 아닌 할부금융계약으로 제품의 소유권은
-                    매수인에게 있으며, 제품사용 중 반납이나 취소 불가함.
-                  </div>
-                </li>
-              </ul>
             </div>
 
             <div class="row-margin-contents">
               <div :class="[$style['manual-image'], 'row-margin-contents']">
                 <img
-                  src="@/assets/images/contents/manual/manual-graph-004.png"
+                  src="@/assets/images/contents/manual/manual-graph-008.png"
                   alt=""
                 />
               </div>
@@ -769,9 +760,7 @@ export default {
                   >
                     <div :class="$style['manual-check__block']">
                       <div :class="$style['manual-check__object']"></div>
-                      <div :class="$style['manual-check__text']">
-                        대상선택됨
-                      </div>
+                      <div :class="$style['manual-check__text']">대상</div>
                     </div>
                   </li>
                   <li :class="$style['manual-check__item']">
@@ -796,48 +785,17 @@ export default {
               <li
                 :class="[
                   $style['basic-list__item'],
-                  'color-black',
+                  'color-green',
                   'text-body-2',
                   'font-weight-regular',
                 ]"
               >
                 <div :class="$style['basic-list__symbol']"></div>
                 <div :class="$style['basic-list__content']">
-                  <div class="color-green">금리인하요구권 대상</div>
-
-                  <ul :class="[$style['basic-list'], 'row-margin-item']">
-                    <li
-                      :class="[
-                        $style['basic-list__item'],
-                        'color-black',
-                        'text-body-4',
-                        'font-weight-regular',
-                      ]"
-                    >
-                      <div :class="$style['basic-list__symbol']">-</div>
-                      <div :class="$style['basic-list__content']">
-                        <div class="color-green">
-                          신차 및 수입인증중고차 개인 고객 (개인사업자, 법인
-                          고객 및 한국지엠 제휴할부는 제외)
-                        </div>
-                      </div>
-                    </li>
-                    <li
-                      :class="[
-                        $style['basic-list__item'],
-                        'color-black',
-                        'text-body-4',
-                        'font-weight-regular',
-                      ]"
-                    >
-                      <div :class="$style['basic-list__symbol']">-</div>
-                      <div :class="$style['basic-list__content']">
-                        <div class="color-green">
-                          중고차 개인/개인사업자/법인 고객
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
+                  <div>
+                    금리인하요구권 대상 : 개인/개인사업자/법인 고객(단, 일부
+                    상품은 제외)
+                  </div>
 
                   <ul :class="[$style['basic-list'], 'row-margin-item']">
                     <li
@@ -2689,7 +2647,7 @@ export default {
                 <div :class="[$style['basic-table'], 'row-margin-item']">
                   <table>
                     <colgroup>
-                      <col style="width: 76px" />
+                      <col style="width: 79px" />
                       <col />
                       <col style="width: 92px" />
                     </colgroup>
@@ -2852,7 +2810,7 @@ export default {
         </section>
 
         <div class="row-margin-container-medium">
-          <div :class="[$style['basic-table'], 'row-margin-item']">
+          <div :class="$style['basic-table']">
             <table>
               <colgroup>
                 <col style="width: 32px" />

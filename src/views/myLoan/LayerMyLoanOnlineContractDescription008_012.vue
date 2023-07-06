@@ -56,15 +56,23 @@ export default {
       </template>
 
       <PageTextGroup>
+        <p
+          class="text-body-5 color-gray font-weight-light align-right row-margin-contents-small"
+        >
+          준법심의필(설):2023-20 (2023.05.18)
+        </p>
         <PageMainText>
-          상품설명서<br />
-          <strong>확인 안내</strong>
+          상품설명서 약관에<br />
+          <strong>동의해주세요</strong>
         </PageMainText>
         <PageSubText>
-          이 설명서는 「금융소비자 보호에 관한 법률」 제19조제1항, 동 법 시행령
-          제14조제1항에 따라 금융상품에 관한 중요한 사항을 금융소비자(이하
-          “고객”)가 이해하기 쉽도록 설명하기 위한 중요 서류로, 금융소비자 보호에
-          관한 법령 및 내부통제기준에 따른 절차를 거쳐 제공됩니다.
+          <strong
+            >이 설명서는 「금융소비자 보호에 관한 법률」 제19조제1항, 동 법
+            시행령 제14조제1항에 따라 금융상품에 관한 중요한 사항을
+            금융소비자(이하 “고객”)가 이해하기 쉽도록 설명하기 위한 중요
+            서류</strong
+          >로, 금융소비자 보호에 관한 법령 및 내부통제기준에 따른 절차를 거쳐
+          제공됩니다.
         </PageSubText>
         <PageSubText>
           아래 <strong>설명내용을 제대로 이해하지 못한 상태에서</strong> 설명을
@@ -513,15 +521,15 @@ export default {
                 <tr>
                   <th>리스료</th>
                   <td class="align-left">
-                    <div>1회 ~ 36회</div>
-                    <div class="row-margin-item-regular">334,600 원</div>
+                    <div>N회 ~ N회</div>
+                    <div class="row-margin-item-regular">N 원</div>
                   </td>
                 </tr>
                 <tr>
                   <th>보증금에 따른 리스료 예상할인율 및 할인금액</th>
                   <td class="align-left">
-                    <div>0%</div>
-                    <div class="row-margin-item-regular">원</div>
+                    <div>N%</div>
+                    <div class="row-margin-item-regular">N 원</div>
                   </td>
                 </tr>
                 <tr>
@@ -529,8 +537,8 @@ export default {
                     선납금/선납리스료에 따른 리스료 예상할인율 및 할인금액
                   </th>
                   <td class="align-left">
-                    <div>0%</div>
-                    <div class="row-margin-item-regular">원</div>
+                    <div>N%</div>
+                    <div class="row-margin-item-regular">N 원</div>
                   </td>
                 </tr>
                 <tr>
@@ -547,7 +555,7 @@ export default {
                           <div :class="$style['manual-check__block']">
                             <div :class="$style['manual-check__object']"></div>
                             <div :class="$style['manual-check__text']">
-                              대상선택됨
+                              대상
                             </div>
                           </div>
                         </li>
@@ -640,9 +648,7 @@ export default {
                   >
                     <div :class="$style['manual-check__block']">
                       <div :class="$style['manual-check__object']"></div>
-                      <div :class="$style['manual-check__text']">
-                        비대상선택됨
-                      </div>
+                      <div :class="$style['manual-check__text']">비대상</div>
                     </div>
                   </li>
                 </ul>
@@ -2462,7 +2468,7 @@ export default {
         </section>
 
         <div class="row-margin-container-medium">
-          <div :class="[$style['basic-table'], 'row-margin-item']">
+          <div :class="$style['basic-table']">
             <table>
               <colgroup>
                 <col style="width: 32px" />

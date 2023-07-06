@@ -56,15 +56,23 @@ export default {
       </template>
 
       <PageTextGroup>
+        <p
+          class="text-body-5 color-gray font-weight-light align-right row-margin-contents-small"
+        >
+          준법심의필(설):2023-12 (2023.03.01)
+        </p>
         <PageMainText>
-          상품설명서<br />
-          <strong>확인 안내</strong>
+          상품설명서 약관에<br />
+          <strong>동의해주세요</strong>
         </PageMainText>
         <PageSubText>
-          이 설명서는 「금융소비자 보호에 관한 법률」 제19조제1항, 동 법 시행령
-          제14조제1항에 따라 금융상품에 관한 중요한 사항을 금융소비자(이하
-          “고객”)가 이해하기 쉽도록 설명하기 위한 중요 서류로, 금융소비자 보호에
-          관한 법령 및 내부통제기준에 따른 절차를 거쳐 제공됩니다.
+          <strong
+            >이 설명서는 「금융소비자 보호에 관한 법률」 제19조제1항, 동 법
+            시행령 제14조제1항에 따라 금융상품에 관한 중요한 사항을
+            금융소비자(이하 “고객”)가 이해하기 쉽도록 설명하기 위한 중요
+            서류</strong
+          >로, 금융소비자 보호에 관한 법령 및 내부통제기준에 따른 절차를 거쳐
+          제공됩니다.
         </PageSubText>
         <PageSubText>
           아래 <strong>설명내용을 제대로 이해하지 못한 상태에서</strong> 설명을
@@ -452,7 +460,7 @@ export default {
                 </tr>
                 <tr>
                   <th>대출기간</th>
-                  <td>취급 후 48 원</td>
+                  <td>취급 후 48개월</td>
                 </tr>
                 <tr>
                   <th>중도상환수수료<br />부과 여부 및 요율</th>
@@ -526,7 +534,7 @@ export default {
             <div>
               <div :class="[$style['manual-image'], 'row-margin-contents']">
                 <img
-                  src="@/assets/images/contents/manual/manual-graph-003.png"
+                  src="@/assets/images/contents/manual/manual-graph-005.png"
                   alt=""
                 />
               </div>
@@ -552,7 +560,7 @@ export default {
             <div class="row-margin-contents">
               <div :class="[$style['manual-image'], 'row-margin-contents']">
                 <img
-                  src="@/assets/images/contents/manual/manual-graph-004.png"
+                  src="@/assets/images/contents/manual/manual-graph-006.png"
                   alt=""
                 />
               </div>
@@ -681,8 +689,8 @@ export default {
                     >
                       <div :class="$style['basic-list__symbol']">-</div>
                       <div :class="$style['basic-list__content']">
-                        기준금리(①)는 금융회사가 합리적인 기준에 따라
-                        산정합니다.
+                        <strong class="font-weight-medium">기준금리</strong
+                        >(①)는 금융회사가 합리적인 기준에 따라 산정합니다.
                       </div>
                     </li>
                     <li
@@ -695,9 +703,10 @@ export default {
                     >
                       <div :class="$style['basic-list__symbol']">-</div>
                       <div :class="$style['basic-list__content']">
-                        조정금리(②)는 시장상황, 영업환경 등을 고려하여
-                        금융회사가 할인 또는 가산하는 금리로, 기준금리에 더해져
-                        실제 약정금리를 결정합니다.
+                        <stron class="font-weight-medium">조정금리</stron>(②)는
+                        시장상황, 영업환경 등을 고려하여 금융회사가 할인 또는
+                        가산하는 금리로, 기준금리에 더해져 실제 약정금리를
+                        결정합니다.
                       </div>
                     </li>
                   </ul>
@@ -714,7 +723,9 @@ export default {
                 <div :class="$style['basic-list__symbol']"></div>
                 <div :class="$style['basic-list__content']">
                   <div>
-                    결정된 대출금리(약정금리)는 개별약정에 의해 별도로 정한
+                    결정된
+                    <stron class="font-weight-medium">대출금리</stron
+                    >(약정금리)는 개별약정에 의해 별도로 정한
                     항목(변동금리대출의 기준금리 등) 이외에는 대출만기일까지
                     동일하게 적용됩니다.
                   </div>
@@ -2316,27 +2327,13 @@ export default {
             >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                고객은 분쟁조정 또는 소송의 수행 등 권리구제를 위한 목적으로
-                금융회사가 기록 및 유지·관리하는 다음의 자료에 대한 열람(사본 및
-                청취 포함)을 요구할 수 있습니다.
-              </div>
-            </li>
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-2',
-                'font-weight-regular',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
                 <div>
-                  금융회사는 고객의 분쟁조정 신청내역 또는 소송제기 등의 목적 및
-                  열람의 범위가 기재된 열람요구서로 열람을 요구받은 날로부터 8일
-                  이내에 고객이 해당 자료를 열람할 수 있게 합니다.
+                  고객은 분쟁조정 또는 소송의 수행 등 권리구제를 위한 목적으로
+                  금융회사가 기록 및 유지·관리하는 다음의 자료에 대한 열람(사본
+                  및 청취 포함)을 요구할 수 있습니다.
                 </div>
-                <ul :class="[$style['basic-list'], 'row-margin-item']">
+
+                <ul :class="[$style['basic-list'], 'row-margin-contents']">
                   <li
                     :class="[
                       $style['basic-list__item'],
@@ -2354,6 +2351,21 @@ export default {
                     </div>
                   </li>
                 </ul>
+              </div>
+            </li>
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'color-black',
+                'text-body-2',
+                'font-weight-regular',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                금융회사는 고객의 분쟁조정 신청내역 또는 소송제기 등의 목적 및
+                열람의 범위가 기재된 열람요구서로 열람을 요구받은 날로부터 8일
+                이내에 고객이 해당 자료를 열람할 수 있게 합니다.
               </div>
             </li>
             <li
@@ -2623,7 +2635,7 @@ export default {
         </section>
 
         <div class="row-margin-container-medium">
-          <div :class="[$style['basic-table'], 'row-margin-item']">
+          <div :class="$style['basic-table']">
             <table>
               <colgroup>
                 <col style="width: 32px" />
@@ -2637,10 +2649,10 @@ export default {
                   </th>
                   <td></td>
                   <td class="align-left">
-                    본인은 하나캐피탈과 대출거래를 체결함에 있어 금융회사 직원과
+                    본인은 하나캐피탈과 대출거래를 함에 있어 금융회사 직원과
                     상담하여 본 설명서를 교부받았으며, 위에서 설명한 내용을
-                    포함하여 대출거래의 주요내용 및 고객부담 비용에 대하여
-                    충분히 설명을 듣고 이해하였음을 확인합니다.
+                    포함하여 대출거래의 주요내용 및 고객부담비용에 대하여 충분히
+                    설명을 듣고 이해하였음을 확인합니다.
                   </td>
                 </tr>
                 <tr>

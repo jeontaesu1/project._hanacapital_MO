@@ -56,15 +56,23 @@ export default {
       </template>
 
       <PageTextGroup>
+        <p
+          class="text-body-5 color-gray font-weight-light align-right row-margin-contents-small"
+        >
+          준법심의필(설):2023-13 (2023.03.01)
+        </p>
         <PageMainText>
-          상품설명서<br />
-          <strong>확인 안내</strong>
+          상품설명서 약관에<br />
+          <strong>동의해주세요</strong>
         </PageMainText>
         <PageSubText>
-          이 설명서는 「금융소비자 보호에 관한 법률」 제19조제1항, 동 법 시행령
-          제14조제1항에 따라 금융상품에 관한 중요한 사항을 금융소비자(이하
-          “고객”)가 이해하기 쉽도록 설명하기 위한 중요 서류로, 금융소비자 보호에
-          관한 법령 및 내부통제기준에 따른 절차를 거쳐 제공됩니다.
+          <strong
+            >이 설명서는 「금융소비자 보호에 관한 법률」 제19조제1항, 동 법
+            시행령 제14조제1항에 따라 금융상품에 관한 중요한 사항을
+            금융소비자(이하 “고객”)가 이해하기 쉽도록 설명하기 위한 중요
+            서류</strong
+          >로, 금융소비자 보호에 관한 법령 및 내부통제기준에 따른 절차를 거쳐
+          제공됩니다.
         </PageSubText>
         <PageSubText>
           아래 <strong>설명내용을 제대로 이해하지 못한 상태에서</strong> 설명을
@@ -310,11 +318,11 @@ export default {
                             <div :class="$style['basic-list__symbol']"></div>
                             <div :class="$style['basic-list__content']">
                               규정손해배상금 = 미회수원금 × 규정손해배상금률,
-                              규정손해배상금률 = 최고요율(4%) X
+                              규정손해배상금률 = 최고요율(3%) X
                               (잔여기간월수/리스기간 전체월수)<br />
-                              예) 미회수원금이 15백만원, 최고요율 4%, 리스기간이
+                              예) 미회수원금이 15백만원, 최고요율 3%, 리스기간이
                               36개월(잔여기간이 10개월)인 경우 : 15,000,000원 X
-                              4% X (10/36)= 166,666원
+                              3% X (10/36)= 125,000원
                             </div>
                           </li>
                         </ul>
@@ -482,15 +490,15 @@ export default {
                 <tr>
                   <th>리스료</th>
                   <td class="align-left">
-                    <div>1회 ~ 회</div>
-                    <div class="row-margin-item-regular">원</div>
+                    <div>N회 ~ N회</div>
+                    <div class="row-margin-item-regular">N 원</div>
                   </td>
                 </tr>
                 <tr>
                   <th>보증금에 따른 리스료 예상할인율 및 할인금액</th>
                   <td class="align-left">
-                    <div>%</div>
-                    <div class="row-margin-item-regular">원</div>
+                    <div>N%</div>
+                    <div class="row-margin-item-regular">N 원</div>
                   </td>
                 </tr>
                 <tr>
@@ -498,8 +506,8 @@ export default {
                     선납금/선납리스료에 따른 리스료 예상할인율 및 할인금액
                   </th>
                   <td class="align-left">
-                    <div>%</div>
-                    <div class="row-margin-item-regular">원</div>
+                    <div>N%</div>
+                    <div class="row-margin-item-regular">N 원</div>
                   </td>
                 </tr>
                 <tr>
@@ -516,7 +524,7 @@ export default {
                           <div :class="$style['manual-check__block']">
                             <div :class="$style['manual-check__object']"></div>
                             <div :class="$style['manual-check__text']">
-                              대상선택됨
+                              대상
                             </div>
                           </div>
                         </li>
@@ -683,8 +691,13 @@ export default {
                 <div :class="$style['basic-list__symbol']"></div>
                 <div :class="$style['basic-list__content']">
                   <div>
-                    고객에게 실제 적용되는 약정금리는 ①기준금리와 ②조정금리가
-                    반영되어 결정됩니다.
+                    고객에게 실제 적용되는
+                    <strong class="font-weight-medium underline"
+                      >약정금리</strong
+                    >는
+                    <strong class="font-weight-medium underline"
+                      >①기준금리와 ②조정금리</strong
+                    >가 반영되어 결정됩니다.
                   </div>
 
                   <ul :class="[$style['basic-list'], 'row-margin-contents']">
@@ -698,8 +711,8 @@ export default {
                     >
                       <div :class="$style['basic-list__symbol']">-</div>
                       <div :class="$style['basic-list__content']">
-                        기준금리(①)는 금융회사가 합리적인 기준에 따라
-                        산정합니다.
+                        <strong class="font-weight-medium">기준금리</strong
+                        >(①)는 금융회사가 합리적인 기준에 따라 산정합니다.
                       </div>
                     </li>
                     <li
@@ -712,9 +725,10 @@ export default {
                     >
                       <div :class="$style['basic-list__symbol']">-</div>
                       <div :class="$style['basic-list__content']">
-                        조정금리(②)는 시장상황, 영업환경 등을 고려하여
-                        금융회사가 할인 또는 가산하는 금리로, 기준금리에 더해져
-                        실제 약정금리를 결정합니다.
+                        <strong class="font-weight-medium">조정금리</strong
+                        >(②)는 시장상황, 영업환경 등을 고려하여 금융회사가 할인
+                        또는 가산하는 금리로, 기준금리에 더해져 실제 약정금리를
+                        결정합니다.
                       </div>
                     </li>
                   </ul>
@@ -731,9 +745,11 @@ export default {
                 <div :class="$style['basic-list__symbol']"></div>
                 <div :class="$style['basic-list__content']">
                   <div>
-                    결정된 대출금리(약정금리)는 개별약정에 의해 별도로 정한
-                    항목(변동금리대출의 기준금리 등) 이외에는 대출만기일까지
-                    동일하게 적용됩니다.
+                    결정된
+                    <strong class="font-weight-medium"
+                      >대출금리(약정금리)</strong
+                    >는 개별약정에 의해 별도로 정한 항목(변동금리대출의 기준금리
+                    등) 이외에는 대출만기일까지 동일하게 적용됩니다.
                   </div>
 
                   <ul :class="[$style['basic-list'], 'row-margin-item']">
@@ -770,12 +786,6 @@ export default {
                 :class="[$style['manual-check'], $style['manual-check--wrap']]"
               >
                 <ul :class="$style['manual-check__list']">
-                  <li :class="$style['manual-check__item']">
-                    <div :class="$style['manual-check__block']">
-                      <div :class="$style['manual-check__object']"></div>
-                      <div :class="$style['manual-check__text']">대상</div>
-                    </div>
-                  </li>
                   <li
                     :class="[
                       $style['manual-check__item'],
@@ -784,9 +794,13 @@ export default {
                   >
                     <div :class="$style['manual-check__block']">
                       <div :class="$style['manual-check__object']"></div>
-                      <div :class="$style['manual-check__text']">
-                        비대상선택됨
-                      </div>
+                      <div :class="$style['manual-check__text']">대상</div>
+                    </div>
+                  </li>
+                  <li :class="$style['manual-check__item']">
+                    <div :class="$style['manual-check__block']">
+                      <div :class="$style['manual-check__object']"></div>
+                      <div :class="$style['manual-check__text']">비대상</div>
                     </div>
                   </li>
                 </ul>
@@ -805,16 +819,16 @@ export default {
               <li
                 :class="[
                   $style['basic-list__item'],
-                  'color-black',
+                  'color-green',
                   'text-body-2',
                   'font-weight-regular',
                 ]"
               >
                 <div :class="$style['basic-list__symbol']"></div>
                 <div :class="$style['basic-list__content']">
-                  <div class="color-green">
-                    금리인하요구권 대상 : 개인 고객 (개인사업자 및 법인 고객은
-                    제외)
+                  <div>
+                    금리인하요구권 대상 : 개인/개인사업자/법인 고객(단, 일부
+                    상품은 제외)
                   </div>
 
                   <ul :class="[$style['basic-list'], 'row-margin-item']">
@@ -1003,14 +1017,14 @@ export default {
                 <div :class="$style['basic-list__symbol']"></div>
                 <div :class="$style['basic-list__content']">
                   <p class="row-margin-mini">
-                    규정손해배상금 = 미회수원금 × 규정손해배상금률<br />
-                    규정손해배상금률 = 최고요율(4%) X (잔여기간월수/리스기간
+                    규정손해배상금 = 미회수원금 × 규정손해배상금률,
+                    규정손해배상금률 = 최고요율(3%) X (잔여기간월수/리스기간
                     전체월수)
                   </p>
                   <p class="text-body-4 font-weight-light color-gray-tertiary">
-                    (예시) 미회수원금이 15백만원, 최고요율 4%, 리스기간이
-                    36개월(잔여기간이 10개월)인 경우<br />
-                    15,000,000원 X 4% X (10/36)= 166,666원
+                    예) 미회수원금이 15백만원, 최고요율 3%, 리스기간이
+                    36개월(잔여기간이 10개월)인 경우 : 15,000,000원 X 3% X
+                    (10/36)= 125,000원
                   </p>
                 </div>
               </li>
@@ -2318,7 +2332,7 @@ export default {
         </section>
 
         <div class="row-margin-container-medium">
-          <div :class="[$style['basic-table'], 'row-margin-item']">
+          <div :class="$style['basic-table']">
             <table>
               <colgroup>
                 <col style="width: 32px" />

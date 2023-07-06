@@ -56,6 +56,11 @@ export default {
       </template>
 
       <PageTextGroup>
+        <p
+          class="text-body-5 color-gray font-weight-light align-right row-margin-contents-small"
+        >
+          준법심의필(설):2023-11 (2023.03.01)
+        </p>
         <PageMainText>
           상품설명서 약관에<br />
           <strong>동의해주세요</strong>
@@ -425,7 +430,7 @@ export default {
                           <div :class="$style['manual-check__block']">
                             <div :class="$style['manual-check__object']"></div>
                             <div :class="$style['manual-check__text']">
-                              고정선택됨
+                              고정
                             </div>
                           </div>
                         </li>
@@ -451,7 +456,7 @@ export default {
                           <div :class="$style['manual-check__block']">
                             <div :class="$style['manual-check__object']"></div>
                             <div :class="$style['manual-check__text']">
-                              대상선택됨
+                              대상
                             </div>
                           </div>
                         </li>
@@ -474,7 +479,7 @@ export default {
                           <div :class="$style['manual-check__block']">
                             <div :class="$style['manual-check__object']"></div>
                             <div :class="$style['manual-check__text']">
-                              원리금균등분할상환선택됨
+                              원리금균등분할상환
                             </div>
                           </div>
                         </li>
@@ -528,23 +533,6 @@ export default {
                   alt=""
                 />
               </div>
-              <p class="text-body-2 align-center">할부금융 상품 거래절차</p>
-              <ul :class="[$style['basic-list'], 'row-margin-item']">
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'color-black',
-                    'text-body-4',
-                    'font-weight-regular',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']">-</div>
-                  <div :class="$style['basic-list__content']">
-                    렌탈이나 리스가 아닌 할부금융계약으로 제품의 소유권은
-                    매수인에게 있으며, 제품사용 중 반납이나 취소 불가함.
-                  </div>
-                </li>
-              </ul>
             </div>
 
             <div class="row-margin-contents">
@@ -767,9 +755,7 @@ export default {
                   >
                     <div :class="$style['manual-check__block']">
                       <div :class="$style['manual-check__object']"></div>
-                      <div :class="$style['manual-check__text']">
-                        대상선택됨
-                      </div>
+                      <div :class="$style['manual-check__text']">대상</div>
                     </div>
                   </li>
                   <li :class="$style['manual-check__item']">
@@ -802,7 +788,8 @@ export default {
                 <div :class="$style['basic-list__symbol']"></div>
                 <div :class="$style['basic-list__content']">
                   <div>
-                    금리인하요구권 대상 : 개인고객(개인사업자, 법인 고객은 제외)
+                    금리인하요구권 대상 : 개인/개인사업자/법인 고객(단, 일부
+                    상품은 제외)
                   </div>
 
                   <ul :class="[$style['basic-list'], 'row-margin-item']">
@@ -937,7 +924,7 @@ export default {
           <NoticeText
             :classNames="{ wrap: 'color-red row-margin-item-medium' }"
           >
-            할부계약을 체결하는 경우 고객이 부담하여야 하는 총 금액에는
+            대출계약을 체결하는 경우 고객이 부담하여야 하는 총 금액에는
             대출원리금, 수수료 등이 포함됩니다. 상세한 금액의 합계는 대출심사
             후에 확인 가능하므로, 심사 후 금융회사 담당자가 안내드리겠습니다.
           </NoticeText>
@@ -976,8 +963,32 @@ export default {
                   <tr>
                     <th>만기<br />1년 이상</th>
                     <td>
-                      중도상환원금×1% + 중도상환원금× (중도상환수수료율-1%) ×
-                      잔존기간* / (대출기간-30일)
+                      <div>
+                        중도상환원금×1% + 중도상환원금× (중도상환수수료율-1%) ×
+                        잔존기간* / (대출기간-30일)
+                      </div>
+
+                      <ul
+                        :class="[
+                          $style['basic-list'],
+                          'row-margin-item-regular',
+                        ]"
+                      >
+                        <li
+                          :class="[
+                            $style['basic-list__item'],
+                            'color-gray-tertiary',
+                            'font-weight-regular',
+                            'align-left',
+                          ]"
+                        >
+                          <div :class="$style['basic-list__symbol']">※</div>
+                          <div :class="$style['basic-list__content']">
+                            잔존기간 : 30일 미만 상환시 ‘대출사용기간’을 30일로
+                            간주
+                          </div>
+                        </li>
+                      </ul>
                     </td>
                   </tr>
                   <tr>
@@ -1034,9 +1045,7 @@ export default {
           </section>
 
           <section class="row-margin-contents">
-            <h4 class="text-body-2 row-margin-item-medium">
-              근저당권설정(해지)비용
-            </h4>
+            <h4 class="text-body-2 row-margin-item-medium">근저당권설정비용</h4>
             <p class="text-body-2">
               자동차 등에 근저당 설정할 때 발생하는 부대비용으로,
               <span class="color-green">설정 시에는 금융회사가 부담</span>하며,
@@ -1059,9 +1068,8 @@ export default {
                   채권자(금융회사)는 설정자가 제공한 담보물을 처분하여
                   우선적으로 변제받는 권리입니다. 따라서 자기소유의 담보에
                   타인을 위하여 저당권을 설정하는 것은 타인의 채무불이행으로
-                  인하여 저당권을 설정하는 것은 타인의 채무불이행으로 인하여
-                  자기재산을 잃게 될 수도 있는 위험(소유권 상실 등 권리변동)을
-                  부담하는 행위입니다.
+                  인하여 자기재산을 잃게 될 수도 있는 위험(소유권 상실 등
+                  권리변동)을 부담하는 행위입니다.
                 </div>
               </li>
             </ul>
@@ -1215,10 +1223,9 @@ export default {
                 <div :class="$style['basic-list__content']">
                   자동이체 계좌는 고객센터(<strong class="font-weight-medium"
                     >1800-1110</strong
-                  >)를 통해 변경이 가능하지만, 자동이체일
-                  <strong class="font-weight-medium">4</strong>일 전(영업일기준)
-                  변경시 당월 적용이 가능하며, 그 이후에는 익월부터 변경사항이
-                  적용됨을 유의해주시기 바랍니다.
+                  >)를 통해 변경이 가능하지만, 자동이체일 4영업일 전까지
+                  변경(금융기관 별 상이)하실 경우에는 당월적용이 가능하며, 그
+                  이후에는 익월부터 변경사항이 적용됨을 유의해주시기 바랍니다.
                 </div>
               </li>
               <li
@@ -1768,7 +1775,7 @@ export default {
             >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                <div>주요 기한의 이익 상실 사유</div>
+                <div>예) 주요 기한의 이익 상실 사유</div>
                 <ul :class="[$style['basic-list'], 'row-margin-contents']">
                   <li
                     :class="[
@@ -2717,7 +2724,7 @@ export default {
         </section>
 
         <div class="row-margin-container-medium">
-          <div :class="[$style['basic-table'], 'row-margin-item']">
+          <div :class="$style['basic-table']">
             <table>
               <colgroup>
                 <col style="width: 32px" />

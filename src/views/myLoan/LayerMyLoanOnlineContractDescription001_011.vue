@@ -56,6 +56,11 @@ export default {
       </template>
 
       <PageTextGroup>
+        <p
+          class="text-body-5 color-gray font-weight-light align-right row-margin-contents-small"
+        >
+          준법심의필(설):2023-5 (2023.03.01)
+        </p>
         <PageMainText>
           상품설명서 약관에<br />
           <strong>동의해주세요</strong>
@@ -396,169 +401,153 @@ export default {
         <section class="row-margin-container-medium">
           <h3 class="text-title-2 row-margin-contents">1. 상품 개요 및 특성</h3>
           <div :class="$style['basic-table']">
-            <div :class="$style['basic-table']">
-              <table>
-                <colgroup>
-                  <col style="width: 120px" />
-                  <col />
-                </colgroup>
-                <thead>
-                  <tr>
-                    <th>구분</th>
-                    <th>내용</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th>상품명</th>
-                    <td>신용대출</td>
-                  </tr>
-                  <tr>
-                    <th>대상</th>
-                    <td class="align-left">
-                      <div :class="$style['manual-check']">
-                        <ul :class="$style['manual-check__list']">
-                          <li :class="$style['manual-check__item']">
-                            <div :class="$style['manual-check__block']">
-                              <div
-                                :class="$style['manual-check__object']"
-                              ></div>
-                              <div :class="$style['manual-check__text']">
-                                개인
-                              </div>
+            <table>
+              <colgroup>
+                <col style="width: 120px" />
+                <col />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>내용</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>상품명</th>
+                  <td>신용대출</td>
+                </tr>
+                <tr>
+                  <th>대상</th>
+                  <td class="align-left">
+                    <div :class="$style['manual-check']">
+                      <ul :class="$style['manual-check__list']">
+                        <li :class="$style['manual-check__item']">
+                          <div :class="$style['manual-check__block']">
+                            <div :class="$style['manual-check__object']"></div>
+                            <div :class="$style['manual-check__text']">
+                              개인
                             </div>
-                          </li>
-                          <li
-                            :class="[
-                              $style['manual-check__item'],
-                              $style['manual-check__item--checked'],
-                            ]"
-                          >
-                            <div :class="$style['manual-check__block']">
-                              <div
-                                :class="$style['manual-check__object']"
-                              ></div>
-                              <div :class="$style['manual-check__text']">
-                                개인사업자
-                              </div>
+                          </div>
+                        </li>
+                        <li
+                          :class="[
+                            $style['manual-check__item'],
+                            $style['manual-check__item--checked'],
+                          ]"
+                        >
+                          <div :class="$style['manual-check__block']">
+                            <div :class="$style['manual-check__object']"></div>
+                            <div :class="$style['manual-check__text']">
+                              개인사업자
                             </div>
-                          </li>
-                        </ul>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>적용금리</th>
-                    <td>16.3%</td>
-                  </tr>
-                  <tr>
-                    <th>대출신청금액</th>
-                    <td>5,000,000 원</td>
-                  </tr>
-                  <tr>
-                    <th>금리적용방식</th>
-                    <td class="align-left">
-                      <div :class="$style['manual-check']">
-                        <ul :class="$style['manual-check__list']">
-                          <li :class="$style['manual-check__item']">
-                            <div :class="$style['manual-check__block']">
-                              <div
-                                :class="$style['manual-check__object']"
-                              ></div>
-                              <div :class="$style['manual-check__text']">
-                                변동
-                              </div>
-                            </div>
-                          </li>
-                          <li
-                            :class="[
-                              $style['manual-check__item'],
-                              $style['manual-check__item--checked'],
-                            ]"
-                          >
-                            <div :class="$style['manual-check__block']">
-                              <div
-                                :class="$style['manual-check__object']"
-                              ></div>
-                              <div :class="$style['manual-check__text']">
-                                고정선택됨
-                              </div>
-                            </div>
-                          </li>
-                          <li :class="$style['manual-check__item']">
-                            <div :class="$style['manual-check__block']">
-                              <div
-                                :class="$style['manual-check__object']"
-                              ></div>
-                              <div :class="$style['manual-check__text']">
-                                혼합
-                              </div>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>대출기간</th>
-                    <td>취급 후 48개월</td>
-                  </tr>
-                  <tr>
-                    <th>중도상환수수료율</th>
-                    <td>최대 2%</td>
-                  </tr>
-                  <tr>
-                    <th>대출실행/만기일</th>
-                    <td>2032.04.06 ~ 2027.04.11</td>
-                  </tr>
-                  <tr>
-                    <th>담보물건<br />(저당설정시)</th>
-                    <td class="align-left">
-                      <ul class="reset-list">
-                        <li class="row-margin-item-regular">1) 담보물건</li>
-                        <li class="row-margin-item-regular">2) 담보물건</li>
-                        <li class="row-margin-item-regular">3) 담보물건</li>
-                        <li class="row-margin-item-regular">4) 담보물건</li>
+                          </div>
+                        </li>
                       </ul>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>상환방식</th>
-                    <td class="align-left">
-                      <div :class="$style['manual-check']">
-                        <ul :class="$style['manual-check__list']">
-                          <li
-                            :class="[
-                              $style['manual-check__item'],
-                              $style['manual-check__item--checked'],
-                            ]"
-                          >
-                            <div :class="$style['manual-check__block']">
-                              <div
-                                :class="$style['manual-check__object']"
-                              ></div>
-                              <div :class="$style['manual-check__text']">
-                                원리금균등분할상환
-                              </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>적용금리</th>
+                  <td>16.3%</td>
+                </tr>
+                <tr>
+                  <th>대출신청금액</th>
+                  <td>5,000,000 원</td>
+                </tr>
+                <tr>
+                  <th>금리적용방식</th>
+                  <td class="align-left">
+                    <div :class="$style['manual-check']">
+                      <ul :class="$style['manual-check__list']">
+                        <li :class="$style['manual-check__item']">
+                          <div :class="$style['manual-check__block']">
+                            <div :class="$style['manual-check__object']"></div>
+                            <div :class="$style['manual-check__text']">
+                              변동
                             </div>
-                          </li>
-                          <li :class="$style['manual-check__item']">
-                            <div :class="$style['manual-check__block']">
-                              <div
-                                :class="$style['manual-check__object']"
-                              ></div>
-                              <div :class="$style['manual-check__text']">
-                                만기일시상환
-                              </div>
+                          </div>
+                        </li>
+                        <li
+                          :class="[
+                            $style['manual-check__item'],
+                            $style['manual-check__item--checked'],
+                          ]"
+                        >
+                          <div :class="$style['manual-check__block']">
+                            <div :class="$style['manual-check__object']"></div>
+                            <div :class="$style['manual-check__text']">
+                              고정선택됨
                             </div>
-                          </li>
-                        </ul>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+                          </div>
+                        </li>
+                        <li :class="$style['manual-check__item']">
+                          <div :class="$style['manual-check__block']">
+                            <div :class="$style['manual-check__object']"></div>
+                            <div :class="$style['manual-check__text']">
+                              혼합
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>대출기간</th>
+                  <td>취급 후 48개월</td>
+                </tr>
+                <tr>
+                  <th>중도상환수수료율</th>
+                  <td>최대 2%</td>
+                </tr>
+                <tr>
+                  <th>대출실행/만기일</th>
+                  <td>2032.04.06 ~ 2027.04.11</td>
+                </tr>
+                <tr>
+                  <th>담보물건<br />(저당설정시)</th>
+                  <td class="align-left">
+                    <ul class="reset-list">
+                      <li class="row-margin-item-regular">1) 담보물건</li>
+                      <li class="row-margin-item-regular">2) 담보물건</li>
+                      <li class="row-margin-item-regular">3) 담보물건</li>
+                      <li class="row-margin-item-regular">4) 담보물건</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <th>상환방식</th>
+                  <td class="align-left">
+                    <div :class="$style['manual-check']">
+                      <ul :class="$style['manual-check__list']">
+                        <li
+                          :class="[
+                            $style['manual-check__item'],
+                            $style['manual-check__item--checked'],
+                          ]"
+                        >
+                          <div :class="$style['manual-check__block']">
+                            <div :class="$style['manual-check__object']"></div>
+                            <div :class="$style['manual-check__text']">
+                              원리금균등분할상환
+                            </div>
+                          </div>
+                        </li>
+                        <li :class="$style['manual-check__item']">
+                          <div :class="$style['manual-check__block']">
+                            <div :class="$style['manual-check__object']"></div>
+                            <div :class="$style['manual-check__text']">
+                              만기일시상환
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
           <ul
             :class="[
@@ -968,34 +957,32 @@ export default {
             <h4 class="text-body-2 row-margin-item-medium">중도상환수수료</h4>
 
             <div :class="$style['basic-table']">
-              <div :class="$style['basic-table']">
-                <table>
-                  <colgroup>
-                    <col style="width: 120px" />
-                    <col />
-                  </colgroup>
-                  <thead>
-                    <tr>
-                      <th>대출기간</th>
-                      <th>중도상환수수료</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th>1년 이상</th>
-                      <td class="align-left">
-                        중도상환금액×1%+중도상환금액×1%×잔여기간/(대출기간-30일)
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>1년 미만</th>
-                      <td class="align-left">
-                        중도상환금액×2%×잔여기간/(대출기간-30일)
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <table>
+                <colgroup>
+                  <col style="width: 120px" />
+                  <col />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>대출기간</th>
+                    <th>중도상환수수료</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>1년 이상</th>
+                    <td class="align-left">
+                      중도상환금액×1%+중도상환금액×1%×잔여기간/(대출기간-30일)
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>1년 미만</th>
+                    <td class="align-left">
+                      중도상환금액×2%×잔여기간/(대출기간-30일)
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
 
             <ul :class="[$style['basic-list'], 'row-margin-item']">
@@ -1094,38 +1081,36 @@ export default {
             </p>
 
             <div :class="[$style['basic-table'], 'row-margin-item']">
-              <div :class="$style['basic-table']">
-                <table>
-                  <colgroup>
-                    <col style="width: 160px" />
-                    <col />
-                  </colgroup>
-                  <thead>
-                    <tr>
-                      <th>대출금액</th>
-                      <th>인지세액</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th>5천만원 이하</th>
-                      <td>비과세</td>
-                    </tr>
-                    <tr>
-                      <th>5천만원 초과 1억원 이하</th>
-                      <td>7만원</td>
-                    </tr>
-                    <tr>
-                      <th>1억원 초과 10억원 이하</th>
-                      <td>15만원</td>
-                    </tr>
-                    <tr>
-                      <th>10억원 초과</th>
-                      <td>35만원</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <table>
+                <colgroup>
+                  <col style="width: 160px" />
+                  <col />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>대출금액</th>
+                    <th>인지세액</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>5천만원 이하</th>
+                    <td>비과세</td>
+                  </tr>
+                  <tr>
+                    <th>5천만원 초과 1억원 이하</th>
+                    <td>7만원</td>
+                  </tr>
+                  <tr>
+                    <th>1억원 초과 10억원 이하</th>
+                    <td>15만원</td>
+                  </tr>
+                  <tr>
+                    <th>10억원 초과</th>
+                    <td>35만원</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
 
             <ul :class="[$style['basic-list'], 'row-margin-item']">
@@ -1145,7 +1130,7 @@ export default {
             </ul>
 
             <NoticeText
-              :classNames="{ wrap: 'color-red row-margin-item-medium' }"
+              :classNames="{ wrap: 'color-green row-margin-item-medium' }"
               >청약철회권을 행사하는 경우 금융소비자보호법 제46조제2항제2호 및
               동 법 시행령 제37조제4항, 제5항에 따라, 이미 공급받은 금전 및
               재화, 이자, 인지세 등 제세공과금, 저당권 설정 등에 따른 등기비용을
@@ -1281,37 +1266,35 @@ export default {
                   </p>
 
                   <div :class="[$style['basic-table'], 'row-margin-item']">
-                    <div :class="$style['basic-table']">
-                      <table>
-                        <colgroup>
-                          <col style="width: 88px" />
-                          <col />
-                          <col style="width: 114px" />
-                        </colgroup>
-                        <thead>
-                          <tr>
-                            <th>상환방식</th>
-                            <th>총 원리금<br />부담 예상액</th>
-                            <th>월 원리금<br />상환 예상액</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th>원리금균등<br />분할상환</th>
-                            <td>
-                              <p class="underline">22,149,576 원</p>
-                            </td>
-                            <td>
-                              <p class="underline">
-                                1회 ~ 24회<br />
-                                922,899 원<br />
-                                (원리금)
-                              </p>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
+                    <table>
+                      <colgroup>
+                        <col style="width: 88px" />
+                        <col />
+                        <col style="width: 114px" />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th>상환방식</th>
+                          <th>총 원리금<br />부담 예상액</th>
+                          <th>월 원리금<br />상환 예상액</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th>원리금균등<br />분할상환</th>
+                          <td>
+                            <p class="underline">22,149,576 원</p>
+                          </td>
+                          <td>
+                            <p class="underline">
+                              1회 ~ 24회<br />
+                              922,899 원<br />
+                              (원리금)
+                            </p>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </li>
@@ -1334,46 +1317,44 @@ export default {
                   </p>
 
                   <div :class="[$style['basic-table'], 'row-margin-item']">
-                    <div :class="$style['basic-table']">
-                      <table>
-                        <colgroup>
-                          <col style="width: 88px" />
-                          <col />
-                          <col style="width: 114px" />
-                        </colgroup>
-                        <thead>
-                          <tr>
-                            <th>상환방식</th>
-                            <th>총 원리금<br />부담 예상액</th>
-                            <th>월 원리금<br />상환 예상액</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th rowspan="2">만기일시<br />상환</th>
-                            <td rowspan="2">
-                              <p class="underline">23,999,984 원</p>
-                            </td>
-                            <td>
-                              <p class="underline">
-                                1회 ~ 23회<br />
-                                166,666 원<br />
-                                (이자)
-                              </p>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td :class="$style['basic-table__left-line']">
-                              <p class="underline">
-                                24회<br />
-                                20,166,666 원<br />
-                                (원리금)
-                              </p>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
+                    <table>
+                      <colgroup>
+                        <col style="width: 88px" />
+                        <col />
+                        <col style="width: 114px" />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th>상환방식</th>
+                          <th>총 원리금<br />부담 예상액</th>
+                          <th>만기시<br />상환 예상액</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th rowspan="2">만기일시<br />상환</th>
+                          <td rowspan="2">
+                            <p class="underline">23,999,984 원</p>
+                          </td>
+                          <td>
+                            <p class="underline">
+                              1회 ~ 23회<br />
+                              166,666 원<br />
+                              (이자)
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td :class="$style['basic-table__left-line']">
+                            <p class="underline">
+                              24회<br />
+                              20,166,666 원<br />
+                              (원리금)
+                            </p>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </li>
@@ -1386,71 +1367,69 @@ export default {
             </h4>
 
             <div :class="[$style['basic-table'], 'row-margin-item']">
-              <div :class="$style['basic-table']">
-                <table>
-                  <colgroup>
-                    <col style="width: 88px" />
-                    <col />
-                  </colgroup>
-                  <thead>
-                    <tr>
-                      <th>구분</th>
-                      <th>특징</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th>원리금<br />균등상환</th>
-                      <td class="align-left">
-                        <div :class="$style['manual-image']">
-                          <img
-                            src="@/assets/images/contents/manual/manual-001.png"
-                            alt=""
-                          />
-                        </div>
+              <table>
+                <colgroup>
+                  <col style="width: 88px" />
+                  <col />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>구분</th>
+                    <th>특징</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>원리금<br />균등상환</th>
+                    <td class="align-left">
+                      <div :class="$style['manual-image']">
+                        <img
+                          src="@/assets/images/contents/manual/manual-001.png"
+                          alt=""
+                        />
+                      </div>
 
-                        <p class="row-margin-item-regular">
-                          <strong class="font-weight-medium"
-                            >대출원금과 이자의 합계를 매월 동일한 금액으로
-                            갚아가는 방식</strong
-                          ><br />
-                          매월 납입하시는 상환 금액이 동일하며 이중 대출원금에
-                          대한 상환금액이 높아지게 됩니다.
-                        </p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>만기<br />일시상환</th>
-                      <td class="align-left">
-                        <div :class="$style['manual-image']">
-                          <img
-                            src="@/assets/images/contents/manual/manual-002.png"
-                            alt=""
-                          />
-                        </div>
+                      <p class="row-margin-item-regular">
+                        <strong class="font-weight-medium"
+                          >대출원금과 이자의 합계를 매월 동일한 금액으로
+                          갚아가는 방식</strong
+                        ><br />
+                        매월 납입하시는 상환 금액이 동일하며 이중 대출원금에
+                        대한 상환금액이 높아지게 됩니다.
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>만기<br />일시상환</th>
+                    <td class="align-left">
+                      <div :class="$style['manual-image']">
+                        <img
+                          src="@/assets/images/contents/manual/manual-002.png"
+                          alt=""
+                        />
+                      </div>
 
-                        <p class="row-margin-item-regular">
-                          <strong class="font-weight-medium"
-                            >약정기간동안 대출원금에 대한 상환없이 이자만
-                            부담하는 방식</strong
-                          ><br />
-                          만기일자에 대출원금을 모두 상환하셔 야 합니다.
-                        </p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>유의사항</th>
-                      <td class="align-left">
-                        만기일시상환의 경우 만기 도래 시 한꺼 번에 원리금을
-                        상환하여 부담이 클 수 있으며, 신용도 등을 고려하여
-                        연장계약 불가능할 수도 있습니다. 일반적으로
-                        만기일시상환-원리금 균등상환 순으로 고객의 원리금
-                        상환부담이 발생합니다.
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+                      <p class="row-margin-item-regular">
+                        <strong class="font-weight-medium"
+                          >약정기간동안 대출원금에 대한 상환없이 이자만 부담하는
+                          방식</strong
+                        ><br />
+                        만기일자에 대출원금을 모두 상환하셔 야 합니다.
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>유의사항</th>
+                    <td class="align-left">
+                      만기일시상환의 경우 만기 도래 시 한꺼 번에 원리금을
+                      상환하여 부담이 클 수 있으며, 신용도 등을 고려하여
+                      연장계약 불가능할 수도 있습니다. 일반적으로
+                      만기일시상환-원리금 균등상환 순으로 고객의 원리금
+                      상환부담이 발생합니다.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </section>
         </section>
@@ -1625,44 +1604,42 @@ export default {
               </p>
 
               <div :class="$style['basic-table']">
-                <div :class="$style['basic-table']">
-                  <table>
-                    <colgroup>
-                      <col style="width: 76px" />
-                      <col />
-                      <col style="width: 96px" />
-                    </colgroup>
-                    <thead>
-                      <tr>
-                        <th>연체기간</th>
-                        <th>연체이자 계산방법</th>
-                        <th>연체이자</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th>연체발생<br />~30일분</th>
-                        <td>
-                          (지체된 원금(75.6만 원) + 약정이자(16.6만 원))×
-                          연13%(10%+ 3%)× 30/365
-                        </td>
-                        <td>9,861 원</td>
-                      </tr>
-                      <tr>
-                        <th>연체31일<br />~60일분</th>
-                        <td>원금(2천만원) × 연13%(10%+3%) × 30/365</td>
-                        <td>213,699 원</td>
-                      </tr>
-                    </tbody>
-                    <tfoot>
-                      <tr>
-                        <td>계</td>
-                        <td></td>
-                        <td>223,560 원</td>
-                      </tr>
-                    </tfoot>
-                  </table>
-                </div>
+                <table>
+                  <colgroup>
+                    <col style="width: 76px" />
+                    <col />
+                    <col style="width: 96px" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>연체기간</th>
+                      <th>연체이자 계산방법</th>
+                      <th>연체이자</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>연체발생<br />~30일분</th>
+                      <td>
+                        (지체된 원금(75.6만 원) + 약정이자(16.6만 원))×
+                        연13%(10%+ 3%)× 30/365
+                      </td>
+                      <td>9,861 원</td>
+                    </tr>
+                    <tr>
+                      <th>연체31일<br />~60일분</th>
+                      <td>원금(2천만원) × 연13%(10%+3%) × 30/365</td>
+                      <td>213,699 원</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td>계</td>
+                      <td></td>
+                      <td>223,560 원</td>
+                    </tr>
+                  </tfoot>
+                </table>
               </div>
 
               <ul :class="[$style['basic-list'], 'row-margin-item-medium']">
@@ -2486,7 +2463,9 @@ export default {
           </ul>
 
           <NoticeText
-            :classNames="{ wrap: 'color-red row-margin-item-medium' }"
+            :classNames="{
+              wrap: 'color-green underline row-margin-item-medium',
+            }"
           >
             동일한 금융회사를 대상으로 최근 1개월 내에 2회 이상 대출계약을
             철회하는 경우, 신규대출·만기연장 거절, 대출한도 축소, 금리우대 제한
@@ -2700,44 +2679,42 @@ export default {
                 </div>
 
                 <div :class="[$style['basic-table'], 'row-margin-item']">
-                  <div :class="$style['basic-table']">
-                    <table>
-                      <colgroup>
-                        <col style="width: 76px" />
-                        <col />
-                        <col style="width: 96px" />
-                      </colgroup>
-                      <thead>
-                        <tr>
-                          <th>연체기간</th>
-                          <th>연체이자 계산방법</th>
-                          <th>연체이자</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th>연체발생<br />~30일분</th>
-                          <td>
-                            (지체된 원금(75.6만 원) + 약정이자(16.6만 원))×
-                            연13%(10%+ 3%)× 30/365
-                          </td>
-                          <td>9,861 원</td>
-                        </tr>
-                        <tr>
-                          <th>연체31일<br />~60일분</th>
-                          <td>원금(2천만원) × 연13%(10%+3%) × 30/365</td>
-                          <td>213,699 원</td>
-                        </tr>
-                      </tbody>
-                      <tfoot>
-                        <tr>
-                          <td>계</td>
-                          <td></td>
-                          <td>223,560 원</td>
-                        </tr>
-                      </tfoot>
-                    </table>
-                  </div>
+                  <table>
+                    <colgroup>
+                      <col style="width: 76px" />
+                      <col />
+                      <col style="width: 96px" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>연체기간</th>
+                        <th>연체이자 계산방법</th>
+                        <th>연체이자</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>연체발생<br />~30일분</th>
+                        <td>
+                          (지체된 원금(75.6만 원) + 약정이자(16.6만 원))×
+                          연13%(10%+ 3%)× 30/365
+                        </td>
+                        <td>9,861 원</td>
+                      </tr>
+                      <tr>
+                        <th>연체31일<br />~60일분</th>
+                        <td>원금(2천만원) × 연13%(10%+3%) × 30/365</td>
+                        <td>213,699 원</td>
+                      </tr>
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <td>계</td>
+                        <td></td>
+                        <td>223,560 원</td>
+                      </tr>
+                    </tfoot>
+                  </table>
                 </div>
 
                 <p class="text-body-2 row-margin-item">
@@ -2861,83 +2838,78 @@ export default {
         </section>
 
         <div class="row-margin-container-medium">
-          <div :class="[$style['basic-table'], 'row-margin-item']">
-            <div :class="$style['basic-table']">
-              <table>
-                <colgroup>
-                  <col style="width: 32px" />
-                  <col />
-                  <col />
-                </colgroup>
-                <tbody>
-                  <tr>
-                    <th
-                      rowspan="2"
-                      :class="$style['basic-table__padding-none']"
-                    >
-                      해<br />당<br />여<br />부
-                    </th>
-                    <td></td>
-                    <td class="align-left">
-                      본인은 하나캐피탈과 대출거래를 체결함에 있어 금융회사
-                      직원과 상담하여 본 설명서 를 교부받았으며, 위 에서 설명한
-                      내용을 포함하여 대출거래의 주요내용 및 고객부담 비용에
-                      대하여 충분히 설명을 듣고 이해하였 음을 확인합니다.
-                    </td>
-                  </tr>
-                  <tr>
-                    <td :class="$style['basic-table__left-line']"></td>
-                    <td class="align-left">
-                      본인은 금융회사 직원 으로부터 금리인하요 구권, 청약철회권,
-                      위 법계약해지권 등 고객 의 권리에 대하여 충 분히 설명을
-                      듣고 이 해하였음을 확인합니 다.
-                    </td>
-                  </tr>
-                  <tr>
-                    <td colspan="3" class="align-left">
-                      <div class="inline-wrap">
-                        <div
-                          :class="[
-                            $style['margin-right-regular'],
-                            'inline-block',
-                          ]"
-                        >
-                          <div class="text-body-5 color-gray">
-                            고객확인 : 20<span
-                              :class="[
-                                $style['blank-box'],
-                                $style['blank-box--small'],
-                              ]"
-                            ></span
-                            >.<span
-                              :class="[
-                                $style['blank-box'],
-                                $style['blank-box--small'],
-                              ]"
-                            ></span
-                            >.<span
-                              :class="[
-                                $style['blank-box'],
-                                $style['blank-box--small'],
-                              ]"
-                            ></span
-                            >.<span
-                              :class="[
-                                $style['blank-box'],
-                                $style['blank-box--regular'],
-                              ]"
-                            ></span>
-                          </div>
-                        </div>
-                        <div class="inline-block">
-                          <div class="text-body-5 color-gray">(서명/인)</div>
+          <div :class="$style['basic-table']">
+            <table>
+              <colgroup>
+                <col style="width: 32px" />
+                <col />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th rowspan="2" :class="$style['basic-table__padding-none']">
+                    해<br />당<br />여<br />부
+                  </th>
+                  <td></td>
+                  <td class="align-left">
+                    본인은 하나캐피탈과 대출거래를 체결함에 있어 금융회사 직원과
+                    상담하여 본 설명서 를 교부받았으며, 위 에서 설명한 내용을
+                    포함하여 대출거래의 주요내용 및 고객부담 비용에 대하여
+                    충분히 설명을 듣고 이해하였 음을 확인합니다.
+                  </td>
+                </tr>
+                <tr>
+                  <td :class="$style['basic-table__left-line']"></td>
+                  <td class="align-left">
+                    본인은 금융회사 직원 으로부터 금리인하요 구권, 청약철회권,
+                    위 법계약해지권 등 고객 의 권리에 대하여 충 분히 설명을 듣고
+                    이 해하였음을 확인합니 다.
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="align-left">
+                    <div class="inline-wrap">
+                      <div
+                        :class="[
+                          $style['margin-right-regular'],
+                          'inline-block',
+                        ]"
+                      >
+                        <div class="text-body-5 color-gray">
+                          고객확인 : 20<span
+                            :class="[
+                              $style['blank-box'],
+                              $style['blank-box--small'],
+                            ]"
+                          ></span
+                          >.<span
+                            :class="[
+                              $style['blank-box'],
+                              $style['blank-box--small'],
+                            ]"
+                          ></span
+                          >.<span
+                            :class="[
+                              $style['blank-box'],
+                              $style['blank-box--small'],
+                            ]"
+                          ></span
+                          >.<span
+                            :class="[
+                              $style['blank-box'],
+                              $style['blank-box--regular'],
+                            ]"
+                          ></span>
                         </div>
                       </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+                      <div class="inline-block">
+                        <div class="text-body-5 color-gray">(서명/인)</div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
