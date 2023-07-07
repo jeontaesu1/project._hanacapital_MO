@@ -774,7 +774,7 @@ export default {
               >
                 <div :class="$style['basic-list__symbol']"></div>
                 <div :class="$style['basic-list__content']">
-                  <div class="row-margin-mini">
+                  <div>
                     채무자인 고객은 「여신전문금융업법」
                     제50조의13(금리인하요구)에서 정하는 바에 따라
                     <span class="underline"
@@ -799,12 +799,21 @@ export default {
                     >
                   </div>
 
-                  <div
-                    class="text-body-4 font-weight-light color-gray-tertiary"
-                  >
-                    기업의 경우(이익증가 등 재무상태 개선, 회사채 등급상승,
-                    추가담보 제공 등 신용도 상승, 기타 신용상태 개선)
-                  </div>
+                  <ul :class="[$style['basic-list'], 'row-margin-item']">
+                    <li
+                      :class="[
+                        $style['basic-list__item'],
+                        'color-gray-tertiary',
+                        'font-weight-regular',
+                      ]"
+                    >
+                      <div :class="$style['basic-list__symbol']">※</div>
+                      <div :class="$style['basic-list__content']">
+                        기업의 경우(이익증가 등 재무상태 개선, 회사채 등급상승,
+                        추가담보 제공 등 신용도 상승, 기타 신용상태 개선)
+                      </div>
+                    </li>
+                  </ul>
                 </div>
               </li>
               <li

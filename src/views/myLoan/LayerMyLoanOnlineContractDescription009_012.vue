@@ -1111,8 +1111,8 @@ export default {
               >
                 <div :class="$style['basic-list__symbol']"></div>
                 <div :class="$style['basic-list__content']">
-                  승계수수료는 최대 31만원으로 기고객이나 승계자가 부담할 수
-                  있습니다.
+                  승계수수료는 <span class="underline">최대 31만원</span>으로
+                  기고객이나 승계자가 부담할 수 있습니다.
                 </div>
               </li>
               <li
