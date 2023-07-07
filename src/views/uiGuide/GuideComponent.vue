@@ -93,6 +93,7 @@ import FilterButton from '@/components/ui/button/FilterButton.vue';
 import DeleteButton from '@/components/ui/button/DeleteButton.vue';
 import SelectTable from '@/components/ui/table/SelectTable.vue';
 import SelectTableRow from '@/components/ui/table/SelectTableRow.vue';
+import SelectTableRadioCell from '@/components/ui/table/SelectTableRadioCell.vue';
 import RoundButton from '@/components/ui/button/RoundButton.vue';
 import ColorSelect from '@/components/ui/form/ColorSelect.vue';
 import ColorSelectList from '@/components/ui/form/ColorSelectList.vue';
@@ -250,6 +251,7 @@ export default {
     DeleteButton,
     SelectTable,
     SelectTableRow,
+    SelectTableRadioCell,
     RoundButton,
     ColorSelect,
     ColorSelectList,
@@ -7944,7 +7946,7 @@ export default {
     <section class="test-section">
       <h2 class="test-section-title">SelectTable</h2>
       <div class="test-section-sub">
-        <h3 class="test-section-sub-title">Default</h3>
+        <h3 class="test-section-sub-title">Default (toggle)</h3>
 
         <SelectTable>
           <template v-slot:colgroup>
@@ -7987,6 +7989,64 @@ export default {
             <td>5,300 만원</td>
           </SelectTableRow>
           <SelectTableRow>
+            <td>기아</td>
+            <td>2.2 디젤 11인승 노블레스</td>
+            <td>5,500 만원</td>
+          </SelectTableRow>
+        </SelectTable>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Not Toggle</h3>
+
+        <SelectTable>
+          <template v-slot:colgroup>
+            <col style="width: 80px" />
+            <col style="width: 83px" />
+            <col style="width: 200px" />
+            <col style="width: 90px" />
+          </template>
+
+          <template v-slot:head>
+            <tr>
+              <th>선택</th>
+              <th>제조사</th>
+              <th>모델명</th>
+              <th>차량 금액</th>
+            </tr>
+          </template>
+
+          <SelectTableRow actionType="select">
+            <SelectTableRadioCell />
+            <td>기아</td>
+            <td>2.2 디젤 11인승 노블레스</td>
+            <td>5,500 만원</td>
+          </SelectTableRow>
+          <SelectTableRow actionType="select" :initialActive="true">
+            <SelectTableRadioCell />
+            <td>기아</td>
+            <td>뉴 카니발(YP) 3.0 가솔린 9인승 노블레스</td>
+            <td>5,300 만원</td>
+          </SelectTableRow>
+          <SelectTableRow actionType="select">
+            <SelectTableRadioCell />
+            <td>기아</td>
+            <td>2.2 디젤 11인승 노블레스</td>
+            <td>5,500 만원</td>
+          </SelectTableRow>
+          <SelectTableRow actionType="select">
+            <SelectTableRadioCell />
+            <td>기아</td>
+            <td>2.2 디젤 11인승 노블레스</td>
+            <td>5,500 만원</td>
+          </SelectTableRow>
+          <SelectTableRow actionType="select">
+            <SelectTableRadioCell />
+            <td>기아</td>
+            <td>뉴 카니발(YP) 3.0 가솔린 9인승 노블레스</td>
+            <td>5,300 만원</td>
+          </SelectTableRow>
+          <SelectTableRow actionType="select">
+            <SelectTableRadioCell />
             <td>기아</td>
             <td>2.2 디젤 11인승 노블레스</td>
             <td>5,500 만원</td>

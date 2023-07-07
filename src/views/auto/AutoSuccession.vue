@@ -184,7 +184,9 @@ export default {
               신규로 리스계약을 체결하는 절차와 동일하게 금융회사가 정한
               심사기준에 따라 이를 승인합니다.
             </p>
-            <NoticeText class="row-margin-item color-gray-tertiary">
+            <NoticeText
+              :classNames="{ wrap: 'row-margin-item color-gray-tertiary' }"
+            >
               주의<br />
               심사비용 등 승계 조건에 따라 소요되는 비용으로 승계수수료가
               부과됩니다.
@@ -1005,7 +1007,9 @@ export default {
               신규로 렌트계약을 체결하는 절차와 동일하게 금융회사가 정한
               심사기준에 따라 이를 승인합니다.
             </p>
-            <NoticeText class="row-margin-item color-gray-tertiary">
+            <NoticeText
+              :classNames="{ wrap: 'row-margin-item color-gray-tertiary' }"
+            >
               주의<br />
               심사비용 등 승계 조건에 따라 소요되는 비용으로 승계수수료가
               부과됩니다.
