@@ -1,6 +1,5 @@
 <script>
 // BF_M06_l016
-
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';

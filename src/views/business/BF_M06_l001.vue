@@ -13,9 +13,11 @@ import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import BoxCheck from '@/components/ui/form/BoxCheck.vue';
 import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
+import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
+import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 
-import IconMedical from '@/assets/images/contents/img-medical.svg?component';
-import IconmedicalProgram from '@/assets/images/contents/img-medical-program.svg?component';
+import IconDentist from '@/assets/images/icon/dentist.svg?component';
+import IconMedicalProgram from '@/assets/images/icon/medical-program.svg?component';
 
 export default {
   components: {
@@ -30,9 +32,11 @@ export default {
     PageMainText,
     BoxCheck,
     BoxCheckLabel,
+    BoxCheckList,
+    BoxCheckListItem,
 
-    IconMedical,
-    IconmedicalProgram,
+    IconDentist,
+    IconMedicalProgram,
   },
   setup() {
     const layer = ref(null);
@@ -54,6 +58,7 @@ export default {
           </template>
         </FullPopupHead>
       </template>
+
       <PageTextGroup>
         <PageMainText>
           원하시는 물품을<br />
@@ -61,50 +66,48 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <ul class="reset-list">
-        <li class="row-margin-item">
+      <BoxCheckList align="full">
+        <BoxCheckListItem>
           <BoxCheck
             :contents="true"
             type="radio"
-            name="LayerAutoEstimateSelectDetailModel001"
-            id="layerAutoEstimateSelectDetailModel001_001"
+            name="BF_M06_l001_type"
+            id="BF_M06_l001_type_001"
           >
-            <BoxCheckLabel>
-              <div class="flex-box">
-                <div class="inline-wrap flex-box__cell">
-                  <IconMedical />
-                </div>
-                <div class="flex-box__cell flex-box__cell--medium flex-1">
-                  <span class="color-navy text-body-1 font-weight-medium"
-                    >치과용품(임플란트 외)</span
-                  >
-                </div>
+            <div class="flex-box">
+              <div class="flex-box__cell">
+                <IconDentist class="display-block" />
               </div>
-            </BoxCheckLabel>
+              <div class="flex-box__cell flex-box__cell--medium flex-1">
+                <BoxCheckLabel
+                  :classNames="{ label: 'text-body-1 font-weight-medium' }"
+                  >치과용품(임플란트 외)</BoxCheckLabel
+                >
+              </div>
+            </div>
           </BoxCheck>
-        </li>
-        <li class="row-margin-item">
+        </BoxCheckListItem>
+        <BoxCheckListItem>
           <BoxCheck
             :contents="true"
             type="radio"
-            name="LayerAutoEstimateSelectDetailModel001"
-            id="layerAutoEstimateSelectDetailModel001_002"
+            name="BF_M06_l001_type"
+            id="BF_M06_l001_type_002"
           >
-            <BoxCheckLabel>
-              <div class="flex-box">
-                <div class="inline-wrap flex-box__cell">
-                  <IconmedicalProgram />
-                </div>
-                <div class="flex-box__cell flex-box__cell--medium flex-1">
-                  <span class="text-body-1 font-weight-medium"
-                    >의원용 프로그램</span
-                  >
-                </div>
+            <div class="flex-box">
+              <div class="flex-box__cell">
+                <IconMedicalProgram class="display-block" />
               </div>
-            </BoxCheckLabel>
+              <div class="flex-box__cell flex-box__cell--medium flex-1">
+                <BoxCheckLabel
+                  :classNames="{ label: 'text-body-1 font-weight-medium' }"
+                  >의원용 프로그램</BoxCheckLabel
+                >
+              </div>
+            </div>
           </BoxCheck>
-        </li>
-      </ul>
+        </BoxCheckListItem>
+      </BoxCheckList>
 
       <template v-slot:foot>
         <ButtonList

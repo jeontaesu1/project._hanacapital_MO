@@ -1,6 +1,5 @@
 <script>
 // BF_M06_l007
-
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -12,7 +11,6 @@ import PageMainText from '@/components/ui/text/PageMainText.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
-
 import IllustObject from '@/components/ui/common/IllustObject.vue';
 
 export default {

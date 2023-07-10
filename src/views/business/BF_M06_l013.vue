@@ -43,6 +43,7 @@ export default {
   setup() {
     const state = reactive({
       timeError: false,
+      phoneError: false,
     });
 
     const layer = ref(null);
@@ -76,7 +77,7 @@ export default {
       <FormList>
         <FormListItem
           titleText="연락가능시간"
-          target="#layerAutoLongRentalEvaluationCounselingStartTimeButton"
+          target="#BF_M06_l013_startTimeButton"
         >
           <FormInvalid :error="state.timeError">
             <InputBlock :error="state.timeError">
@@ -122,8 +123,8 @@ export default {
                   ]"
                   buttonTitle="시작시간 선택하기"
                   layerTitle="시작시간을 선택해 주세요"
-                  id="layerAutoLongRentalEvaluationCounselingStartTime"
-                  buttonId="layerAutoLongRentalEvaluationCounselingStartTimeButton"
+                  id="BF_M06_l013_startTime"
+                  buttonId="BF_M06_l013_startTimeButton"
                 />
               </InputBlockCell>
               <InputBlockCell margin="regular">
@@ -170,8 +171,8 @@ export default {
                   ]"
                   buttonTitle="종료시간 선택하기"
                   layerTitle="종료시간을 선택해 주세요"
-                  id="layerAutoLongRentalEvaluationCounselingEndTime"
-                  buttonId="layerAutoLongRentalEvaluationCounselingEndTimeButton"
+                  id="BF_M06_l013_endTime"
+                  buttonId="BF_M06_l013_endTimeButton"
                 />
               </InputBlockCell>
               <InputBlockCell margin="regular">
@@ -182,11 +183,15 @@ export default {
           </FormInvalid>
         </FormListItem>
 
-        <FormListItem titleText="연락처" target="#testInput007">
-          <FormInvalid :error="state.testError001">
-            <InputBlock :error="state.testError001">
+        <FormListItem titleText="연락처" target="#BF_M06_l013_phone">
+          <FormInvalid :error="state.phoneError">
+            <InputBlock :error="state.phoneError">
               <InputBlockCell :flexible="true">
-                <BasicInput title="연락처" id="testInput007" />
+                <BasicInput
+                  pattern="\d*"
+                  title="연락처"
+                  id="BF_M06_l013_phone"
+                />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>

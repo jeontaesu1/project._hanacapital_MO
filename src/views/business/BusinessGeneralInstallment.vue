@@ -1,6 +1,5 @@
 <script>
 // BF_M06_p001
-
 import { onMounted, onUnmounted } from 'vue';
 
 import { useUiCommonStore } from '@/stores/ui/common';
@@ -33,7 +32,6 @@ import IconCalculate from '@/assets/images/icon/calculate.svg?component';
 import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 import IconService from '@/assets/images/icon/service.svg?component';
 import IconInstallation from '@/assets/images/icon/installation.svg?component';
-import ImgMedicalLoan from '@/assets/images/illustration/img-medical-loan.svg?component';
 
 export default {
   components: {
@@ -64,7 +62,6 @@ export default {
     IconService,
     IconInstallation,
     IconRate,
-    ImgMedicalLoan,
   },
   setup() {
     const store = {
@@ -109,7 +106,7 @@ export default {
       </PageTextGroup>
 
       <div :class="[$style['illustration-img'], 'row-margin-contents']">
-        <ImgMedicalLoan />
+        <img src="@/assets/images/contents/img-medical-loan.png" alt="" />
       </div>
 
       <BasicBox theme="secondary">
@@ -145,20 +142,20 @@ export default {
     <UiTab>
       <StickyBar>
         <NavTab :useUiTab="true" :auto="true">
-          <NavTabButton link="businessEquipmentLeaseTab001"
+          <NavTabButton link="businessGeneralInstallmentTab001"
             >상품안내</NavTabButton
           >
-          <NavTabButton link="businessEquipmentLeaseTab002"
+          <NavTabButton link="businessGeneralInstallmentTab002"
             >진행절차</NavTabButton
           >
-          <NavTabButton link="businessEquipmentLeaseTab003"
+          <NavTabButton link="businessGeneralInstallmentTab003"
             >유의사항</NavTabButton
           >
         </NavTab>
       </StickyBar>
 
       <!-- 상품안내 -->
-      <UiTabPanel name="businessEquipmentLeaseTab001">
+      <UiTabPanel name="businessGeneralInstallmentTab001">
         <BasicBox theme="tertiary">
           <KeyValue align="left" margin="regular">
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
@@ -214,21 +211,31 @@ export default {
                 >
                   <div :class="$style['basic-list__symbol']">※</div>
                   <div :class="$style['basic-list__content']">
-                    단, 연체발생시점에 약정이율이 없는 경우 약정금리는 상법상
-                    상사법정이율과 상호금융 가계자금대출금리*중 높은 금리 적용
-                  </div>
-                </li>
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'color-green',
-                    'font-weight-regular',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']">※</div>
-                  <div :class="$style['basic-list__content']">
-                    한국은행에서 매월 발표하는 가장 최근의 비은행 금융기관
-                    가중평균대출금리(신규대출 기준)
+                    <div>
+                      단, 연체발생시점에 약정이율이 없는 경우 약정금리는 상법상
+                      상사법정이율과 상호금융 가계자금대출금리*중 높은 금리 적용
+                    </div>
+                    <ul
+                      :class="[
+                        $style['basic-list'],
+                        $style['basic-list--small-margin'],
+                        'row-margin-small',
+                      ]"
+                    >
+                      <li
+                        :class="[
+                          $style['basic-list__item'],
+                          'color-green',
+                          'font-weight-regular',
+                        ]"
+                      >
+                        <div :class="$style['basic-list__symbol']">*</div>
+                        <div :class="$style['basic-list__content']">
+                          한국은행에서 매월 발표하는 가장 최근의 비은행 금융기관
+                          가중평균대출금리(신규대출 기준)
+                        </div>
+                      </li>
+                    </ul>
                   </div>
                 </li>
               </ul>
@@ -347,7 +354,7 @@ export default {
                     <div :class="$style['contents-list__head']">
                       <div :class="$style['contents-list__symbol']">1</div>
                       <div :class="$style['contents-list__title']">
-                        <div>공통서류</div>
+                        공통서류
                       </div>
                     </div>
                     <div
@@ -611,16 +618,15 @@ export default {
                     대출금액 5천만원 초과 1억원 이하 : 7만원
                   </div>
                 </li>
-              </ul>
-              <ul :class="[$style['basic-list'], 'row-margin-item']">
                 <li
                   :class="[
                     $style['basic-list__item'],
-                    'color-gray-tertiary',
+                    'text-body-4',
+                    'color-black',
                     'font-weight-regular',
                   ]"
                 >
-                  <div :class="$style['basic-list__symbol']">※</div>
+                  <div :class="$style['basic-list__symbol']">-</div>
                   <div :class="$style['basic-list__content']">
                     대출금액 1억원 초과 10억원 이하 : 15만원
                   </div>
@@ -633,7 +639,7 @@ export default {
       <!-- // 상품안내 -->
 
       <!-- 진행절차 -->
-      <UiTabPanel name="businessEquipmentLeaseTab002">
+      <UiTabPanel name="businessGeneralInstallmentTab002">
         <div :class="$style['step']">
           <ul :class="$style['step__list']">
             <li :class="$style['step__item']">
@@ -735,7 +741,7 @@ export default {
       <!-- // 진행절차 -->
 
       <!-- 유의사항 -->
-      <UiTabPanel name="businessEquipmentLeaseTab003">
+      <UiTabPanel name="businessGeneralInstallmentTab003">
         <ul
           :class="[
             $style['basic-list'],
@@ -904,5 +910,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/business/BusinessEquipmentLease.scss';
+@import '@/assets/scss/views/business/BusinessGeneralInstallment.scss';
 </style>

@@ -13,13 +13,15 @@ import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import BoxCheck from '@/components/ui/form/BoxCheck.vue';
 import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
+import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
+import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 
-import IconDentium from '@/assets/images/contents/img-dentium.svg?component';
-import IconShinhung from '@/assets/images/contents/img-shinhung.svg?component';
-import IconNeoBiotech from '@/assets/images/contents/img-neo-biotech.svg?component';
-import IconNeoImplant from '@/assets/images/contents/img-neo-implant.svg?component';
-import IconPointnix from '@/assets/images/contents/img-pointnix.svg?component';
-import IconUbcare from '@/assets/images/contents/img-ubcare.svg?component';
+import LogoDentium from '@/assets/images/etc-logo/dentium.svg?component';
+import LogoShinhung from '@/assets/images/etc-logo/shinhung.svg?component';
+import LogoNeoBiotech from '@/assets/images/etc-logo/neo-biotech.svg?component';
+import LogoNeoImplant from '@/assets/images/etc-logo/neo-implant.svg?component';
+import LogoPointnix from '@/assets/images/etc-logo/pointnix.svg?component';
+import LogoUbcare from '@/assets/images/etc-logo/ubcare.svg?component';
 
 export default {
   components: {
@@ -34,13 +36,15 @@ export default {
     PageMainText,
     BoxCheck,
     BoxCheckLabel,
+    BoxCheckList,
+    BoxCheckListItem,
 
-    IconDentium,
-    IconShinhung,
-    IconNeoBiotech,
-    IconNeoImplant,
-    IconPointnix,
-    IconUbcare,
+    LogoDentium,
+    LogoShinhung,
+    LogoNeoBiotech,
+    LogoNeoImplant,
+    LogoPointnix,
+    LogoUbcare,
   },
   setup() {
     const layer = ref(null);
@@ -62,6 +66,7 @@ export default {
           </template>
         </FullPopupHead>
       </template>
+
       <PageTextGroup>
         <PageMainText>
           원하시는 회사를<br />
@@ -69,130 +74,135 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <ul class="reset-list">
-        <!-- case : 제휴사선택_치과용품_선택전 -->
-        <li class="row-margin-item">
+      <!-- Case : 치과용품 -->
+      <BoxCheckList align="full">
+        <BoxCheckListItem>
           <BoxCheck
             :contents="true"
             type="radio"
-            name="LayerAutoEstimateSelectDetailModel001"
-            id="layerAutoEstimateSelectDetailModel001_011"
+            name="BF_M06_l002_brand_001"
+            id="BF_M06_l002_brand_001_001"
           >
-            <BoxCheckLabel>
-              <div class="flex-box">
-                <div class="inline-wrap flex-box__cell">
-                  <IconDentium />
-                </div>
-                <div class="flex-box__cell flex-box__cell--medium flex-1">
-                  <span class="text-body-1 font-weight-medium">덴티움</span>
-                </div>
+            <div class="flex-box">
+              <div class="flex-box__cell">
+                <LogoDentium :class="$style['logo']" />
               </div>
-            </BoxCheckLabel>
+              <div class="flex-box__cell flex-box__cell--medium flex-1">
+                <BoxCheckLabel
+                  :classNames="{ label: 'text-body-1 font-weight-medium' }"
+                  >덴티움</BoxCheckLabel
+                >
+              </div>
+            </div>
           </BoxCheck>
-        </li>
-        <li class="row-margin-item">
+        </BoxCheckListItem>
+        <BoxCheckListItem>
           <BoxCheck
             :contents="true"
             type="radio"
-            name="LayerAutoEstimateSelectDetailModel001"
-            id="layerAutoEstimateSelectDetailModel001_012"
+            name="BF_M06_l002_brand_001"
+            id="BF_M06_l002_brand_001_002"
           >
-            <BoxCheckLabel>
-              <div class="flex-box">
-                <div class="inline-wrap flex-box__cell">
-                  <IconShinhung />
-                </div>
-                <div class="flex-box__cell flex-box__cell--medium flex-1">
-                  <span class="text-body-1 font-weight-medium">신흥</span>
-                </div>
+            <div class="flex-box">
+              <div class="flex-box__cell">
+                <LogoShinhung :class="$style['logo']" />
               </div>
-            </BoxCheckLabel>
+              <div class="flex-box__cell flex-box__cell--medium flex-1">
+                <BoxCheckLabel
+                  :classNames="{ label: 'text-body-1 font-weight-medium' }"
+                  >신흥</BoxCheckLabel
+                >
+              </div>
+            </div>
           </BoxCheck>
-        </li>
-        <li class="row-margin-item">
+        </BoxCheckListItem>
+        <BoxCheckListItem>
           <BoxCheck
             :contents="true"
             type="radio"
-            name="LayerAutoEstimateSelectDetailModel001"
-            id="layerAutoEstimateSelectDetailModel001_003"
+            name="BF_M06_l002_brand_001"
+            id="BF_M06_l002_brand_001_003"
           >
-            <BoxCheckLabel>
-              <div class="flex-box">
-                <div class="inline-wrap flex-box__cell">
-                  <IconNeoBiotech />
-                </div>
-                <div class="flex-box__cell flex-box__cell--medium flex-1">
-                  <span class="text-body-1 font-weight-medium"
-                    >네오바이오텍</span
-                  >
-                </div>
+            <div class="flex-box">
+              <div class="flex-box__cell">
+                <LogoNeoBiotech :class="$style['logo']" />
               </div>
-            </BoxCheckLabel>
+              <div class="flex-box__cell flex-box__cell--medium flex-1">
+                <BoxCheckLabel
+                  :classNames="{ label: 'text-body-1 font-weight-medium' }"
+                  >네오바이오텍</BoxCheckLabel
+                >
+              </div>
+            </div>
           </BoxCheck>
-        </li>
-        <li class="row-margin-item">
+        </BoxCheckListItem>
+        <BoxCheckListItem>
           <BoxCheck
             :contents="true"
             type="radio"
-            name="LayerAutoEstimateSelectDetailModel001"
-            id="layerAutoEstimateSelectDetailModel001_004"
+            name="BF_M06_l002_brand_001"
+            id="BF_M06_l002_brand_001_004"
           >
-            <BoxCheckLabel>
-              <div class="flex-box">
-                <div class="inline-wrap flex-box__cell">
-                  <IconNeoImplant />
-                </div>
-                <div class="flex-box__cell flex-box__cell--medium flex-1">
-                  <span class="text-body-1 font-weight-medium"
-                    >네오임플란트</span
-                  >
-                </div>
+            <div class="flex-box">
+              <div class="flex-box__cell">
+                <LogoNeoImplant :class="$style['logo']" />
               </div>
-            </BoxCheckLabel>
+              <div class="flex-box__cell flex-box__cell--medium flex-1">
+                <BoxCheckLabel
+                  :classNames="{ label: 'text-body-1 font-weight-medium' }"
+                  >네오임플란트</BoxCheckLabel
+                >
+              </div>
+            </div>
           </BoxCheck>
-        </li>
-        <li class="row-margin-item">
+        </BoxCheckListItem>
+        <BoxCheckListItem>
           <BoxCheck
             :contents="true"
             type="radio"
-            name="LayerAutoEstimateSelectDetailModel001"
-            id="layerAutoEstimateSelectDetailModel001_005"
+            name="BF_M06_l002_brand_001"
+            id="BF_M06_l002_brand_001_005"
           >
-            <BoxCheckLabel>
-              <div class="flex-box">
-                <div class="inline-wrap flex-box__cell">
-                  <IconPointnix />
-                </div>
-                <div class="flex-box__cell flex-box__cell--medium flex-1">
-                  <span class="text-body-1 font-weight-medium">포인트닉스</span>
-                </div>
+            <div class="flex-box">
+              <div class="flex-box__cell">
+                <LogoPointnix :class="$style['logo']" />
               </div>
-            </BoxCheckLabel>
+              <div class="flex-box__cell flex-box__cell--medium flex-1">
+                <BoxCheckLabel
+                  :classNames="{ label: 'text-body-1 font-weight-medium' }"
+                  >포인트닉스</BoxCheckLabel
+                >
+              </div>
+            </div>
           </BoxCheck>
-        </li>
-        <!-- //case : 제휴사선택_치과용품_선택전 -->
-        <!-- case : 제휴사선택_의원용프로그램_선택전 -->
-        <li class="row-margin-item">
+        </BoxCheckListItem>
+      </BoxCheckList>
+      <!-- // Case : 치과용품 -->
+
+      <!-- Case : 의원용 프로그램 -->
+      <BoxCheckList align="full">
+        <BoxCheckListItem>
           <BoxCheck
             :contents="true"
             type="radio"
-            name="LayerAutoEstimateSelectDetailModel001"
-            id="layerAutoEstimateSelectDetailModel001_006"
+            name="BF_M06_l002_brand_002"
+            id="BF_M06_l002_brand_002_001"
           >
-            <BoxCheckLabel>
-              <div class="flex-box">
-                <div class="flex-box__cell">
-                  <IconUbcare />
-                </div>
-                <div class="flex-box__cell flex-box__cell--medium flex-1">
-                  <span class="text-body-1 font-weight-medium">유비케어</span>
-                </div>
+            <div class="flex-box">
+              <div class="flex-box__cell">
+                <LogoUbcare :class="$style['logo']" />
               </div>
-            </BoxCheckLabel>
+              <div class="flex-box__cell flex-box__cell--medium flex-1">
+                <BoxCheckLabel
+                  :classNames="{ label: 'text-body-1 font-weight-medium' }"
+                  >유비케어</BoxCheckLabel
+                >
+              </div>
+            </div>
           </BoxCheck>
-        </li>
-        <!-- //case : 제휴사선택_의원용프로그램_선택전 -->
-      </ul>
+        </BoxCheckListItem>
+      </BoxCheckList>
+      <!-- // Case : 의원용 프로그램 -->
 
       <template v-slot:foot>
         <ButtonList
@@ -211,3 +221,7 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/business/BF_M06_l002.scss';
+</style>

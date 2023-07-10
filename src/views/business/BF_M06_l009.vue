@@ -1,6 +1,5 @@
 <script>
 // BF_M06_l009
-
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -100,10 +99,6 @@ export default {
             <KeyValueText>100,000,000 원</KeyValueText>
           </KeyValueItem>
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>보험조건</KeyValueTitle>
-            <KeyValueText>이용자책임부보</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>납입방식</KeyValueTitle>
             <KeyValueText>1개월 후불</KeyValueText>
           </KeyValueItem>
@@ -148,5 +143,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/business/LayerBusinessEquipmentLeaseEstimateConfirm.scss';
+@import '@/assets/scss/views/business/BF_M06_l009.scss';
 </style>

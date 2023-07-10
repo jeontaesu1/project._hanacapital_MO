@@ -1,6 +1,5 @@
 <script>
 // BF_M06_l005
-
 import { ref, reactive } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -47,8 +46,8 @@ export default {
   },
   setup() {
     const state = reactive({
-      importedNameError: false,
-      importedNumberError: false,
+      nameError: false,
+      phoneError: false,
     });
 
     const layer = ref(null);
@@ -74,43 +73,32 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          손님의 정보를
-          <br />
+          손님의 정보를<br />
           <strong>입력해 주세요</strong>
         </PageMainText>
       </PageTextGroup>
 
-      <section>
+      <div>
         <FormList>
-          <FormListItem
-            titleText="이름"
-            target="#layerAutoLeaseOrderImportedName"
-          >
-            <FormInvalid :error="state.importedNameError">
-              <InputBlock :error="state.importedNameError">
+          <FormListItem titleText="이름" target="#BF_M06_l005_name">
+            <FormInvalid :error="state.nameError">
+              <InputBlock :error="state.nameError">
                 <InputBlockCell :flexible="true">
-                  <BasicInput
-                    title="이름"
-                    id="layerAutoLeaseOrderImportedName"
-                  />
+                  <BasicInput title="이름" id="BF_M06_l005_name" />
                 </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
 
-          <FormListItem
-            titleText="연락처"
-            target="#layerAutoLeaseOrderImportedNumber"
-          >
-            <FormInvalid :error="state.importedNumberError">
-              <InputBlock :error="state.importedNumberError">
+          <FormListItem titleText="연락처" target="#BF_M06_l005_phone">
+            <FormInvalid :error="state.phoneError">
+              <InputBlock :error="state.phoneError">
                 <InputBlockCell :flexible="true">
                   <BasicInput
-                    type="number"
                     pattern="\d*"
                     title="연락처"
-                    id="layerAutoLeaseOrderImportedNumber"
+                    id="BF_M06_l005_phone"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -124,7 +112,7 @@ export default {
             <div class="agree-list__all">
               <div :class="$style['agree-list__all-head']">
                 <CheckBox
-                  id="lmBlogPersonalQuickCounselingAgreeAll"
+                  id="BF_M06_l005_agreeAll"
                   :classNames="{ wrap: $style['agree-list__all-checkbox'] }"
                 >
                   <CheckBoxObject />
@@ -137,7 +125,7 @@ export default {
                   <li :class="$style['agree-list__item']">
                     <div :class="$style['agree-list__head']">
                       <CheckBox
-                        id="lmBlogPersonalQuickCounselingAgree_001"
+                        id="BF_M06_l005_agree001"
                         :classNames="{
                           wrap: $style['agree-list__checkbox'],
                         }"
@@ -152,7 +140,6 @@ export default {
                         <button
                           type="button"
                           :class="$style['agree-list__link']"
-                          @click="layerAgree001Open"
                         >
                           <span :class="$style['agree-list__link-text']">
                             상세보기
@@ -164,7 +151,7 @@ export default {
                   <li :class="$style['agree-list__item']">
                     <div :class="$style['agree-list__head']">
                       <CheckBox
-                        id="lmBlogPersonalQuickCounselingAgree_002"
+                        id="BF_M06_l005_agree002"
                         :classNames="{
                           wrap: $style['agree-list__checkbox'],
                         }"
@@ -179,7 +166,6 @@ export default {
                         <button
                           type="button"
                           :class="$style['agree-list__link']"
-                          @click="layerAgree002Open"
                         >
                           <span :class="$style['agree-list__link-text']">
                             상세보기
@@ -193,7 +179,7 @@ export default {
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       <template v-slot:foot>
         <ButtonList

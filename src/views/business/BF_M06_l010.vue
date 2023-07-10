@@ -1,6 +1,5 @@
 <script>
 // BF_M06_l010
-
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -53,10 +52,9 @@ export default {
       <PageTextGroup>
         <PageMainText>
           김하나님, 요청하신 견적으로<br />
-
           <strong>심사가 완료되었습니다</strong>
         </PageMainText>
-        <PageSubText> 할부 신청 화면으로 이동 할게요. </PageSubText>
+        <PageSubText>할부 신청 화면으로 이동 할게요.</PageSubText>
       </PageTextGroup>
 
       <IllustObject type="complete" />

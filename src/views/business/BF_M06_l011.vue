@@ -1,6 +1,5 @@
 <script>
 // BF_M06_l011
-
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -15,7 +14,6 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
-import BasicBanner from '@/components/ui/banner/BasicBanner.vue';
 
 import IconCustomer from '@/assets/images/icon/customer-center.svg?component';
 import IconTell from '@/assets/images/icon/tell.svg?component';
@@ -34,7 +32,6 @@ export default {
     ButtonListItem,
     IllustObject,
     BasicHr,
-    BasicBanner,
     IconCustomer,
     IconTell,
   },
@@ -61,11 +58,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          김하나님, 요청하신 견적으로
-          <br />
+          김하나님, 요청하신 견적으로<br />
           <strong>진행이 어렵습니다</strong>
         </PageMainText>
-        <PageSubText>문의사항은 고객센터로 연락바랍니다. </PageSubText>
+        <PageSubText>문의사항은 고객센터로 연락바랍니다.</PageSubText>
       </PageTextGroup>
 
       <IllustObject type="fail" />
@@ -119,5 +115,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/personalLoan/LayerPersonalLoanEHanaComplete.scss';
+@import '@/assets/scss/views/business/BF_M06_l011.scss';
 </style>

@@ -62,15 +62,8 @@ export default {
   },
   setup() {
     const state = reactive({
-      productError: false,
       priceError: false,
-      periodError: false,
-      depositError001: false,
-      depositError002: false,
-      depositMedicalError: false,
-      depositScreenError: false,
-      principalError: false,
-      principaAmountlError: false,
+      termError: false,
     });
 
     const layer = ref(null);
@@ -103,17 +96,16 @@ export default {
 
       <div>
         <FormList>
-          <FormListItem
-            titleText="신청금액"
-            target="#layerBusinessEquipmentLeaseEstimateName"
-          >
+          <FormListItem titleText="신청금액" target="#BF_M06_l006_price">
             <FormInvalid :error="state.priceError">
               <InputBlock :error="state.priceError">
                 <InputBlockCell :flexible="true">
                   <BasicInput
-                    align="right"
+                    pattern="\d*"
                     title="신청금액"
-                    id="layerBusinessEquipmentLeaseEstimateName"
+                    id="BF_M06_l006_price"
+                    align="right"
+                    :useDelete="false"
                   />
                 </InputBlockCell>
                 <template v-slot:innerRight>
@@ -125,7 +117,7 @@ export default {
           </FormListItem>
 
           <FormListItem titleText="이용 기간 선택" :forceFocus="true">
-            <FormInvalid :error="state.principalError">
+            <FormInvalid :error="state.termError">
               <BoxCheckList
                 :wrap="true"
                 col="3"
@@ -134,8 +126,8 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="layerBusinessEquipmentLeaseEstimateCheckList005"
-                    id="layerBusinessEquipmentLeaseEstimateCheckList005_001"
+                    name="BF_M06_l006_termCheck"
+                    id="BF_M06_l006_termCheck001"
                     :defaultChecked="true"
                   >
                     <BoxCheckLabel>12개월</BoxCheckLabel>
@@ -144,8 +136,8 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="layerBusinessEquipmentLeaseEstimateCheckList005"
-                    id="layerBusinessEquipmentLeaseEstimateCheckList005_002"
+                    name="BF_M06_l006_termCheck"
+                    id="BF_M06_l006_termCheck002"
                   >
                     <BoxCheckLabel>15개월</BoxCheckLabel>
                   </BoxCheck>
@@ -153,8 +145,8 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="layerBusinessEquipmentLeaseEstimateCheckList005"
-                    id="layerBusinessEquipmentLeaseEstimateCheckList005_003"
+                    name="BF_M06_l006_termCheck"
+                    id="BF_M06_l006_termCheck003"
                   >
                     <BoxCheckLabel>20개월</BoxCheckLabel>
                   </BoxCheck>
@@ -162,8 +154,8 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="layerBusinessEquipmentLeaseEstimateCheckList005"
-                    id="layerBusinessEquipmentLeaseEstimateCheckList005_004"
+                    name="BF_M06_l006_termCheck"
+                    id="BF_M06_l006_termCheck004"
                   >
                     <BoxCheckLabel>24개월</BoxCheckLabel>
                   </BoxCheck>
@@ -171,8 +163,8 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="layerBusinessEquipmentLeaseEstimateCheckList005"
-                    id="layerBusinessEquipmentLeaseEstimateCheckList005_005"
+                    name="BF_M06_l006_termCheck"
+                    id="BF_M06_l006_termCheck005"
                   >
                     <BoxCheckLabel>36개월</BoxCheckLabel>
                   </BoxCheck>
@@ -180,22 +172,22 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="layerBusinessEquipmentLeaseEstimateCheckList005"
-                    id="layerBusinessEquipmentLeaseEstimateCheckList005_006"
+                    name="BF_M06_l006_termCheck"
+                    id="BF_M06_l006_termCheck006"
                   >
                     <BoxCheckLabel>직접입력</BoxCheckLabel>
                   </BoxCheck>
                 </BoxCheckListItem>
               </BoxCheckList>
 
-              <InputBlock :error="state.principaAmountlError" :disabled="true">
+              <InputBlock :error="state.termError" :disabled="true">
                 <InputBlockCell :flexible="true">
                   <BasicInput
-                    align="right"
-                    :useDelete="false"
                     pattern="\d*"
                     title="기간"
-                    id="layerBusinessEquipmentLeaseEstimateCheckListDepositScreen02"
+                    id="BF_M06_l006_term"
+                    align="right"
+                    :useDelete="false"
                     defaultValue="10"
                     :disabled="true"
                   />
@@ -209,12 +201,9 @@ export default {
           </FormListItem>
         </FormList>
 
-        <BasicButton
-          :line="true"
-          :classNames="{ wrap: 'row-margin-contents-group' }"
-        >
-          계산하기
-        </BasicButton>
+        <div class="row-margin-contents-group">
+          <BasicButton :line="true">계산하기</BasicButton>
+        </div>
       </div>
 
       <!-- Case : 계산하기 누른 후 노출 -->
@@ -239,19 +228,16 @@ export default {
               }"
             >
               <KeyValueTitle>월할부료</KeyValueTitle>
-              <KeyValueText>약 2,000,000 원</KeyValueText>
+              <KeyValueText>2,000,000 원</KeyValueText>
             </KeyValueItem>
           </KeyValue>
         </BasicBox>
-        <NoticeText
-          :classNames="{ wrap: 'color-red' }"
-          class="row-margin-contents"
-        >
+        <NoticeText :classNames="{ wrap: 'color-red row-margin-contents' }">
           상담신청 이전에 꼭 신분증, 의사면허증, 사업자등록증, 자동이체통장
           이미지를 준비해 주세요.
         </NoticeText>
       </section>
-      <!-- // Case : 견적계산 누른 후 노출 -->
+      <!-- // Case : 계산하기 누른 후 노출 -->
 
       <template v-slot:foot>
         <ButtonList
@@ -267,7 +253,3 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/business/LayerBusinessEquipmentLeaseEstimate.scss';
-</style>
