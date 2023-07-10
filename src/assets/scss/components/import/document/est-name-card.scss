@@ -1,0 +1,39 @@
+.est-name-card {
+  width: 242px;
+  box-sizing: border-box;
+  padding: 2px 16px;
+  min-height: 100px;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+
+  &__title {
+    margin: 0;
+    @include font-size-default(14, px);
+    text-align: center;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    display: flex;
+    @include font-size-default(13, px);
+  }
+
+  &__key {
+    flex: none;
+    text-align: left;
+  }
+
+  &__val {
+    margin: 0;
+    flex: 1;
+    min-width: 0;
+    text-align: right;
+  }
+}

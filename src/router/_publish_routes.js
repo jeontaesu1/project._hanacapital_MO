@@ -1784,6 +1784,32 @@ const routes = [
     component: () => import('@/views/onboarding/OnboardingHome.vue'),
     meta: { layout: 'FullLayout' },
   },
+
+  // document
+  {
+    path: '/document/estimate-001',
+    name: '/document/estimate-001',
+    component: () => import('@/views/document/DocumentEstimate001.vue'),
+    meta: { layout: 'DocumentLayout' },
+  },
+  {
+    path: '/document/estimate-002',
+    name: '/document/estimate-002',
+    component: () => import('@/views/document/DocumentEstimate002.vue'),
+    meta: { layout: 'DocumentLayout' },
+  },
+  {
+    path: '/document/estimate-003',
+    name: '/document/estimate-003',
+    component: () => import('@/views/document/DocumentEstimate003.vue'),
+    meta: { layout: 'DocumentLayout' },
+  },
+  {
+    path: '/document/estimate-004',
+    name: '/document/estimate-004',
+    component: () => import('@/views/document/DocumentEstimate004.vue'),
+    meta: { layout: 'DocumentLayout' },
+  },
 ];
 
 export default routes;
