@@ -1,20 +1,31 @@
 <script>
 // BF_M06_l016
+
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
-import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
+import IllustInfo from '@/components/ui/common/IllustInfo.vue';
+import IllustObject from '@/components/ui/common/IllustObject.vue';
+import IllustInfoTitle from '@/components/ui/common/IllustInfoTitle.vue';
+import ButtonList from '@/components/ui/button/ButtonList.vue';
+import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
 
 export default {
   components: {
     UiLayer,
-    PopupTitle,
     FullPopup,
     FullPopupHead,
     PopupButton,
+    IllustInfo,
+    IllustObject,
+    IllustInfoTitle,
+    ButtonList,
+    ButtonListItem,
+    BasicButton,
   },
   setup() {
     const layer = ref(null);
@@ -31,14 +42,31 @@ export default {
     <FullPopup>
       <template v-slot:head>
         <FullPopupHead>
-          <PopupTitle>타이틀</PopupTitle>
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
         </FullPopupHead>
       </template>
 
-      <!-- contents -->
+      <IllustInfo>
+        <IllustObject type="complete" />
+        <IllustInfoTitle>
+          <strong class="color-green">할부</strong> 접수가<br />
+          <strong>완료되었습니다</strong>
+        </IllustInfoTitle>
+      </IllustInfo>
+
+      <template v-slot:foot>
+        <ButtonList
+          :classNames="{
+            wrap: 'row-margin-none',
+          }"
+        >
+          <ButtonListItem>
+            <BasicButton>확인</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+      </template>
     </FullPopup>
   </UiLayer>
 </template>
