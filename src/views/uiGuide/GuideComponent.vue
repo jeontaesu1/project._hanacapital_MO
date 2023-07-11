@@ -1,5 +1,6 @@
 <script>
 import { ref, reactive } from 'vue';
+import { RouterLink } from 'vue-router';
 import { Pagination, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
@@ -92,6 +93,7 @@ import FilterButton from '@/components/ui/button/FilterButton.vue';
 import DeleteButton from '@/components/ui/button/DeleteButton.vue';
 import SelectTable from '@/components/ui/table/SelectTable.vue';
 import SelectTableRow from '@/components/ui/table/SelectTableRow.vue';
+import SelectTableRadioCell from '@/components/ui/table/SelectTableRadioCell.vue';
 import RoundButton from '@/components/ui/button/RoundButton.vue';
 import ColorSelect from '@/components/ui/form/ColorSelect.vue';
 import ColorSelectList from '@/components/ui/form/ColorSelectList.vue';
@@ -105,6 +107,8 @@ import CouponBanner from '@/components/ui/banner/CouponBanner.vue';
 import SlideBanner from '@/components/ui/banner/SlideBanner.vue';
 import SlideBannerBlock from '@/components/ui/banner/SlideBannerBlock.vue';
 import BasicBannerSlide from '@/components/ui/banner/BasicBannerSlide.vue';
+import PinButton from '@/components/ui/button/PinButton.vue';
+import SlideImageBanner from '@/components/ui/banner/SlideImageBanner.vue';
 
 import BrandLogo001 from '@/assets/images/card-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/card-logo/lotte.svg?component';
@@ -154,6 +158,7 @@ const BASE_URL = import.meta.env.BASE_URL;
 
 export default {
   components: {
+    RouterLink,
     Swiper,
     SwiperSlide,
 
@@ -246,6 +251,7 @@ export default {
     DeleteButton,
     SelectTable,
     SelectTableRow,
+    SelectTableRadioCell,
     RoundButton,
     ColorSelect,
     ColorSelectList,
@@ -259,6 +265,8 @@ export default {
     SlideBanner,
     SlideBannerBlock,
     BasicBannerSlide,
+    PinButton,
+    SlideImageBanner,
 
     IconAdd,
     BrandLogo001,
@@ -301,6 +309,7 @@ export default {
     IconDropdown,
     IconImgColor,
     IconImg,
+
     IconSample,
   },
 
@@ -1110,7 +1119,7 @@ export default {
                 <div :class="$style['upload-file__name']">첨부파일명.jpg</div>
               </div>
               <div :class="$style['upload-file__button']">
-                <BasicButton line="true" theme="quaternary" size="mini">
+                <BasicButton :line="true" theme="quaternary" size="mini">
                   삭제
                 </BasicButton>
               </div>
@@ -1125,7 +1134,7 @@ export default {
                 </div>
               </div>
               <div :class="$style['upload-file__button']">
-                <BasicButton line="true" theme="quaternary" size="mini">
+                <BasicButton :line="true" theme="quaternary" size="mini">
                   삭제
                 </BasicButton>
               </div>
@@ -1178,6 +1187,16 @@ export default {
         <h3 class="test-section-sub-title">Default</h3>
         <SettingButton />
         <SettingButton tagName="a" href="" />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Pin Button</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <PinButton />
+        <PinButton tagName="a" href="" />
+        <PinButton :active="true" />
       </div>
     </section>
 
@@ -6386,6 +6405,7 @@ export default {
         <BasicBox theme="senary">// contnets</BasicBox>
         <BasicBox theme="octonary">// contnets</BasicBox>
         <BasicBox theme="nonary">// contnets</BasicBox>
+        <BasicBox theme="undenary">// contnets</BasicBox>
       </div>
     </section>
 
@@ -6982,6 +7002,7 @@ export default {
         <IllustObject type="certification" />
         <IllustObject type="star" />
         <IllustObject type="appfree" />
+        <IllustObject type="rental" />
       </div>
     </section>
 
@@ -7631,6 +7652,44 @@ export default {
                 </span>
               </button>
             </li>
+            <li :class="[$style['board__item'], $style['board__item--mark']]">
+              <RouterLink to="" :class="$style['board__link']">
+                <span :class="$style['board__title']">
+                  <span :class="$style['board__title-text']">
+                    중요 지정된 게시물
+                  </span>
+                </span>
+                <span :class="$style['board__info']">
+                  <span :class="$style['board__info-item']">2021.03.16</span>
+                  <span
+                    :class="[
+                      $style['board__info-item'],
+                      $style['board__info-item--hits'],
+                    ]"
+                    >조회 18</span
+                  >
+                </span>
+              </RouterLink>
+            </li>
+            <li :class="[$style['board__item'], $style['board__item--hidden']]">
+              <RouterLink to="" :class="$style['board__link']">
+                <span :class="$style['board__title']">
+                  <span :class="$style['board__title-text']">
+                    [노출 중지됨] 테스트2
+                  </span>
+                </span>
+                <span :class="$style['board__info']">
+                  <span :class="$style['board__info-item']">2021.03.16</span>
+                  <span
+                    :class="[
+                      $style['board__info-item'],
+                      $style['board__info-item--hits'],
+                    ]"
+                    >조회 18</span
+                  >
+                </span>
+              </RouterLink>
+            </li>
           </ul>
         </div>
 
@@ -7657,6 +7716,12 @@ export default {
               하나캐피탈과 함께 알아봐요!
             </h4>
             <p :class="$style['board-detail__sub']">2022.08.09</p>
+            <div :class="$style['board-detail__sub']">
+              <div :class="$style['board-detail__sub-list']">
+                <div :class="$style['board-detail__sub-item']">2021.03.16</div>
+                <div :class="$style['board-detail__sub-item']">조회 18</div>
+              </div>
+            </div>
           </div>
 
           <section :class="$style['board-detail__contents']">
@@ -7883,7 +7948,7 @@ export default {
     <section class="test-section">
       <h2 class="test-section-title">SelectTable</h2>
       <div class="test-section-sub">
-        <h3 class="test-section-sub-title">Default</h3>
+        <h3 class="test-section-sub-title">Default (toggle)</h3>
 
         <SelectTable>
           <template v-slot:colgroup>
@@ -7926,6 +7991,64 @@ export default {
             <td>5,300 만원</td>
           </SelectTableRow>
           <SelectTableRow>
+            <td>기아</td>
+            <td>2.2 디젤 11인승 노블레스</td>
+            <td>5,500 만원</td>
+          </SelectTableRow>
+        </SelectTable>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Not Toggle</h3>
+
+        <SelectTable>
+          <template v-slot:colgroup>
+            <col style="width: 80px" />
+            <col style="width: 83px" />
+            <col style="width: 200px" />
+            <col style="width: 90px" />
+          </template>
+
+          <template v-slot:head>
+            <tr>
+              <th>선택</th>
+              <th>제조사</th>
+              <th>모델명</th>
+              <th>차량 금액</th>
+            </tr>
+          </template>
+
+          <SelectTableRow actionType="select">
+            <SelectTableRadioCell />
+            <td>기아</td>
+            <td>2.2 디젤 11인승 노블레스</td>
+            <td>5,500 만원</td>
+          </SelectTableRow>
+          <SelectTableRow actionType="select" :initialActive="true">
+            <SelectTableRadioCell />
+            <td>기아</td>
+            <td>뉴 카니발(YP) 3.0 가솔린 9인승 노블레스</td>
+            <td>5,300 만원</td>
+          </SelectTableRow>
+          <SelectTableRow actionType="select">
+            <SelectTableRadioCell />
+            <td>기아</td>
+            <td>2.2 디젤 11인승 노블레스</td>
+            <td>5,500 만원</td>
+          </SelectTableRow>
+          <SelectTableRow actionType="select">
+            <SelectTableRadioCell />
+            <td>기아</td>
+            <td>2.2 디젤 11인승 노블레스</td>
+            <td>5,500 만원</td>
+          </SelectTableRow>
+          <SelectTableRow actionType="select">
+            <SelectTableRadioCell />
+            <td>기아</td>
+            <td>뉴 카니발(YP) 3.0 가솔린 9인승 노블레스</td>
+            <td>5,300 만원</td>
+          </SelectTableRow>
+          <SelectTableRow actionType="select">
+            <SelectTableRadioCell />
             <td>기아</td>
             <td>2.2 디젤 11인승 노블레스</td>
             <td>5,500 만원</td>
@@ -8727,6 +8850,9 @@ export default {
                       >21-01-1234</span
                     >
                   </div>
+                  <button type="button" :class="$style['rectal__button']">
+                    <span class="for-a11y">선택</span>
+                  </button>
                 </div>
                 <div :class="$style['rectal__right']">
                   <UiAccordionOpener
@@ -9540,6 +9666,53 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">SlideImageBanner</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <SlideImageBanner :classNames="{ wrap: 'row-margin-contents' }">
+          <Swiper :modules="modules" pagination>
+            <!-- Case : 링크 기능 없을 때 -->
+            <SwiperSlide>
+              <div :class="$style['image-view']">
+                <img
+                  :src="`${BASE_URL}images/_dummy/banner-002.png`"
+                  alt="배너 설명 넣어주세요"
+                />
+              </div>
+            </SwiperSlide>
+            <!-- //Case : 링크 기능 없을 때 -->
+
+            <!-- Case : 링크 기능 있을 때 (RouterLink) -->
+            <SwiperSlide>
+              <RouterLink to="" class="link-block">
+                <div :class="$style['image-view']">
+                  <img
+                    :src="`${BASE_URL}images/_dummy/banner-002.png`"
+                    alt="배너 설명 넣어주세요"
+                  />
+                </div>
+              </RouterLink>
+            </SwiperSlide>
+            <!-- // Case : 링크 기능 있을 때 -->
+
+            <!-- Case : 링크 기능 있을 때 (a tag) -->
+            <SwiperSlide>
+              <a href="" class="link-block">
+                <div :class="$style['image-view']">
+                  <img
+                    :src="`${BASE_URL}images/_dummy/banner-002.png`"
+                    alt="배너 설명 넣어주세요"
+                  />
+                </div>
+              </a>
+            </SwiperSlide>
+            <!-- // Case : 링크 기능 있을 때 (a tag) -->
+          </Swiper>
+        </SlideImageBanner>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">BasicBannerSlide</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -9901,6 +10074,224 @@ export default {
                 <span :class="$style['share-list__text']">열기</span>
               </button>
             </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">File List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <div :class="$style['file-list']">
+          <ul :class="$style['file-list__list']">
+            <li :class="$style['file-list__item']">
+              <a
+                href="/foo/bar.pdf"
+                :class="$style['file-list__head']"
+                download
+              >
+                <span :class="$style['file-list__sub']">[파일]</span>
+                <span :class="$style['file-list__name']"
+                  >2020년형_avante-price-20210331.jpg</span
+                >
+              </a>
+              <div :class="$style['file-list__img']">
+                <img src="/images/_dummy/box-detail.png" alt="" />
+              </div>
+            </li>
+            <li :class="$style['file-list__item']">
+              <a
+                href="/foo/bar.pdf"
+                :class="$style['file-list__head']"
+                download
+              >
+                <span :class="$style['file-list__sub']">[파일]</span>
+                <span :class="$style['file-list__name']"
+                  >2020년형_avante-price-20210331.pdf</span
+                >
+              </a>
+            </li>
+            <li :class="$style['file-list__item']">
+              <a
+                href="/foo/bar.pdf"
+                :class="$style['file-list__head']"
+                download
+              >
+                <span :class="$style['file-list__sub']">[파일]</span>
+                <span :class="$style['file-list__name']"
+                  >2020년형_avante-price-20210331.jpg</span
+                >
+              </a>
+              <div :class="$style['file-list__img']">
+                <img src="/images/_dummy/box-detail.png" alt="" />
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Manual Q&A</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <div :class="$style['manual-qna']">
+          <ul :class="$style['manual-qna__list']">
+            <li :class="$style['manual-qna__item']">
+              <div :class="$style['manual-qna__head']">
+                <div :class="$style['manual-qna__symbol']">Q</div>
+                <div :class="$style['manual-qna__cell']">
+                  <h5 :class="$style['manual-qna__title']">
+                    대출이용과 신용도의 관계는?
+                  </h5>
+                </div>
+              </div>
+              <div :class="$style['manual-qna__contents']">
+                <div
+                  :class="[
+                    $style['manual-qna__symbol'],
+                    $style['manual-qna__symbol--answer'],
+                  ]"
+                >
+                  A
+                </div>
+                <div :class="$style['manual-qna__cell']">
+                  <div :class="$style['manual-qna__text']">
+                    대출상품 이용 시,
+                    <span class="color-red"
+                      >대출계약의 체결만으로도 신용점수가 하락할 수
+                      있으며,</span
+                    >
+                    신용점수 하락 시 대출 및 신용카드 상품 등의 이용에 불이익이
+                    발생할 수 있습니다.(&#9758;<span class="color-red"
+                      >‘9. 신용점수에 미치는 영향’</span
+                    >
+                    확인)
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li :class="$style['manual-qna__item']">
+              <div :class="$style['manual-qna__head']">
+                <div :class="$style['manual-qna__symbol']">Q</div>
+                <div :class="$style['manual-qna__cell']">
+                  <h5 :class="$style['manual-qna__title']">
+                    대출금을 만기 전에 상환하고 싶은데 가능한가요?
+                  </h5>
+                </div>
+              </div>
+              <div :class="$style['manual-qna__contents']">
+                <div
+                  :class="[
+                    $style['manual-qna__symbol'],
+                    $style['manual-qna__symbol--answer'],
+                  ]"
+                >
+                  A
+                </div>
+                <div :class="$style['manual-qna__cell']">
+                  <div :class="$style['manual-qna__text']">
+                    <div>
+                      대출 실행 후
+                      <span class="color-green"
+                        >3년 이내에 대출금액을 중도 상환</span
+                      >할 경우,
+                      <span class="color-red"
+                        >최대 2%의 중도상환수수료가 발생*</span
+                      >합니다. 아울러
+                      <span class="color-green"
+                        >동일 금융회사와 기존 대출계약을 해지하고 사실상 동일
+                        계약을 체결한 경우 양 계약기간을 합산하여 3년 경과
+                        후에는 면제됩니다.</span
+                      >
+                      중도상환수수료는 대출의 잔여일수 및 상환금액에 따라
+                      달라지며, 중도상환 시 향후 원리금 상환 부담금액이 감소하게
+                      됩니다. (&#9758;<span class="color-red"
+                        >‘4. 수수료 등 비용부담’, ‘10. 해지에 관한 사항’</span
+                      >
+                      확인)
+                    </div>
+                    <ul :class="[$style['basic-list'], 'row-margin-item']">
+                      <li :class="$style['basic-list__item']">
+                        <div :class="$style['basic-list__symbol']"></div>
+                        <div :class="$style['basic-list__content']">
+                          예) 2천만을 중도상환(적용요율을 2%로 가정)할 경우,
+                          고객은 최대 40만원의 중도상환수수료를 금융회사에
+                          납부해야 함
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Manual Check</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <div :class="$style['manual-check']">
+          <ul :class="$style['manual-check__list']">
+            <li :class="$style['manual-check__item']">
+              <div :class="$style['manual-check__block']">
+                <div :class="$style['manual-check__object']"></div>
+                <div :class="$style['manual-check__text']">개인</div>
+              </div>
+            </li>
+            <!-- Case : 선택된 항목  -->
+            <li
+              :class="[
+                $style['manual-check__item'],
+                $style['manual-check__item--checked'],
+              ]"
+            >
+              <div :class="$style['manual-check__block']">
+                <div :class="$style['manual-check__object']"></div>
+                <div :class="$style['manual-check__text']">
+                  개인사업자<br />
+                  개인사업자
+                </div>
+              </div>
+            </li>
+            <!-- // Case : 선택된 항목  -->
+          </ul>
+        </div>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Wrap</h3>
+
+        <div :class="[$style['manual-check'], $style['manual-check--wrap']]">
+          <ul :class="$style['manual-check__list']">
+            <li :class="$style['manual-check__item']">
+              <div :class="$style['manual-check__block']">
+                <div :class="$style['manual-check__object']"></div>
+                <div :class="$style['manual-check__text']">개인</div>
+              </div>
+            </li>
+            <!-- Case : 선택된 항목  -->
+            <li
+              :class="[
+                $style['manual-check__item'],
+                $style['manual-check__item--checked'],
+              ]"
+            >
+              <div :class="$style['manual-check__block']">
+                <div :class="$style['manual-check__object']"></div>
+                <div :class="$style['manual-check__text']">
+                  개인사업자<br />
+                  개인사업자
+                </div>
+              </div>
+            </li>
+            <!-- // Case : 선택된 항목  -->
           </ul>
         </div>
       </div>

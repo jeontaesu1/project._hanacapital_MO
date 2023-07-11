@@ -26,7 +26,7 @@ import BasicBanner from '@/components/ui/banner/BasicBanner.vue';
 import BasicBannerSlide from '@/components/ui/banner/BasicBannerSlide.vue';
 
 import IconCertification from '@/assets/images/icon/certification.svg?component';
-import IconBuilding from '@/assets/images/icon/building.svg?component';
+import IconSecurity from '@/assets/images/icon/security.svg?component';
 import IconTell from '@/assets/images/icon/tell.svg?component';
 
 export default {
@@ -52,7 +52,7 @@ export default {
     BasicBanner,
     BasicBannerSlide,
     IconCertification,
-    IconBuilding,
+    IconSecurity,
     IconTell,
   },
   setup() {
@@ -174,7 +174,7 @@ export default {
           </li>
           <li :class="$style['icon-list__item']">
             <button type="button" :class="$style['icon-list__block']">
-              <span :class="$style['icon-list__icon']"><IconBuilding /></span>
+              <span :class="$style['icon-list__icon']"><IconSecurity /></span>
               <span :class="$style['icon-list__content']">
                 <span :class="$style['icon-list__text']"
                   >근저당설정 상태를 확인해보세요</span
@@ -312,7 +312,7 @@ export default {
             </div>
 
             <div :class="[$style['logs__button'], 'row-margin-contents-small']">
-              <BasicButton size="small" line="true">만기안내장</BasicButton>
+              <BasicButton size="small" :line="true">만기안내장</BasicButton>
               <BasicButton
                 size="small"
                 :classNames="{ wrap: 'row-margin-item' }"
@@ -660,7 +660,7 @@ export default {
         <Swiper :modules="modules" pagination>
           <SwiperSlide>
             <BasicBanner
-              thumb="/images/_dummy/banner-001.png"
+              thumb="/images/banner/banner-money-up.png"
               tagName="RouterLink"
               to=""
             >
@@ -674,7 +674,7 @@ export default {
           </SwiperSlide>
           <SwiperSlide>
             <BasicBanner
-              thumb="/images/_dummy/banner-001.png"
+              thumb="/images/banner/banner-money-up.png"
               tagName="RouterLink"
               to=""
             >
@@ -686,7 +686,7 @@ export default {
           </SwiperSlide>
           <SwiperSlide>
             <BasicBanner
-              thumb="/images/_dummy/banner-001.png"
+              thumb="/images/banner/banner-money-up.png"
               tagName="RouterLink"
               to=""
             >

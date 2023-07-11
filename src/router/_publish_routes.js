@@ -487,6 +487,12 @@ const routes = [
       import('@/views/uiGuide/GuideBusinessEquipmentLease001.vue'),
   },
   {
+    path: '/guide/business-general-installment-001',
+    name: '/guide/business-general-installment-001',
+    component: () =>
+      import('@/views/uiGuide/GuideBusinessGeneralInstallment001.vue'),
+  },
+  {
     path: '/guide/equipment-lease-001',
     name: '/guide/equipment-lease-001',
     component: () => import('@/views/uiGuide/GuideEquipmentLease001.vue'),
@@ -1144,19 +1150,14 @@ const routes = [
 
   // business
   {
-    path: '/business/medical-lease',
-    name: '/business/medical-lease',
-    component: () => import('@/views/business/BusinessMedicalLease.vue'),
-  },
-  {
-    path: '/business/industrial-lease',
-    name: '/business/industrial-lease',
-    component: () => import('@/views/business/BusinessIndustrialLease.vue'),
-  },
-  {
     path: '/business/equipment-lease',
     name: '/business/equipment-lease',
     component: () => import('@/views/business/BusinessEquipmentLease.vue'),
+  },
+  {
+    path: '/business/general-installment',
+    name: '/business/general-installment',
+    component: () => import('@/views/business/BusinessGeneralInstallment.vue'),
   },
 
   // my-loan
@@ -1619,6 +1620,14 @@ const routes = [
       ),
   },
   {
+    path: '/lease-rent-estimation-system/terms-of-use',
+    name: '/lease-rent-estimation-system/terms-of-use',
+    component: () =>
+      import(
+        '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemTermsOfUse.vue'
+      ),
+  },
+  {
     path: '/lease-rent-estimation-system/admin-status',
     name: '/lease-rent-estimation-system/admin-status',
     component: () =>
@@ -1773,7 +1782,33 @@ const routes = [
     path: '/onboarding/home',
     name: '/onboarding/home',
     component: () => import('@/views/onboarding/OnboardingHome.vue'),
-    meta: { layout: 'NoneLayout' },
+    meta: { layout: 'FullLayout' },
+  },
+
+  // document
+  {
+    path: '/document/estimate-001',
+    name: '/document/estimate-001',
+    component: () => import('@/views/document/DocumentEstimate001.vue'),
+    meta: { layout: 'DocumentLayout' },
+  },
+  {
+    path: '/document/estimate-002',
+    name: '/document/estimate-002',
+    component: () => import('@/views/document/DocumentEstimate002.vue'),
+    meta: { layout: 'DocumentLayout' },
+  },
+  {
+    path: '/document/estimate-003',
+    name: '/document/estimate-003',
+    component: () => import('@/views/document/DocumentEstimate003.vue'),
+    meta: { layout: 'DocumentLayout' },
+  },
+  {
+    path: '/document/estimate-004',
+    name: '/document/estimate-004',
+    component: () => import('@/views/document/DocumentEstimate004.vue'),
+    meta: { layout: 'DocumentLayout' },
   },
 ];
 

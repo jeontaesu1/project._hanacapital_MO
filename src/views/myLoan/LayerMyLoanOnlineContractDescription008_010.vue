@@ -57,7 +57,7 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <IllustObject type="license" :classNames="{ wrap: 'row-margin-none' }" />
+      <IllustObject type="reading" :classNames="{ wrap: 'row-margin-none' }" />
 
       <div>
         <div class="text-body-2">

@@ -11,6 +11,13 @@ import LayerBusinessEquipmentLeaseEstimateAgree from '@/views/business/LayerBusi
 import LayerBusinessEquipmentLeaseEstimateConfirm from '@/views/business/LayerBusinessEquipmentLeaseEstimateConfirm.vue';
 import LayerBusinessEquipmentLeaseEstimateForm from '@/views/business/LayerBusinessEquipmentLeaseEstimateForm.vue';
 import LayerBusinessEquipmentLeaseEstimateComplete from '@/views/business/LayerBusinessEquipmentLeaseEstimateComplete.vue';
+import BF_M05_l014 from '@/views/business/BF_M05_l014.vue';
+import BF_M05_l015 from '@/views/business/BF_M05_l015.vue';
+import BF_M05_l016 from '@/views/business/BF_M05_l016.vue';
+import BF_M05_l017 from '@/views/business/BF_M05_l017.vue';
+import BF_M05_l018 from '@/views/business/BF_M05_l018.vue';
+import BF_M05_l019 from '@/views/business/BF_M05_l019.vue';
+import BF_M05_l020 from '@/views/business/BF_M05_l020.vue';
 
 export default {
   components: {
@@ -23,6 +30,13 @@ export default {
     LayerBusinessEquipmentLeaseEstimateConfirm,
     LayerBusinessEquipmentLeaseEstimateForm,
     LayerBusinessEquipmentLeaseEstimateComplete,
+    BF_M05_l014,
+    BF_M05_l015,
+    BF_M05_l016,
+    BF_M05_l017,
+    BF_M05_l018,
+    BF_M05_l019,
+    BF_M05_l020,
   },
   setup() {
     const layer001 = ref(null);
@@ -30,6 +44,13 @@ export default {
     const layer003 = ref(null);
     const layer004 = ref(null);
     const layer005 = ref(null);
+    const layer006 = ref(null);
+    const layer007 = ref(null);
+    const layer008 = ref(null);
+    const layer009 = ref(null);
+    const layer010 = ref(null);
+    const layer011 = ref(null);
+    const layer012 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -46,6 +67,27 @@ export default {
     const layer005Open = (e = {}) => {
       layer005.value.layer.open(e.target);
     };
+    const layer006Open = (e = {}) => {
+      layer006.value.layer.open(e.target);
+    };
+    const layer007Open = (e = {}) => {
+      layer007.value.layer.open(e.target);
+    };
+    const layer008Open = (e = {}) => {
+      layer008.value.layer.open(e.target);
+    };
+    const layer009Open = (e = {}) => {
+      layer009.value.layer.open(e.target);
+    };
+    const layer010Open = (e = {}) => {
+      layer010.value.layer.open(e.target);
+    };
+    const layer011Open = (e = {}) => {
+      layer011.value.layer.open(e.target);
+    };
+    const layer012Open = (e = {}) => {
+      layer012.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -53,11 +95,25 @@ export default {
       layer003,
       layer004,
       layer005,
+      layer006,
+      layer007,
+      layer008,
+      layer009,
+      layer010,
+      layer011,
+      layer012,
       layer001Open,
       layer002Open,
       layer003Open,
       layer004Open,
       layer005Open,
+      layer006Open,
+      layer007Open,
+      layer008Open,
+      layer009Open,
+      layer010Open,
+      layer011Open,
+      layer012Open,
     };
   },
 };
@@ -96,6 +152,41 @@ export default {
           신청 완료<br />BF_M05_l005
         </BasicButton>
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer006Open">
+          상품선택<br />BF_M05_l014
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer007Open">
+          사업자 정보 입력<br />BF_M05_l015
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer008Open">
+          서비스이용약관동의<br />BF_M05_l016
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer009Open">
+          심사결과(시스템심사)<br />BF_M05_l017
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer010Open">
+          심사결과(정밀심사)<br />BF_M05_l018
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer011Open">
+          심사결과(부결)<br />BF_M05_l019
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer012Open">
+          견적서보기<br />BF_M05_l020
+        </BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <LayerBusinessEquipmentLeaseEstimate ref="layer001" />
@@ -103,5 +194,12 @@ export default {
     <LayerBusinessEquipmentLeaseEstimateConfirm ref="layer003" />
     <LayerBusinessEquipmentLeaseEstimateForm ref="layer004" />
     <LayerBusinessEquipmentLeaseEstimateComplete ref="layer005" />
+    <BF_M05_l014 ref="layer006" />
+    <BF_M05_l015 ref="layer007" />
+    <BF_M05_l016 ref="layer008" />
+    <BF_M05_l017 ref="layer009" />
+    <BF_M05_l018 ref="layer010" />
+    <BF_M05_l019 ref="layer011" />
+    <BF_M05_l020 ref="layer012" />
   </PageContents>
 </template>

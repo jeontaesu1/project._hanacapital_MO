@@ -9,24 +9,4 @@
   background-color: $color-navy-05;
   margin: -30px -20px 0 -20px;
   padding: 30px 20px 40px 20px;
-  box-sizing: border-box;
-}
-
-.sub {
-  margin: 2px 0 0 0;
-  @include font-size-default(13);
-  color: $color-gray-80;
-  font-weight: 300;
-}
-
-.tab__inner {
-  margin-top: 40px;
-}
-
-.margin-top-small {
-  margin-top: 8px;
-}
-
-.margin-top-regular {
-  margin-top: 24px;
 }

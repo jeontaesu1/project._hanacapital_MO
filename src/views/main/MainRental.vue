@@ -9,7 +9,7 @@ import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 
-import ImgSample from '@/assets/images/_dummy/illustration-sample.svg?component';
+import IllustObject from '@/components/ui/common/IllustObject.vue';
 import IconHyendaiRentalCare from '@/assets/images/icon/hyendai-rental-care.svg?component';
 import IconCeragem from '@/assets/images/icon/ceragem.svg?component';
 
@@ -19,7 +19,7 @@ export default {
     PageTextGroup,
     PageMainText,
     BasicHr,
-    ImgSample,
+    IllustObject,
     IconHyendaiRentalCare,
     IconCeragem,
   },
@@ -54,9 +54,7 @@ export default {
       </PageMainText>
     </PageTextGroup>
 
-    <div :class="$style['illustration-img']">
-      <ImgSample />
-    </div>
+    <IllustObject type="rental" />
 
     <BasicHr
       theme="quaternary"

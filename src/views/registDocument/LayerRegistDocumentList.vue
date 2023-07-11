@@ -19,6 +19,7 @@ import BasicTooltip from '@/components/ui/tooltip/BasicTooltip.vue';
 import IconAdd from '@/assets/images/icon/add.svg?component';
 import IconCheckDocument from '@/assets/images/icon/check-document.svg?component';
 import IconTooltip from '@/assets/images/icon/tooltip.svg?component';
+import IconDownload from '@/assets/images/icon/download.svg?component';
 
 export default {
   components: {
@@ -38,6 +39,7 @@ export default {
     IconAdd,
     IconCheckDocument,
     IconTooltip,
+    IconDownload,
   },
   setup() {
     const layer = ref(null);
@@ -130,6 +132,14 @@ export default {
                   추가첨부
                 </BasicButton>
               </div>
+              <div class="flex-box__cell">
+                <BasicButton size="mini" theme="tertiary">
+                  <template v-slot:leftIcon>
+                    <IconDownload />
+                    <span class="for-a11y">다운로드</span>
+                  </template>
+                </BasicButton>
+              </div>
             </div>
           </BasicBox>
 
@@ -184,6 +194,14 @@ export default {
                   추가첨부
                 </BasicButton>
               </div>
+              <div class="flex-box__cell">
+                <BasicButton size="mini" theme="tertiary">
+                  <template v-slot:leftIcon>
+                    <IconDownload />
+                    <span class="for-a11y">다운로드</span>
+                  </template>
+                </BasicButton>
+              </div>
             </div>
           </BasicBox>
 
@@ -236,6 +254,14 @@ export default {
               <div class="flex-box__cell">
                 <BasicButton size="mini" theme="quaternary">
                   추가첨부
+                </BasicButton>
+              </div>
+              <div class="flex-box__cell">
+                <BasicButton size="mini" theme="tertiary">
+                  <template v-slot:leftIcon>
+                    <IconDownload />
+                    <span class="for-a11y">다운로드</span>
+                  </template>
                 </BasicButton>
               </div>
             </div>

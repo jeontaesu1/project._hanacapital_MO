@@ -1,0 +1,30 @@
+@import '@/assets/scss/components/import/basic-list.scss';
+@import '@/assets/scss/components/import/contents-list.scss';
+@import '@/assets/scss/components/import/basic-table.scss';
+@import '@/assets/scss/components/import/manual-qna.scss';
+@import '@/assets/scss/components/import/manual-check.scss';
+
+.manual-image {
+  width: 100%;
+  max-width: 202px;
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.blank-box {
+  display: inline-block;
+  min-width: 60px;
+  vertical-align: bottom;
+  text-align: center;
+
+  &--small {
+    min-width: 14px;
+  }
+
+  &--regular {
+    min-width: 54px;
+  }
+}

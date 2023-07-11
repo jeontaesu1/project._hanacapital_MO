@@ -420,7 +420,7 @@ export default {
         </FormList>
 
         <BasicButton
-          line="true"
+          :line="true"
           :classNames="{ wrap: 'row-margin-contents-group' }"
         >
           견적계산

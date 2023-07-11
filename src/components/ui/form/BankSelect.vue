@@ -29,71 +29,71 @@ const data = () => ({
   bank: [
     {
       value: '081',
-      text: '하나은행',
+      text: '하나',
     },
     {
       value: '039',
-      text: '경남은행',
+      text: '경남',
     },
     {
       value: '034',
-      text: '광주은행',
+      text: '광주',
     },
     {
       value: '004',
-      text: '국민은행',
+      text: '국민',
     },
     {
       value: '003',
-      text: '기업은행',
+      text: '기업',
     },
     {
       value: '011',
-      text: '농협은행',
+      text: '농협',
     },
     {
       value: '031',
-      text: '대구은행',
+      text: '대구',
     },
     {
       value: '055',
-      text: '도이치은행',
+      text: '도이치',
     },
     {
       value: '032',
-      text: '부산은행',
+      text: '부산',
     },
     {
       value: '064',
-      text: '산림조합중앙회',
+      text: '산림조합',
     },
     {
       value: '002',
-      text: '산업은행',
+      text: '산업',
     },
     {
       value: '050',
-      text: '상호저축은행',
+      text: '상호저축',
     },
     {
       value: '045',
-      text: '새마을금고중앙회',
+      text: '새마을금고',
     },
     {
       value: '007',
-      text: '수협중앙회',
+      text: '수협',
     },
     {
       value: '088',
-      text: '신한은행',
+      text: '신한',
     },
     {
       value: '048',
-      text: '신협중앙회',
+      text: '신협',
     },
     {
       value: '020',
-      text: '우리은행',
+      text: '우리',
     },
     {
       value: '071',
@@ -101,15 +101,15 @@ const data = () => ({
     },
     {
       value: '037',
-      text: '전북은행',
+      text: '전북',
     },
     {
       value: '057',
-      text: '제이피모간체이스은행',
+      text: '제이피모간',
     },
     {
       value: '035',
-      text: '제주은행',
+      text: '제주',
     },
     {
       value: '012',
@@ -117,27 +117,31 @@ const data = () => ({
     },
     {
       value: '027',
-      text: '한국시티은행',
+      text: '씨티',
     },
     {
       value: '060',
-      text: 'BOA은행',
+      text: 'BOA',
     },
     {
       value: '054',
-      text: 'HSBC은행',
+      text: 'HSBC',
     },
     {
       value: '023',
-      text: 'SC은행',
+      text: 'SC',
     },
     {
       value: '089',
-      text: '케이뱅크',
+      text: '케이',
     },
     {
       value: '090',
-      text: '카카오뱅크',
+      text: '카카오',
+    },
+    {
+      value: '092',
+      text: '토스',
     },
   ],
   securities: [
@@ -163,7 +167,7 @@ const data = () => ({
     },
     {
       value: '230',
-      text: '미래에셋증권',
+      text: '미래에셋',
     },
     {
       value: '290',
@@ -179,27 +183,27 @@ const data = () => ({
     },
     {
       value: '278',
-      text: '신한금융투자',
+      text: '신한금융',
     },
     {
       value: '268',
-      text: '아이엠투자증권',
+      text: '아이엠투자',
     },
     {
       value: '289',
-      text: '엔에이치농협증권',
+      text: 'NH농협증권',
     },
     {
       value: '209',
-      text: '유안타증권((구)동양증권)',
+      text: '유안타증권',
     },
     {
       value: '280',
-      text: '유진투자증권',
+      text: '유진투자',
     },
     {
       value: '265',
-      text: '이베스트투자증권',
+      text: '이베스트',
     },
     {
       value: '264',
@@ -207,15 +211,15 @@ const data = () => ({
     },
     {
       value: '270',
-      text: '하나금융투자',
+      text: '하나금융',
     },
     {
       value: '262',
-      text: '하이투자증권',
+      text: '하이투자',
     },
     {
       value: '243',
-      text: '한국투자증권',
+      text: '한국투자',
     },
     {
       value: '269',
@@ -227,7 +231,7 @@ const data = () => ({
     },
     {
       value: '263',
-      text: '현대차증권(주)',
+      text: '현대차증권',
     },
     {
       value: '296',
@@ -239,7 +243,7 @@ const data = () => ({
     },
     {
       value: '293',
-      text: 'KTB투자증권',
+      text: 'KTB투자',
     },
     {
       value: '292',

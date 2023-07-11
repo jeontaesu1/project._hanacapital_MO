@@ -13,6 +13,7 @@ import DefaultLayout from '@/layouts/DefaultLayout.vue';
 import NoneLayout from '@/layouts/NoneLayout.vue';
 import FullLayout from '@/layouts/FullLayout.vue';
 import MainBenefitLayout from '@/layouts/main/MainBenefitLayout.vue';
+import DocumentLayout from '@/layouts/document/DocumentLayout.vue';
 import LoadingLayer from '@/components/ui/layout/LoadingLayer.vue';
 
 export default {
@@ -91,6 +92,7 @@ export default {
       NoneLayout,
       FullLayout,
       MainBenefitLayout,
+      DocumentLayout,
     };
     const layout = computed(() => {
       const { layout } = route.meta;

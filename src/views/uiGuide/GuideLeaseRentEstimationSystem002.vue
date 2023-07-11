@@ -19,6 +19,7 @@ import LayerLeaseRentEstimationSystemCreditCheckRequest from '@/views/LeaseRentE
 import LayerLeaseRentEstimationSystemSearchStore from '@/views/LeaseRentEstimationSystem/LayerLeaseRentEstimationSystemSearchStore.vue';
 import LayerLeaseRentEstimationSystemSearchSalesmen from '@/views/LeaseRentEstimationSystem/LayerLeaseRentEstimationSystemSearchSalesmen.vue';
 import LayerLeaseRentEstimationSystemGuide001 from '@/views/LeaseRentEstimationSystem/LayerLeaseRentEstimationSystemGuide001.vue';
+import LayerLeaseRentEstimationSystemStart from '@/views/LeaseRentEstimationSystem/LayerLeaseRentEstimationSystemStart.vue';
 
 export default {
   components: {
@@ -39,6 +40,7 @@ export default {
     LayerLeaseRentEstimationSystemSearchStore,
     LayerLeaseRentEstimationSystemSearchSalesmen,
     LayerLeaseRentEstimationSystemGuide001,
+    LayerLeaseRentEstimationSystemStart,
   },
   setup() {
     const layer001 = ref(null);
@@ -54,6 +56,7 @@ export default {
     const layer011 = ref(null);
     const layer012 = ref(null);
     const layer013 = ref(null);
+    const layer014 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -94,6 +97,9 @@ export default {
     const layer013Open = (e = {}) => {
       layer013.value.layer.open(e.target);
     };
+    const layer014Open = (e = {}) => {
+      layer014.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -109,6 +115,7 @@ export default {
       layer011,
       layer012,
       layer013,
+      layer014,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -122,6 +129,7 @@ export default {
       layer011Open,
       layer012Open,
       layer013Open,
+      layer014Open,
     };
   },
 };
@@ -200,6 +208,11 @@ export default {
           >모바일 견적 손님제공 절차안내 팝업<br />LR_M03_l001</BasicButton
         >
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer014Open"
+          >견적서 진행사항 안내<br />LR_M00_l002</BasicButton
+        >
+      </ButtonListItem>
     </ButtonList>
 
     <LayerLeaseRentEstimationSystemConformityAdequacy ref="layer001" />
@@ -215,5 +228,6 @@ export default {
     <LayerLeaseRentEstimationSystemSearchStore ref="layer011" />
     <LayerLeaseRentEstimationSystemSearchSalesmen ref="layer012" />
     <LayerLeaseRentEstimationSystemGuide001 ref="layer013" />
+    <LayerLeaseRentEstimationSystemStart ref="layer014" />
   </PageContents>
 </template>

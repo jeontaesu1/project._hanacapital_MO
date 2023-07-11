@@ -10,7 +10,10 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import IconSample from '@/assets/images/_dummy/sample-alarm.svg?component';
+import IconClover from '@/assets/images/icon/clover.svg?component';
+import IconGraphCheck from '@/assets/images/icon/graph-check.svg?component';
+import IconRecommendedProduct from '@/assets/images/icon/recommended-product.svg?component';
+import IconMoneyList from '@/assets/images/icon/money-list.svg?component';
 
 export default {
   components: {
@@ -21,7 +24,10 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    IconSample,
+    IconClover,
+    IconGraphCheck,
+    IconRecommendedProduct,
+    IconMoneyList,
   },
   setup() {
     const layer = ref(null);
@@ -49,7 +55,7 @@ export default {
         <ul :class="$style['info__list']">
           <li :class="$style['info__item']">
             <div :class="$style['info__block']">
-              <span :class="$style['info__icon']"><IconSample /></span>
+              <span :class="$style['info__icon']"><IconGraphCheck /></span>
               <span :class="$style['info__title']">
                 다이렉트 상품<br />
                 금리확인
@@ -58,7 +64,7 @@ export default {
           </li>
           <li :class="$style['info__item']">
             <div :class="$style['info__block']">
-              <span :class="$style['info__icon']"><IconSample /></span>
+              <span :class="$style['info__icon']"><IconClover /></span>
               <span :class="$style['info__title']">
                 오늘의 운세와<br />
                 FUN콘텐츠
@@ -67,7 +73,9 @@ export default {
           </li>
           <li :class="$style['info__item']">
             <div :class="$style['info__block']">
-              <span :class="$style['info__icon']"><IconSample /></span>
+              <span :class="$style['info__icon']">
+                <IconRecommendedProduct />
+              </span>
               <span :class="$style['info__title']">
                 나에게 꼭 맞는<br />
                 상품추천
@@ -76,7 +84,7 @@ export default {
           </li>
           <li :class="$style['info__item']">
             <div :class="$style['info__block']">
-              <span :class="$style['info__icon']"><IconSample /></span>
+              <span :class="$style['info__icon']"><IconMoneyList /></span>
               <span :class="$style['info__title']">
                 나의 대출현황<br />
                 관리

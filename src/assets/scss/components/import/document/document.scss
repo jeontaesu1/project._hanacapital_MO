@@ -1,0 +1,23 @@
+.document {
+  width: 21cm;
+  min-height: 29.7cm;
+  margin: 0 auto;
+  padding: 40px;
+  box-sizing: border-box;
+  background-color: $color-white;
+  page-break-after: always;
+  color: #222;
+
+  & + & {
+    margin-top: 1px;
+
+    @media print {
+      margin-top: 0;
+    }
+  }
+
+  &--horizontal {
+    width: 29.7cm;
+    min-height: 21cm;
+  }
+}

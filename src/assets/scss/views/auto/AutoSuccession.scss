@@ -1,0 +1,21 @@
+@import '@/assets/scss/components/import/product-detail.scss';
+@import '@/assets/scss/components/import/basic-list.scss';
+@import '@/assets/scss/components/import/icon-list.scss';
+@import '@/assets/scss/components/import/step.scss';
+@import '@/assets/scss/components/import/illustration-img.scss';
+
+.bg {
+  background-color: $color-navy-05;
+  margin: -30px -20px 0 -20px;
+  padding: 0 20px 40px 20px;
+}
+
+.top-tab {
+  margin-bottom: 30px;
+}
+
+.icon {
+  display: block;
+  width: 36px;
+  height: 36px;
+}

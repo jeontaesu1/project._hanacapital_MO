@@ -13,6 +13,13 @@ import LayerEquipmentLeaseEstimateURLSchedule from '@/views/equipmentLease/Layer
 import LayerEquipmentLeaseStatePriorAgree from '@/views/equipmentLease/LayerEquipmentLeaseStatePriorAgree.vue';
 import LayerEquipmentLeaseStateCounselingAgree from '@/views/equipmentLease/LayerEquipmentLeaseStateCounselingAgree.vue';
 import LayerEquipmentLeaseStateElectronicContract from '@/views/equipmentLease/LayerEquipmentLeaseStateElectronicContract.vue';
+import LayerEquipmentLeaseStateDetail from '@/views/equipmentLease/LayerEquipmentLeaseStateDetail.vue';
+import LayerEquipmentLeaseStateAgree from '@/views/equipmentLease/LayerEquipmentLeaseStateAgree.vue';
+import LayerEquipmentLeaseStateComplete from '@/views/equipmentLease/LayerEquipmentLeaseStateComplete.vue';
+import EL_M02_l007 from '@/views/equipmentLease/EL_M02_l007.vue';
+import EL_M02_l008 from '@/views/equipmentLease/EL_M02_l008.vue';
+import EL_M02_l009 from '@/views/equipmentLease/EL_M02_l009.vue';
+import EL_M02_l010 from '@/views/equipmentLease/EL_M02_l010.vue';
 
 export default {
   components: {
@@ -27,6 +34,13 @@ export default {
     LayerEquipmentLeaseStatePriorAgree,
     LayerEquipmentLeaseStateCounselingAgree,
     LayerEquipmentLeaseStateElectronicContract,
+    LayerEquipmentLeaseStateDetail,
+    LayerEquipmentLeaseStateAgree,
+    LayerEquipmentLeaseStateComplete,
+    EL_M02_l007,
+    EL_M02_l008,
+    EL_M02_l009,
+    EL_M02_l010,
   },
   setup() {
     const layer001 = ref(null);
@@ -36,6 +50,13 @@ export default {
     const layer005 = ref(null);
     const layer006 = ref(null);
     const layer007 = ref(null);
+    const layer008 = ref(null);
+    const layer009 = ref(null);
+    const layer010 = ref(null);
+    const layer011 = ref(null);
+    const layer012 = ref(null);
+    const layer013 = ref(null);
+    const layer014 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -58,6 +79,27 @@ export default {
     const layer007Open = (e = {}) => {
       layer007.value.layer.open(e.target);
     };
+    const layer008Open = (e = {}) => {
+      layer008.value.layer.open(e.target);
+    };
+    const layer009Open = (e = {}) => {
+      layer009.value.layer.open(e.target);
+    };
+    const layer010Open = (e = {}) => {
+      layer010.value.layer.open(e.target);
+    };
+    const layer011Open = (e = {}) => {
+      layer011.value.layer.open(e.target);
+    };
+    const layer012Open = (e = {}) => {
+      layer012.value.layer.open(e.target);
+    };
+    const layer013Open = (e = {}) => {
+      layer013.value.layer.open(e.target);
+    };
+    const layer014Open = (e = {}) => {
+      layer014.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -67,6 +109,13 @@ export default {
       layer005,
       layer006,
       layer007,
+      layer008,
+      layer009,
+      layer010,
+      layer011,
+      layer012,
+      layer013,
+      layer014,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -74,6 +123,13 @@ export default {
       layer005Open,
       layer006Open,
       layer007Open,
+      layer008Open,
+      layer009Open,
+      layer010Open,
+      layer011Open,
+      layer012Open,
+      layer013Open,
+      layer014Open,
     };
   },
 };
@@ -122,6 +178,41 @@ export default {
           전자약정 전송 정보 입력 팝업<br />EL_M02_l003
         </BasicButton>
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer008Open">
+          견적보기 팝업<br />EL_M02_l004
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer009Open">
+          신용정보조회동의<br />EL_M02_l005
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer010Open">
+          사전동의 완료<br />EL_M02_l006
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer011Open">
+          물건점검 SMS 정보 입력 팝업<br />EL_M02_l007
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer012Open">
+          본인확인(URL진입)<br />EL_M02_l008
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer013Open">
+          리스물건 점검보고서<br />EL_M02_l009
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer014Open">
+          물건점검 완료<br />EL_M02_l010
+        </BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <LayerEquipmentLeaseEstimateSchedule ref="layer001" />
@@ -131,5 +222,12 @@ export default {
     <LayerEquipmentLeaseStatePriorAgree ref="layer005" />
     <LayerEquipmentLeaseStateCounselingAgree ref="layer006" />
     <LayerEquipmentLeaseStateElectronicContract ref="layer007" />
+    <LayerEquipmentLeaseStateDetail ref="layer008" />
+    <LayerEquipmentLeaseStateAgree ref="layer009" />
+    <LayerEquipmentLeaseStateComplete ref="layer010" />
+    <EL_M02_l007 ref="layer011" />
+    <EL_M02_l008 ref="layer012" />
+    <EL_M02_l009 ref="layer013" />
+    <EL_M02_l010 ref="layer014" />
   </PageContents>
 </template>

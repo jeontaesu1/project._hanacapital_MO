@@ -1,0 +1,41 @@
+.est-head {
+  display: flex;
+
+  &__left,
+  &__right {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__right {
+    text-align: right;
+    align-items: flex-end;
+  }
+
+  &__center {
+    flex: none;
+    margin: 0 auto;
+  }
+
+  &__logo {
+    margin: 0 0 9px;
+    width: 185px;
+    height: 45px;
+    background: url('@/assets/images/document/est-logo.png') no-repeat 50% 50% /
+      100% 100%;
+  }
+
+  &__text {
+    margin: 0;
+    @include font-size-default(14, px);
+    padding: 2px;
+  }
+
+  &__title {
+    margin: 0;
+    @include font-size-head(24, px);
+  }
+}

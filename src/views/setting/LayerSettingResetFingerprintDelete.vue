@@ -54,7 +54,7 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <IllustObject type="license" />
+      <IllustObject type="finger" />
 
       <section :class="$style['notice-section']">
         <h3 :class="$style['notice-section__title']">유의사항</h3>

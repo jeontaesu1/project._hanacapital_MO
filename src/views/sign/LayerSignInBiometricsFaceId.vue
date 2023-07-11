@@ -45,7 +45,7 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <IllustObject />
+      <IllustObject type="faceID" />
 
       <div class="inline-wrap align-center row-margin-item-group">
         <TextButton

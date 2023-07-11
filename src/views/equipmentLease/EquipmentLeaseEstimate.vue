@@ -79,6 +79,7 @@ export default {
       nameError: false,
       equipmentNameError: false,
       acquisitionCostError: false,
+      interestRateError: false,
       depositRatioError: false,
       depositInputError: false,
       valueRatioError: false,
@@ -511,7 +512,35 @@ export default {
                     <KeyValueTitle>
                       <div class="text-body-4">적용금리</div>
                     </KeyValueTitle>
-                    <KeyValueText>0%</KeyValueText>
+                    <KeyValueText>
+                      <FormList>
+                        <FormListItem
+                          titleText="금리"
+                          target="#equipmentLeaseEstimateInterestRate"
+                        >
+                          <FormInvalid :error="state.interestRateError">
+                            <InputBlock :error="state.interestRateError">
+                              <InputBlockCell :flexible="true">
+                                <BasicInput
+                                  type="number"
+                                  title="적용금리"
+                                  id="equipmentLeaseEstimateInterestRate"
+                                  pattern="\d*"
+                                  :useDelete="false"
+                                  align="right"
+                                />
+                              </InputBlockCell>
+                              <template v-slot:innerRight>
+                                <div class="text-body-3">%</div>
+                              </template>
+                            </InputBlock>
+                            <FormInvalidMessage>
+                              Error Message
+                            </FormInvalidMessage>
+                          </FormInvalid>
+                        </FormListItem>
+                      </FormList>
+                    </KeyValueText>
                   </KeyValueItem>
                 </KeyValue>
               </div>
@@ -2084,11 +2113,11 @@ export default {
         }"
       >
         <ButtonListItem>
-          <BasicButton theme="quaternary" line="true">견적수정</BasicButton>
+          <BasicButton theme="quaternary" :line="true">견적수정</BasicButton>
         </ButtonListItem>
         <!-- Case : 견적 개수 3개일 경우, 미노출 -->
         <ButtonListItem>
-          <BasicButton theme="quaternary" line="true" :minSide="true">
+          <BasicButton theme="quaternary" :line="true" :minSide="true">
             견적추가 (최대 3개)
           </BasicButton>
         </ButtonListItem>

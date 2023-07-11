@@ -51,7 +51,7 @@ export default {
       </template>
 
       <IllustInfo>
-        <IllustObject type="fail" />
+        <IllustObject type="error" />
         <IllustInfoTitle>
           오류횟수 초과로<br />
           <strong>간편가입을 시작합니다</strong>

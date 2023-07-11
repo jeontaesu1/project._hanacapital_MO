@@ -10,14 +10,23 @@
   }
 
   &__head {
-    position: relative;
     display: flex;
     padding: 16px 0;
   }
 
   &__block {
+    position: relative;
     flex: 1;
     min-width: 0;
+  }
+
+  &__button {
+    @include reset-button;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
   &__name {
@@ -70,13 +79,5 @@
     flex: none;
     width: 20px;
     height: 20px;
-    position: static;
-
-    &::before {
-      padding: 0;
-      top: 0;
-      left: 0;
-      z-index: 10;
-    }
   }
 }

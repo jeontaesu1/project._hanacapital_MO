@@ -56,7 +56,7 @@ export default {
       <PageSubText>본인인증이 완료되면 회원탈퇴가 완료됩니다.</PageSubText>
     </PageTextGroup>
 
-    <IllustObject type="license" />
+    <IllustObject type="accountDelete" />
 
     <template v-slot:foot>
       <ButtonList

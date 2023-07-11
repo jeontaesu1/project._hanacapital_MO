@@ -11,7 +11,6 @@ import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
-import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
@@ -33,7 +32,6 @@ export default {
     PageMainText,
     FormList,
     FormListItem,
-    FormHelpText,
     FormInvalid,
     InputBlock,
     InputBlockCell,
@@ -78,7 +76,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           양수인 정보를<br />
-          <strong>입력해 주세요</strong>
+          <strong>확인해 주세요</strong>
         </PageMainText>
       </PageTextGroup>
 
@@ -86,13 +84,16 @@ export default {
         <FormListItem
           titleText="이름"
           target="#layerMyLoanOnlineContractIntermediateSuccessionAssigneeFormName001"
+          :disabled="true"
         >
           <FormInvalid :error="state.nameError">
-            <InputBlock :error="state.nameError">
+            <InputBlock :error="state.nameError" :disabled="true">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="이름"
                   id="layerMyLoanOnlineContractIntermediateSuccessionAssigneeFormName001"
+                  defaultValue="김하나"
+                  :disabled="true"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -103,15 +104,18 @@ export default {
         <FormListItem
           titleText="주민등록번호"
           target="#layerMyLoanOnlineContractIntermediateSuccessionAssigneeFormNumber01"
+          :disabled="true"
         >
           <FormInvalid :error="state.idNumberError">
-            <InputBlock :error="state.idNumberError">
+            <InputBlock :error="state.idNumberError" :disabled="true">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   type="number"
                   pattern="\d*"
                   title="주민등록번호 앞 6자리"
                   id="layerMyLoanOnlineContractIntermediateSuccessionAssigneeFormNumber01"
+                  defaultValue="930101"
+                  :disabled="true"
                 />
               </InputBlockCell>
               <InputBlockCell type="sub">-</InputBlockCell>
@@ -119,7 +123,8 @@ export default {
                 <!-- DD : 보안 키패드 열렸을 때 :isFocused="true" props 추가 해서 포커싱 스타일 적용 -->
                 <SecurityInput
                   title="주민등록번호 뒤 7자리"
-                  :dot="[true, true, true, false, false, false, false]"
+                  :dot="[true, true, true, true, true, true, true]"
+                  :disabled="true"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -130,15 +135,18 @@ export default {
         <FormListItem
           titleText="휴대폰번호"
           target="#layerMyLoanOnlineContractIntermediateSuccessionAssigneeFormPhone001"
+          :disabled="true"
         >
           <FormInvalid :error="state.phoneError">
-            <InputBlock :error="state.phoneError">
+            <InputBlock :error="state.phoneError" :disabled="true">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   type="number"
                   pattern="\d*"
                   title="휴대폰번호"
                   id="layerMyLoanOnlineContractIntermediateSuccessionAssigneeFormPhone001"
+                  defaultValue="01012345678"
+                  :disabled="true"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -150,13 +158,16 @@ export default {
         <FormListItem
           titleText="상호명"
           target="#layerMyLoanOnlineContractIntermediateSuccessionAssigneeFormBuisnessName"
+          :disabled="true"
         >
           <FormInvalid :error="state.buisnessNameError">
-            <InputBlock :error="state.buisnessNameError">
+            <InputBlock :error="state.buisnessNameError" :disabled="true">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="상호명"
                   id="layerMyLoanOnlineContractIntermediateSuccessionAssigneeFormBuisnessName"
+                  defaultValue="하나캐피탈"
+                  :disabled="true"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -167,18 +178,20 @@ export default {
         <FormListItem
           titleText="사업자번호"
           target="#layerMyLoanOnlineContractIntermediateSuccessionAssigneeFormBuisnessLicense"
+          :disabled="true"
         >
           <FormInvalid :error="state.buisnessLicenseError">
-            <InputBlock :error="state.buisnessLicenseError">
+            <InputBlock :error="state.buisnessLicenseError" :disabled="true">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="사업자번호"
                   id="layerMyLoanOnlineContractIntermediateSuccessionAssigneeFormBuisnessLicense"
+                  defaultValue="012-34-56789"
+                  :disabled="true"
                 />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
-            <FormHelpText>‘-’ 를 제외하고 입력해주세요.</FormHelpText>
           </FormInvalid>
         </FormListItem>
         <!-- // Case : 개인사업자 -->

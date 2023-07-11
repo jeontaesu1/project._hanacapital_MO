@@ -175,7 +175,7 @@ export default {
           :classNames="{ wrap: [$style['buttons'], 'row-margin-top-none'] }"
         >
           <ButtonListItem>
-            <BasicButton line="true" theme="quaternary"
+            <BasicButton :line="true" theme="quaternary"
               >공동인증서 등록</BasicButton
             >
           </ButtonListItem>

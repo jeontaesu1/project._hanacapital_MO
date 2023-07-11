@@ -2029,13 +2029,9 @@ export default {
                   titleText="금액"
                   target="#leaseRentEstimationSystemPrePurchaseRegistCarDeliveryManufacturerPrice"
                   :forceFocus="true"
-                  :disabled="true"
                 >
                   <FormInvalid :error="state.deliveryManufacturerPriceError">
-                    <InputBlock
-                      :error="state.deliveryManufacturerPriceError"
-                      :disabled="true"
-                    >
+                    <InputBlock :error="state.deliveryManufacturerPriceError">
                       <InputBlockCell :flexible="true">
                         <BasicInput
                           title="금액"
@@ -2044,7 +2040,6 @@ export default {
                           :useDelete="false"
                           align="right"
                           defaultValue="0"
-                          :disabled="true"
                         />
                       </InputBlockCell>
                       <template v-slot:innerRight>

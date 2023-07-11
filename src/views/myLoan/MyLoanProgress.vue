@@ -106,12 +106,20 @@ export default {
       </BasicBoxHead>
       <KeyValue margin="regular">
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">최대한도</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 500만원 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }">
+            최대한도
+          </KeyValueTitle>
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            500만원
+          </KeyValueText>
         </KeyValueItem>
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">예상금리</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 10.9% (60개월 기준) </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }">
+            예상금리
+          </KeyValueTitle>
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            10.9% (60개월 기준)
+          </KeyValueText>
         </KeyValueItem>
       </KeyValue>
 
@@ -163,12 +171,20 @@ export default {
       </BasicBoxHead>
       <KeyValue margin="regular">
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">대출금액/기간</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 400만원/36개월 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }"
+            >대출금액/기간</KeyValueTitle
+          >
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            400만원/36개월
+          </KeyValueText>
         </KeyValueItem>
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">대출금리</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 10.9% </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }">
+            대출금리
+          </KeyValueTitle>
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            10.9%
+          </KeyValueText>
         </KeyValueItem>
       </KeyValue>
 
@@ -216,12 +232,20 @@ export default {
       </BasicBoxHead>
       <KeyValue margin="regular">
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">대출금액/기간</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 400만원/36개월 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }">
+            대출금액/기간
+          </KeyValueTitle>
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            400만원/36개월
+          </KeyValueText>
         </KeyValueItem>
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">대출금리</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 10.9% </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }">
+            대출금리
+          </KeyValueTitle>
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            10.9%
+          </KeyValueText>
         </KeyValueItem>
       </KeyValue>
 
@@ -281,12 +305,20 @@ export default {
       </BasicBoxHead>
       <KeyValue margin="regular">
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">대출금액/기간</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 24,990,000원/36개월 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }">
+            대출금액/기간
+          </KeyValueTitle>
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            24,990,000원/36개월
+          </KeyValueText>
         </KeyValueItem>
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">월납부금액</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 300,000원 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }">
+            월납부금액
+          </KeyValueTitle>
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            300,000원
+          </KeyValueText>
         </KeyValueItem>
       </KeyValue>
 
@@ -338,12 +370,20 @@ export default {
       </BasicBoxHead>
       <KeyValue margin="regular">
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">대출금액/기간</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 24,990,000원/36개월 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }"
+            >대출금액/기간</KeyValueTitle
+          >
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            24,990,000원/36개월
+          </KeyValueText>
         </KeyValueItem>
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">월납부금액</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 300,000원 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }"
+            >월납부금액</KeyValueTitle
+          >
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            300,000원
+          </KeyValueText>
         </KeyValueItem>
       </KeyValue>
 
@@ -406,12 +446,20 @@ export default {
       </BasicBoxHead>
       <KeyValue margin="regular">
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">차량가격</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 24,990,000원 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }"
+            >차량가격</KeyValueTitle
+          >
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            24,990,000원
+          </KeyValueText>
         </KeyValueItem>
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">신청금액</KeyValueTitle>
-          <KeyValueText class="text-body-3">24,990,000원</KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }"
+            >신청금액</KeyValueTitle
+          >
+          <KeyValueText :classNames="{ text: 'text-body-3' }"
+            >24,990,000원</KeyValueText
+          >
         </KeyValueItem>
       </KeyValue>
 
@@ -460,12 +508,20 @@ export default {
       </BasicBoxHead>
       <KeyValue margin="regular">
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">대출금액/기간</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 24,990,000원/36개월 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }"
+            >대출금액/기간</KeyValueTitle
+          >
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            24,990,000원/36개월
+          </KeyValueText>
         </KeyValueItem>
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">월납부금액</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 300,000원 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }"
+            >월납부금액</KeyValueTitle
+          >
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            300,000원
+          </KeyValueText>
         </KeyValueItem>
       </KeyValue>
 
@@ -522,12 +578,20 @@ export default {
       </BasicBoxHead>
       <KeyValue margin="regular">
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">이용기간</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 36개월 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }"
+            >이용기간</KeyValueTitle
+          >
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            36개월
+          </KeyValueText>
         </KeyValueItem>
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">월납부금액</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 770,800원 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }"
+            >월납부금액</KeyValueTitle
+          >
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            770,800원
+          </KeyValueText>
         </KeyValueItem>
       </KeyValue>
 
@@ -590,12 +654,20 @@ export default {
       </BasicBoxHead>
       <KeyValue margin="regular">
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">대출금액/기간</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 24,990,000원/36개월 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }"
+            >대출금액/기간</KeyValueTitle
+          >
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            24,990,000원/36개월
+          </KeyValueText>
         </KeyValueItem>
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">월납부금액</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 300,000원 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }"
+            >월납부금액</KeyValueTitle
+          >
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            300,000원
+          </KeyValueText>
         </KeyValueItem>
       </KeyValue>
 
@@ -652,12 +724,20 @@ export default {
       </BasicBoxHead>
       <KeyValue margin="regular">
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">대출금액/기간</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 24,990,000원/36개월 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }"
+            >대출금액/기간</KeyValueTitle
+          >
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            24,990,000원/36개월
+          </KeyValueText>
         </KeyValueItem>
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">월납부금액</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 300,000원 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }"
+            >월납부금액</KeyValueTitle
+          >
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            300,000원
+          </KeyValueText>
         </KeyValueItem>
       </KeyValue>
 
@@ -715,12 +795,20 @@ export default {
       </BasicBoxHead>
       <KeyValue margin="regular">
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">대출금액/기간</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 24,990,000원/36개월 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }"
+            >대출금액/기간</KeyValueTitle
+          >
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            24,990,000원/36개월
+          </KeyValueText>
         </KeyValueItem>
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">월납부금액</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 300,000원 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }"
+            >월납부금액</KeyValueTitle
+          >
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            300,000원
+          </KeyValueText>
         </KeyValueItem>
       </KeyValue>
 
@@ -778,12 +866,20 @@ export default {
       </BasicBoxHead>
       <KeyValue margin="regular">
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">대출금액/기간</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 24,990,000원/36개월 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }"
+            >대출금액/기간</KeyValueTitle
+          >
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            24,990,000원/36개월
+          </KeyValueText>
         </KeyValueItem>
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">월납부금액</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 300,000원 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }"
+            >월납부금액</KeyValueTitle
+          >
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            300,000원
+          </KeyValueText>
         </KeyValueItem>
       </KeyValue>
 
@@ -838,12 +934,20 @@ export default {
       </BasicBoxHead>
       <KeyValue margin="regular">
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">대출금액/기간</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 24,990,000원/36개월 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }"
+            >대출금액/기간</KeyValueTitle
+          >
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            24,990,000원/36개월
+          </KeyValueText>
         </KeyValueItem>
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">월납부금액</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 300,000원 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }"
+            >월납부금액</KeyValueTitle
+          >
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            300,000원
+          </KeyValueText>
         </KeyValueItem>
       </KeyValue>
 
@@ -901,12 +1005,20 @@ export default {
       </BasicBoxHead>
       <KeyValue margin="regular">
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">대출금액/기간</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 24,990,000원/36개월 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }"
+            >대출금액/기간</KeyValueTitle
+          >
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            24,990,000원/36개월
+          </KeyValueText>
         </KeyValueItem>
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">월납부금액</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 300,000원 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }"
+            >월납부금액</KeyValueTitle
+          >
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            300,000원
+          </KeyValueText>
         </KeyValueItem>
       </KeyValue>
 
@@ -961,12 +1073,20 @@ export default {
       </BasicBoxHead>
       <KeyValue margin="regular">
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">대출금액/기간</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 24,990,000원/36개월 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }"
+            >대출금액/기간</KeyValueTitle
+          >
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            24,990,000원/36개월
+          </KeyValueText>
         </KeyValueItem>
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">월납부금액</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 300,000원 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }"
+            >월납부금액</KeyValueTitle
+          >
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            300,000원
+          </KeyValueText>
         </KeyValueItem>
       </KeyValue>
 
@@ -1021,12 +1141,20 @@ export default {
       </BasicBoxHead>
       <KeyValue margin="regular">
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">대출금액/기간</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 24,990,000원/36개월 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }"
+            >대출금액/기간</KeyValueTitle
+          >
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            24,990,000원/36개월
+          </KeyValueText>
         </KeyValueItem>
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">월납부금액</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 300,000원 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }"
+            >월납부금액</KeyValueTitle
+          >
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            300,000원
+          </KeyValueText>
         </KeyValueItem>
       </KeyValue>
 
@@ -1088,12 +1216,20 @@ export default {
       </BasicBoxHead>
       <KeyValue margin="regular">
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">대출금액/기간</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 24,990,000원/36개월 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }"
+            >대출금액/기간</KeyValueTitle
+          >
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            24,990,000원/36개월
+          </KeyValueText>
         </KeyValueItem>
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">월납부금액</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 300,000원 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }"
+            >월납부금액</KeyValueTitle
+          >
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            300,000원
+          </KeyValueText>
         </KeyValueItem>
       </KeyValue>
 
@@ -1148,12 +1284,20 @@ export default {
       </BasicBoxHead>
       <KeyValue margin="regular">
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">이용기간</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 36개월 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }"
+            >이용기간</KeyValueTitle
+          >
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            36개월
+          </KeyValueText>
         </KeyValueItem>
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">월납부금액</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 770,800원 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }"
+            >월납부금액</KeyValueTitle
+          >
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            770,800원
+          </KeyValueText>
         </KeyValueItem>
       </KeyValue>
 
@@ -1216,12 +1360,20 @@ export default {
       </BasicBoxHead>
       <KeyValue margin="regular">
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">대출금액/기간</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 24,990,000원/36개월 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }"
+            >대출금액/기간</KeyValueTitle
+          >
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            24,990,000원/36개월
+          </KeyValueText>
         </KeyValueItem>
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">월납부금액</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 300,000원 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }"
+            >월납부금액</KeyValueTitle
+          >
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            300,000원
+          </KeyValueText>
         </KeyValueItem>
       </KeyValue>
 
@@ -1240,14 +1392,14 @@ export default {
 
       <ButtonList :classNames="{ wrap: 'row-margin-contents-small' }">
         <ButtonListItem>
-          <BasicButton size="small" theme="tertiary" :minSide="true"
-            >약정내용 확인</BasicButton
-          >
+          <BasicButton size="small" theme="tertiary" :minSide="true">
+            약정내용 확인
+          </BasicButton>
         </ButtonListItem>
         <ButtonListItem>
-          <BasicButton size="small" theme="tertiary" :minSide="true"
-            >서류 등록</BasicButton
-          >
+          <BasicButton size="small" theme="tertiary" :minSide="true">
+            서류 등록
+          </BasicButton>
         </ButtonListItem>
       </ButtonList>
     </BasicBox>
@@ -1286,12 +1438,20 @@ export default {
       </BasicBoxHead>
       <KeyValue margin="regular">
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">대출금액/기간</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 24,990,000원/36개월 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }">
+            대출금액/기간
+          </KeyValueTitle>
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            24,990,000원/36개월
+          </KeyValueText>
         </KeyValueItem>
         <KeyValueItem>
-          <KeyValueTitle class="text-body-3">월납부금액</KeyValueTitle>
-          <KeyValueText class="text-body-3"> 300,000원 </KeyValueText>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }">
+            월납부금액
+          </KeyValueTitle>
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            300,000원
+          </KeyValueText>
         </KeyValueItem>
       </KeyValue>
 

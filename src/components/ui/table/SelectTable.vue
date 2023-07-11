@@ -1,5 +1,13 @@
 <script>
-import { computed, reactive, provide, onMounted, watch, ref } from 'vue';
+import {
+  computed,
+  reactive,
+  provide,
+  onMounted,
+  watch,
+  ref,
+  useCssModule,
+} from 'vue';
 
 const defaultClassNames = () => ({
   wrap: '',
@@ -37,6 +45,10 @@ export default {
     disabled: {
       Type: Boolean,
       default: false,
+    },
+    maxRow: {
+      Type: Number,
+      default: 5,
     },
     onSelected: {
       Type: Function,
@@ -163,6 +175,8 @@ export default {
       }
     );
 
+    provide('selectTableStyleModule', useCssModule());
+
     provide('selectTable', {
       items: state.items,
       itemsAdd,
@@ -195,6 +209,7 @@ export default {
       {
         [$style['select-table--disabled']]: disabled,
         [customClassNames.disabled]: disabled,
+        [$style[`select-table--maxrow-${maxRow}`]]: maxRow,
       },
       customClassNames.wrap,
     ]"

@@ -540,12 +540,12 @@ export default {
                   }"
                 >
                   <ButtonListItem>
-                    <BasicButton theme="quaternary" line="true" size="small">
+                    <BasicButton theme="quaternary" :line="true" size="small">
                       재견적
                     </BasicButton>
                   </ButtonListItem>
                   <ButtonListItem>
-                    <BasicButton line="true" size="small">
+                    <BasicButton :line="true" size="small">
                       견적서 보기
                     </BasicButton>
                   </ButtonListItem>
@@ -757,12 +757,12 @@ export default {
                   }"
                 >
                   <ButtonListItem>
-                    <BasicButton theme="quaternary" line="true" size="small">
+                    <BasicButton theme="quaternary" :line="true" size="small">
                       재견적
                     </BasicButton>
                   </ButtonListItem>
                   <ButtonListItem>
-                    <BasicButton line="true" size="small">
+                    <BasicButton :line="true" size="small">
                       견적서 보기
                     </BasicButton>
                   </ButtonListItem>
@@ -978,17 +978,17 @@ export default {
                   :classNames="{ wrap: 'row-margin-contents-small' }"
                 >
                   <ButtonListItem>
-                    <BasicButton line="true" size="small">
+                    <BasicButton :line="true" size="small">
                       견적서 발송
                     </BasicButton>
                   </ButtonListItem>
                   <ButtonListItem>
-                    <BasicButton line="true" size="small">
+                    <BasicButton :line="true" size="small">
                       견적서 보기
                     </BasicButton>
                   </ButtonListItem>
                   <ButtonListItem>
-                    <BasicButton theme="quaternary" line="true" size="small">
+                    <BasicButton theme="quaternary" :line="true" size="small">
                       재견적
                     </BasicButton>
                   </ButtonListItem>
@@ -1200,17 +1200,17 @@ export default {
                   :classNames="{ wrap: 'row-margin-contents-small' }"
                 >
                   <ButtonListItem>
-                    <BasicButton line="true" size="small">
+                    <BasicButton :line="true" size="small">
                       견적서 발송
                     </BasicButton>
                   </ButtonListItem>
                   <ButtonListItem>
-                    <BasicButton line="true" size="small">
+                    <BasicButton :line="true" size="small">
                       견적서 보기
                     </BasicButton>
                   </ButtonListItem>
                   <ButtonListItem>
-                    <BasicButton theme="quaternary" line="true" size="small">
+                    <BasicButton theme="quaternary" :line="true" size="small">
                       재견적
                     </BasicButton>
                   </ButtonListItem>
@@ -1409,17 +1409,17 @@ export default {
                   :classNames="{ wrap: 'row-margin-contents-small' }"
                 >
                   <ButtonListItem>
-                    <BasicButton line="true" size="small">
+                    <BasicButton :line="true" size="small">
                       견적서 발송
                     </BasicButton>
                   </ButtonListItem>
                   <ButtonListItem>
-                    <BasicButton line="true" size="small">
+                    <BasicButton :line="true" size="small">
                       견적서 보기
                     </BasicButton>
                   </ButtonListItem>
                   <ButtonListItem>
-                    <BasicButton theme="quaternary" line="true" size="small">
+                    <BasicButton theme="quaternary" :line="true" size="small">
                       재견적
                     </BasicButton>
                   </ButtonListItem>
@@ -1678,12 +1678,12 @@ export default {
                   }"
                 >
                   <ButtonListItem>
-                    <BasicButton theme="quaternary" line="true" size="small">
+                    <BasicButton theme="quaternary" :line="true" size="small">
                       재견적
                     </BasicButton>
                   </ButtonListItem>
                   <ButtonListItem>
-                    <BasicButton line="true" size="small">
+                    <BasicButton :line="true" size="small">
                       견적서 보기
                     </BasicButton>
                   </ButtonListItem>
@@ -1945,12 +1945,12 @@ export default {
                   }"
                 >
                   <ButtonListItem>
-                    <BasicButton theme="quaternary" line="true" size="small">
+                    <BasicButton theme="quaternary" :line="true" size="small">
                       재견적
                     </BasicButton>
                   </ButtonListItem>
                   <ButtonListItem>
-                    <BasicButton line="true" size="small">
+                    <BasicButton :line="true" size="small">
                       견적서 보기
                     </BasicButton>
                   </ButtonListItem>
@@ -2152,17 +2152,17 @@ export default {
                   :classNames="{ wrap: 'row-margin-contents-small' }"
                 >
                   <ButtonListItem>
-                    <BasicButton line="true" size="small">
+                    <BasicButton :line="true" size="small">
                       견적서 발송
                     </BasicButton>
                   </ButtonListItem>
                   <ButtonListItem>
-                    <BasicButton line="true" size="small">
+                    <BasicButton :line="true" size="small">
                       견적서 보기
                     </BasicButton>
                   </ButtonListItem>
                   <ButtonListItem>
-                    <BasicButton theme="quaternary" line="true" size="small">
+                    <BasicButton theme="quaternary" :line="true" size="small">
                       재견적
                     </BasicButton>
                   </ButtonListItem>
@@ -2377,17 +2377,17 @@ export default {
                   :classNames="{ wrap: 'row-margin-contents-small' }"
                 >
                   <ButtonListItem>
-                    <BasicButton line="true" size="small">
+                    <BasicButton :line="true" size="small">
                       견적서 발송
                     </BasicButton>
                   </ButtonListItem>
                   <ButtonListItem>
-                    <BasicButton line="true" size="small">
+                    <BasicButton :line="true" size="small">
                       견적서 보기
                     </BasicButton>
                   </ButtonListItem>
                   <ButtonListItem>
-                    <BasicButton theme="quaternary" line="true" size="small">
+                    <BasicButton theme="quaternary" :line="true" size="small">
                       재견적
                     </BasicButton>
                   </ButtonListItem>
@@ -2672,12 +2672,12 @@ export default {
                   }"
                 >
                   <ButtonListItem>
-                    <BasicButton theme="quaternary" line="true" size="small">
+                    <BasicButton theme="quaternary" :line="true" size="small">
                       조건 변경
                     </BasicButton>
                   </ButtonListItem>
                   <ButtonListItem>
-                    <BasicButton line="true" size="small">
+                    <BasicButton :line="true" size="small">
                       견적서 보기
                     </BasicButton>
                   </ButtonListItem>
@@ -2974,12 +2974,12 @@ export default {
                   }"
                 >
                   <ButtonListItem>
-                    <BasicButton theme="quaternary" line="true" size="small">
+                    <BasicButton theme="quaternary" :line="true" size="small">
                       조건 변경
                     </BasicButton>
                   </ButtonListItem>
                   <ButtonListItem>
-                    <BasicButton line="true" size="small">
+                    <BasicButton :line="true" size="small">
                       견적서 보기
                     </BasicButton>
                   </ButtonListItem>
@@ -3273,17 +3273,17 @@ export default {
                   }"
                 >
                   <ButtonListItem>
-                    <BasicButton line="true" size="small">
+                    <BasicButton :line="true" size="small">
                       견적서 발송
                     </BasicButton>
                   </ButtonListItem>
                   <ButtonListItem>
-                    <BasicButton line="true" size="small">
+                    <BasicButton :line="true" size="small">
                       견적서 보기
                     </BasicButton>
                   </ButtonListItem>
                   <ButtonListItem>
-                    <BasicButton theme="quaternary" line="true" size="small">
+                    <BasicButton theme="quaternary" :line="true" size="small">
                       조건 변경
                     </BasicButton>
                   </ButtonListItem>
@@ -3305,17 +3305,17 @@ export default {
                     }"
                   >
                     <ButtonListItem>
-                      <BasicButton theme="quaternary" line="true" size="small">
+                      <BasicButton theme="quaternary" :line="true" size="small">
                         조건 변경
                       </BasicButton>
                     </ButtonListItem>
                     <ButtonListItem>
-                      <BasicButton line="true" size="small">
+                      <BasicButton :line="true" size="small">
                         견적서 발송
                       </BasicButton>
                     </ButtonListItem>
                     <ButtonListItem>
-                      <BasicButton line="true" size="small">
+                      <BasicButton :line="true" size="small">
                         견적서 보기
                       </BasicButton>
                     </ButtonListItem>
@@ -3344,12 +3344,12 @@ export default {
                     }"
                   >
                     <ButtonListItem>
-                      <BasicButton theme="quaternary" line="true" size="small">
+                      <BasicButton theme="quaternary" :line="true" size="small">
                         조건 변경
                       </BasicButton>
                     </ButtonListItem>
                     <ButtonListItem>
-                      <BasicButton line="true" size="small">
+                      <BasicButton :line="true" size="small">
                         견적서 보기
                       </BasicButton>
                     </ButtonListItem>
@@ -3589,17 +3589,17 @@ export default {
                   }"
                 >
                   <ButtonListItem>
-                    <BasicButton line="true" size="small">
+                    <BasicButton :line="true" size="small">
                       견적서 발송
                     </BasicButton>
                   </ButtonListItem>
                   <ButtonListItem>
-                    <BasicButton line="true" size="small">
+                    <BasicButton :line="true" size="small">
                       견적서 보기
                     </BasicButton>
                   </ButtonListItem>
                   <ButtonListItem>
-                    <BasicButton theme="quaternary" line="true" size="small">
+                    <BasicButton theme="quaternary" :line="true" size="small">
                       조건 변경
                     </BasicButton>
                   </ButtonListItem>
@@ -3621,17 +3621,17 @@ export default {
                     }"
                   >
                     <ButtonListItem>
-                      <BasicButton theme="quaternary" line="true" size="small">
+                      <BasicButton theme="quaternary" :line="true" size="small">
                         조건 변경
                       </BasicButton>
                     </ButtonListItem>
                     <ButtonListItem>
-                      <BasicButton line="true" size="small">
+                      <BasicButton :line="true" size="small">
                         견적서 발송
                       </BasicButton>
                     </ButtonListItem>
                     <ButtonListItem>
-                      <BasicButton line="true" size="small">
+                      <BasicButton :line="true" size="small">
                         견적서 보기
                       </BasicButton>
                     </ButtonListItem>
@@ -3903,7 +3903,7 @@ export default {
                   }"
                 >
                   <ButtonListItem>
-                    <BasicButton line="true" size="small">
+                    <BasicButton :line="true" size="small">
                       견적서 보기
                     </BasicButton>
                   </ButtonListItem>
@@ -4164,7 +4164,7 @@ export default {
                   }"
                 >
                   <ButtonListItem>
-                    <BasicButton line="true" size="small">
+                    <BasicButton :line="true" size="small">
                       견적서 보기
                     </BasicButton>
                   </ButtonListItem>
@@ -4412,12 +4412,12 @@ export default {
                   }"
                 >
                   <ButtonListItem>
-                    <BasicButton line="true" size="small">
+                    <BasicButton :line="true" size="small">
                       견적서 발송
                     </BasicButton>
                   </ButtonListItem>
                   <ButtonListItem>
-                    <BasicButton line="true" size="small"
+                    <BasicButton :line="true" size="small"
                       >견적서 보기</BasicButton
                     >
                   </ButtonListItem>
@@ -4642,12 +4642,12 @@ export default {
                   }"
                 >
                   <ButtonListItem>
-                    <BasicButton line="true" size="small">
+                    <BasicButton :line="true" size="small">
                       견적서 발송
                     </BasicButton>
                   </ButtonListItem>
                   <ButtonListItem>
-                    <BasicButton line="true" size="small"
+                    <BasicButton :line="true" size="small"
                       >견적서 보기</BasicButton
                     >
                   </ButtonListItem>
@@ -4919,7 +4919,7 @@ export default {
                   }"
                 >
                   <ButtonListItem>
-                    <BasicButton line="true" size="small">
+                    <BasicButton :line="true" size="small">
                       견적서 보기
                     </BasicButton>
                   </ButtonListItem>
@@ -5191,7 +5191,7 @@ export default {
                   }"
                 >
                   <ButtonListItem>
-                    <BasicButton line="true" size="small">
+                    <BasicButton :line="true" size="small">
                       견적서 보기
                     </BasicButton>
                   </ButtonListItem>
@@ -5452,7 +5452,7 @@ export default {
 
                 <!-- Case : 송금완료 - 대리점 출고 -->
                 <div class="row-margin-contents-small">
-                  <BasicButton line="true" size="small">
+                  <BasicButton :line="true" size="small">
                     견적서 보기
                   </BasicButton>
 
@@ -5481,7 +5481,7 @@ export default {
                     }"
                   >
                     <ButtonListItem>
-                      <BasicButton line="true" size="small">
+                      <BasicButton :line="true" size="small">
                         견적서 보기
                       </BasicButton>
                     </ButtonListItem>
@@ -5494,7 +5494,7 @@ export default {
 
                 <!-- Case : 차량등록완료 -->
                 <div class="row-margin-contents-small">
-                  <BasicButton line="true" size="small">
+                  <BasicButton :line="true" size="small">
                     견적서 보기
                   </BasicButton>
 
@@ -5517,7 +5517,7 @@ export default {
 
                 <!-- Case : 실행완료 -->
                 <BasicButton
-                  line="true"
+                  :line="true"
                   size="small"
                   :classNames="{ wrap: 'row-margin-contents-small' }"
                 >
@@ -5753,12 +5753,12 @@ export default {
                     }"
                   >
                     <ButtonListItem>
-                      <BasicButton line="true" size="small">
+                      <BasicButton :line="true" size="small">
                         견적서 발송
                       </BasicButton>
                     </ButtonListItem>
                     <ButtonListItem>
-                      <BasicButton line="true" size="small">
+                      <BasicButton :line="true" size="small">
                         견적서 보기
                       </BasicButton>
                     </ButtonListItem>

@@ -147,8 +147,8 @@ export default {
       }
 
       if (
-        (popupHead && scrollTop < offsetTop - popupHeadH - stickyH) ||
-        scrollTop < offsetTop - headerH.value - stickyH
+        (popupHead && scrollTop <= offsetTop - popupHeadH - stickyH) ||
+        scrollTop <= offsetTop - headerH.value - stickyH
       ) {
         if (state.isSticky) {
           state.isSticky = false;

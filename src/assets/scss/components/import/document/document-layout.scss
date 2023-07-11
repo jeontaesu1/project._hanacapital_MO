@@ -1,0 +1,9 @@
+.document-layout {
+  min-height: 100%;
+  background-color: $color-gray-10;
+
+  @media print {
+    min-height: 0;
+    background-color: transparent;
+  }
+}

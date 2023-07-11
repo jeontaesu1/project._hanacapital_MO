@@ -27,15 +27,14 @@ import IconMoney from '@/assets/images/icon/money.svg?component';
 import IconRate from '@/assets/images/icon/rate.svg?component';
 import IconDate from '@/assets/images/icon/date.svg?component';
 import IconCommision from '@/assets/images/icon/commission.svg?component';
-import IconCalculate from '@/assets/images/icon/calculate.svg?component';
 import IconSearchMoney from '@/assets/images/icon/search-money.svg?component';
 import IconPersonalTerms from '@/assets/images/icon/personal-terms.svg?component';
 import IconSend from '@/assets/images/icon/send.svg?component';
 import IconContract from '@/assets/images/icon/contract.svg?component';
 import IconDeposit from '@/assets/images/icon/deposit.svg?component';
+import IconCalculate from '@/assets/images/icon/calculate.svg?component';
 import ImgZeroCommission from '@/assets/images/illustration/img-zero-commission.svg';
 import Img120Months from '@/assets/images/illustration/img-120months.svg?component';
-import ImgSample from '@/assets/images/_dummy/illustration-sample.svg?component';
 
 export default {
   components: {
@@ -60,15 +59,14 @@ export default {
     IconRate,
     IconDate,
     IconCommision,
-    IconCalculate,
     IconSearchMoney,
     IconPersonalTerms,
     IconSend,
     IconContract,
     IconDeposit,
+    IconCalculate,
     ImgZeroCommission,
     Img120Months,
-    ImgSample,
   },
   setup() {
     const store = {
@@ -113,7 +111,7 @@ export default {
       </PageTextGroup>
 
       <div :class="[$style['illustration-img'], 'row-margin-contents']">
-        <ImgSample />
+        <img src="@/assets/images/contents/img-unsecured-loan.png" alt="" />
       </div>
 
       <BasicBox theme="secondary">
@@ -136,7 +134,9 @@ export default {
               </div>
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">금리</div>
-                <div :class="$style['product-detail__desc']">연 5.9~18.9%</div>
+                <div :class="$style['product-detail__desc']">
+                  연 5.9 ~ 18.9%
+                </div>
               </div>
             </li>
             <li :class="$style['product-detail__item']">
@@ -145,7 +145,7 @@ export default {
               </div>
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">기간</div>
-                <div :class="$style['product-detail__desc']">12~120개월</div>
+                <div :class="$style['product-detail__desc']">12 ~ 84개월</div>
               </div>
             </li>
             <li :class="$style['product-detail__item']">
@@ -208,25 +208,22 @@ export default {
           <KeyValue align="left" margin="regular">
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>대상</KeyValueTitle>
-              <KeyValueText>
-                ① 재직기간 6개월 이상 직장인<br />
-                ② 그 외 당사 기준 충족 손님
-              </KeyValueText>
+              <KeyValueText>재직기간 6개월 이상 직장인</KeyValueText>
             </KeyValueItem>
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>한도</KeyValueTitle>
-              <KeyValueText>최소 300만원 ~ 최대 6억원</KeyValueText>
+              <KeyValueText>최대 1억원 (최저 300만원)</KeyValueText>
             </KeyValueItem>
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>금리</KeyValueTitle>
-              <KeyValueText> 연 5.9% ~ 18.9%</KeyValueText>
+              <KeyValueText>연 5.9% ~ 18.9%</KeyValueText>
             </KeyValueItem>
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>기간</KeyValueTitle>
-              <KeyValueText> 12개월 ~ 120개월</KeyValueText>
+              <KeyValueText>12개월 ~ 84개월</KeyValueText>
             </KeyValueItem>
           </KeyValue>
         </BasicBox>
@@ -288,7 +285,7 @@ export default {
 
           <KeyValueItem>
             <KeyValueTitle>이자부과시기</KeyValueTitle>
-            <KeyValueText> 매월 후취 </KeyValueText>
+            <KeyValueText>매월 후취</KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem>

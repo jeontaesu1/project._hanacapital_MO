@@ -15,7 +15,8 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 
-import ImgSample from '@/assets/images/_dummy/illustration-sample.svg?component';
+import ImgSecurity from '@/assets/images/illustration/img-security.svg?component';
+import ImgConvenient from '@/assets/images/illustration/img-convenient.svg?component';
 
 export default {
   components: {
@@ -31,7 +32,8 @@ export default {
     BasicButton,
     BasicHr,
     PopupTitle,
-    ImgSample,
+    ImgSecurity,
+    ImgConvenient,
   },
   setup() {
     const layer = ref(null);
@@ -86,7 +88,7 @@ export default {
             또한 마스크 쓴 얼굴을 등록하면 마스크를 쓰고도 인증이 가능합니다.
           </p>
           <div :class="[$style['illustration-img'], 'row-margin-container']">
-            <ImgSample />
+            <ImgSecurity />
           </div>
         </section>
         <section class="row-margin-container-medium">
@@ -108,7 +110,7 @@ export default {
             </li>
           </ul>
           <div :class="[$style['illustration-img'], 'row-margin-container']">
-            <ImgSample />
+            <ImgConvenient />
           </div>
         </section>
       </div>

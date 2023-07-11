@@ -77,23 +77,21 @@ export default {
         </FormInvalidMessage>
       </FormInvalid>
 
-      <template v-slot:foot>
-        <div :class="$style['flex-box']">
-          <TextButton
-            :classNames="{ wrap: 'text-body-4 color-gray' }"
-            :underline="true"
-          >
-            간편비밀번호를 잊으셨나요?
-          </TextButton>
+      <div :class="[$style['flex-box'], 'row-margin-container-medium']">
+        <TextButton
+          :classNames="{ wrap: 'text-body-4 color-gray' }"
+          :underline="true"
+        >
+          간편비밀번호를 잊으셨나요?
+        </TextButton>
 
-          <TextButton theme="quaternary" :classNames="{ wrap: 'text-body-4' }">
-            다른 로그인 방식
-            <template v-slot:rightIcon>
-              <IconArrow />
-            </template>
-          </TextButton>
-        </div>
-      </template>
+        <TextButton theme="quaternary" :classNames="{ wrap: 'text-body-4' }">
+          다른 로그인 방식
+          <template v-slot:rightIcon>
+            <IconArrow />
+          </template>
+        </TextButton>
+      </div>
     </FullPopup>
   </UiLayer>
 </template>
