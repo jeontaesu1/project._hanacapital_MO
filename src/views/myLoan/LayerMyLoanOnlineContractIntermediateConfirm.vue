@@ -176,7 +176,7 @@ export default {
               <li :class="$style['basic-list__item']">
                 <div :class="$style['basic-list__symbol']"></div>
                 <div :class="$style['basic-list__content']">
-                  최초 이자는 여신개시일로부터 1개월 이내에, 그 후의 이자는
+                  최초 이자는 여신개시일로부터 2개월 이내에, 그 후의 이자는
                   지급한 이자계산 최종일 익일부터 1개월 이내에 지급합니다.
                 </div>
               </li>
