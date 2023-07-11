@@ -87,7 +87,7 @@ export default {
 
       <!-- Case : 대상건이 있는 경우 -->
       <ul class="reset-list">
-        <li v-for="i in 3" :key="i" class="row-margin-item-group">
+        <li class="row-margin-item-group">
           <BasicBox>
             <BasicBoxHead>
               <BasicBoxHeadLeft>
@@ -112,7 +112,7 @@ export default {
                   item: 'text-body-3',
                 }"
               >
-                <KeyValueTitle>약정 제출</KeyValueTitle>
+                <KeyValueTitle>약정 완료 여부</KeyValueTitle>
                 <KeyValueText>N</KeyValueText>
               </KeyValueItem>
 
@@ -129,7 +129,101 @@ export default {
                 size="small"
                 :classNames="{ wrap: 'row-margin-contents-small' }"
               >
-                승계신청
+                승계 신청
+              </BasicButton>
+            </KeyValue>
+          </BasicBox>
+        </li>
+        <li class="row-margin-item-group">
+          <BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-body-1 font-weight-medium">
+                  아현 푸르지오 클라시티 V1 5동 101호
+                </h3>
+              </BasicBoxHeadLeft>
+            </BasicBoxHead>
+
+            <KeyValue margin="regular">
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>양도인</KeyValueTitle>
+                <KeyValueText>김하나</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>약정 완료 여부</KeyValueTitle>
+                <KeyValueText>Y</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>서류 제출</KeyValueTitle>
+                <KeyValueText>N</KeyValueText>
+              </KeyValueItem>
+
+              <BasicButton
+                size="small"
+                :classNames="{ wrap: 'row-margin-contents-small' }"
+              >
+                서류 등록
+              </BasicButton>
+            </KeyValue>
+          </BasicBox>
+        </li>
+        <li class="row-margin-item-group">
+          <BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-body-1 font-weight-medium">
+                  아현 푸르지오 클라시티 V1 5동 101호
+                </h3>
+              </BasicBoxHeadLeft>
+            </BasicBoxHead>
+
+            <KeyValue margin="regular">
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>양도인</KeyValueTitle>
+                <KeyValueText>김하나</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>약정 완료 여부</KeyValueTitle>
+                <KeyValueText>Y</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>서류 제출</KeyValueTitle>
+                <KeyValueText>Y</KeyValueText>
+              </KeyValueItem>
+
+              <BasicButton
+                size="small"
+                :classNames="{ wrap: 'row-margin-contents-small' }"
+              >
+                서류 등록
               </BasicButton>
             </KeyValue>
           </BasicBox>

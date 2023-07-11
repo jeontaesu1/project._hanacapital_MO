@@ -66,10 +66,7 @@ export default {
           승계 신청이<br />
           <strong>완료되었습니다</strong>
         </PageMainText>
-        <PageSubText>
-          <span class="color-green">010-1234-5678</span>으로 승계 신청 문자가<br />
-          정상적으로 발송되었습니다.
-        </PageSubText>
+        <PageSubText>하나캐피탈을 이용해주셔서 감사합니다.</PageSubText>
       </PageTextGroup>
 
       <IllustObject type="complete" />
