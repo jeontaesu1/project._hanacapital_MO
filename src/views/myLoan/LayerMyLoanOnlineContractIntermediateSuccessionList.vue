@@ -172,12 +172,14 @@ export default {
                 <KeyValueText>N</KeyValueText>
               </KeyValueItem>
 
+              <!-- Case : 약정 완료 시 노출 -->
               <BasicButton
                 size="small"
                 :classNames="{ wrap: 'row-margin-contents-small' }"
               >
                 서류 등록
               </BasicButton>
+              <!-- // Case : 약정 완료 시 노출 -->
             </KeyValue>
           </BasicBox>
         </li>
@@ -219,12 +221,14 @@ export default {
                 <KeyValueText>Y</KeyValueText>
               </KeyValueItem>
 
+              <!-- Case : 약정 완료 시 노출 -->
               <BasicButton
                 size="small"
                 :classNames="{ wrap: 'row-margin-contents-small' }"
               >
                 서류 등록
               </BasicButton>
+              <!-- // Case : 약정 완료 시 노출 -->
             </KeyValue>
           </BasicBox>
         </li>
