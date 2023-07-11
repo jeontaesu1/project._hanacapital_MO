@@ -28,6 +28,7 @@ import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
+import NoticeText from '@/components/ui/text/NoticeText.vue';
 
 export default {
   components: {
@@ -57,14 +58,15 @@ export default {
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
+    NoticeText,
   },
   setup() {
     const state = reactive({
       productError: false,
       priceError: false,
-      periodError: false,
-      depositError001: false,
-      depositError002: false,
+      periodError001: false,
+      periodError002: false,
+      depositError: false,
       depositMedicalError: false,
       depositScreenError: false,
       principalError: false,
@@ -94,14 +96,15 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>설비리스 견적 정보를</strong><br />
+          <strong>원하시는 이용조건을</strong><br />
           입력해 주세요
         </PageMainText>
       </PageTextGroup>
 
       <div>
         <FormList>
-          <FormListItem titleText="상품구분" :forceFocus="true">
+          <!-- Case : 'GE헬스케어' 선택 시 노출 -->
+          <FormListItem titleText="금융조건" :forceFocus="true">
             <FormInvalid :error="state.productError">
               <BoxCheckList>
                 <BoxCheckListItem>
@@ -111,7 +114,7 @@ export default {
                     id="layerBusinessEquipmentLeaseEstimateCheckList001_001"
                     :defaultChecked="true"
                   >
-                    <BoxCheckLabel>의료기</BoxCheckLabel>
+                    <BoxCheckLabel>제휴금리</BoxCheckLabel>
                   </BoxCheck>
                 </BoxCheckListItem>
                 <BoxCheckListItem>
@@ -120,16 +123,17 @@ export default {
                     name="layerBusinessEquipmentLeaseEstimateCheckList001"
                     id="layerBusinessEquipmentLeaseEstimateCheckList001_002"
                   >
-                    <BoxCheckLabel>스크린골프</BoxCheckLabel>
+                    <BoxCheckLabel>무이자</BoxCheckLabel>
                   </BoxCheck>
                 </BoxCheckListItem>
               </BoxCheckList>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
+          <!-- // Case : 'GE헬스케어' 선택 시 노출 -->
 
           <FormListItem
-            titleText="취득원가"
+            titleText="이용금액"
             target="#layerBusinessEquipmentLeaseEstimateName"
           >
             <FormInvalid :error="state.priceError">
@@ -137,7 +141,7 @@ export default {
                 <InputBlockCell :flexible="true">
                   <BasicInput
                     align="right"
-                    title="취득원가"
+                    title="이용금액"
                     id="layerBusinessEquipmentLeaseEstimateName"
                   />
                 </InputBlockCell>
@@ -149,8 +153,9 @@ export default {
             </FormInvalid>
           </FormListItem>
 
+          <!-- Case : '의료기', '스크린골프' 선택 시 노출 -->
           <FormListItem titleText="기간선택" :forceFocus="true">
-            <FormInvalid :error="state.periodError">
+            <FormInvalid :error="state.periodError001">
               <BoxCheckList :wrap="true" :col="3">
                 <BoxCheckListItem>
                   <BoxCheck
@@ -201,16 +206,62 @@ export default {
               </BoxCheckList>
             </FormInvalid>
           </FormListItem>
+          <!-- // Case : '의료기', '스크린골프' 선택 시 노출 -->
 
-          <!-- Case : '의료기' 선택 시 노출 -->
-          <FormListItem titleText="보증금" :forceFocus="true">
-            <FormInvalid :error="state.depositError001">
-              <BoxCheckList :classNames="{ wrap: 'row-margin-item-group' }">
+          <!-- Case : 'GE헬스케어' 선택 시 노출 -->
+          <FormListItem titleText="기간선택" :forceFocus="true">
+            <FormInvalid :error="state.periodError002">
+              <BoxCheckList :wrap="true" :col="4">
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
                     name="layerBusinessEquipmentLeaseEstimateCheckList003"
                     id="layerBusinessEquipmentLeaseEstimateCheckList003_001"
+                    :defaultChecked="true"
+                  >
+                    <BoxCheckLabel>12개월</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="layerBusinessEquipmentLeaseEstimateCheckList003"
+                    id="layerBusinessEquipmentLeaseEstimateCheckList003_002"
+                  >
+                    <BoxCheckLabel>24개월</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="layerBusinessEquipmentLeaseEstimateCheckList003"
+                    id="layerBusinessEquipmentLeaseEstimateCheckList003_003"
+                  >
+                    <BoxCheckLabel>36개월</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="layerBusinessEquipmentLeaseEstimateCheckList003"
+                    id="layerBusinessEquipmentLeaseEstimateCheckList003_004"
+                  >
+                    <BoxCheckLabel>48개월</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+              </BoxCheckList>
+            </FormInvalid>
+          </FormListItem>
+          <!-- // Case : 'GE헬스케어' 선택 시 노출 -->
+
+          <FormListItem titleText="보증금" :forceFocus="true">
+            <FormInvalid :error="state.depositError">
+              <BoxCheckList :classNames="{ wrap: 'row-margin-item-group' }">
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="layerBusinessEquipmentLeaseEstimateCheckList004"
+                    id="layerBusinessEquipmentLeaseEstimateCheckList004_001"
                     :defaultChecked="true"
                   >
                     <BoxCheckLabel>0%</BoxCheckLabel>
@@ -219,8 +270,8 @@ export default {
                 <BoxCheckListItem>
                   <BoxCheck
                     :minSide="true"
-                    name="layerBusinessEquipmentLeaseEstimateCheckList003"
-                    id="layerBusinessEquipmentLeaseEstimateCheckList003_002"
+                    name="layerBusinessEquipmentLeaseEstimateCheckList004"
+                    id="layerBusinessEquipmentLeaseEstimateCheckList004_002"
                   >
                     <BoxCheckLabel>10%</BoxCheckLabel>
                   </BoxCheck>
@@ -246,93 +297,8 @@ export default {
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
-          <!-- // Case : '의료기' 선택 시 노출 -->
 
           <!-- Case : '스크린골프' 선택 시 노출 -->
-          <FormListItem titleText="보증금" :forceFocus="true">
-            <FormInvalid :error="state.depositError002">
-              <BoxCheckList
-                :wrap="true"
-                col="3"
-                :classNames="{ wrap: 'row-margin-item-group' }"
-              >
-                <BoxCheckListItem>
-                  <BoxCheck
-                    :minSide="true"
-                    name="layerBusinessEquipmentLeaseEstimateCheckList004"
-                    id="layerBusinessEquipmentLeaseEstimateCheckList004_001"
-                    :defaultChecked="true"
-                  >
-                    <BoxCheckLabel>0%</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-                <BoxCheckListItem>
-                  <BoxCheck
-                    :minSide="true"
-                    name="layerBusinessEquipmentLeaseEstimateCheckList004"
-                    id="layerBusinessEquipmentLeaseEstimateCheckList004_002"
-                  >
-                    <BoxCheckLabel>10%</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-                <BoxCheckListItem>
-                  <BoxCheck
-                    :minSide="true"
-                    name="layerBusinessEquipmentLeaseEstimateCheckList004"
-                    id="layerBusinessEquipmentLeaseEstimateCheckList004_003"
-                  >
-                    <BoxCheckLabel>20%</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-                <BoxCheckListItem>
-                  <BoxCheck
-                    :minSide="true"
-                    name="layerBusinessEquipmentLeaseEstimateCheckList004"
-                    id="layerBusinessEquipmentLeaseEstimateCheckList004_004"
-                  >
-                    <BoxCheckLabel>30%</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-                <BoxCheckListItem>
-                  <BoxCheck
-                    :minSide="true"
-                    name="layerBusinessEquipmentLeaseEstimateCheckList004"
-                    id="layerBusinessEquipmentLeaseEstimateCheckList004_005"
-                  >
-                    <BoxCheckLabel>40%</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-                <BoxCheckListItem>
-                  <BoxCheck
-                    :minSide="true"
-                    name="layerBusinessEquipmentLeaseEstimateCheckList004"
-                    id="layerBusinessEquipmentLeaseEstimateCheckList004_006"
-                  >
-                    <BoxCheckLabel>50%</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-              </BoxCheckList>
-
-              <InputBlock :error="state.depositScreenError" :disabled="true">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    align="right"
-                    :useDelete="false"
-                    pattern="\d*"
-                    title="보증금"
-                    id="layerBusinessEquipmentLeaseEstimateCheckListDepositScreen01"
-                    defaultValue="10,002,120"
-                    :disabled="true"
-                  />
-                </InputBlockCell>
-                <template v-slot:innerRight>
-                  <div class="text-body-3">원</div>
-                </template>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-
           <FormListItem titleText="유예원금" :forceFocus="true">
             <FormInvalid :error="state.principalError">
               <BoxCheckList
@@ -441,45 +407,65 @@ export default {
               }"
             >
               <KeyValueTitle>상환금리</KeyValueTitle>
-              <KeyValueText>약 10.5%</KeyValueText>
+              <KeyValueText>최저 00.0% ~ 최대 00.0%</KeyValueText>
             </KeyValueItem>
+
+            <!-- Case : 'GE헬스케어' 선택 시 노출 -->
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
+            >
+              <KeyValueTitle>상환금리</KeyValueTitle>
+              <KeyValueText>00.0%</KeyValueText>
+            </KeyValueItem>
+            <!-- // Case : 'GE헬스케어' 선택 시 노출 -->
+
             <KeyValueItem
               :classNames="{
                 item: 'text-body-3',
               }"
             >
               <KeyValueTitle>월리스료</KeyValueTitle>
-              <KeyValueText>약 2,000,000 원</KeyValueText>
+              <KeyValueText>2,000,000 원~</KeyValueText>
             </KeyValueItem>
           </KeyValue>
         </BasicBox>
 
-        <section :class="[$style['notice-section'], 'row-margin-contents']">
-          <h4 :class="$style['notice-section__title']">견적시 유의사항</h4>
-          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
-            <li :class="$style['basic-list__item']">
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                상기 견적은 금융조건에 따라 변동될 수 있으며, 리스(상담) 신청 시
-                정확한 견적 확인이 가능합니다.
-              </div>
-            </li>
-            <li :class="$style['basic-list__item']">
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                장비의 보험조건은 ‘이용자 책임 부보’ 조건입니다.
-              </div>
-            </li>
-            <li :class="$style['basic-list__item']">
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                하나캐피탈㈜는 손님의 리스료 미납 등 채무불이행 및 리스물건
-                반납의무 위반을 대비하여 보증보험회사와 신용보험 계약을 체결할
-                수 있습니다.
-              </div>
-            </li>
-          </ul>
-        </section>
+        <div class="row-margin-contents">
+          <section :class="$style['notice-section']">
+            <h4 :class="$style['notice-section__title']">견적시 유의사항</h4>
+
+            <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+              <li :class="$style['basic-list__item']">
+                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__content']">
+                  상기 견적은 금융조건에 따라 변동될 수 있으며, 리스(상담) 신청
+                  시 정확한 견적 확인이 가능합니다.
+                </div>
+              </li>
+              <li :class="$style['basic-list__item']">
+                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__content']">
+                  장비의 보험조건은 ‘이용자 책임 부보’ 조건입니다.
+                </div>
+              </li>
+              <li :class="$style['basic-list__item']">
+                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__content']">
+                  하나캐피탈㈜는 손님의 리스료 미납 등 채무불이행 및 리스물건
+                  반납의무 위반을 대비하여 보증보험회사와 신용보험 계약을 체결할
+                  수 있습니다.
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <NoticeText :classNames="{ wrap: 'color-red row-margin-item' }">
+            상담신청 이전에 꼭 신분증, 의사면허증, 사업자등록증, 자동이체통장
+            이미지를 준비해 주세요.
+          </NoticeText>
+        </div>
       </section>
       <!-- // Case : 견적계산 누른 후 노출 -->
 
@@ -490,7 +476,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton>리스 신청</BasicButton>
+            <BasicButton>상담 신청</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

@@ -143,11 +143,6 @@ export default {
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer004Open">
-          정보입력<br />BF_M05_l004
-        </BasicButton>
-      </ButtonListItem>
-      <ButtonListItem>
         <BasicButton @click="layer005Open">
           신청 완료<br />BF_M05_l005
         </BasicButton>
