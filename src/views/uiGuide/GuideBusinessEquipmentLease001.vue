@@ -9,7 +9,6 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import LayerBusinessEquipmentLeaseEstimate from '@/views/business/LayerBusinessEquipmentLeaseEstimate.vue';
 import LayerBusinessEquipmentLeaseEstimateAgree from '@/views/business/LayerBusinessEquipmentLeaseEstimateAgree.vue';
 import LayerBusinessEquipmentLeaseEstimateConfirm from '@/views/business/LayerBusinessEquipmentLeaseEstimateConfirm.vue';
-import LayerBusinessEquipmentLeaseEstimateForm from '@/views/business/LayerBusinessEquipmentLeaseEstimateForm.vue';
 import LayerBusinessEquipmentLeaseEstimateComplete from '@/views/business/LayerBusinessEquipmentLeaseEstimateComplete.vue';
 import BF_M05_l014 from '@/views/business/BF_M05_l014.vue';
 import BF_M05_l015 from '@/views/business/BF_M05_l015.vue';
@@ -28,7 +27,6 @@ export default {
     LayerBusinessEquipmentLeaseEstimate,
     LayerBusinessEquipmentLeaseEstimateAgree,
     LayerBusinessEquipmentLeaseEstimateConfirm,
-    LayerBusinessEquipmentLeaseEstimateForm,
     LayerBusinessEquipmentLeaseEstimateComplete,
     BF_M05_l014,
     BF_M05_l015,
@@ -50,7 +48,6 @@ export default {
     const layer009 = ref(null);
     const layer010 = ref(null);
     const layer011 = ref(null);
-    const layer012 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -85,9 +82,6 @@ export default {
     const layer011Open = (e = {}) => {
       layer011.value.layer.open(e.target);
     };
-    const layer012Open = (e = {}) => {
-      layer012.value.layer.open(e.target);
-    };
 
     return {
       layer001,
@@ -101,7 +95,6 @@ export default {
       layer009,
       layer010,
       layer011,
-      layer012,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -113,7 +106,6 @@ export default {
       layer009Open,
       layer010Open,
       layer011Open,
-      layer012Open,
     };
   },
 };
@@ -143,42 +135,42 @@ export default {
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer005Open">
+        <BasicButton @click="layer004Open">
           신청 완료<br />BF_M05_l005
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer006Open">
+        <BasicButton @click="layer005Open">
           상품선택<br />BF_M05_l014
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer007Open">
+        <BasicButton @click="layer006Open">
           사업자 정보 입력<br />BF_M05_l015
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer008Open">
+        <BasicButton @click="layer007Open">
           서비스이용약관동의<br />BF_M05_l016
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer009Open">
+        <BasicButton @click="layer008Open">
           심사결과(시스템심사)<br />BF_M05_l017
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer010Open">
+        <BasicButton @click="layer009Open">
           심사결과(정밀심사)<br />BF_M05_l018
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer011Open">
+        <BasicButton @click="layer010Open">
           심사결과(부결)<br />BF_M05_l019
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer012Open">
+        <BasicButton @click="layer011Open">
           견적서보기<br />BF_M05_l020
         </BasicButton>
       </ButtonListItem>
@@ -187,14 +179,13 @@ export default {
     <LayerBusinessEquipmentLeaseEstimate ref="layer001" />
     <LayerBusinessEquipmentLeaseEstimateAgree ref="layer002" />
     <LayerBusinessEquipmentLeaseEstimateConfirm ref="layer003" />
-    <LayerBusinessEquipmentLeaseEstimateForm ref="layer004" />
-    <LayerBusinessEquipmentLeaseEstimateComplete ref="layer005" />
-    <BF_M05_l014 ref="layer006" />
-    <BF_M05_l015 ref="layer007" />
-    <BF_M05_l016 ref="layer008" />
-    <BF_M05_l017 ref="layer009" />
-    <BF_M05_l018 ref="layer010" />
-    <BF_M05_l019 ref="layer011" />
-    <BF_M05_l020 ref="layer012" />
+    <LayerBusinessEquipmentLeaseEstimateComplete ref="layer004" />
+    <BF_M05_l014 ref="layer005" />
+    <BF_M05_l015 ref="layer006" />
+    <BF_M05_l016 ref="layer007" />
+    <BF_M05_l017 ref="layer008" />
+    <BF_M05_l018 ref="layer009" />
+    <BF_M05_l019 ref="layer010" />
+    <BF_M05_l020 ref="layer011" />
   </PageContents>
 </template>
