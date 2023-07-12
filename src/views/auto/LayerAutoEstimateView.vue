@@ -10,6 +10,9 @@ import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
+import DocumentView from '@/components/ui/viewer/DocumentView.vue';
+
+import DocumentEstimate001Contents from '@/views/document/DocumentEstimate001Contents.vue';
 
 export default {
   components: {
@@ -21,6 +24,8 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicButton,
+    DocumentView,
+    DocumentEstimate001Contents,
   },
   setup() {
     const layer = ref(null);
@@ -44,9 +49,9 @@ export default {
         </FullPopupHead>
       </template>
 
-      <div :class="$style['image-view']">
-        <img src="@/assets/images/_dummy/box-detail.png" alt="" />
-      </div>
+      <DocumentView v-if="layerSlotProps.display !== 'none'">
+        <DocumentEstimate001Contents />
+      </DocumentView>
 
       <template v-slot:foot>
         <ButtonList
@@ -62,7 +67,3 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/auto/LayerAutoEstimateView.scss';
-</style>

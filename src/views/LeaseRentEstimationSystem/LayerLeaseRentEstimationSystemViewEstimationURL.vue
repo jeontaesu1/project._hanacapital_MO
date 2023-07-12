@@ -7,6 +7,12 @@ import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
+import DocumentView from '@/components/ui/viewer/DocumentView.vue';
+
+import DocumentEstimate001Contents from '@/views/document/DocumentEstimate001Contents.vue';
+import DocumentEstimate002Contents from '@/views/document/DocumentEstimate002Contents.vue';
+import DocumentEstimate003Contents from '@/views/document/DocumentEstimate003Contents.vue';
+import DocumentEstimate004Contents from '@/views/document/DocumentEstimate004Contents.vue';
 
 import IconPdfDownload from '@/assets/images/icon/pdf-download.svg?component';
 import IconJpgDownload from '@/assets/images/icon/jpg-download.svg?component';
@@ -19,6 +25,11 @@ export default {
     FullPopupHead,
     PopupTitle,
     PopupButton,
+    DocumentView,
+    DocumentEstimate001Contents,
+    DocumentEstimate002Contents,
+    DocumentEstimate003Contents,
+    DocumentEstimate004Contents,
     IconPdfDownload,
     IconJpgDownload,
     IconPrint,
@@ -82,8 +93,13 @@ export default {
         </ul>
       </div>
 
-      <div :class="[$style['image-view'], 'row-margin-contents-group']">
-        <img src="@/assets/images/_dummy/box-detail.png" alt="" />
+      <div class="row-margin-contents-group">
+        <DocumentView v-if="layerSlotProps.display !== 'none'">
+          <DocumentEstimate001Contents />
+          <DocumentEstimate002Contents />
+          <DocumentEstimate003Contents />
+          <DocumentEstimate004Contents />
+        </DocumentView>
       </div>
     </FullPopup>
   </UiLayer>
