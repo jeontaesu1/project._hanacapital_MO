@@ -44,7 +44,9 @@ export default {
         </FullPopupHead>
       </template>
 
-      // 내용
+      <div :class="$style['image-view']">
+        <img src="@/assets/images/_dummy/box-detail.png" alt="" />
+      </div>
 
       <template v-slot:foot>
         <ButtonList
@@ -60,3 +62,7 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/auto/LayerAutoEstimateView.scss';
+</style>

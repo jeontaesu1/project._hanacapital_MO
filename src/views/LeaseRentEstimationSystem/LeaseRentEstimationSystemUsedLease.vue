@@ -48,6 +48,10 @@ import RadioButtonObject from '@/components/ui/form/RadioButtonObject.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
 import SwitchCheckBox from '@/components/ui/form/SwitchCheckBox.vue';
+import DocumentView from '@/components/ui/viewer/DocumentView.vue';
+
+import DocumentEstimate002Contents from '@/views/document/DocumentEstimate002Contents.vue';
+import DocumentEstimate003Contents from '@/views/document/DocumentEstimate003Contents.vue';
 
 import IconScroll from '@/assets/images/icon/scroll.svg?component';
 
@@ -96,6 +100,9 @@ export default {
     NoticeText,
     UnitText,
     SwitchCheckBox,
+    DocumentView,
+    DocumentEstimate002Contents,
+    DocumentEstimate003Contents,
     IconScroll,
   },
   setup() {
@@ -4214,7 +4221,10 @@ export default {
       </ButtonList>
 
       <div v-if="state.viewDocument" class="row-margin-contents">
-        <div>// 견적서 영역 추후 작업 예정</div>
+        <DocumentView>
+          <DocumentEstimate002Contents />
+          <DocumentEstimate003Contents />
+        </DocumentView>
 
         <ButtonList
           :classNames="{
