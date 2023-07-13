@@ -1,0 +1,251 @@
+$color-pink: #ed1753;
+$color-green: #178eb2;
+$color-gray: #d5e0e3;
+$color-gray-background: #d2eaf1;
+$color-black-01: #222;
+
+.est-table {
+  @include reset-table;
+  border-bottom: 1px solid $color-green;
+
+  > tbody {
+    th {
+      min-height: 28px;
+      padding: 4px;
+      border-top: 1px solid $color-gray;
+      border-left: 1px solid $color-gray;
+      box-sizing: border-box;
+      background: #effbff;
+      @include font-size-default(13, px);
+      font-weight: 400;
+      text-align: center;
+
+      &:first-child {
+        border-left: none;
+      }
+    }
+    td {
+      padding: 4px 8px;
+      border-top: 1px solid $color-gray;
+      border-left: 1px solid $color-gray;
+      box-sizing: border-box;
+      @include font-size-default(13, px);
+      color: $color-black-01;
+      font-weight: 400;
+      text-align: right;
+    }
+
+    tr {
+      &:first-child {
+        th,
+        td {
+          border-top: none;
+        }
+      }
+    }
+  }
+
+  > tfoot {
+    th {
+      padding: 4px;
+      border-top: 1px solid $color-green;
+      box-sizing: border-box;
+      background: $color-gray-background !important;
+      @include font-size-default(13, px);
+      font-weight: 700;
+      text-align: center;
+    }
+    td {
+      padding: 4px 8px;
+      border-top: 1px solid $color-green;
+      box-sizing: border-box;
+      border-left: 1px solid $color-gray;
+      @include font-size-default(13, px);
+      color: $color-black-01;
+      font-weight: 400;
+      text-align: right;
+    }
+  }
+
+  &__basic {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0 10px;
+    border-top: 3px solid #00aaaa;
+  }
+
+  &__thumb {
+    width: 280px;
+  }
+
+  &__amount-related {
+    background: #effbff !important;
+  }
+
+  &__total-related {
+    background: $color-gray-background !important;
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+  }
+
+  &__title {
+    margin: 0;
+    padding: 0 0 0 2px;
+    color: $color-black-01;
+    font-size: 14px;
+  }
+
+  &__text {
+    margin: 10px 0 0;
+    color: #999;
+    @include font-size-default(11, px);
+  }
+
+  &__information {
+    width: 398px;
+
+    table {
+      @include reset-table;
+    }
+    tbody {
+      th,
+      td {
+        min-height: 34px;
+        padding: 3px 0;
+        color: $color-black-01;
+        @include font-size-default(13, px);
+        border-bottom: 1px solid $color-gray;
+        box-sizing: border-box;
+        &:first-child {
+          padding-left: 3px;
+          font-weight: 400;
+        }
+        &:last-child {
+          padding-right: 3px;
+        }
+      }
+    }
+    tfoot {
+      td {
+        height: 30px;
+        padding: 7px 3px 3px;
+        box-sizing: border-box;
+        text-align: right;
+        color: $color-pink;
+        @include font-size-default(13, px);
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__acquisition {
+    width: 100%;
+    border-top: 3px solid $color-green;
+
+    + .est-table__acquisition {
+      margin-top: 10px;
+      border-top-width: 1px;
+    }
+  }
+
+  &__assistant {
+    width: 100%;
+    border-top: 1px solid $color-green;
+  }
+
+  &__important {
+    color: $color-pink;
+  }
+
+  &__emphasis {
+    th {
+      padding: 4px;
+      border-top: 1px solid $color-green;
+      box-sizing: border-box;
+      background: $color-gray-background !important;
+      @include font-size-default(13, px);
+      font-weight: 700;
+      text-align: center;
+    }
+    td {
+      padding: 4px 8px;
+      border-top: 1px solid $color-green;
+      box-sizing: border-box;
+      border-left: 1px solid $color-gray;
+      @include font-size-default(13, px);
+      color: $color-black-01;
+      font-weight: 400;
+    }
+  }
+
+  &__emphasis-line {
+    border-color: $color-gray !important;
+  }
+
+  &__emphasis-text {
+    margin: 0;
+    padding: 0 0 10px 2px;
+    color: $color-pink;
+    @include font-size-default(12, px);
+  }
+
+  &__required-documents {
+    tbody {
+      th {
+        border-top: 1px solid $color-green;
+        background: $color-gray-background;
+      }
+      td {
+        border-top: 1px solid $color-green;
+        text-align: left;
+      }
+    }
+  }
+}
+
+.acquisition-cost {
+  display: flex;
+  justify-content: space-between;
+
+  &__left {
+    width: 352px;
+  }
+  &__right {
+    width: 352px;
+  }
+}
+
+.required-documents {
+  &__list {
+    @include reset-list;
+    li {
+      padding-left: 2px;
+      color: $color-black-01;
+      @include font-size-default(12, px);
+    }
+  }
+}
+.summary {
+  &__list {
+    @include reset-list;
+    // margin-top: 10px;
+
+    li {
+      padding: 1px 0 0 2px;
+      color: $color-black-01;
+      @include font-size-default(12, px);
+
+      &:first-child {
+        padding-top: 0;
+      }
+    }
+  }
+
+  &__emphasis {
+    color: $color-pink;
+  }
+}
