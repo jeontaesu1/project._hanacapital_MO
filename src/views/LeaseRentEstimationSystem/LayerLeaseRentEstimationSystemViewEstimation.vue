@@ -12,6 +12,12 @@ import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
+import DocumentView from '@/components/ui/viewer/DocumentView.vue';
+
+import DocumentEstimate001Contents from '@/views/document/DocumentEstimate001Contents.vue';
+import DocumentEstimate002Contents from '@/views/document/DocumentEstimate002Contents.vue';
+import DocumentEstimate003Contents from '@/views/document/DocumentEstimate003Contents.vue';
+import DocumentEstimate004Contents from '@/views/document/DocumentEstimate004Contents.vue';
 
 import IconKakaotalk from '@/assets/images/icon/kakaotalk.svg?component';
 import IconPdfDownload from '@/assets/images/icon/pdf-download.svg?component';
@@ -30,6 +36,11 @@ export default {
     FormListItem,
     InputBlock,
     InputBlockCell,
+    DocumentView,
+    DocumentEstimate001Contents,
+    DocumentEstimate002Contents,
+    DocumentEstimate003Contents,
+    DocumentEstimate004Contents,
     IconKakaotalk,
     IconPdfDownload,
     IconJpgDownload,
@@ -135,8 +146,13 @@ export default {
         </FormList>
       </div>
 
-      <div :class="[$style['image-view'], 'row-margin-contents-group']">
-        <img src="@/assets/images/_dummy/box-detail.png" alt="샘플 이미지" />
+      <div class="row-margin-contents-group">
+        <DocumentView v-if="layerSlotProps.display !== 'none'">
+          <DocumentEstimate001Contents />
+          <DocumentEstimate002Contents />
+          <DocumentEstimate003Contents />
+          <DocumentEstimate004Contents />
+        </DocumentView>
       </div>
     </FullPopup>
   </UiLayer>

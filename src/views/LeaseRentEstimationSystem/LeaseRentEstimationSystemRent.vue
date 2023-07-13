@@ -51,6 +51,9 @@ import NoticeText from '@/components/ui/text/NoticeText.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
 import SwitchCheckBox from '@/components/ui/form/SwitchCheckBox.vue';
 import DeleteButton from '@/components/ui/button/DeleteButton.vue';
+import DocumentView from '@/components/ui/viewer/DocumentView.vue';
+
+import DocumentEstimate001Contents from '@/views/document/DocumentEstimate001Contents.vue';
 
 import IconScroll from '@/assets/images/icon/scroll.svg?component';
 
@@ -102,6 +105,8 @@ export default {
     UnitText,
     SwitchCheckBox,
     DeleteButton,
+    DocumentView,
+    DocumentEstimate001Contents,
     IconScroll,
   },
   setup() {
@@ -5140,7 +5145,9 @@ export default {
       </ButtonList>
 
       <div v-if="state.viewDocument" class="row-margin-contents">
-        <div>// 견적서 영역 추후 작업 예정</div>
+        <DocumentView>
+          <DocumentEstimate001Contents />
+        </DocumentView>
 
         <ButtonList
           :classNames="{

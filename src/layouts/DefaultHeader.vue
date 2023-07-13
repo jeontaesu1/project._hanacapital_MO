@@ -6,7 +6,6 @@ import {
   onMounted,
   onUpdated,
   onBeforeUnmount,
-  onUnmounted,
   useCssModule,
   provide,
 } from 'vue';
@@ -110,9 +109,7 @@ export default {
 
     onBeforeUnmount(() => {
       store.ui.header.setHeight(0);
-    });
 
-    onUnmounted(() => {
       window.removeEventListener('load', load);
       window.removeEventListener('scroll', scroll);
       window.removeEventListener('resize', resize);
