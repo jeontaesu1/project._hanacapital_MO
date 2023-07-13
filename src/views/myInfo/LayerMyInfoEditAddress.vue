@@ -913,7 +913,7 @@ export default {
                 />
               </InputBlockCell>
             </InputBlock>
-            <!-- // Case : 개인사업자/법인 회원일 경우 노출 -->
+            <!-- // Case : 직접입력 선택 시 노출 -->
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
