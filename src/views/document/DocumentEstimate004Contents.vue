@@ -94,7 +94,7 @@ export default {
                   </tr>
                   <tr>
                     <th>옵션가격</th>
-                    <td>4,000,000 원</td>
+                    <td>0원</td>
                   </tr>
                   <tr>
                     <th>할인가격</th>
@@ -395,7 +395,7 @@ export default {
                   </tr>
                   <tr>
                     <th>옵션가격</th>
-                    <td>4,000,000 원</td>
+                    <td>0 원</td>
                   </tr>
                   <tr>
                     <th>할인가격</th>
@@ -696,7 +696,7 @@ export default {
                   </tr>
                   <tr>
                     <th>옵션가격</th>
-                    <td>4,000,000 원</td>
+                    <td>0 원</td>
                   </tr>
                   <tr>
                     <th>할인가격</th>
