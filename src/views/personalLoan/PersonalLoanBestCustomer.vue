@@ -25,7 +25,7 @@ import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
 
 import IconMoney from '@/assets/images/icon/money.svg?component';
 import IconRate from '@/assets/images/icon/rate.svg?component';
-import IconCommission from '@/assets/images/icon/commission.svg?component';
+import IconDate from '@/assets/images/icon/date.svg?component';
 import IconSearchMoney from '@/assets/images/icon/search-money.svg?component';
 import IconPersonalTerms from '@/assets/images/icon/personal-terms.svg?component';
 import IconSend from '@/assets/images/icon/send.svg?component';
@@ -54,7 +54,7 @@ export default {
     NavTabButton,
     IconMoney,
     IconRate,
-    IconCommission,
+    IconDate,
     IconSearchMoney,
     IconPersonalTerms,
     IconSend,
@@ -128,21 +128,17 @@ export default {
                 <IconRate />
               </div>
               <div :class="$style['product-detail__block']">
-                <div :class="$style['product-detail__title']">금리</div>
-                <div :class="$style['product-detail__desc']">
-                  연 5.9 ~ 16.9%
-                </div>
+                <div :class="$style['product-detail__title']">최저금리</div>
+                <div :class="$style['product-detail__desc']">연 5.9%</div>
               </div>
             </li>
             <li :class="$style['product-detail__item']">
               <div :class="$style['product-detail__icon']">
-                <IconCommission />
+                <IconDate />
               </div>
               <div :class="$style['product-detail__block']">
-                <div :class="$style['product-detail__title']">
-                  중도상환수수료
-                </div>
-                <div :class="$style['product-detail__desc']">0원</div>
+                <div :class="$style['product-detail__title']">기간</div>
+                <div :class="$style['product-detail__desc']">최대 84개월</div>
               </div>
             </li>
           </ul>
@@ -176,7 +172,8 @@ export default {
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>대상</KeyValueTitle>
               <KeyValueText>
-                하나캐피탈 우수거래고객 및 하나캐피탈 멤버십 우수회원
+                하나캐피탈 우수거래고객 및<br />
+                하나캐피탈 멤버십 우수회원
               </KeyValueText>
             </KeyValueItem>
 
@@ -187,7 +184,9 @@ export default {
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>금리</KeyValueTitle>
-              <KeyValueText>연 5.9% ~ 16.9%</KeyValueText>
+              <KeyValueText :classNames="{ text: 'font-weight-bold' }">
+                연 5.9% ~ 19.9%
+              </KeyValueText>
             </KeyValueItem>
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
@@ -216,9 +215,9 @@ export default {
           <KeyValueItem>
             <KeyValueTitle>연체이자율</KeyValueTitle>
             <KeyValueText>
-              <div>약정이율 + 3%</div>
+              <div class="font-weight-bold">약정이율 + 3%</div>
               <div
-                class="text-body-4 font-weight-light color-gray-tertiary row-margin-mini"
+                class="text-body-4 font-weight-bold color-gray-tertiary row-margin-mini"
               >
                 (법정최고금리 연 20% 이내)
               </div>
@@ -244,7 +243,7 @@ export default {
                     <div :class="$style['step__badge']">STEP 1</div>
                   </div>
                   <div :class="$style['step__text']">
-                    본인인증 및 손님의 정보로
+                    본인인증 및 손님의 정보로<br />
                     <strong>대출한도를 조회</strong>합니다.
                   </div>
                 </div>
@@ -260,8 +259,8 @@ export default {
                     <div :class="$style['step__badge']">STEP 2</div>
                   </div>
                   <div :class="$style['step__text']">
-                    대출 한도 확인 후, 신청정보를 입력하여
-                    <strong>대출신청을 진행</strong>합니다.
+                    고객님이 원하는 조건으로<br />
+                    <strong>대출을 신청</strong>합니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
@@ -276,8 +275,8 @@ export default {
                     <div :class="$style['step__badge']">STEP 3</div>
                   </div>
                   <div :class="$style['step__text']">
-                    제출하신 정보를 바탕으로 심사 후 손님께
-                    <strong>결과를 안내</strong>해 드립니다.
+                    신청하신 정보를 바탕으로 최종심사 후<br />
+                    손님께 <strong>결과를 안내</strong>해드립니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
@@ -292,8 +291,7 @@ export default {
                     <div :class="$style['step__badge']">STEP 4</div>
                   </div>
                   <div :class="$style['step__text']">
-                    문자로 전송된 안내에 따라
-                    <strong>온라인 약정을 진행</strong>합니다.
+                    온라인으로 <strong>약정을 진행</strong>합니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
@@ -308,7 +306,7 @@ export default {
                     <div :class="$style['step__badge']">STEP 5</div>
                   </div>
                   <div :class="$style['step__text']">
-                    계좌로 <strong>대출금을 입금</strong>해드립니다.
+                    손님 계좌로 <strong>대출금을 입금</strong>해드립니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
@@ -411,25 +409,25 @@ export default {
             </div>
           </li>
         </ul>
+
+        <ul :class="[$style['basic-list'], 'row-margin-contents']">
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              준법심의필 22-986<br />
+              (2022.03.22~2023.03.21)
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              여신금융협회 심의필 제2022-L1h-02243호<br />
+              (2022.03.22~2023.03.21)
+            </div>
+          </li>
+        </ul>
       </UiTabPanel>
       <!-- // 유의사항 -->
-
-      <ul :class="[$style['basic-list'], 'row-margin-contents']">
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            준법심의필 22-986<br />
-            (2022.03.22~2023.03.21)
-          </div>
-        </li>
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            여신금융협회 심의필 제2022-L1h-02243호<br />
-            (2022.03.22~2023.03.21)
-          </div>
-        </li>
-      </ul>
     </UiTab>
 
     <BasicHr
