@@ -30,7 +30,7 @@ export default {
     onMounted(() => {
       store.ui.header.setTitle(() => '하나금융그룹');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => ['menu']);
+      store.ui.header.setRightButtons(() => []);
     });
 
     onUnmounted(() => {

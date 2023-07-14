@@ -1,0 +1,12 @@
+.est-section {
+  & + & {
+    margin-top: 10px;
+  }
+
+  &__title {
+    margin: 0;
+    padding: 0 2px;
+    @include font-size-default(14, px);
+    font-weight: 400;
+  }
+}

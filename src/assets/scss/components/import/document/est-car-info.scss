@@ -1,0 +1,73 @@
+.est-car-info {
+  display: flex;
+  border-top: 3px solid #00aaaa;
+  padding: 10px 0 4px;
+
+  &__img-area {
+    flex: none;
+    width: 280px;
+    padding-top: 5px;
+  }
+
+  &__img {
+    margin: 0 auto;
+  }
+
+  &__notice {
+    margin: 10px 0 0;
+    @include font-size-default(11, px);
+    color: #999;
+  }
+
+  &__contents {
+    margin-left: 36px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    display: flex;
+    padding: 3px;
+    border-bottom: 1px solid #d5e0e3;
+    @include font-size-default(13, px);
+  }
+
+  &__key {
+    flex: none;
+    width: 54px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+
+    &-text {
+      flex: none;
+    }
+  }
+
+  &__val {
+    margin: 0;
+    flex: 1;
+    min-width: 0;
+
+    &-text {
+      flex: none;
+    }
+  }
+
+  &__price {
+    margin: 0;
+    padding: 7px 3px 3px;
+    @include font-size-default(13, px);
+    font-weight: 700;
+    color: #ed1753;
+    text-align: right;
+    min-height: #{$line-height-default}em;
+  }
+}

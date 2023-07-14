@@ -9,10 +9,6 @@ export default {
       Type: String,
       default: null,
     },
-    radius: {
-      Type: String,
-      default: null,
-    },
   },
 };
 </script>
@@ -23,7 +19,6 @@ export default {
       $style['box'],
       {
         [$style[`box--theme-${theme}`]]: theme,
-        [$style[`box--radius-${radius}`]]: radius,
       },
       className,
     ]"

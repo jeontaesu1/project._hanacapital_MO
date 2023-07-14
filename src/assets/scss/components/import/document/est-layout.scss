@@ -1,0 +1,12 @@
+.est-layout {
+  display: flex;
+
+  &__cell {
+    flex: 1;
+    min-width: 0;
+
+    & + & {
+      margin-left: 10px;
+    }
+  }
+}
