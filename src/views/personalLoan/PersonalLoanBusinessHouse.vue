@@ -482,7 +482,7 @@ export default {
                 >
                   <div :class="$style['basic-list__symbol']">※</div>
                   <div :class="$style['basic-list__content']">
-                    설정비율은 당사부담/해지비용은 금융소비자 부담
+                    설정비율은 당사부담/해지비용은 금융소비자 부담<br />
                     국민주택채권매입비(금융소비자 부담)
                   </div>
                 </li>
