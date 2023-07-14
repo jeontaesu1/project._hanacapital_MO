@@ -127,10 +127,8 @@ export default {
                 <IconRate />
               </div>
               <div :class="$style['product-detail__block']">
-                <div :class="$style['product-detail__title']">금리</div>
-                <div :class="$style['product-detail__desc']">
-                  연 5.9 ~ 16.9%
-                </div>
+                <div :class="$style['product-detail__title']">최저금리</div>
+                <div :class="$style['product-detail__desc']">연 5.9%</div>
               </div>
             </li>
             <li :class="$style['product-detail__item']">
@@ -139,7 +137,7 @@ export default {
               </div>
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">기간</div>
-                <div :class="$style['product-detail__desc']">12 ~ 84개월</div>
+                <div :class="$style['product-detail__desc']">최대 84개월</div>
               </div>
             </li>
           </ul>
@@ -187,7 +185,9 @@ export default {
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>금리</KeyValueTitle>
-              <KeyValueText>연 5.9% ~ 16.9%</KeyValueText>
+              <KeyValueText :classNames="{ text: 'font-weight-bold' }">
+                연 5.9% ~ 19.9%
+              </KeyValueText>
             </KeyValueItem>
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
@@ -212,7 +212,8 @@ export default {
             <KeyValueTitle>중도상환수수료</KeyValueTitle>
             <KeyValueText>
               <div>
-                대출실행일 기준 경과기간에 따라 차등 적용되며, 3년 경과 시 면제
+                대출실행일 기준 경과기간에 따라 차등 적용되며,<br />
+                3년 경과 시 면제
               </div>
               <ul :class="[$style['basic-list'], 'row-margin-item']">
                 <li
@@ -324,9 +325,9 @@ export default {
           <KeyValueItem>
             <KeyValueTitle>연체이자율</KeyValueTitle>
             <KeyValueText>
-              <div>약정이율 + 3%</div>
+              <div class="font-weight-bold">약정이율 + 3%</div>
               <div
-                class="text-body-4 font-weight-light color-gray-tertiary row-margin-mini"
+                class="text-body-4 font-weight-bold color-gray-tertiary row-margin-mini"
               >
                 (법정최고금리 연 20% 이내)
               </div>
@@ -341,8 +342,8 @@ export default {
           <KeyValueItem>
             <KeyValueTitle>기타</KeyValueTitle>
             <KeyValueText>
-              내부 기준에 따라 행복아파트론으로 진행 불가 시,
-              <span class="color-green">아파트론상품</span> 으로 자동전환되어
+              내부 기준에 따라 행복아파트론으로 진행 불가 시,<br />
+              <span class="color-green">아파트론 상품</span> 으로 자동전환되어
               진행
             </KeyValueText>
           </KeyValueItem>
@@ -361,7 +362,7 @@ export default {
                     <div :class="$style['step__badge']">STEP 1</div>
                   </div>
                   <div :class="$style['step__text']">
-                    본인인증 및 손님의 정보로
+                    본인인증 및 손님의 정보로<br />
                     <strong>대출한도를 조회</strong>합니다.
                   </div>
                 </div>
@@ -377,8 +378,8 @@ export default {
                     <div :class="$style['step__badge']">STEP 2</div>
                   </div>
                   <div :class="$style['step__text']">
-                    대출 한도 확인 후, 신청정보를 입력하여
-                    <strong>대출신청을 진행</strong>합니다.
+                    고객님이 원하는 조건으로<br />
+                    <strong>대출을 신청</strong>합니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
@@ -393,8 +394,8 @@ export default {
                     <div :class="$style['step__badge']">STEP 3</div>
                   </div>
                   <div :class="$style['step__text']">
-                    제출하신 정보를 바탕으로 심사 후 손님께
-                    <strong>결과를 안내</strong>해 드립니다.
+                    신청하신 정보를 바탕으로 최종심사 후<br />
+                    손님께 <strong>결과를 안내</strong>해드립니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
@@ -409,8 +410,7 @@ export default {
                     <div :class="$style['step__badge']">STEP 4</div>
                   </div>
                   <div :class="$style['step__text']">
-                    문자로 전송된 안내에 따라
-                    <strong>온라인 약정을 진행</strong>합니다.
+                    온라인으로 <strong>약정을 진행</strong>합니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
@@ -425,7 +425,7 @@ export default {
                     <div :class="$style['step__badge']">STEP 5</div>
                   </div>
                   <div :class="$style['step__text']">
-                    계좌로 <strong>대출금을 입금</strong>해드립니다.
+                    손님 계좌로 <strong>대출금을 입금</strong>해드립니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
@@ -528,25 +528,25 @@ export default {
             </div>
           </li>
         </ul>
+
+        <ul :class="[$style['basic-list'], 'row-margin-contents']">
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              준법심의필 22-126<br />
+              (2022.02.24~2023.02.23)
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              여신금융협회 심의필 제2022-L1h-01490호<br />
+              (2022.02.24~2023.02.23)
+            </div>
+          </li>
+        </ul>
       </UiTabPanel>
       <!-- // 유의사항 -->
-
-      <ul :class="[$style['basic-list'], 'row-margin-contents']">
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            준법심의필 22-126<br />
-            (2022.02.24~2023.02.23)
-          </div>
-        </li>
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            여신금융협회 심의필 제2022-L1h-01490호<br />
-            (2022.02.24~2023.02.23)
-          </div>
-        </li>
-      </ul>
     </UiTab>
 
     <BasicHr
