@@ -47,7 +47,6 @@ export default {
       nameError: false,
       idNumberError: false,
       phoneError: false,
-      buisnessNameError: false,
       buisnessLicenseError: false,
     });
 
@@ -155,26 +154,6 @@ export default {
         </FormListItem>
 
         <!-- Case : 개인사업자 -->
-        <FormListItem
-          titleText="상호명"
-          target="#layerMyLoanOnlineContractIntermediateSuccessionAssigneeFormBuisnessName"
-          :disabled="true"
-        >
-          <FormInvalid :error="state.buisnessNameError">
-            <InputBlock :error="state.buisnessNameError" :disabled="true">
-              <InputBlockCell :flexible="true">
-                <BasicInput
-                  title="상호명"
-                  id="layerMyLoanOnlineContractIntermediateSuccessionAssigneeFormBuisnessName"
-                  defaultValue="하나캐피탈"
-                  :disabled="true"
-                />
-              </InputBlockCell>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
-        </FormListItem>
-
         <FormListItem
           titleText="사업자번호"
           target="#layerMyLoanOnlineContractIntermediateSuccessionAssigneeFormBuisnessLicense"

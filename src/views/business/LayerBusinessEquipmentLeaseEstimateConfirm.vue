@@ -61,7 +61,7 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>설비리스 조건을</strong><br />
+          <strong>리스 조건을</strong><br />
           확인해 주세요
         </PageMainText>
       </PageTextGroup>
@@ -69,13 +69,13 @@ export default {
       <BasicBox>
         <BasicBoxHead>
           <BasicBoxHeadLeft>
-            <h3 class="text-body-1 font-weight-medium">의료기기</h3>
+            <h3 class="text-body-1 font-weight-medium">의료기</h3>
           </BasicBoxHeadLeft>
         </BasicBoxHead>
 
         <KeyValue margin="regular">
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>취득원가</KeyValueTitle>
+            <KeyValueTitle>이용금액</KeyValueTitle>
             <KeyValueText>99,999,000 원</KeyValueText>
           </KeyValueItem>
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
@@ -84,18 +84,18 @@ export default {
           </KeyValueItem>
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>상환금리</KeyValueTitle>
-            <KeyValueText>5%</KeyValueText>
+            <KeyValueText>(최저) 00.0% ~ (최대) 00.0%</KeyValueText>
           </KeyValueItem>
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>보증금</KeyValueTitle>
             <KeyValueText>20% (2,000,000 원)</KeyValueText>
           </KeyValueItem>
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>유예원금</KeyValueTitle>
-            <KeyValueText>20% (2,000,000 원)</KeyValueText>
+            <KeyValueTitle>잔존가치</KeyValueTitle>
+            <KeyValueText>0% (0 원)</KeyValueText>
           </KeyValueItem>
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>잔존가치</KeyValueTitle>
+            <KeyValueTitle>유예원금</KeyValueTitle>
             <KeyValueText>20% (2,000,000 원)</KeyValueText>
           </KeyValueItem>
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
@@ -164,6 +164,13 @@ export default {
           </KeyValueItem>
         </KeyValue>
       </BasicBox>
+
+      <BasicButton
+        :line="true"
+        :classNames="{ wrap: 'row-margin-contents-group' }"
+      >
+        견적 다운로드
+      </BasicButton>
 
       <template v-slot:foot>
         <ButtonList

@@ -26,8 +26,9 @@ import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
 import FilterButton from '@/components/ui/button/FilterButton.vue';
 import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
+import ButtonList from '@/components/ui/button/ButtonList.vue';
+import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import IconPerson from '@/assets/images/icon/person.svg?component';
 import IconArrow from '@/assets/images/icon/dropdown.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
 
@@ -55,8 +56,9 @@ export default {
     FilterButton,
     RoundStatus,
     TextButton,
+    ButtonList,
+    ButtonListItem,
     IconCalculate,
-    IconPerson,
     IconArrow,
   },
   setup() {
@@ -73,7 +75,7 @@ export default {
     });
 
     onMounted(() => {
-      store.ui.header.setTitle(() => '설비리스');
+      store.ui.header.setTitle(() => '일반리스');
       store.ui.header.setLeftButtons(() => ['back']);
       store.ui.header.setRightButtons(() => []);
     });
@@ -98,16 +100,6 @@ export default {
 
 <template>
   <PageContents>
-    <div :class="[$style['salesperson-card'], 'row-margin-container-medium']">
-      <div :class="$style['salesperson-card__image']">
-        <IconPerson />
-      </div>
-      <div :class="$style['salesperson-card__content']">
-        <div :class="$style['salesperson-card__sub']">하나캐피탈</div>
-        <div :class="$style['salesperson-card__name']">김하나</div>
-      </div>
-    </div>
-
     <section class="contents-wrap">
       <div class="flex-box row-margin-contents">
         <div class="flex-box__cell flex-1">
@@ -320,6 +312,21 @@ export default {
                   :classNames="{
                     item: 'text-body-3',
                   }"
+                  >물건점검여부</KeyValueTitle
+                >
+                <KeyValueText>
+                  <span class="color-green font-weight-medium">미완료</span>
+                </KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
                   >물건명</KeyValueTitle
                 >
                 <KeyValueText>울쎄라</KeyValueText>
@@ -330,7 +337,7 @@ export default {
                 }"
               >
                 <KeyValueTitle>사업자명</KeyValueTitle>
-                <KeyValueText>하나은행</KeyValueText>
+                <KeyValueText>하나의원</KeyValueText>
               </KeyValueItem>
               <KeyValueItem
                 :classNames="{
@@ -350,9 +357,31 @@ export default {
               </KeyValueItem>
             </KeyValue>
 
-            <div class="row-margin-contents-small">
-              <BasicButton size="small">전자약정 전송</BasicButton>
-            </div>
+            <ButtonList
+              :wrap="true"
+              :classNames="{ wrap: 'row-margin-contents-small' }"
+            >
+              <ButtonListItem>
+                <BasicButton :line="true" size="small">
+                  전자약정 전송
+                </BasicButton>
+              </ButtonListItem>
+              <ButtonListItem>
+                <BasicButton :line="true" size="small">
+                  물건검수(직원)
+                </BasicButton>
+              </ButtonListItem>
+              <ButtonListItem>
+                <BasicButton :line="true" size="small" theme="quaternary">
+                  물건검수SMS
+                </BasicButton>
+              </ButtonListItem>
+              <ButtonListItem>
+                <BasicButton size="small" theme="tertiary">
+                  물건검수완료
+                </BasicButton>
+              </ButtonListItem>
+            </ButtonList>
           </BasicBox>
         </li>
         <li class="row-margin-item-group">
@@ -409,6 +438,24 @@ export default {
                   :classNames="{
                     item: 'text-body-3',
                   }"
+                  >물건점검여부</KeyValueTitle
+                >
+                <KeyValueText>
+                  <span class="color-green font-weight-medium">
+                    완료<br />
+                    (동의일: 2023.02.23)
+                  </span>
+                </KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
                   >물건명</KeyValueTitle
                 >
                 <KeyValueText>울쎄라</KeyValueText>
@@ -419,7 +466,7 @@ export default {
                 }"
               >
                 <KeyValueTitle>사업자명</KeyValueTitle>
-                <KeyValueText>하나은행</KeyValueText>
+                <KeyValueText>하나의원</KeyValueText>
               </KeyValueItem>
               <KeyValueItem
                 :classNames="{
@@ -439,11 +486,31 @@ export default {
               </KeyValueItem>
             </KeyValue>
 
-            <div class="row-margin-contents-small">
-              <BasicButton size="small" theme="quaternary"
-                >전자약정 재전송</BasicButton
-              >
-            </div>
+            <ButtonList
+              :wrap="true"
+              :classNames="{ wrap: 'row-margin-contents-small' }"
+            >
+              <ButtonListItem>
+                <BasicButton :line="true" size="small">
+                  전자약정 전송
+                </BasicButton>
+              </ButtonListItem>
+              <ButtonListItem>
+                <BasicButton :line="true" size="small">
+                  물건검수(직원)
+                </BasicButton>
+              </ButtonListItem>
+              <ButtonListItem>
+                <BasicButton :line="true" size="small" theme="quaternary">
+                  물건검수SMS
+                </BasicButton>
+              </ButtonListItem>
+              <ButtonListItem>
+                <BasicButton size="small" theme="tertiary">
+                  물건검수완료
+                </BasicButton>
+              </ButtonListItem>
+            </ButtonList>
           </BasicBox>
         </li>
       </ul>

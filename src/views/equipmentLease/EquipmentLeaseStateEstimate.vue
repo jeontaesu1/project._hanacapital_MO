@@ -32,7 +32,6 @@ import UiAccordionOpener from '@/components/ui/accordion/UiAccordionOpener.vue';
 import FilterButton from '@/components/ui/button/FilterButton.vue';
 import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
-import IconPerson from '@/assets/images/icon/person.svg?component';
 import IconArrow from '@/assets/images/icon/dropdown.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
 
@@ -67,7 +66,6 @@ export default {
     RoundStatus,
     TextButton,
     IconCalculate,
-    IconPerson,
     IconArrow,
   },
   setup() {
@@ -84,7 +82,7 @@ export default {
     });
 
     onMounted(() => {
-      store.ui.header.setTitle(() => '설비리스');
+      store.ui.header.setTitle(() => '일반리스');
       store.ui.header.setLeftButtons(() => ['back']);
       store.ui.header.setRightButtons(() => []);
     });
@@ -109,16 +107,6 @@ export default {
 
 <template>
   <PageContents>
-    <div :class="[$style['salesperson-card'], 'row-margin-container-medium']">
-      <div :class="$style['salesperson-card__image']">
-        <IconPerson />
-      </div>
-      <div :class="$style['salesperson-card__content']">
-        <div :class="$style['salesperson-card__sub']">하나캐피탈</div>
-        <div :class="$style['salesperson-card__name']">김하나</div>
-      </div>
-    </div>
-
     <section class="contents-wrap">
       <div class="flex-box row-margin-contents">
         <div class="flex-box__cell flex-1">
@@ -339,7 +327,7 @@ export default {
                 <KeyValueText>
                   <div class="flex-box">
                     <div class="flex-box__cell flex-1">
-                      <span class="color-green font-weight-medium">진행중</span>
+                      <span class="color-green font-weight-medium">미완료</span>
                     </div>
                     <div class="flex-box__cell flex-box__cell--small">
                       <UiAccordionOpener
@@ -425,15 +413,14 @@ export default {
                 </KeyValue>
 
                 <div class="row-margin-contents-small">
-                  <BasicButton :line="true" size="small"
-                    >견적서 보기</BasicButton
-                  >
                   <ButtonList :classNames="{ wrap: 'row-margin-item' }">
                     <ButtonListItem>
                       <BasicButton size="small">사전동의</BasicButton>
                     </ButtonListItem>
                     <ButtonListItem>
-                      <BasicButton size="small">상담동의</BasicButton>
+                      <BasicButton :line="true" size="small">
+                        견적보기
+                      </BasicButton>
                     </ButtonListItem>
                   </ButtonList>
                 </div>
