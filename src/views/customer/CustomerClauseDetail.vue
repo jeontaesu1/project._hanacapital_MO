@@ -1,6 +1,6 @@
 <script>
 // Customer_M08_p002
-import { onMounted, onUnmounted } from 'vue';
+import { reactive, onMounted, onUnmounted } from 'vue';
 
 import { useUiHeaderStore } from '@/stores/ui/header';
 
@@ -29,10 +29,14 @@ export default {
       },
     };
 
+    const state = reactive({
+      testError001: false,
+    });
+
     onMounted(() => {
       store.ui.header.setTitle(() => '정책 및 약관');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => []);
+      store.ui.header.setRightButtons(() => ['menu']);
     });
 
     onUnmounted(() => {
@@ -40,6 +44,9 @@ export default {
       store.ui.header.setLeftButtons();
       store.ui.header.setRightButtons();
     });
+    return {
+      state,
+    };
   },
 };
 </script>
