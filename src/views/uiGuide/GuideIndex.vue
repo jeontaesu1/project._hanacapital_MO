@@ -3984,7 +3984,7 @@ export default {
               <a
                 :href="`${
                   path.match('guide-index') ? '..' : '.'
-                }/guide/component`"
+                }/ui-guide/component`"
                 target="_blank"
                 class="index-button"
               >
