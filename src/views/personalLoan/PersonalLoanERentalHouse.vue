@@ -120,10 +120,8 @@ export default {
               </div>
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">금리</div>
-                <div
-                  :class="[$style['product-detail__desc'], 'font-weight-bold']"
-                >
-                  연 6.1% ~ 11.4%
+                <div :class="$style['product-detail__desc']">
+                  <strong>연 6.1% ~ 11.4%</strong>
                 </div>
               </div>
             </li>

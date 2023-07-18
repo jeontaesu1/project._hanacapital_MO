@@ -122,35 +122,30 @@ export default {
                 </div>
               </div>
             </li>
-            <li :class="[$style['product-detail__item'], 'align-items-start']">
+            <li :class="$style['product-detail__item']">
               <div :class="$style['product-detail__icon']">
                 <IconRate />
               </div>
-              <div :class="$style['block-start']">
+              <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">금리</div>
-                <div
-                  :class="[$style['product-detail__desc'], 'font-weight-bold']"
-                >
-                  <div>
-                    <div>연 최저 7.2% ~ 최고 9.0% (고정금리)</div>
-
-                    <ul :class="[$style['basic-list'], 'row-margin-mini']">
-                      <li
-                        :class="[
-                          $style['basic-list__item'],
-                          'text-body-5',
-                          'font-weight-regular',
-                          'color-gray-tertiary',
-                        ]"
-                      >
-                        <div :class="$style['basic-list__symbol']">※</div>
-                        <div :class="$style['basic-list__content']">
-                          만기연장 시 최초 약정 금리조건 적용<br />
-                          (변동 또는 고정금리)
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
+                <div :class="$style['product-detail__desc']">
+                  <strong>연 최저 7.2% ~ 최고 9.0% (고정금리)</strong>
+                  <ul :class="[$style['basic-list'], 'row-margin-mini']">
+                    <li
+                      :class="[
+                        $style['basic-list__item'],
+                        'text-body-5',
+                        'font-weight-regular',
+                        'color-gray-tertiary',
+                      ]"
+                    >
+                      <div :class="$style['basic-list__symbol']">※</div>
+                      <div :class="$style['basic-list__content']">
+                        만기연장 시 최초 약정 금리조건 적용<br />
+                        (변동 또는 고정금리)
+                      </div>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </li>
