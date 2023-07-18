@@ -57,6 +57,7 @@ import LayerMyLoanOnlineContractUsedLoanEarlyRedemptionFee from '@/views/myLoan/
 import LayerMyLoanOnlineContractUsedLoanNoticeVue from '@/views/myLoan/LayerMyLoanOnlineContractUsedLoanNotice.vue';
 import LayerMyLoanOnlineContractUsedLoanConfirm002 from '@/views/myLoan/LayerMyLoanOnlineContractUsedLoanConfirm002.vue';
 import LayerMyLoanOnlineContractUsedLoanFinalConfirm002 from '@/views/myLoan/LayerMyLoanOnlineContractUsedLoanFinalConfirm002.vue';
+import BF_M04_l027 from '@/views/myLoan/BF_M04_l027.vue';
 
 export default {
   components: {
@@ -115,6 +116,7 @@ export default {
     LayerMyLoanOnlineContractUsedLoanNoticeVue,
     LayerMyLoanOnlineContractUsedLoanConfirm002,
     LayerMyLoanOnlineContractUsedLoanFinalConfirm002,
+    BF_M04_l027,
   },
   setup() {
     const layer001 = ref(null);
@@ -168,6 +170,7 @@ export default {
     const layer051 = ref(null);
     const layer052 = ref(null);
     const layer053 = ref(null);
+    const layer054 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -322,6 +325,9 @@ export default {
     const layer053Open = (e = {}) => {
       layer053.value.layer.open(e.target);
     };
+    const layer054Open = (e = {}) => {
+      layer054.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -375,6 +381,7 @@ export default {
       layer051,
       layer052,
       layer053,
+      layer054,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -426,6 +433,7 @@ export default {
       layer051Open,
       layer052Open,
       layer053Open,
+      layer054Open,
     };
   },
 };
@@ -694,6 +702,13 @@ export default {
           계약정보 최종확인_약정정보확인 중고차할부<br />AF_M98_l011
         </BasicButton>
       </ButtonListItem>
+      <!-- 2023.07.21 추가 -->
+      <ButtonListItem>
+        <BasicButton @click="layer053Open">
+          채무인수 확약서<br />BF_M04_l027
+        </BasicButton>
+      </ButtonListItem>
+      <!-- //2023.07.21 추가 -->
     </ButtonList>
 
     <LayerMyLoanOnlineContractAgreeConfirm ref="layer001" />
@@ -763,5 +778,6 @@ export default {
     <LayerMyLoanOnlineContractUsedLoanNoticeVue ref="layer050" />
     <LayerMyLoanOnlineContractUsedLoanConfirm002 ref="layer051" />
     <LayerMyLoanOnlineContractUsedLoanFinalConfirm002 ref="layer052" />
+    <BF_M04_l027 ref="layer053" />
   </PageContents>
 </template>
