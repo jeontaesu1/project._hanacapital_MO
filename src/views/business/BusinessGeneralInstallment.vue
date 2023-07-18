@@ -30,7 +30,6 @@ import IconSend from '@/assets/images/icon/send.svg?component';
 import IconConsulting from '@/assets/images/icon/consulting.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
 import IconDeposit from '@/assets/images/icon/deposit.svg?component';
-import IconService from '@/assets/images/icon/service.svg?component';
 import IconInstallation from '@/assets/images/icon/installation.svg?component';
 
 export default {
@@ -59,7 +58,6 @@ export default {
     IconCalculate,
     IconConsulting,
     IconDeposit,
-    IconService,
     IconInstallation,
     IconRate,
   },
@@ -120,7 +118,7 @@ export default {
               </div>
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">금리</div>
-                <div :class="$style['product-detail__desc']">0.0% ~ 19.9%</div>
+                <div :class="$style['product-detail__desc']">0.0% ~ 9.9%</div>
               </div>
             </li>
             <li :class="$style['product-detail__item']">
@@ -166,16 +164,16 @@ export default {
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>금리</KeyValueTitle>
               <KeyValueText>
-                <div>연 0.0% ~ 19.9%</div>
+                <div>연 0.0% ~ 9.9%</div>
                 <div class="text-body-4 color-gray-tertiary row-margin-mini">
-                  할부품목 및 제휴업체, 개인신용평점 등에 따라 차등적용
+                  할부목적 및 종류에 따라 차등적용
                 </div>
               </KeyValueText>
             </KeyValueItem>
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>기간</KeyValueTitle>
-              <KeyValueText>12개월 ~ 120개월</KeyValueText>
+              <KeyValueText>3개월 ~ 60개월</KeyValueText>
             </KeyValueItem>
           </KeyValue>
         </BasicBox>
@@ -649,7 +647,7 @@ export default {
                     <div :class="$style['step__badge']">STEP 1</div>
                   </div>
                   <div :class="$style['step__text']">
-                    하나캐피탈 일반할부 <strong>상담을 신청</strong>합니다.
+                    하나캐피탈 일반리스 <strong>상담을 신청</strong>합니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
@@ -664,22 +662,6 @@ export default {
                     <div :class="$style['step__badge']">STEP 2</div>
                   </div>
                   <div :class="$style['step__text']">
-                    <strong>상담 또는 전화</strong>로 대출가능 금액에 대해
-                    상담을 합니다.
-                  </div>
-                </div>
-                <div :class="$style['step__icon']">
-                  <IconService />
-                </div>
-              </div>
-            </li>
-            <li :class="$style['step__item']">
-              <div :class="$style['step__inner']">
-                <div :class="$style['step__contents']">
-                  <div :class="$style['step__top']">
-                    <div :class="$style['step__badge']">STEP 3</div>
-                  </div>
-                  <div :class="$style['step__text']">
                     신청내용 확인하여 <strong>결과를 통보</strong>합니다.
                   </div>
                 </div>
@@ -692,7 +674,7 @@ export default {
               <div :class="$style['step__inner']">
                 <div :class="$style['step__contents']">
                   <div :class="$style['step__top']">
-                    <div :class="$style['step__badge']">STEP 4</div>
+                    <div :class="$style['step__badge']">STEP 3</div>
                   </div>
                   <div :class="$style['step__text']">
                     할부 약정 시 <strong>온라인이나 오프라인 약정</strong>을
@@ -708,11 +690,11 @@ export default {
               <div :class="$style['step__inner']">
                 <div :class="$style['step__contents']">
                   <div :class="$style['step__top']">
-                    <div :class="$style['step__badge']">STEP 5</div>
+                    <div :class="$style['step__badge']">STEP 4</div>
                   </div>
                   <div :class="$style['step__text']">
-                    고객님께서 <strong>원하시는 기기를 설치</strong>해 드리고,
-                    담당 직원이 실사를 합니다.
+                    고객님께서 <strong>원하시는 기기를 설치</strong>해<br />
+                    드리고, 담당 직원이 실사를 합니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
@@ -724,10 +706,11 @@ export default {
               <div :class="$style['step__inner']">
                 <div :class="$style['step__contents']">
                   <div :class="$style['step__top']">
-                    <div :class="$style['step__badge']">STEP 6</div>
+                    <div :class="$style['step__badge']">STEP 5</div>
                   </div>
                   <div :class="$style['step__text']">
-                    판매업체에 <strong>기기금액을 입금</strong>해드립니다.
+                    판매업체에 <strong>기기금액을 입금</strong>해<br />
+                    드립니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
@@ -813,17 +796,8 @@ export default {
           >
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              금융소비자의 개인신용평점에 따라 대출한도 및 금리가 차등
-              적용됩니다.
-            </div>
-          </li>
-          <li
-            :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
-          >
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              담보물건, 담보종류 등에 따라 대출조건이 차등 적용되며 담보물이
-              부적합할 경우 대출이 제한될 수 있습니다.
+              금융소비자의 신용등급 또는 개인신용평점에 따라 대출한도 및 금리가
+              차등 적용됩니다.
             </div>
           </li>
           <li
@@ -840,17 +814,8 @@ export default {
           >
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              금리인하요구권 및 대출계약 철회권에 대한 자세한 사항은 당사
-              홈페이지에서 확인하시기 바랍니다.
-            </div>
-          </li>
-          <li
-            :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
-          >
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              금융소비자의 개인신용평점에 따라 대출한도 및 금리가 차등
-              적용됩니다.
+              금리인하요구권 및 대출계약 철회권에 대한 자세한 사항은 홈페이지
+              또는 상품설명서에서 확인하시기 바랍니다.
             </div>
           </li>
         </ul>
@@ -861,15 +826,15 @@ export default {
         <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']"></div>
           <div :class="$style['basic-list__content']">
-            준법심의필 22-55<br />
-            (2023.05.18~2024.05.17)
+            준법심의필 23-198<br />
+            (2023.07.03~2024.07.02)
           </div>
         </li>
         <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']"></div>
           <div :class="$style['basic-list__content']">
-            여신금융협회 심의필 제2023-C1h-00749호<br />
-            (2023.05.18~2024.05.17)
+            여신금융협회 심의필 제2023-C1h-07372호<br />
+            (2023.07.03~2024.07.02)
           </div>
         </li>
       </ul>

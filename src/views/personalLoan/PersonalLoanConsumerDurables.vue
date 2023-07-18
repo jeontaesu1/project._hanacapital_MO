@@ -688,7 +688,7 @@ export default {
                     <div :class="$style['step__badge']">STEP 1</div>
                   </div>
                   <div :class="$style['step__text']">
-                    판매점에서 물품을 구입하여
+                    판매점에서 물품을 구입하여<br />
                     <strong>할부상담을 신청</strong>합니다.
                   </div>
                 </div>
@@ -737,7 +737,8 @@ export default {
                   </div>
                   <div :class="$style['step__text']">
                     물품 구입대금을
-                    <strong>고객님 대신 일시에 지급</strong>하고, 고객님 명의로
+                    <strong>고객님 대신 일시에</strong><br />
+                    <strong>지급</strong>하고, 고객님 명의로
                     <strong>할부금융이 시작</strong>됩니다.
                   </div>
                 </div>

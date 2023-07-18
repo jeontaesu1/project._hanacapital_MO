@@ -314,8 +314,8 @@ export default {
                     <div :class="$style['step__badge']">STEP 1</div>
                   </div>
                   <div :class="$style['step__text']">
-                    모바일에서 <strong>원큐다이렉트 오토론 예상 견적</strong>을
-                    확인합니다.
+                    모바일에서 <strong>원큐다이렉트 오토론</strong><br />
+                    <strong>예상 견적</strong>을 확인합니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
@@ -362,8 +362,8 @@ export default {
                   </div>
                   <div :class="$style['step__text']">
                     모바일을 통한
-                    <strong>온라인약정 작성 및 손님의 대출금을 지급</strong
-                    >합니다.
+                    <strong>온라인약정 작성 및</strong><br />
+                    <strong>손님의 대출금을 지급</strong> 합니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">

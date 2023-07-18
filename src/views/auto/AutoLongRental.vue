@@ -432,11 +432,11 @@ export default {
           <KeyValueItem>
             <KeyValueTitle>중도해지수수료</KeyValueTitle>
             <KeyValueText>
-              <p class="text-body-2 font-weight-regular">
+              <p class="text-body-2 font-weight-regular row-margin-item">
                 중도해지수수료율 = 잔여렌트료 X 해지위약금율
               </p>
 
-              <ul :class="[$style['basic-list'], 'row-margin-item']">
+              <ul :class="$style['basic-list']">
                 <li
                   :class="[
                     $style['basic-list__item'],
@@ -445,19 +445,11 @@ export default {
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']">※</div>
-                  <div :class="$style['basic-list__content']">
-                    잔여렌트료 = 앞면표기 "월렌트료" X (미청구 잔여개월수 -
-                    1개월) + 해지시점 당월 잔여렌트료
-                  </div>
+                  <div :class="$style['basic-list__content']">잔여렌트료</div>
                 </li>
               </ul>
-            </KeyValueText>
-          </KeyValueItem>
 
-          <KeyValueItem>
-            <KeyValueTitle>잔여렌트료</KeyValueTitle>
-            <KeyValueText>
-              <div :class="$style['basic-table']">
+              <div :class="[$style['basic-table'], 'row-margin-mini']">
                 <table>
                   <colgroup>
                     <col style="width: 120px" />
@@ -489,6 +481,22 @@ export default {
                   </tbody>
                 </table>
               </div>
+
+              <ul :class="[$style['basic-list'], 'row-margin-item-small']">
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-gray-tertiary',
+                    'font-weight-regular',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']">※</div>
+                  <div :class="$style['basic-list__content']">
+                    잔여렌트료 = 앞면표기 “월렌트료“ X (미청구 잔여개월 수 – 1
+                    개월) + 해지시점 당월
+                  </div>
+                </li>
+              </ul>
             </KeyValueText>
           </KeyValueItem>
         </KeyValue>
@@ -521,7 +529,7 @@ export default {
                     <div :class="$style['step__badge']">STEP 2</div>
                   </div>
                   <div :class="$style['step__text']">
-                    신청정보 확인하여<strong> 결과를 통보</strong>합니다.
+                    신청정보 확인하여 <strong>결과를 안내</strong>해 드립니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
@@ -536,7 +544,7 @@ export default {
                     <div :class="$style['step__badge']">STEP 3</div>
                   </div>
                   <div :class="$style['step__text']">
-                    계약 시 <strong>온라인이나 오프라인 약정</strong>을
+                    <strong>온라인약정 또는 오프라인 약정</strong>을<br />
                     진행합니다.
                   </div>
                 </div>

@@ -217,7 +217,8 @@ export default {
                         양도인
                       </h4>
                       <p class="text-body-5 color-gray">
-                        리스 승계 시 위약금이 발생하지 않아 유리합니다.
+                        리스 승계 시 위약금이 발생하지 않아<br />
+                        유리합니다.
                       </p>
                     </div>
                   </div>
@@ -751,7 +752,7 @@ export default {
                         <div :class="$style['step__badge']">STEP 1</div>
                       </div>
                       <div :class="$style['step__text']">
-                        홈페이지/모바일(웹/앱)을 통하여
+                        홈페이지/모바일(웹/앱)을 통하여<br />
                         <strong>승계를 접수</strong>합니다.<br />
                         (신용조회동의)
                       </div>
@@ -768,7 +769,7 @@ export default {
                         <div :class="$style['step__badge']">STEP 2</div>
                       </div>
                       <div :class="$style['step__text']">
-                        신청내용을 확인하여
+                        신청내용을 확인하여<br />
                         <strong>심사결과를 안내</strong> 드립니다.
                       </div>
                     </div>
@@ -785,7 +786,8 @@ export default {
                       </div>
                       <div :class="$style['step__text']">
                         양도인(승계전이용자)과 양수인(승계후이용자)의
-                        <strong>승계 계약</strong>이 진행됩니다. (전자약정 가능)
+                        <strong>승계 계약</strong>이 진행됩니다.<br />
+                        (전자약정 가능)
                       </div>
                     </div>
                     <div :class="$style['step__icon']">
@@ -826,8 +828,8 @@ export default {
                         <div :class="$style['step__badge']">STEP 5</div>
                       </div>
                       <div :class="$style['step__text']">
-                        계약사항에 대해<strong> 이해하였음을 유선상 확인</strong
-                        >합니다.
+                        계약사항에 대해<br />
+                        <strong>이해하였음을 유선상 확인</strong>합니다.
                       </div>
                     </div>
                     <div :class="$style['step__icon']">
@@ -1040,7 +1042,8 @@ export default {
                         양도인
                       </h4>
                       <p class="text-body-5 color-gray">
-                        렌트 승계 시 위약금이 발생하지 않아 유리합니다.
+                        렌트 승계 시 위약금이 발생하지 않아<br />
+                        유리합니다.
                       </p>
                     </div>
                   </div>
@@ -1332,7 +1335,7 @@ export default {
                         <div :class="$style['step__badge']">STEP 1</div>
                       </div>
                       <div :class="$style['step__text']">
-                        홈페이지/모바일(웹/앱)을 통하여
+                        홈페이지/모바일(웹/앱)을 통하여<br />
                         <strong>승계를 접수</strong>합니다.<br />
                         (신용조회동의)
                       </div>
@@ -1349,7 +1352,7 @@ export default {
                         <div :class="$style['step__badge']">STEP 2</div>
                       </div>
                       <div :class="$style['step__text']">
-                        신청내용을 확인하여
+                        신청내용을 확인하여<br />
                         <strong>심사결과를 안내</strong> 드립니다.
                       </div>
                     </div>
@@ -1366,7 +1369,8 @@ export default {
                       </div>
                       <div :class="$style['step__text']">
                         양도인(승계전이용자)과 양수인(승계후이용자)의
-                        <strong>승계 계약</strong>이 진행됩니다. (전자약정 가능)
+                        <strong>승계 계약</strong>이 진행됩니다.<br />
+                        (전자약정 가능)
                       </div>
                     </div>
                     <div :class="$style['step__icon']">
@@ -1407,8 +1411,8 @@ export default {
                         <div :class="$style['step__badge']">STEP 5</div>
                       </div>
                       <div :class="$style['step__text']">
-                        계약사항에 대해<strong> 이해하였음을 유선상 확인</strong
-                        >합니다.
+                        계약사항에 대해<br />
+                        <strong>이해하였음을 유선상 확인</strong>합니다.
                       </div>
                     </div>
                     <div :class="$style['step__icon']">
