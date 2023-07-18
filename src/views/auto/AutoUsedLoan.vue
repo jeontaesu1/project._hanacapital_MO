@@ -113,7 +113,7 @@ export default {
               </div>
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">최저금리</div>
-                <div :class="$style['product-detail__desc']">연 7.5%</div>
+                <div :class="$style['product-detail__desc']">최저 6.9%</div>
               </div>
             </li>
             <li :class="$style['product-detail__item']">
@@ -160,7 +160,7 @@ export default {
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>금리</KeyValueTitle>
-              <KeyValueText>연 11.2% ~ 연 19.9%</KeyValueText>
+              <KeyValueText>연 6.9% ~ 연16.5%</KeyValueText>
             </KeyValueItem>
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
@@ -451,7 +451,7 @@ export default {
                     <div :class="$style['step__badge']">STEP 3</div>
                   </div>
                   <div :class="$style['step__text']">
-                    계약 시 온라인이나 오프라인
+                    계약 시 온라인이나 오프라인<br />
                     <strong>약정을 진행</strong>합니다.
                   </div>
                 </div>
@@ -467,7 +467,7 @@ export default {
                     <div :class="$style['step__badge']">STEP 4</div>
                   </div>
                   <div :class="$style['step__text']">
-                    본인계좌 또는 조건 충족 시
+                    본인계좌 또는 조건 충족 시<br />
                     <strong>제휴점에 지급</strong>합니다.
                   </div>
                 </div>

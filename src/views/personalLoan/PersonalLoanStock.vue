@@ -180,7 +180,7 @@ export default {
           <KeyValue align="left" margin="regular">
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>대상</KeyValueTitle>
-              <KeyValueText> 만 20세 이상 개인 고객 </KeyValueText>
+              <KeyValueText>만 20세 이상 개인 고객</KeyValueText>
             </KeyValueItem>
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
@@ -188,7 +188,7 @@ export default {
               <KeyValueText>
                 <div>최대 6억원</div>
                 <div class="text-body-5 color-gray-tertiary row-margin-mini">
-                  고객계좌를 담보로 계좌평가금액의 최대 250%, 최대 6억원(계좌당
+                  고객계좌를 담보로 계좌평가금액의 최대 300%, 최대 6억원(계좌당
                   3억원)까지
                 </div>
               </KeyValueText>
@@ -278,7 +278,11 @@ export default {
             <KeyValueTitle>시간</KeyValueTitle>
             <KeyValueText>
               <ul
-                :class="[$style['basic-list'], $style['basic-list--regular']]"
+                :class="[
+                  $style['basic-list'],
+                  $style['basic-list--regular'],
+                  $style['basic-list--mini-margin'],
+                ]"
               >
                 <li
                   :class="[
@@ -424,8 +428,8 @@ export default {
                       <p
                         class="text-body-4 font-weight-light color-gray-tertiary"
                       >
-                        단, 한도대출(마이너스식)은 변경된 대출비율에 한해
-                        한도내추가대출 가능
+                        단, 한도대출(마이너스식)은 변경된 대출비율에 한해 한도내
+                        추가대출 가능
                       </p>
                     </div>
                   </li>
@@ -499,7 +503,7 @@ export default {
                     <div :class="$style['step__badge']">STEP 1</div>
                   </div>
                   <div :class="$style['step__text']">
-                    <strong>성명, 주민등록번호, 휴대폰번호</strong>를
+                    <strong>성명, 주민등록번호, 휴대폰번호</strong>를<br />
                     입력합니다.
                   </div>
                 </div>
@@ -515,7 +519,8 @@ export default {
                     <div :class="$style['step__badge']">STEP 2</div>
                   </div>
                   <div :class="$style['step__text']">
-                    <strong>거주지, 직장주소, 전화번호</strong> 등을 입력합니다.
+                    <strong>거주지, 직장주소, 전화번호</strong> 등을<br />
+                    입력합니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
@@ -545,7 +550,7 @@ export default {
                     <div :class="$style['step__badge']">STEP 4</div>
                   </div>
                   <div :class="$style['step__text']">
-                    <strong>대출약정, 질권설정, 약관동의</strong> 등을
+                    <strong>대출약정, 질권설정, 약관동의</strong> 등을<br />
                     확인합니다.
                   </div>
                 </div>
@@ -632,17 +637,8 @@ export default {
           >
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              대출취급이 부적정한 경우(연체금 보유, 개인신용평점 낮음) 대출이
-              제한될 수 있습니다.
-            </div>
-          </li>
-          <li
-            :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
-          >
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              금융소비자의 개인신용평점에 따라 대출한도 및 금리가 차등
-              적용됩니다.
+              대출취급이 부적정한 경우(연체금 보유, 개인신용평점 낮음), 보유
+              주식이 당사 취급제한 품목에 해당될 경우 대출이 제한될 수 있습니다.
             </div>
           </li>
           <li
@@ -661,6 +657,14 @@ export default {
             <div :class="$style['basic-list__content']">
               금리인하요구권 및 대출계약 철회권에 대한 자세한 사항은 당사
               홈페이지에서 확인하시기 바랍니다.
+            </div>
+          </li>
+          <li
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
+          >
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              금융소비자의 거래 증권사 상품에 따라 금리가 차등 적용됩니다.
             </div>
           </li>
         </ul>

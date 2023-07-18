@@ -118,18 +118,39 @@ export default {
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">최대한도</div>
                 <div :class="$style['product-detail__desc']">
-                  시세의 최대 85%
+                  시세의 최대 85% (선순위, 후순위)
                 </div>
               </div>
             </li>
-            <li :class="$style['product-detail__item']">
+            <li :class="[$style['product-detail__item'], 'align-items-start']">
               <div :class="$style['product-detail__icon']">
                 <IconRate />
               </div>
-              <div :class="$style['product-detail__block']">
+              <div :class="$style['block-start']">
                 <div :class="$style['product-detail__title']">금리</div>
-                <div :class="$style['product-detail__desc']">
-                  연 3.44 ~ 9.50%
+                <div
+                  :class="[$style['product-detail__desc'], 'font-weight-bold']"
+                >
+                  <div>
+                    <div>연 최저 7.2% ~ 최고 9.0% (고정금리)</div>
+
+                    <ul :class="[$style['basic-list'], 'row-margin-mini']">
+                      <li
+                        :class="[
+                          $style['basic-list__item'],
+                          'text-body-5',
+                          'font-weight-regular',
+                          'color-gray-tertiary',
+                        ]"
+                      >
+                        <div :class="$style['basic-list__symbol']">※</div>
+                        <div :class="$style['basic-list__content']">
+                          만기연장 시 최초 약정 금리조건 적용<br />
+                          (변동 또는 고정금리)
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </li>
@@ -179,24 +200,37 @@ export default {
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>한도</KeyValueTitle>
-              <KeyValueText>시세의 최대 85%</KeyValueText>
+              <KeyValueText>
+                <div>시세의 최대 85%</div>
+                <div class="text-body-5 color-gray-tertiary row-margin-mini">
+                  (선순위, 후순위)
+                </div>
+              </KeyValueText>
             </KeyValueItem>
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>금리</KeyValueTitle>
               <KeyValueText>
-                <div>
-                  최저(기준금리 + 3.44%)(연)~<br />
-                  최고(기준금리 + 9.50%)(연)
+                <div class="font-weight-bold">
+                  (고정금리) 최저 연 7.2% ~ 최고 9.0%
                 </div>
-                <div class="text-body-5 color-gray-tertiary row-margin-mini">
-                  (2021.11월 기준, 기준금리에 따라 변동 가능)
-                </div>
-                <div class="row-margin-item">변동금리 : 매 6개월마다 변동</div>
-                <div class="row-margin-item">
-                  기준금리 : 상담일 기준 금융채AA-<br />
-                  6개월 만기 평균금리
-                </div>
+
+                <ul :class="[$style['basic-list'], 'row-margin-mini']">
+                  <li
+                    :class="[
+                      $style['basic-list__item'],
+                      'text-body-5',
+                      'font-weight-regular',
+                      'color-gray-tertiary',
+                    ]"
+                  >
+                    <div :class="$style['basic-list__symbol']">※</div>
+                    <div :class="$style['basic-list__content']">
+                      만기연장 시 최초 약정 금리조건 적용<br />
+                      (변동 또는 고정금리)
+                    </div>
+                  </li>
+                </ul>
               </KeyValueText>
             </KeyValueItem>
 
@@ -222,7 +256,8 @@ export default {
             <KeyValueTitle>중도상환수수료</KeyValueTitle>
             <KeyValueText>
               <div>
-                대출실행일 기준 경과기간에 따라 차등 적용되며, 3년 경과 시 면제
+                대출실행일 기준 경과기간에 따라 차등 적용되며,<br />
+                3년 경과 시 면제
               </div>
               <ul :class="[$style['basic-list'], 'row-margin-item']">
                 <li
@@ -355,9 +390,9 @@ export default {
           <KeyValueItem>
             <KeyValueTitle>연체이자율</KeyValueTitle>
             <KeyValueText>
-              <div>약정이율 + 3%</div>
+              <div class="font-weight-bold">약정이율 + 3%</div>
               <div
-                class="text-body-4 font-weight-light color-gray-tertiary row-margin-mini"
+                class="text-body-4 font-weight-bold color-gray-tertiary row-margin-mini"
               >
                 (법정최고금리 연 20% 이내)
               </div>
@@ -371,7 +406,7 @@ export default {
 
           <KeyValueItem>
             <KeyValueTitle :classNames="{ title: 'row-margin-item' }">
-              구비서류
+              제출서류
             </KeyValueTitle>
             <KeyValueText>
               <div :class="$style['contents-list']">
@@ -447,7 +482,7 @@ export default {
                 >
                   <div :class="$style['basic-list__symbol']">※</div>
                   <div :class="$style['basic-list__content']">
-                    설정비율은 당사부담/해지비용은 금융소비자 부담
+                    설정비율은 당사부담/해지비용은 금융소비자 부담<br />
                     국민주택채권매입비(금융소비자 부담)
                   </div>
                 </li>
@@ -469,8 +504,8 @@ export default {
                     <div :class="$style['step__badge']">STEP 1</div>
                   </div>
                   <div :class="$style['step__text']">
-                    하나캐피탈과 협약된 대출모집법인을 통하여
-                    <strong>대출상담을 신청</strong>합니다.
+                    하나캐피탈과 협약된 대출모집법인을<br />
+                    통하여 <strong>대출상담을 신청</strong>합니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
@@ -485,8 +520,8 @@ export default {
                     <div :class="$style['step__badge']">STEP 2</div>
                   </div>
                   <div :class="$style['step__text']">
-                    대출 한도 확인 후, <strong>약정서를 작성</strong>하고
-                    <strong>관련 서류를 제출</strong>합니다.
+                    대출 관련 상담을 진행하고,<br />
+                    <strong>약정서 작성 및 서류 제출</strong>을 진행합니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
@@ -501,8 +536,8 @@ export default {
                     <div :class="$style['step__badge']">STEP 3</div>
                   </div>
                   <div :class="$style['step__text']">
-                    제출하신 정보를 바탕으로 최종심사 후 손님께
-                    <strong>결과안내 및 담보를 설정</strong>합니다.
+                    제출하신 정보를 바탕으로 최종심사 후<br />
+                    손님께 <strong>결과안내 및 담보를 설정</strong>합니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
@@ -517,7 +552,7 @@ export default {
                     <div :class="$style['step__badge']">STEP 4</div>
                   </div>
                   <div :class="$style['step__text']">
-                    계좌로 <strong>대출금을 입금</strong>해드립니다.
+                    손님 계좌에 <strong>대출금을 입금</strong>해드립니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
@@ -545,7 +580,7 @@ export default {
             :class="[
               $style['basic-list__item'],
               'color-black',
-              'font-weight-medium',
+              'font-weight-bold',
               'text-body-3',
             ]"
           >
@@ -559,7 +594,7 @@ export default {
             :class="[
               $style['basic-list__item'],
               'color-black',
-              'font-weight-medium',
+              'font-weight-bold',
               'text-body-3',
             ]"
           >
@@ -573,7 +608,7 @@ export default {
             :class="[
               $style['basic-list__item'],
               'color-black',
-              'font-weight-medium',
+              'font-weight-bold',
               'text-body-3',
             ]"
           >
@@ -597,6 +632,15 @@ export default {
           >
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
+              담보물건, 담보종류 등에 따라 대출조건이 차등 적용되며 담보물이
+              부적합할 경우 대출이 제한될 수 있습니다.
+            </div>
+          </li>
+          <li
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
+          >
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
               금융소비자의 개인신용평점에 따라 대출한도 및 금리가 차등
               적용됩니다.
             </div>
@@ -607,7 +651,7 @@ export default {
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
               금융소비자는 해당상품에 대하여 설명을 받을 권리가 있으며, 그
-              설명을 듣고 내용을 충분히 이해한 후 거래하시기 바랍니다
+              설명을 듣고 내용을 충분히 이해한 후 거래하시기 바랍니다.
             </div>
           </li>
           <li
@@ -615,30 +659,30 @@ export default {
           >
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              금리인하요구권 및 대출계약 철회권에 대한 자세한 사항은 당사
+              금리인하요구권 및 대출계약 철회권에 대한 자세한 사항은
               홈페이지에서 확인하시기 바랍니다.
+            </div>
+          </li>
+        </ul>
+
+        <ul :class="[$style['basic-list'], 'row-margin-contents']">
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              준법심의필 23-63<br />
+              (2023.02.22~2024.02.21)
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              여신금융협회 심의필 제2023-L1h-01756호<br />
+              (2023.02.22~2024.02.21)
             </div>
           </li>
         </ul>
       </UiTabPanel>
       <!-- // 유의사항 -->
-
-      <ul :class="[$style['basic-list'], 'row-margin-contents']">
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            준법심의필 22-52<br />
-            (2022.01.28~2023.01.27)
-          </div>
-        </li>
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            여신금융협회 심의필 제2022-L1h-00751호<br />
-            (2022.02.04~2023.02.03)
-          </div>
-        </li>
-      </ul>
     </UiTab>
 
     <BasicHr
