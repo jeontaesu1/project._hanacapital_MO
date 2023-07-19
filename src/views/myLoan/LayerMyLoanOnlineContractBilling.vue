@@ -9,11 +9,10 @@ import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
-import UiTab from '@/components/ui/tab/UiTab.vue';
-import NavTab from '@/components/ui/tab/NavTab.vue';
-import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
-import StickyBar from '@/components/ui/common/StickyBar.vue';
-import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
+import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
+import BoxCheck from '@/components/ui/form/BoxCheck.vue';
+import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
+import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
@@ -36,11 +35,10 @@ export default {
     PopupTitle,
     PageTextGroup,
     PageMainText,
-    UiTab,
-    NavTab,
-    NavTabButton,
-    StickyBar,
-    UiTabPanel,
+    BoxCheckList,
+    BoxCheckListItem,
+    BoxCheck,
+    BoxCheckLabel,
     ButtonList,
     ButtonListItem,
     BasicButton,
@@ -56,7 +54,6 @@ export default {
   },
   setup() {
     const state = reactive({
-      phoneError: false,
       mailError: false,
     });
 
@@ -90,121 +87,108 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <UiTab>
-        <StickyBar>
-          <NavTab :useUiTab="true">
-            <NavTabButton link="layerMyLoanOnlineContractBillingNavTab001_001">
-              온라인 (SMS)
-            </NavTabButton>
-            <NavTabButton link="layerMyLoanOnlineContractBillingNavTab001_002">
-              이메일
-            </NavTabButton>
-          </NavTab>
-        </StickyBar>
+      <FormList>
+        <FormListItem titleText="청구서 수령방법" :forceFocus="true">
+          <BoxCheckList :wrap="true">
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="layerMyLoanOnlineContractBillingType"
+                id="layerMyLoanOnlineContractBillingType001"
+                :defaultChecked="true"
+              >
+                <BoxCheckLabel>온라인(SMS)</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="layerMyLoanOnlineContractBillingType"
+                id="layerMyLoanOnlineContractBillingType002"
+              >
+                <BoxCheckLabel>이메일</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+          </BoxCheckList>
+        </FormListItem>
 
-        <UiTabPanel name="layerMyLoanOnlineContractBillingNavTab001_001">
-          <FormList>
-            <FormListItem
-              titleText="휴대폰번호"
-              target="#layerMyLoanOnlineContractBillingPhone"
+        <FormListItem
+          titleText="이메일"
+          target="#layerMyLoanOnlineContractBillingMailId"
+        >
+          <FormInvalid :error="state.mailError">
+            <InputBlock :error="state.mailError">
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  title="이메일"
+                  id="layerMyLoanOnlineContractBillingMailId"
+                />
+              </InputBlockCell>
+              <InputBlockCell margin="regular">@</InputBlockCell>
+              <InputBlockCell margin="regular" :flexible="true">
+                <BasicSelect
+                  :option="[
+                    {
+                      value: '1',
+                      text: 'naver.com',
+                    },
+                    {
+                      value: '2',
+                      text: 'hanmail.net',
+                    },
+                    {
+                      value: '3',
+                      text: 'gmail.com',
+                    },
+                    {
+                      value: '4',
+                      text: 'nate.com',
+                    },
+                    {
+                      value: '5',
+                      text: 'paran.com',
+                    },
+                    {
+                      value: '6',
+                      text: 'dreamwiz.com',
+                    },
+                    {
+                      value: '7',
+                      text: 'yahoo.com',
+                    },
+                    {
+                      value: '8',
+                      text: 'freechal.com',
+                    },
+                    {
+                      value: '9',
+                      text: '직접입력',
+                    },
+                  ]"
+                  buttonTitle="이메일 도메인 선택하기"
+                  layerTitle="이메일 도메인을 선택해 주세요"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <!-- Case : 직접입력 선택 시 노출 -->
+            <InputBlock
+              :error="state.mailError"
+              :classNames="{
+                wrap: 'row-margin-item-group row-margin-bottom-none',
+              }"
             >
-              <FormInvalid :error="state.phoneError">
-                <InputBlock :error="state.phoneError">
-                  <InputBlockCell :flexible="true">
-                    <BasicInput
-                      pattern="\d*"
-                      title="휴대폰번호"
-                      id="layerMyLoanOnlineContractBillingPhone"
-                    />
-                  </InputBlockCell>
-                </InputBlock>
-                <FormInvalidMessage>Error Message</FormInvalidMessage>
-              </FormInvalid>
-            </FormListItem>
-          </FormList>
-        </UiTabPanel>
-
-        <UiTabPanel name="layerMyLoanOnlineContractBillingNavTab001_002">
-          <FormList>
-            <FormListItem
-              titleText="이메일"
-              target="#layerMyLoanOnlineContractBillingMailId"
-            >
-              <FormInvalid :error="state.mailError">
-                <InputBlock :error="state.mailError">
-                  <InputBlockCell :flexible="true">
-                    <BasicInput
-                      title="이메일"
-                      id="layerMyLoanOnlineContractBillingMailId"
-                    />
-                  </InputBlockCell>
-                  <InputBlockCell margin="regular">@</InputBlockCell>
-                  <InputBlockCell margin="regular" :flexible="true">
-                    <BasicSelect
-                      :option="[
-                        {
-                          value: '1',
-                          text: 'naver.com',
-                        },
-                        {
-                          value: '2',
-                          text: 'hanmail.net',
-                        },
-                        {
-                          value: '3',
-                          text: 'gmail.com',
-                        },
-                        {
-                          value: '4',
-                          text: 'nate.com',
-                        },
-                        {
-                          value: '5',
-                          text: 'paran.com',
-                        },
-                        {
-                          value: '6',
-                          text: 'dreamwiz.com',
-                        },
-                        {
-                          value: '7',
-                          text: 'yahoo.com',
-                        },
-                        {
-                          value: '8',
-                          text: 'freechal.com',
-                        },
-                        {
-                          value: '9',
-                          text: '직접입력',
-                        },
-                      ]"
-                      buttonTitle="이메일 도메인 선택하기"
-                      layerTitle="이메일 도메인을 선택해 주세요"
-                    />
-                  </InputBlockCell>
-                </InputBlock>
-                <!-- Case : 직접입력 선택 시 노출 -->
-                <InputBlock
-                  :error="state.mailError"
-                  :classNames="{
-                    wrap: 'row-margin-item-group row-margin-bottom-none',
-                  }"
-                >
-                  <InputBlockCell :flexible="true">
-                    <BasicInput
-                      title="이메일 도메인 직접입력"
-                      id="layerMyLoanOnlineContractBillingDomainSelf"
-                    />
-                  </InputBlockCell>
-                </InputBlock>
-                <!-- // Case : 직접입력 선택 시 노출 -->
-                <FormInvalidMessage>Error Message</FormInvalidMessage>
-              </FormInvalid>
-            </FormListItem>
-          </FormList>
-        </UiTabPanel>
-      </UiTab>
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  title="이메일 도메인 직접입력"
+                  id="layerMyLoanOnlineContractBillingDomainSelf"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <!-- // Case : 직접입력 선택 시 노출 -->
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+      </FormList>
 
       <template v-slot:foot>
         <ButtonList
