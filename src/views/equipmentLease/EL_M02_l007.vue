@@ -79,7 +79,7 @@ export default {
           :disabled="true"
         >
           <FormInvalid :error="state.nameError">
-            <InputBlock :error="state.nameError">
+            <InputBlock :error="state.nameError" :disabled="true">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="이름"

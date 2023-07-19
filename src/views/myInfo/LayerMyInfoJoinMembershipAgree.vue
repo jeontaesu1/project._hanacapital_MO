@@ -243,7 +243,7 @@ export default {
                       <li :class="$style['agree-list__item']">
                         <div :class="$style['agree-list__head']">
                           <CheckBox
-                            id="layerMyInfoJoinMembershipAgree003_001"
+                            id="layerMyInfoJoinMembershipAgree003_002"
                             :classNames="{
                               wrap: $style['agree-list__checkbox'],
                             }"

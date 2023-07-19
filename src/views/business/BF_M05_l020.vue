@@ -70,7 +70,7 @@ export default {
       </template>
 
       <div class="row-margin-item-group">
-        <IconLogoMain />
+        <IconLogoMain class="display-block" />
       </div>
 
       <PageTextGroup>
