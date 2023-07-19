@@ -66,10 +66,19 @@ export default {
       </template>
 
       <PageTextGroup>
+        <!-- Case : 대상건이 있는 경우 -->
         <PageMainText>
           아현 푸르지오 클라시티 V1에<br />
           <strong>분양권 승계 진행건입니다</strong>
         </PageMainText>
+        <!-- // Case : 대상건이 있는 경우 -->
+
+        <!-- Case : 대상건이 없는 경우 -->
+        <PageMainText>
+          승계 가능한<br />
+          <strong>대상건이 없습니다</strong>
+        </PageMainText>
+        <!-- // Case : 대상건이 없는 경우 -->
 
         <!-- Case : 승계 대상건이 있는 경우 -->
         <PageSubText>승계 대상 호실을 선택해주세요.</PageSubText>
@@ -79,7 +88,7 @@ export default {
       <!-- Case : 승계 대상건이 없는 경우 -->
       <div :class="$style['empty']">
         <p :class="$style['empty__text']">
-          승계 가능한 물건이 없습니다.<br />
+          승계 가능한 대상건이 없습니다.<br />
           양도인에게 승계 동의를 요청해주세요.
         </p>
       </div>
