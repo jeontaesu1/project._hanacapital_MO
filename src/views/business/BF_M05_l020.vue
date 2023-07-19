@@ -21,6 +21,7 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 
+import IconLogoMain from '@/assets/images/icon/logo_main.svg?component';
 import IconMedical from '@/assets/images/icon/medical.svg?component';
 
 export default {
@@ -43,6 +44,7 @@ export default {
     ButtonListItem,
     ButtonList,
     BasicButton,
+    IconLogoMain,
     IconMedical,
   },
   setup() {
@@ -66,6 +68,10 @@ export default {
           </template>
         </FullPopupHead>
       </template>
+
+      <div class="row-margin-item-group">
+        <IconLogoMain />
+      </div>
 
       <PageTextGroup>
         <PageMainText>김하나 고객님 귀중</PageMainText>

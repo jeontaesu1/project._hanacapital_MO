@@ -73,11 +73,20 @@ export default {
       </PageTextGroup>
 
       <FormList>
-        <FormListItem titleText="이름" target="#EL_M02_l007_name">
+        <FormListItem
+          titleText="이름"
+          target="#EL_M02_l007_name"
+          :disabled="true"
+        >
           <FormInvalid :error="state.nameError">
             <InputBlock :error="state.nameError">
               <InputBlockCell :flexible="true">
-                <BasicInput title="이름" id="EL_M02_l007_name" />
+                <BasicInput
+                  title="이름"
+                  defaultValue="김하나"
+                  id="EL_M02_l007_name"
+                  :disabled="true"
+                />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -89,9 +98,9 @@ export default {
             <InputBlock :error="state.phoneError">
               <InputBlockCell :flexible="true">
                 <BasicInput
-                  type="number"
                   pattern="\d*"
                   title="휴대폰번호"
+                  defaultValue="010-1234-5678"
                   id="EL_M02_l007_phone"
                 />
               </InputBlockCell>

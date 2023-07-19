@@ -123,7 +123,6 @@ export default {
               :minSide="true"
               name="BF_M05_l015_check"
               id="BF_M05_l015_check001"
-              :defaultChecked="true"
             >
               <BoxCheckLabel>예</BoxCheckLabel>
             </BoxCheck>

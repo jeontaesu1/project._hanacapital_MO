@@ -225,7 +225,33 @@ export default {
                           >
                             <CheckBoxObject />
                             <CheckBoxLabelText>
-                              개인(신용)정보 필수적 수집·이용
+                              개인(신용)정보 필수적 조회
+                            </CheckBoxLabelText>
+                          </CheckBox>
+                          <div :class="$style['agree-list__right']">
+                            <button
+                              type="button"
+                              :class="$style['agree-list__link']"
+                            >
+                              <span :class="$style['agree-list__link-text']">
+                                상세보기
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </li>
+                      <li :class="$style['agree-list__item']">
+                        <div :class="$style['agree-list__head']">
+                          <CheckBox
+                            id="layerMyInfoJoinMembershipAgree003_001"
+                            :classNames="{
+                              wrap: $style['agree-list__checkbox'],
+                            }"
+                            theme="quinary"
+                          >
+                            <CheckBoxObject />
+                            <CheckBoxLabelText>
+                              고유식별정보의 처리에 대한 동의
                             </CheckBoxLabelText>
                           </CheckBox>
                           <div :class="$style['agree-list__right']">

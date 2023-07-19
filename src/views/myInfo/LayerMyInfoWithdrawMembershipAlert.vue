@@ -54,6 +54,9 @@ export default {
           }"
         >
           <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">아니오</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
             <BasicButton>확인</BasicButton>
           </ButtonListItem>
         </ButtonList>
