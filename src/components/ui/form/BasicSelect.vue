@@ -154,9 +154,9 @@ export default {
     };
 
     const selectOption = (option) => {
-      state.value = option.value;
-      state.text = option.text;
-      state.forcePlaceholder = false;
+      state.value = (option && option.value) || '';
+      state.text = (option && option.text) || '';
+      state.forcePlaceholder = !option;
       layer.value.close();
 
       nextTick(() => {
@@ -181,7 +181,7 @@ export default {
       if (filterOption.length) {
         selectOption(filterOption[0]);
       } else {
-        selectOption('');
+        selectOption(null);
       }
     };
 

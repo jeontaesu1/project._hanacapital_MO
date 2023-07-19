@@ -1,6 +1,6 @@
 <script>
 // LR_M02_p001
-import { reactive, onMounted, onUnmounted } from 'vue';
+import { reactive, onMounted, onUnmounted, ref } from 'vue';
 import { A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
@@ -55,6 +55,8 @@ import DocumentView from '@/components/ui/viewer/DocumentView.vue';
 
 import DocumentEstimate001Contents from '@/views/document/DocumentEstimate001Contents.vue';
 
+import LayerLeaseRentEstimationSystemSetting from '@/views/LeaseRentEstimationSystem/LayerLeaseRentEstimationSystemSetting.vue';
+
 import IconScroll from '@/assets/images/icon/scroll.svg?component';
 
 export default {
@@ -106,7 +108,11 @@ export default {
     SwitchCheckBox,
     DeleteButton,
     DocumentView,
+
     DocumentEstimate001Contents,
+
+    LayerLeaseRentEstimationSystemSetting,
+
     IconScroll,
   },
   setup() {
@@ -150,6 +156,12 @@ export default {
       residualValueRatioError: [false, false, false],
       residualValueInputError: [false, false, false],
     });
+
+    const layerSetting = ref(null);
+
+    const layerSettingOpen = (e = {}) => {
+      layerSetting.value.layer.open(e.target);
+    };
 
     const productsAccordionAnimateStart = () => {
       state.productsAccordionAnimate = true;
@@ -212,6 +224,8 @@ export default {
 
     return {
       state,
+      layerSetting,
+      layerSettingOpen,
       modules: [A11y],
       productsAccordionAnimateStart,
       productsAccordionAnimateEnd,
@@ -2271,7 +2285,8 @@ export default {
             <h2 class="text-title-2">상품 설정</h2>
           </div>
           <div class="flex-box__cell">
-            <SettingButton />
+            <SettingButton @click="layerSettingOpen" />
+            <LayerLeaseRentEstimationSystemSetting ref="layerSetting" />
           </div>
         </div>
         <div :class="[$style['estimate-list'], $style['estimate-list--full']]">

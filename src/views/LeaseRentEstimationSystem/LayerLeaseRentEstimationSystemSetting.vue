@@ -82,7 +82,7 @@ export default {
 
 <template>
   <UiLayer ref="layer" type="full" v-slot="layerSlotProps">
-    <FullPopup>
+    <FullPopup v-if="layerSlotProps.display !== 'none'">
       <template v-slot:head>
         <FullPopupHead>
           <PopupTitle>견적 기본 설정</PopupTitle>

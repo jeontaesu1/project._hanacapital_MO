@@ -149,6 +149,7 @@ export default {
                   layerTitle="통신사를 선택해 주세요"
                   id="layerIdentificationPhonePhone01"
                   buttonId="layerIdentificationPhonePhoneButton01"
+                  placeholder="선택"
                   :classNames="{
                     wrap: 'input-width-telecom',
                   }"
