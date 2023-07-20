@@ -244,7 +244,13 @@ const datas = () => [
         path: '/ui-guide/guide-001',
         status: 'end',
         create: '2023.03.31',
-        log: [{ date: '2023.04.07', text: '앱 설치 안내 팝업 추가' }],
+        log: [
+          { date: '2023.04.07', text: '앱 설치 안내 팝업 추가' },
+          {
+            date: '2023.07.21',
+            text: '팝업추가 - 접속대기 안내 팝업\n - 초과접속 안내 팝업',
+          },
+        ],
       },
       {
         depth2: '오류안내',
@@ -397,7 +403,12 @@ const datas = () => [
         path: '/ui-guide/main-003',
         status: 'end',
         create: '2023.07.21',
-        log: [],
+        log: [
+          {
+            date: '2023.07.21',
+            text: '팝업 추가\n- 혜택 알림 수신 유도\n-운세 알림 수신 유도',
+          },
+        ],
       },
       {
         depth2: 'APP',
@@ -472,8 +483,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/main/Main_M07_p004',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.07.21',
         log: [],
       },
       {
@@ -483,8 +494,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/main/Main_M09_p001',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.07.21',
         log: [],
       },
     ],
@@ -3042,6 +3053,10 @@ const datas = () => [
           {
             date: '2023.05.26',
             text: '팝업 추가\n- 약정완료',
+          },
+          {
+            date: '2023.07.21',
+            text: '팝업 추가\n- 채무인수 확약서\n-적합성·적정성 확인서\n-약관동의\n-계약정보 최종확인\n-약정완료\n-고객서류등록',
           },
         ],
       },
