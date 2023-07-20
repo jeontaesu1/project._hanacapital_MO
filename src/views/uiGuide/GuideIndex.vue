@@ -886,17 +886,6 @@ const datas = () => [
         ],
       },
       {
-        depth2: '의료기할부\nPF_M08_p001',
-        depth3: '상품안내',
-        depth4: '',
-        depth5: '',
-        depth6: '',
-        path: '/personal-loan/medical-appliances',
-        status: 'pending',
-        create: '',
-        log: [],
-      },
-      {
         depth2: '사업자주택담보대출\nPF_M09_p001',
         depth3: '상품안내',
         depth4: '',
@@ -3695,7 +3684,12 @@ const datas = () => [
         path: '/ui-guide/my-info-market-price-realty-001',
         status: 'end',
         create: '2023.05.05',
-        log: [],
+        log: [
+          {
+            date: '2023.07.21',
+            text: 'MI_M01_l020 차트 기능 추가',
+          },
+        ],
       },
     ],
   },

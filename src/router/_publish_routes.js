@@ -704,12 +704,6 @@ const routes = [
     component: () => import('@/views/personalLoan/PersonalLoanStock.vue'),
   },
   {
-    path: '/personal-loan/medical-appliances',
-    name: '/personal-loan/medical-appliances',
-    component: () =>
-      import('@/views/personalLoan/PersonalLoanMedicalAppliances.vue'),
-  },
-  {
     path: '/personal-loan/business-house',
     name: '/personal-loan/business-house',
     component: () =>

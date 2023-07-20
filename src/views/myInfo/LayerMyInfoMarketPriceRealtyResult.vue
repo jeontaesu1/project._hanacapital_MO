@@ -1,6 +1,16 @@
 <script>
 // MI_M01_l020
 import { ref, reactive } from 'vue';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Filler,
+} from 'chart.js';
+import { Line as ChartLine } from 'vue-chartjs';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
@@ -31,9 +41,11 @@ import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
 import RoundStatus from '@/components/ui/text/RoundStatus.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
+import UiTab from '@/components/ui/tab/UiTab.vue';
+import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
 import RoundTab from '@/components/ui/tab/RoundTab.vue';
 import RoundTabButton from '@/components/ui/tab/RoundTabButton.vue';
-import TextButton from '@/components/ui/button/TextButton.vue';
 
 import IconUpArrow from '@/assets/images/icon/up-arrow.svg?component';
 import IconDownArrow from '@/assets/images/icon/down-arrow.svg?component';
@@ -41,8 +53,18 @@ import IconLogo from '@/assets/images/icon/hanacapital-small.svg?component';
 import IconLink from '@/assets/images/icon/link.svg?component';
 import IconBuilding from '@/assets/images/icon/building.svg?component';
 
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Filler
+);
+
 export default {
   components: {
+    ChartLine,
     UiLayer,
     PopupButton,
     FullPopup,
@@ -73,15 +95,141 @@ export default {
     KeyValueText,
     RoundStatus,
     TextButton,
-    IconUpArrow,
-    IconDownArrow,
+    UiTab,
+    UiTabPanel,
     RoundTab,
     RoundTabButton,
+    IconUpArrow,
+    IconDownArrow,
     IconLogo,
     IconLink,
     IconBuilding,
   },
   setup() {
+    const chartGradient = [];
+
+    const getGradient = (i, ctx, chartArea, colors = []) => {
+      chartGradient[i] = chartGradient[i] || {};
+
+      const { gradient, width, height } = chartGradient[i];
+      const chartWidth = chartArea.right - chartArea.left;
+      const chartHeight = chartArea.bottom - chartArea.top;
+
+      if (!gradient || width !== chartWidth || height !== chartHeight) {
+        chartGradient[i].width = chartWidth;
+        chartGradient[i].height = chartHeight;
+        chartGradient[i].gradient = ctx.createLinearGradient(
+          0,
+          chartArea.bottom,
+          0,
+          chartArea.top
+        );
+        colors.forEach((item) => {
+          chartGradient[i].gradient.addColorStop(item.point, item.color);
+        });
+      }
+
+      return chartGradient[i].gradient;
+    };
+
+    const chartOptions = {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: false,
+      borderColor: '#05B0A8',
+      borderWidth: 2,
+      pointRadius: 3,
+      pointBackgroundColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderWidth: 2,
+      pointHoverRadius: 3,
+      backgroundColor: function (context) {
+        const chart = context.chart;
+        const { ctx, chartArea } = chart;
+
+        if (!chartArea) {
+          return;
+        }
+
+        return getGradient(2, ctx, chartArea, [
+          {
+            point: 1,
+            color: 'rgba(5, 176, 168, 0.4)',
+          },
+          {
+            point: 0,
+            color: 'rgba(5, 176, 168, 0)',
+          },
+        ]);
+      },
+      fill: 'start',
+      scales: {
+        x: {
+          grid: {
+            display: false,
+          },
+          border: {
+            color: '#eaeaea',
+          },
+          ticks: {
+            font: {
+              family:
+                '"Spoqa Han Sans Neo", "맑은고딕", "Malgun Gothic", "돋움", Dotum, "Apple Gothic", sans-serif',
+              lineHeight: 1.5,
+            },
+            color: '#8f8f8f',
+          },
+          offset: true,
+        },
+        y: {
+          min: 0,
+          grid: {
+            color: (context) => {
+              if (context.tick.value <= 0) {
+                return 'transparent';
+              }
+              return '#f3f3f3';
+            },
+            drawTicks: false,
+          },
+          border: {
+            display: false,
+            dash: [4, 4],
+          },
+          ticks: {
+            display: false,
+          },
+        },
+      },
+    };
+
+    const chartData001 = {
+      labels: ['23.02', '23.03', '23.04', '23.05', '23.06', '23.07'],
+      datasets: [
+        {
+          data: [82000000, 81000000, 81000000, 81000000, 81000000, 81000000],
+        },
+      ],
+    };
+
+    const chartData002 = {
+      labels: ['22.09', '22.11', '23.01', '23.03', '23.05', '23.07'],
+      datasets: [
+        {
+          data: [99000000, 94000000, 84000000, 81000000, 81000000, 81000000],
+        },
+      ],
+    };
+
+    const chartData003 = {
+      labels: ['20.07', '21.02', '21.10', '22.05', '22.12', '23.07'],
+      datasets: [
+        {
+          data: [80000000, 87000000, 101500000, 103000000, 94000000, 81000000],
+        },
+      ],
+    };
+
     const state = reactive({
       sizeError: false,
     });
@@ -89,6 +237,10 @@ export default {
     const layer = ref(null);
 
     return {
+      chartOptions,
+      chartData001,
+      chartData002,
+      chartData003,
       state,
       layer,
     };
@@ -252,17 +404,51 @@ export default {
         </BasicBox>
 
         <div class="row-margin-contents-group">
-          <RoundTab>
-            <RoundTabButton tagName="button" type="button" :active="true">
-              6개월
-            </RoundTabButton>
-            <RoundTabButton tagName="button" type="button">1년</RoundTabButton>
-            <RoundTabButton tagName="button" type="button">3년</RoundTabButton>
-          </RoundTab>
+          <UiTab>
+            <RoundTab :useUiTab="true">
+              <RoundTabButton
+                link="layerMyInfoMarketPriceRealtyResultChart_001"
+              >
+                6개월
+              </RoundTabButton>
+              <RoundTabButton link="layerMyInfoMarketPriceRealtyResultChart_002"
+                >1년</RoundTabButton
+              >
+              <RoundTabButton link="layerMyInfoMarketPriceRealtyResultChart_003"
+                >3년</RoundTabButton
+              >
+            </RoundTab>
 
-          <div class="row-margin-contents-group">
-            // 그래프 영역 라이브러리 확인 후 진행
-          </div>
+            <UiTabPanel name="layerMyInfoMarketPriceRealtyResultChart_001">
+              <div
+                :style="{
+                  height: '180px',
+                }"
+              >
+                <ChartLine :options="chartOptions" :data="chartData001" />
+              </div>
+            </UiTabPanel>
+
+            <UiTabPanel name="layerMyInfoMarketPriceRealtyResultChart_002">
+              <div
+                :style="{
+                  height: '180px',
+                }"
+              >
+                <ChartLine :options="chartOptions" :data="chartData002" />
+              </div>
+            </UiTabPanel>
+
+            <UiTabPanel name="layerMyInfoMarketPriceRealtyResultChart_003">
+              <div
+                :style="{
+                  height: '180px',
+                }"
+              >
+                <ChartLine :options="chartOptions" :data="chartData003" />
+              </div>
+            </UiTabPanel>
+          </UiTab>
         </div>
 
         <div :class="$style['icon-list']">
