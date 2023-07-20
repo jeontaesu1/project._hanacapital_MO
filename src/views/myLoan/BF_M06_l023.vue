@@ -15,11 +15,7 @@ import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
-import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
-import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
-import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
-import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
-import CarThumb from '@/components/ui/imageData/CarThumb.vue';
+
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
