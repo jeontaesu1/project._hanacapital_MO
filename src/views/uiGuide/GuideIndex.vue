@@ -303,7 +303,12 @@ const datas = () => [
         path: '/ui-guide/regist-document-001',
         status: 'end',
         create: '2023.05.12',
-        log: [],
+        log: [
+          {
+            date: '2023.07.21',
+            text: '- Common_M00_l040 문구 수정',
+          },
+        ],
       },
       {
         depth2: '온보딩\nCommon_M00_p010',
