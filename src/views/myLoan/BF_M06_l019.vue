@@ -102,7 +102,7 @@ export default {
     <FullPopup>
       <template v-slot:head>
         <FullPopupHead>
-          <PopupTitle>적합성·적정성 확인</PopupTitle>
+          <PopupTitle>온라인약정</PopupTitle>
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
@@ -110,10 +110,10 @@ export default {
         <StepProgress :total="3" :current="2" />
       </template>
 
-      <PageTextGroup>
+      <PageTextGroup class="row-margin-bottom-none">
         <PageMainText>
-          체크리스트를<br />
-          <strong>작성해 주세요</strong>
+          적합성.적정성 확인서의<br />
+          <strong>체크리스트를 작성해 주세요</strong>
         </PageMainText>
         <PageSubText>
           본 확인서는 「금융소비자 보호에 관한 법률」에 의거하여 손님의
@@ -132,37 +132,6 @@ export default {
           <h3 class="text-title-2 row-margin-contents">체크리스트</h3>
 
           <FormList>
-            <FormListItem
-              titleText="고객구분"
-              target="#layerLeaseRentEstimationSystemConformityAdequacyTypeButton"
-              :selectOnly="true"
-            >
-              <FormInvalid :error="state.typeError">
-                <InputBlock :error="state.typeError">
-                  <InputBlockCell :flexible="true">
-                    <BasicSelect
-                      :option="[
-                        {
-                          value: '1',
-                          text: '개인',
-                        },
-                        {
-                          value: '2',
-                          text: '법인',
-                        },
-                      ]"
-                      buttonTitle="고객구분 선택하기"
-                      layerTitle="고객구분을 선택해 주세요"
-                      id="layerLeaseRentEstimationSystemConformityAdequacyType"
-                      buttonId="layerLeaseRentEstimationSystemConformityAdequacyTypeButton"
-                      defaultValue="1"
-                    />
-                  </InputBlockCell>
-                </InputBlock>
-                <FormInvalidMessage>Error Message</FormInvalidMessage>
-              </FormInvalid>
-            </FormListItem>
-
             <FormListItem
               titleText="전문금융소비자 해당여부"
               :forceFocus="true"
@@ -190,12 +159,6 @@ export default {
                   </BoxCheckListItem>
                 </BoxCheckList>
                 <FormInvalidMessage>Error Message</FormInvalidMessage>
-                <!-- Case : 전문금융소비자 선택시 노출 -->
-                <NoticeText :classNames="{ wrap: 'row-margin-item' }">
-                  전문금융소비자 : 국가기관, 한국은행, 금융회사, 상시근로자 5인
-                  이상 법인·조합·단체, 대출모집인, SPC 등
-                </NoticeText>
-                <!-- //Case : 전문금융소비자 선택시 노출 -->
               </FormInvalid>
             </FormListItem>
 
@@ -368,109 +331,6 @@ export default {
             </FormListItem>
             <!-- //Case : 일반금융소비자 선택 시 노출 -->
 
-            <!-- Case : 전문금융소비자 선택 시 노출 -->
-            <FormListItem
-              titleText="업력"
-              target="#layerLeaseRentEstimationSystemConformityAdequacyCareerPeriod"
-            >
-              <FormInvalid :error="state.careerError">
-                <InputBlock :error="state.careerError">
-                  <InputBlockCell :flexible="true">
-                    <BasicInput
-                      align="right"
-                      :useDelete="false"
-                      pattern="\d*"
-                      title="업력"
-                      id="layerLeaseRentEstimationSystemConformityAdequacyCareerPeriod"
-                    />
-                  </InputBlockCell>
-                  <template v-slot:innerRight>
-                    <div class="text-body-3">년</div>
-                  </template>
-                </InputBlock>
-                <FormInvalidMessage>Error Message</FormInvalidMessage>
-              </FormInvalid>
-            </FormListItem>
-
-            <FormListItem
-              titleText="매출액"
-              target="#layerLeaseRentEstimationSystemConformityAdequacySalesButton"
-              :selectOnly="true"
-            >
-              <FormInvalid :error="state.salesError">
-                <InputBlock :error="state.salesError">
-                  <InputBlockCell :flexible="true">
-                    <BasicSelect
-                      :option="[
-                        {
-                          value: '1',
-                          text: '항목 미정',
-                        },
-                      ]"
-                      buttonTitle="매출액 선택하기"
-                      layerTitle="매출액를 선택해 주세요"
-                      id="layerLeaseRentEstimationSystemConformityAdequacySales"
-                      buttonId="layerLeaseRentEstimationSystemConformityAdequacySalesButton"
-                    />
-                  </InputBlockCell>
-                </InputBlock>
-                <FormInvalidMessage>Error Message</FormInvalidMessage>
-              </FormInvalid>
-            </FormListItem>
-
-            <FormListItem
-              titleText="순이익 "
-              target="#layerLeaseRentEstimationSystemConformityAdequacyNetProfitButton"
-              :selectOnly="true"
-            >
-              <FormInvalid :error="state.netProfitError">
-                <InputBlock :error="state.netProfitError">
-                  <InputBlockCell :flexible="true">
-                    <BasicSelect
-                      :option="[
-                        {
-                          value: '1',
-                          text: '항목 미정',
-                        },
-                      ]"
-                      buttonTitle="순이익  선택하기"
-                      layerTitle="순이익을 선택해 주세요"
-                      id="layerLeaseRentEstimationSystemConformityAdequacyNetProfit"
-                      buttonId="layerLeaseRentEstimationSystemConformityAdequacyNetProfitButton"
-                    />
-                  </InputBlockCell>
-                </InputBlock>
-                <FormInvalidMessage>Error Message</FormInvalidMessage>
-              </FormInvalid>
-            </FormListItem>
-
-            <FormListItem
-              titleText="총자산 "
-              target="#layerLeaseRentEstimationSystemConformityAdequacyTotalAssetsButton"
-              :selectOnly="true"
-            >
-              <FormInvalid :error="state.totalAssetsError">
-                <InputBlock :error="state.totalAssetsError">
-                  <InputBlockCell :flexible="true">
-                    <BasicSelect
-                      :option="[
-                        {
-                          value: '1',
-                          text: '항목 미정',
-                        },
-                      ]"
-                      buttonTitle="총자산 선택하기"
-                      layerTitle="총자산을 선택해 주세요"
-                      id="layerLeaseRentEstimationSystemConformityAdequacyTotalAssets"
-                      buttonId="layerLeaseRentEstimationSystemConformityAdequacyTotalAssetsButton"
-                    />
-                  </InputBlockCell>
-                </InputBlock>
-                <FormInvalidMessage>Error Message</FormInvalidMessage>
-              </FormInvalid>
-            </FormListItem>
-            <!--// Case : 전문금융소비자 선택 시 노출 -->
-
             <FormListItem
               titleText="고정지출"
               target="#layerLeaseRentEstimationSystemConformityAdequacyFixedExpensesButton"
@@ -562,60 +422,6 @@ export default {
               </FormInvalid>
             </FormListItem>
             <!-- //Case : 일반금융소비자 선택 시 노출 -->
-
-            <!-- Case : 전문금융소비자 선택 시 노출 -->
-            <FormListItem
-              titleText="신용평가사 "
-              target="#layerLeaseRentEstimationSystemConformityAdequacyCreditRatingAgencyButton"
-              :selectOnly="true"
-            >
-              <FormInvalid :error="state.creditRatingAgencyError">
-                <InputBlock :error="state.creditRatingAgencyError">
-                  <InputBlockCell :flexible="true">
-                    <BasicSelect
-                      :option="[
-                        {
-                          value: '1',
-                          text: '항목 미정',
-                        },
-                      ]"
-                      buttonTitle="신용평가사 선택하기"
-                      layerTitle="신용평가사를 선택해 주세요"
-                      id="layerLeaseRentEstimationSystemConformityAdequacyCreditRatingAgency"
-                      buttonId="layerLeaseRentEstimationSystemConformityAdequacyCreditRatingAgencyButton"
-                    />
-                  </InputBlockCell>
-                </InputBlock>
-                <FormInvalidMessage>Error Message</FormInvalidMessage>
-              </FormInvalid>
-            </FormListItem>
-
-            <FormListItem
-              titleText="신용등급 "
-              target="#layerLeaseRentEstimationSystemConformityAdequacyCreditRatingButton"
-              :selectOnly="true"
-            >
-              <FormInvalid :error="state.creditRatingError">
-                <InputBlock :error="state.creditRatingError">
-                  <InputBlockCell :flexible="true">
-                    <BasicSelect
-                      :option="[
-                        {
-                          value: '1',
-                          text: '항목 미정',
-                        },
-                      ]"
-                      buttonTitle="신용등급 선택하기"
-                      layerTitle="신용등급을 선택해 주세요"
-                      id="layerLeaseRentEstimationSystemConformityAdequacyCreditRating"
-                      buttonId="layerLeaseRentEstimationSystemConformityAdequacyCreditRatingButton"
-                    />
-                  </InputBlockCell>
-                </InputBlock>
-                <FormInvalidMessage>Error Message</FormInvalidMessage>
-              </FormInvalid>
-            </FormListItem>
-            <!-- //Case : 전문금융소비자 선택 시 노출 -->
 
             <FormListItem
               titleText="변제계획"
@@ -766,5 +572,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/LeaseRentEstimationSystem/LayerLeaseRentEstimationSystemConformityAdequacy.scss';
+@import '@/assets/scss/views/myLoan/BF_M06_l019.scss';
 </style>

@@ -1268,6 +1268,16 @@ const routes = [
     name: '/my-loan/add-documents-complete',
     component: () => import('@/views/myLoan/MyLoanAddDocumentsComplete.vue'),
   },
+  {
+    path: '/my-loan/BF_M06_l017',
+    name: '/my-loan/BF_M06_l017',
+    component: () => import('@/views/myLoan/BF_M06_l017.vue'),
+  },
+  {
+    path: '/my-loan/BF_M06_l018',
+    name: '/my-loan/BF_M06_l018',
+    component: () => import('@/views/myLoan/BF_M06_l018.vue'),
+  },
 
   // my-info
   {
