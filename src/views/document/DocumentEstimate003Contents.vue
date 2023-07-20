@@ -165,15 +165,15 @@ export default {
                   </tbody>
                 </table>
               </div>
-              <ul :class="$style['est-list']">
-                <li
-                  :class="[$style['est-list__item'], $style['color-emphasis']]"
-                >
-                  ※ 공채비용은 실제 등록 시점 따라 차이가 발생할 수 있습니다.
-                </li>
-              </ul>
             </div>
           </div>
+          <ul :class="$style['est-list']">
+            <li :class="[$style['est-list__item'], $style['color-emphasis']]">
+              ※ 자동차 시가표준액을 기반으로 취득세 금액에 차액이 발생될 수
+              있습니다. 공채비용은 실제 등록 시점에 따라 차이가 발생할 수
+              있습니다.
+            </li>
+          </ul>
         </div>
 
         <div :class="$style['est-section']">
@@ -504,15 +504,15 @@ export default {
                   </tbody>
                 </table>
               </div>
-              <ul :class="$style['est-list']">
-                <li
-                  :class="[$style['est-list__item'], $style['color-emphasis']]"
-                >
-                  ※ 공채비용은 실제 등록 시점 따라 차이가 발생할 수 있습니다.
-                </li>
-              </ul>
             </div>
           </div>
+          <ul :class="$style['est-list']">
+            <li :class="[$style['est-list__item'], $style['color-emphasis']]">
+              ※ 자동차 시가표준액을 기반으로 취득세 금액에 차액이 발생될 수
+              있습니다. 공채비용은 실제 등록 시점에 따라 차이가 발생할 수
+              있습니다.
+            </li>
+          </ul>
         </div>
 
         <div :class="$style['est-section']">
@@ -851,15 +851,15 @@ export default {
                   </tbody>
                 </table>
               </div>
-              <ul :class="$style['est-list']">
-                <li
-                  :class="[$style['est-list__item'], $style['color-emphasis']]"
-                >
-                  ※ 공채비용은 실제 등록 시점 따라 차이가 발생할 수 있습니다.
-                </li>
-              </ul>
             </div>
           </div>
+          <ul :class="$style['est-list']">
+            <li :class="[$style['est-list__item'], $style['color-emphasis']]">
+              ※ 자동차 시가표준액을 기반으로 취득세 금액에 차액이 발생될 수
+              있습니다. 공채비용은 실제 등록 시점에 따라 차이가 발생할 수
+              있습니다.
+            </li>
+          </ul>
         </div>
 
         <div :class="$style['est-section']">
@@ -1190,15 +1190,15 @@ export default {
                   </tbody>
                 </table>
               </div>
-              <ul :class="$style['est-list']">
-                <li
-                  :class="[$style['est-list__item'], $style['color-emphasis']]"
-                >
-                  ※ 공채비용은 실제 등록 시점 따라 차이가 발생할 수 있습니다.
-                </li>
-              </ul>
             </div>
           </div>
+          <ul :class="$style['est-list']">
+            <li :class="[$style['est-list__item'], $style['color-emphasis']]">
+              ※ 자동차 시가표준액을 기반으로 취득세 금액에 차액이 발생될 수
+              있습니다. 공채비용은 실제 등록 시점에 따라 차이가 발생할 수
+              있습니다.
+            </li>
+          </ul>
         </div>
 
         <div :class="$style['est-section']">
@@ -1563,15 +1563,15 @@ export default {
                   </tbody>
                 </table>
               </div>
-              <ul :class="$style['est-list']">
-                <li
-                  :class="[$style['est-list__item'], $style['color-emphasis']]"
-                >
-                  ※ 공채비용은 실제 등록 시점 따라 차이가 발생할 수 있습니다.
-                </li>
-              </ul>
             </div>
           </div>
+          <ul :class="$style['est-list']">
+            <li :class="[$style['est-list__item'], $style['color-emphasis']]">
+              ※ 자동차 시가표준액을 기반으로 취득세 금액에 차액이 발생될 수
+              있습니다. 공채비용은 실제 등록 시점에 따라 차이가 발생할 수
+              있습니다.
+            </li>
+          </ul>
         </div>
 
         <div :class="$style['est-section']">
