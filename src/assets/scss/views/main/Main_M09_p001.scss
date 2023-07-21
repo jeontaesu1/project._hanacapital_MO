@@ -1,0 +1,26 @@
+@import '@/assets/scss/components/import/icon-list.scss';
+
+.products {
+  margin: 0 -20px;
+  overflow: hidden;
+
+  .estimate-list {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+
+  :global(.swiper) {
+    padding: 0 14px;
+    overflow: visible;
+  }
+
+  &--accordion-animate {
+    :global(.swiper-wrapper) {
+      height: auto !important;
+    }
+  }
+}
+
+.status-box {
+  padding: 4px 8px !important;
+}

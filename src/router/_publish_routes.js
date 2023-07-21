@@ -538,6 +538,11 @@ const routes = [
     component: () => import('@/views/uiGuide/GuideMain002.vue'),
   },
   {
+    path: '/ui-guide/main-003',
+    name: '/ui-guide/main-003',
+    component: () => import('@/views/uiGuide/GuideMain003.vue'),
+  },
+  {
     path: '/ui-guide/lease-rent-estimation-system-001',
     name: '/ui-guide/lease-rent-estimation-system-001',
     component: () =>
@@ -1256,6 +1261,16 @@ const routes = [
     path: '/my-loan/add-documents-complete',
     name: '/my-loan/add-documents-complete',
     component: () => import('@/views/myLoan/MyLoanAddDocumentsComplete.vue'),
+  },
+  {
+    path: '/my-loan/BF_M06_l017',
+    name: '/my-loan/BF_M06_l017',
+    component: () => import('@/views/myLoan/BF_M06_l017.vue'),
+  },
+  {
+    path: '/my-loan/BF_M06_l018',
+    name: '/my-loan/BF_M06_l018',
+    component: () => import('@/views/myLoan/BF_M06_l018.vue'),
   },
 
   // my-info

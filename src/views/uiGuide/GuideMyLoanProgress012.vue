@@ -57,6 +57,13 @@ import LayerMyLoanOnlineContractUsedLoanEarlyRedemptionFee from '@/views/myLoan/
 import LayerMyLoanOnlineContractUsedLoanNoticeVue from '@/views/myLoan/LayerMyLoanOnlineContractUsedLoanNotice.vue';
 import LayerMyLoanOnlineContractUsedLoanConfirm002 from '@/views/myLoan/LayerMyLoanOnlineContractUsedLoanConfirm002.vue';
 import LayerMyLoanOnlineContractUsedLoanFinalConfirm002 from '@/views/myLoan/LayerMyLoanOnlineContractUsedLoanFinalConfirm002.vue';
+import BF_M04_l027 from '@/views/myLoan/BF_M04_l027.vue';
+
+import BF_M06_l019 from '@/views/myLoan/BF_M06_l019.vue';
+import BF_M06_l022 from '@/views/myLoan/BF_M06_l022.vue';
+import BF_M06_l023 from '@/views/myLoan/BF_M06_l023.vue';
+import BF_M06_l024 from '@/views/myLoan/BF_M06_l024.vue';
+import BF_M06_l025 from '@/views/myLoan/BF_M06_l025.vue';
 
 export default {
   components: {
@@ -115,6 +122,12 @@ export default {
     LayerMyLoanOnlineContractUsedLoanNoticeVue,
     LayerMyLoanOnlineContractUsedLoanConfirm002,
     LayerMyLoanOnlineContractUsedLoanFinalConfirm002,
+    BF_M04_l027,
+    BF_M06_l019,
+    BF_M06_l022,
+    BF_M06_l023,
+    BF_M06_l024,
+    BF_M06_l025,
   },
   setup() {
     const layer001 = ref(null);
@@ -168,6 +181,13 @@ export default {
     const layer051 = ref(null);
     const layer052 = ref(null);
     const layer053 = ref(null);
+
+    const layer055 = ref(null);
+    const layer056 = ref(null);
+    const layer057 = ref(null);
+    const layer058 = ref(null);
+    const layer059 = ref(null);
+    const layer060 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -323,6 +343,25 @@ export default {
       layer053.value.layer.open(e.target);
     };
 
+    const layer055Open = (e = {}) => {
+      layer055.value.layer.open(e.target);
+    };
+    const layer056Open = (e = {}) => {
+      layer056.value.layer.open(e.target);
+    };
+    const layer057Open = (e = {}) => {
+      layer057.value.layer.open(e.target);
+    };
+    const layer058Open = (e = {}) => {
+      layer058.value.layer.open(e.target);
+    };
+    const layer059Open = (e = {}) => {
+      layer059.value.layer.open(e.target);
+    };
+    const layer060Open = (e = {}) => {
+      layer060.value.layer.open(e.target);
+    };
+
     return {
       layer001,
       layer002,
@@ -375,6 +414,12 @@ export default {
       layer051,
       layer052,
       layer053,
+      layer055,
+      layer056,
+      layer057,
+      layer058,
+      layer059,
+      layer060,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -426,6 +471,12 @@ export default {
       layer051Open,
       layer052Open,
       layer053Open,
+      layer055Open,
+      layer056Open,
+      layer057Open,
+      layer058Open,
+      layer059Open,
+      layer060Open,
     };
   },
 };
@@ -694,6 +745,42 @@ export default {
           계약정보 최종확인_약정정보확인 중고차할부<br />AF_M98_l011
         </BasicButton>
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer055Open">
+          채무인수 확약서
+          <br />BF_M04_l027
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer056Open">
+          적합성·적정성 확인서
+          <br />BF_M06_l019
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer057Open">
+          약관동의
+          <br />BF_M06_l022
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer058Open">
+          계약정보 최종확인
+          <br />BF_M06_l023
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer059Open">
+          약정완료<br />
+          BF_M06_l024
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer060Open">
+          고객서류등록
+          <br />BF_M06_l025
+        </BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <LayerMyLoanOnlineContractAgreeConfirm ref="layer001" />
@@ -763,5 +850,11 @@ export default {
     <LayerMyLoanOnlineContractUsedLoanNoticeVue ref="layer050" />
     <LayerMyLoanOnlineContractUsedLoanConfirm002 ref="layer051" />
     <LayerMyLoanOnlineContractUsedLoanFinalConfirm002 ref="layer052" />
+    <BF_M04_l027 ref="layer055" />
+    <BF_M06_l019 ref="layer056" />
+    <BF_M06_l022 ref="layer057" />
+    <BF_M06_l023 ref="layer058" />
+    <BF_M06_l024 ref="layer059" />
+    <BF_M06_l025 ref="layer060" />
   </PageContents>
 </template>

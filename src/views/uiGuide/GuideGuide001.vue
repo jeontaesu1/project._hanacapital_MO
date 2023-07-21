@@ -14,6 +14,8 @@ import LayerGuidePhoneCounseling from '@/views/guide/LayerGuidePhoneCounseling.v
 import LayerGuideAutoLogout from '@/views/guide/LayerGuideAutoLogout.vue';
 import LayerGuideAutoEndIdentification from '@/views/guide/LayerGuideAutoEndIdentification.vue';
 import LayerGuideAppEvaluation from '@/views/guide/LayerGuideAppEvaluation.vue';
+import Common_M00_l034 from '@/views/guide/Common_M00_l034.vue';
+import Common_M00_l035 from '@/views/guide/Common_M00_l035.vue';
 
 export default {
   components: {
@@ -29,6 +31,8 @@ export default {
     LayerGuideAutoLogout,
     LayerGuideAutoEndIdentification,
     LayerGuideAppEvaluation,
+    Common_M00_l034,
+    Common_M00_l035,
   },
   setup() {
     const layer001 = ref(null);
@@ -39,6 +43,8 @@ export default {
     const layer006 = ref(null);
     const layer007 = ref(null);
     const layer008 = ref(null);
+    const layer009 = ref(null);
+    const layer010 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -64,6 +70,12 @@ export default {
     const layer008Open = (e = {}) => {
       layer008.value.layer.open(e.target);
     };
+    const layer009Open = (e = {}) => {
+      layer009.value.layer.open(e.target);
+    };
+    const layer010Open = (e = {}) => {
+      layer010.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -74,6 +86,8 @@ export default {
       layer006,
       layer007,
       layer008,
+      layer009,
+      layer010,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -82,6 +96,8 @@ export default {
       layer006Open,
       layer007Open,
       layer008Open,
+      layer009Open,
+      layer010Open,
     };
   },
 };
@@ -135,6 +151,16 @@ export default {
           앱 평가<br />Common_M00_b020
         </BasicButton>
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer009Open">
+          접속대기 안내 팝업<br />Common_M00_l034
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer010Open">
+          초과접속 안내 팝업<br />Common_M00_l035
+        </BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <LayerGuideAuthority ref="layer001" />
@@ -145,5 +171,7 @@ export default {
     <LayerGuideAutoLogout ref="layer006" />
     <LayerGuideAutoEndIdentification ref="layer007" />
     <LayerGuideAppEvaluation ref="layer008" />
+    <Common_M00_l034 ref="layer009" />
+    <Common_M00_l035 ref="layer010" />
   </PageContents>
 </template>

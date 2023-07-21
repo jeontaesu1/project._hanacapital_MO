@@ -248,7 +248,13 @@ const datas = () => [
         path: '/ui-guide/guide-001',
         status: 'end',
         create: '2023.03.31',
-        log: [{ date: '2023.04.07', text: '앱 설치 안내 팝업 추가' }],
+        log: [
+          { date: '2023.04.07', text: '앱 설치 안내 팝업 추가' },
+          {
+            date: '2023.07.21',
+            text: '팝업추가 - 접속대기 안내 팝업\n - 초과접속 안내 팝업',
+          },
+        ],
       },
       {
         depth2: '오류안내',
@@ -399,6 +405,22 @@ const datas = () => [
       },
       {
         depth2: 'APP',
+        depth3: '팝업',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/ui-guide/main-003',
+        status: 'end',
+        create: '2023.07.21',
+        log: [
+          {
+            date: '2023.07.21',
+            text: '팝업 추가\n- 혜택 알림 수신 유도\n-운세 알림 수신 유도',
+          },
+        ],
+      },
+      {
+        depth2: 'APP',
         depth3: '렌탈 서비스\nMain_M07_p001',
         depth4: '',
         depth5: '',
@@ -470,8 +492,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/main/Main_M07_p004',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.07.21',
         log: [],
       },
       {
@@ -481,8 +503,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/main/Main_M09_p001',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.07.21',
         log: [],
       },
     ],
@@ -3140,6 +3162,28 @@ const datas = () => [
         ],
       },
       {
+        depth2: '진행상태조회\nBF_M06_l017',
+        depth3: '온라인약정(제휴할부)',
+        depth4: '본인인증',
+        depth5: '',
+        depth6: '',
+        path: '/my-loan/BF_M06_l017',
+        status: 'end',
+        create: '2023.07.21',
+        log: [],
+      },
+      {
+        depth2: '진행상태조회\nBF_M06_l018',
+        depth3: '온라인약정(제휴할부)',
+        depth4: '진행상태조회',
+        depth5: '',
+        depth6: '',
+        path: '/my-loan/BF_M06_l018',
+        status: 'end',
+        create: '2023.07.21',
+        log: [],
+      },
+      {
         depth2: '진행상태조회\nMy_M03_p001',
         depth3: '온라인약정',
         depth4: '팝업 002',
@@ -3156,6 +3200,10 @@ const datas = () => [
           {
             date: '2023.05.26',
             text: '팝업 추가\n- 약정완료',
+          },
+          {
+            date: '2023.07.21',
+            text: '팝업 추가\n- 채무인수 확약서\n-적합성·적정성 확인서\n-약관동의\n-계약정보 최종확인\n-약정완료\n-고객서류등록',
           },
           {
             date: '2023.07.19',

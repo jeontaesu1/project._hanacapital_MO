@@ -1,14 +1,16 @@
 <script>
-// Main_M06_b002
+// Main_M06_b001
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import ToastPopup from '@/components/ui/layer/ToastPopup.vue';
 import ToastPopupHead from '@/components/ui/layer/ToastPopupHead.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
+import PopupSubTitle from '@/components/ui/layer/PopupSubTitle.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
+import IllustObject from '@/components/ui/common/IllustObject.vue';
 
 export default {
   components: {
@@ -16,6 +18,8 @@ export default {
     ToastPopup,
     ToastPopupHead,
     PopupTitle,
+    PopupSubTitle,
+    IllustObject,
     ButtonList,
     ButtonListItem,
     BasicButton,
@@ -35,11 +39,14 @@ export default {
     <ToastPopup>
       <template v-slot:head>
         <ToastPopupHead>
-          <PopupTitle>타이틀</PopupTitle>
+          <PopupTitle>운세 알림이 꺼져있어요!</PopupTitle>
+          <PopupSubTitle>
+            운세 정보를 받아볼 수 있도록 알림을 켜보세요.
+          </PopupSubTitle>
         </ToastPopupHead>
       </template>
 
-      // contents
+      <IllustObject type="alarm" :classNames="{ wrap: $style['illust'] }" />
 
       <template v-slot:foot>
         <ButtonList
@@ -48,10 +55,17 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton>확인</BasicButton>
+            <BasicButton :line="true" theme="quaternary">나중에</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton>알림 켜기</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
     </ToastPopup>
   </UiLayer>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/main/Main_M06_b002.scss';
+</style>
