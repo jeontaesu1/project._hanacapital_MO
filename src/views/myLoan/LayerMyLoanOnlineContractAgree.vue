@@ -83,7 +83,7 @@ export default {
       </PageTextGroup>
 
       <!-- Case : 일반할부금융(내구소비재)의 경우 노출 -->
-      <section>
+      <section class="row-margin-contents-group row-margin-top-none">
         <BasicBox>
           <BasicBoxHead>
             <BasicBoxHeadLeft>
@@ -135,7 +135,7 @@ export default {
       </section>
       <!-- //Case : 일반할부금융(내구소비재)의 경우 노출 -->
 
-      <div :class="[$style['agree-list'], 'row-margin-contents-group']">
+      <div :class="$style['agree-list']">
         <ul :class="$style['agree-list__container']">
           <li :class="$style['agree-list__all']">
             <div :class="$style['agree-list__all-head']">
@@ -2395,6 +2395,7 @@ export default {
           </li>
         </ul>
       </div>
+
       <template v-slot:foot>
         <ButtonList
           :classNames="{

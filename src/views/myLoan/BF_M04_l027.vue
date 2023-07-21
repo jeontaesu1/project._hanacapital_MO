@@ -73,11 +73,12 @@ export default {
       </PageTextGroup>
 
       <div>
+        <!-- 고객정보 -->
         <section class="row-margin-container-medium">
           <h3 class="text-title-2 row-margin-contents">고객정보</h3>
 
-          <ul class="reset-list">
-            <li class="row-margin-item-group">
+          <div>
+            <section class="row-margin-item-group">
               <BasicBox>
                 <BasicBoxHead>
                   <BasicBoxHeadLeft>
@@ -93,7 +94,7 @@ export default {
                       item: 'text-body-3',
                     }"
                   >
-                    <KeyValueTitle>성명 </KeyValueTitle>
+                    <KeyValueTitle>성명</KeyValueTitle>
                     <KeyValueText>김하나</KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -101,7 +102,7 @@ export default {
                       item: 'text-body-3',
                     }"
                   >
-                    <KeyValueTitle>생년월일 </KeyValueTitle>
+                    <KeyValueTitle>생년월일</KeyValueTitle>
                     <KeyValueText>1999.01.23</KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -114,8 +115,8 @@ export default {
                   </KeyValueItem>
                 </KeyValue>
               </BasicBox>
-            </li>
-            <li class="row-margin-item-group">
+            </section>
+            <section class="row-margin-item-group">
               <BasicBox>
                 <BasicBoxHead>
                   <BasicBoxHeadLeft>
@@ -152,9 +153,12 @@ export default {
                   </KeyValueItem>
                 </KeyValue>
               </BasicBox>
-            </li>
-          </ul>
+            </section>
+          </div>
         </section>
+        <!-- // 고객정보 -->
+
+        <!-- 물건지정보 -->
         <section class="row-margin-container-medium">
           <h3 class="text-title-2 row-margin-contents">물건지정보</h3>
           <BasicBox>
@@ -202,6 +206,9 @@ export default {
             </KeyValue>
           </BasicBox>
         </section>
+        <!-- // 물건지정보 -->
+
+        <!-- 대출내역 -->
         <section class="row-margin-container-medium">
           <h3 class="text-title-2 row-margin-contents">대출내역</h3>
           <BasicBox>
@@ -213,7 +220,7 @@ export default {
               >
                 <KeyValueTitle>총대출금액</KeyValueTitle>
                 <KeyValueText
-                  >150,000,000원 <br />(금 일억오천만원정)</KeyValueText
+                  >150,000,000원<br />(금 일억오천만원정)</KeyValueText
                 >
               </KeyValueItem>
               <KeyValueItem
@@ -291,41 +298,46 @@ export default {
             </KeyValue>
           </BasicBox>
 
-          <ul class="reset-list row-margin-contents">
-            <li class="row-margin-contents">
-              <h4
-                class="text-body-5 font-weight-medium color-gray row-margin-item"
-              >
+          <div class="row-margin-contents">
+            <section :class="$style['notice-section']">
+              <h3 :class="$style['notice-section__title']">
                 이자 및 지연배상금 계산방법
-              </h4>
-              <div :class="$style['basic-list']">
-                <div :class="$style['basic-list__item']">
+              </h3>
+              <ul
+                :class="[$style['basic-list'], $style['basic-list--regular']]"
+              >
+                <li :class="$style['basic-list__item']">
                   <div :class="$style['basic-list__symbol']"></div>
                   <div :class="$style['basic-list__content']">
-                    본인명의의 개인 신용카드 또는 체크카드로 본인확인이
-                    가능합니다.
+                    1년을 365일로 보고 1일 단위로 계산합니다. 그러나, 외국환
+                    거래에 있어서는 구제관례, 상관습에 따릅니다.
                   </div>
-                </div>
-              </div>
-            </li>
-            <li class="row-margin-contents">
-              <h4
-                class="text-body-5 font-weight-medium color-gray row-margin-item"
-              >
+                </li>
+              </ul>
+            </section>
+          </div>
+          <div class="row-margin-contents">
+            <section :class="$style['notice-section']">
+              <h3 :class="$style['notice-section__title']">
                 이자지급 시기 및 방법
-              </h4>
-              <div :class="$style['basic-list']">
-                <div :class="$style['basic-list__item']">
+              </h3>
+              <ul
+                :class="[$style['basic-list'], $style['basic-list--regular']]"
+              >
+                <li :class="$style['basic-list__item']">
                   <div :class="$style['basic-list__symbol']"></div>
                   <div :class="$style['basic-list__content']">
                     최초 이자는 여신개시일로부터 2개월 이내에, 그 후의 이자는
                     지급한 이자의 계산 최종일 익일부터 1개월 이내에 지급합니다.
                   </div>
-                </div>
-              </div>
-            </li>
-          </ul>
+                </li>
+              </ul>
+            </section>
+          </div>
         </section>
+        <!-- // 대출내역 -->
+
+        <!-- 지연배상금 -->
         <section class="row-margin-container-medium">
           <h3 class="text-title-2 row-margin-contents">지연배상금</h3>
           <div :class="$style['contents-list']">
@@ -361,6 +373,9 @@ export default {
             </ol>
           </div>
         </section>
+        <!-- // 지연배상금 -->
+
+        <!-- 차용총액 확정 및 분할상환기일표 통지 -->
         <section class="row-margin-container-medium">
           <h3 class="text-title-2 row-margin-contents">
             차용총액 확정 및 분할상환기일표 통지
@@ -395,6 +410,9 @@ export default {
             </ol>
           </div>
         </section>
+        <!-- // 차용총액 확정 및 분할상환기일표 통지 -->
+
+        <!-- 감액·정지 -->
         <section class="row-margin-container-medium">
           <h3 class="text-title-2 row-margin-contents">감액·정지</h3>
           <div :class="$style['contents-list']">
@@ -430,16 +448,22 @@ export default {
             </ol>
           </div>
         </section>
+        <!-- // 감액·정지 -->
+
+        <!-- 약정한도 미사용 수수료 -->
         <section class="row-margin-container-medium">
           <h3 class="text-title-2 row-margin-contents">
             약정한도 미사용 수수료
           </h3>
-          <p class="text-body-2 row-margin-none">
+          <p class="text-body-2">
             한도거래 및 외화대출의 경우 거래조건의 여신(한도)금액 중
             미사용금액에 대하여 따로 정한 약정이 있는 때에는, 약정으로 정한
             기준에 의한 수수료를 지급하기로 합니다.
           </p>
         </section>
+        <!-- // 약정한도 미사용 수수료 -->
+
+        <!-- 인지세의 부담 -->
         <section class="row-margin-container-medium">
           <h3 class="text-title-2 row-margin-contents">인지세의 부담</h3>
           <div :class="$style['contents-list']">
@@ -470,17 +494,23 @@ export default {
             </ol>
           </div>
         </section>
+        <!-- // 인지세의 부담 -->
+
+        <!-- 상환통화 및 환율 -->
         <section class="row-margin-container-medium">
           <h3 class="text-title-2 row-margin-contents">상환통화 및 환율</h3>
-          <p class="text-body-2 row-margin-none">
+          <p class="text-body-2">
             외화대출의 원리금은 차용통화 또는 원화로 상환할 수 있으며, 원화로
             상환하는 경우 적용환율은 상환당일의 대고객 전신환 매도율에 의하기로
             합니다.
           </p>
         </section>
+        <!-- // 상환통화 및 환율 -->
+
+        <!-- 담보·보험 -->
         <section class="row-margin-container-medium">
           <h3 class="text-title-2 row-margin-contents">담보·보험</h3>
-          <p class="text-body-2 row-margin-none">
+          <p class="text-body-2">
             본인은 캐피탈의 다른 의사표시가 없는한, 이 약정에 의해 실행된
             여신으로 건설 또는 설치된 시설물을 그것이 설치된 토지·건물 및 그
             안의 기타시설과 함께 캐피탈에 담보로 제공하기로 하며, 캐피탈이
@@ -488,6 +518,9 @@ export default {
             보험금 청구권에 캐피탈을 위하여 질권을 설정하기로 합니다.
           </p>
         </section>
+        <!-- // 담보·보험 -->
+
+        <!-- 담보권 설정 -->
         <section class="row-margin-container-medium">
           <h3 class="text-title-2 row-margin-contents">담보권 설정</h3>
           <div :class="$style['contents-list']">
@@ -532,13 +565,15 @@ export default {
             </ol>
           </div>
         </section>
-        <section>
-          <p class="text-body-2 row-margin-none">
+        <!-- // 담보권 설정 -->
+
+        <div class="row-margin-container-medium">
+          <p class="text-body-2">
             채무인수 계약은 매도인과 매수자의 채무인수와 관련된 법적 계약 서류를
             하나캐피탈에 제출하고, 최종 승인을 위한 확인 ARS를 완료 및
             내부승인된 경우에 효력이 발생합니다.
           </p>
-        </section>
+        </div>
       </div>
 
       <template v-slot:foot>

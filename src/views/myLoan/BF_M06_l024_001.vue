@@ -60,33 +60,19 @@ export default {
       </template>
 
       <PageTextGroup>
-        <!-- case:  약정완료 -->
         <PageMainText>
           온라인약정이<br />
           <strong>완료되었습니다</strong>
         </PageMainText>
         <PageSubText>
           할부계약 주요 사항 안내 및 물건대금<br />
-          송금 동의를 위해 ARS 계약안내
+          송금 동의를 위해 ARS 계약안내
           <span class="color-red font-weight-regular">ARS 계약안내</span>를
           요청합니다.
         </PageSubText>
-        <!-- //case:  약정완료 -->
-        <!-- case:  약정실패 -->
-        <PageMainText>
-          온라인약정이<br />
-          <strong>실패되었습니다</strong>
-        </PageMainText>
-        <PageSubText> 하나캐피탈을 이용해 주셔서 감사합니다. </PageSubText>
-        <!-- //case:  약정실패 -->
       </PageTextGroup>
 
-      <!-- case:  약정완료 -->
       <IllustObject type="complete" />
-      <!-- //case:  약정완료 -->
-      <!-- case:  약정실패 -->
-      <IllustObject type="fail" />
-      <!-- //case:  약정실패 -->
 
       <BasicHr
         type="contents"
@@ -127,11 +113,6 @@ export default {
             wrap: 'row-margin-none',
           }"
         >
-          <!-- case:  약정완료_시스템심사 승인건 -->
-          <ButtonListItem>
-            <BasicButton size="small" theme="tertiary">서류등록</BasicButton>
-          </ButtonListItem>
-          <!-- //case:  약정완료_시스템심사 승인건 -->
           <ButtonListItem>
             <BasicButton>확인</BasicButton>
           </ButtonListItem>

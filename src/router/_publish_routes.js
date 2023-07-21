@@ -538,11 +538,6 @@ const routes = [
     component: () => import('@/views/uiGuide/GuideMain002.vue'),
   },
   {
-    path: '/ui-guide/main-003',
-    name: '/ui-guide/main-003',
-    component: () => import('@/views/uiGuide/GuideMain003.vue'),
-  },
-  {
     path: '/ui-guide/lease-rent-estimation-system-001',
     name: '/ui-guide/lease-rent-estimation-system-001',
     component: () =>

@@ -15,7 +15,6 @@ import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
-
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
@@ -228,12 +227,16 @@ export default {
                   item: 'text-body-3',
                 }"
               >
-                <KeyValueTitle class="color-red">연체이자율</KeyValueTitle>
-                <KeyValueText class="color-red"
-                  >9.00%<br />
-                  약정이자율 + 최대 3%<br />
-                  법정최금리 이내, 무이자 9%</KeyValueText
-                >
+                <KeyValueTitle>
+                  <span class="color-red">연체이자율</span>
+                </KeyValueTitle>
+                <KeyValueText>
+                  <span class="color-red">
+                    9.00%<br />
+                    약정이자율 + 최대 3%<br />
+                    법정최금리 이내, 무이자 9%
+                  </span>
+                </KeyValueText>
               </KeyValueItem>
               <KeyValueItem
                 :classNames="{
@@ -299,7 +302,11 @@ export default {
                 }"
               >
                 <KeyValueTitle>청구주소</KeyValueTitle>
-                <KeyValueText>(00000)서울 광진구 구의동</KeyValueText>
+                <KeyValueText>
+                  (150043) 서울 영등포구<br />
+                  문래로 20길 14 하나아파트<br />
+                  101동 101호
+                </KeyValueText>
               </KeyValueItem>
               <KeyValueItem
                 :classNames="{
@@ -307,7 +314,11 @@ export default {
                 }"
               >
                 <KeyValueTitle>실행통지</KeyValueTitle>
-                <KeyValueText>(00000)서울 광진구 구의동</KeyValueText>
+                <KeyValueText>
+                  (150043) 서울 영등포구<br />
+                  문래로 20길 14 하나아파트<br />
+                  101동 101호
+                </KeyValueText>
               </KeyValueItem>
               <KeyValueItem
                 :classNames="{
@@ -356,7 +367,9 @@ export default {
                 }"
               >
                 <KeyValueTitle>수납요금종류</KeyValueTitle>
-                <KeyValueText>대출금(대출/할부/리스/렌트료 등)</KeyValueText>
+                <KeyValueText
+                  >대출금<br />(대출/할부/리스/렌트료 등)</KeyValueText
+                >
               </KeyValueItem>
               <KeyValueItem
                 :classNames="{

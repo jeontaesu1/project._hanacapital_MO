@@ -110,7 +110,7 @@ export default {
         <StepProgress :total="3" :current="2" />
       </template>
 
-      <PageTextGroup>
+      <PageTextGroup :classNames="{ wrap: 'row-margin-none' }">
         <PageMainText>
           체크리스트를<br />
           <strong>작성해 주세요</strong>
@@ -350,7 +350,7 @@ export default {
                       name="layerLeaseRentEstimationSystemConformityAdequacyAsset"
                       id="layerLeaseRentEstimationSystemConformityAdequacyAsset2"
                     >
-                      <BoxCheckLabel>1억원 이상 10억원 미만</BoxCheckLabel>
+                      <BoxCheckLabel>1억원 이상 ~ 10억원 미만</BoxCheckLabel>
                     </BoxCheck>
                   </BoxCheckListItem>
                   <BoxCheckListItem>
@@ -525,7 +525,7 @@ export default {
                       name="layerLeaseRentEstimationSystemConformityAdequacyDebt"
                       id="layerLeaseRentEstimationSystemConformityAdequacyDebt002"
                     >
-                      <BoxCheckLabel>5천만원 이상 5억원 미만</BoxCheckLabel>
+                      <BoxCheckLabel>5천만원 이상 ~ 5억원 미만</BoxCheckLabel>
                     </BoxCheck>
                   </BoxCheckListItem>
                   <BoxCheckListItem>

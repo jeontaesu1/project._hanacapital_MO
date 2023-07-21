@@ -4,20 +4,17 @@
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
-import AlertPopup from '@/components/ui/layer/AlertPopup.vue';
+import IllustObject from '@/components/ui/common/IllustObject.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 
-import IconLogo from '@/assets/images/icon/logo_main.svg?component';
-import IconWaiting from '@/assets/images/icon/waiting.svg?component';
+import IconLogo from '@/assets/images/icon/logo-main.svg?component';
 
 export default {
   components: {
     UiLayer,
-    AlertPopup,
+    IllustObject,
     BasicHr,
-
     IconLogo,
-    IconWaiting,
   },
   setup() {
     const layer = ref(null);
@@ -30,31 +27,38 @@ export default {
 </script>
 
 <template>
-  <UiLayer ref="layer" type="alert" v-slot="layerSlotProps">
-    <AlertPopup>
-      <div :class="$style['connection']">
-        <div :class="$style['connection__logo']"><IconLogo /></div>
-        <div :class="$style['connection__image']"><IconWaiting /></div>
-        <p
-          class="row-margin-item color-gray-secondary text-body-3 row-margin-bottom-none"
-        >
-          대기인원
-        </p>
-        <div class="row-margin-mini">
-          <span :class="$style['connection__number']">222</span>
-          <span :class="$style['connection__count']">명</span>
-        </div>
-        <BasicHr
-          theme="quaternary"
-          type="contents"
-          className="row-margin-contents"
-        />
-        <p :class="$style['connection__title']">서비스 접속 대기중 입니다</p>
-        <p :class="$style['connection__text']">
-          잠시만 기다리시면<br />서비스로 자동 접속됩니다.
-        </p>
-      </div>
-    </AlertPopup>
+  <UiLayer ref="layer">
+    <section :class="$style['wait']">
+      <IconLogo :class="$style['wait__logo']" />
+
+      <IllustObject
+        type="waiting"
+        :classNames="{ wrap: $style['wait__illust'] }"
+      />
+
+      <dl :class="$style['wait__count']">
+        <dt :class="$style['wait__count-key']">대기인원</dt>
+        <dd :class="$style['wait__count-val']">
+          <strong :class="$style['wait__count-num']">222</strong>
+          <span :class="$style['wait__count-unit']">명</span>
+        </dd>
+      </dl>
+
+      <BasicHr
+        theme="quaternary"
+        type="contents"
+        className="row-margin-contents"
+      />
+
+      <h2 :class="$style['wait__title']">
+        서비스 접속 <span class="color-green">대기중</span> 입니다
+      </h2>
+
+      <p :class="$style['wait__text']">
+        잠시만 기다리시면<br />
+        서비스로 자동 접속됩니다.
+      </p>
+    </section>
   </UiLayer>
 </template>
 

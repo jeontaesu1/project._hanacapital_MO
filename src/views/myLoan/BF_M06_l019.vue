@@ -68,7 +68,6 @@ export default {
   },
   setup() {
     const state = reactive({
-      typeError: false,
       professionalFinancialConsumerError: false,
       useOfFundsError: false,
       useOfFundsEtcError: false,
@@ -110,7 +109,7 @@ export default {
         <StepProgress :total="3" :current="2" />
       </template>
 
-      <PageTextGroup class="row-margin-bottom-none">
+      <PageTextGroup :classNames="{ wrap: 'row-margin-none' }">
         <PageMainText>
           적합성.적정성 확인서의<br />
           <strong>체크리스트를 작성해 주세요</strong>
@@ -141,8 +140,8 @@ export default {
                   <BoxCheckListItem>
                     <BoxCheck
                       :minSide="true"
-                      name="layerLeaseRentEstimationSystemConformityAdequacyProfessionalFinancialConsumer"
-                      id="layerLeaseRentEstimationSystemConformityAdequacyProfessionalFinancialConsumer001"
+                      name="BF_M06_l019_ProfessionalFinancialConsumer"
+                      id="BF_M06_l019_ProfessionalFinancialConsumer001"
                     >
                       <BoxCheckLabel>전문금융소비자</BoxCheckLabel>
                     </BoxCheck>
@@ -150,8 +149,8 @@ export default {
                   <BoxCheckListItem>
                     <BoxCheck
                       :minSide="true"
-                      name="layerLeaseRentEstimationSystemConformityAdequacyProfessionalFinancialConsumer"
-                      id="layerLeaseRentEstimationSystemConformityAdequacyProfessionalFinancialConsumer002"
+                      name="BF_M06_l019_ProfessionalFinancialConsumer"
+                      id="BF_M06_l019_ProfessionalFinancialConsumer002"
                       :defaultChecked="true"
                     >
                       <BoxCheckLabel>일반금융소비자</BoxCheckLabel>
@@ -159,12 +158,18 @@ export default {
                   </BoxCheckListItem>
                 </BoxCheckList>
                 <FormInvalidMessage>Error Message</FormInvalidMessage>
+                <!-- Case : 전문금융소비자 선택시 노출 -->
+                <NoticeText :classNames="{ wrap: 'row-margin-item' }">
+                  전문금융소비자 : 국가기관, 한국은행, 금융회사, 상시근로자 5인
+                  이상 법인·조합·단체, 대출모집인, SPC 등
+                </NoticeText>
+                <!-- //Case : 전문금융소비자 선택시 노출 -->
               </FormInvalid>
             </FormListItem>
 
             <FormListItem
               titleText="자금용도"
-              target="#layerLeaseRentEstimationSystemConformityAdequacyUseOfFundsButton"
+              target="#BF_M06_l019_UseOfFundsButton"
               :selectOnly="true"
             >
               <FormInvalid :error="state.useOfFundsError">
@@ -211,8 +216,8 @@ export default {
                       ]"
                       buttonTitle="고객구분 선택하기"
                       layerTitle="고객구분을 선택해 주세요"
-                      id="layerLeaseRentEstimationSystemConformityAdequacyUseOfFunds"
-                      buttonId="layerLeaseRentEstimationSystemConformityAdequacyUseOfFundsButton"
+                      id="BF_M06_l019_UseOfFunds"
+                      buttonId="BF_M06_l019_UseOfFundsButton"
                     />
                   </InputBlockCell>
                 </InputBlock>
@@ -223,14 +228,14 @@ export default {
             <!-- Case : 자금용도 기타 선택시 노출 -->
             <FormListItem
               titleText="자금용도 직접 입력"
-              target="#layerLeaseRentEstimationSystemConformityAdequacyUseOfFundsEtc"
+              target="#BF_M06_l019_UseOfFundsEtc"
             >
               <FormInvalid :error="state.useOfFundsEtcError">
                 <InputBlock :error="state.useOfFundsEtcError">
                   <InputBlockCell :flexible="true">
                     <BasicInput
                       title="자금용도 직접 입력"
-                      id="layerLeaseRentEstimationSystemConformityAdequacyUseOfFundsEtc"
+                      id="BF_M06_l019_UseOfFundsEtc"
                     />
                   </InputBlockCell>
                 </InputBlock>
@@ -242,7 +247,7 @@ export default {
             <!-- Case : 일반금융소비자 선택 시 노출 -->
             <FormListItem
               titleText="연령"
-              target="#layerLeaseRentEstimationSystemConformityAdequacyAge"
+              target="#BF_M06_l019_Age"
               :disabled="true"
             >
               <FormInvalid :error="state.ageError">
@@ -250,7 +255,7 @@ export default {
                   <InputBlockCell :flexible="true">
                     <BasicInput
                       title="연령"
-                      id="layerLeaseRentEstimationSystemConformityAdequacyAge"
+                      id="BF_M06_l019_Age"
                       defaultValue="만 25세"
                       :disabled="true"
                     />
@@ -266,8 +271,8 @@ export default {
                   <BoxCheckListItem>
                     <BoxCheck
                       :minSide="true"
-                      name="layerLeaseRentEstimationSystemConformityAdequacyIncome"
-                      id="layerLeaseRentEstimationSystemConformityAdequacyIncome1"
+                      name="BF_M06_l019_Income"
+                      id="BF_M06_l019_Income1"
                     >
                       <BoxCheckLabel>5천만원 미만</BoxCheckLabel>
                     </BoxCheck>
@@ -275,8 +280,8 @@ export default {
                   <BoxCheckListItem>
                     <BoxCheck
                       :minSide="true"
-                      name="layerLeaseRentEstimationSystemConformityAdequacyIncome"
-                      id="layerLeaseRentEstimationSystemConformityAdequacyIncome2"
+                      name="BF_M06_l019_Income"
+                      id="BF_M06_l019_Income2"
                     >
                       <BoxCheckLabel>5천만원 이상 ~ 1억원 미만</BoxCheckLabel>
                     </BoxCheck>
@@ -284,8 +289,8 @@ export default {
                   <BoxCheckListItem>
                     <BoxCheck
                       :minSide="true"
-                      name="layerLeaseRentEstimationSystemConformityAdequacyIncome"
-                      id="layerLeaseRentEstimationSystemConformityAdequacyIncome3"
+                      name="BF_M06_l019_Income"
+                      id="BF_M06_l019_Income3"
                     >
                       <BoxCheckLabel>1억원 이상</BoxCheckLabel>
                     </BoxCheck>
@@ -301,8 +306,8 @@ export default {
                   <BoxCheckListItem>
                     <BoxCheck
                       :minSide="true"
-                      name="layerLeaseRentEstimationSystemConformityAdequacyAsset"
-                      id="layerLeaseRentEstimationSystemConformityAdequacyAsset1"
+                      name="BF_M06_l019_Asset"
+                      id="BF_M06_l019_Asset1"
                     >
                       <BoxCheckLabel>1억원 미만</BoxCheckLabel>
                     </BoxCheck>
@@ -310,17 +315,17 @@ export default {
                   <BoxCheckListItem>
                     <BoxCheck
                       :minSide="true"
-                      name="layerLeaseRentEstimationSystemConformityAdequacyAsset"
-                      id="layerLeaseRentEstimationSystemConformityAdequacyAsset2"
+                      name="BF_M06_l019_Asset"
+                      id="BF_M06_l019_Asset2"
                     >
-                      <BoxCheckLabel>1억원 이상 10억원 미만</BoxCheckLabel>
+                      <BoxCheckLabel>1억원 이상 ~ 10억원 미만</BoxCheckLabel>
                     </BoxCheck>
                   </BoxCheckListItem>
                   <BoxCheckListItem>
                     <BoxCheck
                       :minSide="true"
-                      name="layerLeaseRentEstimationSystemConformityAdequacyAsset"
-                      id="layerLeaseRentEstimationSystemConformityAdequacyAsset3"
+                      name="BF_M06_l019_Asset"
+                      id="BF_M06_l019_Asset3"
                     >
                       <BoxCheckLabel>10억원 이상</BoxCheckLabel>
                     </BoxCheck>
@@ -331,9 +336,109 @@ export default {
             </FormListItem>
             <!-- //Case : 일반금융소비자 선택 시 노출 -->
 
+            <!-- Case : 전문금융소비자 선택 시 노출 -->
+            <FormListItem titleText="업력" target="#BF_M06_l019_CareerPeriod">
+              <FormInvalid :error="state.careerError">
+                <InputBlock :error="state.careerError">
+                  <InputBlockCell :flexible="true">
+                    <BasicInput
+                      align="right"
+                      :useDelete="false"
+                      pattern="\d*"
+                      title="업력"
+                      id="BF_M06_l019_CareerPeriod"
+                    />
+                  </InputBlockCell>
+                  <template v-slot:innerRight>
+                    <div class="text-body-3">년</div>
+                  </template>
+                </InputBlock>
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
+
+            <FormListItem
+              titleText="매출액"
+              target="#BF_M06_l019_SalesButton"
+              :selectOnly="true"
+            >
+              <FormInvalid :error="state.salesError">
+                <InputBlock :error="state.salesError">
+                  <InputBlockCell :flexible="true">
+                    <BasicSelect
+                      :option="[
+                        {
+                          value: '1',
+                          text: '항목 미정',
+                        },
+                      ]"
+                      buttonTitle="매출액 선택하기"
+                      layerTitle="매출액를 선택해 주세요"
+                      id="BF_M06_l019_Sales"
+                      buttonId="BF_M06_l019_SalesButton"
+                    />
+                  </InputBlockCell>
+                </InputBlock>
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
+
+            <FormListItem
+              titleText="순이익 "
+              target="#BF_M06_l019_NetProfitButton"
+              :selectOnly="true"
+            >
+              <FormInvalid :error="state.netProfitError">
+                <InputBlock :error="state.netProfitError">
+                  <InputBlockCell :flexible="true">
+                    <BasicSelect
+                      :option="[
+                        {
+                          value: '1',
+                          text: '항목 미정',
+                        },
+                      ]"
+                      buttonTitle="순이익  선택하기"
+                      layerTitle="순이익을 선택해 주세요"
+                      id="BF_M06_l019_NetProfit"
+                      buttonId="BF_M06_l019_NetProfitButton"
+                    />
+                  </InputBlockCell>
+                </InputBlock>
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
+
+            <FormListItem
+              titleText="총자산 "
+              target="#BF_M06_l019_TotalAssetsButton"
+              :selectOnly="true"
+            >
+              <FormInvalid :error="state.totalAssetsError">
+                <InputBlock :error="state.totalAssetsError">
+                  <InputBlockCell :flexible="true">
+                    <BasicSelect
+                      :option="[
+                        {
+                          value: '1',
+                          text: '항목 미정',
+                        },
+                      ]"
+                      buttonTitle="총자산 선택하기"
+                      layerTitle="총자산을 선택해 주세요"
+                      id="BF_M06_l019_TotalAssets"
+                      buttonId="BF_M06_l019_TotalAssetsButton"
+                    />
+                  </InputBlockCell>
+                </InputBlock>
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
+            <!--// Case : 전문금융소비자 선택 시 노출 -->
+
             <FormListItem
               titleText="고정지출"
-              target="#layerLeaseRentEstimationSystemConformityAdequacyFixedExpensesButton"
+              target="#BF_M06_l019_FixedExpensesButton"
               :selectOnly="true"
             >
               <FormInvalid :error="state.fixedExpensesError">
@@ -360,8 +465,8 @@ export default {
                       ]"
                       buttonTitle="고정지출 선택하기"
                       layerTitle="고정지출을 선택해 주세요"
-                      id="layerLeaseRentEstimationSystemConformityAdequacyFixedExpenses"
-                      buttonId="layerLeaseRentEstimationSystemConformityAdequacyFixedExpensesButton"
+                      id="BF_M06_l019_FixedExpenses"
+                      buttonId="BF_M06_l019_FixedExpensesButton"
                     />
                   </InputBlockCell>
                 </InputBlock>
@@ -373,26 +478,17 @@ export default {
               <FormInvalid :error="state.debtError">
                 <BoxCheckList align="full">
                   <BoxCheckListItem>
-                    <BoxCheck
-                      name="layerLeaseRentEstimationSystemConformityAdequacyDebt"
-                      id="layerLeaseRentEstimationSystemConformityAdequacyDebt001"
-                    >
+                    <BoxCheck name="BF_M06_l019_Debt" id="BF_M06_l019_Debt001">
                       <BoxCheckLabel>5천만원 미만</BoxCheckLabel>
                     </BoxCheck>
                   </BoxCheckListItem>
                   <BoxCheckListItem>
-                    <BoxCheck
-                      name="layerLeaseRentEstimationSystemConformityAdequacyDebt"
-                      id="layerLeaseRentEstimationSystemConformityAdequacyDebt002"
-                    >
-                      <BoxCheckLabel>5천만원 이상 5억원 미만</BoxCheckLabel>
+                    <BoxCheck name="BF_M06_l019_Debt" id="BF_M06_l019_Debt002">
+                      <BoxCheckLabel>5천만원 이상 ~ 5억원 미만</BoxCheckLabel>
                     </BoxCheck>
                   </BoxCheckListItem>
                   <BoxCheckListItem>
-                    <BoxCheck
-                      name="layerLeaseRentEstimationSystemConformityAdequacyDebt"
-                      id="layerLeaseRentEstimationSystemConformityAdequacyDebt003"
-                    >
+                    <BoxCheck name="BF_M06_l019_Debt" id="BF_M06_l019_Debt003">
                       <BoxCheckLabel>5억원 이상</BoxCheckLabel>
                     </BoxCheck>
                   </BoxCheckListItem>
@@ -404,7 +500,7 @@ export default {
             <!-- Case : 일반금융소비자 선택 시 노출 -->
             <FormListItem
               titleText="신용점수"
-              target="#layerLeaseRentEstimationSystemConformityAdequacyCreditScore"
+              target="#BF_M06_l019_CreditScore"
               :disabled="true"
             >
               <FormInvalid :error="state.creditScoreError">
@@ -412,7 +508,7 @@ export default {
                   <InputBlockCell :flexible="true">
                     <BasicInput
                       title="신용점수"
-                      id="layerLeaseRentEstimationSystemConformityAdequacyCreditScore"
+                      id="BF_M06_l019_CreditScore"
                       defaultValue="756점 (평가사 : NICE신용평가)"
                       :disabled="true"
                     />
@@ -423,9 +519,63 @@ export default {
             </FormListItem>
             <!-- //Case : 일반금융소비자 선택 시 노출 -->
 
+            <!-- Case : 전문금융소비자 선택 시 노출 -->
+            <FormListItem
+              titleText="신용평가사 "
+              target="#BF_M06_l019_CreditRatingAgencyButton"
+              :selectOnly="true"
+            >
+              <FormInvalid :error="state.creditRatingAgencyError">
+                <InputBlock :error="state.creditRatingAgencyError">
+                  <InputBlockCell :flexible="true">
+                    <BasicSelect
+                      :option="[
+                        {
+                          value: '1',
+                          text: '항목 미정',
+                        },
+                      ]"
+                      buttonTitle="신용평가사 선택하기"
+                      layerTitle="신용평가사를 선택해 주세요"
+                      id="BF_M06_l019_CreditRatingAgency"
+                      buttonId="BF_M06_l019_CreditRatingAgencyButton"
+                    />
+                  </InputBlockCell>
+                </InputBlock>
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
+
+            <FormListItem
+              titleText="신용등급 "
+              target="#BF_M06_l019_CreditRatingButton"
+              :selectOnly="true"
+            >
+              <FormInvalid :error="state.creditRatingError">
+                <InputBlock :error="state.creditRatingError">
+                  <InputBlockCell :flexible="true">
+                    <BasicSelect
+                      :option="[
+                        {
+                          value: '1',
+                          text: '항목 미정',
+                        },
+                      ]"
+                      buttonTitle="신용등급 선택하기"
+                      layerTitle="신용등급을 선택해 주세요"
+                      id="BF_M06_l019_CreditRating"
+                      buttonId="BF_M06_l019_CreditRatingButton"
+                    />
+                  </InputBlockCell>
+                </InputBlock>
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
+            <!-- //Case : 전문금융소비자 선택 시 노출 -->
+
             <FormListItem
               titleText="변제계획"
-              target="#layerLeaseRentEstimationSystemConformityAdequacyLiquidationButton"
+              target="#BF_M06_l019_LiquidationButton"
               :selectOnly="true"
             >
               <FormInvalid :error="state.liquidationError">
@@ -456,8 +606,8 @@ export default {
                       ]"
                       buttonTitle="변제계획 선택하기"
                       layerTitle="변제계획을 선택해 주세요"
-                      id="layerLeaseRentEstimationSystemConformityAdequacyLiquidation"
-                      buttonId="layerLeaseRentEstimationSystemConformityAdequacyLiquidationButton"
+                      id="BF_M06_l019_Liquidation"
+                      buttonId="BF_M06_l019_LiquidationButton"
                     />
                   </InputBlockCell>
                 </InputBlock>
@@ -524,7 +674,7 @@ export default {
           </BasicBox>
 
           <CheckBox
-            id="layerLeaseRentEstimationSystemConformityAdequacyChk01"
+            id="BF_M06_l019_Chk01"
             theme="tertiary"
             :classNames="{ wrap: 'row-margin-item-group' }"
           >

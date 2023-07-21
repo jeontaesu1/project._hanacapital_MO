@@ -9,7 +9,7 @@ import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import PageSubText from '@/components/ui/text/PageSubText.vue';
 
-import IconLogoMain from '@/assets/images/icon/logo_main.svg?component';
+import IconLogoMain from '@/assets/images/icon/logo-main.svg?component';
 
 export default {
   components: {

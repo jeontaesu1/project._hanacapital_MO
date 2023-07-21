@@ -7,19 +7,19 @@ import { useUiHeaderStore } from '@/stores/ui/header';
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
+import IllustObject from '@/components/ui/common/IllustObject.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 
-import IllustObject from '@/components/ui/common/IllustObject.vue';
-import IconEcoPlus from '@/assets/images/icon/eco-plus.svg?component';
-import IconDbInsurance from '@/assets/images/icon/db-insurance.svg?component';
+import IconEcoPlus from '@/assets/images/etc-logo/eco-plus.svg?component';
+import IconDbInsurance from '@/assets/images/etc-logo/db-insurance.svg?component';
 
 export default {
   components: {
     PageContents,
     PageTextGroup,
     PageMainText,
-    BasicHr,
     IllustObject,
+    BasicHr,
     IconEcoPlus,
     IconDbInsurance,
   },
@@ -79,6 +79,7 @@ export default {
               <span
                 :class="[
                   $style['icon-list__text'],
+                  'row-margin-small',
                   'color-gray-tertiary',
                   'font-weight-light',
                 ]"
@@ -95,7 +96,7 @@ export default {
           >
             <span :class="$style['icon-list__icon']"><IconDbInsurance /></span>
             <span :class="$style['icon-list__content']">
-              <span class="text-body-5 color-green"
+              <span class="display-block text-body-5 color-green"
                 >가입 시 최대 3만원 카드혜택</span
               >
               <span :class="$style['icon-list__title']"
@@ -104,6 +105,7 @@ export default {
               <span
                 :class="[
                   $style['icon-list__text'],
+                  'row-margin-small',
                   'color-gray-tertiary',
                   'font-weight-light',
                 ]"
@@ -120,5 +122,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/main/MainRental.scss';
+@import '@/assets/scss/views/main/Main_M07_p004.scss';
 </style>

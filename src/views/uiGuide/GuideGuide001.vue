@@ -15,7 +15,8 @@ import LayerGuideAutoLogout from '@/views/guide/LayerGuideAutoLogout.vue';
 import LayerGuideAutoEndIdentification from '@/views/guide/LayerGuideAutoEndIdentification.vue';
 import LayerGuideAppEvaluation from '@/views/guide/LayerGuideAppEvaluation.vue';
 import Common_M00_l034 from '@/views/guide/Common_M00_l034.vue';
-import Common_M00_l035 from '@/views/guide/Common_M00_l035.vue';
+import Common_M00_l035_App from '@/views/guide/Common_M00_l035_App.vue';
+import Common_M00_l035_Web from '@/views/guide/Common_M00_l035_Web.vue';
 
 export default {
   components: {
@@ -32,7 +33,8 @@ export default {
     LayerGuideAutoEndIdentification,
     LayerGuideAppEvaluation,
     Common_M00_l034,
-    Common_M00_l035,
+    Common_M00_l035_App,
+    Common_M00_l035_Web,
   },
   setup() {
     const layer001 = ref(null);
@@ -45,6 +47,7 @@ export default {
     const layer008 = ref(null);
     const layer009 = ref(null);
     const layer010 = ref(null);
+    const layer011 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -76,6 +79,9 @@ export default {
     const layer010Open = (e = {}) => {
       layer010.value.layer.open(e.target);
     };
+    const layer011Open = (e = {}) => {
+      layer011.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -88,6 +94,7 @@ export default {
       layer008,
       layer009,
       layer010,
+      layer011,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -98,6 +105,7 @@ export default {
       layer008Open,
       layer009Open,
       layer010Open,
+      layer011Open,
     };
   },
 };
@@ -158,7 +166,12 @@ export default {
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer010Open">
-          초과접속 안내 팝업<br />Common_M00_l035
+          초과접속 안내 팝업 App<br />Common_M00_l035
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer011Open">
+          초과접속 안내 팝업 Web<br />Common_M00_l035
         </BasicButton>
       </ButtonListItem>
     </ButtonList>
@@ -172,6 +185,7 @@ export default {
     <LayerGuideAutoEndIdentification ref="layer007" />
     <LayerGuideAppEvaluation ref="layer008" />
     <Common_M00_l034 ref="layer009" />
-    <Common_M00_l035 ref="layer010" />
+    <Common_M00_l035_App ref="layer010" />
+    <Common_M00_l035_Web ref="layer011" />
   </PageContents>
 </template>

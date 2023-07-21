@@ -1512,5 +1512,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/myLoan/MyLoanProgress.scss';
+@import '@/assets/scss/views/myLoan/BF_M06_l018.scss';
 </style>

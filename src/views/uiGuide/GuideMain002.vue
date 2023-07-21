@@ -13,6 +13,8 @@ import LayerMainEventDetail from '@/views/main/LayerMainEventDetail.vue';
 import LayerMainCouponDetail from '@/views/main/LayerMainCouponDetail.vue';
 import LayerMainFunDetail from '@/views/main/LayerMainFunDetail.vue';
 import LayerMainFunSubscription from '@/views/main/LayerMainFunSubscription.vue';
+import Main_M06_b001 from '@/views/main/Main_M06_b001.vue';
+import Main_M06_b002 from '@/views/main/Main_M06_b002.vue';
 
 export default {
   components: {
@@ -27,6 +29,8 @@ export default {
     LayerMainCouponDetail,
     LayerMainFunDetail,
     LayerMainFunSubscription,
+    Main_M06_b001,
+    Main_M06_b002,
   },
   setup() {
     const layer001 = ref(null);
@@ -36,6 +40,8 @@ export default {
     const layer005 = ref(null);
     const layer006 = ref(null);
     const layer007 = ref(null);
+    const layer008 = ref(null);
+    const layer009 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -58,6 +64,12 @@ export default {
     const layer007Open = (e = {}) => {
       layer007.value.layer.open(e.target);
     };
+    const layer008Open = (e = {}) => {
+      layer008.value.layer.open(e.target);
+    };
+    const layer009Open = (e = {}) => {
+      layer009.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -67,6 +79,8 @@ export default {
       layer005,
       layer006,
       layer007,
+      layer008,
+      layer009,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -74,6 +88,8 @@ export default {
       layer005Open,
       layer006Open,
       layer007Open,
+      layer008Open,
+      layer009Open,
     };
   },
 };
@@ -122,6 +138,20 @@ export default {
           FUN 구독<br />Main_M05_b001
         </BasicButton>
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer008Open">
+          혜택 알림 수신 유도
+          <br />
+          Main_M06_b001
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer009Open">
+          운세 알림 수신 유도
+          <br />
+          Main_M06_b002
+        </BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <LayerMainPushDetail ref="layer001" />
@@ -131,5 +161,7 @@ export default {
     <LayerMainCouponDetail ref="layer005" />
     <LayerMainFunDetail ref="layer006" />
     <LayerMainFunSubscription ref="layer007" />
+    <Main_M06_b001 ref="layer008" />
+    <Main_M06_b002 ref="layer009" />
   </PageContents>
 </template>

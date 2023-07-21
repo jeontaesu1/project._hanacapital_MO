@@ -152,9 +152,7 @@ export default {
           >
             <li :class="[$style['basic-list__item'], 'font-weight-regular']">
               <div :class="$style['basic-list__symbol']">※</div>
-              <div :class="$style['basic-list__content']">
-                2022-12-28 11:34 4건 전송
-              </div>
+              <div :class="$style['basic-list__content']">2022-12-28 11:34</div>
             </li>
           </ul>
           <!-- //Case : 서류 등록 후 -->
@@ -214,9 +212,7 @@ export default {
           >
             <li :class="[$style['basic-list__item'], 'font-weight-regular']">
               <div :class="$style['basic-list__symbol']">※</div>
-              <div :class="$style['basic-list__content']">
-                2022-12-28 11:34 4건 전송
-              </div>
+              <div :class="$style['basic-list__content']">2022-12-28 11:34</div>
             </li>
           </ul>
           <!-- //Case : 서류 등록 후 -->
@@ -276,9 +272,7 @@ export default {
           >
             <li :class="[$style['basic-list__item'], 'font-weight-regular']">
               <div :class="$style['basic-list__symbol']">※</div>
-              <div :class="$style['basic-list__content']">
-                2022-12-28 11:34 4건 전송
-              </div>
+              <div :class="$style['basic-list__content']">2022-12-28 11:34</div>
             </li>
           </ul>
           <!-- //Case : 서류 등록 후 -->
@@ -340,9 +334,7 @@ export default {
           >
             <li :class="[$style['basic-list__item'], 'font-weight-regular']">
               <div :class="$style['basic-list__symbol']">※</div>
-              <div :class="$style['basic-list__content']">
-                2022-12-28 11:34 4건 전송
-              </div>
+              <div :class="$style['basic-list__content']">2022-12-28 11:34</div>
             </li>
           </ul>
           <!-- //Case : 서류 등록 후 -->
@@ -402,9 +394,7 @@ export default {
           >
             <li :class="[$style['basic-list__item'], 'font-weight-regular']">
               <div :class="$style['basic-list__symbol']">※</div>
-              <div :class="$style['basic-list__content']">
-                2022-12-28 11:34 4건 전송
-              </div>
+              <div :class="$style['basic-list__content']">2022-12-28 11:34</div>
             </li>
           </ul>
           <!-- //Case : 서류 등록 후 -->
@@ -451,5 +441,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/registDocument/LayerRegistDocumentList.scss';
+@import '@/assets/scss/views/myLoan/BF_M06_l025.scss';
 </style>

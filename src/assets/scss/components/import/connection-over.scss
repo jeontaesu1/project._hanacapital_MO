@@ -1,4 +1,4 @@
-.wait {
+.connection-over {
   width: 328px;
   box-sizing: border-box;
   padding: 30px 20px 40px;
@@ -23,34 +23,6 @@
     width: 115px;
     height: 92px;
     background-position: 50% 50%;
-  }
-
-  &__count {
-    margin: 8px 0 0;
-    padding: 0;
-
-    &-key {
-      @include font-size-default(14);
-      color: $color-gray-60;
-    }
-    &-val {
-      margin: 0;
-      font-size: 0;
-      line-height: 0;
-    }
-    &-num {
-      display: inline-block;
-      vertical-align: top;
-      @include font-size-head(28);
-      color: $color-green-50;
-    }
-    &-unit {
-      display: inline-block;
-      vertical-align: top;
-      @include font-size-default(14);
-      color: $color-gray-60;
-      margin: 14px 0 0 4px;
-    }
   }
 
   &__title {

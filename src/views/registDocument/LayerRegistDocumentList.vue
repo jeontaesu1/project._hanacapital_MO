@@ -274,10 +274,6 @@ export default {
               <div :class="$style['basic-list__symbol']">※</div>
               <div :class="$style['basic-list__content']">2022-12-28 11:34</div>
             </li>
-            <li :class="[$style['basic-list__item'], 'font-weight-regular']">
-              <div :class="$style['basic-list__symbol']">※</div>
-              <div :class="$style['basic-list__content']">2022-12-26 09:34</div>
-            </li>
           </ul>
           <!-- //Case : 서류 등록 후 -->
         </section>
