@@ -14,6 +14,8 @@ import DocumentView from '@/components/ui/viewer/DocumentView.vue';
 
 import DocumentEstimate001Contents from '@/views/document/DocumentEstimate001Contents.vue';
 
+import dummyDataEstimate from '@/assets/_dummyData/견적서asis/견적서HTML샘플(렌트_장기렌트).html?raw';
+
 export default {
   components: {
     UiLayer,
@@ -31,6 +33,7 @@ export default {
     const layer = ref(null);
 
     return {
+      dummyDataEstimate,
       layer,
     };
   },
@@ -49,9 +52,22 @@ export default {
         </FullPopupHead>
       </template>
 
-      <DocumentView v-if="layerSlotProps.display !== 'none'">
-        <DocumentEstimate001Contents />
-      </DocumentView>
+      <div v-if="layerSlotProps.display !== 'none'">
+        <!-- Case : AS-IS -->
+        <DocumentView>
+          <article
+            :class="$style['document']"
+            v-html="dummyDataEstimate"
+          ></article>
+        </DocumentView>
+        <!-- // Case : AS-IS -->
+
+        <!-- Case : TO-BE -->
+        <DocumentView>
+          <DocumentEstimate001Contents />
+        </DocumentView>
+        <!-- // Case : TO-BE -->
+      </div>
 
       <template v-slot:foot>
         <ButtonList
@@ -67,3 +83,7 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/auto/LayerAutoEstimateView.scss';
+</style>

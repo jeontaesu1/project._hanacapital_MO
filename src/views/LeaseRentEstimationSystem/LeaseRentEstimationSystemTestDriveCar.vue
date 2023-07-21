@@ -58,6 +58,8 @@ import DocumentEstimate003Contents from '@/views/document/DocumentEstimate003Con
 
 import IconScroll from '@/assets/images/icon/scroll.svg?component';
 
+import dummyDataEstimate from '@/assets/_dummyData/견적서asis/견적서HTML샘플(시승차_금융리스).html?raw';
+
 export default {
   components: {
     Swiper,
@@ -214,6 +216,7 @@ export default {
     });
 
     return {
+      dummyDataEstimate,
       state,
       modules: [A11y],
       productsAccordionAnimateStart,
@@ -5123,10 +5126,21 @@ export default {
       </ButtonList>
 
       <div v-if="state.viewDocument" class="row-margin-contents">
+        <!-- Case : AS-IS -->
+        <DocumentView>
+          <article
+            :class="$style['document']"
+            v-html="dummyDataEstimate"
+          ></article>
+        </DocumentView>
+        <!-- // Case : AS-IS -->
+
+        <!-- Case : TO-BE -->
         <DocumentView>
           <DocumentEstimate002Contents />
           <DocumentEstimate003Contents />
         </DocumentView>
+        <!-- // Case : TO-BE -->
 
         <ButtonList
           :classNames="{

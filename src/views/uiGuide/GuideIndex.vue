@@ -2054,6 +2054,10 @@ const datas = () => [
             date: '2023.06.23',
             text: '팝업 추가\n-  견적서 진행사항 안내',
           },
+          {
+            date: '2023.07.21',
+            text: 'LR_M00_l008 AS-IS 샘플 적용\nLR_M00_l003 AS-IS 샘플 적용',
+          },
         ],
       },
       {
@@ -2065,7 +2069,12 @@ const datas = () => [
         path: '/lease-rent-estimation-system/view-estimation',
         status: 'end',
         create: '2023.06.16',
-        log: [],
+        log: [
+          {
+            date: '2023.07.21',
+            text: 'LR_M00_p003 AS-IS 샘플 적용',
+          },
+        ],
       },
       {
         depth2: '홈 (저장,심사)\nLR_M04_p001',
@@ -2120,7 +2129,12 @@ const datas = () => [
         path: '/lease-rent-estimation-system/rent',
         status: 'end',
         create: '2023.06.08',
-        log: [],
+        log: [
+          {
+            date: '2023.07.21',
+            text: 'LR_M02_p001 AS-IS 샘플 적용',
+          },
+        ],
       },
       {
         depth2: '신차',
@@ -2131,7 +2145,12 @@ const datas = () => [
         path: '/lease-rent-estimation-system/lease',
         status: 'end',
         create: '2023.06.13',
-        log: [],
+        log: [
+          {
+            date: '2023.07.21',
+            text: 'LR_M02_p002 AS-IS 샘플 적용',
+          },
+        ],
       },
       {
         depth2: '신차',
@@ -2142,7 +2161,12 @@ const datas = () => [
         path: '/lease-rent-estimation-system/installment',
         status: 'end',
         create: '2023.06.23',
-        log: [],
+        log: [
+          {
+            date: '2023.07.21',
+            text: 'LR_M02_p003 AS-IS 샘플 적용',
+          },
+        ],
       },
       {
         depth2: '신차',
@@ -2153,7 +2177,12 @@ const datas = () => [
         path: '/lease-rent-estimation-system/test-drive-car',
         status: 'end',
         create: '2023.06.23',
-        log: [],
+        log: [
+          {
+            date: '2023.07.21',
+            text: 'LR_M02_p004 AS-IS 샘플 적용',
+          },
+        ],
       },
       {
         depth2: '선구매',
@@ -2175,7 +2204,12 @@ const datas = () => [
         path: '/lease-rent-estimation-system/pre-purchase',
         status: 'end',
         create: '2023.06.21',
-        log: [],
+        log: [
+          {
+            date: '2023.07.21',
+            text: 'LR_M02_p008 AS-IS 샘플 적용',
+          },
+        ],
       },
       {
         depth2: '선구매',
@@ -2230,7 +2264,12 @@ const datas = () => [
         path: '/lease-rent-estimation-system/used-lease',
         status: 'end',
         create: '2023.06.21',
-        log: [],
+        log: [
+          {
+            date: '2023.07.21',
+            text: 'LR_M03_p001 AS-IS 샘플 적용',
+          },
+        ],
       },
       {
         depth2: '서비스',
@@ -2527,6 +2566,10 @@ const datas = () => [
             date: '2023.05.16',
             text: '팝업 추가\n- 진행이력 팝업\n- 이탈 안내팝업\n- 리스/렌트 비교 정보 팝업\n- 이용자 유형 선택 팝업\n- 제조사 선택\n- 종류 선택',
           },
+          {
+            date: '2023.07.21',
+            text: 'AF_M00_l015 AS-IS 샘플 적용',
+          },
         ],
       },
       {
@@ -2806,6 +2849,10 @@ const datas = () => [
           {
             date: '2023.07.19',
             text: '- BF_M05_l015 디폴트 체크 값 제거\n- BF_M05_l019 문구수정\n- BF_M05_l020 로고 추가',
+          },
+          {
+            date: '2023.07.21',
+            text: 'BF_M05_l020 AS-IS 샘플 적용',
           },
         ],
       },

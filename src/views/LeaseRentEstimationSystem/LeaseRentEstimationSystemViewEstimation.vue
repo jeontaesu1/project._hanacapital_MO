@@ -22,6 +22,8 @@ import IconPdfDownload from '@/assets/images/icon/pdf-download.svg?component';
 import IconJpgDownload from '@/assets/images/icon/jpg-download.svg?component';
 import IconPrint from '@/assets/images/icon/print.svg?component';
 
+import dummyDataEstimate from '@/assets/_dummyData/견적서asis/견적서HTML샘플(렌트_장기렌트).html?raw';
+
 export default {
   components: {
     PageContents,
@@ -66,6 +68,7 @@ export default {
     });
 
     return {
+      dummyDataEstimate,
       copy,
     };
   },
@@ -146,12 +149,23 @@ export default {
     </div>
 
     <div class="row-margin-contents-group">
+      <!-- Case : AS-IS -->
+      <DocumentView>
+        <article
+          :class="$style['document']"
+          v-html="dummyDataEstimate"
+        ></article>
+      </DocumentView>
+      <!-- // Case : AS-IS -->
+
+      <!-- Case : TO-BE -->
       <DocumentView>
         <DocumentEstimate001Contents />
         <DocumentEstimate002Contents />
         <DocumentEstimate003Contents />
         <DocumentEstimate004Contents />
       </DocumentView>
+      <!-- // Case : TO-BE -->
     </div>
   </PageContents>
 </template>

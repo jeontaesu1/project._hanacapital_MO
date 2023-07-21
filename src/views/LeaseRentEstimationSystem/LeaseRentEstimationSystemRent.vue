@@ -59,6 +59,8 @@ import LayerLeaseRentEstimationSystemSetting from '@/views/LeaseRentEstimationSy
 
 import IconScroll from '@/assets/images/icon/scroll.svg?component';
 
+import dummyDataEstimate from '@/assets/_dummyData/견적서asis/견적서HTML샘플(렌트_장기렌트).html?raw';
+
 export default {
   components: {
     Swiper,
@@ -223,6 +225,7 @@ export default {
     });
 
     return {
+      dummyDataEstimate,
       state,
       layerSetting,
       layerSettingOpen,
@@ -5160,9 +5163,20 @@ export default {
       </ButtonList>
 
       <div v-if="state.viewDocument" class="row-margin-contents">
+        <!-- Case : AS-IS -->
+        <DocumentView>
+          <article
+            :class="$style['document']"
+            v-html="dummyDataEstimate"
+          ></article>
+        </DocumentView>
+        <!-- // Case : AS-IS -->
+
+        <!-- Case : TO-BE -->
         <DocumentView>
           <DocumentEstimate001Contents />
         </DocumentView>
+        <!-- // Case : TO-BE -->
 
         <ButtonList
           :classNames="{
