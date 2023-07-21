@@ -125,7 +125,7 @@ export default {
                 <IconCheckDocument class="display-block" />
               </div>
               <div class="flex-box__cell flex-1">
-                <div class="text-body-3">1건 등록 완료</div>
+                <div class="text-body-3">등록 완료</div>
               </div>
               <div class="flex-box__cell">
                 <BasicButton size="mini" theme="quaternary">
@@ -152,9 +152,7 @@ export default {
           >
             <li :class="[$style['basic-list__item'], 'font-weight-regular']">
               <div :class="$style['basic-list__symbol']">※</div>
-              <div :class="$style['basic-list__content']">
-                2022-12-28 11:34 4건 전송
-              </div>
+              <div :class="$style['basic-list__content']">2022-12-28 11:34</div>
             </li>
           </ul>
           <!-- //Case : 서류 등록 후 -->
@@ -187,7 +185,7 @@ export default {
                 <IconCheckDocument class="display-block" />
               </div>
               <div class="flex-box__cell flex-1">
-                <div class="text-body-3">1건 등록 완료</div>
+                <div class="text-body-3">등록 완료</div>
               </div>
               <div class="flex-box__cell">
                 <BasicButton size="mini" theme="quaternary">
@@ -214,9 +212,7 @@ export default {
           >
             <li :class="[$style['basic-list__item'], 'font-weight-regular']">
               <div :class="$style['basic-list__symbol']">※</div>
-              <div :class="$style['basic-list__content']">
-                2022-12-28 11:34 4건 전송
-              </div>
+              <div :class="$style['basic-list__content']">2022-12-28 11:34</div>
             </li>
           </ul>
           <!-- //Case : 서류 등록 후 -->
@@ -249,7 +245,7 @@ export default {
                 <IconCheckDocument class="display-block" />
               </div>
               <div class="flex-box__cell flex-1">
-                <div class="text-body-3">5건 등록 완료</div>
+                <div class="text-body-3">등록 완료</div>
               </div>
               <div class="flex-box__cell">
                 <BasicButton size="mini" theme="quaternary">
@@ -276,15 +272,11 @@ export default {
           >
             <li :class="[$style['basic-list__item'], 'font-weight-regular']">
               <div :class="$style['basic-list__symbol']">※</div>
-              <div :class="$style['basic-list__content']">
-                2022-12-28 11:34 4건 전송
-              </div>
+              <div :class="$style['basic-list__content']">2022-12-28 11:34</div>
             </li>
             <li :class="[$style['basic-list__item'], 'font-weight-regular']">
               <div :class="$style['basic-list__symbol']">※</div>
-              <div :class="$style['basic-list__content']">
-                2022-12-26 09:34 1건 전송
-              </div>
+              <div :class="$style['basic-list__content']">2022-12-26 09:34</div>
             </li>
           </ul>
           <!-- //Case : 서류 등록 후 -->

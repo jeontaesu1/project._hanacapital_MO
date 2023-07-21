@@ -303,7 +303,12 @@ const datas = () => [
         path: '/ui-guide/regist-document-001',
         status: 'end',
         create: '2023.05.12',
-        log: [],
+        log: [
+          {
+            date: '2023.07.21',
+            text: '- Common_M00_l040 문구 수정',
+          },
+        ],
       },
       {
         depth2: '온보딩\nCommon_M00_p010',
@@ -3156,6 +3161,10 @@ const datas = () => [
             date: '2023.07.19',
             text: '- BF_M04_l002 띄어쓰기 수정\n- BF_M04_l019 문구 케이스 추가\n- BF_M04_l014 문구 케이스 추가',
           },
+          {
+            date: '2023.07.21',
+            text: '- BF_M04_l003 약관 추가',
+          },
         ],
       },
       {
@@ -3955,7 +3964,12 @@ const datas = () => [
         path: '/document/estimate-002',
         status: 'end',
         create: '2023.07.14',
-        log: [],
+        log: [
+          {
+            date: '2023.07.21',
+            text: '취득원가 안내 문구 수정',
+          },
+        ],
       },
       {
         depth2: '견적서',
@@ -3966,7 +3980,12 @@ const datas = () => [
         path: '/document/estimate-003',
         status: 'end',
         create: '2023.07.14',
-        log: [],
+        log: [
+          {
+            date: '2023.07.21',
+            text: '취득원가 안내 문구 수정',
+          },
+        ],
       },
       {
         depth2: '견적서',
@@ -3977,7 +3996,12 @@ const datas = () => [
         path: '/document/estimate-004',
         status: 'end',
         create: '2023.07.14',
-        log: [],
+        log: [
+          {
+            date: '2023.07.21',
+            text: '취득원가 안내 문구 수정',
+          },
+        ],
       },
     ],
   },
