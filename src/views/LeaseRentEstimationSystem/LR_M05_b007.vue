@@ -39,7 +39,7 @@ export default {
         </ToastPopupHead>
       </template>
 
-      //데이터 노출
+      <article>//데이터 노출</article>
 
       <template v-slot:foot>
         <ButtonList

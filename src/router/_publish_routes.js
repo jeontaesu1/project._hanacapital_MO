@@ -1680,20 +1680,20 @@ const routes = [
       ),
   },
   {
-    path: '/lease-rent-estimation-system/admin-setting-send',
-    name: '/lease-rent-estimation-system/admin-setting-send',
+    path: '/lease-rent-estimation-system/LR_M05_p013',
+    name: '/lease-rent-estimation-system/LR_M05_p013',
     component: () =>
       import('@/views/LeaseRentEstimationSystem/LR_M05_p013.vue'),
   },
   {
-    path: '/lease-rent-estimation-system/admin-setting-administration',
-    name: '/lease-rent-estimation-system/admin-setting-administration',
+    path: '/lease-rent-estimation-system/LR_M05_p014',
+    name: '/lease-rent-estimation-system/LR_M05_p014',
     component: () =>
       import('@/views/LeaseRentEstimationSystem/LR_M05_p014.vue'),
   },
   {
-    path: '/lease-rent-estimation-system/admin-setting-modification',
-    name: '/lease-rent-estimation-system/admin-setting-modification',
+    path: '/lease-rent-estimation-system/LR_M05_p015',
+    name: '/lease-rent-estimation-system/LR_M05_p015',
     component: () =>
       import('@/views/LeaseRentEstimationSystem/LR_M05_p015.vue'),
   },

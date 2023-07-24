@@ -51,8 +51,7 @@ export default {
     const state = reactive({
       titleError: false,
       contentsError: false,
-      periodError: false,
-      dateError: false,
+      exposureError: false,
       estimateError: false,
       minDate: '2022.02.17',
       maxDate: '2022.10.17',
@@ -93,18 +92,23 @@ export default {
 
       <FormListItem titleText="내용" :forceFocus="true">
         <FormInvalid :error="state.contentsError">
-          //Text Edtor Area
+          <article>
+            <div style="height: 450px; background-color: #f9f9f9">
+              // 에디터 영역
+            </div>
+          </article>
+          <FormInvalidMessage>Error Message</FormInvalidMessage>
         </FormInvalid>
       </FormListItem>
 
       <FormListItem titleText="팝업노출" :forceFocus="true">
-        <FormInvalid :error="state.periodError">
+        <FormInvalid :error="state.exposureError">
           <BoxCheckList :classNames="{ wrap: 'row-margin-item-group' }">
             <BoxCheckListItem>
               <BoxCheck
                 :minSide="true"
-                name="LR_M05_p015_period"
-                id="LR_M05_p015_period001"
+                name="LR_M05_p015_exposure"
+                id="LR_M05_p015_exposure001"
                 :defaultChecked="true"
               >
                 <BoxCheckLabel>노출</BoxCheckLabel>
@@ -113,14 +117,14 @@ export default {
             <BoxCheckListItem>
               <BoxCheck
                 :minSide="true"
-                name="LR_M05_p015_period"
-                id="LR_M05_p015_period002"
+                name="LR_M05_p015_exposure"
+                id="LR_M05_p015_exposure002"
               >
                 <BoxCheckLabel>중지</BoxCheckLabel>
               </BoxCheck>
             </BoxCheckListItem>
           </BoxCheckList>
-          <InputBlock :error="state.dateError">
+          <InputBlock :error="state.exposureError">
             <InputBlockCell :flexible="true">
               <BasicDatepicker
                 title="조회기간 시작 날짜"
