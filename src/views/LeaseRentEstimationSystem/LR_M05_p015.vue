@@ -50,10 +50,12 @@ export default {
 
     const state = reactive({
       titleError: false,
-      reasonError: false,
+      contentsError: false,
       periodError: false,
       dateError: false,
       estimateError: false,
+      minDate: '2022.02.17',
+      maxDate: '2022.10.17',
     });
 
     onMounted(() => {
@@ -90,13 +92,8 @@ export default {
       </FormListItem>
 
       <FormListItem titleText="내용" :forceFocus="true">
-        <FormInvalid :error="state.reasonError">
-          <div :class="$style['image-view']">
-            <img
-              src="@/assets/images/_dummy/box-detail-text.png"
-              alt="샘플 이미지"
-            />
-          </div>
+        <FormInvalid :error="state.contentsError">
+          <!-- Text Edtor Area -->
         </FormInvalid>
       </FormListItem>
 

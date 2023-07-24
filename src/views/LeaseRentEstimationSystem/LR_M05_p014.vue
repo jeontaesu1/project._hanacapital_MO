@@ -23,6 +23,7 @@ import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
+import BasicBox from '@/components/ui/common/BasicBox.vue';
 
 export default {
   components: {
@@ -45,6 +46,7 @@ export default {
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
+    BasicBox,
   },
   setup() {
     const store = {
@@ -187,45 +189,36 @@ export default {
 
       <UiAccordion>
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
-          <BoxCheck
-            :contents="true"
-            type="radio"
-            name="LR_M05_p014_popup"
-            id="LR_M05_p014_popup001"
-          >
-            <div>
-              <div class="flex-box">
-                <div class="flex-box__cell flex-1">
-                  <BoxCheckLabel>
-                    <p
-                      class="text-body-4 color-green font-weight-medium row-margin-small"
+          <BasicBox>
+            <div class="flex-box">
+              <div class="flex-box__cell flex-1">
+                <p
+                  class="text-body-4 color-green font-weight-medium row-margin-small"
+                >
+                  로그인
+                </p>
+                <span class="flex-box">
+                  <span class="flex-box__cell flex-1">공지사항</span>
+                  <span class="flex-box__cell">
+                    <RoundStatus
+                      :classNames="{ wrap: 'display-block' }"
+                      theme="secondary"
                     >
-                      로그인
-                    </p>
-                    <span class="flex-box">
-                      <span class="flex-box__cell flex-1">공지사항</span>
-                      <span class="flex-box__cell">
-                        <RoundStatus
-                          :classNames="{ wrap: 'display-block' }"
-                          theme="secondary"
-                        >
-                          노출
-                        </RoundStatus>
-                      </span>
-                      <div class="flex-box__cell">
-                        <UiAccordionOpener
-                          :classNames="{
-                            button: $style['opener'],
-                          }"
-                        />
-                      </div>
-                    </span>
-                  </BoxCheckLabel>
-                </div>
+                      노출
+                    </RoundStatus>
+                  </span>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{
+                        button: $style['opener'],
+                      }"
+                    />
+                  </div>
+                </span>
               </div>
-              <div class="text-body-4 color-gray row-margin-small">
-                2023.04.01~2023.04.01
-              </div>
+            </div>
+            <div class="text-body-4 color-gray row-margin-small">
+              2023.04.01~2023.04.01
             </div>
 
             <UiAccordionLayer>
@@ -273,43 +266,36 @@ export default {
                 </KeyValue>
               </div>
             </UiAccordionLayer>
-          </BoxCheck>
+          </BasicBox>
         </UiAccordionItem>
 
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
-          <BoxCheck
-            :contents="true"
-            type="radio"
-            name="LR_M05_p014_popup"
-            id="LR_M05_p014_popup002"
-          >
+          <BasicBox>
             <div>
               <div class="flex-box">
                 <div class="flex-box__cell flex-1">
-                  <BoxCheckLabel>
-                    <p
-                      class="text-body-4 color-green font-weight-medium row-margin-small"
+                  <p
+                    class="text-body-4 color-green font-weight-medium row-margin-small"
+                  >
+                    렌트견적
+                  </p>
+                  <span class="flex-box">
+                    <span class="flex-box__cell flex-1"
+                      >모바일견적 이용불가 안내</span
                     >
-                      렌트견적
-                    </p>
-                    <span class="flex-box">
-                      <span class="flex-box__cell flex-1"
-                        >모바일견적 이용불가 안내</span
-                      >
-                      <span class="flex-box__cell">
-                        <RoundStatus :classNames="{ wrap: 'display-block' }">
-                          중지
-                        </RoundStatus>
-                      </span>
-                      <div class="flex-box__cell">
-                        <UiAccordionOpener
-                          :classNames="{
-                            button: $style['opener'],
-                          }"
-                        />
-                      </div>
+                    <span class="flex-box__cell">
+                      <RoundStatus :classNames="{ wrap: 'display-block' }">
+                        중지
+                      </RoundStatus>
                     </span>
-                  </BoxCheckLabel>
+                    <div class="flex-box__cell">
+                      <UiAccordionOpener
+                        :classNames="{
+                          button: $style['opener'],
+                        }"
+                      />
+                    </div>
+                  </span>
                 </div>
               </div>
               <div class="text-body-4 color-gray row-margin-small">
@@ -362,48 +348,39 @@ export default {
                 </KeyValue>
               </div>
             </UiAccordionLayer>
-          </BoxCheck>
+          </BasicBox>
         </UiAccordionItem>
 
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
-          <BoxCheck
-            :contents="true"
-            type="radio"
-            name="LR_M05_p014_popup"
-            id="LR_M05_p014_popup003"
-          >
-            <div>
-              <div class="flex-box">
-                <div class="flex-box__cell flex-1">
-                  <BoxCheckLabel>
-                    <p
-                      class="text-body-4 color-green font-weight-medium row-margin-small"
-                    >
-                      선구매견적
-                    </p>
-                    <span class="flex-box">
-                      <span class="flex-box__cell flex-1"
-                        >모바일견적 이용불가 안내</span
-                      >
-                      <span class="flex-box__cell">
-                        <RoundStatus :classNames="{ wrap: 'display-block' }">
-                          중지
-                        </RoundStatus>
-                      </span>
-                      <div class="flex-box__cell">
-                        <UiAccordionOpener
-                          :classNames="{
-                            button: $style['opener'],
-                          }"
-                        />
-                      </div>
-                    </span>
-                  </BoxCheckLabel>
-                </div>
+          <BasicBox>
+            <div class="flex-box">
+              <div class="flex-box__cell flex-1">
+                <p
+                  class="text-body-4 color-green font-weight-medium row-margin-small"
+                >
+                  선구매견적
+                </p>
+                <span class="flex-box">
+                  <span class="flex-box__cell flex-1"
+                    >모바일견적 이용불가 안내</span
+                  >
+                  <span class="flex-box__cell">
+                    <RoundStatus :classNames="{ wrap: 'display-block' }">
+                      중지
+                    </RoundStatus>
+                  </span>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{
+                        button: $style['opener'],
+                      }"
+                    />
+                  </div>
+                </span>
               </div>
-              <div class="text-body-4 color-gray row-margin-small">
-                2023.04.01~2023.04.01
-              </div>
+            </div>
+            <div class="text-body-4 color-gray row-margin-small">
+              2023.04.01~2023.04.01
             </div>
 
             <UiAccordionLayer>
@@ -451,48 +428,39 @@ export default {
                 </KeyValue>
               </div>
             </UiAccordionLayer>
-          </BoxCheck>
+          </BasicBox>
         </UiAccordionItem>
 
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
-          <BoxCheck
-            :contents="true"
-            type="radio"
-            name="LR_M05_p014_popup"
-            id="LR_M05_p014_popup004"
-          >
-            <div>
-              <div class="flex-box">
-                <div class="flex-box__cell flex-1">
-                  <BoxCheckLabel>
-                    <p
-                      class="text-body-4 color-green font-weight-medium row-margin-small"
-                    >
-                      리스견적(신차)
-                    </p>
-                    <span class="flex-box">
-                      <span class="flex-box__cell flex-1"
-                        >모바일견적 이용불가 안내</span
-                      >
-                      <span class="flex-box__cell">
-                        <RoundStatus :classNames="{ wrap: 'display-block' }">
-                          중지
-                        </RoundStatus>
-                      </span>
-                      <div class="flex-box__cell">
-                        <UiAccordionOpener
-                          :classNames="{
-                            button: $style['opener'],
-                          }"
-                        />
-                      </div>
-                    </span>
-                  </BoxCheckLabel>
-                </div>
+          <BasicBox>
+            <div class="flex-box">
+              <div class="flex-box__cell flex-1">
+                <p
+                  class="text-body-4 color-green font-weight-medium row-margin-small"
+                >
+                  리스견적(신차)
+                </p>
+                <span class="flex-box">
+                  <span class="flex-box__cell flex-1"
+                    >모바일견적 이용불가 안내</span
+                  >
+                  <span class="flex-box__cell">
+                    <RoundStatus :classNames="{ wrap: 'display-block' }">
+                      중지
+                    </RoundStatus>
+                  </span>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{
+                        button: $style['opener'],
+                      }"
+                    />
+                  </div>
+                </span>
               </div>
-              <div class="text-body-4 color-gray row-margin-small">
-                2023.04.01~2023.04.01
-              </div>
+            </div>
+            <div class="text-body-4 color-gray row-margin-small">
+              2023.04.01~2023.04.01
             </div>
 
             <UiAccordionLayer>
@@ -540,51 +508,42 @@ export default {
                 </KeyValue>
               </div>
             </UiAccordionLayer>
-          </BoxCheck>
+          </BasicBox>
         </UiAccordionItem>
 
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
-          <BoxCheck
-            :contents="true"
-            type="radio"
-            name="LR_M05_p014_popup"
-            id="LR_M05_p014_popup005"
-          >
-            <div>
-              <div class="flex-box">
-                <div class="flex-box__cell flex-1">
-                  <BoxCheckLabel>
-                    <p
-                      class="text-body-4 color-green font-weight-medium row-margin-small"
+          <BasicBox>
+            <div class="flex-box">
+              <div class="flex-box__cell flex-1">
+                <p
+                  class="text-body-4 color-green font-weight-medium row-margin-small"
+                >
+                  리스견적(시승차)
+                </p>
+                <span class="flex-box">
+                  <span class="flex-box__cell flex-1"
+                    >모바일견적 이용불가 안내</span
+                  >
+                  <span class="flex-box__cell">
+                    <RoundStatus
+                      :classNames="{ wrap: 'display-block' }"
+                      theme="secondary"
                     >
-                      리스견적(시승차)
-                    </p>
-                    <span class="flex-box">
-                      <span class="flex-box__cell flex-1"
-                        >모바일견적 이용불가 안내</span
-                      >
-                      <span class="flex-box__cell">
-                        <RoundStatus
-                          :classNames="{ wrap: 'display-block' }"
-                          theme="secondary"
-                        >
-                          노출
-                        </RoundStatus>
-                      </span>
-                      <div class="flex-box__cell">
-                        <UiAccordionOpener
-                          :classNames="{
-                            button: $style['opener'],
-                          }"
-                        />
-                      </div>
-                    </span>
-                  </BoxCheckLabel>
-                </div>
+                      노출
+                    </RoundStatus>
+                  </span>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{
+                        button: $style['opener'],
+                      }"
+                    />
+                  </div>
+                </span>
               </div>
-              <div class="text-body-4 color-gray row-margin-small">
-                2023.04.01~2023.04.01
-              </div>
+            </div>
+            <div class="text-body-4 color-gray row-margin-small">
+              2023.04.01~2023.04.01
             </div>
 
             <UiAccordionLayer>
@@ -632,51 +591,42 @@ export default {
                 </KeyValue>
               </div>
             </UiAccordionLayer>
-          </BoxCheck>
+          </BasicBox>
         </UiAccordionItem>
 
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
-          <BoxCheck
-            :contents="true"
-            type="radio"
-            name="LR_M05_p014_popup"
-            id="LR_M05_p014_popup006"
-          >
-            <div>
-              <div class="flex-box">
-                <div class="flex-box__cell flex-1">
-                  <BoxCheckLabel>
-                    <p
-                      class="text-body-4 color-green font-weight-medium row-margin-small"
+          <BasicBox>
+            <div class="flex-box">
+              <div class="flex-box__cell flex-1">
+                <p
+                  class="text-body-4 color-green font-weight-medium row-margin-small"
+                >
+                  리스견적(중고차)
+                </p>
+                <span class="flex-box">
+                  <span class="flex-box__cell flex-1"
+                    >모바일견적 이용불가 안내</span
+                  >
+                  <span class="flex-box__cell">
+                    <RoundStatus
+                      :classNames="{ wrap: 'display-block' }"
+                      theme="secondary"
                     >
-                      리스견적(중고차)
-                    </p>
-                    <span class="flex-box">
-                      <span class="flex-box__cell flex-1"
-                        >모바일견적 이용불가 안내</span
-                      >
-                      <span class="flex-box__cell">
-                        <RoundStatus
-                          :classNames="{ wrap: 'display-block' }"
-                          theme="secondary"
-                        >
-                          노출
-                        </RoundStatus>
-                      </span>
-                      <div class="flex-box__cell">
-                        <UiAccordionOpener
-                          :classNames="{
-                            button: $style['opener'],
-                          }"
-                        />
-                      </div>
-                    </span>
-                  </BoxCheckLabel>
-                </div>
+                      노출
+                    </RoundStatus>
+                  </span>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{
+                        button: $style['opener'],
+                      }"
+                    />
+                  </div>
+                </span>
               </div>
-              <div class="text-body-4 color-gray row-margin-small">
-                2023.04.01~2023.04.01
-              </div>
+            </div>
+            <div class="text-body-4 color-gray row-margin-small">
+              2023.04.01~2023.04.01
             </div>
 
             <UiAccordionLayer>
@@ -724,48 +674,39 @@ export default {
                 </KeyValue>
               </div>
             </UiAccordionLayer>
-          </BoxCheck>
+          </BasicBox>
         </UiAccordionItem>
 
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
-          <BoxCheck
-            :contents="true"
-            type="radio"
-            name="LR_M05_p014_popup"
-            id="LR_M05_p014_popup007"
-          >
-            <div>
-              <div class="flex-box">
-                <div class="flex-box__cell flex-1">
-                  <BoxCheckLabel>
-                    <p
-                      class="text-body-4 color-green font-weight-medium row-margin-small"
-                    >
-                      리스견적(신차)
-                    </p>
-                    <span class="flex-box">
-                      <span class="flex-box__cell flex-1"
-                        >모바일견적 이용불가 안내</span
-                      >
-                      <span class="flex-box__cell">
-                        <RoundStatus :classNames="{ wrap: 'display-block' }">
-                          중지
-                        </RoundStatus>
-                      </span>
-                      <div class="flex-box__cell">
-                        <UiAccordionOpener
-                          :classNames="{
-                            button: $style['opener'],
-                          }"
-                        />
-                      </div>
-                    </span>
-                  </BoxCheckLabel>
-                </div>
+          <BasicBox>
+            <div class="flex-box">
+              <div class="flex-box__cell flex-1">
+                <p
+                  class="text-body-4 color-green font-weight-medium row-margin-small"
+                >
+                  리스견적(신차)
+                </p>
+                <span class="flex-box">
+                  <span class="flex-box__cell flex-1"
+                    >모바일견적 이용불가 안내</span
+                  >
+                  <span class="flex-box__cell">
+                    <RoundStatus :classNames="{ wrap: 'display-block' }">
+                      중지
+                    </RoundStatus>
+                  </span>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{
+                        button: $style['opener'],
+                      }"
+                    />
+                  </div>
+                </span>
               </div>
-              <div class="text-body-4 color-gray row-margin-small">
-                2023.04.01~2023.04.01
-              </div>
+            </div>
+            <div class="text-body-4 color-gray row-margin-small">
+              2023.04.01~2023.04.01
             </div>
 
             <UiAccordionLayer>
@@ -813,7 +754,7 @@ export default {
                 </KeyValue>
               </div>
             </UiAccordionLayer>
-          </BoxCheck>
+          </BasicBox>
         </UiAccordionItem>
       </UiAccordion>
     </section>
