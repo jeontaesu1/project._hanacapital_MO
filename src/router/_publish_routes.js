@@ -561,6 +561,12 @@ const routes = [
     component: () =>
       import('@/views/uiGuide/GuideLeaseRentEstimationSystem004.vue'),
   },
+  {
+    path: '/ui-guide/lease-rent-estimation-system-005',
+    name: '/ui-guide/lease-rent-estimation-system-005',
+    component: () =>
+      import('@/views/uiGuide/GuideLeaseRentEstimationSystem005.vue'),
+  },
 
   // splash
   {
@@ -1672,6 +1678,24 @@ const routes = [
       import(
         '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemAdminSettingDefault.vue'
       ),
+  },
+  {
+    path: '/lease-rent-estimation-system/admin-setting-send',
+    name: '/lease-rent-estimation-system/admin-setting-send',
+    component: () =>
+      import('@/views/LeaseRentEstimationSystem/LR_M05_p013.vue'),
+  },
+  {
+    path: '/lease-rent-estimation-system/admin-setting-administration',
+    name: '/lease-rent-estimation-system/admin-setting-administration',
+    component: () =>
+      import('@/views/LeaseRentEstimationSystem/LR_M05_p014.vue'),
+  },
+  {
+    path: '/lease-rent-estimation-system/admin-setting-modification',
+    name: '/lease-rent-estimation-system/admin-setting-modification',
+    component: () =>
+      import('@/views/LeaseRentEstimationSystem/LR_M05_p015.vue'),
   },
 
   // company

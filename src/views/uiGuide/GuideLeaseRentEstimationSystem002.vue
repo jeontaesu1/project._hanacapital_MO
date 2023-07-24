@@ -18,7 +18,8 @@ import LayerLeaseRentEstimationSystemViewEstimation from '@/views/LeaseRentEstim
 import LayerLeaseRentEstimationSystemCreditCheckRequest from '@/views/LeaseRentEstimationSystem/LayerLeaseRentEstimationSystemCreditCheckRequest.vue';
 import LayerLeaseRentEstimationSystemSearchStore from '@/views/LeaseRentEstimationSystem/LayerLeaseRentEstimationSystemSearchStore.vue';
 import LayerLeaseRentEstimationSystemSearchSalesmen from '@/views/LeaseRentEstimationSystem/LayerLeaseRentEstimationSystemSearchSalesmen.vue';
-import LayerLeaseRentEstimationSystemGuide001 from '@/views/LeaseRentEstimationSystem/LayerLeaseRentEstimationSystemGuide001.vue';
+import LR_M03_l001 from '@/views/LeaseRentEstimationSystem/LR_M03_l001.vue';
+import LR_M05_b007 from '@/views/LeaseRentEstimationSystem/LR_M05_b007.vue';
 import LayerLeaseRentEstimationSystemStart from '@/views/LeaseRentEstimationSystem/LayerLeaseRentEstimationSystemStart.vue';
 
 export default {
@@ -39,7 +40,8 @@ export default {
     LayerLeaseRentEstimationSystemCreditCheckRequest,
     LayerLeaseRentEstimationSystemSearchStore,
     LayerLeaseRentEstimationSystemSearchSalesmen,
-    LayerLeaseRentEstimationSystemGuide001,
+    LR_M03_l001,
+    LR_M05_b007,
     LayerLeaseRentEstimationSystemStart,
   },
   setup() {
@@ -57,6 +59,7 @@ export default {
     const layer012 = ref(null);
     const layer013 = ref(null);
     const layer014 = ref(null);
+    const layer015 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -100,6 +103,9 @@ export default {
     const layer014Open = (e = {}) => {
       layer014.value.layer.open(e.target);
     };
+    const layer015Open = (e = {}) => {
+      layer015.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -116,6 +122,7 @@ export default {
       layer012,
       layer013,
       layer014,
+      layer015,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -130,6 +137,7 @@ export default {
       layer012Open,
       layer013Open,
       layer014Open,
+      layer015Open,
     };
   },
 };
@@ -210,6 +218,11 @@ export default {
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer014Open"
+          >모바일 견적 손님제공 절차안내 차단 팝업<br />LR_M05_b007</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer015Open"
           >견적서 진행사항 안내<br />LR_M00_l002</BasicButton
         >
       </ButtonListItem>
@@ -227,7 +240,8 @@ export default {
     <LayerLeaseRentEstimationSystemCreditCheckRequest ref="layer010" />
     <LayerLeaseRentEstimationSystemSearchStore ref="layer011" />
     <LayerLeaseRentEstimationSystemSearchSalesmen ref="layer012" />
-    <LayerLeaseRentEstimationSystemGuide001 ref="layer013" />
-    <LayerLeaseRentEstimationSystemStart ref="layer014" />
+    <LR_M03_l001 ref="layer013" />
+    <LR_M05_b007 ref="layer014" />
+    <LayerLeaseRentEstimationSystemStart ref="layer015" />
   </PageContents>
 </template>
