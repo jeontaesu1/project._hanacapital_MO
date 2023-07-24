@@ -271,36 +271,34 @@ export default {
 
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
-            <div>
-              <div class="flex-box">
-                <div class="flex-box__cell flex-1">
-                  <p
-                    class="text-body-4 color-green font-weight-medium row-margin-small"
+            <div class="flex-box">
+              <div class="flex-box__cell flex-1">
+                <p
+                  class="text-body-4 color-green font-weight-medium row-margin-small"
+                >
+                  렌트견적
+                </p>
+                <span class="flex-box">
+                  <span class="flex-box__cell flex-1"
+                    >모바일견적 이용불가 안내</span
                   >
-                    렌트견적
-                  </p>
-                  <span class="flex-box">
-                    <span class="flex-box__cell flex-1"
-                      >모바일견적 이용불가 안내</span
-                    >
-                    <span class="flex-box__cell">
-                      <RoundStatus :classNames="{ wrap: 'display-block' }">
-                        중지
-                      </RoundStatus>
-                    </span>
-                    <div class="flex-box__cell">
-                      <UiAccordionOpener
-                        :classNames="{
-                          button: $style['opener'],
-                        }"
-                      />
-                    </div>
+                  <span class="flex-box__cell">
+                    <RoundStatus :classNames="{ wrap: 'display-block' }">
+                      중지
+                    </RoundStatus>
                   </span>
-                </div>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{
+                        button: $style['opener'],
+                      }"
+                    />
+                  </div>
+                </span>
               </div>
-              <div class="text-body-4 color-gray row-margin-small">
-                2023.04.01~2023.04.01
-              </div>
+            </div>
+            <div class="text-body-4 color-gray row-margin-small">
+              2023.04.01~2023.04.01
             </div>
 
             <UiAccordionLayer>
