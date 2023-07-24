@@ -190,35 +190,119 @@ export default {
       <UiAccordion>
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <p
-                  class="text-body-4 color-green font-weight-medium row-margin-small"
-                >
-                  로그인
-                </p>
-                <span class="flex-box">
-                  <span class="flex-box__cell flex-1">공지사항</span>
-                  <span class="flex-box__cell">
-                    <RoundStatus
-                      :classNames="{ wrap: 'display-block' }"
-                      theme="secondary"
+            <div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
+                  <p
+                    class="text-body-4 color-green font-weight-medium row-margin-small"
+                  >
+                    로그인
+                  </p>
+                  <span class="flex-box">
+                    <span class="flex-box__cell flex-1">공지사항</span>
+                    <span class="flex-box__cell">
+                      <RoundStatus
+                        :classNames="{ wrap: 'display-block' }"
+                        theme="secondary"
+                      >
+                        노출
+                      </RoundStatus>
+                    </span>
+                    <div class="flex-box__cell">
+                      <UiAccordionOpener
+                        :classNames="{
+                          button: $style['opener'],
+                        }"
+                      />
+                    </div>
+                  </span>
+                </div>
+              </div>
+              <div class="text-body-4 color-gray row-margin-small">
+                2023.04.01~2023.04.01
+              </div>
+            </div>
+
+            <UiAccordionLayer>
+              <div :class="$style['contents']">
+                <KeyValue margin="regular">
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>페이지</KeyValueTitle>
+                    <KeyValueText>이용여부</KeyValueText>
+                  </KeyValueItem>
+
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>최종수정자</KeyValueTitle>
+                    <KeyValueText>hana123</KeyValueText>
+                  </KeyValueItem>
+
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>최종수정일</KeyValueTitle>
+                    <KeyValueText>2023.01.23</KeyValueText>
+                  </KeyValueItem>
+
+                  <ButtonList
+                    :classNames="{ wrap: 'row-margin-contents-small' }"
+                  >
+                    <ButtonListItem>
+                      <BasicButton theme="tertiary" size="small">
+                        보기
+                      </BasicButton>
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton size="small">수정</BasicButton>
+                    </ButtonListItem>
+                  </ButtonList>
+                </KeyValue>
+              </div>
+            </UiAccordionLayer>
+          </BasicBox>
+        </UiAccordionItem>
+
+        <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
+          <BasicBox>
+            <div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
+                  <p
+                    class="text-body-4 color-green font-weight-medium row-margin-small"
+                  >
+                    렌트견적
+                  </p>
+                  <span class="flex-box">
+                    <span class="flex-box__cell flex-1"
+                      >모바일견적 이용불가 안내</span
                     >
-                      노출
-                    </RoundStatus>
+                    <span class="flex-box__cell">
+                      <RoundStatus :classNames="{ wrap: 'display-block' }">
+                        중지
+                      </RoundStatus>
+                    </span>
+                    <div class="flex-box__cell">
+                      <UiAccordionOpener
+                        :classNames="{
+                          button: $style['opener'],
+                        }"
+                      />
+                    </div>
                   </span>
-                  <div class="flex-box__cell">
-                    <UiAccordionOpener
-                      :classNames="{
-                        button: $style['opener'],
-                      }"
-                    />
-                  </div>
-                </span>
+                </div>
               </div>
-            </div>
-            <div class="text-body-4 color-gray row-margin-small">
-              2023.04.01~2023.04.01
+              <div class="text-body-4 color-gray row-margin-small">
+                2023.04.01~2023.04.01
+              </div>
             </div>
 
             <UiAccordionLayer>
@@ -271,277 +355,36 @@ export default {
 
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <p
-                  class="text-body-4 color-green font-weight-medium row-margin-small"
-                >
-                  렌트견적
-                </p>
-                <span class="flex-box">
-                  <span class="flex-box__cell flex-1"
-                    >모바일견적 이용불가 안내</span
+            <div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
+                  <p
+                    class="text-body-4 color-green font-weight-medium row-margin-small"
                   >
-                  <span class="flex-box__cell">
-                    <RoundStatus :classNames="{ wrap: 'display-block' }">
-                      중지
-                    </RoundStatus>
-                  </span>
-                  <div class="flex-box__cell">
-                    <UiAccordionOpener
-                      :classNames="{
-                        button: $style['opener'],
-                      }"
-                    />
-                  </div>
-                </span>
-              </div>
-            </div>
-            <div class="text-body-4 color-gray row-margin-small">
-              2023.04.01~2023.04.01
-            </div>
-
-            <UiAccordionLayer>
-              <div :class="$style['contents']">
-                <KeyValue margin="regular">
-                  <KeyValueItem
-                    :classNames="{
-                      item: 'text-body-3',
-                    }"
-                  >
-                    <KeyValueTitle>페이지</KeyValueTitle>
-                    <KeyValueText>이용여부</KeyValueText>
-                  </KeyValueItem>
-
-                  <KeyValueItem
-                    :classNames="{
-                      item: 'text-body-3',
-                    }"
-                  >
-                    <KeyValueTitle>최종수정자</KeyValueTitle>
-                    <KeyValueText>hana123</KeyValueText>
-                  </KeyValueItem>
-
-                  <KeyValueItem
-                    :classNames="{
-                      item: 'text-body-3',
-                    }"
-                  >
-                    <KeyValueTitle>최종수정일</KeyValueTitle>
-                    <KeyValueText>2023.01.23</KeyValueText>
-                  </KeyValueItem>
-
-                  <ButtonList
-                    :classNames="{ wrap: 'row-margin-contents-small' }"
-                  >
-                    <ButtonListItem>
-                      <BasicButton theme="tertiary" size="small">
-                        보기
-                      </BasicButton>
-                    </ButtonListItem>
-                    <ButtonListItem>
-                      <BasicButton size="small">수정</BasicButton>
-                    </ButtonListItem>
-                  </ButtonList>
-                </KeyValue>
-              </div>
-            </UiAccordionLayer>
-          </BasicBox>
-        </UiAccordionItem>
-
-        <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
-          <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <p
-                  class="text-body-4 color-green font-weight-medium row-margin-small"
-                >
-                  선구매견적
-                </p>
-                <span class="flex-box">
-                  <span class="flex-box__cell flex-1"
-                    >모바일견적 이용불가 안내</span
-                  >
-                  <span class="flex-box__cell">
-                    <RoundStatus :classNames="{ wrap: 'display-block' }">
-                      중지
-                    </RoundStatus>
-                  </span>
-                  <div class="flex-box__cell">
-                    <UiAccordionOpener
-                      :classNames="{
-                        button: $style['opener'],
-                      }"
-                    />
-                  </div>
-                </span>
-              </div>
-            </div>
-            <div class="text-body-4 color-gray row-margin-small">
-              2023.04.01~2023.04.01
-            </div>
-
-            <UiAccordionLayer>
-              <div :class="$style['contents']">
-                <KeyValue margin="regular">
-                  <KeyValueItem
-                    :classNames="{
-                      item: 'text-body-3',
-                    }"
-                  >
-                    <KeyValueTitle>페이지</KeyValueTitle>
-                    <KeyValueText>이용여부</KeyValueText>
-                  </KeyValueItem>
-
-                  <KeyValueItem
-                    :classNames="{
-                      item: 'text-body-3',
-                    }"
-                  >
-                    <KeyValueTitle>최종수정자</KeyValueTitle>
-                    <KeyValueText>hana123</KeyValueText>
-                  </KeyValueItem>
-
-                  <KeyValueItem
-                    :classNames="{
-                      item: 'text-body-3',
-                    }"
-                  >
-                    <KeyValueTitle>최종수정일</KeyValueTitle>
-                    <KeyValueText>2023.01.23</KeyValueText>
-                  </KeyValueItem>
-
-                  <ButtonList
-                    :classNames="{ wrap: 'row-margin-contents-small' }"
-                  >
-                    <ButtonListItem>
-                      <BasicButton theme="tertiary" size="small">
-                        보기
-                      </BasicButton>
-                    </ButtonListItem>
-                    <ButtonListItem>
-                      <BasicButton size="small">수정</BasicButton>
-                    </ButtonListItem>
-                  </ButtonList>
-                </KeyValue>
-              </div>
-            </UiAccordionLayer>
-          </BasicBox>
-        </UiAccordionItem>
-
-        <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
-          <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <p
-                  class="text-body-4 color-green font-weight-medium row-margin-small"
-                >
-                  리스견적(신차)
-                </p>
-                <span class="flex-box">
-                  <span class="flex-box__cell flex-1"
-                    >모바일견적 이용불가 안내</span
-                  >
-                  <span class="flex-box__cell">
-                    <RoundStatus :classNames="{ wrap: 'display-block' }">
-                      중지
-                    </RoundStatus>
-                  </span>
-                  <div class="flex-box__cell">
-                    <UiAccordionOpener
-                      :classNames="{
-                        button: $style['opener'],
-                      }"
-                    />
-                  </div>
-                </span>
-              </div>
-            </div>
-            <div class="text-body-4 color-gray row-margin-small">
-              2023.04.01~2023.04.01
-            </div>
-
-            <UiAccordionLayer>
-              <div :class="$style['contents']">
-                <KeyValue margin="regular">
-                  <KeyValueItem
-                    :classNames="{
-                      item: 'text-body-3',
-                    }"
-                  >
-                    <KeyValueTitle>페이지</KeyValueTitle>
-                    <KeyValueText>이용여부</KeyValueText>
-                  </KeyValueItem>
-
-                  <KeyValueItem
-                    :classNames="{
-                      item: 'text-body-3',
-                    }"
-                  >
-                    <KeyValueTitle>최종수정자</KeyValueTitle>
-                    <KeyValueText>hana123</KeyValueText>
-                  </KeyValueItem>
-
-                  <KeyValueItem
-                    :classNames="{
-                      item: 'text-body-3',
-                    }"
-                  >
-                    <KeyValueTitle>최종수정일</KeyValueTitle>
-                    <KeyValueText>2023.01.23</KeyValueText>
-                  </KeyValueItem>
-
-                  <ButtonList
-                    :classNames="{ wrap: 'row-margin-contents-small' }"
-                  >
-                    <ButtonListItem>
-                      <BasicButton theme="tertiary" size="small">
-                        보기
-                      </BasicButton>
-                    </ButtonListItem>
-                    <ButtonListItem>
-                      <BasicButton size="small">수정</BasicButton>
-                    </ButtonListItem>
-                  </ButtonList>
-                </KeyValue>
-              </div>
-            </UiAccordionLayer>
-          </BasicBox>
-        </UiAccordionItem>
-
-        <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
-          <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <p
-                  class="text-body-4 color-green font-weight-medium row-margin-small"
-                >
-                  리스견적(시승차)
-                </p>
-                <span class="flex-box">
-                  <span class="flex-box__cell flex-1"
-                    >모바일견적 이용불가 안내</span
-                  >
-                  <span class="flex-box__cell">
-                    <RoundStatus
-                      :classNames="{ wrap: 'display-block' }"
-                      theme="secondary"
+                    선구매견적
+                  </p>
+                  <span class="flex-box">
+                    <span class="flex-box__cell flex-1"
+                      >모바일견적 이용불가 안내</span
                     >
-                      노출
-                    </RoundStatus>
+                    <span class="flex-box__cell">
+                      <RoundStatus :classNames="{ wrap: 'display-block' }">
+                        중지
+                      </RoundStatus>
+                    </span>
+                    <div class="flex-box__cell">
+                      <UiAccordionOpener
+                        :classNames="{
+                          button: $style['opener'],
+                        }"
+                      />
+                    </div>
                   </span>
-                  <div class="flex-box__cell">
-                    <UiAccordionOpener
-                      :classNames="{
-                        button: $style['opener'],
-                      }"
-                    />
-                  </div>
-                </span>
+                </div>
               </div>
-            </div>
-            <div class="text-body-4 color-gray row-margin-small">
-              2023.04.01~2023.04.01
+              <div class="text-body-4 color-gray row-margin-small">
+                2023.04.01~2023.04.01
+              </div>
             </div>
 
             <UiAccordionLayer>
@@ -594,37 +437,36 @@ export default {
 
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <p
-                  class="text-body-4 color-green font-weight-medium row-margin-small"
-                >
-                  리스견적(중고차)
-                </p>
-                <span class="flex-box">
-                  <span class="flex-box__cell flex-1"
-                    >모바일견적 이용불가 안내</span
+            <div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
+                  <p
+                    class="text-body-4 color-green font-weight-medium row-margin-small"
                   >
-                  <span class="flex-box__cell">
-                    <RoundStatus
-                      :classNames="{ wrap: 'display-block' }"
-                      theme="secondary"
+                    리스견적(신차)
+                  </p>
+                  <span class="flex-box">
+                    <span class="flex-box__cell flex-1"
+                      >모바일견적 이용불가 안내</span
                     >
-                      노출
-                    </RoundStatus>
+                    <span class="flex-box__cell">
+                      <RoundStatus :classNames="{ wrap: 'display-block' }">
+                        중지
+                      </RoundStatus>
+                    </span>
+                    <div class="flex-box__cell">
+                      <UiAccordionOpener
+                        :classNames="{
+                          button: $style['opener'],
+                        }"
+                      />
+                    </div>
                   </span>
-                  <div class="flex-box__cell">
-                    <UiAccordionOpener
-                      :classNames="{
-                        button: $style['opener'],
-                      }"
-                    />
-                  </div>
-                </span>
+                </div>
               </div>
-            </div>
-            <div class="text-body-4 color-gray row-margin-small">
-              2023.04.01~2023.04.01
+              <div class="text-body-4 color-gray row-margin-small">
+                2023.04.01~2023.04.01
+              </div>
             </div>
 
             <UiAccordionLayer>
@@ -677,34 +519,206 @@ export default {
 
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <p
-                  class="text-body-4 color-green font-weight-medium row-margin-small"
-                >
-                  리스견적(신차)
-                </p>
-                <span class="flex-box">
-                  <span class="flex-box__cell flex-1"
-                    >모바일견적 이용불가 안내</span
+            <div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
+                  <p
+                    class="text-body-4 color-green font-weight-medium row-margin-small"
                   >
-                  <span class="flex-box__cell">
-                    <RoundStatus :classNames="{ wrap: 'display-block' }">
-                      중지
-                    </RoundStatus>
+                    리스견적(시승차)
+                  </p>
+                  <span class="flex-box">
+                    <span class="flex-box__cell flex-1"
+                      >모바일견적 이용불가 안내</span
+                    >
+                    <span class="flex-box__cell">
+                      <RoundStatus
+                        :classNames="{ wrap: 'display-block' }"
+                        theme="secondary"
+                      >
+                        노출
+                      </RoundStatus>
+                    </span>
+                    <div class="flex-box__cell">
+                      <UiAccordionOpener
+                        :classNames="{
+                          button: $style['opener'],
+                        }"
+                      />
+                    </div>
                   </span>
-                  <div class="flex-box__cell">
-                    <UiAccordionOpener
-                      :classNames="{
-                        button: $style['opener'],
-                      }"
-                    />
-                  </div>
-                </span>
+                </div>
+              </div>
+              <div class="text-body-4 color-gray row-margin-small">
+                2023.04.01~2023.04.01
               </div>
             </div>
-            <div class="text-body-4 color-gray row-margin-small">
-              2023.04.01~2023.04.01
+
+            <UiAccordionLayer>
+              <div :class="$style['contents']">
+                <KeyValue margin="regular">
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>페이지</KeyValueTitle>
+                    <KeyValueText>이용여부</KeyValueText>
+                  </KeyValueItem>
+
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>최종수정자</KeyValueTitle>
+                    <KeyValueText>hana123</KeyValueText>
+                  </KeyValueItem>
+
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>최종수정일</KeyValueTitle>
+                    <KeyValueText>2023.01.23</KeyValueText>
+                  </KeyValueItem>
+
+                  <ButtonList
+                    :classNames="{ wrap: 'row-margin-contents-small' }"
+                  >
+                    <ButtonListItem>
+                      <BasicButton theme="tertiary" size="small">
+                        보기
+                      </BasicButton>
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton size="small">수정</BasicButton>
+                    </ButtonListItem>
+                  </ButtonList>
+                </KeyValue>
+              </div>
+            </UiAccordionLayer>
+          </BasicBox>
+        </UiAccordionItem>
+
+        <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
+          <BasicBox>
+            <div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
+                  <p
+                    class="text-body-4 color-green font-weight-medium row-margin-small"
+                  >
+                    리스견적(중고차)
+                  </p>
+                  <span class="flex-box">
+                    <span class="flex-box__cell flex-1"
+                      >모바일견적 이용불가 안내</span
+                    >
+                    <span class="flex-box__cell">
+                      <RoundStatus
+                        :classNames="{ wrap: 'display-block' }"
+                        theme="secondary"
+                      >
+                        노출
+                      </RoundStatus>
+                    </span>
+                    <div class="flex-box__cell">
+                      <UiAccordionOpener
+                        :classNames="{
+                          button: $style['opener'],
+                        }"
+                      />
+                    </div>
+                  </span>
+                </div>
+              </div>
+              <div class="text-body-4 color-gray row-margin-small">
+                2023.04.01~2023.04.01
+              </div>
+            </div>
+
+            <UiAccordionLayer>
+              <div :class="$style['contents']">
+                <KeyValue margin="regular">
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>페이지</KeyValueTitle>
+                    <KeyValueText>이용여부</KeyValueText>
+                  </KeyValueItem>
+
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>최종수정자</KeyValueTitle>
+                    <KeyValueText>hana123</KeyValueText>
+                  </KeyValueItem>
+
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>최종수정일</KeyValueTitle>
+                    <KeyValueText>2023.01.23</KeyValueText>
+                  </KeyValueItem>
+
+                  <ButtonList
+                    :classNames="{ wrap: 'row-margin-contents-small' }"
+                  >
+                    <ButtonListItem>
+                      <BasicButton theme="tertiary" size="small">
+                        보기
+                      </BasicButton>
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton size="small">수정</BasicButton>
+                    </ButtonListItem>
+                  </ButtonList>
+                </KeyValue>
+              </div>
+            </UiAccordionLayer>
+          </BasicBox>
+        </UiAccordionItem>
+
+        <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
+          <BasicBox>
+            <div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
+                  <p
+                    class="text-body-4 color-green font-weight-medium row-margin-small"
+                  >
+                    리스견적(신차)
+                  </p>
+                  <span class="flex-box">
+                    <span class="flex-box__cell flex-1"
+                      >모바일견적 이용불가 안내</span
+                    >
+                    <span class="flex-box__cell">
+                      <RoundStatus :classNames="{ wrap: 'display-block' }">
+                        중지
+                      </RoundStatus>
+                    </span>
+                    <div class="flex-box__cell">
+                      <UiAccordionOpener
+                        :classNames="{
+                          button: $style['opener'],
+                        }"
+                      />
+                    </div>
+                  </span>
+                </div>
+              </div>
+              <div class="text-body-4 color-gray row-margin-small">
+                2023.04.01~2023.04.01
+              </div>
             </div>
 
             <UiAccordionLayer>
