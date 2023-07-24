@@ -1,0 +1,11 @@
+.opener {
+  width: 20px;
+  height: 20px;
+  z-index: 20;
+}
+
+.contents {
+  margin-top: 20px;
+  border-top: 1px solid $color-gray-20;
+  padding-top: 20px;
+}
