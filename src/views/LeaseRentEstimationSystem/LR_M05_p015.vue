@@ -93,7 +93,7 @@ export default {
 
       <FormListItem titleText="내용" :forceFocus="true">
         <FormInvalid :error="state.contentsError">
-          <!-- Text Editor Area -->
+          //Text Edtor Area
         </FormInvalid>
       </FormListItem>
 
