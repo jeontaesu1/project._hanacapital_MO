@@ -1,4 +1,5 @@
 @import '@/assets/scss/components/import/icon-list.scss';
+@import '@/assets/scss/components/import/join.scss';
 
 :global(.page-home) {
   background-color: $color-gray-15;
@@ -6,17 +7,62 @@
 
 .body {
   padding-top: 0;
+}
 
-  &--app {
-    &,
-    &:last-child {
-      padding-bottom: 10px;
+.top-link {
+  @include reset-button;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  text-align: left;
+
+  &__icon {
+    display: inline-block;
+    vertical-align: top;
+    width: 24px;
+    height: 24px;
+    margin-top: 2px;
+
+    * {
+      fill: $color-black;
     }
   }
 }
 
+.hr {
+  margin-top: 16px;
+  margin-bottom: 40px;
+}
+
+.loan-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url('@/assets/images/etc/coin.png') no-repeat 50% 50% / 100% 100%;
+}
+
+.hot-deal-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url('@/assets/images/etc/lightning.png') no-repeat 50% 50% / 100%
+    100%;
+}
+
 .progress {
   margin-bottom: 32px;
+
+  &__block {
+    padding: 19px 19px 29px;
+    border-radius: 12px;
+    border-color: $color-white;
+    background-color: $color-white;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.06);
+  }
 
   &__head {
     display: flex;
@@ -113,14 +159,21 @@
     &-val {
       margin: 0;
     }
+
+    &-text {
+      margin-bottom: -2px;
+      padding-top: 4px;
+      @include font-size-default(20);
+      font-weight: 700;
+    }
   }
 
   &__amount {
-    margin-top: 20px;
-    padding-top: 12px;
+    margin: 20px 0 0;
 
     &-block {
       margin: 0;
+      padding: 12px 0 8px;
       display: flex;
       flex-direction: column;
       align-items: stretch;
@@ -140,18 +193,26 @@
     }
 
     &-bar {
-      margin-top: 32px;
+      margin-top: 24px;
     }
+  }
+
+  &__button {
+    margin: 20px 0 -10px;
+  }
+
+  .join {
+    margin-top: 16px;
+    margin-bottom: -8px;
   }
 }
 
 .buttons {
   @include reset-list;
   position: relative;
-  margin-top: 20px;
   display: flex;
-  align-items: stretch;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
   border-radius: 8px;
   box-sizing: border-box;
   padding: 0 11px;
@@ -165,51 +226,34 @@
     padding: 11px 0;
     box-sizing: border-box;
 
-    & + & {
-      margin-left: 1px;
-
-      &::before {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 50%;
-        left: -1px;
-        width: 1px;
-        height: 14px;
-        margin-top: -7px;
-        background-color: $color-gray-40;
-      }
-    }
-
     &:only-child {
       position: static;
     }
   }
 
+  &__hr {
+    flex: none;
+    width: 1px;
+    height: 14px;
+    background-color: $color-gray-40;
+  }
+
   &--auto {
     color: $color-white;
-    border-color: $color-blue-90;
-    background-color: $color-blue-90;
+    border-color: transparent;
+    background-color: rgba($color-blue-90, 0.4);
+  }
 
-    .buttons {
-      &__item {
-        flex: 1;
-        min-width: 0;
-      }
-    }
+  &--used-auto {
+    color: $color-white;
+    border-color: #020829;
+    background-color: #020829;
   }
 
   &--personal {
     color: $color-white;
     border-color: $color-green-90;
     background-color: $color-green-90;
-
-    .buttons {
-      &__item {
-        flex: 1;
-        min-width: 0;
-      }
-    }
   }
 }
 
@@ -223,7 +267,7 @@
   @include font-size-button(13);
   font-weight: 500;
   box-sizing: border-box;
-  padding: 3px 11px 2px;
+  padding: 3px 8px 2px;
 
   &::before {
     content: '';
@@ -239,6 +283,10 @@
 
 .card {
   color: $color-white;
+  padding: 23px;
+  border-radius: 12px;
+  border-color: $color-blue-50;
+  background-color: $color-blue-50;
 
   &__title {
     margin: 0 0 6px;
@@ -269,107 +317,121 @@
   .buttons {
     margin-top: 10px;
   }
+
+  &--secondary {
+    border-color: $color-navy-40;
+    background-color: $color-navy-40;
+  }
+
+  &--tertiary {
+    border-color: $color-green-50;
+    background-color: $color-green-50;
+  }
 }
 
-.hr {
-  margin-top: 8px;
-  margin-bottom: 40px;
-}
-
-.fun {
-  padding: 24px;
-  border-radius: 12px;
-  background-color: $color-white;
-
-  &__head {
-    display: flex;
-    align-items: center;
-    margin-bottom: 24px;
-
-    &-left {
-      flex: 1;
-      min-width: 0;
-    }
-
-    &-right {
-      flex: none;
-      margin-left: 12px;
-    }
-
-    &-title {
-      margin: 0;
-      @include font-size-head(18);
-    }
+.product {
+  &::before {
+    content: '';
+    display: table;
   }
 
   &__contents {
-    &::before {
-      content: '';
-      display: table;
-    }
-  }
-
-  &__list {
-    @include reset-list;
+    margin: -24px 0 0 -16px;
     display: flex;
     flex-wrap: wrap;
-    margin: -12px 0 0 -24px;
   }
 
-  &__item {
+  &__group {
     flex: none;
-    box-sizing: border-box;
     width: 50%;
-    padding: 12px 0 0 24px;
+    box-sizing: border-box;
+    padding: 24px 0 0 16px;
+
+    &--full {
+      width: 100%;
+    }
   }
 
   &__block {
     display: block;
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
+    border-radius: 12px;
+    background-color: #e0e2e5;
+
+    &--secondary {
+      background-color: $color-white;
+    }
   }
 
-  &__thumb {
-    display: block;
-    margin-bottom: 20px;
-    position: relative;
-    border-radius: 12px;
-    background: no-repeat 50% 50% / cover;
-
-    &::before {
-      content: '';
-      display: block;
-      padding-top: 100%;
-    }
-
-    img {
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-    }
+  &__info {
+    padding: 24px 20px 0;
   }
 
   &__sub {
-    display: block;
-    @include font-size-default(13);
-    color: $color-gray-70;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    @include font-size-default(12);
+    color: $color-gray-90;
+    margin-bottom: 2px;
   }
 
   &__title {
-    display: block;
     @include font-size-default(16);
-    font-weight: 500;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    font-weight: 700;
   }
+
+  &__image {
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__item {
+    &:first-child {
+      .product__info {
+        padding-bottom: 20px;
+      }
+    }
+
+    & + & {
+      &::before {
+        content: '';
+        display: block;
+        margin: 0 24px;
+        height: 1px;
+        background-color: $color-gray-20;
+      }
+
+      .product__info {
+        padding-top: 20px;
+      }
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    color: inherit;
+    text-decoration: none;
+
+    .product__info {
+      flex: 1;
+      min-width: 0;
+      padding: 24px 0 24px 24px;
+    }
+
+    .product__image {
+      img {
+        width: auto;
+        height: 88px;
+      }
+    }
+  }
+}
+
+.bottom-banner {
+  background-color: #e1eaf6;
 }
 
 .app {
@@ -395,7 +457,7 @@
 }
 
 .notice {
-  margin-top: 32px;
+  margin-bottom: 32px;
 
   &__block {
     display: flex;

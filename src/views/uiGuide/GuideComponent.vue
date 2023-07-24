@@ -9606,7 +9606,7 @@ export default {
             <!-- Case : 링크 기능 없을 때 -->
             <SwiperSlide>
               <SlideBannerBlock
-                thumb="/images/_dummy/banner-sample.png"
+                thumb="/images/_dummy/banner-003.png"
                 :action="false"
               >
                 <div class="text-body-1 font-weight-medium ellipsis">
@@ -9624,7 +9624,7 @@ export default {
             <!-- Case : 링크 기능 있을 때 (RouterLink) -->
             <SwiperSlide>
               <SlideBannerBlock
-                thumb="/images/_dummy/banner-sample.png"
+                thumb="/images/_dummy/banner-003.png"
                 tagName="RouterLink"
                 to=""
               >
@@ -9643,7 +9643,7 @@ export default {
             <!-- Case : 링크 기능 있을 때 (a tag) -->
             <SwiperSlide>
               <SlideBannerBlock
-                thumb="/images/_dummy/banner-sample.png"
+                thumb="/images/_dummy/banner-003.png"
                 tagName="a"
                 href=""
               >

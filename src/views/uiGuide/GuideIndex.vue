@@ -357,7 +357,12 @@ const datas = () => [
         path: '/main/home-001',
         status: 'end',
         create: '2023.06.02',
-        log: [],
+        log: [
+          {
+            date: '2023.07.24',
+            text: 'v1.4 설계서 반영',
+          },
+        ],
       },
       {
         depth2: 'WEB',
@@ -379,7 +384,12 @@ const datas = () => [
         path: '/main/home-002',
         status: 'end',
         create: '2023.06.02',
-        log: [],
+        log: [
+          {
+            date: '2023.07.24',
+            text: 'v1.4 설계서 반영',
+          },
+        ],
       },
       {
         depth2: 'APP',
