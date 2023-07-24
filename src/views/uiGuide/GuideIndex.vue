@@ -2393,7 +2393,7 @@ const datas = () => [
       {
         depth2: '서비스',
         depth3: '관리자',
-        depth4: '자동차 DB 전송\nLR_M05_p011',
+        depth4: '자동차 DB 전송\nLR_M05_p013',
         depth5: '',
         depth6: '',
         path: '/lease-rent-estimation-system/admin-setting-send',

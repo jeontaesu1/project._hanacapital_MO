@@ -1683,7 +1683,7 @@ const routes = [
     path: '/lease-rent-estimation-system/admin-setting-send',
     name: '/lease-rent-estimation-system/admin-setting-send',
     component: () =>
-      import('@/views/LeaseRentEstimationSystem/LR_M05_p011.vue'),
+      import('@/views/LeaseRentEstimationSystem/LR_M05_p013.vue'),
   },
   {
     path: '/lease-rent-estimation-system/admin-setting-administration',
