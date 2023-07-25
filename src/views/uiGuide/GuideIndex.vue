@@ -3940,7 +3940,12 @@ const datas = () => [
         path: '/company/group',
         status: 'end',
         create: '2023.05.26',
-        log: [],
+        log: [
+          {
+            date: '2023.07.25',
+            text: '이미지 수정',
+          },
+        ],
       },
       {
         depth2: '윤리경영',
