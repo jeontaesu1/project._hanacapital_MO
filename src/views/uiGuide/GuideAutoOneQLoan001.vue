@@ -12,6 +12,7 @@ import LayerAutoOneQLoanError from '@/views/auto/LayerAutoOneQLoanError.vue';
 import LayerAutoOneQLoanAvailable from '@/views/auto/LayerAutoOneQLoanAvailable.vue';
 import LayerAutoOneQLoanInquiry from '@/views/auto/LayerAutoOneQLoanInquiry.vue';
 import LayerAutoOneQLoanInquiryAlert from '@/views/auto/LayerAutoOneQLoanInquiryAlert.vue';
+import AF_M05_l004 from '@/views/auto/AF_M05_l004.vue';
 
 export default {
   components: {
@@ -25,6 +26,7 @@ export default {
     LayerAutoOneQLoanAvailable,
     LayerAutoOneQLoanInquiry,
     LayerAutoOneQLoanInquiryAlert,
+    AF_M05_l004,
   },
   setup() {
     const layer001 = ref(null);
@@ -33,6 +35,7 @@ export default {
     const layer004 = ref(null);
     const layer005 = ref(null);
     const layer006 = ref(null);
+    const layer007 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -52,6 +55,9 @@ export default {
     const layer006Open = (e = {}) => {
       layer006.value.layer.open(e.target);
     };
+    const layer007Open = (e = {}) => {
+      layer007.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -60,12 +66,14 @@ export default {
       layer004,
       layer005,
       layer006,
+      layer007,
       layer001Open,
       layer002Open,
       layer003Open,
       layer004Open,
       layer005Open,
       layer006Open,
+      layer007Open,
     };
   },
 };
@@ -109,6 +117,11 @@ export default {
           >지점문의 완료<br />AF_M05_b002</BasicButton
         >
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer007Open"
+          >대출신청 불가<br />AF_M05_l004</BasicButton
+        >
+      </ButtonListItem>
     </ButtonList>
 
     <LayerAutoOneQLoanForm ref="layer001" />
@@ -117,5 +130,6 @@ export default {
     <LayerAutoOneQLoanAvailable ref="layer004" />
     <LayerAutoOneQLoanInquiry ref="layer005" />
     <LayerAutoOneQLoanInquiryAlert ref="layer006" />
+    <AF_M05_l004 ref="layer007" />
   </PageContents>
 </template>

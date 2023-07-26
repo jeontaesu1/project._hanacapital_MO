@@ -1758,7 +1758,12 @@ const datas = () => [
         path: '/sales-used-car/new-counseling',
         status: 'end',
         create: '2023.05.10',
-        log: [],
+        log: [
+          {
+            date: '2023.07.26',
+            text: '- 메모 count 추가 ',
+          },
+        ],
       },
       {
         depth2: '상담등록\nUC_M03_p001',
@@ -1780,7 +1785,12 @@ const datas = () => [
         path: '/sales-used-car/counseling-complete',
         status: 'end',
         create: '2023.05.10',
-        log: [],
+        log: [
+          {
+            date: '2023.07.26',
+            text: '차량 이미지 삭제',
+          },
+        ],
       },
       {
         depth2: '상담등록\nUC_M03_p001',
@@ -1791,7 +1801,12 @@ const datas = () => [
         path: '/sales-used-car/counseling-auto-complete',
         status: 'end',
         create: '2023.05.10',
-        log: [],
+        log: [
+          {
+            date: '2023.07.26',
+            text: '차량 이미지 삭제',
+          },
+        ],
       },
       {
         depth2: '상담등록\nUC_M03_p001',
@@ -1857,7 +1872,12 @@ const datas = () => [
         path: '/sales-used-car/counseling-impossible-001',
         status: 'end',
         create: '2023.05.10',
-        log: [],
+        log: [
+          {
+            date: '2023.07.26',
+            text: '차량 이미지 삭제',
+          },
+        ],
       },
       {
         depth2: '상담등록\nUC_M03_p001',
@@ -1868,7 +1888,12 @@ const datas = () => [
         path: '/sales-used-car/counseling-impossible-002',
         status: 'end',
         create: '2023.05.10',
-        log: [],
+        log: [
+          {
+            date: '2023.07.26',
+            text: '차량 이미지 삭제',
+          },
+        ],
       },
       {
         depth2: '상담변경\nUC_M04_p001',
@@ -1955,7 +1980,12 @@ const datas = () => [
         path: '/sales-new-car/home',
         status: 'end',
         create: '2023.05.10',
-        log: [],
+        log: [
+          {
+            date: '2023.07.26',
+            text: '팝업 추가\n- 직원 정보 영역 삭제',
+          },
+        ],
       },
       {
         depth2: '신규상담\nNC_M02_p001',
@@ -2985,7 +3015,12 @@ const datas = () => [
         path: '/my-loan/home',
         status: 'end',
         create: '2023.04.21',
-        log: [],
+        log: [
+          {
+            date: '2023.07.26',
+            text: '더보기 버튼 추가',
+          },
+        ],
       },
       {
         depth2: '홈\nMy_M01_p001',
@@ -3956,7 +3991,7 @@ const datas = () => [
         create: '2023.05.26',
         log: [
           {
-            date: '2023.07.25',
+            date: '2023.07.26',
             text: '이미지 수정',
           },
         ],
@@ -4063,7 +4098,12 @@ const datas = () => [
         path: '/document/estimate-001',
         status: 'end',
         create: '2023.07.14',
-        log: [],
+        log: [
+          {
+            date: '2023.07.26',
+            text: '보험조건 및 구비서류 내용 수정',
+          },
+        ],
       },
       {
         depth2: '견적서',
@@ -4110,6 +4150,10 @@ const datas = () => [
           {
             date: '2023.07.21',
             text: '취득원가 안내 문구 수정',
+          },
+          {
+            date: '2023.07.26',
+            text: '취득원가 타이틀 수정',
           },
         ],
       },
