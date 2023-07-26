@@ -2680,6 +2680,10 @@ const datas = () => [
             date: '2023.06.23',
             text: '팝업 추가\n- 발주완료 견적 만료 안내\n- 발주차량 정보 변동 안내',
           },
+          {
+            date: '2023.07.26',
+            text: '- AF_M01_l005 문구 및 버튼 수정\n- AF_M01_l006 고객센터 시간 수정 ',
+          },
         ],
       },
       {
@@ -2707,7 +2711,12 @@ const datas = () => [
         path: '/ui-guide/auto-lease-001',
         status: 'end',
         create: '2023.04.14',
-        log: [],
+        log: [
+          {
+            date: '2023.07.26',
+            text: '- AF_M02_l005 문구 및 버튼 수정\n- AF_M02_l006 고객센터 시간 수정 ',
+          },
+        ],
       },
       {
         depth2: '오토할부\nAF_M03_p001',
@@ -2766,7 +2775,12 @@ const datas = () => [
         path: '/ui-guide/auto-one-q-loan-001',
         status: 'end',
         create: '2023.04.19',
-        log: [],
+        log: [
+          {
+            date: '2023.07.26',
+            text: '팝업 추가\n- 대출신청 불가',
+          },
+        ],
       },
       {
         depth2: '중고차오토론\nAF_M06_p001',
