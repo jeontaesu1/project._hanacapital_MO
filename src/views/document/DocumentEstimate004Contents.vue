@@ -80,9 +80,9 @@ export default {
       </div>
       <!-- // car info -->
 
-      <!-- 취득원가 -->
+      <!-- 가격사항 -->
       <section :class="$style['est-section']">
-        <h2 :class="$style['est-section__title']">■ 취득원가</h2>
+        <h2 :class="$style['est-section__title']">■ 가격사항</h2>
 
         <div :class="$style['est-section']">
           <div :class="$style['est-layout']">
@@ -247,7 +247,7 @@ export default {
           </div>
         </div>
       </section>
-      <!-- // 취득원가 -->
+      <!-- // 가격사항 -->
 
       <!-- 구비서류 -->
       <section :class="$style['est-section']">
@@ -377,9 +377,9 @@ export default {
       </div>
       <!-- // car info -->
 
-      <!-- 취득원가 -->
+      <!-- 가격사항 -->
       <section :class="$style['est-section']">
-        <h2 :class="$style['est-section__title']">■ 취득원가</h2>
+        <h2 :class="$style['est-section__title']">■ 가격사항</h2>
 
         <div :class="$style['est-section']">
           <div :class="$style['est-layout']">
@@ -544,7 +544,7 @@ export default {
           </div>
         </div>
       </section>
-      <!-- // 취득원가 -->
+      <!-- // 가격사항 -->
 
       <!-- 구비서류 -->
       <section :class="$style['est-section']">
@@ -674,9 +674,9 @@ export default {
       </div>
       <!-- // car info -->
 
-      <!-- 취득원가 -->
+      <!-- 가격사항 -->
       <section :class="$style['est-section']">
-        <h2 :class="$style['est-section__title']">■ 취득원가</h2>
+        <h2 :class="$style['est-section__title']">■ 가격사항</h2>
 
         <div :class="$style['est-section']">
           <div :class="$style['est-layout']">
@@ -871,7 +871,7 @@ export default {
           </div>
         </div>
       </section>
-      <!-- // 취득원가 -->
+      <!-- // 가격사항 -->
 
       <!-- 구비서류 -->
       <section :class="$style['est-section']">
@@ -1001,9 +1001,9 @@ export default {
       </div>
       <!-- // car info -->
 
-      <!-- 취득원가 -->
+      <!-- 가격사항 -->
       <section :class="$style['est-section']">
-        <h2 :class="$style['est-section__title']">■ 취득원가</h2>
+        <h2 :class="$style['est-section__title']">■ 가격사항</h2>
 
         <div :class="$style['est-section']">
           <div :class="$style['est-layout']">
@@ -1228,7 +1228,7 @@ export default {
           </div>
         </div>
       </section>
-      <!-- // 취득원가 -->
+      <!-- // 가격사항 -->
 
       <!-- 구비서류 -->
       <section :class="$style['est-section']">

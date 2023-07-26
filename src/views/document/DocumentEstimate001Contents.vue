@@ -208,15 +208,11 @@ export default {
             <colgroup>
               <col style="width: 113px" />
               <col />
-              <col style="width: 114px" />
-              <col />
-              <col style="width: 114px" />
+              <col style="width: 113px" />
               <col />
             </colgroup>
             <tbody>
               <tr>
-                <th>보험회사</th>
-                <td class="align-center">전국렌터카공제조합</td>
                 <th>운전연령</th>
                 <td class="align-center">만26세 이상</td>
                 <th>보험종류</th>
@@ -224,13 +220,13 @@ export default {
               </tr>
               <tr>
                 <th>의무가입</th>
-                <td colspan="5">
+                <td colspan="3">
                   대인배상Ⅰ, 대인배상Ⅱ, 무보험차상해(최고액 2억), 긴급출동
                 </td>
               </tr>
               <tr>
                 <th>필수가입</th>
-                <td colspan="5">대물 : 1억원, 자손 : 1억원, 면책금 : 30만원</td>
+                <td colspan="3">대물 : 1억원, 자손 : 1억원, 면책금 : 30만원</td>
               </tr>
             </tbody>
           </table>
@@ -252,19 +248,17 @@ export default {
               <tr :class="$style['est-table__emphasis']">
                 <th>개인/개인사업자</th>
                 <td>
-                  사업자등록증 사본, 운전면허증 사본, 재직증명서,
-                  원천징수영수증, 자동이체통장 사본<br />
-                  부가가치과세증명원, 소득금액증명원, 재산세과세증명원, 자격증
-                  사본(전문직 한정)
+                  사업자등록증 사본, 운전면허증 사본, 자동이제통장 사본<br />
+                  소득금액증명원, 재산세과세증명원, 자격증 사본(전문직 한정)
                 </td>
               </tr>
               <tr :class="$style['est-table__emphasis']">
                 <th>법인사업자</th>
                 <td>
-                  사업자등록증 사본, 법인등기부등본 1부, 법인인감증명서 1통,
-                  최근 2개년도 재무제표, 주주명부<br />
-                  자동이체통장 사본, 대표이사 신분증 사본, 대표이사 인감증명서
-                  1통, 대표이사 재산세과세증명원
+                  사업등록증 사번, 법인등기부등본 1부, 법인인감증명서 1통, 최근
+                  2개년도 재무제표<br />
+                  주주명부, 자동이체통장 사본 ※ 법인의 경우 대표이사 개인입보
+                  필수
                 </td>
               </tr>
             </tbody>
@@ -529,15 +523,11 @@ export default {
             <colgroup>
               <col style="width: 113px" />
               <col />
-              <col style="width: 114px" />
-              <col />
-              <col style="width: 114px" />
+              <col style="width: 113px" />
               <col />
             </colgroup>
             <tbody>
               <tr>
-                <th>보험회사</th>
-                <td class="align-center">전국렌터카공제조합</td>
                 <th>운전연령</th>
                 <td class="align-center">만26세 이상</td>
                 <th>보험종류</th>
@@ -545,13 +535,13 @@ export default {
               </tr>
               <tr>
                 <th>의무가입</th>
-                <td colspan="5">
+                <td colspan="3">
                   대인배상Ⅰ, 대인배상Ⅱ, 무보험차상해(최고액 2억), 긴급출동
                 </td>
               </tr>
               <tr>
                 <th>필수가입</th>
-                <td colspan="5">대물 : 1억원, 자손 : 1억원, 면책금 : 30만원</td>
+                <td colspan="3">대물 : 1억원, 자손 : 1억원, 면책금 : 30만원</td>
               </tr>
             </tbody>
           </table>
@@ -573,19 +563,17 @@ export default {
               <tr :class="$style['est-table__emphasis']">
                 <th>개인/개인사업자</th>
                 <td>
-                  사업자등록증 사본, 운전면허증 사본, 재직증명서,
-                  원천징수영수증, 자동이체통장 사본<br />
-                  부가가치과세증명원, 소득금액증명원, 재산세과세증명원, 자격증
-                  사본(전문직 한정)
+                  사업자등록증 사본, 운전면허증 사본, 자동이제통장 사본<br />
+                  소득금액증명원, 재산세과세증명원, 자격증 사본(전문직 한정)
                 </td>
               </tr>
               <tr :class="$style['est-table__emphasis']">
                 <th>법인사업자</th>
                 <td>
-                  사업자등록증 사본, 법인등기부등본 1부, 법인인감증명서 1통,
-                  최근 2개년도 재무제표, 주주명부<br />
-                  자동이체통장 사본, 대표이사 신분증 사본, 대표이사 인감증명서
-                  1통, 대표이사 재산세과세증명원
+                  사업등록증 사번, 법인등기부등본 1부, 법인인감증명서 1통, 최근
+                  2개년도 재무제표<br />
+                  주주명부, 자동이체통장 사본 ※ 법인의 경우 대표이사 개인입보
+                  필수
                 </td>
               </tr>
             </tbody>
@@ -910,15 +898,11 @@ export default {
             <colgroup>
               <col style="width: 113px" />
               <col />
-              <col style="width: 114px" />
-              <col />
-              <col style="width: 114px" />
+              <col style="width: 113px" />
               <col />
             </colgroup>
             <tbody>
               <tr>
-                <th>보험회사</th>
-                <td class="align-center">전국렌터카공제조합</td>
                 <th>운전연령</th>
                 <td class="align-center">만26세 이상</td>
                 <th>보험종류</th>
@@ -926,13 +910,13 @@ export default {
               </tr>
               <tr>
                 <th>의무가입</th>
-                <td colspan="5">
+                <td colspan="3">
                   대인배상Ⅰ, 대인배상Ⅱ, 무보험차상해(최고액 2억), 긴급출동
                 </td>
               </tr>
               <tr>
                 <th>필수가입</th>
-                <td colspan="5">대물 : 1억원, 자손 : 1억원, 면책금 : 30만원</td>
+                <td colspan="3">대물 : 1억원, 자손 : 1억원, 면책금 : 30만원</td>
               </tr>
             </tbody>
           </table>
@@ -954,19 +938,17 @@ export default {
               <tr :class="$style['est-table__emphasis']">
                 <th>개인/개인사업자</th>
                 <td>
-                  사업자등록증 사본, 운전면허증 사본, 재직증명서,
-                  원천징수영수증, 자동이체통장 사본<br />
-                  부가가치과세증명원, 소득금액증명원, 재산세과세증명원, 자격증
-                  사본(전문직 한정)
+                  사업자등록증 사본, 운전면허증 사본, 자동이제통장 사본<br />
+                  소득금액증명원, 재산세과세증명원, 자격증 사본(전문직 한정)
                 </td>
               </tr>
               <tr :class="$style['est-table__emphasis']">
                 <th>법인사업자</th>
                 <td>
-                  사업자등록증 사본, 법인등기부등본 1부, 법인인감증명서 1통,
-                  최근 2개년도 재무제표, 주주명부<br />
-                  자동이체통장 사본, 대표이사 신분증 사본, 대표이사 인감증명서
-                  1통, 대표이사 재산세과세증명원
+                  사업등록증 사번, 법인등기부등본 1부, 법인인감증명서 1통, 최근
+                  2개년도 재무제표<br />
+                  주주명부, 자동이체통장 사본 ※ 법인의 경우 대표이사 개인입보
+                  필수
                 </td>
               </tr>
             </tbody>
@@ -1349,15 +1331,11 @@ export default {
             <colgroup>
               <col style="width: 113px" />
               <col />
-              <col style="width: 114px" />
-              <col />
-              <col style="width: 114px" />
+              <col style="width: 113px" />
               <col />
             </colgroup>
             <tbody>
               <tr>
-                <th>보험회사</th>
-                <td class="align-center">전국렌터카공제조합</td>
                 <th>운전연령</th>
                 <td class="align-center">만26세 이상</td>
                 <th>보험종류</th>
@@ -1365,13 +1343,13 @@ export default {
               </tr>
               <tr>
                 <th>의무가입</th>
-                <td colspan="5">
+                <td colspan="3">
                   대인배상Ⅰ, 대인배상Ⅱ, 무보험차상해(최고액 2억), 긴급출동
                 </td>
               </tr>
               <tr>
                 <th>필수가입</th>
-                <td colspan="5">대물 : 1억원, 자손 : 1억원, 면책금 : 30만원</td>
+                <td colspan="3">대물 : 1억원, 자손 : 1억원, 면책금 : 30만원</td>
               </tr>
             </tbody>
           </table>
@@ -1393,19 +1371,17 @@ export default {
               <tr :class="$style['est-table__emphasis']">
                 <th>개인/개인사업자</th>
                 <td>
-                  사업자등록증 사본, 운전면허증 사본, 재직증명서,
-                  원천징수영수증, 자동이체통장 사본<br />
-                  부가가치과세증명원, 소득금액증명원, 재산세과세증명원, 자격증
-                  사본(전문직 한정)
+                  사업자등록증 사본, 운전면허증 사본, 자동이제통장 사본<br />
+                  소득금액증명원, 재산세과세증명원, 자격증 사본(전문직 한정)
                 </td>
               </tr>
               <tr :class="$style['est-table__emphasis']">
                 <th>법인사업자</th>
                 <td>
-                  사업자등록증 사본, 법인등기부등본 1부, 법인인감증명서 1통,
-                  최근 2개년도 재무제표, 주주명부<br />
-                  자동이체통장 사본, 대표이사 신분증 사본, 대표이사 인감증명서
-                  1통, 대표이사 재산세과세증명원
+                  사업등록증 사번, 법인등기부등본 1부, 법인인감증명서 1통, 최근
+                  2개년도 재무제표<br />
+                  주주명부, 자동이체통장 사본 ※ 법인의 경우 대표이사 개인입보
+                  필수
                 </td>
               </tr>
             </tbody>

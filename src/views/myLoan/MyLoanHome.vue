@@ -24,10 +24,12 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
 import BasicBanner from '@/components/ui/banner/BasicBanner.vue';
 import BasicBannerSlide from '@/components/ui/banner/BasicBannerSlide.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
 
 import IconCertification from '@/assets/images/icon/certification.svg?component';
 import IconSecurity from '@/assets/images/icon/security.svg?component';
 import IconTell from '@/assets/images/icon/tell.svg?component';
+import IconArrow from '@/assets/images/icon/dropdown.svg?component';
 
 export default {
   components: {
@@ -51,9 +53,11 @@ export default {
     NoticeText,
     BasicBanner,
     BasicBannerSlide,
+    TextButton,
     IconCertification,
     IconSecurity,
     IconTell,
+    IconArrow,
   },
   setup() {
     const store = {
@@ -699,6 +703,17 @@ export default {
         </Swiper>
       </BasicBannerSlide>
       <!-- // DD : 하드코딩 배너 -->
+
+      <!-- Case : 캐피탈 계약만 보유(리스) 리스트 5개 이상일 경우 노출 -->
+      <div class="inline-wrap align-center row-margin-item-group">
+        <TextButton :classNames="{ wrap: 'text-body-4 color-gray' }">
+          더보기
+          <template v-slot:rightIcon>
+            <IconArrow />
+          </template>
+        </TextButton>
+      </div>
+      <!-- // Case : 캐피탈 계약만 보유(리스) 리스트 5개 이상일 경우 노출 -->
     </section>
   </PageContents>
 </template>

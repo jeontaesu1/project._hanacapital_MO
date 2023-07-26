@@ -11,8 +11,6 @@ import IllustObject from '@/components/ui/common/IllustObject.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
-import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
-import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
 import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
@@ -33,8 +31,6 @@ export default {
     BasicBox,
     BasicBoxHead,
     BasicBoxHeadLeft,
-    BasicBoxHeadRight,
-    CarThumb,
     CarEmblem,
     KeyValue,
     KeyValueItem,
@@ -95,9 +91,6 @@ export default {
             2022년형 가솔린 1.0 터보 밴
           </p>
         </BasicBoxHeadLeft>
-        <BasicBoxHeadRight>
-          <CarThumb src="/images/_dummy/car-thumb.png" />
-        </BasicBoxHeadRight>
       </BasicBoxHead>
       <div>
         <KeyValue>

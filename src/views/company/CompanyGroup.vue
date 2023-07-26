@@ -57,7 +57,7 @@ export default {
 
       <UiTabPanel name="companyGroupTab001">
         <div :class="$style['image-view']">
-          <img src="@/assets/images/_dummy/box-detail.png" alt="샘플 이미지" />
+          <img src="@/assets/images/_dummy/company-1.png" alt="" />
         </div>
       </UiTabPanel>
 
@@ -74,13 +74,13 @@ export default {
           </p>
         </section>
         <div :class="$style['image-view']">
-          <img src="@/assets/images/_dummy/box-detail.png" alt="샘플 이미지" />
+          <img src="@/assets/images/_dummy/company-2.png" alt="" />
         </div>
       </UiTabPanel>
 
       <UiTabPanel name="companyGroupTab003">
         <div :class="$style['image-view']">
-          <img src="@/assets/images/_dummy/box-detail.png" alt="샘플 이미지" />
+          <img src="@/assets/images/_dummy/company-3.png" alt="" />
         </div>
       </UiTabPanel>
     </PageContents>
