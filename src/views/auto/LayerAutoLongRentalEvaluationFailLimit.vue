@@ -62,7 +62,7 @@ export default {
 
       <IllustObject type="fail" />
 
-      <section :class="[$style['notice-section'], 'row-margin-contents-group']">
+      <section :class="$style['notice-section']">
         <h3 :class="$style['notice-section__title']">진행방법</h3>
         <ol :class="$style['basic-list']">
           <li :class="$style['basic-list__item']">

@@ -12,7 +12,7 @@ import LayerAutoOneQLoanError from '@/views/auto/LayerAutoOneQLoanError.vue';
 import LayerAutoOneQLoanAvailable from '@/views/auto/LayerAutoOneQLoanAvailable.vue';
 import LayerAutoOneQLoanInquiry from '@/views/auto/LayerAutoOneQLoanInquiry.vue';
 import LayerAutoOneQLoanInquiryAlert from '@/views/auto/LayerAutoOneQLoanInquiryAlert.vue';
-import AF_M05_l004 from '@/views/auto/AF_M05_l004.vue';
+import LayerAutoOneQLoanFail from '@/views/auto/LayerAutoOneQLoanFail.vue';
 
 export default {
   components: {
@@ -26,7 +26,7 @@ export default {
     LayerAutoOneQLoanAvailable,
     LayerAutoOneQLoanInquiry,
     LayerAutoOneQLoanInquiryAlert,
-    AF_M05_l004,
+    LayerAutoOneQLoanFail,
   },
   setup() {
     const layer001 = ref(null);
@@ -130,6 +130,6 @@ export default {
     <LayerAutoOneQLoanAvailable ref="layer004" />
     <LayerAutoOneQLoanInquiry ref="layer005" />
     <LayerAutoOneQLoanInquiryAlert ref="layer006" />
-    <AF_M05_l004 ref="layer007" />
+    <LayerAutoOneQLoanFail ref="layer007" />
   </PageContents>
 </template>

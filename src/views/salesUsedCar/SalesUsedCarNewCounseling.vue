@@ -171,13 +171,12 @@ export default {
           :error="state.memoError"
           titleText="메모"
           titleOptionalText="(매매상사, 직원명, 연락처를 입력하세요.)"
-          :maxlength="40"
-          :count="true"
+          :maxlength="20"
           title="메모"
         >
           <template v-slot:bottom>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
-            <FormHelpText>최대 40자 이내로 입력해주세요.</FormHelpText>
+            <FormHelpText>최대 20자 이내로 입력해주세요.</FormHelpText>
           </template>
         </BasicTextarea>
       </FormList>

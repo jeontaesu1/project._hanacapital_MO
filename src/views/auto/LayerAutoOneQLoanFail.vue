@@ -1,5 +1,5 @@
 <script>
-// AF_M05_l004_대출신청 불가
+// AF_M05_l004 - 대출신청 불가
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';

@@ -125,16 +125,16 @@ export default {
             <KeyValueText>78,000,000 원</KeyValueText>
           </KeyValueItem>
         </KeyValue>
-        <!-- //Case : 렌터카일 경우 미노출 -->
+        <!-- // Case : 렌터카일 경우 미노출 -->
       </BasicBox>
 
-      <!-- Case :  캐피탈 계약 + 파트너사 양도계약 보유 경우 노출 -->
+      <!-- Case : 캐피탈 + 파트너사 양도계약(팩토링) 보유 -->
       <NoticeText :classNames="{ wrap: $style['notice'] }">
         렌탈/할부채권 양도계약은 총 금액에 포함되지 않습니다.
       </NoticeText>
-      <!-- //Case : 캐피탈 계약 + 파트너사 양도계약 보유 경우 노출 -->
+      <!-- // Case : 캐피탈 + 파트너사 양도계약(팩토링) 보유 -->
 
-      <!-- Case :  파트너사 양도계약(팩토링)만 보유한 경우 노출 -->
+      <!-- Case : 파트너사 양도계약(팩토링)만 보유 -->
       <ul :class="$style['basic-list']">
         <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']"></div>
@@ -156,9 +156,9 @@ export default {
           </div>
         </li>
       </ul>
-      <!-- //Case :  파트너사 양도계약(팩토링)만 보유한 경우 노출 -->
+      <!-- // Case : 파트너사 양도계약(팩토링)만 보유 -->
 
-      <!-- Case :  캐피탈 계약만 보유한 경우, 캐피탈 계약 + 파트너사 양도계약 보유한 경우 -->
+      <!-- Case : 캐피탈 계약 보유 -->
       <div :class="[$style['icon-list'], 'row-margin-container-medium']">
         <ul :class="$style['icon-list__list']">
           <li :class="$style['icon-list__item']">
@@ -191,13 +191,12 @@ export default {
           </li>
         </ul>
       </div>
-      <!-- //Case :  캐피탈 계약만 보유한 경우, 캐피탈 계약 + 파트너사 양도계약 보유한 경우 -->
+      <!-- // Case : 캐피탈 계약 보유 -->
     </section>
 
+    <!-- Case : 캐피탈 계약 보유 -->
     <BasicHr className="row-margin-container-medium" />
 
-    <!-- Case : 캐피탈 계약 + 파트너사 양도계약 보유한 경우 -->
-    <!-- Case : 캐피탈 계약만 보유한 경우 노출 -->
     <section>
       <h3 class="text-title-2 row-margin-contents">캐피탈 상품 계약</h3>
 
@@ -433,16 +432,27 @@ export default {
           </div>
         </li>
       </ul>
-    </section>
-    <!-- //Case : 캐피탈 계약만 보유한 경우 노출 -->
 
+      <!-- Case : 상품이 더 있을 경우 노출 -->
+      <div class="inline-wrap align-center row-margin-item-group">
+        <TextButton :classNames="{ wrap: 'text-body-4 color-gray' }">
+          더보기
+          <template v-slot:rightIcon>
+            <IconArrow />
+          </template>
+        </TextButton>
+      </div>
+      <!-- // Case : 상품이 더 있을 경우 노출 -->
+    </section>
+    <!-- // Case : 캐피탈 계약 보유 -->
+
+    <!-- Case : 파트너사 양도계약(팩토링) 보유 -->
     <BasicHr className="row-margin-container-medium" />
 
-    <!-- Case :파트너사 양도계약(팩토링)만 보유한 경우 노출 -->
     <section>
       <h3 class="text-title-2 row-margin-contents">렌탈/할부채권 양도계약</h3>
 
-      <!-- Case :  캐피탈 계약 + 파트너사 양도계약 보유 경우 노출 -->
+      <!-- Case : 캐피탈 + 파트너사 양도계약(팩토링) 보유 -->
       <ul :class="[$style['basic-list'], 'row-margin-contents']">
         <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']"></div>
@@ -464,247 +474,97 @@ export default {
           </div>
         </li>
       </ul>
-      <!-- //Case :  캐피탈 계약 + 파트너사 양도계약 보유 경우 노출 -->
+      <!-- // Case : 캐피탈 + 파트너사 양도계약(팩토링) 보유 -->
 
-      <BasicBox className="row-margin-item-group">
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>
-            <h3 class="text-body-1 font-weight-medium">야나두</h3>
-            <div class="text-body-4 color-gray row-margin-small">
-              품목명 1줄로 여기까지 여기까지 씁니다.<br />
-              길 경우 이렇게 2줄까지 됩니다.
-            </div>
-          </BasicBoxHeadLeft>
-        </BasicBoxHead>
+      <ul class="reset-list">
+        <li class="row-margin-item-group">
+          <BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-body-1 font-weight-medium">야나두</h3>
+                <div class="text-body-4 color-gray row-margin-small">
+                  품목명 1줄로 여기까지 여기까지 씁니다.<br />
+                  길 경우 이렇게 2줄까지 됩니다.
+                </div>
+              </BasicBoxHeadLeft>
+            </BasicBoxHead>
 
-        <KeyValue margin="regular">
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>월 납입금</KeyValueTitle>
-            <KeyValueText
-              :classNames="{ text: 'color-green font-weight-medium' }"
-              >845,000 원</KeyValueText
+            <KeyValue margin="regular">
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle>월 납입금</KeyValueTitle>
+                <KeyValueText
+                  :classNames="{ text: 'color-green font-weight-medium' }"
+                  >845,000 원</KeyValueText
+                >
+              </KeyValueItem>
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle>할부기간</KeyValueTitle>
+                <KeyValueText>16/60개월</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle>할부금액</KeyValueTitle>
+                <KeyValueText>999,999,999 원</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+
+            <BasicButton
+              tagName="a"
+              size="small"
+              :classNames="{ wrap: 'row-margin-contents-small' }"
             >
-          </KeyValueItem>
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>할부기간</KeyValueTitle>
-            <KeyValueText>16/60개월</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>할부금액</KeyValueTitle>
-            <KeyValueText>999,999,999 원</KeyValueText>
-          </KeyValueItem>
-        </KeyValue>
+              <template v-slot:leftIcon>
+                <IconTell />
+              </template>
+              야나두 전화연결
+            </BasicButton>
+          </BasicBox>
+        </li>
 
-        <BasicButton
-          tagName="a"
-          size="small"
-          :classNames="{ wrap: 'row-margin-contents-small' }"
-        >
-          <template v-slot:leftIcon>
-            <IconTell />
-          </template>
-          야나두 전화연결
-        </BasicButton>
-      </BasicBox>
+        <li class="row-margin-item-group">
+          <BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-body-1 font-weight-medium">현대렌탈</h3>
+                <div class="text-body-4 color-gray row-margin-small">
+                  품목명 1줄로 여기까지 여기까지 씁니다.<br />
+                  길 경우 이렇게 2줄까지 됩니다.
+                </div>
+              </BasicBoxHeadLeft>
+            </BasicBoxHead>
 
-      <BasicBox className="row-margin-item-group">
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>
-            <h3 class="text-body-1 font-weight-medium">현대렌탈</h3>
-            <div class="text-body-4 color-gray row-margin-small">
-              품목명 1줄로 여기까지 여기까지 씁니다.<br />
-              길 경우 이렇게 2줄까지 됩니다.
-            </div>
-          </BasicBoxHeadLeft>
-        </BasicBoxHead>
+            <KeyValue margin="regular">
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle>월 납입금</KeyValueTitle>
+                <KeyValueText
+                  :classNames="{ text: 'color-green font-weight-medium' }"
+                  >845,000 원</KeyValueText
+                >
+              </KeyValueItem>
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle>렌탈기간</KeyValueTitle>
+                <KeyValueText>16/60개월</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle>렌탈잔액</KeyValueTitle>
+                <KeyValueText>999,999,999 원</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
 
-        <KeyValue margin="regular">
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>월 납입금</KeyValueTitle>
-            <KeyValueText
-              :classNames="{ text: 'color-green font-weight-medium' }"
-              >845,000 원</KeyValueText
+            <BasicButton
+              tagName="a"
+              size="small"
+              :classNames="{ wrap: 'row-margin-contents-small' }"
             >
-          </KeyValueItem>
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>렌탈기간</KeyValueTitle>
-            <KeyValueText>16/60개월</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>렌탈잔액</KeyValueTitle>
-            <KeyValueText>999,999,999 원</KeyValueText>
-          </KeyValueItem>
-        </KeyValue>
+              <template v-slot:leftIcon>
+                <IconTell />
+              </template>
+              현대렌탈 전화연결
+            </BasicButton>
+          </BasicBox>
+        </li>
+      </ul>
 
-        <BasicButton
-          tagName="a"
-          size="small"
-          :classNames="{ wrap: 'row-margin-contents-small' }"
-        >
-          <template v-slot:leftIcon>
-            <IconTell />
-          </template>
-          현대렌탈 전화연결
-        </BasicButton>
-      </BasicBox>
-    </section>
-    <!-- //Case : 파트너사 양도계약(팩토링)만 보유한 경우 노출 -->
-
-    <BasicHr className="row-margin-container-medium" />
-
-    <section>
-      <h3 class="text-title-2 row-margin-contents">종료된 계약</h3>
-      <BasicBox className="row-margin-item-group">
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>
-            <h3 class="text-body-1 font-weight-medium">스탁론</h3>
-          </BasicBoxHeadLeft>
-          <BasicBoxHeadRight>
-            <RoundStatus :classNames="{ wrap: 'display-block' }">
-              종료
-            </RoundStatus>
-          </BasicBoxHeadRight>
-        </BasicBoxHead>
-
-        <KeyValue margin="regular">
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>대출기간</KeyValueTitle>
-            <KeyValueText>2021.01.02 ~ 2021.01.02</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>대출원금</KeyValueTitle>
-            <KeyValueText>999,999,999 원</KeyValueText>
-          </KeyValueItem>
-        </KeyValue>
-      </BasicBox>
-
-      <!-- Case : 파트너사 양도계약(팩토링)만 보유한 경우 노출 -->
-      <BasicBox className="row-margin-item-group">
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>
-            <h3 class="text-body-1 font-weight-medium">야나두</h3>
-            <div class="text-body-4 color-gray row-margin-small">
-              품목명 1줄로 여기까지 여기까지 씁니다.<br />
-              길 경우 이렇게 2줄까지 됩니다.
-            </div>
-          </BasicBoxHeadLeft>
-          <BasicBoxHeadRight>
-            <RoundStatus :classNames="{ wrap: 'display-block' }">
-              종료
-            </RoundStatus>
-          </BasicBoxHeadRight>
-        </BasicBoxHead>
-
-        <KeyValue margin="regular">
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>할부기간</KeyValueTitle>
-            <KeyValueText>16/60개월</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>할부금액</KeyValueTitle>
-            <KeyValueText>999,999,999 원</KeyValueText>
-          </KeyValueItem>
-        </KeyValue>
-
-        <BasicButton
-          tagName="a"
-          size="small"
-          :classNames="{ wrap: 'row-margin-contents-small' }"
-        >
-          <template v-slot:leftIcon>
-            <IconTell />
-          </template>
-          야나두 전화연결
-        </BasicButton>
-      </BasicBox>
-
-      <BasicBox className="row-margin-item-group">
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>
-            <h3 class="text-body-1 font-weight-medium">현대렌탈</h3>
-            <div class="text-body-4 color-gray row-margin-small">
-              품목명 1줄로 여기까지 여기까지 씁니다.<br />
-              길 경우 이렇게 2줄까지 됩니다.
-            </div>
-          </BasicBoxHeadLeft>
-          <BasicBoxHeadRight>
-            <RoundStatus :classNames="{ wrap: 'display-block' }">
-              종료
-            </RoundStatus>
-          </BasicBoxHeadRight>
-        </BasicBoxHead>
-
-        <KeyValue margin="regular">
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>렌탈기간</KeyValueTitle>
-            <KeyValueText>16/60개월</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>렌탈잔액</KeyValueTitle>
-            <KeyValueText>999,999,999 원</KeyValueText>
-          </KeyValueItem>
-        </KeyValue>
-
-        <BasicButton
-          tagName="a"
-          size="small"
-          :classNames="{ wrap: 'row-margin-contents-small' }"
-        >
-          <template v-slot:leftIcon>
-            <IconTell />
-          </template>
-          현대렌탈 전화연결
-        </BasicButton>
-      </BasicBox>
-      <!-- //Case : 파트너사 양도계약(팩토링)만 보유한 경우 노출 -->
-      <!-- //Case : 캐피탈 계약 + 파트너사 양도계약 보유한 경우 -->
-
-      <!-- DD : 하드코딩 배너 -->
-      <BasicBannerSlide>
-        <Swiper :modules="modules" pagination>
-          <SwiperSlide>
-            <BasicBanner
-              thumb="/images/banner/banner-money-up.png"
-              tagName="RouterLink"
-              to=""
-            >
-              <p class="text-body-4 color-gray row-margin-mini">
-                비용NO! 보험NO! 내 차OK!
-              </p>
-              <h3 class="text-body-1 font-weight-medium">
-                다이렉트 장기렌터카
-              </h3>
-            </BasicBanner>
-          </SwiperSlide>
-          <SwiperSlide>
-            <BasicBanner
-              thumb="/images/banner/banner-money-up.png"
-              tagName="RouterLink"
-              to=""
-            >
-              <p class="text-body-4 color-gray row-margin-mini">
-                내용 작업 예정
-              </p>
-              <h3 class="text-body-1 font-weight-medium">내용 작업 예정</h3>
-            </BasicBanner>
-          </SwiperSlide>
-          <SwiperSlide>
-            <BasicBanner
-              thumb="/images/banner/banner-money-up.png"
-              tagName="RouterLink"
-              to=""
-            >
-              <p class="text-body-4 color-gray row-margin-mini">
-                내용 작업 예정
-              </p>
-              <h3 class="text-body-1 font-weight-medium">내용 작업 예정</h3>
-            </BasicBanner>
-          </SwiperSlide>
-        </Swiper>
-      </BasicBannerSlide>
-      <!-- // DD : 하드코딩 배너 -->
-
-      <!-- Case : 캐피탈 계약만 보유(리스) 리스트 5개 이상일 경우 노출 -->
+      <!-- Case : 상품이 더 있을 경우 노출 -->
       <div class="inline-wrap align-center row-margin-item-group">
         <TextButton :classNames="{ wrap: 'text-body-4 color-gray' }">
           더보기
@@ -713,7 +573,184 @@ export default {
           </template>
         </TextButton>
       </div>
-      <!-- // Case : 캐피탈 계약만 보유(리스) 리스트 5개 이상일 경우 노출 -->
+      <!-- // Case : 상품이 더 있을 경우 노출 -->
+    </section>
+    <!-- // Case : 파트너사 양도계약(팩토링) 보유 -->
+
+    <BasicHr className="row-margin-container-medium" />
+
+    <section>
+      <h3 class="text-title-2 row-margin-contents">종료된 계약</h3>
+
+      <ul class="reset-list">
+        <li class="row-margin-item-group">
+          <BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-body-1 font-weight-medium">스탁론</h3>
+              </BasicBoxHeadLeft>
+              <BasicBoxHeadRight>
+                <RoundStatus :classNames="{ wrap: 'display-block' }">
+                  종료
+                </RoundStatus>
+              </BasicBoxHeadRight>
+            </BasicBoxHead>
+
+            <KeyValue margin="regular">
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle>대출기간</KeyValueTitle>
+                <KeyValueText>2021.01.02 ~ 2021.01.02</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle>대출원금</KeyValueTitle>
+                <KeyValueText>999,999,999 원</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </BasicBox>
+        </li>
+
+        <!-- Case : 파트너사 양도계약(팩토링) -->
+        <li class="row-margin-item-group">
+          <BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-body-1 font-weight-medium">야나두</h3>
+                <div class="text-body-4 color-gray row-margin-small">
+                  품목명 1줄로 여기까지 여기까지 씁니다.<br />
+                  길 경우 이렇게 2줄까지 됩니다.
+                </div>
+              </BasicBoxHeadLeft>
+              <BasicBoxHeadRight>
+                <RoundStatus :classNames="{ wrap: 'display-block' }">
+                  종료
+                </RoundStatus>
+              </BasicBoxHeadRight>
+            </BasicBoxHead>
+
+            <KeyValue margin="regular">
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle>할부기간</KeyValueTitle>
+                <KeyValueText>16/60개월</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle>할부금액</KeyValueTitle>
+                <KeyValueText>999,999,999 원</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+
+            <BasicButton
+              tagName="a"
+              size="small"
+              :classNames="{ wrap: 'row-margin-contents-small' }"
+            >
+              <template v-slot:leftIcon>
+                <IconTell />
+              </template>
+              야나두 전화연결
+            </BasicButton>
+          </BasicBox>
+        </li>
+
+        <li class="row-margin-item-group">
+          <BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-body-1 font-weight-medium">현대렌탈</h3>
+                <div class="text-body-4 color-gray row-margin-small">
+                  품목명 1줄로 여기까지 여기까지 씁니다.<br />
+                  길 경우 이렇게 2줄까지 됩니다.
+                </div>
+              </BasicBoxHeadLeft>
+              <BasicBoxHeadRight>
+                <RoundStatus :classNames="{ wrap: 'display-block' }">
+                  종료
+                </RoundStatus>
+              </BasicBoxHeadRight>
+            </BasicBoxHead>
+
+            <KeyValue margin="regular">
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle>렌탈기간</KeyValueTitle>
+                <KeyValueText>16/60개월</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                <KeyValueTitle>렌탈잔액</KeyValueTitle>
+                <KeyValueText>999,999,999 원</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+
+            <BasicButton
+              tagName="a"
+              size="small"
+              :classNames="{ wrap: 'row-margin-contents-small' }"
+            >
+              <template v-slot:leftIcon>
+                <IconTell />
+              </template>
+              현대렌탈 전화연결
+            </BasicButton>
+          </BasicBox>
+        </li>
+        <!-- // Case : 파트너사 양도계약(팩토링) -->
+      </ul>
+
+      <!-- Case : 상품이 더 있을 경우 노출 -->
+      <div class="inline-wrap align-center row-margin-item-group">
+        <TextButton :classNames="{ wrap: 'text-body-4 color-gray' }">
+          더보기
+          <template v-slot:rightIcon>
+            <IconArrow />
+          </template>
+        </TextButton>
+      </div>
+      <!-- // Case : 상품이 더 있을 경우 노출 -->
+
+      <!-- DD : 하드코딩 배너 -->
+      <div class="row-margin-contents">
+        <BasicBannerSlide>
+          <Swiper :modules="modules" pagination>
+            <SwiperSlide>
+              <BasicBanner
+                thumb="/images/banner/banner-money-up.png"
+                tagName="RouterLink"
+                to=""
+              >
+                <p class="text-body-4 color-gray row-margin-mini">
+                  비용NO! 보험NO! 내 차OK!
+                </p>
+                <h3 class="text-body-1 font-weight-medium">
+                  다이렉트 장기렌터카
+                </h3>
+              </BasicBanner>
+            </SwiperSlide>
+            <SwiperSlide>
+              <BasicBanner
+                thumb="/images/banner/banner-money-up.png"
+                tagName="RouterLink"
+                to=""
+              >
+                <p class="text-body-4 color-gray row-margin-mini">
+                  내용 작업 예정
+                </p>
+                <h3 class="text-body-1 font-weight-medium">내용 작업 예정</h3>
+              </BasicBanner>
+            </SwiperSlide>
+            <SwiperSlide>
+              <BasicBanner
+                thumb="/images/banner/banner-money-up.png"
+                tagName="RouterLink"
+                to=""
+              >
+                <p class="text-body-4 color-gray row-margin-mini">
+                  내용 작업 예정
+                </p>
+                <h3 class="text-body-1 font-weight-medium">내용 작업 예정</h3>
+              </BasicBanner>
+            </SwiperSlide>
+          </Swiper>
+        </BasicBannerSlide>
+      </div>
+      <!-- // DD : 하드코딩 배너 -->
     </section>
   </PageContents>
 </template>

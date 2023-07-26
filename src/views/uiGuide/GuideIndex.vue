@@ -1758,12 +1758,7 @@ const datas = () => [
         path: '/sales-used-car/new-counseling',
         status: 'end',
         create: '2023.05.10',
-        log: [
-          {
-            date: '2023.07.26',
-            text: '- 메모 count 추가 ',
-          },
-        ],
+        log: [],
       },
       {
         depth2: '상담등록\nUC_M03_p001',
@@ -2712,7 +2707,7 @@ const datas = () => [
           },
           {
             date: '2023.07.26',
-            text: '- AF_M01_l005 문구 및 버튼 수정\n- AF_M01_l006 고객센터 시간 수정 ',
+            text: '- AF_M01_l005 컨텐츠 구성 변경\n- AF_M01_l006 고객센터 시간 수정 ',
           },
         ],
       },
@@ -2744,7 +2739,7 @@ const datas = () => [
         log: [
           {
             date: '2023.07.26',
-            text: '- AF_M02_l005 문구 및 버튼 수정\n- AF_M02_l006 고객센터 시간 수정 ',
+            text: '- AF_M02_l005 컨텐츠 구성 변경\n- AF_M02_l006 고객센터 시간 수정 ',
           },
         ],
       },
@@ -3934,7 +3929,12 @@ const datas = () => [
         path: '/company/business-areas',
         status: 'end',
         create: '2023.05.12',
-        log: [],
+        log: [
+          {
+            date: '2023.07.26',
+            text: '글로벌금융 서비스 링크 기능 추가',
+          },
+        ],
       },
       {
         depth2: '회사소개',
@@ -3992,7 +3992,7 @@ const datas = () => [
         log: [
           {
             date: '2023.07.26',
-            text: '이미지 수정',
+            text: '이미지 반영',
           },
         ],
       },
@@ -4153,7 +4153,7 @@ const datas = () => [
           },
           {
             date: '2023.07.26',
-            text: '취득원가 타이틀 수정',
+            text: '취득원가 -> 가격사항 타이틀 수정',
           },
         ],
       },

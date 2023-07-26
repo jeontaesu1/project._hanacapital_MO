@@ -155,26 +155,24 @@ export default {
 
         <ul class="reset-list row-margin-contents-group">
           <li class="row-margin-item-medium">
-            <div :class="$style['nation']">
-              <div :class="$style['nation__left']">
-                <div :class="$style['nation__sub']">SINARMAS HANA FINANCE</div>
-                <div :class="$style['nation__title']">인도네시아</div>
-              </div>
-              <div :class="$style['nation__right']">
-                <!-- // -->
-              </div>
-            </div>
+            <a
+              href="https://shf.co.id/"
+              target="_blank"
+              :class="$style['nation']"
+            >
+              <span :class="$style['nation__sub']">SINARMAS HANA FINANCE</span>
+              <span :class="$style['nation__title']">인도네시아</span>
+            </a>
           </li>
           <li class="row-margin-item-medium">
-            <div :class="$style['nation']">
-              <div :class="$style['nation__left']">
-                <div :class="$style['nation__sub']">HANA MICRO FINANCE</div>
-                <div :class="$style['nation__title']">미얀마</div>
-              </div>
-              <div :class="$style['nation__right']">
-                <!-- // -->
-              </div>
-            </div>
+            <a
+              href="https://www.hanamyanmar.com/"
+              target="_blank"
+              :class="[$style['nation'], $style['nation--secondary']]"
+            >
+              <span :class="$style['nation__sub']">HANA MICRO FINANCE</span>
+              <span :class="$style['nation__title']">미얀마</span>
+            </a>
           </li>
         </ul>
       </section>
