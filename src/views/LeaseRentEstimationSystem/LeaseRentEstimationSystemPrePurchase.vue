@@ -2909,7 +2909,7 @@ export default {
                     </FormListItem>
                     <!-- Case : 측후면썬팅 [일반(쿠폰), 3M, 루마] 선택시 노출 -->
                     <FormListItem
-                      titleText="측후면썬팅 투과율(농동)"
+                      titleText="측후면썬팅 투과율(농도)"
                       target="#leaseRentEstimationSystemPrePurchaseSideTintingRatioButton"
                       :selectOnly="true"
                     >
@@ -2935,8 +2935,8 @@ export default {
                                   text: '5%',
                                 },
                               ]"
-                              buttonTitle="측후면썬팅 투과율(농동) 선택하기"
-                              layerTitle="측후면썬팅 투과율(농동)을 선택해 주세요"
+                              buttonTitle="측후면썬팅 투과율(농도) 선택하기"
+                              layerTitle="측후면썬팅 투과율(농도)을 선택해 주세요"
                               id="leaseRentEstimationSystemPrePurchaseSideTintingRatio"
                               buttonId="leaseRentEstimationSystemPrePurchaseSideTintingRatioButton"
                             />
@@ -2977,7 +2977,7 @@ export default {
                     </FormListItem>
                     <!-- Case : 전면썬팅 [포함] 선택시 노출 -->
                     <FormListItem
-                      titleText="전면썬팅 투과율(농동)"
+                      titleText="전면썬팅 투과율(농도)"
                       target="#leaseRentEstimationSystemPrePurchaseFrontTintingRatioButton"
                       :selectOnly="true"
                     >
@@ -2995,8 +2995,8 @@ export default {
                                   text: '35%',
                                 },
                               ]"
-                              buttonTitle="전면썬팅 투과율(농동) 선택하기"
-                              layerTitle="전면썬팅 투과율(농동)을 선택해 주세요"
+                              buttonTitle="전면썬팅 투과율(농도) 선택하기"
+                              layerTitle="전면썬팅 투과율(농도)을 선택해 주세요"
                               id="leaseRentEstimationSystemPrePurchaseFrontTintingRatio"
                               buttonId="leaseRentEstimationSystemPrePurchaseFrontTintingRatioButton"
                             />

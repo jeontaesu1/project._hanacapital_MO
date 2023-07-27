@@ -57,7 +57,7 @@ export default {
             <CarEmblem code="1001" name="현대" />
           </div>
           <div class="flex-box__cell flex-box__cell--small">
-            <p class="text-body-4 font-weight-light">2020년식</p>
+            <p class="text-body-4 font-weight-light">2015년식</p>
           </div>
         </div>
         <h3 class="text-body-1 font-weight-medium">11가1111</h3>
@@ -98,7 +98,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton theme="secondary">확인</BasicButton>
+            <BasicButton>확인</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

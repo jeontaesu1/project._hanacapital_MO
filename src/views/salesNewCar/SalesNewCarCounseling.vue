@@ -578,7 +578,7 @@ export default {
                   <UnitText
                     rightUnit="원"
                     align="right"
-                    :classNames="{ wrap: 'color-blue' }"
+                    :classNames="{ wrap: 'color-green' }"
                   >
                     16,200,000
                   </UnitText>
@@ -728,7 +728,7 @@ export default {
           <BasicButton :line="true" theme="quaternary">취소</BasicButton>
         </ButtonListItem>
         <ButtonListItem>
-          <BasicButton theme="secondary">다음</BasicButton>
+          <BasicButton>다음</BasicButton>
         </ButtonListItem>
       </ButtonList>
     </template>

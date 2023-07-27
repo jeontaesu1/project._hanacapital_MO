@@ -146,7 +146,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton theme="secondary">적용</BasicButton>
+            <BasicButton>적용</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

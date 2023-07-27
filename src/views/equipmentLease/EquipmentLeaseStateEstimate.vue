@@ -314,7 +314,7 @@ export default {
                   }"
                   >기간</KeyValueTitle
                 >
-                <KeyValueText> 24개월 </KeyValueText>
+                <KeyValueText>24개월</KeyValueText>
               </KeyValueItem>
 
               <!-- Case : 동의 진행중 -->
@@ -383,7 +383,7 @@ export default {
                       }"
                       >신청금액</KeyValueTitle
                     >
-                    <KeyValueText> 3,000,000 원 </KeyValueText>
+                    <KeyValueText>3,000,000 원</KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{
@@ -396,7 +396,171 @@ export default {
                       }"
                       >매회납입금</KeyValueTitle
                     >
-                    <KeyValueText> 3,000,000 원 </KeyValueText>
+                    <KeyValueText>3,000,000 원</KeyValueText>
+                  </KeyValueItem>
+
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>직원명/리스할부팀</KeyValueTitle>
+                    <KeyValueText
+                      >AG: 대표관리부서<br />
+                      AG 이름</KeyValueText
+                    >
+                  </KeyValueItem>
+                </KeyValue>
+
+                <div class="row-margin-contents-small">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton size="small">사전동의</BasicButton>
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small">
+                        견적보기
+                      </BasicButton>
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
+              </div>
+            </UiAccordionLayer>
+          </BasicBox>
+        </UiAccordionItem>
+
+        <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
+          <BasicBox>
+            <div class="flex-box">
+              <div class="flex-box__cell flex-1">
+                <div class="color-black text-body-4 font-weight-light">
+                  2023.01.10
+                </div>
+                <p class="text-body-1 row-margin-small font-weight-medium">
+                  홍길동
+                </p>
+              </div>
+              <div class="flex-box__cell flex-box__cell--small">
+                <RoundStatus
+                  theme="secondary"
+                  :classNames="{ wrap: 'display-block' }"
+                  >의료기기</RoundStatus
+                >
+              </div>
+            </div>
+            <BasicHr
+              theme="quaternary"
+              type="contents"
+              className="row-margin-contents-small"
+            />
+            <KeyValue margin="regular">
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                  >물건명</KeyValueTitle
+                >
+                <KeyValueText>울쎄라</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                  >기간</KeyValueTitle
+                >
+                <KeyValueText>24개월</KeyValueText>
+              </KeyValueItem>
+
+              <!-- Case : 동의 진행중 -->
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>동의상태</KeyValueTitle>
+                <KeyValueText>
+                  <div class="flex-box">
+                    <div class="flex-box__cell flex-1">
+                      <span class="color-green font-weight-medium">미완료</span>
+                    </div>
+                    <div class="flex-box__cell flex-box__cell--small">
+                      <UiAccordionOpener
+                        :classNames="{
+                          button: $style['opener'],
+                        }"
+                      />
+                    </div>
+                  </div>
+                </KeyValueText>
+              </KeyValueItem>
+              <!-- // Case : 동의 진행중 -->
+
+              <!-- Case : 동의 완료 -->
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>동의상태</KeyValueTitle>
+                <KeyValueText>
+                  <div class="flex-box">
+                    <div class="flex-box__cell flex-1">
+                      <span class="color-green font-weight-medium">
+                        완료<br />
+                        (동의일: 2023.02.23)
+                      </span>
+                    </div>
+                    <div class="flex-box__cell flex-box__cell--small">
+                      <UiAccordionOpener
+                        :classNames="{
+                          button: $style['opener'],
+                        }"
+                      />
+                    </div>
+                  </div>
+                </KeyValueText>
+              </KeyValueItem>
+              <!-- // Case : 동의 완료 -->
+            </KeyValue>
+
+            <UiAccordionLayer>
+              <div :class="$style['accordion-contents']">
+                <KeyValue margin="regular">
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle
+                      :classNames="{
+                        item: 'text-body-3',
+                      }"
+                      >신청금액</KeyValueTitle
+                    >
+                    <KeyValueText>100,000,000 원</KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle
+                      :classNames="{
+                        item: 'text-body-3',
+                      }"
+                      >매회납입금</KeyValueTitle
+                    >
+                    <KeyValueText>3,000,000 원</KeyValueText>
                   </KeyValueItem>
 
                   <KeyValueItem

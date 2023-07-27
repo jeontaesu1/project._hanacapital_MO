@@ -189,8 +189,8 @@ export default {
                   <td class="align-right">구매</td>
                 </tr>
                 <tr>
-                  <th>상환금리</th>
-                  <td class="align-right">6.9%</td>
+                  <th>상환금리 (최저 ~ 최고)</th>
+                  <td class="align-right">7.57 ~ 19%</td>
                 </tr>
                 <tr>
                   <th>대출원금</th>
@@ -203,11 +203,13 @@ export default {
                   <td class="align-right">0</td>
                 </tr>
                 <tr :class="$style['est-table__emphasis']">
-                  <th rowspan="2"><strong>매회 리스료</strong></th>
+                  <th rowspan="2">
+                    <strong>매회 리스료 (최저 ~ 최고)</strong>
+                  </th>
                   <td>
                     <div class="flex-box">
                       <div class="flex-box__cell flex-1">①리스료</div>
-                      <div class="flex-box__cell">1,375,500</div>
+                      <div class="flex-box__cell">1,375,500 ~ 2,330,000</div>
                     </div>
                   </td>
                 </tr>
@@ -220,14 +222,14 @@ export default {
                   </td>
                 </tr>
                 <tr :class="$style['est-table__emphasis']">
-                  <th><strong>납입 리스료</strong></th>
+                  <th><strong>납입 리스료 (최저 ~ 최고)</strong></th>
                   <td :class="$style['est-table__emphasis']">
                     <div class="flex-box">
                       <div class="flex-box__cell flex-1">①+②</div>
                       <div class="flex-box__cell">
-                        <strong :class="$style['color-emphasis']"
-                          >1,375,500</strong
-                        >
+                        <strong :class="$style['color-emphasis']">
+                          1,375,500 ~ 2,330,000
+                        </strong>
                       </div>
                     </div>
                   </td>
@@ -528,8 +530,8 @@ export default {
                   <td class="align-right">구매</td>
                 </tr>
                 <tr>
-                  <th>상환금리</th>
-                  <td class="align-right">6.9%</td>
+                  <th>상환금리 (최저 ~ 최고)</th>
+                  <td class="align-right">7.57 ~ 19%</td>
                 </tr>
                 <tr>
                   <th>대출원금</th>
@@ -542,11 +544,13 @@ export default {
                   <td class="align-right">0</td>
                 </tr>
                 <tr :class="$style['est-table__emphasis']">
-                  <th rowspan="2"><strong>매회 리스료</strong></th>
+                  <th rowspan="2">
+                    <strong>매회 리스료 (최저 ~ 최고)</strong>
+                  </th>
                   <td>
                     <div class="flex-box">
                       <div class="flex-box__cell flex-1">①리스료</div>
-                      <div class="flex-box__cell">1,375,500</div>
+                      <div class="flex-box__cell">1,375,500 ~ 2,330,000</div>
                     </div>
                   </td>
                 </tr>
@@ -559,14 +563,14 @@ export default {
                   </td>
                 </tr>
                 <tr :class="$style['est-table__emphasis']">
-                  <th><strong>납입 리스료</strong></th>
+                  <th><strong>납입 리스료 (최저 ~ 최고)</strong></th>
                   <td :class="$style['est-table__emphasis']">
                     <div class="flex-box">
                       <div class="flex-box__cell flex-1">①+②</div>
                       <div class="flex-box__cell">
-                        <strong :class="$style['color-emphasis']"
-                          >1,375,500</strong
-                        >
+                        <strong :class="$style['color-emphasis']">
+                          1,375,500 ~ 2,330,000
+                        </strong>
                       </div>
                     </div>
                   </td>
@@ -875,8 +879,8 @@ export default {
                   <td class="align-right">구매</td>
                 </tr>
                 <tr>
-                  <th>상환금리</th>
-                  <td class="align-right">6.9%</td>
+                  <th>상환금리 (최저 ~ 최고)</th>
+                  <td class="align-right">7.57 ~ 19%</td>
                 </tr>
                 <tr>
                   <th>대출원금</th>
@@ -889,11 +893,13 @@ export default {
                   <td class="align-right">0</td>
                 </tr>
                 <tr :class="$style['est-table__emphasis']">
-                  <th rowspan="2"><strong>매회 리스료</strong></th>
+                  <th rowspan="2">
+                    <strong>매회 리스료 (최저 ~ 최고)</strong>
+                  </th>
                   <td>
                     <div class="flex-box">
                       <div class="flex-box__cell flex-1">①리스료</div>
-                      <div class="flex-box__cell">1,375,500</div>
+                      <div class="flex-box__cell">1,375,500 ~ 2,330,000</div>
                     </div>
                   </td>
                 </tr>
@@ -906,14 +912,14 @@ export default {
                   </td>
                 </tr>
                 <tr :class="$style['est-table__emphasis']">
-                  <th><strong>납입 리스료</strong></th>
+                  <th><strong>납입 리스료 (최저 ~ 최고)</strong></th>
                   <td :class="$style['est-table__emphasis']">
                     <div class="flex-box">
                       <div class="flex-box__cell flex-1">①+②</div>
                       <div class="flex-box__cell">
-                        <strong :class="$style['color-emphasis']"
-                          >1,375,500</strong
-                        >
+                        <strong :class="$style['color-emphasis']">
+                          1,375,500 ~ 2,330,000
+                        </strong>
                       </div>
                     </div>
                   </td>
@@ -1216,9 +1222,9 @@ export default {
                   <td class="align-right">구매</td>
                 </tr>
                 <tr>
-                  <th>상환금리</th>
-                  <td class="align-right">6.9%</td>
-                  <td class="align-right">6.9%</td>
+                  <th>상환금리 (최저 ~ 최고)</th>
+                  <td class="align-right">7.57 ~ 19%</td>
+                  <td class="align-right">7.57 ~ 19%</td>
                 </tr>
                 <tr>
                   <th>대출원금</th>
@@ -1235,17 +1241,19 @@ export default {
                   <td class="align-right">0</td>
                 </tr>
                 <tr :class="$style['est-table__emphasis']">
-                  <th rowspan="2"><strong>매회 리스료</strong></th>
+                  <th rowspan="2">
+                    <strong>매회 리스료 (최저 ~ 최고)</strong>
+                  </th>
                   <td>
                     <div class="flex-box">
                       <div class="flex-box__cell flex-1">①리스료</div>
-                      <div class="flex-box__cell">1,375,500</div>
+                      <div class="flex-box__cell">1,375,500 ~ 2,330,000</div>
                     </div>
                   </td>
                   <td>
                     <div class="flex-box">
                       <div class="flex-box__cell flex-1">①리스료</div>
-                      <div class="flex-box__cell">1,055,700</div>
+                      <div class="flex-box__cell">1,375,500 ~ 2,330,000</div>
                     </div>
                   </td>
                 </tr>
@@ -1264,14 +1272,14 @@ export default {
                   </td>
                 </tr>
                 <tr :class="$style['est-table__emphasis']">
-                  <th><strong>납입 리스료</strong></th>
+                  <th><strong>납입 리스료 (최저 ~ 최고)</strong></th>
                   <td :class="$style['est-table__emphasis']">
                     <div class="flex-box">
                       <div class="flex-box__cell flex-1">①+②</div>
                       <div class="flex-box__cell">
-                        <strong :class="$style['color-emphasis']"
-                          >1,375,500</strong
-                        >
+                        <strong :class="$style['color-emphasis']">
+                          1,375,500 ~ 2,330,000
+                        </strong>
                       </div>
                     </div>
                   </td>
@@ -1279,9 +1287,9 @@ export default {
                     <div class="flex-box">
                       <div class="flex-box__cell flex-1">①+②</div>
                       <div class="flex-box__cell">
-                        <strong :class="$style['color-emphasis']"
-                          >1,055,700</strong
-                        >
+                        <strong :class="$style['color-emphasis']">
+                          1,375,500 ~ 2,330,000
+                        </strong>
                       </div>
                     </div>
                   </td>
@@ -1591,9 +1599,9 @@ export default {
                   <td class="align-right">구매</td>
                 </tr>
                 <tr>
-                  <th>상환금리</th>
-                  <td class="align-right">6.9%</td>
-                  <td class="align-right">6.9%</td>
+                  <th>상환금리 (최저 ~ 최고)</th>
+                  <td class="align-right">7.57 ~ 19%</td>
+                  <td class="align-right">7.57 ~ 19%</td>
                   <td class="align-right"></td>
                 </tr>
                 <tr>
@@ -1615,17 +1623,25 @@ export default {
                   <td class="align-right">0</td>
                 </tr>
                 <tr :class="$style['est-table__emphasis']">
-                  <th rowspan="2"><strong>매회 리스료</strong></th>
+                  <th rowspan="2">
+                    <strong>매회 리스료 (최저 ~ 최고)</strong>
+                  </th>
                   <td>
                     <div class="flex-box">
                       <div class="flex-box__cell flex-1">①리스료</div>
-                      <div class="flex-box__cell">1,375,500</div>
+                      <div class="flex-box__cell align-right">
+                        1,375,500 ~<br />
+                        2,330,000
+                      </div>
                     </div>
                   </td>
                   <td>
                     <div class="flex-box">
                       <div class="flex-box__cell flex-1">①리스료</div>
-                      <div class="flex-box__cell">1,055,700</div>
+                      <div class="flex-box__cell align-right">
+                        1,375,500 ~<br />
+                        2,330,000
+                      </div>
                     </div>
                   </td>
                   <td>
@@ -1656,34 +1672,37 @@ export default {
                   </td>
                 </tr>
                 <tr :class="$style['est-table__emphasis']">
-                  <th><strong>납입 리스료</strong></th>
+                  <th><strong>납입 리스료 (최저 ~ 최고)</strong></th>
                   <td :class="$style['est-table__emphasis']">
                     <div class="flex-box">
                       <div class="flex-box__cell flex-1">①+②</div>
-                      <div class="flex-box__cell">
-                        <strong :class="$style['color-emphasis']"
-                          >1,375,500</strong
-                        >
+                      <div class="flex-box__cell align-right">
+                        <strong :class="$style['color-emphasis']">
+                          1,375,500 ~<br />
+                          2,330,000
+                        </strong>
                       </div>
                     </div>
                   </td>
                   <td :class="$style['est-table__emphasis']">
                     <div class="flex-box">
                       <div class="flex-box__cell flex-1">①+②</div>
-                      <div class="flex-box__cell">
-                        <strong :class="$style['color-emphasis']"
-                          >1,055,700</strong
-                        >
+                      <div class="flex-box__cell align-right">
+                        <strong :class="$style['color-emphasis']">
+                          1,375,500 ~<br />
+                          2,330,000
+                        </strong>
                       </div>
                     </div>
                   </td>
                   <td :class="$style['est-table__emphasis']">
                     <div class="flex-box">
                       <div class="flex-box__cell flex-1">①+②</div>
-                      <div class="flex-box__cell">
-                        <strong :class="$style['color-emphasis']"
-                          >1,375,500</strong
-                        >
+                      <div class="flex-box__cell align-right">
+                        <strong :class="$style['color-emphasis']">
+                          1,375,500 ~<br />
+                          2,330,000
+                        </strong>
                       </div>
                     </div>
                   </td>

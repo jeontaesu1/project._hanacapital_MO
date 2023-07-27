@@ -260,6 +260,13 @@ export default {
         className="row-margin-container-medium"
       />
 
+      <!-- Case : 조회 결과 없을 때 -->
+      <div :class="$style['empty']">
+        <p :class="$style['empty__text']">조회 결과가 없습니다.</p>
+      </div>
+      <!-- // Case : 조회 결과 없을 때 -->
+
+      <!-- Case : 조회 결과 있을 때 -->
       <ul class="reset-list">
         <li class="row-margin-item-group">
           <BasicBox>
@@ -523,6 +530,7 @@ export default {
           </template>
         </TextButton>
       </div>
+      <!-- // Case : 조회 결과 있을 때 -->
     </section>
 
     <BasicHr

@@ -119,13 +119,7 @@ export default {
           />
         </div>
       </div>
-      <ul
-        :class="[
-          $style['status-inquiry'],
-          $style['status-inquiry--gap'],
-          $style['status-inquiry--secondary'],
-        ]"
-      >
+      <ul :class="[$style['status-inquiry'], $style['status-inquiry--gap']]">
         <li :class="$style['status-inquiry__item']">
           <button type="button" :class="$style['status-inquiry__category']">
             <span :class="$style['status-inquiry__number']">10</span>
@@ -264,7 +258,7 @@ export default {
         </FormList>
 
         <div class="row-margin-contents-group">
-          <BasicButton :line="true" theme="secondary">조회</BasicButton>
+          <BasicButton :line="true">조회</BasicButton>
         </div>
       </div>
 
@@ -285,7 +279,7 @@ export default {
                   </div>
                 </li>
                 <li :class="$style['division-info__item']">
-                  <div class="color-blue text-body-4 font-weight-medium">
+                  <div class="color-green text-body-4 font-weight-medium">
                     신용동의
                   </div>
                 </li>
@@ -435,7 +429,7 @@ export default {
                   </div>
                 </li>
                 <li :class="$style['division-info__item']">
-                  <div class="color-blue text-body-4 font-weight-medium">
+                  <div class="color-green text-body-4 font-weight-medium">
                     상담중
                   </div>
                 </li>
@@ -704,7 +698,7 @@ export default {
                   </div>
                 </li>
                 <li :class="$style['division-info__item']">
-                  <div class="color-blue text-body-4 font-weight-medium">
+                  <div class="color-green text-body-4 font-weight-medium">
                     계약중
                   </div>
                 </li>
@@ -944,7 +938,7 @@ export default {
                   </div>
                 </li>
                 <li :class="$style['division-info__item']">
-                  <div class="color-blue text-body-4 font-weight-medium">
+                  <div class="color-green text-body-4 font-weight-medium">
                     계약 심사중
                   </div>
                 </li>
@@ -1129,7 +1123,7 @@ export default {
                   </div>
                 </li>
                 <li :class="$style['division-info__item']">
-                  <div class="color-blue text-body-4 font-weight-medium">
+                  <div class="color-green text-body-4 font-weight-medium">
                     계약완료
                   </div>
                 </li>
@@ -1294,7 +1288,7 @@ export default {
                   </div>
                 </li>
                 <li :class="$style['division-info__item']">
-                  <div class="color-blue text-body-4 font-weight-medium">
+                  <div class="color-green text-body-4 font-weight-medium">
                     송금
                   </div>
                 </li>
@@ -1523,7 +1517,7 @@ export default {
         }"
       >
         <ButtonListItem>
-          <BasicButton theme="secondary">신규상담</BasicButton>
+          <BasicButton>신규상담</BasicButton>
         </ButtonListItem>
       </ButtonList>
     </template>
