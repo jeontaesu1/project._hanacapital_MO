@@ -45,7 +45,7 @@ export default {
     <FullPopup>
       <template v-slot:head>
         <FullPopupHead>
-          <PopupTitle>오토리스 견적서</PopupTitle>
+          <PopupTitle>장기렌트 견적서</PopupTitle>
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
