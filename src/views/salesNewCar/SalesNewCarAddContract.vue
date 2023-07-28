@@ -236,9 +236,7 @@ export default {
         <h3 class="text-title-2 row-margin-contents">금융 세부조건</h3>
 
         <!-- Case : [금융상품 – GM]일 경우 노출 -->
-        <BasicButton :line="true" theme="secondary">
-          출고번호 조회
-        </BasicButton>
+        <BasicButton :line="true"> 출고번호 조회 </BasicButton>
         <!-- //Case : [금융상품 – GM]일 경우 노출 -->
 
         <BasicBox className="row-margin-item-group">
@@ -454,13 +452,11 @@ export default {
       >
         <ButtonListItem>
           <BasicButton :minSide="true" :line="true" theme="quaternary"
-            >취소</BasicButton
+            >이전</BasicButton
           >
         </ButtonListItem>
         <ButtonListItem>
-          <BasicButton :minSide="true" theme="secondary"
-            >품의등록 요청</BasicButton
-          >
+          <BasicButton :minSide="true">품의등록 요청</BasicButton>
         </ButtonListItem>
       </ButtonList>
     </template>

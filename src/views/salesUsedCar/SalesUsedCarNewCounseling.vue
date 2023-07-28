@@ -172,6 +172,7 @@ export default {
           titleText="메모"
           titleOptionalText="(매매상사, 직원명, 연락처를 입력하세요.)"
           :maxlength="20"
+          :count="true"
           title="메모"
         >
           <template v-slot:bottom>
@@ -193,7 +194,7 @@ export default {
           <BasicButton theme="tertiary">ARS연결</BasicButton>
         </ButtonListItem>
         <ButtonListItem>
-          <BasicButton theme="secondary">URL전송</BasicButton>
+          <BasicButton>URL전송</BasicButton>
         </ButtonListItem>
       </ButtonList>
     </section>

@@ -202,8 +202,8 @@ export default {
           </div>
           <ul :class="$style['est-list']">
             <li :class="[$style['est-list__item'], $style['color-emphasis']]">
-              ※ 개인 고객은 금리체계 모범규준에 의거 신용조회 및 심사 후 금리가
-              결정되며, 결정된 금리에 따라 월 납입금이 변동됩니다.
+              ※ 금리체계 모범규준에 의거 신용조회 및 심사 후 금리가 결정되며,
+              결정된 금리에 따라 월 납입금이 변동됩니다.
             </li>
           </ul>
         </div>
@@ -499,8 +499,8 @@ export default {
           </div>
           <ul :class="$style['est-list']">
             <li :class="[$style['est-list__item'], $style['color-emphasis']]">
-              ※ 개인 고객은 금리체계 모범규준에 의거 신용조회 및 심사 후 금리가
-              결정되며, 결정된 금리에 따라 월 납입금이 변동됩니다.
+              ※ 금리체계 모범규준에 의거 신용조회 및 심사 후 금리가 결정되며,
+              결정된 금리에 따라 월 납입금이 변동됩니다.
             </li>
           </ul>
         </div>
@@ -810,8 +810,8 @@ export default {
           </div>
           <ul :class="$style['est-list']">
             <li :class="[$style['est-list__item'], $style['color-emphasis']]">
-              ※ 개인 고객은 금리체계 모범규준에 의거 신용조회 및 심사 후 금리가
-              결정되며, 결정된 금리에 따라 월 납입금이 변동됩니다.
+              ※ 금리체계 모범규준에 의거 신용조회 및 심사 후 금리가 결정되며,
+              결정된 금리에 따라 월 납입금이 변동됩니다.
             </li>
           </ul>
         </div>
@@ -1151,8 +1151,8 @@ export default {
           </div>
           <ul :class="$style['est-list']">
             <li :class="[$style['est-list__item'], $style['color-emphasis']]">
-              ※ 개인 고객은 금리체계 모범규준에 의거 신용조회 및 심사 후 금리가
-              결정되며, 결정된 금리에 따라 월 납입금이 변동됩니다.
+              ※ 금리체계 모범규준에 의거 신용조회 및 심사 후 금리가 결정되며,
+              결정된 금리에 따라 월 납입금이 변동됩니다.
             </li>
           </ul>
         </div>

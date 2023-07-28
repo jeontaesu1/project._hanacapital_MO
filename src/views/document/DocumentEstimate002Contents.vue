@@ -264,13 +264,13 @@ export default {
                 <tr>
                   <th>ⓐ등록/부대비용</th>
                   <td class="align-right">60,000</td>
-                  <th>ⓑ선납금/보증금</th>
+                  <th>ⓑ선납금+보증금</th>
                   <td class="align-right">
                     <strong>4,426,000</strong>
                   </td>
                 </tr>
                 <tr :class="$style['est-table__emphasis']">
-                  <th colspan="2"><strong>초기납입금 (ⓐ+ⓑ)</strong></th>
+                  <th colspan="2"><strong>고객초기납입금(ⓐ+ⓑ)</strong></th>
                   <td colspan="2" class="align-right">
                     <strong>4,486,000</strong>
                   </td>
@@ -296,8 +296,10 @@ export default {
               <tr :class="$style['est-table__emphasis']">
                 <th>개인/개인사업자</th>
                 <td>
-                  사업자등록증 사본, 운전면허증 사본, 자동이체통장 사본<br />
-                  소득금액증명원, 재산세과세증명원, 자격증 사본(전문직 한정)
+                  사업자등록증 사본, 운전면허증 사본, 재직증명서,
+                  원천징수영수증, 자동이체통장 사본<br />
+                  부가가치과세증명원, 소득금액증명원, 재산세과세증명원, 자격증
+                  사본(전문직 한정)
                 </td>
               </tr>
               <tr :class="$style['est-table__emphasis']">
@@ -615,13 +617,13 @@ export default {
                 <tr>
                   <th>ⓐ등록/부대비용</th>
                   <td class="align-right">60,000</td>
-                  <th>ⓑ선납금/보증금</th>
+                  <th>ⓑ선납금+보증금</th>
                   <td class="align-right">
                     <strong>4,426,000</strong>
                   </td>
                 </tr>
                 <tr :class="$style['est-table__emphasis']">
-                  <th colspan="2"><strong>초기납입금 (ⓐ+ⓑ)</strong></th>
+                  <th colspan="2"><strong>고객초기납입금(ⓐ+ⓑ)</strong></th>
                   <td colspan="2" class="align-right">
                     <strong>4,486,000</strong>
                   </td>
@@ -647,8 +649,10 @@ export default {
               <tr :class="$style['est-table__emphasis']">
                 <th>개인/개인사업자</th>
                 <td>
-                  사업자등록증 사본, 운전면허증 사본, 자동이체통장 사본<br />
-                  소득금액증명원, 재산세과세증명원, 자격증 사본(전문직 한정)
+                  사업자등록증 사본, 운전면허증 사본, 재직증명서,
+                  원천징수영수증, 자동이체통장 사본<br />
+                  부가가치과세증명원, 소득금액증명원, 재산세과세증명원, 자격증
+                  사본(전문직 한정)
                 </td>
               </tr>
               <tr :class="$style['est-table__emphasis']">
@@ -974,13 +978,13 @@ export default {
                 <tr>
                   <th>ⓐ등록/부대비용</th>
                   <td class="align-right">60,000</td>
-                  <th>ⓑ선납금/보증금</th>
+                  <th>ⓑ선납금+보증금</th>
                   <td class="align-right">
                     <strong>4,426,000</strong>
                   </td>
                 </tr>
                 <tr :class="$style['est-table__emphasis']">
-                  <th colspan="2"><strong>초기납입금 (ⓐ+ⓑ)</strong></th>
+                  <th colspan="2"><strong>고객초기납입금(ⓐ+ⓑ)</strong></th>
                   <td colspan="2" class="align-right">
                     <strong>4,486,000</strong>
                   </td>
@@ -1006,8 +1010,10 @@ export default {
               <tr :class="$style['est-table__emphasis']">
                 <th>개인/개인사업자</th>
                 <td>
-                  사업자등록증 사본, 운전면허증 사본, 자동이체통장 사본<br />
-                  소득금액증명원, 재산세과세증명원, 자격증 사본(전문직 한정)
+                  사업자등록증 사본, 운전면허증 사본, 재직증명서,
+                  원천징수영수증, 자동이체통장 사본<br />
+                  부가가치과세증명원, 소득금액증명원, 재산세과세증명원, 자격증
+                  사본(전문직 한정)
                 </td>
               </tr>
               <tr :class="$style['est-table__emphasis']">
@@ -1414,12 +1420,12 @@ export default {
                   <td class="align-right">60,000</td>
                 </tr>
                 <tr>
-                  <th>ⓑ선납금/보증금</th>
+                  <th>ⓑ선납금+보증금</th>
                   <td class="align-right">4,426,000</td>
                   <td class="align-right">26,564,000</td>
                 </tr>
                 <tr :class="$style['est-table__emphasis']">
-                  <th><strong>초기납입금 (ⓐ+ⓑ)</strong></th>
+                  <th><strong>고객초기납입금(ⓐ+ⓑ)</strong></th>
                   <td class="align-right"><strong>4,486,000</strong></td>
                   <td class="align-right"><strong>26,624,000</strong></td>
                 </tr>
@@ -1444,8 +1450,10 @@ export default {
               <tr :class="$style['est-table__emphasis']">
                 <th>개인/개인사업자</th>
                 <td>
-                  사업자등록증 사본, 운전면허증 사본, 자동이체통장 사본<br />
-                  소득금액증명원, 재산세과세증명원, 자격증 사본(전문직 한정)
+                  사업자등록증 사본, 운전면허증 사본, 재직증명서,
+                  원천징수영수증, 자동이체통장 사본<br />
+                  부가가치과세증명원, 소득금액증명원, 재산세과세증명원, 자격증
+                  사본(전문직 한정)
                 </td>
               </tr>
               <tr :class="$style['est-table__emphasis']">
@@ -1914,13 +1922,13 @@ export default {
                   <td class="align-right">60,000</td>
                 </tr>
                 <tr>
-                  <th>ⓑ선납금/보증금</th>
+                  <th>ⓑ선납금+보증금</th>
                   <td class="align-right">4,426,000</td>
                   <td class="align-right">26,564,000</td>
                   <td class="align-right">4,426,000</td>
                 </tr>
                 <tr :class="$style['est-table__emphasis']">
-                  <th><strong>초기납입금 (ⓐ+ⓑ)</strong></th>
+                  <th><strong>고객초기납입금(ⓐ+ⓑ)</strong></th>
                   <td class="align-right"><strong>4,486,000</strong></td>
                   <td class="align-right"><strong>26,624,000</strong></td>
                   <td class="align-right"><strong>60,000</strong></td>
@@ -1946,8 +1954,10 @@ export default {
               <tr :class="$style['est-table__emphasis']">
                 <th>개인/개인사업자</th>
                 <td>
-                  사업자등록증 사본, 운전면허증 사본, 자동이체통장 사본<br />
-                  소득금액증명원, 재산세과세증명원, 자격증 사본(전문직 한정)
+                  사업자등록증 사본, 운전면허증 사본, 재직증명서,
+                  원천징수영수증, 자동이체통장 사본<br />
+                  부가가치과세증명원, 소득금액증명원, 재산세과세증명원, 자격증
+                  사본(전문직 한정)
                 </td>
               </tr>
               <tr :class="$style['est-table__emphasis']">

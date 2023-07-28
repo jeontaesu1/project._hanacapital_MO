@@ -133,7 +133,7 @@ export default {
         }"
       >
         <ButtonListItem>
-          <BasicButton theme="secondary">확인</BasicButton>
+          <BasicButton>확인</BasicButton>
         </ButtonListItem>
       </ButtonList>
     </template>

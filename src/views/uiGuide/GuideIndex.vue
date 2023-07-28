@@ -1747,6 +1747,10 @@ const datas = () => [
             date: '2023.06.23',
             text: '팝업 추가\n- 실천 서약서 동의 팝업',
           },
+          {
+            date: '2023.07.27',
+            text: '버튼 색상 수정\n- UC_M03_l001\n- UC_M03_l002',
+          },
         ],
       },
       {
@@ -1769,7 +1773,12 @@ const datas = () => [
         path: '/sales-used-car/new-counseling',
         status: 'end',
         create: '2023.05.10',
-        log: [],
+        log: [
+          {
+            date: '2023.07.27',
+            text: '카운팅 추가',
+          },
+        ],
       },
       {
         depth2: '상담등록\nUC_M03_p001',
@@ -1796,6 +1805,10 @@ const datas = () => [
             date: '2023.07.26',
             text: '차량 이미지 삭제',
           },
+          {
+            date: '2023.07.27',
+            text: '버튼 색상 수정',
+          },
         ],
       },
       {
@@ -1812,6 +1825,10 @@ const datas = () => [
             date: '2023.07.26',
             text: '차량 이미지 삭제',
           },
+          {
+            date: '2023.07.27',
+            text: '버튼 색상 수정',
+          },
         ],
       },
       {
@@ -1823,7 +1840,12 @@ const datas = () => [
         path: '/sales-used-car/counseling-fail-001',
         status: 'end',
         create: '2023.05.10',
-        log: [],
+        log: [
+          {
+            date: '2023.07.27',
+            text: '버튼 색상 수정',
+          },
+        ],
       },
       {
         depth2: '상담등록\nUC_M03_p001',
@@ -1834,7 +1856,12 @@ const datas = () => [
         path: '/sales-used-car/counseling-fail-002',
         status: 'end',
         create: '2023.05.10',
-        log: [],
+        log: [
+          {
+            date: '2023.07.27',
+            text: '버튼 색상 수정',
+          },
+        ],
       },
       {
         depth2: '상담등록\nUC_M03_p001',
@@ -1845,7 +1872,12 @@ const datas = () => [
         path: '/sales-used-car/counseling-fail-003',
         status: 'end',
         create: '2023.05.10',
-        log: [],
+        log: [
+          {
+            date: '2023.07.27',
+            text: '버튼 색상 수정',
+          },
+        ],
       },
       {
         depth2: '상담등록\nUC_M03_p001',
@@ -1856,7 +1888,12 @@ const datas = () => [
         path: '/sales-used-car/counseling-fail-004',
         status: 'end',
         create: '2023.05.10',
-        log: [],
+        log: [
+          {
+            date: '2023.07.27',
+            text: '버튼 색상 수정',
+          },
+        ],
       },
       {
         depth2: '상담등록\nUC_M03_p001',
@@ -1867,7 +1904,12 @@ const datas = () => [
         path: '/sales-used-car/counseling-fail-005',
         status: 'end',
         create: '2023.05.10',
-        log: [],
+        log: [
+          {
+            date: '2023.07.27',
+            text: '버튼 색상 수정',
+          },
+        ],
       },
       {
         depth2: '상담등록\nUC_M03_p001',
@@ -1882,6 +1924,10 @@ const datas = () => [
           {
             date: '2023.07.26',
             text: '차량 이미지 삭제',
+          },
+          {
+            date: '2023.07.27',
+            text: '버튼 색상 수정',
           },
         ],
       },
@@ -1899,6 +1945,10 @@ const datas = () => [
             date: '2023.07.26',
             text: '차량 이미지 삭제',
           },
+          {
+            date: '2023.07.27',
+            text: '버튼 색상 수정',
+          },
         ],
       },
       {
@@ -1910,7 +1960,12 @@ const datas = () => [
         path: '/sales-used-car/counseling-edit',
         status: 'end',
         create: '2023.05.10',
-        log: [],
+        log: [
+          {
+            date: '2023.07.27',
+            text: '버튼 색상 수정',
+          },
+        ],
       },
       {
         depth2: '매매상사 온라인약정',
@@ -1921,7 +1976,12 @@ const datas = () => [
         path: '/sales-used-car/affiliate',
         status: 'end',
         create: '2023.05.05',
-        log: [],
+        log: [
+          {
+            date: '2023.07.27',
+            text: '버튼 색상 수정',
+          },
+        ],
       },
       {
         depth2: '매매상사 온라인약정',
@@ -1932,7 +1992,12 @@ const datas = () => [
         path: '/sales-used-car/affiliate-confirm',
         status: 'end',
         create: '2023.05.05',
-        log: [],
+        log: [
+          {
+            date: '2023.07.27',
+            text: '버튼 색상 수정',
+          },
+        ],
       },
       {
         depth2: '매매상사 온라인약정',
@@ -1943,7 +2008,12 @@ const datas = () => [
         path: '/sales-used-car/affiliate-form',
         status: 'end',
         create: '2023.05.05',
-        log: [],
+        log: [
+          {
+            date: '2023.07.27',
+            text: '버튼 색상 수정',
+          },
+        ],
       },
       {
         depth2: '매매상사 온라인약정',
@@ -1954,7 +2024,12 @@ const datas = () => [
         path: '/sales-used-car/affiliate-complete',
         status: 'end',
         create: '2023.05.05',
-        log: [],
+        log: [
+          {
+            date: '2023.07.27',
+            text: '버튼 색상 수정',
+          },
+        ],
       },
     ],
   },
@@ -1975,6 +2050,10 @@ const datas = () => [
             date: '2023.05.12',
             text: '팝업 추가\n- 차량번호 등록\n- 판매점 조회\n- 판매사원 조회',
           },
+          {
+            date: '2023.07.27',
+            text: '버튼 색상 수정\n- NC_M01_l002',
+          },
         ],
       },
       {
@@ -1990,6 +2069,10 @@ const datas = () => [
           {
             date: '2023.07.26',
             text: '팝업 추가\n- 직원 정보 영역 삭제',
+          },
+          {
+            date: '2023.07.27',
+            text: '버튼 및 문구 색상 수정',
           },
         ],
       },
@@ -2013,7 +2096,12 @@ const datas = () => [
         path: '/sales-new-car/counseling',
         status: 'end',
         create: '2023.05.05',
-        log: [],
+        log: [
+          {
+            date: '2023.07.27',
+            text: '버튼 및 문구 색상 수정',
+          },
+        ],
       },
       {
         depth2: '상담등록\nNC_M03_p002',
@@ -2024,7 +2112,12 @@ const datas = () => [
         path: '/sales-new-car/counseling-complete',
         status: 'end',
         create: '2023.05.12',
-        log: [],
+        log: [
+          {
+            date: '2023.07.27',
+            text: '버튼 색상 수정',
+          },
+        ],
       },
       {
         depth2: '상담등록\nNC_M03_p002',
@@ -2035,7 +2128,12 @@ const datas = () => [
         path: '/sales-new-car/counseling-fail',
         status: 'end',
         create: '2023.05.12',
-        log: [],
+        log: [
+          {
+            date: '2023.07.27',
+            text: '버튼 색상 수정',
+          },
+        ],
       },
       {
         depth2: '계약등록\nNC_M04_p002',
@@ -2046,7 +2144,12 @@ const datas = () => [
         path: '/sales-new-car/add-contract',
         status: 'end',
         create: '2023.05.12',
-        log: [],
+        log: [
+          {
+            date: '2023.07.27',
+            text: '버튼 색상 수정',
+          },
+        ],
       },
       {
         depth2: '계약등록\nNC_M04_p002',
@@ -2057,7 +2160,12 @@ const datas = () => [
         path: '/sales-new-car/add-contract-complete',
         status: 'end',
         create: '2023.05.12',
-        log: [],
+        log: [
+          {
+            date: '2023.07.27',
+            text: '버튼 색상 수정',
+          },
+        ],
       },
       {
         depth2: '차량/저당 미등록 채권 안내\nNC_M08_p001',
@@ -2275,6 +2383,10 @@ const datas = () => [
             date: '2023.07.21',
             text: 'LR_M02_p008 AS-IS 샘플 적용',
           },
+          {
+            date: '2023.07.27',
+            text: '폼 타이틀 오타 수정',
+          },
         ],
       },
       {
@@ -2467,7 +2579,12 @@ const datas = () => [
         path: '/lease-rent-estimation-system/LR_M05_p014',
         status: 'end',
         create: '2023.07.24',
-        log: [],
+        log: [
+          {
+            date: '2023.07.27',
+            text: '팝업 관리 영역 컨텐츠 및 문구 수정',
+          },
+        ],
       },
       {
         depth2: '서비스',
@@ -2540,7 +2657,12 @@ const datas = () => [
         path: '/equipment-lease/state-estimate',
         status: 'end',
         create: '2023.05.16',
-        log: [],
+        log: [
+          {
+            date: '2023.07.27',
+            text: '의료기기 케이스 추가',
+          },
+        ],
       },
       {
         depth2: '현황조회',
@@ -2551,7 +2673,12 @@ const datas = () => [
         path: '/equipment-lease/state-internal-memo',
         status: 'end',
         create: '2023.05.16',
-        log: [],
+        log: [
+          {
+            date: '2023.07.27',
+            text: '조회결과 케이스 추가',
+          },
+        ],
       },
     ],
   },
@@ -2679,6 +2806,10 @@ const datas = () => [
           {
             date: '2023.07.21',
             text: 'AF_M00_l015 AS-IS 샘플 적용',
+          },
+          {
+            date: '2023.07.27',
+            text: 'AF_M00_l015 타이틀 수정',
           },
         ],
       },
@@ -4130,6 +4261,10 @@ const datas = () => [
             date: '2023.07.21',
             text: '취득원가 안내 문구 수정',
           },
+          {
+            date: '2023.07.27',
+            text: '취득원가 및 구비서류 내용 수정',
+          },
         ],
       },
       {
@@ -4145,6 +4280,10 @@ const datas = () => [
           {
             date: '2023.07.21',
             text: '취득원가 안내 문구 수정',
+          },
+          {
+            date: '2023.07.27',
+            text: '취득원가 내용 수정',
           },
         ],
       },
@@ -4165,6 +4304,10 @@ const datas = () => [
           {
             date: '2023.07.26',
             text: '취득원가 -> 가격사항 타이틀 수정',
+          },
+          {
+            date: '2023.07.27',
+            text: '가격사항 안내 문구 수정',
           },
         ],
       },

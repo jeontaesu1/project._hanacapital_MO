@@ -114,7 +114,7 @@ export default {
               <div class="flex-box">
                 <span class="flex-box__cell flex-1">9.1%</span>
                 <span class="flex-box__cell">
-                  <TextButton theme="tertiary" :underline="true" :block="true"
+                  <TextButton theme="secondary" :underline="true" :block="true"
                     >수수료차감</TextButton
                   >
                 </span>
@@ -144,7 +144,7 @@ export default {
           <BasicButton :line="true" theme="quaternary">이전</BasicButton>
         </ButtonListItem>
         <ButtonListItem>
-          <BasicButton theme="secondary">확인</BasicButton>
+          <BasicButton>확인</BasicButton>
         </ButtonListItem>
       </ButtonList>
     </template>

@@ -275,7 +275,7 @@ export default {
 
         <ButtonList :classNames="{ wrap: 'row-margin-contents-group' }">
           <ButtonListItem>
-            <BasicButton :line="true" theme="secondary">조회</BasicButton>
+            <BasicButton :line="true">조회</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </section>
@@ -557,7 +557,7 @@ export default {
           <BasicButton :line="true" theme="quaternary">취소</BasicButton>
         </ButtonListItem>
         <ButtonListItem>
-          <BasicButton theme="secondary">상담등록</BasicButton>
+          <BasicButton>상담등록</BasicButton>
         </ButtonListItem>
       </ButtonList>
     </template>
