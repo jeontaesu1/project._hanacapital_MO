@@ -160,7 +160,7 @@ export default {
       state.viewDocument = false;
     };
 
-    // 아코디언 열때 Ajax 통신시 예시 : start
+    // DD : 아코디언 열때 Ajax 통신시 예시 : start
     const testAjax = () => {
       return new Promise((resolve) =>
         setTimeout(() => {
@@ -185,7 +185,7 @@ export default {
         close();
       }
     };
-    // 아코디언 열때 Ajax 통신시 예시 : end
+    // DD : 아코디언 열때 Ajax 통신시 예시 : end
 
     onMounted(() => {
       store.ui.header.setTitle(() => '중고 리스');
@@ -225,7 +225,10 @@ export default {
             <h3 :class="$style['estimate-list__title']">차량 선택</h3>
           </div>
 
-          <UiAccordion :classNames="{ wrap: $style['estimate-list__list'] }">
+          <UiAccordion
+            :once="true"
+            :classNames="{ wrap: $style['estimate-list__list'] }"
+          >
             <li :class="$style['estimate-list__item']">
               <div :class="$style['estimate-list__head']">
                 <div :class="[$style['estimate-list__block'], 'display-block']">
@@ -825,12 +828,7 @@ export default {
                     <UiTabPanel
                       name="leaseRentEstimationSystemUsedLeaseBrand_001"
                     >
-                      <div
-                        :class="[
-                          $style['bank-brand'],
-                          $style['bank-brand--col-3'],
-                        ]"
-                      >
+                      <div :class="$style['bank-brand']">
                         <ul :class="$style['bank-brand__list']">
                           <li :class="$style['bank-brand__item']">
                             <button
@@ -1457,7 +1455,10 @@ export default {
           </div>
         </div>
         <div :class="[$style['estimate-list'], $style['estimate-list--full']]">
-          <UiAccordion :classNames="{ wrap: $style['estimate-list__list'] }">
+          <UiAccordion
+            :once="true"
+            :classNames="{ wrap: $style['estimate-list__list'] }"
+          >
             <!-- 상품 -->
             <li :class="$style['estimate-list__item']">
               <div :class="$style['estimate-list__head']">
@@ -2521,6 +2522,7 @@ export default {
                 </div>
 
                 <UiAccordion
+                  :once="true"
                   :onBeforeOpened="productsAccordionAnimateStart"
                   :onBeforeClosed="productsAccordionAnimateStart"
                   :onAfterOpened="productsAccordionAnimateEnd"

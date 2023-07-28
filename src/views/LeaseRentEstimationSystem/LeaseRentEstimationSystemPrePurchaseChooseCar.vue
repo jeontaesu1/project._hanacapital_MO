@@ -172,12 +172,7 @@ export default {
                   <UiTabPanel
                     name="leaseRentEstimationSystemPrePurchaseChooseCarBrandTab001"
                   >
-                    <div
-                      :class="[
-                        $style['bank-brand'],
-                        $style['bank-brand--col-3'],
-                      ]"
-                    >
+                    <div :class="$style['bank-brand']">
                       <ul :class="$style['bank-brand__list']">
                         <li :class="$style['bank-brand__item']">
                           <ExtendSelectOption

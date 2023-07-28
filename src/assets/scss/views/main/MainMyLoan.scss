@@ -1,0 +1,18 @@
+@import '@/assets/scss/components/import/basic-list.scss';
+@import '@/assets/scss/components/import/inline-alert.scss';
+@import '@/assets/scss/components/import/icon-list.scss';
+@import '@/assets/scss/components/import/logs.scss';
+
+.head {
+  padding: 12px 0 8px 0;
+}
+.notice {
+  margin-top: 16px;
+}
+.logs__item + .logs__item {
+  margin-top: 16px;
+}
+
+.page-head {
+  padding: 0 20px;
+}

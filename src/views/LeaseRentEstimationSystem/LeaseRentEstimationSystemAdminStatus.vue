@@ -157,6 +157,7 @@ export default {
       </BoxCheckList>
 
       <FormList :classNames="{ wrap: 'row-margin-contents-group' }">
+        <!-- Case : 국산차 할부, 중고 할부 선택시 미노출 -->
         <FormListItem
           titleText="조회조건"
           target="#leaseRentEstimationSystemAdminStatusConditionButton"
@@ -207,6 +208,7 @@ export default {
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
+        <!-- // Case : 국산차 할부, 중고 할부 선택시 미노출 -->
 
         <FormListItem titleText="조회기간" :forceFocus="true">
           <FormInvalid :error="state.dateError">
@@ -247,6 +249,7 @@ export default {
         조회
       </BasicButton>
 
+      <!-- Case : 하나원큐오토 -->
       <ul :class="[$style['status-inquiry'], 'row-margin-contents-group']">
         <li :class="$style['status-inquiry__item']">
           <button type="button" :class="$style['status-inquiry__category']">
@@ -279,6 +282,42 @@ export default {
           </button>
         </li>
       </ul>
+      <!-- // Case : 하나원큐오토 -->
+
+      <!-- Case : 국산차 할부, 중고 할부 -->
+      <ul :class="[$style['status-inquiry'], 'row-margin-contents-group']">
+        <li :class="$style['status-inquiry__item']">
+          <button type="button" :class="$style['status-inquiry__category']">
+            <span :class="$style['status-inquiry__number']">10</span>
+            <span :class="$style['status-inquiry__text']">전체</span>
+          </button>
+        </li>
+        <li :class="$style['status-inquiry__item']">
+          <button type="button" :class="$style['status-inquiry__category']">
+            <span :class="$style['status-inquiry__number']">4</span>
+            <span :class="$style['status-inquiry__text']">신용동의</span>
+          </button>
+        </li>
+        <li :class="$style['status-inquiry__item']">
+          <button type="button" :class="$style['status-inquiry__category']">
+            <span :class="$style['status-inquiry__number']">3</span>
+            <span :class="$style['status-inquiry__text']">상담</span>
+          </button>
+        </li>
+        <li :class="$style['status-inquiry__item']">
+          <button type="button" :class="$style['status-inquiry__category']">
+            <span :class="$style['status-inquiry__number']">2</span>
+            <span :class="$style['status-inquiry__text']">계약</span>
+          </button>
+        </li>
+        <li :class="$style['status-inquiry__item']">
+          <button type="button" :class="$style['status-inquiry__category']">
+            <span :class="$style['status-inquiry__number']">1</span>
+            <span :class="$style['status-inquiry__text']">송금</span>
+          </button>
+        </li>
+      </ul>
+      <!-- // Case : 국산차 할부, 중고 할부 -->
     </section>
 
     <BasicHr

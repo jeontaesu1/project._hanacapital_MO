@@ -70,7 +70,7 @@ export default {
         </RoundTab>
 
         <UiTabPanel name="layerAutoCarCartSelectBrand1_001">
-          <div :class="[$style['bank-brand'], $style['bank-brand--col-3']]">
+          <div :class="$style['bank-brand']">
             <ul :class="$style['bank-brand__list']">
               <li :class="$style['bank-brand__item']">
                 <button type="button" :class="$style['bank-brand__block']">

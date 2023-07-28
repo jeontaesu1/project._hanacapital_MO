@@ -613,6 +613,11 @@ const routes = [
     component: () => import('@/views/main/MainMyLoan.vue'),
   },
   {
+    path: '/main/my-loan-empty',
+    name: '/main/my-loan-empty',
+    component: () => import('@/views/main/MainMyLoanEmpty.vue'),
+  },
+  {
     path: '/main/product',
     name: '/main/product',
     component: () => import('@/views/main/MainProduct.vue'),

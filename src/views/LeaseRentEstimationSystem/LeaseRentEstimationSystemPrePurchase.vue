@@ -169,7 +169,7 @@ export default {
       state.viewDocument = false;
     };
 
-    // 아코디언 열때 Ajax 통신시 예시 : start
+    // DD : 아코디언 열때 Ajax 통신시 예시 : start
     const testAjax = () => {
       return new Promise((resolve) =>
         setTimeout(() => {
@@ -194,7 +194,46 @@ export default {
         close();
       }
     };
-    // 아코디언 열때 Ajax 통신시 예시 : end
+    // DD : 아코디언 열때 Ajax 통신시 예시 : end
+
+    // DD : 아코디언 내 폼 선택/적용 후 현재 아코디언 닫기 및 다음 아코디언 여는 함수 예시 : start
+    const testAaccordionClose = (props, itemProps, nextKey) => {
+      const { items } = props;
+      const { close } = itemProps;
+      const nextItem = nextKey && items.find((item) => item.key === nextKey);
+
+      close();
+
+      if (nextItem) {
+        testAccordionToggle(
+          { ...nextItem, opened: nextItem.getOpened() },
+          testAjax
+        );
+      }
+    };
+    // DD : 아코디언 내 폼 선택/적용 후 현재 아코디언 닫기 및 다음 아코디언 여는 함수 예시 : end
+
+    // DD : 이미 체크 된 라디오 버튼 재 클릭 시 체크 해제 함수 예시 : start
+    const eChange = new Event('change');
+    const testTimer = {};
+    const testRadioClick = (e) => {
+      const el = e.target;
+      const { id, checked } = el;
+
+      testTimer[id] = setTimeout(() => {
+        if (checked) {
+          el.checked = false;
+          el.dispatchEvent(eChange);
+        }
+      }, 50);
+    };
+    const testRadioChange = (e) => {
+      const el = e.target;
+      const { id } = el;
+
+      clearTimeout(testTimer[id]);
+    };
+    // DD : 이미 체크 된 라디오 버튼 재 클릭 시 체크 해제 함수 예시 : end
 
     onMounted(() => {
       store.ui.header.setTitle(() => '선구매');
@@ -228,6 +267,9 @@ export default {
       viewDocumentClose,
       testAjax,
       testAccordionToggle,
+      testAaccordionClose,
+      testRadioClick,
+      testRadioChange,
     };
   },
 };
@@ -260,11 +302,16 @@ export default {
             <h3 :class="$style['estimate-list__title']">차량 선택</h3>
           </div>
 
-          <UiAccordion :classNames="{ wrap: $style['estimate-list__list'] }">
+          <UiAccordion
+            :once="true"
+            :classNames="{ wrap: $style['estimate-list__list'] }"
+            v-slot="accordionSlotProps"
+          >
             <!-- 브랜드 -->
             <UiAccordionItem
               :classNames="{ item: $style['estimate-list__item'] }"
               v-slot="accordionItemSlotProps"
+              keyName="brand"
             >
               <div :class="$style['estimate-list__head']">
                 <div :class="$style['estimate-list__block']">
@@ -327,17 +374,19 @@ export default {
                     <UiTabPanel
                       name="leaseRentEstimationSystemPrePurchaseBrand_001"
                     >
-                      <div
-                        :class="[
-                          $style['bank-brand'],
-                          $style['bank-brand--col-3'],
-                        ]"
-                      >
+                      <div :class="$style['bank-brand']">
                         <ul :class="$style['bank-brand__list']">
                           <li :class="$style['bank-brand__item']">
                             <button
                               type="button"
                               :class="$style['bank-brand__block']"
+                              @click="
+                                testAaccordionClose(
+                                  accordionSlotProps,
+                                  accordionItemSlotProps,
+                                  'model'
+                                )
+                              "
                             >
                               <span :class="$style['bank-brand__logo']">
                                 <CarEmblem code="1001" size="medium" />
@@ -356,6 +405,13 @@ export default {
                                 'is-selected',
                               ]"
                               title="선택 됨"
+                              @click="
+                                testAaccordionClose(
+                                  accordionSlotProps,
+                                  accordionItemSlotProps,
+                                  'model'
+                                )
+                              "
                             >
                               <span :class="$style['bank-brand__logo']">
                                 <CarEmblem code="1012" size="medium" />
@@ -369,6 +425,13 @@ export default {
                             <button
                               type="button"
                               :class="$style['bank-brand__block']"
+                              @click="
+                                testAaccordionClose(
+                                  accordionSlotProps,
+                                  accordionItemSlotProps,
+                                  'model'
+                                )
+                              "
                             >
                               <span :class="$style['bank-brand__logo']">
                                 <CarEmblem code="1002" size="medium" />
@@ -382,6 +445,13 @@ export default {
                             <button
                               type="button"
                               :class="$style['bank-brand__block']"
+                              @click="
+                                testAaccordionClose(
+                                  accordionSlotProps,
+                                  accordionItemSlotProps,
+                                  'model'
+                                )
+                              "
                             >
                               <span :class="$style['bank-brand__logo']">
                                 <CarEmblem code="1003" size="medium" />
@@ -395,6 +465,13 @@ export default {
                             <button
                               type="button"
                               :class="$style['bank-brand__block']"
+                              @click="
+                                testAaccordionClose(
+                                  accordionSlotProps,
+                                  accordionItemSlotProps,
+                                  'model'
+                                )
+                              "
                             >
                               <span :class="$style['bank-brand__logo']">
                                 <CarEmblem code="1006" size="medium" />
@@ -408,6 +485,13 @@ export default {
                             <button
                               type="button"
                               :class="$style['bank-brand__block']"
+                              @click="
+                                testAaccordionClose(
+                                  accordionSlotProps,
+                                  accordionItemSlotProps,
+                                  'model'
+                                )
+                              "
                             >
                               <span :class="$style['bank-brand__logo']">
                                 <CarEmblem code="1005" size="medium" />
@@ -424,84 +508,130 @@ export default {
                     <UiTabPanel
                       name="leaseRentEstimationSystemPrePurchaseBrand_002"
                     >
-                      <ul :class="$style['bank-brand__list']">
-                        <li :class="$style['bank-brand__item']">
-                          <button
-                            type="button"
-                            :class="$style['bank-brand__block']"
-                          >
-                            <span :class="$style['bank-brand__logo']">
-                              <CarEmblem code="2001" size="medium" />
-                            </span>
-                            <span :class="$style['bank-brand__text']"
-                              >벤츠</span
+                      <div :class="$style['bank-brand']">
+                        <ul :class="$style['bank-brand__list']">
+                          <li :class="$style['bank-brand__item']">
+                            <button
+                              type="button"
+                              :class="$style['bank-brand__block']"
+                              @click="
+                                testAaccordionClose(
+                                  accordionSlotProps,
+                                  accordionItemSlotProps,
+                                  'model'
+                                )
+                              "
                             >
-                          </button>
-                        </li>
-                        <li :class="$style['bank-brand__item']">
-                          <button
-                            type="button"
-                            :class="$style['bank-brand__block']"
-                          >
-                            <span :class="$style['bank-brand__logo']">
-                              <CarEmblem code="2002" size="medium" />
-                            </span>
-                            <span :class="$style['bank-brand__text']">BMW</span>
-                          </button>
-                        </li>
-                        <li :class="$style['bank-brand__item']">
-                          <button
-                            type="button"
-                            :class="$style['bank-brand__block']"
-                          >
-                            <span :class="$style['bank-brand__logo']">
-                              <CarEmblem code="2003" size="medium" />
-                            </span>
-                            <span :class="$style['bank-brand__text']"
-                              >아우디</span
+                              <span :class="$style['bank-brand__logo']">
+                                <CarEmblem code="2001" size="medium" />
+                              </span>
+                              <span :class="$style['bank-brand__text']"
+                                >벤츠</span
+                              >
+                            </button>
+                          </li>
+                          <li :class="$style['bank-brand__item']">
+                            <button
+                              type="button"
+                              :class="$style['bank-brand__block']"
+                              @click="
+                                testAaccordionClose(
+                                  accordionSlotProps,
+                                  accordionItemSlotProps,
+                                  'model'
+                                )
+                              "
                             >
-                          </button>
-                        </li>
-                        <li :class="$style['bank-brand__item']">
-                          <button
-                            type="button"
-                            :class="$style['bank-brand__block']"
-                          >
-                            <span :class="$style['bank-brand__logo']">
-                              <CarEmblem code="2017" size="medium" />
-                            </span>
-                            <span :class="$style['bank-brand__text']"
-                              >포르쉐</span
+                              <span :class="$style['bank-brand__logo']">
+                                <CarEmblem code="2002" size="medium" />
+                              </span>
+                              <span :class="$style['bank-brand__text']"
+                                >BMW</span
+                              >
+                            </button>
+                          </li>
+                          <li :class="$style['bank-brand__item']">
+                            <button
+                              type="button"
+                              :class="$style['bank-brand__block']"
+                              @click="
+                                testAaccordionClose(
+                                  accordionSlotProps,
+                                  accordionItemSlotProps,
+                                  'model'
+                                )
+                              "
                             >
-                          </button>
-                        </li>
-                        <li :class="$style['bank-brand__item']">
-                          <button
-                            type="button"
-                            :class="$style['bank-brand__block']"
-                          >
-                            <span :class="$style['bank-brand__logo']">
-                              <CarEmblem code="2018" size="medium" />
-                            </span>
-                            <span :class="$style['bank-brand__text']"
-                              >마세라티</span
+                              <span :class="$style['bank-brand__logo']">
+                                <CarEmblem code="2003" size="medium" />
+                              </span>
+                              <span :class="$style['bank-brand__text']"
+                                >아우디</span
+                              >
+                            </button>
+                          </li>
+                          <li :class="$style['bank-brand__item']">
+                            <button
+                              type="button"
+                              :class="$style['bank-brand__block']"
+                              @click="
+                                testAaccordionClose(
+                                  accordionSlotProps,
+                                  accordionItemSlotProps,
+                                  'model'
+                                )
+                              "
                             >
-                          </button>
-                        </li>
-                        <li :class="$style['bank-brand__item']">
-                          <button
-                            type="button"
-                            :class="$style['bank-brand__block']"
-                          >
-                            <span :class="$style['bank-brand__logo']">
-                              <CarEmblem code="2025" size="medium" />
-                            </span>
-                            <span :class="$style['bank-brand__text']"
-                              >벤틀리</span
+                              <span :class="$style['bank-brand__logo']">
+                                <CarEmblem code="2017" size="medium" />
+                              </span>
+                              <span :class="$style['bank-brand__text']"
+                                >포르쉐</span
+                              >
+                            </button>
+                          </li>
+                          <li :class="$style['bank-brand__item']">
+                            <button
+                              type="button"
+                              :class="$style['bank-brand__block']"
+                              @click="
+                                testAaccordionClose(
+                                  accordionSlotProps,
+                                  accordionItemSlotProps,
+                                  'model'
+                                )
+                              "
                             >
-                          </button>
-                        </li>
-                      </ul>
+                              <span :class="$style['bank-brand__logo']">
+                                <CarEmblem code="2018" size="medium" />
+                              </span>
+                              <span :class="$style['bank-brand__text']"
+                                >마세라티</span
+                              >
+                            </button>
+                          </li>
+                          <li :class="$style['bank-brand__item']">
+                            <button
+                              type="button"
+                              :class="$style['bank-brand__block']"
+                              @click="
+                                testAaccordionClose(
+                                  accordionSlotProps,
+                                  accordionItemSlotProps,
+                                  'model'
+                                )
+                              "
+                            >
+                              <span :class="$style['bank-brand__logo']">
+                                <CarEmblem code="2025" size="medium" />
+                              </span>
+                              <span :class="$style['bank-brand__text']"
+                                >벤틀리</span
+                              >
+                            </button>
+                          </li>
+                        </ul>
+                      </div>
                     </UiTabPanel>
                   </UiTab>
                 </section>
@@ -513,6 +643,7 @@ export default {
             <UiAccordionItem
               :classNames="{ item: $style['estimate-list__item'] }"
               v-slot="accordionItemSlotProps"
+              keyName="model"
             >
               <div :class="$style['estimate-list__head']">
                 <div :class="$style['estimate-list__block']">
@@ -554,6 +685,13 @@ export default {
                         <button
                           type="button"
                           :class="$style['bank-brand__block']"
+                          @click="
+                            testAaccordionClose(
+                              accordionSlotProps,
+                              accordionItemSlotProps,
+                              'lineup'
+                            )
+                          "
                         >
                           <span :class="$style['bank-brand__logo']">
                             <CarThumb src="/images/_dummy/car-thumb.png" />
@@ -569,6 +707,13 @@ export default {
                           type="button"
                           :class="[$style['bank-brand__block'], 'is-selected']"
                           title="선택 됨"
+                          @click="
+                            testAaccordionClose(
+                              accordionSlotProps,
+                              accordionItemSlotProps,
+                              'lineup'
+                            )
+                          "
                         >
                           <span :class="$style['bank-brand__logo']">
                             <CarThumb src="/images/_dummy/car-thumb.png" />
@@ -582,6 +727,13 @@ export default {
                         <button
                           type="button"
                           :class="$style['bank-brand__block']"
+                          @click="
+                            testAaccordionClose(
+                              accordionSlotProps,
+                              accordionItemSlotProps,
+                              'lineup'
+                            )
+                          "
                         >
                           <span :class="$style['bank-brand__logo']">
                             <CarThumb src="/images/_dummy/car-thumb.png" />
@@ -595,6 +747,13 @@ export default {
                         <button
                           type="button"
                           :class="$style['bank-brand__block']"
+                          @click="
+                            testAaccordionClose(
+                              accordionSlotProps,
+                              accordionItemSlotProps,
+                              'lineup'
+                            )
+                          "
                         >
                           <span :class="$style['bank-brand__logo']">
                             <CarThumb src="/images/_dummy/car-thumb.png" />
@@ -608,6 +767,13 @@ export default {
                         <button
                           type="button"
                           :class="$style['bank-brand__block']"
+                          @click="
+                            testAaccordionClose(
+                              accordionSlotProps,
+                              accordionItemSlotProps,
+                              'lineup'
+                            )
+                          "
                         >
                           <span :class="$style['bank-brand__logo']">
                             <CarThumb src="/images/_dummy/car-thumb.png" />
@@ -621,6 +787,13 @@ export default {
                         <button
                           type="button"
                           :class="$style['bank-brand__block']"
+                          @click="
+                            testAaccordionClose(
+                              accordionSlotProps,
+                              accordionItemSlotProps,
+                              'lineup'
+                            )
+                          "
                         >
                           <span :class="$style['bank-brand__logo']">
                             <CarThumb src="/images/_dummy/car-thumb.png" />
@@ -641,6 +814,7 @@ export default {
             <UiAccordionItem
               :classNames="{ item: $style['estimate-list__item'] }"
               v-slot="accordionItemSlotProps"
+              keyName="lineup"
             >
               <div :class="$style['estimate-list__head']">
                 <div :class="$style['estimate-list__block']">
@@ -681,7 +855,13 @@ export default {
                         :full="true"
                         name="leaseRentEstimationSystemPrePurchaseLineup"
                         id="leaseRentEstimationSystemPrePurchaseLineup_001"
-                        :defaultChecked="true"
+                        @change="
+                          testAaccordionClose(
+                            accordionSlotProps,
+                            accordionItemSlotProps,
+                            'trim'
+                          )
+                        "
                       >
                         <RadioButtonObject />
                         <RadioButtonLabelText>
@@ -702,6 +882,13 @@ export default {
                         :full="true"
                         name="leaseRentEstimationSystemPrePurchaseLineup"
                         id="leaseRentEstimationSystemPrePurchaseLineup_002"
+                        @change="
+                          testAaccordionClose(
+                            accordionSlotProps,
+                            accordionItemSlotProps,
+                            'trim'
+                          )
+                        "
                       >
                         <RadioButtonObject />
                         <RadioButtonLabelText>
@@ -722,6 +909,13 @@ export default {
                         :full="true"
                         name="leaseRentEstimationSystemPrePurchaseLineup"
                         id="leaseRentEstimationSystemPrePurchaseLineup_003"
+                        @change="
+                          testAaccordionClose(
+                            accordionSlotProps,
+                            accordionItemSlotProps,
+                            'trim'
+                          )
+                        "
                       >
                         <RadioButtonObject />
                         <RadioButtonLabelText>
@@ -742,6 +936,13 @@ export default {
                         :full="true"
                         name="leaseRentEstimationSystemPrePurchaseLineup"
                         id="leaseRentEstimationSystemPrePurchaseLineup_004"
+                        @change="
+                          testAaccordionClose(
+                            accordionSlotProps,
+                            accordionItemSlotProps,
+                            'trim'
+                          )
+                        "
                       >
                         <RadioButtonObject />
                         <RadioButtonLabelText>
@@ -775,6 +976,7 @@ export default {
             <UiAccordionItem
               :classNames="{ item: $style['estimate-list__item'] }"
               v-slot="accordionItemSlotProps"
+              keyName="trim"
             >
               <div :class="$style['estimate-list__head']">
                 <div :class="$style['estimate-list__block']">
@@ -820,7 +1022,13 @@ export default {
                         :full="true"
                         name="leaseRentEstimationSystemPrePurchaseTrim"
                         id="leaseRentEstimationSystemPrePurchaseTrim_001"
-                        :defaultChecked="true"
+                        @change="
+                          testAaccordionClose(
+                            accordionSlotProps,
+                            accordionItemSlotProps,
+                            'exterior'
+                          )
+                        "
                       >
                         <RadioButtonObject />
                         <RadioButtonLabelText>
@@ -844,6 +1052,13 @@ export default {
                         :full="true"
                         name="leaseRentEstimationSystemPrePurchaseTrim"
                         id="leaseRentEstimationSystemPrePurchaseTrim_002"
+                        @change="
+                          testAaccordionClose(
+                            accordionSlotProps,
+                            accordionItemSlotProps,
+                            'exterior'
+                          )
+                        "
                       >
                         <RadioButtonObject />
                         <RadioButtonLabelText>
@@ -867,6 +1082,13 @@ export default {
                         :full="true"
                         name="leaseRentEstimationSystemPrePurchaseTrim"
                         id="leaseRentEstimationSystemPrePurchaseTrim_003"
+                        @change="
+                          testAaccordionClose(
+                            accordionSlotProps,
+                            accordionItemSlotProps,
+                            'exterior'
+                          )
+                        "
                       >
                         <RadioButtonObject />
                         <RadioButtonLabelText>
@@ -890,6 +1112,13 @@ export default {
                         :full="true"
                         name="leaseRentEstimationSystemPrePurchaseTrim"
                         id="leaseRentEstimationSystemPrePurchaseTrim_004"
+                        @change="
+                          testAaccordionClose(
+                            accordionSlotProps,
+                            accordionItemSlotProps,
+                            'exterior'
+                          )
+                        "
                       >
                         <RadioButtonObject />
                         <RadioButtonLabelText>
@@ -919,6 +1148,7 @@ export default {
             <UiAccordionItem
               :classNames="{ item: $style['estimate-list__item'] }"
               v-slot="accordionItemSlotProps"
+              keyName="exterior"
             >
               <div :class="$style['estimate-list__head']">
                 <div :class="$style['estimate-list__block']">
@@ -974,7 +1204,13 @@ export default {
                         :full="true"
                         name="leaseRentEstimationSystemPrePurchaseExterior"
                         id="leaseRentEstimationSystemPrePurchaseExterior_001"
-                        :defaultChecked="true"
+                        @change="
+                          testAaccordionClose(
+                            accordionSlotProps,
+                            accordionItemSlotProps,
+                            'interior'
+                          )
+                        "
                       >
                         <RadioButtonObject />
                         <RadioButtonLabelText>
@@ -996,6 +1232,13 @@ export default {
                         :full="true"
                         name="leaseRentEstimationSystemPrePurchaseExterior"
                         id="leaseRentEstimationSystemPrePurchaseExterior_002"
+                        @change="
+                          testAaccordionClose(
+                            accordionSlotProps,
+                            accordionItemSlotProps,
+                            'interior'
+                          )
+                        "
                       >
                         <RadioButtonObject />
                         <RadioButtonLabelText>
@@ -1020,6 +1263,13 @@ export default {
                         :full="true"
                         name="leaseRentEstimationSystemPrePurchaseExterior"
                         id="leaseRentEstimationSystemPrePurchaseExterior_003"
+                        @change="
+                          testAaccordionClose(
+                            accordionSlotProps,
+                            accordionItemSlotProps,
+                            'interior'
+                          )
+                        "
                       >
                         <RadioButtonObject />
                         <RadioButtonLabelText>
@@ -1044,6 +1294,13 @@ export default {
                         :full="true"
                         name="leaseRentEstimationSystemPrePurchaseExterior"
                         id="leaseRentEstimationSystemPrePurchaseExterior_004"
+                        @change="
+                          testAaccordionClose(
+                            accordionSlotProps,
+                            accordionItemSlotProps,
+                            'interior'
+                          )
+                        "
                       >
                         <RadioButtonObject />
                         <RadioButtonLabelText>
@@ -1071,6 +1328,13 @@ export default {
                         :full="true"
                         name="leaseRentEstimationSystemPrePurchaseExterior"
                         id="leaseRentEstimationSystemPrePurchaseExterior_005"
+                        @change="
+                          testAaccordionClose(
+                            accordionSlotProps,
+                            accordionItemSlotProps,
+                            'interior'
+                          )
+                        "
                       >
                         <RadioButtonObject />
                         <RadioButtonLabelText>
@@ -1122,6 +1386,13 @@ export default {
                         :full="true"
                         name="leaseRentEstimationSystemPrePurchaseExterior"
                         id="leaseRentEstimationSystemPrePurchaseExterior_006"
+                        @change="
+                          testAaccordionClose(
+                            accordionSlotProps,
+                            accordionItemSlotProps,
+                            'interior'
+                          )
+                        "
                       >
                         <RadioButtonObject />
                         <RadioButtonLabelText>
@@ -1180,6 +1451,7 @@ export default {
                         <div
                           class="flex-box__cell flex-box__cell--small-regular flex-1"
                         >
+                          <!-- Case : 직접입력 선택시 :disabled="false" -->
                           <FormList>
                             <FormListItem
                               titleText="외장 색상 명칭"
@@ -1236,6 +1508,22 @@ export default {
                               </FormInvalid>
                             </FormListItem>
                           </FormList>
+                          <div class="row-margin-item-group">
+                            <BasicButton
+                              size="small"
+                              theme="tertiary"
+                              :disabled="true"
+                              @click="
+                                testAaccordionClose(
+                                  accordionSlotProps,
+                                  accordionItemSlotProps,
+                                  'interior'
+                                )
+                              "
+                              >적용</BasicButton
+                            >
+                          </div>
+                          <!-- // Case : 직접입력 선택시 :disabled="false" -->
                         </div>
                       </div>
                     </li>
@@ -1249,6 +1537,7 @@ export default {
             <UiAccordionItem
               :classNames="{ item: $style['estimate-list__item'] }"
               v-slot="accordionItemSlotProps"
+              keyName="interior"
             >
               <div :class="$style['estimate-list__head']">
                 <div :class="$style['estimate-list__block']">
@@ -1295,7 +1584,12 @@ export default {
                         :full="true"
                         name="leaseRentEstimationSystemPrePurchaseInterior"
                         id="leaseRentEstimationSystemPrePurchaseInterior_001"
-                        :defaultChecked="true"
+                        @change="
+                          testAaccordionClose(
+                            accordionSlotProps,
+                            accordionItemSlotProps
+                          )
+                        "
                       >
                         <RadioButtonObject />
                         <RadioButtonLabelText>
@@ -1317,6 +1611,12 @@ export default {
                         :full="true"
                         name="leaseRentEstimationSystemPrePurchaseInterior"
                         id="leaseRentEstimationSystemPrePurchaseInterior_002"
+                        @change="
+                          testAaccordionClose(
+                            accordionSlotProps,
+                            accordionItemSlotProps
+                          )
+                        "
                       >
                         <RadioButtonObject />
                         <RadioButtonLabelText>
@@ -1341,6 +1641,12 @@ export default {
                         :full="true"
                         name="leaseRentEstimationSystemPrePurchaseInterior"
                         id="leaseRentEstimationSystemPrePurchaseInterior_003"
+                        @change="
+                          testAaccordionClose(
+                            accordionSlotProps,
+                            accordionItemSlotProps
+                          )
+                        "
                       >
                         <RadioButtonObject />
                         <RadioButtonLabelText>
@@ -1365,6 +1671,12 @@ export default {
                         :full="true"
                         name="leaseRentEstimationSystemPrePurchaseInterior"
                         id="leaseRentEstimationSystemPrePurchaseInterior_004"
+                        @change="
+                          testAaccordionClose(
+                            accordionSlotProps,
+                            accordionItemSlotProps
+                          )
+                        "
                       >
                         <RadioButtonObject />
                         <RadioButtonLabelText>
@@ -1405,6 +1717,12 @@ export default {
                         :full="true"
                         name="leaseRentEstimationSystemPrePurchaseInterior"
                         id="leaseRentEstimationSystemPrePurchaseInterior_005"
+                        @change="
+                          testAaccordionClose(
+                            accordionSlotProps,
+                            accordionItemSlotProps
+                          )
+                        "
                       >
                         <RadioButtonObject />
                         <RadioButtonLabelText>
@@ -1456,6 +1774,12 @@ export default {
                         :full="true"
                         name="leaseRentEstimationSystemPrePurchaseInterior"
                         id="leaseRentEstimationSystemPrePurchaseInterior_006"
+                        @change="
+                          testAaccordionClose(
+                            accordionSlotProps,
+                            accordionItemSlotProps
+                          )
+                        "
                       >
                         <RadioButtonObject />
                         <RadioButtonLabelText>
@@ -1514,6 +1838,7 @@ export default {
                         <div
                           class="flex-box__cell flex-box__cell--small-regular flex-1"
                         >
+                          <!-- Case : 직접입력 선택시 :disabled="false" -->
                           <FormList>
                             <FormListItem
                               titleText="내장 색상 명칭"
@@ -1570,6 +1895,21 @@ export default {
                               </FormInvalid>
                             </FormListItem>
                           </FormList>
+                          <div class="row-margin-item-group">
+                            <BasicButton
+                              size="small"
+                              theme="tertiary"
+                              :disabled="true"
+                              @click="
+                                testAaccordionClose(
+                                  accordionSlotProps,
+                                  accordionItemSlotProps
+                                )
+                              "
+                              >적용</BasicButton
+                            >
+                          </div>
+                          <!-- // Case : 직접입력 선택시 :disabled="false" -->
                         </div>
                       </div>
                     </li>
@@ -2009,6 +2349,8 @@ export default {
                         :onlyObject="true"
                         name="leaseRentEstimationSystemPrePurchaseDeliveryDiscount"
                         id="leaseRentEstimationSystemPrePurchaseDeliveryDiscount001"
+                        @change="testRadioChange"
+                        @click="testRadioClick"
                       >
                         <RadioButtonObject />
                         <RadioButtonLabelText>할인액</RadioButtonLabelText>
@@ -2065,9 +2407,11 @@ export default {
                         :onlyObject="true"
                         name="leaseRentEstimationSystemPrePurchaseDeliveryDiscount"
                         id="leaseRentEstimationSystemPrePurchaseDeliveryDiscount002"
+                        @change="testRadioChange"
+                        @click="testRadioClick"
                       >
                         <RadioButtonObject />
-                        <RadioButtonLabelText>할인액</RadioButtonLabelText>
+                        <RadioButtonLabelText>할인율</RadioButtonLabelText>
                       </RadioButton>
                     </div>
                     <div
@@ -2185,7 +2529,10 @@ export default {
           </div>
         </div>
         <div :class="[$style['estimate-list'], $style['estimate-list--full']]">
-          <UiAccordion :classNames="{ wrap: $style['estimate-list__list'] }">
+          <UiAccordion
+            :once="true"
+            :classNames="{ wrap: $style['estimate-list__list'] }"
+          >
             <!-- 상품 -->
             <li :class="$style['estimate-list__item']">
               <div :class="$style['estimate-list__head']">
@@ -3378,6 +3725,7 @@ export default {
                 </div>
 
                 <UiAccordion
+                  :once="true"
                   :onBeforeOpened="productsAccordionAnimateStart"
                   :onBeforeClosed="productsAccordionAnimateStart"
                   :onAfterOpened="productsAccordionAnimateEnd"

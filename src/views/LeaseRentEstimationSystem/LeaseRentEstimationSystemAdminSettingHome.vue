@@ -1,6 +1,6 @@
 <script>
 // LR_M05_p007
-import { onMounted, onUnmounted } from 'vue';
+import { onMounted, onUnmounted, reactive } from 'vue';
 
 import { useUiHeaderStore } from '@/stores/ui/header';
 
@@ -27,6 +27,10 @@ export default {
       },
     };
 
+    const state = reactive({
+      typeCheck: [true, false, false],
+    });
+
     onMounted(() => {
       store.ui.header.setTitle(() => '홈 설정');
       store.ui.header.setLeftButtons(() => ['back']);
@@ -38,6 +42,10 @@ export default {
       store.ui.header.setLeftButtons();
       store.ui.header.setRightButtons();
     });
+
+    return {
+      state,
+    };
   },
 };
 </script>
@@ -54,7 +62,7 @@ export default {
               :minSide="true"
               name="leaseRentEstimationSystemAdminSettingHomeCheck"
               id="leaseRentEstimationSystemAdminSettingHomeCheck001"
-              :defaultChecked="true"
+              v-model="state.typeCheck[0]"
             >
               <BoxCheckLabel>하나원큐오토</BoxCheckLabel>
             </BoxCheck>
@@ -64,6 +72,7 @@ export default {
               :minSide="true"
               name="leaseRentEstimationSystemAdminSettingHomeCheck"
               id="leaseRentEstimationSystemAdminSettingHomeCheck002"
+              v-model="state.typeCheck[1]"
             >
               <BoxCheckLabel>국산차 할부</BoxCheckLabel>
             </BoxCheck>
@@ -73,6 +82,7 @@ export default {
               :minSide="true"
               name="leaseRentEstimationSystemAdminSettingHomeCheck"
               id="leaseRentEstimationSystemAdminSettingHomeCheck003"
+              v-model="state.typeCheck[2]"
             >
               <BoxCheckLabel>중고 할부</BoxCheckLabel>
             </BoxCheck>
@@ -97,6 +107,7 @@ export default {
               <SwitchCheckBox
                 id="leaseRentEstimationSystemAdminSettingHome001"
                 :classNames="{ wrap: $style['switch-list__check'] }"
+                :disabled="!state.typeCheck[0]"
               />
             </div>
           </li>
@@ -106,6 +117,7 @@ export default {
               <SwitchCheckBox
                 id="leaseRentEstimationSystemAdminSettingHome002"
                 :classNames="{ wrap: $style['switch-list__check'] }"
+                :disabled="!state.typeCheck[0]"
               />
             </div>
           </li>
@@ -115,6 +127,7 @@ export default {
               <SwitchCheckBox
                 id="leaseRentEstimationSystemAdminSettingHome003"
                 :classNames="{ wrap: $style['switch-list__check'] }"
+                :disabled="!state.typeCheck[0]"
               />
             </div>
           </li>
@@ -124,6 +137,7 @@ export default {
               <SwitchCheckBox
                 id="leaseRentEstimationSystemAdminSettingHome004"
                 :classNames="{ wrap: $style['switch-list__check'] }"
+                :disabled="!state.typeCheck[0]"
               />
             </div>
           </li>
@@ -133,6 +147,7 @@ export default {
               <SwitchCheckBox
                 id="leaseRentEstimationSystemAdminSettingHome005"
                 :classNames="{ wrap: $style['switch-list__check'] }"
+                :disabled="!state.typeCheck[0]"
               />
             </div>
           </li>
@@ -142,6 +157,7 @@ export default {
               <SwitchCheckBox
                 id="leaseRentEstimationSystemAdminSettingHome006"
                 :classNames="{ wrap: $style['switch-list__check'] }"
+                :disabled="!state.typeCheck[0]"
               />
             </div>
           </li>
