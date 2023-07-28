@@ -265,6 +265,7 @@ export default {
       />
 
       <UiAccordion>
+        <!-- Case : 스크린골프 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div class="flex-box">
@@ -277,9 +278,7 @@ export default {
                 </p>
               </div>
               <div class="flex-box__cell flex-box__cell--small">
-                <RoundStatus
-                  theme="secondary"
-                  :classNames="{ wrap: 'display-block' }"
+                <RoundStatus theme="secondary" :block="true"
                   >스크린골프</RoundStatus
                 >
               </div>
@@ -340,33 +339,6 @@ export default {
                 </KeyValueText>
               </KeyValueItem>
               <!-- // Case : 동의 진행중 -->
-
-              <!-- Case : 동의 완료 -->
-              <KeyValueItem
-                :classNames="{
-                  item: 'text-body-3',
-                }"
-              >
-                <KeyValueTitle>동의상태</KeyValueTitle>
-                <KeyValueText>
-                  <div class="flex-box">
-                    <div class="flex-box__cell flex-1">
-                      <span class="color-green font-weight-medium">
-                        완료<br />
-                        (동의일: 2023.02.23)
-                      </span>
-                    </div>
-                    <div class="flex-box__cell flex-box__cell--small">
-                      <UiAccordionOpener
-                        :classNames="{
-                          button: $style['opener'],
-                        }"
-                      />
-                    </div>
-                  </div>
-                </KeyValueText>
-              </KeyValueItem>
-              <!-- // Case : 동의 완료 -->
             </KeyValue>
 
             <UiAccordionLayer>
@@ -413,7 +385,7 @@ export default {
                 </KeyValue>
 
                 <div class="row-margin-contents-small">
-                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                  <ButtonList :classNames="{ wrap: 'row-margin-none' }">
                     <ButtonListItem>
                       <BasicButton size="small">사전동의</BasicButton>
                     </ButtonListItem>
@@ -428,7 +400,9 @@ export default {
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
+        <!-- // Case : 스크린골프 -->
 
+        <!-- Case : 의료기기 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div class="flex-box">
@@ -441,9 +415,7 @@ export default {
                 </p>
               </div>
               <div class="flex-box__cell flex-box__cell--small">
-                <RoundStatus
-                  theme="secondary"
-                  :classNames="{ wrap: 'display-block' }"
+                <RoundStatus theme="secondary" :block="true"
                   >의료기기</RoundStatus
                 >
               </div>
@@ -480,30 +452,6 @@ export default {
                 >
                 <KeyValueText>24개월</KeyValueText>
               </KeyValueItem>
-
-              <!-- Case : 동의 진행중 -->
-              <KeyValueItem
-                :classNames="{
-                  item: 'text-body-3',
-                }"
-              >
-                <KeyValueTitle>동의상태</KeyValueTitle>
-                <KeyValueText>
-                  <div class="flex-box">
-                    <div class="flex-box__cell flex-1">
-                      <span class="color-green font-weight-medium">미완료</span>
-                    </div>
-                    <div class="flex-box__cell flex-box__cell--small">
-                      <UiAccordionOpener
-                        :classNames="{
-                          button: $style['opener'],
-                        }"
-                      />
-                    </div>
-                  </div>
-                </KeyValueText>
-              </KeyValueItem>
-              <!-- // Case : 동의 진행중 -->
 
               <!-- Case : 동의 완료 -->
               <KeyValueItem
@@ -577,7 +525,7 @@ export default {
                 </KeyValue>
 
                 <div class="row-margin-contents-small">
-                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                  <ButtonList :classNames="{ wrap: 'row-margin-none' }">
                     <ButtonListItem>
                       <BasicButton size="small">사전동의</BasicButton>
                     </ButtonListItem>
@@ -592,6 +540,7 @@ export default {
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
+        <!-- // Case : 의료기기 -->
       </UiAccordion>
 
       <div class="inline-wrap align-center row-margin-item-group">

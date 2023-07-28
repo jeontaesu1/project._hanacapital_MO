@@ -190,7 +190,6 @@ export default {
       </h3>
 
       <UiAccordion>
-        <!-- Case : 노출 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div class="flex-box">
@@ -418,9 +417,7 @@ export default {
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- // Case : 노출 -->
 
-        <!-- Case : 중지 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div class="flex-box">
@@ -642,7 +639,6 @@ export default {
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- // Case : 중지 -->
       </UiAccordion>
     </section>
   </PageContents>
