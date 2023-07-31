@@ -155,7 +155,7 @@ export default {
                   item: 'text-body-3',
                 }"
               >
-                <KeyValueTitle>약정 완료여부</KeyValueTitle>
+                <KeyValueTitle>약정 완료 여부</KeyValueTitle>
                 <KeyValueText>Y</KeyValueText>
               </KeyValueItem>
 
@@ -164,7 +164,7 @@ export default {
                   item: 'text-body-3',
                 }"
               >
-                <KeyValueTitle>ARS 완료여부</KeyValueTitle>
+                <KeyValueTitle>ARS 완료 여부</KeyValueTitle>
                 <KeyValueText>N</KeyValueText>
               </KeyValueItem>
 
@@ -201,7 +201,7 @@ export default {
                   item: 'text-body-3',
                 }"
               >
-                <KeyValueTitle>약정 완료여부</KeyValueTitle>
+                <KeyValueTitle>약정 완료 여부</KeyValueTitle>
                 <KeyValueText>Y</KeyValueText>
               </KeyValueItem>
 
@@ -210,7 +210,7 @@ export default {
                   item: 'text-body-3',
                 }"
               >
-                <KeyValueTitle>ARS 완료여부</KeyValueTitle>
+                <KeyValueTitle>ARS 완료 여부</KeyValueTitle>
                 <KeyValueText>Y</KeyValueText>
               </KeyValueItem>
 
@@ -256,7 +256,7 @@ export default {
                   item: 'text-body-3',
                 }"
               >
-                <KeyValueTitle>ARS 완료여부</KeyValueTitle>
+                <KeyValueTitle>ARS 완료 여부</KeyValueTitle>
                 <KeyValueText>Y</KeyValueText>
               </KeyValueItem>
 
