@@ -84,7 +84,11 @@ export default {
     const state = reactive({
       numberError: false,
       modelError: false,
+      visaError: false,
       yearError: false,
+      businessNumberError: false,
+      buisnessNameError: false,
+      engineTypeError: false,
       carAmountError: false,
       productError: false,
       loanAmountError: false,
@@ -133,8 +137,217 @@ export default {
             </KeyValueItem>
           </KeyValue>
         </BasicBox>
+
+        <!-- Case : '사업자정보가 있는 외국인'일 경우 노출 -->
+        <FormList :classNames="{ wrap: 'row-margin-contents' }">
+          <FormListItem
+            titleText="비자유형"
+            target="#salesUsedCarCounselingVisaButton"
+            :selectOnly="true"
+          >
+            <FormInvalid :error="state.visaError">
+              <InputBlock :error="state.visaError">
+                <InputBlockCell :flexible="true">
+                  <BasicSelect
+                    :option="[
+                      {
+                        value: '1',
+                        text: 'A1',
+                      },
+                      {
+                        value: '2',
+                        text: 'A2',
+                      },
+                      {
+                        value: '3',
+                        text: 'A3',
+                      },
+                      {
+                        value: '4',
+                        text: 'D7',
+                      },
+                      {
+                        value: '5',
+                        text: 'D8',
+                      },
+                      {
+                        value: '6',
+                        text: 'D9',
+                      },
+                      {
+                        value: '7',
+                        text: 'E1',
+                      },
+                      {
+                        value: '8',
+                        text: 'E3',
+                      },
+                      {
+                        value: '9',
+                        text: 'E4',
+                      },
+                      {
+                        value: '10',
+                        text: 'E5',
+                      },
+                      {
+                        value: '11',
+                        text: 'E7',
+                      },
+                    ]"
+                    buttonTitle="비자 선택"
+                    layerTitle="비자유형을 선택해 주세요"
+                    id="salesUsedCarCounselingVisa"
+                    buttonId="salesUsedCarCounselingVisaButton"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+        </FormList>
+        <!-- Case : '사업자정보가 있는 외국인'일 경우 노출 -->
       </section>
       <!-- //계약자정보 -->
+
+      <!-- Case : '사업자정보가 있는 개인/외국인'일 경우 노출 -->
+      <section class="row-margin-container-medium">
+        <h3 class="text-title-2 row-margin-contents">고객 구분</h3>
+
+        <BoxCheckList :classNames="{ wrap: 'row-margin-item-group' }">
+          <BoxCheckListItem>
+            <BoxCheck
+              name="salesUsedCarCounselingCustomer"
+              id="salesUsedCarCounselingCustomer001"
+              :defaultChecked="true"
+            >
+              <BoxCheckLabel>개인</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              name="salesUsedCarCounselingCustomer"
+              id="salesUsedCarCounselingCustomer002"
+            >
+              <BoxCheckLabel>개인사업자</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+        </BoxCheckList>
+
+        <!-- Case : '개인 사업자'선택 시 노출 -->
+        <FormList :classNames="{ wrap: 'row-margin-contents' }">
+          <!-- Case : 사업자번호 1개일 경우 노출 -->
+          <FormListItem
+            titleText="사업자번호"
+            target="#salesUsedCarCounselingBusinessNumberButton"
+          >
+            <FormInvalid :error="state.businessNumberError">
+              <InputBlock :error="state.businessNumberError">
+                <InputBlockCell :flexible="true">
+                  <BasicSelect
+                    :option="[
+                      {
+                        value: '1',
+                        text: '123-45-67890',
+                      },
+                      {
+                        value: '2',
+                        text: '123-45-67890',
+                      },
+                      {
+                        value: '3',
+                        text: '123-45-67890',
+                      },
+                      {
+                        value: '4',
+                        text: '123-45-67890',
+                      },
+                      {
+                        value: '5',
+                        text: '123-45-67890',
+                      },
+                    ]"
+                    buttonTitle="사업자번호 선택"
+                    layerTitle="사업자번호를 선택해 주세요"
+                    id="salesUsedCarCounselingBusinessNumber"
+                    buttonId="salesUsedCarCounselingBusinessNumberButton"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+          <!-- // Case : 사업자번호 1개일 경우 노출 -->
+
+          <!-- Case : 사업자번호 2개 이상일 경우 노출 -->
+          <FormListItem
+            titleText="사업자번호"
+            target="#salesUsedCarCounselingBusinessNumberButton"
+            :disabled="true"
+          >
+            <FormInvalid :error="state.businessNumberError">
+              <InputBlock :error="state.businessNumberError" :disabled="true">
+                <InputBlockCell :flexible="true">
+                  <BasicSelect
+                    :option="[
+                      {
+                        value: '1',
+                        text: '123-45-67890',
+                      },
+                      {
+                        value: '2',
+                        text: '123-45-67890',
+                      },
+                      {
+                        value: '3',
+                        text: '123-45-67890',
+                      },
+                      {
+                        value: '4',
+                        text: '123-45-67890',
+                      },
+                      {
+                        value: '5',
+                        text: '123-45-67890',
+                      },
+                    ]"
+                    buttonTitle="사업자번호 선택"
+                    layerTitle="사업자번호를 선택해 주세요"
+                    id="salesUsedCarCounselingBusinessNumber"
+                    buttonId="salesUsedCarCounselingBusinessNumberButton"
+                    defaultValue="1"
+                    :disabled="true"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+          <!-- // Case : 사업자번호 2개 이상일 경우 노출 -->
+
+          <FormListItem
+            titleText="상호명"
+            target="#salesUsedCarCounselingBuisnessName"
+            :disabled="true"
+          >
+            <FormInvalid :error="state.buisnessNameError">
+              <InputBlock :error="state.buisnessNameError" :disabled="true">
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    title="상호명"
+                    id="salesUsedCarCounselingBuisnessName"
+                    defaultValue="김하나상사"
+                    :disabled="true"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+        </FormList>
+        <!-- // Case : '개인 사업자'선택 시 노출 -->
+      </section>
+      <!-- // Case : '사업자정보가 있는 개인/외국인'일 경우 노출 -->
 
       <!-- 차량 정보 -->
       <section class="row-margin-container-medium">
@@ -268,11 +481,49 @@ export default {
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
+
+          <FormListItem
+            titleText="유종"
+            target="#salesUsedCarCounselingEngineTypeButton"
+            :selectOnly="true"
+          >
+            <FormInvalid :error="state.engineTypeError">
+              <InputBlock :error="state.engineTypeError">
+                <InputBlockCell :flexible="true">
+                  <BasicSelect
+                    :option="[
+                      {
+                        value: '1',
+                        text: '2967cc',
+                      },
+                      {
+                        value: '2',
+                        text: '가솔린',
+                      },
+                      {
+                        value: '3',
+                        text: '디젤',
+                      },
+                      {
+                        value: '4',
+                        text: '전기',
+                      },
+                    ]"
+                    buttonTitle="유종 선택"
+                    layerTitle="유종을 선택해 주세요"
+                    id="salesUsedCarCounselingEngineType"
+                    buttonId="salesUsedCarCounselingEngineTypeButton"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
         </FormList>
 
         <ButtonList :classNames="{ wrap: 'row-margin-contents-group' }">
           <ButtonListItem>
-            <BasicButton :line="true" theme="secondary">조회</BasicButton>
+            <BasicButton :line="true">조회</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </section>
@@ -554,7 +805,7 @@ export default {
           <BasicButton :line="true" theme="quaternary">취소</BasicButton>
         </ButtonListItem>
         <ButtonListItem>
-          <BasicButton theme="secondary">상담등록</BasicButton>
+          <BasicButton>상담등록</BasicButton>
         </ButtonListItem>
       </ButtonList>
     </template>
