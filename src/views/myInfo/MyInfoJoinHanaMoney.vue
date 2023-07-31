@@ -156,7 +156,7 @@ export default {
       </div>
 
       <div :class="[$style['image-view'], 'row-margin-contents-group']">
-        <img src="@/assets/images/_dummy/box-detail.png" alt="샘플 이미지" />
+        <img src="@/assets/images/contents/hanamoney-m.png" alt="" />
       </div>
     </div>
 

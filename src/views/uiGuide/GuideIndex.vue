@@ -3901,7 +3901,12 @@ const datas = () => [
         path: '/my-info/join-hana-money',
         status: 'end',
         create: '2023.05.05',
-        log: [],
+        log: [
+          {
+            date: '2023.07.31',
+            text: '이미지 반영',
+          },
+        ],
       },
       {
         depth2: '하나머니',
