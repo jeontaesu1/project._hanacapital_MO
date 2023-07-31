@@ -138,7 +138,7 @@ export default {
           </KeyValue>
         </BasicBox>
 
-        <!-- Case : '사업자정보가 있는 외국인'일 경우 노출 -->
+        <!-- Case : '외국인'일 경우 노출 -->
         <FormList :classNames="{ wrap: 'row-margin-contents' }">
           <FormListItem
             titleText="비자유형"
@@ -206,11 +206,11 @@ export default {
             </FormInvalid>
           </FormListItem>
         </FormList>
-        <!-- Case : '사업자정보가 있는 외국인'일 경우 노출 -->
+        <!-- // Case : '외국인'일 경우 노출 -->
       </section>
-      <!-- //계약자정보 -->
+      <!-- // 계약자정보 -->
 
-      <!-- Case : '사업자정보가 있는 개인/외국인'일 경우 노출 -->
+      <!-- 고객 구분 -->
       <section class="row-margin-container-medium">
         <h3 class="text-title-2 row-margin-contents">고객 구분</h3>
 
@@ -234,12 +234,34 @@ export default {
           </BoxCheckListItem>
         </BoxCheckList>
 
-        <!-- Case : '개인 사업자'선택 시 노출 -->
+        <!-- Case : '개인 사업자' 선택 시 노출 -->
         <FormList :classNames="{ wrap: 'row-margin-contents' }">
           <!-- Case : 사업자번호 1개일 경우 노출 -->
           <FormListItem
             titleText="사업자번호"
-            target="#salesUsedCarCounselingBusinessNumberButton"
+            target="#salesUsedCarCounselingBusinessNumberInput"
+            :disabled="true"
+          >
+            <FormInvalid :error="state.businessNumberError">
+              <InputBlock :error="state.businessNumberError" :disabled="true">
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    title="사업자번호"
+                    id="salesUsedCarCounselingBusinessNumberInput"
+                    defaultValue="123-45-67890"
+                    :disabled="true"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+          <!-- // Case : 사업자번호 1개일 경우 노출 -->
+
+          <!-- Case : 사업자번호 2개 이상일 경우 노출 -->
+          <FormListItem
+            titleText="사업자번호"
+            target="#salesUsedCarCounselingBusinessNumberSelectButton"
           >
             <FormInvalid :error="state.businessNumberError">
               <InputBlock :error="state.businessNumberError">
@@ -252,71 +274,26 @@ export default {
                       },
                       {
                         value: '2',
-                        text: '123-45-67890',
+                        text: '222-45-67890',
                       },
                       {
                         value: '3',
-                        text: '123-45-67890',
+                        text: '333-45-67890',
                       },
                       {
                         value: '4',
-                        text: '123-45-67890',
+                        text: '444-45-67890',
                       },
                       {
                         value: '5',
-                        text: '123-45-67890',
+                        text: '555-45-67890',
                       },
                     ]"
                     buttonTitle="사업자번호 선택"
                     layerTitle="사업자번호를 선택해 주세요"
-                    id="salesUsedCarCounselingBusinessNumber"
-                    buttonId="salesUsedCarCounselingBusinessNumberButton"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-          <!-- // Case : 사업자번호 1개일 경우 노출 -->
-
-          <!-- Case : 사업자번호 2개 이상일 경우 노출 -->
-          <FormListItem
-            titleText="사업자번호"
-            target="#salesUsedCarCounselingBusinessNumberButton"
-            :disabled="true"
-          >
-            <FormInvalid :error="state.businessNumberError">
-              <InputBlock :error="state.businessNumberError" :disabled="true">
-                <InputBlockCell :flexible="true">
-                  <BasicSelect
-                    :option="[
-                      {
-                        value: '1',
-                        text: '123-45-67890',
-                      },
-                      {
-                        value: '2',
-                        text: '123-45-67890',
-                      },
-                      {
-                        value: '3',
-                        text: '123-45-67890',
-                      },
-                      {
-                        value: '4',
-                        text: '123-45-67890',
-                      },
-                      {
-                        value: '5',
-                        text: '123-45-67890',
-                      },
-                    ]"
-                    buttonTitle="사업자번호 선택"
-                    layerTitle="사업자번호를 선택해 주세요"
-                    id="salesUsedCarCounselingBusinessNumber"
-                    buttonId="salesUsedCarCounselingBusinessNumberButton"
+                    id="salesUsedCarCounselingBusinessNumberSelect"
+                    buttonId="salesUsedCarCounselingBusinessNumberSelectButton"
                     defaultValue="1"
-                    :disabled="true"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -345,9 +322,9 @@ export default {
             </FormInvalid>
           </FormListItem>
         </FormList>
-        <!-- // Case : '개인 사업자'선택 시 노출 -->
+        <!-- // Case : '개인 사업자' 선택 시 노출 -->
       </section>
-      <!-- // Case : '사업자정보가 있는 개인/외국인'일 경우 노출 -->
+      <!-- // 고객 구분 -->
 
       <!-- 차량 정보 -->
       <section class="row-margin-container-medium">
@@ -527,7 +504,7 @@ export default {
           </ButtonListItem>
         </ButtonList>
       </section>
-      <!-- //차량 정보 -->
+      <!-- // 차량 정보 -->
     </div>
 
     <!-- Case : 조회 후 노출 -->
