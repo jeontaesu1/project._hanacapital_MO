@@ -51,7 +51,7 @@ export default {
 
     const state = reactive({
       accountError: false,
-      mailError: false,
+      phoneError: false,
     });
 
     onMounted(() => {
@@ -77,8 +77,8 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        제휴사 정보를<br />
-        <strong>확인해 주세요</strong>
+        대출금 지급 계좌 정보를<br />
+        <strong>선택해 주세요</strong>
       </PageMainText>
     </PageTextGroup>
 
@@ -114,89 +114,38 @@ export default {
       </FormListItem>
 
       <FormListItem
-        titleText="이메일"
-        target="#salesUsedCarAffiliateFormAccountEmailMailId"
+        titleText="휴대폰번호"
+        target="#salesUsedCarAffiliateFormPhone"
       >
-        <FormInvalid :error="state.mailError">
-          <InputBlock :error="state.mailError">
+        <FormInvalid :error="state.phoneError">
+          <InputBlock :error="state.phoneError">
             <InputBlockCell :flexible="true">
               <BasicInput
-                title="이메일"
-                id="salesUsedCarAffiliateFormAccountEmailMailId"
-              />
-            </InputBlockCell>
-            <InputBlockCell margin="regular">@</InputBlockCell>
-            <InputBlockCell margin="regular" :flexible="true">
-              <BasicSelect
-                :option="[
-                  {
-                    value: '1',
-                    text: 'naver.com',
-                  },
-                  {
-                    value: '2',
-                    text: 'hanmail.net',
-                  },
-                  {
-                    value: '3',
-                    text: 'gmail.com',
-                  },
-                  {
-                    value: '4',
-                    text: 'nate.com',
-                  },
-                  {
-                    value: '5',
-                    text: 'paran.com',
-                  },
-                  {
-                    value: '6',
-                    text: 'dreamwiz.com',
-                  },
-                  {
-                    value: '7',
-                    text: 'yahoo.com',
-                  },
-                  {
-                    value: '8',
-                    text: 'freechal.com',
-                  },
-                  {
-                    value: '9',
-                    text: '직접입력',
-                  },
-                ]"
-                buttonTitle="이메일 도메인 선택하기"
-                layerTitle="이메일 도메인을 선택해 주세요"
+                pattern="\d*"
+                title="휴대폰번호"
+                id="salesUsedCarAffiliateFormPhone"
               />
             </InputBlockCell>
           </InputBlock>
-          <!-- Case : 직접입력 선택 시 노출 -->
-          <InputBlock
-            :error="state.mailError"
-            :classNames="{
-              wrap: 'row-margin-item-group row-margin-bottom-none',
-            }"
-          >
-            <InputBlockCell :flexible="true">
-              <BasicInput
-                title="이메일 도메인 직접입력"
-                id="salesUsedCarAffiliateFormAccountEmailDomainSelf"
-              />
-            </InputBlockCell>
-          </InputBlock>
-          <!-- // Case : 직접입력 선택 시 노출 -->
           <FormInvalidMessage>Error Message</FormInvalidMessage>
         </FormInvalid>
       </FormListItem>
     </FormList>
 
-    <div class="row-margin-contents-group">
-      <CheckBox id="salesUsedCarAffiliateFormAgree" theme="tertiary">
-        <CheckBoxObject />
-        <CheckBoxLabelText>할부 제휴 협약 동의</CheckBoxLabelText>
-      </CheckBox>
-    </div>
+    <ul class="reset-list row-margin-contents">
+      <li class="row-margin-item-medium">
+        <CheckBox id="salesUsedCarAffiliateFormAgree001" theme="tertiary">
+          <CheckBoxObject />
+          <CheckBoxLabelText>할부 제휴 협약 동의</CheckBoxLabelText>
+        </CheckBox>
+      </li>
+      <li class="row-margin-item-medium">
+        <CheckBox id="salesUsedCarAffiliateFormAgree002" theme="tertiary">
+          <CheckBoxObject />
+          <CheckBoxLabelText>청렴·윤리 실천 서약 동의</CheckBoxLabelText>
+        </CheckBox>
+      </li>
+    </ul>
 
     <template v-slot:foot>
       <ButtonList
