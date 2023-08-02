@@ -16,6 +16,7 @@ import BF_M05_l016 from '@/views/business/BF_M05_l016.vue';
 import BF_M05_l017 from '@/views/business/BF_M05_l017.vue';
 import BF_M05_l018 from '@/views/business/BF_M05_l018.vue';
 import BF_M05_l019 from '@/views/business/BF_M05_l019.vue';
+import BF_M05_l020 from '@/views/business/BF_M05_l020.vue';
 import BF_M05_l021 from '@/views/business/BF_M05_l021.vue';
 import BF_M05_l022 from '@/views/business/BF_M05_l022.vue';
 
@@ -35,6 +36,7 @@ export default {
     BF_M05_l017,
     BF_M05_l018,
     BF_M05_l019,
+    BF_M05_l020,
     BF_M05_l021,
     BF_M05_l022,
   },
@@ -51,6 +53,7 @@ export default {
     const layer010 = ref(null);
     const layer011 = ref(null);
     const layer012 = ref(null);
+    const layer013 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -88,6 +91,9 @@ export default {
     const layer012Open = (e = {}) => {
       layer012.value.layer.open(e.target);
     };
+    const layer013Open = (e = {}) => {
+      layer013.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -102,6 +108,7 @@ export default {
       layer010,
       layer011,
       layer012,
+      layer013,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -114,6 +121,7 @@ export default {
       layer010Open,
       layer011Open,
       layer012Open,
+      layer013Open,
     };
   },
 };
@@ -179,11 +187,16 @@ export default {
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer011Open">
-          견적서 발송 팝업<br />BF_M05_l021
+          견적서보기<br />BF_M05_l020
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer012Open">
+          견적서 발송 팝업<br />BF_M05_l021
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer013Open">
           견적서 진행사항 안내<br />BF_M05_l022
         </BasicButton>
       </ButtonListItem>
@@ -199,7 +212,8 @@ export default {
     <BF_M05_l017 ref="layer008" />
     <BF_M05_l018 ref="layer009" />
     <BF_M05_l019 ref="layer010" />
-    <BF_M05_l021 ref="layer011" />
-    <BF_M05_l022 ref="layer012" />
+    <BF_M05_l020 ref="layer011" />
+    <BF_M05_l021 ref="layer012" />
+    <BF_M05_l022 ref="layer013" />
   </PageContents>
 </template>
