@@ -2094,7 +2094,12 @@ const datas = () => [
         path: '/sales-new-car/new-counseling',
         status: 'end',
         create: '2023.05.12',
-        log: [],
+        log: [
+          {
+            date: '2023.08.02',
+            text: '탭 삭제 및 카운팅 추가, 문구 수정',
+          },
+        ],
       },
       {
         depth2: '상담등록\nNC_M03_p002',
@@ -3121,6 +3126,10 @@ const datas = () => [
           {
             date: '2023.07.21',
             text: 'BF_M05_l020 AS-IS 샘플 적용',
+          },
+          {
+            date: '2023.08.02',
+            text: '- BF_M05_l001 문구 수정 및 버튼 추가\n- BF_M05_l003 컨텐츠 내용 수정\n- BF_M05_l020 화면 삭제\n- BF_M05_l021 팝업 추가\n- BF_M05_l022 팝업 추가',
           },
         ],
       },
