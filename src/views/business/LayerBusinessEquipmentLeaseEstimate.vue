@@ -62,7 +62,6 @@ export default {
   },
   setup() {
     const state = reactive({
-      productError: false,
       priceError: false,
       periodError001: false,
       periodError002: false,
@@ -103,35 +102,6 @@ export default {
 
       <div>
         <FormList>
-          <!-- Case : 'GE헬스케어' 선택 시 노출 -->
-          <FormListItem titleText="금융조건" :forceFocus="true">
-            <FormInvalid :error="state.productError">
-              <BoxCheckList>
-                <BoxCheckListItem>
-                  <BoxCheck
-                    :minSide="true"
-                    name="layerBusinessEquipmentLeaseEstimateCheckList001"
-                    id="layerBusinessEquipmentLeaseEstimateCheckList001_001"
-                    :defaultChecked="true"
-                  >
-                    <BoxCheckLabel>제휴금리</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-                <BoxCheckListItem>
-                  <BoxCheck
-                    :minSide="true"
-                    name="layerBusinessEquipmentLeaseEstimateCheckList001"
-                    id="layerBusinessEquipmentLeaseEstimateCheckList001_002"
-                  >
-                    <BoxCheckLabel>무이자</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-              </BoxCheckList>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-          <!-- // Case : 'GE헬스케어' 선택 시 노출 -->
-
           <FormListItem
             titleText="이용금액"
             target="#layerBusinessEquipmentLeaseEstimateName"
@@ -407,7 +377,7 @@ export default {
               }"
             >
               <KeyValueTitle>상환금리</KeyValueTitle>
-              <KeyValueText>최저 00.0% ~ 최대 00.0%</KeyValueText>
+              <KeyValueText>00.00% ~ 00.00%</KeyValueText>
             </KeyValueItem>
 
             <!-- Case : 'GE헬스케어' 선택 시 노출 -->
@@ -477,6 +447,9 @@ export default {
         >
           <ButtonListItem>
             <BasicButton>상담 신청</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton>견적서 발송하기</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

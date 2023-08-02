@@ -84,7 +84,7 @@ export default {
           </KeyValueItem>
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>상환금리</KeyValueTitle>
-            <KeyValueText>(최저) 00.0% ~ (최대) 00.0%</KeyValueText>
+            <KeyValueText>00.00% ~ 00.00%</KeyValueText>
           </KeyValueItem>
           <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>보증금</KeyValueTitle>
