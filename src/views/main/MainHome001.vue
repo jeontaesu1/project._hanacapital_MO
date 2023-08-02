@@ -72,6 +72,7 @@ export default {
       store.ui.common.setRootClassName('page-home');
 
       store.ui.header.setTitle(() => ' ');
+      store.ui.header.setUseLeftLogo(() => true);
       store.ui.header.setUseAppButton(() => true);
     });
 
@@ -79,6 +80,7 @@ export default {
       store.ui.common.setRootClassName();
 
       store.ui.header.setTitle();
+      store.ui.header.setUseLeftLogo();
       store.ui.header.setUseAppButton();
     });
 
@@ -92,7 +94,7 @@ export default {
 <template>
   <PageContents
     :classNames="{
-      body: $style['body'],
+      body: $style['web-body'],
     }"
   >
     <PageTextGroup>

@@ -21,6 +21,8 @@ import LayerLeaseRentEstimationSystemSearchSalesmen from '@/views/LeaseRentEstim
 import LR_M03_l001 from '@/views/LeaseRentEstimationSystem/LR_M03_l001.vue';
 import LR_M05_b007 from '@/views/LeaseRentEstimationSystem/LR_M05_b007.vue';
 import LayerLeaseRentEstimationSystemStart from '@/views/LeaseRentEstimationSystem/LayerLeaseRentEstimationSystemStart.vue';
+import LayerLeaseRentEstimationViewPriceList from '@/views/LeaseRentEstimationSystem/LayerLeaseRentEstimationViewPriceList.vue';
+import LayerLeaseRentEstimationViewCatalog from '@/views/LeaseRentEstimationSystem/LayerLeaseRentEstimationViewCatalog.vue';
 
 export default {
   components: {
@@ -43,6 +45,8 @@ export default {
     LR_M03_l001,
     LR_M05_b007,
     LayerLeaseRentEstimationSystemStart,
+    LayerLeaseRentEstimationViewPriceList,
+    LayerLeaseRentEstimationViewCatalog,
   },
   setup() {
     const layer001 = ref(null);
@@ -60,6 +64,8 @@ export default {
     const layer013 = ref(null);
     const layer014 = ref(null);
     const layer015 = ref(null);
+    const layer016 = ref(null);
+    const layer017 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -106,6 +112,12 @@ export default {
     const layer015Open = (e = {}) => {
       layer015.value.layer.open(e.target);
     };
+    const layer016Open = (e = {}) => {
+      layer016.value.layer.open(e.target);
+    };
+    const layer017Open = (e = {}) => {
+      layer017.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -123,6 +135,8 @@ export default {
       layer013,
       layer014,
       layer015,
+      layer016,
+      layer017,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -138,6 +152,8 @@ export default {
       layer013Open,
       layer014Open,
       layer015Open,
+      layer016Open,
+      layer017Open,
     };
   },
 };
@@ -226,6 +242,16 @@ export default {
           >견적서 진행사항 안내<br />LR_M00_l002</BasicButton
         >
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer016Open"
+          >가격표 보기 팝업<br />LR_M00_l014</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer017Open"
+          >카탈로그 보기 팝업<br />LR_M00_l017</BasicButton
+        >
+      </ButtonListItem>
     </ButtonList>
 
     <LayerLeaseRentEstimationSystemConformityAdequacy ref="layer001" />
@@ -243,5 +269,7 @@ export default {
     <LR_M03_l001 ref="layer013" />
     <LR_M05_b007 ref="layer014" />
     <LayerLeaseRentEstimationSystemStart ref="layer015" />
+    <LayerLeaseRentEstimationViewPriceList ref="layer016" />
+    <LayerLeaseRentEstimationViewCatalog ref="layer017" />
   </PageContents>
 </template>

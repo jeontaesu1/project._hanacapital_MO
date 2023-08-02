@@ -108,7 +108,7 @@ export default {
 <template>
   <PageContents
     :classNames="{
-      body: $style['body'],
+      body: $style['app-body'],
     }"
   >
     <PageTextGroup>

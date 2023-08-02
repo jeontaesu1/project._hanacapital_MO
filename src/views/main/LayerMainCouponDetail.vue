@@ -62,10 +62,7 @@ export default {
 
         <section :class="$style['coupon-detail__contents']">
           <div :class="$style['image-view']">
-            <img
-              src="@/assets/images/_dummy/box-detail.png"
-              alt="샘플 이미지"
-            />
+            <img src="@/assets/images/_dummy/image-001.png" alt="샘플 이미지" />
           </div>
         </section>
       </div>

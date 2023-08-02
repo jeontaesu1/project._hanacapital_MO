@@ -76,6 +76,12 @@
       border-color: transparent;
       background-color: rgba($color-navy-90, 0.7);
     }
+
+    &-tridenary {
+      color: $color-gray-40;
+      border-color: transparent;
+      background-color: rgba($color-white, 0.1);
+    }
   }
 
   &--block {

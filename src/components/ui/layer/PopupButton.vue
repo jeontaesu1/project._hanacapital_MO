@@ -7,6 +7,7 @@ import IconSearch from '@/assets/images/common/search.svg?component';
 import IconShare from '@/assets/images/common/share.svg?component';
 import IconSubscript from '@/assets/images/common/subscription.svg?component';
 import IconSubscriptOn from '@/assets/images/common/subscription-on.svg?component';
+import IconGallery from '@/assets/images/common/gallery.svg?component';
 
 const defaultClassNames = () => ({
   wrap: '',
@@ -52,6 +53,7 @@ export default {
       search: IconSearch,
       share: IconShare,
       subscript: IconSubscript,
+      gallery: IconGallery,
     };
 
     const iconsActive = {
@@ -60,6 +62,7 @@ export default {
       search: IconSearch,
       share: IconShare,
       subscript: IconSubscriptOn,
+      gallery: IconGallery,
     };
 
     const texts = {
@@ -68,6 +71,7 @@ export default {
       search: '검색',
       share: '공유하기',
       subscript: '구독하기',
+      gallery: '목록으로',
     };
 
     return {

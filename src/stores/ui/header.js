@@ -6,6 +6,7 @@ export const useUiHeaderStore = defineStore('uiHeader', {
     leftButtons: null,
     rightButtons: null,
     height: 0,
+    useLeftLogo: false,
     useAppButton: false,
     theme: null,
   }),
@@ -21,6 +22,9 @@ export const useUiHeaderStore = defineStore('uiHeader', {
     },
     setHeight(height = 0) {
       this.height = height;
+    },
+    setUseLeftLogo(useLeftLogo = () => false) {
+      this.useLeftLogo = useLeftLogo();
     },
     setUseAppButton(useAppButton = () => false) {
       this.useAppButton = useAppButton();

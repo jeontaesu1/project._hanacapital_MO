@@ -138,7 +138,7 @@ export default {
   <!-- Case : 로그인 후 -->
   <div v-else :class="$style['name-card']">
     <div :class="$style['name-card__left']">
-      <PageMainText><strong>강하나</strong>님</PageMainText>
+      <PageMainText><strong>강하나님</strong></PageMainText>
     </div>
     <div :class="$style['name-card__right']">
       <TextButton :block="true" :underline="true" @click="logout"

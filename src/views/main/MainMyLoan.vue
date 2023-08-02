@@ -80,6 +80,7 @@ export default {
       store.ui.header.setTitle(() => ' ');
       store.ui.header.setLeftButtons(() => []);
       store.ui.header.setRightButtons(() => []);
+      store.ui.header.setTheme(() => 'tertiary');
 
       store.ui.dockBar.setActive(() => 'my');
     });
@@ -92,6 +93,7 @@ export default {
       store.ui.header.setTitle();
       store.ui.header.setLeftButtons();
       store.ui.header.setRightButtons();
+      store.ui.header.setTheme();
 
       store.ui.dockBar.setActive();
     });
@@ -104,15 +106,11 @@ export default {
 </script>
 
 <template>
-  <PageContents :classNames="{ head: $style['page-head'] }">
-    <template v-slot:head>
-      <PageTextGroup :classNames="{ wrap: 'row-margin-none' }">
-        <PageMainText>
-          <strong>내대출</strong>
-        </PageMainText>
-      </PageTextGroup>
-    </template>
-
+  <PageContents
+    :classNames="{
+      body: $style['page-body'],
+    }"
+  >
     <section>
       <PageTextGroup>
         <PageMainText>

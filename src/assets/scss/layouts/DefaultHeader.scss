@@ -5,6 +5,15 @@
     &-secondary {
       background-color: $color-navy-05;
     }
+    &-tertiary {
+      background-color: transparent;
+
+      .header-fix {
+        z-index: -1;
+        left: -200%;
+        right: 200%;
+      }
+    }
   }
 }
 .header-fake {
@@ -40,6 +49,11 @@
         background-color: $color-white;
       }
     }
+    &-tertiary {
+      &.header--scroll {
+        background-color: rgba($color-white, 0);
+      }
+    }
   }
 
   &__left,
@@ -58,17 +72,26 @@
     display: flex;
     align-items: center;
     flex: none;
-    /*
-    max-width: 40%;
+  }
 
-    @include media-mobile-small {
-      max-width: 30%;
+  &__logo {
+    margin: 0;
+
+    &-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
     }
 
-    @include media-mobile-mini {
-      max-width: 24%;
+    &-text {
+      @include for-a11y;
     }
-    */
+
+    svg {
+      display: block;
+      width: 104px;
+      height: 24px;
+    }
   }
 
   &__title {

@@ -5,7 +5,11 @@
   background-color: $color-gray-15;
 }
 
-.body {
+.web-body {
+  padding-top: 12px;
+}
+
+.app-body {
   padding-top: 0;
 }
 

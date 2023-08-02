@@ -8910,7 +8910,7 @@ export default {
         <h3 class="test-section-sub-title">Default</h3>
 
         <div :class="$style['image-view']">
-          <img src="@/assets/images/_dummy/box-detail.png" alt="샘플 이미지" />
+          <img src="@/assets/images/_dummy/image-001.png" alt="샘플 이미지" />
         </div>
       </div>
     </section>

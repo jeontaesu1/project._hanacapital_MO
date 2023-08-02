@@ -9,6 +9,7 @@ import {
   useCssModule,
   provide,
 } from 'vue';
+import { RouterLink } from 'vue-router';
 
 import { useUiCommonStore } from '@/stores/ui/common';
 import { useUiScrollBlockStore } from '@/stores/ui/scrollBlock';
@@ -17,12 +18,15 @@ import { useUiHeaderStore } from '@/stores/ui/header';
 import HeaderButton from '@/components/ui/layout/HeaderButton.vue';
 import RoundButton from '@/components/ui/button/RoundButton.vue';
 
+import IconLogoMain from '@/assets/images/icon/logo-main.svg?component';
 import IconDownload from '@/assets/images/icon/download.svg?component';
 
 export default {
   components: {
+    RouterLink,
     HeaderButton,
     RoundButton,
+    IconLogoMain,
     IconDownload,
   },
   setup() {
@@ -54,6 +58,14 @@ export default {
       return store.ui.scrollBlock.scrollLeft;
     });
 
+    const theme = computed(() => {
+      return store.ui.header.theme;
+    });
+
+    const title = computed(() => {
+      return store.ui.header.title;
+    });
+
     const leftButtons = computed(() => {
       const defaultButtons = [];
       return store.ui.header.leftButtons || defaultButtons;
@@ -62,6 +74,14 @@ export default {
     const rightButtons = computed(() => {
       const defaultButtons = ['menu'];
       return store.ui.header.rightButtons || defaultButtons;
+    });
+
+    const useLeftLogo = computed(() => {
+      return store.ui.header.useLeftLogo;
+    });
+
+    const useAppButton = computed(() => {
+      return store.ui.header.useAppButton;
     });
 
     const update = () => {
@@ -125,8 +145,12 @@ export default {
       fake,
       isBlocking,
       scrollbarsWidth,
+      theme,
+      title,
       leftButtons,
       rightButtons,
+      useLeftLogo,
+      useAppButton,
     };
   },
 };
@@ -137,8 +161,7 @@ export default {
     :class="[
       $style['header-wrap'],
       {
-        [$style[`header-wrap--theme-${store.ui.header.theme}`]]:
-          store.ui.header.theme,
+        [$style[`header-wrap--theme-${theme}`]]: theme,
       },
     ]"
   >
@@ -153,8 +176,7 @@ export default {
           $style['header'],
           {
             [$style['header--scroll']]: state.isScroll,
-            [$style[`header--theme-${store.ui.header.theme}`]]:
-              store.ui.header.theme,
+            [$style[`header--theme-${theme}`]]: theme,
           },
         ]"
       >
@@ -165,15 +187,21 @@ export default {
             :type="typeof item === 'string' ? item : item.name"
             :onClick="item.onClick"
           />
+          <h1 v-if="useLeftLogo" :class="$style['header__logo']">
+            <RouterLink to="/" :class="$style['header__logo-link']">
+              <IconLogoMain />
+              <span :class="$style['header__logo-text']">하나캐피탈</span>
+            </RouterLink>
+          </h1>
         </div>
         <div :class="[$style['header__center']]">
           <h1 :class="$style['header__title']">
-            {{ store.ui.header.title || '하나캐피탈' }}
+            {{ title || '하나캐피탈' }}
           </h1>
         </div>
         <div :class="$style['header__right']">
           <RoundButton
-            v-if="store.ui.header.useAppButton"
+            v-if="useAppButton"
             theme="secondary"
             :classNames="{
               wrap: $style['header__app'],
