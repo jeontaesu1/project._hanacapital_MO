@@ -7,6 +7,9 @@ import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
+import CheckBox from '@/components/ui/form/CheckBox.vue';
+import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
+import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
 import DocumentView from '@/components/ui/viewer/DocumentView.vue';
 
 import DocumentEstimate001Contents from '@/views/document/DocumentEstimate001Contents.vue';
@@ -27,6 +30,9 @@ export default {
     FullPopupHead,
     PopupTitle,
     PopupButton,
+    CheckBox,
+    CheckBoxObject,
+    CheckBoxLabelText,
     DocumentView,
     DocumentEstimate001Contents,
     DocumentEstimate002Contents,
@@ -100,6 +106,15 @@ export default {
         class="row-margin-contents-group"
         v-if="layerSlotProps.display !== 'none'"
       >
+        <CheckBox
+          id="layerLeaseRentEstimationSystemViewEstimationURLCheck001"
+          theme="tertiary"
+          :classNames="{ wrap: 'row-margin-item-group' }"
+        >
+          <CheckBoxObject />
+          <CheckBoxLabelText>연락처 표시</CheckBoxLabelText>
+        </CheckBox>
+
         <!-- Case : AS-IS -->
         <DocumentView>
           <article

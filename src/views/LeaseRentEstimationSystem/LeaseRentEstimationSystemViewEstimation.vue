@@ -10,6 +10,9 @@ import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
+import CheckBox from '@/components/ui/form/CheckBox.vue';
+import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
+import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
 import DocumentView from '@/components/ui/viewer/DocumentView.vue';
 
 import DocumentEstimate001Contents from '@/views/document/DocumentEstimate001Contents.vue';
@@ -32,6 +35,9 @@ export default {
     FormListItem,
     InputBlock,
     InputBlockCell,
+    CheckBox,
+    CheckBoxLabelText,
+    CheckBoxObject,
     DocumentView,
     DocumentEstimate001Contents,
     DocumentEstimate002Contents,
@@ -149,6 +155,15 @@ export default {
     </div>
 
     <div class="row-margin-contents-group">
+      <CheckBox
+        id="leaseRentEstimationSystemViewEstimationCheck001"
+        theme="tertiary"
+        :classNames="{ wrap: 'row-margin-item-group' }"
+      >
+        <CheckBoxObject />
+        <CheckBoxLabelText>연락처 표시</CheckBoxLabelText>
+      </CheckBox>
+
       <!-- Case : AS-IS -->
       <DocumentView>
         <article

@@ -5729,6 +5729,15 @@ export default {
       </ButtonList>
 
       <div v-if="state.viewDocument" class="row-margin-contents">
+        <CheckBox
+          id="leaseRentEstimationSystemLeaseCheck001"
+          theme="tertiary"
+          :classNames="{ wrap: 'row-margin-item-group' }"
+        >
+          <CheckBoxObject />
+          <CheckBoxLabelText>연락처 표시</CheckBoxLabelText>
+        </CheckBox>
+
         <!-- Case : AS-IS -->
         <DocumentView>
           <article
