@@ -36,6 +36,7 @@ import ColorChip from '@/components/ui/imageData/ColorChip.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
 
 import IconTell from '@/assets/images/icon/tell.svg?component';
+import IconCart from '@/assets/images/icon/cart.svg?component';
 import IconDropdown from '@/assets/images/icon/dropdown.svg?component';
 
 export default {
@@ -73,6 +74,7 @@ export default {
     ColorChip,
     NoticeText,
     IconTell,
+    IconCart,
     IconDropdown,
   },
   setup() {
@@ -95,11 +97,23 @@ export default {
   <UiLayer ref="layer" type="full" v-slot="layerSlotProps">
     <FullPopup>
       <template v-slot:head>
-        <FullPopupHead>
+        <FullPopupHead
+          :classNames="{
+            left: 'flex-none',
+          }"
+        >
           <template v-slot:right>
             <div class="flex-box">
               <div class="flex-box__cell">
-                <RoundButton tagName="a" href="tel:1800-1110">
+                <RoundButton theme="tertiary" :block="true">
+                  <template v-slot:leftIcon>
+                    <IconCart />
+                  </template>
+                  차바구니
+                </RoundButton>
+              </div>
+              <div class="flex-box__cell">
+                <RoundButton tagName="a" href="tel:1800-1110" :block="true">
                   <template v-slot:leftIcon>
                     <IconTell />
                   </template>

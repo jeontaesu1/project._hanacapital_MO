@@ -478,6 +478,26 @@ export default {
                               >
                             </button>
                           </li>
+                          <li :class="$style['bank-brand__item']">
+                            <button
+                              type="button"
+                              :class="$style['bank-brand__block']"
+                              @click="
+                                testAaccordionClose(
+                                  accordionSlotProps,
+                                  accordionItemSlotProps,
+                                  'model'
+                                )
+                              "
+                            >
+                              <span :class="$style['bank-brand__logo']">
+                                <CarEmblem code="" size="medium" />
+                              </span>
+                              <span :class="$style['bank-brand__text']"
+                                >기타</span
+                              >
+                            </button>
+                          </li>
                         </ul>
                       </div>
                     </UiTabPanel>
@@ -605,6 +625,26 @@ export default {
                               >
                             </button>
                           </li>
+                          <li :class="$style['bank-brand__item']">
+                            <button
+                              type="button"
+                              :class="$style['bank-brand__block']"
+                              @click="
+                                testAaccordionClose(
+                                  accordionSlotProps,
+                                  accordionItemSlotProps,
+                                  'model'
+                                )
+                              "
+                            >
+                              <span :class="$style['bank-brand__logo']">
+                                <CarEmblem code="" size="medium" />
+                              </span>
+                              <span :class="$style['bank-brand__text']"
+                                >기타</span
+                              >
+                            </button>
+                          </li>
                         </ul>
                       </div>
                     </UiTabPanel>
@@ -696,6 +736,11 @@ export default {
                           <span :class="$style['bank-brand__text']"
                             >올 뉴 아반떼 HEV</span
                           >
+                          <span class="inline-wrap row-margin-small">
+                            <RoundStatus size="small" theme="secondary">
+                              재고한정
+                            </RoundStatus>
+                          </span>
                         </button>
                       </li>
                       <li :class="$style['bank-brand__item']">
@@ -1014,9 +1059,9 @@ export default {
                             >
                           </span>
                           <span
-                            class="display-block row-margin-mini text-body-5 color-gray-secondary"
+                            class="flex-box row-margin-mini text-body-5 color-gray-secondary"
                           >
-                            휘발유 14.3km/l
+                            <span class="flex-box__cell">휘발유 14.3km/l</span>
                           </span>
                         </RadioButtonLabelText>
                       </RadioButton>
@@ -1044,9 +1089,20 @@ export default {
                             >
                           </span>
                           <span
-                            class="display-block row-margin-mini text-body-5 color-gray-secondary"
+                            class="flex-box row-margin-mini text-body-5 color-gray-secondary"
                           >
-                            휘발유 14.3km/l
+                            <span class="flex-box__cell">휘발유 14.3km/l</span>
+                            <span
+                              class="flex-box__cell flex-box__cell--small-regular"
+                            >
+                              <RoundStatus
+                                :block="true"
+                                size="small"
+                                theme="secondary"
+                              >
+                                재고한정
+                              </RoundStatus>
+                            </span>
                           </span>
                         </RadioButtonLabelText>
                       </RadioButton>
@@ -1074,9 +1130,9 @@ export default {
                             >
                           </span>
                           <span
-                            class="display-block row-margin-mini text-body-5 color-gray-secondary"
+                            class="flex-box row-margin-mini text-body-5 color-gray-secondary"
                           >
-                            휘발유 14.3km/l
+                            <span class="flex-box__cell">휘발유 14.3km/l</span>
                           </span>
                         </RadioButtonLabelText>
                       </RadioButton>
@@ -1106,9 +1162,9 @@ export default {
                             >
                           </span>
                           <span
-                            class="display-block row-margin-mini text-body-5 color-gray-secondary"
+                            class="flex-box row-margin-mini text-body-5 color-gray-secondary"
                           >
-                            휘발유 13.8km/l
+                            <span class="flex-box__cell">휘발유 14.3km/l</span>
                           </span>
                         </RadioButtonLabelText>
                       </RadioButton>

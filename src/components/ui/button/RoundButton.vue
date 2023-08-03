@@ -37,6 +37,10 @@ export default {
       Type: Boolean,
       default: false,
     },
+    block: {
+      Type: Boolean,
+      default: false,
+    },
   },
   setup(props, context) {
     const button = ref(null);
@@ -95,6 +99,7 @@ export default {
     :class="[
       $style['button'],
       {
+        [$style['button--block']]: block,
         [$style[`button--size-${size}`]]: size,
         [$style[`button--theme-${theme}`]]: theme,
         [$style['button--disabled']]: disabledStyle,

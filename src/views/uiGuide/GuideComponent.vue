@@ -1013,10 +1013,15 @@ export default {
 
     <section class="test-section">
       <h2 class="test-section-title">Round Button</h2>
+
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
         <RoundButton>Button</RoundButton>
         <RoundButton :disabled="true">Button</RoundButton>
+        <RoundButton theme="secondary">Button</RoundButton>
+        <RoundButton theme="secondary" :disabled="true">Button</RoundButton>
+        <RoundButton theme="tertiary">Button</RoundButton>
+        <RoundButton theme="tertiary" :disabled="true">Button</RoundButton>
       </div>
 
       <div class="test-section-sub">
@@ -1028,12 +1033,25 @@ export default {
           Button
         </RoundButton>
 
-        <RoundButton tagName="a" href="tel:1800-1110">
+        <RoundButton theme="secondary">
           Button
           <template v-slot:rightIcon>
             <IconTell />
           </template>
         </RoundButton>
+
+        <RoundButton theme="tertiary">
+          <template v-slot:leftIcon>
+            <IconTell />
+          </template>
+          Button
+        </RoundButton>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Block</h3>
+        <RoundButton :block="true">Button</RoundButton>
+        <RoundButton :block="true" :disabled="true">Button</RoundButton>
       </div>
     </section>
 
@@ -8688,14 +8706,38 @@ export default {
       <h2 class="test-section-title">Car Emblem</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
+        <!-- Case : code 없을 때 -->
+        <CarEmblem code="" name="현대" />
+        <!-- // Case : code 없을 때 -->
+
+        <!-- Case : 이미지 에러 -->
+        <CarEmblem code="dummyCode" name="현대" />
+        <!-- // Case : 이미지 에러 -->
+
         <CarEmblem code="1001" name="현대" />
       </div>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Size Small</h3>
+        <!-- Case : code 없을 때 -->
+        <CarEmblem code="" name="현대" size="small" />
+        <!-- // Case : code 없을 때 -->
+
+        <!-- Case : 이미지 에러 -->
+        <CarEmblem code="dummyCode" name="현대" size="small" />
+        <!-- // Case : 이미지 에러 -->
+
         <CarEmblem code="1001" name="현대" size="small" />
       </div>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Size Medium</h3>
+        <!-- Case : code 없을 때 -->
+        <CarEmblem code="" name="현대" size="medium" />
+        <!-- // Case : code 없을 때 -->
+
+        <!-- Case : 이미지 에러 -->
+        <CarEmblem code="dummyCode" name="현대" size="medium" />
+        <!-- // Case : 이미지 에러 -->
+
         <CarEmblem code="1001" name="현대" size="medium" />
       </div>
     </section>
@@ -8704,11 +8746,27 @@ export default {
       <h2 class="test-section-title">Car Thumb</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
+        <!-- Case : 이미지 없을 때 -->
+        <CarThumb src="" />
+        <!-- // Case : 이미지 없을 때 -->
+
+        <!-- Case : 이미지 에러 -->
+        <CarThumb src="/images/_dummy/.png" />
+        <!-- // Case : 이미지 에러 -->
+
         <CarThumb src="/images/_dummy/car-thumb.png" />
       </div>
 
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">size: medium</h3>
+        <!-- Case : 이미지 없을 때 -->
+        <CarThumb size="medium" src="" />
+        <!-- // Case : 이미지 없을 때 -->
+
+        <!-- Case : 이미지 에러 -->
+        <CarThumb size="medium" src="/images/_dummy/.png" />
+        <!-- // Case : 이미지 에러 -->
+
         <CarThumb size="medium" src="/images/_dummy/car-thumb.png" />
       </div>
     </section>

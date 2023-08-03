@@ -69,6 +69,10 @@
     margin-right: -4px;
   }
 
+  &--block {
+    display: flex;
+  }
+
   &--theme {
     &-secondary {
       color: $color-white;
@@ -79,6 +83,20 @@
         svg {
           * {
             fill: $color-white;
+          }
+        }
+      }
+    }
+
+    &-tertiary {
+      color: $color-navy-50;
+      border-color: transparent;
+      background-color: rgba($color-navy-50, 0.1);
+
+      .button__icon {
+        svg {
+          * {
+            fill: $color-navy-50;
           }
         }
       }

@@ -51,8 +51,9 @@ export default {
   <span
     :class="[
       $style['color-chip'],
-      $style[`color-chip--length-${colors.length}`],
       {
+        [$style[`color-chip--length-${colors.length}`]]:
+          $style[`color-chip--length-${colors.length}`],
         [$style[`color-chip--size-${size}`]]: size,
         [$style[`color-chip--type-${type}`]]: type,
       },
