@@ -1170,6 +1170,11 @@ const routes = [
     component: () => import('@/views/business/BusinessEquipmentLease.vue'),
   },
   {
+    path: '/business/BF_M05_l022',
+    name: '/business/BF_M05_l022',
+    component: () => import('@/views/business/BF_M05_l022.vue'),
+  },
+  {
     path: '/business/general-installment',
     name: '/business/general-installment',
     component: () => import('@/views/business/BusinessGeneralInstallment.vue'),

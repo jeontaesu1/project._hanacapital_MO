@@ -1,72 +1,70 @@
 <script>
 // BF_M05_l022
-import { ref } from 'vue';
+import { onMounted, onUnmounted } from 'vue';
 
-import UiLayer from '@/components/ui/layer/UiLayer.vue';
-import FullPopup from '@/components/ui/layer/FullPopup.vue';
-import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
-import PopupButton from '@/components/ui/layer/PopupButton.vue';
+import { useUiHeaderStore } from '@/stores/ui/header';
+
+import PageContents from '@/components/ui/layout/PageContents.vue';
+import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
+import PageMainText from '@/components/ui/text/PageMainText.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
-import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
-import PageMainText from '@/components/ui/text/PageMainText.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
 
 export default {
   components: {
-    UiLayer,
-    FullPopup,
-    FullPopupHead,
-    PopupButton,
+    PageContents,
+    PageTextGroup,
+    PageMainText,
     ButtonListItem,
     ButtonList,
     BasicButton,
-    PageTextGroup,
-    PageMainText,
     IllustObject,
   },
   setup() {
-    const layer = ref(null);
-
-    return {
-      layer,
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
     };
+
+    onMounted(() => {
+      store.ui.header.setTitle(() => ' ');
+      store.ui.header.setLeftButtons(() => []);
+      store.ui.header.setRightButtons(() => []);
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setTitle();
+      store.ui.header.setLeftButtons();
+      store.ui.header.setRightButtons();
+    });
   },
 };
 </script>
 
 <template>
-  <UiLayer ref="layer" type="full" v-slot="layerSlotProps">
-    <FullPopup>
-      <template v-slot:head>
-        <FullPopupHead>
-          <template v-slot:right>
-            <PopupButton @click="layerSlotProps.close()" />
-          </template>
-        </FullPopupHead>
-      </template>
+  <PageContents>
+    <PageTextGroup>
+      <PageMainText>
+        <strong>지금부터 하나캐피탈 리스상담을 위한</strong><br />
+        절차를 진행합니다
+      </PageMainText>
+    </PageTextGroup>
 
-      <PageTextGroup>
-        <PageMainText>
-          <strong>지금부터 하나캐피탈 리스상담을 위한</strong><br />
-          절차를 진행합니다
-        </PageMainText>
-      </PageTextGroup>
+    <IllustObject type="customer" />
 
-      <IllustObject type="customer" />
-
-      <template v-slot:foot>
-        <ButtonList
-          :classNames="{
-            wrap: 'row-margin-none',
-          }"
-        >
-          <ButtonListItem>
-            <BasicButton>다음</BasicButton>
-          </ButtonListItem>
-        </ButtonList>
-      </template>
-    </FullPopup>
-  </UiLayer>
+    <template v-slot:foot>
+      <ButtonList
+        :classNames="{
+          wrap: 'row-margin-none',
+        }"
+      >
+        <ButtonListItem>
+          <BasicButton>다음</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
+    </template>
+  </PageContents>
 </template>

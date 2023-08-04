@@ -3170,6 +3170,17 @@ const datas = () => [
       },
       {
         depth2: '의료비∙설비',
+        depth3: '설비리스\nBF_M05_l022',
+        depth4: '견적서 진행사항 안내',
+        depth5: '',
+        depth6: '',
+        path: '/business/BF_M05_l022',
+        status: 'end',
+        create: '2023.08.07',
+        log: [],
+      },
+      {
+        depth2: '의료비∙설비',
         depth3: '설비리스\nBF_M05_p001',
         depth4: '팝업',
         depth5: '',
@@ -3192,7 +3203,7 @@ const datas = () => [
           },
           {
             date: '2023.08.02',
-            text: '- BF_M05_l001 문구 수정 및 버튼 추가\n- BF_M05_l003 문구 수정\n- BF_M05_l021 팝업 추가\n- BF_M05_l022 팝업 추가',
+            text: '- BF_M05_l001 문구 수정 및 버튼 추가\n- BF_M05_l003 문구 수정\n- BF_M05_l021 팝업 추가',
           },
         ],
       },
