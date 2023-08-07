@@ -24,7 +24,7 @@ import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 import IconHomeSetting from '@/assets/images/icon/home-setting.svg?component';
 import IconSettingDecide from '@/assets/images/icon/setting-decide.svg?component';
 import IconBasicSetting from '@/assets/images/icon/basic-setting.svg?component';
-import IconPlayStore from '@/assets/images/icon/playstore.svg?component';
+import IconSend from '@/assets/images/icon/send.svg?component';
 
 export default {
   components: {
@@ -47,7 +47,7 @@ export default {
     IconHomeSetting,
     IconSettingDecide,
     IconBasicSetting,
-    IconPlayStore,
+    IconSend,
   },
   setup() {
     const store = {
@@ -84,30 +84,46 @@ export default {
 
 <template>
   <PageContents>
-    <div :class="$style['setting-menu']">
-      <ul :class="$style['setting-menu__list']">
-        <li :class="$style['setting-menu__item']">
-          <RouterLink :class="$style['setting-menu__link']" to="">
-            <div :class="$style['setting-menu__icon']">
+    <div :class="[$style['share-list'], $style['share-list--col-3']]">
+      <ul :class="$style['share-list__list']">
+        <li :class="$style['share-list__item']">
+          <RouterLink :class="$style['share-list__button']" to="">
+            <span :class="$style['share-list__icon']">
               <IconHomeSetting />
-            </div>
-            <div :class="$style['setting-menu__title']">홈 설정</div>
+            </span>
+            <span :class="$style['share-list__text']">홈 설정</span>
           </RouterLink>
         </li>
-        <li :class="$style['setting-menu__item']">
-          <RouterLink :class="$style['setting-menu__link']" to="">
-            <div :class="$style['setting-menu__icon']">
+        <li :class="$style['share-list__item']">
+          <RouterLink :class="$style['share-list__button']" to="">
+            <span :class="$style['share-list__icon']">
               <IconSettingDecide />
-            </div>
-            <div :class="$style['setting-menu__title']">관리지정</div>
+            </span>
+            <span :class="$style['share-list__text']">관리지정</span>
           </RouterLink>
         </li>
-        <li :class="$style['setting-menu__item']">
-          <RouterLink :class="$style['setting-menu__link']" to="">
-            <div :class="$style['setting-menu__icon']">
+        <li :class="$style['share-list__item']">
+          <RouterLink :class="$style['share-list__button']" to="">
+            <span :class="$style['share-list__icon']">
               <IconBasicSetting />
-            </div>
-            <div :class="$style['setting-menu__title']">기본설정</div>
+            </span>
+            <span :class="$style['share-list__text']">기본설정</span>
+          </RouterLink>
+        </li>
+        <li :class="$style['share-list__item']">
+          <RouterLink :class="$style['share-list__button']" to="">
+            <span :class="$style['share-list__icon']">
+              <IconSend />
+            </span>
+            <span :class="$style['share-list__text']">자동차DB전송</span>
+          </RouterLink>
+        </li>
+        <li :class="$style['share-list__item']">
+          <RouterLink :class="$style['share-list__button']" to="">
+            <span :class="$style['share-list__icon']">
+              <IconHomeSetting />
+            </span>
+            <span :class="$style['share-list__text']">팝업/보조금</span>
           </RouterLink>
         </li>
       </ul>
@@ -319,28 +335,6 @@ export default {
       </ul>
       <!-- // Case : 국산차 할부, 중고 할부 -->
     </section>
-
-    <BasicHr
-      theme="quaternary"
-      type="contents"
-      className="row-margin-container"
-    />
-
-    <div :class="$style['icon-list']">
-      <ul :class="$style['icon-list__list']">
-        <li :class="$style['icon-list__item']">
-          <button type="button" :class="$style['icon-list__block']">
-            <span :class="$style['icon-list__icon']"><IconPlayStore /></span>
-            <span :class="$style['icon-list__content']">
-              <span class="display-block text-body-4 color-gray"
-                >아직 앱이 없으시다면</span
-              >
-              <span :class="$style['icon-list__title']">다운로드 하기</span>
-            </span>
-          </button>
-        </li>
-      </ul>
-    </div>
   </PageContents>
 </template>
 
