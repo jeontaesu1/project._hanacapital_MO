@@ -3154,8 +3154,8 @@ const datas = () => [
     datas: [
       {
         depth2: '의료비∙설비',
-        depth3: '설비리스\nBF_M05_p001',
-        depth4: '상품안내',
+        depth3: '설비리스',
+        depth4: '상품안내\nBF_M05_p001',
         depth5: '',
         depth6: '',
         path: '/business/equipment-lease',
@@ -3170,8 +3170,8 @@ const datas = () => [
       },
       {
         depth2: '의료비∙설비',
-        depth3: '설비리스\nBF_M05_l022',
-        depth4: '견적서 진행사항 안내',
+        depth3: '설비리스',
+        depth4: '견적서 진행사항 안내\nBF_M05_l022',
         depth5: '',
         depth6: '',
         path: '/business/BF_M05_l022',
@@ -3181,7 +3181,7 @@ const datas = () => [
       },
       {
         depth2: '의료비∙설비',
-        depth3: '설비리스\nBF_M05_p001',
+        depth3: '설비리스',
         depth4: '팝업',
         depth5: '',
         depth6: '',
@@ -3203,14 +3203,18 @@ const datas = () => [
           },
           {
             date: '2023.08.02',
-            text: '- BF_M05_l001 문구 수정 및 버튼 추가\n- BF_M05_l003 문구 수정\n- BF_M05_l021 팝업 추가',
+            text: '- BF_M05_l001 문구 수정 및 버튼 추가\n- BF_M05_l003 문구 수정\n- BF_M05_l021 팝업 추가\n- BF_M05_l022 팝업 추가',
+          },
+          {
+            date: '2023.08.07',
+            text: 'BF_M05_l022 페이지로 변경하면서 삭제',
           },
         ],
       },
       {
         depth2: '의료비∙설비',
-        depth3: '일반할부\nBF_M06_p001',
-        depth4: '상품안내',
+        depth3: '일반할부',
+        depth4: '상품안내\nBF_M06_p001',
         depth5: '',
         depth6: '',
         path: '/business/general-installment',
@@ -3225,7 +3229,7 @@ const datas = () => [
       },
       {
         depth2: '의료비∙설비',
-        depth3: '일반할부\nBF_M06_p001',
+        depth3: '일반할부',
         depth4: '팝업',
         depth5: '',
         depth6: '',
