@@ -8717,6 +8717,18 @@ export default {
         <CarEmblem code="1001" name="현대" />
       </div>
       <div class="test-section-sub">
+        <h3 class="test-section-sub-title">src 사용시</h3>
+        <!-- Case : 이미지 없을 때 -->
+        <CarEmblem src="" name="현대" />
+        <!-- // Case : 이미지 없을 때 -->
+
+        <!-- Case : 이미지 에러 -->
+        <CarEmblem src="/images/_dummy/.png" name="현대" />
+        <!-- // Case : 이미지 에러 -->
+
+        <CarEmblem src="/images/_dummy/car-emblem.png" name="현대" />
+      </div>
+      <div class="test-section-sub">
         <h3 class="test-section-sub-title">Size Small</h3>
         <!-- Case : code 없을 때 -->
         <CarEmblem code="" name="현대" size="small" />
