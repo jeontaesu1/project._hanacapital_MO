@@ -2146,6 +2146,10 @@ const datas = () => [
             date: '2023.07.28',
             text: '버튼 및 문구 색상 수정',
           },
+          {
+            date: '2023.08.08',
+            text: '컨텐츠 수정 및 케이스 추가',
+          },
         ],
       },
       {
@@ -2221,7 +2225,12 @@ const datas = () => [
         path: '/sales-new-car/unregistered-bonds',
         status: 'end',
         create: '2023.05.12',
-        log: [],
+        log: [
+          {
+            date: '2023.08.08',
+            text: '컨텐츠 간격 수정',
+          },
+        ],
       },
     ],
   },
