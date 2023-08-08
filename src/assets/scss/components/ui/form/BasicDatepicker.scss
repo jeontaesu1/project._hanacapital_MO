@@ -88,6 +88,10 @@
       &:focus-visible {
         outline: 1px dotted;
       }
+
+      &[disabled] {
+        cursor: default;
+      }
     }
     .duet-date__dialog {
       z-index: 999999;
