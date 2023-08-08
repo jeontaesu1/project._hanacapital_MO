@@ -519,8 +519,10 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div
+                        class="flex-box justify-conten-end align-items-start"
+                      >
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
                           <TextButton
                             :underline="true"
@@ -736,8 +738,10 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div
+                        class="flex-box justify-conten-end align-items-start"
+                      >
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
                           <TextButton
                             :underline="true"
@@ -958,8 +962,10 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div
+                        class="flex-box justify-conten-end align-items-start"
+                      >
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
                           <TextButton
                             :underline="true"
@@ -1180,8 +1186,10 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div
+                        class="flex-box justify-conten-end align-items-start"
+                      >
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
                           <TextButton
                             :underline="true"
@@ -1389,8 +1397,10 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div
+                        class="flex-box justify-conten-end align-items-start"
+                      >
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
                           <TextButton
                             :underline="true"
@@ -1657,8 +1667,10 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div
+                        class="flex-box justify-conten-end align-items-start"
+                      >
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
                           <TextButton
                             :underline="true"
@@ -1924,8 +1936,10 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div
+                        class="flex-box justify-conten-end align-items-start"
+                      >
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
                           <TextButton
                             :underline="true"
@@ -2132,8 +2146,10 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div
+                        class="flex-box justify-conten-end align-items-start"
+                      >
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
                           <TextButton
                             :underline="true"
@@ -2357,8 +2373,10 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div
+                        class="flex-box justify-conten-end align-items-start"
+                      >
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
                           <TextButton
                             :underline="true"
@@ -2651,8 +2669,10 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div
+                        class="flex-box justify-conten-end align-items-start"
+                      >
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
                           <TextButton
                             :underline="true"
@@ -2953,8 +2973,10 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div
+                        class="flex-box justify-conten-end align-items-start"
+                      >
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
                           <TextButton
                             :underline="true"
@@ -3250,8 +3272,10 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div
+                        class="flex-box justify-conten-end align-items-start"
+                      >
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
                           <TextButton
                             :underline="true"
@@ -3566,8 +3590,10 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div
+                        class="flex-box justify-conten-end align-items-start"
+                      >
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
                           <TextButton
                             :underline="true"
@@ -3882,8 +3908,10 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div
+                        class="flex-box justify-conten-end align-items-start"
+                      >
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
                           <TextButton
                             :underline="true"
@@ -4143,8 +4171,10 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div
+                        class="flex-box justify-conten-end align-items-start"
+                      >
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
                           <TextButton
                             :underline="true"
@@ -4391,8 +4421,10 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div
+                        class="flex-box justify-conten-end align-items-start"
+                      >
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
                           <TextButton
                             :underline="true"
@@ -4621,8 +4653,10 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div
+                        class="flex-box justify-conten-end align-items-start"
+                      >
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
                           <TextButton
                             :underline="true"
@@ -4898,8 +4932,10 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div
+                        class="flex-box justify-conten-end align-items-start"
+                      >
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
                           <TextButton
                             :underline="true"
@@ -5170,8 +5206,10 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div
+                        class="flex-box justify-conten-end align-items-start"
+                      >
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
                           <TextButton
                             :underline="true"
@@ -5435,8 +5473,10 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div
+                        class="flex-box justify-conten-end align-items-start"
+                      >
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
                           <TextButton
                             :underline="true"
@@ -5731,8 +5771,10 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div
+                        class="flex-box justify-conten-end align-items-start"
+                      >
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
                           <TextButton
                             :underline="true"
