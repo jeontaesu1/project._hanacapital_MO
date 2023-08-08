@@ -16,6 +16,8 @@ import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
+import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
+import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
@@ -35,12 +37,16 @@ export default {
     BasicInput,
     BasicButton,
     FormInvalidMessage,
+    BasicDatepicker,
+    BasicSelect,
     ButtonList,
     ButtonListItem,
   },
   setup() {
     const state = reactive({
       carNumberError: false,
+      dateError: false,
+      baseError: false,
     });
 
     const layer = ref(null);
@@ -85,11 +91,80 @@ export default {
                     id="layerLeaseRentEstimationSystemSaveReviewCarNumberCarNumberInput"
                   />
                 </InputBlockCell>
-                <template v-slot:right>
-                  <BasicButton size="mini" theme="tertiary">확인</BasicButton>
-                </template>
               </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
 
+          <FormListItem
+            titleText="최초등록일"
+            :require="true"
+            target="#layerLeaseRentEstimationSystemSaveReviewCarNumberDateButton"
+          >
+            <FormInvalid :error="state.dateError">
+              <InputBlock :error="state.dateError">
+                <InputBlockCell :flexible="true">
+                  <BasicDatepicker
+                    title="최초등록일"
+                    id="layerLeaseRentEstimationSystemSaveReviewCarNumberDate"
+                    buttonId="layerLeaseRentEstimationSystemSaveReviewCarNumberDateButton"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem
+            titleText="사용본거지"
+            target="#layerLeaseRentEstimationSystemSaveReviewCarNumberBaseButton"
+            :selectOnly="true"
+          >
+            <FormInvalid :error="state.baseError">
+              <InputBlock :error="state.baseError">
+                <InputBlockCell :flexible="true">
+                  <BasicSelect
+                    :option="[
+                      {
+                        value: '1',
+                        text: '부산',
+                      },
+                      {
+                        value: '2',
+                        text: '대구',
+                      },
+                      {
+                        value: '3',
+                        text: '인천',
+                      },
+                      {
+                        value: '4',
+                        text: '광주',
+                      },
+                      {
+                        value: '5',
+                        text: '수원',
+                      },
+                      {
+                        value: '6',
+                        text: '대전',
+                      },
+                      {
+                        value: '7',
+                        text: '안산',
+                      },
+                      {
+                        value: '8',
+                        text: '서울',
+                      },
+                    ]"
+                    buttonTitle="사용본거지 선택하기"
+                    layerTitle="사용본거지를 선택해 주세요"
+                    id="layerLeaseRentEstimationSystemSaveReviewCarNumberBase"
+                    buttonId="layerLeaseRentEstimationSystemSaveReviewCarNumberBaseButton"
+                  />
+                </InputBlockCell>
+              </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
@@ -113,7 +188,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton>확인</BasicButton>
+            <BasicButton>차량번호 등록</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
