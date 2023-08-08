@@ -2319,7 +2319,12 @@ const datas = () => [
         path: '/ui-guide/lease-rent-estimation-system-001',
         status: 'end',
         create: '2023.06.02',
-        log: [],
+        log: [
+          {
+            date: '2023.08.08',
+            text: 'LR_M04_b001 폼 추가 및 버튼 문구 수정',
+          },
+        ],
       },
       {
         depth2: '홈 (저장,심사)\nLR_M04_p001',
