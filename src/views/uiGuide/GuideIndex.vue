@@ -2325,7 +2325,12 @@ const datas = () => [
         path: '/lease-rent-estimation-system/save-review',
         status: 'end',
         create: '2023.06.02',
-        log: [],
+        log: [
+          {
+            date: '2023.08.10',
+            text: '컨텐츠 수정 및 케이스 추가',
+          },
+        ],
       },
       {
         depth2: '홈 (저장,심사)\nLR_M04_p001',
