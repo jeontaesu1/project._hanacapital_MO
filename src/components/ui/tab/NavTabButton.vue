@@ -2,6 +2,8 @@
 import { computed, inject } from 'vue';
 import { RouterLink } from 'vue-router';
 
+import { useUiHeaderStore } from '@/stores/ui/header';
+
 import UiTabButton from '@/components/ui/tab/UiTabButton.vue';
 
 const defaultClassNames = () => ({
@@ -39,6 +41,14 @@ export default {
   setup(props) {
     const styleModule = inject('navTabStyleModule');
     const navTab = inject('navTab', {});
+    const popupLayout = inject('popupLayout', {});
+    const stickyBar = inject('stickyBar', {});
+
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
 
     const customClassNames = computed(() => {
       const { classNames } = props;
@@ -72,6 +82,42 @@ export default {
       return useUiTab.value ? null : tagName === 'button' ? disabled : null;
     });
 
+    const headerH = computed(() => {
+      const popupHead =
+        popupLayout && popupLayout.head && popupLayout.head.value;
+      const popupHeadH = (() => {
+        if (popupHead) {
+          return popupHead.offsetHeight;
+        } else {
+          return 0;
+        }
+      })();
+
+      return popupHeadH || store.ui.header.height;
+    });
+
+    const buttonClick = () => {
+      const { tagName } = props;
+      const stickyBarEl = stickyBar.getElement ? stickyBar.getElement() : null;
+
+      if (tagName === 'RouterLink' || tagName === 'a' || !stickyBarEl) return;
+
+      const html = document.getElementsByTagName('html')[0];
+      const popupBodyEl = popupLayout.body ? popupLayout.body.value : null;
+      const offsetTop =
+        stickyBarEl.offsetTop - (popupBodyEl ? 0 : headerH.value);
+
+      if (popupBodyEl) {
+        if (popupBodyEl.scrollTop > offsetTop) {
+          popupBodyEl.scrollTop = offsetTop;
+        }
+      } else {
+        if (html.scrollTop > offsetTop) {
+          html.scrollTop = offsetTop;
+        }
+      }
+    };
+
     return {
       styleModule,
       customClassNames,
@@ -79,6 +125,7 @@ export default {
       setButtonComponent,
       itemDisabled,
       buttonDisabled,
+      buttonClick,
     };
   },
 };
@@ -97,6 +144,7 @@ export default {
     ]"
     :link="link"
     :disabled="itemDisabled"
+    @click="buttonClick"
   >
     <component
       :is="setButtonComponent"
