@@ -275,7 +275,7 @@ export default {
                     <div :class="$style['step__badge']">STEP 1</div>
                   </div>
                   <div :class="$style['step__text']">
-                    홈페이지/모바일(웹)을 통하여
+                    홈페이지/모바일(웹)을 통하여<br />
                     <strong>재렌트 신청 및 견적을 요청</strong>합니다.<br />
                     (신용조회동의)
                   </div>
@@ -292,7 +292,7 @@ export default {
                     <div :class="$style['step__badge']">STEP 2</div>
                   </div>
                   <div :class="$style['step__text']">
-                    <strong>재렌트 견적 발송 및 재렌트 상담</strong>을
+                    <strong>재렌트 견적 발송 및 재렌트 상담</strong>을<br />
                     진행합니다.
                   </div>
                 </div>
@@ -308,7 +308,7 @@ export default {
                     <div :class="$style['step__badge']">STEP 3</div>
                   </div>
                   <div :class="$style['step__text']">
-                    <strong>서면약정 또는 온라인약정</strong>으로 계약이
+                    <strong>서면약정 또는 온라인약정</strong>으로 계약이<br />
                     진행됩니다.
                   </div>
                 </div>
@@ -661,7 +661,7 @@ export default {
                     <div :class="$style['step__badge']">STEP 1</div>
                   </div>
                   <div :class="$style['step__text']">
-                    반환 일시, 장소 등
+                    반환 일시, 장소 등<br />
                     <strong>반환정보를 등록</strong>합니다.
                   </div>
                 </div>
@@ -677,7 +677,7 @@ export default {
                     <div :class="$style['step__badge']">STEP 2</div>
                   </div>
                   <div :class="$style['step__text']">
-                    지정 일시, 장소에서
+                    지정 일시, 장소에서<br />
                     <strong>자동차를 반환</strong>합니다.
                   </div>
                 </div>
@@ -694,8 +694,8 @@ export default {
                   </div>
                   <div :class="$style['step__text']">
                     지정 평가기관에서
-                    <strong>반환자동차의 상태 및 성능을 평가</strong
-                    >합니다.라인약정으로 계약이 진행됩니다.
+                    <strong>반환자동차의</strong><br />
+                    <strong>상태 및 성능을 평가</strong>합니다.
                   </div>
                   <NoticeText :classNames="{ wrap: 'row-margin-item-small' }"
                     >평가결과에 따라 ‘차량평가정산금’이 발생될 수
@@ -715,7 +715,8 @@ export default {
                   </div>
                   <div :class="$style['step__text']">
                     반환등록 시
-                    <strong>발생 비용을 정산</strong> (입금/지급)합니다.
+                    <strong>발생 비용을 정산</strong><br />
+                    (입금/지급)합니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
@@ -754,7 +755,7 @@ export default {
                     <div :class="$style['step__badge']">STEP 1</div>
                   </div>
                   <div :class="$style['step__text']">
-                    <strong>구매방법</strong>(직접/이전대행)선택 및
+                    <strong>구매방법</strong>(직접/이전대행)선택 및<br />
                     <strong>구매정보</strong>(매도용 인감신청정보)를 입력합니다.
                   </div>
                 </div>
@@ -771,7 +772,8 @@ export default {
                   </div>
                   <div :class="$style['step__text']">
                     구매 등록 시
-                    <strong>발생 비용을 정산</strong> (입금/지급)합니다.
+                    <strong>발생 비용을 정산</strong><br />
+                    (입금/지급)합니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
@@ -786,7 +788,7 @@ export default {
                     <div :class="$style['step__badge']">STEP 3</div>
                   </div>
                   <div :class="$style['step__text']">
-                    차량 명의를 고객명의로
+                    차량 명의를 고객명의로<br />
                     <strong>소유권 이전등록</strong> 합니다.
                   </div>
                 </div>

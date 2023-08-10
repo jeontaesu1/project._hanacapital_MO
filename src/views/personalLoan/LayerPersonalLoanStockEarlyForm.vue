@@ -240,7 +240,7 @@ export default {
                 />
               </InputBlockCell>
               <template v-slot:innerRight>
-                <div class="text-body-3">만원</div>
+                <div class="text-body-3">원</div>
               </template>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>

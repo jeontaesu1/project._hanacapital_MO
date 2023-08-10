@@ -107,7 +107,7 @@ export default {
           theme="quaternary"
           :classNames="{ wrap: 'font-weight-regular' }"
         >
-          대출가능차량 기준안내
+          중도상환신청 안내 및 유의사항
           <template v-slot:rightIcon>
             <IconQuestion />
           </template>

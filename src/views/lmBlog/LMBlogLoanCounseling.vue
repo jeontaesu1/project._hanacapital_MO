@@ -125,7 +125,7 @@ export default {
             size="small"
             :line="true"
             href="tel:0000-0000"
-            >전화상담</BasicButton
+            >직장검색</BasicButton
           >
         </div>
       </div>

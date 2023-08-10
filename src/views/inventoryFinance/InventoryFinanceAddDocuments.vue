@@ -142,7 +142,7 @@ export default {
             />
             <KeyValue margin="regular">
               <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                <KeyValueTitle>대출실행금액</KeyValueTitle>
+                <KeyValueTitle>대출신청금액</KeyValueTitle>
                 <KeyValueText>3,500,000 원</KeyValueText>
               </KeyValueItem>
               <KeyValueItem :classNames="{ item: 'text-body-3' }">
@@ -177,7 +177,7 @@ export default {
             />
             <KeyValue margin="regular">
               <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                <KeyValueTitle>대출실행금액</KeyValueTitle>
+                <KeyValueTitle>대출신청금액</KeyValueTitle>
                 <KeyValueText>3,500,000 원</KeyValueText>
               </KeyValueItem>
               <KeyValueItem :classNames="{ item: 'text-body-3' }">

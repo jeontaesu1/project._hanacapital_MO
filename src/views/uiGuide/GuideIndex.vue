@@ -775,6 +775,10 @@ const datas = () => [
             date: '2023.04.07',
             text: '팝업 추가\n- e하나신용대출(연계) 안내',
           },
+          {
+            date: '2023.08.11',
+            text: 'PF_M01_l002 소득정보 약관 삭제\n PF_M01_l006 전화번호 수정\n PF_M01_l007 버튼 문구 수정\n PF_M01_l009 전화번호 수정',
+          },
         ],
       },
       {
@@ -814,6 +818,10 @@ const datas = () => [
           {
             date: '2023.05.19',
             text: '팝업 추가\n-  아파트 정보 입력',
+          },
+          {
+            date: '2023.08.11',
+            text: 'PF_M02_l001 약관 내용 수정',
           },
         ],
       },
@@ -895,6 +903,10 @@ const datas = () => [
             date: '2023.05.19',
             text: '팝업 추가\n- 우수고객추가대출 안내_상품안내',
           },
+          {
+            date: '2023.08.11',
+            text: 'PF_M05_l003 컨텐츠 및 약관 내용 수정\n PF_M05_l004 컨텐츠 내용 수정',
+          },
         ],
       },
       {
@@ -942,6 +954,10 @@ const datas = () => [
           {
             date: '2023.04.07',
             text: '팝업 추가\n- 연장신청 약관동의\n- 연장신청 계약선택\n- 연장신청 상품 만기현황 확인\n- 중도상환신청 계약선택\n- 중도상환금액 조회\n- 중도상환 신청확인\n- 중도상환 조건 입력',
+          },
+          {
+            date: '2023.08.11',
+            text: 'PF_M07_l006 유의사항 문구 수정\n PF_M07_l007 전화번호 오타 수정\n PF_M07_l009 단위 수정',
           },
         ],
       },
@@ -1093,7 +1109,12 @@ const datas = () => [
         path: '/customer/branch-list',
         status: 'end',
         create: '2023.04.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.11',
+            text: '팝업 문구 수정',
+          },
+        ],
       },
       {
         depth2: '고객센터 ARS안내\nCustomer_M07_p001',
@@ -1362,7 +1383,12 @@ const datas = () => [
         path: '/inventory-finance/early-simulation',
         status: 'end',
         create: '2023.04.14',
-        log: [],
+        log: [
+          {
+            date: '2023.08.11',
+            text: '단계 수정',
+          },
+        ],
       },
       {
         depth2: '중도상환',
@@ -1373,7 +1399,12 @@ const datas = () => [
         path: '/inventory-finance/early-confirm',
         status: 'end',
         create: '2023.04.14',
-        log: [],
+        log: [
+          {
+            date: '2023.08.11',
+            text: '단계 수정',
+          },
+        ],
       },
       {
         depth2: '중도상환',
@@ -1444,7 +1475,12 @@ const datas = () => [
         path: '/inventory-finance/extension-form',
         status: 'end',
         create: '2023.05.26',
-        log: [],
+        log: [
+          {
+            date: '2023.08.11',
+            text: '결제방법 문구 수정',
+          },
+        ],
       },
       {
         depth2: '만기연장',
@@ -1488,7 +1524,12 @@ const datas = () => [
         path: '/inventory-finance/add-documents',
         status: 'end',
         create: '2023.04.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.11',
+            text: '대출신청금액 문구 수정',
+          },
+        ],
       },
       {
         depth2: '종료채권\nIF_M06_p001',
@@ -1563,6 +1604,10 @@ const datas = () => [
             date: '2023.06.23',
             text: '팝업 추가\n- 서류확인',
           },
+          {
+            date: '2023.08.11',
+            text: 'IF_M02_l001 서브타이틀 오타 수정',
+          },
         ],
       },
       {
@@ -1583,6 +1628,10 @@ const datas = () => [
             date: '2023.06.28',
             text: '팝업 추가\n- 필수서류확인',
           },
+          {
+            date: '2023.08.11',
+            text: 'My_M03_l022a2 버튼 문구 수정\n AF_M98_l012 신청인 문구 수정',
+          },
         ],
       },
     ],
@@ -1599,7 +1648,12 @@ const datas = () => [
         path: '/lm-blog/loan-counseling',
         status: 'end',
         create: '2023.04.21',
-        log: [],
+        log: [
+          {
+            date: '2023.08.11',
+            text: '검색 버튼 문구 수정',
+          },
+        ],
       },
       {
         depth2: '대출상담\nLM_M01_p001',
@@ -1785,7 +1839,12 @@ const datas = () => [
         path: '/sales-used-car/home',
         status: 'end',
         create: '2023.05.12',
-        log: [],
+        log: [
+          {
+            date: '2023.08.11',
+            text: '명함 노출 삭제',
+          },
+        ],
       },
       {
         depth2: '신규상담\nUC_M02_p001',
@@ -2229,7 +2288,12 @@ const datas = () => [
         path: '/inventory-finance-check/home',
         status: 'end',
         create: '2023.05.05',
-        log: [],
+        log: [
+          {
+            date: '2023.08.11',
+            text: '버튼 문구 수정',
+          },
+        ],
       },
       {
         depth2: '팝업',
@@ -2240,7 +2304,12 @@ const datas = () => [
         path: '/ui-guide/inventory-finance-check-001',
         status: 'end',
         create: '2023.05.05',
-        log: [],
+        log: [
+          {
+            date: '2023.08.11',
+            text: 'IF_M11_l002 전시위치 필수 값 노출',
+          },
+        ],
       },
     ],
   },
@@ -2335,7 +2404,12 @@ const datas = () => [
         path: '/lease-rent-estimation-system/save-review-approval-request-rent',
         status: 'end',
         create: '2023.06.02',
-        log: [],
+        log: [
+          {
+            date: '2023.08.11',
+            text: '서류등록 타이틀 문구 수정',
+          },
+        ],
       },
       {
         depth2: '홈 (저장,심사)\nLR_M04_p001',
@@ -2346,7 +2420,12 @@ const datas = () => [
         path: '/lease-rent-estimation-system/save-review-approval-request-lease',
         status: 'end',
         create: '2023.06.02',
-        log: [],
+        log: [
+          {
+            date: '2023.08.11',
+            text: '서류등록 타이틀 문구 수정',
+          },
+        ],
       },
       {
         depth2: '신차',
@@ -2853,7 +2932,12 @@ const datas = () => [
         path: '/ui-guide/setting-reset-face-id-001',
         status: 'end',
         create: '2023.04.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.11',
+            text: 'Setting_M06_l001 유의사항 문구 수정 Setting_M06_l003 유의사항 문구 수정',
+          },
+        ],
       },
       {
         depth2: '하나 원사인 이용안내\nSetting_M07_p001',
@@ -3065,6 +3149,10 @@ const datas = () => [
             date: '2023.06.16',
             text: '팝업 추가\n- 한도조회 정보 입력',
           },
+          {
+            date: '2023.08.11',
+            text: 'AF_M06_l001 컨텐츠 구성 변경 및 버튼 추가',
+          },
         ],
       },
       {
@@ -3100,6 +3188,10 @@ const datas = () => [
           {
             date: '2023.05.19',
             text: '팝업 추가\n- 승계신청 완료',
+          },
+          {
+            date: '2023.08.11',
+            text: 'AF_M07_l008 서브타이틀 및 컨텐츠 타이틀 문구 수정',
           },
         ],
       },
@@ -3288,6 +3380,10 @@ const datas = () => [
           {
             date: '2023.06.16',
             text: '팝업 추가\n- 종료된 계약 팝업',
+          },
+          {
+            date: '2023.08.11',
+            text: 'My_M08_l001 오타 및 간격 수정',
           },
         ],
       },
@@ -3501,6 +3597,10 @@ const datas = () => [
             date: '2023.08.02',
             text: '팝업 추가\n- 적합성·적정성 확인서 (프로그레스바 없음)',
           },
+          {
+            date: '2023.08.11',
+            text: 'MY_M03_l022pa2 컨텐츠 타이틀 문구 수정',
+          },
         ],
       },
       {
@@ -3532,6 +3632,10 @@ const datas = () => [
           {
             date: '2023.07.31',
             text: '- BF_M04_l002 띄어쓰기 수정',
+          },
+          {
+            date: '2023.08.11',
+            text: 'My_M07_b007 타이틀 문구 및 간격 수정\n BF_M05_l008 컨텐츠 문구 수정 및 삭제\n BF_M05_l011 장비견적서 삭제\n AF_M98_l003 제조사 로고 삭제 및 파일업로드 추가\n AF_M98_l011 제조사 로고 삭제',
           },
         ],
       },
@@ -3610,7 +3714,12 @@ const datas = () => [
         path: '/ui-guide/my-loan-progress-009',
         status: 'end',
         create: '2023.04.26',
-        log: [],
+        log: [
+          {
+            date: '2023.08.11',
+            text: 'My_M03_l271 컨텐츠 내 문구 수정',
+          },
+        ],
       },
       {
         depth2: '진행상태조회\nMy_M03_p001',
@@ -3621,7 +3730,12 @@ const datas = () => [
         path: '/ui-guide/my-loan-progress-010',
         status: 'end',
         create: '2023.04.26',
-        log: [],
+        log: [
+          {
+            date: '2023.08.11',
+            text: 'My_M03_l282 컨텐츠 내 문구 수정',
+          },
+        ],
       },
       {
         depth2: '진행상태조회\nMy_M03_p001',
@@ -3632,7 +3746,12 @@ const datas = () => [
         path: '/ui-guide/my-loan-progress-011',
         status: 'end',
         create: '2023.04.26',
-        log: [],
+        log: [
+          {
+            date: '2023.08.11',
+            text: 'My_M03_l287 컨텐츠 내 문구 수정',
+          },
+        ],
       },
       {
         depth2: '진행상태조회\nMy_M03_p001',
@@ -3714,7 +3833,12 @@ const datas = () => [
         path: '/my-loan/post-maturity-rental-before',
         status: 'end',
         create: '2023.04.28',
-        log: [],
+        log: [
+          {
+            date: '2023.08.11',
+            text: '스탭 문구 줄바꿈 수정 및 삭제',
+          },
+        ],
       },
       {
         depth2: '만기후처리',
@@ -3725,7 +3849,12 @@ const datas = () => [
         path: '/my-loan/post-maturity-rental-after',
         status: 'end',
         create: '2023.04.28',
-        log: [],
+        log: [
+          {
+            date: '2023.08.11',
+            text: '스탭 문구 줄바꿈 수정 및 삭제',
+          },
+        ],
       },
       {
         depth2: '만기후처리',
@@ -3769,7 +3898,12 @@ const datas = () => [
         path: '/ui-guide/my-loan-post-maturity-lease-001',
         status: 'end',
         create: '2023.04.28',
-        log: [],
+        log: [
+          {
+            date: '2023.08.11',
+            text: 'My_M08_l021 컨텐츠 내 오타 수정',
+          },
+        ],
       },
       {
         depth2: '금리인하요구권신청\nMy_M05_p001',
@@ -3791,7 +3925,12 @@ const datas = () => [
         path: '/ui-guide/my-loan-interest-rate-cut-request-001',
         status: 'end',
         create: '2023.04.28',
-        log: [],
+        log: [
+          {
+            date: '2023.08.11',
+            text: 'My_M05_l002 금융상품 안내 영역 삭제',
+          },
+        ],
       },
       {
         depth2: '청약철회권신청\nMy_M06_p001',

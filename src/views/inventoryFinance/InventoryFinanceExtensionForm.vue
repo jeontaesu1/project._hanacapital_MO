@@ -195,7 +195,7 @@ export default {
         <KeyValue>
           <KeyValueItem>
             <KeyValueTitle>결제방법</KeyValueTitle>
-            <KeyValueText>입금가상계좌</KeyValueText>
+            <KeyValueText>가상계좌입금</KeyValueText>
           </KeyValueItem>
         </KeyValue>
 

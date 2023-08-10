@@ -80,12 +80,7 @@ export default {
         <PageSubText>
           안녕하세요. 김하나님.<br />
           하나캐피탈을 이용해주신 손님께 깊은 감사를 드립니다.<br />
-          <!-- Case : 리스일 경우 노출 -->
           손님께서 이용중인 오토리스의 만기가 다가오고 있습니다.
-          <!--// Case : 리스일 경우 노출 -->
-          <!-- Case : 렌트일 경우 노출 -->
-          손님께서 이용중인 렌터카의 만기가 다가오고 있습니다.
-          <!-- //Case : 렌트일 경우 노출 -->
         </PageSubText>
         <PageSubText>
           만기 1개월 전까지 만기상담 담당자가 배정되어, 만기 상담을 위하여 유선
@@ -101,7 +96,7 @@ export default {
           거래정보확인, 만기처리 절차 및 만기처리방법을 직접 선택 가능합니다.
         </PageSubText>
         <NoticeText :classNames="{ wrap: 'row-margin-item' }">
-          설치방법: 앱스토어 → ”하나원큐캐피탈”검색 → 앱 설치
+          설치방법: 앱스토어 → “하나원큐캐피탈”검색 → 앱 설치
         </NoticeText>
       </PageTextGroup>
 
@@ -592,7 +587,7 @@ export default {
                   <div :class="$style['contents-list__head']">
                     <div :class="$style['contents-list__symbol']">1</div>
                     <div :class="$style['contents-list__title']">
-                      평가 결과에 따라 ‘차량평가정산금‘이 발생될 수 있습니다.
+                      평가 결과에 따라 ‘차량평가정산금’이 발생될 수 있습니다.
                     </div>
                   </div>
                 </li>
@@ -600,7 +595,7 @@ export default {
                   <div :class="$style['contents-list__head']">
                     <div :class="$style['contents-list__symbol']">2</div>
                     <div :class="$style['contents-list__title']">
-                      차량 반환 지연 시에는 ‘반환지연금‘이 추가로 부과됩니다.
+                      차량 반환 지연 시에는 ‘반환지연금’이 추가로 부과됩니다.
                     </div>
                   </div>
                 </li>
@@ -608,7 +603,7 @@ export default {
                   <div :class="$style['contents-list__head']">
                     <div :class="$style['contents-list__symbol']">3</div>
                     <div :class="$style['contents-list__title']">
-                      반환 가능 여부 및 ‘차량평가정산금‘에 관한 세부내용은
+                      반환 가능 여부 및 ‘차량평가정산금’에 관한 세부내용은
                       약관을 참조하시기 바랍니다.
                     </div>
                   </div>
@@ -629,7 +624,7 @@ export default {
                 :class="[$style['basic-list__item'], 'text-body-4 color-black']"
               >
                 <div :class="$style['basic-list__symbol']"></div>
-                <div :class="$style['basic-list__content']">
+                <div :class="[$style['basic-list__content'], 'text-body-3']">
                   만기 1개월전까지 담당자가 만기상담을 위해 연락드릴 예정입니다.
                 </div>
               </li>
@@ -637,7 +632,7 @@ export default {
                 :class="[$style['basic-list__item'], 'text-body-4 color-black']"
               >
                 <div :class="$style['basic-list__symbol']"></div>
-                <div :class="$style['basic-list__content']">
+                <div :class="[$style['basic-list__content'], 'text-body-3']">
                   반환 또는 구매시점에는 확인되지 않은 범칙금, 과태료, 자동차세
                   등을 충당하기 위해 3개월간 예치하는 “해지후보증금”을
                   납부하셔야 합니다.
@@ -647,15 +642,9 @@ export default {
                 :class="[$style['basic-list__item'], 'text-body-4 color-black']"
               >
                 <div :class="$style['basic-list__symbol']"></div>
-                <div :class="$style['basic-list__content']">
+                <div :class="[$style['basic-list__content'], 'text-body-3']">
                   <div>승계(임차인변경)</div>
-                  <ul
-                    :class="[
-                      $style['basic-list'],
-                      $style['basic-list--small-margin'],
-                      'row-margin-item',
-                    ]"
-                  >
+                  <ul :class="[$style['basic-list'], 'row-margin-item']">
                     <li
                       :class="[
                         $style['basic-list__item'],
@@ -663,7 +652,9 @@ export default {
                       ]"
                     >
                       <div :class="$style['basic-list__symbol']">-</div>
-                      <div :class="$style['basic-list__content']">
+                      <div
+                        :class="[$style['basic-list__content'], 'text-body-3']"
+                      >
                         만기일로부터 2개월전 승계신청 원칙<br />
                         (만기일로부터 1개월전 승계불가)
                       </div>
@@ -675,7 +666,9 @@ export default {
                       ]"
                     >
                       <div :class="$style['basic-list__symbol']">-</div>
-                      <div :class="$style['basic-list__content']">
+                      <div
+                        :class="[$style['basic-list__content'], 'text-body-3']"
+                      >
                         YY.MM.DD 이후에는 승계신청이 불가합니다.
                       </div>
                     </li>
@@ -686,7 +679,9 @@ export default {
                       ]"
                     >
                       <div :class="$style['basic-list__symbol']">-</div>
-                      <div :class="$style['basic-list__content']">
+                      <div
+                        :class="[$style['basic-list__content'], 'text-body-3']"
+                      >
                         만기일로부터 3회차 이전 승계 접수 시 승계가능합니다.
                       </div>
                     </li>

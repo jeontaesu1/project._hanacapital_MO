@@ -62,7 +62,7 @@ export default {
   <PageContents>
     <template v-slot:head>
       <StickyBar>
-        <StepProgress :total="4" :current="3" />
+        <StepProgress :total="3" :current="3" />
       </StickyBar>
     </template>
 

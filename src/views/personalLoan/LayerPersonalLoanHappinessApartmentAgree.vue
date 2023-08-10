@@ -638,7 +638,8 @@ export default {
                                 >
                                   <CheckBoxObject />
                                   <CheckBoxLabelText
-                                    >개인(신용)정보 제공 동의</CheckBoxLabelText
+                                    >개인(신용)정보 제공(조회)
+                                    동의</CheckBoxLabelText
                                   >
                                 </CheckBox>
                                 <div :class="$style['agree-list__right']">
@@ -666,7 +667,8 @@ export default {
                                 >
                                   <CheckBoxObject />
                                   <CheckBoxLabelText
-                                    >고유식별정보 제공 동의</CheckBoxLabelText
+                                    >고유식별정보 제공(조회)
+                                    동의</CheckBoxLabelText
                                   >
                                 </CheckBox>
                                 <div :class="$style['agree-list__right']">

@@ -26,7 +26,6 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
-import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 
 export default {
   components: {
@@ -54,7 +53,6 @@ export default {
     ButtonListItem,
     BasicButton,
     CarEmblem,
-    CarThumb,
   },
   setup() {
     const layer = ref(null);
@@ -124,16 +122,14 @@ export default {
                           <p class="text-body-4 font-weight-light">2020년식</p>
                         </div>
                       </div>
-                      <h3 class="text-body-1 font-weight-medium">11가1111</h3>
-                      <p class="text-body-4 color-gray row-margin-small">
+                      <h3 class="text-body-1 font-weight-medium">
                         쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
-                      </p>
-                    </div>
-                    <div class="flex-box__cell flex-box__cell--medium">
-                      <CarThumb src="/images/_dummy/car-thumb.png" />
+                      </h3>
                     </div>
                   </div>
-                  <UnitText rightUnit="원"><strong>741,620</strong></UnitText>
+                  <UnitText rightUnit="원"
+                    ><strong>23,500,000</strong></UnitText
+                  >
                 </BasicBoxHeadLeft>
               </BasicBoxHead>
               <KeyValue margin="regular">
@@ -168,22 +164,26 @@ export default {
                   </KeyValueText>
                 </KeyValueItem>
               </KeyValue>
-
-              <ButtonList
-                :classNames="{
-                  wrap: 'row-margin-contents-small',
-                }"
-              >
-                <ButtonListItem>
-                  <BasicButton size="small" BasicButton>차량 구매</BasicButton>
-                </ButtonListItem>
-              </ButtonList>
             </BasicBox>
           </li>
         </ul>
         <!-- // Case : 결과 있을 경우 -->
       </section>
       <!-- // DD : 검색 후 노출 -->
+      <template v-slot:foot>
+        <ButtonList
+          :classNames="{
+            wrap: 'row-margin-none',
+          }"
+        >
+          <ButtonListItem>
+            <BasicButton :line="true" theme="quaternary">이전</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton>다음</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+      </template>
     </FullPopup>
   </UiLayer>
 </template>

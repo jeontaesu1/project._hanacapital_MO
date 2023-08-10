@@ -17,7 +17,6 @@ import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
-import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
@@ -41,7 +40,6 @@ export default {
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
-    CarEmblem,
     ButtonList,
     ButtonListItem,
     BasicButton,
@@ -372,14 +370,10 @@ export default {
           <BasicBox className="row-margin-item-group">
             <BasicBoxHead>
               <BasicBoxHeadLeft>
-                <div class="flex-box row-margin-mini">
-                  <div class="flex-box__cell">
-                    <CarEmblem code="1001" name="현대" />
-                  </div>
-                  <div class="flex-box__cell flex-box__cell--small">
-                    <p class="text-body-4 font-weight-light">2020년식</p>
-                  </div>
-                </div>
+                <p class="text-body-4 font-weight-light row-margin-mini">
+                  2020년식
+                </p>
+
                 <h3 class="text-body-1 font-weight-medium">123가1234</h3>
                 <p class="text-body-4 color-gray row-margin-small">
                   올 뉴 아반떼/인스퍼레이션

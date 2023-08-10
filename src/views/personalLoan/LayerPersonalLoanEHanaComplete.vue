@@ -106,7 +106,7 @@ export default {
                 <template v-slot:leftIcon>
                   <IconTell />
                 </template>
-                1800-1110
+                1599-7942
               </BasicButton>
             </div>
           </li>

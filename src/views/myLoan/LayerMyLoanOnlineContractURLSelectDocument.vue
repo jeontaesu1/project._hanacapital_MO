@@ -127,34 +127,7 @@ export default {
                   theme="tertiary"
                 >
                   <CheckBoxObject />
-                  <CheckBoxLabelText
-                    >물건수령증(장비견적서 포함)</CheckBoxLabelText
-                  >
-                </CheckBox>
-                <div :class="$style['agree-list__right']">
-                  <button type="button" :class="$style['agree-list__link']">
-                    <span :class="$style['agree-list__link-text']">
-                      상세보기
-                    </span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </BasicBox>
-        </li>
-        <li class="row-margin-item-group">
-          <BasicBox theme="septenary" className="row-margin-item-group">
-            <div :class="$style['agree-list']">
-              <div :class="$style['agree-list__head']">
-                <CheckBox
-                  id="layerMyLoanOnlineContractURLSelectDocumentAgree004"
-                  :classNames="{
-                    wrap: $style['agree-list__checkbox'],
-                  }"
-                  theme="tertiary"
-                >
-                  <CheckBoxObject />
-                  <CheckBoxLabelText>리스물건 점검보고서</CheckBoxLabelText>
+                  <CheckBoxLabelText>물건수령증</CheckBoxLabelText>
                 </CheckBox>
                 <div :class="$style['agree-list__right']">
                   <button type="button" :class="$style['agree-list__link']">

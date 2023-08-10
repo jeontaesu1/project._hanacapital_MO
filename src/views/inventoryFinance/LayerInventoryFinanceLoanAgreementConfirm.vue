@@ -52,7 +52,7 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          재고금육 확약서를<br />
+          재고금융 확약서를<br />
           <strong>확인해주세요</strong>
         </PageMainText>
         <PageSubText>

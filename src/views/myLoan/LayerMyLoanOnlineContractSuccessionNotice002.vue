@@ -35,7 +35,7 @@ export default {
     <ToastPopup>
       <template v-slot:head>
         <ToastPopupHead>
-          <PopupTitle>승계 고객 안내사항</PopupTitle>
+          <PopupTitle>주요 고지사항</PopupTitle>
         </ToastPopupHead>
       </template>
 
@@ -43,7 +43,7 @@ export default {
         :class="[
           $style['basic-list'],
           $style['basic-list--regular'],
-          $style['basic-list--normal-margin'],
+          $style['basic-list--regular-margin'],
         ]"
       >
         <li :class="[$style['basic-list__item'], 'text-body-3', 'color-black']">
