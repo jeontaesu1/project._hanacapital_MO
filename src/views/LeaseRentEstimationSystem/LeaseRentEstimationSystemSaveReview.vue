@@ -504,7 +504,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -728,7 +729,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -962,7 +964,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -1191,9 +1194,10 @@ export default {
                     }"
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
-                    <KeyValueText
-                      >(0.00%) : 000,000원 / (0.00%) : 000,000원</KeyValueText
-                    >
+                    <KeyValueText>
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
+                    </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{
@@ -1420,9 +1424,10 @@ export default {
                     }"
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
-                    <KeyValueText
-                      >(0.00%) : 000,000원 / (0.00%) : 000,000원</KeyValueText
-                    >
+                    <KeyValueText>
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
+                    </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{
@@ -1635,9 +1640,10 @@ export default {
                     }"
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
-                    <KeyValueText
-                      >(0.00%) : 000,000원 / (0.00%) : 000,000원</KeyValueText
-                    >
+                    <KeyValueText>
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
+                    </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{
@@ -1931,7 +1937,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -2225,7 +2232,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -2460,7 +2468,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -2712,7 +2721,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -3031,7 +3041,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -3360,7 +3371,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -3682,7 +3694,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -4014,7 +4027,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -4357,7 +4371,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -4649,7 +4664,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -4927,7 +4943,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -5184,7 +5201,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -5483,7 +5501,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -5774,7 +5793,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -6058,7 +6078,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -6370,7 +6391,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
