@@ -2352,7 +2352,12 @@ const datas = () => [
         path: '/lease-rent-estimation-system/save-review-approval-request-rent',
         status: 'end',
         create: '2023.06.02',
-        log: [],
+        log: [
+          {
+            date: '2023.08.10',
+            text: '국산/수입차 케이스 추가',
+          },
+        ],
       },
       {
         depth2: '홈 (저장,심사)\nLR_M04_p001',

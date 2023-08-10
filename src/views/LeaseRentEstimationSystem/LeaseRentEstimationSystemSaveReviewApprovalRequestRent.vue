@@ -24,6 +24,8 @@ import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import FormHelpText from '@/components/ui/form/FormHelpText.vue';
+import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
+import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 
 import IconLink from '@/assets/images/icon/link.svg?component';
 import IconCheckDocument from '@/assets/images/icon/check-document.svg?component';
@@ -50,6 +52,8 @@ export default {
     FormInvalid,
     FormInvalidMessage,
     FormHelpText,
+    CarEmblem,
+    BasicSelect,
     IconLink,
     IconCheckDocument,
   },
@@ -62,6 +66,10 @@ export default {
       bankError: false,
       accountError: false,
       domesticBankNameError: false,
+      dealer001Errorealer001Error: false,
+      dealer002Erroraler002Error: false,
+      agency001Error: false,
+      agency002Error: false,
     });
 
     const store = {
@@ -255,8 +263,37 @@ export default {
       </section>
 
       <section class="row-margin-container-medium">
-        <h3 class="text-title-2 row-margin-contents">판매점 정보</h3>
+        <h3 class="text-title-2">판매점 정보</h3>
+
+        <BasicBox className="row-margin-contents">
+          <KeyValue>
+            <KeyValueItem :classNames="{ item: 'text-body-3' }">
+              <KeyValueTitle>브랜드</KeyValueTitle>
+              <KeyValueText>
+                <!-- Case : '국산차'일 경우 -->
+                <div class="flex-box justify-conten-end">
+                  <div class="flex-box__cell">
+                    <CarEmblem code="1001" name="현대" />
+                  </div>
+                  <div class="flex-box__cell flex-box__cell--small">현대</div>
+                </div>
+                <!-- // Case : '국산차'일 경우 -->
+
+                <!-- Case : '수입차'일 경우 -->
+                <div class="flex-box justify-conten-end">
+                  <div class="flex-box__cell">
+                    <CarEmblem code="2001" name="벤츠" />
+                  </div>
+                  <div class="flex-box__cell flex-box__cell--small">벤츠</div>
+                </div>
+                <!-- // Case : '수입차'일 경우 -->
+              </KeyValueText>
+            </KeyValueItem>
+          </KeyValue>
+        </BasicBox>
+
         <FormList>
+          <!-- Case : '국산차', '국산차(특판출고)'일 경우 -->
           <FormListItem
             titleText="판매대리점"
             target="#leaseRentEstimationSystemSaveReviewApprovalRequestRentStoreSearch"
@@ -278,8 +315,174 @@ export default {
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
+          <!-- // Case : '국산차', '국산차(특판출고)'일 경우 -->
+
+          <!-- Case : '수입차'일 경우 -->
+          <FormListItem
+            titleText="딜러사"
+            target="#leaseRentEstimationSystemSaveReviewApprovalRequestRentDealer001Button"
+            :selectOnly="true"
+          >
+            <FormInvalid :error="state.dealer001Error">
+              <InputBlock :error="state.dealer001Error">
+                <InputBlockCell :flexible="true">
+                  <BasicSelect
+                    :option="[
+                      {
+                        value: '1',
+                        text: '한성자동차㈜',
+                      },
+                      {
+                        value: '2',
+                        text: '주식회사진모터스',
+                      },
+                      {
+                        value: '3',
+                        text: '중앙모터스㈜',
+                      },
+                      {
+                        value: '4',
+                        text: '교학모터스㈜',
+                      },
+                      {
+                        value: '5',
+                        text: '경남자동차판매㈜',
+                      },
+                    ]"
+                    buttonTitle="딜러사 선택하기"
+                    layerTitle="딜러사를 선택해 주세요"
+                    id="leaseRentEstimationSystemSaveReviewApprovalRequestRentDealer001"
+                    buttonId="leaseRentEstimationSystemSaveReviewApprovalRequestRentDealer001Button"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem
+            titleText="전시장"
+            titleOptionalText="(판매대리점)"
+            target="#leaseRentEstimationSystemSaveReviewApprovalRequestRentAgency001Button"
+            :selectOnly="true"
+            :disabled="true"
+          >
+            <FormInvalid :error="state.agency001Error">
+              <InputBlock :error="state.agency001Error" :disabled="true">
+                <InputBlockCell :flexible="true">
+                  <BasicSelect
+                    :option="[
+                      {
+                        value: '1',
+                        text: '강남지점',
+                      },
+                      {
+                        value: '2',
+                        text: '서초지점',
+                      },
+                      {
+                        value: '3',
+                        text: '잠실지점',
+                      },
+                    ]"
+                    buttonTitle="전시장 선택하기"
+                    layerTitle="전시장을 선택해 주세요"
+                    id="leaseRentEstimationSystemSaveReviewApprovalRequestRentAgency001"
+                    buttonId="leaseRentEstimationSystemSaveReviewApprovalRequestRentAgency001Button"
+                    :disabled="true"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+          <!-- // Case : '수입차'일 경우 -->
+
+          <!-- Case : '수입차_제휴사'인 경우 -->
+          <FormListItem
+            titleText="딜러사"
+            target="#leaseRentEstimationSystemSaveReviewApprovalRequestRentDealer002Button"
+            :selectOnly="true"
+            :disabled="true"
+          >
+            <FormInvalid :error="state.dealer002Error">
+              <InputBlock :error="state.dealer002Error" :disabled="true">
+                <InputBlockCell :flexible="true">
+                  <BasicSelect
+                    :option="[
+                      {
+                        value: '1',
+                        text: '한성자동차㈜',
+                      },
+                      {
+                        value: '2',
+                        text: '주식회사진모터스',
+                      },
+                      {
+                        value: '3',
+                        text: '중앙모터스㈜',
+                      },
+                      {
+                        value: '4',
+                        text: '교학모터스㈜',
+                      },
+                      {
+                        value: '5',
+                        text: '경남자동차판매㈜',
+                      },
+                    ]"
+                    buttonTitle="딜러사 선택하기"
+                    layerTitle="딜러사를 선택해 주세요"
+                    id="leaseRentEstimationSystemSaveReviewApprovalRequestRentDealer002"
+                    buttonId="leaseRentEstimationSystemSaveReviewApprovalRequestRentDealer002Button"
+                    defaultValue="1"
+                    :disabled="true"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem
+            titleText="전시장"
+            titleOptionalText="(판매대리점)"
+            target="#leaseRentEstimationSystemSaveReviewApprovalRequestRentAgency002Button"
+            :selectOnly="true"
+          >
+            <FormInvalid :error="state.agency002Error">
+              <InputBlock :error="state.agency002Error">
+                <InputBlockCell :flexible="true">
+                  <BasicSelect
+                    :option="[
+                      {
+                        value: '1',
+                        text: '강남지점',
+                      },
+                      {
+                        value: '2',
+                        text: '서초지점',
+                      },
+                      {
+                        value: '3',
+                        text: '잠실지점',
+                      },
+                    ]"
+                    buttonTitle="전시장 선택하기"
+                    layerTitle="전시장을 선택해 주세요"
+                    id="leaseRentEstimationSystemSaveReviewApprovalRequestRentAgency002"
+                    buttonId="leaseRentEstimationSystemSaveReviewApprovalRequestRentAgency002Button"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+          <!-- // Case : '수입차_제휴사'인 경우 -->
+
           <FormListItem
             titleText="판매사원"
+            titleOptionalText="(선택)"
             target="#leaseRentEstimationSystemSaveReviewApprovalRequestRentSalespersonSearch"
           >
             <FormInvalid :error="state.salespersonError">
@@ -309,63 +512,16 @@ export default {
         </BasicBox>
       </section>
 
-      <section class="row-margin-container-medium">
-        <h3 class="text-title-2 row-margin-contents">차량 정보</h3>
-        <FormList>
-          <FormListItem
-            titleText="탁송업체"
-            target="#leaseRentEstimationSystemSaveReviewApprovalRequestRentConsignmentCompany"
-            :disabled="true"
-          >
-            <FormInvalid :error="state.consignmentCompanyNameError">
-              <InputBlock
-                :error="state.consignmentCompanyNameError"
-                :disabled="true"
-              >
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    title="탁송업체"
-                    id="leaseRentEstimationSystemSaveReviewApprovalRequestRentConsignmentCompany"
-                    :disabled="true"
-                    defaultValue="㈜샘솔"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-          <FormListItem
-            titleText="등록업체"
-            target="#leaseRentEstimationSystemSaveReviewApprovalRequestRentRegistrationCompanyName"
-            :disabled="true"
-          >
-            <FormInvalid :error="state.registrationCompanyNameError">
-              <InputBlock
-                :error="state.registrationCompanyNameError"
-                :disabled="true"
-              >
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    title="등록업체"
-                    id="leaseRentEstimationSystemSaveReviewApprovalRequestRentRegistrationCompanyName"
-                    :disabled="true"
-                    defaultValue="㈜하나캐피탈"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-        </FormList>
-      </section>
-
+      <!-- Case : 국산차(특판출고)일 경우 미노출 -->
       <section class="row-margin-container-medium">
         <div class="flex-box row-margin-contents">
           <div class="flex-box__cell">
-            <h3 class="text-title-2">차량대금 송금</h3>
-          </div>
-          <div class="flex-box__cell flex-box__cell--small">
-            <div class="text-body-3">(선택)</div>
+            <!-- Case : 국산차일 경우 -->
+            <h3 class="text-title-2">계약금 송금계좌</h3>
+            <!-- // Case : 국산차일 경우 -->
+            <!-- Case : 수입차일 경우 -->
+            <h3 class="text-title-2">차량대금 송금계좌</h3>
+            <!-- // Case : 수입차일 경우 -->
           </div>
         </div>
 
@@ -435,13 +591,20 @@ export default {
       </section>
 
       <section class="row-margin-container-medium">
-        <div class="flex-box row-margin-contents">
-          <div class="flex-box__cell">
-            <h3 class="text-title-2">서류등록</h3>
+        <div class="row-margin-contents">
+          <div class="flex-box">
+            <div class="flex-box__cell">
+              <h3 class="text-title-2">서류등록</h3>
+            </div>
+            <div class="flex-box__cell flex-box__cell--small">
+              <div class="text-body-3">(선택)</div>
+            </div>
           </div>
-          <div class="flex-box__cell flex-box__cell--small">
-            <div class="text-body-3">(선택)</div>
-          </div>
+          <p
+            class="text-body-3 font-weight-light color-gray-tertiary row-margin-small"
+          >
+            매매계약서, 계좌확인증을 등록해 주세요.
+          </p>
         </div>
 
         <!-- Case : : 등록 전 -->
@@ -481,6 +644,7 @@ export default {
         </BasicBox>
         <!-- //Case : : 등록 후 -->
       </section>
+      <!-- // Case : 국산차(특판출고)일 경우 미노출 -->
     </div>
 
     <template v-slot:foot>
