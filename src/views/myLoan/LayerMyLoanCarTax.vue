@@ -17,6 +17,7 @@ import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
 
@@ -39,6 +40,7 @@ export default {
     FormInvalidMessage,
     InputBlock,
     InputBlockCell,
+    BasicButton,
     BasicHr,
     BasicDatepicker,
     LayerMyLoanCarTaxDetail,
@@ -113,6 +115,10 @@ export default {
             </FormInvalid>
           </FormListItem>
         </FormList>
+
+        <div class="row-margin-contents-group">
+          <BasicButton :line="true">조회</BasicButton>
+        </div>
       </div>
 
       <BasicHr className="row-margin-container-medium" />

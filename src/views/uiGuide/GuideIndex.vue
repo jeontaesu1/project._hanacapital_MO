@@ -1630,7 +1630,7 @@ const datas = () => [
           },
           {
             date: '2023.08.11',
-            text: 'My_M03_l022a2 버튼 문구 수정\n AF_M98_l012 신청인 문구 수정',
+            text: 'My_M03_l022a2 버튼 문구 수정\n AF_M98_l012 신청인 문구 수정\n AF_M98_l013 생년월일 삭제',
           },
         ],
       },
@@ -3484,7 +3484,10 @@ const datas = () => [
         path: '/ui-guide/my-loan-penalty-001',
         status: 'end',
         create: '2023.04.21',
-        log: [{ date: '2023.05.19', text: '화면 페이지에서 팝업으로 변경' }],
+        log: [
+          { date: '2023.05.19', text: '화면 페이지에서 팝업으로 변경' },
+          { date: '2023.08.11', text: 'My_M01_p006 조회 버튼 추가' },
+        ],
       },
       {
         depth2: '자동차세',
@@ -3495,7 +3498,10 @@ const datas = () => [
         path: '/ui-guide/my-loan-car-tax-001',
         status: 'end',
         create: '2023.04.21',
-        log: [{ date: '2023.05.19', text: '화면 페이지에서 팝업으로 변경' }],
+        log: [
+          { date: '2023.05.19', text: '화면 페이지에서 팝업으로 변경' },
+          { date: '2023.08.11', text: 'My_M01_p007 조회 버튼 추가' },
+        ],
       },
       {
         depth2: '지정운전자',
