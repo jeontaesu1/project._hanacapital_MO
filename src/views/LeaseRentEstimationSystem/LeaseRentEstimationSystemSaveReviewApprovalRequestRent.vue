@@ -66,8 +66,8 @@ export default {
       bankError: false,
       accountError: false,
       domesticBankNameError: false,
-      dealer001Errorealer001Error: false,
-      dealer002Erroraler002Error: false,
+      dealer001Error: false,
+      dealer002Error: false,
       agency001Error: false,
       agency002Error: false,
     });
