@@ -263,7 +263,7 @@ export default {
       </section>
 
       <section class="row-margin-container-medium">
-        <h3 class="text-title-2">판매점 정보</h3>
+        <h3 class="text-title-2 row-margin-contents">판매점 정보</h3>
 
         <BasicBox className="row-margin-contents">
           <KeyValue>
@@ -273,7 +273,10 @@ export default {
                 <!-- Case : '국산차'일 경우 -->
                 <div class="flex-box justify-conten-end">
                   <div class="flex-box__cell">
-                    <CarEmblem code="1001" name="현대" />
+                    <CarEmblem
+                      src="/images/_dummy/car-emblem.png"
+                      name="현대"
+                    />
                   </div>
                   <div class="flex-box__cell flex-box__cell--small">현대</div>
                 </div>
@@ -282,7 +285,10 @@ export default {
                 <!-- Case : '수입차'일 경우 -->
                 <div class="flex-box justify-conten-end">
                   <div class="flex-box__cell">
-                    <CarEmblem code="2001" name="벤츠" />
+                    <CarEmblem
+                      src="/images/_dummy/car-emblem.png"
+                      name="벤츠"
+                    />
                   </div>
                   <div class="flex-box__cell flex-box__cell--small">벤츠</div>
                 </div>
@@ -569,6 +575,7 @@ export default {
               <FormHelpText>-없이 숫자만 입력해 주세요.</FormHelpText>
             </FormInvalid>
           </FormListItem>
+
           <FormListItem
             titleText="예금주명"
             target="#leaseRentEstimationSystemSaveReviewApprovalRequestRentDomesticBankName"

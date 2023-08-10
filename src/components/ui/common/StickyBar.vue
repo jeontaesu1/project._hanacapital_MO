@@ -8,6 +8,7 @@ import {
   onBeforeUnmount,
   nextTick,
   inject,
+  provide,
 } from 'vue';
 
 import { useUiScrollBlockStore } from '@/stores/ui/scrollBlock';
@@ -184,6 +185,10 @@ export default {
       }
     };
 
+    const getElement = () => {
+      return wrap.value;
+    };
+
     onBeforeMount(() => {
       if (uiLayer && uiLayer.stickyBar) {
         uiLayer.stickyBar.value = {
@@ -222,6 +227,10 @@ export default {
       if (popupBody) {
         popupBody.removeEventListener('scroll', scroll);
       }
+    });
+
+    provide('stickyBar', {
+      getElement,
     });
 
     return {
