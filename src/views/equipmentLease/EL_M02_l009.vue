@@ -353,8 +353,8 @@ export default {
               검수자 및 리스 이용자 김하나 (인)
             </p>
             <p class="text-body-4 align-right row-margin-item-group">
-              서울시 강남구 테헤란로 127, 하나금융그룹<br />
-              강남사옥 17-20층 하나캐피탈주식회사<br />
+              서울시 강남구 테헤란로 127, 하나금융그룹 강남사옥 17-20층
+              하나캐피탈주식회사<br />
               대표이사 박승오
             </p>
           </div>
