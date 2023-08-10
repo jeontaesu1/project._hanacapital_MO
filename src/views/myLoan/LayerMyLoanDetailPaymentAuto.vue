@@ -98,7 +98,7 @@ export default {
                 <KeyValueText>자동이체</KeyValueText>
               </KeyValueItem>
               <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                <KeyValueTitle>결제방법</KeyValueTitle>
+                <KeyValueTitle>계좌정보</KeyValueTitle>
                 <KeyValueText>
                   <div class="flex-box">
                     <div class="flex-box__cell flex-1">
