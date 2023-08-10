@@ -526,15 +526,21 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div class="flex-box align-items-start">
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
-                          <TextButton
-                            :underline="true"
-                            theme="secondary"
-                            :block="true"
-                            >기록</TextButton
+                          <div
+                            :class="['flex-box', $style['text-button-area']]"
                           >
+                            <div class="flex-box__cell">
+                              <TextButton
+                                :underline="true"
+                                theme="secondary"
+                                :block="true"
+                                >기록</TextButton
+                              >
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </KeyValueText>
@@ -750,15 +756,21 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div class="flex-box align-items-start">
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
-                          <TextButton
-                            :underline="true"
-                            theme="secondary"
-                            :block="true"
-                            >기록</TextButton
+                          <div
+                            :class="['flex-box', $style['text-button-area']]"
                           >
+                            <div class="flex-box__cell">
+                              <TextButton
+                                :underline="true"
+                                theme="secondary"
+                                :block="true"
+                                >기록</TextButton
+                              >
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </KeyValueText>
@@ -984,15 +996,21 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div class="flex-box align-items-start">
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
-                          <TextButton
-                            :underline="true"
-                            theme="secondary"
-                            :block="true"
-                            >기록</TextButton
+                          <div
+                            :class="['flex-box', $style['text-button-area']]"
                           >
+                            <div class="flex-box__cell">
+                              <TextButton
+                                :underline="true"
+                                theme="secondary"
+                                :block="true"
+                                >기록</TextButton
+                              >
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </KeyValueText>
@@ -1214,15 +1232,21 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div class="flex-box align-items-start">
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
-                          <TextButton
-                            :underline="true"
-                            theme="secondary"
-                            :block="true"
-                            >기록</TextButton
+                          <div
+                            :class="['flex-box', $style['text-button-area']]"
                           >
+                            <div class="flex-box__cell">
+                              <TextButton
+                                :underline="true"
+                                theme="secondary"
+                                :block="true"
+                                >기록</TextButton
+                              >
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </KeyValueText>
@@ -1443,15 +1467,21 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div class="flex-box align-items-start">
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
-                          <TextButton
-                            :underline="true"
-                            theme="secondary"
-                            :block="true"
-                            >기록</TextButton
+                          <div
+                            :class="['flex-box', $style['text-button-area']]"
                           >
+                            <div class="flex-box__cell">
+                              <TextButton
+                                :underline="true"
+                                theme="secondary"
+                                :block="true"
+                                >기록</TextButton
+                              >
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </KeyValueText>
@@ -1658,15 +1688,21 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div class="flex-box align-items-start">
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
-                          <TextButton
-                            :underline="true"
-                            theme="secondary"
-                            :block="true"
-                            >기록</TextButton
+                          <div
+                            :class="['flex-box', $style['text-button-area']]"
                           >
+                            <div class="flex-box__cell">
+                              <TextButton
+                                :underline="true"
+                                theme="secondary"
+                                :block="true"
+                                >기록</TextButton
+                              >
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </KeyValueText>
@@ -1953,15 +1989,21 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div class="flex-box align-items-start">
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
-                          <TextButton
-                            :underline="true"
-                            theme="secondary"
-                            :block="true"
-                            >기록</TextButton
+                          <div
+                            :class="['flex-box', $style['text-button-area']]"
                           >
+                            <div class="flex-box__cell">
+                              <TextButton
+                                :underline="true"
+                                theme="secondary"
+                                :block="true"
+                                >기록</TextButton
+                              >
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </KeyValueText>
@@ -2247,15 +2289,21 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div class="flex-box align-items-start">
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
-                          <TextButton
-                            :underline="true"
-                            theme="secondary"
-                            :block="true"
-                            >기록</TextButton
+                          <div
+                            :class="['flex-box', $style['text-button-area']]"
                           >
+                            <div class="flex-box__cell">
+                              <TextButton
+                                :underline="true"
+                                theme="secondary"
+                                :block="true"
+                                >기록</TextButton
+                              >
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </KeyValueText>
@@ -2482,15 +2530,21 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div class="flex-box align-items-start">
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
-                          <TextButton
-                            :underline="true"
-                            theme="secondary"
-                            :block="true"
-                            >기록</TextButton
+                          <div
+                            :class="['flex-box', $style['text-button-area']]"
                           >
+                            <div class="flex-box__cell">
+                              <TextButton
+                                :underline="true"
+                                theme="secondary"
+                                :block="true"
+                                >기록</TextButton
+                              >
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </KeyValueText>
@@ -2734,15 +2788,21 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div class="flex-box align-items-start">
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
-                          <TextButton
-                            :underline="true"
-                            theme="secondary"
-                            :block="true"
-                            >기록</TextButton
+                          <div
+                            :class="['flex-box', $style['text-button-area']]"
                           >
+                            <div class="flex-box__cell">
+                              <TextButton
+                                :underline="true"
+                                theme="secondary"
+                                :block="true"
+                                >기록</TextButton
+                              >
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </KeyValueText>
@@ -3053,15 +3113,21 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div class="flex-box align-items-start">
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
-                          <TextButton
-                            :underline="true"
-                            theme="secondary"
-                            :block="true"
-                            >기록</TextButton
+                          <div
+                            :class="['flex-box', $style['text-button-area']]"
                           >
+                            <div class="flex-box__cell">
+                              <TextButton
+                                :underline="true"
+                                theme="secondary"
+                                :block="true"
+                                >기록</TextButton
+                              >
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </KeyValueText>
@@ -3382,15 +3448,21 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div class="flex-box align-items-start">
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
-                          <TextButton
-                            :underline="true"
-                            theme="secondary"
-                            :block="true"
-                            >기록</TextButton
+                          <div
+                            :class="['flex-box', $style['text-button-area']]"
                           >
+                            <div class="flex-box__cell">
+                              <TextButton
+                                :underline="true"
+                                theme="secondary"
+                                :block="true"
+                                >기록</TextButton
+                              >
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </KeyValueText>
@@ -3704,15 +3776,21 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div class="flex-box align-items-start">
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
-                          <TextButton
-                            :underline="true"
-                            theme="secondary"
-                            :block="true"
-                            >기록</TextButton
+                          <div
+                            :class="['flex-box', $style['text-button-area']]"
                           >
+                            <div class="flex-box__cell">
+                              <TextButton
+                                :underline="true"
+                                theme="secondary"
+                                :block="true"
+                                >기록</TextButton
+                              >
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </KeyValueText>
@@ -4036,15 +4114,21 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div class="flex-box align-items-start">
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
-                          <TextButton
-                            :underline="true"
-                            theme="secondary"
-                            :block="true"
-                            >기록</TextButton
+                          <div
+                            :class="['flex-box', $style['text-button-area']]"
                           >
+                            <div class="flex-box__cell">
+                              <TextButton
+                                :underline="true"
+                                theme="secondary"
+                                :block="true"
+                                >기록</TextButton
+                              >
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </KeyValueText>
@@ -4371,15 +4455,21 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div class="flex-box align-items-start">
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
-                          <TextButton
-                            :underline="true"
-                            theme="secondary"
-                            :block="true"
-                            >기록</TextButton
+                          <div
+                            :class="['flex-box', $style['text-button-area']]"
                           >
+                            <div class="flex-box__cell">
+                              <TextButton
+                                :underline="true"
+                                theme="secondary"
+                                :block="true"
+                                >기록</TextButton
+                              >
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </KeyValueText>
@@ -4651,15 +4741,21 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div class="flex-box align-items-start">
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
-                          <TextButton
-                            :underline="true"
-                            theme="secondary"
-                            :block="true"
-                            >기록</TextButton
+                          <div
+                            :class="['flex-box', $style['text-button-area']]"
                           >
+                            <div class="flex-box__cell">
+                              <TextButton
+                                :underline="true"
+                                theme="secondary"
+                                :block="true"
+                                >기록</TextButton
+                              >
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </KeyValueText>
@@ -4918,15 +5014,21 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div class="flex-box align-items-start">
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
-                          <TextButton
-                            :underline="true"
-                            theme="secondary"
-                            :block="true"
-                            >기록</TextButton
+                          <div
+                            :class="['flex-box', $style['text-button-area']]"
                           >
+                            <div class="flex-box__cell">
+                              <TextButton
+                                :underline="true"
+                                theme="secondary"
+                                :block="true"
+                                >기록</TextButton
+                              >
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </KeyValueText>
@@ -5164,15 +5266,21 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div class="flex-box align-items-start">
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
-                          <TextButton
-                            :underline="true"
-                            theme="secondary"
-                            :block="true"
-                            >기록</TextButton
+                          <div
+                            :class="['flex-box', $style['text-button-area']]"
                           >
+                            <div class="flex-box__cell">
+                              <TextButton
+                                :underline="true"
+                                theme="secondary"
+                                :block="true"
+                                >기록</TextButton
+                              >
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </KeyValueText>
@@ -5460,15 +5568,21 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div class="flex-box align-items-start">
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
-                          <TextButton
-                            :underline="true"
-                            theme="secondary"
-                            :block="true"
-                            >기록</TextButton
+                          <div
+                            :class="['flex-box', $style['text-button-area']]"
                           >
+                            <div class="flex-box__cell">
+                              <TextButton
+                                :underline="true"
+                                theme="secondary"
+                                :block="true"
+                                >기록</TextButton
+                              >
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </KeyValueText>
@@ -5751,15 +5865,21 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div class="flex-box align-items-start">
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
-                          <TextButton
-                            :underline="true"
-                            theme="secondary"
-                            :block="true"
-                            >기록</TextButton
+                          <div
+                            :class="['flex-box', $style['text-button-area']]"
                           >
+                            <div class="flex-box__cell">
+                              <TextButton
+                                :underline="true"
+                                theme="secondary"
+                                :block="true"
+                                >기록</TextButton
+                              >
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </KeyValueText>
@@ -6035,15 +6155,21 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div class="flex-box align-items-start">
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
-                          <TextButton
-                            :underline="true"
-                            theme="secondary"
-                            :block="true"
-                            >기록</TextButton
+                          <div
+                            :class="['flex-box', $style['text-button-area']]"
                           >
+                            <div class="flex-box__cell">
+                              <TextButton
+                                :underline="true"
+                                theme="secondary"
+                                :block="true"
+                                >기록</TextButton
+                              >
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </KeyValueText>
@@ -6347,15 +6473,21 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box justify-conten-end">
-                        <div class="flex-box__cell">메모 내용</div>
+                      <div class="flex-box align-items-start">
+                        <div class="flex-box__cell flex-1">메모 내용</div>
                         <div class="flex-box__cell">
-                          <TextButton
-                            :underline="true"
-                            theme="secondary"
-                            :block="true"
-                            >기록</TextButton
+                          <div
+                            :class="['flex-box', $style['text-button-area']]"
                           >
+                            <div class="flex-box__cell">
+                              <TextButton
+                                :underline="true"
+                                theme="secondary"
+                                :block="true"
+                                >기록</TextButton
+                              >
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </KeyValueText>

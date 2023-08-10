@@ -80,7 +80,6 @@ export default {
       businessNumberError001: false,
       businessNumberError002: false,
       corporateName001Error: false,
-      corporateName002Error: false,
       corporateNumberError: false,
       dateError: false,
       companyError: false,
@@ -361,7 +360,23 @@ export default {
                     :option="[
                       {
                         value: '1',
-                        text: '123-12-12345',
+                        text: '123-45-67890',
+                      },
+                      {
+                        value: '2',
+                        text: '222-45-67890',
+                      },
+                      {
+                        value: '3',
+                        text: '333-45-67890',
+                      },
+                      {
+                        value: '4',
+                        text: '444-45-67890',
+                      },
+                      {
+                        value: '5',
+                        text: '555-45-67890',
                       },
                     ]"
                     buttonTitle="사업자번호 선택하기"
@@ -398,7 +413,6 @@ export default {
             <!-- // Case : [사업자번호 - 직접입력] 선택 시 노출 -->
           </FormListItem>
 
-          <!-- Case : [사업자번호 - 선택입력] 선택 시 노출 -->
           <FormListItem
             titleText="회사명"
             target="#salesNewCarCounselingCorporateName001"
@@ -411,35 +425,13 @@ export default {
                     title="회사명"
                     id="salesNewCarCounselingCorporateName001"
                     :disabled="true"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-          <!-- // Case : [사업자번호 - 선택입력] 선택 시 노출 -->
-
-          <!-- Case : [사업자번호 - 직접입력] 선택 시 노출 -->
-          <FormListItem
-            titleText="회사명"
-            target="#salesNewCarCounselingCorporateName002"
-            :disabled="true"
-          >
-            <FormInvalid :error="state.corporateName002Error">
-              <InputBlock :error="state.corporateName002Error" :disabled="true">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    title="회사명"
-                    id="salesNewCarCounselingCorporateName002"
                     defaultValue="하나캐피탈"
-                    :disabled="true"
                   />
                 </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
-          <!-- // Case : [사업자번호 - 직접입력] 선택 시 노출 -->
 
           <FormListItem
             titleText="설립일자"
@@ -460,9 +452,7 @@ export default {
               <FormHelpText>예)20230728</FormHelpText>
             </FormInvalid>
           </FormListItem>
-          <!-- // Case : [고객구분 - 개인사업자, 법인] 선택 시 노출 -->
 
-          <!-- Case : [고객구분 - 법인] 선택 시 노출 -->
           <FormListItem
             titleText="법인등록번호"
             target="#salesNewCarCounselingCorporateNumber"
@@ -481,7 +471,7 @@ export default {
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
-          <!-- // Case : [고객구분 - 법인] 선택 시 노출 -->
+          <!-- // Case : [고객구분 - 개인사업자, 법인] 선택 시 노출 -->
         </FormList>
       </section>
 
@@ -1012,50 +1002,53 @@ export default {
           </FormListItem>
         </FormList>
       </section>
-    </div>
 
-    <section class="row-margin-container-medium">
-      <div class="flex-box row-margin-contents">
-        <div class="flex-box__cell">
-          <h3 class="text-title-2">서류등록</h3>
+      <section class="row-margin-container-medium">
+        <div class="flex-box row-margin-contents">
+          <div class="flex-box__cell">
+            <h3 class="text-title-2">서류등록</h3>
+          </div>
+          <div class="flex-box__cell flex-box__cell--small">
+            <div class="text-body-3">(선택)</div>
+          </div>
         </div>
-        <div class="flex-box__cell flex-box__cell--small">
-          <div class="text-body-3">(선택)</div>
-        </div>
-      </div>
 
-      <!-- Case : 등록 전 -->
-      <button type="button" :class="[$style['add-button'], 'row-margin-item']">
-        <span :class="$style['add-button__inner']">
-          <span :class="$style['add-button__text']">서류등록</span>
-          <span
-            :class="[
-              $style['add-button__icon'],
-              $style['add-button__icon--secondary'],
-            ]"
-          >
-            <IconLink />
+        <!-- Case : 등록 전 -->
+        <button
+          type="button"
+          :class="[$style['add-button'], 'row-margin-item']"
+        >
+          <span :class="$style['add-button__inner']">
+            <span :class="$style['add-button__text']">서류등록</span>
+            <span
+              :class="[
+                $style['add-button__icon'],
+                $style['add-button__icon--secondary'],
+              ]"
+            >
+              <IconLink />
+            </span>
           </span>
-        </span>
-      </button>
-      <!-- //Case : 등록 전 -->
+        </button>
+        <!-- //Case : 등록 전 -->
 
-      <!-- Case : 등록 후 -->
-      <BasicBox>
-        <div class="flex-box">
-          <div class="flex-box__cell">
-            <IconCheckDocument class="display-block" />
+        <!-- Case : 등록 후 -->
+        <BasicBox>
+          <div class="flex-box">
+            <div class="flex-box__cell">
+              <IconCheckDocument class="display-block" />
+            </div>
+            <div class="flex-box__cell flex-1">
+              <div class="text-body-3">등록 완료</div>
+            </div>
+            <div class="flex-box__cell">
+              <BasicButton size="mini" theme="quaternary">추가첨부</BasicButton>
+            </div>
           </div>
-          <div class="flex-box__cell flex-1">
-            <div class="text-body-3">등록 완료</div>
-          </div>
-          <div class="flex-box__cell">
-            <BasicButton size="mini" theme="quaternary">추가첨부</BasicButton>
-          </div>
-        </div>
-      </BasicBox>
-      <!-- //Case : 등록 후 -->
-    </section>
+        </BasicBox>
+        <!-- //Case : 등록 후 -->
+      </section>
+    </div>
 
     <template v-slot:foot>
       <ButtonList
