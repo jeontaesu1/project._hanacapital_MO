@@ -226,6 +226,7 @@ export default {
 
           <FormListItem titleText="보증금" :forceFocus="true">
             <FormInvalid :error="state.depositError">
+              <!-- Case : '의료기', 'GE헬스케어' 선택 시 노출 -->
               <BoxCheckList :classNames="{ wrap: 'row-margin-item-group' }">
                 <BoxCheckListItem>
                   <BoxCheck
@@ -247,30 +248,9 @@ export default {
                   </BoxCheck>
                 </BoxCheckListItem>
               </BoxCheckList>
+              <!-- Case : '의료기', 'GE헬스케어' 선택 시 노출 -->
 
-              <InputBlock :error="state.depositMedicalError" :disabled="true">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    align="right"
-                    :useDelete="false"
-                    pattern="\d*"
-                    title="보증금"
-                    id="layerBusinessEquipmentLeaseEstimateCheckListDepositMedical"
-                    defaultValue="10,002,120"
-                    :disabled="true"
-                  />
-                </InputBlockCell>
-                <template v-slot:innerRight>
-                  <div class="text-body-3">원</div>
-                </template>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-
-          <!-- Case : '스크린골프' 선택 시 노출 -->
-          <FormListItem titleText="유예원금" :forceFocus="true">
-            <FormInvalid :error="state.principalError">
+              <!-- Case : '스크린골프' 선택 시 노출 -->
               <BoxCheckList
                 :wrap="true"
                 col="3"
@@ -327,6 +307,92 @@ export default {
                     :minSide="true"
                     name="layerBusinessEquipmentLeaseEstimateCheckList005"
                     id="layerBusinessEquipmentLeaseEstimateCheckList005_006"
+                  >
+                    <BoxCheckLabel>50%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+              </BoxCheckList>
+              <!-- Case : '스크린골프' 선택 시 노출 -->
+
+              <InputBlock :error="state.depositMedicalError" :disabled="true">
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    align="right"
+                    :useDelete="false"
+                    pattern="\d*"
+                    title="보증금"
+                    id="layerBusinessEquipmentLeaseEstimateCheckListDepositMedical"
+                    defaultValue="10,002,120"
+                    :disabled="true"
+                  />
+                </InputBlockCell>
+                <template v-slot:innerRight>
+                  <div class="text-body-3">원</div>
+                </template>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <!-- Case : '스크린골프' 선택 시 노출 -->
+          <FormListItem titleText="유예원금" :forceFocus="true">
+            <FormInvalid :error="state.principalError">
+              <BoxCheckList
+                :wrap="true"
+                col="3"
+                :classNames="{ wrap: 'row-margin-item-group' }"
+              >
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="layerBusinessEquipmentLeaseEstimateCheckList006"
+                    id="layerBusinessEquipmentLeaseEstimateCheckList006_001"
+                    :defaultChecked="true"
+                  >
+                    <BoxCheckLabel>0%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="layerBusinessEquipmentLeaseEstimateCheckList006"
+                    id="layerBusinessEquipmentLeaseEstimateCheckList006_002"
+                  >
+                    <BoxCheckLabel>10%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="layerBusinessEquipmentLeaseEstimateCheckList006"
+                    id="layerBusinessEquipmentLeaseEstimateCheckList006_003"
+                  >
+                    <BoxCheckLabel>20%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="layerBusinessEquipmentLeaseEstimateCheckList006"
+                    id="layerBusinessEquipmentLeaseEstimateCheckList006_004"
+                  >
+                    <BoxCheckLabel>30%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="layerBusinessEquipmentLeaseEstimateCheckList006"
+                    id="layerBusinessEquipmentLeaseEstimateCheckList006_005"
+                  >
+                    <BoxCheckLabel>40%</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="layerBusinessEquipmentLeaseEstimateCheckList006"
+                    id="layerBusinessEquipmentLeaseEstimateCheckList006_006"
                   >
                     <BoxCheckLabel>50%</BoxCheckLabel>
                   </BoxCheck>

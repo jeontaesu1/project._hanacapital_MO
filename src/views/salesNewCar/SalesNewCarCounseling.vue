@@ -32,6 +32,9 @@ import UnitText from '@/components/ui/text/UnitText.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 
+import IconLink from '@/assets/images/icon/link.svg?component';
+import IconCheckDocument from '@/assets/images/icon/check-document.svg?component';
+
 export default {
   components: {
     PageContents,
@@ -61,6 +64,8 @@ export default {
     UnitText,
     BasicInput,
     CarThumb,
+    IconLink,
+    IconCheckDocument,
   },
   setup() {
     const store = {
@@ -71,6 +76,13 @@ export default {
 
     const state = reactive({
       nameError: false,
+      yearError: false,
+      businessNumberError001: false,
+      businessNumberError002: false,
+      corporateName001Error: false,
+      corporateName002Error: false,
+      corporateNumberError: false,
+      dateError: false,
       companyError: false,
       carError: false,
       interestRateError: false,
@@ -176,17 +188,301 @@ export default {
             </KeyValueItem>
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
-              <KeyValueTitle>법인번호</KeyValueTitle>
+              <KeyValueTitle>법인등록번호</KeyValueTitle>
               <KeyValueText>123456789</KeyValueText>
-            </KeyValueItem>
-
-            <KeyValueItem :classNames="{ item: 'text-body-3' }">
-              <KeyValueTitle>연대보증인 휴대폰번호</KeyValueTitle>
-              <KeyValueText>010-1234-5678</KeyValueText>
             </KeyValueItem>
           </KeyValue>
         </BasicBox>
         <!-- //Case : 법인사업자일 경우 -->
+
+        <FormList :classNames="{ wrap: 'row-margin-contents' }">
+          <FormListItem titleText="고객구분" :forceFocus="true">
+            <BoxCheckList :wrap="true" :col="3">
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="salesNewCarCounselingCustomerType"
+                  id="salesNewCarCounselingCustomerType001"
+                >
+                  <BoxCheckLabel>개인</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="salesNewCarCounselingCustomerType"
+                  id="salesNewCarCounselingCustomerType002"
+                >
+                  <BoxCheckLabel>개인사업자</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="salesNewCarCounselingCustomerType"
+                  id="salesNewCarCounselingCustomerType003"
+                >
+                  <BoxCheckLabel>법인</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+            </BoxCheckList>
+          </FormListItem>
+
+          <!-- Case : [고객구분 - 개인] 선택 시 노출 -->
+          <FormListItem
+            titleText="근속년수"
+            target="#salesNewCarCounselingYearButton"
+            :selectOnly="true"
+          >
+            <FormInvalid :error="state.yearError">
+              <InputBlock :error="state.yearError">
+                <InputBlockCell :flexible="true">
+                  <BasicSelect
+                    :option="[
+                      {
+                        value: '1',
+                        text: '06개월 이하',
+                      },
+                      {
+                        value: '2',
+                        text: '01년 이하',
+                      },
+                      {
+                        value: '3',
+                        text: '02년 이하',
+                      },
+                      {
+                        value: '4',
+                        text: '03년 이하',
+                      },
+                      {
+                        value: '5',
+                        text: '04년 이하',
+                      },
+                      {
+                        value: '6',
+                        text: '05년 이하',
+                      },
+                      {
+                        value: '7',
+                        text: '06년 이하',
+                      },
+                      {
+                        value: '8',
+                        text: '07년 이하',
+                      },
+                      {
+                        value: '9',
+                        text: '08년 이하',
+                      },
+                      {
+                        value: '10',
+                        text: '09년 이하',
+                      },
+                      {
+                        value: '11',
+                        text: '10년 이하',
+                      },
+                      {
+                        value: '12',
+                        text: '10년 초과',
+                      },
+                      {
+                        value: '13',
+                        text: '무응답',
+                      },
+                    ]"
+                    buttonTitle="근속년수 선택하기"
+                    layerTitle="근속년수를 선택해 주세요"
+                    id="salesNewCarCounselingYear"
+                    buttonId="salesNewCarCounselingYearButton"
+                    defaultValue="1"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+          <!-- // Case : [고객구분 - 개인] 선택 시 노출 -->
+
+          <!-- Case : [고객구분 - 법인] 선택 시 노출 -->
+          <FormListItem titleText="관계" :forceFocus="true">
+            <BoxCheckList :classNames="{ wrap: 'row-margin-item-group' }">
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="salesNewCarCounselingrelation"
+                  id="salesNewCarCounselingrelation001"
+                >
+                  <BoxCheckLabel>대표자</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="salesNewCarCounselingrelation"
+                  id="salesNewCarCounselingrelation002"
+                >
+                  <BoxCheckLabel>과점주주</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+            </BoxCheckList>
+          </FormListItem>
+          <!-- // Case : [고객구분 - 법인] 선택 시 노출 -->
+
+          <!-- Case : [고객구분 - 개인사업자, 법인] 선택 시 노출 -->
+          <FormListItem titleText="사업자번호" :forceFocus="true">
+            <BoxCheckList :classNames="{ wrap: 'row-margin-item-group' }">
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="salesNewCarCounselingBusinessNumber001"
+                  id="salesNewCarCounselingBusinessNumber001_001"
+                >
+                  <BoxCheckLabel>선택입력</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="salesNewCarCounselingBusinessNumber001"
+                  id="salesNewCarCounselingBusinessNumber001_002"
+                >
+                  <BoxCheckLabel>직접입력</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+            </BoxCheckList>
+
+            <!-- Case : [사업자번호 - 선택입력] 선택 시 노출 -->
+            <FormInvalid :error="state.businessNumberError001">
+              <InputBlock :error="state.businessNumberError001">
+                <InputBlockCell :flexible="true">
+                  <BasicSelect
+                    :option="[
+                      {
+                        value: '1',
+                        text: '123-12-12345',
+                      },
+                    ]"
+                    buttonTitle="사업자번호 선택하기"
+                    layerTitle="사업자번호를 선택해 주세요"
+                    id="salesNewCarCounselingBusinessNumber002"
+                    buttonId="salesNewCarCounselingBusinessNumbe002Button"
+                    defaultValue="1"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+            <!-- // Case : [사업자번호 - 선택입력] 선택 시 노출 -->
+
+            <!-- Case : [사업자번호 - 직접입력] 선택 시 노출 -->
+            <FormInvalid :error="state.businessNumberError002">
+              <InputBlock :error="state.businessNumberError002">
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    pattern="\d*"
+                    title="사업자등록번호"
+                    id="salesNewCarCounselingBusinessNumber003"
+                  />
+                </InputBlockCell>
+                <template v-slot:right>
+                  <BasicButton size="mini" theme="quaternary">확인</BasicButton>
+                </template>
+              </InputBlock>
+              <FormInvalidMessage>
+                사업자등록번호를 다시 확인해 주세요.
+              </FormInvalidMessage>
+              <FormHelpText>사업자등록번호, 10자리 숫자만 입력</FormHelpText>
+            </FormInvalid>
+            <!-- // Case : [사업자번호 - 직접입력] 선택 시 노출 -->
+          </FormListItem>
+
+          <!-- Case : [사업자번호 - 선택입력] 선택 시 노출 -->
+          <FormListItem
+            titleText="회사명"
+            target="#salesNewCarCounselingCorporateName001"
+            :disabled="true"
+          >
+            <FormInvalid :error="state.corporateName001Error">
+              <InputBlock :error="state.corporateName001Error" :disabled="true">
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    title="회사명"
+                    id="salesNewCarCounselingCorporateName001"
+                    :disabled="true"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+          <!-- // Case : [사업자번호 - 선택입력] 선택 시 노출 -->
+
+          <!-- Case : [사업자번호 - 직접입력] 선택 시 노출 -->
+          <FormListItem
+            titleText="회사명"
+            target="#salesNewCarCounselingCorporateName002"
+            :disabled="true"
+          >
+            <FormInvalid :error="state.corporateName002Error">
+              <InputBlock :error="state.corporateName002Error" :disabled="true">
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    title="회사명"
+                    id="salesNewCarCounselingCorporateName002"
+                    defaultValue="하나캐피탈"
+                    :disabled="true"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+          <!-- // Case : [사업자번호 - 직접입력] 선택 시 노출 -->
+
+          <FormListItem
+            titleText="설립일자"
+            target="#salesNewCarCounselingDate"
+          >
+            <FormInvalid :error="state.dateError">
+              <InputBlock :error="state.dateError">
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    type="number"
+                    pattern="\d*"
+                    title="설립일자"
+                    id="salesNewCarCounselingDate"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+              <FormHelpText>예)20230728</FormHelpText>
+            </FormInvalid>
+          </FormListItem>
+          <!-- // Case : [고객구분 - 개인사업자, 법인] 선택 시 노출 -->
+
+          <!-- Case : [고객구분 - 법인] 선택 시 노출 -->
+          <FormListItem
+            titleText="법인등록번호"
+            target="#salesNewCarCounselingCorporateNumber"
+          >
+            <FormInvalid :error="state.corporateNumberError">
+              <InputBlock :error="state.corporateNumberError">
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    type="number"
+                    pattern="\d*"
+                    title="법인등록번호"
+                    id="salesNewCarCounselingCorporateNumber"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+          <!-- // Case : [고객구분 - 법인] 선택 시 노출 -->
+        </FormList>
       </section>
 
       <section class="row-margin-container-medium">
@@ -718,6 +1014,49 @@ export default {
       </section>
     </div>
 
+    <section class="row-margin-container-medium">
+      <div class="flex-box row-margin-contents">
+        <div class="flex-box__cell">
+          <h3 class="text-title-2">서류등록</h3>
+        </div>
+        <div class="flex-box__cell flex-box__cell--small">
+          <div class="text-body-3">(선택)</div>
+        </div>
+      </div>
+
+      <!-- Case : 등록 전 -->
+      <button type="button" :class="[$style['add-button'], 'row-margin-item']">
+        <span :class="$style['add-button__inner']">
+          <span :class="$style['add-button__text']">서류등록</span>
+          <span
+            :class="[
+              $style['add-button__icon'],
+              $style['add-button__icon--secondary'],
+            ]"
+          >
+            <IconLink />
+          </span>
+        </span>
+      </button>
+      <!-- //Case : 등록 전 -->
+
+      <!-- Case : 등록 후 -->
+      <BasicBox>
+        <div class="flex-box">
+          <div class="flex-box__cell">
+            <IconCheckDocument class="display-block" />
+          </div>
+          <div class="flex-box__cell flex-1">
+            <div class="text-body-3">등록 완료</div>
+          </div>
+          <div class="flex-box__cell">
+            <BasicButton size="mini" theme="quaternary">추가첨부</BasicButton>
+          </div>
+        </div>
+      </BasicBox>
+      <!-- //Case : 등록 후 -->
+    </section>
+
     <template v-slot:foot>
       <ButtonList
         :classNames="{
@@ -734,3 +1073,7 @@ export default {
     </template>
   </PageContents>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/salesNewCar/SalesNewCarCounseling.scss';
+</style>

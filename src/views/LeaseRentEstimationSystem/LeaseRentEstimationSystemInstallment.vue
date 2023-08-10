@@ -257,6 +257,22 @@ export default {
 
 <template>
   <PageContents>
+    <ButtonList
+      :classNames="{
+        wrap: 'row-margin-contents-group',
+      }"
+    >
+      <ButtonListItem>
+        <BasicButton size="mini" theme="quaternary">제원</BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton size="mini" theme="quaternary">가격표</BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton size="mini" theme="quaternary">카탈로그</BasicButton>
+      </ButtonListItem>
+    </ButtonList>
+
     <div>
       <section class="row-margin-container-medium">
         <h2 class="text-title-2 row-margin-contents">견적 상품</h2>

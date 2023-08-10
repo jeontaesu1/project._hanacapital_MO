@@ -18,6 +18,9 @@ import UiTab from '@/components/ui/tab/UiTab.vue';
 import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
 import RoundTab from '@/components/ui/tab/RoundTab.vue';
 import RoundTabButton from '@/components/ui/tab/RoundTabButton.vue';
+import ButtonList from '@/components/ui/button/ButtonList.vue';
+import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
 
 import IconTell from '@/assets/images/icon/tell.svg?component';
 
@@ -39,6 +42,9 @@ export default {
     UiTabPanel,
     RoundTab,
     RoundTabButton,
+    ButtonList,
+    ButtonListItem,
+    BasicButton,
     IconTell,
   },
   setup() {
@@ -463,6 +469,18 @@ export default {
           </ul>
         </UiTabPanel>
       </UiTab>
+
+      <template v-slot:foot>
+        <ButtonList
+          :classNames="{
+            wrap: 'row-margin-none',
+          }"
+        >
+          <ButtonListItem>
+            <BasicButton>다음</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+      </template>
     </FullPopup>
   </UiLayer>
 </template>
