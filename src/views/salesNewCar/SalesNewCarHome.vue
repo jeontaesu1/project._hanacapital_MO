@@ -291,11 +291,6 @@ export default {
                   홍길동
                 </p>
               </div>
-              <div class="flex-box__cell flex-box__cell--medium">
-                <UnitText size="regular" rightUnit="만원" verticalAlign="center"
-                  >3,000</UnitText
-                >
-              </div>
               <div class="flex-box__cell flex-box__cell--small">
                 <UiAccordionOpener :classNames="{ button: $style['opener'] }" />
               </div>

@@ -58,7 +58,7 @@ export default {
       <!-- // Case : 내역 없을 경우 -->
 
       <ul class="reset-list">
-        <li v-for="i in 3" :key="i" class="row-margin-contents">
+        <li v-for="i in 3" :key="i" class="row-margin-item-group">
           <BasicBox>
             <BasicBoxHead>
               <BasicBoxHeadLeft>

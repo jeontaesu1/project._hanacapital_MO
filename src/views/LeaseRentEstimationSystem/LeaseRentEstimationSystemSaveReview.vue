@@ -35,7 +35,6 @@ import UiAccordion from '@/components/ui/accordion/UiAccordion.vue';
 import UiAccordionItem from '@/components/ui/accordion/UiAccordionItem.vue';
 import UiAccordionLayer from '@/components/ui/accordion/UiAccordionLayer.vue';
 import UiAccordionOpener from '@/components/ui/accordion/UiAccordionOpener.vue';
-import UnitText from '@/components/ui/text/UnitText.vue';
 import FilterButton from '@/components/ui/button/FilterButton.vue';
 import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
@@ -70,7 +69,6 @@ export default {
     BasicDatepicker,
     ButtonList,
     ButtonListItem,
-    UnitText,
     FilterButton,
     RoundStatus,
     TextButton,
@@ -348,51 +346,44 @@ export default {
         <!-- Case : 가견적 - 장기렌트 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div :class="$style['division-info']">
-                  <ul :class="$style['division-info__list']">
-                    <li :class="$style['division-info__item']">
-                      <div class="color-black text-body-4 font-weight-light">
-                        2022.10.26
-                      </div>
-                    </li>
-                    <li :class="$style['division-info__item']">
-                      <div class="color-green text-body-4 font-weight-medium">
-                        가견적
-                      </div>
-                    </li>
-                  </ul>
+            <div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
+                  <div :class="$style['division-info']">
+                    <ul :class="$style['division-info__list']">
+                      <li :class="$style['division-info__item']">
+                        <div class="color-black text-body-4 font-weight-light">
+                          2022.10.26
+                        </div>
+                      </li>
+                      <li :class="$style['division-info__item']">
+                        <div class="color-green text-body-4 font-weight-medium">
+                          가견적
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="text-body-1 font-weight-medium row-margin-small">
+                    홍길동
+                  </div>
                 </div>
-                <div class="text-body-1 font-weight-medium row-margin-small">
-                  홍길동
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    theme="denary"
+                    :classNames="{ wrap: 'display-block' }"
+                    >장기렌트</RoundStatus
+                  >
                 </div>
-                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
               </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <RoundStatus
-                  theme="denary"
-                  :classNames="{ wrap: 'display-block' }"
-                  >장기렌트</RoundStatus
-                >
-              </div>
-            </div>
-            <p
-              class="text-body-4 color-gray-secondary font-weight-light row-margin-item"
-            >
-              메모 내용이 표시됩니다. 텍스트가 길어질 경우 이렇게 보여집니다.
-            </p>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div class="text-body-4 color-gray-quaternary">월납입금</div>
-              </div>
-              <div class="flex-box__cell flex-box__cell--medium">
-                <UnitText size="regular" rightUnit="원" verticalAlign="center"
-                  >-</UnitText
-                >
-              </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <UiAccordionOpener :classNames="{ button: $style['opener'] }" />
+              <div class="flex-box row-margin-item">
+                <div class="flex-box__cell flex-1">
+                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                </div>
+                <div class="flex-box__cell">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['opener'] }"
+                  />
+                </div>
               </div>
             </div>
 
@@ -475,7 +466,9 @@ export default {
                   >
                     <KeyValueTitle>견적</KeyValueTitle>
                     <KeyValueText>
-                      견적1 / 36개월 / 2만km / 682,190 원
+                      견적1 / 36개월 / 2만km / 682,190 원<br />
+                      견적2 / 48개월 / 2만km / 632,190 원<br />
+                      견적3 / 60개월 / 2만km / 612,190 원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -494,7 +487,7 @@ export default {
                     }"
                   >
                     <KeyValueTitle>출고/유형</KeyValueTitle>
-                    <KeyValueText> 대리점 출고 / 개인사업자 </KeyValueText>
+                    <KeyValueText>대리점 출고 / 개인사업자</KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{
@@ -510,7 +503,22 @@ export default {
                     }"
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
-                    <KeyValueText>0 / 0</KeyValueText>
+                    <KeyValueText>
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>견적제목</KeyValueTitle>
+                    <KeyValueText>
+                      <div class="ellipsis">
+                        견적제목이 노출됩니다. 길어질 경우 이렇게 보여집니다.
+                      </div>
+                    </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{
@@ -565,51 +573,44 @@ export default {
         <!-- Case : 가견적 - 선구매 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div :class="$style['division-info']">
-                  <ul :class="$style['division-info__list']">
-                    <li :class="$style['division-info__item']">
-                      <div class="color-black text-body-4 font-weight-light">
-                        2022.10.26
-                      </div>
-                    </li>
-                    <li :class="$style['division-info__item']">
-                      <div class="color-green text-body-4 font-weight-medium">
-                        가견적
-                      </div>
-                    </li>
-                  </ul>
+            <div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
+                  <div :class="$style['division-info']">
+                    <ul :class="$style['division-info__list']">
+                      <li :class="$style['division-info__item']">
+                        <div class="color-black text-body-4 font-weight-light">
+                          2022.10.26
+                        </div>
+                      </li>
+                      <li :class="$style['division-info__item']">
+                        <div class="color-green text-body-4 font-weight-medium">
+                          가견적
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="text-body-1 font-weight-medium row-margin-small">
+                    홍길동
+                  </div>
                 </div>
-                <div class="text-body-1 font-weight-medium row-margin-small">
-                  홍길동
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    theme="denary"
+                    :classNames="{ wrap: 'display-block' }"
+                    >선구매</RoundStatus
+                  >
                 </div>
-                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
               </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <RoundStatus
-                  theme="denary"
-                  :classNames="{ wrap: 'display-block' }"
-                  >선구매</RoundStatus
-                >
-              </div>
-            </div>
-            <p
-              class="text-body-4 color-gray-secondary font-weight-light row-margin-item"
-            >
-              메모 내용이 표시됩니다. 텍스트가 길어질 경우 이렇게 보여집니다.
-            </p>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div class="text-body-4 color-gray-quaternary">월납입금</div>
-              </div>
-              <div class="flex-box__cell flex-box__cell--medium">
-                <UnitText size="regular" rightUnit="원" verticalAlign="center"
-                  >-</UnitText
-                >
-              </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <UiAccordionOpener :classNames="{ button: $style['opener'] }" />
+              <div class="flex-box row-margin-item">
+                <div class="flex-box__cell flex-1">
+                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                </div>
+                <div class="flex-box__cell">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['opener'] }"
+                  />
+                </div>
               </div>
             </div>
 
@@ -727,7 +728,22 @@ export default {
                     }"
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
-                    <KeyValueText>0 / 0</KeyValueText>
+                    <KeyValueText>
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>견적제목</KeyValueTitle>
+                    <KeyValueText>
+                      <div class="ellipsis">
+                        견적제목이 노출됩니다. 길어질 경우 이렇게 보여집니다.
+                      </div>
+                    </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{
@@ -779,54 +795,283 @@ export default {
         </UiAccordionItem>
         <!-- //Case : 가견적 - 선구매 -->
 
+        <!-- Case : 가견적 - 운용리스 -->
+        <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
+          <BasicBox>
+            <div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
+                  <div :class="$style['division-info']">
+                    <ul :class="$style['division-info__list']">
+                      <li :class="$style['division-info__item']">
+                        <div class="color-black text-body-4 font-weight-light">
+                          2022.10.26
+                        </div>
+                      </li>
+                      <li :class="$style['division-info__item']">
+                        <div class="color-green text-body-4 font-weight-medium">
+                          가견적
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="text-body-1 font-weight-medium row-margin-small">
+                    홍길동
+                  </div>
+                </div>
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    theme="denary"
+                    :classNames="{ wrap: 'display-block' }"
+                    >운용리스</RoundStatus
+                  >
+                </div>
+              </div>
+              <div class="flex-box row-margin-item">
+                <div class="flex-box__cell flex-1">
+                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                </div>
+                <div class="flex-box__cell">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['opener'] }"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <UiAccordionLayer
+              :classNames="{
+                layer: $style['accordion-layer'],
+              }"
+            >
+              <div :class="$style['accordion-contents']">
+                <KeyValue margin="regular">
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>견적번호</KeyValueTitle>
+                    <KeyValueText>[대구지점]</KeyValueText>
+                  </KeyValueItem>
+                  <!-- Case : 시승차일 경우 노출 -->
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>견적번호</KeyValueTitle>
+                    <KeyValueText>시승차142오2102[대구지점]</KeyValueText>
+                  </KeyValueItem>
+                  <!-- // Case : 시승차일 경우 노출 -->
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>모델</KeyValueTitle>
+                    <KeyValueText>
+                      2021년형 가솔린 2.0 터보<br />
+                      (개소세 5% 기준)
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>외장색상</KeyValueTitle>
+                    <KeyValueText>
+                      <div class="flex-box align-items-start">
+                        <div class="flex-box__cell flex-1">
+                          우유니 화이트(UYH)
+                        </div>
+                        <div class="flex-box__cell">
+                          <ColorChip size="small" :colors="['248, 245, 245']" />
+                        </div>
+                      </div>
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>내장색상</KeyValueTitle>
+                    <KeyValueText>
+                      <div class="flex-box align-items-start">
+                        <div class="flex-box__cell flex-1">
+                          옵시디언 블랙 / 샌드스톰 그레이 투톤 (샌드스톰 그레이
+                          시트)
+                        </div>
+                        <div class="flex-box__cell">
+                          <ColorChip
+                            size="small"
+                            :colors="[['74, 74, 74'], ['152, 152, 152']]"
+                          />
+                        </div>
+                      </div>
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>옵션</KeyValueTitle>
+                    <KeyValueText>선택없음</KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>견적</KeyValueTitle>
+                    <KeyValueText>
+                      견적1 / 36개월 / 2만km / 682,190 원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>탁송</KeyValueTitle>
+                    <KeyValueText>
+                      외주탁송, 아산 출고장, 서울 도착
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>출고/유형</KeyValueTitle>
+                    <KeyValueText>직판출고 / 개인</KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>보험</KeyValueTitle>
+                    <KeyValueText>26세, 1억원, 1억원, 30만원</KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
+                    <KeyValueText>
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>견적제목</KeyValueTitle>
+                    <KeyValueText>
+                      <div class="ellipsis">
+                        견적제목이 노출됩니다. 길어질 경우 이렇게 보여집니다.
+                      </div>
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>메모</KeyValueTitle>
+                    <KeyValueText>
+                      <div class="flex-box justify-conten-end">
+                        <div class="flex-box__cell">메모 내용</div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
+                        </div>
+                      </div>
+                    </KeyValueText>
+                  </KeyValueItem>
+                </KeyValue>
+
+                <ButtonList
+                  :wrap="true"
+                  :classNames="{ wrap: 'row-margin-contents-small' }"
+                >
+                  <ButtonListItem>
+                    <BasicButton :line="true" size="small">
+                      견적서 발송
+                    </BasicButton>
+                  </ButtonListItem>
+                  <ButtonListItem>
+                    <BasicButton :line="true" size="small">
+                      견적서 보기
+                    </BasicButton>
+                  </ButtonListItem>
+                  <ButtonListItem>
+                    <BasicButton theme="quaternary" :line="true" size="small">
+                      재견적
+                    </BasicButton>
+                  </ButtonListItem>
+                  <ButtonListItem>
+                    <BasicButton size="small">견적확정</BasicButton>
+                  </ButtonListItem>
+                </ButtonList>
+              </div>
+            </UiAccordionLayer>
+          </BasicBox>
+        </UiAccordionItem>
+        <!-- //Case : 가견적 - 운용리스 -->
+
         <!-- Case : 가견적 - 운용리스 (중고차) -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div :class="$style['division-info']">
-                  <ul :class="$style['division-info__list']">
-                    <li :class="$style['division-info__item']">
-                      <div class="color-black text-body-4 font-weight-light">
-                        2022.10.26
-                      </div>
-                    </li>
-                    <li :class="$style['division-info__item']">
-                      <div class="color-green text-body-4 font-weight-medium">
-                        가견적
-                      </div>
-                    </li>
-                  </ul>
+            <div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
+                  <div :class="$style['division-info']">
+                    <ul :class="$style['division-info__list']">
+                      <li :class="$style['division-info__item']">
+                        <div class="color-black text-body-4 font-weight-light">
+                          2022.10.26
+                        </div>
+                      </li>
+                      <li :class="$style['division-info__item']">
+                        <div class="color-green text-body-4 font-weight-medium">
+                          가견적
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="text-body-1 font-weight-medium row-margin-small">
+                    홍길동
+                  </div>
                 </div>
-                <div class="text-body-1 font-weight-medium row-margin-small">
-                  홍길동
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    theme="denary"
+                    :classNames="{ wrap: 'display-block' }"
+                    >운용리스 (중고차)</RoundStatus
+                  >
                 </div>
-                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
               </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <RoundStatus
-                  theme="denary"
-                  :classNames="{ wrap: 'display-block' }"
-                  >운용리스 (중고차)</RoundStatus
-                >
-              </div>
-            </div>
-            <p
-              class="text-body-4 color-gray-secondary font-weight-light row-margin-item"
-            >
-              메모 내용이 표시됩니다. 텍스트가 길어질 경우 이렇게 보여집니다.
-            </p>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div class="text-body-4 color-gray-quaternary">월납입금</div>
-              </div>
-              <div class="flex-box__cell flex-box__cell--medium">
-                <UnitText size="regular" rightUnit="원" verticalAlign="center"
-                  >-</UnitText
-                >
-              </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <UiAccordionOpener :classNames="{ button: $style['opener'] }" />
+              <div class="flex-box row-margin-item">
+                <div class="flex-box__cell flex-1">
+                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                </div>
+                <div class="flex-box__cell">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['opener'] }"
+                  />
+                </div>
               </div>
             </div>
 
@@ -949,7 +1194,22 @@ export default {
                     }"
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
-                    <KeyValueText>0 / 0</KeyValueText>
+                    <KeyValueText>
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>견적제목</KeyValueTitle>
+                    <KeyValueText>
+                      <div class="ellipsis">
+                        견적제목이 노출됩니다. 길어질 경우 이렇게 보여집니다.
+                      </div>
+                    </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{
@@ -1005,51 +1265,44 @@ export default {
         <!-- Case : 가견적 - 금융리스 (중고차) -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div :class="$style['division-info']">
-                  <ul :class="$style['division-info__list']">
-                    <li :class="$style['division-info__item']">
-                      <div class="color-black text-body-4 font-weight-light">
-                        2022.10.26
-                      </div>
-                    </li>
-                    <li :class="$style['division-info__item']">
-                      <div class="color-green text-body-4 font-weight-medium">
-                        가견적
-                      </div>
-                    </li>
-                  </ul>
+            <div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
+                  <div :class="$style['division-info']">
+                    <ul :class="$style['division-info__list']">
+                      <li :class="$style['division-info__item']">
+                        <div class="color-black text-body-4 font-weight-light">
+                          2022.10.26
+                        </div>
+                      </li>
+                      <li :class="$style['division-info__item']">
+                        <div class="color-green text-body-4 font-weight-medium">
+                          가견적
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="text-body-1 font-weight-medium row-margin-small">
+                    홍길동
+                  </div>
                 </div>
-                <div class="text-body-1 font-weight-medium row-margin-small">
-                  홍길동
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    theme="denary"
+                    :classNames="{ wrap: 'display-block' }"
+                    >금융리스 (중고차)</RoundStatus
+                  >
                 </div>
-                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
               </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <RoundStatus
-                  theme="denary"
-                  :classNames="{ wrap: 'display-block' }"
-                  >운용리스 (중고차)</RoundStatus
-                >
-              </div>
-            </div>
-            <p
-              class="text-body-4 color-gray-secondary font-weight-light row-margin-item"
-            >
-              메모 내용이 표시됩니다. 텍스트가 길어질 경우 이렇게 보여집니다.
-            </p>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div class="text-body-4 color-gray-quaternary">월납입금</div>
-              </div>
-              <div class="flex-box__cell flex-box__cell--medium">
-                <UnitText size="regular" rightUnit="원" verticalAlign="center"
-                  >-</UnitText
-                >
-              </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <UiAccordionOpener :classNames="{ button: $style['opener'] }" />
+              <div class="flex-box row-margin-item">
+                <div class="flex-box__cell flex-1">
+                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                </div>
+                <div class="flex-box__cell">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['opener'] }"
+                  />
+                </div>
               </div>
             </div>
 
@@ -1171,7 +1424,22 @@ export default {
                     }"
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
-                    <KeyValueText>0 / 0</KeyValueText>
+                    <KeyValueText>
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>견적제목</KeyValueTitle>
+                    <KeyValueText>
+                      <div class="ellipsis">
+                        견적제목이 노출됩니다. 길어질 경우 이렇게 보여집니다.
+                      </div>
+                    </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{
@@ -1227,52 +1495,44 @@ export default {
         <!-- Case : 가견적 - 할부 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div :class="$style['division-info']">
-                  <ul :class="$style['division-info__list']">
-                    <li :class="$style['division-info__item']">
-                      <div class="color-black text-body-4 font-weight-light">
-                        2022.10.26
-                      </div>
-                    </li>
-                    <li :class="$style['division-info__item']">
-                      <div class="color-green text-body-4 font-weight-medium">
-                        가견적
-                      </div>
-                    </li>
-                  </ul>
+            <div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
+                  <div :class="$style['division-info']">
+                    <ul :class="$style['division-info__list']">
+                      <li :class="$style['division-info__item']">
+                        <div class="color-black text-body-4 font-weight-light">
+                          2022.10.26
+                        </div>
+                      </li>
+                      <li :class="$style['division-info__item']">
+                        <div class="color-green text-body-4 font-weight-medium">
+                          가견적
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="text-body-1 font-weight-medium row-margin-small">
+                    홍길동
+                  </div>
                 </div>
-                <div class="text-body-1 font-weight-medium row-margin-small">
-                  홍길동
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    theme="denary"
+                    :classNames="{ wrap: 'display-block' }"
+                    >할부</RoundStatus
+                  >
                 </div>
-                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
               </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <RoundStatus
-                  theme="denary"
-                  :classNames="{ wrap: 'display-block' }"
-                >
-                  할부
-                </RoundStatus>
-              </div>
-            </div>
-            <p
-              class="text-body-4 color-gray-secondary font-weight-light row-margin-item"
-            >
-              메모 내용이 표시됩니다. 텍스트가 길어질 경우 이렇게 보여집니다.
-            </p>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div class="text-body-4 color-gray-quaternary">월납입금</div>
-              </div>
-              <div class="flex-box__cell flex-box__cell--medium">
-                <UnitText size="regular" rightUnit="원" verticalAlign="center"
-                  >-</UnitText
-                >
-              </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <UiAccordionOpener :classNames="{ button: $style['opener'] }" />
+              <div class="flex-box row-margin-item">
+                <div class="flex-box__cell flex-1">
+                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                </div>
+                <div class="flex-box__cell">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['opener'] }"
+                  />
+                </div>
               </div>
             </div>
 
@@ -1380,7 +1640,22 @@ export default {
                     }"
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
-                    <KeyValueText>(0%) : 0 / (0%) : 0</KeyValueText>
+                    <KeyValueText>
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>견적제목</KeyValueTitle>
+                    <KeyValueText>
+                      <div class="ellipsis">
+                        견적제목이 노출됩니다. 길어질 경우 이렇게 보여집니다.
+                      </div>
+                    </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{
@@ -1436,51 +1711,52 @@ export default {
         <!-- Case : 견적 - 장기렌트 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div :class="$style['division-info']">
-                  <ul :class="$style['division-info__list']">
-                    <li :class="$style['division-info__item']">
-                      <div class="color-black text-body-4 font-weight-light">
-                        2022.10.26
-                      </div>
-                    </li>
-                    <li :class="$style['division-info__item']">
-                      <div class="color-green text-body-4 font-weight-medium">
-                        동의전
-                      </div>
-                    </li>
-                  </ul>
+            <div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
+                  <div :class="$style['division-info']">
+                    <ul :class="$style['division-info__list']">
+                      <li :class="$style['division-info__item']">
+                        <div class="color-black text-body-4 font-weight-light">
+                          2022.10.26
+                        </div>
+                      </li>
+                      <li :class="$style['division-info__item']">
+                        <!-- Case : 동의전 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          동의전
+                        </div>
+                        <!-- // Case : 동의전 -->
+
+                        <!-- Case : 동의완료 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          동의완료
+                        </div>
+                        <!--// Case : 동의완료 -->
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="text-body-1 font-weight-medium row-margin-small">
+                    홍길동
+                  </div>
                 </div>
-                <div class="text-body-1 font-weight-medium row-margin-small">
-                  홍길동
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    theme="denary"
+                    :classNames="{ wrap: 'display-block' }"
+                    >장기렌트</RoundStatus
+                  >
                 </div>
-                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
               </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <RoundStatus
-                  theme="denary"
-                  :classNames="{ wrap: 'display-block' }"
-                  >장기렌트</RoundStatus
-                >
-              </div>
-            </div>
-            <p
-              class="text-body-4 color-gray-secondary font-weight-light row-margin-item"
-            >
-              메모 내용이 표시됩니다. 텍스트가 길어질 경우 이렇게 보여집니다.
-            </p>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div class="text-body-4 color-gray-quaternary">월납입금</div>
-              </div>
-              <div class="flex-box__cell flex-box__cell--medium">
-                <UnitText size="regular" rightUnit="원" verticalAlign="center"
-                  >628,190</UnitText
-                >
-              </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <UiAccordionOpener :classNames="{ button: $style['opener'] }" />
+              <div class="flex-box row-margin-item">
+                <div class="flex-box__cell flex-1">
+                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                </div>
+                <div class="flex-box__cell">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['opener'] }"
+                  />
+                </div>
               </div>
             </div>
 
@@ -1621,6 +1897,18 @@ export default {
                       item: 'text-body-3',
                     }"
                   >
+                    <KeyValueTitle>월납입금</KeyValueTitle>
+                    <KeyValueText
+                      :classNames="{ text: 'color-green font-weight-medium' }"
+                    >
+                      628,190 원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
                     <KeyValueTitle>탁송</KeyValueTitle>
                     <KeyValueText
                       >외주탁송, 아산 출고장, 서울 도착</KeyValueText
@@ -1648,7 +1936,22 @@ export default {
                     }"
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
-                    <KeyValueText>0 / 0</KeyValueText>
+                    <KeyValueText>
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>견적제목</KeyValueTitle>
+                    <KeyValueText>
+                      <div class="ellipsis">
+                        견적제목이 노출됩니다. 길어질 경우 이렇게 보여집니다.
+                      </div>
+                    </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{
@@ -1703,51 +2006,52 @@ export default {
         <!-- Case : 견적 - 선구매 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div :class="$style['division-info']">
-                  <ul :class="$style['division-info__list']">
-                    <li :class="$style['division-info__item']">
-                      <div class="color-black text-body-4 font-weight-light">
-                        2022.10.26
-                      </div>
-                    </li>
-                    <li :class="$style['division-info__item']">
-                      <div class="color-green text-body-4 font-weight-medium">
-                        동의전
-                      </div>
-                    </li>
-                  </ul>
+            <div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
+                  <div :class="$style['division-info']">
+                    <ul :class="$style['division-info__list']">
+                      <li :class="$style['division-info__item']">
+                        <div class="color-black text-body-4 font-weight-light">
+                          2022.10.26
+                        </div>
+                      </li>
+                      <li :class="$style['division-info__item']">
+                        <!-- Case : 동의전 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          동의전
+                        </div>
+                        <!-- // Case : 동의전 -->
+
+                        <!-- Case : 동의완료 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          동의완료
+                        </div>
+                        <!--// Case : 동의완료 -->
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="text-body-1 font-weight-medium row-margin-small">
+                    홍길동
+                  </div>
                 </div>
-                <div class="text-body-1 font-weight-medium row-margin-small">
-                  홍길동
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    theme="denary"
+                    :classNames="{ wrap: 'display-block' }"
+                    >선구매</RoundStatus
+                  >
                 </div>
-                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
               </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <RoundStatus
-                  theme="denary"
-                  :classNames="{ wrap: 'display-block' }"
-                  >선구매</RoundStatus
-                >
-              </div>
-            </div>
-            <p
-              class="text-body-4 color-gray-secondary font-weight-light row-margin-item"
-            >
-              메모 내용이 표시됩니다. 텍스트가 길어질 경우 이렇게 보여집니다.
-            </p>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div class="text-body-4 color-gray-quaternary">월납입금</div>
-              </div>
-              <div class="flex-box__cell flex-box__cell--medium">
-                <UnitText size="regular" rightUnit="원" verticalAlign="center"
-                  >628,190</UnitText
-                >
-              </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <UiAccordionOpener :classNames="{ button: $style['opener'] }" />
+              <div class="flex-box row-margin-item">
+                <div class="flex-box__cell flex-1">
+                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                </div>
+                <div class="flex-box__cell">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['opener'] }"
+                  />
+                </div>
               </div>
             </div>
 
@@ -1888,6 +2192,18 @@ export default {
                       item: 'text-body-3',
                     }"
                   >
+                    <KeyValueTitle>월납입금</KeyValueTitle>
+                    <KeyValueText
+                      :classNames="{ text: 'color-green font-weight-medium' }"
+                    >
+                      628,190 원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
                     <KeyValueTitle>탁송</KeyValueTitle>
                     <KeyValueText
                       >외주탁송, 아산 출고장, 서울 도착</KeyValueText
@@ -1915,7 +2231,22 @@ export default {
                     }"
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
-                    <KeyValueText>0 / 0</KeyValueText>
+                    <KeyValueText>
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>견적제목</KeyValueTitle>
+                    <KeyValueText>
+                      <div class="ellipsis">
+                        견적제목이 노출됩니다. 길어질 경우 이렇게 보여집니다.
+                      </div>
+                    </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{
@@ -1970,51 +2301,52 @@ export default {
         <!-- Case : 견적 - 운용리스 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div :class="$style['division-info']">
-                  <ul :class="$style['division-info__list']">
-                    <li :class="$style['division-info__item']">
-                      <div class="color-black text-body-4 font-weight-light">
-                        2022.10.26
-                      </div>
-                    </li>
-                    <li :class="$style['division-info__item']">
-                      <div class="color-green text-body-4 font-weight-medium">
-                        동의전
-                      </div>
-                    </li>
-                  </ul>
+            <div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
+                  <div :class="$style['division-info']">
+                    <ul :class="$style['division-info__list']">
+                      <li :class="$style['division-info__item']">
+                        <div class="color-black text-body-4 font-weight-light">
+                          2022.10.26
+                        </div>
+                      </li>
+                      <li :class="$style['division-info__item']">
+                        <!-- Case : 동의전 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          동의전
+                        </div>
+                        <!-- // Case : 동의전 -->
+
+                        <!-- Case : 동의완료 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          동의완료
+                        </div>
+                        <!--// Case : 동의완료 -->
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="text-body-1 font-weight-medium row-margin-small">
+                    홍길동
+                  </div>
                 </div>
-                <div class="text-body-1 font-weight-medium row-margin-small">
-                  홍길동
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    theme="denary"
+                    :classNames="{ wrap: 'display-block' }"
+                    >운용리스</RoundStatus
+                  >
                 </div>
-                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
               </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <RoundStatus
-                  theme="denary"
-                  :classNames="{ wrap: 'display-block' }"
-                  >운용리스</RoundStatus
-                >
-              </div>
-            </div>
-            <p
-              class="text-body-4 color-gray-secondary font-weight-light row-margin-item"
-            >
-              메모 내용이 표시됩니다. 텍스트가 길어질 경우 이렇게 보여집니다.
-            </p>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div class="text-body-4 color-gray-quaternary">월납입금</div>
-              </div>
-              <div class="flex-box__cell flex-box__cell--medium">
-                <UnitText size="regular" rightUnit="원" verticalAlign="center"
-                  >628,190</UnitText
-                >
-              </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <UiAccordionOpener :classNames="{ button: $style['opener'] }" />
+              <div class="flex-box row-margin-item">
+                <div class="flex-box__cell flex-1">
+                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                </div>
+                <div class="flex-box__cell">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['opener'] }"
+                  />
+                </div>
               </div>
             </div>
 
@@ -2101,6 +2433,18 @@ export default {
                       item: 'text-body-3',
                     }"
                   >
+                    <KeyValueTitle>월납입금</KeyValueTitle>
+                    <KeyValueText
+                      :classNames="{ text: 'color-green font-weight-medium' }"
+                    >
+                      628,190 원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
                     <KeyValueTitle>출고/유형</KeyValueTitle>
                     <KeyValueText
                       >대리점출고 / 카드결제, 리스사 명의</KeyValueText
@@ -2123,7 +2467,22 @@ export default {
                     }"
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
-                    <KeyValueText>0 / 0</KeyValueText>
+                    <KeyValueText>
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>견적제목</KeyValueTitle>
+                    <KeyValueText>
+                      <div class="ellipsis">
+                        견적제목이 노출됩니다. 길어질 경우 이렇게 보여집니다.
+                      </div>
+                    </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{
@@ -2179,51 +2538,52 @@ export default {
         <!-- Case : 견적 - 할부 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div :class="$style['division-info']">
-                  <ul :class="$style['division-info__list']">
-                    <li :class="$style['division-info__item']">
-                      <div class="color-black text-body-4 font-weight-light">
-                        2022.10.26
-                      </div>
-                    </li>
-                    <li :class="$style['division-info__item']">
-                      <div class="color-green text-body-4 font-weight-medium">
-                        동의전
-                      </div>
-                    </li>
-                  </ul>
+            <div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
+                  <div :class="$style['division-info']">
+                    <ul :class="$style['division-info__list']">
+                      <li :class="$style['division-info__item']">
+                        <div class="color-black text-body-4 font-weight-light">
+                          2022.10.26
+                        </div>
+                      </li>
+                      <li :class="$style['division-info__item']">
+                        <!-- Case : 동의전 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          동의전
+                        </div>
+                        <!-- // Case : 동의전 -->
+
+                        <!-- Case : 동의완료 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          동의완료
+                        </div>
+                        <!--// Case : 동의완료 -->
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="text-body-1 font-weight-medium row-margin-small">
+                    홍길동
+                  </div>
                 </div>
-                <div class="text-body-1 font-weight-medium row-margin-small">
-                  홍길동
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    theme="denary"
+                    :classNames="{ wrap: 'display-block' }"
+                    >할부</RoundStatus
+                  >
                 </div>
-                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
               </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <RoundStatus
-                  theme="denary"
-                  :classNames="{ wrap: 'display-block' }"
-                  >할부</RoundStatus
-                >
-              </div>
-            </div>
-            <p
-              class="text-body-4 color-gray-secondary font-weight-light row-margin-item"
-            >
-              메모 내용이 표시됩니다. 텍스트가 길어질 경우 이렇게 보여집니다.
-            </p>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div class="text-body-4 color-gray-quaternary">월납입금</div>
-              </div>
-              <div class="flex-box__cell flex-box__cell--medium">
-                <UnitText size="regular" rightUnit="원" verticalAlign="center"
-                  >1,473,450 ~ 1,532,290</UnitText
-                >
-              </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <UiAccordionOpener :classNames="{ button: $style['opener'] }" />
+              <div class="flex-box row-margin-item">
+                <div class="flex-box__cell flex-1">
+                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                </div>
+                <div class="flex-box__cell">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['opener'] }"
+                  />
+                </div>
               </div>
             </div>
 
@@ -2331,6 +2691,18 @@ export default {
                       item: 'text-body-3',
                     }"
                   >
+                    <KeyValueTitle>월납입금</KeyValueTitle>
+                    <KeyValueText
+                      :classNames="{ text: 'color-green font-weight-medium' }"
+                    >
+                      1,473,450~1,532,290 원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
                     <KeyValueTitle>출고/유형</KeyValueTitle>
                     <KeyValueText>대리점출고</KeyValueText>
                   </KeyValueItem>
@@ -2348,7 +2720,22 @@ export default {
                     }"
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
-                    <KeyValueText>(0%) : 0 / (0%) : 0</KeyValueText>
+                    <KeyValueText>
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>견적제목</KeyValueTitle>
+                    <KeyValueText>
+                      <div class="ellipsis">
+                        견적제목이 노출됩니다. 길어질 경우 이렇게 보여집니다.
+                      </div>
+                    </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{
@@ -2404,77 +2791,76 @@ export default {
         <!-- Case : 심사 - 장기렌트 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div :class="$style['division-info']">
-                  <ul :class="$style['division-info__list']">
-                    <li :class="$style['division-info__item']">
-                      <div class="color-black text-body-4 font-weight-light">
-                        2022.10.26
-                      </div>
-                    </li>
-                    <li :class="$style['division-info__item']">
-                      <!-- Case : 심사중 -->
-                      <div class="color-green text-body-4 font-weight-medium">
-                        심사중
-                      </div>
-                      <!--// Case : 심사중 -->
+            <div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
+                  <div :class="$style['division-info']">
+                    <ul :class="$style['division-info__list']">
+                      <li :class="$style['division-info__item']">
+                        <div class="color-black text-body-4 font-weight-light">
+                          2022.10.26
+                        </div>
+                      </li>
+                      <li :class="$style['division-info__item']">
+                        <!-- Case : 심사중 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          심사중
+                        </div>
+                        <!--// Case : 심사중 -->
 
-                      <!-- Case : 발주요청 -->
-                      <div class="color-green text-body-4 font-weight-medium">
-                        발주요청
-                      </div>
-                      <!--// Case : 발주요청 -->
+                        <!-- Case : 승인 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          승인
+                        </div>
+                        <!--// Case : 승인 -->
 
-                      <!-- Case : 발주완료 -->
-                      <div class="color-green text-body-4 font-weight-medium">
-                        발주완료
-                      </div>
-                      <!--// Case : 발주완료 -->
+                        <!-- Case : 발주요청 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          발주요청
+                        </div>
+                        <!--// Case : 발주요청 -->
 
-                      <!-- Case : 배정 -->
-                      <div class="color-green text-body-4 font-weight-medium">
-                        배정
-                      </div>
-                      <!--// Case : 배정 -->
+                        <!-- Case : 발주완료 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          발주완료
+                        </div>
+                        <!--// Case : 발주완료 -->
 
-                      <!-- Case : 결제완료 -->
-                      <div class="color-green text-body-4 font-weight-medium">
-                        결제완료
-                      </div>
-                      <!--// Case : 결제완료 -->
-                    </li>
-                  </ul>
+                        <!-- Case : 배정 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          배정
+                        </div>
+                        <!--// Case : 배정 -->
+
+                        <!-- Case : 결제완료 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          결제완료
+                        </div>
+                        <!--// Case : 결제완료 -->
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="text-body-1 font-weight-medium row-margin-small">
+                    홍길동
+                  </div>
                 </div>
-                <div class="text-body-1 font-weight-medium row-margin-small">
-                  홍길동
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    theme="denary"
+                    :classNames="{ wrap: 'display-block' }"
+                    >장기렌트</RoundStatus
+                  >
                 </div>
-                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
               </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <RoundStatus
-                  theme="denary"
-                  :classNames="{ wrap: 'display-block' }"
-                  >장기렌트</RoundStatus
-                >
-              </div>
-            </div>
-            <p
-              class="text-body-4 color-gray-secondary font-weight-light row-margin-item"
-            >
-              메모 내용이 표시됩니다. 텍스트가 길어질 경우 이렇게 보여집니다.
-            </p>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div class="text-body-4 color-gray-quaternary">월납입금</div>
-              </div>
-              <div class="flex-box__cell flex-box__cell--medium">
-                <UnitText size="regular" rightUnit="원" verticalAlign="center"
-                  >628,190</UnitText
-                >
-              </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <UiAccordionOpener :classNames="{ button: $style['opener'] }" />
+              <div class="flex-box row-margin-item">
+                <div class="flex-box__cell flex-1">
+                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                </div>
+                <div class="flex-box__cell">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['opener'] }"
+                  />
+                </div>
               </div>
             </div>
 
@@ -2615,6 +3001,18 @@ export default {
                       item: 'text-body-3',
                     }"
                   >
+                    <KeyValueTitle>월납입금</KeyValueTitle>
+                    <KeyValueText
+                      :classNames="{ text: 'color-green font-weight-medium' }"
+                    >
+                      628,190 원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
                     <KeyValueTitle>탁송</KeyValueTitle>
                     <KeyValueText
                       >외주탁송, 아산 출고장, 서울 도착</KeyValueText
@@ -2642,7 +3040,22 @@ export default {
                     }"
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
-                    <KeyValueText>0 / 0</KeyValueText>
+                    <KeyValueText>
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>견적제목</KeyValueTitle>
+                    <KeyValueText>
+                      <div class="ellipsis">
+                        견적제목이 노출됩니다. 길어질 경우 이렇게 보여집니다.
+                      </div>
+                    </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{
@@ -2692,20 +3105,29 @@ export default {
                 >
                 <!-- //Case : 심사중, 발주완료 -->
 
-                <!-- Case : 발주요청, 배정, 결제완료 -->
+                <!-- Case : 승인 -->
                 <BasicButton
                   theme="tertiary"
                   size="small"
                   :classNames="{ wrap: 'row-margin-item' }"
                   >서류 추가 등록</BasicButton
                 >
-                <!-- Case : 발주요청 -->
+
                 <BasicButton
                   size="small"
                   :classNames="{ wrap: 'row-margin-item' }"
                   >발주요청</BasicButton
                 >
-                <!-- //Case : 발주요청 -->
+                <!-- //Case : 승인 -->
+
+                <!-- Case : 발주요청 -->
+                <BasicButton
+                  :disabled="true"
+                  size="small"
+                  :classNames="{ wrap: 'row-margin-item' }"
+                  >발주요청 완료</BasicButton
+                >
+                <!-- // Case : 발주요청 -->
 
                 <!-- Case : 배정, 결제완료 -->
                 <BasicButton
@@ -2714,7 +3136,6 @@ export default {
                   >품의등록</BasicButton
                 >
                 <!-- //Case : 배정, 결제완료 -->
-                <!-- //Case : 발주요청, 배정, 결제완료 -->
               </div>
             </UiAccordionLayer>
           </BasicBox>
@@ -2724,59 +3145,52 @@ export default {
         <!-- Case : 심사 - 선구매 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div :class="$style['division-info']">
-                  <ul :class="$style['division-info__list']">
-                    <li :class="$style['division-info__item']">
-                      <div class="color-black text-body-4 font-weight-light">
-                        2022.10.26
-                      </div>
-                    </li>
-                    <li :class="$style['division-info__item']">
-                      <!-- Case : 심사중 -->
-                      <div class="color-green text-body-4 font-weight-medium">
-                        심사중
-                      </div>
-                      <!--// Case : 심사중 -->
+            <div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
+                  <div :class="$style['division-info']">
+                    <ul :class="$style['division-info__list']">
+                      <li :class="$style['division-info__item']">
+                        <div class="color-black text-body-4 font-weight-light">
+                          2022.10.26
+                        </div>
+                      </li>
+                      <li :class="$style['division-info__item']">
+                        <!-- Case : 심사중 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          심사중
+                        </div>
+                        <!--// Case : 심사중 -->
 
-                      <!-- Case : 승인 -->
-                      <div class="color-green text-body-4 font-weight-medium">
-                        승인
-                      </div>
-                      <!--// Case : 승인 -->
-                    </li>
-                  </ul>
+                        <!-- Case : 승인 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          승인
+                        </div>
+                        <!--// Case : 승인 -->
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="text-body-1 font-weight-medium row-margin-small">
+                    홍길동
+                  </div>
                 </div>
-                <div class="text-body-1 font-weight-medium row-margin-small">
-                  홍길동
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    theme="denary"
+                    :classNames="{ wrap: 'display-block' }"
+                    >선구매</RoundStatus
+                  >
                 </div>
-                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
               </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <RoundStatus
-                  theme="denary"
-                  :classNames="{ wrap: 'display-block' }"
-                  >선구매</RoundStatus
-                >
-              </div>
-            </div>
-            <p
-              class="text-body-4 color-gray-secondary font-weight-light row-margin-item"
-            >
-              메모 내용이 표시됩니다. 텍스트가 길어질 경우 이렇게 보여집니다.
-            </p>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div class="text-body-4 color-gray-quaternary">월납입금</div>
-              </div>
-              <div class="flex-box__cell flex-box__cell--medium">
-                <UnitText size="regular" rightUnit="원" verticalAlign="center"
-                  >628,190</UnitText
-                >
-              </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <UiAccordionOpener :classNames="{ button: $style['opener'] }" />
+              <div class="flex-box row-margin-item">
+                <div class="flex-box__cell flex-1">
+                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                </div>
+                <div class="flex-box__cell">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['opener'] }"
+                  />
+                </div>
               </div>
             </div>
 
@@ -2917,6 +3331,18 @@ export default {
                       item: 'text-body-3',
                     }"
                   >
+                    <KeyValueTitle>월납입금</KeyValueTitle>
+                    <KeyValueText
+                      :classNames="{ text: 'color-green font-weight-medium' }"
+                    >
+                      628,190 원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
                     <KeyValueTitle>탁송</KeyValueTitle>
                     <KeyValueText
                       >외주탁송, 아산 출고장, 서울 도착</KeyValueText
@@ -2944,7 +3370,22 @@ export default {
                     }"
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
-                    <KeyValueText>0 / 0</KeyValueText>
+                    <KeyValueText>
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>견적제목</KeyValueTitle>
+                    <KeyValueText>
+                      <div class="ellipsis">
+                        견적제목이 노출됩니다. 길어질 경우 이렇게 보여집니다.
+                      </div>
+                    </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{
@@ -3016,77 +3457,76 @@ export default {
         <!-- Case : 심사 - 운용리스 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div :class="$style['division-info']">
-                  <ul :class="$style['division-info__list']">
-                    <li :class="$style['division-info__item']">
-                      <div class="color-black text-body-4 font-weight-light">
-                        2022.10.26
-                      </div>
-                    </li>
-                    <li :class="$style['division-info__item']">
-                      <!-- Case : 심사중 -->
-                      <div class="color-green text-body-4 font-weight-medium">
-                        심사중
-                      </div>
-                      <!--// Case : 심사중 -->
+            <div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
+                  <div :class="$style['division-info']">
+                    <ul :class="$style['division-info__list']">
+                      <li :class="$style['division-info__item']">
+                        <div class="color-black text-body-4 font-weight-light">
+                          2022.10.26
+                        </div>
+                      </li>
+                      <li :class="$style['division-info__item']">
+                        <!-- Case : 심사중 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          심사중
+                        </div>
+                        <!--// Case : 심사중 -->
 
-                      <!-- Case : 발주요청 -->
-                      <div class="color-green text-body-4 font-weight-medium">
-                        발주요청
-                      </div>
-                      <!--// Case : 발주요청 -->
+                        <!-- Case : 승인 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          승인
+                        </div>
+                        <!--// Case : 승인 -->
 
-                      <!-- Case : 발주완료 -->
-                      <div class="color-green text-body-4 font-weight-medium">
-                        발주완료
-                      </div>
-                      <!--// Case : 발주완료 -->
+                        <!-- Case : 발주요청 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          발주요청
+                        </div>
+                        <!--// Case : 발주요청 -->
 
-                      <!-- Case : 배정 -->
-                      <div class="color-green text-body-4 font-weight-medium">
-                        배정
-                      </div>
-                      <!--// Case : 배정 -->
+                        <!-- Case : 발주완료 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          발주완료
+                        </div>
+                        <!--// Case : 발주완료 -->
 
-                      <!-- Case : 결제완료 -->
-                      <div class="color-green text-body-4 font-weight-medium">
-                        결제완료
-                      </div>
-                      <!--// Case : 결제완료 -->
-                    </li>
-                  </ul>
+                        <!-- Case : 배정 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          배정
+                        </div>
+                        <!--// Case : 배정 -->
+
+                        <!-- Case : 결제완료 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          결제완료
+                        </div>
+                        <!--// Case : 결제완료 -->
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="text-body-1 font-weight-medium row-margin-small">
+                    홍길동
+                  </div>
                 </div>
-                <div class="text-body-1 font-weight-medium row-margin-small">
-                  홍길동
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    theme="denary"
+                    :classNames="{ wrap: 'display-block' }"
+                    >운용리스</RoundStatus
+                  >
                 </div>
-                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
               </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <RoundStatus
-                  theme="denary"
-                  :classNames="{ wrap: 'display-block' }"
-                  >운용리스</RoundStatus
-                >
-              </div>
-            </div>
-            <p
-              class="text-body-4 color-gray-secondary font-weight-light row-margin-item"
-            >
-              메모 내용이 표시됩니다. 텍스트가 길어질 경우 이렇게 보여집니다.
-            </p>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div class="text-body-4 color-gray-quaternary">월납입금</div>
-              </div>
-              <div class="flex-box__cell flex-box__cell--medium">
-                <UnitText size="regular" rightUnit="원" verticalAlign="center"
-                  >628,190</UnitText
-                >
-              </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <UiAccordionOpener :classNames="{ button: $style['opener'] }" />
+              <div class="flex-box row-margin-item">
+                <div class="flex-box__cell flex-1">
+                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                </div>
+                <div class="flex-box__cell">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['opener'] }"
+                  />
+                </div>
               </div>
             </div>
 
@@ -3219,6 +3659,18 @@ export default {
                       item: 'text-body-3',
                     }"
                   >
+                    <KeyValueTitle>월납입금</KeyValueTitle>
+                    <KeyValueText
+                      :classNames="{ text: 'color-green font-weight-medium' }"
+                    >
+                      628,190 원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
                     <KeyValueTitle>출고/유형</KeyValueTitle>
                     <KeyValueText
                       >대리점 출고 / 카드결제, 리스사 명의</KeyValueText
@@ -3241,7 +3693,22 @@ export default {
                     }"
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
-                    <KeyValueText>0 / 0</KeyValueText>
+                    <KeyValueText>
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>견적제목</KeyValueTitle>
+                    <KeyValueText>
+                      <div class="ellipsis">
+                        견적제목이 노출됩니다. 길어질 경우 이렇게 보여집니다.
+                      </div>
+                    </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{
@@ -3377,62 +3844,52 @@ export default {
         <!-- Case : 심사 - 할부 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div :class="$style['division-info']">
-                  <ul :class="$style['division-info__list']">
-                    <li :class="$style['division-info__item']">
-                      <div class="color-black text-body-4 font-weight-light">
-                        2022.10.26
-                      </div>
-                    </li>
-                    <li :class="$style['division-info__item']">
-                      <!-- Case : 심사중 -->
-                      <div class="color-green text-body-4 font-weight-medium">
-                        심사중
-                      </div>
-                      <!--// Case : 심사중 -->
+            <div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
+                  <div :class="$style['division-info']">
+                    <ul :class="$style['division-info__list']">
+                      <li :class="$style['division-info__item']">
+                        <div class="color-black text-body-4 font-weight-light">
+                          2022.10.26
+                        </div>
+                      </li>
+                      <li :class="$style['division-info__item']">
+                        <!-- Case : 심사중 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          심사중
+                        </div>
+                        <!--// Case : 심사중 -->
 
-                      <!-- Case : 승인 -->
-                      <div class="color-green text-body-4 font-weight-medium">
-                        승인
-                      </div>
-                      <!--// Case : 승인 -->
-                    </li>
-                  </ul>
+                        <!-- Case : 승인 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          승인
+                        </div>
+                        <!--// Case : 승인 -->
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="text-body-1 font-weight-medium row-margin-small">
+                    홍길동
+                  </div>
                 </div>
-                <div class="text-body-1 font-weight-medium row-margin-small">
-                  홍길동
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    theme="denary"
+                    :classNames="{ wrap: 'display-block' }"
+                    >할부</RoundStatus
+                  >
                 </div>
-                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
               </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <RoundStatus
-                  theme="denary"
-                  :classNames="{ wrap: 'display-block' }"
-                  >할부</RoundStatus
-                >
-              </div>
-            </div>
-            <p
-              class="text-body-4 color-gray-secondary font-weight-light row-margin-item"
-            >
-              메모 내용이 표시됩니다. 텍스트가 길어질 경우 이렇게 보여집니다.
-            </p>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div class="text-body-4 color-gray-quaternary">월납입금</div>
-              </div>
-              <div class="flex-box__cell flex-box__cell--medium">
-                <UnitText
-                  size="regular"
-                  rightUnit="원 (확정)"
-                  verticalAlign="center"
-                  >1,490,740</UnitText
-                >
-              </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <UiAccordionOpener :classNames="{ button: $style['opener'] }" />
+              <div class="flex-box row-margin-item">
+                <div class="flex-box__cell flex-1">
+                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                </div>
+                <div class="flex-box__cell">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['opener'] }"
+                  />
+                </div>
               </div>
             </div>
 
@@ -3540,6 +3997,18 @@ export default {
                       item: 'text-body-3',
                     }"
                   >
+                    <KeyValueTitle>월납입금</KeyValueTitle>
+                    <KeyValueText
+                      :classNames="{ text: 'color-green font-weight-medium' }"
+                    >
+                      확정 628,190 원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
                     <KeyValueTitle>출고/유형</KeyValueTitle>
                     <KeyValueText>대리점 출고</KeyValueText>
                   </KeyValueItem>
@@ -3557,7 +4026,22 @@ export default {
                     }"
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
-                    <KeyValueText>(0%) : 0 / (0%) : 0</KeyValueText>
+                    <KeyValueText>
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>견적제목</KeyValueTitle>
+                    <KeyValueText>
+                      <div class="ellipsis">
+                        견적제목이 노출됩니다. 길어질 경우 이렇게 보여집니다.
+                      </div>
+                    </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{
@@ -3659,51 +4143,52 @@ export default {
         <!-- Case : 품의 - 장기렌트 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div :class="$style['division-info']">
-                  <ul :class="$style['division-info__list']">
-                    <li :class="$style['division-info__item']">
-                      <div class="color-black text-body-4 font-weight-light">
-                        2022.10.26
-                      </div>
-                    </li>
-                    <li :class="$style['division-info__item']">
-                      <div class="color-green text-body-4 font-weight-medium">
-                        품의요청
-                      </div>
-                    </li>
-                  </ul>
+            <div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
+                  <div :class="$style['division-info']">
+                    <ul :class="$style['division-info__list']">
+                      <li :class="$style['division-info__item']">
+                        <div class="color-black text-body-4 font-weight-light">
+                          2022.10.26
+                        </div>
+                      </li>
+                      <li :class="$style['division-info__item']">
+                        <!-- Case : 품의요청 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          품의요청
+                        </div>
+                        <!-- // Case : 품의요청 -->
+
+                        <!-- Case : 품의확정 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          품의확정
+                        </div>
+                        <!-- // Case : 품의확정 -->
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="text-body-1 font-weight-medium row-margin-small">
+                    홍길동
+                  </div>
                 </div>
-                <div class="text-body-1 font-weight-medium row-margin-small">
-                  홍길동
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    theme="denary"
+                    :classNames="{ wrap: 'display-block' }"
+                    >장기렌트</RoundStatus
+                  >
                 </div>
-                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
               </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <RoundStatus
-                  theme="denary"
-                  :classNames="{ wrap: 'display-block' }"
-                  >장기렌트</RoundStatus
-                >
-              </div>
-            </div>
-            <p
-              class="text-body-4 color-gray-secondary font-weight-light row-margin-item"
-            >
-              메모 내용이 표시됩니다. 텍스트가 길어질 경우 이렇게 보여집니다.
-            </p>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div class="text-body-4 color-gray-quaternary">월납입금</div>
-              </div>
-              <div class="flex-box__cell flex-box__cell--medium">
-                <UnitText size="regular" rightUnit="원" verticalAlign="center"
-                  >628,190</UnitText
-                >
-              </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <UiAccordionOpener :classNames="{ button: $style['opener'] }" />
+              <div class="flex-box row-margin-item">
+                <div class="flex-box__cell flex-1">
+                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                </div>
+                <div class="flex-box__cell">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['opener'] }"
+                  />
+                </div>
               </div>
             </div>
 
@@ -3846,6 +4331,18 @@ export default {
                       item: 'text-body-3',
                     }"
                   >
+                    <KeyValueTitle>월납입금</KeyValueTitle>
+                    <KeyValueText
+                      :classNames="{ text: 'color-green font-weight-medium' }"
+                    >
+                      628,190 원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
                     <KeyValueTitle>탁송</KeyValueTitle>
                     <KeyValueText
                       >외주탁송, 아산 출고장, 서울 도착</KeyValueText
@@ -3873,7 +4370,22 @@ export default {
                     }"
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
-                    <KeyValueText>0 / 0</KeyValueText>
+                    <KeyValueText>
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>견적제목</KeyValueTitle>
+                    <KeyValueText>
+                      <div class="ellipsis">
+                        견적제목이 노출됩니다. 길어질 경우 이렇게 보여집니다.
+                      </div>
+                    </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{
@@ -3907,9 +4419,13 @@ export default {
                       견적서 보기
                     </BasicButton>
                   </ButtonListItem>
+                  <!-- Case : 품의확정 시 disabled="false" -->
                   <ButtonListItem>
-                    <BasicButton size="small">약정 URL 전송</BasicButton>
+                    <BasicButton size="small" :disabled="true">
+                      약정 URL 전송
+                    </BasicButton>
                   </ButtonListItem>
+                  <!-- // Case :품의확정 시 disabled="false" -->
                 </ButtonList>
               </div>
             </UiAccordionLayer>
@@ -3920,51 +4436,52 @@ export default {
         <!-- Case : 품의 - 선구매 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div :class="$style['division-info']">
-                  <ul :class="$style['division-info__list']">
-                    <li :class="$style['division-info__item']">
-                      <div class="color-black text-body-4 font-weight-light">
-                        2022.10.26
-                      </div>
-                    </li>
-                    <li :class="$style['division-info__item']">
-                      <div class="color-green text-body-4 font-weight-medium">
-                        품의요청
-                      </div>
-                    </li>
-                  </ul>
+            <div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
+                  <div :class="$style['division-info']">
+                    <ul :class="$style['division-info__list']">
+                      <li :class="$style['division-info__item']">
+                        <div class="color-black text-body-4 font-weight-light">
+                          2022.10.26
+                        </div>
+                      </li>
+                      <li :class="$style['division-info__item']">
+                        <!-- Case : 품의요청 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          품의요청
+                        </div>
+                        <!-- // Case : 품의요청 -->
+
+                        <!-- Case : 품의확정 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          품의확정
+                        </div>
+                        <!-- // Case : 품의확정 -->
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="text-body-1 font-weight-medium row-margin-small">
+                    홍길동
+                  </div>
                 </div>
-                <div class="text-body-1 font-weight-medium row-margin-small">
-                  홍길동
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    theme="denary"
+                    :classNames="{ wrap: 'display-block' }"
+                    >선구매</RoundStatus
+                  >
                 </div>
-                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
               </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <RoundStatus
-                  theme="denary"
-                  :classNames="{ wrap: 'display-block' }"
-                  >선구매</RoundStatus
-                >
-              </div>
-            </div>
-            <p
-              class="text-body-4 color-gray-secondary font-weight-light row-margin-item"
-            >
-              메모 내용이 표시됩니다. 텍스트가 길어질 경우 이렇게 보여집니다.
-            </p>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div class="text-body-4 color-gray-quaternary">월납입금</div>
-              </div>
-              <div class="flex-box__cell flex-box__cell--medium">
-                <UnitText size="regular" rightUnit="원" verticalAlign="center"
-                  >628,190</UnitText
-                >
-              </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <UiAccordionOpener :classNames="{ button: $style['opener'] }" />
+              <div class="flex-box row-margin-item">
+                <div class="flex-box__cell flex-1">
+                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                </div>
+                <div class="flex-box__cell">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['opener'] }"
+                  />
+                </div>
               </div>
             </div>
 
@@ -4107,6 +4624,18 @@ export default {
                       item: 'text-body-3',
                     }"
                   >
+                    <KeyValueTitle>월납입금</KeyValueTitle>
+                    <KeyValueText
+                      :classNames="{ text: 'color-green font-weight-medium' }"
+                    >
+                      628,190 원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
                     <KeyValueTitle>탁송</KeyValueTitle>
                     <KeyValueText
                       >외주탁송, 아산 출고장, 서울 도착</KeyValueText
@@ -4134,7 +4663,22 @@ export default {
                     }"
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
-                    <KeyValueText>0 / 0</KeyValueText>
+                    <KeyValueText>
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>견적제목</KeyValueTitle>
+                    <KeyValueText>
+                      <div class="ellipsis">
+                        견적제목이 노출됩니다. 길어질 경우 이렇게 보여집니다.
+                      </div>
+                    </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{
@@ -4168,9 +4712,13 @@ export default {
                       견적서 보기
                     </BasicButton>
                   </ButtonListItem>
+                  <!-- Case : 품의확정 시 disabled="false" -->
                   <ButtonListItem>
-                    <BasicButton size="small">약정 URL 전송</BasicButton>
+                    <BasicButton size="small" :disabled="true">
+                      약정 URL 전송
+                    </BasicButton>
                   </ButtonListItem>
+                  <!-- // Case :품의확정 시 disabled="false" -->
                 </ButtonList>
               </div>
             </UiAccordionLayer>
@@ -4181,51 +4729,51 @@ export default {
         <!-- Case : 품의 - 운용리스 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div :class="$style['division-info']">
-                  <ul :class="$style['division-info__list']">
-                    <li :class="$style['division-info__item']">
-                      <div class="color-black text-body-4 font-weight-light">
-                        2022.10.26
-                      </div>
-                    </li>
-                    <li :class="$style['division-info__item']">
-                      <div class="color-green text-body-4 font-weight-medium">
-                        품의요청
-                      </div>
-                    </li>
-                  </ul>
+            <div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
+                  <div :class="$style['division-info']">
+                    <ul :class="$style['division-info__list']">
+                      <li :class="$style['division-info__item']">
+                        <div class="color-black text-body-4 font-weight-light">
+                          2022.10.26
+                        </div>
+                      </li>
+                      <li :class="$style['division-info__item']">
+                        <div class="color-green text-body-4 font-weight-medium">
+                          품의요청
+                        </div>
+                        <!-- // Case : 품의요청 -->
+
+                        <!-- Case : 품의확정 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          품의확정
+                        </div>
+                        <!-- // Case : 품의확정 -->
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="text-body-1 font-weight-medium row-margin-small">
+                    홍길동
+                  </div>
                 </div>
-                <div class="text-body-1 font-weight-medium row-margin-small">
-                  홍길동
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    theme="denary"
+                    :classNames="{ wrap: 'display-block' }"
+                    >운용리스</RoundStatus
+                  >
                 </div>
-                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
               </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <RoundStatus
-                  theme="denary"
-                  :classNames="{ wrap: 'display-block' }"
-                  >운용리스</RoundStatus
-                >
-              </div>
-            </div>
-            <p
-              class="text-body-4 color-gray-secondary font-weight-light row-margin-item"
-            >
-              메모 내용이 표시됩니다. 텍스트가 길어질 경우 이렇게 보여집니다.
-            </p>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div class="text-body-4 color-gray-quaternary">월납입금</div>
-              </div>
-              <div class="flex-box__cell flex-box__cell--medium">
-                <UnitText size="regular" rightUnit="원" verticalAlign="center"
-                  >628,190</UnitText
-                >
-              </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <UiAccordionOpener :classNames="{ button: $style['opener'] }" />
+              <div class="flex-box row-margin-item">
+                <div class="flex-box__cell flex-1">
+                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                </div>
+                <div class="flex-box__cell">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['opener'] }"
+                  />
+                </div>
               </div>
             </div>
 
@@ -4360,6 +4908,18 @@ export default {
                       item: 'text-body-3',
                     }"
                   >
+                    <KeyValueTitle>월납입금</KeyValueTitle>
+                    <KeyValueText
+                      :classNames="{ text: 'color-green font-weight-medium' }"
+                    >
+                      628,190 원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
                     <KeyValueTitle>출고/유형</KeyValueTitle>
                     <KeyValueText
                       >대리점 출고 / 카드결제, 리스사 명의</KeyValueText
@@ -4382,7 +4942,22 @@ export default {
                     }"
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
-                    <KeyValueText>0 / 0</KeyValueText>
+                    <KeyValueText>
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>견적제목</KeyValueTitle>
+                    <KeyValueText>
+                      <div class="ellipsis">
+                        견적제목이 노출됩니다. 길어질 경우 이렇게 보여집니다.
+                      </div>
+                    </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{
@@ -4417,17 +4992,20 @@ export default {
                     </BasicButton>
                   </ButtonListItem>
                   <ButtonListItem>
-                    <BasicButton :line="true" size="small"
-                      >견적서 보기</BasicButton
-                    >
+                    <BasicButton :line="true" size="small">
+                      견적서 보기
+                    </BasicButton>
                   </ButtonListItem>
                 </ButtonList>
 
+                <!-- Case : 품의확정 시 disabled="false" -->
                 <BasicButton
                   size="small"
                   :classNames="{ wrap: 'row-margin-item' }"
+                  :disabled="true"
                   >약정 URL 전송</BasicButton
                 >
+                <!-- // Case :품의확정 시 disabled="false" -->
               </div>
             </UiAccordionLayer>
           </BasicBox>
@@ -4437,54 +5015,52 @@ export default {
         <!-- Case : 품의 - 할부 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div :class="$style['division-info']">
-                  <ul :class="$style['division-info__list']">
-                    <li :class="$style['division-info__item']">
-                      <div class="color-black text-body-4 font-weight-light">
-                        2022.10.26
-                      </div>
-                    </li>
-                    <li :class="$style['division-info__item']">
-                      <div class="color-green text-body-4 font-weight-medium">
-                        품의요청
-                      </div>
-                    </li>
-                  </ul>
+            <div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
+                  <div :class="$style['division-info']">
+                    <ul :class="$style['division-info__list']">
+                      <li :class="$style['division-info__item']">
+                        <div class="color-black text-body-4 font-weight-light">
+                          2022.10.26
+                        </div>
+                      </li>
+                      <li :class="$style['division-info__item']">
+                        <!-- Case : 품의요청 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          품의요청
+                        </div>
+                        <!-- // Case : 품의요청 -->
+
+                        <!-- Case : 품의확정 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          품의확정
+                        </div>
+                        <!-- // Case : 품의확정 -->
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="text-body-1 font-weight-medium row-margin-small">
+                    홍길동
+                  </div>
                 </div>
-                <div class="text-body-1 font-weight-medium row-margin-small">
-                  홍길동
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    theme="denary"
+                    :classNames="{ wrap: 'display-block' }"
+                    >할부</RoundStatus
+                  >
                 </div>
-                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
               </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <RoundStatus
-                  theme="denary"
-                  :classNames="{ wrap: 'display-block' }"
-                  >할부</RoundStatus
-                >
-              </div>
-            </div>
-            <p
-              class="text-body-4 color-gray-secondary font-weight-light row-margin-item"
-            >
-              메모 내용이 표시됩니다. 텍스트가 길어질 경우 이렇게 보여집니다.
-            </p>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div class="text-body-4 color-gray-quaternary">월납입금</div>
-              </div>
-              <div class="flex-box__cell flex-box__cell--medium">
-                <UnitText
-                  size="regular"
-                  rightUnit="원 (확정)"
-                  verticalAlign="center"
-                  >1,490,740</UnitText
-                >
-              </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <UiAccordionOpener :classNames="{ button: $style['opener'] }" />
+              <div class="flex-box row-margin-item">
+                <div class="flex-box__cell flex-1">
+                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                </div>
+                <div class="flex-box__cell">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['opener'] }"
+                  />
+                </div>
               </div>
             </div>
 
@@ -4595,6 +5171,18 @@ export default {
                       item: 'text-body-3',
                     }"
                   >
+                    <KeyValueTitle>월납입금</KeyValueTitle>
+                    <KeyValueText
+                      :classNames="{ text: 'color-green font-weight-medium' }"
+                    >
+                      확정 628,190 원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
                     <KeyValueTitle>출고/유형</KeyValueTitle>
                     <KeyValueText>대리점 출고</KeyValueText>
                   </KeyValueItem>
@@ -4612,7 +5200,22 @@ export default {
                     }"
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
-                    <KeyValueText>(0%) : 0 / (0%) : 0</KeyValueText>
+                    <KeyValueText>
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>견적제목</KeyValueTitle>
+                    <KeyValueText>
+                      <div class="ellipsis">
+                        견적제목이 노출됩니다. 길어질 경우 이렇게 보여집니다.
+                      </div>
+                    </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{
@@ -4653,11 +5256,14 @@ export default {
                   </ButtonListItem>
                 </ButtonList>
 
+                <!-- Case : 품의확정 시 disabled="false" -->
                 <BasicButton
                   size="small"
                   :classNames="{ wrap: 'row-margin-item' }"
+                  disabled="true"
                   >약정 URL 전송</BasicButton
                 >
+                <!-- // Case :품의확정 시 disabled="false" -->
               </div>
             </UiAccordionLayer>
           </BasicBox>
@@ -4667,59 +5273,52 @@ export default {
         <!-- Case : 인도 - 장기렌트 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div :class="$style['division-info']">
-                  <ul :class="$style['division-info__list']">
-                    <li :class="$style['division-info__item']">
-                      <div class="color-black text-body-4 font-weight-light">
-                        2022.10.26
-                      </div>
-                    </li>
-                    <li :class="$style['division-info__item']">
-                      <!-- Case : 송금완료 -->
-                      <div class="color-green text-body-4 font-weight-medium">
-                        송금완료
-                      </div>
-                      <!--  //Case : 송금완료 -->
+            <div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
+                  <div :class="$style['division-info']">
+                    <ul :class="$style['division-info__list']">
+                      <li :class="$style['division-info__item']">
+                        <div class="color-black text-body-4 font-weight-light">
+                          2022.10.26
+                        </div>
+                      </li>
+                      <li :class="$style['division-info__item']">
+                        <!-- Case : 송금완료 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          송금완료
+                        </div>
+                        <!--  //Case : 송금완료 -->
 
-                      <!-- Case : 실행완료 -->
-                      <div class="color-green text-body-4 font-weight-medium">
-                        실행완료
-                      </div>
-                      <!--  //Case : 실행완료 -->
-                    </li>
-                  </ul>
+                        <!-- Case : 실행완료 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          실행완료
+                        </div>
+                        <!--  //Case : 실행완료 -->
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="text-body-1 font-weight-medium row-margin-small">
+                    홍길동
+                  </div>
                 </div>
-                <div class="text-body-1 font-weight-medium row-margin-small">
-                  홍길동
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    theme="denary"
+                    :classNames="{ wrap: 'display-block' }"
+                    >장기렌트</RoundStatus
+                  >
                 </div>
-                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
               </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <RoundStatus
-                  theme="denary"
-                  :classNames="{ wrap: 'display-block' }"
-                  >장기렌트</RoundStatus
-                >
-              </div>
-            </div>
-            <p
-              class="text-body-4 color-gray-secondary font-weight-light row-margin-item"
-            >
-              메모 내용이 표시됩니다. 텍스트가 길어질 경우 이렇게 보여집니다.
-            </p>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div class="text-body-4 color-gray-quaternary">월납입금</div>
-              </div>
-              <div class="flex-box__cell flex-box__cell--medium">
-                <UnitText size="regular" rightUnit="원" verticalAlign="center"
-                  >628,190</UnitText
-                >
-              </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <UiAccordionOpener :classNames="{ button: $style['opener'] }" />
+              <div class="flex-box row-margin-item">
+                <div class="flex-box__cell flex-1">
+                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                </div>
+                <div class="flex-box__cell">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['opener'] }"
+                  />
+                </div>
               </div>
             </div>
 
@@ -4862,6 +5461,18 @@ export default {
                       item: 'text-body-3',
                     }"
                   >
+                    <KeyValueTitle>월납입금</KeyValueTitle>
+                    <KeyValueText
+                      :classNames="{ text: 'color-green font-weight-medium' }"
+                    >
+                      628,190 원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
                     <KeyValueTitle>탁송</KeyValueTitle>
                     <KeyValueText
                       >외주탁송, 아산 출고장, 서울 도착</KeyValueText
@@ -4889,7 +5500,22 @@ export default {
                     }"
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
-                    <KeyValueText>0 / 0</KeyValueText>
+                    <KeyValueText>
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>견적제목</KeyValueTitle>
+                    <KeyValueText>
+                      <div class="ellipsis">
+                        견적제목이 노출됩니다. 길어질 경우 이렇게 보여집니다.
+                      </div>
+                    </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{
@@ -4939,59 +5565,52 @@ export default {
         <!-- Case : 인도 - 선구매 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div :class="$style['division-info']">
-                  <ul :class="$style['division-info__list']">
-                    <li :class="$style['division-info__item']">
-                      <div class="color-black text-body-4 font-weight-light">
-                        2022.10.26
-                      </div>
-                    </li>
-                    <li :class="$style['division-info__item']">
-                      <!-- Case : 송금완료 -->
-                      <div class="color-green text-body-4 font-weight-medium">
-                        송금완료
-                      </div>
-                      <!--  //Case : 송금완료 -->
+            <div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
+                  <div :class="$style['division-info']">
+                    <ul :class="$style['division-info__list']">
+                      <li :class="$style['division-info__item']">
+                        <div class="color-black text-body-4 font-weight-light">
+                          2022.10.26
+                        </div>
+                      </li>
+                      <li :class="$style['division-info__item']">
+                        <!-- Case : 송금완료 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          송금완료
+                        </div>
+                        <!--  //Case : 송금완료 -->
 
-                      <!-- Case : 실행완료 -->
-                      <div class="color-green text-body-4 font-weight-medium">
-                        실행완료
-                      </div>
-                      <!--  //Case : 실행완료 -->
-                    </li>
-                  </ul>
+                        <!-- Case : 실행완료 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          실행완료
+                        </div>
+                        <!--  //Case : 실행완료 -->
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="text-body-1 font-weight-medium row-margin-small">
+                    홍길동
+                  </div>
                 </div>
-                <div class="text-body-1 font-weight-medium row-margin-small">
-                  홍길동
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    theme="denary"
+                    :classNames="{ wrap: 'display-block' }"
+                    >선구매</RoundStatus
+                  >
                 </div>
-                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
               </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <RoundStatus
-                  theme="denary"
-                  :classNames="{ wrap: 'display-block' }"
-                  >선구매</RoundStatus
-                >
-              </div>
-            </div>
-            <p
-              class="text-body-4 color-gray-secondary font-weight-light row-margin-item"
-            >
-              메모 내용이 표시됩니다. 텍스트가 길어질 경우 이렇게 보여집니다.
-            </p>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div class="text-body-4 color-gray-quaternary">월납입금</div>
-              </div>
-              <div class="flex-box__cell flex-box__cell--medium">
-                <UnitText size="regular" rightUnit="원" verticalAlign="center"
-                  >628,190</UnitText
-                >
-              </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <UiAccordionOpener :classNames="{ button: $style['opener'] }" />
+              <div class="flex-box row-margin-item">
+                <div class="flex-box__cell flex-1">
+                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                </div>
+                <div class="flex-box__cell">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['opener'] }"
+                  />
+                </div>
               </div>
             </div>
 
@@ -5134,6 +5753,18 @@ export default {
                       item: 'text-body-3',
                     }"
                   >
+                    <KeyValueTitle>월납입금</KeyValueTitle>
+                    <KeyValueText
+                      :classNames="{ text: 'color-green font-weight-medium' }"
+                    >
+                      628,190 원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
                     <KeyValueTitle>탁송</KeyValueTitle>
                     <KeyValueText
                       >외주탁송, 아산 출고장, 서울 도착</KeyValueText
@@ -5161,7 +5792,22 @@ export default {
                     }"
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
-                    <KeyValueText>0 / 0</KeyValueText>
+                    <KeyValueText>
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>견적제목</KeyValueTitle>
+                    <KeyValueText>
+                      <div class="ellipsis">
+                        견적제목이 노출됩니다. 길어질 경우 이렇게 보여집니다.
+                      </div>
+                    </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{
@@ -5211,65 +5857,58 @@ export default {
         <!-- Case : 인도 - 운용리스 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div :class="$style['division-info']">
-                  <ul :class="$style['division-info__list']">
-                    <li :class="$style['division-info__item']">
-                      <div class="color-black text-body-4 font-weight-light">
-                        2022.10.26
-                      </div>
-                    </li>
-                    <li :class="$style['division-info__item']">
-                      <!-- Case : 송금완료 -->
-                      <div class="color-green text-body-4 font-weight-medium">
-                        송금완료
-                      </div>
-                      <!--  //Case : 송금완료 -->
+            <div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
+                  <div :class="$style['division-info']">
+                    <ul :class="$style['division-info__list']">
+                      <li :class="$style['division-info__item']">
+                        <div class="color-black text-body-4 font-weight-light">
+                          2022.10.26
+                        </div>
+                      </li>
+                      <li :class="$style['division-info__item']">
+                        <!-- Case : 송금완료 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          송금완료
+                        </div>
+                        <!--  //Case : 송금완료 -->
 
-                      <!-- Case : 차량등록완료 -->
-                      <div class="color-green text-body-4 font-weight-medium">
-                        차량등록완료
-                      </div>
-                      <!--  //Case : 차량등록완료 -->
+                        <!-- Case : 차량등록완료 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          차량등록완료
+                        </div>
+                        <!--  //Case : 차량등록완료 -->
 
-                      <!-- Case : 실행완료 -->
-                      <div class="color-green text-body-4 font-weight-medium">
-                        실행완료
-                      </div>
-                      <!--  //Case : 실행완료 -->
-                    </li>
-                  </ul>
+                        <!-- Case : 실행완료 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          실행완료
+                        </div>
+                        <!--  //Case : 실행완료 -->
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="text-body-1 font-weight-medium row-margin-small">
+                    홍길동
+                  </div>
                 </div>
-                <div class="text-body-1 font-weight-medium row-margin-small">
-                  홍길동
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    theme="denary"
+                    :classNames="{ wrap: 'display-block' }"
+                    >운용리스</RoundStatus
+                  >
                 </div>
-                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
               </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <RoundStatus
-                  theme="denary"
-                  :classNames="{ wrap: 'display-block' }"
-                  >운용리스</RoundStatus
-                >
-              </div>
-            </div>
-            <p
-              class="text-body-4 color-gray-secondary font-weight-light row-margin-item"
-            >
-              메모 내용이 표시됩니다. 텍스트가 길어질 경우 이렇게 보여집니다.
-            </p>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div class="text-body-4 color-gray-quaternary">월납입금</div>
-              </div>
-              <div class="flex-box__cell flex-box__cell--medium">
-                <UnitText size="regular" rightUnit="원" verticalAlign="center"
-                  >628,190</UnitText
-                >
-              </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <UiAccordionOpener :classNames="{ button: $style['opener'] }" />
+              <div class="flex-box row-margin-item">
+                <div class="flex-box__cell flex-1">
+                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                </div>
+                <div class="flex-box__cell">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['opener'] }"
+                  />
+                </div>
               </div>
             </div>
 
@@ -5404,6 +6043,18 @@ export default {
                       item: 'text-body-3',
                     }"
                   >
+                    <KeyValueTitle>월납입금</KeyValueTitle>
+                    <KeyValueText
+                      :classNames="{ text: 'color-green font-weight-medium' }"
+                    >
+                      628,190 원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
                     <KeyValueTitle>출고/유형</KeyValueTitle>
                     <KeyValueText
                       >대리점 출고 / 카드결제, 리스사 명의</KeyValueText
@@ -5426,7 +6077,22 @@ export default {
                     }"
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
-                    <KeyValueText>0 / 0</KeyValueText>
+                    <KeyValueText>
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>견적제목</KeyValueTitle>
+                    <KeyValueText>
+                      <div class="ellipsis">
+                        견적제목이 노출됩니다. 길어질 경우 이렇게 보여집니다.
+                      </div>
+                    </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{
@@ -5533,68 +6199,58 @@ export default {
         <!-- Case : 인도 - 할부 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div :class="$style['division-info']">
-                  <ul :class="$style['division-info__list']">
-                    <li :class="$style['division-info__item']">
-                      <div class="color-black text-body-4 font-weight-light">
-                        2022.10.26
-                      </div>
-                    </li>
-                    <li :class="$style['division-info__item']">
-                      <!-- Case : 송금완료 -->
-                      <div class="color-green text-body-4 font-weight-medium">
-                        송금완료
-                      </div>
-                      <!--  //Case : 송금완료 -->
+            <div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
+                  <div :class="$style['division-info']">
+                    <ul :class="$style['division-info__list']">
+                      <li :class="$style['division-info__item']">
+                        <div class="color-black text-body-4 font-weight-light">
+                          2022.10.26
+                        </div>
+                      </li>
+                      <li :class="$style['division-info__item']">
+                        <!-- Case : 송금완료 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          송금완료
+                        </div>
+                        <!--  //Case : 송금완료 -->
 
-                      <!-- Case : 실행완료 -->
-                      <div class="color-green text-body-4 font-weight-medium">
-                        실행완료
-                      </div>
-                      <!--  //Case : 실행완료 -->
+                        <!-- Case : 실행완료 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          실행완료
+                        </div>
+                        <!--  //Case : 실행완료 -->
 
-                      <!-- Case : 차량등록완료 -->
-                      <div class="color-green text-body-4 font-weight-medium">
-                        차량등록완료
-                      </div>
-                      <!--  //Case : 차량등록완료 -->
-                    </li>
-                  </ul>
+                        <!-- Case : 차량등록완료 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          차량등록완료
+                        </div>
+                        <!--  //Case : 차량등록완료 -->
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="text-body-1 font-weight-medium row-margin-small">
+                    홍길동
+                  </div>
                 </div>
-                <div class="text-body-1 font-weight-medium row-margin-small">
-                  홍길동
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    theme="denary"
+                    :classNames="{ wrap: 'display-block' }"
+                    >할부</RoundStatus
+                  >
                 </div>
-                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
               </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <RoundStatus
-                  theme="denary"
-                  :classNames="{ wrap: 'display-block' }"
-                  >할부</RoundStatus
-                >
-              </div>
-            </div>
-            <p
-              class="text-body-4 color-gray-secondary font-weight-light row-margin-item"
-            >
-              메모 내용이 표시됩니다. 텍스트가 길어질 경우 이렇게 보여집니다.
-            </p>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div class="text-body-4 color-gray-quaternary">월납입금</div>
-              </div>
-              <div class="flex-box__cell flex-box__cell--medium">
-                <UnitText
-                  size="regular"
-                  rightUnit="원 (확정)"
-                  verticalAlign="center"
-                  >1,490,740</UnitText
-                >
-              </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <UiAccordionOpener :classNames="{ button: $style['opener'] }" />
+              <div class="flex-box row-margin-item">
+                <div class="flex-box__cell flex-1">
+                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                </div>
+                <div class="flex-box__cell">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['opener'] }"
+                  />
+                </div>
               </div>
             </div>
 
@@ -5705,8 +6361,20 @@ export default {
                       item: 'text-body-3',
                     }"
                   >
+                    <KeyValueTitle>월납입금</KeyValueTitle>
+                    <KeyValueText
+                      :classNames="{ text: 'color-green font-weight-medium' }"
+                    >
+                      628,190 원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
                     <KeyValueTitle>출고/유형</KeyValueTitle>
-                    <KeyValueText> 대리점 출고</KeyValueText>
+                    <KeyValueText>대리점 출고</KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{
@@ -5722,7 +6390,22 @@ export default {
                     }"
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
-                    <KeyValueText>0 / 0</KeyValueText>
+                    <KeyValueText>
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>견적제목</KeyValueTitle>
+                    <KeyValueText>
+                      <div class="ellipsis">
+                        견적제목이 노출됩니다. 길어질 경우 이렇게 보여집니다.
+                      </div>
+                    </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{

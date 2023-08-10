@@ -83,7 +83,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton>본인인증</BasicButton>
+            <BasicButton>다음</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
