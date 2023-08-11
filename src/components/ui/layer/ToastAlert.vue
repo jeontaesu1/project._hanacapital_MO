@@ -35,7 +35,7 @@ export default {
         timer: null,
       };
 
-      state.messages.push(obj);
+      state.messages.unshift(obj);
       state.count++;
 
       nextTick(() => {
