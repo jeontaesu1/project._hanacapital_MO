@@ -6,6 +6,7 @@
   width: 100%;
   padding-right: 20px;
   @include font-size-head(18);
+  letter-spacing: 0;
   min-height: #{$line-height-head}em;
   text-align: left;
 
@@ -63,6 +64,7 @@
     vertical-align: top;
     padding-right: 16px;
     @include font-size-default(12);
+    letter-spacing: 0;
     color: $color-gray-60;
 
     &::before {

@@ -26,6 +26,7 @@
       width: 100%;
       padding: 12px 40px 12px 4px;
       @include font-size-default(16);
+      letter-spacing: 0;
       min-height: #{$line-height-default}em;
       text-align: left;
     }
