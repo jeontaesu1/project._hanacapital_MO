@@ -62,7 +62,7 @@ export default {
         <div class="flex-box">
           <div class="flex-box__cell flex-1">
             <div class="row-margin-mini">
-              <CarEmblem code="1001" name="현대" />
+              <CarEmblem src="/images/_dummy/car-emblem.png" name="현대" />
             </div>
             <h3 class="text-body-1 font-weight-medium">현대</h3>
             <p class="text-body-4 color-gray row-margin-small">

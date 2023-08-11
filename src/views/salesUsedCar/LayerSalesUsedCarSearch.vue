@@ -203,7 +203,7 @@ export default {
         <li v-for="i in 3" :key="i" class="row-margin-item-group">
           <BasicBox>
             <div class="row-margin-mini">
-              <CarEmblem code="1002" name="기아" />
+              <CarEmblem src="/images/_dummy/car-emblem.png" name="기아" />
             </div>
             <h3 class="text-body-1 font-weight-medium">노블레스</h3>
             <p class="text-body-4 color-gray row-margin-small">

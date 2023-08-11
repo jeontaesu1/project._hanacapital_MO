@@ -51,7 +51,7 @@ export default {
 
       <div :class="$style['car-info']">
         <div :class="$style['car-info__inner']">
-          <CarEmblem code="1001" name="현대" />
+          <CarEmblem src="/images/_dummy/car-emblem.png" name="현대" />
         </div>
       </div>
 

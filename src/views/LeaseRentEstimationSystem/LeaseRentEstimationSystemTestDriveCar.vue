@@ -360,7 +360,10 @@ export default {
                         <KeyValueText>
                           <div class="flex-box">
                             <div class="flex-box__cell">
-                              <CarEmblem code="1012" size="small" />
+                              <CarEmblem
+                                src="/images/_dummy/car-emblem.png"
+                                size="small"
+                              />
                             </div>
                             <div class="flex-box__cell flex-box__cell--small">
                               제네시스
@@ -421,7 +424,10 @@ export default {
                               "
                             >
                               <span :class="$style['bank-brand__logo']">
-                                <CarEmblem code="1001" size="medium" />
+                                <CarEmblem
+                                  src="/images/_dummy/car-emblem.png"
+                                  size="medium"
+                                />
                               </span>
                               <span :class="$style['bank-brand__text']"
                                 >현대</span
@@ -446,7 +452,10 @@ export default {
                               "
                             >
                               <span :class="$style['bank-brand__logo']">
-                                <CarEmblem code="1012" size="medium" />
+                                <CarEmblem
+                                  src="/images/_dummy/car-emblem.png"
+                                  size="medium"
+                                />
                               </span>
                               <span :class="$style['bank-brand__text']"
                                 >제네시스</span
@@ -466,7 +475,10 @@ export default {
                               "
                             >
                               <span :class="$style['bank-brand__logo']">
-                                <CarEmblem code="1002" size="medium" />
+                                <CarEmblem
+                                  src="/images/_dummy/car-emblem.png"
+                                  size="medium"
+                                />
                               </span>
                               <span :class="$style['bank-brand__text']"
                                 >기아</span
@@ -486,7 +498,10 @@ export default {
                               "
                             >
                               <span :class="$style['bank-brand__logo']">
-                                <CarEmblem code="1003" size="medium" />
+                                <CarEmblem
+                                  src="/images/_dummy/car-emblem.png"
+                                  size="medium"
+                                />
                               </span>
                               <span :class="$style['bank-brand__text']"
                                 >르노삼성</span
@@ -506,7 +521,10 @@ export default {
                               "
                             >
                               <span :class="$style['bank-brand__logo']">
-                                <CarEmblem code="1006" size="medium" />
+                                <CarEmblem
+                                  src="/images/_dummy/car-emblem.png"
+                                  size="medium"
+                                />
                               </span>
                               <span :class="$style['bank-brand__text']"
                                 >쉐보레</span
@@ -526,7 +544,10 @@ export default {
                               "
                             >
                               <span :class="$style['bank-brand__logo']">
-                                <CarEmblem code="1005" size="medium" />
+                                <CarEmblem
+                                  src="/images/_dummy/car-emblem.png"
+                                  size="medium"
+                                />
                               </span>
                               <span :class="$style['bank-brand__text']"
                                 >쌍용</span
@@ -546,7 +567,7 @@ export default {
                               "
                             >
                               <span :class="$style['bank-brand__logo']">
-                                <CarEmblem code="" size="medium" />
+                                <CarEmblem size="medium" />
                               </span>
                               <span :class="$style['bank-brand__text']"
                                 >기타</span
@@ -575,7 +596,10 @@ export default {
                               "
                             >
                               <span :class="$style['bank-brand__logo']">
-                                <CarEmblem code="2001" size="medium" />
+                                <CarEmblem
+                                  src="/images/_dummy/car-emblem.png"
+                                  size="medium"
+                                />
                               </span>
                               <span :class="$style['bank-brand__text']"
                                 >벤츠</span
@@ -595,7 +619,10 @@ export default {
                               "
                             >
                               <span :class="$style['bank-brand__logo']">
-                                <CarEmblem code="2002" size="medium" />
+                                <CarEmblem
+                                  src="/images/_dummy/car-emblem.png"
+                                  size="medium"
+                                />
                               </span>
                               <span :class="$style['bank-brand__text']"
                                 >BMW</span
@@ -615,7 +642,10 @@ export default {
                               "
                             >
                               <span :class="$style['bank-brand__logo']">
-                                <CarEmblem code="2003" size="medium" />
+                                <CarEmblem
+                                  src="/images/_dummy/car-emblem.png"
+                                  size="medium"
+                                />
                               </span>
                               <span :class="$style['bank-brand__text']"
                                 >아우디</span
@@ -635,7 +665,10 @@ export default {
                               "
                             >
                               <span :class="$style['bank-brand__logo']">
-                                <CarEmblem code="2017" size="medium" />
+                                <CarEmblem
+                                  src="/images/_dummy/car-emblem.png"
+                                  size="medium"
+                                />
                               </span>
                               <span :class="$style['bank-brand__text']"
                                 >포르쉐</span
@@ -655,7 +688,10 @@ export default {
                               "
                             >
                               <span :class="$style['bank-brand__logo']">
-                                <CarEmblem code="2018" size="medium" />
+                                <CarEmblem
+                                  src="/images/_dummy/car-emblem.png"
+                                  size="medium"
+                                />
                               </span>
                               <span :class="$style['bank-brand__text']"
                                 >마세라티</span
@@ -675,7 +711,10 @@ export default {
                               "
                             >
                               <span :class="$style['bank-brand__logo']">
-                                <CarEmblem code="2025" size="medium" />
+                                <CarEmblem
+                                  src="/images/_dummy/car-emblem.png"
+                                  size="medium"
+                                />
                               </span>
                               <span :class="$style['bank-brand__text']"
                                 >벤틀리</span
@@ -695,7 +734,7 @@ export default {
                               "
                             >
                               <span :class="$style['bank-brand__logo']">
-                                <CarEmblem code="" size="medium" />
+                                <CarEmblem size="medium" />
                               </span>
                               <span :class="$style['bank-brand__text']"
                                 >기타</span

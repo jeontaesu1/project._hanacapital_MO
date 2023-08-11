@@ -110,7 +110,7 @@ export default {
     <div class="row-margin-contents-small">
       <div class="flex-box">
         <div class="flex-box__cell flex-1">
-          <CarEmblem code="1001" name="현대" />
+          <CarEmblem src="/images/_dummy/car-emblem.png" name="현대" />
           <h3 class="text-body-1 font-weight-medium row-margin-mini">뉴 QM6</h3>
         </div>
         <div class="flex-box__cell">
@@ -312,7 +312,7 @@ export default {
             <BasicBoxHeadLeft>
               <div class="flex-box">
                 <div class="flex-box__cell">
-                  <CarEmblem code="1001" name="현대" />
+                  <CarEmblem src="/images/_dummy/car-emblem.png" name="현대" />
                 </div>
                 <div class="flex-box__cell flex-box__cell--small">
                   <span class="text-body-4 color-black font-weight-light"

@@ -90,7 +90,10 @@ export default {
                 <BasicBoxHeadLeft>
                   <div class="flex-box row-margin-mini">
                     <div class="flex-box__cell">
-                      <CarEmblem code="1001" name="현대" />
+                      <CarEmblem
+                        src="/images/_dummy/car-emblem.png"
+                        name="현대"
+                      />
                     </div>
                     <div class="flex-box__cell flex-box__cell--small">
                       <span class="text-body-4 color-black font-weight-light">
@@ -207,7 +210,7 @@ export default {
             <BasicBox>
               <div class="flex-box row-margin-mini">
                 <div class="flex-box__cell flex-1">
-                  <CarEmblem code="1001" name="현대" />
+                  <CarEmblem src="/images/_dummy/car-emblem.png" name="현대" />
                 </div>
                 <div class="flex-box__cell flex-box__cell--small">
                   <DeleteButton BasicButton />

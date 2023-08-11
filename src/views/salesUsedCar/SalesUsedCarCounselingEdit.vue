@@ -336,7 +336,7 @@ export default {
       <!-- Case : 차량 선택 후 노출 -->
       <BasicBox className="row-margin-contents">
         <div class="row-margin-mini">
-          <CarEmblem code="1001" name="현대" />
+          <CarEmblem src="/images/_dummy/car-emblem.png" name="현대" />
         </div>
         <h3 class="text-body-1 font-weight-medium">기아</h3>
         <p class="text-body-4 color-gray font-weight-regular row-margin-small">

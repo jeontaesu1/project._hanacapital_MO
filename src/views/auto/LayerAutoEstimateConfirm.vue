@@ -121,7 +121,7 @@ export default {
       <BasicBox>
         <BasicBoxHead align="top">
           <BasicBoxHeadLeft>
-            <CarEmblem code="1001" name="현대" />
+            <CarEmblem src="/images/_dummy/car-emblem.png" name="현대" />
             <h3 class="text-body-1 font-weight-medium">캐스퍼</h3>
           </BasicBoxHeadLeft>
           <BasicBoxHeadRight>

@@ -211,7 +211,10 @@ export default {
                 <div class="flex-box row-margin-item">
                   <div class="flex-box__cell flex-1">
                     <div class="row-margin-mini">
-                      <CarEmblem code="1001" name="현대" />
+                      <CarEmblem
+                        src="/images/_dummy/car-emblem.png"
+                        name="현대"
+                      />
                     </div>
                     <h4 class="text-body-1 font-weight-medium">캐스퍼</h4>
                     <p class="text-body-4 color-gray row-margin-small">
@@ -754,7 +757,10 @@ export default {
               <BasicBoxHeadLeft>
                 <div class="flex-box row-margin-mini">
                   <div class="flex-box__cell">
-                    <CarEmblem code="1001" name="현대" />
+                    <CarEmblem
+                      src="/images/_dummy/car-emblem.png"
+                      name="현대"
+                    />
                   </div>
                   <div class="flex-box__cell flex-box__cell--small">
                     <p class="text-body-4 font-weight-light">2020년식</p>
