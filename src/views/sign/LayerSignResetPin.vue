@@ -5,7 +5,6 @@ import { ref } from 'vue';
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
-import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
@@ -19,7 +18,6 @@ export default {
     UiLayer,
     FullPopup,
     FullPopupHead,
-    PopupButton,
     PageTextGroup,
     PageMainText,
     ButtonList,
@@ -38,14 +36,10 @@ export default {
 </script>
 
 <template>
-  <UiLayer ref="layer" type="full" v-slot="layerSlotProps">
+  <UiLayer ref="layer" type="full">
     <FullPopup>
       <template v-slot:head>
-        <FullPopupHead>
-          <template v-slot:right>
-            <PopupButton @click="layerSlotProps.close()" />
-          </template>
-        </FullPopupHead>
+        <FullPopupHead />
       </template>
 
       <PageTextGroup>

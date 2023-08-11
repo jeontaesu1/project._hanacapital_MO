@@ -1,6 +1,6 @@
 <script>
-// LR_M00_l012
-import { reactive, ref } from 'vue';
+// LR_M00_l017
+import { reactive, ref, computed } from 'vue';
 import { A11y, FreeMode, Scrollbar, Mousewheel } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
@@ -48,6 +48,14 @@ export default {
 
     const layer = ref(null);
 
+    const crrI = computed(() => {
+      if (!state.swiper) return null;
+
+      const { realIndex = 0 } = state.swiper;
+
+      return realIndex;
+    });
+
     const on = {
       swiper: (swiper) => {
         state.swiper = swiper;
@@ -65,6 +73,7 @@ export default {
     return {
       modules: [A11y, FreeMode, Scrollbar, Mousewheel],
       layer,
+      crrI,
       on,
       prev,
       next,
@@ -102,11 +111,21 @@ export default {
       </template>
 
       <div v-if="images.length" :class="$style['silde']">
-        <button type="button" :class="$style['silde__prev']" @click="prev">
+        <button
+          type="button"
+          :disabled="crrI === 0"
+          :class="$style['silde__prev']"
+          @click="prev"
+        >
           <IconSlidePrev />
           <span class="for-a11y">이전 슬라이드</span>
         </button>
-        <button type="button" :class="$style['silde__next']" @click="next">
+        <button
+          type="button"
+          :disabled="crrI === images.length - 1"
+          :class="$style['silde__next']"
+          @click="next"
+        >
           <IconSlideNext />
           <span class="for-a11y">다음 슬라이드</span>
         </button>

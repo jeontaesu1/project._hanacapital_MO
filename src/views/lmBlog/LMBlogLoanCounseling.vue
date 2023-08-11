@@ -120,13 +120,7 @@ export default {
           </PageMainText>
         </div>
         <div class="flex-box__cell flex-box__cell--medium">
-          <BasicButton
-            tagName="a"
-            size="small"
-            :line="true"
-            href="tel:0000-0000"
-            >직장검색</BasicButton
-          >
+          <BasicButton size="small" :line="true">직장검색</BasicButton>
         </div>
       </div>
       <PageSubText>

@@ -1,5 +1,5 @@
 <script>
-// AF_M01_l005
+// AF_M02_l005 type_1
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -8,7 +8,6 @@ import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
-import PageSubText from '@/components/ui/text/PageSubText.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import KeyValue from '@/components/ui/text/KeyValue.vue';
@@ -27,7 +26,6 @@ export default {
     PopupButton,
     PageTextGroup,
     PageMainText,
-    PageSubText,
     IllustObject,
     BasicHr,
     KeyValue,
@@ -64,17 +62,10 @@ export default {
           김하나님, 요청하신 견적으로<br />
           <strong>진행이 어렵습니다</strong>
         </PageMainText>
-        <!-- Case : 수정 요청 내용 case 1 -->
-        <PageSubText>
-          선납금/보증금을 높여서 재견적하시거나,<br />
-          상담원 연결을 통해 견적문의 주시길 바랍니다.
-        </PageSubText>
-        <!-- // Case : 수정 요청 내용 case 1 -->
       </PageTextGroup>
 
       <IllustObject type="fail" />
 
-      <!-- Case : 수정 요청 내용 case 2 -->
       <BasicHr
         type="contents"
         theme="quaternary"
@@ -89,11 +80,7 @@ export default {
       </PageTextGroup>
 
       <ul
-        :class="[
-          $style['logs'],
-          'row-margin-contents-group',
-          'row-margin-top-none',
-        ]"
+        :class="[$style['logs'], 'row-margin-contents', 'row-margin-top-none']"
       >
         <li :class="$style['logs__item']">
           <div :class="$style['logs__block']">
@@ -117,15 +104,23 @@ export default {
             />
 
             <KeyValue>
+              <!-- Case : 운용리스 -->
               <KeyValueItem class="text-body-5">
                 <KeyValueTitle>선납금 + 보증금</KeyValueTitle>
                 <KeyValueText>20% (22,145,111원)</KeyValueText>
               </KeyValueItem>
+              <!-- // Case : 운용리스 -->
+
+              <!-- Case : 금융리스 -->
+              <KeyValueItem class="text-body-5">
+                <KeyValueTitle>선납금</KeyValueTitle>
+                <KeyValueText>20% (22,145,111원)</KeyValueText>
+              </KeyValueItem>
+              <!-- // Case : 금융리스 -->
             </KeyValue>
           </div>
         </li>
       </ul>
-      <!-- // Case : 수정 요청 내용 case 2 -->
 
       <section :class="$style['notice-section']">
         <h3 :class="$style['notice-section__title']">진행방법</h3>
@@ -154,17 +149,9 @@ export default {
             wrap: 'row-margin-none',
           }"
         >
-          <!-- Case : 수정 요청 내용 case 1 -->
-          <ButtonListItem>
-            <BasicButton theme="tertiary">재견적</BasicButton>
-          </ButtonListItem>
-          <!-- // Case : 수정 요청 내용 case 1 -->
-
-          <!-- Case : 수정 요청 내용 case 2 -->
           <ButtonListItem>
             <BasicButton :line="true" theme="quaternary">다음에</BasicButton>
           </ButtonListItem>
-          <!-- // Case : 수정 요청 내용 case 2 -->
           <ButtonListItem>
             <BasicButton>상담원 연결</BasicButton>
           </ButtonListItem>
@@ -175,5 +162,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/auto/LayerAutoLongRentalEvaluationFailLimit.scss';
+@import '@/assets/scss/views/auto/LayerAutoLeaseEvaluationFailLimit.scss';
 </style>

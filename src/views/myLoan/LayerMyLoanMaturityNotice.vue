@@ -80,7 +80,12 @@ export default {
         <PageSubText>
           안녕하세요. 김하나님.<br />
           하나캐피탈을 이용해주신 손님께 깊은 감사를 드립니다.<br />
+          <!-- Case : 리스일 경우 노출 -->
           손님께서 이용중인 오토리스의 만기가 다가오고 있습니다.
+          <!--// Case : 리스일 경우 노출 -->
+          <!-- Case : 렌트일 경우 노출 -->
+          손님께서 이용중인 렌터카의 만기가 다가오고 있습니다.
+          <!-- //Case : 렌트일 경우 노출 -->
         </PageSubText>
         <PageSubText>
           만기 1개월 전까지 만기상담 담당자가 배정되어, 만기 상담을 위하여 유선
@@ -621,40 +626,38 @@ export default {
               ]"
             >
               <li
-                :class="[$style['basic-list__item'], 'text-body-4 color-black']"
+                :class="[$style['basic-list__item'], 'text-body-3 color-black']"
               >
                 <div :class="$style['basic-list__symbol']"></div>
-                <div :class="[$style['basic-list__content'], 'text-body-3']">
+                <div :class="$style['basic-list__content']">
                   만기 1개월전까지 담당자가 만기상담을 위해 연락드릴 예정입니다.
                 </div>
               </li>
               <li
-                :class="[$style['basic-list__item'], 'text-body-4 color-black']"
+                :class="[$style['basic-list__item'], 'text-body-3 color-black']"
               >
                 <div :class="$style['basic-list__symbol']"></div>
-                <div :class="[$style['basic-list__content'], 'text-body-3']">
+                <div :class="$style['basic-list__content']">
                   반환 또는 구매시점에는 확인되지 않은 범칙금, 과태료, 자동차세
                   등을 충당하기 위해 3개월간 예치하는 “해지후보증금”을
                   납부하셔야 합니다.
                 </div>
               </li>
               <li
-                :class="[$style['basic-list__item'], 'text-body-4 color-black']"
+                :class="[$style['basic-list__item'], 'text-body-3 color-black']"
               >
                 <div :class="$style['basic-list__symbol']"></div>
-                <div :class="[$style['basic-list__content'], 'text-body-3']">
+                <div :class="$style['basic-list__content']">
                   <div>승계(임차인변경)</div>
                   <ul :class="[$style['basic-list'], 'row-margin-item']">
                     <li
                       :class="[
                         $style['basic-list__item'],
-                        'font-weight-regular color-black',
+                        'text-body-4 font-weight-regular color-black',
                       ]"
                     >
                       <div :class="$style['basic-list__symbol']">-</div>
-                      <div
-                        :class="[$style['basic-list__content'], 'text-body-3']"
-                      >
+                      <div :class="$style['basic-list__content']">
                         만기일로부터 2개월전 승계신청 원칙<br />
                         (만기일로부터 1개월전 승계불가)
                       </div>
@@ -662,26 +665,22 @@ export default {
                     <li
                       :class="[
                         $style['basic-list__item'],
-                        'font-weight-regular color-red',
+                        'text-body-4 font-weight-regular color-red',
                       ]"
                     >
                       <div :class="$style['basic-list__symbol']">-</div>
-                      <div
-                        :class="[$style['basic-list__content'], 'text-body-3']"
-                      >
+                      <div :class="$style['basic-list__content']">
                         YY.MM.DD 이후에는 승계신청이 불가합니다.
                       </div>
                     </li>
                     <li
                       :class="[
                         $style['basic-list__item'],
-                        'font-weight-regular color-black',
+                        'text-body-4 font-weight-regular color-black',
                       ]"
                     >
                       <div :class="$style['basic-list__symbol']">-</div>
-                      <div
-                        :class="[$style['basic-list__content'], 'text-body-3']"
-                      >
+                      <div :class="$style['basic-list__content']">
                         만기일로부터 3회차 이전 승계 접수 시 승계가능합니다.
                       </div>
                     </li>

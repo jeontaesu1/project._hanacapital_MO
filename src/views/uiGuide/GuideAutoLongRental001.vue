@@ -7,7 +7,8 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 import LayerAutoLongRentalEvaluationComplete from '@/views/auto/LayerAutoLongRentalEvaluationComplete.vue';
-import LayerAutoLongRentalEvaluationFailLimit from '@/views/auto/LayerAutoLongRentalEvaluationFailLimit.vue';
+import LayerAutoLongRentalEvaluationFailLimit001 from '@/views/auto/LayerAutoLongRentalEvaluationFailLimit001.vue';
+import LayerAutoLongRentalEvaluationFailLimit002 from '@/views/auto/LayerAutoLongRentalEvaluationFailLimit002.vue';
 import LayerAutoLongRentalEvaluationFailReject from '@/views/auto/LayerAutoLongRentalEvaluationFailReject.vue';
 import LayerAutoLongRentalEvaluationExpire from '@/views/auto/LayerAutoLongRentalEvaluationExpire.vue';
 import LayerAutoLongRentalOrder from '@/views/auto/LayerAutoLongRentalOrder.vue';
@@ -26,7 +27,8 @@ export default {
     ButtonList,
     ButtonListItem,
     LayerAutoLongRentalEvaluationComplete,
-    LayerAutoLongRentalEvaluationFailLimit,
+    LayerAutoLongRentalEvaluationFailLimit001,
+    LayerAutoLongRentalEvaluationFailLimit002,
     LayerAutoLongRentalEvaluationFailReject,
     LayerAutoLongRentalEvaluationExpire,
     LayerAutoLongRentalOrder,
@@ -51,6 +53,7 @@ export default {
     const layer010 = ref(null);
     const layer011 = ref(null);
     const layer012 = ref(null);
+    const layer013 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -88,6 +91,9 @@ export default {
     const layer012Open = (e = {}) => {
       layer012.value.layer.open(e.target);
     };
+    const layer013Open = (e = {}) => {
+      layer013.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -102,6 +108,7 @@ export default {
       layer010,
       layer011,
       layer012,
+      layer013,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -114,6 +121,7 @@ export default {
       layer010Open,
       layer011Open,
       layer012Open,
+      layer013Open,
     };
   },
 };
@@ -134,7 +142,12 @@ export default {
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer002Open"
-          >심사승인(한도부족)<br />AF_M01_l005</BasicButton
+          >심사승인(한도부족) type 1<br />AF_M01_l005</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer013Open"
+          >심사승인(한도부족) type 2<br />AF_M01_l005</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
@@ -190,7 +203,8 @@ export default {
     </ButtonList>
 
     <LayerAutoLongRentalEvaluationComplete ref="layer001" />
-    <LayerAutoLongRentalEvaluationFailLimit ref="layer002" />
+    <LayerAutoLongRentalEvaluationFailLimit001 ref="layer002" />
+    <LayerAutoLongRentalEvaluationFailLimit002 ref="layer013" />
     <LayerAutoLongRentalEvaluationFailReject ref="layer003" />
     <LayerAutoLongRentalEvaluationExpire ref="layer004" />
     <LayerAutoLongRentalOrder ref="layer005" />

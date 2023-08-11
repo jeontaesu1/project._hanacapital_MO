@@ -3,7 +3,6 @@
 import { ref, reactive } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
-import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
@@ -17,7 +16,6 @@ import IconArrow from '@/assets/images/icon/link.svg?component';
 export default {
   components: {
     UiLayer,
-    PopupButton,
     FullPopup,
     FullPopupHead,
     PageMainText,
@@ -43,14 +41,10 @@ export default {
 </script>
 
 <template>
-  <UiLayer ref="layer" type="full" v-slot="layerSlotProps">
+  <UiLayer ref="layer" type="full">
     <FullPopup bg="secondary">
       <template v-slot:head>
-        <FullPopupHead>
-          <template v-slot:right>
-            <PopupButton @click="layerSlotProps.close()" />
-          </template>
-        </FullPopupHead>
+        <FullPopupHead />
       </template>
 
       <PageMainText

@@ -7,7 +7,8 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 import LayerAutoLeaseEvaluationComplete from '@/views/auto/LayerAutoLeaseEvaluationComplete.vue';
-import LayerAutoLeaseEvaluationFailLimit from '@/views/auto/LayerAutoLeaseEvaluationFailLimit.vue';
+import LayerAutoLeaseEvaluationFailLimit001 from '@/views/auto/LayerAutoLeaseEvaluationFailLimit001.vue';
+import LayerAutoLeaseEvaluationFailLimit002 from '@/views/auto/LayerAutoLeaseEvaluationFailLimit002.vue';
 import LayerAutoLeaseEvaluationFailReject from '@/views/auto/LayerAutoLeaseEvaluationFailReject.vue';
 import LayerAutoLeaseEvaluationExpire from '@/views/auto/LayerAutoLeaseEvaluationExpire.vue';
 import LayerAutoLeaseOrderImported from '@/views/auto/LayerAutoLeaseOrderImported.vue';
@@ -21,7 +22,8 @@ export default {
     ButtonList,
     ButtonListItem,
     LayerAutoLeaseEvaluationComplete,
-    LayerAutoLeaseEvaluationFailLimit,
+    LayerAutoLeaseEvaluationFailLimit001,
+    LayerAutoLeaseEvaluationFailLimit002,
     LayerAutoLeaseEvaluationFailReject,
     LayerAutoLeaseEvaluationExpire,
     LayerAutoLeaseOrderImported,
@@ -36,6 +38,7 @@ export default {
     const layer005 = ref(null);
     const layer006 = ref(null);
     const layer007 = ref(null);
+    const layer008 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -58,6 +61,9 @@ export default {
     const layer007Open = (e = {}) => {
       layer007.value.layer.open(e.target);
     };
+    const layer008Open = (e = {}) => {
+      layer008.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -67,6 +73,7 @@ export default {
       layer005,
       layer006,
       layer007,
+      layer008,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -74,6 +81,7 @@ export default {
       layer005Open,
       layer006Open,
       layer007Open,
+      layer008Open,
     };
   },
 };
@@ -94,7 +102,12 @@ export default {
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer002Open"
-          >심사승인(한도부족)<br />AF_M02_l005</BasicButton
+          >심사승인(한도부족) type 1<br />AF_M02_l005</BasicButton
+        >
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer008Open"
+          >심사승인(한도부족) type 2<br />AF_M02_l005</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
@@ -125,7 +138,8 @@ export default {
     </ButtonList>
 
     <LayerAutoLeaseEvaluationComplete ref="layer001" />
-    <LayerAutoLeaseEvaluationFailLimit ref="layer002" />
+    <LayerAutoLeaseEvaluationFailLimit001 ref="layer002" />
+    <LayerAutoLeaseEvaluationFailLimit002 ref="layer008" />
     <LayerAutoLeaseEvaluationFailReject ref="layer003" />
     <LayerAutoLeaseEvaluationExpire ref="layer004" />
     <LayerAutoLeaseOrderImported ref="layer005" />

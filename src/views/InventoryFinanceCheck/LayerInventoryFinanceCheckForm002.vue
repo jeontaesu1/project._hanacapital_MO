@@ -90,7 +90,6 @@ export default {
                   <BasicInput
                     title="전시위치"
                     id="layerInventoryFinanceCheckForm002Area"
-                    defaultValue="입구 오른쪽"
                   />
                 </InputBlockCell>
               </InputBlock>

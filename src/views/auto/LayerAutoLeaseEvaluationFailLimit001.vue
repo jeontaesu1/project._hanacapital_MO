@@ -1,5 +1,5 @@
 <script>
-// AF_M01_l010
+// AF_M02_l005 type_1
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -10,7 +10,6 @@ import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import PageSubText from '@/components/ui/text/PageSubText.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
-import BasicHr from '@/components/ui/common/BasicHr.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
@@ -25,7 +24,6 @@ export default {
     PageMainText,
     PageSubText,
     IllustObject,
-    BasicHr,
     ButtonList,
     ButtonListItem,
     BasicButton,
@@ -53,48 +51,46 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          발주신청이<br />
-          <strong>완료되었습니다</strong>
+          김하나님, 요청하신 견적으로<br />
+          <strong>진행이 어렵습니다</strong>
         </PageMainText>
-        <PageSubText>전문상담사가 차량 배정 후, 연락 드리겠습니다.</PageSubText>
+
+        <!-- Case : 운용리스 -->
+        <PageSubText>
+          선납금/보증금을 높여서 재견적하시거나,<br />
+          상담원 연결을 통해 견적문의 주시길 바랍니다.
+        </PageSubText>
+        <!-- // Case : 운용리스 -->
+
+        <!-- Case : 금융리스 -->
+        <PageSubText>
+          선납금을 높여서 재견적하시거나,<br />
+          상담원 연결을 통해 견적문의 주시길 바랍니다.
+        </PageSubText>
+        <!-- // Case : 금융리스 -->
       </PageTextGroup>
 
-      <IllustObject type="complete" />
-
-      <BasicHr
-        type="contents"
-        theme="quaternary"
-        className="row-margin-container"
-      />
+      <IllustObject type="fail" />
 
       <section :class="$style['notice-section']">
-        <h3 :class="$style['notice-section__title']">차량 발주 신청</h3>
-        <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+        <h3 :class="$style['notice-section__title']">진행방법</h3>
+        <ol :class="$style['basic-list']">
           <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__symbol']">1.</div>
             <div :class="$style['basic-list__content']">
-              차량 주문생산부터 손님이 원하는 곳으로 탁송까지 한번에! ONE-STOP!
+              재견적하여 보증금 or 선수금을 더 넣어 본다.
             </div>
           </li>
           <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__symbol']">2.</div>
             <div :class="$style['basic-list__content']">
-              차량이 생산되면 담당자가 연락을 드려요.
+              한도증액 신청을 하여 정밀심사를 진행한다.<br />
+              <span class="color-green"
+                >(한도증액 신청은 별도 서류를 징구합니다.)</span
+              >
             </div>
           </li>
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              입력한 정보와 실제 정보가 상이할 경우 진행조건이 달라질 수 있어요.
-            </div>
-          </li>
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              궁금하신 사항은 1800-1110으로 언제든지 연락주세요.
-            </div>
-          </li>
-        </ul>
+        </ol>
       </section>
 
       <template v-slot:foot>
@@ -104,7 +100,10 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton>확인</BasicButton>
+            <BasicButton theme="tertiary">재견적</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton>상담원 연결</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
@@ -113,5 +112,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/auto/LayerAutoLongRentalOrderComplete.scss';
+@import '@/assets/scss/views/auto/LayerAutoLeaseEvaluationFailLimit.scss';
 </style>
