@@ -286,7 +286,7 @@ export default {
             <BasicButton :line="true" theme="quaternary">이전</BasicButton>
           </ButtonListItem>
           <ButtonListItem>
-            <BasicButton>약정하기</BasicButton>
+            <BasicButton>수임 동의하기</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

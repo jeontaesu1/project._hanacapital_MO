@@ -156,15 +156,6 @@ export default {
                     item: 'text-body-3',
                   }"
                 >
-                  <KeyValueTitle>생년월일</KeyValueTitle>
-                  <KeyValueText>1977.11.05</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
                   <KeyValueTitle>주소</KeyValueTitle>
                   <KeyValueText>
                     대구 동구 반야월로 393<br />

@@ -162,15 +162,6 @@ export default {
                   item: 'text-body-3',
                 }"
               >
-                <KeyValueTitle>생년월일</KeyValueTitle>
-                <KeyValueText>1973.12.23</KeyValueText>
-              </KeyValueItem>
-
-              <KeyValueItem
-                :classNames="{
-                  item: 'text-body-3',
-                }"
-              >
                 <KeyValueTitle>취득원가</KeyValueTitle>
                 <KeyValueText>100,000,000 원</KeyValueText>
               </KeyValueItem>
@@ -311,7 +302,7 @@ export default {
                   item: 'text-body-3',
                 }"
               >
-                <KeyValueTitle>중도해지수수로율</KeyValueTitle>
+                <KeyValueTitle>중도해지수수료율</KeyValueTitle>
                 <KeyValueText>2%</KeyValueText>
               </KeyValueItem>
 

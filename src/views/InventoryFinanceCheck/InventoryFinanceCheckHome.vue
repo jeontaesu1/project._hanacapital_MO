@@ -330,7 +330,7 @@ export default {
                 }"
               >
                 <ButtonListItem>
-                  <BasicButton size="small">신청하기</BasicButton>
+                  <BasicButton size="small">이미지 보기</BasicButton>
                 </ButtonListItem>
               </ButtonList>
             </div>

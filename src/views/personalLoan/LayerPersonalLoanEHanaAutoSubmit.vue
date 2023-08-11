@@ -20,9 +20,6 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import PageSubText from '@/components/ui/text/PageSubText.vue';
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
-import CheckBox from '@/components/ui/form/CheckBox.vue';
-import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
-import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
 
 export default {
   components: {
@@ -44,9 +41,6 @@ export default {
     ButtonListItem,
     PageSubText,
     BasicSelect,
-    CheckBox,
-    CheckBoxLabelText,
-    CheckBoxObject,
   },
   setup() {
     const state = reactive({
@@ -155,34 +149,6 @@ export default {
         <!-- // Case : 공동인증서 없을 때 -->
       </FormList>
 
-      <!-- Case : 공동인증서 있을 때 -->
-      <div :class="[$style['agree-list'], 'row-margin-container']">
-        <ul :class="$style['agree-list__list']">
-          <li :class="$style['agree-list__item']">
-            <div :class="$style['agree-list__head']">
-              <CheckBox
-                id="layerPersonalLoanEHanaAutoSubmitAgree"
-                :classNames="{
-                  wrap: $style['agree-list__checkbox'],
-                }"
-                theme="tertiary"
-              >
-                <CheckBoxObject />
-                <CheckBoxLabelText>소득정보자동산출약관</CheckBoxLabelText>
-              </CheckBox>
-              <div :class="$style['agree-list__right']">
-                <button type="button" :class="$style['agree-list__link']">
-                  <span :class="$style['agree-list__link-text']">
-                    상세보기
-                  </span>
-                </button>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <!-- //Case : 공동인증서 있을 때 -->
-
       <template v-slot:foot>
         <ButtonList
           align="full"
@@ -209,7 +175,3 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/personalLoan/LayerPersonalLoanEHanaAutoSubmit.scss';
-</style>

@@ -108,9 +108,6 @@ export default {
                 <div :class="$style['product-detail__title']">예상금리</div>
                 <div :class="$style['product-detail__desc']">
                   <UnitText size="regular" rightUnit="%">10.9</UnitText>
-                  <div :class="$style['product-detail__desc-sub']">
-                    (36개월 기준)
-                  </div>
                 </div>
               </div>
             </li>

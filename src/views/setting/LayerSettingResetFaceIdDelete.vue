@@ -62,21 +62,21 @@ export default {
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              하나캐피탈 앱을 삭제하시거나 스마트폰을 변경하시면 지문을 재등록
-              하셔야 합니다.
+              하나캐피탈 앱을 삭제하시거나 스마트폰을 변경하시면 Face ID를
+              재등록 하셔야 합니다.
             </div>
           </li>
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              연속으로 5회 지문인증에 실패하면 지문을 재등록하셔야 합니다.
+              연속으로 5회 지문인증에 실패하면 Face ID를 재등록하셔야 합니다.
             </div>
           </li>
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              지문인증 등록 후 스마트폰에 등록된 지문 정보가 추가, 삭제 등
-              변경되면 지문인증들 재등록 하셔야 합니다.
+              Face ID 등록 후 스마트폰에 등록된 Face ID 정보가 추가, 삭제 등
+              변경되면 Face ID를 재등록 하셔야 합니다.
             </div>
           </li>
           <li :class="$style['basic-list__item']">

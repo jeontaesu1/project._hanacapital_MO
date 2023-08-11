@@ -219,7 +219,7 @@ export default {
         </p>
 
         <p class="text-body-4 font-weight-regular align-right">
-          리스 신청인(이름) 김하나 (인)
+          신청인 김하나 (인)
         </p>
       </div>
 

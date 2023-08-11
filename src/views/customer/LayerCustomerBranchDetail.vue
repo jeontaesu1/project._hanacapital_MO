@@ -56,8 +56,11 @@ export default {
         </KeyValueItem>
 
         <KeyValueItem>
-          <KeyValueTitle>증권계좌</KeyValueTitle>
-          <KeyValueText>123456789</KeyValueText>
+          <KeyValueTitle>주소</KeyValueTitle>
+          <KeyValueText>
+            서울특별시 강남구 648-19<br />
+            하나금융그룹 강남사옥 20층
+          </KeyValueText>
         </KeyValueItem>
       </KeyValue>
 

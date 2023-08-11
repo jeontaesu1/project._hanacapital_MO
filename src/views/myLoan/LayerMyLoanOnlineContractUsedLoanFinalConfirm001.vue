@@ -17,12 +17,14 @@ import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
-import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
+
+import IconLink from '@/assets/images/icon/link.svg?component';
+import IconCheckDocument from '@/assets/images/icon/check-document.svg?component';
 
 export default {
   components: {
@@ -41,12 +43,13 @@ export default {
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
-    CarEmblem,
     ButtonList,
     ButtonListItem,
     BasicButton,
     TextButton,
     NoticeText,
+    IconLink,
+    IconCheckDocument,
   },
   setup() {
     const layer = ref(null);
@@ -368,17 +371,10 @@ export default {
           <BasicBox className="row-margin-item-group">
             <BasicBoxHead>
               <BasicBoxHeadLeft>
-                <div class="flex-box row-margin-mini">
-                  <div class="flex-box__cell">
-                    <CarEmblem
-                      src="/images/_dummy/car-emblem.png"
-                      name="현대"
-                    />
-                  </div>
-                  <div class="flex-box__cell flex-box__cell--small">
-                    <p class="text-body-4 font-weight-light">2020년식</p>
-                  </div>
-                </div>
+                <p class="text-body-4 font-weight-light row-margin-mini">
+                  2020년식
+                </p>
+
                 <h3 class="text-body-1 font-weight-medium">123가1234</h3>
                 <p class="text-body-4 color-gray row-margin-small">
                   올 뉴 아반떼/인스퍼레이션
@@ -397,6 +393,54 @@ export default {
               </KeyValueItem>
             </KeyValue>
           </BasicBox>
+        </section>
+
+        <section class="row-margin-container-medium">
+          <div class="flex-box row-margin-contents">
+            <div class="flex-box__cell">
+              <h3 class="text-title-2">파일업로드</h3>
+            </div>
+            <div class="flex-box__cell flex-box__cell--small">
+              <div class="text-body-3">(필수)</div>
+            </div>
+          </div>
+
+          <!-- Case : : 등록 전 -->
+          <button
+            type="button"
+            :class="[$style['add-button'], 'row-margin-item']"
+          >
+            <span :class="$style['add-button__inner']">
+              <span :class="$style['add-button__text']">서류등록</span>
+              <span
+                :class="[
+                  $style['add-button__icon'],
+                  $style['add-button__icon--secondary'],
+                ]"
+              >
+                <IconLink />
+              </span>
+            </span>
+          </button>
+          <!-- //Case : : 등록 전 -->
+
+          <!-- Case : : 등록 후 -->
+          <BasicBox>
+            <div class="flex-box">
+              <div class="flex-box__cell">
+                <IconCheckDocument class="display-block" />
+              </div>
+              <div class="flex-box__cell flex-1">
+                <div class="text-body-3">등록 완료</div>
+              </div>
+              <div class="flex-box__cell">
+                <BasicButton size="mini" theme="quaternary">
+                  추가첨부
+                </BasicButton>
+              </div>
+            </div>
+          </BasicBox>
+          <!-- //Case : : 등록 후 -->
         </section>
       </div>
 
@@ -417,3 +461,7 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/myLoan/LayerMyLoanOnlineContractUsedLoanFinalConfirm001.scss';
+</style>

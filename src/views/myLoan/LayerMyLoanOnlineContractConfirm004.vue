@@ -228,7 +228,7 @@ export default {
         </section>
 
         <section class="row-margin-container-medium">
-          <h3 class="text-title-2 row-margin-contents">대출 정보</h3>
+          <h3 class="text-title-2 row-margin-contents">상품 정보</h3>
 
           <BasicBox>
             <KeyValue margin="regular">

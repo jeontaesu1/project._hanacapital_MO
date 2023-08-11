@@ -14,7 +14,6 @@ import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
-import BasicHr from '@/components/ui/common/BasicHr.vue';
 
 export default {
   components: {
@@ -30,7 +29,6 @@ export default {
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
-    BasicHr,
   },
   setup() {
     const layer = ref(null);
@@ -154,21 +152,6 @@ export default {
         </div>
       </div>
 
-      <BasicHr className="row-margin-container-medium" />
-
-      <section>
-        <h3 class="text-title-2 row-margin-contents">장비견적서</h3>
-
-        <div>
-          <div :class="[$style['image-view'], 'row-margin-contents']">
-            <img src="@/assets/images/_dummy/image-001.png" alt="샘플 이미지" />
-          </div>
-          <div :class="[$style['image-view'], 'row-margin-contents']">
-            <img src="@/assets/images/_dummy/image-001.png" alt="샘플 이미지" />
-          </div>
-        </div>
-      </section>
-
       <template v-slot:foot>
         <ButtonList
           :classNames="{
@@ -183,7 +166,3 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/myLoan/LayerMyLoanOnlineContractURLThing.scss';
-</style>

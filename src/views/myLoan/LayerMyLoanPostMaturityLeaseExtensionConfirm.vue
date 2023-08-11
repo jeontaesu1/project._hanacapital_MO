@@ -119,7 +119,7 @@ export default {
                 item: 'text-body-3',
               }"
             >
-              <KeyValueTitle>종류후처리</KeyValueTitle>
+              <KeyValueTitle>종료후처리</KeyValueTitle>
               <KeyValueText>-</KeyValueText>
             </KeyValueItem>
             <KeyValueItem
@@ -315,7 +315,7 @@ export default {
                 item: 'text-body-3',
               }"
             >
-              <KeyValueTitle>종류후처리</KeyValueTitle>
+              <KeyValueTitle>종료후처리</KeyValueTitle>
               <KeyValueText>-</KeyValueText>
             </KeyValueItem>
             <KeyValueItem

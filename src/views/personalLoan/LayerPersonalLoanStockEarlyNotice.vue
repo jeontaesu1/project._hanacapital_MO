@@ -79,7 +79,7 @@ export default {
                 <strong class="font-weight-medium color-red"
                   >리스, 렌터카 등 일부 상품은 홈페이지를 통한 중도상환신청이
                   불가능</strong
-                >하며, 고객센터(180○-1110)로 연락 바랍니다.
+                >하며, 고객센터(1800-1110)로 연락 바랍니다.
               </div>
             </li>
           </ul>

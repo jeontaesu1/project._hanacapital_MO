@@ -504,7 +504,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -734,7 +735,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -974,7 +976,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -1209,9 +1212,10 @@ export default {
                     }"
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
-                    <KeyValueText
-                      >(0.00%) : 000,000원 / (0.00%) : 000,000원</KeyValueText
-                    >
+                    <KeyValueText>
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
+                    </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{
@@ -1444,9 +1448,10 @@ export default {
                     }"
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
-                    <KeyValueText
-                      >(0.00%) : 000,000원 / (0.00%) : 000,000원</KeyValueText
-                    >
+                    <KeyValueText>
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
+                    </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{
@@ -1665,9 +1670,10 @@ export default {
                     }"
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
-                    <KeyValueText
-                      >(0.00%) : 000,000원 / (0.00%) : 000,000원</KeyValueText
-                    >
+                    <KeyValueText>
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
+                    </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{
@@ -1967,7 +1973,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -2267,7 +2274,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -2508,7 +2516,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -2766,7 +2775,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -3091,7 +3101,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -3426,7 +3437,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -3754,7 +3766,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -4092,7 +4105,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -4224,9 +4238,17 @@ export default {
                         </div>
                       </li>
                       <li :class="$style['division-info__item']">
+                        <!-- Case : 품의요청 -->
                         <div class="color-green text-body-4 font-weight-medium">
                           품의요청
                         </div>
+                        <!-- // Case : 품의요청 -->
+
+                        <!-- Case : 품의확정 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          품의확정
+                        </div>
+                        <!-- // Case : 품의확정 -->
                       </li>
                     </ul>
                   </div>
@@ -4433,7 +4455,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -4486,9 +4509,13 @@ export default {
                       견적서 보기
                     </BasicButton>
                   </ButtonListItem>
+                  <!-- Case : 품의확정 시 disabled="false" -->
                   <ButtonListItem>
-                    <BasicButton size="small">약정 URL 전송</BasicButton>
+                    <BasicButton size="small" :disabled="true">
+                      약정 URL 전송
+                    </BasicButton>
                   </ButtonListItem>
+                  <!-- // Case :품의확정 시 disabled="false" -->
                 </ButtonList>
               </div>
             </UiAccordionLayer>
@@ -4510,9 +4537,17 @@ export default {
                         </div>
                       </li>
                       <li :class="$style['division-info__item']">
+                        <!-- Case : 품의요청 -->
                         <div class="color-green text-body-4 font-weight-medium">
                           품의요청
                         </div>
+                        <!-- // Case : 품의요청 -->
+
+                        <!-- Case : 품의확정 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          품의확정
+                        </div>
+                        <!-- // Case : 품의확정 -->
                       </li>
                     </ul>
                   </div>
@@ -4719,7 +4754,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -4772,9 +4808,13 @@ export default {
                       견적서 보기
                     </BasicButton>
                   </ButtonListItem>
+                  <!-- Case : 품의확정 시 disabled="false" -->
                   <ButtonListItem>
-                    <BasicButton size="small">약정 URL 전송</BasicButton>
+                    <BasicButton size="small" :disabled="true">
+                      약정 URL 전송
+                    </BasicButton>
                   </ButtonListItem>
+                  <!-- // Case :품의확정 시 disabled="false" -->
                 </ButtonList>
               </div>
             </UiAccordionLayer>
@@ -4799,6 +4839,13 @@ export default {
                         <div class="color-green text-body-4 font-weight-medium">
                           품의요청
                         </div>
+                        <!-- // Case : 품의요청 -->
+
+                        <!-- Case : 품의확정 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          품의확정
+                        </div>
+                        <!-- // Case : 품의확정 -->
                       </li>
                     </ul>
                   </div>
@@ -4992,7 +5039,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -5046,17 +5094,20 @@ export default {
                     </BasicButton>
                   </ButtonListItem>
                   <ButtonListItem>
-                    <BasicButton :line="true" size="small"
-                      >견적서 보기</BasicButton
-                    >
+                    <BasicButton :line="true" size="small">
+                      견적서 보기
+                    </BasicButton>
                   </ButtonListItem>
                 </ButtonList>
 
+                <!-- Case : 품의확정 시 disabled="false" -->
                 <BasicButton
                   size="small"
                   :classNames="{ wrap: 'row-margin-item' }"
+                  :disabled="true"
                   >약정 URL 전송</BasicButton
                 >
+                <!-- // Case :품의확정 시 disabled="false" -->
               </div>
             </UiAccordionLayer>
           </BasicBox>
@@ -5077,9 +5128,17 @@ export default {
                         </div>
                       </li>
                       <li :class="$style['division-info__item']">
+                        <!-- Case : 품의요청 -->
                         <div class="color-green text-body-4 font-weight-medium">
                           품의요청
                         </div>
+                        <!-- // Case : 품의요청 -->
+
+                        <!-- Case : 품의확정 -->
+                        <div class="color-green text-body-4 font-weight-medium">
+                          품의확정
+                        </div>
+                        <!-- // Case : 품의확정 -->
                       </li>
                     </ul>
                   </div>
@@ -5244,7 +5303,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -5304,11 +5364,14 @@ export default {
                   </ButtonListItem>
                 </ButtonList>
 
+                <!-- Case : 품의확정 시 disabled="false" -->
                 <BasicButton
                   size="small"
                   :classNames="{ wrap: 'row-margin-item' }"
+                  disabled="true"
                   >약정 URL 전송</BasicButton
                 >
+                <!-- // Case :품의확정 시 disabled="false" -->
               </div>
             </UiAccordionLayer>
           </BasicBox>
@@ -5546,7 +5609,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -5843,7 +5907,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -6133,7 +6198,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -6451,7 +6517,8 @@ export default {
                   >
                     <KeyValueTitle>수수료(CM/AG)</KeyValueTitle>
                     <KeyValueText>
-                      (0.00%) : 000,000원 / (0.00%) : 000,000원
+                      (0.000%) : 000,000원 /<br />
+                      (0.000%) : 000,000원
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem

@@ -302,54 +302,6 @@ export default {
                     </li>
                   </ul>
                 </li>
-
-                <li :class="$style['agree-list__item']">
-                  <div :class="$style['agree-list__head']">
-                    <CheckBox
-                      id="layerMyLoanInterestRateCutRequestAgree004"
-                      :classNames="{
-                        wrap: $style['agree-list__checkbox'],
-                      }"
-                      theme="tertiary"
-                    >
-                      <CheckBoxObject />
-                      <CheckBoxLabelText>금융상품안내</CheckBoxLabelText>
-                    </CheckBox>
-                  </div>
-                  <ul
-                    :class="[
-                      $style['agree-list__list'],
-                      $style['agree-list__list--secondary'],
-                    ]"
-                  >
-                    <li :class="$style['agree-list__item']">
-                      <div :class="$style['agree-list__head']">
-                        <CheckBox
-                          id="layerMyLoanInterestRateCutRequestAgree004_001"
-                          :classNames="{
-                            wrap: $style['agree-list__checkbox'],
-                          }"
-                          theme="quinary"
-                        >
-                          <CheckBoxObject />
-                          <CheckBoxLabelText>
-                            금융 상품 안내 동의
-                          </CheckBoxLabelText>
-                        </CheckBox>
-                        <div :class="$style['agree-list__right']">
-                          <button
-                            type="button"
-                            :class="$style['agree-list__link']"
-                          >
-                            <span :class="$style['agree-list__link-text']">
-                              상세보기
-                            </span>
-                          </button>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </li>
               </ul>
             </div>
           </li>

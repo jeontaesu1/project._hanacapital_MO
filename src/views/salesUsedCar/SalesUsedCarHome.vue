@@ -34,7 +34,6 @@ import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 import TextProgress from '@/components/ui/progress/TextProgress.vue';
 
-import IconPerson from '@/assets/images/icon/person.svg?component';
 import IconArrow from '@/assets/images/icon/dropdown.svg?component';
 
 export default {
@@ -68,7 +67,6 @@ export default {
     RoundStatus,
     TextButton,
     TextProgress,
-    IconPerson,
     IconArrow,
   },
   setup() {
@@ -110,16 +108,6 @@ export default {
 
 <template>
   <PageContents>
-    <div :class="[$style['salesperson-card'], 'row-margin-container-medium']">
-      <div :class="$style['salesperson-card__image']">
-        <IconPerson />
-      </div>
-      <div :class="$style['salesperson-card__content']">
-        <div :class="$style['salesperson-card__sub']">하나캐피탈</div>
-        <div :class="$style['salesperson-card__name']">김하나</div>
-      </div>
-    </div>
-
     <section class="contents-wrap">
       <div class="flex-box row-margin-contents">
         <div class="flex-box__cell flex-1">

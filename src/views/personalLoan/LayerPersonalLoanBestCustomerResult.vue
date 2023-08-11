@@ -92,9 +92,6 @@ export default {
                   <div :class="$style['product-detail__title']">예상금리</div>
                   <div :class="$style['product-detail__desc']">
                     <UnitText size="regular" rightUnit="%">10.9</UnitText>
-                    <div :class="$style['product-detail__desc-sub']">
-                      (36개월 기준)
-                    </div>
                   </div>
                 </div>
               </li>
@@ -106,20 +103,7 @@ export default {
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              개인신용상태 및 금융서비스 이용기간 경과 시 이용이 제한될 수
-              있습니다.
-            </div>
-          </li>
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              금융서비스 이용기간은 당사 사정에 따라 변경될 수 있습니다.
-            </div>
-          </li>
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              해당 금리는 대출기간 개월 기준이며 대출기간에 따라 금리가 변경될
+              해당 금리는 대출기간 36개월 기준이며 대출기간에 따라 금리가 변경될
               수 있습니다.
             </div>
           </li>

@@ -80,7 +80,7 @@ export default {
           <strong>확인해주세요</strong>
         </PageMainText>
         <PageSubText>
-          실제 차량을 운행하는 목적으로의 승계만 가능하며 신규로 리스계약을
+          실제 차량을 운행하는 목적으로의 승계만 가능하며 신규로 렌트계약을
           체결하는 절차와 동일하게 금융회사가 정한 심시기준에 따라 심사가
           이루어집니다.
         </PageSubText>
@@ -93,7 +93,7 @@ export default {
 
       <div>
         <section class="row-margin-container-medium">
-          <h2 class="text-title-2 row-margin-contents">리스 조건</h2>
+          <h2 class="text-title-2 row-margin-contents">렌트 조건</h2>
 
           <BasicBox>
             <BasicBoxHead>
