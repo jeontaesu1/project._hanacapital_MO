@@ -1,5 +1,4 @@
 @import '@/assets/scss/components/import/estimate-list.scss';
-@import '@/assets/scss/components/import/bank-brand.scss';
 @import '@/assets/scss/components/import/loading-icon.scss';
 @import '@/assets/scss/components/import/notice-section.scss';
 @import '@/assets/scss/components/import/basic-list.scss';
@@ -30,23 +29,6 @@
   &--accordion-animate {
     :global(.swiper-wrapper) {
       height: auto !important;
-    }
-  }
-}
-
-.product-setting {
-  display: flex;
-  align-items: center;
-
-  &__title {
-    flex: none;
-    min-width: 48px;
-    @include font-size-default(13);
-    color: $color-gray-70;
-
-    & + .product-setting__contents {
-      flex: 1;
-      margin-left: 8px;
     }
   }
 }

@@ -24,13 +24,6 @@ import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
 import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
 import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 import SettingButton from '@/components/ui/button/SettingButton.vue';
-import UiTab from '@/components/ui/tab/UiTab.vue';
-import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
-import RoundTab from '@/components/ui/tab/RoundTab.vue';
-import RoundTabButton from '@/components/ui/tab/RoundTabButton.vue';
-import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
-import CarThumb from '@/components/ui/imageData/CarThumb.vue';
-import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
@@ -78,13 +71,6 @@ export default {
     BoxCheckList,
     BoxCheckListItem,
     SettingButton,
-    UiTab,
-    UiTabPanel,
-    RoundTab,
-    RoundTabButton,
-    CarEmblem,
-    CarThumb,
-    RoundStatus,
     FormList,
     FormListItem,
     FormInvalid,
@@ -120,7 +106,8 @@ export default {
       productsAccordionAnimate: false,
       viewDocument: false,
       carNumberError: false,
-      carSearchError: false,
+      carYearError: false,
+      carModelError: false,
       salePriceError: false,
       feeCMError: false,
       feeAGError: false,
@@ -259,7 +246,7 @@ export default {
                   <div
                     :class="[
                       $style['check-list'],
-                      $style['check-list--col-3'],
+                      $style['check-list--col-2'],
                       'row-margin-item-group',
                     ]"
                   >
@@ -284,21 +271,11 @@ export default {
                           <RadioButtonLabelText>차량명</RadioButtonLabelText>
                         </RadioButton>
                       </li>
-                      <li :class="$style['check-list__item']">
-                        <RadioButton
-                          name="leaseRentEstimationSystemUsedLeaseSearch"
-                          id="leaseRentEstimationSystemUsedLeaseSearch003"
-                          theme="tertiary"
-                        >
-                          <RadioButtonObject />
-                          <RadioButtonLabelText>브랜드</RadioButtonLabelText>
-                        </RadioButton>
-                      </li>
                     </ul>
                   </div>
 
-                  <!-- Case : 차량번호 선택시 노출 -->
                   <FormList>
+                    <!-- Case : 차량번호 선택시 노출 -->
                     <FormListItem
                       titleText="차량번호"
                       target="#leaseRentEstimationSystemUsedLeaseCarNumber"
@@ -320,11 +297,159 @@ export default {
                         <FormInvalidMessage>Error Message</FormInvalidMessage>
                       </FormInvalid>
                     </FormListItem>
+                    <!-- Case : 차량번호 선택시 노출 -->
+
+                    <!-- Case : 차량명 선택시 노출 -->
+                    <FormListItem
+                      titleText="차량연식"
+                      target="#leaseRentEstimationSystemUsedLeaseCarYear"
+                    >
+                      <FormInvalid :error="state.carYearError">
+                        <InputBlock :error="state.carYearError">
+                          <InputBlockCell :flexible="true">
+                            <BasicInput
+                              title="차량연식"
+                              id="leaseRentEstimationSystemUsedLeaseCarYear"
+                            />
+                          </InputBlockCell>
+                        </InputBlock>
+                        <FormInvalidMessage>Error Message</FormInvalidMessage>
+                      </FormInvalid>
+                    </FormListItem>
+
+                    <FormListItem
+                      titleText="차종"
+                      target="#leaseRentEstimationSystemUsedLeaseCarModel"
+                    >
+                      <FormInvalid :error="state.carModelError">
+                        <InputBlock :error="state.carModelError">
+                          <InputBlockCell :flexible="true">
+                            <BasicInput
+                              title="차종"
+                              id="leaseRentEstimationSystemUsedLeaseCarModel"
+                            />
+                          </InputBlockCell>
+                        </InputBlock>
+                        <FormInvalidMessage>Error Message</FormInvalidMessage>
+                      </FormInvalid>
+                    </FormListItem>
+                    <!-- // Case : 차량명 선택시 노출 -->
                   </FormList>
-                  <!-- Case : 차량번호 선택시 노출 -->
+
+                  <div class="row-margin-item-group">
+                    <BasicButton size="small" theme="tertiary"
+                      >조회</BasicButton
+                    >
+                  </div>
                 </div>
               </div>
             </li>
+
+            <UiAccordionItem
+              :classNames="{ item: $style['estimate-list__item'] }"
+              v-slot="accordionItemSlotProps"
+            >
+              <div :class="$style['estimate-list__head']">
+                <div :class="$style['estimate-list__block']">
+                  <div :class="$style['estimate-list__left']">
+                    <KeyValue
+                      align="left"
+                      size="regular"
+                      verticalAlign="center"
+                    >
+                      <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                        <KeyValueTitle>
+                          <div class="text-body-4">차량선택</div>
+                        </KeyValueTitle>
+                        <KeyValueText
+                          >기아 K5(DL3) 2.0 가솔린 프레스티지</KeyValueText
+                        >
+                      </KeyValueItem>
+                    </KeyValue>
+                  </div>
+                </div>
+                <div :class="$style['estimate-list__arrow']">
+                  <UiAccordionOpener
+                    :toggleAction="false"
+                    :classNames="{ button: $style['estimate-list__opener'] }"
+                    @click="
+                      testAccordionToggle(accordionItemSlotProps, testAjax)
+                    "
+                  />
+                </div>
+              </div>
+
+              <UiAccordionLayer
+                :classNames="{ layer: $style['estimate-list__layer'] }"
+              >
+                <section :class="$style['estimate-list__contents']">
+                  <ul class="reset-list">
+                    <li class="row-margin-item-group">
+                      <RadioButton
+                        theme="tertiary"
+                        :full="true"
+                        name="leaseRentEstimationSystemUsedLeaseCarSelect002"
+                        id="leaseRentEstimationSystemUsedLeaseCarSelect002_001"
+                        :defaultChecked="true"
+                      >
+                        <RadioButtonObject />
+                        <RadioButtonLabelText>
+                          <span class="display-block"
+                            >기아 K5(DL3) 2.0 가솔린 프레스티지</span
+                          >
+                        </RadioButtonLabelText>
+                      </RadioButton>
+                    </li>
+                    <li class="row-margin-item-group">
+                      <RadioButton
+                        theme="tertiary"
+                        :full="true"
+                        name="leaseRentEstimationSystemUsedLeaseCarSelect002"
+                        id="leaseRentEstimationSystemUsedLeaseCarSelect002_002"
+                      >
+                        <RadioButtonObject />
+                        <RadioButtonLabelText>
+                          <span class="display-block"
+                            >기아 K5(DL3) 2.0 가솔린 트렌디</span
+                          >
+                        </RadioButtonLabelText>
+                      </RadioButton>
+                    </li>
+                    <li class="row-margin-item-group">
+                      <RadioButton
+                        theme="tertiary"
+                        :full="true"
+                        name="leaseRentEstimationSystemUsedLeaseCarSelect002"
+                        id="leaseRentEstimationSystemUsedLeaseCarSelect002_003"
+                      >
+                        <RadioButtonObject />
+                        <RadioButtonLabelText>
+                          <span class="display-block"
+                            >기아 K5(DL3) 2.0 가솔린 시그니처</span
+                          >
+                        </RadioButtonLabelText>
+                      </RadioButton>
+                    </li>
+                    <li class="row-margin-item-group">
+                      <RadioButton
+                        theme="tertiary"
+                        :full="true"
+                        name="leaseRentEstimationSystemUsedLeaseCarSelect002"
+                        id="leaseRentEstimationSystemUsedLeaseCarSelect002_004"
+                      >
+                        <RadioButtonObject />
+                        <RadioButtonLabelText>
+                          <span class="display-block"
+                            >기아 K5(DL3) 2.0 가솔린 노블레스</span
+                          >
+                        </RadioButtonLabelText>
+                      </RadioButton>
+                    </li>
+                  </ul>
+                </section>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+            <!-- //Case : 차량번호, 차량명 선택시 노출 -->
 
             <!-- Case : 차량번호, 차량명 선택시 노출 -->
             <UiAccordionItem
@@ -608,850 +733,6 @@ export default {
                 </section>
               </UiAccordionLayer>
             </UiAccordionItem>
-
-            <!-- Case : 차량번호 선택시에만 노출 -->
-            <li :class="$style['estimate-list__item']">
-              <div :class="$style['estimate-list__head']">
-                <div :class="$style['estimate-list__block']">
-                  <div :class="$style['estimate-list__left']">
-                    <div :class="$style['product-setting']">
-                      <div :class="$style['product-setting__title']">
-                        차량검색
-                      </div>
-                      <div :class="$style['product-setting__contents']">
-                        <FormList
-                          :classNames="{ wrap: 'row-margin-item-group' }"
-                        >
-                          <FormListItem
-                            titleText="검색어"
-                            target="#leaseRentEstimationSystemUsedLeaseCarSearch"
-                            :forceFocus="true"
-                          >
-                            <FormInvalid :error="state.carSearchError">
-                              <InputBlock :error="state.carSearchError">
-                                <InputBlockCell :flexible="true">
-                                  <BasicInput
-                                    title="검색어 입력"
-                                    id="leaseRentEstimationSystemUsedLeaseCarSearch"
-                                  />
-                                </InputBlockCell>
-                                <template v-slot:right>
-                                  <BasicButton size="mini" theme="tertiary">
-                                    조회
-                                  </BasicButton>
-                                </template>
-                              </InputBlock>
-                              <FormInvalidMessage
-                                >Error Message</FormInvalidMessage
-                              >
-                            </FormInvalid>
-                          </FormListItem>
-                        </FormList>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <!-- Case : 차량명 선택시에만 노출 -->
-
-            <UiAccordionItem
-              :classNames="{ item: $style['estimate-list__item'] }"
-              v-slot="accordionItemSlotProps"
-            >
-              <div :class="$style['estimate-list__head']">
-                <div :class="$style['estimate-list__block']">
-                  <div :class="$style['estimate-list__left']">
-                    <KeyValue
-                      align="left"
-                      size="regular"
-                      verticalAlign="center"
-                    >
-                      <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                        <KeyValueTitle>
-                          <div class="text-body-4">차량선택</div>
-                        </KeyValueTitle>
-                        <KeyValueText
-                          >기아 K5(DL3) 2.0 가솔린 프레스티지</KeyValueText
-                        >
-                      </KeyValueItem>
-                    </KeyValue>
-                  </div>
-                </div>
-                <div :class="$style['estimate-list__arrow']">
-                  <UiAccordionOpener
-                    :toggleAction="false"
-                    :classNames="{ button: $style['estimate-list__opener'] }"
-                    @click="
-                      testAccordionToggle(accordionItemSlotProps, testAjax)
-                    "
-                  />
-                </div>
-              </div>
-
-              <UiAccordionLayer
-                :classNames="{ layer: $style['estimate-list__layer'] }"
-              >
-                <section :class="$style['estimate-list__contents']">
-                  <ul class="reset-list">
-                    <li class="row-margin-item-group">
-                      <RadioButton
-                        theme="tertiary"
-                        :full="true"
-                        name="leaseRentEstimationSystemUsedLeaseCarSelect002"
-                        id="leaseRentEstimationSystemUsedLeaseCarSelect002_001"
-                        :defaultChecked="true"
-                      >
-                        <RadioButtonObject />
-                        <RadioButtonLabelText>
-                          <span class="display-block"
-                            >기아 K5(DL3) 2.0 가솔린 프레스티지</span
-                          >
-                        </RadioButtonLabelText>
-                      </RadioButton>
-                    </li>
-                    <li class="row-margin-item-group">
-                      <RadioButton
-                        theme="tertiary"
-                        :full="true"
-                        name="leaseRentEstimationSystemUsedLeaseCarSelect002"
-                        id="leaseRentEstimationSystemUsedLeaseCarSelect002_002"
-                      >
-                        <RadioButtonObject />
-                        <RadioButtonLabelText>
-                          <span class="display-block"
-                            >기아 K5(DL3) 2.0 가솔린 트렌디</span
-                          >
-                        </RadioButtonLabelText>
-                      </RadioButton>
-                    </li>
-                    <li class="row-margin-item-group">
-                      <RadioButton
-                        theme="tertiary"
-                        :full="true"
-                        name="leaseRentEstimationSystemUsedLeaseCarSelect002"
-                        id="leaseRentEstimationSystemUsedLeaseCarSelect002_003"
-                      >
-                        <RadioButtonObject />
-                        <RadioButtonLabelText>
-                          <span class="display-block"
-                            >기아 K5(DL3) 2.0 가솔린 시그니처</span
-                          >
-                        </RadioButtonLabelText>
-                      </RadioButton>
-                    </li>
-                    <li class="row-margin-item-group">
-                      <RadioButton
-                        theme="tertiary"
-                        :full="true"
-                        name="leaseRentEstimationSystemUsedLeaseCarSelect002"
-                        id="leaseRentEstimationSystemUsedLeaseCarSelect002_004"
-                      >
-                        <RadioButtonObject />
-                        <RadioButtonLabelText>
-                          <span class="display-block"
-                            >기아 K5(DL3) 2.0 가솔린 노블레스</span
-                          >
-                        </RadioButtonLabelText>
-                      </RadioButton>
-                    </li>
-                  </ul>
-                </section>
-              </UiAccordionLayer>
-            </UiAccordionItem>
-            <!-- //Case : 차량번호, 차량명 선택시 노출 -->
-
-            <!-- Case : 브랜드 선택시 노출 -->
-            <!-- 브랜드 -->
-            <UiAccordionItem
-              :classNames="{ item: $style['estimate-list__item'] }"
-              v-slot="accordionItemSlotProps"
-            >
-              <div :class="$style['estimate-list__head']">
-                <div :class="$style['estimate-list__block']">
-                  <div :class="$style['estimate-list__left']">
-                    <KeyValue
-                      align="left"
-                      size="regular"
-                      verticalAlign="center"
-                    >
-                      <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                        <KeyValueTitle>
-                          <div class="text-body-4">브랜드</div>
-                        </KeyValueTitle>
-                        <KeyValueText>
-                          <div class="flex-box">
-                            <div class="flex-box__cell">
-                              <CarEmblem
-                                src="/images/_dummy/car-emblem.png"
-                                size="small"
-                              />
-                            </div>
-                            <div class="flex-box__cell flex-box__cell--small">
-                              제네시스
-                            </div>
-                          </div>
-                        </KeyValueText>
-                      </KeyValueItem>
-                    </KeyValue>
-                  </div>
-                </div>
-                <div :class="$style['estimate-list__arrow']">
-                  <UiAccordionOpener
-                    :toggleAction="false"
-                    :classNames="{ button: $style['estimate-list__opener'] }"
-                    @click="
-                      testAccordionToggle(accordionItemSlotProps, testAjax)
-                    "
-                  />
-                </div>
-              </div>
-
-              <UiAccordionLayer
-                :classNames="{ layer: $style['estimate-list__layer'] }"
-              >
-                <section :class="$style['estimate-list__contents']">
-                  <UiTab>
-                    <RoundTab
-                      :useUiTab="true"
-                      :classNames="{ wrap: 'row-margin-item-group' }"
-                    >
-                      <RoundTabButton
-                        link="leaseRentEstimationSystemUsedLeaseBrand_001"
-                      >
-                        국산
-                      </RoundTabButton>
-                      <RoundTabButton
-                        link="leaseRentEstimationSystemUsedLeaseBrand_002"
-                      >
-                        수입
-                      </RoundTabButton>
-                    </RoundTab>
-
-                    <UiTabPanel
-                      name="leaseRentEstimationSystemUsedLeaseBrand_001"
-                    >
-                      <div :class="$style['bank-brand']">
-                        <ul :class="$style['bank-brand__list']">
-                          <li :class="$style['bank-brand__item']">
-                            <button
-                              type="button"
-                              :class="$style['bank-brand__block']"
-                            >
-                              <span :class="$style['bank-brand__logo']">
-                                <CarEmblem
-                                  src="/images/_dummy/car-emblem.png"
-                                  size="medium"
-                                />
-                              </span>
-                              <span :class="$style['bank-brand__text']"
-                                >현대</span
-                              >
-                            </button>
-                          </li>
-                          <li :class="$style['bank-brand__item']">
-                            <!-- DD : 선택 된 요소 is-selected 클래스 값 추가 및 title="선택 됨" 속성 추가 -->
-                            <button
-                              type="button"
-                              :class="[
-                                $style['bank-brand__block'],
-                                'is-selected',
-                              ]"
-                              title="선택 됨"
-                            >
-                              <span :class="$style['bank-brand__logo']">
-                                <CarEmblem
-                                  src="/images/_dummy/car-emblem.png"
-                                  size="medium"
-                                />
-                              </span>
-                              <span :class="$style['bank-brand__text']"
-                                >제네시스</span
-                              >
-                            </button>
-                          </li>
-                          <li :class="$style['bank-brand__item']">
-                            <button
-                              type="button"
-                              :class="$style['bank-brand__block']"
-                            >
-                              <span :class="$style['bank-brand__logo']">
-                                <CarEmblem
-                                  src="/images/_dummy/car-emblem.png"
-                                  size="medium"
-                                />
-                              </span>
-                              <span :class="$style['bank-brand__text']"
-                                >기아</span
-                              >
-                            </button>
-                          </li>
-                          <li :class="$style['bank-brand__item']">
-                            <button
-                              type="button"
-                              :class="$style['bank-brand__block']"
-                            >
-                              <span :class="$style['bank-brand__logo']">
-                                <CarEmblem
-                                  src="/images/_dummy/car-emblem.png"
-                                  size="medium"
-                                />
-                              </span>
-                              <span :class="$style['bank-brand__text']"
-                                >르노삼성</span
-                              >
-                            </button>
-                          </li>
-                          <li :class="$style['bank-brand__item']">
-                            <button
-                              type="button"
-                              :class="$style['bank-brand__block']"
-                            >
-                              <span :class="$style['bank-brand__logo']">
-                                <CarEmblem
-                                  src="/images/_dummy/car-emblem.png"
-                                  size="medium"
-                                />
-                              </span>
-                              <span :class="$style['bank-brand__text']"
-                                >쉐보레</span
-                              >
-                            </button>
-                          </li>
-                          <li :class="$style['bank-brand__item']">
-                            <button
-                              type="button"
-                              :class="$style['bank-brand__block']"
-                            >
-                              <span :class="$style['bank-brand__logo']">
-                                <CarEmblem
-                                  src="/images/_dummy/car-emblem.png"
-                                  size="medium"
-                                />
-                              </span>
-                              <span :class="$style['bank-brand__text']"
-                                >쌍용</span
-                              >
-                            </button>
-                          </li>
-                        </ul>
-                      </div>
-                    </UiTabPanel>
-
-                    <UiTabPanel
-                      name="leaseRentEstimationSystemUsedLeaseBrand_002"
-                    >
-                      <ul :class="$style['bank-brand__list']">
-                        <li :class="$style['bank-brand__item']">
-                          <button
-                            type="button"
-                            :class="$style['bank-brand__block']"
-                          >
-                            <span :class="$style['bank-brand__logo']">
-                              <CarEmblem
-                                src="/images/_dummy/car-emblem.png"
-                                size="medium"
-                              />
-                            </span>
-                            <span :class="$style['bank-brand__text']"
-                              >벤츠</span
-                            >
-                          </button>
-                        </li>
-                        <li :class="$style['bank-brand__item']">
-                          <button
-                            type="button"
-                            :class="$style['bank-brand__block']"
-                          >
-                            <span :class="$style['bank-brand__logo']">
-                              <CarEmblem
-                                src="/images/_dummy/car-emblem.png"
-                                size="medium"
-                              />
-                            </span>
-                            <span :class="$style['bank-brand__text']">BMW</span>
-                          </button>
-                        </li>
-                        <li :class="$style['bank-brand__item']">
-                          <button
-                            type="button"
-                            :class="$style['bank-brand__block']"
-                          >
-                            <span :class="$style['bank-brand__logo']">
-                              <CarEmblem
-                                src="/images/_dummy/car-emblem.png"
-                                size="medium"
-                              />
-                            </span>
-                            <span :class="$style['bank-brand__text']"
-                              >아우디</span
-                            >
-                          </button>
-                        </li>
-                        <li :class="$style['bank-brand__item']">
-                          <button
-                            type="button"
-                            :class="$style['bank-brand__block']"
-                          >
-                            <span :class="$style['bank-brand__logo']">
-                              <CarEmblem
-                                src="/images/_dummy/car-emblem.png"
-                                size="medium"
-                              />
-                            </span>
-                            <span :class="$style['bank-brand__text']"
-                              >포르쉐</span
-                            >
-                          </button>
-                        </li>
-                        <li :class="$style['bank-brand__item']">
-                          <button
-                            type="button"
-                            :class="$style['bank-brand__block']"
-                          >
-                            <span :class="$style['bank-brand__logo']">
-                              <CarEmblem
-                                src="/images/_dummy/car-emblem.png"
-                                size="medium"
-                              />
-                            </span>
-                            <span :class="$style['bank-brand__text']"
-                              >마세라티</span
-                            >
-                          </button>
-                        </li>
-                        <li :class="$style['bank-brand__item']">
-                          <button
-                            type="button"
-                            :class="$style['bank-brand__block']"
-                          >
-                            <span :class="$style['bank-brand__logo']">
-                              <CarEmblem
-                                src="/images/_dummy/car-emblem.png"
-                                size="medium"
-                              />
-                            </span>
-                            <span :class="$style['bank-brand__text']"
-                              >벤틀리</span
-                            >
-                          </button>
-                        </li>
-                      </ul>
-                    </UiTabPanel>
-                  </UiTab>
-                </section>
-              </UiAccordionLayer>
-            </UiAccordionItem>
-            <!-- // 브랜드 -->
-
-            <!-- 모델 -->
-            <UiAccordionItem
-              :classNames="{ item: $style['estimate-list__item'] }"
-              v-slot="accordionItemSlotProps"
-            >
-              <div :class="$style['estimate-list__head']">
-                <div :class="$style['estimate-list__block']">
-                  <div :class="$style['estimate-list__left']">
-                    <KeyValue
-                      align="left"
-                      size="regular"
-                      verticalAlign="center"
-                    >
-                      <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                        <KeyValueTitle>
-                          <div class="text-body-4">모델</div>
-                        </KeyValueTitle>
-                        <KeyValueText>올 뉴 아반떼 HEV</KeyValueText>
-                      </KeyValueItem>
-                    </KeyValue>
-                  </div>
-                </div>
-                <div :class="$style['estimate-list__arrow']">
-                  <UiAccordionOpener
-                    :toggleAction="false"
-                    :classNames="{ button: $style['estimate-list__opener'] }"
-                    @click="
-                      testAccordionToggle(accordionItemSlotProps, testAjax)
-                    "
-                  />
-                </div>
-              </div>
-
-              <UiAccordionLayer
-                :classNames="{ layer: $style['estimate-list__layer'] }"
-              >
-                <section :class="$style['estimate-list__contents']">
-                  <div
-                    :class="[$style['bank-brand'], $style['bank-brand--col-2']]"
-                  >
-                    <ul :class="$style['bank-brand__list']">
-                      <li :class="$style['bank-brand__item']">
-                        <button
-                          type="button"
-                          :class="$style['bank-brand__block']"
-                        >
-                          <span :class="$style['bank-brand__logo']">
-                            <CarThumb src="/images/_dummy/car-thumb.png" />
-                          </span>
-                          <span :class="$style['bank-brand__text']"
-                            >캐스퍼</span
-                          >
-                        </button>
-                      </li>
-                      <li :class="$style['bank-brand__item']">
-                        <!-- DD : 선택 된 요소 is-selected 클래스 값 추가 및 title="선택 됨" 속성 추가 -->
-                        <button
-                          type="button"
-                          :class="[$style['bank-brand__block'], 'is-selected']"
-                          title="선택 됨"
-                        >
-                          <span :class="$style['bank-brand__logo']">
-                            <CarThumb src="/images/_dummy/car-thumb.png" />
-                          </span>
-                          <span :class="$style['bank-brand__text']"
-                            >올 뉴 아반떼 HEV</span
-                          >
-                        </button>
-                      </li>
-                      <li :class="$style['bank-brand__item']">
-                        <button
-                          type="button"
-                          :class="$style['bank-brand__block']"
-                        >
-                          <span :class="$style['bank-brand__logo']">
-                            <CarThumb src="/images/_dummy/car-thumb.png" />
-                          </span>
-                          <span :class="$style['bank-brand__text']"
-                            >아반떼-N</span
-                          >
-                        </button>
-                      </li>
-                      <li :class="$style['bank-brand__item']">
-                        <button
-                          type="button"
-                          :class="$style['bank-brand__block']"
-                        >
-                          <span :class="$style['bank-brand__logo']">
-                            <CarThumb src="/images/_dummy/car-thumb.png" />
-                          </span>
-                          <span :class="$style['bank-brand__text']"
-                            >더 뉴 그랜저</span
-                          >
-                        </button>
-                      </li>
-                      <li :class="$style['bank-brand__item']">
-                        <button
-                          type="button"
-                          :class="$style['bank-brand__block']"
-                        >
-                          <span :class="$style['bank-brand__logo']">
-                            <CarThumb src="/images/_dummy/car-thumb.png" />
-                          </span>
-                          <span :class="$style['bank-brand__text']"
-                            >올 뉴 아반떼 HEV</span
-                          >
-                        </button>
-                      </li>
-                      <li :class="$style['bank-brand__item']">
-                        <button
-                          type="button"
-                          :class="$style['bank-brand__block']"
-                        >
-                          <span :class="$style['bank-brand__logo']">
-                            <CarThumb src="/images/_dummy/car-thumb.png" />
-                          </span>
-                          <span :class="$style['bank-brand__text']"
-                            >더 뉴 싼타페</span
-                          >
-                        </button>
-                      </li>
-                    </ul>
-                  </div>
-                </section>
-              </UiAccordionLayer>
-            </UiAccordionItem>
-            <!-- // 모델 -->
-
-            <!-- 라인업 -->
-            <UiAccordionItem
-              :classNames="{ item: $style['estimate-list__item'] }"
-              v-slot="accordionItemSlotProps"
-            >
-              <div :class="$style['estimate-list__head']">
-                <div :class="$style['estimate-list__block']">
-                  <div :class="$style['estimate-list__left']">
-                    <KeyValue
-                      align="left"
-                      size="regular"
-                      verticalAlign="center"
-                    >
-                      <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                        <KeyValueTitle>
-                          <div class="text-body-4">라인업</div>
-                        </KeyValueTitle>
-                        <KeyValueText>2022년형 가솔린 1.0</KeyValueText>
-                      </KeyValueItem>
-                    </KeyValue>
-                  </div>
-                </div>
-                <div :class="$style['estimate-list__arrow']">
-                  <UiAccordionOpener
-                    :toggleAction="false"
-                    :classNames="{ button: $style['estimate-list__opener'] }"
-                    @click="
-                      testAccordionToggle(accordionItemSlotProps, testAjax)
-                    "
-                  />
-                </div>
-              </div>
-
-              <UiAccordionLayer
-                :classNames="{ layer: $style['estimate-list__layer'] }"
-              >
-                <section :class="$style['estimate-list__contents']">
-                  <ul class="reset-list">
-                    <li class="row-margin-item-group">
-                      <RadioButton
-                        theme="tertiary"
-                        :full="true"
-                        name="leaseRentEstimationSystemUsedLeaseLineup"
-                        id="leaseRentEstimationSystemUsedLeaseLineup_001"
-                        :defaultChecked="true"
-                      >
-                        <RadioButtonObject />
-                        <RadioButtonLabelText>
-                          <span class="display-block">2022년형 가솔린 1.0</span>
-                          <span
-                            class="flex-box row-margin-mini text-body-5 color-gray-secondary"
-                          >
-                            <span class="flex-box__cell"
-                              >개소세 5%기준 2021.09~</span
-                            >
-                          </span>
-                        </RadioButtonLabelText>
-                      </RadioButton>
-                    </li>
-                    <li class="row-margin-item-group">
-                      <RadioButton
-                        theme="tertiary"
-                        :full="true"
-                        name="leaseRentEstimationSystemUsedLeaseLineup"
-                        id="leaseRentEstimationSystemUsedLeaseLineup_002"
-                      >
-                        <RadioButtonObject />
-                        <RadioButtonLabelText>
-                          <span class="display-block"
-                            >2022년형 가솔린 1.0 터보</span
-                          >
-                          <span
-                            class="flex-box row-margin-mini text-body-5 color-gray-secondary"
-                          >
-                            <span class="flex-box__cell">2021.09~</span>
-                          </span>
-                        </RadioButtonLabelText>
-                      </RadioButton>
-                    </li>
-                    <li class="row-margin-item-group">
-                      <RadioButton
-                        theme="tertiary"
-                        :full="true"
-                        name="leaseRentEstimationSystemUsedLeaseLineup"
-                        id="leaseRentEstimationSystemUsedLeaseLineup_003"
-                      >
-                        <RadioButtonObject />
-                        <RadioButtonLabelText>
-                          <span class="display-block"
-                            >2022년형 가솔린 1.0 밴</span
-                          >
-                          <span
-                            class="flex-box row-margin-mini text-body-5 color-gray-secondary"
-                          >
-                            <span class="flex-box__cell">2022.02~</span>
-                          </span>
-                        </RadioButtonLabelText>
-                      </RadioButton>
-                    </li>
-                    <li class="row-margin-item-group">
-                      <RadioButton
-                        theme="tertiary"
-                        :full="true"
-                        name="leaseRentEstimationSystemUsedLeaseLineup"
-                        id="leaseRentEstimationSystemUsedLeaseLineup_004"
-                      >
-                        <RadioButtonObject />
-                        <RadioButtonLabelText>
-                          <span class="display-block"
-                            >2022년형 가솔린 1.0 터보 밴</span
-                          >
-                          <span
-                            class="flex-box row-margin-mini text-body-5 color-gray-secondary"
-                          >
-                            <span class="flex-box__cell">2022.02~</span>
-                            <span
-                              class="flex-box__cell flex-box__cell--small-regular"
-                            >
-                              <RoundStatus
-                                :block="true"
-                                size="small"
-                                theme="denary"
-                              >
-                                재고한정
-                              </RoundStatus>
-                            </span>
-                          </span>
-                        </RadioButtonLabelText>
-                      </RadioButton>
-                    </li>
-                  </ul>
-                </section>
-              </UiAccordionLayer>
-            </UiAccordionItem>
-            <!-- // 라인업 -->
-
-            <!-- 트림 -->
-            <UiAccordionItem
-              :classNames="{ item: $style['estimate-list__item'] }"
-              v-slot="accordionItemSlotProps"
-            >
-              <div :class="$style['estimate-list__head']">
-                <div :class="$style['estimate-list__block']">
-                  <div :class="$style['estimate-list__left']">
-                    <KeyValue
-                      align="left"
-                      size="regular"
-                      verticalAlign="center"
-                    >
-                      <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                        <KeyValueTitle>
-                          <div class="text-body-4">트림</div>
-                        </KeyValueTitle>
-                        <KeyValueText>인스퍼레이션</KeyValueText>
-                      </KeyValueItem>
-                    </KeyValue>
-                  </div>
-                  <div :class="$style['estimate-list__right']">
-                    <div class="text-body-3 font-weight-bold">
-                      18,700,000 원
-                    </div>
-                  </div>
-                </div>
-                <div :class="$style['estimate-list__arrow']">
-                  <UiAccordionOpener
-                    :toggleAction="false"
-                    :classNames="{ button: $style['estimate-list__opener'] }"
-                    @click="
-                      testAccordionToggle(accordionItemSlotProps, testAjax)
-                    "
-                  />
-                </div>
-              </div>
-
-              <UiAccordionLayer
-                :classNames="{ layer: $style['estimate-list__layer'] }"
-              >
-                <section :class="$style['estimate-list__contents']">
-                  <ul class="reset-list">
-                    <li class="row-margin-item-group">
-                      <RadioButton
-                        theme="tertiary"
-                        :full="true"
-                        name="leaseRentEstimationSystemUsedLeaseTrim"
-                        id="leaseRentEstimationSystemUsedLeaseTrim_001"
-                        :defaultChecked="true"
-                      >
-                        <RadioButtonObject />
-                        <RadioButtonLabelText>
-                          <span class="flex-box">
-                            <span class="flex-box__cell flex-1">디 에센셜</span>
-                            <span class="flex-box__cell font-weight-medium"
-                              >16,900,000 원</span
-                            >
-                          </span>
-                          <span
-                            class="display-block row-margin-mini text-body-5 color-gray-secondary"
-                          >
-                            휘발유 14.3km/l
-                          </span>
-                        </RadioButtonLabelText>
-                      </RadioButton>
-                    </li>
-                    <li class="row-margin-item-group">
-                      <RadioButton
-                        theme="tertiary"
-                        :full="true"
-                        name="leaseRentEstimationSystemUsedLeaseTrim"
-                        id="leaseRentEstimationSystemUsedLeaseTrim_002"
-                      >
-                        <RadioButtonObject />
-                        <RadioButtonLabelText>
-                          <span class="flex-box">
-                            <span class="flex-box__cell flex-1">스마트</span>
-                            <span class="flex-box__cell font-weight-medium"
-                              >13,850,000 원</span
-                            >
-                          </span>
-                          <span
-                            class="display-block row-margin-mini text-body-5 color-gray-secondary"
-                          >
-                            휘발유 14.3km/l
-                          </span>
-                        </RadioButtonLabelText>
-                      </RadioButton>
-                    </li>
-                    <li class="row-margin-item-group">
-                      <RadioButton
-                        theme="tertiary"
-                        :full="true"
-                        name="leaseRentEstimationSystemUsedLeaseTrim"
-                        id="leaseRentEstimationSystemUsedLeaseTrim_003"
-                      >
-                        <RadioButtonObject />
-                        <RadioButtonLabelText>
-                          <span class="flex-box">
-                            <span class="flex-box__cell flex-1">모던</span>
-                            <span class="flex-box__cell font-weight-medium"
-                              >15,900,000 원</span
-                            >
-                          </span>
-                          <span
-                            class="display-block row-margin-mini text-body-5 color-gray-secondary"
-                          >
-                            휘발유 14.3km/l
-                          </span>
-                        </RadioButtonLabelText>
-                      </RadioButton>
-                    </li>
-                    <li class="row-margin-item-group">
-                      <RadioButton
-                        theme="tertiary"
-                        :full="true"
-                        name="leaseRentEstimationSystemUsedLeaseTrim"
-                        id="leaseRentEstimationSystemUsedLeaseTrim_004"
-                      >
-                        <RadioButtonObject />
-                        <RadioButtonLabelText>
-                          <span class="flex-box">
-                            <span class="flex-box__cell flex-1"
-                              >인스퍼레이션</span
-                            >
-                            <span class="flex-box__cell font-weight-medium"
-                              >18.700,000 원</span
-                            >
-                          </span>
-                          <span
-                            class="display-block row-margin-mini text-body-5 color-gray-secondary"
-                          >
-                            휘발유 13.8km/l
-                          </span>
-                        </RadioButtonLabelText>
-                      </RadioButton>
-                    </li>
-                  </ul>
-                </section>
-              </UiAccordionLayer>
-            </UiAccordionItem>
-            <!-- // 트림 -->
-            <!-- //Case : 브랜드 선택시 노출 -->
           </UiAccordion>
         </section>
 
@@ -1744,8 +1025,8 @@ export default {
                           <div class="text-body-4">수수료</div>
                         </KeyValueTitle>
                         <KeyValueText>
-                          CM : (0%) 0 원<br />
-                          AG : (0%) 0 원
+                          CM : 0.003% (690,000원)<br />
+                          AG : 0.000% (000,000원)
                         </KeyValueText>
                       </KeyValueItem>
                     </KeyValue>
@@ -1765,13 +1046,13 @@ export default {
                   <!-- Case : 상품 - 운용리스 선택시 노출 -->
                   <!-- Case : 일반중고차일 경우 -->
                   <NoticeText :classNames="{ wrap: 'row-margin-item-group' }"
-                    >한도: AG+딜러 7% 이내</NoticeText
+                    >한도: AG+딜러 9.9% 이내</NoticeText
                   >
                   <!-- //Case : 일반중고차일 경우 -->
 
                   <!-- Case : 인증중고차일 경우 -->
                   <NoticeText :classNames="{ wrap: 'row-margin-item-group' }"
-                    >한도: AG+딜러 13% 이내(단 AG 3%이내)</NoticeText
+                    >한도: AG+딜러 9.9% 이내(단 AG 3%이내)</NoticeText
                   >
                   <!-- //Case : 인증중고차일 경우 -->
                   <!-- //Case : 상품 - 운용리스 선택시 노출 -->
@@ -1788,21 +1069,6 @@ export default {
                     >
                       <FormInvalid :error="state.feeCMError">
                         <InputBlock :error="state.feeCMError">
-                          <InputBlockCell>
-                            <BasicInput
-                              type="number"
-                              title="CM 비율(%)"
-                              id="leaseRentEstimationSystemUsedLeaseFeeCMRatio"
-                              pattern="\d*"
-                              :useDelete="false"
-                              align="right"
-                              defaultValue="0"
-                              :classNames="{ wrap: 'input-width-ratio' }"
-                            />
-                          </InputBlockCell>
-                          <InputBlockCell>
-                            <div class="text-body-3">%</div>
-                          </InputBlockCell>
                           <InputBlockCell :flexible="true">
                             <BasicInput
                               title="CM 금액"
@@ -1810,12 +1076,26 @@ export default {
                               pattern="\d*"
                               :useDelete="false"
                               align="right"
-                              defaultValue="0"
+                              defaultValue="690,000"
                               :disabled="true"
                             />
                           </InputBlockCell>
                           <InputBlockCell>
                             <div class="text-body-3 color-gray-quinary">원</div>
+                          </InputBlockCell>
+                          <InputBlockCell :flexible="true">
+                            <BasicInput
+                              type="number"
+                              title="CM 비율(%)"
+                              id="leaseRentEstimationSystemUsedLeaseFeeCMRatio"
+                              pattern="\d*"
+                              :useDelete="false"
+                              align="right"
+                              defaultValue="0.03"
+                            />
+                          </InputBlockCell>
+                          <InputBlockCell>
+                            <div class="text-body-3">%</div>
                           </InputBlockCell>
                         </InputBlock>
                         <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -1828,21 +1108,6 @@ export default {
                     >
                       <FormInvalid :error="state.feeAGError">
                         <InputBlock :error="state.feeAGError">
-                          <InputBlockCell>
-                            <BasicInput
-                              type="number"
-                              title="AG 비율(%)"
-                              id="leaseRentEstimationSystemUsedLeaseFeeAGRatio"
-                              pattern="\d*"
-                              :useDelete="false"
-                              align="right"
-                              defaultValue="0"
-                              :classNames="{ wrap: 'input-width-ratio' }"
-                            />
-                          </InputBlockCell>
-                          <InputBlockCell>
-                            <div class="text-body-3">%</div>
-                          </InputBlockCell>
                           <InputBlockCell :flexible="true">
                             <BasicInput
                               title="AG 금액"
@@ -1856,6 +1121,20 @@ export default {
                           </InputBlockCell>
                           <InputBlockCell>
                             <div class="text-body-3 color-gray-quinary">원</div>
+                          </InputBlockCell>
+                          <InputBlockCell :flexible="true">
+                            <BasicInput
+                              type="number"
+                              title="AG 비율(%)"
+                              id="leaseRentEstimationSystemUsedLeaseFeeAGRatio"
+                              pattern="\d*"
+                              :useDelete="false"
+                              align="right"
+                              defaultValue="0"
+                            />
+                          </InputBlockCell>
+                          <InputBlockCell>
+                            <div class="text-body-3">%</div>
                           </InputBlockCell>
                         </InputBlock>
                         <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -2322,86 +1601,6 @@ export default {
               </div>
             </li>
             <!-- // 이손금 -->
-
-            <!-- 용품지원 -->
-            <li :class="$style['estimate-list__item']">
-              <div :class="$style['estimate-list__head']">
-                <div :class="$style['estimate-list__block']">
-                  <div :class="$style['estimate-list__left']">
-                    <KeyValue align="left" size="medium" verticalAlign="center">
-                      <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                        <KeyValueTitle>
-                          <div class="text-body-4">용품지원</div>
-                        </KeyValueTitle>
-                        <KeyValueText>
-                          <div class="row-margin-item-group">
-                            <BoxCheckList spacing="small">
-                              <BoxCheckListItem>
-                                <BoxCheck
-                                  :minSide="true"
-                                  name="leaseRentEstimationSystemUsedLeaseSuppliesSupport"
-                                  id="leaseRentEstimationSystemUsedLeaseSuppliesSupport_001"
-                                  size="small"
-                                  :defaultChecked="true"
-                                >
-                                  <BoxCheckLabel>N</BoxCheckLabel>
-                                </BoxCheck>
-                              </BoxCheckListItem>
-                              <BoxCheckListItem>
-                                <BoxCheck
-                                  :minSide="true"
-                                  name="leaseRentEstimationSystemUsedLeaseSuppliesSupport"
-                                  id="leaseRentEstimationSystemUsedLeaseSuppliesSupport_002"
-                                  size="small"
-                                >
-                                  <BoxCheckLabel>Y</BoxCheckLabel>
-                                </BoxCheck>
-                              </BoxCheckListItem>
-                            </BoxCheckList>
-                          </div>
-
-                          <!-- Case : Y 선택시 :disabled="false" -->
-                          <FormList>
-                            <FormListItem
-                              titleText="금액"
-                              target="#leaseRentEstimationSystemUsedLeaseSuppliesSupportPrice"
-                              :disabled="true"
-                            >
-                              <FormInvalid :error="state.suppliesSupportError">
-                                <InputBlock
-                                  :error="state.suppliesSupportError"
-                                  :disabled="true"
-                                >
-                                  <InputBlockCell :flexible="true">
-                                    <BasicInput
-                                      title="용품지원 금액"
-                                      id="leaseRentEstimationSystemUsedLeaseSuppliesSupportPrice"
-                                      pattern="\d*"
-                                      :useDelete="false"
-                                      align="right"
-                                      defaultValue="0"
-                                      :disabled="true"
-                                    />
-                                  </InputBlockCell>
-                                  <InputBlockCell>
-                                    <div class="text-body-3">원</div>
-                                  </InputBlockCell>
-                                </InputBlock>
-                                <FormInvalidMessage
-                                  >Error Message</FormInvalidMessage
-                                >
-                              </FormInvalid>
-                            </FormListItem>
-                          </FormList>
-                          <!-- // Case : Y 선택시 :disabled="false" -->
-                        </KeyValueText>
-                      </KeyValueItem>
-                    </KeyValue>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <!-- // 용품지원 -->
 
             <!-- Case : 상품 - 금융리스 선택시 노출 -->
             <!-- 선수금 -->
@@ -4348,9 +3547,8 @@ export default {
         </ul>
       </section>
     </div>
-
     <template v-slot:foot>
-      <!-- Case : 견적서 보기 선택 후, 디폴트 상태 -->
+      <!-- Case : [가견적 상태에서 재견적] - 견적서 보기 선택 후, 디폴트 상태 -->
       <ButtonList
         :classNames="{
           wrap: 'row-margin-none',
@@ -4360,15 +3558,35 @@ export default {
           <BasicButton :minSide="true">견적 저장</BasicButton>
         </ButtonListItem>
         <ButtonListItem>
-          <BasicButton :minSide="true" theme="tertiary" :disabled="true"
-            >견적서발송</BasicButton
-          >
+          <BasicButton :minSide="true" theme="tertiary" :disabled="true">
+            견적서 발송
+          </BasicButton>
         </ButtonListItem>
         <ButtonListItem>
           <BasicButton :minSide="true" :disabled="true">견적확정</BasicButton>
         </ButtonListItem>
       </ButtonList>
-      <!-- // Case : 견적서 보기 선택 후, 디폴트 상태 -->
+      <!-- // Case : [가견적 상태에서 재견적] - 견적서 보기 선택 후, 디폴트 상태 -->
+
+      <!-- Case : [견적확정 or 동의완료 상태에서 재견적] - 견적서 보기 선택 후, 디폴트 상태 -->
+      <ButtonList
+        :classNames="{
+          wrap: 'row-margin-none',
+        }"
+      >
+        <ButtonListItem>
+          <BasicButton :minSide="true">재견적 저장</BasicButton>
+        </ButtonListItem>
+        <ButtonListItem>
+          <BasicButton :minSide="true" theme="tertiary" :disabled="true">
+            견적서 발송
+          </BasicButton>
+        </ButtonListItem>
+        <ButtonListItem>
+          <BasicButton :minSide="true" :disabled="true">견적확정</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
+      <!-- // Case : [견적확정 or 동의완료 상태에서 재견적] - 견적서 보기 선택 후, 디폴트 상태 -->
 
       <!-- Case : 견적 저장 된 상태의 하단 버튼 -->
       <ButtonList
@@ -4380,7 +3598,9 @@ export default {
           <BasicButton :minSide="true" :disabled="true">저장됨</BasicButton>
         </ButtonListItem>
         <ButtonListItem>
-          <BasicButton :minSide="true" theme="tertiary">견적서발송</BasicButton>
+          <BasicButton :minSide="true" theme="tertiary"
+            >견적서 발송</BasicButton
+          >
         </ButtonListItem>
         <ButtonListItem>
           <BasicButton :minSide="true">견적확정</BasicButton>
@@ -4399,7 +3619,7 @@ export default {
         </ButtonListItem>
         <ButtonListItem>
           <BasicButton :minSide="true" theme="tertiary" :disabled="true"
-            >견적서발송</BasicButton
+            >견적서 발송</BasicButton
           >
         </ButtonListItem>
         <ButtonListItem>
@@ -4418,7 +3638,9 @@ export default {
           <BasicButton :minSide="true" :disabled="true">저장됨</BasicButton>
         </ButtonListItem>
         <ButtonListItem>
-          <BasicButton :minSide="true" theme="tertiary">견적서발송</BasicButton>
+          <BasicButton :minSide="true" theme="tertiary"
+            >견적서 발송</BasicButton
+          >
         </ButtonListItem>
         <ButtonListItem>
           <BasicButton :minSide="true">신용조회요청</BasicButton>
@@ -4436,7 +3658,9 @@ export default {
           <BasicButton :minSide="true" :disabled="true">저장됨</BasicButton>
         </ButtonListItem>
         <ButtonListItem>
-          <BasicButton :minSide="true" theme="tertiary">견적서발송</BasicButton>
+          <BasicButton :minSide="true" theme="tertiary"
+            >견적서 발송</BasicButton
+          >
         </ButtonListItem>
         <ButtonListItem>
           <BasicButton :minSide="true" :disabled="true"
@@ -4446,17 +3670,39 @@ export default {
       </ButtonList>
       <!-- // Case : 확정된 상태의 하단 버튼 -->
 
-      <!-- Case : 재견적 버튼으로 견적 진입 시 -->
+      <!-- Case : [심사신청 상태에서 조건변경] - 견적서 보기 선택 후, 디폴트 상태 -->
       <ButtonList
         :classNames="{
           wrap: 'row-margin-none',
         }"
       >
         <ButtonListItem>
-          <BasicButton>재견적 저장</BasicButton>
+          <BasicButton :minSide="true">조건변경 저장</BasicButton>
+        </ButtonListItem>
+        <ButtonListItem>
+          <BasicButton :minSide="true" theme="tertiary" :disabled="true"
+            >견적서 발송</BasicButton
+          >
         </ButtonListItem>
       </ButtonList>
-      <!-- // Case : 재견적 버튼으로 견적 진입 시 -->
+      <!-- // [심사신청 상태에서 조건변경] - 견적서 보기 선택 후, 디폴트 상태 -->
+
+      <!-- Case : [심사신청 상태에서 조건변경] - 견적저장 된 상태의 하단 버튼 -->
+      <ButtonList
+        :classNames="{
+          wrap: 'row-margin-none',
+        }"
+      >
+        <ButtonListItem>
+          <BasicButton :minSide="true" :disabled="true">저장됨</BasicButton>
+        </ButtonListItem>
+        <ButtonListItem>
+          <BasicButton :minSide="true" theme="tertiary"
+            >견적서 발송</BasicButton
+          >
+        </ButtonListItem>
+      </ButtonList>
+      <!-- // [심사신청 상태에서 조건변경] - 견적저장 된 상태의 하단 버튼 -->
     </template>
   </PageContents>
 </template>
