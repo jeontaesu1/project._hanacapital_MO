@@ -23,6 +23,7 @@ import BoxCheck from '@/components/ui/form/BoxCheck.vue';
 import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
 import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
 import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
+import BoxCheckObject from '@/components/ui/form/BoxCheckObject.vue';
 import SettingButton from '@/components/ui/button/SettingButton.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
@@ -75,6 +76,7 @@ export default {
     BoxCheckLabel,
     BoxCheckList,
     BoxCheckListItem,
+    BoxCheckObject,
     SettingButton,
     BasicHr,
     CarEmblem,
@@ -2493,15 +2495,15 @@ export default {
                           <div class="flex-box">
                             <div class="flex-box__cell flex-1">이용자</div>
                             <div class="flex-box__cell">
-                              <CheckBox
-                                id="LeaseRentEstimationSystemInstallmentRenterCarCorporation"
-                                theme="tertiary"
+                              <BoxCheck
+                                type="checkbox"
+                                id="leaseRentEstimationSystemInstallmentRenterCarCorporation"
                               >
-                                <CheckBoxObject />
-                                <CheckBoxLabelText
-                                  >렌터카법인</CheckBoxLabelText
-                                >
-                              </CheckBox>
+                                <template v-slot:left>
+                                  <BoxCheckObject />
+                                </template>
+                                <BoxCheckLabel>렌터카법인</BoxCheckLabel>
+                              </BoxCheck>
                             </div>
                           </div>
                         </KeyValueText>
