@@ -3583,8 +3583,8 @@ export default {
                           <div class="text-body-4">기타</div>
                         </KeyValueTitle>
                         <KeyValueText>
-                          CM : (0%) 0 원<br />
-                          AG : (0%) 0 원
+                          CM : 0.003% (690,000원)<br />
+                          AG : 0.000% (000,000원)
                         </KeyValueText>
                       </KeyValueItem>
                     </KeyValue>
@@ -3601,9 +3601,6 @@ export default {
                 :classNames="{ layer: $style['estimate-list__layer'] }"
               >
                 <section :class="$style['estimate-list__contents']">
-                  <NoticeText :classNames="{ wrap: 'row-margin-item-group' }"
-                    >한도: AG+CM 12% 이내 (단 CM 9% 이내)</NoticeText
-                  >
                   <FormList>
                     <FormListItem
                       titleText="CM"
@@ -3611,21 +3608,6 @@ export default {
                     >
                       <FormInvalid :error="state.etcCMError">
                         <InputBlock :error="state.etcCMError">
-                          <InputBlockCell>
-                            <BasicInput
-                              type="number"
-                              title="CM 비율(%)"
-                              id="leaseRentEstimationSystemPrePurchaseETCCMRatio"
-                              pattern="\d*"
-                              :useDelete="false"
-                              align="right"
-                              defaultValue="0"
-                              :classNames="{ wrap: 'input-width-ratio' }"
-                            />
-                          </InputBlockCell>
-                          <InputBlockCell>
-                            <div class="text-body-3">%</div>
-                          </InputBlockCell>
                           <InputBlockCell :flexible="true">
                             <BasicInput
                               title="CM 금액"
@@ -3633,12 +3615,26 @@ export default {
                               pattern="\d*"
                               :useDelete="false"
                               align="right"
-                              defaultValue="0"
+                              defaultValue="690,000"
                               :disabled="true"
                             />
                           </InputBlockCell>
                           <InputBlockCell>
                             <div class="text-body-3 color-gray-quinary">원</div>
+                          </InputBlockCell>
+                          <InputBlockCell :flexible="true">
+                            <BasicInput
+                              type="number"
+                              title="CM 비율(%)"
+                              id="leaseRentEstimationSystemPrePurchaseETCCMRatio"
+                              pattern="\d*"
+                              :useDelete="false"
+                              align="right"
+                              defaultValue="0.003"
+                            />
+                          </InputBlockCell>
+                          <InputBlockCell>
+                            <div class="text-body-3">%</div>
                           </InputBlockCell>
                         </InputBlock>
                         <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -3650,21 +3646,6 @@ export default {
                     >
                       <FormInvalid :error="state.etcAGError">
                         <InputBlock :error="state.etcAGError">
-                          <InputBlockCell>
-                            <BasicInput
-                              type="number"
-                              title="AG 비율(%)"
-                              id="leaseRentEstimationSystemPrePurchaseETCAGRatio"
-                              pattern="\d*"
-                              :useDelete="false"
-                              align="right"
-                              defaultValue="0"
-                              :classNames="{ wrap: 'input-width-ratio' }"
-                            />
-                          </InputBlockCell>
-                          <InputBlockCell>
-                            <div class="text-body-3">%</div>
-                          </InputBlockCell>
                           <InputBlockCell :flexible="true">
                             <BasicInput
                               title="AG 금액"
@@ -3672,12 +3653,26 @@ export default {
                               pattern="\d*"
                               :useDelete="false"
                               align="right"
-                              defaultValue="0"
+                              defaultValue="1,747,100"
                               :disabled="true"
                             />
                           </InputBlockCell>
                           <InputBlockCell>
                             <div class="text-body-3 color-gray-quinary">원</div>
+                          </InputBlockCell>
+                          <InputBlockCell :flexible="true">
+                            <BasicInput
+                              type="number"
+                              title="AG 비율(%)"
+                              id="leaseRentEstimationSystemPrePurchaseETCAGRatio"
+                              pattern="\d*"
+                              :useDelete="false"
+                              align="right"
+                              defaultValue="0.000"
+                            />
+                          </InputBlockCell>
+                          <InputBlockCell>
+                            <div class="text-body-3">%</div>
                           </InputBlockCell>
                         </InputBlock>
                         <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -5398,7 +5393,7 @@ export default {
     </div>
 
     <template v-slot:foot>
-      <!-- Case : 견적서 보기 선택 후, 디폴트 상태 -->
+      <!-- Case : [가견적 상태에서 재견적] - 견적서 보기 선택 후, 디폴트 상태 -->
       <ButtonList
         :classNames="{
           wrap: 'row-margin-none',
@@ -5408,15 +5403,35 @@ export default {
           <BasicButton :minSide="true">견적 저장</BasicButton>
         </ButtonListItem>
         <ButtonListItem>
-          <BasicButton :minSide="true" theme="tertiary" :disabled="true"
-            >공유·다운</BasicButton
-          >
+          <BasicButton :minSide="true" theme="tertiary" :disabled="true">
+            견적서 발송
+          </BasicButton>
         </ButtonListItem>
         <ButtonListItem>
           <BasicButton :minSide="true" :disabled="true">견적확정</BasicButton>
         </ButtonListItem>
       </ButtonList>
-      <!-- // Case : 견적서 보기 선택 후, 디폴트 상태 -->
+      <!-- // Case : [가견적 상태에서 재견적] - 견적서 보기 선택 후, 디폴트 상태 -->
+
+      <!-- Case : [견적확정 or 동의완료 상태에서 재견적] - 견적서 보기 선택 후, 디폴트 상태 -->
+      <ButtonList
+        :classNames="{
+          wrap: 'row-margin-none',
+        }"
+      >
+        <ButtonListItem>
+          <BasicButton :minSide="true">재견적 저장</BasicButton>
+        </ButtonListItem>
+        <ButtonListItem>
+          <BasicButton :minSide="true" theme="tertiary" :disabled="true">
+            견적서 발송
+          </BasicButton>
+        </ButtonListItem>
+        <ButtonListItem>
+          <BasicButton :minSide="true" :disabled="true">견적확정</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
+      <!-- // Case : [견적확정 or 동의완료 상태에서 재견적] - 견적서 보기 선택 후, 디폴트 상태 -->
 
       <!-- Case : 견적 저장 된 상태의 하단 버튼 -->
       <ButtonList
@@ -5428,7 +5443,9 @@ export default {
           <BasicButton :minSide="true" :disabled="true">저장됨</BasicButton>
         </ButtonListItem>
         <ButtonListItem>
-          <BasicButton :minSide="true" theme="tertiary">공유·다운</BasicButton>
+          <BasicButton :minSide="true" theme="tertiary"
+            >견적서 발송</BasicButton
+          >
         </ButtonListItem>
         <ButtonListItem>
           <BasicButton :minSide="true">견적확정</BasicButton>
@@ -5447,7 +5464,7 @@ export default {
         </ButtonListItem>
         <ButtonListItem>
           <BasicButton :minSide="true" theme="tertiary" :disabled="true"
-            >공유·다운</BasicButton
+            >견적서 발송</BasicButton
           >
         </ButtonListItem>
         <ButtonListItem>
@@ -5466,7 +5483,9 @@ export default {
           <BasicButton :minSide="true" :disabled="true">저장됨</BasicButton>
         </ButtonListItem>
         <ButtonListItem>
-          <BasicButton :minSide="true" theme="tertiary">공유·다운</BasicButton>
+          <BasicButton :minSide="true" theme="tertiary"
+            >견적서 발송</BasicButton
+          >
         </ButtonListItem>
         <ButtonListItem>
           <BasicButton :minSide="true">신용조회요청</BasicButton>
@@ -5484,7 +5503,9 @@ export default {
           <BasicButton :minSide="true" :disabled="true">저장됨</BasicButton>
         </ButtonListItem>
         <ButtonListItem>
-          <BasicButton :minSide="true" theme="tertiary">공유·다운</BasicButton>
+          <BasicButton :minSide="true" theme="tertiary"
+            >견적서 발송</BasicButton
+          >
         </ButtonListItem>
         <ButtonListItem>
           <BasicButton :minSide="true" :disabled="true"
@@ -5494,17 +5515,39 @@ export default {
       </ButtonList>
       <!-- // Case : 확정된 상태의 하단 버튼 -->
 
-      <!-- Case : 재견적 버튼으로 견적 진입 시 -->
+      <!-- Case : [심사신청 상태에서 조건변경] - 견적서 보기 선택 후, 디폴트 상태 -->
       <ButtonList
         :classNames="{
           wrap: 'row-margin-none',
         }"
       >
         <ButtonListItem>
-          <BasicButton>재견적 저장</BasicButton>
+          <BasicButton :minSide="true">조건변경 저장</BasicButton>
+        </ButtonListItem>
+        <ButtonListItem>
+          <BasicButton :minSide="true" theme="tertiary" :disabled="true"
+            >견적서 발송</BasicButton
+          >
         </ButtonListItem>
       </ButtonList>
-      <!-- // Case : 재견적 버튼으로 견적 진입 시 -->
+      <!-- // [심사신청 상태에서 조건변경] - 견적서 보기 선택 후, 디폴트 상태 -->
+
+      <!-- Case : [심사신청 상태에서 조건변경] - 견적저장 된 상태의 하단 버튼 -->
+      <ButtonList
+        :classNames="{
+          wrap: 'row-margin-none',
+        }"
+      >
+        <ButtonListItem>
+          <BasicButton :minSide="true" :disabled="true">저장됨</BasicButton>
+        </ButtonListItem>
+        <ButtonListItem>
+          <BasicButton :minSide="true" theme="tertiary"
+            >견적서 발송</BasicButton
+          >
+        </ButtonListItem>
+      </ButtonList>
+      <!-- // [심사신청 상태에서 조건변경] - 견적저장 된 상태의 하단 버튼 -->
     </template>
   </PageContents>
 </template>
