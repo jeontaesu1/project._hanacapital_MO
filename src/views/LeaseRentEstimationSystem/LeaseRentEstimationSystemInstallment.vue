@@ -138,7 +138,6 @@ export default {
       publicBondDiscountError: false,
       etcPriceError: false,
       interestSubsidyError: false,
-      suppliesSupportError: false,
     });
 
     const productsAccordionAnimateStart = () => {

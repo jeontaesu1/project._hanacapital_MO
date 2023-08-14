@@ -115,7 +115,6 @@ export default {
       etcPriceError: false,
       consignmentPriceError: false,
       interestSubsidyError: false,
-      suppliesSupportError: false,
       advancePaymentError: false,
       prepaymentsRatioError: [false, false, false],
       prepaymentsPriceError: [false, false, false],
