@@ -127,7 +127,6 @@ export default {
 
     const state = reactive({
       productsSlider: null,
-      ageError: false,
       productsAccordionAnimate: false,
       viewDocument: false,
       exteriorETCError: false,
@@ -1289,32 +1288,11 @@ export default {
                 :classNames="{ layer: $style['estimate-list__layer'] }"
               >
                 <section :class="$style['estimate-list__contents']">
-                  <NoticeText :classNames="{ wrap: 'row-margin-item' }">
-                    원색계열(빨강, 주황, 노랑, 초록, 보라)은 구매(인수) 조건만
-                    진행 가능합니다.
-                  </NoticeText>
-                  <NoticeText :classNames="{ wrap: 'row-margin-item' }">
-                    투톤루프 적용 시 ‘선루프‘ 옵션 선택 불가 합니다.
-                  </NoticeText>
-                  <NoticeText :classNames="{ wrap: 'row-margin-item' }">
-                    파이어리 레드 인텐스 블루, 타이푼 실버 컬러는 스마트/ 모던
-                    트림에 한해서 선택 가능합니다.(원톤/투톤)
-                  </NoticeText>
-                  <NoticeText :classNames="{ wrap: 'row-margin-item' }">
-                    투톤루프 옵션선택 시 컬러포인트(프론트범퍼, 아웃사이드미러,
-                    펜더가니쉬, 사이드가니쉬,리어펌버)가 함께 적용
-                    됩니다.(모던/플럭스 트림)
-                  </NoticeText>
-                  <NoticeText :classNames="{ wrap: 'row-margin-item' }">
-                    초크 화이트/애시드 옐로우 루프 적용 시 컬러포인트는 루프
-                    컬러로 적용됩니다.
-                  </NoticeText>
-                  <NoticeText :classNames="{ wrap: 'row-margin-item' }">
-                    팬텀블랙 루프 적용 시 아웃사이드 미러는 팬텀 블랙 컬러로
-                    적용되며, 그외 컬러포인트는 바디 컬러로 적용됩니다.
-                  </NoticeText>
-
-                  <ul class="reset-list row-margin-item-group">
+                  <NoticeText :classNames="{ wrap: 'row-margin-item-group' }"
+                    >원색계열(빨강, 주황, 노랑, 초록, 보라)은 구매(인수) 조건만
+                    진행 가능합니다.</NoticeText
+                  >
+                  <ul class="reset-list">
                     <li class="row-margin-item-group">
                       <RadioButton
                         theme="tertiary"
@@ -2854,7 +2832,6 @@ export default {
                                 >
                               </BoxCheck>
                             </BoxCheckListItem>
-                            <!-- Case : '개인사업자' 선택 시 노출 -->
                             <BoxCheckListItem>
                               <BoxCheck
                                 :minSide="true"
@@ -2869,20 +2846,6 @@ export default {
                                 >
                               </BoxCheck>
                             </BoxCheckListItem>
-                            <!-- // Case : '개인사업자' 선택 시 노출 -->
-                            <!-- Case : '법인' 선택 시 노출 -->
-                            <BoxCheckListItem>
-                              <BoxCheck
-                                :minSide="true"
-                                name="leaseRentEstimationSystemRentEmployeeSpecialContract"
-                                id="leaseRentEstimationSystemRentEmployeeSpecialContract_003"
-                                size="small"
-                                :defaultChecked="true"
-                              >
-                                <BoxCheckLabel>미가입 </BoxCheckLabel>
-                              </BoxCheck>
-                            </BoxCheckListItem>
-                            <!-- // Case : '법인' 선택 시 노출 -->
                           </BoxCheckList>
                         </KeyValueText>
                       </KeyValueItem>
@@ -2925,24 +2888,33 @@ export default {
                   <FormList>
                     <FormListItem
                       titleText="운전연령"
-                      target="#leaseRentEstimationSystemRentAge"
+                      :forceFocus="true"
                       :disabled="true"
                     >
-                      <FormInvalid :error="state.ageError">
-                        <InputBlock :error="state.ageError" :disabled="true">
-                          <InputBlockCell :flexible="true">
-                            <BasicInput
-                              title="운전연령"
-                              id="leaseRentEstimationSystemRentAge"
-                              :disabled="true"
-                              defaultValue="만26세 이상"
-                            />
-                          </InputBlockCell>
-                        </InputBlock>
-                        <FormInvalidMessage>Error Message</FormInvalidMessage>
-                      </FormInvalid>
+                      <BoxCheckList spacing="small">
+                        <BoxCheckListItem>
+                          <BoxCheck
+                            :minSide="true"
+                            name="leaseRentEstimationSystemRentCheck001"
+                            id="leaseRentEstimationSystemRentCheck001_001"
+                            size="small"
+                            :defaultChecked="true"
+                          >
+                            <BoxCheckLabel>만21세 이상</BoxCheckLabel>
+                          </BoxCheck>
+                        </BoxCheckListItem>
+                        <BoxCheckListItem>
+                          <BoxCheck
+                            :minSide="true"
+                            name="leaseRentEstimationSystemRentCheck001"
+                            id="leaseRentEstimationSystemRentCheck001_002"
+                            size="small"
+                          >
+                            <BoxCheckLabel>만26세 이상</BoxCheckLabel>
+                          </BoxCheck>
+                        </BoxCheckListItem>
+                      </BoxCheckList>
                     </FormListItem>
-
                     <FormListItem
                       titleText="대물"
                       :forceFocus="true"
@@ -3337,7 +3309,7 @@ export default {
                         id="leaseRentEstimationSystemRentCheck006_015"
                         size="small"
                       >
-                        <BoxCheckLabel>강원(영동)</BoxCheckLabel>
+                        <BoxCheckLabel>인천강화</BoxCheckLabel>
                       </BoxCheck>
                     </BoxCheckListItem>
                     <BoxCheckListItem>
@@ -3347,7 +3319,7 @@ export default {
                         id="leaseRentEstimationSystemRentCheck006_016"
                         size="small"
                       >
-                        <BoxCheckLabel>세종</BoxCheckLabel>
+                        <BoxCheckLabel>인천공항</BoxCheckLabel>
                       </BoxCheck>
                     </BoxCheckListItem>
                     <BoxCheckListItem>
@@ -3357,7 +3329,7 @@ export default {
                         id="leaseRentEstimationSystemRentCheck006_017"
                         size="small"
                       >
-                        <BoxCheckLabel>강원(영서)</BoxCheckLabel>
+                        <BoxCheckLabel>세종</BoxCheckLabel>
                       </BoxCheck>
                     </BoxCheckListItem>
                     <BoxCheckListItem>
@@ -3367,7 +3339,7 @@ export default {
                         id="leaseRentEstimationSystemRentCheck006_018"
                         size="small"
                       >
-                        <BoxCheckLabel>인천강화</BoxCheckLabel>
+                        <BoxCheckLabel>강원(영동)</BoxCheckLabel>
                       </BoxCheck>
                     </BoxCheckListItem>
                     <BoxCheckListItem>
@@ -3377,7 +3349,7 @@ export default {
                         id="leaseRentEstimationSystemRentCheck006_019"
                         size="small"
                       >
-                        <BoxCheckLabel>인천공항</BoxCheckLabel>
+                        <BoxCheckLabel>강원(영서)</BoxCheckLabel>
                       </BoxCheck>
                     </BoxCheckListItem>
                   </BoxCheckList>
@@ -3415,11 +3387,7 @@ export default {
               >
                 <section :class="$style['estimate-list__contents']">
                   <FormList>
-                    <FormListItem
-                      titleText="내비게이션"
-                      :forceFocus="true"
-                      :disabled="true"
-                    >
+                    <FormListItem titleText="내비게이션" :forceFocus="true">
                       <BoxCheckList spacing="small">
                         <BoxCheckListItem>
                           <BoxCheck
@@ -3444,11 +3412,7 @@ export default {
                         </BoxCheckListItem>
                       </BoxCheckList>
                     </FormListItem>
-                    <FormListItem
-                      titleText="블랙박스"
-                      :forceFocus="true"
-                      :disabled="true"
-                    >
+                    <FormListItem titleText="블랙박스" :forceFocus="true">
                       <BoxCheckList spacing="small">
                         <BoxCheckListItem>
                           <BoxCheck
@@ -3485,11 +3449,7 @@ export default {
                         </BoxCheckListItem>
                       </BoxCheckList>
                     </FormListItem>
-                    <FormListItem
-                      titleText="측후면썬팅"
-                      :forceFocus="true"
-                      :disabled="true"
-                    >
+                    <FormListItem titleText="측후면썬팅" :forceFocus="true">
                       <BoxCheckList spacing="small">
                         <BoxCheckListItem>
                           <BoxCheck
@@ -3573,11 +3533,7 @@ export default {
                       </FormInvalid>
                     </FormListItem>
                     <!-- // Case : 측후면썬팅 [일반(쿠폰), 3M, 루마] 선택시 노출 -->
-                    <FormListItem
-                      titleText="전면썬팅"
-                      :forceFocus="true"
-                      :disabled="true"
-                    >
+                    <FormListItem titleText="전면썬팅" :forceFocus="true">
                       <BoxCheckList spacing="small">
                         <BoxCheckListItem>
                           <BoxCheck
@@ -3804,7 +3760,7 @@ export default {
                               pattern="\d*"
                               :useDelete="false"
                               align="right"
-                              defaultValue="0"
+                              defaultValue="1,521,120"
                               :disabled="true"
                             />
                           </InputBlockCell>
@@ -3819,7 +3775,7 @@ export default {
                               pattern="\d*"
                               :useDelete="false"
                               align="right"
-                              defaultValue="0.000"
+                              defaultValue="9.000"
                             />
                           </InputBlockCell>
                           <InputBlockCell>
@@ -3858,7 +3814,7 @@ export default {
                               pattern="\d*"
                               :useDelete="false"
                               align="right"
-                              defaultValue="0.000"
+                              defaultValue="0"
                             />
                           </InputBlockCell>
                           <InputBlockCell>
@@ -3889,6 +3845,10 @@ export default {
                         <KeyValueTitle>
                           <div class="text-body-4">기타</div>
                         </KeyValueTitle>
+                        <KeyValueText>
+                          CM : 0.003% (690,000원)<br />
+                          AG : 0.000% (000,000원)
+                        </KeyValueText>
                       </KeyValueItem>
                     </KeyValue>
                   </div>
@@ -3921,7 +3881,7 @@ export default {
                               pattern="\d*"
                               :useDelete="false"
                               align="right"
-                              defaultValue="0"
+                              defaultValue="1,521,120"
                               :disabled="true"
                             />
                           </InputBlockCell>
@@ -3936,7 +3896,7 @@ export default {
                               pattern="\d*"
                               :useDelete="false"
                               align="right"
-                              defaultValue="0.000"
+                              defaultValue="9.000"
                             />
                           </InputBlockCell>
                           <InputBlockCell>
@@ -3974,7 +3934,7 @@ export default {
                               pattern="\d*"
                               :useDelete="false"
                               align="right"
-                              defaultValue="0.000"
+                              defaultValue="0"
                             />
                           </InputBlockCell>
                           <InputBlockCell>
@@ -5700,7 +5660,7 @@ export default {
     </div>
 
     <template v-slot:foot>
-      <!-- Case : [가견적 상태에서 재견적] - 견적서 보기 선택 후, 디폴트 상태 -->
+      <!-- Case : 가견적 상태에서 재견적 && 견적서 보기 선택 후, 디폴트 상태 -->
       <ButtonList
         :classNames="{
           wrap: 'row-margin-none',
@@ -5710,17 +5670,17 @@ export default {
           <BasicButton :minSide="true">견적 저장</BasicButton>
         </ButtonListItem>
         <ButtonListItem>
-          <BasicButton :minSide="true" theme="tertiary" :disabled="true">
-            견적서 발송
-          </BasicButton>
+          <BasicButton :minSide="true" theme="tertiary" :disabled="true"
+            >견적서 발송</BasicButton
+          >
         </ButtonListItem>
         <ButtonListItem>
           <BasicButton :minSide="true" :disabled="true">견적확정</BasicButton>
         </ButtonListItem>
       </ButtonList>
-      <!-- // Case : [가견적 상태에서 재견적] - 견적서 보기 선택 후, 디폴트 상태 -->
+      <!-- // Case : 가견적 상태에서 재견적 && 견적서 보기 선택 후, 디폴트 상태 -->
 
-      <!-- Case : [견적확정 or 동의완료 상태에서 재견적] - 견적서 보기 선택 후, 디폴트 상태 -->
+      <!-- Case : 견적확정 or 동의완료 상태에서 재견적 && 견적서 보기 선택 후, 디폴트 상태 -->
       <ButtonList
         :classNames="{
           wrap: 'row-margin-none',
@@ -5730,17 +5690,34 @@ export default {
           <BasicButton :minSide="true">재견적 저장</BasicButton>
         </ButtonListItem>
         <ButtonListItem>
-          <BasicButton :minSide="true" theme="tertiary" :disabled="true">
-            견적서 발송
-          </BasicButton>
+          <BasicButton :minSide="true" theme="tertiary" :disabled="true"
+            >견적서 발송</BasicButton
+          >
         </ButtonListItem>
         <ButtonListItem>
           <BasicButton :minSide="true" :disabled="true">견적확정</BasicButton>
         </ButtonListItem>
       </ButtonList>
-      <!-- // Case : [견적확정 or 동의완료 상태에서 재견적] - 견적서 보기 선택 후, 디폴트 상태 -->
+      <!-- // Case : 견적확정 or 동의완료 상태에서 재견적 && 견적서 보기 선택 후, 디폴트 상태 -->
 
-      <!-- Case : 견적 저장 된 상태의 하단 버튼 -->
+      <!-- Case : 심사신청 상태에서 조건변경 && 견적서 보기 선택 후, 디폴트 상태 -->
+      <ButtonList
+        :classNames="{
+          wrap: 'row-margin-none',
+        }"
+      >
+        <ButtonListItem>
+          <BasicButton :minSide="true">조건변경 저장</BasicButton>
+        </ButtonListItem>
+        <ButtonListItem>
+          <BasicButton :minSide="true" theme="tertiary" :disabled="true"
+            >견적서 발송</BasicButton
+          >
+        </ButtonListItem>
+      </ButtonList>
+      <!-- // Case : 심사신청 상태에서 조건변경 && 견적서 보기 선택 후, 디폴트 상태 -->
+
+      <!-- Case : 견적 저장 된 상태 -->
       <ButtonList
         :classNames="{
           wrap: 'row-margin-none',
@@ -5758,7 +5735,24 @@ export default {
           <BasicButton :minSide="true">견적확정</BasicButton>
         </ButtonListItem>
       </ButtonList>
-      <!-- // Case : 견적 저장 된 상태의 하단 버튼 -->
+      <!-- // Case : 견적 저장 된 상태 -->
+
+      <!-- Case : 심사신청 상태에서 조건변경 && 견적 저장 된 상태 -->
+      <ButtonList
+        :classNames="{
+          wrap: 'row-margin-none',
+        }"
+      >
+        <ButtonListItem>
+          <BasicButton :minSide="true" :disabled="true">저장됨</BasicButton>
+        </ButtonListItem>
+        <ButtonListItem>
+          <BasicButton :minSide="true" theme="tertiary"
+            >견적서 발송</BasicButton
+          >
+        </ButtonListItem>
+      </ButtonList>
+      <!-- // Case : 심사신청 상태에서 조건변경 && 견적 저장 된 상태 -->
 
       <!-- Case : 견적서 저장 후, 견적서 설정 값 변경의 경우 -->
       <ButtonList
@@ -5780,7 +5774,7 @@ export default {
       </ButtonList>
       <!-- // Case : 견적서 저장 후, 견적서 설정 값 변경의 경우 -->
 
-      <!-- Case : 견적 확정된 상태의 하단 버튼 -->
+      <!-- Case : 견적 확정된 상태 -->
       <ButtonList
         :classNames="{
           wrap: 'row-margin-none',
@@ -5798,9 +5792,9 @@ export default {
           <BasicButton :minSide="true">신용조회요청</BasicButton>
         </ButtonListItem>
       </ButtonList>
-      <!-- // Case : 견적 확정된 상태의 하단 버튼 -->
+      <!-- // Case : 견적 확정된 상태 -->
 
-      <!-- Case : 확정된 상태의 하단 버튼 -->
+      <!-- Case : 확정된 상태 -->
       <ButtonList
         :classNames="{
           wrap: 'row-margin-none',
@@ -5820,41 +5814,7 @@ export default {
           >
         </ButtonListItem>
       </ButtonList>
-      <!-- // Case : 확정된 상태의 하단 버튼 -->
-
-      <!-- Case : [심사신청 상태에서 조건변경] - 견적서 보기 선택 후, 디폴트 상태 -->
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton :minSide="true">조건변경 저장</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton :minSide="true" theme="tertiary" :disabled="true"
-            >견적서 발송</BasicButton
-          >
-        </ButtonListItem>
-      </ButtonList>
-      <!-- // [심사신청 상태에서 조건변경] - 견적서 보기 선택 후, 디폴트 상태 -->
-
-      <!-- Case : [심사신청 상태에서 조건변경] - 견적저장 된 상태의 하단 버튼 -->
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton :minSide="true" :disabled="true">저장됨</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton :minSide="true" theme="tertiary"
-            >견적서 발송</BasicButton
-          >
-        </ButtonListItem>
-      </ButtonList>
-      <!-- // [심사신청 상태에서 조건변경] - 견적저장 된 상태의 하단 버튼 -->
+      <!-- // Case : 확정된 상태 -->
     </template>
   </PageContents>
 </template>

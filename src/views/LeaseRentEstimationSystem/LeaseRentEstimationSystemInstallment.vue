@@ -23,7 +23,6 @@ import BoxCheck from '@/components/ui/form/BoxCheck.vue';
 import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
 import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
 import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
-import BoxCheckObject from '@/components/ui/form/BoxCheckObject.vue';
 import SettingButton from '@/components/ui/button/SettingButton.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
@@ -76,7 +75,6 @@ export default {
     BoxCheckLabel,
     BoxCheckList,
     BoxCheckListItem,
-    BoxCheckObject,
     SettingButton,
     BasicHr,
     CarEmblem,
@@ -2495,15 +2493,15 @@ export default {
                           <div class="flex-box">
                             <div class="flex-box__cell flex-1">이용자</div>
                             <div class="flex-box__cell">
-                              <BoxCheck
-                                type="checkbox"
-                                id="leaseRentEstimationSystemInstallmentRenterCarCorporation"
+                              <CheckBox
+                                id="LeaseRentEstimationSystemInstallmentRenterCarCorporation"
+                                theme="tertiary"
                               >
-                                <template v-slot:left>
-                                  <BoxCheckObject />
-                                </template>
-                                <BoxCheckLabel>렌터카법인</BoxCheckLabel>
-                              </BoxCheck>
+                                <CheckBoxObject />
+                                <CheckBoxLabelText
+                                  >렌터카법인</CheckBoxLabelText
+                                >
+                              </CheckBox>
                             </div>
                           </div>
                         </KeyValueText>
@@ -2657,7 +2655,7 @@ export default {
                               pattern="\d*"
                               :useDelete="false"
                               align="right"
-                              defaultValue="1,747,100"
+                              defaultValue="1,521,120"
                               :disabled="true"
                             />
                           </InputBlockCell>
@@ -2672,7 +2670,7 @@ export default {
                               pattern="\d*"
                               :useDelete="false"
                               align="right"
-                              defaultValue="1.000"
+                              defaultValue="9.000"
                             />
                           </InputBlockCell>
                           <InputBlockCell>
@@ -2696,7 +2694,7 @@ export default {
                               pattern="\d*"
                               :useDelete="false"
                               align="right"
-                              defaultValue="1,747,100"
+                              defaultValue="0"
                               :disabled="true"
                             />
                           </InputBlockCell>
@@ -2711,7 +2709,7 @@ export default {
                               pattern="\d*"
                               :useDelete="false"
                               align="right"
-                              defaultValue="1.000"
+                              defaultValue="0"
                             />
                           </InputBlockCell>
                           <InputBlockCell>
@@ -2742,6 +2740,11 @@ export default {
                         <KeyValueTitle>
                           <div class="text-body-4">기타</div>
                         </KeyValueTitle>
+                        <KeyValueText>
+                          대출원금 기준<br />
+                          CM : 0.003% (690,000원)<br />
+                          AG : 0.000% (000,000원)
+                        </KeyValueText>
                       </KeyValueItem>
                     </KeyValue>
                   </div>
@@ -2771,7 +2774,7 @@ export default {
                               pattern="\d*"
                               :useDelete="false"
                               align="right"
-                              defaultValue="0"
+                              defaultValue="1,521,120"
                               :disabled="true"
                             />
                           </InputBlockCell>
@@ -2786,7 +2789,7 @@ export default {
                               pattern="\d*"
                               :useDelete="false"
                               align="right"
-                              defaultValue="0.000"
+                              defaultValue="9.000"
                             />
                           </InputBlockCell>
                           <InputBlockCell>
@@ -2824,7 +2827,7 @@ export default {
                               pattern="\d*"
                               :useDelete="false"
                               align="right"
-                              defaultValue="0.000"
+                              defaultValue="0"
                             />
                           </InputBlockCell>
                           <InputBlockCell>
@@ -4473,7 +4476,7 @@ export default {
     </div>
 
     <template v-slot:foot>
-      <!-- Case : [가견적 상태에서 재견적] - 견적서 보기 선택 후, 디폴트 상태 -->
+      <!-- Case : 가견적 상태에서 재견적 && 견적서 보기 선택 후, 디폴트 상태 -->
       <ButtonList
         :classNames="{
           wrap: 'row-margin-none',
@@ -4483,17 +4486,17 @@ export default {
           <BasicButton :minSide="true">견적 저장</BasicButton>
         </ButtonListItem>
         <ButtonListItem>
-          <BasicButton :minSide="true" theme="tertiary" :disabled="true">
-            견적서 발송
-          </BasicButton>
+          <BasicButton :minSide="true" theme="tertiary" :disabled="true"
+            >견적서 발송</BasicButton
+          >
         </ButtonListItem>
         <ButtonListItem>
           <BasicButton :minSide="true" :disabled="true">견적확정</BasicButton>
         </ButtonListItem>
       </ButtonList>
-      <!-- // Case : [가견적 상태에서 재견적] - 견적서 보기 선택 후, 디폴트 상태 -->
+      <!-- // Case : 가견적 상태에서 재견적 && 견적서 보기 선택 후, 디폴트 상태 -->
 
-      <!-- Case : [견적확정 or 동의완료 상태에서 재견적] - 견적서 보기 선택 후, 디폴트 상태 -->
+      <!-- Case : 견적확정 or 동의완료 상태에서 재견적 && 견적서 보기 선택 후, 디폴트 상태 -->
       <ButtonList
         :classNames="{
           wrap: 'row-margin-none',
@@ -4503,17 +4506,34 @@ export default {
           <BasicButton :minSide="true">재견적 저장</BasicButton>
         </ButtonListItem>
         <ButtonListItem>
-          <BasicButton :minSide="true" theme="tertiary" :disabled="true">
-            견적서 발송
-          </BasicButton>
+          <BasicButton :minSide="true" theme="tertiary" :disabled="true"
+            >견적서 발송</BasicButton
+          >
         </ButtonListItem>
         <ButtonListItem>
           <BasicButton :minSide="true" :disabled="true">견적확정</BasicButton>
         </ButtonListItem>
       </ButtonList>
-      <!-- // Case : [견적확정 or 동의완료 상태에서 재견적] - 견적서 보기 선택 후, 디폴트 상태 -->
+      <!-- // Case : 견적확정 or 동의완료 상태에서 재견적 && 견적서 보기 선택 후, 디폴트 상태 -->
 
-      <!-- Case : 견적 저장 된 상태의 하단 버튼 -->
+      <!-- Case : 심사신청 상태에서 조건변경 && 견적서 보기 선택 후, 디폴트 상태 -->
+      <ButtonList
+        :classNames="{
+          wrap: 'row-margin-none',
+        }"
+      >
+        <ButtonListItem>
+          <BasicButton :minSide="true">조건변경 저장</BasicButton>
+        </ButtonListItem>
+        <ButtonListItem>
+          <BasicButton :minSide="true" theme="tertiary" :disabled="true"
+            >견적서 발송</BasicButton
+          >
+        </ButtonListItem>
+      </ButtonList>
+      <!-- // Case : 심사신청 상태에서 조건변경 && 견적서 보기 선택 후, 디폴트 상태 -->
+
+      <!-- Case : 견적 저장 된 상태 -->
       <ButtonList
         :classNames="{
           wrap: 'row-margin-none',
@@ -4531,7 +4551,24 @@ export default {
           <BasicButton :minSide="true">견적확정</BasicButton>
         </ButtonListItem>
       </ButtonList>
-      <!-- // Case : 견적 저장 된 상태의 하단 버튼 -->
+      <!-- // Case : 견적 저장 된 상태 -->
+
+      <!-- Case : 심사신청 상태에서 조건변경 && 견적 저장 된 상태 -->
+      <ButtonList
+        :classNames="{
+          wrap: 'row-margin-none',
+        }"
+      >
+        <ButtonListItem>
+          <BasicButton :minSide="true" :disabled="true">저장됨</BasicButton>
+        </ButtonListItem>
+        <ButtonListItem>
+          <BasicButton :minSide="true" theme="tertiary"
+            >견적서 발송</BasicButton
+          >
+        </ButtonListItem>
+      </ButtonList>
+      <!-- // Case : 심사신청 상태에서 조건변경 && 견적 저장 된 상태 -->
 
       <!-- Case : 견적서 저장 후, 견적서 설정 값 변경의 경우 -->
       <ButtonList
@@ -4553,7 +4590,7 @@ export default {
       </ButtonList>
       <!-- // Case : 견적서 저장 후, 견적서 설정 값 변경의 경우 -->
 
-      <!-- Case : 견적 확정된 상태의 하단 버튼 -->
+      <!-- Case : 견적 확정된 상태 -->
       <ButtonList
         :classNames="{
           wrap: 'row-margin-none',
@@ -4571,9 +4608,9 @@ export default {
           <BasicButton :minSide="true">신용조회요청</BasicButton>
         </ButtonListItem>
       </ButtonList>
-      <!-- // Case : 견적 확정된 상태의 하단 버튼 -->
+      <!-- // Case : 견적 확정된 상태 -->
 
-      <!-- Case : 확정된 상태의 하단 버튼 -->
+      <!-- Case : 확정된 상태 -->
       <ButtonList
         :classNames="{
           wrap: 'row-margin-none',
@@ -4593,41 +4630,7 @@ export default {
           >
         </ButtonListItem>
       </ButtonList>
-      <!-- // Case : 확정된 상태의 하단 버튼 -->
-
-      <!-- Case : [심사신청 상태에서 조건변경] - 견적서 보기 선택 후, 디폴트 상태 -->
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton :minSide="true">조건변경 저장</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton :minSide="true" theme="tertiary" :disabled="true"
-            >견적서 발송</BasicButton
-          >
-        </ButtonListItem>
-      </ButtonList>
-      <!-- // [심사신청 상태에서 조건변경] - 견적서 보기 선택 후, 디폴트 상태 -->
-
-      <!-- Case : [심사신청 상태에서 조건변경] - 견적저장 된 상태의 하단 버튼 -->
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton :minSide="true" :disabled="true">저장됨</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton :minSide="true" theme="tertiary"
-            >견적서 발송</BasicButton
-          >
-        </ButtonListItem>
-      </ButtonList>
-      <!-- // [심사신청 상태에서 조건변경] - 견적저장 된 상태의 하단 버튼 -->
+      <!-- // Case : 확정된 상태 -->
     </template>
   </PageContents>
 </template>

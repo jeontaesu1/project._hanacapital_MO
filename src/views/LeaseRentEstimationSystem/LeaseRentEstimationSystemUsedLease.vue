@@ -111,6 +111,8 @@ export default {
       salePriceError: false,
       feeCMError: false,
       feeAGError: false,
+      etcCMError: false,
+      etcAGError: false,
       publicBondDiscountError: false,
       etcPriceError: false,
       consignmentPriceError: false,
@@ -242,13 +244,7 @@ export default {
                     </BoxCheckListItem>
                   </BoxCheckList>
 
-                  <div
-                    :class="[
-                      $style['check-list'],
-                      $style['check-list--col-2'],
-                      'row-margin-item-group',
-                    ]"
-                  >
+                  <div :class="[$style['check-list'], 'row-margin-item-group']">
                     <ul :class="$style['check-list__list']">
                       <li :class="$style['check-list__item']">
                         <RadioButton
@@ -273,77 +269,85 @@ export default {
                     </ul>
                   </div>
 
-                  <FormList>
-                    <!-- Case : 차량번호 선택시 노출 -->
-                    <FormListItem
-                      titleText="차량번호"
-                      target="#leaseRentEstimationSystemUsedLeaseCarNumber"
-                    >
-                      <FormInvalid :error="state.carNumberError">
-                        <InputBlock :error="state.carNumberError">
-                          <InputBlockCell :flexible="true">
-                            <BasicInput
-                              title="차량번호"
-                              id="leaseRentEstimationSystemUsedLeaseCarNumber"
-                            />
-                          </InputBlockCell>
-                          <template v-slot:right>
-                            <BasicButton size="mini" theme="tertiary">
-                              조회
-                            </BasicButton>
-                          </template>
-                        </InputBlock>
-                        <FormInvalidMessage>Error Message</FormInvalidMessage>
-                      </FormInvalid>
-                    </FormListItem>
-                    <!-- Case : 차량번호 선택시 노출 -->
-
-                    <!-- Case : 차량명 선택시 노출 -->
-                    <FormListItem
-                      titleText="차량연식"
-                      target="#leaseRentEstimationSystemUsedLeaseCarYear"
-                    >
-                      <FormInvalid :error="state.carYearError">
-                        <InputBlock :error="state.carYearError">
-                          <InputBlockCell :flexible="true">
-                            <BasicInput
-                              title="차량연식"
-                              id="leaseRentEstimationSystemUsedLeaseCarYear"
-                            />
-                          </InputBlockCell>
-                        </InputBlock>
-                        <FormInvalidMessage>Error Message</FormInvalidMessage>
-                      </FormInvalid>
-                    </FormListItem>
-
-                    <FormListItem
-                      titleText="차종"
-                      target="#leaseRentEstimationSystemUsedLeaseCarModel"
-                    >
-                      <FormInvalid :error="state.carModelError">
-                        <InputBlock :error="state.carModelError">
-                          <InputBlockCell :flexible="true">
-                            <BasicInput
-                              title="차종"
-                              id="leaseRentEstimationSystemUsedLeaseCarModel"
-                            />
-                          </InputBlockCell>
-                        </InputBlock>
-                        <FormInvalidMessage>Error Message</FormInvalidMessage>
-                      </FormInvalid>
-                    </FormListItem>
-                    <!-- // Case : 차량명 선택시 노출 -->
-                  </FormList>
-
-                  <div class="row-margin-item-group">
-                    <BasicButton size="small" theme="tertiary"
-                      >조회</BasicButton
-                    >
+                  <!-- Case : 차량번호 선택시 노출 -->
+                  <div>
+                    <FormList>
+                      <FormListItem
+                        titleText="차량번호"
+                        target="#leaseRentEstimationSystemUsedLeaseCarNumber"
+                      >
+                        <FormInvalid :error="state.carNumberError">
+                          <InputBlock :error="state.carNumberError">
+                            <InputBlockCell :flexible="true">
+                              <BasicInput
+                                title="차량번호"
+                                id="leaseRentEstimationSystemUsedLeaseCarNumber"
+                              />
+                            </InputBlockCell>
+                            <template v-slot:right>
+                              <BasicButton size="mini" theme="tertiary">
+                                조회
+                              </BasicButton>
+                            </template>
+                          </InputBlock>
+                          <FormInvalidMessage>Error Message</FormInvalidMessage>
+                        </FormInvalid>
+                      </FormListItem>
+                    </FormList>
                   </div>
+                  <!-- Case : 차량번호 선택시 노출 -->
+
+                  <!-- Case : 차량명 선택시 노출 -->
+                  <div>
+                    <FormList>
+                      <FormListItem
+                        titleText="차량연식"
+                        target="#leaseRentEstimationSystemUsedLeaseCarYear"
+                      >
+                        <FormInvalid :error="state.carYearError">
+                          <InputBlock :error="state.carYearError">
+                            <InputBlockCell :flexible="true">
+                              <BasicInput
+                                type="number"
+                                title="차량연식"
+                                id="leaseRentEstimationSystemUsedLeaseCarYear"
+                              />
+                            </InputBlockCell>
+                          </InputBlock>
+                          <FormInvalidMessage>Error Message</FormInvalidMessage>
+                        </FormInvalid>
+                      </FormListItem>
+
+                      <FormListItem
+                        titleText="차종"
+                        target="#leaseRentEstimationSystemUsedLeaseCarModel"
+                      >
+                        <FormInvalid :error="state.carModelError">
+                          <InputBlock :error="state.carModelError">
+                            <InputBlockCell :flexible="true">
+                              <BasicInput
+                                title="차종"
+                                id="leaseRentEstimationSystemUsedLeaseCarModel"
+                              />
+                            </InputBlockCell>
+                          </InputBlock>
+                          <FormInvalidMessage>Error Message</FormInvalidMessage>
+                        </FormInvalid>
+                      </FormListItem>
+                    </FormList>
+
+                    <div class="row-margin-item-group">
+                      <BasicButton size="small" theme="tertiary"
+                        >조회</BasicButton
+                      >
+                    </div>
+                  </div>
+                  <!-- Case : 차량명 선택시 노출 -->
                 </div>
               </div>
             </li>
 
+            <!-- 차량선택 -->
             <UiAccordionItem
               :classNames="{ item: $style['estimate-list__item'] }"
               v-slot="accordionItemSlotProps"
@@ -448,9 +452,9 @@ export default {
                 </section>
               </UiAccordionLayer>
             </UiAccordionItem>
-            <!-- //Case : 차량번호, 차량명 선택시 노출 -->
+            <!-- // 차량선택 -->
 
-            <!-- Case : 차량번호, 차량명 선택시 노출 -->
+            <!-- 등록년월 -->
             <UiAccordionItem
               :classNames="{ item: $style['estimate-list__item'] }"
               v-slot="accordionItemSlotProps"
@@ -732,6 +736,7 @@ export default {
                 </section>
               </UiAccordionLayer>
             </UiAccordionItem>
+            <!-- // 등록년월 -->
           </UiAccordion>
         </section>
 
@@ -1011,6 +1016,7 @@ export default {
             <!-- //Case :  제휴사 없을 때 -->
             <!-- //Case : 인증중고차일 경우, 노출 -->
 
+            <!-- Case : "견적 기본설정"에서 수수료 표시하지 않음 선택시 비노출 -->
             <!-- 수수료 -->
             <UiAccordionItem
               :classNames="{ item: $style['estimate-list__item'] }"
@@ -1042,25 +1048,30 @@ export default {
                 :classNames="{ layer: $style['estimate-list__layer'] }"
               >
                 <section :class="$style['estimate-list__contents']">
-                  <!-- Case : 상품 - 운용리스 선택시 노출 -->
-                  <!-- Case : 일반중고차일 경우 -->
+                  <!-- Case : 상품 - 운용리스 && 일반중고차일 경우 -->
                   <NoticeText :classNames="{ wrap: 'row-margin-item-group' }"
                     >한도: AG+딜러 9.9% 이내</NoticeText
                   >
-                  <!-- //Case : 일반중고차일 경우 -->
+                  <!-- //Case : 상품 - 운용리스 && 일반중고차일 경우 -->
 
-                  <!-- Case : 인증중고차일 경우 -->
+                  <!-- Case : 상품 - 운용리스 && 인증중고차일 경우 -->
                   <NoticeText :classNames="{ wrap: 'row-margin-item-group' }"
                     >한도: AG+딜러 9.9% 이내(단 AG 3%이내)</NoticeText
                   >
-                  <!-- //Case : 인증중고차일 경우 -->
-                  <!-- //Case : 상품 - 운용리스 선택시 노출 -->
+                  <!-- //Case : 상품 - 운용리스 && 인증중고차일 경우 -->
 
-                  <!-- Case : 상품 - 금융리스 선택시 노출 -->
+                  <!-- Case : 상품 - 금융리스 -->
                   <NoticeText :classNames="{ wrap: 'row-margin-item-group' }"
                     >한도: 500만원까지 3%, 500만원 초과 최대 2.25%</NoticeText
                   >
-                  <!-- // Case : 상품 - 금융리스 선택시 노출 -->
+                  <!-- // Case : 상품 - 금융리스 -->
+
+                  <!-- Case : 제휴사 - 선택하지 않음 -->
+                  <NoticeText :classNames="{ wrap: 'row-margin-item-group' }"
+                    >한도: AG+딜러 13% 이내(단 AG 3%이내)</NoticeText
+                  >
+                  <!-- // Case : 제휴사 - 선택하지 않음 -->
+
                   <FormList>
                     <FormListItem
                       titleText="CM"
@@ -1075,7 +1086,7 @@ export default {
                               pattern="\d*"
                               :useDelete="false"
                               align="right"
-                              defaultValue="690,000"
+                              defaultValue="1,521,120"
                               :disabled="true"
                             />
                           </InputBlockCell>
@@ -1090,7 +1101,7 @@ export default {
                               pattern="\d*"
                               :useDelete="false"
                               align="right"
-                              defaultValue="0.03"
+                              defaultValue="9.000"
                             />
                           </InputBlockCell>
                           <InputBlockCell>
@@ -1145,6 +1156,147 @@ export default {
               </UiAccordionLayer>
             </UiAccordionItem>
             <!-- // 수수료 -->
+            <!-- // Case : "견적 기본설정"에서 수수료 표시하지 않음 선택시 비노출 -->
+
+            <!-- Case : "견적 기본설정"에서 수수료 표시하지 않음 선택시 노출 -->
+            <!-- 기타 -->
+            <UiAccordionItem
+              :classNames="{ item: $style['estimate-list__item'] }"
+            >
+              <div :class="$style['estimate-list__head']">
+                <div :class="$style['estimate-list__block']">
+                  <div :class="$style['estimate-list__left']">
+                    <KeyValue align="left" size="medium" verticalAlign="center">
+                      <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                        <KeyValueTitle>
+                          <div class="text-body-4">기타</div>
+                        </KeyValueTitle>
+                        <KeyValueText>
+                          CM : 0.003% (690,000원)<br />
+                          AG : 0.000% (000,000원)
+                        </KeyValueText>
+                      </KeyValueItem>
+                    </KeyValue>
+                  </div>
+                </div>
+                <div :class="$style['estimate-list__arrow']">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['estimate-list__opener'] }"
+                  />
+                </div>
+              </div>
+
+              <UiAccordionLayer
+                :classNames="{ layer: $style['estimate-list__layer'] }"
+              >
+                <section :class="$style['estimate-list__contents']">
+                  <!-- Case : 상품 - 운용리스 && 일반중고차일 경우 -->
+                  <NoticeText :classNames="{ wrap: 'row-margin-item-group' }"
+                    >한도: AG+딜러 9.9% 이내</NoticeText
+                  >
+                  <!-- //Case : 상품 - 운용리스 && 일반중고차일 경우 -->
+
+                  <!-- Case : 상품 - 운용리스 && 인증중고차일 경우 -->
+                  <NoticeText :classNames="{ wrap: 'row-margin-item-group' }"
+                    >한도: AG+딜러 9.9% 이내(단 AG 3%이내)</NoticeText
+                  >
+                  <!-- //Case : 상품 - 운용리스 && 인증중고차일 경우 -->
+
+                  <!-- Case : 상품 - 금융리스 -->
+                  <NoticeText :classNames="{ wrap: 'row-margin-item-group' }"
+                    >한도: 500만원까지 3%, 500만원 초과 최대 2.25%</NoticeText
+                  >
+                  <!-- // Case : 상품 - 금융리스 -->
+
+                  <!-- Case : 제휴사 - 선택하지 않음 -->
+                  <NoticeText :classNames="{ wrap: 'row-margin-item-group' }"
+                    >한도: AG+딜러 13% 이내(단 AG 3%이내)</NoticeText
+                  >
+                  <!-- // Case : 제휴사 - 선택하지 않음 -->
+
+                  <FormList>
+                    <FormListItem
+                      titleText="CM"
+                      target="#leaseRentEstimationSystemUsedLeaseETCCMRatio"
+                    >
+                      <FormInvalid :error="state.etcCMError">
+                        <InputBlock :error="state.etcCMError">
+                          <InputBlockCell :flexible="true">
+                            <BasicInput
+                              title="CM 금액"
+                              id="leaseRentEstimationSystemUsedLeaseETCCMPrice"
+                              pattern="\d*"
+                              :useDelete="false"
+                              align="right"
+                              defaultValue="1,521,120"
+                              :disabled="true"
+                            />
+                          </InputBlockCell>
+                          <InputBlockCell>
+                            <div class="text-body-3 color-gray-quinary">원</div>
+                          </InputBlockCell>
+                          <InputBlockCell :flexible="true">
+                            <BasicInput
+                              type="number"
+                              title="CM 비율(%)"
+                              id="leaseRentEstimationSystemUsedLeaseETCCMRatio"
+                              pattern="\d*"
+                              :useDelete="false"
+                              align="right"
+                              defaultValue="9.000"
+                            />
+                          </InputBlockCell>
+                          <InputBlockCell>
+                            <div class="text-body-3">%</div>
+                          </InputBlockCell>
+                        </InputBlock>
+                        <FormInvalidMessage>Error Message</FormInvalidMessage>
+                      </FormInvalid>
+                    </FormListItem>
+                    <FormListItem
+                      titleText="AG"
+                      target="#leaseRentEstimationSystemUsedLeaseETCAGRatio"
+                    >
+                      <FormInvalid :error="state.etcAGError">
+                        <InputBlock :error="state.etcAGError">
+                          <InputBlockCell :flexible="true">
+                            <BasicInput
+                              title="AG 금액"
+                              id="leaseRentEstimationSystemUsedLeaseETCAGPrice"
+                              pattern="\d*"
+                              :useDelete="false"
+                              align="right"
+                              defaultValue="0"
+                              :disabled="true"
+                            />
+                          </InputBlockCell>
+                          <InputBlockCell>
+                            <div class="text-body-3 color-gray-quinary">원</div>
+                          </InputBlockCell>
+                          <InputBlockCell :flexible="true">
+                            <BasicInput
+                              type="number"
+                              title="AG 비율(%)"
+                              id="leaseRentEstimationSystemUsedLeaseETCAGRatio"
+                              pattern="\d*"
+                              :useDelete="false"
+                              align="right"
+                              defaultValue="0"
+                            />
+                          </InputBlockCell>
+                          <InputBlockCell>
+                            <div class="text-body-3">%</div>
+                          </InputBlockCell>
+                        </InputBlock>
+                        <FormInvalidMessage>Error Message</FormInvalidMessage>
+                      </FormInvalid>
+                    </FormListItem>
+                  </FormList>
+                </section>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+            <!-- // 기타 -->
+            <!-- // Case : "견적 기본설정"에서 수수료 표시하지 않음 선택시 노출 -->
 
             <!-- 취급지점 -->
             <UiAccordionItem
@@ -3546,8 +3698,9 @@ export default {
         </ul>
       </section>
     </div>
+
     <template v-slot:foot>
-      <!-- Case : [가견적 상태에서 재견적] - 견적서 보기 선택 후, 디폴트 상태 -->
+      <!-- Case : 가견적 상태에서 재견적 && 견적서 보기 선택 후, 디폴트 상태 -->
       <ButtonList
         :classNames="{
           wrap: 'row-margin-none',
@@ -3557,17 +3710,17 @@ export default {
           <BasicButton :minSide="true">견적 저장</BasicButton>
         </ButtonListItem>
         <ButtonListItem>
-          <BasicButton :minSide="true" theme="tertiary" :disabled="true">
-            견적서 발송
-          </BasicButton>
+          <BasicButton :minSide="true" theme="tertiary" :disabled="true"
+            >견적서 발송</BasicButton
+          >
         </ButtonListItem>
         <ButtonListItem>
           <BasicButton :minSide="true" :disabled="true">견적확정</BasicButton>
         </ButtonListItem>
       </ButtonList>
-      <!-- // Case : [가견적 상태에서 재견적] - 견적서 보기 선택 후, 디폴트 상태 -->
+      <!-- // Case : 가견적 상태에서 재견적 && 견적서 보기 선택 후, 디폴트 상태 -->
 
-      <!-- Case : [견적확정 or 동의완료 상태에서 재견적] - 견적서 보기 선택 후, 디폴트 상태 -->
+      <!-- Case : 견적확정 or 동의완료 상태에서 재견적 && 견적서 보기 선택 후, 디폴트 상태 -->
       <ButtonList
         :classNames="{
           wrap: 'row-margin-none',
@@ -3577,17 +3730,34 @@ export default {
           <BasicButton :minSide="true">재견적 저장</BasicButton>
         </ButtonListItem>
         <ButtonListItem>
-          <BasicButton :minSide="true" theme="tertiary" :disabled="true">
-            견적서 발송
-          </BasicButton>
+          <BasicButton :minSide="true" theme="tertiary" :disabled="true"
+            >견적서 발송</BasicButton
+          >
         </ButtonListItem>
         <ButtonListItem>
           <BasicButton :minSide="true" :disabled="true">견적확정</BasicButton>
         </ButtonListItem>
       </ButtonList>
-      <!-- // Case : [견적확정 or 동의완료 상태에서 재견적] - 견적서 보기 선택 후, 디폴트 상태 -->
+      <!-- // Case : 견적확정 or 동의완료 상태에서 재견적 && 견적서 보기 선택 후, 디폴트 상태 -->
 
-      <!-- Case : 견적 저장 된 상태의 하단 버튼 -->
+      <!-- Case : 심사신청 상태에서 조건변경 && 견적서 보기 선택 후, 디폴트 상태 -->
+      <ButtonList
+        :classNames="{
+          wrap: 'row-margin-none',
+        }"
+      >
+        <ButtonListItem>
+          <BasicButton :minSide="true">조건변경 저장</BasicButton>
+        </ButtonListItem>
+        <ButtonListItem>
+          <BasicButton :minSide="true" theme="tertiary" :disabled="true"
+            >견적서 발송</BasicButton
+          >
+        </ButtonListItem>
+      </ButtonList>
+      <!-- // Case : 심사신청 상태에서 조건변경 && 견적서 보기 선택 후, 디폴트 상태 -->
+
+      <!-- Case : 견적 저장 된 상태 -->
       <ButtonList
         :classNames="{
           wrap: 'row-margin-none',
@@ -3605,7 +3775,24 @@ export default {
           <BasicButton :minSide="true">견적확정</BasicButton>
         </ButtonListItem>
       </ButtonList>
-      <!-- // Case : 견적 저장 된 상태의 하단 버튼 -->
+      <!-- // Case : 견적 저장 된 상태 -->
+
+      <!-- Case : 심사신청 상태에서 조건변경 && 견적 저장 된 상태 -->
+      <ButtonList
+        :classNames="{
+          wrap: 'row-margin-none',
+        }"
+      >
+        <ButtonListItem>
+          <BasicButton :minSide="true" :disabled="true">저장됨</BasicButton>
+        </ButtonListItem>
+        <ButtonListItem>
+          <BasicButton :minSide="true" theme="tertiary"
+            >견적서 발송</BasicButton
+          >
+        </ButtonListItem>
+      </ButtonList>
+      <!-- // Case : 심사신청 상태에서 조건변경 && 견적 저장 된 상태 -->
 
       <!-- Case : 견적서 저장 후, 견적서 설정 값 변경의 경우 -->
       <ButtonList
@@ -3627,7 +3814,7 @@ export default {
       </ButtonList>
       <!-- // Case : 견적서 저장 후, 견적서 설정 값 변경의 경우 -->
 
-      <!-- Case : 견적 확정된 상태의 하단 버튼 -->
+      <!-- Case : 견적 확정된 상태 -->
       <ButtonList
         :classNames="{
           wrap: 'row-margin-none',
@@ -3645,9 +3832,9 @@ export default {
           <BasicButton :minSide="true">신용조회요청</BasicButton>
         </ButtonListItem>
       </ButtonList>
-      <!-- // Case : 견적 확정된 상태의 하단 버튼 -->
+      <!-- // Case : 견적 확정된 상태 -->
 
-      <!-- Case : 확정된 상태의 하단 버튼 -->
+      <!-- Case : 확정된 상태 -->
       <ButtonList
         :classNames="{
           wrap: 'row-margin-none',
@@ -3667,41 +3854,7 @@ export default {
           >
         </ButtonListItem>
       </ButtonList>
-      <!-- // Case : 확정된 상태의 하단 버튼 -->
-
-      <!-- Case : [심사신청 상태에서 조건변경] - 견적서 보기 선택 후, 디폴트 상태 -->
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton :minSide="true">조건변경 저장</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton :minSide="true" theme="tertiary" :disabled="true"
-            >견적서 발송</BasicButton
-          >
-        </ButtonListItem>
-      </ButtonList>
-      <!-- // [심사신청 상태에서 조건변경] - 견적서 보기 선택 후, 디폴트 상태 -->
-
-      <!-- Case : [심사신청 상태에서 조건변경] - 견적저장 된 상태의 하단 버튼 -->
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton :minSide="true" :disabled="true">저장됨</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton :minSide="true" theme="tertiary"
-            >견적서 발송</BasicButton
-          >
-        </ButtonListItem>
-      </ButtonList>
-      <!-- // [심사신청 상태에서 조건변경] - 견적저장 된 상태의 하단 버튼 -->
+      <!-- // Case : 확정된 상태 -->
     </template>
   </PageContents>
 </template>
