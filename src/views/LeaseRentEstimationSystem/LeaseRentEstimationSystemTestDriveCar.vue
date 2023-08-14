@@ -141,7 +141,6 @@ export default {
       publicBondDiscountError: false,
       etcPriceError: false,
       interestSubsidyError: false,
-      suppliesSupportError: false,
       advancePaymentError: false,
       prePaymentError: false,
       prepaymentsRatioError: [false, false, false],
