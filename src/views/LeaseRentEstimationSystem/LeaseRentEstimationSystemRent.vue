@@ -4267,7 +4267,7 @@ export default {
                   </UiAccordionItem>
                   <!-- // 기간 -->
 
-                  <!-- 약정거리 -->
+                  <!-- 약정주행거리 -->
                   <UiAccordionItem
                     :classNames="{ item: $style['estimate-list__item'] }"
                   >
@@ -4281,7 +4281,7 @@ export default {
                           >
                             <KeyValueItem :classNames="{ item: 'text-body-3' }">
                               <KeyValueTitle>
-                                <div class="text-body-4">약정거리</div>
+                                <div class="text-body-4">약정주행거리</div>
                               </KeyValueTitle>
                               <KeyValueText>20,000 km/년</KeyValueText>
                             </KeyValueItem>
@@ -4357,7 +4357,7 @@ export default {
                       </section>
                     </UiAccordionLayer>
                   </UiAccordionItem>
-                  <!-- // 약정거리 -->
+                  <!-- // 약정주행거리 -->
 
                   <!-- 선납금 -->
                   <UiAccordionItem
