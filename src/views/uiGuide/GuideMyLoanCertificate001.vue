@@ -9,7 +9,7 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import LayerMyLoanCertificate from '@/views/myLoan/LayerMyLoanCertificate.vue';
 import LayerMyLoanCertificateRepaymentList from '@/views/myLoan/LayerMyLoanCertificateRepaymentList.vue';
 import LayerMyLoanCertificateRepaymentMethod from '@/views/myLoan/LayerMyLoanCertificateRepaymentMethod.vue';
-import LayerMyLoanCertificateRepaymentEmail from '../myLoan/LayerMyLoanCertificateRepaymentEmail.vue';
+import LayerMyLoanCertificateRepaymentEmail from '@/views/myLoan/LayerMyLoanCertificateRepaymentEmail.vue';
 import LayerMyLoanCertificateRepaymentEmailComplete from '@/views/myLoan/LayerMyLoanCertificateRepaymentEmailComplete.vue';
 import LayerMyLoanCertificateOnlineBillList from '@/views/myLoan/LayerMyLoanCertificateOnlineBillList.vue';
 import LayerMyLoanCertificateOnlineBillItems from '@/views/myLoan/LayerMyLoanCertificateOnlineBillItems.vue';

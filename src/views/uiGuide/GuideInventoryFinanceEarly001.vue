@@ -7,7 +7,7 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 import LayerInventoryFinanceEarlyAlertInstant from '@/views/inventoryFinance/LayerInventoryFinanceEarlyAlertInstant.vue';
-import LayerInventoryFinanceEarlyAlertVirtual from '../inventoryFinance/LayerInventoryFinanceEarlyAlertVirtual.vue';
+import LayerInventoryFinanceEarlyAlertVirtual from '@/views/inventoryFinance/LayerInventoryFinanceEarlyAlertVirtual.vue';
 
 export default {
   components: {

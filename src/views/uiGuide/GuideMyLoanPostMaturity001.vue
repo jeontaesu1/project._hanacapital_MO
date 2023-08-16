@@ -6,10 +6,10 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import LayerMyLoanPostMaturityExtensionRequest from '../myLoan/LayerMyLoanPostMaturityExtensionRequest.vue';
-import LayerMyLoanPostMaturityExtensionRequestAgree from '../myLoan/LayerMyLoanPostMaturityExtensionRequestAgree.vue';
-import LayerMyLoanPostMaturityExtensionRequestComplete001 from '../myLoan/LayerMyLoanPostMaturityExtensionRequestComplete001.vue';
-import LayerMyLoanPostMaturityExtensionRequestComplete002 from '../myLoan/LayerMyLoanPostMaturityExtensionRequestComplete002.vue';
+import LayerMyLoanPostMaturityExtensionRequest from '@/views/myLoan/LayerMyLoanPostMaturityExtensionRequest.vue';
+import LayerMyLoanPostMaturityExtensionRequestAgree from '@/views/myLoan/LayerMyLoanPostMaturityExtensionRequestAgree.vue';
+import LayerMyLoanPostMaturityExtensionRequestComplete001 from '@/views/myLoan/LayerMyLoanPostMaturityExtensionRequestComplete001.vue';
+import LayerMyLoanPostMaturityExtensionRequestComplete002 from '@/views/myLoan/LayerMyLoanPostMaturityExtensionRequestComplete002.vue';
 
 export default {
   components: {

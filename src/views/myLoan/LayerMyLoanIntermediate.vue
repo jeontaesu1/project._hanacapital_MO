@@ -36,7 +36,8 @@ import BasicHr from '@/components/ui/common/BasicHr.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
-import LayerMyLoanIntermediateNotice from './LayerMyLoanIntermediateNotice.vue';
+
+import LayerMyLoanIntermediateNotice from '@/views/myLoan/LayerMyLoanIntermediateNotice.vue';
 
 import iconInformation from '@/assets/images/icon/information.svg?component';
 

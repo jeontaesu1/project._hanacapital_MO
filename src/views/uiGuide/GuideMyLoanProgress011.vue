@@ -7,18 +7,18 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 import LayerMyLoanOnlineContractDescription009_001 from '@/views/myLoan/LayerMyLoanOnlineContractDescription009_001.vue';
-import LayerMyLoanOnlineContractDescription009_002 from '../myLoan/LayerMyLoanOnlineContractDescription009_002.vue';
-import LayerMyLoanOnlineContractDescription009_003 from '../myLoan/LayerMyLoanOnlineContractDescription009_003.vue';
-import LayerMyLoanOnlineContractDescription009_004 from '../myLoan/LayerMyLoanOnlineContractDescription009_004.vue';
-import LayerMyLoanOnlineContractDescription009_005 from '../myLoan/LayerMyLoanOnlineContractDescription009_005.vue';
-import LayerMyLoanOnlineContractDescription009_006 from '../myLoan/LayerMyLoanOnlineContractDescription009_006.vue';
-import LayerMyLoanOnlineContractDescription009_007 from '../myLoan/LayerMyLoanOnlineContractDescription009_007.vue';
-import LayerMyLoanOnlineContractDescription009_008 from '../myLoan/LayerMyLoanOnlineContractDescription009_008.vue';
-import LayerMyLoanOnlineContractDescription009_009 from '../myLoan/LayerMyLoanOnlineContractDescription009_009.vue';
-import LayerMyLoanOnlineContractDescription009_010 from '../myLoan/LayerMyLoanOnlineContractDescription009_010.vue';
-import LayerMyLoanOnlineContractDescription009_011 from '../myLoan/LayerMyLoanOnlineContractDescription009_011.vue';
-import LayerMyLoanOnlineContractDescription009_012 from '../myLoan/LayerMyLoanOnlineContractDescription009_012.vue';
-import LayerMyLoanOnlineContractDescription009_013 from '../myLoan/LayerMyLoanOnlineContractDescription009_013.vue';
+import LayerMyLoanOnlineContractDescription009_002 from '@/views/myLoan/LayerMyLoanOnlineContractDescription009_002.vue';
+import LayerMyLoanOnlineContractDescription009_003 from '@/views/myLoan/LayerMyLoanOnlineContractDescription009_003.vue';
+import LayerMyLoanOnlineContractDescription009_004 from '@/views/myLoan/LayerMyLoanOnlineContractDescription009_004.vue';
+import LayerMyLoanOnlineContractDescription009_005 from '@/views/myLoan/LayerMyLoanOnlineContractDescription009_005.vue';
+import LayerMyLoanOnlineContractDescription009_006 from '@/views/myLoan/LayerMyLoanOnlineContractDescription009_006.vue';
+import LayerMyLoanOnlineContractDescription009_007 from '@/views/myLoan/LayerMyLoanOnlineContractDescription009_007.vue';
+import LayerMyLoanOnlineContractDescription009_008 from '@/views/myLoan/LayerMyLoanOnlineContractDescription009_008.vue';
+import LayerMyLoanOnlineContractDescription009_009 from '@/views/myLoan/LayerMyLoanOnlineContractDescription009_009.vue';
+import LayerMyLoanOnlineContractDescription009_010 from '@/views/myLoan/LayerMyLoanOnlineContractDescription009_010.vue';
+import LayerMyLoanOnlineContractDescription009_011 from '@/views/myLoan/LayerMyLoanOnlineContractDescription009_011.vue';
+import LayerMyLoanOnlineContractDescription009_012 from '@/views/myLoan/LayerMyLoanOnlineContractDescription009_012.vue';
+import LayerMyLoanOnlineContractDescription009_013 from '@/views/myLoan/LayerMyLoanOnlineContractDescription009_013.vue';
 
 export default {
   components: {
