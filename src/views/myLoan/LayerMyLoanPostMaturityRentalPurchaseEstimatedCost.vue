@@ -132,7 +132,7 @@ export default {
             />
 
             <KeyValue>
-              <KeyValueItem :classNames="{ item: 'text-body-5' }">
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
                 <KeyValueTitle>합계 (a-b+c)</KeyValueTitle>
                 <KeyValueText>99,999,999 원</KeyValueText>
               </KeyValueItem>
@@ -150,7 +150,7 @@ export default {
           </h3>
           <BasicBox>
             <KeyValue margin="regular">
-              <KeyValueItem :classNames="{ item: 'text-body-5' }">
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
                 <KeyValueTitle>잔존가치</KeyValueTitle>
                 <KeyValueText>99,999,999 원</KeyValueText>
               </KeyValueItem>
