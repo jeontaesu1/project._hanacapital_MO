@@ -270,10 +270,10 @@ export default {
                 <KeyValueText>8,300,000 원</KeyValueText>
               </KeyValueItem>
               <KeyValueItem>
-                <KeyValueTitle class="text-body-3"
+                <KeyValueTitle :classNames="{ title: 'text-body-3' }"
                   >중도상환수수료</KeyValueTitle
                 >
-                <KeyValueText class="text-body-4">
+                <KeyValueText :classNames="{ text: 'text-body-4' }">
                   중도상환원금 x 1% x 중도상환원금<br />
                   x (2%-1%) x 잔존기간/(대출기<br />
                   간-30일)
