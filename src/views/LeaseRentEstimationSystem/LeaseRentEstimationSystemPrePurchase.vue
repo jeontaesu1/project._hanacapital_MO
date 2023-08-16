@@ -122,6 +122,7 @@ export default {
     const state = reactive({
       productsSlider: null,
       productsAccordionAnimate: false,
+      ageError: false,
       viewDocument: false,
       exteriorETCError: false,
       exteriorETCPriceError: false,
@@ -2731,32 +2732,22 @@ export default {
                   <FormList>
                     <FormListItem
                       titleText="운전연령"
-                      :forceFocus="true"
+                      target="#leaseRentEstimationSystemPrePurchaseAge"
                       :disabled="true"
                     >
-                      <BoxCheckList spacing="small">
-                        <BoxCheckListItem>
-                          <BoxCheck
-                            :minSide="true"
-                            name="leaseRentEstimationSystemPrePurchaseCheck001"
-                            id="leaseRentEstimationSystemPrePurchaseCheck001_001"
-                            size="small"
-                            :defaultChecked="true"
-                          >
-                            <BoxCheckLabel>만21세 이상</BoxCheckLabel>
-                          </BoxCheck>
-                        </BoxCheckListItem>
-                        <BoxCheckListItem>
-                          <BoxCheck
-                            :minSide="true"
-                            name="leaseRentEstimationSystemPrePurchaseCheck001"
-                            id="leaseRentEstimationSystemPrePurchaseCheck001_002"
-                            size="small"
-                          >
-                            <BoxCheckLabel>만26세 이상</BoxCheckLabel>
-                          </BoxCheck>
-                        </BoxCheckListItem>
-                      </BoxCheckList>
+                      <FormInvalid :error="state.ageError">
+                        <InputBlock :error="state.ageError" :disabled="true">
+                          <InputBlockCell :flexible="true">
+                            <BasicInput
+                              title="운전연령"
+                              id="leaseRentEstimationSystemPrePurchaseAge"
+                              :disabled="true"
+                              defaultValue="만26세 이상"
+                            />
+                          </InputBlockCell>
+                        </InputBlock>
+                        <FormInvalidMessage>Error Message</FormInvalidMessage>
+                      </FormInvalid>
                     </FormListItem>
                     <FormListItem
                       titleText="대물"
@@ -2770,6 +2761,7 @@ export default {
                             name="leaseRentEstimationSystemPrePurchaseCheck002"
                             id="leaseRentEstimationSystemPrePurchaseCheck002_001"
                             size="small"
+                            :defaultChecked="true"
                           >
                             <BoxCheckLabel>1억원</BoxCheckLabel>
                           </BoxCheck>
@@ -2790,7 +2782,6 @@ export default {
                             name="leaseRentEstimationSystemPrePurchaseCheck002"
                             id="leaseRentEstimationSystemPrePurchaseCheck002_003"
                             size="small"
-                            :defaultChecked="true"
                           >
                             <BoxCheckLabel>3억원</BoxCheckLabel>
                           </BoxCheck>
@@ -2849,7 +2840,7 @@ export default {
                             id="leaseRentEstimationSystemPrePurchaseCheck004_001"
                             size="small"
                           >
-                            <BoxCheckLabel>50만원</BoxCheckLabel>
+                            <BoxCheckLabel>10만원</BoxCheckLabel>
                           </BoxCheck>
                         </BoxCheckListItem>
                         <BoxCheckListItem>
@@ -2857,6 +2848,16 @@ export default {
                             :minSide="true"
                             name="leaseRentEstimationSystemPrePurchaseCheck004"
                             id="leaseRentEstimationSystemPrePurchaseCheck004_002"
+                            size="small"
+                          >
+                            <BoxCheckLabel>20만원</BoxCheckLabel>
+                          </BoxCheck>
+                        </BoxCheckListItem>
+                        <BoxCheckListItem>
+                          <BoxCheck
+                            :minSide="true"
+                            name="leaseRentEstimationSystemPrePurchaseCheck004"
+                            id="leaseRentEstimationSystemPrePurchaseCheck004_003"
                             size="small"
                             :defaultChecked="true"
                           >
@@ -2867,20 +2868,10 @@ export default {
                           <BoxCheck
                             :minSide="true"
                             name="leaseRentEstimationSystemPrePurchaseCheck004"
-                            id="leaseRentEstimationSystemPrePurchaseCheck004_003"
-                            size="small"
-                          >
-                            <BoxCheckLabel>20만원</BoxCheckLabel>
-                          </BoxCheck>
-                        </BoxCheckListItem>
-                        <BoxCheckListItem>
-                          <BoxCheck
-                            :minSide="true"
-                            name="leaseRentEstimationSystemPrePurchaseCheck004"
                             id="leaseRentEstimationSystemPrePurchaseCheck004_004"
                             size="small"
                           >
-                            <BoxCheckLabel>10만원</BoxCheckLabel>
+                            <BoxCheckLabel>50만원</BoxCheckLabel>
                           </BoxCheck>
                         </BoxCheckListItem>
                       </BoxCheckList>
@@ -4113,7 +4104,7 @@ export default {
                   </UiAccordionItem>
                   <!-- // 기간 -->
 
-                  <!-- 약정거리 -->
+                  <!-- 약정주행거리 -->
                   <UiAccordionItem
                     :classNames="{ item: $style['estimate-list__item'] }"
                   >
@@ -4127,7 +4118,7 @@ export default {
                           >
                             <KeyValueItem :classNames="{ item: 'text-body-3' }">
                               <KeyValueTitle>
-                                <div class="text-body-4">약정거리</div>
+                                <div class="text-body-4">약정주행거리</div>
                               </KeyValueTitle>
                               <KeyValueText>20,000 km/년</KeyValueText>
                             </KeyValueItem>
@@ -4148,6 +4139,7 @@ export default {
                     >
                       <section :class="$style['estimate-list__contents']">
                         <BoxCheckList spacing="small" :wrap="true" :col="3">
+                          <!-- Case : 브랜드 "수입" 선택 시 미노출 -->
                           <BoxCheckListItem>
                             <BoxCheck
                               :minSide="true"
@@ -4158,6 +4150,8 @@ export default {
                               <BoxCheckLabel>15,000 km</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
+                          <!-- // Case : 브랜드 "수입" 선택 시 미노출 -->
+
                           <BoxCheckListItem>
                             <BoxCheck
                               :minSide="true"
@@ -4169,6 +4163,8 @@ export default {
                               <BoxCheckLabel>20,000 km</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
+
+                          <!-- Case : 브랜드 "수입" 선택 시 미노출 -->
                           <BoxCheckListItem>
                             <BoxCheck
                               :minSide="true"
@@ -4179,6 +4175,8 @@ export default {
                               <BoxCheckLabel>25,000 km</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
+                          <!-- // Case : 브랜드 "수입" 선택 시 미노출 -->
+
                           <BoxCheckListItem>
                             <BoxCheck
                               :minSide="true"
@@ -4189,6 +4187,8 @@ export default {
                               <BoxCheckLabel>30,000 km</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
+
+                          <!-- Case : 브랜드 "수입" 선택 시 미노출 -->
                           <BoxCheckListItem>
                             <BoxCheck
                               :minSide="true"
@@ -4199,11 +4199,12 @@ export default {
                               <BoxCheckLabel>50,000 km</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
+                          <!-- // Case : 브랜드 "수입" 선택 시 미노출 -->
                         </BoxCheckList>
                       </section>
                     </UiAccordionLayer>
                   </UiAccordionItem>
-                  <!-- // 약정거리 -->
+                  <!-- // 약정주행거리 -->
 
                   <!-- 선납금 -->
                   <UiAccordionItem

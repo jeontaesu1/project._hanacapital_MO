@@ -4002,7 +4002,7 @@ export default {
 
                   <!-- Case : 운용리스 : start -->
 
-                  <!-- 약정거리 -->
+                  <!-- 약정주행거리 -->
                   <UiAccordionItem
                     :classNames="{ item: $style['estimate-list__item'] }"
                   >
@@ -4016,7 +4016,7 @@ export default {
                           >
                             <KeyValueItem :classNames="{ item: 'text-body-3' }">
                               <KeyValueTitle>
-                                <div class="text-body-4">약정거리</div>
+                                <div class="text-body-4">약정주행거리</div>
                               </KeyValueTitle>
                               <KeyValueText>20,000 km/년</KeyValueText>
                             </KeyValueItem>
@@ -4037,6 +4037,7 @@ export default {
                     >
                       <section :class="$style['estimate-list__contents']">
                         <BoxCheckList spacing="small">
+                          <!-- Case : 브랜드 "수입" 선택 시 미노출 -->
                           <BoxCheckListItem>
                             <BoxCheck
                               :minSide="true"
@@ -4044,9 +4045,11 @@ export default {
                               :id="`leaseRentEstimationSystemTestDriveCarProducts${i}_check002_001`"
                               size="small"
                             >
-                              <BoxCheckLabel>20,000 km</BoxCheckLabel>
+                              <BoxCheckLabel>15,000 km</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
+                          <!-- // Case : 브랜드 "수입" 선택 시 미노출 -->
+
                           <BoxCheckListItem>
                             <BoxCheck
                               :minSide="true"
@@ -4055,9 +4058,11 @@ export default {
                               size="small"
                               :defaultChecked="true"
                             >
-                              <BoxCheckLabel>30,000 km</BoxCheckLabel>
+                              <BoxCheckLabel>20,000 km</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
+
+                          <!-- Case : 브랜드 "수입" 선택 시 미노출 -->
                           <BoxCheckListItem>
                             <BoxCheck
                               :minSide="true"
@@ -4065,14 +4070,39 @@ export default {
                               :id="`leaseRentEstimationSystemTestDriveCarProducts${i}_check002_003`"
                               size="small"
                             >
-                              <BoxCheckLabel>40,000 km</BoxCheckLabel>
+                              <BoxCheckLabel>25,000 km</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
+                          <!-- // Case : 브랜드 "수입" 선택 시 미노출 -->
+
+                          <BoxCheckListItem>
+                            <BoxCheck
+                              :minSide="true"
+                              :name="`leaseRentEstimationSystemTestDriveCarProducts${i}_check002`"
+                              :id="`leaseRentEstimationSystemTestDriveCarProducts${i}_check002_004`"
+                              size="small"
+                            >
+                              <BoxCheckLabel>30,000 km</BoxCheckLabel>
+                            </BoxCheck>
+                          </BoxCheckListItem>
+
+                          <!-- Case : 브랜드 "수입" 선택 시 미노출 -->
+                          <BoxCheckListItem>
+                            <BoxCheck
+                              :minSide="true"
+                              :name="`leaseRentEstimationSystemTestDriveCarProducts${i}_check002`"
+                              :id="`leaseRentEstimationSystemTestDriveCarProducts${i}_check002_005`"
+                              size="small"
+                            >
+                              <BoxCheckLabel>50,000 km</BoxCheckLabel>
+                            </BoxCheck>
+                          </BoxCheckListItem>
+                          <!-- // Case : 브랜드 "수입" 선택 시 미노출 -->
                         </BoxCheckList>
                       </section>
                     </UiAccordionLayer>
                   </UiAccordionItem>
-                  <!-- // 약정거리 -->
+                  <!-- // 약정주행거리 -->
 
                   <!-- 선납금 -->
                   <UiAccordionItem
