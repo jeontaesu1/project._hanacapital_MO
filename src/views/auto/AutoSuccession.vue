@@ -1221,7 +1221,9 @@ export default {
               </KeyValueItem>
 
               <KeyValueItem>
-                <KeyValueTitle class="row-margin-item">위약금률</KeyValueTitle>
+                <KeyValueTitle :classNames="{ title: 'row-margin-item' }"
+                  >위약금률</KeyValueTitle
+                >
                 <KeyValueText>
                   <ul :class="$style['basic-list']">
                     <li

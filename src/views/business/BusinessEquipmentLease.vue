@@ -270,7 +270,9 @@ export default {
           </KeyValueItem>
 
           <KeyValueItem>
-            <KeyValueTitle class="row-margin-item">구비서류</KeyValueTitle>
+            <KeyValueTitle :classNames="{ title: 'row-margin-item' }"
+              >구비서류</KeyValueTitle
+            >
             <KeyValueText>
               <div :class="$style['contents-list']">
                 <ol

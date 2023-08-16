@@ -105,14 +105,14 @@ export default {
 
             <KeyValue>
               <!-- Case : 운용리스 -->
-              <KeyValueItem class="text-body-5">
+              <KeyValueItem :classNames="{ item: 'text-body-5' }">
                 <KeyValueTitle>선납금 + 보증금</KeyValueTitle>
                 <KeyValueText>20% (22,145,111원)</KeyValueText>
               </KeyValueItem>
               <!-- // Case : 운용리스 -->
 
               <!-- Case : 금융리스 -->
-              <KeyValueItem class="text-body-5">
+              <KeyValueItem :classNames="{ item: 'text-body-5' }">
                 <KeyValueTitle>선납금</KeyValueTitle>
                 <KeyValueText>20% (22,145,111원)</KeyValueText>
               </KeyValueItem>

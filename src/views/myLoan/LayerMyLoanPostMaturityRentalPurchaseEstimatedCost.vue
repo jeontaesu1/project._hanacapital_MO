@@ -82,12 +82,12 @@ export default {
 
       <BasicBox>
         <KeyValue margin="regular">
-          <KeyValueItem class="text-body-3">
+          <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>만기일자</KeyValueTitle>
             <KeyValueText>2023.01.05</KeyValueText>
           </KeyValueItem>
 
-          <KeyValueItem class="text-body-3">
+          <KeyValueItem :classNames="{ item: 'text-body-3' }">
             <KeyValueTitle>최종결제일자</KeyValueTitle>
             <KeyValueText>2023.01.05</KeyValueText>
           </KeyValueItem>
@@ -109,17 +109,17 @@ export default {
               </BasicBoxHeadRight>
             </BasicBoxHead>
             <KeyValue margin="regular">
-              <KeyValueItem class="text-body-3">
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
                 <KeyValueTitle>제세금(a)</KeyValueTitle>
                 <KeyValueText>0 원</KeyValueText>
               </KeyValueItem>
 
-              <KeyValueItem class="text-body-3">
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
                 <KeyValueTitle>보증금(b)</KeyValueTitle>
                 <KeyValueText>99,999,999 원</KeyValueText>
               </KeyValueItem>
 
-              <KeyValueItem class="text-body-3">
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
                 <KeyValueTitle>잔존가치(c)</KeyValueTitle>
                 <KeyValueText>99,999,999 원</KeyValueText>
               </KeyValueItem>
@@ -132,7 +132,7 @@ export default {
             />
 
             <KeyValue>
-              <KeyValueItem class="text-body-3">
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
                 <KeyValueTitle>합계 (a-b+c)</KeyValueTitle>
                 <KeyValueText>99,999,999 원</KeyValueText>
               </KeyValueItem>
@@ -150,7 +150,7 @@ export default {
           </h3>
           <BasicBox>
             <KeyValue margin="regular">
-              <KeyValueItem class="text-body-3">
+              <KeyValueItem :classNames="{ item: 'text-body-3' }">
                 <KeyValueTitle>잔존가치</KeyValueTitle>
                 <KeyValueText>99,999,999 원</KeyValueText>
               </KeyValueItem>
