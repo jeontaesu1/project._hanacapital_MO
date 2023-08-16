@@ -4302,6 +4302,7 @@ export default {
                     >
                       <section :class="$style['estimate-list__contents']">
                         <BoxCheckList spacing="small" :wrap="true" :col="3">
+                          <!-- Case : 브랜드 "수입" 선택 시 미노출 -->
                           <BoxCheckListItem>
                             <BoxCheck
                               :minSide="true"
@@ -4312,6 +4313,8 @@ export default {
                               <BoxCheckLabel>15,000 km</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
+                          <!-- // Case : 브랜드 "수입" 선택 시 미노출 -->
+
                           <BoxCheckListItem>
                             <BoxCheck
                               :minSide="true"
@@ -4323,6 +4326,8 @@ export default {
                               <BoxCheckLabel>20,000 km</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
+
+                          <!-- Case : 브랜드 "수입" 선택 시 미노출 -->
                           <BoxCheckListItem>
                             <BoxCheck
                               :minSide="true"
@@ -4333,6 +4338,8 @@ export default {
                               <BoxCheckLabel>25,000 km</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
+                          <!-- // Case : 브랜드 "수입" 선택 시 미노출 -->
+
                           <BoxCheckListItem>
                             <BoxCheck
                               :minSide="true"
@@ -4343,6 +4350,8 @@ export default {
                               <BoxCheckLabel>30,000 km</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
+
+                          <!-- Case : 브랜드 "수입" 선택 시 미노출 -->
                           <BoxCheckListItem>
                             <BoxCheck
                               :minSide="true"
@@ -4353,6 +4362,7 @@ export default {
                               <BoxCheckLabel>50,000 km</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
+                          <!-- // Case : 브랜드 "수입" 선택 시 미노출 -->
                         </BoxCheckList>
                       </section>
                     </UiAccordionLayer>
