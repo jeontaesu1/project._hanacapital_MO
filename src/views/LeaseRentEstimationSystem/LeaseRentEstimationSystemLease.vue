@@ -4202,11 +4202,7 @@ export default {
                     <div :class="$style['estimate-list__head']">
                       <div :class="$style['estimate-list__block']">
                         <div :class="$style['estimate-list__left']">
-                          <KeyValue
-                            align="left"
-                            size="regular"
-                            verticalAlign="center"
-                          >
+                          <KeyValue align="left" size="regular">
                             <KeyValueItem :classNames="{ item: 'text-body-3' }">
                               <KeyValueTitle>
                                 <div class="text-body-4">약정주행거리</div>
@@ -4229,69 +4225,87 @@ export default {
                       :classNames="{ layer: $style['estimate-list__layer'] }"
                     >
                       <section :class="$style['estimate-list__contents']">
+                        <!-- Case : 국산 -->
                         <BoxCheckList spacing="small" :wrap="true" :col="3">
-                          <!-- Case : 브랜드 "수입" 선택 시 미노출 -->
                           <BoxCheckListItem>
                             <BoxCheck
                               :minSide="true"
-                              :name="`leaseRentEstimationSystemLeaseProducts${i}_check002`"
-                              :id="`leaseRentEstimationSystemLeaseProducts${i}_check002_001`"
+                              :name="`leaseRentEstimationSystemLeaseProducts${i}_check002_type001`"
+                              :id="`leaseRentEstimationSystemLeaseProducts${i}_check002_type001_001`"
                               size="small"
                             >
                               <BoxCheckLabel>15,000 km</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
-                          <!-- // Case : 브랜드 "수입" 선택 시 미노출 -->
-
                           <BoxCheckListItem>
                             <BoxCheck
                               :minSide="true"
-                              :name="`leaseRentEstimationSystemLeaseProducts${i}_check002`"
-                              :id="`leaseRentEstimationSystemLeaseProducts${i}_check002_002`"
+                              :name="`leaseRentEstimationSystemLeaseProducts${i}_check002_type001`"
+                              :id="`leaseRentEstimationSystemLeaseProducts${i}_check002_type001_002`"
                               size="small"
                               :defaultChecked="true"
                             >
                               <BoxCheckLabel>20,000 km</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
-
-                          <!-- Case : 브랜드 "수입" 선택 시 미노출 -->
                           <BoxCheckListItem>
                             <BoxCheck
                               :minSide="true"
-                              :name="`leaseRentEstimationSystemLeaseProducts${i}_check002`"
-                              :id="`leaseRentEstimationSystemLeaseProducts${i}_check002_003`"
+                              :name="`leaseRentEstimationSystemLeaseProducts${i}_check002_type001`"
+                              :id="`leaseRentEstimationSystemLeaseProducts${i}_check002_type001_003`"
                               size="small"
                             >
                               <BoxCheckLabel>25,000 km</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
-                          <!-- // Case : 브랜드 "수입" 선택 시 미노출 -->
-
                           <BoxCheckListItem>
                             <BoxCheck
                               :minSide="true"
-                              :name="`leaseRentEstimationSystemLeaseProducts${i}_check002`"
-                              :id="`leaseRentEstimationSystemLeaseProducts${i}_check002_004`"
+                              :name="`leaseRentEstimationSystemLeaseProducts${i}_check002_type001`"
+                              :id="`leaseRentEstimationSystemLeaseProducts${i}_check002_type001_004`"
                               size="small"
                             >
                               <BoxCheckLabel>30,000 km</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
-
-                          <!-- Case : 브랜드 "수입" 선택 시 미노출 -->
                           <BoxCheckListItem>
                             <BoxCheck
                               :minSide="true"
-                              :name="`leaseRentEstimationSystemLeaseProducts${i}_check002`"
-                              :id="`leaseRentEstimationSystemLeaseProducts${i}_check002_005`"
+                              :name="`leaseRentEstimationSystemLeaseProducts${i}_check002_type001`"
+                              :id="`leaseRentEstimationSystemLeaseProducts${i}_check002_type001_005`"
                               size="small"
                             >
                               <BoxCheckLabel>50,000 km</BoxCheckLabel>
                             </BoxCheck>
                           </BoxCheckListItem>
-                          <!-- // Case : 브랜드 "수입" 선택 시 미노출 -->
                         </BoxCheckList>
+                        <!-- // Case : 국산 -->
+
+                        <!-- Case : 수입 -->
+                        <BoxCheckList spacing="small">
+                          <BoxCheckListItem>
+                            <BoxCheck
+                              :minSide="true"
+                              :name="`leaseRentEstimationSystemLeaseProducts${i}_check002_type002`"
+                              :id="`leaseRentEstimationSystemLeaseProducts${i}_check002_type002_001`"
+                              size="small"
+                              :defaultChecked="true"
+                            >
+                              <BoxCheckLabel>20,000 km</BoxCheckLabel>
+                            </BoxCheck>
+                          </BoxCheckListItem>
+                          <BoxCheckListItem>
+                            <BoxCheck
+                              :minSide="true"
+                              :name="`leaseRentEstimationSystemLeaseProducts${i}_check002_type002`"
+                              :id="`leaseRentEstimationSystemLeaseProducts${i}_check002_type002_002`"
+                              size="small"
+                            >
+                              <BoxCheckLabel>30,000 km</BoxCheckLabel>
+                            </BoxCheck>
+                          </BoxCheckListItem>
+                        </BoxCheckList>
+                        <!-- // Case : 수입 -->
                       </section>
                     </UiAccordionLayer>
                   </UiAccordionItem>

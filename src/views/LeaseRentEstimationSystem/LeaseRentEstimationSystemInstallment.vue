@@ -2497,17 +2497,13 @@ export default {
                             <div class="flex-box__cell">
                               <BoxCheck
                                 type="checkbox"
+                                size="small"
                                 id="leaseRentEstimationSystemInstallmentRenterCarCorporation"
                               >
                                 <template v-slot:left>
                                   <BoxCheckObject />
                                 </template>
-                                <BoxCheckLabel
-                                  :classNames="{
-                                    label: 'text-body-4',
-                                  }"
-                                  >렌터카법인</BoxCheckLabel
-                                >
+                                <BoxCheckLabel>렌터카법인</BoxCheckLabel>
                               </BoxCheck>
                             </div>
                           </div>
