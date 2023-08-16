@@ -2115,6 +2115,16 @@ export default {
         </BoxCheck>
 
         <BoxCheck name="testBoxCheck007" id="testBoxCheck007_003" size="small">
+          <template v-slot:left>
+            <BoxCheckObject />
+          </template>
+          <BoxCheckLabel>Label<br />2 line label</BoxCheckLabel>
+        </BoxCheck>
+
+        <BoxCheck type="checkbox" id="testBoxCheck008" size="small">
+          <template v-slot:left>
+            <BoxCheckObject />
+          </template>
           <BoxCheckLabel>Label<br />2 line label</BoxCheckLabel>
         </BoxCheck>
       </div>

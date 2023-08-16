@@ -1,7 +1,8 @@
 <script>
 import { computed, inject } from 'vue';
 
-import IconCheck from '@/assets/images/icon/check-l.svg?component';
+import IconCheck from '@/assets/images/icon/check.svg?component';
+import IconCheckL from '@/assets/images/icon/check-l.svg?component';
 
 const defaultClassNames = () => ({
   object: '',
@@ -11,6 +12,7 @@ const defaultClassNames = () => ({
 export default {
   components: {
     IconCheck,
+    IconCheckL,
   },
   props: {
     classNames: {
@@ -23,6 +25,7 @@ export default {
   setup(props) {
     const styleModule = inject('boxCheckstyleModule');
     const type = inject('boxCheckType');
+    const size = inject('boxCheckSize');
 
     const customClassNames = computed(() => {
       const { classNames } = props;
@@ -31,6 +34,7 @@ export default {
 
     return {
       type,
+      size,
       styleModule,
       customClassNames,
     };
@@ -46,7 +50,8 @@ export default {
         customClassNames.objectInner,
       ]"
     >
-      <IconCheck v-if="type.value === 'checkbox'" />
+      <IconCheck v-if="type.value === 'checkbox' && size.value === 'small'" />
+      <IconCheckL v-else-if="type.value === 'checkbox'" />
     </span>
   </span>
 </template>

@@ -63,7 +63,8 @@
     align-items: center;
     justify-content: center;
     width: 24px;
-    min-height: #{$line-height-default}em;
+    height: #{$line-height-default}em;
+    min-height: 24px;
 
     &-inner {
       flex: none;
@@ -306,6 +307,14 @@
 
       .box-check__label {
         @include font-size-default(13);
+      }
+
+      .box-check__left {
+        margin-right: 0;
+      }
+
+      .box-check__right {
+        margin-left: 0;
       }
 
       &.box-check--min-side {

@@ -69,6 +69,7 @@ export default {
     const state = reactive({
       type: { value: null },
       id: { value: null },
+      size: { value: null },
       checked: false,
     });
 
@@ -142,11 +143,19 @@ export default {
       }
     );
 
+    watch(
+      () => props.size,
+      (cur) => {
+        state.size = cur;
+      }
+    );
+
     onBeforeMount(() => {
-      const { type, id, modelValue, defaultChecked } = props;
+      const { type, id, size, modelValue, defaultChecked } = props;
 
       state.type.value = type;
       state.id.value = id;
+      state.size.value = size;
       state.checked =
         typeof modelValue === 'boolean' ? modelValue : defaultChecked;
     });
@@ -154,6 +163,7 @@ export default {
     provide('boxCheckstyleModule', useCssModule());
     provide('boxCheckType', state.type);
     provide('boxCheckId', state.id);
+    provide('boxCheckSize', state.size);
 
     return {
       state,
