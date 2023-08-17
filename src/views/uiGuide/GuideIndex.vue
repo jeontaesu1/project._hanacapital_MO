@@ -2804,7 +2804,12 @@ const datas = () => [
         path: '/lease-rent-estimation-system/admin-setting-role',
         status: 'end',
         create: '2023.06.23',
-        log: [],
+        log: [
+          {
+            date: '2023.08.17',
+            text: '버튼 추가 및 컨텐츠 구성 수정',
+          },
+        ],
       },
       {
         depth2: '서비스',
