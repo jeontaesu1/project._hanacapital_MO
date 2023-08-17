@@ -21,7 +21,7 @@
     background-color: rgba($color-black, 0.84);
     @include font-size-default(14);
     color: $color-white;
-    animation: message-animation 3.5s forwards linear;
+    animation: message-animation 2s forwards linear;
     opacity: 0;
     transform: translateY(100%);
 
@@ -36,11 +36,11 @@
     opacity: 0;
     transform: translateY(-100%);
   }
-  7.142857% {
+  10% {
     opacity: 1;
     transform: translateY(0);
   }
-  92.857143% {
+  90% {
     opacity: 1;
     transform: translateY(0);
   }

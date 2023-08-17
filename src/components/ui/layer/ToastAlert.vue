@@ -42,7 +42,7 @@ export default {
         obj.timer = setTimeout(() => {
           clear(key);
           clearTimeout(obj.timer);
-        }, 3600);
+        }, 2100);
       });
     };
 
