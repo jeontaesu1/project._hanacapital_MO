@@ -88,16 +88,16 @@ export default {
               />
             </InputBlockCell>
             <template v-slot:right>
-              <ButtonList :classNames="{ wrap: 'row-margin-none' }">
-                <ButtonListItem>
+              <div class="flex-box">
+                <div class="flex-box__cell">
                   <BasicButton size="mini" theme="tertiary">조회</BasicButton>
-                </ButtonListItem>
-                <ButtonListItem :classNames="{ item: 'flex-none' }">
-                  <BasicButton size="mini" :line="true" theme="quaternary">
+                </div>
+                <div class="flex-box__cell">
+                  <BasicButton size="mini" theme="quaternary" :line="true">
                     초기화
                   </BasicButton>
-                </ButtonListItem>
-              </ButtonList>
+                </div>
+              </div>
             </template>
           </InputBlock>
           <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -107,7 +107,6 @@ export default {
 
     <BasicHr className="row-margin-container-medium" />
 
-    <!-- DD : 아이디 미검색 시 권한 설정 불가 -->
     <BasicBox>
       <div :class="$style['check-list']">
         <ul :class="$style['check-list__list']">
@@ -189,7 +188,6 @@ export default {
     </BasicBox>
 
     <!-- Case : 아이디 조회 시 노출 -->
-    <!-- DD : 권한 설정 시 모든 아이디에 권한 리셋된 후 동일 권한 적용 -->
     <section class="row-margin-container-medium">
       <h3 class="text-title-2 row-margin-contents">등록된 권한 리스트</h3>
 
@@ -201,26 +199,22 @@ export default {
                 <div class="text-body-1 font-weight-medium">A10000</div>
               </div>
               <div class="flex-box__cell flex-box__cell--small">
-                <DeleteButton />
+                <DeleteButton theme="secondary" />
               </div>
             </div>
             <div :class="$style['division-info']">
               <ul :class="$style['division-info__list']">
-                <li :class="[$style['division-info__item'], 'nowrap']">
-                  <div class="color-black text-body-4 font-weight-light">
-                    김하나
-                  </div>
+                <li :class="[$style['division-info__item'], 'flex-none']">
+                  <div class="text-body-4 font-weight-light">김하나</div>
                 </li>
-                <li :class="[$style['division-info__item'], 'ellipsis']">
-                  <div
-                    class="color-black text-body-4 font-weight-light ellipsis"
-                  >
+                <li :class="$style['division-info__item']">
+                  <div class="text-body-4 font-weight-light ellipsis">
                     DT리빌드 TFT 팀 이름이 길어지면 이렇게 표시
                   </div>
                 </li>
               </ul>
             </div>
-            <div class="text-body-4">
+            <div class="text-body-4 row-margin-small">
               관리자 권한, 선구매 등록, 시승차 견적 허용, 중고 리스 허용
             </div>
           </BasicBox>
