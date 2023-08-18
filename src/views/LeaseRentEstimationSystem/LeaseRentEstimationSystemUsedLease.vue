@@ -1854,7 +1854,7 @@ export default {
       <section class="row-margin-container-medium">
         <div class="flex-box row-margin-contents">
           <div class="flex-box__cell flex-1">
-            <h2 class="text-title-2">상품 선택</h2>
+            <h2 class="text-title-2">견적 선택</h2>
           </div>
           <div class="flex-box__cell">
             <IconScroll class="display-block" />
@@ -1894,7 +1894,7 @@ export default {
                   <div class="flex-box">
                     <div class="flex-box__cell flex-1">
                       <h3 :class="$style['estimate-list__title']">
-                        {{ i }}번 상품
+                        {{ i }}번 견적
                       </h3>
                     </div>
                     <div class="flex-box__cell">
