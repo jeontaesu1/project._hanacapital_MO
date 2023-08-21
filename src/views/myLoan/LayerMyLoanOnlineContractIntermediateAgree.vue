@@ -945,7 +945,7 @@ export default {
                 </UiAccordionItem>
                 <!-- //약관동의 : 중도금 주요사항 전체동의 -->
 
-                <!-- 약관동의 : 하나캐피탈 멤버십 가입 필수 전체동의 -->
+                <!-- 약관동의 : 채무인수 확약서 전체동의 -->
                 <UiAccordionItem
                   :classNames="{ item: $style['agree-list__depth-item'] }"
                   :initialOpen="true"
@@ -953,6 +953,64 @@ export default {
                   <div :class="$style['agree-list__depth-head']">
                     <CheckBox
                       id="layerMyLoanOnlineContractIntermediateAgree_007"
+                      :classNames="{
+                        wrap: $style['agree-list__depth-checkbox'],
+                      }"
+                    >
+                      <CheckBoxObject />
+                      <CheckBoxLabelText>채무인수 확약서</CheckBoxLabelText>
+                    </CheckBox>
+                    <div :class="$style['agree-list__right']">
+                      <UiAccordionOpener
+                        :classNames="{
+                          button: $style['agree-list__depth-opener'],
+                        }"
+                      />
+                    </div>
+                  </div>
+                  <UiAccordionLayer>
+                    <div :class="$style['agree-list__depth-contents']">
+                      <ul :class="$style['agree-list__list']">
+                        <li :class="$style['agree-list__item']">
+                          <div :class="$style['agree-list__head']">
+                            <CheckBox
+                              id="layerMyLoanOnlineContractIntermediateAgree_007_001"
+                              :classNames="{
+                                wrap: $style['agree-list__checkbox'],
+                              }"
+                              theme="tertiary"
+                            >
+                              <CheckBoxObject />
+                              <CheckBoxLabelText>
+                                채무인수 확약서
+                              </CheckBoxLabelText>
+                            </CheckBox>
+                            <div :class="$style['agree-list__right']">
+                              <button
+                                type="button"
+                                :class="$style['agree-list__link']"
+                              >
+                                <span :class="$style['agree-list__link-text']">
+                                  상세보기
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </UiAccordionLayer>
+                </UiAccordionItem>
+                <!-- //약관동의 : 채무인수 확약서 전체동의 -->
+
+                <!-- 약관동의 : 하나캐피탈 멤버십 가입 필수 전체동의 -->
+                <UiAccordionItem
+                  :classNames="{ item: $style['agree-list__depth-item'] }"
+                  :initialOpen="true"
+                >
+                  <div :class="$style['agree-list__depth-head']">
+                    <CheckBox
+                      id="layerMyLoanOnlineContractIntermediateAgree_008"
                       :classNames="{
                         wrap: $style['agree-list__depth-checkbox'],
                       }"
@@ -979,7 +1037,7 @@ export default {
                         <li :class="$style['agree-list__item']">
                           <div :class="$style['agree-list__head']">
                             <CheckBox
-                              id="layerMyLoanOnlineContractIntermediateAgree_007_001"
+                              id="layerMyLoanOnlineContractIntermediateAgree_008_001"
                               :classNames="{
                                 wrap: $style['agree-list__checkbox'],
                               }"
@@ -1008,7 +1066,7 @@ export default {
                         >
                           <div :class="$style['agree-list__head']">
                             <CheckBox
-                              id="layerMyLoanOnlineContractIntermediateAgree_007_002"
+                              id="layerMyLoanOnlineContractIntermediateAgree_008_002"
                               :classNames="{
                                 wrap: $style['agree-list__checkbox'],
                               }"
@@ -1037,7 +1095,7 @@ export default {
                               <li :class="$style['agree-list__item']">
                                 <div :class="$style['agree-list__head']">
                                   <CheckBox
-                                    id="layerMyLoanOnlineContractIntermediateAgree_007_002_001"
+                                    id="layerMyLoanOnlineContractIntermediateAgree_008_002_001"
                                     :classNames="{
                                       wrap: $style['agree-list__checkbox'],
                                     }"
@@ -1066,7 +1124,7 @@ export default {
                               <li :class="$style['agree-list__item']">
                                 <div :class="$style['agree-list__head']">
                                   <CheckBox
-                                    id="layerMyLoanOnlineContractIntermediateAgree_007_002_002"
+                                    id="layerMyLoanOnlineContractIntermediateAgree_008_002_002"
                                     :classNames="{
                                       wrap: $style['agree-list__checkbox'],
                                     }"
@@ -1098,7 +1156,7 @@ export default {
                         <li :class="$style['agree-list__item']">
                           <div :class="$style['agree-list__head']">
                             <CheckBox
-                              id="layerMyLoanOnlineContractIntermediateAgree_007_003"
+                              id="layerMyLoanOnlineContractIntermediateAgree_008_003"
                               :classNames="{
                                 wrap: $style['agree-list__checkbox'],
                               }"
@@ -1128,7 +1186,7 @@ export default {
                         >
                           <div :class="$style['agree-list__head']">
                             <CheckBox
-                              id="layerMyLoanOnlineContractIntermediateAgree_007_004"
+                              id="layerMyLoanOnlineContractIntermediateAgree_008_004"
                               :classNames="{
                                 wrap: $style['agree-list__checkbox'],
                               }"
@@ -1157,7 +1215,7 @@ export default {
                               <li :class="$style['agree-list__item']">
                                 <div :class="$style['agree-list__head']">
                                   <CheckBox
-                                    id="layerMyLoanOnlineContractIntermediateAgree_007_004_001"
+                                    id="layerMyLoanOnlineContractIntermediateAgree_008_004_001"
                                     :classNames="{
                                       wrap: $style['agree-list__checkbox'],
                                     }"
@@ -1185,7 +1243,7 @@ export default {
                               <li :class="$style['agree-list__item']">
                                 <div :class="$style['agree-list__head']">
                                   <CheckBox
-                                    id="layerMyLoanOnlineContractIntermediateAgree_007_004_002"
+                                    id="layerMyLoanOnlineContractIntermediateAgree_008_004_002"
                                     :classNames="{
                                       wrap: $style['agree-list__checkbox'],
                                     }"
@@ -1213,7 +1271,7 @@ export default {
                               <li :class="$style['agree-list__item']">
                                 <div :class="$style['agree-list__head']">
                                   <CheckBox
-                                    id="layerMyLoanOnlineContractIntermediateAgree_007_004_003"
+                                    id="layerMyLoanOnlineContractIntermediateAgree_008_004_003"
                                     :classNames="{
                                       wrap: $style['agree-list__checkbox'],
                                     }"
@@ -1254,7 +1312,7 @@ export default {
                 >
                   <div :class="$style['agree-list__depth-head']">
                     <CheckBox
-                      id="layerMyLoanOnlineContractIntermediateAgree_008"
+                      id="layerMyLoanOnlineContractIntermediateAgree_009"
                       :classNames="{
                         wrap: $style['agree-list__depth-checkbox'],
                       }"
@@ -1291,7 +1349,7 @@ export default {
                         >
                           <div :class="$style['agree-list__head']">
                             <CheckBox
-                              id="layerMyLoanOnlineContractIntermediateAgree_008_001"
+                              id="layerMyLoanOnlineContractIntermediateAgree_009_001"
                               :classNames="{
                                 wrap: $style['agree-list__checkbox'],
                               }"
@@ -1320,7 +1378,7 @@ export default {
                               <li :class="$style['agree-list__item']">
                                 <div :class="$style['agree-list__head']">
                                   <CheckBox
-                                    id="layerMyLoanOnlineContractIntermediateAgree_008_001_001"
+                                    id="layerMyLoanOnlineContractIntermediateAgree_009_001_001"
                                     :classNames="{
                                       wrap: $style['agree-list__checkbox'],
                                     }"
@@ -1349,7 +1407,7 @@ export default {
                               <li :class="$style['agree-list__item']">
                                 <div :class="$style['agree-list__head']">
                                   <CheckBox
-                                    id="layerMyLoanOnlineContractIntermediateAgree_008_001_002"
+                                    id="layerMyLoanOnlineContractIntermediateAgree_009_001_002"
                                     :classNames="{
                                       wrap: $style['agree-list__checkbox'],
                                     }"
@@ -1383,7 +1441,7 @@ export default {
                                   <li :class="$style['agree-list__item']">
                                     <div :class="$style['agree-list__head']">
                                       <CheckBox
-                                        id="layerMyLoanOnlineContractIntermediateAgree_008_001_002_001"
+                                        id="layerMyLoanOnlineContractIntermediateAgree_009_001_002_001"
                                         :classNames="{
                                           wrap: $style['agree-list__checkbox'],
                                         }"
@@ -1399,7 +1457,7 @@ export default {
                                   <li :class="$style['agree-list__item']">
                                     <div :class="$style['agree-list__head']">
                                       <CheckBox
-                                        id="layerMyLoanOnlineContractIntermediateAgree_008_001_002_002"
+                                        id="layerMyLoanOnlineContractIntermediateAgree_009_001_002_002"
                                         :classNames="{
                                           wrap: $style['agree-list__checkbox'],
                                         }"
@@ -1415,7 +1473,7 @@ export default {
                                   <li :class="$style['agree-list__item']">
                                     <div :class="$style['agree-list__head']">
                                       <CheckBox
-                                        id="layerMyLoanOnlineContractIntermediateAgree_008_001_002_003"
+                                        id="layerMyLoanOnlineContractIntermediateAgree_009_001_002_003"
                                         :classNames="{
                                           wrap: $style['agree-list__checkbox'],
                                         }"
@@ -1431,7 +1489,7 @@ export default {
                                   <li :class="$style['agree-list__item']">
                                     <div :class="$style['agree-list__head']">
                                       <CheckBox
-                                        id="layerMyLoanOnlineContractIntermediateAgree_008_001_002_004"
+                                        id="layerMyLoanOnlineContractIntermediateAgree_009_001_002_004"
                                         :classNames="{
                                           wrap: $style['agree-list__checkbox'],
                                         }"
@@ -1447,7 +1505,7 @@ export default {
                                   <li :class="$style['agree-list__item']">
                                     <div :class="$style['agree-list__head']">
                                       <CheckBox
-                                        id="layerMyLoanOnlineContractIntermediateAgree_008
+                                        id="layerMyLoanOnlineContractIntermediateAgree_009
                                         
                                         _001_002_005"
                                         :classNames="{
