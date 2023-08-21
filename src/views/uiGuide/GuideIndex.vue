@@ -2324,7 +2324,12 @@ const datas = () => [
         path: '/ui-guide/inventory-finance-check-001',
         status: 'end',
         create: '2023.05.05',
-        log: [],
+        log: [
+          {
+            date: '2023.08.21',
+            text: '- IF_M11_l002 placeholder 보완',
+          },
+        ],
       },
     ],
   },
@@ -3114,6 +3119,10 @@ const datas = () => [
           {
             date: '2023.08.10',
             text: 'AF_M00_l001 다음 버튼 추가',
+          },
+          {
+            date: '2023.08.21',
+            text: '- AF_M00_l005 placeholder 보완\n- AF_M00_l006 placeholder 보완\n- AF_M00_l007 placeholder 보완',
           },
         ],
       },

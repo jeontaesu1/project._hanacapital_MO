@@ -206,6 +206,7 @@ export default {
           <FormList :classNames="{ wrap: 'row-margin-contents' }">
             <FormListItem
               titleText="색상명"
+              :forceFocus="true"
               target="#layerAutoEstimateSelectColorExteriorColorName"
             >
               <FormInvalid :error="state.exteriorColorNameError">
@@ -213,7 +214,7 @@ export default {
                   <InputBlockCell :flexible="true">
                     <BasicInput
                       title="색상명 입력"
-                      placeholder="색상명을 입력해 주세요."
+                      placeholder="색상명을 입력해 주세요"
                       id="layerAutoEstimateSelectColorExteriorColorName"
                     />
                   </InputBlockCell>
@@ -224,6 +225,7 @@ export default {
 
             <FormListItem
               titleText="옵션금액"
+              :forceFocus="true"
               target="#layerAutoEstimateSelectColorExteriorOptionPrice"
             >
               <FormInvalid :error="state.exteriorOptionPriceError">
@@ -231,7 +233,7 @@ export default {
                   <InputBlockCell :flexible="true">
                     <BasicInput
                       title="옵션금액 입력"
-                      placeholder="금액을 입력해 주세요."
+                      placeholder="금액을 입력해 주세요"
                       id="layerAutoEstimateSelectColorExteriorOptionPrice"
                       pattern="\d*"
                       :useDelete="false"
@@ -310,6 +312,7 @@ export default {
           <FormList :classNames="{ wrap: 'row-margin-contents' }">
             <FormListItem
               titleText="색상명"
+              :forceFocus="true"
               target="#layerAutoEstimateSelectColorInteriorColorName"
             >
               <FormInvalid :error="state.interiorColorNameError">
@@ -317,7 +320,7 @@ export default {
                   <InputBlockCell :flexible="true">
                     <BasicInput
                       title="색상명 입력"
-                      placeholder="색상명을 입력해 주세요."
+                      placeholder="색상명을 입력해 주세요"
                       id="layerAutoEstimateSelectColorInteriorColorName"
                     />
                   </InputBlockCell>
@@ -328,6 +331,7 @@ export default {
 
             <FormListItem
               titleText="옵션금액"
+              :forceFocus="true"
               target="#layerAutoEstimateSelectColorInteriorOptionPrice"
             >
               <FormInvalid :error="state.interiorOptionPriceError">
@@ -335,7 +339,7 @@ export default {
                   <InputBlockCell :flexible="true">
                     <BasicInput
                       title="옵션금액 입력"
-                      placeholder="금액을 입력해 주세요."
+                      placeholder="금액을 입력해 주세요"
                       id="layerAutoEstimateSelectColorInteriorOptionPrice"
                       pattern="\d*"
                       :useDelete="false"

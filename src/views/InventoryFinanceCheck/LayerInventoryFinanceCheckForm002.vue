@@ -82,6 +82,7 @@ export default {
           <FormListItem
             titleText="전시위치"
             :require="true"
+            :forceFocus="true"
             target="#layerInventoryFinanceCheckForm002Area"
           >
             <FormInvalid :error="state.areaError">
@@ -89,6 +90,7 @@ export default {
                 <InputBlockCell :flexible="true">
                   <BasicInput
                     title="전시위치"
+                    placeholder="위치를 입력해 주세요"
                     id="layerInventoryFinanceCheckForm002Area"
                   />
                 </InputBlockCell>

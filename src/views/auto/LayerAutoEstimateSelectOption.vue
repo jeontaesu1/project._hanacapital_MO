@@ -209,6 +209,7 @@ export default {
       <FormList :classNames="{ wrap: 'row-margin-contents' }">
         <FormListItem
           titleText="옵션명"
+          :forceFocus="true"
           target="#layerAutoEstimateSelectOptionName"
         >
           <FormInvalid :error="state.optionNameError">
@@ -216,7 +217,7 @@ export default {
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="옵션명 입력"
-                  placeholder="옵션명을 입력해 주세요."
+                  placeholder="옵션명을 입력해 주세요"
                   id="layerAutoEstimateSelectOptionName"
                 />
               </InputBlockCell>
@@ -227,6 +228,7 @@ export default {
 
         <FormListItem
           titleText="옵션금액"
+          :forceFocus="true"
           target="#layerAutoEstimateSelectOptionPrice"
         >
           <FormInvalid :error="state.optionPriceError">
@@ -234,7 +236,7 @@ export default {
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="옵션금액 입력"
-                  placeholder="옵션금액을 입력해 주세요."
+                  placeholder="옵션금액을 입력해 주세요"
                   id="layerAutoEstimateSelectOptionPrice"
                   pattern="\d*"
                   :useDelete="false"

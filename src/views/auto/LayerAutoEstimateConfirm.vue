@@ -280,15 +280,17 @@ export default {
         <FormListItem
           titleText="할인금액"
           titleOptionalText="(선택)"
+          :forceFocus="true"
           target="#layerAutoEstimateConfirmDiscountPrice"
         >
           <FormInvalid :error="state.discountPriceError">
             <InputBlock :error="state.discountPriceError">
               <InputBlockCell :flexible="true">
                 <BasicInput
-                  title="할인금액 입력"
-                  id="layerAutoEstimateConfirmDiscountPrice"
                   pattern="\d*"
+                  title="할인금액 입력"
+                  placeholder="금액을 입력해 주세요"
+                  id="layerAutoEstimateConfirmDiscountPrice"
                   :useDelete="false"
                   align="right"
                 />
