@@ -2994,8 +2994,8 @@ export default {
                           <div class="text-body-4">수수료</div>
                         </KeyValueTitle>
                         <KeyValueText>
-                          CM : 0.003% (690,000원)<br />
-                          AG : 0.000% (000,000원)
+                          CM : 690,000원 (0.003%)<br />
+                          AG : 000,000원 (0.000%)
                         </KeyValueText>
                       </KeyValueItem>
                     </KeyValue>
@@ -3112,8 +3112,8 @@ export default {
                           <div class="text-body-4">기타</div>
                         </KeyValueTitle>
                         <KeyValueText>
-                          CM : 0.003% (690,000원)<br />
-                          AG : 0.000% (000,000원)
+                          CM : 690,000원 (0.003%)<br />
+                          AG : 000,000원 (0.000%)
                         </KeyValueText>
                       </KeyValueItem>
                     </KeyValue>
@@ -3745,10 +3745,10 @@ export default {
                 취득원가
               </KeyValueTitle>
               <KeyValueText>
-                <BasicButton size="mini" inline="true">계산하기</BasicButton>
+                <BasicButton size="small" inline="true">계산하기</BasicButton>
 
                 <!-- Case : 로딩중 -->
-                <BasicButton size="mini" inline="true">
+                <BasicButton size="small" inline="true">
                   계산중
                   <template v-slot:rightIcon>
                     <div :class="$style['loading-icon']"></div>
@@ -5459,11 +5459,11 @@ export default {
                         월 납입금
                       </KeyValueTitle>
                       <KeyValueText>
-                        <BasicButton size="mini" inline="true"
+                        <BasicButton size="small" inline="true"
                           >계산하기</BasicButton
                         >
                         <!-- Case : 계산중 -->
-                        <BasicButton size="mini" inline="true">
+                        <BasicButton size="small" inline="true">
                           계산중
                           <template v-slot:rightIcon>
                             <div :class="$style['loading-icon']"></div>
@@ -5484,17 +5484,36 @@ export default {
                         월 납입금
                       </KeyValueTitle>
                       <KeyValueText>
-                        <UnitText rightUnit="원" align="right">
-                          880,300
-                        </UnitText>
-                        <div
-                          class="flex-box justify-conten-end text-body-3 font-weight-medium row-margin-mini"
-                        >
-                          <div class="flex-box__cell">~ 6,438,620</div>
-                          <div class="flex-box__cell flex-box__cell--mini">
-                            원
+                        <!-- Case : 운용리스 -->
+                        <div class="flex-box align-items-end">
+                          <div class="flex-box__cell flex-1">
+                            <UnitText rightUnit="원" align="right">
+                              880,300
+                            </UnitText>
+                          </div>
+                          <div class="flex-box__cell flex-box__cell--small">
+                            <div class="text-body-3">(7.51%)</div>
                           </div>
                         </div>
+                        <!-- // Case : 운용리스 -->
+
+                        <!-- Case : 금융리스 -->
+                        <div>
+                          <UnitText rightUnit="원" align="right">
+                            6,191,360
+                          </UnitText>
+                          <div class="flex-box row-margin-mini">
+                            <div class="flex-box__cell flex-1">
+                              <div class="text-body-3">~</div>
+                            </div>
+                            <div class="flex-box__cell flex-box__cell--small">
+                              <UnitText rightUnit="원" align="right">
+                                6,438,620
+                              </UnitText>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- // Case : 금융리스 -->
                       </KeyValueText>
                     </KeyValueItem>
                     <!-- // Case : 견적 계산 후 -->

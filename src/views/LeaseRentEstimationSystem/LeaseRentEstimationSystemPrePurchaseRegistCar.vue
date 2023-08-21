@@ -2480,7 +2480,7 @@ export default {
                     </div>
                   </div>
                   <div class="flex-box__cell">
-                    <BasicButton size="mini">목록추가</BasicButton>
+                    <BasicButton size="small">목록추가</BasicButton>
                   </div>
                 </div>
               </KeyValueText>

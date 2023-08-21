@@ -3547,8 +3547,8 @@ export default {
                           <div class="text-body-4">수수료</div>
                         </KeyValueTitle>
                         <KeyValueText>
-                          CM : 0.003% (690,000원)<br />
-                          AG : 0.000% (000,000원)
+                          CM : 690,000원 (0.003%)<br />
+                          AG : 000,000원 (0.000%)
                         </KeyValueText>
                       </KeyValueItem>
                     </KeyValue>
@@ -3665,8 +3665,8 @@ export default {
                           <div class="text-body-4">기타</div>
                         </KeyValueTitle>
                         <KeyValueText>
-                          CM : 0.003% (690,000원)<br />
-                          AG : 0.000% (000,000원)
+                          CM : 690,000원 (0.003%)<br />
+                          AG : 000,000원 (0.000%)
                         </KeyValueText>
                       </KeyValueItem>
                     </KeyValue>
@@ -5369,11 +5369,11 @@ export default {
                         월 납입금
                       </KeyValueTitle>
                       <KeyValueText>
-                        <BasicButton size="mini" inline="true"
+                        <BasicButton size="small" inline="true"
                           >계산하기</BasicButton
                         >
                         <!-- Case : 계산중 -->
-                        <BasicButton size="mini" inline="true">
+                        <BasicButton size="small" inline="true">
                           계산중
                           <template v-slot:rightIcon>
                             <div :class="$style['loading-icon']"></div>
