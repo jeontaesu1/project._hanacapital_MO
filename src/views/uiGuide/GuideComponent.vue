@@ -3683,6 +3683,155 @@ export default {
           />
         </div>
       </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Placeholder</h3>
+
+        <FormList>
+          <FormListItem titleText="title text" target="#testInput016">
+            <FormInvalid :error="state.testError001">
+              <InputBlock :error="state.testError001">
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    title="title"
+                    id="testInput016"
+                    placeholder="placeholder"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem
+            titleText="title text"
+            :selectOnly="true"
+            target="#testInput017"
+          >
+            <FormInvalid :error="state.testError001">
+              <InputBlock :error="state.testError001">
+                <InputBlockCell :flexible="true">
+                  <BasicSelect
+                    :option="[
+                      {
+                        value: '1',
+                        text: 'Option 001',
+                      },
+                      {
+                        value: '2',
+                        text: 'Option 002',
+                      },
+                      {
+                        value: '3',
+                        text: 'Option 003',
+                      },
+                      {
+                        value: '4',
+                        text: 'Option 004',
+                      },
+                      {
+                        value: '5',
+                        text: 'Option 005',
+                      },
+                      {
+                        value: '6',
+                        text: 'Option 006',
+                      },
+                      {
+                        value: '7',
+                        text: 'Option 007',
+                      },
+                      {
+                        value: '8',
+                        text: 'Option 008',
+                      },
+                    ]"
+                    buttonTitle="OOO 선택하기"
+                    layerTitle="OOO를 선택해 주세요"
+                    buttonId="testInput017"
+                    placeholder="placeholder"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem
+            titleText="title text"
+            :forceFocus="true"
+            target="#testInput018"
+          >
+            <FormInvalid :error="state.testError001">
+              <InputBlock :error="state.testError001">
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    title="title"
+                    id="testInput018"
+                    placeholder="placeholder"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem
+            titleText="title text"
+            :forceFocus="true"
+            :selectOnly="true"
+            target="#testInput019"
+          >
+            <FormInvalid :error="state.testError001">
+              <InputBlock :error="state.testError001">
+                <InputBlockCell :flexible="true">
+                  <BasicSelect
+                    :option="[
+                      {
+                        value: '1',
+                        text: 'Option 001',
+                      },
+                      {
+                        value: '2',
+                        text: 'Option 002',
+                      },
+                      {
+                        value: '3',
+                        text: 'Option 003',
+                      },
+                      {
+                        value: '4',
+                        text: 'Option 004',
+                      },
+                      {
+                        value: '5',
+                        text: 'Option 005',
+                      },
+                      {
+                        value: '6',
+                        text: 'Option 006',
+                      },
+                      {
+                        value: '7',
+                        text: 'Option 007',
+                      },
+                      {
+                        value: '8',
+                        text: 'Option 008',
+                      },
+                    ]"
+                    buttonTitle="OOO 선택하기"
+                    layerTitle="OOO를 선택해 주세요"
+                    buttonId="testInput019"
+                    placeholder="placeholder"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+        </FormList>
+      </div>
     </section>
 
     <section class="test-section">
