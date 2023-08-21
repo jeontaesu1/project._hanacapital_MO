@@ -9,6 +9,7 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import LayerPersonalLoanIdentificationMethodSelect from '@/views/personalLoan/LayerPersonalLoanIdentificationMethodSelect.vue';
 import LayerPersonalLoanHappinessApartmentAgree from '@/views/personalLoan/LayerPersonalLoanHappinessApartmentAgree.vue';
 import LayerPersonalLoanHappinessApartmentSearch from '@/views/personalLoan/LayerPersonalLoanHappinessApartmentSearch.vue';
+import PF_M02_b201 from '@/views/personalLoan/PF_M02_b201.vue';
 import LayerPersonalLoanHappinessApartmentValusation from '@/views/personalLoan/LayerPersonalLoanHappinessApartmentValusation.vue';
 import LayerPersonalLoanHappinessApartmentCertified from '@/views/personalLoan/LayerPersonalLoanHappinessApartmentCertified.vue';
 import LayerPersonalLoanHappinessApartmentCertifiedConfirm from '@/views/personalLoan/LayerPersonalLoanHappinessApartmentCertifiedConfirm.vue';
@@ -24,6 +25,7 @@ export default {
     LayerPersonalLoanIdentificationMethodSelect,
     LayerPersonalLoanHappinessApartmentAgree,
     LayerPersonalLoanHappinessApartmentSearch,
+    PF_M02_b201,
     LayerPersonalLoanHappinessApartmentValusation,
     LayerPersonalLoanHappinessApartmentCertified,
     LayerPersonalLoanHappinessApartmentCertifiedConfirm,
@@ -39,6 +41,7 @@ export default {
     const layer006 = ref(null);
     const layer007 = ref(null);
     const layer008 = ref(null);
+    const layer009 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -64,6 +67,9 @@ export default {
     const layer008Open = (e = {}) => {
       layer008.value.layer.open(e.target);
     };
+    const layer009Open = (e = {}) => {
+      layer009.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -74,6 +80,7 @@ export default {
       layer006,
       layer007,
       layer008,
+      layer009,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -82,6 +89,7 @@ export default {
       layer006Open,
       layer007Open,
       layer008Open,
+      layer009Open,
     };
   },
 };
@@ -115,30 +123,36 @@ export default {
 
       <ButtonListItem>
         <BasicButton @click="layer004Open">
-          아파트 정보 입력<br />PF_M02_l002
+          아파트 평형 선택 팝업<br />PF_M02_b201
         </BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
         <BasicButton @click="layer005Open">
-          아파트 등기부등본<br />PF_M02_l004
+          아파트 정보 입력<br />PF_M02_l002
         </BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
         <BasicButton @click="layer006Open">
-          아파트 등기부등본 확인<br />PF_M02_l005
+          아파트 등기부등본<br />PF_M02_l004
         </BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
         <BasicButton @click="layer007Open">
-          한도조회 결과<br />PF_M02_l006
+          아파트 등기부등본 확인<br />PF_M02_l005
         </BasicButton>
       </ButtonListItem>
 
       <ButtonListItem>
         <BasicButton @click="layer008Open">
+          한도조회 결과<br />PF_M02_l006
+        </BasicButton>
+      </ButtonListItem>
+
+      <ButtonListItem>
+        <BasicButton @click="layer009Open">
           신청 정보 입력<br />PF_M02_l007
         </BasicButton>
       </ButtonListItem>
@@ -147,10 +161,11 @@ export default {
     <LayerPersonalLoanIdentificationMethodSelect ref="layer001" />
     <LayerPersonalLoanHappinessApartmentAgree ref="layer002" />
     <LayerPersonalLoanHappinessApartmentSearch ref="layer003" />
-    <LayerPersonalLoanHappinessApartmentValusation ref="layer004" />
-    <LayerPersonalLoanHappinessApartmentCertified ref="layer005" />
-    <LayerPersonalLoanHappinessApartmentCertifiedConfirm ref="layer006" />
-    <LayerPersonalLoanHappinessApartmentResult ref="layer007" />
-    <LayerPersonalLoanHappinessApartmentInput ref="layer008" />
+    <PF_M02_b201 ref="layer004" />
+    <LayerPersonalLoanHappinessApartmentValusation ref="layer005" />
+    <LayerPersonalLoanHappinessApartmentCertified ref="layer006" />
+    <LayerPersonalLoanHappinessApartmentCertifiedConfirm ref="layer007" />
+    <LayerPersonalLoanHappinessApartmentResult ref="layer008" />
+    <LayerPersonalLoanHappinessApartmentInput ref="layer009" />
   </PageContents>
 </template>
