@@ -4466,7 +4466,12 @@ const datas = () => [
         path: '/company/about',
         status: 'end',
         create: '2023.05.16',
-        log: [],
+        log: [
+          {
+            date: '2023.08.21',
+            text: '버튼 사이즈 변경',
+          },
+        ],
       },
       {
         depth2: '회사소개',

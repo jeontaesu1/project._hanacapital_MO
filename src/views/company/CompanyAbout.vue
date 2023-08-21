@@ -63,7 +63,7 @@ export default {
         <ButtonList :wrap="true" :classNames="{ wrap: 'row-margin-contents' }">
           <ButtonListItem>
             <BasicButton
-              size="mini"
+              size="small"
               theme="quaternary"
               tagName="RouterLink"
               to="/company/ceo"
@@ -73,7 +73,7 @@ export default {
           </ButtonListItem>
           <ButtonListItem>
             <BasicButton
-              size="mini"
+              size="small"
               theme="quaternary"
               tagName="RouterLink"
               to="/company/history"
@@ -82,7 +82,7 @@ export default {
           </ButtonListItem>
           <ButtonListItem>
             <BasicButton
-              size="mini"
+              size="small"
               theme="quaternary"
               tagName="RouterLink"
               to="/company/business-areas"
@@ -91,7 +91,7 @@ export default {
           </ButtonListItem>
           <ButtonListItem>
             <BasicButton
-              size="mini"
+              size="small"
               theme="quaternary"
               tagName="RouterLink"
               to="/company/ir-list"
@@ -100,7 +100,7 @@ export default {
           </ButtonListItem>
           <ButtonListItem>
             <BasicButton
-              size="mini"
+              size="small"
               theme="quaternary"
               tagName="RouterLink"
               to="/company/sustainable-management-list"
@@ -110,7 +110,7 @@ export default {
           </ButtonListItem>
           <ButtonListItem>
             <BasicButton
-              size="mini"
+              size="small"
               theme="quaternary"
               tagName="RouterLink"
               to="/company/group"
@@ -131,7 +131,7 @@ export default {
         <ButtonList :wrap="true" :classNames="{ wrap: 'row-margin-contents' }">
           <ButtonListItem>
             <BasicButton
-              size="mini"
+              size="small"
               theme="quaternary"
               tagName="RouterLink"
               to="/company/ethics-charter"
@@ -140,7 +140,7 @@ export default {
           </ButtonListItem>
           <ButtonListItem>
             <BasicButton
-              size="mini"
+              size="small"
               theme="quaternary"
               tagName="RouterLink"
               to="/company/ethics-code"
@@ -149,7 +149,7 @@ export default {
           </ButtonListItem>
           <ButtonListItem>
             <BasicButton
-              size="mini"
+              size="small"
               theme="quaternary"
               tagName="RouterLink"
               to="/company/human-rights-declaration"
@@ -159,7 +159,7 @@ export default {
           </ButtonListItem>
           <ButtonListItem>
             <BasicButton
-              size="mini"
+              size="small"
               theme="quaternary"
               tagName="RouterLink"
               to="/company/human-rights-declaration-structure"
@@ -179,7 +179,7 @@ export default {
         <ButtonList :wrap="true" :classNames="{ wrap: 'row-margin-contents' }">
           <ButtonListItem>
             <BasicButton
-              size="mini"
+              size="small"
               theme="quaternary"
               tagName="RouterLink"
               to="/company/recruit-guide"
@@ -188,7 +188,7 @@ export default {
           </ButtonListItem>
           <ButtonListItem>
             <BasicButton
-              size="mini"
+              size="small"
               theme="quaternary"
               tagName="RouterLink"
               to="/company/personnel-welfare"
@@ -198,7 +198,7 @@ export default {
           </ButtonListItem>
           <ButtonListItem>
             <BasicButton
-              size="mini"
+              size="small"
               theme="quaternary"
               tagName="RouterLink"
               to="/company/recruit-list"
