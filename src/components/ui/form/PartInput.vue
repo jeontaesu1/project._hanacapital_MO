@@ -3,11 +3,15 @@ import {
   ref,
   computed,
   onMounted,
+  onBeforeUnmount,
   onUpdated,
   watch,
   inject,
   nextTick,
 } from 'vue';
+
+import { useUiCommonStore } from '@/stores/ui/common';
+import { useUiHeaderStore } from '@/stores/ui/header';
 
 const defaultClassNames = () => ({
   wrap: '',
@@ -54,7 +58,23 @@ export default {
     },
   },
   setup(props, { emit }) {
+    const inputScroll = {
+      timer: null,
+      iosClick: false,
+      iosFocus: false,
+      androidFocus: false,
+      androidClick: false,
+    };
+
     const formListItem = inject('formListItem', {});
+    const popupLayout = inject('popupLayout', {});
+
+    const store = {
+      ui: {
+        common: useUiCommonStore(),
+        header: useUiHeaderStore(),
+      },
+    };
 
     const input = ref(null);
 
@@ -66,6 +86,20 @@ export default {
     const value = computed(() => {
       const { modelValue, defaultValue } = props;
       return typeof modelValue === 'string' ? modelValue : defaultValue;
+    });
+
+    const headerH = computed(() => {
+      const popupHead =
+        popupLayout && popupLayout.head && popupLayout.head.value;
+      const popupHeadH = (() => {
+        if (popupHead) {
+          return popupHead.offsetHeight;
+        } else {
+          return 0;
+        }
+      })();
+
+      return popupHeadH || store.ui.header.height;
     });
 
     const checkLength = () => {
@@ -84,8 +118,91 @@ export default {
       emit('update:modelValue', e.target.value);
     };
 
+    const focusScroll = () => {
+      const { isIos, isAndroid } = store.ui.common.userAgent;
+
+      if (isIos || isAndroid) {
+        const html = document.getElementsByTagName('html')[0];
+        const inputEl = input.value;
+        const popupBodyEl = popupLayout.body ? popupLayout.body.value : null;
+        const offsetTop =
+          (popupBodyEl ? popupBodyEl.scrollTop : html.scrollTop) +
+          inputEl.getBoundingClientRect().top;
+        const moveTop = offsetTop - headerH.value - 50;
+
+        if (popupBodyEl) {
+          if (store.ui.common.userAgent.isIos) {
+            html.scrollTop = 0;
+            clearTimeout(inputScroll.timer);
+            inputScroll.timer = setTimeout(() => {
+              html.scrollTop = moveTop;
+            }, 5);
+          } else {
+            popupBodyEl.scrollTop = moveTop;
+          }
+        } else {
+          html.scrollTop = moveTop;
+        }
+      }
+    };
+
+    const onInputFocusin = () => {
+      if (store.ui.common.userAgent.isIos) {
+        inputScroll.iosFocus = true;
+      } else if (store.ui.common.userAgent.isAndroid) {
+        inputScroll.androidFocus = true;
+        focusScroll();
+      }
+
+      checkLength();
+    };
+
+    const onInputClick = () => {
+      if (store.ui.common.userAgent.isIos) {
+        inputScroll.iosClick = true;
+      } else if (store.ui.common.userAgent.isAndroid) {
+        inputScroll.androidClick = true;
+      }
+    };
+
+    const onKeypadOpened = () => {
+      const { iosFocus, iosClick } = inputScroll;
+
+      if (store.ui.common.userAgent.isIos) {
+        if (iosFocus && !iosClick) {
+          focusScroll();
+        }
+
+        inputScroll.iosFocus = false;
+        inputScroll.iosClick = false;
+      }
+    };
+
+    const onKeypadOpenedLegacy = () => {
+      const { androidFocus, androidClick } = inputScroll;
+
+      if (androidFocus || androidClick) {
+        focusScroll();
+      }
+
+      inputScroll.androidFocus = false;
+    };
+
     onMounted(() => {
       checkLength();
+      window.addEventListener('keypadOpened', onKeypadOpened);
+      window.addEventListener(
+        'legacyAndroidKeypadOpened',
+        onKeypadOpenedLegacy
+      );
+    });
+
+    onBeforeUnmount(() => {
+      window.removeEventListener('keypadOpened', onKeypadOpened);
+      window.removeEventListener(
+        'legacyAndroidKeypadOpened',
+        onKeypadOpenedLegacy
+      );
     });
 
     onUpdated(() => {
@@ -111,6 +228,8 @@ export default {
       value,
       checkLength,
       onInput,
+      onInputFocusin,
+      onInputClick,
     };
   },
 };
@@ -144,10 +263,11 @@ export default {
         :value="value"
         :disabled="disabled"
         @input="onInput"
-        @focusin="checkLength"
+        @focusin="onInputFocusin"
         @focusout="checkLength"
         @keydown="checkLength"
         @keyup="checkLength"
+        @click="onInputClick"
       />
     </div>
     <div

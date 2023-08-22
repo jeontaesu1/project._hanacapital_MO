@@ -7,11 +7,15 @@ import {
   provide,
   onBeforeMount,
   onMounted,
+  onBeforeUnmount,
   onUpdated,
   useCssModule,
   watch,
   nextTick,
 } from 'vue';
+
+import { useUiCommonStore } from '@/stores/ui/common';
+import { useUiHeaderStore } from '@/stores/ui/header';
 
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 
@@ -81,9 +85,24 @@ export default {
   setup(props, context) {
     const { emit } = context;
     let timer = null;
+    const inputScroll = {
+      timer: null,
+      iosClick: false,
+      iosFocus: false,
+      androidFocus: false,
+      androidClick: false,
+    };
 
     const $style = useCssModule();
     const formListStyleModule = inject('formListStyleModule');
+    const popupLayout = inject('popupLayout', {});
+
+    const store = {
+      ui: {
+        common: useUiCommonStore(),
+        header: useUiHeaderStore(),
+      },
+    };
 
     const state = reactive({
       isFocus: false,
@@ -101,6 +120,20 @@ export default {
 
     const isBottom = computed(() => {
       return Boolean(context.slots.bottom);
+    });
+
+    const headerH = computed(() => {
+      const popupHead =
+        popupLayout && popupLayout.head && popupLayout.head.value;
+      const popupHeadH = (() => {
+        if (popupHead) {
+          return popupHead.offsetHeight;
+        } else {
+          return 0;
+        }
+      })();
+
+      return popupHeadH || store.ui.header.height;
     });
 
     const getInputElement = () => {
@@ -141,6 +174,7 @@ export default {
       checkLength();
       state.isFocus = true;
       state.isInputed = input.value.value.length ? true : false;
+      onInputFocusin();
     };
 
     const onfocusout = () => {
@@ -168,6 +202,74 @@ export default {
       checkInputed();
     };
 
+    const focusScroll = () => {
+      const { isIos, isAndroid } = store.ui.common.userAgent;
+
+      if (isIos || isAndroid) {
+        const html = document.getElementsByTagName('html')[0];
+        const inputEl = input.value;
+        const popupBodyEl = popupLayout.body ? popupLayout.body.value : null;
+        const offsetTop =
+          (popupBodyEl ? popupBodyEl.scrollTop : html.scrollTop) +
+          inputEl.getBoundingClientRect().top;
+        const moveTop = offsetTop - headerH.value - 50;
+
+        if (popupBodyEl) {
+          if (store.ui.common.userAgent.isIos) {
+            html.scrollTop = 0;
+            clearTimeout(inputScroll.timer);
+            inputScroll.timer = setTimeout(() => {
+              html.scrollTop = moveTop;
+            }, 5);
+          } else {
+            popupBodyEl.scrollTop = moveTop;
+          }
+        } else {
+          html.scrollTop = moveTop;
+        }
+      }
+    };
+
+    const onInputFocusin = () => {
+      if (store.ui.common.userAgent.isIos) {
+        inputScroll.iosFocus = true;
+      } else if (store.ui.common.userAgent.isAndroid) {
+        inputScroll.androidFocus = true;
+        focusScroll();
+      }
+    };
+
+    const onInputClick = () => {
+      if (store.ui.common.userAgent.isIos) {
+        inputScroll.iosClick = true;
+      } else if (store.ui.common.userAgent.isAndroid) {
+        inputScroll.androidClick = true;
+      }
+    };
+
+    const onKeypadOpened = () => {
+      const { iosFocus, iosClick } = inputScroll;
+
+      if (store.ui.common.userAgent.isIos) {
+        if (iosFocus && !iosClick) {
+          focusScroll();
+        }
+
+        inputScroll.iosFocus = false;
+        inputScroll.iosClick = false;
+      }
+    };
+
+    const onKeypadOpenedLegacy = () => {
+      const { androidFocus, androidClick } = inputScroll;
+
+      if (androidFocus || androidClick) {
+        focusScroll();
+      }
+
+      inputScroll.androidFocus = false;
+    };
+
     onBeforeMount(() => {
       state.val = props.modelValue || props.defaultValue || '';
     });
@@ -175,6 +277,19 @@ export default {
     onMounted(() => {
       checkLength();
       checkInputed();
+      window.addEventListener('keypadOpened', onKeypadOpened);
+      window.addEventListener(
+        'legacyAndroidKeypadOpened',
+        onKeypadOpenedLegacy
+      );
+    });
+
+    onBeforeUnmount(() => {
+      window.removeEventListener('keypadOpened', onKeypadOpened);
+      window.removeEventListener(
+        'legacyAndroidKeypadOpened',
+        onKeypadOpenedLegacy
+      );
     });
 
     onUpdated(() => {
@@ -215,6 +330,7 @@ export default {
       onKeydown,
       onKeyup,
       onfocusout,
+      onInputClick,
     };
   },
 };
@@ -301,6 +417,7 @@ export default {
             @focusout="onfocusout"
             @keydown="onKeydown"
             @keyup="onKeyup"
+            @click="onInputClick"
           ></textarea>
         </div>
         <div

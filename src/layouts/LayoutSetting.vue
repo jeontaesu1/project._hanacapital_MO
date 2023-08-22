@@ -76,6 +76,10 @@ export default {
     };
 
     onMounted(() => {
+      store.ui.common.setUserAgent();
+      store.ui.common.keypadCheckOn();
+      store.ui.common.keypadCheckOnLegacy();
+      store.ui.common.isKeypadClass();
       store.ui.common.setScrollbarsWidth();
 
       window.addEventListener('resize', resize);
