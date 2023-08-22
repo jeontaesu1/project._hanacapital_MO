@@ -145,7 +145,8 @@
   &--theme {
     &-secondary,
     &-tertiary,
-    &-quinary {
+    &-quinary,
+    &-senary {
       .checkbox__object {
         &-inner {
           border-color: transparent;
@@ -268,6 +269,30 @@
             padding-top: 0;
           }
         }
+      }
+    }
+
+    &-senary {
+      .checkbox__label {
+        @include font-size-default(14);
+      }
+
+      .checkbox__text {
+        padding-top: 2px;
+        font-weight: 400;
+      }
+
+      &.checkbox--align {
+        &-center {
+          .checkbox__text {
+            padding-top: 0;
+          }
+        }
+      }
+
+      .checkbox__object + .checkbox__text,
+      .checkbox__text + .checkbox__object {
+        margin-left: 4px;
       }
     }
   }
