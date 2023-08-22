@@ -94,12 +94,12 @@ export default {
           입력해 주세요
         </PageMainText>
 
-        <!-- Case: 제휴사 중고차 약정일 경우 문구 노출 -->
+        <!-- Case: 제휴사 중고차 '약정', '구약정'일 경우 문구 노출 -->
         <PageMainText>
           <strong>대출금 지급 및 자동이체</strong><br />
           계좌(본인계좌)를 입력해 주세요.
         </PageMainText>
-        <!-- // Case: 제휴사 중고차 약정일 경우 문구 노출 -->
+        <!-- // Case: 제휴사 중고차 '약정', '구약정'일 경우 문구 노출 -->
       </PageTextGroup>
 
       <FormList>
@@ -205,6 +205,7 @@ export default {
             </FormInvalidMessage>
             <FormHelpText>‘-’ 를 제외하고 입력해주세요.</FormHelpText>
           </FormInvalid>
+          <!-- Case : 제휴사 중고차 '구약정'일 경우 미노출 -->
           <div class="flex-box row-margin-item">
             <div class="flex-box__cell flex-1">
               <NoticeText>보유하고 있는 계좌를 조회하세요.</NoticeText>
@@ -215,6 +216,7 @@ export default {
               </TextButton>
             </div>
           </div>
+          <!-- // Case : 제휴사 중고차 '구약정'일 경우 미노출 -->
         </FormListItem>
       </FormList>
 
