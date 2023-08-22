@@ -3856,7 +3856,12 @@ const datas = () => [
         path: '/ui-guide/my-loan-progress-003',
         status: 'end',
         create: '2023.04.26',
-        log: [],
+        log: [
+          {
+            date: '2023.08.23',
+            text: 'My_M99_l001 문구 및 레벨 수정',
+          },
+        ],
       },
       {
         depth2: '진행상태조회\nMy_M03_p001',
@@ -3900,7 +3905,12 @@ const datas = () => [
         path: '/ui-guide/my-loan-progress-007',
         status: 'end',
         create: '2023.04.26',
-        log: [],
+        log: [
+          {
+            date: '2023.08.23',
+            text: 'My_M03_l054 문구 및 레벨 수정, 항목 추가',
+          },
+        ],
       },
       {
         depth2: '진행상태조회\nMy_M03_p001',
