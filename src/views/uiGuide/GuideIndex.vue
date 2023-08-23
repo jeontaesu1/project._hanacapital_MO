@@ -3872,7 +3872,12 @@ const datas = () => [
         path: '/ui-guide/my-loan-progress-004',
         status: 'end',
         create: '2023.04.26',
-        log: [],
+        log: [
+          {
+            date: '2023.08.23',
+            text: 'My_M99_l003 문구 및 레벨 수정',
+          },
+        ],
       },
       {
         depth2: '진행상태조회\nMy_M03_p001',
@@ -3883,7 +3888,12 @@ const datas = () => [
         path: '/ui-guide/my-loan-progress-005',
         status: 'end',
         create: '2023.04.26',
-        log: [],
+        log: [
+          {
+            date: '2023.08.23',
+            text: '문구 및 레벨 수정\n- My_M99_l004\n- My_M99_l005',
+          },
+        ],
       },
       {
         depth2: '진행상태조회\nMy_M03_p001',
@@ -3894,7 +3904,12 @@ const datas = () => [
         path: '/ui-guide/my-loan-progress-006',
         status: 'end',
         create: '2023.04.26',
-        log: [],
+        log: [
+          {
+            date: '2023.08.23',
+            text: 'My_M99_l006 문구 및 레벨 수정, 항목 추가',
+          },
+        ],
       },
       {
         depth2: '진행상태조회\nMy_M03_p001',
@@ -3921,7 +3936,12 @@ const datas = () => [
         path: '/ui-guide/my-loan-progress-008',
         status: 'end',
         create: '2023.04.26',
-        log: [],
+        log: [
+          {
+            date: '2023.08.23',
+            text: 'My_M99_l007 문구 및 레벨 수정, 항목 추가',
+          },
+        ],
       },
       {
         depth2: '진행상태조회\nMy_M03_p001',
@@ -3936,6 +3956,10 @@ const datas = () => [
           {
             date: '2023.08.11',
             text: 'My_M03_l271 컨텐츠 내 문구 수정',
+          },
+          {
+            date: '2023.08.23',
+            text: 'My_M99_l008 문구 및 레벨 수정, 항목 추가',
           },
         ],
       },
@@ -3953,6 +3977,10 @@ const datas = () => [
             date: '2023.08.11',
             text: 'My_M03_l282 컨텐츠 내 문구 수정',
           },
+          {
+            date: '2023.08.23',
+            text: 'My_M99_l009 문구 및 레벨 수정, 항목 추가',
+          },
         ],
       },
       {
@@ -3968,6 +3996,10 @@ const datas = () => [
           {
             date: '2023.08.11',
             text: 'My_M03_l287 컨텐츠 내 문구 수정',
+          },
+          {
+            date: '2023.08.23',
+            text: '문구 및 레벨 수정\n- My_M99_l010\n- My_M99_l011',
           },
         ],
       },
