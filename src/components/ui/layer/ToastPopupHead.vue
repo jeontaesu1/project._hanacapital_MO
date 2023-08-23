@@ -1,11 +1,22 @@
 <script>
-import { computed, inject } from 'vue';
+import { computed, inject, reactive, onBeforeMount, onUpdated } from 'vue';
 
 const defaultClassNames = () => ({
   wrap: '',
   center: '',
   right: '',
 });
+
+const isSlot = (slot) => {
+  if (!slot || typeof slot !== 'function') return false;
+
+  const items = slot();
+  let vIfLength = 0;
+
+  items.forEach((item) => item.children === 'v-if' && vIfLength++);
+
+  return items.length !== vIfLength;
+};
 
 export default {
   props: {
@@ -16,8 +27,12 @@ export default {
       },
     },
   },
-  setup(props, context) {
+  setup(props, { slots }) {
     const styleModule = inject('popupStyleModule');
+
+    const state = reactive({
+      slots: {},
+    });
 
     const customClassNames = computed(() => {
       const { classNames } = props;
@@ -25,7 +40,15 @@ export default {
     });
 
     const isRight = computed(() => {
-      return Boolean(context.slots.right);
+      return isSlot(state.slots.right);
+    });
+
+    onBeforeMount(() => {
+      state.slots.right = slots.right;
+    });
+
+    onUpdated(() => {
+      state.slots.right = slots.right;
     });
 
     return {

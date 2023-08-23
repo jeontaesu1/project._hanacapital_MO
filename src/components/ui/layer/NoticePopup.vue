@@ -1,5 +1,12 @@
 <script>
-import { computed, useCssModule, provide } from 'vue';
+import {
+  computed,
+  useCssModule,
+  provide,
+  reactive,
+  onBeforeMount,
+  onUpdated,
+} from 'vue';
 
 const defaultClassNames = () => ({
   wrap: '',
@@ -8,6 +15,17 @@ const defaultClassNames = () => ({
   block: '',
   body: '',
 });
+
+const isSlot = (slot) => {
+  if (!slot || typeof slot !== 'function') return false;
+
+  const items = slot();
+  let vIfLength = 0;
+
+  items.forEach((item) => item.children === 'v-if' && vIfLength++);
+
+  return items.length !== vIfLength;
+};
 
 export default {
   props: {
@@ -22,29 +40,45 @@ export default {
       default: false,
     },
   },
-  setup(props, context) {
+  setup(props, { slots }) {
+    const state = reactive({
+      slots: {},
+    });
+
     const customClassNames = computed(() => {
       const { classNames } = props;
       return Object.assign(defaultClassNames(), classNames);
     });
 
-    const isSlot = computed(() => {
-      return Boolean(context.slots.default);
+    const isSlotDefault = computed(() => {
+      return isSlot(state.slots.default);
     });
 
     const isOuterTop = computed(() => {
-      return Boolean(context.slots.outerTop);
+      return isSlot(state.slots.outerTop);
     });
 
     const isOuterBottom = computed(() => {
-      return Boolean(context.slots.outerBottom);
+      return isSlot(state.slots.outerBottom);
+    });
+
+    onBeforeMount(() => {
+      state.slots.default = slots.default;
+      state.slots.outerTop = slots.outerTop;
+      state.slots.outerBottom = slots.outerBottom;
+    });
+
+    onUpdated(() => {
+      state.slots.default = slots.default;
+      state.slots.outerTop = slots.outerTop;
+      state.slots.outerBottom = slots.outerBottom;
     });
 
     provide('popupStyleModule', useCssModule());
 
     return {
       customClassNames,
-      isSlot,
+      isSlotDefault,
       isOuterTop,
       isOuterBottom,
     };
@@ -62,7 +96,7 @@ export default {
     </div>
     <div :class="[$style['popup__block'], customClassNames.block]">
       <div
-        v-if="isSlot"
+        v-if="isSlotDefault"
         :class="[$style['popup__body'], customClassNames.body]"
       >
         <slot />
