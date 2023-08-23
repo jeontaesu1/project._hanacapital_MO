@@ -191,14 +191,14 @@ export default {
                         </div>
 
                         <ul :class="[$style['basic-list'], 'row-margin-item']">
-                          <li :class="$style['basic-list__item']">
+                          <li
+                            :class="[
+                              $style['basic-list__item'],
+                              'font-weight-regular',
+                            ]"
+                          >
                             <div :class="$style['basic-list__symbol']">*</div>
-                            <div
-                              :class="[
-                                $style['basic-list__content'],
-                                'font-weight-regular',
-                              ]"
-                            >
+                            <div :class="$style['basic-list__content']">
                               예) 1천만원을 중도상환(적용요율을 2%로 가정)할
                               경우, 고객은 최대 20만원의 중도상환수수료를
                               금융회사에 납부해야 함
@@ -325,14 +325,14 @@ export default {
                         </div>
 
                         <ul :class="[$style['basic-list'], 'row-margin-item']">
-                          <li :class="$style['basic-list__item']">
+                          <li
+                            :class="[
+                              $style['basic-list__item'],
+                              'font-weight-regular',
+                            ]"
+                          >
                             <div :class="$style['basic-list__symbol']">*</div>
-                            <div
-                              :class="[
-                                $style['basic-list__content'],
-                                'font-weight-regular',
-                              ]"
-                            >
+                            <div :class="$style['basic-list__content']">
                               예) 대출원금 5천만원(월 상환금액 100만원 가정)인
                               경우, 최대 월 연체이자 약 84만원(연체이자율 20%
                               적용)이 발생하므로 연체가 발생하지 않도록 유의
@@ -815,14 +815,14 @@ export default {
                   </div>
 
                   <ul :class="[$style['basic-list'], 'row-margin-item']">
-                    <li :class="$style['basic-list__item']">
+                    <li
+                      :class="[
+                        $style['basic-list__item'],
+                        'font-weight-regular',
+                      ]"
+                    >
                       <div :class="$style['basic-list__symbol']">*</div>
-                      <div
-                        :class="[
-                          $style['basic-list__content'],
-                          'font-weight-regular',
-                        ]"
-                      >
+                      <div :class="$style['basic-list__content']">
                         기업의 경우(이익증가 등 재무상태 개선, 회사채 등급상승,
                         추가남보 제공 등 신용도상승, 기타 신용상태 개선
                       </div>
@@ -962,14 +962,9 @@ export default {
             </ul>
 
             <ul :class="[$style['basic-list'], 'row-margin-contents']">
-              <li :class="$style['basic-list__item']">
+              <li :class="[$style['basic-list__item'], 'font-weight-regular']">
                 <div :class="$style['basic-list__symbol']">*</div>
-                <div
-                  :class="[
-                    $style['basic-list__content'],
-                    'font-weight-regular',
-                  ]"
-                >
+                <div :class="$style['basic-list__content']">
                   (예시) 중도상환원금 1천만원, 대출기간 3년(1,095일), 잔여기간
                   400일인 경우 중도상환 수수료<br />→ 1천만원x1% +
                   1천만원x(2%-1%) x 400/(1,095-30) = 137,558원
@@ -1511,15 +1506,15 @@ export default {
               </ul>
 
               <ul :class="[$style['basic-list'], 'row-margin-item']">
-                <li :class="$style['basic-list__item']">
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'font-weight-regular',
+                    'color-gray-tertiary',
+                  ]"
+                >
                   <div :class="$style['basic-list__symbol']">※</div>
-                  <div
-                    :class="[
-                      $style['basic-list__content'],
-                      'font-weight-regular',
-                      'color-gray-tertiary',
-                    ]"
-                  >
+                  <div :class="$style['basic-list__content']">
                     위 내용은 이해를 돕기 위해 연체이자만을 1개월을 30일로 보고
                     단순하게 계산한 예시입니다. 연체이자는 대출조건,
                     이자일수계산, 대출종류 등에 따라 달라질 수 있으며, 실제
@@ -2497,12 +2492,12 @@ export default {
                     ]"
                   >
                     <div :class="$style['basic-list__symbol']">*</div>
-                    <div
-                      :class="[$style['basic-list__content'], 'color-green']"
-                    >
-                      하나캐피탈 대표번호(1800-1110) 및
-                      홈페이지(https://www.hanacapital.co.kr), 우편을 통하여
-                      권리 행사할 수 있습니다.
+                    <div :class="$style['basic-list__content']">
+                      <span class="color-green"
+                        >하나캐피탈 대표번호(1800-1110) 및
+                        홈페이지(https://www.hanacapital.co.kr), 우편을 통하여
+                        권리 행사할 수 있습니다.</span
+                      >
                     </div>
                   </li>
                 </ul>

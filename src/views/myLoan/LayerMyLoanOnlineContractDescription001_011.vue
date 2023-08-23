@@ -239,14 +239,14 @@ export default {
                           확인)
                         </div>
                         <ul :class="[$style['basic-list'], 'row-margin-item']">
-                          <li :class="$style['basic-list__item']">
+                          <li
+                            :class="[
+                              $style['basic-list__item'],
+                              'font-weight-regular',
+                            ]"
+                          >
                             <div :class="$style['basic-list__symbol']">*</div>
-                            <div
-                              :class="[
-                                $style['basic-list__content'],
-                                'font-weight-regular',
-                              ]"
-                            >
+                            <div :class="$style['basic-list__content']">
                               예) 2천만을 중도상환(적용요율을 2%로 가정)할 경우,
                               고객은 최대 40만원의 중도상환수수료를 금융회사에
                               납부해야 함
@@ -334,14 +334,14 @@ export default {
                         </div>
 
                         <ul :class="[$style['basic-list'], 'row-margin-item']">
-                          <li :class="$style['basic-list__item']">
+                          <li
+                            :class="[
+                              $style['basic-list__item'],
+                              'font-weight-regular',
+                            ]"
+                          >
                             <div :class="$style['basic-list__symbol']">*</div>
-                            <div
-                              :class="[
-                                $style['basic-list__content'],
-                                'font-weight-regular',
-                              ]"
-                            >
+                            <div :class="$style['basic-list__content']">
                               예) 대출원금 2천만원인 경우, 최대 월연체이자
                               9,861원(연체이자율 13%적용)이 발생하므로 연체가
                               발생하지 않도록 유의
@@ -885,14 +885,14 @@ export default {
                   </div>
 
                   <ul :class="[$style['basic-list'], 'row-margin-item']">
-                    <li :class="$style['basic-list__item']">
+                    <li
+                      :class="[
+                        $style['basic-list__item'],
+                        'font-weight-regular',
+                      ]"
+                    >
                       <div :class="$style['basic-list__symbol']">*</div>
-                      <div
-                        :class="[
-                          $style['basic-list__content'],
-                          'font-weight-regular',
-                        ]"
-                      >
+                      <div :class="$style['basic-list__content']">
                         기업의 경우(이익증가 등 재무상태 개선, 회사채 등급상승,
                         추가남보 제공 등 신용도상승, 기타 신용상태 개선
                       </div>
