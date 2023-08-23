@@ -13,6 +13,7 @@ import PageSubText from '@/components/ui/text/PageSubText.vue';
 import StickyBar from '@/components/ui/common/StickyBar.vue';
 import NavTab from '@/components/ui/tab/NavTab.vue';
 import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 export default {
   components: {
@@ -26,6 +27,7 @@ export default {
     StickyBar,
     NavTab,
     NavTabButton,
+    BottomSticky,
   },
   setup() {
     const store = {
@@ -103,18 +105,24 @@ export default {
     </div>
 
     <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton :line="true" theme="quaternary">Button 1</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton>Button 2</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton :line="true" theme="quaternary"
+                >Button 1</BasicButton
+              >
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton>Button 2</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>

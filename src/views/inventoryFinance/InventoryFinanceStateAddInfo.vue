@@ -27,6 +27,7 @@ import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 export default {
   components: {
@@ -53,6 +54,7 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicButton,
+    BottomSticky,
   },
   setup() {
     const store = {
@@ -328,18 +330,22 @@ export default {
     </FormList>
 
     <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton :line="true" theme="quaternary">이전</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton>다음</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton :line="true" theme="quaternary">이전</BasicButton>
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton>다음</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>
