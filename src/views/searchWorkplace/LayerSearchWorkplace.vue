@@ -1,5 +1,5 @@
 <script>
-// Common_M00_l016
+// Common_M00_l012
 import { ref, reactive } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -86,14 +86,7 @@ export default {
 <template>
   <UiLayer ref="layer" type="full" v-slot="layerSlotProps">
     <UiTab type="popup" v-slot="tabSlotProps">
-      <FullPopup
-        :classNames="{
-          foot:
-            tabSlotProps.activeName !== 'layerSearchWorkplaceTab003'
-              ? 'display-none'
-              : '',
-        }"
-      >
+      <FullPopup>
         <template v-slot:head>
           <FullPopupHead>
             <PopupTitle>직장검색</PopupTitle>
@@ -255,6 +248,7 @@ export default {
 
         <template v-slot:foot>
           <ButtonList
+            v-if="tabSlotProps.activeName === 'layerSearchWorkplaceTab003'"
             :classNames="{
               wrap: 'row-margin-none',
             }"

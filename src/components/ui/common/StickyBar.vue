@@ -111,7 +111,6 @@ export default {
 
       const contentsEl = contents.value;
       const contentsInnerEl = contentsEl.children[0];
-      const offsetTop = wrapEl.offsetTop;
       const popupHead =
         popupLayout && popupLayout.head && popupLayout.head.value;
       const popupHeadH = (() => {
@@ -133,6 +132,7 @@ export default {
           return html.scrollTop;
         }
       })();
+      const offsetTop = scrollTop + wrapEl.getBoundingClientRect().top;
       const stickyH = getStickyH();
       const height = contentsInnerEl.offsetHeight;
 
@@ -256,6 +256,8 @@ export default {
         left: state.isSticky ? '0' : null,
         width: state.isSticky ? '100%' : null,
         zIndex: state.isSticky ? '1000' : null,
+        transform: 'translateZ(0)',
+        transition: 'transform 0s',
       }"
       :class="[
         {
