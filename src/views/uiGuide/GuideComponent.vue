@@ -416,7 +416,12 @@ export default {
 
             <PopupText>// contents</PopupText>
 
-            <BasicButton @click="layerOpenTest002">
+            <BasicButton
+              @click="
+                layerSlotProps.close();
+                layerOpenTest002();
+              "
+            >
               하단 레이어 팝업
             </BasicButton>
 
