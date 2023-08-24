@@ -1,6 +1,6 @@
 <script>
 // PF_M11_l007
-import { ref, reactive } from 'vue';
+import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
@@ -11,16 +11,17 @@ import PageMainText from '@/components/ui/text/PageMainText.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-import BoxCheck from '@/components/ui/form/BoxCheck.vue';
-import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
-import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
-import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
+import BasicBox from '@/components/ui/common/BasicBox.vue';
+import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
+import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
 
+import IconPig from '@/assets/images/icon/pig.svg?component';
+import IconCorporateFinance from '@/assets/images/icon/corporate-finance.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
 
 export default {
@@ -34,30 +35,23 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    BoxCheck,
-    BoxCheckLabel,
-    BoxCheckList,
-    BoxCheckListItem,
     KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
     BasicHr,
+    BasicBox,
+    BasicBoxHead,
+    BasicBoxHeadLeft,
 
+    IconPig,
+    IconCorporateFinance,
     IconCalculate,
   },
   setup() {
-    const state = reactive({
-      typeError: false,
-      sumError: false,
-      termError: false,
-      interestRateError: false,
-    });
-
     const layer = ref(null);
 
     return {
-      state,
       layer,
     };
   },
@@ -83,118 +77,75 @@ export default {
       </PageTextGroup>
 
       <div>
-        <BoxCheckList align="full">
-          <BoxCheckListItem>
-            <BoxCheck
-              :contents="true"
-              name="layerPersonalLoanETCCheckType"
-              id="layerPersonalLoanETCCheckType_001"
-              :defaultChecked="true"
+        <!-- Case : e하나신용대출로 한도조회한 경우 -->
+        <BasicBox>
+          <BasicBoxHead>
+            <BasicBoxHeadLeft>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <IconPig />
+                </div>
+                <div class="flex-box__cell">
+                  <h3 class="text-body-1 font-weight-medium">e하나신용대출</h3>
+                </div>
+              </div>
+            </BasicBoxHeadLeft>
+          </BasicBoxHead>
+          <KeyValue margin="regular">
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
             >
-              <BoxCheckLabel>e하나신용대출</BoxCheckLabel>
-              <KeyValue
-                margin="mini"
-                :classNames="{
-                  wrap: 'row-margin-item',
-                }"
-              >
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-5',
-                  }"
-                >
-                  <KeyValueTitle>최대 한도</KeyValueTitle>
-                  <KeyValueText>7,000만원</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-5',
-                  }"
-                >
-                  <KeyValueTitle>예상 금리</KeyValueTitle>
-                  <KeyValueText>15.1% (00개월 기준)</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
-            </BoxCheck>
-          </BoxCheckListItem>
-          <BoxCheckListItem>
-            <BoxCheck
-              :contents="true"
-              name="layerPersonalLoanETCCheckType"
-              id="layerPersonalLoanETCCheckType_002"
+              <KeyValueTitle>최대 한도</KeyValueTitle>
+              <KeyValueText>7,000만원</KeyValueText>
+            </KeyValueItem>
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
             >
-              <BoxCheckLabel
-                :classNames="{
-                  label: 'font-weight-medium',
-                }"
-                >행복아파트론</BoxCheckLabel
-              >
-              <KeyValue
-                margin="mini"
-                :classNames="{
-                  wrap: 'row-margin-item',
-                }"
-              >
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-5',
-                  }"
-                >
-                  <KeyValueTitle>최대 한도</KeyValueTitle>
-                  <KeyValueText>5,000만원</KeyValueText>
-                </KeyValueItem>
+              <KeyValueTitle>예상 금리</KeyValueTitle>
+              <KeyValueText>15.1% (00개월 기준)</KeyValueText>
+            </KeyValueItem>
+          </KeyValue>
+        </BasicBox>
+        <!-- // Case : e하나신용대출로 한도조회한 경우 -->
 
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-5',
-                  }"
-                >
-                  <KeyValueTitle>예상 금리</KeyValueTitle>
-                  <KeyValueText>17.1% (00개월 기준)</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
-            </BoxCheck>
-          </BoxCheckListItem>
-          <BoxCheckListItem>
-            <BoxCheck
-              :contents="true"
-              name="layerPersonalLoanETCCheckType"
-              id="layerPersonalLoanETCCheckType_003"
+        <!-- Case : 행복아파트론으로 한도조회한 경우 -->
+        <BasicBox>
+          <BasicBoxHead>
+            <BasicBoxHeadLeft>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <IconCorporateFinance />
+                </div>
+                <div class="flex-box__cell">
+                  <h3 class="text-body-1 font-weight-medium">행복아파트론</h3>
+                </div>
+              </div>
+            </BasicBoxHeadLeft>
+          </BasicBoxHead>
+          <KeyValue margin="regular">
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
             >
-              <BoxCheckLabel
-                :classNames="{
-                  label: 'font-weight-medium',
-                }"
-                >원큐자동차담보대출</BoxCheckLabel
-              >
-              <KeyValue
-                margin="mini"
-                :classNames="{
-                  wrap: 'row-margin-item',
-                }"
-              >
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-5',
-                  }"
-                >
-                  <KeyValueTitle>최대 한도</KeyValueTitle>
-                  <KeyValueText>7,000만원</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-5',
-                  }"
-                >
-                  <KeyValueTitle>예상 금리</KeyValueTitle>
-                  <KeyValueText>17.1% (00개월 기준)</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
-            </BoxCheck>
-          </BoxCheckListItem>
-        </BoxCheckList>
+              <KeyValueTitle>최대 한도</KeyValueTitle>
+              <KeyValueText>5,000만원</KeyValueText>
+            </KeyValueItem>
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
+            >
+              <KeyValueTitle>예상 금리</KeyValueTitle>
+              <KeyValueText>17.1% (00개월 기준)</KeyValueText>
+            </KeyValueItem>
+          </KeyValue>
+        </BasicBox>
+        <!-- // Case : 행복아파트론으로 한도조회한 경우 -->
 
         <ul :class="[$style['basic-list'], 'row-margin-contents']">
           <li :class="[$style['basic-list__item']]">
