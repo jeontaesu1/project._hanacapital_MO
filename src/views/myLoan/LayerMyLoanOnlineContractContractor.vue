@@ -116,7 +116,7 @@ export default {
               </FormInvalid>
             </FormListItem>
 
-            <!-- Case : [리스,렌트,신차], [중고차]인 경우 노출 경우 미노출 -->
+            <!-- Case : 기본 (리스, 렌트, 신차, 중고차 외) -->
             <FormListItem
               titleText="자택주소"
               target="#layerMyLoanOnlineContractContractorAddress001Search"
@@ -177,166 +177,19 @@ export default {
                 <FormInvalidMessage>Error Message</FormInvalidMessage>
               </FormInvalid>
             </FormListItem>
-            <!-- // Case : [리스,렌트,신차], [중고차]인 경우 노출 경우 미노출 -->
+            <!-- // Case : 기본 (리스, 렌트, 신차, 중고차 외) -->
 
-            <!-- Case : [리스, 렌트, 신차 '개인','개인사업자']인 경우 -->
+            <!-- Case : 리스, 렌트, 신차 -->
             <FormListItem
               titleText="등본지"
-              target="#layerMyLoanOnlineContractContractorAddress003Search"
-            >
-              <FormInvalid :error="state.addressError003">
-                <InputBlock :error="state.addressError003">
-                  <InputBlockCell :flexible="true">
-                    <BasicInput
-                      title="등본지 주소 - 우편번호"
-                      defaultValue="01001"
-                      :disabled="true"
-                      id="layerMyLoanOnlineContractContractorAddress003"
-                    />
-                  </InputBlockCell>
-                  <template v-slot:right>
-                    <BasicButton
-                      size="mini"
-                      theme="tertiary"
-                      id="layerMyLoanOnlineContractContractorAddress003Search"
-                      >검색</BasicButton
-                    >
-                  </template>
-                </InputBlock>
-                <!-- Case: 주소 검색 및 입력 후 노출 -->
-                <InputBlock
-                  :error="state.addressError003"
-                  :disabled="true"
-                  :classNames="{
-                    wrap: 'row-margin-item-group row-margin-bottom-none',
-                  }"
-                >
-                  <InputBlockCell :flexible="true">
-                    <BasicInput
-                      title="등본지 - 주소"
-                      id="layerMyLoanOnlineContractContractorAddress003_001"
-                      defaultValue="인천 서구 청라동 123"
-                      :disabled="true"
-                    />
-                  </InputBlockCell>
-                </InputBlock>
-                <InputBlock
-                  :error="state.addressError003"
-                  :disabled="true"
-                  :classNames="{
-                    wrap: 'row-margin-item-group row-margin-bottom-none',
-                  }"
-                >
-                  <InputBlockCell :flexible="true">
-                    <BasicInput
-                      title="등본지 - 상세주소"
-                      id="layerMyLoanOnlineContractContractorAddress003_002"
-                      defaultValue="자이아파트 101동 1001호"
-                      :disabled="true"
-                    />
-                  </InputBlockCell>
-                </InputBlock>
-                <!-- // Case: 주소 검색 및 입력 후 노출 -->
-                <FormInvalidMessage>Error Message</FormInvalidMessage>
-              </FormInvalid>
-            </FormListItem>
-            <!-- // Case :[리스, 렌트, 신차 '개인','개인사업자']인 경우 -->
-
-            <!-- Case : [리스, 렌트, 신차 '개인','개인사업자'], [중고차]인 경우 -->
-            <FormListItem
-              titleText="실거주지"
-              target="#layerMyLoanOnlineContractContractorAddress004Search"
-            >
-              <FormInvalid :error="state.addressError004">
-                <InputBlock :error="state.addressError004">
-                  <InputBlockCell :flexible="true">
-                    <BasicInput
-                      title="실거주지 주소 - 우편번호"
-                      defaultValue="12345"
-                      :disabled="true"
-                      id="layerMyLoanOnlineContractContractorAddress004"
-                    />
-                  </InputBlockCell>
-                  <template v-slot:right>
-                    <BasicButton
-                      size="mini"
-                      theme="tertiary"
-                      id="layerMyLoanOnlineContractContractorAddress004Search"
-                      >검색</BasicButton
-                    >
-                  </template>
-                </InputBlock>
-                <!-- Case: 주소 검색 및 입력 후 노출 -->
-                <InputBlock
-                  :error="state.addressError004"
-                  :disabled="true"
-                  :classNames="{
-                    wrap: 'row-margin-item-group row-margin-bottom-none',
-                  }"
-                >
-                  <InputBlockCell :flexible="true">
-                    <BasicInput
-                      title="실거주지 - 주소"
-                      id="layerMyLoanOnlineContractContractorAddress004_001"
-                      defaultValue="경기 성남시 분당구 중안공원로 20"
-                      :disabled="true"
-                    />
-                  </InputBlockCell>
-                </InputBlock>
-                <InputBlock
-                  :error="state.addressError004"
-                  :disabled="true"
-                  :classNames="{
-                    wrap: 'row-margin-item-group row-margin-bottom-none',
-                  }"
-                >
-                  <InputBlockCell :flexible="true">
-                    <BasicInput
-                      title="실거주지 - 상세주소"
-                      id="layerMyLoanOnlineContractContractorAddress004_002"
-                      defaultValue="하나아파트 853동 4590호"
-                      :disabled="true"
-                    />
-                  </InputBlockCell>
-                </InputBlock>
-                <!-- // Case: 주소 검색 및 입력 후 노출 -->
-                <FormInvalidMessage>Error Message</FormInvalidMessage>
-              </FormInvalid>
-              <CheckBox
-                id="layerMyLoanOnlineContractContractorCheckBox"
-                theme="tertiary"
-                :classNames="{
-                  wrap: 'row-margin-item-regular',
-                }"
-              >
-                <CheckBoxObject />
-                <CheckBoxLabelText>등본지 주소와 동일</CheckBoxLabelText>
-              </CheckBox>
-            </FormListItem>
-            <!-- // Case : [리스, 렌트, 신차 '개인','개인사업자'], [중고차]인 경우 -->
-          </FormList>
-        </section>
-
-        <section class="row-margin-container-medium">
-          <!-- Case : [리스, 렌트, 신차], [중고차]인 경우 미노출 -->
-          <h3 class="text-title-2 row-margin-contents">직장/사업장 정보</h3>
-          <!-- // Case : [리스, 렌트, 신차], [중고차]인 경우 미노출 -->
-
-          <!-- Case : [리스, 렌트, 신차 '개인','개인사업자'], [중고차]인 경우 -->
-          <h3 class="text-title-2 row-margin-contents">직장 정보</h3>
-          <!-- // Case : [리스, 렌트, 신차 '개인','개인사업자'], [중고차]인 경우 -->
-          <FormList>
-            <!-- Case : [리스, 렌트, 신차], [중고차]인 경우 미노출 -->
-            <FormListItem
-              titleText="직장/사업장 주소"
               target="#layerMyLoanOnlineContractContractorAddress002Search"
             >
               <FormInvalid :error="state.addressError002">
                 <InputBlock :error="state.addressError002">
                   <InputBlockCell :flexible="true">
                     <BasicInput
-                      title="직장/사업장 주소 - 우편번호"
-                      defaultValue="01000"
+                      title="등본지 주소 - 우편번호"
+                      defaultValue="01001"
                       :disabled="true"
                       id="layerMyLoanOnlineContractContractorAddress002"
                     />
@@ -360,9 +213,9 @@ export default {
                 >
                   <InputBlockCell :flexible="true">
                     <BasicInput
-                      title="직장/사업장 주소 - 주소"
+                      title="등본지 - 주소"
                       id="layerMyLoanOnlineContractContractorAddress002_001"
-                      defaultValue="인천 서구 에코로 181"
+                      defaultValue="인천 서구 청라동 123"
                       :disabled="true"
                     />
                   </InputBlockCell>
@@ -376,8 +229,150 @@ export default {
                 >
                   <InputBlockCell :flexible="true">
                     <BasicInput
-                      title="직장/사업장 주소 - 상세주소"
+                      title="등본지 - 상세주소"
                       id="layerMyLoanOnlineContractContractorAddress002_002"
+                      defaultValue="자이아파트 101동 1001호"
+                      :disabled="true"
+                    />
+                  </InputBlockCell>
+                </InputBlock>
+                <!-- // Case: 주소 검색 및 입력 후 노출 -->
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
+            <!-- // Case : 리스, 렌트, 신차 -->
+
+            <!-- Case : 리스, 렌트, 신차, 중고차 -->
+            <FormListItem
+              titleText="실거주지"
+              target="#layerMyLoanOnlineContractContractorAddress003Search"
+            >
+              <FormInvalid :error="state.addressError003">
+                <InputBlock :error="state.addressError003">
+                  <InputBlockCell :flexible="true">
+                    <BasicInput
+                      title="실거주지 주소 - 우편번호"
+                      defaultValue="12345"
+                      :disabled="true"
+                      id="layerMyLoanOnlineContractContractorAddress003"
+                    />
+                  </InputBlockCell>
+                  <template v-slot:right>
+                    <BasicButton
+                      size="mini"
+                      theme="tertiary"
+                      id="layerMyLoanOnlineContractContractorAddress003Search"
+                      >검색</BasicButton
+                    >
+                  </template>
+                </InputBlock>
+                <!-- Case: 주소 검색 및 입력 후 노출 -->
+                <InputBlock
+                  :error="state.addressError003"
+                  :disabled="true"
+                  :classNames="{
+                    wrap: 'row-margin-item-group row-margin-bottom-none',
+                  }"
+                >
+                  <InputBlockCell :flexible="true">
+                    <BasicInput
+                      title="실거주지 - 주소"
+                      id="layerMyLoanOnlineContractContractorAddress003_001"
+                      defaultValue="경기 성남시 분당구 중안공원로 20"
+                      :disabled="true"
+                    />
+                  </InputBlockCell>
+                </InputBlock>
+                <InputBlock
+                  :error="state.addressError003"
+                  :disabled="true"
+                  :classNames="{
+                    wrap: 'row-margin-item-group row-margin-bottom-none',
+                  }"
+                >
+                  <InputBlockCell :flexible="true">
+                    <BasicInput
+                      title="실거주지 - 상세주소"
+                      id="layerMyLoanOnlineContractContractorAddress003_002"
+                      defaultValue="하나아파트 853동 4590호"
+                      :disabled="true"
+                    />
+                  </InputBlockCell>
+                </InputBlock>
+                <!-- // Case: 주소 검색 및 입력 후 노출 -->
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+              <!-- Case : 리스, 렌트, 신차 -->
+              <div class="row-margin-item-regular">
+                <CheckBox
+                  id="layerMyLoanOnlineContractContractorAddress003Check"
+                  theme="tertiary"
+                >
+                  <CheckBoxObject />
+                  <CheckBoxLabelText>등본지 주소와 동일</CheckBoxLabelText>
+                </CheckBox>
+              </div>
+              <!-- // Case : 리스, 렌트, 신차 -->
+            </FormListItem>
+            <!-- // Case : 리스, 렌트, 신차, 중고차 -->
+          </FormList>
+        </section>
+
+        <!-- Case : 기본 (개인, 개인사업자 외) -->
+        <section class="row-margin-container-medium">
+          <h3 class="text-title-2 row-margin-contents">직장/사업장 정보</h3>
+          <FormList>
+            <FormListItem
+              titleText="직장/사업장 주소"
+              target="#layerMyLoanOnlineContractContractorAddress004Search"
+            >
+              <FormInvalid :error="state.addressError004">
+                <InputBlock :error="state.addressError004">
+                  <InputBlockCell :flexible="true">
+                    <BasicInput
+                      title="직장/사업장 주소 - 우편번호"
+                      defaultValue="01000"
+                      :disabled="true"
+                      id="layerMyLoanOnlineContractContractorAddress004"
+                    />
+                  </InputBlockCell>
+                  <template v-slot:right>
+                    <BasicButton
+                      size="mini"
+                      theme="tertiary"
+                      id="layerMyLoanOnlineContractContractorAddress004Search"
+                      >검색</BasicButton
+                    >
+                  </template>
+                </InputBlock>
+                <!-- Case: 주소 검색 및 입력 후 노출 -->
+                <InputBlock
+                  :error="state.addressError004"
+                  :disabled="true"
+                  :classNames="{
+                    wrap: 'row-margin-item-group row-margin-bottom-none',
+                  }"
+                >
+                  <InputBlockCell :flexible="true">
+                    <BasicInput
+                      title="직장/사업장 주소 - 주소"
+                      id="layerMyLoanOnlineContractContractorAddress004_001"
+                      defaultValue="인천 서구 에코로 181"
+                      :disabled="true"
+                    />
+                  </InputBlockCell>
+                </InputBlock>
+                <InputBlock
+                  :error="state.addressError004"
+                  :disabled="true"
+                  :classNames="{
+                    wrap: 'row-margin-item-group row-margin-bottom-none',
+                  }"
+                >
+                  <InputBlockCell :flexible="true">
+                    <BasicInput
+                      title="직장/사업장 주소 - 상세주소"
+                      id="layerMyLoanOnlineContractContractorAddress004_002"
                       defaultValue="하나금융 로비"
                       :disabled="true"
                     />
@@ -473,7 +468,6 @@ export default {
                       :classNames="{
                         wrap: 'input-width-telecom',
                       }"
-                      defaultValue="1"
                     />
                   </InputBlockCell>
                   <InputBlockCell :flexible="true" margin="regular">
@@ -487,9 +481,14 @@ export default {
                 <FormInvalidMessage>Error Message</FormInvalidMessage>
               </FormInvalid>
             </FormListItem>
-            <!-- // Case : [리스, 렌트, 신차], [중고차]인 경우 미노출 -->
+          </FormList>
+        </section>
+        <!-- // Case : 기본 (개인, 개인사업자 외) -->
 
-            <!-- Case : [리스, 렌트, 신차 '개인'], [중고차]인 경우 -->
+        <!-- Case : 개인 -->
+        <section class="row-margin-container-medium">
+          <h3 class="text-title-2 row-margin-contents">직장 정보</h3>
+          <FormList>
             <FormListItem
               titleText="직장 주소"
               titleOptionalText="(선택)"
@@ -550,16 +549,6 @@ export default {
                 <!-- // Case: 주소 검색 및 입력 후 노출 -->
                 <FormInvalidMessage>Error Message</FormInvalidMessage>
               </FormInvalid>
-              <CheckBox
-                id="layerMyLoanOnlineContractContractorCheckBox001"
-                theme="tertiary"
-                :classNames="{
-                  wrap: 'row-margin-item-regular',
-                }"
-              >
-                <CheckBoxObject />
-                <CheckBoxLabelText>등본지 주소와 동일</CheckBoxLabelText>
-              </CheckBox>
             </FormListItem>
 
             <FormListItem
@@ -640,14 +629,13 @@ export default {
                           text: '064',
                         },
                       ]"
-                      buttonTitle="직장 전화번호 선택하기"
-                      layerTitle="직장 전화번호를 선택해 주세요"
+                      buttonTitle="지역번호 선택하기"
+                      layerTitle="지역번호를 선택해 주세요"
                       id="layerMyLoanOnlineContractContractorPhone003First"
                       buttonId="layerMyLoanOnlineContractContractorPhone003FirstButton"
                       :classNames="{
                         wrap: 'input-width-telecom',
                       }"
-                      defaultValue="1"
                     />
                   </InputBlockCell>
                   <InputBlockCell :flexible="true" margin="regular">
@@ -661,9 +649,14 @@ export default {
                 <FormInvalidMessage>Error Message</FormInvalidMessage>
               </FormInvalid>
             </FormListItem>
-            <!-- // Case :[리스, 렌트, 신차 '개인'], [중고차]인 경우 -->
+          </FormList>
+        </section>
+        <!-- // Case : 개인 -->
 
-            <!-- Case : [리스, 렌트, 신차 '개인사업자']인 경우 -->
+        <!-- Case : 개인사업자 -->
+        <section class="row-margin-container-medium">
+          <h3 class="text-title-2 row-margin-contents">사업장 정보</h3>
+          <FormList>
             <FormListItem
               titleText="사업장 주소"
               titleOptionalText="(선택)"
@@ -724,16 +717,6 @@ export default {
                 <!-- // Case: 주소 검색 및 입력 후 노출 -->
                 <FormInvalidMessage>Error Message</FormInvalidMessage>
               </FormInvalid>
-              <CheckBox
-                id="layerMyLoanOnlineContractContractorCheckBox002"
-                theme="tertiary"
-                :classNames="{
-                  wrap: 'row-margin-item-regular',
-                }"
-              >
-                <CheckBoxObject />
-                <CheckBoxLabelText>등본지 주소와 동일</CheckBoxLabelText>
-              </CheckBox>
             </FormListItem>
 
             <FormListItem
@@ -814,14 +797,13 @@ export default {
                           text: '064',
                         },
                       ]"
-                      buttonTitle="사업장 전화번호 선택하기"
-                      layerTitle="사업장 전화번호를 선택해 주세요"
+                      buttonTitle="지역번호 선택하기"
+                      layerTitle="지역번호를 선택해 주세요"
                       id="layerMyLoanOnlineContractContractorPhone004First"
                       buttonId="layerMyLoanOnlineContractContractorPhone004FirstButton"
                       :classNames="{
                         wrap: 'input-width-telecom',
                       }"
-                      defaultValue="1"
                     />
                   </InputBlockCell>
                   <InputBlockCell :flexible="true" margin="regular">
@@ -835,9 +817,9 @@ export default {
                 <FormInvalidMessage>Error Message</FormInvalidMessage>
               </FormInvalid>
             </FormListItem>
-            <!-- // Case : [리스, 렌트, 신차 '개인사업자']인 경우 -->
           </FormList>
         </section>
+        <!-- // Case : 개인사업자 -->
       </div>
 
       <template v-slot:foot>
