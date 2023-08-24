@@ -86,7 +86,6 @@ export default {
     const { emit } = context;
     let timer = null;
     const inputScroll = {
-      timer: null,
       iosClick: false,
       iosFocus: false,
       androidFocus: false,
@@ -205,28 +204,33 @@ export default {
     const focusScroll = () => {
       const { isIos, isAndroid } = store.ui.common.userAgent;
 
-      if (isIos || isAndroid) {
-        const html = document.getElementsByTagName('html')[0];
-        const inputEl = input.value;
-        const popupBodyEl = popupLayout.body ? popupLayout.body.value : null;
-        const offsetTop =
-          (popupBodyEl ? popupBodyEl.scrollTop : html.scrollTop) +
-          inputEl.getBoundingClientRect().top;
-        const moveTop = offsetTop - headerH.value - 50;
+      if (!isIos && !isAndroid) return;
 
+      const html = document.getElementsByTagName('html')[0];
+      const inputEl = input.value;
+      const popupBodyEl = popupLayout.body ? popupLayout.body.value : null;
+      const headH = headerH.value;
+      const htmlScrollTop = html.scrollTop;
+      const scrollTop = (() => {
         if (popupBodyEl) {
-          if (store.ui.common.userAgent.isIos) {
-            html.scrollTop = 0;
-            clearTimeout(inputScroll.timer);
-            inputScroll.timer = setTimeout(() => {
-              html.scrollTop = moveTop;
-            }, 5);
-          } else {
-            popupBodyEl.scrollTop = moveTop;
-          }
+          return popupBodyEl.scrollTop + headH;
         } else {
-          html.scrollTop = moveTop;
+          return htmlScrollTop;
         }
+      })();
+      const offsetTop =
+        (popupBodyEl ? scrollTop + htmlScrollTop : scrollTop) +
+        inputEl.getBoundingClientRect().top;
+      const moveTop = offsetTop - headH - 80;
+
+      if (popupBodyEl) {
+        if (store.ui.common.userAgent.isIos) {
+          html.scrollTop = moveTop - scrollTop;
+        } else {
+          popupBodyEl.scrollTop = moveTop - headH;
+        }
+      } else {
+        html.scrollTop = moveTop;
       }
     };
 
