@@ -33,6 +33,9 @@ import FilterButton from '@/components/ui/button/FilterButton.vue';
 import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 import TextProgress from '@/components/ui/progress/TextProgress.vue';
+import CheckBox from '@/components/ui/form/CheckBox.vue';
+import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
+import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
 
 import IconArrow from '@/assets/images/icon/dropdown.svg?component';
 
@@ -67,6 +70,9 @@ export default {
     RoundStatus,
     TextButton,
     TextProgress,
+    CheckBox,
+    CheckBoxObject,
+    CheckBoxLabelText,
     IconArrow,
   },
   setup() {
@@ -269,6 +275,13 @@ export default {
         v-if="state.filterOpen"
         className="row-margin-container-medium"
       />
+
+      <div class="align-right row-margin-item row-margin-top-none">
+        <CheckBox id="salesUsedCarHomeCheckBox" theme="senary">
+          <CheckBoxObject />
+          <CheckBoxLabelText>약정 가능 건</CheckBoxLabelText>
+        </CheckBox>
+      </div>
 
       <UiAccordion>
         <!-- Case : 신용동의 -->
