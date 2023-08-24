@@ -690,9 +690,9 @@ export default {
                     >
                       <div :class="$style['basic-list__symbol']">-</div>
                       <div :class="$style['basic-list__content']">
-                        <stron class="font-weight-medium">조정금리</stron>(②)는
-                        시장상황, 영업환경 등을 고려하여 금융회사가 할인 또는
-                        가산하는 금리로, 기준금리에 더해져 실제 약정금리를
+                        <strong class="font-weight-medium">조정금리</strong
+                        >(②)는 시장상황, 영업환경 등을 고려하여 금융회사가 할인
+                        또는 가산하는 금리로, 기준금리에 더해져 실제 약정금리를
                         결정합니다.
                       </div>
                     </li>
@@ -711,7 +711,7 @@ export default {
                 <div :class="$style['basic-list__content']">
                   <div>
                     결정된
-                    <stron class="font-weight-medium">대출금리</stron
+                    <strong class="font-weight-medium">대출금리</strong
                     >(약정금리)는 개별약정에 의해 별도로 정한
                     항목(변동금리대출의 기준금리 등) 이외에는 대출만기일까지
                     동일하게 적용됩니다.
@@ -3051,7 +3051,7 @@ export default {
                     상담하여 본 설명서를 <strong>교부</strong>받았으며, 위에서
                     설명한 내용을 포함하여 대출거래의 주요내용 및 고객부담비용에
                     대하여 충분히 <strong>설명</strong>을 듣고
-                    <Strong>이해</Strong>하였음을 확인합니다.
+                    <strong>이해</strong>하였음을 확인합니다.
                   </td>
                 </tr>
                 <tr>
