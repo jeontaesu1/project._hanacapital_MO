@@ -276,8 +276,8 @@ export default {
         className="row-margin-container-medium"
       />
 
-      <div class="align-right row-margin-item row-margin-top-none">
-        <CheckBox id="salesUsedCarHomeCheckBox" theme="senary">
+      <div class="inline-wrap align-right row-margin-item row-margin-top-none">
+        <CheckBox id="salesUsedCarHomeCheckBox" theme="tertiary">
           <CheckBoxObject />
           <CheckBoxLabelText>약정 가능 건</CheckBoxLabelText>
         </CheckBox>

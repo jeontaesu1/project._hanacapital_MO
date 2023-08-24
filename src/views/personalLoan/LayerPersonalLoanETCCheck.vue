@@ -83,9 +83,9 @@ export default {
             <BasicBoxHeadLeft>
               <div class="flex-box">
                 <div class="flex-box__cell">
-                  <IconPig />
+                  <IconPig :class="$style['icon']" />
                 </div>
-                <div class="flex-box__cell">
+                <div class="flex-box__cell flex-1">
                   <h3 class="text-body-1 font-weight-medium">e하나신용대출</h3>
                 </div>
               </div>
@@ -118,9 +118,9 @@ export default {
             <BasicBoxHeadLeft>
               <div class="flex-box">
                 <div class="flex-box__cell">
-                  <IconCorporateFinance />
+                  <IconCorporateFinance :class="$style['icon']" />
                 </div>
-                <div class="flex-box__cell">
+                <div class="flex-box__cell flex-1">
                   <h3 class="text-body-1 font-weight-medium">행복아파트론</h3>
                 </div>
               </div>
