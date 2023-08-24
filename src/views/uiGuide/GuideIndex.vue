@@ -1742,7 +1742,12 @@ const datas = () => [
         path: '/lm-blog/status-inquiry',
         status: 'end',
         create: '2023.04.21',
-        log: [],
+        log: [
+          {
+            date: '2023.08.28',
+            text: '조회기간 영역 수정',
+          },
+        ],
       },
     ],
   },
@@ -3498,6 +3503,10 @@ const datas = () => [
             date: '2023.08.10',
             text: 'BF_M05_l001 케이스 추가',
           },
+          {
+            date: '2023.08.28',
+            text: 'BF_M05_l001 상환금리 영역 문구 수정',
+          },
         ],
       },
       {
@@ -3727,6 +3736,22 @@ const datas = () => [
         status: 'end',
         create: '2023.04.14',
         log: [],
+      },
+      {
+        depth2: '진행상태조회\nMy_M03_p001',
+        depth3: '적합성·적정성 확인서\nMy_M03_l005',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/my-loan/online-contract-check',
+        status: 'end',
+        create: '2023.08.28',
+        log: [
+          {
+            date: '2023.08.28',
+            text: '페이지로 변경',
+          },
+        ],
       },
       {
         depth2: '진행상태조회\nMy_M03_p001',
