@@ -36,8 +36,16 @@ export default {
   <UiLayer ref="layer" type="full" v-slot="layerSlotProps">
     <FullPopup>
       <template v-slot:head>
-        <FullPopupHead>
-          <PopupTitle>약관 타이틀</PopupTitle>
+        <FullPopupHead
+          :classNames="{
+            left: $style['header-left'],
+            center: $style['header-center'],
+            right: $style['header-right'],
+          }"
+        >
+          <PopupTitle
+            >약관 타이틀 약관 타이틀 약관 타이틀 약관 타이틀</PopupTitle
+          >
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
@@ -60,3 +68,7 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/clause/LayerClauseDetail.scss';
+</style>
