@@ -258,6 +258,10 @@ const datas = () => [
             date: '2023.08.24',
             text: 'Common_M00_b018, Common_M00_b019 딤 영역 클릭 시 닫히는 기능 제거',
           },
+          {
+            date: '2023.08.25',
+            text: 'Common_M00_b017 약관 내용 추가',
+          },
         ],
       },
       {
