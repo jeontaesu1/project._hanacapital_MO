@@ -14,6 +14,9 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
+import BasicBox from '@/components/ui/common/BasicBox.vue';
+
+import IconStar from '@/assets/images/icon/star.svg?component';
 
 export default {
   components: {
@@ -29,6 +32,8 @@ export default {
     ButtonListItem,
     BasicButton,
     IllustObject,
+    BasicBox,
+    IconStar,
   },
   setup() {
     const layer = ref(null);
@@ -62,6 +67,23 @@ export default {
 
       <IllustObject type="checklist" />
 
+      <!-- Case : AG 발송 -->
+      <BasicBox>
+        <div :class="$style['icon-box']">
+          <div :class="$style['icon-box__icon']">
+            <IconStar />
+          </div>
+          <div :class="$style['icon-box__content']">
+            <div class="text-body-2">
+              <span class="color-green font-weight-medium">김하나</span>님은
+              하나캐피탈에 등록된<br />
+              정식 모집인입니다
+            </div>
+          </div>
+        </div>
+      </BasicBox>
+      <!-- // Case : AG 발송 -->
+
       <template v-slot:foot>
         <ButtonList
           :classNames="{
@@ -76,3 +98,7 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/LeaseRentEstimationSystem/LayerLeaseRentEstimationSystemStart.scss';
+</style>
