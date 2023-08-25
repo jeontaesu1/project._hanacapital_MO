@@ -50,7 +50,7 @@ export default {
           :class="[
             $style['basic-list'],
             $style['basic-list--regular'],
-            $style['basic-list--normal-margin'],
+            $style['basic-list--regular-margin'],
           ]"
         >
           <li

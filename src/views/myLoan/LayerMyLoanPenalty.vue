@@ -130,7 +130,7 @@ export default {
       <!-- // Case : 조회 결과 없을 때 -->
 
       <!-- Case : 조회 결과 있을 때 -->
-      <ul :class="$style['logs']">
+      <ul :class="[$style['logs'], $style['logs--margin-regular']]">
         <li v-for="i in 4" :key="i" :class="$style['logs__item']">
           <div :class="$style['logs__block']">
             <div :class="$style['logs__row']">

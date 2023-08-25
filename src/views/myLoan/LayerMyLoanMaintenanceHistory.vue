@@ -57,7 +57,7 @@ export default {
         </FullPopupHead>
       </template>
 
-      <ul :class="$style['logs']">
+      <ul :class="[$style['logs'], $style['logs--margin-regular']]">
         <li v-for="i in 5" :key="i" :class="$style['logs__item']">
           <div :class="$style['logs__block']">
             <div :class="$style['logs__row']">

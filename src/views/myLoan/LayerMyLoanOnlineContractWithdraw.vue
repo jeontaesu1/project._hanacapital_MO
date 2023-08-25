@@ -47,7 +47,7 @@ export default {
         </ToastPopupHead>
       </template>
 
-      <KeyValue margin="regular" direction="vertical">
+      <KeyValue direction="vertical">
         <KeyValueItem>
           <KeyValueTitle>대상</KeyValueTitle>
           <KeyValueText>일반금융소비자(금융소비자보호법 기준)</KeyValueText>

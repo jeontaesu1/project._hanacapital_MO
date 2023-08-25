@@ -173,7 +173,7 @@ export default {
 
       <BasicHr
         type="contents"
-        theme="quaternary"
+        theme="tertiary"
         className="row-margin-container-medium"
       />
 

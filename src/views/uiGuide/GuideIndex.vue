@@ -795,6 +795,10 @@ const datas = () => [
             date: '2023.08.24',
             text: 'PF_M01_l007 버튼 문구 수정',
           },
+          {
+            date: '2023.08.28',
+            text: 'PF_M01_b003 컨텐츠 간격 수정\n 고객센터 시간 수정\n- PF_M01_l006\n- PF_M01_l009',
+          },
         ],
       },
       {
@@ -891,6 +895,10 @@ const datas = () => [
             date: '2023.05.19',
             text: '팝업 추가\n-   차량 정보 입력',
           },
+          {
+            date: '2023.08.28',
+            text: 'PF_M04_b003 컨텐츠 간격 수정',
+          },
         ],
       },
       {
@@ -978,6 +986,10 @@ const datas = () => [
           {
             date: '2023.08.11',
             text: 'PF_M07_l006 유의사항 문구 수정\n PF_M07_l007 전화번호 오타 수정\n PF_M07_l009 단위 수정',
+          },
+          {
+            date: '2023.08.28',
+            text: 'PF_M07_l007 텍스트 크기 수정',
           },
         ],
       },
@@ -1434,7 +1446,12 @@ const datas = () => [
         path: '/inventory-finance/early-complete',
         status: 'end',
         create: '2023.04.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.28',
+            text: '고객센터 시간 수정',
+          },
+        ],
       },
       {
         depth2: '중도상환',
@@ -1445,7 +1462,12 @@ const datas = () => [
         path: '/inventory-finance/early-fail',
         status: 'end',
         create: '2023.04.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.28',
+            text: '고객센터 시간 수정',
+          },
+        ],
       },
       {
         depth2: '중도상환',
@@ -1532,7 +1554,12 @@ const datas = () => [
         path: '/inventory-finance/extension-fail',
         status: 'end',
         create: '2023.04.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.28',
+            text: '고객센터 시간 수정',
+          },
+        ],
       },
       {
         depth2: '추가서류등록\nIF_M05_p001',
@@ -1698,6 +1725,10 @@ const datas = () => [
           {
             date: '2023.04.14',
             text: '팝업 추가\n- 아파트 검색\n- 사업자선택\n- 한도/금리 확인',
+          },
+          {
+            date: '2023.08.28',
+            text: 'LM_M01_l011 고객센터 시간 수정',
           },
         ],
       },
@@ -3325,6 +3356,10 @@ const datas = () => [
             date: '2023.07.26',
             text: '팝업 추가\n- 대출신청 불가',
           },
+          {
+            date: '2023.08.28',
+            text: 'AF_M05_l003 고객센터 시간 수정',
+          },
         ],
       },
       {
@@ -3360,6 +3395,10 @@ const datas = () => [
           {
             date: '2023.08.11',
             text: 'AF_M06_l001 컨텐츠 구성 변경 및 버튼 추가',
+          },
+          {
+            date: '2023.08.28',
+            text: 'AF_M06_l012 컨텐츠 간격 수정',
           },
         ],
       },
@@ -3401,6 +3440,10 @@ const datas = () => [
             date: '2023.08.11',
             text: 'AF_M07_l008 서브타이틀 및 컨텐츠 타이틀 문구 수정',
           },
+          {
+            date: '2023.08.28',
+            text: 'AF_M07_l001 텍스트 크기 수정',
+          },
         ],
       },
       {
@@ -3412,7 +3455,12 @@ const datas = () => [
         path: '/auto/hot-deal',
         status: 'end',
         create: '2023.05.05',
-        log: [],
+        log: [
+          {
+            date: '2023.08.28',
+            text: '컨텐츠 색상 수정',
+          },
+        ],
       },
       {
         depth2: '차바구니\nAF_M44_p001',
@@ -3691,7 +3739,10 @@ const datas = () => [
         path: '/ui-guide/my-loan-maintenance-history-001',
         status: 'end',
         create: '2023.04.14',
-        log: [{ date: '2023.05.19', text: '화면 페이지에서 팝업으로 변경' }],
+        log: [
+          { date: '2023.05.19', text: '화면 페이지에서 팝업으로 변경' },
+          { date: '2023.08.28', text: 'My_M01_p005 컨텐츠 간격 수정' },
+        ],
       },
       {
         depth2: '범칙금',
@@ -3705,6 +3756,7 @@ const datas = () => [
         log: [
           { date: '2023.05.19', text: '화면 페이지에서 팝업으로 변경' },
           { date: '2023.08.11', text: 'My_M01_p006 조회 버튼 추가' },
+          { date: '2023.08.28', text: 'My_M01_p006 컨텐츠 간격 수정' },
         ],
       },
       {
@@ -3734,6 +3786,10 @@ const datas = () => [
           {
             date: '2023.05.19',
             text: '팝업 추가\n- 지정운전자-등록 전\n- 지정운전자-등록 후',
+          },
+          {
+            date: '2023.08.28',
+            text: 'My_M01_l006 텍스트 크기 수정\n My_M01_l007 서브 텍스트 굵기 수정\n My_M01_l008 서브 텍스트 굵기 수정',
           },
         ],
       },
@@ -3829,6 +3885,10 @@ const datas = () => [
             date: '2023.08.24',
             text: '케이스 추가\n- My_M03_l016\n- My_M03_l017\n- My_M03_l018',
           },
+          {
+            date: '2023.08.28',
+            text: 'My_M03_l012 텍스트 굵기 수정\n 컨텐츠 간격 수정\n- My_M03_b014\n- My_M03_b015\n- My_M03_l025\n My_M03_l024 고객센터 시간 수정',
+          },
         ],
       },
       {
@@ -3868,6 +3928,10 @@ const datas = () => [
           {
             date: '2023.08.21',
             text: 'BF_M04_l007 약관 추가',
+          },
+          {
+            date: '2023.08.28',
+            text: '컨텐츠 간격 수정\n- AF_M98_b001 \n- My_M07_b00\n- BF_M04_l016\n서브 텍스트 색상 및 굵기 수정\n- AF_M98_l004\n- AF_M99_l009\n BF_M05_l009 컨텐츠 텍스트 색상 수정',
           },
         ],
       },
@@ -4139,7 +4203,12 @@ const datas = () => [
         path: '/ui-guide/my-loan-post-maturity-rental-001',
         status: 'end',
         create: '2023.04.28',
-        log: [],
+        log: [
+          {
+            date: '2023.08.28',
+            text: 'My_M08_l002 컨텐츠 간격 수정',
+          },
+        ],
       },
       {
         depth2: '만기후처리',
@@ -4226,7 +4295,12 @@ const datas = () => [
         path: '/ui-guide/my-loan-subscription-withdrawal-right-001',
         status: 'end',
         create: '2023.04.28',
-        log: [],
+        log: [
+          {
+            date: '2023.08.28',
+            text: 'My_M06_l003 고객센터 시간 및 서브 텍스트 굵기 수정\n My_M06_b001 컨텐츠 간격 수정',
+          },
+        ],
       },
       {
         depth2: '서류등록\nMy_M07_l002',

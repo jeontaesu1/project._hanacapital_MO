@@ -47,7 +47,7 @@ export default {
         </ToastPopupHead>
       </template>
 
-      <KeyValue margin="regular" direction="vertical">
+      <KeyValue direction="vertical">
         <KeyValueItem>
           <KeyValueTitle>대상</KeyValueTitle>
           <KeyValueText>대출 취급일로부터 6개월 경과한 고객</KeyValueText>

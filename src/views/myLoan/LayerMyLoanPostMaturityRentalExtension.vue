@@ -255,7 +255,7 @@ export default {
               </BoxCheck>
             </BoxCheckListItem>
           </BoxCheckList>
-          <div class="flex-box row-margin-item-group">
+          <div class="flex-box row-margin-item">
             <div class="flex-box__cell text-body-5 color-gray-secondary">
               보증금/선납금 선택 안내
             </div>
