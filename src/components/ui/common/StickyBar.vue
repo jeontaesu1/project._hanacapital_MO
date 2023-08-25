@@ -109,34 +109,29 @@ export default {
 
       if (wrapEl.offsetHeight <= 0) return;
 
+      const html = document.getElementsByTagName('html')[0];
       const contentsEl = contents.value;
       const contentsInnerEl = contentsEl.children[0];
-      const popupHead =
-        popupLayout && popupLayout.head && popupLayout.head.value;
-      const popupHeadH = (() => {
-        if (popupHead) {
-          return popupHead.offsetHeight;
-        } else {
-          return 0;
-        }
-      })();
       const popupBody =
         popupLayout && popupLayout.body && popupLayout.body.value;
+      const headH = headerH.value;
+      const htmlScrollTop = html.scrollTop;
       const scrollTop = (() => {
         if (popupBody) {
-          return popupBody.scrollTop - popupHeadH;
+          return popupBody.scrollTop + headH;
         } else if (store.ui.scrollBlock.isBlocking) {
           return store.ui.scrollBlock.scrollTop;
         } else {
-          const html = document.getElementsByTagName('html')[0];
-          return html.scrollTop;
+          return htmlScrollTop;
         }
       })();
-      const offsetTop = scrollTop + wrapEl.getBoundingClientRect().top;
+      const offsetTop =
+        (popupBody ? scrollTop + htmlScrollTop : scrollTop) +
+        wrapEl.getBoundingClientRect().top;
       const stickyH = getStickyH();
       const height = contentsInnerEl.offsetHeight;
 
-      if (popupHead) {
+      if (popupBody) {
         if (state.storeKey) {
           store.ui.sticky.remove(state.storeKey);
           state.storeKey = null;
@@ -147,10 +142,7 @@ export default {
         state.storeKey = store.ui.sticky.add(height);
       }
 
-      if (
-        (popupHead && scrollTop <= offsetTop - popupHeadH - stickyH) ||
-        scrollTop <= offsetTop - headerH.value - stickyH
-      ) {
+      if (scrollTop <= offsetTop - headH - stickyH) {
         if (state.isSticky) {
           state.isSticky = false;
         }

@@ -59,7 +59,7 @@ export default {
         <p
           class="text-body-5 color-gray font-weight-light align-right row-margin-contents-small"
         >
-          준법심의필(설):2023-14 (2023.03.01)
+          준법심의필(설) : 2023-14 (2023.03.01)
         </p>
         <PageMainText>
           상품설명서<br />
@@ -287,8 +287,13 @@ export default {
                         </div>
 
                         <ul :class="[$style['basic-list'], 'row-margin-item']">
-                          <li :class="$style['basic-list__item']">
-                            <div :class="$style['basic-list__symbol']"></div>
+                          <li
+                            :class="[
+                              $style['basic-list__item'],
+                              'font-weight-regular',
+                            ]"
+                          >
+                            <div :class="$style['basic-list__symbol']">*</div>
                             <div :class="$style['basic-list__content']">
                               지연배상금 산식 : 월분할상환 원리금(리스료) ×
                               지연배상금율 × 연체일수/365<br />
@@ -413,7 +418,7 @@ export default {
                           <div :class="$style['manual-check__block']">
                             <div :class="$style['manual-check__object']"></div>
                             <div :class="$style['manual-check__text']">
-                              원금균등분할 선택됨
+                              원금균등분할
                             </div>
                           </div>
                         </li>
@@ -477,7 +482,7 @@ export default {
                           <div :class="$style['manual-check__block']">
                             <div :class="$style['manual-check__object']"></div>
                             <div :class="$style['manual-check__text']">
-                              고정(선택됨)
+                              고정
                             </div>
                           </div>
                         </li>
@@ -515,7 +520,7 @@ export default {
                           <div :class="$style['manual-check__block']">
                             <div :class="$style['manual-check__object']"></div>
                             <div :class="$style['manual-check__text']">
-                              후불(선택됨)
+                              후불
                             </div>
                           </div>
                         </li>
@@ -569,7 +574,7 @@ export default {
                           <div :class="$style['manual-check__block']">
                             <div :class="$style['manual-check__object']"></div>
                             <div :class="$style['manual-check__text']">
-                              대상(선택됨)
+                              대상
                             </div>
                           </div>
                         </li>
@@ -757,7 +762,7 @@ export default {
                     있습니다.(예 : 코픽스연동금리, 금융채연동금리 등)
                   </div>
 
-                  <ul :class="[$style['basic-list'], 'row-margin-item']">
+                  <ul :class="[$style['basic-list'], 'row-margin-contents']">
                     <li
                       :class="[
                         $style['basic-list__item'],
@@ -808,15 +813,13 @@ export default {
                 <div :class="$style['basic-list__content']">
                   <div>
                     고객에게 실제 적용되는
-                    <strong class="font-weight-medium underline"
-                      >약정금리</strong
-                    >는
-                    <strong class="font-weight-medium underline"
+                    <strong class="underline">약정금리</strong>는
+                    <strong class="underline"
                       >①원가요소와 ②마진(목표이익률) ③조정금리</strong
                     >가 반영되어 결정됩니다.
                   </div>
 
-                  <ul :class="[$style['basic-list'], 'row-margin-contents']">
+                  <ul :class="[$style['basic-list'], 'row-margin-item']">
                     <li
                       :class="[
                         $style['basic-list__item'],
@@ -827,9 +830,8 @@ export default {
                     >
                       <div :class="$style['basic-list__symbol']">-</div>
                       <div :class="$style['basic-list__content']">
-                        <strong class="font-weight-medium underline"
-                          >원가요소</strong
-                        >(①)는 신용원가, 업무원가, 조달원가 및 자본원가 등으로
+                        <strong class="underline">원가요소</strong>(①)는
+                        신용원가, 업무원가, 조달원가 및 자본원가 등으로
                         구분되며, 금융회사는 합리적인 기준에 따라 해당 원가들을
                         산정합니다.
                       </div>
@@ -844,10 +846,8 @@ export default {
                     >
                       <div :class="$style['basic-list__symbol']">-</div>
                       <div :class="$style['basic-list__content']">
-                        <strong class="font-weight-medium underline"
-                          >기준금리</strong
-                        >(①+②)는 이러한 원가요소(①)에 목표이익율(②)을 더하여
-                        산정됩니다.
+                        <strong class="underline">기준금리</strong>(①+②)는
+                        이러한 원가요소(①)에 목표이익율(②)을 더하여 산정됩니다.
                       </div>
                     </li>
                     <li
@@ -860,10 +860,9 @@ export default {
                     >
                       <div :class="$style['basic-list__symbol']">-</div>
                       <div :class="$style['basic-list__content']">
-                        <strong class="font-weight-medium underline"
-                          >조정금리</strong
-                        >(③)는 시장상황, 영업환경 등을 고려하여 금융회사가 할인
-                        또는 가산하는 금리로, 기준금리에 더해져 실제 약정금리를
+                        <strong class="underline">조정금리</strong>(③)는
+                        시장상황, 영업환경 등을 고려하여 금융회사가 할인 또는
+                        가산하는 금리로, 기준금리에 더해져 실제 약정금리를
                         결정합니다.
                       </div>
                     </li>
@@ -932,9 +931,7 @@ export default {
                   >
                     <div :class="$style['manual-check__block']">
                       <div :class="$style['manual-check__object']"></div>
-                      <div :class="$style['manual-check__text']">
-                        비대상(선택됨)
-                      </div>
+                      <div :class="$style['manual-check__text']">비대상</div>
                     </div>
                   </li>
                 </ul>
@@ -942,7 +939,7 @@ export default {
             </div>
           </div>
 
-          <div class="row-margin-contents">
+          <div class="row-margin-item">
             <ul
               :class="[
                 $style['basic-list'],
@@ -964,29 +961,42 @@ export default {
                     채무자인 고객은 [여신전문금융업법]
                     제50조의13(금리인하요구)에서 정하는 바에 따라
                     <span class="underline"
-                      ><strong class="font-weight-medium"
+                      ><strong
                         >본인의
-                        <span class="italic">[신용상태가 개선]</span>
+                        <span class="italic color-gray font-weight-medium"
+                          >[신용상태가 개선]</span
+                        >
                         되었다고 판단되는 경우(예 : 취업, 승진 등 소득증가,
                         재산증가, 신용평가등급(평점) 등 신용도 상승, 기타
                         신용상태 개선)</strong
                       >* 금융회사에
-                      <span class="italic">[금리인하를 요구]</span>
+                      <span class="italic color-gray font-weight-medium"
+                        >[금리인하를 요구]</span
+                      >
                       할 수 있습니다.</span
                     >
-                    <span class="color-green">
+                    <strong class="color-green">
                       단, 신용상태가 금리에 영향을 미치지 않는 상품은
                       금리인하요구권의 행사 대상에서 제외되오니, 상단의
-                      체크박스를 확인하여 주시기 바랍니다.</span
+                      체크박스를 확인하여 주시기 바랍니다.</strong
                     >
                   </div>
 
-                  <div
-                    class="text-body-4 font-weight-light color-gray-tertiary"
-                  >
-                    기업의 경우(이익증가 등 재무상태 개선, 회사채 등급상승,
-                    추가담보 제공 등 신용도상승, 기타 신용상태 개선)
-                  </div>
+                  <ul :class="[$style['basic-list'], 'row-margin-item']">
+                    <li
+                      :class="[
+                        $style['basic-list__item'],
+                        'text-body-5',
+                        'font-weight-regular',
+                      ]"
+                    >
+                      <div :class="$style['basic-list__symbol']">*</div>
+                      <div :class="$style['basic-list__content']">
+                        기업의 경우(이익증가 등 재무상태 개선, 회사채 등급상승,
+                        추가담보 제공 등 신용도상승, 기타 신용상태 개선
+                      </div>
+                    </li>
+                  </ul>
                 </div>
               </li>
               <li
@@ -1054,9 +1064,7 @@ export default {
             4. 수수료 등 비용부담
           </h3>
 
-          <NoticeText
-            :classNames="{ wrap: 'color-red row-margin-item-medium' }"
-          >
+          <NoticeText :classNames="{ wrap: 'color-red row-margin-contents' }">
             리스계약을 체결하는 경우 고객이 부담하여야 하는 총 금액에는 리스료,
             수수료 등이 포함됩니다. 상세한 금액의 합계는 심사 후에 확인
             가능하므로, 심사 후 담당자가 안내드리겠습니다.
@@ -1065,15 +1073,58 @@ export default {
           <section>
             <h4 class="text-body-2 row-margin-item-medium">규정손해배상금</h4>
 
-            <p class="text-body-2 row-margin-mini">
-              중도해지를 <span class="color-green">이유로</span> 물건을
-              매입하고자 할 경우, 법령이 허용하는 한도 내에서 금융회사에
-              납부하는 비용으로 산식은 아래와 같습니다.
-            </p>
-            <p class="text-body-4 font-weight-light color-gray-tertiary">
-              규정손해배상금 = 미회수원금 x 규정손해배상금율*<br />
-              *규정손해배상금율 (유이자 : 110 %, 무이자 : 110 %)
-            </p>
+            <ul
+              :class="[
+                $style['basic-list'],
+                $style['basic-list--regular'],
+                $style['basic-list--large-margin'],
+              ]"
+            >
+              <li
+                :class="[
+                  $style['basic-list__item'],
+                  'color-black',
+                  'text-body-2',
+                  'font-weight-regular',
+                ]"
+              >
+                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__content']">
+                  중도해지를 <span class="color-green">이유로</span> 물건을
+                  매입하고자 할 경우, 법령이 허용하는 한도 내에서 금융회사에
+                  납부하는 비용으로 산식은 아래와 같습니다.
+                </div>
+              </li>
+              <li
+                :class="[
+                  $style['basic-list__item'],
+                  'color-black',
+                  'text-body-2',
+                  'font-weight-regular',
+                ]"
+              >
+                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__content']">
+                  <div class="row-margin-mini">
+                    규정손해배상금 = 미회수원금 x 규정손해배상금율*
+                  </div>
+                  <ul :class="[$style['basic-list'], 'row-margin-item']">
+                    <li
+                      :class="[
+                        $style['basic-list__item'],
+                        'text-body-5',
+                        'font-weight-regular',
+                      ]"
+                    >
+                      <div :class="$style['basic-list__symbol']">*</div>
+                      <div :class="$style['basic-list__content']">
+                        규정손해배상금율 (유이자 : 110 %, 무이자 : 110 %)
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
           </section>
 
           <section class="row-margin-contents">
@@ -1141,12 +1192,22 @@ export default {
                     >
                       <div :class="$style['basic-list__symbol']">-</div>
                       <div :class="$style['basic-list__content']">
-                        승계수수료 = 미회수원금 X 최고요율( %) X (잔여기간
-                        월수/리스기간 전체 월수)<br />
-                        (승계수수료 최소금액 : 000,000원, 최대금액 310,000원)<br />
-                        (예시) 미회수원금 2천만원, 잔여기간월수 30개월인 경우<br />
-                        미회수원금 20,000,000원 X 최고요율 2% X (잔여기간월수 30
-                        / 리스기간 전체월수 36) = 333,333원
+                        <p class="row-margin-item">
+                          승계수수료 = 미회수원금 X 최고요율(<span
+                            :class="[
+                              $style['blank-box'],
+                              $style['blank-box--small'],
+                            ]"
+                          ></span>
+                          %) X (잔여기간 월수/리스기간 전체 월수)
+                        </p>
+                        <p
+                          class="text-body-4 font-weight-light color-gray-tertiary"
+                        >
+                          (예시) 미회수원금 2천만원, 잔여기간월수 30개월인 경우
+                          미회수원금 20,000,000원 X 최고요율 2% X (잔여기간월수
+                          30 / 리스기간 전체월수 36) = 333,333원
+                        </p>
                       </div>
                     </li>
                   </ul>
@@ -1189,13 +1250,7 @@ export default {
               </li>
             </ul>
 
-            <ul
-              :class="[
-                $style['basic-list'],
-                $style['basic-list--large-margin'],
-                'row-margin-contents',
-              ]"
-            >
+            <ul :class="[$style['basic-list'], 'row-margin-item']">
               <li
                 :class="[
                   $style['basic-list__item'],
@@ -1377,50 +1432,26 @@ export default {
                   계산합니다.
                 </div>
 
+                <p
+                  class="text-body-4 font-weight-light color-gray-tertiary row-margin-item"
+                >
+                  지연배상금 산식 : 월분할상환 원리금 x 지연배상금률 x
+                  연체일수/365(윤년은 366)<br />
+                  예) 리스료 100만원, 10일 연체(기존 약정금리 7% 가정)시 :
+                  100만원 x 10%(연체이자율*) x 10/365 = 2,739원
+                </p>
+
                 <ul :class="[$style['basic-list'], 'row-margin-item']">
                   <li
                     :class="[
                       $style['basic-list__item'],
-                      'color-black',
-                      'text-body-4',
+                      'text-body-5',
                       'font-weight-regular',
                     ]"
                   >
-                    <div :class="$style['basic-list__symbol']">-</div>
+                    <div :class="$style['basic-list__symbol']">*</div>
                     <div :class="$style['basic-list__content']">
-                      <div>
-                        지연배상금 산식 : 월분할상환 원리금 x 지연배상금률 x
-                        연체일수/365(윤년은 366)
-                      </div>
-
-                      <ul :class="[$style['basic-list'], 'row-margin-item']">
-                        <li
-                          :class="[
-                            $style['basic-list__item'],
-                            'color-gray-tertiary',
-                            'font-weight-regular',
-                          ]"
-                        >
-                          <div :class="$style['basic-list__symbol']">※</div>
-                          <div :class="$style['basic-list__content']">
-                            예) 리스료 100만원, 10일 연체(기존 약정금리 7%
-                            가정)시 : 100만원 x 10%(연체이자율*) x 10/365 =
-                            2,739원
-                          </div>
-                        </li>
-                        <li
-                          :class="[
-                            $style['basic-list__item'],
-                            'color-gray-tertiary',
-                            'font-weight-regular',
-                          ]"
-                        >
-                          <div :class="$style['basic-list__symbol']">※</div>
-                          <div :class="$style['basic-list__content']">
-                            연체이자율 10% : 약정금리 7% + 연체가산이자율 3%
-                          </div>
-                        </li>
-                      </ul>
+                      연체이자율 10% : 약정금리 7% + 연체가산이자율 3%
                     </div>
                   </li>
                 </ul>
@@ -1497,57 +1528,110 @@ export default {
           </h3>
 
           <section class="row-margin-contents">
-            <h4 class="text-body-2 row-margin-item-medium">기한의 이익이란?</h4>
-
-            <p class="text-body-2">
-              기한의 존재로 말미암아 당사자가 받는 이익을 말하며, 금융회사와의
-              대출거래에서 채무자인 고객은 당초 약정한 대출기한까지는 대출금을
-              상환하지 않아도 되므로 그 기간 동안 채무자인 고객이 가지는 이익을
-              기한의 이익이라 합니다.
-            </p>
+            <ul
+              :class="[
+                $style['basic-list'],
+                $style['basic-list--regular'],
+                $style['basic-list--large-margin'],
+                'row-margin-contents',
+              ]"
+            >
+              <li
+                :class="[
+                  $style['basic-list__item'],
+                  'color-black',
+                  'text-body-2',
+                  'font-weight-regular',
+                ]"
+              >
+                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__content']">
+                  <div>기한의 이익이란?</div>
+                  <ul :class="[$style['basic-list'], 'row-margin-item']">
+                    <li
+                      :class="[
+                        $style['basic-list__item'],
+                        'color-black',
+                        'text-body-4',
+                        'font-weight-regular',
+                      ]"
+                    >
+                      <div :class="$style['basic-list__symbol']">-</div>
+                      <div :class="$style['basic-list__content']">
+                        기한의 존재로 말미암아 당사자가 받는 이익을 말하며,
+                        금융회사와의 대출거래에서 채무자인 고객은 당초 약정한
+                        대출기한까지는 대출금을 상환하지 않아도 되므로 그 기간
+                        동안 채무자인 고객이 가지는 이익을 기한의 이익이라
+                        합니다.
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
           </section>
 
           <section class="row-margin-contents">
-            <h4 class="text-body-2 row-margin-item-medium">
-              기한의 이익이 상실되면?
-            </h4>
-
-            <ul :class="$style['basic-list']">
+            <ul
+              :class="[
+                $style['basic-list'],
+                $style['basic-list--regular'],
+                $style['basic-list--large-margin'],
+                'row-margin-contents',
+              ]"
+            >
               <li
                 :class="[
                   $style['basic-list__item'],
                   'color-black',
-                  'text-body-4',
+                  'text-body-2',
                   'font-weight-regular',
                 ]"
               >
-                <div :class="$style['basic-list__symbol']">-</div>
+                <div :class="$style['basic-list__symbol']"></div>
                 <div :class="$style['basic-list__content']">
-                  모든 대출금(또는 해당 대출금)을 즉시 상환
-                </div>
-              </li>
-              <li
-                :class="[
-                  $style['basic-list__item'],
-                  'color-black',
-                  'text-body-4',
-                  'font-weight-regular',
-                ]"
-              >
-                <div :class="$style['basic-list__symbol']">-</div>
-                <div :class="$style['basic-list__content']">연체이자 부담</div>
-              </li>
-              <li
-                :class="[
-                  $style['basic-list__item'],
-                  'color-black',
-                  'text-body-4',
-                  'font-weight-regular',
-                ]"
-              >
-                <div :class="$style['basic-list__symbol']">-</div>
-                <div :class="$style['basic-list__content']">
-                  일정기간 경과 후 신용도판단정보 등록 등
+                  <div>기한의 이익이 상실되면?</div>
+                  <ul :class="[$style['basic-list'], 'row-margin-item']">
+                    <li
+                      :class="[
+                        $style['basic-list__item'],
+                        'color-black',
+                        'text-body-4',
+                        'font-weight-regular',
+                      ]"
+                    >
+                      <div :class="$style['basic-list__symbol']">-</div>
+                      <div :class="$style['basic-list__content']">
+                        모든 대출금(또는 해당 대출금)을 즉시 상환
+                      </div>
+                    </li>
+                    <li
+                      :class="[
+                        $style['basic-list__item'],
+                        'color-black',
+                        'text-body-4',
+                        'font-weight-regular',
+                      ]"
+                    >
+                      <div :class="$style['basic-list__symbol']">-</div>
+                      <div :class="$style['basic-list__content']">
+                        연체이자 부담
+                      </div>
+                    </li>
+                    <li
+                      :class="[
+                        $style['basic-list__item'],
+                        'color-black',
+                        'text-body-4',
+                        'font-weight-regular',
+                      ]"
+                    >
+                      <div :class="$style['basic-list__symbol']">-</div>
+                      <div :class="$style['basic-list__content']">
+                        일정기간 경과 후 신용도판단정보 등록 등
+                      </div>
+                    </li>
+                  </ul>
                 </div>
               </li>
             </ul>
@@ -1620,73 +1704,54 @@ export default {
                   >
                     <div :class="$style['basic-list__symbol']">-</div>
                     <div :class="$style['basic-list__content']">
-                      금융회사의 서면통지가 도달한 날부터 일정 시일이 경과하면
-                      기한이익을 상실하며, 모든 대출금(또는 해당 대출금)을
-                      대출기한이 도래하기 전임에도 불구하고 곧 상환하셔야
-                      합니다.
-                    </div>
-                  </li>
-                  <li
-                    :class="[
-                      $style['basic-list__item'],
-                      'color-black',
-                      'text-body-4',
-                      'font-weight-regular',
-                    ]"
-                  >
-                    <div :class="$style['basic-list__symbol']">-</div>
-                    <div :class="$style['basic-list__content']">
-                      <div>예) 주요 기한의 이익 상실 사유</div>
-
-                      <ul
-                        :class="[
-                          $style['basic-list'],
-                          $style['basic-list--regular'],
-                          $style['basic-list--small-margin'],
-                          'row-margin-item',
-                        ]"
-                      >
-                        <li
+                      <div>
+                        금융회사의 서면통지가 도달한 날부터 일정 시일이 경과하면
+                        기한이익을 상실하며, 모든 대출금(또는 해당 대출금)을
+                        대출기한이 도래하기 전임에도 불구하고 곧 상환하셔야
+                        합니다.
+                      </div>
+                      <div class="row-margin-item">
+                        <div class="text-body-5 font-weight-medium color-gray">
+                          예) 주요 기한의 이익 상실 사유
+                        </div>
+                        <ul
                           :class="[
-                            $style['basic-list__item'],
-                            'color-black',
-                            'text-body-4',
+                            $style['basic-list'],
+                            $style['basic-list--regular'],
+                            $style['basic-list--small-margin'],
+                            'row-margin-item',
                           ]"
                         >
-                          <div :class="$style['basic-list__symbol']"></div>
-                          <div :class="$style['basic-list__content']">
-                            여신거래와 관련하여 허위, 위변조 또는 고의로
-                            부실자료를 제출하여 회사의 채권보전에 중대한 손실을
-                            유발한 때
-                          </div>
-                        </li>
-                        <li
-                          :class="[
-                            $style['basic-list__item'],
-                            'color-black',
-                            'text-body-4',
-                          ]"
-                        >
-                          <div :class="$style['basic-list__symbol']"></div>
-                          <div :class="$style['basic-list__content']">
-                            이자등을 지급하기로 한 때부터 계속하여 30일간 지체한
-                            경우
-                          </div>
-                        </li>
-                        <li
-                          :class="[
-                            $style['basic-list__item'],
-                            'color-black',
-                            'text-body-4',
-                          ]"
-                        >
-                          <div :class="$style['basic-list__symbol']"></div>
-                          <div :class="$style['basic-list__content']">
-                            분할상환금 또는 분할상환 원리금의 지급을 2회 이상
-                            연속하여 지체한 때
-                          </div>
-                        </li>
-                      </ul>
+                          <li
+                            :class="[$style['basic-list__item'], 'text-body-5']"
+                          >
+                            <div :class="$style['basic-list__symbol']"></div>
+                            <div :class="$style['basic-list__content']">
+                              여신거래와 관련하여 허위, 위변조 또는 고의로
+                              부실자료를 제출하여 회사의 채권보전에 중대한
+                              손실을 유발할 때
+                            </div>
+                          </li>
+                          <li
+                            :class="[$style['basic-list__item'], 'text-body-5']"
+                          >
+                            <div :class="$style['basic-list__symbol']"></div>
+                            <div :class="$style['basic-list__content']">
+                              이자등을 지급하기로 한 때부터 계속하여 30일(기업인
+                              경우 14일)간 지체한 경우
+                            </div>
+                          </li>
+                          <li
+                            :class="[$style['basic-list__item'], 'text-body-5']"
+                          >
+                            <div :class="$style['basic-list__symbol']"></div>
+                            <div :class="$style['basic-list__content']">
+                              분할상환금 또는 분할상환 원리금의 지급을 2회 이상
+                              연속하여 지체한 때
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                   </li>
                 </ul>
@@ -1700,7 +1765,7 @@ export default {
             8. 담보권 설정 및 권리변동
           </h3>
 
-          <NoticeText :classNames="{ wrap: 'row-margin-item-medium' }">
+          <NoticeText :classNames="{ wrap: 'row-margin-contents' }">
             담보권 설정에 대한 기본적인 안내 사항입니다.
             <strong class="font-weight-medium"
               >담보의 제공은 재산상 손실을 가져올 수도 있는 중요한
@@ -1821,46 +1886,28 @@ export default {
 
         <section class="row-margin-container-medium">
           <h3 class="text-title-2 row-margin-contents">10. 해지에 관한 사항</h3>
+          <p class="text-body-2">
+            리스계약의 해지 시
+            <span class="color-green-secondary">규정손실금</span>이 부과 될 수
+            있습니다. 다만
+            <span class="color-green"
+              >리스상품은 계약이 성립한 날부터 3년 초과하여 상환하여도 </span
+            ><span class="color-green-secondary">규정손실금</span>이
+            <span class="color-green">부과되니 유의</span>하여 주시기 바랍니다.
+          </p>
 
-          <ul
-            :class="[
-              $style['basic-list'],
-              $style['basic-list--regular'],
-              $style['basic-list--large-margin'],
-              'row-margin-contents',
-            ]"
-          >
+          <ul :class="[$style['basic-list'], 'row-margin-item']">
             <li
               :class="[
                 $style['basic-list__item'],
                 'color-black',
-                'text-body-2',
+                'text-body-4',
                 'font-weight-regular',
               ]"
             >
-              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__symbol']">-</div>
               <div :class="$style['basic-list__content']">
-                리스계약의 해지 시
-                <span class="color-green-secondary">규정손실금</span>이 부과 될
-                수 있습니다. 다만
-                <span class="color-green"
-                  >리스상품은 계약이 성립한 날부터 3년 초과하여 상환하여도 </span
-                ><span class="color-green-secondary">규정손실금</span>이
-                <span class="color-green">부과되니 유의</span>하여 주시기
-                바랍니다.
-              </div>
-            </li>
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-2',
-                'font-weight-regular',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                고객이 해지를 요청할 경우, 금융회사는 고객센터(1800-1110)를
+                고객이 해지를 요청할 경우, 금융회사는 고객센터<br />(1800-1110)를
                 통하여 진행가능 합니다.(금융사 영업시간내에 처리 가능).
                 금융회사는 고객에게 규정손실금 등 해지 시 납부해야 하는 금액을
                 안내하고 입금계좌를 발송합니다. (납부 시 해지 처리 진행)
@@ -1870,11 +1917,11 @@ export default {
               :class="[
                 $style['basic-list__item'],
                 'color-black',
-                'text-body-2',
+                'text-body-4',
                 'font-weight-regular',
               ]"
             >
-              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__symbol']">-</div>
               <div :class="$style['basic-list__content']">
                 기한이익의 상실로 인한 리스계약의 해지 발생 시 고객님께서
                 납인하신 리스 보증금은 연체된 리스료에 상계 충당 될 수 있습니다.
@@ -1884,11 +1931,11 @@ export default {
               :class="[
                 $style['basic-list__item'],
                 'color-black',
-                'text-body-2',
+                'text-body-4',
                 'font-weight-regular',
               ]"
             >
-              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__symbol']">-</div>
               <div :class="$style['basic-list__content']">
                 대출신청 이후 고객에 의한 대출취소 또는 대출심사 거절 시 발생한
                 비용(등기설정/말소비용, 감정수수료, 인지세 등)을 고객이
@@ -1926,7 +1973,7 @@ export default {
                   등록사유발생일로 하여, 그때로부터 7영업일 이내 '연체정보등'이
                   등록됩니다.
                 </div>
-                <ul :class="[$style['basic-list'], 'row-margin-contents']">
+                <ul :class="[$style['basic-list'], 'row-margin-item']">
                   <li
                     :class="[
                       $style['basic-list__item'],
@@ -2023,7 +2070,7 @@ export default {
             </li>
           </ul>
 
-          <ul :class="[$style['basic-list'], 'row-margin-item']">
+          <ul :class="[$style['basic-list'], 'row-margin-contents']">
             <li
               :class="[
                 $style['basic-list__item'],
@@ -2394,7 +2441,7 @@ export default {
 
         <section class="row-margin-container-medium">
           <h3 class="text-title-2 row-margin-contents">
-            ※ 고객의 이해여부 확인을 위한 질의
+            고객의 이해여부 확인을 위한 질의
           </h3>
 
           <ul
@@ -2424,10 +2471,21 @@ export default {
                       >이 내용을 확인하셨습니까?</strong
                     >
                   </p>
-                  <p class="text-body-4 font-weight-light color-gray-tertiary">
-                    지연배상금 산식 : 월분할상환 원리금(리스료) × 지연배상금율 ×
-                    연체일수/365
-                  </p>
+                  <ul :class="[$style['basic-list'], 'row-margin-item']">
+                    <li
+                      :class="[
+                        $style['basic-list__item'],
+                        'text-body-5',
+                        'font-weight-regular',
+                      ]"
+                    >
+                      <div :class="$style['basic-list__symbol']">*</div>
+                      <div :class="$style['basic-list__content']">
+                        지연배상금 산식 : 월분할상환 원리금(리스료) ×
+                        지연배상금율 × 연체일수/365
+                      </div>
+                    </li>
+                  </ul>
                 </div>
 
                 <div class="flex-box">
@@ -2517,10 +2575,22 @@ export default {
                       >이 내용을 확인하셨습니까?</strong
                     >
                   </p>
-                  <p class="text-body-4 font-weight-light color-gray-tertiary">
-                    재화를 제공받은 경우에 금융소비자보호법 상 청약철회권 행사가
-                    불가능(금융소비자보호법 시행령 제37조제1항제3호가목)
-                  </p>
+                  <ul :class="[$style['basic-list'], 'row-margin-item']">
+                    <li
+                      :class="[
+                        $style['basic-list__item'],
+                        'text-body-5',
+                        'font-weight-regular',
+                      ]"
+                    >
+                      <div :class="$style['basic-list__symbol']">*</div>
+                      <div :class="$style['basic-list__content']">
+                        재화를 제공받은 경우에 금융소비자보호법 상 청약철회권
+                        행사가 불가능(금융소비자보호법 시행령
+                        제37조제1항제3호가목)
+                      </div>
+                    </li>
+                  </ul>
                 </div>
 
                 <div class="flex-box">
@@ -2555,7 +2625,7 @@ export default {
             <table>
               <colgroup>
                 <col style="width: 32px" />
-                <col />
+                <col style="width: 72px" />
                 <col />
               </colgroup>
               <tbody>

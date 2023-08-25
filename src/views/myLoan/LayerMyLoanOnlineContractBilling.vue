@@ -89,12 +89,13 @@ export default {
 
       <FormList>
         <FormListItem titleText="청구서 수령방법" :forceFocus="true">
-          <BoxCheckList :wrap="true">
+          <!-- Case : 기본 (오토금융, 중고차 외) -->
+          <BoxCheckList>
             <BoxCheckListItem>
               <BoxCheck
                 :minSide="true"
-                name="layerMyLoanOnlineContractBillingType"
-                id="layerMyLoanOnlineContractBillingType001"
+                name="layerMyLoanOnlineContractBillingType001"
+                id="layerMyLoanOnlineContractBillingType001_001"
                 :defaultChecked="true"
               >
                 <BoxCheckLabel>온라인(SMS)</BoxCheckLabel>
@@ -103,13 +104,38 @@ export default {
             <BoxCheckListItem>
               <BoxCheck
                 :minSide="true"
-                name="layerMyLoanOnlineContractBillingType"
-                id="layerMyLoanOnlineContractBillingType002"
+                name="layerMyLoanOnlineContractBillingType001"
+                id="layerMyLoanOnlineContractBillingType001_002"
               >
                 <BoxCheckLabel>이메일</BoxCheckLabel>
               </BoxCheck>
             </BoxCheckListItem>
           </BoxCheckList>
+          <!-- // Case : 기본 (오토금융, 중고차 외) -->
+
+          <!-- Case : 오토금융, 중고차 -->
+          <BoxCheckList>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="layerMyLoanOnlineContractBillingType002"
+                id="layerMyLoanOnlineContractBillingType002_001"
+                :defaultChecked="true"
+              >
+                <BoxCheckLabel>이메일</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="layerMyLoanOnlineContractBillingType002"
+                id="layerMyLoanOnlineContractBillingType002_002"
+              >
+                <BoxCheckLabel>이메일 + 우편</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+          </BoxCheckList>
+          <!-- // Case : 오토금융, 중고차 -->
         </FormListItem>
 
         <FormListItem
@@ -188,6 +214,69 @@ export default {
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
+
+        <!-- Case : "이메일 + 우편" 선택 시 노출 -->
+        <FormListItem titleText="우편 수령지" :forceFocus="true">
+          <!-- Case : 중고차 외 -->
+          <BoxCheckList>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="layerMyLoanOnlineContractBillingAdressType001"
+                id="layerMyLoanOnlineContractBillingAdressType001_001"
+                :defaultChecked="true"
+              >
+                <BoxCheckLabel>등본지</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="layerMyLoanOnlineContractBillingAdressType001"
+                id="layerMyLoanOnlineContractBillingAdressType001_002"
+              >
+                <BoxCheckLabel>실거주지</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="layerMyLoanOnlineContractBillingAdressType001"
+                id="layerMyLoanOnlineContractBillingAdressType001_003"
+              >
+                <BoxCheckLabel>사업장</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+          </BoxCheckList>
+          <!-- // Case : 중고차 외 -->
+
+          <!-- Case : 중고차 -->
+          <BoxCheckList>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="layerMyLoanOnlineContractBillingAdressType002"
+                id="layerMyLoanOnlineContractBillingAdressType002_001"
+              >
+                <BoxCheckLabel>실거주지</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="layerMyLoanOnlineContractBillingAdressType002"
+                id="layerMyLoanOnlineContractBillingAdressType002_002"
+              >
+                <BoxCheckLabel>직장</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+          </BoxCheckList>
+          <!-- // Case : 중고차 -->
+        </FormListItem>
+        <!-- // Case : "이메일 + 우편" 선택 시 노출 -->
       </FormList>
 
       <template v-slot:foot>

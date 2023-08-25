@@ -254,6 +254,10 @@ const datas = () => [
             date: '2023.07.21',
             text: '팝업추가\n- 접속대기 안내 팝업\n- 초과접속 안내 팝업',
           },
+          {
+            date: '2023.08.24',
+            text: 'Common_M00_b018, Common_M00_b019 딤 영역 클릭 시 닫히는 기능 제거',
+          },
         ],
       },
       {
@@ -787,6 +791,10 @@ const datas = () => [
             date: '2023.08.11',
             text: 'PF_M01_l002 소득정보 약관 삭제\n PF_M01_l006 전화번호 수정\n PF_M01_l007 버튼 문구 수정\n PF_M01_l009 전화번호 수정',
           },
+          {
+            date: '2023.08.24',
+            text: 'PF_M01_l007 버튼 문구 수정',
+          },
         ],
       },
       {
@@ -1038,6 +1046,10 @@ const datas = () => [
           {
             date: '2023.05.19',
             text: '팝업 추가\n- 한도조회 입력\n- 아파트 등기부등본 확인',
+          },
+          {
+            date: '2023.08.24',
+            text: 'PF_M11_l007 컨텐츠 수정 및 아이콘 추가',
           },
         ],
       },
@@ -1855,6 +1867,10 @@ const datas = () => [
             date: '2023.08.11',
             text: '명함 노출 삭제',
           },
+          {
+            date: '2023.08.24',
+            text: '약정 가능 건 체크박스 추가',
+          },
         ],
       },
       {
@@ -2509,6 +2525,10 @@ const datas = () => [
           {
             date: '2023.08.21',
             text: '수수료 표기 방법 변경\n일부 버튼 사이즈 변경',
+          },
+          {
+            date: '2023.08.24',
+            text: '제휴사 항목 추가',
           },
         ],
       },
@@ -3805,6 +3825,10 @@ const datas = () => [
             date: '2023.08.11',
             text: '- MY_M03_l022pa2 컨텐츠 타이틀 문구 수정\n- My_M03_l003 버튼 문구 수정',
           },
+          {
+            date: '2023.08.24',
+            text: '케이스 추가\n- My_M03_l016\n- My_M03_l017\n- My_M03_l018',
+          },
         ],
       },
       {
@@ -3856,7 +3880,12 @@ const datas = () => [
         path: '/ui-guide/my-loan-progress-003',
         status: 'end',
         create: '2023.04.26',
-        log: [],
+        log: [
+          {
+            date: '2023.08.24',
+            text: 'My_M99_l001 문구 및 레벨 수정',
+          },
+        ],
       },
       {
         depth2: '진행상태조회\nMy_M03_p001',
@@ -3867,7 +3896,12 @@ const datas = () => [
         path: '/ui-guide/my-loan-progress-004',
         status: 'end',
         create: '2023.04.26',
-        log: [],
+        log: [
+          {
+            date: '2023.08.24',
+            text: 'My_M99_l003 문구 및 레벨 수정',
+          },
+        ],
       },
       {
         depth2: '진행상태조회\nMy_M03_p001',
@@ -3878,7 +3912,12 @@ const datas = () => [
         path: '/ui-guide/my-loan-progress-005',
         status: 'end',
         create: '2023.04.26',
-        log: [],
+        log: [
+          {
+            date: '2023.08.24',
+            text: '문구 및 레벨 수정\n- My_M99_l004\n- My_M99_l005',
+          },
+        ],
       },
       {
         depth2: '진행상태조회\nMy_M03_p001',
@@ -3889,7 +3928,12 @@ const datas = () => [
         path: '/ui-guide/my-loan-progress-006',
         status: 'end',
         create: '2023.04.26',
-        log: [],
+        log: [
+          {
+            date: '2023.08.24',
+            text: 'My_M99_l006 문구 및 레벨 수정, 항목 추가',
+          },
+        ],
       },
       {
         depth2: '진행상태조회\nMy_M03_p001',
@@ -3900,7 +3944,12 @@ const datas = () => [
         path: '/ui-guide/my-loan-progress-007',
         status: 'end',
         create: '2023.04.26',
-        log: [],
+        log: [
+          {
+            date: '2023.08.24',
+            text: 'My_M03_l054 문구 및 레벨 수정, 항목 추가',
+          },
+        ],
       },
       {
         depth2: '진행상태조회\nMy_M03_p001',
@@ -3911,7 +3960,12 @@ const datas = () => [
         path: '/ui-guide/my-loan-progress-008',
         status: 'end',
         create: '2023.04.26',
-        log: [],
+        log: [
+          {
+            date: '2023.08.24',
+            text: 'My_M99_l007 문구 및 레벨 수정, 항목 추가',
+          },
+        ],
       },
       {
         depth2: '진행상태조회\nMy_M03_p001',
@@ -3926,6 +3980,10 @@ const datas = () => [
           {
             date: '2023.08.11',
             text: 'My_M03_l271 컨텐츠 내 문구 수정',
+          },
+          {
+            date: '2023.08.24',
+            text: 'My_M99_l008 문구 및 레벨 수정, 항목 추가',
           },
         ],
       },
@@ -3943,6 +4001,10 @@ const datas = () => [
             date: '2023.08.11',
             text: 'My_M03_l282 컨텐츠 내 문구 수정',
           },
+          {
+            date: '2023.08.24',
+            text: 'My_M99_l009 문구 및 레벨 수정, 항목 추가',
+          },
         ],
       },
       {
@@ -3958,6 +4020,10 @@ const datas = () => [
           {
             date: '2023.08.11',
             text: 'My_M03_l287 컨텐츠 내 문구 수정',
+          },
+          {
+            date: '2023.08.24',
+            text: '문구 및 레벨 수정\n- My_M99_l010\n- My_M99_l011',
           },
         ],
       },

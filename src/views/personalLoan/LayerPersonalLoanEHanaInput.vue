@@ -234,7 +234,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton>약정하기</BasicButton>
+            <BasicButton>신청하기</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
