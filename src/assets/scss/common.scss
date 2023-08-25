@@ -117,6 +117,21 @@ body,
   background-color: rgba($color-white, 1);
 }
 
+// inner-bottom-wrap
+.inner-bottom-wrap {
+  flex: none;
+  margin: -16px 0;
+  padding: 16px 0;
+  background-color: rgba($color-white, 0);
+  transition: background-color 0.2s;
+}
+.is-sticky .inner-bottom-wrap {
+  margin: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: rgba($color-white, 1);
+}
+
 // flex-box
 .flex-box {
   display: flex;
