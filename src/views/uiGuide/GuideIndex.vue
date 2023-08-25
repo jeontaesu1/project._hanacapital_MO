@@ -3185,6 +3185,10 @@ const datas = () => [
             date: '2023.08.21',
             text: '- AF_M00_l005 placeholder 보완\n- AF_M00_l006 placeholder 보완\n- AF_M00_l007 placeholder 보완',
           },
+          {
+            date: '2023.08.25',
+            text: '보증금, 선납금 영역 직접입력 버튼 추가\n- AF_M01_l001\n- AF_M02_l001',
+          },
         ],
       },
       {

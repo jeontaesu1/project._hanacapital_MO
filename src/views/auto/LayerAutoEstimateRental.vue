@@ -330,7 +330,7 @@ export default {
             </div>
           </div>
 
-          <BoxCheckList :wrap="true" :col="4">
+          <BoxCheckList :wrap="true" :col="3">
             <BoxCheckListItem>
               <BoxCheck
                 :minSide="true"
@@ -368,6 +368,15 @@ export default {
                 <BoxCheckLabel>30%</BoxCheckLabel>
               </BoxCheck>
             </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="layerAutoEstimateRentalPrePayment"
+                id="layerAutoEstimateRentalPrePayment005"
+              >
+                <BoxCheckLabel>직접입력</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
           </BoxCheckList>
           <NoticeText :classNames="{ wrap: 'row-margin-item' }"
             >선납금을 많이 내면 월 납입금이 저렴해요.<br />
@@ -385,7 +394,7 @@ export default {
             </div>
           </div>
 
-          <BoxCheckList :wrap="true" :col="4">
+          <BoxCheckList :wrap="true" :col="3">
             <BoxCheckListItem>
               <BoxCheck
                 :minSide="true"
@@ -421,6 +430,15 @@ export default {
                 id="layerAutoEstimateRentalDeposit004"
               >
                 <BoxCheckLabel>30%</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="layerAutoEstimateRentalDeposit"
+                id="layerAutoEstimateRentalDeposit005"
+              >
+                <BoxCheckLabel>직접입력</BoxCheckLabel>
               </BoxCheck>
             </BoxCheckListItem>
           </BoxCheckList>
