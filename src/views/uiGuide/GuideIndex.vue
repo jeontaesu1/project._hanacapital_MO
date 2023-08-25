@@ -237,7 +237,12 @@ const datas = () => [
         path: '/ui-guide/clause-detail-001',
         status: 'end',
         create: '2023.03.31',
-        log: [],
+        log: [
+          {
+            date: '2023.08.25',
+            text: 'Common_M00_l001 타이틀 말줄임 처리 및 내용 아이프레임 처리',
+          },
+        ],
       },
       {
         depth2: '안내팝업',
