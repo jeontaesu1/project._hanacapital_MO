@@ -1,5 +1,5 @@
 <script>
-// My_M01_p001 계약미보유
+// My_M01_p001 계약미보유 / 종료계약만 보유
 import { onMounted, onUnmounted } from 'vue';
 import { RouterLink } from 'vue-router';
 
@@ -9,6 +9,9 @@ import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
+import ButtonList from '@/components/ui/button/ButtonList.vue';
+import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 import IconPig from '@/assets/images/icon/pig.svg?component';
 import IconBuilding from '@/assets/images/icon/building.svg?component';
@@ -23,6 +26,9 @@ export default {
     PageTextGroup,
     PageMainText,
     BasicHr,
+    BasicButton,
+    ButtonList,
+    ButtonListItem,
     IconPig,
     IconBuilding,
     IconCar,
@@ -120,6 +126,20 @@ export default {
         </li>
       </ul>
     </div>
+
+    <!-- Case : 종료계약만 보유 -->
+    <template v-slot:foot>
+      <ButtonList
+        :classNames="{
+          wrap: 'row-margin-none',
+        }"
+      >
+        <ButtonListItem>
+          <BasicButton>종료된 계약 확인하기</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
+    </template>
+    <!-- // Case : 종료계약만 보유 -->
   </PageContents>
 </template>
 

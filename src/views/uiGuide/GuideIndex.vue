@@ -3570,14 +3570,19 @@ const datas = () => [
       },
       {
         depth2: '홈\nMy_M01_p001',
-        depth3: '계약미보유',
+        depth3: '계약미보유,\n종료계약만 보유',
         depth4: '',
         depth5: '',
         depth6: '',
         path: '/my-loan/empty',
         status: 'end',
         create: '2023.04.21',
-        log: [],
+        log: [
+          {
+            date: '2023.08.25',
+            text: '종료계약만 보유 케이스 추가',
+          },
+        ],
       },
       {
         depth2: '홈\nMy_M01_p001',
