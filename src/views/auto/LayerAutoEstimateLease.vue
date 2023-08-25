@@ -372,7 +372,7 @@ export default {
           </div>
 
           <!-- Case : 운용리스일 경우 -->
-          <BoxCheckList :wrap="true" :col="4">
+          <BoxCheckList :wrap="true" :col="3">
             <BoxCheckListItem>
               <BoxCheck
                 :minSide="true"
@@ -408,6 +408,15 @@ export default {
                 :defaultChecked="true"
               >
                 <BoxCheckLabel>30%</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="layerAutoEstimateLeasePrePayment"
+                id="layerAutoEstimateLeasePrePayment005"
+              >
+                <BoxCheckLabel>직접입력</BoxCheckLabel>
               </BoxCheck>
             </BoxCheckListItem>
           </BoxCheckList>
@@ -471,7 +480,7 @@ export default {
             </div>
           </div>
 
-          <BoxCheckList :wrap="true" :col="4">
+          <BoxCheckList :wrap="true" :col="3">
             <BoxCheckListItem>
               <BoxCheck
                 :minSide="true"
@@ -507,6 +516,15 @@ export default {
                 id="layerAutoEstimateLeaseDeposit004"
               >
                 <BoxCheckLabel>30%</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="layerAutoEstimateLeaseDeposit"
+                id="layerAutoEstimateLeaseDeposit005"
+              >
+                <BoxCheckLabel>직접입력</BoxCheckLabel>
               </BoxCheck>
             </BoxCheckListItem>
           </BoxCheckList>

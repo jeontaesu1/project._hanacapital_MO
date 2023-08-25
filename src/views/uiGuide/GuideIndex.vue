@@ -263,6 +263,10 @@ const datas = () => [
             date: '2023.08.24',
             text: 'Common_M00_b018, Common_M00_b019 딤 영역 클릭 시 닫히는 기능 제거',
           },
+          {
+            date: '2023.08.25',
+            text: 'Common_M00_b017 약관 내용 추가',
+          },
         ],
       },
       {
@@ -3218,6 +3222,10 @@ const datas = () => [
             date: '2023.08.21',
             text: '- AF_M00_l005 placeholder 보완\n- AF_M00_l006 placeholder 보완\n- AF_M00_l007 placeholder 보완',
           },
+          {
+            date: '2023.08.25',
+            text: '보증금, 선납금 영역 직접입력 버튼 추가\n- AF_M01_l001\n- AF_M02_l001',
+          },
         ],
       },
       {
@@ -4115,6 +4123,10 @@ const datas = () => [
           {
             date: '2023.06.16',
             text: '팝업 추가\n- 입금내역서 조회',
+          },
+          {
+            date: '2023.08.25',
+            text: 'MY_M02_l008 컨텐츠 다건 케이스 추가',
           },
         ],
       },
