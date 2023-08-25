@@ -163,6 +163,14 @@ export default {
                       </div>
                     </div>
                   </li>
+                </ol>
+                <ul
+                  :class="[
+                    $style['basic-list'],
+                    $style['basic-list--normal-margin'],
+                    'row-margin-item-regular',
+                  ]"
+                >
                   <li
                     :class="[$style['basic-list__item'], 'color-gray-tertiary']"
                   >
@@ -173,7 +181,7 @@ export default {
                       리스크관리(통계)업무만을 위하여 보유 및 이용됩니다.
                     </div>
                   </li>
-                </ol>
+                </ul>
               </div>
             </UiAccordionLayer>
           </UiAccordionItem>

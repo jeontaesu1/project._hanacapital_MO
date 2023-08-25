@@ -245,57 +245,61 @@ export default {
           </div>
 
           <!-- Case : 연체 내역이 있을 경우 -->
-          <BasicBox>
-            <BasicBoxHead>
-              <BasicBoxHeadLeft>
-                <h3 class="text-body-1 font-weight-medium">
-                  오토리스 운용 (정상)
-                </h3>
-              </BasicBoxHeadLeft>
-            </BasicBoxHead>
-            <KeyValue margin="regular">
-              <KeyValueItem
-                :classNames="{
-                  item: 'text-body-3',
-                }"
-              >
-                <KeyValueTitle>연체발생일</KeyValueTitle>
-                <KeyValueText>2022.02.02</KeyValueText>
-              </KeyValueItem>
-              <KeyValueItem
-                :classNames="{
-                  item: 'text-body-3',
-                }"
-              >
-                <KeyValueTitle>원금</KeyValueTitle>
-                <KeyValueText>999,999,999 원</KeyValueText>
-              </KeyValueItem>
-              <KeyValueItem
-                :classNames="{
-                  item: 'text-body-3',
-                }"
-              >
-                <KeyValueTitle>이자</KeyValueTitle>
-                <KeyValueText>999,999,999 원</KeyValueText>
-              </KeyValueItem>
-              <KeyValueItem
-                :classNames="{
-                  item: 'text-body-3',
-                }"
-              >
-                <KeyValueTitle>연체정리일</KeyValueTitle>
-                <KeyValueText>2022.02.02</KeyValueText>
-              </KeyValueItem>
-              <KeyValueItem
-                :classNames="{
-                  item: 'text-body-3',
-                }"
-              >
-                <KeyValueTitle>연체일수</KeyValueTitle>
-                <KeyValueText>15일</KeyValueText>
-              </KeyValueItem>
-            </KeyValue>
-          </BasicBox>
+          <ul class="reset-list">
+            <li v-for="i in 2" :key="i" class="row-margin-item-group">
+              <BasicBox>
+                <BasicBoxHead>
+                  <BasicBoxHeadLeft>
+                    <h3 class="text-body-1 font-weight-medium">
+                      오토리스 운용 (정상)
+                    </h3>
+                  </BasicBoxHeadLeft>
+                </BasicBoxHead>
+                <KeyValue margin="regular">
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>연체발생일</KeyValueTitle>
+                    <KeyValueText>2022.02.02</KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>원금</KeyValueTitle>
+                    <KeyValueText>999,999,999 원</KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>이자</KeyValueTitle>
+                    <KeyValueText>999,999,999 원</KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>연체정리일</KeyValueTitle>
+                    <KeyValueText>2022.02.02</KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>연체일수</KeyValueTitle>
+                    <KeyValueText>15일</KeyValueText>
+                  </KeyValueItem>
+                </KeyValue>
+              </BasicBox>
+            </li>
+          </ul>
           <!-- //Case : 연체 내역이 있을 경우 -->
 
           <!-- Case : 연체 내역이 없을 경우 -->
