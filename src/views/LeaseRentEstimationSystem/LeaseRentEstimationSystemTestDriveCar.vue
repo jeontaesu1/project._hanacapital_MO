@@ -3751,7 +3751,12 @@ export default {
                 <BasicButton size="small" inline="true">
                   계산중
                   <template v-slot:rightIcon>
-                    <div :class="$style['loading-icon']"></div>
+                    <div
+                      :class="[
+                        $style['loading-icon'],
+                        $style['loading-icon--regular'],
+                      ]"
+                    ></div>
                   </template>
                 </BasicButton>
                 <!-- //Case : 로딩중 -->
@@ -5466,7 +5471,12 @@ export default {
                         <BasicButton size="small" inline="true">
                           계산중
                           <template v-slot:rightIcon>
-                            <div :class="$style['loading-icon']"></div>
+                            <div
+                              :class="[
+                                $style['loading-icon'],
+                                $style['loading-icon--regular'],
+                              ]"
+                            ></div>
                           </template>
                         </BasicButton>
                         <!-- // Case : 계산중 -->
