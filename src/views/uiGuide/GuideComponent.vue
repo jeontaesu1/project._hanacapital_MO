@@ -416,7 +416,12 @@ export default {
 
             <PopupText>// contents</PopupText>
 
-            <BasicButton @click="layerOpenTest002">
+            <BasicButton
+              @click="
+                layerSlotProps.close();
+                layerOpenTest002();
+              "
+            >
               하단 레이어 팝업
             </BasicButton>
 
@@ -1271,6 +1276,23 @@ export default {
           "
         >
           <div :class="$style['loading-icon']"></div>
+        </div>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sun-title">regular</h3>
+
+        <div
+          style="
+            display: inline-block;
+            padding: 20px;
+            background-color: #bdbdbd;
+            box-sizing: border-box;
+          "
+        >
+          <div
+            :class="[$style['loading-icon'], $style['loading-icon--regular']]"
+          ></div>
         </div>
       </div>
     </section>

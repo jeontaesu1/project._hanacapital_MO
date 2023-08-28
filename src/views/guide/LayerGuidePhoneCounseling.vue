@@ -122,7 +122,67 @@ export default {
             </div>
 
             <UiAccordionLayer>
-              <div :class="$style['agree-list__detail']">// Contents</div>
+              <div :class="$style['agree-list__detail']">
+                <ol
+                  :class="[
+                    $style['basic-list'],
+                    $style['basic-list--normal-margin'],
+                  ]"
+                >
+                  <li
+                    :class="[$style['basic-list__item'], 'font-weight-medium']"
+                  >
+                    <div :class="$style['basic-list__symbol']">1.</div>
+                    <div :class="$style['basic-list__content']">
+                      <div>개인정보 수집 및 이용목적</div>
+                      <div class="font-weight-light row-margin-small">
+                        고객상담 접수 및 회신
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    :class="[$style['basic-list__item'], 'font-weight-medium']"
+                  >
+                    <div :class="$style['basic-list__symbol']">2.</div>
+                    <div :class="$style['basic-list__content']">
+                      <div>수집하는 개인정보 항목</div>
+                      <div class="font-weight-light row-margin-small">
+                        연락처
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    :class="[$style['basic-list__item'], 'font-weight-medium']"
+                  >
+                    <div :class="$style['basic-list__symbol']">3.</div>
+                    <div :class="$style['basic-list__content']">
+                      <div>보유 및 이용기간</div>
+                      <div class="font-weight-light row-margin-small">
+                        수집·이용 동의일로부터 개인(신용)정보의 수집·이용 목적을
+                        달성할 때까지
+                      </div>
+                    </div>
+                  </li>
+                </ol>
+                <ul
+                  :class="[
+                    $style['basic-list'],
+                    $style['basic-list--normal-margin'],
+                    'row-margin-item-regular',
+                  ]"
+                >
+                  <li
+                    :class="[$style['basic-list__item'], 'color-gray-tertiary']"
+                  >
+                    <div :class="$style['basic-list__symbol']">※</div>
+                    <div :class="$style['basic-list__content']">
+                      단, 수집이용 목적 달성 이후에는 금융사고 조사, 분쟁해결,
+                      민원처리, 법령상 의무이행 및 당사의
+                      리스크관리(통계)업무만을 위하여 보유 및 이용됩니다.
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </UiAccordionLayer>
           </UiAccordionItem>
         </UiAccordion>

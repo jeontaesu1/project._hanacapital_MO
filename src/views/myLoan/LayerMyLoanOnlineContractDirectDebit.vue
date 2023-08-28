@@ -25,9 +25,11 @@ import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import BankSelect from '@/components/ui/form/BankSelect.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
-
-import IconLogo from '@/assets/images/icon/hanacapital-small.svg?component';
-import IconLink from '@/assets/images/icon/link.svg?component';
+import BasicBox from '@/components/ui/common/BasicBox.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
+import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
+import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
+import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 
 export default {
   components: {
@@ -54,9 +56,11 @@ export default {
     BankSelect,
     NoticeText,
     TextButton,
-
-    IconLogo,
-    IconLink,
+    BasicBox,
+    KeyValue,
+    KeyValueItem,
+    KeyValueTitle,
+    KeyValueText,
   },
   setup() {
     const layer = ref(null);
@@ -89,19 +93,49 @@ export default {
       </template>
 
       <PageTextGroup>
+        <!-- Case : 기본 -->
         <PageMainText>
           <strong>자동이체 정보를</strong><br />
           입력해 주세요
         </PageMainText>
+        <!-- // Case : 기본 -->
 
-        <!-- Case: 제휴사 중고차 약정일 경우 문구 노출 -->
+        <!-- Case : 제휴사 중고차 약정일 경우 문구 노출 -->
         <PageMainText>
           <strong>대출금 지급 및 자동이체</strong><br />
           계좌(본인계좌)를 입력해 주세요.
         </PageMainText>
-        <!-- // Case: 제휴사 중고차 약정일 경우 문구 노출 -->
+        <!-- // Case : 제휴사 중고차 약정일 경우 문구 노출 -->
       </PageTextGroup>
 
+      <!-- Case : "중고차 구약정" -->
+      <section>
+        <h3 class="text-title-2 row-margin-contents">계좌정보</h3>
+
+        <BasicBox>
+          <KeyValue margin="regular">
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
+            >
+              <KeyValueTitle>금융기관명</KeyValueTitle>
+              <KeyValueText>하나은행</KeyValueText>
+            </KeyValueItem>
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
+            >
+              <KeyValueTitle>출금계좌번호</KeyValueTitle>
+              <KeyValueText>1234567890123</KeyValueText>
+            </KeyValueItem>
+          </KeyValue>
+        </BasicBox>
+      </section>
+      <!-- // Case : "중고차 구약정" -->
+
+      <!-- Case : "중고차 구약정" 인 경우 비노출 -->
       <FormList>
         <FormListItem
           titleText="결제일"
@@ -144,6 +178,7 @@ export default {
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
+
         <!-- Case : 오토 할부/론에서만 결제일 선택 후 노출 -->
         <FormListItem
           titleText="1회차 납부일"
@@ -166,6 +201,7 @@ export default {
           </FormInvalid>
         </FormListItem>
         <!-- // Case : 오토 할부/론에서만 결제일 선택 후 노출 -->
+
         <FormListItem
           titleText="은행"
           target="#layerMyLoanOnlineContractDirectDebitImportedBankButton"
@@ -183,6 +219,7 @@ export default {
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
+
         <FormListItem
           titleText="계좌번호"
           target="#layerMyLoanOnlineContractDirectDebitDomesticAccount"
@@ -217,24 +254,7 @@ export default {
           </div>
         </FormListItem>
       </FormList>
-
-      <div :class="$style['join']">
-        <div :class="$style['join__inner']">
-          <div :class="$style['join__icon']"><IconLogo /></div>
-          <div :class="$style['join__title']">하나은행 계좌가 없으신가요?</div>
-          <TextButton
-            :block="true"
-            :classNames="{
-              wrap: [$style['join__link'], 'text-body-4 color-gray'],
-            }"
-          >
-            비대면 개설
-            <template v-slot:rightIcon>
-              <IconLink />
-            </template>
-          </TextButton>
-        </div>
-      </div>
+      <!-- // Case : "중고차 구약정" 인 경우 비노출 -->
 
       <template v-slot:foot>
         <ButtonList

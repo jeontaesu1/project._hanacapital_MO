@@ -7,3 +7,7 @@ dist-ssr
 HomeView.vue
 
 src/assets/_dummyData/견적서asis/
+
+public/_dummyData/
+public/legacy/css/
+public/legacy/js/

@@ -3111,6 +3111,82 @@ export default {
             </li>
             <!-- // 출고장 -->
 
+            <!-- Case : 수입차 선택 시 노출 -->
+            <!-- 제휴사 -->
+            <UiAccordionItem
+              :classNames="{ item: $style['estimate-list__item'] }"
+            >
+              <div :class="$style['estimate-list__head']">
+                <div :class="$style['estimate-list__block']">
+                  <div :class="$style['estimate-list__left']">
+                    <KeyValue align="left" size="medium" verticalAlign="center">
+                      <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                        <KeyValueTitle>
+                          <div class="text-body-4">제휴사</div>
+                        </KeyValueTitle>
+                        <KeyValueText>코오롱글로벌(주)</KeyValueText>
+                      </KeyValueItem>
+                    </KeyValue>
+                  </div>
+                </div>
+                <div :class="$style['estimate-list__arrow']">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['estimate-list__opener'] }"
+                  />
+                </div>
+              </div>
+
+              <UiAccordionLayer
+                :classNames="{ layer: $style['estimate-list__layer'] }"
+              >
+                <section :class="$style['estimate-list__contents']">
+                  <BoxCheckList spacing="small" align="full">
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemRentCheck012"
+                        id="leaseRentEstimationSystemRentCheck012_001"
+                        size="small"
+                        :defaultChecked="true"
+                      >
+                        <BoxCheckLabel>코오롱글로벌(주)</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemRentCheck012"
+                        id="leaseRentEstimationSystemRentCheck012_002"
+                        size="small"
+                      >
+                        <BoxCheckLabel>한성모터스주식회사</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        name="leaseRentEstimationSystemRentCheck012"
+                        id="leaseRentEstimationSystemRentCheck012_003"
+                        size="small"
+                      >
+                        <BoxCheckLabel>(주)한독모터스</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        name="leaseRentEstimationSystemRentCheck012"
+                        id="leaseRentEstimationSystemRentCheck012_004"
+                        size="small"
+                      >
+                        <BoxCheckLabel>선택하지 않음</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                  </BoxCheckList>
+                </section>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+            <!-- // 제휴사 -->
+            <!-- // Case : 수입 선택 시 노출 -->
+
             <!-- 도착지 -->
             <UiAccordionItem
               :classNames="{ item: $style['estimate-list__item'] }"
@@ -5539,7 +5615,12 @@ export default {
                         <BasicButton size="small" inline="true">
                           계산중
                           <template v-slot:rightIcon>
-                            <div :class="$style['loading-icon']"></div>
+                            <div
+                              :class="[
+                                $style['loading-icon'],
+                                $style['loading-icon--regular'],
+                              ]"
+                            ></div>
                           </template>
                         </BasicButton>
                         <!-- // Case : 계산중 -->

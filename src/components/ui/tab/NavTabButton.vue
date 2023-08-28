@@ -104,15 +104,20 @@ export default {
 
       const html = document.getElementsByTagName('html')[0];
       const popupBodyEl = popupLayout.body ? popupLayout.body.value : null;
-      const offsetTop =
-        stickyBarEl.offsetTop - (popupBodyEl ? 0 : headerH.value);
-
-      if (popupBodyEl) {
-        if (popupBodyEl.scrollTop > offsetTop) {
-          popupBodyEl.scrollTop = offsetTop;
+      const scrollTop = (() => {
+        if (popupBodyEl) {
+          return popupBodyEl.scrollTop;
+        } else {
+          return html.scrollTop;
         }
-      } else {
-        if (html.scrollTop > offsetTop) {
+      })();
+      const offsetTop =
+        scrollTop + stickyBarEl.getBoundingClientRect().top - headerH.value;
+
+      if (scrollTop > offsetTop) {
+        if (popupBodyEl) {
+          popupBodyEl.scrollTop = offsetTop;
+        } else {
           html.scrollTop = offsetTop;
         }
       }
