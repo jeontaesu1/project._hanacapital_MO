@@ -107,7 +107,7 @@ export default {
                   item: 'text-body-3',
                 }"
               >
-                <KeyValueTitle>월 리스료</KeyValueTitle>
+                <KeyValueTitle>월 렌트료</KeyValueTitle>
                 <KeyValueText>500,000 원</KeyValueText>
               </KeyValueItem>
 
