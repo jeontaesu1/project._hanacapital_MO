@@ -23,6 +23,7 @@ import LR_M05_b007 from '@/views/LeaseRentEstimationSystem/LR_M05_b007.vue';
 import LayerLeaseRentEstimationSystemStart from '@/views/LeaseRentEstimationSystem/LayerLeaseRentEstimationSystemStart.vue';
 import LayerLeaseRentEstimationViewPriceList from '@/views/LeaseRentEstimationSystem/LayerLeaseRentEstimationViewPriceList.vue';
 import LayerLeaseRentEstimationViewCatalog from '@/views/LeaseRentEstimationSystem/LayerLeaseRentEstimationViewCatalog.vue';
+import My_M03_l004a1 from '@/views/LeaseRentEstimationSystem/My_M03_l004a1.vue';
 
 export default {
   components: {
@@ -47,6 +48,7 @@ export default {
     LayerLeaseRentEstimationSystemStart,
     LayerLeaseRentEstimationViewPriceList,
     LayerLeaseRentEstimationViewCatalog,
+    My_M03_l004a1,
   },
   setup() {
     const layer001 = ref(null);
@@ -66,6 +68,7 @@ export default {
     const layer015 = ref(null);
     const layer016 = ref(null);
     const layer017 = ref(null);
+    const layer018 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -118,6 +121,9 @@ export default {
     const layer017Open = (e = {}) => {
       layer017.value.layer.open(e.target);
     };
+    const layer018Open = (e = {}) => {
+      layer018.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -137,6 +143,7 @@ export default {
       layer015,
       layer016,
       layer017,
+      layer018,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -154,6 +161,7 @@ export default {
       layer015Open,
       layer016Open,
       layer017Open,
+      layer018Open,
     };
   },
 };
@@ -252,6 +260,11 @@ export default {
           >카탈로그 보기 팝업<br />LR_M00_l017</BasicButton
         >
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer018Open"
+          >고지의무수행 확인서<br />My_M03_l004a1</BasicButton
+        >
+      </ButtonListItem>
     </ButtonList>
 
     <LayerLeaseRentEstimationSystemConformityAdequacy ref="layer001" />
@@ -271,5 +284,6 @@ export default {
     <LayerLeaseRentEstimationSystemStart ref="layer015" />
     <LayerLeaseRentEstimationViewPriceList ref="layer016" />
     <LayerLeaseRentEstimationViewCatalog ref="layer017" />
+    <My_M03_l004a1 ref="layer018" />
   </PageContents>
 </template>

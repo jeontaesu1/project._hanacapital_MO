@@ -6619,6 +6619,18 @@ export default {
     </section>
 
     <template v-slot:foot>
+      <!--
+        DD :
+        
+        버튼 3개 이하
+        :wrap="false" :col="null"
+
+        버튼 4개
+        :wrap="true" :col="2"
+
+        버튼 5개, 6개
+        :wrap="true" :col="3"
+      -->
       <ButtonList
         :wrap="true"
         :col="3"
@@ -6640,6 +6652,9 @@ export default {
         </ButtonListItem>
         <ButtonListItem>
           <BasicButton theme="quaternary" size="small">수입할부</BasicButton>
+        </ButtonListItem>
+        <ButtonListItem>
+          <BasicButton theme="quaternary" size="small">중고할부</BasicButton>
         </ButtonListItem>
       </ButtonList>
     </template>
