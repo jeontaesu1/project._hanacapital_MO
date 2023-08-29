@@ -32,6 +32,7 @@ import IconContract from '@/assets/images/icon/contract.svg?component';
 import IconSend from '@/assets/images/icon/send.svg?component';
 import IconConsulting from '@/assets/images/icon/consulting.svg?component';
 import IconConsultation from '@/assets/images/icon/consultation.svg?component';
+import IconLogoMain from '@/assets/images/icon/logo-main.svg?component';
 import ImgZeroCommission from '@/assets/images/illustration/img-zero-commission.svg?component';
 import ImgSimplePay from '@/assets/images/illustration/img-simple-pay.svg?component';
 
@@ -64,6 +65,7 @@ export default {
     IconContract,
     IconConsultation,
     IconConsulting,
+    IconLogoMain,
     ImgZeroCommission,
     ImgSimplePay,
   },
@@ -888,6 +890,14 @@ export default {
         </li>
       </ul>
     </UiTab>
+
+    <div
+      class="flex-box justify-conten-end row-margin-contents row-margin-bottom-none"
+    >
+      <div class="flex-box__cell">
+        <IconLogoMain class="display-block" />
+      </div>
+    </div>
 
     <BasicHr
       type="contents"
