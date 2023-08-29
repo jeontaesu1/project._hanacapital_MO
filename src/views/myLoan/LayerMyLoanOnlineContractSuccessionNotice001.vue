@@ -43,7 +43,7 @@ export default {
         :class="[
           $style['basic-list'],
           $style['basic-list--regular'],
-          $style['basic-list--normal-margin'],
+          $style['basic-list--regular-margin'],
         ]"
       >
         <li :class="[$style['basic-list__item'], 'text-body-3', 'color-black']">

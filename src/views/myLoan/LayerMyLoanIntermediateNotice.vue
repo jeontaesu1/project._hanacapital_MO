@@ -55,13 +55,13 @@ export default {
           ]"
         >
           <li
-            :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-4']"
           >
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">할부 및 대출상품</div>
           </li>
           <li
-            :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-4']"
           >
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
@@ -85,7 +85,7 @@ export default {
           ]"
         >
           <li
-            :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-4']"
           >
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
@@ -93,7 +93,7 @@ export default {
             </div>
           </li>
           <li
-            :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-4']"
           >
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
@@ -114,7 +114,7 @@ export default {
           ]"
         >
           <li
-            :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-4']"
           >
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
@@ -122,7 +122,7 @@ export default {
             </div>
           </li>
           <li
-            :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-4']"
           >
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
@@ -182,7 +182,7 @@ export default {
             </div>
           </li>
           <li
-            :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-4']"
           >
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
@@ -191,7 +191,7 @@ export default {
             </div>
           </li>
           <li
-            :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-4']"
           >
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
