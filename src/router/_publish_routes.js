@@ -1227,12 +1227,6 @@ const routes = [
     component: () => import('@/views/myLoan/MyLoanProgress.vue'),
   },
   {
-    path: '/my-loan/online-contract-check',
-    name: '/my-loan/online-contract-check',
-    component: () =>
-      import('@/views/myLoan/LayerMyLoanOnlineContractCheck002.vue'),
-  },
-  {
     path: '/my-loan/progress-identification',
     name: '/my-loan/progress-identification',
     component: () => import('@/views/myLoan/MyLoanProgressIdentification.vue'),
@@ -1288,6 +1282,11 @@ const routes = [
     path: '/my-loan/BF_M06_l018',
     name: '/my-loan/BF_M06_l018',
     component: () => import('@/views/myLoan/BF_M06_l018.vue'),
+  },
+  {
+    path: '/my-loan/My_M03_l005',
+    name: '/my-loan/My_M03_l005',
+    component: () => import('@/views/myLoan/My_M03_l005.vue'),
   },
 
   // my-info

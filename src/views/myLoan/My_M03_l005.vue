@@ -1,14 +1,5 @@
 <script>
 // My_M03_l005
-// My_M03_b020
-// My_M03_b023
-// My_M03_b024
-// My_M03_b025
-// My_M03_b026
-// My_M03_b027
-// My_M03_b028
-// My_M03_b029
-// My_M03_b030
 import { reactive, onMounted, onUnmounted } from 'vue';
 
 import { useUiHeaderStore } from '@/stores/ui/header';
@@ -143,8 +134,8 @@ export default {
               <BoxCheckListItem>
                 <BoxCheck
                   :minSide="true"
-                  name="layerMyLoanOnlineContractCheck002_Customer"
-                  id="layerMyLoanOnlineContractCheck002_Customer1"
+                  name="My_M03_l005_Customer"
+                  id="My_M03_l005_Customer1"
                 >
                   <BoxCheckLabel>전문금융소비자</BoxCheckLabel>
                 </BoxCheck>
@@ -152,8 +143,8 @@ export default {
               <BoxCheckListItem>
                 <BoxCheck
                   :minSide="true"
-                  name="layerMyLoanOnlineContractCheck002_Customer"
-                  id="layerMyLoanOnlineContractCheck002_Customer2"
+                  name="My_M03_l005_Customer"
+                  id="My_M03_l005_Customer2"
                 >
                   <BoxCheckLabel>일반금융소비자</BoxCheckLabel>
                 </BoxCheck>
@@ -171,7 +162,7 @@ export default {
 
         <FormListItem
           titleText="자금용도"
-          target="#layerMyLoanOnlineContractCheck002_PurposeButton"
+          target="#My_M03_l005_PurposeButton"
           :selectOnly="true"
         >
           <FormInvalid :error="state.usageError">
@@ -218,8 +209,8 @@ export default {
                   ]"
                   buttonTitle="자금용도 선택하기"
                   layerTitle="자금용도를 선택해 주세요"
-                  id="layerMyLoanOnlineContractCheck002_Purpose"
-                  buttonId="layerMyLoanOnlineContractCheck002_PurposeButton"
+                  id="My_M03_l005_Purpose"
+                  buttonId="My_M03_l005_PurposeButton"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -230,15 +221,12 @@ export default {
         <!-- Case : 자금용도 - '기타' 항목 선택 시 노출 -->
         <FormListItem
           titleText="자금용도 직접 입력"
-          target="#layerMyLoanOnlineContractCheck002_PurposeInput"
+          target="#My_M03_l005_PurposeInput"
         >
           <FormInvalid :error="state.usageInputError">
             <InputBlock :error="state.usageInputError">
               <InputBlockCell :flexible="true">
-                <BasicInput
-                  title="자금용도"
-                  id="layerMyLoanOnlineContractCheck002_PurposeInput"
-                />
+                <BasicInput title="자금용도" id="My_M03_l005_PurposeInput" />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -249,7 +237,7 @@ export default {
         <!-- Case : 일반금융소비자 선택 시 노출 -->
         <FormListItem
           titleText="연령"
-          target="#layerMyLoanOnlineContractCheck002_Age"
+          target="#My_M03_l005_Age"
           :disabled="true"
         >
           <FormInvalid :error="state.ageError">
@@ -257,7 +245,7 @@ export default {
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="연령"
-                  id="layerMyLoanOnlineContractCheck002_Age"
+                  id="My_M03_l005_Age"
                   defaultValue="만 25세"
                   :disabled="true"
                 />
@@ -273,8 +261,8 @@ export default {
               <BoxCheckListItem>
                 <BoxCheck
                   :minSide="true"
-                  name="layerMyLoanOnlineContractCheck002_Income"
-                  id="layerMyLoanOnlineContractCheck002_Income1"
+                  name="My_M03_l005_Income"
+                  id="My_M03_l005_Income1"
                 >
                   <BoxCheckLabel>5천만원 미만</BoxCheckLabel>
                 </BoxCheck>
@@ -282,8 +270,8 @@ export default {
               <BoxCheckListItem>
                 <BoxCheck
                   :minSide="true"
-                  name="layerMyLoanOnlineContractCheck002_Income"
-                  id="layerMyLoanOnlineContractCheck002_Income2"
+                  name="My_M03_l005_Income"
+                  id="My_M03_l005_Income2"
                 >
                   <BoxCheckLabel>5천만원 이상 ~ 1억원 미만</BoxCheckLabel>
                 </BoxCheck>
@@ -291,8 +279,8 @@ export default {
               <BoxCheckListItem>
                 <BoxCheck
                   :minSide="true"
-                  name="layerMyLoanOnlineContractCheck002_Income"
-                  id="layerMyLoanOnlineContractCheck002_Income3"
+                  name="My_M03_l005_Income"
+                  id="My_M03_l005_Income3"
                 >
                   <BoxCheckLabel>1억원 이상</BoxCheckLabel>
                 </BoxCheck>
@@ -308,8 +296,8 @@ export default {
               <BoxCheckListItem>
                 <BoxCheck
                   :minSide="true"
-                  name="layerMyLoanOnlineContractCheck002_Asset"
-                  id="layerMyLoanOnlineContractCheck002_Asset1"
+                  name="My_M03_l005_Asset"
+                  id="My_M03_l005_Asset1"
                 >
                   <BoxCheckLabel>1억원 미만</BoxCheckLabel>
                 </BoxCheck>
@@ -317,8 +305,8 @@ export default {
               <BoxCheckListItem>
                 <BoxCheck
                   :minSide="true"
-                  name="layerMyLoanOnlineContractCheck002_Asset"
-                  id="layerMyLoanOnlineContractCheck002_Asset2"
+                  name="My_M03_l005_Asset"
+                  id="My_M03_l005_Asset2"
                 >
                   <BoxCheckLabel>1억원 이상 10억원 미만</BoxCheckLabel>
                 </BoxCheck>
@@ -326,8 +314,8 @@ export default {
               <BoxCheckListItem>
                 <BoxCheck
                   :minSide="true"
-                  name="layerMyLoanOnlineContractCheck002_Asset"
-                  id="layerMyLoanOnlineContractCheck002_Asset3"
+                  name="My_M03_l005_Asset"
+                  id="My_M03_l005_Asset3"
                 >
                   <BoxCheckLabel>10억원 이상</BoxCheckLabel>
                 </BoxCheck>
@@ -339,10 +327,7 @@ export default {
         <!-- //Case : 일반금융소비자 선택 시 노출 -->
 
         <!-- Case : 전문금융소비자 선택 시 노출 -->
-        <FormListItem
-          titleText="업력"
-          target="#layerMyLoanOnlineContractCheck002_CareerPeriod"
-        >
+        <FormListItem titleText="업력" target="#My_M03_l005_CareerPeriod">
           <FormInvalid :error="state.careerError">
             <InputBlock :error="state.careerError">
               <InputBlockCell :flexible="true">
@@ -351,7 +336,7 @@ export default {
                   :useDelete="false"
                   pattern="\d*"
                   title="업력"
-                  id="layerMyLoanOnlineContractCheck002_CareerPeriod"
+                  id="My_M03_l005_CareerPeriod"
                 />
               </InputBlockCell>
               <template v-slot:innerRight>
@@ -363,7 +348,7 @@ export default {
         </FormListItem>
         <FormListItem
           titleText="매출액"
-          target="#layerMyLoanOnlineContractCheck002_SalesButton"
+          target="#My_M03_l005_SalesButton"
           :selectOnly="true"
         >
           <FormInvalid :error="state.salesError">
@@ -378,8 +363,8 @@ export default {
                   ]"
                   buttonTitle="매출액 선택하기"
                   layerTitle="매출액를 선택해 주세요"
-                  id="layerMyLoanOnlineContractCheck002_Sales"
-                  buttonId="layerMyLoanOnlineContractCheck002_SalesButton"
+                  id="My_M03_l005_Sales"
+                  buttonId="My_M03_l005_SalesButton"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -388,7 +373,7 @@ export default {
         </FormListItem>
         <FormListItem
           titleText="순이익 "
-          target="#layerMyLoanOnlineContractCheck002_NetProfitButton"
+          target="#My_M03_l005_NetProfitButton"
           :selectOnly="true"
         >
           <FormInvalid :error="state.netProfitError">
@@ -403,8 +388,8 @@ export default {
                   ]"
                   buttonTitle="순이익 선택하기"
                   layerTitle="순이익을 선택해 주세요"
-                  id="layerMyLoanOnlineContractCheck002_NetProfit"
-                  buttonId="layerMyLoanOnlineContractCheck002_NetProfitButton"
+                  id="My_M03_l005_NetProfit"
+                  buttonId="My_M03_l005_NetProfitButton"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -413,7 +398,7 @@ export default {
         </FormListItem>
         <FormListItem
           titleText="총자산 "
-          target="#layerMyLoanOnlineContractCheck002_TotalAssetsButton"
+          target="#My_M03_l005_TotalAssetsButton"
           :selectOnly="true"
         >
           <FormInvalid :error="state.totalAssetsError">
@@ -428,8 +413,8 @@ export default {
                   ]"
                   buttonTitle="총자산 선택하기"
                   layerTitle="총자산을 선택해 주세요"
-                  id="layerMyLoanOnlineContractCheck002_TotalAssets"
-                  buttonId="layerMyLoanOnlineContractCheck002_TotalAssetsButton"
+                  id="My_M03_l005_TotalAssets"
+                  buttonId="My_M03_l005_TotalAssetsButton"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -440,7 +425,7 @@ export default {
 
         <FormListItem
           titleText="고정지출"
-          target="#layerMyLoanOnlineContractCheck002_FixedExpensesButton"
+          target="#My_M03_l005_FixedExpensesButton"
           :selectOnly="true"
         >
           <FormInvalid :error="state.expensesError">
@@ -467,8 +452,8 @@ export default {
                   ]"
                   buttonTitle="고정지출 선택하기"
                   layerTitle="고정지출을 선택해 주세요"
-                  id="layerMyLoanOnlineContractCheck002_FixedExpenses"
-                  buttonId="layerMyLoanOnlineContractCheck002_FixedExpensesButton"
+                  id="My_M03_l005_FixedExpenses"
+                  buttonId="My_M03_l005_FixedExpensesButton"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -482,8 +467,8 @@ export default {
               <BoxCheckListItem>
                 <BoxCheck
                   :minSide="true"
-                  name="layerMyLoanOnlineContractCheck002_Debt"
-                  id="layerMyLoanOnlineContractCheck002_Debt1"
+                  name="My_M03_l005_Debt"
+                  id="My_M03_l005_Debt1"
                 >
                   <BoxCheckLabel>5천만원 미만</BoxCheckLabel>
                 </BoxCheck>
@@ -491,8 +476,8 @@ export default {
               <BoxCheckListItem>
                 <BoxCheck
                   :minSide="true"
-                  name="layerMyLoanOnlineContractCheck002_Debt"
-                  id="layerMyLoanOnlineContractCheck002_Debt2"
+                  name="My_M03_l005_Debt"
+                  id="My_M03_l005_Debt2"
                 >
                   <BoxCheckLabel>5천만원 이상 5억원 미만</BoxCheckLabel>
                 </BoxCheck>
@@ -500,8 +485,8 @@ export default {
               <BoxCheckListItem>
                 <BoxCheck
                   :minSide="true"
-                  name="layerMyLoanOnlineContractCheck002_Debt"
-                  id="layerMyLoanOnlineContractCheck002_Debt3"
+                  name="My_M03_l005_Debt"
+                  id="My_M03_l005_Debt3"
                 >
                   <BoxCheckLabel>5억원 이상</BoxCheckLabel>
                 </BoxCheck>
@@ -514,7 +499,7 @@ export default {
         <!-- Case : 일반금융소비자 선택 시 노출 -->
         <FormListItem
           titleText="신용점수"
-          target="#layerMyLoanOnlineContractCheck002_CreditScore"
+          target="#My_M03_l005_CreditScore"
           :disabled="true"
         >
           <FormInvalid :error="state.creditScoreError">
@@ -522,7 +507,7 @@ export default {
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="신용점수"
-                  id="layerMyLoanOnlineContractCheck002_CreditScore"
+                  id="My_M03_l005_CreditScore"
                   defaultValue="756점 (평가사 : NICE신용평가)"
                   :disabled="true"
                 />
@@ -536,7 +521,7 @@ export default {
         <!-- Case : 전문금융소비자 선택 시 노출 -->
         <FormListItem
           titleText="신용평가사 "
-          target="#layerMyLoanOnlineContractCheck002_CreditRatingAgencyButton"
+          target="#My_M03_l005_CreditRatingAgencyButton"
           :selectOnly="true"
         >
           <FormInvalid :error="state.creditRatingAgencyError">
@@ -551,8 +536,8 @@ export default {
                   ]"
                   buttonTitle="신용평가사 선택하기"
                   layerTitle="신용평가사를 선택해 주세요"
-                  id="layerMyLoanOnlineContractCheck002_CreditRatingAgency"
-                  buttonId="layerMyLoanOnlineContractCheck002_CreditRatingAgencyButton"
+                  id="My_M03_l005_CreditRatingAgency"
+                  buttonId="My_M03_l005_CreditRatingAgencyButton"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -561,7 +546,7 @@ export default {
         </FormListItem>
         <FormListItem
           titleText="신용등급 "
-          target="#layerMyLoanOnlineContractCheck002_CreditRatingButton"
+          target="#My_M03_l005_CreditRatingButton"
           :selectOnly="true"
         >
           <FormInvalid :error="state.creditRatingError">
@@ -576,8 +561,8 @@ export default {
                   ]"
                   buttonTitle="신용등급 선택하기"
                   layerTitle="신용등급을 선택해 주세요"
-                  id="layerMyLoanOnlineContractCheck002_CreditRating"
-                  buttonId="layerMyLoanOnlineContractCheck002_CreditRatingButton"
+                  id="My_M03_l005_CreditRating"
+                  buttonId="My_M03_l005_CreditRatingButton"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -588,7 +573,7 @@ export default {
 
         <FormListItem
           titleText="변제계획"
-          target="#layerMyLoanOnlineContractCheck002_LiquidationButton"
+          target="#My_M03_l005_LiquidationButton"
           :selectOnly="true"
         >
           <FormInvalid :error="state.liquidationError">
@@ -619,8 +604,8 @@ export default {
                   ]"
                   buttonTitle="변제계획 선택하기"
                   layerTitle="변제계획을 선택해 주세요"
-                  id="layerMyLoanOnlineContractCheck002_Liquidation"
-                  buttonId="layerMyLoanOnlineContractCheck002_LiquidationButton"
+                  id="My_M03_l005_Liquidation"
+                  buttonId="My_M03_l005_LiquidationButton"
                 />
               </InputBlockCell>
             </InputBlock>
