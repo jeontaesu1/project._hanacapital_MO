@@ -7,21 +7,29 @@ import { useUiHeaderStore } from '@/stores/ui/header';
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
-import IllustObject from '@/components/ui/common/IllustObject.vue';
-import BasicHr from '@/components/ui/common/BasicHr.vue';
 
-import IconEcoPlus from '@/assets/images/etc-logo/eco-plus.svg?component';
+import IconHanaInsurance from '@/assets/images/etc-logo/hana-insurance.svg?component';
 import IconDbInsurance from '@/assets/images/etc-logo/db-insurance.svg?component';
+import IconHyundaiInsurance from '@/assets/images/etc-logo/hyundai-insurance.svg?component';
+import IconKbInsurance from '@/assets/images/etc-logo/kb-insurance.svg?component';
+import IconAxaInsurance from '@/assets/images/etc-logo/axa-insurance.svg?component';
+import IconCarrotInsurance from '@/assets/images/etc-logo/carrot-insurance.svg?component';
+import IconMeritzInsurance from '@/assets/images/etc-logo/meritz-insurance.svg?component';
+import IconHkInsurance from '@/assets/images/etc-logo/hk-insurance.svg?component';
 
 export default {
   components: {
     PageContents,
     PageTextGroup,
     PageMainText,
-    IllustObject,
-    BasicHr,
-    IconEcoPlus,
+    IconHanaInsurance,
     IconDbInsurance,
+    IconHyundaiInsurance,
+    IconKbInsurance,
+    IconAxaInsurance,
+    IconCarrotInsurance,
+    IconMeritzInsurance,
+    IconHkInsurance,
   },
   setup() {
     const store = {
@@ -54,14 +62,6 @@ export default {
       </PageMainText>
     </PageTextGroup>
 
-    <IllustObject type="shield" />
-
-    <BasicHr
-      theme="quaternary"
-      type="contents"
-      className="row-margin-container"
-    />
-
     <div :class="$style['icon-list']">
       <ul :class="$style['icon-list__list']">
         <li :class="$style['icon-list__item']">
@@ -69,12 +69,16 @@ export default {
             type="button"
             :class="[$style['icon-list__block'], 'align-items-start']"
           >
-            <span :class="$style['icon-list__icon']">
-              <IconEcoPlus />
-            </span>
+            <span :class="$style['icon-list__icon']"
+              ><IconHanaInsurance
+            /></span>
             <span :class="$style['icon-list__content']">
+              <span class="display-block text-body-5 color-green"
+                >가입시 최대 3만원 네이버페이 지급</span
+              >
               <span :class="$style['icon-list__title']"
-                >하나에코플러스<br />다이렉트자동차보험</span
+                >하나에코플러스<br />
+                다이렉트자동차보험</span
               >
               <span
                 :class="[
@@ -84,7 +88,8 @@ export default {
                   'font-weight-light',
                 ]"
               >
-                준법감시인확인필 제202305-029<br />(2023.05.11~2024.05.10)
+                준법감시인확인필 제202305-029<br />
+                (2023.05.11~2024.05.10)
               </span>
             </span>
           </button>
@@ -97,7 +102,7 @@ export default {
             <span :class="$style['icon-list__icon']"><IconDbInsurance /></span>
             <span :class="$style['icon-list__content']">
               <span class="display-block text-body-5 color-green"
-                >가입 시 최대 3만원 카드혜택</span
+                >가입 시 최대 3만원 카드결제혜택(주유권/캐시백)</span
               >
               <span :class="$style['icon-list__title']"
                 >DB다이렉트 자동차보험</span
@@ -112,6 +117,165 @@ export default {
               >
                 준법감시인확인필 제2023-3130호<br />
                 (2023.05.16~2024.05.14)
+              </span>
+            </span>
+          </button>
+        </li>
+        <li :class="$style['icon-list__item']">
+          <button
+            type="button"
+            :class="[$style['icon-list__block'], 'align-items-start']"
+          >
+            <span :class="$style['icon-list__icon']"
+              ><IconHyundaiInsurance
+            /></span>
+            <span :class="$style['icon-list__content']">
+              <span class="display-block text-body-5 color-green"
+                >가입 시 최대 3만원 카드혜택</span
+              >
+              <span :class="$style['icon-list__title']"
+                >현대해상 다이렉트 자동차보험</span
+              >
+              <span
+                :class="[
+                  $style['icon-list__text'],
+                  'row-margin-small',
+                  'color-gray-tertiary',
+                  'font-weight-light',
+                ]"
+              >
+                준법감시필 제20231856호<br />
+                (2023.05.04~2024.05.02)
+              </span>
+            </span>
+          </button>
+        </li>
+        <li :class="$style['icon-list__item']">
+          <button
+            type="button"
+            :class="[$style['icon-list__block'], 'align-items-start']"
+          >
+            <span :class="$style['icon-list__icon']"><IconKbInsurance /></span>
+            <span :class="$style['icon-list__content']">
+              <span class="display-block text-body-5 color-green"
+                >가입 시 최대 3만원 카드결제혜택</span
+              >
+              <span :class="$style['icon-list__title']"
+                >KB 다이렉트 자동차보험</span
+              >
+              <span
+                :class="[
+                  $style['icon-list__text'],
+                  'row-margin-small',
+                  'color-gray-tertiary',
+                  'font-weight-light',
+                ]"
+              >
+                준법감시인 심의필 제2023-616호<br />
+                (2023.05.09~2024.05.07)
+              </span>
+            </span>
+          </button>
+        </li>
+        <li :class="$style['icon-list__item']">
+          <button
+            type="button"
+            :class="[$style['icon-list__block'], 'align-items-start']"
+          >
+            <span :class="$style['icon-list__icon']"><IconAxaInsurance /></span>
+            <span :class="$style['icon-list__content']">
+              <span :class="$style['icon-list__title']"
+                >AXA 다이렉트 자동차보험</span
+              >
+              <span
+                :class="[
+                  $style['icon-list__text'],
+                  'row-margin-small',
+                  'color-gray-tertiary',
+                  'font-weight-light',
+                ]"
+              >
+                검-230414-채널마케팅팀-236<br />
+                (2023.04.14~2024.04.13)
+              </span>
+            </span>
+          </button>
+        </li>
+        <li :class="$style['icon-list__item']">
+          <button
+            type="button"
+            :class="[$style['icon-list__block'], 'align-items-start']"
+          >
+            <span :class="$style['icon-list__icon']"
+              ><IconCarrotInsurance
+            /></span>
+            <span :class="$style['icon-list__content']">
+              <span class="display-block text-body-5 color-green"
+                >신규가입 최대3만원 카드혜택</span
+              >
+              <span :class="$style['icon-list__title']"
+                >캐롯 다이렉트 자동차보험</span
+              >
+              <span
+                :class="[
+                  $style['icon-list__text'],
+                  'row-margin-small',
+                  'color-gray-tertiary',
+                  'font-weight-light',
+                ]"
+              >
+                캐롯-제2023-203093-자체<br />
+                (2023.04.20~2024.04.19)
+              </span>
+            </span>
+          </button>
+        </li>
+        <li :class="$style['icon-list__item']">
+          <button
+            type="button"
+            :class="[$style['icon-list__block'], 'align-items-start']"
+          >
+            <span :class="$style['icon-list__icon']"
+              ><IconMeritzInsurance
+            /></span>
+            <span :class="$style['icon-list__content']">
+              <span :class="$style['icon-list__title']"
+                >메리츠 다이렉트 자동차보험</span
+              >
+              <span
+                :class="[
+                  $style['icon-list__text'],
+                  'row-margin-small',
+                  'color-gray-tertiary',
+                  'font-weight-light',
+                ]"
+              >
+                준법감시인 심의필 제2023-광고-717호<br />
+                (2023.04.07~2024.04.05)
+              </span>
+            </span>
+          </button>
+        </li>
+        <li :class="$style['icon-list__item']">
+          <button
+            type="button"
+            :class="[$style['icon-list__block'], 'align-items-start']"
+          >
+            <span :class="$style['icon-list__icon']"><IconHkInsurance /></span>
+            <span :class="$style['icon-list__content']">
+              <span :class="$style['icon-list__title']"
+                >흥국 다이렉트 자동차보험</span
+              >
+              <span
+                :class="[
+                  $style['icon-list__text'],
+                  'row-margin-small',
+                  'color-gray-tertiary',
+                  'font-weight-light',
+                ]"
+              >
+                준법감시인 심의필T230519-05-21<br />
+                (2023-05-19~2023-05-18)
               </span>
             </span>
           </button>

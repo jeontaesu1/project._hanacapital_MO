@@ -7,21 +7,19 @@ import { useUiHeaderStore } from '@/stores/ui/header';
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
-import BasicHr from '@/components/ui/common/BasicHr.vue';
 
-import IllustObject from '@/components/ui/common/IllustObject.vue';
-import IconHyendaiRentalCare from '@/assets/images/etc-logo/hyendai-rental-care.svg?component';
-import IconCeragem from '@/assets/images/etc-logo/ceragem.svg?component';
+import IconYanadoo from '@/assets/images/etc-logo/yanadoo.svg?component';
+import IconLomad from '@/assets/images/etc-logo/lomad.svg?component';
+import IconTorder from '@/assets/images/etc-logo/torder.svg?component';
 
 export default {
   components: {
     PageContents,
     PageTextGroup,
     PageMainText,
-    BasicHr,
-    IllustObject,
-    IconHyendaiRentalCare,
-    IconCeragem,
+    IconYanadoo,
+    IconLomad,
+    IconTorder,
   },
   setup() {
     const store = {
@@ -54,23 +52,15 @@ export default {
       </PageMainText>
     </PageTextGroup>
 
-    <IllustObject type="rental" />
-
-    <BasicHr
-      theme="quaternary"
-      type="contents"
-      className="row-margin-container"
-    />
-
     <div :class="$style['icon-list']">
       <ul :class="$style['icon-list__list']">
         <li :class="$style['icon-list__item']">
           <button type="button" :class="$style['icon-list__block']">
             <span :class="$style['icon-list__icon']">
-              <IconHyendaiRentalCare />
+              <IconYanadoo />
             </span>
             <span :class="$style['icon-list__content']">
-              <span :class="$style['icon-list__title']">현대렌탈케어</span>
+              <span :class="$style['icon-list__title']">야나두</span>
               <span
                 :class="[
                   $style['icon-list__text'],
@@ -78,17 +68,16 @@ export default {
                   'font-weight-light',
                 ]"
               >
-                정수기, 비데, 공기청정기 등<br />
-                다양한 렌탈 상품을 이용해보세요.
+                하루 10분, 야나두 영어를 렌탈 이용해 보세요!
               </span>
             </span>
           </button>
         </li>
         <li :class="$style['icon-list__item']">
           <button type="button" :class="$style['icon-list__block']">
-            <span :class="$style['icon-list__icon']"><IconCeragem /></span>
+            <span :class="$style['icon-list__icon']"><IconLomad /></span>
             <span :class="$style['icon-list__content']">
-              <span :class="$style['icon-list__title']">세라젬</span>
+              <span :class="$style['icon-list__title']">로마드</span>
               <span
                 :class="[
                   $style['icon-list__text'],
@@ -96,7 +85,24 @@ export default {
                   'font-weight-light',
                 ]"
               >
-                세라젬 제품을 렌탈 이용해 보세요.
+                고품격 가구들과 하이엔드 라이프스타일을 만나보세요.
+              </span>
+            </span>
+          </button>
+        </li>
+        <li :class="$style['icon-list__item']">
+          <button type="button" :class="$style['icon-list__block']">
+            <span :class="$style['icon-list__icon']"><IconTorder /></span>
+            <span :class="$style['icon-list__content']">
+              <span :class="$style['icon-list__title']">티오더</span>
+              <span
+                :class="[
+                  $style['icon-list__text'],
+                  'color-gray-tertiary',
+                  'font-weight-light',
+                ]"
+              >
+                테블릿 메뉴판은 국민 메뉴판 티오더!
               </span>
             </span>
           </button>
