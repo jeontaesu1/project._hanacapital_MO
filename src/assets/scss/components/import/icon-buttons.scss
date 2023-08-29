@@ -60,13 +60,19 @@
     margin-left: 16px;
   }
 
+  &__right {
+    flex: none;
+    margin-left: auto;
+    padding-left: 16px;
+  }
+
   &__title {
     display: block;
     margin: 0;
     @include font-size-default(16);
   }
 
-  &__block:active,
+  &__block:active:not([disabled]),
   &__block:global(.is-selected) {
     &::after {
       opacity: 1;
@@ -75,6 +81,24 @@
     .icon-buttons__title {
       font-weight: 500;
       color: $color-navy-50;
+    }
+  }
+
+  &__block[disabled] {
+    cursor: default;
+
+    &::after {
+      display: none;
+    }
+
+    .icon-buttons {
+      &__title {
+        color: $color-gray-40;
+      }
+
+      &__icon {
+        opacity: 0.5;
+      }
     }
   }
 }

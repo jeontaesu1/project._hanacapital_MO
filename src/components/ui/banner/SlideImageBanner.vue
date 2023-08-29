@@ -14,6 +14,10 @@ export default {
         return defaultClassNames();
       },
     },
+    theme: {
+      Type: String,
+      default: null,
+    },
   },
   setup(props) {
     const customClassNames = computed(() => {
@@ -29,7 +33,15 @@ export default {
 </script>
 
 <template>
-  <div :class="[$style['banner'], customClassNames.wrap]">
+  <div
+    :class="[
+      $style['banner'],
+      {
+        [$style[`banner--theme-${theme}`]]: theme,
+      },
+      customClassNames.wrap,
+    ]"
+  >
     <slot />
   </div>
 </template>

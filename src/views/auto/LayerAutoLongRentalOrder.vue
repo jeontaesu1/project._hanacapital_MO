@@ -69,19 +69,19 @@ export default {
             <li :class="$style['basic-list__item']">
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                당사가 직접 차량 제조사에 차량 생산 주문을 합니다.
+                당사가 직접 차량 제조사에 차량 생산주문을 해요.
               </div>
             </li>
             <li :class="$style['basic-list__item']">
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                차량 주문부터 탁송까지 당사가 일정관리를 대행합니다.
+                손님의 차량이 생산되면 별도의 연락을 드려요.
               </div>
             </li>
             <li :class="$style['basic-list__item']">
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                손님의 차량이 생산완료되면, 별도의 알람을 드립니다.
+                당사가 주문부터 탁송까지 일정관리를 대행해 드려요.
               </div>
             </li>
           </ul>
@@ -92,20 +92,19 @@ export default {
             <li :class="$style['basic-list__item']">
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                발주요청을 완료해야 차량 생산 및 배정이 가능합니다.
+                차량 발주신청을 완료하셔야 생산이 가능해요.
               </div>
             </li>
             <li :class="$style['basic-list__item']">
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                견적은 최초 산출일로부터 2주간 유효하며, 이후에는 견적을
-                재산출하여 진행하셔야 합니다.
+                견적은 최초 산출일로부터 2주간 유효해요.
               </div>
             </li>
             <li :class="$style['basic-list__item']">
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                발주 관련 궁금하신 사항은 1800-1110으로 문의주시기 바랍니다.
+                궁금하신 사항은 1800-1100으로 언제든지 연락 주세요.
               </div>
             </li>
           </ul>

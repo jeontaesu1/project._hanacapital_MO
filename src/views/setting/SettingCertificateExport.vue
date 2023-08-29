@@ -7,9 +7,6 @@ import { useUiHeaderStore } from '@/stores/ui/header';
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
-import BasicButton from '@/components/ui/button/BasicButton.vue';
-import ButtonList from '@/components/ui/button/ButtonList.vue';
-import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
 import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
@@ -21,9 +18,6 @@ export default {
     PageContents,
     PageTextGroup,
     PageMainText,
-    BasicButton,
-    ButtonList,
-    ButtonListItem,
     IllustObject,
     FormList,
     FormListItem,
@@ -123,18 +117,6 @@ export default {
         </ol>
       </div>
     </section>
-
-    <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton>확인</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
-    </template>
   </PageContents>
 </template>
 

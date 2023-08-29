@@ -5,7 +5,7 @@
     position: absolute;
     z-index: 10;
     left: 40px;
-    bottom: 30px;
+    bottom: 24px;
     font-size: 0;
     line-height: 0;
     text-align: center;
@@ -28,5 +28,16 @@
   :global(.swiper-pagination-bullet-active) {
     width: 10px;
     background-color: $color-black;
+  }
+
+  &--theme {
+    &-secondary {
+      margin-left: 0;
+      margin-right: 0;
+
+      :global(.swiper-pagination-bullets) {
+        left: 24px;
+      }
+    }
   }
 }

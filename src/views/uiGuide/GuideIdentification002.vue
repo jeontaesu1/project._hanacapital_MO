@@ -18,6 +18,7 @@ import LayerIdentificationCardARS from '@/views/identification/LayerIdentificati
 import LayerIdentificationKakaopayMethodSelect from '@/views/identification/LayerIdentificationKakaopayMethodSelect.vue';
 import LayerIdentificationKakaopayIn from '@/views/identification/LayerIdentificationKakaopayIn.vue';
 import LayerIdentificationKakaopayAgree from '@/views/identification/LayerIdentificationKakaopayAgree.vue';
+import LayerIdentificationKakaopayAddMethodSelect from '@/views/identification/LayerIdentificationKakaopayAddMethodSelect.vue';
 
 export default {
   components: {
@@ -37,6 +38,7 @@ export default {
     LayerIdentificationKakaopayMethodSelect,
     LayerIdentificationKakaopayIn,
     LayerIdentificationKakaopayAgree,
+    LayerIdentificationKakaopayAddMethodSelect,
   },
   setup() {
     const layer001 = ref(null);
@@ -53,6 +55,7 @@ export default {
     const layer012 = ref(null);
     const layer013 = ref(null);
     const layer014 = ref(null);
+    const layer015 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -96,6 +99,9 @@ export default {
     const layer014Open = (e = {}) => {
       layer014.value.layer.open(e.target);
     };
+    const layer015Open = (e = {}) => {
+      layer015.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -112,6 +118,7 @@ export default {
       layer012,
       layer013,
       layer014,
+      layer015,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -126,6 +133,7 @@ export default {
       layer012Open,
       layer013Open,
       layer014Open,
+      layer015Open,
     };
   },
 };
@@ -186,7 +194,12 @@ export default {
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer014Open">
-          개인 - 간편인증 방법 선택<br />Common_M00_b050
+          개인 - 간편인증 선택 팝업<br />Common_M00_b050
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer015Open">
+          개인 - 간편인증 선택 팝업_추가인증<br />Common_M00_b050
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
@@ -213,5 +226,6 @@ export default {
     <LayerIdentificationKakaopayIn ref="layer012" />
     <LayerIdentificationKakaopayAgree ref="layer013" />
     <LayerIdentificationKakaopayMethodSelect ref="layer014" />
+    <LayerIdentificationKakaopayAddMethodSelect ref="layer015" />
   </PageContents>
 </template>

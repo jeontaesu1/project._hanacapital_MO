@@ -152,7 +152,7 @@ export default {
             </div>
           </RouterLink>
         </SwiperSlide>
-        <!-- // Case : 링크 기능 있을 때 -->
+        <!-- // Case : 링크 기능 있을 때 (RouterLink) -->
 
         <!-- Case : 링크 기능 있을 때 (a tag) -->
         <SwiperSlide>

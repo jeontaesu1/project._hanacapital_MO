@@ -187,7 +187,7 @@ export default {
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
               가상계좌 입금 신청 시, 신청 일자에 따라 중복 출금이 발생할 수
-              있으며, 중복 출금되었을 경우, 고객센터(180○-1110)로 연락 바랍니다.
+              있으며, 중복 출금되었을 경우, 고객센터(1800-1110)로 연락 바랍니다.
             </div>
           </li>
           <li
@@ -197,7 +197,7 @@ export default {
             <div :class="$style['basic-list__content']">
               대출원금잔액의 전액 상환 시,<br />
               담보물건이 있는 경우 담보물건 해지에 관한 사항은
-              고객센터(180○-1110)로 연락 바랍니다.
+              고객센터(1800-1110)로 연락 바랍니다.
             </div>
           </li>
         </ul>

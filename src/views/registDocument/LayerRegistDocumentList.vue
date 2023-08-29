@@ -8,7 +8,6 @@ import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
-import PageSubText from '@/components/ui/text/PageSubText.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
@@ -29,7 +28,6 @@ export default {
     FullPopupHead,
     PageTextGroup,
     PageMainText,
-    PageSubText,
     PopupButton,
     ButtonList,
     ButtonListItem,
@@ -68,10 +66,6 @@ export default {
           서류등록을<br />
           <strong>진행해주세요</strong>
         </PageMainText>
-        <PageSubText>
-          파일을 첨부하신 뒤에<br />
-          해당 박스를 클릭하시면 미리보기 가능합니다.
-        </PageSubText>
       </PageTextGroup>
 
       <div>
