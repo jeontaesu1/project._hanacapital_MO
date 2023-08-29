@@ -35,6 +35,7 @@ import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
 import ImgZeroCommission from '@/assets/images/illustration/img-zero-commission.svg';
 import Img120Months from '@/assets/images/illustration/img-120months.svg?component';
+import IconLogoMain from '@/assets/images/icon/logo-main.svg?component';
 
 export default {
   components: {
@@ -67,6 +68,7 @@ export default {
     IconCalculate,
     ImgZeroCommission,
     Img120Months,
+    IconLogoMain,
   },
   setup() {
     const store = {
@@ -593,6 +595,14 @@ export default {
       </UiTabPanel>
       <!-- // 유의사항 -->
     </UiTab>
+
+    <div
+      class="flex-box justify-conten-end row-margin-contents row-margin-bottom-none"
+    >
+      <div class="flex-box__cell">
+        <IconLogoMain class="display-block" />
+      </div>
+    </div>
 
     <BasicHr
       type="contents"

@@ -29,6 +29,7 @@ import IconCheckDocument from '@/assets/images/icon/check-document.svg?component
 import IconContract from '@/assets/images/icon/contract.svg?component';
 import IconConsulting from '@/assets/images/icon/consulting.svg?component';
 import IconSend from '@/assets/images/icon/send.svg?component';
+import IconLogoMain from '@/assets/images/icon/logo-main.svg?component';
 import ImgLongTermCarRental01 from '@/assets/images/illustration/img-long-term-car-rental01.svg?component';
 import ImgLongTermCarRental02 from '@/assets/images/illustration/img-long-term-car-rental02.svg?component';
 import ImgLongTermCarRental03 from '@/assets/images/illustration/img-long-term-car-rental03.svg?component';
@@ -59,6 +60,7 @@ export default {
     IconSend,
     IconContract,
     IconConsulting,
+    IconLogoMain,
     ImgLongTermCarRental01,
     ImgLongTermCarRental02,
     ImgLongTermCarRental03,
@@ -542,6 +544,14 @@ export default {
         </li>
       </ul>
     </UiTab>
+
+    <div
+      class="flex-box justify-conten-end row-margin-contents row-margin-bottom-none"
+    >
+      <div class="flex-box__cell">
+        <IconLogoMain class="display-block" />
+      </div>
+    </div>
 
     <template v-slot:foot>
       <ButtonList

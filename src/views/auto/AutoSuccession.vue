@@ -36,6 +36,7 @@ import IconCalculate from '@/assets/images/icon/calculate.svg?component';
 import IconDocumentComplete from '@/assets/images/icon/document-complete.svg?component';
 import IconTakingOver from '@/assets/images/icon/taking-over.svg?component';
 import IconAssignment from '@/assets/images/icon/assignment.svg?component';
+import IconLogoMain from '@/assets/images/icon/logo-main.svg?component';
 import ImgAutoLease from '@/assets/images/illustration/img-auto-lease.svg?component';
 import ImgAutoRent from '@/assets/images/illustration/img-auto-rent.svg?component';
 
@@ -72,6 +73,7 @@ export default {
     IconTakingOver,
     IconAssignment,
     IconPerson,
+    IconLogoMain,
     ImgAutoLease,
     ImgAutoRent,
   },
@@ -1514,6 +1516,14 @@ export default {
         </li>
       </ul>
     </UiTab>
+
+    <div
+      class="flex-box justify-conten-end row-margin-contents row-margin-bottom-none"
+    >
+      <div class="flex-box__cell">
+        <IconLogoMain class="display-block" />
+      </div>
+    </div>
 
     <BasicHr
       type="contents"
