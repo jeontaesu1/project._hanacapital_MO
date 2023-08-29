@@ -23,7 +23,7 @@ import UiAccordionItem from '@/components/ui/accordion/UiAccordionItem.vue';
 import UiAccordionLayer from '@/components/ui/accordion/UiAccordionLayer.vue';
 import UiAccordionOpener from '@/components/ui/accordion/UiAccordionOpener.vue';
 
-import IconHyendaiRentalCare from '@/assets/images/icon/hyendai-rental-care.svg?component';
+import IconHyendaiRentalCare from '@/assets/images/etc-logo/hyendai-rental-care.svg?component';
 import IconBuilding from '@/assets/images/icon/building.svg?component';
 import IconCar from '@/assets/images/icon/car.svg?component';
 

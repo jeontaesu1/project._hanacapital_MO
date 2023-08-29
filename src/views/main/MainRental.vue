@@ -10,8 +10,8 @@ import PageMainText from '@/components/ui/text/PageMainText.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 
 import IllustObject from '@/components/ui/common/IllustObject.vue';
-import IconHyendaiRentalCare from '@/assets/images/icon/hyendai-rental-care.svg?component';
-import IconCeragem from '@/assets/images/icon/ceragem.svg?component';
+import IconHyendaiRentalCare from '@/assets/images/etc-logo/hyendai-rental-care.svg?component';
+import IconCeragem from '@/assets/images/etc-logo/ceragem.svg?component';
 
 export default {
   components: {
