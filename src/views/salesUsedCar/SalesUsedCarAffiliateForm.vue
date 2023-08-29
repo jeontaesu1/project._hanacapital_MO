@@ -21,6 +21,7 @@ import BasicInput from '@/components/ui/form/BasicInput.vue';
 import CheckBox from '@/components/ui/form/CheckBox.vue';
 import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
 import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 export default {
   components: {
@@ -41,6 +42,7 @@ export default {
     CheckBox,
     CheckBoxObject,
     CheckBoxLabelText,
+    BottomSticky,
   },
   setup() {
     const store = {
@@ -148,15 +150,19 @@ export default {
     </ul>
 
     <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton>다음</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton>다음</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>

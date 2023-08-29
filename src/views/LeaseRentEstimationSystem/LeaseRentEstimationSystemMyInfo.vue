@@ -65,7 +65,7 @@ export default {
       </PageSubText>
     </PageTextGroup>
 
-    <BasicBox>
+    <BasicBox className="row-margin-container-medium row-margin-top-none">
       <BasicBoxHead>
         <h3 class="text-body-1 font-weight-medium">홍길동</h3>
       </BasicBoxHead>
@@ -98,16 +98,14 @@ export default {
       </KeyValue>
     </BasicBox>
 
-    <template v-slot:foot>
-      <div class="inline-wrap align-center">
-        <TextButton
-          :underline="true"
-          theme="quaternary"
-          :classNames="{ text: 'text-body-4 color-gray' }"
-        >
-          로그아웃
-        </TextButton>
-      </div>
-    </template>
+    <div class="inline-wrap align-center auto-bottom-wrap">
+      <TextButton
+        :underline="true"
+        theme="quaternary"
+        :classNames="{ text: 'text-body-4 color-gray' }"
+      >
+        로그아웃
+      </TextButton>
+    </div>
   </PageContents>
 </template>

@@ -10,6 +10,7 @@ import PageMainText from '@/components/ui/text/PageMainText.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 import IconImg from '@/assets/images/icon/img.svg?component';
 import IconImgColor from '@/assets/images/icon/img-color.svg?component';
@@ -22,6 +23,8 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
+    BottomSticky,
+
     IconImg,
     IconImgColor,
   },
@@ -139,34 +142,38 @@ export default {
     <!-- //Case : 서류등록 상담/대출정보가 있는 경우 -->
 
     <template v-slot:foot>
-      <!-- Case : 서류등록 상담/대출정보가 없는 경우 -->
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton>확인</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
-      <!-- //Case : 서류등록 상담/대출정보가 없는 경우 -->
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <!-- Case : 서류등록 상담/대출정보가 없는 경우 -->
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton>확인</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+          <!-- //Case : 서류등록 상담/대출정보가 없는 경우 -->
 
-      <!-- Case : 서류등록 상담/대출정보가 있는 경우 -->
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton :line="true" theme="quaternary">
-            서류등록 내역
-          </BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton>등록</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
-      <!-- //Case : 서류등록 상담/대출정보가 있는 경우 -->
+          <!-- Case : 서류등록 상담/대출정보가 있는 경우 -->
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton :line="true" theme="quaternary">
+                서류등록 내역
+              </BasicButton>
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton>등록</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+          <!-- //Case : 서류등록 상담/대출정보가 있는 경우 -->
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>

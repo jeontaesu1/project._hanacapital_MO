@@ -151,7 +151,12 @@ const datas = () => [
         path: '/ui-guide/identification-001',
         status: 'end',
         create: '2023.03.24',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '본인인증\nCommon_M00_p003',
@@ -222,7 +227,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '날짜입력',
+        depth2: '날짜입력\nCommon_M00_p009',
         depth3: '',
         depth4: '',
         depth5: '',
@@ -230,7 +235,12 @@ const datas = () => [
         path: '/ui-guide/enter-date-001',
         status: 'end',
         create: '2023.04.21',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '주소검색',
@@ -696,7 +706,12 @@ const datas = () => [
         path: '/sign/load-pin',
         status: 'end',
         create: '2023.04.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '간편비밀번호 불러오기(APP)\nMember_M07_p001',
@@ -795,6 +810,10 @@ const datas = () => [
             date: '2023.07.14',
             text: '상품안내 내용 수정',
           },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
         ],
       },
       {
@@ -834,6 +853,10 @@ const datas = () => [
           {
             date: '2023.07.14',
             text: '상품안내 내용 수정',
+          },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
           },
         ],
       },
@@ -883,6 +906,10 @@ const datas = () => [
             date: '2023.07.19',
             text: '상품안내 내용 수정',
           },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
         ],
       },
       {
@@ -898,6 +925,10 @@ const datas = () => [
           {
             date: '2023.07.14',
             text: '상품안내 내용 수정',
+          },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
           },
         ],
       },
@@ -930,6 +961,10 @@ const datas = () => [
           {
             date: '2023.07.19',
             text: '상품안내 내용 수정',
+          },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
           },
         ],
       },
@@ -983,6 +1018,10 @@ const datas = () => [
             date: '2023.07.19',
             text: '상품안내 내용 수정',
           },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
         ],
       },
       {
@@ -1018,6 +1057,10 @@ const datas = () => [
           {
             date: '2023.07.19',
             text: '상품안내 내용 수정',
+          },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
           },
         ],
       },
@@ -1102,7 +1145,12 @@ const datas = () => [
         path: '/customer/counseling-info',
         status: 'end',
         create: '2023.04.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '고객상담',
@@ -1113,7 +1161,12 @@ const datas = () => [
         path: '/customer/counseling-regist',
         status: 'end',
         create: '2023.04.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '고객상담',
@@ -1124,7 +1177,12 @@ const datas = () => [
         path: '/customer/counseling-regist-complete',
         status: 'end',
         create: '2023.04.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '공지사항',
@@ -1146,7 +1204,12 @@ const datas = () => [
         path: '/customer/notice-detail',
         status: 'end',
         create: '2023.04.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 여백 조정',
+          },
+        ],
       },
       {
         depth2: '지점안내\nCustomer_M05_p001',
@@ -1173,7 +1236,12 @@ const datas = () => [
         path: '/customer/ars',
         status: 'end',
         create: '2023.04.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '전화상담신청\nETC_M01_p001',
@@ -1184,7 +1252,12 @@ const datas = () => [
         path: '/customer/reservation-counseling',
         status: 'end',
         create: '2023.04.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '전화상담신청\nETC_M01_p001',
@@ -1195,7 +1268,12 @@ const datas = () => [
         path: '/customer/reservation-counseling-complete',
         status: 'end',
         create: '2023.04.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '정책및약관\nCustomer_M08_p001',
@@ -1294,7 +1372,12 @@ const datas = () => [
         path: '/customer/financial-consumer-protection-notice-view',
         status: 'end',
         create: '2023.05.12',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 여백 조정',
+          },
+        ],
       },
       {
         depth2: '금융소비자보호\nCustomer_M09_p001',
@@ -1349,7 +1432,12 @@ const datas = () => [
         path: '/customer/financial-consumer-protection-data-detail',
         status: 'end',
         create: '2023.05.12',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 여백 조정',
+          },
+        ],
       },
     ],
   },
@@ -1376,7 +1464,12 @@ const datas = () => [
         path: '/inventory-finance/loan-limit-inquiry',
         status: 'end',
         create: '2023.05.16',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '한도조회\nIF_M08_p001',
@@ -1398,7 +1491,12 @@ const datas = () => [
         path: '/inventory-finance/loan-limit-inquiry-complete',
         status: 'end',
         create: '2023.05.16',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '중도상환',
@@ -1436,6 +1534,10 @@ const datas = () => [
             date: '2023.08.11',
             text: '단계 수정',
           },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
         ],
       },
       {
@@ -1447,7 +1549,12 @@ const datas = () => [
         path: '/inventory-finance/early-confirm',
         status: 'end',
         create: '2023.04.14',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '중도상환',
@@ -1458,7 +1565,12 @@ const datas = () => [
         path: '/inventory-finance/early-complete',
         status: 'end',
         create: '2023.04.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '중도상환',
@@ -1469,7 +1581,12 @@ const datas = () => [
         path: '/inventory-finance/early-fail',
         status: 'end',
         create: '2023.04.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '중도상환',
@@ -1507,7 +1624,12 @@ const datas = () => [
         path: '/inventory-finance/extension-view',
         status: 'end',
         create: '2023.04.14',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '만기연장',
@@ -1523,6 +1645,10 @@ const datas = () => [
             date: '2023.08.11',
             text: '결제방법 문구 수정',
           },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
         ],
       },
       {
@@ -1534,7 +1660,12 @@ const datas = () => [
         path: '/inventory-finance/extension-confirm',
         status: 'end',
         create: '2023.04.14',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '만기연장',
@@ -1545,7 +1676,12 @@ const datas = () => [
         path: '/inventory-finance/extension-complete',
         status: 'end',
         create: '2023.04.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '만기연장',
@@ -1556,7 +1692,12 @@ const datas = () => [
         path: '/inventory-finance/extension-fail',
         status: 'end',
         create: '2023.04.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '추가서류등록\nIF_M05_p001',
@@ -1594,7 +1735,12 @@ const datas = () => [
         path: '/inventory-finance/state-list',
         status: 'end',
         create: '2023.05.05',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '신청현황',
@@ -1605,7 +1751,12 @@ const datas = () => [
         path: '/inventory-finance/state-add-info',
         status: 'end',
         create: '2023.05.05',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '대출약정\nIF_M02_p007',
@@ -1616,7 +1767,12 @@ const datas = () => [
         path: '/inventory-finance/loan-agreement',
         status: 'end',
         create: '2023.05.05',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '대출약정\nIF_M02_p007',
@@ -1627,7 +1783,12 @@ const datas = () => [
         path: '/inventory-finance/loan-agreement-complete',
         status: 'end',
         create: '2023.05.05',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '대출약정\nIF_M02_p007',
@@ -1707,7 +1868,12 @@ const datas = () => [
         path: '/lm-blog/loan-counseling-form',
         status: 'end',
         create: '2023.04.19',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '대출상담\nLM_M01_p001',
@@ -1756,7 +1922,12 @@ const datas = () => [
         path: '/lm-blog/sms-counseling-detail',
         status: 'end',
         create: '2023.04.19',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 여백 조정',
+          },
+        ],
       },
       {
         depth2: '접속통계\nLM_M04_p001',
@@ -1827,7 +1998,12 @@ const datas = () => [
         path: '/lm-blog-personal/sms-counseling',
         status: 'end',
         create: '2023.04.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '찾아오시는 길\nLM_M06_p006',
@@ -1895,6 +2071,10 @@ const datas = () => [
             date: '2023.08.24',
             text: '약정 가능 건 체크박스 추가',
           },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
         ],
       },
       {
@@ -1910,6 +2090,10 @@ const datas = () => [
           {
             date: '2023.07.28',
             text: '카운팅 추가',
+          },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 여백 조정',
           },
         ],
       },
@@ -1947,6 +2131,10 @@ const datas = () => [
             date: '2023.07.28',
             text: '버튼 색상 수정',
           },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
         ],
       },
       {
@@ -1967,6 +2155,10 @@ const datas = () => [
             date: '2023.07.28',
             text: '버튼 색상 수정',
           },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
         ],
       },
       {
@@ -1982,6 +2174,10 @@ const datas = () => [
           {
             date: '2023.07.28',
             text: '버튼 색상 수정',
+          },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
           },
         ],
       },
@@ -1999,6 +2195,10 @@ const datas = () => [
             date: '2023.07.28',
             text: '버튼 색상 수정',
           },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
         ],
       },
       {
@@ -2014,6 +2214,10 @@ const datas = () => [
           {
             date: '2023.07.28',
             text: '버튼 색상 수정',
+          },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
           },
         ],
       },
@@ -2031,6 +2235,10 @@ const datas = () => [
             date: '2023.07.28',
             text: '버튼 색상 수정',
           },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
         ],
       },
       {
@@ -2046,6 +2254,10 @@ const datas = () => [
           {
             date: '2023.07.28',
             text: '버튼 색상 수정',
+          },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
           },
         ],
       },
@@ -2067,6 +2279,10 @@ const datas = () => [
             date: '2023.07.28',
             text: '버튼 색상 수정',
           },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
         ],
       },
       {
@@ -2086,6 +2302,10 @@ const datas = () => [
           {
             date: '2023.07.28',
             text: '버튼 색상 수정',
+          },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
           },
         ],
       },
@@ -2119,6 +2339,10 @@ const datas = () => [
             date: '2023.07.28',
             text: '버튼 색상 수정',
           },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
         ],
       },
       {
@@ -2134,6 +2358,10 @@ const datas = () => [
           {
             date: '2023.07.28',
             text: '버튼 색상 수정',
+          },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
           },
         ],
       },
@@ -2155,6 +2383,10 @@ const datas = () => [
             date: '2023.07.31',
             text: '타이틀 수정 및 컨텐츠 추가',
           },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
         ],
       },
       {
@@ -2170,6 +2402,10 @@ const datas = () => [
           {
             date: '2023.07.28',
             text: '버튼 색상 수정',
+          },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
           },
         ],
       },
@@ -2220,6 +2456,10 @@ const datas = () => [
             date: '2023.08.10',
             text: '신용동의 단계 금액 노출 삭제',
           },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
         ],
       },
       {
@@ -2235,6 +2475,10 @@ const datas = () => [
           {
             date: '2023.08.02',
             text: '컨텐츠 구성 변경',
+          },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 여백 조정',
           },
         ],
       },
@@ -2256,6 +2500,10 @@ const datas = () => [
             date: '2023.08.10',
             text: '컨텐츠 수정 및 케이스 추가',
           },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
         ],
       },
       {
@@ -2271,6 +2519,10 @@ const datas = () => [
           {
             date: '2023.07.28',
             text: '버튼 색상 수정',
+          },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
           },
         ],
       },
@@ -2288,6 +2540,10 @@ const datas = () => [
             date: '2023.07.28',
             text: '버튼 색상 수정',
           },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
         ],
       },
       {
@@ -2304,6 +2560,10 @@ const datas = () => [
             date: '2023.07.28',
             text: '버튼 색상 수정',
           },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
         ],
       },
       {
@@ -2319,6 +2579,10 @@ const datas = () => [
           {
             date: '2023.07.28',
             text: '버튼 색상 수정',
+          },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
           },
         ],
       },
@@ -2462,6 +2726,10 @@ const datas = () => [
             date: '2023.08.25',
             text: '버튼 가이드 추가',
           },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
         ],
       },
       {
@@ -2498,6 +2766,10 @@ const datas = () => [
             date: '2023.08.11',
             text: '서류등록 타이틀 문구 수정',
           },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
         ],
       },
       {
@@ -2517,6 +2789,10 @@ const datas = () => [
           {
             date: '2023.08.21',
             text: '국산, 수입, 할부 등 케이스 정리 및 추가',
+          },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
           },
         ],
       },
@@ -2877,7 +3153,12 @@ const datas = () => [
         path: '/lease-rent-estimation-system/my-info',
         status: 'end',
         create: '2023.06.23',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 여백 조정',
+          },
+        ],
       },
       {
         depth2: '서비스',
@@ -2899,7 +3180,12 @@ const datas = () => [
         path: '/lease-rent-estimation-system/notice-detail',
         status: 'end',
         create: '2023.06.23',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 여백 조정',
+          },
+        ],
       },
       {
         depth2: '서비스',
@@ -2910,7 +3196,12 @@ const datas = () => [
         path: '/lease-rent-estimation-system/notice-edit',
         status: 'end',
         create: '2023.06.30',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '서비스',
@@ -2986,7 +3277,12 @@ const datas = () => [
         path: '/lease-rent-estimation-system/admin-setting-default',
         status: 'end',
         create: '2023.06.23',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '서비스',
@@ -3024,7 +3320,12 @@ const datas = () => [
         path: '/lease-rent-estimation-system/LR_M05_p015',
         status: 'end',
         create: '2023.07.24',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
     ],
   },
@@ -3068,7 +3369,12 @@ const datas = () => [
         path: '/equipment-lease/estimate',
         status: 'end',
         create: '2023.05.19',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '견적계산기\nEL_M01_p001',
@@ -3079,7 +3385,12 @@ const datas = () => [
         path: '/equipment-lease/estimate-result',
         status: 'end',
         create: '2023.05.12',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '현황조회',
@@ -3149,7 +3460,12 @@ const datas = () => [
         path: '/setting/certificate-import',
         status: 'end',
         create: '2023.04.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '공동인증서 내보내기\nSetting_M02_p003',
@@ -3160,7 +3476,12 @@ const datas = () => [
         path: '/setting/certificate-export',
         status: 'end',
         create: '2023.04.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '간편비밀번호 (재)등록',
@@ -3281,6 +3602,10 @@ const datas = () => [
             date: '2023.07.19',
             text: '상품안내 내용 수정',
           },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
         ],
       },
       {
@@ -3324,6 +3649,10 @@ const datas = () => [
           {
             date: '2023.07.19',
             text: '상품안내 내용 수정',
+          },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
           },
         ],
       },
@@ -3393,6 +3722,10 @@ const datas = () => [
             date: '2023.07.19',
             text: '상품안내 내용 수정',
           },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
         ],
       },
       {
@@ -3461,6 +3794,10 @@ const datas = () => [
             date: '2023.07.19',
             text: '상품안내 내용 수정',
           },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
         ],
       },
       {
@@ -3518,7 +3855,12 @@ const datas = () => [
         path: '/auto/car-cart-empty',
         status: 'end',
         create: '2023.05.05',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '차바구니\nAF_M44_p001',
@@ -3555,6 +3897,10 @@ const datas = () => [
             date: '2023.07.19',
             text: '상품안내 내용 수정',
           },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
         ],
       },
       {
@@ -3566,7 +3912,12 @@ const datas = () => [
         path: '/business/BF_M05_l022',
         status: 'end',
         create: '2023.08.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '의료비∙설비',
@@ -3617,6 +3968,10 @@ const datas = () => [
           {
             date: '2023.07.19',
             text: '상품안내 내용 수정',
+          },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
           },
         ],
       },
@@ -3846,7 +4201,12 @@ const datas = () => [
         path: '/my-loan/progress-identification',
         status: 'end',
         create: '2023.04.14',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '진행상태조회\nMy_M03_p001',
@@ -4125,7 +4485,12 @@ const datas = () => [
         path: '/my-loan/BF_M06_l017',
         status: 'end',
         create: '2023.07.21',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '진행상태조회\nMy_M03_p001',
@@ -4205,6 +4570,10 @@ const datas = () => [
             date: '2023.08.11',
             text: '일부 문구 삭제 및 띄어쓰기 수정',
           },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
         ],
       },
       {
@@ -4243,7 +4612,12 @@ const datas = () => [
         path: '/my-loan/post-maturity-lease-before',
         status: 'end',
         create: '2023.04.28',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '만기후처리',
@@ -4330,7 +4704,12 @@ const datas = () => [
         path: '/my-loan/my-loan-add-documents',
         status: 'end',
         create: '2023.05.19',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '서류등록\nMy_M07_l002',
@@ -4357,7 +4736,12 @@ const datas = () => [
         path: '/my-loan/add-documents-complete',
         status: 'end',
         create: '2023.04.28',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
     ],
   },
@@ -4494,7 +4878,12 @@ const datas = () => [
         path: '/my-info/withdraw-member',
         status: 'end',
         create: '2023.05.05',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '내정보 관리\nMI_M01_p001',
@@ -4505,7 +4894,12 @@ const datas = () => [
         path: '/my-info/withdraw-member-complete',
         status: 'end',
         create: '2023.05.05',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '하나머니',
@@ -4520,6 +4914,10 @@ const datas = () => [
           {
             date: '2023.07.31',
             text: '이미지 반영',
+          },
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
           },
         ],
       },
@@ -4554,7 +4952,12 @@ const datas = () => [
         path: '/my-info/join-membership-complete',
         status: 'end',
         create: '2023.05.05',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '하나캐피탈 멤버십',
@@ -4581,7 +4984,12 @@ const datas = () => [
         path: '/my-info/withdraw-membership-complete',
         status: 'end',
         create: '2023.05.05',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '하나캐피탈 멤버십',
@@ -4612,7 +5020,12 @@ const datas = () => [
         path: '/my-info/market-price-car',
         status: 'end',
         create: '2023.05.05',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '자동차 시세조회\nMI_M01_p013',
@@ -4634,7 +5047,12 @@ const datas = () => [
         path: '/my-info/market-price-realty',
         status: 'end',
         create: '2023.05.12',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '부동산 시세조회\nMI_M01_p014',
@@ -4731,7 +5149,12 @@ const datas = () => [
         path: '/company/ir-detail',
         status: 'end',
         create: '2023.05.12',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 여백 조정',
+          },
+        ],
       },
       {
         depth2: '회사소개',
@@ -4753,7 +5176,12 @@ const datas = () => [
         path: '/company/sustainable-management-detail',
         status: 'end',
         create: '2023.05.12',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 여백 조정',
+          },
+        ],
       },
       {
         depth2: '회사소개',
@@ -4857,7 +5285,12 @@ const datas = () => [
         path: '/company/recruit-detail',
         status: 'end',
         create: '2023.05.16',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '하단 버튼 여백 조정',
+          },
+        ],
       },
     ],
   },

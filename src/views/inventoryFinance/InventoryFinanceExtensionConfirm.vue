@@ -20,6 +20,7 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import StickyBar from '@/components/ui/common/StickyBar.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 export default {
   components: {
@@ -39,6 +40,7 @@ export default {
     BasicButton,
     BasicHr,
     StickyBar,
+    BottomSticky,
   },
   setup() {
     const store = {
@@ -234,18 +236,22 @@ export default {
     </BasicBox>
 
     <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton :line="true" theme="quaternary">이전</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton>휴대폰 본인인증</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton :line="true" theme="quaternary">이전</BasicButton>
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton>휴대폰 본인인증</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>

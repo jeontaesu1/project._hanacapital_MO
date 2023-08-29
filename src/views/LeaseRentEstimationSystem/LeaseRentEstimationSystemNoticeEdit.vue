@@ -21,6 +21,7 @@ import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 import IconFile from '@/assets/images/icon/file.svg?component';
 import IconImgColor from '@/assets/images/icon/img-color.svg?component';
@@ -44,6 +45,8 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
+    BottomSticky,
+
     IconFile,
     IconImgColor,
   },
@@ -275,27 +278,31 @@ export default {
     </section>
 
     <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton>입력하기</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton>입력하기</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
 
-      <!-- Case : 게시물 수정 접근 시 노출 -->
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton>수정하기</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
-      <!-- // Case : 게시물 수정 접근 시 노출 -->
+          <!-- Case : 게시물 수정 접근 시 노출 -->
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton>수정하기</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+          <!-- // Case : 게시물 수정 접근 시 노출 -->
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>

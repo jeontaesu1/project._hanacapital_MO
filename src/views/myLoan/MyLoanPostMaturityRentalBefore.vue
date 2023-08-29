@@ -24,6 +24,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 import IconPhone from '@/assets/images/icon/phone.svg?component';
 import IconSend from '@/assets/images/icon/send.svg?component';
@@ -58,6 +59,8 @@ export default {
     ButtonList,
     ButtonListItem,
     NoticeText,
+    BottomSticky,
+
     IconPhone,
     IconSend,
     IconPersonalTerms,
@@ -703,32 +706,39 @@ export default {
       </UiTabPanel>
 
       <template v-slot:foot>
-        <ButtonList
-          :classNames="{
-            wrap: 'row-margin-none',
-          }"
-        >
-          <ButtonListItem>
-            <BasicButton
-              v-if="
-                tabSlotProps.activeName === 'myLoanPostMaturityRentalBefore001'
-              "
-              >연장신청</BasicButton
+        <BottomSticky>
+          <div class="bottom-wrap">
+            <ButtonList
+              :classNames="{
+                wrap: 'row-margin-none',
+              }"
             >
-            <BasicButton
-              v-if="
-                tabSlotProps.activeName === 'myLoanPostMaturityRentalBefore002'
-              "
-              >반환신청</BasicButton
-            >
-            <BasicButton
-              v-if="
-                tabSlotProps.activeName === 'myLoanPostMaturityRentalBefore003'
-              "
-              >구매신청</BasicButton
-            >
-          </ButtonListItem>
-        </ButtonList>
+              <ButtonListItem>
+                <BasicButton
+                  v-if="
+                    tabSlotProps.activeName ===
+                    'myLoanPostMaturityRentalBefore001'
+                  "
+                  >연장신청</BasicButton
+                >
+                <BasicButton
+                  v-if="
+                    tabSlotProps.activeName ===
+                    'myLoanPostMaturityRentalBefore002'
+                  "
+                  >반환신청</BasicButton
+                >
+                <BasicButton
+                  v-if="
+                    tabSlotProps.activeName ===
+                    'myLoanPostMaturityRentalBefore003'
+                  "
+                  >구매신청</BasicButton
+                >
+              </ButtonListItem>
+            </ButtonList>
+          </div>
+        </BottomSticky>
       </template>
     </PageContents>
   </UiTab>

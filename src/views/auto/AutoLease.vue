@@ -23,6 +23,7 @@ import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
 import NavTab from '@/components/ui/tab/NavTab.vue';
 import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 import IconPerson from '@/assets/images/icon/person.svg?component';
 import IconCar from '@/assets/images/icon/car.svg?component';
@@ -55,6 +56,7 @@ export default {
     NavTab,
     NavTabButton,
     TextButton,
+    BottomSticky,
 
     IconPerson,
     IconCar,
@@ -910,18 +912,22 @@ export default {
     </div>
 
     <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton theme="tertiary">견적조회</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton>리스 신청</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton theme="tertiary">견적조회</BasicButton>
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton>리스 신청</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>

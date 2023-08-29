@@ -15,6 +15,7 @@ import UiAccordionOpener from '@/components/ui/accordion/UiAccordionOpener.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 import IconTell from '@/assets/images/icon/tell.svg?component';
 
@@ -31,6 +32,8 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
+    BottomSticky,
+
     IconTell,
   },
   setup() {
@@ -463,20 +466,24 @@ export default {
     </div>
 
     <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton tagName="a" theme="primary" href="tel:1800-1110">
-            <template v-slot:leftIcon>
-              <IconTell />
-            </template>
-            1800-1110
-          </BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton tagName="a" theme="primary" href="tel:1800-1110">
+                <template v-slot:leftIcon>
+                  <IconTell />
+                </template>
+                1800-1110
+              </BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>

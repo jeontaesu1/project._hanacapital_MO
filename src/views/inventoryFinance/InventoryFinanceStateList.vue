@@ -38,6 +38,7 @@ import StickyBar from '@/components/ui/common/StickyBar.vue';
 import BoxCheck from '@/components/ui/form/BoxCheck.vue';
 import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
 import BoxCheckObject from '@/components/ui/form/BoxCheckObject.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 import IconArrow from '@/assets/images/icon/dropdown.svg?component';
 
@@ -77,6 +78,8 @@ export default {
     BoxCheck,
     BoxCheckLabel,
     BoxCheckObject,
+    BottomSticky,
+
     IconArrow,
   },
   setup() {
@@ -594,15 +597,19 @@ export default {
     <!-- // Case : 조회 후 노출 -->
 
     <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton>약정하기</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton>약정하기</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>

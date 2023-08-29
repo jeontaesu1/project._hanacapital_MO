@@ -12,6 +12,7 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
 import RoundStatus from '@/components/ui/text/RoundStatus.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 export default {
   components: {
@@ -23,6 +24,7 @@ export default {
     BasicButton,
     IllustObject,
     RoundStatus,
+    BottomSticky,
   },
   setup() {
     const store = {
@@ -62,15 +64,19 @@ export default {
     <IllustObject type="graph" />
 
     <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton>자동차 시세조회</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton>자동차 시세조회</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>

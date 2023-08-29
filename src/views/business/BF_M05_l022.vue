@@ -11,6 +11,7 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 export default {
   components: {
@@ -21,6 +22,7 @@ export default {
     ButtonList,
     BasicButton,
     IllustObject,
+    BottomSticky,
   },
   setup() {
     const store = {
@@ -56,15 +58,19 @@ export default {
     <IllustObject type="customer" />
 
     <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton>다음</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton>다음</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>

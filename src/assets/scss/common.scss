@@ -132,6 +132,12 @@ body,
   background-color: rgba($color-white, 1);
 }
 
+// auto-bottom-wrap
+.auto-bottom-wrap {
+  flex: none;
+  margin-top: auto;
+}
+
 // flex-box
 .flex-box {
   display: flex;

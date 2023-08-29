@@ -34,6 +34,7 @@ import BoxCheck from '@/components/ui/form/BoxCheck.vue';
 import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
 import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
 import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 export default {
   components: {
@@ -67,6 +68,7 @@ export default {
     BoxCheckLabel,
     BoxCheckList,
     BoxCheckListItem,
+    BottomSticky,
   },
   setup() {
     const store = {
@@ -2107,32 +2109,38 @@ export default {
     </div>
 
     <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton theme="quaternary" :line="true">견적수정</BasicButton>
-        </ButtonListItem>
-        <!-- Case : 견적 개수 3개일 경우, 미노출 -->
-        <ButtonListItem>
-          <BasicButton theme="quaternary" :line="true" :minSide="true">
-            견적추가 (최대 3개)
-          </BasicButton>
-        </ButtonListItem>
-        <!-- //Case : 견적 개수 3개일 경우, 미노출 -->
-      </ButtonList>
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton theme="quaternary" :line="true"
+                >견적수정</BasicButton
+              >
+            </ButtonListItem>
+            <!-- Case : 견적 개수 3개일 경우, 미노출 -->
+            <ButtonListItem>
+              <BasicButton theme="quaternary" :line="true" :minSide="true">
+                견적추가 (최대 3개)
+              </BasicButton>
+            </ButtonListItem>
+            <!-- //Case : 견적 개수 3개일 경우, 미노출 -->
+          </ButtonList>
 
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-item-medium',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton>최종 견적 확인</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-item-medium',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton>최종 견적 확인</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>

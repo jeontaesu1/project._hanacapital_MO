@@ -31,6 +31,7 @@ import UiAccordionOpener from '@/components/ui/accordion/UiAccordionOpener.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
 import FilterButton from '@/components/ui/button/FilterButton.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 import IconArrow from '@/assets/images/icon/dropdown.svg?component';
 
@@ -63,6 +64,8 @@ export default {
     ButtonListItem,
     FilterButton,
     TextButton,
+    BottomSticky,
+
     IconArrow,
   },
   setup() {
@@ -1506,15 +1509,19 @@ export default {
     </section>
 
     <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton>신규상담</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton>신규상담</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>

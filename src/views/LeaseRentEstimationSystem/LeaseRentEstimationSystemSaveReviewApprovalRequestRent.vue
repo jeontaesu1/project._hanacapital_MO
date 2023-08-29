@@ -26,6 +26,7 @@ import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 import IconLink from '@/assets/images/icon/link.svg?component';
 import IconCheckDocument from '@/assets/images/icon/check-document.svg?component';
@@ -54,6 +55,8 @@ export default {
     FormHelpText,
     CarEmblem,
     BasicSelect,
+    BottomSticky,
+
     IconLink,
     IconCheckDocument,
   },
@@ -655,20 +658,24 @@ export default {
     </div>
 
     <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton :minSide="true" :line="true" theme="quaternary"
-            >이전</BasicButton
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
           >
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton :minSide="true">품의등록 요청</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+            <ButtonListItem>
+              <BasicButton :minSide="true" :line="true" theme="quaternary"
+                >이전</BasicButton
+              >
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton :minSide="true">품의등록 요청</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>

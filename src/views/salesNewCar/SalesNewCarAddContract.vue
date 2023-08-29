@@ -25,6 +25,7 @@ import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import FormHelpText from '@/components/ui/form/FormHelpText.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 export default {
   components: {
@@ -49,6 +50,7 @@ export default {
     FormInvalid,
     FormInvalidMessage,
     FormHelpText,
+    BottomSticky,
   },
   setup() {
     const state = reactive({
@@ -445,20 +447,24 @@ export default {
     </div>
 
     <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton :minSide="true" :line="true" theme="quaternary"
-            >이전</BasicButton
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
           >
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton :minSide="true">품의등록 요청</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+            <ButtonListItem>
+              <BasicButton :minSide="true" :line="true" theme="quaternary"
+                >이전</BasicButton
+              >
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton :minSide="true">품의등록 요청</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>

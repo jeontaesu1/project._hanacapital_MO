@@ -18,6 +18,7 @@ import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 export default {
   components: {
@@ -35,6 +36,7 @@ export default {
     InputBlock,
     InputBlockCell,
     BasicInput,
+    BottomSticky,
   },
   setup() {
     const state = reactive({
@@ -163,20 +165,24 @@ export default {
     </section>
 
     <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton :line="true" :minSide="true"
-            >QR코드로 가져오기</BasicButton
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
           >
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton :minSide="true">공동인증서 가져오기 </BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+            <ButtonListItem>
+              <BasicButton :line="true" :minSide="true"
+                >QR코드로 가져오기</BasicButton
+              >
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton :minSide="true">공동인증서 가져오기 </BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>

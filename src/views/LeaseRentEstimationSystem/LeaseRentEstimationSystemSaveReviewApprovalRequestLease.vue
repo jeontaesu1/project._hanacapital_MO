@@ -30,6 +30,7 @@ import BoxCheck from '@/components/ui/form/BoxCheck.vue';
 import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
 import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
 import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 import IconLink from '@/assets/images/icon/link.svg?component';
 import IconCheckDocument from '@/assets/images/icon/check-document.svg?component';
@@ -62,6 +63,8 @@ export default {
     BoxCheckLabel,
     BoxCheckList,
     BoxCheckListItem,
+    BottomSticky,
+
     IconLink,
     IconCheckDocument,
   },
@@ -718,20 +721,24 @@ export default {
     </div>
 
     <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton :minSide="true" :line="true" theme="quaternary"
-            >이전</BasicButton
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
           >
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton :minSide="true">품의등록 요청</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+            <ButtonListItem>
+              <BasicButton :minSide="true" :line="true" theme="quaternary"
+                >이전</BasicButton
+              >
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton :minSide="true">품의등록 요청</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>

@@ -12,6 +12,7 @@ import IllustObject from '@/components/ui/common/IllustObject.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 export default {
   components: {
@@ -23,6 +24,7 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicButton,
+    BottomSticky,
   },
   setup() {
     const store = {
@@ -63,18 +65,22 @@ export default {
     </IllustInfo>
 
     <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton :line="true" theme="quaternary">홈으로</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton>서류등록 내역 확인</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton :line="true" theme="quaternary">홈으로</BasicButton>
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton>서류등록 내역 확인</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>

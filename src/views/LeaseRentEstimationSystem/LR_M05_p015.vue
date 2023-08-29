@@ -20,6 +20,7 @@ import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 export default {
   components: {
@@ -39,6 +40,7 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicButton,
+    BottomSticky,
   },
 
   setup() {
@@ -208,21 +210,27 @@ export default {
     </FormList>
 
     <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton :line="true" theme="quaternary">미리보기</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton>저장하기</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton theme="tertiary">수정취소</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton :line="true" theme="quaternary"
+                >미리보기</BasicButton
+              >
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton>저장하기</BasicButton>
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton theme="tertiary">수정취소</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>

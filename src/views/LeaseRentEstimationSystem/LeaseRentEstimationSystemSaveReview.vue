@@ -39,6 +39,7 @@ import FilterButton from '@/components/ui/button/FilterButton.vue';
 import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 import ColorChip from '@/components/ui/imageData/ColorChip.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 export default {
   components: {
@@ -73,6 +74,7 @@ export default {
     RoundStatus,
     TextButton,
     ColorChip,
+    BottomSticky,
   },
   setup() {
     const store = {
@@ -6619,44 +6621,60 @@ export default {
     </section>
 
     <template v-slot:foot>
-      <!--
-        DD :
-        
-        버튼 3개 이하
-        :wrap="false" :col="null"
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <!--
+            DD :
+            
+            버튼 3개 이하
+            :wrap="false" :col="null"
 
-        버튼 4개
-        :wrap="true" :col="2"
+            버튼 4개
+            :wrap="true" :col="2"
 
-        버튼 5개, 6개
-        :wrap="true" :col="3"
-      -->
-      <ButtonList
-        :wrap="true"
-        :col="3"
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton theme="quaternary" size="small">장기렌트</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton theme="quaternary" size="small">신차리스</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton theme="quaternary" size="small">중고리스</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton theme="quaternary" size="small">국산할부</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton theme="quaternary" size="small">수입할부</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton theme="quaternary" size="small">중고할부</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+            버튼 5개, 6개
+            :wrap="true" :col="3"
+          -->
+          <ButtonList
+            :wrap="true"
+            :col="3"
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton theme="quaternary" size="small"
+                >장기렌트</BasicButton
+              >
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton theme="quaternary" size="small"
+                >신차리스</BasicButton
+              >
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton theme="quaternary" size="small"
+                >중고리스</BasicButton
+              >
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton theme="quaternary" size="small"
+                >국산할부</BasicButton
+              >
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton theme="quaternary" size="small"
+                >수입할부</BasicButton
+              >
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton theme="quaternary" size="small"
+                >중고할부</BasicButton
+              >
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>

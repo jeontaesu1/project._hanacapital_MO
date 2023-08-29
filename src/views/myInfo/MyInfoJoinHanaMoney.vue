@@ -10,6 +10,7 @@ import PageMainText from '@/components/ui/text/PageMainText.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 import ImgPoint from '@/assets/images/icon/point.svg?component';
 import ImgAddMoney from '@/assets/images/icon/add-money.svg?component';
@@ -26,6 +27,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
+    BottomSticky,
 
     ImgPoint,
     ImgAddMoney,
@@ -161,15 +163,19 @@ export default {
     </div>
 
     <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton>하나머니 가입하기</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton>하나머니 가입하기</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>

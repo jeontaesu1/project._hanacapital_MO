@@ -22,6 +22,7 @@ import UiTab from '@/components/ui/tab/UiTab.vue';
 import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
 import NavTab from '@/components/ui/tab/NavTab.vue';
 import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 import IconDate from '@/assets/images/icon/date.svg?component';
@@ -50,6 +51,7 @@ export default {
     UiTabPanel,
     NavTab,
     NavTabButton,
+    BottomSticky,
 
     IconDeposit,
     IconDate,
@@ -531,15 +533,19 @@ export default {
       </ul>
     </div>
     <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton>예상견적서 산출</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton>예상견적서 산출</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>

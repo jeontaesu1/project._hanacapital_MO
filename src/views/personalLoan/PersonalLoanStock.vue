@@ -23,6 +23,7 @@ import UiTab from '@/components/ui/tab/UiTab.vue';
 import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
 import NavTab from '@/components/ui/tab/NavTab.vue';
 import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 import IconMoney from '@/assets/images/icon/money.svg?component';
 import IconRate from '@/assets/images/icon/rate.svg?component';
@@ -55,6 +56,8 @@ export default {
     UiTabPanel,
     NavTab,
     NavTabButton,
+    BottomSticky,
+
     IconMoney,
     IconRate,
     IconDate,
@@ -710,32 +713,36 @@ export default {
     </div>
 
     <template v-slot:foot>
-      <!-- Case : Web -->
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton>앱에서 이용하기</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
-      <!-- // Case : Web -->
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <!-- Case : Web -->
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton>앱에서 이용하기</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+          <!-- // Case : Web -->
 
-      <!-- Case : App -->
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton theme="tertiary">연장신청</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton>상환신청</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
-      <!-- // Case : App -->
+          <!-- Case : App -->
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton theme="tertiary">연장신청</BasicButton>
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton>상환신청</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+          <!-- // Case : App -->
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>

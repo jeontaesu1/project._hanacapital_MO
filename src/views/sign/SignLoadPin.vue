@@ -13,6 +13,7 @@ import IllustObject from '@/components/ui/common/IllustObject.vue';
 import IllustInfoTitle from '@/components/ui/common/IllustInfoTitle.vue';
 import IllustInfoText from '@/components/ui/common/IllustInfoText.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 export default {
   components: {
@@ -25,6 +26,7 @@ export default {
     IllustInfoTitle,
     IllustInfoText,
     TextButton,
+    BottomSticky,
   },
   setup() {
     const store = {
@@ -63,24 +65,28 @@ export default {
     </IllustInfo>
 
     <template v-slot:foot>
-      <div class="inline-wrap align-center row-margin-contents">
-        <TextButton
-          :classNames="{ wrap: 'text-body-4 color-gray' }"
-          :underline="true"
-        >
-          기존 인증을 사용할 수 없으세요?
-        </TextButton>
-      </div>
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <div class="inline-wrap align-center row-margin-contents">
+            <TextButton
+              :classNames="{ wrap: 'text-body-4 color-gray' }"
+              :underline="true"
+            >
+              기존 인증을 사용할 수 없으세요?
+            </TextButton>
+          </div>
 
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton>간편비밀번호 인증하기</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton>간편비밀번호 인증하기</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>

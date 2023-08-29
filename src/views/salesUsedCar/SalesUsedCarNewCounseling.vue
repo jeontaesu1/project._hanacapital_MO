@@ -183,7 +183,7 @@ export default {
       </FormList>
     </div>
 
-    <section class="row-margin-contents-group">
+    <section class="row-margin-contents-group row-margin-bottom-none">
       <h3 class="text-body-2 row-margin-item-medium">신용조회동의 요청</h3>
       <ButtonList
         :classNames="{
@@ -199,16 +199,10 @@ export default {
       </ButtonList>
     </section>
 
-    <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton :line="true" theme="quaternary">목록</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
-    </template>
+    <ButtonList>
+      <ButtonListItem>
+        <BasicButton :line="true" theme="quaternary">목록</BasicButton>
+      </ButtonListItem>
+    </ButtonList>
   </PageContents>
 </template>

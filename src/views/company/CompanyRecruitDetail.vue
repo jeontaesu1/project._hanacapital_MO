@@ -50,24 +50,18 @@ export default {
       </section>
     </div>
 
-    <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton
-            :line="true"
-            theme="quaternary"
-            tagName="RouterLink"
-            to="/company/recruit-list"
-          >
-            목록
-          </BasicButton>
-        </ButtonListItem>
-      </ButtonList>
-    </template>
+    <ButtonList>
+      <ButtonListItem>
+        <BasicButton
+          :line="true"
+          theme="quaternary"
+          tagName="RouterLink"
+          to="/company/recruit-list"
+        >
+          목록
+        </BasicButton>
+      </ButtonListItem>
+    </ButtonList>
   </PageContents>
 </template>
 

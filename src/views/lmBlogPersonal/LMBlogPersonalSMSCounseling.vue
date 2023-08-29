@@ -25,6 +25,7 @@ import UiAccordionOpener from '@/components/ui/accordion/UiAccordionOpener.vue';
 import CheckBox from '@/components/ui/form/CheckBox.vue';
 import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
 import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 export default {
   components: {
@@ -49,6 +50,7 @@ export default {
     CheckBox,
     CheckBoxLabelText,
     CheckBoxObject,
+    BottomSticky,
   },
   setup() {
     const state = reactive({
@@ -132,7 +134,7 @@ export default {
       </FormListItem>
     </FormList>
 
-    <div :class="($style['agree-list'], 'row-margin-contents-group')">
+    <div :class="[$style['agree-list'], 'row-margin-contents-group']">
       <UiAccordion :classNames="{ wrap: $style['agree-list__container'] }">
         <UiAccordionItem
           :classNames="{ item: $style['agree-list__all'] }"
@@ -208,15 +210,19 @@ export default {
     </div>
 
     <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton>상담신청</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton>상담신청</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>

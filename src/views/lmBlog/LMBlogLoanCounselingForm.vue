@@ -35,6 +35,7 @@ import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
 import ScrollSection from '@/components/ui/section/ScrollSection.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 import IconInformation from '@/assets/images/icon/information.svg?component';
 
@@ -71,6 +72,8 @@ export default {
     KeyValueText,
     NoticeText,
     ScrollSection,
+    BottomSticky,
+
     IconInformation,
   },
   setup() {
@@ -935,15 +938,19 @@ export default {
     </div>
 
     <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton>한도 &#183; 금리 확인</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton>한도 &#183; 금리 확인</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>
