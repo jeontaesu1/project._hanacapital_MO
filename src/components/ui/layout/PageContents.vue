@@ -1,5 +1,14 @@
 <script>
-import { computed, reactive, onBeforeMount, onUpdated } from 'vue';
+import {
+  computed,
+  reactive,
+  onBeforeMount,
+  onUpdated,
+  onMounted,
+  onBeforeUnmount,
+  ref,
+  provide,
+} from 'vue';
 
 const defaultClassNames = () => ({
   wrap: '',
@@ -19,6 +28,11 @@ const isSlot = (slot) => {
   return items.length !== vIfLength;
 };
 
+const eResize = new Event('resize');
+const resizeObserver = new ResizeObserver((entries) => {
+  entries[0].target.dispatchEvent(eResize);
+});
+
 export default {
   props: {
     classNames: {
@@ -30,8 +44,13 @@ export default {
   },
   setup(props, { slots }) {
     const state = reactive({
+      wrap: {
+        value: null,
+      },
       slots: {},
     });
+
+    const wrap = ref(null);
 
     const customClassNames = computed(() => {
       const { classNames } = props;
@@ -49,6 +68,11 @@ export default {
     onBeforeMount(() => {
       state.slots.head = slots.head;
       state.slots.foot = slots.foot;
+      state.wrap.value = wrap;
+    });
+
+    onMounted(() => {
+      resizeObserver.observe(wrap.value);
     });
 
     onUpdated(() => {
@@ -56,7 +80,16 @@ export default {
       state.slots.foot = slots.foot;
     });
 
+    onBeforeUnmount(() => {
+      resizeObserver.unobserve(wrap.value);
+    });
+
+    provide('pageContents', {
+      wrap: state.wrap,
+    });
+
     return {
+      wrap,
       customClassNames,
       isHead,
       isFoot,
@@ -66,7 +99,7 @@ export default {
 </script>
 
 <template>
-  <div :class="[$style['page-contents'], customClassNames.wrap]">
+  <div ref="wrap" :class="[$style['page-contents'], customClassNames.wrap]">
     <div
       v-if="isHead"
       :class="[$style['page-contents__head'], customClassNames.head]"

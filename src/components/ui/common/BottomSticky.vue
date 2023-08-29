@@ -6,6 +6,7 @@ import {
   onMounted,
   onBeforeUnmount,
   nextTick,
+  inject,
 } from 'vue';
 
 import { useUiCommonStore } from '@/stores/ui/common';
@@ -27,6 +28,8 @@ export default {
     },
   },
   setup(props) {
+    const pageContents = inject('pageContents', {});
+
     const store = {
       ui: {
         common: useUiCommonStore(),
@@ -130,6 +133,10 @@ export default {
       window.addEventListener('resize', resize);
       window.addEventListener('keypadOpened', keypadOpened);
       window.addEventListener('keypadClosed', keypadClosed);
+
+      if (pageContents.wrap && pageContents.wrap.value) {
+        pageContents.wrap.value.addEventListener('resize', resize);
+      }
     });
 
     onBeforeUnmount(() => {
@@ -138,6 +145,10 @@ export default {
       window.removeEventListener('resize', resize);
       window.removeEventListener('keypadOpened', keypadOpened);
       window.removeEventListener('keypadClosed', keypadClosed);
+
+      if (pageContents.wrap && pageContents.wrap.value) {
+        pageContents.wrap.value.removeEventListener('resize', resize);
+      }
     });
 
     return {
