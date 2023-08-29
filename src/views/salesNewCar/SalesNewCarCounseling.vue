@@ -402,7 +402,7 @@ export default {
                   />
                 </InputBlockCell>
                 <template v-slot:right>
-                  <BasicButton size="mini" theme="quaternary">확인</BasicButton>
+                  <BasicButton size="mini" theme="quaternary">조회</BasicButton>
                 </template>
               </InputBlock>
               <FormInvalidMessage>

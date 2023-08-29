@@ -453,7 +453,7 @@ export default {
               }"
             >
               <KeyValueTitle>상환금리</KeyValueTitle>
-              <KeyValueText>00.0%</KeyValueText>
+              <KeyValueText>00.00%</KeyValueText>
             </KeyValueItem>
             <!-- // Case : 'GE헬스케어' 선택 시 노출 -->
 

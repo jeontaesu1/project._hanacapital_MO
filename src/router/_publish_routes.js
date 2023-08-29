@@ -1227,6 +1227,12 @@ const routes = [
     component: () => import('@/views/myLoan/MyLoanProgress.vue'),
   },
   {
+    path: '/my-loan/online-contract-check',
+    name: '/my-loan/online-contract-check',
+    component: () =>
+      import('@/views/myLoan/LayerMyLoanOnlineContractCheck002.vue'),
+  },
+  {
     path: '/my-loan/progress-identification',
     name: '/my-loan/progress-identification',
     component: () => import('@/views/myLoan/MyLoanProgressIdentification.vue'),

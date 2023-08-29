@@ -122,7 +122,9 @@ export default {
               </div>
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">기간</div>
-                <div :class="$style['product-detail__desc']">24개월~60개월</div>
+                <div :class="$style['product-detail__desc']">
+                  24개월 ~ 72개월
+                </div>
               </div>
             </li>
           </ul>
@@ -165,7 +167,7 @@ export default {
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>기간</KeyValueTitle>
-              <KeyValueText>최소 24개월 ~ 최대 60개월까지</KeyValueText>
+              <KeyValueText>최소 24개월 ~ 최대 72개월까지</KeyValueText>
             </KeyValueItem>
           </KeyValue>
         </BasicBox>
