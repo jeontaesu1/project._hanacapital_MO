@@ -7,6 +7,7 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 import LayerMyLoanElectronicFinancialTransactionAgree from '@/views/myLoan/LayerMyLoanElectronicFinancialTransactionAgree.vue';
+import My_M01_l001 from '@/views/myLoan/My_M01_l001.vue';
 import LayerMyLoanMaturityNotice from '@/views/myLoan/LayerMyLoanMaturityNotice.vue';
 import LayerMyLoanTerminatedContract from '@/views/myLoan/LayerMyLoanTerminatedContract.vue';
 
@@ -17,6 +18,7 @@ export default {
     ButtonList,
     ButtonListItem,
     LayerMyLoanElectronicFinancialTransactionAgree,
+    My_M01_l001,
     LayerMyLoanMaturityNotice,
     LayerMyLoanTerminatedContract,
   },
@@ -67,6 +69,12 @@ export default {
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
+        <BasicButton @click="layer002Open">
+          전자금융거래 약관 동의 상세 팝업<br />
+          My_M01_l001
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
         <BasicButton @click="layer003Open">
           만기안내장<br />
           My_M08_l001
@@ -81,6 +89,7 @@ export default {
     </ButtonList>
 
     <LayerMyLoanElectronicFinancialTransactionAgree ref="layer001" />
+    <My_M01_l001 ref="layer002" />
     <LayerMyLoanMaturityNotice ref="layer003" />
     <LayerMyLoanTerminatedContract ref="layer004" />
   </PageContents>
