@@ -13,6 +13,7 @@ import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
+import BasicHr from '@/components/ui/common/BasicHr.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
@@ -34,6 +35,7 @@ export default {
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
+    BasicHr,
     BasicButton,
     ButtonList,
     ButtonListItem,
@@ -185,43 +187,43 @@ export default {
             </KeyValueText>
           </KeyValueItem>
         </KeyValue>
+
+        <BasicHr
+          theme="quaternary"
+          type="contents"
+          className="row-margin-contents-small"
+        />
+
+        <KeyValue margin="regular">
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>견적번호</KeyValueTitle>
+            <KeyValueText>A00000000001</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>영업사원</KeyValueTitle>
+            <KeyValueText>이두리</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>연락처</KeyValueTitle>
+            <KeyValueText>
+              M 010-1234-5678<br />
+              T 02-1234-5678
+            </KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
       </BasicBox>
-
-      <section class="row-margin-container-medium">
-        <h3 class="text-title-2 row-margin-contents">견적정보</h3>
-
-        <BasicBox>
-          <KeyValue margin="regular">
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>견적번호</KeyValueTitle>
-              <KeyValueText>A00000000001</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>영업사원</KeyValueTitle>
-              <KeyValueText>이두리</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>연락처</KeyValueTitle>
-              <KeyValueText>
-                M 010-1234-5678<br />
-                T 02-1234-5678
-              </KeyValueText>
-            </KeyValueItem>
-          </KeyValue>
-        </BasicBox>
-      </section>
 
       <template v-slot:foot>
         <ButtonList
