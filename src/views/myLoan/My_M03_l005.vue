@@ -29,6 +29,7 @@ import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 export default {
   components: {
@@ -57,6 +58,7 @@ export default {
     InputBlock,
     InputBlockCell,
     NoticeText,
+    BottomSticky,
   },
   setup() {
     const store = {
@@ -696,18 +698,22 @@ export default {
     </section>
 
     <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton :line="true" theme="quaternary">이전</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton>확인</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton :line="true" theme="quaternary">이전</BasicButton>
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton>확인</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>
