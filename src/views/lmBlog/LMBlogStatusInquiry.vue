@@ -155,7 +155,7 @@ export default {
                   name="lMBlogStatusInquiryDateCheck"
                   id="lMBlogStatusInquiryDateCheck001"
                 >
-                  <BoxCheckLabel>1개월</BoxCheckLabel>
+                  <BoxCheckLabel>1주</BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
               <BoxCheckListItem>
@@ -164,7 +164,7 @@ export default {
                   name="lMBlogStatusInquiryDateCheck"
                   id="lMBlogStatusInquiryDateCheck002"
                 >
-                  <BoxCheckLabel>3개월</BoxCheckLabel>
+                  <BoxCheckLabel>2주</BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
               <BoxCheckListItem>
@@ -172,15 +172,6 @@ export default {
                   :minSide="true"
                   name="lMBlogStatusInquiryDateCheck"
                   id="lMBlogStatusInquiryDateCheck003"
-                >
-                  <BoxCheckLabel>6개월</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  :minSide="true"
-                  name="lMBlogStatusInquiryDateCheck"
-                  id="lMBlogStatusInquiryDateCheck004"
                 >
                   <BoxCheckLabel>직접입력</BoxCheckLabel>
                 </BoxCheck>

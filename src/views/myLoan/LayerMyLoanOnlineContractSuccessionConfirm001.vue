@@ -101,7 +101,7 @@ export default {
           </BasicBox>
         </section>
 
-        <section class="row-margin-contents-group">
+        <section class="row-margin-container-medium">
           <h3 class="text-title-2 row-margin-contents">승계 신청 확약</h3>
 
           <ul class="reset-list">

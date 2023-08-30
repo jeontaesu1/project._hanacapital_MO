@@ -16,7 +16,6 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
-import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 import StickyBar from '@/components/ui/common/StickyBar.vue';
 import UiTab from '@/components/ui/tab/UiTab.vue';
 import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
@@ -31,6 +30,7 @@ import IconCheckDocument from '@/assets/images/icon/check-document.svg?component
 import IconContract from '@/assets/images/icon/contract.svg?component';
 import IconConsulting from '@/assets/images/icon/consulting.svg?component';
 import IconSend from '@/assets/images/icon/send.svg?component';
+import IconLogoMain from '@/assets/images/icon/logo-main.svg?component';
 import ImgLongTermCarRental01 from '@/assets/images/illustration/img-long-term-car-rental01.svg?component';
 import ImgLongTermCarRental02 from '@/assets/images/illustration/img-long-term-car-rental02.svg?component';
 import ImgLongTermCarRental03 from '@/assets/images/illustration/img-long-term-car-rental03.svg?component';
@@ -48,7 +48,6 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicBox,
-    CarThumb,
     StickyBar,
     UiTab,
     UiTabPanel,
@@ -63,6 +62,7 @@ export default {
     IconSend,
     IconContract,
     IconConsulting,
+    IconLogoMain,
     ImgLongTermCarRental01,
     ImgLongTermCarRental02,
     ImgLongTermCarRental03,
@@ -210,85 +210,6 @@ export default {
         </div>
       </section>
     </div>
-
-    <section class="row-margin-container-medium row-margin-top-none">
-      <h3 class="text-title-2 row-margin-contents">차량정보</h3>
-      <ul class="reset-list">
-        <li class="row-margin-item-group">
-          <BasicBox theme="undenary">
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <h3 class="text-body-4 color-gray font-weight-regular">
-                  카니발
-                </h3>
-                <p class="text-body-1 font-weight-medium">월 350,000 원~</p>
-              </div>
-              <div class="flex-box__cell">
-                <CarThumb src="/images/_dummy/car-thumb.png" />
-              </div>
-            </div>
-          </BasicBox>
-        </li>
-        <li class="row-margin-item-group">
-          <BasicBox theme="undenary">
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <h3 class="text-body-4 color-gray font-weight-regular">
-                  스포티지
-                </h3>
-                <p class="text-body-1 font-weight-medium">월 350,000 원~</p>
-              </div>
-              <div class="flex-box__cell">
-                <CarThumb src="/images/_dummy/car-thumb.png" />
-              </div>
-            </div>
-          </BasicBox>
-        </li>
-        <li class="row-margin-item-group">
-          <BasicBox theme="undenary">
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <h3 class="text-body-4 color-gray font-weight-regular">
-                  아반떼
-                </h3>
-                <p class="text-body-1 font-weight-medium">월 350,000 원~</p>
-              </div>
-              <div class="flex-box__cell">
-                <CarThumb src="/images/_dummy/car-thumb.png" />
-              </div>
-            </div>
-          </BasicBox>
-        </li>
-        <li class="row-margin-item-group">
-          <BasicBox theme="undenary">
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <h3 class="text-body-4 color-gray font-weight-regular">K5</h3>
-                <p class="text-body-1 font-weight-medium">월 350,000 원~</p>
-              </div>
-              <div class="flex-box__cell">
-                <CarThumb src="/images/_dummy/car-thumb.png" />
-              </div>
-            </div>
-          </BasicBox>
-        </li>
-        <li class="row-margin-item-group">
-          <BasicBox theme="undenary">
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <h3 class="text-body-4 color-gray font-weight-regular">
-                  쏘나타
-                </h3>
-                <p class="text-body-1 font-weight-medium">월 350,000 원~</p>
-              </div>
-              <div class="flex-box__cell">
-                <CarThumb src="/images/_dummy/car-thumb.png" />
-              </div>
-            </div>
-          </BasicBox>
-        </li>
-      </ul>
-    </section>
 
     <UiTab>
       <StickyBar>
@@ -625,6 +546,14 @@ export default {
         </li>
       </ul>
     </UiTab>
+
+    <div
+      class="flex-box justify-conten-end row-margin-contents row-margin-bottom-none"
+    >
+      <div class="flex-box__cell">
+        <IconLogoMain class="display-block" />
+      </div>
+    </div>
 
     <template v-slot:foot>
       <BottomSticky>

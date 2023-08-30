@@ -10,16 +10,6 @@ import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-import BasicBox from '@/components/ui/common/BasicBox.vue';
-import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
-import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
-import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
-import KeyValue from '@/components/ui/text/KeyValue.vue';
-import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
-import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
-import KeyValueText from '@/components/ui/text/KeyValueText.vue';
-import UnitText from '@/components/ui/text/UnitText.vue';
-import BasicHr from '@/components/ui/common/BasicHr.vue';
 
 export default {
   components: {
@@ -31,16 +21,6 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    BasicBox,
-    BasicBoxHead,
-    BasicBoxHeadLeft,
-    BasicBoxHeadRight,
-    KeyValue,
-    KeyValueItem,
-    KeyValueTitle,
-    KeyValueText,
-    UnitText,
-    BasicHr,
   },
   setup() {
     const layer = ref(null);
@@ -63,48 +43,6 @@ export default {
           </template>
         </FullPopupHead>
       </template>
-
-      <BasicBox>
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>
-            <h3 class="text-body-3 font-weight-regular">월 납입액</h3>
-          </BasicBoxHeadLeft>
-          <BasicBoxHeadRight>
-            <UnitText verticalAlign="center" rightUnit="원" align="right">
-              <strong>333,389</strong>
-            </UnitText>
-          </BasicBoxHeadRight>
-        </BasicBoxHead>
-
-        <KeyValue margin="regular">
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>대출원금</KeyValueTitle>
-            <KeyValueText>1,000,000 원</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>이자합계</KeyValueTitle>
-            <KeyValueText>167 원</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>총 상환금액</KeyValueTitle>
-            <KeyValueText>1,000,167 원</KeyValueText>
-          </KeyValueItem>
-        </KeyValue>
-      </BasicBox>
-
-      <BasicHr className="row-margin-container-medium" />
 
       <ul :class="$style['bill-list']">
         <li v-for="i in 7" :key="i" :class="$style['bill-list__item']">

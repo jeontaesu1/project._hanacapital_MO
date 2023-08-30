@@ -28,6 +28,7 @@ import IconSend from '@/assets/images/icon/send.svg?component';
 import IconConsulting from '@/assets/images/icon/consulting.svg?component';
 import IconConsultation from '@/assets/images/icon/consultation.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
+import IconLogoMain from '@/assets/images/icon/logo-main.svg?component';
 
 export default {
   components: {
@@ -54,6 +55,7 @@ export default {
     IconConsultation,
     IconCalculate,
     IconConsulting,
+    IconLogoMain,
   },
   setup() {
     const store = {
@@ -122,7 +124,9 @@ export default {
               </div>
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">기간</div>
-                <div :class="$style['product-detail__desc']">24개월~60개월</div>
+                <div :class="$style['product-detail__desc']">
+                  24개월 ~ 72개월
+                </div>
               </div>
             </li>
           </ul>
@@ -165,7 +169,7 @@ export default {
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>기간</KeyValueTitle>
-              <KeyValueText>최소 24개월 ~ 최대 60개월까지</KeyValueText>
+              <KeyValueText>최소 24개월 ~ 최대 72개월까지</KeyValueText>
             </KeyValueItem>
           </KeyValue>
         </BasicBox>
@@ -606,6 +610,14 @@ export default {
         </li>
       </ul>
     </UiTab>
+
+    <div
+      class="flex-box justify-conten-end row-margin-contents row-margin-bottom-none"
+    >
+      <div class="flex-box__cell">
+        <IconLogoMain class="display-block" />
+      </div>
+    </div>
 
     <BasicHr
       type="contents"

@@ -43,6 +43,17 @@ export default {
     ButtonListItem,
   },
   setup() {
+    const today = new Date();
+    const todayObj = {
+      year: today.getFullYear(),
+      month: (() => {
+        const m = today.getMonth() + 1;
+        return m < 10 ? `0${m}` : m;
+      })(),
+      date: today.getDate(),
+    };
+    const maxDate = `${todayObj.year}.${todayObj.month}.${todayObj.date}`;
+
     const state = reactive({
       carNumberError: false,
       dateError: false,
@@ -52,6 +63,7 @@ export default {
     const layer = ref(null);
 
     return {
+      maxDate,
       state,
       layer,
     };
@@ -108,6 +120,7 @@ export default {
                     title="최초등록일"
                     id="layerLeaseRentEstimationSystemSaveReviewCarNumberDate"
                     buttonId="layerLeaseRentEstimationSystemSaveReviewCarNumberDateButton"
+                    :max="maxDate"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -162,6 +175,7 @@ export default {
                     layerTitle="사용본거지를 선택해 주세요"
                     id="layerLeaseRentEstimationSystemSaveReviewCarNumberBase"
                     buttonId="layerLeaseRentEstimationSystemSaveReviewCarNumberBaseButton"
+                    defaultValue="1"
                   />
                 </InputBlockCell>
               </InputBlock>

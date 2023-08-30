@@ -36,6 +36,7 @@ import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
 import ImgZeroCommission from '@/assets/images/illustration/img-zero-commission.svg';
 import Img120Months from '@/assets/images/illustration/img-120months.svg?component';
+import IconLogoMain from '@/assets/images/icon/logo-main.svg?component';
 
 export default {
   components: {
@@ -70,6 +71,7 @@ export default {
     IconCalculate,
     ImgZeroCommission,
     Img120Months,
+    IconLogoMain,
   },
   setup() {
     const store = {
@@ -154,10 +156,8 @@ export default {
                 <IconCommision />
               </div>
               <div :class="$style['product-detail__block']">
-                <div :class="$style['product-detail__title']">
-                  중도상환수수료
-                </div>
-                <div :class="$style['product-detail__desc']">0원</div>
+                <div :class="$style['product-detail__title']">서류</div>
+                <div :class="$style['product-detail__desc']">무서류</div>
               </div>
             </li>
           </ul>
@@ -168,12 +168,12 @@ export default {
     <div class="row-margin-container-medium">
       <section class="row-margin-container-medium">
         <h3 class="text-title-1 font-weight-medium row-margin-item">
-          중도상환수수료 면제!
+          서류 자동제출!
         </h3>
-        <p class="text-body-3">
-          언제, 얼마를 상환해도<br />
-          상환수수료가 발생하지 않습니다.<br />
-          필요 시 바로 상환하여, 이자 부담을 줄여보세요.
+        <p class="text-body-3 color-gray-tertiary">
+          공공마이데이터, 스크래핑 서비스로<br />
+          별도 서류제출이 필요없습니다.<br />
+          (단, 일부 고객의 경우 추가 제출을 요청할 수 있습니다.)
         </p>
         <div :class="[$style['illustration-img'], 'row-margin-item-group']">
           <ImgZeroCommission />
@@ -184,7 +184,7 @@ export default {
         <h3 class="text-title-1 font-weight-medium row-margin-item">
           대출최대기간 84개월
         </h3>
-        <p class="text-body-3">
+        <p class="text-body-3 color-gray-tertiary">
           내 마음대로 최대 84개월까지<br />
           대출기간을 설정하여 월 납입부담을 줄여보세요
         </p>
@@ -244,7 +244,76 @@ export default {
 
           <KeyValueItem>
             <KeyValueTitle>중도상환수수료</KeyValueTitle>
-            <KeyValueText>없음</KeyValueText>
+            <KeyValueText>
+              <div>
+                대출실행일 기준 경과기간에 따라 차등 적용되며,<br />
+                3년 경과 시 면제
+              </div>
+              <ul :class="[$style['basic-list'], 'row-margin-item']">
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'text-body-4',
+                    'font-weight-regular',
+                    'color-black',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']">-</div>
+                  <div :class="$style['basic-list__content']">
+                    1년 이상 : 중도상환원금 X 1% + 중도상환원금 X
+                    (중도상환수수료율 - 1%) X 잔존기간/(대출기간 - 30일)
+                  </div>
+                </li>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'text-body-4',
+                    'font-weight-regular',
+                    'color-black',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']">-</div>
+                  <div :class="$style['basic-list__content']">
+                    1년 미만 : 중도상환원금 X (중도상환수수료율) X
+                    잔존기간/(대출기간 - 30일)
+                  </div>
+                </li>
+              </ul>
+              <ul
+                :class="[
+                  $style['basic-list'],
+                  $style['basic-list--small-margin'],
+                  'row-margin-item',
+                ]"
+              >
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'text-body-5',
+                    'font-weight-regular',
+                    'color-gray-tertiary',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']">※</div>
+                  <div :class="$style['basic-list__content']">
+                    잔존기간 : 30일 미만 상환 시 '대출 사용기간'을 30일로 간주
+                  </div>
+                </li>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'text-body-5',
+                    'font-weight-regular',
+                    'color-gray-tertiary',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']">※</div>
+                  <div :class="$style['basic-list__content']">
+                    중도상환수수료율 : 2%
+                  </div>
+                </li>
+              </ul>
+            </KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem>
@@ -529,6 +598,14 @@ export default {
       </UiTabPanel>
       <!-- // 유의사항 -->
     </UiTab>
+
+    <div
+      class="flex-box justify-conten-end row-margin-contents row-margin-bottom-none"
+    >
+      <div class="flex-box__cell">
+        <IconLogoMain class="display-block" />
+      </div>
+    </div>
 
     <BasicHr
       type="contents"

@@ -9884,7 +9884,7 @@ export default {
                 </div>
               </SlideBannerBlock>
             </SwiperSlide>
-            <!-- // Case : 링크 기능 있을 때 -->
+            <!-- // Case : 링크 기능 있을 때 (RouterLink) -->
 
             <!-- Case : 링크 기능 있을 때 (a tag) -->
             <SwiperSlide>
@@ -9913,7 +9913,8 @@ export default {
       <h2 class="test-section-title">SlideImageBanner</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
-        <SlideImageBanner :classNames="{ wrap: 'row-margin-contents' }">
+
+        <SlideImageBanner>
           <Swiper :modules="modules" pagination>
             <!-- Case : 링크 기능 없을 때 -->
             <SwiperSlide>
@@ -9937,7 +9938,7 @@ export default {
                 </div>
               </RouterLink>
             </SwiperSlide>
-            <!-- // Case : 링크 기능 있을 때 -->
+            <!-- // Case : 링크 기능 있을 때 (RouterLink) -->
 
             <!-- Case : 링크 기능 있을 때 (a tag) -->
             <SwiperSlide>
@@ -9945,6 +9946,50 @@ export default {
                 <div :class="$style['image-view']">
                   <img
                     :src="`${BASE_URL}images/_dummy/banner-002.png`"
+                    alt="배너 설명 넣어주세요"
+                  />
+                </div>
+              </a>
+            </SwiperSlide>
+            <!-- // Case : 링크 기능 있을 때 (a tag) -->
+          </Swiper>
+        </SlideImageBanner>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Secondary</h3>
+
+        <SlideImageBanner theme="secondary">
+          <Swiper :modules="modules" pagination>
+            <!-- Case : 링크 기능 없을 때 -->
+            <SwiperSlide>
+              <div :class="$style['image-view']">
+                <img
+                  :src="`${BASE_URL}images/_dummy/banner-004.png`"
+                  alt="배너 설명 넣어주세요"
+                />
+              </div>
+            </SwiperSlide>
+            <!-- //Case : 링크 기능 없을 때 -->
+
+            <!-- Case : 링크 기능 있을 때 (RouterLink) -->
+            <SwiperSlide>
+              <RouterLink to="" class="link-block">
+                <div :class="$style['image-view']">
+                  <img
+                    :src="`${BASE_URL}images/_dummy/banner-004.png`"
+                    alt="배너 설명 넣어주세요"
+                  />
+                </div>
+              </RouterLink>
+            </SwiperSlide>
+            <!-- // Case : 링크 기능 있을 때 (RouterLink) -->
+
+            <!-- Case : 링크 기능 있을 때 (a tag) -->
+            <SwiperSlide>
+              <a href="" class="link-block">
+                <div :class="$style['image-view']">
+                  <img
+                    :src="`${BASE_URL}images/_dummy/banner-004.png`"
                     alt="배너 설명 넣어주세요"
                   />
                 </div>
@@ -9994,7 +10039,7 @@ export default {
                 </h3>
               </BasicBanner>
             </SwiperSlide>
-            <!-- // Case : 링크 기능 있을 때 -->
+            <!-- // Case : 링크 기능 있을 때 (RouterLink) -->
 
             <!-- Case : 링크 기능 있을 때 (a tag) -->
             <SwiperSlide>

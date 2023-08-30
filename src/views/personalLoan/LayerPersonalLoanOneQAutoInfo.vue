@@ -39,13 +39,7 @@ export default {
         </ToastPopupHead>
       </template>
 
-      <ul
-        :class="[
-          $style['basic-list'],
-          $style['basic-list--regular'],
-          $style['basic-list--normal-margin'],
-        ]"
-      >
+      <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
         <li
           :class="[
             $style['basic-list__item'],

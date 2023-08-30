@@ -72,7 +72,7 @@ export default {
         <ol
           :class="[
             $style['basic-list'],
-            $style['basic-list--normal-margin'],
+            $style['basic-list--medium-margin'],
             'row-margin-item-regular',
           ]"
         >

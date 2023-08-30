@@ -115,7 +115,7 @@ export default {
         </FormListItem>
       </FormList>
 
-      <div :class="[$style['agree-list'], 'row-margin-contents-group']">
+      <div :class="[$style['agree-list'], 'row-margin-container-medium']">
         <ul :class="$style['agree-list__container']">
           <li :class="$style['agree-list__all']">
             <div :class="$style['agree-list__all-head']">

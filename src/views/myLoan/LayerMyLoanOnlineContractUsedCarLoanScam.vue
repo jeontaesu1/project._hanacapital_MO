@@ -63,7 +63,7 @@ export default {
               :class="[
                 $style['basic-list__item'],
                 'color-black',
-                'text-body-3',
+                'text-body-4',
               ]"
             >
               <div :class="$style['basic-list__symbol']"></div>
@@ -89,7 +89,7 @@ export default {
               :class="[
                 $style['basic-list__item'],
                 'color-black',
-                'text-body-3',
+                'text-body-4',
               ]"
             >
               <div :class="$style['basic-list__symbol']"></div>
@@ -111,7 +111,7 @@ export default {
               :class="[
                 $style['basic-list__item'],
                 'color-black',
-                'text-body-3',
+                'text-body-4',
               ]"
             >
               <div :class="$style['basic-list__symbol']"></div>

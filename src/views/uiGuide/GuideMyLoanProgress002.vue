@@ -11,7 +11,6 @@ import LayerMyLoanOnlineContractStartRecruiter from '@/views/myLoan/LayerMyLoanO
 import LayerMyLoanOnlineContractNoticeDuty from '@/views/myLoan/LayerMyLoanOnlineContractNoticeDuty.vue';
 import LayerMyLoanOnlineContractNoticeDutyNotAgree from '@/views/myLoan/LayerMyLoanOnlineContractNoticeDutyNotAgree.vue';
 import LayerMyLoanOnlineContractCheck001 from '@/views/myLoan/LayerMyLoanOnlineContractCheck001.vue';
-import LayerMyLoanOnlineContractCheck002 from '@/views/myLoan/LayerMyLoanOnlineContractCheck002.vue';
 import LayerMyLoanOnlineContractCheckAgree from '@/views/myLoan/LayerMyLoanOnlineContractCheckAgree.vue';
 import LayerMyLoanOnlineContractAgree from '@/views/myLoan/LayerMyLoanOnlineContractAgree.vue';
 import LayerMyLoanOnlineContractFurtherExplanation from '@/views/myLoan/LayerMyLoanOnlineContractFurtherExplanation.vue';
@@ -72,7 +71,6 @@ export default {
     LayerMyLoanOnlineContractNoticeDuty,
     LayerMyLoanOnlineContractNoticeDutyNotAgree,
     LayerMyLoanOnlineContractCheck001,
-    LayerMyLoanOnlineContractCheck002,
     LayerMyLoanOnlineContractCheckAgree,
     LayerMyLoanOnlineContractAgree,
     LayerMyLoanOnlineContractFurtherExplanation,
@@ -176,7 +174,6 @@ export default {
     const layer051 = ref(null);
     const layer052 = ref(null);
     const layer053 = ref(null);
-    const layer054 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -337,9 +334,6 @@ export default {
     const layer053Open = (e = {}) => {
       layer053.value.layer.open(e.target);
     };
-    const layer054Open = (e = {}) => {
-      layer054.value.layer.open(e.target);
-    };
 
     return {
       layer001,
@@ -395,7 +389,6 @@ export default {
       layer051,
       layer052,
       layer053,
-      layer054,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -449,7 +442,6 @@ export default {
       layer051Open,
       layer052Open,
       layer053Open,
-      layer054Open,
     };
   },
 };
@@ -486,11 +478,6 @@ export default {
       <ButtonListItem>
         <BasicButton @click="layer005Open">
           적합성·적정성 확인서<br />My_M03_l005
-        </BasicButton>
-      </ButtonListItem>
-      <ButtonListItem>
-        <BasicButton @click="layer054Open">
-          적합성·적정성 확인서<br />(프로그레스바 없음)<br />My_M03_l005
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
@@ -740,7 +727,6 @@ export default {
     <LayerMyLoanOnlineContractNoticeDuty ref="layer003" />
     <LayerMyLoanOnlineContractNoticeDutyNotAgree ref="layer004" />
     <LayerMyLoanOnlineContractCheck001 ref="layer005" />
-    <LayerMyLoanOnlineContractCheck002 ref="layer054" />
     <LayerMyLoanOnlineContractCheckAgree ref="layer006" />
     <LayerMyLoanOnlineContractAgree ref="layer007" />
     <LayerMyLoanOnlineContractFurtherExplanation ref="layer008" />

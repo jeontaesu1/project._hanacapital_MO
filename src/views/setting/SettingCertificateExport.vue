@@ -7,30 +7,22 @@ import { useUiHeaderStore } from '@/stores/ui/header';
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
-import BasicButton from '@/components/ui/button/BasicButton.vue';
-import ButtonList from '@/components/ui/button/ButtonList.vue';
-import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
 import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
-import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 export default {
   components: {
     PageContents,
     PageTextGroup,
     PageMainText,
-    BasicButton,
-    ButtonList,
-    ButtonListItem,
     IllustObject,
     FormList,
     FormListItem,
     InputBlock,
     InputBlockCell,
-    BottomSticky,
   },
   setup() {
     const store = {
@@ -125,22 +117,6 @@ export default {
         </ol>
       </div>
     </section>
-
-    <template v-slot:foot>
-      <BottomSticky>
-        <div class="bottom-wrap">
-          <ButtonList
-            :classNames="{
-              wrap: 'row-margin-none',
-            }"
-          >
-            <ButtonListItem>
-              <BasicButton>확인</BasicButton>
-            </ButtonListItem>
-          </ButtonList>
-        </div>
-      </BottomSticky>
-    </template>
   </PageContents>
 </template>
 

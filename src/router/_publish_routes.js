@@ -1283,6 +1283,11 @@ const routes = [
     name: '/my-loan/BF_M06_l018',
     component: () => import('@/views/myLoan/BF_M06_l018.vue'),
   },
+  {
+    path: '/my-loan/My_M03_l005',
+    name: '/my-loan/My_M03_l005',
+    component: () => import('@/views/myLoan/My_M03_l005.vue'),
+  },
 
   // my-info
   {

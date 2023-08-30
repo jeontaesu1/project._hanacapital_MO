@@ -62,7 +62,7 @@ export default {
       <div>
         <div class="text-body-2">
           <div class="font-weight-medium">
-            해당 금융거래로 인하여 개인신용평가회사가 개인싱용평점을 만들어 낼
+            해당 금융거래로 인하여 개인신용평가회사가 개인신용평점을 만들어 낼
             때 신용정보주체에게 불이익이 발생할 수 있으며,
             <span class="color-red font-weight-regular">
               개인신용평점 하락 시 불이익 발생 가능성이 있는 금융거래

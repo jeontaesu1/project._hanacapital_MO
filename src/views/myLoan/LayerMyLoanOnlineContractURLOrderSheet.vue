@@ -162,7 +162,7 @@ export default {
             <h4 class="text-body-2 font-weight-regular row-margin-small">
               현금
             </h4>
-            <p class="text-body-4 font-weight-light">
+            <p class="text-body-4 color-gray-secondary">
               '을'이 물건을 별표 제4항에 명시한 인도장소에 인도(설치)한 후
               '병'의 물건수령증서 또는 리스물건의 인수확인서를 '갑'이 접수하고,
               물건의 수량·품질·규격·성능 등이 완전하다고 '갑'이 인정하면

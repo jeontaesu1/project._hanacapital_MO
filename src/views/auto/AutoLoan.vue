@@ -29,6 +29,7 @@ import IconContract from '@/assets/images/icon/contract.svg?component';
 import IconSend from '@/assets/images/icon/send.svg?component';
 import IconConsulting from '@/assets/images/icon/consulting.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
+import IconLogoMain from '@/assets/images/icon/logo-main.svg?component';
 
 export default {
   components: {
@@ -56,6 +57,7 @@ export default {
     IconContract,
     IconCalculate,
     IconConsulting,
+    IconLogoMain,
   },
   setup() {
     const store = {
@@ -96,7 +98,7 @@ export default {
         <PageMainText>
           차량 대금은 금융사에서 지급<br />
           <strong>손님은 해당 금액을 분할 납부하는</strong><br />
-          <strong>금융 서비스입니다</strong>
+          <strong>금융 상품입니다</strong>
         </PageMainText>
       </PageTextGroup>
 
@@ -617,6 +619,14 @@ export default {
         </li>
       </ul>
     </UiTab>
+
+    <div
+      class="flex-box justify-conten-end row-margin-contents row-margin-bottom-none"
+    >
+      <div class="flex-box__cell">
+        <IconLogoMain class="display-block" />
+      </div>
+    </div>
 
     <BasicHr
       type="contents"

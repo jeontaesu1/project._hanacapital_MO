@@ -67,7 +67,8 @@ export default {
         </PageMainText>
         <PageSubText>
           대출금 송금을 위한 출금동의 및 대출계약 사항 안내를<br />
-          위해 <span class="color-green">ARS 계약안내</span>를 요청합니다
+          위해 <span class="color-red font-weight-regular">ARS 계약안내</span>를
+          요청합니다
         </PageSubText>
       </PageTextGroup>
 

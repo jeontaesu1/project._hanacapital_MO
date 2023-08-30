@@ -122,12 +122,12 @@ export default {
                 <span :class="$style['etc-text__dot']"></span>
                 <span :class="$style['etc-text__item']">최대 12개월</span>
               </span>
-              <span class="inline-wrap row-margin-item">
-                <RoundStatus theme="undenary">
-                  지금 가입하면 최대 1만원 지원!
-                </RoundStatus>
-              </span>
             </span>
+          </button>
+          <button type="button" :class="$style['tag-button']">
+            <RoundStatus theme="undenary">
+              지금 가입하면 최대 1만원 지원!
+            </RoundStatus>
           </button>
         </li>
         <li :class="$style['icon-list__item']">
@@ -198,12 +198,12 @@ export default {
                 <span :class="$style['etc-text__dot']"></span>
                 <span :class="$style['etc-text__item']">최대 12개월</span>
               </span>
-              <span class="inline-wrap row-margin-item">
-                <RoundStatus theme="undenary">
-                  지금 가입하면 최대 1만원 지원!
-                </RoundStatus>
-              </span>
             </span>
+          </button>
+          <button type="button" :class="$style['tag-button']">
+            <RoundStatus theme="undenary">
+              지금 가입하면 최대 1만원 지원!
+            </RoundStatus>
           </button>
         </li>
         <!-- // Case : 자동차 -->

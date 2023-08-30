@@ -7,6 +7,7 @@ import ToastPopup from '@/components/ui/layer/ToastPopup.vue';
 import ToastPopupHead from '@/components/ui/layer/ToastPopupHead.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import PopupSubTitle from '@/components/ui/layer/PopupSubTitle.vue';
+import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 
 import IconPhone from '@/assets/images/icon/phone.svg?component';
 import IconCertification from '@/assets/images/icon/certification.svg?component';
@@ -20,6 +21,8 @@ export default {
     ToastPopupHead,
     PopupTitle,
     PopupSubTitle,
+    RoundStatus,
+
     IconPhone,
     IconCertification,
     IconCard,
@@ -58,16 +61,58 @@ export default {
               </span>
             </button>
           </li>
+          <!-- Case : 휴대폰 인증 완료 -->
+          <li :class="$style['icon-buttons__item']">
+            <button
+              type="button"
+              :class="$style['icon-buttons__block']"
+              disabled
+            >
+              <span :class="$style['icon-buttons__icon']"><IconPhone /></span>
+              <span :class="$style['icon-buttons__content']">
+                <span :class="$style['icon-buttons__title']">휴대폰</span>
+              </span>
+              <span :class="$style['icon-buttons__right']">
+                <RoundStatus :block="true" theme="secondary"
+                  >인증완료</RoundStatus
+                >
+              </span>
+            </button>
+          </li>
+          <!-- // Case : 휴대폰 인증 완료 -->
+
           <li :class="$style['icon-buttons__item']">
             <button type="button" :class="$style['icon-buttons__block']">
-              <span :class="$style['icon-buttons__icon']">
-                <IconCertification />
-              </span>
+              <span :class="$style['icon-buttons__icon']"
+                ><IconCertification
+              /></span>
               <span :class="$style['icon-buttons__content']">
                 <span :class="$style['icon-buttons__title']">공동인증서</span>
               </span>
             </button>
           </li>
+          <!-- Case : 공동인증서 인증 완료 -->
+          <li :class="$style['icon-buttons__item']">
+            <button
+              type="button"
+              :class="$style['icon-buttons__block']"
+              disabled
+            >
+              <span :class="$style['icon-buttons__icon']"
+                ><IconCertification
+              /></span>
+              <span :class="$style['icon-buttons__content']">
+                <span :class="$style['icon-buttons__title']">공동인증서</span>
+              </span>
+              <span :class="$style['icon-buttons__right']">
+                <RoundStatus :block="true" theme="secondary"
+                  >인증완료</RoundStatus
+                >
+              </span>
+            </button>
+          </li>
+          <!-- // Case : 공동인증서 인증 완료 -->
+
           <li :class="$style['icon-buttons__item']">
             <button type="button" :class="$style['icon-buttons__block']">
               <span :class="$style['icon-buttons__icon']"><IconCard /></span>
@@ -76,11 +121,31 @@ export default {
               </span>
             </button>
           </li>
+          <!-- Case : 신용카드 인증 완료 -->
+          <li :class="$style['icon-buttons__item']">
+            <button
+              type="button"
+              :class="$style['icon-buttons__block']"
+              disabled
+            >
+              <span :class="$style['icon-buttons__icon']"><IconCard /></span>
+              <span :class="$style['icon-buttons__content']">
+                <span :class="$style['icon-buttons__title']">신용카드</span>
+              </span>
+              <span :class="$style['icon-buttons__right']">
+                <RoundStatus :block="true" theme="secondary"
+                  >인증완료</RoundStatus
+                >
+              </span>
+            </button>
+          </li>
+          <!-- // Case : 신용카드 인증 완료 -->
+
           <li :class="$style['icon-buttons__item']">
             <button type="button" :class="$style['icon-buttons__block']">
-              <span :class="$style['icon-buttons__icon']">
-                <IconEasyAuthentication />
-              </span>
+              <span :class="$style['icon-buttons__icon']"
+                ><IconEasyAuthentication
+              /></span>
               <span :class="$style['icon-buttons__content']">
                 <span :class="$style['icon-buttons__title']">
                   간편인증 (민간인증서)
@@ -88,6 +153,29 @@ export default {
               </span>
             </button>
           </li>
+          <!-- Case : 간편인증 (민간인증서) 인증 완료 -->
+          <li :class="$style['icon-buttons__item']">
+            <button
+              type="button"
+              :class="$style['icon-buttons__block']"
+              disabled
+            >
+              <span :class="$style['icon-buttons__icon']"
+                ><IconEasyAuthentication
+              /></span>
+              <span :class="$style['icon-buttons__content']">
+                <span :class="$style['icon-buttons__title']"
+                  >간편인증 (민간인증서)</span
+                >
+              </span>
+              <span :class="$style['icon-buttons__right']">
+                <RoundStatus :block="true" theme="secondary"
+                  >인증완료</RoundStatus
+                >
+              </span>
+            </button>
+          </li>
+          <!-- // Case : 간편인증 (민간인증서) 인증 완료 -->
         </ul>
       </div>
     </ToastPopup>

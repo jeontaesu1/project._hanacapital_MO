@@ -66,7 +66,7 @@ export default {
           >17시 내로 입금해 주시면 청약철회 후 문자로 안내
           드리겠습니다.</PageSubText
         ><PageSubText
-          ><span class="color-green"
+          ><span class="color-green font-weight-regular"
             >당일 문자를 받지 못하신 경우, 고객센터에 연락하여 확인
             바랍니다.</span
           ><br />

@@ -100,7 +100,7 @@ export default {
           선택하신 계약상품의 보험 조건을 확인 후<br />
           운전자 정보를 입력해 주세요.
         </PageSubText>
-        <PageSubText :classNames="{ wrap: 'color-red' }">
+        <PageSubText :classNames="{ wrap: 'color-red font-weight-regular' }">
           렌터카 상품에 한하여 운전자 지정이 가능합니다.
         </PageSubText>
       </PageTextGroup>

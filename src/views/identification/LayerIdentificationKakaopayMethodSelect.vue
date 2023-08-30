@@ -19,6 +19,7 @@ export default {
     ToastPopup,
     ToastPopupHead,
     PopupTitle,
+
     IconHanaOneSign,
     IconToss,
     IconKakaotalk,
@@ -36,8 +37,13 @@ export default {
 </script>
 
 <template>
-  <UiLayer ref="layer" type="toast" :backgroundClose="true">
-    <ToastPopup>
+  <UiLayer
+    ref="layer"
+    type="toast"
+    :backgroundClose="true"
+    v-slot="layerSlotProps"
+  >
+    <ToastPopup v-if="layerSlotProps.display !== 'none'">
       <template v-slot:head>
         <ToastPopupHead>
           <PopupTitle>간편인증 방법을 선택해 주세요</PopupTitle>
@@ -58,9 +64,7 @@ export default {
           </li>
           <li :class="$style['icon-buttons__item']">
             <button type="button" :class="$style['icon-buttons__block']">
-              <span :class="$style['icon-buttons__icon']">
-                <IconToss />
-              </span>
+              <span :class="$style['icon-buttons__icon']"><IconToss /></span>
               <span :class="$style['icon-buttons__content']">
                 <span :class="$style['icon-buttons__title']">토스</span>
               </span>
@@ -68,9 +72,9 @@ export default {
           </li>
           <li :class="$style['icon-buttons__item']">
             <button type="button" :class="$style['icon-buttons__block']">
-              <span :class="$style['icon-buttons__icon']">
-                <IconKakaotalk />
-              </span>
+              <span :class="$style['icon-buttons__icon']"
+                ><IconKakaotalk
+              /></span>
               <span :class="$style['icon-buttons__content']">
                 <span :class="$style['icon-buttons__title']">카카오</span>
               </span>
@@ -78,21 +82,17 @@ export default {
           </li>
           <li :class="$style['icon-buttons__item']">
             <button type="button" :class="$style['icon-buttons__block']">
-              <span :class="$style['icon-buttons__icon']">
-                <IconNaver />
-              </span>
+              <span :class="$style['icon-buttons__icon']"><IconNaver /></span>
               <span :class="$style['icon-buttons__content']">
-                <span :class="$style['icon-buttons__title']"> 네이버 </span>
+                <span :class="$style['icon-buttons__title']">네이버</span>
               </span>
             </button>
           </li>
           <li :class="$style['icon-buttons__item']">
             <button type="button" :class="$style['icon-buttons__block']">
-              <span :class="$style['icon-buttons__icon']">
-                <IconPass />
-              </span>
+              <span :class="$style['icon-buttons__icon']"><IconPass /></span>
               <span :class="$style['icon-buttons__content']">
-                <span :class="$style['icon-buttons__title']"> PASS </span>
+                <span :class="$style['icon-buttons__title']">PASS</span>
               </span>
             </button>
           </li>

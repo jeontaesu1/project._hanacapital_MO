@@ -259,15 +259,6 @@ export default {
                   item: 'text-body-3',
                 }"
               >
-                <KeyValueTitle>생년월일</KeyValueTitle>
-                <KeyValueText>860316</KeyValueText>
-              </KeyValueItem>
-
-              <KeyValueItem
-                :classNames="{
-                  item: 'text-body-3',
-                }"
-              >
                 <KeyValueTitle>연락처</KeyValueTitle>
                 <KeyValueText>010-1544-****</KeyValueText>
               </KeyValueItem>

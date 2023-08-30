@@ -56,7 +56,8 @@ export default {
           <strong>완료되었습니다</strong>
         </IllustInfoTitle>
         <IllustInfoText>
-          <span class="color-green">010-1234-5678</span> 번호로<br />
+          <span class="color-green font-weight-regular">010-1234-5678</span>
+          번호로<br />
           등록 신청 문자가 발송되었습니다.
         </IllustInfoText>
         <IllustInfoText class="row-margin-item">

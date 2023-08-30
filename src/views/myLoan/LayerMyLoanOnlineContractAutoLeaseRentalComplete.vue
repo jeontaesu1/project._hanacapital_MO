@@ -66,7 +66,8 @@ export default {
         </PageMainText>
         <PageSubText>
           차량출고요청 및 계약사항 안내를 위해<br />
-          <span class="color-green">녹취콜</span>을 요청합니다
+          <span class="color-green font-weight-regular">녹취콜</span>을
+          요청합니다
         </PageSubText>
       </PageTextGroup>
 

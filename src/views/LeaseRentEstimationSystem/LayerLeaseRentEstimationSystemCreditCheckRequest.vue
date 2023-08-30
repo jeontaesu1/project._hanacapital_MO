@@ -27,6 +27,7 @@ import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 import BoxCheck from '@/components/ui/form/BoxCheck.vue';
 import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
+import BoxCheckObject from '@/components/ui/form/BoxCheckObject.vue';
 import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
 import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
@@ -58,6 +59,7 @@ export default {
     FormHelpText,
     BoxCheck,
     BoxCheckLabel,
+    BoxCheckObject,
     BoxCheckList,
     BoxCheckListItem,
     NoticeText,
@@ -83,6 +85,7 @@ export default {
       tab003NameError: false,
       tab003BirthDateError: false,
       tab003PhoneError: false,
+      tab003CEONameError: false,
     });
 
     return {
@@ -572,12 +575,50 @@ export default {
                     <FormHelpText>숫자만 입력해 주세요.</FormHelpText>
                   </FormInvalid>
                 </FormListItem>
+
+                <FormListItem
+                  titleText="대표자명"
+                  target="#layerLeaseRentEstimationSystemCreditCheckRequest003CEOName"
+                  :disabled="true"
+                >
+                  <FormInvalid :error="state.tab003CEONameError">
+                    <InputBlock
+                      :error="state.tab003CEONameError"
+                      :disabled="true"
+                    >
+                      <InputBlockCell :flexible="true">
+                        <BasicInput
+                          title="대표자명"
+                          id="layerLeaseRentEstimationSystemCreditCheckRequest003CEOName"
+                          :disabled="true"
+                        />
+                      </InputBlockCell>
+                    </InputBlock>
+                    <FormInvalidMessage>Error Message</FormInvalidMessage>
+                  </FormInvalid>
+                </FormListItem>
                 <!-- // Case : [사업자번호 입력방식 - 직접입력] 선택 시 :disabled="false" : end -->
               </FormList>
             </section>
 
             <section class="row-margin-container-medium">
-              <h3 class="text-title-2 row-margin-contents">보증인 정보</h3>
+              <div class="flex-box row-margin-contents">
+                <div class="flex-box__cell flex-1">
+                  <h3 class="text-title-2">보증인 정보</h3>
+                </div>
+                <div class="flex-box__cell flex-box__cell--medium">
+                  <BoxCheck
+                    type="checkbox"
+                    size="small"
+                    id="layerLeaseRentEstimationSystemCreditCheckRequest003same"
+                  >
+                    <template v-slot:left>
+                      <BoxCheckObject />
+                    </template>
+                    <BoxCheckLabel>대표자 동일</BoxCheckLabel>
+                  </BoxCheck>
+                </div>
+              </div>
 
               <FormList>
                 <FormListItem
@@ -638,14 +679,6 @@ export default {
                         <BoxCheckLabel>과점주주</BoxCheckLabel>
                       </BoxCheck>
                     </BoxCheckListItem>
-                    <BoxCheckListItem>
-                      <BoxCheck
-                        name="layerLeaseRentEstimationSystemCreditCheckRequest003Relation"
-                        id="layerLeaseRentEstimationSystemCreditCheckRequest003Relation003"
-                      >
-                        <BoxCheckLabel>배우자</BoxCheckLabel>
-                      </BoxCheck>
-                    </BoxCheckListItem>
                   </BoxCheckList>
                 </FormListItem>
 
@@ -667,6 +700,28 @@ export default {
                     <FormInvalidMessage>Error Message</FormInvalidMessage>
                     <FormHelpText>-없이 숫자만 입력해 주세요.</FormHelpText>
                   </FormInvalid>
+                </FormListItem>
+
+                <FormListItem titleText="고객 성별" :forceFocus="true">
+                  <BoxCheckList>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        name="layerLeaseRentEstimationSystemCreditCheckRequest003sex"
+                        id="layerLeaseRentEstimationSystemCreditCheckRequest003sex001"
+                        :defaultChecked="true"
+                      >
+                        <BoxCheckLabel>남자</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        name="layerLeaseRentEstimationSystemCreditCheckRequest003sex"
+                        id="layerLeaseRentEstimationSystemCreditCheckRequest003sex002"
+                      >
+                        <BoxCheckLabel>여자</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                  </BoxCheckList>
                 </FormListItem>
               </FormList>
             </section>

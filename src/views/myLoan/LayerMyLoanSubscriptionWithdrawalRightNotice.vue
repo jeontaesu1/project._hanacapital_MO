@@ -45,7 +45,7 @@ export default {
         </ToastPopupHead>
       </template>
 
-      <ol :class="[$style['basic-list'], $style['basic-list--normal-margin']]">
+      <ol :class="[$style['basic-list'], $style['basic-list--regular-margin']]">
         <li
           :class="[
             $style['basic-list__item'],

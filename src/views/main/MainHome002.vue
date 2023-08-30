@@ -19,11 +19,8 @@ import BubbleProgress from '@/components/ui/progress/BubbleProgress.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
-import SlideBanner from '@/components/ui/banner/SlideBanner.vue';
-import SlideBannerBlock from '@/components/ui/banner/SlideBannerBlock.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
-import BasicBannerSlide from '@/components/ui/banner/BasicBannerSlide.vue';
-import BasicBanner from '@/components/ui/banner/BasicBanner.vue';
+import SlideImageBanner from '@/components/ui/banner/SlideImageBanner.vue';
 
 import IconAdd from '@/assets/images/icon/add.svg?component';
 import IconLink from '@/assets/images/icon/link.svg?component';
@@ -32,6 +29,8 @@ import IconDocumentSmall from '@/assets/images/icon/document-small.svg?component
 import IconBird from '@/assets/images/icon/bird.svg?component';
 import IconGraph from '@/assets/images/icon/graph.svg?component';
 import IconStudy from '@/assets/images/icon/study.svg?component';
+
+const BASE_URL = import.meta.env.BASE_URL;
 
 export default {
   components: {
@@ -47,11 +46,9 @@ export default {
     TextButton,
     CarThumb,
     BasicHr,
-    SlideBanner,
-    SlideBannerBlock,
     BasicButton,
-    BasicBannerSlide,
-    BasicBanner,
+    SlideImageBanner,
+
     IconAdd,
     IconLink,
     IconLinkSmall,
@@ -99,6 +96,7 @@ export default {
     });
 
     return {
+      BASE_URL,
       modules: [Pagination, A11y],
     };
   },
@@ -620,65 +618,46 @@ export default {
       <div class="row-margin-item-group">
         <!-- 슬라이드 배너 A -->
         <!-- DD : 관리자 등록 배너 -->
-        <SlideBanner>
+        <SlideImageBanner>
           <Swiper :modules="modules" pagination>
             <!-- Case : 링크 기능 없을 때 -->
             <SwiperSlide>
-              <SlideBannerBlock
-                thumb="/images/_dummy/banner-003.png"
-                :action="false"
-              >
-                <div class="text-body-1 font-weight-medium ellipsis">
-                  높아진 한도 확인하세요!
-                </div>
-                <div
-                  class="text-body-4 color-gray row-margin-mini multi-ellipsis"
-                >
-                  지금 신용조회하면 상품이 와르르
-                </div>
-              </SlideBannerBlock>
+              <div :class="$style['image-view']">
+                <img
+                  :src="`${BASE_URL}images/_dummy/banner-005.png`"
+                  alt="배너 설명 넣어주세요"
+                />
+              </div>
             </SwiperSlide>
             <!-- //Case : 링크 기능 없을 때 -->
 
             <!-- Case : 링크 기능 있을 때 (RouterLink) -->
             <SwiperSlide>
-              <SlideBannerBlock
-                thumb="/images/_dummy/banner-003.png"
-                tagName="RouterLink"
-                to=""
-              >
-                <div class="text-body-1 font-weight-medium ellipsis">
-                  높아진 한도 확인하세요!
+              <RouterLink to="" class="link-block">
+                <div :class="$style['image-view']">
+                  <img
+                    :src="`${BASE_URL}images/_dummy/banner-005.png`"
+                    alt="배너 설명 넣어주세요"
+                  />
                 </div>
-                <div
-                  class="text-body-4 color-gray row-margin-mini multi-ellipsis"
-                >
-                  지금 신용조회하면 상품이 와르르
-                </div>
-              </SlideBannerBlock>
+              </RouterLink>
             </SwiperSlide>
-            <!-- // Case : 링크 기능 있을 때 -->
+            <!-- // Case : 링크 기능 있을 때 (RouterLink) -->
 
             <!-- Case : 링크 기능 있을 때 (a tag) -->
             <SwiperSlide>
-              <SlideBannerBlock
-                thumb="/images/_dummy/banner-003.png"
-                tagName="a"
-                href=""
-              >
-                <div class="text-body-1 font-weight-medium ellipsis">
-                  높아진 한도 확인하세요!
+              <a href="" class="link-block">
+                <div :class="$style['image-view']">
+                  <img
+                    :src="`${BASE_URL}images/_dummy/banner-005.png`"
+                    alt="배너 설명 넣어주세요"
+                  />
                 </div>
-                <div
-                  class="text-body-4 color-gray row-margin-mini multi-ellipsis"
-                >
-                  지금 신용조회하면 상품이 와르르
-                </div>
-              </SlideBannerBlock>
+              </a>
             </SwiperSlide>
             <!-- // Case : 링크 기능 있을 때 (a tag) -->
           </Swiper>
-        </SlideBanner>
+        </SlideImageBanner>
         <!-- // DD : 관리자 등록 배너 -->
         <!-- // 슬라이드 배너 A -->
       </div>
@@ -830,62 +809,46 @@ export default {
       <div class="row-margin-container-medium">
         <!-- 슬라이드 배너 B -->
         <!-- DD : 관리자 등록 배너 -->
-        <BasicBannerSlide>
+        <SlideImageBanner theme="secondary">
           <Swiper :modules="modules" pagination>
             <!-- Case : 링크 기능 없을 때 -->
             <SwiperSlide>
-              <BasicBanner
-                :classNames="{ wrap: $style['bottom-banner'] }"
-                thumb="/images/_dummy/banner-001.png"
-                :action="false"
-              >
-                <p class="text-body-4 color-gray row-margin-mini ellipsis">
-                  서브 텍스트 최대 한줄 노출 서브 텍스트 최대 한줄 노출
-                </p>
-                <h3 class="text-body-1 font-weight-medium ellipsis">
-                  타이틀 텍스트 최대 한줄 노출 타이틀 텍스트 최대 한줄 노출
-                </h3>
-              </BasicBanner>
+              <div :class="$style['image-view']">
+                <img
+                  :src="`${BASE_URL}images/_dummy/banner-004.png`"
+                  alt="배너 설명 넣어주세요"
+                />
+              </div>
             </SwiperSlide>
             <!-- //Case : 링크 기능 없을 때 -->
 
             <!-- Case : 링크 기능 있을 때 (RouterLink) -->
             <SwiperSlide>
-              <BasicBanner
-                :classNames="{ wrap: $style['bottom-banner'] }"
-                thumb="/images/_dummy/banner-001.png"
-                tagName="RouterLink"
-                to=""
-              >
-                <p class="text-body-4 color-gray row-margin-mini ellipsis">
-                  서브 텍스트 최대 한줄 노출 서브 텍스트 최대 한줄 노출
-                </p>
-                <h3 class="text-body-1 font-weight-medium ellipsis">
-                  타이틀 텍스트 최대 한줄 노출 타이틀 텍스트 최대 한줄 노출
-                </h3>
-              </BasicBanner>
+              <RouterLink to="" class="link-block">
+                <div :class="$style['image-view']">
+                  <img
+                    :src="`${BASE_URL}images/_dummy/banner-004.png`"
+                    alt="배너 설명 넣어주세요"
+                  />
+                </div>
+              </RouterLink>
             </SwiperSlide>
-            <!-- // Case : 링크 기능 있을 때 -->
+            <!-- // Case : 링크 기능 있을 때 (RouterLink) -->
 
             <!-- Case : 링크 기능 있을 때 (a tag) -->
             <SwiperSlide>
-              <BasicBanner
-                :classNames="{ wrap: $style['bottom-banner'] }"
-                thumb="/images/_dummy/banner-001.png"
-                tagName="a"
-                href=""
-              >
-                <p class="text-body-4 color-gray row-margin-mini ellipsis">
-                  서브 텍스트 최대 한줄 노출 서브 텍스트 최대 한줄 노출
-                </p>
-                <h3 class="text-body-1 font-weight-medium ellipsis">
-                  타이틀 텍스트 최대 한줄 노출 타이틀 텍스트 최대 한줄 노출
-                </h3>
-              </BasicBanner>
+              <a href="" class="link-block">
+                <div :class="$style['image-view']">
+                  <img
+                    :src="`${BASE_URL}images/_dummy/banner-004.png`"
+                    alt="배너 설명 넣어주세요"
+                  />
+                </div>
+              </a>
             </SwiperSlide>
             <!-- // Case : 링크 기능 있을 때 (a tag) -->
           </Swiper>
-        </BasicBannerSlide>
+        </SlideImageBanner>
         <!-- // DD : 관리자 등록 배너 -->
         <!-- // 슬라이드 배너 B -->
       </div>
