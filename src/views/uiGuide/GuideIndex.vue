@@ -462,7 +462,7 @@ const datas = () => [
         create: '2023.05.19',
         log: [
           {
-            date: '2023.08.29',
+            date: '2023.08.30',
             text: '컨텐츠 구성 변경',
           },
         ],
@@ -557,7 +557,12 @@ const datas = () => [
         path: '/main/Main_M07_p004',
         status: 'end',
         create: '2023.07.21',
-        log: [],
+        log: [
+          {
+            date: '2023.08.30',
+            text: '컨텐츠 구성 변경',
+          },
+        ],
       },
       {
         depth2: 'APP',
