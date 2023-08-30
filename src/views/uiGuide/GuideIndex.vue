@@ -460,7 +460,12 @@ const datas = () => [
         path: '/main/rental',
         status: 'end',
         create: '2023.05.19',
-        log: [],
+        log: [
+          {
+            date: '2023.08.29',
+            text: '컨텐츠 구성 변경',
+          },
+        ],
       },
       {
         depth2: 'APP',
