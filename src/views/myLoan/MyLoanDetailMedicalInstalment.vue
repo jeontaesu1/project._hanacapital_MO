@@ -138,7 +138,10 @@ export default {
             >
           </ButtonListItem>
         </ButtonList>
-        <BasicButton :classNames="{ wrap: 'row-margin-item-medium' }"
+        <BasicButton
+          :line="true"
+          theme="quaternary"
+          :classNames="{ wrap: 'row-margin-item-medium' }"
           >중도상환신청</BasicButton
         >
       </div>
