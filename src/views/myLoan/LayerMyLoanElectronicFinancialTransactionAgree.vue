@@ -3,10 +3,13 @@
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
-import ToastPopup from '@/components/ui/layer/ToastPopup.vue';
-import ToastPopupHead from '@/components/ui/layer/ToastPopupHead.vue';
-import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
-import PopupText from '@/components/ui/layer/PopupText.vue';
+import PopupButton from '@/components/ui/layer/PopupButton.vue';
+import FullPopup from '@/components/ui/layer/FullPopup.vue';
+import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
+import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
+import PageMainText from '@/components/ui/text/PageMainText.vue';
+import PageSubText from '@/components/ui/text/PageSubText.vue';
+import BasicBox from '@/components/ui/common/BasicBox.vue';
 import CheckBox from '@/components/ui/form/CheckBox.vue';
 import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
 import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
@@ -17,10 +20,13 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 export default {
   components: {
     UiLayer,
-    ToastPopup,
-    ToastPopupHead,
-    PopupTitle,
-    PopupText,
+    PopupButton,
+    FullPopup,
+    FullPopupHead,
+    PageTextGroup,
+    PageMainText,
+    PageSubText,
+    BasicBox,
     CheckBox,
     CheckBoxObject,
     CheckBoxLabelText,
@@ -39,44 +45,54 @@ export default {
 </script>
 
 <template>
-  <UiLayer ref="layer" type="toast" :backgroundClose="true">
-    <ToastPopup>
+  <UiLayer ref="layer" type="full" v-slot="layerSlotProps">
+    <FullPopup>
       <template v-slot:head>
-        <ToastPopupHead>
-          <PopupTitle>전자금융거래 약관에 동의해 주세요</PopupTitle>
-        </ToastPopupHead>
+        <FullPopupHead>
+          <template v-slot:right>
+            <PopupButton @click="layerSlotProps.close()" />
+          </template>
+        </FullPopupHead>
       </template>
 
-      <PopupText>
-        내대출 서비스를 이용하기 위해서는 전자금융거래법 제 2조 제 1호에
-        근거하여 전자금융거래약관 동의가 필요합니다.
-      </PopupText>
+      <PageTextGroup>
+        <PageMainText>
+          전자금융거래 약관에<br />
+          <strong>동의해 주세요</strong>
+        </PageMainText>
+        <PageSubText>
+          내대출 서비스를 이용하기 위해서는 전자금융거래법 제 2조 제 1호에
+          근거하여 전자금융거래약관 동의가 필요합니다.
+        </PageSubText>
+      </PageTextGroup>
 
-      <div :class="[$style['agree-list'], 'row-margin-item-group']">
-        <ul :class="$style['agree-list__list']">
-          <li :class="$style['agree-list__item']">
-            <div :class="$style['agree-list__head']">
-              <CheckBox
-                id="layerMyLoanElectronicFinancialTransactionAgree001"
-                :classNames="{
-                  wrap: $style['agree-list__checkbox'],
-                }"
-                theme="tertiary"
-              >
-                <CheckBoxObject />
-                <CheckBoxLabelText>전자금융거래약관</CheckBoxLabelText>
-              </CheckBox>
-              <div :class="$style['agree-list__right']">
-                <button type="button" :class="$style['agree-list__link']">
-                  <span :class="$style['agree-list__link-text']">
-                    상세보기
-                  </span>
-                </button>
+      <BasicBox theme="septenary">
+        <div :class="$style['agree-list']">
+          <ul :class="$style['agree-list__list']">
+            <li :class="$style['agree-list__item']">
+              <div :class="$style['agree-list__head']">
+                <CheckBox
+                  id="layerMyLoanElectronicFinancialTransactionAgree001"
+                  :classNames="{
+                    wrap: $style['agree-list__checkbox'],
+                  }"
+                  theme="tertiary"
+                >
+                  <CheckBoxObject />
+                  <CheckBoxLabelText>전자금융거래약관</CheckBoxLabelText>
+                </CheckBox>
+                <div :class="$style['agree-list__right']">
+                  <button type="button" :class="$style['agree-list__link']">
+                    <span :class="$style['agree-list__link-text']">
+                      상세보기
+                    </span>
+                  </button>
+                </div>
               </div>
-            </div>
-          </li>
-        </ul>
-      </div>
+            </li>
+          </ul>
+        </div>
+      </BasicBox>
 
       <template v-slot:foot>
         <ButtonList
@@ -89,7 +105,7 @@ export default {
           </ButtonListItem>
         </ButtonList>
       </template>
-    </ToastPopup>
+    </FullPopup>
   </UiLayer>
 </template>
 

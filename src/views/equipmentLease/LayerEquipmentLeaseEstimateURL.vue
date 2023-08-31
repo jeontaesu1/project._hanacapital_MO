@@ -20,6 +20,7 @@ import StickyBar from '@/components/ui/common/StickyBar.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
+import BasicHr from '@/components/ui/common/BasicHr.vue';
 
 export default {
   components: {
@@ -41,6 +42,7 @@ export default {
     BasicBoxHead,
     BasicBoxHeadLeft,
     TextButton,
+    BasicHr,
   },
   setup() {
     const layer = ref(null);
@@ -197,51 +199,51 @@ export default {
             </KeyValueText>
           </KeyValueItem>
         </KeyValue>
+
+        <BasicHr
+          theme="quaternary"
+          type="contents"
+          className="row-margin-contents-small"
+        />
+
+        <KeyValue margin="regular">
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>견적번호</KeyValueTitle>
+            <KeyValueText>A00000000001</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>영업사원</KeyValueTitle>
+            <KeyValueText>이두리</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>연락처</KeyValueTitle>
+            <KeyValueText>
+              M 010-1234-5678<br />
+              T 02-1234-5678
+            </KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>Fax</KeyValueTitle>
+            <KeyValueText>02-2037-3211</KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
       </BasicBox>
-
-      <section class="row-margin-container-medium">
-        <h3 class="text-title-2 row-margin-contents">견적정보</h3>
-
-        <BasicBox>
-          <KeyValue margin="regular">
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>견적번호</KeyValueTitle>
-              <KeyValueText>A00000000001</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>영업사원</KeyValueTitle>
-              <KeyValueText>이두리</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>연락처</KeyValueTitle>
-              <KeyValueText>
-                M 010-1234-5678<br />
-                T 02-1234-5678
-              </KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>Fax</KeyValueTitle>
-              <KeyValueText>02-2037-3211</KeyValueText>
-            </KeyValueItem>
-          </KeyValue>
-        </BasicBox>
-      </section>
     </FullPopup>
   </UiLayer>
 </template>
