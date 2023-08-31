@@ -657,13 +657,15 @@ export default {
             >
           </ButtonListItem>
         </ButtonList>
+
         <BasicButton
-          theme="tertiary"
+          :line="true"
+          theme="quaternary"
           :classNames="{ wrap: 'row-margin-item-medium' }"
-          >만기후처리</BasicButton
+          >중도상환신청</BasicButton
         >
         <BasicButton :classNames="{ wrap: 'row-margin-item-medium' }"
-          >중도상환신청</BasicButton
+          >만기후처리</BasicButton
         >
       </div>
     </section>

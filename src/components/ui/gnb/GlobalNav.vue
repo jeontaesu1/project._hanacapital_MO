@@ -1,6 +1,6 @@
 <script>
 // Common_M00_l017
-import { ref } from 'vue';
+import { ref, inject } from 'vue';
 import { RouterLink } from 'vue-router';
 
 import { useUiCommonStore } from '@/stores/ui/common';
@@ -152,6 +152,8 @@ export default {
     IconBusinessFirst,
   },
   setup() {
+    const layerGlobalNav = inject('layerGlobalNav', {});
+
     const store = {
       ui: {
         common: useUiCommonStore(),
@@ -173,12 +175,23 @@ export default {
       isSalesperson.value = false;
     };
 
+    const routerLinkClick = () => {
+      if (
+        layerGlobalNav.layer &&
+        layerGlobalNav.layer.value &&
+        layerGlobalNav.layer.value.close
+      ) {
+        layerGlobalNav.layer.value.close();
+      }
+    };
+
     return {
       store,
       isLoggedIn,
       isSalesperson,
       login,
       logout,
+      routerLinkClick,
     };
   },
 };
@@ -221,29 +234,41 @@ export default {
   <ul :class="$style['main-menu']">
     <!-- Case : 로그인 후 -->
     <li v-if="isLoggedIn" :class="$style['main-menu__item']">
-      <RouterLink :class="$style['main-menu__link']" to="">
+      <RouterLink
+        :class="$style['main-menu__link']"
+        to=""
+        @click="routerLinkClick"
+      >
         <div :class="$style['main-menu__icon']"><IconMyInfo /></div>
         <p :class="$style['main-menu__title']">내 정보</p>
       </RouterLink>
     </li>
     <!-- // Case : 로그인 후 -->
     <li :class="$style['main-menu__item']">
-      <RouterLink :class="$style['main-menu__link']" to="">
+      <RouterLink
+        :class="$style['main-menu__link']"
+        to=""
+        @click="routerLinkClick"
+      >
         <div :class="$style['main-menu__icon']"><IconNotice /></div>
         <p :class="$style['main-menu__title']">공지사항</p>
       </RouterLink>
     </li>
     <li :class="$style['main-menu__item']">
-      <RouterLink :class="$style['main-menu__link']" to="">
+      <RouterLink
+        :class="$style['main-menu__link']"
+        to=""
+        @click="routerLinkClick"
+      >
         <div :class="$style['main-menu__icon']"><IconCallMint /></div>
         <p :class="$style['main-menu__title']">전화상담</p>
       </RouterLink>
     </li>
     <li :class="$style['main-menu__item']">
-      <RouterLink :class="$style['main-menu__link']" to="">
+      <button :class="$style['main-menu__link']">
         <div :class="$style['main-menu__icon']"><IconCalculate /></div>
         <p :class="$style['main-menu__title']">대출계산기</p>
-      </RouterLink>
+      </button>
     </li>
   </ul>
 
@@ -255,7 +280,11 @@ export default {
 
   <!-- Case : 영업용 -->
   <div v-if="isSalesperson" :class="$style['top-notice']">
-    <RouterLink :class="$style['top-notice__block']" to="">
+    <RouterLink
+      :class="$style['top-notice__block']"
+      to=""
+      @click="routerLinkClick"
+    >
       <span :class="$style['top-notice__icon']">
         <IconBusinessFirst />
       </span>
@@ -273,19 +302,19 @@ export default {
     <h3 :class="$style['gnb__section-title']">최근메뉴</h3>
     <ul :class="$style['gnb__list']">
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconMy /></div>
           <p :class="$style['gnb__name']">내 정보 관리</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconSchedule /></div>
           <p :class="$style['gnb__name']">진행상태조회</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconCustomer /></div>
           <p :class="$style['gnb__name']">고객상담</p>
         </RouterLink>
@@ -298,37 +327,37 @@ export default {
     <h3 :class="$style['gnb__section-title']">재고금융</h3>
     <ul :class="$style['gnb__list']">
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconBusinessInventoryMenu7 /></div>
           <p :class="$style['gnb__name']">한도조회</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconBusinessInventoryMenu1 /></div>
           <p :class="$style['gnb__name']">대출신청</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconBusinessInventoryMenu2 /></div>
           <p :class="$style['gnb__name']">중도상환</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconBusinessInventoryMenu3 /></div>
           <p :class="$style['gnb__name']">만기연장</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconBusinessInventoryMenu4 /></div>
           <p :class="$style['gnb__name']">구비서류 추가등록</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconBusinessInventoryMenu5 /></div>
           <p :class="$style['gnb__name']">종료건 확인</p>
         </RouterLink>
@@ -340,7 +369,7 @@ export default {
     <h3 :class="$style['gnb__section-title']">재고금융실사</h3>
     <ul :class="$style['gnb__list']">
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconBusinessInventoryMenu6 /></div>
           <p :class="$style['gnb__name']">재고금융실사</p>
         </RouterLink>
@@ -352,49 +381,49 @@ export default {
     <h3 :class="$style['gnb__section-title']">하나원큐오토</h3>
     <ul :class="$style['gnb__list']">
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconBusinessAutoMenu1 /></div>
           <p :class="$style['gnb__name']">장기렌트</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconBusinessAutoMenu2 /></div>
           <p :class="$style['gnb__name']">신차리스</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconBusinessAutoMenu3 /></div>
           <p :class="$style['gnb__name']">수입 할부·론</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconBusinessAutoMenu4 /></div>
           <p :class="$style['gnb__name']">국산 할부·론</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconBusinessAutoMenu5 /></div>
           <p :class="$style['gnb__name']">시승차</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconBusinessAutoMenu6 /></div>
           <p :class="$style['gnb__name']">선구매</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconBusinessAutoMenu7 /></div>
           <p :class="$style['gnb__name']">중고 할부·론</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconBusinessAutoMenu8 /></div>
           <p :class="$style['gnb__name']">중고리스</p>
         </RouterLink>
@@ -406,31 +435,31 @@ export default {
     <h3 :class="$style['gnb__section-title']">하나원큐오토 서비스</h3>
     <ul :class="$style['gnb__list']">
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconBusinessAutoMenu14 /></div>
           <p :class="$style['gnb__name']">차량/저당 미등록 채권</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconBusinessAutoMenu15 /></div>
           <p :class="$style['gnb__name']">내정보</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconBusinessAutoMenu16 /></div>
           <p :class="$style['gnb__name']">공지사항(즉시출고)</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconBusinessAutoMenu17 /></div>
           <p :class="$style['gnb__name']">이용약관</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconBusinessAutoMenu18 /></div>
           <p :class="$style['gnb__name']">관리자</p>
         </RouterLink>
@@ -442,31 +471,31 @@ export default {
     <h3 :class="$style['gnb__section-title']">LM블로그</h3>
     <ul :class="$style['gnb__list']">
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconBusinessLmMenu1 /></div>
           <p :class="$style['gnb__name']">대출상담</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconBusinessLmMenu2 /></div>
           <p :class="$style['gnb__name']">빠른 대출상담 신청내역</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconBusinessLmMenu3 /></div>
           <p :class="$style['gnb__name']">SMS 상담요청 내역</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconBusinessLmMenu4 /></div>
           <p :class="$style['gnb__name']">접속통계</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconBusinessLmMenu5 /></div>
           <p :class="$style['gnb__name']">현황조회</p>
         </RouterLink>
@@ -478,7 +507,7 @@ export default {
     <h3 :class="$style['gnb__section-title']">일반리스</h3>
     <ul :class="$style['gnb__list']">
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconBusinessLeaseMenu2 /></div>
           <p :class="$style['gnb__name']">현황조회</p>
         </RouterLink>
@@ -491,43 +520,43 @@ export default {
     <h3 :class="$style['gnb__section-title']">자동차</h3>
     <ul :class="$style['gnb__list']">
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconDirectRent /></div>
           <p :class="$style['gnb__name']">다이렉트 장기렌터카</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconDirectLease /></div>
           <p :class="$style['gnb__name']">다이렉트 오토리스</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconAutoInstallment /></div>
           <p :class="$style['gnb__name']">오토할부</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconAutoLoan /></div>
           <p :class="$style['gnb__name']">오토론</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><Icon1qDirectAuto /></div>
           <p :class="$style['gnb__name']">원큐다이렉트오토론</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconCarPrice /></div>
           <p :class="$style['gnb__name']">중고차오토론</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconAutoSuccession /></div>
           <p :class="$style['gnb__name']">오토승계</p>
         </RouterLink>
@@ -539,49 +568,49 @@ export default {
     <h3 :class="$style['gnb__section-title']">개인대출</h3>
     <ul :class="$style['gnb__list']">
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconPig /></div>
           <p :class="$style['gnb__name']">e하나신용대출</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconBuilding /></div>
           <p :class="$style['gnb__name']">행복아파트론</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconApt /></div>
           <p :class="$style['gnb__name']">아파트론</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconCar /></div>
           <p :class="$style['gnb__name']">원큐자동차담보대출</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconVip /></div>
           <p :class="$style['gnb__name']">우수고객추가대출</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconHome /></div>
           <p :class="$style['gnb__name']">e임대주택론</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconCompanyBuilding /></div>
           <p :class="$style['gnb__name']">사업자주택담보대출</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconInterestRate /></div>
           <p :class="$style['gnb__name']">스탁론</p>
         </RouterLink>
@@ -593,19 +622,19 @@ export default {
     <h3 :class="$style['gnb__section-title']">의료기 · 설비</h3>
     <ul :class="$style['gnb__list']">
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconLease /></div>
           <p :class="$style['gnb__name']">일반리스</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconInstallment /></div>
           <p :class="$style['gnb__name']">일반할부</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconGoods /></div>
           <p :class="$style['gnb__name']">내구재할부</p>
         </RouterLink>
@@ -617,31 +646,31 @@ export default {
     <h3 :class="$style['gnb__section-title']">내대출</h3>
     <ul :class="$style['gnb__list']">
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconMyLoan /></div>
           <p :class="$style['gnb__name']">내대출</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconSchedule /></div>
           <p :class="$style['gnb__name']">진행상태조회</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconLowInterestRate /></div>
           <p :class="$style['gnb__name']">금리인하요구권신청</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconWithdrawSubscription /></div>
           <p :class="$style['gnb__name']">청약철회권신청</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconFile /></div>
           <p :class="$style['gnb__name']">서류등록</p>
         </RouterLink>
@@ -653,31 +682,31 @@ export default {
     <h3 :class="$style['gnb__section-title']">내정보</h3>
     <ul :class="$style['gnb__list']">
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconMy /></div>
           <p :class="$style['gnb__name']">내정보관리</p>
         </RouterLink>
       </li>
       <li v-if="!store.ui.common.isAPP" :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconHanamoney /></div>
           <p :class="$style['gnb__name']">하나머니</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconMembershipCrown /></div>
           <p :class="$style['gnb__name']">하나캐피탈 멤버십</p>
         </RouterLink>
       </li>
       <li v-if="!store.ui.common.isAPP" :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconCarPrice /></div>
           <p :class="$style['gnb__name']">자동차시세조회</p>
         </RouterLink>
       </li>
       <li v-if="!store.ui.common.isAPP" :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconRealEstatePrice /></div>
           <p :class="$style['gnb__name']">부동산시세조회</p>
         </RouterLink>
@@ -689,49 +718,49 @@ export default {
     <h3 :class="$style['gnb__section-title']">고객센터</h3>
     <ul :class="$style['gnb__list']">
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconFaq /></div>
           <p :class="$style['gnb__name']">FAQ</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconCustomer /></div>
           <p :class="$style['gnb__name']">고객상담</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconNotice /></div>
           <p :class="$style['gnb__name']">공지사항</p>
         </RouterLink>
       </li>
       <li v-if="!store.ui.common.isAPP" :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconEvent /></div>
           <p :class="$style['gnb__name']">이벤트</p>
         </RouterLink>
       </li>
       <li v-if="!store.ui.common.isAPP" :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconLocation /></div>
           <p :class="$style['gnb__name']">지점안내</p>
         </RouterLink>
       </li>
       <li v-if="!store.ui.common.isAPP" :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconArs /></div>
           <p :class="$style['gnb__name']">고객센터 ARS안내</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconTerms /></div>
           <p :class="$style['gnb__name']">정책 및 약관</p>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <div :class="$style['gnb__icon']"><IconWarning /></div>
           <p :class="$style['gnb__name']">금융소비자보호</p>
         </RouterLink>

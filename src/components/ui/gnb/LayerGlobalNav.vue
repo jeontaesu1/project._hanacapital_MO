@@ -1,6 +1,6 @@
 <script>
 // Common_M00_l017
-import { ref, watch } from 'vue';
+import { ref, watch, provide } from 'vue';
 import { useRoute } from 'vue-router';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -28,6 +28,10 @@ export default {
         layer.value.close();
       }
     );
+
+    provide('layerGlobalNav', {
+      layer,
+    });
 
     return {
       layer,

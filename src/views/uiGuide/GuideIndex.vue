@@ -188,6 +188,10 @@ const datas = () => [
             date: '2023.08.30',
             text: '- Common_M00_l004\n생년월일에 placeholder 추가\n- Common_M00_l002\n생년월일에 placeholder 추가\n- Common_M00_l050 팝업 추가\n- Common_M00_l051 팝업 추가\n- Common_M00_l052 팝업 추가\n- Common_M00_l053 팝업 추가\n- Common_M00_l054 팝업 추가',
           },
+          {
+            date: '2023.08.31',
+            text: '- Common_M00_l002\n인증번호 텍스트필드 수정',
+          },
         ],
       },
       {
@@ -2978,6 +2982,10 @@ const datas = () => [
             date: '2023.08.30',
             text: '하단 버튼 플로팅 기능 적용',
           },
+          {
+            date: '2023.08.31',
+            text: '용품 항목에 안내 문구 추가',
+          },
         ],
       },
       {
@@ -3026,6 +3034,10 @@ const datas = () => [
             date: '2023.08.30',
             text: '하단 버튼 플로팅 기능 적용',
           },
+          {
+            date: '2023.08.31',
+            text: '할인/탁송료 영역 케이스 추가',
+          },
         ],
       },
       {
@@ -3073,6 +3085,10 @@ const datas = () => [
           {
             date: '2023.08.30',
             text: '하단 버튼 플로팅 기능 적용',
+          },
+          {
+            date: '2023.08.31',
+            text: '수수료 항목 구성 변경',
           },
         ],
       },
@@ -3180,6 +3196,10 @@ const datas = () => [
           {
             date: '2023.08.30',
             text: '하단 버튼 플로팅 기능 적용',
+          },
+          {
+            date: '2023.08.31',
+            text: '용품 항목에 안내 문구 추가',
           },
         ],
       },
@@ -4261,7 +4281,12 @@ const datas = () => [
         path: '/my-loan/detail-personal',
         status: 'end',
         create: '2023.04.21',
-        log: [],
+        log: [
+          {
+            date: '2023.08.31',
+            text: '- 버튼 컬러 변경',
+          },
+        ],
       },
       {
         depth2: '상세계약현황\nMy_M01_p002',
@@ -4272,7 +4297,12 @@ const datas = () => [
         path: '/my-loan/detail-stock',
         status: 'end',
         create: '2023.04.21',
-        log: [],
+        log: [
+          {
+            date: '2023.08.31',
+            text: '- 버튼 컬러 및 순서 변경',
+          },
+        ],
       },
       {
         depth2: '상세계약현황\nMy_M01_p002',
@@ -4283,7 +4313,12 @@ const datas = () => [
         path: '/my-loan/detail-intermediate',
         status: 'end',
         create: '2023.04.21',
-        log: [],
+        log: [
+          {
+            date: '2023.08.31',
+            text: '- 버튼 컬러 변경',
+          },
+        ],
       },
       {
         depth2: '상세계약현황\nMy_M01_p002',
@@ -4294,7 +4329,12 @@ const datas = () => [
         path: '/my-loan/detail-auto',
         status: 'end',
         create: '2023.04.21',
-        log: [],
+        log: [
+          {
+            date: '2023.08.31',
+            text: '- 버튼 컬러 및 순서 변경',
+          },
+        ],
       },
       {
         depth2: '상세계약현황\nMy_M01_p002',
@@ -4305,7 +4345,12 @@ const datas = () => [
         path: '/my-loan/detail-instalment',
         status: 'end',
         create: '2023.04.21',
-        log: [],
+        log: [
+          {
+            date: '2023.08.31',
+            text: '- 버튼 컬러 변경',
+          },
+        ],
       },
       {
         depth2: '상세계약현황\nMy_M01_p002',
@@ -4316,7 +4361,12 @@ const datas = () => [
         path: '/my-loan/detail-medical-instalment',
         status: 'end',
         create: '2023.04.21',
-        log: [],
+        log: [
+          {
+            date: '2023.08.31',
+            text: '- 버튼 컬러 변경',
+          },
+        ],
       },
       {
         depth2: '결제/청구정보',

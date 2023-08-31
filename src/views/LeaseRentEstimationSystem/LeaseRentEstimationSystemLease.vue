@@ -2472,7 +2472,7 @@ export default {
               </BoxCheckListItem>
             </BoxCheckList>
 
-            <!-- Case : 특판출고 선택시 비노출 -->
+            <!-- Case : 대리점출고 선택 시 -->
             <section class="row-margin-item-group">
               <div class="flex-box align-items-start row-margin-item-group">
                 <div class="flex-box__cell flex-1">
@@ -2629,8 +2629,594 @@ export default {
                 </li>
               </ul>
             </section>
-            <!-- // Case : 특판출고 선택시 비노출 -->
+            <!-- // Case : 대리점출고 선택 시 -->
           </div>
+
+          <!-- Case : 특판출고 선택 시 -->
+          <UiAccordion
+            :once="true"
+            :classNames="{ wrap: $style['estimate-list__list'] }"
+          >
+            <!-- 탁송방법 -->
+            <UiAccordionItem
+              :classNames="{ item: $style['estimate-list__item'] }"
+            >
+              <div :class="$style['estimate-list__head']">
+                <div :class="$style['estimate-list__block']">
+                  <div :class="$style['estimate-list__left']">
+                    <KeyValue align="left" size="medium" verticalAlign="center">
+                      <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                        <KeyValueTitle>
+                          <div class="text-body-4">탁송방법</div>
+                        </KeyValueTitle>
+                        <KeyValueText>외주탁송</KeyValueText>
+                      </KeyValueItem>
+                    </KeyValue>
+                  </div>
+                </div>
+                <div :class="$style['estimate-list__arrow']">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['estimate-list__opener'] }"
+                  />
+                </div>
+              </div>
+
+              <UiAccordionLayer
+                :classNames="{ layer: $style['estimate-list__layer'] }"
+              >
+                <section :class="$style['estimate-list__contents']">
+                  <BoxCheckList spacing="small" align="full">
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemLeaseCheck004"
+                        id="leaseRentEstimationSystemLeaseCheck004_001"
+                        size="small"
+                        :defaultChecked="true"
+                      >
+                        <BoxCheckLabel>외주탁송</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        name="leaseRentEstimationSystemLeaseCheck004"
+                        id="leaseRentEstimationSystemLeaseCheck004_002"
+                        size="small"
+                      >
+                        <BoxCheckLabel>1차제조사 + 2차외주탁송</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                  </BoxCheckList>
+                </section>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+            <!-- // 탁송방법 -->
+
+            <!-- 출고장 -->
+            <li :class="$style['estimate-list__item']">
+              <div :class="$style['estimate-list__head']">
+                <div :class="$style['estimate-list__block']">
+                  <div :class="$style['estimate-list__left']">
+                    <KeyValue align="left" size="medium" verticalAlign="center">
+                      <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                        <KeyValueTitle>
+                          <div class="text-body-4">출고장</div>
+                        </KeyValueTitle>
+                        <KeyValueText>아산</KeyValueText>
+                      </KeyValueItem>
+                    </KeyValue>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- // 출고장 -->
+
+            <!-- 도착지 -->
+            <UiAccordionItem
+              :classNames="{ item: $style['estimate-list__item'] }"
+            >
+              <div :class="$style['estimate-list__head']">
+                <div :class="$style['estimate-list__block']">
+                  <div :class="$style['estimate-list__left']">
+                    <KeyValue align="left" size="medium" verticalAlign="center">
+                      <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                        <KeyValueTitle>
+                          <div class="text-body-4">도착지</div>
+                        </KeyValueTitle>
+                        <KeyValueText>서울</KeyValueText>
+                      </KeyValueItem>
+                    </KeyValue>
+                  </div>
+                </div>
+                <div :class="$style['estimate-list__arrow']">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['estimate-list__opener'] }"
+                  />
+                </div>
+              </div>
+
+              <UiAccordionLayer
+                :classNames="{ layer: $style['estimate-list__layer'] }"
+              >
+                <section :class="$style['estimate-list__contents']">
+                  <BoxCheckList spacing="small" :wrap="true" :col="4">
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemLeaseCheck005"
+                        id="leaseRentEstimationSystemLeaseCheck005_001"
+                        size="small"
+                        :defaultChecked="true"
+                      >
+                        <BoxCheckLabel>서울</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemLeaseCheck005"
+                        id="leaseRentEstimationSystemLeaseCheck005_002"
+                        size="small"
+                      >
+                        <BoxCheckLabel>부산</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemLeaseCheck005"
+                        id="leaseRentEstimationSystemLeaseCheck005_003"
+                        size="small"
+                      >
+                        <BoxCheckLabel>대구</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemLeaseCheck005"
+                        id="leaseRentEstimationSystemLeaseCheck005_004"
+                        size="small"
+                      >
+                        <BoxCheckLabel>대전</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemLeaseCheck005"
+                        id="leaseRentEstimationSystemLeaseCheck005_005"
+                        size="small"
+                      >
+                        <BoxCheckLabel>광주</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemLeaseCheck005"
+                        id="leaseRentEstimationSystemLeaseCheck005_006"
+                        size="small"
+                      >
+                        <BoxCheckLabel>인천</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemLeaseCheck005"
+                        id="leaseRentEstimationSystemLeaseCheck005_007"
+                        size="small"
+                      >
+                        <BoxCheckLabel>경기</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemLeaseCheck005"
+                        id="leaseRentEstimationSystemLeaseCheck005_008"
+                        size="small"
+                      >
+                        <BoxCheckLabel>충남</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemLeaseCheck005"
+                        id="leaseRentEstimationSystemLeaseCheck005_009"
+                        size="small"
+                      >
+                        <BoxCheckLabel>충북</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemLeaseCheck005"
+                        id="leaseRentEstimationSystemLeaseCheck005_010"
+                        size="small"
+                      >
+                        <BoxCheckLabel>울산</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemLeaseCheck005"
+                        id="leaseRentEstimationSystemLeaseCheck005_011"
+                        size="small"
+                      >
+                        <BoxCheckLabel>경남</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemLeaseCheck005"
+                        id="leaseRentEstimationSystemLeaseCheck005_012"
+                        size="small"
+                      >
+                        <BoxCheckLabel>경북</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemLeaseCheck005"
+                        id="leaseRentEstimationSystemLeaseCheck005_013"
+                        size="small"
+                      >
+                        <BoxCheckLabel>전남</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemLeaseCheck005"
+                        id="leaseRentEstimationSystemLeaseCheck005_014"
+                        size="small"
+                      >
+                        <BoxCheckLabel>전북</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemLeaseCheck005"
+                        id="leaseRentEstimationSystemLeaseCheck005_015"
+                        size="small"
+                      >
+                        <BoxCheckLabel>인천강화</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemLeaseCheck005"
+                        id="leaseRentEstimationSystemLeaseCheck005_016"
+                        size="small"
+                      >
+                        <BoxCheckLabel>인천공항</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemLeaseCheck005"
+                        id="leaseRentEstimationSystemLeaseCheck005_017"
+                        size="small"
+                      >
+                        <BoxCheckLabel>세종</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemLeaseCheck005"
+                        id="leaseRentEstimationSystemLeaseCheck005_018"
+                        size="small"
+                      >
+                        <BoxCheckLabel>강원(영동)</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        :minSide="true"
+                        name="leaseRentEstimationSystemLeaseCheck005"
+                        id="leaseRentEstimationSystemLeaseCheck005_019"
+                        size="small"
+                      >
+                        <BoxCheckLabel>강원(영서)</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
+                  </BoxCheckList>
+                </section>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+            <!-- // 도착지 -->
+
+            <!-- 용품 -->
+            <UiAccordionItem
+              :classNames="{ item: $style['estimate-list__item'] }"
+            >
+              <div :class="$style['estimate-list__head']">
+                <div :class="$style['estimate-list__block']">
+                  <div :class="$style['estimate-list__left']">
+                    <KeyValue align="left" size="medium" verticalAlign="center">
+                      <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                        <KeyValueTitle>
+                          <div class="text-body-4">용품</div>
+                        </KeyValueTitle>
+                        <KeyValueText>선택없음</KeyValueText>
+                      </KeyValueItem>
+                    </KeyValue>
+                  </div>
+                </div>
+                <div :class="$style['estimate-list__arrow']">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['estimate-list__opener'] }"
+                  />
+                </div>
+              </div>
+
+              <UiAccordionLayer
+                :classNames="{ layer: $style['estimate-list__layer'] }"
+              >
+                <section :class="$style['estimate-list__contents']">
+                  <FormList>
+                    <FormListItem titleText="내비게이션" :forceFocus="true">
+                      <BoxCheckList spacing="small">
+                        <BoxCheckListItem>
+                          <BoxCheck
+                            :minSide="true"
+                            name="leaseRentEstimationSystemLeaseCheck006"
+                            id="leaseRentEstimationSystemLeaseCheck006_001"
+                            size="small"
+                            :defaultChecked="true"
+                          >
+                            <BoxCheckLabel>해당없음</BoxCheckLabel>
+                          </BoxCheck>
+                        </BoxCheckListItem>
+                        <BoxCheckListItem>
+                          <BoxCheck
+                            :minSide="true"
+                            name="leaseRentEstimationSystemLeaseCheck006"
+                            id="leaseRentEstimationSystemLeaseCheck006_002"
+                            size="small"
+                          >
+                            <BoxCheckLabel>포함</BoxCheckLabel>
+                          </BoxCheck>
+                        </BoxCheckListItem>
+                      </BoxCheckList>
+                    </FormListItem>
+                    <FormListItem titleText="블랙박스" :forceFocus="true">
+                      <BoxCheckList spacing="small">
+                        <BoxCheckListItem>
+                          <BoxCheck
+                            :minSide="true"
+                            name="leaseRentEstimationSystemLeaseCheck007"
+                            id="leaseRentEstimationSystemLeaseCheck007_001"
+                            size="small"
+                            :defaultChecked="true"
+                          >
+                            <BoxCheckLabel>해당없음</BoxCheckLabel>
+                          </BoxCheck>
+                        </BoxCheckListItem>
+                        <BoxCheckListItem>
+                          <BoxCheck
+                            :minSide="true"
+                            name="leaseRentEstimationSystemLeaseCheck007"
+                            id="leaseRentEstimationSystemLeaseCheck007_002"
+                            size="small"
+                          >
+                            <BoxCheckLabel>아이나비<br />(A300)</BoxCheckLabel>
+                          </BoxCheck>
+                        </BoxCheckListItem>
+                        <BoxCheckListItem>
+                          <BoxCheck
+                            :minSide="true"
+                            name="leaseRentEstimationSystemLeaseCheck007"
+                            id="leaseRentEstimationSystemLeaseCheck007_003"
+                            size="small"
+                          >
+                            <BoxCheckLabel
+                              >아이지넷<br />(G프로200)</BoxCheckLabel
+                            >
+                          </BoxCheck>
+                        </BoxCheckListItem>
+                      </BoxCheckList>
+                    </FormListItem>
+                    <FormListItem titleText="측후면썬팅" :forceFocus="true">
+                      <BoxCheckList spacing="small">
+                        <BoxCheckListItem>
+                          <BoxCheck
+                            :minSide="true"
+                            name="leaseRentEstimationSystemLeaseCheck008"
+                            id="leaseRentEstimationSystemLeaseCheck008_001"
+                            size="small"
+                            :defaultChecked="true"
+                          >
+                            <BoxCheckLabel>해당없음</BoxCheckLabel>
+                          </BoxCheck>
+                        </BoxCheckListItem>
+                        <BoxCheckListItem>
+                          <BoxCheck
+                            :minSide="true"
+                            name="leaseRentEstimationSystemLeaseCheck008"
+                            id="leaseRentEstimationSystemLeaseCheck008_002"
+                            size="small"
+                          >
+                            <BoxCheckLabel>일반(쿠폰)</BoxCheckLabel>
+                          </BoxCheck>
+                        </BoxCheckListItem>
+                        <BoxCheckListItem>
+                          <BoxCheck
+                            :minSide="true"
+                            name="leaseRentEstimationSystemLeaseCheck008"
+                            id="leaseRentEstimationSystemLeaseCheck008_003"
+                            size="small"
+                          >
+                            <BoxCheckLabel>3M</BoxCheckLabel>
+                          </BoxCheck>
+                        </BoxCheckListItem>
+                        <BoxCheckListItem>
+                          <BoxCheck
+                            :minSide="true"
+                            name="leaseRentEstimationSystemLeaseCheck008"
+                            id="leaseRentEstimationSystemLeaseCheck008_004"
+                            size="small"
+                          >
+                            <BoxCheckLabel>루마</BoxCheckLabel>
+                          </BoxCheck>
+                        </BoxCheckListItem>
+                      </BoxCheckList>
+                    </FormListItem>
+                    <!-- Case : 측후면썬팅 [일반(쿠폰), 3M, 루마] 선택시 노출 -->
+                    <FormListItem
+                      titleText="측후면썬팅 투과율(농도)"
+                      target="#leaseRentEstimationSystemLeaseSideTintingRatioButton"
+                      :selectOnly="true"
+                    >
+                      <FormInvalid :error="state.sideTintingRatioError">
+                        <InputBlock :error="state.sideTintingRatioError">
+                          <InputBlockCell :flexible="true">
+                            <BasicSelect
+                              :option="[
+                                {
+                                  value: '1',
+                                  text: '50%',
+                                },
+                                {
+                                  value: '2',
+                                  text: '35%',
+                                },
+                                {
+                                  value: '3',
+                                  text: '15%',
+                                },
+                                {
+                                  value: '4',
+                                  text: '5%',
+                                },
+                              ]"
+                              buttonTitle="측후면썬팅 투과율(농도) 선택하기"
+                              layerTitle="측후면썬팅 투과율(농도)을 선택해 주세요"
+                              id="leaseRentEstimationSystemLeaseSideTintingRatio"
+                              buttonId="leaseRentEstimationSystemLeaseSideTintingRatioButton"
+                            />
+                          </InputBlockCell>
+                        </InputBlock>
+                        <FormInvalidMessage>Error Message</FormInvalidMessage>
+                      </FormInvalid>
+                    </FormListItem>
+                    <!-- // Case : 측후면썬팅 [일반(쿠폰), 3M, 루마] 선택시 노출 -->
+                    <FormListItem titleText="전면썬팅" :forceFocus="true">
+                      <BoxCheckList spacing="small">
+                        <BoxCheckListItem>
+                          <BoxCheck
+                            :minSide="true"
+                            name="leaseRentEstimationSystemLeaseCheck009"
+                            id="leaseRentEstimationSystemLeaseCheck009_001"
+                            size="small"
+                            :defaultChecked="true"
+                          >
+                            <BoxCheckLabel>해당없음</BoxCheckLabel>
+                          </BoxCheck>
+                        </BoxCheckListItem>
+                        <BoxCheckListItem>
+                          <BoxCheck
+                            :minSide="true"
+                            name="leaseRentEstimationSystemLeaseCheck009"
+                            id="leaseRentEstimationSystemLeaseCheck009_002"
+                            size="small"
+                          >
+                            <BoxCheckLabel>포함</BoxCheckLabel>
+                          </BoxCheck>
+                        </BoxCheckListItem>
+                      </BoxCheckList>
+                    </FormListItem>
+                    <!-- Case : 전면썬팅 [포함] 선택시 노출 -->
+                    <FormListItem
+                      titleText="전면썬팅 투과율(농도)"
+                      target="#leaseRentEstimationSystemLeaseFrontTintingRatioButton"
+                      :selectOnly="true"
+                    >
+                      <FormInvalid :error="state.frontTintingRatioError">
+                        <InputBlock :error="state.frontTintingRatioError">
+                          <InputBlockCell :flexible="true">
+                            <BasicSelect
+                              :option="[
+                                {
+                                  value: '1',
+                                  text: '50%',
+                                },
+                                {
+                                  value: '2',
+                                  text: '35%',
+                                },
+                              ]"
+                              buttonTitle="전면썬팅 투과율(농도) 선택하기"
+                              layerTitle="전면썬팅 투과율(농도)을 선택해 주세요"
+                              id="leaseRentEstimationSystemLeaseFrontTintingRatio"
+                              buttonId="leaseRentEstimationSystemLeaseFrontTintingRatioButton"
+                            />
+                          </InputBlockCell>
+                        </InputBlock>
+                        <FormInvalidMessage>Error Message</FormInvalidMessage>
+                      </FormInvalid>
+                    </FormListItem>
+                    <!-- // Case : 전면썬팅 [포함] 선택시 노출 -->
+                    <FormListItem
+                      titleText="추가용품 품목"
+                      target="#leaseRentEstimationSystemLeaseAddOptionItem"
+                    >
+                      <FormInvalid :error="state.addOptionItemError">
+                        <InputBlock :error="state.addOptionItemError">
+                          <InputBlockCell :flexible="true">
+                            <BasicInput
+                              title="추가용품 품목"
+                              id="leaseRentEstimationSystemLeaseAddOptionItem"
+                            />
+                          </InputBlockCell>
+                        </InputBlock>
+                        <FormInvalidMessage>Error Message</FormInvalidMessage>
+                      </FormInvalid>
+                    </FormListItem>
+                    <FormListItem
+                      titleText="추가용품 금액"
+                      target="#leaseRentEstimationSystemLeaseAddOptionItemPrice"
+                    >
+                      <FormInvalid :error="state.addOptionItemPriceError">
+                        <InputBlock :error="state.addOptionItemPriceError">
+                          <InputBlockCell :flexible="true">
+                            <BasicInput
+                              title="추가용품 금액"
+                              id="leaseRentEstimationSystemLeaseAddOptionItemPrice"
+                              pattern="\d*"
+                              :useDelete="false"
+                              align="right"
+                            />
+                          </InputBlockCell>
+                          <template v-slot:innerRight>
+                            <div class="text-body-3">원</div>
+                          </template>
+                        </InputBlock>
+                        <FormInvalidMessage>Error Message</FormInvalidMessage>
+                      </FormInvalid>
+                    </FormListItem>
+                  </FormList>
+
+                  <NoticeText :classNames="{ wrap: 'row-margin-item-group' }"
+                    >품목, 금액 모두 입력해주세요.</NoticeText
+                  >
+                </section>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+            <!-- // 용품 -->
+          </UiAccordion>
+          <!-- // Case : 특판출고 선택 시 -->
 
           <!-- Case : { 할인/탁송료 : 탁송방법 } '외주탁송' 또는 { 차량 선택 : 브랜드 } '수입차' 선택시, 미노출 -->
           <div :class="$style['estimate-list__foot']">
