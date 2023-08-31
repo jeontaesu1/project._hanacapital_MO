@@ -2630,8 +2630,7 @@ export default {
                         </KeyValueTitle>
                         <KeyValueText>
                           대출원금 기준<br />
-                          CM : 690,000원 (0.003%)<br />
-                          AG : 000,000원 (0.000%)
+                          딜러 : 1.000%, AG : 1.000%
                         </KeyValueText>
                       </KeyValueItem>
                     </KeyValue>
@@ -2650,40 +2649,74 @@ export default {
                 <section :class="$style['estimate-list__contents']">
                   <FormList>
                     <FormListItem
-                      titleText="CM"
+                      titleText="딜러"
                       target="#leaseRentEstimationSystemInstallmentFeeCMRatio"
+                      :forceFocus="true"
                     >
                       <FormInvalid :error="state.feeCMError">
-                        <InputBlock :error="state.feeCMError">
-                          <InputBlockCell :flexible="true">
-                            <BasicInput
-                              title="CM 금액"
-                              id="leaseRentEstimationSystemInstallmentFeeCMPrice"
-                              pattern="\d*"
-                              :useDelete="false"
-                              align="right"
-                              defaultValue="1,521,120"
-                              :disabled="true"
-                            />
-                          </InputBlockCell>
-                          <InputBlockCell>
-                            <div class="text-body-3 color-gray-quinary">원</div>
-                          </InputBlockCell>
-                          <InputBlockCell :flexible="true">
-                            <BasicInput
-                              type="number"
-                              title="CM 비율(%)"
-                              id="leaseRentEstimationSystemInstallmentFeeCMRatio"
-                              pattern="\d*"
-                              :useDelete="false"
-                              align="right"
-                              defaultValue="9.000"
-                            />
-                          </InputBlockCell>
-                          <InputBlockCell>
-                            <div class="text-body-3">%</div>
-                          </InputBlockCell>
-                        </InputBlock>
+                        <!-- Case : 견적 1개 -->
+                        <div>
+                          <InputBlock :error="state.feeCMError">
+                            <InputBlockCell :flexible="true">
+                              <div class="color-gray-quinary align-right">
+                                1,521,120
+                              </div>
+                            </InputBlockCell>
+                            <InputBlockCell>
+                              <div class="text-body-3 color-gray-quinary">
+                                원
+                              </div>
+                            </InputBlockCell>
+                            <InputBlockCell :flexible="true">
+                              <BasicInput
+                                type="number"
+                                title="딜러 비율(%)"
+                                id="leaseRentEstimationSystemInstallmentFeeCMRatio"
+                                pattern="\d*"
+                                :useDelete="false"
+                                align="right"
+                                defaultValue="9.000"
+                              />
+                            </InputBlockCell>
+                            <InputBlockCell>
+                              <div class="text-body-3">%</div>
+                            </InputBlockCell>
+                          </InputBlock>
+                        </div>
+                        <!-- // Case : 견적 1개 -->
+
+                        <!-- Case : 견적 2개 이상 -->
+                        <div>
+                          <InputBlock :error="state.feeCMError">
+                            <InputBlockCell :flexible="true">
+                              <BasicInput
+                                type="number"
+                                title="딜러 비율(%)"
+                                id="leaseRentEstimationSystemInstallmentFeeCMRatio"
+                                pattern="\d*"
+                                :useDelete="false"
+                                align="right"
+                                defaultValue="9.000"
+                              />
+                            </InputBlockCell>
+                            <InputBlockCell>
+                              <div class="text-body-3">%</div>
+                            </InputBlockCell>
+                          </InputBlock>
+                          <InputBlock :classNames="{ wrap: 'row-margin-item' }">
+                            <InputBlockCell :flexible="true">
+                              <div class="color-gray-quinary align-right">
+                                1,747,100 / 1,747,100 / 1,747,100
+                              </div>
+                            </InputBlockCell>
+                            <InputBlockCell>
+                              <div class="text-body-3 color-gray-quinary">
+                                원
+                              </div>
+                            </InputBlockCell>
+                          </InputBlock>
+                        </div>
+                        <!-- // Case : 견적 2개 이상 -->
                         <FormInvalidMessage>Error Message</FormInvalidMessage>
                       </FormInvalid>
                     </FormListItem>
@@ -2691,38 +2724,72 @@ export default {
                     <FormListItem
                       titleText="AG"
                       target="#leaseRentEstimationSystemInstallmentFeeAGRatio"
+                      :forceFocus="true"
                     >
                       <FormInvalid :error="state.feeAGError">
-                        <InputBlock :error="state.feeAGError">
-                          <InputBlockCell :flexible="true">
-                            <BasicInput
-                              title="AG 금액"
-                              id="leaseRentEstimationSystemInstallmentFeeAGPrice"
-                              pattern="\d*"
-                              :useDelete="false"
-                              align="right"
-                              defaultValue="0"
-                              :disabled="true"
-                            />
-                          </InputBlockCell>
-                          <InputBlockCell>
-                            <div class="text-body-3 color-gray-quinary">원</div>
-                          </InputBlockCell>
-                          <InputBlockCell :flexible="true">
-                            <BasicInput
-                              type="number"
-                              title="AG 비율(%)"
-                              id="leaseRentEstimationSystemInstallmentFeeAGRatio"
-                              pattern="\d*"
-                              :useDelete="false"
-                              align="right"
-                              defaultValue="0"
-                            />
-                          </InputBlockCell>
-                          <InputBlockCell>
-                            <div class="text-body-3">%</div>
-                          </InputBlockCell>
-                        </InputBlock>
+                        <!-- Case : 견적 1개 -->
+                        <div>
+                          <InputBlock :error="state.feeAGError">
+                            <InputBlockCell :flexible="true">
+                              <div class="color-gray-quinary align-right">
+                                0
+                              </div>
+                            </InputBlockCell>
+                            <InputBlockCell>
+                              <div class="text-body-3 color-gray-quinary">
+                                원
+                              </div>
+                            </InputBlockCell>
+                            <InputBlockCell :flexible="true">
+                              <BasicInput
+                                type="number"
+                                title="AG 비율(%)"
+                                id="leaseRentEstimationSystemInstallmentFeeAGRatio"
+                                pattern="\d*"
+                                :useDelete="false"
+                                align="right"
+                                defaultValue="0"
+                              />
+                            </InputBlockCell>
+                            <InputBlockCell>
+                              <div class="text-body-3">%</div>
+                            </InputBlockCell>
+                          </InputBlock>
+                        </div>
+                        <!-- // Case : 견적 1개 -->
+
+                        <!-- Case : 견적 2개 이상 -->
+                        <div>
+                          <InputBlock :error="state.feeAGError">
+                            <InputBlockCell :flexible="true">
+                              <BasicInput
+                                type="number"
+                                title="AG 비율(%)"
+                                id="leaseRentEstimationSystemInstallmentFeeAGRatio"
+                                pattern="\d*"
+                                :useDelete="false"
+                                align="right"
+                                defaultValue="0"
+                              />
+                            </InputBlockCell>
+                            <InputBlockCell>
+                              <div class="text-body-3">%</div>
+                            </InputBlockCell>
+                          </InputBlock>
+                          <InputBlock :classNames="{ wrap: 'row-margin-item' }">
+                            <InputBlockCell :flexible="true">
+                              <div class="color-gray-quinary align-right">
+                                1,747,100 / 1,747,100 / 1,747,100
+                              </div>
+                            </InputBlockCell>
+                            <InputBlockCell>
+                              <div class="text-body-3 color-gray-quinary">
+                                원
+                              </div>
+                            </InputBlockCell>
+                          </InputBlock>
+                        </div>
+                        <!-- // Case : 견적 2개 이상 -->
                         <FormInvalidMessage>Error Message</FormInvalidMessage>
                       </FormInvalid>
                     </FormListItem>
@@ -2749,8 +2816,7 @@ export default {
                         </KeyValueTitle>
                         <KeyValueText>
                           대출원금 기준<br />
-                          CM : 690,000원 (0.003%)<br />
-                          AG : 000,000원 (0.000%)
+                          딜러 : 1.000%, AG : 1.000%
                         </KeyValueText>
                       </KeyValueItem>
                     </KeyValue>
@@ -2769,78 +2835,146 @@ export default {
                 <section :class="$style['estimate-list__contents']">
                   <FormList>
                     <FormListItem
-                      titleText="CM"
+                      titleText="딜러"
                       target="#leaseRentEstimationSystemInstallmentETCCMRatio"
+                      :forceFocus="true"
                     >
                       <FormInvalid :error="state.etcCMError">
-                        <InputBlock :error="state.etcCMError">
-                          <InputBlockCell :flexible="true">
-                            <BasicInput
-                              title="CM 금액"
-                              id="leaseRentEstimationSystemInstallmentETCCMPrice"
-                              pattern="\d*"
-                              :useDelete="false"
-                              align="right"
-                              defaultValue="1,521,120"
-                              :disabled="true"
-                            />
-                          </InputBlockCell>
-                          <InputBlockCell>
-                            <div class="text-body-3 color-gray-quinary">원</div>
-                          </InputBlockCell>
-                          <InputBlockCell :flexible="true">
-                            <BasicInput
-                              type="number"
-                              title="CM 비율(%)"
-                              id="leaseRentEstimationSystemInstallmentETCCMRatio"
-                              pattern="\d*"
-                              :useDelete="false"
-                              align="right"
-                              defaultValue="9.000"
-                            />
-                          </InputBlockCell>
-                          <InputBlockCell>
-                            <div class="text-body-3">%</div>
-                          </InputBlockCell>
-                        </InputBlock>
+                        <!-- Case : 견적 1개 -->
+                        <div>
+                          <InputBlock :error="state.etcCMError">
+                            <InputBlockCell :flexible="true">
+                              <div class="color-gray-quinary align-right">
+                                1,521,120
+                              </div>
+                            </InputBlockCell>
+                            <InputBlockCell>
+                              <div class="text-body-3 color-gray-quinary">
+                                원
+                              </div>
+                            </InputBlockCell>
+                            <InputBlockCell :flexible="true">
+                              <BasicInput
+                                type="number"
+                                title="딜러 비율(%)"
+                                id="leaseRentEstimationSystemInstallmentETCCMRatio"
+                                pattern="\d*"
+                                :useDelete="false"
+                                align="right"
+                                defaultValue="9.000"
+                              />
+                            </InputBlockCell>
+                            <InputBlockCell>
+                              <div class="text-body-3">%</div>
+                            </InputBlockCell>
+                          </InputBlock>
+                        </div>
+                        <!-- // Case : 견적 1개 -->
+
+                        <!-- Case : 견적 2개 이상 -->
+                        <div>
+                          <InputBlock :error="state.etcCMError">
+                            <InputBlockCell :flexible="true">
+                              <BasicInput
+                                type="number"
+                                title="딜러 비율(%)"
+                                id="leaseRentEstimationSystemInstallmentETCCMRatio"
+                                pattern="\d*"
+                                :useDelete="false"
+                                align="right"
+                                defaultValue="9.000"
+                              />
+                            </InputBlockCell>
+                            <InputBlockCell>
+                              <div class="text-body-3">%</div>
+                            </InputBlockCell>
+                          </InputBlock>
+                          <InputBlock :classNames="{ wrap: 'row-margin-item' }">
+                            <InputBlockCell :flexible="true">
+                              <div class="color-gray-quinary align-right">
+                                1,747,100 / 1,747,100 / 1,747,100
+                              </div>
+                            </InputBlockCell>
+                            <InputBlockCell>
+                              <div class="text-body-3 color-gray-quinary">
+                                원
+                              </div>
+                            </InputBlockCell>
+                          </InputBlock>
+                        </div>
+                        <!-- // Case : 견적 2개 이상 -->
                         <FormInvalidMessage>Error Message</FormInvalidMessage>
                       </FormInvalid>
                     </FormListItem>
                     <FormListItem
                       titleText="AG"
                       target="#leaseRentEstimationSystemInstallmentETCAGRatio"
+                      :forceFocus="true"
                     >
                       <FormInvalid :error="state.etcAGError">
-                        <InputBlock :error="state.etcAGError">
-                          <InputBlockCell :flexible="true">
-                            <BasicInput
-                              title="AG 금액"
-                              id="leaseRentEstimationSystemInstallmentETCAGPrice"
-                              pattern="\d*"
-                              :useDelete="false"
-                              align="right"
-                              defaultValue="0"
-                              :disabled="true"
-                            />
-                          </InputBlockCell>
-                          <InputBlockCell>
-                            <div class="text-body-3 color-gray-quinary">원</div>
-                          </InputBlockCell>
-                          <InputBlockCell :flexible="true">
-                            <BasicInput
-                              type="number"
-                              title="AG 비율(%)"
-                              id="leaseRentEstimationSystemInstallmentETCAGRatio"
-                              pattern="\d*"
-                              :useDelete="false"
-                              align="right"
-                              defaultValue="0"
-                            />
-                          </InputBlockCell>
-                          <InputBlockCell>
-                            <div class="text-body-3">%</div>
-                          </InputBlockCell>
-                        </InputBlock>
+                        <!-- Case : 견적 1개 -->
+                        <div>
+                          <InputBlock :error="state.etcAGError">
+                            <InputBlockCell :flexible="true">
+                              <div class="color-gray-quinary align-right">
+                                0
+                              </div>
+                            </InputBlockCell>
+                            <InputBlockCell>
+                              <div class="text-body-3 color-gray-quinary">
+                                원
+                              </div>
+                            </InputBlockCell>
+                            <InputBlockCell :flexible="true">
+                              <BasicInput
+                                type="number"
+                                title="AG 비율(%)"
+                                id="leaseRentEstimationSystemInstallmentETCAGRatio"
+                                pattern="\d*"
+                                :useDelete="false"
+                                align="right"
+                                defaultValue="0"
+                              />
+                            </InputBlockCell>
+                            <InputBlockCell>
+                              <div class="text-body-3">%</div>
+                            </InputBlockCell>
+                          </InputBlock>
+                        </div>
+                        <!-- // Case : 견적 1개 -->
+
+                        <!-- Case : 견적 2개 이상 -->
+                        <div>
+                          <InputBlock :error="state.etcAGError">
+                            <InputBlockCell :flexible="true">
+                              <BasicInput
+                                type="number"
+                                title="AG 비율(%)"
+                                id="leaseRentEstimationSystemInstallmentETCAGRatio"
+                                pattern="\d*"
+                                :useDelete="false"
+                                align="right"
+                                defaultValue="0"
+                              />
+                            </InputBlockCell>
+                            <InputBlockCell>
+                              <div class="text-body-3">%</div>
+                            </InputBlockCell>
+                          </InputBlock>
+                          <InputBlock :classNames="{ wrap: 'row-margin-item' }">
+                            <InputBlockCell :flexible="true">
+                              <div class="color-gray-quinary align-right">
+                                1,747,100 / 1,747,100 / 1,747,100
+                              </div>
+                            </InputBlockCell>
+                            <InputBlockCell>
+                              <div class="text-body-3 color-gray-quinary">
+                                원
+                              </div>
+                            </InputBlockCell>
+                          </InputBlock>
+                        </div>
+                        <!-- // Case : 견적 2개 이상 -->
                         <FormInvalidMessage>Error Message</FormInvalidMessage>
                       </FormInvalid>
                     </FormListItem>
