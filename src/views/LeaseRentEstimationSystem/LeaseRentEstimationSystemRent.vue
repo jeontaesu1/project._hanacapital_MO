@@ -3685,6 +3685,10 @@ export default {
                       </FormInvalid>
                     </FormListItem>
                   </FormList>
+
+                  <NoticeText :classNames="{ wrap: 'row-margin-item-group' }"
+                    >품목, 금액 모두 입력해주세요.</NoticeText
+                  >
                 </section>
               </UiAccordionLayer>
             </UiAccordionItem>
