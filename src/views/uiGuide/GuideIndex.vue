@@ -4269,7 +4269,12 @@ const datas = () => [
         path: '/my-loan/detail-personal',
         status: 'end',
         create: '2023.04.21',
-        log: [],
+        log: [
+          {
+            date: '2023.08.31',
+            text: '- 버튼 컬러 변경',
+          },
+        ],
       },
       {
         depth2: '상세계약현황\nMy_M01_p002',
@@ -4280,7 +4285,12 @@ const datas = () => [
         path: '/my-loan/detail-stock',
         status: 'end',
         create: '2023.04.21',
-        log: [],
+        log: [
+          {
+            date: '2023.08.31',
+            text: '- 버튼 컬러 및 순서 변경',
+          },
+        ],
       },
       {
         depth2: '상세계약현황\nMy_M01_p002',
@@ -4291,7 +4301,12 @@ const datas = () => [
         path: '/my-loan/detail-intermediate',
         status: 'end',
         create: '2023.04.21',
-        log: [],
+        log: [
+          {
+            date: '2023.08.31',
+            text: '- 버튼 컬러 변경',
+          },
+        ],
       },
       {
         depth2: '상세계약현황\nMy_M01_p002',
@@ -4302,7 +4317,12 @@ const datas = () => [
         path: '/my-loan/detail-auto',
         status: 'end',
         create: '2023.04.21',
-        log: [],
+        log: [
+          {
+            date: '2023.08.31',
+            text: '- 버튼 컬러 및 순서 변경',
+          },
+        ],
       },
       {
         depth2: '상세계약현황\nMy_M01_p002',
@@ -4313,7 +4333,12 @@ const datas = () => [
         path: '/my-loan/detail-instalment',
         status: 'end',
         create: '2023.04.21',
-        log: [],
+        log: [
+          {
+            date: '2023.08.31',
+            text: '- 버튼 컬러 변경',
+          },
+        ],
       },
       {
         depth2: '상세계약현황\nMy_M01_p002',
@@ -4324,7 +4349,12 @@ const datas = () => [
         path: '/my-loan/detail-medical-instalment',
         status: 'end',
         create: '2023.04.21',
-        log: [],
+        log: [
+          {
+            date: '2023.08.31',
+            text: '- 버튼 컬러 변경',
+          },
+        ],
       },
       {
         depth2: '결제/청구정보',
