@@ -188,6 +188,10 @@ const datas = () => [
             date: '2023.08.30',
             text: '- Common_M00_l004\n생년월일에 placeholder 추가\n- Common_M00_l002\n생년월일에 placeholder 추가\n- Common_M00_l050 팝업 추가\n- Common_M00_l051 팝업 추가\n- Common_M00_l052 팝업 추가\n- Common_M00_l053 팝업 추가\n- Common_M00_l054 팝업 추가',
           },
+          {
+            date: '2023.08.31',
+            text: '- Common_M00_l002\n인증번호 텍스트필드 수정',
+          },
         ],
       },
       {

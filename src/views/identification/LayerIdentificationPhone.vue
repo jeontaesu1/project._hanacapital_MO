@@ -87,6 +87,7 @@ export default {
           titleText="인증번호"
           titleOptionalText="(6자리)"
           target="#layerIdentificationPhoneCode"
+          :forceFocus="true"
         >
           <FormInvalid :error="state.codeError">
             <InputBlock :error="state.codeError">
@@ -96,6 +97,7 @@ export default {
                   pattern="\d*"
                   title="인증번호 (6자리)"
                   id="layerIdentificationPhoneCode"
+                  placeholder="인증번호를 입력해 주세요"
                 />
               </InputBlockCell>
               <template v-slot:innerRight>
