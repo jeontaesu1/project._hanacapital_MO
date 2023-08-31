@@ -8952,6 +8952,19 @@ export default {
       </div>
 
       <div class="test-section-sub">
+        <h3 class="test-section-sub-title">size: small</h3>
+        <!-- Case : 이미지 없을 때 -->
+        <CarThumb size="small" src="" />
+        <!-- // Case : 이미지 없을 때 -->
+
+        <!-- Case : 이미지 에러 -->
+        <CarThumb size="small" src="/images/_dummy/.png" />
+        <!-- // Case : 이미지 에러 -->
+
+        <CarThumb size="small" src="/images/_dummy/car-thumb.png" />
+      </div>
+
+      <div class="test-section-sub">
         <h3 class="test-section-sub-title">size: medium</h3>
         <!-- Case : 이미지 없을 때 -->
         <CarThumb size="medium" src="" />
@@ -8962,6 +8975,19 @@ export default {
         <!-- // Case : 이미지 에러 -->
 
         <CarThumb size="medium" src="/images/_dummy/car-thumb.png" />
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">size: large</h3>
+        <!-- Case : 이미지 없을 때 -->
+        <CarThumb size="large" src="" />
+        <!-- // Case : 이미지 없을 때 -->
+
+        <!-- Case : 이미지 에러 -->
+        <CarThumb size="large" src="/images/_dummy/.png" />
+        <!-- // Case : 이미지 에러 -->
+
+        <CarThumb size="large" src="/images/_dummy/car-thumb.png" />
       </div>
     </section>
 

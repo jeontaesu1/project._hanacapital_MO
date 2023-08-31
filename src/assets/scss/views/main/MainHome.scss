@@ -58,6 +58,23 @@
     100%;
 }
 
+.hot-deal-list {
+  @include reset-list;
+
+  &__item {
+    & + & {
+      margin-top: 24px;
+    }
+  }
+
+  &__block {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    padding-left: 8px;
+  }
+}
+
 .progress {
   margin-bottom: 32px;
 

@@ -544,19 +544,20 @@ export default {
             </TextButton>
           </div>
         </div>
-        <ul class="reset-list">
-          <li v-for="i in 3" :key="i" class="row-margin-contents">
-            <RouterLink to="" class="link-block">
+        <ul :class="$style['hot-deal-list']">
+          <li v-for="i in 3" :key="i" :class="$style['hot-deal-list__item']">
+            <RouterLink to="" :class="$style['hot-deal-list__block']">
               <span class="flex-box">
                 <span class="flex-box__cell">
-                  <CarThumb src="/images/_dummy/car-thumb.png" />
+                  <CarThumb size="small" src="/images/_dummy/car-thumb.png" />
                 </span>
-                <span class="flex-box__cell flex-box__cell--medium flex-1">
-                  <span class="display-block text-body-4 color-gray"
-                    >현대 아이오닉6</span
+                <span class="flex-box__cell flex-box__cell--large flex-1">
+                  <span class="display-block text-body-4 color-gray ellipsis"
+                    >현대</span
                   >
-                  <span class="display-block text-body-1 font-weight-medium"
-                    >월 832,000 원</span
+                  <span
+                    class="display-block text-body-1 font-weight-medium ellipsis"
+                    >아이오닉6</span
                   >
                 </span>
                 <span class="flex-box__cell flex-box__cell--medium">
