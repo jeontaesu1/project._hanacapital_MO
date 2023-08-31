@@ -97,8 +97,10 @@ export default {
   >
     <PageTextGroup>
       <PageMainText>
+        <!-- Case : 로그인 후 노출 -->
+        <strong class="display-block">김하나님,</strong>
+        <!-- // Case : 로그인 후 노출 -->
         <button type="button" :class="$style['top-link']">
-          <strong>김하나님,</strong><br />
           오늘의 운세를 확인해 보세요!<IconLinkSmall
             :class="$style['top-link__icon']"
           />
