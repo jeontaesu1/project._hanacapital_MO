@@ -68,29 +68,23 @@ export default {
 
       <BasicBox theme="septenary">
         <div :class="$style['agree-list']">
-          <ul :class="$style['agree-list__list']">
-            <li :class="$style['agree-list__item']">
-              <div :class="$style['agree-list__head']">
-                <CheckBox
-                  id="layerMyLoanElectronicFinancialTransactionAgree001"
-                  :classNames="{
-                    wrap: $style['agree-list__checkbox'],
-                  }"
-                  theme="tertiary"
-                >
-                  <CheckBoxObject />
-                  <CheckBoxLabelText>전자금융거래약관</CheckBoxLabelText>
-                </CheckBox>
-                <div :class="$style['agree-list__right']">
-                  <button type="button" :class="$style['agree-list__link']">
-                    <span :class="$style['agree-list__link-text']">
-                      상세보기
-                    </span>
-                  </button>
-                </div>
-              </div>
-            </li>
-          </ul>
+          <div :class="$style['agree-list__head']">
+            <CheckBox
+              id="layerMyLoanElectronicFinancialTransactionAgree001"
+              :classNames="{
+                wrap: $style['agree-list__checkbox'],
+              }"
+              theme="tertiary"
+            >
+              <CheckBoxObject />
+              <CheckBoxLabelText>전자금융거래약관</CheckBoxLabelText>
+            </CheckBox>
+            <div :class="$style['agree-list__right']">
+              <button type="button" :class="$style['agree-list__link']">
+                <span :class="$style['agree-list__link-text']"> 상세보기 </span>
+              </button>
+            </div>
+          </div>
         </div>
       </BasicBox>
 

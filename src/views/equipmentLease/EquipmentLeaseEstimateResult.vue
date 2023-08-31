@@ -212,6 +212,7 @@ export default {
         type="contents"
         className="row-margin-contents-small"
       />
+
       <KeyValue margin="regular">
         <KeyValueItem
           :classNames="{
