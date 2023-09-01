@@ -75,6 +75,7 @@ export default {
       bankError: false,
       accountError: false,
       domesticBankNameError: false,
+      accountSelectError: false,
     });
 
     const store = {
@@ -563,11 +564,12 @@ export default {
         <FormList>
           <!-- Case : '수입할부' -->
           <FormListItem titleText="지급처" :forceFocus="true">
+            <!-- Case : '수입할부_오토론' -->
             <BoxCheckList>
               <BoxCheckListItem>
                 <BoxCheck
-                  name="leaseRentEstimationSystemSaveReviewApprovalRequestLeasePaymentDestination"
-                  id="leaseRentEstimationSystemSaveReviewApprovalRequestLeasePaymentDestination001"
+                  name="leaseRentEstimationSystemSaveReviewApprovalRequestLeasePaymentDestination001"
+                  id="leaseRentEstimationSystemSaveReviewApprovalRequestLeasePaymentDestination001_001"
                   :defaultChecked="true"
                 >
                   <BoxCheckLabel>
@@ -578,8 +580,8 @@ export default {
               </BoxCheckListItem>
               <BoxCheckListItem>
                 <BoxCheck
-                  name="leaseRentEstimationSystemSaveReviewApprovalRequestLeasePaymentDestination"
-                  id="leaseRentEstimationSystemSaveReviewApprovalRequestLeasePaymentDestination002"
+                  name="leaseRentEstimationSystemSaveReviewApprovalRequestLeasePaymentDestination001"
+                  id="leaseRentEstimationSystemSaveReviewApprovalRequestLeasePaymentDestination001_002"
                 >
                   <BoxCheckLabel>
                     고객<br />
@@ -589,16 +591,46 @@ export default {
               </BoxCheckListItem>
               <BoxCheckListItem>
                 <BoxCheck
-                  name="leaseRentEstimationSystemSaveReviewApprovalRequestLeasePaymentDestination"
-                  id="leaseRentEstimationSystemSaveReviewApprovalRequestLeasePaymentDestination003"
+                  name="leaseRentEstimationSystemSaveReviewApprovalRequestLeasePaymentDestination001"
+                  id="leaseRentEstimationSystemSaveReviewApprovalRequestLeasePaymentDestination001_003"
                 >
                   <BoxCheckLabel>고객</BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
             </BoxCheckList>
+            <!-- // Case : '수입할부_오토론' -->
+
+            <!-- Case : '수입할부_오토할부' -->
+            <BoxCheckList>
+              <BoxCheckListItem>
+                <BoxCheck
+                  name="leaseRentEstimationSystemSaveReviewApprovalRequestLeasePaymentDestination002"
+                  id="leaseRentEstimationSystemSaveReviewApprovalRequestLeasePaymentDestination002_001"
+                  :defaultChecked="true"
+                >
+                  <BoxCheckLabel>
+                    할부약정<br />
+                    판매대리점
+                  </BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  name="leaseRentEstimationSystemSaveReviewApprovalRequestLeasePaymentDestination002"
+                  id="leaseRentEstimationSystemSaveReviewApprovalRequestLeasePaymentDestination002_002"
+                >
+                  <BoxCheckLabel>
+                    할부약정<br />
+                    판매대리점 (가상)
+                  </BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+            </BoxCheckList>
+            <!-- // Case : '수입할부_오토할부' -->
           </FormListItem>
           <!-- // Case : '수입할부' -->
 
+          <!-- Case : 기본 -->
           <FormListItem
             titleText="은행명"
             target="#leaseRentEstimationSystemSaveReviewApprovalRequestLeaseBankButton"
@@ -642,6 +674,7 @@ export default {
               <FormHelpText>-없이 숫자만 입력해 주세요.</FormHelpText>
             </FormInvalid>
           </FormListItem>
+
           <FormListItem
             titleText="예금주명"
             target="#leaseRentEstimationSystemSaveReviewApprovalRequestLeaseDomesticBankName"
@@ -660,6 +693,35 @@ export default {
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
+          <!-- // Case : 기본 -->
+
+          <!-- Case : '수입할부_오토할부' -->
+          <FormListItem
+            titleText="계좌정보"
+            target="#leaseRentEstimationSystemSaveReviewApprovalRequestLeaseAccountButton"
+            :selectOnly="true"
+          >
+            <FormInvalid :error="state.accountSelectError">
+              <InputBlock :error="state.accountSelectError">
+                <InputBlockCell :flexible="true">
+                  <BasicSelect
+                    :option="[
+                      {
+                        value: '1',
+                        text: '하나 123-456-78457 / 김하나',
+                      },
+                    ]"
+                    buttonTitle="계좌정보 선택하기"
+                    layerTitle="계좌정보를 선택해 주세요"
+                    id="leaseRentEstimationSystemSaveReviewApprovalRequestLeaseAccount"
+                    buttonId="leaseRentEstimationSystemSaveReviewApprovalRequestLeaseAccountButton"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+          <!-- // Case : '수입할부_오토할부' -->
         </FormList>
       </section>
 
