@@ -564,10 +564,7 @@ export default {
             }"
           >
             <ButtonListItem>
-              <BasicButton theme="tertiary">견적조회</BasicButton>
-            </ButtonListItem>
-            <ButtonListItem>
-              <BasicButton>렌터카 신청</BasicButton>
+              <BasicButton>견적조회</BasicButton>
             </ButtonListItem>
           </ButtonList>
         </div>
