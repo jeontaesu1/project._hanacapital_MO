@@ -3,9 +3,10 @@
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
-import ToastPopup from '@/components/ui/layer/ToastPopup.vue';
-import ToastPopupHead from '@/components/ui/layer/ToastPopupHead.vue';
+import FullPopup from '@/components/ui/layer/FullPopup.vue';
+import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
+import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
@@ -14,9 +15,10 @@ import BasicBox from '@/components/ui/common/BasicBox.vue';
 export default {
   components: {
     UiLayer,
-    ToastPopup,
-    ToastPopupHead,
+    FullPopup,
+    FullPopupHead,
     PopupTitle,
+    PopupButton,
     BasicButton,
     ButtonList,
     ButtonListItem,
@@ -33,12 +35,21 @@ export default {
 </script>
 
 <template>
-  <UiLayer ref="layer" type="toast" :backgroundClose="true">
-    <ToastPopup>
+  <UiLayer ref="layer" type="full" v-slot="layerSlotProps">
+    <FullPopup v-if="layerSlotProps.display !== 'none'">
       <template v-slot:head>
-        <ToastPopupHead>
+        <FullPopupHead
+          :classNames="{
+            left: $style['header-left'],
+            center: $style['header-center'],
+            right: $style['header-right'],
+          }"
+        >
           <PopupTitle>간편인증통합중계 서비스 이용약관</PopupTitle>
-        </ToastPopupHead>
+          <template v-slot:right>
+            <PopupButton @click="layerSlotProps.close()" />
+          </template>
+        </FullPopupHead>
       </template>
 
       <ul :class="[$style['basic-list'], $style['basic-list--regular-margin']]">
@@ -275,7 +286,7 @@ export default {
           </ButtonListItem>
         </ButtonList>
       </template>
-    </ToastPopup>
+    </FullPopup>
   </UiLayer>
 </template>
 

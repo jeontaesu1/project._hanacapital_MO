@@ -192,6 +192,10 @@ const datas = () => [
             date: '2023.08.31',
             text: '- Common_M00_l002\n인증번호 텍스트필드 수정',
           },
+          {
+            date: '2023.09.01',
+            text: '- Common_M00_l050\n풀 팝업으로 변경\n- Common_M00_l051\n풀 팝업으로 변경\n- Common_M00_l052\n풀 팝업으로 변경\n- Common_M00_l053\n풀 팝업으로 변경\n- Common_M00_l054\n풀 팝업으로 변경',
+          },
         ],
       },
       {

@@ -1,1 +1,25 @@
 @import '@/assets/scss/components/import/basic-list.scss';
+
+.header {
+  &-left {
+    flex: none;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &-right {
+    flex: none;
+  }
+
+  &-center {
+    flex: 1;
+    min-width: 0;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
