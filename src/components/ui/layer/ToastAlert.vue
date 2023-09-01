@@ -1,5 +1,12 @@
 <script>
-import { computed, reactive, nextTick } from 'vue';
+import {
+  computed,
+  reactive,
+  nextTick,
+  ref,
+  onMounted,
+  onBeforeUnmount,
+} from 'vue';
 
 const defaultClassNames = () => ({
   wrap: '',
@@ -21,6 +28,8 @@ export default {
       count: 0,
       messages: [],
     });
+
+    const wrap = ref(null);
 
     const customClassNames = computed(() => {
       const { classNames } = props;
@@ -52,8 +61,21 @@ export default {
       state.messages.splice(i, 1);
     };
 
+    onMounted(() => {
+      const body = document.getElementsByTagName('body')[0];
+
+      if (!wrap.value.parentNode.matches('body')) {
+        body.append(wrap.value);
+      }
+    });
+
+    onBeforeUnmount(() => {
+      wrap.value.remove();
+    });
+
     return {
       state,
+      wrap,
       customClassNames,
       push,
       clear,
@@ -63,7 +85,7 @@ export default {
 </script>
 
 <template>
-  <div :class="[$style['toast-alert'], customClassNames.wrap]">
+  <div ref="wrap" :class="[$style['toast-alert'], customClassNames.wrap]">
     <div :class="[$style['toast-alert__inner'], customClassNames.inner]">
       <p
         v-for="item in state.messages"
