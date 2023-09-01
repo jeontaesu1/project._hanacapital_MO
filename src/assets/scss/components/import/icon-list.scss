@@ -20,6 +20,7 @@ div.icon-list__block {
 
   &__block {
     @include reset-button;
+    position: relative;
     color: inherit;
     text-decoration: none;
     display: flex;
@@ -51,6 +52,10 @@ div.icon-list__block {
     }
   }
 
+  &__icon-image {
+    width: 100%;
+  }
+
   &__content {
     display: block;
     flex: 1;
@@ -79,10 +84,70 @@ div.icon-list__block {
     @include font-size-default(13);
     font-weight: 400;
     color: $color-gray-70;
+
+    &--secondary {
+      font-weight: 300;
+      color: $color-gray-80;
+      margin-top: 4px;
+    }
+  }
+
+  &__sup {
+    display: block;
+    margin: 0;
+    @include font-size-default(12);
+    font-weight: 400;
+    color: $color-green-50;
+
+    &:first-child {
+      padding-top: 2px;
+    }
   }
 
   &__button {
     width: auto;
     margin-left: 16px;
+  }
+
+  &__tag-button {
+    @include reset-button;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 8px;
+    font-size: 0;
+    line-height: 0;
+    text-align: left;
+    position: relative;
+    z-index: 10;
+  }
+
+  &__view-button {
+    @include reset-button;
+    display: block;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+
+  &__block--product {
+    align-items: stretch;
+
+    .icon-list {
+      &__icon {
+        align-self: flex-start;
+      }
+
+      &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+      }
+    }
   }
 }
