@@ -1583,7 +1583,12 @@ const datas = () => [
         path: '/inventory-finance/loan-limit-inquiry-search',
         status: 'end',
         create: '2023.05.26',
-        log: [],
+        log: [
+          {
+            date: '2023.09.01',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '한도조회\nIF_M08_p001',
@@ -5259,7 +5264,12 @@ const datas = () => [
         path: '/my-info/join-membership',
         status: 'end',
         create: '2023.05.12',
-        log: [],
+        log: [
+          {
+            date: '2023.09.01',
+            text: '하단 버튼 플로팅 기능 적용',
+          },
+        ],
       },
       {
         depth2: '하나캐피탈 멤버십',

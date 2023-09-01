@@ -32,6 +32,7 @@ import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import SelectTable from '@/components/ui/table/SelectTable.vue';
 import SelectTableRow from '@/components/ui/table/SelectTableRow.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 export default {
   components: {
@@ -63,6 +64,7 @@ export default {
     BasicSelect,
     SelectTable,
     SelectTableRow,
+    BottomSticky,
   },
   setup() {
     const store = {
@@ -512,22 +514,26 @@ export default {
         <!-- // Case : 조회 후 노출 -->
       </UiTabPanel>
 
-      <!-- Case : 조회 후 노출 -->
       <template v-slot:foot>
-        <ButtonList
-          :classNames="{
-            wrap: 'row-margin-none',
-          }"
-        >
-          <ButtonListItem>
-            <BasicButton :line="true" theme="quaternary">이전</BasicButton>
-          </ButtonListItem>
-          <ButtonListItem>
-            <BasicButton>한도조회</BasicButton>
-          </ButtonListItem>
-        </ButtonList>
+        <!-- Case : 조회 후 노출 -->
+        <BottomSticky>
+          <div class="bottom-wrap">
+            <ButtonList
+              :classNames="{
+                wrap: 'row-margin-none',
+              }"
+            >
+              <ButtonListItem>
+                <BasicButton :line="true" theme="quaternary">이전</BasicButton>
+              </ButtonListItem>
+              <ButtonListItem>
+                <BasicButton>한도조회</BasicButton>
+              </ButtonListItem>
+            </ButtonList>
+          </div>
+        </BottomSticky>
+        <!-- // Case : 조회 후 노출 -->
       </template>
-      <!-- // Case : 조회 후 노출 -->
     </PageContents>
   </UiTab>
 </template>

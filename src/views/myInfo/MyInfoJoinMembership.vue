@@ -22,6 +22,7 @@ import UiAccordion from '@/components/ui/accordion/UiAccordion.vue';
 import UiAccordionItem from '@/components/ui/accordion/UiAccordionItem.vue';
 import UiAccordionLayer from '@/components/ui/accordion/UiAccordionLayer.vue';
 import UiAccordionOpener from '@/components/ui/accordion/UiAccordionOpener.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 import IconHyendaiRentalCare from '@/assets/images/etc-logo/hyendai-rental-care.svg?component';
 import IconBuilding from '@/assets/images/icon/building.svg?component';
@@ -47,6 +48,7 @@ export default {
     UiAccordionItem,
     UiAccordionLayer,
     UiAccordionOpener,
+    BottomSticky,
     IconHyendaiRentalCare,
     IconBuilding,
     IconCar,
@@ -1421,19 +1423,23 @@ export default {
       </div>
       <!-- //Case : 가입자일 경우 노출 -->
 
-      <!-- Case : 미가입자일 경우 노출 -->
       <template v-slot:foot>
-        <ButtonList
-          :classNames="{
-            wrap: 'row-margin-none',
-          }"
-        >
-          <ButtonListItem>
-            <BasicButton>가입하기</BasicButton>
-          </ButtonListItem>
-        </ButtonList>
+        <!-- Case : 미가입자일 경우 노출 -->
+        <BottomSticky>
+          <div class="bottom-wrap">
+            <ButtonList
+              :classNames="{
+                wrap: 'row-margin-none',
+              }"
+            >
+              <ButtonListItem>
+                <BasicButton>가입하기</BasicButton>
+              </ButtonListItem>
+            </ButtonList>
+          </div>
+        </BottomSticky>
+        <!-- //Case : 미가입자일 경우 노출 -->
       </template>
-      <!-- //Case : 미가입자일 경우 노출 -->
     </PageContents>
   </UiTab>
 </template>
