@@ -605,7 +605,23 @@ export default {
       </section>
 
       <section class="row-margin-container-medium">
-        <h3 class="text-title-2 row-margin-contents">리스 설정</h3>
+        <div class="flex-box row-margin-contents">
+          <div class="flex-box__cell flex-1">
+            <h3 class="text-title-2">리스 설정</h3>
+          </div>
+          <div class="flex-box__cell">
+            <BoxCheck
+              type="checkbox"
+              size="small"
+              id="leaseRentEstimationSystemAdminSettingDefaultCheck"
+            >
+              <template v-slot:left>
+                <BoxCheckObject />
+              </template>
+              <BoxCheckLabel>리스특판</BoxCheckLabel>
+            </BoxCheck>
+          </div>
+        </div>
 
         <div>
           <section class="row-margin-container-medium">
