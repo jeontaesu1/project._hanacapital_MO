@@ -140,6 +140,7 @@ export default {
                         </div>
                       </li>
                       <!-- // case : 마케팅 수신 동의일 경우 노출 -->
+
                       <li :class="$style['agree-list__item']">
                         <div :class="$style['agree-list__head']">
                           <CheckBox
@@ -156,10 +157,30 @@ export default {
                           </CheckBox>
                         </div>
                       </li>
+
+                      <!-- case : 멤버십 수신 동의일 경우 노출 -->
                       <li :class="$style['agree-list__item']">
                         <div :class="$style['agree-list__head']">
                           <CheckBox
                             id="layerMyInfoMarketingAgree001_003"
+                            :classNames="{
+                              wrap: $style['agree-list__checkbox'],
+                            }"
+                            theme="quinary"
+                          >
+                            <CheckBoxObject />
+                            <CheckBoxLabelText>
+                              금융상품 안내 및 이용권유를 위한 수집·이용
+                            </CheckBoxLabelText>
+                          </CheckBox>
+                        </div>
+                      </li>
+                      <!-- // case : 멤버십 수신 동의일 경우 노출 -->
+
+                      <li :class="$style['agree-list__item']">
+                        <div :class="$style['agree-list__head']">
+                          <CheckBox
+                            id="layerMyInfoMarketingAgree001_004"
                             :classNames="{
                               wrap: $style['agree-list__checkbox'],
                             }"
@@ -180,7 +201,7 @@ export default {
                           <li :class="$style['agree-list__item']">
                             <div :class="$style['agree-list__head']">
                               <CheckBox
-                                id="layerMyInfoMarketingAgree001_003_001"
+                                id="layerMyInfoMarketingAgree001_004_001"
                                 :classNames="{
                                   wrap: $style['agree-list__checkbox'],
                                 }"
@@ -194,7 +215,7 @@ export default {
                           <li :class="$style['agree-list__item']">
                             <div :class="$style['agree-list__head']">
                               <CheckBox
-                                id="layerMyInfoMarketingAgree001_003_002"
+                                id="layerMyInfoMarketingAgree001_004_002"
                                 :classNames="{
                                   wrap: $style['agree-list__checkbox'],
                                 }"
@@ -208,7 +229,7 @@ export default {
                           <li :class="$style['agree-list__item']">
                             <div :class="$style['agree-list__head']">
                               <CheckBox
-                                id="layerMyInfoMarketingAgree001_003_003"
+                                id="layerMyInfoMarketingAgree001_004_003"
                                 :classNames="{
                                   wrap: $style['agree-list__checkbox'],
                                 }"
@@ -224,7 +245,7 @@ export default {
                           <li :class="$style['agree-list__item']">
                             <div :class="$style['agree-list__head']">
                               <CheckBox
-                                id="layerMyInfoMarketingAgree001_003_004"
+                                id="layerMyInfoMarketingAgree001_004_004"
                                 :classNames="{
                                   wrap: $style['agree-list__checkbox'],
                                 }"
@@ -238,7 +259,7 @@ export default {
                           <li :class="$style['agree-list__item']">
                             <div :class="$style['agree-list__head']">
                               <CheckBox
-                                id="layerMyInfoMarketingAgree001_003_005"
+                                id="layerMyInfoMarketingAgree001_004_005"
                                 :classNames="{
                                   wrap: $style['agree-list__checkbox'],
                                 }"

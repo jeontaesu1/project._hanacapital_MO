@@ -165,6 +165,10 @@ export default {
                       value: '17',
                       text: '17',
                     },
+                    {
+                      value: '18',
+                      text: '18',
+                    },
                   ]"
                   buttonTitle="종료시간 선택하기"
                   layerTitle="종료시간을 선택해 주세요"

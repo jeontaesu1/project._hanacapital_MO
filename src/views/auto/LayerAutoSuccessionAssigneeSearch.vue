@@ -113,7 +113,7 @@ export default {
 
         <!-- Case : 결과 있을 경우 -->
         <ul class="reset-list">
-          <li v-for="i in 2" :key="i" class="row-margin-item-group">
+          <li class="row-margin-item-group">
             <BasicBox>
               <BasicBoxHead>
                 <BasicBoxHeadLeft>
