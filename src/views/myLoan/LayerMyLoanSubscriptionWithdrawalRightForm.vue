@@ -1,5 +1,5 @@
 <script>
-// My_M06_l002
+// My_M06_l003
 import { ref, reactive } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -19,7 +19,7 @@ import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
-import FormHelpText from '@/components/ui/form/FormHelpText.vue';
+import NoticeText from '@/components/ui/text/NoticeText.vue';
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 
 export default {
@@ -41,7 +41,7 @@ export default {
     FormListItem,
     FormInvalid,
     FormInvalidMessage,
-    FormHelpText,
+    NoticeText,
     BasicSelect,
   },
   setup() {
@@ -75,9 +75,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          청약철회 상환금액을
-          <br />
-          <strong>확인해 주세요</strong>
+          <strong>청약철회 상환금액과 결제방법을</strong><br />
+          확인해 주세요
         </PageMainText>
       </PageTextGroup>
 
@@ -104,11 +103,11 @@ export default {
               </template>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
-            <FormHelpText
-              >당일 기준 금액으로
-              <span class="color-green">17시 이내</span> 입금해 주셔야
-              합니다.</FormHelpText
-            >
+
+            <NoticeText :classNames="{ wrap: 'row-margin-item' }">
+              당일 기준 금액으로
+              <span class="color-green">17시 이내</span> 입금해 주셔야 합니다.
+            </NoticeText>
           </FormInvalid>
         </FormListItem>
 

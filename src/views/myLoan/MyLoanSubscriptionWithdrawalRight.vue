@@ -66,10 +66,11 @@ export default {
         청약철회권 신청<br />
         <strong>가능한 상품은 총 <span class="color-green">0</span>건</strong>
       </PageMainText>
-      <PageSubText
-        >금융소비자 보호를 위해 대출 계약 후, 14일 동안 불이익 없이 청약 탈퇴할
-        수 있습니다 (5영업일 이내 대출기록이 삭제됩니다)</PageSubText
-      >
+      <PageSubText>
+        금융소비자 보호를 위해 대출 계약 후,<br />
+        14일 동안 불이익 없이 청약 탈퇴할 수 있습니다.<br />
+        (5영업일 이내 대출기록이 삭제됩니다)
+      </PageSubText>
     </PageTextGroup>
 
     <div class="contents-wrap">

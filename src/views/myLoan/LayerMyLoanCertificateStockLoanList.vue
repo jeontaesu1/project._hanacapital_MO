@@ -146,7 +146,7 @@ export default {
                 </KeyValueText>
               </KeyValueItem>
               <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                <KeyValueTitle>결제예정금액</KeyValueTitle>
+                <KeyValueTitle>대출잔액</KeyValueTitle>
                 <KeyValueText>8,000,000 원</KeyValueText>
               </KeyValueItem>
             </KeyValue>

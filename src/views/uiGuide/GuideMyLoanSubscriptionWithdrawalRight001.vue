@@ -72,19 +72,19 @@ export default {
       <ButtonListItem>
         <BasicButton @click="layer002Open">
           청약철회신청 유의사항
-          <br />My_M06_b001
+          <br />My_M06_l002
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer003Open">
           정보입력
-          <br />My_M06_l002
+          <br />My_M06_l003
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer004Open">
           신청완료
-          <br />My_M06_l003
+          <br />My_M06_l004
         </BasicButton>
       </ButtonListItem>
     </ButtonList>

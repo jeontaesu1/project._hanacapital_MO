@@ -110,7 +110,7 @@ export default {
             최대한도
           </KeyValueTitle>
           <KeyValueText :classNames="{ text: 'text-body-3' }">
-            500만원
+            5,000,000 원
           </KeyValueText>
         </KeyValueItem>
         <KeyValueItem>
@@ -175,7 +175,7 @@ export default {
             >대출금액/기간</KeyValueTitle
           >
           <KeyValueText :classNames="{ text: 'text-body-3' }">
-            400만원/36개월
+            4,000,000 원 / 36개월
           </KeyValueText>
         </KeyValueItem>
         <KeyValueItem>
@@ -236,7 +236,7 @@ export default {
             대출금액/기간
           </KeyValueTitle>
           <KeyValueText :classNames="{ text: 'text-body-3' }">
-            400만원/36개월
+            4,000,000 원 / 36개월
           </KeyValueText>
         </KeyValueItem>
         <KeyValueItem>
@@ -1108,81 +1108,6 @@ export default {
     </BasicBox>
     <!-- //Case : 오토금융 - 그 외 -->
 
-    <!-- Case : 다이렉트 오토(리스) - 심사승인 -->
-    <BasicBox :className="$style['box']">
-      <BasicBoxHead>
-        <BasicBoxHeadLeft>
-          <div :class="$style['division-info']">
-            <ul :class="$style['division-info__list']">
-              <li :class="$style['division-info__item']">
-                <div class="color-black text-body-4 font-weight-light">
-                  2023.01.10
-                </div>
-              </li>
-              <li :class="$style['division-info__item']">
-                <div class="color-green text-body-4 font-weight-medium">
-                  오토금융
-                </div>
-              </li>
-            </ul>
-          </div>
-          <h3 class="text-body-1 font-weight-medium row-margin-small ellipsis">
-            오토리스
-          </h3>
-          <p class="text-body-4 color-gray row-margin-small">
-            현대 올 뉴 아반떼(CN7)/인스퍼레이션
-          </p>
-        </BasicBoxHeadLeft>
-        <BasicBoxHeadRight>
-          <RoundStatus :classNames="{ wrap: 'display-block' }" theme="undenary">
-            신규
-          </RoundStatus>
-        </BasicBoxHeadRight>
-      </BasicBoxHead>
-      <KeyValue margin="regular">
-        <KeyValueItem>
-          <KeyValueTitle :classNames="{ title: 'text-body-3' }"
-            >대출금액/기간</KeyValueTitle
-          >
-          <KeyValueText :classNames="{ text: 'text-body-3' }">
-            24,990,000원/36개월
-          </KeyValueText>
-        </KeyValueItem>
-        <KeyValueItem>
-          <KeyValueTitle :classNames="{ title: 'text-body-3' }"
-            >월납부금액</KeyValueTitle
-          >
-          <KeyValueText :classNames="{ text: 'text-body-3' }">
-            300,000원
-          </KeyValueText>
-        </KeyValueItem>
-      </KeyValue>
-
-      <div
-        :class="[
-          $style['inline-alert'],
-          $style['inline-alert--complete'],
-          'row-margin-contents-small',
-        ]"
-      >
-        <p :class="$style['inline-alert__text']">심사 승인 되었어요.</p>
-      </div>
-
-      <ButtonList :classNames="{ wrap: 'row-margin-contents-small' }">
-        <ButtonListItem>
-          <BasicButton size="small" theme="tertiary" :minSide="true"
-            >견적서 보기</BasicButton
-          >
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton size="small" theme="tertiary" :minSide="true"
-            >심사결과 보기</BasicButton
-          >
-        </ButtonListItem>
-      </ButtonList>
-    </BasicBox>
-    <!-- //Case : 다이렉트 오토(리스) - 심사승인 -->
-
     <!-- Case : 다이렉트 오토(리스) - 품의완료 -->
     <BasicBox :className="$style['box']">
       <BasicBoxHead>
@@ -1487,6 +1412,488 @@ export default {
       </ButtonList>
     </BasicBox>
     <!-- //Case : 다이렉트 오토(리스) - 대금지급 -->
+
+    <!-- Case : 다이렉트 오토(렌트) - 심사승인 -->
+    <BasicBox :className="$style['box']">
+      <BasicBoxHead>
+        <BasicBoxHeadLeft>
+          <div :class="$style['division-info']">
+            <ul :class="$style['division-info__list']">
+              <li :class="$style['division-info__item']">
+                <div class="color-black text-body-4 font-weight-light">
+                  2023.01.10
+                </div>
+              </li>
+              <li :class="$style['division-info__item']">
+                <div class="color-green text-body-4 font-weight-medium">
+                  오토금융
+                </div>
+              </li>
+            </ul>
+          </div>
+          <h3 class="text-body-1 font-weight-medium row-margin-small ellipsis">
+            렌터카
+          </h3>
+          <p class="text-body-4 color-gray row-margin-small">
+            현대 올 뉴 아반떼(CN7)/인스퍼레이션
+          </p>
+        </BasicBoxHeadLeft>
+        <BasicBoxHeadRight>
+          <RoundStatus :classNames="{ wrap: 'display-block' }" theme="undenary">
+            신규
+          </RoundStatus>
+        </BasicBoxHeadRight>
+      </BasicBoxHead>
+      <KeyValue margin="regular">
+        <KeyValueItem>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }">
+            대출금액/기간
+          </KeyValueTitle>
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            24,990,000원/36개월
+          </KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }">
+            월납부금액
+          </KeyValueTitle>
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            300,000원
+          </KeyValueText>
+        </KeyValueItem>
+      </KeyValue>
+
+      <div
+        :class="[
+          $style['inline-alert'],
+          $style['inline-alert--complete'],
+          'row-margin-contents-small',
+        ]"
+      >
+        <p :class="$style['inline-alert__text']">심사 승인 되었어요.</p>
+      </div>
+
+      <ButtonList :classNames="{ wrap: 'row-margin-contents-small' }">
+        <ButtonListItem>
+          <BasicButton size="small" :minSide="true">견적서 보기</BasicButton>
+        </ButtonListItem>
+        <ButtonListItem>
+          <BasicButton size="small" :minSide="true">견적 이어하기</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
+    </BasicBox>
+    <!-- // Case : 다이렉트 오토(렌트) - 심사승인 -->
+
+    <!-- Case : 다이렉트 오토(렌트) - 발주신청완료 -->
+    <BasicBox :className="$style['box']">
+      <BasicBoxHead>
+        <BasicBoxHeadLeft>
+          <div :class="$style['division-info']">
+            <ul :class="$style['division-info__list']">
+              <li :class="$style['division-info__item']">
+                <div class="color-black text-body-4 font-weight-light">
+                  2023.01.10
+                </div>
+              </li>
+              <li :class="$style['division-info__item']">
+                <div class="color-green text-body-4 font-weight-medium">
+                  오토금융
+                </div>
+              </li>
+            </ul>
+          </div>
+          <h3 class="text-body-1 font-weight-medium row-margin-small ellipsis">
+            렌터카
+          </h3>
+          <p class="text-body-4 color-gray row-margin-small">
+            현대 올 뉴 아반떼(CN7)/인스퍼레이션
+          </p>
+        </BasicBoxHeadLeft>
+        <BasicBoxHeadRight>
+          <RoundStatus :classNames="{ wrap: 'display-block' }" theme="undenary">
+            신규
+          </RoundStatus>
+        </BasicBoxHeadRight>
+      </BasicBoxHead>
+      <KeyValue margin="regular">
+        <KeyValueItem>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }">
+            대출금액/기간
+          </KeyValueTitle>
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            24,990,000원/36개월
+          </KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }">
+            월납부금액
+          </KeyValueTitle>
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            300,000원
+          </KeyValueText>
+        </KeyValueItem>
+      </KeyValue>
+
+      <div
+        :class="[
+          $style['inline-alert'],
+          $style['inline-alert--complete'],
+          'row-margin-contents-small',
+        ]"
+      >
+        <p :class="$style['inline-alert__text']">발주신청이 완료 되었어요.</p>
+      </div>
+
+      <ButtonList :classNames="{ wrap: 'row-margin-contents-small' }">
+        <ButtonListItem>
+          <BasicButton size="small" :minSide="true">견적서 보기</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
+    </BasicBox>
+    <!-- // Case : 다이렉트 오토(렌트) - 발주신청완료 -->
+
+    <!-- Case : 다이렉트 오토(렌트) - 배정완료 -->
+    <BasicBox :className="$style['box']">
+      <BasicBoxHead>
+        <BasicBoxHeadLeft>
+          <div :class="$style['division-info']">
+            <ul :class="$style['division-info__list']">
+              <li :class="$style['division-info__item']">
+                <div class="color-black text-body-4 font-weight-light">
+                  2023.01.10
+                </div>
+              </li>
+              <li :class="$style['division-info__item']">
+                <div class="color-green text-body-4 font-weight-medium">
+                  오토금융
+                </div>
+              </li>
+            </ul>
+          </div>
+          <h3 class="text-body-1 font-weight-medium row-margin-small ellipsis">
+            렌터카
+          </h3>
+          <p class="text-body-4 color-gray row-margin-small">
+            현대 올 뉴 아반떼(CN7)/인스퍼레이션
+          </p>
+        </BasicBoxHeadLeft>
+        <BasicBoxHeadRight>
+          <RoundStatus :classNames="{ wrap: 'display-block' }" theme="undenary">
+            신규
+          </RoundStatus>
+        </BasicBoxHeadRight>
+      </BasicBoxHead>
+      <KeyValue margin="regular">
+        <KeyValueItem>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }">
+            대출금액/기간
+          </KeyValueTitle>
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            24,990,000원/36개월
+          </KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }">
+            월납부금액
+          </KeyValueTitle>
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            300,000원
+          </KeyValueText>
+        </KeyValueItem>
+      </KeyValue>
+
+      <div
+        :class="[
+          $style['inline-alert'],
+          $style['inline-alert--complete'],
+          'row-margin-contents-small',
+        ]"
+      >
+        <p :class="$style['inline-alert__text']">
+          약정을 진행하실 수 있습니다.
+        </p>
+      </div>
+
+      <ButtonList :classNames="{ wrap: 'row-margin-contents-small' }">
+        <ButtonListItem>
+          <BasicButton size="small" :minSide="true">약정하기</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
+    </BasicBox>
+
+    <BasicBox :className="$style['box']">
+      <BasicBoxHead>
+        <BasicBoxHeadLeft>
+          <div :class="$style['division-info']">
+            <ul :class="$style['division-info__list']">
+              <li :class="$style['division-info__item']">
+                <div class="color-black text-body-4 font-weight-light">
+                  2023.01.10
+                </div>
+              </li>
+              <li :class="$style['division-info__item']">
+                <div class="color-green text-body-4 font-weight-medium">
+                  오토금융
+                </div>
+              </li>
+            </ul>
+          </div>
+          <h3 class="text-body-1 font-weight-medium row-margin-small ellipsis">
+            렌터카
+          </h3>
+          <p class="text-body-4 color-gray row-margin-small">
+            현대 올 뉴 아반떼(CN7)/인스퍼레이션
+          </p>
+        </BasicBoxHeadLeft>
+        <BasicBoxHeadRight>
+          <RoundStatus :classNames="{ wrap: 'display-block' }" theme="undenary">
+            신규
+          </RoundStatus>
+        </BasicBoxHeadRight>
+      </BasicBoxHead>
+      <KeyValue margin="regular">
+        <KeyValueItem>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }">
+            대출금액/기간
+          </KeyValueTitle>
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            24,990,000원/36개월
+          </KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }">
+            월납부금액
+          </KeyValueTitle>
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            300,000원
+          </KeyValueText>
+        </KeyValueItem>
+      </KeyValue>
+
+      <div
+        :class="[
+          $style['inline-alert'],
+          $style['inline-alert--complete'],
+          'row-margin-contents-small',
+        ]"
+      >
+        <p :class="$style['inline-alert__text']">약정중 진행 중입니다.</p>
+      </div>
+
+      <ButtonList :classNames="{ wrap: 'row-margin-contents-small' }">
+        <ButtonListItem>
+          <BasicButton size="small" :minSide="true">약정하기</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
+    </BasicBox>
+    <!-- // Case : 다이렉트 오토(렌트) - 배정완료 -->
+
+    <!-- Case : 다이렉트 오토(렌트) - 약정완료 -->
+    <BasicBox :className="$style['box']">
+      <BasicBoxHead>
+        <BasicBoxHeadLeft>
+          <div :class="$style['division-info']">
+            <ul :class="$style['division-info__list']">
+              <li :class="$style['division-info__item']">
+                <div class="color-black text-body-4 font-weight-light">
+                  2023.01.10
+                </div>
+              </li>
+              <li :class="$style['division-info__item']">
+                <div class="color-green text-body-4 font-weight-medium">
+                  오토금융
+                </div>
+              </li>
+            </ul>
+          </div>
+          <h3 class="text-body-1 font-weight-medium row-margin-small ellipsis">
+            렌터카
+          </h3>
+          <p class="text-body-4 color-gray row-margin-small">
+            현대 올 뉴 아반떼(CN7)/인스퍼레이션
+          </p>
+        </BasicBoxHeadLeft>
+        <BasicBoxHeadRight>
+          <RoundStatus :classNames="{ wrap: 'display-block' }" theme="undenary">
+            신규
+          </RoundStatus>
+        </BasicBoxHeadRight>
+      </BasicBoxHead>
+      <KeyValue margin="regular">
+        <KeyValueItem>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }">
+            대출금액/기간
+          </KeyValueTitle>
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            24,990,000원/36개월
+          </KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }">
+            월납부금액
+          </KeyValueTitle>
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            300,000원
+          </KeyValueText>
+        </KeyValueItem>
+      </KeyValue>
+
+      <div
+        :class="[
+          $style['inline-alert'],
+          $style['inline-alert--complete'],
+          'row-margin-contents-small',
+        ]"
+      >
+        <p :class="$style['inline-alert__text']">약정이 완료 되었어요.</p>
+      </div>
+
+      <ButtonList :classNames="{ wrap: 'row-margin-contents-small' }">
+        <ButtonListItem>
+          <BasicButton size="small" :minSide="true">약정내용 확인</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
+    </BasicBox>
+    <!-- // Case : 다이렉트 오토(렌트) - 약정완료 -->
+
+    <!-- Case : 다이렉트 오토(렌트) - 대금지급 -->
+    <BasicBox :className="$style['box']">
+      <BasicBoxHead>
+        <BasicBoxHeadLeft>
+          <div :class="$style['division-info']">
+            <ul :class="$style['division-info__list']">
+              <li :class="$style['division-info__item']">
+                <div class="color-black text-body-4 font-weight-light">
+                  2023.01.10
+                </div>
+              </li>
+              <li :class="$style['division-info__item']">
+                <div class="color-green text-body-4 font-weight-medium">
+                  오토금융
+                </div>
+              </li>
+            </ul>
+          </div>
+          <h3 class="text-body-1 font-weight-medium row-margin-small ellipsis">
+            렌터카
+          </h3>
+          <p class="text-body-4 color-gray row-margin-small">
+            현대 올 뉴 아반떼(CN7)/인스퍼레이션
+          </p>
+        </BasicBoxHeadLeft>
+        <BasicBoxHeadRight>
+          <RoundStatus :classNames="{ wrap: 'display-block' }" theme="undenary">
+            신규
+          </RoundStatus>
+        </BasicBoxHeadRight>
+      </BasicBoxHead>
+      <KeyValue margin="regular">
+        <KeyValueItem>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }">
+            대출금액/기간
+          </KeyValueTitle>
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            24,990,000원/36개월
+          </KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }">
+            월납부금액
+          </KeyValueTitle>
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            300,000원
+          </KeyValueText>
+        </KeyValueItem>
+      </KeyValue>
+
+      <div
+        :class="[
+          $style['inline-alert'],
+          $style['inline-alert--complete'],
+          'row-margin-contents-small',
+        ]"
+      >
+        <p :class="$style['inline-alert__text']">송금이 완료 되었어요.</p>
+      </div>
+
+      <ButtonList :classNames="{ wrap: 'row-margin-contents-small' }">
+        <ButtonListItem>
+          <BasicButton size="small" :minSide="true">약정내용 확인</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
+    </BasicBox>
+    <!-- // Case : 다이렉트 오토(렌트) - 대금지급 -->
+
+    <!-- Case : 다이렉트 오토(렌트) - 차량입고 -->
+    <BasicBox :className="$style['box']">
+      <BasicBoxHead>
+        <BasicBoxHeadLeft>
+          <div :class="$style['division-info']">
+            <ul :class="$style['division-info__list']">
+              <li :class="$style['division-info__item']">
+                <div class="color-black text-body-4 font-weight-light">
+                  2023.01.10
+                </div>
+              </li>
+              <li :class="$style['division-info__item']">
+                <div class="color-green text-body-4 font-weight-medium">
+                  오토금융
+                </div>
+              </li>
+            </ul>
+          </div>
+          <h3 class="text-body-1 font-weight-medium row-margin-small ellipsis">
+            렌터카
+          </h3>
+          <p class="text-body-4 color-gray row-margin-small">
+            현대 올 뉴 아반떼(CN7)/인스퍼레이션
+          </p>
+        </BasicBoxHeadLeft>
+        <BasicBoxHeadRight>
+          <RoundStatus :classNames="{ wrap: 'display-block' }" theme="undenary">
+            신규
+          </RoundStatus>
+        </BasicBoxHeadRight>
+      </BasicBoxHead>
+      <KeyValue margin="regular">
+        <KeyValueItem>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }">
+            대출금액/기간
+          </KeyValueTitle>
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            24,990,000원/36개월
+          </KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle :classNames="{ title: 'text-body-3' }">
+            월납부금액
+          </KeyValueTitle>
+          <KeyValueText :classNames="{ text: 'text-body-3' }">
+            300,000원
+          </KeyValueText>
+        </KeyValueItem>
+      </KeyValue>
+
+      <div
+        :class="[
+          $style['inline-alert'],
+          $style['inline-alert--complete'],
+          'row-margin-contents-small',
+        ]"
+      >
+        <p :class="$style['inline-alert__text']">
+          차량이 입고 되었어요.<br />
+          탁송정보를 입력해 주세요.
+        </p>
+      </div>
+
+      <ButtonList :classNames="{ wrap: 'row-margin-contents-small' }">
+        <ButtonListItem>
+          <BasicButton size="small" :minSide="true">탁송정보 입력</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
+    </BasicBox>
+    <!-- // Case : 다이렉트 오토(렌트) - 차량입고 -->
 
     <!-- Case : 결과 없을 때 -->
     <div :class="$style['empty']">
