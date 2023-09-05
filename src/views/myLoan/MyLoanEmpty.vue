@@ -12,6 +12,7 @@ import BasicHr from '@/components/ui/common/BasicHr.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 import IconPig from '@/assets/images/icon/pig.svg?component';
 import IconBuilding from '@/assets/images/icon/building.svg?component';
@@ -29,6 +30,8 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
+    BottomSticky,
+
     IconPig,
     IconBuilding,
     IconCar,
@@ -127,19 +130,23 @@ export default {
       </ul>
     </div>
 
-    <!-- Case : 종료계약만 보유 -->
     <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton>종료된 계약 확인하기</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+      <!-- Case : 종료계약만 보유 -->
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton>종료된 계약 확인하기</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
+      <!-- // Case : 종료계약만 보유 -->
     </template>
-    <!-- // Case : 종료계약만 보유 -->
   </PageContents>
 </template>
 

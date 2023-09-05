@@ -37,6 +37,7 @@ import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
 import SelectTable from '@/components/ui/table/SelectTable.vue';
 import SelectTableRow from '@/components/ui/table/SelectTableRow.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 export default {
   components: {
@@ -73,6 +74,7 @@ export default {
     UnitText,
     SelectTable,
     SelectTableRow,
+    BottomSticky,
   },
   setup() {
     const store = {
@@ -546,21 +548,25 @@ export default {
     </div>
     <!-- // Case : 조회 후 노출 -->
 
-    <!-- Case : 조회 후 노출 -->
     <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton :line="true" theme="quaternary">취소</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton>상담등록</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+      <!-- Case : 조회 후 노출 -->
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton :line="true" theme="quaternary">취소</BasicButton>
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton>상담등록</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
+      <!-- // Case : 조회 후 노출 -->
     </template>
-    <!-- // Case : 조회 후 노출 -->
   </PageContents>
 </template>
