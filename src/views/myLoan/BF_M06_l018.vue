@@ -280,12 +280,6 @@ export default {
             </KeyValueItem>
           </KeyValue>
 
-          <BasicProgress
-            :total="4"
-            :current="1"
-            :classNames="{ wrap: 'row-margin-contents-small' }"
-          />
-
           <div
             :class="[
               $style['inline-alert'],
@@ -296,6 +290,14 @@ export default {
             <p :class="$style['inline-alert__text']">
               약정중입니다. (적합성·적정성 확인서)
             </p>
+            <div :class="$style['inline-alert__progress']">
+              <BasicProgress
+                :total="4"
+                :current="1"
+                color="navy"
+                bgColor="white"
+              />
+            </div>
           </div>
 
           <ButtonList :classNames="{ wrap: 'row-margin-contents-small' }">
@@ -432,12 +434,6 @@ export default {
             </KeyValueItem>
           </KeyValue>
 
-          <BasicProgress
-            :total="4"
-            :current="1"
-            :classNames="{ wrap: 'row-margin-contents-small' }"
-          />
-
           <div
             :class="[
               $style['inline-alert'],
@@ -448,6 +444,14 @@ export default {
             <p :class="$style['inline-alert__text']">
               약정중입니다. (적합성·적정성 확인서)
             </p>
+            <div :class="$style['inline-alert__progress']">
+              <BasicProgress
+                :total="4"
+                :current="1"
+                color="navy"
+                bgColor="white"
+              />
+            </div>
           </div>
 
           <ButtonList :classNames="{ wrap: 'row-margin-contents-small' }">
@@ -661,12 +665,6 @@ export default {
             </KeyValueItem>
           </KeyValue>
 
-          <BasicProgress
-            :total="4"
-            :current="1"
-            :classNames="{ wrap: 'row-margin-contents-small' }"
-          />
-
           <div
             :class="[
               $style['inline-alert'],
@@ -677,6 +675,14 @@ export default {
             <p :class="$style['inline-alert__text']">
               약정중입니다. (적합성·적정성 확인서)
             </p>
+            <div :class="$style['inline-alert__progress']">
+              <BasicProgress
+                :total="4"
+                :current="1"
+                color="navy"
+                bgColor="white"
+              />
+            </div>
           </div>
 
           <ButtonList :classNames="{ wrap: 'row-margin-contents-small' }">
@@ -1439,12 +1445,6 @@ export default {
             </KeyValueItem>
           </KeyValue>
 
-          <BasicProgress
-            :total="4"
-            :current="1"
-            :classNames="{ wrap: 'row-margin-contents-small' }"
-          />
-
           <div
             :class="[
               $style['inline-alert'],
@@ -1455,6 +1455,14 @@ export default {
             <p :class="$style['inline-alert__text']">
               약정중입니다. (적합성·적정성 확인서)
             </p>
+            <div :class="$style['inline-alert__progress']">
+              <BasicProgress
+                :total="4"
+                :current="1"
+                color="navy"
+                bgColor="white"
+              />
+            </div>
           </div>
 
           <ButtonList :classNames="{ wrap: 'row-margin-contents-small' }">
