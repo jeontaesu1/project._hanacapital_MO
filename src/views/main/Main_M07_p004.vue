@@ -67,25 +67,25 @@ export default {
         <li :class="$style['icon-list__item']">
           <button
             type="button"
-            :class="[$style['icon-list__block'], 'align-items-start']"
+            :class="[
+              $style['icon-list__block'],
+              $style['icon-list__block--product'],
+            ]"
           >
             <span :class="$style['icon-list__icon']"
               ><IconHanaInsurance
             /></span>
             <span :class="$style['icon-list__content']">
-              <span class="display-block text-body-5 color-green"
+              <span :class="$style['icon-list__sup']"
                 >가입시 최대 3만원 네이버페이 지급</span
               >
               <span :class="$style['icon-list__title']"
-                >하나에코플러스<br />
-                다이렉트자동차보험</span
+                >하나에코플러스<br />다이렉트자동차보험</span
               >
               <span
                 :class="[
                   $style['icon-list__text'],
-                  'row-margin-small',
-                  'color-gray-tertiary',
-                  'font-weight-light',
+                  $style['icon-list__text--secondary'],
                 ]"
               >
                 준법감시인확인필 제202305-029<br />
@@ -94,14 +94,18 @@ export default {
             </span>
           </button>
         </li>
+
         <li :class="$style['icon-list__item']">
           <button
             type="button"
-            :class="[$style['icon-list__block'], 'align-items-start']"
+            :class="[
+              $style['icon-list__block'],
+              $style['icon-list__block--product'],
+            ]"
           >
             <span :class="$style['icon-list__icon']"><IconDbInsurance /></span>
             <span :class="$style['icon-list__content']">
-              <span class="display-block text-body-5 color-green"
+              <span :class="$style['icon-list__sup']"
                 >가입 시 최대 3만원 카드결제혜택(주유권/캐시백)</span
               >
               <span :class="$style['icon-list__title']"
@@ -110,9 +114,7 @@ export default {
               <span
                 :class="[
                   $style['icon-list__text'],
-                  'row-margin-small',
-                  'color-gray-tertiary',
-                  'font-weight-light',
+                  $style['icon-list__text--secondary'],
                 ]"
               >
                 준법감시인확인필 제2023-3130호<br />
@@ -124,13 +126,16 @@ export default {
         <li :class="$style['icon-list__item']">
           <button
             type="button"
-            :class="[$style['icon-list__block'], 'align-items-start']"
+            :class="[
+              $style['icon-list__block'],
+              $style['icon-list__block--product'],
+            ]"
           >
             <span :class="$style['icon-list__icon']"
               ><IconHyundaiInsurance
             /></span>
             <span :class="$style['icon-list__content']">
-              <span class="display-block text-body-5 color-green"
+              <span :class="$style['icon-list__sup']"
                 >가입 시 최대 3만원 카드혜택</span
               >
               <span :class="$style['icon-list__title']"
@@ -139,9 +144,7 @@ export default {
               <span
                 :class="[
                   $style['icon-list__text'],
-                  'row-margin-small',
-                  'color-gray-tertiary',
-                  'font-weight-light',
+                  $style['icon-list__text--secondary'],
                 ]"
               >
                 준법감시필 제20231856호<br />
@@ -153,11 +156,14 @@ export default {
         <li :class="$style['icon-list__item']">
           <button
             type="button"
-            :class="[$style['icon-list__block'], 'align-items-start']"
+            :class="[
+              $style['icon-list__block'],
+              $style['icon-list__block--product'],
+            ]"
           >
             <span :class="$style['icon-list__icon']"><IconKbInsurance /></span>
             <span :class="$style['icon-list__content']">
-              <span class="display-block text-body-5 color-green"
+              <span :class="$style['icon-list__sup']"
                 >가입 시 최대 3만원 카드결제혜택</span
               >
               <span :class="$style['icon-list__title']"
@@ -166,9 +172,7 @@ export default {
               <span
                 :class="[
                   $style['icon-list__text'],
-                  'row-margin-small',
-                  'color-gray-tertiary',
-                  'font-weight-light',
+                  $style['icon-list__text--secondary'],
                 ]"
               >
                 준법감시인 심의필 제2023-616호<br />
@@ -180,7 +184,10 @@ export default {
         <li :class="$style['icon-list__item']">
           <button
             type="button"
-            :class="[$style['icon-list__block'], 'align-items-start']"
+            :class="[
+              $style['icon-list__block'],
+              $style['icon-list__block--product'],
+            ]"
           >
             <span :class="$style['icon-list__icon']"><IconAxaInsurance /></span>
             <span :class="$style['icon-list__content']">
@@ -190,9 +197,7 @@ export default {
               <span
                 :class="[
                   $style['icon-list__text'],
-                  'row-margin-small',
-                  'color-gray-tertiary',
-                  'font-weight-light',
+                  $style['icon-list__text--secondary'],
                 ]"
               >
                 검-230414-채널마케팅팀-236<br />
@@ -204,13 +209,16 @@ export default {
         <li :class="$style['icon-list__item']">
           <button
             type="button"
-            :class="[$style['icon-list__block'], 'align-items-start']"
+            :class="[
+              $style['icon-list__block'],
+              $style['icon-list__block--product'],
+            ]"
           >
             <span :class="$style['icon-list__icon']"
               ><IconCarrotInsurance
             /></span>
             <span :class="$style['icon-list__content']">
-              <span class="display-block text-body-5 color-green"
+              <span :class="$style['icon-list__sup']"
                 >신규가입 최대3만원 카드혜택</span
               >
               <span :class="$style['icon-list__title']"
@@ -219,9 +227,7 @@ export default {
               <span
                 :class="[
                   $style['icon-list__text'],
-                  'row-margin-small',
-                  'color-gray-tertiary',
-                  'font-weight-light',
+                  $style['icon-list__text--secondary'],
                 ]"
               >
                 캐롯-제2023-203093-자체<br />
@@ -233,7 +239,10 @@ export default {
         <li :class="$style['icon-list__item']">
           <button
             type="button"
-            :class="[$style['icon-list__block'], 'align-items-start']"
+            :class="[
+              $style['icon-list__block'],
+              $style['icon-list__block--product'],
+            ]"
           >
             <span :class="$style['icon-list__icon']"
               ><IconMeritzInsurance
@@ -245,9 +254,7 @@ export default {
               <span
                 :class="[
                   $style['icon-list__text'],
-                  'row-margin-small',
-                  'color-gray-tertiary',
-                  'font-weight-light',
+                  $style['icon-list__text--secondary'],
                 ]"
               >
                 준법감시인 심의필 제2023-광고-717호<br />
@@ -259,7 +266,10 @@ export default {
         <li :class="$style['icon-list__item']">
           <button
             type="button"
-            :class="[$style['icon-list__block'], 'align-items-start']"
+            :class="[
+              $style['icon-list__block'],
+              $style['icon-list__block--product'],
+            ]"
           >
             <span :class="$style['icon-list__icon']"><IconHkInsurance /></span>
             <span :class="$style['icon-list__content']">
@@ -269,9 +279,7 @@ export default {
               <span
                 :class="[
                   $style['icon-list__text'],
-                  'row-margin-small',
-                  'color-gray-tertiary',
-                  'font-weight-light',
+                  $style['icon-list__text--secondary'],
                 ]"
               >
                 준법감시인 심의필T230519-05-21<br />
