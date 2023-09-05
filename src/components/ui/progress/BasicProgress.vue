@@ -30,6 +30,10 @@ export default {
       Type: String,
       default: null,
     },
+    bgColor: {
+      Type: String,
+      default: null,
+    },
   },
   setup(props) {
     const customClassNames = computed(() => {
@@ -62,6 +66,7 @@ export default {
       $style['progress'],
       {
         [$style[`progress--color-${color}`]]: color,
+        [$style[`progress--bgcolor-${bgColor}`]]: bgColor,
       },
       customClassNames.wrap,
     ]"

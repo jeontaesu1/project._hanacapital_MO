@@ -7765,6 +7765,11 @@ export default {
         <h3 class="test-section-sub-title">Blue</h3>
         <BasicProgress :total="4" :current="1" color="blue" />
       </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Navy</h3>
+        <BasicProgress :total="4" :current="1" color="navy" bgColor="white" />
+      </div>
     </section>
 
     <section class="test-section">

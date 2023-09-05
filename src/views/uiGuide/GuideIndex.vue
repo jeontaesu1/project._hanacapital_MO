@@ -4478,7 +4478,12 @@ const datas = () => [
         path: '/my-loan/progress',
         status: 'end',
         create: '2023.04.14',
-        log: [],
+        log: [
+          {
+            date: '2023.09.05',
+            text: '프로그레스바 위치 변경',
+          },
+        ],
       },
       {
         depth2: '진행상태조회\nMy_M03_p001',

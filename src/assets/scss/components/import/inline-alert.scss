@@ -22,6 +22,14 @@
     color: $color-green-50;
   }
 
+  &__progress {
+    margin-top: 8px;
+
+    &:last-child {
+      padding-bottom: 4px;
+    }
+  }
+
   &--error {
     background-color: rgba($color-semantic-essential, 0.06);
 

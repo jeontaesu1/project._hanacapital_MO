@@ -18,10 +18,27 @@
     }
   }
 
-  &--color-blue {
-    .progress__bar {
-      &-active {
-        background-color: $color-blue-50;
+  &--color {
+    &-blue {
+      .progress__bar {
+        &-active {
+          background-color: $color-blue-50;
+        }
+      }
+    }
+    &-navy {
+      .progress__bar {
+        &-active {
+          background-color: $color-navy-50;
+        }
+      }
+    }
+  }
+
+  &--bgcolor {
+    &-white {
+      .progress__bar {
+        background-color: $color-white;
       }
     }
   }
