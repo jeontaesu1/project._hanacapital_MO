@@ -126,7 +126,7 @@ export default {
         <li :class="$style['status-inquiry__item']">
           <button type="button" :class="$style['status-inquiry__category']">
             <span :class="$style['status-inquiry__number']">2</span>
-            <span :class="$style['status-inquiry__text']">계약</span>
+            <span :class="$style['status-inquiry__text']">품의(계약)</span>
           </button>
         </li>
         <li :class="$style['status-inquiry__item']">
@@ -138,7 +138,7 @@ export default {
         <li :class="$style['status-inquiry__item']">
           <button type="button" :class="$style['status-inquiry__category']">
             <span :class="$style['status-inquiry__number']">1</span>
-            <span :class="$style['status-inquiry__text']">송금</span>
+            <span :class="$style['status-inquiry__text']">정산</span>
           </button>
         </li>
       </ul>
@@ -173,7 +173,7 @@ export default {
                   name="lMBlogStatusInquiryDateCheck"
                   id="lMBlogStatusInquiryDateCheck003"
                 >
-                  <BoxCheckLabel>직접입력</BoxCheckLabel>
+                  <BoxCheckLabel>직접설정</BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
             </BoxCheckList>
@@ -242,31 +242,7 @@ export default {
             <div class="flex-box__cell flex-1">
               <h3 class="text-body-1 font-weight-medium">김하나</h3>
             </div>
-            <div class="flex-box__cell flex-box__cell--medium">
-              <div class="flex-box">
-                <div class="flex-box__cell flex-box__cell--small">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
-                </div>
-              </div>
-            </div>
           </div>
-
-          <UiAccordionLayer>
-            <div :class="$style['contents']">
-              <KeyValue margin="regular">
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>신용동의</KeyValueTitle>
-                  <KeyValueText>2023.32.32</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
-            </div>
-          </UiAccordionLayer>
         </BasicBox>
       </UiAccordionItem>
       <!-- // Case : 신용동의 -->
@@ -286,13 +262,24 @@ export default {
           </div>
 
           <div class="flex-box">
-            <div class="flex-box__cell flex-1">
+            <div class="flex-box__cell">
               <h3 class="text-body-1 font-weight-medium">이하나</h3>
+            </div>
+            <div class="flex-box__cell flex-box__cell--mini">
+              <h3 class="text-body-1 font-weight-medium">(행복아파트론)</h3>
+            </div>
+          </div>
+
+          <div class="flex-box row-margin-item row-margin-bottom-none">
+            <div class="flex-box__cell flex-1">
+              <p class="text-body-3 color-gray-secondary font-weight-regular">
+                신청금액
+              </p>
             </div>
             <div class="flex-box__cell flex-box__cell--medium">
               <div class="flex-box">
                 <div class="flex-box__cell">
-                  <UnitText size="regular" rightUnit="만원">3,000</UnitText>
+                  <UnitText size="regular" rightUnit="원">3,000,000</UnitText>
                 </div>
                 <div class="flex-box__cell flex-box__cell--small">
                   <UiAccordionOpener
@@ -311,16 +298,7 @@ export default {
                     item: 'text-body-3',
                   }"
                 >
-                  <KeyValueTitle>상품명</KeyValueTitle>
-                  <KeyValueText>행복아파트론</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>신용동의</KeyValueTitle>
+                  <KeyValueTitle>상담일자</KeyValueTitle>
                   <KeyValueText>2023.01.16</KeyValueText>
                 </KeyValueItem>
 
@@ -331,15 +309,6 @@ export default {
                 >
                   <KeyValueTitle>상담번호</KeyValueTitle>
                   <KeyValueText>C42302010014400</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>심사</KeyValueTitle>
-                  <KeyValueText>승인</KeyValueText>
                 </KeyValueItem>
 
                 <KeyValueItem
@@ -386,19 +355,30 @@ export default {
                 2023.01.10
               </li>
               <li :class="[$style['division-info__item'], $style['category']]">
-                계약
+                품의(계약)
               </li>
             </ul>
           </div>
 
           <div class="flex-box">
-            <div class="flex-box__cell flex-1">
+            <div class="flex-box__cell">
               <h3 class="text-body-1 font-weight-medium">박하나</h3>
+            </div>
+            <div class="flex-box__cell flex-box__cell--mini">
+              <h3 class="text-body-1 font-weight-medium">(행복아파트론)</h3>
+            </div>
+          </div>
+
+          <div class="flex-box row-margin-item row-margin-bottom-none">
+            <div class="flex-box__cell flex-1">
+              <p class="text-body-3 color-gray-secondary font-weight-regular">
+                신청금액
+              </p>
             </div>
             <div class="flex-box__cell flex-box__cell--medium">
               <div class="flex-box">
                 <div class="flex-box__cell">
-                  <UnitText size="regular" rightUnit="만원">3,000</UnitText>
+                  <UnitText size="regular" rightUnit="원">3,000,000</UnitText>
                 </div>
                 <div class="flex-box__cell flex-box__cell--small">
                   <UiAccordionOpener
@@ -417,16 +397,7 @@ export default {
                     item: 'text-body-3',
                   }"
                 >
-                  <KeyValueTitle>상품명</KeyValueTitle>
-                  <KeyValueText>행복아파트론</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>신용동의</KeyValueTitle>
+                  <KeyValueTitle>상담일자</KeyValueTitle>
                   <KeyValueText>2023.01.16</KeyValueText>
                 </KeyValueItem>
 
@@ -446,24 +417,6 @@ export default {
                 >
                   <KeyValueTitle>품의번호</KeyValueTitle>
                   <KeyValueText>D42302010014400</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>심사</KeyValueTitle>
-                  <KeyValueText>승인</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>정산결과</KeyValueTitle>
-                  <KeyValueText>미완료</KeyValueText>
                 </KeyValueItem>
 
                 <KeyValueItem
@@ -513,13 +466,24 @@ export default {
           </div>
 
           <div class="flex-box">
-            <div class="flex-box__cell flex-1">
+            <div class="flex-box__cell">
               <h3 class="text-body-1 font-weight-medium">유하나</h3>
+            </div>
+            <div class="flex-box__cell flex-box__cell--mini">
+              <h3 class="text-body-1 font-weight-medium">(행복아파트론)</h3>
+            </div>
+          </div>
+
+          <div class="flex-box row-margin-item row-margin-bottom-none">
+            <div class="flex-box__cell flex-1">
+              <p class="text-body-3 color-gray-secondary font-weight-regular">
+                신청금액
+              </p>
             </div>
             <div class="flex-box__cell flex-box__cell--medium">
               <div class="flex-box">
                 <div class="flex-box__cell">
-                  <UnitText size="regular" rightUnit="만원">3,000</UnitText>
+                  <UnitText size="regular" rightUnit="원">3,000,000</UnitText>
                 </div>
                 <div class="flex-box__cell flex-box__cell--small">
                   <UiAccordionOpener
@@ -538,16 +502,7 @@ export default {
                     item: 'text-body-3',
                   }"
                 >
-                  <KeyValueTitle>상품명</KeyValueTitle>
-                  <KeyValueText>행복아파트론</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>신용동의</KeyValueTitle>
+                  <KeyValueTitle>상담일자</KeyValueTitle>
                   <KeyValueText>2023.01.16</KeyValueText>
                 </KeyValueItem>
 
@@ -576,15 +531,6 @@ export default {
                 >
                   <KeyValueTitle>심사</KeyValueTitle>
                   <KeyValueText>승인</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>정산결과</KeyValueTitle>
-                  <KeyValueText>미완료</KeyValueText>
                 </KeyValueItem>
 
                 <KeyValueItem
@@ -634,13 +580,24 @@ export default {
           </div>
 
           <div class="flex-box">
-            <div class="flex-box__cell flex-1">
+            <div class="flex-box__cell">
               <h3 class="text-body-1 font-weight-medium">송하나</h3>
+            </div>
+            <div class="flex-box__cell flex-box__cell--mini">
+              <h3 class="text-body-1 font-weight-medium">(행복아파트론)</h3>
+            </div>
+          </div>
+
+          <div class="flex-box row-margin-item row-margin-bottom-none">
+            <div class="flex-box__cell flex-1">
+              <p class="text-body-3 color-gray-secondary font-weight-regular">
+                신청금액
+              </p>
             </div>
             <div class="flex-box__cell flex-box__cell--medium">
               <div class="flex-box">
                 <div class="flex-box__cell">
-                  <UnitText size="regular" rightUnit="만원">3,000</UnitText>
+                  <UnitText size="regular" rightUnit="원">3,000,000</UnitText>
                 </div>
                 <div class="flex-box__cell flex-box__cell--small">
                   <UiAccordionOpener
@@ -650,7 +607,6 @@ export default {
               </div>
             </div>
           </div>
-
           <UiAccordionLayer>
             <div :class="$style['contents']">
               <KeyValue margin="regular">
@@ -659,16 +615,7 @@ export default {
                     item: 'text-body-3',
                   }"
                 >
-                  <KeyValueTitle>상품명</KeyValueTitle>
-                  <KeyValueText>행복아파트론</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>신용동의</KeyValueTitle>
+                  <KeyValueTitle>상담일자</KeyValueTitle>
                   <KeyValueText>2023.01.16</KeyValueText>
                 </KeyValueItem>
 
