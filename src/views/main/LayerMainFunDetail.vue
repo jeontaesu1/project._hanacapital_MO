@@ -1,6 +1,8 @@
 <script>
 // Main_M05_l002
 import { ref } from 'vue';
+import { Pagination, A11y } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
@@ -10,9 +12,14 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicBanner from '@/components/ui/banner/BasicBanner.vue';
+import VideoIframe from '@/components/ui/viewer/VideoIframe.vue';
+
+const BASE_URL = import.meta.env.BASE_URL;
 
 export default {
   components: {
+    Swiper,
+    SwiperSlide,
     UiLayer,
     PopupButton,
     FullPopup,
@@ -21,12 +28,18 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicBanner,
+    VideoIframe,
   },
   setup() {
     const layer = ref(null);
 
+    const dummyLength = 3;
+
     return {
+      BASE_URL,
+      modules: [Pagination, A11y],
       layer,
+      dummyLength,
     };
   },
 };
@@ -55,6 +68,51 @@ export default {
           </h4>
           <p :class="$style['board-detail__sub']">2022.08.09</p>
         </div>
+
+        <!-- Case : 동영상 타입 - 다이렉트로 들어 갈 경우 -->
+        <div :class="$style['video-data']">
+          <VideoIframe url="https://www.youtube.com/embed/fCA0drCpF8Q" />
+        </div>
+        <!-- // Case : 동영상 타입 - 다이렉트로 들어 갈 경우 -->
+
+        <!-- Case : 동영상 타입 - 링크로 들어 갈 경우 -->
+        <div :class="$style['video-data']">
+          <img
+            src="https://i.ytimg.com/vi/fCA0drCpF8Q/maxresdefault.jpg"
+            alt=""
+            :class="$style['video-data__thumb']"
+          />
+          <a
+            href="https://www.youtube.com/watch?v=fCA0drCpF8Q"
+            target="_blank"
+            :class="$style['video-data__link']"
+          >
+            <span class="for-a11y">동영상 보러가기</span>
+          </a>
+        </div>
+        <!-- // Case : 동영상 타입 - 링크로 들어 갈 경우 -->
+
+        <!-- Case : 이미지 타입 -->
+        <div
+          :class="[
+            $style['image-data'],
+            {
+              [$style['image-data--once']]: dummyLength <= 1,
+            },
+          ]"
+        >
+          <Swiper :modules="modules" pagination :autoHeight="true">
+            <SwiperSlide v-for="i in dummyLength" :key="i">
+              <div :class="$style['image-view']">
+                <img
+                  :src="`${BASE_URL}images/_dummy/box-detail-002.png`"
+                  alt="이미지 설명 넣어주세요"
+                />
+              </div>
+            </SwiperSlide>
+          </Swiper>
+        </div>
+        <!-- // Case : 이미지 타입 -->
 
         <section :class="$style['board-detail__contents']">
           //게시물 내용 노출
@@ -109,19 +167,24 @@ export default {
         <!-- // DD : 관리자 등록 배너 -->
       </div>
 
-      <!-- Case : 링크 콘텐츠일 경우 -->
       <template v-slot:foot>
+        <!-- Case : 링크 콘텐츠일 경우 -->
         <ButtonList
           :classNames="{
             wrap: 'row-margin-none',
           }"
         >
           <ButtonListItem>
-            <BasicButton>보러가기</BasicButton>
+            <BasicButton
+              tagName="a"
+              href="https://www.hanacapital.co.kr/"
+              target="_blank"
+              >보러가기</BasicButton
+            >
           </ButtonListItem>
         </ButtonList>
+        <!-- //Case : 링크 콘텐츠일 경우 -->
       </template>
-      <!-- //Case : 링크 콘텐츠일 경우 -->
     </FullPopup>
   </UiLayer>
 </template>
