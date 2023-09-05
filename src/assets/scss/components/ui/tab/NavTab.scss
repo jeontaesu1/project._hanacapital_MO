@@ -12,6 +12,7 @@
   &__inner {
     position: relative;
     border-bottom: 1px solid $color-gray-20;
+    overflow: hidden;
 
     &::before,
     &::after {
@@ -43,6 +44,11 @@
         rgba($color-white, 1) 100%
       );
     }
+  }
+
+  &__scroller {
+    padding-bottom: 20px;
+    margin-bottom: -20px;
   }
 
   &__list {
@@ -154,5 +160,14 @@
     margin-right: 0;
     margin-bottom: 0;
     background-color: $color-white;
+  }
+
+  &--pc {
+    .nav-tab {
+      &__scroller {
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+    }
   }
 }

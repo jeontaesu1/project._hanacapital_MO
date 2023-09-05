@@ -10,6 +10,8 @@ import {
   watch,
 } from 'vue';
 
+import { useUiCommonStore } from '@/stores/ui/common';
+
 import UiTabList from '@/components/ui/tab/UiTabList.vue';
 
 const defaultClassNames = () => ({
@@ -34,6 +36,12 @@ export default {
     },
   },
   setup(props) {
+    const store = {
+      ui: {
+        common: useUiCommonStore(),
+      },
+    };
+
     const style = useCssModule();
 
     const state = reactive({
@@ -53,6 +61,10 @@ export default {
     const setComponent = computed(() => {
       const { useUiTab } = props;
       return useUiTab ? UiTabList : 'ul';
+    });
+
+    const scrollbarsWidth = computed(() => {
+      return store.ui.common.scrollbarsWidth;
     });
 
     const scrollToActive = () => {
@@ -103,6 +115,7 @@ export default {
       list,
       customClassNames,
       setComponent,
+      scrollbarsWidth,
       scrollToActive,
     };
   },
@@ -110,7 +123,15 @@ export default {
 </script>
 
 <template>
-  <div :class="[$style['filter-tab'], customClassNames.wrap]">
+  <div
+    :class="[
+      $style['filter-tab'],
+      {
+        [$style['filter-tab--pc']]: scrollbarsWidth > 0,
+      },
+      customClassNames.wrap,
+    ]"
+  >
     <div :class="[$style['filter-tab__inner'], customClassNames.inner]">
       <div
         ref="scroller"

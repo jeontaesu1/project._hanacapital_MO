@@ -10,6 +10,8 @@ import {
   watch,
 } from 'vue';
 
+import { useUiCommonStore } from '@/stores/ui/common';
+
 import UiTabList from '@/components/ui/tab/UiTabList.vue';
 
 const defaultClassNames = () => ({
@@ -48,6 +50,12 @@ export default {
     },
   },
   setup(props) {
+    const store = {
+      ui: {
+        common: useUiCommonStore(),
+      },
+    };
+
     const style = useCssModule();
 
     const state = reactive({
@@ -67,6 +75,10 @@ export default {
     const setComponent = computed(() => {
       const { useUiTab } = props;
       return useUiTab ? UiTabList : 'ul';
+    });
+
+    const scrollbarsWidth = computed(() => {
+      return store.ui.common.scrollbarsWidth;
     });
 
     const scrollToActive = () => {
@@ -119,6 +131,7 @@ export default {
       list,
       customClassNames,
       setComponent,
+      scrollbarsWidth,
       scrollToActive,
     };
   },
@@ -133,6 +146,7 @@ export default {
         [$style['nav-tab--scroll']]: scroll,
         [$style['nav-tab--auto']]: auto,
         [$style['nav-tab--head']]: head,
+        [$style['nav-tab--pc']]: scrollbarsWidth > 0,
       },
       customClassNames.wrap,
     ]"

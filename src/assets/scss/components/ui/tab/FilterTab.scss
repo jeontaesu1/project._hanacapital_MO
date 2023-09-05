@@ -9,6 +9,7 @@
 
   &__inner {
     position: relative;
+    overflow: hidden;
 
     &::before,
     &::after {
@@ -44,6 +45,8 @@
   &__scroller {
     overflow: auto;
     -webkit-overflow-scrolling: touch;
+    padding-bottom: 20px;
+    margin-bottom: -20px;
   }
 
   &__list {
@@ -102,6 +105,15 @@
     .filter-tab__text {
       color: $color-white;
       font-weight: 500;
+    }
+  }
+
+  &--pc {
+    .filter-tab {
+      &__scroller {
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
     }
   }
 }
