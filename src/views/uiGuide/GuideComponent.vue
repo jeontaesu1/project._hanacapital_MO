@@ -7327,6 +7327,36 @@ export default {
         <RoundStatus size="small" theme="undenary">텍스트</RoundStatus>
         <RoundStatus size="small" theme="duodenary">텍스트</RoundStatus>
       </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Square</h3>
+        <RoundStatus :square="true">텍스트</RoundStatus>
+        <RoundStatus :square="true" theme="secondary">텍스트</RoundStatus>
+        <RoundStatus :square="true" theme="tertiary">텍스트</RoundStatus>
+        <RoundStatus :square="true" theme="quaternary">텍스트</RoundStatus>
+        <RoundStatus :square="true" theme="quinary">텍스트</RoundStatus>
+        <RoundStatus :square="true" theme="senary">텍스트</RoundStatus>
+        <RoundStatus :square="true" theme="septenary">텍스트</RoundStatus>
+        <RoundStatus :square="true" theme="octonary">텍스트</RoundStatus>
+        <RoundStatus :square="true" theme="nonary">텍스트</RoundStatus>
+        <RoundStatus :square="true" theme="denary">텍스트</RoundStatus>
+        <RoundStatus :square="true" theme="undenary">텍스트</RoundStatus>
+        <RoundStatus :square="true" theme="duodenary">텍스트</RoundStatus>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Block</h3>
+        <RoundStatus :block="true">텍스트</RoundStatus>
+        <RoundStatus :block="true" theme="secondary">텍스트</RoundStatus>
+        <RoundStatus :block="true" theme="tertiary">텍스트</RoundStatus>
+        <RoundStatus :block="true" theme="quaternary">텍스트</RoundStatus>
+        <RoundStatus :block="true" theme="quinary">텍스트</RoundStatus>
+        <RoundStatus :block="true" theme="senary">텍스트</RoundStatus>
+        <RoundStatus :block="true" theme="septenary">텍스트</RoundStatus>
+        <RoundStatus :block="true" theme="octonary">텍스트</RoundStatus>
+        <RoundStatus :block="true" theme="nonary">텍스트</RoundStatus>
+        <RoundStatus :block="true" theme="denary">텍스트</RoundStatus>
+        <RoundStatus :block="true" theme="undenary">텍스트</RoundStatus>
+        <RoundStatus :block="true" theme="duodenary">텍스트</RoundStatus>
+      </div>
     </section>
 
     <section class="test-section">

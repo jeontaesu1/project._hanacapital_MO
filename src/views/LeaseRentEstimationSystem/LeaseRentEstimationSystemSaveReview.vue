@@ -349,6 +349,11 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
+              <div class="inline-wrap row-margin-item">
+                <RoundStatus :square="true" size="small" theme="duodenary"
+                  >개인사업자</RoundStatus
+                >
+              </div>
               <div class="flex-box">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
@@ -582,6 +587,11 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
+              <div class="inline-wrap row-margin-item">
+                <RoundStatus :square="true" size="small" theme="duodenary"
+                  >개인</RoundStatus
+                >
+              </div>
               <div class="flex-box">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
@@ -813,6 +823,11 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
+              <div class="inline-wrap row-margin-item">
+                <RoundStatus :square="true" size="small" theme="duodenary"
+                  >법인사업자</RoundStatus
+                >
+              </div>
               <div class="flex-box">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
@@ -1055,6 +1070,11 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
+              <div class="inline-wrap row-margin-item">
+                <RoundStatus :square="true" size="small" theme="duodenary"
+                  >개인사업자</RoundStatus
+                >
+              </div>
               <div class="flex-box">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
@@ -1292,6 +1312,11 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
+              <div class="inline-wrap row-margin-item">
+                <RoundStatus :square="true" size="small" theme="duodenary"
+                  >개인사업자</RoundStatus
+                >
+              </div>
               <div class="flex-box">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
@@ -1528,6 +1553,11 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
+              <div class="inline-wrap row-margin-item">
+                <RoundStatus :square="true" size="small" theme="duodenary"
+                  >개인사업자</RoundStatus
+                >
+              </div>
               <div class="flex-box">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
@@ -1750,6 +1780,11 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
+              <div class="inline-wrap row-margin-item">
+                <RoundStatus :square="true" size="small" theme="duodenary"
+                  >개인사업자</RoundStatus
+                >
+              </div>
               <div class="flex-box">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
@@ -2051,6 +2086,11 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
+              <div class="inline-wrap row-margin-item">
+                <RoundStatus :square="true" size="small" theme="duodenary"
+                  >개인사업자</RoundStatus
+                >
+              </div>
               <div class="flex-box">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
@@ -2352,6 +2392,11 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
+              <div class="inline-wrap row-margin-item">
+                <RoundStatus :square="true" size="small" theme="duodenary"
+                  >개인사업자</RoundStatus
+                >
+              </div>
               <div class="flex-box">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
@@ -2595,6 +2640,11 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
+              <div class="inline-wrap row-margin-item">
+                <RoundStatus :square="true" size="small" theme="duodenary"
+                  >개인사업자</RoundStatus
+                >
+              </div>
               <div class="flex-box">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
@@ -2854,6 +2904,11 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
+              <div class="inline-wrap row-margin-item">
+                <RoundStatus :square="true" size="small" theme="duodenary"
+                  >개인사업자</RoundStatus
+                >
+              </div>
               <div class="flex-box">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
@@ -3214,6 +3269,11 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
+              <div class="inline-wrap row-margin-item">
+                <RoundStatus :square="true" size="small" theme="duodenary"
+                  >개인사업자</RoundStatus
+                >
+              </div>
               <div class="flex-box">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
@@ -3532,6 +3592,11 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
+              <div class="inline-wrap row-margin-item">
+                <RoundStatus :square="true" size="small" theme="duodenary"
+                  >개인사업자</RoundStatus
+                >
+              </div>
               <div class="flex-box">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
@@ -3925,6 +3990,11 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
+              <div class="inline-wrap row-margin-item">
+                <RoundStatus :square="true" size="small" theme="duodenary"
+                  >개인사업자</RoundStatus
+                >
+              </div>
               <div class="flex-box">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
@@ -4230,6 +4300,11 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
+              <div class="inline-wrap row-margin-item">
+                <RoundStatus :square="true" size="small" theme="duodenary"
+                  >개인사업자</RoundStatus
+                >
+              </div>
               <div class="flex-box">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
@@ -4529,6 +4604,11 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
+              <div class="inline-wrap row-margin-item">
+                <RoundStatus :square="true" size="small" theme="duodenary"
+                  >개인사업자</RoundStatus
+                >
+              </div>
               <div class="flex-box">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
@@ -4828,6 +4908,11 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
+              <div class="inline-wrap row-margin-item">
+                <RoundStatus :square="true" size="small" theme="duodenary"
+                  >개인사업자</RoundStatus
+                >
+              </div>
               <div class="flex-box">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
@@ -5120,6 +5205,11 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
+              <div class="inline-wrap row-margin-item">
+                <RoundStatus :square="true" size="small" theme="duodenary"
+                  >개인사업자</RoundStatus
+                >
+              </div>
               <div class="flex-box">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
@@ -5384,6 +5474,11 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
+              <div class="inline-wrap row-margin-item">
+                <RoundStatus :square="true" size="small" theme="duodenary"
+                  >개인사업자</RoundStatus
+                >
+              </div>
               <div class="flex-box">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
@@ -5682,6 +5777,11 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
+              <div class="inline-wrap row-margin-item">
+                <RoundStatus :square="true" size="small" theme="duodenary"
+                  >개인사업자</RoundStatus
+                >
+              </div>
               <div class="flex-box">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
@@ -5980,6 +6080,11 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
+              <div class="inline-wrap row-margin-item">
+                <RoundStatus :square="true" size="small" theme="duodenary"
+                  >개인사업자</RoundStatus
+                >
+              </div>
               <div class="flex-box">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
@@ -6328,6 +6433,11 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
+              <div class="inline-wrap row-margin-item">
+                <RoundStatus :square="true" size="small" theme="duodenary"
+                  >개인사업자</RoundStatus
+                >
+              </div>
               <div class="flex-box">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
