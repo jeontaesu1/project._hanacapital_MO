@@ -1,5 +1,5 @@
 <script>
-// Main_M03_p001 계약미보유
+// Main_M03_p001 계약미보유 / 종료계약만 보유
 import { onMounted, onUnmounted } from 'vue';
 import { RouterLink } from 'vue-router';
 
@@ -12,7 +12,12 @@ import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
+import ButtonList from '@/components/ui/button/ButtonList.vue';
+import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
+import IconCertification from '@/assets/images/icon/certification.svg?component';
+import IconSecurity from '@/assets/images/icon/security.svg?component';
 import IconPig from '@/assets/images/icon/pig.svg?component';
 import IconBuilding from '@/assets/images/icon/building.svg?component';
 import IconCar from '@/assets/images/icon/car.svg?component';
@@ -26,6 +31,12 @@ export default {
     PageTextGroup,
     PageMainText,
     BasicHr,
+    BasicButton,
+    ButtonList,
+    ButtonListItem,
+
+    IconCertification,
+    IconSecurity,
     IconPig,
     IconBuilding,
     IconCar,
@@ -87,6 +98,55 @@ export default {
     <div :class="$style['illustration-img']">
       <ImgArea />
     </div>
+
+    <!-- Case : 종료계약만 보유 -->
+    <div>
+      <ButtonList
+        :classNames="{
+          wrap: 'row-margin-none',
+        }"
+      >
+        <ButtonListItem>
+          <BasicButton>종료된 계약 확인하기</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
+
+      <!-- Case : 캐피탈 계약 보유 -->
+      <div :class="[$style['icon-list'], 'row-margin-container-medium']">
+        <ul :class="$style['icon-list__list']">
+          <li :class="$style['icon-list__item']">
+            <button type="button" :class="$style['icon-list__block']">
+              <span :class="$style['icon-list__icon']"
+                ><IconCertification
+              /></span>
+              <span :class="$style['icon-list__content']">
+                <span :class="$style['icon-list__text']"
+                  >필요한 증명서를 받아보세요</span
+                >
+                <span :class="$style['icon-list__title']"
+                  >증명서 조회/발급</span
+                >
+              </span>
+            </button>
+          </li>
+          <li :class="$style['icon-list__item']">
+            <button type="button" :class="$style['icon-list__block']">
+              <span :class="$style['icon-list__icon']"><IconSecurity /></span>
+              <span :class="$style['icon-list__content']">
+                <span :class="$style['icon-list__text']"
+                  >근저당설정 상태를 확인해보세요</span
+                >
+                <span :class="$style['icon-list__title']"
+                  >근저당설정 조회/해지</span
+                >
+              </span>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <!-- // Case : 캐피탈 계약 보유 -->
+    </div>
+    <!-- // Case : 종료계약만 보유 -->
 
     <BasicHr
       theme="quaternary"
