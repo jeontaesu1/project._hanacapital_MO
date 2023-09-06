@@ -186,6 +186,7 @@ export default {
             </KeyValueItem>
             <!-- //Case : 법인사업자일 경우 -->
 
+            <!-- Case : '개인사업자', '법인사업자'일 경우 미노출 -->
             <KeyValueItem
               :classNames="{
                 item: 'text-body-3',
@@ -202,6 +203,7 @@ export default {
               <KeyValueTitle>상품명</KeyValueTitle>
               <KeyValueText>장기렌트</KeyValueText>
             </KeyValueItem>
+            <!-- // Case : '개인사업자', '법인사업자'일 경우 미노출 -->
             <KeyValueItem
               :classNames="{
                 item: 'text-body-3',
@@ -607,7 +609,7 @@ export default {
               <h3 class="text-title-2">서류등록</h3>
             </div>
             <div class="flex-box__cell flex-box__cell--small">
-              <div class="text-body-3">(매매계약서, 계좌확인증)</div>
+              <div class="text-body-3">(선택)</div>
             </div>
           </div>
           <p

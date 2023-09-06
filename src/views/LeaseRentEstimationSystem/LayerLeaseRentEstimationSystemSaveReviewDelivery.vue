@@ -92,6 +92,7 @@ export default {
       <FormList>
         <FormListItem
           titleText="인도지 담당자"
+          titleOptionalText="(필수)"
           :require="true"
           target="#layerLeaseRentEstimationSystemSaveReviewDeliveryName001"
         >
@@ -110,6 +111,7 @@ export default {
 
         <FormListItem
           titleText="담당자 연락처"
+          titleOptionalText="(필수)"
           :require="true"
           target="#layerLeaseRentEstimationSystemSaveReviewDeliveryNumber001"
         >
@@ -168,6 +170,7 @@ export default {
 
         <FormListItem
           titleText="인도 요청일"
+          titleOptionalText="(필수)"
           :require="true"
           target="#layerLeaseRentEstimationSystemSaveReviewDeliveryDateButton"
         >
@@ -187,6 +190,7 @@ export default {
 
         <FormListItem
           titleText="인도 요청 시간"
+          titleOptionalText="(필수)"
           :require="true"
           target="#layerLeaseRentEstimationSystemSaveReviewDeliveryHourButton"
         >
@@ -244,6 +248,7 @@ export default {
 
         <FormListItem
           titleText="인도지 주소"
+          titleOptionalText="(필수)"
           :forceFocus="true"
           :require="true"
           target="#layerLeaseRentEstimationSystemSaveReviewDeliveryAddressSearch"

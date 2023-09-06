@@ -219,7 +219,7 @@ export default {
         </p>
 
         <p class="text-body-4 font-weight-regular align-right">
-          신청인 김하나 (인)
+          신청인 주노베이션컴퍼니 (인)
         </p>
       </div>
 

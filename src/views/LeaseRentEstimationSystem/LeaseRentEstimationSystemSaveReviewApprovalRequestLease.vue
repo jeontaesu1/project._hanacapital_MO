@@ -198,6 +198,7 @@ export default {
             </KeyValueItem>
             <!-- //Case : 법인사업자일 경우 -->
 
+            <!-- Case : '개인사업자', '법인사업자'일 경우 미노출 -->
             <!-- Case : 상품명 - 운용리스/금융리스일 경우 -->
             <KeyValueItem
               :classNames="{
@@ -219,6 +220,7 @@ export default {
               <KeyValueText>할부</KeyValueText>
             </KeyValueItem>
             <!-- //Case : 상품명 - 할부일 경우 -->
+            <!-- // Case : '개인사업자', '법인사업자'일 경우 미노출 -->
 
             <KeyValueItem
               :classNames="{
