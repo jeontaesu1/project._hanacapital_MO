@@ -92,8 +92,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          상담 안내를 위한<br />
-          <strong>사업자 정보를 입력해주세요.</strong>
+          <strong>
+            상담 안내를 위한<br />
+            사업자 정보를 입력해주세요.
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

@@ -46,7 +46,9 @@ export default {
       </template>
 
       <PageTextGroup>
-        <PageMainText>개인정보 수집 및 이용동의</PageMainText>
+        <PageMainText>
+          <strong>개인정보 수집 및 이용동의</strong>
+        </PageMainText>
         <PageSubText>
           하나캐피탈㈜ 귀중<br />
           귀사와의 (금융)거래와 관련하여 귀사가 본인의 개인정보를

@@ -42,8 +42,10 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        <strong>관리하실 정보를</strong><br />
-        선택하세요
+        <strong>
+          관리하실 정보를<br />
+          선택하세요
+        </strong>
       </PageMainText>
     </PageTextGroup>
 

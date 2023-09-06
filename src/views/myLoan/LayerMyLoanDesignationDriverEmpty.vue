@@ -59,8 +59,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          지정운전자를<br />
-          <strong>등록해 주세요</strong>
+          <strong>
+            지정운전자를<br />
+            등록해 주세요
+          </strong>
         </PageMainText>
         <PageSubText>
           기본 운전자 외 2인에 한하여 <br />

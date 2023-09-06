@@ -78,8 +78,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          신분증 정보를<br />
-          <strong>확인해 주세요</strong><br />
+          <strong>
+            신분증 정보를<br />
+            확인해 주세요
+          </strong>
         </PageMainText>
         <PageSubText>
           신분증 정보를 확인하신 후 수정하거나<br />

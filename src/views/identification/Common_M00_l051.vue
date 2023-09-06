@@ -59,7 +59,9 @@ export default {
       </template>
 
       <PageTextGroup>
-        <PageMainText>"㈜드림시큐리티" 귀중</PageMainText>
+        <PageMainText>
+          <strong>"㈜드림시큐리티" 귀중</strong>
+        </PageMainText>
         <PageSubText>
           본인은 "㈜드림시큐리티"(이하 “회사”라 합니다)이 제공하는 간편인증
           통합중계 서비스(이하 “서비스”라 합니다)를 이용하기 위해, 다음과 같이

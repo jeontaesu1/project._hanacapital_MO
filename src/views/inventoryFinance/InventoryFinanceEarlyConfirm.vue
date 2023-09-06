@@ -68,8 +68,10 @@ export default {
 
     <PageTextGroup>
       <PageMainText>
-        중도 상환 조회 조건을<br />
-        <strong>확인해주세요</strong>
+        <strong>
+          중도 상환 조회 조건을<br />
+          확인해주세요
+        </strong>
       </PageMainText>
     </PageTextGroup>
 

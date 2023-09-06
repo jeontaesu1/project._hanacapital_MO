@@ -69,8 +69,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          차량정보 확인 후<br />
-          <strong>인도 요청해 주세요</strong>
+          <strong>
+            차량정보 확인 후<br />
+            인도 요청해 주세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

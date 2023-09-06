@@ -44,7 +44,9 @@ export default {
 <template>
   <PageContents>
     <PageTextGroup>
-      <PageMainText>금융소비자보호헌장</PageMainText>
+      <PageMainText>
+        <strong>금융소비자보호헌장</strong>
+      </PageMainText>
       <PageSubText>
         하나캐피탈 모든 임직원은 금융소비자의 권익 보호가 지속성장의 초석임을
         인식하고, 최상의 상품과 서비스로, 고객만족을 추구하여 금융소비자로부터

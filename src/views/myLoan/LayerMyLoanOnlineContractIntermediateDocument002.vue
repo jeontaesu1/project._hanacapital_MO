@@ -61,7 +61,7 @@ export default {
       </template>
 
       <PageTextGroup>
-        <PageMainText>채권 양도 담보설정계약서</PageMainText>
+        <PageMainText><strong>채권 양도 담보설정계약서</strong></PageMainText>
       </PageTextGroup>
 
       <BasicBox>

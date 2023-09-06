@@ -66,8 +66,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          연장할 상품의<br />
-          <strong>만기현황을 확인해 주세요</strong>
+          <strong>
+            연장할 상품의<br />
+            만기현황을 확인해 주세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

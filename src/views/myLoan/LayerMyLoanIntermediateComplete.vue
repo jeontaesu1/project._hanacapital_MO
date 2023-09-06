@@ -65,8 +65,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          중도상환신청 접수가<br />
-          <strong>완료되었습니다</strong>
+          <strong>
+            중도상환신청 접수가<br />
+            완료되었습니다
+          </strong>
         </PageMainText>
         <!-- Case : 가상계좌 선택 시 노출  -->
         <PageSubText

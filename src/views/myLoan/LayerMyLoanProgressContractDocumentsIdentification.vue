@@ -49,8 +49,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          신용정보조회 동의를 위한<br />
-          <strong>본인인증을 진행해 주세요</strong>
+          <strong>
+            신용정보조회 동의를 위한<br />
+            본인인증을 진행해 주세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

@@ -76,8 +76,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          차량번호를<br />
-          <strong>등록해 주세요</strong>
+          <strong>
+            차량번호를<br />
+            등록해 주세요
+          </strong>
         </PageMainText>
         <PageSubText>
           차량번호 등록을 완료하시면, 최종 인수확인 전화 드리겠습니다.

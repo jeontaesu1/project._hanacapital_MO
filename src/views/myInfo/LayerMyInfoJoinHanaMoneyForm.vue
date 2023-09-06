@@ -69,8 +69,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          이메일과 추천인 사번을<br />
-          <strong>입력해 주세요</strong>
+          <strong>
+            이메일과 추천인 사번을<br />
+            입력해 주세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

@@ -84,8 +84,10 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        서류를 등록할 상품을<br />
-        <strong>선택해 주세요</strong>
+        <strong>
+          서류를 등록할 상품을<br />
+          선택해 주세요
+        </strong>
       </PageMainText>
     </PageTextGroup>
 

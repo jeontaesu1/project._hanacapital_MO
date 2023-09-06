@@ -65,8 +65,8 @@ export default {
         <strong>
           하나캐피탈 고객센터 ARS<br />
           안내 메뉴를 확인하시고,<br />
+          보다 편리한 상담을 진행하세요
         </strong>
-        보다 편리한 상담을 진행하세요
       </PageMainText>
       <PageSubText>
         각 단계별로 메뉴를 클릭하여 확인할 수 있습니다.

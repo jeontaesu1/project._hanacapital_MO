@@ -91,8 +91,10 @@ export default {
     <div :class="$style['bg']">
       <PageTextGroup>
         <PageMainText>
-          일반 내구소비재<br />
-          <strong>구입자금 대출</strong>
+          <strong>
+            일반 내구소비재<br />
+            구입자금 대출
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

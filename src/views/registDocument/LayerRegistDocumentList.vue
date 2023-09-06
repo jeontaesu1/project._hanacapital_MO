@@ -63,8 +63,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          서류등록을<br />
-          <strong>진행해주세요</strong>
+          <strong>
+            서류등록을<br />
+            진행해주세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

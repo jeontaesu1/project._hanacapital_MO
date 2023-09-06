@@ -69,8 +69,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          계약조건을 확인 후<br />
-          <strong>발주 신청해 주세요</strong>
+          <strong>
+            계약조건을 확인 후<br />
+            발주 신청해 주세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

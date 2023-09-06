@@ -54,8 +54,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          사업자조회 결과를<br />
-          <strong>선택해 주세요</strong>
+          <strong>
+            사업자조회 결과를<br />
+            선택해 주세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

@@ -46,8 +46,10 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        <strong>날짜별로 전송 이력을</strong><br />
-        보실 수 있습니다
+        <strong>
+          날짜별로 전송 이력을<br />
+          보실 수 있습니다
+        </strong>
       </PageMainText>
     </PageTextGroup>
 

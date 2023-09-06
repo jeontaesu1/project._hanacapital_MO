@@ -60,8 +60,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          김하나님, 신청하신 상품은<br />
-          <strong>대출진행이 어렵습니다</strong>
+          <strong>
+            김하나님, 신청하신 상품은<br />
+            대출진행이 어렵습니다
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

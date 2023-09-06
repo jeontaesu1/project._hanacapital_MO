@@ -110,9 +110,11 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          신용정보조회 동의를 위하여<br />
-          고객님께 URL을 보내드립니다<br />
-          <strong>아래 정보를 입력해주세요</strong>
+          <strong>
+            신용정보조회 동의를 위하여<br />
+            고객님께 URL을 보내드립니다<br />
+            아래 정보를 입력해주세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

@@ -89,8 +89,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>원하시는 할부금융 조건을</strong><br />
-          입력해 주세요
+          <strong>
+            원하시는 할부금융 조건을<br />
+            입력해 주세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

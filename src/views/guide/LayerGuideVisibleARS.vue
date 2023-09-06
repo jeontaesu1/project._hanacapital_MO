@@ -59,8 +59,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          보이는 ARS서비스를 제공하기 위하여<br />
-          <strong>고객님의 정보제공동의가 필요합니다</strong>
+          <strong>
+            보이는 ARS서비스를 제공하기 위하여<br />
+            고객님의 정보제공동의가 필요합니다
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

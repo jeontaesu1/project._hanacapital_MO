@@ -61,7 +61,7 @@ export default {
       </template>
 
       <PageTextGroup>
-        <PageMainText>하나캐피탈(주) 귀중</PageMainText>
+        <PageMainText><strong>하나캐피탈(주) 귀중</strong></PageMainText>
         <PageSubText>
           리스 신청인 본인은 하나캐피탈 주식회사에 리스를 신청함에 있어 다음의
           사항을 확인합니다.

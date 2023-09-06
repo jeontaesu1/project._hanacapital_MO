@@ -50,8 +50,10 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        마음에 드는 차를 담아두면<br />
-        <strong>혜택 알림을 받을 수 있어요!</strong>
+        <strong>
+          마음에 드는 차를 담아두면<br />
+          혜택 알림을 받을 수 있어요!
+        </strong>
       </PageMainText>
     </PageTextGroup>
 

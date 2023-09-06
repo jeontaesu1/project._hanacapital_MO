@@ -67,8 +67,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          견적서를 전송하실<br />
-          <strong>휴대폰 번호를 입력하세요</strong>
+          <strong>
+            견적서를 전송하실<br />
+            휴대폰 번호를 입력하세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

@@ -40,8 +40,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          Face ID를 <br />
-          <strong>인식시켜 주세요</strong>
+          <strong>
+            Face ID를 <br />
+            인식시켜 주세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

@@ -113,8 +113,10 @@ export default {
       }"
     >
       <PageMainText>
-        체크리스트를<br />
-        <strong>작성해 주세요</strong>
+        <strong>
+          체크리스트를<br />
+          작성해 주세요
+        </strong>
       </PageMainText>
       <PageSubText>
         본 확인서는 「금융소비자 보호에 관한 법률」에 의거하여 손님의 재산상황,

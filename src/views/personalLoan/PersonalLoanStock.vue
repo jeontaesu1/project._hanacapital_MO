@@ -108,8 +108,10 @@ export default {
     <div :class="$style['bg']">
       <PageTextGroup>
         <PageMainText>
-          주식매입자금을 위한<br />
-          <strong>자금지원 금융서비스</strong>
+          <strong>
+            주식매입자금을 위한<br />
+            자금지원 금융서비스
+          </strong>
         </PageMainText>
         <PageSubText>본인명의 증권위탁계좌 질권설정</PageSubText>
       </PageTextGroup>

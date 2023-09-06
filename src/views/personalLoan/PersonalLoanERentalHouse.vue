@@ -93,8 +93,10 @@ export default {
     <div :class="$style['bg']">
       <PageTextGroup>
         <PageMainText>
-          임대보증금을 담보로<br />
-          <strong>빠르고 간편한 대출</strong>
+          <strong>
+            임대보증금을 담보로<br />
+            빠르고 간편한 대출
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

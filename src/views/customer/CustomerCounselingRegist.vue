@@ -88,9 +88,10 @@ export default {
     <PageTextGroup>
       <div :class="$style['customer-counseling']">
         <PageMainText>
-          일반문의만 가능하며<br />대출 관련 상담 신청 시<br /><strong
-            >전화상담 버튼를 이용하세요</strong
-          >
+          <strong>
+            일반문의만 가능하며<br />대출 관련 상담 신청 시<br />
+            전화상담 버튼를 이용하세요
+          </strong>
         </PageMainText>
         <div :class="$style['customer-counseling__button']">
           <BasicButton

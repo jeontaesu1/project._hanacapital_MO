@@ -116,8 +116,8 @@ export default {
 
     <PageTextGroup>
       <PageMainText>
-        재고금융 만기연장건에 대한<br />
         <strong>
+          재고금융 만기연장건에 대한<br />
           세부내역 확인 후 만기연장을<br />
           신청해 주세요
         </strong>

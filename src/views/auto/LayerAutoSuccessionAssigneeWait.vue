@@ -69,8 +69,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          양수인 김하나 님의 위임 동의 및<br />
-          <strong>신용조회동의를 기다리는 중입니다</strong>
+          <strong>
+            양수인 김하나 님의 위임 동의 및<br />
+            신용조회동의를 기다리는 중입니다
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

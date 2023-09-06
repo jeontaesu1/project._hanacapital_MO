@@ -67,8 +67,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          물건점검 URL 전송 정보를<br />
-          <strong>확인해 주세요</strong>
+          <strong>
+            물건점검 URL 전송 정보를<br />
+            확인해 주세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

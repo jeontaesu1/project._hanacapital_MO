@@ -58,8 +58,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          김하나님의 대출 신청이<br />
-          <strong>완료되었습니다</strong>
+          <strong>
+            김하나님의 대출 신청이<br />
+            완료되었습니다
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

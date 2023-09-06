@@ -87,8 +87,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          상담을 원하시는<br />
-          <strong>상품을 선택해 주세요</strong>
+          <strong>
+            상담을 원하시는<br />
+            상품을 선택해 주세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

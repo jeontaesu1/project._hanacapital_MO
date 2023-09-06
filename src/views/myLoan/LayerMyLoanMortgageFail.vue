@@ -61,8 +61,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          근저당설정 해지 신청이<br />
-          <strong>불가합니다.</strong>
+          <strong>
+            근저당설정 해지 신청이<br />
+            불가합니다.
+          </strong>
         </PageMainText>
         <PageSubText>문의사항이 있으시면 고객센터로 연락바랍니다.</PageSubText>
       </PageTextGroup>

@@ -42,9 +42,11 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        <strong>함께 성장하며 행복을 나누는</strong><br />
-        금융을 실현하기 위해<br />
-        <span class="color-green">윤리적 가치를 최우선</span>으로 합니다
+        <strong>
+          함께 성장하며 행복을 나누는<br />
+          금융을 실현하기 위해<br />
+          <span class="color-green">윤리적 가치를 최우선</span>으로 합니다
+        </strong>
       </PageMainText>
     </PageTextGroup>
 

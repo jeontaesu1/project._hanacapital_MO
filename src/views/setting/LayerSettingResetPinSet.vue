@@ -54,8 +54,11 @@ export default {
         :classNames="{
           wrap: 'align-center row-margin-contents',
         }"
-        >간편비밀번호<br />
-        <strong>6자리를 설정해 주세요</strong>
+      >
+        <strong>
+          간편비밀번호<br />
+          6자리를 설정해 주세요
+        </strong>
       </PageMainText>
 
       <FormInvalid :error="state.error">

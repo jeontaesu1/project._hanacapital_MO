@@ -71,8 +71,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          고객님께서는<br />
-          <strong>심사 승인 대상입니다</strong>
+          <strong>
+            고객님께서는<br />
+            심사 승인 대상입니다
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

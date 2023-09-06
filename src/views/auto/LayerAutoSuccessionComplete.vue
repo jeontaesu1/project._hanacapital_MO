@@ -61,8 +61,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          승계 신청이<br />
-          <strong>완료되었습니다</strong>
+          <strong>
+            승계 신청이<br />
+            완료되었습니다
+          </strong>
         </PageMainText>
         <PageSubText>
           승계 신청 URL을 발송하고 싶으시면,<br />

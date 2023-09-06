@@ -91,8 +91,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          간편하게 추천 차량을<br />
-          <strong>골라보세요</strong>
+          <strong>
+            간편하게 추천 차량을<br />
+            골라보세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

@@ -61,8 +61,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>할부 조건을</strong><br />
-          확인해 주세요
+          <strong>
+            할부 조건을<br />
+            확인해 주세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

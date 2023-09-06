@@ -62,8 +62,10 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        제휴사 정보를<br />
-        <strong>확인해 주세요</strong>
+        <strong>
+          제휴사 정보를<br />
+          확인해 주세요
+        </strong>
       </PageMainText>
     </PageTextGroup>
 

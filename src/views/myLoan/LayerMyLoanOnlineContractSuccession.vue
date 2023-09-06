@@ -81,8 +81,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          채무 승계를 위한 정보를 확인 후<br />
-          <strong>비밀번호를 입력해 주세요</strong>
+          <strong>
+            채무 승계를 위한 정보를 확인 후<br />
+            비밀번호를 입력해 주세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

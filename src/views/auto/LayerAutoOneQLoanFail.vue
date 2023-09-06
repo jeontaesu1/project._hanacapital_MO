@@ -51,8 +51,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          대출불가 대상으로<br />
-          <strong>진행이 어렵습니다</strong>
+          <strong>
+            대출불가 대상으로<br />
+            진행이 어렵습니다
+          </strong>
         </PageMainText>
         <PageSubText>문의사항은 지점으로 연락하시기 바랍니다.</PageSubText>
       </PageTextGroup>

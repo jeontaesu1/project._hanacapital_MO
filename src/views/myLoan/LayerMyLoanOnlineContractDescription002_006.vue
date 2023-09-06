@@ -52,8 +52,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          기한의 이익이<br />
-          <strong>상실되면 어떻게 되나요?</strong>
+          <strong>
+            기한의 이익이<br />
+            상실되면 어떻게 되나요?
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

@@ -71,8 +71,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          금융상품 판매 대리·중개업자의<br />
-          <strong>고지의무수행 확인서를 확인해 주세요</strong>
+          <strong>
+            금융상품 판매 대리·중개업자의<br />
+            고지의무수행 확인서를 확인해 주세요
+          </strong>
         </PageMainText>
         <PageSubText>
           본 확인서는 「금융소비자 보호에 관한 법률」 제26조 등에 의거하여

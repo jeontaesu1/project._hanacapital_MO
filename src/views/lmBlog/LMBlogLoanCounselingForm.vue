@@ -130,8 +130,10 @@ export default {
 
     <PageTextGroup>
       <PageMainText>
-        <strong>계약정보를</strong><br />
-        입력하세요
+        <strong>
+          계약정보를<br />
+          입력하세요
+        </strong>
       </PageMainText>
     </PageTextGroup>
 

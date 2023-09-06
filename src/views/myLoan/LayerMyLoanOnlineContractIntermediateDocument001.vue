@@ -61,7 +61,7 @@ export default {
       </template>
 
       <PageTextGroup>
-        <PageMainText>중도금 분할 실행 동의서</PageMainText>
+        <PageMainText><strong>중도금 분할 실행 동의서</strong></PageMainText>
       </PageTextGroup>
 
       <BasicBox>

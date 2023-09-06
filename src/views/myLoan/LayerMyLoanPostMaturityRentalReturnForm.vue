@@ -96,8 +96,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          반환 정보를<br />
-          <strong>입력해 주세요</strong>
+          <strong>
+            반환 정보를<br />
+            입력해 주세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

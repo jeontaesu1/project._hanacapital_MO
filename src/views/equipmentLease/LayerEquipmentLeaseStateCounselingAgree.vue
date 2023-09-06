@@ -68,8 +68,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          상담동의 요청할<br />
-          <strong>손님 정보를 입력해 주세요</strong>
+          <strong>
+            상담동의 요청할<br />
+            손님 정보를 입력해 주세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

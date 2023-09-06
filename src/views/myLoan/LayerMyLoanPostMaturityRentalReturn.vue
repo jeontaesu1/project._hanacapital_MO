@@ -55,8 +55,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          반환 유의사항을<br />
-          <strong>확인해 주세요</strong>
+          <strong>
+            반환 유의사항을<br />
+            확인해 주세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

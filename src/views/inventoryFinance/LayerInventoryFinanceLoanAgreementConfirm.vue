@@ -52,8 +52,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          재고금융 확약서를<br />
-          <strong>확인해주세요</strong>
+          <strong>
+            재고금융 확약서를<br />
+            확인해주세요
+          </strong>
         </PageMainText>
         <PageSubText>
           본인은 귀사에서 제공하는 중고차 구입자금 대출(이하 ‘중고차

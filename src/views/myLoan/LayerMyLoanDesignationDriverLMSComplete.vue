@@ -65,8 +65,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          지정운전자 정보를<br />
-          <strong>입력해 주세요</strong>
+          <strong>
+            지정운전자 정보를<br />
+            입력해 주세요
+          </strong>
         </PageMainText>
         <PageSubText>등록 완료 후 익일 0시부터 적용됩니다.</PageSubText>
       </PageTextGroup>

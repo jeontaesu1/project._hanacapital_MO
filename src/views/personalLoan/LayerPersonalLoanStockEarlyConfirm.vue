@@ -60,8 +60,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          중도상환금액을<br />
-          <strong>확인해 주세요</strong>
+          <strong>
+            중도상환금액을<br />
+            확인해 주세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

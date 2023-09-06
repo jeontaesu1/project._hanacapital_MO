@@ -62,8 +62,10 @@ export default {
           준법심의필(설) : 2023-10 (2023.03.01)
         </p>
         <PageMainText>
-          상품설명서 약관에<br />
-          <strong>동의해주세요</strong>
+          <strong>
+            상품설명서 약관에<br />
+            동의해주세요
+          </strong>
         </PageMainText>
         <PageSubText>
           <strong

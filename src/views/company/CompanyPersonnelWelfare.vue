@@ -150,8 +150,10 @@ export default {
       <UiTabPanel name="companyPersonnelWelfareNavTab001_002">
         <PageTextGroup>
           <PageMainText>
-            최고의 고객만족은<br />
-            <strong>최고의 직원만족부터!</strong>
+            <strong>
+              최고의 고객만족은<br />
+              최고의 직원만족부터!
+            </strong>
           </PageMainText>
           <PageSubText>
             다양한 복리후생을 통해 하나캐피탈 직원으로서의<br />

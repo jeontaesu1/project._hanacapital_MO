@@ -80,9 +80,9 @@ export default {
           wrap: 'font-weight-regular',
         }"
       >
-        <span class="color-green">주식회사알차이노베이션</span>님<br />
-        총 <span class="color-green">2건</span> 차량 재고로<br />
         <strong>
+          <span class="color-green">주식회사알차이노베이션</span>님<br />
+          총 <span class="color-green">2건</span> 차량 재고로<br />
           총 <span class="color-green">60,000,000원</span> 대출 신청하셨습니다
         </strong>
       </PageMainText>

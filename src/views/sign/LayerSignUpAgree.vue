@@ -55,8 +55,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          회원가입 약관에<br />
-          <strong>동의해 주세요</strong>
+          <strong>
+            회원가입 약관에<br />
+            동의해 주세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

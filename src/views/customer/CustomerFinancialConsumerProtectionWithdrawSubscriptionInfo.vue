@@ -43,7 +43,9 @@ export default {
 <template>
   <PageContents>
     <PageTextGroup>
-      <PageMainText>청약철회권이란?</PageMainText>
+      <PageMainText>
+        <strong>청약철회권이란?</strong>
+      </PageMainText>
       <PageSubText>
         고객님이 대출계약에 대한 숙려기간 동안 불이익 없이 대출계약으로부터
         탈퇴할 수 있는 권리를 말합니다.

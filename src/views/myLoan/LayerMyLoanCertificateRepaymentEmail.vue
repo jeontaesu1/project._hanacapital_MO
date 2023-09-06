@@ -79,8 +79,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          이메일 주소를<br />
-          <strong>선택 또는 입력해 주세요</strong>
+          <strong>
+            이메일 주소를<br />
+            선택 또는 입력해 주세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

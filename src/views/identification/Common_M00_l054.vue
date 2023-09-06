@@ -59,7 +59,9 @@ export default {
       </template>
 
       <PageTextGroup>
-        <PageMainText>"비바리퍼블리카" 귀중</PageMainText>
+        <PageMainText>
+          <strong>"비바리퍼블리카" 귀중</strong>
+        </PageMainText>
         <PageSubText>
           본인은 “비바리퍼블리카”(이하 “위탁자”라 합니다.)가 위탁한
           "드림시큐리티"(이하 “수탁자”라 합니다)이 제공하는 간편인증

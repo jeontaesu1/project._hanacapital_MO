@@ -52,8 +52,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>대출금을 만기 전에 상환하고 싶은데 </strong><br />
-          가능한가요?
+          <strong>
+            대출금을 만기 전에 상환하고 싶은데 <br />
+            가능한가요?
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

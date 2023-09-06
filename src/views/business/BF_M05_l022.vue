@@ -50,8 +50,10 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        <strong>지금부터 하나캐피탈 리스상담을 위한</strong><br />
-        절차를 진행합니다
+        <strong>
+          지금부터 하나캐피탈 리스상담을 위한<br />
+          절차를 진행합니다
+        </strong>
       </PageMainText>
     </PageTextGroup>
 

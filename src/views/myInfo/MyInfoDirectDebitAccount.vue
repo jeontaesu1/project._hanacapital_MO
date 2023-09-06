@@ -60,8 +60,10 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        변경하실 자동이체 계좌를<br />
-        <strong>선택하세요</strong>
+        <strong>
+          변경하실 자동이체 계좌를<br />
+          선택하세요
+        </strong>
       </PageMainText>
       <PageSubText>
         본인 명의의 계좌로 자동이체 계좌를 변경할 수 있습니다.

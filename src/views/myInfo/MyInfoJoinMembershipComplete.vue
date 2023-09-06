@@ -52,9 +52,11 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        축하드려요!<br />
-        하나캐피탈 멤버십 회원가입이<br />
-        <strong>완료되었습니다</strong>
+        <strong>
+          축하드려요!<br />
+          하나캐피탈 멤버십 회원가입이<br />
+          완료되었습니다
+        </strong>
       </PageMainText>
       <PageSubText>
         하나캐피탈 멤버십을 통해<br />

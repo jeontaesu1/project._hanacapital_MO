@@ -115,8 +115,10 @@ export default {
       <div class="flex-box align-items-start row-margin-item">
         <div class="flex-box__cell flex-1">
           <PageMainText>
-            <strong>신용정보조회동의 여부를</strong><br />
-            확인하세요
+            <strong>
+              신용정보조회동의 여부를<br />
+              확인하세요
+            </strong>
           </PageMainText>
         </div>
         <div class="flex-box__cell flex-box__cell--medium">

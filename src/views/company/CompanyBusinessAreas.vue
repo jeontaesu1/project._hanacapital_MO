@@ -51,10 +51,10 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        <strong>하나캐피탈은</strong><br />
-        리스금융, 할부금융 및 대출업무를 취급하는 여신전문금융회사로<br />
-        손님, 주주, 협력업체, 임직원의<br />
         <strong>
+          하나캐피탈은<br />
+          리스금융, 할부금융 및 대출업무를 취급하는 여신전문금융회사로<br />
+          손님, 주주, 협력업체, 임직원의<br />
           공동 성장을 극대화하는<br />
           Value Network를 지향합니다
         </strong>

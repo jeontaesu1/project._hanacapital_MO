@@ -52,8 +52,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          궁금한 점이나 불만사항이 있는 경우<br />
-          <strong>어떻게 하면 되나요?</strong>
+          <strong>
+            궁금한 점이나 불만사항이 있는 경우<br />
+            어떻게 하면 되나요?
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

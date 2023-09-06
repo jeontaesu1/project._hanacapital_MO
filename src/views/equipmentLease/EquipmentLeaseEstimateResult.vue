@@ -73,7 +73,9 @@ export default {
 <template>
   <PageContents>
     <PageTextGroup>
-      <PageMainText>김하나 고객님</PageMainText>
+      <PageMainText>
+        <strong>김하나 고객님</strong>
+      </PageMainText>
       <PageSubText>
         아래와 같이 설비리스 조건을 제시드리며, 세부 사항은 담당자에게 문의하여
         주시기 바랍니다.

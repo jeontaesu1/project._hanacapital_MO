@@ -53,8 +53,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          발주신청이<br />
-          <strong>완료되었습니다</strong>
+          <strong>
+            발주신청이<br />
+            완료되었습니다
+          </strong>
         </PageMainText>
         <PageSubText>전문상담사가 차량 배정 후, 연락 드리겠습니다.</PageSubText>
       </PageTextGroup>

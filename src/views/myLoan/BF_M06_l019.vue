@@ -111,8 +111,10 @@ export default {
 
       <PageTextGroup :classNames="{ wrap: 'row-margin-none' }">
         <PageMainText>
-          적합성.적정성 확인서의<br />
-          <strong>체크리스트를 작성해 주세요</strong>
+          <strong>
+            적합성.적정성 확인서의<br />
+            체크리스트를 작성해 주세요
+          </strong>
         </PageMainText>
         <PageSubText>
           본 확인서는 「금융소비자 보호에 관한 법률」에 의거하여 손님의
