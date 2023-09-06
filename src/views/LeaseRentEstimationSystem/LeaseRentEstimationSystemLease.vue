@@ -145,6 +145,7 @@ export default {
       etcAGError: false,
       publicBondDiscountError: false,
       etcPriceError: false,
+      subsidyError: false,
       interestSubsidyError: false,
       advancePaymentError: false,
       prepaymentsRatioError: [false, false, false],
@@ -2467,7 +2468,7 @@ export default {
                   id="leaseRentEstimationSystemLeaseDelivery002"
                   size="small"
                 >
-                  <BoxCheckLabel>특판출고</BoxCheckLabel>
+                  <BoxCheckLabel>특판출고<br />(실적이관 불가)</BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
             </BoxCheckList>
@@ -4373,7 +4374,9 @@ export default {
             <!-- // 지원지역 -->
 
             <!-- 보조금 -->
-            <li :class="$style['estimate-list__item']">
+            <UiAccordionItem
+              :classNames="{ item: $style['estimate-list__item'] }"
+            >
               <div :class="$style['estimate-list__head']">
                 <div :class="$style['estimate-list__block']">
                   <div :class="$style['estimate-list__left']">
@@ -4389,8 +4392,56 @@ export default {
                     </KeyValue>
                   </div>
                 </div>
+                <div :class="$style['estimate-list__arrow']">
+                  <UiAccordionOpener
+                    :classNames="{ button: $style['estimate-list__opener'] }"
+                  />
+                </div>
               </div>
-            </li>
+
+              <UiAccordionLayer
+                :classNames="{ layer: $style['estimate-list__layer'] }"
+              >
+                <section :class="$style['estimate-list__contents']">
+                  <NoticeText
+                    >보조금 지원여부는 출고 전 반드시 재확인 바랍니다.<br />
+                    (보조금 변경시, 견적 재산출 필수)</NoticeText
+                  >
+
+                  <FormList
+                    :classNames="{
+                      wrap: 'row-margin-item-group',
+                    }"
+                  >
+                    <FormListItem
+                      titleText="금액"
+                      target="#leaseRentEstimationSystemLeaseSubsidyPrice"
+                    >
+                      <FormInvalid :error="state.subsidyError">
+                        <InputBlock :error="state.subsidyError">
+                          <InputBlockCell :flexible="true">
+                            <BasicInput
+                              title="보조금 금액"
+                              id="leaseRentEstimationSystemLeaseSubsidyPrice"
+                              pattern="\d*"
+                              :useDelete="false"
+                              align="right"
+                              defaultValue="0"
+                            />
+                          </InputBlockCell>
+                          <InputBlockCell>
+                            <div class="text-body-3">원</div>
+                          </InputBlockCell>
+                        </InputBlock>
+                        <FormInvalidMessage>Error Message</FormInvalidMessage>
+                      </FormInvalid>
+                    </FormListItem>
+                  </FormList>
+
+                  <BasicButton size="small" theme="tertiary">적용</BasicButton>
+                </section>
+              </UiAccordionLayer>
+            </UiAccordionItem>
             <!-- // 보조금 -->
             <!-- // Case : 차량 전기차 선택 시에만 노출 -->
 
