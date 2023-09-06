@@ -1,5 +1,5 @@
 <script>
-import { computed } from 'vue';
+import { computed, reactive, watch } from 'vue';
 import { RouterLink } from 'vue-router';
 
 const BASE_URL = import.meta.env.BASE_URL;
@@ -52,6 +52,10 @@ export default {
     },
   },
   setup(props) {
+    const state = reactive({
+      isError: false,
+    });
+
     const setComponent = computed(() => {
       const { tagName } = props;
       return tagName === 'RouterLink' ? RouterLink : tagName;
@@ -77,11 +81,24 @@ export default {
       }
     });
 
+    const onError = () => {
+      state.isError = true;
+    };
+
+    watch(
+      () => props.thumb,
+      () => {
+        state.isError = false;
+      }
+    );
+
     return {
+      state,
       setComponent,
       setType,
       customClassNames,
       imgSrc,
+      onError,
     };
   },
 };
@@ -105,19 +122,18 @@ export default {
       :class="[$style['banner__thumb'], customClassNames.thumb]"
     >
       <div
-        :class="[$style['banner__thumb-img'], customClassNames.thumbImg]"
+        :class="[
+          $style['banner__thumb-img'],
+          {
+            'is-error': state.isError,
+          },
+          customClassNames.thumbImg,
+        ]"
         :style="{
           backgroundImage: `url('${thumb}')`,
         }"
       >
-        <img
-          :src="imgSrc"
-          @error="
-            (e) => {
-              e.target.parentNode.classList.add('is-error');
-            }
-          "
-        />
+        <img :src="imgSrc" @error="onError" />
       </div>
     </div>
     <component

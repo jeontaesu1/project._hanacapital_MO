@@ -1,5 +1,5 @@
 <script>
-import { computed } from 'vue';
+import { computed, reactive, watch } from 'vue';
 import { RouterLink } from 'vue-router';
 
 const BASE_URL = import.meta.env.BASE_URL;
@@ -58,6 +58,10 @@ export default {
     },
   },
   setup(props, context) {
+    const state = reactive({
+      isError: false,
+    });
+
     const setComponent = computed(() => {
       const { tagName } = props;
       return tagName === 'RouterLink' ? RouterLink : tagName;
@@ -87,12 +91,25 @@ export default {
       }
     });
 
+    const onError = () => {
+      state.isError = true;
+    };
+
+    watch(
+      () => props.logo,
+      () => {
+        state.isError = false;
+      }
+    );
+
     return {
+      state,
       setComponent,
       setType,
       customClassNames,
       isDownload,
       imgSrc,
+      onError,
     };
   },
 };
@@ -113,15 +130,16 @@ export default {
   >
     <div :class="[$style['banner__inner'], customClassNames.inner]">
       <div v-if="logo" :class="[$style['banner__logo'], customClassNames.logo]">
-        <div :class="[$style['banner__logo-img'], customClassNames.logoImg]">
-          <img
-            :src="imgSrc"
-            @error="
-              (e) => {
-                e.target.parentNode.classList.add('is-error');
-              }
-            "
-          />
+        <div
+          :class="[
+            $style['banner__logo-img'],
+            {
+              'is-error': state.isError,
+            },
+            customClassNames.logoImg,
+          ]"
+        >
+          <img :src="imgSrc" @error="onError" />
         </div>
       </div>
       <div :class="[$style['banner__contents'], customClassNames.contents]">
