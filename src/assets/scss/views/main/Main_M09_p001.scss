@@ -1,16 +1,1 @@
 @import '@/assets/scss/components/import/icon-list.scss';
-
-.slide {
-  margin: 0 -20px;
-  overflow: hidden;
-
-  &__block {
-    margin: 0 4px;
-    padding-bottom: 1px;
-  }
-
-  :global(.swiper) {
-    padding: 0 16px;
-    overflow: visible;
-  }
-}
