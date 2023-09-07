@@ -106,17 +106,15 @@ export default {
               }"
               :initialOpen="true"
             >
-              <KeyValue>
+              <KeyValue verticalAlign="center">
                 <KeyValueItem :classNames="{ item: 'text-body-3' }">
                   <KeyValueTitle>계좌정보</KeyValueTitle>
                   <KeyValueText>
-                    <div align="right">
-                      <UiAccordionOpener
-                        :classNames="{
-                          button: $style['key-value-opener'],
-                        }"
-                      />
-                    </div>
+                    <UiAccordionOpener
+                      :classNames="{
+                        button: $style['key-value-opener'],
+                      }"
+                    />
                   </KeyValueText>
                 </KeyValueItem>
               </KeyValue>
