@@ -416,14 +416,13 @@ export default {
 
             <PopupText>// contents</PopupText>
 
-            <BasicButton
-              @click="
-                layerSlotProps.close();
-                layerOpenTest002();
-              "
-            >
+            <BasicButton @click="layerOpenTest002">
               하단 레이어 팝업
             </BasicButton>
+
+            <div style="height: 1500px; border: 10px dotted #666">
+              스크롤 생기게 하기 위한 더미
+            </div>
 
             <template v-slot:foot>
               <ButtonList
@@ -479,9 +478,18 @@ export default {
             <PopupText>// contents</PopupText>
             <PopupText>// contents</PopupText>
 
-            <BasicButton @click="layerOpenTest003">
+            <BasicButton
+              @click="
+                layerSlotProps.close();
+                layerOpenTest003();
+              "
+            >
               하단 레이어 팝업 (고정 높이값)
             </BasicButton>
+
+            <div style="height: 1500px; border: 10px dotted #666">
+              스크롤 생기게 하기 위한 더미
+            </div>
 
             <template v-slot:foot>
               <ButtonList
@@ -521,6 +529,10 @@ export default {
             <BasicButton @click="layerOpenTest004">
               레이어 팝업 열기
             </BasicButton>
+
+            <div style="height: 1500px; border: 10px dotted #666">
+              스크롤 생기게 하기 위한 더미
+            </div>
 
             <template v-slot:foot>
               <ButtonList
