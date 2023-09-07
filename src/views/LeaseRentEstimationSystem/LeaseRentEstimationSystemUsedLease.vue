@@ -417,8 +417,38 @@ export default {
               </div>
             </li>
             <!-- // 차량연식 -->
+
+            <!-- 차량 -->
+            <li :class="$style['estimate-list__item']">
+              <div :class="$style['estimate-list__head']">
+                <div :class="$style['estimate-list__block']">
+                  <div :class="$style['estimate-list__left']">
+                    <KeyValue align="left" size="regular">
+                      <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                        <KeyValueTitle>
+                          <div class="text-body-4">차량</div>
+                        </KeyValueTitle>
+                        <KeyValueText>
+                          <!-- Case : 조회 전 -->
+                          <div class="text-body-3 color-gray-secondary">
+                            차량번호를 조회해 주세요
+                          </div>
+                          <!-- // Case : 조회 전 -->
+
+                          <!-- Case : 조회 후 -->
+                          <div>기아 K5(DL3) 2.0 가솔린 프레스티지</div>
+                          <!-- // Case : 조회 후 -->
+                        </KeyValueText>
+                      </KeyValueItem>
+                    </KeyValue>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- // 차량 -->
             <!-- // Case : 차량번호 선택시 노출 -->
 
+            <!-- Case : 차량명 선택시 노출 -->
             <!-- 차량선택 -->
             <UiAccordionItem
               :classNames="{ item: $style['estimate-list__item'] }"
@@ -529,6 +559,7 @@ export default {
               </UiAccordionLayer>
             </UiAccordionItem>
             <!-- // 차량선택 -->
+            <!-- // Case : 차량명 선택시 노출 -->
 
             <!-- 등록년월 -->
             <UiAccordionItem
