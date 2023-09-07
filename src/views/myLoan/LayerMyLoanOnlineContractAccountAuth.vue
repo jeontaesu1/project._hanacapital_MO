@@ -77,8 +77,8 @@ export default {
         </PageMainText>
         <PageSubText>
           해당 계좌의 거래내역에서 입금된 1원의 입금자명을 확인 후
-          <span class="color-green font-weight-regular"
-            >하나캐피탈 뒤 숫자 세자리</span
+          <span class="color-green font-weight-regular">
+            하나 뒤 숫자 세자리</span
           >를 입력해 주세요.
         </PageSubText>
       </PageTextGroup>
