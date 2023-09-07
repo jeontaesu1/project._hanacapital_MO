@@ -169,7 +169,7 @@ export default {
             wrap: 'row-margin-contents',
           }"
         >
-          <UiAccordionItem tagName="section">
+          <UiAccordionItem tagName="section" :initialOpen="true">
             <BasicBox theme="quinary">
               <div class="flex-box">
                 <div class="flex-box__cell flex-1">
