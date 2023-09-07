@@ -86,6 +86,7 @@ export default {
       tab003BirthDateError: false,
       tab003PhoneError: false,
       tab003CEONameError: false,
+      tab003CEODateError: false,
     });
 
     return {
@@ -598,6 +599,24 @@ export default {
                   </FormInvalid>
                 </FormListItem>
                 <!-- // Case : [사업자번호 입력방식 - 직접입력] 선택 시 :disabled="false" : end -->
+
+                <FormListItem
+                  titleText="대표 취임일자"
+                  target="#layerLeaseRentEstimationSystemCreditCheckRequest003CEODate"
+                >
+                  <FormInvalid :error="state.tab003CEODateError">
+                    <InputBlock :error="state.tab003CEODateError">
+                      <InputBlockCell :flexible="true">
+                        <BasicInput
+                          type="number"
+                          title="대표 취임일자"
+                          id="layerLeaseRentEstimationSystemCreditCheckRequest003CEODate"
+                        />
+                      </InputBlockCell>
+                    </InputBlock>
+                    <FormInvalidMessage>Error Message</FormInvalidMessage>
+                  </FormInvalid>
+                </FormListItem>
               </FormList>
             </section>
 
