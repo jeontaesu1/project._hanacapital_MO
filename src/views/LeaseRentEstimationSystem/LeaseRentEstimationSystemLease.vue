@@ -6280,11 +6280,7 @@ export default {
                     <div :class="$style['estimate-list__head']">
                       <div :class="$style['estimate-list__block']">
                         <div :class="$style['estimate-list__left']">
-                          <KeyValue
-                            align="left"
-                            size="regular"
-                            verticalAlign="center"
-                          >
+                          <KeyValue align="left" size="regular">
                             <KeyValueItem :classNames="{ item: 'text-body-3' }">
                               <KeyValueTitle>
                                 <div class="text-body-4">할인<br />지원금</div>
@@ -6303,16 +6299,46 @@ export default {
                     <div :class="$style['estimate-list__head']">
                       <div :class="$style['estimate-list__block']">
                         <div :class="$style['estimate-list__left']">
-                          <KeyValue
-                            align="left"
-                            size="regular"
-                            verticalAlign="center"
-                          >
+                          <KeyValue align="left" size="regular">
                             <KeyValueItem :classNames="{ item: 'text-body-3' }">
                               <KeyValueTitle>
                                 <div class="text-body-4">추가<br />수수료</div>
                               </KeyValueTitle>
-                              <KeyValueText>해당 없음</KeyValueText>
+                              <KeyValueText>
+                                <!-- Case : 해당 없음 -->
+                                해당 없음
+                                <!-- // Case : 해당 없음 -->
+
+                                <!-- Case : 기본 -->
+                                <BoxCheckList spacing="small" :wrap="true">
+                                  <!-- Case : CM 지급 -->
+                                  <BoxCheckListItem>
+                                    <BoxCheck
+                                      :minSide="true"
+                                      name="leaseRentEstimationSystemLeaseAdditionalFees"
+                                      id="leaseRentEstimationSystemLeaseAdditionalFees_001"
+                                      size="small"
+                                    >
+                                      <BoxCheckLabel>CM 지급</BoxCheckLabel>
+                                    </BoxCheck>
+                                  </BoxCheckListItem>
+                                  <!-- // Case : CM 지급 -->
+
+                                  <!-- Case : AG 지급 -->
+                                  <BoxCheckListItem>
+                                    <BoxCheck
+                                      :minSide="true"
+                                      name="leaseRentEstimationSystemLeaseAdditionalFees"
+                                      id="leaseRentEstimationSystemLeaseAdditionalFees_002"
+                                      size="small"
+                                    >
+                                      <BoxCheckLabel>AG 지급</BoxCheckLabel>
+                                    </BoxCheck>
+                                  </BoxCheckListItem>
+                                  <!-- // Case : AG 지급 -->
+                                </BoxCheckList>
+                                <!-- // Case : 기본 -->
+                              </KeyValueText>
                             </KeyValueItem>
                           </KeyValue>
                         </div>
