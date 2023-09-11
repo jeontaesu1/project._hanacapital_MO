@@ -4256,6 +4256,10 @@ const datas = () => [
             date: '2023.08.29',
             text: 'BF_M05_l001 상환금리 영역 문구 수정',
           },
+          {
+            date: '2023.09.11',
+            text: 'BF_M05_l014 이미지 교체',
+          },
         ],
       },
       {
@@ -4291,7 +4295,12 @@ const datas = () => [
         path: '/ui-guide/business-general-installment-001',
         status: 'end',
         create: '2023.07.12',
-        log: [],
+        log: [
+          {
+            date: '2023.09.11',
+            text: 'BF_M06_l001 이미지 교체',
+          },
+        ],
       },
     ],
   },
