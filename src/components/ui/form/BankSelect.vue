@@ -316,7 +316,17 @@ export default {
       Type: String,
       default: null,
     },
+    openerFocusToAfterClose: {
+      Type: Boolean,
+      default: true,
+    },
     onChange: {
+      Type: Function,
+      default() {
+        return () => {};
+      },
+    },
+    onOptionClick: {
       Type: Function,
       default() {
         return () => {};
@@ -424,6 +434,12 @@ export default {
       }
     };
 
+    const optionClick = (e) => {
+      const { onOptionClick } = props;
+
+      onOptionClick(e);
+    };
+
     onMounted(() => {
       setValue(props.modelValue || props.defaultValue);
     });
@@ -441,6 +457,7 @@ export default {
       onAfterClosed,
       onInput,
       onKeyup,
+      optionClick,
     };
   },
 };
@@ -476,6 +493,7 @@ export default {
       type="toast"
       :onAfterClosed="onAfterClosed"
       :backgroundClose="true"
+      :openerFocusToAfterClose="openerFocusToAfterClose"
       v-slot="layerSlotProps"
     >
       <ToastPopup v-if="layerSlotProps.display !== 'none'">
@@ -512,7 +530,12 @@ export default {
                         'is-selected': state.value === item.value,
                       },
                     ]"
-                    @click="selectOption(item)"
+                    @click="
+                      (e) => {
+                        selectOption(item);
+                        optionClick(e);
+                      }
+                    "
                     @keyup="onKeyup($event, item)"
                   >
                     <span :class="$style['bank-brand__logo']">
@@ -545,7 +568,12 @@ export default {
                         'is-selected': state.value === item.value,
                       },
                     ]"
-                    @click="selectOption(item)"
+                    @click="
+                      (e) => {
+                        selectOption(item);
+                        optionClick(e);
+                      }
+                    "
                     @keyup="onKeyup($event, item)"
                   >
                     <span :class="$style['bank-brand__logo']">

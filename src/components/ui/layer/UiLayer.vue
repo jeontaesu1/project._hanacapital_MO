@@ -218,7 +218,10 @@ export default {
       setAttr(preOpenLayers, 'aria-hidden', 'true');
       removeAttr(preOpenLayers, 'aria-modal');
 
-      if (!store.ui.common.userAgent.isIos) {
+      if (
+        !store.ui.common.userAgent.isIos &&
+        !store.ui.common.userAgent.isAndroid
+      ) {
         setAttr(ohterElements, 'inert', '');
         setAttr(preLayersElements, 'inert', '');
         setAttr(preOpenLayers, 'inert', '');

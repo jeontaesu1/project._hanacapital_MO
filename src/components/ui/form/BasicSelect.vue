@@ -94,7 +94,17 @@ export default {
       Type: String,
       default: null,
     },
+    openerFocusToAfterClose: {
+      Type: Boolean,
+      default: true,
+    },
     onChange: {
+      Type: Function,
+      default() {
+        return () => {};
+      },
+    },
+    onOptionClick: {
       Type: Function,
       default() {
         return () => {};
@@ -198,6 +208,12 @@ export default {
       emit('update:modelValue', e.target.value);
     };
 
+    const optionClick = (e) => {
+      const { onOptionClick } = props;
+
+      onOptionClick(e);
+    };
+
     onMounted(() => {
       setValue(props.modelValue || props.defaultValue);
     });
@@ -214,6 +230,7 @@ export default {
       setValue,
       onAfterClosed,
       onInput,
+      optionClick,
     };
   },
 };
@@ -258,6 +275,7 @@ export default {
       type="toast"
       :onAfterClosed="onAfterClosed"
       :backgroundClose="true"
+      :openerFocusToAfterClose="openerFocusToAfterClose"
       v-slot="layerSlotProps"
     >
       <ToastPopup v-if="layerSlotProps.display !== 'none'">
@@ -294,7 +312,12 @@ export default {
                   customClassNames.optionButton,
                 ]"
                 :disabled="item.disabled"
-                @click="selectOption(item)"
+                @click="
+                  (e) => {
+                    selectOption(item);
+                    optionClick(e);
+                  }
+                "
               >
                 <template v-for="(text, i) in item.text.split(/\n/)" :key="i">
                   <br v-if="i > 0" />{{ text }}

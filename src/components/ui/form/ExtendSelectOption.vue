@@ -62,6 +62,12 @@ export default {
       }
     };
 
+    const optionClick = (e) => {
+      const { optionClick } = extendSelect;
+
+      optionClick(e);
+    };
+
     onMounted(() => {
       const option = {
         value: props.value,
@@ -114,6 +120,7 @@ export default {
       styleModule,
       customClassNames,
       selectOption,
+      optionClick,
     };
   },
 };
@@ -136,7 +143,12 @@ export default {
       },
       customClassNames.option,
     ]"
-    @click="selectOption"
+    @click="
+      (e) => {
+        selectOption();
+        optionClick(e);
+      }
+    "
   >
     <slot />
   </component>
