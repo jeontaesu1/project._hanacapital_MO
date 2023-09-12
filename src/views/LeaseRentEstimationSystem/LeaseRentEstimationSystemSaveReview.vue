@@ -349,12 +349,7 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
-              <div class="inline-wrap row-margin-item">
-                <RoundStatus :square="true" size="small" theme="duodenary"
-                  >개인사업자</RoundStatus
-                >
-              </div>
-              <div class="flex-box">
+              <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
                     <ul :class="$style['division-info__list']">
@@ -370,14 +365,25 @@ export default {
                       </li>
                     </ul>
                   </div>
+                </div>
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    :square="true"
+                    size="small"
+                    theme="secondary"
+                    :block="true"
+                    >개인사업자</RoundStatus
+                  >
+                </div>
+              </div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
                   <div class="text-body-1 font-weight-medium row-margin-small">
                     홍길동
                   </div>
                 </div>
-                <div class="flex-box__cell flex-box__cell--small">
-                  <RoundStatus
-                    theme="denary"
-                    :classNames="{ wrap: 'display-block' }"
+                <div class="flex-box__cell">
+                  <RoundStatus theme="denary" :block="true"
                     >장기렌트</RoundStatus
                   >
                 </div>
@@ -587,12 +593,7 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
-              <div class="inline-wrap row-margin-item">
-                <RoundStatus :square="true" size="small" theme="duodenary"
-                  >개인</RoundStatus
-                >
-              </div>
-              <div class="flex-box">
+              <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
                     <ul :class="$style['division-info__list']">
@@ -608,16 +609,25 @@ export default {
                       </li>
                     </ul>
                   </div>
+                </div>
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    :square="true"
+                    size="small"
+                    theme="secondary"
+                    :block="true"
+                    >개인</RoundStatus
+                  >
+                </div>
+              </div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
                   <div class="text-body-1 font-weight-medium row-margin-small">
                     홍길동
                   </div>
                 </div>
-                <div class="flex-box__cell flex-box__cell--small">
-                  <RoundStatus
-                    theme="denary"
-                    :classNames="{ wrap: 'display-block' }"
-                    >선구매</RoundStatus
-                  >
+                <div class="flex-box__cell">
+                  <RoundStatus theme="denary" :block="true">선구매</RoundStatus>
                 </div>
               </div>
               <div class="flex-box row-margin-item">
@@ -823,12 +833,7 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
-              <div class="inline-wrap row-margin-item">
-                <RoundStatus :square="true" size="small" theme="duodenary"
-                  >법인사업자</RoundStatus
-                >
-              </div>
-              <div class="flex-box">
+              <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
                     <ul :class="$style['division-info__list']">
@@ -844,14 +849,25 @@ export default {
                       </li>
                     </ul>
                   </div>
+                </div>
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    :square="true"
+                    size="small"
+                    theme="secondary"
+                    :block="true"
+                    >법인사업자</RoundStatus
+                  >
+                </div>
+              </div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
                   <div class="text-body-1 font-weight-medium row-margin-small">
                     홍길동
                   </div>
                 </div>
-                <div class="flex-box__cell flex-box__cell--small">
-                  <RoundStatus
-                    theme="denary"
-                    :classNames="{ wrap: 'display-block' }"
+                <div class="flex-box__cell">
+                  <RoundStatus theme="denary" :block="true"
                     >운용리스</RoundStatus
                   >
                 </div>
@@ -1070,12 +1086,7 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
-              <div class="inline-wrap row-margin-item">
-                <RoundStatus :square="true" size="small" theme="duodenary"
-                  >개인사업자</RoundStatus
-                >
-              </div>
-              <div class="flex-box">
+              <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
                     <ul :class="$style['division-info__list']">
@@ -1091,14 +1102,25 @@ export default {
                       </li>
                     </ul>
                   </div>
+                </div>
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    :square="true"
+                    size="small"
+                    theme="secondary"
+                    :block="true"
+                    >개인사업자</RoundStatus
+                  >
+                </div>
+              </div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
                   <div class="text-body-1 font-weight-medium row-margin-small">
                     홍길동
                   </div>
                 </div>
-                <div class="flex-box__cell flex-box__cell--small">
-                  <RoundStatus
-                    theme="denary"
-                    :classNames="{ wrap: 'display-block' }"
+                <div class="flex-box__cell">
+                  <RoundStatus theme="denary" :block="true"
                     >운용리스 (중고차)</RoundStatus
                   >
                 </div>
@@ -1312,12 +1334,7 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
-              <div class="inline-wrap row-margin-item">
-                <RoundStatus :square="true" size="small" theme="duodenary"
-                  >개인사업자</RoundStatus
-                >
-              </div>
-              <div class="flex-box">
+              <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
                     <ul :class="$style['division-info__list']">
@@ -1333,14 +1350,25 @@ export default {
                       </li>
                     </ul>
                   </div>
+                </div>
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    :square="true"
+                    size="small"
+                    theme="secondary"
+                    :block="true"
+                    >개인사업자</RoundStatus
+                  >
+                </div>
+              </div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
                   <div class="text-body-1 font-weight-medium row-margin-small">
                     홍길동
                   </div>
                 </div>
-                <div class="flex-box__cell flex-box__cell--small">
-                  <RoundStatus
-                    theme="denary"
-                    :classNames="{ wrap: 'display-block' }"
+                <div class="flex-box__cell">
+                  <RoundStatus theme="denary" :block="true"
                     >금융리스 (중고차)</RoundStatus
                   >
                 </div>
@@ -1553,12 +1581,7 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
-              <div class="inline-wrap row-margin-item">
-                <RoundStatus :square="true" size="small" theme="duodenary"
-                  >개인사업자</RoundStatus
-                >
-              </div>
-              <div class="flex-box">
+              <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
                     <ul :class="$style['division-info__list']">
@@ -1574,16 +1597,25 @@ export default {
                       </li>
                     </ul>
                   </div>
+                </div>
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    :square="true"
+                    size="small"
+                    theme="secondary"
+                    :block="true"
+                    >개인사업자</RoundStatus
+                  >
+                </div>
+              </div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
                   <div class="text-body-1 font-weight-medium row-margin-small">
                     홍길동
                   </div>
                 </div>
-                <div class="flex-box__cell flex-box__cell--small">
-                  <RoundStatus
-                    theme="denary"
-                    :classNames="{ wrap: 'display-block' }"
-                    >할부</RoundStatus
-                  >
+                <div class="flex-box__cell">
+                  <RoundStatus theme="denary" :block="true">할부</RoundStatus>
                 </div>
               </div>
               <div class="flex-box row-margin-item">
@@ -1780,12 +1812,7 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
-              <div class="inline-wrap row-margin-item">
-                <RoundStatus :square="true" size="small" theme="duodenary"
-                  >개인사업자</RoundStatus
-                >
-              </div>
-              <div class="flex-box">
+              <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
                     <ul :class="$style['division-info__list']">
@@ -1809,14 +1836,25 @@ export default {
                       </li>
                     </ul>
                   </div>
+                </div>
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    :square="true"
+                    size="small"
+                    theme="secondary"
+                    :block="true"
+                    >개인사업자</RoundStatus
+                  >
+                </div>
+              </div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
                   <div class="text-body-1 font-weight-medium row-margin-small">
                     홍길동
                   </div>
                 </div>
-                <div class="flex-box__cell flex-box__cell--small">
-                  <RoundStatus
-                    theme="denary"
-                    :classNames="{ wrap: 'display-block' }"
+                <div class="flex-box__cell">
+                  <RoundStatus theme="denary" :block="true"
                     >장기렌트</RoundStatus
                   >
                 </div>
@@ -2086,12 +2124,7 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
-              <div class="inline-wrap row-margin-item">
-                <RoundStatus :square="true" size="small" theme="duodenary"
-                  >개인사업자</RoundStatus
-                >
-              </div>
-              <div class="flex-box">
+              <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
                     <ul :class="$style['division-info__list']">
@@ -2115,16 +2148,25 @@ export default {
                       </li>
                     </ul>
                   </div>
+                </div>
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    :square="true"
+                    size="small"
+                    theme="secondary"
+                    :block="true"
+                    >개인사업자</RoundStatus
+                  >
+                </div>
+              </div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
                   <div class="text-body-1 font-weight-medium row-margin-small">
                     홍길동
                   </div>
                 </div>
-                <div class="flex-box__cell flex-box__cell--small">
-                  <RoundStatus
-                    theme="denary"
-                    :classNames="{ wrap: 'display-block' }"
-                    >선구매</RoundStatus
-                  >
+                <div class="flex-box__cell">
+                  <RoundStatus theme="denary" :block="true">선구매</RoundStatus>
                 </div>
               </div>
               <div class="flex-box row-margin-item">
@@ -2392,12 +2434,7 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
-              <div class="inline-wrap row-margin-item">
-                <RoundStatus :square="true" size="small" theme="duodenary"
-                  >개인사업자</RoundStatus
-                >
-              </div>
-              <div class="flex-box">
+              <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
                     <ul :class="$style['division-info__list']">
@@ -2421,14 +2458,25 @@ export default {
                       </li>
                     </ul>
                   </div>
+                </div>
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    :square="true"
+                    size="small"
+                    theme="secondary"
+                    :block="true"
+                    >개인사업자</RoundStatus
+                  >
+                </div>
+              </div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
                   <div class="text-body-1 font-weight-medium row-margin-small">
                     홍길동
                   </div>
                 </div>
-                <div class="flex-box__cell flex-box__cell--small">
-                  <RoundStatus
-                    theme="denary"
-                    :classNames="{ wrap: 'display-block' }"
+                <div class="flex-box__cell">
+                  <RoundStatus theme="denary" :block="true"
                     >운용리스</RoundStatus
                   >
                 </div>
@@ -2640,12 +2688,7 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
-              <div class="inline-wrap row-margin-item">
-                <RoundStatus :square="true" size="small" theme="duodenary"
-                  >개인사업자</RoundStatus
-                >
-              </div>
-              <div class="flex-box">
+              <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
                     <ul :class="$style['division-info__list']">
@@ -2669,16 +2712,25 @@ export default {
                       </li>
                     </ul>
                   </div>
+                </div>
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    :square="true"
+                    size="small"
+                    theme="secondary"
+                    :block="true"
+                    >개인사업자</RoundStatus
+                  >
+                </div>
+              </div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
                   <div class="text-body-1 font-weight-medium row-margin-small">
                     홍길동
                   </div>
                 </div>
-                <div class="flex-box__cell flex-box__cell--small">
-                  <RoundStatus
-                    theme="denary"
-                    :classNames="{ wrap: 'display-block' }"
-                    >할부</RoundStatus
-                  >
+                <div class="flex-box__cell">
+                  <RoundStatus theme="denary" :block="true">할부</RoundStatus>
                 </div>
               </div>
               <div class="flex-box row-margin-item">
@@ -2904,12 +2956,7 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
-              <div class="inline-wrap row-margin-item">
-                <RoundStatus :square="true" size="small" theme="duodenary"
-                  >개인사업자</RoundStatus
-                >
-              </div>
-              <div class="flex-box">
+              <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
                     <ul :class="$style['division-info__list']">
@@ -2957,14 +3004,25 @@ export default {
                       </li>
                     </ul>
                   </div>
+                </div>
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    :square="true"
+                    size="small"
+                    theme="secondary"
+                    :block="true"
+                    >개인사업자</RoundStatus
+                  >
+                </div>
+              </div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
                   <div class="text-body-1 font-weight-medium row-margin-small">
                     홍길동
                   </div>
                 </div>
-                <div class="flex-box__cell flex-box__cell--small">
-                  <RoundStatus
-                    theme="denary"
-                    :classNames="{ wrap: 'display-block' }"
+                <div class="flex-box__cell">
+                  <RoundStatus theme="denary" :block="true"
                     >장기렌트</RoundStatus
                   >
                 </div>
@@ -3269,12 +3327,7 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
-              <div class="inline-wrap row-margin-item">
-                <RoundStatus :square="true" size="small" theme="duodenary"
-                  >개인사업자</RoundStatus
-                >
-              </div>
-              <div class="flex-box">
+              <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
                     <ul :class="$style['division-info__list']">
@@ -3298,16 +3351,25 @@ export default {
                       </li>
                     </ul>
                   </div>
+                </div>
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    :square="true"
+                    size="small"
+                    theme="secondary"
+                    :block="true"
+                    >개인사업자</RoundStatus
+                  >
+                </div>
+              </div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
                   <div class="text-body-1 font-weight-medium row-margin-small">
                     홍길동
                   </div>
                 </div>
-                <div class="flex-box__cell flex-box__cell--small">
-                  <RoundStatus
-                    theme="denary"
-                    :classNames="{ wrap: 'display-block' }"
-                    >선구매</RoundStatus
-                  >
+                <div class="flex-box__cell">
+                  <RoundStatus theme="denary" :block="true">선구매</RoundStatus>
                 </div>
               </div>
               <div class="flex-box row-margin-item">
@@ -3592,12 +3654,7 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
-              <div class="inline-wrap row-margin-item">
-                <RoundStatus :square="true" size="small" theme="duodenary"
-                  >개인사업자</RoundStatus
-                >
-              </div>
-              <div class="flex-box">
+              <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
                     <ul :class="$style['division-info__list']">
@@ -3645,14 +3702,25 @@ export default {
                       </li>
                     </ul>
                   </div>
+                </div>
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    :square="true"
+                    size="small"
+                    theme="secondary"
+                    :block="true"
+                    >개인사업자</RoundStatus
+                  >
+                </div>
+              </div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
                   <div class="text-body-1 font-weight-medium row-margin-small">
                     홍길동
                   </div>
                 </div>
-                <div class="flex-box__cell flex-box__cell--small">
-                  <RoundStatus
-                    theme="denary"
-                    :classNames="{ wrap: 'display-block' }"
+                <div class="flex-box__cell">
+                  <RoundStatus theme="denary" :block="true"
                     >운용리스</RoundStatus
                   >
                 </div>
@@ -3990,12 +4058,7 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
-              <div class="inline-wrap row-margin-item">
-                <RoundStatus :square="true" size="small" theme="duodenary"
-                  >개인사업자</RoundStatus
-                >
-              </div>
-              <div class="flex-box">
+              <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
                     <ul :class="$style['division-info__list']">
@@ -4019,16 +4082,25 @@ export default {
                       </li>
                     </ul>
                   </div>
+                </div>
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    :square="true"
+                    size="small"
+                    theme="secondary"
+                    :block="true"
+                    >개인사업자</RoundStatus
+                  >
+                </div>
+              </div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
                   <div class="text-body-1 font-weight-medium row-margin-small">
                     홍길동
                   </div>
                 </div>
-                <div class="flex-box__cell flex-box__cell--small">
-                  <RoundStatus
-                    theme="denary"
-                    :classNames="{ wrap: 'display-block' }"
-                    >할부</RoundStatus
-                  >
+                <div class="flex-box__cell">
+                  <RoundStatus theme="denary" :block="true">할부</RoundStatus>
                 </div>
               </div>
               <div class="flex-box row-margin-item">
@@ -4300,12 +4372,7 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
-              <div class="inline-wrap row-margin-item">
-                <RoundStatus :square="true" size="small" theme="duodenary"
-                  >개인사업자</RoundStatus
-                >
-              </div>
-              <div class="flex-box">
+              <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
                     <ul :class="$style['division-info__list']">
@@ -4329,14 +4396,25 @@ export default {
                       </li>
                     </ul>
                   </div>
+                </div>
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    :square="true"
+                    size="small"
+                    theme="secondary"
+                    :block="true"
+                    >개인사업자</RoundStatus
+                  >
+                </div>
+              </div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
                   <div class="text-body-1 font-weight-medium row-margin-small">
                     홍길동
                   </div>
                 </div>
-                <div class="flex-box__cell flex-box__cell--small">
-                  <RoundStatus
-                    theme="denary"
-                    :classNames="{ wrap: 'display-block' }"
+                <div class="flex-box__cell">
+                  <RoundStatus theme="denary" :block="true"
                     >장기렌트</RoundStatus
                   >
                 </div>
@@ -4604,12 +4682,7 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
-              <div class="inline-wrap row-margin-item">
-                <RoundStatus :square="true" size="small" theme="duodenary"
-                  >개인사업자</RoundStatus
-                >
-              </div>
-              <div class="flex-box">
+              <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
                     <ul :class="$style['division-info__list']">
@@ -4633,16 +4706,25 @@ export default {
                       </li>
                     </ul>
                   </div>
+                </div>
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    :square="true"
+                    size="small"
+                    theme="secondary"
+                    :block="true"
+                    >개인사업자</RoundStatus
+                  >
+                </div>
+              </div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
                   <div class="text-body-1 font-weight-medium row-margin-small">
                     홍길동
                   </div>
                 </div>
-                <div class="flex-box__cell flex-box__cell--small">
-                  <RoundStatus
-                    theme="denary"
-                    :classNames="{ wrap: 'display-block' }"
-                    >선구매</RoundStatus
-                  >
+                <div class="flex-box__cell">
+                  <RoundStatus theme="denary" :block="true">선구매</RoundStatus>
                 </div>
               </div>
               <div class="flex-box row-margin-item">
@@ -4908,12 +4990,7 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
-              <div class="inline-wrap row-margin-item">
-                <RoundStatus :square="true" size="small" theme="duodenary"
-                  >개인사업자</RoundStatus
-                >
-              </div>
-              <div class="flex-box">
+              <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
                     <ul :class="$style['division-info__list']">
@@ -4936,14 +5013,25 @@ export default {
                       </li>
                     </ul>
                   </div>
+                </div>
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    :square="true"
+                    size="small"
+                    theme="secondary"
+                    :block="true"
+                    >개인사업자</RoundStatus
+                  >
+                </div>
+              </div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
                   <div class="text-body-1 font-weight-medium row-margin-small">
                     홍길동
                   </div>
                 </div>
-                <div class="flex-box__cell flex-box__cell--small">
-                  <RoundStatus
-                    theme="denary"
-                    :classNames="{ wrap: 'display-block' }"
+                <div class="flex-box__cell">
+                  <RoundStatus theme="denary" :block="true"
                     >운용리스</RoundStatus
                   >
                 </div>
@@ -5205,12 +5293,7 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
-              <div class="inline-wrap row-margin-item">
-                <RoundStatus :square="true" size="small" theme="duodenary"
-                  >개인사업자</RoundStatus
-                >
-              </div>
-              <div class="flex-box">
+              <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
                     <ul :class="$style['division-info__list']">
@@ -5234,16 +5317,25 @@ export default {
                       </li>
                     </ul>
                   </div>
+                </div>
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    :square="true"
+                    size="small"
+                    theme="secondary"
+                    :block="true"
+                    >개인사업자</RoundStatus
+                  >
+                </div>
+              </div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
                   <div class="text-body-1 font-weight-medium row-margin-small">
                     홍길동
                   </div>
                 </div>
-                <div class="flex-box__cell flex-box__cell--small">
-                  <RoundStatus
-                    theme="denary"
-                    :classNames="{ wrap: 'display-block' }"
-                    >할부</RoundStatus
-                  >
+                <div class="flex-box__cell">
+                  <RoundStatus theme="denary" :block="true">할부</RoundStatus>
                 </div>
               </div>
               <div class="flex-box row-margin-item">
@@ -5474,12 +5566,7 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
-              <div class="inline-wrap row-margin-item">
-                <RoundStatus :square="true" size="small" theme="duodenary"
-                  >개인사업자</RoundStatus
-                >
-              </div>
-              <div class="flex-box">
+              <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
                     <ul :class="$style['division-info__list']">
@@ -5503,14 +5590,25 @@ export default {
                       </li>
                     </ul>
                   </div>
+                </div>
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    :square="true"
+                    size="small"
+                    theme="secondary"
+                    :block="true"
+                    >개인사업자</RoundStatus
+                  >
+                </div>
+              </div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
                   <div class="text-body-1 font-weight-medium row-margin-small">
                     홍길동
                   </div>
                 </div>
-                <div class="flex-box__cell flex-box__cell--small">
-                  <RoundStatus
-                    theme="denary"
-                    :classNames="{ wrap: 'display-block' }"
+                <div class="flex-box__cell">
+                  <RoundStatus theme="denary" :block="true"
                     >장기렌트</RoundStatus
                   >
                 </div>
@@ -5777,12 +5875,7 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
-              <div class="inline-wrap row-margin-item">
-                <RoundStatus :square="true" size="small" theme="duodenary"
-                  >개인사업자</RoundStatus
-                >
-              </div>
-              <div class="flex-box">
+              <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
                     <ul :class="$style['division-info__list']">
@@ -5806,16 +5899,25 @@ export default {
                       </li>
                     </ul>
                   </div>
+                </div>
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    :square="true"
+                    size="small"
+                    theme="secondary"
+                    :block="true"
+                    >개인사업자</RoundStatus
+                  >
+                </div>
+              </div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
                   <div class="text-body-1 font-weight-medium row-margin-small">
                     홍길동
                   </div>
                 </div>
-                <div class="flex-box__cell flex-box__cell--small">
-                  <RoundStatus
-                    theme="denary"
-                    :classNames="{ wrap: 'display-block' }"
-                    >선구매</RoundStatus
-                  >
+                <div class="flex-box__cell">
+                  <RoundStatus theme="denary" :block="true">선구매</RoundStatus>
                 </div>
               </div>
               <div class="flex-box row-margin-item">
@@ -6080,12 +6182,7 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
-              <div class="inline-wrap row-margin-item">
-                <RoundStatus :square="true" size="small" theme="duodenary"
-                  >개인사업자</RoundStatus
-                >
-              </div>
-              <div class="flex-box">
+              <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
                     <ul :class="$style['division-info__list']">
@@ -6115,14 +6212,25 @@ export default {
                       </li>
                     </ul>
                   </div>
+                </div>
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    :square="true"
+                    size="small"
+                    theme="secondary"
+                    :block="true"
+                    >개인사업자</RoundStatus
+                  >
+                </div>
+              </div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
                   <div class="text-body-1 font-weight-medium row-margin-small">
                     홍길동
                   </div>
                 </div>
-                <div class="flex-box__cell flex-box__cell--small">
-                  <RoundStatus
-                    theme="denary"
-                    :classNames="{ wrap: 'display-block' }"
+                <div class="flex-box__cell">
+                  <RoundStatus theme="denary" :block="true"
                     >운용리스</RoundStatus
                   >
                 </div>
@@ -6433,12 +6541,7 @@ export default {
         <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
           <BasicBox>
             <div>
-              <div class="inline-wrap row-margin-item">
-                <RoundStatus :square="true" size="small" theme="duodenary"
-                  >개인사업자</RoundStatus
-                >
-              </div>
-              <div class="flex-box">
+              <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
                   <div :class="$style['division-info']">
                     <ul :class="$style['division-info__list']">
@@ -6468,16 +6571,25 @@ export default {
                       </li>
                     </ul>
                   </div>
+                </div>
+                <div class="flex-box__cell flex-box__cell--small">
+                  <RoundStatus
+                    :square="true"
+                    size="small"
+                    theme="secondary"
+                    :block="true"
+                    >개인사업자</RoundStatus
+                  >
+                </div>
+              </div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
                   <div class="text-body-1 font-weight-medium row-margin-small">
                     홍길동
                   </div>
                 </div>
-                <div class="flex-box__cell flex-box__cell--small">
-                  <RoundStatus
-                    theme="denary"
-                    :classNames="{ wrap: 'display-block' }"
-                    >할부</RoundStatus
-                  >
+                <div class="flex-box__cell">
+                  <RoundStatus theme="denary" :block="true">할부</RoundStatus>
                 </div>
               </div>
               <div class="flex-box row-margin-item">
