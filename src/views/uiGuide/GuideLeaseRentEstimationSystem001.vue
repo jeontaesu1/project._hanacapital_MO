@@ -8,7 +8,7 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 import LayerLeaseRentEstimationSystemSaveReviewCarNumber from '@/views/LeaseRentEstimationSystem/LayerLeaseRentEstimationSystemSaveReviewCarNumber.vue';
 import LayerLeaseRentEstimationSystemSaveReviewDelivery from '@/views/LeaseRentEstimationSystem/LayerLeaseRentEstimationSystemSaveReviewDelivery.vue';
-import LR_M04_b002 from '@/views/LeaseRentEstimationSystem/LR_M04_b002.vue';
+import LR_M04_b003 from '@/views/LeaseRentEstimationSystem/LR_M04_b003.vue';
 
 export default {
   components: {
@@ -18,7 +18,7 @@ export default {
     ButtonListItem,
     LayerLeaseRentEstimationSystemSaveReviewCarNumber,
     LayerLeaseRentEstimationSystemSaveReviewDelivery,
-    LR_M04_b002,
+    LR_M04_b003,
   },
   setup() {
     const layer001 = ref(null);
@@ -67,13 +67,13 @@ export default {
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer003Open"
-          >심사신청 팝업<br />LR_M04_b002</BasicButton
+          >심사신청 팝업<br />LR_M04_b003</BasicButton
         >
       </ButtonListItem>
     </ButtonList>
 
     <LayerLeaseRentEstimationSystemSaveReviewCarNumber ref="layer001" />
     <LayerLeaseRentEstimationSystemSaveReviewDelivery ref="layer002" />
-    <LR_M04_b002 ref="layer003" />
+    <LR_M04_b003 ref="layer003" />
   </PageContents>
 </template>
