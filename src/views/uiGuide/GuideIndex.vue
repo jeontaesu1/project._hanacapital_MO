@@ -487,6 +487,10 @@ const datas = () => [
             date: '2023.09.05',
             text: 'Main_M05_l002 동영상 타입, 이미지 타입 케이스 추가',
           },
+          {
+            date: '2023.09.12',
+            text: 'Main_M05_l001 페이지 변경으로 삭제',
+          },
         ],
       },
       {
@@ -604,6 +608,22 @@ const datas = () => [
         status: 'end',
         create: '2023.05.19',
         log: [],
+      },
+      {
+        depth2: 'APP',
+        depth3: '혜택\nMain_M05_p001',
+        depth4: '이벤트 상세\nMain_M05_l001',
+        depth5: '',
+        depth6: '',
+        path: '/main/Main_M05_l001',
+        status: 'end',
+        create: '2023.09.12',
+        log: [
+          {
+            date: '2023.09.12',
+            text: '레이어 팝업에서 페이지로 변경',
+          },
+        ],
       },
       {
         depth2: 'APP',

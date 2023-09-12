@@ -9,7 +9,6 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import LayerMainPushDetail from '@/views/main/LayerMainPushDetail.vue';
 import LayerMainRentalDetail from '@/views/main/LayerMainRentalDetail.vue';
 import LayerMainAffiliate from '@/views/main/LayerMainAffiliate.vue';
-import LayerMainEventDetail from '@/views/main/LayerMainEventDetail.vue';
 import LayerMainCouponDetail from '@/views/main/LayerMainCouponDetail.vue';
 import LayerMainFunDetail from '@/views/main/LayerMainFunDetail.vue';
 import LayerMainFunSubscription from '@/views/main/LayerMainFunSubscription.vue';
@@ -25,7 +24,6 @@ export default {
     LayerMainPushDetail,
     LayerMainRentalDetail,
     LayerMainAffiliate,
-    LayerMainEventDetail,
     LayerMainCouponDetail,
     LayerMainFunDetail,
     LayerMainFunSubscription,
@@ -36,7 +34,7 @@ export default {
     const layer001 = ref(null);
     const layer002 = ref(null);
     const layer003 = ref(null);
-    const layer004 = ref(null);
+    // const layer004 = ref(null);
     const layer005 = ref(null);
     const layer006 = ref(null);
     const layer007 = ref(null);
@@ -52,9 +50,11 @@ export default {
     const layer003Open = (e = {}) => {
       layer003.value.layer.open(e.target);
     };
+    /*
     const layer004Open = (e = {}) => {
       layer004.value.layer.open(e.target);
     };
+    */
     const layer005Open = (e = {}) => {
       layer005.value.layer.open(e.target);
     };
@@ -75,7 +75,7 @@ export default {
       layer001,
       layer002,
       layer003,
-      layer004,
+      // layer004,
       layer005,
       layer006,
       layer007,
@@ -84,7 +84,7 @@ export default {
       layer001Open,
       layer002Open,
       layer003Open,
-      layer004Open,
+      // layer004Open,
       layer005Open,
       layer006Open,
       layer007Open,
@@ -116,11 +116,6 @@ export default {
       <ButtonListItem>
         <BasicButton @click="layer003Open">
           제휴사 연결<br />Main_M07_l002</BasicButton
-        >
-      </ButtonListItem>
-      <ButtonListItem>
-        <BasicButton @click="layer004Open">
-          이벤트 상세<br />Main_M05_l001</BasicButton
         >
       </ButtonListItem>
       <ButtonListItem>
@@ -157,7 +152,6 @@ export default {
     <LayerMainPushDetail ref="layer001" />
     <LayerMainRentalDetail ref="layer002" />
     <LayerMainAffiliate ref="layer003" />
-    <LayerMainEventDetail ref="layer004" />
     <LayerMainCouponDetail ref="layer005" />
     <LayerMainFunDetail ref="layer006" />
     <LayerMainFunSubscription ref="layer007" />
