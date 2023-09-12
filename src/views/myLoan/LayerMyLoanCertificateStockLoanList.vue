@@ -28,6 +28,9 @@ import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
+
+import IconArrow from '@/assets/images/icon/dropdown.svg?component';
 
 export default {
   components: {
@@ -57,6 +60,8 @@ export default {
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
+    TextButton,
+    IconArrow,
   },
   setup() {
     const layer = ref(null);
@@ -88,71 +93,85 @@ export default {
       </PageTextGroup>
 
       <!-- Case : 리스트가 있는 경우 -->
-      <div class="inline-wrap align-right">
-        <CheckBox id="layerMyLoanCertificateStockLoanListAll" theme="tertiary">
-          <CheckBoxObject />
-          <CheckBoxLabelText>전체 선택</CheckBoxLabelText>
-        </CheckBox>
-      </div>
-
-      <BoxCheckList
-        align="full"
-        :classNames="{
-          wrap: 'row-margin-item',
-        }"
-      >
-        <BoxCheckListItem v-for="i in 3" :key="i">
-          <BoxCheck
-            :contents="true"
-            align="top"
-            type="checkbox"
-            :id="`layerMyLoanCertificateStockLoanList${i}`"
+      <div>
+        <div class="inline-wrap align-right">
+          <CheckBox
+            id="layerMyLoanCertificateStockLoanListAll"
+            theme="tertiary"
           >
-            <BasicBoxHead>
-              <BasicBoxHeadLeft>
-                <div class="flex-box align-items-start text-body-1">
-                  <div class="flex-box__cell"><BoxCheckObject /></div>
-                  <div
-                    class="flex-box__cell flex-box__cell--small-regular flex-1"
-                  >
-                    <BoxCheckLabel>스탁론</BoxCheckLabel>
-                    <div class="text-body-4 color-gray row-margin-small">
-                      하나증권 ###-###-#######
+            <CheckBoxObject />
+            <CheckBoxLabelText>전체 선택</CheckBoxLabelText>
+          </CheckBox>
+        </div>
+
+        <BoxCheckList
+          align="full"
+          :classNames="{
+            wrap: 'row-margin-item',
+          }"
+        >
+          <BoxCheckListItem v-for="i in 3" :key="i">
+            <BoxCheck
+              :contents="true"
+              align="top"
+              type="checkbox"
+              :id="`layerMyLoanCertificateStockLoanList${i}`"
+            >
+              <BasicBoxHead>
+                <BasicBoxHeadLeft>
+                  <div class="flex-box align-items-start text-body-1">
+                    <div class="flex-box__cell"><BoxCheckObject /></div>
+                    <div
+                      class="flex-box__cell flex-box__cell--small-regular flex-1"
+                    >
+                      <BoxCheckLabel>스탁론</BoxCheckLabel>
+                      <div class="text-body-4 color-gray row-margin-small">
+                        하나증권 ###-###-#######
+                      </div>
                     </div>
                   </div>
-                </div>
-              </BasicBoxHeadLeft>
-              <BasicBoxHeadRight>
-                <RoundStatus :classNames="{ wrap: 'display-block' }">
-                  종료
-                </RoundStatus>
-              </BasicBoxHeadRight>
-            </BasicBoxHead>
-            <KeyValue margin="regular">
-              <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                <KeyValueTitle>결제예정금액</KeyValueTitle>
-                <KeyValueText>999,999 원</KeyValueText>
-              </KeyValueItem>
-              <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                <KeyValueTitle>결제일</KeyValueTitle>
-                <KeyValueText>2021.02.02 (매월 2일)</KeyValueText>
-              </KeyValueItem>
-              <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                <KeyValueTitle>결제회차</KeyValueTitle>
-                <KeyValueText
-                  :classNames="{ text: 'color-green font-weight-medium' }"
-                >
-                  16/60
-                </KeyValueText>
-              </KeyValueItem>
-              <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                <KeyValueTitle>결제예정금액</KeyValueTitle>
-                <KeyValueText>8,000,000 원</KeyValueText>
-              </KeyValueItem>
-            </KeyValue>
-          </BoxCheck>
-        </BoxCheckListItem>
-      </BoxCheckList>
+                </BasicBoxHeadLeft>
+                <BasicBoxHeadRight>
+                  <RoundStatus :classNames="{ wrap: 'display-block' }">
+                    종료
+                  </RoundStatus>
+                </BasicBoxHeadRight>
+              </BasicBoxHead>
+              <KeyValue margin="regular">
+                <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                  <KeyValueTitle>결제예정금액</KeyValueTitle>
+                  <KeyValueText>999,999 원</KeyValueText>
+                </KeyValueItem>
+                <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                  <KeyValueTitle>결제일</KeyValueTitle>
+                  <KeyValueText>2021.02.02 (매월 2일)</KeyValueText>
+                </KeyValueItem>
+                <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                  <KeyValueTitle>결제회차</KeyValueTitle>
+                  <KeyValueText
+                    :classNames="{ text: 'color-green font-weight-medium' }"
+                  >
+                    16/60
+                  </KeyValueText>
+                </KeyValueItem>
+                <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                  <KeyValueTitle>결제예정금액</KeyValueTitle>
+                  <KeyValueText>8,000,000 원</KeyValueText>
+                </KeyValueItem>
+              </KeyValue>
+            </BoxCheck>
+          </BoxCheckListItem>
+        </BoxCheckList>
+
+        <div class="inline-wrap align-center row-margin-item-group">
+          <TextButton :classNames="{ wrap: 'text-body-4 color-gray' }">
+            더보기
+            <template v-slot:rightIcon>
+              <IconArrow />
+            </template>
+          </TextButton>
+        </div>
+      </div>
       <!-- //Case : 리스트가 있는 경우 -->
 
       <!-- Case : 리스트가 없는 경우 -->

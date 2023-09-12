@@ -21,6 +21,9 @@ import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
+
+import IconArrow from '@/assets/images/icon/dropdown.svg?component';
 
 export default {
   components: {
@@ -43,6 +46,8 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicButton,
+    TextButton,
+    IconArrow,
   },
   setup() {
     const layer = ref(null);
@@ -230,6 +235,15 @@ export default {
           </ContentsButton>
         </li>
       </ul>
+
+      <div class="inline-wrap align-center row-margin-item-group">
+        <TextButton :classNames="{ wrap: 'text-body-4 color-gray' }">
+          더보기
+          <template v-slot:rightIcon>
+            <IconArrow />
+          </template>
+        </TextButton>
+      </div>
       <!-- //Case : 리스트가 있는 경우 -->
 
       <!-- Case : 리스트가 없는 경우 -->
