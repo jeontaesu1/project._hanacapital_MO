@@ -392,7 +392,12 @@ const datas = () => [
         path: '/onboarding/home',
         status: 'end',
         create: '2023.06.23',
-        log: [],
+        log: [
+          {
+            date: '2023.09.14',
+            text: '이미지 및 배경색 변경',
+          },
+        ],
       },
     ],
   },

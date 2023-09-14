@@ -1,10 +1,8 @@
 <script>
 // Common_M00_p010
-import { ref, reactive, onMounted, onUnmounted } from 'vue';
+import { ref, reactive, onMounted } from 'vue';
 import { Pagination, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/vue';
-
-import { useUiCommonStore } from '@/stores/ui/common';
 
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
@@ -19,12 +17,6 @@ export default {
     ButtonListItem,
   },
   setup() {
-    const store = {
-      ui: {
-        common: useUiCommonStore(),
-      },
-    };
-
     const state = reactive({
       paginationEl: null,
     });
@@ -32,12 +24,7 @@ export default {
     const pagination = ref(null);
 
     onMounted(() => {
-      store.ui.common.setRootClassName('page-onboarding');
       state.paginationEl = pagination.value;
-    });
-
-    onUnmounted(() => {
-      store.ui.common.setRootClassName();
     });
 
     return {

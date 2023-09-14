@@ -1,7 +1,3 @@
-:global(.page-onboarding) {
-  background-color: $color-gray-05;
-}
-
 .slide {
   flex: 1;
 
@@ -9,11 +5,15 @@
     padding-bottom: 122px;
     text-align: center;
     height: 100vh;
-    min-height: 572px;
+    min-height: 605px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: stretch;
+
+    @include media-mobile-small {
+      min-height: 572px;
+    }
   }
 
   &__head {
@@ -38,7 +38,7 @@
     flex: none;
     position: relative;
     width: 100%;
-    max-width: 320px;
+    max-width: 360px;
     margin: auto;
 
     &::before {
@@ -59,7 +59,11 @@
 
   :global(.swiper) {
     height: 100vh;
-    min-height: 572px;
+    min-height: 605px;
+
+    @include media-mobile-small {
+      min-height: 572px;
+    }
   }
 }
 
