@@ -82,8 +82,7 @@ export default {
               </div>
             </div>
             <h3 class="text-body-1 font-weight-medium">
-              쏘나타 뉴 라이즈 1.6T-Gdi 스마트<br />
-              (마이 스마트 핏)
+              쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
             </h3>
           </div>
         </div>

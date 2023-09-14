@@ -239,7 +239,7 @@ export default {
           </div>
 
           <div class="flex-box">
-            <div class="flex-box__cell flex-1">
+            <div class="flex-box__cell">
               <h3 class="text-body-1 font-weight-medium">김하나</h3>
             </div>
           </div>
@@ -266,7 +266,7 @@ export default {
               <h3 class="text-body-1 font-weight-medium">이하나</h3>
             </div>
             <div class="flex-box__cell flex-box__cell--mini">
-              <h3 class="text-body-1 font-weight-medium">(행복아파트론)</h3>
+              <p class="text-body-1 font-weight-medium">(행복아파트론)</p>
             </div>
           </div>
 
@@ -277,16 +277,10 @@ export default {
               </p>
             </div>
             <div class="flex-box__cell flex-box__cell--medium">
-              <div class="flex-box">
-                <div class="flex-box__cell">
-                  <UnitText size="regular" rightUnit="원">3,000,000</UnitText>
-                </div>
-                <div class="flex-box__cell flex-box__cell--small">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
-                </div>
-              </div>
+              <UnitText size="regular" rightUnit="원">3,000,000</UnitText>
+            </div>
+            <div class="flex-box__cell flex-box__cell--small">
+              <UiAccordionOpener :classNames="{ button: $style['opener'] }" />
             </div>
           </div>
 
@@ -365,7 +359,7 @@ export default {
               <h3 class="text-body-1 font-weight-medium">박하나</h3>
             </div>
             <div class="flex-box__cell flex-box__cell--mini">
-              <h3 class="text-body-1 font-weight-medium">(행복아파트론)</h3>
+              <p class="text-body-1 font-weight-medium">(행복아파트론)</p>
             </div>
           </div>
 
@@ -376,16 +370,10 @@ export default {
               </p>
             </div>
             <div class="flex-box__cell flex-box__cell--medium">
-              <div class="flex-box">
-                <div class="flex-box__cell">
-                  <UnitText size="regular" rightUnit="원">3,000,000</UnitText>
-                </div>
-                <div class="flex-box__cell flex-box__cell--small">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
-                </div>
-              </div>
+              <UnitText size="regular" rightUnit="원">3,000,000</UnitText>
+            </div>
+            <div class="flex-box__cell flex-box__cell--small">
+              <UiAccordionOpener :classNames="{ button: $style['opener'] }" />
             </div>
           </div>
 
@@ -470,7 +458,7 @@ export default {
               <h3 class="text-body-1 font-weight-medium">유하나</h3>
             </div>
             <div class="flex-box__cell flex-box__cell--mini">
-              <h3 class="text-body-1 font-weight-medium">(행복아파트론)</h3>
+              <p class="text-body-1 font-weight-medium">(행복아파트론)</p>
             </div>
           </div>
 
@@ -481,16 +469,10 @@ export default {
               </p>
             </div>
             <div class="flex-box__cell flex-box__cell--medium">
-              <div class="flex-box">
-                <div class="flex-box__cell">
-                  <UnitText size="regular" rightUnit="원">3,000,000</UnitText>
-                </div>
-                <div class="flex-box__cell flex-box__cell--small">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
-                </div>
-              </div>
+              <UnitText size="regular" rightUnit="원">3,000,000</UnitText>
+            </div>
+            <div class="flex-box__cell flex-box__cell--small">
+              <UiAccordionOpener :classNames="{ button: $style['opener'] }" />
             </div>
           </div>
 
@@ -584,7 +566,7 @@ export default {
               <h3 class="text-body-1 font-weight-medium">송하나</h3>
             </div>
             <div class="flex-box__cell flex-box__cell--mini">
-              <h3 class="text-body-1 font-weight-medium">(행복아파트론)</h3>
+              <p class="text-body-1 font-weight-medium">(행복아파트론)</p>
             </div>
           </div>
 
@@ -595,18 +577,13 @@ export default {
               </p>
             </div>
             <div class="flex-box__cell flex-box__cell--medium">
-              <div class="flex-box">
-                <div class="flex-box__cell">
-                  <UnitText size="regular" rightUnit="원">3,000,000</UnitText>
-                </div>
-                <div class="flex-box__cell flex-box__cell--small">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
-                </div>
-              </div>
+              <UnitText size="regular" rightUnit="원">3,000,000</UnitText>
+            </div>
+            <div class="flex-box__cell flex-box__cell--small">
+              <UiAccordionOpener :classNames="{ button: $style['opener'] }" />
             </div>
           </div>
+
           <UiAccordionLayer>
             <div :class="$style['contents']">
               <KeyValue margin="regular">

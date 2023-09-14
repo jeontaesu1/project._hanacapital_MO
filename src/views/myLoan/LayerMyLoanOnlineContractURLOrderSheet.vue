@@ -389,7 +389,7 @@ export default {
         <h3 class="text-title-2 row-margin-contents">리스물건 주문 상세내역</h3>
 
         <ul class="reset-list">
-          <li class="row-margin-item-group">
+          <li v-for="i in 3" :key="i" class="row-margin-item-group">
             <BasicBox>
               <KeyValue margin="regular">
                 <KeyValueItem
@@ -397,91 +397,7 @@ export default {
                     item: 'text-body-3',
                   }"
                 >
-                  <KeyValueTitle>리스물건명 1</KeyValueTitle>
-                  <KeyValueText>레이져</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>장비명(모델)</KeyValueTitle>
-                  <KeyValueText>프로레이져</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>물건대금</KeyValueTitle>
-                  <KeyValueText>100,000,000</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>공급자</KeyValueTitle>
-                  <KeyValueText>(주)루트로닉</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
-            </BasicBox>
-          </li>
-
-          <li class="row-margin-item-group">
-            <BasicBox>
-              <KeyValue margin="regular">
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>리스물건명 2</KeyValueTitle>
-                  <KeyValueText>레이져</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>장비명(모델)</KeyValueTitle>
-                  <KeyValueText>프로레이져</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>물건대금</KeyValueTitle>
-                  <KeyValueText>100,000,000</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>공급자</KeyValueTitle>
-                  <KeyValueText>(주)루트로닉</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
-            </BasicBox>
-          </li>
-
-          <li class="row-margin-item-group">
-            <BasicBox>
-              <KeyValue margin="regular">
-                <KeyValueItem
-                  :classNames="{
-                    item: 'text-body-3',
-                  }"
-                >
-                  <KeyValueTitle>리스물건명 3</KeyValueTitle>
+                  <KeyValueTitle>리스물건명 {{ i }}</KeyValueTitle>
                   <KeyValueText>레이져</KeyValueText>
                 </KeyValueItem>
 

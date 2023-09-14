@@ -81,22 +81,18 @@ export default {
       </template>
 
       <BasicBox className="row-margin-container-medium">
-        <div class="flex-box">
-          <div class="flex-box__cell flex-1">
-            <div class="flex-box row-margin-mini">
-              <div class="flex-box__cell">
-                <CarEmblem src="/images/_dummy/car-emblem.png" name="현대" />
-              </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <p class="text-body-4 font-weight-light">2020년식</p>
-              </div>
-            </div>
-            <h3 class="text-body-1 font-weight-medium">11가1111</h3>
-            <p class="text-body-4 color-gray row-margin-small">
-              쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
-            </p>
+        <div class="flex-box row-margin-mini">
+          <div class="flex-box__cell">
+            <CarEmblem src="/images/_dummy/car-emblem.png" name="현대" />
+          </div>
+          <div class="flex-box__cell flex-box__cell--small">
+            <p class="text-body-4 font-weight-light">2020년식</p>
           </div>
         </div>
+        <h3 class="text-body-1 font-weight-medium">11가1111</h3>
+        <p class="text-body-4 color-gray row-margin-small">
+          쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
+        </p>
       </BasicBox>
 
       <UiTab>

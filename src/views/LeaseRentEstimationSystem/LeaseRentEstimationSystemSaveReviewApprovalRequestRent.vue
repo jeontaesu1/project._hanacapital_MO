@@ -122,6 +122,22 @@ export default {
               <KeyValueTitle>주민등록번호</KeyValueTitle>
               <KeyValueText>710908-1******</KeyValueText>
             </KeyValueItem>
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
+            >
+              <KeyValueTitle>진행일정</KeyValueTitle>
+              <KeyValueText>2022.10.03</KeyValueText>
+            </KeyValueItem>
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
+            >
+              <KeyValueTitle>상품명</KeyValueTitle>
+              <KeyValueText>장기렌트</KeyValueText>
+            </KeyValueItem>
             <!-- //Case : 개인일 경우 -->
 
             <!-- Case : 개인사업자일 경우 -->
@@ -186,24 +202,6 @@ export default {
             </KeyValueItem>
             <!-- //Case : 법인사업자일 경우 -->
 
-            <!-- Case : '개인사업자', '법인사업자'일 경우 미노출 -->
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>진행일정</KeyValueTitle>
-              <KeyValueText>2022.10.03</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>상품명</KeyValueTitle>
-              <KeyValueText>장기렌트</KeyValueText>
-            </KeyValueItem>
-            <!-- // Case : '개인사업자', '법인사업자'일 경우 미노출 -->
             <KeyValueItem
               :classNames="{
                 item: 'text-body-3',

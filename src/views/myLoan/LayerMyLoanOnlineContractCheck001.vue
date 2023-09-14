@@ -564,7 +564,7 @@ export default {
             </FormInvalid>
           </FormListItem>
           <FormListItem
-            titleText="신용등급 "
+            titleText="신용등급"
             target="#layerMyLoanOnlineContractCheck001_CreditRatingButton"
             :selectOnly="true"
           >

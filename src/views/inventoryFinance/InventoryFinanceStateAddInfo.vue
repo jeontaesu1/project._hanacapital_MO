@@ -104,290 +104,279 @@ export default {
       </PageMainText>
     </PageTextGroup>
 
-    <div>
-      <BasicBox>
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>
-            <p class="text-body-4 font-weight-light row-margin-mini">
-              2021년식
-            </p>
-            <h3 class="text-body-1 font-weight-medium">20노1511</h3>
-            <p class="text-body-4 color-gray row-margin-small">
-              5시리즈(7세대) 520d M 스포츠 패키지 플러스
-            </p>
-          </BasicBoxHeadLeft>
-        </BasicBoxHead>
+    <BasicBox>
+      <BasicBoxHead>
+        <BasicBoxHeadLeft>
+          <p class="text-body-4 font-weight-light row-margin-mini">2021년식</p>
+          <h3 class="text-body-1 font-weight-medium">20노1511</h3>
+          <p class="text-body-4 color-gray row-margin-small">
+            5시리즈(7세대) 520d M 스포츠 패키지 플러스
+          </p>
+        </BasicBoxHeadLeft>
+      </BasicBoxHead>
 
-        <KeyValue margin="regular">
-          <KeyValueItem
+      <KeyValue margin="regular">
+        <KeyValueItem
+          :classNames="{
+            item: 'text-body-3',
+          }"
+          verticalAlign="center"
+        >
+          <KeyValueTitle
             :classNames="{
-              item: 'text-body-3',
+              title: 'color-black',
             }"
-            verticalAlign="center"
+            >대출가능한도</KeyValueTitle
           >
-            <KeyValueTitle
-              :classNames="{
-                title: 'color-black',
-              }"
-              >대출가능한도</KeyValueTitle
-            >
-            <KeyValueText>
-              <UnitText rightUnit="원" align="right">23,000,000</UnitText>
-            </KeyValueText>
-          </KeyValueItem>
-        </KeyValue>
-      </BasicBox>
+          <KeyValueText>
+            <UnitText rightUnit="원" align="right">23,000,000</UnitText>
+          </KeyValueText>
+        </KeyValueItem>
+      </KeyValue>
+    </BasicBox>
 
-      <FormList
-        :classNames="{
-          wrap: 'row-margin-contents-group',
-        }"
+    <FormList
+      :classNames="{
+        wrap: 'row-margin-contents-group row-margin-bottom-none',
+      }"
+    >
+      <FormListItem
+        titleText="대출신청기간"
+        target="#inventoryFinanceStateAddInfoDateButton"
+        :selectOnly="true"
+        :disabled="true"
       >
-        <FormListItem
-          titleText="대출신청기간"
-          target="#inventoryFinanceStateAddInfoDateButton"
-          :selectOnly="true"
-          :disabled="true"
-        >
-          <FormInvalid :error="state.dateError">
-            <InputBlock :error="state.dateError">
-              <InputBlockCell :flexible="true">
-                <BasicSelect
-                  :option="[
-                    {
-                      value: '1',
-                      text: '3개월',
-                    },
-                  ]"
-                  buttonTitle="대출신청기간 선택하기"
-                  layerTitle="대출신청기간을 선택해 주세요"
-                  id="inventoryFinanceStateAddInfoDate"
-                  defaultValue="1"
-                  buttonId="inventoryFinanceStateAddInfoDateButton"
-                  :disabled="true"
-                />
-              </InputBlockCell>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
-        </FormListItem>
+        <FormInvalid :error="state.dateError">
+          <InputBlock :error="state.dateError">
+            <InputBlockCell :flexible="true">
+              <BasicSelect
+                :option="[
+                  {
+                    value: '1',
+                    text: '3개월',
+                  },
+                ]"
+                buttonTitle="대출신청기간 선택하기"
+                layerTitle="대출신청기간을 선택해 주세요"
+                id="inventoryFinanceStateAddInfoDate"
+                defaultValue="1"
+                buttonId="inventoryFinanceStateAddInfoDateButton"
+                :disabled="true"
+              />
+            </InputBlockCell>
+          </InputBlock>
+          <FormInvalidMessage>Error Message</FormInvalidMessage>
+        </FormInvalid>
+      </FormListItem>
 
-        <FormListItem
-          titleText="결제일자"
-          target="#inventoryFinanceStateAddInfoPaymentDateButton"
-          :selectOnly="true"
-        >
-          <FormInvalid :error="state.paymentDateError">
-            <InputBlock :error="state.paymentDateError">
-              <InputBlockCell :flexible="true">
-                <BasicSelect
-                  :option="[
-                    {
-                      value: '1',
-                      text: '1일',
-                    },
-                    {
-                      value: '2',
-                      text: '5일',
-                    },
-                    {
-                      value: '3',
-                      text: '11일',
-                    },
-                    {
-                      value: '4',
-                      text: '15일',
-                    },
-                    {
-                      value: '5',
-                      text: '21일',
-                    },
-                  ]"
-                  buttonTitle="결제일자 선택하기"
-                  layerTitle="결제일자를 선택해 주세요"
-                  id="inventoryFinanceStateAddInfoPaymentDate"
-                  buttonId="inventoryFinanceStateAddInfoPaymentDateButton"
-                />
-              </InputBlockCell>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
-        </FormListItem>
+      <FormListItem
+        titleText="결제일자"
+        target="#inventoryFinanceStateAddInfoPaymentDateButton"
+        :selectOnly="true"
+      >
+        <FormInvalid :error="state.paymentDateError">
+          <InputBlock :error="state.paymentDateError">
+            <InputBlockCell :flexible="true">
+              <BasicSelect
+                :option="[
+                  {
+                    value: '1',
+                    text: '1일',
+                  },
+                  {
+                    value: '2',
+                    text: '5일',
+                  },
+                  {
+                    value: '3',
+                    text: '11일',
+                  },
+                  {
+                    value: '4',
+                    text: '15일',
+                  },
+                  {
+                    value: '5',
+                    text: '21일',
+                  },
+                ]"
+                buttonTitle="결제일자 선택하기"
+                layerTitle="결제일자를 선택해 주세요"
+                id="inventoryFinanceStateAddInfoPaymentDate"
+                buttonId="inventoryFinanceStateAddInfoPaymentDateButton"
+              />
+            </InputBlockCell>
+          </InputBlock>
+          <FormInvalidMessage>Error Message</FormInvalidMessage>
+        </FormInvalid>
+      </FormListItem>
 
-        <FormListItem
-          titleText="대출신청금액"
-          target="#inventoryFinanceStateAddInfoAmount"
-        >
-          <FormInvalid :error="state.amountError">
-            <InputBlock :error="state.amountError">
-              <InputBlockCell :flexible="true">
-                <BasicInput
-                  align="right"
-                  :useDelete="false"
-                  pattern="\d*"
-                  title="대출신청금액"
-                  id="inventoryFinanceStateAddInfoAmount"
-                  :scrollFocus="false"
-                />
-              </InputBlockCell>
-              <template v-slot:innerRight>
-                <div class="text-body-3">만원</div>
-              </template>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
-        </FormListItem>
+      <FormListItem
+        titleText="대출신청금액"
+        target="#inventoryFinanceStateAddInfoAmount"
+      >
+        <FormInvalid :error="state.amountError">
+          <InputBlock :error="state.amountError">
+            <InputBlockCell :flexible="true">
+              <BasicInput
+                align="right"
+                :useDelete="false"
+                pattern="\d*"
+                title="대출신청금액"
+                id="inventoryFinanceStateAddInfoAmount"
+                :scrollFocus="false"
+              />
+            </InputBlockCell>
+            <template v-slot:innerRight>
+              <div class="text-body-3">만원</div>
+            </template>
+          </InputBlock>
+          <FormInvalidMessage>Error Message</FormInvalidMessage>
+        </FormInvalid>
+      </FormListItem>
 
-        <!-- Case : 선택 계좌가 있는 경우 -->
-        <FormListItem
-          titleText="계좌 선택"
-          target="#inventoryFinanceStateAddInfoAccountButton"
-          :selectOnly="true"
-        >
-          <FormInvalid :error="state.accountError">
-            <InputBlock :error="state.accountError">
-              <InputBlockCell :flexible="true">
-                <BasicSelect
-                  :option="[
-                    {
-                      value: '1',
-                      text: '하나 123-456-7890123',
-                    },
-                    {
-                      value: '2',
-                      text: '신한 123-456-7890123',
-                    },
-                    {
-                      value: '3',
-                      text: '우리 123-456-7890123',
-                    },
-                  ]"
-                  buttonTitle="계좌 선택하기"
-                  layerTitle="계좌를 선택해 주세요"
-                  id="inventoryFinanceStateAddInfoAccount"
-                  buttonId="inventoryFinanceStateAddInfoAccountButton"
-                />
-              </InputBlockCell>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-            <FormHelpText
-              >재고금융 대출금 송금계좌 및 자동이체 계좌</FormHelpText
-            >
-          </FormInvalid>
-        </FormListItem>
-        <!-- // Case : 선택 계좌가 있는 경우 -->
+      <!-- Case : 선택 계좌가 있는 경우 -->
+      <FormListItem
+        titleText="계좌 선택"
+        target="#inventoryFinanceStateAddInfoAccountButton"
+        :selectOnly="true"
+      >
+        <FormInvalid :error="state.accountError">
+          <InputBlock :error="state.accountError">
+            <InputBlockCell :flexible="true">
+              <BasicSelect
+                :option="[
+                  {
+                    value: '1',
+                    text: '하나 123-456-7890123',
+                  },
+                  {
+                    value: '2',
+                    text: '신한 123-456-7890123',
+                  },
+                  {
+                    value: '3',
+                    text: '우리 123-456-7890123',
+                  },
+                ]"
+                buttonTitle="계좌 선택하기"
+                layerTitle="계좌를 선택해 주세요"
+                id="inventoryFinanceStateAddInfoAccount"
+                buttonId="inventoryFinanceStateAddInfoAccountButton"
+              />
+            </InputBlockCell>
+          </InputBlock>
+          <FormInvalidMessage>Error Message</FormInvalidMessage>
+          <FormHelpText>재고금융 대출금 송금계좌 및 자동이체 계좌</FormHelpText>
+        </FormInvalid>
+      </FormListItem>
+      <!-- // Case : 선택 계좌가 있는 경우 -->
 
-        <!-- Case : 선택 계좌가 없는 경우 -->
-        <FormListItem
-          titleText="계좌 선택"
-          target="#inventoryFinanceStateAddInfoAccountButton"
-          :selectOnly="true"
-          :disabled="true"
-        >
-          <FormInvalid :error="state.accountError">
-            <InputBlock :error="state.accountError">
-              <InputBlockCell :flexible="true">
-                <BasicSelect
-                  :option="[
-                    {
-                      value: '1',
-                      text: '하나 123-456-7890123',
-                    },
-                    {
-                      value: '2',
-                      text: '신한 123-456-7890123',
-                    },
-                    {
-                      value: '3',
-                      text: '우리 123-456-7890123',
-                    },
-                  ]"
-                  buttonTitle="계좌 선택하기"
-                  layerTitle="계좌를 선택해 주세요"
-                  id="inventoryFinanceStateAddInfoAccount"
-                  buttonId="inventoryFinanceStateAddInfoAccountButton"
-                  :disabled="true"
-                />
-              </InputBlockCell>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-            <FormHelpText
-              >재고금융 대출금 송금계좌 및 자동이체 계좌</FormHelpText
-            >
-          </FormInvalid>
-        </FormListItem>
-        <!-- // Case : 선택 계좌가 없는 경우 -->
+      <!-- Case : 선택 계좌가 없는 경우 -->
+      <FormListItem
+        titleText="계좌 선택"
+        target="#inventoryFinanceStateAddInfoAccountButton"
+        :selectOnly="true"
+        :disabled="true"
+      >
+        <FormInvalid :error="state.accountError">
+          <InputBlock :error="state.accountError">
+            <InputBlockCell :flexible="true">
+              <BasicSelect
+                :option="[
+                  {
+                    value: '1',
+                    text: '하나 123-456-7890123',
+                  },
+                  {
+                    value: '2',
+                    text: '신한 123-456-7890123',
+                  },
+                  {
+                    value: '3',
+                    text: '우리 123-456-7890123',
+                  },
+                ]"
+                buttonTitle="계좌 선택하기"
+                layerTitle="계좌를 선택해 주세요"
+                id="inventoryFinanceStateAddInfoAccount"
+                buttonId="inventoryFinanceStateAddInfoAccountButton"
+                :disabled="true"
+              />
+            </InputBlockCell>
+          </InputBlock>
+          <FormInvalidMessage>Error Message</FormInvalidMessage>
+          <FormHelpText>재고금융 대출금 송금계좌 및 자동이체 계좌</FormHelpText>
+        </FormInvalid>
+      </FormListItem>
+      <!-- // Case : 선택 계좌가 없는 경우 -->
 
-        <FormListItem
-          titleText="차량 전 소유주"
-          target="#inventoryFinanceStateAddInfoCarOwner"
-        >
-          <FormInvalid :error="state.carOwnerError">
-            <InputBlock :error="state.carOwnerError">
-              <InputBlockCell :flexible="true">
-                <BasicInput
-                  align="right"
-                  :useDelete="false"
-                  pattern="\d*"
-                  title="차량 전 소유주"
-                  id="inventoryFinanceStateAddInfoCarOwner"
-                />
-              </InputBlockCell>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-            <FormHelpText>
-              차량 전 소유주 정보를 정확히 입력 해 주시기 바랍니다.
-            </FormHelpText>
-          </FormInvalid>
-        </FormListItem>
-      </FormList>
+      <FormListItem
+        titleText="차량 전 소유주"
+        target="#inventoryFinanceStateAddInfoCarOwner"
+      >
+        <FormInvalid :error="state.carOwnerError">
+          <InputBlock :error="state.carOwnerError">
+            <InputBlockCell :flexible="true">
+              <BasicInput
+                align="right"
+                :useDelete="false"
+                pattern="\d*"
+                title="차량 전 소유주"
+                id="inventoryFinanceStateAddInfoCarOwner"
+              />
+            </InputBlockCell>
+          </InputBlock>
+          <FormInvalidMessage>Error Message</FormInvalidMessage>
+          <FormHelpText>
+            차량 전 소유주 정보를 정확히 입력 해 주시기 바랍니다.
+          </FormHelpText>
+        </FormInvalid>
+      </FormListItem>
+    </FormList>
 
-      <section class="row-margin-container-medium">
-        <div class="flex-box row-margin-contents">
+    <section class="row-margin-container-medium">
+      <div class="flex-box row-margin-contents">
+        <div class="flex-box__cell">
+          <h3 class="text-title-2">구비서류등록</h3>
+        </div>
+        <div class="flex-box__cell flex-box__cell--small">
+          <div class="text-body-3">(선택)</div>
+        </div>
+      </div>
+
+      <!-- Case : : 등록 전 -->
+      <button type="button" :class="[$style['add-button'], 'row-margin-item']">
+        <span :class="$style['add-button__inner']">
+          <span :class="$style['add-button__text']">서류등록</span>
+          <span
+            :class="[
+              $style['add-button__icon'],
+              $style['add-button__icon--secondary'],
+            ]"
+          >
+            <IconLink />
+          </span>
+        </span>
+      </button>
+      <!-- //Case : : 등록 전 -->
+
+      <!-- Case : : 등록 후 -->
+      <BasicBox>
+        <div class="flex-box">
           <div class="flex-box__cell">
-            <h3 class="text-title-2">구비서류등록</h3>
+            <IconCheckDocument class="display-block" />
           </div>
-          <div class="flex-box__cell flex-box__cell--small">
-            <div class="text-body-3">(선택)</div>
+          <div class="flex-box__cell flex-1">
+            <div class="text-body-3">등록 완료</div>
+          </div>
+          <div class="flex-box__cell">
+            <BasicButton size="mini" theme="quaternary">추가첨부</BasicButton>
           </div>
         </div>
-
-        <!-- Case : : 등록 전 -->
-        <button
-          type="button"
-          :class="[$style['add-button'], 'row-margin-item']"
-        >
-          <span :class="$style['add-button__inner']">
-            <span :class="$style['add-button__text']">서류등록</span>
-            <span
-              :class="[
-                $style['add-button__icon'],
-                $style['add-button__icon--secondary'],
-              ]"
-            >
-              <IconLink />
-            </span>
-          </span>
-        </button>
-        <!-- //Case : : 등록 전 -->
-
-        <!-- Case : : 등록 후 -->
-        <BasicBox>
-          <div class="flex-box">
-            <div class="flex-box__cell">
-              <IconCheckDocument class="display-block" />
-            </div>
-            <div class="flex-box__cell flex-1">
-              <div class="text-body-3">등록 완료</div>
-            </div>
-            <div class="flex-box__cell">
-              <BasicButton size="mini" theme="quaternary">추가첨부</BasicButton>
-            </div>
-          </div>
-        </BasicBox>
-        <!-- //Case : : 등록 후 -->
-      </section>
-    </div>
+      </BasicBox>
+      <!-- //Case : : 등록 후 -->
+    </section>
 
     <template v-slot:foot>
       <BottomSticky>

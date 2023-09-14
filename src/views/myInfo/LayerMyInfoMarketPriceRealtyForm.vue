@@ -52,17 +52,17 @@ export default {
         </FullPopupHead>
       </template>
 
-      <!-- DD : 검색 전 노출 -->
+      <!-- Case : 검색 후 미노출 -->
       <PageTextGroup>
         <PageMainText>
           부동산 주소를 입력하고<br />
           <strong>시세를 확인해 보세요</strong>
         </PageMainText>
       </PageTextGroup>
-      <!-- // DD : 검색 전 노출 -->
+      <!-- // Case : 검색 후 미노출 -->
 
       <div>
-        <InputBlock type="search">
+        <InputBlock>
           <InputBlockCell :flexible="true">
             <BasicInput
               type="search"
