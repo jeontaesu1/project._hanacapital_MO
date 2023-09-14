@@ -19,6 +19,10 @@ import UiTab from '@/components/ui/tab/UiTab.vue';
 import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
 import NavTab from '@/components/ui/tab/NavTab.vue';
 import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
+import ButtonList from '@/components/ui/button/ButtonList.vue';
+import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 import IconRate from '@/assets/images/icon/rate.svg?component';
@@ -46,6 +50,10 @@ export default {
     UiTabPanel,
     NavTab,
     NavTabButton,
+    BasicButton,
+    ButtonList,
+    ButtonListItem,
+    BottomSticky,
 
     IconDeposit,
     IconRate,
@@ -647,6 +655,22 @@ export default {
         </li>
       </ul>
     </div>
+
+    <template v-slot:foot>
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton>한도조회</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
+    </template>
   </PageContents>
 </template>
 
