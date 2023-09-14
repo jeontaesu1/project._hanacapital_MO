@@ -17,7 +17,6 @@ import LayerAutoUsedLoanComplete from '@/views/auto/LayerAutoUsedLoanComplete.vu
 import LayerAutoUsedLoanFailReject from '@/views/auto/LayerAutoUsedLoanFailReject.vue';
 import LayerAutoUsedLoanInquiry from '@/views/auto/LayerAutoUsedLoanInquiry.vue';
 import LayerAutoUsedLoanConfirm from '@/views/auto/LayerAutoUsedLoanConfirm.vue';
-import LayerAutoUsedLoanInquiryForm from '@/views/auto/LayerAutoUsedLoanInquiryForm.vue';
 import LayerAutoUsedLoanInquiryComplete from '@/views/auto/LayerAutoUsedLoanInquiryComplete.vue';
 import LayerAutoUsedLoanContract from '@/views/auto/LayerAutoUsedLoanContract.vue';
 import LayerAutoUsedLoanContractAlert from '@/views/auto/LayerAutoUsedLoanContractAlert.vue';
@@ -41,7 +40,6 @@ export default {
     LayerAutoUsedLoanFailReject,
     LayerAutoUsedLoanInquiry,
     LayerAutoUsedLoanConfirm,
-    LayerAutoUsedLoanInquiryForm,
     LayerAutoUsedLoanInquiryComplete,
     LayerAutoUsedLoanContract,
     LayerAutoUsedLoanContractAlert,
@@ -60,7 +58,6 @@ export default {
     const layer009 = ref(null);
     const layer010 = ref(null);
     const layer011 = ref(null);
-    const layer012 = ref(null);
     const layer013 = ref(null);
     const layer014 = ref(null);
     const layer015 = ref(null);
@@ -100,9 +97,6 @@ export default {
     const layer011Open = (e = {}) => {
       layer011.value.layer.open(e.target);
     };
-    const layer012Open = (e = {}) => {
-      layer012.value.layer.open(e.target);
-    };
     const layer013Open = (e = {}) => {
       layer013.value.layer.open(e.target);
     };
@@ -131,7 +125,6 @@ export default {
       layer009,
       layer010,
       layer011,
-      layer012,
       layer013,
       layer014,
       layer015,
@@ -148,7 +141,6 @@ export default {
       layer009Open,
       layer010Open,
       layer011Open,
-      layer012Open,
       layer013Open,
       layer014Open,
       layer015Open,
@@ -223,11 +215,6 @@ export default {
         >
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer012Open"
-          >상담 신청<br />AF_M06_l009</BasicButton
-        >
-      </ButtonListItem>
-      <ButtonListItem>
         <BasicButton @click="layer013Open"
           >신청 완료<br />AF_M06_l010</BasicButton
         >
@@ -265,7 +252,6 @@ export default {
     <LayerAutoUsedLoanFailReject ref="layer009" />
     <LayerAutoUsedLoanInquiry ref="layer010" />
     <LayerAutoUsedLoanConfirm ref="layer011" />
-    <LayerAutoUsedLoanInquiryForm ref="layer012" />
     <LayerAutoUsedLoanInquiryComplete ref="layer013" />
     <LayerAutoUsedLoanContract ref="layer014" />
     <LayerAutoUsedLoanContractAlert ref="layer015" />

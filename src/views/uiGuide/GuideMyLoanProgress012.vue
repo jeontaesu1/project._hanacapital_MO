@@ -39,8 +39,6 @@ import LayerMyLoanOnlineContractIntermediateSuccessionAssigneeForm from '@/views
 import LayerMyLoanOnlineContractIntermediateSuccessionAssigneeAccount from '@/views/myLoan/LayerMyLoanOnlineContractIntermediateSuccessionAssigneeAccount.vue';
 import LayerMyLoanOnlineContractIntermediateSuccessionAssigneeConfirm from '@/views/myLoan/LayerMyLoanOnlineContractIntermediateSuccessionAssigneeConfirm.vue';
 import LayerMyLoanOnlineContractIntermediateSuccessionAssigneeComplete from '@/views/myLoan/LayerMyLoanOnlineContractIntermediateSuccessionAssigneeComplete.vue';
-import LayerMyLoanOnlineContractIntermediateSuccessionDocumentList from '@/views/myLoan/LayerMyLoanOnlineContractIntermediateSuccessionDocumentList.vue';
-import LayerMyLoanOnlineContractURL from '@/views/myLoan/LayerMyLoanOnlineContractURL.vue';
 import LayerMyLoanOnlineContractURLConfirm from '@/views/myLoan/LayerMyLoanOnlineContractURLConfirm.vue';
 import LayerMyLoanOnlineContractURLSelectDocument from '@/views/myLoan/LayerMyLoanOnlineContractURLSelectDocument.vue';
 import LayerMyLoanOnlineContractURLOrderSheet from '@/views/myLoan/LayerMyLoanOnlineContractURLOrderSheet.vue';
@@ -105,8 +103,6 @@ export default {
     LayerMyLoanOnlineContractIntermediateSuccessionAssigneeAccount,
     LayerMyLoanOnlineContractIntermediateSuccessionAssigneeConfirm,
     LayerMyLoanOnlineContractIntermediateSuccessionAssigneeComplete,
-    LayerMyLoanOnlineContractIntermediateSuccessionDocumentList,
-    LayerMyLoanOnlineContractURL,
     LayerMyLoanOnlineContractURLConfirm,
     LayerMyLoanOnlineContractURLSelectDocument,
     LayerMyLoanOnlineContractURLOrderSheet,
@@ -165,8 +161,6 @@ export default {
     const layer032 = ref(null);
     const layer033 = ref(null);
     const layer034 = ref(null);
-    const layer035 = ref(null);
-    const layer036 = ref(null);
     const layer037 = ref(null);
     const layer038 = ref(null);
     const layer039 = ref(null);
@@ -289,12 +283,6 @@ export default {
     const layer034Open = (e = {}) => {
       layer034.value.layer.open(e.target);
     };
-    const layer035Open = (e = {}) => {
-      layer035.value.layer.open(e.target);
-    };
-    const layer036Open = (e = {}) => {
-      layer036.value.layer.open(e.target);
-    };
     const layer037Open = (e = {}) => {
       layer037.value.layer.open(e.target);
     };
@@ -404,8 +392,6 @@ export default {
       layer032,
       layer033,
       layer034,
-      layer035,
-      layer036,
       layer037,
       layer038,
       layer039,
@@ -463,8 +449,6 @@ export default {
       layer032Open,
       layer033Open,
       layer034Open,
-      layer035Open,
-      layer036Open,
       layer037Open,
       layer038Open,
       layer039Open,
@@ -669,16 +653,6 @@ export default {
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer035Open">
-          서류 요청<br />BF_M04_l025
-        </BasicButton>
-      </ButtonListItem>
-      <ButtonListItem>
-        <BasicButton @click="layer036Open">
-          약정 정보 확인<br />BF_M05_l006
-        </BasicButton>
-      </ButtonListItem>
-      <ButtonListItem>
         <BasicButton @click="layer037Open">
           계약정보 최종확인<br />BF_M05_l007
         </BasicButton>
@@ -855,10 +829,6 @@ export default {
     <LayerMyLoanOnlineContractIntermediateSuccessionAssigneeComplete
       ref="layer034"
     />
-    <LayerMyLoanOnlineContractIntermediateSuccessionDocumentList
-      ref="layer035"
-    />
-    <LayerMyLoanOnlineContractURL ref="layer036" />
     <LayerMyLoanOnlineContractURLConfirm ref="layer037" />
     <LayerMyLoanOnlineContractURLSelectDocument ref="layer038" />
     <LayerMyLoanOnlineContractURLOrderSheet ref="layer039" />

@@ -264,15 +264,6 @@ export default {
             <KeyValueTitle>탁송지</KeyValueTitle>
             <KeyValueText>탁송지</KeyValueText>
           </KeyValueItem>
-
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>탁송 도착지</KeyValueTitle>
-            <KeyValueText>탁송 도착지</KeyValueText>
-          </KeyValueItem>
         </KeyValue>
 
         <BasicHr

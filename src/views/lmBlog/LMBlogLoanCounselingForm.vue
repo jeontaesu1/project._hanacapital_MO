@@ -406,14 +406,22 @@ export default {
                   </template>
                 </InputBlock>
                 <FormInvalidMessage>Error Message</FormInvalidMessage>
-                <FormHelpText
-                  >등기부등본 상의 채권최고액을 입력해주세요.<br />
-                  (근저당설정이 2건 이상일 경우 합산하여 입력)</FormHelpText
-                >
-                <div class="inline-wrap row-margin-item">
-                  <TextButton theme="secondary" :underline="true">
-                    등기부등본 조회
-                  </TextButton>
+                <div class="flex-box align-items-start row-margin-item">
+                  <div class="flex-box__cell flex-1">
+                    <NoticeText>
+                      등기부등본 상의 채권최고액을 입력해주세요. (근저당설정이
+                      2건 이상일 경우 합산하여 입력)
+                    </NoticeText>
+                  </div>
+                  <div class="flex-box__cell flex-box__cell--medium">
+                    <TextButton
+                      theme="secondary"
+                      :underline="true"
+                      :block="true"
+                    >
+                      등기부등본 조회
+                    </TextButton>
+                  </div>
                 </div>
               </FormInvalid>
 

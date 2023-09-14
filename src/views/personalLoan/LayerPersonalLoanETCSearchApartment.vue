@@ -76,6 +76,7 @@ export default {
           </InputBlockCell>
         </InputBlock>
 
+        <!-- Case : 검색 후 미노출 -->
         <ul :class="$style['basic-list']">
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
@@ -90,6 +91,7 @@ export default {
             </div>
           </li>
         </ul>
+        <!-- // Case : 검색 후 미노출 -->
       </div>
 
       <!-- Case : 검색 후 노출 -->

@@ -216,6 +216,66 @@ export default {
                       value: '19',
                       text: '21개월',
                     },
+                    {
+                      value: '20',
+                      text: '22개월',
+                    },
+                    {
+                      value: '21',
+                      text: '23개월',
+                    },
+                    {
+                      value: '22',
+                      text: '24개월',
+                    },
+                    {
+                      value: '23',
+                      text: '25개월',
+                    },
+                    {
+                      value: '24',
+                      text: '26개월',
+                    },
+                    {
+                      value: '25',
+                      text: '27개월',
+                    },
+                    {
+                      value: '26',
+                      text: '28개월',
+                    },
+                    {
+                      value: '27',
+                      text: '29개월',
+                    },
+                    {
+                      value: '28',
+                      text: '30개월',
+                    },
+                    {
+                      value: '29',
+                      text: '31개월',
+                    },
+                    {
+                      value: '30',
+                      text: '32개월',
+                    },
+                    {
+                      value: '31',
+                      text: '33개월',
+                    },
+                    {
+                      value: '32',
+                      text: '34개월',
+                    },
+                    {
+                      value: '33',
+                      text: '35개월',
+                    },
+                    {
+                      value: '34',
+                      text: '36개월',
+                    },
                   ]"
                   buttonTitle="할부신청기간 선택하기"
                   layerTitle="할부신청기간을 선택해 주세요"

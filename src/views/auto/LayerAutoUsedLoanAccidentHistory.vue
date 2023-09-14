@@ -23,7 +23,6 @@ import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
 import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
-import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
 import UiAccordion from '@/components/ui/accordion/UiAccordion.vue';
 import UiAccordionItem from '@/components/ui/accordion/UiAccordionItem.vue';
@@ -53,7 +52,6 @@ export default {
     KeyValueText,
     NoticeText,
     CarEmblem,
-    CarThumb,
     UnitText,
     UiAccordion,
     UiAccordionItem,
@@ -97,9 +95,6 @@ export default {
             <p class="text-body-4 color-gray row-margin-small">
               쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
             </p>
-          </div>
-          <div class="flex-box__cell flex-box__cell--medium">
-            <CarThumb src="/images/_dummy/car-thumb.png" />
           </div>
         </div>
       </BasicBox>
@@ -426,7 +421,7 @@ export default {
                   <!-- Case : 내역 없을 때 -->
                   <div :class="$style['empty']">
                     <p :class="$style['empty__text']">
-                      검색된 결과가 없습니다.
+                      조회된 내역이 없습니다.
                     </p>
                   </div>
                   <!-- // Case : 내역 없을 때 -->

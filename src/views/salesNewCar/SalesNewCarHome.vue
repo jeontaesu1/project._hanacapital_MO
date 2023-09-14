@@ -440,8 +440,8 @@ export default {
                 </p>
               </div>
               <div class="flex-box__cell flex-box__cell--medium">
-                <UnitText size="regular" rightUnit="만원" verticalAlign="center"
-                  >3,000</UnitText
+                <UnitText size="regular" rightUnit="원" verticalAlign="center"
+                  >3,000,000</UnitText
                 >
               </div>
               <div class="flex-box__cell flex-box__cell--small">
@@ -709,8 +709,8 @@ export default {
                 </p>
               </div>
               <div class="flex-box__cell flex-box__cell--medium">
-                <UnitText size="regular" rightUnit="만원" verticalAlign="center"
-                  >3,000</UnitText
+                <UnitText size="regular" rightUnit="원" verticalAlign="center"
+                  >3,000,000</UnitText
                 >
               </div>
               <div class="flex-box__cell flex-box__cell--small">
@@ -949,8 +949,8 @@ export default {
                 </p>
               </div>
               <div class="flex-box__cell flex-box__cell--medium">
-                <UnitText size="regular" rightUnit="만원" verticalAlign="center"
-                  >3,000</UnitText
+                <UnitText size="regular" rightUnit="원" verticalAlign="center"
+                  >3,000,000</UnitText
                 >
               </div>
               <div class="flex-box__cell flex-box__cell--small">
@@ -1134,8 +1134,8 @@ export default {
                 </p>
               </div>
               <div class="flex-box__cell flex-box__cell--medium">
-                <UnitText size="regular" rightUnit="만원" verticalAlign="center"
-                  >3,000</UnitText
+                <UnitText size="regular" rightUnit="원" verticalAlign="center"
+                  >3,000,000</UnitText
                 >
               </div>
               <div class="flex-box__cell flex-box__cell--small">
@@ -1299,8 +1299,8 @@ export default {
                 </p>
               </div>
               <div class="flex-box__cell flex-box__cell--medium">
-                <UnitText size="regular" rightUnit="만원" verticalAlign="center"
-                  >3,000</UnitText
+                <UnitText size="regular" rightUnit="원" verticalAlign="center"
+                  >3,000,000</UnitText
                 >
               </div>
               <div class="flex-box__cell flex-box__cell--small">

@@ -64,18 +64,27 @@ export default {
       </template>
 
       <PageTextGroup>
+        <!-- Case : 가상계좌 선택 시 노출 -->
         <PageMainText>
           중도상환신청 접수가<br />
           <strong>완료되었습니다</strong>
         </PageMainText>
-        <!-- Case : 가상계좌 선택 시 노출  -->
+
         <PageSubText
           >신청하신 내용은 1~3 영업일 이후에 적용됩니다.<br />
           고객님의 소중한 정보 확인 후<br />
           심사결과를 알려드리겠습니다.</PageSubText
         >
         <!-- // Case : 가상계좌 선택 시 노출  -->
+
+        <!-- Case : 즉시출금 선택 시 노출 -->
+        <PageMainText>
+          중도상환 처리가<br />
+          <strong>완료되었습니다</strong>
+        </PageMainText>
+
         <PageSubText>하나캐피탈을 이용해주셔서 감사합니다.</PageSubText>
+        <!-- // Case : 즉시출금 선택 시 노출  -->
       </PageTextGroup>
 
       <IllustObject type="complete" />
