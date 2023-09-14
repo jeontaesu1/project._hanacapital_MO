@@ -115,7 +115,7 @@ export default {
 
 <template>
   <PageContents>
-    <section class="contents-wrap">
+    <section :class="['contents-wrap', $style['top-contents']]">
       <div class="flex-box row-margin-contents">
         <div class="flex-box__cell">
           <h3 class="text-title-2">현황조회</h3>
@@ -346,8 +346,8 @@ export default {
 
       <UiAccordion>
         <!-- Case : 가견적 - 장기렌트 -->
-        <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
-          <BasicBox>
+        <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
+          <BasicBox :className="$style['block']">
             <div>
               <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
@@ -590,8 +590,8 @@ export default {
         <!-- //Case : 가견적 - 장기렌트 -->
 
         <!-- Case : 가견적 - 선구매 -->
-        <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
-          <BasicBox>
+        <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
+          <BasicBox :className="$style['block']">
             <div>
               <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
@@ -830,8 +830,8 @@ export default {
         <!-- //Case : 가견적 - 선구매 -->
 
         <!-- Case : 가견적 - 운용리스 -->
-        <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
-          <BasicBox>
+        <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
+          <BasicBox :className="$style['block']">
             <div>
               <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
@@ -1083,8 +1083,8 @@ export default {
         <!-- //Case : 가견적 - 운용리스 -->
 
         <!-- Case : 가견적 - 운용리스 (중고차) -->
-        <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
-          <BasicBox>
+        <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
+          <BasicBox :className="$style['block']">
             <div>
               <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
@@ -1331,8 +1331,8 @@ export default {
         <!-- //Case : 가견적 - 운용리스 (중고차) -->
 
         <!-- Case : 가견적 - 금융리스 (중고차) -->
-        <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
-          <BasicBox>
+        <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
+          <BasicBox :className="$style['block']">
             <div>
               <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
@@ -1578,8 +1578,8 @@ export default {
         <!-- //Case : 가견적 - 금융리스 (중고차) -->
 
         <!-- Case : 가견적 - 할부 -->
-        <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
-          <BasicBox>
+        <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
+          <BasicBox :className="$style['block']">
             <div>
               <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
@@ -1809,8 +1809,8 @@ export default {
         <!-- //Case : 가견적 - 할부 -->
 
         <!-- Case : 견적 - 장기렌트 -->
-        <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
-          <BasicBox>
+        <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
+          <BasicBox :className="$style['block']">
             <div>
               <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
@@ -2121,8 +2121,8 @@ export default {
         <!-- //Case : 견적 - 장기렌트 -->
 
         <!-- Case : 견적 - 선구매 -->
-        <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
-          <BasicBox>
+        <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
+          <BasicBox :className="$style['block']">
             <div>
               <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
@@ -2431,8 +2431,8 @@ export default {
         <!-- //Case : 견적 - 선구매 -->
 
         <!-- Case : 견적 - 운용리스 -->
-        <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
-          <BasicBox>
+        <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
+          <BasicBox :className="$style['block']">
             <div>
               <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
@@ -2685,8 +2685,8 @@ export default {
         <!-- //Case : 견적 - 운용리스 -->
 
         <!-- Case : 견적 - 할부 -->
-        <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
-          <BasicBox>
+        <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
+          <BasicBox :className="$style['block']">
             <div>
               <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
@@ -2953,8 +2953,8 @@ export default {
         <!-- //Case : 견적 - 할부 -->
 
         <!-- Case : 심사 - 장기렌트 -->
-        <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
-          <BasicBox>
+        <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
+          <BasicBox :className="$style['block']">
             <div>
               <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
@@ -3324,8 +3324,8 @@ export default {
         <!-- //Case : 심사 - 장기렌트 -->
 
         <!-- Case : 심사 - 선구매 -->
-        <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
-          <BasicBox>
+        <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
+          <BasicBox :className="$style['block']">
             <div>
               <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
@@ -3651,8 +3651,8 @@ export default {
         <!-- //Case : 심사 - 선구매 -->
 
         <!-- Case : 심사 - 운용리스 -->
-        <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
-          <BasicBox>
+        <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
+          <BasicBox :className="$style['block']">
             <div>
               <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
@@ -4055,8 +4055,8 @@ export default {
         <!-- //Case : 심사 - 운용리스 -->
 
         <!-- Case : 심사 - 할부 -->
-        <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
-          <BasicBox>
+        <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
+          <BasicBox :className="$style['block']">
             <div>
               <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
@@ -4369,8 +4369,8 @@ export default {
         <!-- //Case : 심사 - 할부 -->
 
         <!-- Case : 품의 - 장기렌트 -->
-        <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
-          <BasicBox>
+        <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
+          <BasicBox :className="$style['block']">
             <div>
               <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
@@ -4679,8 +4679,8 @@ export default {
         <!-- //Case : 품의 - 장기렌트 -->
 
         <!-- Case : 품의 - 선구매 -->
-        <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
-          <BasicBox>
+        <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
+          <BasicBox :className="$style['block']">
             <div>
               <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
@@ -4987,8 +4987,8 @@ export default {
         <!-- //Case : 품의 - 선구매 -->
 
         <!-- Case : 품의 - 운용리스 -->
-        <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
-          <BasicBox>
+        <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
+          <BasicBox :className="$style['block']">
             <div>
               <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
@@ -5290,8 +5290,8 @@ export default {
         <!-- //Case : 품의 - 운용리스 -->
 
         <!-- Case : 품의 - 할부 -->
-        <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
-          <BasicBox>
+        <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
+          <BasicBox :className="$style['block']">
             <div>
               <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
@@ -5563,8 +5563,8 @@ export default {
         <!-- //Case : 품의 - 할부 -->
 
         <!-- Case : 인도 - 장기렌트 -->
-        <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
-          <BasicBox>
+        <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
+          <BasicBox :className="$style['block']">
             <div>
               <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
@@ -5872,8 +5872,8 @@ export default {
         <!-- //Case : 인도 - 장기렌트 -->
 
         <!-- Case : 인도 - 선구매 -->
-        <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
-          <BasicBox>
+        <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
+          <BasicBox :className="$style['block']">
             <div>
               <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
@@ -6179,8 +6179,8 @@ export default {
         <!-- //Case : 인도 - 선구매 -->
 
         <!-- Case : 인도 - 운용리스 -->
-        <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
-          <BasicBox>
+        <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
+          <BasicBox :className="$style['block']">
             <div>
               <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
@@ -6538,8 +6538,8 @@ export default {
         <!-- //Case : 인도 - 운용리스 -->
 
         <!-- Case : 인도 - 할부 -->
-        <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
-          <BasicBox>
+        <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
+          <BasicBox :className="$style['block']">
             <div>
               <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
