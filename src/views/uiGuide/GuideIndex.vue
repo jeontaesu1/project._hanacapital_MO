@@ -140,7 +140,12 @@ const datas = () => [
         path: '/ui-guide/toast-alert-001',
         status: 'end',
         create: '2023.05.12',
-        log: [],
+        log: [
+          {
+            date: '2023.09.14',
+            text: '방향 및 위치 변경',
+          },
+        ],
       },
       {
         depth2: '본인인증\nCommon_M00_p003',
