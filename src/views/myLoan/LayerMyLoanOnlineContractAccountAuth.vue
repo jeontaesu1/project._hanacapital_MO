@@ -72,7 +72,7 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          김하나 님 계좌로<br />
+          김하나님 계좌로<br />
           <strong>1원을 보냈습니다</strong>
         </PageMainText>
         <PageSubText>
