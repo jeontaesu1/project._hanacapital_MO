@@ -196,6 +196,10 @@ const datas = () => [
             date: '2023.09.01',
             text: '- Common_M00_l050\n풀 팝업으로 변경\n- Common_M00_l051\n풀 팝업으로 변경\n- Common_M00_l052\n풀 팝업으로 변경\n- Common_M00_l053\n풀 팝업으로 변경\n- Common_M00_l054\n풀 팝업으로 변경',
           },
+          {
+            date: '2023.09.14',
+            text: '- Common_M00_l002\n이름 입력 필드 옆에 다음 버튼 추가',
+          },
         ],
       },
       {

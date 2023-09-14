@@ -235,6 +235,9 @@ export default {
               <InputBlockCell :flexible="true">
                 <BasicInput title="이름" id="layerIdentificationPhoneName" />
               </InputBlockCell>
+              <template v-slot:right>
+                <BasicButton size="mini">다음</BasicButton>
+              </template>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
