@@ -256,13 +256,20 @@ export default {
                       </InputBlockCell>
                       <template v-slot:right>
                         <!-- Case : 사업자번호 조회 후 비노출 -->
-                        <BasicButton size="mini" theme="tertiary"
+                        <BasicButton
+                          size="mini"
+                          theme="tertiary"
+                          :class="$style['appoint-btn']"
                           >조회</BasicButton
                         >
                         <!-- // Case : 사업자번호 조회 후 비노출 -->
 
                         <!-- Case : 사업자번호 조회 후 노출 -->
-                        <BasicButton size="mini" theme="quaternary">
+                        <BasicButton
+                          size="mini"
+                          theme="quaternary"
+                          :class="$style['appoint-btn']"
+                        >
                           초기화
                         </BasicButton>
                         <!-- // Case : 사업자번호 조회 후 노출 -->
@@ -464,13 +471,20 @@ export default {
                       </InputBlockCell>
                       <template v-slot:right>
                         <!-- Case : 사업자번호 조회 후 비노출 -->
-                        <BasicButton size="mini" theme="tertiary"
+                        <BasicButton
+                          size="mini"
+                          theme="tertiary"
+                          :class="$style['appoint-btn']"
                           >조회</BasicButton
                         >
                         <!-- // Case : 사업자번호 조회 후 비노출 -->
 
                         <!-- Case : 사업자번호 조회 후 노출 -->
-                        <BasicButton size="mini" theme="quaternary">
+                        <BasicButton
+                          size="mini"
+                          theme="quaternary"
+                          :class="$style['appoint-btn']"
+                        >
                           초기화
                         </BasicButton>
                         <!-- // Case : 사업자번호 조회 후 노출 -->
@@ -698,6 +712,14 @@ export default {
                         <BoxCheckLabel>과점주주</BoxCheckLabel>
                       </BoxCheck>
                     </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        name="layerLeaseRentEstimationSystemCreditCheckRequest003Relation"
+                        id="layerLeaseRentEstimationSystemCreditCheckRequest003Relation003"
+                      >
+                        <BoxCheckLabel>대주주</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
                   </BoxCheckList>
                 </FormListItem>
 
@@ -763,3 +785,7 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/LeaseRentEstimationSystem/LayerLeaseRentEstimationSystemCreditCheckRequest.scss';
+</style>
