@@ -227,6 +227,7 @@ export default {
                   pattern="\d*"
                   title="대출신청금액"
                   id="inventoryFinanceStateAddInfoAmount"
+                  :scrollFocus="false"
                 />
               </InputBlockCell>
               <template v-slot:innerRight>

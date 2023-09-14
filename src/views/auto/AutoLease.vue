@@ -879,7 +879,7 @@ export default {
         <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']"></div>
           <div :class="$style['basic-list__content']">
-            준법심의필 23-151<br />
+            준법심의필 23-152<br />
             (2023.05.22~2024.05.21)
           </div>
         </li>

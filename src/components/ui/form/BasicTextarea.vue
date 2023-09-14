@@ -74,6 +74,10 @@ export default {
       Type: Number,
       default: null,
     },
+    scrollFocus: {
+      Type: Boolean,
+      default: true,
+    },
     defaultValue: {
       Type: String,
       default: null,
@@ -203,8 +207,9 @@ export default {
 
     const focusScroll = () => {
       const { isIos, isAndroid } = store.ui.common.userAgent;
+      const { scrollFocus } = props;
 
-      if (!isIos && !isAndroid) return;
+      if (!scrollFocus || (!isIos && !isAndroid)) return;
 
       const html = document.getElementsByTagName('html')[0];
       const inputEl = input.value;
