@@ -818,6 +818,10 @@ const datas = () => [
             date: '2023.05.26',
             text: '팝업 추가\n- 둘러보기',
           },
+          {
+            date: '2023.09.15',
+            text: '배경색 변경\n- Member_M06_l002\n- Member_M06_l003',
+          },
         ],
       },
       {
@@ -850,6 +854,10 @@ const datas = () => [
             date: '2023.04.07',
             text: '팝업 추가\n- 비밀번호 입력\n- 가입 완료',
           },
+          {
+            date: '2023.09.15',
+            text: '배경색 변경\n- Member_M07_l001',
+          },
         ],
       },
       {
@@ -870,6 +878,10 @@ const datas = () => [
             date: '2023.08.11',
             text: 'Member_M08_l001 닫기 버튼 삭제',
           },
+          {
+            date: '2023.09.15',
+            text: '배경색 변경\n- Member_M08_l001',
+          },
         ],
       },
       {
@@ -889,6 +901,10 @@ const datas = () => [
           {
             date: '2023.08.11',
             text: 'Member_M09_l001 닫기 버튼 삭제',
+          },
+          {
+            date: '2023.09.15',
+            text: '배경색 변경\n- Member_M09_l002\n- Member_M09_l003',
           },
         ],
       },
@@ -3793,7 +3809,12 @@ const datas = () => [
         path: '/ui-guide/setting-reset-pin-001',
         status: 'end',
         create: '2023.04.07',
-        log: [],
+        log: [
+          {
+            date: '2023.09.15',
+            text: '배경색 변경\n- Setting_M03_l002\n- Setting_M03_l003\n- Setting_M03_l004',
+          },
+        ],
       },
       {
         depth2: '얼굴인증 (재)등록',
