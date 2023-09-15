@@ -425,7 +425,7 @@ export default {
               <tbody>
                 <tr>
                   <th>상품명</th>
-                  <td>신용대출</td>
+                  <td class="align-left">신용대출</td>
                 </tr>
                 <tr>
                   <th>대상</th>
@@ -459,11 +459,11 @@ export default {
                 </tr>
                 <tr>
                   <th>적용금리</th>
-                  <td>16.3%</td>
+                  <td class="align-left">16.3%</td>
                 </tr>
                 <tr>
                   <th>대출신청금액</th>
-                  <td>5,000,000 원</td>
+                  <td class="align-left">5,000,000 원</td>
                 </tr>
                 <tr>
                   <th>금리적용방식</th>
@@ -505,15 +505,15 @@ export default {
                 </tr>
                 <tr>
                   <th>대출기간</th>
-                  <td>취급 후 48개월</td>
+                  <td class="align-left">취급 후 48개월</td>
                 </tr>
                 <tr>
                   <th>중도상환수수료율</th>
-                  <td>최대 2%</td>
+                  <td class="align-left">최대 2%</td>
                 </tr>
                 <tr>
                   <th>대출실행/만기일</th>
-                  <td>2032.04.06 ~ 2027.04.11</td>
+                  <td class="align-left">2032.04.06 ~ 2027.04.11</td>
                 </tr>
                 <tr>
                   <th>담보물건<br />(저당설정시)</th>

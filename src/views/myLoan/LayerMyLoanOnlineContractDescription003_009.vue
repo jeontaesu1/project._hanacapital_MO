@@ -324,19 +324,19 @@ export default {
               <tbody>
                 <tr>
                   <th>상품명</th>
-                  <td>중도금대출</td>
+                  <td class="align-left">중도금대출</td>
                 </tr>
                 <tr>
                   <th>대상</th>
-                  <td>수분양자</td>
+                  <td class="align-left">수분양자</td>
                 </tr>
                 <tr>
                   <th>적용금리</th>
-                  <td>%</td>
+                  <td class="align-left">%</td>
                 </tr>
                 <tr>
                   <th>대출한도</th>
-                  <td>분양계약서 상 중도금 납부비율</td>
+                  <td class="align-left">분양계약서 상 중도금 납부비율</td>
                 </tr>
                 <tr>
                   <th>금리적용방식</th>
@@ -365,21 +365,18 @@ export default {
                 </tr>
                 <tr>
                   <th>대출기간</th>
-                  <td>
+                  <td class="align-left">
                     취급 후
-                    <span
-                      :class="[$style['blank-box'], $style['blank-box--small']]"
-                    ></span
-                    >개월
+                    <span></span>개월
                   </td>
                 </tr>
                 <tr>
                   <th>중도상환수수료<br />부과 여부 및 요율</th>
-                  <td>0%</td>
+                  <td class="align-left">0%</td>
                 </tr>
                 <tr>
                   <th>상환방식</th>
-                  <td>만기일시상환</td>
+                  <td class="align-left">만기일시상환</td>
                 </tr>
               </tbody>
             </table>
