@@ -106,14 +106,6 @@ export default {
                   id="layerMyLoanOnlineContractAccountAuthName"
                 />
               </InputBlockCell>
-              <template v-slot:innerRight>
-                <div :class="$style['input-timer']">5:00</div>
-              </template>
-              <template v-slot:right>
-                <BasicButton size="mini" theme="quaternary">
-                  재요청
-                </BasicButton>
-              </template>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
