@@ -9,6 +9,8 @@ import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
 import GlobalNav from '@/components/ui/gnb/GlobalNav.vue';
 
+import LayerSearch from '@/views/search/LayerSearch.vue';
+
 export default {
   components: {
     UiLayer,
@@ -16,11 +18,17 @@ export default {
     FullPopup,
     FullPopupHead,
     GlobalNav,
+    LayerSearch,
   },
   setup() {
     const route = useRoute();
 
     const layer = ref(null);
+    const layerSearch = ref(null);
+
+    const layerSearchOpen = (e = {}) => {
+      layerSearch.value.layer.open(e.target);
+    };
 
     watch(
       () => route.path,
@@ -35,6 +43,8 @@ export default {
 
     return {
       layer,
+      layerSearch,
+      layerSearchOpen,
     };
   },
 };
@@ -62,7 +72,7 @@ export default {
       <template v-slot:head>
         <FullPopupHead>
           <template v-slot:right>
-            <PopupButton type="search" />
+            <PopupButton type="search" @click="layerSearchOpen" />
             <PopupButton @click="layerSlotProps.close()" />
           </template>
         </FullPopupHead>
@@ -71,6 +81,8 @@ export default {
       <GlobalNav />
     </FullPopup>
   </UiLayer>
+
+  <LayerSearch ref="layerSearch" />
 </template>
 
 <style lang="scss" module>
