@@ -722,7 +722,12 @@ const datas = () => [
         path: '/sign/signin',
         status: 'end',
         create: '2023.04.07',
-        log: [],
+        log: [
+          {
+            date: '2023.09.15',
+            text: '하단 앱 연결 링크 구성 변경',
+          },
+        ],
       },
       {
         depth2: '로그인(WEB)\nMember_M01_p001\nMember_M02_p001',
