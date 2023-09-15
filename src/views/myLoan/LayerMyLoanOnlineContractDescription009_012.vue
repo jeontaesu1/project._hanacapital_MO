@@ -453,10 +453,9 @@ export default {
                 <tr>
                   <th>리스기간</th>
                   <td class="align-left">
-                    취급 후
-                    <span></span>개월 또는<br />
-                    <span></span>개월중 거치기간<br />
-                    <span></span>개월
+                    취급 후 개월 또는<br />
+                    개월중 거치기간<br />
+                    개월
                   </td>
                 </tr>
                 <tr>

@@ -473,7 +473,7 @@ export default {
                 </tr>
                 <tr>
                   <th>금리</th>
-                  <td class="align-left">연<span></span>%</td>
+                  <td class="align-left">연%</td>
                 </tr>
                 <tr>
                   <th>보증금</th>
@@ -481,10 +481,7 @@ export default {
                 </tr>
                 <tr>
                   <th>리스기간</th>
-                  <td class="align-left">
-                    취급 후
-                    <span></span>개월
-                  </td>
+                  <td class="align-left">취급 후 개월</td>
                 </tr>
                 <tr>
                   <th>선납금/선납리스료</th>

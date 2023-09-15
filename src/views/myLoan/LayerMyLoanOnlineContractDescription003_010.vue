@@ -366,10 +366,7 @@ export default {
                 </tr>
                 <tr>
                   <th>대출기간</th>
-                  <td class="align-left">
-                    취급 후
-                    <span></span>개월
-                  </td>
+                  <td class="align-left">취급 후 개월</td>
                 </tr>
                 <tr>
                   <th>중도상환수수료<br />부과 여부 및 요율</th>
