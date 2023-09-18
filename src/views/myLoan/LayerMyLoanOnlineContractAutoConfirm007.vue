@@ -212,14 +212,6 @@ export default {
                   >400,000 원</KeyValueText
                 >
               </KeyValueItem>
-              <KeyValueItem
-                :classNames="{
-                  item: 'text-body-3',
-                }"
-              >
-                <KeyValueTitle>범칙금/과태료</KeyValueTitle>
-                <KeyValueText>직접 납부</KeyValueText>
-              </KeyValueItem>
             </KeyValue>
           </BasicBox>
         </section>
