@@ -209,6 +209,10 @@ const datas = () => [
             date: '2023.09.15',
             text: '- Common_M00_l002\n다른 방법으로 인증하기 버튼 추가',
           },
+          {
+            date: '2023.09.18',
+            text: '- Common_M00_b052\n문구 간격 수정',
+          },
         ],
       },
       {
@@ -321,6 +325,10 @@ const datas = () => [
             date: '2023.08.25',
             text: 'Common_M00_b017 약관 내용 추가',
           },
+          {
+            date: '2023.09.18',
+            text: 'Common_M00_l022 화면삭제',
+          },
         ],
       },
       {
@@ -332,7 +340,12 @@ const datas = () => [
         path: '/ui-guide/error-001',
         status: 'end',
         create: '2023.03.31',
-        log: [],
+        log: [
+          {
+            date: '2023.09.18',
+            text: 'Common_M00_l027 시간 수정\nCommon_M00_l028 시간 수정',
+          },
+        ],
       },
       {
         depth2: '앱 중계 페이지',
@@ -365,7 +378,12 @@ const datas = () => [
         path: '/ui-guide/search-001',
         status: 'end',
         create: '2023.04.14',
-        log: [],
+        log: [
+          {
+            date: '2023.09.18',
+            text: 'Common_M00_l019 이벤트 배너 반영 및 공지사항 날짜 표기법 변경',
+          },
+        ],
       },
       {
         depth2: '서류등록',
@@ -384,6 +402,10 @@ const datas = () => [
           {
             date: '2023.08.29',
             text: '- Common_M00_l040 상단 "파일을 첨부하신 뒤에 해당 박스를 클릭하시면 미리보기 가능합니다." 문구 제거',
+          },
+          {
+            date: '2023.09.18',
+            text: 'Common_M00_l040 날짜 표기법 변경\nCommon_M00_l043 화면 삭제',
           },
         ],
       },

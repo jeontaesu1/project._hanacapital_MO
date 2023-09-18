@@ -30,9 +30,8 @@
   &__date {
     display: block;
     margin-top: 4px;
-    @include font-size-default(12);
+    @include font-size-default(13);
     font-weight: 300;
-    color: $color-gray-60;
   }
 
   &__icon {

@@ -99,6 +99,8 @@ export default {
               <SearchButton />
             </InputBlockCell>
           </InputBlock>
+
+          <!-- DD : 검색 후 미노출 -->
           <section :class="[$style['notice-section'], 'row-margin-contents']">
             <h3 :class="$style['notice-section__title']">검색예시</h3>
             <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
@@ -122,6 +124,7 @@ export default {
               </li>
             </ul>
           </section>
+          <!-- DD : 검색 후 미노출 -->
         </div>
 
         <!-- DD : 검색 후 노출 -->

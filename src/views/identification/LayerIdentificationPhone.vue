@@ -79,8 +79,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          휴대폰 본인인증을 위해<br />
-          <strong>이름을 입력해 주세요</strong>
+          이름을<br />
+          <strong>입력해 주세요</strong>
         </PageMainText>
       </PageTextGroup>
 
