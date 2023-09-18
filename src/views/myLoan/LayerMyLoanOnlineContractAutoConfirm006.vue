@@ -212,7 +212,14 @@ export default {
         </section>
 
         <section class="row-margin-container-medium">
-          <h3 class="text-title-2 row-margin-contents">상품 정보</h3>
+          <div class="flex-box row-margin-contents">
+            <div class="flex-box__cell">
+              <h3 class="text-title-2 row-margin-contents">상품 정보</h3>
+            </div>
+            <div class="flex-box__cell--small align-self-end">
+              <div class="text-body-3 font-weight-regular">(VAT 포함)</div>
+            </div>
+          </div>
 
           <BasicBox>
             <KeyValue margin="regular">
@@ -261,6 +268,14 @@ export default {
                   item: 'text-body-3',
                 }"
               >
+                <KeyValueTitle>선납금</KeyValueTitle>
+                <KeyValueText>0 원</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
                 <KeyValueTitle>보증보험증권</KeyValueTitle>
                 <KeyValueText>0 원</KeyValueText>
               </KeyValueItem>
@@ -277,16 +292,29 @@ export default {
                   item: 'text-body-3',
                 }"
               >
-                <KeyValueTitle>선납렌트료</KeyValueTitle>
-                <KeyValueText>0 원</KeyValueText>
+                <KeyValueTitle>매회 렌트료</KeyValueTitle>
+                <KeyValueText>460,350 원</KeyValueText>
               </KeyValueItem>
               <KeyValueItem
                 :classNames="{
                   item: 'text-body-3',
                 }"
               >
-                <KeyValueTitle>월렌트료(VAT포함)</KeyValueTitle>
-                <KeyValueText>460,350 원</KeyValueText>
+                <KeyValueTitle>선납 렌트료</KeyValueTitle>
+                <KeyValueText>60,350 원</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>납입 렌트료</KeyValueTitle>
+                <KeyValueText
+                  :classNames="{
+                    text: 'color-green font-weight-medium',
+                  }"
+                  >400,000 원</KeyValueText
+                >
               </KeyValueItem>
               <KeyValueItem
                 :classNames="{

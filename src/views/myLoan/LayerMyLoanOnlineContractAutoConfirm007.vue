@@ -10,6 +10,11 @@ import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
+import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
+import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
+import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
+import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
+import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
@@ -28,6 +33,11 @@ export default {
     PageTextGroup,
     PageMainText,
     BasicBox,
+    BasicBoxHead,
+    BasicBoxHeadLeft,
+    BasicBoxHeadRight,
+    CarEmblem,
+    CarThumb,
     KeyValue,
     KeyValueItem,
     KeyValueTitle,
@@ -67,7 +77,45 @@ export default {
 
       <div>
         <section class="row-margin-container-medium">
-          <h3 class="text-title-2 row-margin-contents">상품 정보</h3>
+          <h3 class="text-title-2 row-margin-contents">차량 정보</h3>
+
+          <BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <div class="row-margin-mini">
+                  <CarEmblem src="/images/_dummy/car-emblem.png" name="현대" />
+                </div>
+                <h3 class="text-body-1 font-weight-medium">캐스퍼</h3>
+                <p class="text-body-4 color-gray row-margin-small">
+                  가솔린 1.0 에센셜
+                </p>
+              </BasicBoxHeadLeft>
+              <BasicBoxHeadRight>
+                <CarThumb src="/images/_dummy/car-thumb.png" />
+              </BasicBoxHeadRight>
+            </BasicBoxHead>
+            <KeyValue margin="regular">
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>유종</KeyValueTitle>
+                <KeyValueText>가솔린</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </BasicBox>
+        </section>
+
+        <section class="row-margin-container-medium">
+          <div class="flex-box row-margin-contents">
+            <div class="flex-box__cell">
+              <h3 class="text-title-2 row-margin-contents">상품 정보</h3>
+            </div>
+            <div class="flex-box__cell--small align-self-end">
+              <div class="text-body-3 font-weight-regular">(VAT 포함)</div>
+            </div>
+          </div>
 
           <BasicBox>
             <KeyValue margin="regular">
@@ -116,6 +164,14 @@ export default {
                   item: 'text-body-3',
                 }"
               >
+                <KeyValueTitle>선납금</KeyValueTitle>
+                <KeyValueText>0 원</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
                 <KeyValueTitle>보증보험증권</KeyValueTitle>
                 <KeyValueText>0 원</KeyValueText>
               </KeyValueItem>
@@ -132,16 +188,29 @@ export default {
                   item: 'text-body-3',
                 }"
               >
-                <KeyValueTitle>선납렌트료</KeyValueTitle>
-                <KeyValueText>0 원</KeyValueText>
+                <KeyValueTitle>매회 렌트료</KeyValueTitle>
+                <KeyValueText>460,350 원</KeyValueText>
               </KeyValueItem>
               <KeyValueItem
                 :classNames="{
                   item: 'text-body-3',
                 }"
               >
-                <KeyValueTitle>월렌트료(VAT포함)</KeyValueTitle>
-                <KeyValueText>460,350 원</KeyValueText>
+                <KeyValueTitle>선납 렌트료</KeyValueTitle>
+                <KeyValueText>60,350 원</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>납입 렌트료</KeyValueTitle>
+                <KeyValueText
+                  :classNames="{
+                    text: 'color-green font-weight-medium',
+                  }"
+                  >400,000 원</KeyValueText
+                >
               </KeyValueItem>
               <KeyValueItem
                 :classNames="{
