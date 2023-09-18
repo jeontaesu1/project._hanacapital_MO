@@ -430,7 +430,13 @@ export default {
             <span :class="$style['bank-brand__logo']">
               <CarThumb src="/images/_dummy/car-thumb.png" />
             </span>
-            <span :class="$style['bank-brand__text']">캐스퍼</span>
+            <span :class="$style['bank-brand__text']">
+              <span :class="$style['emblem']"
+                ><CarEmblem
+                  src="/images/_dummy/car-emblem.png"
+                  size="small" /></span
+              >캐스퍼
+            </span>
             <span class="inline-wrap row-margin-mini">
               <RoundStatus theme="secondary">22대</RoundStatus>
             </span>

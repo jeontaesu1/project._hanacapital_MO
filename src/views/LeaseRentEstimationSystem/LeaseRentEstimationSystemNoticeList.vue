@@ -113,14 +113,16 @@ export default {
     <BasicHr className="row-margin-container-medium" />
 
     <div class="contents-wrap">
-      <p class="text-body-4 font-weight-light color-gray-secondary">
-        <strong class="font-weight-medium color-green">999</strong> 건
-      </p>
-      <BasicHr
-        theme="quaternary"
-        type="contents"
-        className="row-margin-item-medium"
-      />
+      <div class="row-margin-contents">
+        <p class="text-body-4 font-weight-light color-gray-secondary">
+          <strong class="font-weight-medium color-green">999</strong> 건
+        </p>
+        <BasicHr
+          theme="quaternary"
+          type="contents"
+          className="row-margin-item-medium"
+        />
+      </div>
 
       <!-- Case : 검색 결과 없을 때 -->
       <div :class="$style['empty']">
