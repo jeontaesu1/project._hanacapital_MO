@@ -42,7 +42,7 @@ export default {
 
 <template>
   <UiLayer ref="layer" type="full">
-    <FullPopup bg="secondary">
+    <FullPopup>
       <template v-slot:head>
         <FullPopupHead />
       </template>

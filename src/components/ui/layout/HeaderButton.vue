@@ -141,14 +141,15 @@ export default {
     <span :class="styleModule['header__button-text']">메뉴</span>
   </button>
 
-  <RouterLink
+  <button
     v-else-if="type === 'search'"
-    to=""
+    type="button"
     :class="styleModule['header__button']"
+    @click="onClick"
   >
     <IconSearch :class="styleModule['header__button-icon']" />
     <span :class="styleModule['header__button-text']">검색</span>
-  </RouterLink>
+  </button>
 
   <button
     v-else-if="type === 'share'"

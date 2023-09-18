@@ -24,10 +24,8 @@ import UiTab from '@/components/ui/tab/UiTab.vue';
 import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
 import NavTab from '@/components/ui/tab/NavTab.vue';
 import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
-import TextButton from '@/components/ui/button/TextButton.vue';
 
 import IconLogo from '@/assets/images/icon/hanacapital-small.svg?component';
-import IconLink from '@/assets/images/icon/link.svg?component';
 
 export default {
   components: {
@@ -50,9 +48,7 @@ export default {
     UiTabPanel,
     NavTab,
     NavTabButton,
-    TextButton,
     IconLogo,
-    IconLink,
   },
   setup() {
     const state = reactive({
@@ -199,17 +195,9 @@ export default {
         <div :class="$style['join__inner']">
           <div :class="$style['join__icon']"><IconLogo /></div>
           <div :class="$style['join__title']">앱에서 가입하셨나요?</div>
-          <TextButton
-            :block="true"
-            :classNames="{
-              wrap: [$style['join__link'], 'text-body-4 color-gray'],
-            }"
-          >
-            앱회원 가입
-            <template v-slot:rightIcon>
-              <IconLink />
-            </template>
-          </TextButton>
+          <button type="button" :class="$style['join__button']">
+            <span class="for-a11y">앱으로 이동</span>
+          </button>
         </div>
       </div>
     </PageContents>

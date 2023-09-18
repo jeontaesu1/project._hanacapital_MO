@@ -1,6 +1,6 @@
 <script>
 // Common_M00_l017
-import { onMounted, onUnmounted } from 'vue';
+import { onMounted, onUnmounted, ref } from 'vue';
 import { useHead } from '@vueuse/head';
 
 import { useUiCommonStore } from '@/stores/ui/common';
@@ -11,10 +11,13 @@ import { useUiDockBarStore } from '@/stores/ui/dockBar';
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import GlobalNav from '@/components/ui/gnb/GlobalNav.vue';
 
+import LayerSearch from '@/views/search/LayerSearch.vue';
+
 export default {
   components: {
     PageContents,
     GlobalNav,
+    LayerSearch,
   },
   setup() {
     useHead({
@@ -42,6 +45,12 @@ export default {
       },
     };
 
+    const layerSearch = ref(null);
+
+    const layerSearchOpen = (e = {}) => {
+      layerSearch.value.layer.open(e.target);
+    };
+
     onMounted(() => {
       store.ui.common.setApp(true); // 앱모드 테스트 변수
 
@@ -51,7 +60,13 @@ export default {
 
       store.ui.header.setTitle(() => ' ');
       store.ui.header.setLeftButtons(() => []);
-      store.ui.header.setRightButtons(() => ['search', 'setting']);
+      store.ui.header.setRightButtons(() => [
+        {
+          name: 'search',
+          onClick: layerSearchOpen,
+        },
+        'setting',
+      ]);
 
       store.ui.dockBar.setActive(() => 'menu');
     });
@@ -69,6 +84,10 @@ export default {
 
       store.ui.dockBar.setActive();
     });
+
+    return {
+      layerSearch,
+    };
   },
 };
 </script>
@@ -76,5 +95,7 @@ export default {
 <template>
   <PageContents>
     <GlobalNav />
+
+    <LayerSearch ref="layerSearch" />
   </PageContents>
 </template>
