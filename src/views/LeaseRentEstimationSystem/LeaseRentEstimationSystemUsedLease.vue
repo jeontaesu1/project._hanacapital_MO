@@ -1880,33 +1880,38 @@ export default {
                           <div class="text-body-4">선수금</div>
                         </KeyValueTitle>
                         <KeyValueText>
-                          <FormList>
-                            <FormListItem
-                              titleText="금액"
-                              target="#leaseRentEstimationSystemUsedLeaseAdvancePaymentPrice"
-                            >
-                              <FormInvalid :error="state.advancePaymentError">
-                                <InputBlock :error="state.advancePaymentError">
-                                  <InputBlockCell :flexible="true">
-                                    <BasicInput
-                                      title="선수금 금액"
-                                      id="leaseRentEstimationSystemUsedLeaseAdvancePaymentPrice"
-                                      pattern="\d*"
-                                      :useDelete="false"
-                                      align="right"
-                                      defaultValue="0"
-                                    />
-                                  </InputBlockCell>
-                                  <InputBlockCell>
-                                    <div class="text-body-3">원</div>
-                                  </InputBlockCell>
-                                </InputBlock>
-                                <FormInvalidMessage
-                                  >Error Message</FormInvalidMessage
+                          <FormInvalid :error="state.advancePaymentError">
+                            <InputBlock :error="state.advancePaymentError">
+                              <InputBlockCell>
+                                <div
+                                  class="color-gray-quinary align-right input-width-ratio"
                                 >
-                              </FormInvalid>
-                            </FormListItem>
-                          </FormList>
+                                  0.00
+                                </div>
+                              </InputBlockCell>
+                              <InputBlockCell>
+                                <div class="text-body-3 color-gray-quinary">
+                                  %
+                                </div>
+                              </InputBlockCell>
+                              <InputBlockCell :flexible="true">
+                                <BasicInput
+                                  title="선수금 금액"
+                                  id="leaseRentEstimationSystemUsedLeaseAdvancePaymentPrice"
+                                  pattern="\d*"
+                                  :useDelete="false"
+                                  align="right"
+                                  defaultValue="0"
+                                />
+                              </InputBlockCell>
+                              <InputBlockCell>
+                                <div class="text-body-3">원</div>
+                              </InputBlockCell>
+                            </InputBlock>
+                            <FormInvalidMessage
+                              >Error Message</FormInvalidMessage
+                            >
+                          </FormInvalid>
                         </KeyValueText>
                       </KeyValueItem>
                     </KeyValue>
