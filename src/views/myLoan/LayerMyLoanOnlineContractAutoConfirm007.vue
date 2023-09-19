@@ -110,7 +110,7 @@ export default {
         <section class="row-margin-container-medium">
           <div class="flex-box row-margin-contents">
             <div class="flex-box__cell">
-              <h3 class="text-title-2 row-margin-contents">상품 정보</h3>
+              <h3 class="text-title-2">상품 정보</h3>
             </div>
             <div class="flex-box__cell--small align-self-end">
               <div class="text-body-3 font-weight-regular">(VAT 포함)</div>
@@ -205,12 +205,9 @@ export default {
                 }"
               >
                 <KeyValueTitle>납입 렌트료</KeyValueTitle>
-                <KeyValueText
-                  :classNames="{
-                    text: 'color-green font-weight-medium',
-                  }"
-                  >400,000 원</KeyValueText
-                >
+                <KeyValueText>
+                  <span class="color-green font-weight-medium">400,000 원</span>
+                </KeyValueText>
               </KeyValueItem>
             </KeyValue>
           </BasicBox>
