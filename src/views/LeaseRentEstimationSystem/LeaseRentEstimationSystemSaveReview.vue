@@ -40,6 +40,7 @@ import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 import ColorChip from '@/components/ui/imageData/ColorChip.vue';
 import BottomSticky from '@/components/ui/common/BottomSticky.vue';
+import UnitText from '@/components/ui/text/UnitText.vue';
 
 export default {
   components: {
@@ -75,6 +76,7 @@ export default {
     TextButton,
     ColorChip,
     BottomSticky,
+    UnitText,
   },
   setup() {
     const store = {
@@ -388,7 +390,7 @@ export default {
                   >
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
+              <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
                   <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
                 </div>
@@ -540,21 +542,20 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
@@ -628,7 +629,7 @@ export default {
                   <RoundStatus theme="denary" :block="true">선구매</RoundStatus>
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
+              <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
                   <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
                 </div>
@@ -778,21 +779,20 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
@@ -868,7 +868,7 @@ export default {
                   >
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
+              <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
                   <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
                 </div>
@@ -1007,6 +1007,9 @@ export default {
                     <KeyValueText>
                       (0.000%) : 000,000원 /<br />
                       (0.000%) : 000,000원
+                      <!-- Case : 수입차일 경우 노출 -->
+                      <div>CM</div>
+                      <!-- // Case : 수입차일 경우 노출 -->
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -1028,21 +1031,20 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
@@ -1123,7 +1125,7 @@ export default {
                   >
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
+              <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
                   <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
                 </div>
@@ -1267,6 +1269,9 @@ export default {
                     <KeyValueText>
                       (0.000%) : 000,000원 /<br />
                       (0.000%) : 000,000원
+                      <!-- Case : 수입차일 경우 노출 -->
+                      <div>CM</div>
+                      <!-- // Case : 수입차일 경우 노출 -->
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -1288,21 +1293,20 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
@@ -1383,7 +1387,7 @@ export default {
                   >
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
+              <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
                   <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
                 </div>
@@ -1537,21 +1541,20 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
@@ -1630,7 +1633,7 @@ export default {
                   <RoundStatus theme="denary" :block="true">할부</RoundStatus>
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
+              <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
                   <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
                 </div>
@@ -1770,21 +1773,20 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
@@ -1873,14 +1875,24 @@ export default {
                   >
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
-                <div class="flex-box__cell flex-1">
-                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
-                </div>
-                <div class="flex-box__cell">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
+              <div class="row-margin-small">
+                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                <div class="flex-box row-margin-small">
+                  <div class="flex-box__cell">
+                    <div class="text-body-4 color-gray-quaternary">
+                      월 납입금
+                    </div>
+                  </div>
+                  <div class="flex-box__cell flex-1">
+                    <UnitText rightUnit="원" size="regular" align="right"
+                      >234,300</UnitText
+                    >
+                  </div>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{ button: $style['opener'] }"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -2085,21 +2097,20 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
@@ -2216,14 +2227,24 @@ export default {
                   <RoundStatus theme="denary" :block="true">선구매</RoundStatus>
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
-                <div class="flex-box__cell flex-1">
-                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
-                </div>
-                <div class="flex-box__cell">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
+              <div class="row-margin-small">
+                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                <div class="flex-box row-margin-small">
+                  <div class="flex-box__cell">
+                    <div class="text-body-4 color-gray-quaternary">
+                      월 납입금
+                    </div>
+                  </div>
+                  <div class="flex-box__cell flex-1">
+                    <UnitText rightUnit="원" size="regular" align="right"
+                      >234,300</UnitText
+                    >
+                  </div>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{ button: $style['opener'] }"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -2428,21 +2449,20 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
@@ -2561,14 +2581,24 @@ export default {
                   >
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
-                <div class="flex-box__cell flex-1">
-                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
-                </div>
-                <div class="flex-box__cell">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
+              <div class="row-margin-small">
+                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                <div class="flex-box row-margin-small">
+                  <div class="flex-box__cell">
+                    <div class="text-body-4 color-gray-quaternary">
+                      월 납입금
+                    </div>
+                  </div>
+                  <div class="flex-box__cell flex-1">
+                    <UnitText rightUnit="원" size="regular" align="right"
+                      >234,300</UnitText
+                    >
+                  </div>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{ button: $style['opener'] }"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -2714,21 +2744,20 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
@@ -2846,14 +2875,24 @@ export default {
                   <RoundStatus theme="denary" :block="true">할부</RoundStatus>
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
-                <div class="flex-box__cell flex-1">
-                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
-                </div>
-                <div class="flex-box__cell">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
+              <div class="row-margin-small">
+                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                <div class="flex-box row-margin-small">
+                  <div class="flex-box__cell">
+                    <div class="text-body-4 color-gray-quaternary">
+                      월 납입금
+                    </div>
+                  </div>
+                  <div class="flex-box__cell flex-1">
+                    <UnitText rightUnit="원" size="regular" align="right"
+                      >234,300</UnitText
+                    >
+                  </div>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{ button: $style['opener'] }"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -3015,21 +3054,20 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
@@ -3173,14 +3211,24 @@ export default {
                   >
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
-                <div class="flex-box__cell flex-1">
-                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
-                </div>
-                <div class="flex-box__cell">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
+              <div class="row-margin-small">
+                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                <div class="flex-box row-margin-small">
+                  <div class="flex-box__cell">
+                    <div class="text-body-4 color-gray-quaternary">
+                      월 납입금
+                    </div>
+                  </div>
+                  <div class="flex-box__cell flex-1">
+                    <UnitText rightUnit="원" size="regular" align="right"
+                      >234,300</UnitText
+                    >
+                  </div>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{ button: $style['opener'] }"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -3385,21 +3433,20 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
@@ -3573,14 +3620,24 @@ export default {
                   <RoundStatus theme="denary" :block="true">선구매</RoundStatus>
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
-                <div class="flex-box__cell flex-1">
-                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
-                </div>
-                <div class="flex-box__cell">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
+              <div class="row-margin-small">
+                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                <div class="flex-box row-margin-small">
+                  <div class="flex-box__cell">
+                    <div class="text-body-4 color-gray-quaternary">
+                      월 납입금
+                    </div>
+                  </div>
+                  <div class="flex-box__cell flex-1">
+                    <UnitText rightUnit="원" size="regular" align="right"
+                      >234,300</UnitText
+                    >
+                  </div>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{ button: $style['opener'] }"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -3785,21 +3842,20 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
@@ -3939,14 +3995,24 @@ export default {
                   >
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
-                <div class="flex-box__cell flex-1">
-                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
-                </div>
-                <div class="flex-box__cell">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
+              <div class="row-margin-small">
+                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                <div class="flex-box row-margin-small">
+                  <div class="flex-box__cell">
+                    <div class="text-body-4 color-gray-quaternary">
+                      월 납입금
+                    </div>
+                  </div>
+                  <div class="flex-box__cell flex-1">
+                    <UnitText rightUnit="원" size="regular" align="right"
+                      >234,300</UnitText
+                    >
+                  </div>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{ button: $style['opener'] }"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -4138,21 +4204,20 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
@@ -4360,14 +4425,24 @@ export default {
                   <RoundStatus theme="denary" :block="true">할부</RoundStatus>
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
-                <div class="flex-box__cell flex-1">
-                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
-                </div>
-                <div class="flex-box__cell">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
+              <div class="row-margin-small">
+                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                <div class="flex-box row-margin-small">
+                  <div class="flex-box__cell">
+                    <div class="text-body-4 color-gray-quaternary">
+                      월 납입금
+                    </div>
+                  </div>
+                  <div class="flex-box__cell flex-1">
+                    <UnitText rightUnit="원" size="regular" align="right"
+                      >234,300</UnitText
+                    >
+                  </div>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{ button: $style['opener'] }"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -4529,21 +4604,20 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
@@ -4669,14 +4743,24 @@ export default {
                   >
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
-                <div class="flex-box__cell flex-1">
-                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
-                </div>
-                <div class="flex-box__cell">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
+              <div class="row-margin-small">
+                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                <div class="flex-box row-margin-small">
+                  <div class="flex-box__cell">
+                    <div class="text-body-4 color-gray-quaternary">
+                      월 납입금
+                    </div>
+                  </div>
+                  <div class="flex-box__cell flex-1">
+                    <UnitText rightUnit="원" size="regular" align="right"
+                      >234,300</UnitText
+                    >
+                  </div>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{ button: $style['opener'] }"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -4883,21 +4967,20 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
@@ -4968,14 +5051,24 @@ export default {
                   <RoundStatus theme="denary" :block="true">선구매</RoundStatus>
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
-                <div class="flex-box__cell flex-1">
-                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
-                </div>
-                <div class="flex-box__cell">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
+              <div class="row-margin-small">
+                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                <div class="flex-box row-margin-small">
+                  <div class="flex-box__cell">
+                    <div class="text-body-4 color-gray-quaternary">
+                      월 납입금
+                    </div>
+                  </div>
+                  <div class="flex-box__cell flex-1">
+                    <UnitText rightUnit="원" size="regular" align="right"
+                      >234,300</UnitText
+                    >
+                  </div>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{ button: $style['opener'] }"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -5182,21 +5275,20 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
@@ -5268,14 +5360,24 @@ export default {
                   >
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
-                <div class="flex-box__cell flex-1">
-                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
-                </div>
-                <div class="flex-box__cell">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
+              <div class="row-margin-small">
+                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                <div class="flex-box row-margin-small">
+                  <div class="flex-box__cell">
+                    <div class="text-body-4 color-gray-quaternary">
+                      월 납입금
+                    </div>
+                  </div>
+                  <div class="flex-box__cell flex-1">
+                    <UnitText rightUnit="원" size="regular" align="right"
+                      >234,300</UnitText
+                    >
+                  </div>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{ button: $style['opener'] }"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -5469,21 +5571,20 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
@@ -5559,14 +5660,24 @@ export default {
                   <RoundStatus theme="denary" :block="true">할부</RoundStatus>
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
-                <div class="flex-box__cell flex-1">
-                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
-                </div>
-                <div class="flex-box__cell">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
+              <div class="row-margin-small">
+                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                <div class="flex-box row-margin-small">
+                  <div class="flex-box__cell">
+                    <div class="text-body-4 color-gray-quaternary">
+                      월 납입금
+                    </div>
+                  </div>
+                  <div class="flex-box__cell flex-1">
+                    <UnitText rightUnit="원" size="regular" align="right"
+                      >234,300</UnitText
+                    >
+                  </div>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{ button: $style['opener'] }"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -5731,21 +5842,20 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
@@ -5823,14 +5933,24 @@ export default {
                   >
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
-                <div class="flex-box__cell flex-1">
-                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
-                </div>
-                <div class="flex-box__cell">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
+              <div class="row-margin-small">
+                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                <div class="flex-box row-margin-small">
+                  <div class="flex-box__cell">
+                    <div class="text-body-4 color-gray-quaternary">
+                      월 납입금
+                    </div>
+                  </div>
+                  <div class="flex-box__cell flex-1">
+                    <UnitText rightUnit="원" size="regular" align="right"
+                      >234,300</UnitText
+                    >
+                  </div>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{ button: $style['opener'] }"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -6037,21 +6157,20 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
@@ -6173,14 +6292,24 @@ export default {
                   <RoundStatus theme="denary" :block="true">선구매</RoundStatus>
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
-                <div class="flex-box__cell flex-1">
-                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
-                </div>
-                <div class="flex-box__cell">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
+              <div class="row-margin-small">
+                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                <div class="flex-box row-margin-small">
+                  <div class="flex-box__cell">
+                    <div class="text-body-4 color-gray-quaternary">
+                      월 납입금
+                    </div>
+                  </div>
+                  <div class="flex-box__cell flex-1">
+                    <UnitText rightUnit="원" size="regular" align="right"
+                      >234,300</UnitText
+                    >
+                  </div>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{ button: $style['opener'] }"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -6387,21 +6516,20 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
@@ -6514,14 +6642,24 @@ export default {
                   >
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
-                <div class="flex-box__cell flex-1">
-                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
-                </div>
-                <div class="flex-box__cell">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
+              <div class="row-margin-small">
+                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                <div class="flex-box row-margin-small">
+                  <div class="flex-box__cell">
+                    <div class="text-body-4 color-gray-quaternary">
+                      월 납입금
+                    </div>
+                  </div>
+                  <div class="flex-box__cell flex-1">
+                    <UnitText rightUnit="원" size="regular" align="right"
+                      >234,300</UnitText
+                    >
+                  </div>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{ button: $style['opener'] }"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -6715,21 +6853,20 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
@@ -6863,14 +7000,24 @@ export default {
                   <RoundStatus theme="denary" :block="true">할부</RoundStatus>
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
-                <div class="flex-box__cell flex-1">
-                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
-                </div>
-                <div class="flex-box__cell">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
+              <div class="row-margin-small">
+                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                <div class="flex-box row-margin-small">
+                  <div class="flex-box__cell">
+                    <div class="text-body-4 color-gray-quaternary">
+                      월 납입금
+                    </div>
+                  </div>
+                  <div class="flex-box__cell flex-1">
+                    <UnitText rightUnit="원" size="regular" align="right"
+                      >234,300</UnitText
+                    >
+                  </div>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{ button: $style['opener'] }"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -7035,21 +7182,20 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
