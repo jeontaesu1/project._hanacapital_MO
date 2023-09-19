@@ -11,7 +11,6 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
-import PageSubText from '@/components/ui/text/PageSubText.vue';
 import BoxCheck from '@/components/ui/form/BoxCheck.vue';
 import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
 import BoxCheckObject from '@/components/ui/form/BoxCheckObject.vue';
@@ -45,7 +44,6 @@ export default {
     ButtonListItem,
     PageTextGroup,
     PageMainText,
-    PageSubText,
     BoxCheck,
     BoxCheckLabel,
     BoxCheckObject,
@@ -125,10 +123,21 @@ export default {
           자동차 옵션을<br />
           <strong>선택해 주세요</strong>
         </PageMainText>
-        <PageSubText>옵션은 선택하지 않으셔도 됩니다.</PageSubText>
       </PageTextGroup>
 
       <BoxCheckList align="full">
+        <BoxCheckListItem>
+          <BoxCheck
+            :contents="true"
+            type="checkbox"
+            id="layerAutoEstimateSelectOption000"
+          >
+            <template v-slot:left>
+              <BoxCheckObject />
+            </template>
+            <BoxCheckLabel>선택안함</BoxCheckLabel>
+          </BoxCheck>
+        </BoxCheckListItem>
         <BoxCheckListItem>
           <BoxCheck
             :contents="true"
