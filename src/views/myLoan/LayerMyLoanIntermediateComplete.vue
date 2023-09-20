@@ -81,8 +81,10 @@ export default {
 
         <!-- Case : 즉시출금 선택 시 노출 -->
         <PageMainText>
-          중도상환 처리가<br />
-          <strong>완료되었습니다</strong>
+          <strong>
+            중도상환 처리가<br />
+            완료되었습니다
+          </strong>
         </PageMainText>
 
         <PageSubText>하나캐피탈을 이용해주셔서 감사합니다.</PageSubText>
