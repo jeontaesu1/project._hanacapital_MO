@@ -218,11 +218,11 @@ export default {
       </FilterTabButton>
     </FilterTab>
 
-    <!-- Case : 조회 내역이 없을 경우 -->
+    <!-- Case : 검색 결과가 없을 경우 -->
     <div :class="$style['empty']">
-      <p :class="$style['empty__text']">조회된 내역이 없습니다</p>
+      <p :class="$style['empty__text']">검색 결과가 없습니다.</p>
     </div>
-    <!-- // Case : 조회 내역이 없을 경우 -->
+    <!-- // Case : 검색 결과가 없을 경우 -->
 
     <!-- Case : 조회 내역이 있을 경우 -->
     <div :class="$style['faq']">

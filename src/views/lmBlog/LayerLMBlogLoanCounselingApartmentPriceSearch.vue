@@ -56,7 +56,6 @@ export default {
       supplyError: false,
       dedicatedError: false,
       buyError: false,
-      leaseError: false,
     });
 
     return {
@@ -389,32 +388,6 @@ export default {
                       pattern="\d*"
                       title="매매가(분양가, 감정가액)"
                       id="layerLMBlogLoanCounselingApartmentPriceSearchBuy"
-                    />
-                  </InputBlockCell>
-                  <template v-slot:innerRight>
-                    <div class="text-body-3">만원</div>
-                  </template>
-                </InputBlock>
-                <FormInvalidMessage>Error Message</FormInvalidMessage>
-              </FormInvalid>
-            </FormListItem>
-
-            <FormListItem
-              titleText="전세가"
-              titleOptionalText="(상한가)"
-              target="#layerLMBlogLoanCounselingApartmentPriceSearchLease"
-              :disabled="true"
-            >
-              <FormInvalid :error="state.leaseError">
-                <InputBlock :error="state.leaseError" :disabled="true">
-                  <InputBlockCell :flexible="true">
-                    <BasicInput
-                      align="right"
-                      :useDelete="false"
-                      pattern="\d*"
-                      title="전세가(상한가)"
-                      id="layerLMBlogLoanCounselingApartmentPriceSearchLease"
-                      :disabled="true"
                     />
                   </InputBlockCell>
                   <template v-slot:innerRight>

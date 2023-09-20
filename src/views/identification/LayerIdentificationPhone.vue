@@ -22,6 +22,7 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import SecurityInput from '@/components/ui/form/SecurityInput.vue';
 import PartInput from '@/components/ui/form/PartInput.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
 
 export default {
   components: {
@@ -45,6 +46,7 @@ export default {
     BasicSelect,
     SecurityInput,
     PartInput,
+    TextButton,
   },
   setup() {
     const state = reactive({
@@ -78,8 +80,8 @@ export default {
       <PageTextGroup>
         <PageMainText>
           <strong>
-            휴대폰 본인인증을 위해<br />
-            이름을 입력해 주세요
+          이름을<br />
+          입력해 주세요
           </strong>
         </PageMainText>
       </PageTextGroup>
@@ -237,6 +239,9 @@ export default {
               <InputBlockCell :flexible="true">
                 <BasicInput title="이름" id="layerIdentificationPhoneName" />
               </InputBlockCell>
+              <template v-slot:right>
+                <BasicButton size="mini">다음</BasicButton>
+              </template>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
@@ -244,6 +249,15 @@ export default {
       </FormList>
 
       <template v-slot:foot>
+        <div class="inline-wrap align-center row-margin-contents">
+          <TextButton
+            :classNames="{ wrap: 'text-body-4 color-gray' }"
+            :underline="true"
+          >
+            다른 방법으로 인증하기
+          </TextButton>
+        </div>
+
         <ButtonList
           :classNames="{
             wrap: 'row-margin-none',

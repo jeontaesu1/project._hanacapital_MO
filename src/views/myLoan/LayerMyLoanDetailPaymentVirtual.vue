@@ -104,25 +104,17 @@ export default {
               :classNames="{
                 item: 'row-margin-item-group',
               }"
+              :initialOpen="true"
             >
-              <KeyValue>
+              <KeyValue verticalAlign="center">
                 <KeyValueItem :classNames="{ item: 'text-body-3' }">
                   <KeyValueTitle>계좌정보</KeyValueTitle>
                   <KeyValueText>
-                    <div class="flex-box">
-                      <div class="flex-box__cell flex-1">
-                        <CopyButton text="하나 123-456-7890123" align="right">
-                          하나 123-456-7890123
-                        </CopyButton>
-                      </div>
-                      <div class="flex-box__cell flex-box__cell--small">
-                        <UiAccordionOpener
-                          :classNames="{
-                            button: $style['key-value-opener'],
-                          }"
-                        />
-                      </div>
-                    </div>
+                    <UiAccordionOpener
+                      :classNames="{
+                        button: $style['key-value-opener'],
+                      }"
+                    />
                   </KeyValueText>
                 </KeyValueItem>
               </KeyValue>

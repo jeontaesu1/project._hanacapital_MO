@@ -25,6 +25,10 @@ export default {
       Type: Boolean,
       default: false,
     },
+    square: {
+      Type: Boolean,
+      default: false,
+    },
   },
   setup(props) {
     const customClassNames = computed(() => {
@@ -45,6 +49,7 @@ export default {
       $style['status'],
       {
         [$style['status--block']]: block,
+        [$style['status--square']]: square,
         [$style[`status--theme-${theme}`]]: theme,
         [$style[`status--size-${size}`]]: size,
       },

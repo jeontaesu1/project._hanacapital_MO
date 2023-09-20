@@ -148,7 +148,7 @@ export default {
           >
             <li :class="[$style['basic-list__item'], 'font-weight-regular']">
               <div :class="$style['basic-list__symbol']">※</div>
-              <div :class="$style['basic-list__content']">2022-12-28 11:34</div>
+              <div :class="$style['basic-list__content']">2022.12.28 11:34</div>
             </li>
           </ul>
           <!-- //Case : 서류 등록 후 -->
@@ -208,7 +208,7 @@ export default {
           >
             <li :class="[$style['basic-list__item'], 'font-weight-regular']">
               <div :class="$style['basic-list__symbol']">※</div>
-              <div :class="$style['basic-list__content']">2022-12-28 11:34</div>
+              <div :class="$style['basic-list__content']">2022.12.28 11:34</div>
             </li>
           </ul>
           <!-- //Case : 서류 등록 후 -->
@@ -268,7 +268,7 @@ export default {
           >
             <li :class="[$style['basic-list__item'], 'font-weight-regular']">
               <div :class="$style['basic-list__symbol']">※</div>
-              <div :class="$style['basic-list__content']">2022-12-28 11:34</div>
+              <div :class="$style['basic-list__content']">2022.12.28 11:34</div>
             </li>
           </ul>
           <!-- //Case : 서류 등록 후 -->

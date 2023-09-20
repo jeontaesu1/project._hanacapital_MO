@@ -122,15 +122,20 @@ export default {
       <li :class="$style['basic-list__item']">
         <div :class="$style['basic-list__symbol']"></div>
         <div :class="$style['basic-list__content']">
-          서류등록 파일은 이미지 파일만 가능합니다.
+          파일형식은 이미지 파일만 가능합니다.
         </div>
       </li>
       <li :class="$style['basic-list__item']">
         <div :class="$style['basic-list__symbol']"></div>
         <div :class="$style['basic-list__content']">
-          서류등록 파일은 1회 접속 시 최대 5개까지 등록 가능하여 추가적인
-          서류등록을 원하실 경우 서류 등록메뉴에 재접속하시어 추가등록 해주시기
-          바랍니다.
+          최대 5개까지만 등록 가능합니다.
+        </div>
+      </li>
+      <li :class="$style['basic-list__item']">
+        <div :class="$style['basic-list__symbol']"></div>
+        <div :class="$style['basic-list__content']">
+          추가적인 서류등록을 원하실 경우 등록 완료 후 다시 서류 등록 메뉴에서
+          추가 등록 해주시기 바랍니다.
         </div>
       </li>
       <li :class="$style['basic-list__item']">

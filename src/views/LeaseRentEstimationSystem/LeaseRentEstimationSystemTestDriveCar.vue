@@ -1323,10 +1323,37 @@ export default {
                 :classNames="{ layer: $style['estimate-list__layer'] }"
               >
                 <section :class="$style['estimate-list__contents']">
-                  <NoticeText :classNames="{ wrap: 'row-margin-item-group' }"
-                    >원색계열(빨강, 주황, 노랑, 초록, 보라)은 구매(인수) 조건만
-                    진행 가능합니다.</NoticeText
-                  >
+                  <div class="row-margin-item-group">
+                    <NoticeText :classNames="{ wrap: 'row-margin-item' }"
+                      >원색계열(빨강, 주황, 노랑, 초록, 보라)은 구매(인수)
+                      조건만 진행 가능합니다.</NoticeText
+                    >
+
+                    <!-- Case : 트림 옵션값에 따라 노출되는 안내문구 -->
+                    <NoticeText :classNames="{ wrap: 'row-margin-item' }"
+                      >투톤루프 적용 시 ‘선루프‘ 옵션 선택 불가
+                      합니다.</NoticeText
+                    >
+                    <NoticeText :classNames="{ wrap: 'row-margin-item' }"
+                      >파이어리 레드 인텐스 블루, 타이푼 실버 컬러는 스마트/
+                      모던 트림에 한해서 선택 가능합니다.(원톤/투톤)</NoticeText
+                    >
+                    <NoticeText :classNames="{ wrap: 'row-margin-item' }"
+                      >투톤루프 옵션선택 시 컬러포인트(프론트범퍼,
+                      아웃사이드미러, 펜더가니쉬, 사이드가니쉬,리어펌버)가 함께
+                      적용 됩니다.(모던/플럭스 트림)</NoticeText
+                    >
+                    <NoticeText :classNames="{ wrap: 'row-margin-item' }"
+                      >초크 화이트/애시드 옐로우 루프 적용 시 컬러포인트는 루프
+                      컬러로 적용됩니다.</NoticeText
+                    >
+                    <NoticeText :classNames="{ wrap: 'row-margin-item' }"
+                      >팬텀블랙 루프 적용 시 아웃사이드 미러는 팬텀 블랙 컬러로
+                      적용되며, 그외 컬러포인트는 바디 컬러로
+                      적용됩니다.</NoticeText
+                    >
+                    <!-- // Case : 트림 옵션값에 따라 노출되는 안내문구 -->
+                  </div>
                   <ul class="reset-list">
                     <li class="row-margin-item-group">
                       <RadioButton
@@ -2188,6 +2215,13 @@ export default {
                               내비게이션 기반 스마트 크루즈 컨트롤(안전구간,
                               곡선로)
                             </span>
+                            <span class="flex-box row-margin-mini">
+                              <span
+                                class="flex-box__cell text-body-5 color-green"
+                              >
+                                선택된 옵션 조합 불가
+                              </span>
+                            </span>
                           </CheckBoxLabelText>
                         </CheckBox>
                       </div>
@@ -2329,7 +2363,7 @@ export default {
                       ]"
                     >
                       <div :class="$style['option-select__block']">
-                        <span class="flex-box text-body-4">
+                        <span class="flex-box text-body-3">
                           <span class="flex-box__cell font-weight-medium">
                             <DeleteButton />
                           </span>
@@ -2407,7 +2441,7 @@ export default {
                   <ul :class="$style['option-select__list']">
                     <li :class="$style['option-select__item']">
                       <div :class="$style['option-select__block']">
-                        <span class="flex-box text-body-4">
+                        <span class="flex-box text-body-3">
                           <span
                             class="flex-box__cell flex-1 font-weight-regular"
                             >현대 스마트 센서 I</span
@@ -2424,11 +2458,16 @@ export default {
                           크루즈 컨트롤(스탑앤고 기능 미포함), 내비게이션 기반
                           스마트 크루즈 컨트롤(안전구간, 곡선로)
                         </span>
+                        <span class="flex-box row-margin-mini">
+                          <span class="flex-box__cell text-body-5 color-green">
+                            선택된 옵션 조합 불가
+                          </span>
+                        </span>
                       </div>
                     </li>
                     <li :class="$style['option-select__item']">
                       <div :class="$style['option-select__block']">
-                        <span class="flex-box text-body-4">
+                        <span class="flex-box text-body-3">
                           <span
                             class="flex-box__cell flex-1 font-weight-regular"
                             >컴포트</span
@@ -2452,7 +2491,7 @@ export default {
                     </li>
                     <li :class="$style['option-select__item']">
                       <div :class="$style['option-select__block']">
-                        <span class="flex-box text-body-4">
+                        <span class="flex-box text-body-3">
                           <span
                             class="flex-box__cell flex-1 font-weight-regular"
                             >옵션 입력값 출력</span
@@ -3698,33 +3737,38 @@ export default {
                           <div class="text-body-4">선수금</div>
                         </KeyValueTitle>
                         <KeyValueText>
-                          <FormList>
-                            <FormListItem
-                              titleText="금액"
-                              target="#leaseRentEstimationSystemTestDriveCarPrePaymentPrice"
-                            >
-                              <FormInvalid :error="state.prePaymentError">
-                                <InputBlock :error="state.prePaymentError">
-                                  <InputBlockCell :flexible="true">
-                                    <BasicInput
-                                      title="선수금 금액"
-                                      id="leaseRentEstimationSystemTestDriveCarPrePaymentPrice"
-                                      pattern="\d*"
-                                      :useDelete="false"
-                                      align="right"
-                                      defaultValue="0"
-                                    />
-                                  </InputBlockCell>
-                                  <InputBlockCell>
-                                    <div class="text-body-3">원</div>
-                                  </InputBlockCell>
-                                </InputBlock>
-                                <FormInvalidMessage
-                                  >Error Message</FormInvalidMessage
+                          <FormInvalid :error="state.prePaymentError">
+                            <InputBlock :error="state.prePaymentError">
+                              <InputBlockCell>
+                                <div
+                                  class="color-gray-quinary align-right input-width-ratio"
                                 >
-                              </FormInvalid>
-                            </FormListItem>
-                          </FormList>
+                                  0.00
+                                </div>
+                              </InputBlockCell>
+                              <InputBlockCell>
+                                <div class="text-body-3 color-gray-quinary">
+                                  %
+                                </div>
+                              </InputBlockCell>
+                              <InputBlockCell :flexible="true">
+                                <BasicInput
+                                  title="선수금 금액"
+                                  id="leaseRentEstimationSystemTestDriveCarPrePaymentPrice"
+                                  pattern="\d*"
+                                  :useDelete="false"
+                                  align="right"
+                                  defaultValue="0"
+                                />
+                              </InputBlockCell>
+                              <InputBlockCell>
+                                <div class="text-body-3">원</div>
+                              </InputBlockCell>
+                            </InputBlock>
+                            <FormInvalidMessage
+                              >Error Message</FormInvalidMessage
+                            >
+                          </FormInvalid>
                         </KeyValueText>
                       </KeyValueItem>
                     </KeyValue>

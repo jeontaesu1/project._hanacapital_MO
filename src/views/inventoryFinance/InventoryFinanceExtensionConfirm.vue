@@ -121,15 +121,6 @@ export default {
             item: 'text-body-3',
           }"
         >
-          <KeyValueTitle>원금잔액</KeyValueTitle>
-          <KeyValueText>13,000,000 원</KeyValueText>
-        </KeyValueItem>
-
-        <KeyValueItem
-          :classNames="{
-            item: 'text-body-3',
-          }"
-        >
           <KeyValueTitle>금리</KeyValueTitle>
           <KeyValueText>7.5%</KeyValueText>
         </KeyValueItem>

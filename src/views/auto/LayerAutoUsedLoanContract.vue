@@ -15,7 +15,7 @@ import PageMainText from '@/components/ui/text/PageMainText.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
-import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
 import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
@@ -34,7 +34,6 @@ import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
 import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
 import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
-import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 
 export default {
   components: {
@@ -51,7 +50,7 @@ export default {
     BasicBox,
     BasicBoxHead,
     BasicBoxHeadLeft,
-    BasicBoxHeadRight,
+    TextButton,
     KeyValue,
     KeyValueItem,
     KeyValueTitle,
@@ -70,7 +69,6 @@ export default {
     BoxCheckListItem,
     NoticeText,
     CarEmblem,
-    CarThumb,
   },
   setup() {
     const state = reactive({
@@ -143,14 +141,24 @@ export default {
                 <p class="text-body-4 font-weight-light">2020년식</p>
               </div>
             </div>
-            <h3 class="text-body-1 font-weight-medium">11가1111</h3>
+            <div class="flex-box">
+              <div class="flex-box__cell">
+                <h3 class="text-body-1 font-weight-medium">11가1111</h3>
+              </div>
+              <div class="flex-box__cell">
+                <TextButton
+                  size="mini"
+                  theme="secondary"
+                  underline="true"
+                  :block="true"
+                  >재선택</TextButton
+                >
+              </div>
+            </div>
             <p class="text-body-4 color-gray row-margin-small">
               쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
             </p>
           </BasicBoxHeadLeft>
-          <BasicBoxHeadRight>
-            <CarThumb src="/images/_dummy/car-thumb.png" />
-          </BasicBoxHeadRight>
         </BasicBoxHead>
         <KeyValue margin="regular">
           <KeyValueItem
@@ -162,16 +170,6 @@ export default {
             <KeyValueText>2022.12.26</KeyValueText>
           </KeyValueItem>
         </KeyValue>
-
-        <ButtonList
-          :classNames="{
-            wrap: 'row-margin-contents-small',
-          }"
-        >
-          <ButtonListItem>
-            <BasicButton size="small" theme="quaternary">재선택</BasicButton>
-          </ButtonListItem>
-        </ButtonList>
       </BasicBox>
 
       <section class="row-margin-container-medium">
@@ -289,7 +287,7 @@ export default {
 
         <FormList>
           <FormListItem titleText="대출기간" :forceFocus="true">
-            <BoxCheckList>
+            <BoxCheckList :wrap="true" :col="3">
               <BoxCheckListItem>
                 <BoxCheck
                   :minSide="true"
@@ -327,6 +325,15 @@ export default {
                   <BoxCheckLabel>60개월</BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="layerAutoUsedLoanContractPeriod"
+                  id="layerAutoUsedLoanContractPeriod005"
+                >
+                  <BoxCheckLabel>72개월</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
             </BoxCheckList>
           </FormListItem>
         </FormList>
@@ -361,9 +368,21 @@ export default {
           }"
         >
           <ButtonListItem>
+            <BasicButton>확정</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+
+        <!-- Case : 약정신청서 확정 버튼 선택 시 -->
+        <ButtonList
+          :classNames="{
+            wrap: 'row-margin-none',
+          }"
+        >
+          <ButtonListItem>
             <BasicButton>약정하기</BasicButton>
           </ButtonListItem>
         </ButtonList>
+        <!-- // Case : 약정신청서 확정 버튼 선택 시 -->
       </template>
     </FullPopup>
   </UiLayer>

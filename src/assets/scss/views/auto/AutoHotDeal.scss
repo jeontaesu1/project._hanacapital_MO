@@ -7,58 +7,9 @@
   padding: 30px 20px 40px;
 }
 
-.slide {
-  margin: 0 -20px;
-
-  &::before,
-  &::after {
-    content: '';
-    display: table;
-  }
-
-  &__scroller {
-    overflow: auto;
-    margin: -10px 0;
-    padding: 10px 0;
-  }
-
-  &__inner {
-    margin-right: 60px;
-  }
-
-  &__list {
-    @include reset-list;
-    display: flex;
-    flex-wrap: nowrap;
-
-    &::before,
-    &::after {
-      content: '';
-      display: block;
-      flex: none;
-      width: 20px;
-    }
-  }
-
-  &__item {
-    flex: none;
-    width: 100%;
-
-    & + & {
-      margin-left: 16px;
-    }
-  }
-
-  &__block {
-    padding: 19px;
-    border-radius: 8px;
-    background-color: $color-white;
-    box-shadow: 1px 1px 8px rgba($color-black, 0.12);
-  }
-
-  &--once {
-    .slide__inner {
-      margin-right: 40px;
-    }
-  }
+.block {
+  padding: 19px;
+  border-radius: 8px;
+  background-color: $color-white;
+  box-shadow: 1px 1px 8px rgba($color-black, 0.12);
 }

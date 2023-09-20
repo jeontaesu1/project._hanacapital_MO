@@ -1,5 +1,5 @@
 <script>
-import { computed, inject } from 'vue';
+import { computed, inject, reactive, watch } from 'vue';
 import { RouterLink } from 'vue-router';
 
 const BASE_URL = import.meta.env.BASE_URL;
@@ -58,6 +58,10 @@ export default {
   setup(props) {
     const styleModule = inject('slideBannerStyleModule');
 
+    const state = reactive({
+      isError: false,
+    });
+
     const setComponent = computed(() => {
       const { tagName } = props;
       return tagName === 'RouterLink' ? RouterLink : tagName;
@@ -83,12 +87,25 @@ export default {
       }
     });
 
+    const onError = () => {
+      state.isError = true;
+    };
+
+    watch(
+      () => props.thumb,
+      () => {
+        state.isError = false;
+      }
+    );
+
     return {
+      state,
       setComponent,
       setType,
       styleModule,
       customClassNames,
       imgSrc,
+      onError,
     };
   },
 };
@@ -115,16 +132,15 @@ export default {
       :class="[styleModule['banner__thumb'], customClassNames.thumb]"
     >
       <div
-        :class="[styleModule['banner__thumb-img'], customClassNames.thumbImg]"
+        :class="[
+          styleModule['banner__thumb-img'],
+          {
+            'is-error': state.isError,
+          },
+          customClassNames.thumbImg,
+        ]"
       >
-        <img
-          :src="imgSrc"
-          @error="
-            (e) => {
-              e.target.parentNode.classList.add('is-error');
-            }
-          "
-        />
+        <img :src="imgSrc" @error="onError" />
       </div>
     </div>
     <component

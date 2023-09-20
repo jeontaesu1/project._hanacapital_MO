@@ -1,5 +1,5 @@
 <script>
-// My_M06_b001
+// My_M06_l002
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';

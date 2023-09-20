@@ -72,7 +72,7 @@ export default {
 
       <div>
         <section class="row-margin-container-medium">
-          <h3 class="text-title-2 row-margin-contents">계약자 정보</h3>
+          <h3 class="text-title-2 row-margin-contents">대출자 정보</h3>
 
           <BasicBox>
             <KeyValue margin="regular">

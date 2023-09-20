@@ -231,6 +231,7 @@ export default {
         <section>
           <h3 class="text-title-2 row-margin-contents">승계 조건</h3>
 
+          <!-- Case : 동일 조건 승계 시 노출 -->
           <BasicBox>
             <h4 class="text-body-2 font-weight-regular row-margin-small">
               동일한 조건으로 승계 희망
@@ -239,6 +240,50 @@ export default {
               현재 계약자의 이용 조건을 동일하게 승계합니다.
             </p>
           </BasicBox>
+          <!-- // Case : 동일 조건 승계 시 노출 -->
+
+          <!-- Case : 전액선납 승계 시 노출 -->
+          <BasicBox>
+            <h4 class="text-body-2 font-weight-regular row-margin-small">
+              전액선납으로 승계 희망
+            </h4>
+
+            <ul
+              :class="[
+                $style['basic-list'],
+                $style['basic-list--small-margin'],
+              ]"
+            >
+              <li
+                :class="[
+                  $style['basic-list__item'],
+                  'text-body-4 ',
+                  'color-gray-secondary',
+                  'font-weight-regular',
+                ]"
+              >
+                <div :class="$style['basic-list__symbol']">-</div>
+                <div :class="$style['basic-list__content']">
+                  승계 후 전액선납하는 정산비용이 발생합니다.
+                </div>
+              </li>
+              <li
+                :class="[
+                  $style['basic-list__item'],
+                  'text-body-4 ',
+                  'color-gray-secondary',
+                  'font-weight-regular',
+                ]"
+              >
+                <div :class="$style['basic-list__symbol']">-</div>
+                <div :class="$style['basic-list__content']">
+                  승계 후 만기일자 이후 손님 명의로 자동차 소유권 이전 등록
+                  절차가 이루어집니다.
+                </div>
+              </li>
+            </ul>
+          </BasicBox>
+          <!-- // Case : 전액선납 승계 시 노출 -->
         </section>
       </div>
 

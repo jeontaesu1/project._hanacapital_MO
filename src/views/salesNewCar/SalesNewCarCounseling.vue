@@ -88,7 +88,8 @@ export default {
       companyError: false,
       carError: false,
       interestRateError: false,
-      loanPeriodError: false,
+      loanPeriod001Error: false,
+      loanPeriod002Error: false,
       optionNameError: false,
       optionPriceError: false,
     });
@@ -950,13 +951,14 @@ export default {
               </FormHelpText>
             </FormInvalid>
           </FormListItem>
+          <!-- Case : 오토론일 경우 -->
           <FormListItem
             titleText="대출기간"
-            target="#salesNewCarCounselingLoanPeriodButton"
+            target="#salesNewCarCounselingLoanPeriod001Button"
             :selectOnly="true"
           >
-            <FormInvalid :error="state.loanPeriodError">
-              <InputBlock :error="state.loanPeriodError">
+            <FormInvalid :error="state.loanPeriod001Error">
+              <InputBlock :error="state.loanPeriod001Error">
                 <InputBlockCell :flexible="true">
                   <BasicSelect
                     :option="[
@@ -995,14 +997,67 @@ export default {
                     ]"
                     buttonTitle="대출 기간 선택하기"
                     layerTitle="대출 기간을 선택해 주세요"
-                    id="salesNewCarCounselingLoanPeriod"
-                    buttonId="salesNewCarCounselingLoanPeriodButton"
+                    id="salesNewCarCounselingLoanPeriod001"
+                    buttonId="salesNewCarCounselingLoanPeriod001Button"
                   />
                 </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
+          <!-- // Case : 오토론일 경우 -->
+
+          <!-- Case : 오토할부일 경우 -->
+          <FormListItem
+            titleText="대출기간"
+            target="#salesNewCarCounselingLoanPeriod002Button"
+            :selectOnly="true"
+          >
+            <FormInvalid :error="state.loanPeriod002Error">
+              <InputBlock :error="state.loanPeriod002Error">
+                <InputBlockCell :flexible="true">
+                  <BasicSelect
+                    :option="[
+                      {
+                        value: '1',
+                        text: '12개월',
+                      },
+                      {
+                        value: '2',
+                        text: '20개월',
+                      },
+                      {
+                        value: '3',
+                        text: '24개월',
+                      },
+                      {
+                        value: '4',
+                        text: '36개월',
+                      },
+                      {
+                        value: '5',
+                        text: '48개월',
+                      },
+                      {
+                        value: '6',
+                        text: '50개월',
+                      },
+                      {
+                        value: '7',
+                        text: '60개월',
+                      },
+                    ]"
+                    buttonTitle="대출 기간 선택하기"
+                    layerTitle="대출 기간을 선택해 주세요"
+                    id="salesNewCarCounselingLoanPeriod002"
+                    buttonId="salesNewCarCounselingLoanPeriod002Button"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+          <!-- // Case : 오토할부일 경우 -->
         </FormList>
       </section>
 

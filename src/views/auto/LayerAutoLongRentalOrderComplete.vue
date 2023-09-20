@@ -8,9 +8,7 @@ import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
-import PageSubText from '@/components/ui/text/PageSubText.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
-import BasicHr from '@/components/ui/common/BasicHr.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
@@ -23,9 +21,7 @@ export default {
     PopupButton,
     PageTextGroup,
     PageMainText,
-    PageSubText,
     IllustObject,
-    BasicHr,
     ButtonList,
     ButtonListItem,
     BasicButton,
@@ -58,16 +54,9 @@ export default {
             완료되었습니다
           </strong>
         </PageMainText>
-        <PageSubText>전문상담사가 차량 배정 후, 연락 드리겠습니다.</PageSubText>
       </PageTextGroup>
 
       <IllustObject type="complete" />
-
-      <BasicHr
-        type="contents"
-        theme="quaternary"
-        className="row-margin-container"
-      />
 
       <section :class="$style['notice-section']">
         <h3 :class="$style['notice-section__title']">차량 발주 신청</h3>

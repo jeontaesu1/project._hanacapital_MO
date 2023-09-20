@@ -19,6 +19,8 @@ import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
+import SlideScroll from '@/components/ui/section/SlideScroll.vue';
+import SlideScrollItem from '@/components/ui/section/SlideScrollItem.vue';
 
 export default {
   components: {
@@ -37,6 +39,8 @@ export default {
     KeyValueText,
     RoundStatus,
     BasicHr,
+    SlideScroll,
+    SlideScrollItem,
   },
   setup() {
     const store = {
@@ -91,86 +95,77 @@ export default {
           </div>
         </div>
 
-        <!-- DD : 1개 이하 slide--once 클래스 추가 -->
-        <div :class="[$style['slide'], $style['slide--once']]">
-          <div :class="$style['slide__scroller']">
-            <div :class="$style['slide__inner']">
-              <ul :class="$style['slide__list']">
-                <li :class="$style['slide__item']">
-                  <div :class="$style['slide__block']">
-                    <div class="text-body-4 color-gray row-margin-item">
-                      뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
+        <SlideScroll>
+          <SlideScrollItem>
+            <div :class="$style['block']">
+              <div class="text-body-4 color-gray row-margin-item">
+                뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
+              </div>
+              <UnitText rightUnit="원">월 325,000</UnitText>
+
+              <BasicHr
+                type="contents"
+                theme="quaternary"
+                className="row-margin-contents-small"
+              />
+
+              <KeyValue margin="regular">
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>외장</KeyValueTitle>
+                  <KeyValueText>
+                    <div class="flex-box justify-conten-end">
+                      <div class="flex-box__cell">아틸라스 화이트</div>
+                      <div class="flex-box__cell">
+                        <ColorChip
+                          :colors="['248, 245, 245']"
+                          size="small"
+                        ></ColorChip>
+                      </div>
                     </div>
-                    <UnitText rightUnit="원">월 325,000</UnitText>
+                  </KeyValueText>
+                </KeyValueItem>
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>내장</KeyValueTitle>
+                  <KeyValueText>
+                    <div class="flex-box justify-conten-end">
+                      <div class="flex-box__cell">
+                        네츄럴 베이지 / 다크 베이지
+                      </div>
+                      <div class="flex-box__cell">
+                        <ColorChip
+                          :colors="['244, 238, 238', '225, 213, 213']"
+                          size="small"
+                        ></ColorChip>
+                      </div>
+                    </div>
+                  </KeyValueText>
+                </KeyValueItem>
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>옵션</KeyValueTitle>
+                  <KeyValueText>선루프1 외 2개</KeyValueText>
+                </KeyValueItem>
+              </KeyValue>
 
-                    <BasicHr
-                      type="contents"
-                      theme="quaternary"
-                      className="row-margin-contents-small"
-                    />
-
-                    <KeyValue margin="regular">
-                      <KeyValueItem
-                        :classNames="{
-                          item: 'text-body-3',
-                        }"
-                      >
-                        <KeyValueTitle>외장</KeyValueTitle>
-                        <KeyValueText>
-                          <div class="flex-box justify-conten-end">
-                            <div class="flex-box__cell">아틸라스 화이트</div>
-                            <div class="flex-box__cell">
-                              <ColorChip
-                                :colors="['248, 245, 245']"
-                                size="small"
-                              ></ColorChip>
-                            </div>
-                          </div>
-                        </KeyValueText>
-                      </KeyValueItem>
-                      <KeyValueItem
-                        :classNames="{
-                          item: 'text-body-3',
-                        }"
-                      >
-                        <KeyValueTitle>내장</KeyValueTitle>
-                        <KeyValueText>
-                          <div class="flex-box justify-conten-end">
-                            <div class="flex-box__cell">
-                              네츄럴 베이지 / 다크 베이지
-                            </div>
-                            <div class="flex-box__cell">
-                              <ColorChip
-                                :colors="['244, 238, 238', '225, 213, 213']"
-                                size="small"
-                              ></ColorChip>
-                            </div>
-                          </div>
-                        </KeyValueText>
-                      </KeyValueItem>
-                      <KeyValueItem
-                        :classNames="{
-                          item: 'text-body-3',
-                        }"
-                      >
-                        <KeyValueTitle>옵션</KeyValueTitle>
-                        <KeyValueText>선루프1 외 2개</KeyValueText>
-                      </KeyValueItem>
-                    </KeyValue>
-
-                    <ButtonList
-                      :classNames="{ wrap: 'row-margin-contents-small' }"
-                    >
-                      <ButtonListItem>
-                        <BasicButton size="small"> 즉시출고 </BasicButton>
-                      </ButtonListItem>
-                    </ButtonList>
-                  </div>
-                </li>
-              </ul>
+              <ButtonList :classNames="{ wrap: 'row-margin-contents-small' }">
+                <ButtonListItem>
+                  <BasicButton size="small"> 즉시출고 </BasicButton>
+                </ButtonListItem>
+              </ButtonList>
             </div>
-          </div>
-        </div>
+          </SlideScrollItem>
+        </SlideScroll>
       </section>
 
       <BasicHr
@@ -189,85 +184,77 @@ export default {
           </div>
         </div>
 
-        <div :class="$style['slide']">
-          <div :class="$style['slide__scroller']">
-            <div :class="$style['slide__inner']">
-              <ul :class="$style['slide__list']">
-                <li v-for="i in 5" :key="i" :class="$style['slide__item']">
-                  <div :class="$style['slide__block']">
-                    <div class="text-body-4 color-gray row-margin-item">
-                      뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
+        <SlideScroll>
+          <SlideScrollItem v-for="i in 5" :key="i">
+            <div :class="$style['block']">
+              <div class="text-body-4 color-gray row-margin-item">
+                뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
+              </div>
+              <UnitText rightUnit="원">월 325,000</UnitText>
+
+              <BasicHr
+                type="contents"
+                theme="quaternary"
+                className="row-margin-contents-small"
+              />
+
+              <KeyValue margin="regular">
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>외장</KeyValueTitle>
+                  <KeyValueText>
+                    <div class="flex-box justify-conten-end">
+                      <div class="flex-box__cell">아틸라스 화이트</div>
+                      <div class="flex-box__cell">
+                        <ColorChip
+                          :colors="['248, 245, 245']"
+                          size="small"
+                        ></ColorChip>
+                      </div>
                     </div>
-                    <UnitText rightUnit="원">월 325,000</UnitText>
+                  </KeyValueText>
+                </KeyValueItem>
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>내장</KeyValueTitle>
+                  <KeyValueText>
+                    <div class="flex-box justify-conten-end">
+                      <div class="flex-box__cell">
+                        네츄럴 베이지 / 다크 베이지
+                      </div>
+                      <div class="flex-box__cell">
+                        <ColorChip
+                          :colors="['244, 238, 238', '225, 213, 213']"
+                          size="small"
+                        ></ColorChip>
+                      </div>
+                    </div>
+                  </KeyValueText>
+                </KeyValueItem>
+                <KeyValueItem
+                  :classNames="{
+                    item: 'text-body-3',
+                  }"
+                >
+                  <KeyValueTitle>옵션</KeyValueTitle>
+                  <KeyValueText>선루프1 외 2개</KeyValueText>
+                </KeyValueItem>
+              </KeyValue>
 
-                    <BasicHr
-                      type="contents"
-                      theme="quaternary"
-                      className="row-margin-contents-small"
-                    />
-
-                    <KeyValue margin="regular">
-                      <KeyValueItem
-                        :classNames="{
-                          item: 'text-body-3',
-                        }"
-                      >
-                        <KeyValueTitle>외장</KeyValueTitle>
-                        <KeyValueText>
-                          <div class="flex-box justify-conten-end">
-                            <div class="flex-box__cell">아틸라스 화이트</div>
-                            <div class="flex-box__cell">
-                              <ColorChip
-                                :colors="['248, 245, 245']"
-                                size="small"
-                              ></ColorChip>
-                            </div>
-                          </div>
-                        </KeyValueText>
-                      </KeyValueItem>
-                      <KeyValueItem
-                        :classNames="{
-                          item: 'text-body-3',
-                        }"
-                      >
-                        <KeyValueTitle>내장</KeyValueTitle>
-                        <KeyValueText>
-                          <div class="flex-box justify-conten-end">
-                            <div class="flex-box__cell">
-                              네츄럴 베이지 / 다크 베이지
-                            </div>
-                            <div class="flex-box__cell">
-                              <ColorChip
-                                :colors="['244, 238, 238', '225, 213, 213']"
-                                size="small"
-                              ></ColorChip>
-                            </div>
-                          </div>
-                        </KeyValueText>
-                      </KeyValueItem>
-                      <KeyValueItem
-                        :classNames="{
-                          item: 'text-body-3',
-                        }"
-                      >
-                        <KeyValueTitle>옵션</KeyValueTitle>
-                        <KeyValueText>선루프1 외 2개</KeyValueText>
-                      </KeyValueItem>
-                    </KeyValue>
-
-                    <ButtonList
-                      :classNames="{ wrap: 'row-margin-contents-small' }"
-                    >
-                      <ButtonListItem>
-                        <BasicButton size="small"> 즉시출고 </BasicButton>
-                      </ButtonListItem>
-                    </ButtonList>
-                  </div>
-                </li>
-              </ul>
+              <ButtonList :classNames="{ wrap: 'row-margin-contents-small' }">
+                <ButtonListItem>
+                  <BasicButton size="small"> 즉시출고 </BasicButton>
+                </ButtonListItem>
+              </ButtonList>
             </div>
-          </div>
-        </div>
+          </SlideScrollItem>
+        </SlideScroll>
       </section>
     </div>
   </PageContents>

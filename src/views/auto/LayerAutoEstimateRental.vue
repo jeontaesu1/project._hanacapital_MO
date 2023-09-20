@@ -524,18 +524,23 @@ export default {
             </BoxCheckListItem>
           </BoxCheckList>
 
-          <FormList :classNames="{ wrap: 'row-margin-item-group' }">
+          <FormList
+            :classNames="{
+              wrap: 'row-margin-item-group row-margin-bottom-none',
+            }"
+          >
+            <!-- Case : 잔존가치 : 직접입력 선택시  :disabled="false" -->
             <FormListItem
               titleText="비율"
-              target="#layerAutoEstimateLeaseRatio"
+              target="#layerAutoEstimateRentalRatio"
+              :disabled="true"
             >
               <FormInvalid :error="state.ratioError">
-                <!-- DD : 잔존가치 : 직접입력 선택시 입력창 활성화 -->
                 <InputBlock :error="state.ratioError" :disabled="true">
                   <InputBlockCell :flexible="true">
                     <BasicInput
                       title="비율 입력"
-                      id="layerAutoEstimateLeaseRatio"
+                      id="layerAutoEstimateRentalRatio"
                       pattern="\d*"
                       :useDelete="false"
                       align="right"
@@ -548,9 +553,18 @@ export default {
                   </template>
                 </InputBlock>
                 <FormInvalidMessage>Error Message</FormInvalidMessage>
+                <!-- Case : 잔존가치 : 직접입력 선택시 노출 -->
+                <FormHelpText>최소 32% ~ 최대 55%</FormHelpText>
+                <!-- // Case : 잔존가치 : 직접입력 선택시 노출 -->
               </FormInvalid>
             </FormListItem>
+            <!-- // Case : 잔존가치 : 직접입력 선택시  :disabled="false" -->
           </FormList>
+
+          <NoticeText :classNames="{ wrap: 'row-margin-item' }"
+            >잔존가치는 계약 종료 후 차량 인수 시 납부해야 하는 비용입니다.
+            잔존가치가 높을수록 월 납입금이 저렴해요.</NoticeText
+          >
         </section>
       </div>
 

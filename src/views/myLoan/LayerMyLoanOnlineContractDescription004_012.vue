@@ -418,15 +418,15 @@ export default {
               <tbody>
                 <tr>
                   <th>상품명</th>
-                  <td>오토론</td>
+                  <td class="align-left">오토론</td>
                 </tr>
                 <tr>
                   <th>적용금리</th>
-                  <td>16.3%</td>
+                  <td class="align-left">16.3%</td>
                 </tr>
                 <tr>
                   <th>대출한도</th>
-                  <td>최대 5,000,000 원</td>
+                  <td class="align-left">최대 5,000,000 원</td>
                 </tr>
                 <tr>
                   <th>금리적용방식</th>
@@ -452,7 +452,7 @@ export default {
                 </tr>
                 <tr>
                   <th>대출기간</th>
-                  <td>취급 후 48개월</td>
+                  <td class="align-left">취급 후 48개월</td>
                 </tr>
                 <tr>
                   <th>중도상환수수료<br />부과 여부 및 요율</th>

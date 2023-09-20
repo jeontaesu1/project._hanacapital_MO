@@ -463,15 +463,15 @@ export default {
               <tbody>
                 <tr>
                   <th>상품명</th>
-                  <td>일반할부</td>
+                  <td class="align-left">일반할부</td>
                 </tr>
                 <tr>
                   <th>할부기간</th>
-                  <td>36개월</td>
+                  <td class="align-left">36개월</td>
                 </tr>
                 <tr>
                   <th>할부원금</th>
-                  <td>5,000,000 원</td>
+                  <td class="align-left">5,000,000 원</td>
                 </tr>
                 <tr>
                   <th>금리적용방식</th>
@@ -505,23 +505,23 @@ export default {
                 </tr>
                 <tr>
                   <th>이자</th>
-                  <td>0 원</td>
+                  <td class="align-left">0 원</td>
                 </tr>
                 <tr>
                   <th>할부이자율</th>
-                  <td>연 0%</td>
+                  <td class="align-left">연 0%</td>
                 </tr>
                 <tr>
                   <th>총 할부금<br />(할부원금+이자)</th>
-                  <td>6,864,430 원</td>
+                  <td class="align-left">6,864,430 원</td>
                 </tr>
                 <tr>
                   <th>월 할부금</th>
-                  <td>142,470 원</td>
+                  <td class="align-left">142,470 원</td>
                 </tr>
                 <tr>
                   <th>중도상환수수료율</th>
-                  <td>0%</td>
+                  <td class="align-left">0%</td>
                 </tr>
                 <tr>
                   <th>만기 1년이상</th>

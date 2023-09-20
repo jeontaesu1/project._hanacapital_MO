@@ -1,3 +1,17 @@
+.account-head {
+  position: relative;
+}
+
+.account-opener {
+  position: static;
+
+  &::before {
+    top: 0;
+    left: 0;
+    padding: 0;
+  }
+}
+
 .account-contents {
   padding: 26px 16px 0;
 }

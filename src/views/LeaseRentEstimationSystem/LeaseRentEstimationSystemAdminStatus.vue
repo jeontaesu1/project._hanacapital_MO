@@ -190,27 +190,31 @@ export default {
                     },
                     {
                       value: '2',
-                      text: '렌트',
+                      text: '렌트+선구매',
                     },
                     {
                       value: '3',
-                      text: '신차 리스',
+                      text: '렌트',
                     },
                     {
                       value: '4',
-                      text: '수입차 할부',
-                    },
-                    {
-                      value: '5',
-                      text: '시승차',
-                    },
-                    {
-                      value: '6',
                       text: '선구매',
                     },
                     {
+                      value: '5',
+                      text: '리스(운용+금융)',
+                    },
+                    {
+                      value: '6',
+                      text: '운용리스',
+                    },
+                    {
                       value: '7',
-                      text: '중고차 리스',
+                      text: '금융리스',
+                    },
+                    {
+                      value: '8',
+                      text: '수입차 할부',
                     },
                   ]"
                   buttonTitle="조회조건 선택하기"

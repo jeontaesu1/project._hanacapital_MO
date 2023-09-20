@@ -91,10 +91,7 @@ export default {
             <KeyValue align="left">
               <KeyValueItem>
                 <KeyValueTitle>대상</KeyValueTitle>
-                <KeyValueText>
-                  ① 재직기간 6개월 이상 직장인<br />
-                  ② 그 외 당사 기준 충족 손님
-                </KeyValueText>
+                <KeyValueText>재직기간 6개월 이상 직장인</KeyValueText>
               </KeyValueItem>
 
               <KeyValueItem>
@@ -104,12 +101,12 @@ export default {
 
               <KeyValueItem>
                 <KeyValueTitle>금리</KeyValueTitle>
-                <KeyValueText>연 5.9% ~ 16.9%</KeyValueText>
+                <KeyValueText>연 5.9% ~ 18.9%</KeyValueText>
               </KeyValueItem>
 
               <KeyValueItem>
                 <KeyValueTitle>기간</KeyValueTitle>
-                <KeyValueText>12개월 ~ 72개월</KeyValueText>
+                <KeyValueText>12개월 ~ 84개월</KeyValueText>
               </KeyValueItem>
             </KeyValue>
           </BasicBox>
@@ -167,13 +164,10 @@ export default {
             </KeyValueItem>
 
             <KeyValueItem>
-              <KeyValueTitle>필요서류</KeyValueTitle>
+              <KeyValueTitle>기타</KeyValueTitle>
               <KeyValueText>
-                없음
-                <div :class="$style['sub']">
-                  (소득 및 재직확인은 스크래핑으로 진행. 스크래핑 진행 불가 시,
-                  관련 서류제출 필요)
-                </div>
+                소득 및 재직은 온라인으로 확인하며, 온라인 확인 불가 시, 관련
+                서류제출 필요
               </KeyValueText>
             </KeyValueItem>
           </KeyValue>

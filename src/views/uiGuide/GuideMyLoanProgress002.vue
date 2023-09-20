@@ -59,6 +59,7 @@ import LayerMyLoanOnlineContractSuccessionConfirm004 from '@/views/myLoan/LayerM
 import LayerMyLoanOnlineContractConfirm002 from '@/views/myLoan/LayerMyLoanOnlineContractConfirm002.vue';
 import LayerMyLoanOnlineContractConfirm003 from '@/views/myLoan/LayerMyLoanOnlineContractConfirm003.vue';
 import LayerMyLoanOnlineContractConfirm004 from '@/views/myLoan/LayerMyLoanOnlineContractConfirm004.vue';
+import My_M03_l033 from '@/views/myLoan/My_M03_l033.vue';
 
 export default {
   components: {
@@ -119,6 +120,7 @@ export default {
     LayerMyLoanOnlineContractConfirm002,
     LayerMyLoanOnlineContractConfirm003,
     LayerMyLoanOnlineContractConfirm004,
+    My_M03_l033,
   },
   setup() {
     const layer001 = ref(null);
@@ -174,6 +176,7 @@ export default {
     const layer051 = ref(null);
     const layer052 = ref(null);
     const layer053 = ref(null);
+    const layer054 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -334,6 +337,9 @@ export default {
     const layer053Open = (e = {}) => {
       layer053.value.layer.open(e.target);
     };
+    const layer054Open = (e = {}) => {
+      layer054.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -389,6 +395,7 @@ export default {
       layer051,
       layer052,
       layer053,
+      layer054,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -442,6 +449,7 @@ export default {
       layer051Open,
       layer052Open,
       layer053Open,
+      layer054Open,
     };
   },
 };
@@ -533,6 +541,11 @@ export default {
       <ButtonListItem>
         <BasicButton @click="layer010Open">
           약관상세_대출상담사 설명 확인서<br />My_M03_l013
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer054Open">
+          약관상세_전기차 보조금 확인사항<br />My_M03_l033
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
@@ -738,6 +751,7 @@ export default {
     <LayerMyLoanOnlineContractClauseDetail006 ref="layer051" />
     <LayerMyLoanOnlineContractUsedCarLoanScam ref="layer009" />
     <LayerMyLoanOnlineContractLoanCounselor ref="layer010" />
+    <My_M03_l033 ref="layer054" />
     <LayerMyLoanOnlineContractContractor ref="layer011" />
     <LayerMyLoanOnlineContractBilling ref="layer012" />
     <LayerMyLoanOnlineContractDirectDebit ref="layer013" />

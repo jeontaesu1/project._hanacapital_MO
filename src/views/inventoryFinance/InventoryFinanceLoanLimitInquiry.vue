@@ -7,9 +7,10 @@ import { useUiHeaderStore } from '@/stores/ui/header';
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
-import StickyBar from '@/components/ui/common/StickyBar.vue';
-import NavTab from '@/components/ui/tab/NavTab.vue';
-import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
+import BoxCheck from '@/components/ui/form/BoxCheck.vue';
+import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
+import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
+import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import KeyValue from '@/components/ui/text/KeyValue.vue';
@@ -26,9 +27,10 @@ export default {
     PageContents,
     PageTextGroup,
     PageMainText,
-    StickyBar,
-    NavTab,
-    NavTabButton,
+    BoxCheck,
+    BoxCheckLabel,
+    BoxCheckList,
+    BoxCheckListItem,
     BasicBox,
     BasicBoxHead,
     KeyValue,
@@ -74,17 +76,29 @@ export default {
     </PageTextGroup>
 
     <!-- Case : 상품권한 2개일 경우 노출 -->
-    <StickyBar>
-      <NavTab>
-        <NavTabButton tagName="button" type="button" :active="true">
-          재고금융
-        </NavTabButton>
-        <NavTabButton tagName="button" type="button">재고금융 Ⅱ</NavTabButton>
-      </NavTab>
-    </StickyBar>
+    <BoxCheckList>
+      <BoxCheckListItem>
+        <BoxCheck
+          :minSide="true"
+          name="inventoryFinanceLoanLimitInquiryType"
+          id="inventoryFinanceLoanLimitInquiryType001"
+        >
+          <BoxCheckLabel>재고금융</BoxCheckLabel>
+        </BoxCheck>
+      </BoxCheckListItem>
+      <BoxCheckListItem>
+        <BoxCheck
+          :minSide="true"
+          name="inventoryFinanceLoanLimitInquiryType"
+          id="inventoryFinanceLoanLimitInquiryType002"
+        >
+          <BoxCheckLabel>재고금융 Ⅱ</BoxCheckLabel>
+        </BoxCheck>
+      </BoxCheckListItem>
+    </BoxCheckList>
     <!-- // Case : 상품권한 2개일 경우 노출 -->
 
-    <ul class="reset-list">
+    <ul class="reset-list row-margin-item-group">
       <li class="row-margin-item-group">
         <BasicBox>
           <BasicBoxHead>

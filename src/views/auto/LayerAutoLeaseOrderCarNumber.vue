@@ -88,26 +88,60 @@ export default {
 
       <div>
         <FormList>
+          <!-- Case : 차량번호 등록_스크래핑 전 :disabled="false" -->
           <FormListItem
             titleText="차량번호"
             target="#layerAutoLeaseOrderCarNumberInput"
+            :disabled="false"
           >
             <FormInvalid :error="state.carNumberError">
-              <InputBlock :error="state.carNumberError">
+              <InputBlock :error="state.carNumberError" :disabled="false">
                 <InputBlockCell :flexible="true">
                   <BasicInput
                     title="차량번호"
                     id="layerAutoLeaseOrderCarNumberInput"
+                    :disabled="false"
                   />
                 </InputBlockCell>
                 <template v-slot:right>
-                  <BasicButton size="mini" theme="tertiary">확인</BasicButton>
+                  <BasicButton size="mini" theme="tertiary" :disabled="false"
+                    >확인</BasicButton
+                  >
                 </template>
               </InputBlock>
 
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
+          <!-- // Case : 차량번호 등록_스크래핑 전 :disabled="false" -->
+
+          <!-- Case : 차량번호 등록_스크래핑 후 :disabled="true" -->
+          <FormListItem
+            titleText="차량번호"
+            target="#layerAutoLeaseOrderCarNumberInputCase"
+            :disabled="true"
+          >
+            <FormInvalid :error="state.carNumberError">
+              <InputBlock :error="state.carNumberError" :disabled="true">
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    title="차량번호"
+                    id="layerAutoLeaseOrderCarNumberInputCase"
+                    :disabled="true"
+                    defaultValue="123가1234"
+                  />
+                </InputBlockCell>
+                <template v-slot:right>
+                  <BasicButton size="mini" theme="tertiary" :disabled="true"
+                    >확인</BasicButton
+                  >
+                </template>
+              </InputBlock>
+
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+          <!-- // Case : 차량번호 등록_스크래핑 후 :disabled="true" -->
         </FormList>
 
         <ul :class="[$style['basic-list'], 'row-margin-contents']">
@@ -120,9 +154,9 @@ export default {
         </ul>
       </div>
 
+      <!-- Case : 차량번호 등록_스크래핑 후 -->
       <BasicHr className="row-margin-container-medium" />
 
-      <!-- Case : 차량번호 등록_스크래핑 후 -->
       <section>
         <h3 class="text-body-2 row-margin-item-medium">체크리스트</h3>
         <ul class="reset-list">
@@ -151,6 +185,7 @@ export default {
       <!-- // Case : 차량번호 등록_스크래핑 후 -->
 
       <template v-slot:foot>
+        <!-- Case : 기본 -->
         <ButtonList
           :classNames="{
             wrap: 'row-margin-none',
@@ -160,6 +195,19 @@ export default {
             <BasicButton>다음</BasicButton>
           </ButtonListItem>
         </ButtonList>
+        <!-- // Case : 기본 -->
+
+        <!-- Case : 차량번호 등록을 통해 진입 시 -->
+        <ButtonList
+          :classNames="{
+            wrap: 'row-margin-none',
+          }"
+        >
+          <ButtonListItem>
+            <BasicButton>확인</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+        <!-- // Case : 차량번호 등록을 통해 진입 시 -->
       </template>
     </FullPopup>
   </UiLayer>

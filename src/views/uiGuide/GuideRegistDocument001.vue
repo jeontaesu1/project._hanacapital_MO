@@ -9,7 +9,6 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import LayerRegistDocumentList from '@/views/registDocument/LayerRegistDocumentList.vue';
 import LayerRegistDocumentEdit from '@/views/registDocument/LayerRegistDocumentEdit.vue';
 import LayerRegistDocumentImageView from '@/views/registDocument/LayerRegistDocumentImageView.vue';
-import LayerRegistDocumentHistory from '@/views/registDocument/LayerRegistDocumentHistory.vue';
 
 export default {
   components: {
@@ -20,13 +19,11 @@ export default {
     LayerRegistDocumentList,
     LayerRegistDocumentEdit,
     LayerRegistDocumentImageView,
-    LayerRegistDocumentHistory,
   },
   setup() {
     const layer001 = ref(null);
     const layer002 = ref(null);
     const layer003 = ref(null);
-    const layer004 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -37,19 +34,14 @@ export default {
     const layer003Open = (e = {}) => {
       layer003.value.layer.open(e.target);
     };
-    const layer004Open = (e = {}) => {
-      layer004.value.layer.open(e.target);
-    };
 
     return {
       layer001,
       layer002,
       layer003,
-      layer004,
       layer001Open,
       layer002Open,
       layer003Open,
-      layer004Open,
     };
   },
 };
@@ -78,16 +70,10 @@ export default {
           미리보기<br />Common_M00_l042
         </BasicButton>
       </ButtonListItem>
-      <ButtonListItem>
-        <BasicButton @click="layer004Open">
-          서류등록 내역<br />Common_M00_l043
-        </BasicButton>
-      </ButtonListItem>
     </ButtonList>
 
     <LayerRegistDocumentList ref="layer001" />
     <LayerRegistDocumentEdit ref="layer002" />
     <LayerRegistDocumentImageView ref="layer003" />
-    <LayerRegistDocumentHistory ref="layer004" />
   </PageContents>
 </template>

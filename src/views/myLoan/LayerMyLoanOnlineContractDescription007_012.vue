@@ -471,37 +471,23 @@ export default {
               <tbody>
                 <tr>
                   <th>상품명</th>
-                  <td>금융리스</td>
+                  <td class="align-left">금융리스</td>
                 </tr>
                 <tr>
                   <th>금리</th>
-                  <td>
-                    <div class="flex-box">
-                      <span class="flex-box__cell flex-1 align-left">연</span>
-                      <span class="flex-box__cell flex-1 align-right">%</span>
-                    </div>
-                  </td>
+                  <td class="align-left">연%</td>
                 </tr>
                 <tr>
                   <th>보증금</th>
-                  <td class="align-right">원</td>
+                  <td class="align-left">원</td>
                 </tr>
                 <tr>
                   <th>리스기간</th>
-                  <td>
-                    <div class="flex-box">
-                      <span class="flex-box__cell flex-1 align-left"
-                        >취급 후</span
-                      >
-                      <span class="flex-box__cell flex-1 align-right"
-                        >개월</span
-                      >
-                    </div>
-                  </td>
+                  <td class="align-left">취급 후 개월</td>
                 </tr>
                 <tr>
                   <th>선납금/선납리스료</th>
-                  <td class="align-right">원</td>
+                  <td class="align-left">원</td>
                 </tr>
                 <tr>
                   <th>리스료</th>

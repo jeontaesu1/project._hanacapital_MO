@@ -126,8 +126,8 @@ export default {
           >
             <KeyValueTitle>외장색상</KeyValueTitle>
             <KeyValueText>
-              <div class="flex-box justify-conten-end">
-                <div class="flex-box__cell">아틸라스 화이트</div>
+              <div class="flex-box justify-conten-end align-items-start">
+                <div class="flex-box__cell flex-1">아틸라스 화이트</div>
                 <div class="flex-box__cell">
                   <ColorChip size="small" :colors="['248, 245, 245']" />
                 </div>
@@ -142,8 +142,10 @@ export default {
           >
             <KeyValueTitle>내장색상</KeyValueTitle>
             <KeyValueText>
-              <div class="flex-box justify-conten-end">
-                <div class="flex-box__cell">네츄럴 베이지 / 다크 베이지</div>
+              <div class="flex-box justify-conten-end align-items-start">
+                <div class="flex-box__cell flex-1">
+                  네츄럴 베이지 / 다크 베이지
+                </div>
                 <div class="flex-box__cell">
                   <ColorChip
                     size="small"
@@ -265,15 +267,6 @@ export default {
           >
             <KeyValueTitle>탁송지</KeyValueTitle>
             <KeyValueText>탁송지</KeyValueText>
-          </KeyValueItem>
-
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>탁송 도착지</KeyValueTitle>
-            <KeyValueText>탁송 도착지</KeyValueText>
           </KeyValueItem>
         </KeyValue>
 

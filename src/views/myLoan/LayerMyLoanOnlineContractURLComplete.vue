@@ -67,30 +67,12 @@ export default {
             완료되었습니다
           </strong>
         </PageMainText>
-        <PageSubText>
-          고객님의 소중한 정보를 확인 후<br />
-          심사결과를 알려드리겠습니다.
-        </PageSubText>
+        <PageSubText>하나캐피탈을 이용해 주셔서 감사합니다.</PageSubText>
       </PageTextGroup>
 
       <IllustObject type="complete" />
 
-      <ul :class="$style['logs']">
-        <li :class="$style['logs__item']">
-          <div :class="[$style['logs__block'], $style['logs__block--small']]">
-            <div :class="$style['logs__row']">
-              <div :class="$style['logs__contents']">
-                <h3 class="text-body-3 font-weight-regular">물건점검 진행</h3>
-              </div>
-              <div :class="$style['logs__right']">
-                <button type="button" :class="$style['logs__link']">
-                  <span :class="$style['logs__link-text']">상세보기</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </li>
-      </ul>
+      <BasicButton :line="true">장비견적서 다운로드</BasicButton>
 
       <BasicHr
         type="contents"

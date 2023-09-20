@@ -8,7 +8,6 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 import LayerGuideAuthority from '@/views/guide/LayerGuideAuthority.vue';
 import LayerGuideAuthorityPermit from '@/views/guide/LayerGuideAuthorityPermit.vue';
-import LayerGuideVisibleARS from '@/views/guide/LayerGuideVisibleARS.vue';
 import LayerGuideInstallApp from '@/views/guide/LayerGuideInstallApp.vue';
 import LayerGuidePhoneCounseling from '@/views/guide/LayerGuidePhoneCounseling.vue';
 import LayerGuideAutoLogout from '@/views/guide/LayerGuideAutoLogout.vue';
@@ -26,7 +25,6 @@ export default {
     ButtonListItem,
     LayerGuideAuthority,
     LayerGuideAuthorityPermit,
-    LayerGuideVisibleARS,
     LayerGuideInstallApp,
     LayerGuidePhoneCounseling,
     LayerGuideAutoLogout,
@@ -39,7 +37,7 @@ export default {
   setup() {
     const layer001 = ref(null);
     const layer002 = ref(null);
-    const layer003 = ref(null);
+    // const layer003 = ref(null);
     const layer004 = ref(null);
     const layer005 = ref(null);
     const layer006 = ref(null);
@@ -55,9 +53,9 @@ export default {
     const layer002Open = (e = {}) => {
       layer002.value.layer.open(e.target);
     };
-    const layer003Open = (e = {}) => {
-      layer003.value.layer.open(e.target);
-    };
+    // const layer003Open = (e = {}) => {
+    //   layer003.value.layer.open(e.target);
+    // };
     const layer004Open = (e = {}) => {
       layer004.value.layer.open(e.target);
     };
@@ -86,7 +84,7 @@ export default {
     return {
       layer001,
       layer002,
-      layer003,
+      // layer003,
       layer004,
       layer005,
       layer006,
@@ -97,7 +95,7 @@ export default {
       layer011,
       layer001Open,
       layer002Open,
-      layer003Open,
+      // layer003Open,
       layer004Open,
       layer005Open,
       layer006Open,
@@ -127,11 +125,6 @@ export default {
       <ButtonListItem>
         <BasicButton @click="layer002Open">
           접근권한 허용 안내<br />Common_M00_b015
-        </BasicButton>
-      </ButtonListItem>
-      <ButtonListItem>
-        <BasicButton @click="layer003Open">
-          보이는 ARS 정보제공 안내<br />Common_M00_l022
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
@@ -178,7 +171,6 @@ export default {
 
     <LayerGuideAuthority ref="layer001" />
     <LayerGuideAuthorityPermit ref="layer002" />
-    <LayerGuideVisibleARS ref="layer003" />
     <LayerGuideInstallApp ref="layer004" />
     <LayerGuidePhoneCounseling ref="layer005" />
     <LayerGuideAutoLogout ref="layer006" />

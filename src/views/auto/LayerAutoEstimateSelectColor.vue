@@ -11,7 +11,6 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
-import PageSubText from '@/components/ui/text/PageSubText.vue';
 import RoundButton from '@/components/ui/button/RoundButton.vue';
 import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
@@ -43,7 +42,6 @@ export default {
     ButtonListItem,
     PageTextGroup,
     PageMainText,
-    PageSubText,
     RoundButton,
     KeyValue,
     KeyValueItem,
@@ -125,7 +123,6 @@ export default {
             선택해 주세요
           </strong>
         </PageMainText>
-        <PageSubText>옵션은 선택하지 않으셔도 됩니다.</PageSubText>
       </PageTextGroup>
 
       <div>
@@ -138,16 +135,6 @@ export default {
           </div>
 
           <ColorSelectList :classNames="{ wrap: 'row-margin-item-medium' }">
-            <ColorSelectListItem>
-              <ColorSelect
-                name="layerAutoEstimateSelectColorExterior"
-                id="layerAutoEstimateSelectColorExterior000"
-                label="선택 안함"
-                :defaultChecked="true"
-              >
-                <ColorChip />
-              </ColorSelect>
-            </ColorSelectListItem>
             <ColorSelectListItem>
               <ColorSelect
                 name="layerAutoEstimateSelectColorExterior"
@@ -265,16 +252,6 @@ export default {
             <ColorSelectListItem>
               <ColorSelect
                 name="layerAutoEstimateSelectColorInterior"
-                id="layerAutoEstimateSelectColorInterior000"
-                label="선택 안함"
-                :defaultChecked="true"
-              >
-                <ColorChip />
-              </ColorSelect>
-            </ColorSelectListItem>
-            <ColorSelectListItem>
-              <ColorSelect
-                name="layerAutoEstimateSelectColorInterior"
                 id="layerAutoEstimateSelectColorInterior001"
                 label="네츄럴 베이지 / 다크 베이지"
               >
@@ -383,7 +360,9 @@ export default {
             <BasicButton :line="true" theme="quaternary">이전</BasicButton>
           </ButtonListItem>
           <ButtonListItem>
-            <BasicButton>다음</BasicButton>
+            <!-- Case : 값 선택 후 :disabled="false" -->
+            <BasicButton :disabled="true">다음</BasicButton>
+            <!-- // Case : 값 선택 후 :disabled="false" -->
           </ButtonListItem>
         </ButtonList>
       </template>

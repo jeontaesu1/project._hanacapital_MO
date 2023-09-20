@@ -58,7 +58,9 @@ export default {
             :class="[$style['basic-list__item'], 'color-black', 'text-body-4']"
           >
             <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">할부 및 대출상품</div>
+            <div :class="$style['basic-list__content']">
+              할부 및 대출상품에 한하여 중도상환신청을 하실 수 있습니다.
+            </div>
           </li>
           <li
             :class="[$style['basic-list__item'], 'color-black', 'text-body-4']"

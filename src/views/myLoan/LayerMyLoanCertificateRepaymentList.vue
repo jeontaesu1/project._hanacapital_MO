@@ -21,6 +21,9 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ContentsButton from '@/components/ui/button/ContentsButton.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
+
+import IconArrow from '@/assets/images/icon/dropdown.svg?component';
 
 export default {
   components: {
@@ -43,6 +46,8 @@ export default {
     ButtonListItem,
     BasicButton,
     ContentsButton,
+    TextButton,
+    IconArrow,
   },
   setup() {
     const layer = ref(null);
@@ -211,6 +216,15 @@ export default {
           </ContentsButton>
         </li>
       </ul>
+
+      <div class="inline-wrap align-center row-margin-item-group">
+        <TextButton :classNames="{ wrap: 'text-body-4 color-gray' }">
+          더보기
+          <template v-slot:rightIcon>
+            <IconArrow />
+          </template>
+        </TextButton>
+      </div>
       <!-- Case : 계약이 있을 때 -->
 
       <!-- Case : 계약이 없을 때 -->

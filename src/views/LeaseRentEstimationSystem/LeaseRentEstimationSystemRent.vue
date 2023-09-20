@@ -1291,10 +1291,37 @@ export default {
                 :classNames="{ layer: $style['estimate-list__layer'] }"
               >
                 <section :class="$style['estimate-list__contents']">
-                  <NoticeText :classNames="{ wrap: 'row-margin-item-group' }"
-                    >원색계열(빨강, 주황, 노랑, 초록, 보라)은 구매(인수) 조건만
-                    진행 가능합니다.</NoticeText
-                  >
+                  <div class="row-margin-item-group">
+                    <NoticeText :classNames="{ wrap: 'row-margin-item' }"
+                      >원색계열(빨강, 주황, 노랑, 초록, 보라)은 구매(인수)
+                      조건만 진행 가능합니다.</NoticeText
+                    >
+
+                    <!-- Case : 트림 옵션값에 따라 노출되는 안내문구 -->
+                    <NoticeText :classNames="{ wrap: 'row-margin-item' }"
+                      >투톤루프 적용 시 ‘선루프‘ 옵션 선택 불가
+                      합니다.</NoticeText
+                    >
+                    <NoticeText :classNames="{ wrap: 'row-margin-item' }"
+                      >파이어리 레드 인텐스 블루, 타이푼 실버 컬러는 스마트/
+                      모던 트림에 한해서 선택 가능합니다.(원톤/투톤)</NoticeText
+                    >
+                    <NoticeText :classNames="{ wrap: 'row-margin-item' }"
+                      >투톤루프 옵션선택 시 컬러포인트(프론트범퍼,
+                      아웃사이드미러, 펜더가니쉬, 사이드가니쉬,리어펌버)가 함께
+                      적용 됩니다.(모던/플럭스 트림)</NoticeText
+                    >
+                    <NoticeText :classNames="{ wrap: 'row-margin-item' }"
+                      >초크 화이트/애시드 옐로우 루프 적용 시 컬러포인트는 루프
+                      컬러로 적용됩니다.</NoticeText
+                    >
+                    <NoticeText :classNames="{ wrap: 'row-margin-item' }"
+                      >팬텀블랙 루프 적용 시 아웃사이드 미러는 팬텀 블랙 컬러로
+                      적용되며, 그외 컬러포인트는 바디 컬러로
+                      적용됩니다.</NoticeText
+                    >
+                    <!-- // Case : 트림 옵션값에 따라 노출되는 안내문구 -->
+                  </div>
                   <ul class="reset-list">
                     <li class="row-margin-item-group">
                       <RadioButton
@@ -2152,6 +2179,13 @@ export default {
                               내비게이션 기반 스마트 크루즈 컨트롤(안전구간,
                               곡선로)
                             </span>
+                            <span class="flex-box row-margin-mini">
+                              <span
+                                class="flex-box__cell text-body-5 color-green"
+                              >
+                                선택된 옵션 조합 불가
+                              </span>
+                            </span>
                           </CheckBoxLabelText>
                         </CheckBox>
                       </div>
@@ -2293,7 +2327,7 @@ export default {
                       ]"
                     >
                       <div :class="$style['option-select__block']">
-                        <span class="flex-box text-body-4">
+                        <span class="flex-box text-body-3">
                           <span class="flex-box__cell font-weight-medium">
                             <DeleteButton />
                           </span>
@@ -2371,7 +2405,7 @@ export default {
                   <ul :class="$style['option-select__list']">
                     <li :class="$style['option-select__item']">
                       <div :class="$style['option-select__block']">
-                        <span class="flex-box text-body-4">
+                        <span class="flex-box text-body-3">
                           <span
                             class="flex-box__cell flex-1 font-weight-regular"
                             >현대 스마트 센서 I</span
@@ -2388,11 +2422,16 @@ export default {
                           크루즈 컨트롤(스탑앤고 기능 미포함), 내비게이션 기반
                           스마트 크루즈 컨트롤(안전구간, 곡선로)
                         </span>
+                        <span class="flex-box row-margin-mini">
+                          <span class="flex-box__cell text-body-5 color-green">
+                            선택된 옵션 조합 불가
+                          </span>
+                        </span>
                       </div>
                     </li>
                     <li :class="$style['option-select__item']">
                       <div :class="$style['option-select__block']">
-                        <span class="flex-box text-body-4">
+                        <span class="flex-box text-body-3">
                           <span
                             class="flex-box__cell flex-1 font-weight-regular"
                             >컴포트</span
@@ -2416,7 +2455,7 @@ export default {
                     </li>
                     <li :class="$style['option-select__item']">
                       <div :class="$style['option-select__block']">
-                        <span class="flex-box text-body-4">
+                        <span class="flex-box text-body-3">
                           <span
                             class="flex-box__cell flex-1 font-weight-regular"
                             >옵션 입력값 출력</span
@@ -2835,6 +2874,8 @@ export default {
                                 >
                               </BoxCheck>
                             </BoxCheckListItem>
+
+                            <!-- Case : 고객구분 [개인사업자] 선택시 -->
                             <BoxCheckListItem>
                               <BoxCheck
                                 :minSide="true"
@@ -2849,6 +2890,21 @@ export default {
                                 >
                               </BoxCheck>
                             </BoxCheckListItem>
+                            <!-- Case : 고객구분 [개인사업자] 선택시 -->
+
+                            <!-- Case : 고객구분 [법인] 선택시 -->
+                            <BoxCheckListItem>
+                              <BoxCheck
+                                :minSide="true"
+                                name="leaseRentEstimationSystemRentEmployeeSpecialContract"
+                                id="leaseRentEstimationSystemRentEmployeeSpecialContract_003"
+                                size="small"
+                                :defaultChecked="true"
+                              >
+                                <BoxCheckLabel>미가입</BoxCheckLabel>
+                              </BoxCheck>
+                            </BoxCheckListItem>
+                            <!-- Case : 고객구분 [법인] 선택시 -->
                           </BoxCheckList>
                         </KeyValueText>
                       </KeyValueItem>
@@ -3236,7 +3292,7 @@ export default {
                         id="leaseRentEstimationSystemRentCheck006_002"
                         size="small"
                       >
-                        <BoxCheckLabel>부산</BoxCheckLabel>
+                        <BoxCheckLabel>경기</BoxCheckLabel>
                       </BoxCheck>
                     </BoxCheckListItem>
                     <BoxCheckListItem>
@@ -3246,7 +3302,7 @@ export default {
                         id="leaseRentEstimationSystemRentCheck006_003"
                         size="small"
                       >
-                        <BoxCheckLabel>대구</BoxCheckLabel>
+                        <BoxCheckLabel>인천</BoxCheckLabel>
                       </BoxCheck>
                     </BoxCheckListItem>
                     <BoxCheckListItem>
@@ -3256,7 +3312,7 @@ export default {
                         id="leaseRentEstimationSystemRentCheck006_004"
                         size="small"
                       >
-                        <BoxCheckLabel>대전</BoxCheckLabel>
+                        <BoxCheckLabel>부산</BoxCheckLabel>
                       </BoxCheck>
                     </BoxCheckListItem>
                     <BoxCheckListItem>
@@ -3266,7 +3322,7 @@ export default {
                         id="leaseRentEstimationSystemRentCheck006_005"
                         size="small"
                       >
-                        <BoxCheckLabel>광주</BoxCheckLabel>
+                        <BoxCheckLabel>대구</BoxCheckLabel>
                       </BoxCheck>
                     </BoxCheckListItem>
                     <BoxCheckListItem>
@@ -3276,7 +3332,7 @@ export default {
                         id="leaseRentEstimationSystemRentCheck006_006"
                         size="small"
                       >
-                        <BoxCheckLabel>인천</BoxCheckLabel>
+                        <BoxCheckLabel>대전</BoxCheckLabel>
                       </BoxCheck>
                     </BoxCheckListItem>
                     <BoxCheckListItem>
@@ -3286,7 +3342,7 @@ export default {
                         id="leaseRentEstimationSystemRentCheck006_007"
                         size="small"
                       >
-                        <BoxCheckLabel>경기</BoxCheckLabel>
+                        <BoxCheckLabel>광주</BoxCheckLabel>
                       </BoxCheck>
                     </BoxCheckListItem>
                     <BoxCheckListItem>
@@ -3366,7 +3422,7 @@ export default {
                         id="leaseRentEstimationSystemRentCheck006_015"
                         size="small"
                       >
-                        <BoxCheckLabel>인천강화</BoxCheckLabel>
+                        <BoxCheckLabel>강원(영동)</BoxCheckLabel>
                       </BoxCheck>
                     </BoxCheckListItem>
                     <BoxCheckListItem>
@@ -3376,7 +3432,7 @@ export default {
                         id="leaseRentEstimationSystemRentCheck006_016"
                         size="small"
                       >
-                        <BoxCheckLabel>인천공항</BoxCheckLabel>
+                        <BoxCheckLabel>강원(영서)</BoxCheckLabel>
                       </BoxCheck>
                     </BoxCheckListItem>
                     <BoxCheckListItem>
@@ -3396,7 +3452,7 @@ export default {
                         id="leaseRentEstimationSystemRentCheck006_018"
                         size="small"
                       >
-                        <BoxCheckLabel>강원(영동)</BoxCheckLabel>
+                        <BoxCheckLabel>인천강화</BoxCheckLabel>
                       </BoxCheck>
                     </BoxCheckListItem>
                     <BoxCheckListItem>
@@ -3406,7 +3462,7 @@ export default {
                         id="leaseRentEstimationSystemRentCheck006_019"
                         size="small"
                       >
-                        <BoxCheckLabel>강원(영서)</BoxCheckLabel>
+                        <BoxCheckLabel>인천공항</BoxCheckLabel>
                       </BoxCheck>
                     </BoxCheckListItem>
                   </BoxCheckList>

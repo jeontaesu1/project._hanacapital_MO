@@ -73,7 +73,17 @@ export default {
       Type: String,
       default: null,
     },
+    openerFocusToAfterClose: {
+      Type: Boolean,
+      default: true,
+    },
     onChange: {
+      Type: Function,
+      default() {
+        return () => {};
+      },
+    },
+    onOptionClick: {
       Type: Function,
       default() {
         return () => {};
@@ -184,6 +194,12 @@ export default {
       emit('update:modelValue', e.target.value);
     };
 
+    const optionClick = (e) => {
+      const { onOptionClick } = props;
+
+      onOptionClick(e);
+    };
+
     onMounted(() => {
       setValue(props.modelValue);
     });
@@ -203,6 +219,7 @@ export default {
       optionsRemove,
       optionsChange,
       selectOption,
+      optionClick,
     });
 
     return {
@@ -251,6 +268,7 @@ export default {
       type="toast"
       :onAfterClosed="onAfterClosed"
       :backgroundClose="true"
+      :openerFocusToAfterClose="openerFocusToAfterClose"
       v-slot="layerSlotProps"
     >
       <ToastPopup v-if="layerSlotProps.display !== 'none'">

@@ -29,6 +29,9 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
+import IconCheckDocument from '@/assets/images/icon/check-document.svg?component';
+import IconLink from '@/assets/images/icon/link.svg?component';
+
 export default {
   components: {
     PageContents,
@@ -55,6 +58,8 @@ export default {
     ButtonListItem,
     BasicButton,
     BottomSticky,
+    IconCheckDocument,
+    IconLink,
   },
   setup() {
     const store = {
@@ -134,7 +139,7 @@ export default {
 
     <FormList
       :classNames="{
-        wrap: 'row-margin-contents-group',
+        wrap: 'row-margin-contents-group row-margin-bottom-none',
       }"
     >
       <FormListItem
@@ -221,6 +226,7 @@ export default {
                 pattern="\d*"
                 title="대출신청금액"
                 id="inventoryFinanceStateAddInfoAmount"
+                :scrollFocus="false"
               />
             </InputBlockCell>
             <template v-slot:innerRight>
@@ -331,6 +337,49 @@ export default {
       </FormListItem>
     </FormList>
 
+    <section class="row-margin-container-medium">
+      <div class="flex-box row-margin-contents">
+        <div class="flex-box__cell">
+          <h3 class="text-title-2">구비서류등록</h3>
+        </div>
+        <div class="flex-box__cell flex-box__cell--small">
+          <div class="text-body-3">(선택)</div>
+        </div>
+      </div>
+
+      <!-- Case : : 등록 전 -->
+      <button type="button" :class="[$style['add-button'], 'row-margin-item']">
+        <span :class="$style['add-button__inner']">
+          <span :class="$style['add-button__text']">서류등록</span>
+          <span
+            :class="[
+              $style['add-button__icon'],
+              $style['add-button__icon--secondary'],
+            ]"
+          >
+            <IconLink />
+          </span>
+        </span>
+      </button>
+      <!-- //Case : : 등록 전 -->
+
+      <!-- Case : : 등록 후 -->
+      <BasicBox>
+        <div class="flex-box">
+          <div class="flex-box__cell">
+            <IconCheckDocument class="display-block" />
+          </div>
+          <div class="flex-box__cell flex-1">
+            <div class="text-body-3">등록 완료</div>
+          </div>
+          <div class="flex-box__cell">
+            <BasicButton size="mini" theme="quaternary">추가첨부</BasicButton>
+          </div>
+        </div>
+      </BasicBox>
+      <!-- //Case : : 등록 후 -->
+    </section>
+
     <template v-slot:foot>
       <BottomSticky>
         <div class="bottom-wrap">
@@ -343,7 +392,7 @@ export default {
               <BasicButton :line="true" theme="quaternary">이전</BasicButton>
             </ButtonListItem>
             <ButtonListItem>
-              <BasicButton>다음</BasicButton>
+              <BasicButton>저장</BasicButton>
             </ButtonListItem>
           </ButtonList>
         </div>
@@ -351,3 +400,7 @@ export default {
     </template>
   </PageContents>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/inventoryFinance/InventoryFinanceStateAddInfo.scss';
+</style>

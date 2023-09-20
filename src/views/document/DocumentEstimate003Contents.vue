@@ -149,7 +149,12 @@ export default {
                       <td
                         :class="[$style['est-table__emphasis'], 'align-right']"
                       >
-                        <strong>100,000 원</strong>
+                        <div class="flex-box">
+                          <div class="flex-box__cell">0.00%</div>
+                          <div class="flex-box__cell flex-1">
+                            <strong>100,000 원</strong>
+                          </div>
+                        </div>
                       </td>
                     </tr>
                     <tr :class="$style['est-table__emphasis']">
@@ -490,7 +495,12 @@ export default {
                       <td
                         :class="[$style['est-table__emphasis'], 'align-right']"
                       >
-                        <strong>100,000 원</strong>
+                        <div class="flex-box">
+                          <div class="flex-box__cell">0.00%</div>
+                          <div class="flex-box__cell flex-1">
+                            <strong>100,000 원</strong>
+                          </div>
+                        </div>
                       </td>
                     </tr>
                     <tr :class="$style['est-table__emphasis']">
@@ -831,7 +841,12 @@ export default {
                       <td
                         :class="[$style['est-table__emphasis'], 'align-right']"
                       >
-                        <strong>100,000 원</strong>
+                        <div class="flex-box">
+                          <div class="flex-box__cell">0.00%</div>
+                          <div class="flex-box__cell flex-1">
+                            <strong>100,000 원</strong>
+                          </div>
+                        </div>
                       </td>
                     </tr>
                     <tr>
@@ -1180,7 +1195,12 @@ export default {
                       <td
                         :class="[$style['est-table__emphasis'], 'align-right']"
                       >
-                        <strong>100,000 원</strong>
+                        <div class="flex-box">
+                          <div class="flex-box__cell">0.00%</div>
+                          <div class="flex-box__cell flex-1">
+                            <strong>100,000 원</strong>
+                          </div>
+                        </div>
                       </td>
                     </tr>
                     <tr :class="$style['est-table__emphasis']">
@@ -1555,7 +1575,12 @@ export default {
                       <td
                         :class="[$style['est-table__emphasis'], 'align-right']"
                       >
-                        <strong>100,000 원</strong>
+                        <div class="flex-box">
+                          <div class="flex-box__cell">0.00%</div>
+                          <div class="flex-box__cell flex-1">
+                            <strong>100,000 원</strong>
+                          </div>
+                        </div>
                       </td>
                     </tr>
                     <tr :class="$style['est-table__emphasis']">

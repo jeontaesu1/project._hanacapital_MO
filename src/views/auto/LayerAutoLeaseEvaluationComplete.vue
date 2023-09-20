@@ -55,7 +55,15 @@ export default {
             심사가 완료되었습니다
           </strong>
         </PageMainText>
+        <!-- Case : 운용리스일 경우 -->
         <PageSubText>리스 신청 화면으로 이동할게요</PageSubText>
+        <!-- // Case : 운용리스일 경우 -->
+        <!-- Case : 금융리스일 경우 -->
+        <PageSubText>
+          최종 견적 확인 후<br />
+          리스 신청 화면으로 이동 할게요.
+        </PageSubText>
+        <!-- // Case : 금융리스일 경우 -->
       </PageTextGroup>
 
       <IllustObject type="complete" />
@@ -74,6 +82,23 @@ export default {
       </section>
 
       <template v-slot:foot>
+        <!-- Case : 운용리스일 경우 -->
+        <ButtonList
+          :classNames="{
+            wrap: 'row-margin-none',
+          }"
+        >
+          <ButtonListItem>
+            <BasicButton theme="tertiary">견적서 보기</BasicButton>
+          </ButtonListItem>
+
+          <ButtonListItem>
+            <BasicButton>신청</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+        <!-- // Case : 운용리스일 경우 -->
+
+        <!-- Case : 금융리스일 경우 -->
         <ButtonList
           :classNames="{
             wrap: 'row-margin-none',
@@ -87,6 +112,7 @@ export default {
             <BasicButton>신청</BasicButton>
           </ButtonListItem>
         </ButtonList>
+        <!-- // Case : 금융리스일 경우 -->
       </template>
     </FullPopup>
   </UiLayer>

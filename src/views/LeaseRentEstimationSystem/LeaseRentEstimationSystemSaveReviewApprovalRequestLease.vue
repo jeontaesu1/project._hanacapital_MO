@@ -134,6 +134,24 @@ export default {
               <KeyValueTitle>진행일정</KeyValueTitle>
               <KeyValueText>2022.10.03</KeyValueText>
             </KeyValueItem>
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
+            >
+              <KeyValueTitle>상품명</KeyValueTitle>
+              <KeyValueText>
+                <!-- Case : 상품명 - 운용리스/금융리스일 경우 -->
+                운용리스
+                <!-- // Case : 상품명 - 운용리스/금융리스일 경우 -->
+
+                <br /><!-- DD : 줄바꿈 처리를 위한 br 태그 실 개발시엔 제거해주세요. -->
+
+                <!-- Case : 상품명 - 할부일 경우 -->
+                할부
+                <!-- //Case : 상품명 - 할부일 경우 -->
+              </KeyValueText>
+            </KeyValueItem>
             <!-- //Case : 개인일 경우 -->
 
             <!-- Case : 개인사업자일 경우 -->
@@ -197,28 +215,6 @@ export default {
               <KeyValueText>710908-1******</KeyValueText>
             </KeyValueItem>
             <!-- //Case : 법인사업자일 경우 -->
-
-            <!-- Case : 상품명 - 운용리스/금융리스일 경우 -->
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>상품명</KeyValueTitle>
-              <KeyValueText>운용리스</KeyValueText>
-            </KeyValueItem>
-            <!-- //Case : 상품명 - 운용리스/금융리스일 경우 -->
-
-            <!-- Case : 상품명 - 할부일 경우 -->
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>상품명</KeyValueTitle>
-              <KeyValueText>할부</KeyValueText>
-            </KeyValueItem>
-            <!-- //Case : 상품명 - 할부일 경우 -->
 
             <KeyValueItem
               :classNames="{

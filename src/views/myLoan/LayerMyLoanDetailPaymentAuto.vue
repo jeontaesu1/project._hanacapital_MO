@@ -169,14 +169,18 @@ export default {
             wrap: 'row-margin-contents',
           }"
         >
-          <UiAccordionItem tagName="section">
-            <BasicBox theme="quinary">
+          <UiAccordionItem tagName="section" :initialOpen="true">
+            <BasicBox theme="quinary" :className="$style['account-head']">
               <div class="flex-box">
                 <div class="flex-box__cell flex-1">
                   <h4 class="text-body-1 font-weight-medium">가상계좌 정보</h4>
                 </div>
                 <div class="flex-box__cell">
-                  <UiAccordionOpener />
+                  <UiAccordionOpener
+                    :classNames="{
+                      button: $style['account-opener'],
+                    }"
+                  />
                 </div>
               </div>
             </BasicBox>

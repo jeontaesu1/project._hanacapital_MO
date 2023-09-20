@@ -12,12 +12,12 @@ import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
-import CheckBox from '@/components/ui/form/CheckBox.vue';
-import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
-import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import RadioButton from '@/components/ui/form/RadioButton.vue';
+import RadioButtonLabelText from '@/components/ui/form/RadioButtonLabelText.vue';
+import RadioButtonObject from '@/components/ui/form/RadioButtonObject.vue';
 
 export default {
   components: {
@@ -31,12 +31,12 @@ export default {
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
-    CheckBox,
-    CheckBoxObject,
-    CheckBoxLabelText,
     BasicButton,
     ButtonList,
     ButtonListItem,
+    RadioButton,
+    RadioButtonLabelText,
+    RadioButtonObject,
   },
   setup() {
     const layer = ref(null);
@@ -172,179 +172,315 @@ export default {
             리스물건 점검 확인사항
           </h3>
 
-          <div :class="$style['agree-list']">
-            <ul :class="$style['agree-list__list']">
-              <li :class="$style['agree-list__item']">
-                <div :class="$style['agree-list__head']">
-                  <CheckBox
-                    id="EL_M02_l009_check001"
-                    :classNames="{
-                      wrap: $style['agree-list__checkbox'],
-                    }"
-                    theme="tertiary"
-                  >
-                    <CheckBoxObject />
-                    <CheckBoxLabelText>
+          <div :class="$style['contents-list']">
+            <ol
+              :class="[
+                $style['contents-list__list'],
+                $style['contents-list__list--quinary'],
+              ]"
+            >
+              <li
+                :class="[
+                  $style['contents-list__item'],
+                  'row-margin-item-group',
+                ]"
+              >
+                <div :class="$style['contents-list__head']">
+                  <div :class="$style['contents-list__symbol']">1</div>
+                  <div :class="$style['contents-list__title']">
+                    <div class="row-margin-item">
                       리스물건은 계약서상 지정된 장소에 설치되어 있습니다.
-                    </CheckBoxLabelText>
-                  </CheckBox>
+                    </div>
+
+                    <div class="flex-box">
+                      <div class="flex-box__cell">
+                        <RadioButton
+                          theme="tertiary"
+                          align="center"
+                          name="EL_M02_l009_check001"
+                          id="EL_M02_l009_check001_001"
+                          :defaultChecked="true"
+                        >
+                          <RadioButtonObject />
+                          <RadioButtonLabelText>예</RadioButtonLabelText>
+                        </RadioButton>
+                      </div>
+                      <div class="flex-box__cell flex-box__cell--large">
+                        <RadioButton
+                          theme="tertiary"
+                          align="center"
+                          name="EL_M02_l009_check001"
+                          id="EL_M02_l009_check001_002"
+                        >
+                          <RadioButtonObject />
+                          <RadioButtonLabelText>아니오</RadioButtonLabelText>
+                        </RadioButton>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </li>
-              <li :class="$style['agree-list__item']">
-                <div :class="$style['agree-list__head']">
-                  <CheckBox
-                    id="EL_M02_l009_check002"
-                    :classNames="{
-                      wrap: $style['agree-list__checkbox'],
-                    }"
-                    theme="tertiary"
-                  >
-                    <CheckBoxObject />
-                    <CheckBoxLabelText>
+              <li
+                :class="[
+                  $style['contents-list__item'],
+                  'row-margin-item-group',
+                ]"
+              >
+                <div :class="$style['contents-list__head']">
+                  <div :class="$style['contents-list__symbol']">2</div>
+                  <div :class="$style['contents-list__title']">
+                    <div class="row-margin-item">
                       리스물건은 고객님께 인도되어 정상 가동되고 있습니다.
-                    </CheckBoxLabelText>
-                  </CheckBox>
+                    </div>
+
+                    <div class="flex-box">
+                      <div class="flex-box__cell">
+                        <RadioButton
+                          theme="tertiary"
+                          align="center"
+                          name="EL_M02_l009_check002"
+                          id="EL_M02_l009_check002_001"
+                          :defaultChecked="true"
+                        >
+                          <RadioButtonObject />
+                          <RadioButtonLabelText>예</RadioButtonLabelText>
+                        </RadioButton>
+                      </div>
+                      <div class="flex-box__cell flex-box__cell--large">
+                        <RadioButton
+                          theme="tertiary"
+                          align="center"
+                          name="EL_M02_l009_check002"
+                          id="EL_M02_l009_check002_002"
+                        >
+                          <RadioButtonObject />
+                          <RadioButtonLabelText>아니오</RadioButtonLabelText>
+                        </RadioButton>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </li>
-              <li :class="$style['agree-list__item']">
-                <div :class="$style['agree-list__head']">
-                  <CheckBox
-                    id="EL_M02_l009_check003"
-                    :classNames="{
-                      wrap: $style['agree-list__checkbox'],
-                    }"
-                    theme="tertiary"
-                  >
-                    <CheckBoxObject />
-                    <CheckBoxLabelText>
+              <li
+                :class="[
+                  $style['contents-list__item'],
+                  'row-margin-item-group',
+                ]"
+              >
+                <div :class="$style['contents-list__head']">
+                  <div :class="$style['contents-list__symbol']">3</div>
+                  <div :class="$style['contents-list__title']">
+                    <div class="row-margin-item">
                       검수대상 리스물건은 견적서상의 리스물건과 일치
                       합니다.(모델명, 제조번호, 제조일자)
-                    </CheckBoxLabelText>
-                  </CheckBox>
+                    </div>
+
+                    <div class="flex-box">
+                      <div class="flex-box__cell">
+                        <RadioButton
+                          theme="tertiary"
+                          align="center"
+                          name="EL_M02_l009_check003"
+                          id="EL_M02_l009_check003_001"
+                          :defaultChecked="true"
+                        >
+                          <RadioButtonObject />
+                          <RadioButtonLabelText>예</RadioButtonLabelText>
+                        </RadioButton>
+                      </div>
+                      <div class="flex-box__cell flex-box__cell--large">
+                        <RadioButton
+                          theme="tertiary"
+                          align="center"
+                          name="EL_M02_l009_check003"
+                          id="EL_M02_l009_check003_002"
+                        >
+                          <RadioButtonObject />
+                          <RadioButtonLabelText>아니오</RadioButtonLabelText>
+                        </RadioButton>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </li>
-              <li :class="$style['agree-list__item']">
-                <div :class="$style['agree-list__head']">
-                  <CheckBox
-                    id="EL_M02_l009_check004"
-                    :classNames="{
-                      wrap: $style['agree-list__checkbox'],
-                    }"
-                    theme="tertiary"
-                  >
-                    <CheckBoxObject />
-                    <CheckBoxLabelText>
+              <li
+                :class="[
+                  $style['contents-list__item'],
+                  'row-margin-item-group',
+                ]"
+              >
+                <div :class="$style['contents-list__head']">
+                  <div :class="$style['contents-list__symbol']">4</div>
+                  <div :class="$style['contents-list__title']">
+                    <div class="row-margin-item">
                       설치된 리스물건은 하나캐피탈의 표식(스티커)이 부착되어
                       있습니다.
-                    </CheckBoxLabelText>
-                  </CheckBox>
+                    </div>
+
+                    <div class="flex-box">
+                      <div class="flex-box__cell">
+                        <RadioButton
+                          theme="tertiary"
+                          align="center"
+                          name="EL_M02_l009_check004"
+                          id="EL_M02_l009_check004_001"
+                          :defaultChecked="true"
+                        >
+                          <RadioButtonObject />
+                          <RadioButtonLabelText>예</RadioButtonLabelText>
+                        </RadioButton>
+                      </div>
+                      <div class="flex-box__cell flex-box__cell--large">
+                        <RadioButton
+                          theme="tertiary"
+                          align="center"
+                          name="EL_M02_l009_check004"
+                          id="EL_M02_l009_check004_002"
+                        >
+                          <RadioButtonObject />
+                          <RadioButtonLabelText>아니오</RadioButtonLabelText>
+                        </RadioButton>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </li>
-              <li :class="$style['agree-list__item']">
-                <div :class="$style['agree-list__head']">
-                  <CheckBox
-                    id="EL_M02_l009_check005"
-                    :classNames="{
-                      wrap: $style['agree-list__checkbox'],
-                    }"
-                    theme="tertiary"
-                  >
-                    <CheckBoxObject />
-                    <CheckBoxLabelText>
+              <li
+                :class="[
+                  $style['contents-list__item'],
+                  'row-margin-item-group',
+                ]"
+              >
+                <div :class="$style['contents-list__head']">
+                  <div :class="$style['contents-list__symbol']">5</div>
+                  <div :class="$style['contents-list__title']">
+                    <div class="row-margin-item">
                       설치된 리스물건에 타사의 리스물건임을 표시하는
                       표식(스티커)이 부착되어 있나요?
-                    </CheckBoxLabelText>
-                  </CheckBox>
+                    </div>
+
+                    <div class="flex-box">
+                      <div class="flex-box__cell">
+                        <RadioButton
+                          theme="tertiary"
+                          align="center"
+                          name="EL_M02_l009_check005"
+                          id="EL_M02_l009_check005_001"
+                        >
+                          <RadioButtonObject />
+                          <RadioButtonLabelText>예</RadioButtonLabelText>
+                        </RadioButton>
+                      </div>
+                      <div class="flex-box__cell flex-box__cell--large">
+                        <RadioButton
+                          theme="tertiary"
+                          align="center"
+                          name="EL_M02_l009_check005"
+                          id="EL_M02_l009_check005_002"
+                          :defaultChecked="true"
+                        >
+                          <RadioButtonObject />
+                          <RadioButtonLabelText>아니오</RadioButtonLabelText>
+                        </RadioButton>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </li>
-              <li :class="$style['agree-list__item']">
-                <div :class="$style['agree-list__head']">
-                  <CheckBox
-                    id="EL_M02_l009_check006"
-                    :classNames="{
-                      wrap: $style['agree-list__checkbox'],
-                    }"
-                    theme="tertiary"
-                  >
-                    <CheckBoxObject />
-                    <CheckBoxLabelText>
+              <li
+                :class="[
+                  $style['contents-list__item'],
+                  'row-margin-item-group',
+                ]"
+              >
+                <div :class="$style['contents-list__head']">
+                  <div :class="$style['contents-list__symbol']">6</div>
+                  <div :class="$style['contents-list__title']">
+                    <div class="row-margin-item">
                       물건 검수 시 중복리스 및 공리스가 아님을 확인 하였습니다.
-                    </CheckBoxLabelText>
-                  </CheckBox>
+                    </div>
+
+                    <div class="flex-box">
+                      <div class="flex-box__cell">
+                        <RadioButton
+                          theme="tertiary"
+                          align="center"
+                          name="EL_M02_l009_check006"
+                          id="EL_M02_l009_check006_001"
+                          :defaultChecked="true"
+                        >
+                          <RadioButtonObject />
+                          <RadioButtonLabelText>예</RadioButtonLabelText>
+                        </RadioButton>
+                      </div>
+                      <div class="flex-box__cell flex-box__cell--large">
+                        <RadioButton
+                          theme="tertiary"
+                          align="center"
+                          name="EL_M02_l009_check006"
+                          id="EL_M02_l009_check006_002"
+                        >
+                          <RadioButtonObject />
+                          <RadioButtonLabelText>아니오</RadioButtonLabelText>
+                        </RadioButton>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </li>
-              <li :class="$style['agree-list__item']">
-                <div :class="$style['agree-list__head']">
-                  <CheckBox
-                    id="EL_M02_l009_check007"
-                    :classNames="{
-                      wrap: $style['agree-list__checkbox'],
-                    }"
-                    theme="tertiary"
-                  >
-                    <CheckBoxObject />
-                    <CheckBoxLabelText>
+              <li
+                :class="[
+                  $style['contents-list__item'],
+                  'row-margin-item-group',
+                ]"
+              >
+                <div :class="$style['contents-list__head']">
+                  <div :class="$style['contents-list__symbol']">7</div>
+                  <div :class="$style['contents-list__title']">
+                    <div class="row-margin-item">
                       리스물건 상태에 대해 확인합니다.
-                    </CheckBoxLabelText>
-                  </CheckBox>
+                    </div>
+
+                    <div class="flex-box">
+                      <div class="flex-box__cell">
+                        <RadioButton
+                          theme="tertiary"
+                          align="center"
+                          name="EL_M02_l009_check007"
+                          id="EL_M02_l009_check007_001"
+                          :defaultChecked="true"
+                        >
+                          <RadioButtonObject />
+                          <RadioButtonLabelText>상</RadioButtonLabelText>
+                        </RadioButton>
+                      </div>
+                      <div class="flex-box__cell flex-box__cell--large">
+                        <RadioButton
+                          theme="tertiary"
+                          align="center"
+                          name="EL_M02_l009_check007"
+                          id="EL_M02_l009_check007_002"
+                        >
+                          <RadioButtonObject />
+                          <RadioButtonLabelText>중</RadioButtonLabelText>
+                        </RadioButton>
+                      </div>
+                      <div class="flex-box__cell flex-box__cell--large">
+                        <RadioButton
+                          theme="tertiary"
+                          align="center"
+                          name="EL_M02_l009_check007"
+                          id="EL_M02_l009_check007_003"
+                        >
+                          <RadioButtonObject />
+                          <RadioButtonLabelText>하</RadioButtonLabelText>
+                        </RadioButton>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <ul
-                  :class="[
-                    $style['agree-list__list'],
-                    $style['agree-list__list--tertiary'],
-                  ]"
-                >
-                  <li :class="$style['agree-list__item']">
-                    <div :class="$style['agree-list__head']">
-                      <CheckBox
-                        type="radio"
-                        name="EL_M02_l009_check007"
-                        id="EL_M02_l009_check007_001"
-                        :classNames="{
-                          wrap: $style['agree-list__checkbox'],
-                        }"
-                        theme="quinary"
-                      >
-                        <CheckBoxObject />
-                        <CheckBoxLabelText>상</CheckBoxLabelText>
-                      </CheckBox>
-                    </div>
-                  </li>
-                  <li :class="$style['agree-list__item']">
-                    <div :class="$style['agree-list__head']">
-                      <CheckBox
-                        type="radio"
-                        name="EL_M02_l009_check007"
-                        id="EL_M02_l009_check007_002"
-                        :classNames="{
-                          wrap: $style['agree-list__checkbox'],
-                        }"
-                        theme="quinary"
-                      >
-                        <CheckBoxObject />
-                        <CheckBoxLabelText>중</CheckBoxLabelText>
-                      </CheckBox>
-                    </div>
-                  </li>
-                  <li :class="$style['agree-list__item']">
-                    <div :class="$style['agree-list__head']">
-                      <CheckBox
-                        type="radio"
-                        name="EL_M02_l009_check007"
-                        id="EL_M02_l009_check007_003"
-                        :classNames="{
-                          wrap: $style['agree-list__checkbox'],
-                        }"
-                        theme="quinary"
-                      >
-                        <CheckBoxObject />
-                        <CheckBoxLabelText>하</CheckBoxLabelText>
-                      </CheckBox>
-                    </div>
-                  </li>
-                </ul>
               </li>
-            </ul>
+            </ol>
           </div>
 
           <!-- Case : 손님일 경우 -->

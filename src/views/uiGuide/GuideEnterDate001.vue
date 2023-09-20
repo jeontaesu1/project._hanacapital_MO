@@ -167,7 +167,7 @@ export default {
             }"
           >
             <ButtonListItem>
-              <BasicButton>다음</BasicButton>
+              <BasicButton>조회</BasicButton>
             </ButtonListItem>
           </ButtonList>
         </div>

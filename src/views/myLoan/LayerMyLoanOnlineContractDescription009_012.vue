@@ -381,27 +381,27 @@ export default {
               <tbody>
                 <tr>
                   <th>상품명</th>
-                  <td>일반리스</td>
+                  <td class="align-left">일반리스</td>
                 </tr>
                 <tr>
                   <th>취득원가</th>
-                  <td>30,000,000 원</td>
+                  <td class="align-left">30,000,000 원</td>
                 </tr>
                 <tr>
                   <th>적용금리</th>
-                  <td>연 6.90%</td>
+                  <td class="align-left">연 6.90%</td>
                 </tr>
                 <tr>
                   <th>총납부금<br />(취득원가+이자)</th>
-                  <td>32,400,000 원</td>
+                  <td class="align-left">32,400,000 원</td>
                 </tr>
                 <tr>
                   <th>보증금</th>
-                  <td>3,000,000 원</td>
+                  <td class="align-left">3,000,000 원</td>
                 </tr>
                 <tr>
                   <th>보증금에 따른 리스료 예상할인율 및 할인금액</th>
-                  <td class="align-right">
+                  <td class="align-left">
                     <div>%</div>
                     <div class="row-margin-item-regular">원</div>
                   </td>
@@ -455,19 +455,9 @@ export default {
                 <tr>
                   <th>리스기간</th>
                   <td class="align-left">
-                    취급 후
-                    <span
-                      :class="[$style['blank-box'], $style['blank-box--small']]"
-                    ></span
-                    >개월 또는<br />
-                    <span
-                      :class="[$style['blank-box'], $style['blank-box--small']]"
-                    ></span
-                    >개월중 거치기간<br />
-                    <span
-                      :class="[$style['blank-box'], $style['blank-box--small']]"
-                    ></span
-                    >개월
+                    취급 후 개월 또는<br />
+                    개월중 거치기간<br />
+                    개월
                   </td>
                 </tr>
                 <tr>

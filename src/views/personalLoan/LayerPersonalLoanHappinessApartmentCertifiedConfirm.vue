@@ -177,6 +177,8 @@ export default {
           <h2 class="text-body-2 row-margin-item-small">
             3. (근)저당권 및 전세권 등(을구)
           </h2>
+
+          <!-- Case : 기록사항 있을 때 -->
           <p class="text-body-4">
             주요등기사항의 채권최고액을 확인하시고 부동산 설정 금액을 입력해
             주세요.<br />
@@ -184,6 +186,7 @@ export default {
               근저당권 설정 2건 이상인 경우, 합산 금액 입력
             </span>
           </p>
+          <!-- // Case : 기록사항 있을 때 -->
 
           <!-- Case : 기록사항 없을 때 -->
           <div class="row-margin-item-medium">

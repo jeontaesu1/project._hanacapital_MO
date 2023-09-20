@@ -52,7 +52,7 @@ export default {
         </FullPopupHead>
       </template>
 
-      <!-- DD : 검색 전 노출 -->
+      <!-- Case : 검색 후 미노출 -->
       <PageTextGroup>
         <PageMainText>
           <strong>
@@ -61,10 +61,10 @@ export default {
           </strong>
         </PageMainText>
       </PageTextGroup>
-      <!-- // DD : 검색 전 노출 -->
+      <!-- // Case : 검색 후 미노출 -->
 
       <div>
-        <InputBlock type="search">
+        <InputBlock>
           <InputBlockCell :flexible="true">
             <BasicInput
               type="search"
@@ -77,6 +77,7 @@ export default {
           </InputBlockCell>
         </InputBlock>
 
+        <!-- Case : 검색 후 미노출 -->
         <ul :class="[$style['basic-list'], 'row-margin-contents']">
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
@@ -91,6 +92,7 @@ export default {
             </div>
           </li>
         </ul>
+        <!-- // Case : 검색 후 미노출 -->
       </div>
 
       <!-- DD : 검색 후 노출 -->

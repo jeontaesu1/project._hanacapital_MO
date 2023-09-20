@@ -271,7 +271,7 @@ export default {
                   item: 'text-body-3',
                 }"
               >
-                <KeyValueTitle>차량 근저당 설정 비율</KeyValueTitle>
+                <KeyValueTitle>차량 근저당설정 비율</KeyValueTitle>
                 <KeyValueText>50.0 %</KeyValueText>
               </KeyValueItem>
               <KeyValueItem
@@ -279,7 +279,7 @@ export default {
                   item: 'text-body-3',
                 }"
               >
-                <KeyValueTitle>차량 근저당 설정 금액</KeyValueTitle>
+                <KeyValueTitle>차량 근저당설정 금액</KeyValueTitle>
                 <KeyValueText>8,300,000 원</KeyValueText>
               </KeyValueItem>
               <KeyValueItem>
@@ -297,7 +297,7 @@ export default {
                   item: 'text-body-3',
                 }"
               >
-                <KeyValueTitle>지연배상금율</KeyValueTitle>
+                <KeyValueTitle>지연배상금률</KeyValueTitle>
                 <KeyValueText>6.8 %</KeyValueText>
               </KeyValueItem>
               <KeyValueItem

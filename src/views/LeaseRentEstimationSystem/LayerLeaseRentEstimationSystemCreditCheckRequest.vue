@@ -86,6 +86,7 @@ export default {
       tab003BirthDateError: false,
       tab003PhoneError: false,
       tab003CEONameError: false,
+      tab003CEODateError: false,
     });
 
     return {
@@ -257,13 +258,20 @@ export default {
                       </InputBlockCell>
                       <template v-slot:right>
                         <!-- Case : 사업자번호 조회 후 비노출 -->
-                        <BasicButton size="mini" theme="tertiary"
+                        <BasicButton
+                          size="mini"
+                          theme="tertiary"
+                          :class="$style['appoint-btn']"
                           >조회</BasicButton
                         >
                         <!-- // Case : 사업자번호 조회 후 비노출 -->
 
                         <!-- Case : 사업자번호 조회 후 노출 -->
-                        <BasicButton size="mini" theme="quaternary">
+                        <BasicButton
+                          size="mini"
+                          theme="quaternary"
+                          :class="$style['appoint-btn']"
+                        >
                           초기화
                         </BasicButton>
                         <!-- // Case : 사업자번호 조회 후 노출 -->
@@ -465,13 +473,20 @@ export default {
                       </InputBlockCell>
                       <template v-slot:right>
                         <!-- Case : 사업자번호 조회 후 비노출 -->
-                        <BasicButton size="mini" theme="tertiary"
+                        <BasicButton
+                          size="mini"
+                          theme="tertiary"
+                          :class="$style['appoint-btn']"
                           >조회</BasicButton
                         >
                         <!-- // Case : 사업자번호 조회 후 비노출 -->
 
                         <!-- Case : 사업자번호 조회 후 노출 -->
-                        <BasicButton size="mini" theme="quaternary">
+                        <BasicButton
+                          size="mini"
+                          theme="quaternary"
+                          :class="$style['appoint-btn']"
+                        >
                           초기화
                         </BasicButton>
                         <!-- // Case : 사업자번호 조회 후 노출 -->
@@ -600,6 +615,24 @@ export default {
                   </FormInvalid>
                 </FormListItem>
                 <!-- // Case : [사업자번호 입력방식 - 직접입력] 선택 시 :disabled="false" : end -->
+
+                <FormListItem
+                  titleText="대표 취임일자"
+                  target="#layerLeaseRentEstimationSystemCreditCheckRequest003CEODate"
+                >
+                  <FormInvalid :error="state.tab003CEODateError">
+                    <InputBlock :error="state.tab003CEODateError">
+                      <InputBlockCell :flexible="true">
+                        <BasicInput
+                          type="number"
+                          title="대표 취임일자"
+                          id="layerLeaseRentEstimationSystemCreditCheckRequest003CEODate"
+                        />
+                      </InputBlockCell>
+                    </InputBlock>
+                    <FormInvalidMessage>Error Message</FormInvalidMessage>
+                  </FormInvalid>
+                </FormListItem>
               </FormList>
             </section>
 
@@ -681,6 +714,14 @@ export default {
                         <BoxCheckLabel>과점주주</BoxCheckLabel>
                       </BoxCheck>
                     </BoxCheckListItem>
+                    <BoxCheckListItem>
+                      <BoxCheck
+                        name="layerLeaseRentEstimationSystemCreditCheckRequest003Relation"
+                        id="layerLeaseRentEstimationSystemCreditCheckRequest003Relation003"
+                      >
+                        <BoxCheckLabel>대주주</BoxCheckLabel>
+                      </BoxCheck>
+                    </BoxCheckListItem>
                   </BoxCheckList>
                 </FormListItem>
 
@@ -746,3 +787,7 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/LeaseRentEstimationSystem/LayerLeaseRentEstimationSystemCreditCheckRequest.scss';
+</style>

@@ -21,6 +21,7 @@ import RoundTabButton from '@/components/ui/tab/RoundTabButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
+import NoticeText from '@/components/ui/text/NoticeText.vue';
 
 import IconTell from '@/assets/images/icon/tell.svg?component';
 
@@ -45,6 +46,7 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicButton,
+    NoticeText,
     IconTell,
   },
   setup() {
@@ -103,10 +105,7 @@ export default {
       </InputBlock>
 
       <UiTab :classNames="{ wrap: 'row-margin-container-medium' }">
-        <RoundTab
-          :useUiTab="true"
-          :classNames="{ wrap: 'row-margin-item-group' }"
-        >
+        <RoundTab :useUiTab="true" :classNames="{ wrap: 'row-margin-item' }">
           <RoundTabButton link="layerAutoEstimateSelectBrand1_001">
             국산
           </RoundTabButton>
@@ -115,7 +114,12 @@ export default {
           </RoundTabButton>
         </RoundTab>
 
-        <UiTabPanel name="layerAutoEstimateSelectBrand1_001">
+        <UiTabPanel
+          name="layerAutoEstimateSelectBrand1_001"
+          :classNames="{
+            panel: 'row-margin-item row-margin-bottom-none',
+          }"
+        >
           <div :class="$style['bank-brand']">
             <ul :class="$style['bank-brand__list']">
               <li :class="$style['bank-brand__item']">
@@ -200,6 +204,10 @@ export default {
         </UiTabPanel>
 
         <UiTabPanel name="layerAutoEstimateSelectBrand1_002">
+          <NoticeText :classNames="{ wrap: 'row-margin-item-group' }">
+            수입차는 리스만 취급합니다.
+          </NoticeText>
+
           <ul :class="$style['bank-brand__list']">
             <li :class="$style['bank-brand__item']">
               <button type="button" :class="$style['bank-brand__block']">
