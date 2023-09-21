@@ -8,6 +8,7 @@ import {
   watch,
   inject,
   nextTick,
+  reactive,
 } from 'vue';
 
 import { useUiCommonStore } from '@/stores/ui/common';
@@ -18,6 +19,9 @@ const defaultClassNames = () => ({
   block: '',
   input: '',
   dot: '',
+  placeholderDot: '',
+  placeholderDotItem: '',
+  placeholderDotItemHide: '',
 });
 
 export default {
@@ -60,6 +64,10 @@ export default {
       Type: Boolean,
       default: false,
     },
+    placeholderDot: {
+      Type: Boolean,
+      default: false,
+    },
   },
   setup(props, { emit }) {
     const inputScroll = {
@@ -79,6 +87,11 @@ export default {
       },
     };
 
+    const state = reactive({
+      valueLength: 0,
+      value: null,
+    });
+
     const input = ref(null);
 
     const customClassNames = computed(() => {
@@ -88,7 +101,13 @@ export default {
 
     const value = computed(() => {
       const { modelValue, defaultValue } = props;
-      return typeof modelValue === 'string' ? modelValue : defaultValue;
+      const { value } = state;
+
+      return typeof modelValue === 'string'
+        ? modelValue
+        : typeof value === 'string'
+        ? value
+        : defaultValue;
     });
 
     const headerH = computed(() => {
@@ -118,7 +137,12 @@ export default {
     };
 
     const onInput = (e) => {
-      emit('update:modelValue', e.target.value);
+      const val = e.target.value;
+
+      state.value = val;
+      state.valueLength = val.length;
+
+      emit('update:modelValue', val);
     };
 
     const focusScroll = () => {
@@ -198,7 +222,13 @@ export default {
     };
 
     onMounted(() => {
+      if (typeof value.value === 'string') {
+        state.value = value.value;
+        state.valueLength = value.value.length;
+      }
+
       checkLength();
+
       window.addEventListener('keypadOpened', onKeypadOpened);
       window.addEventListener(
         'legacyAndroidKeypadOpened',
@@ -215,12 +245,22 @@ export default {
     });
 
     onUpdated(() => {
+      if (input.value) {
+        const val = input.value.value;
+
+        state.value = val;
+        state.valueLength = val.length;
+      }
+
       checkLength();
     });
 
     watch(
       () => props.modelValue,
-      () => {
+      (cur) => {
+        state.value = cur;
+        state.valueLength = cur.length;
+
         checkLength();
 
         nextTick(() => {
@@ -232,6 +272,7 @@ export default {
     );
 
     return {
+      state,
       input,
       customClassNames,
       value,
@@ -261,8 +302,30 @@ export default {
     />
     <div
       :class="[$style['part-input__block'], customClassNames.block]"
-      :style="`width: ${0.75 * length}rem;`"
+      :style="`width: ${16 * length}px;`"
     >
+      <div
+        v-if="placeholderDot"
+        :class="[
+          $style['part-input__placeholder-dot'],
+          customClassNames.placeholderDot,
+        ]"
+      >
+        <div
+          v-for="item in length"
+          :key="item"
+          :class="[
+            $style['part-input__placeholder-dot-item'],
+            customClassNames.placeholderDotItem,
+            {
+              [$style['part-input__placeholder-dot-item--hide']]:
+                item <= state.valueLength,
+              [customClassNames.placeholderDotItemHide]:
+                item <= state.valueLength,
+            },
+          ]"
+        />
+      </div>
       <input
         ref="input"
         v-bind="$attrs"

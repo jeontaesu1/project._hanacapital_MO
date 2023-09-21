@@ -225,6 +225,10 @@ const datas = () => [
             date: '2023.09.21',
             text: '타이틀 텍스트 굵기 수정\n- Common_M00_l051\n- Common_M00_l052\n- Common_M00_l053\n- Common_M00_l054\n- Common_M00_l033\n- Common_M00_l030\n- Common_M00_b005\n- Common_M00_l002\n- Common_M00_l029',
           },
+          {
+            date: '2023.09.25',
+            text: '생년월일 입력 전 빈 동그라미 보이는 기능 적용\n- Common_M00_l002\n- Common_M00_l004',
+          },
         ],
       },
       {
