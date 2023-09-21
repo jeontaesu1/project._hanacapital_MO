@@ -648,7 +648,7 @@ export default {
                 <!-- Case : 상담중-지점문의 -->
                 <ButtonList :classNames="{ wrap: 'row-margin-contents-small' }">
                   <ButtonListItem>
-                    <BasicButton theme="quaternary" size="small"
+                    <BasicButton theme="quaternary" size="small" line="true"
                       >상담변경</BasicButton
                     >
                   </ButtonListItem>
@@ -668,7 +668,7 @@ export default {
                 <!-- Case : 상담중-자동승인 -->
                 <ButtonList :classNames="{ wrap: 'row-margin-contents-small' }">
                   <ButtonListItem>
-                    <BasicButton theme="quaternary" size="small"
+                    <BasicButton theme="quaternary" size="small" line="true"
                       >상담변경</BasicButton
                     >
                   </ButtonListItem>
