@@ -3,3 +3,23 @@
 @import '@/assets/scss/components/import/basic-list.scss';
 @import '@/assets/scss/components/import/contents-list.scss';
 @import '@/assets/scss/components/import/basic-table.scss';
+
+.accordion-contents {
+  padding: 24px 0 8px;
+}
+
+.accordion-button {
+  margin-top: 16px;
+
+  &__icon {
+    transition: transform 0.25s;
+  }
+
+  &--opened {
+    .accordion-button {
+      &__icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
