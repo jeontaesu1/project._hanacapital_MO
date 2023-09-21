@@ -82,8 +82,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          결제하실 계좌 정보를<br />
-          <strong>입력하세요</strong>
+          <strong>
+            결제하실 계좌 정보를<br />
+            입력하세요
+          </strong>
         </PageMainText>
         <PageSubText>
           계좌 변경은 공동인증서 인증을 통해 변경이 가능합니다.

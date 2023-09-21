@@ -70,8 +70,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          할부신청 정보를<br />
-          <strong>입력해 주세요</strong>
+          <strong>
+            할부신청 정보를<br />
+            입력해 주세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

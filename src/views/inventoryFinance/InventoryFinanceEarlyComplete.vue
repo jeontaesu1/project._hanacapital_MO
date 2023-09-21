@@ -60,8 +60,10 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        중도상환 신청 접수가<br />
-        <strong>완료되었습니다</strong>
+        <strong>
+          중도상환 신청 접수가<br />
+          완료되었습니다
+        </strong>
       </PageMainText>
       <PageSubText>
         고객님 감사합니다.<br />

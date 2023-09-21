@@ -61,8 +61,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          온라인약정이<br />
-          <strong>완료되었습니다</strong>
+          <strong>
+            온라인약정이<br />
+            완료되었습니다
+          </strong>
         </PageMainText>
         <PageSubText>
           차량출고요청 및 계약사항 안내를 위해<br />

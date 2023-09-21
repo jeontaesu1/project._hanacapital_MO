@@ -53,8 +53,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          승계 신청 URL 발송이<br />
-          <strong>완료되었습니다</strong>
+          <strong>
+            승계 신청 URL 발송이<br />
+            완료되었습니다
+          </strong>
         </PageMainText>
         <PageSubText>
           <strong class="font-weight-medium color-green">010-####-5678</strong>

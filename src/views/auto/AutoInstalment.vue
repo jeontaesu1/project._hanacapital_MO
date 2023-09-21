@@ -96,10 +96,12 @@ export default {
     <div :class="$style['bg']">
       <PageTextGroup>
         <PageMainText>
-          판매사와 제휴를 통해<br />
-          차량 대금은 금융사에서 지급,<br />
-          <strong>손님은 해당 금액을 분할 납부하는</strong><br />
-          <strong>금융상품 입니다</strong>
+          <strong>
+            판매사와 제휴를 통해<br />
+            차량 대금은 금융사에서 지급,<br />
+            손님은 해당 금액을 분할 납부하는<br />
+            금융상품 입니다
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

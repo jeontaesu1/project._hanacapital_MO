@@ -78,8 +78,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          승계 대상 차량을<br />
-          <strong>조회해주세요</strong>
+          <strong>
+            승계 대상 차량을<br />
+            조회해주세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

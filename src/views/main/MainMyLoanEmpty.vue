@@ -90,8 +90,10 @@ export default {
   >
     <PageTextGroup>
       <PageMainText>
-        김하나님<br />
-        <strong>대출이 필요하신가요?</strong>
+        <strong>
+          김하나님<br />
+          대출이 필요하신가요?
+        </strong>
       </PageMainText>
     </PageTextGroup>
 

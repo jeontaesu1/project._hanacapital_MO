@@ -53,8 +53,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          선택하신 자동차를<br />
-          <strong>차바구니에 담을까요?</strong>
+          <strong>
+            선택하신 자동차를<br />
+            차바구니에 담을까요?
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

@@ -102,8 +102,10 @@ export default {
     <div :class="$style['bg']">
       <PageTextGroup>
         <PageMainText>
-          개인사업자 전용<br />
-          <strong>사업자주택담보대출</strong>
+          <strong>
+            개인사업자 전용<br />
+            사업자주택담보대출
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

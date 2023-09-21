@@ -73,8 +73,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          견적 조회를 위해<br />
-          <strong>정보를 입력해주세요.</strong>
+          <strong>
+            견적 조회를 위해<br />
+            정보를 입력해주세요.
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

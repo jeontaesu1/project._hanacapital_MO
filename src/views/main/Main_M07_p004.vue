@@ -57,8 +57,10 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        <strong>김하나님</strong><br />
-        보험이 필요하신가요?
+        <strong>
+          김하나님<br />
+          보험이 필요하신가요?
+        </strong>
       </PageMainText>
     </PageTextGroup>
 

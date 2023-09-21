@@ -73,8 +73,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          렌트 신청 정보를<br />
-          <strong>확인해 주세요</strong>
+          <strong>
+            렌트 신청 정보를<br />
+            확인해 주세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

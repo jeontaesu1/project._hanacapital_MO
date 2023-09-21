@@ -58,8 +58,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          신용정보조회가<br />
-          <strong>정상적으로 완료되지 않았습니다</strong>
+          <strong>
+            신용정보조회가<br />
+            정상적으로 완료되지 않았습니다
+          </strong>
         </PageMainText>
         <PageSubText>자세한 사항은 고객센터에 문의해 주세요.</PageSubText>
       </PageTextGroup>

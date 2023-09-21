@@ -62,8 +62,10 @@ export default {
           준법심의필(설) : 2023-14 (2023.03.01)
         </p>
         <PageMainText>
-          상품설명서<br />
-          <strong>확인 안내</strong>
+          <strong>
+            상품설명서<br />
+            확인 안내
+          </strong>
         </PageMainText>
         <PageSubText>
           <strong

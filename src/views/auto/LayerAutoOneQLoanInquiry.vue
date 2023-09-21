@@ -75,8 +75,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          김하나님은<br />
-          <strong>지점문의 대상입니다</strong>
+          <strong>
+            김하나님은<br />
+            지점문의 대상입니다
+          </strong>
         </PageMainText>
         <PageSubText>
           아래의 대출신청 내용으로 대출을 원하신다면, ‘문의요청’을 해주세요.

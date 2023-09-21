@@ -43,7 +43,9 @@ export default {
 <template>
   <PageContents>
     <PageTextGroup>
-      <PageMainText>중도상환수수료 면제란?</PageMainText>
+      <PageMainText>
+        <strong>중도상환수수료 면제란?</strong>
+      </PageMainText>
       <PageSubText>
         대출금을 처음 약속한 기간 동안 사용하지 않고 중도에 상환(부분상환 또는
         중도완납)할 경우에 금융회사에 납부해야 하는 수수료를 말합니다.

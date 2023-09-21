@@ -124,8 +124,10 @@ export default {
 
         <PageTextGroup>
           <PageMainText>
-            원래 조건 그대로 모바일전용<br />
-            <strong>간편 승계 서비스</strong>
+            <strong>
+              원래 조건 그대로 모바일전용<br />
+              간편 승계 서비스
+            </strong>
           </PageMainText>
         </PageTextGroup>
 

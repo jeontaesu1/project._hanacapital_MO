@@ -119,8 +119,10 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        약정 목록을 확인하고<br />
-        <strong> 약정을 진행하세요 </strong>
+        <strong>
+          약정 목록을 확인하고<br />
+          약정을 진행하세요
+        </strong>
       </PageMainText>
     </PageTextGroup>
 

@@ -62,8 +62,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          온라인약정이<br />
-          <strong>완료되었습니다</strong>
+          <strong>
+            온라인약정이<br />
+            완료되었습니다
+          </strong>
         </PageMainText>
         <PageSubText>
           가장 빠른 영업시간에 대출금이<br />

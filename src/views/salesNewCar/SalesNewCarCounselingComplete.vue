@@ -70,8 +70,11 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        김하나 손님은 <span class="color-blue">자동승인</span> 대상입니다<br />
-        <strong>계약등록을 진행해주세요</strong>
+        <strong>
+          김하나 손님은
+          <span class="color-blue">자동승인</span> 대상입니다<br />
+          계약등록을 진행해주세요
+        </strong>
       </PageMainText>
     </PageTextGroup>
 

@@ -67,8 +67,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          승계 업무 진행을 위해<br />
-          <strong>본인확인을 진행해주세요</strong>
+          <strong>
+            승계 업무 진행을 위해<br />
+            본인확인을 진행해주세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

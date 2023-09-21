@@ -75,8 +75,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          김하나님 신청하신 내용으로<br />
-          <strong>대출 신청이 가능합니다</strong>
+          <strong>
+            김하나님 신청하신 내용으로<br />
+            대출 신청이 가능합니다
+          </strong>
         </PageMainText>
         <PageSubText>
           아래의 대출신청 내용을<br />

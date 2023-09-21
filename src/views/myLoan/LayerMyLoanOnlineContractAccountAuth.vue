@@ -72,8 +72,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          김하나님 계좌로<br />
-          <strong>1원을 보냈습니다</strong>
+          <strong>
+            김하나님 계좌로<br />
+            1원을 보냈습니다
+          </strong>
         </PageMainText>
         <PageSubText>
           해당 계좌의 거래내역에서 입금된 1원의 입금자명을 확인 후

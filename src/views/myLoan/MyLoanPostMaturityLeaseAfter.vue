@@ -99,36 +99,46 @@ export default {
       <PageTextGroup>
         <!-- Case : 운용리스, 금융리스 -->
         <PageMainText>
-          만기후 연장(재리스) 신청이<br />
-          <strong>완료되었습니다</strong>
+          <strong>
+            만기후 연장(재리스) 신청이<br />
+            완료되었습니다
+          </strong>
         </PageMainText>
         <!-- // Case : 운용리스, 금융리스 -->
 
         <!-- Case : 직접이전 -->
         <PageMainText>
-          만기후 구매(직접이전) 신청이<br />
-          <strong>완료되었습니다</strong>
+          <strong>
+            만기후 구매(직접이전) 신청이<br />
+            완료되었습니다
+          </strong>
         </PageMainText>
         <!-- // Case : 직접이전 -->
 
         <!-- Case : 이전대행 -->
         <PageMainText>
-          만기후 구매(이전대행) 신청이<br />
-          <strong>완료되었습니다</strong>
+          <strong>
+            만기후 구매(이전대행) 신청이<br />
+            완료되었습니다
+          </strong>
         </PageMainText>
         <!-- // Case : 이전대행 -->
 
         <!-- Case : 이용자명의 -->
         <PageMainText>
-          만기후 구매(이용자명의) 신청이<br />
-          <strong>완료되었습니다</strong>
+          <strong>
+            만기후 구매(이용자명의) 신청이<br />
+            완료되었습니다
+          </strong>
         </PageMainText>
         <!-- // Case : 이용자명의 -->
 
         <!-- Case : 반환 -->
         <PageMainText>
-          만기후 반환 신청이<br />
-          <strong>완료되었습니다</strong>
+          <strong>
+            만기후 반환 신청이<br />
+            완료되었습니다
+          </strong>
         </PageMainText>
         <!-- // Case : 반환 -->
       </PageTextGroup>

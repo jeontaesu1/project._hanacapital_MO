@@ -67,8 +67,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          전자약정 전송 정보를<br />
-          <strong>확인해 주세요</strong>
+          <strong>
+            전자약정 전송 정보를<br />
+            확인해 주세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

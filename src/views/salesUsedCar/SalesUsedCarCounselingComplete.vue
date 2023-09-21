@@ -72,8 +72,10 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        상담등록이<br />
-        <strong>완료되었습니다</strong>
+        <strong>
+          상담등록이<br />
+          완료되었습니다
+        </strong>
       </PageMainText>
       <!-- 상담등록 성공 -->
       <PageSubText

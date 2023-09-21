@@ -63,7 +63,9 @@ export default {
       </template>
 
       <PageTextGroup>
-        <PageMainText> 중도금대출 채무인수 확약서 </PageMainText>
+        <PageMainText>
+          <strong>중도금대출 채무인수 확약서</strong>
+        </PageMainText>
         <PageSubText
           >매도자(채무자), 매수자(채무인수자)는 분양권 전매에 따른 공급계약서
           명의변경 시 중도금대출 채무인수를 다음과 같이 진행할 것을 확약하며, 본

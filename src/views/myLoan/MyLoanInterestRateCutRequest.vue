@@ -58,8 +58,10 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        금리인하요구권 신청<br />
-        <strong>가능한 상품은 총 <span class="color-green">0</span>건</strong>
+        <strong>
+          금리인하요구권 신청<br />
+          가능한 상품은 총 <span class="color-green">0</span>건
+        </strong>
       </PageMainText>
       <PageSubText>금리인하 대상상품만 조회됩니다.</PageSubText>
     </PageTextGroup>

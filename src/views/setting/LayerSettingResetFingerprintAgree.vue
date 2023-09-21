@@ -53,8 +53,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          지문을<br />
-          <strong>(재)등록합니다</strong>
+          <strong>
+            지문을<br />
+            (재)등록합니다
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

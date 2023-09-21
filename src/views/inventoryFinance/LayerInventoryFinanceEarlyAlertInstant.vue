@@ -64,8 +64,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          즉시 출금으로<br />
-          <strong>중도상환 신청을 하시겠습니까?</strong>
+          <strong>
+            즉시 출금으로<br />
+            중도상환 신청을 하시겠습니까?
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

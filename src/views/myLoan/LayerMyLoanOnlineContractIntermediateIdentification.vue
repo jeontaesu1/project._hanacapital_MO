@@ -67,9 +67,11 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          하나캐피탈 <span class="color-green">중도금 대출</span><br />
-          모바일 약정을 위하여<br />
-          <strong>이름을 입력해 주세요</strong>
+          <strong>
+            하나캐피탈 <span class="color-green">중도금 대출</span><br />
+            모바일 약정을 위하여<br />
+            이름을 입력해 주세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

@@ -99,8 +99,10 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        금융정보를<br />
-        <strong>입력해 주세요</strong>
+        <strong>
+          금융정보를<br />
+          입력해 주세요
+        </strong>
       </PageMainText>
     </PageTextGroup>
 

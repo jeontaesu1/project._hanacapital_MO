@@ -53,8 +53,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          바이오정보 수집·이용 동의<br />
-          <strong>약관에 동의해주세요</strong>
+          <strong>
+            바이오정보 수집·이용 동의<br />
+            약관에 동의해주세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

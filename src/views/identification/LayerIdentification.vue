@@ -49,8 +49,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          온라인약정 이용을 위해<br />
-          <strong>본인인증을 진행해 주세요</strong>
+          <strong>
+            온라인약정 이용을 위해<br />
+            본인인증을 진행해 주세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

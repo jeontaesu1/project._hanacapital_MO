@@ -84,8 +84,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          자동차 제조사를<br />
-          <strong>선택해 주세요</strong>
+          <strong>
+            자동차 제조사를<br />
+            선택해 주세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

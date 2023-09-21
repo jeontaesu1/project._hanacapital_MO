@@ -62,8 +62,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          일시적 오류로 온라인약정이<br />
-          <strong>완료되지 않았습니다</strong>
+          <strong>
+            일시적 오류로 온라인약정이<br />
+            완료되지 않았습니다
+          </strong>
         </PageMainText>
         <PageSubText>
           지속적인 문제 발생 시,<br />

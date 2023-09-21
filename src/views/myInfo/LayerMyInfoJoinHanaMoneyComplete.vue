@@ -53,8 +53,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          축하드려요!<br />
-          <strong>하나머니 회원가입이 완료되었습니다</strong>
+          <strong>
+            축하드려요!<br />
+            하나머니 회원가입이 완료되었습니다
+          </strong>
         </PageMainText>
         <PageSubText>
           현금처럼 사용하고, 친구와 나눠쓰고,<br />

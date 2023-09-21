@@ -51,8 +51,10 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        앱프리 앱으로<br />
-        <strong>이동합니다</strong>
+        <strong>
+          앱프리 앱으로<br />
+          이동합니다
+        </strong>
       </PageMainText>
     </PageTextGroup>
 

@@ -74,8 +74,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          재고금융 건별 대출 위임을 위한<br />
-          <strong>수임인 정보를 입력해 주세요</strong>
+          <strong>
+            재고금융 건별 대출 위임을 위한<br />
+            수임인 정보를 입력해 주세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

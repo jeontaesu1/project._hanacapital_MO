@@ -69,8 +69,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          계약서류를<br />
-          <strong>조회합니다</strong>
+          <strong>
+            계약서류를<br />
+            조회합니다
+          </strong>
         </PageMainText>
         <PageSubText>
           이름과 생년월일을 입력하시면,<br />

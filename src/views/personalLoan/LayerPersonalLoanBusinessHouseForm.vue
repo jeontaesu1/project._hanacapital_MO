@@ -98,8 +98,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>대출정보를</strong><br />
-          입력해주세요
+          <strong>
+            대출정보를<br />
+            입력해주세요
+          </strong>
         </PageMainText>
         <PageSubText>
           실제 정보와 상이할 경우<br />

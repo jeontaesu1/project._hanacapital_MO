@@ -59,7 +59,7 @@ export default {
       </template>
 
       <PageTextGroup>
-        <PageMainText>하나캐피탈㈜ 귀중</PageMainText>
+        <PageMainText><strong>하나캐피탈㈜ 귀중</strong></PageMainText>
         <PageSubText>
           금융회사는 대출상담사를 통해 접수된 대출의 경우 “대출모집인제도
           모범규준“ 제10조 제1항 제2호에 따라 대출 실행 이전에 대출신청인에게

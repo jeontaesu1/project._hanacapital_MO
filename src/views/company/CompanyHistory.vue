@@ -69,7 +69,9 @@ export default {
       <!-- Tab : 2011 ~ 현재 -->
       <UiTabPanel name="companyHistoryTab001">
         <PageTextGroup>
-          <PageMainText>도전하는 하나캐피탈</PageMainText>
+          <PageMainText>
+            <strong>도전하는 하나캐피탈</strong>
+          </PageMainText>
         </PageTextGroup>
 
         <ul class="reset-list">
@@ -283,7 +285,9 @@ export default {
       <!-- Tab : 2004 ~ 2010 -->
       <UiTabPanel name="companyHistoryTab002">
         <PageTextGroup>
-          <PageMainText>우리의 시작</PageMainText>
+          <PageMainText>
+            <strong>우리의 시작</strong>
+          </PageMainText>
         </PageTextGroup>
 
         <ul class="reset-list">

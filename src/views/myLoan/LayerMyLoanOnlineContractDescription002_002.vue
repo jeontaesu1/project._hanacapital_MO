@@ -52,8 +52,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>개인신용평점에</strong><br />
-          어떤 영향이 있나요?
+          <strong>
+            개인신용평점에<br />
+            어떤 영향이 있나요?
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

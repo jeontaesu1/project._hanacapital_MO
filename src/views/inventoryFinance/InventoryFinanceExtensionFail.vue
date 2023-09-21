@@ -60,8 +60,10 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        만기연장 신청이<br />
-        <strong>실패했습니다</strong>
+        <strong>
+          만기연장 신청이<br />
+          실패했습니다
+        </strong>
       </PageMainText>
       <PageSubText>문의사항이 있으시면 고객센터로 연락바랍니다.</PageSubText>
     </PageTextGroup>

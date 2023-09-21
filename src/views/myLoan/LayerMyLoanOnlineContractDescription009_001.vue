@@ -54,8 +54,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>리스 상품이</strong><br />
-          무엇인가요?
+          <strong>
+            리스 상품이<br />
+            무엇인가요?
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

@@ -72,9 +72,11 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        하나캐피탈 <span class="color-green">중고차 매매상사</span><br />
-        <span class="color-green">할부제휴 협약</span>을 위하여<br />
-        <strong>본인확인을 진행해 주세요</strong>
+        <strong>
+          하나캐피탈 <span class="color-green">중고차 매매상사</span><br />
+          <span class="color-green">할부제휴 협약</span>을 위하여<br />
+          본인확인을 진행해 주세요
+        </strong>
       </PageMainText>
     </PageTextGroup>
 

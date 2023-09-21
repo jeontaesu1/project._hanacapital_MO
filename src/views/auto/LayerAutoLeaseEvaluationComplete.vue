@@ -50,8 +50,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          김하나님, 요청하신 견적으로<br />
-          <strong>심사가 완료되었습니다</strong>
+          <strong>
+            김하나님, 요청하신 견적으로<br />
+            심사가 완료되었습니다
+          </strong>
         </PageMainText>
         <!-- Case : 운용리스일 경우 -->
         <PageSubText>리스 신청 화면으로 이동할게요</PageSubText>

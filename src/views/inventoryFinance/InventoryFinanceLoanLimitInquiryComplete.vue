@@ -62,10 +62,12 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        <span class="color-green font-weight-regular">
-          주식회사알차이노베이션</span
-        >님<br />
-        <strong>한도조회 결과입니다</strong>
+        <strong>
+          <span class="color-green font-weight-regular">
+            주식회사알차이노베이션</span
+          >님<br />
+          한도조회 결과입니다
+        </strong>
       </PageMainText>
     </PageTextGroup>
 

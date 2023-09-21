@@ -69,8 +69,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          공동인증서를<br />
-          <strong>등록해 주세요</strong>
+          <strong>
+            공동인증서를<br />
+            등록해 주세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

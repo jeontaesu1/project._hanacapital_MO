@@ -79,8 +79,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          이름을<br />
-          <strong>입력해 주세요</strong>
+          <strong>
+            이름을<br />
+            입력해 주세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

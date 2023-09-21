@@ -54,8 +54,10 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        심사서류를<br />
-        <strong>등록해 주세요.</strong>
+        <strong>
+          심사서류를<br />
+          등록해 주세요.
+        </strong>
       </PageMainText>
     </PageTextGroup>
 

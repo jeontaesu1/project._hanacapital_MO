@@ -53,8 +53,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          아래 내용을 확인 후<br />
-          <strong>체크 동의해 주세요</strong>
+          <strong>
+            아래 내용을 확인 후<br />
+            체크 동의해 주세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 

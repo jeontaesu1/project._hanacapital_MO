@@ -81,8 +81,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>운전면허증 정보를</strong><br />
-          입력해 주세요
+          <strong>
+            운전면허증 정보를<br />
+            입력해 주세요
+          </strong>
         </PageMainText>
         <PageSubText>
           운전면허증 정보를 확인하신 후 수정하거나<br />

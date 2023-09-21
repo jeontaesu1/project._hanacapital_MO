@@ -89,8 +89,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          변경할 청구지 정보를<br />
-          <strong>입력하세요</strong>
+          <strong>
+            변경할 청구지 정보를<br />
+            입력하세요
+          </strong>
         </PageMainText>
         <PageSubText>
           선택하신 계약 기준, 청구 정보를 변경할 수 있습니다.

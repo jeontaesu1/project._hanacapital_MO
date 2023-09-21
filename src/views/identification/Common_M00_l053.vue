@@ -59,7 +59,9 @@ export default {
       </template>
 
       <PageTextGroup>
-        <PageMainText>"카카오" 귀중</PageMainText>
+        <PageMainText>
+          <strong>"카카오" 귀중</strong>
+        </PageMainText>
         <PageSubText>
           본인은 “카카오”(이하 “위탁자”라 합니다.)가 위탁한 "드림시큐리티"(이하
           “수탁자”라 합니다)이 제공하는 간편인증 통합중계서비스(이하 “서비스”라

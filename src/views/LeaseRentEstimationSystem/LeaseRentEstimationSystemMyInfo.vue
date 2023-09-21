@@ -56,8 +56,10 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        <strong>내 정보를</strong><br />
-        확인하세요
+        <strong>
+          내 정보를<br />
+          확인하세요
+        </strong>
       </PageMainText>
       <PageSubText>
         회원정보는 온라인에서 변경되지 않습니다.<br />

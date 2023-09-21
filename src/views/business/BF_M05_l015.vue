@@ -75,8 +75,10 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          사업자 정보를<br />
-          <strong>입력해 주세요</strong>
+          <strong>
+            사업자 정보를<br />
+            입력해 주세요
+          </strong>
         </PageMainText>
       </PageTextGroup>
 
