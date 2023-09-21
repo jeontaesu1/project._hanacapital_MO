@@ -4542,7 +4542,7 @@ const datas = () => [
           },
           {
             date: '2023.09.21',
-            text: '타이틀 텍스트 굵기 수정\n- AF_M00_l011\n- AF_M00_l007\n- AF_M00_l009\n- AF_M00_l016\n- AF_M02_l001\n- AF_M01_l001\n- AF_M00_l001\n- AF_M00_l006\n- AF_M00_l004\n- AF_M00_l003\n- AF_M00_l005\n- AF_M00_l008\n- AF_M00_l018\n- AF_M00_l012',
+            text: 'AF_M00_l008 상품안내 내용 추가\n타이틀 텍스트 굵기 수정\n- AF_M00_l011\n- AF_M00_l007\n- AF_M00_l009\n- AF_M00_l016\n- AF_M02_l001\n- AF_M01_l001\n- AF_M00_l001\n- AF_M00_l006\n- AF_M00_l004\n- AF_M00_l003\n- AF_M00_l005\n- AF_M00_l008\n- AF_M00_l018\n- AF_M00_l012',
           },
         ],
       },
