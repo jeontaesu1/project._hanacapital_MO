@@ -54,10 +54,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            중도금대출 상품의<br />
-            특징은 무엇인가요?
-          </strong>
+          중도금대출 상품의<br />
+          특징은 무엇인가요?
         </PageMainText>
       </PageTextGroup>
 

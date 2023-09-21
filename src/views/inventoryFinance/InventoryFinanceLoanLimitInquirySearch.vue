@@ -106,10 +106,8 @@ export default {
     <PageContents>
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            차량을<br />
-            선택해 주세요
-          </strong>
+          차량을<br />
+          선택해 주세요
         </PageMainText>
       </PageTextGroup>
 

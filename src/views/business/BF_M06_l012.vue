@@ -49,10 +49,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            김하나님, 요청하신 견적은<br />
-            <span class="color-green">한도 심사가 필요합니다</span>
-          </strong>
+          김하나님, 요청하신 견적은<br />
+          <span class="color-green">한도 심사가 필요합니다</span>
         </PageMainText>
       </PageTextGroup>
 

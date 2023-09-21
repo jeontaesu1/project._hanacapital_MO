@@ -60,10 +60,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            고객님의 계좌로 대출금 입금이<br />
-            정상 완료되었습니다
-          </strong>
+          고객님의 계좌로 대출금 입금이<br />
+          정상 완료되었습니다
         </PageMainText>
       </PageTextGroup>
 

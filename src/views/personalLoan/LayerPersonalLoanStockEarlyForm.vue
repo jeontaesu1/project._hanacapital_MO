@@ -94,10 +94,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            중도상환신청 조건을<br />
-            입력해 주세요
-          </strong>
+          중도상환신청 조건을<br />
+          입력해 주세요
         </PageMainText>
       </PageTextGroup>
 

@@ -51,10 +51,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            어떤 차가 마음에<br />
-            드시나요?
-          </strong>
+          어떤 차가 마음에<br />
+          드시나요?
         </PageMainText>
       </PageTextGroup>
 

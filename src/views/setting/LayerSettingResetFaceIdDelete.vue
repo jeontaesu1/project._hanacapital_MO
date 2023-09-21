@@ -49,10 +49,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            등록된 Face ID를 <br />
-            해지합니다
-          </strong>
+          등록된 Face ID를 <br />
+          해지합니다
         </PageMainText>
       </PageTextGroup>
 

@@ -74,10 +74,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            아파트에<br />
-            부동산 설정 금액이 있나요?
-          </strong>
+          아파트에<br />
+          부동산 설정 금액이 있나요?
         </PageMainText>
       </PageTextGroup>
 

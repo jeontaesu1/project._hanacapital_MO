@@ -55,10 +55,8 @@ export default {
           wrap: 'align-center row-margin-contents',
         }"
       >
-        <strong>
-          간편비밀번호 6자리를<br />
-          설정해 주세요
-        </strong>
+        간편비밀번호 6자리를<br />
+        설정해 주세요
       </PageMainText>
 
       <FormInvalid :error="state.error">

@@ -102,10 +102,8 @@ export default {
     <div :class="$style['bg']">
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            개인사업자 및 법인 대상<br />
-            의료장비, 스크린골프, 설비 등
-          </strong>
+          개인사업자 및 법인 대상<br />
+          의료장비, 스크린골프, 설비 등
         </PageMainText>
       </PageTextGroup>
 

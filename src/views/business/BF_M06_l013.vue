@@ -69,10 +69,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            <span class="color-green">할부</span> 상담 안내를 위한<br />
-            연락처를 입력해 주세요
-          </strong>
+          <span class="color-green">할부</span> 상담 안내를 위한<br />
+          연락처를 입력해 주세요
         </PageMainText>
       </PageTextGroup>
 

@@ -82,10 +82,8 @@ export default {
   <div v-if="!isLoggedIn" :class="$style['name-card']">
     <div :class="$style['name-card__left']">
       <PageMainText>
-        <strong>
-          로그인 후 편리하게<br />
-          이용해 보세요
-        </strong>
+        로그인 후 편리하게<br />
+        이용해 보세요
       </PageMainText>
     </div>
     <div :class="$style['name-card__right']">
@@ -97,7 +95,7 @@ export default {
   <!-- Case : 로그인 후 -->
   <div v-else :class="$style['name-card']">
     <div :class="$style['name-card__left']">
-      <PageMainText><strong>강하나님</strong></PageMainText>
+      <PageMainText>강하나님</PageMainText>
     </div>
     <div :class="$style['name-card__right']">
       <TextButton

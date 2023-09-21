@@ -66,10 +66,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            아이디를<br />
-            입력해주세요
-          </strong>
+          아이디를<br />
+          입력해주세요
         </PageMainText>
       </PageTextGroup>
 

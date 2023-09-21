@@ -85,10 +85,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            변경하실 주소지 정보를<br />
-            입력하세요
-          </strong>
+          변경하실 주소지 정보를<br />
+          입력하세요
         </PageMainText>
       </PageTextGroup>
 

@@ -61,10 +61,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            한도조회를 위해<br />
-            동의해 주세요
-          </strong>
+          한도조회를 위해<br />
+          동의해 주세요
         </PageMainText>
       </PageTextGroup>
 

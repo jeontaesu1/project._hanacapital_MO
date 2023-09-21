@@ -104,10 +104,8 @@ export default {
     <div :class="$style['bg']">
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            아파트 소유자를 위한<br />
-            무담보 아파트 신용대출
-          </strong>
+          아파트 소유자를 위한<br />
+          무담보 아파트 신용대출
         </PageMainText>
       </PageTextGroup>
 

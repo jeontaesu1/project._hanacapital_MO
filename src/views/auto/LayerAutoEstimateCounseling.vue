@@ -66,10 +66,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            연락가능한 시간을<br />
-            선택해 주세요
-          </strong>
+          연락가능한 시간을<br />
+          선택해 주세요
         </PageMainText>
       </PageTextGroup>
 

@@ -52,10 +52,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            할부금융 상품이<br />
-            무엇인가요?
-          </strong>
+          할부금융 상품이<br />
+          무엇인가요?
         </PageMainText>
       </PageTextGroup>
 

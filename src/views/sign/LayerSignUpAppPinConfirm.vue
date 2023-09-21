@@ -53,10 +53,8 @@ export default {
           wrap: 'align-center row-margin-contents',
         }"
       >
-        <strong>
-          확인을 위해 비밀번호를<br />
-          한번 더 입력해 주세요
-        </strong>
+        확인을 위해 비밀번호를<br />
+        한번 더 입력해 주세요
       </PageMainText>
 
       <FormInvalid :error="state.error">

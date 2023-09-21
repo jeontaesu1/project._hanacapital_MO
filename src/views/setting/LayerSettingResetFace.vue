@@ -59,10 +59,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            얼굴인증을<br />
-            (재)등록합니다
-          </strong>
+          얼굴인증을<br />
+          (재)등록합니다
         </PageMainText>
         <PageSubText>
           스마트폰 카메라만 있으면 얼굴로 간편하게 로그인 및 인증을 할 수

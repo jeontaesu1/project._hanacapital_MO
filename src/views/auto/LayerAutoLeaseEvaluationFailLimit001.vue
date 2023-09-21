@@ -51,10 +51,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            김하나님, 요청하신 견적으로<br />
-            진행이 어렵습니다
-          </strong>
+          김하나님, 요청하신 견적으로<br />
+          진행이 어렵습니다
         </PageMainText>
 
         <!-- Case : 운용리스 -->

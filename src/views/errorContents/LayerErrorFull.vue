@@ -58,10 +58,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            서비스를 일부<br />
-            이용할 수 없습니다
-          </strong>
+          서비스를 일부<br />
+          이용할 수 없습니다
         </PageMainText>
         <PageSubText>
           자세한 사항은<br />

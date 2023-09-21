@@ -40,10 +40,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            얼굴을<br />
-            인식시켜 주세요
-          </strong>
+          얼굴을<br />
+          인식시켜 주세요
         </PageMainText>
       </PageTextGroup>
 

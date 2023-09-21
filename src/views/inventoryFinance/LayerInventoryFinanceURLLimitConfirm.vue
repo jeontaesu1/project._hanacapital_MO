@@ -51,9 +51,7 @@ export default {
       </template>
 
       <PageTextGroup>
-        <PageMainText>
-          <strong>재고금융 한도거래 확약서</strong>
-        </PageMainText>
+        <PageMainText>재고금융 한도거래 확약서</PageMainText>
         <PageSubText>
           하나캐피탈주식회사(이하 “하나”라고 함)와 한도거래신청인(이하
           “신청인”이라 함)은 2023년 05월 03일 체결한 여신거래 약정서에 기한

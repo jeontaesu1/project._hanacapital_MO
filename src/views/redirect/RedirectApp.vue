@@ -51,10 +51,8 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        <strong>
-          1Q 캐피탈 앱으로<br />
-          이동합니다
-        </strong>
+        1Q 캐피탈 앱으로<br />
+        이동합니다
       </PageMainText>
     </PageTextGroup>
 

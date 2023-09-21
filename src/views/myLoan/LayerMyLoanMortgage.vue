@@ -71,10 +71,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            근저당설정 조회/해지<br />
-            가능한 상품은 총 <span class="color-green">0</span>건 입니다
-          </strong>
+          근저당설정 조회/해지<br />
+          가능한 상품은 총 <span class="color-green">0</span>건 입니다
         </PageMainText>
       </PageTextGroup>
 

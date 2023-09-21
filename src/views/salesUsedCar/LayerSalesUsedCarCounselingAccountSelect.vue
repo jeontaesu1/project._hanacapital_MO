@@ -95,10 +95,8 @@ export default {
       <div class="contents-wrap">
         <PageTextGroup>
           <PageMainText>
-            <strong>
-              아래 해당하는 계좌를<br />
-              선택해 주세요
-            </strong>
+            아래 해당하는 계좌를<br />
+            선택해 주세요
           </PageMainText>
         </PageTextGroup>
 

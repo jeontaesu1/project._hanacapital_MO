@@ -110,10 +110,8 @@ export default {
     <div :class="$style['bg']">
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            소득이 있다면<br />
-            쉽고 빠른 대출
-          </strong>
+          소득이 있다면<br />
+          쉽고 빠른 대출
         </PageMainText>
       </PageTextGroup>
 

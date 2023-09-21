@@ -58,10 +58,8 @@ export default {
 
     <PageTextGroup>
       <PageMainText>
-        <strong>
-          하나캐피탈과 함께<br />
-          든든하고 행복한 금융
-        </strong>
+        하나캐피탈과 함께<br />
+        든든하고 행복한 금융
       </PageMainText>
     </PageTextGroup>
 

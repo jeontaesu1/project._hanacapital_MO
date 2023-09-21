@@ -125,11 +125,9 @@ export default {
 
     <PageTextGroup>
       <PageMainText>
-        <strong>
-          선택한 계약상품의 중도상환<br />
-          설정을 위해<br />
-          조건을 입력 또는 선택해 주세요
-        </strong>
+        선택한 계약상품의 중도상환<br />
+        설정을 위해<br />
+        조건을 입력 또는 선택해 주세요
       </PageMainText>
     </PageTextGroup>
 

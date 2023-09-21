@@ -72,10 +72,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            새로운 비밀번호를<br />
-            입력해 주세요
-          </strong>
+          새로운 비밀번호를<br />
+          입력해 주세요
         </PageMainText>
         <PageSubText>
           비밀번호는 반복/연속 된 문자, ID와 동일한 문자, 4자리 이상 숫자 및

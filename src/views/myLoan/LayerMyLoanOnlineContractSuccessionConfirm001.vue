@@ -69,10 +69,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            아래 내용을 확인하신 후<br />
-            본인인증을 진행해 주세요
-          </strong>
+          아래 내용을 확인하신 후<br />
+          본인인증을 진행해 주세요
         </PageMainText>
       </PageTextGroup>
 

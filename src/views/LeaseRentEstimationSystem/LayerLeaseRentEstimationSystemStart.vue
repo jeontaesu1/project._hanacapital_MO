@@ -60,10 +60,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            지금부터 하나캐피탈 견적제공을 위한<br />
-            절차를 진행합니다
-          </strong>
+          지금부터 하나캐피탈 견적제공을 위한<br />
+          절차를 진행합니다
         </PageMainText>
       </PageTextGroup>
 

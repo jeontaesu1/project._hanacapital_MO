@@ -52,10 +52,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            민원ㆍ상담이 빈번하여<br />
-            숙지가 필요해요
-          </strong>
+          민원ㆍ상담이 빈번하여<br />
+          숙지가 필요해요
         </PageMainText>
       </PageTextGroup>
 

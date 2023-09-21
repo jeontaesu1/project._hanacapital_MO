@@ -104,10 +104,8 @@ export default {
     <div :class="$style['bg']">
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            내 차만 있다면<br />
-            특별한도와 금리혜택까지
-          </strong>
+          내 차만 있다면<br />
+          특별한도와 금리혜택까지
         </PageMainText>
       </PageTextGroup>
 

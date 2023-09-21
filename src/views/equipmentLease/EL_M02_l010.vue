@@ -58,10 +58,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            물건점검이<br />
-            완료되었습니다
-          </strong>
+          물건점검이<br />
+          완료되었습니다
         </PageMainText>
         <PageSubText>하나캐피탈을 이용해 주셔서 감사합니다.</PageSubText>
       </PageTextGroup>

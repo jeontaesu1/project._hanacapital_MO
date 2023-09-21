@@ -74,10 +74,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            변경하실 연락처 정보를<br />
-            입력하세요
-          </strong>
+          변경하실 연락처 정보를<br />
+          입력하세요
         </PageMainText>
       </PageTextGroup>
 

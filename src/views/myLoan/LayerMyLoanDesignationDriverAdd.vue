@@ -93,10 +93,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            지정운전자의<br />
-            정보를 입력해 주세요
-          </strong>
+          지정운전자의<br />
+          정보를 입력해 주세요
         </PageMainText>
         <PageSubText>
           선택하신 계약상품의 보험 조건을 확인 후<br />

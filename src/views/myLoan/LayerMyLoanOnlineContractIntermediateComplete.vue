@@ -61,10 +61,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            온라인약정이<br />
-            완료되었습니다
-          </strong>
+          온라인약정이<br />
+          완료되었습니다
         </PageMainText>
         <PageSubText>
           약정이 완료되었습니다.<br />

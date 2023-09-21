@@ -61,9 +61,7 @@ export default {
       </template>
 
       <PageTextGroup>
-        <PageMainText>
-          <strong>청렴·윤리 실천 서약서(계약업체용)</strong>
-        </PageMainText>
+        <PageMainText>청렴·윤리 실천 서약서(계약업체용)</PageMainText>
         <PageSubText>
           당사는 윤리를 바탕으로 공정하고 투명한 기업경영이 경쟁력 향상의
           관건임을 깊이 인식하며, 귀 하나캐피탈 주식회사(이하 ‘캐피탈’)의

@@ -101,10 +101,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            한도 조회를 위해<br />
-            신청정보를 입력해 주세요
-          </strong>
+          한도 조회를 위해<br />
+          신청정보를 입력해 주세요
         </PageMainText>
       </PageTextGroup>
 

@@ -46,11 +46,9 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        <strong>
-          모두의 기쁨 그 하나를 위하여<br />
-          하나캐피탈은<br />
-          오늘도 한걸음 더 뛰겠습니다
-        </strong>
+        모두의 기쁨 그 하나를 위하여<br />
+        하나캐피탈은<br />
+        오늘도 한걸음 더 뛰겠습니다
       </PageMainText>
     </PageTextGroup>
 

@@ -51,10 +51,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            김하나님, 요청하신 견적은<br />
-            <span class="color-green">한도심사</span>가 필요합니다
-          </strong>
+          김하나님, 요청하신 견적은<br />
+          <span class="color-green">한도심사</span>가 필요합니다
         </PageMainText>
         <PageSubText>
           전문상담사가 빠른 시일 내에<br />연락 드리겠습니다

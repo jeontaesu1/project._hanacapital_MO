@@ -54,10 +54,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            지금부터<br />
-            온라인약정을 진행합니다
-          </strong>
+          지금부터<br />
+          온라인약정을 진행합니다
         </PageMainText>
       </PageTextGroup>
 

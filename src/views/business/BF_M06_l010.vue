@@ -51,10 +51,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            김하나님, 요청하신 견적으로<br />
-            심사가 완료되었습니다
-          </strong>
+          김하나님, 요청하신 견적으로<br />
+          심사가 완료되었습니다
         </PageMainText>
         <PageSubText>할부 신청 화면으로 이동 할게요.</PageSubText>
       </PageTextGroup>

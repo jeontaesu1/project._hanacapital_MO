@@ -51,10 +51,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            신용정보조회 동의를 위한<br />
-            본인인증을 진행해 주세요
-          </strong>
+          신용정보조회 동의를 위한<br />
+          본인인증을 진행해 주세요
         </PageMainText>
         <PageSubText>신용조회 동의를 완료하시면 심사가 신청됩니다.</PageSubText>
       </PageTextGroup>

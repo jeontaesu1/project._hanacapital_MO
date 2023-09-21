@@ -74,9 +74,7 @@ export default {
   <PageContents :classNames="{ head: $style['head'] }">
     <template v-slot:head>
       <PageTextGroup>
-        <PageMainText>
-          <strong>상품</strong>
-        </PageMainText>
+        <PageMainText>상품</PageMainText>
       </PageTextGroup>
 
       <StickyBar>

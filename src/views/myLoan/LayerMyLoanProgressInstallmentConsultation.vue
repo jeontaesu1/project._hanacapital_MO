@@ -56,10 +56,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            할부상담안내를<br />
-            받아보세요
-          </strong>
+          할부상담안내를<br />
+          받아보세요
         </PageMainText>
         <PageSubText>
           하나캐피탈 할부금융 이용을 위하여 사전 상담을<br />

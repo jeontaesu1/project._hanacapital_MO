@@ -99,37 +99,29 @@ export default {
       <PageTextGroup>
         <!-- Case : 연장 -->
         <PageMainText>
-          <strong>
-            만기후 연장(재렌트) 신청이<br />
-            완료되었습니다
-          </strong>
+          만기후 연장(재렌트) 신청이<br />
+          완료되었습니다
         </PageMainText>
         <!-- // Case : 연장 -->
 
         <!-- Case : 직접이전 -->
         <PageMainText>
-          <strong>
-            만기후 구매(직접이전) 신청이<br />
-            완료되었습니다
-          </strong>
+          만기후 구매(직접이전) 신청이<br />
+          완료되었습니다
         </PageMainText>
         <!-- // Case : 직접이전 -->
 
         <!-- Case : 이전대행 -->
         <PageMainText>
-          <strong>
-            만기후 구매(이전대행) 신청이<br />
-            완료되었습니다
-          </strong>
+          만기후 구매(이전대행) 신청이<br />
+          완료되었습니다
         </PageMainText>
         <!-- // Case : 이전대행 -->
 
         <!-- Case : 반환 -->
         <PageMainText>
-          <strong>
-            만기후 반환 신청이<br />
-            완료되었습니다
-          </strong>
+          만기후 반환 신청이<br />
+          완료되었습니다
         </PageMainText>
         <!-- // Case : 반환 -->
       </PageTextGroup>

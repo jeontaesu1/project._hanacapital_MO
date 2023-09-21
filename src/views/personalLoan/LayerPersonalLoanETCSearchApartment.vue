@@ -54,10 +54,8 @@ export default {
       <!-- Case : 검색 후 미노출 -->
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            아파트를<br />
-            검색해 주세요
-          </strong>
+          아파트를<br />
+          검색해 주세요
         </PageMainText>
         <PageSubText>
           본인 소유 또는 배우자 공동 소유만<br />

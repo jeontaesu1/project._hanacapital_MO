@@ -61,10 +61,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            온라인약정이<br />
-            완료되었습니다
-          </strong>
+          온라인약정이<br />
+          완료되었습니다
         </PageMainText>
         <PageSubText>
           할부계약 주요 사항 안내 및 물건대금<br />

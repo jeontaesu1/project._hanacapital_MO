@@ -76,10 +76,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            입금 예약으로<br />
-            중도상환 신청을 하시겠습니까?
-          </strong>
+          입금 예약으로<br />
+          중도상환 신청을 하시겠습니까?
         </PageMainText>
       </PageTextGroup>
 

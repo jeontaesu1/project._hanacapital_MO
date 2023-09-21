@@ -67,10 +67,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            빠르고 간편하게 이용하는<br />
-            직장인 전용 신용대출
-          </strong>
+          빠르고 간편하게 이용하는<br />
+          직장인 전용 신용대출
         </PageMainText>
       </PageTextGroup>
 

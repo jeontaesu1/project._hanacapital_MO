@@ -96,10 +96,8 @@ export default {
       <UiTabPanel name="signInTab001">
         <PageTextGroup>
           <PageMainText>
-            <strong>
-              회원 서비스 이용을 위해<br />
-              로그인 해주세요
-            </strong>
+            회원 서비스 이용을 위해<br />
+            로그인 해주세요
           </PageMainText>
         </PageTextGroup>
 
@@ -161,10 +159,8 @@ export default {
       <UiTabPanel name="signInTab002">
         <PageTextGroup>
           <PageMainText>
-            <strong>
-              개인회원은 공인인증서<br />
-              등록 후 이용가능합니다
-            </strong>
+            개인회원은 공인인증서<br />
+            등록 후 이용가능합니다
           </PageMainText>
         </PageTextGroup>
 

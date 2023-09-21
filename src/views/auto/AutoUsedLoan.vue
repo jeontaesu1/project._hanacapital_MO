@@ -102,10 +102,8 @@ export default {
     <div :class="$style['bg']">
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            스마트한<br />
-            중고차 구입자금 대출
-          </strong>
+          스마트한<br />
+          중고차 구입자금 대출
         </PageMainText>
       </PageTextGroup>
 

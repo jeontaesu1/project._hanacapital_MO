@@ -52,10 +52,8 @@ export default {
           wrap: 'align-center row-margin-contents',
         }"
       >
-        <strong>
-          간편비밀번호를<br />
-          입력해 주세요
-        </strong>
+        간편비밀번호를<br />
+        입력해 주세요
       </PageMainText>
 
       <FormInvalid :error="state.error">

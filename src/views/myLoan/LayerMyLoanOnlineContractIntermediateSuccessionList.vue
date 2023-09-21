@@ -68,19 +68,15 @@ export default {
       <PageTextGroup>
         <!-- Case : 대상건이 있는 경우 -->
         <PageMainText>
-          <strong>
-            아현 푸르지오 클라시티 V1에<br />
-            분양권 승계 진행건입니다
-          </strong>
+          아현 푸르지오 클라시티 V1에<br />
+          분양권 승계 진행건입니다
         </PageMainText>
         <!-- // Case : 대상건이 있는 경우 -->
 
         <!-- Case : 대상건이 없는 경우 -->
         <PageMainText>
-          <strong>
-            승계 가능한<br />
-            대상건이 없습니다
-          </strong>
+          승계 가능한<br />
+          대상건이 없습니다
         </PageMainText>
         <!-- // Case : 대상건이 없는 경우 -->
 

@@ -96,19 +96,15 @@ export default {
       <PageTextGroup>
         <!-- Case : 기본 -->
         <PageMainText>
-          <strong>
-            자동이체 정보를<br />
-            입력해 주세요
-          </strong>
+          자동이체 정보를<br />
+          입력해 주세요
         </PageMainText>
         <!-- // Case : 기본 -->
 
         <!-- Case : 제휴사 중고차 약정일 경우 문구 노출 -->
         <PageMainText>
-          <strong>
-            대출금 지급 및 자동이체<br />
-            계좌(본인계좌)를 입력해 주세요.
-          </strong>
+          대출금 지급 및 자동이체<br />
+          계좌(본인계좌)를 입력해 주세요.
         </PageMainText>
         <!-- // Case : 제휴사 중고차 약정일 경우 문구 노출 -->
       </PageTextGroup>

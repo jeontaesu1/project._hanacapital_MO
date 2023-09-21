@@ -67,9 +67,7 @@ export default {
       </template>
 
       <PageTextGroup>
-        <PageMainText>
-          <strong>하나캐피탈㈜ 귀중</strong>
-        </PageMainText>
+        <PageMainText>하나캐피탈㈜ 귀중</PageMainText>
 
         <!-- Case : 렌트 / 렌트 승계 -->
         <PageSubText>

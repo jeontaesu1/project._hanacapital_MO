@@ -88,10 +88,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            소득정보를<br />
-            입력해 주세요
-          </strong>
+          소득정보를<br />
+          입력해 주세요
         </PageMainText>
         <PageSubText>
           실제 정보와 상이할 경우 한도 및 금리가<br />

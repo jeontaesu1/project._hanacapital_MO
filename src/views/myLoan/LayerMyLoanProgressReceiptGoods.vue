@@ -67,10 +67,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            하나캐피탈 <span class="color-green">물품수령확인</span>을 위해<br />
-            이름을 입력해 주세요
-          </strong>
+          하나캐피탈 <span class="color-green">물품수령확인</span>을 위해<br />
+          이름을 입력해 주세요
         </PageMainText>
       </PageTextGroup>
 

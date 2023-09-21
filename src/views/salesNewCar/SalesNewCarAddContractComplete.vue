@@ -72,10 +72,8 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        <strong>
-          계약등록 요청이<br />
-          완료되었습니다
-        </strong>
+        계약등록 요청이<br />
+        완료되었습니다
       </PageMainText>
       <PageSubText>
         지점에서 계약확정 후 온라인약정 진행 가능합니다.<br />

@@ -74,10 +74,8 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        <strong>
-          바로 출고 가능한<br />
-          렌터카 견적을 확인해보세요!
-        </strong>
+        바로 출고 가능한<br />
+        렌터카 견적을 확인해보세요!
       </PageMainText>
     </PageTextGroup>
 

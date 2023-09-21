@@ -58,10 +58,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            김하나님의 물품수령확인이<br />
-            완료되었습니다
-          </strong>
+          김하나님의 물품수령확인이<br />
+          완료되었습니다
         </PageMainText>
         <PageSubText>
           기타 문의사항은 1800-1110으로 문의바랍니다.<br />

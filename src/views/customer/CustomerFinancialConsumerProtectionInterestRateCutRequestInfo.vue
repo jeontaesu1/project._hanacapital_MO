@@ -43,9 +43,7 @@ export default {
 <template>
   <PageContents>
     <PageTextGroup>
-      <PageMainText>
-        <strong>금리인하 요구권이란?</strong>
-      </PageMainText>
+      <PageMainText>금리인하 요구권이란?</PageMainText>
       <PageSubText>
         대출실행 이후 손님의 신용상태가 개선된 경우 금융회사에 대출금리 인하를
         요구할 수 있는 제도를 뜻합니다. 단, 당사평가 경과에 따라 금리인하가 되지

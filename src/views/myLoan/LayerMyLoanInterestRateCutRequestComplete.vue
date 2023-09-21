@@ -51,10 +51,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            고객님의 금리인하요구권신청이<br />
-            완료되었습니다
-          </strong>
+          고객님의 금리인하요구권신청이<br />
+          완료되었습니다
         </PageMainText>
         <PageSubText
           >담당부서에서 금리인하상담으로 연락드리겠습니다. 감사합니다.<br />

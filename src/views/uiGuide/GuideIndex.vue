@@ -706,6 +706,10 @@ const datas = () => [
             date: '2023.09.05',
             text: '설계서에 맞춰 소스 전면 수정',
           },
+          {
+            date: '2023.09.21',
+            text: '타이틀 텍스트 굵기 수정',
+          },
         ],
       },
       {
@@ -717,7 +721,12 @@ const datas = () => [
         path: '/main/benefit',
         status: 'end',
         create: '2023.05.19',
-        log: [],
+        log: [
+          {
+            date: '2023.09.21',
+            text: '타이틀 텍스트 굵기 수정',
+          },
+        ],
       },
       {
         depth2: 'APP',
@@ -809,6 +818,10 @@ const datas = () => [
           {
             date: '2023.09.15',
             text: '검색 레이어 연결',
+          },
+          {
+            date: '2023.09.21',
+            text: '타이틀 텍스트 굵기 수정',
           },
         ],
       },
@@ -5576,7 +5589,7 @@ const datas = () => [
           },
           {
             date: '2023.09.21',
-            text: '타이틀 텍스트 굵기 수정\n- My_M03_l031\n- My_M03_l020\n- My_M03_l006\n- My_M03_l017\n- My_M03_l005\n- My_M03_l023_신용대출\n- My_M03_l023_중도금대출\n- My_M03_l023_일반할부금융\n- My_M03_l023_자동송금대상\n- My_M03_l023_약정실패 신용대출\n- My_M03_l023_약정실패 중도금대출\n- My_M03_l023_약정실패 일반할부금\n- My_M03_l023_약정실패 오류\n- My_M03_l022\n- MY_M03_l022le1\n- MY_M03_l022pa1\n- MY_M03_l022pa2\n- My_M03_l016\n- My_M03_l200\n- My_M03_l018\n- My_M03_l021\n- My_M03_l019\n- My_M03_l013\n- My_M03_l004\n- My_M03_l003\n- My_M03_l002\n- My_M03_l024\n- My_M03_l025\n- My_M03_l026\n- MY_M03_l026a\n- AF_M98_l005',
+            text: '타이틀 텍스트 굵기 수정\n- My_M03_l031\n- My_M03_l020\n- My_M03_l006\n- My_M03_l017\n- My_M03_l005\n- My_M03_l023_신용대출\n- My_M03_l023_중도금대출\n- My_M03_l023_일반할부금융\n- My_M03_l023_자동송금대상\n- My_M03_l023_약정실패 신용대출\n- My_M03_l023_약정실패 중도금대출\n- My_M03_l023_약정실패 일반할부금\n- My_M03_l023_약정실패 오류\n- My_M03_l022\n- MY_M03_l022le1\n- MY_M03_l022pa1\n- MY_M03_l022pa2\n- My_M03_l016\n- My_M03_l200\n- My_M03_l018\n- My_M03_l021\n- My_M03_l019\n- My_M03_l013\n- My_M03_l004\n- My_M03_l003\n- My_M03_l002\n- My_M03_l024\n- My_M03_l025\n- My_M03_l026\n- MY_M03_l026a\n- AF_M98_l005\n- My_M03_l033',
           },
         ],
       },
@@ -6659,7 +6672,7 @@ const datas = () => [
         log: [
           {
             date: '2023.09.21',
-            text: '타이틀 텍스트 굵기 수정\n- MI_M01_l016',
+            text: '타이틀 텍스트 굵기 수정\n- MI_M01_l016\n- MI_M01_l017',
           },
         ],
       },
@@ -6703,7 +6716,7 @@ const datas = () => [
           },
           {
             date: '2023.09.21',
-            text: '타이틀 텍스트 굵기 수정\n- MI_M01_l018',
+            text: '타이틀 텍스트 굵기 수정\n- MI_M01_l018\n- MI_M01_l020',
           },
         ],
       },
@@ -6890,7 +6903,12 @@ const datas = () => [
         path: '/company/human-rights-declaration',
         status: 'end',
         create: '2023.05.16',
-        log: [],
+        log: [
+          {
+            date: '2023.09.21',
+            text: '타이틀 텍스트 굵기 수정',
+          },
+        ],
       },
       {
         depth2: '윤리경영',
@@ -6901,7 +6919,12 @@ const datas = () => [
         path: '/company/human-rights-declaration-structure',
         status: 'end',
         create: '2023.05.12',
-        log: [],
+        log: [
+          {
+            date: '2023.09.21',
+            text: '타이틀 텍스트 굵기 수정',
+          },
+        ],
       },
       {
         depth2: '채용정보',

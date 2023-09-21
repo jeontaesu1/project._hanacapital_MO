@@ -58,10 +58,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            일시적인 오류로 한도조회가<br />
-            정상적으로 완료되지 않았습니다
-          </strong>
+          일시적인 오류로 한도조회가<br />
+          정상적으로 완료되지 않았습니다
         </PageMainText>
         <PageSubText>
           지속적인 문제 발생 시, <br />

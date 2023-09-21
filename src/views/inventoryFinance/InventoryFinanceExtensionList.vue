@@ -116,11 +116,9 @@ export default {
 
     <PageTextGroup>
       <PageMainText>
-        <strong>
-          재고금융 만기연장건에 대한<br />
-          세부내역 확인 후 만기연장을<br />
-          신청해 주세요
-        </strong>
+        재고금융 만기연장건에 대한<br />
+        세부내역 확인 후 만기연장을<br />
+        신청해 주세요
       </PageMainText>
       <PageSubText :classNames="{ wrap: 'font-weight-medium color-green' }"
         >주식회사알차이노베이션</PageSubText

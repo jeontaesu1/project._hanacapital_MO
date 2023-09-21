@@ -85,10 +85,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            본인확인을 위해<br />
-            비밀번호를 입력해 주세요
-          </strong>
+          본인확인을 위해<br />
+          비밀번호를 입력해 주세요
         </PageMainText>
       </PageTextGroup>
 

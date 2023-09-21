@@ -59,10 +59,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            신분증 정보를<br />
-            입력해 주세요
-          </strong>
+          신분증 정보를<br />
+          입력해 주세요
         </PageMainText>
         <PageSubText>주민등록증 또는 운전면허증을 준비해 주세요.</PageSubText>
       </PageTextGroup>

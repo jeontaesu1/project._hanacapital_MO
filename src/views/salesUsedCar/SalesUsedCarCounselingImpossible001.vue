@@ -70,10 +70,8 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        <strong>
-          상담이<br />
-          불가능한 고객입니다
-        </strong>
+        상담이<br />
+        불가능한 고객입니다
       </PageMainText>
     </PageTextGroup>
 

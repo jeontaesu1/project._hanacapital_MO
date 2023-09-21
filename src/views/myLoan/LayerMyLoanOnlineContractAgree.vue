@@ -77,10 +77,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            온라인약정 약관에<br />
-            동의해 주세요
-          </strong>
+          온라인약정 약관에<br />
+          동의해 주세요
         </PageMainText>
       </PageTextGroup>
 

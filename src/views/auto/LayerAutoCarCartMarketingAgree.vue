@@ -57,10 +57,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            관심차량<br />
-            실시간 알림서비스!
-          </strong>
+          관심차량<br />
+          실시간 알림서비스!
         </PageMainText>
         <PageSubText>
           원하는 차량 매물을 아직도 기다리세요?<br />

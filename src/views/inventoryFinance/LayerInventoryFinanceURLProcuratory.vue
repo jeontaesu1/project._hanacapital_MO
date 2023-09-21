@@ -65,9 +65,7 @@ export default {
       </template>
 
       <PageTextGroup>
-        <PageMainText>
-          <strong>재고금융 건별 대출 관련 위임장</strong>
-        </PageMainText>
+        <PageMainText>재고금융 건별 대출 관련 위임장</PageMainText>
         <PageSubText>
           상호(이하 “위임인”이라 한다)는(은) 귀사에서 제공하는 중고차 구입 자금
           대출을(이하 『중고차재고금융』이라고 함) 이용하기 위하여 2023년 05월

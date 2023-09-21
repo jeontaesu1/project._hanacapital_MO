@@ -121,10 +121,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            법인 확인을 위해<br />
-            {{ focusName }} 입력해 주세요
-          </strong>
+          법인 확인을 위해<br />
+          {{ focusName }} 입력해 주세요
         </PageMainText>
       </PageTextGroup>
 

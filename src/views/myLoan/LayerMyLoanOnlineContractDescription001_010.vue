@@ -52,10 +52,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            홈페이지에서<br />
-            언제든 확인해보세요
-          </strong>
+          홈페이지에서<br />
+          언제든 확인해보세요
         </PageMainText>
       </PageTextGroup>
 

@@ -124,10 +124,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            차량 인도 정보를<br />
-            입력해 주세요
-          </strong>
+          차량 인도 정보를<br />
+          입력해 주세요
         </PageMainText>
         <PageSubText>하나캐피탈 탁송을 신청합니다.</PageSubText>
       </PageTextGroup>

@@ -104,10 +104,8 @@ export default {
     <div :class="$style['bg']">
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            로켓출고!<br />
-            하나캐피탈 다이렉트 렌터카
-          </strong>
+          로켓출고!<br />
+          하나캐피탈 다이렉트 렌터카
         </PageMainText>
       </PageTextGroup>
 

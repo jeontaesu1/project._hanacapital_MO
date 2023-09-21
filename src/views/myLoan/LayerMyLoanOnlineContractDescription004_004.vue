@@ -54,10 +54,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            자동차 등을 담보로 제공한다는 건<br />
-            어떤 의미인가요?
-          </strong>
+          자동차 등을 담보로 제공한다는 건<br />
+          어떤 의미인가요?
         </PageMainText>
       </PageTextGroup>
 

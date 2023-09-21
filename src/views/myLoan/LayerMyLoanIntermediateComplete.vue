@@ -66,10 +66,8 @@ export default {
       <PageTextGroup>
         <!-- Case : 가상계좌 선택 시 노출 -->
         <PageMainText>
-          <strong>
-            중도상환신청 접수가<br />
-            완료되었습니다
-          </strong>
+          중도상환신청 접수가<br />
+          완료되었습니다
         </PageMainText>
 
         <PageSubText
@@ -81,10 +79,8 @@ export default {
 
         <!-- Case : 즉시출금 선택 시 노출 -->
         <PageMainText>
-          <strong>
-            중도상환 처리가<br />
-            완료되었습니다
-          </strong>
+          중도상환 처리가<br />
+          완료되었습니다
         </PageMainText>
 
         <PageSubText>하나캐피탈을 이용해주셔서 감사합니다.</PageSubText>

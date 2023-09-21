@@ -71,10 +71,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            공동인증서로 소득정보를<br />
-            자동 제출할 수 있어요
-          </strong>
+          공동인증서로 소득정보를<br />
+          자동 제출할 수 있어요
         </PageMainText>
         <PageSubText>
           건강보험공단 또는 국민연금공단,<br />

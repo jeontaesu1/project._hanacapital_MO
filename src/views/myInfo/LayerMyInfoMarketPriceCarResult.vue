@@ -90,9 +90,7 @@ export default {
       </template>
 
       <PageTextGroup>
-        <PageMainText>
-          <strong>올 뉴 아반떼</strong>
-        </PageMainText>
+        <PageMainText>올 뉴 아반떼</PageMainText>
       </PageTextGroup>
 
       <div>

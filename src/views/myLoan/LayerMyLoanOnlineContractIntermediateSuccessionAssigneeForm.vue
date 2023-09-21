@@ -74,10 +74,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            양수인 정보를<br />
-            확인해 주세요
-          </strong>
+          양수인 정보를<br />
+          확인해 주세요
         </PageMainText>
       </PageTextGroup>
 

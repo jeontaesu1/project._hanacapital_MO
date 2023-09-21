@@ -66,10 +66,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            차량번호를 입력하고<br />
-            시세를 확인해 보세요
-          </strong>
+          차량번호를 입력하고<br />
+          시세를 확인해 보세요
         </PageMainText>
       </PageTextGroup>
 

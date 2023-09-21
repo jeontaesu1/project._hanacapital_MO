@@ -90,11 +90,9 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            <span class="color-green font-weight-medium">견적 조회</span>를
-            위한<br />
-            정보를 입력해주세요.
-          </strong>
+          <span class="color-green font-weight-medium">견적 조회</span>를
+          위한<br />
+          정보를 입력해주세요.
         </PageMainText>
       </PageTextGroup>
 

@@ -65,10 +65,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            선택한 차량과 입력한 차량번호의<br />
-            차량이 맞는지 확인해 주세요
-          </strong>
+          선택한 차량과 입력한 차량번호의<br />
+          차량이 맞는지 확인해 주세요
         </PageMainText>
       </PageTextGroup>
 

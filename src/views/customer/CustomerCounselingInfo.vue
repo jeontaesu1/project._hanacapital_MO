@@ -50,10 +50,8 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        <strong>
-          고객상담 이용을 위해<br />
-          본인인증을 진행해 주세요
-        </strong>
+        고객상담 이용을 위해<br />
+        본인인증을 진행해 주세요
       </PageMainText>
     </PageTextGroup>
 

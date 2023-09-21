@@ -49,10 +49,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            김하나님, 요청하신 견적으로<br />
-            심사가 완료되었습니다
-          </strong>
+          김하나님, 요청하신 견적으로<br />
+          심사가 완료되었습니다
         </PageMainText>
       </PageTextGroup>
 

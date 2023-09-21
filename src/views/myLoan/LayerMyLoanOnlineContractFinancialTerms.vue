@@ -75,10 +75,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            금융조건을<br />
-            입력해 주세요
-          </strong>
+          금융조건을<br />
+          입력해 주세요
         </PageMainText>
       </PageTextGroup>
 

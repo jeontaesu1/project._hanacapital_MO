@@ -76,10 +76,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            중도금 승계 상세정보를<br />
-            확인해 주세요
-          </strong>
+          중도금 승계 상세정보를<br />
+          확인해 주세요
         </PageMainText>
         <PageSubText>
           신규로 체결하는 절차와 동일하게 금융회사가<br />

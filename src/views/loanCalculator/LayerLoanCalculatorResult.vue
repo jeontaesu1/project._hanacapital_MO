@@ -63,10 +63,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            계산결과를<br />
-            알려드릴게요
-          </strong>
+          계산결과를<br />
+          알려드릴게요
         </PageMainText>
         <PageSubText>
           대출금액과 기간으로 계산한 결과예요.<br />

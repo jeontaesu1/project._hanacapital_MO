@@ -185,10 +185,8 @@ export default {
         <div>
           <PageTextGroup>
             <PageMainText>
-              <strong>
-                상세주소를<br />
-                입력해 주세요
-              </strong>
+              상세주소를<br />
+              입력해 주세요
             </PageMainText>
           </PageTextGroup>
 
@@ -246,10 +244,8 @@ export default {
         <div class="contents-wrap">
           <PageTextGroup>
             <PageMainText>
-              <strong>
-                아래 해당하는 주소를<br />
-                선택해 주세요
-              </strong>
+              아래 해당하는 주소를<br />
+              선택해 주세요
             </PageMainText>
           </PageTextGroup>
           <ul :class="[$style['address-list'], $style['address-list--select']]">

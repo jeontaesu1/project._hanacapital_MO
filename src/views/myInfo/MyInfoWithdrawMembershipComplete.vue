@@ -52,10 +52,8 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        <strong>
-          하나캐피탈 멤버십 회원 탈퇴가<br />
-          완료되었습니다
-        </strong>
+        하나캐피탈 멤버십 회원 탈퇴가<br />
+        완료되었습니다
       </PageMainText>
       <PageSubText>
         그동안 하나캐피탈 멤버십을<br />

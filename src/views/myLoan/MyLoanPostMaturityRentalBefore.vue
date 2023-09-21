@@ -99,10 +99,8 @@ export default {
     <PageContents>
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            렌터카 계약 만기 1개월 전까지<br />
-            만기후처리를 반드시 선택해 주세요
-          </strong>
+          렌터카 계약 만기 1개월 전까지<br />
+          만기후처리를 반드시 선택해 주세요
         </PageMainText>
       </PageTextGroup>
 

@@ -72,10 +72,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            자동차정보를<br />
-            입력해 주세요
-          </strong>
+          자동차정보를<br />
+          입력해 주세요
         </PageMainText>
       </PageTextGroup>
 

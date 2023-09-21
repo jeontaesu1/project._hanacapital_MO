@@ -52,10 +52,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            청약철회권<br />
-            대상 상품이 아니에요
-          </strong>
+          청약철회권<br />
+          대상 상품이 아니에요
         </PageMainText>
       </PageTextGroup>
 

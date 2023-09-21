@@ -62,10 +62,8 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        <strong>
-          언제 어디서나<br />
-          <span class="color-green">하나머니</span>로 편리하게
-        </strong>
+        언제 어디서나<br />
+        <span class="color-green">하나머니</span>로 편리하게
       </PageMainText>
     </PageTextGroup>
 

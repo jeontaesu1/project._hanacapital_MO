@@ -61,7 +61,7 @@ export default {
       </template>
 
       <PageTextGroup>
-        <PageMainText><strong>김하나 귀중</strong></PageMainText>
+        <PageMainText>김하나 귀중</PageMainText>
       </PageTextGroup>
 
       <BasicBox>

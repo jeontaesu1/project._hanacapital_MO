@@ -75,10 +75,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            구매 예상 비용을<br />
-            확인해 주세요
-          </strong>
+          구매 예상 비용을<br />
+          확인해 주세요
         </PageMainText>
       </PageTextGroup>
 

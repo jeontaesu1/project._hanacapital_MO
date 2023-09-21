@@ -104,11 +104,9 @@ export default {
     <div :class="$style['bg']">
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            하나캐피탈 손님을 위한,<br />
-            중도상환수수료 없는<br />
-            쉽고 빠른 신용대출
-          </strong>
+          하나캐피탈 손님을 위한,<br />
+          중도상환수수료 없는<br />
+          쉽고 빠른 신용대출
         </PageMainText>
       </PageTextGroup>
 

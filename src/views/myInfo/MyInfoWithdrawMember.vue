@@ -52,10 +52,8 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        <strong>
-          회원탈퇴를<br />
-          하시겠어요?
-        </strong>
+        회원탈퇴를<br />
+        하시겠어요?
       </PageMainText>
       <PageSubText>본인인증이 완료되면 회원탈퇴가 완료됩니다.</PageSubText>
     </PageTextGroup>

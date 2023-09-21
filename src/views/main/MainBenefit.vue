@@ -58,7 +58,7 @@ export default {
       <!-- Case : 검색시 비노출 -->
       <div>
         <PageTextGroup>
-          <PageMainText><strong>혜택</strong></PageMainText>
+          <PageMainText>혜택</PageMainText>
         </PageTextGroup>
 
         <StickyBar>

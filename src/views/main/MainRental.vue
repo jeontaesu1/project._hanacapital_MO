@@ -47,10 +47,8 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        <strong>
-          렌탈 서비스를<br />
-          이용해보세요
-        </strong>
+        렌탈 서비스를<br />
+        이용해보세요
       </PageMainText>
     </PageTextGroup>
 

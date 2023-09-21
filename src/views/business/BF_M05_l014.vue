@@ -48,10 +48,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            일반리스 상품을<br />
-            선택해 주세요
-          </strong>
+          일반리스 상품을<br />
+          선택해 주세요
         </PageMainText>
       </PageTextGroup>
 

@@ -101,10 +101,8 @@ export default {
     <PageContents>
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            오토리스 계약 만기 1개월 전까지<br />
-            만기후처리를 반드시 선택해 주세요
-          </strong>
+          오토리스 계약 만기 1개월 전까지<br />
+          만기후처리를 반드시 선택해 주세요
         </PageMainText>
       </PageTextGroup>
 

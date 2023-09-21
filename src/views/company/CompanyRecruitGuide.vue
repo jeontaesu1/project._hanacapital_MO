@@ -77,11 +77,9 @@ export default {
       <UiTabPanel name="companyRecruitGuideTab001">
         <PageTextGroup :classNames="{ wrap: 'row-margin-container-medium' }">
           <PageMainText>
-            <strong>
-              <span class="color-green">POWER on Integrity</span> 라는
-              핵심가치를 체득, 실천함으로써 기업 문화를 계승, 발전시키며
-              히나캐피탈의 미래를 이끌어갈 인재
-            </strong>
+            <span class="color-green">POWER on Integrity</span> 라는 핵심가치를
+            체득, 실천함으로써 기업 문화를 계승, 발전시키며 히나캐피탈의 미래를
+            이끌어갈 인재
           </PageMainText>
           <PageSubText>
             구체적으로는 Inergrity와 5가지 핵심가치를 바탕으로 성과 리더십, 조직

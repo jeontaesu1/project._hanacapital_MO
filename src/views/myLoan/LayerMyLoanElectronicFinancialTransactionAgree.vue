@@ -57,10 +57,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            전자금융거래 약관에<br />
-            동의해 주세요
-          </strong>
+          전자금융거래 약관에<br />
+          동의해 주세요
         </PageMainText>
         <PageSubText>
           내대출 서비스를 이용하기 위해서는 전자금융거래법 제 2조 제 1호에

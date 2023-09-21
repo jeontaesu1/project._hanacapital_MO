@@ -102,10 +102,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            연장 조건을<br />
-            선택하세요
-          </strong>
+          연장 조건을<br />
+          선택하세요
         </PageMainText>
       </PageTextGroup>
 

@@ -52,10 +52,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            연체할 경우<br />
-            어떤 불이익이 발생하나요?
-          </strong>
+          연체할 경우<br />
+          어떤 불이익이 발생하나요?
         </PageMainText>
       </PageTextGroup>
 

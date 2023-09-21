@@ -93,10 +93,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            중고차를<br />
-            검색해 주세요
-          </strong>
+          중고차를<br />
+          검색해 주세요
         </PageMainText>
       </PageTextGroup>
 

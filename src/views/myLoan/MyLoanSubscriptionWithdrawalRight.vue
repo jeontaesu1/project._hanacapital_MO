@@ -63,10 +63,8 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        <strong>
-          청약철회권 신청<br />
-          가능한 상품은 총 <span class="color-green">0</span>건
-        </strong>
+        청약철회권 신청<br />
+        가능한 상품은 총 <span class="color-green">0</span>건
       </PageMainText>
       <PageSubText>
         금융소비자 보호를 위해 대출 계약 후,<br />

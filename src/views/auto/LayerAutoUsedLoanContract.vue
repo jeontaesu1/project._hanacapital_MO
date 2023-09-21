@@ -123,10 +123,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            약정신청 내용을<br />
-            확인해 주세요
-          </strong>
+          약정신청 내용을<br />
+          확인해 주세요
         </PageMainText>
       </PageTextGroup>
 

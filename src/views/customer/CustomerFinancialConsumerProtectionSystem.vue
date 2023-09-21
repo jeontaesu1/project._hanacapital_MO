@@ -43,9 +43,7 @@ export default {
 <template>
   <PageContents>
     <PageTextGroup>
-      <PageMainText>
-        <strong>금융소비자보호조직</strong>
-      </PageMainText>
+      <PageMainText>금융소비자보호조직</PageMainText>
       <PageSubText>
         하나캐피탈은 상품개발 및 판매, 사후관리에 대한 내부준칙을 마련하여
         소비자보호 체계를 구축하 여 소비자의 관점에서 제도를 운영하고 있습니다.

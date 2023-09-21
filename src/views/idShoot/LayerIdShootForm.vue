@@ -92,10 +92,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            신분증 정보를<br />
-            입력해 주세요
-          </strong>
+          신분증 정보를<br />
+          입력해 주세요
         </PageMainText>
       </PageTextGroup>
 

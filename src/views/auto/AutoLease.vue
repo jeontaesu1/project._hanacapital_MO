@@ -108,11 +108,9 @@ export default {
     <div :class="$style['bg']">
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            손님이 원하는 차량을 리스회사가<br />
-            대신 구입하여 이를 일정기간 동안<br />
-            대여해주는 서비스입니다
-          </strong>
+          손님이 원하는 차량을 리스회사가<br />
+          대신 구입하여 이를 일정기간 동안<br />
+          대여해주는 서비스입니다
         </PageMainText>
       </PageTextGroup>
 

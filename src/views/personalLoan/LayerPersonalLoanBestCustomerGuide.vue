@@ -70,10 +70,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            하나캐피탈 우수고객 전용<br />
-            추가(신용)대출 금융서비스 입니다
-          </strong>
+          하나캐피탈 우수고객 전용<br />
+          추가(신용)대출 금융서비스 입니다
         </PageMainText>
       </PageTextGroup>
 

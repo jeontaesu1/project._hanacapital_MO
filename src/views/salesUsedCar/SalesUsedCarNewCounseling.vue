@@ -84,10 +84,8 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        <strong>
-          손님 정보를<br />
-          입력해 주세요
-        </strong>
+        손님 정보를<br />
+        입력해 주세요
       </PageMainText>
     </PageTextGroup>
 

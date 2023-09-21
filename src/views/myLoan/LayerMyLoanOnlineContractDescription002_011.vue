@@ -54,10 +54,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            자료열람을<br />
-            요구할 수 있어요
-          </strong>
+          자료열람을<br />
+          요구할 수 있어요
         </PageMainText>
       </PageTextGroup>
 

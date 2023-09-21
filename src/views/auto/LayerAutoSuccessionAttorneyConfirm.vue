@@ -71,9 +71,7 @@ export default {
       </template>
 
       <PageTextGroup>
-        <PageMainText>
-          <strong>하나캐피탈㈜ 귀중</strong>
-        </PageMainText>
+        <PageMainText>하나캐피탈㈜ 귀중</PageMainText>
         <PageSubText>
           본인은 상기인에게 금번 하나캐피탈㈜와 체결하는 자동차 승계계약과
           관련하여 승계신청과 관련한 일체의 행위를 위임합니다. (승계신청,

@@ -56,10 +56,8 @@ export default {
       </div>
 
       <PageMainText>
-        <strong>
-          매월 업데이트 되는 차량정보로<br />
-          내 차 시세 조회가 가능한 혜택 서비스
-        </strong>
+        매월 업데이트 되는 차량정보로<br />
+        내 차 시세 조회가 가능한 혜택 서비스
       </PageMainText>
     </PageTextGroup>
 

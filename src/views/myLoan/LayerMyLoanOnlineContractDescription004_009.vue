@@ -52,10 +52,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            위법계약을<br />
-            해지할 수 있어요
-          </strong>
+          위법계약을<br />
+          해지할 수 있어요
         </PageMainText>
       </PageTextGroup>
 

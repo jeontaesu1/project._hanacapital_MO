@@ -103,11 +103,9 @@ export default {
       <UiTabPanel name="MyInfoJoinMembershipTab001">
         <PageTextGroup>
           <PageMainText>
-            <strong>
-              ‘교통상해사망/교통상해후유장해보험’<br />
-              서비스를 하나캐피탈 멤버십 회원에게는<br />
-              무료 제공하는 서비스
-            </strong>
+            ‘교통상해사망/교통상해후유장해보험’<br />
+            서비스를 하나캐피탈 멤버십 회원에게는<br />
+            무료 제공하는 서비스
           </PageMainText>
         </PageTextGroup>
 
@@ -308,11 +306,9 @@ export default {
             <RoundStatus theme="secondary">모바일 전용</RoundStatus>
           </div>
           <PageMainText>
-            <strong>
-              하나캐피탈 멤버십 회원이<br />
-              신용대출 상품 이용 시<br />
-              금리 우대를 제공하는 혜택 서비스
-            </strong>
+            하나캐피탈 멤버십 회원이<br />
+            신용대출 상품 이용 시<br />
+            금리 우대를 제공하는 혜택 서비스
           </PageMainText>
         </PageTextGroup>
 
@@ -795,10 +791,8 @@ export default {
       <UiTabPanel name="MyInfoJoinMembershipTab003">
         <PageTextGroup>
           <PageMainText>
-            <strong>
-              하나캐피탈 제휴처 렌탈 시<br />
-              렌탈료 할인을 제공하는 혜택 서비스
-            </strong>
+            하나캐피탈 제휴처 렌탈 시<br />
+            렌탈료 할인을 제공하는 혜택 서비스
           </PageMainText>
         </PageTextGroup>
 
@@ -910,10 +904,8 @@ export default {
             <RoundStatus theme="secondary">모바일 전용</RoundStatus>
           </div>
           <PageMainText>
-            <strong>
-              매주 업데이트되는 부동산 시세 조회를<br />
-              무료로 이용할 수 있는 혜택 서비스
-            </strong>
+            매주 업데이트되는 부동산 시세 조회를<br />
+            무료로 이용할 수 있는 혜택 서비스
           </PageMainText>
         </PageTextGroup>
 
@@ -1023,10 +1015,8 @@ export default {
             <RoundStatus theme="secondary">모바일 전용</RoundStatus>
           </div>
           <PageMainText>
-            <strong>
-              매월 업데이트되는 차량정보로<br />
-              내 차 시세조회가 가능한 혜택 서비스
-            </strong>
+            매월 업데이트되는 차량정보로<br />
+            내 차 시세조회가 가능한 혜택 서비스
           </PageMainText>
         </PageTextGroup>
 

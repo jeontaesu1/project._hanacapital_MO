@@ -61,10 +61,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            하나캐피탈 앱 서비스 이용을 위해<br />
-            접근 권한이 필요합니다
-          </strong>
+          하나캐피탈 앱 서비스 이용을 위해<br />
+          접근 권한이 필요합니다
         </PageMainText>
       </PageTextGroup>
 

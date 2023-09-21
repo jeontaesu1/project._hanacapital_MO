@@ -56,13 +56,11 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        <strong>
-          <span class="color-green font-weight-regular"
-            >주식회사알차이노베이션</span
-          >님<br />
-          2건 중 1건 온라인약정이<br />
-          완료되었습니다
-        </strong>
+        <span class="color-green font-weight-regular"
+          >주식회사알차이노베이션</span
+        >님<br />
+        2건 중 1건 온라인약정이<br />
+        완료되었습니다
       </PageMainText>
       <PageSubText>
         접수하신 내역을 확인하여<br />

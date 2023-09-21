@@ -75,10 +75,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            대출 신청 정보를<br />
-            확인해 주세요
-          </strong>
+          대출 신청 정보를<br />
+          확인해 주세요
         </PageMainText>
       </PageTextGroup>
 

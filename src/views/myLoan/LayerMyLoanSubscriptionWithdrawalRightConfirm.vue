@@ -68,10 +68,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            청약철회 상환금액을 <br />
-            확인해 주세요
-          </strong>
+          청약철회 상환금액을 <br />
+          확인해 주세요
         </PageMainText>
       </PageTextGroup>
 

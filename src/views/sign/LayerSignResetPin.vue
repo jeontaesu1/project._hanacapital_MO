@@ -44,10 +44,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            간편 비밀번호를 초기화합니다<br />
-            새로운 간편비밀번호를 등록해 주세요
-          </strong>
+          간편 비밀번호를 초기화합니다<br />
+          새로운 간편비밀번호를 등록해 주세요
         </PageMainText>
       </PageTextGroup>
 

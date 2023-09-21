@@ -114,10 +114,8 @@ export default {
     <section>
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            김하나님이<br />
-            보유하신 계약은 총 <span class="color-green">5</span>건 입니다
-          </strong>
+          김하나님이<br />
+          보유하신 계약은 총 <span class="color-green">5</span>건 입니다
         </PageMainText>
       </PageTextGroup>
 

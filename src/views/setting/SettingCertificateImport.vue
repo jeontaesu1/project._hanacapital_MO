@@ -72,10 +72,8 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        <strong>
-          PC에 저장된 공동인증서를<br />
-          스마트폰으로 복사합니다
-        </strong>
+        PC에 저장된 공동인증서를<br />
+        스마트폰으로 복사합니다
       </PageMainText>
     </PageTextGroup>
 

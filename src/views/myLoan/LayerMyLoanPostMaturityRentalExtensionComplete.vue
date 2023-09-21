@@ -61,10 +61,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            연장 신청 정보가<br />
-            저장되었습니다
-          </strong>
+          연장 신청 정보가<br />
+          저장되었습니다
         </PageMainText>
         <PageSubText>
           만기 1개월 전부터 신용조회동의 후<br />

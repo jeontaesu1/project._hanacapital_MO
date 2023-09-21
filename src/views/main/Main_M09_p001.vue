@@ -73,10 +73,8 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        <strong>
-          내 차, 저 아파트 얼마일까?<br />
-          시세 알아보기
-        </strong>
+        내 차, 저 아파트 얼마일까?<br />
+        시세 알아보기
       </PageMainText>
     </PageTextGroup>
 

@@ -100,10 +100,8 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        <strong>
-          확인하실 상품을<br />
-          조회해 주세요
-        </strong>
+        확인하실 상품을<br />
+        조회해 주세요
       </PageMainText>
     </PageTextGroup>
 

@@ -76,10 +76,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            리스 승계 상세정보를<br />
-            확인해주세요
-          </strong>
+          리스 승계 상세정보를<br />
+          확인해주세요
         </PageMainText>
         <PageSubText>
           실제 차량을 운행하는 목적으로의 승계만 가능하며 신규로 리스계약을

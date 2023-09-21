@@ -52,10 +52,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            할부금융상품의 기한의 이익이<br />
-            상실되면 어떻게 되나요?
-          </strong>
+          할부금융상품의 기한의 이익이<br />
+          상실되면 어떻게 되나요?
         </PageMainText>
       </PageTextGroup>
 

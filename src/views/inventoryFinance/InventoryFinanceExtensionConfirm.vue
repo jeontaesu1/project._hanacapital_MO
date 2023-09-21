@@ -76,10 +76,8 @@ export default {
 
     <PageTextGroup>
       <PageMainText>
-        <strong>
-          만기연장 처리 후<br />
-          변경된 대출정보를 확인해 주세요
-        </strong>
+        만기연장 처리 후<br />
+        변경된 대출정보를 확인해 주세요
       </PageMainText>
     </PageTextGroup>
 

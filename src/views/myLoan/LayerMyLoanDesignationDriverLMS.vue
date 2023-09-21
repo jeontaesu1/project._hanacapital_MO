@@ -72,10 +72,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            지정운전자 등록 신청 정보를<br />
-            입력해 주세요
-          </strong>
+          지정운전자 등록 신청 정보를<br />
+          입력해 주세요
         </PageMainText>
       </PageTextGroup>
 

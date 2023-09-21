@@ -260,9 +260,7 @@ export default {
       </template>
 
       <PageTextGroup>
-        <PageMainText>
-          <strong>월계동 롯데캐슬루나</strong>
-        </PageMainText>
+        <PageMainText>월계동 롯데캐슬루나</PageMainText>
         <PageSubText>서울특별시 노원구</PageSubText>
       </PageTextGroup>
 

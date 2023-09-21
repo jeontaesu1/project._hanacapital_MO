@@ -52,10 +52,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            오토론을 이용하기 위해서는<br />
-            어떤 비용을 부담해야 하나요?
-          </strong>
+          오토론을 이용하기 위해서는<br />
+          어떤 비용을 부담해야 하나요?
         </PageMainText>
       </PageTextGroup>
 

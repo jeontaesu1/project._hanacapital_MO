@@ -95,10 +95,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            카드번호를<br />
-            입력해 주세요
-          </strong>
+          카드번호를<br />
+          입력해 주세요
         </PageMainText>
       </PageTextGroup>
 

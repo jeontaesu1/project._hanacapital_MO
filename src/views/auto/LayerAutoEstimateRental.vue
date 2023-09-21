@@ -232,19 +232,15 @@ export default {
       <PageTextGroup>
         <!-- Case : 재견적이 아닐 경우 -->
         <PageMainText>
-          <strong>
-            견적조건을<br />
-            선택해 주세요
-          </strong>
+          견적조건을<br />
+          선택해 주세요
         </PageMainText>
         <!--// Case : 재견적이 아닐 경우 -->
 
         <!-- Case : 재견적일 경우 -->
         <PageMainText>
-          <strong>
-            승인 가능한 견적을<br />
-            선택해 주세요 (재견적)
-          </strong>
+          승인 가능한 견적을<br />
+          선택해 주세요 (재견적)
         </PageMainText>
         <!-- //Case : 재견적일 경우 -->
       </PageTextGroup>

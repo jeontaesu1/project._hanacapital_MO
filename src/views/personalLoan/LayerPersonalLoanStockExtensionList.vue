@@ -94,10 +94,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            연장할 계약을<br />
-            선택해 주세요
-          </strong>
+          연장할 계약을<br />
+          선택해 주세요
         </PageMainText>
       </PageTextGroup>
 

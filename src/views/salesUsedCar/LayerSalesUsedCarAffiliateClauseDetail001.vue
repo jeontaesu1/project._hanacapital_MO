@@ -59,9 +59,7 @@ export default {
       </template>
 
       <PageTextGroup>
-        <PageMainText>
-          <strong>자동차 할부금융 업무 협약서</strong>
-        </PageMainText>
+        <PageMainText>자동차 할부금융 업무 협약서</PageMainText>
         <PageSubText>
           <span class="color-green">상호명</span> (이하 ”매도인”이라 함)와
           하나캐피탈 주식회사(이하 “하나”라 함)는 자동차 구매자(이하 “구매자”라

@@ -81,10 +81,8 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        <strong>
-          조회기간을<br />
-          선택해 주세요
-        </strong>
+        조회기간을<br />
+        선택해 주세요
       </PageMainText>
     </PageTextGroup>
 

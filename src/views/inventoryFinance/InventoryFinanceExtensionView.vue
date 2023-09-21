@@ -76,10 +76,8 @@ export default {
 
     <PageTextGroup>
       <PageMainText>
-        <strong>
-          선택한 계약상품의<br />
-          만기연장 내역을 확인해 주세요
-        </strong>
+        선택한 계약상품의<br />
+        만기연장 내역을 확인해 주세요
       </PageMainText>
     </PageTextGroup>
 

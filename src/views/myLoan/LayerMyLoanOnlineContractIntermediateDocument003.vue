@@ -61,7 +61,7 @@ export default {
       </template>
 
       <PageTextGroup>
-        <PageMainText><strong>채권 양도 통지서</strong></PageMainText>
+        <PageMainText>채권 양도 통지서</PageMainText>
       </PageTextGroup>
 
       <BasicBox>

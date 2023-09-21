@@ -43,9 +43,7 @@ export default {
 <template>
   <PageContents>
     <PageTextGroup>
-      <PageMainText>
-        <strong>하나금융그룹 인권선언</strong>
-      </PageMainText>
+      <PageMainText>하나금융그룹 인권선언</PageMainText>
       <PageSubText>
         하나금융그룹은 기업의 사회적 책임을 충실히 이행하고 모든 이해관계자와의
         건강한 성장을 추구하기 위하여 ‘함께 성장하며 행복을 나누는 금융’을

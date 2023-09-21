@@ -75,16 +75,10 @@ export default {
 <template>
   <PageContents>
     <PageTextGroup>
-      <PageMainText
-        :classNames="{
-          wrap: 'font-weight-regular',
-        }"
-      >
-        <strong>
-          <span class="color-green">주식회사알차이노베이션</span>님<br />
-          총 <span class="color-green">2건</span> 차량 재고로<br />
-          총 <span class="color-green">60,000,000원</span> 대출 신청하셨습니다
-        </strong>
+      <PageMainText>
+        <span class="color-green">주식회사알차이노베이션</span>님<br />
+        총 <span class="color-green">2건</span> 차량 재고로<br />
+        총 <span class="color-green">60,000,000원</span> 대출 신청하셨습니다
       </PageMainText>
       <PageSubText>확인 후 약정해 주세요.</PageSubText>
     </PageTextGroup>

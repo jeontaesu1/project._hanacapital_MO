@@ -76,9 +76,7 @@ export default {
       </template>
 
       <PageTextGroup>
-        <PageMainText>
-          <strong>만기안내장</strong>
-        </PageMainText>
+        <PageMainText>만기안내장</PageMainText>
         <PageSubText>
           안녕하세요. 김하나님.<br />
           하나캐피탈을 이용해주신 손님께 깊은 감사를 드립니다.<br />
@@ -299,9 +297,7 @@ export default {
       <BasicHr className="row-margin-container-medium" />
 
       <div>
-        <PageMainText>
-          <strong>만기처리안내</strong>
-        </PageMainText>
+        <PageMainText>만기처리안내</PageMainText>
         <div class="row-margin-contents-group">
           <section class="row-margin-container-medium">
             <div class="row-margin-contents">

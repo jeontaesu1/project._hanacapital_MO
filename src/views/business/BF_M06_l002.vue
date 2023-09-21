@@ -69,10 +69,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            원하시는 회사를<br />
-            선택해 주세요
-          </strong>
+          원하시는 회사를<br />
+          선택해 주세요
         </PageMainText>
       </PageTextGroup>
 

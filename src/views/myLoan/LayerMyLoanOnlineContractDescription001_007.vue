@@ -54,10 +54,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            청약철회를<br />
-            요구할 수 있어요
-          </strong>
+          청약철회를<br />
+          요구할 수 있어요
         </PageMainText>
       </PageTextGroup>
 

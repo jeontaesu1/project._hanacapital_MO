@@ -52,10 +52,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            유사한 금융상품과 구별되는<br />
-            특징은 무엇인가요?
-          </strong>
+          유사한 금융상품과 구별되는<br />
+          특징은 무엇인가요?
         </PageMainText>
       </PageTextGroup>
 

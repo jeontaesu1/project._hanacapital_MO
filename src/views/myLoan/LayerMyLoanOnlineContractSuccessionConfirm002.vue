@@ -73,10 +73,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            승계확약서를<br />
-            확인해 주세요
-          </strong>
+          승계확약서를<br />
+          확인해 주세요
         </PageMainText>
       </PageTextGroup>
 

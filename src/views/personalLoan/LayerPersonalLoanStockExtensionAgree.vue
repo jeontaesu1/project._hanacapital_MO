@@ -56,10 +56,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            계약연장을 위해<br />
-            약관에 동의해 주세요
-          </strong>
+          계약연장을 위해<br />
+          약관에 동의해 주세요
         </PageMainText>
       </PageTextGroup>
 

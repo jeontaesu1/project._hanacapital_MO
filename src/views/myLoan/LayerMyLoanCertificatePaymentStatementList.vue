@@ -87,10 +87,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            발급할 계약을<br />
-            선택하세요
-          </strong>
+          발급할 계약을<br />
+          선택하세요
         </PageMainText>
       </PageTextGroup>
 

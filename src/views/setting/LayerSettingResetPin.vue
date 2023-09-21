@@ -49,10 +49,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            간편비밀번호를<br />
-            (재)등록합니다
-          </strong>
+          간편비밀번호를<br />
+          (재)등록합니다
         </PageMainText>
       </PageTextGroup>
 

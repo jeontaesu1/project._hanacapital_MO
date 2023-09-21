@@ -120,10 +120,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            자동차 옵션을<br />
-            선택해 주세요
-          </strong>
+          자동차 옵션을<br />
+          선택해 주세요
         </PageMainText>
       </PageTextGroup>
 

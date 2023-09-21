@@ -61,10 +61,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            입력한 정보에 따라<br />
-            다양한 한도와 금리를 찾아드려요
-          </strong>
+          입력한 정보에 따라<br />
+          다양한 한도와 금리를 찾아드려요
         </PageMainText>
         <PageSubText>
           많은 정보를 입력할수록 좋은 조건이 제공됩니다.

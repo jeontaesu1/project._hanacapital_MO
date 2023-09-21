@@ -69,10 +69,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            신청할 상품을<br />
-            선택하세요
-          </strong>
+          신청할 상품을<br />
+          선택하세요
         </PageMainText>
       </PageTextGroup>
 

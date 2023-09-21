@@ -51,10 +51,8 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>
-            지금부터 하나캐피탈의 서비스를<br />
-            이용하실 수 있어요
-          </strong>
+          지금부터 하나캐피탈의 서비스를<br />
+          이용하실 수 있어요
         </PageMainText>
       </PageTextGroup>
 

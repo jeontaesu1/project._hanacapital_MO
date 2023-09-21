@@ -56,10 +56,8 @@ export default {
       </div>
 
       <PageMainText>
-        <strong>
-          매월 업데이트 되는 부동산 시세 조회를<br />
-          무료로 이용할 수 있는 혜택 서비스
-        </strong>
+        매월 업데이트 되는 부동산 시세 조회를<br />
+        무료로 이용할 수 있는 혜택 서비스
       </PageMainText>
     </PageTextGroup>
 

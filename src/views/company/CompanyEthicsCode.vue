@@ -44,10 +44,8 @@ export default {
   <PageContents>
     <PageTextGroup :classNames="{ wrap: 'row-margin-container-medium' }">
       <PageMainText>
-        <strong>
-          이 모든 질문에<br />
-          “예”라고 답할 수 있으면 행하십시오
-        </strong>
+        이 모든 질문에<br />
+        “예”라고 답할 수 있으면 행하십시오
       </PageMainText>
       <PageSubText>
         스스로 판단하기 어려운 사항은<br />
