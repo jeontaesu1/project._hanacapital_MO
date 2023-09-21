@@ -21,8 +21,6 @@
   &__scroller {
     overflow: auto;
     -webkit-overflow-scrolling: touch;
-    padding-bottom: 20px;
-    margin-bottom: -20px;
   }
 
   &__inner {
@@ -62,11 +60,24 @@
     }
   }
 
-  &--pc {
+  &--hide-scrollbar {
     .slide-scroll {
+      &__frame {
+        overflow: hidden;
+      }
+
       &__scroller {
-        padding-bottom: 0;
-        margin-bottom: 0;
+        padding-bottom: 20px;
+        margin-bottom: -20px;
+      }
+    }
+
+    &.slide-scroll--pc {
+      .slide-scroll {
+        &__scroller {
+          padding-bottom: 0;
+          margin-bottom: 0;
+        }
       }
     }
   }

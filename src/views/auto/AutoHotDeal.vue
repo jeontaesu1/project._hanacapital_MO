@@ -12,15 +12,18 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 import ColorChip from '@/components/ui/imageData/ColorChip.vue';
-import UnitText from '@/components/ui/text/UnitText.vue';
 import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
-import RoundStatus from '@/components/ui/text/RoundStatus.vue';
-import BasicHr from '@/components/ui/common/BasicHr.vue';
 import SlideScroll from '@/components/ui/section/SlideScroll.vue';
 import SlideScrollItem from '@/components/ui/section/SlideScrollItem.vue';
+import BasicBox from '@/components/ui/common/BasicBox.vue';
+import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
+import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
+import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
+
+import IconHot from '@/assets/images/icon/hot.svg?component';
 
 export default {
   components: {
@@ -32,15 +35,18 @@ export default {
     ButtonListItem,
     CarThumb,
     ColorChip,
-    UnitText,
     KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
-    RoundStatus,
-    BasicHr,
     SlideScroll,
     SlideScrollItem,
+    BasicBox,
+    BasicBoxHead,
+    BasicBoxHeadLeft,
+    BasicBoxHeadRight,
+
+    IconHot,
   },
   setup() {
     const store = {
@@ -79,33 +85,32 @@ export default {
     </div>
     <!-- // Case : 즉시 출고 차량 없을 때 -->
 
-    <div :class="$style['bg']">
-      <section>
+    <div>
+      <section class="row-margin-container-medium">
         <div class="flex-box row-margin-contents">
           <div class="flex-box__cell flex-1">
-            <div class="inline-wrap">
-              <RoundStatus theme="nonary" size="small">HOT</RoundStatus>
-            </div>
-            <h3 class="text-title-2 row-margin-item">쏘나타</h3>
+            <h2 class="text-title-2">현대 쏘나타</h2>
           </div>
           <div class="flex-box__cell flex-box__cell--medium">
-            <CarThumb src="/images/_dummy/car-thumb.png" />
+            <IconHot :class="$style['icon']" />
           </div>
         </div>
 
-        <SlideScroll>
-          <SlideScrollItem>
-            <div :class="$style['block']">
-              <div class="text-body-4 color-gray row-margin-item">
-                뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
-              </div>
-              <UnitText rightUnit="원">월 325,000</UnitText>
-
-              <BasicHr
-                type="contents"
-                theme="quaternary"
-                className="row-margin-contents-small"
-              />
+        <SlideScroll :hideScrollbar="false">
+          <SlideScrollItem v-for="i in 5" :key="i">
+            <BasicBox>
+              <BasicBoxHead>
+                <BasicBoxHeadLeft>
+                  <h3 class="text-body-1 font-weight-medium multi-ellipsis">
+                    뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
+                  </h3>
+                </BasicBoxHeadLeft>
+                <BasicBoxHeadRight>
+                  <div :class="$style['slide-thumb']">
+                    <CarThumb src="/images/_dummy/car-thumb.png" />
+                  </div>
+                </BasicBoxHeadRight>
+              </BasicBoxHead>
 
               <KeyValue margin="regular">
                 <KeyValueItem
@@ -116,7 +121,9 @@ export default {
                   <KeyValueTitle>외장</KeyValueTitle>
                   <KeyValueText>
                     <div class="flex-box justify-conten-end">
-                      <div class="flex-box__cell">아틸라스 화이트</div>
+                      <div class="flex-box__cell flex-1">
+                        <div class="ellipsis">아틸라스 화이트</div>
+                      </div>
                       <div class="flex-box__cell">
                         <ColorChip
                           :colors="['248, 245, 245']"
@@ -134,8 +141,8 @@ export default {
                   <KeyValueTitle>내장</KeyValueTitle>
                   <KeyValueText>
                     <div class="flex-box justify-conten-end">
-                      <div class="flex-box__cell">
-                        네츄럴 베이지 / 다크 베이지
+                      <div class="flex-box__cell flex-1">
+                        <div class="ellipsis">네츄럴 베이지 / 다크 베이지</div>
                       </div>
                       <div class="flex-box__cell">
                         <ColorChip
@@ -152,7 +159,9 @@ export default {
                   }"
                 >
                   <KeyValueTitle>옵션</KeyValueTitle>
-                  <KeyValueText>선루프1 외 2개</KeyValueText>
+                  <KeyValueText>
+                    <div class="ellipsis">선루프1 외 2개</div>
+                  </KeyValueText>
                 </KeyValueItem>
               </KeyValue>
 
@@ -161,40 +170,33 @@ export default {
                   <BasicButton size="small"> 즉시출고 </BasicButton>
                 </ButtonListItem>
               </ButtonList>
-            </div>
+            </BasicBox>
           </SlideScrollItem>
         </SlideScroll>
       </section>
 
-      <BasicHr
-        type="contents"
-        theme="tertiary"
-        className="row-margin-container-medium"
-      />
-
-      <section>
+      <section class="row-margin-container-medium">
         <div class="flex-box row-margin-contents">
           <div class="flex-box__cell flex-1">
-            <h3 class="text-title-2 row-margin-item">그랜저</h3>
-          </div>
-          <div class="flex-box__cell flex-box__cell--medium">
-            <CarThumb src="/images/_dummy/car-thumb.png" />
+            <h2 class="text-title-2">현대 싼타페</h2>
           </div>
         </div>
 
-        <SlideScroll>
-          <SlideScrollItem v-for="i in 5" :key="i">
-            <div :class="$style['block']">
-              <div class="text-body-4 color-gray row-margin-item">
-                뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
-              </div>
-              <UnitText rightUnit="원">월 325,000</UnitText>
-
-              <BasicHr
-                type="contents"
-                theme="quaternary"
-                className="row-margin-contents-small"
-              />
+        <SlideScroll :hideScrollbar="false">
+          <SlideScrollItem v-for="i in 1" :key="i">
+            <BasicBox>
+              <BasicBoxHead>
+                <BasicBoxHeadLeft>
+                  <h3 class="text-body-1 font-weight-medium multi-ellipsis">
+                    뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
+                  </h3>
+                </BasicBoxHeadLeft>
+                <BasicBoxHeadRight>
+                  <div :class="$style['slide-thumb']">
+                    <CarThumb src="/images/_dummy/car-thumb.png" />
+                  </div>
+                </BasicBoxHeadRight>
+              </BasicBoxHead>
 
               <KeyValue margin="regular">
                 <KeyValueItem
@@ -205,7 +207,9 @@ export default {
                   <KeyValueTitle>외장</KeyValueTitle>
                   <KeyValueText>
                     <div class="flex-box justify-conten-end">
-                      <div class="flex-box__cell">아틸라스 화이트</div>
+                      <div class="flex-box__cell flex-1">
+                        <div class="ellipsis">아틸라스 화이트</div>
+                      </div>
                       <div class="flex-box__cell">
                         <ColorChip
                           :colors="['248, 245, 245']"
@@ -223,8 +227,8 @@ export default {
                   <KeyValueTitle>내장</KeyValueTitle>
                   <KeyValueText>
                     <div class="flex-box justify-conten-end">
-                      <div class="flex-box__cell">
-                        네츄럴 베이지 / 다크 베이지
+                      <div class="flex-box__cell flex-1">
+                        <div class="ellipsis">네츄럴 베이지 / 다크 베이지</div>
                       </div>
                       <div class="flex-box__cell">
                         <ColorChip
@@ -241,7 +245,9 @@ export default {
                   }"
                 >
                   <KeyValueTitle>옵션</KeyValueTitle>
-                  <KeyValueText>선루프1 외 2개</KeyValueText>
+                  <KeyValueText>
+                    <div class="ellipsis">선루프1 외 2개</div>
+                  </KeyValueText>
                 </KeyValueItem>
               </KeyValue>
 
@@ -250,7 +256,7 @@ export default {
                   <BasicButton size="small"> 즉시출고 </BasicButton>
                 </ButtonListItem>
               </ButtonList>
-            </div>
+            </BasicBox>
           </SlideScrollItem>
         </SlideScroll>
       </section>

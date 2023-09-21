@@ -1,15 +1,11 @@
 @import '@/assets/scss/components/import/empty.scss';
 
-.bg {
-  flex: 1;
-  background-color: $color-navy-05;
-  margin: 0 -20px -40px;
-  padding: 30px 20px 40px;
+.icon {
+  display: block;
+  width: 32px;
+  height: 32px;
 }
 
-.block {
-  padding: 19px;
-  border-radius: 8px;
-  background-color: $color-white;
-  box-shadow: 1px 1px 8px rgba($color-black, 0.12);
+.slide-thumb {
+  padding-right: 12px;
 }

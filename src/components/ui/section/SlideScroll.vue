@@ -19,6 +19,10 @@ export default {
         return defaultClassNames();
       },
     },
+    hideScrollbar: {
+      Type: Boolean,
+      default: true,
+    },
   },
   setup(props) {
     const store = {
@@ -51,6 +55,7 @@ export default {
     :class="[
       $style['slide-scroll'],
       {
+        [$style['slide-scroll--hide-scrollbar']]: hideScrollbar,
         [$style['slide-scroll--pc']]: scrollbarsWidth > 0,
       },
       customClassNames.wrap,
