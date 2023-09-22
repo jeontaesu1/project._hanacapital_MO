@@ -99,7 +99,10 @@ export default {
             }"
           >
             <ButtonListItem>
-              <BasicButton>확인</BasicButton>
+              <BasicButton :line="true" theme="quaternary">이전</BasicButton>
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton>대출신청</BasicButton>
             </ButtonListItem>
           </ButtonList>
         </div>
