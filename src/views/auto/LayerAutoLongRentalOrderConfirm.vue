@@ -124,8 +124,10 @@ export default {
           >
             <KeyValueTitle>외장색상</KeyValueTitle>
             <KeyValueText>
-              <div class="flex-box justify-conten-end">
-                <div class="flex-box__cell">아틸라스 화이트</div>
+              <div class="flex-box justify-conten-end align-items-start">
+                <div class="flex-box__cell flex-1 break-all">
+                  아틸라스 화이트
+                </div>
                 <div class="flex-box__cell">
                   <ColorChip size="small" :colors="['248, 245, 245']" />
                 </div>
@@ -140,8 +142,10 @@ export default {
           >
             <KeyValueTitle>내장색상</KeyValueTitle>
             <KeyValueText>
-              <div class="flex-box justify-conten-end">
-                <div class="flex-box__cell">네츄럴 베이지 / 다크 베이지</div>
+              <div class="flex-box justify-conten-end align-items-start">
+                <div class="flex-box__cell flex-1 break-all">
+                  네츄럴 베이지 / 다크 베이지
+                </div>
                 <div class="flex-box__cell">
                   <ColorChip
                     size="small"
@@ -158,7 +162,7 @@ export default {
             }"
           >
             <KeyValueTitle>옵션</KeyValueTitle>
-            <KeyValueText>선루프</KeyValueText>
+            <KeyValueText><div class="break-all">선루프</div></KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem
