@@ -2,3 +2,36 @@
 @import '@/assets/scss/components/import/basic-list.scss';
 @import '@/assets/scss/components/import/empty.scss';
 @import '@/assets/scss/components/import/address-list.scss';
+
+.empty-standardization {
+  text-align: center;
+
+  &__text {
+    margin: 0;
+    @include font-size-default(13);
+    color: $color-gray-80;
+    font-weight: 300;
+  }
+
+  &__result {
+    margin: 0;
+    @include font-size-default(16);
+  }
+
+  &__zip-code {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+
+  &__address {
+    display: block;
+    @include font-size-default(14);
+  }
+
+  &__button {
+    margin-top: 16px;
+    font-size: 0;
+    line-height: 0;
+  }
+}
