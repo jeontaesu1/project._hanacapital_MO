@@ -420,7 +420,9 @@ export default {
                   <template v-slot:left>
                     <BoxCheckObject />
                   </template>
-                  <BoxCheckLabel>롤스로이스 223</BoxCheckLabel>
+                  <BoxCheckLabel>
+                    <span class="color-red">롤스로이스 223</span>
+                  </BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
               <BoxCheckListItem>
@@ -433,7 +435,9 @@ export default {
                   <template v-slot:left>
                     <BoxCheckObject />
                   </template>
-                  <BoxCheckLabel>테슬라 441</BoxCheckLabel>
+                  <BoxCheckLabel>
+                    <span class="color-red">테슬라 441</span>
+                  </BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
               <BoxCheckListItem>
@@ -492,7 +496,9 @@ export default {
                   <template v-slot:left>
                     <BoxCheckObject />
                   </template>
-                  <BoxCheckLabel>르노코리아 뉴 마스터 10405</BoxCheckLabel>
+                  <BoxCheckLabel>
+                    <span class="color-red">르노코리아 뉴 마스터 10405</span>
+                  </BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
               <BoxCheckListItem>
@@ -505,7 +511,9 @@ export default {
                   <template v-slot:left>
                     <BoxCheckObject />
                   </template>
-                  <BoxCheckLabel>벤츠 AMG GT 10503</BoxCheckLabel>
+                  <BoxCheckLabel>
+                    <span class="color-red">벤츠 AMG GT 10503</span>
+                  </BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
               <BoxCheckListItem>
@@ -538,10 +546,7 @@ export default {
                   <template v-slot:left>
                     <BoxCheckObject />
                   </template>
-                  <BoxCheckLabel>
-                    현대 더 뉴 코나 2021년형 가솔리 1.6 터보 N Line 2WD (개소세
-                    5% 기준) 105605
-                  </BoxCheckLabel>
+                  <BoxCheckLabel>벤츠 AMG GT 10503</BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
               <BoxCheckListItem>
@@ -549,6 +554,42 @@ export default {
                   :contents="true"
                   type="checkbox"
                   id="rentalLineUpBoxCheck_002"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>
+                    <span class="color-red">
+                      현대 더 뉴 코나 2021년형 가솔리 1.6 터보 N Line 2WD
+                      (개소세 5% 기준) 105605
+                    </span>
+                  </BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="rentalLineUpBoxCheck_003"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>
+                    <span class="color-red">
+                      현대 더 뉴 코나 2021년형 가솔리 1.6 터보 N Line 2WD
+                      (개소세 5% 기준) 105605
+                    </span>
+                  </BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="rentalLineUpBoxCheck_004"
                   :classNames="{ block: 'align-items-start' }"
                 >
                   <template v-slot:left>
@@ -588,6 +629,42 @@ export default {
                   :contents="true"
                   type="checkbox"
                   id="rentalTrimBoxCheck_002"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>
+                    <span class="color-red">
+                      현대 스타리아 2021년형 투어러 디젤 2.2 11인승 스마트 2WD M
+                      1030158
+                    </span>
+                  </BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="rentalTrimBoxCheck_003"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>
+                    <span class="color-red">
+                      현대 스타리아 2021년형 투어러 디젤 2.2 11인승 스마트 2WD M
+                      1030158
+                    </span>
+                  </BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="rentalTrimBoxCheck_004"
                   :classNames="{ block: 'align-items-start' }"
                 >
                   <template v-slot:left>
@@ -651,7 +728,9 @@ export default {
                   <template v-slot:left>
                     <BoxCheckObject />
                   </template>
-                  <BoxCheckLabel>롤스로이스 223</BoxCheckLabel>
+                  <BoxCheckLabel>
+                    <span class="color-red">롤스로이스 223</span>
+                  </BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
               <BoxCheckListItem>
@@ -664,7 +743,9 @@ export default {
                   <template v-slot:left>
                     <BoxCheckObject />
                   </template>
-                  <BoxCheckLabel>테슬라 441</BoxCheckLabel>
+                  <BoxCheckLabel>
+                    <span class="color-red">테슬라 441</span>
+                  </BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
               <BoxCheckListItem>
@@ -723,7 +804,9 @@ export default {
                   <template v-slot:left>
                     <BoxCheckObject />
                   </template>
-                  <BoxCheckLabel>르노코리아 뉴 마스터 10405</BoxCheckLabel>
+                  <BoxCheckLabel>
+                    <span class="color-red">르노코리아 뉴 마스터 10405</span>
+                  </BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
               <BoxCheckListItem>
@@ -736,7 +819,9 @@ export default {
                   <template v-slot:left>
                     <BoxCheckObject />
                   </template>
-                  <BoxCheckLabel>벤츠 AMG GT 10503</BoxCheckLabel>
+                  <BoxCheckLabel>
+                    <span class="color-red">벤츠 AMG GT 10503</span>
+                  </BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
               <BoxCheckListItem>
@@ -786,6 +871,42 @@ export default {
                     <BoxCheckObject />
                   </template>
                   <BoxCheckLabel>
+                    <span class="color-red">
+                      현대 더 뉴 코나 2021년형 가솔리 1.6 터보 N Line 2WD
+                      (개소세 5% 기준) 105605
+                    </span>
+                  </BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="leaseLineUpBoxCheck_003"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>
+                    <span class="color-red">
+                      현대 더 뉴 코나 2021년형 가솔리 1.6 터보 N Line 2WD
+                      (개소세 5% 기준) 105605
+                    </span>
+                  </BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="leaseLineUpBoxCheck_004"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>
                     제네시스 Electrified GV70 2022년형 EV (개소세 5% 기준)
                     1121180
                   </BoxCheckLabel>
@@ -819,6 +940,42 @@ export default {
                   :contents="true"
                   type="checkbox"
                   id="leaseTrimBoxCheck_002"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>
+                    <span class="color-red">
+                      현대 스타리아 2021년형 투어러 디젤 2.2 11인승 스마트 2WD M
+                      1030158
+                    </span>
+                  </BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="leaseTrimBoxCheck_003"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>
+                    <span class="color-red">
+                      현대 스타리아 2021년형 투어러 디젤 2.2 11인승 스마트 2WD M
+                      1030158
+                    </span>
+                  </BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="leaseTrimBoxCheck_004"
                   :classNames="{ block: 'align-items-start' }"
                 >
                   <template v-slot:left>
@@ -866,7 +1023,9 @@ export default {
                   <template v-slot:left>
                     <BoxCheckObject />
                   </template>
-                  <BoxCheckLabel>롤스로이스 223</BoxCheckLabel>
+                  <BoxCheckLabel>
+                    <span class="color-red">롤스로이스 223</span>
+                  </BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
               <BoxCheckListItem>
@@ -879,7 +1038,9 @@ export default {
                   <template v-slot:left>
                     <BoxCheckObject />
                   </template>
-                  <BoxCheckLabel>테슬라 441</BoxCheckLabel>
+                  <BoxCheckLabel>
+                    <span class="color-red">테슬라 441</span>
+                  </BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
               <BoxCheckListItem>
@@ -938,7 +1099,9 @@ export default {
                   <template v-slot:left>
                     <BoxCheckObject />
                   </template>
-                  <BoxCheckLabel>르노코리아 뉴 마스터 10405</BoxCheckLabel>
+                  <BoxCheckLabel>
+                    <span class="color-red">르노코리아 뉴 마스터 10405</span>
+                  </BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
               <BoxCheckListItem>
@@ -951,7 +1114,9 @@ export default {
                   <template v-slot:left>
                     <BoxCheckObject />
                   </template>
-                  <BoxCheckLabel>벤츠 AMG GT 10503</BoxCheckLabel>
+                  <BoxCheckLabel>
+                    <span class="color-red">벤츠 AMG GT 10503</span>
+                  </BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
               <BoxCheckListItem>
@@ -1001,6 +1166,42 @@ export default {
                     <BoxCheckObject />
                   </template>
                   <BoxCheckLabel>
+                    <span class="color-red">
+                      현대 더 뉴 코나 2021년형 가솔리 1.6 터보 N Line 2WD
+                      (개소세 5% 기준) 105605
+                    </span>
+                  </BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="installmentLineUpBoxCheck_003"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>
+                    <span class="color-red">
+                      현대 더 뉴 코나 2021년형 가솔리 1.6 터보 N Line 2WD
+                      (개소세 5% 기준) 105605
+                    </span>
+                  </BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="installmentLineUpBoxCheck_004"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>
                     제네시스 Electrified GV70 2022년형 EV (개소세 5% 기준)
                     1121180
                   </BoxCheckLabel>
@@ -1034,6 +1235,42 @@ export default {
                   :contents="true"
                   type="checkbox"
                   id="installmentTrimBoxCheck_002"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>
+                    <span class="color-red">
+                      현대 스타리아 2021년형 투어러 디젤 2.2 11인승 스마트 2WD M
+                      1030158
+                    </span>
+                  </BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="installmentTrimBoxCheck_003"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>
+                    <span class="color-red">
+                      현대 스타리아 2021년형 투어러 디젤 2.2 11인승 스마트 2WD M
+                      1030158
+                    </span>
+                  </BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="installmentTrimBoxCheck_004"
                   :classNames="{ block: 'align-items-start' }"
                 >
                   <template v-slot:left>

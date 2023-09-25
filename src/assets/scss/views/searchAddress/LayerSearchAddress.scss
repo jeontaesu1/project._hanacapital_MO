@@ -6,6 +6,10 @@
 .empty-standardization {
   text-align: center;
 
+  &__info {
+    margin-bottom: 24px;
+  }
+
   &__text {
     margin: 0;
     @include font-size-default(13);
@@ -31,7 +35,5 @@
 
   &__button {
     margin-top: 16px;
-    font-size: 0;
-    line-height: 0;
   }
 }

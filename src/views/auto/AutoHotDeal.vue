@@ -87,12 +87,12 @@ export default {
 
     <div>
       <section class="row-margin-container-medium">
-        <div class="flex-box row-margin-contents">
-          <div class="flex-box__cell flex-1">
-            <h2 class="text-title-2">현대 쏘나타</h2>
-          </div>
-          <div class="flex-box__cell flex-box__cell--medium">
+        <div class="flex-box align-items-end row-margin-item-group">
+          <div class="flex-box__cell">
             <IconHot :class="$style['icon']" />
+          </div>
+          <div class="flex-box__cell flex-1 flex-box__cell--small-regular">
+            <h2 class="text-title-2">현대 쏘나타</h2>
           </div>
         </div>
 
@@ -176,8 +176,8 @@ export default {
       </section>
 
       <section class="row-margin-container-medium">
-        <div class="flex-box row-margin-contents">
-          <div class="flex-box__cell flex-1">
+        <div class="flex-box row-margin-item-group">
+          <div class="flex-box__cell flex-1 flex-box__cell--small-regular">
             <h2 class="text-title-2">현대 싼타페</h2>
           </div>
         </div>

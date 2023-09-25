@@ -302,7 +302,7 @@ export default {
 
           <!-- Case : 표준화 주소 없을 경우 -->
           <div :class="$style['empty-standardization']">
-            <div class="row-margin-contents">
+            <div :class="$style['empty-standardization__info']">
               <p :class="$style['empty-standardization__text']">
                 입력하신 주소는<br />
                 표준화 및 도로명이 없는 주소입니다.
