@@ -60,7 +60,7 @@ export default {
       </PageTextGroup>
 
       <IllustObject
-        type="calculator"
+        type="repayment"
         :classNames="{ wrap: 'row-margin-none' }"
       />
 

@@ -5699,6 +5699,10 @@ const datas = () => [
             date: '2023.09.21',
             text: '타이틀 텍스트 굵기 수정\n- My_M03_l201\n- My_M03_l202\n- My_M03_l203\n- My_M03_l204\n- My_M03_l205\n- My_M03_l206\n- My_M03_l207\n- My_M03_l208\n- My_M03_l209\n- My_M03_l210\n- My_M99_l001',
           },
+          {
+            date: '2023.09.25',
+            text: '이미지 변경\n- My_M03_l202\n- My_M03_l203',
+          },
         ],
       },
       {
