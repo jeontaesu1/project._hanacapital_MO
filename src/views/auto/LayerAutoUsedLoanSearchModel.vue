@@ -396,7 +396,7 @@ export default {
           <template v-slot:colgroup>
             <col style="width: 83px" />
             <col />
-            <col style="width: 90px" />
+            <col style="width: 100px" />
           </template>
 
           <template v-slot:head>
@@ -410,7 +410,7 @@ export default {
           <SelectTableRow>
             <td>기아</td>
             <td>2.2 디젤 11인승 노블레스</td>
-            <td>5,500 만원</td>
+            <td>99,999 만원</td>
           </SelectTableRow>
           <SelectTableRow :initialActive="true">
             <td>기아</td>
@@ -430,7 +430,7 @@ export default {
           <SelectTableRow>
             <td>기아</td>
             <td>뉴 카니발(YP) 3.0 가솔린 9인승 노블레스</td>
-            <td>5,300 만원</td>
+            <td>95,300 만원</td>
           </SelectTableRow>
           <SelectTableRow>
             <td>기아</td>

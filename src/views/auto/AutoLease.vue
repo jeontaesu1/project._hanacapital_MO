@@ -203,7 +203,7 @@ export default {
             </KeyValueItem>
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
-              <KeyValueTitle>기간</KeyValueTitle>
+              <KeyValueTitle>금리</KeyValueTitle>
               <KeyValueText>
                 <div class="font-weight-bold underline">
                   금융리스 연 6.1% ~ 9.0%

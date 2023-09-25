@@ -57,7 +57,7 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <IllustObject type="money" :classNames="{ wrap: 'row-margin-none' }" />
+      <IllustObject type="charge" :classNames="{ wrap: 'row-margin-none' }" />
 
       <div>
         <div class="text-body-2">
