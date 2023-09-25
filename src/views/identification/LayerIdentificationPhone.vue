@@ -196,7 +196,7 @@ export default {
                   title="주민등록번호 뒤 7자리 중 첫번째자리"
                   id="layerIdentificationPhoneIdNumber02"
                   :afterDot="6"
-                  placeholder="◌"
+                  :placeholderDot="true"
                 />
               </InputBlockCell>
             </InputBlock>
