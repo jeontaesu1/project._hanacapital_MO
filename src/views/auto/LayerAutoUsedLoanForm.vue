@@ -258,6 +258,30 @@ export default {
                 <BoxCheckLabel>72개월</BoxCheckLabel>
               </BoxCheck>
             </BoxCheckListItem>
+
+            <!-- DD : disabled 예제 -->
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="layerAutoUsedLoanFormPeriodDisabled"
+                id="layerAutoUsedLoanFormPeriodDisabled001"
+                :defaultChecked="true"
+                :disabled="true"
+              >
+                <BoxCheckLabel>24개월</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="layerAutoUsedLoanFormPeriodDisabled"
+                id="layerAutoUsedLoanFormPeriodDisabled002"
+                :disabled="true"
+              >
+                <BoxCheckLabel>24개월</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <!-- // DD : disabled 예제 -->
           </BoxCheckList>
         </FormListItem>
       </FormList>
