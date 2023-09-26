@@ -6,6 +6,7 @@ import { Pagination, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
 import { useUiCommonStore } from '@/stores/ui/common';
+import { useUiLoadingStore } from '@/stores/ui/loading';
 import { useUiLayoutStore } from '@/stores/ui/layout';
 import { useUiHeaderStore } from '@/stores/ui/header';
 import { useUiDockBarStore } from '@/stores/ui/dockBar';
@@ -21,6 +22,10 @@ import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import SlideImageBanner from '@/components/ui/banner/SlideImageBanner.vue';
+import UiAccordion from '@/components/ui/accordion/UiAccordion.vue';
+import UiAccordionItem from '@/components/ui/accordion/UiAccordionItem.vue';
+import UiAccordionLayer from '@/components/ui/accordion/UiAccordionLayer.vue';
+import UiAccordionOpener from '@/components/ui/accordion/UiAccordionOpener.vue';
 
 import IconAdd from '@/assets/images/icon/add.svg?component';
 import IconLink from '@/assets/images/icon/link.svg?component';
@@ -29,6 +34,7 @@ import IconDocumentSmall from '@/assets/images/icon/document-small.svg?component
 import IconBird from '@/assets/images/icon/bird.svg?component';
 import IconGraph from '@/assets/images/icon/graph.svg?component';
 import IconStudy from '@/assets/images/icon/study.svg?component';
+import IconTell from '@/assets/images/icon/tell.svg?component';
 
 const BASE_URL = import.meta.env.BASE_URL;
 
@@ -48,6 +54,10 @@ export default {
     BasicHr,
     BasicButton,
     SlideImageBanner,
+    UiAccordion,
+    UiAccordionItem,
+    UiAccordionLayer,
+    UiAccordionOpener,
 
     IconAdd,
     IconLink,
@@ -56,21 +66,48 @@ export default {
     IconBird,
     IconGraph,
     IconStudy,
+    IconTell,
   },
   setup() {
     const store = {
       ui: {
         common: useUiCommonStore(),
+        loading: useUiLoadingStore(),
         layout: useUiLayoutStore(),
         header: useUiHeaderStore(),
         dockBar: useUiDockBarStore(),
       },
     };
 
+    // DD : 아코디언 열때 Ajax 통신시 예시 : start
+    const testAjax = () => {
+      return new Promise((resolve) =>
+        setTimeout(() => {
+          resolve();
+        }, 1000)
+      );
+    };
+
+    const testAccordionToggle = (props, call) => {
+      const { opened, open, close } = props;
+
+      if (!opened) {
+        const result = call();
+
+        store.ui.loading.show();
+
+        result.then(() => {
+          open();
+          store.ui.loading.hide();
+        });
+      } else {
+        close();
+      }
+    };
+    // DD : 아코디언 열때 Ajax 통신시 예시 : end
+
     onMounted(() => {
       store.ui.common.setApp(true); // 앱모드 테스트 변수
-
-      store.ui.common.setRootClassName('page-home');
 
       store.ui.layout.setUseFooter(false);
 
@@ -84,8 +121,6 @@ export default {
     onUnmounted(() => {
       store.ui.common.setApp(); // 앱모드 테스트 변수
 
-      store.ui.common.setRootClassName();
-
       store.ui.layout.setUseFooter();
 
       store.ui.header.setTitle();
@@ -98,6 +133,8 @@ export default {
     return {
       BASE_URL,
       modules: [Pagination, A11y],
+      testAjax,
+      testAccordionToggle,
     };
   },
 };
@@ -111,9 +148,7 @@ export default {
   >
     <PageTextGroup>
       <PageMainText>
-        <!-- Case : 로그인 후 노출 -->
-        <strong class="display-block">김하나님,</strong>
-        <!-- // Case : 로그인 후 노출 -->
+        <span class="display-block font-weight-light">김하나님,</span>
         <button type="button" :class="$style['top-link']">
           오늘의 운세를 확인해 보세요!<IconLinkSmall
             :class="$style['top-link__icon']"
@@ -122,392 +157,338 @@ export default {
       </PageMainText>
     </PageTextGroup>
 
-    <!-- Case : 진행 중인 상품 -->
-    <section :class="$style['progress']">
-      <div class="flex-box row-margin-contents">
-        <div class="flex-box__cell">
-          <div :class="$style['loan-icon']"></div>
-        </div>
-        <div class="flex-box__cell flex-box__cell--small flex-1">
-          <h2 class="text-title-2">진행 중인 상품</h2>
-        </div>
-        <!-- Case : 다건일 경우 노출 -->
-        <div class="flex-box__cell">
-          <TextButton
-            :block="true"
-            :iconFillAll="true"
-            :classNames="{
-              wrap: 'text-body-4 color-gray',
-            }"
-          >
-            전체보기
-            <template v-slot:rightIcon>
-              <IconAdd />
-            </template>
-          </TextButton>
-        </div>
-        <!-- // Case : 다건일 경우 노출 -->
-      </div>
-
-      <!-- Case : 신용대출 -->
-      <div :class="$style['progress__block']">
-        <div :class="$style['progress__head']">
-          <div :class="$style['progress__head-left']">
-            <div :class="$style['progress__head-row']">
-              <h2 :class="$style['progress__title']">e하나신용대출</h2>
-              <!-- Case : 다건일 경우 노출 -->
-              <div :class="$style['progress__title-sub']">외 2건</div>
-              <!-- // Case : 다건일 경우 노출 -->
-            </div>
-          </div>
-          <div :class="$style['progress__head-right']">
-            <p :class="$style['progress__date']">22.09.19 기준</p>
-          </div>
-        </div>
-
-        <dl :class="$style['progress__info']">
-          <div :class="$style['progress__info-item']">
-            <dt :class="$style['progress__info-key']">최대한도</dt>
-            <dd :class="$style['progress__info-val']">
-              <UnitText
-                rightUnit="만원"
-                align="center"
-                verticalAlign="center"
-                size="medium"
-                >7,000</UnitText
-              >
-            </dd>
-          </div>
-          <div :class="$style['progress__info-item']">
-            <dt :class="$style['progress__info-key']">예상금리</dt>
-            <dd :class="$style['progress__info-val']">
-              <UnitText
-                rightUnit="%"
-                align="center"
-                verticalAlign="center"
-                size="medium"
-                >5.2</UnitText
-              >
-            </dd>
-          </div>
-        </dl>
-
-        <div :class="$style['progress__button']">
-          <BasicButton size="small" :line="true">약정 이어하기</BasicButton>
-        </div>
-      </div>
-      <!-- // Case : 신용대출 -->
-
-      <!-- Case : 일반할부금융, 설비리스 -->
-      <div :class="$style['progress__block']">
-        <div :class="$style['progress__head']">
-          <div :class="$style['progress__head-left']">
-            <div :class="$style['progress__head-row']">
-              <h2 :class="$style['progress__title']">의료기할부</h2>
-              <!-- Case : 다건일 경우 노출 -->
-              <div :class="$style['progress__title-sub']">외 2건</div>
-              <!-- // Case : 다건일 경우 노출 -->
-            </div>
-          </div>
-          <div :class="$style['progress__head-right']">
-            <p :class="$style['progress__date']">22.09.19 기준</p>
-          </div>
-        </div>
-
-        <dl :class="$style['progress__info']">
-          <div :class="$style['progress__info-item']">
-            <dt :class="$style['progress__info-key']">신청금액</dt>
-            <dd :class="$style['progress__info-val']">
-              <UnitText
-                rightUnit="만원"
-                align="center"
-                verticalAlign="center"
-                size="medium"
-                >7,000</UnitText
-              >
-            </dd>
-          </div>
-          <div :class="$style['progress__info-item']">
-            <dt :class="$style['progress__info-key']">금리</dt>
-            <dd :class="$style['progress__info-val']">
-              <UnitText
-                rightUnit="%"
-                align="center"
-                verticalAlign="center"
-                size="medium"
-                >12.9</UnitText
-              >
-            </dd>
-          </div>
-        </dl>
-
-        <div :class="$style['progress__button']">
-          <BasicButton size="small" :line="true">약정 이어하기</BasicButton>
-        </div>
-      </div>
-      <!-- // Case : 일반할부금융, 설비리스 -->
-
-      <!-- Case : 자동차(리스/렌트 외) -->
-      <div :class="$style['progress__block']">
-        <div :class="$style['progress__head']">
-          <div :class="$style['progress__head-left']">
-            <div :class="$style['progress__head-row']">
-              <h2 :class="$style['progress__title']">원큐다이렉트 오토론</h2>
-              <!-- Case : 다건일 경우 노출 -->
-              <div :class="$style['progress__title-sub']">외 2건</div>
-              <!-- // Case : 다건일 경우 노출 -->
-            </div>
-          </div>
-          <div :class="$style['progress__head-right']">
-            <p :class="$style['progress__date']">22.09.19 기준</p>
-          </div>
-        </div>
-
-        <dl :class="$style['progress__info']">
-          <div :class="$style['progress__info-item']">
-            <dt :class="$style['progress__info-key']">신청금액</dt>
-            <dd :class="$style['progress__info-val']">
-              <UnitText
-                rightUnit="만원"
-                align="center"
-                verticalAlign="center"
-                size="medium"
-                >7,000</UnitText
-              >
-            </dd>
-          </div>
-        </dl>
-
-        <div :class="$style['progress__button']">
-          <BasicButton size="small" :line="true">약정 이어하기</BasicButton>
-        </div>
-      </div>
-      <!-- // Case : 자동차(리스/렌트 외) -->
-
-      <!-- Case : 리스/렌트 -->
-      <div :class="$style['progress__block']">
-        <div :class="$style['progress__head']">
-          <div :class="$style['progress__head-left']">
-            <div :class="$style['progress__head-row']">
-              <h2 :class="$style['progress__title']">오토리스</h2>
-              <!-- Case : 다건일 경우 노출 -->
-              <div :class="$style['progress__title-sub']">외 2건</div>
-              <!-- // Case : 다건일 경우 노출 -->
-            </div>
-          </div>
-          <div :class="$style['progress__head-right']">
-            <p :class="$style['progress__date']">22.09.19 기준</p>
-          </div>
-        </div>
-
-        <dl :class="$style['progress__info']">
-          <div :class="$style['progress__info-item']">
-            <dt :class="$style['progress__info-key']">신청차량</dt>
-            <dd :class="$style['progress__info-val']">
-              <div :class="$style['progress__info-text']">제네시스 GV70</div>
-            </dd>
-          </div>
-        </dl>
-
-        <div :class="$style['progress__button']">
-          <BasicButton size="small" :line="true">약정 이어하기</BasicButton>
-        </div>
-      </div>
-      <!-- // Case : 리스/렌트 -->
-
-      <div :class="$style['join']">
-        <div :class="$style['join__inner']">
-          <div :class="$style['join__icon']"><IconDocumentSmall /></div>
-          <div :class="$style['join__title']">
-            간편하게 서류를 등록해보세요.
-          </div>
-          <TextButton
-            :block="true"
-            :classNames="{
-              wrap: [$style['join__link'], 'text-body-4 color-gray'],
-            }"
-          >
-            서류등록
-            <template v-slot:rightIcon>
-              <IconLink />
-            </template>
-          </TextButton>
-        </div>
-      </div>
-    </section>
-    <!-- // Case : 진행 중인 상품 -->
-
-    <!-- Case : 거래 상품 -->
-    <section :class="$style['progress']">
-      <div class="flex-box row-margin-contents">
-        <div class="flex-box__cell">
-          <div :class="$style['loan-icon']"></div>
-        </div>
-        <div class="flex-box__cell flex-box__cell--small flex-1">
-          <h2 class="text-title-2">거래 상품</h2>
-        </div>
-        <!-- Case : 다건일 경우 노출 -->
-        <div class="flex-box__cell">
-          <TextButton
-            :block="true"
-            :iconFillAll="true"
-            :classNames="{
-              wrap: 'text-body-4 color-gray',
-            }"
-          >
-            전체보기
-            <template v-slot:rightIcon>
-              <IconAdd />
-            </template>
-          </TextButton>
-        </div>
-        <!-- // Case : 다건일 경우 노출 -->
-      </div>
-
-      <div :class="$style['progress__block']">
-        <div :class="[$style['progress__head'], 'align-items-start']">
-          <div :class="$style['progress__head-left']">
-            <div :class="$style['progress__head-row']">
-              <h2 :class="$style['progress__title']">행복아파트론</h2>
-              <!-- Case : 다건일 경우 노출 -->
-              <div :class="$style['progress__title-sub']">외 2건</div>
-              <!-- // Case : 다건일 경우 노출 -->
-            </div>
-          </div>
-          <div :class="$style['progress__head-right']">
-            <RoundStatus :classNames="{ wrap: 'display-block' }" theme="nonary">
-              D-3
-            </RoundStatus>
-          </div>
-        </div>
-
-        <div :class="$style['progress__amount']">
-          <dl :class="$style['progress__amount-block']">
-            <!-- Case : 단건일 경우 노출 -->
-            <dt :class="$style['progress__amount-key']">10.10 결제예정금액</dt>
-            <!-- // Case : 단건일 경우 노출 -->
-
-            <!-- Case : 다건일 경우 노출 -->
-            <dt :class="$style['progress__amount-key']">이번달 총 결제금액</dt>
-            <!-- // Case : 다건일 경우 노출 -->
-
-            <dd :class="$style['progress__amount-val']">
-              <UnitText
-                rightUnit="원"
-                align="center"
-                verticalAlign="center"
-                size="large"
-                >400,000</UnitText
-              >
-            </dd>
-          </dl>
-          <!-- Case : 단건일 경우 노출 -->
-          <div :class="$style['progress__amount-bar']">
-            <BubbleProgress
-              :total="12"
-              :current="4"
-              :label="
-                (total, current) => {
-                  return `총 ${total}회 중 ${current}회차`;
-                }
-              "
-              :text="
-                (total) => {
-                  return `${total}회`;
-                }
-              "
-              :bubble="
-                (total, current) => {
-                  return `${current}회차`;
-                }
-              "
-            />
-          </div>
-          <!-- // Case : 단건일 경우 노출 -->
-        </div>
-
-        <!-- Case : 모든 상품(렌터카 외) -->
-        <div :class="$style['progress__button']">
-          <div :class="$style['buttons']">
-            <div :class="$style['buttons__item']">
-              <button type="button" :class="$style['button']">
-                증명서 조회/발급
-              </button>
-            </div>
-            <div :class="$style['buttons__hr']"></div>
-            <div :class="$style['buttons__item']">
-              <button type="button" :class="$style['button']">
-                중도상환신청
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- // Case : 모든 상품(렌터카 외) -->
-
-        <!-- Case : 렌터카 -->
-        <div :class="$style['progress__button']">
-          <div :class="$style['buttons']">
-            <div :class="$style['buttons__item']">
-              <button type="button" :class="$style['button']">
-                지정운전자
-              </button>
-            </div>
-            <div :class="$style['buttons__hr']"></div>
-            <div :class="$style['buttons__item']">
-              <button type="button" :class="$style['button']">
-                증명서 조회/발급
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- // Case : 렌터카 -->
-
-        <!-- Case : 스탁론 -->
-        <div :class="$style['progress__button']">
-          <div :class="$style['buttons']">
-            <div :class="$style['buttons__item']">
-              <button type="button" :class="$style['button']">연장하기</button>
-            </div>
-            <div :class="$style['buttons__hr']"></div>
-            <div :class="$style['buttons__item']">
-              <button type="button" :class="$style['button']">
-                증명서 조회/발급
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- // Case : 스탁론 -->
-
-        <!-- Case : 렌터카, 오토리스(운용/금융) -->
-        <div :class="$style['progress__button']">
-          <div :class="$style['buttons']">
-            <div :class="$style['buttons__item']">
-              <button type="button" :class="$style['button']">
-                만기후처리
-              </button>
-            </div>
-            <div :class="$style['buttons__hr']"></div>
-            <div :class="$style['buttons__item']">
-              <button type="button" :class="$style['button']">
-                근저당설정 조회/해지
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- // Case : 렌터카, 오토리스(운용/금융) -->
-
-        <!-- Case : 팩토링은 버튼 없음 -->
-      </div>
-    </section>
-    <!-- // Case : 거래 상품 -->
-
     <div>
+      <!-- 약정 중 상품 -->
+      <div :class="$style['progress']">
+        <UiAccordion
+          tagName="div"
+          :classNames="{ wrap: $style['progress__list'] }"
+        >
+          <UiAccordionItem
+            tagName="section"
+            :classNames="{ item: $style['progress__item'] }"
+            v-slot="accordionItemSlotProps"
+          >
+            <div :class="$style['progress__head']">
+              <h2 :class="$style['progress__title']">약정 중 상품</h2>
+              <p :class="$style['progress__count']">
+                <span :class="$style['progress__count-num']">99</span>
+                <span :class="$style['progress__count-unit']">건</span>
+              </p>
+              <div :class="$style['progress__arrow']">
+                <UiAccordionOpener
+                  :toggleAction="false"
+                  :classNames="{ button: $style['progress__opener'] }"
+                  @click="testAccordionToggle(accordionItemSlotProps, testAjax)"
+                />
+              </div>
+            </div>
+
+            <UiAccordionLayer>
+              <section :class="$style['progress__contents']">
+                <!-- Case : 진행 중인 상품 -->
+                <div>
+                  <div :class="$style['progress__contents-top']">
+                    <div :class="$style['progress__contents-head']">
+                      <h3 :class="$style['progress__contents-title']">
+                        상품명 노출 상품명 노출
+                      </h3>
+                      <!-- Case : 2건 이상일 경우 노출 -->
+                      <div :class="$style['progress__contents-right']">
+                        <TextButton
+                          :block="true"
+                          :iconFillAll="true"
+                          :classNames="{
+                            wrap: 'text-body-4 color-gray',
+                          }"
+                        >
+                          전체보기
+                          <template v-slot:rightIcon>
+                            <IconAdd />
+                          </template>
+                        </TextButton>
+                      </div>
+                      <!-- // Case : 2건 이상일 경우 노출 -->
+                    </div>
+                    <p :class="$style['progress__contents-date']">
+                      22.09.19 기준
+                    </p>
+                  </div>
+
+                  <dl :class="$style['progress__info']">
+                    <!-- Case : 신용대출 -->
+                    <div :class="$style['progress__info-item']">
+                      <dt :class="$style['progress__info-key']">최대한도</dt>
+                      <dd :class="$style['progress__info-val']">
+                        <UnitText
+                          rightUnit="만원"
+                          align="right"
+                          verticalAlign="center"
+                          size="medium"
+                          >999,999</UnitText
+                        >
+                      </dd>
+                    </div>
+                    <div :class="$style['progress__info-item']">
+                      <dt :class="$style['progress__info-key']">금리</dt>
+                      <dd :class="$style['progress__info-val']">
+                        <UnitText
+                          rightUnit="%"
+                          align="right"
+                          verticalAlign="center"
+                          size="medium"
+                          >99.9</UnitText
+                        >
+                      </dd>
+                    </div>
+                    <!-- // Case : 신용대출 -->
+
+                    <!-- Case : 일반할부금융, 설비리스 -->
+                    <div :class="$style['progress__info-item']">
+                      <dt :class="$style['progress__info-key']">신청금액</dt>
+                      <dd :class="$style['progress__info-val']">
+                        <UnitText
+                          rightUnit="만원"
+                          align="right"
+                          verticalAlign="center"
+                          size="medium"
+                          >999,999</UnitText
+                        >
+                      </dd>
+                    </div>
+                    <div :class="$style['progress__info-item']">
+                      <dt :class="$style['progress__info-key']">금리</dt>
+                      <dd :class="$style['progress__info-val']">
+                        <UnitText
+                          rightUnit="%"
+                          align="right"
+                          verticalAlign="center"
+                          size="medium"
+                          >99.9</UnitText
+                        >
+                      </dd>
+                    </div>
+                    <!-- // Case : 일반할부금융, 설비리스 -->
+
+                    <!-- Case : 자동차(리스/렌트 외) -->
+                    <div :class="$style['progress__info-item']">
+                      <dt :class="$style['progress__info-key']">신청금액</dt>
+                      <dd :class="$style['progress__info-val']">
+                        <UnitText
+                          rightUnit="만원"
+                          align="right"
+                          verticalAlign="center"
+                          size="medium"
+                          >999,999</UnitText
+                        >
+                      </dd>
+                    </div>
+                    <!-- // Case : 자동차(리스/렌트 외) -->
+
+                    <!-- Case : 리스/렌트 -->
+                    <div :class="$style['progress__info-item']">
+                      <dt :class="$style['progress__info-key']">신청차량</dt>
+                      <dd :class="$style['progress__info-val']">
+                        제네시스 GV70
+                      </dd>
+                    </div>
+                    <!-- // Case : 리스/렌트 -->
+                  </dl>
+
+                  <div :class="$style['progress__button']">
+                    <BasicButton size="small" :line="true"
+                      >약정 이어하기</BasicButton
+                    >
+                  </div>
+                </div>
+                <!-- // Case : 진행 중인 상품 -->
+
+                <!-- Case : 거래 상품 -->
+                <div>
+                  <div :class="$style['progress__contents-top']">
+                    <div :class="$style['progress__contents-head']">
+                      <h3 :class="$style['progress__contents-title']">
+                        상품명 노출 상품명 노출
+                      </h3>
+                      <!-- Case : 2건 이상일 경우 노출 -->
+                      <div :class="$style['progress__contents-right']">
+                        <TextButton
+                          :block="true"
+                          :iconFillAll="true"
+                          :classNames="{
+                            wrap: 'text-body-4 color-gray',
+                          }"
+                        >
+                          전체보기
+                          <template v-slot:rightIcon>
+                            <IconAdd />
+                          </template>
+                        </TextButton>
+                      </div>
+                      <!-- // Case : 2건 이상일 경우 노출 -->
+                    </div>
+                  </div>
+
+                  <div :class="$style['progress__amount']">
+                    <!-- Case : 1건일 경우 노출 -->
+                    <div :class="$style['progress__amount-d-day']">
+                      <RoundStatus theme="nonary">D-3</RoundStatus>
+                    </div>
+                    <!-- // Case : 1건일 경우 노출 -->
+
+                    <dl :class="$style['progress__amount-block']">
+                      <!-- Case : 1건일 경우 노출 -->
+                      <dt :class="$style['progress__amount-key']">
+                        10.10 결제예정금액
+                      </dt>
+                      <!-- // Case : 1건일 경우 노출 -->
+
+                      <!-- Case : 2건 이상일 경우 노출 -->
+                      <dt :class="$style['progress__amount-key']">
+                        이번달 총 결제금액
+                      </dt>
+                      <!-- // Case : 2건 이상일 경우 노출 -->
+
+                      <dd :class="$style['progress__amount-val']">
+                        <UnitText
+                          rightUnit="원"
+                          align="center"
+                          verticalAlign="center"
+                          size="large"
+                          >99,999,999</UnitText
+                        >
+                      </dd>
+                    </dl>
+
+                    <!-- Case : 1건일 경우 노출 -->
+                    <div :class="$style['progress__amount-bar']">
+                      <BubbleProgress
+                        :total="12"
+                        :current="4"
+                        :label="
+                          (total, current) => {
+                            return `총 ${total}회 중 ${current}회차`;
+                          }
+                        "
+                        :text="
+                          (total) => {
+                            return `${total}회`;
+                          }
+                        "
+                        :bubble="
+                          (total, current) => {
+                            return `${current}회차`;
+                          }
+                        "
+                      />
+                    </div>
+                    <!-- // Case : 1건일 경우 노출 -->
+                  </div>
+
+                  <!-- Case : 팩토링은 버튼 미노출 -->
+                  <div :class="$style['progress__recommend']">
+                    <!-- Case : 모든 상품(렌터카 외) -->
+                    <div :class="$style['buttons']">
+                      <div :class="$style['buttons__item']">
+                        <button type="button" :class="$style['button']">
+                          증명서 조회/발급
+                        </button>
+                      </div>
+                      <div :class="$style['buttons__hr']"></div>
+                      <div :class="$style['buttons__item']">
+                        <button type="button" :class="$style['button']">
+                          중도상환신청
+                        </button>
+                      </div>
+                    </div>
+                    <!-- // Case : 모든 상품(렌터카 외) -->
+
+                    <!-- Case : 렌터카 -->
+                    <div :class="$style['buttons']">
+                      <div :class="$style['buttons__item']">
+                        <button type="button" :class="$style['button']">
+                          지정운전자
+                        </button>
+                      </div>
+                      <div :class="$style['buttons__hr']"></div>
+                      <div :class="$style['buttons__item']">
+                        <button type="button" :class="$style['button']">
+                          증명서 조회/발급
+                        </button>
+                      </div>
+                    </div>
+                    <!-- // Case : 렌터카 -->
+
+                    <!-- Case : 스탁론 -->
+                    <div :class="$style['buttons']">
+                      <div :class="$style['buttons__item']">
+                        <button type="button" :class="$style['button']">
+                          연장하기
+                        </button>
+                      </div>
+                      <div :class="$style['buttons__hr']"></div>
+                      <div :class="$style['buttons__item']">
+                        <button type="button" :class="$style['button']">
+                          증명서 조회/발급
+                        </button>
+                      </div>
+                    </div>
+                    <!-- // Case : 스탁론 -->
+
+                    <!-- Case : 렌터카, 오토리스(운용/금융) -->
+                    <div :class="$style['buttons']">
+                      <div :class="$style['buttons__item']">
+                        <button type="button" :class="$style['button']">
+                          만기후처리
+                        </button>
+                      </div>
+                      <div :class="$style['buttons__hr']"></div>
+                      <div :class="$style['buttons__item']">
+                        <button type="button" :class="$style['button']">
+                          근저당설정 조회/해지
+                        </button>
+                      </div>
+                    </div>
+                    <!-- // Case : 렌터카, 오토리스(운용/금융) -->
+                  </div>
+                  <!-- // Case : 팩토링은 버튼 미노출 -->
+                </div>
+                <!-- // Case : 거래 상품 -->
+              </section>
+            </UiAccordionLayer>
+          </UiAccordionItem>
+        </UiAccordion>
+
+        <!-- 서류등록 -->
+        <div :class="$style['join']">
+          <div :class="$style['join__inner']">
+            <div :class="$style['join__icon']"><IconDocumentSmall /></div>
+            <div :class="$style['join__title']">
+              간편하게 서류를 등록해보세요.
+            </div>
+            <TextButton
+              :block="true"
+              :classNames="{
+                wrap: [$style['join__link'], 'text-body-4 color-gray'],
+              }"
+            >
+              서류등록
+              <template v-slot:rightIcon>
+                <IconLink />
+              </template>
+            </TextButton>
+          </div>
+        </div>
+        <!-- // 서류등록 -->
+      </div>
+      <!-- // 약정 중 상품 -->
+
       <!-- 오토리스 / 렌터카 -->
       <section :class="$style['card']">
         <h2 :class="$style['card__title']">오토리스 / 렌터카</h2>
         <p :class="$style['card__text']">
           쉽고 빠른<br />
-          렌터카 견적조회
+          자동차 견적조회
         </p>
         <div :class="$style['card__image']">
           <img src="@/assets/images/contents/img-car.png" alt="" />
@@ -607,6 +588,7 @@ export default {
           1분이면<br />
           한도조회 OK!
         </p>
+        <p :class="$style['card__sub']">신용점수 영향 없음</p>
         <div :class="$style['card__image']">
           <img src="@/assets/images/contents/img-document.png" alt="" />
         </div>
@@ -712,7 +694,9 @@ export default {
               <div :class="$style['product__item']">
                 <RouterLink to="" :class="$style['product__link']">
                   <div :class="$style['product__info']">
-                    <div :class="$style['product__sub']">#야나두 #가구</div>
+                    <div :class="$style['product__sub']">
+                      교육 가구 등 상품 알아보기
+                    </div>
                     <div :class="$style['product__title']">
                       생활 속 렌탈 상품
                     </div>
@@ -809,7 +793,7 @@ export default {
       </section>
       <!-- // 이런 서비스는 어때요? -->
 
-      <div class="row-margin-container-medium">
+      <div class="row-margin-contents">
         <!-- 슬라이드 배너 B -->
         <!-- DD : 관리자 등록 배너 -->
         <SlideImageBanner theme="secondary">
@@ -855,6 +839,47 @@ export default {
         <!-- // DD : 관리자 등록 배너 -->
         <!-- // 슬라이드 배너 B -->
       </div>
+
+      <dl :class="$style['info']">
+        <div :class="$style['info__item']">
+          <dt :class="$style['info__key']">신용대출상담</dt>
+          <dd :class="$style['info__val']">
+            <TextButton
+              :block="true"
+              :iconFillAll="true"
+              :classNames="{
+                wrap: 'color-gray',
+              }"
+              tagName="a"
+              href="tel:1599-7942"
+            >
+              <template v-slot:leftIcon>
+                <IconTell />
+              </template>
+              1599-7942
+            </TextButton>
+          </dd>
+        </div>
+        <div :class="$style['info__item']">
+          <dt :class="$style['info__key']">고객센터</dt>
+          <dd :class="$style['info__val']">
+            <TextButton
+              :block="true"
+              :iconFillAll="true"
+              :classNames="{
+                wrap: 'color-gray',
+              }"
+              tagName="a"
+              href="tel:1599-1110"
+            >
+              <template v-slot:leftIcon>
+                <IconTell />
+              </template>
+              1599-1110
+            </TextButton>
+          </dd>
+        </div>
+      </dl>
     </div>
   </PageContents>
 </template>

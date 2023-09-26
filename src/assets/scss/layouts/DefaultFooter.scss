@@ -38,34 +38,6 @@
   }
 }
 
-.info {
-  margin: 16px 0 0;
-  padding: 0;
-  @include font-size-default(12);
-  font-weight: 500;
-  color: $color-gray-70;
-
-  &__item {
-    display: flex;
-
-    & + & {
-      margin-top: 4px;
-    }
-  }
-
-  &__key {
-    flex: none;
-    width: 66px;
-    margin-right: 8px;
-  }
-
-  &__val {
-    margin: 0;
-    flex: 1;
-    min-width: 0;
-  }
-}
-
 .address {
   display: block;
   margin: 16px 0 0;

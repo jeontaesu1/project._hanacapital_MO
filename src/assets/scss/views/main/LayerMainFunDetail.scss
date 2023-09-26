@@ -37,24 +37,7 @@
     letter-spacing: 0;
   }
 
-  :global(.swiper-pagination-bullet) {
-    display: inline-block;
-    vertical-align: top;
-    width: 6px;
-    height: 6px;
-    border-radius: 3px;
-    background-color: $color-gray-50;
-    transition: width 0.3s, background-color 0.3s;
-
-    & + :global(.swiper-pagination-bullet) {
-      margin-left: 5px;
-    }
-  }
-
-  :global(.swiper-pagination-bullet-active) {
-    width: 10px;
-    background-color: $color-black;
-  }
+  @include swiper-pagination-bullet;
 
   &--once {
     :global(.swiper-pagination-bullets) {

@@ -109,6 +109,7 @@ import SlideBannerBlock from '@/components/ui/banner/SlideBannerBlock.vue';
 import BasicBannerSlide from '@/components/ui/banner/BasicBannerSlide.vue';
 import PinButton from '@/components/ui/button/PinButton.vue';
 import SlideImageBanner from '@/components/ui/banner/SlideImageBanner.vue';
+import BubbleProgress from '@/components/ui/progress/BubbleProgress.vue';
 
 import BrandLogo001 from '@/assets/images/card-logo/hana.svg?component';
 import BrandLogo002 from '@/assets/images/card-logo/lotte.svg?component';
@@ -267,6 +268,7 @@ export default {
     BasicBannerSlide,
     PinButton,
     SlideImageBanner,
+    BubbleProgress,
 
     IconAdd,
     BrandLogo001,
@@ -7829,6 +7831,35 @@ export default {
             'ARS',
           ]"
           :current="1"
+        />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">BubbleProgress</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <BubbleProgress :total="12" :current="2" />
+
+        <BubbleProgress
+          :total="12"
+          :current="4"
+          :label="
+            (total, current) => {
+              return `총 ${total}회 중 ${current}회차`;
+            }
+          "
+          :text="
+            (total) => {
+              return `${total}회`;
+            }
+          "
+          :bubble="
+            (total, current) => {
+              return `${current}회차`;
+            }
+          "
         />
       </div>
     </section>

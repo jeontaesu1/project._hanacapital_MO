@@ -36,17 +36,6 @@ export default {
       </li>
     </ul>
 
-    <dl :class="$style['info']">
-      <div :class="$style['info__item']">
-        <dt :class="$style['info__key']">신용대출상담</dt>
-        <dd :class="$style['info__val']">1599-7942</dd>
-      </div>
-      <div :class="$style['info__item']">
-        <dt :class="$style['info__key']">고객센터</dt>
-        <dd :class="$style['info__val']">1800-1110</dd>
-      </div>
-    </dl>
-
     <address :class="$style['address']">
       서울 강남구 테헤란로 127 하나금융그룹
     </address>
