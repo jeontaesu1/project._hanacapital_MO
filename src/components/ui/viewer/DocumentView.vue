@@ -63,6 +63,7 @@ export default {
       customClassNames,
       fake,
       origin,
+      update,
     };
   },
 };
