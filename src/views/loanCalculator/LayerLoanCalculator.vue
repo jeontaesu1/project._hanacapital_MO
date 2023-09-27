@@ -173,6 +173,12 @@ export default {
               </template>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
+
+            <!-- Case : 대출금액 입력 시 노출 -->
+            <FormHelpText :classNames="{ wrap: 'align-right' }">
+              원
+            </FormHelpText>
+            <!-- // Case : 대출금액 입력 시 노출 -->
           </FormInvalid>
         </FormListItem>
 

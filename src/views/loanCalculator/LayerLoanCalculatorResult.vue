@@ -74,6 +74,7 @@ export default {
 
       <BasicBox>
         <KeyValue>
+          <!-- Case : 원리금 균등상환일 경우 노출 -->
           <KeyValueItem
             :classNames="{ item: 'text-body-3 align-items-center' }"
           >
@@ -84,6 +85,20 @@ export default {
               <UnitText rightUnit="원" align="right">333,389</UnitText>
             </KeyValueText>
           </KeyValueItem>
+          <!--//  Case : 원리금 균등상환일 경우 노출 -->
+
+          <!-- Case : 만기 일시상환일 경우 노출 -->
+          <KeyValueItem
+            :classNames="{ item: 'text-body-3 align-items-center' }"
+          >
+            <KeyValueTitle :classNames="{ title: 'color-black' }">
+              월 평균 납입이자
+            </KeyValueTitle>
+            <KeyValueText>
+              <UnitText rightUnit="원" align="right">333,389</UnitText>
+            </KeyValueText>
+          </KeyValueItem>
+          <!-- // Case : 만기 일시상환일 경우 노출 -->
         </KeyValue>
         <BasicHr
           type="contents"
