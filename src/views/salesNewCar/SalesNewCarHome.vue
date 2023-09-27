@@ -317,76 +317,6 @@ export default {
                   </KeyValueItem>
                   <!-- //Case : 개인 -->
 
-                  <!-- Case : 개인사업자 -->
-                  <KeyValueItem
-                    :classNames="{
-                      item: 'text-body-3',
-                    }"
-                  >
-                    <KeyValueTitle>회사명</KeyValueTitle>
-                    <KeyValueText>하나캐피탈</KeyValueText>
-                  </KeyValueItem>
-                  <KeyValueItem
-                    :classNames="{
-                      item: 'text-body-3',
-                    }"
-                  >
-                    <KeyValueTitle>대표자 주민등록번호</KeyValueTitle>
-                    <KeyValueText>920101-2******</KeyValueText>
-                  </KeyValueItem>
-                  <KeyValueItem
-                    :classNames="{
-                      item: 'text-body-3',
-                    }"
-                  >
-                    <KeyValueTitle>사업자번호</KeyValueTitle>
-                    <KeyValueText>123-45-12345</KeyValueText>
-                  </KeyValueItem>
-                  <!-- //Case : 개인사업자 -->
-
-                  <!-- Case : 법인사업자 -->
-                  <KeyValueItem
-                    :classNames="{
-                      item: 'text-body-3',
-                    }"
-                  >
-                    <KeyValueTitle>회사명</KeyValueTitle>
-                    <KeyValueText>하나캐피탈</KeyValueText>
-                  </KeyValueItem>
-                  <KeyValueItem
-                    :classNames="{
-                      item: 'text-body-3',
-                    }"
-                  >
-                    <KeyValueTitle>연대보증인 이름</KeyValueTitle>
-                    <KeyValueText>홍길동</KeyValueText>
-                  </KeyValueItem>
-                  <KeyValueItem
-                    :classNames="{
-                      item: 'text-body-3',
-                    }"
-                  >
-                    <KeyValueTitle>연대보증인 주민등록번호</KeyValueTitle>
-                    <KeyValueText>920101-2******</KeyValueText>
-                  </KeyValueItem>
-                  <KeyValueItem
-                    :classNames="{
-                      item: 'text-body-3',
-                    }"
-                  >
-                    <KeyValueTitle>사업자번호</KeyValueTitle>
-                    <KeyValueText>123-45-12345</KeyValueText>
-                  </KeyValueItem>
-                  <KeyValueItem
-                    :classNames="{
-                      item: 'text-body-3',
-                    }"
-                  >
-                    <KeyValueTitle>법인번호</KeyValueTitle>
-                    <KeyValueText>123-45-12345</KeyValueText>
-                  </KeyValueItem>
-                  <!-- //Case : 법인사업자 -->
-
                   <KeyValueItem
                     :classNames="{
                       item: 'text-body-3',
@@ -438,6 +368,18 @@ export default {
                 <p class="text-body-1 row-margin-small font-weight-medium">
                   홍길동
                 </p>
+
+                <!-- Case : 개인사업자일 경우 -->
+                <p class="text-body-1 row-margin-small font-weight-medium">
+                  길동상사
+                </p>
+                <!-- // Case : 개인사업자일 경우 -->
+
+                <!-- Case : 법인사업자일 경우 -->
+                <p class="text-body-1 row-margin-small font-weight-medium">
+                  하나캐피탈
+                </p>
+                <!-- // Case : 법인사업자일 경우 -->
               </div>
               <div class="flex-box__cell flex-box__cell--medium">
                 <UnitText size="regular" rightUnit="원" verticalAlign="center"
@@ -500,8 +442,16 @@ export default {
                       item: 'text-body-3',
                     }"
                   >
-                    <KeyValueTitle>회사명</KeyValueTitle>
-                    <KeyValueText>하나캐피탈</KeyValueText>
+                    <KeyValueTitle>법인등록번호</KeyValueTitle>
+                    <KeyValueText>123456789</KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>사업자번호</KeyValueTitle>
+                    <KeyValueText>123-45-12345</KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{
@@ -518,22 +468,6 @@ export default {
                   >
                     <KeyValueTitle>연대보증인 주민등록번호</KeyValueTitle>
                     <KeyValueText>920101-2******</KeyValueText>
-                  </KeyValueItem>
-                  <KeyValueItem
-                    :classNames="{
-                      item: 'text-body-3',
-                    }"
-                  >
-                    <KeyValueTitle>사업자번호</KeyValueTitle>
-                    <KeyValueText>123-45-12345</KeyValueText>
-                  </KeyValueItem>
-                  <KeyValueItem
-                    :classNames="{
-                      item: 'text-body-3',
-                    }"
-                  >
-                    <KeyValueTitle>법인번호</KeyValueTitle>
-                    <KeyValueText>123-45-12345</KeyValueText>
                   </KeyValueItem>
                   <!-- //Case : 법인사업자 -->
 
@@ -652,6 +586,11 @@ export default {
                       >상담변경</BasicButton
                     >
                   </ButtonListItem>
+                  <ButtonListItem>
+                    <BasicButton theme="tertiary" size="small"
+                      >계약등록</BasicButton
+                    >
+                  </ButtonListItem>
                 </ButtonList>
                 <!-- // Case : 상담중-지점문의 -->
 
@@ -659,25 +598,36 @@ export default {
                 <ButtonList :classNames="{ wrap: 'row-margin-contents-small' }">
                   <ButtonListItem>
                     <BasicButton theme="tertiary" size="small"
-                      >계약등록</BasicButton
+                      >서류등록</BasicButton
                     >
+                  </ButtonListItem>
+                  <ButtonListItem>
+                    <BasicButton size="small">계약등록</BasicButton>
                   </ButtonListItem>
                 </ButtonList>
                 <!-- // Case : 상담중-승인 -->
 
                 <!-- Case : 상담중-자동승인 -->
-                <ButtonList :classNames="{ wrap: 'row-margin-contents-small' }">
-                  <ButtonListItem>
-                    <BasicButton theme="quaternary" size="small" line="true"
-                      >상담변경</BasicButton
-                    >
-                  </ButtonListItem>
-                  <ButtonListItem>
-                    <BasicButton theme="tertiary" size="small"
-                      >계약등록</BasicButton
-                    >
-                  </ButtonListItem>
-                </ButtonList>
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton theme="quaternary" size="small" line="true"
+                        >상담변경</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton theme="tertiary" size="small"
+                        >서류등록</BasicButton
+                      >
+                    </ButtonListItem>
+                  </ButtonList>
+
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton size="small">계약등록</BasicButton>
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
                 <!-- // Case : 상담중-자동승인 -->
               </div>
             </UiAccordionLayer>
@@ -769,8 +719,16 @@ export default {
                       item: 'text-body-3',
                     }"
                   >
-                    <KeyValueTitle>회사명</KeyValueTitle>
-                    <KeyValueText>하나캐피탈</KeyValueText>
+                    <KeyValueTitle>법인등록번호</KeyValueTitle>
+                    <KeyValueText>123456789</KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>사업자번호</KeyValueTitle>
+                    <KeyValueText>123-45-12345</KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{
@@ -787,22 +745,6 @@ export default {
                   >
                     <KeyValueTitle>연대보증인 주민등록번호</KeyValueTitle>
                     <KeyValueText>920101-2******</KeyValueText>
-                  </KeyValueItem>
-                  <KeyValueItem
-                    :classNames="{
-                      item: 'text-body-3',
-                    }"
-                  >
-                    <KeyValueTitle>사업자번호</KeyValueTitle>
-                    <KeyValueText>123-45-12345</KeyValueText>
-                  </KeyValueItem>
-                  <KeyValueItem
-                    :classNames="{
-                      item: 'text-body-3',
-                    }"
-                  >
-                    <KeyValueTitle>법인번호</KeyValueTitle>
-                    <KeyValueText>123-45-12345</KeyValueText>
                   </KeyValueItem>
                   <!-- //Case : 법인사업자 -->
 
@@ -982,8 +924,16 @@ export default {
                       item: 'text-body-3',
                     }"
                   >
-                    <KeyValueTitle>회사명</KeyValueTitle>
-                    <KeyValueText>하나캐피탈</KeyValueText>
+                    <KeyValueTitle>사업자번호</KeyValueTitle>
+                    <KeyValueText>123-45-12345</KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>대표자 이름</KeyValueTitle>
+                    <KeyValueText>홍길동</KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{
@@ -992,14 +942,6 @@ export default {
                   >
                     <KeyValueTitle>대표자 주민등록번호</KeyValueTitle>
                     <KeyValueText>920101-2******</KeyValueText>
-                  </KeyValueItem>
-                  <KeyValueItem
-                    :classNames="{
-                      item: 'text-body-3',
-                    }"
-                  >
-                    <KeyValueTitle>사업자번호</KeyValueTitle>
-                    <KeyValueText>123-45-12345</KeyValueText>
                   </KeyValueItem>
                   <!-- //Case : 개인사업자 -->
 
@@ -1167,8 +1109,16 @@ export default {
                       item: 'text-body-3',
                     }"
                   >
-                    <KeyValueTitle>회사명</KeyValueTitle>
-                    <KeyValueText>하나캐피탈</KeyValueText>
+                    <KeyValueTitle>사업자번호</KeyValueTitle>
+                    <KeyValueText>123-45-12345</KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>대표자 이름</KeyValueTitle>
+                    <KeyValueText>홍길동</KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{
@@ -1177,14 +1127,6 @@ export default {
                   >
                     <KeyValueTitle>대표자 주민등록번호</KeyValueTitle>
                     <KeyValueText>920101-2******</KeyValueText>
-                  </KeyValueItem>
-                  <KeyValueItem
-                    :classNames="{
-                      item: 'text-body-3',
-                    }"
-                  >
-                    <KeyValueTitle>사업자번호</KeyValueTitle>
-                    <KeyValueText>123-45-12345</KeyValueText>
                   </KeyValueItem>
                   <!-- //Case : 개인사업자 -->
 
@@ -1332,8 +1274,16 @@ export default {
                       item: 'text-body-3',
                     }"
                   >
-                    <KeyValueTitle>회사명</KeyValueTitle>
-                    <KeyValueText>하나캐피탈</KeyValueText>
+                    <KeyValueTitle>사업자번호</KeyValueTitle>
+                    <KeyValueText>123-45-12345</KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>대표자 이름</KeyValueTitle>
+                    <KeyValueText>홍길동</KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{
@@ -1343,14 +1293,6 @@ export default {
                     <KeyValueTitle>대표자 주민등록번호</KeyValueTitle>
                     <KeyValueText>920101-2******</KeyValueText>
                   </KeyValueItem>
-                  <KeyValueItem
-                    :classNames="{
-                      item: 'text-body-3',
-                    }"
-                  >
-                    <KeyValueTitle>사업자번호</KeyValueTitle>
-                    <KeyValueText>123-45-12345</KeyValueText>
-                  </KeyValueItem>
                   <!-- //Case : 개인사업자 -->
 
                   <!-- Case : 법인사업자 -->
@@ -1359,8 +1301,16 @@ export default {
                       item: 'text-body-3',
                     }"
                   >
-                    <KeyValueTitle>회사명</KeyValueTitle>
-                    <KeyValueText>하나캐피탈</KeyValueText>
+                    <KeyValueTitle>법인등록번호</KeyValueTitle>
+                    <KeyValueText>123456789</KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>사업자번호</KeyValueTitle>
+                    <KeyValueText>123-45-12345</KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
                     :classNames="{
@@ -1377,22 +1327,6 @@ export default {
                   >
                     <KeyValueTitle>연대보증인 주민등록번호</KeyValueTitle>
                     <KeyValueText>920101-2******</KeyValueText>
-                  </KeyValueItem>
-                  <KeyValueItem
-                    :classNames="{
-                      item: 'text-body-3',
-                    }"
-                  >
-                    <KeyValueTitle>사업자번호</KeyValueTitle>
-                    <KeyValueText>123-45-12345</KeyValueText>
-                  </KeyValueItem>
-                  <KeyValueItem
-                    :classNames="{
-                      item: 'text-body-3',
-                    }"
-                  >
-                    <KeyValueTitle>법인번호</KeyValueTitle>
-                    <KeyValueText>123-45-12345</KeyValueText>
                   </KeyValueItem>
                   <!-- //Case : 법인사업자 -->
 
@@ -1478,6 +1412,7 @@ export default {
                   </KeyValueItem>
                 </KeyValue>
 
+                <!-- Case : 차량 번호 등록 완료 후 미노출 -->
                 <ButtonList :classNames="{ wrap: 'row-margin-contents-small' }">
                   <ButtonListItem>
                     <BasicButton theme="tertiary" size="small"
@@ -1485,6 +1420,17 @@ export default {
                     >
                   </ButtonListItem>
                 </ButtonList>
+                <!-- // Case : 차량 번호 등록 완료 후 미노출 -->
+
+                <!-- Case : 차량 번호 등록 완료 시 노출 -->
+                <ButtonList :classNames="{ wrap: 'row-margin-contents-small' }">
+                  <ButtonListItem>
+                    <BasicButton theme="tertiary" size="small"
+                      >차량 번호 확인</BasicButton
+                    >
+                  </ButtonListItem>
+                </ButtonList>
+                <!-- // Case : 차량 번호 등록 완료 시 노출 -->
               </div>
             </UiAccordionLayer>
           </BasicBox>
