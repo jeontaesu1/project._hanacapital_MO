@@ -33,9 +33,6 @@ import BasicInput from '@/components/ui/form/BasicInput.vue';
 import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
-import IconLink from '@/assets/images/icon/link.svg?component';
-import IconCheckDocument from '@/assets/images/icon/check-document.svg?component';
-
 export default {
   components: {
     PageContents,
@@ -66,9 +63,6 @@ export default {
     BasicInput,
     CarThumb,
     BottomSticky,
-
-    IconLink,
-    IconCheckDocument,
   },
   setup() {
     const store = {
@@ -158,11 +152,6 @@ export default {
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>사업자번호</KeyValueTitle>
               <KeyValueText>123456789</KeyValueText>
-            </KeyValueItem>
-
-            <KeyValueItem :classNames="{ item: 'text-body-3' }">
-              <KeyValueTitle>대표자 휴대폰번호</KeyValueTitle>
-              <KeyValueText>010-1234-5678</KeyValueText>
             </KeyValueItem>
           </KeyValue>
         </BasicBox>
@@ -1060,52 +1049,6 @@ export default {
           <!-- // Case : 오토할부일 경우 -->
         </FormList>
       </section>
-
-      <section class="row-margin-container-medium">
-        <div class="flex-box row-margin-contents">
-          <div class="flex-box__cell">
-            <h3 class="text-title-2">서류등록</h3>
-          </div>
-          <div class="flex-box__cell flex-box__cell--small">
-            <div class="text-body-3">(선택)</div>
-          </div>
-        </div>
-
-        <!-- Case : 등록 전 -->
-        <button
-          type="button"
-          :class="[$style['add-button'], 'row-margin-item']"
-        >
-          <span :class="$style['add-button__inner']">
-            <span :class="$style['add-button__text']">서류등록</span>
-            <span
-              :class="[
-                $style['add-button__icon'],
-                $style['add-button__icon--secondary'],
-              ]"
-            >
-              <IconLink />
-            </span>
-          </span>
-        </button>
-        <!-- //Case : 등록 전 -->
-
-        <!-- Case : 등록 후 -->
-        <BasicBox>
-          <div class="flex-box">
-            <div class="flex-box__cell">
-              <IconCheckDocument class="display-block" />
-            </div>
-            <div class="flex-box__cell flex-1">
-              <div class="text-body-3">등록 완료</div>
-            </div>
-            <div class="flex-box__cell">
-              <BasicButton size="mini" theme="quaternary">추가첨부</BasicButton>
-            </div>
-          </div>
-        </BasicBox>
-        <!-- //Case : 등록 후 -->
-      </section>
     </div>
 
     <template v-slot:foot>
@@ -1128,7 +1071,3 @@ export default {
     </template>
   </PageContents>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/salesNewCar/SalesNewCarCounseling.scss';
-</style>

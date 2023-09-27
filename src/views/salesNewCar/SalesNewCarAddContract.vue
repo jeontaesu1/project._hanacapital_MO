@@ -118,6 +118,14 @@ export default {
                 item: 'text-body-3',
               }"
             >
+              <KeyValueTitle>사업자번호</KeyValueTitle>
+              <KeyValueText>123456789</KeyValueText>
+            </KeyValueItem>
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
+            >
               <KeyValueTitle>대표자 이름</KeyValueTitle>
               <KeyValueText>홍길동</KeyValueText>
             </KeyValueItem>
@@ -129,6 +137,17 @@ export default {
               <KeyValueTitle>대표자 주민등록번호</KeyValueTitle>
               <KeyValueText>710908-1******</KeyValueText>
             </KeyValueItem>
+            <!-- //Case : [개인사업자]일 경우 노출 -->
+
+            <!-- Case : [법인사업자]일 경우 노출 -->
+            <KeyValueItem
+              :classNames="{
+                item: 'text-body-3',
+              }"
+            >
+              <KeyValueTitle>법인등록번호</KeyValueTitle>
+              <KeyValueText>123456789</KeyValueText>
+            </KeyValueItem>
             <KeyValueItem
               :classNames="{
                 item: 'text-body-3',
@@ -137,9 +156,6 @@ export default {
               <KeyValueTitle>사업자번호</KeyValueTitle>
               <KeyValueText>123456789</KeyValueText>
             </KeyValueItem>
-            <!-- //Case : [개인사업자]일 경우 노출 -->
-
-            <!-- Case : [법인사업자]일 경우 노출 -->
             <KeyValueItem
               :classNames="{
                 item: 'text-body-3',
@@ -155,22 +171,6 @@ export default {
             >
               <KeyValueTitle>연대보증인 주민등록번호</KeyValueTitle>
               <KeyValueText>710908-1******</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>사업자번호</KeyValueTitle>
-              <KeyValueText>123456789</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem
-              :classNames="{
-                item: 'text-body-3',
-              }"
-            >
-              <KeyValueTitle>법인등록번호</KeyValueTitle>
-              <KeyValueText>123456789</KeyValueText>
             </KeyValueItem>
             <!-- //Case : [법인사업자]일 경우 노출 -->
 

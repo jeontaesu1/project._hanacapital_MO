@@ -11,16 +11,13 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
-import BoxCheck from '@/components/ui/form/BoxCheck.vue';
-import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
-import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
-import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 import RoundButton from '@/components/ui/button/RoundButton.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
+import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 
@@ -37,16 +34,13 @@ export default {
     ButtonListItem,
     PageTextGroup,
     PageMainText,
-    BoxCheck,
-    BoxCheckLabel,
-    BoxCheckList,
-    BoxCheckListItem,
     RoundButton,
     BasicInput,
     FormList,
     FormListItem,
     FormInvalid,
     FormInvalidMessage,
+    FormHelpText,
     InputBlock,
     InputBlockCell,
     IconTell,
@@ -55,6 +49,8 @@ export default {
     const state = reactive({
       businessNameError: false,
       businessNumberError: false,
+      dateError: false,
+      nameError: false,
     });
 
     const layer = ref(null);
@@ -99,6 +95,36 @@ export default {
 
       <FormList>
         <FormListItem
+          titleText="사업자번호"
+          target="#layerAutoEstimateBusinessInfoBusinessNumber"
+        >
+          <FormInvalid :error="state.businessNumberError">
+            <InputBlock :error="state.businessNumberError">
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  type="number"
+                  pattern="\d*"
+                  title="사업자번호 입력"
+                  id="layerAutoEstimateBusinessInfoBusinessNumber"
+                />
+              </InputBlockCell>
+              <template v-slot:right>
+                <!-- Case : 사업자번호 조회 후 비노출 -->
+                <BasicButton size="mini" theme="tertiary">조회</BasicButton>
+                <!-- // Case : 사업자번호 조회 후 비노출 -->
+
+                <!-- Case : 사업자번호 조회 후 노출 -->
+                <BasicButton size="mini" theme="quaternary">
+                  초기화
+                </BasicButton>
+                <!-- // Case : 사업자번호 조회 후 노출 -->
+              </template>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+
+        <FormListItem
           titleText="사업자명"
           target="#layerAutoEstimateBusinessInfoBusinessManName"
         >
@@ -114,18 +140,37 @@ export default {
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
+
         <FormListItem
-          titleText="사업자번호"
-          target="#layerAutoEstimateBusinessInfoBusinessNumber"
+          titleText="설립일자"
+          target="#layerAutoEstimateBusinessInfoDate"
         >
-          <FormInvalid :error="state.businessNumberError">
-            <InputBlock :error="state.businessNumberError">
+          <FormInvalid :error="state.dateError">
+            <InputBlock :error="state.dateError">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   type="number"
                   pattern="\d*"
-                  title="사업자번호 입력"
-                  id="layerAutoEstimateBusinessInfoBusinessNumber"
+                  title="설립일자"
+                  id="layerAutoEstimateBusinessInfoDate"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+            <FormHelpText>숫자만 입력해 주세요. (예:19900123)</FormHelpText>
+          </FormInvalid>
+        </FormListItem>
+
+        <FormListItem
+          titleText="대표자명"
+          target="#layerAutoEstimateBusinessInfoName"
+        >
+          <FormInvalid :error="state.nameError">
+            <InputBlock :error="state.nameError">
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  title="대표자명"
+                  id="layerAutoEstimateBusinessInfoName"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -133,33 +178,6 @@ export default {
           </FormInvalid>
         </FormListItem>
       </FormList>
-
-      <section class="row-margin-contents-group">
-        <h3 class="text-body-2 font-weight-bold row-margin-item-medium">
-          개업 연월일이 1년이 지났나요?
-        </h3>
-        <BoxCheckList>
-          <BoxCheckListItem>
-            <BoxCheck
-              :minSide="true"
-              name="layerAutoEstimateBusinessInfoCheck"
-              id="layerAutoEstimateBusinessInfoCheck001"
-              :defaultChecked="true"
-            >
-              <BoxCheckLabel>예</BoxCheckLabel>
-            </BoxCheck>
-          </BoxCheckListItem>
-          <BoxCheckListItem>
-            <BoxCheck
-              :minSide="true"
-              name="layerAutoEstimateBusinessInfoCheck"
-              id="layerAutoEstimateBusinessInfoCheck002"
-            >
-              <BoxCheckLabel>아니오</BoxCheckLabel>
-            </BoxCheck>
-          </BoxCheckListItem>
-        </BoxCheckList>
-      </section>
 
       <template v-slot:foot>
         <ButtonList
