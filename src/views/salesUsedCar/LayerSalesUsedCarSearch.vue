@@ -18,7 +18,6 @@ import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
-import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
 
 export default {
@@ -39,7 +38,6 @@ export default {
     BasicButton,
     BasicHr,
     BasicBox,
-    CarEmblem,
     UnitText,
   },
   setup() {
@@ -186,7 +184,7 @@ export default {
         </FormList>
 
         <div class="row-margin-contents-group">
-          <BasicButton theme="secondary" :line="true">조회</BasicButton>
+          <BasicButton :line="true">조회</BasicButton>
         </div>
       </div>
 
@@ -200,11 +198,8 @@ export default {
 
       <!-- Case : 조회 결과 있을 때 -->
       <ul class="reset-list">
-        <li v-for="i in 3" :key="i" class="row-margin-item-group">
+        <li v-for="i in 2" :key="i" class="row-margin-item-group">
           <BasicBox>
-            <div class="row-margin-mini">
-              <CarEmblem src="/images/_dummy/car-emblem.png" name="기아" />
-            </div>
             <h3 class="text-body-1 font-weight-medium">노블레스</h3>
             <p class="text-body-4 color-gray row-margin-small">
               2.2 디젤 11인승 노블레스

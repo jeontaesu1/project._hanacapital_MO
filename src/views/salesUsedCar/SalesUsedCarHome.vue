@@ -354,18 +354,6 @@ export default {
               }"
             >
               <div :class="$style['accordion-contents']">
-                <TextProgress
-                  :steps="[
-                    '본인인증',
-                    '계약자정보',
-                    '금융조건',
-                    '면허정보',
-                    '약관동의',
-                    '본인인증',
-                    'ARS',
-                  ]"
-                  :current="1"
-                />
                 <KeyValue margin="regular">
                   <KeyValueItem
                     :classNames="{
@@ -470,18 +458,6 @@ export default {
               }"
             >
               <div :class="$style['accordion-contents']">
-                <TextProgress
-                  :steps="[
-                    '본인인증',
-                    '계약자정보',
-                    '금융조건',
-                    '면허정보',
-                    '약관동의',
-                    '본인인증',
-                    'ARS',
-                  ]"
-                  :current="1"
-                />
                 <KeyValue margin="regular">
                   <KeyValueItem
                     :classNames="{
@@ -687,12 +663,10 @@ export default {
               <div :class="$style['accordion-contents']">
                 <TextProgress
                   :steps="[
-                    '본인인증',
-                    '계약자정보',
-                    '금융조건',
-                    '면허정보',
+                    '서류확인',
+                    '신청정보',
                     '약관동의',
-                    '본인인증',
+                    '최종약정',
                     'ARS',
                   ]"
                   :current="1"
@@ -810,16 +784,19 @@ export default {
                 </KeyValue>
 
                 <!-- Case : 계약중-자동승인 -->
-                <ButtonList :classNames="{ wrap: 'row-margin-contents-small' }">
-                  <ButtonListItem>
-                    <BasicButton theme="tertiary" size="small"
-                      >고객서류등록</BasicButton
-                    >
-                  </ButtonListItem>
-                  <ButtonListItem>
-                    <BasicButton size="small">계약확정</BasicButton>
-                  </ButtonListItem>
-                </ButtonList>
+                <div class="row-margin-contents-small">
+                  <BasicButton :line="true" size="small">재상담</BasicButton>
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton theme="tertiary" size="small"
+                        >고객서류등록</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton size="small">계약확정</BasicButton>
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
                 <!-- // Case : 계약중-자동승인 -->
 
                 <!-- Case : 계약완료-자동승인 -->
@@ -915,12 +892,10 @@ export default {
               <div :class="$style['accordion-contents']">
                 <TextProgress
                   :steps="[
-                    '본인인증',
-                    '계약자정보',
-                    '금융조건',
-                    '면허정보',
+                    '서류확인',
+                    '신청정보',
                     '약관동의',
-                    '본인인증',
+                    '최종약정',
                     'ARS',
                   ]"
                   :current="1"
@@ -1112,18 +1087,6 @@ export default {
               }"
             >
               <div :class="$style['accordion-contents']">
-                <TextProgress
-                  :steps="[
-                    '본인인증',
-                    '계약자정보',
-                    '금융조건',
-                    '면허정보',
-                    '약관동의',
-                    '본인인증',
-                    'ARS',
-                  ]"
-                  :current="1"
-                />
                 <KeyValue margin="regular">
                   <KeyValueItem
                     :classNames="{
@@ -1287,18 +1250,6 @@ export default {
               }"
             >
               <div :class="$style['accordion-contents']">
-                <TextProgress
-                  :steps="[
-                    '본인인증',
-                    '계약자정보',
-                    '금융조건',
-                    '면허정보',
-                    '약관동의',
-                    '본인인증',
-                    'ARS',
-                  ]"
-                  :current="1"
-                />
                 <KeyValue margin="regular">
                   <KeyValueItem
                     :classNames="{

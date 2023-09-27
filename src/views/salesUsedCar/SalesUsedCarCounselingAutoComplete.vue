@@ -76,7 +76,9 @@ export default {
         완료되었습니다
       </PageMainText>
       <PageSubText
-        >고객님은 <span class="color-blue">자동승인</span> 고객입니다.<br />
+        >고객님은
+        <span class="color-green font-weight-medium">자동승인</span>
+        고객입니다.<br />
         온라인 약정을 진행하시려면 ‘계약확정’을 눌러주세요.</PageSubText
       >
     </PageTextGroup>

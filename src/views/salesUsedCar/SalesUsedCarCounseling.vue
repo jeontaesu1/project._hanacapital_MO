@@ -33,7 +33,6 @@ import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 import CheckBox from '@/components/ui/form/CheckBox.vue';
 import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
 import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
-import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
 import SelectTable from '@/components/ui/table/SelectTable.vue';
 import SelectTableRow from '@/components/ui/table/SelectTableRow.vue';
@@ -67,7 +66,6 @@ export default {
     BoxCheckList,
     BoxCheckListItem,
     NoticeText,
-    CarEmblem,
     CheckBox,
     CheckBoxLabelText,
     CheckBoxObject,
@@ -562,9 +560,6 @@ export default {
 
       <!-- Case : 차량 선택 후 노출 -->
       <BasicBox className="row-margin-contents">
-        <div class="row-margin-mini">
-          <CarEmblem src="/images/_dummy/car-emblem.png" name="현대" />
-        </div>
         <h3 class="text-body-1 font-weight-medium">기아</h3>
         <p class="text-body-4 color-gray font-weight-regular row-margin-small">
           2.2 디젤 11인승 노블레스
@@ -629,6 +624,13 @@ export default {
               </template>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
+
+            <!-- Case : 차량구입금액 입력 시 노출 -->
+            <FormHelpText :classNames="{ wrap: 'align-right' }">
+              삼천오백만원
+            </FormHelpText>
+            <!-- // Case : 차량구입금액 입력 시 노출 -->
+
             <NoticeText :classNames="{ wrap: 'row-margin-item' }"
               >차량구입금액은 2백만원 이상 입력해주세요.</NoticeText
             >
@@ -712,8 +714,15 @@ export default {
                 </template>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
-              <FormHelpText
-                >대출신청금액은 2백만원 이상 입력해주세요.</FormHelpText
+
+              <!-- Case : 대출신청금액 입력 시 노출 -->
+              <FormHelpText :classNames="{ wrap: 'align-right' }">
+                삼천오백만원
+              </FormHelpText>
+              <!-- // Case : 대출신청금액 입력 시 노출 -->
+
+              <NoticeText :classNames="{ wrap: 'row-margin-item' }"
+                >대출신청금액은 2백만원 이상 입력해주세요.</NoticeText
               >
             </FormInvalid>
           </FormListItem>
@@ -743,6 +752,10 @@ export default {
                       {
                         value: '4',
                         text: '60개월',
+                      },
+                      {
+                        value: '5',
+                        text: '72개월',
                       },
                     ]"
                     buttonTitle="대출기간 선택"
