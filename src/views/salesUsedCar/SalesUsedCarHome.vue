@@ -257,15 +257,29 @@ export default {
                 </BoxCheck>
               </BoxCheckListItem>
             </BoxCheckList>
+            <!-- Case : 고객명 선택 시 노출 -->
             <InputBlock>
               <InputBlockCell :flexible="true">
                 <BasicInput
                   type="search"
                   title="검색어 입력"
-                  placeholder="검색어 입력"
+                  placeholder="고객명 입력"
                 />
               </InputBlockCell>
             </InputBlock>
+            <!-- // Case : 고객명 선택 시 노출 -->
+
+            <!-- Case : 메모 선택 시 노출 -->
+            <InputBlock>
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  type="search"
+                  title="검색어 입력"
+                  placeholder="메모 입력"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <!-- // Case : 메모 선택 시 노출 -->
           </FormListItem>
         </FormList>
 
