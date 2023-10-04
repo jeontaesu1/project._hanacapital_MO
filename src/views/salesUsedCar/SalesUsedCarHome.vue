@@ -814,7 +814,7 @@ export default {
                 </ButtonList>
                 <!-- // Case : 계약완료-자동승인 -->
 
-                <!-- Case : 상담중-지점문의,상담중-시스템거절 -->
+                <!-- Case : 계약중-지점문의 -->
                 <div class="row-margin-contents-small">
                   <BasicButton :line="true" size="small">재상담</BasicButton>
                   <ButtonList :classNames="{ wrap: 'row-margin-item' }">
@@ -830,7 +830,7 @@ export default {
                     </ButtonListItem>
                   </ButtonList>
                 </div>
-                <!-- // Case : 상담중-지점문의,상담중-시스템거절 -->
+                <!-- // Case : 계약중-지점문의 -->
               </div>
             </UiAccordionLayer>
           </BasicBox>
