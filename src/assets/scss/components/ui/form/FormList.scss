@@ -27,7 +27,7 @@
     @include font-size-head(18);
     min-height: #{$line-height-head}em;
     font-weight: 400;
-    color: $color-black;
+    color: $color-gray-90;
     cursor: pointer;
     transition: transform 0.2s, font-size 0.2s, line-height 0.2s, color 0.2s;
 
