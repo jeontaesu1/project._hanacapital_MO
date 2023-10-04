@@ -27,7 +27,7 @@
     @include font-size-head(18);
     min-height: #{$line-height-head}em;
     font-weight: 400;
-    color: $color-gray-60;
+    color: $color-black;
     cursor: pointer;
     transition: transform 0.2s, font-size 0.2s, line-height 0.2s, color 0.2s;
 
@@ -38,7 +38,7 @@
     &-optional {
       display: block;
       align-self: end;
-      @include font-size-default(12);
+      @include font-size-default(13);
       font-weight: 400;
       margin: 0 0 1px 4px;
       transition: margin 0.2s;
@@ -83,10 +83,11 @@
   &__item--error.form__item--focus {
     .form__title {
       z-index: auto;
-      @include font-size-default(12);
+      @include font-size-default(13);
       min-height: #{$line-height-default}em;
       font-weight: 500;
       transform: translateY(-26px);
+      color: $color-gray-70;
 
       &-optional {
         margin-left: 2px;
@@ -117,12 +118,12 @@
 
   &__item--disabled {
     .form__title {
-      color: $color-gray-40;
+      color: $color-gray-50;
       cursor: default;
     }
 
     .form__help {
-      color: $color-gray-40;
+      color: $color-gray-50;
     }
   }
 
