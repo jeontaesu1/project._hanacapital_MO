@@ -11,6 +11,8 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
+import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
+import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
@@ -44,6 +46,8 @@ export default {
     BasicBox,
     BasicBoxHead,
     BasicBoxHeadLeft,
+    BasicBoxHeadRight,
+    RoundStatus,
     KeyValue,
     KeyValueItem,
     KeyValueTitle,
@@ -114,6 +118,40 @@ export default {
               <!-- DD : [개인]의 경우 '이름' 출력 / [개인사업자] 혹은 [법인사업자]일 경우 '회사명' 출력 -->
               <h3 class="text-body-1 font-weight-medium">홍길동</h3>
             </BasicBoxHeadLeft>
+            <BasicBoxHeadRight>
+              <!-- Case : 개인일 경우 -->
+              <RoundStatus
+                :block="true"
+                size="small"
+                theme="secondary"
+                square="true"
+              >
+                개인
+              </RoundStatus>
+              <!-- // Case : 개인일 경우 -->
+
+              <!-- Case : 개인사업자일 경우 -->
+              <RoundStatus
+                :block="true"
+                size="small"
+                theme="secondary"
+                square="true"
+              >
+                개인사업자
+              </RoundStatus>
+              <!-- // Case : 개인사업자일 경우 -->
+
+              <!-- Case : 법인사업자일 경우 -->
+              <RoundStatus
+                :block="true"
+                size="small"
+                theme="secondary"
+                square="true"
+              >
+                법인사업자
+              </RoundStatus>
+              <!-- // Case : 법인사업자일 경우 -->
+            </BasicBoxHeadRight>
           </BasicBoxHead>
 
           <KeyValue margin="regular">
