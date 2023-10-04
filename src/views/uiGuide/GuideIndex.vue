@@ -5738,11 +5738,15 @@ const datas = () => [
           },
           {
             date: '2023.09.19',
-            text: ' 항목 추가 및 삭제, 문구 수정, 컨텐츠 추가\n- AF_M99_l007\n- AF_M99_l010',
+            text: '항목 추가 및 삭제, 문구 수정, 컨텐츠 추가\n- AF_M99_l007\n- AF_M99_l010',
           },
           {
             date: '2023.09.21',
             text: '타이틀 텍스트 굵기 수정\n- BF_M04_l027\n- BF_M06_l019\n- BF_M06_l022\n- BF_M06_l023\n- BF_M06_l024\n- BF_M06_l025\n- AF_M99_l008\n- AF_M99_l003\n- AF_M99_l004\n- AF_M99_l005\n- AF_M99_l006\n- AF_M99_l007\n- AF_M99_l010\n- AF_M99_l009\n- BF_M04_l007\n- BF_M04_l012\n- BF_M04_l011\n- BF_M04_l011\n- BF_M04_l004\n- BF_M04_l008\n- BF_M04_l009\n- BF_M04_l010\n- BF_M04_l012\n- BF_M04_l001\n- BF_M04_l002\n- BF_M04_l016\n- BF_M04_l021\n- BF_M04_l023\n- BF_M04_l022\n- BF_M04_l020\n- BF_M04_l019\n- BF_M04_l017\n- BF_M04_l015\n- BF_M04_l003\n- BF_M04_l013\n- BF_M04_l014\n- BF_M05_l013\n- BF_M05_l007\n- BF_M05_l013\n- BF_M05_l010\n- BF_M05_l009\n- BF_M05_l008\n- AF_M98_l001\n- AF_M98_l004\n- AF_M98_l002\n- AF_M98_l010\n- AF_M98_l003\n- AF_M98_l011',
+          },
+          {
+            date: '2023.10.04',
+            text: 'AF_M99_l003 파일업로드 항목 추가',
           },
         ],
       },
