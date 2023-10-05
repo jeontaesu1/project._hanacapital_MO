@@ -29,6 +29,7 @@ import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
+import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 
 export default {
   components: {
@@ -59,6 +60,7 @@ export default {
     KeyValueTitle,
     KeyValueText,
     NoticeText,
+    FormHelpText,
   },
   setup() {
     const state = reactive({
@@ -113,6 +115,12 @@ export default {
                 </template>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
+
+              <!-- Case : 신청금액 입력 시 노출 -->
+              <FormHelpText :classNames="{ wrap: 'align-right' }">
+                천사백만원
+              </FormHelpText>
+              <!-- // Case : 신청금액 입력 시 노출 -->
             </FormInvalid>
           </FormListItem>
 
