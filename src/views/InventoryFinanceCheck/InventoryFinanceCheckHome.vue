@@ -29,6 +29,8 @@ import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
+import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
+import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 
 import IconArrow from '@/assets/images/icon/dropdown.svg?component';
 
@@ -59,6 +61,8 @@ export default {
     FormListItem,
     FormInvalid,
     FormInvalidMessage,
+    BasicBoxHeadRight,
+    RoundStatus,
     IconArrow,
   },
   setup() {
@@ -260,7 +264,94 @@ export default {
 
       <!-- Case : 검색내역 있을 경우 -->
       <ul class="reset-list">
-        <li v-for="i in 2" :key="i" class="row-margin-item-group">
+        <li class="row-margin-item-group">
+          <BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-body-1 font-weight-medium">180주8300</h3>
+                <p class="text-body-4 color-gray row-margin-small">
+                  K5 하이브리드(DL3) 노블레스
+                </p>
+              </BasicBoxHeadLeft>
+              <BasicBoxHeadRight>
+                <RoundStatus
+                  :classNames="{ wrap: 'display-block' }"
+                  theme="nonary"
+                >
+                  실사필요
+                </RoundStatus>
+              </BasicBoxHeadRight>
+            </BasicBoxHead>
+
+            <KeyValue margin="regular">
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>실행일</KeyValueTitle>
+                <KeyValueText>2022.09.22</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>제휴점</KeyValueTitle>
+                <KeyValueText>퍼펌승</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>매매상사</KeyValueTitle>
+                <KeyValueText>퍼펌승</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>실사기한</KeyValueTitle>
+                <KeyValueText>2022.10.06</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+
+            <div class="row-margin-contents-small">
+              <ButtonList
+                :classNames="{
+                  wrap: 'row-margin-none',
+                }"
+              >
+                <ButtonListItem>
+                  <BasicButton :line="true" size="small"
+                    >미실사 사유등록</BasicButton
+                  >
+                </ButtonListItem>
+                <ButtonListItem>
+                  <BasicButton :line="true" size="small">실사등록</BasicButton>
+                </ButtonListItem>
+              </ButtonList>
+              <ButtonList
+                :classNames="{
+                  wrap: 'row-margin-item',
+                }"
+              >
+                <ButtonListItem>
+                  <BasicButton size="small" :disabled="true"
+                    >이미지 보기</BasicButton
+                  >
+                </ButtonListItem>
+              </ButtonList>
+            </div>
+          </BasicBox>
+        </li>
+
+        <li class="row-margin-item-group">
           <BasicBox>
             <BasicBoxHead>
               <BasicBoxHeadLeft>
