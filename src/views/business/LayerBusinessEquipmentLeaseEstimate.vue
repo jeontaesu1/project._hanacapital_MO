@@ -29,6 +29,7 @@ import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
+import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 
 export default {
   components: {
@@ -59,6 +60,7 @@ export default {
     KeyValueTitle,
     KeyValueText,
     NoticeText,
+    FormHelpText,
   },
   setup() {
     const state = reactive({
@@ -120,6 +122,12 @@ export default {
                 </template>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
+
+              <!-- Case : 입력 후 노출 -->
+              <FormHelpText :classNames="{ wrap: 'align-right' }">
+                천사백만원
+              </FormHelpText>
+              <!-- //Case : 입력 후 노출 -->
             </FormInvalid>
           </FormListItem>
 
@@ -331,6 +339,12 @@ export default {
                 </template>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
+
+              <!-- Case : 입력 후 노출 -->
+              <FormHelpText :classNames="{ wrap: 'align-right' }">
+                천이천백이십원
+              </FormHelpText>
+              <!-- //Case : 입력 후 노출 -->
             </FormInvalid>
           </FormListItem>
 
@@ -416,6 +430,12 @@ export default {
                 </template>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
+
+              <!-- Case : 입력 후 노출 -->
+              <FormHelpText :classNames="{ wrap: 'align-right' }">
+                천이천백이십원
+              </FormHelpText>
+              <!-- //Case : 입력 후 노출 -->
             </FormInvalid>
           </FormListItem>
           <!-- // Case : '스크린골프' 선택 시 노출 -->

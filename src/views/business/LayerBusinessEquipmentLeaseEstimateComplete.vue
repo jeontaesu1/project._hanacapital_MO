@@ -50,8 +50,10 @@ export default {
       <IllustInfo>
         <IllustObject type="complete" />
         <IllustInfoTitle>
-          <strong class="color-green">설비리스</strong> 접수가<br />
-          <strong>완료되었습니다</strong>
+          <strong>
+            <span class="color-green">리스</span> 접수가<br />
+            완료되었습니다
+          </strong>
         </IllustInfoTitle>
       </IllustInfo>
 
