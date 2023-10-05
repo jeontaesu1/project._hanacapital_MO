@@ -50,7 +50,6 @@ export default {
       businessNameError: false,
       businessNumberError: false,
       dateError: false,
-      nameError: false,
     });
 
     const layer = ref(null);
@@ -158,23 +157,6 @@ export default {
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
             <FormHelpText>숫자만 입력해 주세요. (예:19900123)</FormHelpText>
-          </FormInvalid>
-        </FormListItem>
-
-        <FormListItem
-          titleText="대표자명"
-          target="#layerAutoEstimateBusinessInfoName"
-        >
-          <FormInvalid :error="state.nameError">
-            <InputBlock :error="state.nameError">
-              <InputBlockCell :flexible="true">
-                <BasicInput
-                  title="대표자명"
-                  id="layerAutoEstimateBusinessInfoName"
-                />
-              </InputBlockCell>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
       </FormList>
