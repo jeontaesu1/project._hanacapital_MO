@@ -36,6 +36,7 @@ import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
 import ScrollSection from '@/components/ui/section/ScrollSection.vue';
 import BottomSticky from '@/components/ui/common/BottomSticky.vue';
+import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
 
 import IconInformation from '@/assets/images/icon/information.svg?component';
 
@@ -73,6 +74,7 @@ export default {
     NoticeText,
     ScrollSection,
     BottomSticky,
+    BasicDatepicker,
 
     IconInformation,
   },
@@ -91,6 +93,7 @@ export default {
       workIncomeError: false,
       buisnessNameError: false,
       buisnessLicenseError: false,
+      buisnessDateError: false,
       loanAmountError: false,
       loanPeriodError: false,
     });
@@ -769,7 +772,16 @@ export default {
       </section>
 
       <section class="row-margin-container-medium">
-        <h3 class="text-title-2 row-margin-contents">사업자정보</h3>
+        <div class="flex-box row-margin-contents">
+          <div class="flex-box__cell flex-1">
+            <h3 class="text-title-2">사업자정보</h3>
+          </div>
+          <div class="flex-box__cell">
+            <BasicButton size="mini" theme="tertiary">
+              KCB사업자조회
+            </BasicButton>
+          </div>
+        </div>
 
         <FormList>
           <FormListItem
@@ -784,41 +796,46 @@ export default {
                     id="lMBlogLoanCounselingFormBuisnessName"
                   />
                 </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <!-- DD : "KCB사업자조회"로 정보 입력 시 :disabled="true" -->
+          <FormListItem
+            titleText="사업자등록번호"
+            target="#lMBlogLoanCounselingFormBuisnessLicense"
+            :disabled="false"
+          >
+            <FormInvalid :error="state.buisnessLicenseError">
+              <InputBlock :error="state.buisnessLicenseError" :disabled="false">
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    title="사업자등록번호"
+                    id="lMBlogLoanCounselingFormBuisnessLicense"
+                    :disabled="false"
+                  />
+                </InputBlockCell>
                 <template v-slot:right>
-                  <BasicButton size="mini" theme="tertiary">조회</BasicButton>
+                  <BasicButton size="mini" theme="quaternary">확인</BasicButton>
                 </template>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
-
-          <FormListItem
-            titleText="사업자등록번호"
-            target="#lMBlogLoanCounselingFormBuisnessLicense"
-          >
-            <FormInvalid :error="state.buisnessLicenseError">
-              <InputBlock :error="state.buisnessLicenseError">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    title="사업자등록번호"
-                    id="lMBlogLoanCounselingFormBuisnessLicense"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
+          <!-- // DD :"KCB사업자조회"로 정보 입력 시 :disabled="true" -->
 
           <FormListItem
             titleText="사업개시일자"
-            target="#lMBlogLoanCounselingFormBuisnessDate"
+            target="#lMBlogLoanCounselingFormBuisnessDateButton"
           >
             <FormInvalid :error="state.buisnessDateError">
               <InputBlock :error="state.buisnessDateError">
                 <InputBlockCell :flexible="true">
-                  <BasicInput
+                  <BasicDatepicker
                     title="사업개시일자"
                     id="lMBlogLoanCounselingFormBuisnessDate"
+                    buttonId="lMBlogLoanCounselingFormBuisnessDateButton"
                   />
                 </InputBlockCell>
               </InputBlock>
