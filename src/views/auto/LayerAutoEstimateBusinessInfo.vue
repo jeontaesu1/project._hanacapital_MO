@@ -109,11 +109,13 @@ export default {
               </InputBlockCell>
               <template v-slot:right>
                 <!-- Case : 사업자번호 조회 후 비노출 -->
-                <BasicButton size="mini" theme="tertiary">조회</BasicButton>
+                <BasicButton size="mini" theme="tertiary" inline="true"
+                  >조회</BasicButton
+                >
                 <!-- // Case : 사업자번호 조회 후 비노출 -->
 
                 <!-- Case : 사업자번호 조회 후 노출 -->
-                <BasicButton size="mini" theme="quaternary">
+                <BasicButton size="mini" theme="quaternary" inline="true">
                   초기화
                 </BasicButton>
                 <!-- // Case : 사업자번호 조회 후 노출 -->
