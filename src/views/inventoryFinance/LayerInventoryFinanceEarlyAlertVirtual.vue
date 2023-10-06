@@ -84,16 +84,25 @@ export default {
       <BasicBox>
         <BasicBoxHead>
           <BasicBoxHeadLeft>
-            <h3 class="text-body-1 font-weight-medium">운영자금대출</h3>
+            <h3 class="text-body-1 font-weight-medium">10나 8941</h3>
+            <p class="text-body-4 color-gray row-margin-small">
+              쏘나타 하이브리드(DN8) 스파이더
+            </p>
           </BasicBoxHeadLeft>
         </BasicBoxHead>
 
         <UiAccordion tagName="div">
           <KeyValue>
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
+              <KeyValueTitle>계약상품명</KeyValueTitle>
+              <KeyValueText>운영자금대출</KeyValueText>
+            </KeyValueItem>
+
+            <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>입금예정일자</KeyValueTitle>
               <KeyValueText>2021.03.04</KeyValueText>
             </KeyValueItem>
+
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>입금예정금액</KeyValueTitle>
               <KeyValueText>7,400,000 원</KeyValueText>
@@ -108,7 +117,7 @@ export default {
           >
             <KeyValue>
               <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                <KeyValueTitle>계좌정보</KeyValueTitle>
+                <KeyValueTitle>입금가상계좌</KeyValueTitle>
                 <KeyValueText>
                   <div class="flex-box">
                     <div class="flex-box__cell flex-1">

@@ -72,11 +72,23 @@ export default {
       <BasicBox>
         <BasicBoxHead>
           <BasicBoxHeadLeft>
-            <h3 class="text-body-1 font-weight-medium">운영자금대출</h3>
+            <h3 class="text-body-1 font-weight-medium">10나 8941</h3>
+            <p class="text-body-4 color-gray row-margin-small">
+              쏘나타 하이브리드(DN8) 스파이더
+            </p>
           </BasicBoxHeadLeft>
         </BasicBoxHead>
 
         <KeyValue margin="regular">
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>계약상품명</KeyValueTitle>
+            <KeyValueText>운영자금대출</KeyValueText>
+          </KeyValueItem>
+
           <KeyValueItem
             :classNames="{
               item: 'text-body-3',
