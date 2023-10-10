@@ -76,10 +76,12 @@ export default {
         </PageSubText>
         <PageSubText>
           아래 <strong>설명내용을 제대로 이해하지 못한 상태에서</strong> 설명을
-          이해했다는 <span class="color-red">서명</span>을 하거나
-          <span class="color-red">녹취기록을 남기시는 경우</span>, 추후
-          해당내용과 관련한
-          <span class="color-red">권리구제가 어려울 수 있습니다.</span>
+          이해했다는
+          <strong
+            ><span class="color-red">서명</span>을 하거나
+            <span class="color-red">녹취기록을 남기시는 경우</span></strong
+          >, 추후 해당내용과 관련한
+          <strong class="color-red">권리구제가 어려울 수 있습니다.</strong>
         </PageSubText>
       </PageTextGroup>
 
@@ -705,7 +707,7 @@ export default {
                         되었다고 판단되는 경우(예 : 취업, 승진 등 소득증가,
                         재산증가, 신용평가등급(평점) 등 신용도 상승, 기타
                         신용상태 개선)</strong
-                      >* 금융회사에
+                      >*금융회사에
                       <span class="italic color-gray font-weight-medium"
                         >[금리인하를 요구]</span
                       >
@@ -972,6 +974,7 @@ export default {
                 <div :class="$style['basic-list__symbol']"></div>
                 <div :class="$style['basic-list__content']">
                   <div>중도해지손해배상금 산식</div>
+
                   <ul :class="[$style['basic-list'], 'row-margin-item']">
                     <li
                       :class="[
@@ -984,8 +987,21 @@ export default {
                       <div :class="$style['basic-list__symbol']">-</div>
                       <div :class="$style['basic-list__content']">
                         <p class="row-margin-item">
-                          미회수원금 X 중도해지손해배상금률 X (잔여기간 /
-                          리스기간 수)<br />
+                          미회수원금 X 중도해지손해배상금률
+                        </p>
+                      </div>
+                    </li>
+                    <li
+                      :class="[
+                        $style['basic-list__item'],
+                        'color-black',
+                        'text-body-4',
+                        'font-weight-regular',
+                      ]"
+                    >
+                      <div :class="$style['basic-list__symbol']">-</div>
+                      <div :class="$style['basic-list__content']">
+                        <p class="row-margin-item">
                           중도해지손해배상금률 = 최고요율(80%) X (잔여기간 월수
                           / 리스기간 전체월수)
                         </p>
@@ -1387,7 +1403,7 @@ export default {
                     >
                       <div :class="$style['basic-list__symbol']">-</div>
                       <div :class="$style['basic-list__content']">
-                        기한의 이익이 상실된 때에는 그 다음 날부터 대출원금에
+                        기한의 이익이 상실된 때에는 그 다음날부터 대출원금에
                         대한 연체이자를 내셔야 합니다.
                       </div>
                     </li>
@@ -2572,24 +2588,62 @@ export default {
             <h4 class="text-body-2 row-margin-item-medium">
               계약 연장에 관한 사항
             </h4>
-            <p class="text-body-2">
-              동 할부금융 상품은 계약 만기시점에 연장이 불가한 상품입니다.
-            </p>
+
+            <ul
+              :class="[
+                $style['basic-list'],
+                $style['basic-list--regular'],
+                $style['basic-list--large-margin'],
+              ]"
+            >
+              <li
+                :class="[
+                  $style['basic-list__item'],
+                  'color-black',
+                  'text-body-2',
+                  'font-weight-regular',
+                ]"
+              >
+                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__content']">
+                  동 할부금융 상품은 계약 만기시점에 연장이 불가한 상품입니다.
+                </div>
+              </li>
+            </ul>
           </section>
 
           <section class="row-margin-contents">
             <h4 class="text-body-2 row-margin-item-medium">
               자동차의 제 3자 양도, 대여 등 임의처분 제한 안내
             </h4>
-            <p class="text-body-2">
-              소비자는 당사의 승낙 없이
-              <strong class="color-green">리스 대상 자동차</strong>를 제 3자에게
-              <strong class="color-green">양도, 대여</strong>하는 등
-              <strong class="color-green">임의처분</strong>하거나
-              <strong class="color-green">질권</strong> 또는
-              <strong class="color-green">저당권</strong>을 설정할 수 없습니다.
-              (자동차 리스 표준약관 제14조)
-            </p>
+
+            <ul
+              :class="[
+                $style['basic-list'],
+                $style['basic-list--regular'],
+                $style['basic-list--large-margin'],
+              ]"
+            >
+              <li
+                :class="[
+                  $style['basic-list__item'],
+                  'color-black',
+                  'text-body-2',
+                  'font-weight-regular',
+                ]"
+              >
+                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__content']">
+                  소비자는 당사의 승낙 없이
+                  <strong class="color-green">리스 대상 자동차</strong>를
+                  제3자에게 <strong class="color-green">양도, 대여</strong>하는
+                  등 <strong class="color-green">임의처분</strong>하거나
+                  <strong class="color-green">질권</strong>
+                  또는 <strong class="color-green">저당권</strong>을 설정할 수
+                  없습니다. (자동차 리스 표준약관 제14조)
+                </div>
+              </li>
+            </ul>
           </section>
         </section>
 

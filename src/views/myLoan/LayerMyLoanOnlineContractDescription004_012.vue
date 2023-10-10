@@ -76,10 +76,12 @@ export default {
         </PageSubText>
         <PageSubText>
           아래 <strong>설명내용을 제대로 이해하지 못한 상태에서</strong> 설명을
-          이해했다는 <span class="color-red">서명</span>을 하거나
-          <span class="color-red">녹취기록을 남기시는 경우</span>, 추후
-          해당내용과 관련한
-          <span class="color-red">권리구제가 어려울 수 있습니다.</span>
+          이해했다는
+          <strong
+            ><span class="color-red">서명</span>을 하거나
+            <span class="color-red">녹취기록을 남기시는 경우</span></strong
+          >, 추후 해당내용과 관련한
+          <strong class="color-red">권리구제가 어려울 수 있습니다.</strong>
         </PageSubText>
       </PageTextGroup>
 
@@ -787,9 +789,10 @@ export default {
                       *금융회사에
                       <strong class="italic color-gray font-weight-medium"
                         >[금리인하를 요구]</strong
-                      ></span
+                      >
+
+                      할 수 있습니다.</span
                     >
-                    할 수 있습니다.
                     <strong class="color-green"
                       >단, 신용상태가 금리에 영향을 미치지 않는 상품은
                       금리인하요구권의 행사 대상에서 제외되오니, 상단의
@@ -807,7 +810,8 @@ export default {
                       <div :class="$style['basic-list__symbol']">*</div>
                       <div :class="$style['basic-list__content']">
                         기업의 경우(이익증가 등 재무상태 개선, 회사채 등급상승,
-                        추가담보 제공 등 신용도상승, 기타 신용상태 개선
+                        추가담보 제공 등 신용도상금리인하를승, 기타 신용상태
+                        개선
                       </div>
                     </li>
                   </ul>
@@ -857,12 +861,14 @@ export default {
               >
                 <div :class="$style['basic-list__symbol']"></div>
                 <div :class="$style['basic-list__content']">
-                  금융회사는 금리인하 요구를 받은 날부터
+                  금융회사는
+                  <strong>금리인하 요구를 받은 날부터 </strong>
                   <span class="color-green">‘10영업일 이내’</span> (고객에게
                   자료의 보완을 요구하는 날부터 자료가 제출되는 날까지의 기간은
-                  포함되지 않습니다)에 금리인하 요구 수용 여부 및 그 사유를
-                  전화, 서면, 문자메시지, 전자우편, 팩스 또는 그 밖에 이와
-                  유사한 방법으로 고객에게 통지합니다.
+                  포함되지 않습니다)에
+                  <strong>금리인하 요구 수용 여부 및 그 사유</strong>를 전화,
+                  서면, 문자메시지, 전자우편, 팩스 또는 그 밖에 이와 유사한
+                  방법으로 <strong>고객에게 통지</strong>합니다.
                 </div>
               </li>
             </ul>
@@ -1153,7 +1159,8 @@ export default {
               >
                 <div :class="$style['basic-list__symbol']"></div>
                 <div :class="$style['basic-list__content']">
-                  납입일이 휴일인 경우, 익영업일로 자동으로 납부가 이월됩니다.
+                  납입일이 휴일인 경우, 익영업일로 자동으로 납부가 이월되며,
+                  해당 기간만큼의 이자가 가산되지 않습니다.
                 </div>
               </li>
               <li
@@ -1241,12 +1248,7 @@ export default {
               주요 상환방법에 따른 특성 비교
             </h4>
 
-            <div>
-              원리금상환방법 : 대출원금과 이자의 합계를 매월 동일한 금액으로
-              갚아가는 방식
-            </div>
-
-            <div :class="[$style['basic-table'], 'row-margin-item']">
+            <div :class="$style['basic-table']">
               <table>
                 <colgroup>
                   <col style="width: 88px" />
@@ -1434,7 +1436,7 @@ export default {
                     >
                       <div :class="$style['basic-list__symbol']">-</div>
                       <div :class="$style['basic-list__content']">
-                        기한의 이익이 상실 된 때에는 그 다음 날부터 대출원금에
+                        기한의 이익이 상실된 때에는 그 다음날부터 대출원금에
                         대한 연체이자를 내셔야 합니다.
                       </div>
                     </li>
@@ -2233,11 +2235,12 @@ export default {
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
                 <div>
-                  위법계약 해지를 요구하기 위해서는 아래의 날 중 먼저 도달한
-                  기간 내에 서면등(우편, 전자우편, 문자메세지 등을 말함)으로
-                  계약의 해지를 요구하여야 하며, 이 경우에는 금융위원회가
-                  고시하는 서식(계약해지요구서)에 위반사실을 입증하는 서류를
-                  첨부하여 당사에 제출하여야 합니다.
+                  위법계약 해지를 요구하기 위해서는
+                  <strong>아래의 날 중 먼저 도달한 기간 내</strong>에 서면
+                  등(우편, 전자우편, 문자메세지 등을 말함)으로
+                  <strong>계약의 해지를 요구</strong>하여야 하며, 이 경우에는
+                  금융위원회가 고시하는 서식(계약해지요구서)에 위반사실을
+                  입증하는 서류를 첨부하여 당사에 제출하여야 합니다.
                 </div>
                 <ul :class="[$style['basic-list'], 'row-margin-item']">
                   <li
@@ -2250,8 +2253,10 @@ export default {
                   >
                     <div :class="$style['basic-list__symbol']">-</div>
                     <div :class="$style['basic-list__content']">
-                      계약체결일로부터 5년 이내 또는 법 위반사실을 안 날로부터
-                      1년 이내
+                      <span class="underline">
+                        계약체결일로부터 <strong>5년 이내</strong> 또는 법
+                        위반사실을 안 날로부터 <strong>1년 이내</strong>
+                      </span>
                     </div>
                   </li>
                 </ul>
@@ -2267,8 +2272,10 @@ export default {
             >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                금융회사는 해지를 요구받은 날부터 10일 이내에 고객에게 수락
-                여부를 통지하며, 거절 시에는 그 사유를 함께 통지합니다.
+                <strong
+                  >금융회사는 해지를 요구받은 날부터 10일 이내에 고객에게 수락
+                  여부를 통지</strong
+                >하며, <strong>거절 시에는 그 사유를 함께 통지</strong>합니다.
               </div>
             </li>
           </ul>
@@ -2704,24 +2711,63 @@ export default {
             <h4 class="text-body-2 row-margin-item-medium">
               계약 연장에 관한 사항
             </h4>
-            <p class="text-body-2">
-              동 할부금융 상품은 계약 만기시점에 연장이 불가한 상품입니다.
-            </p>
+
+            <ul
+              :class="[
+                $style['basic-list'],
+                $style['basic-list--regular'],
+                $style['basic-list--large-margin'],
+              ]"
+            >
+              <li
+                :class="[
+                  $style['basic-list__item'],
+                  'color-black',
+                  'text-body-2',
+                  'font-weight-regular',
+                ]"
+              >
+                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__content']">
+                  동 할부금융 상품은 계약 만기시점에 연장이 불가한 상품입니다.
+                </div>
+              </li>
+            </ul>
           </section>
 
           <section class="row-margin-contents">
             <h4 class="text-body-2 row-margin-item-medium">
               자동차의 제 3자 양도, 대여 등 임의처분 제한 안내
             </h4>
-            <p class="text-body-2">
-              소비자는 당사의 승낙 없이
-              <strong class="color-green">대출을 통해 구매한 자동차</strong>를
-              제 3자에게 <strong class="color-green">양도, 대여</strong>하는 등
-              <strong class="color-green">임의처분</strong>하거나
-              <strong class="color-green">질권</strong> 또는
-              <strong class="color-green">저당권</strong>을 설정할 수 없습니다.
-              (자동차 오토론(대출) 약관 제 6조)
-            </p>
+
+            <ul
+              :class="[
+                $style['basic-list'],
+                $style['basic-list--regular'],
+                $style['basic-list--large-margin'],
+              ]"
+            >
+              <li
+                :class="[
+                  $style['basic-list__item'],
+                  'color-black',
+                  'text-body-2',
+                  'font-weight-regular',
+                ]"
+              >
+                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__content']">
+                  소비자는 당사의 승낙 없이
+                  <strong class="color-green">대출을 통해 구매한 자동차</strong
+                  >를 제 3자에게
+                  <strong class="color-green">양도, 대여</strong>하는 등
+                  <strong class="color-green">임의처분</strong>하거나
+                  <strong class="color-green">질권</strong> 또는
+                  <strong class="color-green">저당권</strong>을 설정할 수
+                  없습니다. (자동차 오토론(대출) 약관 제 6조)
+                </div>
+              </li>
+            </ul>
           </section>
         </section>
 
