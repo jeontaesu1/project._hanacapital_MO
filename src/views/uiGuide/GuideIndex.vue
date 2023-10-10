@@ -2732,7 +2732,12 @@ const datas = () => [
         path: '/lm-blog-personal/map',
         status: 'end',
         create: '2023.04.07',
-        log: [],
+        log: [
+          {
+            date: '2023.10.10',
+            text: '지도 영역 고정 높이로 수정',
+          },
+        ],
       },
     ],
   },

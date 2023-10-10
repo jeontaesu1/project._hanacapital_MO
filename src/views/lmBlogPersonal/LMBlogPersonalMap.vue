@@ -66,7 +66,7 @@ export default {
     </KeyValue>
 
     <div :class="$style['map-area']">
-      <div style="height: 100%; background-color: lightgray">// 지도 영역</div>
+      <div style="height: 400px; background-color: lightgray">// 지도 영역</div>
     </div>
   </PageContents>
 </template>
