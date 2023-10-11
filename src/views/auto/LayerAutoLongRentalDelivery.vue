@@ -256,6 +256,46 @@ export default {
               item: 'text-body-3',
             }"
           >
+            <KeyValueTitle>매회 렌트료</KeyValueTitle>
+            <KeyValueText>460,350 원</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>선납 렌트료</KeyValueTitle>
+            <KeyValueText>60,350 원</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
+            <KeyValueTitle>납입 렌트료</KeyValueTitle>
+            <KeyValueText
+              :classNames="{
+                text: 'color-green',
+              }"
+              >400,000 원</KeyValueText
+            >
+          </KeyValueItem>
+        </KeyValue>
+
+        <BasicHr
+          theme="quaternary"
+          type="contents"
+          className="row-margin-contents-small"
+        />
+
+        <KeyValue margin="regular">
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
             <KeyValueTitle>탁송방법</KeyValueTitle>
             <KeyValueText>탁송방법</KeyValueText>
           </KeyValueItem>
