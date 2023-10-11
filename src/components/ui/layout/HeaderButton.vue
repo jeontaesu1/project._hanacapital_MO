@@ -16,6 +16,7 @@ import IconClose from '@/assets/images/common/close.svg?component';
 import IconSetting from '@/assets/images/common/setting.svg?component';
 import IconHome from '@/assets/images/common/home.svg?component';
 import IconAdd from '@/assets/images/icon/add.svg?component';
+import IconPhone from '@/assets/images/common/pop-phone.svg?component';
 
 export default {
   components: {
@@ -31,6 +32,7 @@ export default {
     IconSetting,
     IconHome,
     IconAdd,
+    IconPhone,
   },
   props: {
     type: {
@@ -203,6 +205,16 @@ export default {
     </template>
     등록
   </RoundButton>
+
+  <button
+    v-else-if="type === 'phone'"
+    type="button"
+    :class="styleModule['header__button']"
+    @click="onClick"
+  >
+    <IconPhone :class="styleModule['header__button-icon']" />
+    <span :class="styleModule['header__button-text']">전화하기</span>
+  </button>
 
   <RoundButton
     v-else-if="type === 'roundButton'"

@@ -80,9 +80,9 @@ export default {
       store.ui.header.setLeftButtons(() => ['back']);
       store.ui.header.setRightButtons(() => [
         {
-          name: 'share',
+          name: 'phone',
           onClick: () => {
-            alert('공유하기 클릭');
+            alert('전화하기 클릭');
           },
         },
       ]);
