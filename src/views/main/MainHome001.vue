@@ -309,9 +309,18 @@ export default {
                 <div>
                   <div :class="$style['progress__contents-top']">
                     <div :class="$style['progress__contents-head']">
-                      <h3 :class="$style['progress__contents-title']">
-                        상품명 노출 상품명 노출
-                      </h3>
+                      <div :class="$style['progress__contents-title']">
+                        <div class="flex-box">
+                          <div class="flex-box__cell">상품명 노출</div>
+                          <div class="flex-box__cell flex-box__cell--small">
+                            <span
+                              class="text-body-5 color-gray font-weight-regular"
+                            >
+                              외 0건
+                            </span>
+                          </div>
+                        </div>
+                      </div>
                       <!-- Case : 2건 이상일 경우 노출 -->
                       <div :class="$style['progress__contents-right']">
                         <TextButton
