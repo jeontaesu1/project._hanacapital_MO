@@ -290,6 +290,61 @@ export default {
         </li>
       </ul>
     </div>
+
+    <section class="row-margin-container-medium">
+      <h3 class="text-body-5 color-gray font-weight-medium row-margin-item">
+        유의사항
+      </h3>
+
+      <ul :class="$style['basic-list']">
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            이벤트에 대한 상세 내용은 각 보험사를 통해 확인해 주세요.
+          </div>
+        </li>
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            보험계약 체결전 반드시 상품설명서 및 약관을 읽어보시기 바랍니다.
+          </div>
+        </li>
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            보험계약자가 기존에 체결했던 보험계약을 해지하고 다른 보험 계약을
+            체결하면 보험계약이 거절될 수 있으며, 보험료가 인상되거나 보장내용이
+            달라질 수 있습니다.
+          </div>
+        </li>
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            이 보험계약은 예금자보호법에 따라 예금보험공사가 보호하되,
+            보호한도는 본 보험회사에 있는 귀하의 모든 예금보험대상 금융상품의
+            해약환급금(또는 만기 시 보험금이나 사고보험금)에 기타지급금을 합하여
+            1인당 “최고 5천만원”이며, 5천만원을 초과하는 나머지 금액은 보호하지
+            않습니다. 다만, 보험계약자 및 보험료납부자가 법인인 경우에는
+            보호하지 않습니다.
+          </div>
+        </li>
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            보험계약자 또는 피보험자의 고의로 인한 사고는 보상하지 않으며, 이외
+            담보별 자세한 지급한도, 면책사항, 감액지급사항 등 보험금 지급 제한
+            조건은 반드시 약관 내용을 확인하시기 바랍니다.
+          </div>
+        </li>
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            보험사는 해당 상품에 대해 충분히 안내할 의무가 있으며, 가입자는
+            가입에 앞서 이에 대한 충분한 내용을 확인하시기 바랍니다.
+          </div>
+        </li>
+      </ul>
+    </section>
   </PageContents>
 </template>
 
