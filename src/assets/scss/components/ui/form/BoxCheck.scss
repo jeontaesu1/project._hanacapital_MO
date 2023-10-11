@@ -5,6 +5,10 @@
   display: flex;
   align-items: stretch;
 
+  button {
+    z-index: 12;
+  }
+
   &__input {
     @include reset-input-check;
     position: absolute;
@@ -319,6 +323,48 @@
 
       .box-check__right {
         margin-left: 0;
+      }
+
+      &.box-check--min-side {
+        .box-check__block {
+          padding-left: 0px;
+          padding-right: 0px;
+        }
+
+        .box-check__input {
+          &:checked {
+            & + .box-check__block {
+              padding-left: 0px;
+              padding-right: 0px;
+            }
+          }
+        }
+      }
+    }
+
+    &-regular {
+      .box-check__block {
+        padding: 11px 15px;
+      }
+
+      .box-check__input {
+        &:checked {
+          & + .box-check__block {
+            padding: 10px 14px;
+          }
+        }
+      }
+
+      .box-check__label {
+        @include font-size-default(14);
+      }
+
+      .box-check__left {
+        margin-right: 4px;
+      }
+
+      .box-check__right {
+        margin-left: 4px;
       }
 
       &.box-check--min-side {
