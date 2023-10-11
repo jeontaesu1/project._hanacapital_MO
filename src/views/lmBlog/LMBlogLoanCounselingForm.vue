@@ -88,8 +88,7 @@ export default {
       carNumberError: false,
       workNameError: false,
       workTypeError: false,
-      workYearError: false,
-      workMonthError: false,
+      workDateError: false,
       workIncomeError: false,
       buisnessNameError: false,
       buisnessLicenseError: false,
@@ -583,162 +582,16 @@ export default {
           </FormListItem>
 
           <FormListItem
-            titleText="입사년도"
-            target="#lMBlogLoanCounselingFormWorkYearButton"
-            :selectOnly="true"
+            titleText="입사일"
+            target="#lMBlogLoanCounselingFormWorkDateButton"
           >
-            <FormInvalid :error="state.workYearError">
-              <InputBlock :error="state.workYearError">
+            <FormInvalid :error="state.workDateError">
+              <InputBlock :error="state.workDateError">
                 <InputBlockCell :flexible="true">
-                  <BasicSelect
-                    :option="[
-                      {
-                        value: '1',
-                        text: '2022년',
-                      },
-                      {
-                        value: '2',
-                        text: '2021년',
-                      },
-                      {
-                        value: '3',
-                        text: '2020년',
-                      },
-                      {
-                        value: '4',
-                        text: '2019년',
-                      },
-                      {
-                        value: '5',
-                        text: '2018년',
-                      },
-                      {
-                        value: '6',
-                        text: '2017년',
-                      },
-                      {
-                        value: '7',
-                        text: '2016년',
-                      },
-                      {
-                        value: '8',
-                        text: '2015년',
-                      },
-                      {
-                        value: '9',
-                        text: '2014년',
-                      },
-                      {
-                        value: '10',
-                        text: '2013년',
-                      },
-                      {
-                        value: '11',
-                        text: '2012년',
-                      },
-                      {
-                        value: '12',
-                        text: '2011년',
-                      },
-                      {
-                        value: '13',
-                        text: '2010년',
-                      },
-                      {
-                        value: '14',
-                        text: '2009년',
-                      },
-                      {
-                        value: '15',
-                        text: '2008년',
-                      },
-                      {
-                        value: '16',
-                        text: '2007년',
-                      },
-                      {
-                        value: '17',
-                        text: '2006년',
-                      },
-                      {
-                        value: '18',
-                        text: '2005년',
-                      },
-                    ]"
-                    buttonTitle="입사년도 선택하기"
-                    layerTitle="입사년도를 선택해 주세요"
-                    id="lMBlogLoanCounselingFormWorkYear"
-                    buttonId="lMBlogLoanCounselingFormWorkYearButton"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-
-          <FormListItem
-            titleText="입사월"
-            target="#lMBlogLoanCounselingFormWorkMonthButton"
-            :selectOnly="true"
-          >
-            <FormInvalid :error="state.workMonthError">
-              <InputBlock :error="state.workMonthError">
-                <InputBlockCell :flexible="true">
-                  <BasicSelect
-                    :option="[
-                      {
-                        value: '1',
-                        text: '1월',
-                      },
-                      {
-                        value: '2',
-                        text: '2월',
-                      },
-                      {
-                        value: '3',
-                        text: '3월',
-                      },
-                      {
-                        value: '4',
-                        text: '4월',
-                      },
-                      {
-                        value: '5',
-                        text: '5월',
-                      },
-                      {
-                        value: '6',
-                        text: '6월',
-                      },
-                      {
-                        value: '7',
-                        text: '7월',
-                      },
-                      {
-                        value: '8',
-                        text: '8월',
-                      },
-                      {
-                        value: '9',
-                        text: '9월',
-                      },
-                      {
-                        value: '10',
-                        text: '10월',
-                      },
-                      {
-                        value: '11',
-                        text: '11월',
-                      },
-                      {
-                        value: '12',
-                        text: '12월',
-                      },
-                    ]"
-                    buttonTitle="입사월 선택하기"
-                    layerTitle="입사월을 선택해 주세요"
-                    id="lMBlogLoanCounselingFormWorkMonth"
-                    buttonId="lMBlogLoanCounselingFormWorkMonthButton"
+                  <BasicDatepicker
+                    title="입사일"
+                    id="lMBlogLoanCounselingFormWorkDate"
+                    buttonId="lMBlogLoanCounselingFormWorkDateButton"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -766,6 +619,14 @@ export default {
                 </template>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
+              <!-- Case : 값 입력후 노출 -->
+              <FormHelpText
+                :classNames="{
+                  wrap: 'align-right',
+                }"
+                >구천오백만원</FormHelpText
+              >
+              <!-- // Case : 값 입력후 노출 -->
             </FormInvalid>
           </FormListItem>
         </FormList>
