@@ -3,6 +3,7 @@
 import { onMounted, onUnmounted, reactive } from 'vue';
 
 import { useUiHeaderStore } from '@/stores/ui/header';
+import { useUiLoadingStore } from '@/stores/ui/loading';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
@@ -32,6 +33,13 @@ import UnitText from '@/components/ui/text/UnitText.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 import BottomSticky from '@/components/ui/common/BottomSticky.vue';
+import UiAccordion from '@/components/ui/accordion/UiAccordion.vue';
+import UiAccordionItem from '@/components/ui/accordion/UiAccordionItem.vue';
+import UiAccordionLayer from '@/components/ui/accordion/UiAccordionLayer.vue';
+import UiAccordionOpener from '@/components/ui/accordion/UiAccordionOpener.vue';
+import RadioButton from '@/components/ui/form/RadioButton.vue';
+import RadioButtonLabelText from '@/components/ui/form/RadioButtonLabelText.vue';
+import RadioButtonObject from '@/components/ui/form/RadioButtonObject.vue';
 
 export default {
   components: {
@@ -63,10 +71,18 @@ export default {
     BasicInput,
     CarThumb,
     BottomSticky,
+    UiAccordion,
+    UiAccordionItem,
+    UiAccordionLayer,
+    UiAccordionOpener,
+    RadioButton,
+    RadioButtonLabelText,
+    RadioButtonObject,
   },
   setup() {
     const store = {
       ui: {
+        loading: useUiLoadingStore(),
         header: useUiHeaderStore(),
       },
     };
@@ -88,6 +104,72 @@ export default {
       optionPriceError: false,
     });
 
+    // DD : 아코디언 열때 Ajax 통신시 예시 : start
+    const testAjax = () => {
+      return new Promise((resolve) =>
+        setTimeout(() => {
+          resolve();
+        }, 1000)
+      );
+    };
+
+    const testAccordionToggle = (props, call) => {
+      const { opened, open, close } = props;
+
+      if (!opened) {
+        const result = call();
+
+        store.ui.loading.show();
+
+        result.then(() => {
+          open();
+          store.ui.loading.hide();
+        });
+      } else {
+        close();
+      }
+    };
+    // DD : 아코디언 열때 Ajax 통신시 예시 : end
+
+    // DD : 아코디언 내 폼 선택/적용 후 현재 아코디언 닫기 및 다음 아코디언 여는 함수 예시 : start
+    const testAaccordionClose = (props, itemProps, nextKey) => {
+      const { items } = props;
+      const { close } = itemProps;
+      const nextItem = nextKey && items.find((item) => item.key === nextKey);
+
+      close();
+
+      if (nextItem) {
+        testAccordionToggle(
+          { ...nextItem, opened: nextItem.getOpened() },
+          testAjax
+        );
+      }
+    };
+    // DD : 아코디언 내 폼 선택/적용 후 현재 아코디언 닫기 및 다음 아코디언 여는 함수 예시 : end
+
+    // DD : 이미 체크 된 라디오 버튼 재 클릭 시 체크 해제 함수 예시 : start
+    const eChange = new Event('change');
+    const testTimer = {};
+    const testRadioClick = (e) => {
+      const el = e.target;
+      const { id, checked } = el;
+
+      testTimer[id] = setTimeout(() => {
+        if (checked) {
+          el.checked = false;
+          el.dispatchEvent(eChange);
+        }
+      }, 50);
+    };
+    const testRadioChange = (e) => {
+      const el = e.target;
+      const { id } = el;
+
+      clearTimeout(testTimer[id]);
+    };
+    // DD : 이미 체크 된 라디오 버튼 재 클릭 시 체크 해제 함수 예시 : end
+
     onMounted(() => {
       store.ui.header.setTitle(() => '신차모바일');
       store.ui.header.setLeftButtons(() => ['back']);
@@ -102,6 +184,11 @@ export default {
 
     return {
       state,
+      testAjax,
+      testAccordionToggle,
+      testAaccordionClose,
+      testRadioClick,
+      testRadioChange,
     };
   },
 };
@@ -675,74 +762,341 @@ export default {
 
         <section class="row-margin-contents-group">
           <h4 class="text-body-2 row-margin-item-medium">세부모델 선택</h4>
-          <BoxCheckList align="full">
-            <BoxCheckListItem>
-              <BoxCheck :contents="true" name="detailModel" id="detailModel001">
-                <BoxCheckLabel>2022년형 가솔린 1.0</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck :contents="true" name="detailModel" id="detailModel002">
-                <BoxCheckLabel>2022년형 가솔린 1.0 터보</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck :contents="true" name="detailModel" id="detailModel003">
-                <BoxCheckLabel>2022년형 가솔린 1.0 밴</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-          </BoxCheckList>
+
+          <section :class="$style['estimate-list']">
+            <UiAccordion
+              :once="true"
+              :classNames="{ wrap: $style['estimate-list__list'] }"
+              v-slot="accordionSlotProps"
+            >
+              <UiAccordionItem
+                :classNames="{ item: $style['estimate-list__item'] }"
+                v-slot="accordionItemSlotProps"
+                keyName="lineup"
+              >
+                <div :class="$style['estimate-list__head']">
+                  <div :class="$style['estimate-list__block']">
+                    <div :class="$style['estimate-list__left']">
+                      <KeyValue
+                        align="left"
+                        size="regular"
+                        verticalAlign="center"
+                      >
+                        <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                          <KeyValueTitle>
+                            <div class="text-body-4">세부모델</div>
+                          </KeyValueTitle>
+                          <KeyValueText>2022년형 가솔린 1.0</KeyValueText>
+                        </KeyValueItem>
+                      </KeyValue>
+                    </div>
+                  </div>
+                  <div :class="$style['estimate-list__arrow']">
+                    <UiAccordionOpener
+                      :toggleAction="false"
+                      :classNames="{ button: $style['estimate-list__opener'] }"
+                      @click="
+                        testAccordionToggle(accordionItemSlotProps, testAjax)
+                      "
+                    />
+                  </div>
+                </div>
+
+                <UiAccordionLayer
+                  :classNames="{ layer: $style['estimate-list__layer'] }"
+                >
+                  <section :class="$style['estimate-list__contents']">
+                    <ul class="reset-list">
+                      <li class="row-margin-item-group">
+                        <RadioButton
+                          theme="tertiary"
+                          :full="true"
+                          name="salesNewCarCounselingLineup"
+                          id="salesNewCarCounselingLineup_001"
+                          @change="
+                            testAaccordionClose(
+                              accordionSlotProps,
+                              accordionItemSlotProps,
+                              'trim'
+                            )
+                          "
+                        >
+                          <RadioButtonObject />
+                          <RadioButtonLabelText>
+                            <span class="display-block"
+                              >2022년형 가솔린 1.0</span
+                            >
+                          </RadioButtonLabelText>
+                        </RadioButton>
+                      </li>
+                      <li class="row-margin-item-group">
+                        <RadioButton
+                          theme="tertiary"
+                          :full="true"
+                          name="salesNewCarCounselingLineup"
+                          id="salesNewCarCounselingLineup_002"
+                          @change="
+                            testAaccordionClose(
+                              accordionSlotProps,
+                              accordionItemSlotProps,
+                              'trim'
+                            )
+                          "
+                        >
+                          <RadioButtonObject />
+                          <RadioButtonLabelText>
+                            <span class="display-block"
+                              >2022년형 가솔린 1.0 터보</span
+                            >
+                          </RadioButtonLabelText>
+                        </RadioButton>
+                      </li>
+                      <li class="row-margin-item-group">
+                        <RadioButton
+                          theme="tertiary"
+                          :full="true"
+                          name="salesNewCarCounselingLineup"
+                          id="salesNewCarCounselingLineup_003"
+                          @change="
+                            testAaccordionClose(
+                              accordionSlotProps,
+                              accordionItemSlotProps,
+                              'trim'
+                            )
+                          "
+                        >
+                          <RadioButtonObject />
+                          <RadioButtonLabelText>
+                            <span class="display-block"
+                              >2022년형 가솔린 1.0 밴</span
+                            >
+                          </RadioButtonLabelText>
+                        </RadioButton>
+                      </li>
+                      <li class="row-margin-item-group">
+                        <RadioButton
+                          theme="tertiary"
+                          :full="true"
+                          name="salesNewCarCounselingLineup"
+                          id="salesNewCarCounselingLineup_004"
+                          @change="
+                            testAaccordionClose(
+                              accordionSlotProps,
+                              accordionItemSlotProps,
+                              'trim'
+                            )
+                          "
+                        >
+                          <RadioButtonObject />
+                          <RadioButtonLabelText>
+                            <span class="display-block"
+                              >2022년형 가솔린 1.0 터보 밴</span
+                            >
+                          </RadioButtonLabelText>
+                        </RadioButton>
+                      </li>
+                    </ul>
+                  </section>
+                </UiAccordionLayer>
+              </UiAccordionItem>
+            </UiAccordion>
+          </section>
         </section>
 
-        <!-- Case : 세부모델 선택 시  -->
         <section class="row-margin-contents-group">
-          <h4 class="text-body-2 row-margin-item-medium">트림</h4>
-          <BoxCheckList align="full">
-            <BoxCheckListItem>
-              <BoxCheck :contents="true" name="tripSelect" id="tripSelect001">
-                <BoxCheckLabel>
-                  <span class="flex-box">
-                    <span class="flex-box__cell flex-1">
-                      모던 + 캐스퍼 액티브Ⅱ
-                    </span>
-                    <span class="flex-box__cell flex-box__cell--regular"
-                      >16,850,000 원</span
-                    >
-                  </span>
-                </BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck :contents="true" name="tripSelect" id="tripSelect002">
-                <BoxCheckLabel>
-                  <span class="flex-box">
-                    <span class="flex-box__cell flex-1">
-                      스마트 + 캐스퍼 액티브Ⅰ
-                    </span>
-                    <span class="flex-box__cell flex-box__cell--regular"
-                      >16,850,000 원</span
-                    >
-                  </span>
-                </BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck :contents="true" name="tripSelect" id="tripSelect003">
-                <BoxCheckLabel>
-                  <span class="flex-box">
-                    <span class="flex-box__cell flex-1">
-                      인스퍼레이션 + 캐스퍼 액티브Ⅱ
-                    </span>
-                    <span class="flex-box__cell flex-box__cell--regular"
-                      >16,850,000 원</span
-                    >
-                  </span>
-                </BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-          </BoxCheckList>
+          <h4 class="text-body-2 row-margin-item-medium">트림 선택</h4>
+
+          <section :class="$style['estimate-list']">
+            <div :class="$style['estimate-list__list']">
+              <div :class="$style['estimate-list__item']">
+                <div :class="$style['estimate-list__head']">
+                  <div :class="$style['estimate-list__block']">
+                    <div :class="$style['estimate-list__left']">
+                      <KeyValue
+                        align="left"
+                        size="regular"
+                        verticalAlign="center"
+                      >
+                        <KeyValueItem>
+                          <KeyValueTitle>
+                            <div class="text-body-4">트림</div>
+                          </KeyValueTitle>
+                          <KeyValueText>
+                            <div class="text-body-3 color-gray-secondary">
+                              세부모델을 선택해 주세요
+                            </div>
+                          </KeyValueText>
+                        </KeyValueItem>
+                      </KeyValue>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Case : 세부모델 선택 시 노출 -->
+          <section :class="$style['estimate-list']">
+            <UiAccordion
+              :once="true"
+              :classNames="{ wrap: $style['estimate-list__list'] }"
+              v-slot="accordionSlotProps"
+            >
+              <UiAccordionItem
+                :classNames="{ item: $style['estimate-list__item'] }"
+                v-slot="accordionItemSlotProps"
+                keyName="lineup"
+              >
+                <div :class="$style['estimate-list__head']">
+                  <div :class="$style['estimate-list__block']">
+                    <div :class="$style['estimate-list__left']">
+                      <KeyValue align="left" size="regular" verticalAlign="top">
+                        <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                          <KeyValueTitle>
+                            <div class="text-body-4">트림</div>
+                          </KeyValueTitle>
+                          <KeyValueText>모던 + 캐스퍼 액티브Ⅱ</KeyValueText>
+                        </KeyValueItem>
+                      </KeyValue>
+                    </div>
+                    <div :class="$style['estimate-list__right']">
+                      <div class="text-body-3 font-weight-bold">
+                        16,850,000 원
+                      </div>
+                    </div>
+                  </div>
+                  <div :class="$style['estimate-list__arrow']">
+                    <UiAccordionOpener
+                      :toggleAction="false"
+                      :classNames="{ button: $style['estimate-list__opener'] }"
+                      @click="
+                        testAccordionToggle(accordionItemSlotProps, testAjax)
+                      "
+                    />
+                  </div>
+                </div>
+
+                <UiAccordionLayer
+                  :classNames="{ layer: $style['estimate-list__layer'] }"
+                >
+                  <section :class="$style['estimate-list__contents']">
+                    <ul class="reset-list">
+                      <li class="row-margin-item-group">
+                        <RadioButton
+                          theme="tertiary"
+                          :full="true"
+                          name="salesNewCarCounselingTrim"
+                          id="salesNewCarCounselingTrim_001"
+                          @change="
+                            testAaccordionClose(
+                              accordionSlotProps,
+                              accordionItemSlotProps,
+                              'trim'
+                            )
+                          "
+                        >
+                          <RadioButtonObject />
+                          <RadioButtonLabelText>
+                            <span class="flex-box">
+                              <span class="flex-box__cell flex-1"
+                                >모던 + 캐스퍼 액티브Ⅱ</span
+                              >
+                              <span class="flex-box__cell font-weight-medium"
+                                >16,850,000 원</span
+                              >
+                            </span>
+                          </RadioButtonLabelText>
+                        </RadioButton>
+                      </li>
+                      <li class="row-margin-item-group">
+                        <RadioButton
+                          theme="tertiary"
+                          :full="true"
+                          name="salesNewCarCounselingTrim"
+                          id="salesNewCarCounselingTrim_002"
+                          @change="
+                            testAaccordionClose(
+                              accordionSlotProps,
+                              accordionItemSlotProps,
+                              'trim'
+                            )
+                          "
+                        >
+                          <RadioButtonObject />
+                          <RadioButtonLabelText>
+                            <span class="flex-box">
+                              <span class="flex-box__cell flex-1"
+                                >스마트 + 캐스퍼 액티브Ⅰ</span
+                              >
+                              <span class="flex-box__cell font-weight-medium"
+                                >996,900,000 원</span
+                              >
+                            </span>
+                          </RadioButtonLabelText>
+                        </RadioButton>
+                      </li>
+                      <li class="row-margin-item-group">
+                        <RadioButton
+                          theme="tertiary"
+                          :full="true"
+                          name="salesNewCarCounselingTrim"
+                          id="salesNewCarCounselingTrim_003"
+                          @change="
+                            testAaccordionClose(
+                              accordionSlotProps,
+                              accordionItemSlotProps,
+                              'trim'
+                            )
+                          "
+                        >
+                          <RadioButtonObject />
+                          <RadioButtonLabelText>
+                            <span class="flex-box">
+                              <span class="flex-box__cell flex-1"
+                                >인스퍼레이션 + 캐스퍼 액티브Ⅱ</span
+                              >
+                              <span class="flex-box__cell font-weight-medium"
+                                >15,900,000 원</span
+                              >
+                            </span>
+                          </RadioButtonLabelText>
+                        </RadioButton>
+                      </li>
+                      <li class="row-margin-item-group">
+                        <RadioButton
+                          theme="tertiary"
+                          :full="true"
+                          name="salesNewCarCounselingTrim"
+                          id="salesNewCarCounselingTrim_004"
+                          @change="
+                            testAaccordionClose(
+                              accordionSlotProps,
+                              accordionItemSlotProps,
+                              'trim'
+                            )
+                          "
+                        >
+                          <RadioButtonObject />
+                          <RadioButtonLabelText>
+                            <span class="flex-box">
+                              <span class="flex-box__cell flex-1"
+                                >인스퍼레이션</span
+                              >
+                              <span class="flex-box__cell font-weight-medium"
+                                >18.700,000 원</span
+                              >
+                            </span>
+                          </RadioButtonLabelText>
+                        </RadioButton>
+                      </li>
+                    </ul>
+                  </section>
+                </UiAccordionLayer>
+              </UiAccordionItem>
+            </UiAccordion>
+          </section>
+          <!-- //Case : 세부모델 선택 시 노출 -->
         </section>
-        <!-- //Case : 세부모델 선택 시  -->
 
         <!-- Case : 트림 선택 시  -->
         <div class="row-margin-contents-group">
@@ -1071,3 +1425,7 @@ export default {
     </template>
   </PageContents>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemLease.scss';
+</style>
