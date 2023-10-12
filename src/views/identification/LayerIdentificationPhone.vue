@@ -234,7 +234,6 @@ export default {
         <FormListItem
           titleText="이름"
           target="#layerIdentificationPhoneName"
-          class="flex-end"
           :class="$style['appoint-wrap']"
         >
           <FormInvalid :error="state.nameError">
