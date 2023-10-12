@@ -1,5 +1,13 @@
 @import '@/assets/scss/components/import/input-timer.scss';
 
+.appoint-wrap {
+  dt {
+    top: 30px;
+  }
+}
+
 .appoint-btn {
   width: 110px;
+  min-height: 34px;
+  @include font-size-default(16);
 }
