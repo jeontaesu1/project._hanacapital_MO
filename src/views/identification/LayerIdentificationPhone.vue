@@ -231,16 +231,20 @@ export default {
           </FormInvalid>
         </FormListItem>
 
-        <FormListItem titleText="이름" target="#layerIdentificationPhoneName">
+        <FormListItem
+          titleText="이름"
+          target="#layerIdentificationPhoneName"
+          :class="$style['appoint-wrap']"
+        >
           <FormInvalid :error="state.nameError">
             <InputBlock :error="state.nameError">
               <InputBlockCell :flexible="true">
                 <BasicInput title="이름" id="layerIdentificationPhoneName" />
               </InputBlockCell>
               <template v-slot:right>
-                <BasicButton size="mini" :class="$style['appoint-btn']"
-                  >다음</BasicButton
-                >
+                <BasicButton size="mini" :class="$style['appoint-btn']">
+                  다음
+                </BasicButton>
               </template>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
