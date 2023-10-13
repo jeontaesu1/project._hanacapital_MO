@@ -64,6 +64,11 @@ const routes = [
     component: () => import('@/views/uiGuide/GuideError001.vue'),
   },
   {
+    path: '/errorContents/Common_M00_p011',
+    name: '/errorContents/Common_M00_p011',
+    component: () => import('@/views/errorContents/Common_M00_p011.vue'),
+  },
+  {
     path: '/ui-guide/personal-loan-001',
     name: '/ui-guide/personal-loan-001',
     component: () => import('@/views/uiGuide/GuidePersonalLoan001.vue'),

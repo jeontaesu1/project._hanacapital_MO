@@ -418,11 +418,18 @@ const datas = () => [
             date: '2023.09.21',
             text: '타이틀 텍스트 굵기 수정\n- Common_M00_l027',
           },
-          {
-            date: '2023.10.13',
-            text: '팝업 추가\n- Common_M00_p011',
-          },
         ],
+      },
+      {
+        depth2: '404 오류안내\nCommon_M00_p011',
+        depth3: '',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/errorContents/Common_M00_p011',
+        status: 'end',
+        create: '2023.10.13',
+        log: [],
       },
       {
         depth2: '앱 중계 페이지',
