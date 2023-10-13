@@ -50,7 +50,11 @@ export default {
         customClassNames.objectInner,
       ]"
     >
-      <IconCheck v-if="type.value === 'checkbox' && size.value === 'small'" />
+      <IconCheck
+        v-if="
+          (type.value === 'checkbox' && size.value === 'small') || 'regular'
+        "
+      />
       <IconCheckL v-else-if="type.value === 'checkbox'" />
     </span>
   </span>

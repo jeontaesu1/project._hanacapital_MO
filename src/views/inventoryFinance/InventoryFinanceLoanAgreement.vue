@@ -18,13 +18,13 @@ import UiAccordionItem from '@/components/ui/accordion/UiAccordionItem.vue';
 import UiAccordionLayer from '@/components/ui/accordion/UiAccordionLayer.vue';
 import UiAccordionOpener from '@/components/ui/accordion/UiAccordionOpener.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
-import CheckBox from '@/components/ui/form/CheckBox.vue';
-import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
-import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import BottomSticky from '@/components/ui/common/BottomSticky.vue';
+import BoxCheck from '@/components/ui/form/BoxCheck.vue';
+import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
+import BoxCheckObject from '@/components/ui/form/BoxCheckObject.vue';
 
 export default {
   components: {
@@ -42,13 +42,13 @@ export default {
     UiAccordionLayer,
     UiAccordionOpener,
     TextButton,
-    CheckBox,
-    CheckBoxObject,
-    CheckBoxLabelText,
     ButtonList,
     ButtonListItem,
     BasicButton,
     BottomSticky,
+    BoxCheck,
+    BoxCheckLabel,
+    BoxCheckObject,
   },
   setup() {
     const store = {
@@ -207,27 +207,25 @@ export default {
       </UiAccordionItem>
     </UiAccordion>
 
-    <BasicBox theme="septenary" className="row-margin-item-group">
-      <div :class="$style['agree-list']">
-        <div :class="$style['agree-list__head']">
-          <CheckBox
-            id="inventoryFinanceLoanAgreement002Agree"
-            :classNames="{
-              wrap: $style['agree-list__checkbox'],
-            }"
-            theme="tertiary"
-          >
-            <CheckBoxObject />
-            <CheckBoxLabelText>재고금융 확약서</CheckBoxLabelText>
-          </CheckBox>
-          <div :class="$style['agree-list__right']">
-            <button type="button" :class="$style['agree-list__link']">
-              <span :class="$style['agree-list__link-text']">상세보기</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </BasicBox>
+    <div class="row-margin-item-group">
+      <BoxCheck
+        type="checkbox"
+        id="inventoryFinanceLoanAgreement_checkBox"
+        size="regular"
+      >
+        <template v-slot:left>
+          <BoxCheckObject />
+        </template>
+        <BoxCheckLabel :classNames="{ label: 'align-left' }">
+          재고금융 확약서
+        </BoxCheckLabel>
+        <template v-slot:right>
+          <button type="button" :class="$style['agree-list__link']">
+            <span :class="$style['agree-list__link-text']">상세보기</span>
+          </button>
+        </template>
+      </BoxCheck>
+    </div>
 
     <template v-slot:foot>
       <BottomSticky>
