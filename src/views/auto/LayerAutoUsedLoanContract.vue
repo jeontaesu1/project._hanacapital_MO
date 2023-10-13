@@ -216,26 +216,74 @@ export default {
                     title="차량구입금액"
                     id="layerAutoUsedLoanContractCarAmount"
                     pattern="\d*"
-                    :useDelete="false"
+                    :useDelete="true"
                     align="right"
                     :disabled="!state.modifyMode"
                     defaultValue="15,300,000"
                   />
                 </InputBlockCell>
                 <template v-slot:innerRight>
-                  <div class="text-body-3">만원</div>
+                  <div class="text-body-3">원</div>
                 </template>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
+
+              <!-- Case : 금액 입력 시 노출 -->
               <FormHelpText
                 :classNames="{
                   wrap: 'align-right',
                 }"
-                >삼천오백만원</FormHelpText
+                >천오백삼십만원</FormHelpText
               >
+
+              <!-- // Case : 금액 입력 시 노출 -->
+
               <NoticeText :classNames="{ wrap: 'row-margin-item' }">
                 매매계약서상 매매금액을 입력해 주세요.
               </NoticeText>
+
+              <ButtonList
+                :wrap="true"
+                :col="4"
+                :classNames="{ wrap: 'row-margin-item' }"
+              >
+                <ButtonListItem>
+                  <BasicButton
+                    :line="true"
+                    theme="quaternary"
+                    size="small"
+                    :minSide="true"
+                    >+ 10만</BasicButton
+                  >
+                </ButtonListItem>
+                <ButtonListItem>
+                  <BasicButton
+                    :line="true"
+                    theme="quaternary"
+                    size="small"
+                    :minSide="true"
+                    >+ 100만</BasicButton
+                  >
+                </ButtonListItem>
+                <ButtonListItem>
+                  <BasicButton
+                    :line="true"
+                    theme="quaternary"
+                    size="small"
+                    :minSide="true"
+                    >+ 500만</BasicButton
+                  >
+                </ButtonListItem>
+                <ButtonListItem>
+                  <BasicButton
+                    :line="true"
+                    theme="quaternary"
+                    size="small"
+                    :minSide="true"
+                    >+ 1,000만</BasicButton
+                  >
+                </ButtonListItem>
+              </ButtonList>
             </FormInvalid>
           </FormListItem>
 
@@ -254,27 +302,73 @@ export default {
                     title="대출신청금액"
                     id="layerAutoUsedLoanContractLoanAmount"
                     pattern="\d*"
-                    :useDelete="false"
+                    :useDelete="true"
                     align="right"
                     :disabled="!state.modifyMode"
                     defaultValue="13,000,000"
                   />
                 </InputBlockCell>
                 <template v-slot:innerRight>
-                  <div class="text-body-3">만원</div>
+                  <div class="text-body-3">원</div>
                 </template>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
+
+              <!-- Case : 금액 입력 시 노출 -->
               <FormHelpText
                 :classNames="{
                   wrap: 'align-right',
                 }"
-                >삼천오백만원</FormHelpText
+                >첨삼백만 원</FormHelpText
               >
+              <!-- // Case : 금액 입력 시 노출 -->
+
               <NoticeText :classNames="{ wrap: 'row-margin-item' }">
                 대출신청금액은 차량 기준가격과 차량구입비용을 초과할 수
                 없습니다.
               </NoticeText>
+              <ButtonList
+                :wrap="true"
+                :col="4"
+                :classNames="{ wrap: 'row-margin-item' }"
+              >
+                <ButtonListItem>
+                  <BasicButton
+                    :line="true"
+                    theme="quaternary"
+                    size="small"
+                    :minSide="true"
+                    >+ 10만</BasicButton
+                  >
+                </ButtonListItem>
+                <ButtonListItem>
+                  <BasicButton
+                    :line="true"
+                    theme="quaternary"
+                    size="small"
+                    :minSide="true"
+                    >+ 100만</BasicButton
+                  >
+                </ButtonListItem>
+                <ButtonListItem>
+                  <BasicButton
+                    :line="true"
+                    theme="quaternary"
+                    size="small"
+                    :minSide="true"
+                    >+ 500만</BasicButton
+                  >
+                </ButtonListItem>
+                <ButtonListItem>
+                  <BasicButton
+                    :line="true"
+                    theme="quaternary"
+                    size="small"
+                    :minSide="true"
+                    >+ 1,000만</BasicButton
+                  >
+                </ButtonListItem>
+              </ButtonList>
             </FormInvalid>
           </FormListItem>
         </FormList>

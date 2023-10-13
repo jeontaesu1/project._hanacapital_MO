@@ -68,41 +68,15 @@ export default {
       <FormList>
         <FormListItem titleText="차감 수수료율" :forceFocus="true">
           <FormInvalid :error="state.rateError">
-            <ButtonList
-              :wrap="true"
-              :col="4"
-              :classNames="{ wrap: 'row-margin-item-group' }"
-            >
-              <ButtonListItem>
-                <BasicButton :line="true" theme="quaternary" size="small"
-                  >+ 0.5%</BasicButton
-                >
-              </ButtonListItem>
-              <ButtonListItem>
-                <BasicButton :line="true" theme="quaternary" size="small"
-                  >+ 1.0%</BasicButton
-                >
-              </ButtonListItem>
-              <ButtonListItem>
-                <BasicButton :line="true" theme="quaternary" size="small"
-                  >+ 1.5%</BasicButton
-                >
-              </ButtonListItem>
-              <ButtonListItem>
-                <BasicButton :line="true" theme="quaternary" size="small"
-                  >+ 2.0%</BasicButton
-                >
-              </ButtonListItem>
-            </ButtonList>
             <InputBlock :error="state.rateError">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   type="number"
                   pattern="\d*"
                   title="차감 수수료율"
-                  :useDelete="false"
+                  :useDelete="true"
                   align="right"
-                  defaultValue="1"
+                  defaultValue="30.22"
                 />
               </InputBlockCell>
               <template v-slot:innerRight>
@@ -110,34 +84,65 @@ export default {
               </template>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
+
             <FormHelpText>숫자만 입력하세요.</FormHelpText>
+
+            <ButtonList
+              :wrap="true"
+              :col="4"
+              :classNames="{ wrap: 'row-margin-item' }"
+            >
+              <ButtonListItem>
+                <BasicButton :line="true" theme="quaternary" size="small"
+                  >-0.5%</BasicButton
+                >
+              </ButtonListItem>
+              <ButtonListItem>
+                <BasicButton :line="true" theme="quaternary" size="small"
+                  >-1.0%</BasicButton
+                >
+              </ButtonListItem>
+              <ButtonListItem>
+                <BasicButton :line="true" theme="quaternary" size="small"
+                  >-2.0%</BasicButton
+                >
+              </ButtonListItem>
+              <ButtonListItem>
+                <BasicButton :line="true" size="small">전액차감</BasicButton>
+              </ButtonListItem>
+            </ButtonList>
           </FormInvalid>
         </FormListItem>
-
-        <FormListItem titleText="금리/수수료 변경 전" :forceFocus="true">
-          <InputBlock>
-            <InputBlockCell :flexible="true" margin="regular">
-              <div class="color-gray-quinary">2%</div>
-            </InputBlockCell>
-            <InputBlockCell margin="regular">/</InputBlockCell>
-            <InputBlockCell :flexible="true" margin="regular">
-              <div class="color-gray-quinary">3%</div>
-            </InputBlockCell>
-          </InputBlock>
-        </FormListItem>
-
-        <FormListItem titleText="금리/수수료 변경 후" :forceFocus="true">
-          <InputBlock>
-            <InputBlockCell :flexible="true" margin="regular">
-              <div class="color-gray-quinary">2.5%</div>
-            </InputBlockCell>
-            <InputBlockCell margin="regular">/</InputBlockCell>
-            <InputBlockCell :flexible="true" margin="regular">
-              <div class="color-gray-quinary">3.5%</div>
-            </InputBlockCell>
-          </InputBlock>
-        </FormListItem>
       </FormList>
+
+      <div :class="[$style['basic-table'], 'row-margin-contents']">
+        <table>
+          <colgroup>
+            <col style="width: 82px" />
+            <col />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th></th>
+              <th>변경 전</th>
+              <th>변경 후</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>금리</th>
+              <td>8.2%</td>
+              <td class="font-weight-medium color-green">7.2%</td>
+            </tr>
+            <tr>
+              <th>수수료</th>
+              <td>2.63%</td>
+              <td class="font-weight-medium color-green">1.63%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <template v-slot:foot>
         <ButtonList
@@ -153,3 +158,7 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/salesUsedCar/LayerSalesUsedCarCounselingCommission.scss';
+</style>

@@ -200,14 +200,29 @@ export default {
       <ul class="reset-list">
         <li v-for="i in 2" :key="i" class="row-margin-item-group">
           <BasicBox>
-            <h3 class="text-body-1 font-weight-medium">노블레스</h3>
-            <p class="text-body-4 color-gray row-margin-small">
-              2.2 디젤 11인승 노블레스
-            </p>
-            <div class="row-margin-item">
-              <UnitText size="regular" rightUnit="만원"
-                ><strong>5,500</strong></UnitText
-              >
+            <div class="flex-box">
+              <div class="flex-box__cell flex-1">
+                <h3 class="text-body-1 font-weight-medium">노블레스</h3>
+              </div>
+              <div class="flex-box__cell">
+                <p class="text-body-4 font-weight-light">2020년식</p>
+              </div>
+            </div>
+            <div class="flex-box row-margin-small">
+              <div class="flex-box__cell flex-1">
+                <p
+                  class="text-body-4 color-gray font-weight-regular row-margin-small"
+                >
+                  2.2 디젤 11인승 노블레스
+                </p>
+              </div>
+              <div class="flex-box__cell">
+                <div class="row-margin-item">
+                  <UnitText rightUnit="만원">
+                    <strong>5,500</strong>
+                  </UnitText>
+                </div>
+              </div>
             </div>
           </BasicBox>
         </li>

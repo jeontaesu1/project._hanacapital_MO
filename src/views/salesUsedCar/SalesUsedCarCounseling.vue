@@ -560,61 +560,46 @@ export default {
 
       <!-- Case : 차량 선택 후 노출 -->
       <BasicBox className="row-margin-contents">
-        <h3 class="text-body-1 font-weight-medium">기아</h3>
-        <p class="text-body-4 color-gray font-weight-regular row-margin-small">
-          2.2 디젤 11인승 노블레스
-        </p>
-        <div class="row-margin-item">
-          <UnitText rightUnit="만원">
-            <strong>5,500</strong>
-          </UnitText>
+        <div class="flex-box">
+          <div class="flex-box__cell flex-1">
+            <h3 class="text-body-1 font-weight-medium">기아</h3>
+          </div>
+          <div class="flex-box__cell">
+            <p class="text-body-4 font-weight-light">2020년식</p>
+          </div>
+        </div>
+        <div class="flex-box row-margin-small">
+          <div class="flex-box__cell flex-1">
+            <p
+              class="text-body-4 color-gray font-weight-regular row-margin-small"
+            >
+              2.2 디젤 11인승 노블레스
+            </p>
+          </div>
+          <div class="flex-box__cell">
+            <div class="row-margin-item">
+              <UnitText rightUnit="만원">
+                <strong>5,500</strong>
+              </UnitText>
+            </div>
+          </div>
         </div>
       </BasicBox>
 
       <FormList>
         <FormListItem
           titleText="차량구입금액"
+          target="#salesUsedCarCounselingCarAmount"
           :forceFocus="true"
           :require="true"
         >
           <FormInvalid :error="state.carAmountError">
-            <ButtonList
-              :wrap="true"
-              :col="3"
-              :classNames="{ wrap: 'row-margin-item-group' }"
-            >
-              <ButtonListItem>
-                <BasicButton :line="true" theme="quaternary" size="small"
-                  >+ 10만</BasicButton
-                >
-              </ButtonListItem>
-              <ButtonListItem>
-                <BasicButton :line="true" theme="quaternary" size="small"
-                  >+ 100만</BasicButton
-                >
-              </ButtonListItem>
-              <ButtonListItem>
-                <BasicButton :line="true" theme="quaternary" size="small"
-                  >+ 300만</BasicButton
-                >
-              </ButtonListItem>
-              <ButtonListItem>
-                <BasicButton :line="true" theme="quaternary" size="small"
-                  >+ 500만</BasicButton
-                >
-              </ButtonListItem>
-              <ButtonListItem>
-                <BasicButton :line="true" theme="quaternary" size="small"
-                  >+ 1,000만</BasicButton
-                >
-              </ButtonListItem>
-            </ButtonList>
             <InputBlock :error="state.carAmountError">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   id="salesUsedCarCounselingCarAmount"
                   pattern="\d*"
-                  :useDelete="false"
+                  :useDelete="true"
                   align="right"
                   defaultValue="0"
                 />
@@ -623,6 +608,7 @@ export default {
                 <div class="text-body-3">원</div>
               </template>
             </InputBlock>
+
             <FormInvalidMessage>Error Message</FormInvalidMessage>
 
             <!-- Case : 차량구입금액 입력 시 노출 -->
@@ -634,6 +620,48 @@ export default {
             <NoticeText :classNames="{ wrap: 'row-margin-item' }"
               >차량구입금액은 2백만원 이상 입력해주세요.</NoticeText
             >
+            <ButtonList
+              :wrap="true"
+              :col="4"
+              :classNames="{ wrap: 'row-margin-top-none' }"
+            >
+              <ButtonListItem>
+                <BasicButton
+                  :line="true"
+                  theme="quaternary"
+                  size="small"
+                  :minSide="true"
+                  >+ 10만</BasicButton
+                >
+              </ButtonListItem>
+              <ButtonListItem>
+                <BasicButton
+                  :line="true"
+                  theme="quaternary"
+                  size="small"
+                  :minSide="true"
+                  >+ 100만</BasicButton
+                >
+              </ButtonListItem>
+              <ButtonListItem>
+                <BasicButton
+                  :line="true"
+                  theme="quaternary"
+                  size="small"
+                  :minSide="true"
+                  >+ 500만</BasicButton
+                >
+              </ButtonListItem>
+              <ButtonListItem>
+                <BasicButton
+                  :line="true"
+                  theme="quaternary"
+                  size="small"
+                  :minSide="true"
+                  >+ 1,000만</BasicButton
+                >
+              </ButtonListItem>
+            </ButtonList>
           </FormInvalid>
         </FormListItem>
       </FormList>
@@ -666,45 +694,18 @@ export default {
             </FormInvalid>
           </FormListItem>
 
-          <FormListItem titleText="대출신청금액" :forceFocus="true">
+          <FormListItem
+            titleText="대출신청금액"
+            target="#salesUsedCarCounselingLoanAmount"
+            :forceFocus="true"
+          >
             <FormInvalid :error="state.loanAmountError">
-              <ButtonList
-                :wrap="true"
-                :col="3"
-                :classNames="{ wrap: 'row-margin-item-group' }"
-              >
-                <ButtonListItem>
-                  <BasicButton :line="true" theme="quaternary" size="small"
-                    >+ 10만</BasicButton
-                  >
-                </ButtonListItem>
-                <ButtonListItem>
-                  <BasicButton :line="true" theme="quaternary" size="small"
-                    >+ 100만</BasicButton
-                  >
-                </ButtonListItem>
-                <ButtonListItem>
-                  <BasicButton :line="true" theme="quaternary" size="small"
-                    >+ 300만</BasicButton
-                  >
-                </ButtonListItem>
-                <ButtonListItem>
-                  <BasicButton :line="true" theme="quaternary" size="small"
-                    >+ 500만</BasicButton
-                  >
-                </ButtonListItem>
-                <ButtonListItem>
-                  <BasicButton :line="true" theme="quaternary" size="small"
-                    >+ 1,000만</BasicButton
-                  >
-                </ButtonListItem>
-              </ButtonList>
               <InputBlock :error="state.loanAmountError">
                 <InputBlockCell :flexible="true">
                   <BasicInput
                     id="salesUsedCarCounselingLoanAmount"
                     pattern="\d*"
-                    :useDelete="false"
+                    :useDelete="true"
                     align="right"
                     defaultValue="0"
                   />
@@ -724,6 +725,48 @@ export default {
               <NoticeText :classNames="{ wrap: 'row-margin-item' }"
                 >대출신청금액은 2백만원 이상 입력해주세요.</NoticeText
               >
+              <ButtonList
+                :wrap="true"
+                :col="4"
+                :classNames="{ wrap: 'row-margin-top-none' }"
+              >
+                <ButtonListItem>
+                  <BasicButton
+                    :line="true"
+                    theme="quaternary"
+                    size="small"
+                    :minSide="true"
+                    >+ 10만</BasicButton
+                  >
+                </ButtonListItem>
+                <ButtonListItem>
+                  <BasicButton
+                    :line="true"
+                    theme="quaternary"
+                    size="small"
+                    :minSide="true"
+                    >+ 100만</BasicButton
+                  >
+                </ButtonListItem>
+                <ButtonListItem>
+                  <BasicButton
+                    :line="true"
+                    theme="quaternary"
+                    size="small"
+                    :minSide="true"
+                    >+ 500만</BasicButton
+                  >
+                </ButtonListItem>
+                <ButtonListItem>
+                  <BasicButton
+                    :line="true"
+                    theme="quaternary"
+                    size="small"
+                    :minSide="true"
+                    >+ 1,000만</BasicButton
+                  >
+                </ButtonListItem>
+              </ButtonList>
             </FormInvalid>
           </FormListItem>
 
