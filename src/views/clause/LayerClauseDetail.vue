@@ -3,7 +3,6 @@
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
-import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
@@ -17,7 +16,6 @@ const BASE_URL = import.meta.env.BASE_URL;
 export default {
   components: {
     UiLayer,
-    PopupTitle,
     PopupButton,
     FullPopup,
     FullPopupHead,
@@ -48,9 +46,10 @@ export default {
             right: $style['header-right'],
           }"
         >
-          <PopupTitle
-            >약관 타이틀 약관 타이틀 약관 타이틀 약관 타이틀</PopupTitle
-          >
+          <h2 class="text-body-1 font-weight-medium multi-ellipsis">
+            TitleTitle Title Title Title Title Title Title Title Title Title
+            Title Title Title Title Title Ti
+          </h2>
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
