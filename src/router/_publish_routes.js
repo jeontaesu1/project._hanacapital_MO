@@ -648,6 +648,11 @@ const routes = [
     name: '/main/Main_M05_l001',
     component: () => import('@/views/main/Main_M05_l001.vue'),
   },
+  {
+    path: '/main/Main_M05_p002',
+    name: '/main/Main_M05_p002',
+    component: () => import('@/views/main/Main_M05_p002.vue'),
+  },
 
   // sign
   {

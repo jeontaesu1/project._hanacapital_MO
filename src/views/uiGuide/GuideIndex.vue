@@ -814,6 +814,17 @@ const datas = () => [
       },
       {
         depth2: 'APP',
+        depth3: '이벤트 전체\nMain_M05_p002',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/main/Main_M05_p002',
+        status: 'end',
+        create: '2023.10.13',
+        log: [],
+      },
+      {
+        depth2: 'APP',
         depth3: '보험 한눈에 보기\nMain_M07_p004',
         depth4: '',
         depth5: '',
