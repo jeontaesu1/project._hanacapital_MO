@@ -66,7 +66,11 @@ export default {
       </template>
 
       <FormList>
-        <FormListItem titleText="차감 수수료율" :forceFocus="true">
+        <FormListItem
+          titleText="차감 수수료율"
+          target="#layerSalesUsedCarCounselingCommissionRate"
+          :forceFocus="true"
+        >
           <FormInvalid :error="state.rateError">
             <InputBlock :error="state.rateError">
               <InputBlockCell :flexible="true">
@@ -77,6 +81,7 @@ export default {
                   :useDelete="true"
                   align="right"
                   defaultValue="30.22"
+                  id="layerSalesUsedCarCounselingCommissionRate"
                 />
               </InputBlockCell>
               <template v-slot:innerRight>
