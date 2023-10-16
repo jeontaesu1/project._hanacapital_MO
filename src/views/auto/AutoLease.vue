@@ -26,6 +26,7 @@ import TextButton from '@/components/ui/button/TextButton.vue';
 import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 import IconPerson from '@/assets/images/icon/person.svg?component';
+import IconRate from '@/assets/images/icon/rate.svg?component';
 import IconCar from '@/assets/images/icon/car.svg?component';
 import IconDate from '@/assets/images/icon/date.svg?component';
 import IconCommission from '@/assets/images/icon/commission.svg?component';
@@ -60,6 +61,7 @@ export default {
     BottomSticky,
 
     IconPerson,
+    IconRate,
     IconCar,
     IconDate,
     IconCommission,
@@ -108,9 +110,8 @@ export default {
     <div :class="$style['bg']">
       <PageTextGroup>
         <PageMainText>
-          손님이 원하는 차량을 리스회사가<br />
-          대신 구입하여 이를 일정기간 동안<br />
-          대여해주는 서비스입니다
+          빠른견적! 저렴한 견적!<br />
+          하나캐피탈 다이렉트 오토리스!
         </PageMainText>
       </PageTextGroup>
 
@@ -131,6 +132,17 @@ export default {
                 <div :class="$style['product-detail__title']">대상</div>
                 <div :class="$style['product-detail__desc']">
                   개인(개인사업자) 및 법인
+                </div>
+              </div>
+            </li>
+            <li :class="$style['product-detail__item']">
+              <div :class="$style['product-detail__icon']">
+                <IconRate />
+              </div>
+              <div :class="$style['product-detail__block']">
+                <div :class="$style['product-detail__title']">금융리스</div>
+                <div :class="[$style['product-detail__desc'], 'underline']">
+                  연 6.3%~9.1%
                 </div>
               </div>
             </li>
@@ -206,7 +218,7 @@ export default {
               <KeyValueTitle>금리</KeyValueTitle>
               <KeyValueText>
                 <div class="font-weight-bold underline">
-                  금융리스 연 6.1% ~ 9.0%
+                  금융리스 연 6.1% ~ 9.1%
                 </div>
                 <div
                   class="text-body-5 color-gray-tertiary font-weight-bold underline row-margin-mini"
@@ -300,7 +312,7 @@ export default {
                             >
                               <div :class="$style['basic-list__symbol']">-</div>
                               <div :class="$style['basic-list__content']">
-                                미회수원금 X 중도해지손해배상금률
+                                미회수원금 X 중도해지손해배상금
                               </div>
                             </li>
                             <li
@@ -552,123 +564,37 @@ export default {
           </KeyValueItem>
 
           <KeyValueItem>
-            <KeyValueTitle>금융리스 연체이자율</KeyValueTitle>
+            <KeyValueTitle>반환지연금</KeyValueTitle>
+            <KeyValueText
+              >[일 리스료 + (일 리스료 X 반환지원금율 100%)] X
+              경과일수</KeyValueText
+            >
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>가치감가금액</KeyValueTitle>
             <KeyValueText>
-              <ul
-                :class="[
-                  $style['basic-list'],
-                  $style['basic-list--regular'],
-                  $style['basic-list--mini-margin'],
-                ]"
-              >
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'color-black',
-                    'text-body-2 ',
-                    'font-weight-regular',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']"></div>
-                  <div :class="$style['basic-list__content']">
-                    <div>유이자 : 약정금리 + 3.00%</div>
-                    <div
-                      class="text-body-4 font-weight-light color-gray-tertiary row-margin-mini"
-                    >
-                      (법정최고금리 연 20% 이내)
-                    </div>
-                  </div>
-                </li>
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'color-black',
-                    'text-body-2 ',
-                    'font-weight-regular',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']"></div>
-                  <div :class="$style['basic-list__content']">
-                    <div>무이자 : 상시약정금리 + 3%</div>
-                    <div
-                      class="text-body-4 font-weight-light color-gray-tertiary row-margin-mini"
-                    >
-                      (법정최고금리 연 20% 이내)
-                    </div>
-                  </div>
-                </li>
-              </ul>
-              <ul
-                :class="[
-                  $style['basic-list'],
-                  $style['basic-list--small-margin'],
-                  'row-margin-item',
-                ]"
-              >
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'text-body-5',
-                    'font-weight-regular',
-                    'color-gray-tertiary',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']">※</div>
-                  <div :class="$style['basic-list__content']">
-                    <div>
-                      단, 연체 발생 시점에 약정금리가 없는 경우는 아래의 사항을
-                      적용함
-                    </div>
-                    <ul :class="[$style['basic-list'], 'row-margin-small']">
-                      <li
-                        :class="[
-                          $style['basic-list__item'],
-                          'text-body-5',
-                          'font-weight-regular',
-                          'color-black',
-                        ]"
-                      >
-                        <div :class="$style['basic-list__symbol']">-</div>
-                        <div :class="$style['basic-list__content']">
-                          <div>
-                            약정 금리는 상법상 상사법정이율과 상호금융
-                            가계대출금리*중 높은 금리 적용
-                          </div>
-                          <ul
-                            :class="[
-                              $style['basic-list'],
-                              $style['basic-list--small-margin'],
-                              'row-margin-small',
-                            ]"
-                          >
-                            <li
-                              :class="[
-                                $style['basic-list__item'],
-                                'text-body-5',
-                                'font-weight-regular',
-                                'color-gray-tertiary',
-                              ]"
-                            >
-                              <div :class="$style['basic-list__symbol']">*</div>
-                              <div :class="$style['basic-list__content']">
-                                한국은행에서 매월 발표하는 가장 최근의 비은행
-                                금융기관 가중평균대출금리(신규대출 기준)
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
+              반환시점의 자동차의 기대가치(혹은 중고차 시세) X 감가율(1~14%)의
+              합
             </KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>초과운행부담금</KeyValueTitle>
+            <KeyValueText>초과운행 KM X KM 당 초과운행료</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>초과운행료</KeyValueTitle>
+            <KeyValueText>초수입차 300원, 국산차 100원</KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem>
             <KeyValueTitle>운용리스 연체이자율</KeyValueTitle>
             <KeyValueText>
-              <div class="underline">연 20%</div>
+              <div class="font-weight-bold underline">
+                금융리스 (약정이율+3%,법정최고금리 연 20%이내), 운용리스 연 20%
+              </div>
             </KeyValueText>
           </KeyValueItem>
 
@@ -750,18 +676,52 @@ export default {
           <KeyValueItem>
             <KeyValueTitle>만기시 유의사항</KeyValueTitle>
             <KeyValueText>
-              <p class="row-margin-none">
-                만기 시 차량을 매입하실 경우 손님의 명의로 이전하는데 필요한
-                취득세 등의 제세공과금이 발생할 수 있으며, 이는 손님이
-                부담하셔야 합니다.
-              </p>
-              <p class="row-margin-item">
-                운용리스의 경우, 만기 차량 반납시사고이력 또는 약정주행거리
-                초과에 따라 별도의 감사비용이 추가로 발생 할 수 있습니다.
-              </p>
-              <p class="row-margin-none">
-                차량 반납시 유의사항을 꼭 확인하여 주시기 바랍니다.
-              </p>
+              <ul
+                :class="[$style['basic-list'], $style['basic-list--regular']]"
+              >
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-black',
+                    'text-body-2',
+                    'font-weight-regular',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    만기 시 차량을 매입하실 경우 손님의 명의로 이전하는데 필요한
+                    취득세 등의 제세공과금이 발생할 수 있으며, 이는 손님이
+                    부담하셔야 합니다.
+                  </div>
+                </li>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-black',
+                    'text-body-2',
+                    'font-weight-regular',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    운용리스의 경우, 만기 차량 반납시사고이력 또는 약정주행거리
+                    초과에 따라 별도의 감사비용이 추가로 발생 할 수 있습니다.
+                  </div>
+                </li>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-black',
+                    'text-body-2',
+                    'font-weight-regular',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    차량 반납시 유의사항을 꼭 확인하여 주시기 바랍니다.
+                  </div>
+                </li>
+              </ul>
 
               <div class="inline-wrap row-margin-contents">
                 <TextButton theme="secondary" :underline="true">
@@ -886,8 +846,8 @@ export default {
           >
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              일정기간 원리금을 연체할 경우, 모든 원리금을 변제할 의무가 발생할
-              수 있습니다.
+              개인신용평점 하락 시 금융거래와 관련된 불이익이 발생할 수
+              있습니다.
             </div>
           </li>
           <li
@@ -900,8 +860,8 @@ export default {
           >
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              개인신용평점 하락 시 금융거래와 관련된 불이익이 발생할 수
-              있습니다.
+              일정기간 원리금을 연체할 경우, 모든 원리금을 변제할 의무가 발생할
+              수 있습니다.
             </div>
           </li>
           <li
@@ -909,7 +869,7 @@ export default {
           >
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              리스 취급이 부적정한 경우(연체금 보유, 개인신용평점 낮음) 대출이
+              리스취급이 부적정한 경우(연체금 보유, 개인신용평점 낮음) 대출이
               제한될 수 있습니다.
             </div>
           </li>
