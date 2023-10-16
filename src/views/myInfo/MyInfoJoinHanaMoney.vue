@@ -157,9 +157,25 @@ export default {
         </ul>
       </div>
 
-      <div :class="[$style['image-view'], 'row-margin-contents-group']">
+      <div
+        :class="[
+          $style['image-view'],
+          'row-margin-contents-group',
+          'row-margin-bottom-none',
+        ]"
+      >
         <img src="@/assets/images/contents/hanamoney-m.png" alt="" />
       </div>
+
+      <ul :class="[$style['basic-list'], 'row-margin-contents-small']">
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            준법심의필 23-343<br />
+            (2023.09.25~2024.09.24)
+          </div>
+        </li>
+      </ul>
     </div>
 
     <template v-slot:foot>
