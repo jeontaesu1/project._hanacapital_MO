@@ -620,7 +620,7 @@ export default {
             <SwiperSlide>
               <div :class="$style['image-view']">
                 <img
-                  :src="`${BASE_URL}images/_dummy/banner-005.png`"
+                  :src="`${BASE_URL}images/_dummy/banner-main.png`"
                   alt="배너 설명 넣어주세요"
                 />
               </div>
@@ -632,7 +632,7 @@ export default {
               <RouterLink to="" class="link-block">
                 <div :class="$style['image-view']">
                   <img
-                    :src="`${BASE_URL}images/_dummy/banner-005.png`"
+                    :src="`${BASE_URL}images/_dummy/banner-main.png`"
                     alt="배너 설명 넣어주세요"
                   />
                 </div>
@@ -645,7 +645,7 @@ export default {
               <a href="" class="link-block">
                 <div :class="$style['image-view']">
                   <img
-                    :src="`${BASE_URL}images/_dummy/banner-005.png`"
+                    :src="`${BASE_URL}images/_dummy/banner-main.png`"
                     alt="배너 설명 넣어주세요"
                   />
                 </div>
@@ -723,8 +723,10 @@ export default {
               <div :class="$style['product__item']">
                 <RouterLink to="" :class="$style['product__link']">
                   <div :class="$style['product__info']">
-                    <div :class="$style['product__sub']">한눈에 모아보는</div>
-                    <div :class="$style['product__title']">다이렉트 보험</div>
+                    <div :class="$style['product__sub']">한곳에서 모아보는</div>
+                    <div :class="$style['product__title']">
+                      다이렉트 자동차 보험
+                    </div>
                   </div>
                   <div :class="$style['product__image']">
                     <img

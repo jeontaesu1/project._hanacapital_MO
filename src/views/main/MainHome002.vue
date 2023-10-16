@@ -721,8 +721,10 @@ export default {
               <div :class="$style['product__item']">
                 <RouterLink to="" :class="$style['product__link']">
                   <div :class="$style['product__info']">
-                    <div :class="$style['product__sub']">한눈에 모아보는</div>
-                    <div :class="$style['product__title']">다이렉트 보험</div>
+                    <div :class="$style['product__sub']">한곳에서 모아보는</div>
+                    <div :class="$style['product__title']">
+                      다이렉트 자동차 보험
+                    </div>
                   </div>
                   <div :class="$style['product__image']">
                     <img
@@ -775,7 +777,7 @@ export default {
                     >내 차, 저 아파트가 얼마일까?</span
                   >
                   <span :class="$style['icon-list__title']"
-                    >아파트/자동차 시세조회</span
+                    >부동산/자동차 시세조회</span
                   >
                 </span>
               </button>
@@ -791,7 +793,7 @@ export default {
                 /></span>
                 <span :class="$style['icon-list__content']">
                   <span :class="$style['icon-list__text']"
-                    >알아두면 유용한 재미있는 콘텐츠</span
+                    >알아두면 유용하고 재미있는</span
                   >
                   <span :class="$style['icon-list__title']">스토리</span>
                 </span>
