@@ -172,7 +172,7 @@ export default {
             <span :class="$style['icon-list__icon']"><IconBuilding /></span>
             <span :class="$style['icon-list__content']">
               <span :class="$style['icon-list__text']"
-                >아파트 소유자를 위한 무담보 아파트 신용대출</span
+                >아파트 소유자를 위한 무담보 아파트 대출</span
               >
               <span :class="$style['icon-list__title']">행복아파트론</span>
             </span>
@@ -183,7 +183,7 @@ export default {
             <span :class="$style['icon-list__icon']"><IconCar /></span>
             <span :class="$style['icon-list__content']">
               <span :class="$style['icon-list__text']"
-                >내 차만 있다면 특별한도와 금리혜택까지</span
+                >내 차만 있다면 특별한도와 금리혜택을</span
               >
               <span :class="$style['icon-list__title']"
                 >원큐자동차담보대출</span
@@ -196,7 +196,7 @@ export default {
             <span :class="$style['icon-list__icon']"><IconInterestRate /></span>
             <span :class="$style['icon-list__content']">
               <span :class="$style['icon-list__text']"
-                >주식매입자금을 위한 자금지원 금융서비스</span
+                >주식매입자금을 위한 금융서비스</span
               >
               <span :class="$style['icon-list__title']">스탁론</span>
             </span>
