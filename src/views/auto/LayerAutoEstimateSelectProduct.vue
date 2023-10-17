@@ -236,7 +236,7 @@ export default {
                 <UiTab>
                   <RoundTab
                     :useUiTab="true"
-                    :classNames="{ wrap: 'row-margin-item-group' }"
+                    :classNames="{ wrap: 'row-margin-contents-group' }"
                   >
                     <RoundTabButton link="layerAutoEstimateSelectProduct_001">
                       상품안내
@@ -1191,7 +1191,7 @@ export default {
                 <UiTab>
                   <RoundTab
                     :useUiTab="true"
-                    :classNames="{ wrap: 'row-margin-item-group' }"
+                    :classNames="{ wrap: 'row-margin-contents-group' }"
                   >
                     <RoundTabButton link="layerAutoEstimateSelectProduct_004">
                       상품안내
