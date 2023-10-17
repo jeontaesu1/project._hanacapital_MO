@@ -12,8 +12,8 @@ import BasicHr from '@/components/ui/common/BasicHr.vue';
 
 import IconLink from '@/assets/images/icon/link.svg?component';
 import IconMyInfo from '@/assets/images/icon/my-info.svg?component';
-import IconNotice from '@/assets/images/icon/notice.svg?component';
-import IconCallMint from '@/assets/images/icon/call-mint.svg?component';
+import IconHome from '@/assets/images/icon/home.svg?component';
+import IconCall from '@/assets/images/icon/call.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
 import IconBusinessFirst from '@/assets/images/icon/business-first.svg?component';
 
@@ -26,8 +26,8 @@ export default {
     BasicHr,
     IconLink,
     IconMyInfo,
-    IconNotice,
-    IconCallMint,
+    IconHome,
+    IconCall,
     IconCalculate,
     IconBusinessFirst,
   },
@@ -110,6 +110,16 @@ export default {
   <!-- // Case : 로그인 후 -->
 
   <ul :class="$style['main-menu']">
+    <li :class="$style['main-menu__item']">
+      <RouterLink
+        :class="$style['main-menu__link']"
+        to=""
+        @click="routerLinkClick"
+      >
+        <div :class="$style['main-menu__icon']"><IconHome /></div>
+        <p :class="$style['main-menu__title']">홈</p>
+      </RouterLink>
+    </li>
     <!-- Case : 로그인 후 -->
     <li v-if="isLoggedIn" :class="$style['main-menu__item']">
       <RouterLink
@@ -128,17 +138,7 @@ export default {
         to=""
         @click="routerLinkClick"
       >
-        <div :class="$style['main-menu__icon']"><IconNotice /></div>
-        <p :class="$style['main-menu__title']">공지사항</p>
-      </RouterLink>
-    </li>
-    <li :class="$style['main-menu__item']">
-      <RouterLink
-        :class="$style['main-menu__link']"
-        to=""
-        @click="routerLinkClick"
-      >
-        <div :class="$style['main-menu__icon']"><IconCallMint /></div>
+        <div :class="$style['main-menu__icon']"><IconCall /></div>
         <p :class="$style['main-menu__title']">전화상담</p>
       </RouterLink>
     </li>
