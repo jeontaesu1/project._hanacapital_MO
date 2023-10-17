@@ -217,7 +217,7 @@ export default {
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>금융리스</KeyValueTitle>
               <KeyValueText>
-                <div class="font-weight-bold underline">연 6.1% ~ 9.1%</div>
+                <div class="font-weight-bold underline">연 6.3% ~ 9.1%</div>
                 <div
                   class="text-body-5 color-gray-tertiary font-weight-bold underline row-margin-mini"
                 >
