@@ -208,18 +208,16 @@ export default {
       <!-- 상품안내 -->
       <UiTabPanel name="autoLeaseTab001">
         <BasicBox theme="tertiary">
-          <KeyValue align="left" margin="regular">
+          <KeyValue align="left" margin="regular" size="regular-small">
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>대상</KeyValueTitle>
               <KeyValueText>개인(사업자) 및 법인사업자</KeyValueText>
             </KeyValueItem>
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
-              <KeyValueTitle>금리</KeyValueTitle>
+              <KeyValueTitle>금융리스</KeyValueTitle>
               <KeyValueText>
-                <div class="font-weight-bold underline">
-                  금융리스 연 6.1% ~ 9.1%
-                </div>
+                <div class="font-weight-bold underline">연 6.1% ~ 9.1%</div>
                 <div
                   class="text-body-5 color-gray-tertiary font-weight-bold underline row-margin-mini"
                 >
