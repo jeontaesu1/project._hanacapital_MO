@@ -154,6 +154,20 @@ export default {
             :class="$style['top-link__icon']"
           />
         </button>
+
+        <!-- Case : 인앱메시지 '추가대출' -->
+        <button type="button" :class="$style['top-link']">
+          <span class="color-green">우수고객 추가 대출</span>
+          대상자예요<IconLinkSmall :class="$style['top-link__icon']" />
+        </button>
+        <!-- // Case : 인앱메시지 '추가대출' -->
+
+        <!-- Case : 인앱메시지 '금융상품' -->
+        <button type="button" :class="$style['top-link']">
+          <span class="color-green">만기 예정인 금융상품</span>이
+          있어요<IconLinkSmall :class="$style['top-link__icon']" />
+        </button>
+        <!-- // Case : 인앱메시지 '금융상품' -->
       </PageMainText>
     </PageTextGroup>
 
