@@ -39,6 +39,7 @@ import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
 import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 import IconArrow from '@/assets/images/icon/dropdown.svg?component';
+import TopButton from '@/components/ui/button/TopButton.vue';
 
 export default {
   components: {
@@ -77,6 +78,7 @@ export default {
     BottomSticky,
 
     IconArrow,
+    TopButton,
   },
   setup() {
     const store = {
@@ -1360,10 +1362,14 @@ export default {
       </div>
 
       <!-- Case : 결과 없을 때 -->
-      <div :class="$style['empty']">
+      <!-- <div :class="$style['empty']">
         <p :class="$style['empty__text']">조회된 결과가 없습니다.</p>
-      </div>
+      </div> -->
       <!-- // Case : 결과 없을 때 -->
+
+      <!-- Case : 결과 없을 때 -->
+      <!-- <div class="row-margin-item-group-small"></div> -->
+      <TopButton />
     </section>
 
     <template v-slot:foot>
