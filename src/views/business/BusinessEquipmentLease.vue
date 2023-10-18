@@ -122,7 +122,9 @@ export default {
               </div>
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">금리</div>
-                <div :class="$style['product-detail__desc']">연 0.0 ~ 9.9%</div>
+                <div :class="$style['product-detail__desc']">
+                  연 최저 0.0%~최고 9.9%
+                </div>
               </div>
             </li>
             <li :class="$style['product-detail__item']">
@@ -162,23 +164,29 @@ export default {
           <KeyValue align="left" margin="regular">
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>대상</KeyValueTitle>
-              <KeyValueText>개인사업자, 법인</KeyValueText>
+              <KeyValueText>
+                <div class="font-weight-bold">개인사업자, 법인</div>
+              </KeyValueText>
             </KeyValueItem>
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>금리</KeyValueTitle>
               <KeyValueText>
-                <div>연 0.0 ~ 9.9%</div>
-                <div class="text-body-5 color-gray-tertiary row-margin-mini">
-                  금융소비자 업력, 보증금율, 유예원금, 거치유무<br />에 따라
-                  차등 적용됩니다.
+                <div class="font-weight-bold">연 0.0 ~ 9.9%</div>
+                <div
+                  class="text-body-5 color-gray-tertiary row-margin-mini font-weight-bold"
+                >
+                  금융소비자 업력, 보증금율, 유예원금, 거치유무에<br />
+                  따라 차등 적용됩니다.
                 </div>
               </KeyValueText>
             </KeyValueItem>
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>기간</KeyValueTitle>
-              <KeyValueText>12개월 ~ 120개월</KeyValueText>
+              <KeyValueText>
+                <div class="font-weight-bold">12개월 ~ 60개월</div>
+              </KeyValueText>
             </KeyValueItem>
           </KeyValue>
         </BasicBox>
@@ -190,19 +198,50 @@ export default {
           }"
         >
           <KeyValueItem>
-            <KeyValueTitle>연체이자율</KeyValueTitle>
+            <KeyValueTitle :classNames="{ title: 'font-weight-bold' }"
+              >연체이자율</KeyValueTitle
+            >
             <KeyValueText>
-              <div>약정금리+3.00%</div>
-              <div
-                class="text-body-4 font-weight-light color-gray-tertiary row-margin-mini"
+              <ul
+                :class="[
+                  $style['basic-list'],
+                  $style['basic-list--regular'],
+                  $style['basic-list--mini-margin'],
+                ]"
               >
-                (법정최고금리 연 20% 이내)
-              </div>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'text-body-2',
+                    'color-black',
+                    'font-weight-bold',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    유이자 : 약정금리 + 3.00%(법정최고금리 연 20%이내)
+                  </div>
+                </li>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'text-body-2',
+                    'color-black',
+                    'font-weight-bold',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    무이자 : 9%(상사약정금리+3%)(법정최고금리 연 20%이내)
+                  </div>
+                </li>
+              </ul>
+
               <ul :class="[$style['basic-list'], 'row-margin-item']">
                 <li
                   :class="[
                     $style['basic-list__item'],
-                    'font-weight-regular',
+                    'font-weight-bold',
                     'color-green',
                   ]"
                 >
@@ -217,7 +256,7 @@ export default {
                       <li
                         :class="[
                           $style['basic-list__item'],
-                          'font-weight-regular',
+                          'font-weight-bold',
                           'color-green',
                         ]"
                       >
@@ -237,44 +276,81 @@ export default {
           </KeyValueItem>
 
           <KeyValueItem>
-            <KeyValueTitle>리스가능범위</KeyValueTitle>
-            <KeyValueText>물건가격의 100% 이내</KeyValueText>
-          </KeyValueItem>
-
-          <KeyValueItem>
-            <KeyValueTitle>보험조건</KeyValueTitle>
-            <KeyValueText
-              >하나캐피탈 책임부보 또는 이용자 책임부보</KeyValueText
+            <KeyValueTitle :classNames="{ title: 'font-weight-bold' }"
+              >리스가능범위</KeyValueTitle
             >
+            <KeyValueText>
+              <div class="font-weight-bold">물건가격의 100% 이내</div>
+
+              <ul :class="[$style['basic-list'], 'row-margin-item']">
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'text-body-4 ',
+                    'color-black',
+                    'font-weight-bold',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']">-</div>
+                  <div :class="$style['basic-list__content']">
+                    물건가격 및 당사 심사기준에 따라 리스취급이 제한될 수
+                    있습니다.
+                  </div>
+                </li>
+              </ul>
+            </KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem>
-            <KeyValueTitle>상환방법</KeyValueTitle>
-            <KeyValueText>원리금균등분할상환</KeyValueText>
+            <KeyValueTitle :classNames="{ title: 'font-weight-bold' }"
+              >보험조건</KeyValueTitle
+            >
+            <KeyValueText>
+              <div class="font-weight-bold">
+                하나캐피탈 책임부보 또는 이용자 책임부보
+              </div>
+            </KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem>
-            <KeyValueTitle>이자납부시기</KeyValueTitle>
-            <KeyValueText>매월 후취 또는 선취</KeyValueText>
+            <KeyValueTitle :classNames="{ title: 'font-weight-bold' }"
+              >상환방법</KeyValueTitle
+            >
+            <KeyValueText>
+              <div class="font-weight-bold">원리금균등분할상환</div>
+            </KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem>
-            <KeyValueTitle>규정손해배상금율</KeyValueTitle>
-            <KeyValueText>미회수원금 X 102%</KeyValueText>
+            <KeyValueTitle :classNames="{ title: 'font-weight-bold' }"
+              >이자납부시기</KeyValueTitle
+            >
+            <KeyValueText>
+              <div class="font-weight-bold">매월 후취 또는 선취</div>
+            </KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem>
-            <KeyValueTitle>취급수수료</KeyValueTitle>
-            <KeyValueText>없음</KeyValueText>
+            <KeyValueTitle :classNames="{ title: 'font-weight-bold' }"
+              >규정손해배상금율</KeyValueTitle
+            >
+            <KeyValueText>
+              <div class="font-weight-bold">미회수원금 X 102%</div>
+            </KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem>
-            <KeyValueTitle>종료후처리</KeyValueTitle>
-            <KeyValueText>무상양도</KeyValueText>
+            <KeyValueTitle :classNames="{ title: 'font-weight-bold' }"
+              >종료후처리</KeyValueTitle
+            >
+            <KeyValueText>
+              <div class="font-weight-bold">무상양도</div>
+            </KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem>
-            <KeyValueTitle :classNames="{ title: 'row-margin-item' }"
+            <KeyValueTitle
+              :classNames="{ title: 'font-weight-bold row-margin-item' }"
               >구비서류</KeyValueTitle
             >
             <KeyValueText>
@@ -289,7 +365,7 @@ export default {
                     <div :class="$style['contents-list__head']">
                       <div :class="$style['contents-list__symbol']">1</div>
                       <div :class="$style['contents-list__title']">
-                        <div>공통서류</div>
+                        <div class="font-weight-bold">공통서류</div>
                       </div>
                     </div>
                     <div
@@ -309,20 +385,7 @@ export default {
                             $style['basic-list__item'],
                             'text-body-4',
                             'color-black',
-                            'font-weight-regular',
-                          ]"
-                        >
-                          <div :class="$style['basic-list__symbol']">-</div>
-                          <div :class="$style['basic-list__content']">
-                            리스신청서
-                          </div>
-                        </li>
-                        <li
-                          :class="[
-                            $style['basic-list__item'],
-                            'text-body-4',
-                            'color-black',
-                            'font-weight-regular',
+                            'font-weight-bold',
                           ]"
                         >
                           <div :class="$style['basic-list__symbol']">-</div>
@@ -335,7 +398,7 @@ export default {
                             $style['basic-list__item'],
                             'text-body-4',
                             'color-black',
-                            'font-weight-regular',
+                            'font-weight-bold',
                           ]"
                         >
                           <div :class="$style['basic-list__symbol']">-</div>
@@ -348,12 +411,12 @@ export default {
                             $style['basic-list__item'],
                             'text-body-4',
                             'color-black',
-                            'font-weight-regular',
+                            'font-weight-bold',
                           ]"
                         >
                           <div :class="$style['basic-list__symbol']">-</div>
                           <div :class="$style['basic-list__content']">
-                            재무제표증명원
+                            주민등록증
                           </div>
                         </li>
                         <li
@@ -361,33 +424,7 @@ export default {
                             $style['basic-list__item'],
                             'text-body-4',
                             'color-black',
-                            'font-weight-regular',
-                          ]"
-                        >
-                          <div :class="$style['basic-list__symbol']">-</div>
-                          <div :class="$style['basic-list__content']">
-                            주민등록등본
-                          </div>
-                        </li>
-                        <li
-                          :class="[
-                            $style['basic-list__item'],
-                            'text-body-4',
-                            'color-black',
-                            'font-weight-regular',
-                          ]"
-                        >
-                          <div :class="$style['basic-list__symbol']">-</div>
-                          <div :class="$style['basic-list__content']">
-                            인감 증명서
-                          </div>
-                        </li>
-                        <li
-                          :class="[
-                            $style['basic-list__item'],
-                            'text-body-4',
-                            'color-black',
-                            'font-weight-regular',
+                            'font-weight-bold',
                           ]"
                         >
                           <div :class="$style['basic-list__symbol']">-</div>
@@ -402,7 +439,7 @@ export default {
                     <div :class="$style['contents-list__head']">
                       <div :class="$style['contents-list__symbol']">2</div>
                       <div :class="$style['contents-list__title']">
-                        <div>법인추가서류</div>
+                        <div class="font-weight-bold">법인추가서류</div>
                       </div>
                     </div>
                     <div
@@ -422,7 +459,7 @@ export default {
                             $style['basic-list__item'],
                             'text-body-4',
                             'color-black',
-                            'font-weight-regular',
+                            'font-weight-bold',
                           ]"
                         >
                           <div :class="$style['basic-list__symbol']">-</div>
@@ -435,7 +472,7 @@ export default {
                             $style['basic-list__item'],
                             'text-body-4',
                             'color-black',
-                            'font-weight-regular',
+                            'font-weight-bold',
                           ]"
                         >
                           <div :class="$style['basic-list__symbol']">-</div>
@@ -448,7 +485,7 @@ export default {
                             $style['basic-list__item'],
                             'text-body-4',
                             'color-black',
-                            'font-weight-regular',
+                            'font-weight-bold',
                           ]"
                         >
                           <div :class="$style['basic-list__symbol']">-</div>
@@ -461,7 +498,7 @@ export default {
                             $style['basic-list__item'],
                             'text-body-4',
                             'color-black',
-                            'font-weight-regular',
+                            'font-weight-bold',
                           ]"
                         >
                           <div :class="$style['basic-list__symbol']">-</div>
@@ -474,7 +511,7 @@ export default {
                             $style['basic-list__item'],
                             'text-body-4',
                             'color-black',
-                            'font-weight-regular',
+                            'font-weight-bold',
                           ]"
                         >
                           <div :class="$style['basic-list__symbol']">-</div>
@@ -487,12 +524,12 @@ export default {
                             $style['basic-list__item'],
                             'text-body-4',
                             'color-black',
-                            'font-weight-regular',
+                            'font-weight-bold',
                           ]"
                         >
                           <div :class="$style['basic-list__symbol']">-</div>
                           <div :class="$style['basic-list__content']">
-                            이사회결의서 사본
+                            재무제표증명원
                           </div>
                         </li>
                         <li
@@ -500,20 +537,7 @@ export default {
                             $style['basic-list__item'],
                             'text-body-4',
                             'color-black',
-                            'font-weight-regular',
-                          ]"
-                        >
-                          <div :class="$style['basic-list__symbol']">-</div>
-                          <div :class="$style['basic-list__content']">
-                            사업계획서
-                          </div>
-                        </li>
-                        <li
-                          :class="[
-                            $style['basic-list__item'],
-                            'text-body-4',
-                            'color-black',
-                            'font-weight-regular',
+                            'font-weight-bold',
                           ]"
                         >
                           <div :class="$style['basic-list__symbol']">-</div>
@@ -530,9 +554,11 @@ export default {
           </KeyValueItem>
 
           <KeyValueItem>
-            <KeyValueTitle>기타</KeyValueTitle>
+            <KeyValueTitle :classNames="{ title: 'font-weight-bold' }">
+              기타
+            </KeyValueTitle>
             <KeyValueText>
-              <div>인지세 10,000원</div>
+              <div class="font-weight-bold">인지세 10,000원</div>
               <p
                 class="text-body-4 color-gray-tertiary font-weight-light row-margin-mini"
               >
@@ -601,7 +627,7 @@ export default {
                     <div :class="$style['step__badge']">STEP 4</div>
                   </div>
                   <div :class="$style['step__text']">
-                    고객님께서 <strong>원하시는 기기를 설치</strong>해<br />
+                    손님께서 <strong>원하시는 기기를 설치</strong>해<br />
                     드리고, 담당 직원이 실사를 합니다.
                   </div>
                 </div>
@@ -734,15 +760,15 @@ export default {
         <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']"></div>
           <div :class="$style['basic-list__content']">
-            준법심의필 23-196<br />
-            (2023.07.03~2024.07.02)
+            준법심의필 23-146<br />
+            (2023.05.18~2024.05.17)
           </div>
         </li>
         <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']"></div>
           <div :class="$style['basic-list__content']">
-            여신금융협회 심의필 제 2023-C1h-07374호<br />
-            (2023.07.03~2024.07.02)
+            여신금융협회 심의필 제 2023-C1h-05526호<br />
+            (2023.05.18~2024.05.17)
           </div>
         </li>
       </ul>
