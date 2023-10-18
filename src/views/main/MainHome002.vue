@@ -630,9 +630,11 @@ export default {
           <Swiper :modules="modules" pagination>
             <!-- Case : 링크 기능 없을 때 -->
             <SwiperSlide>
-              <div :class="$style['image-view']">
+              <div
+                :class="[$style['image-view'], $style['image-view--img-width']]"
+              >
                 <img
-                  :src="`${BASE_URL}images/_dummy/banner-005.png`"
+                  :src="`${BASE_URL}images/_dummy/banner-main.png`"
                   alt="배너 설명 넣어주세요"
                 />
               </div>
@@ -642,9 +644,14 @@ export default {
             <!-- Case : 링크 기능 있을 때 (RouterLink) -->
             <SwiperSlide>
               <RouterLink to="" class="link-block">
-                <div :class="$style['image-view']">
+                <div
+                  :class="[
+                    $style['image-view'],
+                    $style['image-view--img-width'],
+                  ]"
+                >
                   <img
-                    :src="`${BASE_URL}images/_dummy/banner-005.png`"
+                    :src="`${BASE_URL}images/_dummy/banner-main.png`"
                     alt="배너 설명 넣어주세요"
                   />
                 </div>
@@ -655,9 +662,14 @@ export default {
             <!-- Case : 링크 기능 있을 때 (a tag) -->
             <SwiperSlide>
               <a href="" class="link-block">
-                <div :class="$style['image-view']">
+                <div
+                  :class="[
+                    $style['image-view'],
+                    $style['image-view--img-width'],
+                  ]"
+                >
                   <img
-                    :src="`${BASE_URL}images/_dummy/banner-005.png`"
+                    :src="`${BASE_URL}images/_dummy/banner-main.png`"
                     alt="배너 설명 넣어주세요"
                   />
                 </div>
@@ -825,9 +837,11 @@ export default {
           <Swiper :modules="modules" pagination>
             <!-- Case : 링크 기능 없을 때 -->
             <SwiperSlide>
-              <div :class="$style['image-view']">
+              <div
+                :class="[$style['image-view'], $style['image-view--img-width']]"
+              >
                 <img
-                  :src="`${BASE_URL}images/_dummy/banner-004.png`"
+                  :src="`${BASE_URL}images/_dummy/banner-009.png`"
                   alt="배너 설명 넣어주세요"
                 />
               </div>
@@ -837,9 +851,14 @@ export default {
             <!-- Case : 링크 기능 있을 때 (RouterLink) -->
             <SwiperSlide>
               <RouterLink to="" class="link-block">
-                <div :class="$style['image-view']">
+                <div
+                  :class="[
+                    $style['image-view'],
+                    $style['image-view--img-width'],
+                  ]"
+                >
                   <img
-                    :src="`${BASE_URL}images/_dummy/banner-004.png`"
+                    :src="`${BASE_URL}images/_dummy/banner-009.png`"
                     alt="배너 설명 넣어주세요"
                   />
                 </div>
@@ -850,9 +869,14 @@ export default {
             <!-- Case : 링크 기능 있을 때 (a tag) -->
             <SwiperSlide>
               <a href="" class="link-block">
-                <div :class="$style['image-view']">
+                <div
+                  :class="[
+                    $style['image-view'],
+                    $style['image-view--img-width'],
+                  ]"
+                >
                   <img
-                    :src="`${BASE_URL}images/_dummy/banner-004.png`"
+                    :src="`${BASE_URL}images/_dummy/banner-009.png`"
                     alt="배너 설명 넣어주세요"
                   />
                 </div>

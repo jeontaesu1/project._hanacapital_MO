@@ -1,6 +1,11 @@
 .image-view {
   display: block;
 
+  &--img-width {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
   img {
     display: block;
     max-width: 100%;

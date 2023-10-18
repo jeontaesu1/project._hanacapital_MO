@@ -1,5 +1,6 @@
 .banner {
   margin: 0 -20px;
+  border-radius: 12px;
 
   :global(.swiper-pagination-bullets) {
     position: absolute;
@@ -17,6 +18,7 @@
     &-secondary {
       margin-left: 0;
       margin-right: 0;
+      background-color: $color-navy-05;
 
       :global(.swiper-pagination-bullets) {
         left: 24px;
