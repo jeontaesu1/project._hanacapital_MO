@@ -841,7 +841,7 @@ export default {
                 :class="[$style['image-view'], $style['image-view--img-width']]"
               >
                 <img
-                  :src="`${BASE_URL}images/_dummy/banner-009.png`"
+                  :src="`${BASE_URL}images/_dummy/main_banner_h.png`"
                   alt="배너 설명 넣어주세요"
                 />
               </div>
@@ -858,7 +858,7 @@ export default {
                   ]"
                 >
                   <img
-                    :src="`${BASE_URL}images/_dummy/banner-009.png`"
+                    :src="`${BASE_URL}images/_dummy/main_banner_h2.png`"
                     alt="배너 설명 넣어주세요"
                   />
                 </div>
@@ -876,13 +876,24 @@ export default {
                   ]"
                 >
                   <img
-                    :src="`${BASE_URL}images/_dummy/banner-009.png`"
+                    :src="`${BASE_URL}images/_dummy/main_banner_h3.png`"
                     alt="배너 설명 넣어주세요"
                   />
                 </div>
               </a>
             </SwiperSlide>
             <!-- // Case : 링크 기능 있을 때 (a tag) -->
+
+            <SwiperSlide>
+              <div
+                :class="[$style['image-view'], $style['image-view--img-width']]"
+              >
+                <img
+                  :src="`${BASE_URL}images/_dummy/main_banner_h4.png`"
+                  alt="배너 설명 넣어주세요"
+                />
+              </div>
+            </SwiperSlide>
           </Swiper>
         </SlideImageBanner>
         <!-- // DD : 관리자 등록 배너 -->
