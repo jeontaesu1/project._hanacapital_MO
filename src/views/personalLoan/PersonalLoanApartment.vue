@@ -30,7 +30,6 @@ import IconDate from '@/assets/images/icon/date.svg?component';
 import IconSearchMoney from '@/assets/images/icon/search-money.svg?component';
 import IconPersonalTerms from '@/assets/images/icon/personal-terms.svg?component';
 import IconSend from '@/assets/images/icon/send.svg?component';
-import IconContract from '@/assets/images/icon/contract.svg?component';
 import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
 import IconLogoMain from '@/assets/images/icon/logo-main.svg?component';
@@ -63,7 +62,6 @@ export default {
     IconSearchMoney,
     IconPersonalTerms,
     IconSend,
-    IconContract,
     IconDeposit,
     IconCalculate,
     IconLogoMain,
@@ -344,7 +342,7 @@ export default {
                     <div :class="$style['step__badge']">STEP 2</div>
                   </div>
                   <div :class="$style['step__text']">
-                    고객님이 원하는 조건으로<br />
+                    손님이 원하는 조건으로<br />
                     <strong>대출을 신청</strong>합니다.
                   </div>
                 </div>
@@ -374,21 +372,6 @@ export default {
                 <div :class="$style['step__contents']">
                   <div :class="$style['step__top']">
                     <div :class="$style['step__badge']">STEP 4</div>
-                  </div>
-                  <div :class="$style['step__text']">
-                    온라인으로 <strong>약정을 진행</strong>합니다.
-                  </div>
-                </div>
-                <div :class="$style['step__icon']">
-                  <IconContract />
-                </div>
-              </div>
-            </li>
-            <li :class="$style['step__item']">
-              <div :class="$style['step__inner']">
-                <div :class="$style['step__contents']">
-                  <div :class="$style['step__top']">
-                    <div :class="$style['step__badge']">STEP 5</div>
                   </div>
                   <div :class="$style['step__text']">
                     손님 계좌로 <strong>대출금을 입금</strong>해드립니다.
@@ -494,25 +477,25 @@ export default {
             </div>
           </li>
         </ul>
-
-        <ul :class="[$style['basic-list'], 'row-margin-contents']">
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              준법심의필 22-126<br />
-              (2022.02.24~2023.02.23)
-            </div>
-          </li>
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              여신금융협회 심의필 제2022-L1h-01490호<br />
-              (2022.02.24~2023.02.23)
-            </div>
-          </li>
-        </ul>
       </UiTabPanel>
       <!-- // 유의사항 -->
+
+      <ul :class="[$style['basic-list'], 'row-margin-contents']">
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            준법심의필 22-126<br />
+            (2022.02.24~2023.02.23)
+          </div>
+        </li>
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            여신금융협회 심의필 제2022-L1h-01490호<br />
+            (2022.02.24~2023.02.23)
+          </div>
+        </li>
+      </ul>
     </UiTab>
 
     <div

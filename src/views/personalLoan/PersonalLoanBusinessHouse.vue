@@ -202,18 +202,13 @@ export default {
               <KeyValueTitle>한도</KeyValueTitle>
               <KeyValueText>
                 <div>시세의 최대 85%</div>
-                <div class="text-body-5 color-gray-tertiary row-margin-mini">
-                  (선순위, 후순위)
-                </div>
               </KeyValueText>
             </KeyValueItem>
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>금리</KeyValueTitle>
               <KeyValueText>
-                <div class="font-weight-bold">
-                  (고정금리) 최저 연 7.2% ~ 최고 9.0%
-                </div>
+                <div class="font-weight-bold">(고정금리) 연 7.5% ~ 9.4%</div>
 
                 <ul :class="[$style['basic-list'], 'row-margin-mini']">
                   <li
@@ -236,7 +231,12 @@ export default {
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>기간</KeyValueTitle>
-              <KeyValueText>12개월 ~ 36개월</KeyValueText>
+              <KeyValueText>
+                <div>12개월 ~ 36개월</div>
+                <div class="text-body-5 color-gray-tertiary row-margin-mini">
+                  연장 1년 단위(최대 10년 이내)
+                </div>
+              </KeyValueText>
             </KeyValueItem>
           </KeyValue>
         </BasicBox>
@@ -327,6 +327,63 @@ export default {
           </KeyValueItem>
 
           <KeyValueItem>
+            <KeyValueTitle :classNames="{ title: 'row-margin-item' }">
+              제출서류
+            </KeyValueTitle>
+            <KeyValueText>
+              <div :class="$style['contents-list']">
+                <ol
+                  :class="[
+                    $style['contents-list__list'],
+                    $style['contents-list__list--quinary'],
+                  ]"
+                >
+                  <li :class="$style['contents-list__item']">
+                    <div :class="$style['contents-list__head']">
+                      <div :class="$style['contents-list__symbol']">1</div>
+                      <div :class="$style['contents-list__title']">
+                        대출약정서 Set
+                      </div>
+                    </div>
+                  </li>
+                  <li :class="$style['contents-list__item']">
+                    <div :class="$style['contents-list__head']">
+                      <div :class="$style['contents-list__symbol']">2</div>
+                      <div :class="$style['contents-list__title']">
+                        인감증명서
+                      </div>
+                    </div>
+                  </li>
+                  <li :class="$style['contents-list__item']">
+                    <div :class="$style['contents-list__head']">
+                      <div :class="$style['contents-list__symbol']">3</div>
+                      <div :class="$style['contents-list__title']">
+                        신분증 사본
+                      </div>
+                    </div>
+                  </li>
+                  <li :class="$style['contents-list__item']">
+                    <div :class="$style['contents-list__head']">
+                      <div :class="$style['contents-list__symbol']">4</div>
+                      <div :class="$style['contents-list__title']">
+                        사업자등록증
+                      </div>
+                    </div>
+                  </li>
+                  <li :class="$style['contents-list__item']">
+                    <div :class="$style['contents-list__head']">
+                      <div :class="$style['contents-list__symbol']">5</div>
+                      <div :class="$style['contents-list__title']">
+                        소득증빙서류 등
+                      </div>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
             <KeyValueTitle>대출부대비용</KeyValueTitle>
             <KeyValueText>
               <div>5천만원 초과 실행 시 인지세 발생</div>
@@ -405,63 +462,6 @@ export default {
           </KeyValueItem>
 
           <KeyValueItem>
-            <KeyValueTitle :classNames="{ title: 'row-margin-item' }">
-              제출서류
-            </KeyValueTitle>
-            <KeyValueText>
-              <div :class="$style['contents-list']">
-                <ol
-                  :class="[
-                    $style['contents-list__list'],
-                    $style['contents-list__list--quinary'],
-                  ]"
-                >
-                  <li :class="$style['contents-list__item']">
-                    <div :class="$style['contents-list__head']">
-                      <div :class="$style['contents-list__symbol']">1</div>
-                      <div :class="$style['contents-list__title']">
-                        대출약정서 Set
-                      </div>
-                    </div>
-                  </li>
-                  <li :class="$style['contents-list__item']">
-                    <div :class="$style['contents-list__head']">
-                      <div :class="$style['contents-list__symbol']">2</div>
-                      <div :class="$style['contents-list__title']">
-                        인감증명서
-                      </div>
-                    </div>
-                  </li>
-                  <li :class="$style['contents-list__item']">
-                    <div :class="$style['contents-list__head']">
-                      <div :class="$style['contents-list__symbol']">3</div>
-                      <div :class="$style['contents-list__title']">
-                        신분증 사본
-                      </div>
-                    </div>
-                  </li>
-                  <li :class="$style['contents-list__item']">
-                    <div :class="$style['contents-list__head']">
-                      <div :class="$style['contents-list__symbol']">4</div>
-                      <div :class="$style['contents-list__title']">
-                        사업자등록증
-                      </div>
-                    </div>
-                  </li>
-                  <li :class="$style['contents-list__item']">
-                    <div :class="$style['contents-list__head']">
-                      <div :class="$style['contents-list__symbol']">5</div>
-                      <div :class="$style['contents-list__title']">
-                        소득증빙서류 등
-                      </div>
-                    </div>
-                  </li>
-                </ol>
-              </div>
-            </KeyValueText>
-          </KeyValueItem>
-
-          <KeyValueItem>
             <KeyValueTitle>부동산 근저당설정</KeyValueTitle>
             <KeyValueText>
               <div>설정비율 : 대출금액의 120%</div>
@@ -504,8 +504,9 @@ export default {
                     <div :class="$style['step__badge']">STEP 1</div>
                   </div>
                   <div :class="$style['step__text']">
-                    하나캐피탈과 협약된 대출모집법인을<br />
-                    통하여 <strong>대출상담을 신청</strong>합니다.
+                    하나캐피탈 상담원 또는<br />
+                    당사와 협약된 대출모집법인을 통하여 <br />
+                    <strong>대출한도를 조회</strong>합니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
@@ -520,8 +521,9 @@ export default {
                     <div :class="$style['step__badge']">STEP 2</div>
                   </div>
                   <div :class="$style['step__text']">
-                    대출 관련 상담을 진행하고,<br />
-                    <strong>약정서 작성 및 서류 제출</strong>을 진행합니다.
+                    대출 한도 확인 후,
+                    <strong>약정서를 작성하고</strong><br />
+                    <strong>관련 서류를 제출</strong>합니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
@@ -664,25 +666,25 @@ export default {
             </div>
           </li>
         </ul>
-
-        <ul :class="[$style['basic-list'], 'row-margin-contents']">
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              준법심의필 23-63<br />
-              (2023.02.22~2024.02.21)
-            </div>
-          </li>
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              여신금융협회 심의필 제2023-L1h-01756호<br />
-              (2023.02.22~2024.02.21)
-            </div>
-          </li>
-        </ul>
       </UiTabPanel>
       <!-- // 유의사항 -->
+
+      <ul :class="[$style['basic-list'], 'row-margin-contents']">
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            준법심의필 23-63<br />
+            (2023.02.22~2024.02.21)
+          </div>
+        </li>
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            여신금융협회 심의필 제2023-L1h-01756호<br />
+            (2023.02.22~2024.02.21)
+          </div>
+        </li>
+      </ul>
     </UiTab>
 
     <div

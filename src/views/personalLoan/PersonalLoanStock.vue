@@ -499,6 +499,117 @@ export default {
               </div>
             </KeyValueText>
           </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>이용가이드</KeyValueTitle>
+            <KeyValueText>
+              <ul
+                :class="[
+                  $style['basic-list'],
+                  $style['basic-list--regular'],
+                  $style['basic-list--mini-margin'],
+                ]"
+              >
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'text-body-2',
+                    'font-weight-regular',
+                    'color-black',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    대출신청시간: 증권사 영업일 08:10~16:00(토,일, 공휴일은
+                    제외)
+                  </div>
+                </li>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'text-body-2',
+                    'font-weight-regular',
+                    'color-black',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    증권계좌보유: 대출을 받고자 하는 증권계좌에 100만원 이상
+                    보유 시 신청이 가능합니다.
+                  </div>
+                </li>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'text-body-2',
+                    'font-weight-regular',
+                    'color-black',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    본인인증과정:본인명의의 공동인증서로 인증 후 신청할 수
+                    있으며, 일 5회이상 오류 시 당일 대출신청을 할 수 없습니다.
+                  </div>
+                </li>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'text-body-2',
+                    'font-weight-regular',
+                    'color-black',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    <div>
+                      인지대: 대출 실행 시 인지대(7만원~15만원)이 발생합니다.
+                    </div>
+                    <div
+                      class="text-body-4 font-weight-light color-gray-tertiary row-margin-mini"
+                    >
+                      (단, 인지대는 본인 및 하나캐피탈 각각 50%씩 부담, 대출금
+                      5천만원 이하 인지대 없음)
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <ul :class="[$style['basic-list'], 'row-margin-item']">
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'text-body-4',
+                    'font-weight-regular',
+                    'color-black',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']">-</div>
+                  <div :class="$style['basic-list__content']">
+                    대출가능금액 신청을 위한 계좌평가시 RMS(리스크관리시스템)
+                    운용 규칙에 따라 일부 종목은 평가대상에서 제외될 수
+                    있습니다.<br />
+                    대출 신청 시 개인신상정보 및 직장정보를 정확하게 입력해
+                    주셔야 합니다.
+                  </div>
+                </li>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'text-body-5',
+                    'font-weight-regular',
+                    'color-gray-tertiary',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']">※</div>
+                  <div :class="$style['basic-list__content']">
+                    입력하신 개인신상정보는 한국신용정보의 개인신용정보시스템과
+                    내부신용평가 프로그램, 기존 거래내역 조회 등을 통해 확인을
+                    거치므로 허위로 작성하실 경우 대출이 이루어지지 않습니다.
+                  </div>
+                </li>
+              </ul>
+            </KeyValueText>
+          </KeyValueItem>
         </KeyValue>
       </UiTabPanel>
       <!-- // 상품안내 -->
@@ -648,8 +759,33 @@ export default {
           >
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              대출취급이 부적정한 경우(연체금 보유, 개인신용평점 낮음), 보유
-              주식이 당사 취급제한 품목에 해당될 경우 대출이 제한될 수 있습니다.
+              <div>
+                대출취급이 부적정한 경우(연체금 보유, 개인신용평점 낮음) 대출이
+                제한될 수 있습니다.
+              </div>
+              <ul :class="[$style['basic-list'], 'row-margin-item']">
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'font-weight-regular',
+                    'color-gray-tertiary',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']">※</div>
+                  <div :class="$style['basic-list__content']">
+                    보유 주식이 당사 취급제한 품목에 해당될 경우 대출이 제한될
+                    수 있습니다.
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
+          >
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              금융소비자의 거래 증권사 상품에 따라 금리가 차등 적용됩니다.
             </div>
           </li>
           <li
@@ -668,14 +804,6 @@ export default {
             <div :class="$style['basic-list__content']">
               금리인하요구권 및 대출계약 철회권에 대한 자세한 사항은 당사
               홈페이지에서 확인하시기 바랍니다.
-            </div>
-          </li>
-          <li
-            :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
-          >
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              금융소비자의 거래 증권사 상품에 따라 금리가 차등 적용됩니다.
             </div>
           </li>
         </ul>

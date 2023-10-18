@@ -210,7 +210,43 @@ export default {
         >
           <KeyValueItem>
             <KeyValueTitle>상환방법</KeyValueTitle>
-            <KeyValueText>원리금균등분할상환</KeyValueText>
+            <KeyValueText>
+              <ul
+                :class="[
+                  $style['basic-list'],
+                  $style['basic-list--regular'],
+                  $style['basic-list--mini-margin'],
+                ]"
+              >
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-black',
+                    'text-body-2',
+                    'font-weight-regular',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    신청금액 1억원 미만: <strong>원리금균등분할상환</strong>
+                  </div>
+                </li>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-black',
+                    'text-body-2',
+                    'font-weight-regular',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    신청금액 1억원 이상:
+                    <strong>원리금균등분할상환/만기일시상환 중 택1</strong>
+                  </div>
+                </li>
+              </ul>
+            </KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem>
@@ -348,7 +384,7 @@ export default {
             <KeyValueTitle>기타</KeyValueTitle>
             <KeyValueText>
               내부 기준에 따라 행복아파트론으로 진행 불가 시,<br />
-              <span class="color-green">아파트론 상품</span> 으로 자동전환되어
+              <span class="color-green">아파트론 상품</span>으로 자동전환되어
               진행
             </KeyValueText>
           </KeyValueItem>
@@ -383,7 +419,7 @@ export default {
                     <div :class="$style['step__badge']">STEP 2</div>
                   </div>
                   <div :class="$style['step__text']">
-                    고객님이 원하는 조건으로<br />
+                    손님이 원하는 조건으로<br />
                     <strong>대출을 신청</strong>합니다.
                   </div>
                 </div>
@@ -533,25 +569,25 @@ export default {
             </div>
           </li>
         </ul>
-
-        <ul :class="[$style['basic-list'], 'row-margin-contents']">
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              준법심의필 22-126<br />
-              (2022.02.24~2023.02.23)
-            </div>
-          </li>
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              여신금융협회 심의필 제2022-L1h-01490호<br />
-              (2022.02.24~2023.02.23)
-            </div>
-          </li>
-        </ul>
       </UiTabPanel>
       <!-- // 유의사항 -->
+
+      <ul :class="[$style['basic-list'], 'row-margin-contents']">
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            준법심의필 22-126<br />
+            (2022.02.24~2023.02.23)
+          </div>
+        </li>
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            여신금융협회 심의필 제2022-L1h-01490호<br />
+            (2022.02.24~2023.02.23)
+          </div>
+        </li>
+      </ul>
     </UiTab>
 
     <div

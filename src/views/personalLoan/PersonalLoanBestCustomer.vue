@@ -264,7 +264,7 @@ export default {
                     <div :class="$style['step__badge']">STEP 2</div>
                   </div>
                   <div :class="$style['step__text']">
-                    고객님이 원하는 조건으로<br />
+                    손님이 원하는 조건으로<br />
                     <strong>대출을 신청</strong>합니다.
                   </div>
                 </div>
@@ -414,25 +414,25 @@ export default {
             </div>
           </li>
         </ul>
-
-        <ul :class="[$style['basic-list'], 'row-margin-contents']">
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              준법심의필 22-986<br />
-              (2022.03.22~2023.03.21)
-            </div>
-          </li>
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              여신금융협회 심의필 제2022-L1h-02243호<br />
-              (2022.03.22~2023.03.21)
-            </div>
-          </li>
-        </ul>
       </UiTabPanel>
       <!-- // 유의사항 -->
+
+      <ul :class="[$style['basic-list'], 'row-margin-contents']">
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            준법심의필 22-986<br />
+            (2022.03.22~2023.03.21)
+          </div>
+        </li>
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            여신금융협회 심의필 제2022-L1h-02243호<br />
+            (2022.03.22~2023.03.21)
+          </div>
+        </li>
+      </ul>
     </UiTab>
 
     <div
