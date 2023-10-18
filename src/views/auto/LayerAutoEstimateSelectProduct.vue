@@ -159,7 +159,7 @@ export default {
               <span :class="$style['icon-list__icon']"><IconCarRent /></span>
               <span :class="$style['icon-list__content']">
                 <span :class="$style['icon-list__text']"
-                  >비용 NO! 보험 NO! 내차 OK!</span
+                  >부담은 줄이고, 편리함은 늘리고</span
                 >
                 <span :class="$style['icon-list__title']">장기렌트카</span>
               </span>
@@ -760,13 +760,11 @@ export default {
 
                       <KeyValueItem>
                         <KeyValueTitle>초과운행료</KeyValueTitle>
-                        <KeyValueText
-                          >초수입차 300원, 국산차 100원</KeyValueText
-                        >
+                        <KeyValueText>수입차 300원, 국산차 100원</KeyValueText>
                       </KeyValueItem>
 
                       <KeyValueItem>
-                        <KeyValueTitle>운용리스 연체이자율</KeyValueTitle>
+                        <KeyValueTitle>연체이자율</KeyValueTitle>
                         <KeyValueText>
                           <div class="font-weight-bold underline">
                             금융리스 (약정이율+3%,법정최고금리 연 20%이내),
@@ -1176,12 +1174,12 @@ export default {
               <KeyValue align="left" margin="regular">
                 <KeyValueItem :classNames="{ item: 'text-body-3' }">
                   <KeyValueTitle>대상</KeyValueTitle>
-                  <KeyValueText>개인(사업자) 및 법인사업자 </KeyValueText>
+                  <KeyValueText>개인(사업자) 및 법인사업자</KeyValueText>
                 </KeyValueItem>
 
                 <KeyValueItem :classNames="{ item: 'text-body-3' }">
                   <KeyValueTitle>기간</KeyValueTitle>
-                  <KeyValueText> 12개월 ~ 120개월</KeyValueText>
+                  <KeyValueText>12개월 ~ 60개월</KeyValueText>
                 </KeyValueItem>
               </KeyValue>
             </BasicBox>

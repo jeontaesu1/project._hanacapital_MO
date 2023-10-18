@@ -584,11 +584,11 @@ export default {
 
           <KeyValueItem>
             <KeyValueTitle>초과운행료</KeyValueTitle>
-            <KeyValueText>초수입차 300원, 국산차 100원</KeyValueText>
+            <KeyValueText>수입차 300원, 국산차 100원</KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem>
-            <KeyValueTitle>운용리스 연체이자율</KeyValueTitle>
+            <KeyValueTitle>연체이자율</KeyValueTitle>
             <KeyValueText>
               <div class="font-weight-bold underline">
                 금융리스 (약정이율+3%,법정최고금리 연 20%이내), 운용리스 연 20%

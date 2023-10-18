@@ -231,7 +231,7 @@ export default {
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>기간</KeyValueTitle>
-              <KeyValueText> 12개월 ~ 120개월</KeyValueText>
+              <KeyValueText>12개월 ~ 60개월</KeyValueText>
             </KeyValueItem>
           </KeyValue>
         </BasicBox>
