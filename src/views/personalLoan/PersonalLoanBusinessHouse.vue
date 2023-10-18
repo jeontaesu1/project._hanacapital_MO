@@ -134,7 +134,7 @@ export default {
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">금리</div>
                 <div :class="$style['product-detail__desc']">
-                  <strong>연 최저 7.2% ~ 최고 9.0% (고정금리)</strong>
+                  <strong>(고정금리) 연 7.5% ~ 9.4%</strong>
                   <ul :class="[$style['basic-list'], 'row-margin-mini']">
                     <li
                       :class="[
@@ -195,7 +195,7 @@ export default {
           <KeyValue align="left" margin="regular">
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>대상</KeyValueTitle>
-              <KeyValueText> 부동산을 소유한 개인사업자 </KeyValueText>
+              <KeyValueText>부동산을 소유한 개인사업자</KeyValueText>
             </KeyValueItem>
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
