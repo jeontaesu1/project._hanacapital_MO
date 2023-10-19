@@ -240,6 +240,7 @@ export default {
                 <FormListItem
                   titleText="사업자번호"
                   target="#layerLeaseRentEstimationSystemCreditCheckRequest002BuisnessLicense"
+                  :class="$style['appoint-wrap']"
                 >
                   <FormInvalid :error="state.tab002BuisnessLicenseError">
                     <InputBlock :error="state.tab002BuisnessLicenseError">

@@ -185,7 +185,7 @@ export default {
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>한도</KeyValueTitle>
-              <KeyValueText>최대 1억원 (최저 100만원)</KeyValueText>
+              <KeyValueText>최대 1억원 (최저 300만원)</KeyValueText>
             </KeyValueItem>
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
@@ -197,7 +197,7 @@ export default {
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>기간</KeyValueTitle>
-              <KeyValueText>12개월 ~ 120개월</KeyValueText>
+              <KeyValueText>12개월 ~ 84개월</KeyValueText>
             </KeyValueItem>
           </KeyValue>
         </BasicBox>
@@ -414,7 +414,7 @@ export default {
                     <div :class="$style['step__badge']">STEP 2</div>
                   </div>
                   <div :class="$style['step__text']">
-                    고객님이 원하는 조건으로<br />
+                    손님이 원하는 조건으로<br />
                     <strong>대출을 신청</strong>합니다.
                   </div>
                 </div>
@@ -446,8 +446,8 @@ export default {
                     <div :class="$style['step__badge']">STEP 4</div>
                   </div>
                   <div :class="$style['step__text']">
-                    온라인으로 <strong>약정을 진행 및</strong><br />
-                    <strong>저당설정을 진행</strong>합니다.
+                    온라인으로 <strong>약정 및 저당설정을</strong><br />
+                    <strong> 진행</strong>합니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
@@ -542,6 +542,15 @@ export default {
           >
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
+              담보물건, 담보종류 등에 다라 대출조건이 차등 적용되며, 담보물이
+              부적합할 경우 대출이 제한될 수 있습니다.
+            </div>
+          </li>
+          <li
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
+          >
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
               금융소비자의 개인신용평점에 따라 대출한도 및 금리가 차등
               적용됩니다.
             </div>
@@ -564,35 +573,26 @@ export default {
               홈페이지에서 확인하시기 바랍니다.
             </div>
           </li>
-          <li
-            :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
-          >
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              담보물건, 담보종류 등에 다라 대출조건이 차등 적용되며, 담보물이
-              부적합할 경우 대출이 제한될 수 있습니다.
-            </div>
-          </li>
-        </ul>
-
-        <ul :class="[$style['basic-list'], 'row-margin-contents']">
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              준법심의필 22-128<br />
-              (2022.02.24~2023.02.23)
-            </div>
-          </li>
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              여신금융협회 심의필 제2022-L1h-01491호<br />
-              (2022.02.24~2023.02.23)
-            </div>
-          </li>
         </ul>
       </UiTabPanel>
       <!-- // 유의사항 -->
+
+      <ul :class="[$style['basic-list'], 'row-margin-contents']">
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            준법심의필 22-128<br />
+            (2022.02.24~2023.02.23)
+          </div>
+        </li>
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            여신금융협회 심의필 제2022-L1h-01491호<br />
+            (2022.02.24~2023.02.23)
+          </div>
+        </li>
+      </ul>
     </UiTab>
 
     <div

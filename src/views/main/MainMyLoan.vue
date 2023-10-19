@@ -25,14 +25,15 @@ import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
-import BasicBanner from '@/components/ui/banner/BasicBanner.vue';
-import BasicBannerSlide from '@/components/ui/banner/BasicBannerSlide.vue';
+import SlideImageBanner from '@/components/ui/banner/SlideImageBanner.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 
 import IconCertification from '@/assets/images/icon/certification.svg?component';
 import IconSecurity from '@/assets/images/icon/security.svg?component';
 import IconTell from '@/assets/images/icon/tell.svg?component';
 import IconArrow from '@/assets/images/icon/dropdown.svg?component';
+
+const BASE_URL = import.meta.env.BASE_URL;
 
 export default {
   components: {
@@ -54,8 +55,7 @@ export default {
     UnitText,
     BasicButton,
     NoticeText,
-    BasicBanner,
-    BasicBannerSlide,
+    SlideImageBanner,
     TextButton,
     IconCertification,
     IconSecurity,
@@ -99,6 +99,7 @@ export default {
     });
 
     return {
+      BASE_URL,
       modules: [Pagination, A11y],
     };
   },
@@ -726,52 +727,64 @@ export default {
       </div>
       <!-- // Case : 상품이 더 있을 경우 노출 -->
 
-      <!-- DD : 하드코딩 배너 -->
       <div class="row-margin-contents">
-        <BasicBannerSlide>
+        <!-- 슬라이드 배너 A -->
+        <!-- DD : 관리자 등록 배너 -->
+        <SlideImageBanner theme="secondary">
           <Swiper :modules="modules" pagination>
+            <!-- Case : 링크 기능 없을 때 -->
             <SwiperSlide>
-              <BasicBanner
-                thumb="/images/banner/banner-money-up.png"
-                tagName="RouterLink"
-                to=""
+              <div
+                :class="[$style['image-view'], $style['image-view--img-width']]"
               >
-                <p class="text-body-4 color-gray row-margin-mini">
-                  비용NO! 보험NO! 내 차OK!
-                </p>
-                <h3 class="text-body-1 font-weight-medium">
-                  다이렉트 장기렌터카
-                </h3>
-              </BasicBanner>
+                <img
+                  :src="`${BASE_URL}images/_dummy/banner-007.png`"
+                  alt="배너 설명 넣어주세요"
+                />
+              </div>
             </SwiperSlide>
+            <!-- //Case : 링크 기능 없을 때 -->
+
+            <!-- Case : 링크 기능 있을 때 (RouterLink) -->
             <SwiperSlide>
-              <BasicBanner
-                thumb="/images/banner/banner-money-up.png"
-                tagName="RouterLink"
-                to=""
-              >
-                <p class="text-body-4 color-gray row-margin-mini">
-                  내용 작업 예정
-                </p>
-                <h3 class="text-body-1 font-weight-medium">내용 작업 예정</h3>
-              </BasicBanner>
+              <RouterLink to="" class="link-block">
+                <div
+                  :class="[
+                    $style['image-view'],
+                    $style['image-view--img-width'],
+                  ]"
+                >
+                  <img
+                    :src="`${BASE_URL}images/_dummy/banner-007.png`"
+                    alt="배너 설명 넣어주세요"
+                  />
+                </div>
+              </RouterLink>
             </SwiperSlide>
+            <!-- // Case : 링크 기능 있을 때 (RouterLink) -->
+
+            <!-- Case : 링크 기능 있을 때 (a tag) -->
             <SwiperSlide>
-              <BasicBanner
-                thumb="/images/banner/banner-money-up.png"
-                tagName="RouterLink"
-                to=""
-              >
-                <p class="text-body-4 color-gray row-margin-mini">
-                  내용 작업 예정
-                </p>
-                <h3 class="text-body-1 font-weight-medium">내용 작업 예정</h3>
-              </BasicBanner>
+              <a href="" class="link-block">
+                <div
+                  :class="[
+                    $style['image-view'],
+                    $style['image-view--img-width'],
+                  ]"
+                >
+                  <img
+                    :src="`${BASE_URL}images/_dummy/banner-007.png`"
+                    alt="배너 설명 넣어주세요"
+                  />
+                </div>
+              </a>
             </SwiperSlide>
+            <!-- // Case : 링크 기능 있을 때 (a tag) -->
           </Swiper>
-        </BasicBannerSlide>
+        </SlideImageBanner>
+        <!-- // DD : 관리자 등록 배너 -->
+        <!-- // 슬라이드 배너 A -->
       </div>
-      <!-- // DD : 하드코딩 배너 -->
     </section>
   </PageContents>
 </template>

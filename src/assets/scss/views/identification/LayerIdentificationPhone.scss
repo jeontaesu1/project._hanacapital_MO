@@ -2,12 +2,12 @@
 
 .appoint-wrap {
   dt {
-    top: 35px;
+    top: 32px;
   }
 }
 
 .appoint-btn {
-  width: 110px;
+  width: 64px;
   min-height: 34px;
-  @include font-size-default(16);
+  @include font-size-default(15);
 }

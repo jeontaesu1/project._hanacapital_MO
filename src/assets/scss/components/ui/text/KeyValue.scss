@@ -120,6 +120,16 @@
       }
     }
 
+    &-regular-small {
+      > .key-value__list {
+        > .key-value__item {
+          > .key-value__key {
+            width: 51px;
+          }
+        }
+      }
+    }
+
     &-medium {
       > .key-value__list {
         > .key-value__item {

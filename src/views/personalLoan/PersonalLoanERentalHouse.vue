@@ -123,7 +123,7 @@ export default {
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">금리</div>
                 <div :class="$style['product-detail__desc']">
-                  <strong>연 6.1% ~ 11.4%</strong>
+                  연 6.7 ~ 11.8%
                 </div>
               </div>
             </li>
@@ -134,7 +134,15 @@ export default {
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">기간</div>
                 <div :class="$style['product-detail__desc']">
-                  6개월 ~ 27개월
+                  <div>21개월 ~ 27개월</div>
+                  <div
+                    :class="[
+                      $style['product-detail__desc-sub'],
+                      'font-weight-regular',
+                    ]"
+                  >
+                    (임대차계약기간 이내)
+                  </div>
                 </div>
               </div>
             </li>
@@ -187,14 +195,14 @@ export default {
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>금리</KeyValueTitle>
               <KeyValueText :classNames="{ text: 'font-weight-medium' }">
-                연 6.1% ~ 11.4%
+                연 6.7% ~ 11.8%
               </KeyValueText>
             </KeyValueItem>
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>기간</KeyValueTitle>
               <KeyValueText>
-                <div>6개월 ~ 27개월</div>
+                <div>21개월 ~ 27개월</div>
                 <div class="text-body-5 color-gray-tertiary row-margin-mini">
                   임대차계약기간 이내
                 </div>
@@ -210,14 +218,26 @@ export default {
           }"
         >
           <KeyValueItem>
-            <KeyValueTitle>상환방법</KeyValueTitle>
-            <KeyValueText>만기일시상환</KeyValueText>
+            <KeyValueTitle
+              :classNames="{
+                title: 'font-weight-bold',
+              }"
+              >상환방법</KeyValueTitle
+            >
+            <KeyValueText>
+              <div class="font-weight-bold">만기일시상환</div>
+            </KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem>
-            <KeyValueTitle>중도상환수수료</KeyValueTitle>
+            <KeyValueTitle
+              :classNames="{
+                title: 'font-weight-bold',
+              }"
+              >중도상환수수료</KeyValueTitle
+            >
             <KeyValueText>
-              <div>
+              <div class="font-weight-bold">
                 대출실행일 기준 경과기간에 따라 차등 적용되며,<br />
                 3년 경과 시 면제
               </div>
@@ -226,7 +246,7 @@ export default {
                   :class="[
                     $style['basic-list__item'],
                     'text-body-4',
-                    'font-weight-regular',
+                    'font-weight-bold',
                     'color-black',
                   ]"
                 >
@@ -240,7 +260,7 @@ export default {
                   :class="[
                     $style['basic-list__item'],
                     'text-body-4',
-                    'font-weight-regular',
+                    'font-weight-bold',
                     'color-black',
                   ]"
                 >
@@ -289,9 +309,16 @@ export default {
           </KeyValueItem>
 
           <KeyValueItem>
-            <KeyValueTitle>대출부대비용</KeyValueTitle>
+            <KeyValueTitle
+              :classNames="{
+                title: 'font-weight-bold',
+              }"
+              >대출부대비용</KeyValueTitle
+            >
             <KeyValueText>
-              <div>5천만원 초과 실행 시 인지세 발생</div>
+              <div class="font-weight-bold">
+                5천만원 초과 실행 시 인지세 발생
+              </div>
               <div
                 class="text-body-4 font-weight-light color-gray-tertiary row-margin-mini"
               >
@@ -302,7 +329,7 @@ export default {
                   :class="[
                     $style['basic-list__item'],
                     'text-body-4',
-                    'font-weight-regular',
+                    'font-weight-bold',
                     'color-black',
                   ]"
                 >
@@ -315,7 +342,7 @@ export default {
                   :class="[
                     $style['basic-list__item'],
                     'text-body-4',
-                    'font-weight-regular',
+                    'font-weight-bold',
                     'color-black',
                   ]"
                 >
@@ -329,7 +356,12 @@ export default {
           </KeyValueItem>
 
           <KeyValueItem>
-            <KeyValueTitle>연체이자율</KeyValueTitle>
+            <KeyValueTitle
+              :classNames="{
+                title: 'font-weight-bold',
+              }"
+              >연체이자율</KeyValueTitle
+            >
             <KeyValueText>
               <div class="font-weight-bold">약정이율 + 3%</div>
               <div
@@ -341,12 +373,21 @@ export default {
           </KeyValueItem>
 
           <KeyValueItem>
-            <KeyValueTitle>이자부과시기</KeyValueTitle>
-            <KeyValueText>매월 후취</KeyValueText>
+            <KeyValueTitle
+              :classNames="{
+                title: 'font-weight-bold',
+              }"
+              >이자부과시기</KeyValueTitle
+            >
+            <KeyValueText>
+              <div class="font-weight-bold">매월 후취</div>
+            </KeyValueText>
           </KeyValueItem>
 
           <KeyValueItem>
-            <KeyValueTitle :classNames="{ title: 'row-margin-item' }">
+            <KeyValueTitle
+              :classNames="{ title: 'row-margin-item font-weight-bold' }"
+            >
               제출서류
             </KeyValueTitle>
             <KeyValueText>
@@ -451,9 +492,13 @@ export default {
           </KeyValueItem>
 
           <KeyValueItem>
-            <KeyValueTitle>채권보전</KeyValueTitle>
+            <KeyValueTitle :classNames="{ title: 'font-weight-bold' }"
+              >채권보전</KeyValueTitle
+            >
             <KeyValueText>
-              임대보증금 반환 채권에 대한 채권양수도 계약
+              <div class="font-weight-bold">
+                임대보증금 반환 채권에 대한 채권양수도 계약
+              </div>
             </KeyValueText>
           </KeyValueItem>
         </KeyValue>
@@ -471,8 +516,8 @@ export default {
                     <div :class="$style['step__badge']">STEP 1</div>
                   </div>
                   <div :class="$style['step__text']">
-                    하나캐피탈 상담원 또는 당사와<br />
-                    협약된 대출모집법인을 통하여<br />
+                    하나캐피탈 상담원 또는<br />
+                    당사와 협약된 대출모집법인을 통하여<br />
                     <strong>대출한도를 조회</strong>합니다.
                   </div>
                 </div>
@@ -488,8 +533,8 @@ export default {
                     <div :class="$style['step__badge']">STEP 2</div>
                   </div>
                   <div :class="$style['step__text']">
-                    대출 한도 확인 후, <strong>약정서를 작성하고</strong><br />
-                    <strong>관련 서류를 제출</strong>합니다.
+                    대출 한도 확인 후, 약정서를 작성하고<br />
+                    관련 서류를 제출합니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
@@ -504,8 +549,9 @@ export default {
                     <div :class="$style['step__badge']">STEP 3</div>
                   </div>
                   <div :class="$style['step__text']">
-                    제출하신 정보를 바탕으로 최종심사 후<br />
-                    손님께 <strong>결과안내 및 채권양도를 통지</strong>합니다.
+                    제출하신 정보를 바탕으로<br />
+                    최종심사 후 손님께<br />
+                    <strong>결과안내 및 채권양도를 통지</strong>합니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
@@ -632,25 +678,25 @@ export default {
             </div>
           </li>
         </ul>
-
-        <ul :class="[$style['basic-list'], 'row-margin-contents']">
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              준법심의필 22-1614<br />
-              (2022.09.26 ~ 2023.09.25)
-            </div>
-          </li>
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              여신금융협회 심의필 제 2022-L1h-08222호<br />
-              (2022.09.26 ~ 2023.09.25)
-            </div>
-          </li>
-        </ul>
       </UiTabPanel>
       <!-- // 유의사항 -->
+
+      <ul :class="[$style['basic-list'], 'row-margin-contents']">
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            준법심의필 22-1614<br />
+            (2022.09.26 ~ 2023.09.25)
+          </div>
+        </li>
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            여신금융협회 심의필 제 2022-L1h-08222호<br />
+            (2022.09.26 ~ 2023.09.25)
+          </div>
+        </li>
+      </ul>
     </UiTab>
 
     <div

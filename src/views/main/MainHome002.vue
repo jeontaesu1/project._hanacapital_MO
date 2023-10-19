@@ -154,6 +154,20 @@ export default {
             :class="$style['top-link__icon']"
           />
         </button>
+
+        <!-- Case : 인앱메시지 '추가대출' -->
+        <button type="button" :class="$style['top-link']">
+          <span class="color-green">우수고객 추가 대출</span>
+          대상자예요<IconLinkSmall :class="$style['top-link__icon']" />
+        </button>
+        <!-- // Case : 인앱메시지 '추가대출' -->
+
+        <!-- Case : 인앱메시지 '금융상품' -->
+        <button type="button" :class="$style['top-link']">
+          <span class="color-green">만기 예정인 금융상품</span>이
+          있어요<IconLinkSmall :class="$style['top-link__icon']" />
+        </button>
+        <!-- // Case : 인앱메시지 '금융상품' -->
       </PageMainText>
     </PageTextGroup>
 
@@ -616,9 +630,11 @@ export default {
           <Swiper :modules="modules" pagination>
             <!-- Case : 링크 기능 없을 때 -->
             <SwiperSlide>
-              <div :class="$style['image-view']">
+              <div
+                :class="[$style['image-view'], $style['image-view--img-width']]"
+              >
                 <img
-                  :src="`${BASE_URL}images/_dummy/banner-005.png`"
+                  :src="`${BASE_URL}images/_dummy/banner-main.png`"
                   alt="배너 설명 넣어주세요"
                 />
               </div>
@@ -628,9 +644,14 @@ export default {
             <!-- Case : 링크 기능 있을 때 (RouterLink) -->
             <SwiperSlide>
               <RouterLink to="" class="link-block">
-                <div :class="$style['image-view']">
+                <div
+                  :class="[
+                    $style['image-view'],
+                    $style['image-view--img-width'],
+                  ]"
+                >
                   <img
-                    :src="`${BASE_URL}images/_dummy/banner-005.png`"
+                    :src="`${BASE_URL}images/_dummy/banner-main.png`"
                     alt="배너 설명 넣어주세요"
                   />
                 </div>
@@ -641,9 +662,14 @@ export default {
             <!-- Case : 링크 기능 있을 때 (a tag) -->
             <SwiperSlide>
               <a href="" class="link-block">
-                <div :class="$style['image-view']">
+                <div
+                  :class="[
+                    $style['image-view'],
+                    $style['image-view--img-width'],
+                  ]"
+                >
                   <img
-                    :src="`${BASE_URL}images/_dummy/banner-005.png`"
+                    :src="`${BASE_URL}images/_dummy/banner-main.png`"
                     alt="배너 설명 넣어주세요"
                   />
                 </div>
@@ -721,8 +747,10 @@ export default {
               <div :class="$style['product__item']">
                 <RouterLink to="" :class="$style['product__link']">
                   <div :class="$style['product__info']">
-                    <div :class="$style['product__sub']">한눈에 모아보는</div>
-                    <div :class="$style['product__title']">다이렉트 보험</div>
+                    <div :class="$style['product__sub']">한곳에서 모아보는</div>
+                    <div :class="$style['product__title']">
+                      다이렉트 자동차 보험
+                    </div>
                   </div>
                   <div :class="$style['product__image']">
                     <img
@@ -775,7 +803,7 @@ export default {
                     >내 차, 저 아파트가 얼마일까?</span
                   >
                   <span :class="$style['icon-list__title']"
-                    >아파트/자동차 시세조회</span
+                    >부동산/자동차 시세조회</span
                   >
                 </span>
               </button>
@@ -791,7 +819,7 @@ export default {
                 /></span>
                 <span :class="$style['icon-list__content']">
                   <span :class="$style['icon-list__text']"
-                    >알아두면 유용한 재미있는 콘텐츠</span
+                    >알아두면 유용하고 재미있는</span
                   >
                   <span :class="$style['icon-list__title']">스토리</span>
                 </span>
@@ -809,9 +837,11 @@ export default {
           <Swiper :modules="modules" pagination>
             <!-- Case : 링크 기능 없을 때 -->
             <SwiperSlide>
-              <div :class="$style['image-view']">
+              <div
+                :class="[$style['image-view'], $style['image-view--img-width']]"
+              >
                 <img
-                  :src="`${BASE_URL}images/_dummy/banner-004.png`"
+                  :src="`${BASE_URL}images/_dummy/main_banner_h.png`"
                   alt="배너 설명 넣어주세요"
                 />
               </div>
@@ -821,9 +851,14 @@ export default {
             <!-- Case : 링크 기능 있을 때 (RouterLink) -->
             <SwiperSlide>
               <RouterLink to="" class="link-block">
-                <div :class="$style['image-view']">
+                <div
+                  :class="[
+                    $style['image-view'],
+                    $style['image-view--img-width'],
+                  ]"
+                >
                   <img
-                    :src="`${BASE_URL}images/_dummy/banner-004.png`"
+                    :src="`${BASE_URL}images/_dummy/main_banner_h2.png`"
                     alt="배너 설명 넣어주세요"
                   />
                 </div>
@@ -834,15 +869,31 @@ export default {
             <!-- Case : 링크 기능 있을 때 (a tag) -->
             <SwiperSlide>
               <a href="" class="link-block">
-                <div :class="$style['image-view']">
+                <div
+                  :class="[
+                    $style['image-view'],
+                    $style['image-view--img-width'],
+                  ]"
+                >
                   <img
-                    :src="`${BASE_URL}images/_dummy/banner-004.png`"
+                    :src="`${BASE_URL}images/_dummy/main_banner_h3.png`"
                     alt="배너 설명 넣어주세요"
                   />
                 </div>
               </a>
             </SwiperSlide>
             <!-- // Case : 링크 기능 있을 때 (a tag) -->
+
+            <SwiperSlide>
+              <div
+                :class="[$style['image-view'], $style['image-view--img-width']]"
+              >
+                <img
+                  :src="`${BASE_URL}images/_dummy/main_banner_h4.png`"
+                  alt="배너 설명 넣어주세요"
+                />
+              </div>
+            </SwiperSlide>
           </Swiper>
         </SlideImageBanner>
         <!-- // DD : 관리자 등록 배너 -->

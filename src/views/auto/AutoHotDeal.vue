@@ -491,7 +491,7 @@ export default {
                   >
                     <div :class="$style['basic-list__symbol']">※</div>
                     <div :class="$style['basic-list__content']">
-                      잔여렌트료 = 앞면표기 “월렌트료“ X (미청구 잔여개월 수 – 1
+                      잔여렌트료 = 앞면표기 “월렌트료” X (미청구 잔여개월 수 – 1
                       개월) + 해지시점 당월
                     </div>
                   </li>
