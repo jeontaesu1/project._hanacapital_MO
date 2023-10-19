@@ -36,10 +36,10 @@ export default {
     <div :class="$style['layout__body']">
       <slot />
     </div>
-    <div :class="$style['layout__foot']">
+    <!-- <div :class="$style['layout__foot']">
       <DefaultFooter v-if="store.ui.layout.useFooter" />
       <div :class="$style['fake-dock-bar']" v-if="store.ui.common.isAPP"></div>
-    </div>
+    </div> -->
   </div>
 </template>
 
