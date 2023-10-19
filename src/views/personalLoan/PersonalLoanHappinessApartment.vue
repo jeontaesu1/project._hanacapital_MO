@@ -124,7 +124,7 @@ export default {
               </div>
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">최대한도</div>
-                <div :class="$style['product-detail__desc']">1억원</div>
+                <div :class="$style['product-detail__desc']">2억원</div>
               </div>
             </li>
             <li :class="$style['product-detail__item']">
@@ -185,7 +185,7 @@ export default {
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>한도</KeyValueTitle>
-              <KeyValueText>최대 1억원 (최저 300만원)</KeyValueText>
+              <KeyValueText>최대 2억원 (최저 300만원)</KeyValueText>
             </KeyValueItem>
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
@@ -260,7 +260,7 @@ export default {
                 <li
                   :class="[
                     $style['basic-list__item'],
-                    'text-body-4',
+                    'text-body-2',
                     'font-weight-regular',
                     'color-black',
                   ]"
@@ -274,7 +274,7 @@ export default {
                 <li
                   :class="[
                     $style['basic-list__item'],
-                    'text-body-4',
+                    'text-body-2',
                     'font-weight-regular',
                     'color-black',
                   ]"
@@ -336,7 +336,7 @@ export default {
                 <li
                   :class="[
                     $style['basic-list__item'],
-                    'text-body-4',
+                    'text-body-2',
                     'font-weight-regular',
                     'color-black',
                   ]"
@@ -349,7 +349,7 @@ export default {
                 <li
                   :class="[
                     $style['basic-list__item'],
-                    'text-body-4',
+                    'text-body-2',
                     'font-weight-regular',
                     'color-black',
                   ]"
