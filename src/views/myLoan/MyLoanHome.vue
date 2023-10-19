@@ -714,7 +714,7 @@ export default {
                 :class="[$style['image-view'], $style['image-view--img-width']]"
               >
                 <img
-                  :src="`${BASE_URL}images/_dummy/banner-007.png`"
+                  :src="`${BASE_URL}images/_dummy/banner-008.png`"
                   alt="배너 설명 넣어주세요"
                 />
               </div>
