@@ -449,13 +449,17 @@ const datas = () => [
         depth4: '',
         depth5: '',
         depth6: '',
-        path: '/redirect/app',
+        path: '/ui-guide/redirect-app',
         status: 'end',
         create: '2023.03.31',
         log: [
           {
             date: '2023.09.21',
-            text: ' 타이틀 텍스트 굵기 수정',
+            text: '타이틀 텍스트 굵기 수정',
+          },
+          {
+            date: '2023.10.19',
+            text: '팝업 추가\n- Common_M00_p100\n Common_M00_p007 페이지에서 팝업으로 변경, 앱 설치 아이콘 교체',
           },
         ],
       },
