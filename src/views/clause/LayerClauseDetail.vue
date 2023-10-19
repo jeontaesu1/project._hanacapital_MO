@@ -48,7 +48,7 @@ export default {
         >
           <h2 class="text-body-1 font-weight-medium multi-ellipsis">
             TitleTitle Title Title Title Title Title Title Title Title Title
-            Title Title Title Title Title Ti
+            Title Title Title Title Title Title
           </h2>
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />

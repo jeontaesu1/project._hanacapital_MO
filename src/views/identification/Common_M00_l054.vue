@@ -5,7 +5,6 @@ import { ref } from 'vue';
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
-import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
@@ -13,14 +12,12 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import PageSubText from '@/components/ui/text/PageSubText.vue';
-import BasicBox from '@/components/ui/common/BasicBox.vue';
 
 export default {
   components: {
     UiLayer,
     FullPopup,
     FullPopupHead,
-    PopupTitle,
     PopupButton,
     BasicButton,
     ButtonList,
@@ -28,7 +25,6 @@ export default {
     PageTextGroup,
     PageMainText,
     PageSubText,
-    BasicBox,
   },
   setup() {
     const layer = ref(null);
@@ -51,7 +47,9 @@ export default {
             right: $style['header-right'],
           }"
         >
-          <PopupTitle>개인정보 취급 위탁 동의</PopupTitle>
+          <h2 class="text-body-1 font-weight-medium multi-ellipsis">
+            개인정보 취급 위탁 동의
+          </h2>
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
@@ -61,10 +59,9 @@ export default {
       <PageTextGroup>
         <PageMainText>"비바리퍼블리카" 귀중</PageMainText>
         <PageSubText>
-          본인은 “비바리퍼블리카”(이하 “위탁자”라 합니다.)가 위탁한
-          "드림시큐리티"(이하 “수탁자”라 합니다)이 제공하는 간편인증
-          통합중계서비스(이하 “서비스”라 합니다)를 이용하기 위해, 다음과 같이
-          “위탁자”가 본인의 개인정보 취급을 위탁하는 것에 동의합니다.
+          본인은 (주)비바리퍼블리카(이하 "위탁자")가 (주)드림시큐리티(이하
+          "수탁자")가 제공하는 간편인증통합중계_서비스(이하 "서비스")를 위하여
+          다음과 같이 본인의 개인정보 취급을 위탁하는 것에 동의합니다.
         </PageSubText>
       </PageTextGroup>
 
@@ -175,9 +172,9 @@ export default {
             >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                개인정보 수집·이용 및 제공에 따른 동의는 거부할 수 있으며, 동의
-                후에도 언제든지 철회 가능합니다. 다만, 동의 거부 시에는 “서비스”
-                이용이 제한될 수 있습니다.
+                개인정보 취급위탁에 대한 동의는 거부할 수 있으며, 동의 후에도
+                언제든지 철회 가능합니다. 다만, 동의 거부 시에는 “서비스” 이용이
+                제한될 수 있습니다.
               </div>
             </li>
             <li
@@ -195,8 +192,8 @@ export default {
 
         <section class="row-margin-contents-group">
           <h3 class="text-body-2 row-margin-item-medium">
-            (6) 상기 개인정보 수집 및 이용과 취급위탁에 동의하지 않으실 경우,
-            서비스를 이용하실 수 없습니다.
+            (6) 상기 개인정보 취급위탁에 동의하지 않으실 경우, 서비스를 이용하실
+            수 없습니다.
           </h3>
           <ul
             :class="[$style['basic-list'], $style['basic-list--small-margin']]"
@@ -209,19 +206,14 @@ export default {
             >
               <div :class="$style['basic-list__symbol']">※</div>
               <div :class="$style['basic-list__content']">
-                기관/기업이 제공하는 서비스와 관련된 개인정보의 취급과 관련된
-                사항은, 기관의 개인정보취급방침에 따릅니다.
+                (주)비바리퍼블리카가 제공하는 서비스와 관련된 개인정보의 취급과
+                관련된 사항은, (주)비바리퍼블리카의 개인정보취급방침에 따릅니다.
+                본인은 위 내용을 숙지하였으며 이에 동의합니다.
               </div>
             </li>
           </ul>
         </section>
       </div>
-
-      <BasicBox theme="senary" className="row-margin-contents-group">
-        <p class="text-body-4 font-weight-medium color-gray-secondary">
-          본인은 위 내용을 숙지하였으며 이에 동의합니다.
-        </p>
-      </BasicBox>
 
       <template v-slot:foot>
         <ButtonList

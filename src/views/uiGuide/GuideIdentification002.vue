@@ -24,6 +24,7 @@ import Common_M00_l051 from '@/views/identification/Common_M00_l051.vue';
 import Common_M00_l052 from '@/views/identification/Common_M00_l052.vue';
 import Common_M00_l053 from '@/views/identification/Common_M00_l053.vue';
 import Common_M00_l054 from '@/views/identification/Common_M00_l054.vue';
+import Common_M00_l055 from '@/views/identification/Common_M00_l055.vue';
 
 export default {
   components: {
@@ -49,6 +50,7 @@ export default {
     Common_M00_l052,
     Common_M00_l053,
     Common_M00_l054,
+    Common_M00_l055,
   },
   setup() {
     const layer001 = ref(null);
@@ -71,6 +73,7 @@ export default {
     const layer018 = ref(null);
     const layer019 = ref(null);
     const layer020 = ref(null);
+    const layer021 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -132,6 +135,9 @@ export default {
     const layer020Open = (e = {}) => {
       layer020.value.layer.open(e.target);
     };
+    const layer021Open = (e = {}) => {
+      layer021.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -154,6 +160,7 @@ export default {
       layer018,
       layer019,
       layer020,
+      layer021,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -174,6 +181,7 @@ export default {
       layer018Open,
       layer019Open,
       layer020Open,
+      layer021Open,
     };
   },
 };
@@ -277,6 +285,11 @@ export default {
           개인정보 취급 위탁 동의 - 토스<br />Common_M00_l054
         </BasicButton>
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer021Open">
+          제3자 정보제공동의 - 토스<br />Common_M00_l055
+        </BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <LayerIdentification ref="layer001" />
@@ -297,5 +310,6 @@ export default {
     <Common_M00_l052 ref="layer018" />
     <Common_M00_l053 ref="layer019" />
     <Common_M00_l054 ref="layer020" />
+    <Common_M00_l055 ref="layer021" />
   </PageContents>
 </template>

@@ -5,7 +5,6 @@ import { ref } from 'vue';
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
-import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
@@ -13,14 +12,12 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import PageSubText from '@/components/ui/text/PageSubText.vue';
-import BasicBox from '@/components/ui/common/BasicBox.vue';
 
 export default {
   components: {
     UiLayer,
     FullPopup,
     FullPopupHead,
-    PopupTitle,
     PopupButton,
     BasicButton,
     ButtonList,
@@ -28,7 +25,6 @@ export default {
     PageTextGroup,
     PageMainText,
     PageSubText,
-    BasicBox,
   },
   setup() {
     const layer = ref(null);
@@ -51,7 +47,9 @@ export default {
             right: $style['header-right'],
           }"
         >
-          <PopupTitle>개인정보 취급 위탁 동의</PopupTitle>
+          <h2 class="text-body-1 font-weight-medium multi-ellipsis">
+            개인정보 취급 위탁 동의
+          </h2>
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
@@ -135,7 +133,7 @@ export default {
             >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                이름, 전화번호, 생년월일, VID
+                이름, 전화번호, 생년월일
               </div>
             </li>
           </ul>
@@ -155,9 +153,7 @@ export default {
               :class="[$style['basic-list__item'], 'text-body-4 color-black']"
             >
               <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                30일(단, VID는 즉시파기)
-              </div>
+              <div :class="$style['basic-list__content']">30일</div>
             </li>
           </ul>
         </section>
@@ -212,18 +208,13 @@ export default {
               <div :class="$style['basic-list__symbol']">※</div>
               <div :class="$style['basic-list__content']">
                 기관/기업이 제공하는 서비스와 관련된 개인정보의 취급과 관련된
-                사항은, 기관의 개인정보취급방침에 따릅니다.
+                사항은, 기관의 개인정보취급방침에 따릅니다. 본인은 위 내용을
+                숙지하였으며 이에 동의합니다.
               </div>
             </li>
           </ul>
         </section>
       </div>
-
-      <BasicBox theme="senary" className="row-margin-contents-group">
-        <p class="text-body-4 font-weight-medium color-gray-secondary">
-          본인은 위 내용을 숙지하였으며 이에 동의합니다.
-        </p>
-      </BasicBox>
 
       <template v-slot:foot>
         <ButtonList
