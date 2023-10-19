@@ -22,6 +22,7 @@ import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import SlideImageBanner from '@/components/ui/banner/SlideImageBanner.vue';
+import SlideImageBannerBlock from '@/components/ui/banner/SlideImageBannerBlock.vue';
 import UiAccordion from '@/components/ui/accordion/UiAccordion.vue';
 import UiAccordionItem from '@/components/ui/accordion/UiAccordionItem.vue';
 import UiAccordionLayer from '@/components/ui/accordion/UiAccordionLayer.vue';
@@ -54,6 +55,7 @@ export default {
     BasicHr,
     BasicButton,
     SlideImageBanner,
+    SlideImageBannerBlock,
     UiAccordion,
     UiAccordionItem,
     UiAccordionLayer,
@@ -837,38 +839,64 @@ export default {
           <Swiper :modules="modules" pagination>
             <!-- Case : 링크 기능 없을 때 -->
             <SwiperSlide>
-              <div
-                :class="[$style['image-view'], $style['image-view--img-width']]"
-              >
-                <img
-                  :src="`${BASE_URL}images/_dummy/main_banner_h.png`"
-                  alt="배너 설명 넣어주세요"
-                />
-              </div>
+              <SlideImageBannerBlock bgColor="#edf3f3">
+                <div
+                  :class="[
+                    $style['image-view'],
+                    $style['image-view--img-width'],
+                  ]"
+                >
+                  <img
+                    :src="`${BASE_URL}images/_dummy/main_banner_h.png`"
+                    alt="배너 설명 넣어주세요"
+                  />
+                </div>
+              </SlideImageBannerBlock>
             </SwiperSlide>
             <!-- //Case : 링크 기능 없을 때 -->
 
             <!-- Case : 링크 기능 있을 때 (RouterLink) -->
             <SwiperSlide>
-              <RouterLink to="" class="link-block">
-                <div
-                  :class="[
-                    $style['image-view'],
-                    $style['image-view--img-width'],
-                  ]"
-                >
-                  <img
-                    :src="`${BASE_URL}images/_dummy/main_banner_h2.png`"
-                    alt="배너 설명 넣어주세요"
-                  />
-                </div>
-              </RouterLink>
+              <SlideImageBannerBlock bgColor="#eef8f4">
+                <RouterLink to="" class="link-block">
+                  <div
+                    :class="[
+                      $style['image-view'],
+                      $style['image-view--img-width'],
+                    ]"
+                  >
+                    <img
+                      :src="`${BASE_URL}images/_dummy/main_banner_h2.png`"
+                      alt="배너 설명 넣어주세요"
+                    />
+                  </div>
+                </RouterLink>
+              </SlideImageBannerBlock>
             </SwiperSlide>
             <!-- // Case : 링크 기능 있을 때 (RouterLink) -->
 
             <!-- Case : 링크 기능 있을 때 (a tag) -->
             <SwiperSlide>
-              <a href="" class="link-block">
+              <SlideImageBannerBlock bgColor="#dbeaf3">
+                <a href="" class="link-block">
+                  <div
+                    :class="[
+                      $style['image-view'],
+                      $style['image-view--img-width'],
+                    ]"
+                  >
+                    <img
+                      :src="`${BASE_URL}images/_dummy/main_banner_h3.png`"
+                      alt="배너 설명 넣어주세요"
+                    />
+                  </div>
+                </a>
+              </SlideImageBannerBlock>
+            </SwiperSlide>
+            <!-- // Case : 링크 기능 있을 때 (a tag) -->
+
+            <SwiperSlide>
+              <SlideImageBannerBlock bgColor="#f3f3f3">
                 <div
                   :class="[
                     $style['image-view'],
@@ -876,23 +904,11 @@ export default {
                   ]"
                 >
                   <img
-                    :src="`${BASE_URL}images/_dummy/main_banner_h3.png`"
+                    :src="`${BASE_URL}images/_dummy/main_banner_h4.png`"
                     alt="배너 설명 넣어주세요"
                   />
                 </div>
-              </a>
-            </SwiperSlide>
-            <!-- // Case : 링크 기능 있을 때 (a tag) -->
-
-            <SwiperSlide>
-              <div
-                :class="[$style['image-view'], $style['image-view--img-width']]"
-              >
-                <img
-                  :src="`${BASE_URL}images/_dummy/main_banner_h4.png`"
-                  alt="배너 설명 넣어주세요"
-                />
-              </div>
+              </SlideImageBannerBlock>
             </SwiperSlide>
           </Swiper>
         </SlideImageBanner>

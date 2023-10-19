@@ -54,5 +54,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/components/ui/banner/SlideImageBanner.scss';
+@import '@/assets/scss/components/ui/banner/SlideImageBannerBlock.scss';
 </style>

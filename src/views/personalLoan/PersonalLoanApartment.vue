@@ -33,6 +33,7 @@ import IconSend from '@/assets/images/icon/send.svg?component';
 import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
 import IconLogoMain from '@/assets/images/icon/logo-main.svg?component';
+import IconContract from '@/assets/images/icon/contract.svg?component';
 
 export default {
   components: {
@@ -65,6 +66,7 @@ export default {
     IconDeposit,
     IconCalculate,
     IconLogoMain,
+    IconContract,
   },
   setup() {
     const store = {
@@ -372,6 +374,21 @@ export default {
                 <div :class="$style['step__contents']">
                   <div :class="$style['step__top']">
                     <div :class="$style['step__badge']">STEP 4</div>
+                  </div>
+                  <div :class="$style['step__text']">
+                    온라인으로 <strong>약정을 진행</strong>합니다.
+                  </div>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconContract />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__top']">
+                    <div :class="$style['step__badge']">STEP 5</div>
                   </div>
                   <div :class="$style['step__text']">
                     손님 계좌로 <strong>대출금을 입금</strong>해드립니다.

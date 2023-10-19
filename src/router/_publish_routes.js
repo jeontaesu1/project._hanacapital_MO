@@ -680,9 +680,9 @@ const routes = [
 
   // redirect
   {
-    path: '/redirect/app',
-    name: '/redirect/app',
-    component: () => import('@/views/redirect/RedirectApp.vue'),
+    path: '/ui-guide/redirect-app',
+    name: '/ui-guide/redirect-app',
+    component: () => import('@/views/uiGuide/GuideRedirectApp.vue'),
   },
   {
     path: '/redirect/app-free',
