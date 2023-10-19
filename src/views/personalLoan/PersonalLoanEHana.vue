@@ -27,13 +27,13 @@ import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 import IconMoney from '@/assets/images/icon/money.svg?component';
 import IconRate from '@/assets/images/icon/rate.svg?component';
 import IconDate from '@/assets/images/icon/date.svg?component';
-import IconCommision from '@/assets/images/icon/commission.svg?component';
+import IconPage from '@/assets/images/icon/page.svg?component';
 import IconSearchMoney from '@/assets/images/icon/search-money.svg?component';
 import IconPersonalTerms from '@/assets/images/icon/personal-terms.svg?component';
 import IconSend from '@/assets/images/icon/send.svg?component';
 import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
-import ImgZeroCommission from '@/assets/images/illustration/img-zero-commission.svg';
+import ImgScraping from '@/assets/images/illustration/img-scraping.svg';
 import Img120Months from '@/assets/images/illustration/img-120months.svg?component';
 import IconLogoMain from '@/assets/images/icon/logo-main.svg?component';
 
@@ -61,13 +61,13 @@ export default {
     IconMoney,
     IconRate,
     IconDate,
-    IconCommision,
+    IconPage,
     IconSearchMoney,
     IconPersonalTerms,
     IconSend,
     IconDeposit,
     IconCalculate,
-    ImgZeroCommission,
+    ImgScraping,
     Img120Months,
     IconLogoMain,
   },
@@ -151,7 +151,7 @@ export default {
             </li>
             <li :class="$style['product-detail__item']">
               <div :class="$style['product-detail__icon']">
-                <IconCommision />
+                <IconPage />
               </div>
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">서류</div>
@@ -174,7 +174,7 @@ export default {
           (단, 일부 고객의 경우 추가 제출을 요청할 수 있습니다.)
         </p>
         <div :class="[$style['illustration-img'], 'row-margin-item-group']">
-          <ImgZeroCommission />
+          <ImgScraping />
         </div>
       </section>
 

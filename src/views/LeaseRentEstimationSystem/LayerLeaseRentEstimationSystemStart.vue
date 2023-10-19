@@ -65,7 +65,7 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
-      <IllustObject type="checklist" />
+      <IllustObject type="check" />
 
       <!-- Case : AG 발송 -->
       <BasicBox>
