@@ -1369,7 +1369,11 @@ export default {
 
       <!-- Case : 결과 없을 때 -->
       <!-- <div class="row-margin-item-group-small"></div> -->
-      <TopButton />
+
+      <!-- top button -->
+      <div class="row-margin-item-group">
+        <TopButton />
+      </div>
     </section>
 
     <template v-slot:foot>

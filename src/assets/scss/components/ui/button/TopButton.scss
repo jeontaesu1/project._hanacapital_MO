@@ -6,8 +6,8 @@
   position: fixed;
   right: 20px;
   bottom: 56px;
+  opacity: 0;
   z-index: 1001;
-
   &::before {
     content: '';
     display: block;
@@ -31,8 +31,5 @@
 
   &__text {
     @include for-a11y;
-  }
-  &--disabled {
-    display: none;
   }
 }
