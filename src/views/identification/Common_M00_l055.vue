@@ -1,5 +1,5 @@
 <script>
-// Common_M00_l052
+// Common_M00_l055
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -60,94 +60,109 @@ export default {
         <PageMainText>"㈜드림시큐리티" 귀중</PageMainText>
         <PageSubText>
           본인은 "㈜드림시큐리티"(이하 “회사”라 합니다)가 하나캐피탈을 대행하여
-          제공하는 간편인증통합중계 서비스(이하 “서비스”라 합니다)를 이용하기
+          제공하는 간편인증 통합중계서비스(이하 “서비스”라 합니다)를 이용하기
           위해, 다음과 같이 “회사”가 본인의 개인정보를 제3자에게 제공하는 것에
           동의합니다.
         </PageSubText>
       </PageTextGroup>
 
       <div>
-        <section class="row-margin-contents-group">
-          <h3 class="text-body-2 row-margin-item-medium">제공받는 자</h3>
-          <ul
-            :class="[
-              $style['basic-list'],
-              $style['basic-list--regular-margin'],
-            ]"
-          >
-            <li
-              :class="[$style['basic-list__item'], 'text-body-4 color-black']"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                이용기관(하나캐피탈)
-              </div>
-            </li>
-          </ul>
+        <section class="row-margin-container-medium">
+          <div :class="$style['basic-table']">
+            <div :class="$style['basic-table']">
+              <table>
+                <thead>
+                  <tr>
+                    <th>제공받는자</th>
+                    <th>제공목적</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="align-left">
+                      네이버, 아톤, SK텔레콤㈜, ㈜KT, ㈜LG유플러스, 하나은행
+                    </td>
+                    <td class="align-left">
+                      간편인증서비스(이용자 확인, 전자서명) 제공 중계
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div :class="$style['basic-table']">
+            <div :class="$style['basic-table']">
+              <table>
+                <thead>
+                  <tr>
+                    <th>제공항목</th>
+                    <th>보유기간 및 이용기간</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="align-left">
+                      이용자의 성명, 생년월일, 휴대전화번호, 통신사 코드
+                    </td>
+                    <td class="align-left">
+                      제공받는 자의 처리목적 달성 후 관련법령에 따른
+                      보유기간동안 보관 후 파기
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </section>
 
-        <section class="row-margin-contents-group">
-          <h3 class="text-body-2 row-margin-item-medium">제공목적</h3>
-          <ul
-            :class="[
-              $style['basic-list'],
-              $style['basic-list--regular-margin'],
-            ]"
-          >
-            <li
-              :class="[$style['basic-list__item'], 'text-body-4 color-black']"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                간편인증서비스(이용자 확인, 전자서명) 제공 중계
-              </div>
-            </li>
-          </ul>
+        <section class="row-margin-container-medium">
+          <div :class="$style['basic-table']">
+            <div :class="$style['basic-table']">
+              <table>
+                <thead>
+                  <tr>
+                    <th>제공받는자</th>
+                    <th>제공목적</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="align-left">이용기관(하나캐피탈)</td>
+                    <td class="align-left">
+                      간편인증서비스(이용자 확인, 전자서명) 제공 중계
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div :class="$style['basic-table']">
+            <div :class="$style['basic-table']">
+              <table>
+                <thead>
+                  <tr>
+                    <th>제공항목</th>
+                    <th>보유기간 및 이용기간</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="align-left">
+                      이용자의 성명, 생년월일, 휴대전화번호, 간편인증 사업자
+                      코드, CI(연계정보)
+                    </td>
+                    <td class="align-left">
+                      제공받는 자의 처리목적 달성 후 관련법령에 따른
+                      보유기간동안 보관 후 파기
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </section>
 
-        <section class="row-margin-contents-group">
-          <h3 class="text-body-2 row-margin-item-medium">제공항목</h3>
-          <ul
-            :class="[
-              $style['basic-list'],
-              $style['basic-list--regular-margin'],
-            ]"
-          >
-            <li
-              :class="[$style['basic-list__item'], 'text-body-4 color-black']"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                이용자의 성명, 생년월일, 휴대전화번호, 간편인증 사업자 코드,
-                CI(연계정보)
-              </div>
-            </li>
-          </ul>
-        </section>
-
-        <section class="row-margin-contents-group">
-          <h3 class="text-body-2 row-margin-item-medium">
-            보유기간 및 이용기간
-          </h3>
-          <ul
-            :class="[
-              $style['basic-list'],
-              $style['basic-list--regular-margin'],
-            ]"
-          >
-            <li
-              :class="[$style['basic-list__item'], 'text-body-4 color-black']"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                제공받는 자의 처리목적 달성 후 관련법령에 따른 보유기간동안 보관
-                후 파기
-              </div>
-            </li>
-          </ul>
-        </section>
-
-        <section class="row-margin-contents-group">
+        <section class="row-margin-container-medium">
           <h3 class="text-body-2 row-margin-item-medium">
             동의거부권리 및 거부에 따른 불이익 내용
           </h3>
@@ -197,5 +212,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/identification/Common_M00_l052.scss';
+@import '@/assets/scss/views/identification/Common_M00_l055.scss';
 </style>

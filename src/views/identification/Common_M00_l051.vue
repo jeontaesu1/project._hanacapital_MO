@@ -5,7 +5,6 @@ import { ref } from 'vue';
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
-import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
@@ -13,14 +12,12 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import PageSubText from '@/components/ui/text/PageSubText.vue';
-import BasicBox from '@/components/ui/common/BasicBox.vue';
 
 export default {
   components: {
     UiLayer,
     FullPopup,
     FullPopupHead,
-    PopupTitle,
     PopupButton,
     BasicButton,
     ButtonList,
@@ -28,7 +25,6 @@ export default {
     PageTextGroup,
     PageMainText,
     PageSubText,
-    BasicBox,
   },
   setup() {
     const layer = ref(null);
@@ -51,7 +47,9 @@ export default {
             right: $style['header-right'],
           }"
         >
-          <PopupTitle>개인정보 수집 및 이용·제공 동의</PopupTitle>
+          <h2 class="text-body-1 font-weight-medium multi-ellipsis">
+            개인정보 수집 및 이용·제공 동의
+          </h2>
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
@@ -62,7 +60,7 @@ export default {
         <PageMainText>"㈜드림시큐리티" 귀중</PageMainText>
         <PageSubText>
           본인은 "㈜드림시큐리티"(이하 “회사”라 합니다)이 제공하는 간편인증
-          통합중계 서비스(이하 “서비스”라 합니다)를 이용하기 위해, 다음과 같이
+          통합중계서비스(이하 “서비스”라 합니다)를 이용하기 위해, 다음과 같이
           “회사”가 본인의 개인정보를 수집 및 이용·제공하고, 개인정보의 취급을
           위탁하는 것에 동의합니다.
         </PageSubText>
@@ -86,14 +84,6 @@ export default {
                 통신사코드, 접속IP
               </div>
             </li>
-            <li
-              :class="[$style['basic-list__item'], 'text-body-4 color-black']"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                연계정보(CI), 연계정보 검증값(VID)
-              </div>
-            </li>
           </ul>
         </section>
 
@@ -110,7 +100,8 @@ export default {
             >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                이용기관/업체와 간편인증서비스 사업자 간 간편인증서비스 중계
+                이용기관(하나캐피탈)과 간편인증서비스 사업자 간 간편인증서비스
+                중계
               </div>
             </li>
             <li
@@ -219,12 +210,6 @@ export default {
           </ul>
         </section>
       </div>
-
-      <BasicBox theme="senary" className="row-margin-contents-group">
-        <p class="text-body-4 font-weight-medium color-gray-secondary">
-          상기 내용과 같이 개인정보 수집 및 이용·제공 약관에 동의합니다.
-        </p>
-      </BasicBox>
 
       <template v-slot:foot>
         <ButtonList

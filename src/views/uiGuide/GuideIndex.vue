@@ -246,6 +246,10 @@ const datas = () => [
             date: '2023.10.17',
             text: '- Common_M00_l002\n이름 입력 필드 옆에 다음 버튼 텍스트 크기 및 너비 수정',
           },
+          {
+            date: '2023.10.19',
+            text: '내용 전체 및 타이틀 정렬 수정\n- Common_M00_l050\n- Common_M00_l051\n- Common_M00_l052\n- Common_M00_l053\n- Common_M00_l054\n 팝업 추가\n- Common_M00_l055',
+          },
         ],
       },
       {
@@ -368,6 +372,10 @@ const datas = () => [
           {
             date: '2023.10.12',
             text: 'Common_M00_l001 타이틀 정렬 및 말줄임 수정',
+          },
+          {
+            date: '2023.10.19',
+            text: 'Common_M00_l001 타이틀 좌우 여백 제거',
           },
         ],
       },
