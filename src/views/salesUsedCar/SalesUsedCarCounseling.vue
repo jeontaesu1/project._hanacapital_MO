@@ -37,6 +37,7 @@ import UnitText from '@/components/ui/text/UnitText.vue';
 import SelectTable from '@/components/ui/table/SelectTable.vue';
 import SelectTableRow from '@/components/ui/table/SelectTableRow.vue';
 import BottomSticky from '@/components/ui/common/BottomSticky.vue';
+import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
 
 export default {
   components: {
@@ -73,6 +74,7 @@ export default {
     SelectTable,
     SelectTableRow,
     BottomSticky,
+    CarEmblem,
   },
   setup() {
     const store = {
@@ -560,6 +562,9 @@ export default {
 
       <!-- Case : 차량 선택 후 노출 -->
       <BasicBox className="row-margin-contents">
+        <div class="row-margin-mini">
+          <CarEmblem src="/images/_dummy/car-emblem.png" name="현대" />
+        </div>
         <div class="flex-box">
           <div class="flex-box__cell flex-1">
             <h3 class="text-body-1 font-weight-medium">기아</h3>
