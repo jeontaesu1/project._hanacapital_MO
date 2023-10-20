@@ -562,10 +562,10 @@ export default {
 
       <!-- Case : 차량 선택 후 노출 -->
       <BasicBox className="row-margin-contents">
-        <div class="row-margin-mini">
-          <CarEmblem src="/images/_dummy/car-emblem.png" name="현대" />
-        </div>
         <div class="flex-box">
+          <div class="flex-box__cell">
+            <CarEmblem src="/images/_dummy/car-emblem.png" name="현대" />
+          </div>
           <div class="flex-box__cell flex-1">
             <h3 class="text-body-1 font-weight-medium">기아</h3>
           </div>
