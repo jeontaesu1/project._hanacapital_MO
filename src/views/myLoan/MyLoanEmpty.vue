@@ -19,7 +19,6 @@ import IconPig from '@/assets/images/icon/pig.svg?component';
 import IconBuilding from '@/assets/images/icon/building.svg?component';
 import IconCar from '@/assets/images/icon/car.svg?component';
 import IconInterestRate from '@/assets/images/icon/interest-rate.svg?component';
-import ImgArea from '@/assets/images/illustration/img-area.svg?component';
 
 export default {
   components: {
@@ -38,7 +37,6 @@ export default {
     IconBuilding,
     IconCar,
     IconInterestRate,
-    ImgArea,
   },
   setup() {
     const store = {
@@ -72,7 +70,7 @@ export default {
     </PageTextGroup>
 
     <div :class="$style['illustration-img']">
-      <ImgArea />
+      <img src="@/assets/images/illustration/img-area.png" alt="" />
     </div>
 
     <!-- Case : 종료계약만 보유 -->
