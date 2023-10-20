@@ -777,7 +777,7 @@ export default {
           <Swiper :modules="modules" pagination>
             <!-- Case : 링크 기능 없을 때 -->
             <SwiperSlide>
-              <SlideImageBannerBlock bgColor="#edf3f3">
+              <SlideImageBannerBlock bgColor="#f3f3f3">
                 <div
                   :class="[
                     $style['image-view'],
@@ -795,7 +795,7 @@ export default {
 
             <!-- Case : 링크 기능 있을 때 (RouterLink)  -->
             <SwiperSlide>
-              <SlideImageBannerBlock bgColor="#eef8f4">
+              <SlideImageBannerBlock bgColor="#dbeaf3">
                 <RouterLink to="" class="link-block">
                   <div
                     :class="[
@@ -815,7 +815,7 @@ export default {
 
             <!-- Case : 링크 기능 있을 때 (a tag) -->
             <SwiperSlide>
-              <SlideImageBannerBlock bgColor="#dbeaf3">
+              <SlideImageBannerBlock bgColor="#eef8f4">
                 <a href="" class="link-block">
                   <div
                     :class="[
@@ -834,7 +834,7 @@ export default {
             <!-- // Case : 링크 기능 있을 때 (a tag) -->
 
             <SwiperSlide>
-              <SlideImageBannerBlock bgColor="#f3f3f3">
+              <SlideImageBannerBlock bgColor="#edf3f3">
                 <div
                   :class="[
                     $style['image-view'],
