@@ -1,11 +1,9 @@
-<script></script>
-
 <template>
   <div>
     <div id="skip_menu">
       <a href="#content">본문 바로가기</a>
     </div>
-    <section class="wrap test">
+    <section class="wrap">
       <!-- content -->
       <section class="content rnd_content" id="content">
         <div class="grp_content dd">
@@ -190,7 +188,7 @@
   </div>
 </template>
 
-<style lang="css" module>
+<style lang="css" scoped>
 @import '@/assets/scss/views/outerEtc/reset.css';
 @import '@/assets/scss/views/outerEtc/common.css';
 @import '@/assets/scss/views/outerEtc/content.css';

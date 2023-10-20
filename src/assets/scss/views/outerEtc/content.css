@@ -6572,7 +6572,8 @@ header .logo.intro_logo {
   display: block;
   width: 80px;
   height: 18px;
-  background: url(../images/common/logo_white.png) no-repeat center/ contain;
+  background: url('@/assets/images/outer/common/logo_white.png') no-repeat
+    center/ contain;
   font-size: 0;
 }
 
@@ -6597,8 +6598,8 @@ header .logo.intro_logo {
   width: 100%;
   height: 11.875rem;
   padding: 1.875rem 1.5rem 0;
-  background: url(../images/content/img_rnd_bn.png) no-repeat right 0.775rem
-    bottom 1.1875rem/ 11.25rem;
+  background: url('@/assets/images/outer/content/img_rnd_bn.png') no-repeat
+    right 0.775rem bottom 1.1875rem/ 11.25rem;
   position: relative;
   z-index: 1;
 }
@@ -6641,8 +6642,8 @@ header .logo.intro_logo {
   height: 10px;
   margin-left: 6px;
   margin-bottom: 1px;
-  background: url(../images/common/icon-arrow-right-tealish.svg) no-repeat right
-    center/6px;
+  background: url('@/assets/images/outer/common/icon-arrow-right-tealish.png')
+    no-repeat right center/6px;
 }
 .rnd_link .rnd_txt dd {
   font-size: 14px;
@@ -6652,34 +6653,34 @@ header .logo.intro_logo {
   font-family: 'NS Medium', 'RB Medium';
 }
 .rnd_link.type-timer {
-  background: #f9f9f9 url(../images/content/img_rnd_timer.png) no-repeat center
-    right 1.20625rem/ 4.65rem;
+  background: #f9f9f9 url('@/assets/images/outer/content/img_rnd_timer.png')
+    no-repeat center right 1.20625rem/ 4.65rem;
 }
 .rnd_link.type-timer .rnd_txt dt {
   color: #329aae;
 }
 .rnd_link.type-timer .rnd_txt dt:after {
-  background-image: url(../images/common/icon-arrow-right-tealish.png);
+  background-image: url('@/assets/images/outer/common/icon-arrow-right-tealish.png');
 }
 .rnd_link.type-house {
-  background: #f9f9f9 url(../images/content/img_rnd_house.png) no-repeat center
-    right 2.1625rem/ 3.775rem;
+  background: #f9f9f9 url('@/assets/images/outer/content/img_rnd_house.png')
+    no-repeat center right 2.1625rem/ 3.775rem;
 }
 .rnd_link.type-house .rnd_txt dt {
   color: #df7318;
 }
 .rnd_link.type-house .rnd_txt dt:after {
-  background-image: url(../images/common/icon-arrow-right-orange.png);
+  background-image: url('@/assets/images/outer/common/icon-arrow-right-orange.png');
 }
 .rnd_link.type-car {
-  background: #f9f9f9 url(../images/content/img_rnd_car.png) no-repeat center
-    right 1.675rem/ 4.7625rem;
+  background: #f9f9f9 url('@/assets/images/outer/content/img_rnd_car.png')
+    no-repeat center right 1.675rem/ 4.7625rem;
 }
 .rnd_link.type-car .rnd_txt dt {
   color: #a272e5;
 }
 .rnd_link.type-car .rnd_txt dt:after {
-  background-image: url(../images/common/icon-arrow-right-purple.png);
+  background-image: url('@/assets/images/outer/common/icon-arrow-right-purple.png');
 }
 
 .list_accordion.st_info {
@@ -6704,11 +6705,11 @@ header .logo.intro_logo {
   overflow: hidden;
   display: block;
   padding: 1.0625rem 3.3125rem 1.0625rem 1.5rem;
-  background: url(../images/common/bg_arrow_bottom_black.png) no-repeat right
-    1.5rem center / 0.5625rem 0.375rem;
+  background: url('@/assets/images/outer/common/bg_arrow_bottom_black.png')
+    no-repeat right 1.5rem center / 0.5625rem 0.375rem;
 }
 .list_accordion.st_info .item.active > a {
-  background-image: url(../images/common/bg_arrow_top_black.png);
+  background-image: url('@/assets/images/outer/common/bg_arrow_top_black.png');
 }
 .list_accordion.st_info .item .title {
   color: #000;
@@ -6733,8 +6734,8 @@ header .logo.intro_logo {
     height: 11rem;
   }
   .rnd_banner > a {
-    background: url(../images/content/img_rnd_bn.png) no-repeat right 0.2rem
-      bottom 1.1875rem/ 9.5rem;
+    background: url('@/assets/images/outer/content/img_rnd_bn.png') no-repeat
+      right 0.2rem bottom 1.1875rem/ 9.5rem;
   }
   .rnd_banner .rnd_txt {
     font-size: 1rem;
@@ -6744,16 +6745,16 @@ header .logo.intro_logo {
   }
 
   .rnd_link.type-timer {
-    background: #f9f9f9 url(../images/content/img_rnd_timer.png) no-repeat
-      center right 1.20625rem/ 4.05rem;
+    background: #f9f9f9 url('@/assets/images/outer/content/img_rnd_timer.png')
+      no-repeat center right 1.20625rem/ 4.05rem;
   }
   .rnd_link.type-house {
-    background: #f9f9f9 url(../images/content/img_rnd_house.png) no-repeat
-      center right 2.1625rem/ 3.175rem;
+    background: #f9f9f9 url('@/assets/images/outer/content/img_rnd_house.png')
+      no-repeat center right 2.1625rem/ 3.175rem;
   }
   .rnd_link.type-car {
-    background: #f9f9f9 url(../images/content/img_rnd_car.png) no-repeat center
-      right 1.675rem/ 4.1625rem;
+    background: #f9f9f9 url('@/assets/images/outer/content/img_rnd_car.png')
+      no-repeat center right 1.675rem/ 4.1625rem;
   }
 }
 /*//230712 랜딩페이지*/
