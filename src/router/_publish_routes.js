@@ -1878,6 +1878,14 @@ const routes = [
     component: () => import('@/views/document/DocumentEstimate004.vue'),
     meta: { layout: 'DocumentLayout' },
   },
+
+  // link
+  {
+    path: '/outer-etc/etc-001',
+    name: '/outer-etc/etc-001',
+    component: () => import('@/views/outerEtc/OuterEtc.vue'),
+    meta: { layout: 'NoneLayout' },
+  },
 ];
 
 export default routes;

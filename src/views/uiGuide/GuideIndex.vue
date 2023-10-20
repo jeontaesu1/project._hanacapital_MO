@@ -7528,6 +7528,22 @@ const datas = () => [
       },
     ],
   },
+  {
+    depth1: '외부링크',
+    datas: [
+      {
+        depth2: '외부링크',
+        depth3: '',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/outer-etc/etc-001',
+        status: 'end',
+        create: '2023.10.20',
+        log: [],
+      },
+    ],
+  },
 ];
 
 export default {
