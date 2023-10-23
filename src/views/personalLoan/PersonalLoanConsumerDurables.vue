@@ -114,9 +114,7 @@ export default {
               </div>
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">금리</div>
-                <div :class="$style['product-detail__desc']">
-                  연 0.0 ~ 16.0%
-                </div>
+                <div :class="$style['product-detail__desc']">0.0 ~ 16.0%</div>
               </div>
             </li>
             <li :class="$style['product-detail__item']">
@@ -127,14 +125,6 @@ export default {
                 <div :class="$style['product-detail__title']">기간</div>
                 <div :class="$style['product-detail__desc']">
                   <div>3개월 ~ 36개월</div>
-                  <div
-                    :class="[
-                      $style['product-detail__desc-sub'],
-                      'font-weight-regular',
-                    ]"
-                  >
-                    (일부품목에 한하여 60개월까지 가능)
-                  </div>
                 </div>
               </div>
             </li>
@@ -178,17 +168,12 @@ export default {
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>금리</KeyValueTitle>
-              <KeyValueText>연 0% ~ 최고 16.0%</KeyValueText>
+              <KeyValueText>0.0 ~ 16.0%</KeyValueText>
             </KeyValueItem>
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>기간</KeyValueTitle>
-              <KeyValueText>
-                <div>3개월 ~ 36개월</div>
-                <div class="text-body-5 color-gray-tertiary row-margin-mini">
-                  일부품목에 한하여 60개월까지 가능
-                </div>
-              </KeyValueText>
+              <KeyValueText>3개월 ~ 36개월</KeyValueText>
             </KeyValueItem>
           </KeyValue>
         </BasicBox>
@@ -227,8 +212,8 @@ export default {
                   <div :class="$style['basic-list__symbol']">-</div>
                   <div :class="$style['basic-list__content']">
                     만기 1년 이상<br />
-                    : 중도상환원금 X 1% + 중도상환원금 X (중도상환수수료율 - 1%)
-                    X 잔존기간/(대출기간 - 30일)
+                    : 중도상환원금 X 1.00% + 중도상환원금 X (중도상환수수료율 -
+                    1.00%) X 잔존기간/(대출기간 - 30일)
                   </div>
                 </li>
                 <li
@@ -277,7 +262,7 @@ export default {
                 >
                   <div :class="$style['basic-list__symbol']">※</div>
                   <div :class="$style['basic-list__content']">
-                    중도상환수수료율 : 2%
+                    중도상환수수료율 : 2.00%
                   </div>
                 </li>
                 <li
@@ -598,25 +583,7 @@ export default {
                 >
                   <div :class="$style['basic-list__symbol']">-</div>
                   <div :class="$style['basic-list__content']">
-                    <div>유이자 : 약정이율+3%,</div>
-                    <div
-                      class="text-body-4 font-weight-bold color-gray-tertiary row-margin-mini"
-                    >
-                      (법정최고금리 연 20% 이내)
-                    </div>
-                  </div>
-                </li>
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'text-body-2',
-                    'font-weight-bold',
-                    'color-black',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']">-</div>
-                  <div :class="$style['basic-list__content']">
-                    <div>무이자 : 상사약정금리+3%,</div>
+                    <div>약정이율+3.00%</div>
                     <div
                       class="text-body-4 font-weight-bold color-gray-tertiary row-margin-mini"
                     >

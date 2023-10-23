@@ -140,7 +140,7 @@ export default {
               </div>
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">금리</div>
-                <div :class="$style['product-detail__desc']">연 5.9 ~ 7.5%</div>
+                <div :class="$style['product-detail__desc']">연 7.5%</div>
               </div>
             </li>
             <li :class="$style['product-detail__item']">
@@ -193,7 +193,7 @@ export default {
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>한도</KeyValueTitle>
               <KeyValueText>
-                <div>최대 6억원</div>
+                <div>최소 1백만원 ~ 최대 6억원</div>
                 <div class="text-body-5 color-gray-tertiary row-margin-mini">
                   고객계좌를 담보로 계좌평가금액의 최대 300%, 최대 6억원(계좌당
                   3억원)까지
@@ -203,7 +203,7 @@ export default {
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>금리</KeyValueTitle>
-              <KeyValueText>연 5.9 ~ 7.5%</KeyValueText>
+              <KeyValueText>연 7.5%</KeyValueText>
             </KeyValueItem>
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
@@ -239,6 +239,19 @@ export default {
                 (인지세는 하나캐피탈과 금융소비자가 50%씩 부담합니다.)
               </div>
               <ul :class="[$style['basic-list'], 'row-margin-item']">
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'text-body-4',
+                    'font-weight-regular',
+                    'color-black',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']">-</div>
+                  <div :class="$style['basic-list__content']">
+                    대출금액 5천만원 이하 : 비과세
+                  </div>
+                </li>
                 <li
                   :class="[
                     $style['basic-list__item'],
@@ -426,22 +439,9 @@ export default {
                     <div :class="$style['contents-list__head']">
                       <div :class="$style['contents-list__symbol']">2</div>
                       <div :class="$style['contents-list__title']">
-                        기존 집중투자비율 60~80% 상품은 15년 6월 15일부터
-                        추가대출 불가
-                      </div>
-                    </div>
-                    <div
-                      :class="[
-                        $style['contents-list__depth-3'],
-                        'row-margin-mini',
-                      ]"
-                    >
-                      <p
-                        class="text-body-4 font-weight-light color-gray-tertiary"
-                      >
-                        단, 한도대출(마이너스식)은 변경된 대출비율에 한해 한도내
+                        한도대출(마이너스식)은 변경된 대출비율에 한해 한도 내
                         추가대출 가능
-                      </p>
+                      </div>
                     </div>
                   </li>
                   <li :class="$style['contents-list__item']">

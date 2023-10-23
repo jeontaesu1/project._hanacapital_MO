@@ -123,7 +123,7 @@ export default {
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">금리</div>
                 <div :class="$style['product-detail__desc']">
-                  연 6.7 ~ 11.8%
+                  연 7.4% ~ 12.0%
                 </div>
               </div>
             </li>
@@ -195,7 +195,7 @@ export default {
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>금리</KeyValueTitle>
               <KeyValueText :classNames="{ text: 'font-weight-medium' }">
-                연 6.7% ~ 11.8%
+                연 7.4% ~ 12.0%
               </KeyValueText>
             </KeyValueItem>
 

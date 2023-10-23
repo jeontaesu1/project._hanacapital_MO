@@ -268,7 +268,7 @@ export default {
                 >
                   <div :class="$style['basic-list__symbol']"></div>
                   <div :class="$style['basic-list__content']">
-                    무이자 : 9%(상사약정금리+3%)(법정최고금리 연 20%이내)
+                    무이자 : 9.00%(상사약정금리+3.00%) (법정최고금리 연 20%이내)
                   </div>
                 </li>
               </ul>
@@ -727,7 +727,7 @@ export default {
                     <div :class="$style['step__badge']">STEP 1</div>
                   </div>
                   <div :class="$style['step__text']">
-                    하나캐피탈 일반리스 <strong>상담을 신청</strong>합니다.
+                    하나캐피탈 일반할부 <strong>상담을 신청</strong>합니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
@@ -773,8 +773,9 @@ export default {
                     <div :class="$style['step__badge']">STEP 4</div>
                   </div>
                   <div :class="$style['step__text']">
-                    손님께서 <strong>원하시는 기기를 설치</strong>해<br />
-                    드리고, 담당 직원이 실사를 합니다.
+                    판매업체와 계약하신
+                    <strong>물건을 설치한 후</strong> 할부금융 상품이 실행
+                    됩니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
@@ -789,8 +790,7 @@ export default {
                     <div :class="$style['step__badge']">STEP 5</div>
                   </div>
                   <div :class="$style['step__text']">
-                    판매업체에 <strong>기기금액을 입금</strong>해<br />
-                    드립니다.
+                    판매업체에 <strong>기기금액을 입금</strong>해 드립니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">

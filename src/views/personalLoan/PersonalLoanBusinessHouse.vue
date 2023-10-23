@@ -134,7 +134,7 @@ export default {
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">금리</div>
                 <div :class="$style['product-detail__desc']">
-                  <strong>(고정금리) 연 7.5% ~ 9.4%</strong>
+                  <strong>(고정금리) 연 8.0% ~ 9.6%</strong>
                   <ul :class="[$style['basic-list'], 'row-margin-mini']">
                     <li
                       :class="[
@@ -161,7 +161,8 @@ export default {
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">기간</div>
                 <div :class="$style['product-detail__desc']">
-                  12개월 ~ 36개월
+                  신규 : 12개월 ~ 36개월<br />
+                  연장 : 1년 단위 (최대 10년 이내)
                 </div>
               </div>
             </li>
@@ -201,14 +202,14 @@ export default {
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>한도</KeyValueTitle>
               <KeyValueText>
-                <div>시세의 최대 85%</div>
+                <div>시세의 최대 85% (선순위, 후순위)</div>
               </KeyValueText>
             </KeyValueItem>
 
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>금리</KeyValueTitle>
               <KeyValueText>
-                <div class="font-weight-bold">(고정금리) 연 7.5% ~ 9.4%</div>
+                <div class="font-weight-bold">(고정금리) 연 8.0% ~ 9.6%</div>
 
                 <ul :class="[$style['basic-list'], 'row-margin-mini']">
                   <li
@@ -232,10 +233,8 @@ export default {
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>기간</KeyValueTitle>
               <KeyValueText>
-                <div>12개월 ~ 36개월</div>
-                <div class="text-body-5 color-gray-tertiary row-margin-mini">
-                  연장 1년 단위(최대 10년 이내)
-                </div>
+                신규 : 12개월 ~ 36개월<br />
+                연장 : 1년 단위 (최대 10년 이내)
               </KeyValueText>
             </KeyValueItem>
           </KeyValue>
