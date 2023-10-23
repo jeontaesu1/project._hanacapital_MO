@@ -1,4 +1,25 @@
-<script></script>
+<script>
+document.addEventListener('click', function (event) {
+  if (!event.target.classList.contains('accordion-toggle')) return;
+
+  var content = document.querySelector(event.target.hash);
+  if (!content) return;
+
+  event.preventDefault();
+
+  if (content.classList.contains('active')) {
+    content.classList.remove('active');
+    return;
+  }
+
+  var accordions = document.querySelectorAll('.item.active');
+  for (var i = 0; i < accordions.length; i++) {
+    accordions[i].classList.remove('active');
+  }
+
+  content.classList.toggle('active');
+});
+</script>
 
 <template>
   <div>
@@ -62,7 +83,7 @@
           </div>
           <div class="list_accordion st_info">
             <div class="item">
-              <a title="상세정보 열기">
+              <a title="상세정보 열기" class="accordion-toggle">
                 <span class="title fw_m">상품안내</span>
               </a>
               <div class="st_info_cont">
