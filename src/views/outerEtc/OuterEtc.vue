@@ -1,8 +1,8 @@
 <script>
 document.addEventListener('click', function (event) {
-  if (!event.target.classList.contains('accordion-toggle')) return;
+  if (!event.target.classList.contains('toggle')) return;
 
-  var content = document.querySelector(event.target.hash);
+  var content = document.querySelector('.item');
   if (!content) return;
 
   event.preventDefault();
@@ -83,7 +83,7 @@ document.addEventListener('click', function (event) {
           </div>
           <div class="list_accordion st_info">
             <div class="item">
-              <a title="상세정보 열기" class="accordion-toggle">
+              <a title="상세정보 열기" class="toggle">
                 <span class="title fw_m">상품안내</span>
               </a>
               <div class="st_info_cont">
@@ -145,7 +145,7 @@ document.addEventListener('click', function (event) {
               </div>
             </div>
             <div class="item">
-              <a title="상세정보 열기">
+              <a title="상세정보 열기" class="toggle">
                 <span class="title fw_m">유의사항</span>
               </a>
               <div class="st_info_cont">
