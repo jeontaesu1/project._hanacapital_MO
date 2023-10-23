@@ -13,9 +13,9 @@ body.popup_opened {overflow:hidden; -webkit-overflow-scrolling:auto; position:fi
 body.app {background:transparent;}
 
 /* section : wrapper */
-.wrap {overflow-x:hidden; width:100%; min-height:100vh;}
+.wrap {overflow-x:hidden; width:100%; min-height:100vh; font-size: 14px !important}
 body.popup_opened .wrap {overflow:hidden; position:fixed; width:100%; height:100%;}
-.wrap.app {height:100%;}
+.wrap.app {height:100%; }
 
 /* keypad */
 body:not([class*='popup_opened']).fg_keypad .wrap section.content,

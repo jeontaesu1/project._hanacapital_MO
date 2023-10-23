@@ -193,7 +193,7 @@ button.btn_combobox:focus{
 
 /* width 375px 미만 대응 */
 @media all and (max-width:374px) {
-	html {
-		font-size: 14px;
+	html *, body * {
+		font-size: 14px !important;
 	}
 }
