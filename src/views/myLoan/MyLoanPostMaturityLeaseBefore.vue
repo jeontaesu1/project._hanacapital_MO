@@ -712,8 +712,34 @@ export default {
               >
                 <div :class="$style['basic-list__symbol']"></div>
                 <div :class="$style['basic-list__content']">
-                  대출취급이 부적정한 경우(연체금 보유, 개인신용평점 낮음)
+                  리스취급이 부적정한 경우(연체금 보유, 개인신용평점 낮음)
                   대출이 제한될 수 있습니다.
+                </div>
+              </li>
+              <li
+                :class="[
+                  $style['basic-list__item'],
+                  'color-black',
+                  'text-body-3',
+                ]"
+              >
+                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__content']">
+                  담보물건, 담보종류 등에 따라 대출조건이 차등 적용되며 담보물이
+                  부적합할 경우 대출이 제한될 수 있습니다.
+                </div>
+              </li>
+              <li
+                :class="[
+                  $style['basic-list__item'],
+                  'color-black',
+                  'text-body-3',
+                ]"
+              >
+                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__content']">
+                  금융소비자의 신용등급 또는 개인신용평점에 따라 대출한도 및
+                  금리가 차등 적용됩니다.
                 </div>
               </li>
               <li
@@ -747,8 +773,8 @@ export default {
               <li :class="$style['basic-list__item']">
                 <div :class="$style['basic-list__symbol']"></div>
                 <div :class="$style['basic-list__content']">
-                  준법심의필 xx-xxxx<br />
-                  (2022.01.01~2022.12.31)
+                  준법심의필 23-171<br />
+                  (2323.06.12~2024.06.11)
                 </div>
               </li>
               <li :class="$style['basic-list__item']">
