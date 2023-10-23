@@ -204,7 +204,7 @@ export default {
                     size="mini"
                     theme="tertiary"
                     inline="true"
-                    :class="$style['appoint-btn']"
+                    :class="$style['appoint-btn-large']"
                   >
                     계좌확인
                   </BasicButton>
