@@ -1,8 +1,8 @@
 <script>
 document.addEventListener('click', function (event) {
-  if (!event.target.classList.contains('toggle')) return;
+  if (!event.target.classList.contains('toggle001')) return;
 
-  var content = document.querySelector('.item');
+  var content = document.querySelector('.item001');
   if (!content) return;
 
   event.preventDefault();
@@ -12,17 +12,38 @@ document.addEventListener('click', function (event) {
     return;
   }
 
-  var accordions = document.querySelectorAll('.item.active');
+  var accordions = document.querySelectorAll('.item001.active');
   for (var i = 0; i < accordions.length; i++) {
     accordions[i].classList.remove('active');
   }
 
   content.classList.toggle('active');
 });
+
+document.addEventListener('click', function (event) {
+  if (!event.target.classList.contains('toggle002')) return;
+
+  var content002 = document.querySelector('.item002');
+  if (!content002) return;
+
+  event.preventDefault();
+
+  if (content002.classList.contains('active')) {
+    content002.classList.remove('active');
+    return;
+  }
+
+  var accordions = document.querySelectorAll('.item002.active');
+  for (var i = 0; i < accordions.length; i++) {
+    accordions[i].classList.remove('active');
+  }
+
+  content002.classList.toggle('active');
+});
 </script>
 
 <template>
-  <div>
+  <body>
     <div id="skip_menu">
       <a href="#content">본문 바로가기</a>
     </div>
@@ -82,8 +103,8 @@ document.addEventListener('click', function (event) {
             </div>
           </div>
           <div class="list_accordion st_info">
-            <div class="item">
-              <a title="상세정보 열기" class="toggle">
+            <div class="item item001">
+              <a title="상세정보 열기" class="toggle001">
                 <span class="title fw_m">상품안내</span>
               </a>
               <div class="st_info_cont">
@@ -144,8 +165,8 @@ document.addEventListener('click', function (event) {
                 </dl>
               </div>
             </div>
-            <div class="item">
-              <a title="상세정보 열기" class="toggle">
+            <div class="item item002">
+              <a title="상세정보 열기" class="toggle002">
                 <span class="title fw_m">유의사항</span>
               </a>
               <div class="st_info_cont">
@@ -208,7 +229,7 @@ document.addEventListener('click', function (event) {
       </section>
       <!-- //content -->
     </section>
-  </div>
+  </body>
 </template>
 
 <style lang="css" scoped>
