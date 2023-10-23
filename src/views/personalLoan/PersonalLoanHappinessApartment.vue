@@ -228,7 +228,7 @@ export default {
                 >
                   <div :class="$style['basic-list__symbol']"></div>
                   <div :class="$style['basic-list__content']">
-                    신청금액 1억원 미만: <strong>원리금균등분할상환</strong>
+                    신청금액 1억원 미만: 원리금균등분할상환
                   </div>
                 </li>
                 <li
@@ -241,8 +241,7 @@ export default {
                 >
                   <div :class="$style['basic-list__symbol']"></div>
                   <div :class="$style['basic-list__content']">
-                    신청금액 1억원 이상:
-                    <strong>원리금균등분할상환/만기일시상환 중 택1</strong>
+                    신청금액 1억원 이상: 원리금균등분할상환/만기일시상환 중 택1
                   </div>
                 </li>
               </ul>
