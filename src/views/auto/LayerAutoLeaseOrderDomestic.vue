@@ -87,6 +87,7 @@ export default {
           titleText="판매대리점"
           titleOptionalText="(브랜드 : 현대)"
           target="#layerAutoLeaseOrderDomesticAgency"
+          :class="$style['appoint-wrap']"
         >
           <FormInvalid :error="state.domesticAgencyError">
             <InputBlock :error="state.domesticAgencyError">
@@ -97,7 +98,12 @@ export default {
                 />
               </InputBlockCell>
               <template v-slot:right>
-                <BasicButton size="mini" theme="tertiary">검색</BasicButton>
+                <BasicButton
+                  size="mini"
+                  theme="tertiary"
+                  :class="$style['appoint-btn']"
+                  >검색</BasicButton
+                >
               </template>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -182,6 +188,7 @@ export default {
           <FormListItem
             titleText="계좌번호"
             target="#layerAutoLeaseOrderDomesticAccount"
+            :class="$style['appoint-wrap']"
           >
             <FormInvalid :error="state.domesticAccountError">
               <InputBlock :error="state.domesticAccountError">
@@ -193,7 +200,12 @@ export default {
                   />
                 </InputBlockCell>
                 <template v-slot:right>
-                  <BasicButton size="mini" theme="tertiary">
+                  <BasicButton
+                    size="mini"
+                    theme="tertiary"
+                    inline="true"
+                    :class="$style['appoint-btn']"
+                  >
                     계좌확인
                   </BasicButton>
                 </template>
@@ -247,3 +259,7 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/auto/LayerAutoLeaseOrderDomestic.scss';
+</style>

@@ -659,7 +659,7 @@ export default {
               >월 납입금액</KeyValueTitle
             >
             <KeyValueText>
-              <BasicButton size="mini" inline="true">계산하기</BasicButton>
+              <BasicButton size="small" inline="true">계산하기</BasicButton>
             </KeyValueText>
           </KeyValueItem>
         </KeyValue>
@@ -679,7 +679,7 @@ export default {
                   >
                 </div>
                 <div class="flex-box__cell">
-                  <BasicButton size="mini" theme="quaternary">
+                  <BasicButton size="small" theme="quaternary">
                     견적서
                   </BasicButton>
                 </div>

@@ -41,3 +41,15 @@
     }
   }
 }
+
+.appoint-wrap {
+  dt {
+    top: 32px;
+  }
+}
+
+.appoint-btn {
+  width: 64px;
+  min-height: 34px;
+  @include font-size-default(15);
+}

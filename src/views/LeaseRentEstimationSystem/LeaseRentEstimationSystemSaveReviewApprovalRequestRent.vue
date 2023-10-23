@@ -306,6 +306,7 @@ export default {
           <FormListItem
             titleText="판매대리점"
             target="#leaseRentEstimationSystemSaveReviewApprovalRequestRentStoreSearch"
+            :class="$style['appoint-wrap']"
           >
             <FormInvalid :error="state.storeError">
               <InputBlock :error="state.storeError">
@@ -317,6 +318,7 @@ export default {
                     size="mini"
                     theme="tertiary"
                     id="leaseRentEstimationSystemSaveReviewApprovalRequestRentStoreSearch"
+                    :class="$style['appoint-btn']"
                     >검색</BasicButton
                   >
                 </template>

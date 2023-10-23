@@ -1,2 +1,8 @@
 @import '@/assets/scss/components/import/share-list.scss';
 @import '@/assets/scss/components/import/document/document.scss';
+
+.appoint-btn {
+  width: 64px;
+  min-height: 34px;
+  @include font-size-default(15);
+}

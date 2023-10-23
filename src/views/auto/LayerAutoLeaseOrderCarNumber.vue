@@ -91,6 +91,7 @@ export default {
             titleText="차량번호"
             target="#layerAutoLeaseOrderCarNumberInput"
             :disabled="false"
+            :class="$style['appoint-wrap']"
           >
             <FormInvalid :error="state.carNumberError">
               <InputBlock :error="state.carNumberError" :disabled="false">
@@ -102,7 +103,11 @@ export default {
                   />
                 </InputBlockCell>
                 <template v-slot:right>
-                  <BasicButton size="mini" theme="tertiary" :disabled="false"
+                  <BasicButton
+                    size="mini"
+                    theme="tertiary"
+                    :disabled="false"
+                    :class="$style['appoint-btn']"
                     >확인</BasicButton
                   >
                 </template>
@@ -130,7 +135,11 @@ export default {
                   />
                 </InputBlockCell>
                 <template v-slot:right>
-                  <BasicButton size="mini" theme="tertiary" :disabled="true"
+                  <BasicButton
+                    size="mini"
+                    theme="tertiary"
+                    :disabled="true"
+                    :class="$style['appoint-btn']"
                     >확인</BasicButton
                   >
                 </template>

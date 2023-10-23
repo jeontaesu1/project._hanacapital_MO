@@ -281,6 +281,7 @@ export default {
                       <FormListItem
                         titleText="차량번호"
                         target="#leaseRentEstimationSystemUsedLeaseCarNumber"
+                        :class="$style['appoint-wrap']"
                       >
                         <FormInvalid :error="state.carNumberError">
                           <InputBlock :error="state.carNumberError">
@@ -291,7 +292,11 @@ export default {
                               />
                             </InputBlockCell>
                             <template v-slot:right>
-                              <BasicButton size="mini" theme="tertiary">
+                              <BasicButton
+                                size="mini"
+                                theme="tertiary"
+                                :class="$style['appoint-btn']"
+                              >
                                 조회
                               </BasicButton>
                             </template>

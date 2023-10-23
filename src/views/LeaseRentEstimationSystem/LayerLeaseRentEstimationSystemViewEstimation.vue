@@ -142,12 +142,15 @@ export default {
                 <BasicButton
                   size="mini"
                   theme="quaternary"
+                  inline="true"
                   @click="
                     copy(
                       'https://www.hanacapital.co.kr/personal/info/directLoan.hnc'
                     )
                   "
-                  >URL 복사</BasicButton
+                  :class="$style['appoint-btn']"
+                >
+                  URL 복사</BasicButton
                 >
               </template>
             </InputBlock>

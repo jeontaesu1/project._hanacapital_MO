@@ -78,6 +78,7 @@ export default {
       <FormListItem
         titleText="아이디"
         target="#leaseRentEstimationSystemAdminSettingRoleId"
+        :class="$style['appoint-wrap']"
       >
         <FormInvalid :error="state.idError">
           <InputBlock :error="state.idError">
@@ -90,10 +91,20 @@ export default {
             <template v-slot:right>
               <div class="flex-box">
                 <div class="flex-box__cell">
-                  <BasicButton size="mini" theme="tertiary">조회</BasicButton>
+                  <BasicButton
+                    size="mini"
+                    theme="tertiary"
+                    :class="$style['appoint-btn']"
+                    >조회</BasicButton
+                  >
                 </div>
                 <div class="flex-box__cell">
-                  <BasicButton size="mini" theme="quaternary" :line="true">
+                  <BasicButton
+                    size="mini"
+                    theme="quaternary"
+                    :class="$style['appoint-btn']"
+                    :line="true"
+                  >
                     초기화
                   </BasicButton>
                 </div>

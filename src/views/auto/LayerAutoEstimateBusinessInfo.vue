@@ -96,6 +96,7 @@ export default {
         <FormListItem
           titleText="사업자번호"
           target="#layerAutoEstimateBusinessInfoBusinessNumber"
+          :class="$style['appoint-wrap']"
         >
           <FormInvalid :error="state.businessNumberError">
             <InputBlock :error="state.businessNumberError">
@@ -109,13 +110,22 @@ export default {
               </InputBlockCell>
               <template v-slot:right>
                 <!-- Case : 사업자번호 조회 후 비노출 -->
-                <BasicButton size="mini" theme="tertiary" inline="true"
+                <BasicButton
+                  size="mini"
+                  theme="tertiary"
+                  inline="true"
+                  :class="$style['appoint-btn']"
                   >조회</BasicButton
                 >
                 <!-- // Case : 사업자번호 조회 후 비노출 -->
 
                 <!-- Case : 사업자번호 조회 후 노출 -->
-                <BasicButton size="mini" theme="quaternary" inline="true">
+                <BasicButton
+                  size="mini"
+                  theme="quaternary"
+                  inline="true"
+                  :class="$style['appoint-btn']"
+                >
                   초기화
                 </BasicButton>
                 <!-- // Case : 사업자번호 조회 후 노출 -->
@@ -177,3 +187,7 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/auto/LayerAutoEstimateBusinessInfo.scss';
+</style>

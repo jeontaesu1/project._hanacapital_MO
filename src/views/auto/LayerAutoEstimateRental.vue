@@ -764,9 +764,9 @@ export default {
             >
             <KeyValueText>
               <div class="inline-wrap">
-                <BasicButton size="mini" inline="true">계산하기</BasicButton>
+                <BasicButton size="small" inline="true">계산하기</BasicButton>
                 <!-- Case : 로딩중 -->
-                <BasicButton size="mini" inline="true">
+                <BasicButton size="small" inline="true">
                   계산중
                   <template v-slot:rightIcon>
                     <div :class="$style['loading-icon']"></div>
@@ -793,7 +793,7 @@ export default {
                   >
                 </div>
                 <div class="flex-box__cell">
-                  <BasicButton size="mini" theme="quaternary">
+                  <BasicButton size="small" theme="quaternary">
                     견적서
                   </BasicButton>
                 </div>

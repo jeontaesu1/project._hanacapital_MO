@@ -240,6 +240,7 @@ export default {
           <FormListItem
             titleText="계좌번호"
             target="#layerAutoLeaseOrderImportedAccount"
+            :class="$style['appoint-wrap']"
           >
             <FormInvalid :error="state.importedAccountError">
               <InputBlock :error="state.importedAccountError">
@@ -251,7 +252,12 @@ export default {
                   />
                 </InputBlockCell>
                 <template v-slot:right>
-                  <BasicButton size="mini" theme="tertiary">
+                  <BasicButton
+                    size="mini"
+                    theme="tertiary"
+                    inline="true"
+                    :class="$style['appoint-btn']"
+                  >
                     계좌확인
                   </BasicButton>
                 </template>
@@ -305,3 +311,7 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/auto/LayerAutoLeaseOrderImported.scss';
+</style>

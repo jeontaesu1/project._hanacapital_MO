@@ -120,6 +120,7 @@ export default {
             <FormListItem
               titleText="자택주소"
               target="#layerMyLoanOnlineContractContractorAddress001Search"
+              :class="$style['appoint-wrap']"
             >
               <FormInvalid :error="state.addressError001">
                 <InputBlock :error="state.addressError001">
@@ -136,6 +137,7 @@ export default {
                       size="mini"
                       theme="tertiary"
                       id="layerMyLoanOnlineContractContractorAddress001Search"
+                      :class="$style['appoint-btn']"
                       >검색</BasicButton
                     >
                   </template>
@@ -183,6 +185,7 @@ export default {
             <FormListItem
               titleText="등본지"
               target="#layerMyLoanOnlineContractContractorAddress002Search"
+              :class="$style['appoint-wrap']"
             >
               <FormInvalid :error="state.addressError002">
                 <InputBlock :error="state.addressError002">
@@ -199,6 +202,7 @@ export default {
                       size="mini"
                       theme="tertiary"
                       id="layerMyLoanOnlineContractContractorAddress002Search"
+                      :class="$style['appoint-btn']"
                       >검색</BasicButton
                     >
                   </template>
@@ -246,6 +250,7 @@ export default {
             <FormListItem
               titleText="실거주지"
               target="#layerMyLoanOnlineContractContractorAddress003Search"
+              :class="$style['appoint-wrap']"
             >
               <FormInvalid :error="state.addressError003">
                 <InputBlock :error="state.addressError003">
@@ -262,6 +267,7 @@ export default {
                       size="mini"
                       theme="tertiary"
                       id="layerMyLoanOnlineContractContractorAddress003Search"
+                      :class="$style['appoint-btn']"
                       >검색</BasicButton
                     >
                   </template>
@@ -325,6 +331,7 @@ export default {
             <FormListItem
               titleText="직장/사업장 주소"
               target="#layerMyLoanOnlineContractContractorAddress004Search"
+              :class="$style['appoint-wrap']"
             >
               <FormInvalid :error="state.addressError004">
                 <InputBlock :error="state.addressError004">
@@ -341,6 +348,7 @@ export default {
                       size="mini"
                       theme="tertiary"
                       id="layerMyLoanOnlineContractContractorAddress004Search"
+                      :class="$style['appoint-btn']"
                       >검색</BasicButton
                     >
                   </template>
@@ -493,6 +501,7 @@ export default {
               titleText="직장 주소"
               titleOptionalText="(선택)"
               target="#layerMyLoanOnlineContractContractorAddress005Search"
+              :class="$style['appoint-wrap']"
             >
               <FormInvalid :error="state.addressError005">
                 <InputBlock :error="state.addressError005">
@@ -509,6 +518,7 @@ export default {
                       size="mini"
                       theme="tertiary"
                       id="layerMyLoanOnlineContractContractorAddress005Search"
+                      :class="$style['appoint-btn']"
                       >검색</BasicButton
                     >
                   </template>
@@ -661,6 +671,7 @@ export default {
               titleText="사업장 주소"
               titleOptionalText="(선택)"
               target="#layerMyLoanOnlineContractContractorAddress006Search"
+              :class="$style['appoint-wrap']"
             >
               <FormInvalid :error="state.addressError006">
                 <InputBlock :error="state.addressError006">
@@ -677,6 +688,7 @@ export default {
                       size="mini"
                       theme="tertiary"
                       id="layerMyLoanOnlineContractContractorAddress006Search"
+                      :class="$style['appoint-btn']"
                       >검색</BasicButton
                     >
                   </template>
@@ -839,3 +851,7 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/myLoan/LayerMyLoanOnlineContractContractor.scss';
+</style>

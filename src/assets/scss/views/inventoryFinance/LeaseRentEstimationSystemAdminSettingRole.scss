@@ -1,2 +1,14 @@
 @import '@/assets/scss/components/import/check-list.scss';
 @import '@/assets/scss/components/import/division-info.scss';
+
+.appoint-wrap {
+  dt {
+    top: 32px;
+  }
+}
+
+.appoint-btn {
+  width: 64px;
+  min-height: 34px;
+  @include font-size-default(15);
+}

@@ -304,6 +304,7 @@ export default {
                   title="인도지 우편번호"
                   :disabled="true"
                   defaultValue="06123"
+                  :class="$style['appoint-wrap']"
                 />
               </InputBlockCell>
               <template v-slot:right>
@@ -311,6 +312,7 @@ export default {
                   size="mini"
                   theme="tertiary"
                   id="layerLeaseRentEstimationSystemSaveReviewDeliveryAddressSearch"
+                  :class="$style['appoint-btn']"
                   >검색</BasicButton
                 >
               </template>
@@ -375,3 +377,7 @@ export default {
 
   <AlertSystem ref="alert" />
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/LeaseRentEstimationSystem/LayerLeaseRentEstimationSystemSaveReviewDelivery.scss';
+</style>
