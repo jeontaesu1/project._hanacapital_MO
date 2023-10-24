@@ -296,6 +296,7 @@ export default {
           :forceFocus="true"
           :require="true"
           target="#layerLeaseRentEstimationSystemSaveReviewDeliveryAddressSearch"
+          :class="$style['appoint-wrap']"
         >
           <FormInvalid :error="state.addressError">
             <InputBlock :error="state.addressError">
@@ -304,7 +305,7 @@ export default {
                   title="인도지 우편번호"
                   :disabled="true"
                   defaultValue="06123"
-                  :class="$style['appoint-wrap']"
+                  :class="$style['appoint-wrap-input']"
                 />
               </InputBlockCell>
               <template v-slot:right>
