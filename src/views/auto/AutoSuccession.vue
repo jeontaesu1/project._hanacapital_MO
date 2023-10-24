@@ -992,6 +992,23 @@ export default {
             </ul>
           </UiTabPanel>
           <!-- // 유의사항 -->
+
+          <ul :class="[$style['basic-list'], 'row-margin-contents']">
+            <li :class="$style['basic-list__item']">
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                준법심의필 23-371<br />
+                (2023.10.16 ~ 2024.10.15)
+              </div>
+            </li>
+            <li :class="$style['basic-list__item']">
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                여신금융협회 심의필 제2023-C1h-11528호<br />
+                (2023.10.16 ~ 2024.10.15)
+              </div>
+            </li>
+          </ul>
         </UiTab>
       </UiTabPanel>
       <!-- // 리스승계 -->
@@ -1497,26 +1514,19 @@ export default {
             </ul>
           </UiTabPanel>
           <!-- // 유의사항 -->
+
+          <ul :class="[$style['basic-list'], 'row-margin-contents']">
+            <li :class="$style['basic-list__item']">
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                준법심의필 23-373<br />
+                (2023.10.16 ~ 2024.10.15)
+              </div>
+            </li>
+          </ul>
         </UiTab>
       </UiTabPanel>
       <!-- // 렌트승계 -->
-
-      <ul :class="[$style['basic-list'], 'row-margin-contents']">
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            준법심의필 22-1197<br />
-            (2022.05.01~2023.04.30)
-          </div>
-        </li>
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            여신금융협회 심의필 제 2022-C1h-03103호<br />
-            (2022.05.01~2023.04.30)
-          </div>
-        </li>
-      </ul>
     </UiTab>
 
     <div

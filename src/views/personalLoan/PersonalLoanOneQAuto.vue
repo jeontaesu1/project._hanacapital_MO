@@ -581,15 +581,15 @@ export default {
         <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']"></div>
           <div :class="$style['basic-list__content']">
-            준법심의필 22-128<br />
-            (2022.02.24~2023.02.23)
+            준법심의필 23-383<br />
+            (2023.10.16 ~ 2024.10.15)
           </div>
         </li>
         <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']"></div>
           <div :class="$style['basic-list__content']">
-            여신금융협회 심의필 제2022-L1h-01491호<br />
-            (2022.02.24~2023.02.23)
+            여신금융협회 심의필 제2023-C1h-11547호<br />
+            (2023.10.16 ~ 2024.10.15)
           </div>
         </li>
       </ul>

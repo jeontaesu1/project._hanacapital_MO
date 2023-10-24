@@ -11,14 +11,8 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
-import FormList from '@/components/ui/form/FormList.vue';
-import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
-import BoxCheck from '@/components/ui/form/BoxCheck.vue';
-import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
-import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
-import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
@@ -38,14 +32,8 @@ export default {
     InputBlock,
     InputBlockCell,
     BasicInput,
-    FormList,
-    FormListItem,
     FormInvalid,
     FormInvalidMessage,
-    BoxCheck,
-    BoxCheckLabel,
-    BoxCheckList,
-    BoxCheckListItem,
     BasicHr,
     NoticeText,
     TextButton,
@@ -56,7 +44,7 @@ export default {
   },
   setup() {
     const state = reactive({
-      searchError: false,
+      nameError: false,
       birthDateError: false,
       phoneError: false,
     });
@@ -84,107 +72,73 @@ export default {
       </template>
 
       <div>
-        <BoxCheckList :wrap="true">
-          <BoxCheckListItem>
-            <BoxCheck
-              :minSide="true"
-              name="layerSalesNewCarAddContractSalespersonType"
-              id="layerSalesNewCarAddContractSalespersonType001"
-              :defaultChecked="true"
-            >
-              <BoxCheckLabel>성명/상호</BoxCheckLabel>
-            </BoxCheck>
-          </BoxCheckListItem>
-          <BoxCheckListItem>
-            <BoxCheck
-              :minSide="true"
-              name="layerSalesNewCarAddContractSalespersonType"
-              id="layerSalesNewCarAddContractSalespersonType002"
-            >
-              <BoxCheckLabel>소속직원</BoxCheckLabel>
-            </BoxCheck>
-          </BoxCheckListItem>
-          <BoxCheckListItem>
-            <BoxCheck
-              :minSide="true"
-              name="layerSalesNewCarAddContractSalespersonType"
-              id="layerSalesNewCarAddContractSalespersonType003"
-            >
-              <BoxCheckLabel>지점명</BoxCheckLabel>
-            </BoxCheck>
-          </BoxCheckListItem>
-          <BoxCheckListItem>
-            <BoxCheck
-              :minSide="true"
-              name="layerSalesNewCarAddContractSalespersonType"
-              id="layerSalesNewCarAddContractSalespersonType004"
-            >
-              <BoxCheckLabel>주민/사업번호</BoxCheckLabel>
-            </BoxCheck>
-          </BoxCheckListItem>
-        </BoxCheckList>
-
-        <FormList :classNames="{ wrap: 'row-margin-contents' }">
-          <FormListItem
-            titleText="검색어"
-            target="#layerSalesNewCarAddContractSalespersonSearch"
+        <div class="flex-box row-margin-contents">
+          <div
+            :class="[
+              $style['list-wrap'],
+              $style['list-width'],
+              'flex-box__cell',
+            ]"
           >
-            <FormInvalid :error="state.searchError">
-              <InputBlock :error="state.searchError">
+            <span :class="$style['list-wrap__require']"></span>
+            <h3 class="text-body-4 color-gray font-weight-medium">성명</h3>
+          </div>
+          <div class="flex-box__cell flex-box__cell flex-1">
+            <FormInvalid :error="state.nameError">
+              <InputBlock :error="state.nameError">
                 <InputBlockCell :flexible="true">
-                  <BasicInput
-                    title="검색어"
-                    id="layerSalesNewCarAddContractSalespersonSearch"
-                  />
+                  <BasicInput title="성명 입력" placeholder="성명을 입력" />
                 </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
-          </FormListItem>
+          </div>
+        </div>
 
-          <FormListItem
-            titleText="생년월일"
-            titleOptionalText="(8자리)"
-            target="#layerSalesNewCarAddContractSalespersonBirthDate"
-          >
+        <div class="flex-box row-margin-contents">
+          <div :class="[$style['list-width'], 'flex-box__cell']">
+            <h3 class="text-body-4 color-gray font-weight-medium">생년월일</h3>
+          </div>
+          <div class="flex-box__cell flex-box__cell flex-1">
             <FormInvalid :error="state.birthDateError">
               <InputBlock :error="state.birthDateError">
                 <InputBlockCell :flexible="true">
                   <BasicInput
                     type="number"
                     pattern="\d*"
-                    title="생년월일 8자리"
-                    id="layerSalesNewCarAddContractSalespersonBirthDate"
+                    title="생년월일 입력"
+                    placeholder="생년월일(6자리)을 입력"
                   />
                 </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
-          </FormListItem>
+          </div>
+        </div>
 
-          <FormListItem
-            titleText="휴대폰 뒷번호"
-            titleOptionalText="(4자리)"
-            target="#layerSalesNewCarAddContractSalespersonPhone"
-          >
+        <div class="flex-box row-margin-contents">
+          <div :class="[$style['list-width'], 'flex-box__cell']">
+            <h3 class="text-body-4 color-gray font-weight-medium">휴대폰</h3>
+          </div>
+          <div class="flex-box__cell flex-box__cell flex-1">
             <FormInvalid :error="state.phoneError">
               <InputBlock :error="state.phoneError">
                 <InputBlockCell :flexible="true">
                   <BasicInput
                     type="number"
                     pattern="\d*"
-                    title="휴대폰 뒷번호 4자리"
-                    id="layerSalesNewCarAddContractSalespersonPhone"
+                    title="휴대폰 뒷번호 입력"
+                    placeholder="휴대폰 뒷번호(4자리)를 입력"
                   />
                 </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
-          </FormListItem>
-        </FormList>
+          </div>
+        </div>
 
         <div class="row-margin-contents-group">
-          <BasicButton :line="true" theme="secondary">조회</BasicButton>
+          <BasicButton :line="true">조회</BasicButton>
         </div>
       </div>
 
@@ -211,12 +165,12 @@ export default {
               </span>
               <KeyValue align="left" margin="mini" size="medium">
                 <KeyValueItem :classNames="{ item: 'text-body-4' }">
-                  <KeyValueTitle>소속직원</KeyValueTitle>
+                  <KeyValueTitle>거래구분</KeyValueTitle>
                   <KeyValueText>없음</KeyValueText>
                 </KeyValueItem>
                 <KeyValueItem :classNames="{ item: 'text-body-4' }">
-                  <KeyValueTitle>사업자번호</KeyValueTitle>
-                  <KeyValueText>123-12-*****</KeyValueText>
+                  <KeyValueTitle>주민등록번호</KeyValueTitle>
+                  <KeyValueText>920101-2******</KeyValueText>
                 </KeyValueItem>
               </KeyValue>
             </button>
@@ -243,12 +197,12 @@ export default {
               </span>
               <KeyValue align="left" margin="mini" size="medium">
                 <KeyValueItem :classNames="{ item: 'text-body-4' }">
-                  <KeyValueTitle>소속직원</KeyValueTitle>
+                  <KeyValueTitle>거래구분</KeyValueTitle>
                   <KeyValueText>없음</KeyValueText>
                 </KeyValueItem>
                 <KeyValueItem :classNames="{ item: 'text-body-4' }">
-                  <KeyValueTitle>사업자번호</KeyValueTitle>
-                  <KeyValueText>123-12-*****</KeyValueText>
+                  <KeyValueTitle>주민등록번호</KeyValueTitle>
+                  <KeyValueText>920101-2******</KeyValueText>
                 </KeyValueItem>
               </KeyValue>
             </button>
