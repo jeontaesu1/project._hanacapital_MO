@@ -54,7 +54,7 @@ export default {
               <IconImgColor />
             </div>
             <div :class="$style['upload-file__content']">
-              <div :class="$style['upload-file__name']">첨부파일명.jpg</div>
+              <div :class="$style['upload-file__name']">등록서류 1</div>
               <div :class="$style['upload-file__date']">
                 2023-05-08 18:15:44
               </div>
@@ -65,7 +65,7 @@ export default {
               <IconImgColor />
             </div>
             <div :class="$style['upload-file__content']">
-              <div :class="$style['upload-file__name']">첨부파일명.png</div>
+              <div :class="$style['upload-file__name']">등록서류 2</div>
               <div :class="$style['upload-file__date']">
                 2023-05-08 18:15:44
               </div>
@@ -76,7 +76,7 @@ export default {
               <IconImgColor />
             </div>
             <div :class="$style['upload-file__content']">
-              <div :class="$style['upload-file__name']">첨부파일명.gif</div>
+              <div :class="$style['upload-file__name']">등록서류 3</div>
               <div :class="$style['upload-file__date']">
                 2023-05-08 18:15:44
               </div>
@@ -87,9 +87,7 @@ export default {
               <IconImgColor />
             </div>
             <div :class="$style['upload-file__content']">
-              <div :class="$style['upload-file__name']">
-                첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명.jpeg
-              </div>
+              <div :class="$style['upload-file__name']">등록서류 4</div>
               <div :class="$style['upload-file__date']">
                 2023-05-08 18:15:44
               </div>
