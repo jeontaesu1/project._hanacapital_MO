@@ -477,6 +477,64 @@ export default {
                     <!-- // Case : 렌터카, 오토리스(운용/금융) -->
                   </div>
                   <!-- // Case : 팩토링은 버튼 미노출 -->
+
+                  <!-- Case : 팩토링 -->
+                  <div>
+                    <div :class="$style['progress__contents-top']">
+                      <div :class="$style['progress__contents-head']">
+                        <div :class="$style['progress__contents-title']">
+                          <div class="flex-box">
+                            <div class="flex-box__cell">야나두</div>
+                            <div class="flex-box__cell flex-box__cell--small">
+                              <span
+                                class="text-body-5 color-gray font-weight-regular"
+                              >
+                                외 0건
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Case : 2건 이상일 경우 노출 -->
+                        <div :class="$style['progress__contents-right']">
+                          <TextButton
+                            :block="true"
+                            :iconFillAll="true"
+                            :classNames="{
+                              wrap: 'text-body-4 color-gray',
+                            }"
+                          >
+                            전체보기
+                            <template v-slot:rightIcon>
+                              <IconAdd />
+                            </template>
+                          </TextButton>
+                        </div>
+                        <!-- // Case : 2건 이상일 경우 노출 -->
+                      </div>
+                    </div>
+
+                    <div :class="$style['progress__amount']">
+                      <!-- Case : 1건일 경우 노출 -->
+                      <div :class="$style['progress__amount-d-day']">
+                        <RoundStatus theme="nonary">D-3</RoundStatus>
+                      </div>
+                      <!-- // Case : 1건일 경우 노출 -->
+
+                      <dl :class="$style['progress__amount-block']">
+                        <dt
+                          :class="[
+                            $style['progress__amount-key'],
+                            'text-title-2',
+                            'font-weight-medium',
+                            'color-black',
+                          ]"
+                        >
+                          수백당(창원북면점)_3년약정_4+1(마스터태블릿)=5_2000_블랙거치대
+                        </dt>
+                      </dl>
+                    </div>
+                  </div>
+                  <!-- // Case : 팩토링 -->
                 </div>
                 <!-- // Case : 거래 상품 -->
               </section>
