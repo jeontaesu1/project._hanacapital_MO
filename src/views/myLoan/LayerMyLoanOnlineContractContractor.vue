@@ -124,7 +124,10 @@ export default {
             >
               <FormInvalid :error="state.addressError001">
                 <InputBlock :error="state.addressError001">
-                  <InputBlockCell :flexible="true">
+                  <InputBlockCell
+                    :flexible="true"
+                    :class="$style['appoint-wrap-input']"
+                  >
                     <BasicInput
                       title="자택주소 - 우편번호"
                       defaultValue="01001"
@@ -189,7 +192,10 @@ export default {
             >
               <FormInvalid :error="state.addressError002">
                 <InputBlock :error="state.addressError002">
-                  <InputBlockCell :flexible="true">
+                  <InputBlockCell
+                    :flexible="true"
+                    :class="$style['appoint-wrap-input']"
+                  >
                     <BasicInput
                       title="등본지 주소 - 우편번호"
                       defaultValue="01001"
@@ -254,7 +260,10 @@ export default {
             >
               <FormInvalid :error="state.addressError003">
                 <InputBlock :error="state.addressError003">
-                  <InputBlockCell :flexible="true">
+                  <InputBlockCell
+                    :flexible="true"
+                    :class="$style['appoint-wrap-input']"
+                  >
                     <BasicInput
                       title="실거주지 주소 - 우편번호"
                       defaultValue="12345"
@@ -335,7 +344,10 @@ export default {
             >
               <FormInvalid :error="state.addressError004">
                 <InputBlock :error="state.addressError004">
-                  <InputBlockCell :flexible="true">
+                  <InputBlockCell
+                    :flexible="true"
+                    :class="$style['appoint-wrap-input']"
+                  >
                     <BasicInput
                       title="직장/사업장 주소 - 우편번호"
                       defaultValue="01000"
@@ -505,7 +517,10 @@ export default {
             >
               <FormInvalid :error="state.addressError005">
                 <InputBlock :error="state.addressError005">
-                  <InputBlockCell :flexible="true">
+                  <InputBlockCell
+                    :flexible="true"
+                    :class="$style['appoint-wrap-input']"
+                  >
                     <BasicInput
                       title="직장 주소 - 우편번호"
                       defaultValue="01000"
@@ -675,7 +690,10 @@ export default {
             >
               <FormInvalid :error="state.addressError006">
                 <InputBlock :error="state.addressError006">
-                  <InputBlockCell :flexible="true">
+                  <InputBlockCell
+                    :flexible="true"
+                    :class="$style['appoint-wrap-input']"
+                  >
                     <BasicInput
                       title="사업장 주소 - 우편번호"
                       defaultValue="01000"

@@ -300,12 +300,14 @@ export default {
         >
           <FormInvalid :error="state.addressError">
             <InputBlock :error="state.addressError">
-              <InputBlockCell :flexible="true">
+              <InputBlockCell
+                :flexible="true"
+                :class="$style['appoint-wrap-input']"
+              >
                 <BasicInput
                   title="인도지 우편번호"
                   :disabled="true"
                   defaultValue="06123"
-                  :class="$style['appoint-wrap-input']"
                 />
               </InputBlockCell>
               <template v-slot:right>

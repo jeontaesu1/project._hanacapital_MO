@@ -1,6 +1,16 @@
 @import '@/assets/scss/components/import/share-list.scss';
 @import '@/assets/scss/components/import/document/document.scss';
 
+.appoint-wrap {
+  dt {
+    top: 34px;
+  }
+}
+
+.appoint-wrap-input {
+  padding-top: 7px;
+}
+
 .appoint-btn {
   width: 83px;
   min-height: 34px;

@@ -130,9 +130,16 @@ export default {
       </div>
 
       <FormList :classNames="{ wrap: 'row-margin-item-group' }">
-        <FormListItem titleText="URL" :forceFocus="true">
+        <FormListItem
+          titleText="URL"
+          :forceFocus="true"
+          :class="$style['appoint-wrap']"
+        >
           <InputBlock :disabled="true">
-            <InputBlockCell :flexible="true">
+            <InputBlockCell
+              :flexible="true"
+              :class="$style['appoint-wrap-input']"
+            >
               <div class="ellipsis">
                 https://www.hanacapital.co.kr/personal/info/directLoan.hnc
               </div>

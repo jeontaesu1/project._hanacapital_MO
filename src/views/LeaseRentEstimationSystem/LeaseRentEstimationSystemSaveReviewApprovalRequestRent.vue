@@ -310,7 +310,10 @@ export default {
           >
             <FormInvalid :error="state.storeError">
               <InputBlock :error="state.storeError">
-                <InputBlockCell :flexible="true">
+                <InputBlockCell
+                  :flexible="true"
+                  :class="$style['appoint-wrap-input']"
+                >
                   <BasicInput title="판매대리점" :disabled="true" />
                 </InputBlockCell>
                 <template v-slot:right>

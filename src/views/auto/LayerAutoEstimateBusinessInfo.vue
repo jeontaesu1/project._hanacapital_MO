@@ -100,7 +100,10 @@ export default {
         >
           <FormInvalid :error="state.businessNumberError">
             <InputBlock :error="state.businessNumberError">
-              <InputBlockCell :flexible="true">
+              <InputBlockCell
+                :flexible="true"
+                :class="$style['appoint-wrap-input']"
+              >
                 <BasicInput
                   type="number"
                   pattern="\d*"

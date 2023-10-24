@@ -285,7 +285,10 @@ export default {
                       >
                         <FormInvalid :error="state.carNumberError">
                           <InputBlock :error="state.carNumberError">
-                            <InputBlockCell :flexible="true">
+                            <InputBlockCell
+                              :flexible="true"
+                              :class="$style['appoint-wrap-input']"
+                            >
                               <BasicInput
                                 title="차량번호"
                                 id="leaseRentEstimationSystemUsedLeaseCarNumber"

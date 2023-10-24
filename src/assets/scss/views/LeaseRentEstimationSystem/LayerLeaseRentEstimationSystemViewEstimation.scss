@@ -2,7 +2,13 @@
 @import '@/assets/scss/components/import/document/document.scss';
 
 .appoint-wrap {
-  padding-top: 8px;
+  dt {
+    top: 34px;
+  }
+}
+
+.appoint-wrap-input {
+  padding-top: 7px;
 }
 
 .appoint-btn {

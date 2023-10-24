@@ -91,7 +91,10 @@ export default {
         >
           <FormInvalid :error="state.domesticAgencyError">
             <InputBlock :error="state.domesticAgencyError">
-              <InputBlockCell :flexible="true">
+              <InputBlockCell
+                :flexible="true"
+                :class="$style['appoint-wrap-input']"
+              >
                 <BasicInput
                   title="판매대리점 (브랜드 : 현대)"
                   id="layerAutoLeaseOrderDomesticAgency"

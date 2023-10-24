@@ -238,7 +238,10 @@ export default {
         >
           <FormInvalid :error="state.nameError">
             <InputBlock :error="state.nameError">
-              <InputBlockCell :flexible="true">
+              <InputBlockCell
+                :flexible="true"
+                :class="$style['appoint-wrap-input']"
+              >
                 <BasicInput title="이름" id="layerIdentificationPhoneName" />
               </InputBlockCell>
               <template v-slot:right>

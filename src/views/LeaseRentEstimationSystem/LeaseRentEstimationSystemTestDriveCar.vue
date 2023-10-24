@@ -320,7 +320,10 @@ export default {
                       >
                         <FormInvalid :error="state.carNumberError">
                           <InputBlock :error="state.carNumberError">
-                            <InputBlockCell :flexible="true">
+                            <InputBlockCell
+                              :flexible="true"
+                              :class="$style['appoint-wrap-input']"
+                            >
                               <BasicInput
                                 pattern="\d*"
                                 title="차량 번호"

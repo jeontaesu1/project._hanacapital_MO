@@ -95,7 +95,10 @@ export default {
           >
             <FormInvalid :error="state.carNumberError">
               <InputBlock :error="state.carNumberError" :disabled="false">
-                <InputBlockCell :flexible="true">
+                <InputBlockCell
+                  :flexible="true"
+                  :class="$style['appoint-wrap-input']"
+                >
                   <BasicInput
                     title="차량번호"
                     id="layerAutoLeaseOrderCarNumberInput"
@@ -123,10 +126,14 @@ export default {
             titleText="차량번호"
             target="#layerAutoLeaseOrderCarNumberInputCase"
             :disabled="true"
+            :class="$style['appoint-wrap']"
           >
             <FormInvalid :error="state.carNumberError">
               <InputBlock :error="state.carNumberError" :disabled="true">
-                <InputBlockCell :flexible="true">
+                <InputBlockCell
+                  :flexible="true"
+                  :class="$style['appoint-wrap-input']"
+                >
                   <BasicInput
                     title="차량번호"
                     id="layerAutoLeaseOrderCarNumberInputCase"

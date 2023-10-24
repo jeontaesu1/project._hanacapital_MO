@@ -244,7 +244,10 @@ export default {
           >
             <FormInvalid :error="state.importedAccountError">
               <InputBlock :error="state.importedAccountError">
-                <InputBlockCell :flexible="true">
+                <InputBlockCell
+                  :flexible="true"
+                  :class="$style['appoint-wrap-input']"
+                >
                   <BasicInput
                     pattern="\d*"
                     title="계좌번호"

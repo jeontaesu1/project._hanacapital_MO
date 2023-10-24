@@ -82,7 +82,10 @@ export default {
       >
         <FormInvalid :error="state.idError">
           <InputBlock :error="state.idError">
-            <InputBlockCell :flexible="true">
+            <InputBlockCell
+              :flexible="true"
+              :class="$style['appoint-wrap-input']"
+            >
               <BasicInput
                 title="아이디"
                 id="leaseRentEstimationSystemAdminSettingRoleId"

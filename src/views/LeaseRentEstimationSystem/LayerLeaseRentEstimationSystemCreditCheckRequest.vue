@@ -244,7 +244,10 @@ export default {
                 >
                   <FormInvalid :error="state.tab002BuisnessLicenseError">
                     <InputBlock :error="state.tab002BuisnessLicenseError">
-                      <InputBlockCell :flexible="true">
+                      <InputBlockCell
+                        :flexible="true"
+                        :class="$style['appoint-wrap-input']"
+                      >
                         <!-- Case : 사업자번호 조회 후 :disabled="true" -->
                         <BasicInput
                           type="number"
