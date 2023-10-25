@@ -498,10 +498,14 @@ export default {
             titleText="판매사원"
             titleOptionalText="(선택)"
             target="#leaseRentEstimationSystemSaveReviewApprovalRequestRentSalespersonSearch"
+            :class="$style['appoint-wrap']"
           >
             <FormInvalid :error="state.salespersonError">
               <InputBlock :error="state.salespersonError">
-                <InputBlockCell :flexible="true">
+                <InputBlockCell
+                  :flexible="true"
+                  :class="$style['appoint-wrap-input']"
+                >
                   <BasicInput title="판매사원" :disabled="true" />
                 </InputBlockCell>
                 <template v-slot:right>
@@ -509,6 +513,7 @@ export default {
                     size="mini"
                     theme="tertiary"
                     id="leaseRentEstimationSystemSaveReviewApprovalRequestRentSalespersonSearch"
+                    :class="$style['appoint-btn']"
                     >검색</BasicButton
                   >
                 </template>
@@ -561,10 +566,14 @@ export default {
           <FormListItem
             titleText="계좌번호"
             target="#leaseRentEstimationSystemSaveReviewApprovalRequestRentAccount"
+            :class="$style['appoint-wrap']"
           >
             <FormInvalid :error="state.accountError">
               <InputBlock :error="state.accountError">
-                <InputBlockCell :flexible="true">
+                <InputBlockCell
+                  :flexible="true"
+                  :class="$style['appoint-wrap-input']"
+                >
                   <BasicInput
                     pattern="\d*"
                     title="계좌번호"
@@ -572,7 +581,11 @@ export default {
                   />
                 </InputBlockCell>
                 <template v-slot:right>
-                  <BasicButton size="mini" theme="tertiary">
+                  <BasicButton
+                    size="mini"
+                    theme="tertiary"
+                    :class="$style['appoint-btn-large']"
+                  >
                     계좌확인
                   </BasicButton>
                 </template>
