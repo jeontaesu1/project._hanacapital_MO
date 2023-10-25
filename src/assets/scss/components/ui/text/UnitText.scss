@@ -3,7 +3,8 @@
   align-items: flex-end;
 
   &__left,
-  &__right {
+  &__right,
+  &__right--secondary {
     display: block;
     flex: none;
     @include font-size-default(14);
@@ -16,6 +17,10 @@
 
   &__right {
     margin-left: 2px;
+  }
+
+  &__right--secondary {
+    margin-left: 4px;
   }
 
   &__val {
@@ -65,7 +70,8 @@
 
     &-large {
       .unit-text__left,
-      .unit-text__right {
+      .unit-text__right,
+      .unit-text__right--secondary {
         @include font-size-head(18);
         font-weight: 500;
       }

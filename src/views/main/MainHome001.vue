@@ -238,20 +238,35 @@ export default {
                     <div :class="$style['progress__info-item']">
                       <dt :class="$style['progress__info-key']">최대한도</dt>
                       <dd :class="$style['progress__info-val']">
-                        <UnitText
-                          rightUnit="만원"
-                          align="right"
-                          verticalAlign="center"
-                          size="medium"
-                          >999,999</UnitText
-                        >
+                        <div class="flex-box justify-conten-end">
+                          <div class="flex-box__cell">
+                            <UnitText
+                              rightSecondaryUnit="억"
+                              align="right"
+                              verticalAlign="center"
+                              size="medium"
+                            >
+                              32
+                            </UnitText>
+                          </div>
+                          <div class="flex-box__cell--small">
+                            <UnitText
+                              rightSecondaryUnit="만원"
+                              align="right"
+                              verticalAlign="center"
+                              size="medium"
+                            >
+                              7,000
+                            </UnitText>
+                          </div>
+                        </div>
                       </dd>
                     </div>
                     <div :class="$style['progress__info-item']">
                       <dt :class="$style['progress__info-key']">금리</dt>
                       <dd :class="$style['progress__info-val']">
                         <UnitText
-                          rightUnit="%"
+                          rightSecondaryUnit="%"
                           align="right"
                           verticalAlign="center"
                           size="medium"
@@ -265,20 +280,35 @@ export default {
                     <div :class="$style['progress__info-item']">
                       <dt :class="$style['progress__info-key']">신청금액</dt>
                       <dd :class="$style['progress__info-val']">
-                        <UnitText
-                          rightUnit="만원"
-                          align="right"
-                          verticalAlign="center"
-                          size="medium"
-                          >999,999</UnitText
-                        >
+                        <div class="flex-box justify-conten-end">
+                          <div class="flex-box__cell">
+                            <UnitText
+                              rightSecondaryUnit="억"
+                              align="right"
+                              verticalAlign="center"
+                              size="medium"
+                            >
+                              32
+                            </UnitText>
+                          </div>
+                          <div class="flex-box__cell--small">
+                            <UnitText
+                              rightSecondaryUnit="만원"
+                              align="right"
+                              verticalAlign="center"
+                              size="medium"
+                            >
+                              7,000
+                            </UnitText>
+                          </div>
+                        </div>
                       </dd>
                     </div>
                     <div :class="$style['progress__info-item']">
                       <dt :class="$style['progress__info-key']">금리</dt>
                       <dd :class="$style['progress__info-val']">
                         <UnitText
-                          rightUnit="%"
+                          rightSecondaryUnit="%"
                           align="right"
                           verticalAlign="center"
                           size="medium"
@@ -292,13 +322,28 @@ export default {
                     <div :class="$style['progress__info-item']">
                       <dt :class="$style['progress__info-key']">신청금액</dt>
                       <dd :class="$style['progress__info-val']">
-                        <UnitText
-                          rightUnit="만원"
-                          align="right"
-                          verticalAlign="center"
-                          size="medium"
-                          >999,999</UnitText
-                        >
+                        <div class="flex-box justify-conten-end">
+                          <div class="flex-box__cell">
+                            <UnitText
+                              rightSecondaryUnit="억"
+                              align="right"
+                              verticalAlign="center"
+                              size="medium"
+                            >
+                              32
+                            </UnitText>
+                          </div>
+                          <div class="flex-box__cell--small">
+                            <UnitText
+                              rightSecondaryUnit="만원"
+                              align="right"
+                              verticalAlign="center"
+                              size="medium"
+                            >
+                              7,000
+                            </UnitText>
+                          </div>
+                        </div>
                       </dd>
                     </div>
                     <!-- // Case : 자동차(리스/렌트 외) -->
@@ -378,7 +423,7 @@ export default {
 
                       <dd :class="$style['progress__amount-val']">
                         <UnitText
-                          rightUnit="원"
+                          rightSecondaryUnit="원"
                           align="center"
                           verticalAlign="center"
                           size="large"

@@ -6,6 +6,7 @@ const defaultClassNames = () => ({
   val: '',
   leftUnit: '',
   rightUnit: '',
+  rightSecondaryUnit: '',
 });
 
 export default {
@@ -21,6 +22,10 @@ export default {
       default: null,
     },
     rightUnit: {
+      Type: String,
+      default: null,
+    },
+    rightSecondaryUnit: {
       Type: String,
       default: null,
     },
@@ -76,6 +81,15 @@ export default {
       :class="[$style['unit-text__right'], customClassNames.rightUnit]"
     >
       {{ rightUnit }}
+    </span>
+    <span
+      v-if="rightSecondaryUnit"
+      :class="[
+        $style['unit-text__right--secondary'],
+        customClassNames.rightUnit,
+      ]"
+    >
+      {{ rightSecondaryUnit }}
     </span>
   </span>
 </template>
