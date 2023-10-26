@@ -37,12 +37,14 @@ export default {
     const onScroll = () => {
       const btnTop = document.querySelector('.button_top');
       const scrollTop = document.documentElement.scrollTop;
-      if (scrollTop > 20) {
-        btnTop.style.opacity = '1';
-        btnTop.style.transition = '0.3s';
-      } else {
-        btnTop.style.opacity = '0';
-        btnTop.style.transition = '0.3s';
+      if (btnTop) {
+        if (scrollTop > 20) {
+          btnTop.style.opacity = '1';
+          btnTop.style.transition = '0.3s';
+        } else {
+          btnTop.style.opacity = '0';
+          btnTop.style.transition = '0.3s';
+        }
       }
     };
     onMounted(() => {
