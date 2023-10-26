@@ -1,0 +1,26 @@
+@import '@/assets/scss/components/import/agree-list.scss';
+@import '@/assets/scss/components/import/input-timer.scss';
+
+.success-view {
+  display: block;
+
+  &__item {
+    text-align: center;
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+
+    svg {
+      display: block;
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  &__text {
+    font-weight: bold;
+    @include font-size-default(16);
+  }
+}
