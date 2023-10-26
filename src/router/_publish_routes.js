@@ -1886,9 +1886,9 @@ const routes = [
     component: () => import('@/views/oneQ/Q_M02_p002.vue'),
   },
   {
-    path: '/oneq/1Q_M02_p003',
-    name: '/oneq/1Q_M02_p003',
-    component: () => import('@/views/oneq/1Q_M02_p003.vue'),
+    path: '/one-q/Q_M02_p003',
+    name: '/one-q/Q_M02_p003',
+    component: () => import('@/views/oneQ/Q_M02_p003.vue'),
   },
   {
     path: '/oneq/oneq-001',
@@ -1901,9 +1901,9 @@ const routes = [
     component: () => import('@/views/oneQ/Q_M03_p002.vue'),
   },
   {
-    path: '/oneq/1Q_M03_p003',
-    name: '/oneq/1Q_M03_p003',
-    component: () => import('@/views/oneq/1Q_M03_p003.vue'),
+    path: '/one-q/Q_M03_p003',
+    name: '/one-q/Q_M03_p003',
+    component: () => import('@/views/oneQ/Q_M03_p003.vue'),
   },
   {
     path: '/one-q/Q_M04_p002',
@@ -1911,19 +1911,19 @@ const routes = [
     component: () => import('@/views/oneQ/Q_M04_p002.vue'),
   },
   {
-    path: '/oneq/1Q_M04_p003',
-    name: '/oneq/1Q_M04_p003',
-    component: () => import('@/views/oneq/1Q_M04_p003.vue'),
+    path: '/one-q/Q_M04_p003',
+    name: '/one-q/Q_M04_p003',
+    component: () => import('@/views/oneQ/Q_M04_p003.vue'),
   },
   {
-    path: '/oneq/1Q_M04_p004',
-    name: '/oneq/1Q_M04_p004',
-    component: () => import('@/views/oneq/1Q_M04_p004.vue'),
+    path: '/one-q/Q_M04_p004',
+    name: '/one-q/Q_M04_p004',
+    component: () => import('@/views/oneQ/Q_M04_p004.vue'),
   },
   {
-    path: '/oneq/1Q_M04_p005',
-    name: '/oneq/1Q_M04_p005',
-    component: () => import('@/views/oneq/1Q_M04_p005.vue'),
+    path: '/one-q/Q_M04_p005',
+    name: '/one-q/Q_M04_p005',
+    component: () => import('@/views/oneQ/Q_M04_p005.vue'),
   },
   {
     path: '/oneq/oneq-002',
