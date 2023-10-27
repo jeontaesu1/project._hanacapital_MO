@@ -26,7 +26,7 @@ export default {
 
 <template>
   <UiLayer ref="layer" type="full">
-    <FullPopup bottom="secondary">
+    <FullPopup>
       <template v-slot:head>
         <FullPopupHead>
           <PopupTitle></PopupTitle>
@@ -34,7 +34,7 @@ export default {
       </template>
 
       <a href="" class="link-flex">
-        <div :class="[$style['image-view'], $style['image-view--img-full']]">
+        <div :class="$style['image-view']">
           <img
             src="@/assets/images/_dummy/img-app-page.png"
             alt="샘플 이미지"
