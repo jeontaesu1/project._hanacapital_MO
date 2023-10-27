@@ -1,5 +1,5 @@
 <script>
-// Q_M05_p003
+// Q_M08_p003
 import { reactive } from 'vue';
 import { onMounted, onUnmounted } from 'vue';
 
@@ -64,10 +64,13 @@ export default {
       workplaceNameError: false,
       dateError: false,
       workIncomeError: false,
+      buisnessNameError: false,
+      buisnessLicenseError: false,
+      buisnessDateError: false,
     });
 
     onMounted(() => {
-      store.ui.header.setTitle(() => 'e하나신용대출(연계)');
+      store.ui.header.setTitle(() => '우수고객추가대출');
       store.ui.header.setLeftButtons(() => ['back']);
       store.ui.header.setRightButtons(() => []);
     });
@@ -99,14 +102,14 @@ export default {
     </PageTextGroup>
 
     <FormList>
-      <FormListItem titleText="이름" target="#q_M05_p003_name" :disabled="true">
+      <FormListItem titleText="이름" target="#q_M08_p003_name" :disabled="true">
         <FormInvalid :error="state.nameError">
           <InputBlock :error="state.nameError" :disabled="true">
             <InputBlockCell :flexible="true">
               <BasicInput
                 title="이름"
                 defaultValue="김하나"
-                id="q_M05_p003_name"
+                id="q_M08_p003_name"
                 :disabled="true"
               />
             </InputBlockCell>
@@ -117,7 +120,7 @@ export default {
 
       <FormListItem
         titleText="주민등록번호"
-        target="#q_M05_p003_idNumber"
+        target="#q_M08_p003_idNumber"
         :disabled="true"
       >
         <FormInvalid :error="state.idNumberError">
@@ -129,7 +132,7 @@ export default {
                 title="주민등록번호 앞 6자리"
                 defaultValue="960125"
                 s
-                id="q_M05_p003_idNumber"
+                id="q_M08_p003_idNumber"
                 :disabled="true"
               />
             </InputBlockCell>
@@ -147,7 +150,7 @@ export default {
         </FormInvalid>
       </FormListItem>
 
-      <FormListItem titleText="휴대폰번호" target="#q_M05_p003_phone001">
+      <FormListItem titleText="휴대폰번호" target="#q_M08_p003_phone001">
         <FormInvalid :error="state.phone001Error">
           <InputBlock :error="state.phone001Error">
             <InputBlockCell>
@@ -188,7 +191,7 @@ export default {
                 ]"
                 buttonTitle="통신사 선택하기"
                 layerTitle="통신사를 선택해 주세요"
-                buttonId="q_M05_p003_phone001"
+                buttonId="q_M08_p003_phone001"
                 :classNames="{
                   wrap: 'input-width-telecom',
                 }"
@@ -204,7 +207,7 @@ export default {
 
       <FormListItem
         titleText="소득구분"
-        target="#q_M05_p003_TypeButton"
+        target="#q_M08_p003_TypeButton"
         :selectOnly="true"
       >
         <FormInvalid :error="state.incomeTypeError">
@@ -227,8 +230,8 @@ export default {
                 ]"
                 buttonTitle="소득구분 선택하기"
                 layerTitle="소득구분을 선택해 주세요"
-                id="q_M05_p003_Type"
-                buttonId="q_M05_p003_TypeButton"
+                id="q_M08_p003_Type"
+                buttonId="q_M08_p003_TypeButton"
               />
             </InputBlockCell>
           </InputBlock>
@@ -241,25 +244,25 @@ export default {
       <h3 class="text-title-2 row-margin-contents">직장정보 입력</h3>
 
       <FormList>
-        <FormListItem titleText="직장명" target="#q_M05_p003_WorkplaceName">
+        <FormListItem titleText="직장명" target="#q_M08_p003_WorkplaceName">
           <FormInvalid :error="state.workplaceNameError">
             <InputBlock :error="state.workplaceNameError">
               <InputBlockCell :flexible="true">
-                <BasicInput title="직장명" id="q_M05_p003_WorkplaceName" />
+                <BasicInput title="직장명" id="q_M08_p003_WorkplaceName" />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
 
-        <FormListItem titleText="입사일" target="#q_M05_p003_DateButton">
+        <FormListItem titleText="입사일" target="#q_M08_p003_DateButton">
           <FormInvalid :error="state.dateError">
             <InputBlock :error="state.dateError">
               <InputBlockCell :flexible="true">
                 <BasicDatepicker
                   title="입사일"
-                  id="q_M05_p003_Date"
-                  buttonId="q_M05_p003_DateButton"
+                  id="q_M08_p003_Date"
+                  buttonId="q_M08_p003_DateButton"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -267,13 +270,13 @@ export default {
           </FormInvalid>
         </FormListItem>
 
-        <FormListItem titleText="연소득" target="#q_M05_p003_workIncome">
+        <FormListItem titleText="연소득" target="#q_M08_p003_workIncome">
           <FormInvalid :error="state.workIncomeError">
             <InputBlock :error="state.workIncomeError">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="연소득"
-                  id="q_M05_p003_workIncome"
+                  id="q_M08_p003_workIncome"
                   pattern="\d*"
                   :useDelete="false"
                   align="right"
@@ -288,6 +291,73 @@ export default {
           </FormInvalid>
         </FormListItem>
       </FormList>
+    </section>
+
+    <section class="row-margin-container-medium">
+      <h3 class="text-title-2 row-margin-contents">사업장정보 입력</h3>
+
+      <FormList>
+        <FormListItem titleText="상호명" target="#q_M08_p003_buisnessName">
+          <FormInvalid :error="state.buisnessNameError">
+            <InputBlock :error="state.buisnessNameError">
+              <InputBlockCell :flexible="true">
+                <BasicInput title="상호명" id="q_M08_p003_buisnessName" />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+
+        <FormListItem
+          titleText="사업자번호"
+          target="#q_M08_p003_buisnessLicense"
+        >
+          <FormInvalid :error="state.buisnessLicenseError">
+            <InputBlock :error="state.buisnessLicenseError">
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  pattern="\d*"
+                  title="사업자번호"
+                  id="q_M08_p003_buisnessLicense"
+                />
+              </InputBlockCell>
+              <template v-slot:right>
+                <BasicButton size="mini" theme="tertiary">조회</BasicButton>
+              </template>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+
+        <FormListItem
+          titleText="사업개시일"
+          target="#q_M08_p003_buisnessDateButton"
+        >
+          <FormInvalid :error="state.buisnessDateError">
+            <InputBlock :error="state.buisnessDateError">
+              <InputBlockCell :flexible="true">
+                <BasicDatepicker
+                  title="사업개시일"
+                  id="q_M08_p003_buisnessDate"
+                  buttonId="q_M08_p003_buisnessDateButton"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+      </FormList>
+
+      <div class="row-margin-item-regular">
+        <ul :class="$style['basic-list']">
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              실제 정보와 상이할 경우 한도 및 금리가 달라질 수 있습니다.
+            </div>
+          </li>
+        </ul>
+      </div>
     </section>
 
     <template v-slot:foot>
@@ -312,5 +382,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/oneQ/Q_M05_p003.scss';
+@import '@/assets/scss/views/oneQ/Q_M08_p003.scss';
 </style>

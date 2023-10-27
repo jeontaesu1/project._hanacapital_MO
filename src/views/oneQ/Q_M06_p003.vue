@@ -1,5 +1,5 @@
 <script>
-// Q_M05_p003
+// Q_M06_p003
 import { reactive } from 'vue';
 import { onMounted, onUnmounted } from 'vue';
 
@@ -20,11 +20,13 @@ import BasicInput from '@/components/ui/form/BasicInput.vue';
 import SecurityInput from '@/components/ui/form/SecurityInput.vue';
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
-import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BottomSticky from '@/components/ui/common/BottomSticky.vue';
+import BasicBox from '@/components/ui/common/BasicBox.vue';
+import NoticeText from '@/components/ui/text/NoticeText.vue';
+import ScrollSection from '@/components/ui/section/ScrollSection.vue';
 
 export default {
   components: {
@@ -43,11 +45,13 @@ export default {
     SecurityInput,
     BasicSelect,
     BasicDatepicker,
-    FormHelpText,
     BasicButton,
     ButtonList,
     ButtonListItem,
     BottomSticky,
+    BasicBox,
+    NoticeText,
+    ScrollSection,
   },
   setup() {
     const store = {
@@ -61,13 +65,15 @@ export default {
       idNumberError: false,
       phone001Error: false,
       incomeTypeError: false,
-      workplaceNameError: false,
-      dateError: false,
-      workIncomeError: false,
+      amountError001: false,
+      residenceError: false,
+      buisnessNameError: false,
+      buisnessLicenseError: false,
+      buisnessDateError: false,
     });
 
     onMounted(() => {
-      store.ui.header.setTitle(() => 'e하나신용대출(연계)');
+      store.ui.header.setTitle(() => '행복아파트론');
       store.ui.header.setLeftButtons(() => ['back']);
       store.ui.header.setRightButtons(() => []);
     });
@@ -99,14 +105,14 @@ export default {
     </PageTextGroup>
 
     <FormList>
-      <FormListItem titleText="이름" target="#q_M05_p003_name" :disabled="true">
+      <FormListItem titleText="이름" target="#q_M06_p003_name" :disabled="true">
         <FormInvalid :error="state.nameError">
           <InputBlock :error="state.nameError" :disabled="true">
             <InputBlockCell :flexible="true">
               <BasicInput
                 title="이름"
                 defaultValue="김하나"
-                id="q_M05_p003_name"
+                id="q_M06_p003_name"
                 :disabled="true"
               />
             </InputBlockCell>
@@ -117,7 +123,7 @@ export default {
 
       <FormListItem
         titleText="주민등록번호"
-        target="#q_M05_p003_idNumber"
+        target="#q_M06_p003_idNumber"
         :disabled="true"
       >
         <FormInvalid :error="state.idNumberError">
@@ -129,7 +135,7 @@ export default {
                 title="주민등록번호 앞 6자리"
                 defaultValue="960125"
                 s
-                id="q_M05_p003_idNumber"
+                id="q_M06_p003_idNumber"
                 :disabled="true"
               />
             </InputBlockCell>
@@ -147,7 +153,7 @@ export default {
         </FormInvalid>
       </FormListItem>
 
-      <FormListItem titleText="휴대폰번호" target="#q_M05_p003_phone001">
+      <FormListItem titleText="휴대폰번호" target="#q_M06_p003_phone001">
         <FormInvalid :error="state.phone001Error">
           <InputBlock :error="state.phone001Error">
             <InputBlockCell>
@@ -188,7 +194,7 @@ export default {
                 ]"
                 buttonTitle="통신사 선택하기"
                 layerTitle="통신사를 선택해 주세요"
-                buttonId="q_M05_p003_phone001"
+                buttonId="q_M06_p003_phone001"
                 :classNames="{
                   wrap: 'input-width-telecom',
                 }"
@@ -204,7 +210,7 @@ export default {
 
       <FormListItem
         titleText="소득구분"
-        target="#q_M05_p003_TypeButton"
+        target="#q_M06_p003_typeButton"
         :selectOnly="true"
       >
         <FormInvalid :error="state.incomeTypeError">
@@ -227,8 +233,8 @@ export default {
                 ]"
                 buttonTitle="소득구분 선택하기"
                 layerTitle="소득구분을 선택해 주세요"
-                id="q_M05_p003_Type"
-                buttonId="q_M05_p003_TypeButton"
+                id="q_M06_p003_type"
+                buttonId="q_M06_p003_typeButton"
               />
             </InputBlockCell>
           </InputBlock>
@@ -238,43 +244,34 @@ export default {
     </FormList>
 
     <section class="row-margin-container-medium">
-      <h3 class="text-title-2 row-margin-contents">직장정보 입력</h3>
+      <h3 class="text-title-2">아파트 정보</h3>
 
       <FormList>
-        <FormListItem titleText="직장명" target="#q_M05_p003_WorkplaceName">
-          <FormInvalid :error="state.workplaceNameError">
-            <InputBlock :error="state.workplaceNameError">
-              <InputBlockCell :flexible="true">
-                <BasicInput title="직장명" id="q_M05_p003_WorkplaceName" />
-              </InputBlockCell>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
+        <FormListItem>
+          <BasicButton :line="true">아파트 검색</BasicButton>
+
+          <!-- DD : 아파트 검색 완료 후 노출 -->
+          <BasicBox className="row-margin-item-group row-margin-bottom-none">
+            <p class="text-body-3">
+              인천광역시 연수구 송도동 39-1<br />
+              더샵 랜드마크시티 [158.67/134.3㎡]
+            </p>
+          </BasicBox>
+          <!-- // DD : 아파트 검색 완료 후 노출 -->
+
+          <NoticeText :classNames="{ wrap: 'row-margin-item-regular' }">
+            본인 소유 또는 배우자 공동소유만 대출진행 가능합니다.
+          </NoticeText>
         </FormListItem>
 
-        <FormListItem titleText="입사일" target="#q_M05_p003_DateButton">
-          <FormInvalid :error="state.dateError">
-            <InputBlock :error="state.dateError">
-              <InputBlockCell :flexible="true">
-                <BasicDatepicker
-                  title="입사일"
-                  id="q_M05_p003_Date"
-                  buttonId="q_M05_p003_DateButton"
-                />
-              </InputBlockCell>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
-        </FormListItem>
-
-        <FormListItem titleText="연소득" target="#q_M05_p003_workIncome">
-          <FormInvalid :error="state.workIncomeError">
-            <InputBlock :error="state.workIncomeError">
+        <FormListItem titleText="부동산 설정금액" target="#q_M06_p003_amount">
+          <FormInvalid :error="state.amountError001">
+            <InputBlock :error="state.amountError001">
               <InputBlockCell :flexible="true">
                 <BasicInput
-                  title="연소득"
-                  id="q_M05_p003_workIncome"
+                  id="q_M06_p003_amount"
                   pattern="\d*"
+                  title="부동산 설정금액"
                   :useDelete="false"
                   align="right"
                 />
@@ -282,12 +279,182 @@ export default {
               <template v-slot:innerRight>
                 <div class="text-body-3">만원</div>
               </template>
+              <template v-slot:right>
+                <BasicButton size="mini" theme="tertiary">
+                  등기부등본 조회
+                </BasicButton>
+              </template>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
-            <FormHelpText>연소득은 세전 소득을 의미합니다.</FormHelpText>
+            <div class="row-margin-item">
+              <NoticeText>
+                등기부등본 조회 ‘버튼‘ 을 클릭하여 확인되는 하단의 채권 최고액을
+                부동산설정금액란에 입력 바랍니다. (근저당 설정이 2건 이상일 경우
+                합산하여 입력)
+              </NoticeText>
+              <NoticeText :classNames="{ wrap: 'row-margin-item' }">
+                등기부등본 조회는 집합건물(아파트)만 조회 가능하며 상담신청 시
+                1회만 가능합니다.
+              </NoticeText>
+            </div>
+          </FormInvalid>
+
+          <!-- DD : 등기부등본 확인 팝업에서 [확인] 클릭시 노출 -->
+          <div class="row-margin-contents-group">
+            <ScrollSection>
+              <template v-slot:head>
+                <h2 class="text-body-2">부동산설정정보</h2>
+              </template>
+
+              <!-- table -->
+              <div :class="$style['basic-table']">
+                <table>
+                  <colgroup>
+                    <col style="width: 60px" />
+                    <col style="width: 80px" />
+                    <col style="width: 113px" />
+                    <col style="width: 201px" />
+                    <col style="width: 71px" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>순위번호</th>
+                      <th>등기목적</th>
+                      <th>접수정보</th>
+                      <th>주요등기사항</th>
+                      <th>대상소유자</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>3</td>
+                      <td>근저당권설정</td>
+                      <td>
+                        2021년2월5일<br />
+                        제4845호
+                      </td>
+                      <td>
+                        채권최고금액 금330,000,000원<br />
+                        근저당권자 주식회사 국민은행
+                      </td>
+                      <td>박지혜</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- // table -->
+            </ScrollSection>
+          </div>
+          <!-- //DD : 등기부등본 확인 팝업에서 [확인] 클릭시 노출 -->
+        </FormListItem>
+
+        <FormListItem
+          titleText="소유지거주여부"
+          target="#q_M06_p003_residenceButton"
+          :selectOnly="true"
+        >
+          <FormInvalid :error="state.residenceError">
+            <InputBlock :error="state.residenceError">
+              <InputBlockCell :flexible="true">
+                <BasicSelect
+                  :option="[
+                    {
+                      value: '1',
+                      text: '예',
+                    },
+                    {
+                      value: '2',
+                      text: '아니요',
+                    },
+                  ]"
+                  buttonTitle="소득구분 선택하기"
+                  layerTitle="소득구분을 선택해 주세요"
+                  id="q_M06_p003_residence"
+                  buttonId="q_M06_p003_residenceButton"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
       </FormList>
+      <div class="row-margin-item-regular">
+        <ul :class="$style['basic-list']">
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              본인 소유 또는 배우자 공동소유만 대출진행 가능합니다.
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h3 class="text-title-2 row-margin-contents">사업장정보 입력</h3>
+
+      <FormList>
+        <FormListItem titleText="상호명" target="#q_M06_p003_buisnessName">
+          <FormInvalid :error="state.buisnessNameError">
+            <InputBlock :error="state.buisnessNameError">
+              <InputBlockCell :flexible="true">
+                <BasicInput title="상호명" id="q_M06_p003_buisnessName" />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+
+        <FormListItem
+          titleText="사업자번호"
+          target="#q_M06_p003_buisnessLicense"
+        >
+          <FormInvalid :error="state.buisnessLicenseError">
+            <InputBlock :error="state.buisnessLicenseError">
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  pattern="\d*"
+                  title="사업자번호"
+                  id="q_M06_p003_buisnessLicense"
+                />
+              </InputBlockCell>
+              <template v-slot:right>
+                <BasicButton size="mini" theme="tertiary">조회</BasicButton>
+              </template>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+
+        <FormListItem
+          titleText="사업개시일"
+          target="#q_M06_p003_buisnessDateButton"
+        >
+          <FormInvalid :error="state.buisnessDateError">
+            <InputBlock :error="state.buisnessDateError">
+              <InputBlockCell :flexible="true">
+                <BasicDatepicker
+                  title="사업개시일"
+                  id="q_M06_p003_buisnessDate"
+                  buttonId="q_M06_p003_buisnessDateButton"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+      </FormList>
+
+      <div class="row-margin-item-regular">
+        <ul :class="$style['basic-list']">
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              실제 정보와 상이할 경우 한도 및 금리가 달라질 수 있습니다.
+            </div>
+          </li>
+        </ul>
+      </div>
     </section>
 
     <template v-slot:foot>
@@ -312,5 +479,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/oneQ/Q_M05_p003.scss';
+@import '@/assets/scss/views/oneQ/Q_M06_p003.scss';
 </style>

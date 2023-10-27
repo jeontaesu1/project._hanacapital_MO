@@ -1941,9 +1941,29 @@ const routes = [
     component: () => import('@/views/oneQ/Q_M05_p003.vue'),
   },
   {
+    path: '/one-q/Q_M05_p004',
+    name: '/one-q/Q_M05_p004',
+    component: () => import('@/views/oneQ/Q_M05_p004.vue'),
+  },
+  {
+    path: '/ui-guide/GuideOneQm06',
+    name: '/ui-guide/GuideOneQm06',
+    component: () => import('@/views/uiGuide/GuideOneQm06.vue'),
+  },
+  {
     path: '/one-q/Q_M06_p002',
     name: '/one-q/Q_M06_p002',
     component: () => import('@/views/oneQ/Q_M06_p002.vue'),
+  },
+  {
+    path: '/one-q/Q_M06_p003',
+    name: '/one-q/Q_M06_p003',
+    component: () => import('@/views/oneQ/Q_M06_p003.vue'),
+  },
+  {
+    path: '/one-q/Q_M06_p004',
+    name: '/one-q/Q_M06_p004',
+    component: () => import('@/views/oneQ/Q_M06_p004.vue'),
   },
   {
     path: '/one-q/Q_M07_p002',
@@ -1951,10 +1971,31 @@ const routes = [
     component: () => import('@/views/oneQ/Q_M07_p002.vue'),
   },
   {
+    path: '/one-q/Q_M07_p003',
+    name: '/one-q/Q_M07_p003',
+    component: () => import('@/views/oneQ/Q_M07_p003.vue'),
+  },
+  {
+    path: '/one-q/Q_M07_p004',
+    name: '/one-q/Q_M07_p004',
+    component: () => import('@/views/oneQ/Q_M07_p004.vue'),
+  },
+  {
     path: '/one-q/Q_M08_p002',
     name: '/one-q/Q_M08_p002',
     component: () => import('@/views/oneQ/Q_M08_p002.vue'),
   },
+  {
+    path: '/one-q/Q_M08_p003',
+    name: '/one-q/Q_M08_p003',
+    component: () => import('@/views/oneQ/Q_M08_p003.vue'),
+  },
+  {
+    path: '/one-q/Q_M08_p004',
+    name: '/one-q/Q_M08_p004',
+    component: () => import('@/views/oneQ/Q_M08_p004.vue'),
+  },
+
   // link
   {
     path: '/outer-etc/etc-001',
