@@ -1952,9 +1952,9 @@ const routes = [
     component: () => import('@/views/oneQ/Q_M05_p004.vue'),
   },
   {
-    path: '/ui-guide/GuideOneQm06',
-    name: '/ui-guide/GuideOneQm06',
-    component: () => import('@/views/uiGuide/GuideOneQm06.vue'),
+    path: '/ui-guide/one-q-003',
+    name: '/ui-guide/one-q-003',
+    component: () => import('@/views/uiGuide/GuideOneQ-003.vue'),
   },
   {
     path: '/one-q/Q_M06_p002',
