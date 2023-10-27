@@ -33,7 +33,7 @@ export default {
         </FullPopupHead>
       </template>
 
-      <a href="">
+      <a href="" class="link-flex">
         <div :class="[$style['image-view'], $style['image-view--img-full']]">
           <img
             src="@/assets/images/_dummy/img-app-page.png"
