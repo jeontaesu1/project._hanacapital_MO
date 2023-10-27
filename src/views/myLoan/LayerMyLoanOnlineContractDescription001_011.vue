@@ -59,7 +59,7 @@ export default {
         <p
           class="text-body-5 color-gray font-weight-light align-right row-margin-contents-small"
         >
-          준법심의필(설) : 2023-5 (2023.03.01)
+          2023-22(2023.05.18)
         </p>
         <PageMainText>
           상품설명서 약관에<br />
@@ -874,9 +874,10 @@ export default {
                       *금융회사에
                       <strong class="italic color-gray font-weight-medium"
                         >[금리인하를 요구]</strong
-                      ></span
+                      >
+                      할 수 있습니다.</span
                     >
-                    할 수 있습니다.
+
                     <strong class="color-green font-weight-medium"
                       >단, 신용상태가 금리에 영향을 미치지 않는 상품은
                       금리인하요구권의 행사 대상에서 제외되오니, 상단의
@@ -944,11 +945,18 @@ export default {
               >
                 <div :class="$style['basic-list__symbol']"></div>
                 <div :class="$style['basic-list__content']">
-                  금융회사는 금리인하 요구를 받은 날부터
-                  <span class="color-green">‘10영업일 이내’</span> (고객에게
-                  자료의 보완을 요구하는 날부터 자료가 제출되는 날까지의 기간은
-                  포함되지 않습니다)에 금리인하 요구 수용 여부 및 그 사유를
-                  고객에게 통지합니다.
+                  금융회사는
+                  <strong
+                    >금리인하 요구를 받은 날부터
+                    <span class="color-green">‘10영업일 이내’</span></strong
+                  >
+                  (고객에게 자료의 보완을 요구하는 날부터 자료가 제출되는
+                  날까지의 기간은 포함되지 않습니다)에
+                  <strong
+                    >금리인하 요구 수용 여부 및 그 사유를 전화, 서면,
+                    문자메시지, 전자우편, 팩스 또는 그 밖에 이와 유사한 방법으로
+                    고객에게 통지합니다.
+                  </strong>
                 </div>
               </li>
             </ul>
@@ -1052,7 +1060,7 @@ export default {
               자동차, 주택 등에 근저당 설정할 때 발생하는 부대비용으로,
               <span class="color-green">설정 시에는 금융회사가 부담</span>하며,
               <span class="color-green">해지 시에는 고객(채무자)이 부담</span
-              >합니다.
+              >합니다. <br />(국민주택채권매입비 발생시, 고객이 부담)
             </p>
 
             <ul :class="[$style['basic-list'], 'row-margin-item']">
@@ -1214,7 +1222,8 @@ export default {
               >
                 <div :class="$style['basic-list__symbol']"></div>
                 <div :class="$style['basic-list__content']">
-                  납입일이 휴일인 경우, 익영업일로 자동으로 납부가 이월됩니다.
+                  납입일이 휴일인 경우, 익영업일로 자동으로 납부가 이월되며 해당
+                  기간만큼 이자가 가산되지 않습니다.
                 </div>
               </li>
               <li
@@ -1502,8 +1511,8 @@ export default {
                       <div :class="$style['basic-list__content']">
                         이자를 납입하여야 할 날의 다음날부터 30일까지는 내셔야
                         할 약정이자에 대해 연체이자가 적용되고, 30일이 경과하면
-                        기한이익상실로 인하여 대출원금에 연체이율을 곱한 연체
-                        이자를 내셔야 합니다.
+                        기한이익상실로 인하여 대출원금에 연체이율을 곱한
+                        연체이자를 내셔야 합니다.
                       </div>
                     </li>
                   </ul>
@@ -1600,7 +1609,7 @@ export default {
                     >
                       <div :class="$style['basic-list__symbol']">-</div>
                       <div :class="$style['basic-list__content']">
-                        기한의 이익이 상실 된 때에는 그 다음 날부터 대출원금에
+                        기한의 이익이 상실된 때에는 그 다음날부터 대출원금에
                         대한 연체이자를 내셔야 합니다.
                       </div>
                     </li>
@@ -2137,6 +2146,20 @@ export default {
                 (대체)공휴일 제외)
               </div>
             </li>
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'color-black',
+                'text-body-4',
+                'font-weight-regular',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']">-</div>
+              <div :class="$style['basic-list__content']">
+                중도상환수수료는 대출의 잔여일수 및 상환금액에 따라 달라지며,
+                중도상환 시 향후 원리금 상환 부담금액이 감소하게 됩니다.
+              </div>
+            </li>
           </ul>
         </section>
 
@@ -2398,11 +2421,12 @@ export default {
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
                 <div>
-                  위법계약 해지를 요구하기 위해서는 아래의 날 중 먼저 도달한
-                  기간 내에 서면등(우편, 전자우편, 문자메세지 등을 말함)으로
-                  계약의 해지를 요구하여야 하며, 이 경우에는 금융위원회가
-                  고시하는 서식(계약해지요구서)에 위반사실을 입증하는 서류를
-                  첨부하여 당사에 제출하여야 합니다.
+                  위법계약 해지를 요구하기 위해서는
+                  <strong>아래의 날 중 먼저 도달한 기간 내에 서면 등</strong
+                  >(우편, 전자우편, 문자메세지 등을 말함)으로
+                  <strong>계약의 해지를 요구</strong>하여야 하며, 이 경우에는
+                  금융위원회가 고시하는 서식(계약해지요구서)에 위반사실을
+                  입증하는 서류를 첨부하여 당사에 제출하여야 합니다.
                 </div>
                 <ul :class="[$style['basic-list'], 'row-margin-item']">
                   <li
@@ -2415,8 +2439,9 @@ export default {
                   >
                     <div :class="$style['basic-list__symbol']">-</div>
                     <div :class="$style['basic-list__content']">
-                      계약체결일로부터 5년 이내 또는 법 위반사실을 안 날로부터
-                      1년 이내
+                      계약체결일로부터 <strong>5년 이내</strong> 또는 법
+                      위반사실을 안 날로부터
+                      <strong>1년 이내</strong>
                     </div>
                   </li>
                 </ul>
@@ -2616,7 +2641,188 @@ export default {
         </section>
 
         <section class="row-margin-container-medium">
-          <h3 class="text-title-2 row-margin-contents">15. 그 밖의 유의사항</h3>
+          <h3 class="text-title-2 row-margin-contents">
+            15. 개인신용평가대응권
+          </h3>
+
+          <ul
+            :class="[
+              $style['basic-list'],
+              $style['basic-list--regular'],
+              $style['basic-list--large-margin'],
+            ]"
+          >
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'color-black',
+                'text-body-2',
+                'font-weight-regular',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                <div>
+                  개인신용평가대응권이란 개인인 금융소비자가
+                  <strong>자동화평가*에 따른 개인신용평가</strong>
+                  <strong class="italic color-red underline"
+                    >결과 및 주요기준 등의 설명</strong
+                  >과
+                  <strong
+                    >자동화평가 결과의 산출에 유리하다고 판단되는 정보</strong
+                  >를 제출 또는 기초정보의
+                  <strong class="italic color-red underline"
+                    >정정·삭제·재산출을 요구</strong
+                  >
+                  할 수 있는 권리(신용정보의 이용 및 보호에 관한 법률
+                  제36조의2)를 말합니다.
+                </div>
+                <ul :class="[$style['basic-list'], 'row-margin-item']">
+                  <li
+                    :class="[$style['basic-list__item'], 'font-weight-regular']"
+                  >
+                    <div :class="$style['basic-list__symbol']">*</div>
+                    <div :class="$style['basic-list__content']">
+                      <span class="color-green">금융회사</span> 임직원이 평가
+                      업무에 관여하지 아니하고 컴퓨터 등 정보처리장치로만
+                      개인신용정보 및 그 밖의 정보를 처리하여 개인인
+                      금융소비자를 평가하는 행위
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'color-black',
+                'text-body-2',
+                'font-weight-regular',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                <div>
+                  금융소비자는 신용정보의 이용 및 보호에 관한 법률 제 36조의2에
+                  따라 자동화 평가의 결과, 자동화 평가의 주요 기준, 자동화
+                  평가의 평가에 이용된
+                  <strong
+                    >기초정보 등에 대해 설명하여 줄 것을
+                    <span class="color-green">금융회사</span>에 요구*할 수
+                    있습니다.</strong
+                  >
+                </div>
+                <ul :class="[$style['basic-list'], 'row-margin-contents']">
+                  <li
+                    :class="[
+                      $style['basic-list__item'],
+                      'font-weight-regular',
+                      'color-green',
+                    ]"
+                  >
+                    <div :class="$style['basic-list__symbol']">*</div>
+                    <div :class="$style['basic-list__content']">
+                      하나캐피탈 대표번호 및 홈페이지, 우편을 통하여 권리 행사할
+                      수 있습니다.
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'color-black',
+                'text-body-2',
+                'font-weight-regular',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                <div>
+                  <span class="color-green">금융회사</span>는 다음 어느 하나에
+                  해당하는 경우에는 <strong>금융소비자의 요구를 거절</strong>할
+                  수 있으며, 기초정보가 정정·삭제되었더라도 신용상태의 개선이
+                  경미한 경우,
+                  <strong>재평가결과는 기존과 동일할 수 있습니다.</strong>
+                </div>
+                <ul :class="[$style['basic-list'], 'row-margin-item']">
+                  <li
+                    :class="[
+                      $style['basic-list__item'],
+                      'color-black',
+                      'text-body-4',
+                      'font-weight-regular',
+                    ]"
+                  >
+                    <div :class="$style['basic-list__symbol']">-</div>
+                    <div :class="$style['basic-list__content']">
+                      자동화평가가 아닌 방식으로 개인의 신용을 평가하는 경우
+                    </div>
+                  </li>
+                  <li
+                    :class="[
+                      $style['basic-list__item'],
+                      'color-black',
+                      'text-body-4',
+                      'font-weight-regular',
+                    ]"
+                  >
+                    <div :class="$style['basic-list__symbol']">-</div>
+                    <div :class="$style['basic-list__content']">
+                      관련 법령에 특별한 규정이 있거나 법령상 의무를 준수하기
+                      위하여 불가피한 경우
+                    </div>
+                  </li>
+                  <li
+                    :class="[
+                      $style['basic-list__item'],
+                      'color-black',
+                      'text-body-4',
+                      'font-weight-regular',
+                    ]"
+                  >
+                    <div :class="$style['basic-list__symbol']">-</div>
+                    <div :class="$style['basic-list__content']">
+                      해당 금융소비자의 요구에 따르게 되면 금융거래 등
+                      상거래관계의 설정 및 유지 등이 곤란한 경우
+                    </div>
+                  </li>
+                  <li
+                    :class="[
+                      $style['basic-list__item'],
+                      'color-black',
+                      'text-body-4',
+                      'font-weight-regular',
+                    ]"
+                  >
+                    <div :class="$style['basic-list__symbol']">-</div>
+                    <div :class="$style['basic-list__content']">
+                      금융소비자가 정정 또는 삭제 요청한 내용이 사실과 다른 경우
+                    </div>
+                  </li>
+                  <li
+                    :class="[
+                      $style['basic-list__item'],
+                      'color-black',
+                      'text-body-4',
+                      'font-weight-regular',
+                    ]"
+                  >
+                    <div :class="$style['basic-list__symbol']">-</div>
+                    <div :class="$style['basic-list__content']">
+                      정당한 사유 없이 동일한 금융거래 등에 대해 3회 이상
+                      반복적으로 대응권을 행사하는 경우
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section class="row-margin-container-medium">
+          <h3 class="text-title-2 row-margin-contents">16. 그 밖의 유의사항</h3>
 
           <section class="row-margin-contents">
             <h4 class="text-body-2 row-margin-item-medium">
