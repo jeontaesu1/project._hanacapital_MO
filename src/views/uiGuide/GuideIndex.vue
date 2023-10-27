@@ -484,8 +484,8 @@ const datas = () => [
         ],
       },
       {
-        depth2: '앱 중계 페이지 (page)',
-        depth3: '앱프리\nCommon_M00_p200_002',
+        depth2: '앱 중계 페이지 (page)\n Common_M00_p200_002',
+        depth3: '',
         depth4: '',
         depth5: '',
         depth6: '',
