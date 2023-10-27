@@ -189,9 +189,7 @@ export default {
               상환방법
             </KeyValueTitle>
             <KeyValueText>
-              <div class="font-weight-bold">
-                원리금균등분할상환 또는 원금균등분할상환
-              </div>
+              <div class="font-weight-bold">원리금균등분할상환</div>
             </KeyValueText>
           </KeyValueItem>
 
