@@ -80,7 +80,7 @@ export default {
     });
 
     onMounted(() => {
-      store.ui.header.setTitle(() => 'e하나신용대출(연계)');
+      store.ui.header.setTitle(() => '행복아파트론');
       store.ui.header.setLeftButtons(() => ['back']);
       store.ui.header.setRightButtons(() => []);
     });
@@ -1037,5 +1037,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/oneQ/Q_M05_p002.scss';
+@import '@/assets/scss/views/oneQ/Q_M06_p002.scss';
 </style>
