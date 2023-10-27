@@ -33,9 +33,14 @@ export default {
         </FullPopupHead>
       </template>
 
-      <div :class="[$style['image-view'], $style['image-view--img-full']]">
-        <img src="@/assets/images/_dummy/img-app-page.png" alt="샘플 이미지" />
-      </div>
+      <a href="">
+        <div :class="[$style['image-view'], $style['image-view--img-full']]">
+          <img
+            src="@/assets/images/_dummy/img-app-page.png"
+            alt="샘플 이미지"
+          />
+        </div>
+      </a>
     </FullPopup>
   </UiLayer>
 </template>
