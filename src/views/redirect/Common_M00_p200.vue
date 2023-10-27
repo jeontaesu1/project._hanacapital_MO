@@ -26,21 +26,16 @@ export default {
 
 <template>
   <UiLayer ref="layer" type="full">
-    <FullPopup>
+    <FullPopup bottom="secondary">
       <template v-slot:head>
         <FullPopupHead>
           <PopupTitle></PopupTitle>
         </FullPopupHead>
       </template>
 
-      <a href="" class="link-flex">
-        <div :class="$style['image-view']">
-          <img
-            src="@/assets/images/_dummy/img-app-page.png"
-            alt="샘플 이미지"
-          />
-        </div>
-      </a>
+      <div :class="[$style['image-view'], $style['image-view--img-full']]">
+        <img src="@/assets/images/_dummy/img-app-page.png" alt="샘플 이미지" />
+      </div>
     </FullPopup>
   </UiLayer>
 </template>
