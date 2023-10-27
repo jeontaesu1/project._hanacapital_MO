@@ -190,7 +190,7 @@ export default {
             <div :class="$style['icon-list__icon']">
               <ProductIcon
                 :classNames="{ wrap: $style['icon-list__icon-image'] }"
-                src="/images/product-icon/property.png"
+                src="/images/product-icon/apt.png"
               />
             </div>
             <div :class="$style['icon-list__content']">
@@ -380,7 +380,7 @@ export default {
             <div :class="$style['icon-list__icon']">
               <ProductIcon
                 :classNames="{ wrap: $style['icon-list__icon-image'] }"
-                src="/images/product-icon/interest-rate.png"
+                src="/images/product-icon/stock.png"
               />
             </div>
             <div :class="$style['icon-list__content']">
@@ -445,7 +445,7 @@ export default {
             <div :class="$style['icon-list__icon']">
               <ProductIcon
                 :classNames="{ wrap: $style['icon-list__icon-image'] }"
-                src="/images/product-icon/car-lease.png"
+                src="/images/product-icon/auto-lease.png"
               />
             </div>
             <div :class="$style['icon-list__content']">
@@ -612,7 +612,7 @@ export default {
             <div :class="$style['icon-list__icon']">
               <ProductIcon
                 :classNames="{ wrap: $style['icon-list__icon-image'] }"
-                src="/images/product-icon/lease-stuff.png"
+                src="/images/product-icon/medical.png"
               />
             </div>
             <div :class="$style['icon-list__content']">
@@ -634,7 +634,7 @@ export default {
             <div :class="$style['icon-list__icon']">
               <ProductIcon
                 :classNames="{ wrap: $style['icon-list__icon-image'] }"
-                src="/images/product-icon/medical.png"
+                src="/images/product-icon/dentist-gray.png"
               />
             </div>
             <div :class="$style['icon-list__content']">
