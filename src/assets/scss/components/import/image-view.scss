@@ -12,4 +12,14 @@
     height: auto;
     margin: 0 auto;
   }
+
+  &--img-full {
+    height: 100%;
+    width: auto;
+
+    img {
+      width: auto;
+      height: 100%;
+    }
+  }
 }
