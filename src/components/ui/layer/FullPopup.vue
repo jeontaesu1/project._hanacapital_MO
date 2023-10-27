@@ -17,6 +17,7 @@ const defaultClassNames = () => ({
   bodyInner: '',
   foot: '',
   bg: '',
+  bottom: '',
 });
 
 const isSlot = (slot) => {
@@ -39,6 +40,10 @@ export default {
       },
     },
     bg: {
+      Type: String,
+      default: null,
+    },
+    bottom: {
       Type: String,
       default: null,
     },
@@ -116,6 +121,7 @@ export default {
       $style['popup'],
       {
         [$style[`popup--bg-${bg}`]]: bg,
+        [$style[`popup--bottom-${bottom}`]]: bottom,
       },
       customClassNames.wrap,
     ]"

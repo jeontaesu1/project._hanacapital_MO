@@ -461,6 +461,10 @@ const datas = () => [
             date: '2023.10.19',
             text: '팝업 추가\n- Common_M00_p100\n Common_M00_p007 페이지에서 팝업으로 변경, 앱 설치 아이콘 교체',
           },
+          {
+            date: '2023.10.27',
+            text: '팝업 추가\n- Common_M00_p200',
+          },
         ],
       },
       {
@@ -478,6 +482,17 @@ const datas = () => [
             text: ' 타이틀 텍스트 굵기 수정',
           },
         ],
+      },
+      {
+        depth2: '앱 중계 페이지 (page)',
+        depth3: '앱프리\nCommon_M00_p200_002',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/redirect/redirect-app002',
+        status: 'end',
+        create: '2023.10.27',
+        log: [],
       },
       {
         depth2: '검색',
@@ -1815,6 +1830,10 @@ const datas = () => [
           {
             date: '2023.10.24',
             text: '준법심의필 문구 수정',
+          },
+          {
+            date: '2023.10.27',
+            text: '"상환방법" 항목 문구 수정',
           },
         ],
       },
@@ -6278,6 +6297,10 @@ const datas = () => [
           {
             date: '2023.09.25',
             text: '이미지 변경\n- My_M03_l202\n- My_M03_l203',
+          },
+          {
+            date: '2023.10.27',
+            text: 'My_M99_l001 문구 수정 및 개인신용평가대응권 항목 추가',
           },
         ],
       },
