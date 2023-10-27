@@ -1,5 +1,5 @@
 <script>
-// Q_M05_p002
+// Q_M06_p002
 import { reactive } from 'vue';
 import { onMounted, onUnmounted } from 'vue';
 
@@ -33,7 +33,7 @@ import StepProgress from '@/components/ui/progress/StepProgress.vue';
 import StickyBar from '@/components/ui/common/StickyBar.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 
-import IconImgColor from '@/assets/images/icon/img-color.svg?component';
+import IconCertificationPerson from '@/assets/images/icon/certification-person.svg?component';
 
 export default {
   components: {
@@ -64,7 +64,7 @@ export default {
     StepProgress,
     StickyBar,
     BasicHr,
-    IconImgColor,
+    IconCertificationPerson,
   },
   setup() {
     const store = {
@@ -119,7 +119,9 @@ export default {
     <div>
       <div :class="$style['success-view']">
         <div :class="$style['success-view__item']">
-          <div :class="$style['success-view__icon']"><IconImgColor /></div>
+          <div :class="$style['success-view__icon']">
+            <IconCertificationPerson />
+          </div>
           <span :class="$style['success-view__text']">본인인증 성공</span>
         </div>
       </div>
