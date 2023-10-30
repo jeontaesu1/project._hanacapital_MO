@@ -259,9 +259,14 @@ export default {
           </BasicBox>
           <!-- // DD : 아파트 검색 완료 후 노출 -->
 
-          <NoticeText :classNames="{ wrap: 'row-margin-item-regular' }">
-            본인 소유 또는 배우자 공동소유만 대출진행 가능합니다.
-          </NoticeText>
+          <ul :class="[$style['basic-list'], 'row-margin-item-regular']">
+            <li :class="$style['basic-list__item']">
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                본인 소유 또는 배우자 공동소유만 대출진행 가능합니다.
+              </div>
+            </li>
+          </ul>
         </FormListItem>
 
         <FormListItem titleText="부동산 설정금액" target="#q_M06_p003_amount">
@@ -378,16 +383,15 @@ export default {
           </FormInvalid>
         </FormListItem>
       </FormList>
-      <div class="row-margin-item-regular">
-        <ul :class="$style['basic-list']">
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              본인 소유 또는 배우자 공동소유만 대출진행 가능합니다.
-            </div>
-          </li>
-        </ul>
-      </div>
+
+      <ul :class="[$style['basic-list'], 'row-margin-item-regular']">
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            본인 소유 또는 배우자 공동소유만 대출진행 가능합니다.
+          </div>
+        </li>
+      </ul>
     </section>
 
     <section>
