@@ -59,7 +59,7 @@ export default {
         </strong>
       </IllustInfoTitle>
       <IllustInfoText>
-        선택하신 사항에 대헤서는<br />
+        선택하신 사항에 대해서는<br />
         빠른 시일내에 답변 드리겠습니다.<br />
         (상담가능시간 : 평일 09~18시)
       </IllustInfoText>
