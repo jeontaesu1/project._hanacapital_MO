@@ -130,7 +130,7 @@ export default {
       </IllustInfoTitle>
       <IllustInfoText>
         하나캐피탈 우수고객추가대출에 관심 가져주셔서<br />
-        s진심으로 감사합니다.
+        진심으로 감사합니다.
       </IllustInfoText>
     </IllustInfo>
     <!-- // Case : 대출가능대상자가 아닌 경우 노출 노출 -->
