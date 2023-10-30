@@ -1987,6 +1987,11 @@ const routes = [
     component: () => import('@/views/oneQ/Q_M07_p004.vue'),
   },
   {
+    path: '/ui-guide/one-q-004',
+    name: '/ui-guide/one-q-004',
+    component: () => import('@/views/uiGuide/GuideOneQ-004.vue'),
+  },
+  {
     path: '/one-q/Q_M08_p002',
     name: '/one-q/Q_M08_p002',
     component: () => import('@/views/oneQ/Q_M08_p002.vue'),
