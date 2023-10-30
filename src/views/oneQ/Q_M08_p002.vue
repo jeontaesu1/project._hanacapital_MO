@@ -82,7 +82,7 @@ export default {
     });
 
     onMounted(() => {
-      store.ui.header.setTitle(() => '원큐자동차담보대출');
+      store.ui.header.setTitle(() => '우수고객추가대출');
       store.ui.header.setLeftButtons(() => ['back']);
       store.ui.header.setRightButtons(() => []);
     });
