@@ -1,11 +1,10 @@
 <script>
 // Common_M00_p100
-import { ref } from 'vue';
+import { onMounted, onUnmounted } from 'vue';
 
-import UiLayer from '@/components/ui/layer/UiLayer.vue';
-import FullPopup from '@/components/ui/layer/FullPopup.vue';
-import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
-import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
+import { useUiHeaderStore } from '@/stores/ui/header';
+
+import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
@@ -16,10 +15,7 @@ import IconLogo from '@/assets/images/icon/hanacapital-small.svg?component';
 
 export default {
   components: {
-    UiLayer,
-    FullPopup,
-    FullPopupHead,
-    PopupTitle,
+    PageContents,
     PageTextGroup,
     PageMainText,
     IllustObject,
@@ -28,70 +24,72 @@ export default {
     IconLogo,
   },
   setup() {
-    const layer = ref(null);
-
-    return {
-      layer,
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
     };
+
+    onMounted(() => {
+      // store.ui.header.setTitle(() => ' ');
+      store.ui.header.setLeftButtons(() => []);
+      store.ui.header.setRightButtons(() => []);
+    });
+
+    onUnmounted(() => {
+      // store.ui.header.setTitle();
+      store.ui.header.setLeftButtons();
+      store.ui.header.setRightButtons();
+    });
   },
 };
 </script>
 
 <template>
-  <UiLayer ref="layer" type="full">
-    <FullPopup>
-      <template v-slot:head>
-        <FullPopupHead>
-          <PopupTitle>하나캐피탈</PopupTitle>
-        </FullPopupHead>
-      </template>
+  <PageContents>
+    <PageTextGroup>
+      <PageMainText>
+        하나캐피탈 앱으로<br />
+        이동합니다
+      </PageMainText>
+    </PageTextGroup>
 
-      <PageTextGroup>
-        <PageMainText>
-          하나캐피탈 앱으로<br />
-          이동합니다
-        </PageMainText>
-      </PageTextGroup>
+    <IllustObject />
 
-      <IllustObject />
+    <BasicHr
+      theme="quaternary"
+      type="contents"
+      className="row-margin-container"
+    />
 
-      <BasicHr
-        theme="quaternary"
-        type="contents"
-        className="row-margin-container"
-      />
+    <div :class="$style['icon-list']">
+      <ul :class="$style['icon-list__list']">
+        <li :class="$style['icon-list__item']">
+          <button type="button" :class="$style['icon-list__block']">
+            <span :class="$style['icon-list__icon']"><IconStore /></span>
+            <span :class="$style['icon-list__content']">
+              <span class="color-gray display-block">아직 앱이 없으시다면</span>
+              <span :class="$style['icon-list__title']">스토어로 이동</span>
+            </span>
+          </button>
+        </li>
 
-      <div :class="$style['icon-list']">
-        <ul :class="$style['icon-list__list']">
-          <li :class="$style['icon-list__item']">
-            <button type="button" :class="$style['icon-list__block']">
-              <span :class="$style['icon-list__icon']"><IconStore /></span>
-              <span :class="$style['icon-list__content']">
-                <span class="color-gray display-block"
-                  >아직 앱이 없으시다면</span
-                >
-                <span :class="$style['icon-list__title']">스토어로 이동</span>
+        <li
+          :class="[$style['icon-list__item'], $style['icon-list__item_last']]"
+        >
+          <button type="button" :class="$style['icon-list__block']">
+            <span :class="$style['icon-list__icon']"><IconLogo /></span>
+            <span :class="$style['icon-list__content']">
+              <span class="color-gray display-block">앱을 설치하셨다면</span>
+              <span :class="$style['icon-list__title']">
+                하나캐피탈 앱으로 이동
               </span>
-            </button>
-          </li>
-
-          <li
-            :class="[$style['icon-list__item'], $style['icon-list__item_last']]"
-          >
-            <button type="button" :class="$style['icon-list__block']">
-              <span :class="$style['icon-list__icon']"><IconLogo /></span>
-              <span :class="$style['icon-list__content']">
-                <span class="color-gray display-block">앱을 설치하셨다면</span>
-                <span :class="$style['icon-list__title']">
-                  하나캐피탈 앱으로 이동
-                </span>
-              </span>
-            </button>
-          </li>
-        </ul>
-      </div>
-    </FullPopup>
-  </UiLayer>
+            </span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </PageContents>
 </template>
 
 <style lang="scss" module>

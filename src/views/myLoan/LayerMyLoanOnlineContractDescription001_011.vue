@@ -2664,17 +2664,18 @@ export default {
               <div :class="$style['basic-list__content']">
                 <div>
                   개인신용평가대응권이란 개인인 금융소비자가
-                  <strong>자동화평가*에 따른 개인신용평가</strong>
+                  <strong>자동화평가*에 따른 개인신용평가 </strong>
                   <strong class="italic color-red underline"
                     >결과 및 주요기준 등의 설명</strong
-                  >과
-                  <strong
-                    >자동화평가 결과의 산출에 유리하다고 판단되는 정보</strong
-                  >를 제출 또는 기초정보의
+                  >
+                  과
+                  <strong>
+                    자동화평가 결과의 산출에 유리하다고 판단되는 정보</strong
+                  >
+                  를 제출 또는 기초정보의
                   <strong class="italic color-red underline"
                     >정정·삭제·재산출을 요구</strong
-                  >
-                  할 수 있는 권리(신용정보의 이용 및 보호에 관한 법률
+                  >할 수 있는 권리(신용정보의 이용 및 보호에 관한 법률
                   제36조의2)를 말합니다.
                 </div>
                 <ul :class="[$style['basic-list'], 'row-margin-item']">

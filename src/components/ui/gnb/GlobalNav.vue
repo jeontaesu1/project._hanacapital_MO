@@ -12,7 +12,7 @@ import BasicHr from '@/components/ui/common/BasicHr.vue';
 
 import IconLink from '@/assets/images/icon/link.svg?component';
 import IconMyInfo from '@/assets/images/icon/my-info.svg?component';
-import IconHome from '@/assets/images/icon/home.svg?component';
+import IconHome from '@/assets/images/icon/main-home.svg?component';
 import IconCall from '@/assets/images/icon/call.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
 import IconBusinessFirst from '@/assets/images/icon/business-first.svg?component';
