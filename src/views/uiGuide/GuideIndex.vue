@@ -465,6 +465,42 @@ const datas = () => [
             date: '2023.10.27',
             text: '팝업 추가\n- Common_M00_p200',
           },
+          {
+            date: '2023.10.30',
+            text: '팝업 삭제\n- Common_M00_p100',
+          },
+        ],
+      },
+      {
+        depth2: '앱 중계 페이지',
+        depth3: '1Q 캐피탈\nCommon_M00_p100',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/redirect/redirect-app-002',
+        status: 'end',
+        create: '2023.10.30',
+        log: [
+          {
+            date: '2023.10.30',
+            text: '팝업에서 페이지로 구성 변경',
+          },
+        ],
+      },
+      {
+        depth2: '앱 중계 페이지',
+        depth3: 'AG\n Common_M00_p300',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/redirect/redirect-app-003',
+        status: 'end',
+        create: '2023.10.30',
+        log: [
+          {
+            date: '2023.10.30',
+            text: '화면 아이디 변경',
+          },
         ],
       },
       {
@@ -482,17 +518,6 @@ const datas = () => [
             text: ' 타이틀 텍스트 굵기 수정',
           },
         ],
-      },
-      {
-        depth2: '앱 중계 페이지 (page)',
-        depth3: '앱프리\nCommon_M00_p200_002',
-        depth4: '',
-        depth5: '',
-        depth6: '',
-        path: '/redirect/redirect-app002',
-        status: 'end',
-        create: '2023.10.27',
-        log: [],
       },
       {
         depth2: '검색',
@@ -1015,7 +1040,11 @@ const datas = () => [
           },
           {
             date: '2023.10.17',
-            text: '"공지사항" 버튼 삭제, "홈" 버튼 추가, 버튼 순서 변경 ',
+            text: '"공지사항" 버튼 삭제, "홈" 버튼 추가, 버튼 순서 변경',
+          },
+          {
+            date: '2023.10.30',
+            text: '홈버튼 아이콘 교체',
           },
         ],
       },
@@ -3853,6 +3882,10 @@ const datas = () => [
           {
             date: '2023.10.24',
             text: 'LR_M00_l008 "URL" 버튼 타입 수정\n LR_M00_l013 상단 라디오 버튼 삭제, 검색 항목 수정 및 폼 타입 변경, 검색 리스트 항목 문구 수정',
+          },
+          {
+            date: '2023.10.30',
+            text: 'LR_M00_l013 "성명", "생년월일", "휴대폰" 항목 텍스트 크기 수정',
           },
         ],
       },

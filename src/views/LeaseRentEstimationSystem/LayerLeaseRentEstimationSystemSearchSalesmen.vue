@@ -81,13 +81,20 @@ export default {
             ]"
           >
             <span :class="$style['list-wrap__require']"></span>
-            <h3 class="text-body-4 color-gray font-weight-medium">성명</h3>
+            <h3 class="text-body-1 color-gray font-weight-medium">성명</h3>
           </div>
           <div class="flex-box__cell flex-box__cell flex-1">
             <FormInvalid :error="state.nameError">
               <InputBlock :error="state.nameError">
-                <InputBlockCell :flexible="true">
-                  <BasicInput title="성명 입력" placeholder="성명을 입력" />
+                <InputBlockCell
+                  :flexible="true"
+                  :class="$style['appoint-wrap']"
+                >
+                  <BasicInput
+                    :classNames="{ input: 'text-body-2' }"
+                    title="성명 입력"
+                    placeholder="성명을 입력"
+                  />
                 </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -97,13 +104,17 @@ export default {
 
         <div class="flex-box row-margin-contents">
           <div :class="[$style['list-width'], 'flex-box__cell']">
-            <h3 class="text-body-4 color-gray font-weight-medium">생년월일</h3>
+            <h3 class="text-body-1 color-gray font-weight-medium">생년월일</h3>
           </div>
           <div class="flex-box__cell flex-box__cell flex-1">
             <FormInvalid :error="state.birthDateError">
               <InputBlock :error="state.birthDateError">
-                <InputBlockCell :flexible="true">
+                <InputBlockCell
+                  :flexible="true"
+                  :class="$style['appoint-wrap']"
+                >
                   <BasicInput
+                    :classNames="{ input: 'text-body-2' }"
                     type="number"
                     pattern="\d*"
                     title="생년월일 입력"
@@ -118,13 +129,17 @@ export default {
 
         <div class="flex-box row-margin-contents">
           <div :class="[$style['list-width'], 'flex-box__cell']">
-            <h3 class="text-body-4 color-gray font-weight-medium">휴대폰</h3>
+            <h3 class="text-body-1 color-gray font-weight-medium">휴대폰</h3>
           </div>
           <div class="flex-box__cell flex-box__cell flex-1">
             <FormInvalid :error="state.phoneError">
               <InputBlock :error="state.phoneError">
-                <InputBlockCell :flexible="true">
+                <InputBlockCell
+                  :flexible="true"
+                  :class="$style['appoint-wrap']"
+                >
                   <BasicInput
+                    :classNames="{ input: 'text-body-2' }"
                     type="number"
                     pattern="\d*"
                     title="휴대폰 뒷번호 입력"

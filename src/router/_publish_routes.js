@@ -685,9 +685,14 @@ const routes = [
     component: () => import('@/views/uiGuide/GuideRedirectApp.vue'),
   },
   {
-    path: '/redirect/redirect-app002',
-    name: '/redirect/redirect-app002',
-    component: () => import('@/views/redirect/Common_M00_p200_002.vue'),
+    path: '/redirect/redirect-app-002',
+    name: '/redirect/redirect-app-002',
+    component: () => import('@/views/redirect/Common_M00_p100.vue'),
+  },
+  {
+    path: '/redirect/redirect-app-003',
+    name: '/redirect/redirect-app-003',
+    component: () => import('@/views/redirect/Common_M00_p300.vue'),
     meta: { layout: 'NoneLayout' },
   },
   {
