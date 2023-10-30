@@ -76,6 +76,8 @@ export default {
     const state = reactive({
       nameError: false,
       idNumberError: false,
+      phone001Error: false,
+      phone002Error: false,
       codeError: false,
     });
 
