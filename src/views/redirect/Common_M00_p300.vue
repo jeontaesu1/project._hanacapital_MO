@@ -1,5 +1,5 @@
 <script>
-// Common_M00_p200_002
+// Common_M00_p300
 </script>
 
 <template>
@@ -11,5 +11,5 @@
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/redirect/Common_M00_p200_002.scss';
+@import '@/assets/scss/views/redirect/Common_M00_p300.scss';
 </style>

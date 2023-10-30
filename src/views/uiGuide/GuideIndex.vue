@@ -465,6 +465,42 @@ const datas = () => [
             date: '2023.10.27',
             text: '팝업 추가\n- Common_M00_p200',
           },
+          {
+            date: '2023.10.30',
+            text: '팝업 삭제\n- Common_M00_p100',
+          },
+        ],
+      },
+      {
+        depth2: '앱 중계 페이지',
+        depth3: '1Q 캐피탈\nCommon_M00_p100',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/redirect/redirect-app-002',
+        status: 'end',
+        create: '2023.10.30',
+        log: [
+          {
+            date: '2023.10.30',
+            text: '팝업에서 페이지로 구성 변경',
+          },
+        ],
+      },
+      {
+        depth2: '앱 중계 페이지',
+        depth3: 'AG\n Common_M00_p300',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/redirect/redirect-app-003',
+        status: 'end',
+        create: '2023.10.30',
+        log: [
+          {
+            date: '2023.10.30',
+            text: '화면 아이디 변경',
+          },
         ],
       },
       {
@@ -482,17 +518,6 @@ const datas = () => [
             text: ' 타이틀 텍스트 굵기 수정',
           },
         ],
-      },
-      {
-        depth2: '앱 중계 페이지 (page)\n Common_M00_p200_002',
-        depth3: '',
-        depth4: '',
-        depth5: '',
-        depth6: '',
-        path: '/redirect/redirect-app002',
-        status: 'end',
-        create: '2023.10.27',
-        log: [],
       },
       {
         depth2: '검색',
