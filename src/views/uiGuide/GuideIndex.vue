@@ -666,6 +666,10 @@ const datas = () => [
             date: '2023.10.25',
             text: '진행중 상품 금액 표기 수정',
           },
+          {
+            date: '2023.10.31',
+            text: '약정 중 상품 뱃지 케이스 추가',
+          },
         ],
       },
       {
@@ -740,6 +744,10 @@ const datas = () => [
           {
             date: '2023.10.25',
             text: '진행중 상품 금액 표기 수정',
+          },
+          {
+            date: '2023.10.31',
+            text: '약정 중 상품 뱃지 케이스 추가',
           },
         ],
       },
@@ -7814,17 +7822,6 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '다이렉트 장기렌터카',
-        depth3: '팝업',
-        depth4: '',
-        depth5: '',
-        depth6: '',
-        path: '/ui-guide/one-q-001',
-        status: '',
-        create: '',
-        log: [],
-      },
-      {
         depth2: '다이렉트 오토리스',
         depth3: '예약상담 신청\n1Q_M03_p002',
         depth4: '',
@@ -7888,17 +7885,6 @@ const datas = () => [
         path: '/one-q/Q_M04_p005',
         status: 'end',
         create: '2023.10.30',
-        log: [],
-      },
-      {
-        depth2: '중고차오토론',
-        depth3: '팝업',
-        depth4: '',
-        depth5: '',
-        depth6: '',
-        path: '/ui-guide/one-q-002',
-        status: '',
-        create: '',
         log: [],
       },
       {
