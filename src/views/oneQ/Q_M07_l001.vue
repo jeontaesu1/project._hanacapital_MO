@@ -48,6 +48,7 @@ export default {
                 $style['basic-list__item'],
                 'color-black',
                 'text-body-4',
+                'font-weight-light',
               ]"
             >
               <div :class="$style['basic-list__symbol']"></div>
@@ -67,6 +68,7 @@ export default {
                 $style['basic-list__item'],
                 'color-black',
                 'text-body-4',
+                'font-weight-light',
               ]"
             >
               <div :class="$style['basic-list__symbol']"></div>
@@ -84,6 +86,7 @@ export default {
                 $style['basic-list__item'],
                 'color-black',
                 'text-body-4',
+                'font-weight-light',
               ]"
             >
               <div :class="$style['basic-list__symbol']"></div>
@@ -103,6 +106,7 @@ export default {
                 $style['basic-list__item'],
                 'color-black',
                 'text-body-4',
+                'font-weight-light',
               ]"
             >
               <div :class="$style['basic-list__symbol']"></div>
@@ -122,6 +126,7 @@ export default {
                 $style['basic-list__item'],
                 'color-black',
                 'text-body-4',
+                'font-weight-light',
               ]"
             >
               <div :class="$style['basic-list__symbol']"></div>
@@ -141,11 +146,12 @@ export default {
                 $style['basic-list__item'],
                 'color-black',
                 'text-body-4',
+                'font-weight-light',
               ]"
             >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                차량압류 및 설정 내역이 있을 경우 해지 후 대출 가능
+                <div>차량압류 및 설정 내역이 있을 경우 해지 후 대출 가능</div>
                 <ul :class="[$style['basic-list'], 'row-margin-item']">
                   <li
                     :class="[
@@ -172,9 +178,7 @@ export default {
                     <div :class="$style['basic-list__symbol']">-</div>
                     <div :class="$style['basic-list__content']">
                       차량 압류/설정 여부는 자동차민원 대국민포털
-                      <a href="https://www.ecar.go.kr" class="basic-link"
-                        >(https://ecar.go.kr)</a
-                      >에서 조회가 가능합니다.
+                      (https://ecar.go.kr) 에서 조회가 가능합니다.
                     </div>
                   </li>
                 </ul>

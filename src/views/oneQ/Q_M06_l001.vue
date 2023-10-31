@@ -20,7 +20,7 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 
-import IconQCallMint from '@/assets/images/icon/1q-call-mint.svg?component';
+import IconQCallMint from '@/assets/images/icon/call-mint.svg?component';
 
 export default {
   components: {

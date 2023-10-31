@@ -6,6 +6,7 @@ import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import ToastPopup from '@/components/ui/layer/ToastPopup.vue';
 import ToastPopupHead from '@/components/ui/layer/ToastPopupHead.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
+import PopupSubTitle from '@/components/ui/layer/PopupSubTitle.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
@@ -16,6 +17,7 @@ export default {
     ToastPopup,
     ToastPopupHead,
     PopupTitle,
+    PopupSubTitle,
     BasicButton,
     ButtonList,
     ButtonListItem,
@@ -31,23 +33,22 @@ export default {
 </script>
 
 <template>
-  <UiLayer
-    ref="layer"
-    type="toast"
-    :backgroundClose="true"
-    v-slot="layerSlotProps"
-  >
+  <UiLayer ref="layer" type="toast" :backgroundClose="true">
     <ToastPopup>
       <template v-slot:head>
         <ToastPopupHead>
           <PopupTitle class="row-margin-item-group">
             사업자 대출 진행안내
           </PopupTitle>
-          <strong class="text-body-2">
+          <PopupSubTitle
+            :classNames="{
+              subTitle: 'text-body-2 color-black font-weight-bold',
+            }"
+          >
             자영업자 선택 시, 사업자대출로 진행됩니다.<br />
             아래 사항을 참고하시고, 사업자대출로 진행을<br />
-            원하실 경우 ‘동의‘ 를 눌러주세요.
-          </strong>
+            원하실 경우 ‘동의’ 를 눌러주세요.
+          </PopupSubTitle>
         </ToastPopupHead>
       </template>
 
@@ -92,7 +93,7 @@ export default {
             <BasicButton :line="true" theme="quaternary">미동의</BasicButton>
           </ButtonListItem>
           <ButtonListItem>
-            <BasicButton @click="layerSlotProps.close()">동의</BasicButton>
+            <BasicButton>동의</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
@@ -101,5 +102,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/personalLoan/LayerPersonalLoanEHanaBusinessNotice.scss';
+@import '@/assets/scss/views/oneQ/Q_M07_l002.scss';
 </style>

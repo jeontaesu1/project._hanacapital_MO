@@ -19,7 +19,7 @@ import BasicBox from '@/components/ui/common/BasicBox.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
 
 import IconMaximum from '@/assets/images/icon/icon-maximum.svg?component';
-import IconInterestRate from '@/assets/images/icon/1q-interest-rate.svg?component';
+import IconInterestRate from '@/assets/images/icon/interest-rate.svg?component';
 
 export default {
   components: {
