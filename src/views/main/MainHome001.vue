@@ -404,9 +404,27 @@ export default {
                   <div :class="$style['progress__amount']">
                     <!-- Case : 1건일 경우 노출 -->
                     <div :class="$style['progress__amount-d-day']">
-                      <RoundStatus theme="nonary">D-3</RoundStatus>
+                      <RoundStatus theme="secondary">D-3</RoundStatus>
                     </div>
                     <!-- // Case : 1건일 경우 노출 -->
+
+                    <!-- Case : 결제일일 경우 노출 -->
+                    <div :class="$style['progress__amount-d-day']">
+                      <RoundStatus theme="secondary">D-DAY</RoundStatus>
+                    </div>
+                    <!-- // Case : 결제일일 경우 노출-->
+
+                    <!-- Case : 연체중일 경우 노출 -->
+                    <div :class="$style['progress__amount-d-day']">
+                      <RoundStatus theme="nonary">연체</RoundStatus>
+                    </div>
+                    <!-- // Case : 연체중일 경우 노출-->
+
+                    <!-- Case : 종료일 경우 노출 -->
+                    <div :class="$style['progress__amount-d-day']">
+                      <RoundStatus>종료</RoundStatus>
+                    </div>
+                    <!-- // Case : 종료일 경우 노출-->
 
                     <dl :class="$style['progress__amount-block']">
                       <!-- Case : 1건일 경우 노출 -->
