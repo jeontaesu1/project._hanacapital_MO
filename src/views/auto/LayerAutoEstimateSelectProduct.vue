@@ -29,7 +29,7 @@ import RoundTabButton from '@/components/ui/tab/RoundTabButton.vue';
 
 import IconTell from '@/assets/images/icon/tell.svg?component';
 import IconCarRent from '@/assets/images/icon/car-rent.svg?component';
-import IconCarSecurity from '@/assets/images/icon/car-security.svg?component';
+import IconAutoLease from '@/assets/images/icon/auto-lease.svg?component';
 import iconInformation from '@/assets/images/icon/information.svg?component';
 import IconDropdown from '@/assets/images/icon/dropdown.svg?component';
 import IconConsulting from '@/assets/images/icon/consulting.svg?component';
@@ -66,7 +66,7 @@ export default {
 
     IconTell,
     IconCarRent,
-    IconCarSecurity,
+    IconAutoLease,
     iconInformation,
     IconDropdown,
     IconConsulting,
@@ -136,7 +136,7 @@ export default {
           <li :class="$style['icon-list__item']">
             <button type="button" :class="$style['icon-list__block']">
               <span :class="$style['icon-list__icon']">
-                <IconCarSecurity />
+                <IconAutoLease />
               </span>
               <span :class="$style['icon-list__content']">
                 <span :class="$style['icon-list__text']"
