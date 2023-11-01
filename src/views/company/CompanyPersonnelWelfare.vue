@@ -14,7 +14,7 @@ import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import PageSubText from '@/components/ui/text/PageSubText.vue';
 
-import IconCarSecurityBackground from '@/assets/images/icon/personal-terms-background.svg?component';
+import IconEstimation from '@/assets/images/icon/estimation.svg?component';
 import IconHrPoint from '@/assets/images/icon/hr-point.svg?component';
 import IconTrophy from '@/assets/images/icon/trophy.svg?component';
 import IconGiftBox from '@/assets/images/icon/gift-box.svg?component';
@@ -49,7 +49,7 @@ export default {
     IconHealth,
     IconInsurance,
     IconVacationSpot,
-    IconCarSecurityBackground,
+    IconEstimation,
   },
   setup() {
     const store = {
@@ -94,7 +94,7 @@ export default {
           <ul :class="$style['authority__list']">
             <li :class="$style['authority__item']">
               <div :class="$style['authority__icon']">
-                <IconCarSecurityBackground />
+                <IconEstimation />
               </div>
               <div :class="$style['authority__contents']">
                 <div :class="$style['authority__head']">

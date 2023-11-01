@@ -21,7 +21,7 @@ import IconSecurity from '@/assets/images/icon/security.svg?component';
 import IconPig from '@/assets/images/icon/pig.svg?component';
 import IconBuilding from '@/assets/images/icon/building.svg?component';
 import IconCar from '@/assets/images/icon/car.svg?component';
-import IconInterestRate from '@/assets/images/icon/interest-rate.svg?component';
+import IconStock from '@/assets/images/icon/stock.svg?component';
 
 export default {
   components: {
@@ -39,7 +39,7 @@ export default {
     IconPig,
     IconBuilding,
     IconCar,
-    IconInterestRate,
+    IconStock,
   },
   setup() {
     const store = {
@@ -191,7 +191,7 @@ export default {
         </li>
         <li :class="$style['icon-list__item']">
           <RouterLink to="" :class="$style['icon-list__block']">
-            <span :class="$style['icon-list__icon']"><IconInterestRate /></span>
+            <span :class="$style['icon-list__icon']"><IconStock /></span>
             <span :class="$style['icon-list__content']">
               <span :class="$style['icon-list__text']"
                 >주식매입자금을 위한 금융서비스</span

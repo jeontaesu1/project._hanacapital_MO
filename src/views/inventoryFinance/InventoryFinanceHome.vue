@@ -19,7 +19,7 @@ import IconSearchMoney from '@/assets/images/icon/search-money.svg?component';
 import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 import IconDateWhite from '@/assets/images/icon/date-white.svg?component';
 import IconDocumentAdd from '@/assets/images/icon/document-add.svg?component';
-import IconCheckCompleted from '@/assets/images/icon/check-completed.svg?component';
+import IconTermination from '@/assets/images/icon/termination.svg?component';
 import IconCommissionRateRepayment from '@/assets/images/icon/commission-rate-repayment.svg?component';
 
 export default {
@@ -38,7 +38,7 @@ export default {
     IconDeposit,
     IconDateWhite,
     IconDocumentAdd,
-    IconCheckCompleted,
+    IconTermination,
     IconCommissionRateRepayment,
   },
   setup() {
@@ -263,7 +263,7 @@ export default {
             :class="$style['icon-list__block']"
           >
             <span :class="$style['icon-list__icon']">
-              <IconCheckCompleted />
+              <IconTermination />
             </span>
             <span :class="$style['icon-list__content']">
               <span :class="$style['icon-list__title']">종료건 확인</span>

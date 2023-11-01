@@ -19,7 +19,7 @@ import BasicBox from '@/components/ui/common/BasicBox.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
 
 import IconMaximum from '@/assets/images/icon/icon-maximum.svg?component';
-import IconInterestRate from '@/assets/images/icon/interest-rate.svg?component';
+import IconExpectedInterestRate from '@/assets/images/icon/expected-interest-rate.svg?component';
 
 export default {
   components: {
@@ -37,7 +37,7 @@ export default {
     BasicBox,
     UnitText,
     IconMaximum,
-    IconInterestRate,
+    IconExpectedInterestRate,
   },
   setup() {
     const store = {
@@ -89,7 +89,7 @@ export default {
           </li>
           <li :class="$style['product-detail__item']">
             <div :class="$style['product-detail__icon']">
-              <IconInterestRate />
+              <IconExpectedInterestRate />
             </div>
             <div :class="$style['product-detail__block']">
               <div :class="$style['product-detail__title']">대출금리</div>

@@ -10,7 +10,7 @@ import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 
 import IconPerson from '@/assets/images/icon/person.svg?component';
-import IconBuilding from '@/assets/images/icon/building.svg?component';
+import IconBusiness from '@/assets/images/icon/business.svg?component';
 
 export default {
   components: {
@@ -21,7 +21,7 @@ export default {
     PageTextGroup,
     PageMainText,
     IconPerson,
-    IconBuilding,
+    IconBusiness,
   },
   setup() {
     const layer = ref(null);
@@ -65,7 +65,7 @@ export default {
           </li>
           <li :class="$style['icon-list__item']">
             <button type="button" :class="$style['icon-list__block']">
-              <span :class="$style['icon-list__icon']"><IconBuilding /></span>
+              <span :class="$style['icon-list__icon']"><IconBusiness /></span>
               <span :class="$style['icon-list__content']">
                 <span :class="$style['icon-list__title']">법인</span>
               </span>
