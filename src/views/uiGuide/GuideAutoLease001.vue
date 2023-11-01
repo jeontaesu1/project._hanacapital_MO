@@ -14,6 +14,7 @@ import LayerAutoLeaseEvaluationExpire from '@/views/auto/LayerAutoLeaseEvaluatio
 import LayerAutoLeaseOrderImported from '@/views/auto/LayerAutoLeaseOrderImported.vue';
 import LayerAutoLeaseOrderDomestic from '@/views/auto/LayerAutoLeaseOrderDomestic.vue';
 import LayerAutoLeaseOrderCarNumber from '@/views/auto/LayerAutoLeaseOrderCarNumber.vue';
+import AF_M00_l100 from '@/views/auto/AF_M00_l100.vue';
 
 export default {
   components: {
@@ -29,6 +30,7 @@ export default {
     LayerAutoLeaseOrderImported,
     LayerAutoLeaseOrderDomestic,
     LayerAutoLeaseOrderCarNumber,
+    AF_M00_l100,
   },
   setup() {
     const layer001 = ref(null);
@@ -39,6 +41,7 @@ export default {
     const layer006 = ref(null);
     const layer007 = ref(null);
     const layer008 = ref(null);
+    const layer009 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -64,6 +67,9 @@ export default {
     const layer008Open = (e = {}) => {
       layer008.value.layer.open(e.target);
     };
+    const layer009Open = (e = {}) => {
+      layer009.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -74,6 +80,7 @@ export default {
       layer006,
       layer007,
       layer008,
+      layer009,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -82,6 +89,7 @@ export default {
       layer006Open,
       layer007Open,
       layer008Open,
+      layer009Open,
     };
   },
 };
@@ -135,6 +143,11 @@ export default {
           >차량번호 등록<br />AF_M02_l011</BasicButton
         >
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer008Open"
+          >서류 등록 완료<br />AF_M00_l100</BasicButton
+        >
+      </ButtonListItem>
     </ButtonList>
 
     <LayerAutoLeaseEvaluationComplete ref="layer001" />
@@ -145,5 +158,6 @@ export default {
     <LayerAutoLeaseOrderImported ref="layer005" />
     <LayerAutoLeaseOrderDomestic ref="layer006" />
     <LayerAutoLeaseOrderCarNumber ref="layer007" />
+    <AF_M00_l100 ref="layer008" />
   </PageContents>
 </template>
