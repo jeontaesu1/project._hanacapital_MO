@@ -18,7 +18,7 @@ import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
 
-import IconMaximum from '@/assets/images/icon/icon-maximum.svg?component';
+import IconMaximum from '@/assets/images/icon/maximum.svg?component';
 import IconExpectedInterestRate from '@/assets/images/icon/expected-interest-rate.svg?component';
 
 export default {
