@@ -17,7 +17,7 @@ import BasicHr from '@/components/ui/common/BasicHr.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
 
 import IconSearchMoney from '@/assets/images/icon/search-money.svg?component';
-import IconInterestRate from '@/assets/images/icon/interest-rate.svg?component';
+import IconExpectedInterestRate from '@/assets/images/icon/expected-interest-rate.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
 
 export default {
@@ -36,7 +36,7 @@ export default {
     BasicHr,
     UnitText,
     IconSearchMoney,
-    IconInterestRate,
+    IconExpectedInterestRate,
     IconCalculate,
   },
   setup() {
@@ -86,7 +86,7 @@ export default {
               </li>
               <li :class="$style['product-detail__item']">
                 <div :class="$style['product-detail__icon']">
-                  <IconInterestRate />
+                  <IconExpectedInterestRate />
                 </div>
                 <div :class="$style['product-detail__block']">
                   <div :class="$style['product-detail__title']">예상금리</div>
