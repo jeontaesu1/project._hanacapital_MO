@@ -80,7 +80,7 @@ export default {
 
     <!-- Case : 시세등록 전 -->
     <div class="contents-wrap">
-      <IllustObject type="search" />
+      <IllustObject type="graph" />
 
       <BasicHr
         theme="quaternary"
