@@ -1167,6 +1167,10 @@ const datas = () => [
             date: '2023.09.21',
             text: '타이틀 텍스트 굵기 수정\n- Member_M05_l001\n- Member_M05_l005\n- Member_M05_l004',
           },
+          {
+            date: '2023.11.01',
+            text: 'Member_M05_l005 배너 이미지 교체',
+          },
         ],
       },
       {
@@ -5008,7 +5012,12 @@ const datas = () => [
         path: '/setting/hana-one-sign-guide',
         status: 'end',
         create: '2023.05.12',
-        log: [],
+        log: [
+          {
+            date: '2023.11.01',
+            text: '배너 이미지 교체',
+          },
+        ],
       },
     ],
   },
