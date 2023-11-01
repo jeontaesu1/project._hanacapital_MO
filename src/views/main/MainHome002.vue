@@ -186,7 +186,14 @@ export default {
             v-slot="accordionItemSlotProps"
           >
             <div :class="$style['progress__head']">
+              <!-- Case : 진행 중 상품일 경우 노출 -->
               <h2 :class="$style['progress__title']">약정 중 상품</h2>
+              <!-- // Case : 진행 중 상품일 경우 노출 -->
+
+              <!-- Case : 거래 상품일 경우 노출 -->
+              <h2 :class="$style['progress__title']">거래 중 상품</h2>
+              <!-- // Case : 거래 상품일 경우 노출 -->
+
               <p :class="$style['progress__count']">
                 <span :class="$style['progress__count-num']">99</span>
                 <span :class="$style['progress__count-unit']">건</span>
@@ -598,6 +605,58 @@ export default {
                     </div>
                   </div>
                   <!-- // Case : 팩토링 -->
+
+                  <!-- Case : 30건 이상인 경우 -->
+                  <div>
+                    <div :class="$style['progress__contents-top']">
+                      <div :class="$style['progress__contents-head']">
+                        <div :class="$style['progress__contents-title']">
+                          <div class="flex-box">
+                            <div class="flex-box__cell">행복아파트론</div>
+                            <div class="flex-box__cell flex-box__cell--small">
+                              <span
+                                class="text-body-5 color-gray font-weight-regular"
+                              >
+                                외 0건
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Case : 2건 이상일 경우 노출 -->
+                        <div :class="$style['progress__contents-right']">
+                          <TextButton
+                            :block="true"
+                            :iconFillAll="true"
+                            :classNames="{
+                              wrap: 'text-body-4 color-gray',
+                            }"
+                          >
+                            전체보기
+                            <template v-slot:rightIcon>
+                              <IconAdd />
+                            </template>
+                          </TextButton>
+                        </div>
+                        <!-- // Case : 2건 이상일 경우 노출 -->
+                      </div>
+                    </div>
+
+                    <div :class="$style['progress__amount']">
+                      <dl :class="$style['progress__amount-block']">
+                        <dt
+                          :class="[
+                            $style['progress__amount-key-block'],
+                            'text-title-2',
+                            'font-weight-medium',
+                            'color-black',
+                          ]"
+                        >
+                          자세히 보기
+                        </dt>
+                      </dl>
+                    </div>
+                  </div>
+                  <!-- // Case : 30건 이상인 경우 -->
                 </div>
                 <!-- // Case : 거래 상품 -->
               </section>

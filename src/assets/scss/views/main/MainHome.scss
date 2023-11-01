@@ -230,6 +230,10 @@
       @include font-size-default(14);
       font-weight: 400;
       color: $color-gray-80;
+
+      &-block {
+        padding: 20px 0;
+      }
     }
 
     &-val {
