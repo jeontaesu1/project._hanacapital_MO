@@ -25,7 +25,7 @@ import UiAccordionOpener from '@/components/ui/accordion/UiAccordionOpener.vue';
 import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 import IconHyendaiRentalCare from '@/assets/images/etc-logo/hyendai-rental-care.svg?component';
-import IconCar from '@/assets/images/icon/car.svg?component';
+import IconCarRegistration from '@/assets/images/icon/car-registration.svg?component';
 import IconRealEstateRegistration from '@/assets/images/icon/real-estate-registration.svg?component';
 
 export default {
@@ -50,7 +50,7 @@ export default {
     UiAccordionOpener,
     BottomSticky,
     IconHyendaiRentalCare,
-    IconCar,
+    IconCarRegistration,
     IconRealEstateRegistration,
   },
   setup() {
@@ -1101,7 +1101,7 @@ export default {
             <li :class="$style['icon-list__item']">
               <RouterLink to="" :class="$style['icon-list__block']">
                 <span :class="$style['icon-list__icon']">
-                  <IconCar />
+                  <IconCarRegistration />
                 </span>
                 <span :class="$style['icon-list__content']">
                   <span :class="$style['icon-list__text']">

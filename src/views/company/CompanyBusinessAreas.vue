@@ -10,7 +10,7 @@ import PageMainText from '@/components/ui/text/PageMainText.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 
 import IconPersonalFinance from '@/assets/images/icon/personal-finance.svg?component';
-import IconCarSecurity from '@/assets/images/icon/car-security.svg?component';
+import IconCar from '@/assets/images/icon/car.svg?component';
 import IconCorporateFinance from '@/assets/images/icon/corporate-finance.svg?component';
 import IconGlobalFinance from '@/assets/images/icon/global-finance.svg?component';
 
@@ -21,7 +21,7 @@ export default {
     PageMainText,
     BasicHr,
     IconPersonalFinance,
-    IconCarSecurity,
+    IconCar,
     IconCorporateFinance,
     IconGlobalFinance,
   },
@@ -91,7 +91,7 @@ export default {
 
       <section :class="$style['company-info']">
         <div :class="$style['company-info__icon']">
-          <IconCarSecurity />
+          <IconCar />
         </div>
         <h3 :class="$style['company-info__title']">
           하나의 젊음!<br />

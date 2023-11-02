@@ -22,6 +22,7 @@ import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
 import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 
 import IconPopup from '@/assets/images/icon/popup.svg?component';
+import IconHomeSetting from '@/assets/images/icon/home-setting.svg?component';
 import IconSettingDecide from '@/assets/images/icon/setting-decide.svg?component';
 import IconBasicSetting from '@/assets/images/icon/basic-setting.svg?component';
 import IconSend from '@/assets/images/icon/send.svg?component';
@@ -45,6 +46,7 @@ export default {
     BoxCheckList,
     BoxCheckListItem,
     IconPopup,
+    IconHomeSetting,
     IconSettingDecide,
     IconBasicSetting,
     IconSend,

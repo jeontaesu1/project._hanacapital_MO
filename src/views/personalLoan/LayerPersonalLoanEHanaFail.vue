@@ -15,7 +15,7 @@ import IllustObject from '@/components/ui/common/IllustObject.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 
 import IconBuilding from '@/assets/images/icon/building.svg?component';
-import IconCar from '@/assets/images/icon/car.svg?component';
+import IconCarSecurity from '@/assets/images/icon/car-security.svg?component';
 import IconPig from '@/assets/images/icon/pig.svg?component';
 import IconTell from '@/assets/images/icon/tell.svg?component';
 
@@ -33,7 +33,7 @@ export default {
     IllustObject,
     BasicHr,
     IconBuilding,
-    IconCar,
+    IconCarSecurity,
     IconPig,
     IconTell,
   },
@@ -77,36 +77,38 @@ export default {
         <ul :class="$style['icon-list__list']">
           <li :class="$style['icon-list__item']">
             <button type="button" :class="$style['icon-list__block']">
+              <span :class="$style['icon-list__icon']"><IconPig /></span>
+              <span :class="$style['icon-list__content']">
+                <span :class="$style['icon-list__text']">
+                  소득이 있다면 쉽고 빠른 신용대출
+                </span>
+                <span :class="$style['icon-list__title']">e하나신용대출</span>
+              </span>
+            </button>
+          </li>
+          <li :class="$style['icon-list__item']">
+            <button type="button" :class="$style['icon-list__block']">
               <span :class="$style['icon-list__icon']"><IconBuilding /></span>
               <span :class="$style['icon-list__content']">
                 <span :class="$style['icon-list__text']">
-                  아파트를 소유중이신가요?
+                  아파트 소유자를 위한 무담보 아파트 신용대출
                 </span>
-                <span :class="$style['icon-list__title']">행복아파트론</span>
+                <span :class="$style['icon-list__title']"> 행복아파트론 </span>
               </span>
             </button>
           </li>
           <li :class="$style['icon-list__item']">
             <button type="button" :class="$style['icon-list__block']">
-              <span :class="$style['icon-list__icon']"><IconCar /></span>
-              <span :class="$style['icon-list__content']">
-                <span :class="$style['icon-list__text']">
-                  자동차를 소유중이신가요?
-                </span>
-                <span :class="$style['icon-list__title']">
-                  원큐자동차담보대출
-                </span>
-              </span>
-            </button>
-          </li>
-          <li :class="$style['icon-list__item']">
-            <button type="button" :class="$style['icon-list__block']">
-              <span :class="$style['icon-list__icon']"><IconPig /></span>
+              <span :class="$style['icon-list__icon']"
+                ><IconCarSecurity
+              /></span>
               <span :class="$style['icon-list__content']">
                 <span :class="$style['icon-list__text']"
-                  >소득이 있으신가요?</span
+                  >내 차만 있다면 특별한도와 금리혜택까지</span
                 >
-                <span :class="$style['icon-list__title']">e하나신용대출</span>
+                <span :class="$style['icon-list__title']"
+                  >원큐자동차담보대출</span
+                >
               </span>
             </button>
           </li>

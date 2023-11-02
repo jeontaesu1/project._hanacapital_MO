@@ -22,7 +22,7 @@ import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
 
-import IconSearchMoney from '@/assets/images/icon/search-money.svg?component';
+import IconMaximum from '@/assets/images/icon/maximum.svg?component';
 import IconExpectedInterestRate from '@/assets/images/icon/expected-interest-rate.svg?component';
 import IconCommisionRate from '@/assets/images/icon/commission-rate.svg?component';
 
@@ -47,7 +47,7 @@ export default {
     FormInvalid,
     FormInvalidMessage,
     UnitText,
-    IconSearchMoney,
+    IconMaximum,
     IconExpectedInterestRate,
     IconCommisionRate,
   },
@@ -91,7 +91,7 @@ export default {
           <ul :class="$style['product-detail__list']">
             <li :class="$style['product-detail__item']">
               <div :class="$style['product-detail__icon']">
-                <IconSearchMoney />
+                <IconMaximum />
               </div>
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">최대한도</div>

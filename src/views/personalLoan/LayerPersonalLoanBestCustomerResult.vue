@@ -16,7 +16,7 @@ import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
 
-import IconSearchMoney from '@/assets/images/icon/search-money.svg?component';
+import IconMaximum from '@/assets/images/icon/maximum.svg?component';
 import IconExpectedInterestRate from '@/assets/images/icon/expected-interest-rate.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
 
@@ -35,7 +35,7 @@ export default {
     BasicBox,
     BasicHr,
     UnitText,
-    IconSearchMoney,
+    IconMaximum,
     IconExpectedInterestRate,
     IconCalculate,
   },
@@ -75,7 +75,7 @@ export default {
             <ul :class="$style['product-detail__list']">
               <li :class="$style['product-detail__item']">
                 <div :class="$style['product-detail__icon']">
-                  <IconSearchMoney />
+                  <IconMaximum />
                 </div>
                 <div :class="$style['product-detail__block']">
                   <div :class="$style['product-detail__title']">최대한도</div>

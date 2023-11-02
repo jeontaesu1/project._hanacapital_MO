@@ -17,7 +17,7 @@ import IconCertification from '@/assets/images/icon/certification.svg?component'
 import IconSecurity from '@/assets/images/icon/security.svg?component';
 import IconPig from '@/assets/images/icon/pig.svg?component';
 import IconBuilding from '@/assets/images/icon/building.svg?component';
-import IconCar from '@/assets/images/icon/car.svg?component';
+import IconCarSecurity from '@/assets/images/icon/car-security.svg?component';
 import IconStock from '@/assets/images/icon/stock.svg?component';
 
 export default {
@@ -35,7 +35,7 @@ export default {
     IconSecurity,
     IconPig,
     IconBuilding,
-    IconCar,
+    IconCarSecurity,
     IconStock,
   },
   setup() {
@@ -154,7 +154,7 @@ export default {
         </li>
         <li :class="$style['icon-list__item']">
           <RouterLink to="" :class="$style['icon-list__block']">
-            <span :class="$style['icon-list__icon']"><IconCar /></span>
+            <span :class="$style['icon-list__icon']"><IconCarSecurity /></span>
             <span :class="$style['icon-list__content']">
               <span :class="$style['icon-list__text']"
                 >내 차만 있다면 특별한도와 금리혜택을</span
