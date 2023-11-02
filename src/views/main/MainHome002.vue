@@ -963,7 +963,7 @@ export default {
                   ]"
                   ><IconBird
                 /></span>
-                <span :class="$style['icon-list__content']">
+                <span :class="$style['icon-list__content--secondary']">
                   <span :class="$style['icon-list__text']"
                     >운새가 말해주는</span
                   >
@@ -980,7 +980,7 @@ export default {
                   ]"
                   ><IconGraph
                 /></span>
-                <span :class="$style['icon-list__content']">
+                <span :class="$style['icon-list__content--secondary']">
                   <span :class="$style['icon-list__text']"
                     >내 차, 저 아파트가 얼마일까?</span
                   >
@@ -999,7 +999,7 @@ export default {
                   ]"
                   ><IconStudy
                 /></span>
-                <span :class="$style['icon-list__content']">
+                <span :class="$style['icon-list__content--secondary']">
                   <span :class="$style['icon-list__text']"
                     >알아두면 유용하고 재미있는</span
                   >
