@@ -58,7 +58,7 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          김하나님의 상담 신청이<br />
+          김하나님의 대출 신청이<br />
           완료되었습니다
         </PageMainText>
       </PageTextGroup>
@@ -69,7 +69,7 @@ export default {
       <BasicBanner
         tagName="RouterLink"
         to="/my-info/join-membership"
-        thumb="/images/banner/banner-money-up.png"
+        thumb="/images/banner/banner-join.png"
       >
         <p class="text-body-4 color-gray row-margin-mini nowrap">
           회원만을 위한 특별한 혜택

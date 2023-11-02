@@ -67,7 +67,7 @@ export default {
       <IllustObject type="complete" />
 
       <!-- DD : 하드코딩 배너 -->
-      <BasicBanner thumb="/images/banner/banner-money-up.png" @click="() => {}">
+      <BasicBanner thumb="/images/banner/banner-1q.png" @click="() => {}">
         <p class="text-body-4 color-gray row-margin-mini nowrap">
           더 많은 혜택을 누려보세요!
         </p>
