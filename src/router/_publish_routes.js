@@ -696,6 +696,11 @@ const routes = [
     meta: { layout: 'NoneLayout' },
   },
   {
+    path: '/redirect/redirect-app-004',
+    name: '/redirect/redirect-app-004',
+    component: () => import('@/views/redirect/Common_M00_p400.vue'),
+  },
+  {
     path: '/redirect/app-free',
     name: '/redirect/app-free',
     component: () => import('@/views/redirect/RedirectAppFree.vue'),

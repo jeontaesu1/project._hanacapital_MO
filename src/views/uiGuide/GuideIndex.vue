@@ -473,6 +473,17 @@ const datas = () => [
       },
       {
         depth2: '앱 중계 페이지',
+        depth3: '1Q 캐피탈\n Common_M00_p400',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/redirect/redirect-app-004',
+        status: 'end',
+        create: '2023.11.02',
+        log: [],
+      },
+      {
+        depth2: '앱 중계 페이지',
         depth3: '1Q 캐피탈\nCommon_M00_p100',
         depth4: '',
         depth5: '',
@@ -503,6 +514,7 @@ const datas = () => [
           },
         ],
       },
+
       {
         depth2: '앱 중계 페이지',
         depth3: '앱프리\nCommon_M00_p008',
