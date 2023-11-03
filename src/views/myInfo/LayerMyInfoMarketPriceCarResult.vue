@@ -26,8 +26,11 @@ import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import CarThumb from '@/components/ui/imageData/CarThumb.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
 
 import IconCarSecurity from '@/assets/images/icon/car-security.svg?component';
+import IconLogo from '@/assets/images/icon/hanacapital-small.svg?component';
+import IconLink from '@/assets/images/icon/link.svg?component';
 
 export default {
   components: {
@@ -55,7 +58,10 @@ export default {
     InputBlock,
     InputBlockCell,
     CarThumb,
+    TextButton,
     IconCarSecurity,
+    IconLogo,
+    IconLink,
   },
   setup() {
     const state = reactive({
@@ -199,6 +205,30 @@ export default {
             </button>
           </li>
         </ul>
+      </div>
+
+      <BasicHr
+        type="contents"
+        theme="quaternary"
+        className="row-margin-container"
+      />
+
+      <div :class="$style['join']">
+        <div :class="$style['join__inner']">
+          <div :class="$style['join__icon']"><IconLogo /></div>
+          <div :class="$style['join__title']">이 시세를 계속 보려면?</div>
+          <TextButton
+            :block="true"
+            :classNames="{
+              wrap: [$style['join__link'], 'text-body-4 color-gray'],
+            }"
+          >
+            앱 설치하러 가기
+            <template v-slot:rightIcon>
+              <IconLink />
+            </template>
+          </TextButton>
+        </div>
       </div>
 
       <template v-slot:foot>
