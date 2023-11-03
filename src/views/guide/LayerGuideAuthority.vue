@@ -161,7 +161,6 @@ export default {
             <div :class="$style['authority__contents']">
               <div :class="$style['authority__head']">
                 <div :class="$style['authority__title']">기기 및 앱 기록</div>
-                <div :class="$style['authority__sub']">(선택)</div>
               </div>
               <div :class="$style['authority__text']">
                 전자금융거래 사고 방지를 위해 기기에<br />
@@ -170,6 +169,14 @@ export default {
             </div>
           </li>
         </ul>
+
+        <div :class="[$style['text-wrap'], 'row-margin-contents']">
+          <p class="text-body-4 font-weight-medium">
+            하나원큐캐피탈 모바일 앱은 고객센터 및 ARS 상담전화, 회원가입시 본인
+            인증, 기 이용 고객 구분을 위한 본인 기기 확인을 위해 전화번호를
+            하나캐피탈사이트에 수집/전송/동기화/저장합니다.
+          </p>
+        </div>
       </div>
 
       <template v-slot:foot>
