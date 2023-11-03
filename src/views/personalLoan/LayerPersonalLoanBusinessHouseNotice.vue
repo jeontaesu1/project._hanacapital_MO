@@ -6,7 +6,6 @@ import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import ToastPopup from '@/components/ui/layer/ToastPopup.vue';
 import ToastPopupHead from '@/components/ui/layer/ToastPopupHead.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
-import PopupSubTitle from '@/components/ui/layer/PopupSubTitle.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
@@ -17,7 +16,6 @@ export default {
     ToastPopup,
     ToastPopupHead,
     PopupTitle,
-    PopupSubTitle,
     BasicButton,
     ButtonList,
     ButtonListItem,
@@ -37,20 +35,31 @@ export default {
     <ToastPopup>
       <template v-slot:head>
         <ToastPopupHead>
-          <PopupTitle>사업자 대출 진행안내</PopupTitle>
-          <PopupSubTitle>
-            고객님은 사업자대출을 신청하셨습니다.<br />
-            아래 사항을 참고하시고 사업자대출로 진행을 원하실 경우 ‘동의’를
-            눌러주세요.
-          </PopupSubTitle>
+          <PopupTitle>사업자 주택담보대출 안내</PopupTitle>
         </ToastPopupHead>
       </template>
 
-      <p class="text-body-3 color-red">
-        사업자대출은 고객님 명의로 개인사업자를 운영하시고, 대출금을 사업자
-        운영자금 목적으로 사용하시는 경우 가능합니다.(대출금액 1억 이하 시 별도
-        자금용도 증빙은 하지 않습니다.)
-      </p>
+      <ul
+        :class="[
+          $style['basic-list'],
+          $style['basic-list--regular'],
+          $style['basic-list--regular-margin'],
+        ]"
+      >
+        <li :class="[$style['basic-list__item'], 'text-body-3', 'color-black']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            실제 사업영위, 담보주택 소유권 이전등기일로부터 3개월 경과부터 신청
+            가능합니다.
+          </div>
+        </li>
+        <li :class="[$style['basic-list__item'], 'text-body-3', 'color-black']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            주택임대사업자, 주택매매사업자는 취급 불가합니다.
+          </div>
+        </li>
+      </ul>
 
       <template v-slot:foot>
         <ButtonList
@@ -59,10 +68,14 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton>동의</BasicButton>
+            <BasicButton>확인</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
     </ToastPopup>
   </UiLayer>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/personalLoan/LayerPersonalLoanBusinessHouseNotice.scss';
+</style>

@@ -186,7 +186,7 @@ export default {
         </h3>
         <p class="text-body-3 color-gray-tertiary">
           내 마음대로 최대 84개월까지<br />
-          대출기간을 설정하여 월 납입부담을 줄여보세요
+          대출기간을 설정하여 월 납입부담을 줄여보세요.
         </p>
         <div :class="[$style['illustration-img'], 'row-margin-item-group']">
           <Img120Months />

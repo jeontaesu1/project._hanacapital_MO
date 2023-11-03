@@ -625,8 +625,8 @@ export default {
                     <div :class="$style['step__badge']">STEP 1</div>
                   </div>
                   <div :class="$style['step__text']">
-                    <strong>성명, 주민등록번호, 휴대폰번호</strong>를<br />
-                    입력합니다.
+                    <strong>성명, 주민등록번호, 휴대폰번호</strong><br />
+                    입력 및 본인인증 합니다.
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
