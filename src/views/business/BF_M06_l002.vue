@@ -16,6 +16,7 @@ import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
 import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
 import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 
+import LogoOsstemImplant from '@/assets/images/etc-logo/osstem_implant.svg?component';
 import LogoDentium from '@/assets/images/etc-logo/dentium.svg?component';
 import LogoShinhung from '@/assets/images/etc-logo/shinhung.svg?component';
 import LogoNeoBiotech from '@/assets/images/etc-logo/neo-biotech.svg?component';
@@ -39,6 +40,7 @@ export default {
     BoxCheckList,
     BoxCheckListItem,
 
+    LogoOsstemImplant,
     LogoDentium,
     LogoShinhung,
     LogoNeoBiotech,
@@ -76,6 +78,26 @@ export default {
 
       <!-- Case : 치과용품 -->
       <BoxCheckList align="full">
+        <BoxCheckListItem>
+          <BoxCheck
+            :contents="true"
+            type="radio"
+            name="BF_M06_l002_brand_001"
+            id="BF_M06_l002_brand_001_006"
+          >
+            <div class="flex-box">
+              <div class="flex-box__cell">
+                <LogoOsstemImplant :class="$style['logo']" />
+              </div>
+              <div class="flex-box__cell flex-box__cell--medium flex-1">
+                <BoxCheckLabel
+                  :classNames="{ label: 'text-body-1 font-weight-medium' }"
+                  >오스템임플란트</BoxCheckLabel
+                >
+              </div>
+            </div>
+          </BoxCheck>
+        </BoxCheckListItem>
         <BoxCheckListItem>
           <BoxCheck
             :contents="true"

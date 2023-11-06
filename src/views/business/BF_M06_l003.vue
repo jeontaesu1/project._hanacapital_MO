@@ -60,6 +60,34 @@ export default {
         </PageMainText>
       </PageTextGroup>
 
+      <!-- Case : 오스템임플란트 -->
+      <BoxCheckList align="full">
+        <BoxCheckListItem>
+          <BoxCheck
+            :contents="true"
+            type="radio"
+            name="BF_M06_l003_product_007"
+            id="BF_M06_l003_product_007_001"
+          >
+            <BoxCheckLabel>임플란트_유이자</BoxCheckLabel>
+          </BoxCheck>
+        </BoxCheckListItem>
+        <BoxCheckListItem>
+          <BoxCheck
+            :contents="true"
+            type="radio"
+            name="BF_M06_l003_product_007"
+            id="BF_M06_l003_product_007_002"
+          >
+            <BoxCheckLabel>임플란트패키지_유이자</BoxCheckLabel>
+            <div class="text-body-4 color-gray-secondary row-margin-small">
+              (인테리어+치과용장비)
+            </div>
+          </BoxCheck>
+        </BoxCheckListItem>
+      </BoxCheckList>
+      <!-- // Case : 오스템임플란트 -->
+
       <!-- Case : 덴티움 -->
       <BoxCheckList align="full">
         <BoxCheckListItem>
@@ -140,7 +168,7 @@ export default {
             id="BF_M06_l003_product_003_004"
           >
             <BoxCheckLabel>임플란트+체어</BoxCheckLabel>
-            <div class="text-body-5 color-gray-secondary row-margin-small">
+            <div class="text-body-4 color-gray-secondary row-margin-small">
               부분이자
             </div>
           </BoxCheck>
@@ -158,7 +186,7 @@ export default {
             id="BF_M06_l003_product_004_001"
           >
             <BoxCheckLabel>임플란트 10개월</BoxCheckLabel>
-            <div class="text-body-5 color-gray-secondary row-margin-small">
+            <div class="text-body-4 color-gray-secondary row-margin-small">
               무이자
             </div>
           </BoxCheck>
@@ -171,7 +199,7 @@ export default {
             id="BF_M06_l003_product_004_002"
           >
             <BoxCheckLabel>임플란트 5개월</BoxCheckLabel>
-            <div class="text-body-5 color-gray-secondary row-margin-small">
+            <div class="text-body-4 color-gray-secondary row-margin-small">
               무이자
             </div>
           </BoxCheck>
@@ -184,7 +212,7 @@ export default {
             id="BF_M06_l003_product_004_003"
           >
             <BoxCheckLabel>임플란트+체어</BoxCheckLabel>
-            <div class="text-body-5 color-gray-secondary row-margin-small">
+            <div class="text-body-4 color-gray-secondary row-margin-small">
               부분이자24개월
             </div>
           </BoxCheck>
@@ -197,7 +225,7 @@ export default {
             id="BF_M06_l003_product_004_004"
           >
             <BoxCheckLabel>임플란트+체어</BoxCheckLabel>
-            <div class="text-body-5 color-gray-secondary row-margin-small">
+            <div class="text-body-4 color-gray-secondary row-margin-small">
               부분이자36개월
             </div>
           </BoxCheck>
@@ -210,7 +238,7 @@ export default {
             id="BF_M06_l003_product_004_005"
           >
             <BoxCheckLabel>치과용체어+임플란트36개월</BoxCheckLabel>
-            <div class="text-body-5 color-gray-secondary row-margin-small">
+            <div class="text-body-4 color-gray-secondary row-margin-small">
               유이자
             </div>
           </BoxCheck>
@@ -223,7 +251,7 @@ export default {
             id="BF_M06_l003_product_004_006"
           >
             <BoxCheckLabel>임플란트 20개월</BoxCheckLabel>
-            <div class="text-body-5 color-gray-secondary row-margin-small">
+            <div class="text-body-4 color-gray-secondary row-margin-small">
               무이자
             </div>
           </BoxCheck>
@@ -236,7 +264,7 @@ export default {
             id="BF_M06_l003_product_004_007"
           >
             <BoxCheckLabel>임플란트15개월</BoxCheckLabel>
-            <div class="text-body-5 color-gray-secondary row-margin-small">
+            <div class="text-body-4 color-gray-secondary row-margin-small">
               무이자
             </div>
           </BoxCheck>
@@ -249,7 +277,7 @@ export default {
             id="BF_M06_l003_product_004_008"
           >
             <BoxCheckLabel>임플란트12개월</BoxCheckLabel>
-            <div class="text-body-5 color-gray-secondary row-margin-small">
+            <div class="text-body-4 color-gray-secondary row-margin-small">
               무이자
             </div>
           </BoxCheck>
@@ -262,7 +290,7 @@ export default {
             id="BF_M06_l003_product_004_009"
           >
             <BoxCheckLabel>임플란트+체어</BoxCheckLabel>
-            <div class="text-body-5 color-gray-secondary row-margin-small">
+            <div class="text-body-4 color-gray-secondary row-margin-small">
               무이자 15개월
             </div>
           </BoxCheck>
