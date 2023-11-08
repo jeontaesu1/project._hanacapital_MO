@@ -64,10 +64,12 @@ export default {
       <IllustObject type="complete" />
 
       <div :class="$style['box-wrap']">
-        <div :class="$style['box-wrap--text']">
-          차량출고요청 및 계약사항 안내를 위해<br />
-          <span class="color-green font-weight-medium">“녹취콜”</span>을
-          요청합니다
+        <div :class="$style['box-wrap--block']">
+          <p class="text-body-1 font-weight-regular">
+            차량출고요청 및 계약사항 안내를 위해<br />
+            <span class="color-green font-weight-medium">“녹취콜”</span>을
+            요청합니다
+          </p>
         </div>
       </div>
 
