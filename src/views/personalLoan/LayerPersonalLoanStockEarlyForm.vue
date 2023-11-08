@@ -31,6 +31,7 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import StepProgress from '@/components/ui/progress/StepProgress.vue';
+import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 
 export default {
   components: {
@@ -63,6 +64,7 @@ export default {
     ButtonListItem,
     BasicButton,
     StepProgress,
+    FormHelpText,
   },
   setup() {
     const state = reactive({
@@ -244,6 +246,12 @@ export default {
               </template>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
+            <FormHelpText
+              :classNames="{
+                wrap: 'align-right',
+              }"
+              >이백만원</FormHelpText
+            >
           </FormInvalid>
         </FormListItem>
       </FormList>

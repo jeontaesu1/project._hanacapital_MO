@@ -21,6 +21,7 @@ import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
+import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 
 import IconMaximum from '@/assets/images/icon/maximum.svg?component';
 import IconExpectedInterestRate from '@/assets/images/icon/expected-interest-rate.svg?component';
@@ -47,6 +48,7 @@ export default {
     FormInvalid,
     FormInvalidMessage,
     UnitText,
+    FormHelpText,
     IconMaximum,
     IconExpectedInterestRate,
     IconCommisionRate,
@@ -152,6 +154,12 @@ export default {
               </template>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
+            <FormHelpText
+              :classNames="{
+                wrap: 'align-right',
+              }"
+              >사천만원</FormHelpText
+            >
           </FormInvalid>
         </FormListItem>
 
