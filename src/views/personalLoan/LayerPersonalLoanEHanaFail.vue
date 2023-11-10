@@ -8,6 +8,7 @@ import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
+import PageSubText from '@/components/ui/text/PageSubText.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
@@ -17,7 +18,6 @@ import BasicHr from '@/components/ui/common/BasicHr.vue';
 import IconBuilding from '@/assets/images/icon/building.svg?component';
 import IconCarSecurity from '@/assets/images/icon/car-security.svg?component';
 import IconPig from '@/assets/images/icon/pig.svg?component';
-import IconTell from '@/assets/images/icon/tell.svg?component';
 
 export default {
   components: {
@@ -27,6 +27,7 @@ export default {
     FullPopupHead,
     PageTextGroup,
     PageMainText,
+    PageSubText,
     BasicButton,
     ButtonList,
     ButtonListItem,
@@ -35,7 +36,6 @@ export default {
     IconBuilding,
     IconCarSecurity,
     IconPig,
-    IconTell,
   },
   setup() {
     const layer = ref(null);
@@ -63,6 +63,9 @@ export default {
           김하나님, 신청하신 상품은<br />
           대출진행이 어렵습니다
         </PageMainText>
+        <PageSubText>
+          자세한 내용은 상담원에게 문의주시기 바랍니다.
+        </PageSubText>
       </PageTextGroup>
 
       <IllustObject type="fail" />
@@ -122,14 +125,15 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton tagName="a">
-              <template v-slot:leftIcon>
-                <IconTell />
-              </template>
-              1599-7942
-            </BasicButton>
+            <BasicButton tagName="a">신용대출 상담 1599-7942</BasicButton>
           </ButtonListItem>
         </ButtonList>
+
+        <div class="row-margin-item">
+          <p class="text-body-3 color-gray font-weight-regular align-center">
+            평일 09:00 ~ 18:00
+          </p>
+        </div>
       </template>
     </FullPopup>
   </UiLayer>
