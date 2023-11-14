@@ -35,6 +35,13 @@
       display: block;
     }
 
+    &-secondary {
+      display: flex;
+      flex: 1;
+      justify-content: flex-end;
+      color: $color-gray-70;
+    }
+
     &-optional {
       display: block;
       align-self: end;

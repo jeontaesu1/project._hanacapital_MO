@@ -15,6 +15,7 @@ const defaultClassNames = () => ({
   item: '',
   title: '',
   titleText: '',
+  titleSecondary: '',
   titleOptionalText: '',
   require: '',
   requireText: '',
@@ -38,6 +39,10 @@ export default {
       default: false,
     },
     titleText: {
+      Type: String,
+      default: '',
+    },
+    titleSecondary: {
       Type: String,
       default: '',
     },
@@ -220,6 +225,14 @@ export default {
         :class="[styleModule['form__title-text'], customClassNames.titleText]"
       >
         {{ titleText }}
+      </span>
+      <span
+        :class="[
+          styleModule['form__title-secondary'],
+          customClassNames.titleSecondary,
+        ]"
+      >
+        {{ titleSecondary }}
       </span>
       <span
         v-if="titleOptionalText"
