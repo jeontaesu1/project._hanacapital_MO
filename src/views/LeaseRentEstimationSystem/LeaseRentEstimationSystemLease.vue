@@ -4602,6 +4602,7 @@ export default {
                                     <BasicInput
                                       title="선수금 금액"
                                       id="leaseRentEstimationSystemLeaseAdvancePaymentPrice"
+                                      type="number"
                                       pattern="\d*"
                                       :useDelete="false"
                                       align="right"
