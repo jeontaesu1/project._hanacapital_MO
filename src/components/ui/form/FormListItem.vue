@@ -227,6 +227,7 @@ export default {
         {{ titleText }}
       </span>
       <span
+        v-if="titleSecondary"
         :class="[
           styleModule['form__title-secondary'],
           customClassNames.titleSecondary,
