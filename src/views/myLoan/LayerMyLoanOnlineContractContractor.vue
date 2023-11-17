@@ -62,6 +62,7 @@ export default {
       addressError004: false,
       addressError005: false,
       addressError006: false,
+      nationalityError: false,
     });
 
     const layer = ref(null);
@@ -115,6 +116,35 @@ export default {
                 <FormInvalidMessage>Error Message</FormInvalidMessage>
               </FormInvalid>
             </FormListItem>
+
+            <!-- Case : 중고차인 경우 -->
+            <FormListItem
+              titleText="국적"
+              target="#layerMyLoanOnlineContractContractorNationalityButton"
+              :selectOnly="true"
+            >
+              <FormInvalid :error="state.nationalityError">
+                <InputBlock :error="state.nationalityError">
+                  <InputBlockCell :flexible="true">
+                    <BasicSelect
+                      :option="[
+                        {
+                          value: '1',
+                          text: '대한민국',
+                        },
+                      ]"
+                      buttonTitle="국적 선택하기"
+                      layerTitle="국적을 선택해 주세요"
+                      id="layerMyLoanOnlineContractContractorNationality"
+                      buttonId="layerMyLoanOnlineContractContractorNationalityButton"
+                    />
+                  </InputBlockCell>
+                </InputBlock>
+
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
+            <!-- // Case : 중고차인 경우 -->
 
             <!-- Case : 기본 (리스, 렌트, 신차, 중고차 외) -->
             <FormListItem

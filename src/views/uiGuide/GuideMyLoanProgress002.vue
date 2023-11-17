@@ -60,6 +60,7 @@ import LayerMyLoanOnlineContractConfirm002 from '@/views/myLoan/LayerMyLoanOnlin
 import LayerMyLoanOnlineContractConfirm003 from '@/views/myLoan/LayerMyLoanOnlineContractConfirm003.vue';
 import LayerMyLoanOnlineContractConfirm004 from '@/views/myLoan/LayerMyLoanOnlineContractConfirm004.vue';
 import My_M03_l033 from '@/views/myLoan/My_M03_l033.vue';
+import My_M03_l016b from '@/views/myLoan/My_M03_l016b.vue';
 
 export default {
   components: {
@@ -121,6 +122,7 @@ export default {
     LayerMyLoanOnlineContractConfirm003,
     LayerMyLoanOnlineContractConfirm004,
     My_M03_l033,
+    My_M03_l016b,
   },
   setup() {
     const layer001 = ref(null);
@@ -177,6 +179,7 @@ export default {
     const layer052 = ref(null);
     const layer053 = ref(null);
     const layer054 = ref(null);
+    const layer055 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -340,6 +343,9 @@ export default {
     const layer054Open = (e = {}) => {
       layer054.value.layer.open(e.target);
     };
+    const layer055Open = (e = {}) => {
+      layer055.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -396,6 +402,7 @@ export default {
       layer052,
       layer053,
       layer054,
+      layer055,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -450,6 +457,7 @@ export default {
       layer052Open,
       layer053Open,
       layer054Open,
+      layer055Open,
     };
   },
 };
@@ -551,6 +559,11 @@ export default {
       <ButtonListItem>
         <BasicButton @click="layer011Open">
           계약신청 정보입력<br />My_M03_l016
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer055Open">
+          국적선택 팝업<br />My_M03_l016b
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
@@ -789,5 +802,6 @@ export default {
     <LayerMyLoanOnlineContractConfirm002 ref="layer043" />
     <LayerMyLoanOnlineContractConfirm003 ref="layer044" />
     <LayerMyLoanOnlineContractConfirm004 ref="layer045" />
+    <My_M03_l016b ref="layer055" />
   </PageContents>
 </template>
