@@ -82,6 +82,14 @@
       border-color: transparent;
       background-color: rgba($color-white, 0.1);
     }
+
+    &-quattuordenary {
+      @include font-size-default(10);
+      color: $color-white;
+      border-color: transparent;
+      background-color: $color-green-50;
+      padding: 0 6px;
+    }
   }
 
   &--square {
