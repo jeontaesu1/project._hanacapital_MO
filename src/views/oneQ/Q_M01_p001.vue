@@ -120,7 +120,7 @@ export default {
                         ><IconLightning
                       /></span>
                     </div>
-                    <div class="flex-box__cell flex-box__cell--small">
+                    <div class="flex-box__cell flex-1 flex-box__cell--small">
                       <h3 class="text-body-1 font-weight-bold">
                         특가할인! 장기렌터카 즉시출고
                       </h3>
