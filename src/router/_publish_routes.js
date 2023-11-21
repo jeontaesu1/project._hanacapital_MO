@@ -1907,6 +1907,16 @@ const routes = [
     component: () => import('@/views/oneQ/Q_M01_p001.vue'),
   },
   {
+    path: '/one-q/Q_M01_p002',
+    name: '/one-q/Q_M01_p002',
+    component: () => import('@/views/oneQ/Q_M01_p002.vue'),
+  },
+  {
+    path: '/one-q/Q_M01_p003',
+    name: '/one-q/Q_M01_p003',
+    component: () => import('@/views/oneQ/Q_M01_p003.vue'),
+  },
+  {
     path: '/one-q/Q_M02_p002',
     name: '/one-q/Q_M02_p002',
     component: () => import('@/views/oneQ/Q_M02_p002.vue'),
