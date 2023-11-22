@@ -1,0 +1,8 @@
+@import '@/assets/scss/components/import/basic-list.scss';
+
+.sub {
+  margin: 2px 0 0 0;
+  @include font-size-default(13);
+  color: $color-gray-80;
+  font-weight: 300;
+}
