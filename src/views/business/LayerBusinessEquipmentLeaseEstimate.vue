@@ -104,6 +104,42 @@ export default {
 
       <div>
         <FormList>
+          <!-- Case : 'GE헬스케어' 선택 시 노출 -->
+          <FormListItem titleText="금융조건" :forceFocus="true">
+            <FormInvalid :error="state.termsError">
+              <BoxCheckList :classNames="{ wrap: 'row-margin-item-group' }">
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="layerBusinessEquipmentLeaseEstimateTerms"
+                    id="layerBusinessEquipmentLeaseEstimateTerms001"
+                    :defaultChecked="true"
+                  >
+                    <BoxCheckLabel>제휴금리</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="layerBusinessEquipmentLeaseEstimateTerms"
+                    id="layerBusinessEquipmentLeaseEstimateTerms002"
+                  >
+                    <BoxCheckLabel>무이자</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+              </BoxCheckList>
+            </FormInvalid>
+          </FormListItem>
+
+          <!-- Case : 금융조건이 1개일 경우 -->
+          <FormListItem titleText="금융조건" :forceFocus="true">
+            <FormInvalid :error="state.termsError">
+              <p class="text-title-2">무이자</p>
+            </FormInvalid>
+          </FormListItem>
+          <!-- // Case : 금융조건이 1개일 경우 -->
+          <!-- // Case : 'GE헬스케어' 선택 시 노출 -->
+
           <FormListItem
             titleText="이용금액"
             target="#layerBusinessEquipmentLeaseEstimateName"
