@@ -1,7 +1,0 @@
-@import '@/assets/scss/components/import/basic-list.scss';
-
-.basic-list__item {
-  @include font-size-default(14);
-  font-weight: 400;
-  color: $color-semantic-essential;
-}

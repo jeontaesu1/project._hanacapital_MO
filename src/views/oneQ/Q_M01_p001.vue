@@ -224,6 +224,14 @@ export default {
                     스마트한 중고차 구입자금 대출
                   </div>
                   <div :class="$style['icon-list__title']">중고차오토론</div>
+                  <button
+                    type="button"
+                    :class="$style['icon-list__tag-button']"
+                  >
+                    <RoundStatus theme="undenary">
+                      지금 가입하면 최대 1만원 지원!
+                    </RoundStatus>
+                  </button>
                 </div>
                 <button type="button" :class="$style['icon-list__view-button']">
                   <span class="for-a11y">상세보기</span>
@@ -282,6 +290,14 @@ export default {
                   >
                     최대 1억원
                   </div>
+                  <button
+                    type="button"
+                    :class="$style['icon-list__tag-button']"
+                  >
+                    <RoundStatus theme="undenary">
+                      지금 가입하면 최대 1만원 지원!
+                    </RoundStatus>
+                  </button>
                 </div>
                 <button type="button" :class="$style['icon-list__view-button']">
                   <span class="for-a11y">상세보기</span>
