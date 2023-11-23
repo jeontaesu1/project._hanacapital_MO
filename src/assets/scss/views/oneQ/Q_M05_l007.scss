@@ -1,0 +1,14 @@
+@import '@/assets/scss/components/import/loading-icon.scss';
+
+.loading_wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.loading_block {
+  display: inline-block;
+  padding: 20px;
+  background-color: #00a69e;
+  box-sizing: border-box;
+}
