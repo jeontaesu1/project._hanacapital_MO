@@ -75,7 +75,7 @@ export default {
       <FormList>
         <FormListItem
           titleText="연락가능시간"
-          target="#Q_M04_p007StartTimeButton"
+          target="#Q_M04_p007_startTimeButton"
         >
           <FormInvalid :error="state.timeError">
             <InputBlock :error="state.timeError">
@@ -121,8 +121,8 @@ export default {
                   ]"
                   buttonTitle="시작시간 선택하기"
                   layerTitle="시작시간을 선택해 주세요"
-                  id="Q_M04_p007StartTime"
-                  buttonId="Q_M04_p007StartTimeButton"
+                  id="Q_M04_p007_startTime"
+                  buttonId="Q_M04_p007_startTimeButton"
                 />
               </InputBlockCell>
               <InputBlockCell margin="regular">
@@ -173,8 +173,8 @@ export default {
                   ]"
                   buttonTitle="종료시간 선택하기"
                   layerTitle="종료시간을 선택해 주세요"
-                  id="Q_M04_p007EndTime"
-                  buttonId="Q_M04_p007EndTimeButton"
+                  id="Q_M04_p007_endTime"
+                  buttonId="Q_M04_p007_endTimeButton"
                 />
               </InputBlockCell>
               <InputBlockCell margin="regular">
@@ -187,7 +187,7 @@ export default {
 
         <FormListItem
           titleText="차량구매지"
-          target="#Q_M04_p007Button"
+          target="#Q_M04_p007_button"
           :selectOnly="true"
         >
           <FormInvalid :error="state.branchError">
@@ -247,7 +247,7 @@ export default {
                   buttonTitle="차량구매지 선택하기"
                   layerTitle="지역을 선택해 주세요"
                   id="Q_M04_p007"
-                  buttonId="Q_M04_p007Button"
+                  buttonId="Q_M04_p007_button"
                 />
               </InputBlockCell>
             </InputBlock>

@@ -1,27 +1,27 @@
 <script>
-// Q_M04_p005
+// Q_My_M03_p002
 import { onMounted, onUnmounted } from 'vue';
 
 import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
-import IllustInfo from '@/components/ui/common/IllustInfo.vue';
+import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
+import PageMainText from '@/components/ui/text/PageMainText.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
-import IllustInfoTitle from '@/components/ui/common/IllustInfoTitle.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-import BasicButton from '@/components/ui/button/BasicButton.vue';
 import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 export default {
   components: {
     PageContents,
-    IllustInfo,
+    PageTextGroup,
+    PageMainText,
     IllustObject,
-    IllustInfoTitle,
+    BasicButton,
     ButtonList,
     ButtonListItem,
-    BasicButton,
     BottomSticky,
   },
   setup() {
@@ -32,14 +32,14 @@ export default {
     };
 
     onMounted(() => {
-      store.ui.header.setTitle(() => '중고차 오토론');
-      // store.ui.header.setLeftButtons(() => ['back']);
+      store.ui.header.setTitle(() => '진행상태조회');
+      store.ui.header.setLeftButtons(() => ['back']);
       store.ui.header.setRightButtons(() => []);
     });
 
     onUnmounted(() => {
       store.ui.header.setTitle();
-      // store.ui.header.setLeftButtons();
+      store.ui.header.setLeftButtons();
       store.ui.header.setRightButtons();
     });
   },
@@ -48,15 +48,14 @@ export default {
 
 <template>
   <PageContents>
-    <IllustInfo>
-      <IllustObject type="fail" />
-      <IllustInfoTitle>
-        <strong>
-          김하나님의 심사결과 대출한도가<br />
-          조회되지 않습니다
-        </strong>
-      </IllustInfoTitle>
-    </IllustInfo>
+    <PageTextGroup>
+      <PageMainText>
+        진행상태조회 이용을 위해<br />
+        본인인증을 진행해 주세요
+      </PageMainText>
+    </PageTextGroup>
+
+    <IllustObject type="license" />
 
     <template v-slot:foot>
       <BottomSticky>
@@ -67,7 +66,7 @@ export default {
             }"
           >
             <ButtonListItem>
-              <BasicButton>확인</BasicButton>
+              <BasicButton>본인인증</BasicButton>
             </ButtonListItem>
           </ButtonList>
         </div>

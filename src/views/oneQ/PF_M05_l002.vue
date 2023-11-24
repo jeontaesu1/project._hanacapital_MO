@@ -1,5 +1,5 @@
 <script>
-// 1Q_PF_M05_l002
+// Q_PF_M05_l002
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -90,7 +90,7 @@ export default {
                 <KeyValueTitle>대상</KeyValueTitle>
                 <KeyValueText>
                   하나캐피탈 우수거래고객 및<br />
-                  하나캐피탈 멤버십 가입회원
+                  하나캐피탈 멤버십 우수회원
                 </KeyValueText>
               </KeyValueItem>
 

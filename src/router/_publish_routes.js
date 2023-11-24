@@ -1997,14 +1997,29 @@ const routes = [
     component: () => import('@/views/oneQ/Q_M07_p001.vue'),
   },
   {
+    path: '/one-q/Q_M07_p002',
+    name: '/one-q/Q_M07_p002',
+    component: () => import('@/views/oneQ/Q_M07_p002.vue'),
+  },
+  {
     path: '/one-q/Q_M08_p001',
     name: '/one-q/Q_M08_p001',
     component: () => import('@/views/oneQ/Q_M08_p001.vue'),
   },
   {
-    path: '/ui-guide/one-q-001',
-    name: '/ui-guide/one-q-001',
-    component: () => import('@/views/uiGuide/GuideOneQ001.vue'),
+    path: '/one-q/Q_M08_p002',
+    name: '/one-q/Q_M08_p002',
+    component: () => import('@/views/oneQ/Q_M08_p002.vue'),
+  },
+  {
+    path: '/one-q/My_M03_p001',
+    name: '/one-q/My_M03_p001',
+    component: () => import('@/views/oneQ/My_M03_p001.vue'),
+  },
+  {
+    path: '/one-q/My_M03_p002',
+    name: '/one-q/My_M03_p002',
+    component: () => import('@/views/oneQ/My_M03_p002.vue'),
   },
   {
     path: '/ui-guide/one-q-002',
@@ -2030,6 +2045,16 @@ const routes = [
     path: '/ui-guide/one-q-006',
     name: '/ui-guide/one-q-006',
     component: () => import('@/views/uiGuide/GuideOneQ006.vue'),
+  },
+  {
+    path: '/ui-guide/one-q-007',
+    name: '/ui-guide/one-q-007',
+    component: () => import('@/views/uiGuide/GuideOneQ007.vue'),
+  },
+  {
+    path: '/ui-guide/one-q-008',
+    name: '/ui-guide/one-q-008',
+    component: () => import('@/views/uiGuide/GuideOneQ008.vue'),
   },
 
   // link

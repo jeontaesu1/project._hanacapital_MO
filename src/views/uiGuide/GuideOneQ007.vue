@@ -6,13 +6,11 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import PF_M01_l007 from '@/views/oneQ/PF_M01_l007.vue';
-import PF_M01_l008 from '@/views/oneQ/PF_M01_l008.vue';
-import PF_M01_b004 from '@/views/oneQ/PF_M01_b004.vue';
-import PF_M02_l007 from '@/views/oneQ/PF_M02_l007.vue';
-import PF_M04_l007 from '@/views/oneQ/PF_M04_l007.vue';
-import PF_M05_l002 from '@/views/oneQ/PF_M05_l002.vue';
-import PF_M05_l004 from '@/views/oneQ/PF_M05_l004.vue';
+import Q_M07_l001 from '@/views/oneQ/Q_M07_l001.vue';
+import Q_M07_l002 from '@/views/oneQ/Q_M07_l002.vue';
+import Q_M07_l003 from '@/views/oneQ/Q_M07_l003.vue';
+import Q_M07_l004 from '@/views/oneQ/Q_M07_l004.vue';
+import Q_M07_b001 from '@/views/oneQ/Q_M07_b001.vue';
 
 export default {
   components: {
@@ -20,13 +18,11 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    PF_M01_l007,
-    PF_M01_l008,
-    PF_M01_b004,
-    PF_M02_l007,
-    PF_M04_l007,
-    PF_M05_l002,
-    PF_M05_l004,
+    Q_M07_l001,
+    Q_M07_l002,
+    Q_M07_l003,
+    Q_M07_l004,
+    Q_M07_b001,
   },
   setup() {
     const layer001 = ref(null);
@@ -34,8 +30,6 @@ export default {
     const layer003 = ref(null);
     const layer004 = ref(null);
     const layer005 = ref(null);
-    const layer006 = ref(null);
-    const layer007 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -52,12 +46,6 @@ export default {
     const layer005Open = (e = {}) => {
       layer005.value.layer.open(e.target);
     };
-    const layer006Open = (e = {}) => {
-      layer006.value.layer.open(e.target);
-    };
-    const layer007Open = (e = {}) => {
-      layer007.value.layer.open(e.target);
-    };
 
     return {
       layer001,
@@ -65,15 +53,11 @@ export default {
       layer003,
       layer004,
       layer005,
-      layer006,
-      layer007,
       layer001Open,
       layer002Open,
       layer003Open,
       layer004Open,
       layer005Open,
-      layer006Open,
-      layer007Open,
     };
   },
 };
@@ -89,47 +73,35 @@ export default {
     >
       <ButtonListItem>
         <BasicButton @click="layer001Open">
-          신청 정보 입력<br />PF_M01_l007
+          한도조회 동의<br />Q_M07_l001
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer002Open">
-          e하나신용대출(연계) 안내<br />PF_M01_l008
+          자동차정보 입력<br />Q_M07_l002
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer003Open">
-          금융상품 안내<br />PF_M01_b004
+          급여소득정보 입력<br />Q_M07_l003
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer004Open">
-          신청 정보 입력<br />PF_M02_l007
+          한도/금리 확인<br />Q_M07_l004
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer005Open">
-          신청 정보 입력<br />PF_M04_l007
-        </BasicButton>
-      </ButtonListItem>
-      <ButtonListItem>
-        <BasicButton @click="layer006Open">
-          우수고객추가대출 안내<br />PF_M05_l002
-        </BasicButton>
-      </ButtonListItem>
-      <ButtonListItem>
-        <BasicButton @click="layer007Open">
-          신청 정보 입력<br />PF_M05_l004
+          대출가능 차량기준 안내팝업<br />Q_M07_b001
         </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
-    <PF_M01_l008 ref="layer001" />
-    <PF_M01_l007 ref="layer002" />
-    <PF_M01_b004 ref="layer003" />
-    <PF_M02_l007 ref="layer004" />
-    <PF_M04_l007 ref="layer005" />
-    <PF_M05_l002 ref="layer006" />
-    <PF_M05_l004 ref="layer007" />
+    <Q_M07_l001 ref="layer001" />
+    <Q_M07_l002 ref="layer002" />
+    <Q_M07_l003 ref="layer003" />
+    <Q_M07_l004 ref="layer004" />
+    <Q_M07_b001 ref="layer005" />
   </PageContents>
 </template>
