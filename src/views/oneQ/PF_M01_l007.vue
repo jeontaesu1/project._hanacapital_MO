@@ -98,7 +98,7 @@ export default {
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">최대한도</div>
                 <div :class="$style['product-detail__desc']">
-                  <UnitText size="regular" rightUnit="만원">4,000</UnitText>
+                  <UnitText size="regular" rightUnit="만원">2,000</UnitText>
                 </div>
               </div>
             </li>
@@ -109,7 +109,7 @@ export default {
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">예상금리</div>
                 <div :class="$style['product-detail__desc']">
-                  <UnitText size="regular" rightUnit="%">10.9</UnitText>
+                  <UnitText size="regular" rightUnit="%">13.2</UnitText>
                   <div :class="$style['product-detail__desc-sub']">
                     (36개월 기준)
                   </div>
