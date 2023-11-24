@@ -8296,7 +8296,12 @@ const datas = () => [
         path: '/ui-guide/one-q-002',
         status: 'end',
         create: '2023.11.24',
-        log: [],
+        log: [
+          {
+            date: '2023.11.24',
+            text: '팝업 전체 수정\n- PF_M01_l008\n- PF_M05_l002 ',
+          },
+        ],
       },
     ],
   },
