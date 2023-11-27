@@ -5,11 +5,10 @@
   "scripts": {
     "dev": "vite --open --host",
     "dev-stage": "vite --mode stage",
-    "build": "vite build",
+    "build": "node --max_old_space_size=4096 node_modules/@vue/cli-service/bin/vue-cli-service.js build --open",
     "preview": "vite preview --host",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-    "publish-build": "vite build --base=/pub/hanacapital-dt-rebuild/mobile/",
-    "publish-dev-build": "vite build --base=/pub/hanacapital-dt-rebuild/mobile-dev/"
+    "publish-build": "vite build --base=/pub/hanacapital-dt-rebuild/mobile/"
   },
   "dependencies": {
     "@duetds/date-picker": "^1.4.0",
