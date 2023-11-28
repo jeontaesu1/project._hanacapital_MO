@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "vite --open --host",
     "dev-stage": "vite --mode stage",
-    "build": "node --max_old_space_size=8240 node_modules/@vue/cli-service/bin/vue-cli-service.js build --open",
+    "build": "vite build",
     "preview": "vite preview --host",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "publish-build": "vite build --base=/pub/hanacapital-dt-rebuild/mobile/"
