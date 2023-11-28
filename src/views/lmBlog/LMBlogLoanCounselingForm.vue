@@ -592,6 +592,7 @@ export default {
                     title="입사일"
                     id="lMBlogLoanCounselingFormWorkDate"
                     buttonId="lMBlogLoanCounselingFormWorkDateButton"
+                    :isDelete="true"
                   />
                 </InputBlockCell>
               </InputBlock>

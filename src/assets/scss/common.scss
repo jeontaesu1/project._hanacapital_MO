@@ -62,12 +62,11 @@ html {
   overflow-y: scroll;
 
   &.is-scroll-blocking {
-    // iOS17 이슈로 주석처리함
-    // &,
-    // & body,
-    // & #app {
-    //   overflow: hidden;
-    // }
+    &,
+    & body,
+    & #app {
+      overflow: hidden;
+    }
     & #app {
       position: fixed;
       top: 0;
