@@ -12,3 +12,14 @@
   border-top: 1px solid $color-gray-20;
   padding-top: 20px;
 }
+
+.icon-button {
+  display: block;
+  @include reset-button;
+}
+
+.icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+}

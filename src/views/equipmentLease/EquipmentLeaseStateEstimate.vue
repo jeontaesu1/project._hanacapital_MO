@@ -32,8 +32,10 @@ import UiAccordionOpener from '@/components/ui/accordion/UiAccordionOpener.vue';
 import FilterButton from '@/components/ui/button/FilterButton.vue';
 import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
+
 import IconArrow from '@/assets/images/icon/dropdown.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
+import IconCalculateS from '@/assets/images/icon/calculate-s.svg?component';
 
 export default {
   components: {
@@ -67,6 +69,7 @@ export default {
     TextButton,
     IconCalculate,
     IconArrow,
+    IconCalculateS,
   },
   setup() {
     const store = {
@@ -112,7 +115,12 @@ export default {
         <div class="flex-box__cell flex-1">
           <h3 class="text-title-2">현황조회</h3>
         </div>
-        <div class="flex-box__cell flex-box__cell--medium">
+        <div class="flex-box__cell">
+          <button type="button" :class="$style['icon-button']">
+            <IconCalculateS :class="$style['icon']" />
+          </button>
+        </div>
+        <div class="flex-box__cell flex-box__cell--regular">
           <FilterButton
             :active="state.filterOpen"
             :text="`조회 필터 ${state.filterOpen ? '닫기' : '열기'}`"
