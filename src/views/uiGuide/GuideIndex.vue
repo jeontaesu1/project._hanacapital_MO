@@ -8084,7 +8084,12 @@ const datas = () => [
         path: '/one-q/Q_M04_p001',
         status: 'end',
         create: '2023.11.22',
-        log: [],
+        log: [
+          {
+            date: '2023.11.29',
+            text: '컨텐츠 전체 수정',
+          },
+        ],
       },
       {
         depth2: '중고차오토론',
@@ -8150,7 +8155,12 @@ const datas = () => [
         path: '/one-q/Q_M05_p001',
         status: 'end',
         create: '2023.11.22',
-        log: [],
+        log: [
+          {
+            date: '2023.11.29',
+            text: '컨텐츠 전체 수정',
+          },
+        ],
       },
       {
         depth2: 'e하나신용대출',
@@ -8183,7 +8193,12 @@ const datas = () => [
         path: '/one-q/Q_M06_p001',
         status: 'end',
         create: '2023.11.22',
-        log: [],
+        log: [
+          {
+            date: '2023.11.29',
+            text: '컨텐츠 전체 수정',
+          },
+        ],
       },
       {
         depth2: '행복아파트론',
@@ -8216,7 +8231,12 @@ const datas = () => [
         path: '/one-q/Q_M07_p001',
         status: 'end',
         create: '2023.11.22',
-        log: [],
+        log: [
+          {
+            date: '2023.11.29',
+            text: '컨텐츠 전체 수정',
+          },
+        ],
       },
       {
         depth2: '원큐자동차담보대출',
@@ -8249,7 +8269,12 @@ const datas = () => [
         path: '/one-q/Q_M08_p001',
         status: 'end',
         create: '2023.11.22',
-        log: [],
+        log: [
+          {
+            date: '2023.11.29',
+            text: '컨텐츠 전체 수정',
+          },
+        ],
       },
       {
         depth2: '우수고객추가대출',

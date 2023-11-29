@@ -9,15 +9,9 @@ import { useUiHeaderStore } from '@/stores/ui/header';
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
-import KeyValue from '@/components/ui/text/KeyValue.vue';
-import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
-import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
-import KeyValueText from '@/components/ui/text/KeyValueText.vue';
-import BasicHr from '@/components/ui/common/BasicHr.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 export default {
@@ -25,15 +19,9 @@ export default {
     PageContents,
     PageTextGroup,
     PageMainText,
-    KeyValue,
-    KeyValueItem,
-    KeyValueTitle,
-    KeyValueText,
-    BasicHr,
     BasicButton,
     ButtonList,
     ButtonListItem,
-    BasicBox,
     BottomSticky,
   },
   setup() {
@@ -51,7 +39,6 @@ export default {
       store.ui.header.setTitle(() => '우수고객추가대출');
       store.ui.header.setLeftButtons(() => ['back']);
       store.ui.header.setRightButtons(() => []);
-      store.ui.header.setTheme(() => 'secondary');
     });
 
     onUnmounted(() => {
@@ -60,7 +47,6 @@ export default {
       store.ui.header.setTitle();
       store.ui.header.setLeftButtons();
       store.ui.header.setRightButtons();
-      store.ui.header.setTheme();
     });
   },
 };
@@ -68,95 +54,76 @@ export default {
 
 <template>
   <PageContents>
-    <div :class="$style['bg']">
-      <PageTextGroup>
-        <PageMainText>
-          하나캐피탈 우수고객 전용<br />
-          추가(신용)대출 금융서비스 입니다
-        </PageMainText>
-      </PageTextGroup>
+    <PageTextGroup>
+      <PageMainText>
+        하나캐피탈 우수고객 전용<br />
+        추가(신용)대출 금융서비스 입니다.
+      </PageMainText>
+    </PageTextGroup>
 
-      <div :class="[$style['illustration-img'], 'row-margin-contents']">
-        <img src="@/assets/images/contents/img-vip-loan.png" alt="" />
+    <div :class="$style['contents-wrap']">
+      <div :class="$style['basic-table']">
+        <table>
+          <colgroup>
+            <col style="width: 78px" />
+            <col />
+          </colgroup>
+          <tbody>
+            <tr>
+              <th class="text-body-4 color-black align-left">대상</th>
+              <td class="text-body-3 align-left">
+                하나캐피탈 대출 우수고객 및<br />
+                하나캐피탈 멤버십 가입회원
+              </td>
+            </tr>
+            <tr>
+              <th class="text-body-4 color-black align-left">한도</th>
+              <td class="text-body-3 align-left">
+                최대 5천만원 (최저 300만원)
+              </td>
+            </tr>
+            <tr>
+              <th class="text-body-4 color-black align-left">금리</th>
+              <td class="text-body-3 align-left underline">
+                연 5.9% ~ 16.9%
+                <br />
+                연체이자율 : 약정이율 + 3%<br />
+                (법정 최고금리 연 20% 이내)
+              </td>
+            </tr>
+            <tr>
+              <th class="text-body-4 color-black align-left">기간</th>
+              <td class="text-body-3 align-left">12개월 ~ 120개월</td>
+            </tr>
+            <tr>
+              <th class="text-body-4 color-black align-left">상환방법</th>
+              <td class="text-body-3 align-left">원리금균등분할상환</td>
+            </tr>
+            <tr>
+              <th class="text-body-4 color-black align-left">이자부과 시기</th>
+              <td class="text-body-3 align-left">매월 후취</td>
+            </tr>
+            <tr>
+              <th class="text-body-4 color-black align-left">기타</th>
+              <td class="text-body-3 align-left">
+                소득 및 재직 확인 필요시<br />
+                건강보험 스크래핑으로 진행<br />
+                (스크래핑 정보 확인 불가 시<br />
+                건강보험자격득실확인서,<br />
+                건강보험료 납부확인서 제출)
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    </div>
 
-    <div class="row-margin-container-medium">
-      <BasicBox theme="tertiary">
-        <KeyValue align="left" margin="regular">
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>대상</KeyValueTitle>
-            <KeyValueText>
-              하나캐피탈 대출 우수고객 및<br />
-              하나캐피탈 멤버십 가입회원
-            </KeyValueText>
-          </KeyValueItem>
-
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>한도</KeyValueTitle>
-            <KeyValueText>최대 5천만원 (최저 300만원)</KeyValueText>
-          </KeyValueItem>
-
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>금리</KeyValueTitle>
-            <KeyValueText>
-              <div>
-                연 5.9% ~ 16.9%<br />
-                연체이자율 : 약정이율 + 3%
-              </div>
-              <div class="text-body-5 color-gray-tertiary row-margin-mini">
-                (법정최고금리 연 20% 이내)
-              </div>
-            </KeyValueText>
-          </KeyValueItem>
-
-          <KeyValueItem :classNames="{ item: 'text-body-3' }">
-            <KeyValueTitle>기간</KeyValueTitle>
-            <KeyValueText>12개월 ~ 120개월</KeyValueText>
-          </KeyValueItem>
-        </KeyValue>
-      </BasicBox>
-
-      <KeyValue
-        direction="vertical"
-        :classNames="{
-          wrap: 'row-margin-contents',
-        }"
+      <ul
+        :class="[
+          $style['basic-list'],
+          $style['basic-list--regular'],
+          'row-margin-contents',
+        ]"
       >
-        <KeyValueItem>
-          <KeyValueTitle>상환방법</KeyValueTitle>
-          <KeyValueText>원리금균등분할상환</KeyValueText>
-        </KeyValueItem>
-
-        <KeyValueItem>
-          <KeyValueTitle>중도상환수수료</KeyValueTitle>
-          <KeyValueText>없음</KeyValueText>
-        </KeyValueItem>
-
-        <KeyValueItem>
-          <KeyValueTitle>이자부과시기</KeyValueTitle>
-          <KeyValueText>매월 후취</KeyValueText>
-        </KeyValueItem>
-
-        <KeyValueItem>
-          <KeyValueTitle>기타</KeyValueTitle>
-          <KeyValueText>
-            소득 및 재직 확인 필요시 건강보험 스크래핑으로 진행
-            <div :class="$style['sub']">
-              (스크래핑 정보 확인 불가 시 건강보험자격득실확인서, 건강보험료
-              납부확인서 제출)
-            </div>
-          </KeyValueText>
-        </KeyValueItem>
-      </KeyValue>
-
-      <BasicHr
-        type="contents"
-        theme="quaternary"
-        className="row-margin-container"
-      />
-
-      <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
         <li :class="[$style['basic-list__item'], 'color-black', 'text-body-3']">
           <div :class="$style['basic-list__symbol']"></div>
           <div :class="$style['basic-list__content']">
@@ -238,15 +205,14 @@ export default {
         <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']"></div>
           <div :class="$style['basic-list__content']">
-            준법심의필 23-50<br />
-            (2023.02.15 ~ 2024.02.14)
+            준법심의필 23-50 (2023.02.15 ~ 2024.02.14)
           </div>
         </li>
         <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']"></div>
           <div :class="$style['basic-list__content']">
             여신금융협회 심의필 제 2023-L1h-01312호<br />
-            (2023.02.15 ~ 2024.02.14)
+            (2023.02.15~2024.02.14)
           </div>
         </li>
       </ul>

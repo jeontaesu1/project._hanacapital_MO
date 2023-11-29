@@ -128,6 +128,14 @@
     }
   }
 
+  &--none-margin {
+    > .basic-list__item {
+      & + .basic-list__item {
+        margin-top: 0px;
+      }
+    }
+  }
+
   &--fixed-width {
     > .basic-list__item {
       > .basic-list__symbol {
