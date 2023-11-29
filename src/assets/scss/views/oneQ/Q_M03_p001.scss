@@ -6,8 +6,11 @@
 @import '@/assets/scss/components/import/contents-list.scss';
 @import '@/assets/scss/components/import/step.scss';
 
-.bg {
+.bg-wrap {
   background-color: $color-navy-05;
+}
+
+.bg {
   margin: -30px -20px 0 -20px;
   padding: 30px 20px 40px 20px;
 }
@@ -17,4 +20,40 @@
   @include font-size-default(13);
   color: $color-gray-80;
   font-weight: 300;
+}
+
+.car-list {
+  display: block;
+
+  &__list {
+    @include reset-list;
+  }
+
+  &__item {
+    display: flex;
+    align-items: start;
+
+    & + & {
+      margin-top: 10px;
+    }
+  }
+
+  &__box {
+    flex: none;
+    @include font-size-default(12);
+    font-weight: 400;
+    padding: 1px 9px;
+    text-align: center;
+    color: $color-gray-70;
+    border: 1px solid #bdbdbd;
+    border-radius: 2px;
+    background-color: $color-white;
+  }
+
+  &__text {
+    @include font-size-default(14);
+    font-weight: 500;
+    color: $color-green-50;
+    margin-left: 12px;
+  }
 }
