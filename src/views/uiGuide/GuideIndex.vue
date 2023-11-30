@@ -8051,7 +8051,12 @@ const datas = () => [
         path: '/one-q/Q_M03_p001',
         status: 'end',
         create: '2023.11.22',
-        log: [],
+        log: [
+          {
+            date: '2023.11.30',
+            text: '상품안내 전체 수정',
+          },
+        ],
       },
       {
         depth2: '오토리스',

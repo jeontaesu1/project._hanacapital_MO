@@ -8,7 +8,7 @@
 
 .bg {
   margin: -30px -20px 0 -20px;
-  padding: 30px 20px 40px 20px;
+  padding: 30px 20px 0px 20px;
 }
 
 .car-list {
@@ -85,6 +85,42 @@
           }
         }
       }
+    }
+  }
+}
+
+.step-list {
+  @include reset-list;
+
+  &__box {
+    display: block;
+    width: 42px;
+    @include font-size-head(11);
+    color: $color-green-50;
+    font-weight: 500;
+    padding: 2px 4px;
+    border: 1px solid #00a69e;
+    border-radius: 2px;
+    margin-bottom: 4px;
+  }
+
+  &__title {
+    @include font-size-head(14);
+    color: $color-gray-80;
+    font-weight: 500;
+    margin: 0 0 2px;
+  }
+
+  &__text {
+    @include font-size-head(13);
+    color: $color-gray-60;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  &__item {
+    & + & {
+      margin-top: 16px;
     }
   }
 }
