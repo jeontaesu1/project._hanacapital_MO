@@ -113,9 +113,20 @@ body,
   padding: 16px 20px;
   background-color: rgba($color-white, 0);
   transition: background-color 0.2s;
+
+  &-color {
+    flex: none;
+    padding: 16px 20px;
+    background-color: rgba($color-navy-05, 0);
+    transition: background-color 0.2s;
+  }
 }
 .is-sticky .bottom-wrap {
   background-color: rgba($color-white, 1);
+
+  &-color {
+    background-color: rgba($color-navy-05, 1);
+  }
 }
 
 // inner-bottom-wrap

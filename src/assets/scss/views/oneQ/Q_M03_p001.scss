@@ -1,20 +1,126 @@
-@import '@/assets/scss/components/import/product-detail.scss';
-@import '@/assets/scss/components/import/basic-list.scss';
-@import '@/assets/scss/components/import/icon-list.scss';
-@import '@/assets/scss/components/import/step.scss';
 @import '@/assets/scss/components/import/illustration-img.scss';
-@import '@/assets/scss/components/import/contents-list.scss';
-@import '@/assets/scss/components/import/step.scss';
+@import '@/assets/scss/components/import/estimate-list.scss';
+@import '@/assets/scss/components/import/basic-list.scss';
 
-.bg {
+.bg-wrap {
   background-color: $color-navy-05;
-  margin: -30px -20px 0 -20px;
-  padding: 30px 20px 40px 20px;
 }
 
-.sub {
-  margin: 2px 0 0 0;
-  @include font-size-default(13);
-  color: $color-gray-80;
-  font-weight: 300;
+.bg {
+  margin: -30px -20px 0 -20px;
+  padding: 30px 20px 0px 20px;
+}
+
+.car-list {
+  display: block;
+
+  &__list {
+    @include reset-list;
+  }
+
+  &__item {
+    display: flex;
+    align-items: start;
+
+    & + & {
+      margin-top: 10px;
+    }
+  }
+
+  &__box {
+    flex: none;
+    @include font-size-default(12);
+    font-weight: 400;
+    padding: 1px 9px;
+    text-align: center;
+    color: $color-gray-70;
+    border: 1px solid #bdbdbd;
+    border-radius: 2px;
+    background-color: $color-white;
+  }
+
+  &__text {
+    @include font-size-default(14);
+    font-weight: 500;
+    color: $color-green-50;
+    margin-left: 12px;
+  }
+}
+
+.auto-table {
+  border-top: 1px solid $color-gray-40;
+  margin-top: 8px;
+
+  > table {
+    @include reset-table;
+
+    > tbody {
+      > tr {
+        > th {
+          padding: 9px 0;
+          border-bottom: 1px solid $color-gray-20;
+          word-break: break-all;
+          @include font-size-default(11);
+          color: $color-gray-90;
+          font-weight: 400;
+          vertical-align: middle;
+          text-align: center;
+          background-color: $color-gray-05;
+
+          &:first-child {
+            border-left: none;
+          }
+        }
+        > td {
+          padding: 11px 9px;
+          border-left: 1px solid $color-gray-20;
+          border-bottom: 1px solid $color-gray-20;
+          word-break: break-all;
+          @include font-size-default(11);
+          vertical-align: middle;
+          text-align: center;
+
+          &:first-child {
+            border-left: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.step-list {
+  @include reset-list;
+
+  &__box {
+    display: block;
+    width: 42px;
+    @include font-size-head(11);
+    color: $color-green-50;
+    font-weight: 500;
+    padding: 2px 4px;
+    border: 1px solid #00a69e;
+    border-radius: 2px;
+    margin-bottom: 4px;
+  }
+
+  &__title {
+    @include font-size-head(14);
+    color: $color-gray-80;
+    font-weight: 500;
+    margin: 0 0 2px;
+  }
+
+  &__text {
+    @include font-size-head(13);
+    color: $color-gray-60;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  &__item {
+    & + & {
+      margin-top: 16px;
+    }
+  }
 }
