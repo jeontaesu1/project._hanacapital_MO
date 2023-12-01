@@ -171,7 +171,9 @@ export default {
                   />
                 </div>
                 <div :class="$style['icon-list__content']">
-                  <div :class="$style['icon-list__sup']">
+                  <div
+                    :class="[$style['icon-list__sup'], 'color-gray-tertiary']"
+                  >
                     로켓출고! 하나캐피탈 장기렌터카
                   </div>
                   <div class="flex-box">
@@ -207,7 +209,9 @@ export default {
                   />
                 </div>
                 <div :class="$style['icon-list__content']">
-                  <div :class="$style['icon-list__sup']">
+                  <div
+                    :class="[$style['icon-list__sup'], 'color-gray-tertiary']"
+                  >
                     빠른견적! 저렴한 견적!
                   </div>
                   <div :class="$style['icon-list__title']">오토리스</div>
@@ -232,7 +236,9 @@ export default {
                   />
                 </div>
                 <div :class="$style['icon-list__content']">
-                  <div :class="$style['icon-list__sup']">
+                  <div
+                    :class="[$style['icon-list__sup'], 'color-gray-tertiary']"
+                  >
                     스마트한 중고차 구입자금 대출
                   </div>
                   <div :class="$style['icon-list__title']">중고차오토론</div>
@@ -277,7 +283,9 @@ export default {
                   />
                 </div>
                 <div :class="$style['icon-list__content']">
-                  <div :class="$style['icon-list__sup']">
+                  <div
+                    :class="[$style['icon-list__sup'], 'color-gray-tertiary']"
+                  >
                     소득이 있다면 쉽고 빠른 신용대출
                   </div>
                   <div class="flex-box">
@@ -298,6 +306,8 @@ export default {
                     :class="[
                       $style['icon-list__text'],
                       $style['icon-list__text--secondary'],
+                      'font-weight-bold',
+                      'color-green',
                     ]"
                   >
                     최대 1억원
@@ -331,7 +341,9 @@ export default {
                   />
                 </div>
                 <div :class="$style['icon-list__content']">
-                  <div :class="$style['icon-list__sup']">
+                  <div
+                    :class="[$style['icon-list__sup'], 'color-gray-tertiary']"
+                  >
                     아파트 소유자를 위한 대출
                   </div>
                   <div class="flex-box">
@@ -345,6 +357,8 @@ export default {
                     :class="[
                       $style['icon-list__text'],
                       $style['icon-list__text--secondary'],
+                      'font-weight-bold',
+                      'color-green',
                     ]"
                   >
                     최대 2억원
@@ -370,7 +384,9 @@ export default {
                   />
                 </div>
                 <div :class="$style['icon-list__content']">
-                  <div :class="$style['icon-list__sup']">
+                  <div
+                    :class="[$style['icon-list__sup'], 'color-gray-tertiary']"
+                  >
                     내 차만 있다면 특별한 한도·금리
                   </div>
                   <div class="flex-box">
@@ -384,6 +400,8 @@ export default {
                     :class="[
                       $style['icon-list__text'],
                       $style['icon-list__text--secondary'],
+                      'font-weight-bold',
+                      'color-green',
                     ]"
                   >
                     최대 1억원

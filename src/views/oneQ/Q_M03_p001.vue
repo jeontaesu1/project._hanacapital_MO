@@ -196,10 +196,10 @@ export default {
                       </KeyValueTitle>
                       <KeyValueText>
                         <div
-                          class="text-body-4 color-gray-secondary font-weight-regular"
+                          class="text-body-4 color-gray-secondary font-weight-regular underline"
                         >
                           금융리스 연 최저 6.6% ~ 9.1%<br />
-                          (금융소비자의 개인신용평점에 따라 차증 적용)<br />
+                          (금융소비자의 개인신용평점에 따라 차등 적용)<br />
                           연체이자율 :<br />
                           - 금융리스 : 약정이자율+3%<br />
                           (법정최고금리 연 20% 이내)<br />
@@ -557,7 +557,7 @@ export default {
                         <span class="color-black font-weight-medium"
                           >자동차를 매입</span
                         >하고자 할 때 ‘자동차리스 표준약관’ 제23조에 따라
-                        금융회사에 발생한 손해를 배상하가기 위하여 지급해야 하는
+                        금융회사에 발생한 손해를 배상하기 위하여 지급해야 하는
                         금액을 의미합니다.
                       </div>
                     </li>
@@ -739,7 +739,7 @@ export default {
           >
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              리스취급이 부적정한 경우 (연체금 보유, 개인신용평점 낮음) 취급이
+              리스취급이 부적정한 경우 (연체금 보유, 개인신용평점 낮음) 대출이
               제한될 수 있습니다.
             </div>
           </li>
@@ -785,7 +785,7 @@ export default {
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              준법심의필 23-151~153 (2023.05.22 ~ 2024.05.21)
+              준법심의필 23-153 (2023.05.22 ~ 2024.05.21)
             </div>
           </li>
           <li :class="$style['basic-list__item']">

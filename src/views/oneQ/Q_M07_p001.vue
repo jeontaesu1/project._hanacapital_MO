@@ -254,7 +254,7 @@ export default {
             >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                대출취급이 부적정한 경우 (연체금 보유, 개인신용평점 낮음) 취급이
+                대출취급이 부적정한 경우 (연체금 보유, 개인신용평점 낮음) 대출이
                 제한될 수 있습니다.
               </div>
             </li>
@@ -280,7 +280,7 @@ export default {
             >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                금리인하요구권 및 대출계약 철회권에 대한 자세한 사항은 당사
+                금리인하요구권 및 대출계약 철회권에 대한 자세한 사항은
                 홈페이지에서 확인하시기 바랍니다.
               </div>
             </li>
@@ -293,8 +293,21 @@ export default {
             >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                금융소비자의 신용등급 또는 개인신용평점에 따라 대출한도 및
-                금리가 차등 적용됩니다.
+                금융소비자의 개인신용평점에 따라 대출한도 및 금리가 차등
+                적용됩니다.
+              </div>
+            </li>
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'color-black',
+                'text-body-3',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                담보 물건, 담보종류 등에 따라 대출조건이 차등 적용되며, 담보물이
+                부적합할 경우 대출이 제한될 수 있습니다.
               </div>
             </li>
           </ul>

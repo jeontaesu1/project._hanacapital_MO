@@ -72,7 +72,7 @@ export default {
             <tr>
               <th class="text-body-4 color-black align-left">대상</th>
               <td class="text-body-3 align-left">
-                <div>개인(개인사업자) 및 법인사용자</div>
+                <div>개인(사업자) 및 법인사용자</div>
                 <ul
                   :class="[$style['basic-list'], $style['basic-list--regular']]"
                 >
@@ -113,7 +113,7 @@ export default {
               <td class="text-body-3 align-left">원리금균등분할상환</td>
             </tr>
             <tr>
-              <th class="text-body-4 color-black align-left">이자부과 시기</th>
+              <th class="text-body-4 color-black align-left">이자납부 시기</th>
               <td class="text-body-3 align-left">매월 후취</td>
             </tr>
             <tr>
@@ -251,6 +251,28 @@ export default {
 
       <div class="row-margin-contents">
         <section class="row-margin-contents">
+          <h3 class="text-body-2 row-margin-item-regular">상품추가 안내</h3>
+          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'color-black',
+                'text-body-3',
+                'font-weight-regular',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                인지세는 하나캐피탈과 금융소비자가 50% 부담합니다.<br />
+                - 대출금액 5천만원 이하 : 비과세<br />
+                - 대출금액 5천만원 초과 1억원 이하 : 7만원<br />
+                - 대출금액 1억원 초과 10억원 이하 : 15만원
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section class="row-margin-contents">
           <h3 class="text-body-2 row-margin-item-regular">유의사항</h3>
           <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
             <li
@@ -262,7 +284,8 @@ export default {
             >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                계약을 체결하기 전에 상품 설명서와 약관을 확인하시기 바랍니다.
+                계약을 체결하기 전에 자세한 내용은 상품설명서와 약관을
+                읽어보시기 바랍니다.
               </div>
             </li>
             <li
@@ -316,7 +339,7 @@ export default {
             >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                대출취급이 부적정한 경우 (연체금 보유, 개인신용평점 낮음) 취급이
+                대출취급이 부적정한 경우 (연체금 보유, 개인신용평점 낮음) 대출이
                 제한될 수 있습니다.
               </div>
             </li>
@@ -355,7 +378,7 @@ export default {
             >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                금리인하요구권 및 대출계약 철회권에 대한 자세한 사항은 당사
+                금리인하요구권 및 대출계약 철회권에 대한 자세한 사항은
                 홈페이지에서 확인하시기 바랍니다.
               </div>
             </li>
@@ -370,28 +393,6 @@ export default {
               <div :class="$style['basic-list__content']">
                 금융소비자의 신용등급 또는 개인신용평점에 따라 대출한도 및
                 금리가 차등 적용됩니다.
-              </div>
-            </li>
-          </ul>
-        </section>
-
-        <section class="row-margin-contents">
-          <h3 class="text-body-2 row-margin-item-regular">상품추가 안내</h3>
-          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-3',
-                'font-weight-regular',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                인지세는 하나캐피탈과 금융소비자가 50%씩 부담합니다.<br />
-                - 대출금액 5천만원 이하 : 비과세<br />
-                - 대출금액 5천만원 초과 1억원 이하 : 7만원<br />
-                - 대출금액 1억원 초과 10억원 이하 : 15만원
               </div>
             </li>
           </ul>
