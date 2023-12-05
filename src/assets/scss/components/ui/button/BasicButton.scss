@@ -109,6 +109,27 @@
         width: 30px;
       }
     }
+
+    &-none-line {
+      min-height: 36px;
+      padding: 0px 0px 16px;
+      @include font-size-button(13);
+      color: $color-gray-70;
+
+      .button__icon {
+        width: 14px;
+        height: 14px;
+      }
+
+      .button__icon + .button__text,
+      .button__text + .button__icon {
+        margin-left: 2px;
+      }
+
+      &.button--icon-only {
+        width: 30px;
+      }
+    }
   }
 
   @include button-pressed-selector {
@@ -241,6 +262,43 @@
 
         @include button-pressed-selector {
           border-color: $color-gray-50;
+        }
+      }
+    }
+
+    &-quinary {
+      color: $color-gray-70;
+      border-color: transparent;
+      background-color: transparent;
+
+      .button__icon {
+        svg {
+          * {
+            fill: $color-gray-70;
+          }
+        }
+      }
+
+      @include button-pressed-selector {
+        border-color: transparent;
+        background-color: transparent;
+      }
+
+      &.button--line {
+        color: $color-gray-70;
+        border-color: transparent;
+        background-color: transparent;
+
+        .button__icon {
+          svg {
+            * {
+              fill: $color-gray-70;
+            }
+          }
+        }
+
+        @include button-pressed-selector {
+          border-color: transparent;
         }
       }
     }
