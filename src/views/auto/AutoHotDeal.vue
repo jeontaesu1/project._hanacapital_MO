@@ -292,7 +292,6 @@ export default {
           <NavTab :useUiTab="true" :auto="true">
             <NavTabButton link="autoHotDealTab001">상품안내</NavTabButton>
             <NavTabButton link="autoHotDealTab002">진행절차</NavTabButton>
-            <NavTabButton link="autoHotDealTab003">유의사항</NavTabButton>
           </NavTab>
         </StickyBar>
 
@@ -542,6 +541,55 @@ export default {
               <KeyValueTitle>승계수수료</KeyValueTitle>
               <KeyValueText>30만원</KeyValueText>
             </KeyValueItem>
+
+            <KeyValueItem>
+              <KeyValueTitle>유의사항</KeyValueTitle>
+              <KeyValueText>
+                <ul
+                  :class="[$style['basic-list'], $style['basic-list--regular']]"
+                >
+                  <li
+                    :class="[
+                      $style['basic-list__item'],
+                      'color-black',
+                      'text-body-3',
+                    ]"
+                  >
+                    <div :class="$style['basic-list__symbol']"></div>
+                    <div :class="$style['basic-list__content']">
+                      렌터카 계약을 체결하기 전에 상품 설명서와 약관을
+                      확인하시기 바랍니다.
+                    </div>
+                  </li>
+                  <li
+                    :class="[
+                      $style['basic-list__item'],
+                      'color-black',
+                      'text-body-3',
+                    ]"
+                  >
+                    <div :class="$style['basic-list__symbol']"></div>
+                    <div :class="$style['basic-list__content']">
+                      일정기간 렌탈료를 연체할 경우, 모든 렌탈료(원리금)를
+                      변제할 의무가 발생할 수 있습니다. (연체이자 : 년 20%)
+                    </div>
+                  </li>
+                  <li
+                    :class="[
+                      $style['basic-list__item'],
+                      'color-black',
+                      'text-body-3',
+                    ]"
+                  >
+                    <div :class="$style['basic-list__symbol']"></div>
+                    <div :class="$style['basic-list__content']">
+                      렌터카 취급이 부적정한 경우(연체금 보유, 개인신용평점
+                      낮음) 취급이 제한될 수 있습니다.
+                    </div>
+                  </li>
+                </ul>
+              </KeyValueText>
+            </KeyValueItem>
           </KeyValue>
         </UiTabPanel>
         <!-- // 상품안내 -->
@@ -615,52 +663,6 @@ export default {
           </div>
         </UiTabPanel>
         <!-- // 진행절차 -->
-
-        <!-- 유의사항 -->
-        <UiTabPanel name="autoHotDealTab003">
-          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-3',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                렌터카 계약을 체결하기 전에 상품 설명서와 약관을 확인하시기
-                바랍니다.
-              </div>
-            </li>
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-3',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                일정기간 렌탈료를 연체할 경우, 모든 렌탈료(원리금)를 변제할
-                의무가 발생할 수 있습니다. (연체이자 : 년 20%)
-              </div>
-            </li>
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-3',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                렌터카 취급이 부적정한 경우(연체금 보유, 개인신용평점 낮음)
-                취급이 제한될 수 있습니다.
-              </div>
-            </li>
-          </ul>
-        </UiTabPanel>
-        <!-- // 유의사항 -->
 
         <ul :class="[$style['basic-list'], 'row-margin-contents']">
           <li :class="$style['basic-list__item']">

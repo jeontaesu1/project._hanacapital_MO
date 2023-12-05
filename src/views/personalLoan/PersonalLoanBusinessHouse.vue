@@ -23,6 +23,7 @@ import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
 import NavTab from '@/components/ui/tab/NavTab.vue';
 import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
 import BottomSticky from '@/components/ui/common/BottomSticky.vue';
+import TopButton from '@/components/ui/button/TopButton.vue';
 
 import IconMoney from '@/assets/images/icon/money.svg?component';
 import IconRate from '@/assets/images/icon/rate.svg?component';
@@ -54,7 +55,7 @@ export default {
     NavTab,
     NavTabButton,
     BottomSticky,
-
+    TopButton,
     IconMoney,
     IconRate,
     IconDate,
@@ -183,9 +184,6 @@ export default {
           >
           <NavTabButton link="personalLoanBusinessHouseTab002"
             >진행절차</NavTabButton
-          >
-          <NavTabButton link="personalLoanBusinessHouseTab003"
-            >유의사항</NavTabButton
           >
         </NavTab>
       </StickyBar>
@@ -488,6 +486,136 @@ export default {
               </ul>
             </KeyValueText>
           </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>유의사항</KeyValueTitle>
+            <KeyValueText>
+              <ul
+                :class="[$style['basic-list'], $style['basic-list--regular']]"
+              >
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-black',
+                    'text-body-3',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    계약을 체결하기 전에 상품 설명서와 약관을 확인하시기
+                    바랍니다.
+                  </div>
+                </li>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-black',
+                    'font-weight-bold',
+                    'text-body-3',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    상환능력에 비해 대출금이 과도할 경우 귀하의 신용등급 또는
+                    개인신용평점이 하락할 수 있습니다.
+                  </div>
+                </li>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-black',
+                    'font-weight-bold',
+                    'text-body-3',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    개인신용평점 하락 시 금융거래와 관련된 불이익이 발생할 수
+                    있습니다.
+                  </div>
+                </li>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-black',
+                    'font-weight-bold',
+                    'text-body-3',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    일정기간 원리금을 연체할 경우, 모든 원리금을 변제할 의무가
+                    발생할 수 있습니다.
+                  </div>
+                </li>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-black',
+                    'text-body-3',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    대출취급이 부적정한 경우(연체금 보유, 개인신용평점 낮음)
+                    대출이 제한될 수 있습니다.
+                  </div>
+                </li>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-black',
+                    'text-body-3',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    담보물건, 담보종류 등에 따라 대출조건이 차등 적용되며
+                    담보물이 부적합할 경우 대출이 제한될 수 있습니다.
+                  </div>
+                </li>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-black',
+                    'text-body-3',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    금융소비자의 개인신용평점에 따라 대출한도 및 금리가 차등
+                    적용됩니다.
+                  </div>
+                </li>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-black',
+                    'text-body-3',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    금융소비자는 해당상품에 대하여 설명을 받을 권리가 있으며, 그
+                    설명을 듣고 내용을 충분히 이해한 후 거래하시기 바랍니다.
+                  </div>
+                </li>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-black',
+                    'text-body-3',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    금리인하요구권 및 대출계약 철회권에 대한 자세한 사항은
+                    홈페이지에서 확인하시기 바랍니다.
+                  </div>
+                </li>
+              </ul>
+            </KeyValueText>
+          </KeyValueItem>
         </KeyValue>
       </UiTabPanel>
       <!-- // 상품안내 -->
@@ -566,108 +694,6 @@ export default {
       </UiTabPanel>
       <!-- // 진행절차 -->
 
-      <!-- 유의사항 -->
-      <UiTabPanel name="personalLoanBusinessHouseTab003">
-        <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
-          <li
-            :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
-          >
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              계약을 체결하기 전에 상품 설명서와 약관을 확인하시기 바랍니다.
-            </div>
-          </li>
-          <li
-            :class="[
-              $style['basic-list__item'],
-              'color-black',
-              'font-weight-bold',
-              'text-body-3',
-            ]"
-          >
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              상환능력에 비해 대출금이 과도할 경우 귀하의 신용등급 또는
-              개인신용평점이 하락할 수 있습니다.
-            </div>
-          </li>
-          <li
-            :class="[
-              $style['basic-list__item'],
-              'color-black',
-              'font-weight-bold',
-              'text-body-3',
-            ]"
-          >
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              개인신용평점 하락 시 금융거래와 관련된 불이익이 발생할 수
-              있습니다.
-            </div>
-          </li>
-          <li
-            :class="[
-              $style['basic-list__item'],
-              'color-black',
-              'font-weight-bold',
-              'text-body-3',
-            ]"
-          >
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              일정기간 원리금을 연체할 경우, 모든 원리금을 변제할 의무가 발생할
-              수 있습니다.
-            </div>
-          </li>
-          <li
-            :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
-          >
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              대출취급이 부적정한 경우(연체금 보유, 개인신용평점 낮음) 대출이
-              제한될 수 있습니다.
-            </div>
-          </li>
-          <li
-            :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
-          >
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              담보물건, 담보종류 등에 따라 대출조건이 차등 적용되며 담보물이
-              부적합할 경우 대출이 제한될 수 있습니다.
-            </div>
-          </li>
-          <li
-            :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
-          >
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              금융소비자의 개인신용평점에 따라 대출한도 및 금리가 차등
-              적용됩니다.
-            </div>
-          </li>
-          <li
-            :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
-          >
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              금융소비자는 해당상품에 대하여 설명을 받을 권리가 있으며, 그
-              설명을 듣고 내용을 충분히 이해한 후 거래하시기 바랍니다.
-            </div>
-          </li>
-          <li
-            :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
-          >
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              금리인하요구권 및 대출계약 철회권에 대한 자세한 사항은
-              홈페이지에서 확인하시기 바랍니다.
-            </div>
-          </li>
-        </ul>
-      </UiTabPanel>
-      <!-- // 유의사항 -->
-
       <ul :class="[$style['basic-list'], 'row-margin-contents']">
         <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']"></div>
@@ -712,6 +738,10 @@ export default {
           </button>
         </li>
       </ul>
+    </div>
+
+    <div>
+      <TopButton />
     </div>
 
     <template v-slot:foot>
