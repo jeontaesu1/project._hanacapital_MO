@@ -26,6 +26,8 @@ import UiTab from '@/components/ui/tab/UiTab.vue';
 import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
 import RoundTab from '@/components/ui/tab/RoundTab.vue';
 import RoundTabButton from '@/components/ui/tab/RoundTabButton.vue';
+import ButtonList from '@/components/ui/button/ButtonList.vue';
+import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 import IconTell from '@/assets/images/icon/tell.svg?component';
 import IconCarRent from '@/assets/images/icon/car-rent.svg?component';
@@ -63,7 +65,8 @@ export default {
     UiTabPanel,
     RoundTab,
     RoundTabButton,
-
+    ButtonList,
+    ButtonListItem,
     IconTell,
     IconCarRent,
     IconAutoLease,
@@ -1631,6 +1634,16 @@ export default {
           </div>
         </li>
       </ul>
+
+      <ButtonList
+        :classNames="{
+          wrap: 'row-margin-contents-small',
+        }"
+      >
+        <ButtonListItem>
+          <BasicButton :line="true" theme="quaternary">이전</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
     </FullPopup>
   </UiLayer>
 </template>
