@@ -87,19 +87,49 @@ export default {
               </div>
             </div>
           </div>
+          <CheckBox
+            id="Q_M01_p001_Check"
+            theme="tertiary"
+            :classNames="{
+              wrap: [$style['check-box-wrap'], 'row-margin-small'],
+            }"
+          >
+            <CheckBoxObject />
+            <CheckBoxLabelText>오늘하루 그만보기</CheckBoxLabelText>
+          </CheckBox>
+        </li>
+        <li :class="$style['logs__item']">
+          <div
+            :class="[$style['logs__block'], $style['logs__block--tertiary']]"
+          >
+            <div :class="$style['logs__row']">
+              <div :class="$style['logs__contents']">
+                <h3 class="text-body-3 font-weight-medium">
+                  <span class="text-body-1 color-green"
+                    >진행 중인 계약이 있습니다.</span
+                  ><br />
+                  이어서 진행하시겠습니까?
+                </h3>
+              </div>
+              <div :class="$style['logs__right']">
+                <button type="button" :class="$style['logs__link']">
+                  <span :class="$style['logs__link-text']">상세보기</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <CheckBox
+            id="Q_M01_p002_Check"
+            theme="tertiary"
+            :classNames="{
+              wrap: [$style['check-box-wrap'], 'row-margin-small'],
+            }"
+          >
+            <CheckBoxObject />
+            <CheckBoxLabelText>오늘하루 그만보기</CheckBoxLabelText>
+          </CheckBox>
         </li>
       </ul>
-
-      <CheckBox
-        id="Q_M01_p001_Check"
-        theme="tertiary"
-        :classNames="{
-          wrap: [$style['check-box-wrap'], 'row-margin-small'],
-        }"
-      >
-        <CheckBoxObject />
-        <CheckBoxLabelText>오늘하루 그만보기</CheckBoxLabelText>
-      </CheckBox>
     </div>
     <!-- // Case : 진행중인 계약/ 우수고객 추가 대출 대상인 경우 노출 -->
 
