@@ -414,6 +414,10 @@ const datas = () => [
             date: '2023.11.06',
             text: 'Common_M00_l021 하단에 안내문 추가',
           },
+          {
+            date: '2023.12.13',
+            text: '팝업 추가\n- Common_M00_l060',
+          },
         ],
       },
       {
@@ -594,6 +598,17 @@ const datas = () => [
             text: '이미지 및 배경색 변경',
           },
         ],
+      },
+      {
+        depth2: '팝업 바닥 페이지\nCommon_M00_p101',
+        depth3: '',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/bottom-page/Common_M00_p101',
+        status: 'end',
+        create: '2023.12.13',
+        log: [],
       },
     ],
   },

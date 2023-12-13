@@ -1869,6 +1869,14 @@ const routes = [
     meta: { layout: 'FullLayout' },
   },
 
+  // bottom-page
+  {
+    path: '/bottom-page/Common_M00_p101',
+    name: '/bottom-page/Common_M00_p101',
+    component: () => import('@/views/bottomPage/Common_M00_p101.vue'),
+    meta: { layout: 'FullLayout' },
+  },
+
   // document
   {
     path: '/document/estimate-001',

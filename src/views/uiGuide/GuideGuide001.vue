@@ -16,6 +16,7 @@ import LayerGuideAppEvaluation from '@/views/guide/LayerGuideAppEvaluation.vue';
 import Common_M00_l034 from '@/views/guide/Common_M00_l034.vue';
 import Common_M00_l035_App from '@/views/guide/Common_M00_l035_App.vue';
 import Common_M00_l035_Web from '@/views/guide/Common_M00_l035_Web.vue';
+import Common_M00_l060 from '@/views/guide/Common_M00_l060.vue';
 
 export default {
   components: {
@@ -33,6 +34,7 @@ export default {
     Common_M00_l034,
     Common_M00_l035_App,
     Common_M00_l035_Web,
+    Common_M00_l060,
   },
   setup() {
     const layer001 = ref(null);
@@ -46,6 +48,7 @@ export default {
     const layer009 = ref(null);
     const layer010 = ref(null);
     const layer011 = ref(null);
+    const layer012 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -80,6 +83,9 @@ export default {
     const layer011Open = (e = {}) => {
       layer011.value.layer.open(e.target);
     };
+    const layer012Open = (e = {}) => {
+      layer012.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -93,6 +99,7 @@ export default {
       layer009,
       layer010,
       layer011,
+      layer012,
       layer001Open,
       layer002Open,
       // layer003Open,
@@ -104,6 +111,7 @@ export default {
       layer009Open,
       layer010Open,
       layer011Open,
+      layer012Open,
     };
   },
 };
@@ -167,6 +175,11 @@ export default {
           초과접속 안내 팝업 Web<br />Common_M00_l035
         </BasicButton>
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer012Open">
+          일부 앱 이용 안내<br />Common_M00_l060
+        </BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <LayerGuideAuthority ref="layer001" />
@@ -179,5 +192,6 @@ export default {
     <Common_M00_l034 ref="layer009" />
     <Common_M00_l035_App ref="layer010" />
     <Common_M00_l035_Web ref="layer011" />
+    <Common_M00_l060 ref="layer012" />
   </PageContents>
 </template>
