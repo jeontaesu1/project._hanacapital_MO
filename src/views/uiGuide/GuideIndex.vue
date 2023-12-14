@@ -3087,7 +3087,12 @@ const datas = () => [
         path: '/lm-blog-personal/home',
         status: 'end',
         create: '2023.04.21',
-        log: [],
+        log: [
+          {
+            date: '2023.12.14',
+            text: '배너 영역 이미지 크기 및 간격 수정',
+          },
+        ],
       },
       {
         depth2: '전체메뉴\nLM_M06_p002',
