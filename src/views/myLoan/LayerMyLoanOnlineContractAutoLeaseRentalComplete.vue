@@ -5,11 +5,9 @@ import { ref } from 'vue';
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
-import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
-import PageSubText from '@/components/ui/text/PageSubText.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
@@ -24,11 +22,9 @@ export default {
     UiLayer,
     FullPopup,
     FullPopupHead,
-    PopupTitle,
     PopupButton,
     PageTextGroup,
     PageMainText,
-    PageSubText,
     IllustObject,
     BasicHr,
     BasicButton,
@@ -52,7 +48,6 @@ export default {
     <FullPopup>
       <template v-slot:head>
         <FullPopupHead>
-          <PopupTitle>온라인약정</PopupTitle>
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
@@ -64,14 +59,19 @@ export default {
           온라인약정이<br />
           완료되었습니다
         </PageMainText>
-        <PageSubText>
-          차량출고요청 및 계약사항 안내를 위해<br />
-          <span class="color-green font-weight-regular">녹취콜</span>을
-          요청합니다
-        </PageSubText>
       </PageTextGroup>
 
       <IllustObject type="complete" />
+
+      <div :class="$style['box-wrap']">
+        <div :class="$style['box-wrap--block']">
+          <p class="text-body-1 font-weight-regular">
+            차량출고요청 및 계약사항 안내를 위해<br />
+            <span class="color-green font-weight-medium">“녹취콜”</span>을
+            요청합니다
+          </p>
+        </div>
+      </div>
 
       <BasicHr
         type="contents"

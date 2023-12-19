@@ -30,7 +30,7 @@ export default {
 <template>
   <div :class="$style['layout']">
     <div :class="$style['layout__head']">
-      <DefaultHeader />
+      <DefaultHeader v-if="store.ui.layout.useHeader" />
       <DockBar v-if="store.ui.common.isAPP" />
     </div>
     <div :class="$style['layout__body']">

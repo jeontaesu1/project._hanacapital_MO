@@ -195,6 +195,7 @@ export default {
                   type="number"
                   pattern="\d*"
                   title="면허발급번호 앞 2자리"
+                  :useDelete="false"
                 />
               </InputBlockCell>
               <InputBlockCell type="sub">-</InputBlockCell>
@@ -208,6 +209,7 @@ export default {
                   type="number"
                   pattern="\d*"
                   title="면허발급번호 두번째 6자리"
+                  :useDelete="false"
                 />
               </InputBlockCell>
               <InputBlockCell type="sub">-</InputBlockCell>
@@ -216,6 +218,7 @@ export default {
                   type="number"
                   pattern="\d*"
                   title="면허발급번호 뒤 2자리"
+                  :useDelete="false"
                 />
               </InputBlockCell>
             </InputBlock>

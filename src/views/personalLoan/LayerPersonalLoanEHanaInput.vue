@@ -21,9 +21,10 @@ import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
+import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 
-import IconSearchMoney from '@/assets/images/icon/search-money.svg?component';
-import IconInterestRate from '@/assets/images/icon/interest-rate.svg?component';
+import IconMaximum from '@/assets/images/icon/maximum.svg?component';
+import IconExpectedInterestRate from '@/assets/images/icon/expected-interest-rate.svg?component';
 import IconCommisionRate from '@/assets/images/icon/commission-rate.svg?component';
 
 export default {
@@ -47,8 +48,9 @@ export default {
     FormInvalid,
     FormInvalidMessage,
     UnitText,
-    IconSearchMoney,
-    IconInterestRate,
+    FormHelpText,
+    IconMaximum,
+    IconExpectedInterestRate,
     IconCommisionRate,
   },
   setup() {
@@ -91,7 +93,7 @@ export default {
           <ul :class="$style['product-detail__list']">
             <li :class="$style['product-detail__item']">
               <div :class="$style['product-detail__icon']">
-                <IconSearchMoney />
+                <IconMaximum />
               </div>
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">최대한도</div>
@@ -102,7 +104,7 @@ export default {
             </li>
             <li :class="$style['product-detail__item']">
               <div :class="$style['product-detail__icon']">
-                <IconInterestRate />
+                <IconExpectedInterestRate />
               </div>
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">예상금리</div>
@@ -152,6 +154,12 @@ export default {
               </template>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
+            <FormHelpText
+              :classNames="{
+                wrap: 'align-right',
+              }"
+              >사천만원</FormHelpText
+            >
           </FormInvalid>
         </FormListItem>
 

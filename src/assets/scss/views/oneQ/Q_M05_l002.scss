@@ -1,0 +1,16 @@
+@import '@/assets/scss/components/import/basic-list.scss';
+
+.header {
+  &-left {
+    flex: none;
+  }
+
+  &-right {
+    flex: none;
+  }
+
+  &-center {
+    flex: 1;
+    min-width: 0;
+  }
+}

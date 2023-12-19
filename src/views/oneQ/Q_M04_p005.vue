@@ -1,5 +1,5 @@
 <script>
-// Q_M04_p004
+// Q_M04_p005
 import { onMounted, onUnmounted } from 'vue';
 
 import { useUiHeaderStore } from '@/stores/ui/header';
@@ -67,7 +67,7 @@ export default {
             }"
           >
             <ButtonListItem>
-              <BasicButton>상담원 연결</BasicButton>
+              <BasicButton>확인</BasicButton>
             </ButtonListItem>
           </ButtonList>
         </div>

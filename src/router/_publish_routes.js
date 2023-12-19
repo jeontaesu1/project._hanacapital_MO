@@ -696,6 +696,11 @@ const routes = [
     meta: { layout: 'NoneLayout' },
   },
   {
+    path: '/redirect/redirect-app-004',
+    name: '/redirect/redirect-app-004',
+    component: () => import('@/views/redirect/Common_M00_p400.vue'),
+  },
+  {
     path: '/redirect/app-free',
     name: '/redirect/app-free',
     component: () => import('@/views/redirect/RedirectAppFree.vue'),
@@ -1864,6 +1869,14 @@ const routes = [
     meta: { layout: 'FullLayout' },
   },
 
+  // bottom-page
+  {
+    path: '/bottom-page/Common_M00_p101',
+    name: '/bottom-page/Common_M00_p101',
+    component: () => import('@/views/bottomPage/Common_M00_p101.vue'),
+    meta: { layout: 'FullLayout' },
+  },
+
   // document
   {
     path: '/document/estimate-001',
@@ -1892,6 +1905,31 @@ const routes = [
 
   // 1q
   {
+    path: '/one-q/Q_M00_p001',
+    name: '/one-q/Q_M00_p001',
+    component: () => import('@/views/oneQ/Q_M00_p001.vue'),
+  },
+  {
+    path: '/one-q/Q_M01_p001',
+    name: '/one-q/Q_M01_p001',
+    component: () => import('@/views/oneQ/Q_M01_p001.vue'),
+  },
+  {
+    path: '/one-q/Q_M01_p002',
+    name: '/one-q/Q_M01_p002',
+    component: () => import('@/views/oneQ/Q_M01_p002.vue'),
+  },
+  {
+    path: '/one-q/Q_M01_p003',
+    name: '/one-q/Q_M01_p003',
+    component: () => import('@/views/oneQ/Q_M01_p003.vue'),
+  },
+  {
+    path: '/one-q/Q_M02_p001',
+    name: '/one-q/Q_M02_p001',
+    component: () => import('@/views/oneQ/Q_M02_p001.vue'),
+  },
+  {
     path: '/one-q/Q_M02_p002',
     name: '/one-q/Q_M02_p002',
     component: () => import('@/views/oneQ/Q_M02_p002.vue'),
@@ -1902,9 +1940,9 @@ const routes = [
     component: () => import('@/views/oneQ/Q_M02_p003.vue'),
   },
   {
-    path: '/one-q/one-q-001',
-    name: '/one-q/one-q-001',
-    component: () => import('@/views/oneQ/one-q-001.vue'),
+    path: '/one-q/Q_M03_p001',
+    name: '/one-q/Q_M03_p001',
+    component: () => import('@/views/oneQ/Q_M03_p001.vue'),
   },
   {
     path: '/one-q/Q_M03_p002',
@@ -1915,6 +1953,11 @@ const routes = [
     path: '/one-q/Q_M03_p003',
     name: '/one-q/Q_M03_p003',
     component: () => import('@/views/oneQ/Q_M03_p003.vue'),
+  },
+  {
+    path: '/one-q/Q_M04_p001',
+    name: '/one-q/Q_M04_p001',
+    component: () => import('@/views/oneQ/Q_M04_p001.vue'),
   },
   {
     path: '/one-q/Q_M04_p002',
@@ -1937,9 +1980,9 @@ const routes = [
     component: () => import('@/views/oneQ/Q_M04_p005.vue'),
   },
   {
-    path: '/one-q/one-q-002',
-    name: '/one-q/one-q-002',
-    component: () => import('@/views/oneQ/one-q-002.vue'),
+    path: '/one-q/Q_M05_p001',
+    name: '/one-q/Q_M05_p001',
+    component: () => import('@/views/oneQ/Q_M05_p001.vue'),
   },
   {
     path: '/one-q/Q_M05_p002',
@@ -1947,19 +1990,9 @@ const routes = [
     component: () => import('@/views/oneQ/Q_M05_p002.vue'),
   },
   {
-    path: '/one-q/Q_M05_p003',
-    name: '/one-q/Q_M05_p003',
-    component: () => import('@/views/oneQ/Q_M05_p003.vue'),
-  },
-  {
-    path: '/one-q/Q_M05_p004',
-    name: '/one-q/Q_M05_p004',
-    component: () => import('@/views/oneQ/Q_M05_p004.vue'),
-  },
-  {
-    path: '/ui-guide/one-q-003',
-    name: '/ui-guide/one-q-003',
-    component: () => import('@/views/uiGuide/GuideOneQ-003.vue'),
+    path: '/one-q/Q_M06_p001',
+    name: '/one-q/Q_M06_p001',
+    component: () => import('@/views/oneQ/Q_M06_p001.vue'),
   },
   {
     path: '/one-q/Q_M06_p002',
@@ -1967,14 +2000,9 @@ const routes = [
     component: () => import('@/views/oneQ/Q_M06_p002.vue'),
   },
   {
-    path: '/one-q/Q_M06_p003',
-    name: '/one-q/Q_M06_p003',
-    component: () => import('@/views/oneQ/Q_M06_p003.vue'),
-  },
-  {
-    path: '/one-q/Q_M06_p004',
-    name: '/one-q/Q_M06_p004',
-    component: () => import('@/views/oneQ/Q_M06_p004.vue'),
+    path: '/one-q/Q_M07_p001',
+    name: '/one-q/Q_M07_p001',
+    component: () => import('@/views/oneQ/Q_M07_p001.vue'),
   },
   {
     path: '/one-q/Q_M07_p002',
@@ -1982,19 +2010,9 @@ const routes = [
     component: () => import('@/views/oneQ/Q_M07_p002.vue'),
   },
   {
-    path: '/one-q/Q_M07_p003',
-    name: '/one-q/Q_M07_p003',
-    component: () => import('@/views/oneQ/Q_M07_p003.vue'),
-  },
-  {
-    path: '/one-q/Q_M07_p004',
-    name: '/one-q/Q_M07_p004',
-    component: () => import('@/views/oneQ/Q_M07_p004.vue'),
-  },
-  {
-    path: '/ui-guide/one-q-004',
-    name: '/ui-guide/one-q-004',
-    component: () => import('@/views/uiGuide/GuideOneQ-004.vue'),
+    path: '/one-q/Q_M08_p001',
+    name: '/one-q/Q_M08_p001',
+    component: () => import('@/views/oneQ/Q_M08_p001.vue'),
   },
   {
     path: '/one-q/Q_M08_p002',
@@ -2002,14 +2020,49 @@ const routes = [
     component: () => import('@/views/oneQ/Q_M08_p002.vue'),
   },
   {
-    path: '/one-q/Q_M08_p003',
-    name: '/one-q/Q_M08_p003',
-    component: () => import('@/views/oneQ/Q_M08_p003.vue'),
+    path: '/one-q/My_M03_p001',
+    name: '/one-q/My_M03_p001',
+    component: () => import('@/views/oneQ/My_M03_p001.vue'),
   },
   {
-    path: '/one-q/Q_M08_p004',
-    name: '/one-q/Q_M08_p004',
-    component: () => import('@/views/oneQ/Q_M08_p004.vue'),
+    path: '/one-q/My_M03_p002',
+    name: '/one-q/My_M03_p002',
+    component: () => import('@/views/oneQ/My_M03_p002.vue'),
+  },
+  {
+    path: '/ui-guide/one-q-002',
+    name: '/ui-guide/one-q-002',
+    component: () => import('@/views/uiGuide/GuideOneQ002.vue'),
+  },
+  {
+    path: '/ui-guide/one-q-003',
+    name: '/ui-guide/one-q-003',
+    component: () => import('@/views/uiGuide/GuideOneQ003.vue'),
+  },
+  {
+    path: '/ui-guide/one-q-004',
+    name: '/ui-guide/one-q-004',
+    component: () => import('@/views/uiGuide/GuideOneQ004.vue'),
+  },
+  {
+    path: '/ui-guide/one-q-005',
+    name: '/ui-guide/one-q-005',
+    component: () => import('@/views/uiGuide/GuideOneQ005.vue'),
+  },
+  {
+    path: '/ui-guide/one-q-006',
+    name: '/ui-guide/one-q-006',
+    component: () => import('@/views/uiGuide/GuideOneQ006.vue'),
+  },
+  {
+    path: '/ui-guide/one-q-007',
+    name: '/ui-guide/one-q-007',
+    component: () => import('@/views/uiGuide/GuideOneQ007.vue'),
+  },
+  {
+    path: '/ui-guide/one-q-008',
+    name: '/ui-guide/one-q-008',
+    component: () => import('@/views/uiGuide/GuideOneQ008.vue'),
   },
 
   // link

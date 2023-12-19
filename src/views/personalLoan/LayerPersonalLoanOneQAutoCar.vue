@@ -9,10 +9,6 @@ import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-import KeyValue from '@/components/ui/text/KeyValue.vue';
-import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
-import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
-import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 
 export default {
   components: {
@@ -23,10 +19,6 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    KeyValue,
-    KeyValueItem,
-    KeyValueTitle,
-    KeyValueText,
   },
   setup() {
     const layer = ref(null);
@@ -47,37 +39,47 @@ export default {
         </ToastPopupHead>
       </template>
 
-      <KeyValue>
-        <KeyValueItem>
-          <KeyValueTitle>차량명의</KeyValueTitle>
-          <KeyValueText>
-            본인명의(공동명의 제외)<br />
-            소유기간 3개월 이상
-          </KeyValueText>
-        </KeyValueItem>
-
-        <KeyValueItem>
-          <KeyValueTitle>소유차종</KeyValueTitle>
-          <KeyValueText>국산/수입 승용, RV, 승합</KeyValueText>
-        </KeyValueItem>
-
-        <KeyValueItem>
-          <KeyValueTitle>차량연식</KeyValueTitle>
-          <KeyValueText>
-            출고 이후 10년 이내<br />
-            차량가격 500만원 이상<br />
-            (당사 차량 시세 가격 기준)
-          </KeyValueText>
-        </KeyValueItem>
-
-        <KeyValueItem>
-          <KeyValueTitle>차량압류 및 설정</KeyValueTitle>
-          <KeyValueText>
-            차량 압류 및 설정 내역이<br />
-            있을 경우 해지 후 대출 가능
-          </KeyValueText>
-        </KeyValueItem>
-      </KeyValue>
+      <div :class="$style['basic-table']">
+        <div :class="$style['basic-table']">
+          <table>
+            <colgroup>
+              <col style="width: 80px" />
+              <col />
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>차량명의</th>
+                <td>
+                  본인명의(공동명의 제외)<br />
+                  소유기간 3개월 이상
+                </td>
+              </tr>
+              <tr>
+                <th>소유차종</th>
+                <td>국산/수입 승용, RV, 승합</td>
+              </tr>
+              <tr>
+                <th>차량연식</th>
+                <td>
+                  출고 이후 10년 이내<br />
+                  차량가격 500만원 이상<br />
+                  (당사 차량 시세 가격 기준)
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  차량압류<br />
+                  및 설정
+                </th>
+                <td>
+                  차량 압류 및 설정 내역이 있을 경우<br />
+                  해지 후 대출 가능
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
       <ul :class="[$style['basic-list'], 'row-margin-contents']">
         <li :class="$style['basic-list__item']">

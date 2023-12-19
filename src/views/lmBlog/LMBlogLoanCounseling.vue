@@ -227,7 +227,7 @@ export default {
           <!-- // Case : 조회 필터 입력 전 -->
 
           <!-- Case : 조회 필터 입력 후 -->
-          <FilterButton :active="true" @click="layerOpen" theme="secondary" />
+          <FilterButton :active="true" @click="layerOpen" />
           <!-- // Case : 조회 필터 입력 후 -->
         </div>
       </div>

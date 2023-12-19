@@ -21,6 +21,7 @@ import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
 import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
 import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 
+import IconPopup from '@/assets/images/icon/popup.svg?component';
 import IconHomeSetting from '@/assets/images/icon/home-setting.svg?component';
 import IconSettingDecide from '@/assets/images/icon/setting-decide.svg?component';
 import IconBasicSetting from '@/assets/images/icon/basic-setting.svg?component';
@@ -44,6 +45,7 @@ export default {
     BoxCheckLabel,
     BoxCheckList,
     BoxCheckListItem,
+    IconPopup,
     IconHomeSetting,
     IconSettingDecide,
     IconBasicSetting,
@@ -121,7 +123,7 @@ export default {
         <li :class="$style['share-list__item']">
           <RouterLink :class="$style['share-list__button']" to="">
             <span :class="$style['share-list__icon']">
-              <IconHomeSetting />
+              <IconPopup />
             </span>
             <span :class="$style['share-list__text']">팝업/보조금</span>
           </RouterLink>

@@ -1,1 +1,12 @@
 @import '@/assets/scss/components/import/icon-list.scss';
+
+.box-wrap {
+  padding: 0 4px;
+
+  &--block {
+    background-color: $color-gray-15;
+    border-radius: 6px;
+    text-align: center;
+    padding: 15px;
+  }
+}

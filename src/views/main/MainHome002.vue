@@ -186,7 +186,14 @@ export default {
             v-slot="accordionItemSlotProps"
           >
             <div :class="$style['progress__head']">
+              <!-- Case : 진행 중 상품일 경우 노출 -->
               <h2 :class="$style['progress__title']">약정 중 상품</h2>
+              <!-- // Case : 진행 중 상품일 경우 노출 -->
+
+              <!-- Case : 거래 상품일 경우 노출 -->
+              <h2 :class="$style['progress__title']">거래 중 상품</h2>
+              <!-- // Case : 거래 상품일 경우 노출 -->
+
               <p :class="$style['progress__count']">
                 <span :class="$style['progress__count-num']">99</span>
                 <span :class="$style['progress__count-unit']">건</span>
@@ -402,9 +409,27 @@ export default {
                   <div :class="$style['progress__amount']">
                     <!-- Case : 1건일 경우 노출 -->
                     <div :class="$style['progress__amount-d-day']">
-                      <RoundStatus theme="nonary">D-3</RoundStatus>
+                      <RoundStatus theme="secondary">D-3</RoundStatus>
                     </div>
                     <!-- // Case : 1건일 경우 노출 -->
+
+                    <!-- Case : 결제일일 경우 노출 -->
+                    <div :class="$style['progress__amount-d-day']">
+                      <RoundStatus theme="secondary">D-DAY</RoundStatus>
+                    </div>
+                    <!-- // Case : 결제일일 경우 노출-->
+
+                    <!-- Case : 연체중일 경우 노출 -->
+                    <div :class="$style['progress__amount-d-day']">
+                      <RoundStatus theme="nonary">연체</RoundStatus>
+                    </div>
+                    <!-- // Case : 연체중일 경우 노출-->
+
+                    <!-- Case : 종료일 경우 노출 -->
+                    <div :class="$style['progress__amount-d-day']">
+                      <RoundStatus>종료</RoundStatus>
+                    </div>
+                    <!-- // Case : 종료일 경우 노출-->
 
                     <dl :class="$style['progress__amount-block']">
                       <!-- Case : 1건일 경우 노출 -->
@@ -580,6 +605,58 @@ export default {
                     </div>
                   </div>
                   <!-- // Case : 팩토링 -->
+
+                  <!-- Case : 30건 이상인 경우 -->
+                  <div>
+                    <div :class="$style['progress__contents-top']">
+                      <div :class="$style['progress__contents-head']">
+                        <div :class="$style['progress__contents-title']">
+                          <div class="flex-box">
+                            <div class="flex-box__cell">행복아파트론</div>
+                            <div class="flex-box__cell flex-box__cell--small">
+                              <span
+                                class="text-body-5 color-gray font-weight-regular"
+                              >
+                                외 0건
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Case : 2건 이상일 경우 노출 -->
+                        <div :class="$style['progress__contents-right']">
+                          <TextButton
+                            :block="true"
+                            :iconFillAll="true"
+                            :classNames="{
+                              wrap: 'text-body-4 color-gray',
+                            }"
+                          >
+                            전체보기
+                            <template v-slot:rightIcon>
+                              <IconAdd />
+                            </template>
+                          </TextButton>
+                        </div>
+                        <!-- // Case : 2건 이상일 경우 노출 -->
+                      </div>
+                    </div>
+
+                    <div :class="$style['progress__amount']">
+                      <dl :class="$style['progress__amount-block']">
+                        <dt
+                          :class="[
+                            $style['progress__amount-key-block'],
+                            'text-title-2',
+                            'font-weight-medium',
+                            'color-black',
+                          ]"
+                        >
+                          자세히 보기
+                        </dt>
+                      </dl>
+                    </div>
+                  </div>
+                  <!-- // Case : 30건 이상인 경우 -->
                 </div>
                 <!-- // Case : 거래 상품 -->
               </section>
@@ -886,7 +963,7 @@ export default {
                   ]"
                   ><IconBird
                 /></span>
-                <span :class="$style['icon-list__content']">
+                <span :class="$style['icon-list__content--secondary']">
                   <span :class="$style['icon-list__text']"
                     >운새가 말해주는</span
                   >
@@ -903,7 +980,7 @@ export default {
                   ]"
                   ><IconGraph
                 /></span>
-                <span :class="$style['icon-list__content']">
+                <span :class="$style['icon-list__content--secondary']">
                   <span :class="$style['icon-list__text']"
                     >내 차, 저 아파트가 얼마일까?</span
                   >
@@ -922,7 +999,7 @@ export default {
                   ]"
                   ><IconStudy
                 /></span>
-                <span :class="$style['icon-list__content']">
+                <span :class="$style['icon-list__content--secondary']">
                   <span :class="$style['icon-list__text']"
                     >알아두면 유용하고 재미있는</span
                   >

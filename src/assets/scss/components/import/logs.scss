@@ -36,6 +36,12 @@
       border-color: $color-gray-30;
     }
 
+    &--tertiary {
+      border: transparent;
+      background-color: $color-gray-15;
+      padding: 15px 20px;
+    }
+
     &--small {
       padding: 13px 16px 12px 16px;
     }

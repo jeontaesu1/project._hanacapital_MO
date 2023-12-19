@@ -15,7 +15,7 @@ import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
 
-import IconMaximum from '@/assets/images/icon/icon-maximum.svg?component';
+import IconMaximum from '@/assets/images/icon/maximum.svg?component';
 
 export default {
   components: {
@@ -64,7 +64,10 @@ export default {
 
     <IllustObject type="complete" />
 
-    <BasicBox theme="tertiary" className="row-margin-contents">
+    <BasicBox
+      theme="tertiary"
+      className="row-margin-item-group-small row-margin-bottom-none"
+    >
       <div :class="$style['product-detail']">
         <ul :class="$style['product-detail__list']">
           <li :class="$style['product-detail__item']">
@@ -82,7 +85,7 @@ export default {
       </div>
     </BasicBox>
 
-    <ul :class="$style['basic-list']">
+    <ul :class="[$style['basic-list'], 'row-margin-contents']">
       <li :class="$style['basic-list__item']">
         <div :class="$style['basic-list__symbol']"></div>
         <div :class="$style['basic-list__content']">

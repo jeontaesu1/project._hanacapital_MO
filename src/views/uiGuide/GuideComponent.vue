@@ -126,7 +126,7 @@ import IconLocation from '@/assets/images/icon/location.svg?component';
 import IconDocument from '@/assets/images/icon/document.svg?component';
 import IconNotify from '@/assets/images/icon/notify.svg?component';
 import IconSearchMoney from '@/assets/images/icon/search-money.svg?component';
-import IconInterestRate from '@/assets/images/icon/interest-rate.svg?component';
+import IconExpectedInterestRate from '@/assets/images/icon/expected-interest-rate.svg?component';
 import IconCommisionRate from '@/assets/images/icon/commission-rate.svg?component';
 import IconMoney from '@/assets/images/icon/money.svg?component';
 import IconRate from '@/assets/images/icon/rate.svg?component';
@@ -285,7 +285,7 @@ export default {
     IconDocument,
     IconNotify,
     IconSearchMoney,
-    IconInterestRate,
+    IconExpectedInterestRate,
     IconCommisionRate,
     IconMoney,
     IconRate,
@@ -7494,7 +7494,7 @@ export default {
             </li>
             <li :class="$style['product-detail__item']">
               <div :class="$style['product-detail__icon']">
-                <IconInterestRate />
+                <IconExpectedInterestRate />
               </div>
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">예상금리</div>

@@ -254,19 +254,6 @@ export default {
             >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                금융소비자의 개인신용평점에 따라 대출한도 및 금리가 차등
-                적용됩니다.
-              </div>
-            </li>
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-3',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
                 금융소비자는 해당상품에 대하여 설명을 받을 권리가 있으며, 그
                 설명을 듣고 내용을 충분히 이해한 후 거래하시기 바랍니다.
               </div>

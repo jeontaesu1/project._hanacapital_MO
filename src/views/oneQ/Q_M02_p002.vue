@@ -93,18 +93,18 @@ export default {
     </PageTextGroup>
 
     <FormList>
-      <FormListItem titleText="이름" target="#q_M02_p002_name">
+      <FormListItem titleText="이름" target="#Q_M02_p002_name">
         <FormInvalid :error="state.nameError">
           <InputBlock :error="state.nameError">
             <InputBlockCell :flexible="true">
-              <BasicInput title="이름" id="q_M02_p002_name" />
+              <BasicInput title="이름" id="Q_M02_p002_name" />
             </InputBlockCell>
           </InputBlock>
           <FormInvalidMessage>Error Message</FormInvalidMessage>
         </FormInvalid>
       </FormListItem>
 
-      <FormListItem titleText="휴대폰번호" target="#q_M02_p002_phone">
+      <FormListItem titleText="휴대폰번호" target="#Q_M02_p002_phone">
         <FormInvalid :error="state.phoneError">
           <InputBlock :error="state.phoneError">
             <InputBlockCell>
@@ -145,7 +145,7 @@ export default {
                 ]"
                 buttonTitle="통신사 선택하기"
                 layerTitle="통신사를 선택해 주세요"
-                buttonId="q_M02_p002_phone"
+                buttonId="Q_M02_p002_phone"
                 :classNames="{
                   wrap: 'input-width-telecom',
                 }"
@@ -167,7 +167,7 @@ export default {
         <div :class="$style['agree-list']">
           <div :class="$style['agree-list__head']">
             <CheckBox
-              id="q_M02_p002_agree"
+              id="Q_M02_p002_agree"
               :classNames="{
                 wrap: $style['agree-list__checkbox'],
               }"

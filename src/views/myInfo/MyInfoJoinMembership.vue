@@ -25,8 +25,8 @@ import UiAccordionOpener from '@/components/ui/accordion/UiAccordionOpener.vue';
 import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 import IconHyendaiRentalCare from '@/assets/images/etc-logo/hyendai-rental-care.svg?component';
-import IconBuilding from '@/assets/images/icon/building.svg?component';
-import IconCar from '@/assets/images/icon/car.svg?component';
+import IconCarRegistration from '@/assets/images/icon/car-registration.svg?component';
+import IconRealEstateRegistration from '@/assets/images/icon/real-estate-registration.svg?component';
 
 export default {
   components: {
@@ -50,8 +50,8 @@ export default {
     UiAccordionOpener,
     BottomSticky,
     IconHyendaiRentalCare,
-    IconBuilding,
-    IconCar,
+    IconCarRegistration,
+    IconRealEstateRegistration,
   },
   setup() {
     const store = {
@@ -991,7 +991,7 @@ export default {
             <li :class="$style['icon-list__item']">
               <RouterLink to="" :class="$style['icon-list__block']">
                 <span :class="$style['icon-list__icon']">
-                  <IconBuilding />
+                  <IconRealEstateRegistration />
                 </span>
                 <span :class="$style['icon-list__content']">
                   <span :class="$style['icon-list__text']">
@@ -1101,7 +1101,7 @@ export default {
             <li :class="$style['icon-list__item']">
               <RouterLink to="" :class="$style['icon-list__block']">
                 <span :class="$style['icon-list__icon']">
-                  <IconCar />
+                  <IconCarRegistration />
                 </span>
                 <span :class="$style['icon-list__content']">
                   <span :class="$style['icon-list__text']">

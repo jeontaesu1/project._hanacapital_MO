@@ -11,7 +11,6 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
-import TextButton from '@/components/ui/button/TextButton.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
@@ -27,10 +26,11 @@ import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import CarThumb from '@/components/ui/imageData/CarThumb.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
 
+import IconCarSecurity from '@/assets/images/icon/car-security.svg?component';
 import IconLogo from '@/assets/images/icon/hanacapital-small.svg?component';
 import IconLink from '@/assets/images/icon/link.svg?component';
-import IconCar from '@/assets/images/icon/car.svg?component';
 
 export default {
   components: {
@@ -43,7 +43,6 @@ export default {
     BasicButton,
     PageTextGroup,
     PageMainText,
-    TextButton,
     BasicHr,
     BasicBox,
     UnitText,
@@ -59,9 +58,10 @@ export default {
     InputBlock,
     InputBlockCell,
     CarThumb,
+    TextButton,
+    IconCarSecurity,
     IconLogo,
     IconLink,
-    IconCar,
   },
   setup() {
     const state = reactive({
@@ -191,7 +191,9 @@ export default {
         <ul :class="$style['icon-list__list']">
           <li :class="$style['icon-list__item']">
             <button type="button" :class="$style['icon-list__block']">
-              <span :class="$style['icon-list__icon']"><IconCar /></span>
+              <span :class="$style['icon-list__icon']"
+                ><IconCarSecurity
+              /></span>
               <span :class="$style['icon-list__content']">
                 <span :class="$style['icon-list__text']">
                   자동차를 소유중이신가요?

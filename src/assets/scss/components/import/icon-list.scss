@@ -60,6 +60,16 @@ div.icon-list__block {
     display: block;
     flex: 1;
     min-width: 0;
+
+    &--secondary {
+      display: block;
+      flex: 1;
+      min-width: 0;
+    }
+  }
+
+  &__icon + &__content--secondary {
+    margin-left: 10px;
   }
 
   &__icon + &__content {

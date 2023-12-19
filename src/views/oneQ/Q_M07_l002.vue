@@ -1,29 +1,58 @@
 <script>
-// Q_M07_l002
-import { ref } from 'vue';
+// PF_M04_l002
+import { reactive, ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
-import ToastPopup from '@/components/ui/layer/ToastPopup.vue';
-import ToastPopupHead from '@/components/ui/layer/ToastPopupHead.vue';
-import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
-import BasicButton from '@/components/ui/button/BasicButton.vue';
-import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import FullPopup from '@/components/ui/layer/FullPopup.vue';
+import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
+import PopupButton from '@/components/ui/layer/PopupButton.vue';
+import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
+import PageMainText from '@/components/ui/text/PageMainText.vue';
+import FormList from '@/components/ui/form/FormList.vue';
+import FormListItem from '@/components/ui/form/FormListItem.vue';
+import FormInvalid from '@/components/ui/form/FormInvalid.vue';
+import InputBlock from '@/components/ui/form/InputBlock.vue';
+import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
+import BasicInput from '@/components/ui/form/BasicInput.vue';
+import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
+import FormHelpText from '@/components/ui/form/FormHelpText.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
+import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
+
+import IconInformation from '@/assets/images/icon/information.svg?component';
 
 export default {
   components: {
     UiLayer,
-    ToastPopup,
-    ToastPopupHead,
-    PopupTitle,
-    BasicButton,
+    FullPopup,
+    FullPopupHead,
+    PopupButton,
+    PageTextGroup,
+    PageMainText,
+    FormList,
+    FormListItem,
+    FormInvalid,
+    InputBlock,
+    InputBlockCell,
+    BasicInput,
+    FormInvalidMessage,
+    FormHelpText,
+    TextButton,
     ButtonList,
     ButtonListItem,
+    BasicButton,
+    IconInformation,
   },
   setup() {
+    const state = reactive({
+      carNumberError: false,
+    });
     const layer = ref(null);
 
     return {
+      state,
       layer,
     };
   },
@@ -31,56 +60,54 @@ export default {
 </script>
 
 <template>
-  <UiLayer
-    ref="layer"
-    type="toast"
-    :backgroundClose="true"
-    v-slot="layerSlotProps"
-  >
-    <ToastPopup>
+  <UiLayer ref="layer" type="full" v-slot="layerSlotProps">
+    <FullPopup>
       <template v-slot:head>
-        <ToastPopupHead>
-          <PopupTitle class="row-margin-item-group">
-            사업자 대출 진행안내
-          </PopupTitle>
-          <strong class="text-body-2">
-            자영업자 선택 시, 사업자대출로 진행됩니다.<br />
-            아래 사항을 참고하시고, 사업자대출로 진행을<br />
-            원하실 경우 ‘동의‘ 를 눌러주세요.
-          </strong>
-        </ToastPopupHead>
+        <FullPopupHead>
+          <template v-slot:right>
+            <PopupButton @click="layerSlotProps.close()" />
+          </template>
+        </FullPopupHead>
       </template>
 
-      <ol :class="$style['basic-list']">
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']">1.</div>
-          <div :class="$style['basic-list__content']">
-            사업자대출은 고객님 명의로 개인사업자를 운영하시고, 대출금을 사업자
-            운영자금 목적으로 사용하시는 경우 가능합니다.<br />
-            (대출금액 1억 이하 시 별도 자금용도 증빙은 하지 않습니다.)
-          </div>
-        </li>
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']">2.</div>
-          <div :class="$style['basic-list__content']">
-            추후 사업자를 폐업하는 경우 개인대출로 전환되며, 이때 고객님
-            개인신용평점에 변동이 발생할 수 있습니다.
-          </div>
-        </li>
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']">3.</div>
-          <div :class="$style['basic-list__content']">
-            사업자대출 진행 시 사업자등록증 사본 추가 서류를 요청할 수 있습니다.
-          </div>
-        </li>
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']">4.</div>
-          <div :class="$style['basic-list__content']">
-            사업자대출 진행을 동의하지 않으실 경우 개인대출로만 진행가능합니다.
-            급여소득자 혹은 기타를 선택해 진행해 주세요.
-          </div>
-        </li>
-      </ol>
+      <PageTextGroup>
+        <PageMainText>
+          자동차정보를<br />
+          입력해 주세요
+        </PageMainText>
+      </PageTextGroup>
+
+      <FormList>
+        <FormListItem
+          titleText="차량정보"
+          target="#layerPersonalLoanOneQAutoCarNumber"
+        >
+          <FormInvalid :error="state.carNumberError">
+            <InputBlock :error="state.carNumberError">
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  title="차량정보"
+                  id="layerPersonalLoanOneQAutoCarNumber"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+            <FormHelpText>예) 12가 1234</FormHelpText>
+          </FormInvalid>
+        </FormListItem>
+      </FormList>
+
+      <div class="inline-wrap align-right row-margin-item">
+        <TextButton
+          theme="quaternary"
+          :classNames="{ wrap: 'font-weight-regular' }"
+        >
+          대출가능차량 기준안내
+          <template v-slot:rightIcon>
+            <IconInformation />
+          </template>
+        </TextButton>
+      </div>
 
       <template v-slot:foot>
         <ButtonList
@@ -89,17 +116,13 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton :line="true" theme="quaternary">미동의</BasicButton>
+            <BasicButton :line="true" theme="quaternary">이전</BasicButton>
           </ButtonListItem>
           <ButtonListItem>
-            <BasicButton @click="layerSlotProps.close()">동의</BasicButton>
+            <BasicButton>다음</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
-    </ToastPopup>
+    </FullPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/personalLoan/LayerPersonalLoanEHanaBusinessNotice.scss';
-</style>

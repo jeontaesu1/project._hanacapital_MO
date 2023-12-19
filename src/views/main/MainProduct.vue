@@ -342,7 +342,7 @@ export default {
             <div :class="$style['icon-list__icon']">
               <ProductIcon
                 :classNames="{ wrap: $style['icon-list__icon-image'] }"
-                src="/images/product-icon/real-estate-registration.png"
+                src="/images/product-icon/real-estate-security.png"
               />
             </div>
             <div :class="$style['icon-list__content']">

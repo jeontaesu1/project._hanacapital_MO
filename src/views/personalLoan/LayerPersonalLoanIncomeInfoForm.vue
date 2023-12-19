@@ -212,6 +212,12 @@ export default {
                   </template>
                 </InputBlock>
                 <FormInvalidMessage>Error Message</FormInvalidMessage>
+                <FormHelpText
+                  :classNames="{
+                    wrap: 'align-right',
+                  }"
+                  >이천만원</FormHelpText
+                >
               </FormInvalid>
             </FormListItem>
           </FormList>

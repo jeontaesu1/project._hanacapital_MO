@@ -47,7 +47,7 @@ export default {
   <PageContents>
     <!-- DD : 하드코딩 배너 -->
     <BasicBanner
-      thumb="/images/banner/banner-money-up.png"
+      thumb="/images/banner/banner-certification.png"
       @click="() => {}"
       :classNames="{ wrap: 'row-margin-contents-group' }"
     >

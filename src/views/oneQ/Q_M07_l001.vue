@@ -2,19 +2,43 @@
 // Q_M07_l001
 import { ref } from 'vue';
 
-import UiLayer from '@/components/ui/layer/UiLayer.vue';
-import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
-import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
+import CheckBox from '@/components/ui/form/CheckBox.vue';
+import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
+import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
+import UiAccordion from '@/components/ui/accordion/UiAccordion.vue';
+import UiAccordionItem from '@/components/ui/accordion/UiAccordionItem.vue';
+import UiAccordionLayer from '@/components/ui/accordion/UiAccordionLayer.vue';
+import UiAccordionOpener from '@/components/ui/accordion/UiAccordionOpener.vue';
+import UiLayer from '@/components/ui/layer/UiLayer.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
+import ButtonList from '@/components/ui/button/ButtonList.vue';
+import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
+import PageMainText from '@/components/ui/text/PageMainText.vue';
+import PopupButton from '@/components/ui/layer/PopupButton.vue';
+import PageSubText from '@/components/ui/text/PageSubText.vue';
 
 export default {
   components: {
     UiLayer,
-    PopupButton,
     FullPopup,
     FullPopupHead,
-    PopupTitle,
+    CheckBox,
+    CheckBoxLabelText,
+    CheckBoxObject,
+    UiAccordion,
+    UiAccordionItem,
+    UiAccordionLayer,
+    UiAccordionOpener,
+    ButtonList,
+    ButtonListItem,
+    BasicButton,
+    PageTextGroup,
+    PageMainText,
+    PopupButton,
+    PageSubText,
   },
   setup() {
     const layer = ref(null);
@@ -31,158 +55,710 @@ export default {
     <FullPopup>
       <template v-slot:head>
         <FullPopupHead>
-          <PopupTitle>대출가능 차량 기준 안내</PopupTitle>
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
         </FullPopupHead>
       </template>
 
-      <div>
-        <section class="row-margin-contents-group">
-          <h3 class="text-body-2 row-margin-item-medium">차량명의</h3>
+      <PageTextGroup>
+        <PageMainText>
+          한도조회를 위해<br />
+          동의해 주세요
+        </PageMainText>
+        <PageSubText>
+          대출상담 및 한도조회를 위한 신용정보조회는<br />
+          개인신용평점에 영향을 주지 않습니다.
+        </PageSubText>
+      </PageTextGroup>
 
-          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-4',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                본인명의 (공동명의 제외)
-              </div>
-            </li>
-          </ul>
-        </section>
+      <div :class="$style['agree-list']">
+        <ul :class="$style['agree-list__container']">
+          <li :class="$style['agree-list__all']">
+            <div :class="$style['agree-list__all-head']">
+              <CheckBox
+                id="Q_M07_l001_agree_All"
+                :classNames="{ wrap: $style['agree-list__all-checkbox'] }"
+              >
+                <CheckBoxObject />
+                <CheckBoxLabelText>전체동의</CheckBoxLabelText>
+              </CheckBox>
+            </div>
 
-        <section class="row-margin-contents-group">
-          <h3 class="text-body-2 row-margin-item-medium">소유기간</h3>
-
-          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-4',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">3개월 이상 소유</div>
-            </li>
-          </ul>
-        </section>
-
-        <section class="row-margin-contents-group">
-          <h3 class="text-body-2 row-margin-item-medium">차종</h3>
-
-          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-4',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                국산/수입 승용, RV, 승합
-              </div>
-            </li>
-          </ul>
-        </section>
-
-        <section class="row-margin-contents-group">
-          <h3 class="text-body-2 row-margin-item-medium">차량연식</h3>
-
-          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-4',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                출고 이후 7년 이내
-              </div>
-            </li>
-          </ul>
-        </section>
-
-        <section class="row-margin-contents-group">
-          <h3 class="text-body-2 row-margin-item-medium">차량가격</h3>
-
-          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-4',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                500만원 이상 (당사 차량 시세 가격 기준)
-              </div>
-            </li>
-          </ul>
-        </section>
-
-        <section class="row-margin-contents-group">
-          <h3 class="text-body-2 row-margin-item-medium">차량압류 및 설정</h3>
-
-          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'color-black',
-                'text-body-4',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                차량압류 및 설정 내역이 있을 경우 해지 후 대출 가능
-                <ul :class="[$style['basic-list'], 'row-margin-item']">
-                  <li
-                    :class="[
-                      $style['basic-list__item'],
-                      'color-black',
-                      'text-body-4',
-                      'font-weight-regular',
-                    ]"
-                  >
-                    <div :class="$style['basic-list__symbol']">-</div>
-                    <div :class="$style['basic-list__content']">
-                      차량조회 결과(사고금액, 침수/도난/전손여부)에 따라 대출
-                      제한이 될 수 있습니다.
+            <div :class="$style['agree-list__all-contents']">
+              <UiAccordion :classNames="{ wrap: $style['agree-list__depth'] }">
+                <UiAccordionItem
+                  :classNames="{ item: $style['agree-list__depth-item'] }"
+                  :initialOpen="true"
+                >
+                  <div :class="$style['agree-list__depth-head']">
+                    <CheckBox
+                      id="Q_M07_l001_agree_001"
+                      :classNames="{
+                        wrap: $style['agree-list__depth-checkbox'],
+                      }"
+                    >
+                      <CheckBoxObject />
+                      <CheckBoxLabelText
+                        >서비스 이용약관 전체동의</CheckBoxLabelText
+                      >
+                    </CheckBox>
+                    <div :class="$style['agree-list__right']">
+                      <UiAccordionOpener
+                        :classNames="{
+                          button: $style['agree-list__depth-opener'],
+                        }"
+                      />
                     </div>
-                  </li>
-                  <li
-                    :class="[
-                      $style['basic-list__item'],
-                      'color-black',
-                      'text-body-4',
-                      'font-weight-regular',
-                    ]"
-                  >
-                    <div :class="$style['basic-list__symbol']">-</div>
-                    <div :class="$style['basic-list__content']">
-                      차량 압류/설정 여부는 자동차민원 대국민포털
-                      <a href="https://www.ecar.go.kr" class="basic-link"
-                        >(https://ecar.go.kr)</a
-                      >에서 조회가 가능합니다.
+                  </div>
+
+                  <UiAccordionLayer>
+                    <div :class="$style['agree-list__depth-contents']">
+                      <ul :class="$style['agree-list__list']">
+                        <li :class="$style['agree-list__item']">
+                          <div :class="$style['agree-list__head']">
+                            <CheckBox
+                              id="Q_M07_l001_agree_001_001"
+                              :classNames="{
+                                wrap: $style['agree-list__checkbox'],
+                              }"
+                              theme="tertiary"
+                            >
+                              <CheckBoxObject />
+                              <CheckBoxLabelText
+                                >개인(신용)정보 필수적 수집·이용
+                                동의</CheckBoxLabelText
+                              >
+                            </CheckBox>
+                          </div>
+                          <ul
+                            :class="[
+                              $style['agree-list__list'],
+                              $style['agree-list__list--secondary'],
+                            ]"
+                          >
+                            <li :class="$style['agree-list__item']">
+                              <div :class="$style['agree-list__head']">
+                                <CheckBox
+                                  id="Q_M07_l001_agree_001_001_001"
+                                  :classNames="{
+                                    wrap: $style['agree-list__checkbox'],
+                                  }"
+                                  theme="quinary"
+                                >
+                                  <CheckBoxObject />
+                                  <CheckBoxLabelText
+                                    >개인(신용)정보 필수적
+                                    수집·이용</CheckBoxLabelText
+                                  >
+                                </CheckBox>
+                                <div :class="$style['agree-list__right']">
+                                  <button
+                                    type="button"
+                                    :class="$style['agree-list__link']"
+                                  >
+                                    <span
+                                      :class="$style['agree-list__link-text']"
+                                    >
+                                      상세보기
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
+                            </li>
+                            <li :class="$style['agree-list__item']">
+                              <div :class="$style['agree-list__head']">
+                                <CheckBox
+                                  id="Q_M07_l001_agree_001_001_002"
+                                  :classNames="{
+                                    wrap: $style['agree-list__checkbox'],
+                                  }"
+                                  theme="quinary"
+                                >
+                                  <CheckBoxObject />
+                                  <CheckBoxLabelText
+                                    >고유식별번호 필수적
+                                    수집·이용</CheckBoxLabelText
+                                  >
+                                </CheckBox>
+                                <div :class="$style['agree-list__right']">
+                                  <button
+                                    type="button"
+                                    :class="$style['agree-list__link']"
+                                  >
+                                    <span
+                                      :class="$style['agree-list__link-text']"
+                                    >
+                                      상세보기
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </li>
+                        <li :class="$style['agree-list__item']">
+                          <div :class="$style['agree-list__head']">
+                            <CheckBox
+                              id="Q_M07_l001_agree_001_002"
+                              :classNames="{
+                                wrap: $style['agree-list__checkbox'],
+                              }"
+                              theme="tertiary"
+                            >
+                              <CheckBoxObject />
+                              <CheckBoxLabelText
+                                >개인(신용)정보 필수적 조회
+                                동의</CheckBoxLabelText
+                              >
+                            </CheckBox>
+                          </div>
+                          <ul
+                            :class="[
+                              $style['agree-list__list'],
+                              $style['agree-list__list--secondary'],
+                            ]"
+                          >
+                            <li :class="$style['agree-list__item']">
+                              <div :class="$style['agree-list__head']">
+                                <CheckBox
+                                  id="Q_M07_l001_agree_001_002_001"
+                                  :classNames="{
+                                    wrap: $style['agree-list__checkbox'],
+                                  }"
+                                  theme="quinary"
+                                >
+                                  <CheckBoxObject />
+                                  <CheckBoxLabelText
+                                    >개인(신용)정보 필수적
+                                    조회</CheckBoxLabelText
+                                  >
+                                </CheckBox>
+                                <div :class="$style['agree-list__right']">
+                                  <button
+                                    type="button"
+                                    :class="$style['agree-list__link']"
+                                  >
+                                    <span
+                                      :class="$style['agree-list__link-text']"
+                                    >
+                                      상세보기
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
+                            </li>
+                            <li :class="$style['agree-list__item']">
+                              <div :class="$style['agree-list__head']">
+                                <CheckBox
+                                  id="Q_M07_l001_agree_001_002_002"
+                                  :classNames="{
+                                    wrap: $style['agree-list__checkbox'],
+                                  }"
+                                  theme="quinary"
+                                >
+                                  <CheckBoxObject />
+                                  <CheckBoxLabelText
+                                    >고유식별번호 필수적 조회</CheckBoxLabelText
+                                  >
+                                </CheckBox>
+                                <div :class="$style['agree-list__right']">
+                                  <button
+                                    type="button"
+                                    :class="$style['agree-list__link']"
+                                  >
+                                    <span
+                                      :class="$style['agree-list__link-text']"
+                                    >
+                                      상세보기
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </li>
+                        <li :class="$style['agree-list__item']">
+                          <div :class="$style['agree-list__head']">
+                            <CheckBox
+                              id="Q_M07_l001_agree_001_003"
+                              :classNames="{
+                                wrap: $style['agree-list__checkbox'],
+                              }"
+                              theme="tertiary"
+                            >
+                              <CheckBoxObject />
+                              <CheckBoxLabelText
+                                >개인(신용)정보 필수적 제공
+                                동의</CheckBoxLabelText
+                              >
+                            </CheckBox>
+                          </div>
+                          <ul
+                            :class="[
+                              $style['agree-list__list'],
+                              $style['agree-list__list--secondary'],
+                            ]"
+                          >
+                            <li :class="$style['agree-list__item']">
+                              <div :class="$style['agree-list__head']">
+                                <CheckBox
+                                  id="Q_M07_l001_agree_001_003_001"
+                                  :classNames="{
+                                    wrap: $style['agree-list__checkbox'],
+                                  }"
+                                  theme="quinary"
+                                >
+                                  <CheckBoxObject />
+                                  <CheckBoxLabelText
+                                    >개인(신용)정보 필수적
+                                    제공</CheckBoxLabelText
+                                  >
+                                </CheckBox>
+                                <div :class="$style['agree-list__right']">
+                                  <button
+                                    type="button"
+                                    :class="$style['agree-list__link']"
+                                  >
+                                    <span
+                                      :class="$style['agree-list__link-text']"
+                                    >
+                                      상세보기
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
+                            </li>
+                            <li :class="$style['agree-list__item']">
+                              <div :class="$style['agree-list__head']">
+                                <CheckBox
+                                  id="Q_M07_l001_agree_001_003_002"
+                                  :classNames="{
+                                    wrap: $style['agree-list__checkbox'],
+                                  }"
+                                  theme="quinary"
+                                >
+                                  <CheckBoxObject />
+                                  <CheckBoxLabelText
+                                    >고유식별번호 필수적 제공</CheckBoxLabelText
+                                  >
+                                </CheckBox>
+                                <div :class="$style['agree-list__right']">
+                                  <button
+                                    type="button"
+                                    :class="$style['agree-list__link']"
+                                  >
+                                    <span
+                                      :class="$style['agree-list__link-text']"
+                                    >
+                                      상세보기
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </li>
+                        <li :class="$style['agree-list__item']">
+                          <div :class="$style['agree-list__head']">
+                            <CheckBox
+                              id="Q_M07_l001_agree_001_004"
+                              :classNames="{
+                                wrap: $style['agree-list__checkbox'],
+                              }"
+                              theme="tertiary"
+                            >
+                              <CheckBoxObject />
+                              <CheckBoxLabelText
+                                >금융상품안내
+                              </CheckBoxLabelText>
+                            </CheckBox>
+                          </div>
+                          <ul
+                            :class="[
+                              $style['agree-list__list'],
+                              $style['agree-list__list--secondary'],
+                            ]"
+                          >
+                            <li :class="$style['agree-list__item']">
+                              <div :class="$style['agree-list__head']">
+                                <CheckBox
+                                  id="Q_M07_l001_agree_001_004_001"
+                                  :classNames="{
+                                    wrap: $style['agree-list__checkbox'],
+                                  }"
+                                  theme="quinary"
+                                >
+                                  <CheckBoxObject />
+                                  <CheckBoxLabelText
+                                    >금융 상품 안내 동의
+                                  </CheckBoxLabelText>
+                                </CheckBox>
+                                <div :class="$style['agree-list__right']">
+                                  <button
+                                    type="button"
+                                    :class="$style['agree-list__link']"
+                                  >
+                                    <span
+                                      :class="$style['agree-list__link-text']"
+                                    >
+                                      상세보기
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
                     </div>
-                  </li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </section>
+                  </UiAccordionLayer>
+                </UiAccordionItem>
+
+                <UiAccordionItem
+                  :classNames="{ item: $style['agree-list__depth-item'] }"
+                  :initialOpen="true"
+                >
+                  <div :class="$style['agree-list__depth-head']">
+                    <CheckBox
+                      id="Q_M07_l001_agree_002"
+                      :classNames="{
+                        wrap: $style['agree-list__depth-checkbox'],
+                      }"
+                    >
+                      <CheckBoxObject />
+                      <CheckBoxLabelText>
+                        공공마이데이터 서비스 이용<br />
+                        전체동의(증빙서류 자동제출)
+                      </CheckBoxLabelText>
+                    </CheckBox>
+                    <div :class="$style['agree-list__right']">
+                      <UiAccordionOpener
+                        :classNames="{
+                          button: $style['agree-list__depth-opener'],
+                        }"
+                      />
+                    </div>
+                  </div>
+
+                  <UiAccordionLayer>
+                    <div :class="$style['agree-list__depth-contents']">
+                      <ul :class="$style['agree-list__list']">
+                        <li :class="$style['agree-list__item']">
+                          <div :class="$style['agree-list__head']">
+                            <CheckBox
+                              id="Q_M07_l001_agree_002_001"
+                              :classNames="{
+                                wrap: $style['agree-list__checkbox'],
+                              }"
+                              theme="tertiary"
+                            >
+                              <CheckBoxObject />
+                              <CheckBoxLabelText>
+                                개인(신용)정보 필수적 수집·이용 동의<br />
+                                (공공 마이데이터)
+                              </CheckBoxLabelText>
+                            </CheckBox>
+                          </div>
+                          <ul
+                            :class="[
+                              $style['agree-list__list'],
+                              $style['agree-list__list--secondary'],
+                            ]"
+                          >
+                            <li :class="$style['agree-list__item']">
+                              <div :class="$style['agree-list__head']">
+                                <CheckBox
+                                  id="Q_M07_l001_agree_002_001_001"
+                                  :classNames="{
+                                    wrap: $style['agree-list__checkbox'],
+                                  }"
+                                  theme="quinary"
+                                >
+                                  <CheckBoxObject />
+                                  <CheckBoxLabelText
+                                    >개인(신용)정보 수집·이용
+                                    동의</CheckBoxLabelText
+                                  >
+                                </CheckBox>
+                                <div :class="$style['agree-list__right']">
+                                  <button
+                                    type="button"
+                                    :class="$style['agree-list__link']"
+                                  >
+                                    <span
+                                      :class="$style['agree-list__link-text']"
+                                    >
+                                      상세보기
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
+                            </li>
+                            <li :class="$style['agree-list__item']">
+                              <div :class="$style['agree-list__head']">
+                                <CheckBox
+                                  id="Q_M07_l001_agree_002_001_002"
+                                  :classNames="{
+                                    wrap: $style['agree-list__checkbox'],
+                                  }"
+                                  theme="quinary"
+                                >
+                                  <CheckBoxObject />
+                                  <CheckBoxLabelText
+                                    >고유식별정보 수집·이용
+                                    동의</CheckBoxLabelText
+                                  >
+                                </CheckBox>
+                                <div :class="$style['agree-list__right']">
+                                  <button
+                                    type="button"
+                                    :class="$style['agree-list__link']"
+                                  >
+                                    <span
+                                      :class="$style['agree-list__link-text']"
+                                    >
+                                      상세보기
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </li>
+                        <li :class="$style['agree-list__item']">
+                          <div :class="$style['agree-list__head']">
+                            <CheckBox
+                              id="Q_M07_l001_agree_002_002"
+                              :classNames="{
+                                wrap: $style['agree-list__checkbox'],
+                              }"
+                              theme="tertiary"
+                            >
+                              <CheckBoxObject />
+                              <CheckBoxLabelText>
+                                개인(신용)정보 필수적 제공 동의<br />
+                                (공공 마이데이터)
+                              </CheckBoxLabelText>
+                            </CheckBox>
+                          </div>
+                          <ul
+                            :class="[
+                              $style['agree-list__list'],
+                              $style['agree-list__list--secondary'],
+                            ]"
+                          >
+                            <li :class="$style['agree-list__item']">
+                              <div :class="$style['agree-list__head']">
+                                <CheckBox
+                                  id="Q_M07_l001_agree_002_002_001"
+                                  :classNames="{
+                                    wrap: $style['agree-list__checkbox'],
+                                  }"
+                                  theme="quinary"
+                                >
+                                  <CheckBoxObject />
+                                  <CheckBoxLabelText
+                                    >개인(신용)정보 제공 동의</CheckBoxLabelText
+                                  >
+                                </CheckBox>
+                                <div :class="$style['agree-list__right']">
+                                  <button
+                                    type="button"
+                                    :class="$style['agree-list__link']"
+                                  >
+                                    <span
+                                      :class="$style['agree-list__link-text']"
+                                    >
+                                      상세보기
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
+                            </li>
+                            <li :class="$style['agree-list__item']">
+                              <div :class="$style['agree-list__head']">
+                                <CheckBox
+                                  id="Q_M07_l001_agree_002_002_002"
+                                  :classNames="{
+                                    wrap: $style['agree-list__checkbox'],
+                                  }"
+                                  theme="quinary"
+                                >
+                                  <CheckBoxObject />
+                                  <CheckBoxLabelText
+                                    >고유식별정보 제공 동의</CheckBoxLabelText
+                                  >
+                                </CheckBox>
+                                <div :class="$style['agree-list__right']">
+                                  <button
+                                    type="button"
+                                    :class="$style['agree-list__link']"
+                                  >
+                                    <span
+                                      :class="$style['agree-list__link-text']"
+                                    >
+                                      상세보기
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </li>
+                        <li :class="$style['agree-list__item']">
+                          <div :class="$style['agree-list__head']">
+                            <CheckBox
+                              id="Q_M07_l001_agree_002_003"
+                              :classNames="{
+                                wrap: $style['agree-list__checkbox'],
+                              }"
+                              theme="tertiary"
+                            >
+                              <CheckBoxObject />
+                              <CheckBoxLabelText>
+                                개인(신용)정보 필수적 제3자 제공 동의<br />
+                                (공공 마이데이터)
+                              </CheckBoxLabelText>
+                            </CheckBox>
+                          </div>
+                          <ul
+                            :class="[
+                              $style['agree-list__list'],
+                              $style['agree-list__list--secondary'],
+                            ]"
+                          >
+                            <li :class="$style['agree-list__item']">
+                              <div :class="$style['agree-list__head']">
+                                <CheckBox
+                                  id="Q_M07_l001_agree_002_003_001"
+                                  :classNames="{
+                                    wrap: $style['agree-list__checkbox'],
+                                  }"
+                                  theme="quinary"
+                                >
+                                  <CheckBoxObject />
+                                  <CheckBoxLabelText
+                                    >개인(신용)정보 제공 동의</CheckBoxLabelText
+                                  >
+                                </CheckBox>
+                                <div :class="$style['agree-list__right']">
+                                  <button
+                                    type="button"
+                                    :class="$style['agree-list__link']"
+                                  >
+                                    <span
+                                      :class="$style['agree-list__link-text']"
+                                    >
+                                      상세보기
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
+                            </li>
+                            <li :class="$style['agree-list__item']">
+                              <div :class="$style['agree-list__head']">
+                                <CheckBox
+                                  id="Q_M07_l001_agree_002_003_002"
+                                  :classNames="{
+                                    wrap: $style['agree-list__checkbox'],
+                                  }"
+                                  theme="quinary"
+                                >
+                                  <CheckBoxObject />
+                                  <CheckBoxLabelText
+                                    >고유식별정보 제공 동의</CheckBoxLabelText
+                                  >
+                                </CheckBox>
+                                <div :class="$style['agree-list__right']">
+                                  <button
+                                    type="button"
+                                    :class="$style['agree-list__link']"
+                                  >
+                                    <span
+                                      :class="$style['agree-list__link-text']"
+                                    >
+                                      상세보기
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </li>
+                        <li :class="$style['agree-list__item']">
+                          <div :class="$style['agree-list__head']">
+                            <CheckBox
+                              id="Q_M07_l001_agree_002_004"
+                              :classNames="{
+                                wrap: $style['agree-list__checkbox'],
+                              }"
+                              theme="tertiary"
+                            >
+                              <CheckBoxObject />
+                              <CheckBoxLabelText>
+                                본인 행정정보 제3자 제공 요구서<br />
+                                (공공 마이데이터)
+                              </CheckBoxLabelText>
+                            </CheckBox>
+                          </div>
+                          <ul
+                            :class="[
+                              $style['agree-list__list'],
+                              $style['agree-list__list--secondary'],
+                            ]"
+                          >
+                            <li :class="$style['agree-list__item']">
+                              <div :class="$style['agree-list__head']">
+                                <CheckBox
+                                  id="Q_M07_l001_agree_002_004_001"
+                                  :classNames="{
+                                    wrap: $style['agree-list__checkbox'],
+                                  }"
+                                  theme="quinary"
+                                >
+                                  <CheckBoxObject />
+                                  <CheckBoxLabelText
+                                    >본인 행정정보 제3자 제공 요구
+                                  </CheckBoxLabelText>
+                                </CheckBox>
+                                <div :class="$style['agree-list__right']">
+                                  <button
+                                    type="button"
+                                    :class="$style['agree-list__link']"
+                                  >
+                                    <span
+                                      :class="$style['agree-list__link-text']"
+                                    >
+                                      상세보기
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </UiAccordionLayer>
+                </UiAccordionItem>
+              </UiAccordion>
+            </div>
+          </li>
+        </ul>
       </div>
+
+      <template v-slot:foot>
+        <ButtonList
+          :classNames="{
+            wrap: 'row-margin-none',
+          }"
+        >
+          <ButtonListItem>
+            <BasicButton>다음</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+      </template>
     </FullPopup>
   </UiLayer>
 </template>

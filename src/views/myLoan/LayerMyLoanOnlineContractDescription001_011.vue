@@ -2671,8 +2671,7 @@ export default {
                   과
                   <strong>
                     자동화평가 결과의 산출에 유리하다고 판단되는 정보</strong
-                  >
-                  를 제출 또는 기초정보의
+                  >를 제출 또는 기초정보의
                   <strong class="italic color-red underline"
                     >정정·삭제·재산출을 요구</strong
                   >할 수 있는 권리(신용정보의 이용 및 보호에 관한 법률

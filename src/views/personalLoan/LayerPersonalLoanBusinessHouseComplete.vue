@@ -1,5 +1,5 @@
 <script>
-// PF_M01_l009
+// PF_M09_l003
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -58,7 +58,7 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          김하나님의 대출 신청이<br />
+          김하나님의 상담 신청이<br />
           완료되었습니다
         </PageMainText>
       </PageTextGroup>
@@ -66,7 +66,7 @@ export default {
       <IllustObject type="complete" />
 
       <!-- DD : 하드코딩 배너 -->
-      <BasicBanner thumb="/images/banner/banner-money-up.png" @click="() => {}">
+      <BasicBanner thumb="/images/banner/banner-join.png" @click="() => {}">
         <p class="text-body-4 color-gray row-margin-mini nowrap">
           회원만을 위한 특별한 혜택
         </p>

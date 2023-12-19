@@ -19,6 +19,7 @@ import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
+import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 
 export default {
   components: {
@@ -39,6 +40,7 @@ export default {
     BasicInput,
     InputBlock,
     InputBlockCell,
+    FormHelpText,
   },
   setup() {
     const state = reactive({
@@ -218,6 +220,12 @@ export default {
                     </template>
                   </InputBlock>
                   <FormInvalidMessage>Error Message</FormInvalidMessage>
+                  <FormHelpText
+                    :classNames="{
+                      wrap: 'align-right',
+                    }"
+                    >구천만원</FormHelpText
+                  >
                 </FormInvalid>
               </FormListItem>
             </FormList>

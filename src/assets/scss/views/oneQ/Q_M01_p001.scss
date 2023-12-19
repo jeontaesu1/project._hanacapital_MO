@@ -1,0 +1,23 @@
+@import '@/assets/scss/components/import/logs.scss';
+@import '@/assets/scss/components/import/icon-list.scss';
+
+.logs__contents__icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.check-box-wrap {
+  padding-left: 15px;
+}
+
+.logs__item {
+  & + & {
+    margin-top: 30px;
+  }
+}

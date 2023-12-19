@@ -6,13 +6,12 @@ import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import FullPopup from '@/components/ui/layer/FullPopup.vue';
 import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
-import IllustObject from '@/components/ui/common/IllustObject.vue';
-import IllustInfo from '@/components/ui/common/IllustInfo.vue';
-import IllustInfoTitle from '@/components/ui/common/IllustInfoTitle.vue';
-import IllustInfoText from '@/components/ui/common/IllustInfoText.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
+import StepProgress from '@/components/ui/progress/StepProgress.vue';
+import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
+import PageMainText from '@/components/ui/text/PageMainText.vue';
 
 export default {
   components: {
@@ -20,13 +19,12 @@ export default {
     PopupButton,
     FullPopup,
     FullPopupHead,
-    IllustObject,
-    IllustInfo,
-    IllustInfoTitle,
-    IllustInfoText,
     ButtonList,
     ButtonListItem,
     BasicButton,
+    StepProgress,
+    PageTextGroup,
+    PageMainText,
   },
   setup() {
     const layer = ref(null);
@@ -47,19 +45,23 @@ export default {
             <PopupButton @click="layerSlotProps.close()" />
           </template>
         </FullPopupHead>
+        <StepProgress :total="4" :current="1" />
       </template>
 
-      <IllustInfo>
-        <IllustObject type="fail" />
-        <IllustInfoTitle>
-          중도상환이 가능한<br />
-          <strong>계약이 없습니다</strong>
-        </IllustInfoTitle>
-        <IllustInfoText>
+      <PageTextGroup>
+        <PageMainText>
+          중도상환신청 계약을<br />
+          선택해 주세요
+        </PageMainText>
+      </PageTextGroup>
+
+      <div :class="$style['empty']">
+        <p :class="$style['empty__text']">
+          중도상환이 가능한 계약이 없습니다<br />
           하나캐피탈 스탁론에<br />
           관심을 가져주셔서 감사합니다.
-        </IllustInfoText>
-      </IllustInfo>
+        </p>
+      </div>
 
       <template v-slot:foot>
         <ButtonList
@@ -75,3 +77,7 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/personalLoan/LayerPersonalLoanStockEarlyEmpty.scss';
+</style>

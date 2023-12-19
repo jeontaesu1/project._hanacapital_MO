@@ -128,13 +128,13 @@ export default {
     </div>
 
     <!-- DD : 관리자 등록 배너 -->
-    <SlideImageBanner :classNames="{ wrap: 'row-margin-contents' }">
+    <SlideImageBanner :classNames="{ wrap: 'row-margin-item-group' }">
       <Swiper :modules="modules" pagination>
         <!-- Case : 링크 기능 없을 때 -->
         <SwiperSlide>
           <div :class="$style['image-view']">
             <img
-              :src="`${BASE_URL}images/_dummy/banner-002.png`"
+              :src="`${BASE_URL}images/_dummy/banner-010.png`"
               alt="배너 설명 넣어주세요"
             />
           </div>
@@ -146,7 +146,7 @@ export default {
           <RouterLink to="" class="link-block">
             <div :class="$style['image-view']">
               <img
-                :src="`${BASE_URL}images/_dummy/banner-002.png`"
+                :src="`${BASE_URL}images/_dummy/banner-010.png`"
                 alt="배너 설명 넣어주세요"
               />
             </div>
@@ -159,7 +159,20 @@ export default {
           <a href="" class="link-block">
             <div :class="$style['image-view']">
               <img
-                :src="`${BASE_URL}images/_dummy/banner-002.png`"
+                :src="`${BASE_URL}images/_dummy/banner-010.png`"
+                alt="배너 설명 넣어주세요"
+              />
+            </div>
+          </a>
+        </SwiperSlide>
+        <!-- // Case : 링크 기능 있을 때 (a tag) -->
+
+        <!-- Case : 링크 기능 있을 때 (a tag) -->
+        <SwiperSlide>
+          <a href="" class="link-block">
+            <div :class="$style['image-view']">
+              <img
+                :src="`${BASE_URL}images/_dummy/banner-010.png`"
                 alt="배너 설명 넣어주세요"
               />
             </div>

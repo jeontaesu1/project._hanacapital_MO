@@ -21,7 +21,7 @@ import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
 
 import IconPig from '@/assets/images/icon/pig.svg?component';
-import IconCorporateFinance from '@/assets/images/icon/corporate-finance.svg?component';
+import IconBuilding from '@/assets/images/icon/building.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
 
 export default {
@@ -45,7 +45,7 @@ export default {
     BasicBoxHeadLeft,
 
     IconPig,
-    IconCorporateFinance,
+    IconBuilding,
     IconCalculate,
   },
   setup() {
@@ -118,7 +118,7 @@ export default {
             <BasicBoxHeadLeft>
               <div class="flex-box">
                 <div class="flex-box__cell">
-                  <IconCorporateFinance :class="$style['icon']" />
+                  <IconBuilding :class="$style['icon']" />
                 </div>
                 <div class="flex-box__cell flex-1">
                   <h3 class="text-body-1 font-weight-medium">행복아파트론</h3>
