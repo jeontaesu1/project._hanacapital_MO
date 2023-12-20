@@ -2064,6 +2064,16 @@ const routes = [
     name: '/ui-guide/one-q-008',
     component: () => import('@/views/uiGuide/GuideOneQ008.vue'),
   },
+  {
+    path: '/ui-guide/untact-customer-001',
+    name: '/ui-guide/untact-customer-001',
+    component: () => import('@/views/uiGuide/GuideUntactCustomer001.vue'),
+  },
+  {
+    path: '/untactCustomer/Comp_M00_p001',
+    name: '/untactCustomer/Comp_M00_p001',
+    component: () => import('@/views/untactCustomer/Comp_M00_p001.vue'),
+  },
 
   // link
   {
