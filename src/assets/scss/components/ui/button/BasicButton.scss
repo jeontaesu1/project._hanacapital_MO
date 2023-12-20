@@ -302,6 +302,44 @@
         }
       }
     }
+
+    &-quaternary-green {
+      color: $color-green-50;
+      border-color: $color-gray-20;
+      background-color: $color-gray-20;
+
+      .button__icon {
+        svg {
+          * {
+            fill: $color-black;
+          }
+        }
+      }
+
+      @include button-pressed-selector {
+        border-color: $color-gray-30;
+        background-color: $color-gray-30;
+      }
+    }
+
+    &-quaternary-blue {
+      color: $color-blue-50;
+      border-color: $color-gray-20;
+      background-color: $color-gray-20;
+
+      .button__icon {
+        svg {
+          * {
+            fill: $color-black;
+          }
+        }
+      }
+
+      @include button-pressed-selector {
+        border-color: $color-gray-30;
+        background-color: $color-gray-30;
+      }
+    }
   }
 
   &[disabled],
