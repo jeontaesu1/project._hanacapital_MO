@@ -21,6 +21,10 @@ import FilterTabButton from '@/components/ui/tab/FilterTabButton.vue';
 import StickyBar from '@/components/ui/common/StickyBar.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 import SearchButton from '@/components/ui/button/SearchButton.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
+import ButtonList from '@/components/ui/button/ButtonList.vue';
+import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import IconRightArrow from '@/assets/images/icon/right-arrow.svg?component';
 
 import IconArrow from '@/assets/images/icon/dropdown.svg?component';
 
@@ -102,7 +106,11 @@ export default {
     StickyBar,
     TextButton,
     SearchButton,
+    ButtonList,
+    ButtonListItem,
+    BasicButton,
     IconArrow,
+    IconRightArrow,
   },
   setup() {
     const store = {
@@ -249,6 +257,170 @@ export default {
               // 내용 노출<br />
               차량을 구매할 목적으로 당사에서 대출 받고, 일정기간 동안 원금과
               이자가 포함된 원리금을 매월 일정하게 납부하는 대출 상품입니다
+
+              <!-- Case : 버튼 1개일 경우 -->
+              <ButtonList>
+                <ButtonListItem>
+                  <BasicButton to="/customer/notice-list">버튼</BasicButton>
+                </ButtonListItem>
+              </ButtonList>
+              <!-- // Case : 버튼 1개일 경우 -->
+
+              <!-- Case : 버튼 2개일 경우 -->
+              <ButtonList>
+                <ButtonListItem>
+                  <BasicButton to="/customer/notice-list">버튼</BasicButton>
+                </ButtonListItem>
+                <ButtonListItem>
+                  <BasicButton to="/customer/notice-list">버튼</BasicButton>
+                </ButtonListItem>
+              </ButtonList>
+              <!-- // Case : 버튼 2개일 경우 -->
+
+              <!-- Case : 버튼 3개일 경우 -->
+              <ButtonList>
+                <ButtonListItem>
+                  <BasicButton to="/customer/notice-list">버튼</BasicButton>
+                </ButtonListItem>
+                <ButtonListItem>
+                  <BasicButton to="/customer/notice-list">버튼</BasicButton>
+                </ButtonListItem>
+                <ButtonListItem>
+                  <BasicButton to="/customer/notice-list">버튼</BasicButton>
+                </ButtonListItem>
+              </ButtonList>
+              <!-- // Case : 버튼 3개일 경우 -->
+
+              <ButtonList align="full">
+                <!-- Case : 버튼 컬러 타입 #143B75 -->
+                <ButtonListItem>
+                  <BasicButton theme="tertiary">버튼</BasicButton>
+                </ButtonListItem>
+                <!-- // Case : 버튼 컬러 타입 #143B75 -->
+
+                <!-- Case : 버튼 컬러 타입 #3A81E0  -->
+                <ButtonListItem>
+                  <BasicButton theme="secondary">버튼</BasicButton>
+                </ButtonListItem>
+                <!-- // Case : 버튼 컬러 타입 #3A81E0 -->
+
+                <!-- Case : 버튼 컬러 타입 #EAEAEA  -->
+                <ButtonListItem>
+                  <BasicButton theme="quaternary">버튼</BasicButton>
+                </ButtonListItem>
+                <!-- // Case : 버튼 컬러 타입 #EAEAEA  -->
+
+                <!-- Case : 버튼 텍스트 컬러 타입 #00A69E  -->
+                <ButtonListItem>
+                  <BasicButton theme="quaternary-green">버튼</BasicButton>
+                </ButtonListItem>
+                <!-- // Case : 버튼 텍스트 컬러 타입 #00A69E  -->
+
+                <!-- Case : 버튼 텍스트 컬러 타입 #3A81E0  -->
+                <ButtonListItem>
+                  <BasicButton theme="quaternary-blue">버튼</BasicButton>
+                </ButtonListItem>
+                <!-- // Case : 버튼 텍스트 컬러 타입 #3A81E0  -->
+
+                <!-- Case : 버튼 텍스트 컬러 타입 #00A69E  -->
+                <ButtonListItem>
+                  <BasicButton :line="true" theme="quaternary-green"
+                    >버튼</BasicButton
+                  >
+                </ButtonListItem>
+                <!-- Case : 버튼 텍스트 컬러 타입 #00A69E  -->
+
+                <!-- Case : 버튼 텍스트 컬러 타입 #3A81E0  -->
+                <ButtonListItem>
+                  <BasicButton :line="true" theme="quaternary-blue"
+                    >버튼</BasicButton
+                  >
+                </ButtonListItem>
+                <!-- // Case : 버튼 텍스트 컬러 타입 #3A81E0  -->
+              </ButtonList>
+
+              <!-- Case : 버튼 1개일 경우 -->
+              <ButtonList>
+                <TextButton theme="secondary" :iconFillAll="true">
+                  <template v-slot:rightIcon>
+                    <IconRightArrow />
+                  </template>
+                  버튼
+                </TextButton>
+              </ButtonList>
+              <!-- // Case : 버튼 1개일 경우 -->
+
+              <!-- Case : 버튼 2개일 경우 -->
+              <ButtonList>
+                <ButtonListItem>
+                  <TextButton theme="secondary" :iconFillAll="true">
+                    <template v-slot:rightIcon>
+                      <IconRightArrow />
+                    </template>
+                    버튼
+                  </TextButton>
+                </ButtonListItem>
+                <ButtonListItem>
+                  <TextButton theme="secondary" :iconFillAll="true">
+                    <template v-slot:rightIcon>
+                      <IconRightArrow />
+                    </template>
+                    버튼
+                  </TextButton>
+                </ButtonListItem>
+              </ButtonList>
+              <!-- // Case : 버튼 2개일 경우 -->
+
+              <!-- Case : 버튼 3개일 경우 -->
+              <ButtonList>
+                <ButtonListItem>
+                  <TextButton theme="secondary" :iconFillAll="true">
+                    <template v-slot:rightIcon>
+                      <IconRightArrow />
+                    </template>
+                    버튼
+                  </TextButton>
+                </ButtonListItem>
+                <ButtonListItem>
+                  <TextButton theme="secondary" :iconFillAll="true">
+                    <template v-slot:rightIcon>
+                      <IconRightArrow />
+                    </template>
+                    버튼
+                  </TextButton>
+                </ButtonListItem>
+                <ButtonListItem>
+                  <TextButton theme="secondary" :iconFillAll="true">
+                    <template v-slot:rightIcon>
+                      <IconRightArrow />
+                    </template>
+                    버튼
+                  </TextButton>
+                </ButtonListItem>
+              </ButtonList>
+              <!-- // Case : 버튼 3개일 경우 -->
+
+              <!-- Case : 버튼 컬러 타입 #3A81E0  -->
+              <ButtonList>
+                <TextButton theme="tertiary" :iconFillAll="true">
+                  <template v-slot:rightIcon>
+                    <IconRightArrow />
+                  </template>
+                  버튼
+                </TextButton>
+              </ButtonList>
+              <!-- // Case : 버튼 컬러 타입 #3A81E0  -->
+
+              <!-- Case : 버튼 컬러 타입 #757575  -->
+              <ButtonList>
+                <TextButton class="color-gray" :iconFillAll="true">
+                  <template v-slot:rightIcon>
+                    <IconRightArrow />
+                  </template>
+                  버튼
+                </TextButton>
+              </ButtonList>
+              <!-- // Case : 버튼 컬러 타입 #757575  -->
             </section>
           </UiAccordionLayer>
         </UiAccordionItem>

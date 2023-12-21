@@ -57,7 +57,7 @@ export default {
             <button type="button" :class="$style['icon-list__block']">
               <span :class="$style['icon-list__icon']"><IconPerson /></span>
               <span :class="$style['icon-list__content']">
-                <span :class="$style['icon-list__title']">직장인</span>
+                <span :class="$style['icon-list__title']">개인</span>
               </span>
             </button>
           </li>

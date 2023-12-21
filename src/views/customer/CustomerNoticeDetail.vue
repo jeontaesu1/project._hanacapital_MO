@@ -98,11 +98,11 @@ export default {
       </ButtonListItem>
       <!-- // Case : 버튼 컬러 타입 #143B75 -->
 
-      <!-- Case : 버튼 컬러 타입 #143B75  -->
+      <!-- Case : 버튼 컬러 타입 #3A81E0  -->
       <ButtonListItem>
         <BasicButton theme="secondary">버튼</BasicButton>
       </ButtonListItem>
-      <!-- // Case : 버튼 컬러 타입 #143B75 -->
+      <!-- // Case : 버튼 컬러 타입 #3A81E0 -->
 
       <!-- Case : 버튼 컬러 타입 #EAEAEA  -->
       <ButtonListItem>

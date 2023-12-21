@@ -68,6 +68,7 @@ export default {
       dateError001: false,
       dealPurposeError001: false,
       moneyRootError001: false,
+      jobGroupError001: false,
     });
 
     return {
@@ -154,12 +155,13 @@ export default {
         </FormListItem>
 
         <FormListItem
-          titleText="직업분류"
-          target="#Comp_M00_l003_jobTypeButton"
+          titleText="직업 분류"
+          titleOptionalText="(선택)"
+          target="#Comp_M00_l003_jobGroupButton"
           :selectOnly="true"
         >
-          <FormInvalid :error="state.jobTypeError001">
-            <InputBlock :error="state.jobTypeError001">
+          <FormInvalid :error="state.jobGroupError001">
+            <InputBlock :error="state.jobGroupError001">
               <InputBlockCell :flexible="true">
                 <BasicSelect
                   :option="[
@@ -177,7 +179,42 @@ export default {
                     },
                   ]"
                   buttonTitle="직업분류 선택하기"
-                  layerTitle="직업분류를 선택해 주세요"
+                  layerTitle="직업 분류"
+                  id="Comp_M00_l003_jobGroup"
+                  buttonId="Comp_M00_l003_jobGroupButton"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+
+        <FormListItem
+          titleText="직업 유형"
+          titleOptionalText="(선택)"
+          target="#Comp_M00_l003_jobTypeButton"
+          :selectOnly="true"
+        >
+          <FormInvalid :error="state.jobTypeError001">
+            <InputBlock :error="state.jobTypeError001">
+              <InputBlockCell :flexible="true">
+                <BasicSelect
+                  :option="[
+                    {
+                      value: '1',
+                      text: 'Option 1',
+                    },
+                    {
+                      value: '2',
+                      text: 'Option 2',
+                    },
+                    {
+                      value: '3',
+                      text: 'Option 3',
+                    },
+                  ]"
+                  buttonTitle="직업 유형 선택하기"
+                  layerTitle="직업 유형"
                   id="Comp_M00_l003_jobType"
                   buttonId="Comp_M00_l003_jobTypeButton"
                 />
@@ -187,7 +224,11 @@ export default {
           </FormInvalid>
         </FormListItem>
 
-        <FormListItem titleText="직장명" target="#Comp_M00_l003_workplaceName">
+        <FormListItem
+          titleText="직장명"
+          titleOptionalText="(선택)"
+          target="#Comp_M00_l003_workplaceName"
+        >
           <FormInvalid :error="state.workplaceNameError001">
             <InputBlock :error="state.workplaceNameError001">
               <InputBlockCell :flexible="true">
@@ -198,14 +239,18 @@ export default {
           </FormInvalid>
         </FormListItem>
 
-        <FormListItem titleText="입사일자" target="#Comp_M00_l003_date">
+        <FormListItem
+          titleText="입사 일자"
+          titleOptionalText="(선택)"
+          target="#Comp_M00_l003_date"
+        >
           <FormInvalid :error="state.dateError001">
             <InputBlock :error="state.dateError001">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   type="number"
                   pattern="\d*"
-                  title="입사일자"
+                  title="입사 일자"
                   id="Comp_M00_l003_date"
                 />
               </InputBlockCell>
@@ -299,7 +344,7 @@ export default {
                     },
                   ]"
                   buttonTitle="거래 목적 선택하기"
-                  layerTitle="거래 목적을 선택해 주세요"
+                  layerTitle="거래 목적"
                   id="Comp_M00_l003_dealPurpose"
                   buttonId="Comp_M00_l003_dealPurposeButton"
                 />
@@ -373,7 +418,7 @@ export default {
                     },
                   ]"
                   buttonTitle="자금의 원천 선택하기"
-                  layerTitle="자금의 원천을 선택해 주세요"
+                  layerTitle="자금의 원천"
                   id="Comp_M00_l003_moneyRoot"
                   buttonId="Comp_M00_l003_moneyRootButton"
                 />

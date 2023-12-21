@@ -993,6 +993,10 @@ const datas = () => [
             date: '2023.09.12',
             text: '레이어 팝업에서 페이지로 변경',
           },
+          {
+            date: '2023.12.21',
+            text: '버튼 케이스 추가',
+          },
         ],
       },
       {
@@ -2016,6 +2020,10 @@ const datas = () => [
             date: '2023.09.18',
             text: '검색결과 없을 경우 문구 수정',
           },
+          {
+            date: '2023.12.21',
+            text: '버튼 케이스 추가',
+          },
         ],
       },
       {
@@ -2100,8 +2108,8 @@ const datas = () => [
             text: '하단 버튼 여백 조정',
           },
           {
-            date: '2023.12.20',
-            text: '버튼 타입 추가',
+            date: '2023.12.21',
+            text: '버튼 케이스 추가',
           },
         ],
       },
@@ -2285,6 +2293,10 @@ const datas = () => [
             date: '2023.08.30',
             text: '하단 버튼 여백 조정',
           },
+          {
+            date: '2023.12.21',
+            text: '버튼 케이스 추가',
+          },
         ],
       },
       {
@@ -2359,6 +2371,10 @@ const datas = () => [
           {
             date: '2023.08.30',
             text: '하단 버튼 여백 조정',
+          },
+          {
+            date: '2023.12.21',
+            text: '버튼 케이스 추가',
           },
         ],
       },
@@ -7956,6 +7972,10 @@ const datas = () => [
             date: '2023.08.30',
             text: '하단 버튼 여백 조정',
           },
+          {
+            date: '2023.12.21',
+            text: '버튼 케이스 추가',
+          },
         ],
       },
     ],
@@ -8499,33 +8519,33 @@ const datas = () => [
       },
     ],
   },
-  // {
-  //   depth1: '비대면고객 MMS',
-  //   datas: [
-  //     {
-  //       depth2: '진행동의',
-  //       depth3: '',
-  //       depth4: '',
-  //       depth5: '',
-  //       depth6: '',
-  //       path: '/untactCustomer/Comp_M00_p001',
-  //       status: 'ing',
-  //       // create: '2023.12.20',
-  //       log: [],
-  //     },
-  //     {
-  //       depth2: '본인인증안내',
-  //       depth3: '',
-  //       depth4: '',
-  //       depth5: '',
-  //       depth6: '',
-  //       path: '/ui-guide/untact-customer-001',
-  //       status: 'ing',
-  //       // create: '2023.12.20',
-  //       log: [],
-  //     },
-  //   ],
-  // },
+  {
+    depth1: '비대면고객 MMS',
+    datas: [
+      {
+        depth2: '진행동의',
+        depth3: '',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/untactCustomer/Comp_M00_p001',
+        status: 'end',
+        create: '2023.12.21',
+        log: [],
+      },
+      {
+        depth2: '본인인증안내',
+        depth3: '',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/ui-guide/untact-customer-001',
+        status: 'end',
+        create: '2023.12.21',
+        log: [],
+      },
+    ],
+  },
 ];
 
 export default {

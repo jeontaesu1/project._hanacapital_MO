@@ -320,6 +320,23 @@
         border-color: $color-gray-30;
         background-color: $color-gray-30;
       }
+
+      &.button--line {
+        color: $color-green-50;
+        border-color: $color-gray-30;
+
+        .button__icon {
+          svg {
+            * {
+              fill: $color-gray-70;
+            }
+          }
+        }
+
+        @include button-pressed-selector {
+          border-color: $color-gray-50;
+        }
+      }
     }
 
     &-quaternary-blue {
@@ -338,6 +355,23 @@
       @include button-pressed-selector {
         border-color: $color-gray-30;
         background-color: $color-gray-30;
+      }
+
+      &.button--line {
+        color: $color-blue-50;
+        border-color: $color-gray-30;
+
+        .button__icon {
+          svg {
+            * {
+              fill: $color-gray-70;
+            }
+          }
+        }
+
+        @include button-pressed-selector {
+          border-color: $color-gray-50;
+        }
       }
     }
   }

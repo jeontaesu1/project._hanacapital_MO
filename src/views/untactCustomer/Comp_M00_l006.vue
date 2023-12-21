@@ -108,7 +108,7 @@ export default {
               item: 'text-body-3',
             }"
           >
-            <KeyValueTitle>직업분류</KeyValueTitle>
+            <KeyValueTitle>직업 분류</KeyValueTitle>
             <KeyValueText>일반등급자</KeyValueText>
           </KeyValueItem>
           <KeyValueItem
@@ -116,7 +116,7 @@ export default {
               item: 'text-body-3',
             }"
           >
-            <KeyValueTitle>직업유형</KeyValueTitle>
+            <KeyValueTitle>직업 유형</KeyValueTitle>
             <KeyValueText
               >교육기관 > 국공립어린이집/유치원<br />
               > 교사</KeyValueText
@@ -135,7 +135,7 @@ export default {
               item: 'text-body-3',
             }"
           >
-            <KeyValueTitle>직장/사업장주소</KeyValueTitle>
+            <KeyValueTitle>직장/사업장 주소</KeyValueTitle>
             <KeyValueText>서울시 강남구 개포동 123</KeyValueText>
           </KeyValueItem>
           <KeyValueItem
@@ -143,7 +143,7 @@ export default {
               item: 'text-body-3',
             }"
           >
-            <KeyValueTitle>입사일자</KeyValueTitle>
+            <KeyValueTitle>입사 일자</KeyValueTitle>
             <KeyValueText>23.05.20</KeyValueText>
           </KeyValueItem>
           <KeyValueItem

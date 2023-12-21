@@ -108,6 +108,17 @@ export default {
               item: 'text-body-3',
             }"
           >
+            <KeyValueTitle>사업자 유형</KeyValueTitle>
+            <KeyValueText>
+              개인사업자 > 기타자영업<br />
+              > 기타 자영업 종사하
+            </KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem
+            :classNames="{
+              item: 'text-body-3',
+            }"
+          >
             <KeyValueTitle>사업자명</KeyValueTitle>
             <KeyValueText>하나캐피탈</KeyValueText>
           </KeyValueItem>
@@ -132,7 +143,7 @@ export default {
               item: 'text-body-3',
             }"
           >
-            <KeyValueTitle>사업자업종</KeyValueTitle>
+            <KeyValueTitle>사업자 업종</KeyValueTitle>
             <KeyValueText>자영업</KeyValueText>
           </KeyValueItem>
           <KeyValueItem
@@ -140,7 +151,7 @@ export default {
               item: 'text-body-3',
             }"
           >
-            <KeyValueTitle>직장/사업장주소</KeyValueTitle>
+            <KeyValueTitle>직장/사업장 주소</KeyValueTitle>
             <KeyValueText>
               12345<br />
               서울 강남구 역삼동<br />

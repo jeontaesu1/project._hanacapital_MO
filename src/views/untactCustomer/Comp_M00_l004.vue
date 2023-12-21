@@ -156,7 +156,7 @@ export default {
         </FormListItem>
 
         <FormListItem
-          titleText="직업유형"
+          titleText="사업자 유형"
           target="#Comp_M00_l004_jobTypeButton"
           :selectOnly="true"
         >
@@ -167,19 +167,19 @@ export default {
                   :option="[
                     {
                       value: '1',
-                      text: '일반등급자',
+                      text: 'Option 1',
                     },
                     {
                       value: '2',
-                      text: '개인사업장 종사자',
+                      text: 'Option 2',
                     },
                     {
                       value: '3',
-                      text: '기타소득자(고용보험 가입)',
+                      text: 'Option 3',
                     },
                   ]"
-                  buttonTitle="직업유형 선택하기"
-                  layerTitle="직업유형을 선택해 주세요"
+                  buttonTitle="사업자 유형 선택하기"
+                  layerTitle="사업자 유형"
                   id="Comp_M00_l004_jobType"
                   buttonId="Comp_M00_l004_jobTypeButton"
                 />
@@ -231,11 +231,11 @@ export default {
           </FormInvalid>
         </FormListItem>
 
-        <FormListItem titleText="사업자업종" target="#Comp_M00_l004_business">
+        <FormListItem titleText="사업자 업종" target="#Comp_M00_l004_business">
           <FormInvalid :error="state.businessError001">
             <InputBlock :error="state.businessError001">
               <InputBlockCell :flexible="true">
-                <BasicInput title="사업자업종" id="Comp_M00_l004_business" />
+                <BasicInput title="사업자 업종" id="Comp_M00_l004_business" />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -326,7 +326,7 @@ export default {
                     },
                   ]"
                   buttonTitle="거래 목적 선택하기"
-                  layerTitle="거래 목적을 선택해 주세요"
+                  layerTitle="거래 목적"
                   id="Comp_M00_l004_dealPurpose"
                   buttonId="Comp_M00_l004_dealPurposeButton"
                 />
@@ -400,7 +400,7 @@ export default {
                     },
                   ]"
                   buttonTitle="자금의 원천 선택하기"
-                  layerTitle="자금의 원천을 선택해 주세요"
+                  layerTitle="자금의 원천"
                   id="Comp_M00_l004_moneyRoot"
                   buttonId="Comp_M00_l004_moneyRootButton"
                 />
