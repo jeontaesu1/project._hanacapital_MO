@@ -151,4 +151,8 @@
   &:global(.color-green) {
     @include button-theme($color-green-50);
   }
+
+  &:global(.color-navy) {
+    @include button-theme($color-navy-50);
+  }
 }

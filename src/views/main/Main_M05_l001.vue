@@ -146,6 +146,12 @@ export default {
             </ButtonListItem> -->
             <!-- // Case : 버튼 텍스트 컬러 타입 #3A81E0  -->
 
+            <!-- Case : 버튼 텍스트 컬러 타입 #143B75  -->
+            <!-- <ButtonListItem>
+              <BasicButton theme="quaternary-navy">버튼</BasicButton>
+            </ButtonListItem> -->
+            <!-- // Case : 버튼 텍스트 컬러 타입 #143B75  -->
+
             <!-- Case : 버튼 텍스트 컬러 타입 #00A69E  -->
             <!-- <ButtonListItem>
               <BasicButton :line="true" theme="quaternary-green"
@@ -161,6 +167,20 @@ export default {
               >
             </ButtonListItem> -->
             <!-- // Case : 버튼 텍스트 컬러 타입 #3A81E0  -->
+
+            <!-- Case : 버튼 텍스트 컬러 타입 #757575  -->
+            <!-- <ButtonListItem>
+              <BasicButton :line="true" theme="quaternary">버튼</BasicButton>
+            </ButtonListItem> -->
+            <!-- // Case : 버튼 텍스트 컬러 타입 #757575  -->
+
+            <!-- Case : 버튼 텍스트 컬러 타입 #143B75  -->
+            <!-- <ButtonListItem>
+              <BasicButton :line="true" theme="quaternary-navy"
+                >버튼</BasicButton
+              >
+            </ButtonListItem> -->
+            <!-- // Case : 버튼 텍스트 컬러 타입 #143B75  -->
           </ButtonList>
 
           <!-- Case : 버튼 1개일 경우 -->
@@ -257,6 +277,17 @@ export default {
             </TextButton>
           </ButtonList> -->
           <!-- // Case : 버튼 컬러 타입 #757575  -->
+
+          <!-- Case : 버튼 컬러 타입 #143B75  -->
+          <!-- <ButtonList>
+            <TextButton class="color-navy" :iconFillAll="true">
+              <template v-slot:rightIcon>
+                <IconRightArrow />
+              </template>
+              버튼
+            </TextButton>
+          </ButtonList> -->
+          <!-- // Case : 버튼 컬러 타입 #143B75  -->
         </div>
       </BottomSticky>
     </template>
