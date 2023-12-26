@@ -4859,6 +4859,17 @@ const datas = () => [
           },
         ],
       },
+      {
+        depth2: '운전자격 검증 요청',
+        depth3: '팝업',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/ui-guide/lease-rent-estimation-system-006',
+        status: 'end',
+        create: '2023.12.26',
+        log: [],
+      },
     ],
   },
   {

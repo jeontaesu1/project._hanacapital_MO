@@ -572,6 +572,12 @@ const routes = [
     component: () =>
       import('@/views/uiGuide/GuideLeaseRentEstimationSystem005.vue'),
   },
+  {
+    path: '/ui-guide/lease-rent-estimation-system-006',
+    name: '/ui-guide/lease-rent-estimation-system-006',
+    component: () =>
+      import('@/views/uiGuide/GuideLeaseRentEstimationSystem006.vue'),
+  },
 
   // splash
   {
