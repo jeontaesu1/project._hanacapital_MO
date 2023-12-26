@@ -52,6 +52,195 @@ export default {
       </div>
     </div>
 
+    <!-- Case : 버튼 1개일 경우 -->
+    <ButtonList>
+      <ButtonListItem>
+        <BasicButton>버튼</BasicButton>
+      </ButtonListItem>
+    </ButtonList>
+    <!-- // Case : 버튼 1개일 경우 -->
+
+    <!-- Case : 버튼 2개일 경우 -->
+    <ButtonList>
+      <ButtonListItem>
+        <BasicButton>버튼</BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton>버튼</BasicButton>
+      </ButtonListItem>
+    </ButtonList>
+    <!-- // Case : 버튼 2개일 경우 -->
+
+    <!-- Case : 버튼 3개일 경우 -->
+    <ButtonList>
+      <ButtonListItem>
+        <BasicButton>버튼</BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton>버튼</BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton>버튼</BasicButton>
+      </ButtonListItem>
+    </ButtonList>
+    <!-- // Case : 버튼 3개일 경우 -->
+
+    <ButtonList align="full">
+      <!-- Case : 버튼 컬러 타입 #143B75 -->
+      <ButtonListItem>
+        <BasicButton theme="tertiary">버튼</BasicButton>
+      </ButtonListItem>
+      <!-- // Case : 버튼 컬러 타입 #143B75 -->
+
+      <!-- Case : 버튼 컬러 타입 #3A81E0  -->
+      <ButtonListItem>
+        <BasicButton theme="secondary">버튼</BasicButton>
+      </ButtonListItem>
+      <!-- // Case : 버튼 컬러 타입 #3A81E0 -->
+
+      <!-- Case : 버튼 컬러 타입 #EAEAEA  -->
+      <ButtonListItem>
+        <BasicButton theme="quaternary">버튼</BasicButton>
+      </ButtonListItem>
+      <!-- // Case : 버튼 컬러 타입 #EAEAEA  -->
+
+      <!-- Case : 버튼 텍스트 컬러 타입 #00A69E  -->
+      <ButtonListItem>
+        <BasicButton theme="quaternary-green">버튼</BasicButton>
+      </ButtonListItem>
+      <!-- // Case : 버튼 텍스트 컬러 타입 #00A69E  -->
+
+      <!-- Case : 버튼 텍스트 컬러 타입 #3A81E0  -->
+      <ButtonListItem>
+        <BasicButton theme="quaternary-blue">버튼</BasicButton>
+      </ButtonListItem>
+      <!-- // Case : 버튼 텍스트 컬러 타입 #3A81E0  -->
+
+      <!-- Case : 버튼 텍스트 컬러 타입 #143B75  -->
+      <ButtonListItem>
+        <BasicButton theme="quaternary-navy">버튼</BasicButton>
+      </ButtonListItem>
+      <!-- // Case : 버튼 텍스트 컬러 타입 #143B75  -->
+
+      <!-- Case : 버튼 텍스트 컬러 타입 #00A69E  -->
+      <ButtonListItem>
+        <BasicButton :line="true" theme="quaternary-green">버튼</BasicButton>
+      </ButtonListItem>
+      <!-- Case : 버튼 텍스트 컬러 타입 #00A69E  -->
+
+      <!-- Case : 버튼 텍스트 컬러 타입 #3A81E0  -->
+      <ButtonListItem>
+        <BasicButton :line="true" theme="quaternary-blue">버튼</BasicButton>
+      </ButtonListItem>
+      <!-- // Case : 버튼 텍스트 컬러 타입 #3A81E0  -->
+
+      <!-- Case : 버튼 텍스트 컬러 타입 #757575  -->
+      <ButtonListItem>
+        <BasicButton :line="true" theme="quaternary">버튼</BasicButton>
+      </ButtonListItem>
+      <!-- // Case : 버튼 텍스트 컬러 타입 #757575  -->
+
+      <!-- Case : 버튼 텍스트 컬러 타입 #143B75  -->
+      <ButtonListItem>
+        <BasicButton :line="true" theme="quaternary-navy">버튼</BasicButton>
+      </ButtonListItem>
+      <!-- // Case : 버튼 텍스트 컬러 타입 #143B75  -->
+    </ButtonList>
+
+    <!-- Case : 버튼 1개일 경우 -->
+    <ButtonList>
+      <TextButton theme="secondary" :iconFillAll="true">
+        <template v-slot:rightIcon>
+          <IconRightArrow />
+        </template>
+        버튼
+      </TextButton>
+    </ButtonList>
+    <!-- // Case : 버튼 1개일 경우 -->
+
+    <!-- Case : 버튼 2개일 경우 -->
+    <ButtonList>
+      <ButtonListItem>
+        <TextButton theme="secondary" :iconFillAll="true">
+          <template v-slot:rightIcon>
+            <IconRightArrow />
+          </template>
+          버튼
+        </TextButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <TextButton theme="secondary" :iconFillAll="true">
+          <template v-slot:rightIcon>
+            <IconRightArrow />
+          </template>
+          버튼
+        </TextButton>
+      </ButtonListItem>
+    </ButtonList>
+    <!-- // Case : 버튼 2개일 경우 -->
+
+    <!-- Case : 버튼 3개일 경우 -->
+    <ButtonList>
+      <ButtonListItem>
+        <TextButton theme="secondary" :iconFillAll="true">
+          <template v-slot:rightIcon>
+            <IconRightArrow />
+          </template>
+          버튼
+        </TextButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <TextButton theme="secondary" :iconFillAll="true">
+          <template v-slot:rightIcon>
+            <IconRightArrow />
+          </template>
+          버튼
+        </TextButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <TextButton theme="secondary" :iconFillAll="true">
+          <template v-slot:rightIcon>
+            <IconRightArrow />
+          </template>
+          버튼
+        </TextButton>
+      </ButtonListItem>
+    </ButtonList>
+    <!-- // Case : 버튼 3개일 경우 -->
+
+    <!-- Case : 버튼 컬러 타입 #3A81E0  -->
+    <ButtonList>
+      <TextButton theme="tertiary" :iconFillAll="true">
+        <template v-slot:rightIcon>
+          <IconRightArrow />
+        </template>
+        버튼
+      </TextButton>
+    </ButtonList>
+    <!-- // Case : 버튼 컬러 타입 #3A81E0  -->
+
+    <!-- Case : 버튼 컬러 타입 #757575  -->
+    <ButtonList>
+      <TextButton class="color-gray" :iconFillAll="true">
+        <template v-slot:rightIcon>
+          <IconRightArrow />
+        </template>
+        버튼
+      </TextButton>
+    </ButtonList>
+    <!-- // Case : 버튼 컬러 타입 #757575  -->
+
+    <!-- Case : 버튼 컬러 타입 #143B75  -->
+    <ButtonList>
+      <TextButton class="color-navy" :iconFillAll="true">
+        <template v-slot:rightIcon>
+          <IconRightArrow />
+        </template>
+        버튼
+      </TextButton>
+    </ButtonList>
+    <!-- // Case : 버튼 컬러 타입 #143B75  -->
+
     <template v-slot:foot>
       <BottomSticky>
         <div class="bottom-wrap">
@@ -64,230 +253,6 @@ export default {
               <BasicButton>응모하기</BasicButton>
             </ButtonListItem>
           </ButtonList>
-
-          <!-- Case : 버튼 1개일 경우 -->
-          <!-- <ButtonList
-            :classNames="{
-              wrap: 'row-margin-none',
-            }"
-          >
-            <ButtonListItem>
-              <BasicButton to="/customer/notice-list">버튼</BasicButton>
-            </ButtonListItem>
-          </ButtonList> -->
-          <!-- // Case : 버튼 1개일 경우 -->
-
-          <!-- Case : 버튼 2개일 경우 -->
-          <!-- <ButtonList
-            :classNames="{
-              wrap: 'row-margin-none',
-            }"
-          >
-            <ButtonListItem>
-              <BasicButton to="/customer/notice-list">버튼</BasicButton>
-            </ButtonListItem>
-            <ButtonListItem>
-              <BasicButton to="/customer/notice-list">버튼</BasicButton>
-            </ButtonListItem>
-          </ButtonList> -->
-          <!-- // Case : 버튼 2개일 경우 -->
-
-          <!-- Case : 버튼 3개일 경우 -->
-          <!-- <ButtonList
-            :classNames="{
-              wrap: 'row-margin-none',
-            }"
-          >
-            <ButtonListItem>
-              <BasicButton to="/customer/notice-list">버튼</BasicButton>
-            </ButtonListItem>
-            <ButtonListItem>
-              <BasicButton to="/customer/notice-list">버튼</BasicButton>
-            </ButtonListItem>
-            <ButtonListItem>
-              <BasicButton to="/customer/notice-list">버튼</BasicButton>
-            </ButtonListItem>
-          </ButtonList> -->
-          <!-- // Case : 버튼 3개일 경우 -->
-
-          <ButtonList
-            align="full"
-            :classNames="{
-              wrap: 'row-margin-none',
-            }"
-          >
-            <!-- Case : 버튼 컬러 타입 #143B75 -->
-            <!-- <ButtonListItem>
-              <BasicButton theme="tertiary">버튼</BasicButton>
-            </ButtonListItem> -->
-            <!-- // Case : 버튼 컬러 타입 #143B75 -->
-
-            <!-- Case : 버튼 컬러 타입 #3A81E0  -->
-            <!-- <ButtonListItem>
-              <BasicButton theme="secondary">버튼</BasicButton>
-            </ButtonListItem> -->
-            <!-- // Case : 버튼 컬러 타입 #3A81E0 -->
-
-            <!-- Case : 버튼 컬러 타입 #EAEAEA  -->
-            <!-- <ButtonListItem>
-              <BasicButton theme="quaternary">버튼</BasicButton>
-            </ButtonListItem> -->
-            <!-- // Case : 버튼 컬러 타입 #EAEAEA  -->
-
-            <!-- Case : 버튼 텍스트 컬러 타입 #00A69E  -->
-            <!-- <ButtonListItem>
-              <BasicButton theme="quaternary-green">버튼</BasicButton>
-            </ButtonListItem> -->
-            <!-- // Case : 버튼 텍스트 컬러 타입 #00A69E  -->
-
-            <!-- Case : 버튼 텍스트 컬러 타입 #3A81E0  -->
-            <!-- <ButtonListItem>
-              <BasicButton theme="quaternary-blue">버튼</BasicButton>
-            </ButtonListItem> -->
-            <!-- // Case : 버튼 텍스트 컬러 타입 #3A81E0  -->
-
-            <!-- Case : 버튼 텍스트 컬러 타입 #143B75  -->
-            <!-- <ButtonListItem>
-              <BasicButton theme="quaternary-navy">버튼</BasicButton>
-            </ButtonListItem> -->
-            <!-- // Case : 버튼 텍스트 컬러 타입 #143B75  -->
-
-            <!-- Case : 버튼 텍스트 컬러 타입 #00A69E  -->
-            <!-- <ButtonListItem>
-              <BasicButton :line="true" theme="quaternary-green"
-                >버튼</BasicButton
-              >
-            </ButtonListItem> -->
-            <!-- Case : 버튼 텍스트 컬러 타입 #00A69E  -->
-
-            <!-- Case : 버튼 텍스트 컬러 타입 #3A81E0  -->
-            <!-- <ButtonListItem>
-              <BasicButton :line="true" theme="quaternary-blue"
-                >버튼</BasicButton
-              >
-            </ButtonListItem> -->
-            <!-- // Case : 버튼 텍스트 컬러 타입 #3A81E0  -->
-
-            <!-- Case : 버튼 텍스트 컬러 타입 #757575  -->
-            <!-- <ButtonListItem>
-              <BasicButton :line="true" theme="quaternary">버튼</BasicButton>
-            </ButtonListItem> -->
-            <!-- // Case : 버튼 텍스트 컬러 타입 #757575  -->
-
-            <!-- Case : 버튼 텍스트 컬러 타입 #143B75  -->
-            <!-- <ButtonListItem>
-              <BasicButton :line="true" theme="quaternary-navy"
-                >버튼</BasicButton
-              >
-            </ButtonListItem> -->
-            <!-- // Case : 버튼 텍스트 컬러 타입 #143B75  -->
-          </ButtonList>
-
-          <!-- Case : 버튼 1개일 경우 -->
-          <ButtonList
-            :classNames="{
-              wrap: 'row-margin-none',
-            }"
-          >
-            <TextButton theme="secondary" :iconFillAll="true">
-              <template v-slot:rightIcon>
-                <IconRightArrow />
-              </template>
-              버튼
-            </TextButton>
-          </ButtonList>
-          <!-- // Case : 버튼 1개일 경우 -->
-
-          <!-- Case : 버튼 2개일 경우 -->
-          <!-- <ButtonList
-            :classNames="{
-              wrap: 'row-margin-none',
-            }"
-          >
-            <ButtonListItem>
-              <TextButton theme="secondary" :iconFillAll="true">
-                <template v-slot:rightIcon>
-                  <IconRightArrow />
-                </template>
-                버튼
-              </TextButton>
-            </ButtonListItem>
-            <ButtonListItem>
-              <TextButton theme="secondary" :iconFillAll="true">
-                <template v-slot:rightIcon>
-                  <IconRightArrow />
-                </template>
-                버튼
-              </TextButton>
-            </ButtonListItem>
-          </ButtonList> -->
-          <!-- // Case : 버튼 2개일 경우 -->
-
-          <!-- Case : 버튼 3개일 경우 -->
-          <!-- <ButtonList
-            :classNames="{
-              wrap: 'row-margin-none',
-            }"
-          >
-            <ButtonListItem>
-              <TextButton theme="secondary" :iconFillAll="true">
-                <template v-slot:rightIcon>
-                  <IconRightArrow />
-                </template>
-                버튼
-              </TextButton>
-            </ButtonListItem>
-            <ButtonListItem>
-              <TextButton theme="secondary" :iconFillAll="true">
-                <template v-slot:rightIcon>
-                  <IconRightArrow />
-                </template>
-                버튼
-              </TextButton>
-            </ButtonListItem>
-            <ButtonListItem>
-              <TextButton theme="secondary" :iconFillAll="true">
-                <template v-slot:rightIcon>
-                  <IconRightArrow />
-                </template>
-                버튼
-              </TextButton>
-            </ButtonListItem>
-          </ButtonList> -->
-          <!-- // Case : 버튼 3개일 경우 -->
-
-          <!-- Case : 버튼 컬러 타입 #3A81E0  -->
-          <!-- <ButtonList>
-            <TextButton theme="tertiary" :iconFillAll="true">
-              <template v-slot:rightIcon>
-                <IconRightArrow />
-              </template>
-              버튼
-            </TextButton>
-          </ButtonList> -->
-          <!-- // Case : 버튼 컬러 타입 #3A81E0  -->
-
-          <!-- Case : 버튼 컬러 타입 #757575  -->
-          <!-- <ButtonList>
-            <TextButton class="color-gray" :iconFillAll="true">
-              <template v-slot:rightIcon>
-                <IconRightArrow />
-              </template>
-              버튼
-            </TextButton>
-          </ButtonList> -->
-          <!-- // Case : 버튼 컬러 타입 #757575  -->
-
-          <!-- Case : 버튼 컬러 타입 #143B75  -->
-          <!-- <ButtonList>
-            <TextButton class="color-navy" :iconFillAll="true">
-              <template v-slot:rightIcon>
-                <IconRightArrow />
-              </template>
-              버튼
-            </TextButton>
-          </ButtonList> -->
-          <!-- // Case : 버튼 컬러 타입 #143B75  -->
         </div>
       </BottomSticky>
     </template>
