@@ -854,6 +854,94 @@ const routes = [
     component: () =>
       import('@/views/customer/CustomerFinancialConsumerProtectionSystem.vue'),
   },
+  // S: 240729 추가
+  {
+    path: '/customer/financial-consumer-protection-history',
+    name: '/customer/financial-consumer-protection-history',
+    component: () =>
+      import(
+        '@/views/customer/CustomerFinancialConsumerProtectionEnactReviseHistoryList.vue'
+      ),
+  },
+  {
+    path: '/customer/financial-consumer-protection-regulations',
+    name: '/customer/financial-consumer-protection-regulations',
+    component: () =>
+      import(
+        '@/views/customer/CustomerFinancialConsumerProtectionIntenalControlRegulations.vue'
+      ),
+  },
+  {
+    path: '/customer/financial-consumer-protection-bestpractices',
+    name: '/customer/financial-consumer-protection-bestpractices',
+    component: () =>
+      import(
+        '@/views/customer/CustomerFinancialConsumerProtectionBestPractices.vue'
+      ),
+  },
+  {
+    path: '/customer/financial-consumer-protection-bestpractices-view',
+    name: '/customer/financial-consumer-protection-bestpractices-view',
+    component: () =>
+      import(
+        '@/views/customer/CustomerFinancialConsumerProtectionBestPracticesView.vue'
+      ),
+  },
+  {
+    path: '/customer/financial-consumer-protection-request-data',
+    name: '/customer/financial-consumer-protection-request-data',
+    component: () =>
+      import(
+        '@/views/customer/CustomerFinancialConsumerProtectionRequestAccessData.vue'
+      ),
+  },
+  {
+    path: '/customer/financial-consumer-protection-terminate-illegal-contract',
+    name: '/customer/financial-consumer-protection-terminate-illegal-contract',
+    component: () =>
+      import(
+        '@/views/customer/CustomerFinancialConsumerProtectionTerminateIllegalContract.vue'
+      ),
+  },
+  {
+    path: '/customer/financial-consumer-protection-receiving-electronic-complaints',
+    name: '/customer/financial-consumer-protection-receiving-electronic-complaints',
+    component: () =>
+      import(
+        '@/views/customer/CustomerFinancialConsumerProtectionReceivingElectronicComplaints.vue'
+      ),
+  },
+  {
+    path: '/customer/financial-consumer-protection-inquirysales-visiting-telephone',
+    name: '/customer/financial-consumer-protection-inquirysales-visiting-telephone',
+    component: () =>
+      import(
+        '@/views/customer/CustomerFinancialConsumerProtectionInquirySalesVisitingAndTelephone.vue'
+      ),
+  },
+  {
+    path: '/customer/financial-consumer-protection-information',
+    name: '/customer/financial-consumer-protection-information',
+    component: () =>
+      import(
+        '@/views/customer/CustomerFinancialConsumerProtectionInformation.vue'
+      ),
+  },
+  {
+    path: '/customer/financial-consumer-protection-rights',
+    name: '/customer/financial-consumer-protection-rights',
+    component: () =>
+      import('@/views/customer/CustomerFinancialConsumerRights.vue'),
+  },
+  {
+    path: '/customer/financial-consumer-protection-complain-beneficial-information',
+    name: '/customer/financial-consumer-protection-complain-beneficial-information',
+    component: () =>
+      import(
+        '@/views/customer/CustomerFinancialConsumerComplainBeneficialInformation.vue'
+      ),
+  },
+  // //E: 240729 추가
   {
     path: '/customer/financial-consumer-protection-webzine',
     name: '/customer/financial-consumer-protection-webzine',
@@ -1749,7 +1837,39 @@ const routes = [
     component: () =>
       import('@/views/LeaseRentEstimationSystem/LR_M05_p015.vue'),
   },
-
+  // 20240206
+  {
+    path: '/lease-rent-estimation-system/LR_TO_p01_check',
+    name: '/lease-rent-estimation-system/LR_TO_p01_check',
+    component: () =>
+      import('@/views/LeaseRentEstimationSystem/LR_TO_p01_check.vue'),
+  },
+  {
+    path: '/lease-rent-estimation-system/LR_TO_p01',
+    name: '/lease-rent-estimation-system/LR_TO_p01',
+    component: () => import('@/views/LeaseRentEstimationSystem/LR_TO_p01.vue'),
+  },
+  // // 20240206
+  // 20240208
+  {
+    path: '/lease-rent-estimation-system/DA_reservation-counseling',
+    name: '/lease-rent-estimation-system/DA_reservation-counseling',
+    component: () =>
+      import('@/views/LeaseRentEstimationSystem/LR_DA_reCounseling.vue'),
+  },
+  {
+    path: '/lease-rent-estimation-system/DA_reservation-counseling-complete',
+    name: '/lease-rent-estimation-system/DA_reservation-counseling-complete',
+    component: () =>
+      import('@/views/LeaseRentEstimationSystem/LR_DA_reCounseling_com.vue'),
+  },
+  {
+    path: '/lease-rent-estimation-system/DA_randing',
+    name: '/lease-rent-estimation-system/DA_randing',
+    component: () =>
+      import('@/views/LeaseRentEstimationSystem/LR_DA_randing.vue'),
+  },
+  // // 20240208
   // company
   {
     path: '/company/about',
@@ -2087,6 +2207,175 @@ const routes = [
     name: '/outer-etc/etc-001',
     component: () => import('@/views/outerEtc/OuterEtc.vue'),
     meta: { layout: 'NoneLayout' },
+  },
+
+  // TestPage
+  {
+    path: '/ui-guide/TestPage',
+    name: '/ui-guide/TestPage',
+    component: () => import('@/components/ui/gnb/TestPage.vue'),
+  },
+  // 플랫폼대출 한도조회(이미지 유)
+  {
+    path: '/personal-loan/platform-loan001',
+    name: '/personal-loan/platform-loan001',
+    component: () => import('@/views/personalLoan/PlatformLoan001.vue'),
+  },
+
+  //플랫폼대출 한도조회(이미지 무)
+  {
+    path: '/personal-loan/platform-loan002',
+    name: '/personal-loan/platform-loan002',
+    component: () => import('@/views/personalLoan/PlatformLoan002.vue'),
+  },
+
+  // 240502_보이스피싱 팝업 추가
+  {
+    path: '/ui-guide/my-loan-voicephising',
+    name: '/ui-guide/my-loan-voicephising',
+    component: () => import('@/views/uiGuide/GuideMyLoanVoice.vue'),
+  },
+
+  // 240507_중고차 재고금융 한도 전자약정 신규페이지(1)
+  {
+    path: '/sales-used-car/uc_m09_l001',
+    name: '/sales-used-car/uc_m09_l001',
+    component: () =>
+      import('@/views/salesUsedCar/LayerSalesUsedCarInventoryFinance.vue'),
+  },
+
+  // 240507_중고차 재고금융 한도 전자약정 신규페이지(2)
+  {
+    path: '/sales-used-car/uc_m09_l002',
+    name: '/sales-used-car/uc_m09_l002',
+    component: () =>
+      import(
+        '@/views/salesUsedCar/LayerSalesUsedCarInventoryFinanceOnline.vue'
+      ),
+  },
+
+  // 240604_스탁론 연장프로세스 상품설명서
+  {
+    path: '/ui-guide/my-loan-progress-013',
+    name: '/ui-guide/my-loan-progress-013',
+    component: () => import('@/views/uiGuide/GuideMyLoanProgress013.vue'),
+  },
+
+  // 240607_만기대상 재이용 상담 프로세스_상담 정보 입력
+  {
+    path: '/lease-rent-estimation-system/LR_M05_p016',
+    name: '/lease-rent-estimation-system/LR_M05_p016',
+    component: () =>
+      import('@/views/LeaseRentEstimationSystem/LR_M05_p016.vue'),
+  },
+  // 240607_만기대상 재이용 상담 프로세스_상담 신청 완료
+  {
+    path: '/lease-rent-estimation-system/LR_M05_p017',
+    name: '/lease-rent-estimation-system/LR_M05_p017',
+    component: () =>
+      import('@/views/LeaseRentEstimationSystem/LR_M05_p017.vue'),
+  },
+  // 240607_만기대상 재이용 상담 프로세스_얼럿팝업
+  {
+    path: '/ui-guide/lease-rent-estimation-system-007',
+    name: '/ui-guide/lease-rent-estimation-system-007',
+    component: () =>
+      import('@/views/uiGuide/GuideLeaseRentEstimationSystem007.vue'),
+  },
+  // 240611_개인사업자 아파트담보 대출연장 상품설명서
+  {
+    path: '/ui-guide/my-loan-progress-014',
+    name: '/ui-guide/my-loan-progress-014',
+    component: () => import('@/views/uiGuide/GuideMyLoanProgress014.vue'),
+  },
+  // 240807_즉시출고 페이지
+  {
+    path: '/lease-rent-estimation-system/immediate-car',
+    name: '/lease-rent-estimation-system/immediate-car',
+    component: () =>
+      import(
+        '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemImmediateCar.vue'
+      ),
+  },
+  {
+    path: '/lease-rent-estimation-system/immediate-car-detail',
+    name: '/lease-rent-estimation-system/immediate-car-detail',
+    component: () =>
+      import(
+        '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemImmediateCarDetail.vue'
+      ),
+  },
+  // 240903_채권추심 관련 지원제도 안내
+  {
+    path: '/customer/ds_no_m01',
+    name: '/customer/ds_no_m01',
+    component: () => import('@/views/customer/DS_NO_M01.vue'),
+  },
+  // 240903_채권추심업무 처리절차 안내문
+  {
+    path: '/customer/ds_no_m02',
+    name: '/customer/ds_no_m02',
+    component: () => import('@/views/customer/DS_NO_M02.vue'),
+  },
+  // 240903_불법채권추심 대응요령
+  {
+    path: '/customer/ds_no_m03',
+    name: '/customer/ds_no_m03',
+    component: () => import('@/views/customer/DS_NO_M03.vue'),
+  },
+  // 240903_소멸시효 완성채권 추심 관련 금융소비자 유의사항
+  {
+    path: '/customer/ds_no_m04',
+    name: '/customer/ds_no_m04',
+    component: () => import('@/views/customer/DS_NO_M04.vue'),
+  },
+  // 240903_채권추심자의 의무와 추심에 관한 개인금융채무자의 권리
+  {
+    path: '/customer/ds_no_m05',
+    name: '/customer/ds_no_m05',
+    component: () => import('@/views/customer/DS_NO_M05.vue'),
+  },
+  // 240906_채무조정요청 안내
+  {
+    path: '/customer/Customer_DS_M01',
+    name: '/customer/Customer_DS_M01',
+    component: () => import('@/views/customer/Customer_DS_M01.vue'),
+  },
+  // 240909_채무조정권 알아보기
+  {
+    path: '/customer/Customer_DS_M01_01',
+    name: '/customer/Customer_DS_M01_01',
+    component: () => import('@/views/customer/Customer_DS_M01_01.vue'),
+  },
+  // 240909_채무조정요청권 신청 (본인인증 팝업)
+  {
+    path: '/customer/Customer_DS_M02_01',
+    name: '/customer/Customer_DS_M02_01',
+    component: () => import('@/views/customer/Customer_DS_M02_01.vue'),
+  },
+  // 240909_채무조정요청권 신청 (계좌확인)
+  {
+    path: '/customer/Customer_DS_M02_02',
+    name: '/customer/Customer_DS_M02_02',
+    component: () => import('@/views/customer/Customer_DS_M02_02.vue'),
+  },
+  // 240910_채무조정요청권 신청 (신청내용입력)
+  {
+    path: '/customer/Customer_DS_M02_03',
+    name: '/customer/Customer_DS_M02_03',
+    component: () => import('@/views/customer/Customer_DS_M02_03.vue'),
+  },
+  // 240910_채무조정요청권 신청 (신청완료)
+  {
+    path: '/customer/Customer_DS_M02_04',
+    name: '/customer/Customer_DS_M02_04',
+    component: () => import('@/views/customer/Customer_DS_M02_04.vue'),
+  },
+  // 240910_채무조정요청권 신청 미대상
+  {
+    path: '/customer/Customer_DS_M02_02_01',
+    name: '/customer/Customer_DS_M02_02_01',
+    component: () => import('@/views/customer/Customer_DS_M02_02_01.vue'),
   },
 ];
 

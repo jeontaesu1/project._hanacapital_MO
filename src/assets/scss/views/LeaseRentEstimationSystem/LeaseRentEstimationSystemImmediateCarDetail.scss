@@ -1,0 +1,68 @@
+@import '@/assets/scss/components/import/estimate-list.scss';
+@import '@/assets/scss/components/import/bank-brand.scss';
+@import '@/assets/scss/components/import/loading-icon.scss';
+@import '@/assets/scss/components/import/notice-section.scss';
+@import '@/assets/scss/components/import/basic-list.scss';
+@import '@/assets/scss/components/import/option-select.scss';
+@import '@/assets/scss/components/import/empty.scss';
+@import '@/assets/scss/components/import/contents-list.scss';
+
+.color-etc {
+  margin-left: 27px;
+}
+
+.total {
+  margin: 40px -20px 0;
+  padding: 24px 20px;
+  background-color: $color-gray-15;
+}
+
+.product-setting {
+  display: flex;
+
+  &__title {
+    flex: none;
+    min-width: 48px;
+    @include font-size-default(13);
+    color: $color-gray-70;
+
+    & + .product-setting__contents {
+      flex: 1;
+      margin-left: 8px;
+    }
+  }
+}
+
+.input-button {
+  position: relative;
+  z-index: 1;
+}
+
+.contract-list {
+  > .contents-list__item {
+    & + .contents-list__item {
+      margin-top: 24px;
+    }
+
+    > .contents-list__head {
+      border: none;
+      border-radius: 0;
+      padding: 0;
+
+      .contents-list__symbol {
+        margin-top: 15px;
+        margin-right: 16px;
+        padding-top: 3px;
+        min-width: 24px;
+        min-height: 24px;
+        border-radius: 8px;
+        @include font-size-default(11);
+        background-color: $color-gray-15;
+      }
+
+      .contents-list__title {
+        flex: 1;
+      }
+    }
+  }
+}

@@ -7356,6 +7356,12 @@ export default {
         <RoundStatus :square="true" theme="undenary">텍스트</RoundStatus>
         <RoundStatus :square="true" theme="duodenary">텍스트</RoundStatus>
       </div>
+      <!-- 240702 추가 -->
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Border</h3>
+        <RoundStatus :border="true">텍스트</RoundStatus>
+      </div>
+      <!-- //240702 추가 -->
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Block</h3>
         <RoundStatus :block="true">텍스트</RoundStatus>

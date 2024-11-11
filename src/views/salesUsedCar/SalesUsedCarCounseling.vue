@@ -38,6 +38,7 @@ import SelectTable from '@/components/ui/table/SelectTable.vue';
 import SelectTableRow from '@/components/ui/table/SelectTableRow.vue';
 import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
+import SearchButton from '@/components/ui/button/SearchButton.vue';
 
 export default {
   components: {
@@ -75,6 +76,7 @@ export default {
     SelectTableRow,
     BottomSticky,
     CarEmblem,
+    SearchButton,
   },
   setup() {
     const store = {
@@ -833,6 +835,27 @@ export default {
       <!-- // Case : 차량 선택 후 노출 -->
     </div>
     <!-- // Case : 조회 후 노출 -->
+
+    <!-- S:240409 수정 -->
+    <div class="row-margin-container">
+      <FormList>
+        <FormListItem titleText="수수료 지급처(선택)" target="#testInput007">
+          <FormInvalid :error="state.testError001">
+            <InputBlock :error="state.testError001" type="search">
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  type="search"
+                  title="수수료 지급처 검색"
+                  id="testInput007"
+                  placeholder="수수료 지급처(선택)"
+                />
+              </InputBlockCell>
+            </InputBlock>
+          </FormInvalid>
+        </FormListItem>
+      </FormList>
+    </div>
+    <!-- E:240409 수정 -->
 
     <template v-slot:foot>
       <!-- Case : 조회 후 노출 -->

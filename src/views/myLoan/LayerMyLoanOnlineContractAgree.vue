@@ -1,5 +1,5 @@
 <script>
-// My_M03_l006
+// My_M03_l006_약관동의
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -26,6 +26,7 @@ import UiAccordion from '@/components/ui/accordion/UiAccordion.vue';
 import UiAccordionItem from '@/components/ui/accordion/UiAccordionItem.vue';
 import UiAccordionLayer from '@/components/ui/accordion/UiAccordionLayer.vue';
 import UiAccordionOpener from '@/components/ui/accordion/UiAccordionOpener.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
 
 export default {
   components: {
@@ -53,6 +54,7 @@ export default {
     UiAccordionItem,
     UiAccordionLayer,
     UiAccordionOpener,
+    TextButton,
   },
   setup() {
     const layer = ref(null);
@@ -131,6 +133,18 @@ export default {
               안전하게 관리됩니다.
             </div>
           </li>
+          <!-- S: 240524 수정 -->
+          <li :class="$style['basic-list__item']" class="ItemPosition">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              만 65세 이상, 은퇴자, 주부인 경우 「금융취약 소비자 우선 설명」
+              내용을 확인해주세요.
+            </div>
+            <TextButton theme="secondary" :underline="true" class="textButton">
+              확인하기
+            </TextButton>
+          </li>
+          <!-- // E: 240524 수정 -->
         </ul>
       </section>
       <!-- //Case : 일반할부금융(내구소비재)의 경우 노출 -->
@@ -216,7 +230,7 @@ export default {
                             >
                               <CheckBoxObject />
                               <CheckBoxLabelText>
-                                자동차 오토론(대출) 약관
+                                중고 자동차 대출 표준약관
                               </CheckBoxLabelText>
                             </CheckBox>
                             <div :class="$style['agree-list__right']">
@@ -244,7 +258,7 @@ export default {
                             >
                               <CheckBoxObject />
                               <CheckBoxLabelText>
-                                고객정보 취급방침
+                                자동차리스 표준약관
                               </CheckBoxLabelText>
                             </CheckBox>
                             <div :class="$style['agree-list__right']">
@@ -263,6 +277,110 @@ export default {
                           <div :class="$style['agree-list__head']">
                             <CheckBox
                               id="layerMyLoanOnlineContractAgree_001_004"
+                              :classNames="{
+                                wrap: $style['agree-list__checkbox'],
+                              }"
+                              theme="tertiary"
+                            >
+                              <CheckBoxObject />
+                              <CheckBoxLabelText>
+                                렌터카 약관
+                              </CheckBoxLabelText>
+                            </CheckBox>
+                            <div :class="$style['agree-list__right']">
+                              <button
+                                type="button"
+                                :class="$style['agree-list__link']"
+                              >
+                                <span :class="$style['agree-list__link-text']">
+                                  상세보기
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </li>
+                        <li :class="$style['agree-list__item']">
+                          <div :class="$style['agree-list__head']">
+                            <CheckBox
+                              id="layerMyLoanOnlineContractAgree_001_005"
+                              :classNames="{
+                                wrap: $style['agree-list__checkbox'],
+                              }"
+                              theme="tertiary"
+                            >
+                              <CheckBoxObject />
+                              <CheckBoxLabelText>
+                                자동차 할부금융 약관
+                              </CheckBoxLabelText>
+                            </CheckBox>
+                            <div :class="$style['agree-list__right']">
+                              <button
+                                type="button"
+                                :class="$style['agree-list__link']"
+                              >
+                                <span :class="$style['agree-list__link-text']">
+                                  상세보기
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </li>
+                        <li :class="$style['agree-list__item']">
+                          <div :class="$style['agree-list__head']">
+                            <CheckBox
+                              id="layerMyLoanOnlineContractAgree_001_005"
+                              :classNames="{
+                                wrap: $style['agree-list__checkbox'],
+                              }"
+                              theme="tertiary"
+                            >
+                              <CheckBoxObject />
+                              <CheckBoxLabelText>
+                                자동차 오토론(대출) 약관
+                              </CheckBoxLabelText>
+                            </CheckBox>
+                            <div :class="$style['agree-list__right']">
+                              <button
+                                type="button"
+                                :class="$style['agree-list__link']"
+                              >
+                                <span :class="$style['agree-list__link-text']">
+                                  상세보기
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </li>
+                        <li :class="$style['agree-list__item']">
+                          <div :class="$style['agree-list__head']">
+                            <CheckBox
+                              id="layerMyLoanOnlineContractAgree_001_005"
+                              :classNames="{
+                                wrap: $style['agree-list__checkbox'],
+                              }"
+                              theme="tertiary"
+                            >
+                              <CheckBoxObject />
+                              <CheckBoxLabelText>
+                                고객정보 취급방침
+                              </CheckBoxLabelText>
+                            </CheckBox>
+                            <div :class="$style['agree-list__right']">
+                              <button
+                                type="button"
+                                :class="$style['agree-list__link']"
+                              >
+                                <span :class="$style['agree-list__link-text']">
+                                  상세보기
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </li>
+                        <li :class="$style['agree-list__item']">
+                          <div :class="$style['agree-list__head']">
+                            <CheckBox
+                              id="layerMyLoanOnlineContractAgree_001_005"
                               :classNames="{
                                 wrap: $style['agree-list__checkbox'],
                               }"
@@ -297,6 +415,32 @@ export default {
                               <CheckBoxObject />
                               <CheckBoxLabelText>
                                 고객안내사항
+                              </CheckBoxLabelText>
+                            </CheckBox>
+                            <div :class="$style['agree-list__right']">
+                              <button
+                                type="button"
+                                :class="$style['agree-list__link']"
+                              >
+                                <span :class="$style['agree-list__link-text']">
+                                  상세보기
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </li>
+                        <li :class="$style['agree-list__item']">
+                          <div :class="$style['agree-list__head']">
+                            <CheckBox
+                              id="layerMyLoanOnlineContractAgree_001_005"
+                              :classNames="{
+                                wrap: $style['agree-list__checkbox'],
+                              }"
+                              theme="tertiary"
+                            >
+                              <CheckBoxObject />
+                              <CheckBoxLabelText>
+                                근저당권 설정계약
                               </CheckBoxLabelText>
                             </CheckBox>
                             <div :class="$style['agree-list__right']">
@@ -1800,6 +1944,172 @@ export default {
                 <!-- //약관동의 : 자동차인수증 -->
                 <!-- //Case : 운용/금융리스 승계 후 이용자, 렌터카 승계 후 이용자의 경우 노출 -->
 
+                <!-- S: 240524 수정 -->
+                <!-- 약관동의 : 중고차 할부 주요사항 전체동의 -->
+                <UiAccordionItem
+                  :classNames="{ item: $style['agree-list__depth-item'] }"
+                  :initialOpen="true"
+                >
+                  <div :class="$style['agree-list__depth-head']">
+                    <CheckBox
+                      id="layerMyLoanOnlineContractAgree_014"
+                      :classNames="{
+                        wrap: $style['agree-list__depth-checkbox'],
+                      }"
+                    >
+                      <CheckBoxObject />
+                      <CheckBoxLabelText
+                        >중고차 할부 주요사항 전체동의</CheckBoxLabelText
+                      >
+                    </CheckBox>
+                    <div :class="$style['agree-list__right']">
+                      <UiAccordionOpener
+                        :classNames="{
+                          button: $style['agree-list__depth-opener'],
+                        }"
+                      />
+                    </div>
+                  </div>
+                  <UiAccordionLayer>
+                    <div :class="$style['agree-list__depth-contents']">
+                      <ul :class="$style['agree-list__list']">
+                        <li :class="$style['agree-list__item']">
+                          <div :class="$style['agree-list__head']">
+                            <CheckBox
+                              id="layerMyLoanOnlineContractAgree_014_001"
+                              :classNames="{
+                                wrap: $style['agree-list__checkbox'],
+                              }"
+                              theme="tertiary"
+                            >
+                              <CheckBoxObject />
+                              <CheckBoxLabelText>
+                                중고차 대출사기 방지 안내
+                              </CheckBoxLabelText>
+                            </CheckBox>
+                            <div :class="$style['agree-list__right']">
+                              <button
+                                type="button"
+                                :class="$style['agree-list__link']"
+                              >
+                                <span :class="$style['agree-list__link-text']">
+                                  상세보기
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </li>
+                        <li :class="$style['agree-list__item']">
+                          <div :class="$style['agree-list__head']">
+                            <CheckBox
+                              id="layerMyLoanOnlineContractAgree_014_001"
+                              :classNames="{
+                                wrap: $style['agree-list__checkbox'],
+                              }"
+                              theme="tertiary"
+                            >
+                              <CheckBoxObject />
+                              <CheckBoxLabelText>
+                                금리인하요구권 안내
+                              </CheckBoxLabelText>
+                            </CheckBox>
+                            <div :class="$style['agree-list__right']">
+                              <button
+                                type="button"
+                                :class="$style['agree-list__link']"
+                              >
+                                <span :class="$style['agree-list__link-text']">
+                                  상세보기
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </li>
+                        <li :class="$style['agree-list__item']">
+                          <div :class="$style['agree-list__head']">
+                            <CheckBox
+                              id="layerMyLoanOnlineContractAgree_014_001"
+                              :classNames="{
+                                wrap: $style['agree-list__checkbox'],
+                              }"
+                              theme="tertiary"
+                            >
+                              <CheckBoxObject />
+                              <CheckBoxLabelText>
+                                신용점수 하락가능 안내
+                              </CheckBoxLabelText>
+                            </CheckBox>
+                            <div :class="$style['agree-list__right']">
+                              <button
+                                type="button"
+                                :class="$style['agree-list__link']"
+                              >
+                                <span :class="$style['agree-list__link-text']">
+                                  상세보기
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </li>
+                        <li :class="$style['agree-list__item']">
+                          <div :class="$style['agree-list__head']">
+                            <CheckBox
+                              id="layerMyLoanOnlineContractAgree_014_001"
+                              :classNames="{
+                                wrap: $style['agree-list__checkbox'],
+                              }"
+                              theme="tertiary"
+                            >
+                              <CheckBoxObject />
+                              <CheckBoxLabelText>
+                                기한 이익상실 안내
+                              </CheckBoxLabelText>
+                            </CheckBox>
+                            <div :class="$style['agree-list__right']">
+                              <button
+                                type="button"
+                                :class="$style['agree-list__link']"
+                              >
+                                <span :class="$style['agree-list__link-text']">
+                                  상세보기
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </li>
+                        <li :class="$style['agree-list__item']">
+                          <div :class="$style['agree-list__head']">
+                            <CheckBox
+                              id="layerMyLoanOnlineContractAgree_014_001"
+                              :classNames="{
+                                wrap: $style['agree-list__checkbox'],
+                              }"
+                              theme="tertiary"
+                            >
+                              <CheckBoxObject />
+                              <CheckBoxLabelText>
+                                할부금 수령 위임안내
+                              </CheckBoxLabelText>
+                            </CheckBox>
+                            <div :class="$style['agree-list__right']">
+                              <button
+                                type="button"
+                                :class="$style['agree-list__link']"
+                              >
+                                <span :class="$style['agree-list__link-text']">
+                                  상세보기
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </UiAccordionLayer>
+                </UiAccordionItem>
+                <!-- //약관동의 : 중고차 할부 주요사항 전체동의 -->
+                <!-- // E: 240524 수정 -->
+
                 <!-- Case : 렌터카연장, 출금이체 신청의 경우 미노출 -->
                 <!-- 약관동의 : 전자금융거래약관 -->
                 <UiAccordionItem
@@ -2416,4 +2726,16 @@ export default {
 
 <style lang="scss" module>
 @import '@/assets/scss/views/myLoan/LayerMyLoanOnlineContractAgree.scss';
+</style>
+
+<style lang="scss" scoped>
+.ItemPosition {
+  position: relative;
+
+  .textButton {
+    position: absolute;
+    top: 38px;
+    left: 16px;
+  }
+}
 </style>

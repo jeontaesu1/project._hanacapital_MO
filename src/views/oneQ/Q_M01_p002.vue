@@ -20,6 +20,27 @@ import IconMainFour from '@/assets/images/icon/main-4.svg?component';
 import IconMainFive from '@/assets/images/icon/main-5.svg?component';
 import IconMyInfo from '@/assets/images/icon/my-info.svg?component';
 
+import LogoHyundai from '@/assets/images/etc-logo/logo_hyundai.svg?component';
+import LogoKia from '@/assets/images/etc-logo/logo_kia.svg?component';
+import LogoBenz from '@/assets/images/etc-logo/logo_benz.svg?component';
+import LogoBMW from '@/assets/images/etc-logo/logo_bmw.svg?component';
+import LogoPorsche from '@/assets/images/etc-logo/logo_porsche.svg?component';
+import LogoKGM from '@/assets/images/etc-logo/logo_kgm.svg?component';
+import LogoLexus from '@/assets/images/etc-logo/logo_lexus.svg?component';
+import LogoVolks from '@/assets/images/etc-logo/logo_volkswagen.svg?component';
+import LogoChevrolet from '@/assets/images/etc-logo/logo_chevrolet.svg?component';
+import LogoAudi from '@/assets/images/etc-logo/logo_audi.svg?component';
+import LogoVolvo from '@/assets/images/etc-logo/logo_volvo.svg?component';
+import IconPassbook from '@/assets/images/illustration/img-passbook.svg?component';
+
+import BasicButton from '@/components/ui/button/BasicButton.vue';
+import ButtonList from '@/components/ui/button/ButtonList.vue';
+import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import CarThumb from '@/components/ui/imageData/CarThumb.vue';
+// import CheckBox from '@/components/ui/form/CheckBox.vue';
+// import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
+// import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
+
 export default {
   components: {
     PageContents,
@@ -35,6 +56,26 @@ export default {
     IconMainFour,
     IconMainFive,
     IconMyInfo,
+
+    IconPassbook,
+    BasicButton,
+    ButtonList,
+    ButtonListItem,
+    CarThumb,
+    LogoHyundai,
+    LogoKia,
+    LogoBenz,
+    LogoBMW,
+    LogoPorsche,
+    LogoKGM,
+    LogoLexus,
+    LogoVolks,
+    LogoChevrolet,
+    LogoAudi,
+    LogoVolvo,
+    // CheckBox,
+    // CheckBoxLabelText,
+    // CheckBoxObject,
   },
   setup() {
     const store = {
@@ -59,15 +100,16 @@ export default {
 
 <template>
   <PageContents>
-    <PageTextGroup>
-      <PageMainText>
-        김하나님이<br />
-        보유하신 계약은 총 <span class="color-green">5</span>건 입니다
-      </PageMainText>
-    </PageTextGroup>
+    <div :class="$style['bg']">
+      <PageTextGroup>
+        <PageMainText>
+          김하나님이<br />
+          보유하신 계약은 총 <span class="color-green">5</span>건 입니다
+        </PageMainText>
+      </PageTextGroup>
 
-    <!-- Case : 30건 이상일 경우 미노출 -->
-    <BasicBox theme="fourteenth">
+      <!-- Case : 30건 이상일 경우 미노출 -->
+      <!-- <BasicBox theme="sixteenth">
       <div class="align-center">
         <div>
           <UnitText
@@ -80,190 +122,244 @@ export default {
           <div class="text-body-3 color-gray-tertiary">당월 결제예정금액</div>
         </div>
       </div>
-    </BasicBox>
-    <!-- // Case : 30건 이상일 경우 미노출 -->
+    </BasicBox> -->
+      <!-- // Case : 30건 이상일 경우 미노출 -->
 
-    <!-- Case : 30건 이상일 경우 -->
-    <BasicBox theme="fourteenth">
-      <div class="flex-box row-margin-contents">
-        <div class="flex-box__cell flex-1">
-          <div class="text-body-3 color-gray-tertiary">당월 결제예정금액</div>
-        </div>
-        <div class="flex-box__cell">
-          <div class="inline-wrap">
-            <TextButton
-              :classNames="{ wrap: 'text-body-4 color-gray' }"
-              :underline="true"
-              >자세히 보기</TextButton
-            >
+      <!-- Case : 30건 이상일 경우 -->
+      <BasicBox theme="sixteenth">
+        <div class="flex-box row-margin-contents">
+          <div class="flex-box__cell flex-1">
+            <div class="text-body-3 color-gray-tertiary">당월 결제예정금액</div>
+          </div>
+          <div class="flex-box__cell">
+            <div class="inline-wrap">
+              <TextButton
+                :classNames="{ wrap: 'text-body-4 color-gray' }"
+                :underline="true"
+                >자세히 보기</TextButton
+              >
+            </div>
           </div>
         </div>
+      </BasicBox>
+      <!-- // Case : 30건 이상일 경우 -->
+
+      <div :class="$style['icon-column-list']">
+        <ul :class="$style['icon-column-list__list']">
+          <li :class="$style['icon-column-list__item']">
+            <RouterLink to="" :class="$style['icon-column-list__block']">
+              <span :class="$style['icon-column-list__icon']"
+                ><IconCertification
+              /></span>
+              <span :class="$style['icon-column-list__content']">
+                <span :class="$style['icon-column-list__title']">증명서</span>
+              </span>
+            </RouterLink>
+          </li>
+          <li :class="$style['icon-column-list__item']">
+            <RouterLink to="" :class="$style['icon-column-list__block']">
+              <span :class="$style['icon-column-list__icon']"
+                ><IconMainFour
+              /></span>
+              <span :class="$style['icon-column-list__content']">
+                <span :class="$style['icon-column-list__title']">계좌변경</span>
+              </span>
+            </RouterLink>
+          </li>
+          <li :class="$style['icon-column-list__item']">
+            <RouterLink to="" :class="$style['icon-column-list__block']">
+              <span :class="$style['icon-column-list__icon']"
+                ><IconMainFive
+              /></span>
+              <span :class="$style['icon-column-list__content']">
+                <span :class="$style['icon-column-list__title']">중도상환</span>
+              </span>
+            </RouterLink>
+          </li>
+          <li :class="$style['icon-column-list__item']">
+            <RouterLink to="" :class="$style['icon-column-list__block']">
+              <span :class="$style['icon-column-list__icon']"
+                ><IconMyInfo
+              /></span>
+              <span :class="$style['icon-column-list__content']">
+                <span :class="$style['icon-column-list__title']">나의정보</span>
+              </span>
+            </RouterLink>
+          </li>
+        </ul>
       </div>
-    </BasicBox>
-    <!-- // Case : 30건 이상일 경우 -->
-
-    <div :class="$style['icon-column-list']">
-      <ul :class="$style['icon-column-list__list']">
-        <li :class="$style['icon-column-list__item']">
-          <RouterLink to="" :class="$style['icon-column-list__block']">
-            <span :class="$style['icon-column-list__icon']"
-              ><IconCertification
-            /></span>
-            <span :class="$style['icon-column-list__content']">
-              <span :class="$style['icon-column-list__title']">증명서</span>
-            </span>
-          </RouterLink>
-        </li>
-        <li :class="$style['icon-column-list__item']">
-          <RouterLink to="" :class="$style['icon-column-list__block']">
-            <span :class="$style['icon-column-list__icon']"
-              ><IconMainFour
-            /></span>
-            <span :class="$style['icon-column-list__content']">
-              <span :class="$style['icon-column-list__title']">계좌변경</span>
-            </span>
-          </RouterLink>
-        </li>
-        <li :class="$style['icon-column-list__item']">
-          <RouterLink to="" :class="$style['icon-column-list__block']">
-            <span :class="$style['icon-column-list__icon']"
-              ><IconMainFive
-            /></span>
-            <span :class="$style['icon-column-list__content']">
-              <span :class="$style['icon-column-list__title']">중도상환</span>
-            </span>
-          </RouterLink>
-        </li>
-        <li :class="$style['icon-column-list__item']">
-          <RouterLink to="" :class="$style['icon-column-list__block']">
-            <span :class="$style['icon-column-list__icon']"
-              ><IconMyInfo
-            /></span>
-            <span :class="$style['icon-column-list__content']">
-              <span :class="$style['icon-column-list__title']">나의정보</span>
-            </span>
-          </RouterLink>
-        </li>
-      </ul>
-    </div>
-
-    <BasicHr className="row-margin-container-medium" />
-
-    <div>
-      <section>
-        <h3 class="text-title-2 font-weight-bold row-margin-contents">
-          자동차
-        </h3>
-
-        <div :class="$style['icon-list']">
-          <ul :class="$style['icon-list__list']">
-            <li :class="$style['icon-list__item']">
-              <div
-                :class="[
-                  $style['icon-list__block'],
-                  $style['icon-list__block--product'],
-                ]"
-              >
-                <div :class="$style['icon-list__icon']">
-                  <ProductIcon
-                    :classNames="{ wrap: $style['icon-list__icon-image'] }"
-                    src="/images/product-icon/car-rent.png"
-                  />
-                </div>
-                <div :class="$style['icon-list__content']">
-                  <div
-                    :class="[$style['icon-list__sup'], 'color-gray-tertiary']"
-                  >
-                    로켓출고! 하나캐피탈 장기렌터카
-                  </div>
-                  <div class="flex-box">
-                    <div class="flex-box__cell">
-                      <div :class="$style['icon-list__title']">장기렌터카</div>
-                    </div>
-                    <div class="flex-box__cell--small-regular">
-                      <RoundStatus
-                        theme="quattuordenary"
-                        :classNames="{ wrap: 'display-block' }"
-                        >추천</RoundStatus
-                      >
-                    </div>
-                  </div>
-                </div>
-                <button type="button" :class="$style['icon-list__view-button']">
-                  <span class="for-a11y">상세보기</span>
-                </button>
-              </div>
-            </li>
-
-            <li :class="$style['icon-list__item']">
-              <div
-                :class="[
-                  $style['icon-list__block'],
-                  $style['icon-list__block--product'],
-                ]"
-              >
-                <div :class="$style['icon-list__icon']">
-                  <ProductIcon
-                    :classNames="{ wrap: $style['icon-list__icon-image'] }"
-                    src="/images/product-icon/auto-lease.png"
-                  />
-                </div>
-                <div :class="$style['icon-list__content']">
-                  <div
-                    :class="[$style['icon-list__sup'], 'color-gray-tertiary']"
-                  >
-                    빠른견적! 저렴한 견적!
-                  </div>
-                  <div :class="$style['icon-list__title']">오토리스</div>
-                </div>
-                <button type="button" :class="$style['icon-list__view-button']">
-                  <span class="for-a11y">상세보기</span>
-                </button>
-              </div>
-            </li>
-
-            <li :class="$style['icon-list__item']">
-              <div
-                :class="[
-                  $style['icon-list__block'],
-                  $style['icon-list__block--product'],
-                ]"
-              >
-                <div :class="$style['icon-list__icon']">
-                  <ProductIcon
-                    :classNames="{ wrap: $style['icon-list__icon-image'] }"
-                    src="/images/product-icon/car-used.png"
-                  />
-                </div>
-                <div :class="$style['icon-list__content']">
-                  <div
-                    :class="[$style['icon-list__sup'], 'color-gray-tertiary']"
-                  >
-                    스마트한 중고차 구입자금 대출
-                  </div>
-                  <div :class="$style['icon-list__title']">중고차오토론</div>
-                  <button
-                    type="button"
-                    :class="$style['icon-list__tag-button']"
-                  >
-                    <RoundStatus theme="undenary">
-                      지금 가입하면 최대 1만원 지원!
-                    </RoundStatus>
-                  </button>
-                </div>
-                <button type="button" :class="$style['icon-list__view-button']">
-                  <span class="for-a11y">상세보기</span>
-                </button>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
 
       <BasicHr className="row-margin-container-medium" />
 
+      <section :class="$style['green__box']">
+        <div :class="$style['green__box__flex']">
+          <span :class="[$style['green__box__title'], 'font-weight-medium']"
+            >신용등급 영향 NO!</span
+          >
+          <span :class="$style['green__box__img']">
+            <IconPassbook />
+          </span>
+          <p class="row-margin-none text-title-2 color-white font-weight-bold">
+            내 계좌로 바로 꽂히는<br />
+            하나캐피탈 신용대출
+          </p>
+
+          <BasicButton
+            size="small"
+            :class="[$style['green__box__button'], 'font-weight-regular']"
+            >바로 대출받기</BasicButton
+          >
+        </div>
+      </section>
+
+      <BasicBox
+        theme="sixteenth"
+        :class="[$style['logo__box'], 'row-margin-contents-small']"
+      >
+        <p class="text-body-4 color-gray-tertiary">리스/렌터카</p>
+        <h3 class="text-title-2 font-weight-bold row-margin-item-small">
+          국산차/수입차 셀프 견적내기
+        </h3>
+
+        <div :class="$style['logo__loop']">
+          <ul :class="$style['logo__carsBrand']">
+            <li :class="$style['logo__carsItem']">
+              <LogoHyundai />
+            </li>
+            <li :class="$style['logo__carsItem']">
+              <LogoKia />
+            </li>
+            <li :class="$style['logo__carsItem']">
+              <LogoBenz />
+            </li>
+            <li :class="$style['logo__carsItem']">
+              <LogoBMW />
+            </li>
+            <li :class="$style['logo__carsItem']">
+              <LogoPorsche />
+            </li>
+            <li :class="$style['logo__carsItem']">
+              <LogoKGM />
+            </li>
+            <li :class="$style['logo__carsItem']">
+              <LogoLexus />
+            </li>
+            <li :class="$style['logo__carsItem']">
+              <LogoVolks />
+            </li>
+            <li :class="$style['logo__carsItem']">
+              <LogoChevrolet />
+            </li>
+            <li :class="$style['logo__carsItem']">
+              <LogoAudi />
+            </li>
+            <li :class="$style['logo__carsItem']">
+              <LogoVolvo />
+            </li>
+          </ul>
+          <ul :class="$style['logo__carsBrand']">
+            <li :class="$style['logo__carsItem']">
+              <LogoHyundai />
+            </li>
+            <li :class="$style['logo__carsItem']">
+              <LogoKia />
+            </li>
+            <li :class="$style['logo__carsItem']">
+              <LogoBenz />
+            </li>
+            <li :class="$style['logo__carsItem']">
+              <LogoBMW />
+            </li>
+            <li :class="$style['logo__carsItem']">
+              <LogoPorsche />
+            </li>
+            <li :class="$style['logo__carsItem']">
+              <LogoKGM />
+            </li>
+            <li :class="$style['logo__carsItem']">
+              <LogoLexus />
+            </li>
+            <li :class="$style['logo__carsItem']">
+              <LogoVolks />
+            </li>
+            <li :class="$style['logo__carsItem']">
+              <LogoChevrolet />
+            </li>
+            <li :class="$style['logo__carsItem']">
+              <LogoAudi />
+            </li>
+            <li :class="$style['logo__carsItem']">
+              <LogoVolvo />
+            </li>
+          </ul>
+        </div>
+        <ButtonList
+          :classNames="{
+            wrap: 'row-margin-none',
+          }"
+        >
+          <ButtonListItem>
+            <BasicButton size="small" theme="quaternary" class="text-body-3"
+              >상담원 연결</BasicButton
+            >
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton size="small" class="text-body-3"
+              >셀프 견적내기</BasicButton
+            >
+          </ButtonListItem>
+        </ButtonList>
+      </BasicBox>
+
+      <BasicBox theme="sixteenth" class="row-margin-contents-small">
+        <div class="flex-box row-margin-contents">
+          <div class="flex-box__cell flex-box__cell--small flex-1">
+            <p class="text-body-4 color-gray-tertiary">장기렌터카</p>
+            <h3 class="text-title-2 font-weight-bold row-margin-item-small">
+              즉시 출고 가능
+            </h3>
+          </div>
+        </div>
+        <ul :class="$style['hot-deal-list']">
+          <li v-for="i in 3" :key="i" :class="$style['hot-deal-list__item']">
+            <RouterLink to="" :class="$style['hot-deal-list__block']">
+              <span class="flex-box">
+                <span class="flex-box__cell">
+                  <CarThumb size="small" src="/images/_dummy/car-thumb.png" />
+                </span>
+                <span class="flex-box__cell flex-box__cell--large flex-1">
+                  <span class="display-block text-body-4 color-gray ellipsis"
+                    >현대</span
+                  >
+                  <span
+                    class="display-block text-body-1 font-weight-medium ellipsis"
+                    >아이오닉6</span
+                  >
+                </span>
+                <span class="flex-box__cell flex-box__cell--medium">
+                  <BasicButton size="mini" theme="quaternary" tagName="span">
+                    옵션보기
+                  </BasicButton>
+                </span>
+              </span>
+            </RouterLink>
+          </li>
+        </ul>
+        <BasicButton
+          :line="true"
+          size="small"
+          theme="quaternary"
+          class="row-margin-contents-small"
+          >차량 더보기</BasicButton
+        >
+      </BasicBox>
+    </div>
+
+    <div class="padding-top-40">
+      <h2 class="row-margin-contents text-title-2">하나캐피탈 상품목록</h2>
+
       <section>
-        <h3 class="text-title-2 font-weight-bold row-margin-contents">
+        <h3 class="text-body-2 font-weight-bold row-margin-contents">
           개인대출
         </h3>
 
@@ -312,14 +408,6 @@ export default {
                   >
                     최대 1억원
                   </div>
-                  <button
-                    type="button"
-                    :class="$style['icon-list__tag-button']"
-                  >
-                    <RoundStatus theme="undenary">
-                      지금 가입하면 최대 1만원 지원!
-                    </RoundStatus>
-                  </button>
                 </div>
                 <button type="button" :class="$style['icon-list__view-button']">
                   <span class="for-a11y">상세보기</span>
@@ -415,10 +503,113 @@ export default {
           </ul>
         </div>
       </section>
+
+      <div className="row-margin-container-medium" />
+
+      <section>
+        <h3 class="text-body-2 font-weight-bold row-margin-contents">자동차</h3>
+
+        <div :class="$style['icon-list']">
+          <ul :class="$style['icon-list__list']">
+            <li :class="$style['icon-list__item']">
+              <div
+                :class="[
+                  $style['icon-list__block'],
+                  $style['icon-list__block--product'],
+                ]"
+              >
+                <div :class="$style['icon-list__icon']">
+                  <ProductIcon
+                    :classNames="{ wrap: $style['icon-list__icon-image'] }"
+                    src="/images/product-icon/car-rent.png"
+                  />
+                </div>
+                <div :class="$style['icon-list__content']">
+                  <div
+                    :class="[$style['icon-list__sup'], 'color-gray-tertiary']"
+                  >
+                    로켓출고! 하나캐피탈 장기렌터카
+                  </div>
+                  <div class="flex-box">
+                    <div class="flex-box__cell">
+                      <div :class="$style['icon-list__title']">장기렌터카</div>
+                    </div>
+                    <div class="flex-box__cell--small-regular">
+                      <RoundStatus
+                        theme="quattuordenary"
+                        :classNames="{ wrap: 'display-block' }"
+                        >추천</RoundStatus
+                      >
+                    </div>
+                  </div>
+                </div>
+                <button type="button" :class="$style['icon-list__view-button']">
+                  <span class="for-a11y">상세보기</span>
+                </button>
+              </div>
+            </li>
+
+            <li :class="$style['icon-list__item']">
+              <div
+                :class="[
+                  $style['icon-list__block'],
+                  $style['icon-list__block--product'],
+                ]"
+              >
+                <div :class="$style['icon-list__icon']">
+                  <ProductIcon
+                    :classNames="{ wrap: $style['icon-list__icon-image'] }"
+                    src="/images/product-icon/auto-lease.png"
+                  />
+                </div>
+                <div :class="$style['icon-list__content']">
+                  <div
+                    :class="[$style['icon-list__sup'], 'color-gray-tertiary']"
+                  >
+                    빠른견적! 저렴한 견적!
+                  </div>
+                  <div :class="$style['icon-list__title']">오토리스</div>
+                </div>
+                <button type="button" :class="$style['icon-list__view-button']">
+                  <span class="for-a11y">상세보기</span>
+                </button>
+              </div>
+            </li>
+
+            <li :class="$style['icon-list__item']">
+              <div
+                :class="[
+                  $style['icon-list__block'],
+                  $style['icon-list__block--product'],
+                ]"
+              >
+                <div :class="$style['icon-list__icon']">
+                  <ProductIcon
+                    :classNames="{ wrap: $style['icon-list__icon-image'] }"
+                    src="/images/product-icon/car-used.png"
+                  />
+                </div>
+                <div :class="$style['icon-list__content']">
+                  <div
+                    :class="[$style['icon-list__sup'], 'color-gray-tertiary']"
+                  >
+                    스마트한 중고차 구입자금 대출
+                  </div>
+                  <div :class="$style['icon-list__title']">중고차오토론</div>
+                </div>
+                <button type="button" :class="$style['icon-list__view-button']">
+                  <span class="for-a11y">상세보기</span>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
     </div>
   </PageContents>
 </template>
 
 <style lang="scss" module>
 @import '@/assets/scss/views/oneQ/Q_M01_p002.scss';
+@import '@/assets/scss/views/oneQ/Q_M01_p001.scss';
 </style>

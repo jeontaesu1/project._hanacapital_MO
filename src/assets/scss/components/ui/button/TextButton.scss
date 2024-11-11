@@ -142,6 +142,20 @@
         @include button-theme($color-gray-40);
       }
     }
+    // 240702 추가
+    &-senary {
+      @include button-theme($color-red-20);
+
+      &:hover,
+      &:active,
+      &:focus-visible {
+        @include button-theme($color-red-20);
+      }
+      &[disabled] {
+        @include button-theme($color-red-20);
+      }
+    }
+    // // 240702 추가
   }
 
   &:global(.color-gray) {

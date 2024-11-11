@@ -515,7 +515,16 @@ export default {
                       </div>
                     </KeyValueText>
                   </KeyValueItem>
-
+                  <!-- S: 240409 수정 -->
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>판매사원</KeyValueTitle>
+                    <KeyValueText>박현철 891215</KeyValueText>
+                  </KeyValueItem>
+                  <!-- E: 240409 수정 -->
                   <KeyValueItem
                     :classNames="{
                       item: 'text-body-3',

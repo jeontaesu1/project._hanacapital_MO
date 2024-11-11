@@ -29,6 +29,12 @@ export default {
       Type: Boolean,
       default: false,
     },
+    // 240702 추가
+    border: {
+      Type: Boolean,
+      default: false,
+    },
+    // // 240702 추가
   },
   setup(props) {
     const customClassNames = computed(() => {
@@ -50,6 +56,7 @@ export default {
       {
         [$style['status--block']]: block,
         [$style['status--square']]: square,
+        [$style['status--border']]: border, //240702 추가
         [$style[`status--theme-${theme}`]]: theme,
         [$style[`status--size-${size}`]]: size,
       },

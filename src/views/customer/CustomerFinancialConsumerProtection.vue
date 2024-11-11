@@ -2,7 +2,6 @@
 // Customer_M09_p001
 import { onMounted, onUnmounted } from 'vue';
 import { RouterLink } from 'vue-router';
-
 import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
@@ -22,7 +21,7 @@ export default {
     onMounted(() => {
       store.ui.header.setTitle(() => '금융소비자보호');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => []);
+      store.ui.header.setRightButtons(() => ['menu']);
     });
 
     onUnmounted(() => {
@@ -93,52 +92,6 @@ export default {
         >
           <div :class="$style['logs__row']">
             <div :class="$style['logs__contents']">
-              <h3 class="text-body-1 font-weight-medium">금융소비자보호체계</h3>
-            </div>
-            <div :class="$style['logs__right']">
-              <RouterLink
-                to="/customer/financial-consumer-protection-system"
-                :class="$style['logs__link']"
-              >
-                <span :class="$style['logs__link-text']">상세보기</span>
-              </RouterLink>
-            </div>
-          </div>
-        </div>
-      </li>
-      <li :class="$style['logs__item']">
-        <div
-          :class="[
-            $style['logs__block'],
-            $style['logs__block--secondary'],
-            $style['logs__block--regular'],
-          ]"
-        >
-          <div :class="$style['logs__row']">
-            <div :class="$style['logs__contents']">
-              <h3 class="text-body-1 font-weight-medium">금융소비자보호웹진</h3>
-            </div>
-            <div :class="$style['logs__right']">
-              <RouterLink
-                to="/customer/financial-consumer-protection-webzine"
-                :class="$style['logs__link']"
-              >
-                <span :class="$style['logs__link-text']">상세보기</span>
-              </RouterLink>
-            </div>
-          </div>
-        </div>
-      </li>
-      <li :class="$style['logs__item']">
-        <div
-          :class="[
-            $style['logs__block'],
-            $style['logs__block--secondary'],
-            $style['logs__block--regular'],
-          ]"
-        >
-          <div :class="$style['logs__row']">
-            <div :class="$style['logs__contents']">
               <h3 class="text-body-1 font-weight-medium">금융소비자보호공시</h3>
             </div>
             <div :class="$style['logs__right']">
@@ -162,11 +115,11 @@ export default {
         >
           <div :class="$style['logs__row']">
             <div :class="$style['logs__contents']">
-              <h3 class="text-body-1 font-weight-medium">금융소비자보호자료</h3>
+              <h3 class="text-body-1 font-weight-medium">금융소비자보호체계</h3>
             </div>
             <div :class="$style['logs__right']">
               <RouterLink
-                to="/customer/financial-consumer-protection-data"
+                to="/customer/financial-consumer-protection-system"
                 :class="$style['logs__link']"
               >
                 <span :class="$style['logs__link-text']">상세보기</span>
@@ -176,6 +129,56 @@ export default {
         </div>
       </li>
       <li :class="$style['logs__item']">
+        <div
+          :class="[
+            $style['logs__block'],
+            $style['logs__block--secondary'],
+            $style['logs__block--regular'],
+          ]"
+        >
+          <div :class="$style['logs__row']">
+            <div :class="$style['logs__contents']">
+              <h3 class="text-body-1 font-weight-medium">
+                금융소비자보호 내부통제규정
+              </h3>
+            </div>
+            <div :class="$style['logs__right']">
+              <RouterLink
+                to="/customer/financial-consumer-protection-system"
+                :class="$style['logs__link']"
+              >
+                <span :class="$style['logs__link-text']">상세보기</span>
+              </RouterLink>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li :class="$style['logs__item']">
+        <div
+          :class="[
+            $style['logs__block'],
+            $style['logs__block--secondary'],
+            $style['logs__block--regular'],
+          ]"
+        >
+          <div :class="$style['logs__row']">
+            <div :class="$style['logs__contents']">
+              <h3 class="text-body-1 font-weight-medium">
+                금융소비자보호 우수사례
+              </h3>
+            </div>
+            <div :class="$style['logs__right']">
+              <RouterLink
+                to="/customer/financial-consumer-protection-bestpractices"
+                :class="$style['logs__link']"
+              >
+                <span :class="$style['logs__link-text']">상세보기</span>
+              </RouterLink>
+            </div>
+          </div>
+        </div>
+      </li>
+      <!-- <li :class="$style['logs__item']">
         <div
           :class="[
             $style['logs__block'],
@@ -199,8 +202,8 @@ export default {
             </div>
           </div>
         </div>
-      </li>
-      <li :class="$style['logs__item']">
+      </li> -->
+      <!-- <li :class="$style['logs__item']">
         <div
           :class="[
             $style['logs__block'],
@@ -222,32 +225,7 @@ export default {
             </div>
           </div>
         </div>
-      </li>
-      <li :class="$style['logs__item']">
-        <div
-          :class="[
-            $style['logs__block'],
-            $style['logs__block--secondary'],
-            $style['logs__block--regular'],
-          ]"
-        >
-          <div :class="$style['logs__row']">
-            <div :class="$style['logs__contents']">
-              <h3 class="text-body-1 font-weight-medium">
-                중도상환수수료 면제
-              </h3>
-            </div>
-            <div :class="$style['logs__right']">
-              <RouterLink
-                to="/customer/financial-consumer-protection-exemption-early-redemption-fee"
-                :class="$style['logs__link']"
-              >
-                <span :class="$style['logs__link-text']">상세보기</span>
-              </RouterLink>
-            </div>
-          </div>
-        </div>
-      </li>
+      </li> -->
     </ul>
   </PageContents>
 </template>

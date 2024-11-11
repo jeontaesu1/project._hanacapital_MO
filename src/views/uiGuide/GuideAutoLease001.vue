@@ -14,6 +14,7 @@ import LayerAutoLeaseEvaluationExpire from '@/views/auto/LayerAutoLeaseEvaluatio
 import LayerAutoLeaseOrderImported from '@/views/auto/LayerAutoLeaseOrderImported.vue';
 import LayerAutoLeaseOrderDomestic from '@/views/auto/LayerAutoLeaseOrderDomestic.vue';
 import LayerAutoLeaseOrderCarNumber from '@/views/auto/LayerAutoLeaseOrderCarNumber.vue';
+import LayerAutoLeaseOrderDamage from '@/views/auto/LayerAutoLeaseOrderDamage.vue';
 import AF_M00_l100 from '@/views/auto/AF_M00_l100.vue';
 
 export default {
@@ -30,6 +31,7 @@ export default {
     LayerAutoLeaseOrderImported,
     LayerAutoLeaseOrderDomestic,
     LayerAutoLeaseOrderCarNumber,
+    LayerAutoLeaseOrderDamage,
     AF_M00_l100,
   },
   setup() {
@@ -148,6 +150,11 @@ export default {
           >서류 등록 완료<br />AF_M00_l100</BasicButton
         >
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer009Open"
+          >중도해지손해배상금 세부내역<br />AF_M02_l010</BasicButton
+        >
+      </ButtonListItem>
     </ButtonList>
 
     <LayerAutoLeaseEvaluationComplete ref="layer001" />
@@ -159,5 +166,6 @@ export default {
     <LayerAutoLeaseOrderDomestic ref="layer006" />
     <LayerAutoLeaseOrderCarNumber ref="layer007" />
     <AF_M00_l100 ref="layer008" />
+    <LayerAutoLeaseOrderDamage ref="layer009" />
   </PageContents>
 </template>

@@ -76,5 +76,13 @@
       background-color: $color-gray-05;
       border-radius: 12px;
     }
+    // 240927 추가
+    &-sixteenth {
+      border-color: $color-white;
+      background-color: $color-white;
+      border-radius: 16px;
+      box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.06);
+    }
+    // // 240927 추가
   }
 }

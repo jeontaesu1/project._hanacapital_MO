@@ -9,6 +9,7 @@ import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import PageSubText from '@/components/ui/text/PageSubText.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue'; //240729 추가
 
 export default {
   components: {
@@ -17,6 +18,7 @@ export default {
     PageMainText,
     PageSubText,
     BasicBox,
+    BasicButton, //240729 추가
   },
   setup() {
     const store = {
@@ -28,7 +30,7 @@ export default {
     onMounted(() => {
       store.ui.header.setTitle(() => '금융소비자보호체계');
       store.ui.header.setLeftButtons(() => ['back']);
-      store.ui.header.setRightButtons(() => []);
+      store.ui.header.setRightButtons(() => ['menu']);
     });
 
     onUnmounted(() => {
@@ -126,6 +128,11 @@ export default {
               </div>
             </li>
           </ul>
+          <!-- S: 240728 추가 -->
+          <BasicButton class="moreView" :line="true"
+            >제정·개정 이력 자세히보기</BasicButton
+          >
+          <!-- //E: 240728 추가 -->
         </BasicBox>
       </section>
 
@@ -177,8 +184,8 @@ export default {
             >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                정상적으로 접수된 민원은 14일 이내(영업일 기준)<br />
-                답변 및 처리를 원칙으로 합니다.
+                정상적으로 접수된 민원은 14일 이내(영업일 기준) 답변 및 처리를
+                원칙으로 합니다.
               </div>
             </li>
           </ul>
@@ -383,3 +390,15 @@ export default {
 <style lang="scss" module>
 @import '@/assets/scss/views/customer/CustomerFinancialConsumerProtectionSystem.scss';
 </style>
+
+<!-- S: 240729 추가 -->
+<style lang="scss" scoped>
+.moreView {
+  min-height: 42px;
+  max-height: 42px;
+  margin-top: 20px;
+  font-size: 13px;
+  line-height: 13px;
+}
+</style>
+<!-- //E: 240729 추가 -->

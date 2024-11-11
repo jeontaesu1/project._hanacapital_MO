@@ -16,6 +16,7 @@ import IconHome from '@/assets/images/icon/main-home.svg?component';
 import IconCall from '@/assets/images/icon/call.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
 import IconBusinessFirst from '@/assets/images/icon/business-first.svg?component';
+import RoundStatus from '@/components/ui/text/RoundStatus.vue'; //240703 추가
 
 export default {
   components: {
@@ -30,6 +31,7 @@ export default {
     IconCall,
     IconCalculate,
     IconBusinessFirst,
+    RoundStatus, //240703 추가
   },
   setup() {
     const layerGlobalNav = inject('layerGlobalNav', {});
@@ -176,7 +178,8 @@ export default {
   </div>
   <!-- // Case : 영업용 -->
 
-  <section v-if="store.ui.common.isAPP" :class="$style['gnb__section']">
+  <!-- 240703 수정 -->
+  <!-- <section v-if="store.ui.common.isAPP" :class="$style['gnb__section']">
     <h3 :class="$style['gnb__section-title']">최근메뉴</h3>
     <ul :class="$style['gnb__list']">
       <li :class="$style['gnb__item']">
@@ -195,7 +198,8 @@ export default {
         </RouterLink>
       </li>
     </ul>
-  </section>
+  </section> -->
+  <!-- // 240703 수정 -->
 
   <!-- Case : 영업용 -->
   <section v-if="isSalesperson" :class="$style['gnb__section']">
@@ -276,6 +280,7 @@ export default {
       <li :class="$style['gnb__item']">
         <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <p :class="$style['gnb__name']">선구매</p>
+          <RoundStatus :border="true" class="marginLeft4">프로모션</RoundStatus>
         </RouterLink>
       </li>
       <li :class="$style['gnb__item']">
@@ -365,7 +370,9 @@ export default {
   </section>
   <!-- // Case : 영업용 -->
 
-  <section v-if="!store.ui.common.isAPP" :class="$style['gnb__section']">
+  <!-- 240703수정 v-if="!store.ui.common.isAPP" => "isSalesperson"  -->
+  <section v-if="isSalesperson" :class="$style['gnb__section']">
+    <!-- // 240703수정 v-if="!store.ui.common.isAPP" => "isSalesperson"  -->
     <h3 :class="$style['gnb__section-title']">자동차</h3>
     <ul :class="$style['gnb__list']">
       <li :class="$style['gnb__item']">
@@ -406,7 +413,9 @@ export default {
     </ul>
   </section>
 
-  <section v-if="!store.ui.common.isAPP" :class="$style['gnb__section']">
+  <!-- 240703수정 v-if="!store.ui.common.isAPP" => "isSalesperson"  -->
+  <section v-if="isSalesperson" :class="$style['gnb__section']">
+    <!-- // 240703수정 v-if="!store.ui.common.isAPP" => "isSalesperson"  -->
     <h3 :class="$style['gnb__section-title']">개인대출</h3>
     <ul :class="$style['gnb__list']">
       <li :class="$style['gnb__item']">
@@ -452,7 +461,9 @@ export default {
     </ul>
   </section>
 
-  <section v-if="!store.ui.common.isAPP" :class="$style['gnb__section']">
+  <!-- 240703수정 v-if="!store.ui.common.isAPP" => "isSalesperson"  -->
+  <section v-if="isSalesperson" :class="$style['gnb__section']">
+    <!-- // 240703수정 v-if="!store.ui.common.isAPP" => "isSalesperson"  -->
     <h3 :class="$style['gnb__section-title']">의료기 · 설비</h3>
     <ul :class="$style['gnb__list']">
       <li :class="$style['gnb__item']">
@@ -473,7 +484,9 @@ export default {
     </ul>
   </section>
 
-  <section :class="$style['gnb__section']">
+  <!-- 240703수정 v-if="isSalesperson"  -->
+  <section v-if="isSalesperson" :class="$style['gnb__section']">
+    <!-- // 240703수정 v-if="isSalesperson"  -->
     <h3 :class="$style['gnb__section-title']">내대출</h3>
     <ul :class="$style['gnb__list']">
       <li :class="$style['gnb__item']">
@@ -504,7 +517,8 @@ export default {
     </ul>
   </section>
 
-  <section :class="$style['gnb__section']">
+  <!-- S: 240729 수정 -->
+  <!-- <section :class="$style['gnb__section']">
     <h3 :class="$style['gnb__section-title']">내정보</h3>
     <ul :class="$style['gnb__list']">
       <li :class="$style['gnb__item']">
@@ -512,7 +526,7 @@ export default {
           <p :class="$style['gnb__name']">내정보관리</p>
         </RouterLink>
       </li>
-      <li v-if="!store.ui.common.isAPP" :class="$style['gnb__item']">
+      <li :class="$style['gnb__item']">
         <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <p :class="$style['gnb__name']">하나머니</p>
         </RouterLink>
@@ -522,18 +536,42 @@ export default {
           <p :class="$style['gnb__name']">하나캐피탈 멤버십</p>
         </RouterLink>
       </li>
-      <li v-if="!store.ui.common.isAPP" :class="$style['gnb__item']">
+      <li :class="$style['gnb__item']">
         <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <p :class="$style['gnb__name']">자동차시세조회</p>
         </RouterLink>
       </li>
-      <li v-if="!store.ui.common.isAPP" :class="$style['gnb__item']">
+      <li :class="$style['gnb__item']">
         <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <p :class="$style['gnb__name']">부동산시세조회</p>
         </RouterLink>
       </li>
     </ul>
+  </section> -->
+  <!-- // E: 240729 수정 -->
+
+  <!-- S: 240729 추가 -->
+  <section :class="$style['gnb__section']">
+    <h3 :class="$style['gnb__section-title']">금융소비자보호</h3>
+    <ul :class="$style['gnb__list']">
+      <li :class="$style['gnb__item']">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
+          <p :class="$style['gnb__name']">금융소비자보호</p>
+        </RouterLink>
+      </li>
+      <li :class="$style['gnb__item']">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
+          <p :class="$style['gnb__name']">금융소비자권리</p>
+        </RouterLink>
+      </li>
+      <li :class="$style['gnb__item']">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
+          <p :class="$style['gnb__name']">민원창구·유익정보</p>
+        </RouterLink>
+      </li>
+    </ul>
   </section>
+  <!-- //E: 240729 추가 -->
 
   <section :class="$style['gnb__section']">
     <h3 :class="$style['gnb__section-title']">고객센터</h3>
@@ -553,17 +591,17 @@ export default {
           <p :class="$style['gnb__name']">공지사항</p>
         </RouterLink>
       </li>
-      <li v-if="!store.ui.common.isAPP" :class="$style['gnb__item']">
+      <li :class="$style['gnb__item']">
         <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <p :class="$style['gnb__name']">이벤트</p>
         </RouterLink>
       </li>
-      <li v-if="!store.ui.common.isAPP" :class="$style['gnb__item']">
+      <li :class="$style['gnb__item']">
         <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <p :class="$style['gnb__name']">지점안내</p>
         </RouterLink>
       </li>
-      <li v-if="!store.ui.common.isAPP" :class="$style['gnb__item']">
+      <li :class="$style['gnb__item']">
         <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <p :class="$style['gnb__name']">고객센터 ARS안내</p>
         </RouterLink>
@@ -573,15 +611,16 @@ export default {
           <p :class="$style['gnb__name']">정책 및 약관</p>
         </RouterLink>
       </li>
-      <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
-          <p :class="$style['gnb__name']">금융소비자보호</p>
-        </RouterLink>
-      </li>
     </ul>
   </section>
 </template>
 
 <style lang="scss" module>
 @import '@/assets/scss/components/ui/gnb/GlobalNav.scss';
+</style>
+
+<style lang="scss" scoped>
+.marginLeft4 {
+  margin-left: 4px;
+}
 </style>

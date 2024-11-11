@@ -5,6 +5,8 @@ import { RouterLink, useRouter } from 'vue-router';
 import { useUiCommonStore } from '@/stores/ui/common';
 
 import LayerGlobalNav from '@/components/ui/gnb/LayerGlobalNav.vue';
+import LayerGlobalNavDA from '@/components/ui/gnb/LayerGlobalNavDA.vue'; // 20240214 다이렉트 오토 메뉴 추가
+
 import RoundButton from '@/components/ui/button/RoundButton.vue';
 
 import IconBack from '@/assets/images/common/back-left.svg?component';
@@ -22,6 +24,7 @@ export default {
   components: {
     RouterLink,
     LayerGlobalNav,
+    LayerGlobalNavDA, // 20240214 다이렉트 오토 메뉴 추가
     RoundButton,
     IconBack,
     IconPush,
@@ -37,7 +40,8 @@ export default {
   props: {
     type: {
       Type: String,
-      default: 'menu',
+      default: ['menu', 'menuDA'],
+      // 20240214 다이렉트 오토 메뉴 추가
     },
     onClick: {
       Type: Function,
@@ -66,6 +70,7 @@ export default {
     const router = useRouter();
 
     const gnbLayer = ref(null);
+    const gnbLayerDA = ref(null);
 
     const pushNotice = computed(() => {
       return true;
@@ -73,6 +78,9 @@ export default {
 
     const gnbOpen = (e = {}) => {
       gnbLayer.value.layer.open(e.target);
+    };
+    const gnbOpenDA = (e = {}) => {
+      gnbLayerDA.value.layer.open(e.target);
     };
 
     return {
@@ -82,6 +90,8 @@ export default {
       pushNotice,
       gnbLayer,
       gnbOpen,
+      gnbLayerDA,
+      gnbOpenDA,
     };
   },
 };
@@ -132,7 +142,26 @@ export default {
     <IconMenu :class="styleModule['header__button-icon']" />
     <span :class="styleModule['header__button-text']">메뉴</span>
   </button>
+  <!-- 20240214 다이렉트 오토 메뉴 추가 -->
+  <RouterLink
+    v-else-if="type === 'menuDA' && store.ui.common.isAPP"
+    to="/menu"
+    :class="styleModule['header__button']"
+  >
+    <IconMenu :class="styleModule['header__button-icon']" />
+    <span :class="styleModule['header__button-text']">메뉴</span>
+  </RouterLink>
 
+  <button
+    v-else-if="type === 'menuDA'"
+    type="button"
+    :class="styleModule['header__button']"
+    @click="gnbOpen"
+  >
+    <IconMenu :class="styleModule['header__button-icon']" />
+    <span :class="styleModule['header__button-text']">메뉴</span>
+  </button>
+  <!-- // 20240214 다이렉트 오토 메뉴 추가 -->
   <button
     v-else-if="type === 'menuButton'"
     type="button"
@@ -231,4 +260,10 @@ export default {
     ref="gnbLayer"
     v-if="type === 'menu' && !store.ui.common.isAPP"
   />
+  <!-- 20240214 다이렉트 오토 메뉴 추가 -->
+  <LayerGlobalNavDA
+    ref="gnbLayer"
+    v-if="type === 'menuDA' && !store.ui.common.isAPP"
+  />
+  <!-- // 20240214 다이렉트 오토 메뉴 추가 -->
 </template>

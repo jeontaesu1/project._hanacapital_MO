@@ -61,6 +61,8 @@ import LayerMyLoanOnlineContractConfirm003 from '@/views/myLoan/LayerMyLoanOnlin
 import LayerMyLoanOnlineContractConfirm004 from '@/views/myLoan/LayerMyLoanOnlineContractConfirm004.vue';
 import My_M03_l033 from '@/views/myLoan/My_M03_l033.vue';
 import My_M03_l016b from '@/views/myLoan/My_M03_l016b.vue';
+import LayerMyLoanOnlineFirstExplanation from '@/views/myLoan/LayerMyLoanOnlineFirstExplanation.vue';
+import LayerMyLoanOnlineImpossible from '@/views/myLoan/LayerMyLoanOnlineImpossible.vue'; //240529 추가
 
 export default {
   components: {
@@ -123,6 +125,8 @@ export default {
     LayerMyLoanOnlineContractConfirm004,
     My_M03_l033,
     My_M03_l016b,
+    LayerMyLoanOnlineFirstExplanation,
+    LayerMyLoanOnlineImpossible,
   },
   setup() {
     const layer001 = ref(null);
@@ -180,6 +184,8 @@ export default {
     const layer053 = ref(null);
     const layer054 = ref(null);
     const layer055 = ref(null);
+    const layer056 = ref(null);
+    const layer057 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -346,6 +352,12 @@ export default {
     const layer055Open = (e = {}) => {
       layer055.value.layer.open(e.target);
     };
+    const layer056Open = (e = {}) => {
+      layer056.value.layer.open(e.target);
+    };
+    const layer057Open = (e = {}) => {
+      layer057.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -403,6 +415,8 @@ export default {
       layer053,
       layer054,
       layer055,
+      layer056,
+      layer057,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -458,6 +472,8 @@ export default {
       layer053Open,
       layer054Open,
       layer055Open,
+      layer056Open,
+      layer057Open,
     };
   },
 };
@@ -501,16 +517,30 @@ export default {
           적합성·적정성 확인서_미동의 시<br />My_M03_b002
         </BasicButton>
       </ButtonListItem>
+      <!-- S: 240524 수정 -->
       <ButtonListItem>
         <BasicButton @click="layer007Open">
           약관동의<br />My_M03_l006
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
+        <BasicButton @click="layer056Open">
+          금융취약 소비자 우선설명<br />My_M03_l006
+        </BasicButton>
+      </ButtonListItem>
+      <!-- // E: 240524 수정 -->
+      <ButtonListItem>
         <BasicButton @click="layer008Open">
           추가설명 여부<br />My_M03_b003
         </BasicButton>
       </ButtonListItem>
+      <!-- S:240529 추가 -->
+      <ButtonListItem>
+        <BasicButton @click="layer057Open">
+          약관동의 계열사마케팅 진행불가<br />My_M03_b004
+        </BasicButton>
+      </ButtonListItem>
+      <!-- // E:240529 추가 -->
       <ButtonListItem>
         <BasicButton @click="layer046Open">
           약관상세_실제소유자 확인<br />My_M03_l032
@@ -803,5 +833,7 @@ export default {
     <LayerMyLoanOnlineContractConfirm003 ref="layer044" />
     <LayerMyLoanOnlineContractConfirm004 ref="layer045" />
     <My_M03_l016b ref="layer055" />
+    <LayerMyLoanOnlineFirstExplanation ref="layer056" />
+    <LayerMyLoanOnlineImpossible ref="layer057" />
   </PageContents>
 </template>

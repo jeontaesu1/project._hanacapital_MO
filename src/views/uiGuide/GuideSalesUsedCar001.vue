@@ -15,6 +15,12 @@ import LayerSalesUsedCarSearch from '@/views/salesUsedCar/LayerSalesUsedCarSearc
 import LayerSalesUsedCarAffiliateIdentificationMethodSelect from '@/views/salesUsedCar/LayerSalesUsedCarAffiliateIdentificationMethodSelect.vue';
 import LayerSalesUsedCarAffiliateClauseDetail001 from '@/views/salesUsedCar/LayerSalesUsedCarAffiliateClauseDetail001.vue';
 import LayerSalesUsedCarAffiliateClauseDetail002 from '@/views/salesUsedCar/LayerSalesUsedCarAffiliateClauseDetail002.vue';
+import LayerSalesUsedCarCommissionPayment from '@/views/salesUsedCar/LayerSalesUsedCarCommissionPayment.vue';
+import LayerSalespersonSelectionNotice from '@/views/salesUsedCar/LayerSalespersonSelectionNotice.vue';
+// S: 240507 추가
+import LayerSalesUsedCarInventoryFinance from '@/views/salesUsedCar/LayerSalesUsedCarInventoryFinance.vue';
+import LayerSalesUsedCarInventoryFinanceOnline from '@/views/salesUsedCar/LayerSalesUsedCarInventoryFinanceOnline.vue';
+// E: 240507 추가
 
 export default {
   components: {
@@ -31,6 +37,12 @@ export default {
     LayerSalesUsedCarAffiliateIdentificationMethodSelect,
     LayerSalesUsedCarAffiliateClauseDetail001,
     LayerSalesUsedCarAffiliateClauseDetail002,
+    LayerSalesUsedCarCommissionPayment,
+    LayerSalespersonSelectionNotice,
+    // S: 240507 추가
+    LayerSalesUsedCarInventoryFinance,
+    LayerSalesUsedCarInventoryFinanceOnline,
+    // E: 240507 추가
   },
   setup() {
     const layer001 = ref(null);
@@ -42,6 +54,10 @@ export default {
     const layer007 = ref(null);
     const layer008 = ref(null);
     const layer009 = ref(null);
+    const layer010 = ref(null);
+    const layer011 = ref(null);
+    const layer012 = ref(null);
+    const layer013 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -70,6 +86,18 @@ export default {
     const layer009Open = (e = {}) => {
       layer009.value.layer.open(e.target);
     };
+    const layer010Open = (e = {}) => {
+      layer010.value.layer.open(e.target);
+    };
+    const layer011Open = (e = {}) => {
+      layer011.value.layer.open(e.target);
+    };
+    const layer012Open = (e = {}) => {
+      layer012.value.layer.open(e.target);
+    };
+    const layer013Open = (e = {}) => {
+      layer013.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -81,6 +109,10 @@ export default {
       layer007,
       layer008,
       layer009,
+      layer010,
+      layer011,
+      layer012,
+      layer013,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -90,6 +122,10 @@ export default {
       layer007Open,
       layer008Open,
       layer009Open,
+      layer010Open,
+      layer011Open,
+      layer012Open,
+      layer013Open,
     };
   },
 };
@@ -129,6 +165,16 @@ export default {
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
+        <BasicButton @click="layer010Open">
+          수수료지급처 팝업<br />UC_M03_l005
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer011Open">
+          판매사원 선택 알림<br />UC_M03_l006
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
         <BasicButton @click="layer006Open">
           차량검색<br />UC_M06_l001
         </BasicButton>
@@ -148,6 +194,18 @@ export default {
           실천 서약서 동의 팝업<br />UC_M08_l002
         </BasicButton>
       </ButtonListItem>
+      <!-- S: 240507 추가 -->
+      <ButtonListItem>
+        <BasicButton @click="layer012Open">
+          재고금융한도약정_조건변경신청서 팝업<br />UC_M09_l001
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer013Open">
+          재고금융한도약정_약정조건변경 팝업<br />UC_M09_l002
+        </BasicButton>
+      </ButtonListItem>
+      <!-- // E: 240507 추가 -->
     </ButtonList>
 
     <LayerSalesUsedCarStateList ref="layer001" />
@@ -159,5 +217,11 @@ export default {
     <LayerSalesUsedCarAffiliateIdentificationMethodSelect ref="layer007" />
     <LayerSalesUsedCarAffiliateClauseDetail001 ref="layer008" />
     <LayerSalesUsedCarAffiliateClauseDetail002 ref="layer009" />
+    <LayerSalesUsedCarCommissionPayment ref="layer010" />
+    <LayerSalespersonSelectionNotice ref="layer011" />
+    <!-- S: 240507 추가 -->
+    <LayerSalesUsedCarInventoryFinance ref="layer012" />
+    <LayerSalesUsedCarInventoryFinanceOnline ref="layer013" />
+    <!-- // E: 240507 추가 -->
   </PageContents>
 </template>

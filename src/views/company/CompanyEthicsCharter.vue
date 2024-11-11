@@ -24,7 +24,7 @@ export default {
     };
 
     onMounted(() => {
-      store.ui.header.setTitle(() => '윤리헌장');
+      store.ui.header.setTitle(() => '하나캐피탈 캐릭터');
       store.ui.header.setLeftButtons(() => ['back']);
       store.ui.header.setRightButtons(() => []);
     });
@@ -40,45 +40,84 @@ export default {
 
 <template>
   <PageContents>
-    <PageTextGroup>
-      <PageMainText>
-        함께 성장하며 행복을 나누는<br />
-        금융을 실현하기 위해<br />
-        <span class="color-green">윤리적 가치를 최우선</span>으로 합니다
+    <PageTextGroup class="pageGroup">
+      <h2 class="character_title">
+        하나캐피탈 캐릭터 <span class="color-green">'별웅이'</span>
+      </h2>
+      <PageMainText class="character_desc">
+        하나캐피탈의 새로운 캐릭터
+        <span class="color-green">'별웅이'</span>를<br />
+        소개합니다.
       </PageMainText>
     </PageTextGroup>
 
-    <div>
-      <section class="row-margin-item-medium">
-        <BasicBox theme="senary">
-          <h3 class="text-body-1 font-weight-medium">하나인은</h3>
-          <p class="text-body-4 color-gray row-margin-small">
-            도덕성과 책임감을 바탕으로 함께 성장하며 행복을 나누는 금융을
-            실현하기 위해 윤리적 가치를 최우선으로 한다.
-          </p>
-        </BasicBox>
-      </section>
-
-      <section class="row-margin-item-medium">
-        <BasicBox theme="senary">
-          <h3 class="text-body-1 font-weight-medium">하나인은</h3>
-          <p class="text-body-4 color-gray row-margin-small">
-            원칙과 법규를 준수하고 공과 사를 명확히 구분하며 손님을 포함한 모든
-            이해관계자를 상호존중의 정신으로 대하고 서로 협력한다.
-          </p>
-        </BasicBox>
-      </section>
-
-      <section class="row-margin-item-medium">
-        <BasicBox theme="senary">
-          <h3 class="text-body-1 font-weight-medium">하나인은</h3>
-          <p class="text-body-4 color-gray row-margin-small">
-            “내가 회사를 대표한다”는 생각으로 행동하며 성숙한 시민으로서의
-            소임을 다해 구성원, 손님 및 사회로부터 신뢰받는 하나금융그룹을
-            만드는 책임을 다한다.
-          </p>
-        </BasicBox>
-      </section>
-    </div>
+    <section>
+      <div class="character-wrap">
+        <div class="character-img">
+          <img src="@/assets/images/contents/character-1.png" alt="별웅이" />
+        </div>
+      </div>
+      <div class="character-wrap">
+        <p class="title">별웅이 응용동작</p>
+        <div class="character-img img02">
+          <img
+            src="@/assets/images/contents/character-2.png"
+            alt="별웅이 응용동작"
+          />
+        </div>
+      </div>
+    </section>
   </PageContents>
 </template>
+
+<style lang="scss" scoped>
+.pageGroup {
+  margin-bottom: 0;
+
+  .character_title {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 500;
+  }
+  .character_desc {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
+
+.character-wrap {
+  .title {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0;
+    margin-top: 24px;
+  }
+  .desc {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 20px;
+    margin-top: 12px;
+
+    .color-green {
+      font-weight: 500;
+    }
+  }
+  .character-img {
+    padding: 20px 39px;
+    margin-top: 24px;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+
+    &.img02 {
+      padding: 0;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+  }
+}
+</style>

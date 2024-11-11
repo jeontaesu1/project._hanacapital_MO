@@ -69,8 +69,9 @@ export default {
       </PageTextGroup>
 
       <div>
+        <!-- S: 240514 수정 -->
         <section class="row-margin-container-medium">
-          <h3 class="text-title-2 row-margin-contents">대출자 정보</h3>
+          <h3 class="text-title-2 row-margin-contents">계약자 정보(법인)</h3>
 
           <BasicBox>
             <KeyValue margin="regular">
@@ -79,41 +80,45 @@ export default {
                   item: 'text-body-3',
                 }"
               >
-                <KeyValueTitle>매매상사</KeyValueTitle>
-                <KeyValueText>하나상사</KeyValueText>
+                <KeyValueTitle>상호명</KeyValueTitle>
+                <KeyValueText>(주)하나캐피탈</KeyValueText>
               </KeyValueItem>
-
               <KeyValueItem
                 :classNames="{
                   item: 'text-body-3',
                 }"
               >
                 <KeyValueTitle>사업자번호</KeyValueTitle>
-                <KeyValueText>12-345-6780</KeyValueText>
+                <KeyValueText>123-12-12345</KeyValueText>
               </KeyValueItem>
-
               <KeyValueItem
                 :classNames="{
                   item: 'text-body-3',
                 }"
               >
-                <KeyValueTitle>사업장주소지</KeyValueTitle>
-                <KeyValueText>
-                  인천관역시 미추홀구 낙성중로 128-25 주안자동차매매단지 203호
-                </KeyValueText>
+                <KeyValueTitle>법인등록번호</KeyValueTitle>
+                <KeyValueText> 123456-1234567 </KeyValueText>
               </KeyValueItem>
-
               <KeyValueItem
                 :classNames="{
                   item: 'text-body-3',
                 }"
               >
-                <KeyValueTitle>대표자명</KeyValueTitle>
-                <KeyValueText>홍길동</KeyValueText>
+                <KeyValueTitle>이메일</KeyValueTitle>
+                <KeyValueText>abcd@hanafn.com</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>청구서 수령방법</KeyValueTitle>
+                <KeyValueText> 이메일</KeyValueText>
               </KeyValueItem>
             </KeyValue>
           </BasicBox>
         </section>
+        <!-- // E: 240514 수정 -->
 
         <section class="row-margin-container-medium">
           <h3 class="text-title-2 row-margin-contents">계약 정보</h3>
@@ -239,6 +244,96 @@ export default {
             </KeyValue>
           </BasicBox>
         </section>
+
+        <!-- S: 240514 수정 -->
+        <section class="row-margin-container-medium">
+          <h3 class="text-title-2 row-margin-contents">보증인 정보</h3>
+
+          <BasicBox>
+            <KeyValue margin="regular">
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>성명</KeyValueTitle>
+                <KeyValueText>김하나</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>생년월일</KeyValueTitle>
+                <KeyValueText>YYYY.MM.DD</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>휴대폰번호</KeyValueTitle>
+                <KeyValueText>010 #### ####</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>등본지</KeyValueTitle>
+                <KeyValueText>서울 서초구 방배로 131</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>신청인과의 관계</KeyValueTitle>
+                <KeyValueText>대표이사</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </BasicBox>
+        </section>
+
+        <section class="row-margin-container-medium">
+          <h3 class="text-title-2 row-margin-contents">보증종류</h3>
+
+          <BasicBox>
+            <KeyValue margin="regular">
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>보증종류</KeyValueTitle>
+                <KeyValueText>특정근보증</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>보증기간</KeyValueTitle>
+                <KeyValueText>60개월</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>보증채무 최고액</KeyValueTitle>
+                <KeyValueText>13,000 원</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+            <p
+              class="text-body-4 font-weight-light color-gray-tertiary mt16"
+              align="right"
+            >
+              (대출금액의 130%, 장애인, 영업목적을 위한 자동차 구입시 100%)
+            </p>
+          </BasicBox>
+        </section>
+        <!-- // E: 240514 수정 -->
       </div>
 
       <template v-slot:foot>
@@ -258,3 +353,11 @@ export default {
     </FullPopup>
   </UiLayer>
 </template>
+
+<!-- S: 240514 수정 -->
+<style lang="scss" scoped>
+.mt16 {
+  margin-top: 16px;
+}
+</style>
+<!-- // E: 240514 수정 -->

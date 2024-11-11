@@ -198,7 +198,7 @@ export default {
                         <div
                           class="text-body-4 color-gray-secondary font-weight-regular underline"
                         >
-                          금융리스 연 최저 6.6% ~ 9.1%<br />
+                          금융리스 연 최저 6.2% ~ 7.8%<br />
                           (금융소비자의 개인신용평점에 따라 차등 적용)<br />
                           연체이자율 :<br />
                           - 금융리스 : 약정이자율+3%<br />
@@ -282,13 +282,74 @@ export default {
                                   <div>손해배상금</div>
                                 </th>
                                 <td class="align-left color-gray">
+                                  <!-- S: 240408 수정 -->
                                   <ul class="reset-list">
                                     <li class="row-margin-item-group">
                                       주1) 중도해지손해배상금<br />
                                       미회수원금 X 중도해지손해배상금률<br />
-                                      미회수원금 X 최고요율(80)% X <br />
-                                      (잔여기간 월수/리스기간 전체월수)
+                                      (최고 40%)
+
+                                      <ul
+                                        :class="[
+                                          $style['basic-list'],
+                                          $style['basic-list--small-margin'],
+                                          'row-margin-item-group',
+                                          'row-margin-bottom',
+                                        ]"
+                                      >
+                                        <li
+                                          :class="[
+                                            $style['basic-list__item'],
+                                            'text-caption-1',
+                                            'font-weight-regular',
+                                            'color-gray',
+                                          ]"
+                                        >
+                                          <div
+                                            :class="
+                                              $style['basic-list__symbol']
+                                            "
+                                          >
+                                            ※
+                                          </div>
+                                          <div
+                                            :class="
+                                              $style['basic-list__content']
+                                            "
+                                          >
+                                            경과 개월별 차등 인하
+                                          </div>
+                                        </li>
+                                      </ul>
+                                      <ul
+                                        :class="[
+                                          $style['basic-list'],
+                                          $style['basic-list--small-margin'],
+                                        ]"
+                                      >
+                                        <li
+                                          :class="[
+                                            $style['basic-list__item'],
+                                            'text-caption-1',
+                                            'font-weight-regular',
+                                            'color-gray',
+                                          ]"
+                                        >
+                                          <div
+                                            class="inline-wrap row-margin-item-group"
+                                          >
+                                            <TextButton
+                                              :underline="true"
+                                              theme="tertiary"
+                                              >중도해지손해배상금
+                                              세부내역</TextButton
+                                            >
+                                          </div>
+                                        </li>
+                                      </ul>
                                     </li>
+                                    <!-- E: 240408 수정 -->
+
                                     <li class="row-margin-item-group">
                                       주2) 규정손해배상금(차량인수-운용리스)<br />
                                       미회수원금 X 규정손해배상금률<br />
@@ -337,12 +398,14 @@ export default {
                                   <div>승계수수료</div>
                                 </th>
                                 <td class="align-left color-gray">
-                                  <div>
+                                  <!-- S: 240408 수정 -->
+                                  <div> 
                                     운용리스, 금융리스<br />
-                                    미회수원금의 1% (승계수수료 최고요율)<br />
-                                    X (잔여기간 월수/리스기간 전체월수)<br />
+                                    미회수원금의 1% X (잔여기간 월수/리스기간
+                                    전체월수)<br />
                                     (min : 500,000원, max : 900,000원)
                                   </div>
+                                  <!-- E: 240408 수정 -->
                                   <ul
                                     :class="[
                                       $style['basic-list'],
@@ -819,3 +882,10 @@ export default {
 <style lang="scss" module>
 @import '@/assets/scss/views/oneQ/Q_M03_p001.scss';
 </style>
+<!-- S: 240408 수정 -->
+<style scoped>
+.row-margin-bottom {
+  margin-bottom: 5px;
+}
+</style>
+<!-- E: 240408 수정 -->

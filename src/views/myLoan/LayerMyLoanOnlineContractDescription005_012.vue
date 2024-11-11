@@ -2349,6 +2349,123 @@ export default {
               </div>
             </li>
           </ul>
+
+          <!-- s: 240911 추가 -->
+          <section class="row-margin-container-medium">
+            <h4 class="text-body-2 row-margin-item-medium">
+              14일 이내 청약철회와 중도상환 비교
+            </h4>
+
+            <section>
+              <p class="text-body-3">대출 청약철회</p>
+              <div
+                :class="[
+                  $style['basic-table'],
+                  'row-margin-item',
+                  'table-custom',
+                ]"
+              >
+                <table>
+                  <colgroup>
+                    <col style="width: 64px" />
+                    <col style="width: 92px" />
+                    <col />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th class="th-title" rowspan="2">비용*</th>
+                      <th>중도상환수수료</th>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <th>반환 부대비용</th>
+                      <td>
+                        인지세, 근저당설정비 등<br />
+                        금융회사가 제 3자에게 지급한 비용
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="th-title">신용평가**</th>
+                      <th>대출기록</th>
+                      <td>삭제</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <section class="row-margin-contents">
+              <p class="text-body-3">대출 중도 상환</p>
+              <div
+                :class="[
+                  $style['basic-table'],
+                  'row-margin-item',
+                  'table-custom',
+                ]"
+              >
+                <table>
+                  <colgroup>
+                    <col style="width: 64px" />
+                    <col style="width: 92px" />
+                    <col />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th class="th-title" rowspan="2">비용*</th>
+                      <th>중도상환수수료</th>
+                      <td>대출 잔존기간에 대해 발생</td>
+                    </tr>
+                    <tr>
+                      <th>반환 부대비용</th>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <th class="th-title">신용평가**</th>
+                      <th>대출기록</th>
+                      <td>미삭제</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <ul :class="[$style['basic-list'], 'row-margin-item']">
+              <li
+                :class="[
+                  $style['basic-list__item'],
+                  'color-gray-tertiary',
+                  'font-weight-regular',
+                ]"
+              >
+                <div :class="$style['basic-list__symbol']">*</div>
+                <div :class="$style['basic-list__content']">
+                  비용 : 통상 “반환 부대비용 &lt; 중도상환수수료” →
+                  <b class="underline">청약철회가 유리</b><br />
+                  인지세를 부담한 예금담보대출, 한시적 영업전략 등
+                  <b>중도상환 시 수수료가 면제</b>되는 경우에는 청약철회 시에만
+                  반환 비용이 발생하므로 중도상환이 유리
+                </div>
+              </li>
+              <li
+                :class="[
+                  $style['basic-list__item'],
+                  'color-gray-tertiary',
+                  'font-weight-regular',
+                ]"
+              >
+                <div :class="$style['basic-list__symbol']">**</div>
+                <div :class="$style['basic-list__content']">
+                  신용평가 : <b>중도상환</b> 시 대출(및 상환) 이력이
+                  <b>유지</b>되나, <b>청약철회</b> 시에는 <b>이력 삭제</b> →
+                  <b>청약철회가 유리</b><br />
+                  차주의 상황에 따라
+                  <b class="underline">상환이력, 신용거래기간</b> 항목의 경우
+                  <b class="underline">상향 요인</b>으로 작용할 여지
+                </div>
+              </li>
+            </ul>
+          </section>
+          <!-- e:// 240911 추가 -->
         </section>
 
         <section class="row-margin-container-medium">
@@ -3128,4 +3245,18 @@ export default {
 
 <style lang="scss" module>
 @import '@/assets/scss/views/myLoan/LayerMyLoanOnlineContractDescription005_012.scss';
+</style>
+
+<style lang="scss" scoped>
+.table-custom {
+  th {
+    padding: 11px 4px;
+    &.th-title {
+      border-right: 1px solid #e0e0e0;
+    }
+  }
+  td {
+    text-align: left;
+  }
+}
 </style>

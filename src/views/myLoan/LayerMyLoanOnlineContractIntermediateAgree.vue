@@ -1,5 +1,5 @@
 <script>
-// BF_M04_l007
+// BF_M04_l007_약관동의
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -1505,9 +1505,7 @@ export default {
                                   <li :class="$style['agree-list__item']">
                                     <div :class="$style['agree-list__head']">
                                       <CheckBox
-                                        id="layerMyLoanOnlineContractIntermediateAgree_009
-                                        
-                                        _001_002_005"
+                                        id="layerMyLoanOnlineContractIntermediateAgree_009_001_002_005"
                                         :classNames="{
                                           wrap: $style['agree-list__checkbox'],
                                         }"
@@ -1530,6 +1528,298 @@ export default {
                   </UiAccordionLayer>
                 </UiAccordionItem>
                 <!-- //약관동의 : 하나캐피탈 멤버십 가입 선택 전체동의 -->
+
+                <!-- 마케팅 수신 동의 변경 추가-->
+                <!-- 2024.05.02 마케팅 수신 동의 변경 : 하나금융그룹 계열사 상품서비스 안내 및 공동마케팅 전체동의 -->
+                <UiAccordionItem
+                  :classNames="{ item: $style['agree-list__depth-item'] }"
+                  :initialOpen="true"
+                >
+                  <div :class="$style['agree-list__depth-head']">
+                    <CheckBox
+                      id="BF_M04_l007_010"
+                      :classNames="{
+                        wrap: $style['agree-list__depth-checkbox'],
+                      }"
+                    >
+                      <CheckBoxObject />
+                      <CheckBoxLabelText>
+                        하나금융그룹 계열사 상품서비스 안내 및 공동마케팅
+                        전체동의 <span>(선택사항)</span>
+                      </CheckBoxLabelText>
+                    </CheckBox>
+                    <div :class="$style['agree-list__right']">
+                      <UiAccordionOpener
+                        :classNames="{
+                          button: $style['agree-list__depth-opener'],
+                        }"
+                      />
+                    </div>
+                  </div>
+                  <UiAccordionLayer>
+                    <div :class="$style['agree-list__depth-contents']">
+                      <UiAccordion
+                        :classNames="{ wrap: $style['agree-list__list'] }"
+                      >
+                        <UiAccordionItem
+                          :classNames="{ item: $style['agree-list__item'] }"
+                          :initialOpen="true"
+                        >
+                          <div :class="$style['agree-list__head']">
+                            <CheckBox
+                              id="BF_M04_l007_010_001"
+                              :classNames="{
+                                wrap: $style['agree-list__checkbox'],
+                              }"
+                              theme="tertiary"
+                            >
+                              <CheckBoxObject />
+                              <CheckBoxLabelText>
+                                개인(신용)정보 수집·이용 동의
+                              </CheckBoxLabelText>
+                            </CheckBox>
+                            <div :class="$style['agree-list__right']">
+                              <RoundStatus
+                                :classNames="{ wrap: 'display-block' }"
+                                size="small"
+                                theme="senary"
+                              >
+                                신중
+                              </RoundStatus>
+                              <button
+                                type="button"
+                                :class="$style['agree-list__link']"
+                              >
+                                <span :class="$style['agree-list__link-text']">
+                                  상세보기
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                          <UiAccordionLayer>
+                            <ul
+                              :class="[
+                                $style['agree-list__list'],
+                                $style['agree-list__list--secondary'],
+                              ]"
+                            >
+                              <li :class="$style['agree-list__item']">
+                                <div :class="$style['agree-list__head']">
+                                  <CheckBox
+                                    id="BF_M04_l007_010_002"
+                                    :classNames="{
+                                      wrap: $style['agree-list__checkbox'],
+                                    }"
+                                    theme="quinary"
+                                  >
+                                    <CheckBoxObject />
+                                    <CheckBoxLabelText
+                                      >하나금융그룹 계열사의 상품 또는 서비스의
+                                      안내 및 이용 권유, 하나금융그룹 계열사간의
+                                      공동마케팅을 위한 수집·이용
+                                    </CheckBoxLabelText>
+                                  </CheckBox>
+                                </div>
+                              </li>
+                            </ul>
+                          </UiAccordionLayer>
+                        </UiAccordionItem>
+
+                        <!--  추가 수정-->
+                        <UiAccordionItem
+                          :classNames="{ item: $style['agree-list__item'] }"
+                          :initialOpen="true"
+                        >
+                          <div :class="$style['agree-list__head']">
+                            <CheckBox
+                              id="BF_M04_l007_020"
+                              :classNames="{
+                                wrap: $style['agree-list__checkbox'],
+                              }"
+                              theme="tertiary"
+                            >
+                              <CheckBoxObject />
+                              <CheckBoxLabelText>
+                                개인(신용)정보 제공 동의
+                              </CheckBoxLabelText>
+                            </CheckBox>
+                            <div :class="$style['agree-list__right']">
+                              <RoundStatus
+                                :classNames="{ wrap: 'display-block' }"
+                                size="small"
+                                theme="quinary"
+                              >
+                                보통
+                              </RoundStatus>
+                              <button
+                                type="button"
+                                :class="$style['agree-list__link']"
+                              >
+                                <span :class="$style['agree-list__link-text']">
+                                  상세보기
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                          <UiAccordionLayer>
+                            <ul
+                              :class="[
+                                $style['agree-list__list'],
+                                $style['agree-list__list--secondary'],
+                              ]"
+                            >
+                              <li :class="$style['agree-list__item']">
+                                <div :class="$style['agree-list__head']">
+                                  <CheckBox
+                                    id="BF_M04_l007_020_001"
+                                    :classNames="{
+                                      wrap: $style['agree-list__checkbox'],
+                                    }"
+                                    theme="quinary"
+                                  >
+                                    <CheckBoxObject />
+                                    <CheckBoxLabelText>
+                                      하나은행 등 하나금융그룹 계열사에 제공
+                                    </CheckBoxLabelText>
+                                  </CheckBox>
+                                  <div :class="$style['agree-list__right']">
+                                    <button
+                                      type="button"
+                                      :class="$style['agree-list__link']"
+                                    >
+                                      <span
+                                        :class="$style['agree-list__link-text']"
+                                      >
+                                        상세보기
+                                      </span>
+                                    </button>
+                                  </div>
+                                </div>
+                              </li>
+                              <li :class="$style['agree-list__item']">
+                                <div :class="$style['agree-list__head']">
+                                  <CheckBox
+                                    id="BF_M04_l007_030_001"
+                                    :classNames="{
+                                      wrap: $style['agree-list__checkbox'],
+                                    }"
+                                    theme="quinary"
+                                  >
+                                    <CheckBoxObject />
+                                    <CheckBoxLabelText
+                                      >전자적 매체를 통한 광고성 정보의
+                                      수신</CheckBoxLabelText
+                                    >
+                                  </CheckBox>
+                                  <div :class="$style['agree-list__right']">
+                                    <button
+                                      type="button"
+                                      :class="$style['agree-list__link']"
+                                    >
+                                      <span
+                                        :class="$style['agree-list__link-text']"
+                                      >
+                                        상세보기
+                                      </span>
+                                    </button>
+                                  </div>
+                                </div>
+                                <ul
+                                  :class="[
+                                    $style['agree-list__list'],
+                                    $style['agree-list__list--tertiary'],
+                                  ]"
+                                >
+                                  <li :class="$style['agree-list__item']">
+                                    <div :class="$style['agree-list__head']">
+                                      <CheckBox
+                                        id="BF_M04_l007_030_001_002_001"
+                                        :classNames="{
+                                          wrap: $style['agree-list__checkbox'],
+                                        }"
+                                        theme="quinary"
+                                      >
+                                        <CheckBoxObject />
+                                        <CheckBoxLabelText
+                                          >전체</CheckBoxLabelText
+                                        >
+                                      </CheckBox>
+                                    </div>
+                                  </li>
+                                  <li :class="$style['agree-list__item']">
+                                    <div :class="$style['agree-list__head']">
+                                      <CheckBox
+                                        id="BF_M04_l007_030_001_002_002"
+                                        :classNames="{
+                                          wrap: $style['agree-list__checkbox'],
+                                        }"
+                                        theme="quinary"
+                                      >
+                                        <CheckBoxObject />
+                                        <CheckBoxLabelText
+                                          >전화</CheckBoxLabelText
+                                        >
+                                      </CheckBox>
+                                    </div>
+                                  </li>
+                                  <li :class="$style['agree-list__item']">
+                                    <div :class="$style['agree-list__head']">
+                                      <CheckBox
+                                        id="BF_M04_l007_030_001_002_003"
+                                        :classNames="{
+                                          wrap: $style['agree-list__checkbox'],
+                                        }"
+                                        theme="quinary"
+                                      >
+                                        <CheckBoxObject />
+                                        <CheckBoxLabelText
+                                          >문자메시지</CheckBoxLabelText
+                                        >
+                                      </CheckBox>
+                                    </div>
+                                  </li>
+                                  <li :class="$style['agree-list__item']">
+                                    <div :class="$style['agree-list__head']">
+                                      <CheckBox
+                                        id="BF_M04_l007_030_001_002_004"
+                                        :classNames="{
+                                          wrap: $style['agree-list__checkbox'],
+                                        }"
+                                        theme="quinary"
+                                      >
+                                        <CheckBoxObject />
+                                        <CheckBoxLabelText
+                                          >우편</CheckBoxLabelText
+                                        >
+                                      </CheckBox>
+                                    </div>
+                                  </li>
+                                  <li :class="$style['agree-list__item']">
+                                    <div :class="$style['agree-list__head']">
+                                      <CheckBox
+                                        id="BF_M04_l007_030_001_002_005"
+                                        :classNames="{
+                                          wrap: $style['agree-list__checkbox'],
+                                        }"
+                                        theme="quinary"
+                                      >
+                                        <CheckBoxObject />
+                                        <CheckBoxLabelText
+                                          >이메일</CheckBoxLabelText
+                                        >
+                                      </CheckBox>
+                                    </div>
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </UiAccordionLayer>
+                        </UiAccordionItem>
+                      </UiAccordion>
+                    </div>
+                  </UiAccordionLayer>
+                </UiAccordionItem>
+                <!-- // 개인(신용)정보 제공 동의 2024.05.02 -->
               </UiAccordion>
             </div>
           </li>

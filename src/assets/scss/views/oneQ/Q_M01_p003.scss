@@ -42,7 +42,7 @@ div.icon-list-column__block {
     padding: 6px;
     box-sizing: border-box;
     border-radius: 16px;
-    background-color: $color-gray-10;
+    background-color: $color-white; //240930 수정
     overflow: hidden;
     margin: 0 auto;
 
@@ -70,3 +70,11 @@ div.icon-list-column__block {
     font-weight: 500;
   }
 }
+
+// 240930 추가
+.bg {
+  background-color: #f9f9fb;
+  margin: -30px -20px 0 -20px;
+  padding: 30px 20px 40px 20px;
+}
+// //240930 추가

@@ -54,6 +54,7 @@ export default {
       store.ui.header.setTitle(() => '보유 계약 현황');
       store.ui.header.setLeftButtons(() => ['back']);
       store.ui.header.setRightButtons(() => []);
+      store.ui.header.setTheme(() => 'fourth');
     });
 
     onUnmounted(() => {
@@ -62,6 +63,7 @@ export default {
       store.ui.header.setTitle();
       store.ui.header.setLeftButtons();
       store.ui.header.setRightButtons();
+      store.ui.header.setTheme();
     });
   },
 };
@@ -69,77 +71,77 @@ export default {
 
 <template>
   <PageContents>
-    <PageTextGroup>
-      <PageMainText>
-        김하나님이<br />
-        보유하신 계약은 총 <span class="color-green">5</span>건 입니다
-      </PageMainText>
-    </PageTextGroup>
+    <div :class="$style['bg']">
+      <PageTextGroup>
+        <PageMainText>
+          김하나님이<br />
+          보유하신 계약은 총 <span class="color-green">5</span>건 입니다
+        </PageMainText>
+      </PageTextGroup>
 
-    <BasicBox theme="fourteenth">
-      <div class="align-center">
-        <div>
-          <UnitText
-            size="small-large"
-            rightSecondaryUnit="원"
-            align="center"
-            verticalAlign="center"
-            >400,000</UnitText
-          >
-          <div class="text-body-3 color-gray-tertiary">당월 결제예정금액</div>
+      <BasicBox theme="sixteenth">
+        <div class="align-center">
+          <div>
+            <UnitText
+              size="small-large"
+              rightSecondaryUnit="원"
+              align="center"
+              verticalAlign="center"
+              >400,000</UnitText
+            >
+            <div class="text-body-3 color-gray-tertiary">당월 결제예정금액</div>
+          </div>
         </div>
-      </div>
-    </BasicBox>
+      </BasicBox>
 
-    <div :class="$style['icon-column-list']">
-      <ul :class="$style['icon-column-list__list']">
-        <li :class="$style['icon-column-list__item']">
-          <RouterLink to="" :class="$style['icon-column-list__block']">
-            <span :class="$style['icon-column-list__icon']"
-              ><IconCertification
-            /></span>
-            <span :class="$style['icon-column-list__content']">
-              <span :class="$style['icon-column-list__title']">증명서</span>
-            </span>
-          </RouterLink>
-        </li>
-        <li :class="$style['icon-column-list__item']">
-          <RouterLink to="" :class="$style['icon-column-list__block']">
-            <span :class="$style['icon-column-list__icon']"
-              ><IconMainFour
-            /></span>
-            <span :class="$style['icon-column-list__content']">
-              <span :class="$style['icon-column-list__title']">계좌변경</span>
-            </span>
-          </RouterLink>
-        </li>
-        <li :class="$style['icon-column-list__item']">
-          <RouterLink to="" :class="$style['icon-column-list__block']">
-            <span :class="$style['icon-column-list__icon']"
-              ><IconMainFive
-            /></span>
-            <span :class="$style['icon-column-list__content']">
-              <span :class="$style['icon-column-list__title']">중도상환</span>
-            </span>
-          </RouterLink>
-        </li>
-        <li :class="$style['icon-column-list__item']">
-          <RouterLink to="" :class="$style['icon-column-list__block']">
-            <span :class="$style['icon-column-list__icon']"
-              ><IconMyInfo
-            /></span>
-            <span :class="$style['icon-column-list__content']">
-              <span :class="$style['icon-column-list__title']">나의정보</span>
-            </span>
-          </RouterLink>
-        </li>
-      </ul>
+      <div :class="$style['icon-column-list']">
+        <ul :class="$style['icon-column-list__list']">
+          <li :class="$style['icon-column-list__item']">
+            <RouterLink to="" :class="$style['icon-column-list__block']">
+              <span :class="$style['icon-column-list__icon']"
+                ><IconCertification
+              /></span>
+              <span :class="$style['icon-column-list__content']">
+                <span :class="$style['icon-column-list__title']">증명서</span>
+              </span>
+            </RouterLink>
+          </li>
+          <li :class="$style['icon-column-list__item']">
+            <RouterLink to="" :class="$style['icon-column-list__block']">
+              <span :class="$style['icon-column-list__icon']"
+                ><IconMainFour
+              /></span>
+              <span :class="$style['icon-column-list__content']">
+                <span :class="$style['icon-column-list__title']">계좌변경</span>
+              </span>
+            </RouterLink>
+          </li>
+          <li :class="$style['icon-column-list__item']">
+            <RouterLink to="" :class="$style['icon-column-list__block']">
+              <span :class="$style['icon-column-list__icon']"
+                ><IconMainFive
+              /></span>
+              <span :class="$style['icon-column-list__content']">
+                <span :class="$style['icon-column-list__title']">중도상환</span>
+              </span>
+            </RouterLink>
+          </li>
+          <li :class="$style['icon-column-list__item']">
+            <RouterLink to="" :class="$style['icon-column-list__block']">
+              <span :class="$style['icon-column-list__icon']"
+                ><IconMyInfo
+              /></span>
+              <span :class="$style['icon-column-list__content']">
+                <span :class="$style['icon-column-list__title']">나의정보</span>
+              </span>
+            </RouterLink>
+          </li>
+        </ul>
+      </div>
     </div>
 
-    <BasicHr className="row-margin-container-medium" />
-
     <div>
-      <section>
+      <section class="padding-top-40">
         <h3 class="text-title-2 font-weight-bold row-margin-contents">
           캐피탈 상품 계약
         </h3>

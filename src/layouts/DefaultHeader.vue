@@ -78,7 +78,12 @@ export default {
       const defaultButtons = ['menu'];
       return store.ui.header.rightButtons || defaultButtons;
     });
-
+    // 20240214 다이렉트 오토 메뉴 추가
+    const rightButtonsDA = computed(() => {
+      const defaultButtons = ['menuDA'];
+      return store.ui.header.rightButtons || defaultButtons;
+    });
+    // // 20240214 다이렉트 오토 메뉴 추가
     const useLeftLogo = computed(() => {
       return store.ui.header.useLeftLogo;
     });
@@ -160,6 +165,7 @@ export default {
       title,
       leftButtons,
       rightButtons,
+      rightButtonsDA, // 20240214 rightButtonsDA 다이렉트 오토 메뉴 추가
       useLeftLogo,
       useAppButton,
     };

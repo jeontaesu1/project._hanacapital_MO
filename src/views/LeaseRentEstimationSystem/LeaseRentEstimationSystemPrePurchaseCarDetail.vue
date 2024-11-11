@@ -193,7 +193,7 @@ export default {
         </FormListItem>
 
         <!-- Case : 라인업 선택 시 노출 -->
-        <FormListItem
+        <!-- <FormListItem
           titleText="트림"
           target="#leaseRentEstimationSystemPrePurchaseCarDetailTrimButton"
           :selectOnly="true"
@@ -225,7 +225,7 @@ export default {
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
-        </FormListItem>
+        </FormListItem> -->
         <!-- // Case : 라인업 선택 시 노출 -->
 
         <FormListItem
@@ -308,7 +308,18 @@ export default {
     <ul class="reset-list">
       <li v-for="i in 2" :key="i" class="row-margin-item-group">
         <BasicBox>
-          <BasicBoxHead align="top">
+          <!-- 240702 수정 -->
+          <RoundStatus :block="true" theme="nonary" class="box-promotion"
+            ><RoundStatus
+              :square="true"
+              theme="septenary"
+              class="badge-promotion"
+              >프로모션</RoundStatus
+            >
+            70만원
+          </RoundStatus>
+          <!-- // 240702 수정 -->
+          <BasicBoxHead align="top" class="box-head">
             <BasicBoxHeadLeft>
               <div class="flex-box">
                 <div class="flex-box__cell">
@@ -395,13 +406,17 @@ export default {
                     <div class="flex-box justify-conten-end">
                       <div class="flex-box__cell">
                         <div :class="$style['number']">
-                          <ul :class="$style['number__list']">
-                            <li :class="$style['number__item']">
-                              <TextButton theme="secondary" :underline="true">
+                          <!-- 240702 수정 -->
+                          <ul :class="($style['number__list'], 'numList')">
+                            <li :class="($style['number__item'], 'numItem')">
+                              <TextButton theme="senary" :underline="true">
                                 D12345678
                               </TextButton>
+                              <RoundStatus :border="true" class="marginLeft2"
+                                >70만원</RoundStatus
+                              >
                             </li>
-                            <li :class="$style['number__item']">
+                            <li :class="($style['number__item'], 'numItem')">
                               <TextButton theme="secondary" :underline="true">
                                 D12345678
                               </TextButton>
@@ -423,34 +438,38 @@ export default {
 
               <UiAccordionLayer>
                 <div :class="$style['detail-contents']">
-                  <BasicBox theme="senary">
+                  <BasicBox theme="senary" class="basicBoxWrap">
                     <div :class="$style['number']">
-                      <ul :class="$style['number__list']">
-                        <li :class="$style['number__item']">
+                      <ul :class="($style['number__list'], 'numList')">
+                        <li :class="($style['number__item'], 'numItem')">
                           <TextButton theme="secondary" underline="true">
                             D12345678
                           </TextButton>
                         </li>
-                        <li :class="$style['number__item']">
+                        <li :class="($style['number__item'], 'numItem')">
+                          <TextButton theme="senary" underline="true">
+                            D12345678
+                          </TextButton>
+                          <RoundStatus :border="true" class="marginLeft2"
+                            >70만원</RoundStatus
+                          >
+                        </li>
+                        <li :class="($style['number__item'], 'numItem')">
                           <TextButton theme="secondary" underline="true">
                             D12345678
                           </TextButton>
                         </li>
-                        <li :class="$style['number__item']">
+                        <li :class="($style['number__item'], 'numItem')">
                           <TextButton theme="secondary" underline="true">
                             D12345678
                           </TextButton>
                         </li>
-                        <li :class="$style['number__item']">
+                        <li :class="($style['number__item'], 'numItem')">
                           <TextButton theme="secondary" underline="true">
                             D12345678
                           </TextButton>
                         </li>
-                        <li :class="$style['number__item']">
-                          <TextButton theme="secondary" underline="true">
-                            D12345678
-                          </TextButton>
-                        </li>
+                        <!-- // 240702 수정 -->
                       </ul>
                     </div>
                   </BasicBox>
@@ -466,4 +485,48 @@ export default {
 
 <style lang="scss" module>
 @import '@/assets/scss/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemPrePurchaseCarDetail.scss';
+</style>
+
+<style lang="scss" scoped>
+.box-promotion {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 12px;
+
+  .badge-promotion {
+    padding: 1px 6px;
+    font-size: 10px;
+  }
+}
+
+.box-head {
+  margin-top: 20px;
+}
+
+.marginLeft2 {
+  margin-left: 2px;
+}
+
+.basicBoxWrap {
+  padding: 22px 52px 22px 12px;
+}
+
+.numList {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+
+  .numItem {
+    display: flex;
+    align-items: flex-end;
+    margin-left: 8px;
+
+    &:nth-child(n + 4) {
+      padding-top: 19px;
+    }
+  }
+}
 </style>

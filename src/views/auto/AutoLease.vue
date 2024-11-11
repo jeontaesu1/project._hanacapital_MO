@@ -217,7 +217,7 @@ export default {
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>금융리스</KeyValueTitle>
               <KeyValueText>
-                <div class="font-weight-bold underline">연 6.3% ~ 9.1%</div>
+                <div class="font-weight-bold underline">연 6.2% ~ 7.8%</div>
                 <div
                   class="text-body-5 color-gray-tertiary font-weight-bold underline row-margin-mini"
                 >
@@ -297,6 +297,7 @@ export default {
                               <div>중도해지손해배상금</div>
                             </div>
                           </div>
+                          <!-- S: 240408 수정 -->
                           <ul
                             :class="[$style['basic-list'], 'row-margin-item']"
                           >
@@ -310,9 +311,34 @@ export default {
                             >
                               <div :class="$style['basic-list__symbol']">-</div>
                               <div :class="$style['basic-list__content']">
-                                미회수원금 X 중도해지손해배상금
+                                미회수원금 X 중도해지손해배상금(최고 40%)
                               </div>
                             </li>
+                          </ul>
+                          <ul
+                            :class="[
+                              $style['basic-list'],
+                              $style['basic-list--small-margin'],
+                              'row-margin-item',
+                            ]"
+                          >
+                            <li
+                              :class="[
+                                $style['basic-list__item'],
+                                'text-body-5',
+                                'font-weight-regular',
+                                'color-gray-tertiary',
+                              ]"
+                            >
+                              <div :class="$style['basic-list__symbol']">※</div>
+                              <div :class="$style['basic-list__content']">
+                                경과 개월별 차등 인하
+                              </div>
+                            </li>
+                          </ul>
+                          <ul
+                            :class="[$style['basic-list'], 'row-margin-item']"
+                          >
                             <li
                               :class="[
                                 $style['basic-list__item'],
@@ -321,16 +347,29 @@ export default {
                                 'color-black',
                               ]"
                             >
-                              <div :class="$style['basic-list__symbol']">-</div>
-                              <div :class="$style['basic-list__content']">
-                                미회수원금 X 최고요율(80)% X (잔여기간
-                                월수/리스기간 전체월수)
+                              <div
+                                class="inline-wrap row-margin-contents fontEdit"
+                              >
+                                <TextButton theme="secondary" :underline="true">
+                                  중도해지손해배상금 세부내역
+                                </TextButton>
                               </div>
                             </li>
                           </ul>
                         </li>
-                        <li :class="$style['contents-list__item']">
-                          <div :class="$style['contents-list__head']">
+                        <!-- E: 240408 수정 -->
+                        <li
+                          :class="[
+                            $style['contents-list__item'],
+                            'margin-scoped',
+                          ]"
+                        >
+                          <div
+                            :class="[
+                              $style['contents-list__head'],
+                              'marginEdit',
+                            ]"
+                          >
                             <div :class="$style['contents-list__symbol']">
                               주2
                             </div>
@@ -1008,3 +1047,19 @@ export default {
 <style lang="scss" module>
 @import '@/assets/scss/views/auto/AutoLease.scss';
 </style>
+
+<!-- S: 240408 수정 -->
+<style lang="scss" scoped>
+.fontEdit {
+  button {
+    font-size: 13px;
+  }
+}
+
+.margin-scoped {
+  .marginEdit {
+    margin-top: 24px;
+  }
+}
+</style>
+<!-- E: 240408 수정 -->

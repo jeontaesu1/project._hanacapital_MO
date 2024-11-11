@@ -12,6 +12,15 @@
     min-width: 0;
     position: relative;
     z-index: 10;
+
+    // 240909 추가
+    svg {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    // // 240909 추가
   }
 
   &__thumb {

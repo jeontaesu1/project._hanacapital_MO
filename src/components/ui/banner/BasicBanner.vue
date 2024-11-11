@@ -120,6 +120,7 @@ export default {
       },
       slideStyleModule['banner__block'],
       customClassNames.wrap,
+      'basic-banner' /* 240909 클래스 추가 */,
     ]"
     :style="{
       backgroundColor: bgColor,
