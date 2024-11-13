@@ -10,7 +10,7 @@ export default {
 
 <template>
   <PageContents>
-    <div></div>
+    <div>123123</div>
   </PageContents>
 </template>
 
