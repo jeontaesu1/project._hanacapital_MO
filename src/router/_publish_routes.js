@@ -348,6 +348,17 @@ const routes = [
     component: () => import('@/views/uiGuide/GuideMyLoanProgress012.vue'),
   },
   {
+    path: '/ui-guide/my-loan-progress-013',
+    name: '/ui-guide/my-loan-progress-013',
+    component: () => import('@/views/uiGuide/GuideMyLoanProgress013.vue'),
+  }, //스탁론 연장 프로세스 상품설명서
+  {
+    path: '/ui-guide/my-loan-progress-014',
+    name: '/ui-guide/my-loan-progress-014',
+    component: () => import('@/views/uiGuide/GuideMyLoanProgress014.vue'),
+  },
+  //상품설명서 011 (개인사업자 아파트담보대출 연장프로세스)
+  {
     path: '/ui-guide/my-loan-certificate-001',
     name: '/ui-guide/my-loan-certificate-001',
     component: () => import('@/views/uiGuide/GuideMyLoanCertificate001.vue'),
@@ -854,94 +865,6 @@ const routes = [
     component: () =>
       import('@/views/customer/CustomerFinancialConsumerProtectionSystem.vue'),
   },
-  // S: 240729 추가
-  {
-    path: '/customer/financial-consumer-protection-history',
-    name: '/customer/financial-consumer-protection-history',
-    component: () =>
-      import(
-        '@/views/customer/CustomerFinancialConsumerProtectionEnactReviseHistoryList.vue'
-      ),
-  },
-  {
-    path: '/customer/financial-consumer-protection-regulations',
-    name: '/customer/financial-consumer-protection-regulations',
-    component: () =>
-      import(
-        '@/views/customer/CustomerFinancialConsumerProtectionIntenalControlRegulations.vue'
-      ),
-  },
-  {
-    path: '/customer/financial-consumer-protection-bestpractices',
-    name: '/customer/financial-consumer-protection-bestpractices',
-    component: () =>
-      import(
-        '@/views/customer/CustomerFinancialConsumerProtectionBestPractices.vue'
-      ),
-  },
-  {
-    path: '/customer/financial-consumer-protection-bestpractices-view',
-    name: '/customer/financial-consumer-protection-bestpractices-view',
-    component: () =>
-      import(
-        '@/views/customer/CustomerFinancialConsumerProtectionBestPracticesView.vue'
-      ),
-  },
-  {
-    path: '/customer/financial-consumer-protection-request-data',
-    name: '/customer/financial-consumer-protection-request-data',
-    component: () =>
-      import(
-        '@/views/customer/CustomerFinancialConsumerProtectionRequestAccessData.vue'
-      ),
-  },
-  {
-    path: '/customer/financial-consumer-protection-terminate-illegal-contract',
-    name: '/customer/financial-consumer-protection-terminate-illegal-contract',
-    component: () =>
-      import(
-        '@/views/customer/CustomerFinancialConsumerProtectionTerminateIllegalContract.vue'
-      ),
-  },
-  {
-    path: '/customer/financial-consumer-protection-receiving-electronic-complaints',
-    name: '/customer/financial-consumer-protection-receiving-electronic-complaints',
-    component: () =>
-      import(
-        '@/views/customer/CustomerFinancialConsumerProtectionReceivingElectronicComplaints.vue'
-      ),
-  },
-  {
-    path: '/customer/financial-consumer-protection-inquirysales-visiting-telephone',
-    name: '/customer/financial-consumer-protection-inquirysales-visiting-telephone',
-    component: () =>
-      import(
-        '@/views/customer/CustomerFinancialConsumerProtectionInquirySalesVisitingAndTelephone.vue'
-      ),
-  },
-  {
-    path: '/customer/financial-consumer-protection-information',
-    name: '/customer/financial-consumer-protection-information',
-    component: () =>
-      import(
-        '@/views/customer/CustomerFinancialConsumerProtectionInformation.vue'
-      ),
-  },
-  {
-    path: '/customer/financial-consumer-protection-rights',
-    name: '/customer/financial-consumer-protection-rights',
-    component: () =>
-      import('@/views/customer/CustomerFinancialConsumerRights.vue'),
-  },
-  {
-    path: '/customer/financial-consumer-protection-complain-beneficial-information',
-    name: '/customer/financial-consumer-protection-complain-beneficial-information',
-    component: () =>
-      import(
-        '@/views/customer/CustomerFinancialConsumerComplainBeneficialInformation.vue'
-      ),
-  },
-  // //E: 240729 추가
   {
     path: '/customer/financial-consumer-protection-webzine',
     name: '/customer/financial-consumer-protection-webzine',
@@ -2210,50 +2133,31 @@ const routes = [
   },
 
   // TestPage
-  {
+  /**{
     path: '/ui-guide/TestPage',
     name: '/ui-guide/TestPage',
     component: () => import('@/components/ui/gnb/TestPage.vue'),
-  },
-  // 플랫폼대출 한도조회(이미지 유)
+  },**/
+  //플랫폼대출 한도조회(이미지 유) 240409
   {
     path: '/personal-loan/platform-loan001',
     name: '/personal-loan/platform-loan001',
     component: () => import('@/views/personalLoan/PlatformLoan001.vue'),
   },
-
-  //플랫폼대출 한도조회(이미지 무)
+  //플랫폼대출 한도조회(이미지 무) 240409
   {
     path: '/personal-loan/platform-loan002',
     name: '/personal-loan/platform-loan002',
     component: () => import('@/views/personalLoan/PlatformLoan002.vue'),
   },
-
-  // 240502_보이스피싱 팝업 추가
+  // 240502_보이스피싱 팝업 추가 / 240507 추가 수정
   {
     path: '/ui-guide/my-loan-voicephising',
     name: '/ui-guide/my-loan-voicephising',
     component: () => import('@/views/uiGuide/GuideMyLoanVoice.vue'),
   },
 
-  // 240507_중고차 재고금융 한도 전자약정 신규페이지(1)
-  {
-    path: '/sales-used-car/uc_m09_l001',
-    name: '/sales-used-car/uc_m09_l001',
-    component: () =>
-      import('@/views/salesUsedCar/LayerSalesUsedCarInventoryFinance.vue'),
-  },
-
-  // 240507_중고차 재고금융 한도 전자약정 신규페이지(2)
-  {
-    path: '/sales-used-car/uc_m09_l002',
-    name: '/sales-used-car/uc_m09_l002',
-    component: () =>
-      import(
-        '@/views/salesUsedCar/LayerSalesUsedCarInventoryFinanceOnline.vue'
-      ),
-  },
-
+  //태수 대리
   // 240604_스탁론 연장프로세스 상품설명서
   {
     path: '/ui-guide/my-loan-progress-013',
@@ -2288,94 +2192,172 @@ const routes = [
     name: '/ui-guide/my-loan-progress-014',
     component: () => import('@/views/uiGuide/GuideMyLoanProgress014.vue'),
   },
-  // 240807_즉시출고 페이지
+  //즉시출고 신규
   {
-    path: '/lease-rent-estimation-system/immediate-car',
-    name: '/lease-rent-estimation-system/immediate-car',
+    path: '/lease-rent-estimation-system/pre-purchase-car2',
+    name: '/lease-rent-estimation-system/pre-purchase-car2',
     component: () =>
       import(
         '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemImmediateCar.vue'
       ),
   },
   {
-    path: '/lease-rent-estimation-system/immediate-car-detail',
-    name: '/lease-rent-estimation-system/immediate-car-detail',
+    path: '/lease-rent-estimation-system/pre-purchase-car-detail2',
+    name: '/lease-rent-estimation-system/pre-purchase-car-detail2',
     component: () =>
       import(
         '@/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemImmediateCarDetail.vue'
       ),
   },
-  // 240903_채권추심 관련 지원제도 안내
+  // customer  신규 채무조정요청
   {
-    path: '/customer/ds_no_m01',
-    name: '/customer/ds_no_m01',
-    component: () => import('@/views/customer/DS_NO_M01.vue'),
-  },
-  // 240903_채권추심업무 처리절차 안내문
-  {
-    path: '/customer/ds_no_m02',
-    name: '/customer/ds_no_m02',
-    component: () => import('@/views/customer/DS_NO_M02.vue'),
-  },
-  // 240903_불법채권추심 대응요령
-  {
-    path: '/customer/ds_no_m03',
-    name: '/customer/ds_no_m03',
-    component: () => import('@/views/customer/DS_NO_M03.vue'),
-  },
-  // 240903_소멸시효 완성채권 추심 관련 금융소비자 유의사항
-  {
-    path: '/customer/ds_no_m04',
-    name: '/customer/ds_no_m04',
-    component: () => import('@/views/customer/DS_NO_M04.vue'),
-  },
-  // 240903_채권추심자의 의무와 추심에 관한 개인금융채무자의 권리
-  {
-    path: '/customer/ds_no_m05',
-    name: '/customer/ds_no_m05',
-    component: () => import('@/views/customer/DS_NO_M05.vue'),
-  },
-  // 240906_채무조정요청 안내
-  {
-    path: '/customer/Customer_DS_M01',
-    name: '/customer/Customer_DS_M01',
+    path: '/customer/short-term-delinquency',
+    name: '/customer/short-term-delinquency',
     component: () => import('@/views/customer/Customer_DS_M01.vue'),
   },
-  // 240909_채무조정권 알아보기
   {
-    path: '/customer/Customer_DS_M01_01',
-    name: '/customer/Customer_DS_M01_01',
+    path: '/customer/short-term-delinquency-view1',
+    name: '/customer/short-term-delinquency-view1',
     component: () => import('@/views/customer/Customer_DS_M01_01.vue'),
   },
-  // 240909_채무조정요청권 신청 (본인인증 팝업)
   {
-    path: '/customer/Customer_DS_M02_01',
-    name: '/customer/Customer_DS_M02_01',
+    path: '/customer/short-term-delinquency-view2',
+    name: '/customer/short-term-delinquency-view2',
     component: () => import('@/views/customer/Customer_DS_M02_01.vue'),
   },
-  // 240909_채무조정요청권 신청 (계좌확인)
   {
-    path: '/customer/Customer_DS_M02_02',
-    name: '/customer/Customer_DS_M02_02',
+    path: '/customer/short-term-delinquency-view3',
+    name: '/customer/short-term-delinquency-view3',
     component: () => import('@/views/customer/Customer_DS_M02_02.vue'),
   },
-  // 240910_채무조정요청권 신청 (신청내용입력)
   {
-    path: '/customer/Customer_DS_M02_03',
-    name: '/customer/Customer_DS_M02_03',
+    path: '/customer/short-term-delinquency-view3-1',
+    name: '/customer/short-term-delinquency-view3-1',
+    component: () => import('@/views/customer/Customer_DS_M02_02_01.vue'),
+  },
+  {
+    path: '/customer/short-term-delinquency-view4',
+    name: '/customer/short-term-delinquency-view4',
     component: () => import('@/views/customer/Customer_DS_M02_03.vue'),
   },
-  // 240910_채무조정요청권 신청 (신청완료)
   {
-    path: '/customer/Customer_DS_M02_04',
-    name: '/customer/Customer_DS_M02_04',
+    path: '/customer/short-term-delinquency-view5',
+    name: '/customer/short-term-delinquency-view5',
     component: () => import('@/views/customer/Customer_DS_M02_04.vue'),
   },
-  // 240910_채무조정요청권 신청 미대상
   {
-    path: '/customer/Customer_DS_M02_02_01',
-    name: '/customer/Customer_DS_M02_02_01',
-    component: () => import('@/views/customer/Customer_DS_M02_02_01.vue'),
+    path: '/customer/DS_NO_M01',
+    name: '/customer/DS_NO_M01',
+    component: () => import('@/views/customer/DS_NO_M01.vue'),
+  },
+  {
+    path: '/customer/DS_NO_M02',
+    name: '/customer/DS_NO_M02',
+    component: () => import('@/views/customer/DS_NO_M02.vue'),
+  },
+  {
+    path: '/customer/DS_NO_M03',
+    name: '/customer/DS_NO_M03',
+    component: () => import('@/views/customer/DS_NO_M03.vue'),
+  },
+  {
+    path: '/customer/DS_NO_M04',
+    name: '/customer/DS_NO_M04',
+    component: () => import('@/views/customer/DS_NO_M04.vue'),
+  },
+  {
+    path: '/customer/DS_NO_M05',
+    name: '/customer/DS_NO_M05',
+    component: () => import('@/views/customer/DS_NO_M05.vue'),
+  },
+  //금융소비자보호 - 신규
+  {
+    path: '/customer/Customer_M09_p013',
+    name: '/customer/Customer_M09_p013',
+    component: () =>
+      import(
+        '@/views/customer/CustomerFinancialConsumerProtectionEnactReviseHistoryList.vue'
+      ),
+  },
+  {
+    path: '/customer/Customer_M09_p014',
+    name: '/customer/Customer_M09_p014',
+    component: () =>
+      import(
+        '@/views/customer/CustomerFinancialConsumerProtectionIntenalControlRegulations.vue'
+      ),
+  },
+  {
+    path: '/customer/Customer_M09_p015',
+    name: '/customer/Customer_M09_p015',
+    component: () =>
+      import(
+        '@/views/customer/CustomerFinancialConsumerProtectionBestPractices.vue'
+      ),
+  },
+  {
+    path: '/customer/Customer_M09_p016',
+    name: '/customer/Customer_M09_p016',
+    component: () =>
+      import(
+        '@/views/customer/CustomerFinancialConsumerProtectionBestPracticesView.vue'
+      ),
+  },
+  {
+    path: '/customer/Customer_M10_p001',
+    name: '/customer/Customer_M10_p001',
+    component: () =>
+      import(
+        '@/views/customer/CustomerFinancialConsumerProtectionRequestAccessData.vue'
+      ),
+  },
+  {
+    path: '/customer/Customer_M10_p002',
+    name: '/customer/Customer_M10_p002',
+    component: () =>
+      import(
+        '@/views/customer/CustomerFinancialConsumerProtectionTerminateIllegalContract.vue'
+      ),
+  },
+  {
+    path: '/customer/Customer_M11_p001',
+    name: '/customer/Customer_M11_p001',
+    component: () =>
+      import(
+        '@/views/customer/CustomerFinancialConsumerProtectionReceivingElectronicComplaints.vue'
+      ),
+  },
+  {
+    path: '/customer/Customer_M11_p002',
+    name: '/customer/Customer_M11_p002',
+    component: () =>
+      import(
+        '@/views/customer/CustomerFinancialConsumerProtectionInquirySalesVisitingAndTelephone.vue'
+      ),
+  },
+  {
+    path: '/customer/Customer_M11_p003',
+    name: '/customer/Customer_M11_p003',
+    component: () =>
+      import(
+        '@/views/customer/CustomerFinancialConsumerProtectionInformation.vue'
+      ),
+  },
+  //Customer_M09_p017
+  {
+    path: '/customer/Customer_M09_p017',
+    name: '/customer/Customer_M09_p017',
+    component: () =>
+      import('@/views/customer/CustomerFinancialConsumerRights.vue'),
+  },
+  //Customer_M09_p018
+  {
+    path: '/customer/Customer_M09_p018',
+    name: '/customer/Customer_M09_p018',
+    component: () =>
+      import(
+        '@/views/customer/CustomerFinancialConsumerComplainBeneficialInformation.vue'
+      ),
   },
 ];
 

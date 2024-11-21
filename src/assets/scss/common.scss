@@ -282,6 +282,11 @@ body,
   margin: 0;
   @include font-size-head(18);
 }
+/*241115*/
+.text-title-3.text-title-3 {
+  margin: 12px 0 0 0;
+  @include font-size-head(18);
+}
 
 .text-caption-1.text-caption-1 {
   margin: 0;
@@ -381,9 +386,10 @@ body,
     -webkit-line-clamp: 3;
     max-height: #{$line-height-default * 3}em;
   }
-
+  //241115
   &.text-title-1,
-  &.text-title-2 {
+  &.text-title-2,
+  &.text-title-3 {
     max-height: #{$line-height-head * 2}em;
 
     .multi-ellipsis {
@@ -551,13 +557,3 @@ body,
 .row-margin-bottom-none.row-margin-bottom-none {
   margin-bottom: 0;
 }
-
-// s: 240926 추가
-.padding-top-40 {
-  padding-top: 40px;
-}
-
-.opacity-60 {
-  opacity: 0.6;
-}
-// e:// 240926 추가
