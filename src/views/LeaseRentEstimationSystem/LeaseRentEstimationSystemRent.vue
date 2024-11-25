@@ -804,9 +804,15 @@ export default {
                             >올 뉴 아반떼 HEV</span
                           >
                           <span class="inline-wrap row-margin-small">
+                            <!--
                             <RoundStatus size="small" theme="secondary">
-                              재고한정
+                                재고한정
                             </RoundStatus>
+                            -->
+                            <RoundStatus border="secondary"
+                              >프로모션</RoundStatus
+                            >
+                            //241125 추가
                           </span>
                         </button>
                       </li>

@@ -76,10 +76,10 @@
   &__center {
     display: flex;
     align-items: center;
-    flex: none;
-    // s: 241008 수정보류
-    // flex: 3;
-    // justify-content: center;
+    // s: 241008 수정
+    // flex: none;
+    flex: 3;
+    justify-content: center;
     // e:// 241008 수정
     min-width: 0;
   }
@@ -105,22 +105,22 @@
   }
 
   &__title {
-    flex: 1; // s: 241008 수정보류
-    min-width: 0; // s: 241008 수정보류
+    // flex: 1;
+    // min-width: 0;
     margin: 0;
     @include font-size-default(16);
     font-weight: 500;
     text-align: center;
-    // s: 241008 수정보류
-    white-space: nowrap;
+    // s: 241008 수정
+    // white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 
-    // display: -webkit-box;
-    // -webkit-box-orient: vertical;
-    // -webkit-line-clamp: 2;
-    // max-height: 3em;
-    // e:// 241008 수정보류
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    max-height: 3em;
+    // e:// 241008 수정
   }
 
   &__button {

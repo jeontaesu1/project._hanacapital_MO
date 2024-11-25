@@ -156,6 +156,21 @@
       }
     }
     // // 240702 추가
+
+    // 241125 추가
+    &-septenary {
+      @include button-theme($color-purple-15);
+
+      &:hover,
+      &:active,
+      &:focus-visible {
+        @include button-theme($color-purple-15);
+      }
+      &[disabled] {
+        @include button-theme($color-purple-15);
+      }
+    }
+    // // 241125 추가
   }
 
   &:global(.color-gray) {

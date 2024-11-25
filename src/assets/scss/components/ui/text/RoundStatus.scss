@@ -10,6 +10,17 @@
   border: 1px solid $color-gray-20;
   background-color: $color-gray-20;
 
+  // 241125 추가
+  & + & {
+    margin-left: 2px;
+  }
+
+  &:nth-child(n + 3) {
+    margin-left: 0;
+    margin-top: 2px;
+  }
+  // // 241125 추가
+
   &--theme {
     &-secondary {
       color: $color-green-50;
@@ -90,6 +101,18 @@
       background-color: $color-green-50;
       padding: 0 6px;
     }
+    // 241125 추가
+    &-quindecimal {
+      background-color: $color-semantic-pick;
+      border-color: transparent;
+      color: $color-purple-10;
+    }
+    &-hexadecimal {
+      color: $color-white;
+      border-color: $color-purple-10;
+      background-color: $color-purple-10;
+    }
+    // // 241125 추가
   }
 
   &--square {
@@ -100,16 +123,20 @@
     display: block;
   }
 
-  // 240702 추가
+  // 241125 추가&수정
   &--border {
-    border-color: #ff0000;
     background-color: transparent;
-    color: #ff0000;
-    padding: 0 6px;
-
-    font-size: 10px;
+    padding: 1px 6px;
+    &-secondary {
+      border-color: $color-red-90;
+      color: $color-red-90;
+    }
+    &-tertiary {
+      border-color: $color-purple-20;
+      color: $color-purple-20;
+    }
   }
-  // // 240702 추가
+  // // 241125 추가&수정
 
   &--size {
     &-small {

@@ -319,6 +319,18 @@ export default {
             70만원
           </RoundStatus>
           <!-- // 240702 수정 -->
+
+          <!-- 241125 추가 -->
+          <RoundStatus :block="true" theme="quindecimal" class="box-promotion"
+            ><RoundStatus
+              :square="true"
+              theme="hexadecimal"
+              class="badge-promotion"
+              >하나Pick</RoundStatus
+            >
+            70만원
+          </RoundStatus>
+          <!-- // 241125 추가 -->
           <BasicBoxHead align="top" class="box-head">
             <BasicBoxHeadLeft>
               <div class="flex-box">
@@ -412,7 +424,9 @@ export default {
                               <TextButton theme="senary" :underline="true">
                                 D12345678
                               </TextButton>
-                              <RoundStatus :border="true" class="marginLeft2"
+                              <RoundStatus
+                                border="secondary"
+                                class="marginLeft2"
                                 >70만원</RoundStatus
                               >
                             </li>
@@ -450,14 +464,18 @@ export default {
                           <TextButton theme="senary" underline="true">
                             D12345678
                           </TextButton>
-                          <RoundStatus :border="true" class="marginLeft2"
+                          <RoundStatus border="secondary" class="marginLeft2"
                             >70만원</RoundStatus
                           >
                         </li>
                         <li :class="($style['number__item'], 'numItem')">
-                          <TextButton theme="secondary" underline="true">
+                          <TextButton theme="septenary" underline="true">
                             D12345678
                           </TextButton>
+
+                          <RoundStatus border="tertiary" class="marginLeft2"
+                            >하나Pick</RoundStatus
+                          >
                         </li>
                         <li :class="($style['number__item'], 'numItem')">
                           <TextButton theme="secondary" underline="true">
@@ -495,6 +513,11 @@ export default {
   padding: 12px 16px;
   border-radius: 8px;
   font-size: 12px;
+  margin-left: 0;
+
+  & + & {
+    margin-top: 8px;
+  }
 
   .badge-promotion {
     padding: 1px 6px;

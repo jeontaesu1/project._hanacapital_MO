@@ -517,8 +517,7 @@ export default {
     </ul>
   </section>
 
-  <!-- S: 240729 수정 -->
-  <!-- <section :class="$style['gnb__section']">
+  <section :class="$style['gnb__section']">
     <h3 :class="$style['gnb__section-title']">내정보</h3>
     <ul :class="$style['gnb__list']">
       <li :class="$style['gnb__item']">
@@ -547,31 +546,7 @@ export default {
         </RouterLink>
       </li>
     </ul>
-  </section> -->
-  <!-- // E: 240729 수정 -->
-
-  <!-- S: 240729 추가 -->
-  <section :class="$style['gnb__section']">
-    <h3 :class="$style['gnb__section-title']">금융소비자보호</h3>
-    <ul :class="$style['gnb__list']">
-      <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
-          <p :class="$style['gnb__name']">금융소비자보호</p>
-        </RouterLink>
-      </li>
-      <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
-          <p :class="$style['gnb__name']">금융소비자권리</p>
-        </RouterLink>
-      </li>
-      <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
-          <p :class="$style['gnb__name']">민원창구·유익정보</p>
-        </RouterLink>
-      </li>
-    </ul>
   </section>
-  <!-- //E: 240729 추가 -->
 
   <section :class="$style['gnb__section']">
     <h3 :class="$style['gnb__section-title']">고객센터</h3>
@@ -609,6 +584,11 @@ export default {
       <li :class="$style['gnb__item']">
         <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <p :class="$style['gnb__name']">정책 및 약관</p>
+        </RouterLink>
+      </li>
+      <li :class="$style['gnb__item']">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
+          <p :class="$style['gnb__name']">금융소비자보호</p>
         </RouterLink>
       </li>
     </ul>

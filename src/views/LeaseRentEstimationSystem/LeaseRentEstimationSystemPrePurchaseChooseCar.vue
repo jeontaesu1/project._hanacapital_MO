@@ -438,9 +438,10 @@ export default {
               >캐스퍼
             </span>
             <span class="inline-wrap row-margin-mini">
-              <!-- 240703 추가 -->
-              <RoundStatus :border="true">프로모션</RoundStatus>
-              <!-- // 240703 추가 -->
+              <!-- 241125 수정&추가 -->
+              <RoundStatus border="secondary">프로모션</RoundStatus>
+              <RoundStatus border="tertiary">하나Pick</RoundStatus>
+              <!-- // 241125 수정&추가 -->
               <RoundStatus theme="secondary">22대</RoundStatus>
             </span>
           </button>
@@ -453,14 +454,3 @@ export default {
 <style lang="scss" module>
 @import '@/assets/scss/views/LeaseRentEstimationSystem/LeaseRentEstimationSystemPrePurchaseChooseCar.scss';
 </style>
-
-<!-- 240703 추가 -->
-<style lang="scss" scoped>
-.inline-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2px;
-}
-</style>
-<!-- // 240703 추가 -->

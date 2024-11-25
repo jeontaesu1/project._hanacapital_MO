@@ -31,12 +31,18 @@ export default {
     },
     // 240702 추가
     border: {
-      Type: Boolean,
-      default: false,
+      Type: String,
+      default: null,
     },
     // // 240702 추가
   },
   setup(props) {
+    // s: 241125_border prop이 있으면 그 값을 theme으로 사용하게끔 추가
+    const effectiveTheme = computed(() => {
+      return props.theme || props.border;
+    });
+    // e:// 241125_border prop이 있으면 그 값을 theme으로 사용하게끔 추가
+
     const customClassNames = computed(() => {
       const { classNames } = props;
       return Object.assign(defaultClassNames(), classNames);
@@ -44,6 +50,7 @@ export default {
 
     return {
       customClassNames,
+      effectiveTheme,
     };
   },
 };
@@ -54,10 +61,20 @@ export default {
     :class="[
       $style['status'],
       {
+        /* 기존코드 */
+        // [$style['status--block']]: block,
+        // [$style['status--square']]: square,
+        // [$style['status--border']]: border, // 241125 추가
+        // [$style[`status--border-${theme}`]]: border, // 241125 추가
+        // [$style[`status--theme-${theme}`]]: theme,
+        // [$style[`status--size-${size}`]]: size,
+
+        /* 수정코드 */
         [$style['status--block']]: block,
         [$style['status--square']]: square,
-        [$style['status--border']]: border, //240702 추가
-        [$style[`status--theme-${theme}`]]: theme,
+        [$style['status--border']]: border,
+        [$style[`status--border-${effectiveTheme}`]]: border,
+        [$style[`status--theme-${effectiveTheme}`]]: !border,
         [$style[`status--size-${size}`]]: size,
       },
       customClassNames.wrap,

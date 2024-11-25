@@ -164,7 +164,14 @@ export default {
               <BasicButton :line="true" theme="quaternary" size="mini">
                 할부 숨김
               </BasicButton>
+              <!-- 241125 추가 -->
             </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton :line="true" theme="quaternary" size="mini">
+                렌트 프로모션
+              </BasicButton>
+            </ButtonListItem>
+            <!-- // 241125 추가 -->
           </ButtonList>
         </FormListItem>
         <!-- // Case : 브랜드 선택시 노출 -->
@@ -1284,6 +1291,61 @@ export default {
               </BoxCheckListItem>
             </BoxCheckList>
           </section>
+          <!-- s: 241125 추가 -->
+          <section class="row-margin-container-medium">
+            <h4 class="text-body-2 row-margin-item-medium">렌트 프로모션</h4>
+
+            <BoxCheckList align="full">
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="installmentRentBoxCheck_001"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>
+                    현대 베뉴 가솔린 1.6 FPSXJZK (ROTHTP GHKSDNJS) 113173
+                  </BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="installmentRentBoxCheck_002"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>
+                    <span class="color-red">
+                      렉서스 NX (F/L) 가솔린 2.5 HEV (개소세 30% 인하) 105889
+                    </span>
+                  </BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  type="checkbox"
+                  id="installmentRentBoxCheck_004"
+                  :classNames="{ block: 'align-items-start' }"
+                >
+                  <template v-slot:left>
+                    <BoxCheckObject />
+                  </template>
+                  <BoxCheckLabel>
+                    렉서스 NX (F/L) 가솔린 2.5 HEV (개소세 30% 인하) 105889
+                  </BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+            </BoxCheckList>
+          </section>
+          <!-- e:// 241125 추가 -->
         </div>
       </section>
     </div>
