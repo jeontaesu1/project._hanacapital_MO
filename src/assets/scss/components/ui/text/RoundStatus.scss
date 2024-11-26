@@ -14,7 +14,6 @@
   & + & {
     margin-left: 2px;
   }
-
   &:nth-child(n + 3) {
     margin-left: 0;
     margin-top: 2px;
@@ -125,8 +124,9 @@
 
   // 241125 추가&수정
   &--border {
+    @include font-size-default(10);
     background-color: transparent;
-    padding: 1px 6px;
+    padding: 0 6px;
     &-secondary {
       border-color: $color-red-90;
       color: $color-red-90;

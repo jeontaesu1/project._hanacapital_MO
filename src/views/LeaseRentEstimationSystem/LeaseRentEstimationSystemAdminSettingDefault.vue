@@ -164,14 +164,7 @@ export default {
               <BasicButton :line="true" theme="quaternary" size="mini">
                 할부 숨김
               </BasicButton>
-              <!-- 241125 추가 -->
             </ButtonListItem>
-            <ButtonListItem>
-              <BasicButton :line="true" theme="quaternary" size="mini">
-                렌트 프로모션
-              </BasicButton>
-            </ButtonListItem>
-            <!-- // 241125 추가 -->
           </ButtonList>
         </FormListItem>
         <!-- // Case : 브랜드 선택시 노출 -->
@@ -249,6 +242,13 @@ export default {
                 할부 숨김
               </BasicButton>
             </ButtonListItem>
+            <!-- 241125 추가 -->
+            <ButtonListItem>
+              <BasicButton :line="true" theme="quaternary" size="mini">
+                렌트 프로모션
+              </BasicButton>
+            </ButtonListItem>
+            <!-- // 241125 추가 -->
           </ButtonList>
         </FormListItem>
         <!-- // Case : 모델 선택시 노출 -->

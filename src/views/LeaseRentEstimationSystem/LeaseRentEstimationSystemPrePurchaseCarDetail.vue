@@ -328,7 +328,7 @@ export default {
               class="badge-promotion"
               >하나Pick</RoundStatus
             >
-            70만원
+            렌트료 인하
           </RoundStatus>
           <!-- // 241125 추가 -->
           <BasicBoxHead align="top" class="box-head">
@@ -422,19 +422,22 @@ export default {
                           <ul :class="($style['number__list'], 'numList')">
                             <li :class="($style['number__item'], 'numItem')">
                               <TextButton theme="senary" :underline="true">
-                                D12345678
+                                V9424DL001570
                               </TextButton>
                               <RoundStatus
                                 border="secondary"
                                 class="marginLeft2"
-                                >70만원</RoundStatus
+                                >100만원</RoundStatus
+                              >
+                              <RoundStatus border="tertiary" class="marginLeft2"
+                                >하나Pick</RoundStatus
                               >
                             </li>
-                            <li :class="($style['number__item'], 'numItem')">
+                            <!-- <li :class="($style['number__item'], 'numItem')">
                               <TextButton theme="secondary" :underline="true">
                                 D12345678
                               </TextButton>
-                            </li>
+                            </li> -->
                           </ul>
                         </div>
                       </div>
@@ -456,26 +459,20 @@ export default {
                     <div :class="$style['number']">
                       <ul :class="($style['number__list'], 'numList')">
                         <li :class="($style['number__item'], 'numItem')">
-                          <TextButton theme="secondary" underline="true">
-                            D12345678
-                          </TextButton>
-                        </li>
-                        <li :class="($style['number__item'], 'numItem')">
-                          <TextButton theme="senary" underline="true">
-                            D12345678
+                          <TextButton theme="senary" :underline="true">
+                            V9424DL001570
                           </TextButton>
                           <RoundStatus border="secondary" class="marginLeft2"
-                            >70만원</RoundStatus
+                            >100만원</RoundStatus
                           >
-                        </li>
-                        <li :class="($style['number__item'], 'numItem')">
-                          <TextButton theme="septenary" underline="true">
-                            D12345678
-                          </TextButton>
-
                           <RoundStatus border="tertiary" class="marginLeft2"
                             >하나Pick</RoundStatus
                           >
+                        </li>
+                        <li :class="($style['number__item'], 'numItem')">
+                          <TextButton theme="secondary" underline="true">
+                            D12345678
+                          </TextButton>
                         </li>
                         <li :class="($style['number__item'], 'numItem')">
                           <TextButton theme="secondary" underline="true">
@@ -534,7 +531,7 @@ export default {
 }
 
 .basicBoxWrap {
-  padding: 22px 52px 22px 12px;
+  padding: 20px;
 }
 
 .numList {
