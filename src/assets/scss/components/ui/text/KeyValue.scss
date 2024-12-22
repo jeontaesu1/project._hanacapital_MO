@@ -33,10 +33,12 @@
     &-left {
       > .key-value__list {
         > .key-value__item {
+          > .key-value__key2 {
+            width: 60px;
+          }
           > .key-value__key {
             width: 34px;
           }
-
           > .key-value__value {
             text-align: left;
           }

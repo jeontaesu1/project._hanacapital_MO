@@ -1890,6 +1890,40 @@ const datas = () => [
         ],
       },
       {
+        depth2:
+          '스탁론 적합성·적정성 원칙 확인서(가계용) 본인확인\nPF_M07_p007_01',
+        depth3: '본인확인',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/stock/PF_M07_p007_01',
+        status: 'ing',
+        create: '2024.12.20',
+        log: [
+          {
+            date: '2024.12.20',
+            text: '적합성·적정성 원칙 확인서(가계용) 본인확인',
+          },
+        ],
+      },
+      {
+        depth2:
+          '스탁론 스탁론_적합성·적정성 원칙 확인서(가계용)\nPF_M07_p007_02',
+        depth3: '원칙 확인서',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/stock/PF_M07_p007_02',
+        status: 'ing',
+        create: '2024.12.20',
+        log: [
+          {
+            date: '2024.12.20',
+            text: '적합성·적정성 원칙 확인서(가계용)',
+          },
+        ],
+      },
+      {
         depth2: '스탁론\nPF_M07_p001',
         depth3: '팝업',
         depth4: '',
