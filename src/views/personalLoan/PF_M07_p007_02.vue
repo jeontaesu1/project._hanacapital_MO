@@ -95,7 +95,7 @@ export default {
       같이 안내드립니다.
     </div>
 
-    <section class="row-margin-contents keyValue-custom">
+    <section class="row-margin-contents">
       <h4 class="text-body-2 row-margin-item-medium">적정성 판단 결과</h4>
       <KeyValue align="left" margin="regular-small" size="regular-small">
         <KeyValueItem
