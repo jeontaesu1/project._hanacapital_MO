@@ -155,7 +155,7 @@ export default {
         </li>
       </ul>
       <div class="row-margin-small align-right">
-        <span class="text-body-3 color-gray">2024.12.11</span>
+        <span class="text-body-3 color-gray font-weight-light">2024.12.11</span>
         <h3 class="text-body-3 row-margin-small font-weight-medium">
           하나캐피탈 주식회사
         </h3>
