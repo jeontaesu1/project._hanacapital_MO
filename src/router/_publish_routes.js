@@ -762,7 +762,7 @@ const routes = [
     name: '/personal-loan/stock',
     component: () => import('@/views/personalLoan/PersonalLoanStock.vue'),
   },
-  // 241220 추가
+  // s: 241220 추가
   {
     path: '/stock/PF_M07_p007_01',
     name: '/stock/PF_M07_p007_01',
@@ -773,7 +773,7 @@ const routes = [
     name: '/stock/PF_M07_p007_02',
     component: () => import('@/views/personalLoan/PF_M07_p007_02.vue'),
   },
-  // //241220 추가
+  // e:// 241220 추가
   {
     path: '/personal-loan/business-house',
     name: '/personal-loan/business-house',

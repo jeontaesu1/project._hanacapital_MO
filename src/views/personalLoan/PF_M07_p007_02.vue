@@ -95,13 +95,12 @@ export default {
       같이 안내드립니다.
     </div>
 
-    <section class="row-margin-contents">
-      <h4 class="text-body-2">적정성 판단 결과</h4>
-      <KeyValue align="left" margin="regular-small">
+    <section class="row-margin-contents keyValue-custom">
+      <h4 class="text-body-2 row-margin-item-medium">적정성 판단 결과</h4>
+      <KeyValue align="left" margin="regular-small" size="regular-small">
         <KeyValueItem
           :classNames="{
             item: 'text-body-5',
-            wrap: 'keyValue__custom',
           }"
         >
           <KeyValueTitle>판단 시점</KeyValueTitle>
@@ -155,6 +154,12 @@ export default {
           </div>
         </li>
       </ul>
+      <div class="row-margin-small align-right">
+        <span class="text-body-3 color-gray">2024.12.11</span>
+        <h3 class="text-body-3 row-margin-small font-weight-medium">
+          하나캐피탈 주식회사
+        </h3>
+      </div>
     </section>
 
     <template v-slot:foot>
