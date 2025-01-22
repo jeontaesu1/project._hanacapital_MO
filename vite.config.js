@@ -67,8 +67,22 @@ export default defineConfig({
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {
+            // 더 작은 청크로 분할
+            if (id.includes('chart.js')) {
+              return 'chart';
+            }
+            if (id.includes('vue')) {
+              return 'vue';
+            }
             return 'vendor';
           }
+        },
+        chunkSizeWarningLimit: 1000, // 청크 크기 경고 제한 증가
+        terserOptions: {
+          compress: {
+            drop_console: true, // console.log 제거
+            drop_debugger: true,
+          },
         },
         // 에셋 파일명 설정
         assetFileNames: (assetInfo) => {
@@ -89,6 +103,6 @@ export default defineConfig({
       },
     },
     // 소스맵 생성
-    sourcemap: true,
+    sourcemap: false,
   },
 });

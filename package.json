@@ -7,7 +7,7 @@
     "dev-stage": "vite --mode stage",
     "build": "vite build",
     "build:github": "vite build --base=/project._hanacapital_MO/",
-    "build:netlify": "vite build --base=/ --mode production",
+    "build:netlify": "NODE_OPTIONS=--max_old_space_size=3072 vite build --base=/",
     "preview": "vite preview --host",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "publish-build": "vite build --base=/pub/hanacapital-dt-rebuild/mobile/",
