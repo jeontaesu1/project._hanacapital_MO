@@ -20,7 +20,6 @@ jobs:
         with:
           node-version: '20.x'
           cache: 'yarn'
-          persist-credentials: false
 
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
@@ -38,8 +37,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/main'
         with:
-          personal_token: ${{ secrets.PERSONAL_TOKEN }} # github_token 대신 사용
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist/app
-          publish_branch: gh-pages
           # 커스텀 도메인이 있는 경우 아래 줄의 주석을 제거하고 설정
           # cname: your-custom-domain.com
