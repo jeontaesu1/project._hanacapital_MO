@@ -1,2 +1,0 @@
-import{e as n,f as o,g as t}from"./vendor-7bef1eed.js";const l={xmlns:"http://www.w3.org/2000/svg",width:"24",height:"24",fill:"none",viewBox:"0 0 24 24"};function r(a,e){return n(),o("svg",l,e[0]||(e[0]=[t("path",{fill:"#9E9E9E",d:"M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10"},null,-1),t("path",{fill:"#fff",d:"M11 7a1 1 0 1 1 2 0v6a1 1 0 1 1-2 0zM10.75 16.75a1.25 1.25 0 1 1 2.5 0 1.25 1.25 0 0 1-2.5 0"},null,-1)]))}const i={render:r};export{i};
-//# sourceMappingURL=important-8ed12b14.js.map
