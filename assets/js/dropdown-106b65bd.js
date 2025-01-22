@@ -1,2 +1,0 @@
-import{e,f as o,g as t}from"./vendor-ba129e39.js";const n={xmlns:"http://www.w3.org/2000/svg",width:"24",height:"24",fill:"none",viewBox:"0 0 24 24"},s=t("path",{fill:"#8F8F8F",d:"M4.293 8.293a1 1 0 0 1 1.414 0L12 14.586l6.293-6.293a1 1 0 1 1 1.414 1.414l-7 7a1 1 0 0 1-1.414 0l-7-7a1 1 0 0 1 0-1.414Z"},null,-1),r=[s];function a(c,l){return e(),o("svg",n,[...r])}const h={render:a};export{h as I};
-//# sourceMappingURL=dropdown-106b65bd.js.map
