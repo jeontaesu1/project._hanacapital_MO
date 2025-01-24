@@ -548,6 +548,44 @@ export default {
     </ul>
   </section>
 
+  <!-- s: 250124 추가 -->
+  <section :class="$style['gnb__section']">
+    <h3 :class="$style['gnb__section-title']">금융소비자보호</h3>
+    <ul :class="$style['gnb__list']">
+      <li :class="$style['gnb__item']">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
+          <p :class="$style['gnb__name']">금융소비자보호</p>
+        </RouterLink>
+      </li>
+      <li :class="$style['gnb__item']">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
+          <p :class="$style['gnb__name']">금융소비자권리</p>
+        </RouterLink>
+      </li>
+      <li :class="$style['gnb__item']">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
+          <p :class="$style['gnb__name']">민원창구·유익정보</p>
+        </RouterLink>
+      </li>
+      <li :class="$style['gnb__item']">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
+          <p :class="$style['gnb__name']">보이스피싱 예방 안내</p>
+        </RouterLink>
+      </li>
+      <li :class="$style['gnb__item']">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
+          <p :class="$style['gnb__name']">상품공시실</p>
+        </RouterLink>
+      </li>
+      <li :class="$style['gnb__item']">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
+          <p :class="$style['gnb__name']">비대면 금융사고 책임분담기준</p>
+        </RouterLink>
+      </li>
+    </ul>
+  </section>
+  <!-- e:// 250124 추가 -->
+
   <section :class="$style['gnb__section']">
     <h3 :class="$style['gnb__section-title']">고객센터</h3>
     <ul :class="$style['gnb__list']">
@@ -584,11 +622,6 @@ export default {
       <li :class="$style['gnb__item']">
         <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <p :class="$style['gnb__name']">정책 및 약관</p>
-        </RouterLink>
-      </li>
-      <li :class="$style['gnb__item']">
-        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
-          <p :class="$style['gnb__name']">금융소비자보호</p>
         </RouterLink>
       </li>
     </ul>

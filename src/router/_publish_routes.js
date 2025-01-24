@@ -2371,6 +2371,22 @@ const routes = [
         '@/views/customer/CustomerFinancialConsumerComplainBeneficialInformation.vue'
       ),
   },
+  /* s: 250124 추가 */
+  {
+    path: '/customer/Customer_M09_p019',
+    name: '/customer/Customer_M09_p019',
+    component: () => import('@/views/customer/Customer_M09_p019.vue'),
+  },
+  {
+    path: '/customer/Customer_M09_p019_002',
+    name: '/customer/Customer_M09_p019_002',
+    component: () => import('@/views/customer/Customer_M09_p019_002.vue'),
+  },
+  {
+    path: '/customer/Customer_M09_p020',
+    name: '/customer/Customer_M09_p020',
+    component: () => import('@/views/customer/Customer_M09_p020.vue'),
+  },
 ];
 
 export default routes;

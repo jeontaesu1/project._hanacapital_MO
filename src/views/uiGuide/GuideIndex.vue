@@ -2668,6 +2668,56 @@ const datas = () => [
           },
         ],
       },
+      //s: 250124 추가
+      {
+        depth2: '금융소비자보호\nCustomer_M09_p001',
+        depth3: '상품공시실\nCustomer_M09_p019',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/customer/Customer_M09_p019',
+        status: 'end',
+        create: '2025.01.24',
+        log: [
+          {
+            date: '2025.01.24',
+            text: '신규',
+          },
+        ],
+      },
+      {
+        depth2: '금융소비자보호\nCustomer_M09_p001',
+        depth3: '판매중단 상품안내\nCustomer_M09_p019_002',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/customer/Customer_M09_p019_002',
+        status: 'end',
+        create: '2025.01.24',
+        log: [
+          {
+            date: '2025.01.24',
+            text: '신규',
+          },
+        ],
+      },
+      {
+        depth2: '금융소비자보호\nCustomer_M09_p001',
+        depth3: '비대면 금융사고 책임분담기준\nCustomer_M09_p020',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/customer/Customer_M09_p020',
+        status: 'end',
+        create: '2025.01.24',
+        log: [
+          {
+            date: '2025.01.24',
+            text: '신규',
+          },
+        ],
+      },
+      //e:// 250124 추가
       // 신규
       //신규 - 단기연체정보 등록 사전안내 SMS 개인채무자보호법 채무조정
       {
