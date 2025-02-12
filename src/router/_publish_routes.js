@@ -2387,6 +2387,13 @@ const routes = [
     name: '/customer/Customer_M09_p020',
     component: () => import('@/views/customer/Customer_M09_p020.vue'),
   },
+  /* s: 250211 추가 */
+  {
+    path: '/lease-rent-estimation-system/LR_M06_p001',
+    name: '/lease-rent-estimation-system/LR_M06_p001',
+    component: () =>
+      import('@/views/LeaseRentEstimationSystem/LR_M06_p001.vue'),
+  },
 ];
 
 export default routes;

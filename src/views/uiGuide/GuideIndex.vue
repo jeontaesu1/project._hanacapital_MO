@@ -14,7 +14,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/',
-        status: 'ing', // ing, partend, end, moding, confirm
+        status: 'end', // ing, partend, end, moding, confirm
         create: '2023.03.24',
         log: [
           {
@@ -25,6 +25,57 @@ const datas = () => [
     ],
   },
   */
+  // s: 프레임아웃 운영작업리스트
+  {
+    depth1: '프레임아웃 작업리스트',
+    datas: [
+      // s: 250211 추가
+      {
+        depth2: '프레임아웃 작업',
+        depth3: '관계사 콜라보 전용 상담신청',
+        depth4: '상담 신청 \nLR_M06_p001',
+        depth5: '',
+        depth6: '',
+        path: '/lease-rent-estimation-system/LR_M06_p001',
+        status: 'end', //ing
+        create: '2025.02.11',
+        log: [
+          {
+            date: '2025.02.11',
+            text: '관계사 콜라보 전용 상담신청',
+          },
+        ],
+      },
+      // e:// 250211 추가
+      {
+        depth2: '',
+        depth3: '',
+        depth4: '팝업\nLR_M06_l001',
+        depth5: '',
+        depth6: '',
+        path: '/ui-guide/lease-rent-estimation-system-007',
+        status: 'end',
+        create: '2024.06.07',
+        log: [
+          {
+            date: '2024-06-18',
+            text: 'LR_M05_p016_Alert',
+          },
+          {
+            date: '2024-06-18',
+            text: 'LR_M05_p016_Alert02',
+          },
+          // s: 250211 추가
+          {
+            date: '2025-02-11',
+            text: 'LR_M06_l001',
+          },
+          // e:// 250211 추가
+        ],
+      },
+    ],
+  },
+  // e:// 프레임아웃 운영작업리스트
   {
     depth1: '공통',
     datas: [
@@ -35,7 +86,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/ui-guide/TestPage',
-        status: 'ing',
+        status: 'end',
         create: '2024.03.07',
         log: [
           {
@@ -1898,7 +1949,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/stock/PF_M07_p007_01',
-        status: 'ing',
+        status: 'end',
         create: '2024.12.20',
         log: [
           {
@@ -1915,7 +1966,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/stock/PF_M07_p007_02',
-        status: 'ing',
+        status: 'end',
         create: '2024.12.20',
         log: [
           {
@@ -2072,7 +2123,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/platform-loan001', //240409
-        status: 'ing',
+        status: 'end',
         create: '2024.04.09',
         log: [
           {
@@ -2088,7 +2139,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/platform-loan002', //240409
-        status: 'ing',
+        status: 'end',
         create: '2024.04.09',
         log: [
           {
@@ -5469,6 +5520,24 @@ const datas = () => [
           },
         ],
       },
+      // s: 250211 추가
+      {
+        depth2: '',
+        depth3: '관계사 콜라보 전용 상담신청',
+        depth4: '상담 신청 \nLR_M06_p001',
+        depth5: '',
+        depth6: '',
+        path: '/lease-rent-estimation-system/LR_M06_p001',
+        status: 'end', //ing
+        create: '2025.02.11',
+        log: [
+          {
+            date: '2025.02.11',
+            text: '관계사 콜라보 전용 상담신청',
+          },
+        ],
+      },
+      // e:// 250211 추가
       {
         depth2: '',
         depth3: '',
@@ -5487,6 +5556,12 @@ const datas = () => [
             date: '2024-06-18',
             text: 'LR_M05_p016_Alert02',
           },
+          // s: 250211 추가
+          {
+            date: '2025-02-11',
+            text: 'LR_M06_l001',
+          },
+          // e:// 250211 추가
         ],
       },
       // // E:240607 추가
@@ -7690,7 +7765,7 @@ const datas = () => [
         depth5: '팝업',
         depth6: '',
         path: '/ui-guide/my-loan-progress-014',
-        status: 'ing',
+        status: 'end',
         create: '2024.06.11',
         log: [
           {
