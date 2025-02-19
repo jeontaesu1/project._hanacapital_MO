@@ -2394,6 +2394,17 @@ const routes = [
     component: () =>
       import('@/views/LeaseRentEstimationSystem/LR_M06_p001.vue'),
   },
+  /* 250219 추가 */
+  {
+    path: '/lm-blog/LM_M01_p002_001',
+    name: '/lm-blog/LM_M01_p002_001',
+    component: () => import('@/views/lmBlog/LM_M01_p002_001.vue'),
+  },
+  {
+    path: '/lm-blog/LM_M01_p002_002',
+    name: '/lm-blog/LM_M01_p002_002',
+    component: () => import('@/views/lmBlog/LM_M01_p002_002.vue'),
+  },
 ];
 
 export default routes;

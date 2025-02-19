@@ -30,7 +30,8 @@ import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import FormHelpText from '@/components/ui/form/FormHelpText.vue';
-
+import ButtonList from '@/components/ui/button/ButtonList.vue';
+import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import LayerLMBlogLoanCounselingFilter from '@/views/lmBlog/LayerLMBlogLoanCounselingFilter.vue';
 
 export default {
@@ -62,6 +63,8 @@ export default {
     FormHelpText,
     FilterButton,
     LayerLMBlogLoanCounselingFilter,
+    ButtonList,
+    ButtonListItem,
   },
   setup() {
     const store = {
@@ -210,7 +213,19 @@ export default {
       </FormList>
 
       <div class="row-margin-contents-group">
-        <BasicButton theme="tertiary">신용정보조회동의(URL 발송)</BasicButton>
+        <!-- s: 250219 수정 -->
+        <h4 class="text-body-4 color-gray row-margin-item">
+          신용정보조회 동의 URL 발송
+        </h4>
+        <ButtonList className="row-margin-top-none">
+          <ButtonListItem>
+            <BasicButton theme="tertiary">신용대출</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton theme="secondary">주택담보대출</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+        <!-- e:// 250219 수정 -->
       </div>
     </div>
 
@@ -292,6 +307,71 @@ export default {
             </BasicButton>
           </BasicBox>
         </li>
+        <!-- s: 250219 추가 -->
+        <li class="row-margin-item-group">
+          <BasicBox>
+            <KeyValue margin="regular">
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <div :class="[$style['step__top'], 'row-margin-none']">
+                  <div :class="$style['step__badge-secondary']">
+                    주택담보대출
+                  </div>
+                </div>
+              </KeyValueItem>
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>이름</KeyValueTitle>
+                <KeyValueText> 김하나 </KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>생년월일</KeyValueTitle>
+                <KeyValueText>920101-2******</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>휴대폰</KeyValueTitle>
+                <KeyValueText>010-1234-5678</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem
+                :classNames="{
+                  item: 'text-body-3',
+                }"
+              >
+                <KeyValueTitle>등록일자</KeyValueTitle>
+                <KeyValueText> 2022.11.09 </KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+
+            <BasicButton
+              tagName="RouterLink"
+              size="small"
+              to="/lm-blog/loan-counseling-form"
+              :classNames="{
+                wrap: 'row-margin-contents-small',
+              }"
+            >
+              고객정보입력
+            </BasicButton>
+          </BasicBox>
+        </li>
+        <!-- e:// 250219 추가 -->
         <li class="row-margin-item-group">
           <BasicBox>
             <KeyValue margin="regular">
@@ -334,4 +414,5 @@ export default {
 
 <style lang="scss" module>
 @import '@/assets/scss/views/lmBlog/LMBlogLoanCounseling.scss';
+@import '@/assets/scss/components/import/step.scss';
 </style>

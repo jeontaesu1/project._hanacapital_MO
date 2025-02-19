@@ -50,7 +50,18 @@
     color: $color-navy-90;
     font-weight: 700;
   }
-
+  // s: 250219 추가
+  &__badge-secondary {
+    flex: none;
+    padding: 4px 10px;
+    border-radius: 50px;
+    background-color: $color-green-05;
+    @include font-size-default(11);
+    color: $color-green-120;
+    font-weight: 500;
+    letter-spacing: -0.22px;
+  }
+  // e://250219 추가
   &__text {
     @include font-size-default(14);
     font-weight: 300;
