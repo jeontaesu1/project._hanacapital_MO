@@ -2405,6 +2405,12 @@ const routes = [
     name: '/lm-blog/LM_M01_p002_002',
     component: () => import('@/views/lmBlog/LM_M01_p002_002.vue'),
   },
+  /* 250220 추가 */
+  {
+    path: '/personal-loan/PF_M12_p001',
+    name: '/personal-loan/PF_M12_p001',
+    component: () => import('@/views/personalLoan/PF_M12_p001.vue'),
+  },
 ];
 
 export default routes;

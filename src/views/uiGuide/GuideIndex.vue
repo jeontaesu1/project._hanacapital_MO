@@ -134,8 +134,23 @@ const datas = () => [
           // },
         ],
       },
-
       // e:// 250219 추가
+      {
+        depth2: '',
+        depth3: '주택담보대출 상품 소개\nPF_M12_p001',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/personal-loan/PF_M12_p001',
+        status: 'end',
+        create: '2025.02.20',
+        log: [
+          // {
+          //   date: '2024.04.09',
+          //   text: '플랫폼 신용대출 한도조회 페이지',
+          // },
+        ],
+      },
     ],
   },
   // e:// 프레임아웃 운영작업리스트
@@ -2209,6 +2224,22 @@ const datas = () => [
             date: '2024.04.09',
             text: '플랫폼 신용대출 한도조회 페이지',
           },
+        ],
+      },
+      {
+        depth2: '주택담보대출 상품 소개\nPF_M12_p001',
+        depth3: '',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/personal-loan/PF_M12_p001',
+        status: 'end',
+        create: '2025.02.20',
+        log: [
+          // {
+          //   date: '2024.04.09',
+          //   text: '플랫폼 신용대출 한도조회 페이지',
+          // },
         ],
       },
     ],

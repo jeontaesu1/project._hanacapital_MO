@@ -407,6 +407,40 @@ export default {
             </button>
           </div>
         </li>
+        <!-- s: 250220 추가 -->
+        <li :class="$style['icon-list__item']">
+          <div
+            :class="[
+              $style['icon-list__block'],
+              $style['icon-list__block--product'],
+            ]"
+          >
+            <div :class="$style['icon-list__icon']">
+              <ProductIcon
+                :classNames="{ wrap: $style['icon-list__icon-image'] }"
+                src="/images/product-icon/mortgage-loan.png"
+              />
+            </div>
+            <div :class="$style['icon-list__content']">
+              <div :class="$style['icon-list__sup']">
+                최대한도 LTV 최대 70% · 기간 최대 40년
+              </div>
+              <div :class="$style['icon-list__title']">하나모기지론</div>
+              <div
+                :class="[
+                  $style['icon-list__text'],
+                  $style['icon-list__text--secondary'],
+                ]"
+              >
+                고정금리의 안정성과 변동금리의 혜택
+              </div>
+            </div>
+            <button type="button" :class="$style['icon-list__view-button']">
+              <span class="for-a11y">상세보기</span>
+            </button>
+          </div>
+        </li>
+        <!-- e:// 250220 추가 -->
         <!-- // 신용대출 -->
 
         <!-- 자동차 -->
