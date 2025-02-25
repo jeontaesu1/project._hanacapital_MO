@@ -31,6 +31,8 @@ import IconSend from '@/assets/images/icon/send.svg?component';
 import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
 import IconLogoMain from '@/assets/images/icon/logo-main.svg?component';
+import IconConsultation from '@/assets/images/icon/consultation.svg?component';
+import IconContract from '@/assets/images/icon/contract.svg?component';
 
 export default {
   components: {
@@ -60,6 +62,8 @@ export default {
     IconLogoMain,
     BottomSticky,
     BasicButton,
+    IconConsultation,
+    IconContract,
   },
   setup() {
     const store = {
@@ -606,7 +610,7 @@ export default {
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
-                  <IconCompleted />
+                  <IconConsultation />
                 </div>
               </div>
             </li>
@@ -625,7 +629,7 @@ export default {
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
-                  <IconSend />
+                  <IconContract />
                 </div>
               </div>
             </li>
@@ -641,7 +645,7 @@ export default {
                   </div>
                 </div>
                 <div :class="$style['step__icon']">
-                  <IconDeposit />
+                  <IconSend />
                 </div>
               </div>
             </li>
