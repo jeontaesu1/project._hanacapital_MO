@@ -70,7 +70,7 @@ export default {
     };
 
     onMounted(() => {
-      store.ui.header.setTitle(() => 'e임대주택론');
+      store.ui.header.setTitle(() => '하나모기지론');
       store.ui.header.setLeftButtons(() => ['back']);
       store.ui.header.setRightButtons(() => [
         {
@@ -297,19 +297,7 @@ export default {
                   <div :class="$style['basic-list__symbol']">※</div>
                   <div :class="$style['basic-list__content']">
                     중도상환수수료율은 상품의 자금운용 기회비용, 모집·행정비용에
-                    따라 산정됩니다.
-                  </div>
-                </li>
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'text-body-5',
-                    'font-weight-regular',
-                    'color-gray-tertiary',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']">※</div>
-                  <div :class="$style['basic-list__content']">
+                    따라 산정됩니다.<br />
                     본 대출의 중도상환수수료율은 약정서 ‘중도상환수수료’
                     부분에서 확인 가능합니다
                   </div>

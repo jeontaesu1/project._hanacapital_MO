@@ -407,7 +407,7 @@ export default {
             </button>
           </div>
         </li>
-        <!-- s: 250220 추가 -->
+        <!-- s: 250225 추가 -->
         <li :class="$style['icon-list__item']">
           <div
             :class="[
@@ -418,7 +418,7 @@ export default {
             <div :class="$style['icon-list__icon']">
               <ProductIcon
                 :classNames="{ wrap: $style['icon-list__icon-image'] }"
-                src="/images/product-icon/mortgage-loan.png"
+                src="/images/product-icon/apt.png"
               />
             </div>
             <div :class="$style['icon-list__content']">
@@ -440,7 +440,7 @@ export default {
             </button>
           </div>
         </li>
-        <!-- e:// 250220 추가 -->
+        <!-- e:// 250225 추가 -->
         <!-- // 신용대출 -->
 
         <!-- 자동차 -->
