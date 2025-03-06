@@ -75,6 +75,7 @@ export default {
                 src="@/assets/images/contents/img-nice.png"
                 class="banner-img"
                 alt="NICE지키미 은행, 승인 잘나는 대출 NICE에서 찾아드려요! 지금 바로 확인하기 심의필 제241029-001호(2024.10.29~2025.10.28)"
+                style="background: #e9f6ff"
               />
             </a>
           </div>
@@ -86,6 +87,7 @@ export default {
                 src="@/assets/images/contents/img-welcome.png"
                 class="banner-img"
                 alt="웰컴저축은행,대출비교서비스로 40여개 금융사 조회하기 지금 바로 확인하기 심의필 제241029-001호(2024.10.29~2025.10.28)"
+                style="background: #f4eeff"
               />
             </a>
           </div>
@@ -118,6 +120,6 @@ export default {
 </style>
 <style lang="scss" scoped>
 .banner-img {
-  border-radius: 20px;
+  border-radius: 16px;
 }
 </style>
