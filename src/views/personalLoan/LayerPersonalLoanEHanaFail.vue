@@ -116,3 +116,8 @@ export default {
 <style lang="scss" module>
 @import '@/assets/scss/views/personalLoan/LayerPersonalLoanEHanaFail.scss';
 </style>
+<style lang="scss" scoped>
+.banner-img {
+  border-radius: 20px;
+}
+</style>
