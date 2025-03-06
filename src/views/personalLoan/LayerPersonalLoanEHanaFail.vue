@@ -51,8 +51,10 @@ export default {
 
       <PageTextGroup class="row-margin-none">
         <PageMainText>
-          김하나님, 신청하신 상품은<br />
-          대출진행이 어렵습니다
+          김하나님, 대출진행이 어렵습니다<br />
+          <strong class="color-green text-title-2"
+            >다른 제휴기관을 둘러보세요!</strong
+          >
         </PageMainText>
       </PageTextGroup>
       <!--241115 삭제 -->
@@ -63,12 +65,8 @@ export default {
         className="row-margin-container"
       />
       -->
-      <div>
+      <div class="row-margin-contents">
         <section>
-          <!-- 241115 클래스 수정 -->
-          <h3 class="text-title-3">
-            잠깐, <span class="color-green">아직 끝나지 않았어요!</span>
-          </h3>
           <div :class="[$style['image-view'], 'row-margin-contents']">
             <a
               href="https://m.credit.co.kr/ib20/mnu/CMNCMMBRD01?joinsiteid=JOIN120614"
@@ -76,7 +74,7 @@ export default {
               <img
                 src="@/assets/images/contents/img-nice.png"
                 class="banner-img"
-                alt="NICE지키미 은행,저축은행,캐피탈,대부,P2P 승인 잘나는 대출 NICE에서 찾아드려요! 지금 바로 확인하기 심의필 제241029-001호(2024.10.29~2025.10.28)"
+                alt="NICE지키미 은행, 승인 잘나는 대출 NICE에서 찾아드려요! 지금 바로 확인하기 심의필 제241029-001호(2024.10.29~2025.10.28)"
               />
             </a>
           </div>
@@ -85,9 +83,9 @@ export default {
               href="https://m.credit.co.kr/ib20/mnu/CMNCMMBRD01?joinsiteid=JOIN120614"
             >
               <img
-                src="@/assets/images/contents/img-nice.png"
+                src="@/assets/images/contents/img-welcome.png"
                 class="banner-img"
-                alt="NICE지키미 은행,저축은행,캐피탈,대부,P2P 승인 잘나는 대출 NICE에서 찾아드려요! 지금 바로 확인하기 심의필 제241029-001호(2024.10.29~2025.10.28)"
+                alt="웰컴저축은행,대출비교서비스로 40여개 금융사 조회하기 지금 바로 확인하기 심의필 제241029-001호(2024.10.29~2025.10.28)"
               />
             </a>
           </div>
@@ -102,15 +100,14 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton tagName="a">신용대출 상담 1599-7942</BasicButton>
+            <BasicButton tagName="a"
+              >상담 1599-7942
+              <span class="font-weight-regular text-body-3"
+                >(평일 09:00 ~ 18:00)</span
+              ></BasicButton
+            >
           </ButtonListItem>
         </ButtonList>
-
-        <div class="row-margin-item">
-          <p class="text-body-3 color-gray font-weight-regular align-center">
-            평일 09:00 ~ 18:00
-          </p>
-        </div>
       </template>
     </FullPopup>
   </UiLayer>
@@ -118,12 +115,4 @@ export default {
 
 <style lang="scss" module>
 @import '@/assets/scss/views/personalLoan/LayerPersonalLoanEHanaFail.scss';
-</style>
-<style lang="scss" scoped>
-/*241115 */
-/*background: #e9f6ff;*/
-.banner-img {
-  height: 182px;
-  border-radius: 16px;
-}
 </style>
