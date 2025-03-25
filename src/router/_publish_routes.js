@@ -2411,6 +2411,12 @@ const routes = [
     name: '/personal-loan/PF_M12_p001',
     component: () => import('@/views/personalLoan/PF_M12_p001.vue'),
   },
+  /* 250325 추가 */
+  {
+    path: '/ui-guide/customer/GuideCustomer001',
+    name: '/ui-guide/customer/GuideCustomer001',
+    component: () => import('@/views/uiGuide/GuideCustomer001.vue'),
+  },
 ];
 
 export default routes;

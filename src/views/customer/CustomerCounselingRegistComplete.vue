@@ -52,15 +52,23 @@ export default {
   <PageContents>
     <IllustInfo>
       <IllustObject type="complete" />
+      <!-- s: 250325 수정 -->
       <IllustInfoTitle>
-        상담등록이<br />
-        <strong>완료되었습니다</strong>
+        <!-- 상담등록이<br />
+        <strong>완료되었습니다</strong> -->
       </IllustInfoTitle>
       <IllustInfoText>
-        고객님 감사합니다. 문의하신 사항에 대해서는<br />
-        빠른 시일 내에 답변 드리겠습니다.<br />
-        (상담가능시간 : 평일 09-18시)
+        <span class="color-gray"
+          >상담시 본인 확인을 위해 전화연결이 필요합니다.</span
+        ><br />
+        <span class="color-green">하나캐피탈</span> 수신 차단 여부를 확인해
+        주세요.<br /><br />
+        <span class="color-gray"
+          >빠른 시일 내에 답변드리겠습니다.<br />
+          (상담가능시간 : 평일 09-18시)</span
+        >
       </IllustInfoText>
+      <!-- e:// 250325 수정 -->
     </IllustInfo>
 
     <template v-slot:foot>

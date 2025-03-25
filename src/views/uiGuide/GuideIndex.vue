@@ -259,6 +259,25 @@ const datas = () => [
         ],
       },
       // e:// 250306 추가
+
+      // s: 250325 추가
+      {
+        depth2: '',
+        depth3: '고객상담',
+        depth4: '팝업',
+        depth5: '',
+        depth6: '',
+        path: '/ui-guide/customer/GuideCustomer001',
+        status: 'end',
+        create: '2025.03.25',
+        log: [
+          {
+            date: '2025.03.25',
+            text: 'Customer_M02_p002_l001 팝업추가',
+          },
+        ],
+      },
+      // e:// 250325 추가
     ],
   },
   // e:// 프레임아웃 운영작업리스트
@@ -2423,6 +2442,24 @@ const datas = () => [
           },
         ],
       },
+      // s: 250325 추가
+      {
+        depth2: '고객상담',
+        depth3: '팝업',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/ui-guide/customer/GuideCustomer001',
+        status: 'end',
+        create: '2025.03.25',
+        log: [
+          {
+            date: '2025.03.25',
+            text: 'Customer_M02_p002_l001 팝업추가',
+          },
+        ],
+      },
+      // e:// 250325 추가
       {
         depth2: '고객상담',
         depth3: '완료\nCustomer_M02_p003',

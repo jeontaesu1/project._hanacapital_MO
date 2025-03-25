@@ -594,6 +594,13 @@ export default {
           <p :class="$style['gnb__name']">FAQ</p>
         </RouterLink>
       </li>
+      <!-- s: 250325 수정 -->
+      <li :class="$style['gnb__item']">
+        <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
+          <p :class="$style['gnb__name']">증명서 조회/발급</p>
+        </RouterLink>
+      </li>
+      <!-- e:// 250325 수정 -->
       <li :class="$style['gnb__item']">
         <RouterLink :class="$style['gnb__link']" to="" @click="routerLinkClick">
           <p :class="$style['gnb__name']">고객상담</p>
