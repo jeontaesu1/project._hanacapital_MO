@@ -54,8 +54,8 @@ export default {
       <IllustObject type="complete" />
       <!-- s: 250325 수정 -->
       <IllustInfoTitle>
-        <!-- 상담등록이<br />
-        <strong>완료되었습니다</strong> -->
+        상담등록이<br />
+        <strong>완료되었습니다</strong>
       </IllustInfoTitle>
       <IllustInfoText>
         <span class="color-gray"
