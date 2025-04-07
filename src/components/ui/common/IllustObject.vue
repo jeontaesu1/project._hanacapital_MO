@@ -17,6 +17,12 @@ export default {
       Type: String,
       default: null,
     },
+    // s: 250407 추가
+    variant: {
+      Type: String,
+      default: null,
+    },
+    // e:// 250407 추가
   },
   setup(props) {
     const illustInfoStyleModule = inject('illustInfoStyleModule', {});
@@ -38,6 +44,7 @@ export default {
   <div
     :class="[
       $style['illust-object'],
+      variant && $style[`illust-object-${variant}`] /* 250407 추가 */,
       {
         [$style[`illust-object--type-${type}`]]: type,
       },

@@ -19,6 +19,7 @@ import IconSetting from '@/assets/images/common/setting.svg?component';
 import IconHome from '@/assets/images/common/home.svg?component';
 import IconAdd from '@/assets/images/icon/add.svg?component';
 import IconPhone from '@/assets/images/common/pop-phone.svg?component';
+import IconnewShare from '@/assets/images/common/newShare.svg?component'; //250404 추가
 
 export default {
   components: {
@@ -36,6 +37,7 @@ export default {
     IconHome,
     IconAdd,
     IconPhone,
+    IconnewShare, //250404 추가
   },
   props: {
     type: {
@@ -266,4 +268,16 @@ export default {
     v-if="type === 'menuDA' && !store.ui.common.isAPP"
   />
   <!-- // 20240214 다이렉트 오토 메뉴 추가 -->
+
+  <!-- s: 250404 추가 -->
+  <button
+    v-else-if="type === 'newShare'"
+    type="button"
+    :class="styleModule['header__button']"
+    @click="onClick"
+  >
+    <IconnewShare :class="styleModule['header__button-icon']" />
+    <span :class="styleModule['header__button-text']">공유하기</span>
+  </button>
+  <!-- e:// 250404 추가 -->
 </template>

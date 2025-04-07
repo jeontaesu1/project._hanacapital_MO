@@ -135,6 +135,22 @@
       border-color: $color-purple-20;
       color: $color-purple-20;
     }
+    // s: 250407 추가
+    &-quaternary {
+      border: none;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      font-size: 12px;
+      border-radius: 50%;
+      background-color: #fbe7f1;
+      color: $color-pink-90;
+      box-sizing: border-box;
+    }
+    // e:// 250407 추가
   }
   // // 241125 추가&수정
 

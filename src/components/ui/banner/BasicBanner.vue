@@ -54,6 +54,12 @@ export default {
       Type: Boolean,
       default: false,
     },
+    // s: 250407  추가
+    variant: {
+      Type: String,
+      default: '',
+    },
+    // e:// 250407  추가
   },
   setup(props) {
     const slideStyleModule = inject('basicBannerSlideStyleModule', {});
@@ -115,6 +121,7 @@ export default {
   <div
     :class="[
       $style['banner'],
+      variant && $style[`banner--${variant}`] /* 250407 추가 */,
       {
         [$style['banner--disabled']]: disabled || disabledStyle,
       },

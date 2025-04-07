@@ -2417,6 +2417,22 @@ const routes = [
     name: '/ui-guide/customer/GuideCustomer001',
     component: () => import('@/views/uiGuide/GuideCustomer001.vue'),
   },
+  /* 250404 추가 */
+  {
+    path: '/main/Main_M07_p005',
+    name: '/main/Main_M07_p005',
+    component: () => import('@/views/main/Main_M07_p005.vue'),
+  },
+  {
+    path: '/main/Main_M07_p006',
+    name: '/main/Main_M07_p006',
+    component: () => import('@/views/main/Main_M07_p006.vue'),
+  },
+  {
+    path: '/main/Main_M07_p007',
+    name: '/main/Main_M07_p007',
+    component: () => import('@/views/main/Main_M07_p007.vue'),
+  },
 ];
 
 export default routes;

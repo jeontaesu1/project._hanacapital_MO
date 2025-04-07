@@ -13,6 +13,12 @@ export default {
         return defaultClassNames();
       },
     },
+    // s: 250407추가
+    isBlur: {
+      Type: Boolean,
+      default: false,
+    },
+    // e:// 250407추가
   },
   setup(props) {
     const styleModule = inject('keyValueStyleModule');
@@ -31,7 +37,13 @@ export default {
 </script>
 
 <template>
-  <dd :class="[styleModule['key-value__value'], customClassNames.text]">
+  <dd
+    :class="[
+      styleModule['key-value__value'],
+      isBlur ? styleModule['key-value__value--blur'] : '' /* 250407 수정 */,
+      customClassNames.text,
+    ]"
+  >
     <slot />
   </dd>
 </template>

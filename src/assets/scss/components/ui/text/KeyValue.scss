@@ -27,6 +27,12 @@
     min-width: 0;
     text-align: right;
     margin: 0;
+    // s: 250407 추가
+    &--blur {
+      filter: blur(2.5px);
+      user-select: none;
+    }
+    // e:// 250407 추가
   }
 
   &--align {

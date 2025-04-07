@@ -8,6 +8,20 @@
   background: url('@/assets/images/illustration/img-1qcapital.png') no-repeat
     50% 0 / 100% auto;
 
+  // s: 250407 추가
+  &-medium {
+    width: 100%;
+    height: 200px;
+  }
+  &-large {
+    padding-bottom: 90%;
+    border: 1px solid $color-gray-20;
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+  }
+  // e:// 250407 추가
+
   &--type {
     &-complete {
       background-image: url('@/assets/images/illustration/img-complete.png');
@@ -132,5 +146,82 @@
     &-shield {
       background-image: url('@/assets/images/illustration/img-shield.png');
     }
+    // s: 250407 추가
+    &-car {
+      background-image: url('@/assets/images/illustration/img-car.png');
+    }
+    &-basic {
+      margin: 0;
+      padding-bottom: 0;
+      background-image: url('@/assets/images/illustration/img-basic.png');
+      background-size: contain;
+    }
+    &-nice {
+      margin: 0;
+      padding-bottom: 0;
+      background-image: url('@/assets/images/illustration/img-nice.png');
+      background-size: contain;
+    }
+    &-speed {
+      margin: 0;
+      padding-bottom: 0;
+      background-image: url('@/assets/images/illustration/img-speed.png');
+      background-size: contain;
+    }
+    &-practical {
+      margin: 0;
+      padding-bottom: 0;
+      background-image: url('@/assets/images/illustration/img-practical.png');
+      background-size: contain;
+    }
+    &-city {
+      margin: 0;
+      padding-bottom: 0;
+      background-image: url('@/assets/images/illustration/img-city.png');
+      background-size: contain;
+    }
+    &-family {
+      margin: 0;
+      padding-bottom: 0;
+      background-image: url('@/assets/images/illustration/img-family.png');
+      background-size: contain;
+    }
+    &-smart {
+      margin: 0;
+      padding-bottom: 0;
+      background-image: url('@/assets/images/illustration/img-smart.png');
+      background-size: contain;
+    }
+    &-adventure {
+      margin: 0;
+      padding-bottom: 0;
+      background-image: url('@/assets/images/illustration/img-adventure.png');
+      background-size: contain;
+    }
+    &-basicCar {
+      background-image: url('@/assets/images/illustration/img-basicCar.svg');
+    }
+    &-niceCar {
+      background-image: url('@/assets/images/illustration/img-niceCar.svg');
+    }
+    &-speedCar {
+      background-image: url('@/assets/images/illustration/img-speedCar.svg');
+    }
+    &-practicalCar {
+      background-image: url('@/assets/images/illustration/img-practicalCar.svg');
+    }
+    &-cityCar {
+      background-image: url('@/assets/images/illustration/img-cityCar.svg');
+    }
+    &-familyCar {
+      background-image: url('@/assets/images/illustration/img-familyCar.svg');
+    }
+    &-smartCar {
+      background-image: url('@/assets/images/illustration/img-smartCar.svg');
+    }
+    &-adventureCar {
+      background-image: url('@/assets/images/illustration/img-adventureCar.svg');
+    }
+    // e:// 250407 추가
   }
 }

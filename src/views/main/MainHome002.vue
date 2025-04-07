@@ -36,6 +36,7 @@ import IconBird from '@/assets/images/icon/bird.svg?component';
 import IconGraph from '@/assets/images/icon/graph.svg?component';
 import IconStudy from '@/assets/images/icon/study.svg?component';
 import IconTell from '@/assets/images/icon/tell.svg?component';
+import IconSearchCar from '@/assets/images/icon/searchCar.svg?component';
 
 const BASE_URL = import.meta.env.BASE_URL;
 
@@ -69,6 +70,7 @@ export default {
     IconGraph,
     IconStudy,
     IconTell,
+    IconSearchCar,
   },
   setup() {
     const store = {
@@ -971,6 +973,27 @@ export default {
                 </span>
               </button>
             </li>
+            <!-- s: 250404 추가 -->
+            <li :class="$style['icon-list__item']">
+              <button type="button" :class="$style['icon-list__block']">
+                <span
+                  :class="[
+                    $style['icon-list__icon'],
+                    $style['icon-list__icon--white'],
+                  ]"
+                  ><IconSearchCar
+                /></span>
+                <span :class="$style['icon-list__content--secondary']">
+                  <span :class="$style['icon-list__text']"
+                    >나에게 가장 어울리는 차량은?</span
+                  >
+                  <span :class="$style['icon-list__title']"
+                    >하나뿐인 내 차 찾기</span
+                  >
+                </span>
+              </button>
+            </li>
+            <!--e:// 250404 추가 -->
             <li :class="$style['icon-list__item']">
               <button type="button" :class="$style['icon-list__block']">
                 <span

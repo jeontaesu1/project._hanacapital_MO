@@ -143,4 +143,16 @@
       }
     }
   }
+  // s: 250407 추가
+  &--custom {
+    @include reset-list;
+    margin-top: 5px;
+    > .basic-list__item {
+      color: $color-black;
+      & + .basic-list__item {
+        margin-top: 0px;
+      }
+    }
+  }
+  // e:// 250407 추가
 }
