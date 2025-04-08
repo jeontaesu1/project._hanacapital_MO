@@ -28,6 +28,13 @@
     // s: 250407 추가
     &-mediumSmall {
       width: 30px;
+      height: 30px;
+      img {
+        width: auto !important;
+        height: 100%;
+        max-width: none;
+        max-height: none;
+      }
     }
     // e:// 250407 추가
     &-medium {

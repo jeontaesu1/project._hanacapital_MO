@@ -70,7 +70,7 @@ export default {
     </PageTextGroup>
 
     <div class="contents-wrap">
-      <IllustObject type="car" />
+      <IllustObject variant="medium" type="car" />
       <div class="contents-text">
         <IconTimer />
         <p>소요시간 약 3분</p>

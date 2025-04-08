@@ -7,10 +7,10 @@ import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageTextGroup from '@/components/ui/text/PageTextGroup.vue';
 // import PageMainText from '@/components/ui/text/PageMainText.vue';
 // import IllustObject from '@/components/ui/common/IllustObject.vue';
-import BottomSticky from '@/components/ui/common/BottomSticky.vue';
-import BasicButton from '@/components/ui/button/BasicButton.vue';
-import ButtonList from '@/components/ui/button/ButtonList.vue';
-import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+// import BottomSticky from '@/components/ui/common/BottomSticky.vue';
+// import BasicButton from '@/components/ui/button/BasicButton.vue';
+// import ButtonList from '@/components/ui/button/ButtonList.vue';
+// import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 import IconprogressCar from '@/assets/images/icon/progressCar.svg?component';
 import IconO from '@/assets/images/icon/O.svg?component';
@@ -23,10 +23,10 @@ export default {
     PageTextGroup,
     // PageMainText,
     // IllustObject,
-    BottomSticky,
-    BasicButton,
-    ButtonList,
-    ButtonListItem,
+    // BottomSticky,
+    // BasicButton,
+    // ButtonList,
+    // ButtonListItem,
 
     IconprogressCar,
     IconO,
@@ -158,22 +158,6 @@ export default {
         <div class="btn-text">아니다</div>
       </button>
     </div>
-
-    <template v-slot:foot>
-      <BottomSticky>
-        <div class="bottom-wrap">
-          <ButtonList
-            :classNames="{
-              wrap: 'row-margin-none',
-            }"
-          >
-            <ButtonListItem>
-              <BasicButton>테스트 시작</BasicButton>
-            </ButtonListItem>
-          </ButtonList>
-        </div>
-      </BottomSticky>
-    </template>
   </PageContents>
 </template>
 
@@ -198,12 +182,23 @@ export default {
     background: #b7b7b7;
     border-radius: 50px;
     overflow: hidden;
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      background: url(@/assets/images/contents/track-line.svg) center no-repeat;
+    }
   }
 
   .slider-active-track {
     position: absolute;
     height: 100%;
-    background: #000;
+    background: #2b3340;
     border-radius: 50px;
     transition: width 0.3s ease;
   }

@@ -300,8 +300,7 @@ export default {
   padding: 20px 20px 0 20px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 8px;
+  gap: 10px;
   p {
     margin: 0;
     font-size: 20px;
