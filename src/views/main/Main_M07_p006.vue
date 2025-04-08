@@ -214,7 +214,7 @@ export default {
 
 // 질문 영역
 .question-container {
-  margin-bottom: 32px;
+  margin-bottom: 80px;
   .question {
     font-size: 20px;
     font-weight: 500;
