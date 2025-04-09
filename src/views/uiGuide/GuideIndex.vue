@@ -332,6 +332,38 @@ const datas = () => [
       },
 
       // e:// 250407 추가
+      {
+        depth2: '',
+        depth3: '임직원 렌터카 메인',
+        depth4: '홈 \nLR_M07_p001',
+        depth5: '',
+        depth6: '',
+        path: '/lease-rent-estimation-system/LR_M07_p001',
+        status: 'end', //ing
+        create: '2025.04.08',
+        log: [
+          {
+            date: '2025.04.09',
+            text: '신규추가',
+          },
+        ],
+      },
+      {
+        depth2: '',
+        depth3: '',
+        depth4: '팝업',
+        depth5: '',
+        depth6: '',
+        path: '/ui-guide/lease-rent-estimation-system-008',
+        status: 'end',//ing
+        create: '2025.04.08',
+        log: [
+          {
+            date: '2025.04.09',
+            text: 'LR_M07_p001_Alert',
+          },
+        ],
+      },
     ],
   },
   // e:// 프레임아웃 운영작업리스트

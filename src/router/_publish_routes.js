@@ -2433,6 +2433,21 @@ const routes = [
     name: '/main/Main_M07_p007',
     component: () => import('@/views/main/Main_M07_p007.vue'),
   },
+  // 250410 임직원 렌터카 메인
+  {
+    path: '/lease-rent-estimation-system/LR_M07_p001',
+    name: '/lease-rent-estimation-system/LR_M07_p001',
+    component: () =>
+      import('@/views/LeaseRentEstimationSystem/LR_M07_p001.vue'),
+  },
+  //팝업
+  {
+    path: '/ui-guide/lease-rent-estimation-system-008',
+    name: '/ui-guide/lease-rent-estimation-system-008',
+    component: () =>
+      import('@/views/uiGuide/GuideLeaseRentEstimationSystem008.vue'),
+  },
+  // 250410 임직원 렌터카상품
 ];
 
 export default routes;
