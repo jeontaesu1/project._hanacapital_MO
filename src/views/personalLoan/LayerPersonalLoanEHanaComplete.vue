@@ -123,7 +123,7 @@ export default {
           <ButtonListItem :class="$style['toltip-pos']">
             <div :class="$style['toltip-box']">
               <div>
-                <p><span>APP</span>으로 쉽고 빠르게 신청</p>
+                <p>앱 바로가기(대출약정)</p>
               </div>
             </div>
             <BasicButton> 대출 신청 </BasicButton>
