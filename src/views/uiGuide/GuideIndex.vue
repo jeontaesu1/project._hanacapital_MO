@@ -331,10 +331,10 @@ const datas = () => [
         ],
       },
 
-      // e:// 250407 추가
+      // e:// 250408 추가
       {
         depth2: '',
-        depth3: '임직원 렌터카 메인',
+        depth3: '임직원 렌터카 상품',
         depth4: '홈 \nLR_M07_p001',
         depth5: '',
         depth6: '',
@@ -355,7 +355,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/ui-guide/lease-rent-estimation-system-008',
-        status: 'end',//ing
+        status: 'end',
         create: '2025.04.08',
         log: [
           {
@@ -364,6 +364,24 @@ const datas = () => [
           },
         ],
       },
+      // s: 250408 추가
+      {
+        depth2: '',
+        depth3: 'e하나신용대출\nPF_M01_p001',
+        depth4: '팝업',
+        depth5: '',
+        depth6: '',
+        path: '/ui-guide/personal-loan-e-hana-001',
+        status: 'end',
+        create: '2025.04.09',
+        log: [
+          {
+            date: '2025.04.09',
+            text: 'PF_M01_l009 툴팁 ui 추가',
+          },
+        ],
+      },
+      // e:// 250408
     ],
   },
   // e:// 프레임아웃 운영작업리스트

@@ -1,1 +1,100 @@
 @import '@/assets/scss/components/import/icon-list.scss';
+/*250409*/
+.toltip-pos {
+  position: relative;
+  width: 100%;
+  display: block;
+}
+.toltip-box {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  animation: bounce 0.9s ease-in-out infinite;
+  -webkit-animation: bounce ease-in-out 0.9s infinite;
+  width: 100%;
+  height: 45px;
+  box-sizing: border-box;
+  z-index: 2;
+}
+.toltip-box div {
+  position: relative;
+  width: 180px;
+  height: 53px;
+  color: #fff;
+  border: 0px solid #15181f;
+  background: url('/src/assets/images/icon/bg_tooltip.png') no-repeat;
+  background-size: 180px 45px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  font-size: 12px;
+  letter-spacing: -0.24px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+.toltip-box div > p {
+  height: 45px;
+  line-height: 28px;
+  padding: 0;
+  margin: 0;
+}
+.toltip-box div span {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.28px;
+}
+.toltip-box div .icon-arr {
+  content: '';
+  position: absolute;
+  bottom: -11px;
+  left: 50%;
+  transform: translateX(-50%), rotate(180deg);
+  display: block;
+  width: 15px;
+  height: 15px;
+  background: #15181f;
+  border-radius: 3px;
+}
+.toltip-box div svg {
+  position: absolute;
+  bottom: -9px;
+}
+.toltip-box p {
+  font-size: 12px;
+  letter-spacing: -0.24px;
+  line-height: 150%;
+}
+.toltip-box span {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.28px;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@-webkit-keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+//태그 추가
+.new-pb-box {
+  padding-bottom: 30px;
+}

@@ -119,9 +119,16 @@ export default {
             wrap: 'row-margin-none',
           }"
         >
-          <ButtonListItem>
-            <BasicButton>확인</BasicButton>
+          <!--250409-->
+          <ButtonListItem :class="$style['toltip-pos']">
+            <div :class="$style['toltip-box']">
+              <div>
+                <p><span>APP</span>으로 쉽고 빠르게 신청</p>
+              </div>
+            </div>
+            <BasicButton> 대출 신청 </BasicButton>
           </ButtonListItem>
+          <!--//250409-->
         </ButtonList>
       </template>
     </FullPopup>

@@ -125,25 +125,20 @@ export default {
         theme="quaternary"
         className="row-margin-container"
       />
-      <!--241218 태그 추가 -->
-      <div :class="$style['new-pb-box']">
-        <div :class="$style['icon-list']">
-          <ul :class="$style['icon-list__list']">
-            <li :class="$style['icon-list__item']">
-              <button type="button" :class="$style['icon-list__block']">
-                <span :class="$style['icon-list__icon']"
-                  ><IconCalculate
-                /></span>
-                <span :class="$style['icon-list__content']">
-                  <span :class="$style['icon-list__text']">월 납입금 계산</span>
-                  <span :class="$style['icon-list__title']">대출 계산기</span>
-                </span>
-              </button>
-            </li>
-          </ul>
-        </div>
+
+      <div :class="$style['icon-list']">
+        <ul :class="$style['icon-list__list']">
+          <li :class="$style['icon-list__item']">
+            <button type="button" :class="$style['icon-list__block']">
+              <span :class="$style['icon-list__icon']"><IconCalculate /></span>
+              <span :class="$style['icon-list__content']">
+                <span :class="$style['icon-list__text']">월 납입금 계산</span>
+                <span :class="$style['icon-list__title']">대출 계산기</span>
+              </span>
+            </button>
+          </li>
+        </ul>
       </div>
-      <!--// 241218 -->
 
       <template v-slot:foot>
         <ButtonList
@@ -151,16 +146,9 @@ export default {
             wrap: 'row-margin-none',
           }"
         >
-          <!-- 241217 -->
-          <ButtonListItem :class="$style['toltip-pos']">
-            <div :class="$style['toltip-box']">
-              <div>
-                <p><span>APP</span>으로 쉽고 빠르게 신청</p>
-              </div>
-            </div>
+          <ButtonListItem>
             <BasicButton> 대출 신청 </BasicButton>
           </ButtonListItem>
-          <!--//241217-->
         </ButtonList>
       </template>
     </FullPopup>
