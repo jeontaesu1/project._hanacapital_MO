@@ -142,7 +142,7 @@ export default {
       <BasicBox :class="$style['basicNewPadding20']">
         <ul :class="$style['event-list']">
           <li :class="$style['event-item']">
-            <div :class="$style['event-img1']">
+            <div :class="$style['event-img']">
               <img src="@/assets/images/illustration/img-3d-coin.png" />
             </div>
             <div :class="$style['event-con']">
@@ -151,7 +151,7 @@ export default {
             </div>
           </li>
           <li :class="$style['event-item']">
-            <div :class="$style['event-img2']">
+            <div :class="$style['event-img']">
               <img src="@/assets/images/illustration/img-0.png" />
             </div>
             <div :class="$style['event-con']">
@@ -160,7 +160,7 @@ export default {
             </div>
           </li>
           <li :class="$style['event-item']">
-            <div :class="$style['event-img3']">
+            <div :class="$style['event-img']">
               <img src="@/assets/images/illustration/img-clock1.png" />
             </div>
             <div :class="$style['event-con']">
