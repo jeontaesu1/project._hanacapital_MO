@@ -174,14 +174,10 @@ export default {
         </em>
       </BasicBox>
     </div>
-    <!--
-    <div class="text-title">
-      상담 안내를 위한
-      <p>정보를 입력해 주세요</p>
-    </div>
-    -->
-    <FormList>
-      <PageTextGroup>
+
+    <FormList :class="$style['agree-list']">
+      <!-- title -->
+      <PageTextGroup :class="$style['page-text-group-mb']">
         <PageMainText>
           <div :class="$style['main-title-area']">
             <span style="font-weight: 300">상담 안내를 위한</span><br />
@@ -189,6 +185,7 @@ export default {
           </div>
         </PageMainText>
       </PageTextGroup>
+      <!-- 관계사 -->
       <FormListItem
         titleText="관계사"
         target="#layerMyInfoBillingEditBillingMethodButton"
@@ -270,9 +267,8 @@ export default {
           <FormInvalidMessage>Error Message</FormInvalidMessage>
         </FormInvalid>
       </FormListItem>
-    </FormList>
-    <FormList :class="[$style['agree-list'], 'marginTop28']">
-      <!-- 추천인 -->
+      <!--//관계사-->
+      <!-- 사원번호 -->
       <FormListItem titleText="사원번호" target="#testInput001">
         <FormInvalid :error="state.nameError">
           <InputBlock :error="state.nameError">
@@ -294,7 +290,7 @@ export default {
           <FormInvalidMessage>Error Message</FormInvalidMessage>
         </FormInvalid>
       </FormListItem>
-      <!-- // 추천인 검색 -->
+      <!-- // 사원번호 -->
 
       <!-- 부서 -->
       <FormListItem titleText="부서" target="#testInput007">

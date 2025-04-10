@@ -86,32 +86,36 @@ export default {
         className="row-margin-container"
       />
 
-      <div :class="$style['icon-list']">
-        <ul :class="$style['icon-list__list']">
-          <li :class="$style['icon-list__item']">
-            <div :class="$style['icon-list__block']">
-              <div :class="$style['icon-list__icon']"><IconCustomer /></div>
-              <div :class="$style['icon-list__content']">
-                <div :class="$style['icon-list__title']">고객센터</div>
-                <div :class="$style['icon-list__text']">평일 09:00 ~ 18:00</div>
+      <!-- 250410 태그 추가 하단 영역 수정 -->
+      <div :class="$style['new-pb-box']">
+        <div :class="$style['icon-list']">
+          <ul :class="$style['icon-list__list']">
+            <li :class="$style['icon-list__item']">
+              <div :class="$style['icon-list__block']">
+                <div :class="$style['icon-list__icon']"><IconCustomer /></div>
+                <div :class="$style['icon-list__content']">
+                  <div :class="$style['icon-list__title']">고객센터</div>
+                  <div :class="$style['icon-list__text']">평일 09:00 ~ 18:00</div>
+                </div>
+                <BasicButton
+                  tagName="a"
+                  size="mini"
+                  :line="true"
+                  theme="quaternary"
+                  :classNames="{ wrap: $style['icon-list__button'] }"
+                  href="tel:1800-1110"
+                >
+                  <template v-slot:leftIcon>
+                    <IconTell />
+                  </template>
+                  1599-7942
+                </BasicButton>
               </div>
-              <BasicButton
-                tagName="a"
-                size="mini"
-                :line="true"
-                theme="quaternary"
-                :classNames="{ wrap: $style['icon-list__button'] }"
-                href="tel:1800-1110"
-              >
-                <template v-slot:leftIcon>
-                  <IconTell />
-                </template>
-                1599-7942
-              </BasicButton>
-            </div>
-          </li>
-        </ul>
+            </li>
+          </ul>
+        </div>
       </div>
+      <!--// 250410 태그 추가 -->
 
       <template v-slot:foot>
         <ButtonList
