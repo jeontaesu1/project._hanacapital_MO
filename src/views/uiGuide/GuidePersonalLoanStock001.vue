@@ -22,6 +22,7 @@ import LayerPersonalLoanStockEarlyAlert from '@/views/personalLoan/LayerPersonal
 import LayerPersonalLoanStockEarlyComplete from '@/views/personalLoan/LayerPersonalLoanStockEarlyComplete.vue';
 import LayerPersonalLoanStockEarlyFail from '@/views/personalLoan/LayerPersonalLoanStockEarlyFail.vue';
 import LayerPersonalLoanStockEarlyForm from '@/views/personalLoan/LayerPersonalLoanStockEarlyForm.vue';
+import PF_M07_l013_List from '@/views/personalLoan/PF_M07_l013_List.vue';
 
 export default {
   components: {
@@ -45,6 +46,7 @@ export default {
     LayerPersonalLoanStockEarlyComplete,
     LayerPersonalLoanStockEarlyFail,
     LayerPersonalLoanStockEarlyForm,
+    PF_M07_l013_List,
   },
   setup() {
     const layer001 = ref(null);
@@ -63,6 +65,7 @@ export default {
     const layer014 = ref(null);
     const layer015 = ref(null);
     const layer016 = ref(null);
+    const layer017 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -112,6 +115,9 @@ export default {
     const layer016Open = (e = {}) => {
       layer016.value.layer.open(e.target);
     };
+    const layer017Open = (e = {}) => {
+      layer017.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -130,6 +136,7 @@ export default {
       layer014,
       layer015,
       layer016,
+      layer017,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -146,6 +153,7 @@ export default {
       layer014Open,
       layer015Open,
       layer016Open,
+      layer017Open,
     };
   },
 };
@@ -239,6 +247,11 @@ export default {
           상환 신청 실패<br />PF_M07_l012
         </BasicButton>
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer017Open">
+          연창신청 계약선택<br />PF_M07_l013
+        </BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <LayerPersonalLoanStockExtensionAgree ref="layer001" />
@@ -257,5 +270,7 @@ export default {
     <LayerPersonalLoanStockEarlyAlert ref="layer013" />
     <LayerPersonalLoanStockEarlyComplete ref="layer014" />
     <LayerPersonalLoanStockEarlyFail ref="layer015" />
+    <LayerPersonalLoanStockEarlyFail ref="layer016" />
+    <PF_M07_l013_List ref="layer017" />
   </PageContents>
 </template>

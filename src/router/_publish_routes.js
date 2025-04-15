@@ -2448,6 +2448,13 @@ const routes = [
       import('@/views/uiGuide/GuideLeaseRentEstimationSystem008.vue'),
   },
   // 250410 임직원 렌터카상품
+  /*
+  {
+    path: '/ui-guide/personal-loan-stock-002',
+    name: '/ui-guide/personal-loan-stock-002',
+    component: () => import('@/views/uiGuide/GuidePersonalLoanStock002.vue'),
+  },
+  */
 ];
 
 export default routes;

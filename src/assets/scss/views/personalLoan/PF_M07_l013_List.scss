@@ -1,0 +1,70 @@
+@import '@/assets/scss/components/import/basic-table.scss';
+@import '@/assets/scss/components/import/basic-list.scss';
+
+.header {
+  &-left {
+    flex: none;
+  }
+
+  &-right {
+    flex: none;
+  }
+
+  &-center {
+    flex: 1;
+    min-width: 0;
+  }
+}
+.comment-txt1 {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.50;
+  letter-spacing: -0.28px;
+  color: #666;
+}
+.text-list-ty-box {
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.26px;
+}
+.text-list-ty-box p {
+  padding: 0;
+  margin: 0;
+}
+.text-list-ty-box p.title {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5; 
+  letter-spacing: -0.3px;
+  margin-top: 12px;
+}
+.text-list-ty-box p.mt-6 {
+  margin-top: 6px;
+}
+.text-list-ty-box p.fb300 {
+  font-weight: 300;
+}
+.text-sing-box {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5; 
+  letter-spacing: -0.26px;
+  text-align: right;
+  margin: 0;
+  padding: 0;
+}
+.mt-12 {
+  margin-top: 12px;
+}
+.mt-16 {
+  margin-top: 16px;
+}
+.mt-40 {
+  margin-top: 40px;
+}
+.mb-12 {
+  margin-bottom: 12px;
+}
