@@ -73,8 +73,9 @@ export default {
           본 약정서는 원 약정서에 따른 기존대출약정의 대출기한이 연장되는 범위를 변경함에 있어서 제반사항을 정하기 위하여 체결되었습니다.
         </p>
         <p :class="$style['title']">제2조 (대출 조건의 변경)</p>
-        <p :class="[$style['mt-6'], $style['fb300']]">
-          ① 원 약정서상 [특약사항]을 다음과 같이 변경합니다.
+        <!--<p :class="[$style['mt-6'], $style['fb300']]"></p>-->
+        <p :class="$style['num-text-box']">
+          <span>①</span> 원 약정서상 [특약사항]을 다음과 같이 변경합니다.
         </p>
       </div>
       <div :class="$style['mt-12']">
@@ -111,8 +112,8 @@ export default {
         </section>
 
         <div :class="$style['text-list-ty-box']">
-          <p :class="[$style['mt-6'], $style['fb300']]">
-            ② 제1항에 따라 원 약정서에 따른 기존대출약정의 대출 만기일의 최장 연장기한이 10년으로 변경됩니다. 즉, 본 약정에 따라 변경되는 내용은 아래와 같습니다.
+          <p :class="$style['num-text-box']">
+            <span>②</span> 제1항에 따라 원 약정서에 따른 기존대출약정의 대출 만기일의 최장 연장기한이 10년으로 변경됩니다. 즉, 본 약정에 따라 변경되는 내용은 아래와 같습니다.
           </p>
           <p :class="$style['title']">제3조 (계약기간)</p>
           <p :class="$style['mt-6']">

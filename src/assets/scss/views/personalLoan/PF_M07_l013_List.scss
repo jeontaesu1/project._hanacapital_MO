@@ -56,6 +56,16 @@
   margin: 0;
   padding: 0;
 }
+.text-list-ty-box .num-text-box {
+  position: relative;
+  padding-left: 19px;
+  margin-top: 6px;
+  font-weight: 300;
+}
+.text-list-ty-box .num-text-box span {
+  position: absolute;
+  top:0; left:0;
+}
 .mt-12 {
   margin-top: 12px;
 }
