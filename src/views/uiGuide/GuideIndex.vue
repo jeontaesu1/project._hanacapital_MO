@@ -423,6 +423,23 @@ const datas = () => [
           },
         ],
       },
+      {
+        depth2: '',
+        depth3: '내대출',
+        depth4: '상품설명서 012 (상품설명서 약관동의 주택담보대출)',
+        depth5: '팝업',
+        depth6: '',
+        path: '/ui-guide/my-loan-progress-015',
+        status: 'ing',
+        create: '2025.04.18',
+        log: [
+          {
+            date: 'ing',
+            text: 'My_M99_l014_상품설명서 약관동의_주택담보대출 - 임시 네이밍',
+          },
+        ],
+      },
+      //250418 주택담보대출 설명서
     ],
   },
   // e:// 프레임아웃 운영작업리스트
@@ -8319,6 +8336,23 @@ const datas = () => [
         ],
       },
       // //E: 240611 추가
+      {
+        depth2: '',
+        depth3: '',
+        depth4: '상품설명서 012 (상품설명서 약관동의 주택담보대출)',
+        depth5: '팝업',
+        depth6: '',
+        path: '/ui-guide/my-loan-progress-015',
+        status: 'end',
+        create: '2025.04.18',
+        log: [
+          {
+            date: '2024.04.21',
+            text: 'My_M99_l014_상품설명서 약관동의_주택담보대출 - 임시 네이밍',
+          },
+        ],
+      },
+      //250418 주택담보대출 설명서
       {
         depth2: '진행상태조회\nMy_M03_p001',
         depth3: '온라인약정',

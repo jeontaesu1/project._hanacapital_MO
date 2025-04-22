@@ -359,6 +359,12 @@ const routes = [
   },
   //상품설명서 011 (개인사업자 아파트담보대출 연장프로세스)
   {
+    path: '/ui-guide/my-loan-progress-015',
+    name: '/ui-guide/my-loan-progress-015',
+    component: () => import('@/views/uiGuide/GuideMyLoanProgress015.vue'),
+  },
+  //주택담보대출 설명서 250421
+  {
     path: '/ui-guide/my-loan-certificate-001',
     name: '/ui-guide/my-loan-certificate-001',
     component: () => import('@/views/uiGuide/GuideMyLoanCertificate001.vue'),
