@@ -93,7 +93,7 @@ export default {
                     <th>구분</th>
                     <th style="border-left: 1px solid #e0e0e0;">특약사항</th>
                   </tr>
-                  <!--250422-->
+                  <!-- 250422 -->
                   <tr>
                     <th scope="row" style="color:#15181F;">변경 전</th>
                     <td class="align-left" style="text-align: left">
@@ -120,7 +120,7 @@ export default {
                       안내합니다.
                     </td>
                   </tr>
-                  <!--//250422-->
+                  <!--// 250422 -->
                 </tbody>
               </table>
             </div>
