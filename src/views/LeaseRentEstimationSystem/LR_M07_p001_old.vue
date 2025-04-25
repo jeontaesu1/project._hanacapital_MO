@@ -137,7 +137,43 @@ export default {
         </PageMainText>
       </div>
     </PageTextGroup>
-    <!--//250425 -->
+
+    <div :class="[$style['contents-list']]">
+      <BasicBox :class="$style['basicNewPadding20']">
+        <ul :class="$style['event-list']">
+          <li :class="$style['event-item']">
+            <div :class="$style['event-img']">
+              <img src="@/assets/images/illustration/img-3d-coin.png" />
+            </div>
+            <div :class="$style['event-con']">
+              오직 하나 가족에게만 제공하는<br />
+              <span :class="$style['event-desc']">합리적인 렌트료!</span>
+            </div>
+          </li>
+          <li :class="$style['event-item']">
+            <div :class="$style['event-img']">
+              <img src="@/assets/images/illustration/img-0.png" />
+            </div>
+            <div :class="$style['event-con']">
+              발주부터 고객인도까지<br />
+              <span :class="$style['event-desc']">수수료 ZERO!</span>
+            </div>
+          </li>
+          <li :class="$style['event-item']">
+            <div :class="$style['event-img']">
+              <img src="@/assets/images/illustration/img-clock1.png" />
+            </div>
+            <div :class="$style['event-con']">
+              국내 제조사 협업을 통한<br />
+              <span :class="$style['event-desc']">빠른 출고!</span>
+            </div>
+          </li>
+        </ul>
+        <em :class="$style['event-info']">
+          ※준법심의필 25-00 (YYYY-MM-DD~YYYY-MM-DD)
+        </em>
+      </BasicBox>
+    </div>
 
     <FormList :class="$style['agree-list']">
       <!-- title -->
@@ -237,13 +273,24 @@ export default {
         <FormInvalid :error="state.nameError">
           <InputBlock :error="state.nameError">
             <InputBlockCell :flexible="true">
-              <BasicInput title="사원번호" id="testInput001" />
+              <BasicInput
+                ref="testInput"
+                id="testInput001"
+                @keyup="testInputEvent"
+                @focus="testInputEvent"
+                @blur="testInputEvent"
+              />
             </InputBlockCell>
+            <template v-slot:right>
+              <BasicButton size="small" theme="tertiary" style="width: 95px">
+                임직원 인증
+              </BasicButton>
+            </template>
           </InputBlock>
           <FormInvalidMessage>Error Message</FormInvalidMessage>
         </FormInvalid>
       </FormListItem>
-      <!-- // 사원번호 250425 -->
+      <!-- // 사원번호 -->
 
       <!-- 부서 -->
       <FormListItem titleText="부서" target="#testInput007">
