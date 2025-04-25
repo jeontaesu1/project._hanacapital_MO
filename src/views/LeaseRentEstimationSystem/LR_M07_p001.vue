@@ -133,7 +133,7 @@ export default {
         </div>
         <PageMainText :class="$style['text-position']">
           <span>하나금융그룹 임직원에게만 드리는</span> <br />
-          <div :class="'font-weight-bold'">특별 혜택</div>
+          <div :class="'font-weight-bold'">렌터카 특별 혜택</div>
         </PageMainText>
       </div>
     </PageTextGroup>
