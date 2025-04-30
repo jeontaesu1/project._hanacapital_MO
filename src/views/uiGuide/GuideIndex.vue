@@ -427,7 +427,6 @@ const datas = () => [
           },
         ],
       },
-      /*
       {
         depth2: '',
         depth3: '내대출',
@@ -435,16 +434,15 @@ const datas = () => [
         depth5: '팝업',
         depth6: '',
         path: '/ui-guide/my-loan-progress-015',
-        status: 'ing',
+        status: 'end',
         create: '2025.04.18',
         log: [
           {
-            date: 'ing',
-            text: 'My_M99_l014_상품설명서 약관동의_주택담보대출 - 임시 네이밍',
+            date: '2025.04.30',
+            text: 'My_M99_l014_상품설명서 약관동의_주택담보대출',
           },
         ],
       },
-      */
       //250418 주택담보대출 설명서
     ],
     //git add . 테스트

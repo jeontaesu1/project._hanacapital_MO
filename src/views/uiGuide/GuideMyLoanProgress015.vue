@@ -6,8 +6,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import LayerMyLoanOnlineContractDescription012_001 from '@/views/myLoan/LayerMyLoanOnlineContractDescription012_001.vue';
-
+import LayerMyLoanOnlineContractDescription012_001 from '@/views/myLoan/LayerMyLoanOnlineContractDescription012_My_M99_l014.vue';
 
 export default {
   components: {
@@ -42,8 +41,7 @@ export default {
     >
       <ButtonListItem>
         <BasicButton @click="layer001Open">
-          상품설명서 약관동의_주택담보대출<br />
-          My_M99_l014 임시 네이밍 <!--My_M99_l001 -->
+          상품설명서 약관동의_주택담보대출<br /> My_M99_l014  <!--My_M99_l001 참조-->
         </BasicButton>
       </ButtonListItem>
     </ButtonList>

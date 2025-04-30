@@ -95,14 +95,46 @@
 .font13 {
   font-size: 0.8125rem;
 }
+.font15 {
+  font-size: 0.9375rem;
+}
+
+.font13-fb300-color-666 {
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: #666;
+}
+
 .font14-mb24 {
   margin: 0 0 24px 0;
   font-size: 0.875rem;
   line-height: 1.5;
   letter-spacing: -0.02em;
 }
-.font15 {
-  font-size: 0.9375rem;
+
+.color-black-2 {
+   color: #15181F;
+}
+.italic-fb500-color-666 {
+  font-style: italic;
+  font-weight: 500;
+  color: #666;
+}
+/*italic color-red underline*/
+.italic-fb700-colorRed-underline {
+  font-style: italic;
+  font-weight: 700;
+  color: #f64a4a;
+  text-decoration: underline;
+}
+.color-green-2 {
+  color: #00a69e;
+}
+.blank-box--regular-2 {
+  display: inline-block;
+  min-width: 38px;
+  vertical-align: bottom;
+  text-align: center;
 }
 .margin0 {
   margin: 0 0;
@@ -224,11 +256,23 @@
 .basic-list__item_6.fb-400 {
   font-weight: 400;
 }
-
+.basic-list__item_font13 {
+  display: flex;
+  align-items: flex-start;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  font-weight: 300;
+  color: #757575;
+  padding-right: 0px;
+  font-size: 0.8125rem;
+}
+.basic-list__item_font13 + .basic-list__item_font13 {
+  margin-top: 8px;
+}
+  /*font-size: 0.75rem;*/
 .basic-list__item_mt24 {
   display: flex;
   align-items: flex-start;
-  /*font-size: 0.75rem;*/
   line-height: 1.5;
   letter-spacing: -0.02em;
   font-weight: 300;

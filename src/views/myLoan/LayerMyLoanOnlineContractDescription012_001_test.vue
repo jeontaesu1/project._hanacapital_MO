@@ -59,7 +59,7 @@ export default {
         <p
           class="text-body-5 color-gray font-weight-light align-right row-margin-contents-small"
         >
-          준법심의필(설) : 0000-00(0000.00.00)
+        준법심의필(설) : 2025-2(202504.24)
         </p>
         <PageMainText>
           상품설명서 약관에<br />
