@@ -109,7 +109,7 @@ export default {
                   'font-weight-regular',
                 ]"
               >
-                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__symbol_7']"></div>
                 <div :class="$style['basic-list__content']">
                   주택담보대출은 주택(단독주택·아파트·다세대주택 등)을 담보로 대출이 실행되는 상품으로, 분양 주택에 대한 중도금대출 및 잔금대출, 이주비대출, 추가분담금에 대한 중도금대출 및 잔금대출을 포함합니다.
                 </div>
@@ -122,7 +122,7 @@ export default {
                   'font-weight-regular',
                 ]"
               >
-                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__symbol_7']"></div>
                 <div :class="$style['basic-list__content']">
                   주택담보대출은 담보물을 대상으로 하는 대출인만큼 고객님의 신용도를 기반으로 대출한도 및 금리가 정해지는 신용대출에 비해 일반적으로 금리수준이 낮다는 특징을 가지고 있습니다.
                 </div>
@@ -135,7 +135,7 @@ export default {
                   'font-weight-regular',
                 ]"
               >
-                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__symbol_7']"></div>
                 <div :class="$style['basic-list__content']">
                   주택담보대출은 대출의 목적, 주택의 위치·시세 등에 따라 대출의 가능여부 및 범위가 달라질 수 있습니다.  (☞<span class="color-red">‘1. 상품 개요 및 특성’</span> 확인)
                   <!--<span class="color-green"></span>-->
@@ -888,7 +888,7 @@ export default {
                   'font-weight-regular',
                 ]"
               >
-                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__symbol_7']"></div>
                 <div :class="$style['basic-list__content']">
                   <span class="color-green">고정금리</span> : 대출성상품이
                   실행될 때 금리가,<!--한 번 결정되면-->
@@ -906,7 +906,7 @@ export default {
                   'font-weight-regular',
                 ]"
               >
-                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__symbol_7']"></div>
                 <div :class="$style['basic-list__content']">
                   <div>
                     <span class="color-green">변동금리</span> : 대출성상품이
@@ -954,7 +954,7 @@ export default {
                   'font-weight-regular',
                 ]"
               >
-                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__symbol_7']"></div>
                 <div :class="$style['basic-list__content']">
                   <div>
                     <span class="color-green">혼합금리</span> : 대출성상품 실행
@@ -1010,7 +1010,7 @@ export default {
                   'font-weight-regular',
                 ]"
               >
-                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__symbol_7']"></div>
                 <div :class="$style['basic-list__content']">
                   <div>
                     고객에게 실제 적용되는
@@ -1094,7 +1094,7 @@ export default {
                   'font-weight-regular',
                 ]"
               >
-                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__symbol_7']"></div>
                 <div :class="$style['basic-list__content']">
                   <div>
                     대출금리는 변동기준을 명확히 표시하기 위해 일반적으로 대출
@@ -1326,7 +1326,7 @@ export default {
                   'font-weight-regular',
                 ]"
               >
-                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__symbol_7']"></div>
                 <div :class="$style['basic-list__content']">
                   <div>
                     채무자인 고객은 「여신전문금융업법」
@@ -1378,7 +1378,7 @@ export default {
                   'font-weight-regular',
                 ]"
               >
-                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__symbol_7']"></div>
                 <div :class="$style['basic-list__content']">
                   금리인하요구권은 영업점 방문 및 비대면채널(예 : 홈페이지,
                   모바일)을 통해 신청 가능하며 금융회사는 금리인하를 요구하는
@@ -1394,7 +1394,7 @@ export default {
                   'font-weight-regular',
                 ]"
               >
-                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__symbol_7']"></div>
                 <div :class="$style['basic-list__content']">
                   신용상태의 개선이 경미하여 금리인하 요구 인정 요건을 충족하지
                   못하는 경우 등
@@ -1412,7 +1412,7 @@ export default {
                   'font-weight-regular',
                 ]"
               >
-                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__symbol_7']"></div>
                 <div :class="$style['basic-list__content']">
                   금융회사는 금리인하 요구를 받은 날부터
                   <span :class="[$style['color-green-2'], $style['fb-700']]">
@@ -1877,7 +1877,7 @@ export default {
                   'font-weight-regular',
                 ]"
               >
-                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__symbol_7']"></div>
                 <div :class="$style['basic-list__content']">
                   고객님께서는 이자납입일을 정하여, 매월 원리금(이자)을
                   납입하여야 합니다. 약정 시 자동이체를 선택하고 관련 정보 제공
@@ -1892,7 +1892,7 @@ export default {
                   'font-weight-regular',
                 ]"
               >
-                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__symbol_7']"></div>
                 <div :class="$style['basic-list__content']">
                   자동이체로 원리금(이자) 납입 시, 납입일에 잔고부족 등의
                   이체불가 사유로 납입하실 금액 전부를 이체할 수 없는 경우에는
@@ -1912,7 +1912,7 @@ export default {
                   'font-weight-regular',
                 ]"
               >
-                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__symbol_7']"></div>
                 <div :class="$style['basic-list__content']">
                   납입일이 휴일인 경우, 익영업일로 자동으로 납부가 이월됩니다.
                 </div>
@@ -1926,7 +1926,7 @@ export default {
                   'font-weight-regular',
                 ]"
               >
-                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__symbol_7']"></div>
                 <div :class="$style['basic-list__content']">
                   자동이체 계좌는 고객센터(<strong class="font-weight-medium"
                     >1800-1110</strong
@@ -1944,7 +1944,7 @@ export default {
                   'font-weight-regular',
                 ]"
               >
-                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__symbol_7']"></div>
                 <div :class="$style['basic-list__content']">
                   첫 납입금은 결제일에 따라 납입액이 달라질 수 있습니다.
                 </div>
@@ -1972,7 +1972,7 @@ export default {
                   'font-weight-regular',
                 ]"
               >
-                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__symbol_7']"></div>
                 <div :class="$style['basic-list__content']">
                   <p class="row-margin-mini">
                     고객이 원리금균등분할상환을 선택한 경우
@@ -2024,7 +2024,7 @@ export default {
                   'font-weight-regular',
                 ]"
               >
-                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__symbol_7']"></div>
                 <div :class="$style['basic-list__content']">
                   <p class="row-margin-mini">
                     고객이 거치식 분할상환을 선택한 경우
@@ -2433,7 +2433,7 @@ export default {
                     'font-weight-regular',
                   ]"
                 >
-                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__symbol_7']"></div>
                   <div :class="$style['basic-list__content']">
                     이자납입 연체로 인하여 대출잔액에 연체이율이 적용되었을
                     경우, 연체이자 전액을 납입하지 않고 일부연체이자를 납입하는
@@ -2636,7 +2636,7 @@ export default {
                 'font-weight-regular',
               ]"
             >
-              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__symbol_7']"></div>
               <div :class="$style['basic-list__content']">
                 <div class="underline">
                   채무자인 고객이 담보로 제공한 부동산 등 담보재산에 법원이나
@@ -2759,7 +2759,7 @@ export default {
                 'font-weight-regular',
               ]"
             >
-              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__symbol_7']"></div>
               <div :class="$style['basic-list__content']">
                 <div>주요 기한의 이익 상실 사유</div>
                 <ul :class="[$style['basic-list'], 'row-margin-item']">
@@ -2771,7 +2771,7 @@ export default {
                       'font-weight-regular',
                     ]"
                   >
-                  <div :class="[$style['basic-list__symbol_5_font15']]">
+                    <div :class="[$style['basic-list__symbol_5_font15']]">
                       -
                     </div>
                     <div
@@ -2906,7 +2906,7 @@ export default {
                 'font-weight-regular',
               ]"
             >
-              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__symbol_7']"></div>
               <div :class="$style['basic-list__content']">
                 (개인일 경우) 해당 금융거래로 인하여 개인신용평가회사가
                 개인신용평점을 만들어 낼 때 해당 신용정보주체에게 불이익이
@@ -2929,7 +2929,7 @@ export default {
                 'font-weight-regular',
               ]"
             >
-              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__symbol_7']"></div>
               <div :class="$style['basic-list__content']">
                 <!--평균적으로 연체율이 높은 금융권역의 신용공여는 은행 등 여타
                 금융권역의 신용공여보다 신용점수가 더 큰 폭으로 하락할 수
@@ -2949,7 +2949,7 @@ export default {
                 'font-weight-regular',
               ]"
             >
-              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__symbol_7']"></div>
               <div :class="$style['basic-list__content']">
                 해당 금융거래가 변제나 이에 준하는 방식으로 거래가 종료된
                 경우에도 일정기간 개인신용평점의 산정에 영향을 줄 수 있습니다.
@@ -3057,7 +3057,7 @@ export default {
                 'font-weight-regular',
               ]"
             >
-              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__symbol_7']"></div>
               <div :class="$style['basic-list__content']">
                 <div>
                   대출원금, 이자 등을 3개월 이상 「장기연체」한 경우 원금 또는
@@ -3105,7 +3105,7 @@ export default {
                 'font-weight-regular',
               ]"
             >
-              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__symbol_7']"></div>
               <div :class="$style['basic-list__content']">
                 '연체기간 5영업일 이상, 연체금 10만원 이상' 「단기연체」한 경우
                 신용정보회사를 통해 연체정보가 등록되어 신용카드 사용정지 등
@@ -3120,7 +3120,7 @@ export default {
                 'font-weight-regular',
               ]"
             >
-              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__symbol_7']"></div>
               <div :class="$style['basic-list__content']">
                 <div>
                   신용정보집중기관에 장기연체가 등록하는 경우에는
@@ -3204,7 +3204,7 @@ export default {
                 'font-weight-regular',
               ]"
             >
-              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__symbol_7']"></div>
               <div :class="$style['basic-list__content']">
                 <div>
                   <strong class="font-weight-medium"
@@ -3300,7 +3300,7 @@ export default {
                 'font-weight-regular',
               ]"
             >
-              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__symbol_7']"></div>
               <div :class="$style['basic-list__content']">
                 <div>
                   위법계약 해지를 요구하기 위해서는 아래의 날 중 먼저 도달한
@@ -3348,7 +3348,7 @@ export default {
                 'font-weight-regular',
               ]"
             >
-              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__symbol_7']"></div>
               <div :class="$style['basic-list__content']">
                 금융회사는 해지를 요구받은 날부터 10일 이내에 고객에게 수락
                 여부를 통지하며, 거절 시에는 그 사유를 함께 통지합니다.
@@ -3377,7 +3377,7 @@ export default {
                 'font-weight-regular',
               ]"
             >
-              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__symbol_7']"></div>
               <div :class="$style['basic-list__content']">
                 일반금융소비자(개인 및 개인사업자, 5인 미만의 법인 또는
                 일반금융소비자로 분류되길 요청한 법인)는 계약체결일 또는
@@ -3396,7 +3396,7 @@ export default {
                 'font-weight-regular',
               ]"
             >
-              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__symbol_7']"></div>
               <div :class="$style['basic-list__content']">
                 청약의 철회 의사를 표시하기 위해서는 서면등(우편, 전자우편,
                 문자메세지 등을 말함)으로 의사표시를 해야 하며,
@@ -3421,7 +3421,7 @@ export default {
                 'font-weight-regular',
               ]"
             >
-              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__symbol_7']"></div>
               <div :class="$style['basic-list__content']">
                 <span class="color-green"
                   >청약철회권 행사 시에는 중도상환수수료가 면제되며, 5영업일
@@ -3601,7 +3601,7 @@ export default {
                 'font-weight-regular',
               ]"
             >
-              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__symbol_7']"></div>
               <div :class="$style['basic-list__content']">
                 <div>
                   고객은 분쟁조정 또는 소송의 수행 등 권리구제를 위한 목적으로
@@ -3636,7 +3636,7 @@ export default {
                 'font-weight-regular',
               ]"
             >
-              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__symbol_7']"></div>
               <div :class="$style['basic-list__content']">
                 금융회사는 고객의 분쟁조정 신청내역 또는 소송제기 등의 목적 및
                 열람의 범위가 기재된 열람요구서로 열람을 요구받은 날로부터 6일
@@ -3651,7 +3651,7 @@ export default {
                 'font-weight-regular',
               ]"
             >
-              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__symbol_7']"></div>
               <div :class="$style['basic-list__content']">
                 금융회사는 법령, 제3자의 이익 침해, 영업비밀의 침해 등의 사유가
                 있는 경우 이를 고객에게 알리고
@@ -3683,7 +3683,7 @@ export default {
                 'font-weight-regular',
               ]"
             >
-              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__symbol_7']"></div>
               <div :class="$style['basic-list__content']">
                 <div>
                   개인신용평가대응권이란 개인인 금융소비자가
@@ -3725,7 +3725,7 @@ export default {
                 'font-weight-regular',
               ]"
             >
-              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__symbol_7']"></div>
               <div :class="$style['basic-list__content']">
                 <div>
                   금융소비자는 신용정보의 이용 및 보호에 관한 법률 제 36조의2에
@@ -3767,7 +3767,7 @@ export default {
                 'font-weight-regular',
               ]"
             >
-              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__symbol_7']"></div>
               <div :class="$style['basic-list__content']">
                 <div>
                   <span class="color-green">금융회사</span>는 다음 어느 하나에
@@ -3876,7 +3876,7 @@ export default {
                   'font-weight-regular',
                 ]"
               >
-                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__symbol_7']"></div>
                 <div :class="$style['basic-list__content']">
                   최초 심사에 비해 신용점수가 하락하거나 연체가 발생하는 등의
                   사실이 발생했을 경우, 대출계약의 연장이 거절될 수 있습니다.
@@ -3890,7 +3890,7 @@ export default {
                   'font-weight-regular',
                 ]"
               >
-                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__symbol_7']"></div>
                 <div :class="$style['basic-list__content']">
                   일정한 자격을 갖춘 고객을 대상으로 한 대출(직장인, 중고차소유
                   등 대출)의 경우 같은 자격이 유지되는 경우에만 기한이 연장될 수
@@ -3905,7 +3905,7 @@ export default {
                   'font-weight-regular',
                 ]"
               >
-                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__symbol_7']"></div>
                 <div :class="$style['basic-list__content']">
                   소득세법에서 정한 장기주택저당차입금 소득공제 요건을 충족하는
                   경우, 이자상환액에 대하여 소득공제를 받으실 수 있습니다.
@@ -3982,7 +3982,7 @@ export default {
                 'font-weight-regular',
               ]"
             >
-              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__symbol_7']"></div>
               <div :class="$style['basic-list__content']">
                 <div>
                   <p class="row-margin-mini">
@@ -4076,7 +4076,7 @@ export default {
                 'font-weight-regular',
               ]"
             >
-              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__symbol_7']"></div>
               <div :class="$style['basic-list__content']">
                 <div class="row-margin-item">
                   본 상품을 3년 이내에 중도 상환하시는 경우, 정해진 요율에
@@ -4120,7 +4120,7 @@ export default {
                 'font-weight-regular',
               ]"
             >
-              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__symbol_7']"></div>
               <div :class="$style['basic-list__content']">
                 <div class="row-margin-item">
                   고객은 계약체결일 또는 계약서류를 제공받은 날(다만
@@ -4170,7 +4170,7 @@ export default {
                 'font-weight-regular',
               ]"
             >
-              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__symbol_7']"></div>
               <div :class="$style['basic-list__content']">
                 <div class="row-margin-item">
                   주택담보대출과 관련하여 체결한 약정을 위반하는 경우 기한의
@@ -4213,7 +4213,7 @@ export default {
                 'font-weight-regular',
               ]"
             >
-              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__symbol_7']"></div>
               <div :class="$style['basic-list__content']">
                 <div class="row-margin-item">
                   대출의 변제기가 도래하거나 기한의 이익이 상실되었음에도 채무가
