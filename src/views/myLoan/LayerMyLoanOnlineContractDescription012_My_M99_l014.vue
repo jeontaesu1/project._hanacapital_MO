@@ -1,5 +1,5 @@
 <script>
-// My_M99_l014 -- 가이드  만드는중  참조 My_M99_l001
+// My_M99_l014
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -309,7 +309,8 @@ export default {
 
           <section class="row-margin-contents">
             <h4 class="text-body-2 row-margin-item-medium">
-              원리금 연체 시 발생하는 불이익
+              연리금 연체 시 발생하는 불이익
+              <!-- 원리금 확인 필요-->
             </h4>
             <div :class="$style['manual-qna']">
               <ul :class="$style['manual-qna__list']">
@@ -756,6 +757,38 @@ export default {
                     </div>
                   </td>
                 </tr>
+                <!-- 추가 -->
+                <tr>
+                  <th>상환방식</th>
+                  <td class="align-left">
+                    <div :class="$style['manual-check']">
+                      <ul :class="$style['manual-check__list']">
+                        <li :class="$style['manual-check__item']">
+                          <div :class="$style['manual-check__block']">
+                            <div :class="$style['manual-check__object']"></div>
+                            <div :class="$style['manual-check__text']">
+                              원리금균등분할상환
+                            </div>
+                          </div>
+                        </li>
+                        <li
+                          :class="[
+                            $style['manual-check__item'],
+                            $style['manual-check__item--checked'],
+                          ]"
+                        >
+                          <div :class="$style['manual-check__block']">
+                            <div :class="$style['manual-check__object']"></div>
+                            <div :class="$style['manual-check__text']">
+                              거치후 원리금균등분할상환
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+                <!-- // 추가 -->
                 <tr>
                   <th>중도상환수수료율</th>
                   <td class="align-left">최대 2%</td>
@@ -1202,7 +1235,7 @@ export default {
                     <li :class="$style['basic-list__item']">
                       <div :class="$style['basic-list__symbol']"></div>
                       <div :class="$style['basic-list__content']">
-                        <span class="font-weight-regular"
+                        <span class="font-weight-regular color-black"
                           >원가요소는 신용원가, 업무원가, 조달원가 및 자본원가
                           등으로 구분되며, 금융회사는 합리적인 기준에 따라 해당
                           원가들을 산정합니다.</span
@@ -1212,7 +1245,7 @@ export default {
                     <li :class="$style['basic-list__item']">
                       <div :class="$style['basic-list__symbol']"></div>
                       <div :class="$style['basic-list__content']">
-                        <span class="font-weight-regular"
+                        <span class="font-weight-regular color-black"
                           >목표이익률은 당사가 설정하는 수익률</span
                         >
                       </div>
@@ -1220,7 +1253,7 @@ export default {
                     <li :class="$style['basic-list__item']">
                       <div :class="$style['basic-list__symbol']"></div>
                       <div :class="$style['basic-list__content']">
-                        <span class="font-weight-regular"
+                        <span class="font-weight-regular color-black"
                           >조정금리는 프로모션 등에 따른 추가 혜택 등으로 인해
                           가산되는 금리로, 기준금리에 더해져 실제 약정금리를
                           결정합니다.</span
@@ -1237,8 +1270,7 @@ export default {
                     >
                       <div :class="$style['basic-list__symbol']">-</div>
                       <div :class="$style['basic-list__content']">
-                        결정된
-                        <strong :class="[$style['fb-700'], $style['color-black']]"
+                        결정된 <strong :class="[$style['fb-700'], $style['color-black']]"
                         >
                           대출금리(약정금리)</strong
                         >는 개별약정에 의해 별도로 정한 항목(변동금리대출의
