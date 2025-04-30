@@ -309,7 +309,7 @@ export default {
 
           <section class="row-margin-contents">
             <h4 class="text-body-2 row-margin-item-medium">
-              연리금 연체 시 발생하는 불이익
+              원리금 연체 시 발생하는 불이익
               <!-- 원리금 확인 필요-->
             </h4>
             <div :class="$style['manual-qna']">
