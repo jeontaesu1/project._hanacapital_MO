@@ -71,6 +71,7 @@ export default {
 
         /* 수정코드 */
         [$style['status--block']]: block,
+        [$style['status--block2']]: block2,
         [$style['status--square']]: square,
         [$style['status--border']]: border,
         [$style[`status--border-${effectiveTheme}`]]: border,

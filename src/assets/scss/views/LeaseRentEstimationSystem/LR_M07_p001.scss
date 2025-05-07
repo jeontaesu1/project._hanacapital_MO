@@ -83,7 +83,7 @@
   .text-position {
     position: absolute;
     left: 0;
-    bottom: 0;
+    top: 0;
     padding: 20px 0;
     font-size: 28px;
     span {
@@ -196,4 +196,28 @@
 /*font-size: 20px;*/
 .main-title-area{
   padding-top: 20px; margin-top: 30px;
+}
+
+.img-top-new {
+  position: relative;
+  margin-left: -20px;
+  margin-right: -20px;
+  padding-bottom: 10px;
+  background-color: #F1F3F2;
+  .text-position {
+    padding: 20px 20px;
+    font-size: 28px;
+    span {
+      font-size: 21px;
+    }
+  }
+}
+
+.illustration-img-icon{
+  width: 199px; margin: 0 auto;
+}
+.illustration-img-box {
+  margin-left: -20px;
+  margin-right: -20px;
+  background-color: #F1F3F2;
 }

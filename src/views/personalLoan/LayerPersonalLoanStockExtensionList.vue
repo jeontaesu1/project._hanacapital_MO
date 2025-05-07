@@ -23,6 +23,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import StepProgress from '@/components/ui/progress/StepProgress.vue';
 
 const dummyData = () => [
+  //250415
   {
     name: 'NH투자증권(유캔그린)',
     startDate: '2023.01.04',
@@ -31,6 +32,19 @@ const dummyData = () => [
     interestRate: '3.1%',
     term: '6개월',
     status: '',
+<<<<<<< HEAD
+=======
+  },
+  //250415
+  {
+    name: 'NH투자증권(유캔그린)',
+    startDate: '2023.01.04',
+    endDate: '2025.01.04',
+    balance: '14,000,000 원',
+    interestRate: '3.1%',
+    term: '6개월',
+    status: 'notfiled',
+>>>>>>> 7b01d05afc0fd644044b74df6b01250e91bb49d0
   },
   {
     name: '키움증권(이머니)',
@@ -112,6 +126,7 @@ export default {
                   {{ item.name }}
                 </h3>
               </BasicBoxHeadLeft>
+              <!-- 250415 -->
               <BasicBoxHeadRight>
                 <RoundStatus
                   v-if="item.status === 'complete'"
@@ -128,6 +143,7 @@ export default {
                   >5년 추가연장 대상</RoundStatus
                 >
               </BasicBoxHeadRight>
+              <!--// 250415-->
             </BasicBoxHead>
 
             <KeyValue margin="regular">

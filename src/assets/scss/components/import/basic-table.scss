@@ -39,6 +39,9 @@
             border-left: none;
           }
         }
+        > th.border-right {
+          border-right: 1px solid #e0e0e0;
+        }
         > td {
           padding: 11px 15px;
           border-left: 1px solid $color-gray-30;
@@ -51,6 +54,9 @@
           &:first-child {
             border-left: none;
           }
+        }
+        > td.al-right {
+          text-align: left;;
         }
       }
     }

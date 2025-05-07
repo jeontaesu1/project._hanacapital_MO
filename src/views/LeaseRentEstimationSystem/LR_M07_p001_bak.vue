@@ -123,19 +123,20 @@ export default {
           style="width: 108px; height: 24px"
         />
       </div>
-
-      <div :class="$style['img-top']">
-        <div :class="$style['illustration-img']">
-          <img
-            src="@/assets/images/contents/img-lease-rental-main2.png"
-            alt="만기대상 프로세스"
-          />
-        </div>
+      <!-- 250425 재수정 -->
+      <div :class="$style['img-top-new']">
         <PageMainText :class="$style['text-position']">
           <span>하나금융그룹 임직원에게만 드리는</span> <br />
           <div :class="'font-weight-bold'">렌터카 특별 혜택</div>
         </PageMainText>
+        <div :class="$style['illustration-img-icon']">
+          <img
+            src="@/assets/images/contents/img-lease-rental-main2_car.png"
+            alt="만기대상 프로세스"
+          />
+        </div>
       </div>
+      <!--//250425 -->
     </PageTextGroup>
     <!--//250425 -->
 
