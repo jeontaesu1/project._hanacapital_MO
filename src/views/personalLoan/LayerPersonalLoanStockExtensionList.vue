@@ -30,7 +30,7 @@ const dummyData = () => [
     balance: '14,000,000 원',
     interestRate: '3.1%',
     term: '6개월',
-    status: 'none',
+    status: '',
   },
   {
     name: '키움증권(이머니)',
@@ -119,8 +119,13 @@ export default {
                   :classNames="{ wrap: 'display-block' }"
                   >신청완료</RoundStatus
                 >
-                <RoundStatus v-else :classNames="{ wrap: 'display-block' }"
+                <RoundStatus
+                  v-else-if="item.status === 'notfiled'"
+                  :classNames="{ wrap: 'display-block' }"
                   >미신청</RoundStatus
+                >
+                <RoundStatus v-else :classNames="{ wrap: 'display-block' }"
+                  >5년 추가연장 대상</RoundStatus
                 >
               </BasicBoxHeadRight>
             </BasicBoxHead>

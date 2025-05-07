@@ -10,6 +10,7 @@ import PageMainText from '@/components/ui/text/PageMainText.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
 import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
 import BasicBanner from '@/components/ui/banner/BasicBanner.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
@@ -41,6 +42,7 @@ export default {
     RoundStatus,
     CarThumb,
     CarEmblem,
+    TextButton,
   },
   setup() {
     const store = {
@@ -253,6 +255,11 @@ export default {
           </div>
         </li>
       </ul>
+      <!-- s:250507 추가 -->
+      <div class="color-gray row-margin-item-group align-center">
+        <TextButton :underline="true">테스트 다시 하기</TextButton>
+      </div>
+      <!-- e://250507 추가 -->
     </div>
 
     <!-- <template v-slot:foot>
