@@ -32,8 +32,6 @@ const dummyData = () => [
     interestRate: '3.1%',
     term: '6개월',
     status: '',
-<<<<<<< HEAD
-=======
   },
   //250415
   {
@@ -44,7 +42,6 @@ const dummyData = () => [
     interestRate: '3.1%',
     term: '6개월',
     status: 'notfiled',
->>>>>>> 7b01d05afc0fd644044b74df6b01250e91bb49d0
   },
   {
     name: '키움증권(이머니)',
